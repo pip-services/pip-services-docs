@@ -5,7 +5,7 @@ description: >
     Description.
 ---
 
-### [pip-services3-commons-dotnet](../toolkit/net/commons/commons_index)
+### [pip-services3-commons-dotnet](pip-services3-commons)
 
 The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 

@@ -4,9 +4,9 @@ title: "Random"
 linkTitle: "Random"
 ---
 
-# [Command]()
+# Command
 
-Concrete implementation of [ICommand](#ICommand) interface. Command allows to call a method or function using Command pattern.
+Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.
 
 ```.net
 var command = new Command("add", null, async(args) => {
@@ -20,7 +20,7 @@ Console.WriteLine(result.ToString());
 // Console output: 4
 ```
 
-See [ICommand](../ICommand), [CommandSet](../CommandSet)
+See [ICommand](#icommand), [CommandSet](#commandset)
 
 
 # CommandSet
@@ -29,7 +29,7 @@ See [ICommand](../ICommand), [CommandSet](../CommandSet)
 # Event
 
 
-# [ICommand]()
+# ICommand
 
 
 # ICommandable

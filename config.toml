@@ -53,7 +53,20 @@ pygmentsStyle = "tango"
     [markup.goldmark.renderer]
       unsafe = true
 
+  [markup.tableOfContents]
+    endLevel = 5
+    ordered = false
+    startLevel = 1
+
 [menu]
+
+  [[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    # pre = "<i class='fa fa-heart'></i>"
+    url = "http://pipservices.org/"
+    weight = -110
+
 
   [[menu.main]]
     identifier = "Node"
@@ -120,7 +133,7 @@ footer_about_disable = false
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   #themeVariant = "mine"
   #themeVariant = "green"
-  #css = ["static/css/custom.css"]
+  customCSS  = ["css/custom.css"]
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "d72aa9b2712488cc3"

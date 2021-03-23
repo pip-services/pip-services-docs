@@ -3,12 +3,9 @@ type: docs
 title: "Golang"
 linkTitle: "Golang"
 weight: 20
-<!-- menu:
-  main:
-    weight: 20 -->
 ---
 
-### [pip-services3-commons-dart](../dart/pip-services3-commons/)
+### [pip-services3-commons-dart](pip-services3-commons)
 
 The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 

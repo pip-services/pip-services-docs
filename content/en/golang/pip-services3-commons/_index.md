@@ -1,8 +1,7 @@
 ---
 type: docs
 title: "pip-services3-commons"
-date: 2021-03-19T13:51:13+03:00
-draft: false
+linkTitle: "pip-services3-commons"
 description: > 
     The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 ---

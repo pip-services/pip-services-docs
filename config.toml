@@ -5,7 +5,7 @@ theme = "docsy"
 
 # for static build: hugo --theme=docsy --buildDrafts
 
-#relativeURLS = true
+relativeURLS = true
 
 # Language settings
 contentDir = "content/en"

@@ -7,18 +7,20 @@ menu:
     weight: 20
 ---
 
-{{% pageinfo %}}
-This is a placeholder page that shows you how to use this template site.
-{{% /pageinfo %}}
+# What is Pip.Services toolkit? 
 
+> Pip.Services Toolkit speeds up development of production-grade microservices for various cloud and on-premises platforms in the language of your choice. Symmetric implementation of structures and patterns across all supported languages and out-of-the-box interoperability simplify development in polyglot environments. The toolkit design based on composition allows to mix it with other frameworks and libraries.
 
-This section is where the user documentation for your project lives - all the information your users need to understand and successfully use your project. 
+## What can you do with Pip.Services toolkit?
 
-For large documentation sets we recommend adding content under the headings in this section, though if some or all of them don’t apply to your project feel free to remove them or add your own. You can see an example of a smaller Docsy documentation site in the [Docsy User Guide](https://docsy.dev/docs/), which lives in the [Docsy theme repo](https://github.com/google/docsy/tree/master/userguide) if you'd like to copy its docs section. 
-
-Other content such as marketing material, case studies, and community updates should live in the [About](/about/) and [Community](/community/) pages.
-
-Find out how to use the Docsy theme in the [Docsy User Guide](https://docsy.dev/docs/). You can learn more about how to organize your documentation (and how we organized this site) in [Organizing Your Content](https://docsy.dev/docs/best-practices/organizing-content/).
+> * Speed up your microservice development by using prebuilt patterns and components.
+> * Use the toolkit by itself or in conjunction with other frameworks and libraries.
+> * Get out-of-the-box interoperability in Node.js, .Net, Golang, Dart, Python, Java.
+> * Build production-grade microservices with instrumentation and health monitoring.
+> * Run microservices as processes, Docker containers, Services Fabric or Serverless.
+> * Deploy microservices on AWS, Azure, Google Cloud or on-premises.
+> * Support multiple platforms and switch between them without touching the code.
+> * Innovate with ease by adding new technologies into existing microservices.
 
 
 

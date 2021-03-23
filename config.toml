@@ -54,7 +54,7 @@ pygmentsStyle = "tango"
       unsafe = true
 
   [markup.tableOfContents]
-    endLevel = 5
+    endLevel = 3
     ordered = false
     startLevel = 1
 

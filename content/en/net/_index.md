@@ -1,8 +1,9 @@
 ---
 type: docs
 title: "Net"
-description: >
-    Description.
+description: > 
+    The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
+---
 ---
 
 ### [pip-services3-commons-dotnet](pip-services3-commons)
@@ -11,7 +12,7 @@ The Commons module provides portable abstractions and patterns that can be used 
 
 ---
 
-### [pip-services3-components-dotnet]()
+### [pip-services3-components-dotnet](pip-services3-components)
 
 The Components module contains standard component definitions that can be used to build applications and services.
 

@@ -1,29 +1,22 @@
 ---
 type: docs
 title: "pip-services3-commons"
-linkTitle: "pip-services3-commons"
 description: > 
     The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 ---
 
-This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-It provides a set of basic patterns used in microservices or backend services.
-Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
-all languages supported by the toolkit to facilitate symmetric implementation.
-
-
 The module consists of the following packages:
 
-* [Commands](commands) - Commanding and eventing patterns
-* [Config](config) - Configuration primitives
-* [Convert](convert) - Data converters
-* [Data](data) - Data patterns
-* [Errors](errors) - Application errors
-* [Random](random) -Random data generators
-* [Refer](refer) -Locator (IoC) pattern
-* [Reflect](reflect) - Cross-language reflection
-* [Run](run) - Component lifecycle management
-* [Validate](validate) - Validation framework
+* **Commands** - Commanding and eventing patterns
+* **Config** - Configuration primitives
+* **Convert** - Data converters
+* **Data** - Data patterns
+* **Errors** - Application errors
+* **Random** -Random data generators
+* **Refer** -Locator (IoC) pattern
+* **Reflect** - Cross-language reflection
+* **Run** - Component lifecycle management
+* **Validate** - Validation framework
 ---
 ### Quick links
 * [Configuration Pattern](https://www.pipservices.org/recipies/configuration)
@@ -31,7 +24,6 @@ The module consists of the following packages:
 * [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
 * [Components with Active Logic](https://www.pipservices.org/recipies/active-logic)
 * [Data Patterns](https://www.pipservices.org/recipies/memory-persistence)
-* [API Reference](https://pip-services3-dotnet.github.io/pip-services3-commons-dotnet/)
 * [Get Help](https://www.pipservices.org/community/help)
 * [Contribute](https://www.pipservices.org/community/contribute)
 

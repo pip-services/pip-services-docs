@@ -14,7 +14,7 @@ The Commons module provides portable abstractions and patterns that can be used 
 
 ---
 
-### [pip-services3-components-python]()
+### [pip-services3-components-python](pip-services3-components)
 
 The Components module contains standard component definitions that can be used to build applications and services.
 

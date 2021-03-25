@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "pip-services3-commons"
+title: "pip-services3-components"
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
@@ -21,7 +21,6 @@ The module contains the following packages:
 - **Component** - the root package
 ---
 ### Quick links
-
 * [Logging](https://www.pipservices.org/recipies/logging)
 * [Configuration](https://www.pipservices.org/recipies/configuration) 
 * [API Reference](https://pub.dev/documentation/pip_services3_components/latest/pip_services3_components/pip_services3_components-library.html)
@@ -31,7 +30,7 @@ The module contains the following packages:
 * [Examples](https://github.com/pip-services3-dart/pip-services3-components-dart/blob/master/example/README.md)
 
 
-* Warning!
+##### Warning!
 Config package now not work with condition **{{#if var}} something {{/}}** in config files.
 Use **Mustache** syntax, for example **{{#var}} something {{/var}}**
 

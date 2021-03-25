@@ -30,7 +30,7 @@ The module contains the following packages:
 * [Examples](https://github.com/pip-services3-dart/pip-services3-components-dart/blob/master/example/README.md)
 
 
-* Warning!
+##### Warning!
 Config package now not work with condition **{{#if var}} something {{/}}** in config files.
 Use **Mustache** syntax, for example **{{#var}} something {{/var}}**
 

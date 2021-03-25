@@ -21,7 +21,7 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify --theme=docsy --buildDrafts
+        run: hugo --theme=docsy --buildDrafts
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

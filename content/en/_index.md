@@ -1,7 +1,6 @@
 ---
 type: docs
 no_list: true
-weight: 20
 menu:
   main:
     weight: 20

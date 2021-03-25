@@ -15,3 +15,9 @@
 {{ $style := resources.Get . }}
 <link rel="stylesheet" href="/{{ . }}" rel="stylesheet">
 {{end }}
+
+<!-- Custom scss -->
+{{ range .Site.Params.customSCSS -}}
+{{ $style := resources.Get . | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+{{end }}

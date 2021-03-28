@@ -3,17 +3,19 @@ function addCopyButtons(clipboard) {
         var button = document.createElement('button');
         button.className = 'copy-code-button';
         button.type = 'button';
-        button.innerText = 'Copy';
+        button.innerHTML = `<i class="fa fa-clone" ></i>`
+        // button.innerText = 'Copy';
 
         button.addEventListener('click', function () {
             clipboard.writeText(codeBlock.textContent).then(
                 function () {
                     button.blur();
 
-                    button.innerText = 'Copied!';
-                    setTimeout(function () {
-                        button.innerText = 'Copy';
-                    }, 2000);
+                    // button.innerText = 'Copied!';
+                    button.innerHTML = `<i class="fa fa-clone"></i>`
+                    // setTimeout(function () {
+                    //     button.innerText = 'Copy';
+                    // }, 2000);
                 },
                 function (error) {
                     button.innerText = 'Error';
@@ -25,21 +27,20 @@ function addCopyButtons(clipboard) {
         var pre = codeBlock.parentNode;
         if (pre.parentNode.classList.contains('highlight')) {
             var highlight = pre.parentNode;
-            highlight.parentNode.insertBefore(button, highlight);
+            highlight.childNodes[0].insertBefore(button, highlight.childNodes[0].childNodes[0]);
         } else {
-            pre.parentNode.insertBefore(button, pre);
+            pre.childNodes[0].insertBefore(button, pre.childNodes[0].childNodes[0]);
         }
     });
 }
 
+// TODO: need delete bottom
 if (navigator && navigator.clipboard) {
     addCopyButtons(navigator.clipboard);
 } else {
     var script = document.createElement('script');
     script.src =
         'https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/2.7.0/clipboard-polyfill.promise.js';
-    script.integrity = 'sha256-waClS2re9NUbXRsryKoof+F9qc1gjjIhc2eT7ZbIv94=';
-    script.crossOrigin = 'anonymous';
 
     script.onload = function () {
         addCopyButtons(clipboard);

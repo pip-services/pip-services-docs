@@ -13582,7 +13582,8 @@ readers do not read off random characters that represent icons */
   .td-sidebar-nav__section {
     padding-left: 0; }
     .td-sidebar-nav__section li {
-      list-style: none; }
+      list-style: none;
+      padding: 0.3rem; }
     .td-sidebar-nav__section ul {
       padding: 0;
       margin: 0; }
@@ -13598,7 +13599,7 @@ readers do not read off random characters that represent icons */
       color: #222; }
   .td-sidebar-nav .td-sidebar-link {
     display: block;
-    padding-bottom: 0.375rem; }
+    padding-bottom: .375rem; }
     .td-sidebar-nav .td-sidebar-link__page {
       color: #495057;
       font-weight: 300; }
@@ -13613,7 +13614,7 @@ readers do not read off random characters that represent icons */
     padding: 0 0 1rem; }
   .td-sidebar-nav > .td-sidebar-nav__section {
     padding-top: .5rem;
-    padding-left: 1.5rem; }
+    padding-left: 0.3rem; }
 
 .td-sidebar {
   padding-bottom: 1rem; }

@@ -1,7 +1,7 @@
 {{/* We cache this partial for bigger sites and set the active class client side. */}}
 {{ $sidebarCacheLimit := cond (isset .Site.Params.ui "sidebar_cache_limit") .Site.Params.ui.sidebar_cache_limit 2000 }}
 {{ $shouldDelayActive := ge (len .Site.Pages) $sidebarCacheLimit }}
-<div id="td-sidebar-menu" class="td-sidebar__inner{{ if $shouldDelayActive }} d-none{{ end }}">
+<div id="td-sidebar-menu" class="td-sidebar__inner pt-4 {{ if $shouldDelayActive }} d-none{{ end }}">
   {{ if not .Site.Params.ui.sidebar_search_disable }}
   <form class="td-sidebar__search d-flex align-items-center">
     {{ partial "search-input.html" . }}
@@ -18,7 +18,7 @@
   </div>
   <div id="content-desktop"></div>
   {{ end }}
-  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+  <nav class="collapse td-sidebar-nav p-0" id="td-section-nav">
     {{ if  (gt (len .Site.Home.Translations) 0) }}
     <div class="nav-item dropdown d-block d-lg-none">
       {{ partial "navbar-lang-selector.html" . }}
@@ -28,7 +28,7 @@
     {{ $ulNr := 0 }}
     {{ $ulShow := cond (isset .Site.Params.ui "ul_show") .Site.Params.ui.ul_show 1 }}
     {{ $sidebarMenuTruncate := cond (isset .Site.Params.ui "sidebar_menu_truncate") .Site.Params.ui.sidebar_menu_truncate 50 }}
-    <ul class="td-sidebar-nav__section pr-md-3 ul-{{ $ulNr }}">
+    <ul class="td-sidebar-nav__section p-0 md-3 ul-{{ $ulNr }}">
       {{ template "section-tree-nav-section" (dict "page" . "section" $navRoot "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" (add $ulShow 1)) }}
     </ul>
   </nav>
@@ -48,14 +48,46 @@
   {{ $pages_tmp := where (union $s.Pages $s.Sections).ByWeight ".Params.toc_hide" "!=" true }}
   {{ $pages := $pages_tmp | first $sidebarMenuTruncate }}
   {{ $withChild := gt (len $pages) 0 }}
+  
   {{ if and (not (eq .section.Name "Get Started")) (not ( eq .section.Name "search")) }}
-  <li class="td-sidebar-nav__section-title td-sidebar-nav__section{{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show }} collapse{{ end }}" id="{{ $mid }}-li">
-    <span class="{{ if $active }}td-sidebar-nav-active-item{{ end }}{{ if $treeRoot }} tree-root{{ end }}">
-      <a  href="{{ $s.RelPermalink }}" class="align-left pl-0 pr-2{{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}" id="{{ $mid }}">{{ $s.LinkTitle }}</a>
-    </span>
+  {{ if and (not (eq .ulNr 1)) (not $treeRoot ) }}
+    <!-- {{.section.Name}} -->
+    <li
+      class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show }} collapse{{ end }}"
+      id="{{ $mid }}-li">
+      <span class="{{ if $active }}td-sidebar-nav-active-item{{ end }}{{ if $treeRoot }} tree-root{{ end }}">
+        
+        <a href="{{ $s.RelPermalink }}"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
+          id="{{ $mid }}">
+        <div class="d-flex justify-content-center align-items-top">
+          
+          <div class="arrow pl-2">
+            {{ if and (not $active) (gt .ulNr 2) }}
+              {{ with resources.Get "icons/arrow_right.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+            {{ else if and $active (gt .ulNr 2) }}
+              {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+            {{ end }}
+          </div>
+          <div class="col-7 {{if lt .ulNr 3}} pl-0 {{ end }}">
+            {{ $s.LinkTitle }}
+          </div>
+          <div class="arrow">
+            {{ if and $active (lt .ulNr 3)}}
+              {{ with resources.Get "icons/arrow_up.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+            {{ else if and (not $active) (lt .ulNr 3)}}
+              {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+            {{ end }}
+          </div>
+        </div>
+        </a>
+      </span>
+      
+    {{ end }}
+    
     {{if $withChild }}
       {{ $ulNr := add $ulNr 1 }}
-      <ul class="pr-md-3 ul-{{ $ulNr }}">
+      <ul class="pl-0 md-3 ul-{{ $ulNr }} container">
         {{ range $pages }}
           {{ if (not (and (eq $s $p.Site.Home) (eq .Params.toc_root true))) }}
             {{ template "section-tree-nav-section" (dict "page" $p "section" . "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" $ulShow) }}

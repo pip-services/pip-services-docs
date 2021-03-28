@@ -5,13 +5,13 @@ linkTitle: "Dart"
 weight: 20
 ---
 
-### [pip-services3-commons-dart](pip-services3-commons)
+### [Commons](commons)
 
 The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 
 ---
 
-### [pip-services3-components-dart](pip-services3-components)
+### [Components](components)
 
 The Components module contains standard component definitions that can be used to build applications and services.
 

@@ -13147,8 +13147,7 @@ readers do not read off random characters that represent icons */
 .td-sidebar-nav {
   padding-right: 0.5rem;
   margin-right: -15px;
-  margin-left: -15px;
-  background-color: rgba(44, 65, 84, 0.03); }
+  margin-left: -15px; }
   @media (min-width: 768px) {
     @supports (position: sticky) {
       .td-sidebar-nav {
@@ -13199,9 +13198,8 @@ readers do not read off random characters that represent icons */
   @media (min-width: 768px) {
     .td-sidebar {
       padding-top: 4rem;
-      background-color: rgba(44, 65, 84, 0.03);
-      padding-right: 1rem;
-      border-right: 1px solid #dee2e6; } }
+      background-color: #F5F8FA;
+      padding-right: 1rem; } }
   .td-sidebar__toggle {
     line-height: 1;
     color: #222;

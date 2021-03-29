@@ -145,11 +145,11 @@ a:hover {
     margin: 0;
 }
 
-.arrow {
+/* .arrow {
     margin-left: auto;
     margin-right: auto;
     width: 6em;
-}
+} */
 
 .nav-item-tree:hover {
     background: #ffffff;

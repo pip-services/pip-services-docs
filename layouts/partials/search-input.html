@@ -1,5 +1,22 @@
 {{ if or .Site.Params.gcs_engine_id .Site.Params.algolia_docsearch }}
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 {{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+
+
+<script>
+  function show() {
+      var x = document.getElementById("hidden-search");
+      if (x.classList.contains("d-lg-none")) {
+        x.classList.remove("d-lg-none");
+      } else {
+        x.classList.add("d-lg-none");
+      }
+    }
+</script>
+
+<button class="btn d-none d-lg-inline-block" onclick="show()">
+  <i>{{ with resources.Get "icons/search.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}</i>
+</button>
+
+<input id="hidden-search" type="search" class="d-lg-none d-sm-inline-block form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
 
 {{ else if .Site.Params.offlineSearch }}
 {{ $offlineSearchIndex := resources.Get "json/offline-search-index.json" | resources.ExecuteAsTemplate "offline-search-index.json" . }}

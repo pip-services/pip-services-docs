@@ -69,6 +69,7 @@
     
     .td-search-input {
         border: none;
+        border-bottom: 1px solid white;
         font-weight: 400;
 
         @include placeholder {

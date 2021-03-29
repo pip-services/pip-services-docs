@@ -5,6 +5,7 @@
     padding-right: 0.5rem;
     margin-right: -15px;
     margin-left: -15px;
+    background-color: $td-sidebar-bg-color;
 
     @include media-breakpoint-up(md) {
         @supports (position: sticky) {

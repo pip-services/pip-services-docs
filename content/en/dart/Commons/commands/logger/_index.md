@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Commands"
-linkTitle: "Commands"
+title: "Logger"
+linkTitle: "Logger"
 ---
 
 # Command

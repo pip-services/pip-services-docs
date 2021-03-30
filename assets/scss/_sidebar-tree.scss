@@ -44,8 +44,12 @@
         display: block;
         font-weight: $font-weight-medium;
 
-        .active {
+        .bold-font {
             font-weight: $font-weight-bold;
+        }
+        .active {
+            //font-weight: $font-weight-bold;
+            color: $blue;
         }
 
         a {
@@ -70,7 +74,8 @@
         }
 
         &.active {
-            font-weight: $font-weight-bold;
+            //font-weight: $font-weight-bold;
+            color: $blue;
         }
     }
 

@@ -5,7 +5,7 @@ description: >
     The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 ---
 
-The module consists of the following packages:
+<h3>The module consists of the following packages:</h3>
 
 * **Commands** - Commanding and eventing patterns
 * **Config** - Configuration primitives
@@ -18,7 +18,9 @@ The module consists of the following packages:
 * **Run** - Component lifecycle management
 * **Validate** - Validation framework
 ---
+
 ### Quick links
+
 * [Configuration Pattern](https://www.pipservices.org/recipies/configuration)
 * [Locator Pattern](https://www.pipservices.org/recipies/references)
 * [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
@@ -27,7 +29,7 @@ The module consists of the following packages:
 * [Get Help](https://www.pipservices.org/community/help)
 * [Contribute](https://www.pipservices.org/community/contribute)
 
-## Use
+### Use
 
 Install the dotnet package as
 ```bash

@@ -26,26 +26,26 @@ pygmentsUseClassic = false
 pygmentsStyle = "tango"
 
 # Mounts
-[module]
-  [[module.mounts]]
-    source = "content/en"
-    target = "content"
-    lang = "en"
-  [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
-  [[module.mounts]]
-    source = "data"
-    target = "data"
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
-  [[module.mounts]]
-    source = "archetypes"
-    target = "archetypes"
+#[module]
+#  [[module.mounts]]
+#    source = "content/en"
+#    target = "content"
+#    lang = "en"
+#  [[module.mounts]]
+#    source = "static"
+#    target = "static"
+#  [[module.mounts]]
+#    source = "layouts"
+#    target = "layouts"
+#  [[module.mounts]]
+#    source = "data"
+#    target = "data"
+#  [[module.mounts]]
+#    source = "assets"
+#    target = "assets"
+#  [[module.mounts]]
+#    source = "archetypes"
+#    target = "archetypes"
 
 # Markdown Engine - Allow inline html
 [markup]

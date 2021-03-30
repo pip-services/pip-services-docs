@@ -87,52 +87,6 @@
                         (not $p.Site.Params.ui.sidebar_menu_compact)) 
                         true false }}
 
-  <!-- TODO clean comments                      -->
-  <!-- {{eq .CurrentSection $p}} -->
-  <!-- {{ or ( $p.IsDescendant .CurrentSection) ($p.IsAncestor .CurrentSection) }} -->
-  <!-- {{ and (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2)) }} -->
-  <!-- {{ and (gt (len (split $p.URL "/")) (len (split .CurrentSection.URL "/"))) (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2)) }} -->
-  
-  <!-- {{$s}} -->
-  <!-- {{(lt (len (split $s.URL "/")) 5)}} -->
-  <!-- {{len (split $s.URL "/")}} -->
-  <!-- {{ $p.URL }}
-  {{ .CurrentSection }} -->
-  <!-- {{ $coincidence := false }}
-  {{ $errFlag := 0 }}
- 
-  {{ $curSectionSplitUl := split .CurrentSection.URL "/"}}
-  {{ range $i, $el := (split $p.URL "/") }} -->
-    <!-- {{.}} -->
-    <!-- {{if not (eq (index $curSectionSplitUl $i) $el)}}
-      {{ add $errFlag 1}}
-    {{ end }}
-    
-  {{ end }} -->
-  <!-- {{.CurrentSection}}
-
-  {{$rootSectionName}} -->
-  <!-- {{$show}}
-  {{.section.Name}}
-  {{$withChild}} -->
-  <!-- (and (eq $s.Parent .FirstSection) (eq .ulNr 1)) -->
-  <!-- {{not (eq $s.Parent .FirstSection)}} -->
-  <!-- {{$s}} -->
-  <!-- {{ $u := $s.Parent }} -->
-  <!-- {{ $s.IsDescendant .Section }} -->
-
-
-    <!-- {{.Section}} -->
-    <!-- {{$s.IsDescendant .FirstSection}} -->
-  <!-- {{and (eq (.FirstSection.Name | strings.ToLower) (.Section | strings.ToLower))  }} -->
-  <!-- {{eq .FirstSection $s.Parent}} -->
-  <!-- {{ range $pages }}
-    {{.}}
-  {{end}} -->
-  <!-- {{.FirstSection}} -->
-  <!-- {{and (eq (.FirstSection.Name | strings.ToLower) (.Section | strings.ToLower)) (eq .FirstSection $s.Parent)}}  -->
-
-
   {{ if and (not (eq .section.Name "Get Started")) (not ( eq .section.Name "search")) }}
   {{ if and (not (eq .ulNr 1)) (not $treeRoot ) }}
     <li
@@ -141,7 +95,7 @@
       <span class="{{ if $active }}td-sidebar-nav-active-item{{ end }}{{ if $treeRoot }} tree-root{{ end }}">
         
         <a href="{{ $s.RelPermalink }}"
-          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{if eq .ulNr 2}} bold-font {{ end }} {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
           id="{{ $mid }}">
         <div class="d-flex justify-content-center align-items-top">
           <div class="arrow {{ if gt .ulNr 2 }} col-2{{else}}p-0 col-1{{end}}">

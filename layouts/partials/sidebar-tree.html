@@ -1,3 +1,31 @@
+<script>
+  function setArrows(){
+    var activeItem = document.getElementsByClassName('td-sidebar-nav-active-item')[0]
+    var curEl = activeItem;
+
+    while (true) {
+      if (curEl.parentElement === null) { break; }
+      if (curEl.classList.contains("td-sidebar-nav__section") && curEl.classList.contains('active-path')) {
+        let arrowLeftSide = curEl.getElementsByClassName('arrow')[0]
+        let arrowRightSide = curEl.getElementsByClassName('arrow')[1]
+        
+        if (arrowLeftSide.childElementCount === 1){
+          let svgArrow = arrowLeftSide.firstElementChild
+          svgArrow.setAttribute('transform', 'rotate(180)')
+        }
+
+        if (arrowRightSide.childElementCount === 1) {
+          let svgArrow = arrowRightSide.firstElementChild
+          svgArrow.setAttribute('transform', 'rotate(0)')
+        }
+      }
+      curEl = curEl.parentElement
+   }
+ }
+
+  document.addEventListener("readystatechange", setArrows);
+</script>
+
 {{/* We cache this partial for bigger sites and set the active class client side. */}}
 {{ $sidebarCacheLimit := cond (isset .Site.Params.ui "sidebar_cache_limit") .Site.Params.ui.sidebar_cache_limit 2000 }}
 {{ $shouldDelayActive := ge (len .Site.Pages) $sidebarCacheLimit }}
@@ -12,8 +40,10 @@
   <div id="content-mobile">
   <form class="td-sidebar__search d-flex align-items-center">
     {{ partial "search-input.html" . }}
+    {{ if not .IsHome }}
     <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
+    {{ end }}
   </form>
   </div>
   <div id="content-desktop"></div>

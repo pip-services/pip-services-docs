@@ -79,7 +79,7 @@
   {{ $withChild := gt (len $pages) 0 }}
   {{ $mid := printf "m-%s" ($s.RelPermalink | anchorize) }}
   {{ $show := cond (or (and (gt (len (split $p.URL "/")) (len (split .CurrentSection.URL "/"))) 
-  (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2))) 
+                        (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2))) 
                         (and (eq (index (split $s.URL "/") 1) $rootSectionName) (lt (len (split $s.URL "/")) 5)) 
                         (lt $ulNr $ulShow) $activePath 
                         (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
@@ -88,7 +88,8 @@
                         true false }}
 
   {{ if and (not (eq .section.Name "Get Started")) (not ( eq .section.Name "search")) }}
-  {{ if and (not (eq .ulNr 1)) (not $treeRoot ) }}
+  
+  {{ if and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName)}}
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
       id="{{ $mid }}-li">

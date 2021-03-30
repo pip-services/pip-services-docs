@@ -3,6 +3,7 @@ type: docs
 title: "Node.js"
 linkTitle: "Node.js"
 weight: 20
+notoc: true
 <!-- menu:
   main:
     weight: 20 -->

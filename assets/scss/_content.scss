@@ -5,11 +5,31 @@
 .td-content {
     order: 1;
 
+    
+    .svg-container {
+		display: flex; 
+		align-items: center;
+	}
+
+	.svg-center{
+		display: block;
+		margin: auto;
+	}
+
+    .git-hover {
+        &:hover{
+            > path {
+                fill: #d73a49;
+            }
+        };
+    }
+		
+
     p, li, td {
         font-weight: $font-weight-body-text;
     }
 
-    > h1 {
+    > .h1 {
         font-weight: $font-weight-bold;
         margin-bottom: 1rem;
         //background-color: aqua;
@@ -19,6 +39,17 @@
         padding-left: 0.2rem;
         padding-right: 0.2rem;
 
+    }
+
+    .content-title {
+        font-weight: $font-weight-bold;
+        margin-bottom: 1rem;
+        //background-color: aqua;
+        //clip-path: polygon(0% 0%, 0% 0%, 100% 80%, 0 100%);
+        background: linear-gradient(0deg, #FED955 40%, #ffffff 40%);
+        width: fit-content;
+        padding-left: 0.2rem;
+        padding-right: 0.2rem;
     }
 
     > h2 {

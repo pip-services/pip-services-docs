@@ -2,6 +2,7 @@
 type: docs
 title: "Command"
 linkTitle: "Command"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 ---
 
 Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.

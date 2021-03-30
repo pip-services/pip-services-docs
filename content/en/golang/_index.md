@@ -3,6 +3,7 @@ type: docs
 title: "Golang"
 linkTitle: "Golang"
 weight: 20
+notoc: true
 ---
 
 ### [pip-services3-commons-dart](pip-services3-commons)

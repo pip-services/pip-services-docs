@@ -4,7 +4,7 @@
     var curEl = activeItem;
 
     while (true) {
-      if (curEl.parentElement === null) { break; }
+      if (curEl.parentElement === null || curEl.parentElement === undefined) { break; }
       if (curEl.classList.contains("td-sidebar-nav__section") && curEl.classList.contains('active-path')) {
         let arrowLeftSide = curEl.getElementsByClassName('arrow')[0]
         let arrowRightSide = curEl.getElementsByClassName('arrow')[1]

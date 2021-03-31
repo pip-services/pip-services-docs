@@ -13046,6 +13046,12 @@ readers do not read off random characters that represent icons */
   background-color: inherit;
   font-size: 0; }
 
+nav .navbar-logo > svg {
+  max-width: 75%;
+  overflow: visible;
+  padding-top: 0;
+  padding-bottom: 0; }
+
 .td-navbar-cover {
   background: #2C4154; }
   @media (min-width: 768px) {

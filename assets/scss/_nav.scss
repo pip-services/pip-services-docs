@@ -2,6 +2,14 @@
 // Main navbar
 //
 
+nav .navbar-logo > svg  { 
+    // max-height: 75%;
+    max-width: 75%; 
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0; 
+}
+
 .td-navbar-cover {
     background: $primary;
 

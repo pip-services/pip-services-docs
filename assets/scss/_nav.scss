@@ -2,6 +2,22 @@
 // Main navbar
 //
 
+.navbar-offcanvas {
+    .td-search-input {
+        max-width: 85%;
+        border: none;
+        //border-bottom: 1px solid #B3C4D7;
+        font-weight: 400;
+        //padding-left: 0.5rem;
+    }
+
+    .search-logo {
+        > svg > path {
+            fill: $primary;
+        }
+    }
+}
+
 nav .navbar-logo > svg  { 
     // max-height: 75%;
     max-width: 75%; 

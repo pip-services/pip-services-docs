@@ -51,10 +51,27 @@
     {{ $ulNr := 0 }}
     {{ $ulShow := cond (isset .Site.Params.ui "ul_show") .Site.Params.ui.ul_show 1 }}
     {{ $sidebarMenuTruncate := cond (isset .Site.Params.ui "sidebar_menu_truncate") .Site.Params.ui.sidebar_menu_truncate 50 }}
+    
     <div class="container-fluid pr-0 pl-0">
-      <div class="nav navbar-nav navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas"
+      <div class="nav navbar-nav navbar-offcanvas navbar-offcanvas-touch navbar-offcanvas-right" id="js-bootstrap-offcanvas"
       style="padding-left: 0px; padding-right: 0px;">
+
+        
         <ul class="td-sidebar-nav__section p-0 md-3 ul-{{ $ulNr }}">
+          <li
+            class="td-sidebar-nav__section-title td-sidebar-nav__section pl-0 pr-0 d-lg-none d-sm-node d-md-block"
+            id="search-li">
+              
+              
+              <form class="td-sidebar__search d-flex align-items-center pb-0 pt-1">
+                <i class="d-sm-inline-block d-md-inline-block pl-1 search-logo">{{ with resources.Get "icons/search.svg" }}{{ ( . | minify).Content |
+                  safeHTML }}{{ end }}</i>
+                {{ partial "search-input.html" . }}
+                
+              </form>
+              <hr class="m-0">
+            
+          </li>
           {{ template "section-tree-nav-section" (dict "CurrentSection" .CurrentSection "rootSectionName" (index (split
           .CurrentSection.URL "/") 1) "Section" .Section "FirstSection" .FirstSection "page" . "section" $navRoot
           "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" (add $ulShow

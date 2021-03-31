@@ -317,10 +317,13 @@
       $('[data-toggle="offcanvas"]').each(function() {
         return $(this).bsOffcanvas();
       });
-      $(window).on('resize', function() {
-        $('.navbar-offcanvas.in').each(function() {
-          return $(this).height('').removeClass('in');
-        });
+      $(window).on('resize', function () {
+        if ($(document.activeElement).attr('type') !== 'search') {
+          $('.navbar-offcanvas.in').each(function () {
+            return $(this).height('').removeClass('in');
+          });
+          return $('.offcanvas-toggle').removeClass('is-open');
+        }
         $('.offcanvas-toggle').removeClass('is-open');
         return $('body').removeClass('offcanvas-stop-scrolling');
       });

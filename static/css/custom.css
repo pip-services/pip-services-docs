@@ -105,20 +105,25 @@ a:hover {
     border-color: var(--MENU-SECTION-HR-color);
 }
 
+.code-bg {
+    background-color: #f8f9fa;
+}
+
 .copy-code-button {
     color: #B3C4D7;
-    background-color: inherit;
+    background-color: #f8f9fa;
     border-color: #272822;
     border: 0px solid;
-    border-radius: 3px 3px 0px 0px;
+    /* border-radius: 3px 3px 0px 0px; */
     
 
     /* right-align */
     display: block;
     margin-left: auto;
     margin-right: 0;
+    padding: 0.7rem 0.7rem 0rem 0rem;
 
-    margin-bottom: -20px;
+    /* margin-bottom: -20px; */
     /* padding: 3px 8px; */
     /* font-size: 0.8em; */
 }

@@ -5,6 +5,9 @@ function addCopyButtons(clipboard) {
         button.type = 'button';
         button.innerHTML = `<i class="fa fa-clone" ></i>`
         // button.innerText = 'Copy';
+        var div = document.createElement('div');
+        div.setAttribute('class', 'code-bg');
+        div.appendChild(button);
 
         button.addEventListener('click', function () {
             clipboard.writeText(codeBlock.textContent).then(
@@ -27,9 +30,9 @@ function addCopyButtons(clipboard) {
         var pre = codeBlock.parentNode;
         if (pre.parentNode.classList.contains('highlight')) {
             var highlight = pre.parentNode;
-            highlight.childNodes[0].insertBefore(button, highlight.childNodes[0].childNodes[0]);
+            highlight.insertBefore(div, highlight.childNodes[0]);
         } else {
-            pre.childNodes[0].insertBefore(button, pre.childNodes[0].childNodes[0]);
+            pre.insertBefore(div, pre.childNodes[0]);
         }
     });
 }

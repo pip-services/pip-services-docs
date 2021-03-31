@@ -13015,7 +13015,8 @@ readers do not read off random characters that represent icons */
   padding: 0; }
   .td-content .highlight pre {
     margin: 0;
-    padding: 1rem; }
+    padding: 1rem;
+    padding-top: 0rem; }
 
 .td-content p code, .td-content li > code, .td-content table code {
   color: inherit;

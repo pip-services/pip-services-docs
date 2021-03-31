@@ -1,4 +1,6 @@
 <script>
+  document.addEventListener("readystatechange", setArrows);
+
   function setArrows(){
     var activeItem = document.getElementsByClassName('td-sidebar-nav-active-item')[0]
     var curEl = activeItem;
@@ -22,8 +24,6 @@
       curEl = curEl.parentElement
    }
  }
-
-  document.addEventListener("readystatechange", setArrows);
 </script>
 
 {{/* We cache this partial for bigger sites and set the active class client side. */}}
@@ -37,18 +37,11 @@
     </button>
   </form>
   {{ else }}
-  <div id="content-mobile">
-  <form class="td-sidebar__search d-flex align-items-center">
-    {{ partial "search-input.html" . }}
-    {{ if not .IsHome }}
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-    {{ end }}
-  </form>
-  </div>
+
   <div id="content-desktop"></div>
   {{ end }}
-  <nav class="collapse td-sidebar-nav p-0" id="td-section-nav">
+  
+  <nav class="collapse td-sidebar-nav p-0 navbar navbar-default" role="navigation" id="td-section-nav">
     {{ if  (gt (len .Site.Home.Translations) 0) }}
     <div class="nav-item dropdown d-block d-lg-none">
       {{ partial "navbar-lang-selector.html" . }}
@@ -58,9 +51,19 @@
     {{ $ulNr := 0 }}
     {{ $ulShow := cond (isset .Site.Params.ui "ul_show") .Site.Params.ui.ul_show 1 }}
     {{ $sidebarMenuTruncate := cond (isset .Site.Params.ui "sidebar_menu_truncate") .Site.Params.ui.sidebar_menu_truncate 50 }}
-    <ul class="td-sidebar-nav__section p-0 md-3 ul-{{ $ulNr }}">
-      {{ template "section-tree-nav-section" (dict "CurrentSection" .CurrentSection "rootSectionName" (index (split .CurrentSection.URL "/") 1) "Section" .Section "FirstSection" .FirstSection "page" . "section" $navRoot "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" (add $ulShow 1)) }}
-    </ul>
+    <div class="container-fluid pr-0 pl-0">
+      <div class="nav navbar-nav navbar-offcanvas navbar-offcanvas-touch" id="js-bootstrap-offcanvas"
+      style="padding-left: 0px; padding-right: 0px;">
+        <ul class="td-sidebar-nav__section p-0 md-3 ul-{{ $ulNr }}">
+          {{ template "section-tree-nav-section" (dict "CurrentSection" .CurrentSection "rootSectionName" (index (split
+          .CurrentSection.URL "/") 1) "Section" .Section "FirstSection" .FirstSection "page" . "section" $navRoot
+          "shouldDelayActive" $shouldDelayActive "sidebarMenuTruncate" $sidebarMenuTruncate "ulNr" $ulNr "ulShow" (add $ulShow
+          1)) }}
+        </ul>
+      </div>
+    </div>
+    
+    
   </nav>
 </div>
 {{ define "section-tree-nav-section" }}

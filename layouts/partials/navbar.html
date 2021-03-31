@@ -1,8 +1,39 @@
+<script>
+	//hack to load sidebar tree
+	document.addEventListener("readystatechange", loadTree);
+
+	function loadTree() {
+		var loadbtn = document.getElementById('load-tree')
+		loadbtn.setAttribute('hidden', 'true');
+		$("#load-tree").click()
+	}
+</script>
+
+<button class="btn btn-link td-sidebar__toggle d-md-none" id="load-tree" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="true" aria-label="Toggle section navigation"></button>
+
 {{ $cover := .HasShortcode "blocks/cover" }}
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar">
-        <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
-		<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title }}</span>
-	</a>
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar"  role="navigation">
+    
+	<div class="row">		
+		<div class="col-8">
+			<a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+				<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
+					minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
+					}}</span>
+			</a>
+		</div>
+
+		<div class="col-4 pt-2 d-flex align-items-center">
+			
+				{{ if not .IsHome }}
+				<button type="button" class="navbar-toggle offcanvas-toggle pull-right btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-toggle="offcanvas"
+						data-target="#js-bootstrap-offcanvas" style="float:left; color:white;" >
+				</button>
+				{{ end }}
+			
+		</div>
+	</div>
+	
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
 			{{ $p := . }}
@@ -33,6 +64,7 @@
 			{{ end }}
 		</ul>
 	</div>
+	
 	<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 
 	<div class="navbar-nav d-none d-lg-block">{{ partial "get-started-button.html" . }}</div>

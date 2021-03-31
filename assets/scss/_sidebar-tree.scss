@@ -43,6 +43,7 @@
     &__section-title {
         display: block;
         font-weight: $font-weight-medium;
+        width: inherit;
 
         .bold-font {
             font-weight: $font-weight-bold;

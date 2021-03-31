@@ -13170,7 +13170,8 @@ readers do not read off random characters that represent icons */
         padding-left: .5rem; } }
   .td-sidebar-nav__section-title {
     display: block;
-    font-weight: 500; }
+    font-weight: 500;
+    width: inherit; }
     .td-sidebar-nav__section-title .bold-font {
       font-weight: 700; }
     .td-sidebar-nav__section-title .active {

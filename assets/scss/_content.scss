@@ -2,6 +2,10 @@
 // Style Markdown content
 //
 
+@media (max-width: 767px) { 
+  h1, .h1 { font-size: $h1-font-size*0.85; } 
+} 
+
 .td-content {
     order: 1;
 

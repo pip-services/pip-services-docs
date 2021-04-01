@@ -2,6 +2,87 @@
 // Main navbar
 //
 
+.navbar-dark .navbar-nav .nav-link {
+    &:hover, &:focus, &:active {
+        color: $blue;
+    }
+        .active { 
+            color: $blue;
+        }
+}
+
+@media (max-width: 767px) {
+    #navbarNavDropdown {
+        
+        .dropdown-item {
+            &.active,
+            &:active {
+                background-color: white;
+            }
+
+            &:hover, &:focus {
+                    color: $blue;
+            }
+        }
+        
+        .dropdown-menu {
+            background-color: #F5F8FA;
+            border: 0;
+            border-radius: 2px;
+            
+
+            .nav-link {
+                color: $primary;
+
+                &:hover, &:focus, &:active {
+                    color: $blue;
+                    background-color: white;
+                    -webkit-box-shadow: none;
+                    -moz-box-shadow: none;
+                    box-shadow: none;
+                }
+            }
+        }
+
+        #navbarDropdownMenuLink{
+            //padding-left: 12px;
+        }
+
+        .devider {
+            border-left: 1px solid white;
+			height: 20px;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+        }
+
+        .navbar-brand {
+            padding: 0;
+            margin: 0;
+            
+            max-width: 190px;
+            .navbar-logo {
+                > svg {
+                    width: 190px;
+                    max-width:100%;
+                    margin: 0;
+                    padding-right: 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) {
+    #navbarNavDropdown {
+        .mobile-dropdown{
+            display: none;
+        }
+    }
+}
+
+
 .navbar-offcanvas {
     .td-search-input {
         max-width: 85%;

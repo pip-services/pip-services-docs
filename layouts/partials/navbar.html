@@ -14,33 +14,67 @@
 {{ $cover := .HasShortcode "blocks/cover" }}
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar"  role="navigation">
     
-	<div class="row">		
-		
-		<div class="navbar-header">
-			<a class="navbar-brand pt-1 pb-1" href="{{ .Site.Home.RelPermalink }}">
-				<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
-					minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
-					}}</span>
-			</a>
-		</div>
-		
-		<div class="d-flex align-items-center" style="padding-top: 12px;">
-			
-				{{ if not .IsHome }}
-				<button type="button" class="navbar-toggle offcanvas-toggle pull-right btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" data-toggle="offcanvas"
-						data-target="#js-bootstrap-offcanvas" style="float:left; color:white;" >
-				</button>
-				{{ end }}
-		</div>
-	</div>
 	
-	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
-		<ul class="navbar-nav mt-2 mt-lg-0">
+	<div class="collapse navbar-collapse m-auto d-none d-sm-block" id="navbarNavDropdown">
+		<a class="navbar-brand pt-lg-1 pb-lg-1" href="{{ .Site.Home.RelPermalink }}">
+			<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
+				minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
+				}}</span>
+		</a>
+		
+		<div class="devider"></div>
+			<ul class="navbar-nav">
+				<li class="nav-item dropdown mobile-dropdown m-auto ">
+					{{ $activeLinkName := "" }}
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
+						{{ $p := . }}
+						{{ range .Site.Menus.main }}
+						{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
+							{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
+							{{ with .Page }}
+							{{ $active = or $active ( $.IsDescendant .) }}
+							{{ end }}
+							{{ $url := urls.Parse .URL }}
+							{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+							{{ if $active }} {{ $activeLinkName = .Name }} {{ end }}
+							<a class="nav-link{{if $active }} active{{end}} dropdown-item"
+								href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host
+								$baseurl.Host }}target="_blank" {{ end }}>
+								<span{{if $active }} class="active" {{end}}>
+									{{ .Name }}
+									</span>
+							</a>
+						{{ end }}
+						{{ end }}
+						
+					</div>
+					<a class="nav-link dropdown-toggle lightSwitcher" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+						aria-expanded="false">
+						{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
+					</a>
+				</li>
+
+				<li class="nav-item m-auto d-sm-block">
+					<div class="d-flex align-items-center">
+						{{ if not .IsHome }}
+						<button type="button"
+							class="navbar-toggle offcanvas-toggle pull-right btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars"
+							data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left; color:white;">
+						</button>
+						{{ end }}
+					</div>
+				</li>
+			</ul>
+	</div>
+			
+	<div class="td-navbar-nav-scroll ml-md-auto d-lg-block d-md-block d-none" id="main_navbar">
+		<ul class="navbar-nav mt-lg-0">
 			{{ $p := . }}
 			{{ range .Site.Menus.main }}
 			{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
 			<li class="nav-item mr-4 mb-2 mb-lg-0">				
 				{{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
+				{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
 				{{ with .Page }}
 				{{ $active = or $active ( $.IsDescendant .)  }}
 				{{ end }}
@@ -64,6 +98,8 @@
 			{{ end }}
 		</ul>
 	</div>
+
+	
 	
 	<div class="navbar-nav d-none d-lg-block">{{ partial "search-input.html" . }}</div>
 

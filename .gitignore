@@ -1,4 +1,6 @@
 /public
 /resources
 /idea
+/node_modules
+package-lock.json
 .env

@@ -1,0 +1,25 @@
+{
+  "name": "pip-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "algolia": "atomic-algolia",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "hugo server -F -D",
+    "build": "hugo && npm run algolia"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banalna/hugo-docs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/banalna/hugo-docs/issues"
+  },
+  "homepage": "https://github.com/banalna/hugo-docs#readme",
+  "devDependencies": {
+    "atomic-algolia": "^0.3.19"
+  }
+}

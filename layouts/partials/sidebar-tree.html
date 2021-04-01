@@ -6,7 +6,7 @@
     var curEl = activeItem;
 
     while (true) {
-      if (curEl.parentElement === null || curEl.parentElement === undefined) { break; }
+      if ( curEl === undefined || curEl.parentElement === null || curEl.parentElement === undefined) { break; }
       if (curEl.classList.contains("td-sidebar-nav__section") && curEl.classList.contains('active-path')) {
         let arrowLeftSide = curEl.getElementsByClassName('arrow')[0]
         let arrowRightSide = curEl.getElementsByClassName('arrow')[1]
@@ -69,7 +69,6 @@
                 {{ partial "search-input.html" . }}
                 
               </form>
-              <hr class="m-0">
             
           </li>
           {{ template "section-tree-nav-section" (dict "CurrentSection" .CurrentSection "rootSectionName" (index (split

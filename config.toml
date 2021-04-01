@@ -17,13 +17,14 @@ enableMissingTranslationPlaceholders = true
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 # Highlighting config
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = 'monokailight' 
 pygmentsCodeFences = true
-pygmentsUseClasses = true
+pygmentsUseClasses = false
 # Use the new Chroma Go highlighter in Hugo.
 pygmentsUseClassic = false
 #pygmentsOptions = "linenos=table"
-# See https://help.farbox.com/pygments.html
-pygmentsStyle = "tango"
+
 
 # Mounts
 #[module]

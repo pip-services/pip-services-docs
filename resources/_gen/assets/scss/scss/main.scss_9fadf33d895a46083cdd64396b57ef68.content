@@ -13059,7 +13059,8 @@ readers do not read off random characters that represent icons */
     color: #81C7F9; }
   #navbarNavDropdown .dropdown-menu {
     background-color: #F5F8FA;
-    border: 0; }
+    border: 0;
+    border-radius: 2px; }
     #navbarNavDropdown .dropdown-menu .nav-link {
       color: #2C4154; }
       #navbarNavDropdown .dropdown-menu .nav-link:hover, #navbarNavDropdown .dropdown-menu .nav-link:focus, #navbarNavDropdown .dropdown-menu .nav-link:active {

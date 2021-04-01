@@ -1,5 +1,5 @@
 <script>
-	//hack to load sidebar tree
+	// hack to load sidebar tree
 	document.addEventListener("readystatechange", loadTree);
 
 	function loadTree() {
@@ -7,7 +7,25 @@
 		loadbtn.setAttribute('hidden', 'true');
 		$("#load-tree").click()
 	}
+
 </script>
+
+<style type="text/css">
+
+#shadow {
+	background: #000;
+	opacity: 0.3;
+	filter: alpha(opacity=90);
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 100;
+	display: none;
+}
+
+</style>
 
 <button class="td-sidebar__toggle d-none" id="load-tree" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="true" aria-label="Toggle section navigation"></button>
 
@@ -25,8 +43,12 @@
 		<div class="devider"></div>
 			<ul class="navbar-nav">
 				<li class="nav-item dropdown mobile-dropdown m-auto ">
+
+					<!--shadow block-->
+					<div id="shadow"></div>
+
 					{{ $activeLinkName := "" }}
-					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
+					<div class="dropdown-menu pt-0 pb-0" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
 						{{ $p := . }}
 						{{ range .Site.Menus.main }}
 						{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
@@ -48,7 +70,7 @@
 						{{ end }}
 						
 					</div>
-					<a class="nav-link dropdown-toggle lightSwitcher" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
 						{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
 					</a>

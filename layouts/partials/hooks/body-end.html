@@ -2,18 +2,36 @@
 <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <link rel="stylesheet" href="/css/algolia.css">
 <script>
+  // fix docsearch bug with inputSelector
+  function delHiddenLgSearch() {
+    for (var navEl of document.getElementsByClassName('navbar-nav')) {
+      if (navEl.getElementsByClassName('td-search-input').length > 0) {
+        for (var search of navEl.getElementsByClassName('td-search-input')) {
+          var style = window.getComputedStyle(navEl)
+          console.log(style['display']);
+          if (navEl.classList.contains('d-lg-block') && style['display'] === 'none') {
+            search.remove();
+          }
+        }
+      }
+    }
+  }
+
+  delHiddenLgSearch();
+  
   docsearch({
-    // Your apiKey and indexName will be given to you once
-    // we create your config
-    apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
-    indexName: 'pip_docs_test',
-    appId: 'ETKGUND67W',
-    // Replace inputSelector with a CSS selector
-    // matching your search input
-    inputSelector: '.td-search-input',
-    // Set debug to true to inspect the dropdown
-    debug: false,
+      // Your apiKey and indexName will be given to you once
+      // we create your config
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
+      indexName: 'pip_docs_test',
+      appId: 'ETKGUND67W',
+      // Replace inputSelector with a CSS selector
+      // matching your search input
+      inputSelector: '.td-search-input',
+      // Set debug to true to inspect the dropdown
+      debug: false,
   });
+
 </script>
 {{ end }}
 

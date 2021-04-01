@@ -11,7 +11,7 @@
       .Lang "lastmod" .Lastmod.UTC.Unix "permalink" .Permalink "publishdate" 
       .PublishDate "readingtime" .ReadingTime "relpermalink" 
       .RelPermalink "summary" .Summary "title" .Title "type" 
-      .Type "url" .URL "weight" .Weight "wordcount" 
+      .Type "url" (add "/hugo-docs" .URL) "weight" .Weight "wordcount" 
       .WordCount "section" .Section "tags" .Params.Tags "categories" 
       .Params.Categories "authors" .Params.Authors
       "lvl0" .Title "lvl1" .Description "lvl2" .Section "lvl3" .Params.Tags "lvl4" .Params.Categories "lvl5" .UniqueID)}}

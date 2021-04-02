@@ -16,7 +16,7 @@
     padding-left: 15px;
     padding-right: 15px;
     z-index: 999;
-    overflow: scroll;
+    overflow: visible;
     -webkit-overflow-scrolling: touch;
     transition: all 0.15s ease-in; }
     .navbar-offcanvas.in {

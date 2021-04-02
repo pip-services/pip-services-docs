@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "CommandSet"
-linkTitle: "CommandSet"
+linkTitle: "CommandSet" 
 ---
 
 Contains a set of commands and events supported by a [commandable](#icommandable) object. The CommandSet supports command interceptors to extend and the command call chain.

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Logger"
-linkTitle: "Logger"
+linkTitle: "Logger" 
 ---
 
 Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.

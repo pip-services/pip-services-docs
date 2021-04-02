@@ -1,5 +1,5 @@
 ---
 type: docs
 title: "Loggers"
-linkTitle: "Loggers"
+linkTitle: "Loggers" 
 ---

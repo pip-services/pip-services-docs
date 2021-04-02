@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Command"
-linkTitle: "Command"
+linkTitle: "Command" 
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 ---
 

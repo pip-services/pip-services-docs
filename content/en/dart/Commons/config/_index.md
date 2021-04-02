@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Config"
-linkTitle: "Config"
+linkTitle: "Config" 
 ---
 
 # Command

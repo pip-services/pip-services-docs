@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Errors"
-linkTitle: "Errors"
+linkTitle: "Errors" 
 ---
 
 # Command

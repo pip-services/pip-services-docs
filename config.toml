@@ -141,6 +141,7 @@ footer_about_disable = false
   #themeVariant = "mine"
   #themeVariant = "green"
   customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
+  customSCSS = ["scss/_algolia.scss"]
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 # gcs_engine_id = "d72aa9b2712488cc3"

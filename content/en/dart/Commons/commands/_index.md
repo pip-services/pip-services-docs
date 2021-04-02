@@ -1,5 +1,5 @@
 ---
 type: docs
 title: "Commands"
-linkTitle: "Commands"
+linkTitle: "Commands" 
 ---

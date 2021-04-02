@@ -29,7 +29,7 @@
 		
 
     p, li, td {
-        font-weight: $font-weight-body-text;
+        font-weight: $font-weight-medium;
     }
 
     > .h1 {
@@ -85,10 +85,12 @@
     }
 
     > blockquote {
+        margin-top: 1rem;
         padding: 0 0 0 1rem;
         margin-bottom: $spacer;
-        color: $gray-600;
+        color: $primary;
         border-left: 6px solid #4BB4FF;
+        font-size: 1.1rem;
     }
 
     > ul li, > ol li {

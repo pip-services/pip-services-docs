@@ -13403,7 +13403,7 @@ nav .navbar-logo > svg {
   .td-content .git-hover:hover > path {
     fill: #d73a49; }
   .td-content p, .td-content li, .td-content td {
-    font-weight: 400; }
+    font-weight: 500; }
   .td-content > .h1 {
     font-weight: 700;
     margin-bottom: 1rem;
@@ -13428,10 +13428,12 @@ nav .navbar-logo > svg {
     margin-bottom: 1rem;
     margin-top: 2rem; }
   .td-content > blockquote {
+    margin-top: 1rem;
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
-    color: #888;
-    border-left: 6px solid #4BB4FF; }
+    color: #2C4154;
+    border-left: 6px solid #4BB4FF;
+    font-size: 1.1rem; }
   .td-content > ul li, .td-content > ol li {
     margin-bottom: .25rem; }
   .td-content strong {

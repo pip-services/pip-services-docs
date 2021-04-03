@@ -7,7 +7,6 @@
       if (navEl.getElementsByClassName('td-search-input').length > 0) {
         for (var search of navEl.getElementsByClassName('td-search-input')) {
           var style = window.getComputedStyle(navEl)
-          console.log(style['display']);
           if (navEl.classList.contains('d-lg-block') && style['display'] === 'none') {
             search.remove();
           }
@@ -21,9 +20,9 @@
   docsearch({
       // Your apiKey and indexName will be given to you once
       // we create your config
-      apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
-      indexName: 'pip_docs_test',
-      appId: 'ETKGUND67W',
+      apiKey: '3d05087a8e879e0b582e34bb08ff2715', //'6974095177303d4ec7cb2a2d7c6f051a',
+      indexName: 'pipservices', //'pip_docs_test',
+      //appId: 'ETKGUND67W',
       // Replace inputSelector with a CSS selector
       // matching your search input
       inputSelector: '.td-search-input',
@@ -33,6 +32,3 @@
 
 </script>
 {{ end }}
-
-<script src="/js/copy-code-button.js"></script>
-<script src="/js/fade-light.js"></script>

@@ -13046,6 +13046,18 @@ readers do not read off random characters that represent icons */
   background-color: inherit;
   font-size: 0; }
 
+#shadow {
+  background: #000;
+  opacity: 0.3;
+  filter: alpha(opacity=90);
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none; }
+
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:active {
   color: #81C7F9; }
 

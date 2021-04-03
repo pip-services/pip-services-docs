@@ -1,30 +1,3 @@
-<script>
-	// hack to load sidebar tree
-	document.addEventListener("readystatechange", loadTree);
-
-	function loadTree() {
-		var loadbtn = document.getElementById('load-tree');
-		loadbtn.setAttribute('hidden', 'true');
-		$("#load-tree").click();
-	}
-
-</script>
-
-<style type="text/css">
-#shadow {
-	background: #000;
-	opacity: 0.3;
-	filter: alpha(opacity=90);
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 100;
-	display: none;
-}
-</style>
-
 <button class="td-sidebar__toggle d-none" id="load-tree" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="true" aria-label="Toggle section navigation"></button>
 
 {{ $cover := .HasShortcode "blocks/cover" }}
@@ -67,7 +40,7 @@
 						{{ end }}
 						
 					</div>
-					<a class="nav-link dropdown-toggle" onclick="fade()" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false">
 						{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
 					</a>

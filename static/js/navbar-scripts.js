@@ -23,9 +23,11 @@ function fadeBg(event) {
 }
 
 function hideAlgoliaPopUp(el) {
-    if (!el.target.classList.contains('algolia-autocomplete') && el.target.getAttribute('type') !== 'search') {
-        let autocompleteEl = document.getElementsByClassName('ds-dropdown-menu')[0];
-        autocompleteEl.style.display = 'none';
+    if (document.getElementsByClassName('algolia-autocomplete').length > 0){
+        if (!el.target.classList.contains('algolia-autocomplete') && el.target.getAttribute('type') !== 'search') {
+            let autocompleteEl = document.getElementsByClassName('ds-dropdown-menu')[0];
+            autocompleteEl.style.display = 'none';
+        }
     }
 }
 

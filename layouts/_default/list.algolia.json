@@ -14,7 +14,7 @@
       .Type "url" (add "/hugo-docs" .URL) "weight" .Weight "wordcount" 
       .WordCount "section" .Section "tags" .Params.Tags "categories" 
       .Params.Categories "authors" .Params.Authors
-      "lvl0" .Title "lvl1" .Description "lvl2" .Section "lvl3" .Params.Tags "lvl4" .Params.Categories "lvl5" .UniqueID)}}
+      "lvl0" .Title "lvl1" .Description "lvl2" .Section "lvl3" .Keywords "lvl4" .Params.Tags "lvl5" "")}}
 
   {{- end -}}
 {{- end -}}

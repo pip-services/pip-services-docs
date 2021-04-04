@@ -77,8 +77,8 @@ pygmentsUseClassic = false
     weight = -100
 
   [[menu.main]]
-    identifier = "Net"
-    name = "Net"
+    identifier = ".Net"
+    name = ".Net"
     # pre = "<i class='fa fa-heart'></i>"
     url = "net/"
     weight = -90

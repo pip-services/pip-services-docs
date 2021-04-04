@@ -16,16 +16,32 @@
   }
 
   delHiddenLgSearch();
-  
+ 
   docsearch({
       // Your apiKey and indexName will be given to you once
       // we create your config
-      apiKey: '3d05087a8e879e0b582e34bb08ff2715', //'6974095177303d4ec7cb2a2d7c6f051a',
-      indexName: 'pipservices', //'pip_docs_test',
-      //appId: 'ETKGUND67W',
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a', //'3d05087a8e879e0b582e34bb08ff2715',
+      indexName: 'pip_docs_test', //'pipservices',
+      appId: 'ETKGUND67W',
       // Replace inputSelector with a CSS selector
       // matching your search input
       inputSelector: '.td-search-input',
+
+      transformData: function (hits) {
+      // Filter by language
+
+        hits = hits.filter((item)=>{
+          let hitLangPage = item['dir'].split('\\')[0].toLowerCase();
+          let tmpInd = document.location.pathname.split('/').indexOf(hitLangPage);
+          let curLangPage = tmpInd > -1 ? document.location.pathname.split('/')[tmpInd].toLowerCase() : '';
+          
+          return hitLangPage === curLangPage;
+        })
+
+        return hits
+      },
+
+
       // Set debug to true to inspect the dropdown
       debug: true,
   });

@@ -37,9 +37,7 @@ function hideAlgoliaPopUp(el) {
     }
 }
 
-localStorage['openNav'] = true;
-
-function openNavState(event) {
+function saveNavState(event) {
     let pressedEl = event.target
     if (pressedEl.id == 'load-tree') { return; }
     if (pressedEl.classList.contains('nav-item-tree') || pressedEl.parentElement.classList.contains('nav-item-tree') || pressedEl.parentElement.parentElement.classList.contains('nav-item-tree'))
@@ -48,7 +46,7 @@ function openNavState(event) {
         localStorage['openNav'] = false;
 }
 
-document.body.addEventListener('click', openNavState);
+document.body.addEventListener('click', saveNavState);
 
 document.body.addEventListener("click", hideAlgoliaPopUp);
 document.body.addEventListener('click', fadeBg);

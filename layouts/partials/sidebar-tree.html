@@ -98,13 +98,19 @@
   {{ $withChild := gt (len $pages) 0 }}
   {{ $mid := printf "m-%s" ($s.RelPermalink | anchorize) }}
   {{ $show := cond (or (and (gt (len (split $p.URL "/")) (len (split .CurrentSection.URL "/"))) 
-                        (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2))) 
+                        (eq (index (split $p.URL "/") 2) (index (split $s.URL "/") 2))
+                          (or 
+                            (eq (index (split $p.URL "/") 3) (index (split $s.URL "/") 3))
+                            (lt (len (split $p.URL "/")) 3)
+                          )
+                        ) 
                         (and (eq (index (split $s.URL "/") 1) $rootSectionName) (lt (len (split $s.URL "/")) 5)) 
                         (lt $ulNr $ulShow) $activePath 
                         (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
                         (and (not $shouldDelayActive) (eq $s.Parent $p)) 
                         (not $p.Site.Params.ui.sidebar_menu_compact)) 
                         true false }}
+ 
 
   {{ if and (not (eq .section.Name "Get Started")) (not ( eq .section.Name "search")) }}
   

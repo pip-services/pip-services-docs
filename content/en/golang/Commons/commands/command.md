@@ -33,6 +33,7 @@ if (err) {
 
 ### Funcs
 
+#### NewCommand
 > func NewCommand(name [string](https://pkg.go.dev/builtin#string), schema [validate.ISchema](../../validate/ischema),
     function func(correlationId string, args *[run.Parameters](../../run/parameters)) (interface{}, [error](https://pkg.go.dev/builtin#error))) *[Command]()
 
@@ -46,6 +47,7 @@ the function to be executed by this command.
 
 - Returns *[Command]()
 
+#### Execute
 > func (c *Command) Execute(correlationId [string](https://pkg.go.dev/builtin#string), args *[run.Parameters](../../run/parameters)) (interface{}, [error](https://pkg.go.dev/builtin#error))
 
 Executes the command. Before execution it validates args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback.
@@ -55,19 +57,19 @@ Executes the command. Before execution it validates args using the defined schem
 
 - Returns (interface{}, [error](https://pkg.go.dev/builtin#error))
 
-
+#### GetSchema
 > func (c *[Command]()) GetSchema() [validate.ISchema](../../validate/ischema)
 
 GetSchema methods return validation schema for this command
 
-
+#### Name
 > func (c *[Command]()) Name() [string](https://pkg.go.dev/builtin#string)
 
 Gets the command name.
 
 - Returns [string](https://pkg.go.dev/builtin#string) - the name of this command.
 
-
+#### Validate
 > func (c *Command) Validate(args *run.Parameters) []\*[validate.ValidationResult](../../validate/validationresult)
 
 Validates the command args before execution using the defined schema.

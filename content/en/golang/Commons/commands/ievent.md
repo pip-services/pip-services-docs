@@ -20,23 +20,27 @@ see [IEventListener](../ieventlistener)
 
 ### Funcs
 
+#### Name
 > Name() [string](https://pkg.go.dev/builtin#string)
 
 Gets the event name.
 - Returns [string](https://pkg.go.dev/builtin#string) the name of the event.
 
+#### Listeners
 > Listeners() [][IEventListener](../ieventlistener)
 
 Gets all subscribed listeners.
 
 - Returns [][IEventListener](../ieventlistener) a list of listeners.
 
+#### AddListener
 > AddListener(listener [IEventListener](../ieventlistener))
 
 Adds a listener to receive notifications for this event.
 
 - listener: [IEventListener](../ieventlistener) the listener reference to add.
 
+#### RemoveListener
 > RemoveListener(listener [IEventListener](../ieventlistener))
 
 Removes a listener, so that it no longer receives notifications for this event.

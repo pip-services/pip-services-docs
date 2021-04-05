@@ -45,12 +45,14 @@ type MyDataCommandSet {
 
 ### Funcs
 
+#### NewCommandSet
 > func NewCommandSet() *[CommandSet]()
 
 Creates an empty CommandSet object. 
 
 - Returns *[CommandSet]()
 
+#### AddCommand
 > func (c *[CommandSet]()) AddCommand(command [ICommand](../icommand))
 
 Adds a command to this command set. 
@@ -59,21 +61,25 @@ Adds a command to this command set.
 
 see [ICommand](../icommand)
 
+#### AddCommandSet
 > func (c *[CommandSet]()) AddCommandSet(commandSet *[CommandSet]())
 
 Adds all of the commands and events from specified command set into this one.
 
 - commands: [][ICommand](../icommand) the array of commands to add.
 
+#### AddEvent
 > func (c *[CommandSet]()) AddEvent(event [IEvent](../ievent))
 
 - Adds an event to this command set. 
 see [IEvent](../ievent)
 
+#### AddEvents
 > func (c *[CommandSet]()) AddEvents(events [][IEvent](../ievent))
 
 - events: [][IEvent](../ievent) the array of events to add.
 
+#### AddInterceptor
 > func (c *[CommandSet]()) AddInterceptor(interceptor [ICommandInterceptor](../icommandinterceptor))
 
 Adds a command interceptor to this command set. 
@@ -82,6 +88,7 @@ Adds a command interceptor to this command set.
 
 see [ICommandInterceptor](../icommandinterceptor)
 
+#### AddListener
 > func (c *[CommandSet]()) AddListener(listener [IEventListener](../ieventlistener))
 
 Adds a listener to receive notifications on fired events. 
@@ -90,6 +97,7 @@ Adds a listener to receive notifications on fired events.
 
 see [IEventListener](../ieventlistener)
 
+#### Commands
 > func (c *[CommandSet]()) Commands() [][ICommand](../icommand)
 
 Gets all commands registered in this command set. 
@@ -98,6 +106,7 @@ Gets all commands registered in this command set.
 
 see [ICommand](../icommand) 
 
+#### Events
 > func (c *[CommandSet]()) Events() [][IEvent](../ievent)
 
 Gets all events registred in this command set. 
@@ -106,6 +115,7 @@ Gets all events registred in this command set.
 
 see [IEvent](../ievent) 
 
+#### Execute
 > func (c *[CommandSet]()) Execute(correlationId [string](https://pkg.go.dev/builtin#string), commandName [string](https://pkg.go.dev/builtin#string), args *[run.Parameters](../../run/parameters)) (result interface{}, err [error](https://pkg.go.dev/builtin#error))
 
 Executes a command specificed by its name.
@@ -120,6 +130,7 @@ Executes a command specificed by its name.
 
 see [ICommand](icommand), [Parameters](../../run/parameters)
 
+#### FindCommand
 > func (c *[CommandSet]()) FindCommand(commandName [string](https://pkg.go.dev/builtin#string)) [ICommand](icommand)
 
 Searches for a command by its name. 
@@ -129,6 +140,7 @@ Searches for a command by its name.
 
 see [ICommand](icommand)
 
+#### FindEvent
 > func (c *[CommandSet]()) FindEvent(eventName [string](https://pkg.go.dev/builtin#string)) [IEvent](../ievent)
 
 Searches for an event by its name in this command set. 
@@ -138,6 +150,7 @@ Searches for an event by its name in this command set.
 
 see [IEvent](../ievent)
 
+#### Notify
 > func (c *[CommandSet]()) Notify(correlationId [string](https://pkg.go.dev/builtin#string), eventName [string](https://pkg.go.dev/builtin#string), args *[run.Parameters](../../run/parameters))
 
 Fires event specified by its name and notifies all registered listeners
@@ -146,6 +159,7 @@ Fires event specified by its name and notifies all registered listeners
 - eventName: [string](https://pkg.go.dev/builtin#string) the name of the event that is to be fired.
 - args: [Parameters](../../run/parameters) the event arguments (parameters).
 
+#### RemoveListener
 > func (c *[CommandSet]()) RemoveListener(listener [IEventListener](../ieventlistener))
 
 Removes previosly added listener. 
@@ -154,6 +168,7 @@ Removes previosly added listener.
 
 see [IEventListener](../ieventlistener) 
 
+#### Validate
 > func (c *[CommandSet]()) Validate(commandName [string](https://pkg.go.dev/builtin#string), args *[run.Parameters](../../run/parameters)) []\*[validate.ValidationResult](../../validate/validationresult)
 
 Validates args for command specified by its name using defined schema. 

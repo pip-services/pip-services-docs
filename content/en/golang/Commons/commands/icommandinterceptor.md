@@ -18,6 +18,7 @@ see [ICommand](../icommand), [InterceptedCommand](../interceptedcommand)
 
 ### Funcs
 
+#### Name
 > Name(command [ICommand](../icommand)) [string](https://pkg.go.dev/builtin#string)
 
 Gets the name of the wrapped command.
@@ -27,6 +28,7 @@ Otherwise it shall just delegate the call to the wrapped command.
 - command: [ICommand](../icommand) the next command in the call chain.
 - Returns [string](https://pkg.go.dev/builtin#string) the name of the wrapped command.
 
+#### Execute
 > Execute(correlationId [string](https://pkg.go.dev/builtin#string), command [ICommand](../icommand), args *[run.Parameters](../../run/parameters)) (interface{}, [error](https://pkg.go.dev/builtin#error))
 
 Executes the wrapped command with specified arguments.
@@ -45,6 +47,7 @@ If an exception is raised, then it will be called with the error.
 
 see [Parameters](../../run/parameters)
 
+#### Validate
 > Validate(command [ICommand](../icommand), args *[run.Parameters](../../run/parameters)) []\*[validate.ValidationResult](../../validate/validationresult)
 
 Validates arguments of the wrapped command before its execution.

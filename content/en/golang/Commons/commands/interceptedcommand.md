@@ -46,6 +46,7 @@ loggedCommand = NewInterceptedCommand(logger, command);
 
 ### Funcs
 
+#### NewInterceptedCommand
 > func NewInterceptedCommand(interceptor [ICommandInterceptor](../icommandinterceptor), next [ICommand](../icommand)) *[InterceptedCommand]()
 
 Creates a new InterceptedCommand, which serves as a link in an execution chain. Contains information about the interceptor that is being used and the next command in the chain. 
@@ -55,6 +56,7 @@ Creates a new InterceptedCommand, which serves as a link in an execution chain. 
 
 - Returns *[InterceptedCommand]()
 
+#### Execute
 > func (c *[InterceptedCommand]()) Execute(correlationId [string](https://pkg.go.dev/builtin#string), args *[run.Parameters](../../run/parameters)) (result interface{}, err [error](https://pkg.go.dev/builtin#error))
 
 Executes the next command in the execution chain using the given parameters (arguments). 
@@ -68,10 +70,12 @@ Executes the next command in the execution chain using the given parameters (arg
 
 see [Parameters](../../run/parameters)
 
+#### Name
 > func (c *InterceptedCommand) Name() [string](https://pkg.go.dev/builtin#string)
 
 - Returns [string](https://pkg.go.dev/builtin#string) the name of the command that is being intercepted.
 
+#### Validate
 > func (c *[InterceptedCommand]()) Validate(args *[run.Parameters](../../run/parameters)) []\*[validate.ValidationResult](../../validate/validationresult)
 
 Validates the parameters (arguments) that are to be passed to the command that is next in the execution chain. 

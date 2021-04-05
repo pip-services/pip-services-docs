@@ -31,11 +31,10 @@
       // Filter by language
 
         hits = hits.filter((item)=>{
-          let hitLangPage = item['dir'].split('\\')[0].toLowerCase();
-          let tmpInd = document.location.pathname.split('/').indexOf(hitLangPage);
-          let curLangPage = tmpInd > -1 ? document.location.pathname.split('/')[tmpInd].toLowerCase() : '';
+          let hitLangPage = item['url'].split('/')[4].toLowerCase();
+          let isCorrectHit = document.location.pathname.replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
-          return hitLangPage === curLangPage;
+          return isCorrectHit
         })
 
         return hits

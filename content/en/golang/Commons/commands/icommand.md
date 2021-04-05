@@ -17,12 +17,14 @@ Each command wraps a method or function and allows to call them in uniform and s
 
 ### Funcs
 
+#### Name
 > Name() [string](https://pkg.go.dev/builtin#string)
 
 Gets the command name.
 
 - Returns [string](https://pkg.go.dev/builtin#string) the command name.
 
+#### Validate
 > Validate(args *[run.Parameters](../../run/parameters)) []\*[validate.ValidationResult](../../validate/validationresult)
 
 Validates command arguments before execution using defined schema.

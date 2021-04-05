@@ -31,6 +31,7 @@ func (dc *MyDataController) getCommandSet() CommandSet {
 
 ### Funcs
 
+#### GetCommandSet
 > GetCommandSet() *[CommandSet](../commandset)
 
 Gets a command set with all supported commands and events.

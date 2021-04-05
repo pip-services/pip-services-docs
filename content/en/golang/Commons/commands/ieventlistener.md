@@ -36,6 +36,7 @@ event.notify("123", Parameters.FromTuples("param1", "ABC"));
 
 ### Funcs
 
+#### OnEvent
 > OnEvent(correlationId [string](https://pkg.go.dev/builtin#string), e [IEvent](../ievent), value *[run.Parameters](../../run/parameters))
 
 A method called when events this listener is subscrubed to are fired.

@@ -4,7 +4,7 @@
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-column flex-md-row td-navbar"  role="navigation">
 
 	<div class="collapse navbar-collapse m-auto d-none d-sm-block" id="navbarNavDropdown">
-		<a class="navbar-brand pt-lg-1 pb-lg-1" href="{{ .Site.Home.RelPermalink }}">
+		<a class="navbar-brand pt-lg-2 pb-lg-1" href="{{ .Site.Home.RelPermalink }}">
 			<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
 				minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
 				}}</span>
@@ -48,12 +48,12 @@
 
 				<li class="nav-item m-auto d-sm-block">
 					<div class="d-flex align-items-center">
-						{{ if not .IsHome }}
+						
 						<button type="button"
 							class="navbar-toggle offcanvas-toggle pull-right btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars"
 							data-toggle="offcanvas" data-target="#js-bootstrap-offcanvas" style="float:left; color:white;">
 						</button>
-						{{ end }}
+						
 					</div>
 				</li>
 			</ul>

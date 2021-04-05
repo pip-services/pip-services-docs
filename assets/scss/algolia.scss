@@ -222,22 +222,26 @@
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.2), 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
+
+
+
+@media (max-width: 768px) and (max-width: 992px) {
+  .algolia-autocomplete .ds-dropdown-menu {
+    overflow-y: auto;
+    max-width: 165px;
+    min-width: 150px;
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
   .algolia-autocomplete .ds-dropdown-menu {
     overflow-y: auto;
     max-width: 350px;
     min-width: 250px;
+    display: flex;
   }
 }
-
-@media (min-width: 768px) {
-  .algolia-autocomplete .ds-dropdown-menu {
-    overflow-y: auto;
-    max-width: 200px;
-    min-width: 150px;
-  }
-}
-
 
 .algolia-autocomplete .ds-dropdown-menu:before {
   display: block;
@@ -325,7 +329,7 @@
 .algolia-autocomplete .algolia-docsearch-suggestion--content {
   display: block;
   float: right;
-  width: 70%;
+  width: 100%;
   position: relative;
   padding: 5.33333px 0 5.33333px 10.66667px;
   cursor: pointer;
@@ -334,7 +338,7 @@
 .algolia-autocomplete .algolia-docsearch-suggestion--content:before {
   content: '';
   position: absolute;
-  display: block;
+  display: none;
   top: 0;
   height: 100%;
   width: 1px;
@@ -434,13 +438,13 @@
 
 @media all and (min-width: 768px) {
   .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
-    display: block;
+    display: none;
   }
 }
 
 @media all and (max-width: 768px) {
   .algolia-autocomplete .algolia-docsearch-suggestion .algolia-docsearch-suggestion--subcategory-column {
-    display: inline-block;
+    display: none;
     width: auto;
     text-align: left;
     float: left;

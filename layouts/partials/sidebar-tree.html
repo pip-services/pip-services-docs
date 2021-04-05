@@ -138,7 +138,7 @@
           </div>
           {{ $padding := mul 10 (sub .ulNr 2) }}
           <div class="col-7 {{ if not (gt $padding 0) }}bold-font{{ end }}" 
-            style="padding-left: {{ if gt $padding 0 }} {{ $padding }} {{ end }}px;">
+            style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
             {{ $s.LinkTitle }}
           </div>
           <div class="arrow pl-4 col-3">

@@ -8,8 +8,14 @@ function loadTree() {
     loadbtn.click();
 
     if (localStorage['openNav'] === 'true') {
-        if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in'))
+        if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')){
+            let speedTransition = document.getElementsByClassName('navbar-offcanvas')[0];
+            let _tmp = [...speedTransition.style];
+
+            speedTransition.style += 'transition: 0s;'
             document.getElementById('js-bootstrap-offcanvas').classList.add('in');
+            speedTransition.style.transition = _tmp
+        }
     }
 }
 
@@ -30,6 +36,19 @@ function hideAlgoliaPopUp(el) {
         }
     }
 }
+
+localStorage['openNav'] = true;
+
+function openNavState(event) {
+    let pressedEl = event.target
+    if (pressedEl.id == 'load-tree') { return; }
+    if (pressedEl.classList.contains('nav-item-tree') || pressedEl.parentElement.classList.contains('nav-item-tree') || pressedEl.parentElement.parentElement.classList.contains('nav-item-tree'))
+        localStorage['openNav'] = true;
+    else
+        localStorage['openNav'] = false;
+}
+
+document.body.addEventListener('click', openNavState);
 
 document.body.addEventListener("click", hideAlgoliaPopUp);
 document.body.addEventListener('click', fadeBg);

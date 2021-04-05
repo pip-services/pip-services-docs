@@ -112,7 +112,7 @@
                         true false }}
  
 
-  {{ if and (not (eq .section.Name "Get Started")) (not ( eq .section.Name "search")) }}
+  {{ if not ( eq .section.Name "search") }}
   
   {{ if and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName)}}
     <li

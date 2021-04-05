@@ -61,12 +61,12 @@ pygmentsUseClassic = false
 
 [menu]
 
-  [[menu.main]]
-    identifier = "Home"
-    name = "Home"
-    # pre = "<i class='fa fa-heart'></i>"
-    url = "http://pipservices.org/"
-    weight = -110
+  #[[menu.main]]
+  #  identifier = "Home"
+  #  name = "Home"
+  #  # pre = "<i class='fa fa-heart'></i>"
+  #  url = "http://pipservices.org/"
+  #  weight = -110
 
 
   [[menu.main]]
@@ -111,11 +111,11 @@ pygmentsUseClassic = false
     url = "java/"
     weight = -50
 
-  [[menu.main]]
-    identifier = "Get Started"
-    name = "Get Started"
-    url = "/get_started"
-    weight = -40
+  #[[menu.main]]
+  #  identifier = "Get Started"
+  #  name = "Get Started"
+  #  url = "/get_started"
+  #  weight = -40
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 prism_syntax_highlighting = true

@@ -113,8 +113,13 @@
  
 
   {{ if not ( eq .section.Name "search") }}
-  
-  {{ if and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName)}}
+  <!-- write new sections here -->
+  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName))
+         ( eq .section.Name "search") 
+         ( eq .section.Name "Getting Started") 
+         ( eq .section.Name "Recipes") 
+         ( eq .section.Name "Tutorials")
+  }} 
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
       id="{{ $mid }}-li">
@@ -131,7 +136,9 @@
               {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
             {{ end }}
           </div>
-          <div class="col-7" style="padding-left: {{ mul 10 (sub .ulNr 2) }}px;">
+          {{ $padding := mul 10 (sub .ulNr 2) }}
+          <div class="col-7 {{ if not (gt $padding 0) }}bold-font{{ end }}" 
+            style="padding-left: {{ if gt $padding 0 }} {{ $padding }} {{ end }}px;">
             {{ $s.LinkTitle }}
           </div>
           <div class="arrow pl-4 col-3">

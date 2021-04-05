@@ -8,6 +8,10 @@ function loadTree() {
     loadbtn.click();
 
     if (localStorage['openNav'] === 'true') {
+        // check is the last el
+        let arrwos = document.getElementsByClassName('td-sidebar-nav-active-item')[0].getElementsByClassName('arrow')
+        if (arrwos[0].innerHTML == false && arrwos[1].innerHTML == false) { return; }
+
         if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')){
             let speedTransition = document.getElementsByClassName('navbar-offcanvas')[0];
             let _tmp = [...speedTransition.style];

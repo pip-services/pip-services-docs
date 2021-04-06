@@ -13130,7 +13130,7 @@ nav .navbar-logo > svg {
 
 .td-navbar {
   background: #2C4154;
-  min-height: 4rem;
+  min-height: 3.7rem;
   padding: 0;
   margin: 0;
   z-index: 32; }

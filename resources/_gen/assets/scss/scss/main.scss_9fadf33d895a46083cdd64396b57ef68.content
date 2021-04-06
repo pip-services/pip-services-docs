@@ -13581,8 +13581,11 @@ nav .navbar-logo > svg {
     border-color: #403F4C; }
 
 footer {
-  min-height: 150px; }
+  min-height: 120px; }
   @media (max-width: 991.98px) {
+    footer {
+      min-height: 100px; } }
+  @media (max-width: 1199.98px) {
     footer {
       min-height: 200px; } }
 @media (min-width: 768px) {

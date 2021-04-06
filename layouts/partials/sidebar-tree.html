@@ -112,24 +112,25 @@
                         true false }}
  
   <!-- write new sections here -->
-  {{ $anotherSections := slice "search" "Getting Started" "Recipes" "Tutorials" }}
+  {{ $anotherSections := slice "search" "QuickStart" "Recipes" "Tutorials" }}
 
-  {{ $isChildOfanotherSection := false }}
+  {{ $isChildOfNotLangSection := false }}
   {{ $isNotLangSection := false}}
   {{ range $anotherSections}}
     {{ if  eq $.section.Name .}}
       {{ $isNotLangSection = true }}
     {{ end }}
     
-    {{ if and (eq (len (split $.section.URL "/")) 4) (eq (index (split $.section.URL "/") 1) (. | strings.ToLower)) }}
-      {{ $isChildOfanotherSection = true }}
+    {{ if and ( or (eq (len (split $.section.URL "/")) 4) (eq (len (split $.section.URL "/")) 5)) 
+          (eq (index (split $.section.URL "/") 1) (. | strings.ToLower)) }}
+      {{ $isChildOfNotLangSection = true }}
     {{ end }}
   {{ end }}
 
   {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName)) $isNotLangSection }} 
   
   {{ $ulNr := .ulNr }}
-  {{ if or $isNotLangSection $isChildOfanotherSection }}
+  {{ if and (or $isNotLangSection $isChildOfNotLangSection) (gt .ulNr 1) }}
     {{ $ulNr = add .ulNr 1 }}
   {{ end }}
   
@@ -152,7 +153,7 @@
           {{ $padding := mul 10 (sub $ulNr 2) }}
           
           <div class="col-7 {{ if $isNotLangSection }}bold-font{{ end }}" 
-            style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px; {{ if $isChildOfanotherSection }}font-weight: 500;{{ end }}">
+            style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px; {{ if $isChildOfNotLangSection }}font-weight: 500;{{ end }}">
             {{ $s.LinkTitle }}
           </div>
           <div class="arrow pl-4 col-3">

@@ -13416,6 +13416,9 @@ nav .navbar-logo > svg {
     fill: #d73a49; }
   .td-content p, .td-content li, .td-content td {
     font-weight: 500; }
+    .td-content p img, .td-content li img, .td-content td img {
+      margin: 0 auto 0;
+      display: block; }
   .td-content > .h1 {
     font-weight: 700;
     margin-bottom: 1rem;

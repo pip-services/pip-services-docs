@@ -30,6 +30,11 @@
 
     p, li, td {
         font-weight: $font-weight-medium;
+
+        img {
+            margin: 0 auto 0;
+            display: block;
+        }
     }
 
     > .h1 {

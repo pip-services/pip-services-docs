@@ -22,7 +22,9 @@ The module consists of the following packages:
 - [**Run**](run) - execution framework
 - [**Validate**](validate) - validation framework
 ---
+
 ### Quick links
+
 * [Configuration Pattern](https://www.pipservices.org/recipies/configuration) 
 * [Locator Pattern](https://www.pipservices.org/recipies/references)
 * [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
@@ -30,7 +32,7 @@ The module consists of the following packages:
 * [Data Patterns](https://www.pipservices.org/recipies/memory-persistence)
 * [Contribute](https://www.pipservices.org/community/contribute)
 
-## Use
+### Use
 
 Get the package from the Github repository:
 ```bash

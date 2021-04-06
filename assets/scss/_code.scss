@@ -35,7 +35,7 @@
     pre {
         word-wrap: normal;
         background-color: $gray-100;
-        padding: $spacer;
+        padding: $spacer*0.3 $spacer*0.3 $spacer*0.3 $spacer;
      
 
         > code {

@@ -1,18 +1,18 @@
 <button class="td-sidebar__toggle d-none" id="load-tree" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="true" aria-label="Toggle section navigation"></button>
 
 {{ $cover := .HasShortcode "blocks/cover" }}
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }}flex-sm-column flex-md-row td-navbar"  role="navigation">
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark {{ if $cover}} td-navbar-cover {{ end }} flex-md-row td-navbar"  role="navigation">
 
 	<div class="collapse navbar-collapse  d-none d-sm-block" id="navbarNavDropdown">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item m-auto d-sm-block">
+			<li class="nav-item">
 				<a class="navbar-brand pt-lg-2 pb-lg-1 pt-md-2" href="{{ .Site.Home.RelPermalink }}">
 					<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
 						minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
 						}}</span>
 				</a>
 			</li>
-			<li class="nav-item m-auto d-sm-block"><div class="devider"></div></li>
+			<li class="nav-item m-auto "><div class="devider"></div></li>
 			<li class="nav-item dropdown mobile-dropdown m-auto ">
 				<!--shadow block-->
 				<div id="shadow"></div>
@@ -46,7 +46,7 @@
 			</li>
 		</ul>
 		
-		<ul class="navbar-nav ml-auto">
+		<ul class="navbar-nav ml-auto ">
 			<li class="nav-item">
 				<button type="button"
 					class="navbar-toggle offcanvas-toggle pull-right btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars"

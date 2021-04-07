@@ -193,6 +193,12 @@ nav .navbar-logo > svg  {
         @include placeholder {
             color: $navbar-dark-color;
         }
+
+        &:focus {
+            @include placeholder {
+                color: gray;
+            }
+        }
     }
 
     .dropdown {

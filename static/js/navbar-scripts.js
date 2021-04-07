@@ -8,9 +8,9 @@ function loadTree() {
     loadbtn.click();
 
     if (localStorage['openNav'] === 'true') {
+        if (document.getElementsByClassName('td-sidebar-nav-active-item').length === 0) { return; }
         // check is the last el
         let arrwos = document.getElementsByClassName('td-sidebar-nav-active-item')[0].getElementsByClassName('arrow')
-        if (arrwos[0].innerHTML == false && arrwos[1].innerHTML == false) { return; }
 
         if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')){
             let speedTransition = document.getElementsByClassName('navbar-offcanvas')[0];
@@ -50,8 +50,22 @@ function saveNavState(event) {
         localStorage['openNav'] = false;
 }
 
-document.body.addEventListener('click', saveNavState);
+function showSearch() {
+    var searchBox = document.getElementById("hidden-search");
+    if (searchBox.classList.contains("d-lg-none")) {
+        searchBox.classList.remove("d-lg-none");
+        searchBox.focus();
+    } else {
+        searchBox.classList.add("d-lg-none");
+    }
+}
 
+document.getElementById("search-btn").addEventListener("click", showSearch);
+document.getElementById("hidden-search").addEventListener("blur", (event)=> {
+    event.target.classList.add("d-lg-none");
+});
+
+document.body.addEventListener('click', saveNavState);
 document.body.addEventListener("click", hideAlgoliaPopUp);
 document.body.addEventListener('click', fadeBg);
 document.getElementById('navbarDropdownMenuLink').addEventListener('click', fadeBg);

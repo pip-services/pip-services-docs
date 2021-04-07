@@ -13168,6 +13168,14 @@ nav .navbar-logo > svg {
       color: white; }
     .td-navbar .td-search-input:-ms-input-placeholder {
       color: white; }
+    .td-navbar .td-search-input:focus::-webkit-input-placeholder {
+      color: gray; }
+    .td-navbar .td-search-input:focus:-moz-placeholder {
+      color: gray; }
+    .td-navbar .td-search-input:focus::-moz-placeholder {
+      color: gray; }
+    .td-navbar .td-search-input:focus:-ms-input-placeholder {
+      color: gray; }
   .td-navbar .dropdown {
     min-width: 100px; }
   @media (max-width: 991.98px) {

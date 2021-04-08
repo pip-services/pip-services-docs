@@ -8,17 +8,17 @@ description: >
 ---
 
 The module contains the following packages:
-- **Auth** - authentication credential stores
-- **Build** - basic factories for constructing objects
-- **Cache** - distributed cache
-- **Config** - configuration readers and managers, whose main task is to deliver configuration parameters to the application from wherever they are being stored
-- **Connect** - connection discovery and configuration services
-- **Count** - performance counters
-- **Info** - context info implementations that manage the saving of process information and sending additional parameter sets
-- **Lock** -  distributed lock components
-- **Log** - basic logging components that provide console and composite logging, as well as an interface for developing custom loggers
-- **Test** - minimal set of test components to make testing easier
-- **Component** - the root package
+- [**Auth**](auth) - authentication credential stores
+- [**Build**](build) - basic factories for constructing objects
+- [**Cache**](cache) - distributed cache
+- [**Config**](config) - configuration readers and managers, whose main task is to deliver configuration parameters to the application from wherever they are being stored
+- [**Connect**](connect) - connection discovery and configuration services
+- [**Count**](count) - performance counters
+- [**Info**](info) - context info implementations that manage the saving of process information and sending additional parameter sets
+- [**Lock**](lock) -  distributed lock components
+- [**Log**](log) - basic logging components that provide console and composite logging, as well as an interface for developing custom loggers
+- [**Test**](test) - minimal set of test components to make testing easier
+- [**Component**](component) - the root package
 ---
 ### Quick links
 * [Logging](https://www.pipservices.org/recipies/logging)

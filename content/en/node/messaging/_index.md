@@ -2,6 +2,7 @@
 type: docs
 title: "Messaging"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+no_list: true
 description: > 
     #### Asynchronous Messaging for Node.js  
 

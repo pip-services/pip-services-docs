@@ -111,55 +111,45 @@
                         (not $p.Site.Params.ui.sidebar_menu_compact)) 
                         true false }}
  
+
+  {{ if not ( eq .section.Name "search") }}
   <!-- write new sections here -->
-  {{ $anotherSections := slice "search" "QuickStart" "Recipes" "Tutorials" }}
+  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName))
+         ( eq .section.Name "search") 
+         ( eq .section.Name "Recipes") 
+         ( eq .section.Name "Tutorials")
+  }} 
+  {{ $padding := mul 10 (sub .ulNr 2) }}
 
-  {{ $isChildOfNotLangSection := false }}
-  {{ $isNotLangSection := false}}
-  {{ range $anotherSections}}
-    {{ if  eq $.section.Name .}}
-      {{ $isNotLangSection = true }}
-    {{ end }}
-    
-    {{ if and ( or (eq (len (split $.section.URL "/")) 4) (eq (len (split $.section.URL "/")) 5)) 
-          (eq (index (split $.section.URL "/") 1) (. | strings.ToLower)) }}
-      {{ $isChildOfNotLangSection = true }}
-    {{ end }}
-  {{ end }}
-
-  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) (eq (index (split $s.URL "/") 1) $rootSectionName)) $isNotLangSection }} 
-  
-  {{ $ulNr := .ulNr }}
-  {{ if and (or $isNotLangSection $isChildOfNotLangSection) (gt .ulNr 1) }}
-    {{ $ulNr = add .ulNr 1 }}
-  {{ end }}
-  
-  <li
+    <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
       id="{{ $mid }}-li">
       <span class="{{ if $active }}td-sidebar-nav-active-item{{ end }}{{ if $treeRoot }} tree-root{{ end }}">
+        
         <a href="{{ $s.RelPermalink }}"
-          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{if eq $ulNr 2}} bold-font {{ end }} {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
+          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{if eq .ulNr 2}} bold-font {{ end }} {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
           id="{{ $mid }}">
-        <div class="d-flex justify-content-center align-items-top">
-          <div class="arrow {{ if gt $ulNr 2 }} col-2{{else}}p-0 col-1{{end}}">
-            {{ if and (not $active) (gt $ulNr 2) $withChild }}
+        <div class="d-flex justify-content-center align-items-top" 
+          style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
+
+          
+          <div class="arrow {{ if gt .ulNr 2 }} col-1{{end}}" 
+                {{if not (and (gt .ulNr 2) $withChild) }}style="display: none;"{{end}}>
+            {{ if (not $active)  }}
               {{ with resources.Get "icons/arrow_right.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
-            {{ else if and $active (gt $ulNr 2) $withChild}}
+            {{ else }}
               {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
             {{ end }}
           </div>
-
-          {{ $padding := mul 10 (sub $ulNr 2) }}
           
-          <div class="col-7 {{ if $isNotLangSection }}bold-font{{ end }}" 
-            style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px; {{ if $isChildOfNotLangSection }}font-weight: 500;{{ end }}">
+          <div class="col-8  {{ if not (gt $padding 0) }}bold-font{{ end }}">
             {{ $s.LinkTitle }}
           </div>
-          <div class="arrow pl-4 col-3">
-            {{ if and $active (lt $ulNr 3) $withChild}}
+
+          <div class="arrow  col-2 ">
+            {{ if and $active (lt .ulNr 3) $withChild}}
               {{ with resources.Get "icons/arrow_up.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
-            {{ else if and (not $active) (lt $ulNr 3) $withChild}}
+            {{ else if and (not $active) (lt .ulNr 3) $withChild}}
               {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
             {{ end }}
           </div>
@@ -179,4 +169,5 @@
       </ul>
     {{ end }}
   </li>
+  {{ end }}
 {{ end }}

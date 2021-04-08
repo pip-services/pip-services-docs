@@ -1,0 +1,6 @@
+---
+type: docs
+title: "Build"
+linkTitle: "Build"
+gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+---

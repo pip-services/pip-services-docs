@@ -1,0 +1,38 @@
+<div class="search-page">
+    <div class="input-group mb-3">
+
+        <input class='form-control' id="search-query" placeholder="Search" aria-describedby="search-on-site" />
+
+        <div class="input-group-prepend">
+            <button id='start-search-btn' class="btn" type="button">
+                <i>{{ with resources.Get "icons/search.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}</i>
+            </button>
+        </div>
+        
+    </div>
+
+    <div id="search-results" style="display:none;"></div>
+    <div id="sidebars"></div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js"></script>
+<script src="{{" /js/search.js" | urlize | relURL }}"></script>
+
+<script>
+    function assignQueryParams(event) {
+        if (window.location.search.split('=')[1] === "" || window.location.search.split('=')[1] === undefined) { return; }
+        let searchQuery = decodeURIComponent(window.location.search.split('=')[1]);
+        let searchInput = document.getElementById('search-query');
+        searchInput.value = searchQuery
+
+        searchInput.dispatchEvent(new KeyboardEvent('keyup'));
+    }
+
+    document.getElementById('start-search-btn').addEventListener('click', (event)=> { 
+        let searchInput = document.getElementById('search-query');
+        searchInput.dispatchEvent(new KeyboardEvent('keyup'));
+    });
+    
+    document.addEventListener("DOMContentLoaded", ()=> {setTimeout(assignQueryParams, 100)});
+</script>

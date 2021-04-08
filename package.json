@@ -7,8 +7,8 @@
     "algolia": "atomic-algolia",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "hugo server -F -D",
-    "build": "hugo && npm run algolia",
-    "build:docker": "hugo && docker run -it --env-file=.env -e \"CONFIG=$(cat ./docsearch.json | jq -r tostring)\" algolia/docsearch-scraper"
+    "build:algolia": "hugo && npm run algolia",
+    "build:docker": "hugo && docker run -it --env-file=.env -e \"CONFIG=$(cat ./docsearch.json | jq -r tostring)\" algolia/docsearch-scraper "
   },
   "repository": {
     "type": "git",

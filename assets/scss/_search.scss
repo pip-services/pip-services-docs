@@ -1,5 +1,21 @@
 // Search
 
+.search-page {
+    .input-group {
+        > div > button > i > svg > path {
+            fill: $primary;
+        }
+    }
+
+    #search-results {
+        > div{
+            &:after{
+                border-bottom: 1px solid black;
+            }
+        }
+    }
+}
+
 .td-search-input {
     background: transparent;
     max-width: 90%;

@@ -1,7 +1,7 @@
 {
     "index_name": "pip_docs_test",
     "start_urls": [
-        "https://banalna.github.io/hugo-docs"
+        "https://pip-services.github.io/pip-services-docs/"
     ],
     "selectors": {
         "lvl0": ".content-title",

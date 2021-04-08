@@ -31,6 +31,11 @@
     p, li, td {
         font-weight: $font-weight-medium;
 
+        @include media-breakpoint-down(sm) {
+            word-wrap: break-word;
+        }
+        
+
         img {
             margin: 0 auto 0;
             display: block;

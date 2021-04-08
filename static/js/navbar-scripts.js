@@ -2,7 +2,7 @@
 
 document.addEventListener("readystatechange", loadTree);
 
-function loadTree() {
+function loadTree(event) {
     var loadbtn = document.getElementById('load-tree');
     loadbtn.setAttribute('hidden', 'true');
     loadbtn.click();
@@ -32,9 +32,9 @@ function fadeBg(event) {
         shadowEl.style.display = 'none';
 }
 
-function hideAlgoliaPopUp(el) {
+function hideAlgoliaPopUp(event) {
     if (document.getElementsByClassName('algolia-autocomplete').length > 0){
-        if (!el.target.classList.contains('algolia-autocomplete') && el.target.getAttribute('type') !== 'search') {
+        if (!event.target.classList.contains('algolia-autocomplete') && event.target.getAttribute('type') !== 'search') {
             let autocompleteEl = document.getElementsByClassName('ds-dropdown-menu')[0];
             autocompleteEl.style.display = 'none';
         }
@@ -50,11 +50,12 @@ function saveNavState(event) {
         localStorage['openNav'] = false;
 }
 
-function showSearch() {
+function showSearch(event) {
     var searchBox = document.getElementById("hidden-search");
     if (searchBox.classList.contains("d-lg-none")) {
         searchBox.classList.remove("d-lg-none");
         searchBox.focus();
+        
     } else {
         searchBox.classList.add("d-lg-none");
     }
@@ -69,3 +70,5 @@ document.body.addEventListener('click', saveNavState);
 document.body.addEventListener("click", hideAlgoliaPopUp);
 document.body.addEventListener('click', fadeBg);
 document.getElementById('navbarDropdownMenuLink').addEventListener('click', fadeBg);
+
+

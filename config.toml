@@ -150,15 +150,16 @@ footer_about_disable = false
 algolia_docsearch = true
 offlineSearch = false
 [outputFormats.Algolia]
-baseName = "algolia"
-isPlainText = true
-mediaType = "application/json"
-notAlternative = true
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
 [params.algolia]
-vars = ["title", "description", "summary", "date", "lastmod", "permalink"]
-params = ["categories", "tags"]
+  vars = ["title", "description", "summary", "date", "lastmod", "permalink"]
+  params = ["categories", "tags"]
 [outputs]
-home = ["HTML", "RSS", "Algolia"]
+  home = ["HTML", "RSS", "JSON", "Algolia"]
+  page = ["HTML", "RSS"]
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]

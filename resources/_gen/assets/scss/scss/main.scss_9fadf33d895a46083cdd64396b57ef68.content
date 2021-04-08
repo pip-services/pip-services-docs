@@ -13278,8 +13278,7 @@ nav .navbar-logo > svg {
   @media (min-width: 768px) {
     .td-sidebar {
       padding-top: 4rem;
-      background-color: #F5F8FA;
-      padding-right: 1rem; } }
+      background-color: #F5F8FA; } }
   .td-sidebar__toggle {
     line-height: 1;
     color: #222;
@@ -13424,6 +13423,9 @@ nav .navbar-logo > svg {
     fill: #d73a49; }
   .td-content p, .td-content li, .td-content td {
     font-weight: 500; }
+    @media (max-width: 767.98px) {
+      .td-content p, .td-content li, .td-content td {
+        word-wrap: break-word; } }
     .td-content p img, .td-content li img, .td-content td img {
       margin: 0 auto 0;
       display: block; }
@@ -13478,6 +13480,12 @@ nav .navbar-logo > svg {
   @media (min-width: 576px) {
     .td-title {
       font-size: 3rem; } }
+.search-page .input-group > div > button > i > svg > path {
+  fill: #2C4154; }
+
+.search-page #search-results > div:after {
+  border-bottom: 1px solid black; }
+
 .td-search-input {
   background: transparent;
   max-width: 90%;

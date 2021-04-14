@@ -25,7 +25,7 @@
 }
 
 @media (max-width: 767px) {
-    #navbarNavDropdown {
+    #navbarOffcanvas {
         
         .dropdown-item {
             &.active,
@@ -88,7 +88,7 @@
 }
 
 @media (min-width: 767px) {
-    #navbarNavDropdown {
+    #navbarOffcanvas {
         .mobile-dropdown{
             display: none;
         }

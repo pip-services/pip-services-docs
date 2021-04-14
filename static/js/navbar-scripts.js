@@ -1,17 +1,10 @@
-// hack to load sidebar tree
+// loadNavbarState
+document.addEventListener("readystatechange", loadNavbarState);
 
-document.addEventListener("readystatechange", loadTree);
-
-function loadTree(event) {
-    var loadbtn = document.getElementById('load-tree');
-    loadbtn.setAttribute('hidden', 'true');
-    loadbtn.click();
-
+function loadNavbarState(event) {
     if (localStorage['openNav'] === 'true') {
         if (document.getElementsByClassName('td-sidebar-nav-active-item').length === 0) { return; }
         // check is the last el
-        let arrwos = document.getElementsByClassName('td-sidebar-nav-active-item')[0].getElementsByClassName('arrow')
-
         if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')){
             let speedTransition = document.getElementsByClassName('navbar-offcanvas')[0];
             let _tmp = [...speedTransition.style];

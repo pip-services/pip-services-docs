@@ -13416,6 +13416,9 @@ nav .navbar-logo > svg {
   .td-content .svg-container {
     display: flex;
     align-items: center; }
+    @media (max-width: 991.98px) {
+      .td-content .svg-container {
+        display: none; } }
   .td-content .svg-center {
     display: block;
     margin: auto; }
@@ -13443,6 +13446,10 @@ nav .navbar-logo > svg {
     width: fit-content;
     padding-left: 0.2rem;
     padding-right: 0.2rem; }
+    @media (max-width: 767.98px) {
+      .td-content .content-title {
+        word-wrap: break-word;
+        width: auto; } }
   .td-content > h2 {
     margin-bottom: 1rem; }
   .td-content > h2:not(:first-child) {

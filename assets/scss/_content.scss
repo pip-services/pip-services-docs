@@ -12,6 +12,10 @@
     .svg-container {
 		display: flex; 
 		align-items: center;
+
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
 	}
 
 	.svg-center{
@@ -51,7 +55,7 @@
         width: fit-content;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
-
+        
     }
 
     .content-title {
@@ -63,6 +67,11 @@
         width: fit-content;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
+
+        @include media-breakpoint-down(sm) {
+            word-wrap: break-word;
+            width: auto;
+        }
     }
 
     > h2 {

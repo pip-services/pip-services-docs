@@ -80,7 +80,9 @@
   {{ end }}
 
   {{ $showModules := 5 }} <!-- show nested only module current module-->
-  {{if not $p.Site.Params.ui.sidebar_menu_compact}} {{ $maxNestedShow = 1000 }} {{ end }}
+  {{if not $p.Site.Params.ui.sidebar_menu_compact}} 
+    {{ $showModules = 1000 }} 
+  {{ end }}
 
   {{ $showNeighbor := false }}
   {{ $parent := $currentSection }}
@@ -95,9 +97,9 @@
       {{ end }}
     {{ end }}
   {{ end }}
-
+  
   {{ $show := cond (or (and $isMatchRootSections (lt (len (split $s.URL "/")) $showModules))
-                        (and ( $p.IsDescendant $currentRootSection) $showNeighbor)
+                        (and ( $p.IsDescendant $currentRootSection) (not (eq .FirstSection $p))  $showNeighbor)
                         (lt $ulNr $ulShow) $activePath 
                         (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
                         (and (not $shouldDelayActive) (eq $s.Parent $p)) 

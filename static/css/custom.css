@@ -159,14 +159,14 @@ a:hover {
     width: 6em;
 } */
 
-.nav-item-tree:hover {
+/* .nav-item-tree:hover {
     background: #ffffff;
-} 
+}  */
 
 .nav-item-tree {
     min-height: auto;
 }
 
-.nav-item-tree.active{
+/* .nav-item-tree.active{
     background: #ffffff;
-}
+} */

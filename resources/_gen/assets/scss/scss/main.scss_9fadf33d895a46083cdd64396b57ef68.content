@@ -13263,8 +13263,6 @@ nav .navbar-logo > svg {
   .td-sidebar-nav a:hover {
     color: #81C7F9;
     text-decoration: none; }
-  .td-sidebar-nav a.active {
-    color: #81C7F9; }
   .td-sidebar-nav .dropdown a {
     color: #495057; }
   .td-sidebar-nav .dropdown .nav-link {

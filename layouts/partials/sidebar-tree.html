@@ -119,11 +119,11 @@
       <span class="{{ if $active }}td-sidebar-nav-active-item{{ end }}{{ if $treeRoot }} tree-root{{ end }}">
         
         <a href="{{ $s.RelPermalink }}"
-          class="nav-item-tree align-left pb-2 pt-2 pl-0 {{if eq .ulNr 2}} bold-font {{ end }} {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
-          id="{{ $mid }}">
+          class="nav-item-tree align-left pb-2 pt-2 pl-0  {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
+          id="{{ $mid }}"> <!-- {{if eq .ulNr 2}} bold-font {{ end }}-->
         <div class="d-flex justify-content-center align-items-top" 
           style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
-
+          {{ if .addNavArrows }}
             <div class="arrow {{ if gt .ulNr 2 }} col-1{{end}} 
                 {{if not (and (gt .ulNr 2) $withChild) }}d-none{{end}}">
               {{ if or $active $isChildActive }}
@@ -132,8 +132,8 @@
                 {{ with resources.Get "icons/arrow_right.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
               {{ end }}
             </div>
-          
-          <div class="col-10  {{ if not (gt $padding 0) }}bold-font{{ end }}">
+          {{ end }}
+          <div class="col-11 {{ if or $active $isChildActive }}bold-font{{ end }} "> <!-- {{ if not (gt $padding 0) }}bold-font{{ end }} -->
             {{ $s.LinkTitle }}
           </div>
           

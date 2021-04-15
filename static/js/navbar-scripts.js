@@ -5,7 +5,7 @@ function loadNavbarState(event) {
 
     // fix bug with toc tree empty lines
     let tab = document.getElementById('TableOfContents')
-    if (tab.getElementsByTagName('li').length > 0){
+    if (tab!=null && tab.getElementsByTagName('li').length > 0){
         for (var el of tab.getElementsByTagName('li')) {
             if (el.innerText === '') { el.remove(); }
         }

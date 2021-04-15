@@ -50,14 +50,14 @@ We can use the following docker composer configuration to run MongoDB in Docker:
 **/docker/docker-compose.yml**
 
 ```yml
-<em>version: '3.3'
-‍</em>
-<em>services:
-‍</em>
-<em>mongo:
+version: '3.3'
+
+services:
+
+mongo:
     image: mongo:latest
     ports:
-      - "27017:27017"</em>
+      - "27017:27017"
 
 ```
 
@@ -179,7 +179,7 @@ As a result, only the beacon with an id of “2” is returned.
 {"total":1,"data":[{"id":"2","udi":"00002","type":"altbeacon","site_id":"1","label":"TestBeacon2","center":{"type":"Point","coordinates":[2,4]},"radius":80}]}
 ```
 
-And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular <em>“Hello, World”</em> example!
+And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
 All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-node)
 
 

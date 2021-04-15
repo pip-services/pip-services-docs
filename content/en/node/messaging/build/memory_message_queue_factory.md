@@ -12,33 +12,34 @@ See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/
 
 
 ### Constructors
-
-> MemoryMessageQueueFactory(): string
-
 Create a new instance of the factory.
+
+> constructor(): string
 
 
 ### Methods
 
 #### createQueue
-> createQueue(name: string): [IMessageQueue](../../queues/imessage_queue)
-
 Creates a message queue component and assigns its name.
 
-- name: string a name of the created message queue.
-- Returns [IMessageQueue](../../queues/imessage_queue)
+> createQueue(name: string): [IMessageQueue](../../queues/imessage_queue)
+
+- **name**: string a name of the created message queue.
+- **Returns** [IMessageQueue](../../queues/imessage_queue)
 
 #### configure
+Configures component by passing configuration parameters.
+
 > configure(config: ConfigParams): void
 
-- config: [ConfigParams](../../../commons/config/config_params) configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) configuration parameters to be set.
 
 #### setReferences
-> setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
-
 Sets references to dependent components.
 
-- references: [IReferences](../../../commons/refer/ireferences) references to locate the component dependencies.
+> setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+
+- **references**: [IReferences](../../../commons/refer/ireferences) references to locate the component dependencies.
 
 
 

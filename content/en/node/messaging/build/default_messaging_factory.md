@@ -13,8 +13,8 @@ See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/
 
 ### Constructors
 
-> new DefaultMessagingFactory(): [DefaultMessagingFactory]()
-
 Create a new instance of the factory.
 
-- Returns [DefaultMessagingFactory]()
+> new constructor(): [DefaultMessagingFactory]()
+
+- **Returns** [DefaultMessagingFactory]()

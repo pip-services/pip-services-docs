@@ -13259,7 +13259,7 @@ nav .navbar-logo > svg {
     padding-bottom: .375rem; }
     .td-sidebar-nav .td-sidebar-link__page {
       color: #495057;
-      font-weight: 300; }
+      font-weight: 400; }
   .td-sidebar-nav a:hover {
     color: #81C7F9;
     text-decoration: none; }

@@ -512,6 +512,6 @@ suite('BeaconsMemoryPersistence', () =&gt; {
 
 To run these tests, run the command npm test from a terminal at the root of the project.
 
-<em>“But where exactly is the data going to be stored when we get the service actually up and running?”</em> you may ask. Jumping ahead, we’ll tell you that the config.yml configuration file takes care of that. It contains configurations for all of the service’s components, such as: which logger to use, where performance counter output should be, what database to connect to and using what parameters, etc. We’ll discuss this in more detail later on in this tutorial.
+*“But where exactly is the data going to be stored when we get the service actually up and running?”* you may ask. Jumping ahead, we’ll tell you that the config.yml configuration file takes care of that. It contains configurations for all of the service’s components, such as: which logger to use, where performance counter output should be, what database to connect to and using what parameters, etc. We’ll discuss this in more detail later on in this tutorial.
 
 Now that we can persist our data, let’s move on to [Step 4. Implementing a controller.](../step4)

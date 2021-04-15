@@ -28,15 +28,13 @@ messageQueue.open("123", (err) => {
 ### Methods
 
 #### receiveMessage
-> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: function): void
-
 Receives incoming message from the queue.
 
-- envelope: [MessageEnvelope](../message_envelope) an incoming message
-- queue: [IMessageQueue](../imessage_queue) a queue where the message comes from
-- callback: callback function that receives error or null for success.
-    - (err: any): void
-        - err: any
-
 See [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
+
+> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: function): void
+
+- **envelope**: [MessageEnvelope](../message_envelope) an incoming message
+- **queue**: [IMessageQueue](../imessage_queue) a queue where the message comes from
+- **callback**: callback function that receives error or null for success.
 

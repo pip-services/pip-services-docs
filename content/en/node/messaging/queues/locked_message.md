@@ -10,14 +10,15 @@ See [MemoryMessageQueue](../memory_message_queue)
 
 ### Properties
 
-- expirationTime: Date
-
 The expiration time for the message lock. If it is null then the message is not locked.
 
-- message: [MessageEnvelope](../message_envelope)
+> expirationTime: Date
 
 The incoming message.
 
-- timeout: number
+> message: [MessageEnvelope](../message_envelope)
 
 The lock timeout in milliseconds.
+
+> timeout: number
+

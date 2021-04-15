@@ -10,104 +10,101 @@ Allows adding additional information to messages. A correlation id, message id, 
 Side note: a MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
 
 ### Constructors
-
-> new MessageEnvelope(correlationId: string, messageType: string, message: any): [MessageEnvelope]()
-
 Creates a new MessageEnvelope, which adds a correlation id, message id, and a type to the data being sent/received.
 
-- correlationId: string (optional) transaction id to trace execution through call chain.
-- messageType: string a string value that defines the message's type.
-- message: any the data being sent/received.
+> constructors(correlationId: string, messageType: string, message: any): [MessageEnvelope]()
 
-- Returns [MessageEnvelope]()
+- **correlationId**: string (`optional`) transaction id to trace execution through call chain.
+- **messageType**: string a string value that defines the message's type.
+- **message**: any the data being sent/received.
+
+- **Returns** [MessageEnvelope]()
 
 ### Properties
+TODO: add description properties
 
-- correlation_id: string
+> **correlation_id**: string
 
 The unique business transaction id that is used to trace calls across components.
 
-- message: Buffer
+> **message**: Buffer
 
 The stored message.
 
-- message_id: string
+> **message_id**: string
 
 The message's auto-generated ID.
 
-- message_type: string
+> **message_type**: string
 
 String value that defines the stored message's type.
 
-- sent_time: Date
+> **sent_time**: Date
 
 The time at which the message was sent.
 
 ### Methods
 
 #### getMessageAsJson
-> getMessageAsJson(): any
-
 - Returns any the value that was stored in this message as a JSON string.
-
 See [setMessageAsJson](#setMessageAsJson)
 
-#### getMessageAsString
-> getMessageAsString(): string
+> getMessageAsJson(): any
 
+#### getMessageAsString
 - Returns string the information stored in this message as a UTF-8 encoded string.
 
-#### getReference
-> getReference(): any
+> getMessageAsString(): string
 
+#### getReference
 - Returns any the lock token that this MessageEnvelope references.
 
+> getReference(): any
+
 #### setMessageAsJson
-> setMessageAsJson(value: any): void
-
 Stores the given value as a JSON string.
-
-- value: any the value to convert to JSON and store in this message.
-
 See [getMessageAsJson](#getMessageAsJson)
 
-#### setMessageAsString
-> setMessageAsString(value: string): void
+> setMessageAsJson(value: any): void
 
+- **value**: any the value to convert to JSON and store in this message.
+
+#### setMessageAsString
 Stores the given string.
 
-- value: string the string to set. Will be converted to a buffer, using UTF-8 encoding.
+> setMessageAsString(value: string): void
 
+- **value**: string the string to set. Will be converted to a buffer, using UTF-8 encoding.
 
 #### setReference
-> setReference(value: any): void
-
 Sets a lock token reference for this MessageEnvelope.
 
-- value: any the lock token to reference.
+> setReference(value: any): void
+
+- **value**: any the lock token to reference.
 
 #### toJSON
-> toJSON(): any
-
 Converts this MessageEnvelop to a JSON string. The message payload is passed as base64 string
 
-- Returns any A JSON encoded representation is this object.
+> toJSON(): any
+
+- **Returns** any A JSON encoded representation is this object.
 
 #### toString
-> toString(): string
-
 Convert's this MessageEnvelope to a string, using the following format:
 `"[<correlation_id>,<message_type>,<message.toString>]"`.
 
 If any of the values are `null`, they will be replaced with `---.`
 
-- Returns string the generated string.
+> toString(): string
 
-#### `Static` fromJSON
-> fromJSON(value: string): [MessageEnvelope]()
+- **Returns** string the generated string.
 
+#### fromJSON
 Converts a JSON string into a MessageEnvelop The message payload is passed as base64 string
 
-- value: string a JSON encoded string
-- Returns [MessageEnvelope]() a decoded Message Envelop.
+> `static` fromJSON(value: string): [MessageEnvelope]()
+
+- **value**: string a JSON encoded string
+- **Returns** [MessageEnvelope]() a decoded Message Envelop.
 

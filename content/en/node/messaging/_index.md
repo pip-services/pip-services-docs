@@ -14,7 +14,7 @@ The module contains the following packages:
 
 - [**Build**](build) - in-memory message queue factory
 - [**Queues**](queues) - contains interfaces for working with message queues, subscriptions for receiving messages from the queue, and an in-memory message queue implementation.
-- [**Connect**](connect)
+- [**Connect**](connect) - TODO: add description
 
 ### Quick links
 
@@ -30,3 +30,5 @@ Install the NPM package as
 ```bash
 npm install pip-services3-messaging-node --save
 ```
+
+TODO: add example

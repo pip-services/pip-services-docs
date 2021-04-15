@@ -16,19 +16,19 @@ import { DataPage } from 'pip-services3-commons-node';
 import { BeaconV1 } from '../../src/data/version1/BeaconV1';
 export interface IBeaconsController {
     getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage&lt;BeaconV1&gt;) =&gt; void): void;
+        callback: (err: any, page: DataPage<BeaconV1>) => void): void;
     getBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, page: BeaconV1) =&gt; void): void;
+        callback: (err: any, page: BeaconV1) => void): void;
     getBeaconByUdi(correlationId: string, beaconId: string,
-        callback: (err: any, page: BeaconV1) =&gt; void): void;
+        callback: (err: any, page: BeaconV1) => void): void;
     calculatePosition(correlationId: string, siteId: string, udis: string[],
-        callback: (err: any, position: any) =&gt; void): void;
+        callback: (err: any, position: any) => void): void;
     createBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void;
+        callback: (err: any, beacon: BeaconV1) => void): void;
     updateBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void;
+        callback: (err: any, beacon: BeaconV1) => void): void;
     deleteBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void;
+        callback: (err: any, beacon: BeaconV1) => void): void;
 }
 ```
 
@@ -66,7 +66,7 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
     }
 ‍
     public setReferences(references: IReferences): void {
-        this._persistence = references.getOneRequired&lt;IBeaconsPersistence&gt;(
+        this._persistence = references.getOneRequired<IBeaconsPersistence>(
             new Descriptor('beacons', 'persistence', '*', '*', '1.0')
         );
     }
@@ -79,22 +79,22 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
     }
 ‍
     public getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage&lt;BeaconV1&gt;) =&gt; void): void {
+        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
         this._persistence.getPageByFilter(correlationId, filter, paging, callback);
     }
 ‍
     public getBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, page: BeaconV1) =&gt; void): void {
+        callback: (err: any, page: BeaconV1) => void): void {
             this._persistence.getOneById(correlationId, beaconId, callback);
     }
 ‍
     public getBeaconByUdi(correlationId: string, beaconId: string,
-        callback: (err: any, page: BeaconV1) =&gt; void): void {
+        callback: (err: any, page: BeaconV1) => void): void {
             this._persistence.getOneByUdi(correlationId, beaconId, callback);
     }
 ‍
     public calculatePosition(correlationId: string, siteId: string, udis: string[],
-        callback: (err: any, position: any) =&gt; void): void {
+        callback: (err: any, position: any) => void): void {
             let beacons: BeaconV1[];
             let position: any = null;
 ‍
@@ -104,7 +104,7 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
             }
 ‍
             async.series([
-                (callback) =&gt; {
+                (callback) => {
                     this._persistence.getPageByFilter(
                         correlationId,
                         FilterParams.fromTuples(
@@ -112,28 +112,28 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
                             'udis', udis
                         ),
                         null,
-                        (err, page) =&gt; {
+                        (err, page) => {
                             beacons = page ? page.data : [];
                             callback(err);
                         }
                     );
                 },
-                (callback) =&gt; {
+                (callback) => {
                     let lat = 0;
                     let lng = 0;
                     let count = 0;
 ‍
                     for (let beacon of beacons) {
                         if (beacon.center != null
-                             &amp;&amp; beacon.center.type == 'Point'
-                            &amp;&amp; _.isArray(beacon.center.coordinates)) {
+                             && beacon.center.type == 'Point'
+                            && _.isArray(beacon.center.coordinates)) {
                                 lng += beacon.center.coordinates[0];
                                 lat += beacon.center.coordinates[1];
                                 count += 1;
                             }
                     }
 ‍
-                    if (count &gt; 0) {
+                    if (count > 0) {
                         position = {
                             type: 'Point',
                             coordinates: [lng / count, lat / count]
@@ -142,11 +142,11 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
 ‍
                     callback();
                 }
-            ], (err) =&gt; { callback(err, err == null ? position : null);  });
+            ], (err) => { callback(err, err == null ? position : null);  });
     }
 ‍
     public createBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void {
+        callback: (err: any, beacon: BeaconV1) => void): void {
             beacon.id = beacon.id || IdGenerator.nextLong();
             beacon.type = beacon.type || BeaconTypeV1.Unknown;
 ‍
@@ -154,14 +154,14 @@ export class BeaconsController implements IBeaconsController, IConfigurable, IRe
     }
 ‍
     public updateBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void {
+        callback: (err: any, beacon: BeaconV1) => void): void {
             beacon.type = beacon.type || BeaconTypeV1.Unknown;
 ‍
             this._persistence.update(correlationId, beacon, callback);
     }
 ‍
     public deleteBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) =&gt; void): void {
+        callback: (err: any, beacon: BeaconV1) => void): void {
            this._persistence.deleteById(correlationId, beaconId, callback);
     }
 }
@@ -214,7 +214,7 @@ export class BeaconsCommandSet extends CommandSet {
             new ObjectSchema(true)
                 .withOptionalProperty('filter', new FilterParamsSchema())
                 .withOptionalProperty('paging', new PagingParamsSchema()),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let filter = FilterParams.fromValue(args.get('filter'));
                 let paging = PagingParams.fromValue(args.get('paging'));
                 this._controller.getBeacons(correlationId, filter, paging, callback);
@@ -227,7 +227,7 @@ export class BeaconsCommandSet extends CommandSet {
             'get_beacon_by_id',
             new ObjectSchema(true)
                 .withRequiredProperty('beacon_id', TypeCode.String),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let beaconId = args.getAsString('beacon_id');
                 this._controller.getBeaconById(correlationId, beaconId, callback);
             }
@@ -239,7 +239,7 @@ export class BeaconsCommandSet extends CommandSet {
             'get_beacon_by_udi',
             new ObjectSchema(true)
                 .withRequiredProperty('udi', TypeCode.String),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let udi = args.getAsString('udi');
                 this._controller.getBeaconByUdi(correlationId, udi, callback);
             }
@@ -252,7 +252,7 @@ export class BeaconsCommandSet extends CommandSet {
             new ObjectSchema(true)
                 .withRequiredProperty('site_id', TypeCode.String)
                 .withRequiredProperty('udis', new ArraySchema(TypeCode.String)),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let siteId = args.getAsString('site_id');
                 let udis = args.getAsObject('udis');
                 this._controller.calculatePosition(correlationId, siteId, udis, callback);
@@ -265,7 +265,7 @@ export class BeaconsCommandSet extends CommandSet {
             'create_beacon',
             new ObjectSchema(true)
                 .withRequiredProperty('beacon', new BeaconV1Schema()),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let beacon = args.getAsObject('beacon');
                 this._controller.createBeacon(correlationId, beacon, callback);
             }
@@ -277,7 +277,7 @@ export class BeaconsCommandSet extends CommandSet {
             'update_beacon',
             new ObjectSchema(true)
                 .withRequiredProperty('beacon', new BeaconV1Schema()),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let beacon = args.getAsObject('beacon');
                 this._controller.updateBeacon(correlationId, beacon, callback);
             }
@@ -288,7 +288,7 @@ export class BeaconsCommandSet extends CommandSet {
             'delete_beacon_by_id',
             new ObjectSchema(true)
                 .withRequiredProperty('beacon_id', TypeCode.String),
-            (correlationId: string, args: Parameters, callback: (err: any, result: any) =&gt; void) =&gt; {
+            (correlationId: string, args: Parameters, callback: (err: any, result: any) => void) => {
                 let beaconId = args.getAsString('beacon_id');
                 this._controller.deleteBeaconById(correlationId, beaconId, callback);
             }
@@ -344,11 +344,11 @@ const BEACON2: BeaconV1 = {
     radius: 70
 };
 ‍
-suite('BeaconsController', () =&gt; {
+suite('BeaconsController', () => {
     let persistence: BeaconsMemoryPersistence;
     let controller: BeaconsController;
 ‍
-    setup((done) =&gt; {
+    setup((done) => {
         persistence = new BeaconsMemoryPersistence();
         persistence.configure(new ConfigParams());
 ‍
@@ -365,20 +365,20 @@ suite('BeaconsController', () =&gt; {
         persistence.open(null, done);
     });
 ‍
-    teardown((done) =&gt; {
+    teardown((done) => {
         persistence.close(null, done);
     });
 ‍
-    test('CRUD Operations', (done) =&gt; {
+    test('CRUD Operations', (done) => {
         let beacon1: BeaconV1;
 ‍
         async.series([
             // Create the first beacon 
-           (callback) =&gt; {
+           (callback) => {
                 controller.createBeacon(
                     null,
                     BEACON1,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -393,11 +393,11 @@ suite('BeaconsController', () =&gt; {
                 );
             },
             // Create the second beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.createBeacon(
                     null,
                     BEACON2,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -412,12 +412,12 @@ suite('BeaconsController', () =&gt; {
                 );
             },
             // Get all beacons
-            (callback) =&gt; {
+            (callback) => {
                 controller.getBeacons(
                     null,
                     new FilterParams(),
                     new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(page);
@@ -430,13 +430,13 @@ suite('BeaconsController', () =&gt; {
                 )
             },
             // Update the beacon
-            (callback) =&gt; {
+            (callback) => {
                 beacon1.label = 'ABC';
 ‍
                 controller.updateBeacon(
                     null,
                     beacon1,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -448,11 +448,11 @@ suite('BeaconsController', () =&gt; {
                 )
             },
             // Get beacon by udi
-            (callback) =&gt; {
+            (callback) => {
                 controller.getBeaconByUdi(
                      null,
                      beacon1.udi,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -463,11 +463,11 @@ suite('BeaconsController', () =&gt; {
                 )
             },
             // Delete the beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.deleteBeaconById(
                     null,
                     beacon1.id,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -478,11 +478,11 @@ suite('BeaconsController', () =&gt; {
                 )
             },
             // Try to get deleted beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.getBeaconById(
                     null,
                     beacon1.id,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isNull(beacon || null);
@@ -494,14 +494,14 @@ suite('BeaconsController', () =&gt; {
         ], done);
     });
 
-    test('Calculate Positions', (done) =&gt; {
+    test('Calculate Positions', (done) => {
         async.series([
             // Create the first beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.createBeacon(
                     null,
                     BEACON1,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -516,11 +516,11 @@ suite('BeaconsController', () =&gt; {
                 );
             },
             // Create the second beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.createBeacon(
                     null,
                     BEACON2,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -535,10 +535,10 @@ suite('BeaconsController', () =&gt; {
                 );
             },
             // Calculate position for one beacon
-            (callback) =&gt; {
+            (callback) => {
                 controller.calculatePosition(
                     null, '1', ['00001'],
-                    (err, position) =&gt; {
+                    (err, position) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(position);
@@ -552,10 +552,10 @@ suite('BeaconsController', () =&gt; {
                 )
             },
             // Calculate position for two beacons
-            (callback) =&gt; {
+            (callback) => {
                 controller.calculatePosition(
                     null, '1', ['00001', '00002'],
-                    (err, position) =&gt; {
+                    (err, position) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(position);

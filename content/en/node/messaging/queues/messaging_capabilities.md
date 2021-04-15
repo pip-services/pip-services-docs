@@ -3,9 +3,10 @@ type: docs
 title: "MessagingCapabilities"
 linkTitle: "MessagingCapabilities"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Data object that contains supported capabilities of a message queue. If certain capability is not supported a queue will throw NotImplemented exception.
 ---
 
-Data object that contains supported capabilities of a message queue. If certain capability is not supported a queue will throw NotImplemented exception.
 
 ### Constructors
 

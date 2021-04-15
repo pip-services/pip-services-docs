@@ -3,9 +3,10 @@ type: docs
 title: "IMessageReceive"
 linkTitle: "IMessageReceive"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+  Callback interface to receive incoming messages.
 ---
 
-Callback interface to receive incoming messages.
 
 **Example:**
 

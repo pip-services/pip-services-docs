@@ -3,9 +3,10 @@ type: docs
 title: "MessageQueue"
 linkTitle: "MessageQueue"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Abstract message queue that is used as a basis for specific message queue implementations.
 ---
 
-abstract message queue that is used as a basis for specific message queue implementations.
 
 ##### Configuration parameters
 - **name**: name of the message queue
@@ -40,14 +41,14 @@ Creates a new instance of the message queue.
 
 
 ### Properties
-TODO: add description properties
 
-- `protected` _logger
-- `protected` _counters
-- `protected` _connectionResolver
-- `protected` _credentialResolver
-- `protected` _name
-- `protected` _capabilities
+
+> `protected` **_logger** TODO: add description property  
+> `protected` **_counters** TODO: add description property  
+> `protected` **_connectionResolver** TODO: add description property  
+> `protected` **_credentialResolver** TODO: add description property  
+> `protected` **_name** TODO: add description property  
+> `protected` **_capabilities** TODO: add description property  
 
 ### Methods
 

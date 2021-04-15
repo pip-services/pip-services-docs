@@ -22,22 +22,22 @@ import { BeaconV1 } from '../data/version1/BeaconV1';
 ‍
 export interface IBeaconsPersistence {
     getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-         callback: (err: any, page: DataPage&lt;BeaconV1&gt;) =&gt; void): void;
+         callback: (err: any, page: DataPage<BeaconV1>) => void): void;
 ‍
    getOneById(correlationId: string, id: string,
-         callback: (err: any, item: BeaconV1) =&gt; void): void;
+         callback: (err: any, item: BeaconV1) => void): void;
 ‍
    getOneByUdi(correlationId: string, udi: string,
-         callback: (err: any, item: BeaconV1) =&gt; void): void;
+         callback: (err: any, item: BeaconV1) => void): void;
 ‍
     create(correlationId: string, item: BeaconV1,
-         callback: (err: any, item: BeaconV1) =&gt; void): void;
+         callback: (err: any, item: BeaconV1) => void): void;
 
     update(correlationId: string, item: BeaconV1,
-         callback: (err: any, item: BeaconV1) =&gt; void): void;
+         callback: (err: any, item: BeaconV1) => void): void;
 ‍
     deleteById(correlationId: string, id: string,
-         callback: (err: any, item: BeaconV1) =&gt; void): void;
+         callback: (err: any, item: BeaconV1) => void): void;
 }
 
 ```
@@ -61,7 +61,7 @@ import { BeaconV1 } from '../data/version1/BeaconV1';
 import { IBeaconsPersistence } from './IBeaconsPersistence';
 ‍
 export class BeaconsMemoryPersistence
-    extends IdentifiableMemoryPersistence&lt;BeaconV1, string&gt;
+    extends IdentifiableMemoryPersistence<BeaconV1, string>
     implements IBeaconsPersistence {
 ‍
     constructor() {
@@ -82,28 +82,28 @@ export class BeaconsMemoryPersistence
         if (!_.isArray(udis))
             udis = null;
 ‍
-        return (item) =&gt; {
-            if (id != null &amp;&amp; item.id != id)
+        return (item) => {
+            if (id != null && item.id != id)
                 return false;
-            if (siteId != null &amp;&amp; item.site_id != siteId)
+            if (siteId != null && item.site_id != siteId)
                 return false;
-            if (label != null &amp;&amp; item.label != label)
+            if (label != null && item.label != label)
                 return false;
-            if (udi != null &amp;&amp; item.udi != udi)
+            if (udi != null && item.udi != udi)
                 return false;
-            if (udis != null &amp;&amp; _.indexOf(udis, item.udi) &lt; 0)
+            if (udis != null && _.indexOf(udis, item.udi) < 0)
                 return false;
             return true;
         };
     }
     public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage&lt;BeaconV1&gt;) =&gt; void): void {
+        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
         super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
     }
     public getOneByUdi(correlationId: string, udi: string,
-        callback: (err: any, item: BeaconV1) =&gt; void): void {
+        callback: (err: any, item: BeaconV1) => void): void {
 ‍
-        let item = _.find(this._items, (item) =&gt; item.udi == udi);
+        let item = _.find(this._items, (item) => item.udi == udi);
 ‍
         if (item != null) this._logger.trace(correlationId, "Found beacon by %s", udi);
         else this._logger.trace(correlationId, "Cannot find beacon by %s", udi);
@@ -128,7 +128,7 @@ import { IBeaconsPersistence } from './IBeaconsPersistence';
 import { BeaconsMongoDbSchema } from './BeaconsMongoDbSchema';
 ‍
 export class BeaconsMongoDbPersistence
-    extends IdentifiableMongoDbPersistence&lt;BeaconV1, string&gt;
+    extends IdentifiableMongoDbPersistence<BeaconV1, string>
     implements IBeaconsPersistence {
     constructor() {
         super('beacons', BeaconsMongoDbSchema());
@@ -161,21 +161,21 @@ export class BeaconsMongoDbPersistence
         if (_.isArray(udis))
             criteria.push({ udi: { $in: udis } });
 ‍
-        return criteria.length &gt; 0 ? { $and: criteria } : null;
+        return criteria.length > 0 ? { $and: criteria } : null;
     }
 ‍
     public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage&lt;BeaconV1&gt;) =&gt; void): void {
+        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
         super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
     }
     public getOneByUdi(correlationId: string, udi: string,
-        callback: (err: any, item: BeaconV1) =&gt; void): void {
+        callback: (err: any, item: BeaconV1) => void): void {
 ‍
         let criteria = {
             udi: udi
         };
 ‍
-        this._model.findOne(criteria, (err, item) =&gt; {
+        this._model.findOne(criteria, (err, item) => {
             item = this.convertFromPublic(item);
             if (item != null) this._logger.trace(correlationId, "Found beacon by %s", udi);
             else this._logger.trace(correlationId, "Cannot find beacon by %s", udi);
@@ -245,11 +245,11 @@ export
     private testCreateBeacons(done) {
         async.series([
             // Create the first beacon
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.create(
                     null,
                     BEACON1,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -264,11 +264,11 @@ export
                 );
             },
             // Create the second beacon
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.create(
                     null,
                     BEACON2,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -283,11 +283,11 @@ export
                 );
             },
             // Create the third beacon
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.create(
                     null,
                     BEACON3,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -309,16 +309,16 @@ export
 ‍
         async.series([
             // Create items
-            (callback) =&gt; {
+            (callback) => {
                 this.testCreateBeacons(callback);
             },
             // Get all beacons
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getPageByFilter(
                     null,
                     new FilterParams(),
                     new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(page);
@@ -331,13 +331,13 @@ export
                 )
             },
             // Update the beacon
-            (callback) =&gt; {
+            (callback) => {
                 beacon1.label = 'ABC';
 ‍
                 this._persistence.update(
                     null,
                     beacon1,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -349,11 +349,11 @@ export
                 )
             },
             // Get beacon by udi
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getOneByUdi(
                     null,
                      beacon1.udi,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -364,11 +364,11 @@ export
                 )
             }
 ,            // Delete the beacon
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.deleteById(
                     null,
                     beacon1.id,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -379,11 +379,11 @@ export
                 )
             },
             // Try to get deleted beacon
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getOneById(
                     null,
                     beacon1.id,
-                    (err, beacon) =&gt; {
+                    (err, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isNull(beacon || null);
@@ -398,18 +398,18 @@ export
     public testGetWithFilters(done) {
         async.series([
             // Create items
-            (callback) =&gt; {
+            (callback) => {
                 this.testCreateBeacons(callback);
             },
             // Filter by id
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getPageByFilter(
                     null,
                     FilterParams.fromTuples(
                         'id', '1'
                     ),
                     new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.lengthOf(page.data, 1);
@@ -419,14 +419,14 @@ export
                 )
             },
             // Filter by udi
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getPageByFilter(
                     null,
                     FilterParams.fromTuples(
                         'udi', '00002'
                     ),
                     new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.lengthOf(page.data, 1);
@@ -436,14 +436,14 @@ export
                 )
             },
             // Filter by udis
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getPageByFilter(
                     null,
                     FilterParams.fromTuples(
                         'udis', '00001,00003'
                     ),
                     new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.lengthOf(page.data, 2);
@@ -453,14 +453,14 @@ export
                 )
             },
             // Filter by site_id
-            (callback) =&gt; {
+            (callback) => {
                 this._persistence.getPageByFilter(
                     null,
                     FilterParams.fromTuples(
                         'site_id', '1'
                     )
 ,                    new PagingParams(),
-                    (err, page) =&gt; {
+                    (err, page) => {
                         assert.isNull(err);
 ‍
                         assert.lengthOf(page.data, 2);
@@ -483,11 +483,11 @@ import { ConfigParams } from 'pip-services3-commons-node';
 import {BeaconsMemoryPersistence} from  '../../src/persistence/BeaconsMemoryPersistence';
 import { BeaconsPersistenceFixture } from './BeaconsPersistenceFixture';
 ‍
-suite('BeaconsMemoryPersistence', () =&gt; {
+suite('BeaconsMemoryPersistence', () => {
     let persistence: BeaconsMemoryPersistence;
     let fixture: BeaconsPersistenceFixture;
 ‍
-    setup((done) =&gt; {
+    setup((done) => {
         persistence = new BeaconsMemoryPersistence();
         persistence.configure(new ConfigParams());
 ‍
@@ -496,14 +496,14 @@ suite('BeaconsMemoryPersistence', () =&gt; {
         persistence.open(null, done);
     });
 ‍
-    teardown((done) =&gt; {
+    teardown((done) => {
         persistence.close(null, done);
     });
 ‍
-    test('CRUD Operations', (done) =&gt; {
+    test('CRUD Operations', (done) => {
         fixture.testCrudOperations(done);
     });
-    test('Get with Filters', (done) =&gt; {
+    test('Get with Filters', (done) => {
         fixture.testGetWithFilters(done);
     });
 });

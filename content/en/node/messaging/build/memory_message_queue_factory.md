@@ -3,12 +3,12 @@ type: docs
 title: "MemoryMessageQueueFactory"
 linkTitle: "MemoryMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Creates [MemoryMessageQueue](../queue/memory_message_queue) components by their descriptors.
+    Name of created message queue is taken from its descriptor.  
+
+    See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/memory_message_queue)
 ---
-
-Creates [MemoryMessageQueue](../queue/memory_message_queue) components by their descriptors.
-Name of created message queue is taken from its descriptor.
-
-See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/memory_message_queue)
 
 
 ### Constructors

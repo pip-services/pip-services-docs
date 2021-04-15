@@ -3,11 +3,11 @@ type: docs
 title: "MessageEnvelope"
 linkTitle: "MessageEnvelope"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Allows adding additional information to messages. A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
+
+    Side note: a MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
 ---
-
-Allows adding additional information to messages. A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
-
-Side note: a MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
 
 ### Constructors
 Creates a new MessageEnvelope, which adds a correlation id, message id, and a type to the data being sent/received.
@@ -21,7 +21,6 @@ Creates a new MessageEnvelope, which adds a correlation id, message id, and a ty
 - **Returns** [MessageEnvelope]()
 
 ### Properties
-TODO: add description properties
 
 > **correlation_id**: string
 

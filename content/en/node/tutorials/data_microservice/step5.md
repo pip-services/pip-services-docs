@@ -70,13 +70,13 @@ const BEACON2: BeaconV1 = {
     radius: 70
 };
 ‍
-suite('BeaconsHttpServiceV1', () =&gt; {
+suite('BeaconsHttpServiceV1', () => {
     let persistence: BeaconsMemoryPersistence;
     let controller: BeaconsController;
     let service: BeaconsHttpServiceV1;
     let rest: any;
 ‍
-    setup((done) =&gt; {
+    setup((done) => {
         let url = "http://localhost:3000";
         rest = restify.createJsonClient({ url: url, version: '*'});
 ‍
@@ -102,7 +102,7 @@ suite('BeaconsHttpServiceV1', () =&gt; {
         controller.setReferences(references);
         service.setReferences(references);
 ‍
-        persistence.open(null, (err) =&gt; {
+        persistence.open(null, (err) => {
             if (err) {
                 done(err);
                 return;
@@ -112,23 +112,23 @@ suite('BeaconsHttpServiceV1', () =&gt; {
         });
     });
 ‍
-    teardown((done) =&gt; {
-        service.close(null, (err) =&gt; {
+    teardown((done) => {
+        service.close(null, (err) => {
             persistence.close(null, done);
         });
     });
 ‍
-    test('CRUD Operations', (done) =&gt; {
+    test('CRUD Operations', (done) => {
         let beacon1: BeaconV1;
 ‍
         async.series([
             // Create the first beacon
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/create_beacon',
                     {
                         beacon: BEACON1
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -143,12 +143,12 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 );
             },
             // Create the second beacon
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/create_beacon',
                     {
                         beacon: BEACON2
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -163,13 +163,13 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 );
             },
             // Get all beacons
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/get_beacons',
                     {
                         filter: new FilterParams(),
                         paging: new PagingParams()
                     },
-                    (err, req, res, page) =&gt; {
+                    (err, req, res, page) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(page);
@@ -182,14 +182,14 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 )
             },
             // Update the beacon
-            (callback) =&gt; {
+            (callback) => {
                 beacon1.label = 'ABC';
 ‍
                 rest.post('/v1/beacons/update_beacon',
                     {
                         beacon: beacon1
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -201,12 +201,12 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 )
             },
             // Get beacon by udi
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/get_beacon_by_udi',
                     {
                         udi: beacon1.udi
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -217,13 +217,13 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 )
             },
             // Calculate position for one beacon
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/calculate_position',
                     {
                         site_id: '1',
                         udis: ['00001']
                     },
-                    (err, req, res, position) =&gt; {
+                    (err, req, res, position) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(position);
@@ -237,12 +237,12 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 )
             },
             // Delete the beacon
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/delete_beacon_by_id',
                     {
                         beacon_id: beacon1.id
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         assert.isObject(beacon);
@@ -253,12 +253,12 @@ suite('BeaconsHttpServiceV1', () =&gt; {
                 )
             },
             // Try to get deleted beacon
-            (callback) =&gt; {
+            (callback) => {
                 rest.post('/v1/beacons/get_beacon_by_id',
                     {
                         beacon_id: beacon1.id
                     },
-                    (err, req, res, beacon) =&gt; {
+                    (err, req, res, beacon) => {
                         assert.isNull(err);
 ‍
                         //assert.isEmpty(beacon || null);

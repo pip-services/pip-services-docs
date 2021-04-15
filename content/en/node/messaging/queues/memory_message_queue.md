@@ -3,11 +3,12 @@ type: docs
 title: "MemoryMessageQueue"
 linkTitle: "MemoryMessageQueue"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Message queue that sends and receives messages within the same process by using shared memory.
+
+    This queue is typically used for testing to mock real queues.
 ---
 
-Message queue that sends and receives messages within the same process by using shared memory.
-
-This queue is typically used for testing to mock real queues.
 
 ##### Configuration parameters
 - **name**: name of the message queue

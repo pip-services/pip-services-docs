@@ -3,17 +3,18 @@ type: docs
 title: "MessageQueueFactory"
 linkTitle: "MessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Creates [IMessageQueue](../../queues/imessage_queue) components by their descriptors.
+    Name of created message queue is taken from its descriptor.  
+ 
+    See [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
 ---
 
-Creates [IMessageQueue](../../queues/imessage_queue) components by their descriptors.
-Name of created message queue is taken from its descriptor.
- 
-See [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
 
 ### Properties
 
-> `protected` **_config** TODO  
-> `protected` **_references** TODO
+> `protected` **_config** TODO: add description property  
+> `protected` **_references** TODO: add description property  
 
 ### Methods
 

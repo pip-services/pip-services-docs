@@ -3,15 +3,16 @@ type: docs
 title: "IMessageQueue"
 linkTitle: "IMessageQueue"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+description: >
+    Interface for asynchronous message queues.
+
+    Not all queues may implement all the methods.
+    Attempt to call non-supported method will result in NotImplemented exception.
+    To verify if specific method is supported consult with [MessagingCapabilities](../messaging_capabilities).  
+
+    See [MessageEnvelope](../message_envelope), [MessagingCapabilities](../messaging_capabilities)
 ---
 
-Interface for asynchronous message queues.
-
-Not all queues may implement all the methods.
-Attempt to call non-supported method will result in NotImplemented exception.
-To verify if specific method is supported consult with [MessagingCapabilities](../messaging_capabilities).
-
-See [MessageEnvelope](../message_envelope), [MessagingCapabilities](../messaging_capabilities)
 
 ### Methods
 

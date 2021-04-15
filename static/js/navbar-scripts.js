@@ -2,6 +2,16 @@
 document.addEventListener("readystatechange", loadNavbarState);
 
 function loadNavbarState(event) {
+
+    // fix bug with toc tree empty lines
+    let tab = document.getElementById('TableOfContents')
+    if (tab.getElementsByTagName('li').length > 0){
+        for (var el of tab.getElementsByTagName('li')) {
+            if (el.innerText === '') { el.remove(); }
+        }
+    }
+    
+
     if (localStorage['openNav'] === 'true') {
         if (document.getElementsByClassName('td-sidebar-nav-active-item').length === 0) { return; }
         // check is the last el
@@ -15,7 +25,6 @@ function loadNavbarState(event) {
         }
     }
 }
-
 
 function fadeBg(event) {
     let shadowEl = document.getElementById('shadow');

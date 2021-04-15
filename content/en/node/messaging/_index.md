@@ -4,7 +4,7 @@ title: "Messaging"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 no_list: true
 description: > 
-    #### Asynchronous Messaging for Node.js  
+    Asynchronous Messaging for Node.js  
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message  queue implementation. 

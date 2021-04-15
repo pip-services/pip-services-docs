@@ -10,7 +10,7 @@ menu:
 
 > Pip.Services Toolkit speeds up development of production-grade microservices for various cloud and on-premises platforms in the language of your choice. Symmetric implementation of structures and patterns across all supported languages and out-of-the-box interoperability simplify development in polyglot environments. The toolkit design based on composition allows to mix it with other frameworks and libraries. 
 
-## What can you do with Pip.Services toolkit?
+# What can you do with Pip.Services toolkit?
 
 > * Speed up your microservice development by using prebuilt patterns and components.
 > * Use the toolkit by itself or in conjunction with other frameworks and libraries.

@@ -32,7 +32,7 @@ queue.receive("123", (err, message) => {
 });
 ```
 
-#### Constructors
+### Constructors
 
 > new MemoryMessageQueue(name?: string): [MemoryMessageQueue]()
 

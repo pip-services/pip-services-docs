@@ -31,7 +31,7 @@ result = await command.execute(
 See [ICommand](#icommand), [CommandSet](#commandset)
 
 
-#### Constructors
+### Constructors
 
 > Command([String]() name, [Schema]() schema, dynamic func)
 Creates a new command object and assigns it's parameters. 
@@ -94,7 +94,7 @@ class MyDataCommandSet extends CommandSet {
 }
 ```
 
-#### Constructors
+### Constructors
 
 > CommandSet()
 Creates an empty CommandSet object.

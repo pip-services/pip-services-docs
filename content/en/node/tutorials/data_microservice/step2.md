@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Step 2. Data model development"
-linkTitle: "Step 2"
+linkTitle: "Step 2. Data model."
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 We’ll start the development of our microservice with defining and implementing the data model that it is going to be working with. We’ll start by adding some folders to our project’s directory structure. In the **src** folder, create a **data** folder and, inside it, a **version1** folder. This is done to allow us to create new versions of the data model later on, without breaking the old one.
@@ -68,3 +69,10 @@ Let’s take a closer look at what’s going on in this class. First and foremos
 Since everything we’ve done so far is quite simple and transparent, we’re not going to be writing any tests yet for the data model we’ve created.
 
 With our data model defined, we can now move on to [Step 3. Implementing persistence components.](../step3)
+
+
+<span class="hide-title-link">
+
+### [Step 3. Implementing persistence components.](../step3)
+
+</span>

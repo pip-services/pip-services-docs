@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Step 6. Wrapping microservice into container"
-linkTitle: "Step 6"
+linkTitle: "Step 6. Container"
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 Our service is pretty much done - all that is left is to place the components we’ve developed into a process container and configure it.
@@ -136,3 +137,9 @@ The descriptor in the next section creates our HTTP service, which will automati
 The last section configures services that monitor the health and status of our microservice.
 
 Now that we’ve set up the container and a valid configuration, it’s time to move on to the final [Step 7. Running and testing the microservice.](../step7)
+
+<span class="hide-title-link">
+
+### [Step 7. Running and testing the microservice.](../step7)
+
+</span>

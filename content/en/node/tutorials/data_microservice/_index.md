@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Data Microservice"
 linkTitle: "Data Microservice" 
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 ### Overview
@@ -31,7 +32,16 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 - [Step 6. Wrapping microservice into container](step6)
 - [Step 7. Running and testing the microservice](step7)
 
-### See also
 
-- [Tutorial how to create a client library](../client_library)
-- [Tutorial how to dockerize a microservice](../microservice-dockerization)
+
+### See
+
+- #### [Tutorial how to create a client library](../client_library)
+- #### [Tutorial how to dockerize a microservice](../microservice-dockerization)
+
+
+<span class="hide-title-link">
+
+### [Step 1. Setting up the project](step1)
+
+</span>

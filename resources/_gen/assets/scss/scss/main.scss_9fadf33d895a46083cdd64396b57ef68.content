@@ -13431,7 +13431,7 @@ nav .navbar-logo > svg {
   .td-content .svg-container {
     display: flex;
     align-items: center; }
-    @media (max-width: 991.98px) {
+    @media (max-width: 767.98px) {
       .td-content .svg-container {
         display: none; } }
   .td-content .svg-center {

@@ -1,8 +1,9 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Implementing a controller (with tests)"
-linkTitle: "Step 4"
+title: "Step 4. Implementing a controller"
+linkTitle: "Step 4. Controller"
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 Now that we know a bit about how we are going to be storing data and how microservice configuration works, it’s time to add some logic to our service. Our microservice needs to be able to calculate a device’s position based on the beacons it “sees”, as well as initiate CRUD operations for the data it handles. Let’s create a **logic** folder under the **src** directory and start by defining an interface:
@@ -577,3 +578,9 @@ suite('BeaconsController', () => {
 These tests can be run using the same npm test command that we used to run the persistence tests.
 
 Our service is now just one step away from being completed! All that we have left to write is [Step 5. Implementing an HTTP service.](../step5)
+
+<span class="hide-title-link">
+
+### [Step 5. Implementing an HTTP service.](../step5)
+
+</span>

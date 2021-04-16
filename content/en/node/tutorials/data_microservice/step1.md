@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Step 1. Setting up the project"
-linkTitle: "Step 1" 
+linkTitle: "Step 1. Setting up" 
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 Before we start actually writing our microservice, we need to first set up our environment and create a directory structure in the project’s folder.
@@ -76,3 +77,8 @@ npm install
 
 Now that we’ve got the project all set up, we can move on to [Step 2. Data model development.](../step2)
 
+<span class="hide-title-link">
+
+### [Step 2. Data model development.](../step2)
+
+</span>

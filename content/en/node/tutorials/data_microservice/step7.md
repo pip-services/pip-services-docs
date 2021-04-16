@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Step 7. Running and testing the microservice" 
-linkTitle: "Step 7" 
+linkTitle: "Step 7. Running and testing" 
+gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
 To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following:
@@ -181,6 +182,3 @@ As a result, only the beacon with an id of “2” is returned.
 
 And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
 All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-node)
-
-
-

@@ -13621,10 +13621,10 @@ nav .navbar-logo > svg {
     border-style: solid;
     border-color: #403F4C; }
 
-.my-icon {
+.site-link-icon {
   display: inline-block;
   background: url("/images/main_website_logo_link.svg") no-repeat top left;
-  background-position: 0 0px;
+  background-position: 0;
   width: 30px;
   height: 24px; }
 

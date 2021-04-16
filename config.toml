@@ -1,20 +1,16 @@
+# Site Configuration
 baseURL = "/"
-languageCode = "en-us"
 title = ""
 theme = "docsy"
+disableFastRender = true
 
-# for static build: hugo --theme=docsy --buildDrafts
+enableRobotsTXT = true
+enableGitInfo = true
 
 relativeURLS = true
 
-# Language settings
-contentDir = "content/en"
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
-# Useful when translating.
-enableMissingTranslationPlaceholders = true
-
-disableKinds = ["taxonomy", "taxonomyTerm"]
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+prism_syntax_highlighting = true
 
 # Highlighting config
 # See https://help.farbox.com/pygments.html
@@ -25,161 +21,115 @@ pygmentsUseClasses = false
 pygmentsUseClassic = false
 #pygmentsOptions = "linenos=table"
 
+# Language Configuration
+languageCode = "en-us"
 
-# Mounts
-#[module]
-#  [[module.mounts]]
-#    source = "content/en"
-#    target = "content"
-#    lang = "en"
-#  [[module.mounts]]
-#    source = "static"
-#    target = "static"
-#  [[module.mounts]]
-#    source = "layouts"
-#    target = "layouts"
-#  [[module.mounts]]
-#    source = "data"
-#    target = "data"
-#  [[module.mounts]]
-#    source = "assets"
-#    target = "assets"
-#  [[module.mounts]]
-#    source = "archetypes"
-#    target = "archetypes"
+[languages]
+  [languages.en]
+    title = ""
+    weight = 1
+    contentDir = "content/en"
+    languageName = "English"
+  [languages.ru]
+    title = ""
+    weight = 2
+    contentDir = "content/ru"
+    languageName = "Russian"
+
+# Disable categories & tags
+disableKinds = ["taxonomy", "term"]
+
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+# gcs_engine_id = "d72aa9b2712488cc3"
 
 # Markdown Engine - Allow inline html
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
   [markup.tableOfContents]
     endLevel = 4
     ordered = false
     startLevel = 1
 
-[menu]
-
-  #[[menu.main]]
+# Top Navigation
+#[[menu.main]]
   #  identifier = "Home"
   #  name = "Home"
   #  # pre = "<i class='fa fa-heart'></i>"
   #  url = "http://pipservices.org/"
-  #  weight = -110
-
-
-  [[menu.main]]
+  #  weight = 0
+[[menu.main]]
     identifier = "Node"
     name = "Node.js"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "node/"
-    weight = -100
-
-  [[menu.main]]
+    weight = 10
+[[menu.main]]
     identifier = ".Net"
     name = ".Net"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "net/"
-    weight = -90
-
-  [[menu.main]]
+    weight = 20
+[[menu.main]]
     identifier = "Golang"
     name = "Golang"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "golang/"
-    weight = -80
-
-  [[menu.main]]
+    weight = 30
+[[menu.main]]
     identifier = "Dart"
     name = "Dart"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "dart/"
-    weight = -70
-
-  [[menu.main]]
+    weight = 40
+[[menu.main]]
     identifier = "Python"
     name = "Python"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "python/"
-    weight = -60
-  
-  [[menu.main]]
+    weight = 50
+[[menu.main]]
     identifier = "Java"
     name = "Java"
-    # pre = "<i class='fa fa-heart'></i>"
     url = "java/"
-    weight = -50
-
-  #[[menu.main]]
+    weight = 60
+#[[menu.main]]
   #  identifier = "Get Started"
   #  name = "Get Started"
   #  url = "/get_started"
-  #  weight = -40
-
-# Enable syntax highlighting and copy buttons on code blocks with Prism
-prism_syntax_highlighting = true
-
-# User interface configuration
-[params.ui]
-# Enable to show the side bar menu in its compact state.
-sidebar_menu_compact = true
-# Add to collapsed navbar decorate arrows
-addNavArrows = false 
-#  Set to true to disable breadcrumb navigation.
-breadcrumb_disable = false
-#  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = true
-#  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = true
-# Set to true to disable the About link in the site footer
-footer_about_disable = false
-  
+  #  weight = 70
 
 [params]
-  copyright = "Enterprise Innovation Consulting LLC."
-  privacy_policy = "https://policies.google.com/privacy"
-  customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
-  customSCSS = ["scss/algolia.scss"]
-
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-# gcs_engine_id = "d72aa9b2712488cc3"
+copyright = "Enterprise Innovation Consulting LLC."
+privacy_policy = "https://policies.google.com/privacy"
+customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
+customSCSS = ["scss/algolia.scss"]
 
 # Algolia search
 algolia_docsearch = true
 offlineSearch = false
-[outputFormats.Algolia]
-  baseName = "algolia"
-  isPlainText = true
-  mediaType = "application/json"
-  notAlternative = true
-[params.algolia]
-  vars = ["title", "description", "summary", "date", "lastmod", "permalink"]
-  params = ["categories", "tags"]
-[outputs]
-  home = ["HTML", "RSS", "JSON", "Algolia"]
-  page = ["HTML", "RSS"]
 
-# First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
+# GitHub Information
+github_repo = "https://github.com/pip-services/pip-services-docs"
+github_branch = "master"
+# github_project_repo = ""
+# github_subdir = ""
 
-# Menu title if your navbar has a versions selector to access old versions of your site.
-# This menu appears only if you have at least one [params.versions] set.
-version_menu = "Releases"
 
-# Flag used in the "version-banner" partial to decide whether to display a 
-# banner on every page indicating that this is an archived version of the docs.
-# Set this flag to "true" if you want to display the banner.
+# Versioning
+version_menu = "v0.1 (latest)"
+version = "V0.1"
 archived_version = false
-
-# The version number for the version of the docs represented in this doc set.
-# Used in the "version-banner" partial to display a version number for the 
-# current doc set.
-version = "0.1"
-
-# A link to latest version of the docs. Used in the "version-banner" partial to
-# point people to the main doc site.
 url_latest_version = "https://example.com"
+
+[[params.versions]]
+  version = "v0.1 (latest)"
+  url = "#"
+
+# User interface configuration
+[params.ui]
+sidebar_menu_compact = true
+addNavArrows = false 
+breadcrumb_disable = false
+sidebar_search_disable = true
+navbar_logo = true
+footer_about_disable = false
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
@@ -209,3 +159,15 @@ url_latest_version = "https://example.com"
 	url = "http://github.com/pip-services"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
+
+[outputFormats.Algolia]
+  baseName = "algolia"
+  isPlainText = true
+  mediaType = "application/json"
+  notAlternative = true
+[params.algolia]
+  vars = ["title", "description", "summary", "date", "lastmod", "permalink"]
+  params = ["categories", "tags"]
+[outputs]
+  home = ["HTML", "RSS", "JSON", "Algolia"]
+  page = ["HTML", "RSS"]

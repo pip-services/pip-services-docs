@@ -62,7 +62,7 @@ Before committing changes run dockerized build and test as:
 ./clear.ps1
 ```
 
-## Contacts
+### Contacts
 
 The Node.js version of Pip.Services is created and maintained by:
 - **Volodymyr Tkachenko**

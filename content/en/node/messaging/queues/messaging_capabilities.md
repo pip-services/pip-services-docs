@@ -14,16 +14,16 @@ description: >
 
 Creates a new instance of the capabilities object.
 
-- **canMessageCount**: boolean true if queue supports reading message count.
-- **canSend**: boolean true if queue is able to send messages.
-- **canReceive**: boolean true if queue is able to receive messages.
-- **canPeek**: boolean true if queue is able to peek messages.
-- **canPeekBatch**: boolean true if queue is able to peek multiple messages in one batch.
-- **canRenewLock**: boolean true if queue is able to renew message lock.
-- **canAbandon**: boolean true if queue is able to abandon messages.
-- **canDeadLetter**: boolean true if queue is able to send messages to dead letter queue.
-- **canClear**: boolean true if queue can be cleared.
-- **Returns** [MessagingCapabilities]()
+- **canMessageCount**: boolean - true if queue supports reading message count.
+- **canSend**: boolean - true if queue is able to send messages.
+- **canReceive**: boolean - true if queue is able to receive messages.
+- **canPeek**: boolean - true if queue is able to peek messages.
+- **canPeekBatch**: boolean - true if queue is able to peek multiple messages in one batch.
+- **canRenewLock**: boolean - true if queue is able to renew message lock.
+- **canAbandon**: boolean - true if queue is able to abandon messages.
+- **canDeadLetter**: boolean - true if queue is able to send messages to dead letter queue.
+- **canClear**: boolean - true if queue can be cleared.
+- **returns**: [MessagingCapabilities]() - TODO add descriptiion
 
 
 ### Methods
@@ -34,7 +34,7 @@ Informs if the queue is able to abandon messages.
 
 > canAbandon(): boolean
 
-- **Returns** boolean true if queue is able to abandon.
+- **returns**: boolean - true if queue is able to abandon.
 
 
 #### canClear
@@ -42,7 +42,7 @@ Informs if the queue can be cleared.
 
 > canClear(): boolean
 
-- **Returns** boolean true if queue can be cleared.
+- **returns**: boolean - true if queue can be cleared.
 
 
 #### canDeadLetter
@@ -50,7 +50,7 @@ Informs if the queue is able to send messages to dead letter queue.
 
 > canDeadLetter(): boolean
 
-- **Returns** boolean true if queue is able to send messages to dead letter queue.
+- **returns**: boolean - true if queue is able to send messages to dead letter queue.
 
 
 #### canMessageCount
@@ -58,7 +58,7 @@ Informs if the queue is able to read number of messages.
 
 > canMessageCount(): boolean
 
-- **Returns** boolean true if queue supports reading message count.
+- **returns**: boolean - true if queue supports reading message count.
 
 
 #### canPeek
@@ -66,7 +66,7 @@ Informs if the queue is able to peek messages.
 
 > canPeek(): boolean
 
-- **Returns** boolean true if queue is able to peek messages.
+- **returns**: boolean - true if queue is able to peek messages.
 
 
 #### canPeekBatch
@@ -74,7 +74,7 @@ Informs if the queue is able to peek multiple messages in one batch.
 
 > canPeekBatch(): boolean
 
-- **Returns** boolean true if queue is able to peek multiple messages in one batch.
+- **returns**: boolean - true if queue is able to peek multiple messages in one batch.
 
 
 #### canReceive
@@ -82,7 +82,7 @@ Informs if the queue is able to receive messages.
 
 > canReceive(): boolean
 
-- **Returns** boolean true if queue is able to receive messages.
+- **returns**: boolean - true if queue is able to receive messages.
 
 
 #### canRenewLock
@@ -90,7 +90,7 @@ Informs if the queue is able to renew message lock.
 
 > canRenewLock(): boolean
 
-- **Returns** boolean true if queue is able to renew message lock.
+- **returns**: boolean - true if queue is able to renew message lock.
 
 
 #### canSend
@@ -98,4 +98,4 @@ Informs if the queue is able to send messages.
 
 > canSend(): boolean
 
-- **Returns** boolean true if queue is able to send messages.
+- **returns**: boolean - true if queue is able to send messages.

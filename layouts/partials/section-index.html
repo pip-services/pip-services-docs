@@ -4,6 +4,21 @@
     {{ $parent := .Page }}
     {{ if $parent.Params.no_list }}
     {{/* If no_list is true we don't show a list of subpages */}}
+    {{ if .Site.Params.separate_classes }}
+    {{/* Separate classes on the Interfaces, Classes, Constants etc. */}}
+    <hr class="panel-line">
+        {{ range $pages }}
+            {{ if and (eq .Parent $parent) (not .Params.exclude_from_list) }}
+            
+                <div class="entry">
+                    <h5>
+                        <a href="{{ .RelPermalink }}">{{- .Title -}}</a>
+                    </h5>
+                    <p>{{ .Description | markdownify }}</p>
+                </div>
+            {{ end }}
+        {{ end }}
+    {{ end }}
     {{ else if $parent.Params.simple_list }}
     {{/* If simple_list is true we show a bulleted list of subpages */}}
         <ul>

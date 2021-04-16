@@ -137,11 +137,8 @@ footer_about_disable = false
   
 
 [params]
-  copyright = "The Docsy Authors"
+  copyright = "Enterprise Innovation Consulting LLC."
   privacy_policy = "https://policies.google.com/privacy"
-  # Change default color scheme with a variant one. Can be "red", "blue", "green".
-  #themeVariant = "mine"
-  #themeVariant = "green"
   customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
   customSCSS = ["scss/algolia.scss"]
 
@@ -187,33 +184,28 @@ url_latest_version = "https://example.com"
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
-	name = "User mailing list"
-	url = "https://example.org/mail"
+	name ="Main Site"
+	url = "http://www.pipservices.org"
+	icon = "my-icon fa"
+        desc = "Our main Site!"
+[[params.links.user]]
+	name = "Email"
+	url = "mailto:info@entinco.com"
 	icon = "fa fa-envelope"
-        desc = "Discussion and help from your fellow users"
+        desc = "Discussion and help"
 [[params.links.user]]
-	name ="Twitter"
-	url = "https://example.org/twitter"
-	icon = "fab fa-twitter"
-        desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
+	name ="YouTube"
+	url = "https://www.youtube.com/channel/UCDXBRWYD1-08BW3miK5LVdg"
+	icon = "fab fa-youtube"
+        desc = "Our YouTube channel!"
+[[params.links.developer]]
 	name = "Stack Overflow"
-	url = "https://example.org/stack"
+	url = "https://stackoverflow.com/questions/tagged/pipservices"
 	icon = "fab fa-stack-overflow"
         desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
-	url = "https://github.com/google/docsy"
+	url = "http://github.com/pip-services"
 	icon = "fab fa-github"
         desc = "Development takes place here!"
-[[params.links.developer]]
-	name = "Slack"
-	url = "https://example.org/slack"
-	icon = "fab fa-slack"
-        desc = "Chat with other project developers"
-[[params.links.developer]]
-	name = "Developer mailing list"
-	url = "https://example.org/mail"
-	icon = "fa fa-envelope"
-        desc = "Discuss development issues around the project"

@@ -31,6 +31,14 @@
     @import url($web-font-path);
 }
 
+.my-icon{
+    
+    display: inline-block;
+    background: url('/images/main_website_logo_link.svg') no-repeat top left;
+    background-position: 0 0px; width: 30px; height: 24px; 
+}
+
+
 footer {
     min-height: 120px;
     

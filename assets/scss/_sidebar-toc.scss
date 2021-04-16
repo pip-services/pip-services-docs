@@ -8,7 +8,7 @@
 
     @supports (position: sticky) {
         position: sticky;
-        padding-top: 4rem;
+        padding-top: 5.3rem;
         top: 0rem;
         height: calc(100vh);
         overflow-y: auto;
@@ -51,8 +51,8 @@
         }
 
         li {
-            padding-top: 0.4rem;
-            padding-bottom: 0.4rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
         }
 
         a {

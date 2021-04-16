@@ -9,6 +9,29 @@
 .td-content {
     order: 1;
 
+    .hide-title-link{
+
+        > blockquote {
+            margin-top: 1rem;
+            padding: 0 0 0 1rem;
+            margin-bottom: 1rem;
+            color: #2C4154;
+            border-left: 6px solid #4BB4FF;
+            font-size: 1.1rem;
+        }
+        > h3, h4{
+            max-height: fit-content;
+            height: 5rem;
+            @include media-breakpoint-down(sm) {
+                height: 0rem;
+            }
+            visibility: hidden;
+        }
+        > a{
+            display: none;
+        }
+    }
+
     .svg-container {
 		display: flex; 
 		align-items: center;

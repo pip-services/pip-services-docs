@@ -12,23 +12,23 @@ description: >
 #### createQueue
 Creates a message queue. If connection doesn't support this function it exists without error.
 
-> createQueue(name: string, callback: function): void
+> createQueue(name: string, callback: (err: any) => void): void
 
-- **name**: string the name of the queue to be created.
-- **callback**: function notifies about completion with error or null for success. 
+- **name**: string - the name of the queue to be created.
+- **callback**: (err: any) => void - notifies about completion with error or null for success. 
 
 #### deleteQueue
 Deletes a message queue. If connection doesn't support this function it exists without error.
 
-> deleteQueue(name: string, callback: function): void
+> deleteQueue(name: string, callback: (err: any) => void): void
 
-- **name**: string the name of the queue to be deleted.
-- **callback**: function notifies about completion with error or null for success.
+- **name**: string - the name of the queue to be deleted.
+- **callback**: (err: any) => void - notifies about completion with error or null for success.
 
 #### readQueueNames
 Reads a list of registered queue names. If connection doesn't support this function returnes an empty list.
 
-> readQueueNames(callback: function): void
+> readQueueNames(callback: (err: any) => void): void
 
-- **callback**: function to receive a list with registered queue names or an error.
+- **callback**: (err: any) => void - to receive a list with registered queue names or an error.
 

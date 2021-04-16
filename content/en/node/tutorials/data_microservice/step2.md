@@ -40,7 +40,7 @@ export class BeaconTypeV1 {
 
 ```
 
-For checking the validity of the data we are going to be receiving, let’s create a data validation schema in a class called **BeaconV1Schema**:
+For checking the validity of the data we are going to be receiving, let’s create a data validation schema in a class called **BeaconV1Schema**: 
 
 **/src/data/version1/BeaconV1Schema.ts**
 

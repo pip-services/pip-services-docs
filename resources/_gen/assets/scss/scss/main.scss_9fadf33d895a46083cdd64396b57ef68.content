@@ -13011,7 +13011,7 @@ readers do not read off random characters that represent icons */
   z-index: 22; }
 
 .td-content .highlight {
-  margin: 2rem 0;
+  margin: 0rem 0 2rem 0;
   padding: 0; }
   .td-content .highlight pre {
     margin: 0;
@@ -13316,7 +13316,7 @@ nav .navbar-logo > svg {
   @supports (position: sticky) {
     .td-toc {
       position: sticky;
-      padding-top: 4rem;
+      padding-top: 5.3rem;
       top: 0rem;
       height: calc(100vh);
       overflow-y: auto; } }
@@ -13334,8 +13334,8 @@ nav .navbar-logo > svg {
   .td-toc #TableOfContents > ul > li > ul > li > ul > li > a {
     font-weight: 700; }
   .td-toc #TableOfContents li {
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem; }
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem; }
   .td-toc #TableOfContents a {
     color: #495057; }
     .td-toc #TableOfContents a:hover {
@@ -13412,6 +13412,22 @@ nav .navbar-logo > svg {
 
 .td-content {
   order: 1; }
+  .td-content .hide-title-link > blockquote {
+    margin-top: 1rem;
+    padding: 0 0 0 1rem;
+    margin-bottom: 1rem;
+    color: #2C4154;
+    border-left: 6px solid #4BB4FF;
+    font-size: 1.1rem; }
+  .td-content .hide-title-link > h3, .td-content .hide-title-link h4 {
+    max-height: fit-content;
+    height: 5rem;
+    visibility: hidden; }
+    @media (max-width: 767.98px) {
+      .td-content .hide-title-link > h3, .td-content .hide-title-link h4 {
+        height: 0rem; } }
+  .td-content .hide-title-link > a {
+    display: none; }
   .td-content .svg-container {
     display: flex;
     align-items: center; }
@@ -13604,6 +13620,13 @@ nav .navbar-logo > svg {
   .pageinfo-dark {
     border-style: solid;
     border-color: #403F4C; }
+
+.my-icon {
+  display: inline-block;
+  background: url("/images/main_website_logo_link.svg") no-repeat top left;
+  background-position: 0 0px;
+  width: 30px;
+  height: 24px; }
 
 footer {
   min-height: 120px; }

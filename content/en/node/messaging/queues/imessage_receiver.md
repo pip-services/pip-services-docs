@@ -33,9 +33,9 @@ Receives incoming message from the queue.
 
 See [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
-> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: function): void
+> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: (err: any) => void): void
 
-- **envelope**: [MessageEnvelope](../message_envelope) an incoming message
-- **queue**: [IMessageQueue](../imessage_queue) a queue where the message comes from
-- **callback**: callback function that receives error or null for success.
+- **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
+- **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from
+- **callback**: (err: any) => void - that receives error or null for success.
 

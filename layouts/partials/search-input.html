@@ -1,10 +1,10 @@
 {{ if or .Site.Params.gcs_engine_id .Site.Params.algolia_docsearch }}
 
-<button id="search-btn" class="btn d-none d-lg-inline-block">
+<button id="search-btn" class="btn d-xl-none d-lg-inline-block d-none">
   <i>{{ with resources.Get "icons/search.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}</i>
 </button>
 
-<input id="hidden-search" type="search" class="d-lg-none d-sm-inline-block form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+<input id="hidden-search" type="search" class="d-lg-none d-xl-inline-block d-sm-inline-block form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
 
 {{ else if .Site.Params.offlineSearch }}
 {{ $offlineSearchIndex := resources.Get "json/offline-search-index.json" | resources.ExecuteAsTemplate "offline-search-index.json" . }}

@@ -97,17 +97,41 @@
 
 
 .navbar-offcanvas {
+
     .td-search-input {
-        max-width: 85%;
+        max-width: 90%;
         border: none;
-        //border-bottom: 1px solid #B3C4D7;
         font-weight: 400;
         //padding-left: 0.5rem;
+        height: calc(1em + 0.7rem + 2px);
+        @include media-breakpoint-down(sm) {
+            height: calc(1.5em + 0.75rem + 2px);
+            font-size: 1rem;
+            padding: 0.375rem 0.75rem;
+            
+        }
+        border-bottom: 1.5px solid $primary;
+        outline: 0;
+        padding: 0 0 0 0.3rem;
+        font-size: smaller;
+        
+        &:focus {
+            background: transparent;
+
+            @include placeholder {
+                color: transparent;
+            }
+        }
     }
 
     .search-logo {
         > svg > path {
             fill: $primary;
+        }
+
+        > svg {
+            height: 23px;
+            width: 23px;
         }
     }
 }
@@ -186,17 +210,25 @@ nav .navbar-logo > svg  {
     }
     
     .td-search-input {
+        color:white ;
+        display: inline-block;
         border: none;
-        border-bottom: 1px solid white;
+        border-bottom: 1.5px solid darken($color: white, $amount: 20);
+        outline: 0;
         font-weight: 400;
+        padding: 0.15rem 0 0 0.1rem;
+        height: calc(1.4em + 0.7rem + 2px);
 
         @include placeholder {
-            color: $navbar-dark-color;
+            color: darken($color: white, $amount: 20);
         }
-
+        
         &:focus {
+            background: transparent;
+            border-color: white;
+
             @include placeholder {
-                color: gray;
+                color: darken($color: white, $amount: 10);
             }
         }
     }
@@ -230,6 +262,10 @@ nav .navbar-logo > svg  {
             }
         }
     }
+}
+
+#search-btn {
+    vertical-align: top;
 }
 
 // Icons

@@ -1,7 +1,7 @@
-// loadNavbarState
-document.addEventListener("readystatechange", loadNavbarState);
+// loadNavbar
+document.addEventListener("readystatechange", loadNavbar);
 
-function loadNavbarState(event) {
+function loadNavbar(event) {
 
     // fix bug with toc tree empty lines
     let tab = document.getElementById('TableOfContents')
@@ -11,8 +11,8 @@ function loadNavbarState(event) {
             if (el.firstChild != null && el.firstChild.innerText === '') { el.firstChild.remove(); }
         }
     }
-    
 
+    // loadNavbarState
     if (localStorage['openNav'] === 'true') {
         if (document.getElementsByClassName('td-sidebar-nav-active-item').length === 0) { return; }
         // check is the last el
@@ -54,20 +54,39 @@ function saveNavState(event) {
 }
 
 function showSearch(event) {
-    var searchBox = document.getElementById("hidden-search");
-    if (searchBox.classList.contains("d-lg-none")) {
-        searchBox.classList.remove("d-lg-none");
-        searchBox.focus();
-        
-    } else {
-        searchBox.classList.add("d-lg-none");
+    const width = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+    );
+
+    if (width < 1200) {
+        let searchButton = document.getElementById("search-btn")
+        let searchBox = document.getElementById("hidden-search");
+
+        if (searchBox.classList.contains("d-lg-none")) {
+            searchBox.classList.remove("d-lg-none");
+            // show algolia span
+            searchBox.parentElement.classList.add("d-lg-inline-block");
+            searchBox.parentElement.classList.remove("d-lg-none");
+            // hide btn
+            searchButton.classList.remove("d-lg-inline-block");
+            searchButton.classList.add("d-lg-none");
+
+            searchBox.focus();
+
+        } else {
+            searchBox.classList.add("d-lg-none");
+            // hide span algolia
+            searchBox.parentElement.classList.remove("d-lg-inline-block");
+            searchBox.parentElement.classList.add("d-lg-none");
+            // show btn
+            searchButton.classList.add("d-lg-inline-block");
+        }
     }
 }
 
 document.getElementById("search-btn").addEventListener("click", showSearch);
-document.getElementById("hidden-search").addEventListener("blur", (event)=> {
-    event.target.classList.add("d-lg-none");
-});
+document.getElementById("hidden-search").addEventListener("blur", showSearch);
 
 document.body.addEventListener('click', saveNavState);
 document.body.addEventListener("click", hideAlgoliaPopUp);

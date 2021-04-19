@@ -37,7 +37,7 @@ Creates a new instance of the message queue.
 
 - **name**: string `optional` a queue name
 - **capabilities**: [MessagingCapabilities](../messaging_capabilities) `optional` a capabilities of this message queue
-- Returns [MessageQueue]()
+- returns [MessageQueue]() - TODO: add description
 
 
 ### Properties
@@ -47,32 +47,32 @@ Creates a new instance of the message queue.
 #### _logger
 TODO: add description property 
 
-> `protected` **_logger** 
+> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _counters
 TODO: add description property
 
-> `protected` **_counters**   
+> `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _connectionResolver
 TODO: add description property  
 
-> `protected` **_connectionResolver** 
+> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver)
 
 #### _credentialResolver
 TODO: add description property  
 
-> `protected` **_credentialResolver**
+> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver)
 
 #### _name
  TODO: add description property  
 
-> `protected` **_name** 
+> `protected` **_name**: string
 
 #### _capabilities
 TODO: add description property  
 
-> `protected` **_capabilities** 
+> `protected` **_capabilities**: [MessagingCapabilities](../messaging_capabilities)
 
 </span>
 

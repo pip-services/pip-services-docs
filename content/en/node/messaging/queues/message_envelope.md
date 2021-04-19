@@ -49,7 +49,6 @@ The time at which the message was sent.
 
 > **sent_time**: Date
 
-
 </span>
 
 ### Methods

@@ -35,7 +35,7 @@ function search(searchQuery) {
     searchResults.style.display = "block";
 
     // load your index file
-    getJSON("/index.json", function (contents) {
+    getJSON("/pip-services-docs/index.json", function (contents) {
         var results = [];
         let regex = new RegExp(searchQuery, "i");
         // iterate through posts and collect the ones with matches
@@ -87,7 +87,7 @@ function search(searchQuery) {
                 if (lastIndexOf !== value.content.length - 1) { summary = summary.concat("..."); }
 
                 let div = "".concat("<div id=\"search-summary-", key, "\">")
-                    .concat("<h4 class=\"post-title\"><a href=\"",value.permalink, "\">", value.title, "</a></h4>")
+                    .concat("<h4 class=\"post-title\"><a href=\"", "/pip-services-docs/" + value.permalink, "\">", value.title, "</a></h4>")
                     .concat("<p>", summary, "</p>")
                     .concat("</div>");
                 searchResults.appendChild(htmlToElement(div));

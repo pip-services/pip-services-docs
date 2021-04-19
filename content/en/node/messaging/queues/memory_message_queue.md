@@ -4,8 +4,7 @@ title: "MemoryMessageQueue"
 linkTitle: "MemoryMessageQueue"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: >
-    Message queue that sends and receives messages within the same process by using shared memory.
-    <br><br>
+    Message queue that sends and receives messages within the same process by using shared memory.  
     This queue is typically used for testing to mock real queues.
 ---
 
@@ -241,10 +240,9 @@ Opens the component with given connection and credential parameters.
 - **callback**: (err: any) => void - callback function that receives error or null no errors occured.
 
 
-<span class="hide-title-link">
 
-### See 
-#### [MessagingCapabilities](../messaging_capabilities) 
-#### [MessageQueue](../message_queue)
 
-</span>
+### See also
+- #### [MessagingCapabilities](../messaging_capabilities) 
+- #### [MessageQueue](../message_queue)
+

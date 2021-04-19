@@ -11,7 +11,7 @@
 
     .hide-title-link{
 
-        > blockquote {
+        blockquote {
             margin-top: 1rem;
             padding: 0 0 0 1rem;
             margin-bottom: 1rem;
@@ -19,7 +19,7 @@
             border-left: 6px solid #4BB4FF;
             font-size: 1.1rem;
         }
-        > h3, h4{
+        h3, h4{
             max-height: fit-content;
             height: 5rem;
             @include media-breakpoint-down(sm) {
@@ -27,7 +27,7 @@
             }
             visibility: hidden;
         }
-        > a{
+        a{
             display: none;
         }
     }

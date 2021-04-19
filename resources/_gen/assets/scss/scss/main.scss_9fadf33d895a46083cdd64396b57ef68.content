@@ -13463,21 +13463,21 @@ nav .navbar-logo > svg {
 
 .td-content {
   order: 1; }
-  .td-content .hide-title-link > blockquote {
+  .td-content .hide-title-link blockquote {
     margin-top: 1rem;
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
     color: #2C4154;
     border-left: 6px solid #4BB4FF;
     font-size: 1.1rem; }
-  .td-content .hide-title-link > h3, .td-content .hide-title-link h4 {
+  .td-content .hide-title-link h3, .td-content .hide-title-link h4 {
     max-height: fit-content;
     height: 5rem;
     visibility: hidden; }
     @media (max-width: 767.98px) {
-      .td-content .hide-title-link > h3, .td-content .hide-title-link h4 {
+      .td-content .hide-title-link h3, .td-content .hide-title-link h4 {
         height: 0rem; } }
-  .td-content .hide-title-link > a {
+  .td-content .hide-title-link a {
     display: none; }
   .td-content .svg-container {
     display: flex;

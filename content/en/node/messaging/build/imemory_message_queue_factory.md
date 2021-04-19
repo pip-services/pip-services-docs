@@ -5,9 +5,8 @@ linkTitle: "IMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: > 
     Creates message queue componens.
-    <br><br>
-    See [IMessageQueue](../../queues/imessage_queue)
 ---
+See [IMessageQueue](../../queues/imessage_queue)
 
 ### Methods
 
@@ -18,11 +17,8 @@ Creates a message queue component and assigns its name.
 > createQueue(name: string): [IMessageQueue](../../queues/imessage_queue)
 
 - **name**: string - a name of the created message queue.
+- **returns**: [IMessageQueue](../../queues/imessage_queue) - TODO: add description here
 
 
-<span class="hide-title-link">
-
-### See
-#### [IMessageQueue](../../queues/imessage_queue)
-
-</span>
+### See also
+- #### [IMessageQueue](../../queues/imessage_queue)

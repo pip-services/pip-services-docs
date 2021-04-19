@@ -5,10 +5,8 @@ linkTitle: "LockedMessage"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: >
     Data object used to store and lock incoming messages in [MemoryMessageQueue](../memory_message_queue).  
-    <br><br>
-    See [MemoryMessageQueue](../memory_message_queue)
 ---
-
+See [MemoryMessageQueue](../memory_message_queue)
 
 ### Properties
 
@@ -28,12 +26,10 @@ The incoming message.
 The lock timeout in milliseconds.
 
 > **timeout**: number
-</span>
-
-<span class="hide-title-link">
-
-### See
-#### [MemoryMessageQueue](../memory_message_queue)
 
 </span>
+
+
+### See also
+- #### [MemoryMessageQueue](../memory_message_queue)
 

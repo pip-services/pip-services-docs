@@ -6,10 +6,8 @@ gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: >
     Creates [MemoryMessageQueue](../queue/memory_message_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor. 
-    <br><br>
-    See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/memory_message_queue)
 ---
-
+See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/memory_message_queue)
 
 ### Constructors
 Create a new instance of the factory.
@@ -42,10 +40,7 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-<span class="hide-title-link">
 
-### See 
-#### [Factory](../../../components/build/factory)
-#### [MemoryMessageQueue](../queue/memory_message_queue)
-
-</span>
+### See also
+- #### [Factory](../../../components/build/factory)
+- #### [MemoryMessageQueue](../queue/memory_message_queue)

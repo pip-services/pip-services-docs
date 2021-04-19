@@ -8,11 +8,9 @@ description: >
 
     Not all queues may implement all the methods.
     Attempt to call non-supported method will result in NotImplemented exception.
-    To verify if specific method is supported consult with [MessagingCapabilities](../messaging_capabilities).  
-    <br><br>
-    See [MessageEnvelope](../message_envelope), [MessagingCapabilities](../messaging_capabilities)
+    To verify if specific method is supported consult with [MessagingCapabilities](../messaging_capabilities).   
 ---
-
+See [MessageEnvelope](../message_envelope), [MessagingCapabilities](../messaging_capabilities)
 
 ### Methods
 
@@ -143,10 +141,7 @@ Sends an object into the queue. Before sending the object is converted into JSON
 - **callback**: (err: any) => void `optional` - callback function that receives error or null for success.
 
 
-<span class="hide-title-link">
 
-### See
-#### [MessageEnvelope](../message_envelope)
-#### [MessagingCapabilities](../messaging_capabilities)
-
-</span>
+### See also
+- #### [MessageEnvelope](../message_envelope)
+- #### [MessagingCapabilities](../messaging_capabilities)

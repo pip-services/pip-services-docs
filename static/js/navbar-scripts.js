@@ -19,14 +19,18 @@ function loadNavbar(event) {
 
     // load navbar state
     if (localStorage['currentMenuActiveItem']) {
-        Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
+        if (document.getElementsByClassName('nav-link active dropdown-item').length == 0){
+            Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
                 if (navItem.innerText.trim() == localStorage['currentMenuActiveItem']) {
                     navItem.classList.add('active');
                     document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['currentMenuActiveItem'];
                     document.getElementById('navbarDropdownMenuLinkMobile').innerText = localStorage['currentMenuActiveItem'];
-                }  
-            }
-        )
+                }
+            })
+        }
+        else {
+            localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
+        }
     }
 
     if (localStorage['openNav'] === 'true') {

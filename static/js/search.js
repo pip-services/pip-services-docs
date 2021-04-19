@@ -35,7 +35,7 @@ function search(searchQuery) {
     searchResults.style.display = "block";
 
     // load your index file
-    getJSON("/pip-services-docs/index.json", function (contents) {
+    getJSON("/index.json", function (contents) {
         var results = [];
         let regex = new RegExp(searchQuery, "i");
         // iterate through posts and collect the ones with matches
@@ -48,12 +48,19 @@ function search(searchQuery) {
         });
 
         if (results.length > 0) {
-            searchResults.appendChild(
-                htmlToElement("<div><b>Found: ".concat(results.length, "</b></div>"))
-            );
+            let foundCount = 0;
+            
 
             // populate search results block with excerpts around the matched search query
             results.forEach(function (value, key) {
+                let activeMenuItem = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/')
+                let menuItemOfResult = value['permalink'].split('/')
+                let isFromCurrentMenu = activeMenuItem.filter(x => menuItemOfResult.includes(x) && x !== "").length > 0 ? true : false;
+                if (!isFromCurrentMenu)
+                    return;
+
+                foundCount++;
+
                 let firstIndexOf = value.content.toLowerCase().indexOf(searchQuery.toLowerCase());
                 let lastIndexOf = firstIndexOf + searchQuery.length;
                 let spaceIndex = firstIndexOf - contextDive;
@@ -80,7 +87,7 @@ function search(searchQuery) {
                 if (lastIndexOf !== value.content.length - 1) { summary = summary.concat("..."); }
 
                 let div = "".concat("<div id=\"search-summary-", key, "\">")
-                    .concat("<h4 class=\"post-title\"><a href=\"", "/pip-services-docs/" + value.permalink, "\">", value.title, "</a></h4>")
+                    .concat("<h4 class=\"post-title\"><a href=\"",value.permalink, "\">", value.title, "</a></h4>")
                     .concat("<p>", summary, "</p>")
                     .concat("</div>");
                 searchResults.appendChild(htmlToElement(div));
@@ -89,6 +96,10 @@ function search(searchQuery) {
                 new Mark(document.getElementById("search-summary-" + key))
                     .mark(searchQuery, { "separateWordSearch": false });
             });
+
+            searchResults.prepend(
+                htmlToElement("<div><b>Found: ".concat(foundCount, "</b></div>"))
+            );
         }
         else {
             searchResults.appendChild(

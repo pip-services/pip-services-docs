@@ -5,18 +5,34 @@ function loadNavbar(event) {
 
     // fix bug with toc tree empty lines
     let tab = document.getElementById('TableOfContents')
-    if (tab != null && tab.getElementsByTagName('li').length > 0){
+    if (tab != null && tab.getElementsByTagName('li').length > 0) {
         for (var el of tab.getElementsByTagName('li')) {
             if (el.innerText === '') { el.remove(); }
             if (el.firstChild != null && el.firstChild.innerText === '') { el.firstChild.remove(); }
         }
     }
 
-    // loadNavbarState
+    // Event save current menu active item
+    Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem =>
+        navItem.addEventListener('click', () => localStorage['currentMenuActiveItem'] = navItem.innerText)
+    )
+
+    // load navbar state
+    if (localStorage['currentMenuActiveItem']) {
+        Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
+                if (navItem.innerText.trim() == localStorage['currentMenuActiveItem']) {
+                    navItem.classList.add('active');
+                    document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['currentMenuActiveItem'];
+                    document.getElementById('navbarDropdownMenuLinkMobile').innerText = localStorage['currentMenuActiveItem'];
+                }  
+            }
+        )
+    }
+
     if (localStorage['openNav'] === 'true') {
         if (document.getElementsByClassName('td-sidebar-nav-active-item').length === 0) { return; }
         // check is the last el
-        if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')){
+        if (!document.getElementById('js-bootstrap-offcanvas').classList.contains('in')) {
             let speedTransition = document.getElementsByClassName('navbar-offcanvas')[0];
             let _tmp = [...speedTransition.style];
 
@@ -29,14 +45,14 @@ function loadNavbar(event) {
 
 function fadeBg(event) {
     let shadowEl = document.getElementById('shadow');
-    if (event.target.classList.contains('nav-link')) 
+    if (event.target.classList.contains('nav-link'))
         shadowEl.style.display = 'block';
-    else 
+    else
         shadowEl.style.display = 'none';
 }
 
 function hideAlgoliaPopUp(event) {
-    if (document.getElementsByClassName('algolia-autocomplete').length > 0){
+    if (document.getElementsByClassName('algolia-autocomplete').length > 0) {
         if (!event.target.classList.contains('algolia-autocomplete') && event.target.getAttribute('type') !== 'search') {
             let autocompleteEl = document.getElementsByClassName('ds-dropdown-menu')[0];
             autocompleteEl.style.display = 'none';
@@ -46,7 +62,6 @@ function hideAlgoliaPopUp(event) {
 
 function saveNavState(event) {
     let pressedEl = event.target
-    if (pressedEl.id == 'load-tree') { return; }
     if (pressedEl.classList.contains('nav-item-tree') || pressedEl.parentElement.classList.contains('nav-item-tree') || pressedEl.parentElement.parentElement.classList.contains('nav-item-tree'))
         localStorage['openNav'] = true;
     else
@@ -71,7 +86,7 @@ function showSearch(event) {
                 searchButton.classList.remove("d-md-inline-block");
                 searchButton.classList.add("d-md-none");
             }
-            
+
             searchBox.focus();
 
         } else {
@@ -87,6 +102,4 @@ document.getElementById("hidden-search").addEventListener("blur", showSearch);
 document.body.addEventListener('click', saveNavState);
 document.body.addEventListener("click", hideAlgoliaPopUp);
 document.body.addEventListener('click', fadeBg);
-document.getElementById('navbarDropdownMenuLink').addEventListener('click', fadeBg);
-
-
+document.getElementById('navbarDropdownMenuLinkMobile').addEventListener('click', fadeBg);

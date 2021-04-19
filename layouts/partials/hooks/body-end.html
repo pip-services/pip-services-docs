@@ -30,16 +30,15 @@
       transformData: function (hits) {
       // Filter by language
 
-      if (document.location.pathname !== '/') {
         hits = hits.filter((item) => {
           let hitLangPage = item['url'].split('/')[4].toLowerCase();
-          let isCorrectHit = document.location.pathname.replace('.', '/').split('/').indexOf(hitLangPage) > -1;
+          let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
 
           return isCorrectHit;
-        })
+        });
 
         return hits;
-      }
+      
         
       },
 

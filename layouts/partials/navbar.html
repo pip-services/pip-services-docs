@@ -38,7 +38,7 @@
 					{{ end }}
 					
 				</div>
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkMobile" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
 					{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
 				</a>
@@ -76,7 +76,7 @@
 			{{ end }}
 			{{ end }} -->
 
-			<li class="nav-item dropdown pr-1 mobile-dropdown m-auto ">
+			<li class="nav-item dropdown pr-2 m-auto">
 				{{ $activeLinkName := "" }}
 				<div class="dropdown-menu pt-0 pb-0" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
 					{{ $p := . }}
@@ -100,7 +100,7 @@
 					{{ end }}
 			
 				</div>
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLinkDesktop" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false">
 					{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
 				</a>

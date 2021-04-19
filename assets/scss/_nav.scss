@@ -252,11 +252,6 @@ nav .navbar-logo > svg {
         outline: 0;
         font-weight: 400;
         padding: 0.15rem 0 0 0.1rem;
-
-        @include media-breakpoint-down(md) {
-            margin-left: 1rem;
-        }
-
         height: calc(1.4em + 0.7rem + 2px);
 
         @include placeholder {
@@ -287,11 +282,6 @@ nav .navbar-logo > svg {
             margin-top: 0.25rem;
             //overflow: hidden;
             font-size: 0.875rem;
-
-            .nav-link {
-                padding-right: 0.25rem;
-                padding-left: 0;
-            }
 
             .navbar-nav {
                 padding-bottom: 2rem;

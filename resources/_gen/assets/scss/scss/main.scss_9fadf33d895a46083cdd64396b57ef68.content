@@ -13210,9 +13210,6 @@ nav .navbar-logo > svg {
     font-weight: 400;
     padding: 0.15rem 0 0 0.1rem;
     height: calc(1.4em + 0.7rem + 2px); }
-    @media (max-width: 991.98px) {
-      .td-navbar .td-search-input {
-        margin-left: 1rem; } }
     .td-navbar .td-search-input::-webkit-input-placeholder {
       color: #cccccc; }
     .td-navbar .td-search-input:-moz-placeholder {
@@ -13243,9 +13240,6 @@ nav .navbar-logo > svg {
         height: 2.5rem;
         margin-top: 0.25rem;
         font-size: 0.875rem; }
-        .td-navbar .td-navbar-nav-scroll .nav-link {
-          padding-right: 0.25rem;
-          padding-left: 0; }
         .td-navbar .td-navbar-nav-scroll .navbar-nav {
           padding-bottom: 2rem;
           white-space: nowrap;

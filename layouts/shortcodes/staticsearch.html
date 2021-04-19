@@ -1,6 +1,16 @@
+<script>
+    // add back button
+    let sideBarEl = document.getElementsByClassName('pl-0 md-3 ul-1 container')[0];
+    let btn = document.createElement('a')
+    btn.innerHTML = '<i class="fas fa-angle-left pr-2"></i> Back';
+    btn.className = "btn ml-3"
+    btn.onclick = () => history.back(-1);
+
+    sideBarEl.append(btn);
+</script>
+
 <div class="search-page">
     <div class="input-group mb-3">
-
         <input class='form-control' id="search-query" placeholder="Search" aria-describedby="search-on-site" />
 
         <div class="input-group-prepend">

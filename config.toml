@@ -113,13 +113,13 @@ github_branch = "master"
 
 
 # Versioning
-version_menu = "v0.1 (latest)"
-version = "V0.1"
+version_menu = "v3 (latest)"
+version = "V3"
 archived_version = false
 url_latest_version = "https://example.com"
 
 [[params.versions]]
-  version = "v0.1 (latest)"
+  version = "v3 (latest)"
   url = "#"
 
 # User interface configuration

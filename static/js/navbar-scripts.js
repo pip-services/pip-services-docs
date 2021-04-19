@@ -63,24 +63,20 @@ function showSearch(event) {
         let searchButton = document.getElementById("search-btn")
         let searchBox = document.getElementById("hidden-search");
 
-        if (searchBox.classList.contains("d-lg-none")) {
-            searchBox.classList.remove("d-lg-none");
-            // show algolia span
-            searchBox.parentElement.classList.add("d-lg-inline-block");
-            searchBox.parentElement.classList.remove("d-lg-none");
-            // hide btn
-            searchButton.classList.remove("d-lg-inline-block");
-            searchButton.classList.add("d-lg-none");
-
+        if (searchBox.classList.contains("d-md-none")) {
+            searchBox.classList.remove("d-md-none");
+            // hide search icon for small screens
+            if (width <= 859) {
+                // hide btn
+                searchButton.classList.remove("d-md-inline-block");
+                searchButton.classList.add("d-md-none");
+            }
+            
             searchBox.focus();
 
         } else {
-            searchBox.classList.add("d-lg-none");
-            // hide span algolia
-            searchBox.parentElement.classList.remove("d-lg-inline-block");
-            searchBox.parentElement.classList.add("d-lg-none");
-            // show btn
-            searchButton.classList.add("d-lg-inline-block");
+            searchBox.classList.add("d-md-none");
+            searchButton.classList.add("d-md-inline-block");
         }
     }
 }

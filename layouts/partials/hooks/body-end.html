@@ -7,7 +7,7 @@
       if (navEl.getElementsByClassName('td-search-input').length > 0) {
         for (var search of navEl.getElementsByClassName('td-search-input')) {
           var style = window.getComputedStyle(navEl)
-          if (navEl.classList.contains('d-lg-block') && style['display'] === 'none') {
+          if (navEl.classList.contains('d-md-block') && style['display'] === 'none') {
             search.remove();
           }
         }

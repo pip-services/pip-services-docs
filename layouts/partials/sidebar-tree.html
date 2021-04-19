@@ -15,7 +15,7 @@
   
   <nav class="collapse show td-sidebar-nav p-0 navbar navbar-default" role="navigation" id="td-section-nav">
     {{ if  (gt (len .Site.Home.Translations) 0) }}
-    <div class="nav-item dropdown d-block d-lg-none">
+    <div class="nav-item dropdown d-block d-md-none">
       {{ partial "navbar-lang-selector.html" . }}
     </div>
     {{ end }}
@@ -31,7 +31,7 @@
         
         <ul class="td-sidebar-nav__section p-0 md-3 ul-{{ $ulNr }}">
           <li
-            class="td-sidebar-nav__section-title td-sidebar-nav__section pl-0 pr-0 d-lg-none d-sm-node d-md-block"
+            class="td-sidebar-nav__section-title td-sidebar-nav__section pl-0 pr-0 d-lg-none d-md-none d-sm-node d-sm-block"
             id="search-li">
               
               

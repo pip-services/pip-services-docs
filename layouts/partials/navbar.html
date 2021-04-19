@@ -57,6 +57,7 @@
 			
 	<div class="td-navbar-nav-scroll ml-md-auto d-lg-block d-md-block d-none" id="main_navbar">
 		<ul class="navbar-nav mt-lg-0">
+			<!-- Full navbar
 			{{ $p := . }}
 			{{ range .Site.Menus.main }}
 			{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
@@ -73,14 +74,45 @@
 				</span></a>
 			</li>
 			{{ end }}
-			{{ end }}
+			{{ end }} -->
+
+			<li class="nav-item dropdown pr-1 mobile-dropdown m-auto ">
+				{{ $activeLinkName := "" }}
+				<div class="dropdown-menu pt-0 pb-0" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
+					{{ $p := . }}
+					{{ range .Site.Menus.main }}
+					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
+					{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
+					{{ with .Page }}
+					{{ $active = or $active ( $.IsDescendant .) }}
+					{{ end }}
+					{{ $url := urls.Parse .URL }}
+					{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+					{{ if $active }} {{ $activeLinkName = .Name }} {{ end }}
+					<a class="nav-link{{if $active }} active{{end}} dropdown-item"
+						href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" {{ if ne $url.Host
+						$baseurl.Host }}target="_blank" {{ end }}>
+						<span{{if $active }} class="active" {{end}}>
+							{{ .Name }}
+							</span>
+					</a>
+					{{ end }}
+					{{ end }}
+			
+				</div>
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false">
+					{{ if $activeLinkName}}{{ $activeLinkName }}{{ else }}Menu{{ end }}
+				</a>
+			</li>
+
 			{{ if  .Site.Params.versions }}
-			<li class="nav-item dropdown d-none d-lg-block">
+			<li class="nav-item dropdown d-none d-md-block">
 				{{ partial "navbar-version-selector.html" . }}
 			</li>
 			{{ end }}
 			{{ if  (gt (len .Site.Home.Translations) 0) }}
-			<li class="nav-item dropdown d-none d-lg-block">
+			<li class="nav-item dropdown d-none d-md-block">
 				{{ partial "navbar-lang-selector.html" . }}
 			</li>
 			{{ end }}
@@ -89,7 +121,7 @@
 
 	
 	
-	<div class="navbar-nav pr-3 d-none d-lg-block">{{ partial "search-input.html" . }}</div>
+	<div class="navbar-nav pr-1 d-none d-md-block">{{ partial "search-input.html" . }}</div>
 
 	<!-- <div class="navbar-nav d-none d-lg-block">{{ partial "get-started-button.html" . }}</div> -->
 </nav>

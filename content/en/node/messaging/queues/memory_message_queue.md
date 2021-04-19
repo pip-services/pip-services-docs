@@ -13,10 +13,10 @@ description: >
 - **name**: name of the message queue
 
 ##### References
-- `*:logger:*:*:1.0` (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- `*:counters:*:*:1.0` (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
+- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
 
-See [MessagingCapabilities](../messaging_capabilities), [MessageQueue](../message_queue)
+See also [MessagingCapabilities](../messaging_capabilities), [MessageQueue](../message_queue)
 
 **Example:**
 ```typescript
@@ -35,11 +35,11 @@ queue.receive("123", (err, message) => {
 ### Constructors
 
 Creates a new instance of the message queue.  
-See [MessagingCapabilities](../messaging_capabilities)
+See also [MessagingCapabilities](../messaging_capabilities)
 
 > constructor(name?: string): [MemoryMessageQueue]()
 
-- **name**: string `optional` - a queue name.
+- **name**: string - (optional) a queue name.
 - **returns**: [MemoryMessageQueue]() - TODO: add description property
 
 
@@ -51,16 +51,16 @@ Returnes message into the queue and makes it available for all subscribers to re
 > abandon(message: [MessageEnvelope](../message_envelope), callback: (err: any) => void): void
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to return.
-- **callback**: (err: any) => void `optional` - callback function that receives an error or null for success.
+- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### beginListen
 Listens for incoming messages without blocking the current thread.
 
-See [listen](#listen), [IMessageReceiver](../imessage_receiver)
+See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
 
 > beginListen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
 
 
@@ -69,7 +69,7 @@ Clears component state.
 
 > clear(correlationId: string, callback: (err: any) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **callback**: (err: any) => void - that receives error or null no errors occured.
 
 #### close
@@ -77,7 +77,7 @@ Closes component and frees used resources.
 
 > close(correlationId: string, callback: (err?: any) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **callback**: (err?: any) => void - that receives error or null no errors occured.
 
 
@@ -87,7 +87,7 @@ Permanently removes a message from the queue. This method is usually used to rem
 > complete(message: [MessageEnvelope](../message_envelope), callback: (err: any) => void): void
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to remove.
-- **callback**: (err: any) => void `optional` - callback function that receives an error or null for success.
+- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### configure
 Configures component by passing configuration parameters.
@@ -101,7 +101,7 @@ Ends listening for incoming messages. When this method is call [listen](#listen)
 
 > endListen(correlationId: string): void
  
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 #### getCapabilities
 Gets the queue capabilities
@@ -127,11 +127,11 @@ Checks if the component is opened.
 
 #### listen
 Listens for incoming messages and blocks the current thread until queue is closed.  
-See [IMessageReceiver](../imessage_receiver), [receive](#receive)
+See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
 
 #### moveToDeadLetter
@@ -139,24 +139,24 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 
 > moveToDeadLetter(message: [MessageEnvelope](../message_envelope), callback: (err: any) => void): void
 
-- **message**: [MessageEnvelope](../message_envelope) a message to be removed.
-- **callback**: (err: any) => void `optional` - function that receives an error or null for success.
+- **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
+- **callback**: (err: any) => void - (optional) function that receives an error or null for success.
 
 #### open
 Opens the component.
 
 > open(correlationId: string, callback?: (err: any) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
--  **callback**: (err: any) => void `optional` - callback function that receives error or null no errors occured.
+- **callback**: (err: any) => void - (optional) callback function that receives error or null no errors occured.
 
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns null.
 
-> peek(correlationId: string, callback: (err: any, result: Message[MessageEnvelope](../message_envelope)Envelope) => void): void
+> peek(correlationId: string, callback: (err: any, result: [MessageEnvelope](../message_envelope)) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - transaction id to trace execution through call chain.
 - **callback**: (err: any, result: [MessageEnvelope](../message_envelope)) => void - callback function that receives a message or error.
 
 #### peekBatch
@@ -164,7 +164,7 @@ Peeks multiple incoming messages from the queue without removing them. If there 
 
 > peekBatch(correlationId: string, messageCount: number, callback: (err: any, result: [MessageEnvelope](../message_envelope)[]) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageCount**: number - a maximum number of messages to peek.
 - **callback**: (err: any, result: [MessageEnvelope](../message_envelope)[]) => void - that receives a list with messages or error.
 
@@ -181,7 +181,7 @@ Receives an incoming message and removes it from the queue.
 
 > receive(correlationId: string, waitTimeout: number, callback: (err: any, result: [MessageEnvelope](../message_envelope)) => void): void
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
 - **callback**: (err: any, result: [MessageEnvelope](../message_envelope)) => void - callback function that receives a message or error.
 
@@ -190,18 +190,18 @@ Renews a lock on a message that makes it invisible from other receivers in the q
 
 > renewLock(message: [MessageEnvelope](../message_envelope), lockTimeout: number, callback?: (err: any) => void): void
 
-- **message**: [MessageEnvelope](../message_envelope) a message to extend its lock.
-- **lockTimeout**: number a locking timeout in milliseconds.
-- **callback**: (err: any) => void `optional` - callback function that receives an error or null for success.
+- **message**: [MessageEnvelope](../message_envelope) - a message to extend its lock.
+- **lockTimeout**: number - a locking timeout in milliseconds.
+- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### send
 Sends a message into the queue.
 
 > send(correlationId: string, envelope: [MessageEnvelope](../message_envelope), callback?: (err: any) => void): void
 
-- **correlationId**: string `optional` transaction id to trace execution through call chain.
-- **envelope**: [MessageEnvelope](../message_envelope) a message envelop to be sent.
-- **callback**: (err: any) => void `optional` - callback function that receives error or null for success.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **envelope**: [MessageEnvelope](../message_envelope) - a message envelop to be sent.
+- **callback**: (err: any) => void - (optional) callback function that receives error or null for success.
 
 
 #### sendAsObject
@@ -209,10 +209,10 @@ Sends an object into the queue. Before sending the object is converted into JSON
 
 > sendAsObject(correlationId: string, messageType: string, message: any, callback?: (err: any) => void): void
 
-- **correlationId**: string (optional) transaction id to trace execution through call chain.
-- **messageType**: string a message type
-- **message**: any
-- **callback**: (err: any) => void `optional` - callback function that receives error or null for success.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **messageType**: string-  a message type
+- **message**: any - TODO add description here
+- **callback**: (err: any) => void - (optional) callback function that receives error or null for success.
 
 
 #### setReferences
@@ -234,7 +234,7 @@ Opens the component with given connection and credential parameters.
 
 > `protected` openWithParams(correlationId: string, connections: [ConnectionParams](../../../components/connect/connection_params)[], credential: [CredentialParams](../../../components/auth/credential_params), callback: (err: any) => void): void
 
-- **correlationId**: string (`optional`) - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **connections**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 - **callback**: (err: any) => void - callback function that receives error or null no errors occured.

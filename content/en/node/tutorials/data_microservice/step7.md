@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Step 7. Running and testing the microservice" 
-linkTitle: "Step 7. Running and testing" 
+linkTitle: "Step 7. Run" 
 gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 

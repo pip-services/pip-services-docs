@@ -10,11 +10,11 @@ description: >
 ---
 
 ### Constructors
-Creates a new MessageEnvelope, which adds a correlation id, message id, and a type to the data being sent/received.
+Creates a new [MessageEnvelope](), which adds a correlation id, message id, and a type to the data being sent/received.
 
 > constructor(correlationId: string, messageType: string, message: any): [MessageEnvelope]()
 
-- **correlationId**: string `optional` - transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageType**: string - a string value that defines the message's type.
 - **message**: any - the data being sent/received.
 
@@ -54,24 +54,30 @@ The time at which the message was sent.
 ### Methods
 
 #### getMessageAsJson
-- Returns any the value that was stored in this message as a JSON string.
-See [setMessageAsJson](#setMessageAsJson)
+Returns any the value that was stored in this message as a JSON string.
+See also [setMessageAsJson](#setMessageAsJson)
 
 > getMessageAsJson(): any
 
+- **returns**: any - the value that was stored in this message as a JSON string.
+
 #### getMessageAsString
-- Returns string the information stored in this message as a UTF-8 encoded string.
+Returns string the information stored in this message as a UTF-8 encoded string.
 
 > getMessageAsString(): string
 
+- **returns**: string - the information stored in this message as a UTF-8 encoded string.
+
 #### getReference
-- Returns any the lock token that this MessageEnvelope references.
+Returns any the lock token that this [MessageEnvelope]() references.
 
 > getReference(): any
 
+- **returns**: any - the lock token that this [MessageEnvelope]() references.
+
 #### setMessageAsJson
 Stores the given value as a JSON string.
-See [getMessageAsJson](#getMessageAsJson)
+See also [getMessageAsJson](#getMessageAsJson)
 
 > setMessageAsJson(value: any): void
 
@@ -85,31 +91,31 @@ Stores the given string.
 - **value**: string - the string to set. Will be converted to a buffer, using UTF-8 encoding.
 
 #### setReference
-Sets a lock token reference for this MessageEnvelope.
+Sets a lock token reference for this [MessageEnvelope]().
 
 > setReference(value: any): void
 
 - **value**: any - the lock token to reference.
 
 #### toJSON
-Converts this MessageEnvelop to a JSON string. The message payload is passed as base64 string
+Converts this [MessageEnvelope]() to a JSON string. The message payload is passed as base64 string
 
 > toJSON(): any
 
 - **returns**: any - A JSON encoded representation is this object.
 
 #### toString
-Convert's this MessageEnvelope to a string, using the following format:
-`"[<correlation_id>,<message_type>,<message.toString>]"`.
+Convert's this [MessageEnvelope]() to a string, using the following format:  
+*"[<correlation_id>,<message_type>,<message.toString>]"*.
 
-If any of the values are `null`, they will be replaced with `---.`
+If any of the values are *null*, they will be replaced with \-\-\-.
 
 > toString(): string
 
 - **returns**: string - the generated string.
 
 #### fromJSON
-Converts a JSON string into a MessageEnvelop The message payload is passed as base64 string
+Converts a JSON string into a [MessageEnvelope]() The message payload is passed as base64 string
 
 > `static` fromJSON(value: string): [MessageEnvelope]()
 

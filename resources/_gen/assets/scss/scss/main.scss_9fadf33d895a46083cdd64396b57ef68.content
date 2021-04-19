@@ -11604,7 +11604,18 @@ readers do not read off random characters that represent icons */
     z-index: 1; }
 
 @media (min-width: 992px) {
-  .td-max-width-on-larger-screens, .td-content > pre, .td-content > .highlight, .td-content > .lead, .td-content > h1, .td-content > h2, .td-content > ul, .td-content > ol, .td-content > p, .td-content > blockquote, .td-content > dl dd, .td-content .footnotes, .td-content > .alert {
+  .td-max-width-on-larger-screens, .td-content > pre,
+  .td-content > .highlight,
+  .td-content > .lead,
+  .td-content > h1,
+  .td-content > h2,
+  .td-content > ul,
+  .td-content > ol,
+  .td-content > p,
+  .td-content > blockquote,
+  .td-content > dl dd,
+  .td-content .footnotes,
+  .td-content > .alert {
     max-width: 80%; } }
 
 .-bg-blue {
@@ -13458,26 +13469,29 @@ nav .navbar-logo > svg {
       color: #403F4C; }
 
 @media (max-width: 767px) {
-  h1, .h1 {
+  h1,
+  .h1 {
     font-size: 1.9125rem; } }
 
 .td-content {
   order: 1; }
-  .td-content .hide-title-link blockquote {
+  .td-content .hide-title-link > blockquote {
     margin-top: 1rem;
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
-    color: #2C4154;
-    border-left: 6px solid #4BB4FF;
+    color: #2c4154;
+    border-left: 6px solid #4bb4ff;
     font-size: 1.1rem; }
-  .td-content .hide-title-link h3, .td-content .hide-title-link h4 {
+  .td-content .hide-title-link > h3,
+  .td-content .hide-title-link h4 {
     max-height: fit-content;
     height: 5rem;
     visibility: hidden; }
     @media (max-width: 767.98px) {
-      .td-content .hide-title-link h3, .td-content .hide-title-link h4 {
+      .td-content .hide-title-link > h3,
+      .td-content .hide-title-link h4 {
         height: 0rem; } }
-  .td-content .hide-title-link a {
+  .td-content .hide-title-link > a {
     display: none; }
   .td-content .svg-container {
     display: flex;
@@ -13490,25 +13504,31 @@ nav .navbar-logo > svg {
     margin: auto; }
   .td-content .git-hover:hover > path {
     fill: #d73a49; }
-  .td-content p, .td-content li, .td-content td {
+  .td-content p,
+  .td-content li,
+  .td-content td {
     font-weight: 500; }
     @media (max-width: 767.98px) {
-      .td-content p, .td-content li, .td-content td {
+      .td-content p,
+      .td-content li,
+      .td-content td {
         word-wrap: break-word; } }
-    .td-content p img, .td-content li img, .td-content td img {
+    .td-content p img,
+    .td-content li img,
+    .td-content td img {
       margin: 0 auto 0;
       display: block; }
   .td-content > .h1 {
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(0deg, #FED955 40%, #ffffff 40%);
+    background: linear-gradient(0deg, #fed955 40%, #ffffff 40%);
     width: fit-content;
     padding-left: 0.2rem;
     padding-right: 0.2rem; }
   .td-content .content-title {
     font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(0deg, #FED955 40%, #ffffff 40%);
+    background: linear-gradient(0deg, #fed955 40%, #ffffff 40%);
     width: fit-content;
     padding-left: 0.2rem;
     padding-right: 0.2rem; }
@@ -13524,7 +13544,10 @@ nav .navbar-logo > svg {
     margin-top: 1rem; }
   .td-content h4 {
     font-size: 1.15rem; }
-  .td-content > h3, .td-content > h4, .td-content > h5, .td-content > h6 {
+  .td-content > h3,
+  .td-content > h4,
+  .td-content > h5,
+  .td-content > h6 {
     margin-bottom: 1rem;
     margin-top: 2rem; }
   .td-content > blockquote {
@@ -13532,10 +13555,11 @@ nav .navbar-logo > svg {
     padding: 0 0 0 1rem;
     margin-bottom: 1rem;
     color: #2C4154;
-    border-left: 6px solid #4BB4FF;
+    border-left: 6px solid #4bb4ff;
     font-size: 1.1rem; }
-  .td-content > ul li, .td-content > ol li {
-    margin-bottom: .25rem; }
+  .td-content > ul li,
+  .td-content > ol li {
+    margin-bottom: 0.25rem; }
   .td-content strong {
     font-weight: 700; }
   .td-content .alert:not(:first-child) {
@@ -13546,10 +13570,17 @@ nav .navbar-logo > svg {
     margin-bottom: 1.5rem;
     font-weight: 400;
     font-size: 1.05rem; }
+  .td-content .module-body {
+    padding-left: 0.75rem; }
+    .td-content .module-body h3 {
+      margin-bottom: 0; }
+    .td-content .module-body h4 {
+      margin-bottom: -0.1rem;
+      margin-top: 1.5rem; }
 
 .td-title {
   margin-top: 1rem;
-  margin-bottom: .5rem; }
+  margin-bottom: 0.5rem; }
   @media (min-width: 576px) {
     .td-title {
       font-size: 3rem; } }

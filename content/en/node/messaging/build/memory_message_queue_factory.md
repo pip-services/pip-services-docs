@@ -4,16 +4,16 @@ title: "MemoryMessageQueueFactory"
 linkTitle: "MemoryMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: >
-    Creates [MemoryMessageQueue](../queue/memory_message_queue) components by their descriptors.
+    Creates [MemoryMessageQueue](../../queues/memory_message_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor. 
 ---
-See [Factory](../../../components/build/factory), [MemoryMessageQueue](../queue/memory_message_queue)
+See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/memory_message_queue)
 
 ### Constructors
 Create a new instance of the factory.
 
 > constructor(): string
-
+- **returns**: string - TODO: add description
 
 ### Methods
 
@@ -28,7 +28,7 @@ Creates a message queue component and assigns its name.
 #### configure
 Configures component by passing configuration parameters.
 
-> configure(config: ConfigParams): void
+> configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -43,4 +43,4 @@ Sets references to dependent components.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [MemoryMessageQueue](../queue/memory_message_queue)
+- #### [MemoryMessageQueue](../../queues/memory_message_queue)

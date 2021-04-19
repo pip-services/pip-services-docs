@@ -6,7 +6,7 @@ gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: > 
     Creates message queue componens.
 ---
-See [IMessageQueue](../../queues/imessage_queue)
+See also [IMessageQueue](../../queues/imessage_queue)
 
 ### Methods
 

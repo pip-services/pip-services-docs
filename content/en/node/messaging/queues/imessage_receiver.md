@@ -31,7 +31,7 @@ messageQueue.open("123", (err) => {
 #### receiveMessage
 Receives incoming message from the queue.
 
-See [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
+See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
 > receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: (err: any) => void): void
 

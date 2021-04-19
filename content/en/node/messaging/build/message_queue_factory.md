@@ -7,7 +7,7 @@ description: >
     Creates [IMessageQueue](../../queues/imessage_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor.
 ---
-See [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
+See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
 
 ### Properties
 

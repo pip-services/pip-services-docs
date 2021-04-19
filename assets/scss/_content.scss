@@ -2,24 +2,27 @@
 // Style Markdown content
 //
 
-@media (max-width: 767px) { 
-  h1, .h1 { font-size: $h1-font-size*0.85; } 
-} 
+@media (max-width: 767px) {
+    h1,
+    .h1 {
+        font-size: $h1-font-size * 0.85;
+    }
+}
 
 .td-content {
     order: 1;
 
-    .hide-title-link{
-
-        blockquote {
+    .hide-title-link {
+        > blockquote {
             margin-top: 1rem;
             padding: 0 0 0 1rem;
             margin-bottom: 1rem;
-            color: #2C4154;
-            border-left: 6px solid #4BB4FF;
+            color: #2c4154;
+            border-left: 6px solid #4bb4ff;
             font-size: 1.1rem;
         }
-        h3, h4{
+        > h3,
+        h4 {
             max-height: fit-content;
             height: 5rem;
             @include media-breakpoint-down(sm) {
@@ -27,41 +30,41 @@
             }
             visibility: hidden;
         }
-        a{
+        > a {
             display: none;
         }
     }
 
     .svg-container {
-		display: flex; 
-		align-items: center;
+        display: flex;
+        align-items: center;
 
         @include media-breakpoint-down(sm) {
             display: none;
         }
-	}
+    }
 
-	.svg-center{
-		display: block;
-		margin: auto;
-	}
+    .svg-center {
+        display: block;
+        margin: auto;
+    }
 
     .git-hover {
-        &:hover{
+        &:hover {
             > path {
                 fill: #d73a49;
             }
-        };
+        }
     }
-		
 
-    p, li, td {
+    p,
+    li,
+    td {
         font-weight: $font-weight-medium;
 
         @include media-breakpoint-down(sm) {
             word-wrap: break-word;
         }
-        
 
         img {
             margin: 0 auto 0;
@@ -74,11 +77,10 @@
         margin-bottom: 1rem;
         //background-color: aqua;
         //clip-path: polygon(0% 0%, 0% 0%, 100% 80%, 0 100%);
-        background: linear-gradient(0deg, #FED955 40%, #ffffff 40%);
+        background: linear-gradient(0deg, #fed955 40%, #ffffff 40%);
         width: fit-content;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
-        
     }
 
     .content-title {
@@ -86,7 +88,7 @@
         margin-bottom: 1rem;
         //background-color: aqua;
         //clip-path: polygon(0% 0%, 0% 0%, 100% 80%, 0 100%);
-        background: linear-gradient(0deg, #FED955 40%, #ffffff 40%);
+        background: linear-gradient(0deg, #fed955 40%, #ffffff 40%);
         width: fit-content;
         padding-left: 0.2rem;
         padding-right: 0.2rem;
@@ -106,14 +108,17 @@
     }
 
     > h2 + h3 {
-         margin-top: 1rem;
+        margin-top: 1rem;
     }
 
     h4 {
         font-size: 1.15rem;
     }
 
-    > h3, > h4, > h5, > h6 {
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
         margin-bottom: 1rem;
         margin-top: 2rem;
     }
@@ -135,19 +140,31 @@
         padding: 0 0 0 1rem;
         margin-bottom: $spacer;
         color: $primary;
-        border-left: 6px solid #4BB4FF;
+        border-left: 6px solid #4bb4ff;
         font-size: 1.1rem;
     }
 
-    > ul li, > ol li {
-        margin-bottom: .25rem;
+    > ul li,
+    > ol li {
+        margin-bottom: 0.25rem;
     }
 
     strong {
         font-weight: $font-weight-bold;
     }
 
-    > pre, > .highlight, > .lead, > h1, > h2, > ul, > ol, > p, > blockquote, > dl dd, .footnotes, > .alert {
+    > pre,
+    > .highlight,
+    > .lead,
+    > h1,
+    > h2,
+    > ul,
+    > ol,
+    > p,
+    > blockquote,
+    > dl dd,
+    .footnotes,
+    > .alert {
         @extend .td-max-width-on-larger-screens;
     }
 
@@ -162,11 +179,23 @@
         font-weight: $font-weight-normal;
         font-size: $font-size-base * 1.05;
     }
+
+    .module-body {
+        padding-left: 0.75rem;
+        h3 {
+            margin-bottom: 0;
+        }
+
+        h4 {
+            margin-bottom: -0.1rem;
+            margin-top: 1.5rem;
+        }
+    }
 }
 
 .td-title {
     margin-top: 1rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 
     @include media-breakpoint-up(sm) {
         font-size: 3rem;

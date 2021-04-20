@@ -11,14 +11,14 @@ linkTitle: "Node.js"
     <div class="card-body">
       <h5 class="card-title"><b>Getting started</b></h5>
       <p class="card-text">How to get up and running with Pip.Services toolkit in minutes</p>
-      <a href="" class="stretched-link"></a>
+      <a href="getting_started" class="stretched-link"></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title"><b>Tutorials and recipes</b></h5>
       <p class="card-text">In-depth technical manuals focused to specific technical topics</p>
-      <a href="" class="stretched-link"></a>
+      <a href="tutorials" class="stretched-link"></a>
     </div>
   </div>
 </div>
@@ -28,14 +28,14 @@ linkTitle: "Node.js"
     <div class="card-body">
       <h5 class="card-title"><b>API documentation</b></h5>
       <p class="card-text">Detail documentation on the toolkit API</p>
-      <a href="" class="stretched-link"></a>
+      <a href="commons" class="stretched-link"></a>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title"><b>References</b></h5>
       <p class="card-text">Useful information that can help in development</p>
-      <a href="" class="stretched-link"></a>
+      <a href="references" class="stretched-link"></a>
     </div>
   </div>
 </div>

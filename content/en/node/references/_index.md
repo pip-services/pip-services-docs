@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Recipes"
-linkTitle: "Recipes" 
+title: "References"
+linkTitle: "References" 
 weight: 80
 exclude_from_list: true
 ---

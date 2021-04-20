@@ -4,8 +4,8 @@
 
 	<div class="collapse navbar-collapse  d-none d-sm-block" id="navbarOffcanvas">
 		<ul class="navbar-nav mr-auto">
-			<li class="nav-item">
-				<a class="navbar-brand pt-lg-2 pb-lg-1 pt-md-2" href="{{ .Site.Home.RelPermalink }}">
+			<li class="nav-item m-auto">
+				<a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
 					<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
 						minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
 						}}</span>

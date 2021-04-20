@@ -13,7 +13,7 @@ See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../.
 
 Create a new instance of the factory.
 
-> constructor(): [DefaultMessagingFactory]()
+> `public` constructor(): [DefaultMessagingFactory]()
 
 - **returns**: [DefaultMessagingFactory]() - TODO: add description here
 

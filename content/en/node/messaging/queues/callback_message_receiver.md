@@ -4,16 +4,15 @@ title: "CallbackMessageReceiver"
 linkTitle: "CallbackMessageReceiver"
 gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
 description: >
-    TODO: add description
+    Wraps message callback into IMessageReceiver
 ---
 
 ### Constructors
 Creates an instance of the CallbackMessageReceiver.
 
-> constructor(callback: (envelope: MessageEnvelope, queue: [IMessageQueue](../imessage_queue), callback: (err: any) => void) => void): [CallbackMessageReceiver]()
+> `public` constructor(callback: (envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)) => Promise\<void\>) 
 
-- **callback**: (envelope: MessageEnvelope, queue: [IMessageQueue](../imessage_queue), callback: (err: any) => void) -  a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
-- **returns**: [CallbackMessageReceiver]() - TODO: add description
+- **callback**: a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
 
 ### Methods
 
@@ -21,8 +20,7 @@ Creates an instance of the CallbackMessageReceiver.
 Receives incoming message from the queue.  
 See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
-> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue), callback: (err: any) => void): void
+> `public` async receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)): Promise\<void\>
 
 - **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
 - **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from
-- **callback**: (err: any) => void - callback function that receives error or null for success.

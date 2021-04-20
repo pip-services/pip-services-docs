@@ -17,10 +17,9 @@ See also [MessageEnvelope](../message_envelope), [MessagingCapabilities](../mess
 #### abandon
 Returnes message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and send to dead letter queue.
 
-> abandon(message: [MessageEnvelope](../message_envelope), callback?: (err: any) => void): void
+> abandon(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to return.
-- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### beginListen
 Listens for incoming messages without blocking the current thread.  
@@ -34,10 +33,9 @@ See also [IMessageReceiver](../imessage_receiver), [listen](#listen)
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
 
-> complete(message: [MessageEnvelope](../message_envelope), callback?: (err: any) => void): void
+> complete(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to remove.
-- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### endListen
 Ends listening for incoming messages. When this method is call [listen](#listen) unblocks the thread and execution continues.
@@ -73,71 +71,67 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 #### moveToDeadLetter
 Permanently removes a message from the queue and sends it to dead letter queue.
 
-> moveToDeadLetter(message: [MessagingCapabilities](../messaging_capabilities), callback?: (err: any) => void): void
+> moveToDeadLetter(message: [MessagingCapabilities](../messaging_capabilities)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
-- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns null.
 
-> peek(correlationId: string, callback: (err: any, result: MessageEnvelope) => void): void
+> peek(correlationId: string): Promise<[MessageEnvelope](../message_envelope)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **callback**: (err: any, result: [MessageEnvelope](../message_envelope)) => void - callback function that receives a message or error.
+- **returns**: Promise<[MessageEnvelope](../message_envelope)> - a peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue it returns an empty list.
 
-> peekBatch(correlationId: string, messageCount: number, callback: (err: any, result: [MessageEnvelope](../message_envelope)[]) => void): void
+> peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageCount**: number - a maximum number of messages to peek.
-- **callback**: (err: any, result: [MessageEnvelope](../message_envelope)[]) => void - callback function that receives a list with messages or error.
+- **returns**: Promise<[MessageEnvelope](../message_envelope)[]> - a peeked list with messages.
 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
 
-> readMessageCount(callback: (err: any, count: number) => void): void
+> readMessageCount(): Promise\<number\>
 
-- **callback**: (err: any, count: number) => void - callback function that receives number of messages or error.
+- **returns**: Promise\<number\> - a number of messages.
 
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> receive(correlationId: string, waitTimeout: number, callback: (err: any, result: [MessageEnvelope](../message_envelope)) => void): void
+> receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../message_envelope)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
-- **callback**:  (err: any, result: [MessageEnvelope](../message_envelope)) => void - callback function that receives a message or error.
+- **returns**: Promise<[MessageEnvelope](../message_envelope)> - a received message or *null*.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.
 
-> renewLock(message: [MessageEnvelope](../message_envelope), lockTimeout: number, callback?: (err: any) => void): void
+> renewLock(message: [MessageEnvelope](../message_envelope), lockTimeout: number): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to extend its lock.
 - **lockTimeout**: number - a locking timeout in milliseconds.
-- **callback**: (err: any) => void - (optional) callback function that receives an error or null for success.
 
 #### send
 Sends a message into the queue.
 
-> send(correlationId: string, envelope: [MessageEnvelope](../message_envelope), callback?: (err: any) => void): void
+> send(correlationId: string, envelope: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - a message envelop to be sent.
-- **callback**: (err: any) => void - (optional) callback function that receives error or null for success.
 
 #### sendAsObject
 Sends an object into the queue. Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
-> sendAsObject(correlationId: string, messageType: string, value: any, callback?: (err: any) => void): void
+> sendAsObject(correlationId: string, messageType: string, value: any): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageType**: string - a message type
 - **value**: any - an object value to be sent
-- **callback**: (err: any) => void - (optional) callback function that receives error or null for success.
 
 
 

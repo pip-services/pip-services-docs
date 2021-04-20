@@ -14,7 +14,7 @@ See also [IMessageQueue](../../queues/imessage_queue)
 
 Creates a message queue component and assigns its name.
 
-> createQueue(name: string): [IMessageQueue](../../queues/imessage_queue)
+> `public` createQueue(name: string): [IMessageQueue](../../queues/imessage_queue)
 
 - **name**: string - a name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - TODO: add description here

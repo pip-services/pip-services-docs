@@ -9,7 +9,7 @@ description: >
 ---
 See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
 
-### Properties
+### Fields
 
 <span class="hide-title-link">
 
@@ -26,14 +26,14 @@ See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../.
 #### configure
 Configures component by passing configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) -  configuration parameters to be set.
 
 #### createQueue
 Creates a message queue component and assigns its name.
 
-> createQueue(name: string):  [IMessageQueue](../../queues/imessage_queue)
+> `public` createQueue(name: string):  [IMessageQueue](../../queues/imessage_queue)
 
 - **name**: string - a name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - TODO: add description here
@@ -41,7 +41,7 @@ Creates a message queue component and assigns its name.
 #### setReferences
 Sets references to dependent components.
 
-> setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

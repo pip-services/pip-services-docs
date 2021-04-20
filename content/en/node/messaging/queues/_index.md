@@ -27,7 +27,7 @@ Callback interface to receive incoming messages.
 ### Classes
 
 #### [CallbackMessageReceiver](callback_message_receiver)
-TODO: add description
+Wraps message callback into IMessageReceiver
 
 #### [LockedMessage](locked_message)
 Data object used to store and lock incoming messages in [MemoryMessageQueue](memory_message_queue).

@@ -12,7 +12,7 @@ description: >
 
 ### Interfaces
 
-#### [IMessageQueueFactory](imessage_queue_factory)
+#### [IMessageQueueFactory](imemory_message_queue_factory)
 Creates message queue componens.
 
 <br>

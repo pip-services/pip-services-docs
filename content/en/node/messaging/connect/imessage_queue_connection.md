@@ -10,25 +10,25 @@ description: >
 ### Methods
 
 #### createQueue
-Creates a message queue. If connection doesn't support this function it exists without error.
+Creates a message queue.
+If connection doesn't support this function it exists without error.
 
-> createQueue(name: string, callback: (err: any) => void): void
+> `public` createQueue(name: string): Promise\<void\>
 
 - **name**: string - the name of the queue to be created.
-- **callback**: (err: any) => void - notifies about completion with error or null for success. 
 
 #### deleteQueue
-Deletes a message queue. If connection doesn't support this function it exists without error.
+Deletes a message queue.
+If connection doesn't support this function it exists without error.
 
-> deleteQueue(name: string, callback: (err: any) => void): void
+> `public` deleteQueue(name: string): Promise\<void\>
 
 - **name**: string - the name of the queue to be deleted.
-- **callback**: (err: any) => void - notifies about completion with error or null for success.
 
 #### readQueueNames
 Reads a list of registered queue names. If connection doesn't support this function returnes an empty list.
 
-> readQueueNames(callback: (err: any) => void): void
+> `public` readQueueNames(): Promise<string[]>
 
-- **callback**: (err: any) => void - to receive a list with registered queue names or an error.
+- **returns**: Promise<string[]> - a list with registered queue names.
 

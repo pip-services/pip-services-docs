@@ -26,13 +26,13 @@ Creates a new instance of the capabilities object.
 - **returns**: [MessagingCapabilities]() - TODO add descriptiion
 
 
-### Methods
+### Properties
 
 
 #### canAbandon
 Informs if the queue is able to abandon messages.
 
-> canAbandon(): boolean
+> `public` get canAbandon(): boolean
 
 - **returns**: boolean - true if queue is able to abandon.
 
@@ -40,7 +40,7 @@ Informs if the queue is able to abandon messages.
 #### canClear
 Informs if the queue can be cleared.
 
-> canClear(): boolean
+> `public` get canClear(): boolean
 
 - **returns**: boolean - true if queue can be cleared.
 
@@ -48,7 +48,7 @@ Informs if the queue can be cleared.
 #### canDeadLetter
 Informs if the queue is able to send messages to dead letter queue.
 
-> canDeadLetter(): boolean
+> `public` get canDeadLetter(): boolean
 
 - **returns**: boolean - true if queue is able to send messages to dead letter queue.
 
@@ -56,7 +56,7 @@ Informs if the queue is able to send messages to dead letter queue.
 #### canMessageCount
 Informs if the queue is able to read number of messages.
 
-> canMessageCount(): boolean
+> `public` get canMessageCount(): boolean
 
 - **returns**: boolean - true if queue supports reading message count.
 
@@ -64,7 +64,7 @@ Informs if the queue is able to read number of messages.
 #### canPeek
 Informs if the queue is able to peek messages.
 
-> canPeek(): boolean
+> `public` get canPeek(): boolean
 
 - **returns**: boolean - true if queue is able to peek messages.
 
@@ -72,7 +72,7 @@ Informs if the queue is able to peek messages.
 #### canPeekBatch
 Informs if the queue is able to peek multiple messages in one batch.
 
-> canPeekBatch(): boolean
+> `public` get canPeekBatch(): boolean
 
 - **returns**: boolean - true if queue is able to peek multiple messages in one batch.
 
@@ -80,7 +80,7 @@ Informs if the queue is able to peek multiple messages in one batch.
 #### canReceive
 Informs if the queue is able to receive messages.
 
-> canReceive(): boolean
+> `public` get canReceive(): boolean
 
 - **returns**: boolean - true if queue is able to receive messages.
 
@@ -88,7 +88,7 @@ Informs if the queue is able to receive messages.
 #### canRenewLock
 Informs if the queue is able to renew message lock.
 
-> canRenewLock(): boolean
+> `public` get canRenewLock(): boolean
 
 - **returns**: boolean - true if queue is able to renew message lock.
 
@@ -96,6 +96,6 @@ Informs if the queue is able to renew message lock.
 #### canSend
 Informs if the queue is able to send messages.
 
-> canSend(): boolean
+> `public` get canSend(): boolean
 
 - **returns**: boolean - true if queue is able to send messages.

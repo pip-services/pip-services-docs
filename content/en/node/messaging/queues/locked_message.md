@@ -8,24 +8,25 @@ description: >
 ---
 See also [MemoryMessageQueue](../memory_message_queue)
 
-### Properties
+### Fields
 
 <span class="hide-title-link">
 
 #### expirationTime
-The expiration time for the message lock. If it is null then the message is not locked.
+The expiration time for the message lock. 
+If it is null then the message is not locked.
 
-> **expirationTime**: Date
+> `public` **expirationTime**: Date
 
 #### message
 The incoming message.
 
-> **message**: [MessageEnvelope](../message_envelope)
+> `public` **message**: [MessageEnvelope](../message_envelope)
 
 #### timeout
 The lock timeout in milliseconds.
 
-> **timeout**: number
+> `public` **timeout**: number
 
 </span>
 

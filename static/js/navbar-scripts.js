@@ -27,10 +27,10 @@ function loadNavbar(event) {
                     document.getElementById('navbarDropdownMenuLinkMobile').innerText = localStorage['currentMenuActiveItem'];
                 }
             })
-        }
-        else {
-            localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
-        }
+        } 
+    }
+    else {
+        localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
     }
 
     if (localStorage['openNav'] === 'true') {

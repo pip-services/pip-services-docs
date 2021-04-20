@@ -13577,6 +13577,16 @@ nav .navbar-logo > svg {
     .td-content .module-body h4 {
       margin-bottom: -0.1rem;
       margin-top: 1.5rem; }
+  .td-content .lang-cards .card, .td-content .lang-cards .highlight {
+    max-width: 250px; }
+  .td-content .lang-cards img {
+    max-width: 200px; }
+  .td-content .card-deck .card, .td-content .card-deck .highlight {
+    border-radius: 0.3rem; }
+    .td-content .card-deck .card:hover, .td-content .card-deck .highlight:hover {
+      border-color: #cddae5;
+      box-shadow: 0 0 0 1px #698eb0;
+      box-shadow: 2px 2px 2px rgba(75, 75, 75, 0.7); }
 
 .td-title {
   margin-top: 1rem;

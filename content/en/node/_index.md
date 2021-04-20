@@ -2,20 +2,112 @@
 type: docs
 title: "Pip.Services Docs for Node.js toolkit"
 linkTitle: "Node.js"
-notoc: true 
 ---
 
 ### Welcome to the Pip.Services documentation site!
 
-* [Getting started]() - How to get up and running with Pip.Services toolkit in minutes
-* [Tutorials and recipes]() - In-depth technical manuals focused to specific technical topics
-* [API documentation]() - Detail documentation on the toolkit API
-* [References]() - Useful information that can help in development
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>Getting started</b></h5>
+      <p class="card-text">How to get up and running with Pip.Services toolkit in minutes</p>
+      <a href="" class="stretched-link"></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>Tutorials and recipes</b></h5>
+      <p class="card-text">In-depth technical manuals focused to specific technical topics</p>
+      <a href="" class="stretched-link"></a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>API documentation</b></h5>
+      <p class="card-text">Detail documentation on the toolkit API</p>
+      <a href="" class="stretched-link"></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>References</b></h5>
+      <p class="card-text">Useful information that can help in development</p>
+      <a href="" class="stretched-link"></a>
+    </div>
+  </div>
+</div>
 
-Other languages
-* [Node.js]()
-* [.NET](../net)
-* [Go](../golang)
-* [Python](../python)
-* [Dart](../dart)
-* [Java](../java)
+### Other languages
+<div class="row">
+  <div class="col-6 col-md-12 d-flex pb-md-4 justify-content-center">
+    <div class="card-deck lang-cards">
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/nodejs-icon.png" alt="Node.js icon">
+          <a href="#" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>Node.js</b>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/dotnet-icon.png" alt="Dotnet icon">
+          <a href="../net" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>.Net</b>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/golang-icon.png" alt="Golang icon">
+          <a href="../golang" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>Golang</b>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-6 col-md-12 d-flex justify-content-center">
+    <div class="card-deck lang-cards">
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/dart-icon.png" alt="Dart icon">
+          <a href="../dart" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>Dart</b>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/python-icon.png" alt="Python icon">
+          <a href="../python" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>Python</b>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body text-center">
+          <img class="card-img-top" src="/images/langs/java-icon.png" alt="Java icon">
+          <a href="../java" class="stretched-link"></a>
+        </div>
+        <div class="card-footer text-center">
+            <b>Java</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+### Modules

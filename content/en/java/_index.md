@@ -1,8 +1,7 @@
 ---
 type: docs
-title: "Pip.Services Docs for Golang toolkit"
-linkTitle: "Golang"
-weight: 20
+title: "Pip.Services Docs for Java toolkit"
+linkTitle: "Java"
 ---
 
 ### Welcome to the Pip.Services documentation site!

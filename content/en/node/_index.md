@@ -16,8 +16,10 @@ linkTitle: "Node.js"
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>Tutorials and recipes</b></h5>
-      <p class="card-text">In-depth technical manuals focused to specific technical topics</p>
+      <h5 class="card-title"><b>Tutorials</b></h5>
+      <p class="card-text">
+        Deep, in-context explorations of enterprise microservice development topics, leaving you ready to implement real-world  solutions.
+      </p>
       <a href="tutorials" class="stretched-link"></a>
     </div>
   </div>
@@ -33,9 +35,9 @@ linkTitle: "Node.js"
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title"><b>References</b></h5>
-      <p class="card-text">Useful information that can help in development</p>
-      <a href="references" class="stretched-link"></a>
+      <h5 class="card-title"><b>Recipes</b></h5>
+      <p class="card-text">Quick, hands-on instructions for solving typical development problems</p>
+      <a href="recipes" class="stretched-link"></a>
     </div>
   </div>
 </div>
@@ -47,7 +49,7 @@ linkTitle: "Node.js"
       <div class="card">
         <div class="card-body text-center">
           <img class="card-img-top" src="/images/langs/nodejs-icon.png" alt="Node.js icon">
-          <a href="#" class="stretched-link"></a>
+          <a href="../node" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
             <b>Node.js</b>

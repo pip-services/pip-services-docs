@@ -136,7 +136,7 @@ footer_about_disable = false
 [[params.links.user]]
 	name ="Main Site"
 	url = "http://www.pipservices.org"
-	icon = "site-link-icon fa"
+	icon = "fa fa-globe"
         desc = "Our main Site!"
 [[params.links.user]]
 	name = "Email"

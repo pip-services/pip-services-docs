@@ -71,7 +71,11 @@
         }
 
         .nav-link {
-            font-size: 1rem;
+            //font-size: 1rem;
+        }
+
+        .cutted-lang {
+            min-width: 50px;
         }
 
         .navbar-brand {
@@ -81,7 +85,7 @@
             max-width: 190px;
             .navbar-logo {
                 > svg {
-                    width: 190px;
+                    width: 45px;
                     max-width: 100%;
                     margin: 0;
                     padding-right: 0.25rem;

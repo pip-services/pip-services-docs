@@ -13096,14 +13096,14 @@ readers do not read off random characters that represent icons */
   #navbarOffcanvas .devider {
     border-left: 1px solid white;
     height: 20px; }
-  #navbarOffcanvas .nav-link {
-    font-size: 1rem; }
+  #navbarOffcanvas .cutted-lang {
+    min-width: 50px; }
   #navbarOffcanvas .navbar-brand {
     padding: 0;
     margin: 0;
     max-width: 190px; }
     #navbarOffcanvas .navbar-brand .navbar-logo > svg {
-      width: 190px;
+      width: 45px;
       max-width: 100%;
       margin: 0;
       padding-right: 0.25rem; } }

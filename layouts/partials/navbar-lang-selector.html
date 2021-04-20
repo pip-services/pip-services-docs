@@ -1,7 +1,11 @@
 {{/* Link directly to documentation etc., if possible. */}}
 {{ $langPage := cond (gt (len .Translations) 0) . .Site.Home }}
-<a class="nav-link dropdown-toggle pl-3 pb-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<a class="nav-link dropdown-toggle d-md-block d-none" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	{{ $langPage.Language.LanguageName }}
+</a>
+<a class="nav-link dropdown-toggle d-md-none cutted-lang" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+	aria-haspopup="true" aria-expanded="false">
+	{{ printf "%.2s" $langPage.Language.LanguageName }}
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	{{ range $langPage.Translations }}

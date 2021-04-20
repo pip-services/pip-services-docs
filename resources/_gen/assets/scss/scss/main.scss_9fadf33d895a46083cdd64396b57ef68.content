@@ -13084,7 +13084,7 @@ readers do not read off random characters that represent icons */
     background-color: #f5f8fa;
     border: 0;
     border-radius: 2px;
-    min-width: 7rem; }
+    min-width: 6rem; }
     #navbarOffcanvas .dropdown-menu .nav-link {
       color: #2C4154; }
       #navbarOffcanvas .dropdown-menu .nav-link:hover, #navbarOffcanvas .dropdown-menu .nav-link:focus, #navbarOffcanvas .dropdown-menu .nav-link:active {

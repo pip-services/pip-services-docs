@@ -21,7 +21,7 @@
 			</li>
 
 			<li class="nav-item m-auto "><div class="devider"></div></li>
-			<li class="nav-item dropdown mobile-dropdown m-auto ">
+			<li class="nav-item dropdown mobile-dropdown m-auto mobile-dropdown-btn">
 				<!--shadow block-->
 				<div id="shadow"></div>
 				{{ $activeLinkName := "" }}
@@ -53,12 +53,12 @@
 				</a>
 			</li>
 			{{ if .Site.Params.versions }}
-			<li class="nav-item dropdown d-md-none m-auto">
+			<li class="nav-item dropdown d-md-none m-auto mobile-dropdown-btn">
 				{{ partial "navbar-version-selector.html" . }}
 			</li>
 			{{ end }}
 			{{ if (gt (len .Site.Home.Translations) 0) }}
-			<li class="nav-item dropdown cutted-lang d-md-none m-auto">
+			<li class="nav-item dropdown cutted-lang d-md-none m-auto mobile-dropdown-btn">
 				{{ partial "navbar-lang-selector.html" . }}
 			</li>
 			{{ end }}

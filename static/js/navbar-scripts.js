@@ -105,5 +105,11 @@ document.getElementById("hidden-search").addEventListener("blur", showSearch);
 
 document.body.addEventListener('click', saveNavState);
 document.body.addEventListener("click", hideAlgoliaPopUp);
+
+
+Array.from(document.getElementsByClassName('mobile-dropdown-btn')).forEach(navEl => {
+    for (let btn of navEl.getElementsByTagName('a')){
+        btn.addEventListener('click', fadeBg);
+    }
+});
 document.body.addEventListener('click', fadeBg);
-document.getElementById('navbarDropdownMenuLinkMobile').addEventListener('click', fadeBg);

@@ -1,0 +1,54 @@
+---
+type: docs
+title: "IntegerConverter"
+linkTitle: "IntegerConverter"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+description: > 
+    Converts arbitrary values into integers using extended conversion rules:
+    - Strings are converted to floats, then to integers
+    - DateTime: total number of milliseconds since unix epoсh
+    - Boolean: 1 for true and 0 for false
+---
+
+
+**Example:**
+
+```typescript
+let value1 = IntegerConverter.toNullableInteger("ABC"); // Result: null
+let value2 = IntegerConverter.toNullableInteger("123.456"); // Result: 123
+let value3 = IntegerConverter.toNullableInteger(true); // Result: 1
+let value4 = IntegerConverter.toNullableInteger(new Date()); // Result: current milliseconds
+
+```
+
+### Methods
+
+#### toInteger
+Converts value into integer or returns 0 when conversion is not possible.  
+See [LongConverter.toLong](../long_converter/#tolong),  
+[LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault)
+
+> `public static` toInteger(value: any): number
+
+- **value**: any - the value to convert.
+- **returns**: number - integer value or 0 when conversion is not supported.
+
+#### toIntegerWithDefault
+Converts value into integer or returns default value when conversion is not possible.
+See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),  
+[LongConverter.toNullableLong](../long_converter/#tonullablelong)
+
+> `public static` toIntegerWithDefault(value: any, defaultValue: number): number
+
+- **value**: any - the value to convert.
+- **defaultValue**: number = null - the default value.
+- **returns**: number - integer value or default when conversion is not supported. 
+
+#### toNullableInteger
+Converts value into integer or returns null when conversion is not possible.
+See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
+
+> `public static` toNullableInteger(value: any): number
+
+- **value**: any - the value to convert.
+- **returns**: number - integer value or null when conversion is not supported.

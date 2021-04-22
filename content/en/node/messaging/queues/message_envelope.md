@@ -55,7 +55,7 @@ The time at which the message was sent.
 Returns any the value that was stored in this message as a JSON string.  
 See also [setMessageAsObject](#setmessageasobject)
 
-> `public` getMessageAs<T>(): T 
+> `public` getMessageAs\<T\>(): T 
 
 - **returns**: T - the value that was stored in this message as a JSON string.
 

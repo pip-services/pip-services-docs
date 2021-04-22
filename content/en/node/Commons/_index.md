@@ -1,40 +1,40 @@
 ---
 type: docs
 title: "Commons"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 no_list: true
 description: > 
-    The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
+    Portable Abstractions and Patterns for Node.js  
+
+    This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
+    It provides a set of basic patterns used in microservices or backend services.
+    Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
+    all languages supported by the toolkit to facilitate symmetric implementation.
 ---
 
-<h3>The module consists of the following packages:</h3>
 
-* **Commands** - Commanding and eventing patterns
-* **Config** - Configuration primitives
-* **Convert** - Data converters
-* **Data** - Data patterns
-* **Errors** - Application errors
-* **Random** -Random data generators
-* **Refer** -Locator (IoC) pattern
-* **Reflect** - Cross-language reflection
-* **Run** - Component lifecycle management
-* **Validate** - Validation framework
----
+### Modules
 
-### Quick links
+The module contains the following packages:
 
-* [Configuration Pattern](https://www.pipservices.org/recipies/configuration)
-* [Locator Pattern](https://www.pipservices.org/recipies/references)
-* [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
-* [Components with Active Logic](https://www.pipservices.org/recipies/active-logic)
-* [Data Patterns](https://www.pipservices.org/recipies/memory-persistence)
-* [Get Help](https://www.pipservices.org/community/help)
-* [Contribute](https://www.pipservices.org/community/contribute)
+* [**Commands**](commands) - commanding and eventing patterns
+* [**Config**](config) - configuration pattern
+* [**Convert**](convert) - portable value converters
+* [**Data**](data) - data patterns
+* [**Errors**](errors) - application errors
+* [**Random**](random) - random data generators
+* [**Refer**](refer) - locator inversion of control (IoC) pattern
+* [**Reflect**](reflect) - portable reflection utilities
+* [**Run**](run) - component life-cycle management patterns
+* [**Validate**](validate) - validation patterns
 
-### Use
 
-Install the dotnet package as
+
+## Use
+
+Install the NPM package as
 ```bash
-dotnet add package PipServices3.Commons
+npm install pip-services3-commons-nodex --save
 ```
 
 Then you are ready to start using the Pip.Services patterns to augment your backend code.
@@ -42,81 +42,114 @@ Then you are ready to start using the Pip.Services patterns to augment your back
 For instance, here is how you can implement a component, that receives configuration, get assigned references,
 can be opened and closed using the patterns from this module.
 
-```cs
-using PipServices3.Commons;
-using PipServices3.Commons.Config;
-using PipServices3.Commons.Refer;
-using PipServices3.Commons.Run;
+```typescript
+import { IConfigurable } from 'pip-services3-commons-nodex';
+import { ConfigParams } from 'pip-services3-commons-nodex';
+import { IReferenceable } from 'pip-services3-commons-nodex';
+import { IReferences } from 'pip-services3-commons-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex';
+import { IOpenable } from 'pip-services3-commons-nodex';
 
-public class MyComponentA : IConfigurable, IReferenceable, IOpenable
-{
-    private string _param1 = "ABC";
-    private int _param2 = 123;
-    private MyComponentB _anotherComponent;
-    private bool _opened = true;
+export class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
+    private _param1: string = "ABC";
+    private _param2: number = 123;
+    private _anotherComponent: MyComponentB;
+    private _opened: boolean = true;
 
-    public void Configure(ConfigParams config)
-    {
-        this._param1 = config.GetAsStringWithDefault("param1", this._param1);
-        this._param2 = config.GetAsIntegerWithDefault("param2", this._param2);
+    public configure(config: ConfigParams): void {
+        this._param1 = config.getAsStringWithDefault("param1", this._param1);
+        this._param2 = config.getAsIntegerWithDefault("param2", this._param2);
     }
 
-    public void SetReferences(IReferences references)
-    {
-        this._anotherComponent = references.GetOneRequired<MyComponentB>(
+    public setReferences(refs: IReferences): void {
+        this._anotherComponent = refs.getOneRequired<MyComponentB>(
             new Descriptor("myservice", "mycomponent-b", "*", "*", "1.0")
         );
     }
 
-    public bool IsOpen()
-    {
+    public isOpen(): boolean {
         return this._opened;
     }
 
-    public Task OpenAsync(string correlationId)
-    {
-        Task task = Task.Factory.StartNew(() => 
-        {
-            this._opened = true;
-            Console.WriteLine("MyComponentA has been opened .");
-        });
-
-        return task;   
+    public open(correlationId: string, callback: (err: any) => void): void {
+        this._opened = true;
+        console.log("MyComponentA has been opened.");
+        callback(null);
     }
 
-    public Task CloseAsync(string correlationId)
-    {
-        Task task = Task.Factory.StartNew(() =>
-        {
-            this._opened = true;
-            Console.WriteLine("MyComponentA has been closed.");
-        });
-
-        return task;        
+    public close(correlationId: string, callback: (err: any) => void): void {
+        this._opened = true;
+        console.log("MyComponentA has been closed.");
+        callback(null);
     }
+
 }
-
 ```
 
 Then here is how the component can be used in the code
 
-```cs
-using PipServices3.Commons.Config;
-using PipServices3.Commons.Refer;
+```typescript
+import { ConfigParams } from 'pip-services3-commons-nodex';
+import { References } from 'pip-services3-commons-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex';
 
-MyComponentA myComponentA = new MyComponentA();
+let myComponentA = new MyComponentA();
 
 // Configure the component
-myComponentA.Configure(ConfigParams.FromTuples(
-    "param1", "XYZ",
-    "param2", "987"
+myComponentA.configure(ConfigParams.fromTuples(
+  'param1', 'XYZ',
+  'param2', 987
 ));
 
 // Set references to the component
-myComponentA.SetReferences(References.FromTuples(
-    new Descriptor("myservice", "mycomponent-b", "default", "default", "1.0"), myComponentB
+myComponentA.setReferences(References.fromTuples(
+  new Descriptor("myservice", "mycomponent-b", "default", "default", "1.0",) myComponentB
 ));
 
 // Open the component
-myComponentA.OpenAsync("123");
+myComponentA.open("123", (err) => {
+   console.log("MyComponentA has been opened.");
+   ...
+});
 ```
+
+## Develop
+
+For development you shall install the following prerequisites:
+* Node.js 8+
+* Visual Studio Code or another IDE of your choice
+* Docker
+* Typescript
+
+Install dependencies:
+```bash
+npm install
+```
+
+Compile the code:
+```bash
+tsc
+```
+
+Run automated tests:
+```bash
+npm test
+```
+
+Generate API documentation:
+```bash
+./docgen.ps1
+```
+
+Before committing changes run dockerized build and test as:
+```bash
+./build.ps1
+./test.ps1
+./clear.ps1
+```
+
+## Contacts
+
+The module is created and maintained by **Sergey Seroukhov**.
+
+The documentation is written by **Egor Nuzhnykh**, **Alexey Dvoykin**, **Mark Makarychev**.

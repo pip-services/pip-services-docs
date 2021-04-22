@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultMessagingFactory"
 linkTitle: "DefaultMessagingFactory"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: > 
     Creates [MemoryMessageQueue](../../queues/memory_message_queue)  components by their descriptors.
     Name of created message queue is taken from its descriptor.

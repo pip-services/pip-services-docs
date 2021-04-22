@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryMessageQueue"
 linkTitle: "MemoryMessageQueue"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Message queue that sends and receives messages within the same process by using shared memory.  
     This queue is typically used for testing to mock real queues.
@@ -39,7 +39,6 @@ See also [MessagingCapabilities](../messaging_capabilities)
 > `public` constructor(name?: string): [MemoryMessageQueue]()
 
 - **name**: string - (optional) a queue name.
-- **returns**: [MemoryMessageQueue]() - TODO: add description property
 
 
 ### Methods
@@ -47,7 +46,7 @@ See also [MessagingCapabilities](../messaging_capabilities)
 #### abandon
 Returnes message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and send to dead letter queue.
 
-> `public` async abandon(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
+> `public`  abandon(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to return.
 
@@ -65,21 +64,21 @@ See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
 #### clear
 Clears component state.
 
-> `public` async clear(correlationId: string): Promise\<void\>
+> `public`  clear(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 #### close
 Closes component and frees used resources.
 
-> `public` async close(correlationId: string): Promise\<void\>
+> `public`  close(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
 
-> `public` async complete(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
+> `public`  complete(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to remove.
 
@@ -97,12 +96,6 @@ Ends listening for incoming messages. When this method is call [listen](#listen)
  
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
-#### getCapabilities
-Gets the queue capabilities
-
-> `public` getCapabilities(): [MessagingCapabilities](../messaging_capabilities)
-
-- **returns**: [MessagingCapabilities](../messaging_capabilities) - the queue's capabilities object.
 
 #### getName
 Gets the queue name
@@ -131,21 +124,15 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 #### moveToDeadLetter
 Permanently removes a message from the queue and sends it to dead letter queue.
 
-> `public` async moveToDeadLetter(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
+> `public`  moveToDeadLetter(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
 
-#### open
-Opens the component.
-
-> `public` async open(correlationId: string): Promise\<void\>
-
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns null.
 
-> `public` async peek(correlationId: string): Promise<[MessageEnvelope](../message_envelope)>
+> `public`  peek(correlationId: string): Promise<[MessageEnvelope](../message_envelope)>
 
 - **correlationId**: string - transaction id to trace execution through call chain.
 - **returns**: Promise<[MessageEnvelope](../message_envelope)> - a peeked message or *null*.
@@ -153,7 +140,7 @@ Peeks a single incoming message from the queue without removing it. If there are
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue it returns an empty list.
 
-> `public` async peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]>
+> `public`  peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageCount**: number - a maximum number of messages to peek.
@@ -162,7 +149,7 @@ Peeks multiple incoming messages from the queue without removing them. If there 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
 
-> `public` async readMessageCount():  Promise\<void\>
+> `public`  readMessageCount():  Promise\<void\>
 
 - **returns**:  Promise\<void\> - a number of messages in the queue.
 
@@ -170,7 +157,7 @@ Reads the current number of messages in the queue to be delivered.
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> `public` async receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../message_envelope)>
+> `public`  receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../message_envelope)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
@@ -179,7 +166,7 @@ Receives an incoming message and removes it from the queue.
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.
 
-> `public` async renewLock(message: [MessageEnvelope](../message_envelope), lockTimeout: number): Promise\<void\>
+> `public`  renewLock(message: [MessageEnvelope](../message_envelope), lockTimeout: number): Promise\<void\>
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to extend its lock.
 - **lockTimeout**: number - a locking timeout in milliseconds.
@@ -187,19 +174,11 @@ Renews a lock on a message that makes it invisible from other receivers in the q
 #### send
 Sends a message into the queue.
 
-> `public` async send(correlationId: string, envelope: [MessageEnvelope](../message_envelope)): Promise\<void\>
+> `public`  send(correlationId: string, envelope: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - a message envelop to be sent.
 
-#### sendAsObject
-Sends an object into the queue. Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
-
-> `public` async sendAsObject(correlationId: string, messageType: string, message: any): Promise\<void\>
-
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **messageType**: string-  a message type
-- **message**: any - an object value to be sent
 
 #### setReferences
 Sets references to dependent components.
@@ -208,12 +187,6 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-#### toString
-Gets a string representation of the object.
-
-> `public static` toString(): string
-
-- **returns**: string - a string representation of the object.
 
 #### openWithParams
 Opens the component with given connection and credential parameters.

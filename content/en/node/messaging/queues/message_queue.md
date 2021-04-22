@@ -2,7 +2,7 @@
 type: docs
 title: "MessageQueue"
 linkTitle: "MessageQueue"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Abstract message queue that is used as a basis for specific message queue implementations.
 ---
@@ -37,7 +37,6 @@ Creates a new instance of the message queue.
 
 - **name**: string - (optional) a queue name
 - **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) a capabilities of this message queue
-- **returns** [MessageQueue]() - TODO: add description
 
 
 ### Fields
@@ -178,7 +177,7 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 #### open
 Opens the component.
 
-> `public` async open(correlationId: string): Promise\<void\>
+> `public` open(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
@@ -263,7 +262,7 @@ Gets a string representation of the object.
 #### openWithParams
 Opens the component with given connection and credential parameters.
 
-> `protected` async openWithParams(correlationId: string, connections: [ConnectionParams](../../../components/connect/connection_params)[], credential: [CredentialParams](../../../components/auth/credential_params)): Promise\<void\>
+> `protected` openWithParams(correlationId: string, connections: [ConnectionParams](../../../components/connect/connection_params)[], credential: [CredentialParams](../../../components/auth/credential_params)): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **connection**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters

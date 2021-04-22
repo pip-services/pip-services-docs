@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     TODO: add description
 ---

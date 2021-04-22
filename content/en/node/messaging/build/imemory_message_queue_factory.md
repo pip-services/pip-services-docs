@@ -2,7 +2,7 @@
 type: docs
 title: "IMessageQueueFactory"
 linkTitle: "IMessageQueueFactory"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: > 
     Creates message queue componens.
 ---

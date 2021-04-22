@@ -2,7 +2,7 @@
 type: docs
 title: "CallbackMessageReceiver"
 linkTitle: "CallbackMessageReceiver"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Wraps message callback into IMessageReceiver
 ---
@@ -20,7 +20,7 @@ Creates an instance of the CallbackMessageReceiver.
 Receives incoming message from the queue.  
 See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
-> `public` async receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)): Promise\<void\>
+> `public` receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)): Promise\<void\>
 
 - **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
 - **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from

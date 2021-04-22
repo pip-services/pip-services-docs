@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryMessageQueueFactory"
 linkTitle: "MemoryMessageQueueFactory"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Creates [MemoryMessageQueue](../../queues/memory_message_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor. 
@@ -13,8 +13,6 @@ See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../.
 Create a new instance of the factory.
 
 > `public` constructor(): string
-
-- **returns**: string - TODO: add description
 
 ### Methods
 

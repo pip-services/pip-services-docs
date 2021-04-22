@@ -2,7 +2,7 @@
 type: docs
 title: "MessageEnvelope"
 linkTitle: "MessageEnvelope"
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Allows adding additional information to messages. A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
 
@@ -17,8 +17,6 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **messageType**: string - a string value that defines the message's type.
 - **message**: any - the data being sent/received.
-
-- **returns**: [MessageEnvelope]() - TODO: add description
 
 ### Fields
 

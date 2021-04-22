@@ -3,7 +3,7 @@ type: docs
 title: "Queues"
 linkTitle: "Queues"
 no_list: true
-gitUrl: "https://github.com/pip-services3-node/pip-services3-messaging-node"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     TODO: add description
 ---
@@ -25,6 +25,11 @@ Callback interface to receive incoming messages.
 <br>
 
 ### Classes
+
+#### [CachedMessageQueue](cached_message_queue)
+Message queue that caches received messages in memory to allow peek operations
+that may not be supported by the undelying queue.  
+This queue is users as a base implementation for other queues
 
 #### [CallbackMessageReceiver](callback_message_receiver)
 Wraps message callback into IMessageReceiver

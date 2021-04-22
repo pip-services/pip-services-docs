@@ -96,7 +96,7 @@ disableKinds = ["taxonomy", "term"]
   #  weight = 70
 
 [params]
-copyright = "Enterprise Innovation Consulting LLC."
+copyright = "Enterprise Innovation Consulting."
 privacy_policy = "https://policies.google.com/privacy"
 customCSS  = ["css/custom.css", "css/bootstrap.offcanvas.css"]
 customSCSS = ["scss/algolia.scss"]

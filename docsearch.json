@@ -6,7 +6,7 @@
     "selectors": {
         "lvl0": ".content-title",
         "lvl1": ".td-content h4",
-        "lvl2": ".td-content ul",
+        "lvl2": "",
         "lvl3": "",
         "lvl4": "",
         "lvl5": "",

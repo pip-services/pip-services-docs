@@ -32,7 +32,7 @@
 }
 
 footer {
-    min-height: 120px;
+    min-height: 150px;
     
     @include media-breakpoint-down(md) {
         min-height: 100px;

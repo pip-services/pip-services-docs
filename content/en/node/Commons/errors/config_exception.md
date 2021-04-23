@@ -7,6 +7,8 @@ description: >
     Errors related to mistakes in the microservice's user-defined configurations.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
+
 
 ### Constructors
 Creates an error instance and assigns its values.

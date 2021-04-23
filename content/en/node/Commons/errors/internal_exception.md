@@ -7,6 +7,7 @@ description: >
     Errors caused by programming mistakes.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

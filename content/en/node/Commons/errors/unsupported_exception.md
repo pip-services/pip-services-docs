@@ -7,6 +7,7 @@ description: >
     Errors caused by calls to unsupported or not yet implemented functionality.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

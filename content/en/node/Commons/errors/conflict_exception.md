@@ -8,6 +8,7 @@ description: >
     posted by the user and those that are stored on the server.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

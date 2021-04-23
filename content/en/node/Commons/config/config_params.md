@@ -24,6 +24,9 @@ description: >
     ConfigParams are used to pass configurations to [IConfigurable](../iconfigurable) objects.
     They also serve as a basis for more concrete configurations such as [ConnectionParams](../../../components/connect/connection_params) or [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package).
 ---
+
+**Extends:** [StringValueMap](../../data/string_value_map)
+
 See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
 
 **Example:**

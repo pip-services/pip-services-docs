@@ -7,6 +7,7 @@ description: >
     Errors in read/write local disk operations.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

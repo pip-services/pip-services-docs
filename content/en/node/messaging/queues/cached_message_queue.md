@@ -9,6 +9,11 @@ description: >
  
     This queue is users as a base implementation for other queues
 ---
+
+**Extends:** [MessageQueue](../message_queue) 
+
+**Implements:** [ICleanable](../../../commons/run/icleanable)
+
 See also [MessageQueue](../message_queue)
 
 ### Constructors

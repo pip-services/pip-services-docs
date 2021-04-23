@@ -8,6 +8,7 @@ description: >
     For instance: business calls when the component is not ready.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

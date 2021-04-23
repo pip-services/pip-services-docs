@@ -7,6 +7,7 @@ description: >
     Access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

@@ -8,6 +8,9 @@ description: >
     It allows to build command call chains. The interceptor can alter execution
     and delegate calls to a next command, which can be intercepted or concrete.
 ---
+
+**Implements:** [ICommand](../icommand)
+
 See also [ICommand](../icommand), [ICommandInterceptor](../icommand_interceptor)
 
 **Example:**

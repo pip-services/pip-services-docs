@@ -7,6 +7,9 @@ description: >
     Concrete implementation of [ICommand](../icommand) interface. Command allows to call a method
     or function using Command pattern.
 ---
+
+**Implements:** [ICommand](../icommand)
+
 See also [ICommand](../icommand), [CommandSet](../command_set) 
 
 **Example:**

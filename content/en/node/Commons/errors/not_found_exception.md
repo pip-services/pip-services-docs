@@ -7,6 +7,7 @@ description: >
     Errors caused by attempts to access missing objects.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

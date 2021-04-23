@@ -8,6 +8,8 @@ description: >
     This queue is typically used for testing to mock real queues.
 ---
 
+**Extends:** [MessageQueue](../message_queue) 
+
 
 ##### Configuration parameters
 - **name**: name of the message queue

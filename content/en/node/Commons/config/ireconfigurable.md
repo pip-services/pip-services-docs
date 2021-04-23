@@ -12,9 +12,11 @@ description: >
     in runtime.
 ---
 
-See also [IConfigurable](iconfigurable)
+**Extends:** [IConfigurable](../iconfigurable)
+
+See also [IConfigurable](../iconfigurable)
 
 
 ### See also
-- #### [IConfigurable](iconfigurable)
+- #### [IConfigurable](../iconfigurable)
 

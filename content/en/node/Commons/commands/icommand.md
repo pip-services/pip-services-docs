@@ -7,6 +7,8 @@ description: >
     An interface for Commands, which are part of the Command design pattern. Each command wraps a method or function and allows to call them in uniform and safe manner.
 ---
 
+**Extends:** [IExecutable](../../run/iexecutable)
+
 See also [Command](../command), [IExecutable](../../run/iexecutable), [ICommandInterceptor](../icommand_interceptor), [InterceptedCommand](../intercepted_command)
 
 ### Methods

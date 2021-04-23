@@ -7,6 +7,7 @@ description: >
     Errors returned by remote services or by the network during call attempts.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

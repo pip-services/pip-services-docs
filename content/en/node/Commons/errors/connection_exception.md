@@ -8,6 +8,8 @@ description: >
     They can be related to misconfiguration, network issues, or the remote service itself.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
+
 
 ### Constructors
 Creates an error instance and assigns its values.

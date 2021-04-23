@@ -44,6 +44,9 @@ description: >
     it is converted into [ErrorDescription](../error_description) object and restored on receiving end into
     identical exception type.
 ---
+
+**Extends:** Error
+
 See also [ErrorCategory](../error_category), [ErrorDescription](../error_description)
 
 

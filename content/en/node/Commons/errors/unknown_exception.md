@@ -7,6 +7,7 @@ description: >
     Unknown or unexpected errors.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

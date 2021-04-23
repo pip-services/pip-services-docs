@@ -8,6 +8,7 @@ description: >
     For example: missing or incorrect parameters.
 ---
 
+**Extends:** [ApplicationException](../application_exception)
 
 ### Constructors
 Creates an error instance and assigns its values.

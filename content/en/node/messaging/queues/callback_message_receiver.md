@@ -4,8 +4,11 @@ title: "CallbackMessageReceiver"
 linkTitle: "CallbackMessageReceiver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
-    Wraps message callback into IMessageReceiver
+    Wraps message callback into [IMessageReceiver](../imessage_receiver)
 ---
+
+**Implements:** [IMessageReceiver](../imessage_receiver)
+
 
 ### Constructors
 Creates an instance of the CallbackMessageReceiver.

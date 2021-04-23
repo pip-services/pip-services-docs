@@ -7,6 +7,9 @@ description: >
     Concrete implementation of [IEvent](../ievent) interface.
     It allows to send asynchronous notifications to multiple subscribed listeners.
 ---
+
+**Implements:** [IEvent](../ievent)
+
 See also [IEvent](../ievent), [IEventListener](../ievent_listener)
 
 **Example**:

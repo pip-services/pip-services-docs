@@ -10,6 +10,9 @@ description: >
     Attempt to call non-supported method will result in NotImplemented exception.
     To verify if specific method is supported consult with [MessagingCapabilities](../messaging_capabilities).   
 ---
+
+**Extends:** [IOpenable](../../../commons/run/iopenable), [IClosable](../../../commons/run/iclosable)
+
 See also [MessageEnvelope](../message_envelope), [MessagingCapabilities](../messaging_capabilities)
 
 ### Methods

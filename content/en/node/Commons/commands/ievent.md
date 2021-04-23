@@ -7,6 +7,9 @@ description: >
     An interface for Events, which are part of the Command design pattern.
     Events allows to send asynchronious notifications to multiple subscribed listeners.
 ---
+
+**Extends:** [INotifiable](../../run/inotifiable)
+
 See also [IEventListener](../ievent_listener)
 
 ### Methods

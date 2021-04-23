@@ -7,6 +7,9 @@ description: >
     Creates [MemoryMessageQueue](../../queues/memory_message_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor. 
 ---
+
+**Extends:** [MessageQueueFactory](../message_queue_factory)
+
 See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/memory_message_queue)
 
 ### Constructors

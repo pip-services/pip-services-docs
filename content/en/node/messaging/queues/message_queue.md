@@ -7,6 +7,8 @@ description: >
     Abstract message queue that is used as a basis for specific message queue implementations.
 ---
 
+**Implements:** [IMessageQueue](../imessage_queue), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+
 
 ##### Configuration parameters
 - **name**: name of the message queue

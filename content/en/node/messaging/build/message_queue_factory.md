@@ -7,6 +7,11 @@ description: >
     Creates [IMessageQueue](../../queues/imessage_queue) components by their descriptors.
     Name of created message queue is taken from its descriptor.
 ---
+
+**Extends:** [Factory](../../../components/build/factory)
+
+**Implements:** [IMessageQueueFactory](../imessage_queue_factory), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+
 See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/message_queue)
 
 ### Fields

@@ -5,7 +5,9 @@ linkTitle: "MapConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Converts arbitrary values into map objects using extended conversion rules:
+
     - Objects: property names as keys, property values as values
+    
     - Arrays: element indexes as keys, elements as values
 ---
 

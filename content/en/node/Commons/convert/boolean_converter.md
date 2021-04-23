@@ -5,8 +5,11 @@ linkTitle: "BooleanConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Converts arbitrary values to boolean values using extended conversion rules:
+
     - Numbers: <>0 are true, =0 are false
+    
     - Strings: "true", "yes", "T", "Y", "1" are true; "false", "no", "F", "N" are false
+
     - DateTime: <>0 total milliseconds are true, =0 are false
 ---
 

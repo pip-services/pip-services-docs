@@ -48,7 +48,7 @@ section1.toString(); // Result: key1=AAA;key2=123
 
 ### Constructors
 Creates a new ConfigParams and fills it with values.
-See [StringValueMap.constructor](../../data/string_value_map/#constructors)
+See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 
 > public constructor(values: any = null): [ConfigParams]()
 

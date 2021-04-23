@@ -10,7 +10,7 @@ description: >
 
 ### Constructors
 
-> constructor(canMessageCount: boolean, canSend: boolean, canReceive: boolean, canPeek: boolean, canPeekBatch: boolean, canRenewLock: boolean, canAbandon: boolean, canDeadLetter: boolean, canClear: boolean): [MessagingCapabilities]()
+> `public` constructor(canMessageCount: boolean, canSend: boolean, canReceive: boolean, canPeek: boolean, canPeekBatch: boolean, canRenewLock: boolean, canAbandon: boolean, canDeadLetter: boolean, canClear: boolean): [MessagingCapabilities]()
 
 Creates a new instance of the capabilities object.
 

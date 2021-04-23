@@ -1,0 +1,97 @@
+---
+type: docs
+title: "TokenizedPagingParams"
+linkTitle: "TokenizedPagingParams"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+description: > 
+    Data transfer object to pass tokenized paging parameters for queries.
+    It can be used for complex paging scenarios, like paging across multiple databases
+    where the previous state is encoded in a token. The token is usually retrieved from
+    the previous response. The initial request shall go with token == *null*
+
+
+    The page is defined by two parameters:
+
+    - the *token* token that defines a starting point for the search.
+
+    - the *take* parameter sets how many items to return in a page.
+
+    - additionally, the optional *total* parameter tells to return total number of items in the query.
+
+
+    Remember: not all implementations support the *total* parameter
+    because its generation may lead to severe performance implications.
+---
+
+**Example:**
+```typescript
+let filter = FilterParams.fromTuples("type", "Type1");
+let paging = new TokenizedPagingParams(null, 100);
+     
+myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+```
+
+### Constructors
+Creates a new instance and sets its values.
+
+> `public` constructor(token: string = null, take: number = null, total: boolean = null): [TokenizedPagingParams]()
+
+- **token**: string = null - token that defines a starting point for the search.
+- **take**: number = null - the number of items to return. 
+- **total**: boolean = null - true to return the total number of items.
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### token
+The start token
+> `public` **token**: string
+
+#### take
+The number of items to return.
+> `public` **data**: T[]
+
+#### total
+The flag to return the total number of items.
+> `public` **total**: boolean
+
+</span>
+
+
+### Methods
+
+#### getTake
+Gets the number of items to return in a page.
+
+> `public` getTake(maxTake: number): number
+
+- **maxTake**: number - the maximum number of items to return.
+- **returns**: number - the number of items to return.
+
+#### fromMap
+Creates a new TokenizedPagingParams and sets it parameters from the specified map
+
+> `public static` fromMap(map: any): [TokenizedPagingParams]()
+
+- **map**: any - a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
+- **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
+
+
+#### fromTuples
+Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
+
+> `public static` fromTuples(...tuples: any[]): [TokenizedPagingParams]()
+
+- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
+- **returns**: [TokenizedPagingParams]() - a newly created TokenizedPagingParams.
+
+
+#### fromValue
+Converts specified value into TokenizedPagingParams.
+
+> `public static` fromValue(value: any): [TokenizedPagingParams]()
+
+- **value**: any - value to be converted
+- **returns**: [TokenizedPagingParams]() - a newly created PagingParams.

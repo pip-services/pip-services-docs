@@ -53,7 +53,7 @@ See also [ErrorCategory](../error_category), [ErrorDescription](../error_descrip
 #### Constructors
 Creates a new instance of application exception and assigns its values.
 
-> constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null): [ApplicationException]()
+> `public` constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null): [ApplicationException]()
 
 - **category**: string = null - (optional) a standard error category. Default: Unknown
 - **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.

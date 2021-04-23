@@ -5,10 +5,15 @@ linkTitle: "StringConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Converts arbitrary values into strings using extended conversion rules:
+
     - Numbers: are converted with '.' as decimal point
+
     - DateTime: using ISO format
+
     - Boolean: "true" for true and "false" for false
+
     - Arrays: as comma-separated list
+    
     - Other objects: using *toString()* method
 ---
 

@@ -5,7 +5,9 @@ linkTitle: "DateTimeConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Converts arbitrary values into Date values using extended conversion rules:
+
     - Strings: converted using ISO time format
+    
     - Numbers: converted using milliseconds since unix epoch
 ---
 

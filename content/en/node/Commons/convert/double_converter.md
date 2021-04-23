@@ -5,8 +5,11 @@ linkTitle: "DoubleConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Converts arbitrary values into double using extended conversion rules:
+
     - Strings are converted to double values
+
     - DateTime: total number of milliseconds since unix epoсh
+    
     - Boolean: 1 for true and 0 for false  
 ---
 

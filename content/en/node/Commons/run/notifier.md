@@ -1,0 +1,38 @@
+---
+type: docs
+title: "Notifier"
+linkTitle: "Notifier"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+description: >
+    Helper class that notifies components.
+---
+
+See also [INotifiable](../inotifiable)
+
+
+### Methods
+
+#### notify
+Sets execution parameters.
+
+> `public static` notify(correlationId: string, components: any[], args: [Parameters](../parameters)): void
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **components**: any[] - a list of components that are to be notified.
+- **args**: [Parameters](../parameters) - notification arguments.
+
+#### notifyOne
+Notifies specific component.
+
+To be notiied components must implement [INotifiable](../inotifiable) interface.
+If they don't the call to this method has no effect.
+
+> `public static` notifyOne(correlationId: string, component: any, args: [Parameters](../parameters)): void
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **component**: any - the component that is to be notified.
+- **args**: [Parameters](../parameters) - notifiation arguments.
+
+
+### See also
+- #### [INotifiable](../inotifiable)

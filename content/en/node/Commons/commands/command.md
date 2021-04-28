@@ -38,7 +38,7 @@ console.log("2 + 2 = " + result);
 
 Creates a new command object and assigns it's parameters.
 
-> `public` public constructor(name: string, schema: [Schema](../../validate/schema), action: [IExecutable](../../run/iexecutable) | [CommandAction](#commandaction)): [Command]()
+> `public` constructor(name: string, schema: [Schema](../../validate/schema), action: [IExecutable](../../run/iexecutable) | [CommandAction](#commandaction)): [Command]()
 
 - **name**: string - the command name.
 - **schema**: [Schema](../../validate/schema) - the schema to validate command arguments.

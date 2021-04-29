@@ -2,7 +2,7 @@
 type: docs
 title: "Event"
 linkTitle: "Event"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Concrete implementation of [IEvent](../ievent) interface.
     It allows to send asynchronous notifications to multiple subscribed listeners.
@@ -14,16 +14,10 @@ See also [IEvent](../ievent), [IEventListener](../ievent_listener)
 
 **Example**:
 
-```typescript
-let event = new Event("my_event");
- 
-event.addListener(myListener);
- *     
-event.notify("123", Parameters.fromTuples(
-  "param1", "ABC",
-  "param2", 123
-));
-
+```python
+event_name = Event("my_event")
+event_name.add_listener(myListener)
+event_name.notify("123", Parameters.from_tuples("param1", "ABC", "param2", 123)
 ```
 
 ### Constructors
@@ -31,46 +25,46 @@ event.notify("123", Parameters.fromTuples(
 Creates a new event and assigns its name.  
 Throws an Error if the name is null.
 
-> `public` constructor(name: string): [Event]()
+> Event(name: str)
 
-- **name**: string - the name of the event that is to be created.
+- **name**: str - the name of the event that is to be created.
 
 ### Methods
 
-#### addListener
+#### add_listener
 Adds a listener to receive notifications when this event is fired.
 
-> `public` addListener(listener: [IEventListener](../ievent_listener)): void
+> add_listener(listener: [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
 
-#### getListeners
+#### get_listeners
 Gets all listeners registred in this event.
 
-> `public` getListeners(): [IEventListener](../ievent_listener)[]
+> getListeners(): List[[IEventListener](../ievent_listener)]
 
-- **returns**: [IEventListener](../ievent_listener)[] - a list of listeners.
+- **returns**: List[[IEventListener](../ievent_listener)] - a list of listeners.
 
-#### getName
+#### get_name
 Gets the name of the event.
 
-> `public` getName(): string 
+> get_name(): str 
 
-- **returns**: string - the name of this event.
+- **returns**: str - the name of this event.
 
 #### notify
 Fires this event and notifies all registred listeners.  
 Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
 
-> `public`notify(correlationId: string, args: [Parameters](../../run/parameters)): void
+> notify(correlation_id: str, args: [Parameters](../../run/parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - the parameters to raise this event with.
 
-#### removeListener
+#### remove_listener
 Removes a listener, so that it no longer receives notifications for this event.
 
-> `public` removeListener(listener: [IEventListener](../ievent_listener)): void
+> removeListener(listener: [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 

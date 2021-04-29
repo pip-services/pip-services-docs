@@ -44,17 +44,9 @@ Single values are converted into arrays with single element.
 
 > `public static` toArrayWithDefault(value: any, defaultValue: any[]): any[]
 
-
-#### toNullableArray
-Converts value into array object.
-Single values are converted into arrays with a single element.
-
-> `public static` toArrayWithDefault(value: any, defaultValue: any[]): any[]
-
 - **value**: any - the value to convert.
 - **defaultValue**: any[] - default array object.
 - **returns**: any[] - array object or default array when value is null.
-
 
 #### toNullableArray
 Converts value into array object.
@@ -63,5 +55,5 @@ Single values are converted into arrays with a single element.
 > `public static` toNullableArray(value: any): any[]
 
 - **value**: any - the value to convert.
-- **returns**: any - array object or null when value is null.
+- **returns**: any[] - array object or null when value is null.
 

@@ -2,7 +2,7 @@
 type: docs
 title: "DoubleConverter"
 linkTitle: "DoubleConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Converts arbitrary values into double using extended conversion rules:
 
@@ -26,28 +26,28 @@ value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Result: c
 
 ### Methods
 
-#### toDouble
+#### to_double
 Converts value into doubles or returns 0 when conversion is not possible.  
-See [toDoubleWithDefault](#todoublewithdefault)
+See [to_double_with_default](#to_double_with_default)
 
-> `public static` toDouble(value: any): number
+> `static` to_double(value: Any): Union[int, float]
 
-- **value**: any - the value to convert.
-- **returns**: number - double value or 0 when conversion is not supported.
+- **value**: Any - the value to convert.
+- **returns**: Union[int, float] - double value or 0 when conversion is not supported.
 
-#### toDoubleWithDefault
+#### to_double_with_default
 Converts value into integer or returns default value when conversion is not possible.
 
-> `public static` toDoubleWithDefault(value: any, defaultValue: number = 0): number
+> `static` to_double_with_default(value: Any, default_value: Union[int, float] = 0): Union[int, float]
 
-- **value**: any - the value to convert.
-- **defaultValue**: number = null - the default value.
-- **returns**: number - double value or default when conversion is not supported.
+- **value**: Any - the value to convert.
+- **default_value**: Union[int, float] = null - the default value.
+- **returns**: Union[int, float] - double value or default when conversion is not supported.
 
-#### toNullableDouble
+#### to_nullable_double
 Converts value into doubles or returns null when conversion is not possible.
 
-> `public static` toNullableDouble(value: any): number
+> `static` to_nullable_double(value: Any): Optional[Union[int, float]]
 
-- **value**: any - the value to convert.
-- **returns**: number - double value or null when conversion is not supported.
+- **value**: Any - the value to convert.
+- **returns**: Optional[Union[int, float]] - double value or null when conversion is not supported.

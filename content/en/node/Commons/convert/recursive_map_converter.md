@@ -37,7 +37,7 @@ Converts value into map object or returns default when conversion is not possibl
 - **defaultValue**: any - the default value.
 - **returns**: any - map object or empty map when conversion is not supported.
 
-#### toNullableLong
+#### toNullableMap
 Converts value into map object or returns null when conversion is not possible.
 
 > `public static` toNullableMap(value: any): any

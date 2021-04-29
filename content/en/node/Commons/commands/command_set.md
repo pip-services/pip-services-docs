@@ -93,7 +93,7 @@ Adds a [command interceptor](../icommand_interceptor) to this command set.
 
 > `public` addInterceptor(interceptor: [ICommandInterceptor](../icommand_interceptor)): void
 
-- ***interceptor***: [ICommandInterceptor](../icommand_interceptor) the interceptor to add.
+- **interceptor**: [ICommandInterceptor](../icommand_interceptor) the interceptor to add.
 
 #### addListener
 Adds a [listener](../ievent_listener) to receive notifications on fired events.  

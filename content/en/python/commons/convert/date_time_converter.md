@@ -4,17 +4,18 @@ title: "DateTimeConverter"
 linkTitle: "DateTimeConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into Date values using extended conversion rules:
+    Converts arbitrary values into Date values using extended conversion rules.
 
-    - Strings: converted using ISO time format
     
-    - Numbers: converted using milliseconds since unix epoch
 ---
 
+### Description    
 
+The date_time_converter class allows you to convert arbitrary values into Date values using following extended conversion rules:
+- Strings: converted using ISO time format
+- Numbers: converted using milliseconds since unix epoch
 
-
-### Methods
+### Static methods
 
 #### to_date_time
 Converts value into Date or returns current date when conversion is not possible.  

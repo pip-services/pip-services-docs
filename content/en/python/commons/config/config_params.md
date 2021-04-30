@@ -4,8 +4,11 @@ title: "ConfigParams" Contains a key-value map with configuration parameters.
 linkTitle: "ConfigParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Contains a key-value map with configuration parameters. 123
-    All values stored as strings and can be serialized as JSON or string forms.
+    Contains a key-value map with configuration parameters.
+  
+---
+## Description
+All values stored as strings and can be serialized as JSON or string forms.
     When retrieved the values can be automatically converted on read using GetAsXXX methods.
 
 
@@ -23,7 +26,6 @@ description: >
 
     ConfigParams are used to pass configurations to [IConfigurable](../iconfigurable) objects.
     They also serve as a basis for more concrete configurations such as [ConnectionParams](../../../components/connect/connection_params) or [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package).
----
 
 **Extends:** [StringValueMap](../../data/string_value_map)
 

@@ -9,23 +9,23 @@ description: >
 ---
 ### Description
 All values stored as strings and can be serialized as JSON or string forms.
-    When retrieved the values can be automatically converted on read using GetAsXXX methods.
+When retrieved the values can be automatically converted on read using GetAsXXX methods.
 
 
-    The keys are case-sensitive, so it is recommended to use consistent C-style as: *"my_param"*
+The keys are case-sensitive, so it is recommended to use consistent C-style as: *"my_param"*
  
 
-    Configuration parameters can be broken into sections and subsections using dot notation as:
-    *"section1.subsection1.param1"*. Using GetSection method all parameters from specified section
-    can be extracted from a ConfigMap.
+Configuration parameters can be broken into sections and subsections using dot notation as:
+*"section1.subsection1.param1"*. Using GetSection method all parameters from specified section
+can be extracted from a ConfigMap.
  
 
-    The ConfigParams supports serialization from/to plain strings as:
-    *"key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"*
+The ConfigParams supports serialization from/to plain strings as:
+*"key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z"*
 
 
-    ConfigParams are used to pass configurations to [IConfigurable](../iconfigurable) objects.
-    They also serve as a basis for more concrete configurations such as [ConnectionParams](../../../components/connect/connection_params) or [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package).
+ConfigParams are used to pass configurations to [IConfigurable](../iconfigurable) objects.
+They also serve as a basis for more concrete configurations such as [ConnectionParams](../../../components/connect/connection_params) or [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package).
 
 **Extends:** [StringValueMap](../../data/string_value_map)
 

@@ -34,7 +34,7 @@ See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 
 - **values**: Any - (optional) an object to be converted into key-value pairs to initialize this config map.
 
-### Methods
+### Instance Methods  
 
 #### add_section
 Adds parameters into this ConfigParams under specified section.
@@ -77,6 +77,8 @@ Set default values from specified ConfigParams and returns a new ConfigParams ob
 
 - **default_config_params**: [ConfigParams]() - ConfigMap with default parameter values.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
+
+### Static methods   
 
 #### from_string
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.

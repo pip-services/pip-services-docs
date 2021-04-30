@@ -4,31 +4,28 @@ title: "BooleanConverter"
 linkTitle: "BooleanConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values to boolean values using extended conversion rules:
+    Converts arbitrary values to boolean values using extended conversion rules.
 
-    - Numbers: <>0 are true, =0 are false
     
-    - Strings: "true", "yes", "T", "Y", "1" are true; "false", "no", "F", "N" are false
-
-    - DateTime: <>0 total milliseconds are true, =0 are false
 ---
 
-**Example:**
+### Description    
 
-```python
-value1 = BooleanConverter.to_nullable_boolean(true) // true
-value2 = BooleanConverter.to_nullable_boolean("yes") // true
-value3 = BooleanConverter.to_nullable_boolean(123) // true
-value4 = BooleanConverter.to_nullable_boolean({}) // None
+The boolean_converter class allows you to convert different values to boolean values, according to the following rules:
 
-```
+- Numbers: <>0 are true, =0 are false
+    
+- Strings: "true", "yes", "T", "Y", "1" are true; "false", "no", "F", "N" are false
 
-### Methods
+- DateTime: <>0 total milliseconds are true, =0 are false
+
+
+### Static methods
 
 #### to_boolean
 Converts value into boolean or returns false when conversion is not possible.
 
-> `static` toBoolean(value: Any): bool
+> `static` to_Boolean(value: Any): bool
 
 - **value**: Any - the value to convert.
 - **returns**: bool - boolean value or false when conversion is not supported.
@@ -50,3 +47,18 @@ Converts value into boolean or returns null when conversion is not possible.
 
 - **value**: Any - the value to convert.
 - **returns**: bool - boolean value or null when convertion is not supported.
+
+### Examples
+
+```python
+value1 = BooleanConverter.to_nullable_boolean(True)     # Returns True
+value2 = BooleanConverter.to_nullable_boolean("yes")    # Returns True
+value3 = BooleanConverter.to_nullable_boolean(123)      # Returns None
+value4 = BooleanConverter.to_nullable_boolean({})       # Returns None
+
+value5 = BooleanConverter.to_boolean_with_default(True,"verdadero")     # True
+value6 = BooleanConverter.to_boolean_with_default(123,"verdadero")      # Returns verdadero
+
+value7 = BooleanConverter.to_boolean("yes")     # Returns True
+
+```

@@ -33,7 +33,7 @@ This method generate dates without time (or time set to 00:00:00)
 Generates a random Date and time in the range ['minYear', 'maxYear'].
 This method generate dates without time (or time set to 00:00:00)
 
-> `public static` extDateTime(min: Date, max: Date = null): Date
+> `public static` nextDateTime(min: Date, max: Date = null): Date
 
 - **min**: Date - (optional) minimum range value
 - **max**: Date = null - max range value

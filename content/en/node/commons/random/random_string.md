@@ -21,10 +21,10 @@ let value2 = RandomString.pick(["A","B","C"]); // Possible result: "gBW"
 #### pickChar
 Picks a random character from a string.
 
-> `public static` pickChar(values: values): string
+> `public static` pickChar(values: string): string
 
-- **values**: values - a string to pick a char from
-- **returns**: number - a randomly picked char.
+- **values**: string - a string to pick a char from
+- **returns**: string - a randomly picked char.
 
 #### distort
 Distorts a string by randomly replacing characters in it.

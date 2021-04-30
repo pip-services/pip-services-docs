@@ -41,5 +41,5 @@ All other locator types are matched using direct comparison.
 > `public` match(locator: any): boolean
 
 - **locator**: any - the locator to match. 
-- **returns**: any - true if locators are matching and false it they don't.
+- **returns**: boolean - true if locators are matching and false it they don't.
 

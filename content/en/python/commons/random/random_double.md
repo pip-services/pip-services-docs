@@ -1,0 +1,38 @@
+---
+type: docs
+title: "RandomDouble"
+linkTitle: "RandomDouble"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+description: >
+    Random generator for boolean values.
+---
+
+**Example:**
+
+```python
+value1 = RandomDouble.next_double(5, 10)     # Possible result: 7.3
+value2 = RandomDouble.next_double(10)        # Possible result: 3.7
+value3 = RandomDouble.next_double(10, 3)     # Possible result: 9.2
+
+```
+
+
+### Methods
+
+#### next_double
+Generates a random double value in the range ['min_year', 'max_year'].
+
+> `static` next_double(mmin: float, mmax: float = None): float
+
+- **mmin**: float - (optional) minimum range value
+- **mmax**: float = null - max range value
+- **returns**: float - a random double value.
+
+#### update_double
+Updates (drifts) a double value within specified range defined
+
+> `static` update_double(value: float, rrange: float = None): float
+
+- **value**: float - a double value to drift.
+- **rrange**: float = null - (optional) a range. Default: 10% of the value
+- **returns**: float - TODO add description.

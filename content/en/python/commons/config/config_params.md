@@ -89,10 +89,13 @@ Gets a list with all 1st level section names.
 
 **Example:**
 ```python
+# Create a ConfigParams object with two sections
 config = ConfigParams.from_tuples("section1.key1", "AAA",
                                          "section1.key2", 123,
                                          "section2.key1", True)
-config.get_section_names() # Will return ['section1', 'section2']
+
+# Get the section names
+config.get_section_names()      # Returns ['section1', 'section2']
 ```
 #### override
 Overrides parameters with new values from specified [ConfigParams]()
@@ -163,6 +166,7 @@ Creates a new ConfigParams object filled with key-value pairs from specified obj
 ```python
 # Create a dictionary with the parameters and their values
 dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True}
+
 # Create the ConfigParams object
 configD = ConfigParams. from_value(dict)
 ```

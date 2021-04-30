@@ -24,7 +24,7 @@ If name cannot be determined it returns a defaultName.
 - **default_name**: str - (optional) a default component name.
 - **returns**: str - resolved name or default name if the name cannot be determined.
 
-## Examples
+### Examples
 
 ```python
 # Using the descriptor class (which has the following parameters: "group", "type", "kind", "name", "version") will extract the value of the "name" parameter.

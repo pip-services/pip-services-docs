@@ -80,6 +80,17 @@ The section name is removed from parameter keys.
 - **section**: str - name of the section to retrieve configuration parameters from.
 - **returns**: [ConfigParams]() - all configuration parameters that belong to the section named 'section'. 
 
+**Example:**
+```python
+# Create a ConfigParams object
+config = ConfigParams.from_tuples("section1.key1", "AAA",
+                                         "section1.key2", 123,
+                                         "section2.key1", True)
+                                         
+# Get "section1"                                        
+section1 = config.get_section("section1")       # Returns {'key1': 'AAA', 'key2': '123'}                                         
+ ```                                        
+
 #### get_section_names
 Gets a list with all 1st level section names.
 

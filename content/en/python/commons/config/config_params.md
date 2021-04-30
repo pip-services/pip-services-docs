@@ -8,10 +8,10 @@ description: >
     When retrieved the values can be automatically converted on read using GetAsXXX methods.
 
 
-    The keys are case-sensitive, so it is recommended to use consistent C-style as: *"my_param"*
+    The keys are case-sensitive, so it is recommended to use consistent C-style as: *"my_param"* 
  
 
-    Configuration parameters can be broken into sections and subsections using dot notation as:
+    Configuration parameters can be broken into sections and subsections using dot notation as: 123
     *"section1.subsection1.param1"*. Using GetSection method all parameters from specified section
     can be extracted from a ConfigMap.
  

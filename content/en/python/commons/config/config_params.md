@@ -104,6 +104,8 @@ Creates a new ConfigParams object filled with key-value pairs serialized as a st
 - **line**: str - a string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
 - **returns**: [ConfigParams]() - a new ConfigParams object.
+
+**Example:**
 ```python
 configS = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
 ```

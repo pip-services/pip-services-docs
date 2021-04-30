@@ -4,25 +4,20 @@ title: "DoubleConverter"
 linkTitle: "DoubleConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into double using extended conversion rules:
+    Converts arbitrary values into double using extended conversion rules.
 
-    - Strings are converted to double values
-
-    - DateTime: total number of milliseconds since unix epoсh
-    
-    - Boolean: 1 for true and 0 for false  
+   
 ---
 
+### Description
 
-**Example:**
+The DoubleConverter class allows you to convert arbitrary values into double using the following extended conversion rules:
 
-```python
-value1 = DoubleConverter.to_nullable_double("ABC")     # Result: null
-value2 = DoubleConverter.to_nullable_double("123.456") # Result: 123.456
-value3 = DoubleConverter.to_nullable_double(True)      # Result: 1
-value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Result: current milliseconds
+ - Strings are converted to double values
 
-```
+ - DateTime: total number of milliseconds since unix epoсh
+    
+ - Boolean: 1 for true and 0 for false  
 
 ### Methods
 
@@ -51,3 +46,13 @@ Converts value into doubles or returns null when conversion is not possible.
 
 - **value**: Any - the value to convert.
 - **returns**: Optional[float] - double value or null when conversion is not supported.
+
+### Examples
+
+```python
+value1 = DoubleConverter.to_nullable_double("ABC")     # Returns null
+value2 = DoubleConverter.to_nullable_double("123.456") # Returns 123.456
+value3 = DoubleConverter.to_nullable_double(True)      # Returns 1
+value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Returns current milliseconds (E.g. 1619812281454)
+
+```

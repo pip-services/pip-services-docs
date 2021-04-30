@@ -56,7 +56,7 @@ value2 = BooleanConverter.to_nullable_boolean("yes")    # Returns True
 value3 = BooleanConverter.to_nullable_boolean(123)      # Returns None
 value4 = BooleanConverter.to_nullable_boolean({})       # Returns None
 
-value5 = BooleanConverter.to_boolean_with_default(True,"verdadero")     # True
+value5 = BooleanConverter.to_boolean_with_default(True,"verdadero")     # Returns True
 value6 = BooleanConverter.to_boolean_with_default(123,"verdadero")      # Returns verdadero
 
 value7 = BooleanConverter.to_boolean("yes")     # Returns True

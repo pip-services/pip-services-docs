@@ -4,7 +4,7 @@ title: "IConfigurable"
 linkTitle: "IConfigurable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An interface to set configuration parameters to an object. 
+    An interface used to set configuration parameters to an object. 
 
 
     

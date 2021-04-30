@@ -5,16 +5,14 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains the implementation of the config design pattern. The [configurable interface](iconfigurable) 
-    contains just one method - "configure", which takes [ConfigParams](config_params) as a parameter (extends 
-    [StringValueMap](../data/string_value_map) class). If any object needs to be configurable, we implement this interface 
-    and parse the ConfigParams that the method received.  
+    A package containing interfaces and methods to create configuration objects.
 ---
 ---
 
 <div class="module-body"> 
+
+### Description
+The config package contains classes and interfaces that allow you to create configuration objects. These configuration objects can contain different sets of configuration paramters, which can be used to define things such as access control credentials.
 
 ### Interfaces
 

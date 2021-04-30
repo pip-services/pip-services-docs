@@ -11,7 +11,7 @@ description: >
 
 ### Description    
 
-The date_time_converter class allows you to convert arbitrary values into Date values using following extended conversion rules:
+The DateTimeConverter class allows you to convert arbitrary values into Date values using following extended conversion rules:
 - Strings: converted using ISO time format
 - Numbers: converted using milliseconds since unix epoch
 

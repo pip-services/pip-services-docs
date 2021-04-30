@@ -46,6 +46,11 @@ Single values are converted into arrays with single element.
 Converts value into array object.
 Single values are converted into arrays with a single element.
 
+> `static` to_nullable_array(value: Any): Optional[List[Any]]
+
+- **value**: Any - the value to convert.
+- **returns**: Optional[List[Any]] - array object or null when value is null.
+
 ### Examples
 
 ```python
@@ -59,9 +64,3 @@ value2 = ArrayConverter.to_array(1)            # Result: [1]
 value3 = ArrayConverter.list_to_array("1,2,3") # Result: ["1", "2", "3"]
 
 ```
-
-> `static` to_nullable_array(value: Any): Optional[List[Any]]
-
-- **value**: Any - the value to convert.
-- **returns**: Optional[List[Any]] - array object or null when value is null.
-

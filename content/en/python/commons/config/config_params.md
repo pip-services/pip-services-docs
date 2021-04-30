@@ -145,7 +145,6 @@ See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarra
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
 **Example:**
-
 ```python
 config = ConfigParams.from_tuples("section1.key1", "AAA",
                                  "section1.key2", 123,
@@ -160,6 +159,13 @@ Creates a new ConfigParams object filled with key-value pairs from specified obj
 - **value**: Any - an object with key-value pairs used to initialize a new ConfigParams.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
+**Example:**
+```python
+# Create a dictionary with the parameters and their values
+dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True}
+# Create the ConfigParams object
+configD = ConfigParams. from_value(dict)
+```
 
 #### merge_configs
 Merges two or more ConfigParams into one. The following ConfigParams override

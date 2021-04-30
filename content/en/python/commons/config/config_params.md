@@ -83,8 +83,6 @@ and returns a new [ConfigParams]() object.
 - **config_params**: [ConfigParams]() - ConfigMap with parameters to override the current values.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-**Example:**
-
 #### set_defaults
 Set default values from specified ConfigParams and returns a new ConfigParams object.
 
@@ -102,10 +100,6 @@ Creates a new ConfigParams object filled with key-value pairs serialized as a st
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-**Example:**
-```python
-configS = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
-```
 #### from_tuples
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.  
@@ -116,13 +110,6 @@ See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarra
 - **tuples**: Any - the tuples to fill a new ConfigParams object.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-**Example:**
-```python
-config = ConfigParams.from_tuples("section1.key1", "AAA",
-                                 "section1.key2", 123,
-                                 "section2.key1", True)
-```
-
 #### from_value
 Creates a new ConfigParams object filled with key-value pairs from specified object.
 
@@ -130,15 +117,6 @@ Creates a new ConfigParams object filled with key-value pairs from specified obj
 
 - **value**: Any - an object with key-value pairs used to initialize a new ConfigParams.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
-
-**Example:**
-```python
-# Create a dictionary with the parameters and their values
-dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True}
-
-# Create the ConfigParams object
-configD = ConfigParams. from_value(dict)
-```
 
 #### merge_configs
 Merges two or more ConfigParams into one. The following ConfigParams override
@@ -159,33 +137,18 @@ config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, 
 # Create a ConfigParams object from a string
 configS = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
 
-# Create a dictionary a value
-# Create a dictionary
-dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True}
-# Create the ConfigParams object
-configD = ConfigParams. from_value(dict)
+# Create a ConfigParams object from a value
+dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True} # Create a dictionary
+configD = ConfigParams. from_value(dict) # Create the ConfigParams object using the dictionary
 
 # Add a new section 
 config.add_section("section3", ConfigParams.from_tuples("key1", "ABCDE"))
-
-# Create a ConfigParams object
-config = ConfigParams.from_tuples("section1.key1", "AAA",
-                                         "section1.key2", 123,
-                                         "section2.key1", True)
-                                         
-# Get "section1"                                        
+                                       
+# Get a section                                        
 section1 = config.get_section("section1")       # Returns {'key1': 'AAA', 'key2': '123'} 
-
-# Create a ConfigParams object with two sections
-config = ConfigParams.from_tuples("section1.key1", "AAA",
-                                         "section1.key2", 123,
-                                         "section2.key1", True)
 
 # Get the section names
 config.get_section_names()      # Returns ['section1', 'section2']
-
-# Create a ConfigParams object with two sections
-config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
 
 # Change the value of section1.key1 to BBB
 config.override(ConfigParams.from_tuples("section1.key1", "BBB")) 

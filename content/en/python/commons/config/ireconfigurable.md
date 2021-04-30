@@ -21,6 +21,18 @@ Important points:
 
 See also [IConfigurable](../iconfigurable)
 
+### Examples
+
+```python
+class MyClass(IReconfigurable):
+   _myParam = "default args"
+
+ # Implement configure
+   def configure(self, config):
+       self._myParam = config.get_as_string_with_default("options.param", myParam)
+
+```
+
 
 ### See also
 - #### [IConfigurable](../iconfigurable)

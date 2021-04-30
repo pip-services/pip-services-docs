@@ -12,7 +12,7 @@ The OptionResolver class can be use to obtain all the parameters under the secti
 ### Static methods
 
 #### resolve
-Returns a ConfigParams object containing all the parameters uder the section "option".
+Returns a ConfigParams object containing all the parameters under the section "option".
 
 > `static` resolve(config: [ConfigParams](../config_params), config_as_default: bool = False): [ConfigParams](../config_params)
 

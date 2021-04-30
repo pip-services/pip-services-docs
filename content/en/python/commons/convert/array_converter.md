@@ -4,22 +4,16 @@ title: "ArrayConverter"
 linkTitle: "ArrayConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into array objects.
+    Creates an array object from a set of values
 ---
 
-**Example:**
+### Description
+The ArrayConverter class provides methods to create an array from a set of values. These values can be in the form of a list,  a single value or a string of comma-delimited values.    
 
-```python
-value1 = ArrayConverter.to_array([1, 2])       # Result: [1, 2]
-value2 = ArrayConverter.to_array(1)            # Result: [1]
-value2 = ArrayConverter.list_to_array("1,2,3") # Result: ["1", "2", "3"]
-
-```
-
-### Methods
+### Static methods
 
 #### list_to_array
-Converts value into array object with empty array as default.
+Converts a list into an array object, with empty array as default.
 Strings with comma-delimited values are split into array of strings.
 See [toArray](#toArray)
 
@@ -51,6 +45,20 @@ Single values are converted into arrays with single element.
 #### to_nullable_array
 Converts value into array object.
 Single values are converted into arrays with a single element.
+
+### Examples
+
+```python
+# List
+value1 = ArrayConverter.to_array([1, 2])       # Result: [1, 2]
+
+# A single value
+value2 = ArrayConverter.to_array(1)            # Result: [1]
+
+# String with comma-delimited values
+value3 = ArrayConverter.list_to_array("1,2,3") # Result: ["1", "2", "3"]
+
+```
 
 > `static` to_nullable_array(value: Any): Optional[List[Any]]
 

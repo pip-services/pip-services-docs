@@ -11,7 +11,7 @@ description: >
     The keys are case-sensitive, so it is recommended to use consistent C-style as: *"my_param"* 
  
 
-    Configuration parameters can be broken into sections and subsections using dot notation as: 123
+    Configuration parameters can be broken into sections and subsections using dot notation as: 1234
     *"section1.subsection1.param1"*. Using GetSection method all parameters from specified section
     can be extracted from a ConfigMap.
  

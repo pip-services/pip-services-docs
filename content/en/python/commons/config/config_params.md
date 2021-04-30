@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "ConfigParams" Contains a key-value map with configuration parameters.
+title: "ConfigParams Contains a key-value map with configuration parameters."
 linkTitle: "ConfigParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 

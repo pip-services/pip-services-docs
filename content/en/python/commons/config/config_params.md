@@ -87,6 +87,13 @@ Gets a list with all 1st level section names.
 
 - **returns**: List[str] - a list of section names stored in this ConfigMap.
 
+**Example:**
+```python
+config = ConfigParams.from_tuples("section1.key1", "AAA",
+                                         "section1.key2", 123,
+                                         "section2.key1", True)
+config.get_section_names() # Will return ['section1', 'section2']
+```
 #### override
 Overrides parameters with new values from specified [ConfigParams]()
 and returns a new [ConfigParams]() object.

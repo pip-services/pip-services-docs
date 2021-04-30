@@ -16,8 +16,8 @@ In general, ConfigParams are used to pass configurations to IConfigurable object
 This class stores all values as strings. These values can be serialized as JSON or string forms. When retrieved the values can be automatically converted using GetAsXXX methods.
 
 Important points:   
-- The keys are case-sensitive, so it is recommended to use consistent C-style as: “my_param”
-- Configuration parameters can be broken into sections and subsections using dot notation as: “section1.subsection1.param1”. Using GetSection method all parameters from specified section can be extracted from a ConfigMap.
+- The keys are case-sensitive, so it is recommended to use consistent C-style, such as “my_param”
+- Configuration parameters can be broken into sections and subsections using dot notation, such as “section1.subsection1.param1”. Using GetSection method all parameters from the specified section can be extracted from a ConfigMap.
 - The ConfigParams class supports serialization from/to plain strings as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
 
 

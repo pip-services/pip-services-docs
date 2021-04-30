@@ -57,7 +57,7 @@ Single values are converted into arrays with a single element.
 # List
 value1 = ArrayConverter.to_array([1, 2])       # Result: [1, 2]
 
-# A single value
+# Single value
 value2 = ArrayConverter.to_array(1)            # Result: [1]
 
 # String with comma-delimited values

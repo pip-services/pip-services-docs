@@ -11,7 +11,7 @@ description: >
 ### Description
 ConfigParams is a class that contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 
-In general, ConfigParams are used to pass configurations to IConfigurable objects. They also serve as a basis for more concrete configurations such as ConnectionParams or CredentialParams. 
+In general, ConfigParams is used to pass configurations to IConfigurable objects. It also serves as a basis for more concrete configurations, such as ConnectionParams or CredentialParams. 
 
 This class stores all values as strings. These values can be serialized as JSON or string forms. When retrieved the values can be automatically converted using GetAsXXX methods.
 
@@ -25,19 +25,6 @@ Important points:
 
 See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
 
-**Example:**
-
-```python
-config = ConfigParams.from_tuples("section1.key1", "AAA",
-                                 "section1.key2", 123,
-                                 "section2.key1", True)
-
-config.get_as_string("section1.key1")  # Result: AAA
-config.get_as_integer("section1.key1") # Result: 0
-section1 = config.get_section("section1")
-section1.__str__() # Result: key1=AAA;key2=123
-
-```
 
 ### Constructors
 Creates a new ConfigParams and fills it with values.

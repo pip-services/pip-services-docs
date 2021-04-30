@@ -35,7 +35,8 @@ Configures component by passing configuration parameters.
 ```python
 class MyClass(IConfigurable):
    _myParam = "default args"
-   
+
+ # Implement configure
    def configure(self, config):
        self._myParam = config.get_as_string_with_default("options.param", myParam)
 

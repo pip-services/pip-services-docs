@@ -15,8 +15,6 @@ description: >
 ### Description
 The config package contains classes and interfaces that allow you to create configuration objects. These configuration objects can contain different sets of configuration paramters, which can be used to define things such as access control credentials.     
 
-</br>  
-
 ### Interfaces
 
 #### [IConfigurable](iconfigurable)

@@ -62,6 +62,14 @@ Keys for the new parameters are appended with section dot prefix.
 - **section**: str - name of the section where add new parameters
 - **section_params**: [ConfigParams]() - new parameters to be added.
 
+**Example:**
+```python
+# Create a ConfigParams object with two sections
+config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
+
+# Add a new section 
+config.add_section("section3", ConfigParams.from_tuples("key1", "ABCDE"))
+```
 
 #### get_section
 Gets parameters from specific section stored in this ConfigMap.
@@ -87,6 +95,16 @@ and returns a new [ConfigParams]() object.
 
 - **config_params**: [ConfigParams]() - ConfigMap with parameters to override the current values.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
+
+**Example:**
+```python
+# Create a ConfigParams object with two sections
+config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
+
+# Change the value of section1.key1 to BBB
+config.override(ConfigParams.from_tuples("section1.key1", "BBB")) 
+```
+
 
 #### set_defaults
 Set default values from specified ConfigParams and returns a new ConfigParams object.

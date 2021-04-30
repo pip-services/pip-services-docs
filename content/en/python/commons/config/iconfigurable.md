@@ -15,15 +15,7 @@ description: >
 ---
 See also [ConfigParams](../config_params)
 
-**Example:**
 
-```python
-class MyClass(IConfigurable):
-   _myParam = "default args"
-def configure(self, config):
-   self._myParam = config.get_as_string_with_default("options.param", myParam)
-
-```
 
 ### Methods
 
@@ -34,6 +26,15 @@ Configures component by passing configuration parameters.
 
 - **config**: [ConfigParams](../config_params) - configuration parameters to be set.
 
+### Examples
 
+```python
+class MyClass(IConfigurable):
+   _myParam = "default args"
+   
+def configure(self, config):
+   self._myParam = config.get_as_string_with_default("options.param", myParam)
+
+```
 ### See also
 - #### [ConfigParams](../config_params)

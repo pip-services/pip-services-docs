@@ -29,9 +29,9 @@ See [IValidationRule](../ivalidation_rule)
 
 > `public` constructor(allowUndefined?: boolean, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
 
-- **allowUndefined**?: boolean - true to allow properties undefines in the schema
-- **required**?: boolean - (optional) true to always require non-null values.
-- **rules**?: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **allowUndefined?**: boolean - true to allow properties undefines in the schema
+- **required?**: boolean - (optional) true to always require non-null values.
+- **rules?**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
 
 ### Properties
 

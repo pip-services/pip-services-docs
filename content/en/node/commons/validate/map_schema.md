@@ -7,7 +7,7 @@ description: >
     Schema to validate maps.
 ---
 
-**Estends:** [Schema](../schema)
+**Extends:** [Schema](../schema)
 
 **Example:**
 ```typescript

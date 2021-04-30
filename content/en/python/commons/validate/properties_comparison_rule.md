@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "ValueComparisonRule"
-linkTitle: "ValueComparisonRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+title: "PropertiesComparisonRule"
+linkTitle: "PropertiesComparisonRule"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-   Validation rule that compares value to a constant.
+    Validation rule that compares two object properties.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
@@ -12,21 +12,25 @@ description: >
 See also [IValidationRule](../ivalidation_rule)
 
 **Example:**
-```python
-schema = Schema().with_rule(ValueComparisonRule("EQ", 1))
 
-schema.validate(1)          # Result: no errors
-schema.validate(2)          # Result: 2 is not equal to 1
+```python
+schema = ObjectSchema().with_rule(PropertyComparisonRule("field1", "NE", "field2"))
+
+schema.validate({ field1: 1, field2: 2 })       # Result: no errors
+schema.validate({ field1: 1, field2: 1 })       # Result: field1 shall not be equal to field2
+schema.validate({})                             # Result: no errors
 
 ```
 
 ### Constructors
-Creates a new validation rule and sets its values.
+Creates a new validation rule and sets its arguments.
+See [ObjectComparator.compare](../object_comparator/#compare)
 
-> ValueComparisonRule(operation: str, value: Any)
+> PropertiesComparisonRule(property1: str, operation: str, property2: str)
 
+- **property1**: str - a name of the first property to compare.
 - **operation**: str - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: Any - a constant value to compare to
+- **property2**: str - a name of the second property to compare.
 
 ### Methods
 

@@ -37,7 +37,7 @@ Validates a given value against this rule.
 - **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
 - **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result - a list with validation results to add new results.
+- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
 
 ### See also

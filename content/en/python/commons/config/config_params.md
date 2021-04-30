@@ -21,7 +21,7 @@ Important points:
 - The ConfigParams class supports serialization from/to plain strings as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
 
 
-**Extends:** [StringValueMap](../../data/string_value_map)
+**Implements:** [StringValueMap](../../data/string_value_map)
 
 See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
 

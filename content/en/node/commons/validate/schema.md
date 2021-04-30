@@ -31,7 +31,7 @@ Gets validation rules to check values against.
 
 > `public` getRules(): [IValidationRule](../ivalidation_rule)[]
 
-- **returns**: a list with validation rules.
+- **returns**: [IValidationRule](../ivalidation_rule)[] - a list with validation rules.
 
 #### isRequired
 Gets a flag that always requires non-null values.
@@ -77,7 +77,7 @@ When type is a Schema, it executes validation recursively against that Schema.
 #### performValidation
 Validates a given value against the schema and configured validation rules.
 
-`protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
 
 - **path**: string - a dot notation path to the value.
 - **value**: any - a value to be validated.
@@ -116,6 +116,7 @@ Validates the given value and returns a [ValidationException](../validation_exce
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **value**: any -  a value to be validated.
 - **strict**: boolean = false - true to treat warnings as errors.
+- **returns**: [ValidationException](../validation_exception) - TODO add description here
 
 #### validateAndThrowException
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  

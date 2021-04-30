@@ -48,7 +48,7 @@ Checks if the component is opened.
 
 > isOpen(): boolean
 
-#### щpen
+#### open
 Opens the component.
 
 > open(correlationId: string): Promise\<void\>

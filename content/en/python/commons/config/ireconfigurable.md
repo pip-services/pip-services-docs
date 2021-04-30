@@ -12,7 +12,7 @@ description: >
     in runtime.
 ---
 
-**Extends:** [IConfigurable](../iconfigurable)
+**Implements:** [IConfigurable](../iconfigurable)
 
 See also [IConfigurable](../iconfigurable)
 

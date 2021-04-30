@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "OnlyOneExistsRule"
-linkTitle: "OnlyOneExistsRule"
+title: "ValueComparisonRule"
+linkTitle: "ValueComparisonRule"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Validation rule that check that at exactly one of the object properties is not null.
+   Validation rule that compares value to a constant.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
@@ -12,23 +12,22 @@ description: >
 See also [IValidationRule](../ivalidation_rule)
 
 **Example:**
-
 ```typescript
 let schema = new Schema()
-    .withRule(new OnlyOneExistsRule("field1", "field2"));
-     
-schema.validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
-schema.validate({ field1: 1 });                  // Result: no errors
-schema.validate({ });                            // Result: only one of properties field1, field2 must exist
+    .withRule(new ValueComparisonRule("EQ", 1));
+  
+schema.validate(1);          // Result: no errors
+schema.validate(2);          // Result: 2 is not equal to 1
 
 ```
 
 ### Constructors
-Creates a new validation rule and sets its values
+Creates a new validation rule and sets its values.
 
-> `public` constructor(...properties: string[]): [OnlyOneExistsRule]()
+> `public` constructor(operation: string, value: any): [ValueComparisonRule]()
 
-- **properties**: string[] - a list of property names where at only one property must exist
+- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: any - a constant value to compare to
 
 ### Methods
 

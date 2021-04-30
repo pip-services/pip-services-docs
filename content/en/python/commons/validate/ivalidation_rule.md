@@ -2,7 +2,7 @@
 type: docs
 title: "IncludedRule"
 linkTitle: "IncludedRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Interface for validation rules.
  
@@ -19,9 +19,9 @@ description: >
 #### validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
+- **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.

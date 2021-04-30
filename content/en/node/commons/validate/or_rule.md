@@ -33,7 +33,7 @@ Creates a new validation rule and sets its values.
 
 > `public` constructor(...rules: [IValidationRule](../ivalidation_rule)[]): [OrRule]()
 
-- **rules**: string[] - a list of rules to join with OR operator    
+- **rules**: [IValidationRule](../ivalidation_rule)[] - a list of rules to join with OR operator    
 
 ### Methods
 
@@ -45,7 +45,7 @@ Validates a given value against this rule.
 - **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
 - **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result - a list with validation results to add new results.
+- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
 
 ### See also

@@ -32,7 +32,7 @@ Composes human readable error message based on validation results.
 > `public static` composeMessage(results: [ValidationResult](../validation_result)[]): string
 
 - **results**: [ValidationResult](../validation_result)[] - a list of validation results.
-- **returns**: a composed error message.
+- **returns**: string - a composed error message.
 
 
 #### fromResults

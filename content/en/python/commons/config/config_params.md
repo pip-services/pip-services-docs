@@ -7,7 +7,7 @@ description: >
     Contains a key-value map with configuration parameters.
   
 ---
-## Description
+### Description
 All values stored as strings and can be serialized as JSON or string forms.
     When retrieved the values can be automatically converted on read using GetAsXXX methods.
 

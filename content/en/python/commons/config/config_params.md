@@ -58,15 +58,6 @@ Keys for the new parameters are appended with section dot prefix.
 - **section**: str - name of the section where add new parameters
 - **section_params**: [ConfigParams]() - new parameters to be added.
 
-**Example:**
-```python
-# Create a ConfigParams object with two sections
-config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
-
-# Add a new section 
-config.add_section("section3", ConfigParams.from_tuples("key1", "ABCDE"))
-```
-
 #### get_section
 Gets parameters from specific section stored in this ConfigMap.
 The section name is removed from parameter keys.
@@ -187,6 +178,16 @@ See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 
 - **configs**:  List[[ConfigParams]()] - a list of ConfigParams objects to be merged.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
+
+### Examples   
+
+```python
+# Create a ConfigParams object with two sections
+config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
+
+# Add a new section 
+config.add_section("section3", ConfigParams.from_tuples("key1", "ABCDE"))
+```
 
 ### See also
 - #### [IConfigurable](../iconfigurable)

@@ -30,24 +30,24 @@ value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Result: c
 Converts value into doubles or returns 0 when conversion is not possible.  
 See [to_double_with_default](#to_double_with_default)
 
-> `static` to_double(value: Any): Union[int, float]
+> `static` to_double(value: Any): float
 
 - **value**: Any - the value to convert.
-- **returns**: Union[int, float] - double value or 0 when conversion is not supported.
+- **returns**: float - double value or 0 when conversion is not supported.
 
 #### to_double_with_default
 Converts value into integer or returns default value when conversion is not possible.
 
-> `static` to_double_with_default(value: Any, default_value: Union[int, float] = 0): Union[int, float]
+> `static` to_double_with_default(value: Any, default_value: float = 0): float
 
 - **value**: Any - the value to convert.
-- **default_value**: Union[int, float] = null - the default value.
-- **returns**: Union[int, float] - double value or default when conversion is not supported.
+- **default_value**: float = null - the default value.
+- **returns**: float - double value or default when conversion is not supported.
 
 #### to_nullable_double
 Converts value into doubles or returns null when conversion is not possible.
 
-> `static` to_nullable_double(value: Any): Optional[Union[int, float]]
+> `static` to_nullable_double(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[Union[int, float]] - double value or null when conversion is not supported.
+- **returns**: Optional[float] - double value or null when conversion is not supported.

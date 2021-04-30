@@ -30,27 +30,27 @@ value4 = FloatConverter.to_nullable_float(datetime.datetime.now()) # Result: cur
 Converts value into float or returns 0 when conversion is not possible.  
 See [DoubleConverter.toDouble](../double_converter/#todouble)
 
-> `static` to_float(value: Any): Union[int, float]
+> `static` to_float(value: Any): float
 
 - **value**: Any - the value to convert.
-- **returns**: Union[int, float] - float value or 0 when conversion is not supported.
+- **returns**: float - float value or 0 when conversion is not supported.
 
 #### to_float_with_default
 Converts value into float or returns default when conversion is not possible.  
 See [DoubleConverter.to_double_with_default](../double_converter/#to_double_with_default),  
 [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
 
-> `static` to_float_with_default(value: Any, default_value: Union[int, float]): Union[int, float]
+> `static` to_float_with_default(value: Any, default_value: float): float
 
 - **value**: Any - the value to convert.
-- **default_value**: Union[int, float] - the default value.
-- **returns**: Union[int, float] - float value or default value when conversion is not supported.
+- **default_value**: float - the default value.
+- **returns**: float - float value or default value when conversion is not supported.
 
 #### to_nullable_float
 Converts value into float or returns null when conversion is not possible.  
 See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
 
-> `static` to_nullable_float(value: Any): Optional[Union[int, float]]
+> `static` to_nullable_float(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[Union[int, float]] - float value or null when conversion is not supported.
+- **returns**: Optional[float] - float value or null when conversion is not supported.

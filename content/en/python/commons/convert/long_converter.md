@@ -29,24 +29,24 @@ value4 = LongConverter.to_nullable_long(datetime.now()); // Result: current mill
 #### to_long
 Converts value into long or returns 0 when conversion is not possible.
 
-> `static` to_long(value: Any): Union[int, float]
+> `static` to_long(value: Any): float
 
 - **value**: Any - the value to convert.
-- **returns**: Union[int, float] - long value or 0 when conversion is not supported.
+- **returns**: float - long value or 0 when conversion is not supported.
 
 #### to_long_with_default
 Converts value into integer or returns default when conversion is not possible.
 
-> `static` to_long_with_default(value: Any, defaultValue: Union[int, float]): Union[int, float]
+> `static` to_long_with_default(value: Any, defaultValue: float): float
 
 - **value**: Any - the value to convert.
-- **default_value**: Union[int, float] - the default value.
-- **returns**: Union[int, float] - long value or default when conversion is not supported
+- **default_value**: float - the default value.
+- **returns**: float - long value or default when conversion is not supported
 
 #### to_nullable_long
 Converts value into long or returns null when conversion is not possible.
 
-> `static` to_nullable_long(value: Any): Optional[Union[int, float]]
+> `static` to_nullable_long(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Union[int, float] - long value or null when conversion is not supported.
+- **returns**: float - long value or null when conversion is not supported.

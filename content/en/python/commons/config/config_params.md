@@ -4,7 +4,7 @@ title: "ConfigParams" Contains a key-value map with configuration parameters.
 linkTitle: "ConfigParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Contains a key-value map with configuration parameters. 
+    Contains a key-value map with configuration parameters. 123
     All values stored as strings and can be serialized as JSON or string forms.
     When retrieved the values can be automatically converted on read using GetAsXXX methods.
 

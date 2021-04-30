@@ -12,7 +12,7 @@ The OptionResolver class can be use to obtain all the parameters under the secti
 ### Static methods
 
 #### resolve
-Resolves an "options" configuration section from component configuration parameters.
+Returns a ConfigParams object containing all the parameters uder the section "option".
 
 > `static` resolve(config: [ConfigParams](../config_params), config_as_default: bool = False): [ConfigParams](../config_params)
 
@@ -28,6 +28,13 @@ config = ConfigParams.from_tuples(
   "options.param1", "ABC",
   "options.param2", 123)
 
-options = OptionsResolver.resolve(config) # Returns {'param1': 'ABC', 'param2': '123'}
+options = OptionsResolver.resolve(config)           # Returns {'param1': 'ABC', 'param2': '123'}
+
+# If the configuration doesn't contain an "options" section, it returns an empty ConfigParams object.
+config = ConfigParams.from_tuples(
+          "section1.key1", "AAA",
+          "section1.key2", 123,
+          )
+options = OptionsResolver.resolve(config)            # Returns {}
 
 ```

@@ -12,14 +12,7 @@ description: >
 ---
 
 
-**Example:**
 
-```python
-value1 = DateTimeConverter.to_nullable_datetime("ABC") // Result: None
-value2 = DateTimeConverter.to_nullable_datetime("2018-01-01T11:30:00.0") // Result: Date(2018,0,1,11,30)
-value3 = DateTimeConverter.to_nullable_datetime(123) // Result: Date(123)
-
-```
 
 ### Methods
 
@@ -48,3 +41,10 @@ Converts value into Date or returns null when conversion is not possible.
 
 - **value**: Any - the value to convert.
 - **returns**: datetime - Date value or null when conversion is not supported.
+
+### Examples
+
+```python
+value1 = DateTimeConverter.to_nullable_datetime("ABC") # Returns None
+
+```

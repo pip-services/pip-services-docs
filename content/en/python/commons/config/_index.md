@@ -21,7 +21,7 @@ The config package contains classes and interfaces that allow you to create conf
 #### [IConfigurable](iconfigurable)
 An interface to set configuration parameters to an object. 
 It can be added to any existing class by implementing a single **configure()** method.
-If you need to emphasis the fact that **configure()** method can be called multiple times
+If you need to emphasise the fact that **configure()** method can be called multiple times
 to change object configuration in runtime, use [IReconfigurable](ireconfigurable) interface instead.
 
 #### [IReconfigurable](ireconfigurable)

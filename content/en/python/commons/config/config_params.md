@@ -34,7 +34,7 @@ See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_v
 ```python
 config = ConfigParams.from_tuples("section1.key1", "AAA",
                                  "section1.key2", 123,
-                                 "section2.key1", true)
+                                 "section2.key1", True)
 
 config.get_as_string("section1.key1")  # Result: AAA
 config.get_as_integer("section1.key1") # Result: 0

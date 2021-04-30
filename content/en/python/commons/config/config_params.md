@@ -25,7 +25,7 @@ description: >
 
   
 ---
-### Description 
+### Description
 
 **Extends:** [StringValueMap](../../data/string_value_map)
 

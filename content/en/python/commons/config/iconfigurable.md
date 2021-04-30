@@ -7,15 +7,19 @@ description: >
     An interface to set configuration parameters to an object. 
 
 
-    It can be added to any existing class by implementing a single **configure()** method.
-
-
-    If you need to emphasis the fact that **configure()** method can be called multiple times
-    to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.
+    
 ---
 See also [ConfigParams](../config_params)
 
+### Description
 
+IConfigurable is an interface used to set configuration parameters. It can be implemented by any class that needs to define configuration parameters, such as access control credentials. 
+
+Important points:   
+
+- A class that implements this interface needs to implement a single **configure()** method.  
+- If you need to emphasize the fact that **configure()** method can be called multiple times
+    to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.  
 
 ### Methods
 
@@ -32,8 +36,8 @@ Configures component by passing configuration parameters.
 class MyClass(IConfigurable):
    _myParam = "default args"
    
-def configure(self, config):
-   self._myParam = config.get_as_string_with_default("options.param", myParam)
+   def configure(self, config):
+       self._myParam = config.get_as_string_with_default("options.param", myParam)
 
 ```
 ### See also

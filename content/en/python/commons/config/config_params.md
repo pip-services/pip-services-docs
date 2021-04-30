@@ -115,6 +115,13 @@ See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarra
 - **tuples**: Any - the tuples to fill a new ConfigParams object.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
+**Example:**
+
+```python
+config = ConfigParams.from_tuples("section1.key1", "AAA",
+                                 "section1.key2", 123,
+                                 "section2.key1", True)
+```
 
 #### from_value
 Creates a new ConfigParams object filled with key-value pairs from specified object.

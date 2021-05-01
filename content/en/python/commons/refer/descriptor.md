@@ -30,17 +30,23 @@ description: >
     - Locate specific component by its name (match by name)  
 ---
 
-**Example:**
+### Description
+The Descriptor class provides you with a component locator. This locator is often used in the PipServices toolkit. It locates components using the following fields:
 
-```python
-locator1 = Descriptor("mygroup", "connector", "aws", "default", "1.0")
-locator2 = Descriptor.from_string("mygroup:connector:*:*:1.0")
+- **Group:** a package or just named group of components like "pip-services". 
+- **Type:** logical component type that defines it's contract like "persistence" .
+- **Kind:** physical implementation type like "mongodb".  
+- **Name:v unique component name like "default".  
+- **Version:** version of the component contract like "1.0".  
 
-locator1.match(locator2)		# Result: true
-locator1.eq(locator2)		    # Result: true
-locator1.exact_match(locator2)	# Result: false
+Important points
 
-```
+- The locator matching can be done by all or only few selected fields. 
+- The fields that shall be excluded from the matching must be set to *"*"* or *null*.
+- This approach allows to implement many interesting scenarios. For instance:
+ - Locate all loggers (match by type and version)  
+ - Locate persistence components for a microservice (match by group and type)  
+ - Locate specific component by its name (match by name) 
 
 ### Constructors
 Creates a new instance of the descriptor.
@@ -54,7 +60,7 @@ Creates a new instance of the descriptor.
 - **version**: str - a component implementation version
 
 
-### Methods
+### Instance methods
 
 #### equals
 Compares this descriptor to a value.
@@ -131,6 +137,8 @@ The result is a colon-separated list of descriptor fields as
 
 - **returns**: str - a string representation of the object.
 
+### Static methods
+
 #### from_string
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
@@ -140,10 +148,12 @@ Throws a [ConfigException](../../errors/config_exception) if the descriptor stri
 - **value**: str - colon-separated descriptor fields to initialize Descriptor.
 - **returns**: [Descriptor]() - a newly created Descriptor.
 
+### Examples
 
-    
-    
-    
-    
-    
----
+```python
+locator1 = Descriptor("mygroup", "connector", "aws", "default", "1.0")
+locator2 = Descriptor.from_string("mygroup:connector:*:*:1.0")
+
+locator1.match(locator2)           # Returns True
+locator1.exact_match(locator2)     # Returns False
+```

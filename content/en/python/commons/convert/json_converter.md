@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-the JsonConverter class converts arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
+The JsonConverter class converts arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 ### Static methods
 
 #### from_json

@@ -4,24 +4,16 @@ title: "MapConverter"
 linkTitle: "MapConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into map objects using extended conversion rules:
-
-    - Objects: property names as keys, property values as values
-    
-    - Arrays: element indexes as keys, elements as values
+    Converts arbitrary values into map objects using extended conversion rules.
 ---
 
+### Description
+The MapConverter class converts arbitrary values into map objects using the following extended conversion rules:
 
-**Example:**
+- Objects: property names as keys, property values as values   
+- Arrays: element indexes as keys, elements as values
 
-```python
-value1 = MapConverter.to_nullable_map("ABC")        # Result: None
-value2 = MapConverter.to_nullable_map({ key: 123 }) # Result: { key: 123 }
-value3 = MapConverter.to_nullable_map([1,2,3])      # Result: { "0": 1, "1": 2, "2": 3 }
-
-```
-
-### Methods
+### Static methods
 
 #### toMap
 Converts value into map object or returns empty map when conversion is not possible
@@ -47,3 +39,13 @@ Converts value into map object or returns null when conversion is not possible.
 
 - **value**: Any - the value to convert.
 - **returns**: Any - map object or null when conversion is not supported.
+
+
+### Examples
+
+```python
+value1 = MapConverter.to_nullable_map("ABC")        # Returns None
+value2 = MapConverter.to_nullable_map({ key: 123 }) # Returns { key: 123 }
+value3 = MapConverter.to_nullable_map([1,2,3])      # Returns { "0": 1, "1": 2, "2": 3 }
+
+```

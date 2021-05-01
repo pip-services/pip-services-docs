@@ -5,18 +5,15 @@ linkTitle: "RecursiveMapConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Converts arbitrary values into map objects using extended conversion rules.
-    This class is similar to [MapConverter](../map_converter), but is recursively converts all values
-    stored in objects and arrays.
+
 ---
 
-
-**Example:**
-
-```python
-value1 = RecursiveMapConverted.to_nullable_map("ABC")        # Result: None
-value2 = RecursiveMapConverted.to_nullable_map({ key: 123 }) # Result: { key: 123 }
-value3 = RecursiveMapConverted.to_nullable_map([1,[2,3])     # Result: { "0": 1, { "0": 2, "1": 3 } }
-```
+### Description
+ The RecursiveMapConverter class converts arbitrary values into map objects using extended conversion rules.
+ 
+ Important points:
+ 
+ - This class is similar to [MapConverter](../map_converter). The difference is that it recursively converts all values stored in objects and arrays.
 
 ### Methods
 
@@ -44,3 +41,10 @@ Converts value into map object or returns null when conversion is not possible.
 
 - **value**: Any - the value to convert.
 - **returns**: Any - map object or null when conversion is not supported.
+
+**Example:**
+
+```python
+value1 = RecursiveMapConverter.to_nullable_map({ 'key': 123 }) # Result: {'key': 123}
+value2 = RecursiveMapConverter.to_nullable_map([1,[2,3]])      # Result: {0: 1, 1: {0: 2, 1: 3}}
+```

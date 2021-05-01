@@ -45,6 +45,6 @@ Converts value into map object or returns null when conversion is not possible.
 **Example:**
 
 ```python
-value1 = RecursiveMapConverter.to_nullable_map({ 'key': 123 }) # Result: {'key': 123}
-value2 = RecursiveMapConverter.to_nullable_map([1,[2,3]])      # Result: {0: 1, 1: {0: 2, 1: 3}}
+value1 = RecursiveMapConverter.to_nullable_map({ 'key': 123 }) # Returns {'key': 123}
+value2 = RecursiveMapConverter.to_nullable_map([1,[2,3]])      # Returns {0: 1, 1: {0: 2, 1: 3}}
 ```

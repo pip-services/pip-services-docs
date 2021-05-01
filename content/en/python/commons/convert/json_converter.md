@@ -7,16 +7,10 @@ description: >
     Converts arbitrary values from and to JSON (JavaScript Object Notation) strings.
 ---
 
+### Description
 
-**Example:**
-
-```python
-value1 = JsonConverter.from_json("{\"key\":123}") // Result: { key: 123 }
-value2 = JsonConverter.to_map({ key: 123}) // Result: "{\"key\":123}"
-
-```
-
-### Methods
+the JsonConverter class converts arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
+### Static methods
 
 #### from_json
 Converts JSON string into a value of type specified by a TypeCode.
@@ -62,3 +56,11 @@ See [MapConverter.to_nullable_map](../map_converter/#to_nullable_map)
 
 - **value**: str - the JSON string to convert.
 - **returns**: Any - Map object value or null when conversion is not supported.
+
+
+### Examples
+
+```python
+value1 = JsonConverter.to_json({'key':123}) # Returns '{"key": 123}'
+
+```

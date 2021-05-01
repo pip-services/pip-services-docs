@@ -4,13 +4,13 @@ title: "LongConverter"
 linkTitle: "LongConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into longs using extended conversion rules.
+    The LongConverter class allows you to convert arbitrary values into longs using extended conversion rules.
 
 ---
 
 ### Description
 
-The LongConverter class converts arbitrary values into longs using the following extended conversion rules:
+The LongConverter class allows you to convert arbitrary values into longs using the following extended conversion rules:
 
 - Strings are converted to floats, then to longs
 - DateTime: total number of milliseconds since unix epoсh   

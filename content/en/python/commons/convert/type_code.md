@@ -4,7 +4,7 @@ title: "TypeCode"
 linkTitle: "TypeCode"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Codes for the data types that are used by [TypeConverter](../type_converter).
+    The TypeCode class contains the codes for data types that are used by the class [TypeConverter](../type_converter).
 ---
 
 ### Description

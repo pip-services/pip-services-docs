@@ -4,13 +4,13 @@ title: "StringConverter"
 linkTitle: "StringConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into strings using extended conversion rules.
+    The StringConverter class allows you to convert arbitrary values into strings.
 
 ---
 
 ### Description
 
- The StringConverter class converts arbitrary values into strings using the following extended conversion rules:
+ The StringConverter class allows you to convert arbitrary values into strings using the following extended conversion rules:
 
 - Numbers: are converted with '.' as decimal point
 - DateTime: using ISO format

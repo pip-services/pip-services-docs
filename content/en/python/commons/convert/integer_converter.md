@@ -4,13 +4,13 @@ title: "IntegerConverter"
 linkTitle: "IntegerConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into integers using extended conversion rules.
+    The IntegerConverter class allows you to convert arbitrary values into integers using extended conversion rules.
 
 ---
 
 ### Description
     
-The IntegerConverter class converts arbitrary values into integers using the following extended conversion rules:
+The IntegerConverter class allows you to convert arbitrary values into integers using the following extended conversion rules:
 
 - Strings are converted to floats, then to integers
 - DateTime: total number of milliseconds since unix epoсh  

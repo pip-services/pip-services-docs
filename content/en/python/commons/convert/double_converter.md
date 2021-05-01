@@ -4,7 +4,7 @@ title: "DoubleConverter"
 linkTitle: "DoubleConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into double using extended conversion rules.
+    The DoubleConverter class allows you to convert arbitrary values into double using extended conversion rules.
 
    
 ---

@@ -4,30 +4,21 @@ title: "StringConverter"
 linkTitle: "StringConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into strings using extended conversion rules:
+    Converts arbitrary values into strings using extended conversion rules.
 
-    - Numbers: are converted with '.' as decimal point
-
-    - DateTime: using ISO format
-
-    - Boolean: "true" for true and "false" for false
-
-    - Arrays: as comma-separated list
-    
-    - Other objects: using *toString()* method
 ---
 
+### Description
 
-**Example:**
+ The StringConverter class converts arbitrary values into strings using the following extended conversion rules:
 
-```python
-value1 = StringConverter.to_string(123.456) # Result: "123.456"
-value2 = StringConverter.to_string(true)    # Result: "true"
-value3 = StringConverter.to_string(datetime.datetime(2018,0,1)) # Result: "2018-01-01T00:00:00.00"
-value4 = StringConverter.to_string([1,2,3]) # Result: "1,2,3"
-```
+- Numbers: are converted with '.' as decimal point
+- DateTime: using ISO format
+- Boolean: "true" for true and "false" for false
+- Arrays: as comma-separated list  
+- Other objects: using *toString()* method
 
-### Methods
+### Static methods
 
 #### to_nullable_string
 Converts value into string or returns null when value is null.
@@ -53,3 +44,14 @@ Converts value into string or returns default when value is null.
 - **value**: Any - the value to convert.
 - **default_value**: str - the default value.
 - **returns**: str - string value or default when value is null.
+
+
+### Examples
+
+```python
+import datetime
+value1 = StringConverter.to_string(123.456) # Returns '123.456'
+value2 = StringConverter.to_string(True)    # Returs 'True'
+value3 = StringConverter.to_string(datetime.datetime(2018,10,1)) # Returns '2018-10-01T00:00:00Z'"2018-01-01T00:00:00.00"
+value4 = StringConverter.to_string(["a","b","c"]) # Returns 'a,b,c'
+```

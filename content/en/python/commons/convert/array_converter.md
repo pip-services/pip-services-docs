@@ -4,7 +4,7 @@ title: "ArrayConverter"
 linkTitle: "ArrayConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Creates an array object from a set of values
+    The ArrayConverter class provides methods to create an array from a set of values.
 ---
 
 ### Description

@@ -4,30 +4,9 @@ title: "Descriptor"
 linkTitle: "Descriptor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Locator type that most often used in PipServices toolkit.
-    It locates components using several fields:
+    
+    The Descriptor class provides you with a component locator based on group, type, kind, name and version of the component.
 
-    - Group: a package or just named group of components like "pip-services" 
-
-    - Type: logical component type that defines it's contract like "persistence" 
-
-    - Kind: physical implementation type like "mongodb"  
-
-    - Name: unique component name like "default"  
-
-    - Version: version of the component contract like "1.0"  
-
-
-
-    The locator matching can be done by all or only few selected fields. 
-    The fields that shall be excluded from the matching must be set to *"*"* or *null*.
-    That approach allows to implement many interesting scenarios. For instance:
-
-    - Locate all loggers (match by type and version)  
-
-    - Locate persistence components for a microservice (match by group and type)  
-
-    - Locate specific component by its name (match by name)  
 ---
 
 ### Description
@@ -44,9 +23,9 @@ Important points
 - The locator matching can be done by all or only few selected fields. 
 - The fields that shall be excluded from the matching must be set to *"*"* or *null*.
 - This approach allows to implement many interesting scenarios. For instance:
- - Locate all loggers (match by type and version)  
- - Locate persistence components for a microservice (match by group and type)  
- - Locate specific component by its name (match by name) 
+    - Locate all loggers (match by type and version)  
+    - Locate persistence components for a microservice (match by group and type)  
+    - Locate specific component by its name (match by name) 
 
 ### Constructors
 Creates a new instance of the descriptor.

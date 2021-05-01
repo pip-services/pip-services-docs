@@ -34,6 +34,6 @@ Updates (drifts) a double value within specified range defined
 ### Examples
 
 ```python
-value1 = RandomDouble.next_double(5, 10)     # Possible result: 7.3252274575446155
-value2 = RandomDouble.next_double(10)        # Possible result: 8.104104435251225
+value1 = RandomDouble.next_double(5, 10)     # Possible result: 8.276012024925908
+value2 = RandomDouble.next_double(10)        # Possible result: 4.558593480049594
 ```

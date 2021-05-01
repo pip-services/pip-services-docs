@@ -15,7 +15,7 @@ Important points:
 
 - Month must be in 1..12 format.
 
-### Methods
+### Static methods
 
 #### nextDate
 Generates a random Date in the range ['minYear', 'maxYear'].

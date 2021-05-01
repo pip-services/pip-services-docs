@@ -4,23 +4,15 @@ title: "TypeConverter"
 linkTitle: "TypeConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into objects specific by TypeCodes.
-    For each TypeCode this class calls corresponding converter which applies
-    extended conversion rules to convert the values.
+    Converts arbitrary values into objects specific by TypeCodes and obtains the code type of an object.
 ---
 See also [TypeCode](../../convert/type_code)
 
+### Description
+The TypeConverter class converts arbitrary values into objects specific by a code type and gets the code type of an object. The code types are defined in the [TypeCode](../../convert/type_code) class.
 
-**Example:**
 
-```python
-value1 = StringConverter.to_string(123.456) # Result: "123.456"
-value2 = StringConverter.to_string(true)    # Result: "true"
-value3 = StringConverter.to_string(datetime.datetime(2018,0,1)) # Result: "2018-01-01T00:00:00.00"
-value4 = StringConverter.to_string([1,2,3]) # Result: "1,2,3"
-```
-
-### Methods
+### Static methods
 
 #### to_nullable_type
 Converts value into an object type specified by Type Code or returns null when conversion is not possible.
@@ -67,6 +59,10 @@ Converts value into an object type specified by Type Code or returns default val
 - **default_value**: T - the default value to return if conversion is not possible (returns null).
 - **returns**: T - object value of type corresponding to TypeCode, or default value when conversion is not supported.
 
+### Examples
 
+```python
+value1 = TypeConverter.to_type_code("Hello world") # Returns 1
+```
 ### See also
 - #### [TypeCode](../../convert/type_code)

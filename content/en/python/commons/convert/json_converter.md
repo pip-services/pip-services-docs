@@ -4,12 +4,12 @@ title: "JsonConverter"
 linkTitle: "JsonConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values from and to JSON (JavaScript Object Notation) strings.
+    The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 ---
 
 ### Description
 
-The JsonConverter class converts arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
+The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 ### Static methods
 
 #### from_json

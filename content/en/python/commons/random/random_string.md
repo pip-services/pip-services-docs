@@ -7,16 +7,11 @@ description: >
     Random generator for string values.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomString.pickChar("ABC")     # Possible result: "C"
-value2 = RandomString.pick(["A","B","C"]) # Possible result: "gBW"
+The class RandomString allows you to generate random strings.
 
-```
-
-
-### Methods
+### Static methods
 
 #### pick_char
 Picks a random character from a string.
@@ -50,3 +45,9 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 - **min_size**: int - (optional) minimum string length.
 - **min_size**: int - maximum string length.
 - **returns**: str - a random string.
+
+### Examples
+
+```python
+value1 = RandomString.pick(["A","B","C"]) # Possible result: "A"
+```

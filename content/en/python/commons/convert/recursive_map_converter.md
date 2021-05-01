@@ -4,12 +4,12 @@ title: "RecursiveMapConverter"
 linkTitle: "RecursiveMapConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into map objects using extended conversion rules.
+    The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
 
 ---
 
 ### Description
- The RecursiveMapConverter class converts arbitrary values into map objects using extended conversion rules.
+ The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
  
  Important points:
  

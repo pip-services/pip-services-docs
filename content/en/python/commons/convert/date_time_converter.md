@@ -4,7 +4,7 @@ title: "DateTimeConverter"
 linkTitle: "DateTimeConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into Date values using extended conversion rules.
+    The DateTimeConverter class allows you to convert arbitrary values into Date values using extended conversion rules.
 
     
 ---

@@ -4,18 +4,12 @@ title: "RandomDouble"
 linkTitle: "RandomDouble"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Random generator for boolean values.
+    Random generator for double values.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomDouble.next_double(5, 10)     # Possible result: 7.3
-value2 = RandomDouble.next_double(10)        # Possible result: 3.7
-value3 = RandomDouble.next_double(10, 3)     # Possible result: 9.2
-
-```
-
+The RandomDouble class allows you to generate random double values.
 
 ### Methods
 
@@ -36,3 +30,10 @@ Updates (drifts) a double value within specified range defined
 - **value**: float - a double value to drift.
 - **rrange**: float = null - (optional) a range. Default: 10% of the value
 - **returns**: float - TODO add description.
+
+### Examples
+
+```python
+value1 = RandomDouble.next_double(5, 10)     # Possible result: 7.3252274575446155
+value2 = RandomDouble.next_double(10)        # Possible result: 8.104104435251225
+```

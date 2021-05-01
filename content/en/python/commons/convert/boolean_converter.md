@@ -4,14 +4,14 @@ title: "BooleanConverter"
 linkTitle: "BooleanConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values to boolean values using extended conversion rules.
+    The BooleanConverter class allows you to convert different values to boolean values using extended conversion rules.
 
     
 ---
 
 ### Description    
 
-The BooleanConverter class allows you to convert different values to boolean values, according to the following rules:
+The BooleanConverter class allows you to convert different values to boolean values using the following rules:
 
 - Numbers: <>0 are true, =0 are false
     

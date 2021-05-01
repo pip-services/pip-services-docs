@@ -7,17 +7,11 @@ description: >
     Random generator for integer values.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomInteger.next_integer(5, 10)     # Possible result: 7
-value2 = RandomInteger.next_integer(10)        # Possible result: 3
-value3 = RandomInteger.update_integer(10, 3)   # Possible result: 9
+The RandomInteger class allows you to generate random integer values.
 
-```
-
-
-### Methods
+### Static methods
 
 #### next_integer
 Generates a integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
@@ -37,3 +31,11 @@ Updates (drifts) a integer value within specified range defined
 - **value**: int - a integer value to drift.
 - **range**: int = null - (optional) a range. Default: 10% of the value
 - **returns**: int - TODO add description.
+
+### Examples
+
+```python
+value1 = RandomInteger.next_integer(5, 10)     # Possible result: 5
+value2 = RandomInteger.next_integer(10)        # Possible result: 4
+value3 = RandomInteger.update_integer(10, 3)   # Possible result: 12
+```

@@ -7,10 +7,11 @@ description: >
     Random generator for float values.
 ---
 
+### Description
 
+The RandomFloat class allows you to generate random float values.
 
-
-### Methods
+### Static methods
 
 #### next_float
 Generates a float in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].

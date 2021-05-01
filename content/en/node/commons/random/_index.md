@@ -15,34 +15,30 @@ description: >
 
 <div class="module-body"> 
 
-### Interfaces
-
-#### [IConfigurable](iconfigurable)
-An interface to set configuration parameters to an object. 
-It can be added to any existing class by implementing a single **configure()** method.
-If you need to emphasis the fact that **configure()** method can be called multiple times
-to change object configuration in runtime, use [IReconfigurable](ireconfigurable) interface instead.
-
-#### [IReconfigurable](ireconfigurable)
-An interface to set configuration parameters to an object.  
-It is similar to [IConfigurable](iconfigurable) interface, but emphasises the fact
-that **configure()** method can be called more than once to change object configuration
-in runtime.
-
-<br>
-
 ### Classes
 
-#### [ConfigParams](config_params)
-Contains a key-value map with configuration parameters. 
-All values stored as strings and can be serialized as JSON or string forms.
-When retrieved the values can be automatically converted on read using GetAsXXX methods.
+#### [RandomArray](random_array)
+Random generator for array objects.
 
-#### [NameResolver](name_resolver)
-A helper class that allows to extract component name from configuration parameters.
-The name can be defined in "id", "name" parameters or inside a component descriptor.
+#### [RandomBoolean](random_boolean)
+Random generator for boolean values.
 
-#### [OptionResolver](option_resolver)
-A helper class to parameters from "options" configuration section.
+#### [RandomDateTime](random_date_time)
+Random generator for Date time values.
+
+#### [RandomDouble](random_double)
+Random generator for double values.
+
+#### [RandomFloat](random_float)
+Random generator for float values.
+
+#### [RandomInteger](random_integer)
+Random generator for integer values.
+
+#### [RandomString](random_string)
+Random generator for string values.
+
+#### [RandomText](random_text)
+Random generator for various text values such as names, addresses or phone numbers.
 
 </div>

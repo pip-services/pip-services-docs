@@ -15,7 +15,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 - **Group:** a package or just named group of components like "pip-services". 
 - **Type:** logical component type that defines it's contract like "persistence" .
 - **Kind:** physical implementation type like "mongodb".  
-- **Name:v unique component name like "default".  
+- **Name:** unique component name like "default".  
 - **Version:** version of the component contract like "1.0".  
 
 Important points

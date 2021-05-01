@@ -4,11 +4,11 @@ title: "MapConverter"
 linkTitle: "MapConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into map objects using extended conversion rules.
+    The MapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
 ---
 
 ### Description
-The MapConverter class converts arbitrary values into map objects using the following extended conversion rules:
+The MapConverter class allows you to convert arbitrary values into map objects using the following extended conversion rules:
 
 - Objects: property names as keys, property values as values   
 - Arrays: element indexes as keys, elements as values

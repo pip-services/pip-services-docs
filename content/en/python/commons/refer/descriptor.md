@@ -4,9 +4,7 @@ title: "Descriptor"
 linkTitle: "Descriptor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    
-    The Descriptor class provides you with a component locator based on group, type, kind, name and version of the component.
-
+    Component locator based on group, type, kind, name and version of the component.
 ---
 
 ### Description

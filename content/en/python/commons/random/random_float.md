@@ -7,14 +7,7 @@ description: >
     Random generator for float values.
 ---
 
-**Example:**
 
-```python
-value1 = RandomFloat.next_float(5, 10)     # Possible result: 7.3
-value2 = RandomFloat.next_float(10)        # Possible result: 3.7
-value3 = RandomFloat.update_float(10, 3)   # Possible result: 9.2
-
-```
 
 
 ### Methods
@@ -37,3 +30,11 @@ Updates (drifts) a float value within specified range defined
 - **value**: float - a float value to drift.
 - **range**: float = null - (optional) a range. Default: 10% of the value
 - **returns**: float - TODO add description.
+
+### Examples
+
+```python
+value1 = RandomFloat.next_float(5, 10)     # Possible result: 8.109282778264653
+value2 = RandomFloat.next_float(10)        # Possible result: 5.281760648272185
+value3 = RandomFloat.update_float(10, 3)   # Possible result: 7.731874405844179
+```

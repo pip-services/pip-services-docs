@@ -4,27 +4,18 @@ title: "FloatConverter"
 linkTitle: "FloatConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into float using extended conversion rules:
+    Converts arbitrary values into float using extended conversion rules.
 
-    - Strings are converted to float values
-
-    - DateTime: total number of milliseconds since unix epoсh
-    
-    - Boolean: 1 for true and 0 for false
 ---
 
+### Description
+The FloatConverter class converts arbitrary values into float using the following extended conversion rules:
 
-**Example:**
+    - Strings are converted to float values
+    - DateTime: total number of milliseconds since unix epoсh  
+    - Boolean: 1 for true and 0 for false
 
-```python
-value1 = FloatConverter.to_nullable_float("ABC")     # Result: None
-value2 = FloatConverter.to_nullable_float("123.456") # Result: 123.456
-value3 = FloatConverter.to_nullable_float(true)      # Result: 1
-value4 = FloatConverter.to_nullable_float(datetime.datetime.now()) # Result: current milliseconds
-
-```
-
-### Methods
+### Static methods
 
 #### to_float
 Converts value into float or returns 0 when conversion is not possible.  
@@ -54,3 +45,14 @@ See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double
 
 - **value**: Any - the value to convert.
 - **returns**: Optional[float] - float value or null when conversion is not supported.
+
+
+### Examples
+
+```python
+value1 = FloatConverter.to_nullable_float("ABC")     # Returns None
+value2 = FloatConverter.to_nullable_float("123.456") # Returns 123.456
+value3 = FloatConverter.to_nullable_float(True)      # Returns 1
+value4 = FloatConverter.to_nullable_float(datetime.datetime.now()) # Returns current milliseconds (E.g. 1619866773703)
+
+```

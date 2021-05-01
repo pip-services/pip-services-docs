@@ -6,7 +6,6 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Random generator for Date time values.
 ---
-# (month must be in 1..12)
 
 ### Description
 

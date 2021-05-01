@@ -4,27 +4,19 @@ title: "IntegerConverter"
 linkTitle: "IntegerConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into integers using extended conversion rules:
+    Converts arbitrary values into integers using extended conversion rules.
 
-    - Strings are converted to floats, then to integers
-
-    - DateTime: total number of milliseconds since unix epoсh
-    
-    - Boolean: 1 for true and 0 for false
 ---
 
+### Description
+    
+The IntegerConverter class converts arbitrary values into integers using the following extended conversion rules:
 
-**Example:**
+- Strings are converted to floats, then to integers
+- DateTime: total number of milliseconds since unix epoсh  
+- Boolean: 1 for True and 0 for False
 
-```python
-value1 = IntegerConverter.to_nullable_integer("ABC")     # Result: None
-value2 = IntegerConverter.to_nullable_integer("123.456") # Result: 123
-value3 = IntegerConverter.to_nullable_integer(true)      # Result: 1
-value4 = IntegerConverter.to_nullable_integer(datetime.datetime.now()) # Result: current milliseconds
-
-```
-
-### Methods
+### Static methods
 
 #### to_integer
 Converts value into integer or returns 0 when conversion is not possible.  
@@ -55,3 +47,13 @@ See [LongConverter.to_nullable_long](../long_converter/#tonullablelong)
 
 - **value**: Any - the value to convert.
 - **returns**: int - integer value or null when conversion is not supported.
+
+### Examples
+
+```python
+value1 = IntegerConverter.to_nullable_integer("ABC")     # Returns None
+value2 = IntegerConverter.to_nullable_integer("123.456") # Returns 123
+value3 = IntegerConverter.to_nullable_integer(True)      # Returns 1
+value4 = IntegerConverter.to_nullable_integer(datetime.datetime.now()) # Returns current milliseconds (E.g. 1619867293411)
+
+```

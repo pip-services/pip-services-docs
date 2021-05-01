@@ -8,19 +8,22 @@ description: >
     converted using [TypeConverter](../type_converter).
 ---
 
+### Description
+Codes for the data types that can be converted using :class:`TypeConverter 
+Tht TypeCode class contains the different code for data types that can be converted using the class [TypeConverter](../type_converter). 
 
-### Enumeration members
+The codes are as follows:
 
-- **Unknown** - TODO add description
-- **String** - TODO add description
-- **Boolean** - TODO add description
-- **Integer** - TODO add description
-- **Long** - TODO add description
-- **Float** - TODO add description
-- **Double** - TODO add description
-- **DateTime** - TODO add description
-- **Duration** - TODO add description
-- **Object** - TODO add description
-- **Enum** - TODO add description
-- **Array** - TODO add description
-- **Map** - TODO add description
+- Unknown = 0
+- String = 1
+- Boolean = 2
+- Integer = 3
+- Long = 4
+- Float = 5
+- Double = 6
+- DateTime = 7
+- Duration = 8
+- Object = 9
+- Enum = 10
+- Array = 11
+- Map = 12

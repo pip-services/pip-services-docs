@@ -9,7 +9,7 @@ description: >
 See also [TypeCode](../../convert/type_code)
 
 ### Description
-The TypeConverter class converts arbitrary values into objects specified by a code type and gets the code type of an object. The code types are defined in the [TypeCode](../../convert/type_code) class.
+The TypeConverter class is used to convert arbitrary values into objects specified by a code type and gets the code type of an object. The code types are defined in the [TypeCode](../../convert/type_code) class.
 
 
 ### Static methods

@@ -11,9 +11,9 @@ description: >
 ### Description
 The FloatConverter class converts arbitrary values into float using the following extended conversion rules:
 
-    - Strings are converted to float values
-    - DateTime: total number of milliseconds since unix epoсh  
-    - Boolean: 1 for true and 0 for false
+- Strings are converted to float values
+- DateTime: total number of milliseconds since unix epoсh  
+- Boolean: 1 for true and 0 for false
 
 ### Static methods
 

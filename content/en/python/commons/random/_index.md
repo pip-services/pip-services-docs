@@ -5,11 +5,9 @@ linkTitle: "Random"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains implementation of random value generators that are used for 
-    functional as well as non-functional testing. Used to generate random 
-    objects and fill databases with unique objects. 
+    
+    The Random library contains a set of classes that can be used to generate different type of random values, such as integer, double, long, float, and text. This functionality  can be used, for example, for testing purposes. 
+   
 ---
 ---
 

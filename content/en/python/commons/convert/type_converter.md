@@ -4,7 +4,7 @@ title: "TypeConverter"
 linkTitle: "TypeConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into objects specified by a code type and obtains the code type of an object.
+    The TypeConverter class is used to convert arbitrary values into objects specified by a code type and gets the code type of an object.
 ---
 See also [TypeCode](../../convert/type_code)
 

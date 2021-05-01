@@ -4,19 +4,15 @@ title: "RandomText"
 linkTitle: "RandomText"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Random generator for various text values like names, addresses or phone numbers.
+    Random generator for various text values such as names, addresses or phone numbers.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomText.name()      # Possible result: "Sergio"
-value2 = RandomText.verb()      # Possible result: "Run"
-value3 = RandomText.text(50)    # Possible result: "Run jorge. Red high scream?"
-```
+The RandomText class allows you to generate different types of randomt texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
 
 
-### Methods
+### Static methods
 
 #### adjective
 Generates a random adjective.
@@ -111,3 +107,11 @@ Generates a random word from available first names, last names, colors, stuffs, 
 - **min_size**: int - (optional) a minimum number of words.
 - **max_size**: int - a maximum number of words.
 - **returns**: str - a random text.
+
+### Examples
+
+```python
+value1 = RandomText.name()      # Possible result: "Sergio"
+value2 = RandomText.verb()      # Possible result: "Run"
+value3 = RandomText.text(5,20)    # Possible result: "Due bela"
+```

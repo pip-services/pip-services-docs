@@ -7,15 +7,11 @@ description: >
     Random generator for array objects.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomArray.pick([1, 2, 3, 4]) # Possible result: 3
+The RandomArray class can be used as a random generator for array objects.
 
-```
-
-
-### Methods
+### Static methods
 
 #### pick
 Picks a random element from specified array.
@@ -24,3 +20,10 @@ Picks a random element from specified array.
 
 - **values**: List[T] - an array of any type
 - **returns**: T - a randomly picked item.
+
+### Examples
+
+```python
+value1 = RandomArray.pick([1, 2, 3, 4]) # Possible result: 3
+
+```

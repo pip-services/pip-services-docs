@@ -11,7 +11,7 @@ description: >
 
 The RandomDouble class allows you to generate random double values.
 
-### Methods
+### Static methods
 
 #### next_double
 Generates a random double value in the range ['min_year', 'max_year'].

@@ -6,16 +6,6 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Helper class for resolving component dependencies.  
 
-
-    The resolver is configured to resolve named dependencies by specific locator.
-    During deployment the dependency locator can be changed.  
-
-
-    This mechanism can be used to clarify specific dependency among several alternatives.
-    Typically components are configured to retrieve the first dependency that matches
-    logical group, type and version. But if container contains more than one instance
-    and resolution has to be specific about those instances, they can be given a unique
-    name and dependency resolvers can be reconfigured to retrieve dependencies by their name.
 ---
 
 **Implements:** [IReferenceable](../ireferenceable), [IReconfigurable](../../config/ireconfigurable)

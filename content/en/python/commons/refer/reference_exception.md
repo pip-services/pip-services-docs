@@ -7,6 +7,10 @@ description: >
     Error when required component dependency cannot be found.
 ---
 
+### Description
+
+The ReferenceException class provides a Reference error type, which can be used to create an error instance when a required component dependency cannot be found.
+
 ### Constructors
 Creates an error instance and assigns its values.
 

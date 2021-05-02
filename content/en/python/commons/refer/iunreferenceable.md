@@ -11,7 +11,7 @@ description: >
 
 The IUnreferenceable interface can be used for components that require the capacity to clear previously defined references to dependent components.
 
-### Methods
+### Instance methods
 
 #### unset_references
 Unsets (clears) previously set references to dependent components. 

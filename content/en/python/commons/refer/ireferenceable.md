@@ -4,7 +4,7 @@ title: "IReferenceable"
 linkTitle: "IReferenceable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface with methods to set refernces to other components. 
+    Interface with methods to set refernces for components that depend on other components. 
 
     
 ---

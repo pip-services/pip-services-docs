@@ -4,7 +4,7 @@ title: "ReferenceException"
 linkTitle: "ReferenceException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Error when required component dependency cannot be found.
+    Error created when a required component dependency cannot be found.
 ---
 
 ### Description

@@ -5,8 +5,17 @@ linkTitle: "Reference"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Contains a reference to a component and locator to find it.
-    It is used by [References](../references) to store registered component references.
+    
+ 
 ---
+
+### Description
+
+The Reference class allows you to store a reference to a component and a locator to find it.
+
+Important points
+
+- It is used by [References](../references) to store registered component references.
 
 ### Constructors
 Create a new instance of the reference object and assigns its values.
@@ -16,7 +25,7 @@ Create a new instance of the reference object and assigns its values.
 - **locator**: Any - a locator to find the reference. 
 - **component**: Any - a reference to component.
 
-### Methods
+###  Instance ethods
 
 #### get_component
 Gets the stored component reference.    

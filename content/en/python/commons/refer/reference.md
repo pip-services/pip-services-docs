@@ -4,7 +4,7 @@ title: "Reference"
 linkTitle: "Reference"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Contains a reference to a component and locator to find it.
+    Contains a reference to a component and a locator to find it.
     
  
 ---

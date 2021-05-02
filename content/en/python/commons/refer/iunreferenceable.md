@@ -4,12 +4,21 @@ title: "IUnreferenceable"
 linkTitle: "IUnreferenceable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that require explicit clearing of references to dependent components.
+    Interface for components that require the capacity to clear previously defined references to dependent components.
 ---
 
-See also [IReferences](../ireferences), [IReferenceable](../ireferenceable)
+### Description
 
-**Example:**
+Tj IUnreferenceable interfaca can be used for components that require the capacity to clear previously defined references to dependent components.
+
+### Methods
+
+#### unset_references
+Unsets (clears) previously set references to dependent components. 
+
+> unset_references()
+
+### Examples
 
 ```python
 
@@ -23,13 +32,6 @@ class MyController(IReferenceable):
         self._persistence = None
 
 ```
-
-### Methods
-
-#### unset_references
-Unsets (clears) previously set references to dependent components. 
-
-> unset_references()
 
 ### See also
 - #### [IReferences](../ireferences)

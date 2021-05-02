@@ -4,7 +4,7 @@ title: "IReferenceable"
 linkTitle: "IReferenceable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that depends on other components. 
+    Interface with methods to set refernces to other components. 
 
     
 ---
@@ -13,7 +13,7 @@ See also [IReferences](../ireferences), [IUnreferenceable](../iunreferenceable),
 
 ### Description
 
-The IReferenceable interface allows ou to set references for components that depend on other components.
+The IReferenceable interface allows you to set references for components that depend on other components.
 
 Important points
 

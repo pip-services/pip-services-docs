@@ -9,8 +9,6 @@ description: >
     
 ---
 
-See also [IReferences](../ireferences), [IUnreferenceable](../iunreferenceable), [Referencer](../referencer)
-
 ### Description
 
 The IReferenceable interface allows you to set references for components that depend on other components.

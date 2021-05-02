@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-Tj IUnreferenceable interfaca can be used for components that require the capacity to clear previously defined references to dependent components.
+The IUnreferenceable interface can be used for components that require the capacity to clear previously defined references to dependent components.
 
 ### Methods
 

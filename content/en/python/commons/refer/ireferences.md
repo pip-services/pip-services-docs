@@ -22,24 +22,7 @@ description: >
 
 See also [Descriptor](../descriptor), [References](../references)
 
-**Example:**
 
-```python
-class MyController(IReferences):
-    _persistence = None
-
-    def set_references(self, references):
-        self._persistence = references.get_one_required(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
-
-persistence = MyMongoDbPersistence()
-
-references = References.from_tuples(
-        Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-        Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-    )
-
-controller.set_references(references)
-```
 
 ### Methods
 
@@ -131,6 +114,24 @@ Removes all component references that match the specified locator.
 - **locator**: any - the locator to remove references by.
 - **returns**: any[] - a list, containing all removed references.
 
+### Examples
+
+```python
+class MyController(IReferences):
+    _persistence = None
+
+    def set_references(self, references):
+        self._persistence = references.get_one_required(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+
+persistence = MyMongoDbPersistence()
+
+references = References.from_tuples(
+        Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+        Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+    )
+
+controller.set_references(references)
+```
 
 
 ### See also

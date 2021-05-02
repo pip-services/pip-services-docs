@@ -6,23 +6,20 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Interface for components that depends on other components. 
 
-    If component requires explicit notification to unset references
-    it shall additionally implement [IUnreferenceable](../iunreferenceable) interface.
+    
 ---
 
 See also [IReferences](../ireferences), [IUnreferenceable](../iunreferenceable), [Referencer](../referencer)
 
-**Example:**
+### Description
 
-```python
-class MyController(IReferenceable):
-    _persistence = None
-    def set_references(self, references):
-        self._persistence = references.get_one_required(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+The IReferenceable interface allows ou to set references for components that depend on other components.
 
-```
+Important points
 
-### Methods
+- If component requires explicit notification to unset references it must also implement the [IUnreferenceable](../iunreferenceable) interface.
+
+### Instance methods
 
 #### set_references
 Sets references to dependent components.
@@ -31,7 +28,14 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 
+### Examples
 
+```python
+class MyController(IReferenceable):
+    _persistence = None
+    def set_references(self, references):
+        self._persistence = references.get_one_required(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+```
 
 ### See also
 - #### [IReferences](../ireferences)

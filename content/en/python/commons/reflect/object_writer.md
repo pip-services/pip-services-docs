@@ -15,8 +15,8 @@ The ObjectWriter class allows you to dynamically set the properties of an object
 Important points
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, the ObjectWriter class is also able to handle maps and arrays.
-- For maps properties are key-pairs identified by string keys,
-- For arrays properties are elements identified by integer index.
+- For maps, properties are key-pairs identified by string keys,
+- For arrays, properties are elements identified by integer index.
 - This class has symmetric implementation across all languages supported by Pip.Services toolkit and it is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the ObjectWriter class treats all property names as case insensitive.
 

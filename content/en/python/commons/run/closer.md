@@ -4,13 +4,14 @@ title: "Closer"
 linkTitle: "Closer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that cleans stored object state.
+    Helper class that allows you to close one or multiple components at the same time.
 ---
 
-See also [IClosable](../iclosable)
+### Description
 
+The Closer class allows you to close one or multiple components at the same time.
 
-### Methods
+### Static methods
 
 #### close
 Closes multiple components.

@@ -6,18 +6,20 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Contains map with execution parameters.
 
-    In general, this map may contain non-serializable values.
-    And in contrast with other maps, its getters and setters
-    support dot notation and able to access properties
-    in the entire object graph.
- 
-    This class is often use to pass execution and notification
-    arguments, and parameterize classes before execution.
+
 ---
 
 **Implements:** [AnyValueMap](../../data/any_value_map)
 
-See also [IParameterized](../iparameterized), [AnyValueMap](../../data/any_value_map)
+### Description
+
+The Parameters class contains a map with execution paramters. 
+
+Important points
+
+- In general, this map may contain non-serializable values.
+- In contrast with other maps, its getters and setters support dot notation and are able to access properties in the entire object graph.
+- This class is often use to pass execution and notification arguments, and parameterize classes before execution.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
@@ -26,7 +28,7 @@ Creates a new instance of the map and assigns its value.
 
 - **map**: Any - (optional) values to initialize this map.
 
-### Methods
+### Instance methods
 
 #### assign_to
 Assigns (copies over) properties from the specified value to this map.
@@ -138,6 +140,7 @@ Converts this map to JSON object.
 
 - **returns**: str - a JSON representation of this map.
 
+### Static methods
 
 #### from_config
 Creates new Parameters from ConfigMap object.

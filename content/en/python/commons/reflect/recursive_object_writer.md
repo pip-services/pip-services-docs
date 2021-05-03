@@ -4,16 +4,20 @@ title: "RecursiveObjectWriter"
 linkTitle: "RecursiveObjectWriter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic writing.
+    Helper class that allows you to dynamically set the properties of an object
  
-    It is similar to [ObjectWriter](../object_writer) but writes properties recursively
-    through the entire object graph. Nested property names are defined
-    using dot notation as "object.subobject.property"
 ---
 
-See also [PropertyReflector](../property_reflector), [ObjectWriter](../object_writer)
+### Description
 
-### Methods
+The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object.
+
+Important points
+
+- It is similar to [ObjectWriter](../object_writer) but writes properties recursively through the entire object graph. 
+- Nested property names are defined using dot notation as "object.subobject.property"
+
+### Static methods
 
 #### copy_properties
 Copies content of one object to another object

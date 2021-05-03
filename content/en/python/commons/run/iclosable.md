@@ -4,13 +4,13 @@ title: "IClosable"
 linkTitle: "IClosable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface that allows you to create components with a method that closes it and frees used resources.
+    Interface that allows you to create a component with a method that closes it and frees used resources.
 
 ---
 
 ### Description
 
-The IClosable interface allows you to create components with a method that closes it and frees used resources.
+The IClosable interface allows you to create a component with a method that closes it and frees used resources.
 
 ### Methods
 

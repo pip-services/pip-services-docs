@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The Executor calls allows you to execute one or more components.
+The Executor class allows you to execute one or more components.
 
 
 ### Static methods

@@ -16,11 +16,11 @@ description: >
     [ConfigParams](../../config/config_params), [ConnectionParams](../../../components/connect/connection_params), [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package) and others.
 ---
 
-See also [StringConverter](../../config/string_converter), [TypeConverter](../../config/type_converter), 
-[StringConverter](../../config/string_converter), [BooleanConverter](../../config/boolean_converter),
-[IntegerConverter](../../config/integer_converter), [LongConverter](../../config/long_converter),
-[DoubleConverter](../../config/double_converter), [FloatConverter](../../config/float_converter),
-[DateTimeConverter](../../config/date_time_converter), [ICloneable](../icloneable)
+See also [StringConverter](../../conconvertig/string_converter), [TypeConverter](../../convert/type_converter), 
+[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
+[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
+[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
+[DateTimeConverter](../../convert/date_time_converter), [ICloneable](../icloneable)
 
 **Example:**
 ```typescript
@@ -381,7 +381,7 @@ If conversion is not possible it returns default value for the specified type.
 #### getAsTypeWithDefault
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.  
-See [TypeConverter.toTypeWithDefault](../type_converter/#toTtypewithdefault)
+See [TypeConverter.toTypeWithDefault](../type_converter/#totypewithdefault)
 
 > `public` getAsTypeWithDefault\<T\>(type: [TypeCode](../../convert/type_code), key: string, defaultValue: T): T
 
@@ -504,13 +504,13 @@ Converts specified value into StringValueMap.
 
 
 ### See also
-- #### [StringConverter](../../config/string_converter)
-- #### [TypeConverter](../../config/type_converter)
-- #### [StringConverter](../../config/string_converter)
-- #### [BooleanConverter](../../config/boolean_converter)
-- #### [IntegerConverter](../../config/integer_converter)
-- #### [LongConverter](../../config/long_converter)
-- #### [DoubleConverter](../../config/double_converter)
-- #### [FloatConverter](../../config/float_converter)
-- #### [DateTimeConverter](../../config/date_time_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [TypeConverter](../../convert/type_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [BooleanConverter](../../convert/boolean_converter)
+- #### [IntegerConverter](../../convert/integer_converter)
+- #### [LongConverter](../../convert/long_converter)
+- #### [DoubleConverter](../../convert/double_converter)
+- #### [FloatConverter](../../convert/float_converter)
+- #### [DateTimeConverter](../../convert/date_time_converter)
 - #### [ICloneable](../icloneable)

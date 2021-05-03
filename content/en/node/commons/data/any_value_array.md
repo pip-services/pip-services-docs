@@ -11,11 +11,11 @@ description: >
 **Extends:** Array\<any\> 
 **Implements:** [ICloneable](../icloneable)
 
-See also [StringConverter](../../config/string_converter), [TypeConverter](../../config/type_converter), 
-[StringConverter](../../config/string_converter), [BooleanConverter](../../config/boolean_converter),
-[IntegerConverter](../../config/integer_converter), [LongConverter](../../config/long_converter),
-[DoubleConverter](../../config/double_converter), [FloatConverter](../../config/float_converter),
-[DateTimeConverter](../../config/date_time_converter), [ICloneable](../icloneable)
+See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
+[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
+[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
+[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
+[DateTimeConverter](../../convert/date_time_converter), [ICloneable](../icloneable)
 
 **Example:** 
 ```typescript
@@ -30,7 +30,7 @@ value1.getAsDateTime(2);  // Result: new Date(2018,0,1)
 ### Constructors
 Creates a new instance of the array and assigns its value.
 
-> `public` constructor(values: any[] = null): []()
+> `public` constructor(values: any[] = null): [AnyValueArray]()
 
 - **values**: any[] = null - (optional) values to initialize this array.
 
@@ -166,7 +166,6 @@ Converts array element into a double or returns default value if conversion is n
 - **index**: number - an index of element to get.
 - **defaultValue**: number - the default value
 - **returns**: number - double value ot the element or default value if conversion is not supported.
-
 
 #### getAsFloat
 Converts array element into a float or returns 0 if conversion is not possible.
@@ -405,7 +404,7 @@ See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithde
 
 #### getAsValue
 Converts array element into an AnyValue or returns an empty AnyValue if conversion is not possible.  
-See [AnyValue](../any_value), [AnyValues](../any_value/#constructors)
+See [AnyValue](../any_value), [AnyValues.constructors](../any_value/#constructors)
 
 > `public` getAsValue(index: number): [AnyValue](../any_value)
 
@@ -485,15 +484,6 @@ Creates a new AnyValueArray from a list of values
 - **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
 
 
-#### fromValues
-Creates a new AnyValueArray from a list of values
-
-> `public static` fromValues(...values: any[]): [AnyValueArray](../any_value_array)
-
-- **values**: any[] - a list of values to initialize the created AnyValueArray
-- **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
-
-
 #### toString
 Gets a string representation of the object.
 The result is a comma-separated list of string representations of individual elements as
@@ -506,13 +496,13 @@ See [StringConverter.toString](../../convert/string_converter/#tostring)
 
 
 ### See also
-- #### [StringConverter](../../config/string_converter)
-- #### [TypeConverter](../../config/type_converter)
-- #### [StringConverter](../../config/string_converter)
-- #### [BooleanConverter](../../config/boolean_converter)
-- #### [IntegerConverter](../../config/integer_converter)
-- #### [LongConverter](../../config/long_converter)
-- #### [DoubleConverter](../../config/double_converter)
-- #### [FloatConverter](../../config/float_converter)
-- #### [DateTimeConverter](../../config/date_time_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [TypeConverter](../../convert/type_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [BooleanConverter](../../convert/boolean_converter)
+- #### [IntegerConverter](../../convert/integer_converter)
+- #### [LongConverter](../../convert/long_converter)
+- #### [DoubleConverter](../../convert/double_converter)
+- #### [FloatConverter](../../convert/float_converter)
+- #### [DateTimeConverter](../../convert/date_time_converter)
 - #### [ICloneable](../icloneable)

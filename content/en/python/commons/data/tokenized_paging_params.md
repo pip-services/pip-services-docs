@@ -7,7 +7,7 @@ description: >
     Data transfer object to pass tokenized paging parameters for queries.
     It can be used for complex paging scenarios, like paging across multiple databases
     where the previous state is encoded in a token. The token is usually retrieved from
-    the previous response. The initial request shall go with token == *null*
+    the previous response. The initial request shall go with token == *None*
 
 
     The page is defined by two parameters:
@@ -24,21 +24,21 @@ description: >
 ---
 
 **Example:**
-```typescript
-let filter = FilterParams.fromTuples("type", "Type1");
-let paging = new TokenizedPagingParams(null, 100);
-     
-myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+```python
+filter = FilterParams.from_tuples("type", "Type1");
+paging = TokenizedPagingParams(None, 100);
+
+result = my_data_client.get_data_by_filter(filter, paging)
 ```
 
 ### Constructors
 Creates a new instance and sets its values.
 
-> `public` constructor(token: string = null, take: number = null, total: boolean = null): [TokenizedPagingParams]()
+> TokenizedPagingParams(token: str = None, take: int = None, total: bool = None)
 
-- **token**: string = null - token that defines a starting point for the search.
-- **take**: number = null - the number of items to return. 
-- **total**: boolean = null - true to return the total number of items.
+- **token**: str - token that defines a starting point for the search.
+- **take**: int - the number of items to return. 
+- **total**: bool - true to return the total number of items.
 
 
 ### Fields
@@ -47,11 +47,11 @@ Creates a new instance and sets its values.
 
 #### token
 The start token
-> `public` **token**: string
+> `public` **token**: str
 
 #### take
 The number of items to return.
-> `public` **take**: number
+> `public` **take**: int
 
 #### total
 The flag to return the total number of items.
@@ -62,36 +62,36 @@ The flag to return the total number of items.
 
 ### Methods
 
-#### getTake
+#### get_take
 Gets the number of items to return in a page.
 
-> `public` getTake(maxTake: number): number
+> get_take(max_take: int): int
 
-- **maxTake**: number - the maximum number of items to return.
-- **returns**: number - the number of items to return.
+- **max_take**: int - the maximum number of items to return.
+- **returns**: int - the number of items to return.
 
-#### fromMap
+#### from_map
 Creates a new TokenizedPagingParams and sets it parameters from the specified map
 
-> `public static` fromMap(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
+> `static` from_map(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
 
 - **map**: [AnyValueMap](../any_value_map) - a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
 - **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
 
 
-#### fromTuples
+#### from_tuples
 Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
 
-> `public static` fromTuples(...tuples: any[]): [TokenizedPagingParams]()
+> `static` from_tuples(*tuples: Any): [TokenizedPagingParams]()
 
-- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [TokenizedPagingParams]() - a newly created TokenizedPagingParams.
 
 
-#### fromValue
+#### from_value
 Converts specified value into TokenizedPagingParams.
 
-> `public static` fromValue(value: any): [TokenizedPagingParams]()
+> `static` from_value(value: Any): [TokenizedPagingParams]()
 
-- **value**: any - value to be converted
+- **value**: Any - value to be converted
 - **returns**: [TokenizedPagingParams]() - a newly created PagingParams.

@@ -89,7 +89,7 @@ Normalizes a comma-separated list of tags.
 - **returns**: string[] - a list with normalized tags.
 
 
-#### normalizeTagList
+#### normalizeTags
 Normalizes a list of tags.
 
 > `public static` normalizeTags(tags: string[]): string[] 

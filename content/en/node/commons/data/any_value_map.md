@@ -10,11 +10,11 @@ description: >
 
 **Implements:** [ICloneable](../icloneable)
 
-See also [StringConverter](../../config/string_converter), [TypeConverter](../../config/type_converter), 
-[StringConverter](../../config/string_converter), [BooleanConverter](../../config/boolean_converter),
-[IntegerConverter](../../config/integer_converter), [LongConverter](../../config/long_converter),
-[DoubleConverter](../../config/double_converter), [FloatConverter](../../config/float_converter),
-[DateTimeConverter](../../config/date_time_converter), [ICloneable](../icloneable)
+See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
+[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
+[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
+[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
+[DateTimeConverter](../../convert/date_time_converter), [ICloneable](../icloneable)
 
 **Example:**
 ```typescript
@@ -48,9 +48,7 @@ Appends new elements to this map.
 #### clear
 Clears this map by removing all its elements.
 
-> `public` clear(): any
-
-- **returns**: any - TODO add description
+> `public` clear(): void
 
 
 #### clone
@@ -133,7 +131,7 @@ See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/
 - **returns**: Date - Date value of the element or default value if conversion is not supported. 
 
 
-#### getAsDateTimeWithDefault
+#### getAsDouble
 Converts map element into a double or returns 0 if conversion is not possible.
 
 > `public` getAsDouble(key: string): number
@@ -497,13 +495,13 @@ Converts specified value into AnyValueMap.
 
 
 ### See also
-- #### [StringConverter](../../config/string_converter)
-- #### [TypeConverter](../../config/type_converter)
-- #### [StringConverter](../../config/string_converter)
-- #### [BooleanConverter](../../config/boolean_converter)
-- #### [IntegerConverter](../../config/integer_converter)
-- #### [LongConverter](../../config/long_converter)
-- #### [DoubleConverter](../../config/double_converter)
-- #### [FloatConverter](../../config/float_converter)
-- #### [DateTimeConverter](../../config/date_time_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [TypeConverter](../../convert/type_converter)
+- #### [StringConverter](../../convert/string_converter)
+- #### [BooleanConverter](../../convert/boolean_converter)
+- #### [IntegerConverter](../../convert/integer_converter)
+- #### [LongConverter](../../convert/long_converter)
+- #### [DoubleConverter](../../convert/double_converter)
+- #### [FloatConverter](../../convert/float_converter)
+- #### [DateTimeConverter](../../convert/date_time_converter)
 - #### [ICloneable](../icloneable)

@@ -82,14 +82,6 @@ See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
 
 - **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
-#### getAsArray
-Converts object value into an AnyArray or returns empty AnyArray if conversion is not possible.  
-See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
-
-> `public` getAsArray(): [AnyValueArray](../any_value_array)
-
-- **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
-
 #### getAsBoolean
 Converts object value into a boolean or returns false if conversion is not possible.
 
@@ -267,7 +259,7 @@ See [StringConverter.toNullableString](../../convert/string_converter/#tonullabl
 - **returns**: string - string value or null if conversion is not supported. 
 
 
-#### getAsNullableString
+#### getAsNullableType
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns null.  
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
@@ -291,7 +283,7 @@ Converts object value into a string or returns *""* if conversion is not possibl
 
 > `public` getAsString(): string
 
-- **returns**: any - string value or *""* if conversion is not supported. 
+- **returns**: string - string value or *""* if conversion is not supported. 
 
 
 #### getAsStringWithDefault
@@ -304,12 +296,13 @@ Converts object value into a string or returns default value if conversion is no
 
 
 #### getAsType
-Converts object value into a string or returns default value if conversion is not possible.
+Converts object value into a value defined by specied typecode.
+If conversion is not possible it returns default value for the specified type.
 
 > `public` getAsType\<T\>(typeCode: [TypeCode](../../convert/type_code)): T
 
-- **defaultValue**: string - the default value.
-- **returns**: string - string value or default if conversion is not supported.
+- **typeCode**: string - the TypeCode that defined the type of the result
+- **returns**: string - value defined by the typecode or type default value if conversion is not supported. 
 
 
 #### getAsTypeWithDefault

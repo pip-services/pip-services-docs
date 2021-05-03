@@ -4,7 +4,7 @@ title: "Notifier"
 linkTitle: "Notifier"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that notifies components.
+    Helper class that can be use to notify one or more components.
 ---
 
 ### Description

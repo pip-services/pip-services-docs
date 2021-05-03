@@ -4,15 +4,20 @@ title: "TypeMatcher"
 linkTitle: "TypeMatcher"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class matches value types for equality.
+    Helper class that allows you to match value types based on equality.
  
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
+
 ---
 
-See also [TypeCode](../../convert/type_code)
+### Description
 
-### Methods
+the TypeMatcher class allows you to match value types based on equality.
+
+Important points
+
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and used to support dynamic data processing.
+
+### Static methods
 
 #### match_type
 Matches expected type to an actual type.

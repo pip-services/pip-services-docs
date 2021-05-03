@@ -7,10 +7,11 @@ description: >
     Helper class that notifies components.
 ---
 
-See also [INotifiable](../inotifiable)
+### Description
 
+The Notifier class is a helper class that can be use to notify one or more components.
 
-### Methods
+### Static methods
 
 #### notify
 Sets execution parameters.

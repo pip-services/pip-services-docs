@@ -4,13 +4,14 @@ title: "Cleaner"
 linkTitle: "Cleaner"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that cleans stored object state.
+    Helper class that allows you to clear the state of a component.
 ---
 
-See also [ICleanable](../icleanable)
+### Description
 
+The Cleaner class allows you to clear the state of a component.
 
-### Methods
+### Static methods
 
 #### clear
 Clears state of multiple components.

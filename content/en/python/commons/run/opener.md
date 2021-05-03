@@ -4,13 +4,14 @@ title: "Opener"
 linkTitle: "Opener"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that opens components.
+    Helper class that can be used to check whether a component is opened or not and to open one or more components.
 ---
 
-See also [IOpenable](../iopenable)
+### Description
 
+The Opener class can be used to check whether a component is opened or not and to open one or more components.
 
-### Methods
+### Static methods
 
 #### is_open
 Checks if all components are opened.

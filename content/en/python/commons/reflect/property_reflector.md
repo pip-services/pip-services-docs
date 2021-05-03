@@ -13,7 +13,7 @@ The PropertyReflector class allows you to examine an object's properties and to 
 
 Important point
 
-- This class has symmetric implementation across all languages supported by Pip.Services toolkit and it is used to support dynamic data processing.
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the PropertyReflector class treats all property names as case insensitive.
 
 ### Static methods

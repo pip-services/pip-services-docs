@@ -4,32 +4,14 @@ title: "References"
 linkTitle: "References"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    The most basic implementation of [IReferences](../ireferences) to store and locate component references.
+    An implementation of [IReferences](../ireferences) that allows you to store and locate component references.
 ---
 
 **Implements**: [IReferences](../ireferences)
 
-See also [IReferences](../ireferences)
+### Description
 
-**Example:**
-```python
-class MyController(IReferenceable):
-    _persistence = None
-
-    def set_references(self, references):
-        self._persistence = references.getOneRequired(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
-
-persistence = MyMongoDbPersistence()
-
-references = References.from_tuples(
-        Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-        Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-    )
-
-controller.set_references(references)
-
-```
-
+The References class allows you to store and locate component references.
 
 ### Constructors
 
@@ -48,7 +30,7 @@ TODO add description
 
 </span>
 
-### Methods
+### Instance methods
 
 #### find
 Gets all component references that match specified locator.  
@@ -137,6 +119,7 @@ Removes all component references that match the specified locator.
 - **locator**: Any - the locator to remove references by.
 - **returns**: List[Any] - a list, containing all removed references.
 
+### Static methods
 
 #### from_tuples
 Creates a new References from a list of key-value pairs called tuples.
@@ -146,6 +129,24 @@ Creates a new References from a list of key-value pairs called tuples.
 - **tuples**: Any - a list of values where odd elements are locators and the following even elements are component references
 - **returns**: [References](../references) - a newly created References.
 
+### Examples
+```python
+class MyController(IReferenceable):
+    _persistence = None
+
+    def set_references(self, references):
+        self._persistence = references.getOneRequired(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+
+persistence = MyMongoDbPersistence()
+
+references = References.from_tuples(
+        Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+        Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+    )
+
+controller.set_references(references)
+
+```
 
 ### See also
 - #### [IReferences](../ireferences)

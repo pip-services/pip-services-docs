@@ -4,17 +4,36 @@ title: "IOpenable"
 linkTitle: "IOpenable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that require explicit opening and closing.
+    Interface that allows you to create components with explicit opening and closing.
 
-    For components that perform opening on demand consider using
-    [IClosable](../iclosable) interface instead.
 ---
 
 **Implements:** [IClosable](../iclosable)
 
-See also [IOpenable](../iopenable), [Opener](../opener)
+### Description
 
-**Example:**
+The IOpenable interface allows you to create components with explicit opening and closing.
+
+Important points
+    
+- For components that perform opening on demand consider using [IClosable](../iclosable) interface instead.
+
+### Methods
+
+#### is_open
+Checks if the component is opened.
+
+> is_open(): bool
+
+#### open
+Opens the component.
+
+> open(correlation_id: str)
+
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+
+### Examples
+
 ```python
 class MyPersistence(IOpenable):
     _client = None
@@ -37,20 +56,6 @@ class MyPersistence(IOpenable):
     ...
 
 ```
-
-### Methods
-
-#### is_open
-Checks if the component is opened.
-
-> is_open(): bool
-
-#### open
-Opens the component.
-
-> open(correlation_id: str)
-
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 
 ### See also
 - #### [IOpenable](../iopenable)

@@ -4,28 +4,19 @@ title: "MethodReflector"
 linkTitle: "MethodReflector"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform method introspection and dynamic invocation.
+    Helper class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
-
-    Because all languages have different casing and case sensitivity rules,
-    this MethodReflector treats all method names as case insensitive.
 ---
 
-**Example:**
+### Description
 
-```python
-myObj = new MyObject()
+The MethodReflector class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-methods = MethodReflector.get_method_names()
-MethodReflector.has_method(myObj, "myMethod")
-MethodReflector.invoke_method(myObj, "myMethod", 123)
+Important points
 
-```
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing. Moreover, because all languages have different casing and case sensitivity rules, this class treats all method names as case insensitive.
 
-
-### Methods
+### Static methods
 
 #### get_method_names
 Gets names of all methods implemented in specified object.
@@ -53,3 +44,14 @@ Invokes an object method by its name with specified parameters.
 - **name**: str -a name of the method to invoke.
 - **args**: Any - a list of method arguments.
 - **returns**: Any - the result of the method invocation or null if method returns void.
+
+### Examples
+
+```python
+myObj = new MyObject()
+
+methods = MethodReflector.get_method_names()
+MethodReflector.has_method(myObj, "myMethod")
+MethodReflector.invoke_method(myObj, "myMethod", 123)
+
+```

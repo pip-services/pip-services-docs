@@ -4,13 +4,14 @@ title: "IParameterized"
 linkTitle: "IParameterized"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that require execution parameters.
+    Interface that allows you to create components with execution parameters.
 ---
 
-See also [IConfigurable](../../config/iconfigurable)
+### Description
 
+The IParameterized interface allows you to create components with execution parameters.
 
-### Methods
+### Instance methods
 
 #### set_parameters
 Sets execution parameters.

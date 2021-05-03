@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The IReferences interface can be used to manage references stored in a map, and which can be passed to other components to establish dependencies among them.
+The IReferences interface can be used to manage references stored in a map, and which can be passed to other components to establish dependencies between them.
 
 Generally speaking, an IReferences object is a simple map, where keys are locators and values are component references. Thus, it allows you to add, remove and find components    by their locators. Locators can be any values like integers, strings or component types. 
 

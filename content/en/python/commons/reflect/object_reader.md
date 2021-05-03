@@ -18,7 +18,7 @@ Important points
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, this ObjectReader is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys.
 - For arrays, properties are elements identified by integer index.
-- This class has a symmetric implementation across all languages supported by Pip.Services toolkit and it is used to support dynamic data processing.
+- This class has a symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, this ObjectReader treats all property names as case insensitive.
 
 ### Static methods

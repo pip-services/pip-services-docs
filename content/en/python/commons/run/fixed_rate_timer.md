@@ -16,7 +16,7 @@ The FixerRateTimer class represents a timer that is triggered in equal time inte
 
 Important points
 
-- It has summetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
+- It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
 Creates new instance of the timer and sets its values.

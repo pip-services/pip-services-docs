@@ -6,14 +6,17 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Timer that is triggered in equal time intervals.
 
-    It has summetric cross-language implementation 
-    and is often used by Pip.Services toolkit to
-    perform periodic processing and cleanup in microservices.
 ---
 
 **Implements:** [IClosable](../iclosable)
 
-See also [INotifiable](../inotifiable)
+### Description
+
+The FixerRateTimer class represents a timer that is triggered in equal time intervals.
+
+Important points
+
+- It has summetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
 Creates new instance of the timer and sets its values.

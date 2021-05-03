@@ -4,12 +4,17 @@ title: "TypeDescriptor"
 linkTitle: "TypeDescriptor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Descriptor that points to specific object type by it's name
-    and optional library (or module) where this type is defined.
-
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
+    The TypeDescriptor class allows you to examine a descriptor.
+    
 ---
+
+### Description
+
+The TypeDescriptor class allows you to examine a descriptor by comparing two different descriptors. It also allows you to get a string representation of the descriptor and to transform a string into a descriptor object.
+
+Important points
+
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 
 ### Constructors
 Creates a new instance of the type descriptor and sets its values.
@@ -20,7 +25,7 @@ Creates a new instance of the type descriptor and sets its values.
 - **library**: str - a library or module where this object type is implemented.
 
 
-### Methods
+### Instance methods
 
 #### equals
 Compares this descriptor to a value.
@@ -56,6 +61,7 @@ The result has format *name[,library]*
 
 - **returns**: string - a string representation of the object.
 
+### Static methods
 
 #### from_string
 Parses a string to get descriptor fields and returns them as a Descriptor.

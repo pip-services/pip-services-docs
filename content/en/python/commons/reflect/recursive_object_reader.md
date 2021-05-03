@@ -4,16 +4,22 @@ title: "RecursiveObjectReader"
 linkTitle: "RecursiveObjectReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic reading.
+    Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
-    It is similar to [ObjectReader](../object_reader) but reads properties recursively
-    through the entire object graph. Nested property names are defined
-    using dot notation as "object.subobject.property"
 ---
 
-See also [ObjectReader](../object_reader), [PropertyReflector](../property_reflector)
+### Description
 
-### Methods
+The RecursiveObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them.
+
+
+Important points
+
+- It is similar to [ObjectReader](../object_reader) but reads properties recursively through the entire object graph. 
+- Nested property names are defined using dot notation as "object.subobject.property".
+
+
+### Static methods
 
 #### get_properties
 Get values of all properties in specified object and its subobjects

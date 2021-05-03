@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The TypeDescriptor class allows you to examine a descriptor by comparing two different descriptors. It also allows you to get a string representation of the descriptor and to transform a string into a descriptor object.
+The TypeDescriptor class allows you to examine a descriptor by comparing it to other descriptors. It also allows you to get a string representation of the descriptor and to transform a string into a descriptor object.
 
 Important points
 

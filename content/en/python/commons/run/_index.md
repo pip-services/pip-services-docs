@@ -6,9 +6,8 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Todo: Rewrite this description.  
-
-    Contains design patterns for the standard lifecycle of objects (opened, 
-    closed, openable, closable, runnable). Helper classes for lifecycle provisioning.  
+    The Run library contains a set of interfaces and classes for the standard lifecycle of objects (opened, 
+    closed, openable, closable, runnable). In addition, it has several helper classes for lifecycle management.  
 ---
 ---
 

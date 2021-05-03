@@ -11,11 +11,11 @@ description: >
 
 ### Description
 
-the TypeMatcher class allows you to match value types based on equality.
+The TypeMatcher class allows you to match value types based on equality.
 
 Important points
 
-- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and used to support dynamic data processing.
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 
 ### Static methods
 

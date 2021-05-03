@@ -4,13 +4,14 @@ title: "Referencer"
 linkTitle: "Referencer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that sets and unsets references to components.
+    Helper class that allows you to set and unset references to components.
 ---
 
-See also [IReferenceable](../ireferenceable), [IUnreferenceable](../iunreferenceable)
+### Description
 
-### Methods
+The Referencer class allows you to set and unset references to components.
 
+### Static methods
 
 #### set_references
 Sets references to multiple components.

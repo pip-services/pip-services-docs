@@ -4,7 +4,8 @@ title: "IExecutable"
 linkTitle: "IExecutable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that can be called to execute work.
+    Interface that allows you to create a component that can be called to execute work.
+
 ---
 
 ### Description

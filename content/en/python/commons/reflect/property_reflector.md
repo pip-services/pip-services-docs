@@ -4,29 +4,19 @@ title: "PropertyReflector"
 linkTitle: "PropertyReflector"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic reading and writing.
-
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
-
-    Because all languages have different casing and case sensitivity rules,
-    this PropertyReflector treats all property names as case insensitive.
+    Helper class that allows you to examine an object's properties and to dynamically get and set their values.
 ---
 
-**Example:**
+### Description
 
-```python
-myObj = MyObject()
-properties = PropertyReflector.get_property_names()
-PropertyReflector.has_property(myObj, "myProperty")
+The PropertyReflector class allows you to examine an object's properties and to dynamically get and set their values.
 
-args = PropertyReflector.get_property(myObj, "myProperty")
-PropertyReflector.set_property(myObj, "myProperty", 123)
+Important point
 
-```
+- This class has symmetric implementation across all languages supported by Pip.Services toolkit and it is used to support dynamic data processing.
+- Because all languages have different casing and case sensitivity rules, the PropertyReflector class treats all property names as case insensitive.
 
-
-### Methods
+### Static methods
 
 #### get_properties
 Get values of all properties in specified object
@@ -88,7 +78,17 @@ this method doesn't do anything and doesn't any throw errors.
 - **name**: str - a name of the property to set.
 - **value**: Any - a new value for the property to set.
 
+### Examples
 
+```python
+myObj = MyObject()
+properties = PropertyReflector.get_property_names()
+PropertyReflector.has_property(myObj, "myProperty")
+
+args = PropertyReflector.get_property(myObj, "myProperty")
+PropertyReflector.set_property(myObj, "myProperty", 123)
+
+```
 
 
 

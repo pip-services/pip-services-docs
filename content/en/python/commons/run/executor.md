@@ -4,13 +4,15 @@ title: "Executor"
 linkTitle: "Executor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that executes components.
+    Helper class that allows you to execute one or more components.
 ---
 
-See also [IExecutable](../iexecutable)
+### Description
+
+The Executor calls allows you to execute one or more components.
 
 
-### Methods
+### Static methods
 
 #### execute
 Executes multiple components.

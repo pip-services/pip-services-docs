@@ -4,43 +4,24 @@ title: "ObjectReader"
 linkTitle: "ObjectReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic reading.
+    Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
-    In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects,
-    this ObjectReader is also able to handle maps and arrays.
-    For maps properties are key-pairs identified by string keys,
-    For arrays properties are elements identified by integer index.
 
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
-
-    Because all languages have different casing and case sensitivity rules,
-    this ObjectReader treats all property names as case insensitive.
 ---
 
-See also [PropertyReflector](../property_reflector)
+### Description
 
-**Example:**
+The ObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
-```python
+Important points
 
-mybj = MyObject()
-properties = ObjectReader.get_property_names()
-ObjectReader.has_property(myObj, "myProperty")
-args = PropertyReflector.get_property(myObj, "myProperty")
+- In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, this ObjectReader is also able to handle maps and arrays.
+- For maps, properties are key-pairs identified by string keys.
+- For arrays, properties are elements identified by integer index.
+- This class has a symmetric implementation across all languages supported by Pip.Services toolkit and it is used to support dynamic data processing.
+- Because all languages have different casing and case sensitivity rules, this ObjectReader treats all property names as case insensitive.
 
-myMap = { key1: 123, key2: "ABC" }
-ObjectReader.has_property(myMap, "key1")
-args = ObjectReader.get_property(myMap, "key1")
-
-myArray = [1, 2, 3]
-ObjectReader.has_property(myArrat, "0")
-args = ObjectReader.get_property(myArray, "0")
-
-```
-
-
-### Methods
+### Static methods
 
 #### get_properties
 Get values of all properties in specified object
@@ -102,6 +83,25 @@ map key or array index.
 - **obj**: Any - an object to introspect.
 - **name**: str - a name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
+
+### Examples
+
+```python
+
+mybj = MyObject()
+properties = ObjectReader.get_property_names()
+ObjectReader.has_property(myObj, "myProperty")
+args = PropertyReflector.get_property(myObj, "myProperty")
+
+myMap = { key1: 123, key2: "ABC" }
+ObjectReader.has_property(myMap, "key1")
+args = ObjectReader.get_property(myMap, "key1")
+
+myArray = [1, 2, 3]
+ObjectReader.has_property(myArrat, "0")
+args = ObjectReader.get_property(myArray, "0")
+
+```
 
 ### See also
 - #### [PropertyReflector](../property_reflector)

@@ -5,8 +5,7 @@ linkTitle: "Refer"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
+    
     The Refer library provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish dependencies among them. 
    
 ---

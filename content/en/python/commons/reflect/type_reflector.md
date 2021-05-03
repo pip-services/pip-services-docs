@@ -4,31 +4,23 @@ title: "TypeReflector"
 linkTitle: "TypeReflector"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform object type introspection and object instantiation.
+    Helper class that allows you to examine the type of an object, and create instancies of objects based on their type.
 
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
 
-    Because all languages have different casing and case sensitivity rules,
-    this TypeReflector treats all type names as case insensitive.
 ---
 
-See also [TypeDescriptor](../type_descriptor)
+### Description
 
-**Example:**
+The TypeReflector class allows you to examine the type of an object, and create instancies of objects based on their type.
 
-```python
+Important points
 
-descriptor = TypeDescriptor("MyObject", "mylibrary")
-Typeeflector.get_type_by_descriptor(descriptor)
-myObj = TypeReflector.create_instance_by_descriptor(descriptor)
-TypeDescriptor.is_primitive(myObject)           # Result: false
-TypeDescriptor.is_primitive(123)                # Result: true
-
-```
+-     This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
+-     Because all languages have different casing and case sensitivity rules, the TypeReflector class treats all type names as case insensitive.
 
 
-### Methods
+
+### Static methods
 
 #### create_instance_by_type
 Creates an instance of an object type.
@@ -86,6 +78,18 @@ See [TypeConverter.to_type_code](../../convert/type_converter/#to_type_code), [T
 
 - **value**: Any - a value to check
 - **returns**: bool - true if the value has primitive type and false if value type is complex.
+
+### Examples
+
+```python
+
+descriptor = TypeDescriptor("MyObject", "mylibrary")
+Typeeflector.get_type_by_descriptor(descriptor)
+myObj = TypeReflector.create_instance_by_descriptor(descriptor)
+TypeDescriptor.is_primitive(myObject)           # Result: false
+TypeDescriptor.is_primitive(123)                # Result: true
+
+```
 
 ### See also
 - #### [TypeDescriptor](../type_descriptor)

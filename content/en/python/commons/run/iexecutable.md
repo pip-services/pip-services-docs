@@ -7,9 +7,22 @@ description: >
     Interface for components that can be called to execute work.
 ---
 
-See also [Executor](../executor), [INotifiable](../inotifiable), [Parameters](../parameters)
+### Description
 
-**Example:**
+The IExecutable interface allows you to create a component that can be called to execute work.
+
+### Instance methods
+
+#### execute
+Executes component with arguments and receives execution result.
+
+> execute(correlationId: str, args: [Parameters](../parameters))
+
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **args**: [Parameters](../parameters) - execution arguments.
+
+### Examples
+
 ```python
 class EchoComponent(IExecutable):
     ...
@@ -21,18 +34,7 @@ echo = new EchoComponent()
 message = "Test";
 result = echo.execute("123", Parameters.from_tuples("message", message))
 print("Request: " + message + " Response: " + result)
-
 ```
-
-### Methods
-
-#### execute
-Executes component with arguments and receives execution result.
-
-> execute(correlationId: str, args: [Parameters](../parameters))
-
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
-- **args**: [Parameters](../parameters) - execution arguments.
 
 ### See also
 - #### [Executor](../executor)

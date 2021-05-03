@@ -14,7 +14,7 @@ The INotifiable interface allows you to create components that can be asynchrono
 
 Important points
 
-- The notification can include an optiona argument that describes an occurred event.
+- The notification can include an optional argument that describes an occurred event.
 
 ### Instance methods
 

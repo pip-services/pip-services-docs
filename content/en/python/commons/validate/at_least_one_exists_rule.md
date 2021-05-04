@@ -4,7 +4,7 @@ title: "AtLeastOneExistsRule"
 linkTitle: "AtLeastOneExistsRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule that check that at least one of the object properties exists.
+    Validation rule that checks that at least one of the object properties exists.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)

@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "IncludedRule"
-linkTitle: "IncludedRule"
+title: "IValidationRule"
+linkTitle: "IValidationRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for validation rules.
+    Interface used to implement custom validation rules.
  
     Validation rule can validate one or multiple values
     against complex rules like: value is in range,
@@ -14,7 +14,11 @@ description: >
     This interface allows to implement custom rules.
 ---
 
-### Methods
+### Description
+
+The IValidationRule interface allows you to implement custom validation rules.
+
+### Instance methods
 
 #### validate
 Validates a given value against this rule.

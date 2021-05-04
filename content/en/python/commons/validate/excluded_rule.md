@@ -4,7 +4,7 @@ title: "ExcludedRule"
 linkTitle: "ExcludedRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule to check that value is excluded from the list of constants.
+    Validation rule to check that one or more values are excluded from the list of constants.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)

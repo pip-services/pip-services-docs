@@ -102,9 +102,9 @@ See [IEventListener](../ievent_listener)
 Executes a [command](../icommand) specificed by its name.  
 See [ICommand](../icommand), [Parameters](../../run/parameters)
 
-> execute(correlation_id: str, command: str, args: [Parameters](../../run/parameters)): Any
+> execute(correlation_id: Optional[str], command: str, args: [Parameters](../../run/parameters)): Any
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **command_name**: str - the name of that command that is to be executed.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
 - **returns**: Any - the execution result
@@ -146,9 +146,9 @@ See [IEvent](../ievent)
 Fires event specified by its name and notifies all registered
 [listeners](../ievent_listener)
 
-> notify(correlation_id: str, event_name: str, args: [Parameters](../../run/parameters))
+> notify(correlation_id: Optional[str], event_name: str, args: [Parameters](../../run/parameters))
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **event_name**: str - the name of the event that is to be fired.
 - **args**: [Parameters](../../run/parameters) - the event arguments (parameters).
 

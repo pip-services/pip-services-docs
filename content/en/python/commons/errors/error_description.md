@@ -42,7 +42,7 @@ A map with additional details that can be used to restore error description in o
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain    
-> correlation_id: str
+> correlation_id: Optional[str]
 
 #### cause
 Original error wrapped by this exception  

@@ -40,9 +40,9 @@ Opens multiple components.
 To be opened components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method has no effect.
 
-> `static` open(correlation_id: str, components: List[Any])
+> `static` open(correlation_id: Optional[str], components: List[Any])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **components**: List[Any] - the list of components that are to be closed.
 
 
@@ -51,9 +51,9 @@ Opens specific component.
 To be opened components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method has no effect.
 
-> `static` open_one(correlation_id: str, component: Any)
+> `static` open_one(correlation_id: Optional[str], component: Any)
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **component**: Any - the component that is to be opened.
 
 

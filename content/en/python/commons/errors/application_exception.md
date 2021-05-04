@@ -57,7 +57,7 @@ Creates a new instance of application exception and assigns its values.
                  code: str = 'UNKNOWN', message: str = 'Unknown error')
 
 - **category**: str - (optional) a standard error category. Default: Unknown
-- **correlation_id**: str - (optional) a unique transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
 - **code**: str - (optional) a unique error code. Default: "UNKNOWN"
 - **message**: str - (optional) a human-readable description of the error.
 
@@ -87,7 +87,7 @@ A map with additional details that can be used to restore error description in o
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain
-> correlation_id: str
+> correlation_id: Optional[str]
 
 #### stack_trace
 Stack trace of the exception
@@ -154,9 +154,9 @@ Sets a correlation id which can be used to trace this error through a call chain
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_correlation_id(correlation_id: str): [ApplicationException]()
+> with_correlation_id(correlation_id: Optional[str]): [ApplicationException]()
 
-- **correlation_id**: str - a unique transaction id to trace error through call chain
+- **correlation_id**: Optional[str] - a unique transaction id to trace error through call chain
 - **returns**: [ApplicationException]() - this exception object
 
 #### with_details

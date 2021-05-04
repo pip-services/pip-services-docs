@@ -21,9 +21,9 @@ Important points
 #### notify
 Notifies the component about occured event.
 
-> notify(correlation_id: str, args: [Parameters](../parameters))
+> notify(correlation_id: Optional[str], args: [Parameters](../parameters))
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
 
 ### Examples

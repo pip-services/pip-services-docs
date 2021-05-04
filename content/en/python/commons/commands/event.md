@@ -56,9 +56,9 @@ Gets the name of the event.
 Fires this event and notifies all registred listeners.  
 Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
 
-> notify(correlation_id: str, args: [Parameters](../../run/parameters))
+> notify(correlation_id: Optional[str], args: [Parameters](../../run/parameters))
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - the parameters to raise this event with.
 
 #### remove_listener

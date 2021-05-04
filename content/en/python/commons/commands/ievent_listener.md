@@ -26,9 +26,9 @@ event.notify("123", Parameters.from_tuples("param1", "ABC"))
 #### on_event
 A method called when events this listener is subscrubed to are fired.
 
-> on_event(correlation_id: str, event: [IEvent](../ievent), args: [Parameters](../../run/parameters))
+> on_event(correlation_id: Optional[str], event: [IEvent](../ievent), args: [Parameters](../../run/parameters))
 
-- **correlation_id**: str - a fired evemt
+- **correlation_id**: Optional[str] - a fired evemt
 - **event**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - event arguments.
 

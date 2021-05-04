@@ -19,7 +19,7 @@ Executes component with arguments and receives execution result.
 
 > execute(correlationId: str, args: [Parameters](../parameters))
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
 
 ### Examples
@@ -27,7 +27,7 @@ Executes component with arguments and receives execution result.
 ```python
 class EchoComponent(IExecutable):
     ...
-    def execute(self, correlation_id: str, args: Parameters): 
+    def execute(self, correlation_id: Optional[str], args: Parameters): 
         result = args.get_as_object("message")
         return result
     

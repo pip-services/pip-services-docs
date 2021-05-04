@@ -117,9 +117,9 @@ added to the container by their locators (descriptors).
 #### close
 Closes component and frees used resources.
 
-> close(correlation_id: str)
+> close(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 
 #### configure
@@ -141,17 +141,17 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> open(correlation_id: str)
+> open(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 
 #### read_config_from_file
 Reads container configuration from JSON or YAML file and parameterizes it with given values.
 
-> read_config_from_file(correlation_id: str, path: str, parameters: [ConfigParams](../../../commons/config/config_params))
+> read_config_from_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params))
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **path**: str - a path to configuration file
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
 

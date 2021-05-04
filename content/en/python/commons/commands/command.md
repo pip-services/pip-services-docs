@@ -44,9 +44,9 @@ Executes the command. Before execution it validates [args](../../run/parameters)
 Raise [ApplicationException](../../errors/application_exception) when execution fails for whatever reason.  
 See [Parameters](../../run/parameters)
 
-> execute(correlation_id: str, args: [Parameters](../../run/parameters)): Any
+> execute(correlation_id: Optional[str], args: [Parameters](../../run/parameters)): Any
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to this command for execution.
 - **returns**: Any - the execution result
 

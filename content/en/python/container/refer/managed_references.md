@@ -33,8 +33,8 @@ Creates a new instance of the decorator.
 #### close
 Closes component and frees used resources.
 
-> close(correlation_id: str)
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+> close(correlation_id: Optional[str])
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 #### is_open
 Checks if the component is opened.
@@ -45,8 +45,8 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> open(correlation_id: str)
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+> open(correlation_id: Optional[str])
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 #### from_tuples
 Removes all component references that match the specified locator.

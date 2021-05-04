@@ -111,9 +111,9 @@ See [ValidationResult](../validation_result)
 #### validate_and_return_exception
 Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 
-> validate_and_return_exception(correlation_id: str, value: Any, strict: bool = False): [ValidationException](../validation_exception)
+> validate_and_return_exception(correlation_id: Optional[str], value: Any, strict: bool = False): [ValidationException](../validation_exception)
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **value**: Any -  a value to be validated.
 - **strict**: boolean = false - true to treat warnings as errors.
 - **returns**: [ValidationException](../validation_exception) - TODO add description here
@@ -122,9 +122,9 @@ Validates the given value and returns a [ValidationException](../validation_exce
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
 See [ValidationException.throw_exception_if_needed](../validation_exception/#throw_exception_if_needed)
 
-> validate_and_throw_exception(correlation_id: str, value: Any, strict: boolean = false)
+> validate_and_throw_exception(correlation_id: Optional[str], value: Any, strict: boolean = false)
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **value**: Any - a value to be validated.
 - **strict**: bool = false - true to treat warnings as errors.
 

@@ -14,8 +14,8 @@ The ReferenceException class provides a Reference error type, which can be used 
 ### Constructors
 Creates an error instance and assigns its values.
 
-> ReferenceException(correlation_id: str, locator: Any)
+> ReferenceException(correlation_id: Optional[str], locator: Any)
 
-- **correlation_id**: str - (optional) a unique transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
 - **locator**: Any - the locator to find reference to dependent component.
 

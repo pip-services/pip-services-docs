@@ -28,9 +28,9 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> open(correlation_id: str)
+> open(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 ### Examples
 

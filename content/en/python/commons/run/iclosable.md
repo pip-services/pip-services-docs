@@ -17,9 +17,9 @@ The IClosable interface allows you to create a component with a method that clos
 #### close
 Closes component and frees used resources.
 
-> close(correlation_id: str)
+> close(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 ### Examples
 ```python

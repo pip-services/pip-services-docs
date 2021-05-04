@@ -12,9 +12,9 @@ description: >
 ### Constructors
 Creates an error instance and assigns its values.
 
-> FileException(correlation_id: str = None, code: str = None, message: str = None)
+> FileException(correlation_id: Optional[str] = None, code: str = None, message: str = None)
 
-- **correlation_id**: str - (optional) a unique transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
 - **code**: str - (optional) a unique error code. Default: "UNKNOWN"
 - **message**: str - (optional) a human-readable description of the error.
 

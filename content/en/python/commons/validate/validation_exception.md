@@ -39,9 +39,9 @@ Composes human readable error message based on validation results.
 Creates a new ValidationException based on errors in validation results.
 If validation results have no errors, than null is returned.
 
-> `static` from_results(correlation_id: str, results: List[[ValidationResult](../validation_result)], strict: bool)
+> `static` from_results(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **results**: List[[ValidationResult](../validation_result)] -  list of validation results that may contain errors
 - **strict**: bool - true to treat warnings as errors.
 - **returns**: [ValidationException]() - a newly created ValidationException or null if no errors in found.
@@ -50,9 +50,9 @@ If validation results have no errors, than null is returned.
 Throws ValidationException based on errors in validation results.
 If validation results have no errors, than no exception is thrown.
 
-> `static` throw_exception_if_needed(correlation_id: str, results: List[[ValidationResult](../validation_result)], strict: bool)
+> `static` throw_exception_if_needed(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **results**: List[[ValidationResult](../validation_result)] - list of validation results that may contain errors
 - **strict**: bool - true to treat warnings as errors.
 

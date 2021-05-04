@@ -35,9 +35,9 @@ Closes the timer.
 This is required by [ICloseable](../icloseable) interface,
 but besides that it is identical to [stop()](#stop).
 
-> close(correlation_id: str)
+> close(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 #### get_callback
 Gets the callback function that is called when this timer is triggered.

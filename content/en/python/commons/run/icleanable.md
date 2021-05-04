@@ -17,9 +17,9 @@ The ICleanable interface allows you to create components with a method to clean 
 #### clear
 Clears component state.
 
-> clear(correlation_id: str)
+> clear(correlation_id: Optional[str])
 
-- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
 ### Examples
 ```python

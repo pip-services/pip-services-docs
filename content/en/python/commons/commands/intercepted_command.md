@@ -47,9 +47,9 @@ about the interceptor that is being used and the next command in the chain.
 Executes the next command in the execution chain using the given [parameters](../../run/parameters) (arguments).  
 See [Parameters](../../run/parameters)
 
-> execute(correlation_id: str, args: [Parameters](../../run/parameters)): Any
+> execute(correlation_id: Optional[str], args: [Parameters](../../run/parameters)): Any
 
-- **correlation_id**: str - unique transaction id to trace calls across components.
+- **correlation_id**: Optional[str] - unique transaction id to trace calls across components.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
 - **returns**: Any - the execution result
 

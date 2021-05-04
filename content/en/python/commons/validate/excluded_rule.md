@@ -26,7 +26,7 @@ Creates a new validation rule and sets its values
 Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
-> validate(path: str, schema: [Schema](../schema), value: any, results: List[[ValidationResult](../validation_result)]) 
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)]) 
 
 - **path**: str - the dot notation path to the value that is to be validated.
 - **schema**: [Schema](../schema) - (not used in this implementation).

@@ -185,9 +185,9 @@ Merges two or more Parameters into one. The following Parameters override
 previously defined parameters.
 See [AnyValueMap.fromMaps](../../data/any_value_map/#frommaps)
 
-> `static` merge_params(*parameters: [Parameters](../parameters)[]): [Parameters](../parameters) 
+> `static` merge_params(*parameters: [Parameters](../parameters)): [Parameters](../parameters) 
 
-- **parameters**: [Parameters](../parameters)[] - a list of Parameters objects to be merged.
+- **parameters**: [Parameters](../parameters) - a list of Parameters objects to be merged.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 

@@ -59,7 +59,7 @@ The result has format *name[,library]*
 
 > to_string(): str
 
-- **returns**: string - a string representation of the object.
+- **returns**: str - a string representation of the object.
 
 ### Static methods
 

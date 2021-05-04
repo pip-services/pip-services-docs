@@ -64,7 +64,7 @@ to chain additional calls.
 Gets validation schemas for object properties.
 See [PropertySchema](../property_schema)
 
-> get_properties(): [PropertySchema](../property_schema)[]
+> get_properties(): List[[PropertySchema](../property_schema)]
 
 - **returns**: List[[PropertySchema](../property_schema)] - the list of property validation schemas.
 
@@ -72,7 +72,7 @@ See [PropertySchema](../property_schema)
 #### perform_validation
 Validates a given value against the schema and configured validation rules.
 
-> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)]): void
+> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)])
 
 - **path**: str - a dot notation path to the value.
 - **value**: Any - a value to be validated.

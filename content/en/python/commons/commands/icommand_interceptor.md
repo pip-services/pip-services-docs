@@ -22,7 +22,7 @@ Otherwise it shall just delegate the call to the wrapped command.
 > get_name(command: [ICommand](../icommand)): str
 
 - **command**: [ICommand](../icommand) - the next command in the call chain.
-- **returns**: string - the name of the wrapped command.
+- **returns**: str - the name of the wrapped command.
 
 #### execute
 Executes the wrapped command with specified arguments.
@@ -32,7 +32,7 @@ Otherwise it shall just delete the call to the wrapped command.
 
 > execute(correlation_id: str, command: [ICommand](../icommand), args: [Parameters](../../run/parameters)): Any
 
-- **correlation_id**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 - **command**: [ICommand](../icommand) - the next command in the call chain that is to be executed.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
 - **returns**: Any - the execution result

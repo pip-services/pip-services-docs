@@ -22,7 +22,7 @@ Important points
 #### set_references
 Sets references to dependent components.
 
-> setReferences(references: [IReferences](../ireferences)): void
+> set_references(references: [IReferences](../ireferences))
 
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 

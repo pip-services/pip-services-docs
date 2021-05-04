@@ -18,7 +18,7 @@ Gets the command name.
 
 > get_name(): str
 
-- **returns**: string - the command name.
+- **returns**: str - the command name.
 
 #### validate
 Validates command arguments before execution using defined schema.

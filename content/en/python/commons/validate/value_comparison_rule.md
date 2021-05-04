@@ -12,34 +12,33 @@ description: >
 See also [IValidationRule](../ivalidation_rule)
 
 **Example:**
-```typescript
-let schema = new Schema()
-    .withRule(new ValueComparisonRule("EQ", 1));
-  
-schema.validate(1);          // Result: no errors
-schema.validate(2);          // Result: 2 is not equal to 1
+```python
+schema = Schema().with_rule(ValueComparisonRule("EQ", 1))
+
+schema.validate(1)          # Result: no errors
+schema.validate(2)          # Result: 2 is not equal to 1
 
 ```
 
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> `public` constructor(operation: string, value: any): [ValueComparisonRule]()
+> ValueComparisonRule(operation: Any, value: str)
 
-- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: any - a constant value to compare to
+- **operation**: Any - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: str - a constant value to compare to
 
 ### Methods
 
 #### validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
+- **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
 ### See also

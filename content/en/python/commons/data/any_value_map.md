@@ -40,7 +40,7 @@ Creates a new instance of the map and assigns its value.
 #### append
 Appends new elements to this map.
 
-> append(map: Any): void
+> append(map: Any)
 
 - **map**: Any - a map with elements to be added.
 
@@ -164,7 +164,7 @@ Converts map element into a float or returns 0 if conversion is not possible.
 Converts map element into a flot or returns default value if conversion is not possible.  
 See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default)
 
-> `public` get_as_float_with_default(key: str, default_value: float): float
+> get_as_float_with_default(key: str, default_value: float): float
 
 - **key**: str - a key of element to get.
 - **default_value**: float - the default value
@@ -278,7 +278,7 @@ See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_null
 Converts map element into a float or returns null if conversion is not possible. 
 See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
 
-> get_as_nullable_float(key: string): Optional[float]
+> get_as_nullable_float(key: str): Optional[float]
 
 - **key**: str - a key of element to get.
 - **returns**: Optional[float] - float value of the element or null if conversion is not supported. 
@@ -381,7 +381,7 @@ Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value.    
 See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default)
 
-> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: string, default_value: T): T
+> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: T): T
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.

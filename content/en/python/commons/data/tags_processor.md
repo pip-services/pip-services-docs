@@ -63,7 +63,7 @@ Extracts hash tags from a text.
 #### extract_hash_tags_from_value
 Extracts hash tags from selected fields in an object.
 
-> `static` extract_hash_tags_from_value(obj: Any, *search_fields: string[]): List[str]
+> `static` extract_hash_tags_from_value(obj: Any, *search_fields: str): List[str]
 
 - **obj**: Any - an object which contains hash tags.
 - **search_fields**: str - a list of fields in the objects where to extract tags

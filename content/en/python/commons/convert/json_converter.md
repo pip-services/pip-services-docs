@@ -24,7 +24,7 @@ Converts JSON string into a value of type specified by a TypeCode.
 #### to_json
 Converts value into JSON string.
 
-> `static` to_json(value: any): Optional[str]
+> `static` to_json(value: Any): Optional[str]
 
 - **value**: Any - the value to convert.
 - **returns**: str - JSON string or null when value is null.

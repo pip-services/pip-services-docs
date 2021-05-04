@@ -83,7 +83,7 @@ See [TypeConverter.to_type](../../convert/type_converter/#to_type), [TypeConvert
 #### get
 Gets an array element specified by its index.
 
-> `public` get(index: int): Any
+> get(index: int): Any
 
 - **index**: int - an index of the element to get.
 - **returns**: Any - the value of the array element.
@@ -101,7 +101,7 @@ Converts array element into an AnyValueArray or returns empty AnyValueArray if c
 #### get_as_array_with_default
 Converts array element into an AnyValueArray or returns default value if conversion is not possible.
 
-> `public` get_as_array_with_default(index: int, default_value: [AnyValueArray](../any_value_array)): [AnyValueArray](../any_value_array)
+> get_as_array_with_default(index: int, default_value: [AnyValueArray](../any_value_array)): [AnyValueArray](../any_value_array)
 
 - **index**: int - an index of element to get.
 - **default_value**: [AnyValueArray](../any_value_array) - the default value
@@ -444,7 +444,7 @@ When the index is not defined, it resets the entire array value.
 This method has double purpose because method overrides are not supported in JavaScript.  
 See [ArrayConverter.to_array](../../convert/array_converter/#to_array)
 
-> `public` setAsObject(index: int, value: Any = None)
+> set_as_object(index: int, value: Any = None)
 
 - **index**: int - (optional) an index of the element to set
 - **value**: Any - a new element or array value.

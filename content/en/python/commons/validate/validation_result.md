@@ -55,23 +55,23 @@ Gets the human readable message.
 - **returns**: str - the result message.
 
 
-#### getPath
+#### get_path
 Gets dot notation path of the validated element.
 
-> `public` getPath(): string
+> get_path(): str
 
-- **returns**: string - the path of the validated element.
+- **returns**: str - the path of the validated element.
 
 
-#### getType
+#### get_type
 Gets dot notation path of the validated element.
 
-> `public` getType(): [ValidationResultType](../validation_result_type)
+> get_type(): [ValidationResultType](../validation_result_type)
 
 - **returns**: [ValidationResultType](../validation_result_type) - the type of the validation result.
 
 
-#### toJSON
+#### to_json
 TODO: add description here
 
-> `public` toJSON(): object
+> to_json(): object

@@ -16,7 +16,7 @@ The Notifier class is a helper class that can be use to notify one or more compo
 #### notify
 Sets execution parameters.
 
-> `static` notify(correlation_id: str, components: List[Any], args: [Parameters](../parameters)): void
+> `static` notify(correlation_id: str, components: List[Any], args: [Parameters](../parameters))
 
 - **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 - **components**: List[Any] - a list of components that are to be notified.

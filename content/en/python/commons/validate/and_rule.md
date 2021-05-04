@@ -21,21 +21,21 @@ Important points
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> `public` constructor(...rules: [IValidationRule](../ivalidation_rule)[]): [AndRule]()
+> AndRule(*rules: [IValidationRule](../ivalidation_rule))
 
-- **rules**: [IValidationRule](../ivalidation_rule)[] - a list of rules to join with AND operator
+- **rules**: [IValidationRule](../ivalidation_rule) - a list of rules to join with AND operator
 
 ### Instance methods
 
 #### validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
+- **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
 

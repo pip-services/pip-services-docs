@@ -144,7 +144,7 @@ Sets a unique error code.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> `public` with_code(code: str): [ApplicationException]()
+> with_code(code: str): [ApplicationException]()
 
 - **code**: str - a unique error code
 - **returns**: [ApplicationException]() - this exception object

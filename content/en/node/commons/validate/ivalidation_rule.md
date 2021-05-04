@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "IncludedRule"
-linkTitle: "IncludedRule"
+title: "IValidationRule"
+linkTitle: "IValidationRule"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface for validation rules.

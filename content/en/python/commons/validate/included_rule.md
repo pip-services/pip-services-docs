@@ -25,7 +25,7 @@ Creates a new validation rule and sets its values.
 #### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
 - **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from

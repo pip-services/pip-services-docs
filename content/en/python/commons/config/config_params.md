@@ -49,7 +49,7 @@ Keys for the new parameters are appended with section dot prefix.
 Gets parameters from specific section stored in this ConfigMap.
 The section name is removed from parameter keys.
 
-> `public` getSection(section: str): [ConfigParams]()
+> get_section(section: str): [ConfigParams]()
 
 - **section**: str - name of the section to retrieve configuration parameters from.
 - **returns**: [ConfigParams]() - all configuration parameters that belong to the section named 'section'. 

@@ -38,7 +38,7 @@ A human-readable error description (usually written in English)
 
 #### details
 A map with additional details that can be used to restore error description in other languages 
-> details: any
+> details: Any
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain    

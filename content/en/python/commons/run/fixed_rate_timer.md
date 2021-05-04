@@ -37,7 +37,7 @@ but besides that it is identical to [stop()](#stop).
 
 > close(correlation_id: str)
 
-- **correlation_id**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 
 #### get_callback
 Gets the callback function that is called when this timer is triggered.
@@ -80,7 +80,7 @@ Sets a new INotifiable object to receive notifications from this timer.
 #### is_started
 Checks if the timer is started.
 
-> `public` is_started(): bool
+> is_started(): bool
 
 - **returns**: bool - true if the timer is started and false if it is stopped.
 

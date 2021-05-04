@@ -67,7 +67,7 @@ When direct comparison gives negative results it converts
 values to type specified by type code and compare them again.    
 See [TypeConverter.to_type](../../convert/type_converter/#to_type)
 
-> equals_as_type(value_type: [TypeCode](../../convert/type_code), obj: any): bool
+> equals_as_type(value_type: [TypeCode](../../convert/type_code), obj: Any): bool
 
 - **type**: [TypeCode](../../convert/type_code) - the value to be compared with.
 - **obj**: Any - the args to be compared with.

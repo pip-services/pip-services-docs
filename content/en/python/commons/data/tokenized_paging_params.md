@@ -47,15 +47,15 @@ Creates a new instance and sets its values.
 
 #### token
 The start token
-> `public` **token**: str
+> **token**: str
 
 #### take
 The number of items to return.
-> `public` **take**: int
+> **take**: int
 
 #### total
 The flag to return the total number of items.
-> `public` **total**: boolean
+> **total**: boolean
 
 </span>
 

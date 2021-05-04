@@ -85,29 +85,29 @@ Throws a [ReferenceException](../reference_exception) when no references found.
 #### put
 Puts a new reference into this reference map.
 
-> put(locator: any, component: any): void
+> put(locator: Any, component: Any)
 
-- **locator**: any - a locator to find the reference by.
-- **component**: any - a component reference to be added.
+- **locator**: Any - a locator to find the reference by.
+- **component**: Any - a component reference to be added.
 
 #### remove
 Removes a previously added reference that matches specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
-> remove(locator: any): any
+> remove(locator: Any): Any
 
-- **locator**: any - a locator to remove reference
-- **returns**: any - the removed component reference.
+- **locator**: Any - a locator to remove reference
+- **returns**: Any - the removed component reference.
 
 
 #### remove
 Removes all component references that match the specified locator. 
 
-> removeAll(locator: any): any[]
+> removeAll(locator: Any): List[Any]
 
-- **locator**: any - the locator to remove references by.
-- **returns**: any[] - a list, containing all removed references.
+- **locator**: Any - the locator to remove references by.
+- **returns**: List[Any] - a list, containing all removed references.
 
 ### Examples
 

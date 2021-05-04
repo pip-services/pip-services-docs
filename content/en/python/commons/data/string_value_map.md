@@ -108,7 +108,7 @@ Converts map element into a boolean or returns false if conversion is not possib
 Converts map element into a boolean or returns default value if conversion is not possible.  
 See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_with_default)
 
-> `public` get_as_boolean_with_default(key: str, default_value: bool): bool
+> get_as_boolean_with_default(key: str, default_value: bool): bool
 
 - **key**: str - a key of element to get.
 - **default_value**: bool - the default value
@@ -259,7 +259,7 @@ See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boo
 Converts map element into a Date or returns null if conversion is not possible.  
 See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable_datetime)
 
-> get_as_nullable_datetime(key: string): Optional[datetime]
+> get_as_nullable_datetime(key: str): Optional[datetime]
 
 - **key**: str - a key of element to get.
 - **returns**: Optional[datetime] - Date value of the element or null if conversion is not supported. 
@@ -329,7 +329,7 @@ Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns null.    
 See [TypeConverter.to_nullable_type](../type_converter/#to_nullable_type)
 
-> `public` get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), key: str): Optional[T]
+> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), key: str): Optional[T]
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.
@@ -369,7 +369,7 @@ Converts map element into a string or returns "" if conversion is not possible.
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.
 
-> `public` get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): T
+> get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): T
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.

@@ -77,7 +77,7 @@ When type is a Schema, it executes validation recursively against that Schema.
 #### perform_validation
 Validates a given value against the schema and configured validation rules.
 
-> _perform_validation(path: string, value: any, results: List[[ValidationResult](../validation_result)])
+> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)])
 
 - **path**: str - a dot notation path to the value.
 - **value**: Any - a value to be validated.
@@ -113,8 +113,8 @@ Validates the given value and returns a [ValidationException](../validation_exce
 
 > validate_and_return_exception(correlation_id: str, value: Any, strict: bool = False): [ValidationException](../validation_exception)
 
-- **correlation_id**: string - (optional) transaction id to trace execution through call chain.
-- **value**: any -  a value to be validated.
+- **correlation_id**: str - (optional) transaction id to trace execution through call chain.
+- **value**: Any -  a value to be validated.
 - **strict**: boolean = false - true to treat warnings as errors.
 - **returns**: [ValidationException](../validation_exception) - TODO add description here
 
@@ -122,7 +122,7 @@ Validates the given value and returns a [ValidationException](../validation_exce
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
 See [ValidationException.throw_exception_if_needed](../validation_exception/#throw_exception_if_needed)
 
-> validate_and_throw_exception(correlation_id: string, value: any, strict: boolean = false)
+> validate_and_throw_exception(correlation_id: str, value: Any, strict: boolean = false)
 
 - **correlation_id**: str - (optional) transaction id to trace execution through call chain.
 - **value**: Any - a value to be validated.

@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
 
-    The Reflect library contains classes that can be used to examine the properties and methods and type of a class. In addition, it can be used to dynamically set the values of a property and create objects of a specific type.
+    The Reflect library contains classes that can be used to examine the properties, methods and type of a class. In addition, it can be used to dynamically set the values of a property and create objects of a specific type.
 
 ---
 ---

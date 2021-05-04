@@ -9,7 +9,9 @@ description: >
 
 **Implements:** [MapSchema](../map_schema)
 
-See also [FilterParams](../../data/filter_params)
+### Description
+
+The FilterParamsSchema class allows you to create a schema to validate [FilterParams](../../data/filter_params).
 
 ### Constructors
 Creates a new instance of validation schema.

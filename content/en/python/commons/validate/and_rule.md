@@ -4,7 +4,7 @@ title: "AndRule"
 linkTitle: "AndRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule that allows you to check rules created with combinations of rules with AND logical operations.
+    Validation rule that allows you to check combinations of rules with AND logical operations.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)

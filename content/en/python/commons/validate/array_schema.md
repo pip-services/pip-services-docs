@@ -9,15 +9,9 @@ description: >
 
 **Implements:** [Schema](../schema)
 
-**Example:** 
-```python
-schema = ArraySchema(TypeCode.String)
+### Description
 
-schema.validate(["A", "B", "C"])    # Result: no errors
-schema.validate([1, 2, 3])          # Result: element type mismatch
-schema.validate("A")                # Result: type mismatch    
-
-```
+The ArraySchema class allows you to validate arrays based on a specified validation rule.
 
 ### Constructors
 Creates a new validation rule and sets its values.
@@ -29,7 +23,7 @@ See [TypeCode](../convert/type_code)
 - **required**: bool - (optional) true to always require non-null values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
-### Methods
+### Instance methods
 
 #### get_value_type
 Gets the type of array elements.
@@ -57,3 +51,13 @@ Null means that elements may have any type.
 > set_value_type(value: Any)
 
 - **value**: Any - a type of array elements.
+
+### Examples 
+```python
+schema = ArraySchema(TypeCode.String)
+
+schema.validate(["A", "B", "C"])    # Result: no errors
+schema.validate([1, 2, 3])          # Result: element type mismatch
+schema.validate("A")                # Result: type mismatch    
+
+```

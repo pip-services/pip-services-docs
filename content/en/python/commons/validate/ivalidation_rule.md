@@ -5,13 +5,7 @@ linkTitle: "IValidationRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Interface used to implement custom validation rules.
- 
-    Validation rule can validate one or multiple values
-    against complex rules like: value is in range,
-    one property is less than another property,
-    enforce enumerated values and more.
 
-    This interface allows to implement custom rules.
 ---
 
 ### Description

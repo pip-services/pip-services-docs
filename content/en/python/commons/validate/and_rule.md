@@ -16,7 +16,7 @@ The AndRule class allows you to validate combinations of rules created with AND 
 Important points
 
 -  When one or more of the combined rules return errors, then this rule returns all the errors that appeared.
--  When no combined rule returns errors, then this rule also returns no errors.
+-  When none of the combined rules returns errors, then this rule also returns no errors.
 
 ### Constructors
 Creates a new validation rule and sets its values.

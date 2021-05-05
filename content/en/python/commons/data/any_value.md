@@ -4,26 +4,15 @@ title: "AnyValue"
 linkTitle: "AnyValue"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Cross-language implementation of dynamic object what can hold value of any type.
-    The stored value can be converted to different types using variety of accessor methods.
+    Cross-language implementation of a dynamic object that can hold a value of any type.
+    It also provides methods to convert the stored value to different types.
 ---
 
 **Implements:** [ICloneable](../icloneable)
 
-See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
-[BooleanConverter](../../convert/boolean_converter), [IntegerConverter](../../convert/integer_converter),
-[LongConverter](../../convert/long_converter), [DoubleConverter](../../convert/double_converter),
-[FloatConverter](../../convert/float_converter), [DateTimeConverter](../../convert/date_time_converter),
-[ICloneable](../icloneable)
+### Description
 
-**Example:**
-```python
-value1 = AnyValue("123.456")
-
-value1.get_as_integer()   # Result: 123
-value1.get_as_string()    # Result: "123.456"
-value1.get_as_float()     # Result: 123.456
-```
+The AnyValue class provides a cross-language implementation of a dynamic object that can hold a value of any type. In addition, it provides methods to convert the stored value to different types, such as string or integer.
 
 ### Constructors
 Creates a new instance of the object and assigns its value.
@@ -42,7 +31,7 @@ The value stored by this object.
 
 </span>
 
-### Methods
+### Instance methods
 
 #### clone
 Creates a binary clone of this object.
@@ -342,6 +331,15 @@ See [StringConverter.toString](../../convert/string_converter/#tostring)
 
 - **returns**: Any - a string representation of the object.
 
+### Examples
+
+```python
+value1 = AnyValue("123.456")
+
+value1.get_as_integer()   # Result: 123
+value1.get_as_string()    # Result: "123.456"
+value1.get_as_float()     # Result: 123.456
+```
 
 ### See also
 - #### [StringConverter](../../convert/string_converter)

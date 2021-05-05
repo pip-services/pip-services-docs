@@ -4,7 +4,7 @@ title: "AnyValueMap"
 linkTitle: "AnyValueMap"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Cross-language implementation of dynamic map (dictionary) object that can hold values of any type.
+    Cross-language implementation of a dynamic map (dictionary) object that can hold values of any type.
     It also provides several methods to convert the stored values to different types.
 ---
 

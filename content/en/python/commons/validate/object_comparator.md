@@ -4,20 +4,14 @@ title: "ObjectComparator"
 linkTitle: "ObjectComparator"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule negate another rule.
-    When embedded rule returns no errors, than this rule return an error.
-    When embedded rule return errors, than the rule returns no errors.
+    Comparator over two values of any type.
 ---
 
-**Example:**
-```python
-ObjectComparator.compare(2, "GT", 1)        # Result: true
-ObjectComparator.are_equal("A", "B")         # Result: false
+### Description
 
-```
+The ObjectComparator class allows you to perform a a comparison over two values of any type.
 
-
-### Methods
+### Static methods
 
 #### are_equal
 Checks if two values are equal.
@@ -78,3 +72,10 @@ Checks if string matches a regular expression
 - **value**: Any - a string value to match
 - **regexp**: Any - a regular expression string
 - **returns**: bool - true if the value matches regular expression and false otherwise.
+
+### Examples
+```python
+ObjectComparator.compare(2, "GT", 1)        # Result: true
+ObjectComparator.are_equal("A", "B")         # Result: false
+
+```

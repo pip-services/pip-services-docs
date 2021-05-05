@@ -4,27 +4,15 @@ title: "AnyValueArray"
 linkTitle: "AnyValueArray"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Cross-language implementation of dynamic object array what can hold values of any type.
-    The stored values can be converted to different types using variety of accessor methods.
+    Cross-language implementation of a dynamic array object array that can hold values of any type.
+    It also provides methods to convert the stored values to different types.
 ---
 
 **Implements:** [ICloneable](../icloneable), list
 
-See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
-[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
-[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
-[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
-[DateTimeConverter](../../v/date_time_converter), [ICloneable](../icloneable)
+### Description
 
-**Example:** 
-```python
-value1 = AnyValueArray([1, "123.456", "2018-01-01"])
-
-value1.get_as_boolean(0)   # Result: true
-value1.get_as_integer(1)   # Result: 123
-value1.get_as_float(1)     # Result: 123.456
-value1.get_as_datetime(2)  # Result: datetime.datetime(2018,0,1)
-```
+The AnyValueArray class provides a cross-language implementation of a dynamic array object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types, such as boolean, integer or datetime.
 
 ### Constructors
 Creates a new instance of the array and assigns its value.
@@ -34,7 +22,7 @@ Creates a new instance of the array and assigns its value.
 - **values**:  Sequence[Any] - (optional) values to initialize this array.
 
 
-### Methods
+### Instance methods
 
 #### appends
 Appends new elements to this array.
@@ -502,6 +490,16 @@ See [StringConverter.to_string](../../convert/string_converter/#to_string)
 > to_string(): str
 
 - **returns**: str - a string representation of the object.
+
+### Examples
+```python
+value1 = AnyValueArray([1, "123.456", "2018-01-01"])
+
+value1.get_as_boolean(0)   # Result: true
+value1.get_as_integer(1)   # Result: 123
+value1.get_as_float(1)     # Result: 123.456
+value1.get_as_datetime(2)  # Result: datetime.datetime(2018,0,1)
+```
 
 
 ### See also

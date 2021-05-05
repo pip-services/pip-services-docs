@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     
-    The Run library contains a set of interfaces and classes for the standard lifecycle of objects (opened, 
+    The Run package contains a set of interfaces and classes for the standard lifecycle of objects (opened, 
     closed, openable, closable, runnable). In addition, it has several helper classes for lifecycle management.  
 ---
 ---

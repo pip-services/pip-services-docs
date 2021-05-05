@@ -6,13 +6,19 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Errors in schema validation.
 
-    Validation errors are usually generated based in [ValidationResult](../validation_result).
-    If using strict mode, warnings will also raise validation exceptions.
+    
 ---
 
 **Implements:** [BadRequestException](../../errors/bad_request_exception)
 
-See also [BadRequestException](../../errors/bad_request_exception), [ValidationResult](../validation_result)
+### Description
+
+The ValidationException is used to define errors in schema validation.
+
+Important points
+
+- Validation errors are usually generated based in [ValidationResult](../validation_result).
+- If using strict mode, warnings will also raise validation exceptions.
 
 ### Constructors
 Creates a new instance of validation exception and assigns its values.  
@@ -24,7 +30,7 @@ Creates a new instance of validation exception and assigns its values.
 - **results**:  List[[ValidationResult](../validation_result)] - (optional) a list of validation results
 
 
-### Methods
+### Static methods
 
 #### compose_message
 Composes human readable error message based on validation results.  
@@ -37,7 +43,7 @@ Composes human readable error message based on validation results.
 
 #### from_results
 Creates a new ValidationException based on errors in validation results.
-If validation results have no errors, than null is returned.
+If validation results have no errors, then null is returned.
 
 > `static` from_results(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
 
@@ -48,7 +54,7 @@ If validation results have no errors, than null is returned.
 
 #### throw_exception_if_needed
 Throws ValidationException based on errors in validation results.
-If validation results have no errors, than no exception is thrown.
+If validation results have no errors, then no exception is thrown.
 
 > `static` throw_exception_if_needed(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
 

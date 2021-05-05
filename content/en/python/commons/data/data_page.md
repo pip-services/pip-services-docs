@@ -18,7 +18,7 @@ Important points
 - Pagination parameters are defined by a [PagingParams](../paging_params) object.
 - The *skip* parameter in the PagingParams indicates how many items to skip.
 - The *takes* parameter sets number of items to return in the page.
-- An optional *total* paramter allows you to specify the total number of items in a request. However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.   
+- An optional *total* paramter allows you to specify the total number of items returned from a request. However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.   
 
 ### Constructors
 Creates a new instance of data page and assigns its values.

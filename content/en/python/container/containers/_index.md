@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Core"
-linkTitle: "Core"
+title: "Containers"
+linkTitle: "Containers"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >

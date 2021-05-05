@@ -9,16 +9,9 @@ description: >
 
 **Implements:** [IValidationRule](../ivalidation_rule)
 
-See also [IValidationRule](../ivalidation_rule)
+### Description
 
-**Example:**
-```python
-schema = Schema().with_rule(ValueComparisonRule("EQ", 1))
-
-schema.validate(1)          # Result: no errors
-schema.validate(2)          # Result: 2 is not equal to 1
-
-```
+The ValueComparisonRule class allows you to create a validation rule that compares a value to a constant.
 
 ### Constructors
 Creates a new validation rule and sets its values.
@@ -40,6 +33,13 @@ Validates a given value against this rule.
 - **value**: Any - a value to be validated.
 - **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
+### Examples
+```python
+schema = Schema().with_rule(ValueComparisonRule("EQ", 1))
+
+schema.validate(1)          # Result: no errors
+schema.validate(2)          # Result: 2 is not equal to 1
+```
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

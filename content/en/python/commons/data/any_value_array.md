@@ -4,7 +4,7 @@ title: "AnyValueArray"
 linkTitle: "AnyValueArray"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Cross-language implementation of a dynamic array object array that can hold values of any type.
+    Cross-language implementation of a dynamic array object that can hold values of any type.
     It also provides methods to convert the stored values to different types.
 ---
 

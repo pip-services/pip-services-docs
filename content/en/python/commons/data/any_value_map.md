@@ -4,28 +4,15 @@ title: "AnyValueMap"
 linkTitle: "AnyValueMap"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Cross-language implementation of dynamic object map (dictionary) what can hold values of any type.
-    The stored values can be converted to different types using variety of accessor methods.
+    Cross-language implementation of dynamic map (dictionary) object that can hold values of any type.
+    It also provides several methods to convert the stored values to different types.
 ---
 
 **Implements:** [ICloneable](../icloneable), dict
 
-See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
-[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
-[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
-[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
-[DateTimeConverter](../../convert/date_time_converter), [ICloneable](../icloneable)
+### Description
 
-**Example:**
-```python
-value1 = new AnyValueMap({ key1: 1, key2: "123.456", key3: "2018-01-01" })
-
-value1.get_as_boolean("key1")   # Result: true
-value1.get_as_integer("key2")   # Result: 123
-value1.get_as_float("key2")     # Result: 123.456
-value1.get_as_datetime("key3")  # Result: new Date(2018,0,1)
-
-```
+The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types, such as boolean, integer or datetime.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
@@ -492,7 +479,15 @@ Converts specified value into AnyValueMap.
 - **value**: Any - value to be converted
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueMap.
 
+### Examples
+```python
+value1 = new AnyValueMap({ key1: 1, key2: "123.456", key3: "2018-01-01" })
 
+value1.get_as_boolean("key1")   # Result: true
+value1.get_as_integer("key2")   # Result: 123
+value1.get_as_float("key2")     # Result: 123.456
+value1.get_as_datetime("key3")  # Result: new Date(2018,0,1)
+```
 
 ### See also
 - #### [StringConverter](../../convert/string_converter)

@@ -4,16 +4,17 @@ title: "IIdentifiable"
 linkTitle: "IIdentifiable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Generic interface for data objects that can be uniquely identified by an id.
+    Interface used to create data objects that can be uniquely idendified by an ID.
 
-    The type specified in the interface defines the type of id field.
 ---
 
-**Example:**
-```python
-class MyData(IIdentifiable):
-    id = None
-```
+### Description
+
+The IIdentifiable interface is used to create data objects that can be uniquely idendified by an ID.
+
+Important points
+
+- The type specified in the interface defines the type of the ID field.
 
 ### Fields
 
@@ -22,5 +23,11 @@ class MyData(IIdentifiable):
 #### id
 The unique object identifier of type K.
 > **id**: K
+
+### Examples
+```python
+class MyData(IIdentifiable):
+    id = None
+```
 
 </span>

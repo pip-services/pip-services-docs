@@ -4,7 +4,7 @@ title: "RecursiveObjectReader"
 linkTitle: "RecursiveObjectReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them.
+    Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them recursively using "dot" notation (e.g property.property.method).
 
 ---
 

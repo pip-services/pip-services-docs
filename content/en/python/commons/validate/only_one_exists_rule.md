@@ -4,7 +4,7 @@ title: "OnlyOneExistsRule"
 linkTitle: "OnlyOneExistsRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule that check that at exactly one of the object properties exists.
+    Validation rule that checks that only one property of a list of properties exists in an object.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)

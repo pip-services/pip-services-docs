@@ -59,7 +59,7 @@ Validation rule to check that value is included into the list of constants.
 Schema to validate maps.
 
 #### [NotRule](not_rule)
-Schema to validate maps.
+Validation rule used to negate another rule.
 
 #### [ObjectComparator](object_comparator)
 Helper class to perform comparison operations over arbitrary values.
@@ -68,12 +68,10 @@ Helper class to perform comparison operations over arbitrary values.
 Schema to validate user defined objects.
 
 #### [OnlyOneExistsRule](only_one_exists_rule)
-Validation rule that check that at exactly one of the object properties is not null.
+Validation rule that checks that at exactly one of the object properties is not null.
 
 #### [OrRule](or_rule)
 Validation rule to combine rules with OR logical operation.
-When one of rules returns no errors, than this rule also returns no errors.
-When all rules return errors, than the rule returns all errors.
 
 #### [PagingParamsSchema](paging_params_schema)
 Schema to validate [PagingParams](../data/paging_params).

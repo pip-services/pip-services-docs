@@ -4,26 +4,15 @@ title: "FilterParams"
 linkTitle: "FilterParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Data transfer object used to pass filter parameters as simple key-value pairs.
+    Data transfer object used to pass filter parameters as key-value pairs.
 ---
 
 **Implements:** [StringValueMap](../string_value_map)
 
-See also [StringValueMap](../string_value_map)
+### Description
 
+The FilterParams class allows you to create a data transfer object that can be used to pass filter parameters as key-value pairs.
 
-**Example:**
-```python
-filter = FilterParams.from_tuples("type", "Type1",
-    "from_create_time", datetime.datetime(2000, 0, 1),
-    "to_create_time", datetime.datetime.now(),
-    "completed", True
-)
-
-paging = PagingParams(0, 100)
-myDataClient.get_data_by_filter(filter, paging)
-
-```
 
 ### Constructors
 Creates a new instance and initalizes it with elements from the specified map.
@@ -33,7 +22,7 @@ Creates a new instance and initalizes it with elements from the specified map.
 - **map**: Any - a map to initialize this instance.
 
 
-### Methods
+### Static methods
 
 #### from_string
 Parses semicolon-separated key-value pairs and returns them as a FilterParams.  
@@ -62,6 +51,17 @@ Converts specified value into FilterParams.
 - **value**: Any - value to be converted
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
+### Examples
+```python
+filter = FilterParams.from_tuples("type", "Type1",
+    "from_create_time", datetime.datetime(2000, 0, 1),
+    "to_create_time", datetime.datetime.now(),
+    "completed", True
+)
+
+paging = PagingParams(0, 100)
+myDataClient.get_data_by_filter(filter, paging)
+```
 
 ### See also
 - #### [StringValueMap](../string_value_map)

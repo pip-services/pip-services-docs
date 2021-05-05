@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
    
-    This library contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
+    This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
     found in typical programming language, due to the fact that they support rare conversions between 
     various data types (such as integer to timespan, timespan to string, and so on).
 

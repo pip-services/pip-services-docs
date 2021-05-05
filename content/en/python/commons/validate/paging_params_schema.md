@@ -18,4 +18,4 @@ The PagingParamsSchema class allows you to create schema to validate [PagingPara
 > PagingParamsSchema()
 
 ### See also
-- #### [PagingParams](../../data/paging_params
+- #### [PagingParams](../../data/paging_params)

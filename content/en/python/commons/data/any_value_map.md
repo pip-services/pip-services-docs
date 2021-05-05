@@ -22,7 +22,7 @@ Creates a new instance of the map and assigns its value.
 - **values**: Any = null - (optional) values to initialize this map.
 
 
-### Methods
+### Instance methods
 
 #### append
 Appends new elements to this map.

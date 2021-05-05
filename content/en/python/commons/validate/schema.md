@@ -28,7 +28,7 @@ See [IValidationRule](../ivalidation_rule)
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 
-### Methods
+### Instance methods
 
 #### get_rules
 Gets validation rules to check values against.

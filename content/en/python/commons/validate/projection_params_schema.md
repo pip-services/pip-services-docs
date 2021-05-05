@@ -9,7 +9,9 @@ description: >
 
 **Implements:** [ArraySchema](../array_schema)
 
-See also [ProjectionParams](../../data/projection_params).
+### Description
+
+The PagingParamsSchema class allows you to create a schema to validate [ProjectionParams](../../data/projection_params).
 
 ### Constructors
 

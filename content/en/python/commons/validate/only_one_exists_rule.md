@@ -4,23 +4,14 @@ title: "OnlyOneExistsRule"
 linkTitle: "OnlyOneExistsRule"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule that check that at exactly one of the object properties is not null.
+    Validation rule that check that at exactly one of the object properties exists.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
 
-See also [IValidationRule](../ivalidation_rule)
+### Description
 
-**Example:**
-
-```python
-schema = Schema().with_rule(OnlyOneExistsRule("field1", "field2"))
-
-schema.validate({ field1: 1, field2: "A" })     # Result: only one of properties field1, field2 must exist
-schema.validate({ field1: 1 })                  # Result: no errors
-schema.validate({ })                            # Result: only one of properties field1, field2 must exist
-
-```
+The OnlyOneExistsRule allows you to check that only one property of a list of properties exists in an object.
 
 ### Constructors
 Creates a new validation rule and sets its values
@@ -41,6 +32,16 @@ Validates a given value against this rule.
 - **value**: Any - a value to be validated.
 - **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
+### Examples
+
+```python
+schema = Schema().with_rule(OnlyOneExistsRule("field1", "field2"))
+
+schema.validate({ field1: 1, field2: "A" })     # Result: only one of properties field1, field2 must exist
+schema.validate({ field1: 1 })                  # Result: no errors
+schema.validate({ })                            # Result: only one of properties field1, field2 must exist
+
+```
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

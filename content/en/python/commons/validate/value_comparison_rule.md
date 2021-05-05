@@ -4,7 +4,7 @@ title: "ValueComparisonRule"
 linkTitle: "ValueComparisonRule"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-   Validation rule that compares value to a constant.
+   Validation rule that compares a value to a constant.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)

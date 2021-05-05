@@ -9,18 +9,7 @@ description: >
 
 **Extends:** [Schema](../schema)
 
-**Example:**
-```python
-schema = ObjectSchema(false)
-                    .with_optional_property("id", TypeCode.String)
-                    .with_required_property("name", TypeCode.String)
-
-schema.validate({ id: "1", name: "ABC" })  # Result: no errors
-schema.validate({ name: "ABC" })           # Result: no errors
-schema.validate({ id: 1, name: "ABC" })    # Result: id type mismatch
-schema.validate({ id: 1, __name: "ABC" })  # Result: name is missing, unexpected __name
-schema.validate("ABC")                     # Result: type mismatch
-```
+The ObjectSchema class allows you to create a validation schema that can be used to validate user defined objects.
 
 ### Constructors
 Creates a new validation schema and sets its values. 
@@ -118,3 +107,16 @@ Adds a validation schema for a required object property.
 - **name**: str - a property name.
 - **typ**: Any - (optional) a property schema or type.
 - **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
+
+### Examples
+```python
+schema = ObjectSchema(false)
+                    .with_optional_property("id", TypeCode.String)
+                    .with_required_property("name", TypeCode.String)
+
+schema.validate({ id: "1", name: "ABC" })  # Result: no errors
+schema.validate({ name: "ABC" })           # Result: no errors
+schema.validate({ id: 1, name: "ABC" })    # Result: id type mismatch
+schema.validate({ id: 1, __name: "ABC" })  # Result: name is missing, unexpected __name
+schema.validate("ABC")                     # Result: type mismatch
+```

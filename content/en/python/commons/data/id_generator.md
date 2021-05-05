@@ -4,13 +4,13 @@ title: "IdGenerator"
 linkTitle: "IdGenerator"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Helper class used to generate unique object IDs.
+    Helper class used to generate object IDs.
 
 ---
 
 ### Description
 
-The IdGenerator class allows you to generate unique IDs for objects. 
+The IdGenerator class allows you to generate IDs for objects. 
 
 Important points
 

@@ -4,13 +4,13 @@ title: "TypeDescriptor"
 linkTitle: "TypeDescriptor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    The TypeDescriptor class allows you to examine a descriptor.
+    The TypeDescriptor class stores a reference to a type represented by the type name and library (module) where the type is defined.
     
 ---
 
 ### Description
 
-The TypeDescriptor class allows you to examine a descriptor by comparing it to another descriptor. It also allows you to get a string representation of the descriptor and to transform a string into a descriptor object.
+The TypeDescriptor class stores a reference to a type represented by the type name and library (module) where the type is defined.
 
 Important points
 

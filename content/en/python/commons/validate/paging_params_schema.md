@@ -9,7 +9,9 @@ description: >
 
 **Implements:** [ObjectSchema](../object_schema)
 
-See also [PagingParams](../../data/paging_params)
+### Description
+
+The PagingParamsSchema class allows you to create schema to validate [PagingParams](../../data/paging_params).
 
 ### Constructors
 

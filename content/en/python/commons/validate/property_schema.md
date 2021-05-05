@@ -9,18 +9,9 @@ description: >
 
 **Implements:** [Schema](../schema)
 
-See also [ObjectSchema](../object_schema)
+### Description
 
-**Example:**
-
-```python
-schema = ObjectSchema().with_property(PropertySchema("id", TypeCode.String))
-
-schema.validate({ id: "1", name: "ABC" })       # Result: no errors
-schema.validate({ name: "ABC" })                # Result: no errors
-schema.validate({ id: 1, name: "ABC" })         # Result: id type mismatch
-
-```
+The PropertySchema class allows you to create schemas to validate object properties.
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
@@ -33,7 +24,7 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 - **required**: bool -  (optional) true to always require non-null values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
-### Methods
+### Instance methods
 
 #### get_name
 Gets the property name.
@@ -77,6 +68,16 @@ The type can be defined as type, type name or [TypeCode](../convert/type_code)
 
 - **value**: str - a new property type.
 
+### Examples
+
+```python
+schema = ObjectSchema().with_property(PropertySchema("id", TypeCode.String))
+
+schema.validate({ id: "1", name: "ABC" })       # Result: no errors
+schema.validate({ name: "ABC" })                # Result: no errors
+schema.validate({ id: 1, name: "ABC" })         # Result: id type mismatch
+
+```
 
 ### See also
 - #### [ObjectSchema](../object_schema)

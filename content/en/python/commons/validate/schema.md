@@ -4,14 +4,18 @@ title: "Schema"
 linkTitle: "Schema"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Basic schema that validates values against a set of validation rules.
+    Basic schema used to validate values against a set of validation rules.
 
-    This schema is used as a basis for specific schemas to validate 
-    objects, project properties, arrays and maps.
+   
 ---
 
-See also [ObjectSchema](../object_schema), [PropertySchema](../property_schema), 
-[ArraySchema](../array_schema), [MapSchema](../map_schema)
+### Description
+
+The Schema class provides a basic schema to validate values against a set of validation rules.
+
+Important points
+
+- This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
 
 ### Constructors
 Creates a new instance of validation schema and sets its values.

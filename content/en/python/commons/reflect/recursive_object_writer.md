@@ -4,13 +4,13 @@ title: "RecursiveObjectWriter"
 linkTitle: "RecursiveObjectWriter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that allows you to dynamically set the properties of an object
+    Helper class that allows you to dynamically set the properties of an object recursively using "dot" notation.
  
 ---
 
 ### Description
 
-The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object.
+The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object recursively using dot notation.
 
 Important points
 

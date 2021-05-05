@@ -17,7 +17,7 @@ The OrRule class allows you to validate combinations of rules created with OR lo
 Important points
 
 - When one of the combined rules returns no errors, then this rule also returns no errors.
-- When all combined rules return errors, then this rule returns all errors.
+- When all combined rules return errors, then this rule returns all the errors.
 
 ### Constructors
 Creates a new validation rule and sets its values.

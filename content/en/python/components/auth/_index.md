@@ -1,5 +1,57 @@
 ---
 type: docs
 title: "Auth"
-linkTitle: "Auth" 
+linkTitle: "Auth"
+no_list: true
+gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
+description: >
+    Todo: Rewrite the description.
+
+
+    Contains credentials implementation. 
+
+
+    Credentials – passwords, logins, application keys, secrets. This information is usually linked 
+    with connection parameters. Connection parameters separate from authentication, because auth. 
+    is saved as a secret, and stored separately from configuration parameters (host name, ip 
+    addresses). They need added security and protection, so they were separated. 
+
+
+    Credential parameters include various credentials. 
+
+
+    Interfaces and abstract classes for credential stores, which can save or retrieve various 
+    credential parameters.  
+
 ---
+---
+
+<div class="module-body"> 
+
+### Interfaces
+
+#### [ICredentialStore](icredential_store)
+Interface for credential stores which are used to store and lookup credentials
+to authenticate against external services.
+
+### Classes
+
+#### [CredentialParams](credential_params)
+Contains credentials to authenticate against external services.
+They are used together with connection parameters, but usually stored
+in a separate store, protected from unauthorized access.
+
+#### [CredentialResolver](credential_resolver)
+Helper class to retrieve component credentials.
+
+If credentials are configured to be retrieved from [ICredentialStore](icredential_store),
+it automatically locates [ICredentialStore](icredential_store) in component references
+and retrieve credentials from there using store_key parameter.
+
+#### [DefaultCredentialStoreFactory](default_credential_store_factory)
+Creates [ICredentialStore](icredential_store) components by their descriptors.
+
+#### [MemoryCredentialStore](memory_credential_store)
+Credential store that keeps credentials in memory.
+
+</div>

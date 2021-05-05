@@ -4,10 +4,24 @@ title: "ICloneable"
 linkTitle: "ICloneable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Interface for data objects that contain their latest change time.
+    Interface to create objects with binary clones.
 ---
 
-**Example:**
+### Description
+
+The ICloneable interface allows you to create objects with binary clones. 
+
+### Instance methods
+
+#### clone
+Creates a binary clone of this object.
+
+> clone(): Any
+
+- **returns**: Any - a clone of this object.
+
+### Examples
+
 ```python
 class MyClass(IMyClass, ICloneable):
     def __init__():
@@ -19,12 +33,3 @@ class MyClass(IMyClass, ICloneable):
         
         return clone_obj
 ```
-
-### Methods
-
-#### clone
-Creates a binary clone of this object.
-
-> clone(): Any
-
-- **returns**: Any - a clone of this object.

@@ -9,6 +9,8 @@ description: >
 
 **Extends:** [Schema](../schema)
 
+### Description
+
 The ObjectSchema class allows you to create a validation schema that can be used to validate user defined objects.
 
 ### Constructors

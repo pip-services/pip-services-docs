@@ -112,9 +112,9 @@ Merges two or more ConfigParams into one. The following ConfigParams override
 previously defined parameters.  
 See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 
-> `static` merge_configs(*configs: List[[ConfigParams]()]): [ConfigParams]()
+> `static` merge_configs(*configs: [ConfigParams]()): [ConfigParams]()
 
-- **configs**:  List[[ConfigParams]()] - a list of ConfigParams objects to be merged.
+- **configs**:  [ConfigParams]() - a list of ConfigParams objects to be merged.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
 ### Examples   

@@ -28,13 +28,13 @@ Important points
 ### Constructors
 Creates a new instance of the descriptor.
 
-> Descriptor(group: str, type: str, kind: str, name: str, version: str)
+> Descriptor(group: Optional[str], type: Optional[str], kind: Optional[str], name: Optional[str], version: Optional[str])
 
-- **group**: str - a logical component group
-- **type**: str - a logical component type or contract
-- **kind**: str - a component implementation type
-- **name**: str - a unique component name
-- **version**: str - a component implementation version
+- **group**: Optional[str] - a logical component group
+- **type**: Optional[str] - a logical component type or contract
+- **kind**: Optional[str] - a component implementation type
+- **name**: Optional[str] - a unique component name
+- **version**: Optional[str] - a component implementation version
 
 
 ### Instance methods

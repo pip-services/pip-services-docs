@@ -14,7 +14,7 @@ The DataPage class allows you to create a data transfer object that can be used 
 
 Important points
 
-- Most often this object type is used to send responses to paginated queries.
+- Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by [PagingParams](../paging_params) object.
 - The *skip* parameter in the PagingParams there means how many items to skip.
 - The *takes* parameter sets number of items to return in the page.

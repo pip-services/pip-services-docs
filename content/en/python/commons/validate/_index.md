@@ -5,7 +5,7 @@ linkTitle: "Validate"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    The Validate package contains interfaces and classes that can be used to create custom validation rules, such as rules based on combinations of the logical operators AND, OR and NOT.
+    The Validate package contains interfaces and classes that can be used to create custom validation rules; such as rules based on combinations of the logical operators AND, OR and NOT.
  
 ---
 ---

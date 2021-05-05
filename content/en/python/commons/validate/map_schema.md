@@ -9,15 +9,9 @@ description: >
 
 **Implements:** [Schema](../schema)
 
-**Example:**
-```python
-schema = MapSchema(TypeCode.String, TypeCode.Integer)
+### Description
 
-schema.validate({ "key1": "A", "key2": "B" })       # Result: no errors
-schema.validate({ "key1": 1, "key2": 2 })           # Result: element type mismatch
-schema.validate([ 1, 2, 3 ])                        # Result: type mismatch
-
-```
+The MapSchema class provides you with a schema to validate maps
 
 ### Constructors
 Creates a new instance of validation schema and sets its values.
@@ -33,7 +27,7 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 
 
-### Methods
+### Instance methods
 
 #### get_key_type
 Gets the type of map keys.
@@ -75,3 +69,13 @@ Null means that values may have any type.
 > set_value_type(value: Any)
 
 - **value**: Any - a type of map values.
+
+### Examples
+```python
+schema = MapSchema(TypeCode.String, TypeCode.Integer)
+
+schema.validate({ "key1": "A", "key2": "B" })       # Result: no errors
+schema.validate({ "key1": 1, "key2": 2 })           # Result: element type mismatch
+schema.validate([ 1, 2, 3 ])                        # Result: type mismatch
+
+```

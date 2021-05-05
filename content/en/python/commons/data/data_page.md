@@ -5,12 +5,12 @@ linkTitle: "DataPage"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Data transfer object that is used to pass the results of a paginated query.
-    This object contains items of retrieved page.
+    This object contains items of the retrieved page.
 ---
 
 ### Description
 
-The DataPage class allows you to create a data transfer object that can be used to pass the results of a paginated query. This object contains items of the retrieved pages
+The DataPage class allows you to create a data transfer object that can be used to pass the results of a paginated query. This object contains items of the retrieved page.
 
 Important points
 

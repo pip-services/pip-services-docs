@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The PagingParamsSchema class allows you to create a schema to validate [ProjectionParams](../../data/projection_params).
+The ProjectionParamsSchema class allows you to create a schema to validate [ProjectionParams](../../data/projection_params).
 
 ### Constructors
 

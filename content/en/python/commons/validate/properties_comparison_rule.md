@@ -9,18 +9,9 @@ description: >
 
 **Implements:** [IValidationRule](../ivalidation_rule)
 
-See also [IValidationRule](../ivalidation_rule)
+### Description
 
-**Example:**
-
-```python
-schema = ObjectSchema().with_rule(PropertyComparisonRule("field1", "NE", "field2"))
-
-schema.validate({ field1: 1, field2: 2 })       # Result: no errors
-schema.validate({ field1: 1, field2: 1 })       # Result: field1 shall not be equal to field2
-schema.validate({})                             # Result: no errors
-
-```
+The PropertiesComparisonRule class allows you to create a validation rule to compare two object properties.
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
@@ -32,7 +23,7 @@ See [ObjectComparator.compare](../object_comparator/#compare)
 - **operation**: str - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
 - **property2**: str - a name of the second property to compare.
 
-### Methods
+### Instance methods
 
 #### validate
 Validates a given value against this rule.
@@ -44,6 +35,16 @@ Validates a given value against this rule.
 - **value**: Any - a value to be validated.
 - **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
+### Examples
+
+```python
+schema = ObjectSchema().with_rule(PropertyComparisonRule("field1", "NE", "field2"))
+
+schema.validate({ field1: 1, field2: 2 })       # Result: no errors
+schema.validate({ field1: 1, field2: 1 })       # Result: field1 shall not be equal to field2
+schema.validate({})                             # Result: no errors
+
+```
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

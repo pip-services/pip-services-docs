@@ -5,7 +5,7 @@ linkTitle: "IdGenerator"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Helper class used to generate unique object IDs.
-.
+
 ---
 
 ### Description

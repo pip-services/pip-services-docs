@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The ObjectComparator class allows you to perform a a comparison over two values of any type.
+The ObjectComparator class allows you to perform a comparison over two values of any type.
 
 ### Static methods
 

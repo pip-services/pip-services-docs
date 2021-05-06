@@ -4,7 +4,7 @@ title: "IVersioned"
 linkTitle: "IVersioned"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Interface for data objects that can be versioned.
+    Interface used to define data objects that can be versioned.
 
 ---
 

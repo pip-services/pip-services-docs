@@ -25,7 +25,7 @@ Creates a new instance of the map and assigns its value.
 - **map**: Any - (optional) values to initialize this map.
 
 
-### Methods
+### Instance methods
 
 #### append
 Appends new elements to this map.
@@ -438,6 +438,7 @@ The result is a semicolon-separated list of key-value pairs as
 
 - **returns**: str - a string representation of the object.
 
+### Static methods
 
 #### from_maps
 Creates a new AnyValueMap by merging two or more maps.

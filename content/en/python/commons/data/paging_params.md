@@ -17,8 +17,8 @@ Important points
 - A page is defined by two parameters:
     - *skip*: number of items to skip.
     - *take*: number of items to return in a page.
- - Additionally, the optional *total* parameter tells to return total number of items in the query.
- - However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.
+ - Additionally, the optional *total* parameter defines whether to return the total number of items or not.
+ - However, not all implementations support the *total* parameter, because its generation may lead to severe performance implications.
 
 ### Constructors
 Creates a new instance and sets its values.

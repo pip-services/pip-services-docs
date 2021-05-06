@@ -4,7 +4,7 @@ title: "TokenizedDataPage"
 linkTitle: "TokenizedDataPage"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Data transfer object that is used to pass results of paginated queries.
+    Data transfer object that is used to pass the results of paginated queries.
            
 ---
 

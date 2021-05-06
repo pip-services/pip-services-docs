@@ -4,14 +4,14 @@ title: "IEvent"
 linkTitle: "IEvent"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An interface for Events, which can send asynchronious notifications to multiple subscribed listeners.
+    An interface for Events that can send asynchronious notifications to multiple subscribed listeners.
 ---
 
 **Implements:** [INotifiable](../../run/inotifiable)
 
 ### Description
 
-The IEvent interface allows you to define events, which can send asynchronous notification to multiple subscribed listeners.
+The IEvent interface allows you to define events that can send asynchronous notification to multiple subscribed listeners.
 
 ### Instance methods
 

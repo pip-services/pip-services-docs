@@ -5,20 +5,18 @@ linkTitle: "Event"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Concrete implementation of [IEvent](../ievent) interface.
-    It allows to send asynchronous notifications to multiple subscribed listeners.
+   
 ---
 
 **Implements:** [IEvent](../ievent)
 
-See also [IEvent](../ievent), [IEventListener](../ievent_listener)
+### Description
 
-**Example**:
+The Event class allows you to create events.
 
-```python
-event_name = Event("my_event")
-event_name.add_listener(myListener)
-event_name.notify("123", Parameters.from_tuples("param1", "ABC", "param2", 123)
-```
+Important points
+
+- It allows you to send asynchronous notifications to multiple subscribed listeners.
 
 ### Constructors
 
@@ -29,7 +27,7 @@ Throws an Error if the name is null.
 
 - **name**: str - the name of the event that is to be created.
 
-### Methods
+### Instance methods
 
 #### add_listener
 Adds a listener to receive notifications when this event is fired.
@@ -68,6 +66,13 @@ Removes a listener, so that it no longer receives notifications for this event.
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 
+**Example**:
+
+```python
+event_name = Event("my_event")
+event_name.add_listener(myListener)
+event_name.notify("123", Parameters.from_tuples("param1", "ABC", "param2", 123)
+```
 
 ### See also
 - #### [IEvent](../ievent)

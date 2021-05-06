@@ -4,26 +4,14 @@ title: "Command"
 linkTitle: "Command"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Concrete implementation of [ICommand](../icommand) interface. Command allows to call a method
-    or function using Command pattern.
+    Command allows to call a method or function.
 ---
 
 **Implements:** [ICommand](../icommand)
 
-See also [ICommand](../icommand), [CommandSet](../command_set) 
+### Description
 
-**Example:**
-```python
-def handler(*args):
-    param1 = args.getAsFloat("param1")
-    param2 = args.getAsFloat("param2")
-    return param1 + param2
-command = Command("add", None, handler)
-result = command.execute("123",  Parameters.fromTuples("param1", 2, "param2", 2))
-
-print result.__str__()
-
-```
+The Command class allows you to call a method or function.
 
 ### Constructors
 
@@ -65,7 +53,18 @@ Validates the command [args](../../run/parameters) before execution using the de
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate using this command's schema.
 - **returns**: List[[ValidationResult](../../validate/validation_result)] - an array of ValidationResults or an empty array (if no schema is set).
 
+### Examples
 
+```python
+def handler(*args):
+    param1 = args.getAsFloat("param1")
+    param2 = args.getAsFloat("param2")
+    return param1 + param2
+command = Command("add", None, handler)
+result = command.execute("123",  Parameters.fromTuples("param1", 2, "param2", 2))
+
+print result.__str__()
+```
 
 ### See also
 - #### [ICommand](../icommand)

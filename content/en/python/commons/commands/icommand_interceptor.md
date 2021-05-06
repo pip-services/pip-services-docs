@@ -4,7 +4,7 @@ title: "ICommandInterceptor"
 linkTitle: "ICommandInterceptor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An interface for stackable command intercepters, which can extend
+    An interface for stackable command interceptors, which can extend
     and modify the command call chain.
 
 ---

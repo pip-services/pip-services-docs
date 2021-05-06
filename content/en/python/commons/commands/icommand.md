@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The ICommand interface used to define Commands. Each command wraps a method or function and allows to call them in a uniform and safe manner.
+The ICommand interface is used to define Commands. Each command wraps a method or function and allows to call them in a uniform and safe manner.
 
 ### Instance methods
 

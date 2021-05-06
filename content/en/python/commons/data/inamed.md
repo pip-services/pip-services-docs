@@ -4,17 +4,13 @@ title: "INamed"
 linkTitle: "INamed"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Generic interface for data objects that can be uniquely identified by an id.
+   Interface for data objects that have human-readable names.
 
-    The type specified in the interface defines the type of id field.
 ---
 
-**Example:**
-```python
-class MyData(IIdentifiable, INamed):
-    id = None
-    name = None
-```
+### Description
+
+The INamed interface is used to define data objects containing a human-readable name.
 
 ### Fields
 
@@ -23,5 +19,12 @@ class MyData(IIdentifiable, INamed):
 #### name
 The object's humand-readable name.
 > **name**: str
+
+### Examples
+```python
+class MyData(IIdentifiable, INamed):
+    id = None
+    name = None
+```
 
 </span>

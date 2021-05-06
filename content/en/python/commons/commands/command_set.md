@@ -5,35 +5,20 @@ linkTitle: "CommandSet"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Contains a set of commands and events supported by a [commandable](../icommandable) object.
-    The CommandSet supports command interceptors to extend and the command call chain.
+    The CommandSet supports command interceptors and command call chains.
     
-    CommandSets can be used as alternative commandable interface to a business object.
-    It can be used to auto generate multiple external services for the business object
-    without writing much code.
+ 
     
 ---
-See also [Command](../command), [ICommandable](../icommandable), [Event](../event)
 
-**Example:**
+### Description
 
-```python
-class MyDataCommandSet(CommandSet):
-    _controller = None
-    def __init__(self, controller):
-        super(MyDataCommandSet, self).__init__()
-        self._controller = controller
-        self.add_command(self._make_get_my_data_command())
-    def _make_get_my_data_command(self):
-        def handler(correlation_id, args):
-            param = args.get_as_string('param')
-            return self._controller.get_my_data(correlation_id, param)
-        return Command(
-            "get_mydata",
-            None,
-            handler
-        )
+The CommandSet class allows you to create a set of commands and events supported by a [commandable](../icommandable) object. In addition, it supports command interceptors and command call chains.
 
-```
+Important points
+
+- CommandSets can be used as an alternative commandable interface to a business object.
+- This class can be used to auto generate multiple external services for a business object.
 
 ### Constructors
 
@@ -41,7 +26,7 @@ Creates an empty CommandSet object.
 
 > CommandSet()
 
-### Methods
+### Instance methods
 
 #### add_command
 Adds a [command](../icommand) to this command set.  
@@ -172,6 +157,25 @@ It returns validation error if the command is not found.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
 - **returns**: List[[ValidationResult](../../validate/validation_result)] - an array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validation_result_type).
 
+### Examples
+
+```python
+class MyDataCommandSet(CommandSet):
+    _controller = None
+    def __init__(self, controller):
+        super(MyDataCommandSet, self).__init__()
+        self._controller = controller
+        self.add_command(self._make_get_my_data_command())
+    def _make_get_my_data_command(self):
+        def handler(correlation_id, args):
+            param = args.get_as_string('param')
+            return self._controller.get_my_data(correlation_id, param)
+        return Command(
+            "get_mydata",
+            None,
+            handler
+        )
+```
 
 ### See also
 - #### [Command](../command)

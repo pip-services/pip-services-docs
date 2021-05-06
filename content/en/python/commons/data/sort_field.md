@@ -4,20 +4,12 @@ title: "SortField"
 linkTitle: "SortField"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Defines a field name and order used to sort query results.
+    Defines a field name and the order type used to sort query results.
 ---
 
-See also [SortParams](../sort_params)
+### Description
 
-**Example:**
-```python
-filter = FilterParams.fromTuples("type", "Type1")
-paging = PagingParams(0, 100)
-
-sorting = SortingParams(SortField("create_time", true))
-myDataClient.get_data_by_filter(filter, paging, sorting)
-
-```
+The SortField class allows you to define a field used to sort query results. In addition, it allows you to specify the order typer as ascending or descending.
 
 ### Constructors
 Creates a new instance and assigns its values.
@@ -42,6 +34,14 @@ The flag to define sorting order. True to sort ascending, false to sort descendi
 
 </span>
 
+### Examples
+```python
+filter = FilterParams.fromTuples("type", "Type1")
+paging = PagingParams(0, 100)
+
+sorting = SortingParams(SortField("create_time", true))
+myDataClient.get_data_by_filter(filter, paging, sorting)
+```
 
 ### See also
 - #### [SortParams](../sort_params)

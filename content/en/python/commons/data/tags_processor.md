@@ -4,13 +4,19 @@ title: "TagsProcessor"
 linkTitle: "TagsProcessor"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Helper class to extract and process search tags from objects.
-    The search tags can be kept individually or embedded as hash tags inside text
-    like "This text has #hash_tag that can be used for search."
+    Helper class used to extract and process search tags from objects.
+
 ---
 
-### Methods
+### Description
 
+The TagsProcessor class allows you to extract and process search tags from objects.
+
+Important points
+
+- The search tags can be kept individually or embedded as hash tags inside text. E.g. "This text has #hash_tag that can be used for search."
+
+### Static methods
 
 #### compress_tag
 Compress a tag by removing special symbols like spaces, '_' and '#'

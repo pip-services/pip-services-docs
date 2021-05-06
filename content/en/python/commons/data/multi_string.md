@@ -4,24 +4,22 @@ title: "MultiString"
 linkTitle: "MultiString"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An object that contains string translations for multiple languages.
-    Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
-    When translation for specified language does not exists it defaults to English ('en').
-    When English does not exists it falls back to the first defined language.
+    Class used to create objects that contain string translations for multiple languages.
+    
 ---
 
 **Implements:** dict
 
-**Example:**
-```python
-values = MultiString.from_tuples(
-    "en", "Hello World!",
-    "ru", "Привет мир!"
-);
-value1 = values.get('ru') # Result: "Привет мир!"
-value2 = values.get('pt') # Result: "Hello World!"
+### Description
 
-```
+The MultiString class allows you to create objects that contain string translations for multiple languages.
+
+Important points
+
+- Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
+- When a translation for a specific language does not exists, it defaults to English ('en').
+- When English does not exists, it falls back to the first defined language
+
 
 ### Constructors
 Creates a new MultiString object and initializes it with values.
@@ -31,7 +29,7 @@ Creates a new MultiString object and initializes it with values.
 - **map**: Any - a map with language-text pairs.
 
 
-### Methods
+### Instance methods
 
 #### append
 Appends a map with language-translation pairs.
@@ -90,6 +88,7 @@ Removes translation for the specified language.
 
 - **language**: str - a language two-symbol code.
 
+### Static methods
 
 #### from_tuples
 Creates a new MultiString object from language-translation pairs (tuples).
@@ -117,3 +116,14 @@ See [StringValueMap](../string_value_map)
 
 - **value**: Any - the value to initialize MultiString.
 - **returns**: [MultiString](../multi_string) - a MultiString object.
+
+### Examples
+
+```python
+values = MultiString.from_tuples(
+    "en", "Hello World!",
+    "ru", "Привет мир!"
+);
+value1 = values.get('ru') # Result: "Привет мир!"
+value2 = values.get('pt') # Result: "Hello World!"
+```

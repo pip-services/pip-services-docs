@@ -6,12 +6,18 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     An interface for stackable command intercepters, which can extend
     and modify the command call chain.
- 
-    This mechanism can be used for authentication, logging, and other functions.
----
-See also [ICommand](../icommand), [InterceptedCommand](../intercepted_command)
 
-### Methods
+---
+
+### Description
+
+The ICommandInterceptor interface is used for stackable command interceptors, which can extend and modify the command call chain.
+
+Important points
+
+- This technique can be used for authentiction, logging, and several other functions.
+
+### Instance methods
 
 #### get_name
 Gets the name of the wrapped command.

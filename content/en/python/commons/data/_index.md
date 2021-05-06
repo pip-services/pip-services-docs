@@ -5,12 +5,7 @@ linkTitle: "Data"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Abstract, portable data types. For example – anytype, anyvalues, anyarrays, anymaps, stringmaps 
-    (on which many serializable objects are based on – configmap, filtermaps, connectionparams – all 
-    extend stringvaluemap). Includes standard design patterns for working with data (data paging, 
-    filtering, GUIDs). 
+    This package contains a set of abstract, portable data types. Some examples are anytype, anyvalues, anyarrays, anymaps, and stringmaps. Many serializable classes are based on these data types. For example, the classes configmap, filtermaps and  connection parameters, which extend stringvaluemap. The package also includes several classes for working with data (E.g. data paging, filtering, GUIDs). 
 ---
 ---
 

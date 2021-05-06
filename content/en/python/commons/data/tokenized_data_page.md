@@ -14,7 +14,7 @@ The TokenizedDataPageData allows you to create a transfer object that is used to
 
 Important points
 
-- This object contains the items of the retrieved page and optionally the total number of items.
+- This object contains the items of the retrieved page and, optionally, the total number of items.
 - Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by [TokenizedPagingParams](../tokenized_paging_params) object.
      - The *token* parameter in the TokenizedPagingParams defines where to start the search.

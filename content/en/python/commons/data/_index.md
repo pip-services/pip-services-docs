@@ -106,7 +106,7 @@ Defines a field name and order used to sort query results.
 
 
 #### [SortParams](sort_params)
-Defines a field name and order used to sort query results.
+Defines a list of field names used to sort query results.
 
 #### [StringValueMap](string_value_map)
 Cross-language implementation of a map (dictionary) where all keys and values are strings.

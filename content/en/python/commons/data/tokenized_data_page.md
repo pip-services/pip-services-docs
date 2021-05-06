@@ -18,7 +18,7 @@ Important points
 - Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by [TokenizedPagingParams](../tokenized_paging_params) object.
      - The *token* parameter in the TokenizedPagingParams defines where to start the search.
-     - The *takes* parameter sets number of items to return in the page.
+     - The *takes* parameter sets number of items to be return in the page.
 - The optional *total* parameter tells to return the total number of items in the query.
 - However, not all implementations support the *total* parameter, because its generation may lead to severe performance implications.
 - Additionally, the data page returns a token that shall be passed to the next search as a starting point.

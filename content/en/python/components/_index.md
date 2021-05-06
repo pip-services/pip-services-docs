@@ -30,7 +30,7 @@ The module contains the following packages:
 
 
 
-## Use
+### Use
 
 Install the Python package as
 ```bash
@@ -194,7 +194,7 @@ my_component2 = my_factory.create(Descriptor("myservice", "mycomponent", "defaul
 ...
 ```
 
-## Develop
+### Develop
 
 For development you shall install the following prerequisites:
 * Python 3.7+
@@ -223,6 +223,6 @@ Before committing changes run dockerized build and test as:
 ./clear.ps1
 ```
 
-## Contacts
+### Contacts
 
 The initial implementation is done by **Sergey Seroukhov**.

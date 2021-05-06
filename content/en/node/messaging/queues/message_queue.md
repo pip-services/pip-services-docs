@@ -12,13 +12,15 @@ description: >
 
 ##### Configuration parameters
 - **name**: name of the message queue
-- **connection(s)**: 
+
+**connection(s)**: 
     - **discovery_key**: key to retrieve parameters from discovery service
     - **protocol**: connection protocol like http, https, tcp, udp
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
-- **credential(s)**: 
+
+**credential(s)**: 
     - **store_key**: key to retrieve parameters from credential store
     - **username**: user name
     - **password**: user password

@@ -30,7 +30,7 @@ The module contains the following packages:
 
 
 
-## Use
+### Use
 
 Install the Python package as
 ```bash
@@ -99,7 +99,7 @@ my_component_A.open("123")
 print("MyComponentA has been opened.")
 ```
 
-## Develop
+### Develop
 
 For development you shall install the following prerequisites:
 * Python 3.7+
@@ -128,7 +128,7 @@ Before committing changes run dockerized build and test as:
 ./clear.ps1
 ```
 
-## Contacts
+### Contacts
 
 The library is created and maintained by:
 - **Sergey Seroukhov**

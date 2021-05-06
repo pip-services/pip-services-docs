@@ -31,7 +31,7 @@ The module contains the following packages:
 * [**Refer**](refer) - Inter-container reference management (implementation of the Referenceable pattern inside an IoC container)
 
 
-## Use
+### Use
 
 Install the Python package as
 ```bash
@@ -128,7 +128,7 @@ And, finally, you can run your service launcher as
 python service.py
 ```
 
-## Develop
+### Develop
 
 For development you shall install the following prerequisites:
 * Python 3.7+
@@ -157,7 +157,7 @@ Before committing changes run dockerized build and test as:
 ./clear.ps1
 ```
 
-## Contacts
+### Contacts
 
 The Python version of Pip.Services is created and maintained by: 
 - **Sergey Seroukhov**

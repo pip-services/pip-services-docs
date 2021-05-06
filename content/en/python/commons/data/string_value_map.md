@@ -5,33 +5,17 @@ linkTitle: "StringValueMap"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Cross-language implementation of a map (dictionary) where all keys and values are strings.
-    The stored values can be converted to different types using variety of accessor methods.
-
-
-    The string map is highly versatile. It can be converted into many formats, stored and 
-    sent over the wire.
-
-
-    This class is widely used in Pip.Services as a basis for variety of classes, such as
-    [ConfigParams](../../config/config_params), [ConnectionParams](../../../components/connect/connection_params), [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package) and others.
+    
 ---
 
-See also [StringConverter](../../convert/string_converter), [TypeConverter](../../convert/type_converter), 
-[StringConverter](../../convert/string_converter), [BooleanConverter](../../convert/boolean_converter),
-[IntegerConverter](../../convert/integer_converter), [LongConverter](../../convert/long_converter),
-[DoubleConverter](../../convert/double_converter), [FloatConverter](../../convert/float_converter),
-[DateTimeConverter](../../convert/date_time_converter), [ICloneable](../icloneable)
+### Description
 
-**Example:**
-```python
-value1 = StringValueMap.fromString("key1=1;key2=123.456;key3=2018-01-01")
+The StringValueMap class allows you to create a cross-language implementation of a map (dictionary) where all keys and values are strings.
 
-value1.get_as_boolean("key1")   // Result: true
-value1.get_as_integer("key2")   // Result: 123
-value1.get_as_float("key2")     // Result: 123.456
-value1.get_as_datetime("key3")  // Result: Date 2018,0,1
+Important points
 
-```
+- The class provides several methods to convert the stored values to different types, such as array, boolean or datetime.
+- This class is widely used in Pip.Services as a basis for variety of classes, such as [ConfigParams](../../config/config_params), [ConnectionParams](../../../components/connect/connection_params), [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package) and others.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
@@ -500,6 +484,15 @@ Converts specified value into StringValueMap.
 - **value**: Any - value to be converted
 - **returns**: [StringValueMap](../string_value_map) - a newly created StringValueMap.
 
+### Examples
+```python
+value1 = StringValueMap.fromString("key1=1;key2=123.456;key3=2018-01-01")
+
+value1.get_as_boolean("key1")   // Result: true
+value1.get_as_integer("key2")   // Result: 123
+value1.get_as_float("key2")     // Result: 123.456
+value1.get_as_datetime("key3")  // Result: Date 2018,0,1
+```
 
 ### See also
 - #### [StringConverter](../../convert/string_converter)

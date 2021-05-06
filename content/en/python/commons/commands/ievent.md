@@ -17,11 +17,11 @@ See also [IEventListener](../ievent_listener)
 #### get_name
 Gets the event name.
 
-> getName(): str
+> get_name(): str
 
 - **returns**: str - the name of the event.
 
-#### getListeners
+#### get_listeners
 Gets all subscribed listeners.
 
 > get_listeners(): List[[IEventListener](../ievent_listener)]
@@ -31,7 +31,7 @@ Gets all subscribed listeners.
 #### add_listener
 Adds a listener to receive notifications for this event.
 
-> addListener(listener: [IEventListener](../ievent_listener))
+> add_listener(listener: [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
 
@@ -39,7 +39,7 @@ Adds a listener to receive notifications for this event.
 #### remove_listener
 Removes a listener, so that it no longer receives notifications for this event.
 
-> removeListener(listener: [IEventListener](../ievent_listener))
+> remove_listener(listener: [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 

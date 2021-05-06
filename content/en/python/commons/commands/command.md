@@ -4,14 +4,14 @@ title: "Command"
 linkTitle: "Command"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Command allows to call a method or function.
+    Command allows to call a method or a function.
 ---
 
 **Implements:** [ICommand](../icommand)
 
 ### Description
 
-The Command class allows you to call a method or function.
+The Command class allows you to call a method or a function.
 
 ### Constructors
 

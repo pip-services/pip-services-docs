@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The IVersioned interface allows you to define data object that can be versioned.
+The IVersioned interface allows you to define data objects that can be versioned.
 
 Important points
 

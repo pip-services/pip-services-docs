@@ -4,15 +4,16 @@ title: "IEvent"
 linkTitle: "IEvent"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An interface for Events, which are part of the Command design pattern.
-    Events allows to send asynchronious notifications to multiple subscribed listeners.
+    An interface for Events, which can send asynchronious notifications to multiple subscribed listeners.
 ---
 
 **Implements:** [INotifiable](../../run/inotifiable)
 
-See also [IEventListener](../ievent_listener)
+### Description
 
-### Methods
+The IEvent interface allows you to define events, which can send asynchronous notification to multiple subscribed listeners.
+
+### Instance methods
 
 #### get_name
 Gets the event name.

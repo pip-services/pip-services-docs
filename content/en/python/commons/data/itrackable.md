@@ -9,17 +9,9 @@ description: >
 
 **Implements:** [IChangeable](../ichangeable)
 
-See also [IChangeable](../ichangeable)
+### Description
 
-**Example:**
-```python
-class MyData(IStringIdentifiable, ITrackable):
-    id = None
-    ...
-    change_time = None
-    create_time = None
-    deleted = None
-```
+The ITrackagle interface allows you to define data objects that can track their changes, including logical deletion.
 
 ### Fields
 
@@ -39,6 +31,16 @@ The logical deletion flag. True when object is deleted and None or false otherwi
 
 </span>
 
+### Examples
+
+```python
+class MyData(IStringIdentifiable, ITrackable):
+    id = None
+    ...
+    change_time = None
+    create_time = None
+    deleted = None
+```
 
 ### See also
 - #### [IChangeable](../ichangeable)

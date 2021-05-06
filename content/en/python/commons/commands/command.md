@@ -24,7 +24,7 @@ Creates a new command object and assigns it's parameters.
 - **action**:  [IExecutable](../../run/iexecutable) - the function to be executed by this command.
 
 
-### Methods
+### Instance methods
 
 #### execute
 Executes the command. Before execution it validates [args](../../run/parameters) using the defined schema.

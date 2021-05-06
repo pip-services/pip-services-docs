@@ -4,19 +4,19 @@ title: "TokenizedPagingParams"
 linkTitle: "TokenizedPagingParams"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    
+    Data transfer object used to pass tokenized paging parameters for queries. 
 ---
 
 ### Description
 
-The TokenizedPagingParams allows you to create data transfer objects used topass tokenized parameters for queries.
+The TokenizedPagingParams allows you to create data transfer objects used to pass tokenized parameters for queries.
 
 Important points
 
 - The page is defined by two parameters:
     - the *token* token that defines a starting point for the search.
     - the *take* parameter sets how many items to return in a page.
-- Additionally, the optional *total* parameter tells to return total number of items in the query.
+- Additionally, the optional *total* parameter tells to return the total number of items in the query.
 - However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.
 - In general, this class can be used for complex paging scenarios, like paging across multiple databases where the previous state is encoded in a token. The token is usually retrieved from the previous response. The initial request shall go with token == *None*
 

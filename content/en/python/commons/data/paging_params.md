@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The PagingParams class allows you to create objects used to pass paging parameters for queries.
+The PagingParams class allows you to create data transfer objects used to pass paging parameters for queries.
 
 Important points
 

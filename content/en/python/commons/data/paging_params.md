@@ -4,30 +4,21 @@ title: "PagingParams"
 linkTitle: "PagingParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Data transfer object to pass paging parameters for queries.
+    Defines a data transfer object used to pass paging parameters for queries.
 
-
-    The page is defined by two parameters:
-
-    - the *skip* parameter defines number of items to skip.
-
-    - the *take* parameter sets how many items to return in a page.
-    
-    - additionally, the optional *total* parameter tells to return total number of items in the query.
-
-
-    Remember: not all implementations support the *total* parameter
-    because its generation may lead to severe performance implications.
 ---
 
-**Example:**
-```python
-filter = FilterParams.fromTuples("type", "Type1")
+### Description
 
-paging = PagingParams(0, 100)
-myDataClient.get_data_by_filter(filter, paging)
+The PagingParams class allows you to create objects used to pass paging parameters for queries.
 
-```
+Important points
+
+- A page is defined by two parameters:
+    - *skip*: number of items to skip.
+    - *take*: number of items to return in a page.
+ - Additionally, the optional *total* parameter tells to return total number of items in the query.
+ - However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.
 
 ### Constructors
 Creates a new instance and sets its values.
@@ -58,7 +49,7 @@ The flag to return the total number of items.
 </span>
 
 
-### Methods
+### Instance methods
 
 #### get_skip
 Gets the number of items to skip.
@@ -77,6 +68,7 @@ Gets the number of items to return in a page.
 - **max_take**: int - the maximum number of items to return.
 - **returns**: int - the number of items to return.
 
+### Static methods
 
 #### from_map
 Creates a new PagingParams and sets it parameters from the specified map
@@ -104,3 +96,10 @@ Converts specified value into PagingParams.
 - **value**: Any - value to be converted
 - **returns**: [PagingParams]() - a newly created PagingParams.
 
+### Examples
+```python
+filter = FilterParams.fromTuples("type", "Type1")
+
+paging = PagingParams(0, 100)
+myDataClient.get_data_by_filter(filter, paging)
+```

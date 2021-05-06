@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The IEvent interface allows you to define events that can send asynchronous notification to multiple subscribed listeners.
+The IEvent interface allows you to define events that can send asynchronous notifications to multiple subscribed listeners.
 
 ### Instance methods
 

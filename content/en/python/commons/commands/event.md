@@ -4,7 +4,7 @@ title: "Event"
 linkTitle: "Event"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Concrete implementation of [IEvent](../ievent) interface.
+    Concrete implementation of the [IEvent](../ievent) interface.
    
 ---
 

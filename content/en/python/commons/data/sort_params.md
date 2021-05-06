@@ -4,14 +4,14 @@ title: "SortParams"
 linkTitle: "SortParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Defines a field name and order used to sort query results.
+    Defines a list of field names used to sort query results.
 ---
 
 **Implements:** list
 
 ### Description
 
-The SortParams class allows you to define a field name use to sort query results. In addition, it allows you to specify the type of order as ascending or descending.
+The SortParams class allows you to define a list of field names used to sort query results. In addition, it allows you to specify the type of order as ascending or descending.
 
 ### Constructors
 Creates a new instance and initializes it with specified sort fields.

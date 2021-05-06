@@ -8,7 +8,7 @@ description: >
     Events allows to send asynchronious notifications to multiple subscribed listeners.
 ---
 
-**Extends:** [INotifiable](../../run/inotifiable)
+**Implements:** [INotifiable](../../run/inotifiable)
 
 See also [IEventListener](../ievent_listener)
 

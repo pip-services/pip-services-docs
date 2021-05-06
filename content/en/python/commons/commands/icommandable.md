@@ -4,30 +4,19 @@ title: "ICommandable"
 linkTitle: "ICommandable"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    An interface for commandable objects, which are part of the command design pattern.
-    The commandable object exposes its functonality as commands and events groupped
-    into a [CommandSet](../command_set).
-
-
-    This interface is typically implemented by controllers and is used to auto generate
-    external interfaces.
+    An interface used to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
+    
 ---
 
-See also [CommandSet](../command_set)
+### Description
 
-**Example:**
+The ICommandable interface allows you to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
 
-```python
-class MyDataController(ICommandable, IMyDataController):
-    _commandSet = None
-    def get_command_set(self):
-        if self._commandSet is None:
-            _commandSet = MyDataCommandSet(self)
-        return self._commandSet
+Important points
 
-```
+- This interface is typically implemented by controllers and is used to auto generate external interfaces. 
 
-### Methods
+### Instance methods
 
 #### get_command_set
 Gets a command set with all supported commands and events.
@@ -36,7 +25,16 @@ Gets a command set with all supported commands and events.
 
 - **returns**: [CommandSet](../command_set) - a command set with commands and events.
 
+### Examples
 
+```python
+class MyDataController(ICommandable, IMyDataController):
+    _commandSet = None
+    def get_command_set(self):
+        if self._commandSet is None:
+            _commandSet = MyDataCommandSet(self)
+        return self._commandSet
+```
 
 ### See also
 - #### [CommandSet](../command_set)

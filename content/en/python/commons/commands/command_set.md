@@ -13,12 +13,12 @@ description: >
 
 ### Description
 
-The CommandSet class allows you to create a set of commands and events supported y a [commandable](../icommandable) object. In addition, it supports command interceptors and command call chains.
+The CommandSet class allows you to create a set of commands and events supported by a [commandable](../icommandable) object. In addition, it supports command interceptors and command call chains.
 
 Important points
 
-- CommandSets can be used as alternative commandable interface to a business object.
-- This class can be used to auto generate multiple external services for the business object without writing much code.
+- CommandSets can be used as an alternative commandable interface to a business object.
+- This class can be used to auto generate multiple external services for a business object.
 
 ### Constructors
 

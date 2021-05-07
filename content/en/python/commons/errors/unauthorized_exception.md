@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The UnauthorizedException class is used to manage access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
+
 ### Constructors
 Creates an error instance and assigns its values.
 

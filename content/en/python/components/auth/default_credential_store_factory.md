@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The DefaultCredentialStoreFactory class is used to create Creates [ICredentialStore](../icredentialStore) components based on their descriptors.
+The DefaultCredentialStoreFactory class is used to create [ICredentialStore](../icredentialStore) components based on their descriptors.
 
 ### Constructors
 Create a new instance of the factory.

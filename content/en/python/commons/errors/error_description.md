@@ -4,13 +4,15 @@ title: "ErrorDescription"
 linkTitle: "ErrorDescription"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Serializeable error description. It is use to pass information about errors
-    between microservices implemented in different languages. On the receiving side
+    It is use to pass information about errors between microservices implemented in different languages. On the receiving side
     [ErrorDescription]() is used to recreate exception object close to its original type
     without missing additional details.
 ---
 See also [ApplicationException](../application_exception), [ApplicationExceptionFactory](../application_exception_factory)
 
+### Description
+
+The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side [ErrorDescription]() is used to recreate exception object close to its original type without missing additional details.
 
 ### Fields
 

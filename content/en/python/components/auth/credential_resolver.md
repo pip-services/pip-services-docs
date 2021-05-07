@@ -4,7 +4,7 @@ title: "CredentialResolver"
 linkTitle: "CredentialResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Helper class to retrieve component credentials.
+    Helper class used to retrieve component credentials.
 
 ---
 

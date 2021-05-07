@@ -14,18 +14,18 @@ description: >
 - **name**: name of the message queue
 
 **connection(s)**: 
-    - **discovery_key**: key to retrieve parameters from discovery service
-    - **protocol**: connection protocol like http, https, tcp, udp
-    - **host**: host name or IP address
-    - **port**: port number
-    - **uri**: resource URI or connection string with all parameters in it
+- **discovery_key**: key to retrieve parameters from discovery service
+- **protocol**: connection protocol like http, https, tcp, udp
+- **host**: host name or IP address
+- **port**: port number
+- **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**: 
-    - **store_key**: key to retrieve parameters from credential store
-    - **username**: user name
-    - **password**: user password
-    - **access_id**: application access id
-    - **access_key**: application secret key
+- **store_key**: key to retrieve parameters from credential store
+- **username**: user name
+- **password**: user password
+- **access_id**: application access id
+- **access_key**: application secret key
 
 ##### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages

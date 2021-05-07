@@ -9,6 +9,9 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The ConfigException is used to manage errors related to mistakes in the microservice's user-define configurations.
 
 ### Constructors
 Creates an error instance and assigns its values.

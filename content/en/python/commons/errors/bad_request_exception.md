@@ -5,10 +5,14 @@ linkTitle: "BadRequestException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Errors due to improper user requests. 
-    For example: missing or incorrect parameters.
+    
 ---
 
 **Implements:** [ApplicationException](../application_exception)
+
+### Description
+
+The BadRequestException class is used to manage errors created by improper user requests. For example, when there are missing or incorrect parameters in the request.
 
 ### Constructors
 Creates an error instance and assigns its values.

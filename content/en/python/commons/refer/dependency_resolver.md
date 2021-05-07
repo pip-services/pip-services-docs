@@ -53,47 +53,47 @@ Configures the component with specified parameters.
 #### find
 Finds all matching dependencies by their name.
 
-> find(name: str, required: bool): List[T]
+> find(name: str, required: bool): List[Any]
 
 - **name**: str - the dependency name to locate.
 - **required**: bool - true to raise an exception when no dependencies are found.
-- **returns**: List[T] - a list of found dependencies
+- **returns**: List[Any] - a list of found dependencies
 
 #### get_one_optional
 Gets one optional dependency by its name.
 
-> get_one_optional(name: str): T
+> get_one_optional(name: str): Any
 
 - **name**: str - the dependency name to locate.
-- **returns**: T - a dependency reference or null of the dependency was not found
+- **returns**: Any - a dependency reference or null of the dependency was not found
 
 #### get_one_required
 Gets one required dependency by its name.
 At least one dependency must present.
 If the dependency was found it throws a [ReferenceException](../reference_exception)
 
-> get_one_required(name: str): T
+> get_one_required(name: str): Any
 
 - **name**: str - the dependency name to locate.
-- **returns**: T - a dependency reference
+- **returns**: Any - a dependency reference
 
 #### get_optional
 Gets all optional dependencies by their name.
 
-> get_optional(name: str): List[T]
+> get_optional(name: str): List[Any]
 
 - **name**: str - the dependency name to locate.
-- **returns**: List[T] - a list with found dependencies or empty list of no dependencies was found.
+- **returns**: List[Any] - a list with found dependencies or empty list of no dependencies was found.
 
 #### get_required
 Gets all required dependencies by their name.
 At least one dependency must be present.
 If no dependencies was found it throws a [ReferenceException](../reference_exception)
 
-> get_required(name: str): List[T]
+> get_required(name: str): List[Any]
 
 - **name**: str - the dependency name to locate.
-- **returns**: List[T] - a list with found dependencies.
+- **returns**: List[Any] - a list with found dependencies.
 
 #### put
 Adds a new dependency into this resolver.

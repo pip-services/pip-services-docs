@@ -25,11 +25,11 @@ Important points
 Gets all component references that match specified locator.  
 Throws a [ReferenceException](../reference_exception) when required is set to true but no references found.
 
-> find(locator: Any, required: bool): List[T]
+> find(locator: Any, required: bool): List[Any]
 
 - **locator**: Any - the locator to find a reference by.
 - **required**: bool - forces to raise an exception if no reference is found.
-- **returns**:List[T] - a list with matching component references.
+- **returns**:List[Any] - a list with matching component references.
 
 #### get_all
 Gets all component references registered in this reference map.
@@ -48,27 +48,27 @@ Gets locators for all registered component references in this reference map.
 #### get_one_optional
 Gets an optional component reference that matches specified locator.
 
-> get_one_optional(locator: Any): T
+> get_one_optional(locator: Any): Any
 
 - **locator**: Any - the locator to find references by.
-- **returns**: T - a matching component reference or null if nothing was found.
+- **returns**: Any - a matching component reference or null if nothing was found.
 
 #### get_one_required
 Gets a required component reference that matches specified locator.  
 Throws a [ReferenceException](../reference_exception) when no references found.
 
-> get_one_required(locator: Any): T
+> get_one_required(locator: Any): Any
 
 - **locator**: Any - the locator to find a reference by.
-- **returns**: T - a matching component reference.
+- **returns**: Any - a matching component reference.
 
 #### get_optional
 Gets all component references that match specified locator.
 
-> get_optional(locator: Any): List[T]
+> get_optional(locator: Any): List[Any]
 
 - **locator**: Any - the locator to find references by.	 
-- **returns**: List[T] - a list with matching component references or empty list if nothing was found.
+- **returns**: List[Any] - a list with matching component references or empty list if nothing was found.
 
 #### get_required
 Gets all component references that match specified locator.
@@ -76,10 +76,10 @@ At least one component reference must be present.
 If it doesn't the method throws an error.  
 Throws a [ReferenceException](../reference_exception) when no references found.
 
-> get_required(locator: Any): List[T]
+> get_required(locator: Any): List[Any]
 
 - **locator**: Any - the locator to find references by.
-- **returns**: List[T] - a list with matching component references.
+- **returns**: List[Any] - a list with matching component references.
 
 
 #### put

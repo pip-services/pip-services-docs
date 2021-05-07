@@ -253,10 +253,10 @@ Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns null.  
 See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
 
-> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code)): Optional[T]
+> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code)): Optional[Any]
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **returns**: Optional[T] - value defined by the typecode or null if conversion is not supported. 
+- **returns**: Optional[Any] - value defined by the typecode or null if conversion is not supported. 
 
 
 #### get_as_object
@@ -288,21 +288,21 @@ Converts object value into a string or returns default value if conversion is no
 Converts object args into a args defined by specied typecode.
 If conversion is not possible it returns default args for the specified type.
 
-> get_as_type(value_type: [TypeCode](../../convert/type_code)): T
+> get_as_type(value_type: [TypeCode](../../convert/type_code)): Any
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **returns**: T - args defined by the typecode or type default args if conversion is not supported.
+- **returns**: Any - args defined by the typecode or type default args if conversion is not supported.
 
 
 #### get_as_type_with_default
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns default value.
 
-> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), default_value: T): T
+> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), default_value: Any): Any
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **default_value**: T - the default value
-- **returns**: T - value defined by the typecode or type default value if conversion is not supported. 
+- **default_value**: Any - the default value
+- **returns**: Any - value defined by the typecode or type default value if conversion is not supported. 
 
 
 #### get_type_code

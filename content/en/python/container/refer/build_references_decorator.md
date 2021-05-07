@@ -42,10 +42,10 @@ Creates a component identified by given locator.
 Gets all component references that match specified locator.
 Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to true but no references found.
 
-> find(locator: Any, required: bool): List[T]
+> find(locator: Any, required: bool): List[Any]
 - **locator**: Any - the locator to find a reference by.
 - **required**: bool - forces to raise an exception if no reference is found.
-- **returns**: List[T] - a list with matching component references.
+- **returns**: List[Any] - a list with matching component references.
 
 
 #### find_factory

@@ -17,11 +17,11 @@ The TypeConverter class allows you to convert arbitrary values into objects spec
 #### to_nullable_type
 Converts value into an object type specified by Type Code or returns null when conversion is not possible.
 
-> `static` to_nullable_type(type: [TypeCode](../../convert/type_code), value: Any): T
+> `static` to_nullable_type(type: [TypeCode](../../convert/type_code), value: Any): Any
 
 - **type**: Any - the [TypeCode](../../convert/type_code) for the data type into which 'value' is to be converted.
 - **value**: Any - the value to convert.
-- **returns**: T - object value of type corresponding to TypeCode, or null when conversion is not supported.
+- **returns**: Any - object value of type corresponding to TypeCode, or null when conversion is not supported.
 
 #### to_string
 Converts a [TypeCode](../../convert/type_code) into its string name.
@@ -34,11 +34,11 @@ Converts a [TypeCode](../../convert/type_code) into its string name.
 #### to_type
 Converts value into an object type specified by Type Code or returns type default when conversion is not possible.
 
-> `static` to_type(type: [TypeCode](../../convert/type_code), value: Any): T
+> `static` to_type(type: [TypeCode](../../convert/type_code), value: Any): Any
 
 - **type**: [TypeCode](../../convert/type_code) - the value to convert.
 - **value**: Any - the value to convert.
-- **returns**: T - object value of type corresponding to [TypeCode](../../convert/type_code), or type default when conversion is not supported.
+- **returns**: Any - object value of type corresponding to [TypeCode](../../convert/type_code), or type default when conversion is not supported.
 
 
 #### to_type_code
@@ -52,12 +52,12 @@ Gets TypeCode for specific value.
 #### to_type_with_default
 Converts value into an object type specified by Type Code or returns default value when conversion is not possible.
 
-> `static` to_type_with_default(type: [TypeCode](../../convert/type_code), value: Any, default_value: T): T
+> `static` to_type_with_default(type: [TypeCode](../../convert/type_code), value: Any, default_value: Any): Any
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: Any - the value to convert.
-- **default_value**: T - the default value to return if conversion is not possible (returns null).
-- **returns**: T - object value of type corresponding to TypeCode, or default value when conversion is not supported.
+- **default_value**: Any - the default value to return if conversion is not possible (returns null).
+- **returns**: Any - object value of type corresponding to TypeCode, or default value when conversion is not supported.
 
 ### Examples
 

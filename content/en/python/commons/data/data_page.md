@@ -23,9 +23,9 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> DataPage(data: Sequence[T] = None, total: int = None)
+> DataPage(data: Sequence[Any] = None, total: int = None)
 
-- **data**:  Sequence[T] - a list of items from the retrieved page.
+- **data**:  Sequence[Any] - a list of items from the retrieved page.
 - **total**: int - total amount of items in a request.
 
 ### Fields
@@ -35,7 +35,7 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> **data**: Sequence[T]
+> **data**: Sequence[Any]
 
 #### total
 The total amount of items in a request.

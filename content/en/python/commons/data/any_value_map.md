@@ -315,11 +315,11 @@ Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns null.     
 See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
 
-> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), key: str): T
+> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), key: str): Any
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.
-- **returns**: T - element value defined by the typecode or null if conversion is not supported. 
+- **returns**: Any - element value defined by the typecode or null if conversion is not supported. 
 
 
 #### get_as_object
@@ -356,11 +356,11 @@ See [StringConverter.to_string_with_default](../../convert/string_converter/#to_
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type. 
 
-> get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): T
+> get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): Any
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.
-- **returns**: T - element value defined by the typecode or default if conversion is not supported. 
+- **returns**: Any - element value defined by the typecode or default if conversion is not supported. 
 
 
 #### get_as_type_with_default
@@ -368,12 +368,12 @@ Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value.    
 See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default)
 
-> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: T): T
+> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: Any): Any
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: str - a key of element to get.
-- **default_value**: T - the default value
-- **returns**: T - element value defined by the typecode or default value if conversion is not supported.
+- **default_value**: Any - the default value
+- **returns**: Any - element value defined by the typecode or default value if conversion is not supported.
 
 
 

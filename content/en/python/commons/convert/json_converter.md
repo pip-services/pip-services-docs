@@ -15,11 +15,11 @@ The JsonConverter class allows you to convert arbitrary values (e.g. a JSON obje
 #### from_json
 Converts JSON string into a value of type specified by a TypeCode.
 
-> `static` from_json(type: [TypeCode](../type_code), value: str): T
+> `static` from_json(type: [TypeCode](../type_code), value: str): Any
 
 - **type**: [TypeCode](../type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: str - the JSON string to convert.
-- **returns**: T - converted object value or null when value is null.
+- **returns**: Any - converted object value or null when value is null.
 
 #### to_json
 Converts value into JSON string.

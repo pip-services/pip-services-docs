@@ -27,9 +27,9 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> TokenizedDataPage(data: List[T], token: str = None, total: int = None)
+> TokenizedDataPage(data: List[Any], token: str = None, total: int = None)
 
-- **data**: List[T] - a list of items from the retrieved page.
+- **data**: List[Any] - a list of items from the retrieved page.
 - **token**: str - (optional) a token to define astarting point for the next search.
 - **total**: int - (optional) a total number of objects in the result.
 
@@ -40,7 +40,7 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> **data**: List[T]
+> **data**: List[Any]
 
 #### token
 The starting point for the next search.

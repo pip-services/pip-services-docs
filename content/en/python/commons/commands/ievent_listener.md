@@ -6,22 +6,12 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     An interface for listener objects that receive notifications on fired events.
 ---
-See also [IEvent](../ievent), [Event](../event)
 
-**Example:**
+### Description
 
-```python
-class MyListener(IEventListener):
-    def on_event(self, correlation_id, event_name, args):
-        print "Fired event_name " + event_name.get_name()
-     
-event = Event("myevent")
-event.addListener(MyListener())
-event.notify("123", Parameters.from_tuples("param1", "ABC"))
+The IEventListener interface allows you to define actions to be taken by listener objects after receiving a notification on a fired event.
 
-```
-
-### Methods
+### Instance methods
 
 #### on_event
 A method called when events this listener is subscrubed to are fired.
@@ -32,6 +22,17 @@ A method called when events this listener is subscrubed to are fired.
 - **event**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - event arguments.
 
+### Examples
+
+```python
+class MyListener(IEventListener):
+    def on_event(self, correlation_id, event_name, args):
+        print "Fired event_name " + event_name.get_name()
+     
+event = Event("myevent")
+event.addListener(MyListener())
+event.notify("123", Parameters.from_tuples("param1", "ABC"))
+```
 
 ### See also
 - #### [IEvent](../ievent)

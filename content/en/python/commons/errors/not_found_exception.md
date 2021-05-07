@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The NotFoundException is used to manage errors caused by attempts to access missing objects.
+The NotFoundException class is used to manage errors caused by attempts to access missing objects.
 
 ### Constructors
 Creates an error instance and assigns its values.

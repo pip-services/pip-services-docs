@@ -9,7 +9,9 @@ description: >
 
 **Implements**: [ICredentialStore](../icredential_store), [IReconfigurable](../../../commons/config/ireconfigurable)
 
-See also [CredentialParams](../credential_params), [ICredentialStore](../icredential_store)
+### Description
+
+The MemoryCredentialStore class is used to create an instance of a credential store that keeps the contained credentials in memory.
 
 ##### Configuration parameters
 
@@ -23,18 +25,6 @@ See also [CredentialParams](../credential_params), [ICredentialStore](../icreden
 - **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
 
 
-**Example:**
-```python
-config = ConfigParams.from_tuples("key1.user", "jdoe",
-    "key1.pass", "pass123",
-    "key2.user", "bsmith",
-    "key2.pass", "mypass"
-)
-
-credentialStore = MemoryCredentialStore()
-credentialStore.read_credentials(config)
-credentialStore.lookup("123", "key1")
-```
 
 ### Constructors
 Creates a new instance of the credential store.
@@ -44,7 +34,7 @@ Creates a new instance of the credential store.
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with credential parameters.
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -82,7 +72,19 @@ Stores credential parameters into the store.
 - **key**: str - a key to uniquely identify the credential parameters.
 - **credential**: [CredentialParams](../credential_params) - a credential parameters to be stored.
 
+### Examples
 
+```python
+config = ConfigParams.from_tuples("key1.user", "jdoe",
+    "key1.pass", "pass123",
+    "key2.user", "bsmith",
+    "key2.pass", "mypass"
+)
+
+credentialStore = MemoryCredentialStore()
+credentialStore.read_credentials(config)
+credentialStore.lookup("123", "key1")
+```
 
 ### See also
 - #### [CredentialParams](../credential_params)

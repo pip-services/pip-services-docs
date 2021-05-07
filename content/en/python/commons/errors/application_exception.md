@@ -4,26 +4,14 @@ title: "ApplicationException"
 linkTitle: "ApplicationException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Defines a base class to defive various application exceptions.
-
-
-    Most languages have own definition of base exception (error) types.
-    However, this class is implemented symmetrically in all languages
-    supported by PipServices toolkit. It allows to create portable implementations
-    and support proper error propagation in microservices calls.
+    
+    Defines a base class used to define various application exceptions.
 
 
-    Error propagation means that when microservice implemented in one language
-    calls microservice(s) implemented in a different language(s), errors are returned
-    throught the entire call chain and restored in their original (or close) type.
 
 
-    Since number of potential exception types is endless, PipServices toolkit
-    supports only 12 standard categories of exceptions defined in [ErrorCategory](../error_category).
-    This [ApplicationException]() class acts as a basis for
-    all other 12 standard exception types.
+
+  
 
 
     Most exceptions have just free-form message that describes occured error.
@@ -47,8 +35,15 @@ description: >
 
 **Implements:** Exception
 
-See also [ErrorCategory](../error_category), [ErrorDescription](../error_description)
+### Description
 
+The ApplicationException class defines a base class used to define various application exceptions.
+
+Important points
+
+- Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit. It allows to create portable implementations and support proper error propagation in microservices calls.
+- Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
+- Since number of potential exception types is endless, the PipServices toolkit supports only 12 standard categories of exceptions defined in [ErrorCategory](../error_category). This [ApplicationException]() class acts as a basis for these 12 standard exception types.
 
 #### Constructors
 Creates a new instance of application exception and assigns its values.
@@ -99,7 +94,7 @@ Original error wrapped by this exception
 
 </span>
 
-### Methods
+### Instance methods
 
 #### get_cause_string
 Gets original error wrapped by this exception as a string message.
@@ -206,6 +201,7 @@ Otherwise a new ApplicationException is created and original error is set as its
 - **cause**: Any - an original error object
 - **returns**: [ApplicationException]() - an original or newly created ApplicationException
 
+### Static methods
 
 #### wrap_error
 Wraps another exception into specified application exception object.

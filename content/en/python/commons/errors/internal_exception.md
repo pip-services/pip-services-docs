@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The InternalException class is used to manage errors caused by programming mistakes.
+
 ### Constructors
 Creates an error instance and assigns its values.
 

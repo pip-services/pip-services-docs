@@ -10,6 +10,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The ConflictException class is used to manage errors raised by conflicts between object versions that were posted by the user and those that are stored on the server
+
 ### Constructors
 Creates an error instance and assigns its values.
 

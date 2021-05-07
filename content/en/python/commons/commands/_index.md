@@ -23,6 +23,7 @@ description: >
     - [Intercepted commands](intercepted_command) are used as pattern decorators that allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. They are represented as regular commands, but run their own logic before calling the actual command. 
 
 A typical uses of this package would be intercepting messages and various logging implementations. 
+
 ---
 ---
 

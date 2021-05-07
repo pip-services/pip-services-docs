@@ -4,10 +4,13 @@ title: "ErrorCategory"
 linkTitle: "ErrorCategory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Defines standard error categories to application exceptions
-    supported by PipServices toolkit.
+    Defines the 12 standard error categories supported by the PipServices toolkit.
+    
 ---
 
+### Description
+
+The ErrorCategory class defines the 12 standard error categories supported by the PipServices toolkit.
 
 ### Fields
 

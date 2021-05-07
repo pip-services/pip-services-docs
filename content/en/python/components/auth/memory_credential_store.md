@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The MemoryCredentialStore class is used to create credential stores that keep the contained credentials in memory.
+The MemoryCredentialStore class is used to create credential stores that keep their contained credentials in memory.
 
 ##### Configuration parameters
 

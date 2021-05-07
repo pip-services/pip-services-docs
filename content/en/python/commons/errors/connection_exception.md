@@ -5,11 +5,14 @@ linkTitle: "ConnectionException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Errors that occur during connections to remote services.
-    They can be related to misconfiguration, network issues, or the remote service itself.
+    
 ---
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The ConnectionException class is used to manage errors that occur duirng a connection to a remote service. These errors can be related to misconfiguration, network issues, or the remote service itself.
 
 ### Constructors
 Creates an error instance and assigns its values.

@@ -6,14 +6,17 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Helper class to retrieve component credentials.
 
-    If credentials are configured to be retrieved from [ICredentialStore](../icredentialStore),
-    it automatically locates [ICredentialStore](../icredentialStore) in component references
-    and retrieve credentials from there using store_key parameter.
 ---
 
 **Implements**: [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [CredentialParams](../credential_params), [ICredentialStore](../icredentialStore)
+### Description
+
+The CredentialResolver class is used to retrieve component credentials.
+
+Important points
+
+- If credentials are configured to be retrieved from [ICredentialStore](../icredentialStore), it will automatically locate [ICredentialStore](../icredentialStore) in component references and retrieve the credentials from there using the store_key parameter.
 
 ##### Configuration parameters
 
@@ -31,17 +34,6 @@ See also [CredentialParams](../credential_params), [ICredentialStore](../icreden
 ##### References
 - **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
 
-
-**Example:**
-```python
-config = ConfigParams.from_tuples("credential.user", "jdoe",
-                                  "credential.pass",  "pass123")
-
-credentialResolver = CredentialResolver()
-credentialResolver.configure(config)
-credentialResolver.set_references(references)
-credentialResolver.lookup("123")
-```
 
 ### Constructors
 Creates a new instance of credentials resolver.
@@ -98,6 +90,16 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
+### Examples
+```python
+config = ConfigParams.from_tuples("credential.user", "jdoe",
+                                  "credential.pass",  "pass123")
+
+credentialResolver = CredentialResolver()
+credentialResolver.configure(config)
+credentialResolver.set_references(references)
+credentialResolver.lookup("123")
+```
 
 
 ### See also

@@ -17,7 +17,7 @@ The ApplicationException class defines a base class used to define various appli
 
 Important points
 
-- Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit. It allows to create portable implementations and support proper error propagation in microservices calls.
+- Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit and  allows to create portable implementations and support proper error propagation in microservices calls.
 - Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
 - Since number of potential exception types is endless, the PipServices toolkit supports only 12 standard categories of exceptions defined in [ErrorCategory](../error_category). This [ApplicationException]() class acts as a basis for these 12 standard exception types.
 - Most exceptions have just free-form message that describes occured error. However, this may not be sufficient to create meaninful error descriptions. Therefoe, the [ApplicationException]() class proposes an extended error definition that has more standard fields:

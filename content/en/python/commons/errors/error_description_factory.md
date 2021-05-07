@@ -7,14 +7,18 @@ description: >
     Factory to create serializeable [ErrorDescription](../error_description) from [ApplicationException](../application_exception)
     or from arbitrary errors.  
 
-    The ErrorDescriptions are used to pass errors through the wire between microservices
-    implemented in different languages. They allow to restore exceptions on the receiving side
-    close to the original type and preserve additional information.
+    
 ---
-See also [ApplicationException](../application_exception), [ErrorDescription](../error_description)
 
+### Description
 
-### Methods
+The ErrorDescriptionFactory class provides a factory to create serializeable [ErrorDescription](../error_description) from [ApplicationException](../application_exception) or from arbitrary errors.  
+
+Important points
+
+- Error descriptions are used to pass errors through the wire between microservices implemented in different languages. They allow to restore exceptions on the receiving side close to the original type and preserve additional information.
+
+### Static ethods
 
 #### create
 Creates a serializable ErrorDescription from error object.

@@ -13,7 +13,7 @@ description: >
 ---
 ---
 
-**Important points**
+**Important points**   
     
 - Examples of credentials are passwords, logins, application keys, and secrets. 
 - Credentials' information is usually linked with connection parameters. 

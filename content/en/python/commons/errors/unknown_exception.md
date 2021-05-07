@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The UnknownException is used to manage unknown or unexpected errors.
+The UnknownException class is used to manage unknown or unexpected errors.
 
 ### Constructors
 Creates an error instance and assigns its values.

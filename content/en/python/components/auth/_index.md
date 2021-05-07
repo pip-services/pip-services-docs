@@ -13,13 +13,13 @@ description: >
 ---
 ---
 
-<div class="module-body"> 
 **Important points**
     
 - Examples of credentials are passwords, logins, application keys, and secrets. 
 - Credentials' information is usually linked with connection parameters. 
 - Configuration and connection parameters are stored separately from authentication information as they need added security and protection
- 
+
+<div class="module-body">  
 
 ### Interfaces
 

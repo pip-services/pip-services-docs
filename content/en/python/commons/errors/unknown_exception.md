@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The UnknownException is used to manage unknown or unexpected errors.
+
 ### Constructors
 Creates an error instance and assigns its values.
 

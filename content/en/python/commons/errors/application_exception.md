@@ -7,30 +7,6 @@ description: >
     
     Defines a base class used to define various application exceptions.
 
-
-
-
-
-  
-
-
-    Most exceptions have just free-form message that describes occured error.
-    That may not be sufficient to create meaninful error descriptions.
-    The [ApplicationException]() class proposes an extended error definition
-    that has more standard fields:
-    - message: is a human-readable error description
-    - category: one of 12 standard error categories of errors
-    - status: numeric HTTP status code for REST invocations
-    - code: a unique error code, usually defined as "MY_ERROR_CODE"
-    - correlation_id: a unique transaction id to trace execution through a call chain
-    - details: map with error parameters that can help to recreate meaningful error description in other languages
-    - stack_trace: a stack trace
-    - cause: original error that is wrapped by this exception
-
-
-    ApplicationException class is not serializable. To pass errors through the wire
-    it is converted into [ErrorDescription](../error_description) object and restored on receiving end into
-    identical exception type.
 ---
 
 **Implements:** Exception
@@ -44,6 +20,16 @@ Important points
 - Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit. It allows to create portable implementations and support proper error propagation in microservices calls.
 - Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
 - Since number of potential exception types is endless, the PipServices toolkit supports only 12 standard categories of exceptions defined in [ErrorCategory](../error_category). This [ApplicationException]() class acts as a basis for these 12 standard exception types.
+- Most exceptions have just free-form message that describes occured error. However, this may not be sufficient to create meaninful error descriptions. Therefoe, the [ApplicationException]() class proposes an extended error definition that has more standard fields:
+    - message: is a human-readable error description
+    - category: one of 12 standard error categories of errors
+    - status: numeric HTTP status code for REST invocations
+    - code: a unique error code, usually defined as "MY_ERROR_CODE"
+    - correlation_id: a unique transaction id to trace execution through a call chain
+    - details: map with error parameters that can help to recreate meaningful error description in other languages
+    - stack_trace: a stack trace
+    - cause: original error that is wrapped by this exception
+- The ApplicationException class is not serializable. To pass errors through the wire it must be converted into a [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
 
 #### Constructors
 Creates a new instance of application exception and assigns its values.

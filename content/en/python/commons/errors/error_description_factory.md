@@ -4,7 +4,7 @@ title: "ErrorDescriptionFactory"
 linkTitle: "ErrorDescriptionFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Factory to create serializeable [ErrorDescription](../error_description) from [ApplicationException](../application_exception)
+    Factory used to create serializeable [ErrorDescription](../error_description) from [ApplicationException](../application_exception)
     or from arbitrary errors.  
 
     

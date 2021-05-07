@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     
-    This package ontains interfaces and classes for credential stores, which can be used to save or retrieve credential parameters. 
+    This package contains interfaces and classes for credential stores, which can be used to save or retrieve credential parameters. 
 
 
 
@@ -30,7 +30,7 @@ to authenticate against external services.
 ### Classes
 
 #### [CredentialParams](credential_params)
-Contains credentials to authenticate against external services.
+Contains credentials used to authenticate against external services.
 They are used together with connection parameters, but usually stored
 in a separate store, protected from unauthorized access.
 
@@ -42,7 +42,7 @@ it automatically locates [ICredentialStore](icredential_store) in component refe
 and retrieve credentials from there using store_key parameter.
 
 #### [DefaultCredentialStoreFactory](default_credential_store_factory)
-Creates [ICredentialStore](icredential_store) components by their descriptors.
+Creates [ICredentialStore](icredential_store) components based on their descriptors.
 
 #### [MemoryCredentialStore](memory_credential_store)
 Credential store that keeps credentials in memory.

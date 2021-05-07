@@ -9,6 +9,9 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+The FileException class is used to manage errors in read/write local disk operations.
+
+
 ### Constructors
 Creates an error instance and assigns its values.
 

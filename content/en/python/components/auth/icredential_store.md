@@ -10,10 +10,11 @@ description: >
 
 **Implements**: [Factory](../../build/factory)
 
-See also [CredentialParams](../credential_params), [ConnectionParams](../connection_params)
+### Description
 
+The ICredentialStore interface is used to store and look up credentials used to authenticate against external services.
 
-### Methods
+### Instance methods
 
 #### lookup
 Lookups credential parameters by its key.

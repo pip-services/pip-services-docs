@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The InvocationException class is used to manage errors returned by remote services or by the network during call attempts.
+
 ### Constructors
 Creates an error instance and assigns its values.
 

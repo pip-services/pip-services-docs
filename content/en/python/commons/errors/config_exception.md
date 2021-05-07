@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The ConfigException is used to manage errors related to mistakes in a microservice's user-define configurations.
+The ConfigException is used to manage errors related to mistakes in a microservice's user-defined configurations.
 
 ### Constructors
 Creates an error instance and assigns its values.

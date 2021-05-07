@@ -44,7 +44,7 @@ Creates a new instance of credentials resolver.
 - **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
 
 
-### Methods
+### Instance methods
 
 #### add
 Adds a new credential to component credentials

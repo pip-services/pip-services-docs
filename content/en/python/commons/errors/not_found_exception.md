@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [ApplicationException](../application_exception)
 
+### Description
+
+The NotFoundException is used to manage errors caused by attempts to access missing objects.
+
 ### Constructors
 Creates an error instance and assigns its values.
 

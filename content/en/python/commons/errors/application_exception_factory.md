@@ -6,10 +6,12 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Factory to recreate exceptions from [ErrorDescription](../error_description) values passed through the wire.
 ---
-See also [ApplicationException](../application_exception), [ErrorDescription](../error_description)
 
+### Description
 
-### Methods
+The ApplicationExceptionFactory acts as a factory to recreate from [ErrorDescription](../error_description) values passed through the wire.
+
+### Static methods
 
 #### create
 Recreates ApplicationException object from serialized ErrorDescription.

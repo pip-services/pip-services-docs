@@ -12,7 +12,7 @@ See also [ApplicationException](../application_exception), [ApplicationException
 
 ### Description
 
-The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side [ErrorDescription]() is used to recreate exception object close to its original type without missing additional details.
+The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side [ErrorDescription]() is used to recreate exception the object close to its original type without missing additional details.
 
 ### Fields
 

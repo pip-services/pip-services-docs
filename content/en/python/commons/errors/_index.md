@@ -5,8 +5,7 @@ linkTitle: "Errors"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
+    
     Portable and localizable Exceptions classes. Each Exception has a unique string code and details array (which can be used for creating 
     localized strings), in addition to a description and stack trace . 
 

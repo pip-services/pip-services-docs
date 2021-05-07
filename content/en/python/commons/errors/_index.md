@@ -25,7 +25,7 @@ description: >
 
 - Although the exception classes themselves are not serializable, they can be converted to ErrorDescriptions, which are serializable in one language, transferred to the receiving side, and deserialized in another language. After deserialization, the initial exception class can be restored. 
 
-- Besides, when transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
+- When transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
 
 
 ### Classes

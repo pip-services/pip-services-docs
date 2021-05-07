@@ -5,14 +5,18 @@ linkTitle: "CredentialParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Contains credentials to authenticate against external services.
-    They are used together with connection parameters, but usually stored
-    in a separate store, protected from unauthorized access.
+    
 ---
 
 **Implements**: [ConfigParams](../../../commons/config/config_params)
 
-See also [ConfigParams](../../../commons/config/config_params), [ConnectionParams](../connect/connection_params),
-[CredentialResolver](../credential_resolver), [ICredentialStore](../icredentialStore)
+### Description
+
+The CredentialParams class allows you to create credential parameters that can be used to authenticate against external services.
+
+Important points
+
+- Credential parameters are used together with connection parameters, but usually stored in a separate store, protected from unauthorized access.
 
 ##### Configuration parameters
 
@@ -27,17 +31,7 @@ See also [ConfigParams](../../../commons/config/config_params), [ConnectionParam
 - **client_key**: alternative to access_key
 - **secret_key**: alternative to access_key
 
-In addition to standard parameters CredentialParams may contain any number of custom parameters
-
-**Example:**
-```python
-credential = CredentialParams.from_tuples
-("user", "jdoe", "pass", "pass123", "pin", "321")
-
-username = credential.get_username()           # Result: "jdoe"
-password = credential.get_password()           # Result: "pass123"
-pin = credential.get_as_nullable_string("pin") # Result: 321
-```
+In addition to standard parameters CredentialParams may contain any number of custom parameters.
 
 ### Constructors
 Creates a new credential parameters and fills it with values.
@@ -47,7 +41,7 @@ Creates a new credential parameters and fills it with values.
 - **values**: Any - (optional) an object to be converted into key-value pairs to initialize these credentials.
 
 
-### Methods
+### Instance methods
 
 #### get_access_id
 Gets the application access id. The value can be stored in parameters "access_id" pr "client_id"
@@ -139,6 +133,7 @@ The credential parameters are redirected to [ICredentialStore](../icredential_st
 
 - **value**: bool - true if credentials shall be retrieved from [ICredentialStore](../icredential_store)
 
+### Static methods
 
 #### from_config
 Retrieves a single CredentialParams from configuration parameters
@@ -181,6 +176,16 @@ than it returns a list with only one CredentialParams.
 - **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve credentials
 - **returns**: List[[CredentialParams]()] - a list of retrieved CredentialParams
 
+### Examples
+
+```python
+credential = CredentialParams.from_tuples
+("user", "jdoe", "pass", "pass123", "pin", "321")
+
+username = credential.get_username()           # Result: "jdoe"
+password = credential.get_password()           # Result: "pass123"
+pin = credential.get_as_nullable_string("pin") # Result: 321
+```
 
 ### See also
 - #### [ConfigParams](../../../commons/config/config_params)

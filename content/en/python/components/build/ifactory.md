@@ -15,7 +15,7 @@ The IFactory interface defines methods used by component factories to create com
 Important points
 
 - Factories use locators to identify components to be created.
-- The locators are similar to those used to locate components in references. They can be of any type like strings or integers. However the Pip.Services toolkit most often uses Descriptor objects as component locators.
+- The locators are similar to those used to locate components in references. They can be of any type, like strings or integers. However the Pip.Services toolkit most often uses Descriptor objects as component locators.
 
 ### Instance methods
 

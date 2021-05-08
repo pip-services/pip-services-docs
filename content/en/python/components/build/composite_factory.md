@@ -5,26 +5,19 @@ linkTitle: "CompositeFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Aggregates multiple factories into a single factory component.
-    When a new component is requested, it iterates through 
-    factories to locate the one able to create the requested component.
-
-
-    This component is used to conveniently keep all supported factories in a single place.
+   
 ---
 
 **Implements**: [IFactory](../ifactory)
 
+### Description
 
-**Example:**
-```python
-factory = CompositeFactory()
-factory.add(new DefaultLoggerFactory())
-factory.add(new DefaultCountersFactory())
+The CompositeFactory class allows you to aggregate multiple factories into a single factory component.
 
-loggerLocator = Descriptor("*", "logger", "*", "*", "1.0")
-factory.can_create(loggerLocator)  # Result: Descriptor("pip-service", "logger", "null", "default", "1.0")
-factory.create(loggerLocator)      # Result: created NullLogger
-```
+Important points
+
+- When a new component is requested, it iterates through factories to locate the one able to create the requested component.
+- Usually used to keep all supported factories in a single place.
 
 ### Constructors
 Creates a new instance of the factory.
@@ -73,3 +66,14 @@ Removes a factory from the list of embedded factories.
 
 - **factory**: [IFactory](../ifactory) - the factory to remove.
 
+### Examples
+
+```python
+factory = CompositeFactory()
+factory.add(new DefaultLoggerFactory())
+factory.add(new DefaultCountersFactory())
+
+loggerLocator = Descriptor("*", "logger", "*", "*", "1.0")
+factory.can_create(loggerLocator)  # Result: Descriptor("pip-service", "logger", "null", "default", "1.0")
+factory.create(loggerLocator)      # Result: created NullLogger
+```

@@ -4,7 +4,7 @@ title: "FileConfigReader"
 linkTitle: "FileConfigReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Config reader that reads configuration from a file.
+    Config reader that reads a configuration from a file.
     
 ---
 

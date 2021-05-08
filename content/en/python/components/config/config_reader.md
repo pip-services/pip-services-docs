@@ -9,15 +9,16 @@ description: >
 
 **Implements**: [IConfigurable](../../../commons/config/iconfigurable)
 
-See also [IConfigReader](../iconfigReader)
+### Description
 
+The ConfigReader class allows you to create config readers that support configuration parameterization.
 
 #### Configuration parameters
 - **parameters**: this entire section is used as template parameters
     - **...**
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.

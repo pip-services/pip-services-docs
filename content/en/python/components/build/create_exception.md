@@ -9,8 +9,9 @@ description: >
 
 **Implements**: [InternalException](../../../commons/errors/internal_exception)
 
-See also [InternalException](../../../commons/errors/internal_exception), [ApplicationException](../../../commons/errors/application_exception)
+### Description
 
+The CreateException is allows you to manage the error raised when a factory is not able to create a requested component.
 
 
 ### Constructors

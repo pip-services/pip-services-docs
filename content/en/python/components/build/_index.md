@@ -5,11 +5,9 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: Rewrite the description.
-
-
-    Contains the "factory design pattern". There are various factory types, 
-    which are also implemented in a portable manner.  
+    
+    The Build package contains interfaces and classes used to implement the "factory design pattern". 
+    
 ---
 ---
 

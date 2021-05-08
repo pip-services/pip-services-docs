@@ -62,7 +62,7 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **path**: str - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.

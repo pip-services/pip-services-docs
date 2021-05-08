@@ -16,7 +16,7 @@ The NullCache class allows you to implement a dummy cache that doesn't do anythi
 
 Important points
 
-- It can be used in testing or in situations when cache is required but shall be disabled.
+- It can be used in testing or in situations when cache is required but must be disabled.
 
 ### Static methods
 

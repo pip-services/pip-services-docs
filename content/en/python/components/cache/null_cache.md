@@ -6,16 +6,19 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Dummy cache implementation that doesn't do anything.
 
-    It can be used in testing or in situations when cache is required
-    but shall be disabled.
-
 ---
 
 **Implements**: [ICache](../icache)
 
-See also [ICache](../icache)
+### Description
 
-### Methods
+The NullCache class allows you to implement a dummy cache that doesn't do anything.
+
+Important points
+
+- It can be used in testing or in situations when cache is required but shall be disabled.
+
+### Static methods
 
 #### remove
 Removes a value from the cache by its key.

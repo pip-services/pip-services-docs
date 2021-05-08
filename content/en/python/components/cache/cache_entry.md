@@ -4,8 +4,12 @@ title: "CacheEntry"
 linkTitle: "CacheEntry"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Data object to store cached values with their keys used by [MemoryCache](../memory_cache)
+    Data object to store cached values with their keys used by [MemoryCache](../memory_cache).
 ---
+
+### Description
+
+The CacheEntry class allows you to create a data object that can be used to store cached values with their keys used by [MemoryCache](../memory_cache).
 
 ### Constructors
 Creates a new instance of the cache entry and assigns its values.
@@ -17,7 +21,7 @@ Creates a new instance of the cache entry and assigns its values.
 - **timeout**: int - expiration timeout in milliseconds.
 
 
-### Methods
+### Instance methods
 
 #### get_expiration
 Gets the expiration timeout.

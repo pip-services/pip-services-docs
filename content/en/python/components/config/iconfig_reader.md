@@ -6,15 +6,19 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Interface for configuration readers that retrieve configuration from various sources
     and make it available for other components.
-
-
-    Some IConfigReader implementations may support configuration parameterization.
-    The parameterization allows to use configuration as a template and inject there dynamic values.
-    The values may come from application command like arguments or environment variables.
+    
 ---
 
+### Description
 
-### Methods
+The IConfigReader interface is used in configuration readers that retrieve a configuration from various sources and make it availale for other components.
+
+Important points
+
+- Some IConfigReader implementations may support configuration parameterization.
+- The parameterization allows to use configuration as a template and inject there dynamic values. The values may come from application command like arguments or environment variables.
+
+### Instance methods
 
 #### _read_config
 Reads configuration and parameterize it with given values.

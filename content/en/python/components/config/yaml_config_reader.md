@@ -9,29 +9,15 @@ description: >
 
 **Implements**: [FileConfigReader](../file_config_reader)
 
-See also [IConfigReader](../iconfig_reader), [FileConfigReader](../file_config_reader)
+### Description
+
+The YamlConfigReader allows you to create a config reader that reads a configuration from a YAML file.
 
 #### Configuration parameters
 
 - **path**: path to configuration file
 - **parameters**: this entire section is used as template parameters
 - ...
-
-
-**Example:**
-```yaml
-======== config.yml ======
-key1: "{{KEY1_VALUE}}"
-key2: "{{KEY2_VALUE}}"
-===========================
-```
-    
-        
-```python
-configReader = YamlConfigReader("config.yml")
-parameters = ConfigParams.from_tuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
-configReader._read_config("123", parameters)
-```
 
 
 ### Constructors
@@ -42,7 +28,7 @@ Creates a new instance of the config reader.
 - **path**: str - (optional) a path to configuration file.
 
 
-### Methods
+### Instance methods
 
 
 #### _read_config
@@ -85,6 +71,22 @@ Reads configuration file, parameterizes its content and converts it into YAML ob
 - **path**: str - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
 - **returns**: Any - a YAML object with configuration.
+
+### Examples
+
+```yaml
+======== config.yml ======
+key1: "{{KEY1_VALUE}}"
+key2: "{{KEY2_VALUE}}"
+===========================
+```
+    
+        
+```python
+configReader = YamlConfigReader("config.yml")
+parameters = ConfigParams.from_tuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
+configReader._read_config("123", parameters)
+```
 
 ### See also
 - #### [IConfigReader](../iconfig_reader)

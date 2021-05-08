@@ -9,18 +9,11 @@ description: >
 
 **Implements**: [IFactory](../ifactory)
 
-See also [Descriptor](../../../commons/refer/descriptor), [IFactory](../ifactory)
+### Description
 
-**Example:**
-```python
-factory = Factory()
+The Factory class allows you to create components using registered types and factory functions.
 
-factory.register_as_type(Descriptor("mygroup", "mycomponent1", "default", "*", "1.0"), MyComponent1)
-
-factory.create(Descriptor("mygroup", "mycomponent1", "default", "name1", "1.0"))
-```
-
-### Methods
+### Instance methods
 
 #### can_create
 Checks if this factory is able to create component by given locator.
@@ -61,7 +54,15 @@ Registers a component using its type (a constructor function).
 - **locator**: Any - a locator to identify component to be created.
 - **object_factory**: Any - a component type.
 
+### Examples
 
+```python
+factory = Factory()
+
+factory.register_as_type(Descriptor("mygroup", "mycomponent1", "default", "*", "1.0"), MyComponent1)
+
+factory.create(Descriptor("mygroup", "mycomponent1", "default", "name1", "1.0"))
+```
 
 ### See also
 - #### [Descriptor](../../../commons/refer/descriptor)

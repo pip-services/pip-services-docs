@@ -16,6 +16,14 @@ description: >
 See also [ConfigParams](../../../commons/config/config_params), [CredentialParams](../../auth/credential_params),
 [ConnectionResolver](../connection_resolver), [IDiscovery](../idiscovery)
 
+### Description
+
+The ConnectionParams class allows you to create connection parameters used to connect to external services.
+
+ Important points
+    
+ - Usually, connection parameters are used together with credential parameters, but are stored
+    separately from these more protected and sensitive values.
 
 #### Configuration parameters
 
@@ -27,18 +35,6 @@ See also [ConfigParams](../../../commons/config/config_params), [CredentialParam
 
 In addition to standard parameters ConnectionParams may contain any number of custom parameters
 
-**Example:**
-```python
-connection = ConnectionParams.from_tuples("protocol", "http",
-    "host", "10.1.1.100",
-    "port", "8080",
-    "cluster", "mycluster")
-
-host = connection.get_host()                              # Result: "10.1.1.100"
-port = connection.get_port()                              # Result: 8080
-cluster = connection.get_as_nullable_string("cluster")    # Result: "mycluster"
-```
-
 
 ### Constructors
 Creates a new connection parameters and fills it with values.
@@ -47,7 +43,7 @@ Creates a new connection parameters and fills it with values.
 
 - **map**: Any - (optional) an object to be converted into key-value pairs to initialize this connection.
 
-### Methods
+### Instance methods
 
 #### get_discovery_key
 Gets the key to retrieve this connection from DiscoveryService.
@@ -156,6 +152,7 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 
 - **returns**: bool - true if connection shall be retrieved from DiscoveryService
 
+### Static methods
 
 #### from_config
 Retrieves a single ConnectionParams from configuration parameters
@@ -201,6 +198,18 @@ than it returns a list with only one ConnectionParams.
 
 - **returns**: List[[ConnectionParams]()] - a list of retrieved ConnectionParams
 
+### Examples
+
+```python
+connection = ConnectionParams.from_tuples("protocol", "http",
+    "host", "10.1.1.100",
+    "port", "8080",
+    "cluster", "mycluster")
+
+host = connection.get_host()                              # Result: "10.1.1.100"
+port = connection.get_port()                              # Result: 8080
+cluster = connection.get_as_nullable_string("cluster")    # Result: "mycluster"
+```
 
 ### See also
 - #### [ConfigParams](../../../commons/config/config_params)

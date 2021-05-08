@@ -4,7 +4,7 @@ title: "IConfigReader"
 linkTitle: "IConfigReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Interface for configuration readers that retrieve configuration from various sources
+    Interface for configuration readers that retrieve a configuration from various sources
     and make it available for other components.
     
 ---

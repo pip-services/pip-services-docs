@@ -4,14 +4,15 @@ title: "FileConfigReader"
 linkTitle: "FileConfigReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract config reader that reads configuration from a file.
-    Child classes add support for config files in their specific format
-    like JSON, YAML or property files.
+    Config reader that reads configuration from a file.
+    
 ---
 
 **Implements**: [ConfigReader](../config_reader)
 
-See also [IConfigReader](../iconfig_reader), [ConfigReader](../config_reader)
+### Description
+
+The FileConfigReader class allows you to create a config reader that reads a configuration from a file.
 
 #### Configuration parameters
 
@@ -27,7 +28,7 @@ Creates a new instance of the config reader.
 - **path**: str - (optional) a path to configuration file.
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.

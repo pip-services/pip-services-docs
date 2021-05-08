@@ -21,7 +21,7 @@ Important points
 
 #### Configuration parameters
 
-- **path**: path to configuration file
+- **path**: path to the configuration file
 - **parameters**: this entire section is used as template parameters
 - ...
 

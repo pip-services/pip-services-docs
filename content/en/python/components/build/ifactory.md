@@ -5,18 +5,19 @@ linkTitle: "IFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Interface for component factories.
-
-
-    Factories use locators to identify components to be created.
-
-
-    The locators are similar to those used to locate components in references.
-    They can be of any type like strings or integers. However Pip.Services toolkit
-    most often uses Descriptor objects as component locators.
+    
 ---
 
+### Description
 
-### Methods
+The IFactory interface defines methods used by component factories to create components.
+
+Important points
+
+- Factories use locators to identify components to be created.
+- The locators are similar to those used to locate components in references. They can be of any type like strings or integers. However the Pip.Services toolkit most often uses Descriptor objects as component locators.
+
+### Instance methods
 
 #### can_create
 Checks if this factory is able to create component by given locator.

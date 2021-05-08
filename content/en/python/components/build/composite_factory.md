@@ -27,7 +27,7 @@ Creates a new instance of the factory.
 - **factories**: [IFactory](../ifactory) - a list of factories to embed into this factory.
 
 
-### Methods
+### Instance methods
 
 #### add
 Adds a factory into the list of embedded factories.

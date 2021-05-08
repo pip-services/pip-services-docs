@@ -4,7 +4,7 @@ title: "JsonConfigReader"
 linkTitle: "JsonConfigReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Config reader that reads configuration from JSON file.
+    Config reader that reads a configuration from a JSON file.
 
     
 ---

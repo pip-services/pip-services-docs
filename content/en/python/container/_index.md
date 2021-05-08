@@ -4,7 +4,7 @@ title: "Container"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 no_list: true
 description: > 
-    IoC container for for Python 
+    IoC container for Python 
 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides an inversion-of-control (IoC) container to facilitate the development of services and applications composed of loosely coupled components.

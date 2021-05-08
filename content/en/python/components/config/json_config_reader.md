@@ -31,7 +31,7 @@ Creates a new instance of the config reader.
 
 > JsonConfigReader(path: str = None)
 
-- **path**: str - (optional) a path to configuration file.
+- **path**: str - (optional) path to the configuration file.
 
 
 ### Instanc methods

@@ -5,11 +5,9 @@ linkTitle: "Cache"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: Rewrite the description.
+    
+    The Cache package contains interfaces and classes that can be used to create caches that can be used to improve a system's performance.
 
-
-    Abstract implementation of various distributed caches. We can save an object 
-    to cache and retrieve it object by its key, using various implementations.  
 ---
 ---
 

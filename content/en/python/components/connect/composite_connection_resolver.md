@@ -80,7 +80,7 @@ Composes Composite connection options from connection and credential parameters.
 
 
 #### _compose_options
-TODO add description
+A composite of several merger options
 
 >  _compose_options(connections: List[[ConnectionParams](../connection_params)], credential: [CredentialParams](../../auth/credential_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 

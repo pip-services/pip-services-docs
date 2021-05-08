@@ -69,7 +69,7 @@ Reads configuration from a file, parameterize it with given values and returns a
 
 
 #### read_object
-Reads configuration file, parameterizes its content and converts it into JSON object.
+Reads a configuration file, parameterizes its content and converts it into JSON object.
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
 

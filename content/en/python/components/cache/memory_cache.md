@@ -6,27 +6,25 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Cache that stores values in the process memory.
 
-    Remember: This implementation is not suitable for synchronization of distributed processes.
 
 ---
 
 **Implements**: [ICache](../icache), [IReconfigurable](../../../commons/config/ireconfigurable)
 
-See also [ICache](../icache)
+### Description
+
+The MemoryCache class allows you to create a cache that stoers values in the process memory.
+
+Important points
+
+- This implementation is not suitable for synchronization of distributed processes.
 
 #### Configuration parameters
 **options**:
 - **timeout**: default caching timeout in milliseconds (default: 1 minute)
 - **max_size**: maximum number of values stored in this cache (default: 1000)
 
-
-**Example:**
-```python
-cache = MemoryCache()
-cache.store("123", "key1", "ABC", 0)
-```
-
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -67,6 +65,12 @@ Stores value in the cache with expiration time.
 - **timeout**: int - expiration timeout in milliseconds.
 - **returns**: Any - a cached value stored in the cache.
 
+### Examples
+
+```python
+cache = MemoryCache()
+cache.store("123", "key1", "ABC", 0)
+```
 
 ### See also
 - #### [ICache](../icache)

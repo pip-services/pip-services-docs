@@ -5,15 +5,10 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: Rewrite the description.
-
-
-    Contains implementation of the config design pattern. 
-
-    ConfigReader's Parameterize method allows us to take a standard configuration, and, 
-    using a set of current parameters (e.g. environment variables), parameterize it. When 
-    we create the configuration of a container, we can use environment variables to tailor 
-    it to the system, dynamically add addresses, ports, etc.
+    
+    This package contains interfaces and classes used to create configuration readers from different sources, such as YAML and JSON files. 
+    
+    
 ---
 ---
 

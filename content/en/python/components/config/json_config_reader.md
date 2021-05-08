@@ -38,7 +38,7 @@ Creates a new instance of the config reader.
 
 
 #### _read_config
-Reads configuration and parameterize it with given values.
+Reads a configuration and parameterizes it with given values.
 
 > _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
@@ -48,7 +48,7 @@ Reads configuration and parameterize it with given values.
 
 
 #### _read_object
-Reads configuration file, parameterizes its content and converts it into JSON object.
+Reads a configuration file, parameterizes its content and converts it into a JSON object.
 
 > _read_object(self, correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
@@ -58,7 +58,7 @@ Reads configuration file, parameterizes its content and converts it into JSON ob
 
 
 #### read_config
-Reads configuration from a file, parameterize it with given values and returns a new ConfigParams object.
+Reads a configuration from a file, parameterize it with given values and returns a new ConfigParams object.
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 

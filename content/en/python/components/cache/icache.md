@@ -7,7 +7,11 @@ description: >
     Interface for caches that are used to cache values to improve performance.
 ---
 
-### Methods
+### Description
+
+The ICache interface defines methods for caches that are used to cache values, in order to improve performance.
+
+### Instance methods
 
 #### remove
 Removes a value from the cache by its key.

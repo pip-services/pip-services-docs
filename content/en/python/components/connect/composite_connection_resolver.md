@@ -10,6 +10,9 @@ description: >
 
 **Implements**: [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
+### Description
+
+The CompositeConnectionResolver class allows you to resolve connection and credential parameters, validate them and generate connection options.
 
 #### Configuration parameters
 
@@ -65,7 +68,7 @@ The list of supported protocols
 
 </span>
 
-### Methods
+### Instance methods
 
 #### compose
 Composes Composite connection options from connection and credential parameters.

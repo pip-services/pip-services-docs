@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MemoryCache class allows you to create a cache that stoers values in the process memory.
+The MemoryCache class allows you to create a cache that stores values in the process memory.
 
 Important points
 

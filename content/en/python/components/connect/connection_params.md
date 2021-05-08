@@ -4,11 +4,8 @@ title: "ConnectionParams"
 linkTitle: "ConnectionParams"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Contains connection parameters to connect to external services.
+    Contains connection parameters used to connect to external services.
 
-
-    They are used together with credential parameters, but usually stored
-    separately from more protected sensitive values.
 ---
 
 **Implements**: [ConfigParams](../../../commons/config/config_params)

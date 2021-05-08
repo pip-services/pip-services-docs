@@ -4,7 +4,7 @@ title: "CreateException"
 linkTitle: "CreateException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Error raised when factory is not able to create requested component.
+    Error raised when factory is not able to create a requested component.
 ---
 
 **Implements**: [InternalException](../../../commons/errors/internal_exception)

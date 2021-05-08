@@ -58,7 +58,7 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 
 #### read_config
-Reads a configuration from a file, parameterize it with given values and returns a new ConfigParams object.
+Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 

@@ -52,8 +52,8 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 > _read_object(self, correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: Any - a JSON object with configuration.
 
 
@@ -64,7 +64,7 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **path**: str - a path to configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
@@ -73,9 +73,9 @@ Reads a configuration file, parameterizes its content and converts it into JSON 
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call a chain.
 - **path**: str - a path to configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: Any - a JSON object with configuration.
 
 ### Examples

@@ -37,7 +37,7 @@ Reads a configuration and parameterizes it with given values.
 > _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or null to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
@@ -47,8 +47,8 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 > _read_object(self, correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
-- **returns**: Any - a YAML object with configuration.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
+- **returns**: Any - a YAML object with a configuration.
 
 
 #### read_config
@@ -56,9 +56,9 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace the execution through a call chain.
 - **path**: str - a path to configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
@@ -67,10 +67,10 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace the execution through a call chain.
 - **path**: str - a path to configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration.
-- **returns**: Any - a YAML object with configuration.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
+- **returns**: Any - a YAML object containing a configuration.
 
 ### Examples
 

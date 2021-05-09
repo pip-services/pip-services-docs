@@ -9,7 +9,9 @@ description: >
 
 **Implemenst:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
 
-See also [IDiscovery](../idiscovery), [ConnectionParams](../connection_params)
+### Description
+
+The MemoryDiscovery class allows you to create discovery services that keep connections in memory.
 
 
 #### Configuration parameters
@@ -18,20 +20,6 @@ See also [IDiscovery](../idiscovery), [ConnectionParams](../connection_params)
 - **...** : connection parameters for key 1
 - **[connection key 2]**:
 - **...** : connection parameters for key N
-
-**Example:**
-```python
-config = ConfigParams.from_tuples(
-        "key1.host", "10.1.1.100",
-        "key1.port", "8080",
-        "key2.host", "10.1.1.100",
-        "key2.port", "8082")
-
-discovery = MemoryDiscovery()
-discovery.read_connections(config)
-
-discovery.resolve("123", "key1")
-```
 
 
 ### Constructors
@@ -42,7 +30,7 @@ Creates a new instance of discovery service.
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with connection parameters.
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -90,6 +78,20 @@ Resolves a single connection parameters by its key.
 - **key**: str - a key to uniquely identify the connection. 
 - **returns**: [ConnectionParams](../connection_params) - a resolved connection.
 
+### Examples
+
+```python
+config = ConfigParams.from_tuples(
+        "key1.host", "10.1.1.100",
+        "key1.port", "8080",
+        "key2.host", "10.1.1.100",
+        "key2.port", "8082")
+
+discovery = MemoryDiscovery()
+discovery.read_connections(config)
+
+discovery.resolve("123", "key1")
+```
 
 ### See also
 - #### [IDiscovery](../idiscovery)

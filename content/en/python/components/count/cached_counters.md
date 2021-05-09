@@ -4,7 +4,8 @@ title: "CachedCounters"
 linkTitle: "CachedCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract implementation of performance counters that measures and stores counters in memory.
+    Class used to create performace counters that measure and store those values in memory.
+
     
 ---
 
@@ -13,7 +14,7 @@ description: >
 
 ### Description
 
-The CachedCounters class allows you to create performace counters that measure and store values in memory.
+The CachedCounters class allows you to create performace counters that measure and store those values in memory.
 
 Important points
 

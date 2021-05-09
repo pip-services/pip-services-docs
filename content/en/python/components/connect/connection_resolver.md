@@ -43,7 +43,7 @@ Creates a new instance of connection resolver.
 - **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
 
 
-### Methods
+### Instance methods
 
 #### add
 Adds a new connection to component connections

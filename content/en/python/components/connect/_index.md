@@ -8,7 +8,15 @@ description: >
     Todo: Rewrite the description.
 
 
-    Contains implementation of connection parameters, using various connection strings, 
+    This package contains interfaces and classes used to define connection parameters
+    
+    
+---
+---
+
+**Important points**
+
+Contains implementation of connection parameters, using various connection strings, 
     which are stripped of all credentials. If we need to configure a service, the port, 
     ip address, protocol, and other parameters – we use the ConnectionParams object, and 
     relevant helper classes (like [[ConnectionResolver]]), for acquiring these parameters, 
@@ -47,8 +55,6 @@ description: >
     
     
     One service can have more than one address. 
----
----
 
 <div class="module-body"> 
 

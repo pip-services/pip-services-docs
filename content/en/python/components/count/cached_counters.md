@@ -5,12 +5,19 @@ linkTitle: "CachedCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Abstract implementation of performance counters that measures and stores counters in memory.
-    Child classes implement saving of the counters into various destinations.
+    
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
 [ICounterTimingCallback](../icounter_timing_callback)
 
+### Description
+
+The CachedCounters class allows you to create performace counters that measure and store values in memory.
+
+Important points
+
+- Child classes can implement saving of the counters into various different destinations.
 
 #### Configuration parameters
 
@@ -31,23 +38,23 @@ Creates a new CachedCounters object.
 <span class="hide-title-link">
 
 #### _default_interval
-TODO add description
+Default time interval.
 > **_default_interval** = 300000
 
 #### _cache
-TODO add description
+A dictionary containing the cached values.
 > **_cache**: dict
 
 #### _updated
-TODO add description
+A boolean value that indicates whether the counter has been updated or not.
 > **_updated**: bool
 
 #### _last_dump_time
-TODO add description
+
 > **_last_dump_time**: float
 
 #### _interval
-TODO add description
+Time different between two updates.
 > **_interval**: float
 
 </span>

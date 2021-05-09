@@ -4,11 +4,14 @@ title: "ConnectionUtils"
 linkTitle: "ConnectionUtils"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    A set of utility functions to process connection parameters
+    A set of utility functions used to process connection parameters
 ---
 
+### Description
 
-### Methods
+The ConnectionUtils class provides a set of utility functions used to process connection parameters.
+
+### Instance methods
 
 #### concat
 Concatinates two options by combining duplicated properties into comma-separated list

@@ -7,8 +7,11 @@ description: >
     Interface for discovery services which are used to store and resolve connection parameters to connect to external services.
 ---
 
+### Description
 
-### Methods
+The IDiscovery interface is used to create discovery services which are used to store and resolve connection parameters used to connect to external services.
+
+### Instance methods
 
 #### register
 Registers connection parameters into the discovery service.

@@ -4,15 +4,17 @@ title: "DefaultDiscoveryFactory"
 linkTitle: "DefaultDiscoveryFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    A set of utility functions to process connection parameters
+    Creates an instance of [Factory](../../build/factory).
 ---
 
 **Implements:** [Factory](../../build/factory)
 
-See also [Factory](../../build/factory), [IDiscovery](../idiscovery), [MemoryDiscovery](../memory_discovery)
+### Description
+
+The DefaultDiscoveryFactory class allows you to create an instance of [Factory](../../build/factory).
 
 ### Constructors
-Create a new instance of the factory.
+Create a new instance of factory.
 
 > DefaultDiscoveryFactory()
 

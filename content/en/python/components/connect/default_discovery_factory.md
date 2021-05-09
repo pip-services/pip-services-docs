@@ -15,3 +15,9 @@ See also [Factory](../../build/factory), [IDiscovery](../idiscovery), [MemoryDis
 Create a new instance of the factory.
 
 > DefaultDiscoveryFactory()
+
+
+### See also
+- #### [Factory](../../build/factory)
+- #### [IDiscovery](../idiscovery)
+- #### [MemoryDiscovery](../memory_discovery)

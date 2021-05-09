@@ -61,7 +61,7 @@ Time different between two updates.
 </span>
 
 
-### Methods
+### Instance methods
 
 #### begin_timing
 Begins measurement of execution time interval.

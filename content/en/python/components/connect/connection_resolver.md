@@ -4,15 +4,17 @@ title: "ConnectionResolver"
 linkTitle: "ConnectionResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Helper class to retrieve component connections.
+    Helper class used to retrieve component connections.
 
-    If connections are configured to be retrieved from [IDiscovery](../idiscovery),
-    it automatically locates [IDiscovery](../idiscovery) in component references
-    and retrieve connections from there using discovery_key parameter.
 ---
 
-See also [IDiscovery](../idiscovery), [ConnectionParams](../connection_params)
+### Description
 
+The ConnectionResolver class is used to retrieve component connections.
+
+Important points
+
+- If the connections are configured to be retrieved from [IDiscovery](../idiscovery), the connection resolver will automatically locate [IDiscovery](../idiscovery) in component references and retrieve the connections from there using the discovery_key parameter.
 
 #### Configuration parameters
 
@@ -29,15 +31,7 @@ See also [IDiscovery](../idiscovery), [ConnectionParams](../connection_params)
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
 
-**Example:**
-```python
-config = ConfigParams.from_tuples("connection.host", "10.1.1.100", "connection.port", 8080)
 
-connectionResolver = ConnectionResolver()
-connectionResolver.configure(config)
-connectionResolver.set_references(references)
-connectionResolver.resolve("123")
-```
 
 
 ### Constructors
@@ -114,6 +108,17 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
+
+### Examples
+
+```python
+config = ConfigParams.from_tuples("connection.host", "10.1.1.100", "connection.port", 8080)
+
+connectionResolver = ConnectionResolver()
+connectionResolver.configure(config)
+connectionResolver.set_references(references)
+connectionResolver.resolve("123")
+```
 
 ### See also
 - #### [IDiscovery](../idiscovery)

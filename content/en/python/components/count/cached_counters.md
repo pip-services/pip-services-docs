@@ -51,7 +51,7 @@ A boolean value that indicates whether the counter has been updated or not.
 > **_updated**: bool
 
 #### _last_dump_time
-
+Time of the last dump.
 > **_last_dump_time**: float
 
 #### _interval

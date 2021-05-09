@@ -4,36 +4,25 @@ title: "CompositeCounters"
 linkTitle: "CompositeCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Aggregates all counters from component references under a single component.
+    Aggregates all counters from component references into a single.
 
-    It allows to capture metrics and conveniently send them to multiple destinations. 
+   
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
 [ICounterTimingCallback](../icounter_timing_callback)
 
 
-See also [ICounters](../icounters)
+### Description
 
+The CompositeCounters allows you to aggregate all counters from different component references into a single one.
+
+Important points
+
+-  It allows to capture metrics and conveniently send them to multiple destinations. 
 
 #### References
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../icounters) components to pass collected measurements
-
-
-**Example:**
-```python
-class MyComponent(IReferenceable):
-    _counters = CompositeCounters()
-
-def set_references(self, references):
-    self._counters.set_references(references)
-
-def my_method(self):
-    self._counters.increment("mycomponent.mymethod.calls")
-    timing = this._counters.begin_timing("mycomponent.mymethod.exec_time")
-    # do something
-    timing.end_timing()
-```
 
 
 ### Constructors
@@ -49,13 +38,13 @@ Creates a new instance of the counters.
 <span class="hide-title-link">
 
 #### _counters
-TODO add description
+A list containig the aggregated counters.
 > **_counters**: List[[ICounters](../icounters)] = []
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### begin_timing
 Begins measurement of execution time interval.

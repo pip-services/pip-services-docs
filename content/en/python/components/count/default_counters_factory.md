@@ -9,8 +9,9 @@ description: >
 
 **Implements:** [Factory](../../build/factory)
 
-See also [Factory](../../build/factory), [NullCounters](../../count/null_counters),
-[LogCounters](../../count/log_counters), [CompositeCounters](../../count/composite_counters)
+### Description
+
+The DefaultCountersFactory class creates [ICounters](../icounters) components based on their descriptors
 
 ### Constructors
 Create a new instance of the factory.

@@ -5,7 +5,7 @@ linkTitle: "ContextInfo"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Context information component that provides detailed information
-    about execution context.
+    about an execution context.
 
    
 ---

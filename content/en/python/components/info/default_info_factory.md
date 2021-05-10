@@ -20,4 +20,5 @@ Create a new instance of the factory.
  
 ### See also 
 
-- [IFactory](../../build/ifactory), [ContextInfo](../../info/context_info)
+- [IFactory](../../build/ifactory)
+- [ContextInfo](../../info/context_info)

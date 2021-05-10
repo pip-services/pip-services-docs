@@ -21,10 +21,10 @@ Important points:
 
 ##### Configuration parameters
 
-**dependencies**:
-- **[dependency name 1]**: Dependency 1 locator (descriptor)
-- ...
-- **[dependency name N]**: Dependency N locator (descriptor)
+- **dependencies**:
+    - **[dependency name 1]**: Dependency 1 locator (descriptor)
+    - ...
+    - **[dependency name N]**: Dependency N locator (descriptor)
 
 ##### References
 

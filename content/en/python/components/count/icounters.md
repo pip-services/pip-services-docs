@@ -15,7 +15,7 @@ The ICounters interface defines the methods for performance counters that measur
 
 Important points
 
-- The performance counters measure how code is performing, that is, how fast or slow, how many transactions performed, how many objects are stored, what was the latest transaction time and so on.
+- The performance counters measure how code is performing; that is, how fast or slow, how many transactions performed, how many objects are stored, what was the latest transaction time and so on.
 - They are critical to monitor and improve performance, scalability and reliability of code in production. 
 
 ### Instance methods

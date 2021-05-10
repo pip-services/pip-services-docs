@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The DefaultInfoFactory allows you to create a factory used to create information components based on their descriptors.
+The DefaultInfoFactory class allows you to create a factory used to create information components based on their descriptors.
 
 ### Constructors
 Create a new instance of the factory.

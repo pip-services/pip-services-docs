@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The LogCounters allows you to create performance counters that periodically dumps counters measurements to logger.
+The LogCounters allows you to create performance counters that periodically dump counters measurements to logger.
 
 #### Configuration parameters
 

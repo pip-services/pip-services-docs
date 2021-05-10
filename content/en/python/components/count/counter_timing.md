@@ -5,12 +5,12 @@ linkTitle: "CounterTiming"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Callback object returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing
-    of and execution block and update the associated counter.
+    of an execution block and update the associated counter.
 ---
 
 ### Description
 
-The CounterTiming class allows you to create callback object that are returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing of an execution block and update the associated counter.
+The CounterTiming class allows you to create callback objects that are returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing of an execution block and update the associated counter.
 
 ### Constructors
 Creates a new instance of the timing callback object.

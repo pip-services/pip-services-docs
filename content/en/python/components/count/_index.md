@@ -5,15 +5,13 @@ linkTitle: "Count"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: Rewrite the description.
-
-
-    Performance counters. They show non-functional characteristics about how the code works, 
-    like: times called, response time, objects saved/processed. Using these numbers, we can 
-    show how the code works in the system – how stable, fast, expandable it is. 
+   This packag provides a set of interfaces and classes used to create performance counters.
+    
 ---
 ---
+**Important points**
 
+- Performance counters show non-functional characteristics about how the code works, such as times called, response time, objects saved/processed. Using these numbers, it is possible to show how the code works in the system – how stable, fast, expandable it is. 
 <div class="module-body"> 
 
 ### Constants

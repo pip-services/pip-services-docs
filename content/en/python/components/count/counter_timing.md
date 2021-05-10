@@ -4,18 +4,13 @@ title: "CounterTiming"
 linkTitle: "CounterTiming"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Callback object returned by [ICounters.begin_timing](../icounters/#begin_timing) to end timing
-    of execution block and update the associated counter.
+    Callback object returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing
+    of and execution block and update the associated counter.
 ---
 
+### Description
 
-**Example:**
-```python
-timing = counters.begin_timing("mymethod.exec_time")
-# do something
-timing.end_timing()
-```
-
+The CounterTiming class allows you to create callback object that are returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing of an execution block and update the associated counter.
 
 ### Constructors
 Creates a new instance of the timing callback object.
@@ -37,9 +32,17 @@ TODO add description
 </span>
 
 
-### Methods
+### Instance methods
 
 #### end_timing
 Ends timing of an execution block, calculates elapsed time and updates the associated counter.
 
 > end_timing()
+
+### Examples
+
+```python
+timing = counters.begin_timing("mymethod.exec_time")
+# do something
+timing.end_timing()
+```

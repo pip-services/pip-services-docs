@@ -4,7 +4,7 @@ title: "LogCounters"
 linkTitle: "LogCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Performance counters that periodically dumps counters measurements to logger.
+    Performance counters that periodically dump counters measurements to logger.
 ---
 
 **Implements:** [CachedCounters](../cached_counters), [IReferenceable](../../../commons/refer/ireferenceable)

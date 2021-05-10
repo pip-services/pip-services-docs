@@ -7,17 +7,18 @@ description: >
     Interface for performance counters that measure execution metrics.
 
 
-    The performance counters measure how code is performing:
-    how fast or slow, how many transactions performed, how many objects
-    are stored, what was the latest transaction time and so on.
-
-
-    They are critical to monitor and improve performance, scalability
-    and reliability of code in production. 
 ---
 
+### Description
 
-### Methods
+The ICounters interface defines the methods for performance counters that measure execution metrics.
+
+Important points
+
+- The performance counters measure how code is performing, that is, how fast or slow, how many transactions performed, how many objects are stored, what was the latest transaction time and so on.
+- They are critical to monitor and improve performance, scalability and reliability of code in production. 
+
+### Instance methods
 
 #### begin_timing
 Begins measurement of execution time interval.

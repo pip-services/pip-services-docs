@@ -4,10 +4,14 @@ title: "ICounterTimingCallback"
 linkTitle: "ICounterTimingCallback"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Interface for a callback to end measurement of execution elapsed time.
+    Interface for a callback to end the measurement of execution's elapsed time.
 ---
 
-### Methods
+### Description
+
+The ICounterTimingCallback defines the method used for a callback to end the measuring of execution's elapsed time
+
+### Instance methods
 
 #### end_timing
 Ends measurement of execution elapsed time and updates specified counter.

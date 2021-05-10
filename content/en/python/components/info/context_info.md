@@ -4,14 +4,21 @@ title: "ContextInfo"
 linkTitle: "ContextInfo"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Context information component that provides detail information
-    about execution context: container or/and process.
+    Context information component that provides detailed information
+    about execution context.
 
-    Most often ContextInfo is used by logging and performance counters
-    to identify source of the collected logs and metrics.
+   
 ---
 
 **Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable)
+
+### Description
+
+The ContextInfo class allows you to create context information components that provide detailed information about an execution context.
+
+Important points
+
+- Most often ContextInfo is used by logging and performance counters to identify source of the collected logs and metrics.
 
 
 #### Configuration parameters
@@ -20,20 +27,6 @@ description: >
 - **description**: human-readable description of the context
 - **properties**: entire section of additional descriptive properties
 - **...**
-
-**Example:**
-```python
- contextInfo = ContextInfo()
-contextInfo.configure(ConfigParams.from_tuples(
-    "name", "MyMicroservice",
-    "description", "My first microservice"))
-
-context.name			# Result: "MyMicroservice"
-context.context_id		# Possible result: "mylaptop"
-context.start_time		# Possible result: 2018-01-01:22:12:23.45Z
-context.uptime			# Possible result: 3454345
-```
-
 
 ### Constructors
 Creates a new instance of this context info.
@@ -113,7 +106,7 @@ Sets the context start time.
 - **start_time**: datetime.datetime - a new context start time.
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -122,6 +115,7 @@ Configures component by passing configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
+### Static methods
 
 #### from_config
 Creates a new ContextInfo and sets its configuration parameters.
@@ -130,3 +124,17 @@ Creates a new ContextInfo and sets its configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
 - **returns**: [ContextInfo]() - a newly created ContextInfo
+
+### Examples
+
+```python
+ contextInfo = ContextInfo()
+contextInfo.configure(ConfigParams.from_tuples(
+    "name", "MyMicroservice",
+    "description", "My first microservice"))
+
+context.name			# Result: "MyMicroservice"
+context.context_id		# Possible result: "mylaptop"
+context.start_time		# Possible result: 2018-01-01:22:12:23.45Z
+context.uptime			# Possible result: 3454345
+```

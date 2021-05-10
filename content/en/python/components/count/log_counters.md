@@ -9,7 +9,9 @@ description: >
 
 **Implements:** [CachedCounters](../cached_counters), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [Counter](../counter), [CachedCounters](../cached_counters), [CompositeLogger](../../log/composite_logger)
+### Description
+
+The LogCounters allows you to create performance counters that periodically dumps counters measurements to logger.
 
 #### Configuration parameters
 
@@ -22,20 +24,9 @@ See also [Counter](../counter), [CachedCounters](../cached_counters), [Composite
 - **\*:logger:\*:\*:1.0** - [ILogger](../../log/ilogger) components to dump the captured counters
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
 
-**Example:**
-```python
-counters = LogCounters()
-counters.set_references(References.from_tuples(
-            Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()))
 
-counters.increment("mycomponent.mymethod.calls")
-timing = counters.begin_timing("mycomponent.mymethod.exec_time")
-# do something
-timing.end_timing()
 
-```
-
-### Methods
+### Instance methods
 
 #### _save
 Saves the current counters measurements.
@@ -51,3 +42,21 @@ Sets references to dependent components.
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+### Examples
+
+```python
+counters = LogCounters()
+counters.set_references(References.from_tuples(
+            Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()))
+
+counters.increment("mycomponent.mymethod.calls")
+timing = counters.begin_timing("mycomponent.mymethod.exec_time")
+# do something
+timing.end_timing()
+```
+
+### See also
+- #### [Counter](../counter)
+- #### [CachedCounters](../cached_counters)
+- #### [CompositeLogger](../../log/composite_logger)

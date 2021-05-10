@@ -4,7 +4,7 @@ title: "NullCounters"
 linkTitle: "NullCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Dummy implementation of performance counters that doesn't do anything.
+    Dummy implementation of performance counters that don't do anything.
 
 ---
 

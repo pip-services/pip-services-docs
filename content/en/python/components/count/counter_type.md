@@ -4,9 +4,12 @@ title: "CounterType"
 linkTitle: "CounterType"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Types of counters that measure different types of metrics
+    Counter type enumeration containing the types of counters that measure different types of metrics.
 ---
 
+### Description
+
+The CounterType class enumerates the types of counters that measure different types of metrics.
 
 ### Enumeration members
 

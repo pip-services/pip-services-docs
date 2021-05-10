@@ -4,7 +4,7 @@ title: "Counter"
 linkTitle: "Counter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Data object to store the measurements of a performance counter.
+    Data object used to store the measurements of a performance counter.
    
 ---
 

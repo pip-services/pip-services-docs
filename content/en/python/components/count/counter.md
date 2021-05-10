@@ -5,9 +5,16 @@ linkTitle: "Counter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Data object to store measurement for a performance counter.
-    This object is used by [CachedCounters](../cached_counters) to store counters.
+   
 ---
 
+### Description
+
+The Counter class allows you to create data objects used to store the measurements of performance counters.
+
+Important points
+
+- This object is used by [CachedCounters](../cached_counters) to store counters.
 
 ### Constructors
 Creates a instance of the data obejct

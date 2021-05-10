@@ -17,7 +17,7 @@ Important points
 - This object is used by [CachedCounters](../cached_counters) to store counters.
 
 ### Constructors
-Creates a instance of the data obejct
+Creates a instance of the data object
 
 > Counter(name: str = None, tipe: [CounterType](../counter_type) = None)
 
@@ -54,11 +54,11 @@ The recorded timestamp
 > **time**: Optional[datetime.datetime]
 
 #### name
-The counter unique name
+The counter's unique name
 > **name**: str
 
 #### type
-The counter type that defines measurement algorithm
+The counter type that defines the measurement algorithm
 > **type**: [CounterType](../counter_type)
 
 </span>

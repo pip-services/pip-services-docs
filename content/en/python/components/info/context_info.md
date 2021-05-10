@@ -18,7 +18,7 @@ The ContextInfo class allows you to create context information components that p
 
 Important points
 
-- Most often ContextInfo is used by logging and performance counters to identify source of the collected logs and metrics.
+- Most often ContextInfo is used by logging and performance counters to identify the source of the collected logs and metrics.
 
 
 #### Configuration parameters

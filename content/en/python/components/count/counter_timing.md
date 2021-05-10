@@ -26,7 +26,7 @@ Creates a new instance of the timing callback object.
 <span class="hide-title-link">
 
 #### _counters
-TODO add description
+A list containing different counters
 > **_counters**: List[[ICounters](../icounters)] = []
 
 </span>

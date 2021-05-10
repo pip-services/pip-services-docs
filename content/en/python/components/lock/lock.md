@@ -9,14 +9,16 @@ description: >
 
 **Implemenst:** [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)
 
-See also [ILock](../ilock)
+### Description
+
+The Lock class represents an abstract lock that implements the defaul lock acquisition routine. 
 
 #### Configuration parameters
 **options**:
 - **retry_timeout**: timeout in milliseconds to retry lock acquisition. (Default: 100)
 
 
-### Methods
+### Instance methods
 
 #### acquire_lock
 Makes multiple attempts to acquire a lock by its key within give time interval.

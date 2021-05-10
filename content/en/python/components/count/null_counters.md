@@ -6,16 +6,19 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Dummy implementation of performance counters that doesn't do anything.
 
-    It can be used in testing or in situations when counters is required
-    but shall be disabled.
 ---
 
 **Implements:** [ICounters](../icounters)
 
-See also [ICounters](../icounters)
+### Description
 
+The NullCounters class allows you to create dummy performance counters that don't do anything.
 
-### Methods
+Important points
+
+- It can be used in testing or in situations when counters is required but shall be disabled.
+
+### Instance methods
 
 #### begin_timing
 Begins measurement of execution time interval.
@@ -78,3 +81,7 @@ Records the current time as a timestamp.
 > timestamp_now(name: str)
 
 - **name**: str - a counter name of Timestamp type.
+
+### See also 
+
+- [ICounters](../icounters)

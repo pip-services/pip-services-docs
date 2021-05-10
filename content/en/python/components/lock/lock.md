@@ -4,7 +4,7 @@ title: "Lock"
 linkTitle: "Lock"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract lock that implements default lock acquisition routine.
+    Abstract lock that implements the default lock acquisition routine.
 ---
 
 **Implemenst:** [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)

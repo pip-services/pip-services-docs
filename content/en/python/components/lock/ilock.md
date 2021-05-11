@@ -6,11 +6,18 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Interface for locks to synchronize work or parallel processes and to prevent collisions.
 
-    The lock allows to manage multiple locks identified by unique keys.
+    
 ---
 
+### Description
 
-### Methods
+The ILock interface provides the methods to create locks used to synchronize work or parallel processes and to prevent collisions.
+
+Important points
+
+- The interface allows to manage multiple locks identified by unique keys. 
+
+### Instance methods
 
 #### acquire_lock
 Makes a single attempt to acquire a lock by its key.

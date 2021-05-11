@@ -17,7 +17,7 @@ The NullLock allows you to create a dummy lock with no real effect.
 
 Important points
 
--  It can be used in testing or in situations when lock is required but shall be disabled.
+-  It can be used in testing or in situations when a lock is required but must be disabled.
 
 ### Instance methods
 

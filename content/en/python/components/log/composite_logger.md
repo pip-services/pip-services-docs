@@ -6,20 +6,21 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Aggregates all loggers from component references under a single component.
 
-    It allows to log messages and conveniently send them to multiple destinations. 
 ---
 
 **Implemenst:** [Logger](../logger), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [ILogger](../ilogger)
+### Description
+
+The CompositeLogger class allows you to aggregate loggers from component references into a single component.
+
+Important points
+
+- It allows to log messages and conveniently send them to multiple destinations. 
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../ilogger) components to pass log messages
 
-**Example:**
-```python
-TODO: add example
-```
 
 ### Constructors
 Creates a new instance of the logger.
@@ -29,7 +30,7 @@ Creates a new instance of the logger.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-### Methods
+### Instance methods
 
 #### set_references
 Sets references to dependent components.

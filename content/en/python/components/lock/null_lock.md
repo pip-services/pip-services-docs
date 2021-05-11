@@ -4,18 +4,22 @@ title: "NullLock"
 linkTitle: "NullLock"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Dummy lock implementation that doesn't do anything.
+    Dummy lock implementation with no real effect.
 
-    It can be used in testing or in situations when lock is required
-    but shall be disabled.
+   
 ---
 
 **Implemenst:** [ILock](../ilock)
 
-See also [ILock](../ilock)
+### Description
 
+The NullLock allows you to create a dummy lock with no real effect.
 
-### Methods
+Important points
+
+-  It can be used in testing or in situations when lock is required but shall be disabled.
+
+### Instance methods
 
 #### acquire_lock
 Makes multiple attempts to acquire a lock by its key within give time interval.
@@ -27,6 +31,7 @@ Makes multiple attempts to acquire a lock by its key within give time interval.
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **timeout**: float - a lock acquisition timeout.
 
+### Abstract methods
 
 #### release_lock
 Releases prevously acquired lock by its key.

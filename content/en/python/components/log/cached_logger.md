@@ -4,8 +4,8 @@ title: "CachedLogger"
 linkTitle: "CachedLogger"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract logger that caches captured log messages in memory and periodically dumps them.
-    Child classes implement saving cached messages to their specified destinations.
+    Logger that caches captured log messages in memory and periodically dumps them.
+   
 ---
 
 **Implemenst:** [Logger](../logger)

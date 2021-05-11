@@ -4,7 +4,7 @@ title: "ILock"
 linkTitle: "ILock"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Interface for locks to synchronize work or parallel processes and to prevent collisions.
+    Interface for locks used to synchronize work or parallel processes and to prevent collisions.
 
     
 ---

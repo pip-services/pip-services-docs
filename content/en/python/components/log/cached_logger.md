@@ -10,8 +10,13 @@ description: >
 
 **Implemenst:** [Logger](../logger)
 
-See also [Logger](../logger), [ILogger](../ilogger), [LogMessage](../log_message)
+### Description
 
+The CachedLogger class allows you to create a logger that caches captured log messages in memory and periodically dumps them.
+
+Important points
+
+- Child classes implement saving cached messages to their specified destinations.
 
 #### Configuration parameters
 
@@ -29,29 +34,29 @@ See also [Logger](../logger), [ILogger](../ilogger), [LogMessage](../log_message
 <span class="hide-title-link">
 
 #### _cache
-TODO add description
+List containing log messages.
 > **_cache**: List[[LogMessage](../log_message)] = []
 
 #### _updated
-TODO add description
+Boolean variable indicating whether there has been an update or not.
 > **_updated** = False
 
 #### _interval
-TODO add description
+Interval in milliseconds to save log messages (default: 10 seconds)
 > **_interval** = 10000
 
 #### _last_dump_time
-TODO add description
+Time of the last dump
 > **_last_dump_time**: float
 
 #### _max_cache_size
-TODO add description
+Maximum number of messages stored in the cache (default: 100)
 > **_max_cache_size**: int = 100
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### clear
 Clears (removes) all cached log messages.

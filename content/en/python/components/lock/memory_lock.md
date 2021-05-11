@@ -4,31 +4,27 @@ title: "MemoryLock"
 linkTitle: "MemoryLock"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Lock that is used to synchronize execution within one process using shared memory.
+    Lock that is used to synchronize execution within a process using shared memory.
 
-    Remember: This implementation is not suitable for synchronization of distributed processes.
+    
 ---
 
 **Implemenst:** [Lock](../lock)
 
-See also [ILock](../ilock), [Lock](../lock)
+### Description
+
+The MemoryLock class used to synchronize the execution within a process using shared memory.
+
+Important points
+
+- This implementation is not suitable for synchronization of distributed processes.
 
 #### Configuration parameters
 **options**:
 - **retry_timeout**: timeout in milliseconds to retry lock acquisition. (Default: 100)
 
 
-**Example:**
-```python
-lock = MemoryLock()
-lock.acquire_lock("123", "key1", None, None)
-# processing
-lock.release_lock("123", "key1")
-
-```
-
-
-### Methods
+### Abstract methods
 
 #### release_lock
 Releases prevously acquired lock by its key.
@@ -50,6 +46,15 @@ It returns immediately a positive or negative result.
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
+### Examples
+
+```python
+lock = MemoryLock()
+lock.acquire_lock("123", "key1", None, None)
+# processing
+lock.release_lock("123", "key1")
+
+```
 
 ### See also
 - #### [ILock](../ilock)

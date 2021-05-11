@@ -5,7 +5,7 @@ linkTitle: "Lock"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: add description.
+    This package provides a set of interfaces and classes used to create several types of locks.
 ---
 ---
 

@@ -4,7 +4,7 @@ title: "MemoryLock"
 linkTitle: "MemoryLock"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Lock that is used to synchronize execution within a process using shared memory.
+    Lock used to synchronize the execution of a process using shared memory.
 
     
 ---
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MemoryLock class used to synchronize the execution within a process using shared memory.
+The MemoryLock class used to synchronize the execution of a process using shared memory.
 
 Important points
 

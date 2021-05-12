@@ -5,12 +5,16 @@ linkTitle: "OperationTrace"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Data object to store captured operation traces.
-    This object is used by [CachedTracer](../cached_tracer).
+    
 ---
 
 ### Description
 
 The OperationTrace class allows you to create a data object used to store captured operation traces.
+
+Important points
+
+- This object is used by [CachedTracer](../cached_tracer). 
 
 ### Constructors
 Create new instance of OperationTrace

@@ -5,7 +5,7 @@ linkTitle: "Trace"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    This package provides interfaces and classes used to create different types of tracers. 
+    This package provides interfaces and classes used to create different types of tracers. The main tools available from this package are a tracer factory and a tracer composite class. The first allows to create a factory for tracers, and the second to combine different tracers into one. Additionally, it provides tracers that allow to store their contents in memory and logs. 
 ---
 ---
 

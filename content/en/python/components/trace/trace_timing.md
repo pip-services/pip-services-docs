@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end timing of execution block and record the associated trace.
+The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of execution block and record the associated trace.
 
 #### Constructors
 Creates a new instance of the timing callback object.

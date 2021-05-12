@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The LogLevelConverter class is used to convert loge level values.
+The LogLevelConverter class is used to convert log level values.
 
 ### Static methods
 

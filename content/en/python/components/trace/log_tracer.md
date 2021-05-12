@@ -26,7 +26,7 @@ The LogTracer class allows you to create a tracer that dumps recorded traces to 
 
 ### Instance methods
 
-#### begin_trace
+#### begin_trace 
 Begings recording an operation trace
 
 > begin_trace(correlation_id: Optional[str], component: str, operation: str): [TraceTiming](../trace_timing)

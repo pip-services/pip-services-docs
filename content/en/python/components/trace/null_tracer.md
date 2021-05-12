@@ -6,16 +6,19 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Dummy implementation of tracer that doesn't do anything.
 
-    It can be used in testing or in situations when tracing is required
-    but shall be disabled.
 ---
 
 **Implemenst:** [ITracer](../itracer)
 
-See also [ITracer](../itracer)
+### Description
 
+The NullTracer class allows you to create a dummy tracer with no real effect.
 
-### Methods
+Important points
+
+- It can be used in testing or in situations when tracing is required but must be disabled.
+
+### Instance methods
 
 #### begin_trace
 Begings recording an operation trace

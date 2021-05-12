@@ -4,7 +4,7 @@ title: "LogLevel"
 linkTitle: "LogLevel"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Standard log levels.
+    Standard log level enumeration.
 
 
 ---

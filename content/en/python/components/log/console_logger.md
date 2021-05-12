@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The  ConsoleLogger provides a logger that writes log messages to console.
+The  ConsoleLogger class provides a logger that writes log messages to console.
 
 Important points
 

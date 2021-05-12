@@ -7,12 +7,18 @@ description: >
     Random shutdown component that crashes the process
     using various methods.
 
-    The component is usually used for testing, but brave developers
-    can try to use it in production to randomly crash microservices.
-    It follows the concept of "Chaos Monkey" popularized by Netflix.
 ---
 
 **Implemenst:** [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable)
+
+### Description
+
+The Shutdown class allows you to create a random shutdown component that crashes the process using various methods.
+
+Important points
+
+- The component is usually used for testing, but it can also be used in production to randomly crash microservices.
+- It follows the concept of "Chaos Monkey" popularized by Netflix.
 
 #### Configuration parameters
 
@@ -20,18 +26,10 @@ description: >
 - **min_timeout**: minimum crash timeout in milliseconds (default: 5 mins)
 - **max_timeout**: maximum crash timeout in milliseconds (default: 15 minutes)
 
-**Example:**
-```python
-shutdown = Shutdown()
-shutdown.configure(ConfigParams.from_tuples(
-    "mode": "exception"
-))
-shutdown.shutdown()         # Result: Bang!!! the process crashes
-
-```
 
 
-### Methods
+
+### Instance methods
 
 #### close
 Closes component and frees used resources.
@@ -61,3 +59,14 @@ Checks if the component is opened.
 Crashes the process using the configured crash mode.
 
 > shutdown()
+ 
+
+### Examples
+
+```python
+shutdown = Shutdown()
+shutdown.configure(ConfigParams.from_tuples(
+    "mode": "exception"
+))
+shutdown.shutdown()         # Result: Bang!!! the process crashes
+```

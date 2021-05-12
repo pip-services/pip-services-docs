@@ -8,6 +8,9 @@ description: >
     This object is used by [CachedTracer](../cached_tracer).
 ---
 
+### Description
+
+The OperationTrace class allows you to create a data object used to store captured operation traces.
 
 ### Constructors
 Create new instance of OperationTrace

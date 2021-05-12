@@ -4,7 +4,7 @@ title: "LogTracer"
 linkTitle: "LogTracer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Tracer that dumps recorded traces to logger.
+    Tracer that dumps recorded traces to a logger.
 ---
 
 **Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)

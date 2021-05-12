@@ -4,13 +4,14 @@ title: "LogLevelConverter"
 linkTitle: "LogLevelConverter"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Helper class to convert log level values.
+    Helper class used to convert log level values.
 ---
 
-See also [LogLevel](../log_level)
+### Description
 
+The LogLevelConverter class is used to convert loge level values.
 
-### Methods
+### Static methods
 
 #### to_integer
 Converts log level to a number.

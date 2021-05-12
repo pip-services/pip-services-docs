@@ -5,12 +5,8 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: Rewrite the description
-
-    Logger implementations. There exist many different loggers, but all of them are implemented 
-    differently in various languages. We needed portable classes, that would allow to quickly 
-    transfer code from one language to another. We can wrap existing loggers into/around 
-    our ILogger class. 
+    This package provides interfaces and classes used to create different types of loggers.
+ 
 ---
 ---
 

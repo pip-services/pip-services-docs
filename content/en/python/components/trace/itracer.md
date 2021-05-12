@@ -1,13 +1,17 @@
 ---
 type: docs
-title: "CachedTracer"
-linkTitle: "CachedTracer"
+title: "ITracer"
+linkTitle: "ITracer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Interface for tracer components that capture operation traces.
 ---
 
-### Methods
+### Description
+
+The ITracer interface is used to create tracer component that capture operation traces.
+
+### Instance methods
 
 #### begin_trace
 Begings recording an operation trace

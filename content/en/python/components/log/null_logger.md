@@ -4,7 +4,7 @@ title: "NullLogger"
 linkTitle: "NullLogger"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Dummy implementation of logger that doesn't do anything.
+    Dummy implementation of logger with no real effect.
 
     It can be used in testing or in situations when logger is required
     but shall be disabled.
@@ -12,8 +12,9 @@ description: >
 
 **Implements:** [ILogger](../ilogger)
 
-See also [ILogger](../ilogger)
+### Description
 
+The NullLogger class provides a dummy logger with no real effect.
 
 ### Methods
 

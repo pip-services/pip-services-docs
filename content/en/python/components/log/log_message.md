@@ -4,7 +4,7 @@ title: "LogMessage"
 linkTitle: "LogMessage"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Data object to store captured log messages.
+    Data object used to store captured log messages.
    
 ---
 

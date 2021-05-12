@@ -5,8 +5,16 @@ linkTitle: "LogMessage"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Data object to store captured log messages.
-    This object is used by [CachedLogger](../cached-logger).
+   
 ---
+
+### Description
+
+The LogMessage class allows you to create data objects used to store captured log messages.
+
+Important points
+
+- This object is used by [CachedLogger](../cached-logger).
 
 ### Fields
 

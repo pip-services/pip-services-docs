@@ -6,11 +6,16 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Standard log levels.
 
-    Logs at debug and trace levels are usually captured
-    only locally for troubleshooting
-    and never sent to consolidated log services.
+
 ---
 
+### Description
+
+ The LogLevel class provides an enumeration of standard log levels.
+ 
+ Important points
+ 
+ - Logs at debug and trace levels are usually captured only locally for troubleshooting and never sent to consolidated log services.
 
 ### Enumeration members
 

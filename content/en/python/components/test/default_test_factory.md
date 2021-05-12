@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The DefaultLoggerFactory class provides a factory to create logger based on their descriptors
+The DefaultLoggerFactory class provides a factory to create loggers based on their descriptors
 
 ### Constructors
 Create a new instance of the factory.

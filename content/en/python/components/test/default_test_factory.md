@@ -9,8 +9,9 @@ description: >
 
 **Implemenst:** [Factory](../../build/factory)
 
-See also [Factory](../../build/factory), [Shutdown](../shutdown)
+### Description
 
+The DefaultLoggerFactory class provides a factory to create logger based on their descriptors
 
 ### Constructors
 Create a new instance of the factory.

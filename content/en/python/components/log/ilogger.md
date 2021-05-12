@@ -1,13 +1,18 @@
 ---
 type: docs
-title: "ConsoleLogger"
-linkTitle: "ConsoleLogger"
+title: "ILogger"
+linkTitle: "ILogger"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Interface for logger components that capture execution log messages.
 ---
 
-### Methods
+### Description
+
+The ILogger interface provides a set of methods for logger components that capture log messages.
+
+
+### Instance methods
 
 #### debug
 Logs a high-level debug information for troubleshooting.

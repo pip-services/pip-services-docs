@@ -28,10 +28,7 @@ Create new instance of OperationTrace
 - **correlation_id**: str - The transaction id to trace execution through call chain. 
 - **duration**: float - The duration of the operation in milliseconds
 - **error**: [ErrorDescription](../../../commons/errors/error_description) - The description of the captured error
-
-#### _source
-TODO add description
-> **_source**: str
+- 
 
 ### Fields
 

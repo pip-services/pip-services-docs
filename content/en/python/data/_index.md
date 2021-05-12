@@ -169,6 +169,6 @@ Before committing changes run dockerized build and test as:
 ./clear.ps1
 ```
 
-## Contacts
+### Contacts
 
 The Python version of Pip.Services is created and maintained by **Sergey Seroukhov**

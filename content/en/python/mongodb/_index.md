@@ -1,22 +1,20 @@
 ---
 type: docs
-title: "Messaging"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
+title: "MongoDB"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 no_list: true
 description: > 
-    Asynchronous Messaging for Pip.Services in Python
+    MongoDB components for Pip.Services in Python
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement MongoDB persistence.
 ---
 
 ### Modules
 
 The module contains the following packages:
-
-- [**Build**](build) - in-memory message queue factory
-- [**Queues**](queues) - contains interfaces for working with message queues, subscriptions for receiving messages from the queue, and an in-memory message queue implementation.
-- [**Connect**](connect) - TODO: add description
+- [**Build**](build) - Factory to create MongoDB persistence components.
+- [**Connect**](connect) - Connection component to configure MongoDB connection to database.
+- [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
 ### Use

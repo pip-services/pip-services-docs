@@ -9,7 +9,9 @@ description: >
 
 **Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [Tracer](../tracer), [CachedCounters](../../count/cached_counters), [CompositeLogger](../../log/composite_logger)
+### Description
+
+The LogTracer class allows you to create a tracer that dumps recorded traces to a logger.
 
 #### Configuration parameters
 
@@ -22,24 +24,7 @@ See also [Tracer](../tracer), [CachedCounters](../../count/cached_counters), [Co
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
 
 
-**Example:**
-```python
-tracer = LogTracer()
-tracer.set_references(References.from_tuples(
-    Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()
-))
-
-timing = tracer.begin_trace("123", "mycomponent", "mymethod")
-try:
-    ...
-    timing.end_trace()
-except Exception as err:
-    timing.end_failure(err)
-
-```
-
-
-### Methods
+### Instance methods
 
 #### begin_trace
 Begings recording an operation trace
@@ -89,6 +74,22 @@ Records an operation trace with its name and duration
 - **component**: str - a name of called component
 - **operation**: str - a name of the executed operation.
 - **duration**: float - execution duration in milliseconds.
+
+### Examples
+
+```python
+tracer = LogTracer()
+tracer.set_references(References.from_tuples(
+    Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()
+))
+
+timing = tracer.begin_trace("123", "mycomponent", "mymethod")
+try:
+    ...
+    timing.end_trace()
+except Exception as err:
+    timing.end_failure(err)
+```
 
 ### See also
 - #### [Tracer](../tracer)

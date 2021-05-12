@@ -43,7 +43,7 @@ Invokes an object method by its name with specified parameters.
 - **obj**: Any - an object to invoke.
 - **name**: str -a name of the method to invoke.
 - **args**: Any - a list of method arguments.
-- **returns**: Any - the result of the method invocation or null if method returns None.
+- **returns**: Any - the result of the method invocation or None if method returns None.
 
 ### Examples
 

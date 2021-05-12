@@ -242,7 +242,7 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 #### send_deleted_result
 Creates a callback function that sends newly created object as JSON. That callack function call be called directly or passed as a parameter to business logic components.
 
-If object is not null it returns 200 status code. For null results it returns
+If object is not None it returns 200 status code. For None results it returns
 204 status code. If error occur it sends ErrorDescription with approproate status code.
 
 
@@ -265,7 +265,7 @@ Sends error serialized as ErrorDescription object and appropriate HTTP status co
 #### send_result
 Creates a callback function that sends result as JSON object. That callack function call be called directly or passed as a parameter to business logic components.
 
-If object is not null it returns 200 status code. For null results it returns
+If object is not None it returns 200 status code. For None results it returns
 204 status code. If error occur it sends ErrorDescription with approproate status code.
 
 

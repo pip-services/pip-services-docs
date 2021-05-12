@@ -51,7 +51,7 @@ Gets an optional component reference that matches specified locator.
 > get_one_optional(locator: Any): Any
 
 - **locator**: Any - the locator to find references by.
-- **returns**: Any - a matching component reference or null if nothing was found.
+- **returns**: Any - a matching component reference or None if nothing was found.
 
 #### get_one_required
 Gets a required component reference that matches specified locator.  

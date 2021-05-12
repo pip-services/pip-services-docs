@@ -20,7 +20,7 @@ Generates a float in the range ['min', 'max']. If 'max' is omitted, then the ran
 
 - **min**: float - (minimum value of the float that will be generated. 
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-- **max**: float = null - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
+- **max**: float = None - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
 - **returns**: float - generated random float value.
 
 #### update_float
@@ -29,7 +29,7 @@ Updates (drifts) a float value within specified range defined
 > `static` update_float(value: float, range: float = None): float
 
 - **value**: float - a float value to drift.
-- **range**: float = null - (optional) a range. Default: 10% of the value
+- **range**: float = None - (optional) a range. Default: 10% of the value
 - **returns**: float - TODO add description.
 
 ### Examples

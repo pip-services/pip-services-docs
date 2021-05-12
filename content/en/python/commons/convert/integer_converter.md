@@ -40,13 +40,13 @@ See [LongConverter.to_long_with_default](../long_converter/#to_long_with_default
 - **returns**: int - integer value or default when conversion is not supported. 
 
 #### to_nullable_integer
-Converts value into integer or returns null when conversion is not possible.
+Converts value into integer or returns None when conversion is not possible.
 See [LongConverter.to_nullable_long](../long_converter/#tonullablelong)
 
 > `static` to_nullable_integer(value: Any): int
 
 - **value**: Any - the value to convert.
-- **returns**: int - integer value or null when conversion is not supported.
+- **returns**: int - integer value or None when conversion is not supported.
 
 ### Examples
 

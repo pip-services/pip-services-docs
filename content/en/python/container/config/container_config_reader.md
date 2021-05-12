@@ -16,7 +16,7 @@ The type of the file is determined by file extension.
 
 - **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id to trace execution through call chain.
 - **path**: str - a path to component configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - the read container configuration
 
 
@@ -27,7 +27,7 @@ Reads container configuration from JSON file.
 
 - **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id to trace execution through call chain.
 - **path**: str - a path to component configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - the read container configuration
 
 
@@ -38,5 +38,5 @@ Reads container configuration from YAML file.
 
 - **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id to trace execution through call chain.
 - **path**: str - a path to component configuration file.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - the read container configuration

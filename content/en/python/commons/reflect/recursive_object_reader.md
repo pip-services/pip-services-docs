@@ -45,7 +45,7 @@ map key or array index.
 
 - **obj**: Any - an object to read property from.
 - **name**: str - a name of the property to get.
-- **returns**: Any - the property value or null if property doesn't exist or introspection failed.
+- **returns**: Any - the property value or None if property doesn't exist or introspection failed.
 
 #### get_property_names
 Recursively gets names of all properties implemented in specified object and its subobjects.

@@ -20,7 +20,7 @@ See [IValidationRule](../ivalidation_rule)
 > ObjectSchema(allow_undefined: bool = False, required: bool = None, rules: List[[IValidationRule](../ivalidation_rule)] = None):
 
 - **allow_undefined**?: bool - true to allow properties undefines in the schema
-- **required**: bool - (optional) true to always require non-null values.
+- **required**: bool - (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 ### Properties

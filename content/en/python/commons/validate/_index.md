@@ -44,7 +44,7 @@ When one of the rules return errors, than the rules returns all errors.
 Schema to validate arrays.
 
 #### [AtLeastOneExistsRule](at_least_one_exists_rule)
-Validation rule that check that at least one of the object properties is not null.
+Validation rule that check that at least one of the object properties is not None.
 
 #### [ExcludedRule](excluded_rule)
 Validation rule to check that value is excluded from the list of constants.
@@ -68,7 +68,7 @@ Helper class to perform comparison operations over arbitrary values.
 Schema to validate user defined objects.
 
 #### [OnlyOneExistsRule](only_one_exists_rule)
-Validation rule that checks that at exactly one of the object properties is not null.
+Validation rule that checks that at exactly one of the object properties is not None.
 
 #### [OrRule](or_rule)
 Validation rule to combine rules with OR logical operation.

@@ -38,13 +38,13 @@ See [DoubleConverter.to_double_with_default](../double_converter/#to_double_with
 - **returns**: float - float value or default value when conversion is not supported.
 
 #### to_nullable_float
-Converts value into float or returns null when conversion is not possible.  
+Converts value into float or returns None when conversion is not possible.  
 See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
 
 > `static` to_nullable_float(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[float] - float value or null when conversion is not supported.
+- **returns**: Optional[float] - float value or None when conversion is not supported.
 
 
 ### Examples

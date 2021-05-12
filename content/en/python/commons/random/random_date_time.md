@@ -34,7 +34,7 @@ This method generate dates without time (or time set to 00:00:00)
 > `static` next_datetime(min_year: datetime, max_year: datetime = None): datetime
 
 - **min_year**: datetime - (optional) minimum range value
-- **max_year**: datetime = null - max range value
+- **max_year**: datetime = None - max range value
 - **returns**: datetime - a random Date and time value.
 
 #### update_datetime
@@ -43,7 +43,7 @@ Updates (drifts) a Date value within specified range defined
 > `static` update_datetime(value: datetime, range: Union[int, float] = None): datetime
 
 - **value**: datetime - a Date value to drift.
-- **range**: Union[int, float] = null - (optional) a range in milliseconds. Default: 10 days
+- **range**: Union[int, float] = None - (optional) a range in milliseconds. Default: 10 days
 - **returns**: datetime - TODO add description
 
 ### Examples

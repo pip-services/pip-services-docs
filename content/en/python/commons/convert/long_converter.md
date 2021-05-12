@@ -36,18 +36,18 @@ Converts value into integer or returns default when conversion is not possible.
 - **returns**: float - long value or default when conversion is not supported
 
 #### to_nullable_long
-Converts value into long or returns null when conversion is not possible.
+Converts value into long or returns None when conversion is not possible.
 
 > `static` to_nullable_long(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: float - long value or null when conversion is not supported.
+- **returns**: float - long value or None when conversion is not supported.
 
 ### Examples
 
 ```python
 import datetime
-value1 = LongConverter.to_nullable_long("ABC"); # Returns null
+value1 = LongConverter.to_nullable_long("ABC"); # Returns None
 value2 = LongConverter.to_nullable_long("123.456"); # Returns 123
 value3 = LongConverter.to_nullable_long(True); # Returns 1
 value4 = LongConverter.to_nullable_long(datetime.datetime.now()); # Returns current milliseconds (E.g. 1619869474907)

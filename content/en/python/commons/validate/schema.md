@@ -24,7 +24,7 @@ See [IValidationRule](../ivalidation_rule)
 
 > Schema(required: bool, rules: List[[IValidationRule](../ivalidation_rule)])
 
-- **required**: bool - (optional) true to always require non-null values.
+- **required**: bool - (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 
@@ -38,16 +38,16 @@ Gets validation rules to check values against.
 - **returns**: List[[IValidationRule](../ivalidation_rule)] - a list with validation rules.
 
 #### is_required
-Gets a flag that always requires non-null values.
-For null values it raises a validation error.
+Gets a flag that always requires non-None values.
+For None values it raises a validation error.
 
 > is_required(): bool
 
-- **returns**: bool - true to always require non-null values and false to allow null values.
+- **returns**: bool - true to always require non-None values and false to allow None values.
 
 #### make_optional
 Makes validated values optional.
-Validation for null values will be skipped.
+Validation for None values will be skipped.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
@@ -57,8 +57,8 @@ to chain additional calls.
 
 
 #### make_required
-Makes validated values always required (non-null).
-For null values the schema will raise errors.
+Makes validated values always required (non-None).
+For None values the schema will raise errors.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
@@ -88,11 +88,11 @@ Validates a given value against the schema and configured validation rules.
 - **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 #### set_required
-Sets a flag that always requires non-null values.
+Sets a flag that always requires non-None values.
 
 > set_required(value: bool)
 
-- **value**: bool - true to always require non-null values and false to allow null values.
+- **value**: bool - true to always require non-None values and false to allow None values.
 
 #### set_rules
 Sets validation rules to check values against.

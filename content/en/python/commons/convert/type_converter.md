@@ -15,13 +15,13 @@ The TypeConverter class allows you to convert arbitrary values into objects spec
 ### Static methods
 
 #### to_nullable_type
-Converts value into an object type specified by Type Code or returns null when conversion is not possible.
+Converts value into an object type specified by Type Code or returns None when conversion is not possible.
 
 > `static` to_nullable_type(type: [TypeCode](../../convert/type_code), value: Any): Any
 
 - **type**: Any - the [TypeCode](../../convert/type_code) for the data type into which 'value' is to be converted.
 - **value**: Any - the value to convert.
-- **returns**: Any - object value of type corresponding to TypeCode, or null when conversion is not supported.
+- **returns**: Any - object value of type corresponding to TypeCode, or None when conversion is not supported.
 
 #### to_string
 Converts a [TypeCode](../../convert/type_code) into its string name.
@@ -56,7 +56,7 @@ Converts value into an object type specified by Type Code or returns default val
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: Any - the value to convert.
-- **default_value**: Any - the default value to return if conversion is not possible (returns null).
+- **default_value**: Any - the default value to return if conversion is not possible (returns None).
 - **returns**: Any - object value of type corresponding to TypeCode, or default value when conversion is not supported.
 
 ### Examples

@@ -33,12 +33,12 @@ Converts value into map object or returns default when conversion is not possibl
 - **returns**: Any - map object or empty map when conversion is not supported.
 
 #### to_nullable_map
-Converts value into map object or returns null when conversion is not possible.
+Converts value into map object or returns None when conversion is not possible.
 
 > `static` to_nullable_map(value: Any): Any
 
 - **value**: Any - the value to convert.
-- **returns**: Any - map object or null when conversion is not supported.
+- **returns**: Any - map object or None when conversion is not supported.
 
 
 ### Examples

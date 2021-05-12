@@ -15,7 +15,7 @@ Creates an instance of the CallbackMessageReceiver.
 
 > `public` constructor(callback: (envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)) => Promise\<void\>) 
 
-- **callback**: a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
+- **callback**: (envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue) - a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
 
 ### Methods
 

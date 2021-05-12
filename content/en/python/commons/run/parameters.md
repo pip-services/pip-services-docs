@@ -60,12 +60,12 @@ and allows to recursively access elements of elements.
 
 
 #### get_as_nullable_parameters
-Converts map element into an Parameters or returns null if conversion is not possible.
+Converts map element into an Parameters or returns None if conversion is not possible.
 
 > get_as_nullable_parameters(key: str): [Parameters](../parameters)
 
 - **key**: str - a key of element to get.
-- **returns**: [Parameters](../parameters) - Parameters value of the element or null if conversion is not supported.
+- **returns**: [Parameters](../parameters) - Parameters value of the element or None if conversion is not supported.
 
 #### get_as_parameters
 Converts map element into an Parameters or returns empty Parameters if conversion is not possible.

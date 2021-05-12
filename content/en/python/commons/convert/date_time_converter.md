@@ -36,12 +36,12 @@ Converts value into Date or returns default when conversion is not possible.
 - **returns**: datetime - Date value or default when conversion is not supported.
 
 #### to_nullable_date_time
-Converts value into Date or returns null when conversion is not possible.
+Converts value into Date or returns None when conversion is not possible.
 
 > `static` to_nullable_date_time(value: Any): Optional[datetime]
 
 - **value**: Any - the value to convert.
-- **returns**: datetime - Date value or null when conversion is not supported.
+- **returns**: datetime - Date value or None when conversion is not supported.
 
 ### Examples
 

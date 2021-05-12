@@ -21,7 +21,7 @@ Important points
 ### Constructors
 
 Creates a new event and assigns its name.  
-Throws an Error if the name is null.
+Throws an Error if the name is None.
 
 > Event(name: str)
 

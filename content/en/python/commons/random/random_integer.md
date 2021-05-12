@@ -20,16 +20,16 @@ Generates a integer in the range ['min', 'max']. If 'max' is omitted, then the r
 
 - **min**: int - minimum value of the integer that will be generated. 
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-- **max**: int = null - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
+- **max**: int = None - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
 - **returns**: int - generated random integer value.
 
 #### update_integer
 Updates (drifts) a integer value within specified range defined
 
-> `static` update_integer(value: int, range: int = null): int
+> `static` update_integer(value: int, range: int = None): int
 
 - **value**: int - a integer value to drift.
-- **range**: int = null - (optional) a range. Default: 10% of the value
+- **range**: int = None - (optional) a range. Default: 10% of the value
 - **returns**: int - TODO add description.
 
 ### Examples

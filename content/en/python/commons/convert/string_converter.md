@@ -21,29 +21,29 @@ description: >
 ### Static methods
 
 #### to_nullable_string
-Converts value into string or returns null when value is null.
+Converts value into string or returns None when value is None.
 
 > `static` to_nullable_string(value: Any): Optional[str]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[str] - string value or null when value is null.
+- **returns**: Optional[str] - string value or None when value is None.
 
 #### to_string
-Converts value into string or returns "" when value is null.
+Converts value into string or returns "" when value is None.
 
 > `static` to_string(value: Any): str
 
 - **value**: Any - the value to convert.
-- **returns**: str - string value or "" when value is null.
+- **returns**: str - string value or "" when value is None.
 
 #### to_string_with_default
-Converts value into string or returns default when value is null.
+Converts value into string or returns default when value is None.
 
 > `public static` to_string_with_default(value: Any, default_value: str): str
 
 - **value**: Any - the value to convert.
 - **default_value**: str - the default value.
-- **returns**: str - string value or default when value is null.
+- **returns**: str - string value or default when value is None.
 
 
 ### Examples

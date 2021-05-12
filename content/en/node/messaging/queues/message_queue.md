@@ -269,7 +269,7 @@ Opens the component with given connection and credential parameters.
 > `protected` openWithParams(correlationId: string, connections: [ConnectionParams](../../../components/connect/connection_params)[], credential: [CredentialParams](../../../components/auth/credential_params)): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **connection**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
+- **connections**: [ConnectionParams](../../../components/connect/connection_params)[] - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
         
 

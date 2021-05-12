@@ -88,7 +88,7 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 >  resolve(correlation_id: Optional[str]): Optional[[ConnectionParams](../connection_params)]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **returns**: Optional[[ConnectionParams](../connection_params)] - resolved connection parameters or null if nothing was found.
+- **returns**: Optional[[ConnectionParams](../connection_params)] - resolved connection parameters or None if nothing was found.
 
 
 #### resolve_all

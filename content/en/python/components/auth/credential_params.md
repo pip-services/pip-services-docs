@@ -70,7 +70,7 @@ Get the user password. The value can be stored in parameters "password" or "pass
 
 #### get_store_key
 Gets the key to retrieve these credentials from [ICredentialStore](../icredential_store).
-If this key is null, than all parameters are already present.
+If this key is None, than all parameters are already present.
 
 > get_store_key(): str
 

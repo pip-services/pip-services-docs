@@ -19,7 +19,7 @@ Converts JSON string into a value of type specified by a TypeCode.
 
 - **type**: [TypeCode](../type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: str - the JSON string to convert.
-- **returns**: Any - converted object value or null when value is null.
+- **returns**: Any - converted object value or None when value is None.
 
 #### to_json
 Converts value into JSON string.
@@ -27,7 +27,7 @@ Converts value into JSON string.
 > `static` to_json(value: Any): Optional[str]
 
 - **value**: Any - the value to convert.
-- **returns**: str - JSON string or null when value is null.
+- **returns**: str - JSON string or None when value is None.
 
 #### to_map
 Converts JSON string into map object or returns empty map when conversion is not possible.
@@ -49,13 +49,13 @@ Converts JSON string into map object or returns default value when conversion is
 
 
 #### to_nullable_map
-Converts JSON string into map object or returns null when conversion is not possible.  
+Converts JSON string into map object or returns None when conversion is not possible.  
 See [MapConverter.to_nullable_map](../map_converter/#to_nullable_map)
 
 > `static` to_nullable_map(value: str): Any 
 
 - **value**: str - the JSON string to convert.
-- **returns**: Any - Map object value or null when conversion is not supported.
+- **returns**: Any - Map object value or None when conversion is not supported.
 
 
 ### Examples

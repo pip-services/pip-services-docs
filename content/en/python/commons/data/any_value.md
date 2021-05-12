@@ -186,77 +186,77 @@ See [AnyValueMap.from_value](../any_value_map/#from_value)
 
 
 #### get_as_nullable_boolean
-Converts object value into a boolean or returns null if conversion is not possible.  
+Converts object value into a boolean or returns None if conversion is not possible.  
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > get_as_nullable_boolean(): Optional[bool]
 
-- **returns**: Optional[bool] - boolean value or null if conversion is not supported.
+- **returns**: Optional[bool] - boolean value or None if conversion is not supported.
 
 
 #### get_as_nullable_datetime
-Converts object value into a Date or returns null if conversion is not possible.   
+Converts object value into a Date or returns None if conversion is not possible.   
 See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime)
 
 > get_as_nullable_datetime(): Optional[datetime]
 
-- **returns**: Optional[datetime] - Date value or null if conversion is not supported.
+- **returns**: Optional[datetime] - Date value or None if conversion is not supported.
 
 
 #### get_as_nullable_double
-Converts object value into a double or returns null if conversion is not possible.    
+Converts object value into a double or returns None if conversion is not possible.    
 See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double)
 
 > get_as_nullable_double(): Optional[float]
 
-- **returns**: Optional[float] - double value or null if conversion is not supported.
+- **returns**: Optional[float] - double value or None if conversion is not supported.
 
 
 #### get_as_nullable_float
-Converts object value into a float or returns null if conversion is not possible.    
+Converts object value into a float or returns None if conversion is not possible.    
 See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
 
 > get_as_nullable_float(): Optional[float]
 
-- **returns**: Optional[float] - float value or null if conversion is not supported.
+- **returns**: Optional[float] - float value or None if conversion is not supported.
 
 
 #### get_as_nullable_integer
-Converts object value into an integer or returns null if conversion is not possible.  
+Converts object value into an integer or returns None if conversion is not possible.  
 See [IntegerConverter.to_nullable_integer](../../convert/integer_converter/#to_nullable_integer)
 
 > get_as_nullable_integer(): Optional[int]
 
-- **returns**: Optional[int] - integer value or null if conversion is not supported. 
+- **returns**: Optional[int] - integer value or None if conversion is not supported. 
 
 
 #### get_as_nullable_long
-Converts object value into a long or returns null if conversion is not possible.   
+Converts object value into a long or returns None if conversion is not possible.   
 See [LongConverter.to_nullable_long](../../convert/long_converter/#to_nullable_long)
 
 > get_as_nullable_long(): Optional[float]
 
-- **returns**: Optional[float] - long value or null if conversion is not supported. 
+- **returns**: Optional[float] - long value or None if conversion is not supported. 
 
 
 #### get_as_nullable_string
-Converts object value into a string or returns null if conversion is not possible.    
+Converts object value into a string or returns None if conversion is not possible.    
 See [StringConverter.to_nullable_string](../../convert/string_converter/#to_nullable_string)
 
 > get_as_nullable_string(): Optional[str]
 
-- **returns**: Optional[str] - string value or null if conversion is not supported. 
+- **returns**: Optional[str] - string value or None if conversion is not supported. 
 
 
 #### get_as_nullable_type
 Converts object value into a value defined by specied typecode.
-If conversion is not possible it returns null.  
+If conversion is not possible it returns None.  
 See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
 
 > get_as_nullable_type(value_type: [TypeCode](../../convert/type_code)): Optional[Any]
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **returns**: Optional[Any] - value defined by the typecode or null if conversion is not supported. 
+- **returns**: Optional[Any] - value defined by the typecode or None if conversion is not supported. 
 
 
 #### get_as_object

@@ -153,7 +153,7 @@ Reads container configuration from JSON or YAML file and parameterizes it with g
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **path**: str - a path to configuration file
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 
 
 #### set_references

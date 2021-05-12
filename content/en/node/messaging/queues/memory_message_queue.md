@@ -52,16 +52,6 @@ Returnes message into the queue and makes it available for all subscribers to re
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to return.
 
-#### beginListen
-Listens for incoming messages without blocking the current thread.
-
-See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
-
-> `public` beginListen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
-
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
-
 
 #### clear
 Clears component state.
@@ -99,13 +89,6 @@ Ends listening for incoming messages. When this method is call [listen](#listen)
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 
-#### getName
-Gets the queue name
-
-> `public` getName(): string 
-
-- **returns**: string - the queue name.
-
 #### isOpen
 Checks if the component is opened.
 
@@ -122,13 +105,6 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
-
-#### moveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
-
-> `public`  moveToDeadLetter(message: [MessageEnvelope](../message_envelope)): Promise\<void\>
-
-- **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
 
 
 #### peek
@@ -151,9 +127,9 @@ Peeks multiple incoming messages from the queue without removing them. If there 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
 
-> `public`  readMessageCount():  Promise\<void\>
+> `public` readMessageCount(): number
 
-- **returns**:  Promise\<void\> - a number of messages in the queue.
+- **returns**: number - a number of messages in the queue.
 
 
 #### receive
@@ -180,14 +156,6 @@ Sends a message into the queue.
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - a message envelop to be sent.
-
-
-#### setReferences
-Sets references to dependent components.
-
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 #### openWithParams

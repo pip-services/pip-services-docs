@@ -22,7 +22,7 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 - **key_type**: Any - a type of map keys. Null means that keys may have any type.
 - **value_type**: Any - a type of map values. Null means that values may have any type.
-- **required**: boolean - (optional) true to always require non-null values.
+- **required**: boolean - (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 

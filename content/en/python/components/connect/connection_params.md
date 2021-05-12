@@ -44,7 +44,7 @@ Creates a new connection parameters and fills it with values.
 
 #### get_discovery_key
 Gets the key to retrieve this connection from DiscoveryService.
-If this key is null, than all parameters are already present.
+If this key is None, than all parameters are already present.
 
 >  get_discovery_key(): str
 

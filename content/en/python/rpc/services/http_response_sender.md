@@ -15,8 +15,8 @@ Creates a callback function that sends newly created object as JSON.
 That callack function call be called directly or passed
 as a parameter to business logic components.
 
-If object is not null it returns 201 status code.
-For null results it returns 204 status code.
+If object is not None it returns 201 status code.
+For None results it returns 204 status code.
 If error occur it sends ErrorDescription with approproate status code.
 
 > `static` send_created_result(result: Any): Optional[str]
@@ -30,8 +30,8 @@ Creates a callback function that sends newly created object as JSON.
 That callack function call be called directly or passed
 as a parameter to business logic components.
 
-If object is not null it returns 201 status code.
-For null results it returns 204 status code.
+If object is not None it returns 201 status code.
+For None results it returns 204 status code.
 If error occur it sends ErrorDescription with approproate status code.
 
 > `static` send_deleted_result(result: Any = None): Optional[str]
@@ -68,8 +68,8 @@ Creates a callback function that sends result as JSON object.
 That callack function call be called directly or passed
 as a parameter to business logic components.
 
-If object is not null it returns 200 status code.
-For null results it returns 204 status code.
+If object is not None it returns 200 status code.
+For None results it returns 204 status code.
 If error occur it sends ErrorDescription with approproate status code.
 
 

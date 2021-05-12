@@ -156,12 +156,12 @@ Converts array element into a double or returns default value if conversion is n
 
 
 #### get_as_nullable_double
-Converts array element into a double or returns null if conversion is not possible.
+Converts array element into a double or returns None if conversion is not possible.
 
 > get_as_nullable_double(index: int): Optional[float]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[float] - double value of the element or null if conversion is not supported.
+- **returns**: Optional[float] - double value of the element or None if conversion is not supported.
 
 
 #### get_as_float
@@ -245,104 +245,104 @@ Converts array element into an AnyValueMap or returns default value if conversio
 
 
 #### get_as_nullable_array
-Converts array element into an AnyValueArray or returns null if conversion is not possible.
+Converts array element into an AnyValueArray or returns None if conversion is not possible.
 
 > get_as_nullable_array(index: int): Optional[[AnyValueArray](../any_value_array)]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[[AnyValueArray](../any_value_array)] - AnyValueArray value of the element or null if conversion is not supported. 
+- **returns**: Optional[[AnyValueArray](../any_value_array)] - AnyValueArray value of the element or None if conversion is not supported. 
 
 
 #### get_as_nullable_boolean
-Converts array element into a boolean or returns null if conversion is not possible.  
+Converts array element into a boolean or returns None if conversion is not possible.  
 See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to_nullable_boolean)
 
 > get_as_nullable_boolean(index: int): Optional[bool]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[bool] - boolean value of the element or null if conversion is not supported.
+- **returns**: Optional[bool] - boolean value of the element or None if conversion is not supported.
 
 
 #### get_as_nullable_datetime
-Converts array element into a Date or returns null if conversion is not possible.  
+Converts array element into a Date or returns None if conversion is not possible.  
 See [DateTimeConverter.to_nullable_datetime](../../converter/date_time_converter/#to_nullable_datetime)
 
 > get_as_nullable_datetime(index: int): Optional[datetime]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[datetime] - datetime value of the element or null if conversion is not supported. 
+- **returns**: Optional[datetime] - datetime value of the element or None if conversion is not supported. 
 
 
 #### get_as_nullable_double
-Converts array element into a double or returns null if conversion is not possible.  
+Converts array element into a double or returns None if conversion is not possible.  
 See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double)
 
 > get_as_nullable_double(index: int): Optional[float]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[float] - double value of the element or null if conversion is not supported.
+- **returns**: Optional[float] - double value of the element or None if conversion is not supported.
 
 
 #### get_as_nullable_float
-Converts array element into a float or returns null if conversion is not possible.  
+Converts array element into a float or returns None if conversion is not possible.  
 See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
 
 > get_as_nullable_float(index: int): Optional[float]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[float] - float value of the element or null if conversion is not supported. 
+- **returns**: Optional[float] - float value of the element or None if conversion is not supported. 
 
 
 #### get_as_nullable_integer
-Converts array element into a float or returns null if conversion is not possible.  
+Converts array element into a float or returns None if conversion is not possible.  
 See [IntegerConverter.to_nullable_integer](../../convert/integer_converter/#to_nullable_integer)
 
 > get_as_nullable_integer(index: int): Optional[int]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[int] - integer value of the element or null if conversion is not supported. 
+- **returns**: Optional[int] - integer value of the element or None if conversion is not supported. 
 
 
 #### get_as_nullable_long
-Converts array element into a long or returns null if conversion is not possible.  
+Converts array element into a long or returns None if conversion is not possible.  
 See [LongConverter.to_nullable_long](../../convert/long_converter/#to_nullable_long)
 
 > get_as_nullable_long(index: int): Optional[float]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[float] - long value of the element or null if conversion is not supported.
+- **returns**: Optional[float] - long value of the element or None if conversion is not supported.
 
 
 #### get_as_nullable_map
-Converts array element into a long or returns null if conversion is not possible.  
+Converts array element into a long or returns None if conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#from_value)
 
 > get_as_nullable_map(index: int): Optional[[AnyValueMap](../any_value_map)]
 
 - **index**: int - an index of element to get.
-- **returns**: Optional[[AnyValueMap](../any_value_map)] - AnyValueMap value of the element or null if conversion is not supported. 
+- **returns**: Optional[[AnyValueMap](../any_value_map)] - AnyValueMap value of the element or None if conversion is not supported. 
 
 
 #### get_as_nullable_string
-Converts array element into a string or returns null if conversion is not possible.  
+Converts array element into a string or returns None if conversion is not possible.  
 See [StringConverter.to_nullable_string](../../convert/string_converter/#to_nullable_string),
 
 > get_as_nullable_string(index: int): str
 
 - **index**: int - an index of element to get.
-- **returns**: str - string value of the element or null if conversion is not supported.
+- **returns**: str - string value of the element or None if conversion is not supported.
 
 
 #### get_as_nullable_type
 Converts array element into a value defined by specied typecode.
-If conversion is not possible it returns null.  
+If conversion is not possible it returns None.  
 See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
 
 > get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), index: int): Any
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **index**: number - an index of element to get.
-- **returns**: Any - element value defined by the typecode or null if conversion is not supported. 
+- **returns**: Any - element value defined by the typecode or None if conversion is not supported. 
 
 
 #### get_as_object

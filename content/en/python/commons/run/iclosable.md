@@ -31,7 +31,7 @@ class MyConnector(ICloseable):
     def close(self, correlation_id):
         if self._client is not None:
             self._client.close()
-            self._client = null  
+            self._client = None  
 ```
 
 ### See also

@@ -27,20 +27,6 @@ Creates a message queue component and assigns its name.
 - **name**: string - a name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - TODO: add description here
 
-#### configure
-Configures component by passing configuration parameters.
-
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-#### setReferences
-Sets references to dependent components.
-
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
-
 
 
 ### See also

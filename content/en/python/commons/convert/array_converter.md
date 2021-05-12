@@ -20,7 +20,7 @@ See [toArray](#toArray)
 > `static` list_to_array(value: Any): List[Any]
 
 - **value**: Any - the list to convert.
-- **returns**: List[Any] - array object or empty array when value is null
+- **returns**: List[Any] - array object or empty array when value is None
 
 
 #### to_array
@@ -30,7 +30,7 @@ Single values are converted into arrays with single element.
 > `static` to_array(value: Any): List[Any]
 
 - **value**: Any - the value to convert.
-- **returns**: List[Any] - array object or empty array when value is null.
+- **returns**: List[Any] - array object or empty array when value is None.
 
 #### to_array_with_default
 Converts value into array object with specified default.
@@ -40,7 +40,7 @@ Single values are converted into arrays with single element.
 
 - **value**: Any - the value to convert.
 - **default_value**: List[Any] - default array object.
-- **returns**: List[Any] - array object or default array when value is null.
+- **returns**: List[Any] - array object or default array when value is None.
 
 #### to_nullable_array
 Converts value into array object.
@@ -49,7 +49,7 @@ Single values are converted into arrays with a single element.
 > `static` to_nullable_array(value: Any): Optional[List[Any]]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[List[Any]] - array object or null when value is null.
+- **returns**: Optional[List[Any]] - array object or None when value is None.
 
 ### Examples
 

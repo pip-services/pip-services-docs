@@ -44,7 +44,7 @@ Gets the callback function that is called when this timer is triggered.
 
 > get_callback(): Callable
 
-- **returns**: Callable - the callback function or null if it is not set. 
+- **returns**: Callable - the callback function or None if it is not set. 
 
 
 #### get_delay
@@ -67,7 +67,7 @@ Gets the INotifiable object that receives notifications from this timer.
 
 > get_task(): [INotifiable](../inotifiable)
 
-- **returns**: [INotifiable](../inotifiable) - the INotifiable object or null if it is not set.
+- **returns**: [INotifiable](../inotifiable) - the INotifiable object or None if it is not set.
 
 
 #### set_task

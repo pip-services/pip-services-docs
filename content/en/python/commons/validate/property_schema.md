@@ -21,7 +21,7 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 - **name**: str - (optional) a property name
 - **typ**: Any - (optional) a property type
-- **required**: bool -  (optional) true to always require non-null values.
+- **required**: bool -  (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 ### Instance methods

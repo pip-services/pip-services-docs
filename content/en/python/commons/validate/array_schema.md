@@ -20,7 +20,7 @@ See [TypeCode](../convert/type_code)
 > ArraySchema(valueType: Any = None, required: bool = None, rules: List[[IValidationRule](../ivalidation_rule)] = None)
 
 - **valueType**: Any - a type of array elements. Null means that elements may have any type.
-- **required**: bool - (optional) true to always require non-null values.
+- **required**: bool - (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 ### Instance methods

@@ -65,7 +65,7 @@ Gets one optional dependency by its name.
 > get_one_optional(name: str): Any
 
 - **name**: str - the dependency name to locate.
-- **returns**: Any - a dependency reference or null of the dependency was not found
+- **returns**: Any - a dependency reference or None of the dependency was not found
 
 #### get_one_required
 Gets one required dependency by its name.

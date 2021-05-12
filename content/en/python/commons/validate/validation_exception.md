@@ -43,14 +43,14 @@ Composes human readable error message based on validation results.
 
 #### from_results
 Creates a new ValidationException based on errors in validation results.
-If validation results have no errors, then null is returned.
+If validation results have no errors, then None is returned.
 
 > `static` from_results(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **results**: List[[ValidationResult](../validation_result)] -  list of validation results that may contain errors
 - **strict**: bool - true to treat warnings as errors.
-- **returns**: [ValidationException]() - a newly created ValidationException or null if no errors in found.
+- **returns**: [ValidationException]() - a newly created ValidationException or None if no errors in found.
 
 #### throw_exception_if_needed
 Throws ValidationException based on errors in validation results.

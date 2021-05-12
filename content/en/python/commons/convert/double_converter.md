@@ -36,21 +36,21 @@ Converts value into integer or returns default value when conversion is not poss
 > `static` to_double_with_default(value: Any, default_value: float = 0): float
 
 - **value**: Any - the value to convert.
-- **default_value**: float = null - the default value.
+- **default_value**: float = None - the default value.
 - **returns**: float - double value or default when conversion is not supported.
 
 #### to_nullable_double
-Converts value into doubles or returns null when conversion is not possible.
+Converts value into doubles or returns None when conversion is not possible.
 
 > `static` to_nullable_double(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[float] - double value or null when conversion is not supported.
+- **returns**: Optional[float] - double value or None when conversion is not supported.
 
 ### Examples
 
 ```python
-value1 = DoubleConverter.to_nullable_double("ABC")     # Returns null
+value1 = DoubleConverter.to_nullable_double("ABC")     # Returns None
 value2 = DoubleConverter.to_nullable_double("123.456") # Returns 123.456
 value3 = DoubleConverter.to_nullable_double(True)      # Returns 1
 value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Returns current milliseconds (E.g. 1619812281454)

@@ -57,7 +57,7 @@ Gets object type by its name and library where it is defined.
 
 - **name**: str - an object type name.
 - **library**: str - a library where the type is defined
-- **returns**: Any - the object type or null is the type wasn't found.
+- **returns**: Any - the object type or None is the type wasn't found.
 
 #### get_type_by_descriptor
 Gets object type by type descriptor.
@@ -65,7 +65,7 @@ Gets object type by type descriptor.
 > `static` get_type_by_descriptor(descriptor: [TypeDescriptor](../type_descriptor)): Any 
 
 - **descriptor**: [TypeDescriptor](../type_descriptor) - a type descriptor that points to an object type
-- **returns**: Any - the object type or null is the type wasn't found.
+- **returns**: Any - the object type or None is the type wasn't found.
 
 #### is_primitive
 Checks if value has primitive type.

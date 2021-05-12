@@ -41,12 +41,12 @@ Converts value into boolean or returns default value when conversion is not poss
 
 
 #### to_nullable_boolean
-Converts value into boolean or returns null when conversion is not possible.
+Converts value into boolean or returns None when conversion is not possible.
 
 > `static` to_nullable_boolean(value: Any): bool
 
 - **value**: Any - the value to convert.
-- **returns**: bool - boolean value or null when convertion is not supported.
+- **returns**: bool - boolean value or None when convertion is not supported.
 
 ### Examples
 

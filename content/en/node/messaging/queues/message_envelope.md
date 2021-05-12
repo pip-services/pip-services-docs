@@ -115,7 +115,7 @@ If any of the values are *null*, they will be replaced with \-\-\-.
 #### fromJSON
 Converts a JSON string into a [MessageEnvelope]() The message payload is passed as base64 string
 
-> `public` fromJSON(value: string): [MessageEnvelope]()
+> `public static` fromJSON(value: string): [MessageEnvelope]()
 
 - **value**: string - a JSON encoded string
 - **returns**: [MessageEnvelope]() - a decoded Message Envelop.

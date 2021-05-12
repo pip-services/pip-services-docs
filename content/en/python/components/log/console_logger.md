@@ -6,14 +6,17 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 description: >
     Logger that writes log messages to console.
 
-    Errors are written to standard err stream
-    and all other messages to standard out stream.
 ---
 
 **Implemenst:** [Logger](../logger)
 
-See also [Logger](../logger)
+### Description
 
+The  ConsoleLogger provides a logger that writes log messages to console.
+
+Important points
+
+- Errors are written to standard err stream and all other messages to standard out stream.
 
 #### Configuration parameters
 - **level**: maximum log level to capture
@@ -22,17 +25,8 @@ See also [Logger](../logger)
 #### References
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
 
-**Example:**
-```python
-logger = ConsoleLogger()
-logger.set_level(LogLevel.debug)
 
-logger.error("123", ex, "Error occured: %s", ex.message)
-logger.debug("123", "Everything is OK.")
-```
-
-
-### Methods
+### Instance methods
 
 #### _write
 Writes a log message to the logger destination.
@@ -44,6 +38,15 @@ Writes a log message to the logger destination.
 - **error**: Optional[Exception] - an error object associated with this message.
 - **message**: Optional[str] - a human-readable message to log.
 
+### Examples
+
+```python
+logger = ConsoleLogger()
+logger.set_level(LogLevel.debug)
+
+logger.error("123", ex, "Error occured: %s", ex.message)
+logger.debug("123", "Everything is OK.")
+```
 
 ### See also
 - #### [Logger](../logger)

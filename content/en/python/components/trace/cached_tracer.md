@@ -5,12 +5,18 @@ linkTitle: "CachedTracer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     Abstract tracer that caches recorded traces in memory and periodically dumps them.
-    Child classes implement saving cached traces to their specified destinations.
+    
 ---
 
 **Implemenst:** [ITracer](../itracer), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [ITracer](../itracer), [OperationTrace](../operation_trace)
+### Description
+
+The CachedTracer class allows you to create a tracer that caches the recorded traces in memory and periodically dumps them.
+
+Important points
+
+- Child classes implement saving cached traces to their specified destinations.
 
 #### Configuration parameters
 

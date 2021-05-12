@@ -1,16 +1,22 @@
 ---
 type: docs
-title: "ConsoleLogger"
-linkTitle: "ConsoleLogger"
+title: "Logger"
+linkTitle: "Logger"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract logger that captures and formats log messages.
-    Child classes take the captured messages and write them to their specific destinations.
+    Logger that captures and formats log messages.
+    
 ---
 
 **Implements:** [ILogger](../ilogger), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [ILogger](../ilogger)
+### Description
+
+The Logger class allows you to create a logger that captures and formats logs messages.
+
+Important points
+
+- Child classes take the captured messages and write them to their specific destinations.
 
 #### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
@@ -26,18 +32,18 @@ Parameters to pass to the [configure](#configure) method for component configura
 <span class="hide-title-link">
 
 #### _level
-TODO add description
+Maximum log level to capture
 > **_level**: [LogLevel](../log_level) = LogLevel.Info
 
 
 #### _source
-TODO add description
+source (context) name
 > **_source**: str
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### _compose_error
 Composes an human-readable error description

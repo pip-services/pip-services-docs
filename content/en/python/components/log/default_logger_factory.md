@@ -4,13 +4,14 @@ title: "DefaultLoggerFactory"
 linkTitle: "DefaultLoggerFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Creates [ILogger](../ilogger) components by their descriptors.
+    Creates [ILogger](../ilogger) components based on their descriptors.
 ---
 
 **Implemenst:** [Factory](../../build/factory)
 
-See also [Factory](../../build/factory), [NullLogger](../null_logger), [ConsoleLogger](../console_logger),
-[CompositeLogger](../composite_logger)
+### Description
+
+The DefaultLoggerFactory class provides a factory used to create [ILogger](../ilogger) components based on  their descriptors.
 
 
 ### Constructors

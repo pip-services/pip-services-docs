@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The IChangeable interface allows you to store the last modified date and time for data objects in the "change_time" parameter.
+The IChangeable interface allows you to store the last modified date and time in the "change_time" parameter of a data object.
 
 ### Fields
 

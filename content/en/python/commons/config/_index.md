@@ -5,7 +5,7 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    A package containing  a set of classes and interfaces that allows you add configurations to components.
+    A package containing  a set of classes and interfaces that allows you to add configurations to components.
 ---
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 
 ### Description
-The config package contains a set of classes and interfaces that allows you add configurations to components. These configurations can contain different sets of configuration paramters, which can be used to define things such as access control credentials.     
+The config package contains a set of classes and interfaces that allows you to add configurations to components. These configurations can contain different sets of configuration paramters, which can be used to define things such as access control credentials.     
 
 
 <br>

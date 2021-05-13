@@ -31,7 +31,7 @@ Otherwise it shall just delegate the call to the wrapped command.
 - **returns**: str - the name of the wrapped command.
 
 #### execute
-Executes the wrapped command with specified arguments.
+Executes the wrapped command with the specified arguments.
 
 The interceptor can use this method to intercept and alter the command execution.
 Otherwise it shall just delete the call to the wrapped command.

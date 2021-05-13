@@ -45,7 +45,7 @@ Parses comma-separated list of projection fields.
 
 > `static` from_string(*values: str): [ProjectionParams]()
 
-- **values**: str - one or more comma-separated lists of projection fields
+- **values**: str - one or more comma-separated lists of projection fields.
 - **returns**: [ProjectionParams]() - a newly created ProjectionParams.
 
 #### from_value
@@ -54,7 +54,7 @@ See [AnyValueArray.from_value](../any_value_array/#from_value)
 
 > `static` from_value(value: Any): [ProjectionParams]()
 
-- **value**: Any -  value to be converted
+- **value**: Any -  value to be converted.
 - **returns**: [ProjectionParams]() - a newly created ProjectionParams.
 
 ### Examples

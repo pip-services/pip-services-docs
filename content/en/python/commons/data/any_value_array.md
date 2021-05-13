@@ -127,7 +127,7 @@ Converts array element into a Date or returns the current date if conversion is 
 
 #### get_as_datetime_with_default
 Converts array element into a Date or returns default value if conversion is not possible.  
-See [DateTimeConverter.to_datetime_with_default](../../convert/date_time_converter/#to_datetime_with_default)
+See [DateTimeConverter.to_datetime_with_default](../../convert/date_time_converter/#to_datetime_with_default).
 
 > get_as_datetime_with_default(index: int, default_value: datetime): datetime
 
@@ -175,12 +175,12 @@ Converts array element into a float or returns 0 if conversion is not possible.
 
 #### get_as_float_with_default
 Converts array element into a float or returns default value if conversion is not possible.   
-See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default)
+See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default).
 
 > get_as_float_with_default(index: int, default_value: float): float
 
 - **index**: int - an index of element to get.
-- **default_value**: float - the default value
+- **default_value**: float - the default value.
 - **returns**: float - number value ot the element or default value if conversion is not supported. 
 
 
@@ -195,12 +195,12 @@ Converts array element into an integer or returns 0 if conversion is not possibl
 
 #### get_as_integer_with_default
 Converts array element into an integer or returns default value if conversion is not possible.  
-See [IntegerConverter.to_integer_with_default](../../convert/integer_converter/#to_integer_with_default)
+See [IntegerConverter.to_integer_with_default](../../convert/integer_converter/#to_integer_with_default).
 
 > get_as_integer_with_default(index: int, default_value: int): int
 
 - **index**: int - an index of element to get.
-- **default_value**: int - the default value
+- **default_value**: int - the default value.
 - **returns**: int - integer value ot the element or default value if conversion is not supported.
 
 
@@ -240,7 +240,7 @@ Converts array element into an AnyValueMap or returns default value if conversio
 > get_as_map_with_default(index: int, default_value: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
 
 - **index**: int - an index of element to get.
-- **default_value**: [AnyValueMap](../any_value_map) - the default value
+- **default_value**: [AnyValueMap](../any_value_map) - the default value.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported.
 
 
@@ -255,7 +255,7 @@ Converts array element into an AnyValueArray or returns None if conversion is no
 
 #### get_as_nullable_boolean
 Converts array element into a boolean or returns None if conversion is not possible.  
-See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to_nullable_boolean)
+See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to_nullable_boolean).
 
 > get_as_nullable_boolean(index: int): Optional[bool]
 
@@ -265,7 +265,7 @@ See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to
 
 #### get_as_nullable_datetime
 Converts array element into a Date or returns None if conversion is not possible.  
-See [DateTimeConverter.to_nullable_datetime](../../converter/date_time_converter/#to_nullable_datetime)
+See [DateTimeConverter.to_nullable_datetime](../../converter/date_time_converter/#to_nullable_datetime).
 
 > get_as_nullable_datetime(index: int): Optional[datetime]
 
@@ -275,7 +275,7 @@ See [DateTimeConverter.to_nullable_datetime](../../converter/date_time_converter
 
 #### get_as_nullable_double
 Converts array element into a double or returns None if conversion is not possible.  
-See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double)
+See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double).
 
 > get_as_nullable_double(index: int): Optional[float]
 
@@ -285,7 +285,7 @@ See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_null
 
 #### get_as_nullable_float
 Converts array element into a float or returns None if conversion is not possible.  
-See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
+See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float).
 
 > get_as_nullable_float(index: int): Optional[float]
 
@@ -325,7 +325,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#
 
 #### get_as_nullable_string
 Converts array element into a string or returns None if conversion is not possible.  
-See [StringConverter.to_nullable_string](../../convert/string_converter/#to_nullable_string),
+See [StringConverter.to_nullable_string](../../convert/string_converter/#to_nullable_string).
 
 > get_as_nullable_string(index: int): str
 
@@ -336,11 +336,11 @@ See [StringConverter.to_nullable_string](../../convert/string_converter/#to_null
 #### get_as_nullable_type
 Converts array element into a value defined by specied typecode.
 If conversion is not possible it returns None.  
-See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
+See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type).
 
 > get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), index: int): Any
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result.
 - **index**: number - an index of element to get.
 - **returns**: Any - element value defined by the typecode or None if conversion is not supported. 
 
@@ -387,21 +387,21 @@ If conversion is not possible it returns default value for the specified type.
 
 
 #### get_as_type_with_default
-Converts array element into a value defined by specied typecode.
+Converts array element into a value defined by a specied typecode.
 If conversion is not possible it returns default value for the specified type.  
-See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default)
+See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default).
 
 > get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), index: int, default_value: Any): Any 
 
 - **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **index**: int - an index of element to get.
-- **default_value**: Any - the default value
+- **default_value**: Any - the default value.
 - **returns**: Any - element value defined by the typecode or default value if conversion is not supported. 
 
 
 #### get_as_value
 Converts array element into an AnyValue or returns an empty AnyValue if conversion is not possible.  
-See [AnyValue](../any_value), [AnyValues.constructors](../any_value/#constructors)
+See [AnyValue](../any_value), [AnyValues.constructors](../any_value/#constructors).
 
 > get_as_value(index: int): [AnyValue](../any_value)
 
@@ -419,7 +419,7 @@ Puts a new value into array element specified by its index.
 
 
 #### remove
-Removes an array element specified by its index
+Removes an array element specified by its index.
 
 > remove(index: int)
 
@@ -430,19 +430,19 @@ Removes an array element specified by its index
 Sets a new value to array element specified by its index.
 When the index is not defined, it resets the entire array value.
 This method has double purpose because method overrides are not supported in JavaScript.  
-See [ArrayConverter.to_array](../../convert/array_converter/#to_array)
+See [ArrayConverter.to_array](../../convert/array_converter/#to_array).
 
 > set_as_object(index: int, value: Any = None)
 
-- **index**: int - (optional) an index of the element to set
+- **index**: int - (optional) an index of the element to set.
 - **value**: Any - a new element or array value.
 
 
 #### to_string
 Gets a string representation of the object.
 The result is a comma-separated list of string representations of individual elements as
-*"value1,value2,value3"*  
-See [StringConverter.to_string](../../convert/string_converter/#to_string)
+*"value1,value2,value3"*.  
+See [StringConverter.to_string](../../convert/string_converter/#to_string).
 
 > to_string(): str
 
@@ -450,21 +450,21 @@ See [StringConverter.to_string](../../convert/string_converter/#to_string)
 
 
 #### from_string
-Splits specified string into elements using a separator and assigns 
+Splits a specified string into elements using a separator and assigns 
 the elements to a newly created AnyValueArray.
 
 > `static` from_string(values: str, separator: str, removeDuplicates: bool = False): [AnyValueArray](../any_value_array)
 
-- **values**: str - a string value to be split and assigned to AnyValueArray
-- **separator**: str - a separator to split the string
-- **removeDuplicates**: bool = false - (optional) true to remove duplicated elements
+- **values**: str - a string value to be split and assigned to AnyValueArray.
+- **separator**: str - a separator to split the string.
+- **removeDuplicates**: bool = false - (optional) true to remove duplicated elements.
 - **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
 
 
 #### from_value
-Splits specified string into elements using a separator and assigns 
+Splits a specified string into elements using a separator and assigns 
 the elements to a newly created AnyValueArray.  
-See [ArrayConverter.to_nullable_array](../../convert/array_converter/#to_nullable_array)
+See [ArrayConverter.to_nullable_array](../../convert/array_converter/#to_nullable_array).
 
 > `static` from_value(value: Any): [AnyValueArray](../any_value_array)
 
@@ -473,7 +473,7 @@ See [ArrayConverter.to_nullable_array](../../convert/array_converter/#to_nullabl
 
 
 #### from_values
-Creates a new AnyValueArray from a list of values
+Creates a new AnyValueArray from a list of values.
 
 > `static` from_values(*values: Any): [AnyValueArray](../any_value_array)
 
@@ -484,8 +484,8 @@ Creates a new AnyValueArray from a list of values
 #### to_string
 Gets a string representation of the object.
 The result is a comma-separated list of string representations of individual elements as
-*"value1,value2,value3"*  
-See [StringConverter.to_string](../../convert/string_converter/#to_string)
+*"value1,value2,value3"*.  
+See [StringConverter.to_string](../../convert/string_converter/#to_string).
 
 > to_string(): str
 

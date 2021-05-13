@@ -39,7 +39,7 @@ Creates a new FilterParams from a list of key-value pairs called tuples.
 
 > `static` from_tuples(*tuples: Any): [FilterParams]()
 
-- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values.
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
 

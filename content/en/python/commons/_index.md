@@ -4,12 +4,10 @@ title: "Commons"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 no_list: true
 description: > 
-    Portable Abstractions and Patterns for Python  
-
     This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
-    It provides a set of basic patterns used in microservices or backend services.
-    Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
-    all languages supported by the toolkit to facilitate symmetric implementation.
+    It provides a set of tools used in microservices or backend services. It is designed to facilitate
+    symmetric implementation accross different programming languages.
+
 ---
 
 
@@ -17,16 +15,16 @@ description: >
 
 The module contains the following packages:
 
-* [**Commands**](commands) - commanding and eventing patterns
-* [**Config**](config) - configuration pattern
+* [**Commands**](commands) - commands and events 
+* [**Config**](config) - component configuration
 * [**Convert**](convert) - portable value converters
 * [**Data**](data) - data patterns
 * [**Errors**](errors) - application errors
 * [**Random**](random) - random data generators
-* [**Refer**](refer) - locator inversion of control (IoC) pattern
+* [**Refer**](refer) - component dependencies (Based on the inversion of control (IoC) pattern)
 * [**Reflect**](reflect) - portable reflection utilities
-* [**Run**](run) - component life-cycle management patterns
-* [**Validate**](validate) - validation patterns
+* [**Run**](run) - component life-cycle management
+* [**Validate**](validate) - validation rules
 
 
 

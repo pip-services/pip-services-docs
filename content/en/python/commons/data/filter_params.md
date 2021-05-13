@@ -48,7 +48,7 @@ Converts specified value into FilterParams.
 
 > `static` from_value(value: Any): [FilterParams]()
 
-- **value**: Any - value to be converted
+- **value**: Any - value to be converted.
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
 ### Examples

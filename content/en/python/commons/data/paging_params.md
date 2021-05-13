@@ -71,7 +71,7 @@ Gets the number of items to return in a page.
 ### Static methods
 
 #### from_map
-Creates a new PagingParams and sets it parameters from the specified map
+Creates a new PagingParams and sets it parameters from the specified map.
 
 > `static` from_map(map: Any): [PagingParams]()
 

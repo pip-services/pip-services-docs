@@ -4,11 +4,8 @@ title: "Components"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 no_list: true
 description: > 
-    Component definitions for Python 
-
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    The Components module contains standard component definitions that can be used to build applications and services.
+    It contains standard component definitions that can be used to build applications and services.
 ---
 
 

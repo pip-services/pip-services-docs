@@ -16,28 +16,28 @@ description: >
 
 #### Configuration parameters
 **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **host**: host name or IP address
-    - **port**: port number (default: 27017)
-    - **uri**: resource URI or connection string with all parameters in it
+- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **host**: host name or IP address
+- **port**: port number (default: 27017)
+- **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) user name
-    - **password**: (optional) user password
+- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: (optional) user name
+- **password**: (optional) user password
 
 **options**:
-    - **max_pool_size**: (optional) maximum connection pool size (default: 2)
-    - **keep_alive**: (optional) enable connection keep alive (default: true)
-    - **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
-    - **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
-    - **auto_reconnect**: (optional) enable auto reconnection (default: true)
-    - **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000)
-    - **max_page_size**: (optional) maximum page size (default: 100)
-    - **replica_set**: (optional) name of replica set
-    - **ssl**: (optional) enable SSL connection (default: false)
-    - **auth_source**: (optional) authentication source
-    - **debug**: (optional) enable debug output (default: false).
+- **max_pool_size**: (optional) maximum connection pool size (default: 2)
+- **keep_alive**: (optional) enable connection keep alive (default: true)
+- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
+- **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
+- **auto_reconnect**: (optional) enable auto reconnection (default: true)
+- **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000)
+- **max_page_size**: (optional) maximum page size (default: 100)
+- **replica_set**: (optional) name of replica set
+- **ssl**: (optional) enable SSL connection (default: false)
+- **auth_source**: (optional) authentication source
+- **debug**: (optional) enable debug output (default: false).
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages

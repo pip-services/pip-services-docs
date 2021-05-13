@@ -17,16 +17,16 @@ description: >
 #### Configuration parameters
 
 **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
-    - **host**: host name or IP address
-    - **port**: port number (default: 27017)
-    - **database**: database name
-    - **uri**: resource URI or connection string with all parameters in it
+- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+- **host**: host name or IP address
+- **port**: port number (default: 27017)
+- **database**: database name
+- **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-    - **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
-    - **username**: user name
-    - **password**: user password
+- **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+- **username**: user name
+- **password**: user password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services

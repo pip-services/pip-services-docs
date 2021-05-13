@@ -23,7 +23,7 @@ Gets the command name.
 - **returns**: str - the command name.
 
 #### validate
-Validates command arguments before execution using defined schema.
+Validates command arguments before execution using a defined schema.
 
 > validate(args: [Parameters](../../run/parameters)): List[[ValidationResult](../../validate/validation_result)]
 

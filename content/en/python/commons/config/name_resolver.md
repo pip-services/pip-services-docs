@@ -4,11 +4,11 @@ title: "NameResolver"
 linkTitle: "NameResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    A helper class that allows to extract component name from configuration parameters.
+    A helper class that allows to extract component **name** from configuration parameters.
     
 ---
 ### Description
-A helper class that allows to extract component "name" from configuration parameters.
+A helper class that allows to extract component **name** from configuration parameters.
 The name can be defined in the "id" or "name" parameters or inside a component of type descriptor.
 
 ### Static Methods

@@ -9,7 +9,7 @@ description: >
   
 ---
 ### Description
-ConfigParams is a class that contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
+The ConfigParams class contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 
 In general, ConfigParams is used to pass configurations to IConfigurable objects. It also serves as a basis for more concrete configurations, such as ConnectionParams or CredentialParams. 
 

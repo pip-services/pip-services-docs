@@ -117,7 +117,7 @@ like "This text has #hash_tag that can be used for search."
 
 #### [TokenizedDataPage](tokenized_data_page)
 Data transfer object that is used to pass results of paginated queries.
-It contains items of retrieved page and optional total number of items.
+It contains items of a retrieved page and total number of items (optional ).
 Most often this object type is used to send responses to paginated queries.
 
 #### [TokenizedPagingParams](tokenized_paging_params)

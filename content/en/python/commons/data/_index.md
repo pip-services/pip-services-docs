@@ -78,8 +78,8 @@ ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
 #### [MultiString](multi_string)
 An object that contains string translations for multiple languages.
 Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
-When translation for specified language does not exists it defaults to English ('en').
-When English does not exists it falls back to the first defined language.
+When a translation for specified language does not exist it defaults to English ('en').
+When English does not exist it falls back to the first defined language.
 
 #### [PagingParams](paging_params)
 Data transfer object to pass paging parameters for queries.

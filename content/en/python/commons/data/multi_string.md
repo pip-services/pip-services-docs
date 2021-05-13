@@ -78,7 +78,6 @@ Puts a new translation for the specified language.
 
 - **language**: str - a language two-symbol code.
 - **value**: Any - a new translation for the specified language.
-- **returns**: Any - TODO add description
 
 
 #### remove

@@ -90,7 +90,7 @@ Converts map element into a boolean or returns false if conversion is not possib
 
 #### get_as_boolean_with_default
 Converts map element into a boolean or returns default value if conversion is not possible.  
-See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_with_default)
+See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_with_default).
 
 > get_as_boolean_with_default(key: str, default_value: bool): bool
 
@@ -101,7 +101,7 @@ See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_
 
 #### get_as_datetime
 Converts map element into a Date or returns the current date if conversion is not possible.  
-See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_with_default)
+See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_with_default).
 
 > get_as_datetime(key: str): datetime
 
@@ -111,7 +111,7 @@ See [BooleanConverter.to_boolean_with_default](../boolean_converter/#to_boolean_
 
 #### get_as_datetime_with_default
 Converts map element into a Date or returns default value if conversion is not possible.  
-See [DateTimeConverter.to_datetime_with_default](../date_time_converter/#to_datetime_with_default)
+See [DateTimeConverter.to_datetime_with_default](../date_time_converter/#to_datetime_with_default).
 
 > get_as_datetime_with_default(key: str, default_value: datetime): datetime
 
@@ -131,7 +131,7 @@ Converts map element into a double or returns 0 if conversion is not possible.
 
 #### get_as_double_with_default
 Converts map element into a double or returns default value if conversion is not possible.  
-See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault)
+See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault).
 
 > get_as_double_with_default(key: str, default_value: float): float
 
@@ -191,7 +191,7 @@ Converts map element into a long or returns 0 if conversion is not possible.
 
 #### get_as_long_with_default
 Converts map element into a long or returns default value if conversion is not possible.  
-See [LongConverter.to_long_with_default](../long_converter/#to_long_with_default)
+See [LongConverter.to_long_with_default](../long_converter/#to_long_with_default).
 
 > get_as_long_with_default(key: str, default_value: float): float
 
@@ -221,7 +221,7 @@ Converts map element into an AnyValueMap or returns default value if conversion 
 
 #### get_as_nullable_array
 Converts map element into an AnyValueArray or returns None if conversion is not possible.  
-See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#from_value)
+See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#from_value).
 
 > get_as_nullable_array(key: str): Optional[[AnyValueMap](../any_value_map)]
 
@@ -231,7 +231,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#
 
 #### get_as_nullable_boolean
 Converts map element into a boolean or returns None if conversion is not possible.  
-See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boolean)
+See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boolean).
 
 > get_as_nullable_boolean(key: str): Optional[bool]
 
@@ -241,7 +241,7 @@ See [BooleanConverter.to_nullable_boolean](../boolean_converter/#to_nullable_boo
 
 #### get_as_nullable_datetime
 Converts map element into a Date or returns None if conversion is not possible.  
-See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable_datetime)
+See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable_datetime).
 
 > get_as_nullable_datetime(key: str): Optional[datetime]
 
@@ -251,7 +251,7 @@ See [DateTimeConverter.to_nullable_datetime](../date_time_converter/#to_nullable
 
 #### get_as_nullable_double
 Converts map element into a double or returns None if conversion is not possible.  
-See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
+See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double).
 
 > get_as_nullable_double(key: str): Optional[float]
 
@@ -261,7 +261,7 @@ See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double
 
 #### get_as_nullable_float
 Converts map element into a float or returns None if conversion is not possible.  
-See [FloatConverter.to_nullable_float](../float_converter/#to_nullable_float)
+See [FloatConverter.to_nullable_float](../float_converter/#to_nullable_float).
 
 > get_as_nullable_float(key: str): Optional[float]
 
@@ -271,7 +271,7 @@ See [FloatConverter.to_nullable_float](../float_converter/#to_nullable_float)
 
 #### get_as_nullable_integer
 Converts map element into an integer or returns None if conversion is not possible.  
-See [IntegerConverter.to_nullable_integer](../integer_converter/#to_nullable_integer)
+See [IntegerConverter.to_nullable_integer](../integer_converter/#to_nullable_integer).
 
 > get_as_nullable_integer(key: str): Optional[int]
 
@@ -281,7 +281,7 @@ See [IntegerConverter.to_nullable_integer](../integer_converter/#to_nullable_int
 
 #### get_as_nullable_long
 Converts map element into a long or returns None if conversion is not possible.  
-See [LongConverter.to_nullable_long](../long_converter/#to_nullable_long)
+See [LongConverter.to_nullable_long](../long_converter/#to_nullable_long).
 
 > get_as_nullable_long(key: str): Optional[float]
 
@@ -300,7 +300,7 @@ Converts map element into an AnyValueMap or returns None if conversion is not po
 
 #### get_as_nullable_string
 Converts map element into a string or returns None if conversion is not possible.  
-See [StringConverter.to_nullable_string](../string_converter/#to_nullable_string)
+See [StringConverter.to_nullable_string](../string_converter/#to_nullable_string).
 
 > get_as_nullable_string(key: str): Optional[str]
 
@@ -311,7 +311,7 @@ See [StringConverter.to_nullable_string](../string_converter/#to_nullable_string
 #### get_as_nullable_type
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns None.    
-See [TypeConverter.to_nullable_type](../type_converter/#to_nullable_type)
+See [TypeConverter.to_nullable_type](../type_converter/#to_nullable_type).
 
 > get_as_nullable_type(value_type: [TypeCode](../../convert/type_code), key: str): Optional[Any]
 
@@ -363,7 +363,7 @@ If conversion is not possible it returns default value for the specified type.
 #### get_as_type_with_default
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.  
-See [TypeConverter.to_type_with_default](../type_converter/#to_type_with_default)
+See [TypeConverter.to_type_with_default](../type_converter/#to_type_with_default).
 
 > get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: Any): Any
 
@@ -375,7 +375,7 @@ See [TypeConverter.to_type_with_default](../type_converter/#to_type_with_default
 
 #### get_as_value
 Converts map element into an AnyValue or returns an empty AnyValue if conversion is not possible.  
-See [AnyValue](../any_value), [AnyValue.constructors](../any_value/#constructors)
+See [AnyValue](../any_value), [AnyValue.constructors](../any_value/#constructors).
 
 > get_as_value(key: str): [AnyValue](../any_value)
 
@@ -406,7 +406,6 @@ Puts a new value into map element specified by its key.
 
 - **key**: str - a key of the element to put.
 - **value**: Any - a new value for map element.
-- **returns**: Any - TODO add description
 
 
 #### remove

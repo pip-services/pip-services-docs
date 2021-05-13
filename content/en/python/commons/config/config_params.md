@@ -40,7 +40,7 @@ Keys for the new parameters are appended with section dot prefix.
 
 > add_section(section: str, section_params: [ConfigParams]())
 
-- **section**: str - name of the section where add new parameters
+- **section**: str - name of the section where the new parameters will be added.
 - **section_params**: [ConfigParams]() - new parameters to be added.
 
 #### get_section

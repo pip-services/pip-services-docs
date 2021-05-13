@@ -9,12 +9,14 @@ description: >
        
 ---
 
-<div class="module-body"> 
-<br/>
 **Important points**    
 
 
-This package allows you to create [Commandable Interfaces](icommandable), which are completely universal. Thus, for example, if an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then you can implement a commandable client for this object, using various technologies and with minimal code.    
+This package allows you to create [Commandable Interfaces](icommandable), which are completely universal. Thus, for example, if an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then you can implement a commandable client for this object, using various technologies and with minimal code.
+
+<div class="module-body"> 
+<br/>
+   
     
 The package main components are:    
     

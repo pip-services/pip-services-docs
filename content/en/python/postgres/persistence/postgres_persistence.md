@@ -1,10 +1,11 @@
 ---
 type: docs
-title: "IdentifiableMongoDbPersistence"
-linkTitle: "IdentifiableMongoDbPersistence"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
+title: "PostgresPersistence"
+linkTitle: "PostgresPersistence"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 description: >
-    Abstract persistence component that stores data in MongoDB using plain driver.
+    Abstract persistence component that stores data in PostgreSQL using plain driver.
+
 
     This is the most basic persistence component that is only
     able to store data items of any type. Specific CRUD operations
@@ -17,31 +18,23 @@ description: >
 
 #### Configuration parameters
 
-- **collection**: (optional) MongoDB collection name
-
-**connection(s)**:
+ - **collection**: (optional) PostgreSQL collection name
+**connection(s)**:    
     - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 27017)
     - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:
+**credential(s)**:    
     - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**: (optional) user name
     - **password**: (optional) user password
 
 **options**:
-    - **max_pool_size**: (optional) maximum connection pool size (default: 2)
-    - **keep_alive**: (optional) enable connection keep alive (default: true)
-    - **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
-    - **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
-    - **auto_reconnect**: (optional) enable auto reconnection (default: true)
-    - **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000)
-    - **max_page_size**: (optional) maximum page size (default: 100)
-    - **replica_set**: (optional) name of replica set
-    - **ssl**: (optional) enable SSL connection (default: false)
-    - **auth_source**: (optional) authentication source
-    - **debug**: (optional) enable debug output (default: false).
+    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+    - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
@@ -50,39 +43,38 @@ description: >
 
 **Example:**
 ```python
-class MyMongoDbPersistence(MongoDbPersistence):
+class MyPostgresPersistence(PostgresPersistence):
     def __init__(self):
-        super(MyMongoDbPersistence, self).__init__("mydata", MyData)
+        super(MyPostgresPersistence, self).__init__('mydata')
 
-    def get_by_name(self, correlationId, name):
-        item =  self._collection.find_one({ 'name': name })
-        return item
+    def get_by_name(self, correlation_id, name):
+        criteria = {'name': name}
+        return self._model.find_one(criteria)
 
-    def set(self, correlationId, item):
-        item = self._collection.find_one_and_update( 
-            { '_id': item.id }, { '$set': item }, 
-            return_document = pymongo.ReturnDocument.AFTER, 
-            upsert = True 
-            )
+    def set(self, correlation_id, item):
+        criteria = {'name': item['name']}
+        options = { 'upsert': True, 'new': True }
+        return self._model.find_one_and_update(criteria, item, options)
 
-persistence = MyMongoDbPersistence()
-persistence.configure(ConfigParams.from_tuples("host", "localhost", "port", 27017))
+persistence = MyPostgresPersistence()
+persistence.configure(ConfigParams.from_tuples(
+    "host", "localhost",
+    "port", 27017
+))
 
-persitence.open("123")
+persistence.open("123")
+persistence.set("123", {'name': "ABC"})
 
-persistence.set("123", { name: "ABC" })
 item = persistence.get_by_name("123", "ABC")
-
-print(item)
-
+print(item) # Result: { 'name': "ABC" }
 ```
 
 ### Constructors
 Creates a new instance of the persistence component.
 
-> MongoDbPersistence(collection: str = None)
+> PostgresPersistence(table_name: str = None)
 
-- **collection**: str - (optional) a collection name.
+- **table_name**: str - (optional) a table name.
 
 
 ### Methods
@@ -144,13 +136,22 @@ Creates a data item.
 - **returns**: T - a created item
 
 
-#### _define_schema
+#### _create_schema
 TODO add description
+
+> _create_schema(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+
+#### _define_schema
+Defines database schema via auto create objects or convenience methods.
 
 > _define_schema()
 
 
 #### delete_by_filter
+Deletes data items that match to a given filter.
 This method shall be called by a public [delete_by_filter](#delete_by_filter) method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
@@ -167,6 +168,51 @@ Adds index definition to create it on opening
 
 - **keys**: Any - index keys (fields)
 - **options**: Any - index options
+
+
+#### _ensure_schema
+Adds a statement to schema definition
+
+> _ensure_schema(schema_statement: str)
+
+- **schema_statement**: str - a statement to be added to the schema
+
+
+#### _generate_columns
+Generates a list of column names to use in SQL statements like: "column1,column2,column3"
+
+> _generate_columns(values: Any): str
+
+- **values**: Any - an array with column values or a key-value map
+- **returns**: str - a generated list of column names 
+
+
+#### _generate_parameters
+Generates a list of value parameters to use in SQL statements like: "%s,%s,%s"
+
+> _generate_parameters(values: Any): str
+
+- **values**: Any - an array with values or a key-value map
+- **returns**: str - a generated list of value parameters
+
+
+#### _generate_set_parameters
+Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s
+
+> _generate_set_parameters(values: Any): str
+
+- **values**: Any - a key-value map with columns and values
+- **returns**: str - a generated list of column sets
+
+
+#### _generate_values
+Generates a list of column parameters
+
+> _generate_values(values: Any): List[Any]
+
+- **values**: Any - a key-value map with columns and values
+- **returns**: List[Any] - a generated list of column values
+
 
 
 #### get_count_by_filter
@@ -224,3 +270,52 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **sort**: Any - (optional) sorting JSON object
 - **select**: Any - (optional) projection JSON object
 - **returns**: [DataPage](../../../commons/data/data_page) - a data page of result by filter
+
+
+
+#### is_open
+Checks if the component is opened.
+
+> is_open(): bool
+
+- **returns**: bool - true if the component has been opened and false otherwise.
+
+
+#### open
+Opens the component.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+
+#### _quote_identifier
+TODO add description
+
+> _quote_identifier(value: str): Optional[str]
+
+- **value**: str - TODO add description
+- **returns**: Optional[str] - TODO add description
+
+
+#### _quote_identifier
+TODO add description
+
+> _quote_identifier(value: str): Optional[str]
+
+- **value**: str - TODO add description
+- **returns**: Optional[str] - TODO add description
+
+
+#### set_references
+Sets references to dependent components.
+
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+
+#### unset_references
+Unsets (clears) previously set references to dependent components.
+
+> unset_references()

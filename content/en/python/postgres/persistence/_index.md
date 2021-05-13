@@ -1,0 +1,35 @@
+---
+type: docs
+title: "Persistence"
+linkTitle: "Persistence"
+no_list: true
+gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
+description: >
+    TODO: add description
+---
+---
+
+<div class="module-body"> 
+
+### Classes
+
+#### [IdentifiableJsonPostgresPersistence](identifiable_json_postgres_persistence)
+Abstract persistence component that stores data in PostgreSQL in JSON or JSONB fields
+and implements a number of CRUD operations over data items with unique ids.
+The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+
+
+#### [IdentifiablePostgresPersistence](identifiable_postgres_persistence)
+Abstract persistence component that stores data in PostgreSQL
+and implements a number of CRUD operations over data items with unique ids.
+The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+
+#### [PostgresPersistence](postgres_persistence)
+Abstract persistence component that stores data in PostgreSQL using plain driver.
+
+This is the most basic persistence component that is only
+able to store data items of any type. Specific CRUD operations
+over the data items must be implemented in child classes by
+accessing **self._db** or **self._collection** properties.
+
+</div>

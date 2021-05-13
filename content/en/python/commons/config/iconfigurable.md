@@ -21,7 +21,7 @@ Important points:
 - If you need to emphasize the fact that **configure()** method can be called multiple times
     to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.  
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.

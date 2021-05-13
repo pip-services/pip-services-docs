@@ -14,7 +14,7 @@ The IVersioned interface allows you to define data objects that can be versioned
 
 Important points
 
-- Versioning is often used as optimistic concurrency mechanism.
+- Versioning is often used as an optimistic concurrency mechanism.
 - The version doesn't have to be a number, but it is recommended to use sequential values to determine if one object has a newer or older version than another one.
 - It is common to use the time of change as the object version.
 

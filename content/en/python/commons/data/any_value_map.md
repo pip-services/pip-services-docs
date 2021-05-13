@@ -88,12 +88,12 @@ Converts map element into a boolean or returns false if conversion is not possib
 
 #### get_as_boolean_with_default
 Converts map element into a boolean or returns default value if conversion is not possible.  
-See [BooleanConverter.to_boolean_with_default](../../convert/boolean_converter/#to_boolean_with_default)
+See [BooleanConverter.to_boolean_with_default](../../convert/boolean_converter/#to_boolean_with_default).
 
 > get_as_boolean_with_default(key: str, default_value: bool): bool
 
 - **key**: str - a key of element to get.
-- **default_value**: bool - the default value
+- **default_value**: bool - the default value.
 - **returns**: bool - boolean value of the element or default value if conversion is not supported. 
 
 
@@ -109,7 +109,7 @@ Converts map element into a Date or returns the current date if conversion is no
 
 #### get_as_datetime_with_default
 Converts map element into a Date or returns default value if conversion is not possible.  
-See [DateTimeConverter.to_datetime_with_default](../../convert/date_time_converter/#to_datetime_with_default)
+See [DateTimeConverter.to_datetime_with_default](../../convert/date_time_converter/#to_datetime_with_default).
 
 > get_as_datetime_with_default(key: str, default_value: datetime): datetime
 
@@ -129,12 +129,12 @@ Converts map element into a double or returns 0 if conversion is not possible.
 
 #### get_as_double_with_default
 Converts map element into a double or returns default value if conversion is not possible.  
-See [DoubleConverter.to_double_with_default](../../convert/double_converter/#to_double_with_default)
+See [DoubleConverter.to_double_with_default](../../convert/double_converter/#to_double_with_default).
 
 > get_as_double_with_default(key: str, default_value: float): float
 
 - **key**: str - a key of element to get.
-- **default_value**: float - the default value
+- **default_value**: float - the default value.
 - **returns**: float - double value of the element or default value if conversion is not supported. 
 
 
@@ -149,7 +149,7 @@ Converts map element into a float or returns 0 if conversion is not possible.
 
 #### get_as_float_with_default
 Converts map element into a flot or returns default value if conversion is not possible.  
-See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default)
+See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default).
 
 > get_as_float_with_default(key: str, default_value: float): float
 
@@ -217,7 +217,7 @@ Converts map element into an AnyValueMap or returns default value if conversion 
 > get_as_long_with_default(key: str, default_value: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
 
 - **key**: str - a key of element to get.
-- **default_value**: [AnyValueMap](../any_value_map) - the default value
+- **default_value**: [AnyValueMap](../any_value_map) - the default value.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported. 
 
 
@@ -233,7 +233,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#
 
 #### get_as_nullable_boolean
 Converts map element into a boolean or returns None if conversion is not possible.  
-See [BooleanConverter.to_nullable_boolean](../../convert/boolean_converter/#to_nullable_boolean)
+See [BooleanConverter.to_nullable_boolean](../../convert/boolean_converter/#to_nullable_boolean).
 
 > get_as_nullable_boolean(key: str): Optional[bool]
 
@@ -243,7 +243,7 @@ See [BooleanConverter.to_nullable_boolean](../../convert/boolean_converter/#to_n
 
 #### get_as_nullable_datetime
 Converts map element into a long or returns default value if conversion is not possible.  
-See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime)
+See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime).
 
 > get_as_nullable_datetime(key: str): Optional[datetime]
 
@@ -263,7 +263,7 @@ See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_null
 
 #### get_as_nullable_float
 Converts map element into a float or returns None if conversion is not possible. 
-See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
+See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float).
 
 > get_as_nullable_float(key: str): Optional[float]
 
@@ -353,12 +353,12 @@ See [StringConverter.to_string_with_default](../../convert/string_converter/#to_
 
 
 #### get_as_type
-Converts map element into a value defined by specied typecode.
+Converts map element into a value defined by a specified typecode.
 If conversion is not possible it returns default value for the specified type. 
 
 > get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): Any
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result.
 - **key**: str - a key of element to get.
 - **returns**: Any - element value defined by the typecode or default if conversion is not supported. 
 
@@ -366,13 +366,13 @@ If conversion is not possible it returns default value for the specified type.
 #### get_as_type_with_default
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value.    
-See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default)
+See [TypeConverter.to_type_with_default](../../convert/type_converter/#to_type_with_default).
 
 > get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: Any): Any
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result.
 - **key**: str - a key of element to get.
-- **default_value**: Any - the default value
+- **default_value**: Any - the default value.
 - **returns**: Any - element value defined by the typecode or default value if conversion is not supported.
 
 
@@ -435,7 +435,7 @@ This method has double purpose because method overrides are not supported in Jav
 #### to_string
 Gets a string representation of the object.
 The result is a semicolon-separated list of key-value pairs as
-*"key1=value1;key2=value2;key=value3"*
+*"key1=value1;key2=value2;key=value3"*.
 
 > to_string(): str
 
@@ -446,7 +446,7 @@ The result is a semicolon-separated list of key-value pairs as
 Creates a new AnyValueMap by merging two or more maps.
 Maps defined later in the list override values from previously defined maps.
 
-> `static` from_maps(*maps: dict): [AnyValueMap](../any_value_map)
+> `static` from_maps(*maps: dict): [AnyValueMap](../any_value_map).
 
 - **maps**: dict - an array of maps to be merged
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueMap.
@@ -455,9 +455,9 @@ Maps defined later in the list override values from previously defined maps.
 #### from_tuples
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 
-> `static` from_tuples(*tuples: Any): [AnyValueMap](../any_value_map)
+> `static` from_tuples(*tuples: Any): [AnyValueMap](../any_value_map).
 
-- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values.
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueArray.
 
 
@@ -467,7 +467,7 @@ The method is similar to [fromTuples](#fromtuples) but tuples are passed as arra
 
 > `static` from_tuples_array(tuples: Sequence[Any]): [AnyValueMap](../any_value_map)
 
-- **tuples**: Sequence[Any] - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: Sequence[Any] - a list of values where odd elements are keys and the following even elements are values.
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueArray.
 
 

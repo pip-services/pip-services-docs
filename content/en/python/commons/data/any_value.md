@@ -52,8 +52,8 @@ to compare values as strings.
 
 #### equals_as_type
 Compares this object value to specified specified value.
-When direct comparison gives negative results it converts 
-values to type specified by type code and compare them again.    
+When a direct comparison gives negative results it converts 
+values to type specified by type code and compares them again.    
 See [TypeConverter.to_type](../../convert/type_converter/#to_type)
 
 > equals_as_type(value_type: [TypeCode](../../convert/type_code), obj: Any): bool
@@ -260,7 +260,7 @@ See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_t
 
 
 #### get_as_object
-Gets the value stored in this object without any conversions
+Gets the value stored in this object without any conversion.
 
 > get_as_object(): Any
 
@@ -315,7 +315,7 @@ See [TypeConverter.to_type_code](../../convert/type_converter/#to_type_code)
 
 
 #### set_as_object
-Sets a new value for this object
+Sets a new value for this object.
 
 > set_as_object(value: Any)
 

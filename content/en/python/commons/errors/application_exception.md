@@ -20,7 +20,7 @@ Important points
 - Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit and  allows to create portable implementations and support proper error propagation in microservices calls.
 - Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
 - Since the number of potential exception types is endless, the PipServices toolkit supports only 12 standard categories of exceptions, which are defined in [ErrorCategory](../error_category). The [ApplicationException]() class acts as a basis for these 12 standard exception types.
-- Most exceptions use a free-form message that describes occured error. However, this may not be sufficient to create meaninful error descriptions. Therefoe, the [ApplicationException]() class proposes an extended error definition that has more standard fields:
+- Most exceptions use a free-form message that describes occured error. However, this may not be sufficient to create meaninful error descriptions. Therefore, the [ApplicationException]() class proposes an extended error definition that has more standard fields:
     - message: a human-readable error description
     - category: one of the 12 standard error categories
     - status: numeric HTTP status code for REST invocations
@@ -47,15 +47,15 @@ Creates a new instance of application exception and assigns its values.
 <span class="hide-title-link">
 
 #### message
-A human-readable error description (usually written in English)
+A human-readable error description (usually written in English).
 > message: str
 
 #### category
-Standard error category
+Standard error category.
 > category: str
 
 #### status
-HTTP status code associated with this error type
+HTTP status code associated with this error type.
 > status: int = 500
 
 #### status
@@ -63,19 +63,19 @@ A unique error code
 > code: str = 'UNKNOWN'
 
 #### details
-A map with additional details that can be used to restore error description in other languages
+A map with additional details that can be used to restore error description in other languages.
 > details: [StringValueMap](../../data/string_value_map)
 
 #### correlation_id
-A unique transaction id to trace execution throug call chain
+A unique transaction id to trace execution throug call chain.
 > correlation_id: Optional[str]
 
 #### stack_trace
-Stack trace of the exception
+Stack trace of the exception.
 > stack_trace: str
 
 #### cause
-Original error wrapped by this exception
+Original error wrapped by this exception.
 > cause: str
 
 </span>
@@ -184,8 +184,8 @@ Otherwise a new ApplicationException is created and original error is set as its
 
 > wrap(cause: Any): [ApplicationException]()
 
-- **cause**: Any - an original error object
-- **returns**: [ApplicationException]() - an original or newly created ApplicationException
+- **cause**: Any - an original error object.
+- **returns**: [ApplicationException]() - an original or newly created ApplicationException.
 
 ### Static methods
 

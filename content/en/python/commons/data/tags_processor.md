@@ -78,7 +78,7 @@ Extracts hash tags from selected fields in an object.
 
 #### normalize_tag
 Normalizes a tag by replacing special symbols like '_' and '#' with spaces.
-When tags are normalized then can be presented to user in similar shape and form.
+When tags are normalized then can be used in a similar shape and form.
 
 > `static` normalize_tag(tag: str): str
 

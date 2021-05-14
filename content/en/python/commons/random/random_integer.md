@@ -30,7 +30,7 @@ Updates (drifts) a integer value within specified range defined
 
 - **value**: int - a integer value to drift.
 - **range**: int = None - (optional) a range. Default: 10% of the value
-- **returns**: int - TODO add description.
+- **returns**: int - updated integer value.
 
 ### Examples
 

@@ -65,7 +65,7 @@ Gets an optional component reference that matches a specified locator.
 - **returns**: Any - a matching component reference or None if nothing was found.
 
 #### get_one_required
-Gets a required component reference that matches specified locator.  
+Gets a required component reference that matches a specified locator.  
 throws a [ReferenceException](../reference_exception) when no references found.
 
 > get_one_required(locator: Any): Any
@@ -74,7 +74,7 @@ throws a [ReferenceException](../reference_exception) when no references found.
 - **returns**: Any - a matching component reference.
 
 #### get_optional
-Gets all component references that match specified locator.
+Gets all component references that match a specified locator.
 
 > get_optional(locator: Any): List[Any]
 
@@ -82,7 +82,7 @@ Gets all component references that match specified locator.
 - **returns**: List[Any] - a list with matching component references or empty list if nothing was found.
 
 #### get_required
-Gets all component references that match specified locator.
+Gets all component references that match a specified locator.
 At least one component reference must be present.
 If it doesn't the method throws an error.
 Throws a [ReferenceException](../reference_exception) when no references found.

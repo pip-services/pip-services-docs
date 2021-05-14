@@ -48,7 +48,7 @@ For None values it raises a validation error.
 #### make_optional
 Makes validated values optional.
 Validation for None values will be skipped.
-This method returns reference to this exception to implement Builder pattern
+This method returns reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > make_optional(): [Schema]()
@@ -59,7 +59,7 @@ to chain additional calls.
 #### make_required
 Makes validated values always required (non-None).
 For None values the schema will raise errors.
-This method returns reference to this exception to implement Builder pattern
+This method returns reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > make_required(): [Schema]()
@@ -103,8 +103,8 @@ Sets validation rules to check values against.
 
 
 #### validate
-Validates the given value and results validation results.
-See [ValidationResult](../validation_result)
+Validates the given value and returns a list with the validation results.
+See [ValidationResult](../validation_result).
 
 > validate(value: Any): List[[IValidationRule](../ivalidation_rule)]
 
@@ -120,7 +120,7 @@ Validates the given value and returns a [ValidationException](../validation_exce
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **value**: Any -  a value to be validated.
 - **strict**: boolean = false - true to treat warnings as errors.
-- **returns**: [ValidationException](../validation_exception) - TODO add description here
+- **returns**: [ValidationException](../validation_exception) - validation exception.
 
 #### validate_and_throw_exception
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
@@ -135,7 +135,7 @@ See [ValidationException.throw_exception_if_needed](../validation_exception/#thr
 
 #### with_rule
 Adds validation rule to this schema.
-This method returns reference to this exception to implement Builder pattern
+This method returns reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > with_rule(rule: [IValidationRule](../ivalidation_rule)): [Schema]()

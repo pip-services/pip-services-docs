@@ -4,17 +4,17 @@ title: "Cleaner"
 linkTitle: "Cleaner"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that allows you to clear the state of a component.
+    Helper class that allows you to clear the state of components.
 ---
 
 ### Description
 
-The Cleaner class allows you to clear the state of a component.
+The Cleaner class allows you to clear the state of components.
 
 ### Static methods
 
 #### clear
-Clears state of multiple components.
+Clears the state of multiple components.
 
 To be cleaned state components must implement [ICleanable](../icleanable) interface.
 If they don't the call to this method has no effect.
@@ -25,7 +25,7 @@ If they don't the call to this method has no effect.
 - **components**: List[Any] - the list of components that are to be cleaned.
 
 #### clear_one
-Clears state of specific component.
+Clears the state of a specific component.
 To be cleaned state components must implement [ICleanable](../icleanable) interface.
 If they don't the call to this method has no effect.
 

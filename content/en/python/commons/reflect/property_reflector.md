@@ -11,7 +11,7 @@ description: >
 
 The PropertyReflector class allows you to examine an object's properties and to dynamically get and set their values.
 
-Important point
+Important points
 
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the PropertyReflector class treats all property names as case insensitive.
@@ -33,12 +33,12 @@ Gets value of object property specified by its name.
 
 > `static` getProperty(obj: Any, name: str): Any
 
-- **obj**: Any - an object to read property from.
-- **name**: str - a name of the property to get.
+- **obj**: Any - an object to read a property from.
+- **name**: str - the name of the property to get.
 - **returns**: Any - the property value or None if property doesn't exist or introspection failed.
 
 #### get_property_names
-Gets names of all properties implemented in specified object.
+Gets names of all properties implemented in the specified object.
 
 > `static` get_property_names(obj: Any): List[str]
 
@@ -46,7 +46,7 @@ Gets names of all properties implemented in specified object.
 - **returns**: List[str] - a list with property names.
 
 #### has_property
-Checks if object has a property with specified name.
+Checks if object has a property with a specified name.
 
 > `static` has_property(obj: Any, name: str): bool
 
@@ -70,7 +70,7 @@ they are just silently skipped and no errors thrown.
 Sets value of object property specified by its name.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `static` set_property(obj: Any, name: str, value: Any)
 
@@ -89,11 +89,3 @@ args = PropertyReflector.get_property(myObj, "myProperty")
 PropertyReflector.set_property(myObj, "myProperty", 123)
 
 ```
-
-
-
-
-
-
-
-

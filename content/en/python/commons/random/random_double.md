@@ -29,7 +29,7 @@ Updates (drifts) a double value within specified range defined
 
 - **value**: float - a double value to drift.
 - **rrange**: float = None - (optional) a range. Default: 10% of the value
-- **returns**: float - TODO add description.
+- **returns**: float - updated float value.
 
 ### Examples
 

@@ -15,7 +15,7 @@ The IExecutable interface allows you to create a component that can be called to
 ### Instance methods
 
 #### execute
-Executes component with arguments and receives execution result.
+Executes a component with arguments and receives the execution result.
 
 > execute(correlationId: str, args: [Parameters](../parameters))
 

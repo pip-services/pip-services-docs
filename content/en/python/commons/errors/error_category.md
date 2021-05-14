@@ -29,7 +29,7 @@ Errors related to mistakes in user-defined configurations.
 > `static` Misconfiguration: str = "Misconfiguration"
 	
 #### InvalidState
-Errors caused by incorrect object state.. 
+Errors caused by incorrect object state. 
 For example: business calls when the component is not ready.
 > `static` InvalidState: str = "InvalidState"
 	

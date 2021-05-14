@@ -17,7 +17,7 @@ The Referencer class allows you to set and unset references to components.
 Sets references to multiple components.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `static` set_references(references: [IReferenceable](../ireferenceable), components: List[Any])
 
@@ -28,7 +28,7 @@ If they don't the call to this method has no effect.
 Sets references to specific component.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `static` set_references_for_one(references: [IReferences](../ireferences), component: Any)
 
@@ -39,7 +39,7 @@ If they don't the call to this method has no effect.
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `static` unset_references_for_one(component: Any) 
 
@@ -49,7 +49,7 @@ If they don't the call to this method has no effect.
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 See [IUnreferenceable](../iunreferenceable)
 
 > `static` unset_references_for_one(component: Any)

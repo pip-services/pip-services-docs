@@ -103,20 +103,20 @@ Converts the given object from the public partial format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): Optional[dict]
+> create(correlation_id: Optional[str], item: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
+- **item**: Any - an item to be created.
 - **returns**: Optional[dict] - created item
 
 
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): dict
+> create(correlation_id: Optional[str], item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
+- **item**: Any - an item to be created.
 - **returns**: dict - created item
 
 
@@ -142,11 +142,11 @@ Deletes multiple data items by their unique ids.
 #### get_list_by_ids
 Gets a list of data items retrieved by given unique ids.
 
-> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[T]
+> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **ids**: List[Any] - ids of data items to be retrieved
-- **returns**: List[T] - data list
+- **returns**: List[dict] - data list
 
 
 #### get_one_by_id
@@ -163,20 +163,20 @@ Gets a data item by its unique id.
 Sets a data item. If the data item exists it updates it,
 otherwise it create a new data item.
 
-> set(correlation_id: Optional[str], item: T): Optional[dict]
+> set(correlation_id: Optional[str], item: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - a item to be set.
+- **item**: Any - a item to be set.
 - **returns**: Optional[dict] - updated item
 
 
 #### update
 Updates a data item.
 
-> update(correlation_id: Optional[str], item: T): Optional[dict]
+> update(correlation_id: Optional[str], item: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be updated.
+- **item**: Any - an item to be updated.
 - **returns**: Optional[dict] - updated item
 
 

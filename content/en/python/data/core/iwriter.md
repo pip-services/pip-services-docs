@@ -13,20 +13,20 @@ description: >
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T) -> T
+> create(correlation_id: Optional[str], item: Any) -> T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
-- **returns**: T - created item
+- **item**: Any - an item to be created.
+- **returns**: Any - created item
 
 
 #### update
 Updates a data item.
 
-> update(self, correlation_id: Optional[str], item: T): dict
+> update(self, correlation_id: Optional[str], item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be updated.
+- **item**: Any - an item to be updated.
 - **returns**: dict - updated item
 
 

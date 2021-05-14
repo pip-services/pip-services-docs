@@ -47,15 +47,15 @@ Our persistence component shall implement the following interface with a basic s
 class IMyPersistence:
     get_page_by_filter(correlation_id: str, filter: FilterParams, paging: PagingParams): DataPage
     
-    get_one_by_id(correlation_id, id: Any): Any
+    get_one_by_id(correlation_id, id: Any): dict
     
-    get_one_by_key(correlation_id, key): Any
+    get_one_by_key(correlation_id, key): dict
     
-    create(correlation_id, item: T): dict
+    create(correlation_id, item: Any): dict
     
-    update(correlation_id, item: T): dict
+    update(correlation_id, item: Any): dict
     
-    delete_by_id(correlation_id, id: Any): Any
+    delete_by_id(correlation_id, id: Any): dict
 
 ```
 

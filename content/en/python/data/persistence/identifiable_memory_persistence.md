@@ -59,10 +59,10 @@ Creates a new instance of the persistence.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): dict
+> create(correlation_id: Optional[str], item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
+- **item**: Any - an item to be created.
 - **returns**: dict - a created item
 
 
@@ -88,11 +88,11 @@ Deletes multiple data items by their unique ids.
 #### get_list_by_ids
 Gets a list of data items retrieved by given unique ids.
 
-> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[T]
+> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **ids**: List[Any] -  ids of data items to be retrieved
-- **returns**: List[T] - a data list of results by ids.
+- **returns**: List[dict] - a data list of results by ids.
 
 
 #### get_one_by_id
@@ -108,20 +108,20 @@ Gets a data item by its unique id.
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
 
-> set(self, correlation_id: Optional[str], item: T): dict
+> set(self, correlation_id: Optional[str], item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - a item to be set.
+- **item**: Any - a item to be set.
 - **returns**: dict - updated item
 
 
 #### update
 Updates a data item.
 
-> update(correlation_id: Optional[str], new_item: T): dict
+> update(correlation_id: Optional[str], new_item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **new_item**: T - an item to be updated.
+- **new_item**: Any - an item to be updated.
 - **returns**: dict - an updated item.
 
 

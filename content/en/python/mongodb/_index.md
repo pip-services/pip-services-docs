@@ -54,10 +54,10 @@ class IMyPersistence:
     def get_one_by_key(self, correlation_id: str, key: str) -> dict:
         pass
 
-    def create(self, correlation_id: str, item: T)-> dict:
+    def create(self, correlation_id: str, item: Any)-> dict:
         pass
 
-    def update(self, correlation_id: str, item: T)-> dict:
+    def update(self, correlation_id: str, item: Any)-> dict:
         pass
 
     def delete_by_id(self, correlation_id: str, id: str) -> dict:

@@ -137,10 +137,10 @@ Converts object value from internal to public format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): Optional[dict]
+> create(correlation_id: Optional[str], item: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
+- **item**: Any - an item to be created.
 - **returns**: Optional[dict] - a created item
 
 
@@ -188,13 +188,13 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
+> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **filter**: Any - (optional) a filter function to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[T] - a data list of results by filter.
+- **returns**: List[dict] - a data list of results by filter.
 
 
 #### get_one_random

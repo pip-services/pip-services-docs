@@ -16,8 +16,8 @@ The Opener class can be used to check whether all components are opened or not, 
 #### is_open
 Checks if all components are opened.
 
-To be checked components must implement [IOpenable](../iopenable) interface.
-If they don't the call to this method returns true.
+To be checked, components must implement [IOpenable](../iopenable) interface.
+If they don't, the call to this method returns true.
 
 > `static` is_open(components: List[Any]): bool
 
@@ -26,8 +26,8 @@ If they don't the call to this method returns true.
 
 #### is_open_one
 Checks if specified component is opened.
-To be checked components must implement [IOpenable](../iopenable) interface.
-If they don't the call to this method returns true.
+To be checked, components must implement [IOpenable](../iopenable) interface.
+If they don't, the call to this method returns true.
 
 > `static` is_open_one(component: Any): bool
 
@@ -48,8 +48,8 @@ If they don't the call to this method has no effect.
 
 #### open_one
 Opens specific component.
-To be opened components must implement [IOpenable](../iopenable) interface.
-If they don't the call to this method has no effect.
+To be opened, components must implement [IOpenable](../iopenable) interface.
+If they don't, the call to this method has no effect.
 
 > `static` open_one(correlation_id: Optional[str], component: Any)
 

@@ -33,7 +33,7 @@ Creates a new instance of validation exception and assigns its values.
 ### Static methods
 
 #### compose_message
-Composes human readable error message based on validation results.  
+Composes a human readable error message based on validation results.  
 
 > `static` compose_message(results: List[[ValidationResult](../validation_result)]): str
 

@@ -26,7 +26,7 @@ Sets execution parameters.
 Notifies specific component.
 
 To be notiied components must implement [INotifiable](../inotifiable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `static` notify_one(correlation_id: Optional[str], component: Any, args: [Parameters](../parameters))
 

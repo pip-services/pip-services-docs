@@ -96,21 +96,21 @@ Converts the given object from the public partial format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): T
+> create(correlation_id: Optional[str], item: T): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be created.
-- **returns**: T - a created item
+- **returns**: Optional[dict] - a created item
 
 
 #### delete_by_id
 Deleted a data item by it's unique id.
 
-> delete_by_id(correlation_id: Optional[str], id: Any) -> T
+> delete_by_id(correlation_id: Optional[str], id: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of the item to be deleted
-- **return**: T - a deleted item.
+- **return**: dict - a deleted item.
 
 
 #### delete_by_ids
@@ -135,39 +135,39 @@ Gets a list of data items retrieved by given unique ids.
 #### get_one_by_id
 Gets a data item by its unique id.
 
-> get_one_by_id(correlation_id: Optional[str], id: Any): T
+> get_one_by_id(correlation_id: Optional[str], id: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be retrieved.
-- **returns**: T - data item by id.
+- **returns**: Optional[dict] - data item by id.
 
 
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
 
-> set(correlation_id: Optional[str], item: T): T
+> set(correlation_id: Optional[str], item: T): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be set. 
-- **returns**: T - an updated item
+- **returns**: Optional[dict] - an updated item
 
 
 #### update
 Updates a data item.
 
-> update(correlation_id: Optional[str], item: T): T
+> update(correlation_id: Optional[str], item: T): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be updated.
-- **returns**: T - an updated item.
+- **returns**: Optional[dict] - an updated item.
 
 
 #### update_partially
 Updates only few selected fields in a data item.
 
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): T
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
-- **returns**: T - an updated item.
+- **returns**: Optional[dict] - an updated item.

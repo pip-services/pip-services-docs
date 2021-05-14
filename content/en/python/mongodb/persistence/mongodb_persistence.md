@@ -137,11 +137,11 @@ Converts object value from internal to public format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): T
+> create(correlation_id: Optional[str], item: T): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be created.
-- **returns**: T - a created item
+- **returns**: Optional[dict] - a created item
 
 
 #### _define_schema
@@ -203,11 +203,11 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public [get_one_random](#get_one_random) method from child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_one_random(correlation_id: Optional[str], filter: Any): T
+> get_one_random(correlation_id: Optional[str], filter: Any): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 filter: Any
-- **returns**: T - a random item.
+- **returns**: Optional[dict] - a random item.
 
 
 #### get_page_by_filter

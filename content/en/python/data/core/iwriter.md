@@ -23,18 +23,18 @@ Creates a data item.
 #### update
 Updates a data item.
 
-> update(self, correlation_id: Optional[str], item: T): T
+> update(self, correlation_id: Optional[str], item: T): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be updated.
-- **returns**: T - updated item
+- **returns**: dict - updated item
 
 
 #### delete_by_id
 Updates a data item.
 
-> delete_by_id(correlation_id: Optional[str], id: Any): T
+> delete_by_id(correlation_id: Optional[str], id: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of the item to be deleted
-- **returns**: T - deleted item.
+- **returns**: dict - deleted item.

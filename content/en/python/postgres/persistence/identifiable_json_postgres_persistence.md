@@ -122,9 +122,9 @@ Adds DML statement to automatically create JSON(B) table
 #### update_partially
 Deleted a data item by it's unique id.
 
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): T
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
-- **return**: T - updated item
+- **return**: Optional[dict] - updated item

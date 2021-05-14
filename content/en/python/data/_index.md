@@ -34,13 +34,11 @@ pip install pip_services3_data
 As an example, lets implement persistence for the following data object.
 
 ```python
-from pip_services3_commons.data import IIdentifiable
-
-
-class MyObject(IIdentifiable):
-    id: str
-    key: str
-    value: int
+class MyObject(dict):
+    def __init__(self, id=None, key=None, value=None):
+        self['id'] = id
+        self['key'] = key
+        self['content'] = content
 ```
 
 Our persistence component shall implement the following interface with a basic set of CRUD operations.
@@ -53,9 +51,9 @@ class IMyPersistence:
     
     get_one_by_key(correlation_id, key): Any
     
-    create(correlation_id, item: T): T
+    create(correlation_id, item: T): dict
     
-    update(correlation_id, item: T): T
+    update(correlation_id, item: T): dict
     
     delete_by_id(correlation_id, id: Any): Any
 

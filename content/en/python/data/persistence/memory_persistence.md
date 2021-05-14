@@ -112,11 +112,11 @@ Configures component by passing configuration parameters.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: T): T
+> create(correlation_id: Optional[str], item: T): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: T - an item to be created.
-- **returns**: T - a created item
+- **returns**: dict - a created item
 
 
 #### delete_by_filter

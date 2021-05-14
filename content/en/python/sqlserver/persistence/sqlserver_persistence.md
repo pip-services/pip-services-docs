@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "PostgresPersistence"
-linkTitle: "PostgresPersistence"
+title: "SqlServerPersistence"
+linkTitle: "SqlServerPersistence"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 description: >
-    Abstract persistence component that stores data in PostgreSQL using plain driver.
+    Abstract persistence component that stores data in SQLServer using plain driver.
 
 
     This is the most basic persistence component that is only
@@ -18,14 +18,14 @@ description: >
 
 #### Configuration parameters
 
-- **collection**: (optional) PostgreSQL collection name
-**connection(s)**:    
+- **collection**: (optional) SqlServer collection name
+**connection(s)**:
 - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:    
+**credential(s)**:
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) user name
 - **password**: (optional) user password
@@ -39,49 +39,50 @@ description: >
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
 
 **Example:**
 ```python
-class MyPostgresPersistence(PostgresPersistence):
+class MySqlServerPersistence(SqlServerPersistence):
     def __init__(self):
-        super(MyPostgresPersistence, self).__init__('mydata')
+        super(MySqlServerPersistence, self).__init__('mydata')
 
     def get_by_name(self, correlation_id, name):
-        criteria = {'name': name}
+        criteria = {'name':name}
         return self._model.find_one(criteria)
 
-    def set(self, correlation_id, item):
+    def set(self,correlation_id, item):
         criteria = {'name': item['name']}
-        options = { 'upsert': True, 'new': True }
+        options = {'upsert': True, 'new': True}
         return self._model.find_one_and_update(criteria, item, options)
 
-persistence = MyPostgresPersistence()
+persistence = MySqlServerPersistence()
 persistence.configure(ConfigParams.from_tuples(
     "host", "localhost",
     "port", 27017
 ))
 
-persistence.open("123")
-persistence.set("123", {'name': "ABC"})
+persistence.open('123')
+persistence.set('123', {'name':'ABC'})
 
-item = persistence.get_by_name("123", "ABC")
-print(item) # Result: { 'name': "ABC" }
+item = persistence.get_by_name('123', 'ABC')
+print(item) # Result: { name: "ABC" }
 ```
 
 ### Constructors
 Creates a new instance of the persistence component.
 
-> PostgresPersistence(table_name: str = None)
+> SqlServerPersistence(table_name: str = None)
 
 - **table_name**: str - (optional) a table name.
+
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _table_name
-The PostgreSQL table object.
+The SQLServer table object.
 > **_table_name**: str
 
 #### _dependency_resolver
@@ -93,15 +94,15 @@ The logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The PostgreSQL connection component.
-> **_connection**: [PostgresConnection](../../connect/postgres_connection) 
+The SQLServer connection component.
+> **_connection**: [SqlServerConnection](../../connect/sqlserver_connection) 
 
 #### _client
-The PostgreSQL connection pool object.
+The SQLServer connection pool object.
 > **_client**: Any 
 
 #### _database_name 
-The PostgreSQL database name.
+The SQLServer database name.
 > **_database_name**: str
 
 #### _max_page_size
@@ -112,6 +113,13 @@ TODO add description
 
 
 ### Methods
+
+#### _auto_create_object
+Adds index definition to create it on opening
+
+> _auto_create_object(schema_statement: str)
+
+- **schema_statement**: str - DML statement to autocreate database object
 
 #### clear
 Clears component state.
@@ -170,6 +178,16 @@ Creates a data item.
 - **returns**: Optional[dict] - a created item
 
 
+#### _request
+Request to the database.
+
+> _request(query: str, params: List[str] = None): dict
+
+- **query**: str - string with sql query to database
+- **params**: List[str] - optional list of query parameters
+- **returns**: dict - result of the query
+
+
 #### _create_schema
 TODO add description
 
@@ -213,7 +231,7 @@ Adds a statement to schema definition
 
 
 #### _generate_columns
-Generates a list of column names to use in SQL statements like: "column1,column2,column3"
+Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*
 
 > _generate_columns(values: Any): str
 
@@ -222,7 +240,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 
 #### _generate_parameters
-Generates a list of value parameters to use in SQL statements like: "%s,%s,%s"
+Generates a list of value parameters to use in SQL statements like: *"?,?,?"*
 
 > _generate_parameters(values: Any): str
 
@@ -231,7 +249,7 @@ Generates a list of value parameters to use in SQL statements like: "%s,%s,%s"
 
 
 #### _generate_set_parameters
-Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s
+Generates a list of column sets to use in UPDATE statements like: *column1=?1,column2=?2*
 
 > _generate_set_parameters(values: Any): str
 

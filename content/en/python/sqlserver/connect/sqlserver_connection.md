@@ -1,10 +1,11 @@
 ---
 type: docs
-title: "PostgresConnection"
-linkTitle: "PostgresConnection"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
+title: "SqlServerConnection"
+linkTitle: "SqlServerConnection"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
-    PostgreSQL connection using plain driver.
+    SQLServer connection using plain driver.
+
 
     By defining a connection and sharing it through multiple persistence components
     you can reduce number of used database connections.
@@ -16,13 +17,13 @@ description: >
 
 #### Configuration parameters
 
-**connection(s)**:    
+**connection(s)**:
 - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:    
+**credential(s)**:
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: user name
 - **password**: user password
@@ -31,6 +32,7 @@ description: >
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
 - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
@@ -44,15 +46,15 @@ description: >
 
 
 #### _connection
-The PostgreSQL connection pool object.
+The SQLServer connection pool object.
 > **_connection**: Any
 
 #### _connection_resolver
 The connection resolver.
-> **_connection_resolver**: [PostgresConnectionResolver](../postgres_connection_resolver)
+> **_connection_resolver**: [SqlServerConnectionResolver](../sqlserver_connection_resolver)
 
 #### _database_name
-The PostgreSQL database name.
+The SQLServer database name.
 > **_database_name**: str
 
 #### _logger

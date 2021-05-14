@@ -3,7 +3,7 @@ type: docs
 title: "Persistence"
 linkTitle: "Persistence"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
+gitUrl: "https://github.com/pip-services3-python/pip-sqlserver-sqlserver-python"
 description: >
     TODO: add description
 ---
@@ -13,19 +13,19 @@ description: >
 
 ### Classes
 
-#### [IdentifiableJsonPostgresPersistence](identifiable_json_postgres_persistence)
-Abstract persistence component that stores data in PostgreSQL in JSON or JSONB fields
+#### [IdentifiableJsonSqlServerPersistence](identifiable_json_sqlserver_persistence)
+Abstract persistence component that stores data in SQLServer in JSON or JSONB fields
 and implements a number of CRUD operations over data items with unique ids.
 The data items must implement [IIdentifiable](../../commons/data/iidentifiable) interface.
 
 
-#### [IdentifiablePostgresPersistence](identifiable_postgres_persistence)
-Abstract persistence component that stores data in PostgreSQL
+#### [IdentifiableSqlServerPersistence](identifiable_sqlserver_persistence)
+Abstract persistence component that stores data in SQLServer
 and implements a number of CRUD operations over data items with unique ids.
-The data items must implement [IIdentifiable](../../commons/data/iidentifiable) interface.
+The data items must implement [IIdentifiable](../../commons/data/iidentifiable) interface. 
 
-#### [PostgresPersistence](postgres_persistence)
-Abstract persistence component that stores data in PostgreSQL using plain driver.
+#### [SqlServerPersistence](sqlserver_persistence)
+Abstract persistence component that stores data in SQLServer using plain driver.
 
 This is the most basic persistence component that is only
 able to store data items of any type. Specific CRUD operations

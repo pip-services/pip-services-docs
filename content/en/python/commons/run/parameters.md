@@ -19,7 +19,7 @@ Important points
 
 - In general, this map may contain non-serializable values.
 - In contrast with other maps, its getters and setters support dot notation and are able to access properties in the entire object graph.
-- This class is often use to pass execution and notification arguments, and parameterize classes before execution.
+- This class is often used to pass execution and notification arguments, and parameterize classes before execution.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
@@ -38,7 +38,7 @@ Assigns (copies over) properties from the specified value to this map.
 - **value**: Any - value whose properties shall be copied over.
 
 #### contains_key
-Checks if this map contains an element with specified key.
+Checks if this map contains an element with a specified key.
 
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
@@ -68,7 +68,7 @@ Converts map element into an Parameters or returns None if conversion is not pos
 - **returns**: [Parameters](../parameters) - Parameters value of the element or None if conversion is not supported.
 
 #### get_as_parameters
-Converts map element into an Parameters or returns empty Parameters if conversion is not possible.
+Converts map elements into Parameters or returns empty Parameters if conversion is not possible.
 
 > get_as_parameters(key: str): [Parameters](../parameters)
 
@@ -77,7 +77,7 @@ Converts map element into an Parameters or returns empty Parameters if conversio
 
 
 #### get_as_parameters_with_default
-Converts map element into an Parameters or returns default value if conversion is not possible.
+Converts map elements into Parameters or returns default value if conversion is not possible.
 
 > get_as_parameters_with_default(key: str, default_value: [Parameters](../parameters)): [Parameters](../parameters)
 
@@ -96,7 +96,7 @@ Omits selected parameters from this Parameters and returns the rest as a new Par
 
 
 #### override
-
+Overrides selected parameters and returs a new Paremeter object.
 > override(parameters: [Parameters](../parameters), recursive: bool = false): [Parameters](../parameters)
 
 - **parameters**: [Parameters](../parameters) - Parameters with parameters to override the current values.
@@ -105,7 +105,7 @@ Omits selected parameters from this Parameters and returns the rest as a new Par
 
 
 #### pick
-Picks select parameters from this Parameters and returns them as a new Parameters object.
+Picks selected parameters from a Parameters object and returns them as a new Parameters object.
 
 > pick(*paths: str): [Parameters](../parameters)
 
@@ -134,7 +134,7 @@ Set default values from specified Parameters and returns a new Parameters object
 
 
 #### to_json
-Converts this map to JSON object.
+Converts this map to a JSON object.
 
 > to_json(): str
 
@@ -153,7 +153,7 @@ See [ConfigParams](../../config/config_params)
 
 
 #### from_json
-Creates new Parameters from ConfigMap object.
+Creates new Parameters object from a ConfigMap object.
 
 > `static` from_json(json: str): [Parameters](../parameters) 
 
@@ -163,7 +163,7 @@ Creates new Parameters from ConfigMap object.
 #### from_tuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
-See [AnyValueMap.fromTuplesArray](../../data/any_value_map/#fromtuplesarray)
+See [AnyValueMap.fromTuplesArray](../../data/any_value_map/#fromtuplesarray).
 
 > `static` fro_tuples(*tuples: Any): [Parameters](../parameters) 
 
@@ -176,7 +176,7 @@ Creates a new Parameters object filled with key-value pairs from specified objec
 
 > `static` from_value(value: Any): [Parameters](../parameters) 
 
-- **tuples**: Any - an object with key-value pairs used to initialize a new Parameters.
+- **tuples**: Any - an object with key-value pairs used to initialize a new Parameters object.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 

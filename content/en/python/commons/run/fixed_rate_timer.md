@@ -116,7 +116,7 @@ Sets a new [INotifiable](../inotifiable) object to receive notifications from th
 Starts the timer.
 
 Initially the timer is triggered after delay.
-After that it is triggered after interval until it is stopped.
+After that it, is triggered after interval until it is stopped.
 
 > start()
 

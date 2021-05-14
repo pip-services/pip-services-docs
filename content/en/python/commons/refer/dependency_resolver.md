@@ -83,12 +83,12 @@ Gets all optional dependencies by their name.
 > get_optional(name: str): List[Any]
 
 - **name**: str - the dependency name to locate.
-- **returns**: List[Any] - a list with found dependencies or empty list of no dependencies was found.
+- **returns**: List[Any] - a list with found dependencies or empty list of no dependencies were found.
 
 #### get_required
 Gets all required dependencies by their name.
 At least one dependency must be present.
-If no dependencies was found it throws a [ReferenceException](../reference_exception)
+If no dependencies were found it throws a [ReferenceException](../reference_exception)
 
 > get_required(name: str): List[Any]
 
@@ -114,7 +114,7 @@ Sets the component references. References must match configured dependencies.
 
 #### from_tuples
 Creates a new DependencyResolver from a list of key-value pairs called tuples
-where key is dependency name and value the depedency locator (descriptor).
+where key is the dependency name and value the depedency locator (descriptor).
 
 > `static` from_tuples(*tuples: Any): [DependencyResolver]()
 

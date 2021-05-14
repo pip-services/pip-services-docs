@@ -37,7 +37,7 @@ The object can be a user defined object, map or array.
 Property values correspondently are object properties,
 map key-pairs or array elements with their indexes.
  
-If some properties do not exist or introspection fails
+If some properties do not exist or introspection fails,
 they are just silently skipped and no errors thrown.
 
 > `static` set_properties(obj: Any, values: Any)
@@ -54,13 +54,13 @@ The property name correspondently must be object property,
 map key or array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `static` setProperty(obj: Any, name: str, value: Any)
 
 - **obj**: Any - an object to write property to.
-- **name**: str - a name of the property to set.
-- **value**: Any - a new value for the property to set.
+- **name**: str - name of the property to set.
+- **value**: Any - new value for the property to set.
 
 
 

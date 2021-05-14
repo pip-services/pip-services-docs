@@ -19,7 +19,7 @@ See [IValidationRule](../ivalidation_rule)
 
 > ObjectSchema(allow_undefined: bool = False, required: bool = None, rules: List[[IValidationRule](../ivalidation_rule)] = None):
 
-- **allow_undefined**?: bool - true to allow properties undefines in the schema
+- **allow_undefined**?: bool - true to allow properties undefined in the schema
 - **required**: bool - (optional) true to always require non-None values.
 - **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
@@ -38,7 +38,7 @@ Sets flag to allow undefined properties
 
 - **value**: bool - true to allow undefined properties and false to disallow.
 
-### Methods
+### Instance methods
 
 #### allow_undefined
 Sets flag to allow undefined properties
@@ -111,6 +111,7 @@ Adds a validation schema for a required object property.
 - **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
 
 ### Examples
+
 ```python
 schema = ObjectSchema(false)
                     .with_optional_property("id", TypeCode.String)

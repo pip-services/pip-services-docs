@@ -21,7 +21,7 @@ Creates a new instance of the type descriptor and sets its values.
 
 > TypeDescriptor(name: str, library: str)
 
-- **name**: str - a name of the object type.
+- **name**: str - name of the object type.
 - **library**: str - a library or module where this object type is implemented.
 
 
@@ -29,7 +29,7 @@ Creates a new instance of the type descriptor and sets its values.
 
 #### equals
 Compares this descriptor to a value.
-If the value is also a [TypeDescriptor]() it compares their name and library fields.
+If the value is also a [TypeDescriptor](), it compares their name and library fields.
 Otherwise this method returns false.
 
 > equals(value: Any): bool
@@ -46,7 +46,7 @@ Gets the name of the library or module where the object type is defined.
 
 
 #### get_name
-Get the name of the object type.
+Gets the name of the object type.
 
 > get_name(): str
 
@@ -66,7 +66,7 @@ The result has format *name[,library]*
 #### from_string
 Parses a string to get descriptor fields and returns them as a Descriptor.
 The string must have format *name[,library]*  
-Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
+Throws a [ConfigException](../../errors/config_exception) if the descriptor string has the wrong format.
 
 > `static` from_string(value: str): [TypeDescriptor]()
 

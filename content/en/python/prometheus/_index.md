@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Postgres"
+title: "Prometheus"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-prometheus-python"
 no_list: true
 description: > 

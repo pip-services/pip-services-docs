@@ -35,7 +35,7 @@ The module contains the following packages:
 
 Install the Python package as
 ```bash
-pip install pip_services3_container
+pip install pip-services3-container
 ```
 Create a factory to create components based on their locators (descriptors).
 

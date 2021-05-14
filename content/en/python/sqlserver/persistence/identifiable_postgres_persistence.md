@@ -6,10 +6,10 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
     Abstract persistence component that stores data in SQLServer
     and implements a number of CRUD operations over data items with unique ids.
-    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface. interface.
+    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
 
 
-    In basic scenarios child classes shall only override [[getPageByFilter]],
+    In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter),
     [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter function.
     All other operations can be used out of the box. 
 
@@ -106,16 +106,6 @@ Creates a data item.
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: Any - an item to be created.
 - **returns**: Optional[dict] - created item
-
-
-#### create
-Creates a data item.
-
-> create(correlation_id: Optional[str], item: Any): dict
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: dict - created item
 
 
 #### delete_by_id

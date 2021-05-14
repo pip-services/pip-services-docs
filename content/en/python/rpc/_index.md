@@ -30,7 +30,7 @@ The module contains the following packages:
 
 Install the Python package as
 ```bash
-pip install pip_services3_rpc
+pip install pip-services3-rpc
 ```
 
 ### Develop

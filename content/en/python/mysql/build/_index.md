@@ -1,0 +1,20 @@
+---
+type: docs
+title: "Build"
+linkTitle: "Build"
+no_list: true
+gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
+description: >
+    TODO: add description
+---
+---
+<div class="module-body"> 
+
+### Classes
+
+#### [DefaultMySqlFactory](default_mysql_factory)
+Creates MySql components by their descriptors.
+
+
+</div>
+

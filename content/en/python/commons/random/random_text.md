@@ -4,7 +4,7 @@ title: "RandomText"
 linkTitle: "RandomText"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Random generator for various text values such as names, addresses or phone numbers.
+    Random generator for various text types such as names, addresses or phone numbers.
 ---
 
 ### Description

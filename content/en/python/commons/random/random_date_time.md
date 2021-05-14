@@ -44,8 +44,7 @@ Updates (drifts) a Date value within specified range defined
 
 - **value**: datetime - a Date value to drift.
 - **range**: Union[int, float] = None - (optional) a range in milliseconds. Default: 10 days
-- **returns**: datetime - TODO add description
-
+- **returns**: datetime - an updated DateTime
 ### Examples
 
 ```python

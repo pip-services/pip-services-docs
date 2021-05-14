@@ -62,7 +62,7 @@ Gets the number of items to return in a page.
 ### Static methods
 
 #### from_map
-Creates a new TokenizedPagingParams and sets it parameters from the specified map
+Creates a new TokenizedPagingParams and sets it parameters from the specified map.
 
 > `static` from_map(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
 
@@ -88,6 +88,7 @@ Converts specified value into TokenizedPagingParams.
 - **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
 
 ### Examples
+
 ```python
 filter = FilterParams.from_tuples("type", "Type1");
 paging = TokenizedPagingParams(None, 100);

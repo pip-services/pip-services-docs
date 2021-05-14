@@ -15,7 +15,7 @@ The IClosable interface allows you to create a component with a method that clos
 ### Methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 

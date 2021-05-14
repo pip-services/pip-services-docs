@@ -10,11 +10,11 @@ description: >
 ### Description
 The Descriptor class provides you with a component locator. This locator is often used in the PipServices toolkit. It locates components using the following fields:
 
-- **Group:** a package or just named group of components like "pip-services". 
-- **Type:** logical component type that defines it's contract like "persistence" .
-- **Kind:** physical implementation type like "mongodb".  
-- **Name:** unique component name like "default".  
-- **Version:** version of the component contract like "1.0".  
+- **Group:** a package or just named group of components, like "pip-services". 
+- **Type:** logical component type that defines it's contract, like "persistence" .
+- **Kind:** physical implementation type, like "mongodb".  
+- **Name:** unique component name, like "default".  
+- **Version:** version of the component contract, like "1.0".  
 
 Important points
 
@@ -118,7 +118,7 @@ The result is a colon-separated list of descriptor fields as
 
 #### from_string
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
-Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
+Throws a [ConfigException](../../errors/config_exception) if the descriptor string has a wrong format.
 
 > `static` from_string(value: str): [Descriptor]()
 

@@ -30,7 +30,7 @@ Updates (drifts) a float value within specified range defined
 
 - **value**: float - a float value to drift.
 - **range**: float = None - (optional) a range. Default: 10% of the value
-- **returns**: float - TODO add description.
+- **returns**: float - updated float value.
 
 ### Examples
 

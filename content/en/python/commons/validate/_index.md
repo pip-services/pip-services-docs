@@ -37,14 +37,14 @@ This interface allows to implement custom rules.
 
 #### [AndRule](and_rule)
 Validation rule to combine rules with AND logical operation.
-When all rules returns no errors, than this rule also returns no errors.
-When one of the rules return errors, than the rules returns all errors.
+When all rules returns no errors, then this rule also returns no errors.
+When one of the rules returns errors, then the rules returns all errors.
 
 #### [ArraySchema](array_schema)
 Schema to validate arrays.
 
 #### [AtLeastOneExistsRule](at_least_one_exists_rule)
-Validation rule that check that at least one of the object properties is not None.
+Validation rule that checks that at least one of the object properties is not None.
 
 #### [ExcludedRule](excluded_rule)
 Validation rule to check that value is excluded from the list of constants.
@@ -68,7 +68,7 @@ Helper class to perform comparison operations over arbitrary values.
 Schema to validate user defined objects.
 
 #### [OnlyOneExistsRule](only_one_exists_rule)
-Validation rule that checks that at exactly one of the object properties is not None.
+Validation rule that checks that exactly one of the object properties is not None.
 
 #### [OrRule](or_rule)
 Validation rule to combine rules with OR logical operation.
@@ -92,7 +92,7 @@ objects, project properties, arrays and maps.
 
 #### [ValidationException](validation_exception)
 Errors in schema validation.
-Validation errors are usually generated based in [ValidationResult](validation_result).
+Validation errors are usually generated based on [ValidationResult](validation_result).
 If using strict mode, warnings will also raise validation exceptions.
 
 #### [ValidationResult](validation_result)

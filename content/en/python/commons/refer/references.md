@@ -25,7 +25,7 @@ Creates a new instance of references and initializes it with references.
 <span class="hide-title-link">
 
 #### _references
-TODO add description
+ A list of values where odd elements are locators and the following even elements are component references.
 > _references: List[[Reference](../reference)]
 
 </span>
@@ -57,7 +57,7 @@ Gets locators for all registered component references in this reference map.
 - **returns**: List[Any] - a list with component locators.
 
 #### get_one_optional
-Gets an optional component reference that matches specified locator.
+Gets an optional component reference that matches a specified locator.
 
 > get_one_optional(locator: Any): Any
 
@@ -130,6 +130,7 @@ Creates a new References from a list of key-value pairs called tuples.
 - **returns**: [References](../references) - a newly created References.
 
 ### Examples
+
 ```python
 class MyController(IReferenceable):
     _persistence = None

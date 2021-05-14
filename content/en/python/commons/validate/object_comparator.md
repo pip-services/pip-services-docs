@@ -24,7 +24,7 @@ The operation can be performed over values of any type.
 - **returns**: bool - true if values are equal and false otherwise
 
 #### are_not_equal
-Checks if two values are NOT equal
+Checks if two values are NOT equal. 
 The operation can be performed over values of any type.
 
 > `static` are_not_equal(value1: Any, value2: Any): bool
@@ -74,6 +74,7 @@ Checks if string matches a regular expression
 - **returns**: bool - true if the value matches regular expression and false otherwise.
 
 ### Examples
+
 ```python
 ObjectComparator.compare(2, "GT", 1)        # Result: true
 ObjectComparator.are_equal("A", "B")         # Result: false

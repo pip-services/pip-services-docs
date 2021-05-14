@@ -150,7 +150,7 @@ Converts map element into a float or returns 0 if conversion is not possible.
 
 
 #### get_as_float_with_default
-Converts map element into a flot or returns default value if conversion is not possible.  
+Converts map element into a float or returns default value if conversion is not possible.  
 See [FloatConverter.to_float_with_default](../float_converter/#to_float_with_default)
 
 > get_as_float_with_default(key: str, default_value: float): float
@@ -255,7 +255,7 @@ See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double
 
 > get_as_nullable_double(key: str): Optional[float]
 
-- **key**: str - a key of element to get.
+- **key**: str - key of the element to get.
 - **returns**: Optional[float] - double value of the element or None if conversion is not supported.
 
 
@@ -350,7 +350,7 @@ Converts map element into a string or returns "" if conversion is not possible.
 
 
 #### get_as_type
-Converts map element into a value defined by specied typecode.
+Converts map element into a value defined by a specied typecode.
 If conversion is not possible it returns default value for the specified type.
 
 > get_as_type(value_type: [TypeCode](../../convert/type_code), key: str): Any
@@ -361,13 +361,13 @@ If conversion is not possible it returns default value for the specified type.
 
 
 #### get_as_type_with_default
-Converts map element into a value defined by specied typecode.
+Converts map element into a value defined by a specified typecode.
 If conversion is not possible it returns default value for the specified type.  
 See [TypeConverter.to_type_with_default](../type_converter/#to_type_with_default).
 
 > get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), key: str, default_value: Any): Any
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defines the type of the result
 - **key**: str - a key of element to get.
 - **default_value**: Any - the default value
 - **returns**: Any - element value defined by the typecode or default value if conversion is not supported. 
@@ -485,6 +485,7 @@ Converts specified value into StringValueMap.
 - **returns**: [StringValueMap](../string_value_map) - a newly created StringValueMap.
 
 ### Examples
+
 ```python
 value1 = StringValueMap.fromString("key1=1;key2=123.456;key3=2018-01-01")
 

@@ -22,7 +22,7 @@ Important points
 ### Static methods
 
 #### get_properties
-Get values of all properties in specified object and its subobjects
+Gets values of all properties in specified object and its subobjects
 and returns them as a map.
 
 The object can be a user defined object, map or array.

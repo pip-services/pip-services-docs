@@ -4,14 +4,14 @@ title: "ConfigException"
 linkTitle: "ConfigException"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Errors related to mistakes in a microservice's user-defined configurations.
+    Errors related to mistakes in microservice's user-defined configurations.
 ---
 
 **Implements:** [ApplicationException](../application_exception)
 
 ### Description
 
-The ConfigException is used to manage errors related to mistakes in a microservice's user-defined configurations. 
+The ConfigException is used to manage errors related to mistakes in microservice's user-defined configurations. 
 
 ### Constructors
 Creates an error instance and assigns its values.

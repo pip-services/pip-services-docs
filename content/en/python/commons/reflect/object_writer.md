@@ -45,7 +45,7 @@ The property name correspondently must be object property,
 map key or array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `static` set_property(obj: Any, name: str, value: Any)
 
@@ -64,7 +64,6 @@ ObjectWriter.set_property(myMap, "key1", "XYZ")
 
 myArray = [1, 2, 3]
 ObjectWriter.set_property(myArray, "0", 123)
-
 ```
 
 ### See also

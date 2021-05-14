@@ -18,7 +18,7 @@ The Executor class allows you to execute one or more components.
 Executes multiple components.
 
 To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.  
+If they don't, the call to this method has no effect.  
 See [IExecutable](../iexecutable), [Parameters](../parameters)
 
 > `static` execute(correlation_id: Optional[str], components: List[Any], args: [Parameters](../parameters))
@@ -31,7 +31,7 @@ See [IExecutable](../iexecutable), [Parameters](../parameters)
 Executes specific component.
 
 To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `static` execute_one(correlation_id: Optional[str], component: Any, args: [Parameters](../parameters))
 

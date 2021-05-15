@@ -23,7 +23,7 @@ Lookups credential parameters by its key.
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **key**: str - a key to uniquely identify the credential.
-- **credential**: [CredentialParams](../credential_params) - found credential parameters or None if nothing was found
+- **credential**: [CredentialParams](../credential_params) - found credential parameters or None if nothing was found.
 
 
 #### store

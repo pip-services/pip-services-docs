@@ -65,7 +65,7 @@ Performance counters that periodically dumps counters measurements to logger.
 #### [NullCounters](null_counters)
 Dummy implementation of performance counters that doesn't do anything.
 
-It can be used in testing or in situations when counters is required
+It can be used in testing or in situations when a counter is required
 but shall be disabled.
 
 

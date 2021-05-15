@@ -44,7 +44,7 @@ Reads a configuration and parameterizes it with given values.
 
 > _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 

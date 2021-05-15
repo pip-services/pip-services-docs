@@ -4,14 +4,14 @@ title: "LogCounters"
 linkTitle: "LogCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Performance counters that periodically dump counters measurements to logger.
+    Performance counters that periodically dump counters' measurements to logger.
 ---
 
 **Implements:** [CachedCounters](../cached_counters), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
-The LogCounters allows you to create performance counters that periodically dump counters measurements to logger.
+The LogCounters allows you to create performance counters that periodically dump counters' measurements to logger.
 
 #### Configuration parameters
 
@@ -33,7 +33,7 @@ Saves the current counters measurements.
 
 > _save(counters: List[[Counter](../counter)])
 
-- **counters**: List[[Counter](../counter)] - current counters measurements to be saves.
+- **counters**: List[[Counter](../counter)] - current counters measurements to be saved.
 
 
 #### set_references

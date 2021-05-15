@@ -30,7 +30,7 @@ The values may come from application command like arguments or environment varia
 Data object to store cached values with their keys used by [MemoryCache](../memory_cache)
 
 #### [DefaultConfigReaderFactory](default_config_reader_factory)
-Creates [IConfigReader(iconfig_reader)] components by their descriptors.
+Creates [IConfigReader](iconfig_reader) components by their descriptors.
 
 #### [FileConfigReader](file_config_reader)
 Abstract config reader that reads configuration from a file.

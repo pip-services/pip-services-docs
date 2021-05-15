@@ -14,7 +14,7 @@ description: >
 The DefaultConfigReaderFactory class allows you to create  [IConfigReader](../iconfig_reader) components based on their descriptors.
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultConfigReaderFactory()
 

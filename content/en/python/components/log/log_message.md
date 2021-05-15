@@ -21,7 +21,7 @@ Important points
 <span class="hide-title-link">
 
 #### time
-The time then message was generated
+The time the message was generated
 > **time**: datetime
 
 #### level
@@ -33,11 +33,11 @@ The source (context name)
 > **source**: str
 
 #### correlation_id
-The transaction id to trace execution through call chain.
+The transaction id to trace execution through a call chain.
 > **correlation_id**: Optional[str]
 
 #### error
-The transaction id to trace execution through call chain.
+The transaction id to trace execution through a call chain.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
 > **error**: [ErrorDescription](../../../commons/errors/error_description)

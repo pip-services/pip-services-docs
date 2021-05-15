@@ -70,7 +70,7 @@ Get the user password. The value can be stored in parameters "password" or "pass
 
 #### get_store_key
 Gets the key to retrieve these credentials from [ICredentialStore](../icredential_store).
-If this key is None, than all parameters are already present.
+If this key is None, then all parameters are already present.
 
 > get_store_key(): str
 
@@ -138,7 +138,7 @@ The credential parameters are redirected to [ICredentialStore](../icredential_st
 #### from_config
 Retrieves a single CredentialParams from configuration parameters
 from "credential" section. If "credentials" section is present instead,
-then is returns only the first credential element.
+then it returns only the first credential element.
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [CredentialParams]()
 
@@ -169,7 +169,7 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 #### many_from_config
 Retrieves all CredentialParams from configuration parameters
 from "credentials" section. If "credential" section is present instead,
-than it returns a list with only one CredentialParams.
+then it returns a list with only one CredentialParams.
 
 > `static` many_from_config(config: [ConfigParams](../../../commons/config/config_params)): List[[CredentialParams]()]
 

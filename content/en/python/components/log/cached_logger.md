@@ -76,7 +76,7 @@ Dumps (writes) the currently cached log messages.
 > dump()
 
 #### _update
-Makes message cache as updated and dumps it when timeout expires.
+Sets message cache as updated and dumps it when timeout expires.
 
 > _update
 

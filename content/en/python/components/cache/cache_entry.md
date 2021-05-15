@@ -48,11 +48,11 @@ Gets the cached value.
 
 
 #### is_expired
-Checks if this value already expired.
+Checks if this value has already expired.
 
 > is_expired(): bool
 
-- **returns**: bool - true if the value already expires and false otherwise.
+- **returns**: bool - true if the value has already expired and false otherwise.
 
 
 #### set_value

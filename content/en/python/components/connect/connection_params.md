@@ -10,9 +10,6 @@ description: >
 
 **Implements**: [ConfigParams](../../../commons/config/config_params)
 
-See also [ConfigParams](../../../commons/config/config_params), [CredentialParams](../../auth/credential_params),
-[ConnectionResolver](../connection_resolver), [IDiscovery](../idiscovery)
-
 ### Description
 
 The ConnectionParams class allows you to create connection parameters used to connect to external services.
@@ -30,7 +27,7 @@ The ConnectionParams class allows you to create connection parameters used to co
 - **port**: port number
 - **uri**: resource URI or connection string with all parameters in it
 
-In addition to standard parameters ConnectionParams may contain any number of custom parameters
+In addition to standard parameters ConnectionParams may contain any number of custom parameters.
 
 
 ### Constructors
@@ -44,7 +41,7 @@ Creates a new connection parameters and fills it with values.
 
 #### get_discovery_key
 Gets the key to retrieve this connection from DiscoveryService.
-If this key is None, than all parameters are already present.
+If this key is None, then all parameters are already present.
 
 >  get_discovery_key(): str
 
@@ -154,7 +151,7 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 #### from_config
 Retrieves a single ConnectionParams from configuration parameters
 from "connection" section. If "connections" section is present instead,
-then is returns only the first connection element.
+then it returns only the first connection element.
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [ConnectionParams]()
 
@@ -187,7 +184,7 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 #### many_from_config
 Retrieves all ConnectionParams from configuration parameters
 from "connections" section. If "connection" section is present instead,
-than it returns a list with only one ConnectionParams.
+then it returns a list with only one ConnectionParams.
 
 > `static` many_from_config(config: [ConfigParams](../../../commons/config/config_params)): List[[ConnectionParams]()]
 

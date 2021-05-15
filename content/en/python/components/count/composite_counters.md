@@ -4,7 +4,7 @@ title: "CompositeCounters"
 linkTitle: "CompositeCounters"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Aggregates all counters from component references into a single.
+    Aggregates all counters from component references into a single one.
 
    
 ---
@@ -90,7 +90,7 @@ Usually this method is used by metrics calculated externally.
 > last(name: str, value: float)
 
 - **name**: str - a counter name of Last type.
-- **value**: float - a last value to record.
+- **value**: float - last value to record.
 
 
 #### set_references

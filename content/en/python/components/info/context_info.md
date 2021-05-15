@@ -14,7 +14,7 @@ description: >
 
 ### Description
 
-The ContextInfo class allows you to create context information components that provide detailed information about an execution context.
+The ContextInfo class allows you to create context information components that provide detailed information about execution contexts.
 
 Important points
 

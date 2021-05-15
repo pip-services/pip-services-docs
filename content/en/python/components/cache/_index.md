@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
     
-    The Cache package contains interfaces and classes that can be used to create caches that can be used to improve a system's performance.
+    The Cache package contains interfaces and classes that can be used to create caches that can be employed to improve a system's performance.
 
 ---
 ---
@@ -21,7 +21,7 @@ Interface for caches that are used to cache values to improve performance.
 ### Classes
 
 #### [CacheEntry](cache_entry)
-Data object to store cached values with their keys used by [MemoryCache](../memory_cache)
+Data object to store cached values with their keys used by [MemoryCache](../memory_cache).
 
 #### [DefaultCacheFactory](default_cache_factory)
 Creates [ICache](icache) components by their descriptors.

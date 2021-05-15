@@ -406,11 +406,10 @@ Gets a number of elements stored in this map.
 #### put
 Puts a new value into map element specified by its key.
 
-> put(key: str, value: Any): Any
+> put(key: str, value: Any)
 
 - **key**: str - a key of the element to put.
 - **value**: Any - a new value for map element.
-- **returns**: Any - TODO add description
 
 
 #### remove

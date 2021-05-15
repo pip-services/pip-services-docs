@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MemoryLock class used to synchronize the execution of a process using shared memory.
+The MemoryLock class is used to synchronize the execution of a process using shared memory.
 
 Important points
 

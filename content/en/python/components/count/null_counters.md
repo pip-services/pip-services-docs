@@ -16,7 +16,7 @@ The NullCounters class allows you to create dummy performance counters.
 
 Important points
 
-- It can be used in testing or in situations when counters is required but must be disabled.
+- It can be used in testing or in situations when a counter is required but must be disabled.
 
 ### Instance methods
 

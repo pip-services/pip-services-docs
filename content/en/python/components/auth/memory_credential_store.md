@@ -56,7 +56,7 @@ Lookups credential parameters by its key.
 
 #### read_credentials
 Reads credentials from configuration parameters.
-Each section represents an individual CredentialParams
+Each section represents an individual CredentialParams.
 
 > read_credentials(config: [ConfigParams](../../../commons/config/config_params))
 

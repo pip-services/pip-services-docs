@@ -21,11 +21,11 @@ The Lock class represents an abstract lock that implements the defaul lock acqui
 ### Instance methods
 
 #### acquire_lock
-Makes multiple attempts to acquire a lock by its key within give time interval.
+Makes multiple attempts to acquire a lock by its key within a given time interval.
 
 > acquire_lock(correlation_id: Optional[str], key: str, ttl: float, timeout: float)
 
-- **correlation_id**: Optional[str] -(optional) transaction id to trace execution through call chain. 
+- **correlation_id**: Optional[str] -(optional) transaction id to trace execution through a call chain. 
 - **key**: str - a unique lock key to acquire.
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **timeout**: float - a lock acquisition timeout.
@@ -38,13 +38,14 @@ Configures component by passing configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
+### Abstract methods
 
 #### release_lock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > `abstractmethod` release_lock(correlation_id: Optional[str], key: str)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a unique lock key to release.
 
 

@@ -34,42 +34,42 @@ Important points
 <span class="hide-title-link">
 
 #### _source
-TODO add description
+Source (context) name
 > **_source**: str
 
 #### _cache
-TODO add description
+List of traces
 > **_cache**: List[[OperationTrace](../operation_trace)]
 
 #### _updated
-TODO add description
+Boolean variable that indicates whether there has been an update or not.
 > **_updated**: bool
 
 #### _last_dump_time
-TODO add description
+Time of the last dump
 > **_last_dump_time**: float
 
 #### _max_cache_size
-TODO add description
+Maximum number of messages stored in this cache (default: 100)
 > **_max_cache_size** = 100
 
 #### _interval
-TODO add description
+Interval in milliseconds to save log messages (default: 10 seconds)
 > **_interval** = 10000
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### begin_trace
-Begings recording an operation trace
+Begins recording an operation trace.
 
 > begin_trace(correlation_id: Optional[str], component: str, operation: str): [TraceTiming](../trace_timing)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: str - a name of called component
-- **operation**: str - a name of the executed operation.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **component**: str - name of a called component
+- **operation**: str - name of the executed operation.
 - **return**: [TraceTiming](../trace_timing) - a trace timing object.
 
 
@@ -94,14 +94,14 @@ Dumps (writes) the currently cached log messages.
 
 
 #### failure
-Records an operation failure with its name, duration and error
+Records an operation failure with its name, duration and error.
 
 > failure(correlation_id: Optional[str], component: str, operation: str, error: Exception,
 duration: float)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: str - a name of called component
-- **operation**: str - a name of the executed operation.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **component**: str - name of the called component
+- **operation**: str - name of the executed operation.
 - **error**: Exception - an error object associated with this trace.
 - **duration**: float - execution duration in milliseconds.
 
@@ -122,18 +122,18 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 #### trace
-Records an operation trace with its name and duration
+Records an operation trace with its name and duration.
 
 > trace(correlation_id: Optional[str], component: str, operation: str, duration: float)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: str - a name of called component
-- **operation**: str - a name of the executed operation.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **component**: str - name of the called component
+- **operation**: str - name of the executed operation.
 - **duration**: float - execution duration in milliseconds.
 
 
 #### _update
-Makes trace cache as updated
+Sets trace cache as updated
 and dumps it when timeout expires.
 
 > _update()
@@ -145,8 +145,8 @@ Writes a log message to the logger destination.
 > _write(correlation_id: Optional[str], component: str, operation: str, error: Optional[Exception], duration: float)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: str - a name of called component
-- **operation**: str - a name of the executed operation.
+- **component**: str - name of the called component
+- **operation**: str - name of the executed operation.
 - **error**: Optional[Exception] - an error object associated with this trace.
 - **duration**: float - execution duration in milliseconds.
 

@@ -16,11 +16,11 @@ The Factory class allows you to create components using registered types and fac
 ### Instance methods
 
 #### can_create
-Checks if this factory is able to create component by given locator.
+Checks if this factory is able to create component by a given locator.
 
 This method searches for all registered components and returns
-a locator for component it is able to create that matches the given locator.
-If the factory is not able to create a requested component is returns None.
+a locator for the component it is able to create that matches the given locator.
+If the factory is not able to create the requested component is returns None.
 
 >  can_create(locator: Any): Any
 
@@ -29,7 +29,7 @@ If the factory is not able to create a requested component is returns None.
 
 
 #### create
-Creates a component identified by given locator.
+Creates a component identified by given a locator.
 
 > create(locator: Any): Any
 

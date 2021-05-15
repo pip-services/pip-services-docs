@@ -18,7 +18,7 @@ Important points
 - Some IConfigReader implementations may support configuration parameterization.
 - The parameterization allows to use configuration as a template and inject there dynamic values. The values may come from application command like arguments or environment variables.
 
-### Instance methods
+### Abstract methods
 
 #### _read_config
 Reads configuration and parameterizes it with given values.

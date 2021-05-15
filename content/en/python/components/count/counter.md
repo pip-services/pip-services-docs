@@ -17,7 +17,7 @@ Important points
 - This object is used by [CachedCounters](../cached_counters) to store counters.
 
 ### Constructors
-Creates a instance of the data object
+Creates a instance of the data object.
 
 > Counter(name: str = None, tipe: [CounterType](../counter_type) = None)
 

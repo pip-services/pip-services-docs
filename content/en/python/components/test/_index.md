@@ -5,7 +5,7 @@ linkTitle: "Test"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Todo: add description
+    This package provides two classes. The first is used to create test components based on their descriptors, and the second is used to create random process shutdowns.
 ---
 ---
 

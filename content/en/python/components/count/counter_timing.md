@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The CounterTiming class allows you to create callback objects that are returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing of an execution block and update the associated counter.
+The CounterTiming class allows you to create callback objects that are returned by [ICounters.begin_timing](../icounters/#begin_timing) to end the timing of execution blocks and update the associated counters.
 
 ### Constructors
 Creates a new instance of the timing callback object.

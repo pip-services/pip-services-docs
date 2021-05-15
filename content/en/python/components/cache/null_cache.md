@@ -16,7 +16,7 @@ The NullCache class allows you to implement a dummy cache that doesn't do anythi
 
 Important points
 
-- It can be used in testing or in situations when cache is required but must be disabled.
+- It can be used in testing or in situations where a cache is required but must be disabled.
 
 ### Static methods
 
@@ -25,19 +25,19 @@ Removes a value from the cache by its key.
 
 >  remove(correlation_id: Optional[str], key: str)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a unique value key.
 
 
 #### retrieve
 Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired it returns None.
+If value is missing in the cache or expired, it returns None.
 
 > retrieve(correlation_id: Optional[str], key: str): Any
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a unique value key.
-- **returns**: Any - a cached value or None if value wasn't found or timeout expired.
+- **returns**: Any - a cached value or None, if value wasn't found or timeout expired.
 
 
 #### store

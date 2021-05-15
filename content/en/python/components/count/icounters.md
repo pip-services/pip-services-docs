@@ -15,7 +15,7 @@ The ICounters interface defines the methods for performance counters that measur
 
 Important points
 
-- The performance counters measure how code is performing; that is, how fast or slow, how many transactions performed, how many objects are stored, what was the latest transaction time and so on.
+- The performance counters measure how code is performing; that is, how fast or slow is, how many transactions were performed, how many objects were stored, what was the latest transaction time and so on.
 - They are critical to monitor and improve performance, scalability and reliability of code in production. 
 
 ### Instance methods
@@ -32,7 +32,7 @@ It returns [CounterTiming](../counter_timing) object which has to be called at
 
 
 #### increment
-Increments counter by given value.
+Increments counter by a given value.
 
 >  increment(name: str, value: float)
 

@@ -25,7 +25,7 @@ It returns immediately a positive or negative result.
 
 > acquire_lock(correlation_id: Optional[str], key: str, ttl: float, timeout: float)
 
-- **correlation_id**: Optional[str] -(optional) transaction id to trace execution through call chain. 
+- **correlation_id**: Optional[str] -(optional) transaction id to trace execution through a call chain. 
 - **key**: str - a unique lock key to acquire.
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **timeout**: float - a lock acquisition timeout.

@@ -4,7 +4,7 @@ title: "Shutdown"
 linkTitle: "Shutdown"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Random shutdown component that crashes the process
+    Random shutdown component that crashes a process
     using various methods.
 
 ---
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The Shutdown class allows you to create a random shutdown component that crashes the process using various methods.
+The Shutdown class allows you to create a random shutdown component that crashes a process using various methods.
 
 Important points
 
@@ -22,7 +22,7 @@ Important points
 
 #### Configuration parameters
 
-- **mode**: None - crash by NullPointer excepiton, zero - crash by dividing by zero, excetion = crash by unhandled exception, exit - exit the process
+- **mode**: None - crash by NullPointer excepiton, zero - crash by dividing by zero, exception = crash by unhandled exception, exit - exit the process
 - **min_timeout**: minimum crash timeout in milliseconds (default: 5 mins)
 - **max_timeout**: maximum crash timeout in milliseconds (default: 15 minutes)
 
@@ -32,15 +32,15 @@ Important points
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 

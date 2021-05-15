@@ -22,7 +22,7 @@ Important points
 ### Instance methods
 
 #### acquire_lock
-Makes multiple attempts to acquire a lock by its key within give time interval.
+Makes multiple attempts to acquire a lock by its key within a given time interval.
 
 > acquire_lock(correlation_id: Optional[str], key: str, ttl: float, timeout: float)
 
@@ -48,7 +48,7 @@ It returns immediately a positive or negative result.
 
 > `abstractmethod` try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a unique lock key to acquire.
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result

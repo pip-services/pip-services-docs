@@ -1,17 +1,17 @@
 ---
 type: docs
-title: "DefaultLoggerFactory"
-linkTitle: "DefaultLoggerFactory"
+title: "DefaultTestFactory"
+linkTitle: "DefaultTestFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Creates test components by their descriptors.
+    A factory for shutdowns.
 ---
 
 **Implemenst:** [Factory](../../build/factory)
 
 ### Description
 
-The DefaultLoggerFactory class provides a factory to create loggers based on their descriptors
+The DefaultLoggerFactory class provides a factory for shutdowns.
 
 ### Constructors
 Create a new instance of the factory.

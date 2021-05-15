@@ -20,7 +20,7 @@ Concatinates two options by combining duplicated properties into comma-separated
 
 - **options1**: [ConfigParams](../../../commons/config/config_params) - first options to merge
 - **options2**: [ConfigParams](../../../commons/config/config_params) - second options to merge
-- **keys**: str - when define it limits only to specific keys
+- **keys**: str - when defined, it limits only to specific keys
 - **returns**: [ConfigParams](../../../commons/config/config_params) - new connection parameters to be added
 
 

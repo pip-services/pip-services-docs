@@ -4,11 +4,15 @@ title: "Component"
 linkTitle: "Component"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Abstract component that supportes configurable dependencies, logging
+    Component that supports configurable dependencies, logging
     and performance counters.
 ---
 
 **Implemenst:** [IConfigurable](../../commons/config/iconfigurable), [IReferenceable](../../commons/refer/ireferenceable)
+
+### Description
+
+The component class allows you to create components that supports configurable dependencies, logging, and performance counters.
 
 ##### Configuration parameters
 
@@ -29,24 +33,24 @@ description: >
 <span class="hide-title-link">
 
 #### _logger
-TODO add description
+Components to pass log messages
 > **_logger**: [CompositeLogger](../log/composite_logger)
 
 #### _counters
-TODO add description
+Components to pass collected measurements
 > **_counters**: [CompositeCounters](../count/composite_counters)
 
 #### _dependency_resolver
-TODO add description
+A dependency resolver
 > **_dependency_resolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
 
 #### _tracer
-TODO add description
+Components to record traces
 > **_tracer**: [CompositeTracer](../trace/composite_tracer)
 
 </span>
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.

@@ -39,6 +39,6 @@ Resolves a single connection parameters by its key.
 
 >  resolve_one(correlation_id: Optional[str], key: str): [ConnectionParams](../connection_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a key to uniquely identify the connection.
 - **returns**: [ConnectionParams](../connection_params) - a resolved connection.

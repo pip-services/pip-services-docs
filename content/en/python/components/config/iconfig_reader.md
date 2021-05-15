@@ -21,7 +21,7 @@ Important points
 ### Instance methods
 
 #### _read_config
-Reads configuration and parameterize it with given values.
+Reads configuration and parameterizes it with given values.
 
 > `abstract` _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 

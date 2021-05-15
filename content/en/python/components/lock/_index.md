@@ -28,7 +28,7 @@ Abstract lock that implements default lock acquisition routine.
 
 #### [MemoryLock](memory_lock)
 Lock that is used to synchronize execution within one process using shared memory.
-Remember: This implementation is not suitable for synchronization of distributed processes.
+This implementation is not suitable for synchronization of distributed processes.
 
 #### [NullLock](null_lock)
 Dummy lock implementation that doesn't do anything.

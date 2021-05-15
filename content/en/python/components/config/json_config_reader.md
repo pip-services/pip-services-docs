@@ -69,11 +69,11 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 
 #### read_object
-Reads a configuration file, parameterizes its content and converts it into JSON object.
+Reads a configuration file, parameterizes its content and converts it into a JSON object.
 
 > `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call a chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **path**: str - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: Any - a JSON object with configuration.

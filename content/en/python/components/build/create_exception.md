@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The CreateException is allows you to manage the error raised when a factory is not able to create a requested component.
+The CreateException class allows you to manage the error raised when a factory is not able to create a requested component.
 
 
 ### Constructors
@@ -19,7 +19,7 @@ Creates an error instance and assigns its values.
 
 > CreateException(correlation_id: Optional[str] = None, message_or_locator: str = None)
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through a call chain.
 - **message_or_locator**: str - human-readable error or locator of the component that cannot be created.
 
 

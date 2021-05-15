@@ -21,11 +21,11 @@ Important points
 ### Instance methods
 
 #### debug
-Logs a high-level debug information for troubleshooting.
+Logs high-level debug information for troubleshooting.
 
 > debug(correlation_id: Optional[str], message: str, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
 - **kwargs**: Any - arguments to parameterize the message.
@@ -36,7 +36,7 @@ Logs recoverable application error.
 
 > error(correlation_id: Optional[str], error: Exception, message: str, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
@@ -48,7 +48,7 @@ Logs fatal (unrecoverable) message that caused the process to crash.
 
 > fatal(correlation_id: Optional[str], error: Exception, message: str, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
@@ -68,7 +68,7 @@ Logs an important information message
 
 > info(correlation_id: Optional[str], message: str, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
 - **kwargs**: Any - arguments to parameterize the message.
@@ -80,7 +80,7 @@ Logs a message at specified log level.
 > log(level: [LogLevel](../log_level), correlation_id: Optional[str], error: Optional[Exception], message: Optional[str], *args: Any, **kwargs: Any)
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **error**: Optional[Exception] - an error object associated with this message.
 - **message**: Optional[str] - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
@@ -88,11 +88,11 @@ Logs a message at specified log level.
 
 
 #### trace
-Logs a low-level debug information for troubleshooting.
+Logs low-level debug information for troubleshooting.
 
 > trace(correlation_id: Optional[str], message: str, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
 - **kwargs**: Any - arguments to parameterize the message.
@@ -102,7 +102,7 @@ Logs a warning that may or may not have a negative impact.
 
 > warn(correlation_id: Optional[str], message: Exception, *args: Any, **kwargs: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message**: str - a human-readable message to log.
 - **args**: Any - arguments to parameterize the message.
 - **kwargs**: Any - arguments to parameterize the message.

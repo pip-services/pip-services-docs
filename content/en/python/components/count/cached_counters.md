@@ -159,7 +159,7 @@ Saves the current counters measurements.
 
 > `abstractmethod` _save(counters: List[[Counter](../counter)])
 
-- **counters**: List[[Counter](../counter)] - current counters measurements to be saves.
+- **counters**: List[[Counter](../counter)] - current counters measurements to be saved.
 
 
 #### set_interval

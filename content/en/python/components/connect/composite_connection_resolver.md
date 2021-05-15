@@ -58,7 +58,7 @@ The default protocol
 > **_default_protocol**: str
 
 #### _default_port
-The default protocol
+The default port
 > **_default_port**: int
 
 #### _supported_protocols
@@ -75,7 +75,7 @@ Composes Composite connection options from connection and credential parameters.
 
 >  compose(correlation_id: Optional[str], connections: List[[ConnectionParams](../connection_params)], credential: [CredentialParams](../../auth/credential_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **connections**: List[[ConnectionParams](../connection_params)] - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
@@ -87,10 +87,10 @@ A composite of several merger options
 
 >  _compose_options(connections: List[[ConnectionParams](../connection_params)], credential: [CredentialParams](../../auth/credential_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
-- **connections**: List[[ConnectionParams](../connection_params)] - TODO add description
-- **credential**: [CredentialParams](../../auth/credential_params) - TODO add description
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - TODO add description
-- **returns**: [ConfigParams](../../../commons/config/config_params) - TODO add description
+- **connections**: List[[ConnectionParams](../connection_params)] - connection parameters
+- **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
+- **returns**: [ConfigParams](../../../commons/config/config_params) - resolved options or error
 
 
 #### configure
@@ -102,7 +102,7 @@ Configures component by passing configuration parameters.
 
 
 #### _finalize_options
-Finalize merged options
+Finalize merged options.
 This method can be overriden in child classes.
 
 >  _finalize_options(options: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
@@ -112,7 +112,7 @@ This method can be overriden in child classes.
 
 
 #### _merge_connection
-Merges connection options with connection parameters
+Merges connection options with connection parameters. 
 This method can be overriden in child classes.
 
 >  _merge_connection(self, options: [ConfigParams](../../../commons/config/config_params), connection: [ConnectionParams](../connection_params)): [ConfigParams](../../../commons/config/config_params)
@@ -123,7 +123,7 @@ This method can be overriden in child classes.
 
 
 #### _merge_credential
-Merges connection options with credential parameters
+Merges connection options with credential parameters.
 This method can be overriden in child classes.
 
 >  _merge_credential(options: [ConfigParams](../../../commons/config/config_params), credential: [CredentialParams](../../auth/credential_params)): [ConfigParams](../../../commons/config/config_params)
@@ -134,7 +134,7 @@ This method can be overriden in child classes.
 
 
 #### _merge_optional
-Merges connection options with optional parameters
+Merges connection options with optional parameters.
 This method can be overriden in child classes.
 
 >  _merge_optional(options: [ConfigParams](../../../commons/config/config_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
@@ -168,7 +168,7 @@ This method can be overriden in child classes.
 
 >  _validate_connection(correlation_id: Optional[str], connection: [ConnectionParams](../connection_params))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
 
 

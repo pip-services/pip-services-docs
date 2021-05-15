@@ -64,7 +64,7 @@ Resolves all connection parameters by their key.
 
 >  resolve_all(correlation_id: Optional[str], key: str): List[[ConnectionParams](../connection_params)]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a key to uniquely identify the connections.
 - **returns**: List[[ConnectionParams](../connection_params)] - a list with resolved connections.
 
@@ -74,7 +74,7 @@ Resolves a single connection parameters by its key.
 
 >  resolve_one(self, correlation_id: Optional[str], key: str): [ConnectionParams](../connection_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a key to uniquely identify the connection. 
 - **returns**: [ConnectionParams](../connection_params) - a resolved connection.
 

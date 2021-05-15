@@ -39,19 +39,19 @@ Configures component by passing configuration parameters.
 
 
 #### get_path
-Get the path to configuration file.
+Gets the path to configuration file.
 
 > get_path(): str
 
-- **returns**: str - the path to configuration file.
+- **returns**: str - path to configuration file.
 
 
 #### set_path
-Set the path to configuration file.
+Sets the path to configuration file.
 
 > set_path(path: str)
 
-- **path**: str - a new path to configuration file.
+- **path**: str - new path to configuration file.
 
 
 ### See also

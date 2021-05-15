@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The component class allows you to create components that supports configurable dependencies, logging, and performance counters.
+The component class allows you to create components that support configurable dependencies, logging, and performance counters.
 
 ##### Configuration parameters
 

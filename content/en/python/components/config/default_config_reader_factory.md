@@ -4,7 +4,7 @@ title: "DefaultConfigReaderFactory"
 linkTitle: "DefaultConfigReaderFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Creates [IConfigReader](../iconfig_reader) components by their descriptors.
+    Creates [IConfigReader](../iconfig_reader) components based on their descriptors.
 ---
 
 **Implements**: [Factory](../../build/factory)

@@ -22,11 +22,11 @@ Create a new instance of the factory.
 <span class="hide-title-link">
 
 #### NullCacheDescriptor
-TODO add description
+A description for a null cache (dummy cache).
 > **NullCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### MemoryCacheDescriptor
-TODO add description
+A descriptor for a memory cache..
 > **MemoryCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 </span>

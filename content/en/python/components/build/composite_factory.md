@@ -38,11 +38,11 @@ Adds a factory into the list of embedded factories.
 
 
 #### can_create
-Checks if this factory is able to create component by given locator.
+Checks if this factory is able to create component by a given locator.
 
 This method searches for all registered components and returns
 a locator for component it is able to create that matches the given locator.
-If the factory is not able to create a requested component is returns None.
+If the factory is not able to create a requested component it returns None.
 
 > can_create(locator: Any): Any
 

@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The CachedMessageQueue class allows you to create message queues that cache received messages in memory to allow peek operations that may not be supported by the undelying queue.
+The CachedMessageQueue class allows you to create message queues that cache received messages in memory, to allow peek operations that may not be supported by the undelying queue.
 
 Important points
 
@@ -32,7 +32,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _auto_subscribe
-Boolean variable indicating whether a message queue auto subscribes or not.  
+Boolean variable indicating whether a message queue auto-subscribes or not.  
 
 > _auto_subscribe: bool
 
@@ -88,7 +88,7 @@ See [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
 
 
@@ -119,23 +119,23 @@ Important: This method is not supported by MQTT.
 > peek_batch(correlation_id: Optional[str], message_count: int):List[[MessageEnvelope](../message_envelope)]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **message_count**: int - a maximum number of messages to peek.
-- **returns**: List[[MessageEnvelope](../message_envelope)] - a list with peeked messages.
+- **message_count**: int - maximum number of messages to peek.
+- **returns**: List[[MessageEnvelope](../message_envelope)] - list with peeked messages.
 
 #### read_message_count
 Reads the current number of messages in the queue to be delivered.
 
 > read_message_count(): int
 
-- **returns**: int - a number of messages in the queue.
+- **returns**: int - number of messages in the queue.
 
 #### receive
 Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **wait_timeout**: int - a timeout in milliseconds to wait for a message to come.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
 - **returns**: [MessageEnvelope](../message_envelope) - a received message or *None*.
 
 

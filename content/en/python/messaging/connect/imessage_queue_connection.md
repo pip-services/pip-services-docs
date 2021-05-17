@@ -30,7 +30,7 @@ If connection doesn't support this function it exits without error.
 - **name**: str - the name of the queue to be deleted.
 
 #### read_queue_names
-Reads a list of registered queue names. If connection doesn't support this function returnes an empty list.
+Reads a list of registered queue names. If connection doesn't support this function returns an empty list.
 
 > read_queue_names(): List[str]
 

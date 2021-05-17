@@ -19,8 +19,6 @@ Important points:
 
 **Implements:** [IConfigurable](../iconfigurable)
 
-See also [IConfigurable](../iconfigurable)
-
 ### Examples
 
 ```python

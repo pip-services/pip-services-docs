@@ -8,7 +8,6 @@ description: >
     [ErrorDescription]() is used to recreate the exception object close to its original type
     without missing additional details.
 ---
-See also [ApplicationException](../application_exception), [ApplicationExceptionFactory](../application_exception_factory)
 
 ### Description
 

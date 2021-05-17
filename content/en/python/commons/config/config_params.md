@@ -21,9 +21,6 @@ Important points:
 
 **Implements:** [StringValueMap](../../data/string_value_map)
 
-See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
-
-
 ### Constructors
 Creates a new ConfigParams and fills it with values.
 See [StringValueMap.constructors](../../data/string_value_map/#constructors)

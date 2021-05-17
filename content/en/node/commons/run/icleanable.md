@@ -2,36 +2,34 @@
 type: docs
 title: "ICleanable"
 linkTitle: "ICleanable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that should clean their state.
+    Interface that allows you to create components with a method to clean their states.
 
-    Cleaning state most often is used during testing. 
-    But there may be situations when it can be done in production.
 ---
 
-See also [Cleaner](../cleaner)
+### Description
 
-**Example:**
-```typescript
-class MyObjectWithState implements ICleanable {
-    private _state: any = {};
-    ...
-    public async clear(correlationId: string): void {
-        this._state = {};
-    }
-}
+The ICleanable interface allows you to create components with a method to clean their states.
 
-```
-
-### Methods
+### Instance methods
 
 #### clear
 Clears component state.
 
-> clear(correlationId: string): Promise\<void\>;
+> clear(correlation_id: Optional[str])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+### Examples
+```python
+class MyObjectWithState(ICleanable):
+    _state = {}
+    ...
+
+    def clear(self, correlation_id):
+        self._state = {}  
+```
 
 ### See also
 - #### [Cleaner](../cleaner)

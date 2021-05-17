@@ -2,47 +2,51 @@
 type: docs
 title: "RecursiveObjectWriter"
 linkTitle: "RecursiveObjectWriter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic writing.
+    Helper class that allows you to dynamically set the properties of an object recursively using "dot" notation.
  
-    It is similar to [ObjectWriter](../object_writer) but writes properties recursively
-    through the entire object graph. Nested property names are defined
-    using dot notation as "object.subobject.property"
 ---
 
-See also [PropertyReflector](../property_reflector), [ObjectWriter](../object_writer)
+### Description
 
-### Methods
+The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object recursively using dot notation.
 
-#### copyProperties
+Important points
+
+- It is similar to [ObjectWriter](../object_writer) but writes properties recursively through the entire object graph. 
+- Nested property names are defined using dot notation as "object.subobject.property"
+
+### Static methods
+
+#### copy_properties
 Copies content of one object to another object
 by recursively reading all properties from source object
 and then recursively writing them to destination object.
 
-> `public static` copyProperties(dest: any, src: any): void
+> `static` copy_properties(dest: Any, src: Any)
 
-- **dest**: any - a destination object to write properties to.
-- **src**: any - a source object to read properties from
+- **dest**: Any - a destination object to write properties to.
+- **src**: Any - a source object to read properties from
 
 
-#### setProperties
+#### set_properties
 Recursively sets values of some (all) object and its subobjects properties.
 
 The object can be a user defined object, map or array.
 Property values correspondently are object properties,
 map key-pairs or array elements with their indexes.
  
-If some properties do not exist or introspection fails
+If some properties do not exist or introspection fails,
 they are just silently skipped and no errors thrown.
 
-> `public static` setProperties(obj: any, values: any): void
+> `static` set_properties(obj: Any, values: Any)
 
-- **obj**: any - an object to write properties to. 
-- **values**: any - a map, containing property names and their values.
+- **obj**: Any - an object to write properties to. 
+- **values**: Any - a map, containing property names and their values.
 
 
-#### setProperty
+#### set_property
 Recursively sets value of object and its subobjects property specified by its name.
 
 The object can be a user defined object, map or array.
@@ -50,13 +54,13 @@ The property name correspondently must be object property,
 map key or array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
-> `public static` setProperty(obj: any, name: string, value: any): void
+> `static` setProperty(obj: Any, name: str, value: Any)
 
-- **obj**: any - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: any - a new value for the property to set.
+- **obj**: Any - an object to write property to.
+- **name**: str - name of the property to set.
+- **value**: Any - new value for the property to set.
 
 
 

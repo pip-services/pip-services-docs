@@ -7,17 +7,11 @@ description: >
     Random generator for float values.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let value1 = RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
-let value2 = RandomFloat.nextFloat(10);        // Possible result: 3.7
-let value3 = RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
+The RandomFloat class allows you to generate random float values.
 
-```
-
-
-### Methods
+### Static methods
 
 #### nextFloat
 Generates a float in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
@@ -37,3 +31,12 @@ Updates (drifts) a float value within specified range defined
 - **value**: number - a float value to drift.
 - **range**: number = null - (optional) a range. Default: 10% of the value
 - **returns**: number - TODO add description.
+
+### Examples
+
+```typescript
+let value1 = RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
+let value2 = RandomFloat.nextFloat(10);        // Possible result: 3.7
+let value3 = RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
+
+```

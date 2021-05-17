@@ -1,39 +1,22 @@
 ---
 type: docs
-title: "ITrackable"
-linkTitle: "ITrackable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+title: "IVersioned"
+linkTitle: "IVersioned"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Interface for data objects that can be versioned.
+    Interface used to define data objects that can be versioned.
 
-    Versioning is often used as optimistic concurrency mechanism. 
-
-
-    The version doesn't have to be a number, but it is recommended to use sequential
-    values to determine if one object has newer or older version than another one.
-
-
-    It is a common pattern to use the time of change as the object version.
 ---
 
-**Example:**
-```typescript
-export class MyData implements IStringIdentifiable, IVersioned {
-    public id: string;
-    public field1: string;
-    public field2: number;
-    public version: string;
-    ...
-}
-   
-public updateData(correlationId: string, item: MyData): void {
-    ...
-    if (item.version < oldItem.version) {
-        throw new ConcurrencyException(null, "VERSION_CONFLICT", "The change has older version stored value");
-    }
-    ...
-}
-```
+### Description
+
+The IVersioned interface allows you to define data objects that can be versioned.
+
+Important points
+
+- Versioning is often used as an optimistic concurrency mechanism.
+- The version doesn't have to be a number, but it is recommended to use sequential values to determine if one object has a newer or older version than another one.
+- It is common to use the time of change as the object version.
 
 ### Fields
 
@@ -41,6 +24,20 @@ public updateData(correlationId: string, item: MyData): void {
 
 #### version
 The object's version.
-> **version**: string
+> **version**: str
+
+### Examples
+```python
+class MyData(IStringIdentifiable, IVersioned):
+    id = None
+    version = None
+    # do something
+    def update_data(item):
+        # do something
+        if item.version < old_item.version:
+            raise ConcurrencyException(None, "VERSION_CONFLICT", "The change has older version stored args")
+    
+    # do something
+```
 
 </span>

@@ -4,57 +4,40 @@ title: "Descriptor"
 linkTitle: "Descriptor"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Locator type that most often used in PipServices toolkit.
-    It locates components using several fields:
-
-    - Group: a package or just named group of components like "pip-services" 
-
-    - Type: logical component type that defines it's contract like "persistence" 
-
-    - Kind: physical implementation type like "mongodb"  
-
-    - Name: unique component name like "default"  
-
-    - Version: version of the component contract like "1.0"  
-
-
-
-    The locator matching can be done by all or only few selected fields. 
-    The fields that shall be excluded from the matching must be set to *"*"* or *null*.
-    That approach allows to implement many interesting scenarios. For instance:
-
-    - Locate all loggers (match by type and version)  
-
-    - Locate persistence components for a microservice (match by group and type)  
-
-    - Locate specific component by its name (match by name)  
+    Component locator based on group, type, kind, name and version of the component.
 ---
 
-**Example:**
+### Description
+The Descriptor class provides you with a component locator. This locator is often used in the PipServices toolkit. It locates components using the following fields:
 
-```typescript
-let locator1 = new Descriptor("mygroup", "connector", "aws", "default", "1.0");
-let locator2 = Descriptor.fromString("mygroup:connector:*:*:1.0");
+- **Group:** a package or just named group of components, like "pip-services". 
+- **Type:** logical component type that defines it's contract, like "persistence" .
+- **Kind:** physical implementation type, like "mongodb".  
+- **Name:** unique component name, like "default".  
+- **Version:** version of the component contract, like "1.0".  
 
-locator1.match(locator2);		// Result: true
-locator1.equal(locator2);		// Result: true
-locator1.exactMatch(locator2);	// Result: false
+Important points
 
-```
+- The locator matching can be done by all or only few selected fields. 
+- The fields that shall be excluded from the matching must be set to *"*"* or *None*.
+- This approach allows to implement many interesting scenarios. For instance:
+    - Locate all loggers (match by type and version)  
+    - Locate persistence components for a microservice (match by group and type)  
+    - Locate specific component by its name (match by name) 
 
 ### Constructors
 Creates a new instance of the descriptor.
 
-> `public` constructor(group: string, type: string, kind: string, name: string, version: string): [Descriptor]()
+> Descriptor(group: Optional[str], type: Optional[str], kind: Optional[str], name: Optional[str], version: Optional[str])
 
-- **group**: string - a logical component group
-- **type**: string - a logical component type or contract
-- **kind**: string - a component implementation type
-- **name**: string - a unique component name
-- **version**: string - a component implementation version
+- **group**: Optional[str] - a logical component group
+- **type**: Optional[str] - a logical component type or contract
+- **kind**: Optional[str] - a component implementation type
+- **name**: Optional[str] - a unique component name
+- **version**: Optional[str] - a component implementation version
 
 
-### Methods
+### Instance methods
 
 #### equals
 Compares this descriptor to a value.
@@ -131,6 +114,8 @@ The result is a colon-separated list of descriptor fields as
 
 - **returns**: string - a string representation of the object.
 
+### Static methods
+
 #### fromString
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
@@ -140,10 +125,14 @@ Throws a [ConfigException](../../errors/config_exception) if the descriptor stri
 - **value**: String - colon-separated descriptor fields to initialize Descriptor.
 - **returns**: [Descriptor]() - a newly created Descriptor.
 
+### Examples
 
-    
-    
-    
-    
-    
----
+```typescript
+let locator1 = new Descriptor("mygroup", "connector", "aws", "default", "1.0");
+let locator2 = Descriptor.fromString("mygroup:connector:*:*:1.0");
+
+locator1.match(locator2);		// Result: true
+locator1.equal(locator2);		// Result: true
+locator1.exactMatch(locator2);	// Result: false
+
+```

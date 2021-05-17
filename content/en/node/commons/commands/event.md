@@ -4,38 +4,30 @@ title: "Event"
 linkTitle: "Event"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Concrete implementation of [IEvent](../ievent) interface.
-    It allows to send asynchronous notifications to multiple subscribed listeners.
+    Concrete implementation of the [IEvent](../ievent) interface.
+   
 ---
 
 **Implements:** [IEvent](../ievent)
 
-See also [IEvent](../ievent), [IEventListener](../ievent_listener)
+### Description
 
-**Example**:
+The Event class allows you to create events.
 
-```typescript
-let event = new Event("my_event");
- 
-event.addListener(myListener);
- *     
-event.notify("123", Parameters.fromTuples(
-  "param1", "ABC",
-  "param2", 123
-));
+Important points
 
-```
+- It allows you to send asynchronous notifications to multiple subscribed listeners.
 
 ### Constructors
 
 Creates a new event and assigns its name.  
 Throws an Error if the name is null.
 
-> `public` constructor(name: string): [Event]()
+> `public` constructor(name: string)
 
 - **name**: string - the name of the event that is to be created.
 
-### Methods
+### Instance methods
 
 #### addListener
 Adds a listener to receive notifications when this event is fired.
@@ -74,6 +66,19 @@ Removes a listener, so that it no longer receives notifications for this event.
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 
+**Example**:
+
+```typescript
+let event = new Event("my_event");
+ 
+event.addListener(myListener);
+ *     
+event.notify("123", Parameters.fromTuples(
+  "param1", "ABC",
+  "param2", 123
+));
+
+```
 
 ### See also
 - #### [IEvent](../ievent)

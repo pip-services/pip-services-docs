@@ -2,19 +2,21 @@
 type: docs
 title: "FilterParamsSchema"
 linkTitle: "FilterParamsSchema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Schema to validate [FilterParams](../../data/filter_params).
 ---
 
-**Extends:** [MapSchema](../map_schema)
+**Implements:** [MapSchema](../map_schema)
 
-See also [FilterParams](../../data/filter_params)
+### Description
+
+The FilterParamsSchema class allows you to create a schema to validate [FilterParams](../../data/filter_params).
 
 ### Constructors
 Creates a new instance of validation schema.
 
-> `public` constructor(): [FilterParamsSchema]()
+> FilterParamsSchema()
 
 
 

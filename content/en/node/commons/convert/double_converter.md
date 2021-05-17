@@ -4,27 +4,22 @@ title: "DoubleConverter"
 linkTitle: "DoubleConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Converts arbitrary values into double using extended conversion rules:
+    The DoubleConverter class allows you to convert arbitrary values into double using extended conversion rules.
 
-    - Strings are converted to double values
-
-    - DateTime: total number of milliseconds since unix epoсh
-    
-    - Boolean: 1 for true and 0 for false  
+   
 ---
 
+### Description
 
-**Example:**
+The DoubleConverter class allows you to convert arbitrary values into double using the following extended conversion rules:
 
-```python
-value1 = DoubleConverter.to_nullable_double("ABC")     # Result: null
-value2 = DoubleConverter.to_nullable_double("123.456") # Result: 123.456
-value3 = DoubleConverter.to_nullable_double(True)      # Result: 1
-value4 = DoubleConverter.to_nullable_double(datetime.datetime.now()) # Result: current milliseconds
+ - Strings are converted to double values
 
-```
+ - DateTime: total number of milliseconds since unix epoсh
+    
+ - Boolean: 1 for true and 0 for false  
 
-### Methods
+### Static methods
 
 #### toDouble
 Converts value into doubles or returns 0 when conversion is not possible.  
@@ -51,3 +46,13 @@ Converts value into doubles or returns null when conversion is not possible.
 
 - **value**: any - the value to convert.
 - **returns**: number - double value or null when conversion is not supported.
+
+### Examples
+
+```typescript
+let value1 = DoubleConverter.toNullableDouble("ABC")     // Returns None
+let value2 = DoubleConverter.toNullableDouble("123.456") // Returns 123.456
+let value3 = DoubleConverter.toNullableDouble(True)      // Returns 1
+let value4 = DoubleConverter.toNullableDouble(new Date()) // Returns current milliseconds (E.g. 1619812281454)
+
+```

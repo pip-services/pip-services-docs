@@ -4,41 +4,16 @@ title: "References"
 linkTitle: "References"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    The most basic implementation of [IReferences](../ireferences) to store and locate component references.
+    An implementation of [IReferences](../ireferences) that allows you to store and locate component references.
 ---
 
 **Implements**: [IReferences](../ireferences)
 
-See also [IReferences](../ireferences)
+### Description
 
-**Example:**
-```typescript
-
-export class MyController implements IReferenceable {
-    public _persistence: IMyPersistence;
-    ...    
-    public setReferences(references: IReferences): void {
-        this._persistence = references.getOneRequired<IMyPersistence>(
-            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
-        );
-    }
-    ...
-}
-  
-let persistence = new MyMongoDbPersistence();
-let controller = new MyController();
-  
-let references = References.fromTuples(
-    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-);
-
-controller.setReferences(references);
-
-```
+The References class allows you to store and locate component references.
 
 ### Constructors
-
 Creates a new instance of references and initializes it with references.
 
 > `public` constructor(tuples: any[] = null): [References]()
@@ -49,12 +24,12 @@ Creates a new instance of references and initializes it with references.
 <span class="hide-title-link">
 
 #### _references
-TODO add description
+ A list of values where odd elements are locators and the following even elements are component references.
 > `protected` _references: [Reference](../reference)[]
 
 </span>
 
-### Methods
+### Instance methods
 
 #### find
 Gets all component references that match specified locator.  
@@ -143,8 +118,9 @@ Removes all component references that match the specified locator.
 - **locator**: any - the locator to remove references by.
 - **returns**: any[] - a list, containing all removed references.
 
+### Static methods
 
-#### fromTuples
+#### from_tuples
 Creates a new References from a list of key-value pairs called tuples.
 
 > `public static` fromTuples(...tuples: any[]): [References](../references)
@@ -152,6 +128,32 @@ Creates a new References from a list of key-value pairs called tuples.
 - **tuples**: any[] - a list of values where odd elements are locators and the following even elements are component references
 - **returns**: [References](../references) - a newly created References.
 
+### Examples
+
+```typescript
+
+export class MyController implements IReferenceable {
+    public _persistence: IMyPersistence;
+    ...    
+    public setReferences(references: IReferences): void {
+        this._persistence = references.getOneRequired<IMyPersistence>(
+            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        );
+    }
+    ...
+}
+  
+let persistence = new MyMongoDbPersistence();
+let controller = new MyController();
+  
+let references = References.fromTuples(
+    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+);
+
+controller.setReferences(references);
+
+```
 
 ### See also
 - #### [IReferences](../ireferences)

@@ -4,12 +4,21 @@ title: "IUnreferenceable"
 linkTitle: "IUnreferenceable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Interface for components that require explicit clearing of references to dependent components.
+    Interface for components that require the capacity to clear previously defined references to dependent components.
 ---
 
-See also [IReferences](../ireferences), [IReferenceable](../ireferenceable)
+### Description
 
-**Example:**
+The IUnreferenceable interface can be used for components that require the capacity to clear previously defined references to dependent components.
+
+### Instance methods
+
+#### unsetReferences
+Unsets (clears) previously set references to dependent components. 
+
+> unsetReferences(): void
+
+### Examples
 
 ```typescript
 export class MyController implements IReferenceable, IUnreferenceable {
@@ -28,13 +37,6 @@ export class MyController implements IReferenceable, IUnreferenceable {
 }
 
 ```
-
-### Methods
-
-#### unsetReferences
-Unsets (clears) previously set references to dependent components. 
-
-> unsetReferences(): void
 
 ### See also
 - #### [IReferences](../ireferences)

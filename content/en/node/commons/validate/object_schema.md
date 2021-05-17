@@ -2,120 +2,124 @@
 type: docs
 title: "ObjectSchema"
 linkTitle: "ObjectSchema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Schema to validate user defined objects.
 ---
 
 **Extends:** [Schema](../schema)
 
-**Example:**
-```typescript
-let schema = new ObjectSchema(false)
-    .withOptionalProperty("id", TypeCode.String)
-    .withRequiredProperty("name", TypeCode.String);
-  
-schema.validate({ id: "1", name: "ABC" });       // Result: no errors
-schema.validate({ name: "ABC" });                // Result: no errors
-schema.validate({ id: 1, name: "ABC" });         // Result: id type mismatch
-schema.validate({ id: 1, _name: "ABC" });        // Result: name is missing, unexpected _name
-schema.validate("ABC");                          // Result: type mismatch
+### Description
 
-```
+The ObjectSchema class allows you to create a validation schema that can be used to validate user defined objects.
 
 ### Constructors
 Creates a new validation schema and sets its values. 
 See [IValidationRule](../ivalidation_rule)
 
-> `public` constructor(allowUndefined?: boolean, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
+> ObjectSchema(allow_undefined: bool = False, required: bool = None, rules: List[[IValidationRule](../ivalidation_rule)] = None):
 
-- **allowUndefined?**: boolean - true to allow properties undefines in the schema
-- **required?**: boolean - (optional) true to always require non-null values.
-- **rules?**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **allow_undefined**?: bool - true to allow properties undefined in the schema
+- **required**: bool - (optional) true to always require non-None values.
+- **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 ### Properties
 
-#### isUndefinedAllowed
+#### is_undefined_allowed
 Gets flag to allow undefined properties
 
-> `public` get isUndefinedAllowed(): boolean
+> get is_undefined_allowed(): bool
 
-- **returns**: boolean - true to allow undefined properties and false to disallow.
+- **returns**: bool - true to allow undefined properties and false to disallow.
 
 Sets flag to allow undefined properties
 
-> `public` set isUndefinedAllowed(value: boolean): void
+> set is_undefined_allowed(value: bool)
 
-- **value**: boolean - true to allow undefined properties and false to disallow.
+- **value**: bool - true to allow undefined properties and false to disallow.
 
-### Methods
+### Instance methods
 
-#### allowUndefined
+#### allow_undefined
 Sets flag to allow undefined properties
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> `public` allowUndefined(value: boolean): [ObjectSchema](../object_schema)
+> allow_undefined(value: bool): [ObjectSchema](../object_schema)
 
-- **value**: boolean - true to allow undefined properties and false to disallow.
+- **value**: bool - true to allow undefined properties and false to disallow.
 - **returns**: [ObjectSchema](../object_schema) - this validation schema.
 
 
-#### getProperties
+#### get_properties
 Gets validation schemas for object properties.
 See [PropertySchema](../property_schema)
 
-> `public` getProperties(): [PropertySchema](../property_schema)[]
+> get_properties(): List[[PropertySchema](../property_schema)]
 
-- **returns**: [PropertySchema](../property_schema)[] - the list of property validation schemas.
+- **returns**: List[[PropertySchema](../property_schema)] - the list of property validation schemas.
 
 
-#### performValidation
+#### perform_validation
 Validates a given value against the schema and configured validation rules.
 
-> `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: str - a dot notation path to the value.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
-#### setProperties
+#### set_properties
 Sets validation schemas for object properties.
 See [PropertySchema](../property_schema)
 
-> `public` setProperties(value: [PropertySchema](../property_schema)[]): void
+> set_properties(value: List[[PropertySchema](../property_schema)])
 
-- **value**: [PropertySchema](../property_schema)[] - a list of property validation schemas.
+- **value**: List[[PropertySchema](../property_schema)] - a list of property validation schemas.
 
 
-#### withOptionalProperty
+#### with_optional_property
 Adds a validation schema for an optional object property.
 
-> `public` withOptionalProperty(name: string, type?: any, ...rules: [IValidationRule](../ivalidation_rule)[]): [ObjectSchema]()
+> with_optional_property(name: str, typ: Any, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
 
-- **name**: string - a property name.
-- **type?**: any - (optional) a property schema or type.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list of property validation rules.
+- **name**: str - a property name.
+- **typ**: Any - (optional) a property schema or type.
+- **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
 
 
-#### withProperty
+#### with_property
 Adds a validation schema for an object property.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 See [PropertySchema](../property_schema)
 
-> `public` withProperty(schema: [PropertySchema](../property_schema)): [ObjectSchema]()
+> with_property(schema: [PropertySchema](../property_schema)): [ObjectSchema]()
 
 - **schema**: [PropertySchema](../property_schema) - a property validation schema to be added.
 - **returns**: [ObjectSchema]() - this validation schema.
 
 
-#### withRequiredProperty
+#### with_required_property
 Adds a validation schema for a required object property.
 
-> `public` withRequiredProperty(name: string, type?: any, ...rules: [IValidationRule](../ivalidation_rule)[]): [ObjectSchema]()
+> with_required_property(name: str, typ: Any, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
 
-- **name**: string - a property name.
-- **type?**: any - (optional) a property schema or type.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list of property validation rules.
+- **name**: str - a property name.
+- **typ**: Any - (optional) a property schema or type.
+- **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
+
+### Examples
+
+```python
+schema = ObjectSchema(false)
+                    .with_optional_property("id", TypeCode.String)
+                    .with_required_property("name", TypeCode.String)
+
+schema.validate({ id: "1", name: "ABC" })  # Result: no errors
+schema.validate({ name: "ABC" })           # Result: no errors
+schema.validate({ id: 1, name: "ABC" })    # Result: id type mismatch
+schema.validate({ id: 1, __name: "ABC" })  # Result: name is missing, unexpected __name
+schema.validate("ABC")                     # Result: type mismatch
+```

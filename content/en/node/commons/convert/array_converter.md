@@ -2,24 +2,18 @@
 type: docs
 title: "ArrayConverter"
 linkTitle: "ArrayConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Converts arbitrary values into array objects.
+    The ArrayConverter class provides methods to create an array from a set of values.
 ---
 
-**Example:**
+### Description
+The ArrayConverter class provides methods to create an array from a set of values. These values can be in the form of a list,  a single value or a string of comma-delimited values.    
 
-```typescript
-let value1 = ArrayConverter.toArray([1, 2]);		 // Result: [1, 2]
-let value2 = ArrayConverter.toArray(1);			  // Result: [1]
-let value2 = ArrayConverter.listToArray("1,2,3");	// Result: ["1", "2", "3"]
-
-```
-
-### Methods
+### Static methods
 
 #### listToArray
-Converts value into array object with empty array as default.
+Converts a list into array object with empty array as default.
 Strings with comma-delimited values are split into array of strings.
 See [toArray](#toArray)
 
@@ -57,3 +51,16 @@ Single values are converted into arrays with a single element.
 - **value**: any - the value to convert.
 - **returns**: any[] - array object or null when value is null.
 
+### Examples
+
+```typescript
+// List
+let value1 = ArrayConverter.toArray([1, 2]) ;      // Result: [1, 2]
+
+// Single value
+let value2 = ArrayConverter.toArray(1);            // Result: [1]
+
+// String with comma-delimited values
+let value3 = ArrayConverter.listToArray("1,2,3"); // Result: ["1", "2", "3"]
+
+```

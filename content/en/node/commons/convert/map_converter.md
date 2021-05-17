@@ -4,24 +4,16 @@ title: "MapConverter"
 linkTitle: "MapConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Converts arbitrary values into map objects using extended conversion rules:
-
-    - Objects: property names as keys, property values as values
-    
-    - Arrays: element indexes as keys, elements as values
+    The MapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
 ---
 
+### Description
+The MapConverter class allows you to convert arbitrary values into map objects using the following extended conversion rules:
 
-**Example:**
+- Objects: property names as keys, property values as values   
+- Arrays: element indexes as keys, elements as values
 
-```typescript
-let value1 = MapConverted.toNullableMap("ABC"); // Result: null
-let value2 = MapConverted.toNullableMap({ key: 123 }); // Result: { key: 123 }
-let value3 = MapConverted.toNullableMap([1,2,3]); // Result: { "0": 1, "1": 2, "2": 3 }
-
-```
-
-### Methods
+### Static methods
 
 #### toMap
 Converts value into map object or returns empty map when conversion is not possible
@@ -47,3 +39,13 @@ Converts value into map object or returns null when conversion is not possible.
 
 - **value**: any - the value to convert.
 - **returns**: any - map object or null when conversion is not supported.
+
+
+### Examples
+
+```typescript
+let value1 = MapConverted.toNullableMap("ABC"); // Result: null
+let value2 = MapConverted.toNullableMap({ key: 123 }); // Result: { key: 123 }
+let value3 = MapConverted.toNullableMap([1,2,3]); // Result: { "0": 1, "1": 2, "2": 3 }
+
+```

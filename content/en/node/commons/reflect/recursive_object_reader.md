@@ -2,64 +2,70 @@
 type: docs
 title: "RecursiveObjectReader"
 linkTitle: "RecursiveObjectReader"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform property introspection and dynamic reading.
+    Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them recursively using "dot" notation.
 
-    It is similar to [ObjectReader](../object_reader) but reads properties recursively
-    through the entire object graph. Nested property names are defined
-    using dot notation as "object.subobject.property"
 ---
 
-See also [ObjectReader](../object_reader), [PropertyReflector](../property_reflector)
+### Description
 
-### Methods
+The RecursiveObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them recursively using "dot" notation (e.g property.property.method).
 
-#### getProperties
-Get values of all properties in specified object and its subobjects
+
+Important points
+
+- It is similar to [ObjectReader](../object_reader) but reads properties recursively through the entire object graph. 
+- Nested property names are defined using dot notation as "object.subobject.property".
+
+
+### Static methods
+
+#### get_properties
+Gets values of all properties in specified object and its subobjects
 and returns them as a map.
 
 The object can be a user defined object, map or array.
 Returned properties correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
-> `public static` getProperties(obj: any): any
+> `static` get_properties(obj: Any): Any
 
-- **obj**: any - an object to get properties from.
-- **returns**: any - a map, containing the names of the object's properties and their values.
+- **obj**: Any - an object to get properties from.
+- **returns**: Any - a map, containing the names of the object's properties and their values.
 
-#### getProperty
+#### get_property
 Recursively gets value of object or its subobjects property specified by its name.
  
 The object can be a user defined object, map or array.
 The property name correspondently must be object property,
 map key or array index.
 
-> `public static` getProperty(obj: any, name: string): any
+> `static` get_property(obj: Any, name: str): Any
 
-- **obj**: any - an object to read property from.
-- **name**: string - a name of the property to get.
-- **returns**: any - the property value or null if property doesn't exist or introspection failed.
+- **obj**: Any - an object to read property from.
+- **name**: str - a name of the property to get.
+- **returns**: Any - the property value or None if property doesn't exist or introspection failed.
 
-#### getPropertyNames
+#### get_property_names
 Recursively gets names of all properties implemented in specified object and its subobjects.
 
 The object can be a user defined object, map or array.
 Returned property name correspondently are object properties,
 map keys or array indexes.
 
-> `public static` getPropertyNames(obj: any): string[]
+> `static` get_property_names(obj: Any): List[str]
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with property names.
+- **obj**: Any - an objec to introspect.
+- **returns**: List[str] - a list with property names.
 
-#### hasProperty
+#### has_property
 
-> `public static` hasProperty(obj: any, name: string): boolean
+> `static` has_property(obj: Any, name: str): bool
 
-- **obj**: any - an object to introspect. 
-- **name**: string - a name of the property to check.
-- **returns**: boolean - true if the object has the property and false if it doesn't.
+- **obj**: Any - an object to introspect. 
+- **name**: str - a name of the property to check.
+- **returns**: bool - true if the object has the property and false if it doesn't.
 
 
 ### See also

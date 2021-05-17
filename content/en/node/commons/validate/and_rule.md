@@ -2,25 +2,21 @@
 type: docs
 title: "AndRule"
 linkTitle: "AndRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule to combine rules with AND logical operation.
-    When all rules returns no errors, than this rule also returns no errors.
-    When one of the rules return errors, than the rules returns all errors.
+    Validation rule that allows you to check combinations of rules created with AND logical operations.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
 
-See also [IValidationRule](../ivalidation_rule)
+### Description
 
-**Example:** 
-```python
-schema = Schema().with_rule(AndRule(ValueComparisonRule("GTE", 1), ValueComparisonRule("LTE", 10)))
-schema.validate(0)          # Result: 0 must be greater or equal to 1
-schema.validate(5)          # Result: no error
-schema.validate(20)         # Result: 20 must be letter or equal 10
+The AndRule class allows you to validate combinations of rules created with AND logical operations.
 
-```
+Important points
+
+-  When one or more of the combined rules return errors, then this rule returns all the errors that appeared.
+-  When none of the combined rules returns errors, then this rule also returns no errors.
 
 ### Constructors
 Creates a new validation rule and sets its values.
@@ -29,17 +25,17 @@ Creates a new validation rule and sets its values.
 
 - **rules**: [IValidationRule](../ivalidation_rule) - a list of rules to join with AND operator
 
-### Methods
+### Instance methods
 
 #### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: [ValidationResult](../validation_result)[]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
 - **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
 - **value**: Any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
 

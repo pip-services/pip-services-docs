@@ -17,7 +17,7 @@ description: >
 
 ### Methods
 
-#### toMap
+#### to_map
 Converts value into map object or returns empty map when conversion is not possible
 
 > `static` to_map(value: Any): Any

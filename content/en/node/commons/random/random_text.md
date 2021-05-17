@@ -4,20 +4,15 @@ title: "RandomText"
 linkTitle: "RandomText"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Random generator for various text values like names, addresses or phone numbers.
+    Random generator for various text types such as names, addresses or phone numbers.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let value1 = RandomText.name();     // Possible result: "Segio"
-let value2 = RandomText.verb();      // Possible result: "Run"
-let value3 = RandomText.Text(50);    // Possible result: "Run jorge. Red high scream?"
-
-```
+The RandomText class allows you to generate different types of randomt texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
 
 
-### Methods
+### Static methods
 
 #### adjective
 Generates a random adjective.
@@ -112,3 +107,12 @@ Generates a random word from available first names, last names, colors, stuffs, 
 - **min**: number - (optional) a minimum number of words.
 - **max**: number = null - a maximum number of words.
 - **returns**: string - a random text.
+
+### Examples
+
+```typescript
+let value1 = RandomText.name();     // Possible result: "Segio"
+let value2 = RandomText.verb();      // Possible result: "Run"
+let value3 = RandomText.Text(50);    // Possible result: "Run jorge. Red high scream?"
+
+```

@@ -2,23 +2,15 @@
 type: docs
 title: "INamed"
 linkTitle: "INamed"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Generic interface for data objects that can be uniquely identified by an id.
+   Interface for data objects that have human-readable names.
 
-    The type specified in the interface defines the type of id field.
 ---
 
-**Example:**
-```typescript
-export class MyData implements IStringIdentifiable, INamed {
-    public id: string;
-    public name: string;
-    public field1: string;
-    public field2: number;
-    ...
-}
-```
+### Description
+
+The INamed interface is used to define data objects containing a human-readable name.
 
 ### Fields
 
@@ -26,6 +18,13 @@ export class MyData implements IStringIdentifiable, INamed {
 
 #### name
 The object's humand-readable name.
-> **name**: string
+> **name**: str
+
+### Examples
+```python
+class MyData(IIdentifiable, INamed):
+    id = None
+    name = None
+```
 
 </span>

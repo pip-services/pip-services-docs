@@ -5,35 +5,32 @@ linkTitle: "Commands"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains implementation of Command design patterns, which can be used to implement various remote procedure calls (RPCs).
-    RPCs replace unique calls with universal "message transfer" calls, in which the message itself contains the called method's 
-    signature, as well as the parameters to pass for execution. 
-
-
-    When designing calls of methods/commands using the Command design pattern, uniform interfaces can be used, which, in turn, 
-    allow any amount of concrete methods to be called.
-
-
-    Command design patterns can be used for intercepting messages and for various logging implementations. 
-
-
-    These design patterns allow us to create [Commandable Interfaces](icommandable), which are completely universal. If an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then we can implement, with minimal code, a commandable client for this object, using various technologies.
-
-    - [Commandable Interfaces](icommandable) – part of the command design pattern, used to make classes with certain logic, which are capable of receiving and processing commands in this universal form. 
-    
-    
-    - [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions, and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in  aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, for example: logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. When using interceptors, a command can pass through an execution chain, consisting of interceptors, which can: 
-        - simply make some note of the command, notify, log, get metrics, or do some other passive task;
-        - or intercept the command completely and, for example, return a previous record of the call from the cache. A command’s return value can also be intercepted in a similar manner: the result can be written to cache, so that the next call doesn’t have to be made. 
-
-
-    - [Intercepted commands](intercepted_command) are used as pattern decorators in the command design pattern. They are represented as regular commands, but run their own logic before calling the actual command. 
+    This package contains interfaces and classes that can be used to implement various remote procedure calls (RPCs). In it, RPCs replace unique calls with universal "message transfer" calls, in which the message itself contains the called method's signature, as well as the parameters to pass for its execution.       
+       
 ---
----
+
+**Important points**    
+
+
+This package allows you to create [Commandable Interfaces](icommandable), which are completely universal. Thus, for example, if an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then you can implement a commandable client for this object, using various technologies and with minimal code.
 
 <div class="module-body"> 
+<br/>
+   
+    
+The package main components are:    
+    
+- [Commandable Interfaces](icommandable) – used to make classes with a certain logic and, which are capable of receiving and processing commands in this universal form.  
+- [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions, and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, such as logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. 
+   Moreover, when using interceptors, a command can pass through an execution chain, consisting of interceptors, which can: 
+    - simply make some note of the command, notify, log, get metrics, or do some other passive task;
+    - intercept the command completely and, for example, return a previous record of the call from the cache. 
+    - intercept a command’s return value and, for example, cache the result, so that the next call doesn’t have to be made. 
+- [Intercepted commands](intercepted_command) are used as pattern decorators that allow behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. They are represented as regular commands, but run their own logic before calling the actual command. 
+
+Typical uses of this package would be intercepting messages and various logging implementations.   
+<br/>
+
 
 ### Interfaces
 

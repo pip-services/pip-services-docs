@@ -2,27 +2,30 @@
 type: docs
 title: "FixedRateTimer"
 linkTitle: "FixedRateTimer"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Timer that is triggered in equal time intervals.
 
-    It has summetric cross-language implementation 
-    and is often used by Pip.Services toolkit to
-    perform periodic processing and cleanup in microservices.
 ---
 
 **Implements:** [IClosable](../iclosable)
 
-See also [INotifiable](../inotifiable)
+### Description
+
+The FixerRateTimer class represents a timer that is triggered in equal time intervals.
+
+Important points
+
+- It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
 Creates new instance of the timer and sets its values.
 
-> `public` constructor(taskOrCallback: any = null, interval: number = null, delay: number = null): [FixedRateTimer]()
+> FixedRateTimer(task_or_object: Any = None, interval: int = None, delay: int = None)
 
-- **taskOrCallback**: any = null - (optional) a Notifiable object or callback function to call when timer is triggered.
-- **interval**: number = null - (optional) an interval to trigger timer in milliseconds.
-- **delay**: number = null - (optional) a delay before the first triggering in milliseconds.
+- **task_or_object**: Any - (optional) a Notifiable object or callback function to call when timer is triggered.
+- **interval**: int - (optional) an interval to trigger timer in milliseconds.
+- **delay**: int - (optional) a delay before the first triggering in milliseconds.
 
 ### Methods
 
@@ -32,80 +35,80 @@ Closes the timer.
 This is required by [ICloseable](../icloseable) interface,
 but besides that it is identical to [stop()](#stop).
 
-> `public` close(correlationId: string): Promise\<void\>
+> close(correlation_id: Optional[str])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 
-#### getCallback
+#### get_callback
 Gets the callback function that is called when this timer is triggered.
 
-> `public` getCallback(): () => void
+> get_callback(): Callable
 
-- **returns**: function - the callback function or null if it is not set. 
+- **returns**: Callable - the callback function or None if it is not set. 
 
 
-#### getDelay
+#### get_delay
 Gets initial delay before the timer is triggered for the first time.
 
-> `public` getDelay(): number
+> getDelay(): int
 
-- **returns**: number - the delay in milliseconds.
+- **returns**: int - the delay in milliseconds.
 
-#### getInterval
+#### get_interval
 Gets periodic timer triggering interval.
 
-> `public` getInterval(): number
+> get_interval(): int
 
-- **returns**: number - the interval in milliseconds
+- **returns**: int - the interval in milliseconds
 
 
-#### getTask
+#### get_task
 Gets the INotifiable object that receives notifications from this timer.
 
-> `public` getTask(): [INotifiable](../inotifiable)
+> get_task(): [INotifiable](../inotifiable)
 
-- **returns**: [INotifiable](../inotifiable) - the INotifiable object or null if it is not set.
+- **returns**: [INotifiable](../inotifiable) - the INotifiable object or None if it is not set.
 
 
-#### setTask
+#### set_task
 Sets a new INotifiable object to receive notifications from this timer.
 
-> `public` setTask(value: [INotifiable](../inotifiable)): void
+> set_task(value: [INotifiable](../inotifiable))
 
 - **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
 
-#### isStarted
+#### is_started
 Checks if the timer is started.
 
-> `public` isStarted(): boolean
+> is_started(): bool
 
-- **returns**: boolean - true if the timer is started and false if it is stopped.
+- **returns**: bool - true if the timer is started and false if it is stopped.
 
-#### setCallback
+#### set_callback
 Sets the callback function that is called when this timer is triggered.
 
-> `public` setCallback(value: () => void)
+> set_callback(value: Callable)
 
-- **value**: function - the callback function to be called.
+- **value**: Callable - the callback function to be called.
 
-#### setDelay
+#### set_delay
 Sets initial delay before the timer is triggered for the first time.
 
-> `public` setDelay(value: number): void
+> set_delay(value: int)
 
-- **value**: number - a delay in milliseconds. 
+- **value**: int - a delay in milliseconds. 
 
-#### setInterval
+#### set_interval
 Sets periodic timer triggering interval.
 
-> `public` setInterval(value: number): void
+> set_interval(value: int)
 
-- **value**: number - an interval in milliseconds.
+- **value**: int - an interval in milliseconds.
 
-#### setTask
+#### set_task
 Sets a new [INotifiable](../inotifiable) object to receive notifications from this timer.
 
-> `public` setTask(value: [INotifiable](../inotifiable)): void
+> set_task(value: [INotifiable](../inotifiable))
 
 - **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
 
@@ -113,15 +116,15 @@ Sets a new [INotifiable](../inotifiable) object to receive notifications from th
 Starts the timer.
 
 Initially the timer is triggered after delay.
-After that it is triggered after interval until it is stopped.
+After that it, is triggered after interval until it is stopped.
 
-> `public` start(): void
+> start()
 
 
 #### stop
 Stops the timer.
 
-> `public` stop(): void
+> stop()
 
 ### See also
 - #### [INotifiable](../inotifiable)

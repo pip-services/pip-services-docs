@@ -1,78 +1,37 @@
 ---
 type: docs
-title: "TokenizedDataPage<T>"
-linkTitle: "TokenizedDataPage<T>"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+title: "TokenizedDataPage"
+linkTitle: "TokenizedDataPage"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Data transfer object that is used to pass results of paginated queries.
-    It contains items of retrieved page and optional total number of items.
-
-
-    Most often this object type is used to send responses to paginated queries.
-    Pagination parameters are defined by [TokenizedPagingParams](../tokenized_paging_params) object.
-    The *token* parameter in the TokenizedPagingParams there means where to start the searxh.
-    The *takes* parameter sets number of items to return in the page.
-    And the optional *total* parameter tells to return total number of items in the query.
-
-
-    The data page returns a token that shall be passed to the next search as a starting point.
-
-
-    Remember: not all implementations support the *total* parameter
-    because its generation may lead to severe performance implications.
-        Data transfer object that is used to pass results of paginated queries.
-    It contains items of retrieved page and optional total number of items.
-
-
-    Most often this object type is used to send responses to paginated queries.
-    Pagination parameters are defined by [TokenizedPagingParams](../tokenized_paging_params) object.
-    The *token* parameter in the TokenizedPagingParams there means where to start the searxh.
-    The *takes* parameter sets number of items to return in the page.
-    And the optional *total* parameter tells to return total number of items in the query.
-
-
-    The data page returns a token that shall be passed to the next search as a starting point.
-
-
-    Remember: not all implementations support the *total* parameter
-    because its generation may lead to severe performance implications.
-        Data transfer object that is used to pass results of paginated queries.
-    It contains items of retrieved page and optional total number of items.
-
-
-    Most often this object type is used to send responses to paginated queries.
-    Pagination parameters are defined by [TokenizedPagingParams](../tokenized_paging_params) object.
-    The *token* parameter in the TokenizedPagingParams there means where to start the searxh.
-    The *takes* parameter sets number of items to return in the page.
-    And the optional *total* parameter tells to return total number of items in the query.
-
-
-    The data page returns a token that shall be passed to the next search as a starting point.
-
-
-    Remember: not all implementations support the *total* parameter
-    because its generation may lead to severe performance implications.
+    Data transfer object that is used to pass the results of paginated queries.
+           
 ---
 
-See also [PagingParams](../paging_params)
+### Description
 
-**Example:**
-```typescript
-page := await myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    new TokenizedPagingParams(null, 100, true)
-);
-```
+The TokenizedDataPageData allows you to create a transfer object that is used to pass the results of paginated queries. 
+
+Important points
+
+- This object contains the items of the retrieved page and the total number of items (optional).
+- Additionally, the data page returns a token that has to be passed to the next search as a starting point.
+- Most often, this object type is used to send responses to paginated queries.
+- Pagination parameters are defined by a [TokenizedPagingParams](../tokenized_paging_params) object.
+     - The *token* parameter in the TokenizedPagingParams defines where to start the search.
+     - The *takes* parameter sets number of items to be returned in the page.
+- The optional *total* parameter tells to return the total number of items in the query.
+- However, not all implementations support the *total* parameter, because its generation may lead to severe performance implications.
+
 
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> `public` constructor(data: T[] = null, token: string = null, total: number = null): [TokenizedDataPage<T>]()
+> TokenizedDataPage(data: List[Any], token: str = None, total: int = None)
 
-- **data**: T[] = null - a list of items from the retrieved page.
-- **token**: string = null - (optional) a token to define astarting point for the next search.
-- **total**: number = null - (optional) a total number of objects in the result.
+- **data**: List[Any] - a list of items from the retrieved page.
+- **token**: str - (optional) a token to define astarting point for the next search.
+- **total**: int - (optional) a total number of objects in the result.
 
 
 ### Fields
@@ -81,18 +40,26 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> `public` **data**: T[]
+> **data**: List[Any]
 
 #### token
 The starting point for the next search.
-> `public` **token**: string
+> **token**: str
 
 #### total
 The total amount of items in a request.
-> `public` **total**: number
+> **total**: int
 
 </span>
 
+### Examples
+```python
+page = my_data_client.get_data_by_filter(
+    "123",
+    FilterParams.from_tuples("completed", True),
+    TokenizedPagingParams(None, 100, True)
+)
+```
 
 ### See also
 - #### [PagingParams](../paging_params)

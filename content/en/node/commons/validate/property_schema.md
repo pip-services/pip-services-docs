@@ -2,82 +2,82 @@
 type: docs
 title: "PropertySchema"
 linkTitle: "PropertySchema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Schema to validate object properties
 ---
 
-**Extends:** [Schema](../schema)
+**Implements:** [Schema](../schema)
 
-See also [ObjectSchema](../object_schema)
+### Description
 
-**Example:**
-
-```typescript
-let schema = new ObjectSchema()
-    .withProperty(new PropertySchema("id", TypeCode.String));
-    
-schema.validate({ id: "1", name: "ABC" });       // Result: no errors
-schema.validate({ name: "ABC" });                // Result: no errors
-schema.validate({ id: 1, name: "ABC" });         // Result: id type mismatch
-
-```
+The PropertySchema class allows you to create schemas to validate object properties.
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
-> `public` constructor(name?: string, type?: any, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[]): [PropertySchema]()
+> PropertySchema(name: str, typ: Any, required: bool, rules: List[[IValidationRule](../ivalidation_rule)])
 
-- **name?**: string - (optional) a property name
-- **type?**: any - (optional) a property type
-- **required?**: boolean -  (optional) true to always require non-null values.
-- **rules?**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **name**: str - (optional) a property name
+- **typ**: Any - (optional) a property type
+- **required**: bool -  (optional) true to always require non-None values.
+- **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
-### Methods
+### Instance methods
 
-#### getName
+#### get_name
 Gets the property name.
 
-> `public` getName(): string
+> get_name(): str
 
-- **returns**: string - the property name.
+- **returns**: str - the property name.
 
 
 #### getType
 Gets the property type.
 
-> `public` getType(): any
+> get_type(): Any
 
-- **returns**: any - the property type.
+- **returns**: Any - the property type.
 
 
-#### performValidation
+#### perform_validation
 Validates a given value against the schema and configured validation rules.
 
-> `public` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: str - a dot notation path to the value.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
-#### setName
+#### set_name
 Sets the property name.
 
-> `public` setName(value: string): void
+> set_name(value: str)
 
-- **value**: string - a new property name.
+- **value**: str - a new property name.
 
 
-#### setType
+#### set_type
 Sets a new property type.
 The type can be defined as type, type name or [TypeCode](../convert/type_code)
 
-> `public` setType(value: any): void
+> set_type(value: Any)
 
-- **value**: string - a new property type.
+- **value**: str - a new property type.
 
+### Examples
+
+```python
+schema = ObjectSchema().with_property(PropertySchema("id", TypeCode.String))
+
+schema.validate({ id: "1", name: "ABC" })       # Result: no errors
+schema.validate({ name: "ABC" })                # Result: no errors
+schema.validate({ id: 1, name: "ABC" })         # Result: id type mismatch
+
+```
 
 ### See also
 - #### [ObjectSchema](../object_schema)

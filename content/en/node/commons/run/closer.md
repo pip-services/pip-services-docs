@@ -2,36 +2,37 @@
 type: docs
 title: "Closer"
 linkTitle: "Closer"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that cleans stored object state.
+    Helper class that allows you to close one or multiple components at the same time.
 ---
 
-See also [IClosable](../iclosable)
+### Description
 
+The Closer class allows you to close one or multiple components at the same time.
 
-### Methods
+### Static methods
 
 #### close
 Closes multiple components.
 
 To be closed components must implement [IClosable](../iclosable) interface.
-If they don't the call to this method has no effect.
+If they don't, then a call to this method has no effect.
 
-> `public static` close(correlationId: string, components: any[]): Promise\<void\>
+> `static` close(correlation_id: Optional[str], components: List[Any])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - the list of components that are to be closed.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **components**: List[Any] - the list of components that are to be closed.
 
-#### closeOne
-Closes specific component.
+#### close_one
+Closes a specific component.
 To be closed components must implement [IClosable](../iclosable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` closeOne(correlationId: string, component: any): Promise\<void\>
+> `static` close_one(correlation_id: Optional[str], component: Any)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be closed.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **component**: Any - the component that is to be closed.
 
 ### See also
 - #### [IClosable](../iclosable)

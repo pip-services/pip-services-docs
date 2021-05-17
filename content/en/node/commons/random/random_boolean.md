@@ -7,16 +7,11 @@ description: >
     Random generator for boolean values.
 ---
 
-**Example:**
+### Description
 
-```python
-value1 = RandomBoolean.next_boolean()   # Possible result: true
-value2 = RandomBoolean.chance(1,3)      # Possible result: false
+The RandomBoolean class allows you to generate random boolean values.
 
-```
-
-
-### Methods
+### Static methods
 
 #### chance
 Calculates "chance" out of "max chances".
@@ -34,3 +29,11 @@ Generates a random boolean value.
 > `public static` nextBoolean(): boolean
 
 - **returns**: boolean - a random boolean.
+
+### Examples
+
+```typescript
+let value1 = RandomBoolean.nextBoolean()   // Possible result: True
+let value2 = RandomBoolean.chance(1,3)     // Possible result: False
+
+```

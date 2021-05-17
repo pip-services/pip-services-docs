@@ -2,32 +2,34 @@
 type: docs
 title: "ICloneable"
 linkTitle: "ICloneable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Interface for data objects that contain their latest change time.
+    Interface to create objects with binary clones.
 ---
 
-**Example:**
-```typescript
-export class MyClass implements IMyClass, ICloneable {
-  constructor() { };
- 
-  public clone(): any {
-      var cloneObj = new (<any>this.constructor());
-             
-      // Copy every attribute from this to cloneObj here.
-      ...
-             
-      return cloneObj;
-  }
-}
-```
+### Description
 
-### Methods
+The ICloneable interface allows you to create objects with binary clones. 
+
+### Instance methods
 
 #### clone
 Creates a binary clone of this object.
 
-> clone(): any
+> clone(): Any
 
-- **returns**: any - a clone of this object.
+- **returns**: Any - a clone of this object.
+
+### Examples
+
+```python
+class MyClass(IMyClass, ICloneable):
+    def __init__():
+        ...
+        pass
+
+    def clone(self):
+        clone_obj = self.__init__()
+        
+        return clone_obj
+```

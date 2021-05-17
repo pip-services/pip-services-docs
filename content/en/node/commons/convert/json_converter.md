@@ -4,19 +4,14 @@ title: "JsonConverter"
 linkTitle: "JsonConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Converts arbitrary values from and to JSON (JavaScript Object Notation) strings.
+    The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 ---
 
+### Description
 
-**Example:**
+The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 
-```typescript
-let value1 = JsonConverter.fromJson("{\"key\":123}"); // Result: { key: 123 }
-let value2 = JsonConverter.toMap({ key: 123}); // Result: "{\"key\":123}"
-
-```
-
-### Methods
+### Static methods
 
 #### fromJson
 Converts JSON string into a value of type specified by a TypeCode.
@@ -62,3 +57,12 @@ See [MapConverter.toNullableMap](../map_converter/#tonullablemap)
 
 - **value**: string - the JSON string to convert.
 - **returns**: any - Map object value or null when conversion is not supported.
+
+
+### Examples
+
+```typescript
+let value1 = JsonConverter.fromJson("{\"key\":123}"); // Result: { key: 123 }
+let value2 = JsonConverter.toMap({ key: 123}); // Result: "{\"key\":123}"
+
+```

@@ -7,17 +7,11 @@ description: >
     Random generator for integer values.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let value1 = RandomInteger.nextInteger(5, 10);     // Possible result: 7
-let value2 = RandomInteger.nextInteger(10);        // Possible result: 3
-let value3 = RandomInteger.updateInteger(10, 3);   // Possible result: 9
+The RandomInteger class allows you to generate random integer values.
 
-```
-
-
-### Methods
+### Static methods
 
 #### nextInteger
 Generates a integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
@@ -37,3 +31,12 @@ Updates (drifts) a integer value within specified range defined
 - **value**: number - a integer value to drift.
 - **range**: number = null - (optional) a range. Default: 10% of the value
 - **returns**: number - TODO add description.
+
+### Examples
+
+```typescript
+let value1 = RandomInteger.nextInteger(5, 10);     // Possible result: 7
+let value2 = RandomInteger.nextInteger(10);        // Possible result: 3
+let value3 = RandomInteger.updateInteger(10, 3);   // Possible result: 9
+
+```

@@ -4,51 +4,22 @@ title: "IReferences"
 linkTitle: "IReferences"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Interface for a map that holds component references and passes them to components
-    to establish dependencies with each other.
+    Interface to manage references stored in a map.
 
-
-    Together with [IReferenceable](../ireferenceable) and [IUnreferenceable](../iunreferenceable) interfaces it implements
-    a Locator pattern that is used by PipServices toolkit for Inversion of Control
-    to assign external dependencies to components. 
- 
-
-    The IReferences object is a simple map, where keys are locators
-    and values are component references. It allows to add, remove and find components
-    by their locators. Locators can be any values like integers, strings or component types.
-    But most often PipServices toolkit uses [Descriptor](../descriptor) as locators that match
-    by 5 fields: group, type, kind, name and version.
 ---
 
-See also [Descriptor](../descriptor), [References](../references)
+### Description
 
-**Example:**
+The IReferences interface can be used to manage references stored in a map, and which can be passed to other components to establish dependencies between them.
 
-```typescript
-export class MyController implements IReferenceable {
-    public _persistence: IMyPersistence;
-    ...    
-    public setReferences(references: IReferences): void {
-        this._persistence = references.getOneRequired<IMyPersistence>(
-            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
-        );
-    }
-    ...
-}
-     
-let persistence = new MyMongoDbPersistence();
-    
-let controller = new MyController();
-     
-let references = References.fromTuples(
-    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-);
-controller.setReferences(references);
+Generally speaking, an IReferences object is a simple map, where keys are locators and values are component references. Thus, it allows you to add, remove and find components    by their locators. Locators can be any values like integers, strings or component types. 
 
-```
+Important points
 
-### Methods
+- Together with [IReferenceable](../ireferenceable) and [IUnreferenceable](../iunreferenceable) interfaces it implements a Locator pattern that is used by PipServices toolkit for Inversion of Control to assign external dependencies to components. 
+- Generally, the PipServices toolkit uses [Descriptor](../descriptor) as locators that match according to the following fields: group, type, kind, name and version.
+ 
+### Instance methods
 
 #### find
 Gets all component references that match specified locator.  
@@ -138,6 +109,31 @@ Removes all component references that match the specified locator.
 - **locator**: any - the locator to remove references by.
 - **returns**: any[] - a list, containing all removed references.
 
+### Examples
+
+```typescript
+export class MyController implements IReferenceable {
+    public _persistence: IMyPersistence;
+    ...    
+    public setReferences(references: IReferences): void {
+        this._persistence = references.getOneRequired<IMyPersistence>(
+            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        );
+    }
+    ...
+}
+     
+let persistence = new MyMongoDbPersistence();
+    
+let controller = new MyController();
+     
+let references = References.fromTuples(
+    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+);
+controller.setReferences(references);
+
+```
 
 
 ### See also

@@ -7,16 +7,11 @@ description: >
     Random generator for string values.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let value1 = RandomString.pickChar("ABC");     // Possible result: "C"
-let value2 = RandomString.pick(["A","B","C"]); // Possible result: "gBW"
+The class RandomString allows you to generate random strings.
 
-```
-
-
-### Methods
+### Static methods
 
 #### pickChar
 Picks a random character from a string.
@@ -50,3 +45,11 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 - **minLength**: number - (optional) minimum string length.
 - **maxLength**: number - maximum string length.
 - **returns**: string - a random string.
+
+### Examples
+
+```typescript
+let value1 = RandomString.pickChar("ABC");     // Possible result: "C"
+let value2 = RandomString.pick(["A","B","C"]); // Possible result: "gBW"
+
+```

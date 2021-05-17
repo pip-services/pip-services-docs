@@ -9,10 +9,14 @@ description: >
 
 **Extends:** [ApplicationException](../application_exception)
 
+### Description
+
+The InvocationException class is used to manage errors returned by remote services or by the network during call attempts.
+
 ### Constructors
 Creates an error instance and assigns its values.
 
-> `public` constructor(correlation_id: string = null, code: string = null, message: string = null): [BadRequestException]()
+> `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
 
 - **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.
 - **code**: string = null - (optional) a unique error code. Default: "UNKNOWN"

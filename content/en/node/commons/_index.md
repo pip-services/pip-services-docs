@@ -4,37 +4,35 @@ title: "Commons"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 no_list: true
 description: > 
-    Portable Abstractions and Patterns for Node.js  
-
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    It provides a set of basic patterns used in microservices or backend services.
-    Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
-    all languages supported by the toolkit to facilitate symmetric implementation.
+    It provides a set of tools used in microservices or backend services. It is designed to facilitate
+    symmetric implementation accross different programming languages.
+
 ---
 
 
-### Modules
+### Packages
 
 The module contains the following packages:
 
-* [**Commands**](commands) - commanding and eventing patterns
-* [**Config**](config) - configuration pattern
+* [**Commands**](commands) - commands and events 
+* [**Config**](config) - component configuration
 * [**Convert**](convert) - portable value converters
 * [**Data**](data) - data patterns
 * [**Errors**](errors) - application errors
 * [**Random**](random) - random data generators
-* [**Refer**](refer) - locator inversion of control (IoC) pattern
+* [**Refer**](refer) - component dependencies (Based on the inversion of control (IoC) pattern)
 * [**Reflect**](reflect) - portable reflection utilities
-* [**Run**](run) - component life-cycle management patterns
-* [**Validate**](validate) - validation patterns
+* [**Run**](run) - component life-cycle management
+* [**Validate**](validate) - validation rules
 
 
 
-## Use
+### Use
 
 Install the NPM package as
 ```bash
-npm install pip-services3-commons-nodex --save
+npm install pip-services3-commons-node --save
 ```
 
 Then you are ready to start using the Pip.Services patterns to augment your backend code.
@@ -43,12 +41,12 @@ For instance, here is how you can implement a component, that receives configura
 can be opened and closed using the patterns from this module.
 
 ```typescript
-import { IConfigurable } from 'pip-services3-commons-nodex';
-import { ConfigParams } from 'pip-services3-commons-nodex';
-import { IReferenceable } from 'pip-services3-commons-nodex';
-import { IReferences } from 'pip-services3-commons-nodex';
-import { Descriptor } from 'pip-services3-commons-nodex';
-import { IOpenable } from 'pip-services3-commons-nodex';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IReferenceable } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
+import { IOpenable } from 'pip-services3-commons-node';
 
 export class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
     private _param1: string = "ABC";
@@ -89,9 +87,9 @@ export class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
 Then here is how the component can be used in the code
 
 ```typescript
-import { ConfigParams } from 'pip-services3-commons-nodex';
-import { References } from 'pip-services3-commons-nodex';
-import { Descriptor } from 'pip-services3-commons-nodex';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { References } from 'pip-services3-commons-node';
+import { Descriptor } from 'pip-services3-commons-node';
 
 let myComponentA = new MyComponentA();
 
@@ -112,44 +110,3 @@ myComponentA.open("123", (err) => {
    ...
 });
 ```
-
-## Develop
-
-For development you shall install the following prerequisites:
-* Node.js 8+
-* Visual Studio Code or another IDE of your choice
-* Docker
-* Typescript
-
-Install dependencies:
-```bash
-npm install
-```
-
-Compile the code:
-```bash
-tsc
-```
-
-Run automated tests:
-```bash
-npm test
-```
-
-Generate API documentation:
-```bash
-./docgen.ps1
-```
-
-Before committing changes run dockerized build and test as:
-```bash
-./build.ps1
-./test.ps1
-./clear.ps1
-```
-
-## Contacts
-
-The module is created and maintained by **Sergey Seroukhov**.
-
-The documentation is written by **Egor Nuzhnykh**, **Alexey Dvoykin**, **Mark Makarychev**.

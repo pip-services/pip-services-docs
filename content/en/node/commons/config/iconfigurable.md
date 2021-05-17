@@ -4,32 +4,22 @@ title: "IConfigurable"
 linkTitle: "IConfigurable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    An interface to set configuration parameters to an object. 
+    An interface used to set configuration parameters to an object. 
 
-
-    It can be added to any existing class by implementing a single **configure()** method.
-
-
-    If you need to emphasis the fact that **configure()** method can be called multiple times
-    to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.
 ---
 See also [ConfigParams](../config_params)
 
-**Example:**
+### Description
 
-```typescript
-export class MyClass implements IConfigurable {
-    private _myParam: string = "default value";
-         
-    public configure(config: ConfigParams): void  {
-        this._myParam = config.getAsStringWithDefault("options.param", myParam);
-        ...
-    }
-}
+IConfigurable is an interface used to set configuration parameters. It can be implemented by any class that needs to define configuration parameters, such as access control credentials. 
 
-```
+Important points:   
 
-### Methods
+- A class that implements this interface needs to implement a single **configure()** method.  
+- If you need to emphasize the fact that **configure()** method can be called multiple times
+    to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.  
+
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -38,6 +28,19 @@ Configures component by passing configuration parameters.
 
 - **config**: [ConfigParams](../config_params) - configuration parameters to be set.
 
+### Examples
 
+```typescript
+export class MyClass implements IConfigurable {
+    private _myParam: string = "default value";
+
+    // Implement configure
+    public configure(config: ConfigParams): void  {
+        this._myParam = config.getAsStringWithDefault("options.param", myParam);
+        ...
+    }
+}
+
+```
 ### See also
 - #### [ConfigParams](../config_params)

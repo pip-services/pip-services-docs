@@ -2,22 +2,20 @@
 type: docs
 title: "RandomDateTime"
 linkTitle: "RandomDateTime"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-nodex"
 description: >
     Random generator for Date time values.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let value1 = RandomDateTime.nextDate(new Date(2010,0,1));    // Possible result: 2008-01-03
-let value2 = RandomDateTime.nextDateTime(new Date(2017,0.1));// Possible result: 2007-03-11 11:20:32
-let value3 = RandomDateTime.updateDateTime(new Date(2010,1,2));// Possible result: 2010-02-05 11:33:23
+The RandomDateTime class allows you to generate random dates.
 
-```
+Important points:
 
+- Month must be in 1..12 format.
 
-### Methods
+### Static methods
 
 #### nextDate
 Generates a random Date in the range ['minYear', 'maxYear'].
@@ -46,4 +44,13 @@ Updates (drifts) a Date value within specified range defined
 
 - **value**: Date - a Date value to drift.
 - **range**: number = null - (optional) a range in milliseconds. Default: 10 days
-- **returns**: Date - TODO add description
+- **returns**: Date - an updated DateTime
+
+### Examples
+
+```typescript
+let value1 = RandomDateTime.nextDate(new Date(2010,0,1));    // Possible result: 2008-01-03
+let value2 = RandomDateTime.nextDateTime(new Date(2017,0.1));// Possible result: 2007-03-11 11:20:32
+let value3 = RandomDateTime.updateDateTime(new Date(2010,1,2));// Possible result: 2010-02-05 11:33:23
+
+```

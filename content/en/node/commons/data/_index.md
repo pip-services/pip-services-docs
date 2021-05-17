@@ -3,14 +3,9 @@ type: docs
 title: "Data"
 linkTitle: "Data"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Abstract, portable data types. For example – anytype, anyvalues, anyarrays, anymaps, stringmaps 
-    (on which many serializable objects are based on – configmap, filtermaps, connectionparams – all 
-    extend stringvaluemap). Includes standard design patterns for working with data (data paging, 
-    filtering, GUIDs). 
+    This package contains a set of abstract, portable data types. Some examples are anytype, anyvalues, anyarrays, anymaps, and stringmaps. Many serializable classes are based on these data types. For example, the classes configmap, filtermaps and  connection parameters, which extend stringvaluemap. The package also includes several classes for working with data (E.g. data paging, filtering, GUIDs). 
 ---
 ---
 
@@ -83,8 +78,8 @@ ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
 #### [MultiString](multi_string)
 An object that contains string translations for multiple languages.
 Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
-When translation for specified language does not exists it defaults to English ('en').
-When English does not exists it falls back to the first defined language.
+When a translation for specified language does not exist it defaults to English ('en').
+When English does not exist it falls back to the first defined language.
 
 #### [PagingParams](paging_params)
 Data transfer object to pass paging parameters for queries.
@@ -106,7 +101,7 @@ Defines a field name and order used to sort query results.
 
 
 #### [SortParams](sort_params)
-Defines a field name and order used to sort query results.
+Defines a list of field names used to sort query results.
 
 #### [StringValueMap](string_value_map)
 Cross-language implementation of a map (dictionary) where all keys and values are strings.
@@ -122,13 +117,13 @@ like "This text has #hash_tag that can be used for search."
 
 #### [TokenizedDataPage](tokenized_data_page)
 Data transfer object that is used to pass results of paginated queries.
-It contains items of retrieved page and optional total number of items.
+It contains items of a retrieved page and total number of items (optional ).
 Most often this object type is used to send responses to paginated queries.
 
 #### [TokenizedPagingParams](tokenized_paging_params)
 Data transfer object to pass tokenized paging parameters for queries.
 It can be used for complex paging scenarios, like paging across multiple databases
 where the previous state is encoded in a token. The token is usually retrieved from
-the previous response. The initial request shall go with token == *null*
+the previous response. The initial request shall go with token == *None*
 
 </div>

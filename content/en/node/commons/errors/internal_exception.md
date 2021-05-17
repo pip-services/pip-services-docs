@@ -9,12 +9,16 @@ description: >
 
 **Extends:** [ApplicationException](../application_exception)
 
+### Description
+
+The InternalException class is used to manage errors caused by programming mistakes.
+
 ### Constructors
 Creates an error instance and assigns its values.
 
-> `public` constructor(correlation_id: string = null, code: string = null, message: string = null): [BadRequestException]()
+> InternalException(correlation_id: Optional[str] = None, code: str = None, message: str = None)
 
-- **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.
-- **code**: string = null - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: string = null - (optional) a human-readable description of the error.
+- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
+- **code**: str - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: str - (optional) a human-readable description of the error.
 

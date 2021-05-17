@@ -17,7 +17,7 @@ Important points:
 
 ### Static methods
 
-#### nextDate
+#### next_date
 Generates a random Date in the range ['minYear', 'maxYear'].
 This method generate dates without time (or time set to 00:00:00)
 

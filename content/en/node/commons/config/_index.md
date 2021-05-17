@@ -5,23 +5,26 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains the implementation of the config design pattern. The [configurable interface](iconfigurable) 
-    contains just one method - "configure", which takes [ConfigParams](config_params) as a parameter (extends 
-    [StringValueMap](../data/string_value_map) class). If any object needs to be configurable, we implement this interface 
-    and parse the ConfigParams that the method received.  
+    A package containing  a set of classes and interfaces that allows you to add configurations to components.
 ---
 ---
 
 <div class="module-body"> 
 
+
+### Description
+The config package contains a set of classes and interfaces that allows you to add configurations to components. These configurations can contain different sets of configuration paramters, which can be used to define things such as access control credentials.     
+
+
+<br>
+
 ### Interfaces
+
 
 #### [IConfigurable](iconfigurable)
 An interface to set configuration parameters to an object. 
 It can be added to any existing class by implementing a single **configure()** method.
-If you need to emphasis the fact that **configure()** method can be called multiple times
+If you need to emphasise the fact that **configure()** method can be called multiple times
 to change object configuration in runtime, use [IReconfigurable](ireconfigurable) interface instead.
 
 #### [IReconfigurable](ireconfigurable)

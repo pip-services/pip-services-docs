@@ -5,15 +5,13 @@ linkTitle: "Convert"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
+   
+    This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
     found in typical programming language, due to the fact that they support rare conversions between 
     various data types (such as integer to timespan, timespan to string, and so on).
 
-
-    These converters are necessary, due to the fact that data in enterprise systems is represented in 
-    various forms and conversion is often necessary – at times in very difficult combinations.  
+    These converters are useful due to the fact that data in enterprise systems is represented in 
+    various forms, requiring frequent conversion and at times in very difficult combinations.  
 ---
 ---
 

@@ -4,30 +4,21 @@ title: "StringConverter"
 linkTitle: "StringConverter"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Converts arbitrary values into strings using extended conversion rules:
+    The StringConverter class allows you to convert arbitrary values into strings.
 
-    - Numbers: are converted with '.' as decimal point
-
-    - DateTime: using ISO format
-
-    - Boolean: "true" for true and "false" for false
-
-    - Arrays: as comma-separated list
-    
-    - Other objects: using *toString()* method
 ---
 
+### Description
 
-**Example:**
+ The StringConverter class allows you to convert arbitrary values into strings using the following extended conversion rules:
 
-```typescript
-let value1 = StringConverter.ToString(123.456); // Result: "123.456"
-let value2 = StringConverter.ToString(true); // Result: "true"
-let value3 = StringConverter.ToString(new Date(2018,0,1)); // Result: "2018-01-01T00:00:00.00"
-let value4 = StringConverter.ToString([1,2,3]); // Result: "1,2,3"
-```
+- Numbers: are converted with '.' as decimal point
+- DateTime: using ISO format
+- Boolean: "true" for true and "false" for false
+- Arrays: as comma-separated list  
+- Other objects: using *toString()* method
 
-### Methods
+### Static methods
 
 #### toNullableString
 Converts value into string or returns null when value is null.
@@ -53,3 +44,13 @@ Converts value into string or returns default when value is null.
 - **value**: any - the value to convert.
 - **defaultValue**: string - the default value.
 - **returns**: string - string value or default when value is null.
+
+
+### Examples
+
+```typescript
+let value1 = StringConverter.ToString(123.456); // Result: "123.456"
+let value2 = StringConverter.ToString(true); // Result: "true"
+let value3 = StringConverter.ToString(new Date(2018,0,1)); // Result: "2018-01-01T00:00:00.00"
+let value4 = StringConverter.ToString([1,2,3]); // Result: "1,2,3"
+```

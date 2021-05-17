@@ -3,16 +3,11 @@ type: docs
 title: "Reflect"
 linkTitle: "Reflect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
 
-    Contains classes for data reflection. Reflects objects into parameters, methods. 
-    Most programming languages contain reflections, but they are all implemented 
-    differently. In the PipService framework, dynamic data types are often used. So as 
-    to not rewrite these dynamic data types differently for each language, 
-    this cross-language reflection package was written. All dynamic data types that are 
-    built on top of this package are portable from one language to another.  
+    The Reflect package contains classes that can be used to examine the properties, methods and type of a class. In addition, it can be used to dynamically set the values of a property and create objects of a specific type.
+
 ---
 ---
 

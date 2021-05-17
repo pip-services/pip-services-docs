@@ -2,51 +2,31 @@
 type: docs
 title: "CommandSet"
 linkTitle: "CommandSet"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Contains a set of commands and events supported by a [commandable](../icommandable) object.
-    The CommandSet supports command interceptors to extend and the command call chain.
+    The CommandSet supports command interceptors and command call chains.
     
-    CommandSets can be used as alternative commandable interface to a business object.
-    It can be used to auto generate multiple external services for the business object
-    without writing much code.
+ 
     
 ---
-See also [Command](../command), [ICommandable](../icommandable), [Event](../event)
 
-**Example:**
+### Description
 
-```typescript
-export class MyDataCommandSet extends CommandSet {
-    private _controller: IMyDataController;
- 
-    constructor(controller: IMyDataController) { // Any data controller interface
-        super();
-        this._controller = controller;
-        this.addCommand(this.makeGetMyDataCommand());
-    }   
- 
-    private makeGetMyDataCommand(): ICommand {
-        return new Command(
-          'get_mydata',
-          null,
-          async (correlationId: string, args: Parameters) => Promise<any> {
-              let param = args.getAsString('param');
-              return await this._controller.getMyData(correlationId, param);
-          }
-        );
-    }
-}
+The CommandSet class allows you to create a set of commands and events supported by a [commandable](../icommandable) object. In addition, it supports command interceptors and command call chains.
 
-```
+Important points
+
+- CommandSets can be used as an alternative commandable interface to a business object.
+- This class can be used to auto generate multiple external services for a business object.
 
 ### Constructors
 
 Creates an empty CommandSet object.
 
-> `public` constructor(): [CommandSet]()
+> `public` constructor()
 
-### Methods
+### Instance methods
 
 #### addCommand
 Adds a [command](../icommand) to this command set.  
@@ -71,6 +51,7 @@ See [ICommand](../icommand)
 > `public` addCommands(commands: [ICommand](../icommand)[]): void
 
 - **commands**: [ICommand](../icommand)[] - the array of commands to add.
+
 
 #### addEvent
 Adds an [event](../ievent) to this command set.  
@@ -178,6 +159,31 @@ It returns validation error if the command is not found.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
 - **returns**: [ValidationResult](../../validate/validation_result)[] - an array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validation_result_type).
 
+### Examples
+
+```typescript
+export class MyDataCommandSet extends CommandSet {
+    private _controller: IMyDataController;
+ 
+    constructor(controller: IMyDataController) { // Any data controller interface
+        super();
+        this._controller = controller;
+        this.addCommand(this.makeGetMyDataCommand());
+    }   
+ 
+    private makeGetMyDataCommand(): ICommand {
+        return new Command(
+          'get_mydata',
+          null,
+          async (correlationId: string, args: Parameters) => Promise<any> {
+              let param = args.getAsString('param');
+              return await this._controller.getMyData(correlationId, param);
+          }
+        );
+    }
+}
+
+```
 
 ### See also
 - #### [Command](../command)

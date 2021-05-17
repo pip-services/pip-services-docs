@@ -2,79 +2,81 @@
 type: docs
 title: "ObjectComparator"
 linkTitle: "ObjectComparator"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule negate another rule.
-    When embedded rule returns no errors, than this rule return an error.
-    When embedded rule return errors, than the rule returns no errors.
+    Comparator over two values of any type.
 ---
 
-**Example:**
-```typescript
-ObjectComparator.compare(2, "GT", 1);        // Result: true
-ObjectComparator.areEqual("A", "B");         // Result: false
+### Description
 
-```
+The ObjectComparator class allows you to perform a comparison over two values of any type.
 
+### Static methods
 
-### Methods
-
-#### areEqual
+#### are_equal
 Checks if two values are equal.
 The operation can be performed over values of any type.
 
-> `public static` areEqual(value1: any, value2: any): boolean
+> `static` are_equal(value1: Any, value2: Any): bool
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if values are equal and false otherwise
+- **value1**: Any - the first value to compare
+- **value2**: Any - the second value to compare
+- **returns**: bool - true if values are equal and false otherwise
 
-#### areNotEqual
-Checks if two values are NOT equal
+#### are_not_equal
+Checks if two values are NOT equal. 
 The operation can be performed over values of any type.
 
-> `public static` areNotEqual(value1: any, value2: any): boolean
+> `static` are_not_equal(value1: Any, value2: Any): bool
 
-- **value1**: any - the first value to compare 
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if values are NOT equal and false otherwise
+- **value1**: Any - the first value to compare 
+- **value2**: Any - the second value to compare
+- **returns**: bool - true if values are NOT equal and false otherwise
 
 #### compare
 Perform comparison operation over two arguments.
 The operation can be performed over values of any type.
 
-> `public static` compare(value1: any, operation: string, value2: any): boolean
+> `static` compare(value1: Any, operation: str, value2: Any): bool
 
-- **value1**: any - the first argument to compare
-- **operation**: string - the comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value2**: any - the second argument to compare
-- **returns**: boolean - result of the comparison operation
+- **value1**: Any - the first argument to compare
+- **operation**: str - the comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value2**: Any - the second argument to compare
+- **returns**: bool - result of the comparison operation
 
-#### isGreater
+#### is_greater
 Checks if first value is greater than the second one.
 The operation can be performed over numbers or strings.
 
-> `public static` isGreater(value1: any, value2: any): boolean
+> `static` is_greater(value1: Any, value2: Any): bool
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if the first value is greater than second and false otherwise.
+- **value1**: Any - the first value to compare
+- **value2**: Any - the second value to compare
+- **returns**: bool - true if the first value is greater than second and false otherwise.
 
-#### isLess
+#### is_less
 Checks if first value is less than the second one.
 The operation can be performed over numbers or strings.
 
-> `public static` isLess(value1: any, value2: any): boolean
+> `static` is_less(value1: Any, value2: Any): bool
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if the first value is less than second and false otherwise.
+- **value1**: Any - the first value to compare
+- **value2**: Any - the second value to compare
+- **returns**: bool - true if the first value is less than second and false otherwise.
 
 #### match
 Checks if string matches a regular expression
 
-> `public static` match(value: any, regexp: any): boolean
+> `static` match(value: Any, regexp: Any): bool
 
-- **value**: any - a string value to match
-- **regexp**: any - a regular expression string
-- **returns**: boolean - true if the value matches regular expression and false otherwise.
+- **value**: Any - a string value to match
+- **regexp**: Any - a regular expression string
+- **returns**: bool - true if the value matches regular expression and false otherwise.
+
+### Examples
+
+```python
+ObjectComparator.compare(2, "GT", 1)        # Result: true
+ObjectComparator.are_equal("A", "B")         # Result: false
+
+```

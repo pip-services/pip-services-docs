@@ -15,7 +15,7 @@ The ArrayConverter class provides methods to create an array from a set of value
 #### list_to_array
 Converts a list into an array object, with empty array as default.
 Strings with comma-delimited values are split into array of strings.
-See [toArray](#toArray)
+See [to_array](#to_array)
 
 > `static` list_to_array(value: Any): List[Any]
 

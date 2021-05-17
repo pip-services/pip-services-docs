@@ -2,97 +2,103 @@
 type: docs
 title: "TagsProcessor"
 linkTitle: "TagsProcessor"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Helper class to extract and process search tags from objects.
-    The search tags can be kept individually or embedded as hash tags inside text
-    like "This text has #hash_tag that can be used for search."
+    Helper class used to extract and process search tags from objects.
+
 ---
 
-### Methods
+### Description
 
+The TagsProcessor class allows you to extract and process search tags from objects.
 
-#### compressTag
+Important points
+
+- The search tags can be kept individually or embedded as hash tags inside text. E.g. "This text has #hash_tag that can be used for search."
+
+### Static methods
+
+#### compress_tag
 Compress a tag by removing special symbols like spaces, '_' and '#'
 and converting the tag to lower case.
 When tags are compressed they can be matched in search queries.
 
-> `public static` compressTag(tag: string): string
+> `static` compress_tag(tag: str): str
 
-- **tag**: string - the tag to compress.
-- **returns**: string - a compressed tag.
+- **tag**: str - the tag to compress.
+- **returns**: str - a compressed tag.
 
 
-#### compressTagList
+#### compress_tag_list
 Compresses a comma-separated list of tags.
 
-> `public static` compressTagList(tagList: string): string[]
+> `static` compress_tag_list(tag_list: str): List[str]
 
-- **tagList**: string - a comma-separated list of tags to compress.
-- **returns**: string[] - a list with compressed tags.
+- **tag_list**: str - a comma-separated list of tags to compress.
+- **returns**: List[str] - a list with compressed tags.
 
 
-#### compressTags
+#### compress_tags
 Compresses a list of tags.
 
-> `public static` compressTags(tags: string[]): string[]
+> `static` compress_tags(tags: List[str]): List[str]
 
-- **tagList**: string[] - the tags to compress.
-- **returns**: string[] - a list with normalized tags.
+- **tagList**: List[str] - the tags to compress.
+- **returns**: List[str] - a list with normalized tags.
 
 
-#### equalTags
+#### equal_tags
 Compares two tags using their compressed form.
 
-> `public static` equalTags(tag1: string, tag2: string): boolean
+> `static` equal_tags(tag1: str, tag2: str): bool
 
-- **tag1**: string - the first tag.
-- **tag2**: string - the second tag.
-- **returns**: boolean - true if the tags are equal and false otherwise.
+- **tag1**: str - the first tag.
+- **tag2**: str - the second tag.
+- **returns**: bool - true if the tags are equal and false otherwise.
 
 
-#### extractHashTags
+#### extract_hash_tags
 Extracts hash tags from a text.
 
-> `public static` extractHashTags(text: string): string[]
+> `static` extractHashTags(text: str): List[str]
 
-- **text**: string - a text that contains hash tags
-- **returns**: string[] - a list with extracted and compressed tags.
+- **text**: str - a text that contains hash tags
+- **returns**: List[str] - a list with extracted and compressed tags.
 
 
-#### extractHashTagsFromValue
+#### extract_hash_tags_from_value
 Extracts hash tags from selected fields in an object.
 
-> `public static` extractHashTagsFromValue(obj: any, ...searchFields: string[]): string[]
+> `static` extract_hash_tags_from_value(obj: Any, *search_fields: str): List[str]
 
-- **obj**: any - an object which contains hash tags.
-- **searchFields**: string[] - a list of fields in the objects where to extract tags
-- **returns**: string[] -a list of extracted and compressed tags.
+- **obj**: Any - an object which contains hash tags.
+- **search_fields**: str - a list of fields in the objects where to extract tags
+- **returns**: List[str] -a list of extracted and compressed tags.
 
 
-#### normalizeTag
+#### normalize_tag
 Normalizes a tag by replacing special symbols like '_' and '#' with spaces.
-When tags are normalized then can be presented to user in similar shape and form.
+When tags are normalized then can be used in a similar shape and form.
 
-> `public static` normalizeTag(tag: string): string
+> `static` normalize_tag(tag: str): str
 
-- **tag**: string - the tag to normalize.
-- **returns**: string - a normalized tag.
+- **tag**: str - the tag to normalize.
+- **returns**: str - a normalized tag.
 
 
-#### normalizeTagList
+#### normalize_tag_list
 Normalizes a comma-separated list of tags.
 
-> `public static` normalizeTagList(tagList: string): string[]
+> `static` normalize_tag_list(tagList: str): List[str]
 
-- **tagList**: string - a comma-separated list of tags to normalize.
-- **returns**: string[] - a list with normalized tags.
+- **tag_list**: str - a comma-separated list of tags to normalize.
+- **returns**: List[str] - a list with normalized tags.
 
 
-#### normalizeTags
+#### normalize_tags
 Normalizes a list of tags.
 
-> `public static` normalizeTags(tags: string[]): string[] 
+> `public static` normalize_tags(tags: List[str]): List[str]
 
-- **tags**: string[] - the tags to normalize.
-- **returns**: string[] - a list with normalized tags.
+- **tags**: List[str] - the tags to normalize.
+- **returns**: List[str] - a list with normalized tags.

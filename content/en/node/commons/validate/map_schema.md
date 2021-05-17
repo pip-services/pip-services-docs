@@ -2,75 +2,80 @@
 type: docs
 title: "MapSchema"
 linkTitle: "MapSchema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
     Schema to validate maps.
 ---
 
-**Extends:** [Schema](../schema)
+**Implements:** [Schema](../schema)
 
-**Example:**
-```typescript
-let schema = new MapSchema(TypeCode.String, TypeCode.Integer);
-  
-schema.validate({ "key1": "A", "key2": "B" });       // Result: no errors
-schema.validate({ "key1": 1, "key2": 2 });           // Result: element type mismatch
-schema.validate([ 1, 2, 3 ]);                        // Result: type mismatch
+### Description
 
-```
+The MapSchema class provides you with a schema to validate maps
 
 ### Constructors
 Creates a new instance of validation schema and sets its values.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
-> `public` constructor(keyType?: any, valueType?: any, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
+> MapSchema(key_type: Any = None, value_type: Any = None, required: bool = None,
+                 rules: List[[IValidationRule](../ivalidation_rule)] = None)
 
-- **keyType?**: any - a type of map keys. Null means that keys may have any type.
-- **valueType?**: any - a type of map values. Null means that values may have any type.
-- **required?**: boolean - (optional) true to always require non-null values.
-- **rules?**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **key_type**: Any - a type of map keys. Null means that keys may have any type.
+- **value_type**: Any - a type of map values. Null means that values may have any type.
+- **required**: boolean - (optional) true to always require non-None values.
+- **rules**: List[[IValidationRule](../ivalidation_rule)] - (optional) a list with validation rules.
 
 
 
-### Methods
+### Instance methods
 
-#### getKeyType
+#### get_key_type
 Gets the type of map keys.
 Null means that keys may have any type.
 
-> `public` getKeyType(): any
+> get_key_type(): Any
 
-- **returns**: any - the type of map keys.
+- **returns**: Any - the type of map keys.
 
-#### getValueType
+#### get_value_type
 Gets the type of map values.
 Null means that values may have any type.
 
-> `public` getValueType(): any
+> get_value_type(): Any
 
-- **returns**: any - the type of map values.
+- **returns**: Any - the type of map values.
 
-#### performValidation
+#### perform_validation
 Validates a given value against the schema and configured validation rules.
 
-> `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> _perform_validation(path: str, value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: str - a dot notation path to the value.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
-#### setKeyType
+#### set_key_type
 Sets the type of map keys.
 Null means that keys may have any type.
 
-> `public` setKeyType(value: any): void
+> set_key_type(value: Any)
 
-- **value**: any - a type of map keys.
+- **value**: Any - a type of map keys.
 
-#### setValueType
+#### set_value_type
 Sets the type of map values.
 Null means that values may have any type.
 
-> `public` setValueType(value: any): void
+> set_value_type(value: Any)
 
-- **value**: any - a type of map values.
+- **value**: Any - a type of map values.
+
+### Examples
+```python
+schema = MapSchema(TypeCode.String, TypeCode.Integer)
+
+schema.validate({ "key1": "A", "key2": "B" })       # Result: no errors
+schema.validate({ "key1": 1, "key2": 2 })           # Result: element type mismatch
+schema.validate([ 1, 2, 3 ])                        # Result: type mismatch
+
+```

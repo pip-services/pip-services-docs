@@ -1,43 +1,32 @@
 ---
 type: docs
-title: "DataPage<T>"
-linkTitle: "DataPage<T>"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+title: "DataPage"
+linkTitle: "DataPage"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Data transfer object that is used to pass results of paginated queries.
-    It contains items of retrieved page and optional total number of items.
-
-
-    Most often this object type is used to send responses to paginated queries.
-    Pagination parameters are defined by [PagingParams](../paging_params) object.
-    The *skip* parameter in the PagingParams there means how many items to skip.
-    The *takes* parameter sets number of items to return in the page.
-    And the optional *total* parameter tells to return total number of items in the query.
-
-
-    Remember: not all implementations support the *total* parameter
-    because its generation may lead to severe performance implications.
+    Data transfer object that is used to pass the results of a paginated query.
+    This object contains items of the retrieved page.
 ---
 
-See also [PagingParams](../paging_params)
+### Description
 
-**Example:**
-```typescript
-page := await myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    new PagingParams(0, 100, true)
-);
+The DataPage class allows you to create a data transfer object that can be used to pass the results of a paginated query. This object contains items of the retrieved page.
 
-```
+Important points
+
+- Most often, this object type is used to send responses to paginated queries.
+- Pagination parameters are defined by a [PagingParams](../paging_params) object.
+- The *skip* parameter in the PagingParams indicates how many items to skip.
+- The *takes* parameter sets number of items to return in the page.
+- An optional *total* paramter allows you to specify the total number of items returned from a request. However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.   
 
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> `public` constructor(data: T[] = null, total: number = null): [DataPage]()
+> DataPage(data: Sequence[Any] = None, total: int = None)
 
-- **data**: T[] = null - a list of items from the retrieved page.
-- **total**: number = null - TODO add description 
+- **data**:  Sequence[Any] - a list of items from the retrieved page.
+- **total**: int - total amount of items in a request.
 
 ### Fields
 
@@ -46,14 +35,27 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> `public` **data**: T[]
+> **data**: Sequence[Any]
 
 #### total
 The total amount of items in a request.
-> `public` **total**: number
+> **total**: int
 
 </span>
 
+### Examples
+
+```python
+my_data_client.get_data_by_filter("123",
+        FilterParams.from_tuples("completed", true),
+        PagingParams(0, 100, true),
+        page
+)
+for item in page.get_data():
+    print (item)
+
+
+```
 
 ### See also
 - #### [PagingParams](../paging_params)

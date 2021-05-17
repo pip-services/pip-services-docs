@@ -2,64 +2,69 @@
 type: docs
 title: "ProjectionParams"
 linkTitle: "ProjectionParams"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Defines projection parameters with list if fields to include into query results.
+    Defines projection parameters with a list of fields to be included in the query results.
 
-
-    The parameters support two formats: dot format and nested format.
-
-
-    The dot format is the standard way to define included fields and subfields using
-    dot object notation: *"field1,field2.field21,field2.field22.field221"*.
-
-
-    As alternative the nested format offers a more compact representation:
-    *"field1,field2(field21,field22(field221))"*.
 ---
 
-**Extends:** Array\<string\> 
+**Implements:** list
 
-**Example:**
-```typescript
-let filter = FilterParams.fromTuples("type", "Type1");
-let paging = new PagingParams(0, 100);
-let projection = ProjectionParams.fromString("field1,field2(field21,field22)")    
+### Description
 
-myDataClient.getDataByFilter(filter, paging, projection, (err, page) => {...});
-```
+The ProjectionParams class allows you to define projection parameters with a list of fields to be included in your query results. 
+
+Important points
+
+- The parameters support two formats: dot and nested.
+- The dot format is the standard way to define the included fields and subfields by using dot object notation. E.g. *"field1,field2.field21,field2.field22.field221"*.
+- As an alternative, the nested format offers a more compact representation. E.g. *"field1,field2(field21,field22(field221))"*.
 
 ### Constructors
 Creates a new instance of the projection parameters and assigns its value.
 
-> `public` constructor(values: any[] = null): [ProjectionParams]()
+> ProjectionParams(values: Sequence[Any] = None)
 
-- **values**: any[] = null - (optional) values to initialize this object.
+- **values**: Sequence[Any] - (optional) values to initialize this object.
 
-### methods
+### Instance methods
 
-#### toString
+#### to_string
 Gets a string representation of the object.
 The result is a comma-separated list of projection fields
 *"field1,field2.field21,field2.field22.field221"*
 
-> `public` toString(): string
+> to_string(): str
 
-- **returns**: string - a string representation of the object.
+- **returns**: str - a string representation of the object.
 
-#### fromString
+### Static methods
+
+#### from_string
 Parses comma-separated list of projection fields.
 
-> `public static` fromString(...values: string[]): [ProjectionParams]()
+> `static` from_string(*values: str): [ProjectionParams]()
 
-- **values**: string[] - one or more comma-separated lists of projection fields
+- **values**: str - one or more comma-separated lists of projection fields.
 - **returns**: [ProjectionParams]() - a newly created ProjectionParams.
 
-#### fromValue
+#### from_value
 Converts specified value into ProjectionParams.  
-See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
+See [AnyValueArray.from_value](../any_value_array/#from_value)
 
-> `public static` fromValue(value: any): [ProjectionParams]()
+> `static` from_value(value: Any): [ProjectionParams]()
 
-- **value**: any -  value to be converted
+- **value**: Any -  value to be converted.
 - **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+
+### Examples
+
+```python
+filter = FilterParams.fromTuples("type", "Type1")
+paging = PagingParams(0, 100)
+
+projection = ProjectionParams.from_value(["field1","field2(field21,field22)"])
+   or projection = ProjectionParams.from_string("field1,field2(field21,field22)")
+
+myDataClient.get_data_by_filter(filter, paging, projection)
+```

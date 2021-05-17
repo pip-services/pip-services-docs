@@ -138,8 +138,8 @@ Fires event specified by its name and notifies all registered
 
 > `public` async Task NotifyAsync(correlationId: string, ev: string, args: [Parameters](../../run/parameters))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **event_name**: str - the name of the event that is to be fired.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **ev**: string - the name of the event that is to be fired.
 - **args**: [Parameters](../../run/parameters) - the event arguments (parameters).
 
 

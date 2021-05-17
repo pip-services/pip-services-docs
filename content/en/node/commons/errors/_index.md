@@ -5,32 +5,28 @@ linkTitle: "Errors"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Portable and localizable Exceptions classes. Each Exception, in addition to a description 
-    and stack trace has a unique string code, details array (which can be used for creating 
-    localized strings). 
+    
+    Portable and localizable Exceptions classes. Each Exception has a unique string code and details array (which can be used for creating 
+    localized strings), in addition to a description and stack trace . 
 
 
-    Way to use:
-    - An existing exception class can be used.
-    - A child class that extends [ApplicationException](application_exception) can we written.
-    - A exception can be wrapped around (into?) an existing application exception.
 
-
-    Exceptions are serializable. The exception classes themselves are not serializable, but 
-    they can be converted to ErrorDescriptions, which are serializable in one language, transferred 
-    to the receiving side, and deserialized in another language. After deserialization, the initial 
-    exception class can be restored. 
-
-
-    Additionally: when transferring an exception from one language to another, the exception type 
-    that is closest to the initial exception type is chosen from the exceptions available in the 
-    target language.
 ---
 ---
 
 <div class="module-body"> 
+
+**Important points**
+
+- There are three ways to use these classes:
+    1. Using an existing exception class.
+    2. Creating a child class that extends [ApplicationException](application_exception).
+    3. Wrapping an exception in an existing application exception.
+
+- Although the exception classes themselves are not serializable, they can be converted to ErrorDescriptions, which are serializable in one language, transferred to the receiving side, and deserialized in another language. After deserialization, the initial exception class can be restored. 
+
+- When transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
+
 
 ### Classes
 
@@ -60,8 +56,7 @@ Errors that occur during connections to remote services.
 They can be related to misconfiguration, network issues, or the remote service itself.
 
 #### [ErrorCategory](error_category)
-Defines standard error categories to application exceptions
-supported by PipServices toolkit.
+Defines standard error categories supported by PipServices toolkit.
 
 #### [ErrorDescription](error_description)
 Serializeable error description. It is use to pass information about errors
@@ -70,7 +65,7 @@ between microservices implemented in different languages. On the receiving side
 without missing additional details.
 
 #### [ErrorDescriptionFactory](error_description_factory)
-Factory to create serializeable [ErrorDescription](error_description) from
+Factory used to create serializeable [ErrorDescription](error_description) from
 [ApplicationException](application_exception) or from arbitrary errors.
 The ErrorDescriptions are used to pass errors through the wire between microservices
 implemented in different languages. They allow to restore exceptions on the receiving side

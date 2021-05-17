@@ -4,15 +4,29 @@ title: "IReferenceable"
 linkTitle: "IReferenceable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Interface for components that depends on other components. 
+    Interface with methods to set refernces for components that depend on other components. 
 
-    If component requires explicit notification to unset references
-    it shall additionally implement [IUnreferenceable](../iunreferenceable) interface.
+    
 ---
 
-See also [IReferences](../ireferences), [IUnreferenceable](../iunreferenceable), [Referencer](../referencer)
+### Description
 
-**Example:**
+The IReferenceable interface allows you to set references for components that depend on other components.
+
+Important points
+
+- If component requires explicit notification to unset references, it must also implement the [IUnreferenceable](../iunreferenceable) interface.
+
+### Instance methods
+
+#### setReferences
+Sets references to dependent components.
+
+> setReferences(references: [IReferences](../ireferences)): void
+
+- **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
+
+### Examples
 
 ```typescript
 export class MyController implements IReferenceable {
@@ -27,17 +41,6 @@ export class MyController implements IReferenceable {
 }
 
 ```
-
-### Methods
-
-#### setReferences
-Sets references to dependent components.
-
-> setReferences(references: [IReferences](../ireferences)): void
-
-- **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
-
-
 
 ### See also
 - #### [IReferences](../ireferences)

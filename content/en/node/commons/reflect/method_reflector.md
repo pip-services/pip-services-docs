@@ -2,54 +2,56 @@
 type: docs
 title: "MethodReflector"
 linkTitle: "MethodReflector"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class to perform method introspection and dynamic invocation.
+    Helper class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-    This class has symmetric implementation across all languages supported
-    by Pip.Services toolkit and used to support dynamic data processing.
-
-    Because all languages have different casing and case sensitivity rules,
-    this MethodReflector treats all method names as case insensitive.
 ---
 
-**Example:**
+### Description
 
-```typescript
-let myObj = new MyObject();
-  
-let methods = MethodReflector.getMethodNames();
-MethodReflector.hasMethod(myObj, "myMethod");
-MethodReflector.invokeMethod(myObj, "myMethod", 123);
+The MethodReflector class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-```
+Important points
 
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing. Moreover, because all languages have different casing and case sensitivity rules, this class treats all method names as case insensitive.
 
-### Methods
+### Static methods
 
-#### getMethodNames
+#### get_method_names
 Gets names of all methods implemented in specified object.
 
-> `public static` getMethodNames(obj: any): string[]
+> `static` get_method_names(obj: Any): List[str]
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with method names.
+- **obj**: Any - an objec to introspect.
+- **returns**: List[str] - a list with method names.
 
-#### hasMethod
+#### has_method
 Checks if object has a method with specified name..
 
-> `public static` hasMethod(obj: any, name: string): boolean
+> `static` has_method(obj: Any, name: str): bool
 
-- **obj**: any - an object to introspect.
-- **name**: string - a name of the method to check.
-- **returns**: boolean - true if the object has the method and false if it doesn't.
+- **obj**: Any - an object to introspect.
+- **name**: str - a name of the method to check.
+- **returns**: bool - true if the object has the method and false if it doesn't.
 
-#### invokeMethod
+#### invoke_method
 Invokes an object method by its name with specified parameters.
 
-> `public static` invokeMethod(obj: any, name: string, ...args: any[]): any
+> `static` invoke_method(obj: Any, name: str, args: Any): Any
 
-- **obj**: any - an object to invoke.
-- **name**: string -a name of the method to invoke.
-- **args**: any[] - a list of method arguments.
-- **returns**: any - the result of the method invocation or null if method returns void.
+- **obj**: Any - an object to invoke.
+- **name**: str -a name of the method to invoke.
+- **args**: Any - a list of method arguments.
+- **returns**: Any - the result of the method invocation or None if method returns None.
+
+### Examples
+
+```python
+myObj = new MyObject()
+
+methods = MethodReflector.get_method_names()
+MethodReflector.has_method(myObj, "myMethod")
+MethodReflector.invoke_method(myObj, "myMethod", 123)
+
+```

@@ -145,7 +145,8 @@ class MyComponent(IConfigurable, IReferenceable):
     component.set_references(References.from_tuples(Descriptor("mygroup","persistence","*","persistence1","1.0"),
     MyPersistence(),
     Descriptor("mygroup","persistence","*","persistence2","1.0"), MyPersistence()
-    # This dependency shall be set))
+    # This dependency shall be set
+    ))
 
 ```
 

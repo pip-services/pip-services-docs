@@ -3,12 +3,11 @@ type: docs
 title: "Run"
 linkTitle: "Run"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains design patterns for the standard lifecycle of objects (opened, 
-    closed, openable, closable, runnable). Helper classes for lifecycle provisioning.  
+    
+    The Run package contains a set of interfaces and classes for the standard lifecycle of objects (opened, 
+    closed, openable, closable, runnable). In addition, it has several helper classes for lifecycle management.  
 ---
 ---
 
@@ -47,7 +46,7 @@ Interface for components that require execution parameters.
 ### Classes
 
 #### [Cleaner](cleaner)
-Helper class that cleans stored object state.
+Helper class that cleans a stored object state.
 
 #### [Closer](closer)
 Helper class that closes previously opened components.
@@ -57,7 +56,7 @@ Helper class that executes components.
 
 #### [FixedRateTimer](fixed_rate_timer)
 Timer that is triggered in equal time intervals.
-It has summetric cross-language implementation 
+It has a symmetric cross-language implementation 
 and is often used by Pip.Services toolkit to
 perform periodic processing and cleanup in microservices.
 
@@ -68,10 +67,10 @@ Helper class that notifies components.
 Helper class that opens components.
 
 #### [Parameters](parameters)
-Contains map with execution parameters.
+Contains a map with execution parameters.
 In general, this map may contain non-serializable values.
 And in contrast with other maps, its getters and setters
-support dot notation and able to access properties
+support dot notation and are able to access properties
 in the entire object graph.
 This class is often use to pass execution and notification
 arguments, and parameterize classes before execution.

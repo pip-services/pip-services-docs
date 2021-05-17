@@ -2,40 +2,40 @@
 type: docs
 title: "IExecutable"
 linkTitle: "IExecutable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that can be called to execute work.
+    Interface that allows you to create a component that can be called to execute work.
+
 ---
 
-See also [Executor](../executor), [INotifiable](../inotifiable), [Parameters](../parameters)
+### Description
 
-**Example:**
-```typescript
-class EchoComponent implements IExecutable {
-    ...
-    public async execute(correlationId: string, args: Parameters): Promise<any> {
-        let result = args.getAsObject("message");
-        return result;
-    }
-}
-    
-let echo = new EchoComponent();
-let message = "Test";
-let result = await echo.execute("123", Parameters.fromTuples("message", message))
-console.log("Request: " + message + " Response: " + result);
+The IExecutable interface allows you to create a component that can be called to execute work.
 
-```
-
-### Methods
+### Instance methods
 
 #### execute
-Executes component with arguments and receives execution result.
+Executes a component with arguments and receives the execution result.
 
-> execute(correlationId: string, args: [Parameters](../parameters)): Promise\<any\>
+> execute(correlationId: str, args: [Parameters](../parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**: Promise\<any\> - the execution result. 
+
+### Examples
+
+```python
+class EchoComponent(IExecutable):
+    ...
+    def execute(self, correlation_id: Optional[str], args: Parameters): 
+        result = args.get_as_object("message")
+        return result
+    
+echo = new EchoComponent()
+message = "Test";
+result = echo.execute("123", Parameters.from_tuples("message", message))
+print("Request: " + message + " Response: " + result)
+```
 
 ### See also
 - #### [Executor](../executor)

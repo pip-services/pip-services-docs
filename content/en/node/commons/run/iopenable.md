@@ -2,58 +2,60 @@
 type: docs
 title: "IOpenable"
 linkTitle: "IOpenable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that require explicit opening and closing.
+    Interface that allows you to create components with explicit opening and closing.
 
-    For components that perform opening on demand consider using
-    [IClosable](../iclosable) interface instead.
 ---
 
-**Extends:** [IClosable](../iclosable)
+**Implements:** [IClosable](../iclosable)
 
-See also [IOpenable](../iopenable), [Opener](../opener)
+### Description
 
-**Example:**
-```typescript
-class MyPersistence implements IOpenable {
-    private _client: any;
-    ...
-    public isOpen(): boolean {
-        return this._client != null;
-    } 
+The IOpenable interface allows you to create components with explicit opening and closing.
+
+Important points
     
-    public async open(correlationId: string): Promise<void> {
-        if (this.isOpen()) {
-            return;
-        }
-        ...
-    }
-    
-    public async close(correlationId: string): Promise<void> {
-        if (this._client != null) {
-            this._client.close();
-            this._client = null;
-        }
-    }
-   
-    ...
-}
-```
+- For components that perform opening on demand consider using [IClosable](../iclosable) interface instead.
 
 ### Methods
 
-#### isOpen
+#### is_open
 Checks if the component is opened.
 
-> isOpen(): boolean
+> is_open(): bool
 
 #### open
 Opens the component.
 
-> open(correlationId: string): Promise\<void\>
+> open(correlation_id: Optional[str])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+### Examples
+
+```python
+class MyPersistence(IOpenable):
+    _client = None
+    ...
+    def is_open(self):
+        return self._client is not None
+    
+    
+    def open(correlation_id): 
+        if self.is_opened() 
+            return
+        
+        ...
+    
+    def close(self, correlation_id): 
+        if self._client is not None:
+            self._client.close()
+            self._client = None
+        
+    ...
+
+```
 
 ### See also
 - #### [IOpenable](../iopenable)

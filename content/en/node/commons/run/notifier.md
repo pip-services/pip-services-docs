@@ -2,35 +2,36 @@
 type: docs
 title: "Notifier"
 linkTitle: "Notifier"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Helper class that notifies components.
+    Helper class that can be use to notify one or more components.
 ---
 
-See also [INotifiable](../inotifiable)
+### Description
 
+The Notifier class is a helper class that can be use to notify one or more components.
 
-### Methods
+### Static methods
 
 #### notify
 Sets execution parameters.
 
-> `public static` notify(correlationId: string, components: any[], args: [Parameters](../parameters)): void
+> `static` notify(correlation_id: Optional[str], components: List[Any], args: [Parameters](../parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - a list of components that are to be notified.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **components**: List[Any] - a list of components that are to be notified.
 - **args**: [Parameters](../parameters) - notification arguments.
 
-#### notifyOne
+#### notify_one
 Notifies specific component.
 
 To be notiied components must implement [INotifiable](../inotifiable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
-> `public static` notifyOne(correlationId: string, component: any, args: [Parameters](../parameters)): void
+> `static` notify_one(correlation_id: Optional[str], component: Any, args: [Parameters](../parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be notified.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **component**: Any - the component that is to be notified.
 - **args**: [Parameters](../parameters) - notifiation arguments.
 
 

@@ -2,21 +2,14 @@
 type: docs
 title: "IChangeable"
 linkTitle: "IChangeable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Interface for data objects that contain their latest change time.
+    Interface for data objects that need to store the last modified date and time.
 ---
 
-**Example:**
-```typescript
-export class MyData implements IStringIdentifiable, IChangeable {
-    public id: string;
-    public field1: string;
-    public field2: number;
-    public change_time: Date;
-    ...
-}
-```
+### Description
+
+The IChangeable interface allows you to store the last modified date and time in the "change_time" parameter of a data object.
 
 ### Fields
 
@@ -24,6 +17,14 @@ export class MyData implements IStringIdentifiable, IChangeable {
 
 #### change_time
 The UTC time at which the object was last changed (created or updated).
-> change_time: Date
+> change_time: datetime
 
+### Examples
+```python
+class MyData(IStringIdentifiable, IChangeable):
+    id: str = '1234567'
+    field1: str = 'field1'
+    field2: int = 123
+    change_time: datetime = datetime.now()
+```
 </span>

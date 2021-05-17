@@ -4,56 +4,37 @@ title: "ApplicationException"
 linkTitle: "ApplicationException"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
+    
+    Defines a base class used to define various application exceptions.
 
-    Defines a base class to defive various application exceptions.
-
-
-    Most languages have own definition of base exception (error) types.
-    However, this class is implemented symmetrically in all languages
-    supported by PipServices toolkit. It allows to create portable implementations
-    and support proper error propagation in microservices calls.
-
-
-    Error propagation means that when microservice implemented in one language
-    calls microservice(s) implemented in a different language(s), errors are returned
-    throught the entire call chain and restored in their original (or close) type.
-
-
-    Since number of potential exception types is endless, PipServices toolkit
-    supports only 12 standard categories of exceptions defined in [ErrorCategory](../error_category).
-    This [ApplicationException]() class acts as a basis for
-    all other 12 standard exception types.
-
-
-    Most exceptions have just free-form message that describes occured error.
-    That may not be sufficient to create meaninful error descriptions.
-    The [ApplicationException]() class proposes an extended error definition
-    that has more standard fields:
-    - message: is a human-readable error description
-    - category: one of 12 standard error categories of errors
-    - status: numeric HTTP status code for REST invocations
-    - code: a unique error code, usually defined as "MY_ERROR_CODE"
-    - correlation_id: a unique transaction id to trace execution through a call chain
-    - details: map with error parameters that can help to recreate meaningful error description in other languages
-    - stack_trace: a stack trace
-    - cause: original error that is wrapped by this exception
-
-
-    ApplicationException class is not serializable. To pass errors through the wire
-    it is converted into [ErrorDescription](../error_description) object and restored on receiving end into
-    identical exception type.
 ---
 
 **Extends:** Error
 
-See also [ErrorCategory](../error_category), [ErrorDescription](../error_description)
+### Description
 
+The ApplicationException class defines a base class used to define various application exceptions.
+
+Important points
+
+- Most languages have own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit and  allows to create portable implementations and support proper error propagation in microservices calls.
+- Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
+- Since the number of potential exception types is endless, the PipServices toolkit supports only 12 standard categories of exceptions, which are defined in [ErrorCategory](../error_category). The [ApplicationException]() class acts as a basis for these 12 standard exception types.
+- Most exceptions use a free-form message that describes occured error. However, this may not be sufficient to create meaninful error descriptions. Therefore, the [ApplicationException]() class proposes an extended error definition that has more standard fields:
+    - message: a human-readable error description
+    - category: one of the 12 standard error categories
+    - status: numeric HTTP status code for REST invocations
+    - code: a unique error code, usually defined as "MY_ERROR_CODE"
+    - correlation_id: a unique transaction id used to trace execution through a call chain
+    - details: map with error parameters that can help to recreate meaningful error description in other languages
+    - stack_trace: a stack trace
+    - cause: the original error that is wrapped by this exception
+- The ApplicationException class is not serializable. To pass errors through the wire it must be converted into a [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
 
 #### Constructors
 Creates a new instance of application exception and assigns its values.
 
-> `public` constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null): [ApplicationException]()
+> `public` constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null)
 
 - **category**: string = null - (optional) a standard error category. Default: Unknown
 - **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.
@@ -98,7 +79,7 @@ Original error wrapped by this exception
 
 </span>
 
-### Methods
+### Instance methods
 
 #### getCauseString
 Gets original error wrapped by this exception as a string message.
@@ -205,6 +186,9 @@ Otherwise a new ApplicationException is created and original error is set as its
 - **cause**: any - an original error object
 - **returns**: [ApplicationException]() - an original or newly created ApplicationException
 
+
+### Static methods
+
 #### unwrapError
 Unwraps original exception through wrapped exception objects. 
 
@@ -212,10 +196,10 @@ Many frameworks like Seneca or restify wrap original exception.
 That may result in propagating less specific errors and can hide
 causes of the errors.
 
-> `public static` unwrapError(error: any): any
+> `public static` unwrapError(error: any): [ApplicationException]()
 
 - **error**: any - an error object
-- **returns**: any - an original error object
+- **returns**: [ApplicationException]() - an original error object
 
 
 #### wrapError

@@ -4,18 +4,28 @@ title: "ICommandable"
 linkTitle: "ICommandable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    An interface for commandable objects, which are part of the command design pattern.
-    The commandable object exposes its functonality as commands and events groupped
-    into a [CommandSet](../command_set).
-
-
-    This interface is typically implemented by controllers and is used to auto generate
-    external interfaces.
+    An interface used to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
+    
 ---
 
-See also [CommandSet](../command_set)
+### Description
 
-**Example:**
+The ICommandable interface allows you to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
+
+Important points
+
+- This interface is typically implemented by controllers and is used to auto generate external interfaces. 
+
+### Instance methods
+
+#### getCommandSet
+Gets a command set with all supported commands and events.
+
+> getCommandSet(): [CommandSet](../command_set)
+
+- **returns**: [CommandSet](../command_set) - a command set with commands and events.
+
+### Examples
 
 ```typescript
 export class MyDataController implements ICommandable, IMyDataController {
@@ -31,17 +41,6 @@ export class MyDataController implements ICommandable, IMyDataController {
 }
 
 ```
-
-### Methods
-
-#### getCommandSet
-Gets a command set with all supported commands and events.
-
-> getCommandSet(): [CommandSet](../command_set)
-
-- **returns**: [CommandSet](../command_set) - a command set with commands and events.
-
-
 
 ### See also
 - #### [CommandSet](../command_set)

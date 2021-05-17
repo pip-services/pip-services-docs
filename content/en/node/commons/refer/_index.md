@@ -5,14 +5,9 @@ linkTitle: "Refer"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Inversion of control design pattern. There exist various implementations, 
-    a popular one being "inversion of dependency". Requires introspection and 
-    is implemented differently in different languages. In PipServices, the "location 
-    design pattern” is used, which is much simpler than dependency injection and is 
-    a simple implementation, that is portable between languages. Used for building 
-    various containers, as well as testing objects.
+    
+    The Refer package provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish dependencies between them. 
+   
 ---
 ---
 

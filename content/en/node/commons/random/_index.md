@@ -5,15 +5,14 @@ linkTitle: "Random"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Todo: Rewrite this description.  
-
-    Contains implementation of random value generators that are used for 
-    functional as well as non-functional testing. Used to generate random 
-    objects and fill databases with unique objects. 
+    
+    The Random package contains a set of classes that can be used to generate different type of random values, such as integer, double, long, float, and text. The random generated values can be used for multiple purposes, such as software testing.
+   
 ---
 ---
 
 <div class="module-body"> 
+
 
 ### Classes
 
@@ -40,5 +39,6 @@ Random generator for string values.
 
 #### [RandomText](random_text)
 Random generator for various text values such as names, addresses or phone numbers.
+
 
 </div>

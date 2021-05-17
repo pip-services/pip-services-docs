@@ -2,30 +2,22 @@
 type: docs
 title: "SortField"
 linkTitle: "SortField"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
-    Defines a field name and order used to sort query results.
+    Defines a field name and the order type used to sort query results.
 ---
 
-See also [SortParams](../sort_params)
+### Description
 
-**Example:**
-```typescript
-let filter = FilterParams.fromTuples("type", "Type1");
-let paging = new PagingParams(0, 100);
-let sorting = new SortingParams(new SortField("create_time", true));
-     
-myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
-
-```
+The SortField class allows you to define a field used to sort query results. In addition, it allows you to specify the order typer as ascending or descending.
 
 ### Constructors
 Creates a new instance and assigns its values.
 
-> `public` constructor(name: string = null, ascending: boolean = true): [SortField]()
+> SortField(name: str = None, ascending: bool = True)
 
-- **name**: string = null - the name of the field to sort by.
-- **ascending**: boolean = true - true to sort in ascending order, and false to sort in descending order. 
+- **name**: str - the name of the field to sort by.
+- **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
 
 
 ### Fields
@@ -34,14 +26,22 @@ Creates a new instance and assigns its values.
 
 #### name
 The field name to sort by
-> `public` **name**: string
+> **name**: str
 
 #### ascending
 The flag to define sorting order. True to sort ascending, false to sort descending
-> `public` **ascending**: boolean
+> **ascending**: bool
 
 </span>
 
+### Examples
+```python
+filter = FilterParams.fromTuples("type", "Type1")
+paging = PagingParams(0, 100)
+
+sorting = SortingParams(SortField("create_time", true))
+myDataClient.get_data_by_filter(filter, paging, sorting)
+```
 
 ### See also
 - #### [SortParams](../sort_params)

@@ -2,33 +2,22 @@
 type: docs
 title: "NotRule"
 linkTitle: "NotRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Validation rule negate another rule.
-    When embedded rule returns no errors, than this rule return an error.
-    When embedded rule return errors, than the rule returns no errors.
+    Validation rule used to negate another rule.
+
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
 
-See also [IValidationRule](../ivalidation_rule)
+### Description
 
-**Example:**
-```typescript
-let schema = new Schema()
-    .withRule(new NotRule(
-        new ValueComparisonRule("EQ", 1)
-    ));
-    
-schema.validate(1);          // Result: error
-schema.validate(5);          // Result: no error
-
-```
+The NotRule class allows you to negate a rule. Thus, when the embedded rule returns errors, then the negated rule returns no errors and vice versa.
 
 ### Constructors
 Creates a new validation rule and sets its values
 
-> `public` constructor(rule: [IValidationRule](../ivalidation_rule)): [NotRule]()
+> NotRule(rule: [IValidationRule](../ivalidation_rule))
 
 - **rule**: [IValidationRule](../ivalidation_rule) - a rule to be negated.
 
@@ -39,12 +28,20 @@ Creates a new validation rule and sets its values
 #### validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
 
-- **path**: string - a dot notation path to the value.
+- **path**: str - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **value**: Any - a value to be validated.
+- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
+
+### Examples
+```python
+schema = Schema().with_rule(NotRule(ValueComparisonRule("EQ", 1)))
+schema.validate(1)          # Result: error
+schema.validate(5)          # Result: no error
+
+```
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

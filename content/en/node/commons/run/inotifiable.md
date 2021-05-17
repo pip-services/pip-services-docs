@@ -2,39 +2,42 @@
 type: docs
 title: "INotifiable"
 linkTitle: "INotifiable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
-    Interface for components that can be asynchronously notified.
-    The notification may include optional argument that describe
-    the occured event.
+    Interface that allows you to create components that can be asynchronously notified.
+    
 ---
 
-See also [Notifier](../notifier), [IExecutable](../iexecutable)
+### Description
 
-**Example:**
-```typescript
-class MyComponent implements INotifable {
-    ...
-    public notify(correlationId: string, args: Parameters): void {
-        console.log("Occured event " + args.getAsString("event"));
-    }
-}
-   
-let myComponent = new MyComponent();
-    
-myComponent.notify("123", Parameters.fromTuples("event", "Test Event"));
+The INotifiable interface allows you to create components that can be asynchronously notified.
 
-```
+Important points
 
-### Methods
+- The notification can include an optional argument that describes an occurred event.
+
+### Instance methods
 
 #### notify
-Notifies the component about occured event.
+Notifies the component about an occured event.
 
-> notify(correlationId: string, args: [Parameters](../parameters)): void
+> notify(correlation_id: Optional[str], args: [Parameters](../parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
+
+### Examples
+
+```python
+class MyComponent(INotifable):
+    ...
+    def notify(correlationId, args): 
+        print("Occured event " + args.get_as_string("event"))
+    
+   
+my_component = MyComponent()
+my_component.notify("123", Parameters.from_tuples("event", "Test Event"));
+```
 
 ### See also
 - #### [Notifier](../notifier)

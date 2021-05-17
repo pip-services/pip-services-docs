@@ -2,42 +2,17 @@
 type: docs
 title: "InterceptedCommand"
 linkTitle: "InterceptedCommand"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     Implements a [command](../icommand) wrapped by an interceptor.
-    It allows to build command call chains. The interceptor can alter execution
-    and delegate calls to a next command, which can be intercepted or concrete.
+    
 ---
 
 **Implements:** [ICommand](../icommand)
 
-See also [ICommand](../icommand), [ICommandInterceptor](../icommand_interceptor)
+### Description
 
-**Example:**
-
-```typescript
-export class CommandLogger implements ICommandInterceptor {       
-        
-    public getName(command: ICommand): string {
-        return command.getName();
-    }
-          
-    public async execute(correlationId: string, command: ICommand, args: Parameters): Promise<any> {
-        console.log("Executed command " + command.getName());
-        await command.execute(correlationId, args);
-    }
-          
-    private validate(command: ICommand, args: Parameters): ValidationResult[] {
-        return command.validate(args);
-    }
-}
-   
-let logger = new CommandLogger();
-let loggedCommand = new InterceptedCommand(logger, command); 
-
-// Each called command will output: Executed command <command name>
-
-```
+The InterceptedCommand allows you  to implement a [command](../icommand) wrapped by an interceptor. Thus, it allows you to build command call chains, where the interceptor can alter execution and delegate calls to a next command, which can then be intercepted or not.
 
 ### Constructors
 Creates a new [InterceptedCommand](), which serves as a link in an execution chain. Contains information 
@@ -48,8 +23,7 @@ about the interceptor that is being used and the next command in the chain.
 - **interceptor**: [ICommandInterceptor](../icommand_interceptor) - the interceptor that is intercepting the command.
 - **next**: [ICommand](../icommand) - (link to) the next command in the command's execution chain.
 
-
-### Methods
+### Instance methods
 
 #### execute
 Executes the next command in the execution chain using the given [parameters](../../run/parameters) (arguments).  
@@ -79,6 +53,31 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate for the next command.
 - **returns**: [ValidationResult](../../validate/validation_result)[] - an array of ValidationResults.
 
+### Examples
+
+```typescript
+export class CommandLogger implements ICommandInterceptor {       
+        
+    public getName(command: ICommand): string {
+        return command.getName();
+    }
+          
+    public async execute(correlationId: string, command: ICommand, args: Parameters): Promise<any> {
+        console.log("Executed command " + command.getName());
+        await command.execute(correlationId, args);
+    }
+          
+    private validate(command: ICommand, args: Parameters): ValidationResult[] {
+        return command.validate(args);
+    }
+}
+   
+let logger = new CommandLogger();
+let loggedCommand = new InterceptedCommand(logger, command); 
+
+// Each called command will output: Executed command <command name>
+
+```
 
 ### See also
 - #### [ICommand](../icommand)

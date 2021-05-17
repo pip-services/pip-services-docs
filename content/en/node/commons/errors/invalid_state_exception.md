@@ -10,10 +10,14 @@ description: >
 
 **Extends:** [ApplicationException](../application_exception)
 
+### Description
+
+The InvalidStateException class is used to manage errors related to calling opertaions that require the component to be in a specific state. For example, business calls when the component is not reay.
+
 ### Constructors
 Creates an error instance and assigns its values.
 
-> `public` constructor(correlation_id: string = null, code: string = null, message: string = null): [BadRequestException]()
+> `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
 
 - **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.
 - **code**: string = null - (optional) a unique error code. Default: "UNKNOWN"

@@ -11,14 +11,13 @@ description: >
 
 **Implemenst:** [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
 
+### Description
+
+The CompositeTracer class allows you to ggregate all tracers from component references under a single component.
 
 #### References
 
 - **\*:tracer:\*:\*:1.0** - (optional) [ITracer](../itracer) components to pass operation tracessource
-
-### Description
-
-The CompositeTracer class allows you to ggregate all tracers from component references under a single component.
 
 ### Constructors
 Creates a new instance of the tracer.

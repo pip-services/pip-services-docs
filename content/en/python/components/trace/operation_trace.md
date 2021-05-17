@@ -22,11 +22,11 @@ Create new instance of OperationTrace
 > OperationTrace(time: datetime, source: str, component: str, operation: str, correlation_id: str, duration: float, error: [ErrorDescription](../../../commons/errors/error_description))
 
 - **time**: datetime - The time when operation was executed
-- **source**: str - The source (context name)
-- **component**: str - The name of component
-- **operation**: str - The name of the executed operation
-- **correlation_id**: str - The transaction id to trace execution through call chain. 
-- **duration**: float - The duration of the operation in milliseconds
+- **source**: str - source (context name)
+- **component**: str - name of the component
+- **operation**: str - name of the executed operation
+- **correlation_id**: str - transaction id to trace execution through call chain. 
+- **duration**: float - duration of the operation in milliseconds
 - **error**: [ErrorDescription](../../../commons/errors/error_description) - The description of the captured error
 - 
 
@@ -43,7 +43,7 @@ The source (context name)
 > **source**: str 
 
 #### component
- The name of component
+ The name of the component
 > **component**: str
 
 #### operation

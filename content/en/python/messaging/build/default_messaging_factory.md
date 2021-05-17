@@ -5,12 +5,18 @@ linkTitle: "DefaultMessagingFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: > 
     Creates [MemoryMessageQueue](../../queues/memory_message_queue)  components by their descriptors.
-    Name of created message queue is taken from its descriptor.
+    
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
 
-See also [Factory](../../../components/build/factory), [MemoryMessageQueue](../../queues/memory_message_queue) 
+### Description
+
+The DefaultMessagingFactory class allows you to create  [MemoryMessageQueue](../../queues/memory_message_queue)  components based on their descriptors.
+
+Important points
+
+- The name of created message queue is taken from its descriptor.
 
 ### Constructors
 

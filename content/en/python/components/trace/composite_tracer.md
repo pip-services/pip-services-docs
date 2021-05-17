@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The CompositeTracer class allows you to ggregate all tracers from component references under a single component.
+The CompositeTracer class allows you to aggregate all tracers from component references under a single component.
 
 #### References
 

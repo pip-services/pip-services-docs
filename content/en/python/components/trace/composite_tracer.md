@@ -11,32 +11,14 @@ description: >
 
 **Implemenst:** [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
 
-See also [ITracer](../itracer)      
 
 #### References
 
 - **\*:tracer:\*:\*:1.0** - (optional) [ITracer](../itracer) components to pass operation tracessource
 
+### Description
 
-**Example:**
-```python
-class MyComponent(IReferenceable):
-    def __init__(self):
-        self.__tracer = CompositeTracer()
-
-    def set_references(self, references: IReferences):
-        self.__tracer.set_references(references)
-        ...
-
-    def my_method(self, correlaton_id):
-        timing = self.__tracer.begin_trace(correlaton_id, "mycomponent", "mymethod")
-        try:
-            ...
-            timing.end_trace()
-        except Exception as err:
-            timing.end_failure(err)
-```
-
+The CompositeTracer class allows you to ggregate all tracers from component references under a single component.
 
 ### Constructors
 Creates a new instance of the tracer.
@@ -50,7 +32,7 @@ Creates a new instance of the tracer.
 <span class="hide-title-link">
 
 #### _TRACERS
-TODO add description
+List of tracers
 > **_TRACERS**: List[ITracer] = []
 
 </span>
@@ -98,6 +80,25 @@ Records an operation trace with its name and duration
 - **operation**: str - a name of the executed operation.
 - **duration**: float - execution duration in milliseconds.
 
+**Example:**
+
+```python
+class MyComponent(IReferenceable):
+    def __init__(self):
+        self.__tracer = CompositeTracer()
+
+    def set_references(self, references: IReferences):
+        self.__tracer.set_references(references)
+        ...
+
+    def my_method(self, correlaton_id):
+        timing = self.__tracer.begin_trace(correlaton_id, "mycomponent", "mymethod")
+        try:
+            ...
+            timing.end_trace()
+        except Exception as err:
+            timing.end_failure(err)
+```
 
 ### See also
 - #### [ITracer](../itracer)

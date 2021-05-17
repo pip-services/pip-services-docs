@@ -120,7 +120,7 @@ Validates the given value and returns a [ValidationException](../validation_exce
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **value**: any -  a value to be validated.
 - **strict**: boolean - true to treat warnings as errors.
-- **returns**: [ValidationException](../validation_exception) - TODO add description here
+- **returns**: [ValidationException](../validation_exception) - validation exception.
 
 #### validateAndThrowException
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  

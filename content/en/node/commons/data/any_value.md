@@ -59,7 +59,7 @@ See [TypeConverter.toType](../../convert/type_converter/#totype)
 > `public` equalsAsType/<T/>(type: [TypeCode](../../convert/type_code), obj: any): boolean
 
 - **type**: [TypeCode](../../convert/type_code) - the value to be compared with.
-- **obj**: any - TODO add description
+- **obj**: Any - the args to be compared with.
 - **returns**: any - true when objects are equal and false otherwise.
 
 

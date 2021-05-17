@@ -40,10 +40,7 @@ Appends a map with language-translation pairs.
 #### clear
 Clears all translations from this MultiString object.
 
-> `public` clear(): any
-
-- **returns**: any - TODO add description
-
+> `public` clear(); void
 
 
 #### get
@@ -76,11 +73,10 @@ Returns the number of translations stored in this MultiString object.
 #### put
 Puts a new translation for the specified language.
 
-> `public` put(language: string, value: any): any
+> `public` put(language: string, value: any): void
 
 - **language**: string - a language two-symbol code.
 - **value**: any - a new translation for the specified language.
-- **returns**: any - TODO add description
 
 
 #### remove

@@ -26,7 +26,7 @@ Creates a new instance of data page and assigns its values.
 > `public` constructor(data: T[] = null, total: number = null)
 
 - **data**: T[] - a list of items from the retrieved page.
-- **total**: number - TODO add description 
+- **total**: number - total amount of items in a request.
 
 ### Fields
 

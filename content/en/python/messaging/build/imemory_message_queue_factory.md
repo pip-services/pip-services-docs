@@ -6,9 +6,12 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: > 
     Creates message queue componens.
 ---
-See also [IMessageQueue](../../queues/imessage_queue)
 
-### Methods
+### Description
+
+The IMessageQueueFactory interface allows you to create message queue components.
+
+### Instance methods
 
 #### create_queue
 

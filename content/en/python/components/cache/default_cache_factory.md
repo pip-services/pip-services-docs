@@ -26,8 +26,12 @@ A description for a null cache (dummy cache).
 > **NullCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### MemoryCacheDescriptor
-A descriptor for a memory cache..
+A descriptor for a memory cache.
 > **MemoryCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
+
+#### Descriptor
+A descriptor for a factory cache.
+> **descriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 </span>
 

@@ -89,7 +89,7 @@ Checks if the component is opened.
 #### register
 Registers a registerable object for dynamic endpoint discovery.
 
-> register(self, registration: [IRegisterable](../../services/iregisterable))
+> register(registration: [IRegisterable](../../services/iregisterable))
 
 - **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
 

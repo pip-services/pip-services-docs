@@ -31,12 +31,10 @@ Makes multiple attempts to acquire a lock by its key within a given time interva
 - **ttl**: float - a lock timeout (time to live) in milliseconds.
 - **timeout**: float - a lock acquisition timeout.
 
-### Abstract methods
-
 #### release_lock
 Releases prevously acquired lock by its key.
 
-> `abstractmethod` release_lock(correlation_id: Optional[str], key: str)
+> release_lock(correlation_id: Optional[str], key: str)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **key**: str - a unique lock key to release.
@@ -46,7 +44,7 @@ Releases prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `abstractmethod` try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
+> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a unique lock key to acquire.

@@ -37,6 +37,7 @@ Parameterized configuration template given as string with dynamic parameters.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
 - **returns**: str - a parameterized configuration string.
 
+### Abstract methods
 
 #### _read_config
 Reads configuration and parameterizes it with given values.
@@ -45,7 +46,7 @@ Reads configuration and parameterizes it with given values.
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters of the configuration or None to skip parameterization.
-- **returns**: str - ConfigParams configuration.
+- **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
 

@@ -72,7 +72,7 @@ Resolves all connection parameters by their key.
 #### resolve_one
 Resolves a single connection parameters by its key.
 
->  resolve_one(self, correlation_id: Optional[str], key: str): [ConnectionParams](../connection_params)
+>  resolve_one(correlation_id: Optional[str], key: str): [ConnectionParams](../connection_params)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **key**: str - a key to uniquely identify the connection. 

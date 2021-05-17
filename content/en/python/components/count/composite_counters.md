@@ -113,7 +113,7 @@ Calculates min/average/max statistics based on the current and previous values.
 #### timestamp
 Records the given timestamp.
 
-> timestamp(name: str, value: float)
+> timestamp(name: str, value: datetime.datetime)
 
 - **name**: str - a counter name of Timestamp type.
 - **value**: float - a timestamp to record.
@@ -125,6 +125,25 @@ Records the current time as a timestamp.
 > timestamp_now(name: str)
 
 - **name**: str - a counter name of Timestamp type.
+
+
+```python
+class MyComponent(IReferenceable):
+    _counters: CompositeCounters = CompositeCounters()
+    
+    def setReferences(self, references: IReferences):
+        self._counters.set_references(references)
+        ...
+    
+    
+    def myMethod(self):
+        this._counters.increment("mycomponent.mymethod.calls")
+        var timing = this._counters.begin_timing("mycomponent.mymethod.exec_time")
+        try:
+            ...
+        except:
+            timing.end_timing()
+```
 
 
 ### See also

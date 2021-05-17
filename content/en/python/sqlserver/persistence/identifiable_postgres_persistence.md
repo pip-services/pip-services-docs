@@ -140,7 +140,7 @@ Gets a list of data items retrieved by given unique ids.
 #### get_one_by_id
 Gets a data item by its unique id.
 
-> get_one_by_id(self, correlation_id: Optional[str], id: Any): dict
+> get_one_by_id(correlation_id: Optional[str], id: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be retrieved.
@@ -171,7 +171,7 @@ Updates a data item.
 #### update_partially
 Updates only few selected fields in a data item.
 
-> update_partially(self, correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be updated.

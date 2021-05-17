@@ -17,10 +17,10 @@ Creates a new instance of the timing callback object.
 
 > TraceTiming(correlation_id: Optional[str], component: str, operation: str, tracer: [ITracer](../itracer) = None)
 
-correlation_id: Optional[str] - (optional) transaction id to trace execution through a call chain.
-component: str - an associated component name
-operation: str - an associated operation name
-tracer: [ITracer](../itracer) - a callback that shall be called when endTiming is called.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **component**: str - an associated component name
+- **operation**: str - an associated operation name
+- **tracer**: [ITracer](../itracer) - a callback that shall be called when endTiming is called.
 
 
 ### Instance methods
@@ -38,7 +38,7 @@ and records the associated trace.
 Ends timing of an execution block, calculates the elapsed time
 and records the associated trace.
 
-> end_trace(error: Exception)
+> end_trace()
  
 ### Examples
 

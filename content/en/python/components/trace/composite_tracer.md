@@ -32,7 +32,7 @@ Creates a new instance of the tracer.
 
 #### _TRACERS
 List of tracers
-> **_TRACERS**: List[ITracer] = []
+> **_TRACERS**: List[[ITracer](../itracer)] = []
 
 </span>
 
@@ -79,7 +79,7 @@ Records an operation trace with its name and duration
 - **operation**: str - a name of the executed operation.
 - **duration**: float - execution duration in milliseconds.
 
-**Example:**
+### Examples
 
 ```python
 class MyComponent(IReferenceable):

@@ -13,6 +13,18 @@ The ConnectionUtils class provides a set of utility functions used to process co
 
 ### Instance methods
 
+#### compose_uri
+Composes URI from config parameters.
+The result URI will be in the following form:
+*protocol://username@password@host1:port1,host2:port2,...?param1=abc&param2=xyz&...*
+
+> `static` compose_uri(options: [ConfigParams](../../../commons/config/config_params), default_protocol: str, default_port: int): str
+
+- **options**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
+- **default_protocol**: str - a default protocol
+- **default_port**: int - a default port
+- **returns**: str - a composed URI
+
 #### concat
 Concatinates two options by combining duplicated properties into comma-separated list
 

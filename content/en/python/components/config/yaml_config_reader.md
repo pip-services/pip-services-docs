@@ -44,7 +44,7 @@ Reads a configuration and parameterizes it with given values.
 #### _read_object
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> _read_object(self, correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
+> _read_object(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.

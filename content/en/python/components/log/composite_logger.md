@@ -49,6 +49,17 @@ Writes a log message to the logger destination.
 - **error**: Optional[Exception] - an error object associated with this message.
 - **message**: Optional[str] - a human-readable message to log.
 
+### Examples
+```python
+class MyComponent(IConfigurable, IReferenceable):
+    __logger = CompositeLogger()
+    def configure(self, config):
+        self.__logger.configure(config)
+    def set_references(self, references):
+        self.__logger.set_references(references)
+    def my_method(self, correlation_id):
+        self.__logger.debug(correlation_id, "Called method mycomponent.mymethod")
+```
 
 ### See also
 - #### [ILogger](../ilogger)

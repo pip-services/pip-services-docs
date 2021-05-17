@@ -115,7 +115,7 @@ This method can be overriden in child classes.
 Merges connection options with connection parameters. 
 This method can be overriden in child classes.
 
->  _merge_connection(self, options: [ConfigParams](../../../commons/config/config_params), connection: [ConnectionParams](../connection_params)): [ConfigParams](../../../commons/config/config_params)
+>  _merge_connection(options: [ConfigParams](../../../commons/config/config_params), connection: [ConnectionParams](../connection_params)): [ConfigParams](../../../commons/config/config_params)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - connection options
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be merged
@@ -177,7 +177,7 @@ Validates credential parameters.
 This method can be overriden in child classes.
 This method can be overriden in child classes.
 
->  _validate_connection(correlation_id: Optional[str], credential: [CredentialParams](../../auth/credential_params))
+>  _validate_credential(correlation_id: Optional[str], credential: [CredentialParams](../../auth/credential_params))
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

@@ -50,7 +50,7 @@ Adds a new connection to component connections
 
 > add(connection: [ConnectionParams](../connection_params))
 
-- **returns**: [ConnectionParams](../connection_params) - new connection parameters to be added
+- **connection**: [ConnectionParams](../connection_params) - new connection parameters to be added
 
 
 #### configure
@@ -95,7 +95,7 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 Resolves all component connection. If connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
->  resolve_all(self, correlation_id: Optional[str]): List[[ConnectionParams](../connection_params)]
+>  resolve_all(correlation_id: Optional[str]): List[[ConnectionParams](../connection_params)]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **returns**: List[[ConnectionParams](../connection_params)] - a list of resolved connections.

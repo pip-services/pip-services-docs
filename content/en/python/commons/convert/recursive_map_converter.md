@@ -42,7 +42,7 @@ Converts value into map object or returns None when conversion is not possible.
 - **value**: Any - the value to convert.
 - **returns**: Any - map object or None when conversion is not supported.
 
-**Example:**
+### Examples
 
 ```python
 value1 = RecursiveMapConverter.to_nullable_map({ 'key': 123 }) # Returns {'key': 123}

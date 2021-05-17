@@ -43,7 +43,7 @@ Converts value into map object or returns null when conversion is not possible.
 - **returns**: any - map object or null when conversion is not supported.
 
 
-**Example:**
+### Examples
 
 ```typescript
 let value1 = RecursiveMapConverted.toNullableMap("ABC"); // Result: null

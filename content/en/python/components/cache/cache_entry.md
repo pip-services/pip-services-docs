@@ -44,7 +44,7 @@ Gets the cached value.
 
 > get_value(): Any
 
-- **factory**: Any - the value object.
+- **returns**: Any - the value object.
 
 
 #### is_expired
@@ -60,5 +60,5 @@ Sets a new value and extends its expiration.
 
 > set_value(value: Any, timeout: int)
 
-- **value**: bool - a new cached value.
+- **value**: Any - a new cached value.
 - **timeout**: int - a expiration timeout in milliseconds.

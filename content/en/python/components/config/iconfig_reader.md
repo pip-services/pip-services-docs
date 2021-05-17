@@ -27,4 +27,4 @@ Reads configuration and parameterizes it with given values.
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
-- **returns**: str - ConfigParams configuration.
+- **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.

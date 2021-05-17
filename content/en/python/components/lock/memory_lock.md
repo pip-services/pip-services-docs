@@ -24,12 +24,12 @@ Important points
 - **retry_timeout**: timeout in milliseconds to retry lock acquisition. (Default: 100)
 
 
-### Abstract methods
+### Instance methods
 
 #### release_lock
 Releases prevously acquired lock by its key.
 
-> `abstractmethod` release_lock(correlation_id: Optional[str], key: str)
+> release_lock(correlation_id: Optional[str], key: str)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **key**: str - a unique lock key to release.
@@ -39,7 +39,7 @@ Releases prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `abstractmethod` try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
+> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **key**: str - a unique lock key to acquire.

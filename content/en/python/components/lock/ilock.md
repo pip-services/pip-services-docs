@@ -36,7 +36,7 @@ It returns immediately a positive or negative result.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool:
+> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
 
 - **correlation_id**: Optional[str] -(optional) transaction id to trace execution through call chain. 
 - **key**: str - a unique lock key to acquire.

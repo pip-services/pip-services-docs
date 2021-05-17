@@ -69,10 +69,10 @@ Calculates min/average/max statistics based on the current and previous values.
 #### timestamp
 Records the given timestamp.
 
-> timestamp(name: str, value: float)
+> timestamp(name: str, value: datetime.datetime)
 
 - **name**: str - a counter name of Timestamp type.
-- **value**: float - a timestamp to record.
+- **value**: datetime.datetime - a timestamp to record.
 
 
 #### timestamp_now

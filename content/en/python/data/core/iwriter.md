@@ -23,7 +23,7 @@ Creates a data item.
 #### update
 Updates a data item.
 
-> update(self, correlation_id: Optional[str], item: Any): dict
+> update(correlation_id: Optional[str], item: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **item**: Any - an item to be updated.

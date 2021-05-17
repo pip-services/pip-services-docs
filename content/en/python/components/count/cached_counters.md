@@ -110,6 +110,17 @@ Ends measurement of execution elapsed time and updates specified counter.
 - **name**: str - a counter name
 - **elapsed**: float - execution elapsed time in milliseconds to update the counter.
 
+#### get
+Gets a counter specified by its name.
+It counter does not exist or its type doesn't match the specified type
+it creates a new one.
+
+> get(name: str, typ: [CounterType](../counter_type)): [Counter](../counter)
+
+- **name**: str - a counter name to retrieve.
+- **typ**: [CounterType](../counter_type) - a counter type.
+- **returns**: [Counter](../counter) - an existing or newly created counter of the specified type.
+
 
 #### get_all
 Gets all captured counters.
@@ -182,10 +193,10 @@ Calculates min/average/max statistics based on the current and previous values.
 #### timestamp
 Records the given timestamp.
 
-> timestamp(name: str, value: float)
+> timestamp(name: str, value: datetime.datetime)
 
 - **name**: str - a counter name of Timestamp type.
-- **value**: float - a timestamp to record.
+- **value**: datetime.datetime - a timestamp to record.
 
 
 #### timestamp_now
@@ -199,4 +210,4 @@ Records the current time as a timestamp.
 #### _update
 Makes counter measurements as updated and dumps them when timeout expires.
 
-> _update(name: str)
+> _update()

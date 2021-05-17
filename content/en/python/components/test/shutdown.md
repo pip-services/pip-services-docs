@@ -55,6 +55,14 @@ Checks if the component is opened.
 - **returns**: bool - true if the component has been opened and false otherwise.
 
 
+#### open
+Opens the component.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+
 #### shutdown
 Crashes the process using the configured crash mode.
 

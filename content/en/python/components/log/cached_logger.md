@@ -66,7 +66,7 @@ Clears (removes) all cached log messages.
 #### configure
 Configures component by passing configuration parameters.
 
-> configure(self, config: [ConfigParams](../../../commons/config/config_params))
+> configure(config: [ConfigParams](../../../commons/config/config_params))
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -78,13 +78,13 @@ Dumps (writes) the currently cached log messages.
 #### _update
 Sets message cache as updated and dumps it when timeout expires.
 
-> _update
+> _update()
 
 
 #### _save
 Saves log messages from the cache.
 
-> _save(self, messages: List[[LogMessage](../log_message)])
+> _save(messages: List[[LogMessage](../log_message)])
 
 - messages: List[[LogMessage](../log_message)] - a list with log messages
 

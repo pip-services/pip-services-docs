@@ -7,53 +7,58 @@ description: >
     Message queue that caches received messages in memory to allow peek operations
     that may not be supported by the undelying queue.
  
-    This queue is users as a base implementation for other queues
 ---
 
 **Implements:** [ICleanable](../../../commons/run/icleanable), [MessageQueue](../message_queue) 
 
-See also [MessageQueue](../message_queue)
+### Description
+
+The CachedMessageQueue class allows you to create message queues that cache received messages in memory to allow peek operations that may not be supported by the undelying queue.
+
+Important points
+
+- This queue is used as a base implementation for other queues.
 
 ### Constructors
 Creates a new instance of the persistence component.
 
 > CachedMessageQueue(name: str = None, capabilities: [MessagingCapabilities](../messaging_capabilities) = None)
 
-- **name**: str - (optional) a queue name
-- **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) a capabilities of this message queue
+- **name**: str - (optional) queue name
+- **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) capabilities of the message queue
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _auto_subscribe
-TODO: add description property  
+Boolean variable indicating whether a message queue auto subscribes or not.  
 
 > _auto_subscribe: bool
 
 #### _lock
-TODO: add description property 
+Thread lock.
 
 > _lock: threading.Lock
 
 #### _event
-TODO: add description property  
+Thread event.
 
 > _event: threading.Event
 
 #### _messages
-TODO: add description property  
+List of messages in a queue. 
 
 > **_messages**: [MessageEnvelope](../message_envelope)[]
 
 #### _receiver
-TODO: add description property  
+Message receiver.
 
 > **_receiver**: [IMessageReceiver](../imessage_receiver)
 
 </span>
 
-### Methods
+### Instance methods
 
 #### clear
 Clears component state.
@@ -75,10 +80,10 @@ When this method is call [listen](#listen) unblocks the thread and execution con
 
 > end_listen(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 
 #### listen
-Listens for incoming messages and blocks the current thread until queue is closed.
+Listens for incoming messages and blocks the current thread until the queue is closed.
 See [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
@@ -92,7 +97,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 
 
 #### peek
@@ -101,7 +106,7 @@ If there are no messages available in the queue it returns None.
 
 > peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **returns**: [MessageEnvelope](../message_envelope) - a peeked message or **None**.
 
 
@@ -135,20 +140,21 @@ Receives an incoming message and removes it from the queue.
 
 
 #### _send_message_to_receiver
-TODO: add description
+Sends a message to a receiver.
 
 > _send_message_to_receiver(receiver: [IMessageReceiver](../imessage_receiver), message: [MessageEnvelope](../message_envelope))
 
-- **receiver**: [IMessageReceiver](../imessage_receiver) - TODO: add description
-- **message**: [MessageEnvelope](../message_envelope) - TODO: add description
+- **receiver**: [IMessageReceiver](../imessage_receiver) - Receiver of the message.
+- **message**: [MessageEnvelope](../message_envelope) - Message to be sent.
 
+### Abstract methods
 
 #### subscribe
 Subscribes to the message broker.
 
 > `abstractmethod` subscribe(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 
 
 #### unsubscribe
@@ -156,7 +162,7 @@ Unsubscribes from the message broker.
 
 > `abstractmethod` unsubscribe(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 
 
 ### See also

@@ -7,11 +7,15 @@ description: >
     Defines an interface for message queue connections
 ---
 
-### Methods
+### Description
+
+The IMessageQueueConnection interface is used to create message queue connections.
+
+### Instance methods
 
 #### create_queue
 Creates a message queue.
-If connection doesn't support this function it exists without error.
+If connection doesn't support this function it exits without error.
 
 > create_queue(name: str)
 
@@ -19,7 +23,7 @@ If connection doesn't support this function it exists without error.
 
 #### delete_queue
 Deletes a message queue.
-If connection doesn't support this function it exists without error.
+If connection doesn't support this function it exits without error.
 
 > delete_queue(name: str)
 

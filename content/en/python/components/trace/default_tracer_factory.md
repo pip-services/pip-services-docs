@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The DefaultTracerFactory class provides you with a factory to create Creates [ITracer](../itracer) components based on their descriptors.
+The DefaultTracerFactory class allows you to create a factory used to create [ITracer](../itracer) components based on their descriptors.
 
 ### Constructors
 Creates a new instance of the factory.

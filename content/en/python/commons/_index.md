@@ -4,7 +4,7 @@ title: "Commons"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 no_list: true
 description: > 
-    This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     It provides a set of tools used in microservices or backend services. It is designed to facilitate
     symmetric implementation accross different programming languages.
 

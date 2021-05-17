@@ -8,8 +8,6 @@ description: >
     
     This package contains interfaces and classes for credential stores, which can be used to save or retrieve credential parameters. 
 
-
-
 ---
 ---
 
@@ -21,11 +19,15 @@ description: >
 
 <div class="module-body">  
 
+<br>
+
 ### Interfaces
 
 #### [ICredentialStore](icredential_store)
 Interface for credential stores which are used to store and lookup credentials
 to authenticate against external services.
+
+<br>
 
 ### Classes
 

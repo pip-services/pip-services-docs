@@ -21,10 +21,14 @@ Logs at debug and trace levels are usually captured
 only locally for troubleshooting
 and never sent to consolidated log services.
 
+<br>
+
 ### Interfaces
 
 #### [ILogger](ilogger)
 Interface for logger components that capture execution log messages.
+
+<br>
 
 ### Classes
 

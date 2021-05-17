@@ -15,9 +15,10 @@ description: >
 This package allows you to create [Commandable Interfaces](icommandable), which are completely universal. Thus, for example, if an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then you can implement a commandable client for this object, using various technologies and with minimal code.
 
 <div class="module-body"> 
+
 <br/>
-   
-    
+
+### Description
 The package main components are:    
     
 - [Commandable Interfaces](icommandable) – used to make classes with a certain logic and, which are capable of receiving and processing commands in this universal form.  
@@ -28,9 +29,9 @@ The package main components are:
     - intercept a command’s return value and, for example, cache the result, so that the next call doesn’t have to be made. 
 - [Intercepted commands](intercepted_command) are used as pattern decorators that allow behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. They are represented as regular commands, but run their own logic before calling the actual command. 
 
-Typical uses of this package would be intercepting messages and various logging implementations.   
-<br/>
+Typical uses of this package would be intercepting messages and various logging implementations.  
 
+<br/>
 
 ### Interfaces
 

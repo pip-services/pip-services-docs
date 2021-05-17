@@ -27,6 +27,7 @@ description: >
 
 - When transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
 
+<br>
 
 ### Classes
 

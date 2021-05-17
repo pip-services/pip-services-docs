@@ -14,11 +14,14 @@ description: >
 - Performance counters show non-functional characteristics about how the code works, such as times called, response time, objects saved/processed. Using these numbers, it is possible to show how the code works in the system – how stable, fast, expandable it is. 
 <div class="module-body"> 
 
+<br>
+
 ### Constants
 
 #### [CounterType](counter_type)
 Types of counters that measure different types of metrics
 
+<br>
 
 ### Interfaces
 
@@ -31,6 +34,8 @@ are stored, what was the latest transaction time and so on.
 
 #### [ICounterTimingCallback](icounter_timing_callback)
 Interface for a callback to end measurement of execution elapsed time.
+
+<br>
 
 ### Classes
 

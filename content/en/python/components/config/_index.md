@@ -24,6 +24,8 @@ Some IConfigReader implementations may support configuration parameterization.
 The parameterization allows to use configuration as a template and inject there dynamic values.
 The values may come from application command like arguments or environment variables.
 
+<br>
+
 ### Classes
 
 #### [ConfigReader](config_reader)

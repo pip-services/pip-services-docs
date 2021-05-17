@@ -18,6 +18,8 @@ description: >
 #### [IFactory](ifactory)
 Interface for component factories.
 
+<br>
+
 ### Classes
 
 #### [CompositeFactory](composite_factory)

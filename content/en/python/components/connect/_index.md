@@ -22,11 +22,15 @@ description: >
 
 <div class="module-body"> 
 
+<br>
+
 ### Interfaces
 
 #### [IDiscovery](idiscovery)
 Interface for discovery services which are used to store and resolve connection parameters
 to connect to external services.
+
+<br>
 
 ### Classes
 

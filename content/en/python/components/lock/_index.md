@@ -17,6 +17,8 @@ description: >
 Interface for locks to synchronize work or parallel processes and to prevent collisions.
 The lock allows to manage multiple locks identified by unique keys.
 
+<br>
+
 ### Classes
 
 #### [DefaultLockFactory](default_lock_factory)

@@ -15,9 +15,8 @@ description: >
 This package allows you to create [Commandable Interfaces](icommandable), which are completely universal. Thus, for example, if an object extends [ICommandable](icommandable) and returns a [CommandSet](command_set), then you can implement a commandable client for this object, using various technologies and with minimal code.
 
 <div class="module-body"> 
-<br/>
    
-    
+### Description
 The package main components are:    
     
 - [Commandable Interfaces](icommandable) – used to make classes with a certain logic and, which are capable of receiving and processing commands in this universal form.  

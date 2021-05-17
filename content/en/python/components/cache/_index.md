@@ -18,6 +18,8 @@ description: >
 #### [ICache](icache)
 Interface for caches that are used to cache values to improve performance.
 
+<br>
+
 ### Classes
 
 #### [CacheEntry](cache_entry)

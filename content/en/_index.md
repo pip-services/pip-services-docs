@@ -7,7 +7,10 @@ menu:
 ---
 
 <script>
-  window.location.href += '/node';
+  // redirect to current language main page
+  let currentLangugeUri = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/');
+  currentLangugeUri = currentLangugeUri.filter(word => word.length > 2)[0]
+  window.location.href += currentLangugeUri != '' && currentLangugeUri != undefined ? '/' + currentLangugeUri : '/node' ;
 </script>
 
 

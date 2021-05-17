@@ -136,36 +136,3 @@ Configuration for your microservice that includes mongodb persistence may look t
 {{/if}}
 ...
 ```
-
-### Develop
-
-For development you shall install the following prerequisites:
-* Python 3.7+
-* Visual Studio Code or another IDE of your choice
-* Docker
-
-Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-Run automated tests:
-```bash
-python test.py
-```
-
-Generate API documentation:
-```bash
-./docgen.ps1
-```
-
-Before committing changes run dockerized build and test as:
-```bash
-./build.ps1
-./test.ps1
-./clear.ps1
-```
-
-### Contacts
-
-The Python version of Pip.Services is created and maintained by **Sergey Seroukhov**

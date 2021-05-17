@@ -2,7 +2,7 @@
 type: docs
 title: "AndRule"
 linkTitle: "AndRule"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Validation rule that allows you to check combinations of rules created with AND logical operations.
 ---
@@ -21,23 +21,30 @@ Important points
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> AndRule(*rules: [IValidationRule](../ivalidation_rule))
+> `public` constructor(...rules: [IValidationRule](../ivalidation_rule)[])
 
-- **rules**: [IValidationRule](../ivalidation_rule) - a list of rules to join with AND operator
+- **rules**: [IValidationRule](../ivalidation_rule)[] - a list of rules to join with AND operator
 
 ### Instance methods
 
 #### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
+> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: str - a dot notation path to the value.
+- **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: Any - a value to be validated.
-- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
+- **value**: any - a value to be validated.
+- **results**: [IValidationRule](../ivalidation_rule)[] - a list with validation results to add new results.
 
+### Example
+```typescript
+let schema = Schema().withRule(AndRule(ValueComparisonRule("GTE", 1), ValueComparisonRule("LTE", 10)))
+schema.validate(0)          // Result: 0 must be greater or equal to 1
+schema.validate(5)          // Result: no error
+schema.validate(20)         // Result: 20 must be letter or equal 10
 
+```
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

@@ -2,7 +2,7 @@
 type: docs
 title: "ExcludedRule"
 linkTitle: "ExcludedRule"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Validation rule to check that one or more values are excluded from the list of constants.
 ---
@@ -16,9 +16,9 @@ The ExcludedRule allows you to verify that none of the values specified in the r
 ### Constructors
 Creates a new validation rule and sets its values
 
-> ExcludedRule(*values: Any)
+> `public` constructor(...values: any[])
 
-- **values**: Any - a list of constants that value must be excluded from
+- **values**: any[] - a list of constants that value must be excluded from
 
 ### Methods
 
@@ -26,19 +26,22 @@ Creates a new validation rule and sets its values
 Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)]) 
+> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void 
 
-- **path**: str - the dot notation path to the value that is to be validated.
+- **path**: string - the dot notation path to the value that is to be validated.
 - **schema**: [Schema](../schema) - (not used in this implementation).
-- **value**: Any - the value that is to be validated.
-- **results**: List[[ValidationResult](../validation_result)] - the results of the validation.
+- **value**: any - the value that is to be validated.
+- **results**: [ValidationResult](../validation_result)[] - the results of the validation.
 
 ### Examples
 
-```python
-schema = Schema().with_rule(ExcludedRule(1, 2, 3))
-schema.validate(2)      # Result: 2 must not be one of 1, 2, 3
-schema.validate(10)     # Result: no errors
+```typescript
+let schema = new Schema()
+    .withRule(new ExcludedRule(1, 2, 3));
+ 
+schema.validate(2);      // Result: 2 must not be one of 1, 2, 3
+schema.validate(10);     // Result: no errors
+
 ```
 
 ### See also

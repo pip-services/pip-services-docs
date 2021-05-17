@@ -36,7 +36,7 @@ See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),
 > `public static` toIntegerWithDefault(value: any, defaultValue: number): number
 
 - **value**: any - the value to convert.
-- **defaultValue**: number = null - the default value.
+- **defaultValue**: number - the default value.
 - **returns**: number - integer value or default when conversion is not supported. 
 
 #### toNullableInteger

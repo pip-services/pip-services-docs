@@ -38,6 +38,15 @@ Validates a given value against this rule.
 - **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
 
 
+### Example
+```python
+schema = Schema().with_rule(AndRule(ValueComparisonRule("GTE", 1), ValueComparisonRule("LTE", 10)))
+schema.validate(0)          # Result: 0 must be greater or equal to 1
+schema.validate(5)          # Result: no error
+schema.validate(20)         # Result: 20 must be letter or equal 10
+
+```
+
 
 ### See also
 - #### [IValidationRule](../ivalidation_rule)

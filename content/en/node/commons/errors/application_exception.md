@@ -36,10 +36,10 @@ Creates a new instance of application exception and assigns its values.
 
 > `public` constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null)
 
-- **category**: string = null - (optional) a standard error category. Default: Unknown
-- **correlation_id**: string = null - (optional) a unique transaction id to trace execution through call chain.
-- **code**: string = null - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: string = null - (optional) a human-readable description of the error.
+- **category**: string - (optional) a standard error category. Default: Unknown
+- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) a human-readable description of the error.
 
 ### Fields
 

@@ -34,7 +34,7 @@ See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefau
 > `public static` toFloatWithDefault(value: any, defaultValue: number): number
 
 - **value**: any - the value to convert.
-- **defaultValue**: number = null - the default value.
+- **defaultValue**: number - the default value.
 - **returns**: number - float value or default value when conversion is not supported.
 
 #### toNullableFloat

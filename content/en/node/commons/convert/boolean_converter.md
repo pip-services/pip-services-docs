@@ -35,7 +35,7 @@ Converts value into boolean or returns default value when conversion is not poss
 > `public static` toBooleanWithDefault(value: any, defaultValue: boolean = false): boolean
 
 - **value**: any - the value to convert.
-- **defaultValue**: boolean = false - the default value
+- **defaultValue**: boolean - the default value
 - **returns**: boolean - boolean value or default when conversion is not supported.
 
 

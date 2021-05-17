@@ -2,7 +2,7 @@
 type: docs
 title: "MessagingCapabilities"
 linkTitle: "MessagingCapabilities"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
     Data object that contains supported capabilities of a message queue. If certain capability is not supported a queue will throw NotImplemented exception.
 ---

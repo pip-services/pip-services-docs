@@ -19,7 +19,7 @@ Generates a random double value in the range ['minYear', 'maxYear'].
 > `public static` nextDouble(min: number, max: number = null): number
 
 - **min**: number - (optional) minimum range value
-- **max**: number = null - max range value
+- **max**: number - max range value
 - **returns**: number - a random double value.
 
 #### updateDouble
@@ -28,7 +28,7 @@ Updates (drifts) a double value within specified range defined
 > `public static` updateDouble(value: number, range: number = null): number
 
 - **value**: number - a double value to drift.
-- **range**: number = null - (optional) a range. Default: 10% of the value
+- **range**: number - (optional) a range. Default: 10% of the value
 - **returns**: number - updated float value.
 
 ### Examples

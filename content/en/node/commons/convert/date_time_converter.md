@@ -32,7 +32,7 @@ Converts value into Date or returns default when conversion is not possible.
 > `public static` toDateTimeWithDefault(value: any, defaultValue: Date = null): Date
 
 - **value**: any - the value to convert.
-- **defaultValue**: Date = null - the default value.
+- **defaultValue**: Date - the default value.
 - **returns**: Date - Date value or default when conversion is not supported.
 
 #### toNullableDateTime

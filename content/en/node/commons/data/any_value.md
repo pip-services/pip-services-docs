@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValue"
 linkTitle: "AnyValue"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Cross-language implementation of a dynamic object that can hold a value of any type.
     It also provides methods to convert the stored value to different types.
@@ -17,9 +17,9 @@ The AnyValue class provides a cross-language implementation of a dynamic object 
 ### Constructors
 Creates a new instance of the object and assigns its value.
 
-> AnyValue(value: Any = None)
+> `public` constructor(value: any = null)
 
-- **value**: Any - (optional) value to initialize this object.
+- **value**: any - (optional) value to initialize this object.
 
 ### Fields
 
@@ -27,7 +27,7 @@ Creates a new instance of the object and assigns its value.
 
 #### value
 The value stored by this object.
-> **value**: Any
+> `public` **value**: any
 
 </span>
 
@@ -36,309 +36,319 @@ The value stored by this object.
 #### clone
 Creates a binary clone of this object.
 
-> clone(): Any
+> `public` clone(): any
 
-- **returns**: Any - a clone of this object.
+- **returns**: any - a clone of this object.
 
 #### equals
 Compares this object value to specified specified value.
 When direct comparison gives negative results it tries
 to compare values as strings.
 
-> equals(obj: Any): bool
+> `public` equals(obj: any): boolean
 
-- **obj**: Any - the value to be compared with.
-- **returns**: bool - true when objects are equal and false otherwise.
+- **obj**: any - the value to be compared with.
+- **returns**: boolean - true when objects are equal and false otherwise.
 
-#### equals_as_type
+#### equalsAsType
 Compares this object value to specified specified value.
-When a direct comparison gives negative results it converts 
-values to type specified by type code and compares them again.    
-See [TypeConverter.to_type](../../convert/type_converter/#to_type)
+When direct comparison gives negative results it converts 
+values to type specified by type code and compare them again.    
+See [TypeConverter.toType](../../convert/type_converter/#totype)
 
-> equals_as_type(value_type: [TypeCode](../../convert/type_code), obj: Any): bool
+> `public` equalsAsType/<T/>(type: [TypeCode](../../convert/type_code), obj: any): boolean
 
 - **type**: [TypeCode](../../convert/type_code) - the value to be compared with.
-- **obj**: Any - the args to be compared with.
-- **returns**: Any - true when objects are equal and false otherwise.
+- **obj**: any - TODO add description
+- **returns**: any - true when objects are equal and false otherwise.
 
 
-#### get_as_srray
+#### getAsArray
 Converts object value into an AnyArray or returns empty AnyArray if conversion is not possible.  
-See [AnyValueArray.from_value](../any_value_array/#from_value)
+See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
 
-> get_as_array(): [AnyValueArray](../any_value_array)
+> `public` getAsArray(): [AnyValueArray](../any_value_array)
 
 - **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
-#### get_as_boolean
+#### getAsBoolean
 Converts object value into a boolean or returns false if conversion is not possible.
 
-> get_as_boolean(): bool
+> `public` getAsBoolean(): boolean
 
-- **returns**: bool - string value or false if conversion is not supported. 
+- **returns**: boolean - string value or false if conversion is not supported. 
 
-#### get_as_boolean_with_default
+#### getAsBooleanWithDefault
 Converts object value into a boolean or returns default value if conversion is not possible.  
-See [BooleanConverter.to_boolean_with_default](../../convert/boolean_converter/#to_boolean_with_default)
+See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
-> get_as_boolean_with_default(default_value: bool): bool
+> `public` getAsBooleanWithDefault(defaultValue: boolean): boolean
 
-- **default_value**: bool - the default value.
-- **returns**: bool - boolean value or default if conversion is not supported. 
+- **defaultValue**: boolean - the default value.
+- **returns**: boolean - boolean value or default if conversion is not supported. 
 
-#### get_as_datetime
+#### getAsDateTime
 Converts object value into a Date or returns current date if conversion is not possible.
 
-> get_as_datetime(): datetime
+> `public` getAsDateTime(): Date
 
-- **returns**: datetime - Date value or current date if conversion is not supported.
+- **returns**: Date - Date value or current date if conversion is not supported.
 
-#### get_as_datetime_with_default
+#### getAsDateTimeWithDefault
 Converts object value into a Date or returns default value if conversion is not possible.   
-See [DateTimeConverter.to_datetime_with_default](../../convert/date_time_converter/#to_datetime_with_default)
+See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
-> get_as_datetime_with_default(default_value: datetime): datetime
+> `public` getAsDateTimeWithDefault(defaultValue: Date): Date
 
-- **default_value**: datetime - the default value.
-- **returns**: datetime - datetime value or default if conversion is not supported.
+- **defaultValue**: Date - the default value.
+- **returns**: Date - Date value or default if conversion is not supported.
 
 
-#### get_as_double
+#### getAsDouble
 Converts object value into a double or returns 0 if conversion is not possible.
 
-> get_as_double(): float
+> `public` getAsDouble(): number
 
-- **returns**: float - double value or 0 if conversion is not supported.
+- **returns**: number - double value or 0 if conversion is not supported.
 
 
-#### get_as_double_with_default
+#### getAsDoubleWithDefault
 Converts object value into a double or returns default value if conversion is not possible.    
-See [DoubleConverter.to_double_with_default](../../convert/double_converter/#to_double_with_default)
+See [DoubleConverter.toDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
 
-> to_double_with_default(default_value: float): float
+> `public` getAsDoubleWithDefault(defaultValue: number): number
 
-- **default_value**: float - the default value.
-- **returns**: float - double value or default if conversion is not supported.
+- **defaultValue**: number - the default value.
+- **returns**: number - double value or default if conversion is not supported.
 
 
-#### get_as_float
+#### getAsFloat
 Converts object value into a float or returns 0 if conversion is not possible.
 
-> get_as_float(): float
+> `public` getAsFloat(): number
 
-- **returns**: float - float value or 0 if conversion is not supported. 
+- **returns**: number - float value or 0 if conversion is not supported. 
 
 
-#### get_as_float_with_default
+#### getAsFloatWithDefault
 Converts object value into a float or returns default value if conversion is not possible.    
-See [FloatConverter.to_float_with_default](../../convert/float_converter/#to_float_with_default)
+See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
-> get_as_float_with_default(default_value: float): float
+> `public` getAsFloatWithDefault(defaultValue: number): number
 
-- **default_value**: float - the default value.
-- **returns**: float - float value or default if conversion is not supported.
+- **defaultValue**: number - the default value.
+- **returns**: number - float value or default if conversion is not supported.
 
 
-#### get_as_integer
+#### getAsInteger
 Converts object value into an integer or returns 0 if conversion is not possible.
 
-> get_as_integer(): int
+> `public` getAsInteger(): number
 
-- **returns**: int - integer value or 0 if conversion is not supported. 
+- **returns**: number - integer value or 0 if conversion is not supported. 
 
 
-#### get_as_integer_with_default
+#### getAsIntegerWithDefault
 Converts object value into a integer or returns default value if conversion is not possible.    
-See [IntegerConverter.to_integer_with_default](../../convert/integer_converter/#to_integer_with_default)
+See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
-> get_as_integer_with_default(default_value: int): int
+> `public` getAsIntegerWithDefault(defaultValue: number): number
 
-- **default_value**: int - the default value.
-- **returns**: int -  integer value or default if conversion is not supported.
+- **default_value**: number - the default value.
+- **returns**: number -  integer value or default if conversion is not supported.
 
 
-#### get_as_long
+#### getAsLong
 Converts object value into a long or returns 0 if conversion is not possible.
 
-> get_as_long(): float
+> `public` getAsLong(): number
 
-- **returns**: float -  long value or 0 if conversion is not supported. 
+- **returns**: number -  long value or 0 if conversion is not supported. 
 
 
-#### get_as_long_with_default
+#### getAsLongWithDefault
 Converts object value into a long or returns default value if conversion is not possible.    
-See [LongConverter.to_long_with_default](../../convert/long_converter/#to_long_with_default)
+See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
-> get_as_long_with_default(default_value: float): float
+> `public` getAsLongWithDefault(defaultValue: number): number
 
-- **default_value**: float - the default value.
-- **returns**: float -  long value or default if conversion is not supported. 
+- **default_value**: number - the default value.
+- **returns**: number -  long value or default if conversion is not supported. 
 
 
-#### get_as_map
+#### getAsMap
 Converts object value into AnyMap or returns empty AnyMap if conversion is not possible.    
-See [AnyValueMap.from_value](../any_value_map/#from_value)
+See [AnyValueMap.fromValue](../any_value_map/#fromvalue)
 
-> get_as_map(): [AnyValueMap](../any_value_map)
+> `public` getAsMap(): [AnyValueMap](../any_value_map)
 
 - **returns**: [AnyValueMap](../any_value_map) -  AnyMap value or empty AnyMap if conversion is not supported.
 
 
-#### get_as_nullable_boolean
-Converts object value into a boolean or returns None if conversion is not possible.  
+#### getAsNullableBoolean
+Converts object value into a boolean or returns null if conversion is not possible.  
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> get_as_nullable_boolean(): Optional[bool]
+> `public` getAsNullableBoolean(): boolean
 
-- **returns**: Optional[bool] - boolean value or None if conversion is not supported.
-
-
-#### get_as_nullable_datetime
-Converts object value into a Date or returns None if conversion is not possible.   
-See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime)
-
-> get_as_nullable_datetime(): Optional[datetime]
-
-- **returns**: Optional[datetime] - Date value or None if conversion is not supported.
+- **returns**: boolean - boolean value or null if conversion is not supported.
 
 
-#### get_as_nullable_double
-Converts object value into a double or returns None if conversion is not possible.    
-See [DoubleConverter.to_nullable_double](../../convert/double_converter/#to_nullable_double)
+#### getAsNullableDateTime
+Converts object value into a Date or returns null if conversion is not possible.   
+See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> get_as_nullable_double(): Optional[float]
+> `public` getAsNullableDateTime(): Date
 
-- **returns**: Optional[float] - double value or None if conversion is not supported.
-
-
-#### get_as_nullable_float
-Converts object value into a float or returns None if conversion is not possible.    
-See [FloatConverter.to_nullable_float](../../convert/float_converter/#to_nullable_float)
-
-> get_as_nullable_float(): Optional[float]
-
-- **returns**: Optional[float] - float value or None if conversion is not supported.
+- **returns**: Date - Date value or null if conversion is not supported.
 
 
-#### get_as_nullable_integer
-Converts object value into an integer or returns None if conversion is not possible.  
-See [IntegerConverter.to_nullable_integer](../../convert/integer_converter/#to_nullable_integer)
+#### getAsNullableDouble
+Converts object value into a double or returns null if conversion is not possible.    
+See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> get_as_nullable_integer(): Optional[int]
+> `public` getAsNullableDouble(): number
 
-- **returns**: Optional[int] - integer value or None if conversion is not supported. 
-
-
-#### get_as_nullable_long
-Converts object value into a long or returns None if conversion is not possible.   
-See [LongConverter.to_nullable_long](../../convert/long_converter/#to_nullable_long)
-
-> get_as_nullable_long(): Optional[float]
-
-- **returns**: Optional[float] - long value or None if conversion is not supported. 
+- **returns**: number - double value or null if conversion is not supported.
 
 
-#### get_as_nullable_string
-Converts object value into a string or returns None if conversion is not possible.    
-See [StringConverter.to_nullable_string](../../convert/string_converter/#to_nullable_string)
+#### getAsNullableFloat
+Converts object value into a float or returns null if conversion is not possible.    
+See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> get_as_nullable_string(): Optional[str]
+> `public` getAsNullableFloat(): number
 
-- **returns**: Optional[str] - string value or None if conversion is not supported. 
+- **returns**: number - float value or null if conversion is not supported.
 
 
-#### get_as_nullable_type
+#### getAsNullableInteger
+Converts object value into an integer or returns null if conversion is not possible.  
+See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
+
+> `public` getAsNullableInteger(): number
+
+- **returns**: number - integer value or null if conversion is not supported. 
+
+
+#### getAsNullableLong
+Converts object value into a long or returns null if conversion is not possible.   
+See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
+
+> `public` getAsNullableLong(): number
+
+- **returns**: number - long value or null if conversion is not supported. 
+
+
+#### getAsNullableString
+Converts object value into a string or returns null if conversion is not possible.    
+See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
+
+> `public` getAsNullableString(): string
+
+- **returns**: string - string value or null if conversion is not supported. 
+
+
+#### getAsNullableType
 Converts object value into a value defined by specied typecode.
-If conversion is not possible it returns None.  
-See [TypeConverter.to_nullable_type](../../convert/type_converter/#to_nullable_type)
+If conversion is not possible it returns null.  
+See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
-> get_as_nullable_type(value_type: [TypeCode](../../convert/type_code)): Optional[Any]
+> `public` getAsNullableType\<T\>(type: [TypeCode](../../convert/type_code)): T
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **returns**: Optional[Any] - value defined by the typecode or None if conversion is not supported. 
-
-
-#### get_as_object
-Gets the value stored in this object without any conversion.
-
-> get_as_object(): Any
-
-- **returns**: Any - the object value. 
+- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **returns**: T - value defined by the typecode or null if conversion is not supported. 
 
 
-#### get_as_string
+#### getAsObject
+Gets the value stored in this object without any conversions
+
+> `public` getAsObject(): any
+
+- **returns**: any - the object value. 
+
+
+#### getAsString
 Converts object value into a string or returns *""* if conversion is not possible.
 
-> get_as_string(): str
+> `public` getAsString(): string
 
-- **returns**: str - string value or *""* if conversion is not supported. 
+- **returns**: string - string value or *""* if conversion is not supported. 
 
 
-#### get_as_string_with_default
+#### getAsStringWithDefault
 Converts object value into a string or returns default value if conversion is not possible.
 
-> get_as_string_with_default(default_value: str): str
+> `public` getAsStringWithDefault(defaultValue: string): string
 
-- **default_value**: str - the default value.
-- **returns**: srt - string value or default if conversion is not supported.
-
-
-#### get_as_type
-Converts object args into a args defined by specied typecode.
-If conversion is not possible it returns default args for the specified type.
-
-> get_as_type(value_type: [TypeCode](../../convert/type_code)): Any
-
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **returns**: Any - args defined by the typecode or type default args if conversion is not supported.
+- **defaultValue**: string - the default value.
+- **returns**: string - string value or default if conversion is not supported.
 
 
-#### get_as_type_with_default
+#### getAsType
+Converts object value into a value defined by specied typecode.
+If conversion is not possible it returns default value for the specified type.
+
+> `public` getAsType\<T\>(typeCode: [TypeCode](../../convert/type_code)): T
+
+- **typeCode**: string - the TypeCode that defined the type of the result
+- **returns**: string - value defined by the typecode or type default value if conversion is not supported. 
+
+
+#### getAsTypeWithDefault
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns default value.
 
-> get_as_type_with_default(value_type: [TypeCode](../../convert/type_code), default_value: Any): Any
+> `public` getAsTypeWithDefault\<T\>(typeCode: [TypeCode](../../convert/type_code), defaultValue: T): T
 
-- **value_type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **default_value**: Any - the default value
-- **returns**: Any - value defined by the typecode or type default value if conversion is not supported. 
+- **typeCode**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+- **defaultValue**: T - the default value
+- **returns**: T - value defined by the typecode or type default value if conversion is not supported. 
 
 
-#### get_type_code
+#### getTypeCode
 Gets type code for the value stored in this object.  
-See [TypeConverter.to_type_code](../../convert/type_converter/#to_type_code)
+See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode)
 
-> get_type_code(): [TypeCode](../../convert/type_code)
+> `public` getTypeCode(): [TypeCode](../../convert/type_code)
 
 - **returns**: [TypeCode](../../convert/type_code) - type code of the object value. 
 
 
-#### set_as_object
-Sets a new value for this object.
+#### hashCode
+Gets an object hash code which can be used to optimize storing and searching.  
+See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode)
 
-> set_as_object(value: Any)
+> `public` hashCode(): number
 
-- **value**: Any - the new object value.
+- **returns**: number - an object hash code. 
+
+
+#### setAsObject
+Sets a new value for this object
+
+> `public` setAsObject(value: any): void
+
+- **value**: any - the new object value.
 
 
 
-#### to_string
+#### toString
 Gets a string representation of the object.  
 See [StringConverter.toString](../../convert/string_converter/#tostring)
 
-> to_string(): Any
+> `public` toString(): any
 
-- **returns**: Any - a string representation of the object.
+- **returns**: any - a string representation of the object.
+
 
 ### Examples
 
-```python
-value1 = AnyValue("123.456")
+```typescript
+let value1 = new AnyValue("123.456");
 
-value1.get_as_integer()   # Result: 123
-value1.get_as_string()    # Result: "123.456"
-value1.get_as_float()     # Result: 123.456
+value1.getAsInteger();   // Result: 123
+value1.getAsString();    // Result: "123.456"
+value1.getAsFloat();     // Result: 123.456
 ```
 
 ### See also

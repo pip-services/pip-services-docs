@@ -2,7 +2,7 @@
 type: docs
 title: "IEvent"
 linkTitle: "IEvent"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     An interface for Events that can send asynchronious notifications to multiple subscribed listeners.
 ---

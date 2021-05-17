@@ -20,7 +20,7 @@ Generates a integer in the range ['min', 'max']. If 'max' is omitted, then the r
 
 - **min**: number - minimum value of the integer that will be generated. 
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-- **max**: number = null - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
+- **max**: number - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
 - **returns**: number - generated random integer value.
 
 #### updateInteger
@@ -29,7 +29,7 @@ Updates (drifts) a integer value within specified range defined
 > `public static` updateInteger(value: number, range: number = null): number
 
 - **value**: number - a integer value to drift.
-- **range**: number = null - (optional) a range. Default: 10% of the value
+- **range**: number - (optional) a range. Default: 10% of the value
 - **returns**: number - TODO add description.
 
 ### Examples

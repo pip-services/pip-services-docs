@@ -2,7 +2,7 @@
 type: docs
 title: "NotRule"
 linkTitle: "NotRule"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Validation rule used to negate another rule.
 
@@ -17,10 +17,9 @@ The NotRule class allows you to negate a rule. Thus, when the embedded rule retu
 ### Constructors
 Creates a new validation rule and sets its values
 
-> NotRule(rule: [IValidationRule](../ivalidation_rule))
+> `public` constructor(rule: [IValidationRule](../ivalidation_rule))
 
 - **rule**: [IValidationRule](../ivalidation_rule) - a rule to be negated.
-
 
 
 ### Methods
@@ -28,18 +27,23 @@ Creates a new validation rule and sets its values
 #### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
+> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: str - a dot notation path to the value.
+- **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: Any - a value to be validated.
-- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
+- **value**: any - a value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+
 
 ### Examples
-```python
-schema = Schema().with_rule(NotRule(ValueComparisonRule("EQ", 1)))
-schema.validate(1)          # Result: error
-schema.validate(5)          # Result: no error
+```typescript
+let schema = new Schema()
+    .withRule(new NotRule(
+        new ValueComparisonRule("EQ", 1)
+    ));
+    
+schema.validate(1);          // Result: error
+schema.validate(5);          // Result: no error
 
 ```
 

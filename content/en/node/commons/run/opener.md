@@ -2,7 +2,7 @@
 type: docs
 title: "Opener"
 linkTitle: "Opener"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class that can be used to check whether all components are opened or not, a component is opened or not, and to open one or more components.
 ---
@@ -13,26 +13,26 @@ The Opener class can be used to check whether all components are opened or not, 
 
 ### Static methods
 
-#### is_open
+#### isOpen
 Checks if all components are opened.
 
-To be checked, components must implement [IOpenable](../iopenable) interface.
-If they don't, the call to this method returns true.
+To be checked components must implement [IOpenable](../iopenable) interface.
+If they don't the call to this method returns true.
 
-> `static` is_open(components: List[Any]): bool
+> `public static` isOpen(components: any[]): boolean
 
-- **components**: List[Any] - a list of components that are to be checked.
-- **returns**: bool - true if all components are opened and false if at least one component is closed.
+- **components**: any[] - a list of components that are to be checked.
+- **returns**: boolean - true if all components are opened and false if at least one component is closed.
 
-#### is_open_one
+#### isOpenOne
 Checks if specified component is opened.
-To be checked, components must implement [IOpenable](../iopenable) interface.
-If they don't, the call to this method returns true.
+To be checked components must implement [IOpenable](../iopenable) interface.
+If they don't the call to this method returns true.
 
-> `static` is_open_one(component: Any): bool
+> `public static` isOpenOne(component: any): boolean
 
-- **component**: Any - the component that is to be checked.
-- **returns**: bool - true if component is opened and false otherwise.
+- **component**: any - the component that is to be checked.
+- **returns**: boolean - true if component is opened and false otherwise.
 
 
 #### open
@@ -40,21 +40,21 @@ Opens multiple components.
 To be opened components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method has no effect.
 
-> `static` open(correlation_id: Optional[str], components: List[Any])
+> `public static` open(correlationId: string, components: any[]): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **components**: List[Any] - the list of components that are to be closed.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **components**: any[] - the list of components that are to be closed.
 
 
-#### open_one
+#### openOne
 Opens specific component.
-To be opened, components must implement [IOpenable](../iopenable) interface.
-If they don't, the call to this method has no effect.
+To be opened components must implement [IOpenable](../iopenable) interface.
+If they don't the call to this method has no effect.
 
-> `static` open_one(correlation_id: Optional[str], component: Any)
+> `public static` openOne(correlationId: string, component: any): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: Any - the component that is to be opened.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **component**: any - the component that is to be opened.
 
 
 

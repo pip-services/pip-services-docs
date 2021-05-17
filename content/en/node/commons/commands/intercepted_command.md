@@ -2,7 +2,7 @@
 type: docs
 title: "InterceptedCommand"
 linkTitle: "InterceptedCommand"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Implements a [command](../icommand) wrapped by an interceptor.
     

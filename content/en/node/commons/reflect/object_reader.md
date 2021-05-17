@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectReader"
 linkTitle: "ObjectReader"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
@@ -23,7 +23,7 @@ Important points
 
 ### Static methods
 
-#### get_properties
+#### getProperties
 Get values of all properties in specified object
 and returns them as a map.
 
@@ -31,75 +31,75 @@ The object can be a user defined object, map or array.
 Returned properties correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
-> `static` get_properties(obj: Any): Any
+> `public static` getProperties(obj: any): any
 
-- **obj**: Any - an object to get properties from.
-- **returns**: Any - a map, containing the names of the object's properties and their values.
+- **obj**: any - an object to get properties from.
+- **returns**: any - a map, containing the names of the object's properties and their values.
 
-#### get_property
+#### getProperty
 Gets value of object property specified by its name.
 
 The object can be a user defined object, map or array.
 The property name correspondently must be object property,
 map key or array index.
 
-> `static` get_property(obj: Any, name: str): Any
+> `public static` getProperty(obj: any, name: string): any
 
-- **obj**: Any - an object to read property from.
-- **name**: str - a name of the property to get.
-- **returns**: Any - the property value or None if property doesn't exist or introspection failed.
+- **obj**: any - an object to read property from.
+- **name**: string - a name of the property to get.
+- **returns**: any - the property value or null if property doesn't exist or introspection failed.
 
-#### get_property_names
+#### getPropertyNames
 Gets names of all properties implemented in specified object.
  
 The object can be a user defined object, map or array.
 Returned property name correspondently are object properties,
 map keys or array indexes.
 
-> `static` get_property_names(obj: Any): List[str]
+> `public static` getPropertyNames(obj: any): string[]
 
-- **obj**: Any - an objec to introspect.
-- **returns**: List[str] - a list with property names.
+- **obj**: any - an objec to introspect.
+- **returns**: string[] - a list with property names.
 
-#### get_value
+#### getValue
 Gets a real object value.
 If object is a wrapper, it unwraps the value behind it. 
 Otherwise it returns the same object value.
 
-> `static` get_value(obj: Any): Any
+> `public static` getValue(obj: any): any
 
-- **obj**: Any - an object to unwrap..
-- **returns**: Any - an actual (unwrapped) object value. 
+- **obj**: any - an object to unwrap..
+- **returns**: any - an actual (unwrapped) object value. 
 
-#### has_property
+#### hasProperty
 Checks if object has a property with specified name.
 
 The object can be a user defined object, map or array.
 The property name correspondently must be object property,
 map key or array index.
 
-> `static` has_property(obj: Any, name: str): bool
+> `public static` hasProperty(obj: any, name: string): boolean
 
-- **obj**: Any - an object to introspect.
-- **name**: str - a name of the property to check.
-- **returns**: bool - true if the object has the property and false if it doesn't.
+- **obj**: any - an object to introspect.
+- **name**: string - a name of the property to check.
+- **returns**: boolean - true if the object has the property and false if it doesn't.
 
 ### Examples
 
-```python
-
-mybj = MyObject()
-properties = ObjectReader.get_property_names()
-ObjectReader.has_property(myObj, "myProperty")
-args = PropertyReflector.get_property(myObj, "myProperty")
-
-myMap = { key1: 123, key2: "ABC" }
-ObjectReader.has_property(myMap, "key1")
-args = ObjectReader.get_property(myMap, "key1")
-
-myArray = [1, 2, 3]
-ObjectReader.has_property(myArrat, "0")
-args = ObjectReader.get_property(myArray, "0")
+```typescript
+let myObj = new MyObject();
+    
+let properties = ObjectReader.getPropertyNames();
+ObjectReader.hasProperty(myObj, "myProperty");
+let value = PropertyReflector.getProperty(myObj, "myProperty");
+     
+let myMap = { key1: 123, key2: "ABC" };
+ObjectReader.hasProperty(myMap, "key1");
+let value = ObjectReader.getProperty(myMap, "key1");
+    
+let myArray = [1, 2, 3]
+ObjectReader.hasProperty(myArrat, "0");
+let value = ObjectReader.getProperty(myArray, "0");
 
 ```
 

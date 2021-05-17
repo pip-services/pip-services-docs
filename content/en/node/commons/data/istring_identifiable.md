@@ -2,7 +2,7 @@
 type: docs
 title: "IStringIdentifiable"
 linkTitle: "IStringIdentifiable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Interface for data objects that can be uniquely identifed by a string id. 
 
@@ -27,14 +27,18 @@ Important points
 
 #### id
 The object's unique string id.
-> **id**: str
+> **id**: string
 
 </span>
 
 ### Examples
-```python
-class MyData(IStringIdentifiable):
-    id = None
+```typescript
+export class MyData implements IStringIdentifiable {
+    public id: string;
+    public field1: string;
+    public field2: number; 
+    ...
+}
 ```
 
 ### See also

@@ -21,7 +21,7 @@ If name cannot be determined it returns a defaultName.
 > `public static` resolve(config: [ConfigParams](../config_params), defaultName: string = null): string
 
 - **config**: [ConfigParams](../config_params) - configuration parameters that may contain a component name.
-- **defaultName**: string = null - (optional) a default component name.
+- **defaultName**: string - (optional) a default component name.
 - **returns**: string - resolved name or default name if the name cannot be determined.
 
 ### Examples

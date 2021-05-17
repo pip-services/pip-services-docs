@@ -2,7 +2,7 @@
 type: docs
 title: "ProjectionParamsSchema"
 linkTitle: "ProjectionParamsSchema"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
    Schema to validate [ProjectionParams](../../data/projection_params).
 ---
@@ -15,7 +15,7 @@ The ProjectionParamsSchema class allows you to create a schema to validate [Proj
 
 ### Constructors
 
-> ProjectionParamsSchema()
+> `public` constructor()
 
 ### See also
 - #### [ProjectionParams](../../data/projection_params).

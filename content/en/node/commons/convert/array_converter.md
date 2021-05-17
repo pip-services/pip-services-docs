@@ -2,7 +2,7 @@
 type: docs
 title: "ArrayConverter"
 linkTitle: "ArrayConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The ArrayConverter class provides methods to create an array from a set of values.
 ---
@@ -54,7 +54,7 @@ Single values are converted into arrays with a single element.
 ### Examples
 
 ```typescript
-// List
+// Array
 let value1 = ArrayConverter.toArray([1, 2]) ;      // Result: [1, 2]
 
 // Single value

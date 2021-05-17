@@ -2,7 +2,7 @@
 type: docs
 title: "RandomDateTime"
 linkTitle: "RandomDateTime"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Random generator for Date time values.
 ---
@@ -24,7 +24,7 @@ This method generate dates without time (or time set to 00:00:00)
 > `public static` nextDate(min: Date, max: Date = null): Date
 
 - **min**: Date - (optional) minimum range value
-- **max**: Date = null - max range value
+- **max**: Date - max range value
 - **returns**: Date - a random Date value.
 
 #### nextDateTime
@@ -34,7 +34,7 @@ This method generate dates without time (or time set to 00:00:00)
 > `public static` nextDateTime(min: Date, max: Date = null): Date
 
 - **min**: Date - (optional) minimum range value
-- **max**: Date = null - max range value
+- **max**: Date - max range value
 - **returns**: Date - a random Date and time value.
 
 #### updateDateTime
@@ -43,7 +43,7 @@ Updates (drifts) a Date value within specified range defined
 > `public static` updateDateTime(value: Date, range: number = null): Date
 
 - **value**: Date - a Date value to drift.
-- **range**: number = null - (optional) a range in milliseconds. Default: 10 days
+- **range**: number - (optional) a range in milliseconds. Default: 10 days
 - **returns**: Date - an updated DateTime
 
 ### Examples

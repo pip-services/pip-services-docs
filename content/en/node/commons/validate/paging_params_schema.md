@@ -2,12 +2,12 @@
 type: docs
 title: "PagingParamsSchema"
 linkTitle: "PagingParamsSchema"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
    Schema to validate [PagingParams](../../data/paging_params).
 ---
 
-**Implements:** [ObjectSchema](../object_schema)
+**Extends:** [ObjectSchema](../object_schema)
 
 ### Description
 
@@ -15,7 +15,7 @@ The PagingParamsSchema class allows you to create a schema to validate [PagingPa
 
 ### Constructors
 
-> PagingParamsSchema()
+> `public` constructor()
 
 ### See also
 - #### [PagingParams](../../data/paging_params)

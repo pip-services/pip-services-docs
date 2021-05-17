@@ -2,7 +2,7 @@
 type: docs
 title: "FixedRateTimer"
 linkTitle: "FixedRateTimer"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Timer that is triggered in equal time intervals.
 
@@ -21,11 +21,11 @@ Important points
 ### Constructors
 Creates new instance of the timer and sets its values.
 
-> FixedRateTimer(task_or_object: Any = None, interval: int = None, delay: int = None)
+> `public` constructor(taskOrCallback: any = null, interval: number = null, delay: number = null)
 
-- **task_or_object**: Any - (optional) a Notifiable object or callback function to call when timer is triggered.
-- **interval**: int - (optional) an interval to trigger timer in milliseconds.
-- **delay**: int - (optional) a delay before the first triggering in milliseconds.
+- **taskOrCallback**: any - (optional) a Notifiable object or callback function to call when timer is triggered.
+- **interval**: number - (optional) an interval to trigger timer in milliseconds.
+- **delay**: number - (optional) a delay before the first triggering in milliseconds.
 
 ### Methods
 
@@ -35,80 +35,80 @@ Closes the timer.
 This is required by [ICloseable](../icloseable) interface,
 but besides that it is identical to [stop()](#stop).
 
-> close(correlation_id: Optional[str])
+> `public` close(correlationId: string): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
-#### get_callback
+#### getCallback
 Gets the callback function that is called when this timer is triggered.
 
-> get_callback(): Callable
+> `public` getCallback(): () => void
 
-- **returns**: Callable - the callback function or None if it is not set. 
+- **returns**: function - the callback function or null if it is not set. 
 
 
-#### get_delay
+#### getDelay
 Gets initial delay before the timer is triggered for the first time.
 
-> getDelay(): int
+> `public` getDelay(): number
 
-- **returns**: int - the delay in milliseconds.
+- **returns**: number - the delay in milliseconds.
 
-#### get_interval
+#### getInterval
 Gets periodic timer triggering interval.
 
-> get_interval(): int
+> `public` getInterval(): number
 
-- **returns**: int - the interval in milliseconds
+- **returns**: number - the interval in milliseconds
 
 
-#### get_task
+#### getTask
 Gets the INotifiable object that receives notifications from this timer.
 
-> get_task(): [INotifiable](../inotifiable)
+> `public` getTask(): [INotifiable](../inotifiable)
 
-- **returns**: [INotifiable](../inotifiable) - the INotifiable object or None if it is not set.
+- **returns**: [INotifiable](../inotifiable) - the INotifiable object or null if it is not set.
 
 
-#### set_task
+#### setTask
 Sets a new INotifiable object to receive notifications from this timer.
 
-> set_task(value: [INotifiable](../inotifiable))
+> `public` setTask(value: [INotifiable](../inotifiable)): void
 
 - **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
 
-#### is_started
+#### isStarted
 Checks if the timer is started.
 
-> is_started(): bool
+> `public` isStarted(): boolean
 
-- **returns**: bool - true if the timer is started and false if it is stopped.
+- **returns**: boolean - true if the timer is started and false if it is stopped.
 
-#### set_callback
+#### setCallback
 Sets the callback function that is called when this timer is triggered.
 
-> set_callback(value: Callable)
+> `public` setCallback(value: () => void)
 
-- **value**: Callable - the callback function to be called.
+- **value**: function - the callback function to be called.
 
-#### set_delay
+#### setDelay
 Sets initial delay before the timer is triggered for the first time.
 
-> set_delay(value: int)
+> `public` setDelay(value: number): void
 
-- **value**: int - a delay in milliseconds. 
+- **value**: number - a delay in milliseconds. 
 
-#### set_interval
+#### setInterval
 Sets periodic timer triggering interval.
 
-> set_interval(value: int)
+> `public` setInterval(value: number): void
 
-- **value**: int - an interval in milliseconds.
+- **value**: number - an interval in milliseconds.
 
-#### set_task
+#### setTask
 Sets a new [INotifiable](../inotifiable) object to receive notifications from this timer.
 
-> set_task(value: [INotifiable](../inotifiable))
+> `public` setTask(value: [INotifiable](../inotifiable)): void
 
 - **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
 
@@ -116,15 +116,15 @@ Sets a new [INotifiable](../inotifiable) object to receive notifications from th
 Starts the timer.
 
 Initially the timer is triggered after delay.
-After that it, is triggered after interval until it is stopped.
+After that it is triggered after interval until it is stopped.
 
-> start()
+> `public` start(): void
 
 
 #### stop
 Stops the timer.
 
-> stop()
+> `public` stop(): void
 
 ### See also
 - #### [INotifiable](../inotifiable)

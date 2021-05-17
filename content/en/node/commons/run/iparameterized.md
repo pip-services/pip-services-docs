@@ -2,7 +2,7 @@
 type: docs
 title: "IParameterized"
 linkTitle: "IParameterized"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface that allows you to create components with execution parameters.
 ---
@@ -13,10 +13,10 @@ The IParameterized interface allows you to create components with execution para
 
 ### Instance methods
 
-#### set_parameters
+#### setParameters
 Sets execution parameters.
 
-> set_parameters(parameters: [Parameters](../parameters))
+> setParameters(parameters: [Parameters](../parameters)): void
 
 - **parameters**: [Parameters](../parameters)
 

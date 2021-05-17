@@ -37,8 +37,8 @@ See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 
 > `public` constructor(config?: [ConfigParams](../../config/config_params), references?: [IReferences](../ireferences))
 
-- **config?**: [ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
-- **references?**: [IReferences](../ireferences) - (optional) default component references
+- **config**: [ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
+- **references**: [IReferences](../ireferences) - (optional) default component references
 
 
 ### Instance methods

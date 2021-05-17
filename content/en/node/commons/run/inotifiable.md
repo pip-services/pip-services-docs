@@ -2,7 +2,7 @@
 type: docs
 title: "INotifiable"
 linkTitle: "INotifiable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface that allows you to create components that can be asynchronously notified.
     
@@ -19,24 +19,27 @@ Important points
 ### Instance methods
 
 #### notify
-Notifies the component about an occured event.
+Notifies the component about occured event.
 
-> notify(correlation_id: Optional[str], args: [Parameters](../parameters))
+> notify(correlationId: string, args: [Parameters](../parameters)): void
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
 
 ### Examples
 
-```python
-class MyComponent(INotifable):
+```typescript
+class MyComponent implements INotifable {
     ...
-    def notify(correlationId, args): 
-        print("Occured event " + args.get_as_string("event"))
-    
+    public notify(correlationId: string, args: Parameters): void {
+        console.log("Occured event " + args.getAsString("event"));
+    }
+}
    
-my_component = MyComponent()
-my_component.notify("123", Parameters.from_tuples("event", "Test Event"));
+let myComponent = new MyComponent();
+    
+myComponent.notify("123", Parameters.fromTuples("event", "Test Event"));
+
 ```
 
 ### See also

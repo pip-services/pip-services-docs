@@ -36,7 +36,7 @@ Converts value into integer or returns default value when conversion is not poss
 > `public static` toDoubleWithDefault(value: any, defaultValue: number = 0): number
 
 - **value**: any - the value to convert.
-- **defaultValue**: number = null - the default value.
+- **defaultValue**: number - the default value.
 - **returns**: number - double value or default when conversion is not supported.
 
 #### toNullableDouble

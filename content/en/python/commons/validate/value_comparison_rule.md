@@ -2,7 +2,7 @@
 type: docs
 title: "ValueComparisonRule"
 linkTitle: "ValueComparisonRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: >
    Validation rule that compares a value to a constant.
 ---
@@ -16,10 +16,10 @@ The ValueComparisonRule class allows you to create a validation rule that compar
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> ValueComparisonRule(operation: Any, value: str)
+> ValueComparisonRule(operation: str, value: Any)
 
-- **operation**: Any - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: str - a constant value to compare to
+- **operation**: str - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: Any - a constant value to compare to
 
 ### Methods
 

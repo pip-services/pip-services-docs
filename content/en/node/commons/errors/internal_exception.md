@@ -16,9 +16,9 @@ The InternalException class is used to manage errors caused by programming mista
 ### Constructors
 Creates an error instance and assigns its values.
 
-> InternalException(correlation_id: Optional[str] = None, code: str = None, message: str = None)
+> `public` constructor(correlation_id: string = null, code: string = null, message: string = null): [BadRequestException]()
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **code**: str - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: str - (optional) a human-readable description of the error.
+- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) a human-readable description of the error.
 

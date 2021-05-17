@@ -2,7 +2,7 @@
 type: docs
 title: "IClosable"
 linkTitle: "IClosable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface that allows you to create a component with a method that closes it and frees used resources.
 
@@ -15,23 +15,27 @@ The IClosable interface allows you to create a component with a method that clos
 ### Methods
 
 #### close
-Closes a component and frees used resources.
+Closes component and frees used resources.
 
-> close(correlation_id: Optional[str])
+> close(correlationId: string): Promise\<void\>;
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 ### Examples
-```python
-class MyConnector(ICloseable):
-    _client = None
+```typescript
+class MyConnector implements ICloseable {
+    private _client: any = null;
     
-    ... # The _client can be lazy created
+    ... // The _client can be lazy created
     
-    def close(self, correlation_id):
-        if self._client is not None:
-            self._client.close()
-            self._client = None  
+    public async close(correlationId: string): Promise<void> {
+        if (this._client != null) {
+            this._client.close();
+            this._client = null;
+        }
+    }
+}
+
 ```
 
 ### See also

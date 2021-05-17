@@ -71,7 +71,7 @@ The first word is capitalized, others are not.
 > `public static` phrase(minLength: number, maxLength: number = null): string 
 
 - **minLength**: number - (optional) minimum string length.
-- **maxLength**: number = null -  maximum string length.
+- **maxLength**: number -  maximum string length.
 - **returns**: string -  a random phrase.
 
 #### text
@@ -80,7 +80,7 @@ Generates a random text, consisting of first names, last names, colors, stuffs, 
 > `public static` text(minLength: number, maxLength: number = null): string
 
 - **minLength**: number - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
-- **maxLength**: number = null -  (optional) maximum amount of words to generate.
+- **maxLength**: number -  (optional) maximum amount of words to generate.
 - **returns**: string -  a random text.
 
 #### verb
@@ -105,7 +105,7 @@ Generates a random word from available first names, last names, colors, stuffs, 
 > `public static` words(min: number, max: number = null): string
 
 - **min**: number - (optional) a minimum number of words.
-- **max**: number = null - a maximum number of words.
+- **max**: number - a maximum number of words.
 - **returns**: string - a random text.
 
 ### Examples

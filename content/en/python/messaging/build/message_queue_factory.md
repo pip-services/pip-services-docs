@@ -4,8 +4,8 @@ title: "MessageQueueFactory"
 linkTitle: "MessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    Creates [IMessageQueue](../../queues/imessage_queue) components by their descriptors.
-    Name of created message queue is taken from its descriptor.
+    Creates [IMessageQueue](../../queues/imessage_queue) components based on their descriptors.
+   
 ---
 
 **Implements:** [Factory](../../../components/build/factory), [IMessageQueueFactory](../imessage_queue_factory), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)

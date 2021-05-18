@@ -4,9 +4,16 @@ title: "MessagingCapabilities"
 linkTitle: "MessagingCapabilities"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    Data object that contains supported capabilities of a message queue. If certain capability is not supported a queue will throw NotImplemented exception.
+    Data object that contains supported capabilities of a message queue. 
 ---
 
+### Description
+
+The MessagingCapabilities class allows you to create data objects that contain supported capabilities of message queues.
+
+Important points
+
+- If certain capability is not supported a queue will throw NotImplemented exception.
 
 ### Constructors
 
@@ -14,16 +21,16 @@ description: >
 
 Creates a new instance of the capabilities object.
 
-- **canMessageCount**: boolean - true if queue supports reading message count.
-- **canSend**: boolean - true if queue is able to send messages.
-- **canReceive**: boolean - true if queue is able to receive messages.
-- **canPeek**: boolean - true if queue is able to peek messages.
-- **canPeekBatch**: boolean - true if queue is able to peek multiple messages in one batch.
-- **canRenewLock**: boolean - true if queue is able to renew message lock.
-- **canAbandon**: boolean - true if queue is able to abandon messages.
-- **canDeadLetter**: boolean - true if queue is able to send messages to dead letter queue.
-- **canClear**: boolean - true if queue can be cleared.
-- **returns**: [MessagingCapabilities]() - TODO add descriptiion
+- **canMessageCount**: boolean - true if the queue supports reading message count.
+- **canSend**: boolean - true if the queue is able to send messages.
+- **canReceive**: boolean - true if the queue is able to receive messages.
+- **canPeek**: boolean - true if the queue is able to peek messages.
+- **canPeekBatch**: boolean - true if the queue is able to peek multiple messages in one batch.
+- **canRenewLock**: boolean - true if the queue is able to renew message lock.
+- **canAbandon**: boolean - true if the queue is able to abandon messages.
+- **canDeadLetter**: boolean - true if the queue is able to send messages to dead letter queue.
+- **canClear**: boolean - true if the queue can be cleared.
+- **returns**: [MessagingCapabilities]() - data object that contains supported capabilities of a message queue
 
 
 ### Properties

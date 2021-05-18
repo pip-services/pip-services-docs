@@ -4,17 +4,25 @@ title: "MessageEnvelope"
 linkTitle: "MessageEnvelope"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    Allows adding additional information to messages. A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
-
-    Side note: a MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
+    Allows adding additional information to messages. 
 ---
 
+### Description
+
+The MessageEnvelope class allows you to add additional information to messages.
+
+Important points
+
+- A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
+- A MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
+
 ### Constructors
+
 Creates a new [MessageEnvelope](), which adds a correlation id, message id, and a type to the data being sent/received.
 
 > MessageEnvelope(correlation_id: Optional[str], message_type: Optional[str], message: Optional[Any])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message_type**: Optional[str] - a string value that defines the message's type.
 - **message**: Optional[Any] - the data being sent/received.
 
@@ -49,7 +57,7 @@ The time at which the message was sent.
 
 </span>
 
-### Methods
+### Instance methods
 
 #### get_message_as
 Returns any the value that was stored in this message as a JSON string.  
@@ -60,21 +68,21 @@ See also [set_message_as_object](#set_message_as_object)
 - **returns**: Any - the value that was stored in this message as a JSON string.
 
 #### get_message_as_string
-Returns string the information stored in this message as a UTF-8 encoded string.
+Returns the information stored in this message as a UTF-8 encoded string.
 
 > get_message_as_string(): Optional[str]
 
 - **returns**: Optional[str] - the information stored in this message as a UTF-8 encoded string.
 
 #### get_reference
-Returns any the lock token that this [MessageEnvelope]() references.
+Returns the lock token that this [MessageEnvelope]() references.
 
 > get_reference(): Any
 
 - **returns**: Any - the lock token that this [MessageEnvelope]() references.
 
 #### set_message_as_object
-Stores the given value as a object.
+Stores the given value as an object.
 See also [get_message_as](#get_message_as)
 
 > set_message_as_object(value: Any)
@@ -103,7 +111,7 @@ Converts this [MessageEnvelope]() to a JSON string. The message payload is passe
 - **returns**: dict - A JSON encoded representation is this object.
 
 #### to_string
-Convert's this [MessageEnvelope]() to a string, using the following format:  
+Converts this [MessageEnvelope]() to a string, using the following format:  
 *"[<correlation_id>,<message_type>,<message.toString>]"*.
 
 If any of the values are *None*, they will be replaced with \-\-\-.
@@ -113,10 +121,10 @@ If any of the values are *None*, they will be replaced with \-\-\-.
 - **returns**: str - the generated string.
 
 #### from_json
-Converts a JSON string into a [MessageEnvelope]() The message payload is passed as base64 string
+Converts a JSON string into a [MessageEnvelope]() The message payload is passed as a base64 string
 
 > `static` from_json(value: str): [MessageEnvelope]()
 
 - **value**: str - a JSON encoded string
-- **returns**: [MessageEnvelope]() - a decoded Message Envelop.
+- **returns**: [MessageEnvelope]() - a decoded Message Envelope.
 

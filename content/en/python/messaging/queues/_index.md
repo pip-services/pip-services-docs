@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to create message queues. Additionally, it contains classes used to create some specific types of message queues, such as cached and memory message queues.
 ---
 ---
 

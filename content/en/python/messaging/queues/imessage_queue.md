@@ -36,7 +36,7 @@ See also [IMessageReceiver](../imessage_receiver), [listen](#listen)
 
 > begin_listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
 
 #### complete
@@ -47,7 +47,7 @@ Permanently removes a message from the queue. This method is usually used to rem
 - **message**: [MessageEnvelope](../message_envelope) - message to remove.
 
 #### end_listen
-Ends listening for incoming messages. When this method is call [listen](#listen) unblocks the thread, and execution continues.
+Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > end_listen(correlation_id: Optional[str])
 
@@ -99,7 +99,7 @@ Peeks multiple incoming messages from the queue without removing them. If there 
 
 - **orrelation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message_count**: int - maximum number of messages to peek.
-- **returns**: List[[MessageEnvelope](../message_envelope)] - a peeked list with messages.
+- **returns**: List[[MessageEnvelope](../message_envelope)] - peeked list with messages.
 
 #### read_message_count
 Reads the current number of messages in the queue to be delivered.

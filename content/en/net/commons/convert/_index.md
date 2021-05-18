@@ -3,7 +3,7 @@ type: docs
 title: "Convert"
 linkTitle: "Convert"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
    
     This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 

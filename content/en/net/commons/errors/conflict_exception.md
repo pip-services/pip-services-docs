@@ -2,13 +2,13 @@
 type: docs
 title: "ConflictException"
 linkTitle: "ConflictException"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Errors raised by conflicts between object versions that were
     posted by the user and those that are stored on the server.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Extends:** [ApplicationException](../application_exception)
 
 ### Description
 
@@ -17,9 +17,8 @@ The ConflictException class is used to manage errors raised by conflicts between
 ### Constructors
 Creates an error instance and assigns its values.
 
-> ConflictException(correlation_id: Optional[str] = None, code: str = None, message: str = None)
+> `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **code**: str - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: str - (optional) a human-readable description of the error.
-
+- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) a human-readable description of the error.

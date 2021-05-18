@@ -2,7 +2,7 @@
 type: docs
 title: "JsonConverter"
 linkTitle: "JsonConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 ---
@@ -10,57 +10,59 @@ description: >
 ### Description
 
 The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
+
 ### Static methods
 
-#### from_json
+#### fromJson
 Converts JSON string into a value of type specified by a TypeCode.
 
-> `static` from_json(type: [TypeCode](../type_code), value: str): Any
+> `public static` fromJson\<T\>(type: [TypeCode](../type_code), value: string): T
 
 - **type**: [TypeCode](../type_code) - the TypeCode for the data type into which 'value' is to be converted.
-- **value**: str - the JSON string to convert.
-- **returns**: Any - converted object value or None when value is None.
+- **value**: string - the JSON string to convert.
+- **returns**: T - converted object value or null when value is null.
 
-#### to_json
+#### toJson
 Converts value into JSON string.
 
-> `static` to_json(value: Any): Optional[str]
+> `public static` toJson(value: any): string
 
-- **value**: Any - the value to convert.
-- **returns**: str - JSON string or None when value is None.
+- **value**: any - the value to convert.
+- **returns**: string - JSON string or null when value is null.
 
-#### to_map
+#### toMap
 Converts JSON string into map object or returns empty map when conversion is not possible.
-See [LongConverter.to_nullable_long](../long_converter/#to_nullable_long)
+See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
-> `static` to_map(value: str): Any
+> `public static` toMap(value: string): any
 
-- **value**: str - the JSON string to convert.
-- **returns**: Any - Map object value or empty object when conversion is not supported.
+- **value**: string - the JSON string to convert.
+- **returns**: any - Map object value or empty object when conversion is not supported.
 
-#### to_map_with_default
+#### toMapWithDefault
 Converts JSON string into map object or returns default value when conversion is not possible.
 
-> `static` to_map_with_default(value: str, default_value: Any): Any
+> `public static` toMapWithDefault(value: string, defaultValue: any): any
 
-- **value**: str - the JSON string to convert.
-- **default_value**: Any - the default value.
-- **returns**: Any - Map object value or default when conversion is not supported.
+- **value**: string - the JSON string to convert.
+- **defaultValue**: any - the default value.
+- **returns**: any - Map object value or default when conversion is not supported.
 
 
-#### to_nullable_map
-Converts JSON string into map object or returns None when conversion is not possible.  
-See [MapConverter.to_nullable_map](../map_converter/#to_nullable_map)
+#### toNullableMap
+Converts JSON string into map object or returns null when conversion is not possible.  
+See [MapConverter.toNullableMap](../map_converter/#tonullablemap)
 
-> `static` to_nullable_map(value: str): Any 
+> `public static` toNullableMap(value: string): any 
 
-- **value**: str - the JSON string to convert.
-- **returns**: Any - Map object value or None when conversion is not supported.
+- **value**: string - the JSON string to convert.
+- **returns**: any - Map object value or null when conversion is not supported.
 
 
 ### Examples
 
-```python
-value1 = JsonConverter.to_json({'key':123}) # Returns '{"key": 123}'
+```typescript
+let value1 = JsonConverter.fromJson("{\"key\":123}"); // Result: { key: 123 }
+let value2 = JsonConverter.toMap({ key: 123}); // Result: "{\"key\":123}"
 
 ```

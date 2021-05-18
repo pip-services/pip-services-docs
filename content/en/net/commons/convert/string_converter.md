@@ -2,7 +2,7 @@
 type: docs
 title: "StringConverter"
 linkTitle: "StringConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The StringConverter class allows you to convert arbitrary values into strings.
 
@@ -20,38 +20,37 @@ description: >
 
 ### Static methods
 
-#### to_nullable_string
-Converts value into string or returns None when value is None.
+#### toNullableString
+Converts value into string or returns null when value is null.
 
-> `static` to_nullable_string(value: Any): Optional[str]
+> `public static` toNullableString(value: any): string
 
-- **value**: Any - the value to convert.
-- **returns**: Optional[str] - string value or None when value is None.
+- **value**: any - the value to convert.
+- **returns**: string - string value or null when value is null.
 
-#### to_string
-Converts value into string or returns "" when value is None.
+#### toString
+Converts value into string or returns "" when value is null.
 
-> `static` to_string(value: Any): str
+> `public static` toString(value: any): string
 
-- **value**: Any - the value to convert.
-- **returns**: str - string value or "" when value is None.
+- **value**: any - the value to convert.
+- **returns**: string - string value or "" when value is null.
 
-#### to_string_with_default
-Converts value into string or returns default when value is None.
+#### toStringWithDefault
+Converts value into string or returns default when value is null.
 
-> `public static` to_string_with_default(value: Any, default_value: str): str
+> `public static` toStringWithDefault(value: any, defaultValue: string): string
 
-- **value**: Any - the value to convert.
-- **default_value**: str - the default value.
-- **returns**: str - string value or default when value is None.
+- **value**: any - the value to convert.
+- **defaultValue**: string - the default value.
+- **returns**: string - string value or default when value is null.
 
 
 ### Examples
 
-```python
-import datetime
-value1 = StringConverter.to_string(123.456) # Returns '123.456'
-value2 = StringConverter.to_string(True)    # Returs 'True'
-value3 = StringConverter.to_string(datetime.datetime(2018,10,1)) # Returns '2018-10-01T00:00:00Z'"2018-01-01T00:00:00.00"
-value4 = StringConverter.to_string(["a","b","c"]) # Returns 'a,b,c'
+```typescript
+let value1 = StringConverter.ToString(123.456); // Result: "123.456"
+let value2 = StringConverter.ToString(true); // Result: "true"
+let value3 = StringConverter.ToString(new Date(2018,0,1)); // Result: "2018-01-01T00:00:00.00"
+let value4 = StringConverter.ToString([1,2,3]); // Result: "1,2,3"
 ```

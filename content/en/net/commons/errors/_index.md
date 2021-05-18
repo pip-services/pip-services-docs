@@ -3,7 +3,7 @@ type: docs
 title: "Errors"
 linkTitle: "Errors"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     
     Portable and localizable Exceptions classes. Each Exception has a unique string code and details array (which can be used for creating 
@@ -27,6 +27,7 @@ description: >
 
 - When transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
 
+<br>
 
 ### Classes
 

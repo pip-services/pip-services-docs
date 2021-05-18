@@ -2,7 +2,7 @@
 type: docs
 title: "ICommand"
 linkTitle: "ICommand"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     An interface used to define Commands.
 ---
@@ -13,22 +13,31 @@ description: >
 
 The ICommand interface is used to define Commands. Each command wraps a method or function and allows to call them in a uniform and safe manner.
 
-### Instance methods
+### Properties
 
-#### get_name
+#### Name
 Gets the command name.
 
-> get_name(): str
+> `public` string Name
 
-- **returns**: str - the command name.
+- **returns**: string - the command name.
 
-#### validate
-Validates command arguments before execution using a defined schema.
+#### Schema
+Gets the command schema.
 
-> validate(args: [Parameters](../../run/parameters)): List[[ValidationResult](../../validate/validation_result)]
+> public [Schema](../../validate/schema) Schema
+
+- **returns**: [Schema](../../validate/schema) - the command name.
+
+### Instance methods
+
+#### Validate
+Validates command arguments before execution using defined schema.
+
+> IList<[ValidationResult](../../validate/validation_result)> Validate(args: [Parameters](../../run/parameters))
 
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: List[[ValidationResult](../../validate/validation_result)] - the command name.
+- **returns**: [ValidationResult](../../validate/validation_result)[] - the command name.
 
 ### See also
 - #### [Command](../command)

@@ -2,7 +2,7 @@
 type: docs
 title: "IVersioned"
 linkTitle: "IVersioned"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Interface used to define data objects that can be versioned.
 
@@ -24,20 +24,26 @@ Important points
 
 #### version
 The object's version.
-> **version**: str
-
-### Examples
-```python
-class MyData(IStringIdentifiable, IVersioned):
-    id = None
-    version = None
-    # do something
-    def update_data(item):
-        # do something
-        if item.version < old_item.version:
-            raise ConcurrencyException(None, "VERSION_CONFLICT", "The change has older version stored args")
-    
-    # do something
-```
+> **version**: string
 
 </span>
+
+
+### Examples
+```typescript
+export class MyData implements IStringIdentifiable, IVersioned {
+    public id: string;
+    public field1: string;
+    public field2: number;
+    public version: string;
+    ...
+}
+   
+public updateData(correlationId: string, item: MyData): void {
+    ...
+    if (item.version < oldItem.version) {
+        throw new ConcurrencyException(null, "VERSION_CONFLICT", "The change has older version stored value");
+    }
+    ...
+}
+```

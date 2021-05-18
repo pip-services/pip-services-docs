@@ -2,7 +2,7 @@
 type: docs
 title: "ArrayConverter"
 linkTitle: "ArrayConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The ArrayConverter class provides methods to create an array from a set of values.
 ---
@@ -12,55 +12,55 @@ The ArrayConverter class provides methods to create an array from a set of value
 
 ### Static methods
 
-#### list_to_array
-Converts a list into an array object, with empty array as default.
+#### listToArray
+Converts a list into array object with empty array as default.
 Strings with comma-delimited values are split into array of strings.
 See [toArray](#toArray)
 
-> `static` list_to_array(value: Any): List[Any]
+> `public static` listToArray(value: any): any[]
 
-- **value**: Any - the list to convert.
-- **returns**: List[Any] - array object or empty array when value is None
+- **value**: any - the list to convert.
+- **returns**: any[] - array object or empty array when value is null
 
 
-#### to_array
+#### toArray
 Converts value into array object with empty array as default.
 Single values are converted into arrays with single element.
 
-> `static` to_array(value: Any): List[Any]
+> `public static` toArray(value: any): any[]
 
-- **value**: Any - the value to convert.
-- **returns**: List[Any] - array object or empty array when value is None.
+- **value**: any - the value to convert.
+- **returns**: any[] - array object or empty array when value is null.
 
-#### to_array_with_default
+#### toArrayWithDefault
 Converts value into array object with specified default.
 Single values are converted into arrays with single element.
 
-> `static` to_array_with_default(value: Any, default_value: List[Any]): List[Any]
+> `public static` toArrayWithDefault(value: any, defaultValue: any[]): any[]
 
-- **value**: Any - the value to convert.
-- **default_value**: List[Any] - default array object.
-- **returns**: List[Any] - array object or default array when value is None.
+- **value**: any - the value to convert.
+- **defaultValue**: any[] - default array object.
+- **returns**: any[] - array object or default array when value is null.
 
-#### to_nullable_array
+#### toNullableArray
 Converts value into array object.
 Single values are converted into arrays with a single element.
 
-> `static` to_nullable_array(value: Any): Optional[List[Any]]
+> `public static` toNullableArray(value: any): any[]
 
-- **value**: Any - the value to convert.
-- **returns**: Optional[List[Any]] - array object or None when value is None.
+- **value**: any - the value to convert.
+- **returns**: any[] - array object or null when value is null.
 
 ### Examples
 
-```python
-# List
-value1 = ArrayConverter.to_array([1, 2])       # Result: [1, 2]
+```typescript
+// Array
+let value1 = ArrayConverter.toArray([1, 2]) ;      // Result: [1, 2]
 
-# Single value
-value2 = ArrayConverter.to_array(1)            # Result: [1]
+// Single value
+let value2 = ArrayConverter.toArray(1);            // Result: [1]
 
-# String with comma-delimited values
-value3 = ArrayConverter.list_to_array("1,2,3") # Result: ["1", "2", "3"]
+// String with comma-delimited values
+let value3 = ArrayConverter.listToArray("1,2,3"); // Result: ["1", "2", "3"]
 
 ```

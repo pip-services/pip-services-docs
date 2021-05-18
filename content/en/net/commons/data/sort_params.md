@@ -2,12 +2,12 @@
 type: docs
 title: "SortParams"
 linkTitle: "SortParams"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Defines a list of field names used to sort query results.
 ---
 
-**Implements:** list
+**Extends:** Array\<[SortField](../sort_field)\>
 
 ### Description
 
@@ -16,17 +16,19 @@ The SortParams class allows you to define a list of field names used to sort que
 ### Constructors
 Creates a new instance and initializes it with specified sort fields.
 
-> SortParams(*fields: [SortField](../sort_field))
+> `public` constructor(...fields: [SortField](../sort_field)[]): [SortParams]()
 
-- **fields**: [SortField](../sort_field) - a list of fields to sort by.
+- **fields**: [SortField](../sort_field)[] - a list of fields to sort by.
+
 
 ### Examples
-```python
-filter = FilterParams.fromTuples("type", "Type1")
-paging = PagingParams(0, 100)
-sorting = SortingParams(SortField("create_time", true))
+```typescript
+let filter = FilterParams.fromTuples("type", "Type1");
+let paging = new PagingParams(0, 100);
+let sorting = new SortingParams(new SortField("create_time", true));
 
-myDataClient.get_data_by_filter(filter, paging, sorting)
+myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
+
 ```
 
 ### See also

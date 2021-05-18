@@ -2,7 +2,7 @@
 type: docs
 title: "IUnreferenceable"
 linkTitle: "IUnreferenceable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface for components that require the capacity to clear previously defined references to dependent components.
 ---
@@ -13,23 +13,28 @@ The IUnreferenceable interface can be used for components that require the capac
 
 ### Instance methods
 
-#### unset_references
+#### unsetReferences
 Unsets (clears) previously set references to dependent components. 
 
-> unset_references()
+> unsetReferences(): void
 
 ### Examples
 
-```python
+```typescript
+export class MyController implements IReferenceable, IUnreferenceable {
+   public _persistence: IMyPersistence;
+   ...    
+   public setReferences(references: IReferences): void {
+       this._persistence = references.getOneRequired<IMyPersistence>(
+           new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+       );
+   }
 
-class MyController(IReferenceable):
-    _persistence = None
-
-    def set_references(self, references):
-        self._persistence = references.getOneRequired(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
-
-    def unset_references(self):
-        self._persistence = None
+   public unsetReferences(): void {
+       this._persistence = null;
+   }
+   ...
+}
 
 ```
 

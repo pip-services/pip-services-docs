@@ -16,29 +16,29 @@ The ValueComparisonRule class allows you to create a validation rule that compar
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> ValueComparisonRule(operation: Any, value: str)
+> `public` constructor(operation: string, value: any)
 
-- **operation**: Any - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: str - a constant value to compare to
+- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: any - a constant value to compare to
 
 ### Methods
 
 #### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
+> validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[])
 
-- **path**: str - a dot notation path to the value.
+- **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: Any - a value to be validated.
-- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
+- **value**: any - a value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
 ### Examples
-```python
-schema = Schema().with_rule(ValueComparisonRule("EQ", 1))
+```typescript
+let schema = Schema().withRule(ValueComparisonRule("EQ", 1))
 
-schema.validate(1)          # Result: no errors
-schema.validate(2)          # Result: 2 is not equal to 1
+schema.validate(1)          // Result: no errors
+schema.validate(2)          // Result: 2 is not equal to 1
 ```
 
 ### See also

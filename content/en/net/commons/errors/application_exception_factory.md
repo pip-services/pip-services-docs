@@ -2,7 +2,7 @@
 type: docs
 title: "ApplicationExceptionFactory"
 linkTitle: "ApplicationExceptionFactory"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Factory to recreate exceptions from [ErrorDescription](../error_description) values passed through the wire.
 ---
@@ -17,7 +17,7 @@ The ApplicationExceptionFactory acts as a factory to recreate from [ErrorDescrip
 Recreates ApplicationException object from serialized ErrorDescription.
 It tries to restore original exception type using type or error category fields.
 
-> `static` create(description: ErrorDescription): [ApplicationException](../application_exception)
+> `public static` create(description: ErrorDescription): [ApplicationException](../application_exception)
 
 - **description**: [ApplicationException](../application_exception) - a serialized error description received as a result of remote call
 

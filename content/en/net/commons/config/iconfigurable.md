@@ -2,12 +2,10 @@
 type: docs
 title: "IConfigurable"
 linkTitle: "IConfigurable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     An interface used to set configuration parameters to an object. 
 
-
-    
 ---
 See also [ConfigParams](../config_params)
 
@@ -26,19 +24,22 @@ Important points:
 #### configure
 Configures component by passing configuration parameters.
 
-> configure(config: [ConfigParams](../config_params))
+> configure(config: [ConfigParams](../config_params)): void
 
 - **config**: [ConfigParams](../config_params) - configuration parameters to be set.
 
 ### Examples
 
-```python
-class MyClass(IConfigurable):
-   _myParam = "default args"
+```typescript
+export class MyClass implements IConfigurable {
+    private _myParam: string = "default value";
 
- # Implement configure
-   def configure(self, config):
-       self._myParam = config.get_as_string_with_default("options.param", myParam)
+    // Implement configure
+    public configure(config: ConfigParams): void  {
+        this._myParam = config.getAsStringWithDefault("options.param", myParam);
+        ...
+    }
+}
 
 ```
 ### See also

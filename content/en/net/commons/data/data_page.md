@@ -2,7 +2,7 @@
 type: docs
 title: "DataPage"
 linkTitle: "DataPage"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Data transfer object that is used to pass the results of a paginated query.
     This object contains items of the retrieved page.
@@ -23,10 +23,10 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> DataPage(data: Sequence[Any] = None, total: int = None)
+> `public` constructor(data: T[] = null, total: number = null)
 
-- **data**:  Sequence[Any] - a list of items from the retrieved page.
-- **total**: int - total amount of items in a request.
+- **data**: T[] - a list of items from the retrieved page.
+- **total**: number - total amount of items in a request.
 
 ### Fields
 
@@ -35,25 +35,23 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> **data**: Sequence[Any]
+> `public` **data**: T[]
 
 #### total
 The total amount of items in a request.
-> **total**: int
+> `public` **total**: number
 
 </span>
 
+
 ### Examples
 
-```python
-my_data_client.get_data_by_filter("123",
-        FilterParams.from_tuples("completed", true),
-        PagingParams(0, 100, true),
-        page
-)
-for item in page.get_data():
-    print (item)
-
+```typescript
+page := await myDataClient.getDataByFilter(
+    "123",
+    FilterParams.fromTuples("completed": true),
+    new PagingParams(0, 100, true)
+);
 
 ```
 

@@ -37,7 +37,7 @@ Reads a configuration and parameterizes it with given values.
 > `public` readConfig(correlationId: string, parameters: [ConfigParams](../../../commons/config/config_params)): Promise<[ConfigParams](../../../commons/config/config_params)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or None to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or null to skip parameterization.
 - **returns**: Promise<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.
 
 

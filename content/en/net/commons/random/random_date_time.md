@@ -2,7 +2,7 @@
 type: docs
 title: "RandomDateTime"
 linkTitle: "RandomDateTime"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Random generator for Date time values.
 ---
@@ -21,35 +21,36 @@ Important points:
 Generates a random Date in the range ['minYear', 'maxYear'].
 This method generate dates without time (or time set to 00:00:00)
 
-> `static` next_date(min_year: datetime, max_year: datetime = None): datetime
+> `public static` nextDate(min: Date, max: Date = null): Date
 
-- **min_year**: datetime - (optional) minimum range value
-- **max_year**: datetime - max range value
-- **returns**: datetime - a random Date value.
+- **min**: Date - (optional) minimum range value
+- **max**: Date - max range value
+- **returns**: Date - a random Date value.
 
-#### next_date_time
+#### nextDateTime
 Generates a random Date and time in the range ['minYear', 'maxYear'].
 This method generate dates without time (or time set to 00:00:00)
 
-> `static` next_datetime(min_year: datetime, max_year: datetime = None): datetime
+> `public static` nextDateTime(min: Date, max: Date = null): Date
 
-- **min_year**: datetime - (optional) minimum range value
-- **max_year**: datetime = None - max range value
-- **returns**: datetime - a random Date and time value.
+- **min**: Date - (optional) minimum range value
+- **max**: Date - max range value
+- **returns**: Date - a random Date and time value.
 
-#### update_datetime
+#### updateDateTime
 Updates (drifts) a Date value within specified range defined
 
-> `static` update_datetime(value: datetime, range: Union[int, float] = None): datetime
+> `public static` updateDateTime(value: Date, range: number = null): Date
 
-- **value**: datetime - a Date value to drift.
-- **range**: Union[int, float] = None - (optional) a range in milliseconds. Default: 10 days
-- **returns**: datetime - an updated DateTime
+- **value**: Date - a Date value to drift.
+- **range**: number - (optional) a range in milliseconds. Default: 10 days
+- **returns**: Date - an updated DateTime
+
 ### Examples
 
-```python
-import datetime
-value1 = RandomDateTime.next_date(datetime.datetime(2010,1,1))       # Possible result: 2008-01-03
-value2 = RandomDateTime.next_datetime(datetime.datetime(2017,1,1))   # Possible result: 2007-03-11 11:20:32
-value3 = RandomDateTime.update_datetime(datetime.datetime(2010,1,2)) # Possible result: 2010-02-05 11:33:23
+```typescript
+let value1 = RandomDateTime.nextDate(new Date(2010,0,1));    // Possible result: 2008-01-03
+let value2 = RandomDateTime.nextDateTime(new Date(2017,0.1));// Possible result: 2007-03-11 11:20:32
+let value3 = RandomDateTime.updateDateTime(new Date(2010,1,2));// Possible result: 2010-02-05 11:33:23
+
 ```

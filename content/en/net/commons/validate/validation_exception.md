@@ -2,14 +2,14 @@
 type: docs
 title: "ValidationException"
 linkTitle: "ValidationException"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Errors in schema validation.
 
     
 ---
 
-**Implements:** [BadRequestException](../../errors/bad_request_exception)
+**Extends:** [BadRequestException](../../errors/bad_request_exception)
 
 ### Description
 
@@ -23,44 +23,44 @@ Important points
 ### Constructors
 Creates a new instance of validation exception and assigns its values.  
 
-> ValidationException(correlation_id: Optional[str], message: Optional[str], results: List[[ValidationResult](../validation_result)])
+> `public` constructor(correlationId: string, message?: string, results?: [ValidationResult](../validation_result)[])
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **message**: Optional[str] - (optional) a human-readable description of the error.
-- **results**:  List[[ValidationResult](../validation_result)] - (optional) a list of validation results
+- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
+- **message**: string - (optional) a human-readable description of the error.
+- **results**: [ValidationResult](../validation_result)[] - (optional) a list of validation results
 
 
 ### Static methods
 
-#### compose_message
-Composes a human readable error message based on validation results.  
+#### composeMessage
+Composes human readable error message based on validation results.  
 
-> `static` compose_message(results: List[[ValidationResult](../validation_result)]): str
+> `public static` composeMessage(results: [ValidationResult](../validation_result)[]): string
 
-- **results**: List[[ValidationResult](../validation_result)] - a list of validation results.
-- **returns**: str -  a composed error message.
+- **results**: [ValidationResult](../validation_result)[] - a list of validation results.
+- **returns**: string - a composed error message.
 
 
-#### from_results
+#### fromResults
 Creates a new ValidationException based on errors in validation results.
-If validation results have no errors, then None is returned.
+If validation results have no errors, than null is returned.
 
-> `static` from_results(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
+> `public static` fromResults(correlationId: string, results: [ValidationResult](../validation_result)[], strict: boolean): [ValidationException]()
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **results**: List[[ValidationResult](../validation_result)] -  list of validation results that may contain errors
-- **strict**: bool - true to treat warnings as errors.
-- **returns**: [ValidationException]() - a newly created ValidationException or None if no errors in found.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **results**: [ValidationResult](../validation_result)[] -  list of validation results that may contain errors
+- **strict**: boolean - true to treat warnings as errors.
+- **returns**: [ValidationException]() - a newly created ValidationException or null if no errors in found.
 
-#### throw_exception_if_needed
+#### throwExceptionIfNeeded
 Throws ValidationException based on errors in validation results.
-If validation results have no errors, then no exception is thrown.
+If validation results have no errors, than no exception is thrown.
 
-> `static` throw_exception_if_needed(correlation_id: Optional[str], results: List[[ValidationResult](../validation_result)], strict: bool)
+> `public static` throwExceptionIfNeeded(correlationId: string, results: [ValidationResult](../validation_result)[], strict: boolean): void
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **results**: List[[ValidationResult](../validation_result)] - list of validation results that may contain errors
-- **strict**: bool - true to treat warnings as errors.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **results**: [ValidationResult](../validation_result)[] - list of validation results that may contain errors
+- **strict**: boolean - true to treat warnings as errors.
 
 
 

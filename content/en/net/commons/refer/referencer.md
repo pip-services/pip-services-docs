@@ -2,7 +2,7 @@
 type: docs
 title: "Referencer"
 linkTitle: "Referencer"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class that allows you to set and unset references to components.
 ---
@@ -13,48 +13,48 @@ The Referencer class allows you to set and unset references to components.
 
 ### Static methods
 
-#### set_references
+#### setReferences
 Sets references to multiple components.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't, the call to this method has no effect.
+If they don't the call to this method has no effect.
 
-> `static` set_references(references: [IReferenceable](../ireferenceable), components: List[Any])
+> `public static` setReferences(references: [IReferenceable](../ireferenceable), components: any[]): void
 
 - **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: List[Any] - a list of components to set the references to.
+- **component**: any[] - a list of components to set the references to.
 
-#### set_references_for_one
+#### setReferencesForOne
 Sets references to specific component.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't, the call to this method has no effect.
+If they don't the call to this method has no effect.
 
-> `static` set_references_for_one(references: [IReferences](../ireferences), component: Any)
+> `public static` setReferencesForOne(references: [IReferences](../ireferences), component: any): void
 
 - **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: Any - the component to set references to.
+- **component**: any - the component to set references to.
 
-#### unset_references_for_one
+#### unsetReferencesForOne
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't, the call to this method has no effect.
+If they don't the call to this method has no effect.
 
-> `static` unset_references_for_one(component: Any) 
+> `public static` unsetReferencesForOne(component: any): void 
 
-- **component**: Any - the component to unset references.
+- **component**: any - the component to unset references.
 
-#### unset_references_for_one
+#### unsetReferencesForOne
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't, the call to this method has no effect.
+If they don't the call to this method has no effect.
 See [IUnreferenceable](../iunreferenceable)
 
-> `static` unset_references_for_one(component: Any)
+> `public static` unsetReferencesForOne(component: any): void
 
-- **component**: Any - the component to unset references.
+- **component**: any - the component to unset references.
 
 ### See also
 - #### [IReferenceable](../ireferenceable)

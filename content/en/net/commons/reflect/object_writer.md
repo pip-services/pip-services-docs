@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectWriter"
 linkTitle: "ObjectWriter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class that allows you to dynamically set the properties of an object. 
 
@@ -22,7 +22,7 @@ Important points
 
 ### Static methods
 
-#### set_properties
+#### setProperties
 Sets values of some (all) object properties.
 
 The object can be a user defined object, map or array.
@@ -32,12 +32,12 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> `static` set_properties(obj: Any, values: Any)
+> `public static` setProperties(obj: any, values: any): void
 
-- **obj**: Any - an object to write properties to.
-- **values**: Any - a map, containing property names and their values.
+- **obj**: any - an object to write properties to.
+- **values**: any - a map, containing property names and their values.
 
-#### set_property
+#### setProperty
 Sets value of object property specified by its name.
  
 The object can be a user defined object, map or array.
@@ -45,25 +45,27 @@ The property name correspondently must be object property,
 map key or array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't throw any errors.
+this method doesn't do anything and doesn't any throw errors.
 
-> `static` set_property(obj: Any, name: str, value: Any)
+> `public static` setProperty(obj: any, name: string, value: any): void
 
-- **obj**: Any - an object to write property to.
-- **name**: str - a name of the property to set.
-- **value**: Any - a new value for the property to set.
+- **obj**: any - an object to write property to.
+- **name**: string - a name of the property to set.
+- **value**: any - a new value for the property to set.
 
 ### Examples
 
-```python
-myObj = MyObject()
-ObjectWriter.set_property(myObj, "myProperty", 123)
+```typescript
+let myObj = new MyObject();
+  
+ObjectWriter.setProperty(myObj, "myProperty", 123);
+    
+let myMap = { key1: 123, key2: "ABC" };
+ObjectWriter.setProperty(myMap, "key1", "XYZ");
+  
+let myArray = [1, 2, 3]
+ObjectWriter.setProperty(myArray, "0", 123);
 
-myMap = { key1: 123, key2: "ABC" }
-ObjectWriter.set_property(myMap, "key1", "XYZ")
-
-myArray = [1, 2, 3]
-ObjectWriter.set_property(myArray, "0", 123)
 ```
 
 ### See also

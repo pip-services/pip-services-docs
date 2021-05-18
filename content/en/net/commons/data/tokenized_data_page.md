@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedDataPage"
 linkTitle: "TokenizedDataPage"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Data transfer object that is used to pass the results of paginated queries.
            
@@ -27,11 +27,11 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> TokenizedDataPage(data: List[Any], token: str = None, total: int = None)
+> `public` constructor(data: T[] = null, token: string = null, total: number = null)
 
-- **data**: List[Any] - a list of items from the retrieved page.
-- **token**: str - (optional) a token to define astarting point for the next search.
-- **total**: int - (optional) a total number of objects in the result.
+- **data**: T[] - a list of items from the retrieved page.
+- **token**: string - (optional) a token to define astarting point for the next search.
+- **total**: number - (optional) a total number of objects in the result.
 
 
 ### Fields
@@ -40,25 +40,25 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 The items of the retrieved page.
-> **data**: List[Any]
+> `public` **data**: T[]
 
 #### token
 The starting point for the next search.
-> **token**: str
+> `public` **token**: string
 
 #### total
 The total amount of items in a request.
-> **total**: int
+> `public` **total**: number
 
 </span>
 
 ### Examples
-```python
-page = my_data_client.get_data_by_filter(
+```typescript
+page := await myDataClient.getDataByFilter(
     "123",
-    FilterParams.from_tuples("completed", True),
-    TokenizedPagingParams(None, 100, True)
-)
+    FilterParams.fromTuples("completed": true),
+    new TokenizedPagingParams(null, 100, true)
+);
 ```
 
 ### See also

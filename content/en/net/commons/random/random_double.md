@@ -2,7 +2,7 @@
 type: docs
 title: "RandomDouble"
 linkTitle: "RandomDouble"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Random generator for double values.
 ---
@@ -13,27 +13,29 @@ The RandomDouble class allows you to generate random double values.
 
 ### Static methods
 
-#### next_double
-Generates a random double value in the range ['min_year', 'max_year'].
+#### nextDouble
+Generates a random double value in the range ['minYear', 'maxYear'].
 
-> `static` next_double(mmin: float, mmax: float = None): float
+> `public static` nextDouble(min: number, max: number = null): number
 
-- **mmin**: float - (optional) minimum range value
-- **mmax**: float = None - max range value
-- **returns**: float - a random double value.
+- **min**: number - (optional) minimum range value
+- **max**: number - max range value
+- **returns**: number - a random double value.
 
-#### update_double
+#### updateDouble
 Updates (drifts) a double value within specified range defined
 
-> `static` update_double(value: float, rrange: float = None): float
+> `public static` updateDouble(value: number, range: number = null): number
 
-- **value**: float - a double value to drift.
-- **rrange**: float = None - (optional) a range. Default: 10% of the value
-- **returns**: float - updated float value.
+- **value**: number - a double value to drift.
+- **range**: number - (optional) a range. Default: 10% of the value
+- **returns**: number - updated float value.
 
 ### Examples
 
-```python
-value1 = RandomDouble.next_double(5, 10)     # Possible result: 8.276012024925908
-value2 = RandomDouble.next_double(10)        # Possible result: 4.558593480049594
+```typescript
+let value1 = RandomDouble.nextDouble(5, 10);     // Possible result: 7.3
+let value2 = RandomDouble.nextDouble(10);        // Possible result: 3.7
+let value3 = RandomDouble.updateDouble(10, 3);   // Possible result: 9.2
+
 ```

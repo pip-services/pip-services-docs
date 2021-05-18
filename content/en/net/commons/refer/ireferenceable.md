@@ -2,7 +2,7 @@
 type: docs
 title: "IReferenceable"
 linkTitle: "IReferenceable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface with methods to set refernces for components that depend on other components. 
 
@@ -19,20 +19,27 @@ Important points
 
 ### Instance methods
 
-#### set_references
+#### setReferences
 Sets references to dependent components.
 
-> set_references(references: [IReferences](../ireferences))
+> setReferences(references: [IReferences](../ireferences)): void
 
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 
 ### Examples
 
-```python
-class MyController(IReferenceable):
-    _persistence = None
-    def set_references(self, references):
-        self._persistence = references.get_one_required(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+```typescript
+export class MyController implements IReferenceable {
+    public _persistence: IMyPersistence;
+    ...    
+    public setReferences(references: IReferences): void {
+        this._persistence = references.getOneRequired<IMyPersistence>(
+            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        );
+    }
+    ...
+}
+
 ```
 
 ### See also

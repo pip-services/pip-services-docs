@@ -2,10 +2,9 @@
 type: docs
 title: "BooleanConverter"
 linkTitle: "BooleanConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The BooleanConverter class allows you to convert different values to boolean values using extended conversion rules.
-
     
 ---
 
@@ -22,43 +21,43 @@ The BooleanConverter class allows you to convert different values to boolean val
 
 ### Static methods
 
-#### to_boolean
+#### toBoolean
 Converts value into boolean or returns false when conversion is not possible.
 
-> `static` to_Boolean(value: Any): bool
+> `public static` toBoolean(value: any): boolean
 
-- **value**: Any - the value to convert.
-- **returns**: bool - boolean value or false when conversion is not supported.
+- **value**: any - the value to convert.
+- **returns**: boolean - boolean value or false when conversion is not supported.
 
-#### to_boolean_with_default
+#### toBooleanWithDefault
 Converts value into boolean or returns default value when conversion is not possible
 
-> `static` to_boolean_with_default(value: Any, default_value: bool = False): bool
+> `public static` toBooleanWithDefault(value: any, defaultValue: boolean = false): boolean
 
-- **value**: Any - the value to convert.
-- **default_value**: bool - the default value
-- **returns**: bool - boolean value or default when conversion is not supported.
+- **value**: any - the value to convert.
+- **defaultValue**: boolean - the default value
+- **returns**: boolean - boolean value or default when conversion is not supported.
 
 
-#### to_nullable_boolean
-Converts value into boolean or returns None when conversion is not possible.
+#### toNullableBoolean
+Converts value into boolean or returns null when conversion is not possible.
 
-> `static` to_nullable_boolean(value: Any): bool
+> `public static` toNullableBoolean(value: any): boolean
 
-- **value**: Any - the value to convert.
-- **returns**: bool - boolean value or None when convertion is not supported.
+- **value**: any - the value to convert.
+- **returns**: boolean - boolean value or null when convertion is not supported.
 
 ### Examples
 
-```python
-value1 = BooleanConverter.to_nullable_boolean(True)     # Returns True
-value2 = BooleanConverter.to_nullable_boolean("yes")    # Returns True
-value3 = BooleanConverter.to_nullable_boolean(123)      # Returns None
-value4 = BooleanConverter.to_nullable_boolean({})       # Returns None
+```typescript
+let value1 = BooleanConverter.toNullableBoolean(True)     // Returns True
+let value2 = BooleanConverter.toNullableBoolean("yes")    // Returns True
+let value3 = BooleanConverter.toNullableBoolean(123)      // Returns None
+let value4 = BooleanConverter.toNullableBoolean({})       // Returns None
 
-value5 = BooleanConverter.to_boolean_with_default(True,"verdadero")     # Returns True
-value6 = BooleanConverter.to_boolean_with_default(123,"verdadero")      # Returns verdadero
+let value5 = BooleanConverter.toBooleanWithDefault(True,"verdadero")     // Returns True
+let value6 = BooleanConverter.toBooleanWithDefault(123,"verdadero")      // Returns verdadero
 
-value7 = BooleanConverter.to_boolean("yes")     # Returns True
+let value7 = BooleanConverter.to_boolean("yes")     // Returns True
 
 ```

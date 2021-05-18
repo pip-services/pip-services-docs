@@ -2,7 +2,7 @@
 type: docs
 title: "PagingParams"
 linkTitle: "PagingParams"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Defines a data transfer object used to pass paging parameters for queries.
 
@@ -23,11 +23,11 @@ Important points
 ### Constructors
 Creates a new instance and sets its values.
 
-> PagingParams(skip: int = None, take: int = None, total: bool = False)
+> `public` constructor(skip: number = null, take: number = null, total: boolean = null)
 
-- **skip**: int - the number of items to skip.
-- **take**: int - the number of items to return. 
-- **total**: bool - true to return the total number of items.
+- **skip**: number - the number of items to skip.
+- **take**: number - the number of items to return. 
+- **total**: boolean - true to return the total number of items.
 
 
 ### Fields
@@ -36,70 +36,71 @@ Creates a new instance and sets its values.
 
 #### skip
 The number of items to skip.
-> **skip**: int
+> **skip**: number
 
 #### take
 The number of items to return. 
-> **take**: int
+> **take**: number
 
 #### total
 The flag to return the total number of items.
-> **total**: bool
+> **total**: boolean
 
 </span>
 
 
 ### Instance methods
 
-#### get_skip
+#### getSkip
 Gets the number of items to skip.
 
-> get_skip(min_skip: int): int
+> `public` getSkip(minSkip: number): number
 
-- **min_skip**: int - the minimum number of items to skip.
-- **returns**: int - the number of items to skip.
+- **minSkip**: number - the minimum number of items to skip.
+- **returns**: number - the number of items to skip.
 
 
-#### get_take
+#### getTake
 Gets the number of items to return in a page.
 
-> get_take(max_take: int): int
+> `public` getTake(maxTake: number): number
 
-- **max_take**: int - the maximum number of items to return.
-- **returns**: int - the number of items to return.
+- **maxTake**: number - the maximum number of items to return.
+- **returns**: number - the number of items to return.
 
 ### Static methods
 
-#### from_map
-Creates a new PagingParams and sets it parameters from the specified map.
+#### fromMap
+Creates a new PagingParams and sets it parameters from the specified map
 
-> `static` from_map(map: Any): [PagingParams]()
+> `public static` fromMap(map: any): [PagingParams]()
 
-- **map**: Any - a AnyValueMap or StringValueMap to initialize this PagingParams
+- **map**: any - a AnyValueMap or StringValueMap to initialize this PagingParams
 - **returns**: [PagingParams]() - a newly created PagingParams.
 
 
-#### from_tuples
+#### fromTuples
 Creates a new PagingParams from a list of key-value pairs called tuples.
 
-> `static` from_tuples(*tuples: Any): [PagingParams]()
+> `public static` fromTuples(...tuples: any[]): [PagingParams]()
 
-- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [PagingParams]() - a newly created PagingParams.
 
 
-#### from_value
+#### fromValue
 Converts specified value into PagingParams.
 
-> `static` from_value(value: Any): [PagingParams]()
+> `public static` fromValue(value: any): [PagingParams]()
 
-- **value**: Any - value to be converted
+- **value**: any - value to be converted
 - **returns**: [PagingParams]() - a newly created PagingParams.
 
 ### Examples
-```python
-filter = FilterParams.fromTuples("type", "Type1")
+```typescript
+let filter = FilterParams.fromTuples("type", "Type1");
+let paging = new PagingParams(0, 100);
+    
+myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
 
-paging = PagingParams(0, 100)
-myDataClient.get_data_by_filter(filter, paging)
 ```

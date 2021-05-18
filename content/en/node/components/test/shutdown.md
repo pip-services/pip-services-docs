@@ -22,7 +22,7 @@ Important points
 
 #### Configuration parameters
 
-- **mode**: None - crash by NullPointer excepiton, zero - crash by dividing by zero, exception = crash by unhandled exception, exit - exit the process
+- **mode**: null - crash by NullPointer excepiton, zero - crash by dividing by zero, exception = crash by unhandled exception, exit - exit the process
 - **min_timeout**: minimum crash timeout in milliseconds (default: 5 mins)
 - **max_timeout**: maximum crash timeout in milliseconds (default: 15 minutes)
 

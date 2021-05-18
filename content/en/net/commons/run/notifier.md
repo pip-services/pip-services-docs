@@ -2,7 +2,7 @@
 type: docs
 title: "Notifier"
 linkTitle: "Notifier"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class that can be use to notify one or more components.
 ---
@@ -16,22 +16,22 @@ The Notifier class is a helper class that can be use to notify one or more compo
 #### notify
 Sets execution parameters.
 
-> `static` notify(correlation_id: Optional[str], components: List[Any], args: [Parameters](../parameters))
+> `public static` notify(correlationId: string, components: any[], args: [Parameters](../parameters)): void
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **components**: List[Any] - a list of components that are to be notified.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **components**: any[] - a list of components that are to be notified.
 - **args**: [Parameters](../parameters) - notification arguments.
 
-#### notify_one
+#### notifyOne
 Notifies specific component.
 
 To be notiied components must implement [INotifiable](../inotifiable) interface.
-If they don't, the call to this method has no effect.
+If they don't the call to this method has no effect.
 
-> `static` notify_one(correlation_id: Optional[str], component: Any, args: [Parameters](../parameters))
+> `public static` notifyOne(correlationId: string, component: any, args: [Parameters](../parameters)): void
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **component**: Any - the component that is to be notified.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **component**: any - the component that is to be notified.
 - **args**: [Parameters](../parameters) - notifiation arguments.
 
 

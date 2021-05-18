@@ -2,7 +2,7 @@
 type: docs
 title: "IEvent"
 linkTitle: "IEvent"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     An interface for Events that can send asynchronious notifications to multiple subscribed listeners.
 ---
@@ -13,34 +13,36 @@ description: >
 
 The IEvent interface allows you to define events that can send asynchronous notifications to multiple subscribed listeners.
 
+
+### Properties
+
+#### Name
+Gets the name of the event.
+> `public` string Name
+
+- **returns**: string - the name of this event.
+
+#### Listeners
+Gets all listeners registered in this event.
+> `public` List<[IEventListener](../ievent_listener)> Listeners
+
+- **returns**: List<[IEventListener](../ievent_listener)> - all listeners registered in this event.
+
+
 ### Instance methods
 
-#### get_name
-Gets the event name.
-
-> get_name(): str
-
-- **returns**: str - the name of the event.
-
-#### get_listeners
-Gets all subscribed listeners.
-
-> get_listeners(): List[[IEventListener](../ievent_listener)]
-
-- **returns**: List[[IEventListener](../ievent_listener)] - a list of listeners.
-
-#### add_listener
+#### AddListener
 Adds a listener to receive notifications for this event.
 
-> add_listener(listener: [IEventListener](../ievent_listener))
+> void AddListener([IEventListener](../ievent_listener) listener)
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
 
 
-#### remove_listener
+#### removeListener
 Removes a listener, so that it no longer receives notifications for this event.
 
-> remove_listener(listener: [IEventListener](../ievent_listener))
+> void RemoveListener([IEventListener](../ievent_listener) listener)
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 

@@ -2,12 +2,12 @@
 type: docs
 title: "ConfigException"
 linkTitle: "ConfigException"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Errors related to mistakes in microservice's user-defined configurations.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Extends:** [ApplicationException](../application_exception)
 
 ### Description
 
@@ -16,9 +16,9 @@ The ConfigException is used to manage errors related to mistakes in microservice
 ### Constructors
 Creates an error instance and assigns its values.
 
-> ConfigException(correlation_id: Optional[str] = None, code: str = None, message: str = None)
+> `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **code**: str - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: str - (optional) a human-readable description of the error.
+- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) a human-readable description of the error.
 

@@ -2,12 +2,17 @@
 type: docs
 title: "ConfigParams"
 linkTitle: "ConfigParams"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
  Contains a key-value map with configuration parameters. 
 
   
 ---
+
+**Extends:** [StringValueMap](../../data/string_value_map)
+
+See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
+
 ### Description
 The ConfigParams class contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 
@@ -19,127 +24,126 @@ Important points:
 - The ConfigParams class supports serialization from/to plain strings as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
 
 
-**Implements:** [StringValueMap](../../data/string_value_map)
-
-See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
-
-
 ### Constructors
 Creates a new ConfigParams and fills it with values.
 See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 
-> ConfigParams(values: Any = None): [ConfigParams]()
+> `public` constructor(values: any = null)
 
-- **values**: Any - (optional) an object to be converted into key-value pairs to initialize this config map.
+- **values**: any - (optional) an object to be converted into key-value pairs to initialize this config map.
 
 ### Instance Methods  
 
-#### add_section
+#### addSection
 Adds parameters into this ConfigParams under specified section.
 Keys for the new parameters are appended with section dot prefix.
 
-> add_section(section: str, section_params: [ConfigParams]())
+> `public` addSection(section: string, sectionParams: [ConfigParams]()): void
 
-- **section**: str - name of the section where the new parameters will be added.
-- **section_params**: [ConfigParams]() - new parameters to be added.
+- **section**: string - name of the section where add new parameters
+- **sectionParams**: [ConfigParams]() - new parameters to be added.
 
-#### get_section
+
+#### getSection
 Gets parameters from specific section stored in this ConfigMap.
 The section name is removed from parameter keys.
 
-> get_section(section: str): [ConfigParams]()
+> `public` getSection(section: string): [ConfigParams]()
 
-- **section**: str - name of the section to retrieve configuration parameters from.
+- **section**: string - name of the section to retrieve configuration parameters from.
 - **returns**: [ConfigParams]() - all configuration parameters that belong to the section named 'section'. 
-                                     
-#### get_section_names
+
+#### getSectionNames
 Gets a list with all 1st level section names.
 
-> get_section_names(): List[str]
+> `public` getSectionNames(): string[]
 
-- **returns**: List[str] - a list of section names stored in this ConfigMap.
+- **returns**: string[] - a list of section names stored in this ConfigMap.
 
 #### override
 Overrides parameters with new values from specified [ConfigParams]()
 and returns a new [ConfigParams]() object.
 
-> override(config_params: [ConfigParams]()): [ConfigParams]()
+> `public` override(configParams: [ConfigParams]()): [ConfigParams]()
 
-- **config_params**: [ConfigParams]() - ConfigMap with parameters to override the current values.
+- **configParams**: [ConfigParams]() - ConfigMap with parameters to override the current values.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-#### set_defaults
+#### setDefaults
 Set default values from specified ConfigParams and returns a new ConfigParams object.
 
-> set_defaults(default_config_params: [ConfigParams]()): [ConfigParams]()
+> `public` setDefaults(defaultConfigParams: [ConfigParams]()): [ConfigParams]()
 
-- **default_config_params**: [ConfigParams]() - ConfigMap with default parameter values.
+- **defaultConfigParams**: [ConfigParams]() - ConfigMap with default parameter values.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
 ### Static methods   
 
-#### from_string
+#### fromString
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.
 
-> `static` from_string(line: str): [ConfigParams]()
+> `public static` fromString(line: string): [ConfigParams]()
 
-- **line**: str - a string with serialized key-value pairs as "key1=value1;key2=value2;..."  
+- **line**: string - a string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-#### from_tuples
+#### fromTuples
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.  
 See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarray)
 
-> `static` from_tuples(*tuples: Any): [ConfigParams]()
+> `public static` fromTuples(...tuples: any[]): [ConfigParams]()
 
-- **tuples**: Any - the tuples to fill a new ConfigParams object.
+- **tuples**: any[] - the tuples to fill a new ConfigParams object.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-#### from_value
+
+#### fromValue
 Creates a new ConfigParams object filled with key-value pairs from specified object.
 
-> `static` from_value(value: Any): [ConfigParams]()
+> `public static` fromValue(value: any): [ConfigParams]()
 
-- **value**: Any - an object with key-value pairs used to initialize a new ConfigParams.
+- **value**: any - an object with key-value pairs used to initialize a new ConfigParams.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
-#### merge_configs
+
+#### mergeConfigs
 Merges two or more ConfigParams into one. The following ConfigParams override
 previously defined parameters.  
 See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 
-> `static` merge_configs(*configs: [ConfigParams]()): [ConfigParams]()
+> `public static` mergeConfigs(...configs: [ConfigParams]()[]): [ConfigParams]()
 
-- **configs**:  [ConfigParams]() - a list of ConfigParams objects to be merged.
+- **configs**: [ConfigParams]()[] - a list of ConfigParams objects to be merged.
 - **returns**: [ConfigParams]() - a new ConfigParams object.
 
 ### Examples   
 
-```python
-# Create a ConfigParams object from a tuple
-config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
+```typescript
+// Create a ConfigParams object from a tuple
+config = ConfigParams.fromTuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", true);
 
-# Create a ConfigParams object from a string
-configS = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
+// Create a ConfigParams object from a string
+configS = ConfigParams.fromString("section1.key1=AAA;section1.key2=123;section2.key1=True");
 
-# Create a ConfigParams object from a value
-dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True} # Create a dictionary
-configD = ConfigParams. from_value(dict) # Create the ConfigParams object using the dictionary
+// Create a ConfigParams object from a value
+let obj = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": true}; // Create a object
+config = ConfigParams.fromValue(obj); // Create the ConfigParams object using the object
 
-# Add a new section 
-config.add_section("section3", ConfigParams.from_tuples("key1", "ABCDE"))
+// Add a new section 
+config.addSection("section3", ConfigParams.fromTuples("key1", "ABCDE"));
                                        
-# Get a section                                        
-section1 = config.get_section("section1")       # Returns {'key1': 'AAA', 'key2': '123'} 
+// Get a section                                        
+let section1 = config.getSection("section1")       // Returns {'key1': 'AAA', 'key2': '123'} 
 
-# Get the section names
-config.get_section_names()      # Returns ['section1', 'section2']
+// Get the section names
+config.getSectionNames();      // Returns ['section1', 'section2']
 
-# Change the value of section1.key1 to BBB
-config.override(ConfigParams.from_tuples("section1.key1", "BBB")) 
+// Change the value of section1.key1 to BBB
+config.override(ConfigParams.fromTuples("section1.key1", "BBB"));
 ```
+
 
 ### See also
 - #### [IConfigurable](../iconfigurable)

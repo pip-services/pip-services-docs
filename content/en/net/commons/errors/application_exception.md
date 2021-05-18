@@ -2,14 +2,14 @@
 type: docs
 title: "ApplicationException"
 linkTitle: "ApplicationException"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     
     Defines a base class used to define various application exceptions.
 
 ---
 
-**Implements:** Exception
+**Extends:** Error
 
 ### Description
 
@@ -34,145 +34,144 @@ Important points
 #### Constructors
 Creates a new instance of application exception and assigns its values.
 
-> ApplicationException(category: str = [ErrorCategory.Unknown](../error_category), correlation_id: Optional[str] = None,
-                 code: str = 'UNKNOWN', message: str = 'Unknown error')
+> `public` constructor(category: string = null, correlation_id: string = null, code: string = null, message: string = null)
 
-- **category**: str - (optional) a standard error category. Default: Unknown
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **code**: str - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: str - (optional) a human-readable description of the error.
+- **category**: string - (optional) a standard error category. Default: Unknown
+- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) a human-readable description of the error.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### message
-A human-readable error description (usually written in English).
-> message: str
+A human-readable error description (usually written in English)
+> `public` message: string
 
 #### category
-Standard error category.
-> category: str
+Standard error category
+> `public` category: string
 
 #### status
-HTTP status code associated with this error type.
-> status: int = 500
+HTTP status code associated with this error type
+> `public` status: number = 500
 
 #### status
 A unique error code
-> code: str = 'UNKNOWN'
+> `public` code: string = 'UNKNOWN'
 
 #### details
-A map with additional details that can be used to restore error description in other languages.
-> details: [StringValueMap](../../data/string_value_map)
+A map with additional details that can be used to restore error description in other languages
+> `public` details: [StringValueMap](../../data/string_value_map)
 
 #### correlation_id
-A unique transaction id to trace execution throug call chain.
-> correlation_id: Optional[str]
+A unique transaction id to trace execution throug call chain
+> `public` correlation_id: string
 
 #### stack_trace
-Stack trace of the exception.
-> stack_trace: str
+Stack trace of the exception
+> `public` stack_trace: string
 
 #### cause
-Original error wrapped by this exception.
-> cause: str
+Original error wrapped by this exception
+> `public` cause: string
 
 </span>
 
 ### Instance methods
 
-#### get_cause_string
+#### getCauseString
 Gets original error wrapped by this exception as a string message.
 
-> get_cause_string(): str
+> `public` getCauseString(): string
 
-- **returns**: str - an original error message.
+- **returns**: string - an original error message.
 
-#### get_stack_trace_string
+#### getStackTraceString
 Gets a stack trace where this exception occured.
 
-> get_stack_trace_string(): str 
+> `public` getStackTraceString(): string 
 
-- **returns**: str - a stack trace as a string.
+- **returns**: string - a stack trace as a string.
 
-#### set_cause_string
+#### setCauseString
 Sets original error wrapped by this exception as a string message.
 
-> set_cause_string(value: str)
+> `public` setCauseString(value: string): void
 
-- **value**: str - an original error message.
+- **value**: string - an original error message.
 
-#### set_stack_trace_string
+#### setStackTraceString
 Sets a stack trace where this exception occured.
 
-> set_stack_trace_string(value: str)
+> `public` setStackTraceString(value: string): void
 
-- **value**: str - a stack trace as a string
+- **value**: string - a stack trace as a string
 
-#### with_cause
+#### withCause
 Sets a original error wrapped by this exception
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_cause(cause: Exception): [ApplicationException]()
+> `public` withCause(cause: Error): [ApplicationException]()
 
-- **cause**: Exception - original error object
+- **cause**: Error - original error object
 - **returns**: [ApplicationException]() - this exception object
 
-#### with_code
+#### withCode
 Sets a unique error code.  
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_code(code: str): [ApplicationException]()
+> `public` withCode(code: string): [ApplicationException]()
 
-- **code**: str - a unique error code
+- **code**: string - a unique error code
 - **returns**: [ApplicationException]() - this exception object
 
-#### with_correlation_id
+#### withCorrelationId
 Sets a correlation id which can be used to trace this error through a call chain.  
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_correlation_id(correlation_id: Optional[str]): [ApplicationException]()
+> `public` withCorrelationId(correlationId: string): [ApplicationException]()
 
-- **correlation_id**: Optional[str] - a unique transaction id to trace error through call chain
+- **correlationId**: string - a unique transaction id to trace error through call chain
 - **returns**: [ApplicationException]() - this exception object
 
-#### with_details
+#### withDetails
 Sets a parameter for additional error details. 
 This details can be used to restore error description in other languages.  
 
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_details(key: str, value: Any): [ApplicationException]()
+> `public` withDetails(key: string, value: any): [ApplicationException]()
 
-- **key**: str - key a details parameter name
-- **value**: Any - value a details parameter name
+- **key**: string - key a details parameter name
+- **value**: any - value a details parameter name
 - **returns**: [ApplicationException]() - this exception object
 
 
-#### with_stack_trace
+#### withStackTrace
 Sets a stack trace for this error.  
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls
 
-> with_stack_trace(stack_trace: str): [ApplicationException]()
+> `public` withStackTrace(stackTrace: string): [ApplicationException]()
 
-- **stack_trace**: str - a stack trace where this error occured
+- **stackTrace**: string -stackTrace a stack trace where this error occured
 - **returns**: [ApplicationException]() - this exception object
 
 
-#### with_status
+#### withStatus
 Sets a HTTP status code which shall be returned by REST calls. 
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> with_status(status: int): [ApplicationException]()
+> `public` withStatus(status: number): [ApplicationException]()
 
-- **status**: int - an HTTP error code.
+- **status**: number - an HTTP error code.
 - **returns**: [ApplicationException]() - this exception object
 
 
@@ -182,23 +181,37 @@ Wraps another exception into an application exception object.
 If original exception is of ApplicationException type it is returned without changes.
 Otherwise a new ApplicationException is created and original error is set as its cause.
 
-> wrap(cause: Any): [ApplicationException]()
+> `public` wrap(cause: any): [ApplicationException]()
 
-- **cause**: Any - an original error object.
-- **returns**: [ApplicationException]() - an original or newly created ApplicationException.
+- **cause**: any - an original error object
+- **returns**: [ApplicationException]() - an original or newly created ApplicationException
+
 
 ### Static methods
 
-#### wrap_error
+#### unwrapError
+Unwraps original exception through wrapped exception objects. 
+
+Many frameworks like Seneca or restify wrap original exception.
+That may result in propagating less specific errors and can hide
+causes of the errors.
+
+> `public static` unwrapError(error: any): [ApplicationException]()
+
+- **error**: any - an error object
+- **returns**: [ApplicationException]() - an original error object
+
+
+#### wrapError
 Wraps another exception into specified application exception object.
 
 If original exception is of ApplicationException type it is returned without changes.
 Otherwise the original error is set as a cause to specified ApplicationException object.
 
-> `static` wrap_error(error: [ApplicationException](), cause: Any): [ApplicationException]()
+> `public static` wrapError(error: [ApplicationException](), cause: any): [ApplicationException]()
 
 - **error**: [ApplicationException]() - an ApplicationException object to wrap the cause
-- **cause**: Any - an original error object
+- **cause**: any - an original error object
 - **returns**: [ApplicationException]() - an original or newly created ApplicationException
 
 

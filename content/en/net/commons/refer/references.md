@@ -2,7 +2,7 @@
 type: docs
 title: "References"
 linkTitle: "References"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     An implementation of [IReferences](../ireferences) that allows you to store and locate component references.
 ---
@@ -14,19 +14,18 @@ description: >
 The References class allows you to store and locate component references.
 
 ### Constructors
-
 Creates a new instance of references and initializes it with references.
 
-> References(tuples: Sequence[Any] = None)
+> `public` constructor(tuples: any[] = null): [References]()
 
-- **tuples**: Sequence[Any] - (optional) a list of values where odd elements are locators and the following even elements are component references
+- **tuples**: any[] - (optional) a list of values where odd elements are locators and the following even elements are component references
 
 ### Fields
 <span class="hide-title-link">
 
 #### _references
  A list of values where odd elements are locators and the following even elements are component references.
-> _references: List[[Reference](../reference)]
+> `protected` _references: [Reference](../reference)[]
 
 </span>
 
@@ -36,69 +35,69 @@ Creates a new instance of references and initializes it with references.
 Gets all component references that match specified locator.  
 Throws a [ReferenceException](../reference_exception) when required is set to true but no references found.
 
-> find(locator: Any, required: bool): List[Any]
+> `public` find\<T\>(locator: any, required: boolean): T[]
 
-- **locator**: Any - the locator to find a reference by.
-- **required**: bool - forces to raise an exception if no reference is found.
-- **returns**: List[Any] - a list with matching component references.
+- **locator**: any - the locator to find a reference by.
+- **required**: boolean - forces to raise an exception if no reference is found.
+- **returns**: T[] - a list with matching component references.
 
-#### get_all
+#### getAll
 Gets all component references registered in this reference map.
 
-> get_all(): List[Any]
+> `public` getAll(): any[]
 
-- **returns**: List[Any] - a list with component references.
+- **returns**: any[] - a list with component references.
 
-#### get_all_locators
+#### getAllLocators
 Gets locators for all registered component references in this reference map.
 
-> get_all_locators(): List[Any]
+> `public` getAllLocators(): any[]
 
-- **returns**: List[Any] - a list with component locators.
+- **returns**: any[] - a list with component locators.
 
-#### get_one_optional
-Gets an optional component reference that matches a specified locator.
+#### getOneOptional
+Gets an optional component reference that matches specified locator.
 
-> get_one_optional(locator: Any): Any
+> `public` getOneOptional\<T\>(locator: any): T
 
-- **locator**: Any - the locator to find references by.
-- **returns**: Any - a matching component reference or None if nothing was found.
+- **locator**: any - the locator to find references by.
+- **returns**: T - a matching component reference or null if nothing was found.
 
-#### get_one_required
-Gets a required component reference that matches a specified locator.  
+#### getOneRequired
+Gets a required component reference that matches specified locator.  
 throws a [ReferenceException](../reference_exception) when no references found.
 
-> get_one_required(locator: Any): Any
+> `public` getOneRequired\<T\>(locator: any): T
 
-- **locator**: Any - the locator to find a reference by.	 
-- **returns**: Any - a matching component reference.
+- **locator**: any - the locator to find a reference by.	 
+- **returns**: T - a matching component reference.
 
-#### get_optional
-Gets all component references that match a specified locator.
+#### getOptional
+Gets all component references that match specified locator.
 
-> get_optional(locator: Any): List[Any]
+> `public` getOptional\<T\>(locator: any): T[]
 
-- **locator**: Any - the locator to find references by.	 
-- **returns**: List[Any] - a list with matching component references or empty list if nothing was found.
+- **locator**: any - the locator to find references by.	 
+- **returns**: T[] - a list with matching component references or empty list if nothing was found.
 
-#### get_required
-Gets all component references that match a specified locator.
+#### getRequired
+Gets all component references that match specified locator.
 At least one component reference must be present.
 If it doesn't the method throws an error.
 Throws a [ReferenceException](../reference_exception) when no references found.
 
-> get_required(locator: Any): List[Any]
+> `public` getRequired\<T\>(locator: any): T[]
 
-- **locator**: Any - the locator to find references by.
-- **returns**: List[Any] - a list with matching component references.
+- **locator**: any - the locator to find references by.
+- **returns**: T[] - a list with matching component references.
 
 #### put
 Puts a new reference into this reference map.
 
-> put(locator: Any, component: Any)
+> `public` put(locator: any, component: any): void
 
-- **locator**: Any - a locator to find the reference by.
-- **component**: Any - a component reference to be added.
+- **locator**: any - a locator to find the reference by.
+- **component**: any - a component reference to be added.
 
 
 #### remove
@@ -106,46 +105,53 @@ Removes a previously added reference that matches specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
-> remove(locator: Any): Any
+> `public` remove(locator: any): any
 
-- **locator**: Any - a locator to remove reference
-- **returns**: Any - the removed component reference.
+- **locator**: any - a locator to remove reference
+- **returns**: any - the removed component reference.
 
-#### remove_all
+#### removeAll
 Removes all component references that match the specified locator. 
 
-> remove_all(locator: Any): List[Any]
+> `public` removeAll(locator: any): any[]
 
-- **locator**: Any - the locator to remove references by.
-- **returns**: List[Any] - a list, containing all removed references.
+- **locator**: any - the locator to remove references by.
+- **returns**: any[] - a list, containing all removed references.
 
 ### Static methods
 
 #### from_tuples
 Creates a new References from a list of key-value pairs called tuples.
 
-> `static` from_tuples(*tuples: Any): [References](../references)
+> `public static` fromTuples(...tuples: any[]): [References](../references)
 
-- **tuples**: Any - a list of values where odd elements are locators and the following even elements are component references
+- **tuples**: any[] - a list of values where odd elements are locators and the following even elements are component references
 - **returns**: [References](../references) - a newly created References.
 
 ### Examples
 
-```python
-class MyController(IReferenceable):
-    _persistence = None
+```typescript
 
-    def set_references(self, references):
-        self._persistence = references.getOneRequired(Descriptor("mygroup", "persistence", "*", "*", "1.0"))
+export class MyController implements IReferenceable {
+    public _persistence: IMyPersistence;
+    ...    
+    public setReferences(references: IReferences): void {
+        this._persistence = references.getOneRequired<IMyPersistence>(
+            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        );
+    }
+    ...
+}
+  
+let persistence = new MyMongoDbPersistence();
+let controller = new MyController();
+  
+let references = References.fromTuples(
+    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
+);
 
-persistence = MyMongoDbPersistence()
-
-references = References.from_tuples(
-        Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-        Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-    )
-
-controller.set_references(references)
+controller.setReferences(references);
 
 ```
 

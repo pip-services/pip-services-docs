@@ -51,7 +51,7 @@ Logs fatal (unrecoverable) message that caused the process to crash.
 #### getLevel
 Gets the maximum log level. Messages with higher log level are filtered out.
 
-> get_level(): [LogLevel](../log_level)
+> getLevel(): [LogLevel](../log_level)
 
 - **returns**: [LogLevel](../log_level) -  the maximum log level.
 
@@ -83,7 +83,7 @@ Logs a message at a specified log level.
 #### setLevel
 Set the maximum log level.
 
-> set_level(level: [LogLevel](../log_level)): void
+> setLevel(level: [LogLevel](../log_level)): void
 
 - **level**: [LogLevel](../log_level) - a new maximum log level.
 

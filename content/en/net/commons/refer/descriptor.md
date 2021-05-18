@@ -2,7 +2,7 @@
 type: docs
 title: "Descriptor"
 linkTitle: "Descriptor"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Component locator based on group, type, kind, name and version of the component.
 ---
@@ -28,13 +28,13 @@ Important points
 ### Constructors
 Creates a new instance of the descriptor.
 
-> Descriptor(group: Optional[str], type: Optional[str], kind: Optional[str], name: Optional[str], version: Optional[str])
+> `public` constructor(group: string, type: string, kind: string, name: string, version: string): [Descriptor]()
 
-- **group**: Optional[str] - a logical component group
-- **type**: Optional[str] - a logical component type or contract
-- **kind**: Optional[str] - a component implementation type
-- **name**: Optional[str] - a unique component name
-- **version**: Optional[str] - a component implementation version
+- **group**: string - a logical component group
+- **type**: string - a logical component type or contract
+- **kind**: string - a component implementation type
+- **name**: string - a unique component name
+- **version**: string - a component implementation version
 
 
 ### Instance methods
@@ -44,93 +44,95 @@ Compares this descriptor to a value.
 If value is a Descriptor it tries to match them,
 otherwise the method returns false.
 
-> equals(value: Any): bool
+> `public` equals(value: any): boolean
 
-- **value**: Any - the value to match against this descriptor.
-- **returns**: bool - true if the value is matching descriptor and false otherwise.
+- **value**: any - the value to match against this descriptor.
+- **returns**: boolean - true if the value is matching descriptor and false otherwise.
 
-#### exact_match
+#### exactMatch
 Matches this descriptor to another descriptor by all fields.
 No exceptions are made.
 
-> exact_match(descriptor: [Descriptor]()): bool
+> `public` exactMatch(descriptor: [Descriptor]()): boolean
 
 - **descriptor**: [Descriptor]() - the descriptor to match this one against.
-- **returns**: bool - true if descriptors match and false otherwise. 
+- **returns**: boolean - true if descriptors match and false otherwise. 
 
 
-#### get_group
+#### getGroup
 Gets the component's logical group.
 
-> get_group(): str
+> `public` getGroup(): string
 
-- **returns**: str - the component's logical group
+- **returns**: string - the component's logical group
 
-#### get_kind
+#### getKind
 Gets the component's implementation type.
 
-> get_kind(): str
+> `public` getKind(): string
 
-- **returns**: str - the component's implementation type.
+- **returns**: string - the component's implementation type.
     
 
-#### get_name
+#### getName
 Gets the unique component's name.
 
-> get_name(): str
+> `public` getName(): string
 
-- **returns**: str - the unique component's name.
+- **returns**: string - the unique component's name.
 
-#### get_version
+#### getVersion
 Gets the component's implementation version.
 
-> get_version(): str
+> `public` getVersion(): string
 
-- **returns**: str - the component's implementation version.
+- **returns**: string - the component's implementation version.
 
-#### is_complete
+#### isComplete
 Checks whether all descriptor fields are set.
-If descriptor has at least one "*" or None field it is considered "incomplete",
+If descriptor has at least one "*" or null field it is considered "incomplete",
 
-> is_complete(): bool
+> `public` isComplete(): boolean
 
-- **returns**: bool - true if all descriptor fields are defined and false otherwise.
+- **returns**: boolean - true if all descriptor fields are defined and false otherwise.
 
 #### match
 Partially matches this descriptor to another descriptor.
-Fields that contain "*" or None are excluded from the match.
+Fields that contain "*" or null are excluded from the match.
 
-> match(descriptor: [Descriptor]()): bool
+> `public` match(descriptor: [Descriptor]()): boolean
 
 - **descriptor**: [Descriptor]() the descriptor to match this one against.
-- **returns**: bool - true if descriptors match and false otherwise 
+- **returns**: boolean - true if descriptors match and false otherwise 
 
-#### to_string
+#### toString
 Gets a string representation of the object.
 The result is a colon-separated list of descriptor fields as
 *"mygroup:connector:aws:default:1.0"*
 
-> to_string(): str
+> `public` toString(): string
 
-- **returns**: str - a string representation of the object.
+- **returns**: string - a string representation of the object.
 
 ### Static methods
 
-#### from_string
+#### fromString
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
-Throws a [ConfigException](../../errors/config_exception) if the descriptor string has a wrong format.
+Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
-> `static` from_string(value: str): [Descriptor]()
+> `public static` fromString(value: String): [Descriptor]()
 
-- **value**: str - colon-separated descriptor fields to initialize Descriptor.
+- **value**: String - colon-separated descriptor fields to initialize Descriptor.
 - **returns**: [Descriptor]() - a newly created Descriptor.
 
 ### Examples
 
-```python
-locator1 = Descriptor("mygroup", "connector", "aws", "default", "1.0")
-locator2 = Descriptor.from_string("mygroup:connector:*:*:1.0")
+```typescript
+let locator1 = new Descriptor("mygroup", "connector", "aws", "default", "1.0");
+let locator2 = Descriptor.fromString("mygroup:connector:*:*:1.0");
 
-locator1.match(locator2)           # Returns True
-locator1.exact_match(locator2)     # Returns False
+locator1.match(locator2);		// Result: true
+locator1.equal(locator2);		// Result: true
+locator1.exactMatch(locator2);	// Result: false
+
 ```

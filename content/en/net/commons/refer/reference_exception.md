@@ -2,7 +2,7 @@
 type: docs
 title: "ReferenceException"
 linkTitle: "ReferenceException"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Error created when a required component dependency cannot be found.
 ---
@@ -14,8 +14,8 @@ The ReferenceException class provides a Reference error type, which can be used 
 ### Constructors
 Creates an error instance and assigns its values.
 
-> ReferenceException(correlation_id: Optional[str], locator: Any)
+> `public` constructor(correlationId: string, locator: any)
 
-- **correlation_id**: Optional[str] - (optional) a unique transaction id to trace execution through call chain.
-- **locator**: Any - the locator to find reference to dependent component.
+- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
+- **locator**: any - the locator to find reference to dependent component.
 

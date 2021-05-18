@@ -23,42 +23,42 @@ Important points
 #### debug
 Logs high-level debug information for troubleshooting.
 
-> debug(correlation_id: string, message: string, *args: Any, **kwargs: Any)
+> `public` debug(correlation_id: string, message: string, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 
 #### error
 Logs recoverable application error.
 
-> error(correlation_id: string, error: Error, message: string, *args: Any, **kwargs: Any)
+> `public` error(correlation_id: string, error: Error, message: string, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 
 #### fatal
 Logs fatal (unrecoverable) message that caused the process to crash.
 
-> fatal(correlation_id: string, error: Error, message: string, *args: Any, **kwargs: Any)
+> `public` fatal(correlation_id: string, error: Error, message: string, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
 
 
-#### get_level
+
+#### getLevel
 Gets the maximum log level. Messages with higher log level are filtered out.
 
-> get_level(): [LogLevel](../log_level)
+> `public` getLevel(): [LogLevel](../log_level)
 
 - **returns**: [LogLevel](../log_level) -  the maximum log level.
 
@@ -66,46 +66,46 @@ Gets the maximum log level. Messages with higher log level are filtered out.
 #### info
 Logs an important information message
 
-> info(correlation_id: string, message: string, *args: Any, **kwargs: Any)
+> `public` info(correlation_id: string, message: string, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 
 #### log
 Logs a message at specified log level.
 
-> log(level: [LogLevel](../log_level), correlation_id: string, error: Error, message: string, *args: Any, **kwargs: Any)
+> `public` log(level: [LogLevel](../log_level), correlation_id: string, error: Error, message: string, ...args: any[])
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 
 #### trace
 Logs low-level debug information for troubleshooting.
 
-> trace(correlation_id: string, message: string, *args: Any, **kwargs: Any)
+> `public` trace(correlation_id: string, message: string, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> warn(correlation_id: string, message: Error, *args: Any, **kwargs: Any)
+> `public` warn(correlation_id: string, message: Error, ...args: any[])
 
 - **correlation_id**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: Any - arguments to parameterize the message.
-- **kwargs**: Any - arguments to parameterize the message.
+- **args**: any[] - arguments to parameterize the message.
+
 
 
 ### See also

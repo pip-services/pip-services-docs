@@ -2,7 +2,7 @@
 type: docs
 title: "DateTimeConverter"
 linkTitle: "DateTimeConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The DateTimeConverter class allows you to convert arbitrary values into Date values using extended conversion rules.
 
@@ -17,35 +17,37 @@ The DateTimeConverter class allows you to convert arbitrary values into Date val
 
 ### Static methods
 
-#### to_date_time
+#### toDateTime
 Converts value into Date or returns current date when conversion is not possible.  
-See [to_date_time_with_default](#to_date_time_with_default)
+See [toDateTimeWithDefault](#todatetimewithdefault)
 
-> `static` to_date_time(value: Any): datetime
+> `public static` toDateTime(value: any): Date
 
-- **value**: Any - the value to convert.
-- **returns**: datetime - Date value or current date when conversion is not supported.
+- **value**: any - the value to convert.
+- **returns**: Date - Date value or current date when conversion is not supported.
 
-#### to_date_time_with_default
+#### toDateTimeWithDefault
 Converts value into Date or returns default when conversion is not possible.
 
-> `static` to_date_time_with_default(value: Any, default_value: datetime = None): datetime
+> `public static` toDateTimeWithDefault(value: any, defaultValue: Date = null): Date
 
-- **value**: Any - the value to convert.
-- **defaultValue**: datetime - the default value.
-- **returns**: datetime - Date value or default when conversion is not supported.
+- **value**: any - the value to convert.
+- **defaultValue**: Date - the default value.
+- **returns**: Date - Date value or default when conversion is not supported.
 
-#### to_nullable_date_time
-Converts value into Date or returns None when conversion is not possible.
+#### toNullableDateTime
+Converts value into Date or returns null when conversion is not possible.
 
-> `static` to_nullable_date_time(value: Any): Optional[datetime]
+> `public static` toNullableDateTime(value: any): Date
 
-- **value**: Any - the value to convert.
-- **returns**: datetime - Date value or None when conversion is not supported.
+- **value**: any - the value to convert.
+- **returns**: Date - Date value or null when conversion is not supported.
 
 ### Examples
 
-```python
-value1 = DateTimeConverter.to_nullable_datetime("ABC") # Returns None
+```typescript
+let value1 = DateTimeConverter.toNullableDateTime("ABC"); // Result: null
+let value2 = DateTimeConverter.toNullableDateTime("2018-01-01T11:30:00.0"); // Result: Date(2018,0,1,11,30)
+let value3 = DateTimeConverter.toNullableDateTime(123); // Result: Date(123)
 
 ```

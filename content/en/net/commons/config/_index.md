@@ -3,7 +3,7 @@ type: docs
 title: "Config"
 linkTitle: "Config"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     A package containing  a set of classes and interfaces that allows you to add configurations to components.
 ---

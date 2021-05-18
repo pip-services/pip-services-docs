@@ -2,7 +2,7 @@
 type: docs
 title: "RandomText"
 linkTitle: "RandomText"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Random generator for various text types such as names, addresses or phone numbers.
 ---
@@ -18,100 +18,101 @@ The RandomText class allows you to generate different types of randomt texts. Th
 Generates a random adjective.
 The result value is capitalized.
 
-> `static` adjective(): str 
+> `public static` adjective(): string 
 
-- **returns**: str - a random adjective.
+- **returns**: string - a random adjective.
 
 #### color
 Generates a random color name.
 The result value is capitalized.
 
-> `static` color(): str
+> `public static` color(): string
 
-- **value**: str - a string to distort.
-- **returns**: str - a random color name.
+- **value**: string - a string to distort.
+- **returns**: string - a random color name.
 
 #### email
 Generates a random email address.
 
-> `static` email(): str
+> `public static` email(): string
 
-- **returns**: str - a random email address.
+- **returns**: string - a random email address.
 
-#### full_name
+#### fullName
 Generates a random person's name which has the following structure
 \<optional prefix\> \<first name\> \<second name\> \<optional suffix\>
 
-> `static` full_name(): str
+> `public static` fullName(): string
 
-- **returns**: str - a random name.
+- **returns**: string - a random name.
 
 
 #### noun
 Generates a random noun.
 The result value is capitalized.
 
-> `static` noun(): str
+> `public static` noun(): string
 
-- **returns**: str - a random noun.
+- **returns**: string - a random noun.
 
 #### phone
 Generates a random phone number.
 The phone number has the format: (XXX) XXX-YYYY
 
-> `static` phone(): str
+> `public static` phone(): string
 
-- **returns**: str -  a random phone number.
+- **returns**: string -  a random phone number.
 
 
 #### phrase
 Generates a random phrase which consists of few words separated by spaces.
 The first word is capitalized, others are not.
 
-> `static` phrase(min_size: int, max_size: int = None): str 
+> `public static` phrase(minLength: number, maxLength: number = null): string 
 
-- **min_size**: int - (optional) minimum string length.
-- **max_size**: int -  maximum string length.
-- **returns**: str -  a random phrase.
+- **minLength**: number - (optional) minimum string length.
+- **maxLength**: number -  maximum string length.
+- **returns**: string -  a random phrase.
 
 #### text
 Generates a random text, consisting of first names, last names, colors, stuffs, adjectives, verbs, and punctuation marks.
 
-> `static` text(min_size: int, max_size: int = None): str
+> `public static` text(minLength: number, maxLength: number = null): string
 
-- **min_size**: int - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
-- **max_size**: int -  (optional) maximum amount of words to generate.
-- **returns**: str -  a random text.
+- **minLength**: number - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
+- **maxLength**: number -  (optional) maximum amount of words to generate.
+- **returns**: string -  a random text.
 
 #### verb
 Generates a random verb.
 The result value is capitalized.
 
-> `static` verb(): str
+> `public static` verb(): string
 
-- **returns**: str - a random verb.
+- **returns**: string - a random verb.
 
 
 #### word
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> `static` word(): str
+> `public static` word(): string
 
-- **returns**: str - a random word.
+- **returns**: string - a random word.
 
 #### words
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> `static` words(min_size: int, max_size: int = None): str
+> `public static` words(min: number, max: number = null): string
 
-- **min_size**: int - (optional) a minimum number of words.
-- **max_size**: int - a maximum number of words.
-- **returns**: str - a random text.
+- **min**: number - (optional) a minimum number of words.
+- **max**: number - a maximum number of words.
+- **returns**: string - a random text.
 
 ### Examples
 
-```python
-value1 = RandomText.name()      # Possible result: "Sergio"
-value2 = RandomText.verb()      # Possible result: "Run"
-value3 = RandomText.text(5,20)    # Possible result: "Due bela"
+```typescript
+let value1 = RandomText.name();     // Possible result: "Segio"
+let value2 = RandomText.verb();      // Possible result: "Run"
+let value3 = RandomText.Text(50);    // Possible result: "Run jorge. Red high scream?"
+
 ```

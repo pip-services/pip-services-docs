@@ -20,11 +20,11 @@ Important points
 
 ### Instance methods
 
-#### read_config
+#### readConfig
 Reads configuration and parameterizes it with given values.
 
-> read_config(correlationId: string, parameters: [ConfigParams](../../../commons/config/config_params)): Promise<[ConfigParams](../../../commons/config/config_params)>
+> `public` readConfig(correlationId: string, parameters: [ConfigParams](../../../commons/config/config_params)): Promise<[ConfigParams](../../../commons/config/config_params)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
 - **returns**: Promise<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.

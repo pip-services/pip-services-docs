@@ -2,7 +2,7 @@
 type: docs
 title: "Event"
 linkTitle: "Event"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Concrete implementation of the [IEvent](../ievent) interface.
    
@@ -21,57 +21,64 @@ Important points
 ### Constructors
 
 Creates a new event and assigns its name.  
-Throws an Error if the name is None.
+Throws an Error if the name is null.
 
-> Event(name: str)
+> `public` Event(string name)
 
-- **name**: str - the name of the event that is to be created.
+- **name**: string - the name of the event that is to be created.
+
+
+### Properties
+
+#### Name
+Gets the name of the event.
+> `public` string Name
+
+- **returns**: string - the name of this event.
+
+#### Listeners
+Gets all listeners registered in this event.
+> `public` List<[IEventListener](../ievent_listener)> Listeners
+
+- **returns**: List<[IEventListener](../ievent_listener)> - all listeners registered in this event.
+
 
 ### Instance methods
 
-#### add_listener
+#### AddListener
 Adds a listener to receive notifications when this event is fired.
 
-> add_listener(listener: [IEventListener](../ievent_listener))
+> `public` void AddListener([IEventListener](../ievent_listener) listener)
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
 
-#### get_listeners
-Gets all listeners registred in this event.
 
-> getListeners(): List[[IEventListener](../ievent_listener)]
-
-- **returns**: List[[IEventListener](../ievent_listener)] - a list of listeners.
-
-#### get_name
-Gets the name of the event.
-
-> get_name(): str 
-
-- **returns**: str - the name of this event.
-
-#### notify
+#### NotifyAsync
 Fires this event and notifies all registred listeners.  
 Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
 
-> notify(correlation_id: Optional[str], args: [Parameters](../../run/parameters))
+> `public` void NotifyAsync(string correlationId, [Parameters](../../run/parameters) args)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - the parameters to raise this event with.
 
-#### remove_listener
+#### RemoveListener
 Removes a listener, so that it no longer receives notifications for this event.
 
-> removeListener(listener: [IEventListener](../ievent_listener))
+> `public` void RemoveListener([IEventListener](../ievent_listener) listener)
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
 
 **Example**:
 
-```python
-event_name = Event("my_event")
-event_name.add_listener(myListener)
-event_name.notify("123", Parameters.from_tuples("param1", "ABC", "param2", 123)
+```cs
+var event = new Event("my_event");
+event.addListener(myListener);
+
+event.notify("123", Parameters.FromTuples(
+"param1", "ABC",   
+<br>"param2", 123 ));
+
 ```
 
 ### See also

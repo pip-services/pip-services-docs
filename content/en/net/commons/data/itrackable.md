@@ -2,12 +2,12 @@
 type: docs
 title: "ITrackable"
 linkTitle: "ITrackable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Interface for data objects that can track their changes, including logical deletion.
 ---
 
-**Implements:** [IChangeable](../ichangeable)
+**Extends:** [IChangeable](../ichangeable)
 
 ### Description
 
@@ -19,27 +19,30 @@ The ITrackagle interface allows you to define data objects that can track their 
 
 #### create_time
 The UTC time at which the object was created.
-> **create_time**: datetime
+> **create_time**: Date
 
 #### change_time
 The UTC time at which the object was last changed (created, updated, or deleted).
-> **change_time**: datetime
+> **change_time**: Date
 
 #### deleted
-The logical deletion flag. True when object is deleted and None or false otherwise
-> **deleted**: datetime
+The logical deletion flag. True when object is deleted and null or false otherwise
+> **deleted**: boolean
 
 </span>
 
 ### Examples
 
-```python
-class MyData(IStringIdentifiable, ITrackable):
-    id = None
+```typescript
+export class MyData implements IStringIdentifiable, ITrackable {
+    public id: string;
+    public field1: string;
+    public field2: number;
     ...
-    change_time = None
-    create_time = None
-    deleted = None
+    public change_time: Date;
+    public create_time: Date;
+    public deleted: boolean;
+}
 ```
 
 ### See also

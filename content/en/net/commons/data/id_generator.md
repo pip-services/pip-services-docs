@@ -2,7 +2,7 @@
 type: docs
 title: "IdGenerator"
 linkTitle: "IdGenerator"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Helper class used to generate object IDs.
 
@@ -20,27 +20,27 @@ Important points
 
 ### Static methods
 
-#### next_long
+#### nextLong
 Generates a globally unique 32-digit object ID.
 The value is a string representation of a GUID value.
 
-> `static` next_long(): str
+> `public static` nextLong(): string
 
-- **returns**: str - a generated 32-digit object ID
+- **returns**: string - a generated 32-digit object ID
 
 
-#### next_short
+#### nextShort
 Generates a random 9-digit random ID (code).
 
 Remember: The returned value is not guaranteed to be unique.
 
-> `static` next_short(): str
+> `public static` nextShort(): string
 
-- **returns**: str - a generated random 9-digit code
+- **returns**: string - a generated random 9-digit code
 
 ### Examples
 
-```python
-IdGenerator.next_long()      # Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
-IdGenerator.next_short()     # Possible result: "23495247"
+```typescript
+IdGenerator.nextLong();      // Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
+IdGenerator.nextShort();     // Possible result: "23495247"
 ```

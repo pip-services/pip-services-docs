@@ -136,7 +136,7 @@ Searches for an event by its name in this command set.
 Fires event specified by its name and notifies all registered
 [listeners](../ievent_listener)
 
-> `public` async Task NotifyAsync(correlationId: string, ev: string, args: [Parameters](../../run/parameters))
+> `public` Task NotifyAsync(correlationId: string, ev: string, args: [Parameters](../../run/parameters))
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **ev**: string - the name of the event that is to be fired.

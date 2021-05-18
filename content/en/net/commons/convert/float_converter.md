@@ -2,7 +2,7 @@
 type: docs
 title: "FloatConverter"
 linkTitle: "FloatConverter"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     The FloatConverter class allows you to convert arbitrary values into float using extended conversion rules.
 
@@ -17,42 +17,42 @@ The FloatConverter class allows you to convert arbitrary values into float using
 
 ### Static methods
 
-#### to_float
+#### toFloat
 Converts value into float or returns 0 when conversion is not possible.  
 See [DoubleConverter.toDouble](../double_converter/#todouble)
 
-> `static` to_float(value: Any): float
+> `public static` toFloat(value: any): number
 
-- **value**: Any - the value to convert.
-- **returns**: float - float value or 0 when conversion is not supported.
+- **value**: any - the value to convert.
+- **returns**: number - float value or 0 when conversion is not supported.
 
-#### to_float_with_default
+#### toFloatWithDefault
 Converts value into float or returns default when conversion is not possible.  
-See [DoubleConverter.to_double_with_default](../double_converter/#to_double_with_default),  
-[DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
+See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault),  
+[DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
 
-> `static` to_float_with_default(value: Any, default_value: float): float
+> `public static` toFloatWithDefault(value: any, defaultValue: number): number
 
-- **value**: Any - the value to convert.
-- **default_value**: float - the default value.
-- **returns**: float - float value or default value when conversion is not supported.
+- **value**: any - the value to convert.
+- **defaultValue**: number - the default value.
+- **returns**: number - float value or default value when conversion is not supported.
 
-#### to_nullable_float
-Converts value into float or returns None when conversion is not possible.  
-See [DoubleConverter.to_nullable_double](../double_converter/#to_nullable_double)
+#### toNullableFloat
+Converts value into float or returns null when conversion is not possible.  
+See [DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
 
-> `static` to_nullable_float(value: Any): Optional[float]
+> `public static` toNullableFloat(value: any): number
 
-- **value**: Any - the value to convert.
-- **returns**: Optional[float] - float value or None when conversion is not supported.
+- **value**: any - the value to convert.
+- **returns**: number - float value or null when conversion is not supported.
 
 
 ### Examples
 
-```python
-value1 = FloatConverter.to_nullable_float("ABC")     # Returns None
-value2 = FloatConverter.to_nullable_float("123.456") # Returns 123.456
-value3 = FloatConverter.to_nullable_float(True)      # Returns 1
-value4 = FloatConverter.to_nullable_float(datetime.datetime.now()) # Returns current milliseconds (E.g. 1619866773703)
+```typescript
+let value1 = FloatConverter.toNullableFloat("ABC"); // Result: null
+let value2 = FloatConverter.toNullableFloat("123.456"); // Result: 123.456
+let value3 = FloatConverter.toNullableFloat(true); // Result: 1
+let value4 = FloatConverter.toNullableFloat(new Date()); // Result: current milliseconds (E.g. 1619869474907)
 
 ```

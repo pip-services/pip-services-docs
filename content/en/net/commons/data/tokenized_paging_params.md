@@ -23,11 +23,10 @@ Important points
 ### Constructors
 Creates a new instance and sets its values.
 
-> TokenizedPagingParams(token: str = None, take: int = None, total: bool = None)
-
-- **token**: str - token that defines a starting point for the search.
-- **take**: int - the number of items to return. 
-- **total**: bool - true to return the total number of items.
+> `public` constructor(token: string = null, take: number = null, total: boolean = null)
+- **token**: string - token that defines a starting point for the search.
+- **take**: number - the number of items to return. 
+- **total**: boolean - true to return the total number of items.
 
 
 ### Fields
@@ -36,62 +35,62 @@ Creates a new instance and sets its values.
 
 #### token
 The start token
-> **token**: str
+> `public` **token**: string
 
 #### take
 The number of items to return.
-> **take**: int
+> `public` **take**: number
 
 #### total
 The flag to return the total number of items.
-> **total**: boolean
+> `public` **total**: boolean
 
 </span>
 
 
 ### Instance methods
 
-#### get_take
+#### getTake
 Gets the number of items to return in a page.
 
-> get_take(max_take: int): int
+> `public` getTake(maxTake: number): number
 
-- **max_take**: int - the maximum number of items to return.
-- **returns**: int - the number of items to return.
+- **maxTake**: number - the maximum number of items to return.
+- **returns**: number - the number of items to return.
 
 ### Static methods
 
-#### from_map
-Creates a new TokenizedPagingParams and sets it parameters from the specified map.
+#### fromMap
+Creates a new TokenizedPagingParams and sets it parameters from the specified map
 
-> `static` from_map(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
+> `public static` fromMap(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
 
 - **map**: [AnyValueMap](../any_value_map) - a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
 - **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
 
 
-#### from_tuples
+#### fromTuples
 Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
 
-> `static` from_tuples(*tuples: Any): [TokenizedPagingParams]()
+> `public static` fromTuples(...tuples: any[]): [TokenizedPagingParams]()
 
-- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [TokenizedPagingParams]() - a newly created TokenizedPagingParams.
 
 
-#### from_value
+#### fromValue
 Converts specified value into TokenizedPagingParams.
 
-> `static` from_value(value: Any): [TokenizedPagingParams]()
+> `public static` fromValue(value: any): [TokenizedPagingParams]()
 
-- **value**: Any - value to be converted
+- **value**: any - value to be converted
 - **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
 
 ### Examples
 
-```python
-filter = FilterParams.from_tuples("type", "Type1");
-paging = TokenizedPagingParams(None, 100);
-
-result = my_data_client.get_data_by_filter(filter, paging)
+```typescript
+let filter = FilterParams.fromTuples("type", "Type1");
+let paging = new TokenizedPagingParams(null, 100);
+     
+myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
 ```

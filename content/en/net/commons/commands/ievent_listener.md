@@ -2,7 +2,7 @@
 type: docs
 title: "IEventListener"
 linkTitle: "IEventListener"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     An interface for listener objects that receive notifications on fired events.
 ---
@@ -13,25 +13,27 @@ The IEventListener interface allows you to define actions to be taken by listene
 
 ### Instance methods
 
-#### on_event
+#### OnEvent
 A method called when events this listener is subscrubed to are fired.
 
-> on_event(correlation_id: Optional[str], event: [IEvent](../ievent), args: [Parameters](../../run/parameters))
+> void OnEvent(string correlationId, [IEvent](../ievent) event, [Parameters](../../run/parameters) args)
 
-- **correlation_id**: Optional[str] - a fired evemt
+- **correlationId**: string - a fired evemt
 - **event**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../../run/parameters) - event arguments.
 
 ### Examples
 
-```python
-class MyListener(IEventListener):
-    def on_event(self, correlation_id, event_name, args):
-        print "Fired event_name " + event_name.get_name()
-     
-event = Event("myevent")
-event.addListener(MyListener())
-event.notify("123", Parameters.from_tuples("param1", "ABC"))
+```cs
+public class MyListener: IEventListener {
+    private Task onEvent(String correlationId, IEvent event, Parameters args)  {
+        Console.WriteLine("Fired event " + event.getName());
+    }}
+Event event = new Event("myevent");
+event.addListener(new MyListener()); 
+event.notify("123", Parameters.fromTuples("param1", "ABC")); 
+// Console output: Fired event myevent
+
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "IncludedRule"
 linkTitle: "IncludedRule"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Validation rule to check that a list contains only specified values.
 ---
@@ -16,28 +16,31 @@ The InclidedRule class allows you to check that a list contains only specified v
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> IncludedRule(*values: Any)
+> `public` constructor(...values: any[])
 
-- **values**: Any - a list of constants that value must be included to
+- **values**: any[] - a list of constants that value must be included to
 
 ### Methods
 
 #### validate
+#### validate
 Validates a given value against this rule.
 
-> validate(path: str, schema: [Schema](../schema), value: Any, results: List[[ValidationResult](../validation_result)])
+> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: str - a dot notation path to the value.
+- **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: Any - a value to be validated.
-- **results**: List[[ValidationResult](../validation_result)] - a list with validation results to add new results.
+- **value**: any - a value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+
 
 ### Examples
-```python
-schema = new Schema().with_rule(IncludedRule(1, 2, 3))
-
-schema.validate(2)      # Result: no errors
-schema.validate(10)     # Result: 10 must be one of 1, 2, 3
+```typescript
+let schema = new Schema()
+    .withRule(new IncludedRule(1, 2, 3));
+    
+schema.validate(2);      // Result: no errors
+schema.validate(10);     // Result: 10 must be one of 1, 2, 3
 ```
 
 ### See also

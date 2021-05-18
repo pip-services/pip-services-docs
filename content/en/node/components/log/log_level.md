@@ -19,7 +19,7 @@ description: >
 
 ### Enumeration members
 
-- **None** = 0 - Nothing to be logged
+- **null** = 0 - Nothing to be logged
 - **Fatal** - Logs only fatal errors that cause microservice to fail
 - **Error** - Logs all errors - fatal or recoverable
 - **Warn** - Logs errors and warnings

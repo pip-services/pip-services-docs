@@ -1,8 +1,8 @@
 ---
 type: docs
-title: "IIdentifiable"
+title: "IIdentifiable<K>"
 linkTitle: "IIdentifiable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Interface used to create data objects that can be uniquely idendified by an ID.
 
@@ -25,9 +25,13 @@ The unique object identifier of type K.
 > **id**: K
 
 ### Examples
-```python
-class MyData(IIdentifiable):
-    id = None
+```typescript
+export class MyData implements IIdentifiable<string> {
+    public id: string;
+    public field1: string;
+    public field2: number; 
+    ...
+}
 ```
 
 </span>

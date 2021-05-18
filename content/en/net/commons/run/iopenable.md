@@ -2,13 +2,13 @@
 type: docs
 title: "IOpenable"
 linkTitle: "IOpenable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface that allows you to create components with explicit opening and closing.
 
 ---
 
-**Implements:** [IClosable](../iclosable)
+**Extends:** [IClosable](../iclosable)
 
 ### Description
 
@@ -20,41 +20,44 @@ Important points
 
 ### Methods
 
-#### is_open
+#### isOpen
 Checks if the component is opened.
 
-> is_open(): bool
+> isOpen(): boolean
 
 #### open
 Opens the component.
 
-> open(correlation_id: Optional[str])
+> open(correlationId: string): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 ### Examples
 
-```python
-class MyPersistence(IOpenable):
-    _client = None
+```typescript
+class MyPersistence implements IOpenable {
+    private _client: any;
     ...
-    def is_open(self):
-        return self._client is not None
+    public isOpen(): boolean {
+        return this._client != null;
+    } 
     
-    
-    def open(correlation_id): 
-        if self.is_opened() 
-            return
-        
+    public async open(correlationId: string): Promise<void> {
+        if (this.isOpen()) {
+            return;
+        }
         ...
+    }
     
-    def close(self, correlation_id): 
-        if self._client is not None:
-            self._client.close()
-            self._client = None
-        
+    public async close(correlationId: string): Promise<void> {
+        if (this._client != null) {
+            this._client.close();
+            this._client = null;
+        }
+    }
+   
     ...
-
+}
 ```
 
 ### See also

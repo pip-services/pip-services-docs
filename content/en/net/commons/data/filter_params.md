@@ -2,12 +2,12 @@
 type: docs
 title: "FilterParams"
 linkTitle: "FilterParams"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
     Data transfer object used to pass filter parameters as key-value pairs.
 ---
 
-**Implements:** [StringValueMap](../string_value_map)
+**Extends:** [StringValueMap](../string_value_map)
 
 ### Description
 
@@ -17,50 +17,53 @@ The FilterParams class allows you to create a data transfer object that can be u
 ### Constructors
 Creates a new instance and initalizes it with elements from the specified map.
 
-> FilterParams(map: Any = None)
+> `public` constructor(map: any = null)
 
-- **map**: Any - a map to initialize this instance.
+- **map**: any - a map to initialize this instance.
 
 
 ### Static methods
 
-#### from_string
+#### fromString
 Parses semicolon-separated key-value pairs and returns them as a FilterParams.  
-See [StringValueMap.from_string](../string_value_map/#from_string)
+See [StringValueMap.fromString](../string_value_map/#fromstring)
 
-> `static` from_string(line: str): [FilterParams]()
+> `public static` fromString(line: string): [FilterParams]()
 
-- **line**: str - semicolon-separated key-value list to initialize FilterParams.
+- **line**: string - semicolon-separated key-value list to initialize FilterParams.
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
 
-#### from_tuples
+#### fromTuples
 Creates a new FilterParams from a list of key-value pairs called tuples.
 
-> `static` from_tuples(*tuples: Any): [FilterParams]()
+> `public static` fromTuples(...tuples: any[]): [FilterParams]()
 
-- **tuples**: Any - a list of values where odd elements are keys and the following even elements are values.
+- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
 
-#### from_value
+#### fromValue
 Converts specified value into FilterParams.
 
-> `static` from_value(value: Any): [FilterParams]()
+> `public static` fromValue(value: any): [FilterParams]()
 
-- **value**: Any - value to be converted.
+- **value**: any - value to be converted
 - **returns**: [FilterParams]() - a newly created FilterParams.
 
-### Examples
-```python
-filter = FilterParams.from_tuples("type", "Type1",
-    "from_create_time", datetime.datetime(2000, 0, 1),
-    "to_create_time", datetime.datetime.now(),
-    "completed", True
-)
 
-paging = PagingParams(0, 100)
-myDataClient.get_data_by_filter(filter, paging)
+### Examples
+```typescript
+let filter = FilterParams.fromTuples(
+    "type", "Type1",
+    "from_create_time", new Date(2000, 0, 1),
+    "to_create_time", new Date(),
+    "completed", true
+);
+let paging = new PagingParams(0, 100);
+    
+myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+
 ```
 
 ### See also

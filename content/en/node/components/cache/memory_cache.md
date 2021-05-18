@@ -45,13 +45,13 @@ Removes a value from the cache by its key.
 
 #### retrieve
 Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired it returns None.
+If value is missing in the cache or expired it returns null.
 
 > `public` retrieve(correlationId: string, key: string): Promise\<any\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique value key.
-- **returns**: any - a cached value or None if value wasn't found or timeout expired.
+- **returns**: any - a cached value or null if value wasn't found or timeout expired.
 
 
 #### store

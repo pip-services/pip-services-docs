@@ -2,7 +2,7 @@
 type: docs
 title: "MethodReflector"
 linkTitle: "MethodReflector"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Helper class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
@@ -18,40 +18,40 @@ Important points
 
 ### Static methods
 
-#### get_method_names
+#### getMethodNames
 Gets names of all methods implemented in specified object.
 
-> `static` get_method_names(obj: Any): List[str]
+> `public static` getMethodNames(obj: any): string[]
 
-- **obj**: Any - an objec to introspect.
-- **returns**: List[str] - a list with method names.
+- **obj**: any - an objec to introspect.
+- **returns**: string[] - a list with method names.
 
-#### has_method
+#### hasMethod
 Checks if object has a method with specified name..
 
-> `static` has_method(obj: Any, name: str): bool
+> `public static` hasMethod(obj: any, name: string): boolean
 
-- **obj**: Any - an object to introspect.
-- **name**: str - a name of the method to check.
-- **returns**: bool - true if the object has the method and false if it doesn't.
+- **obj**: any - an object to introspect.
+- **name**: string - a name of the method to check.
+- **returns**: boolean - true if the object has the method and false if it doesn't.
 
-#### invoke_method
+#### invokeMethod
 Invokes an object method by its name with specified parameters.
 
-> `static` invoke_method(obj: Any, name: str, args: Any): Any
+> `public static` invokeMethod(obj: any, name: string, ...args: any[]): any
 
-- **obj**: Any - an object to invoke.
-- **name**: str -a name of the method to invoke.
-- **args**: Any - a list of method arguments.
-- **returns**: Any - the result of the method invocation or None if method returns None.
+- **obj**: any - an object to invoke.
+- **name**: string -a name of the method to invoke.
+- **args**: any[] - a list of method arguments.
+- **returns**: any - the result of the method invocation or null if method returns void.
 
 ### Examples
 
-```python
-myObj = new MyObject()
-
-methods = MethodReflector.get_method_names()
-MethodReflector.has_method(myObj, "myMethod")
-MethodReflector.invoke_method(myObj, "myMethod", 123)
+```typescript
+let myObj = new MyObject();
+  
+let methods = MethodReflector.getMethodNames();
+MethodReflector.hasMethod(myObj, "myMethod");
+MethodReflector.invokeMethod(myObj, "myMethod", 123);
 
 ```

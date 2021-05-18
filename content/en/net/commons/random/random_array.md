@@ -2,7 +2,7 @@
 type: docs
 title: "RandomArray"
 linkTitle: "RandomArray"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Random generator for array objects.
 ---
@@ -16,14 +16,14 @@ The RandomArray class can be used as a random generator for array objects.
 #### pick
 Picks a random element from specified array.
 
-> `static` pick(values: List[Any]): Any
+> `public static` pick\<T\>(values: T[]): T
 
-- **values**: List[Any] - an array of any type
-- **returns**: Any - a randomly picked item.
+- **values**: T[] - an array of any type
+- **returns**: T - a randomly picked item.
 
 ### Examples
 
-```python
-value1 = RandomArray.pick([1, 2, 3, 4]) # Possible result: 3
+```typescript
+let value1 = RandomArray.pick([1, 2, 3, 4]); // Possible result: 3
 
 ```

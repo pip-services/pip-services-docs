@@ -28,7 +28,7 @@ Important points
 ### Constructors
 Creates a new instance of the counters.
 
-> `public` constructor(references: [IReferences](../../../commons/refer/ireferences) = None)
+> `public` constructor(references: [IReferences](../../../commons/refer/ireferences) = null)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

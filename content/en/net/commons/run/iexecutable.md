@@ -2,7 +2,7 @@
 type: docs
 title: "IExecutable"
 linkTitle: "IExecutable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Interface that allows you to create a component that can be called to execute work.
 
@@ -15,26 +15,30 @@ The IExecutable interface allows you to create a component that can be called to
 ### Instance methods
 
 #### execute
-Executes a component with arguments and receives the execution result.
+Executes component with arguments and receives execution result.
 
-> execute(correlationId: str, args: [Parameters](../parameters))
+> execute(correlationId: string, args: [Parameters](../parameters)): Promise\<any\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
+- **returns**: Promise\<any\> - the execution result. 
 
 ### Examples
 
-```python
-class EchoComponent(IExecutable):
+```typescript
+class EchoComponent implements IExecutable {
     ...
-    def execute(self, correlation_id: Optional[str], args: Parameters): 
-        result = args.get_as_object("message")
-        return result
+    public async execute(correlationId: string, args: Parameters): Promise<any> {
+        let result = args.getAsObject("message");
+        return result;
+    }
+}
     
-echo = new EchoComponent()
-message = "Test";
-result = echo.execute("123", Parameters.from_tuples("message", message))
-print("Request: " + message + " Response: " + result)
+let echo = new EchoComponent();
+let message = "Test";
+let result = await echo.execute("123", Parameters.fromTuples("message", message))
+console.log("Request: " + message + " Response: " + result);
+
 ```
 
 ### See also

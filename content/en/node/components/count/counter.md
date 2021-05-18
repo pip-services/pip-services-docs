@@ -19,7 +19,7 @@ Important points
 ### Constructors
 Creates a instance of the data object.
 
-> `public` constructor(name: string = None, type: [CounterType](../counter_type) = None)
+> `public` constructor(name: string = null, type: [CounterType](../counter_type) = null)
 
 - **name**: string - a counter name.
 - **type**: [CounterType](../counter_type) - a counter type.

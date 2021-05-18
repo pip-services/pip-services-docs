@@ -2,13 +2,12 @@
 type: docs
 title: "ErrorDescription"
 linkTitle: "ErrorDescription"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     Class used to pass information about errors between microservices implemented in different languages. On the receiving side
     [ErrorDescription]() is used to recreate the exception object close to its original type
     without missing additional details.
 ---
-See also [ApplicationException](../application_exception), [ApplicationExceptionFactory](../application_exception_factory)
 
 ### Description
 
@@ -20,39 +19,39 @@ The ErrorDescription class is used to pass information about errors between micr
 
 #### type
 Data type of the original error 
-> type: str
+> `public` type: string
 
 #### category
 Standard error category 
-> category: str
+> `public` category: string
 
 #### status
 HTTP status code associated with this error type 
-> status: number
+> `public` status: number
 
 #### code
 A unique error code 
-> code: str
+> `public` code: string
 
 #### message
 A human-readable error description (usually written in English) 
-> message: str
+> `public` message: string
 
 #### details
 A map with additional details that can be used to restore error description in other languages 
-> details: Any
+> `public` details: any
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain    
-> correlation_id: Optional[str]
+> `public` correlation_id: string
 
 #### cause
 Original error wrapped by this exception  
-> cause: str
+> `public` cause: string
 
 #### stack_trace
 Stack trace of the exception  
-> stack_trace: str
+> `public` stack_trace: string
 
 </span>
 

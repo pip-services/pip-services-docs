@@ -3,7 +3,7 @@ type: docs
 title: "Data"
 linkTitle: "Data"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     This package contains a set of abstract, portable data types. Some examples are anytype, anyvalues, anyarrays, anymaps, and stringmaps. Many serializable classes are based on these data types. For example, the classes configmap, filtermaps and  connection parameters, which extend stringvaluemap. The package also includes several classes for working with data (E.g. data paging, filtering, GUIDs). 
 ---
@@ -41,6 +41,7 @@ The version doesn't have to be a number, but it is recommended to use sequential
 values to determine if one object has newer or older version than another one.
 It is a common pattern to use the time of change as the object version.
 
+<br>
 
 ### Classes
 

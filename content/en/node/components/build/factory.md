@@ -20,7 +20,7 @@ Checks if this factory is able to create component by a given locator.
 
 This method searches for all registered components and returns
 a locator for the component it is able to create that matches the given locator.
-If the factory is not able to create the requested component is returns None.
+If the factory is not able to create the requested component is returns null.
 
 >  canCreate(locator: any): any
 
@@ -49,7 +49,7 @@ Registers a component using a factory method.
 #### registerAsType
 Registers a component using its type (a constructor function).
 
-> register_as_type(locator: any, type: any)
+> registerAsType(locator: any, type: any)
 
 - **locator**: any - a locator to identify component to be created.
 - **type**: any - a component type.

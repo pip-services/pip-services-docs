@@ -81,15 +81,15 @@ Sets the context name.
 #### properties
 Gets context additional parameters.
 
-> properties(): Any
+> properties(): any
 
-- **returns**: Any - a JSON object with additional context parameters.
+- **returns**: any - a JSON object with additional context parameters.
 
 Sets context additional parameters.
 
-> properties(properties: Any)
+> properties(properties: any)
 
-- **properties**: Any - a JSON object with context additional parameters
+- **properties**: any - a JSON object with context additional parameters
 
 
 #### startTime
@@ -97,7 +97,7 @@ Gets the context start time.
 
 > startTime(): Date
 
-- **returns**: Any - a JSON object with additional context parameters.
+- **returns**: any - a JSON object with additional context parameters.
 
 Sets the context start time.
 

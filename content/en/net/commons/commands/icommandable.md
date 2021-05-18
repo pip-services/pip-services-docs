@@ -2,7 +2,7 @@
 type: docs
 title: "ICommandable"
 linkTitle: "ICommandable"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     An interface used to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
     
@@ -18,22 +18,29 @@ Important points
 
 ### Instance methods
 
-#### get_command_set
+#### GetCommandSet
 Gets a command set with all supported commands and events.
 
-> get_command_set(): [CommandSet](../command_set)
+> [CommandSet](../command_set) GetCommandSet()
 
 - **returns**: [CommandSet](../command_set) - a command set with commands and events.
 
 ### Examples
 
-```python
-class MyDataController(ICommandable, IMyDataController):
-    _commandSet = None
-    def get_command_set(self):
-        if self._commandSet is None:
-            _commandSet = MyDataCommandSet(self)
-        return self._commandSet
+```cs
+public class MyDataController: ICommandable, IMyDataController
+{
+    private MyDataCommandSet _commandSet;
+    
+    public CommandSet getCommandSet() 
+    {
+        if (this._commandSet == null)
+            this._commandSet = new MyDataCommandSet(this);
+            return this._commandSet;
+    }
+    ...
+}
+
 ```
 
 ### See also

@@ -11,7 +11,7 @@ description: >
 
 The IMessageReceive interface is used to receive incoming messages. 
 
-### Methods
+### Instance methods
 
 #### receive_message
 Receives an incoming message from the queue.
@@ -23,7 +23,7 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 - **envelope**: [MessageEnvelope](../message_envelope) - incoming message
 - **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from
 
-## Examples
+### Examples
 
 ```python
 class MyMessageReceiver(IMessageReceiver):

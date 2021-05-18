@@ -93,7 +93,7 @@ Configures component by passing configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### end_listen
-Ends listening for incoming messages. When this method is called [listen](#listen) unblocks the thread and execution continues.
+Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > end_listen(correlation_id: Optional[str])
  

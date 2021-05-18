@@ -10,6 +10,9 @@ description: >
 
 **Implements:** [MessageQueue](../message_queue) 
 
+### Description
+
+The MemoryMessageQueue class is used to create message queues that send and receive messages within the same process by using shared memory.
 
 ##### Configuration parameters
 - **name**: name of the message queue
@@ -18,20 +21,6 @@ description: >
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
 
-See also [MessagingCapabilities](../messaging_capabilities), [MessageQueue](../message_queue)
-
-**Example:**
-
-```python
-queue = MessageQueue("myqueue")
-queue.send("123", MessageEnvelope(None, "mymessage", "ABC"))
-
-message = queue.receive("123", 0)
-if message != None:
-    # ...
-    queue.complete("123", message)
-
-```
 
 ### Constructors
 
@@ -61,7 +50,7 @@ TODO: add description property
 </span>
 
 
-### Methods
+### Instance methods
 
 #### abandon
 Returnes message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and send to dead letter queue.
@@ -156,16 +145,16 @@ Receives an incoming message and removes it from the queue.
 > receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **wait_timeout**: int - a timeout in milliseconds to wait for a message to come.
-- **returns**: [MessageEnvelope](../message_envelope) - a received message or *None*.
+- **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
+- **returns**: [MessageEnvelope](../message_envelope) - received message or *None*.
 
 #### renew_lock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.
 
 > renew_lock(message: [MessageEnvelope](../message_envelope), lock_timeout: int)
 
-- **message**: [MessageEnvelope](../message_envelope) - a message to extend its lock.
-- **lock_timeout**: int - a locking timeout in milliseconds.
+- **message**: [MessageEnvelope](../message_envelope) - message to extend its lock.
+- **lock_timeout**: int - locking timeout in milliseconds.
 
 #### send
 Sends a message into the queue.
@@ -173,7 +162,7 @@ Sends a message into the queue.
 > send(correlation_id: Optional[str], envelope: [MessageEnvelope](../message_envelope))
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **envelope**: [MessageEnvelope](../message_envelope) - a message envelop to be sent.
+- **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 
 #### _open_with_params
@@ -181,11 +170,21 @@ Opens the component with given connection and credential parameters.
 
 > _open_with_params(correlation_id: Optional[str], connections: List[[ConnectionParams](../../../components/connect/connection_params)], credentials: [CredentialParams](../../../components/auth/credential_params))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **connections**: List[[ConnectionParams](../../../components/connect/connection_params)] - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 
+### Examples
 
+```python
+queue = MessageQueue("myqueue")
+queue.send("123", MessageEnvelope(None, "mymessage", "ABC"))
+
+message = queue.receive("123", 0)
+if message != None:
+    # ...
+    queue.complete("123", message)
+```
 
 ### See also
 - #### [MessagingCapabilities](../messaging_capabilities) 

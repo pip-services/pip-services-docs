@@ -7,8 +7,23 @@ description: >
   Callback interface to receive incoming messages.
 ---
 
+### Description
 
-**Example:**
+The IMessageReceive interface is used to receive incoming messages. 
+
+### Methods
+
+#### receive_message
+Receives an incoming message from the queue.
+
+See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
+
+> receive_message(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue))
+
+- **envelope**: [MessageEnvelope](../message_envelope) - incoming message
+- **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from
+
+## Examples
 
 ```python
 class MyMessageReceiver(IMessageReceiver):
@@ -20,17 +35,4 @@ messageQueue.listen("123", MyMessageReceiver())
 
 messageQueue.open("123")
 messageQueue.send("123", MessageEnvelope(None, "mymessage", "ABC")) # Output in console: "ABC"
-
 ```
-
-### Methods
-
-#### receive_message
-Receives incoming message from the queue.
-
-See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
-
-> receive_message(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue))
-
-- **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
-- **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from

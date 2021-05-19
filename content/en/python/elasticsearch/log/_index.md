@@ -5,7 +5,7 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-python"
 description: >
-    TODO: add description
+    This package contains classes used to create loggers for the ElasticSearch component.
 ---
 ---
 <div class="module-body"> 

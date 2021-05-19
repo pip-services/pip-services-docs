@@ -14,7 +14,7 @@ description: >
 
 ### Description
 
-The MongoDbConnectionResolver class allows you to create a MongoDB connection resolver that resolves MongoDB connection and credential parameters, validates them and generates a connection URI.
+The MongoDbConnectionResolver class allows you to create a MongoDB connection resolver that resolves MongoDB connection and credential parameters, validates them, and generates a connection URI.
 
 Important points
 

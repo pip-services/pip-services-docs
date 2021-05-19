@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
-    TODO: add description
+    This package contains classes used to build MySQL components.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultMySqlFactory](default_mysql_factory)
-Creates MySql components by their descriptors.
+Creates MySQL components by their descriptors.
 
 
 </div>

@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The DefaultMySqlFactory class allows you to create a factory usd to create MySql components based on their descriptors.
+The DefaultMySqlFactory class allows you to create a factory used to create MySql components based on their descriptors.
 
 ### Constructors
 

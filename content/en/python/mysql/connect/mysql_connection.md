@@ -4,16 +4,16 @@ title: "MySqlConnection"
 linkTitle: "MySqlConnection"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
-    MySQL connection using plain driver.
+    MySQL connection using a plain driver.
 
-
-    By defining a connection and sharing it through multiple persistence components
-    you can reduce number of used database connections.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
 [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The MySqlConnection class allows you to create a connection to a MySQL database using a plain driver.
 
 #### Configuration parameters
 
@@ -26,8 +26,8 @@ description: >
 
 **credential(s)**:    
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: user name
-- **password**: user password
+- **username**: username
+- **password**: user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -73,15 +73,15 @@ The configuration options.
 ### Methods
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -89,19 +89,18 @@ Configures component by passing configuration parameters.
 
 
 #### get_connection
-TODO add description
-
+Gets the connection.
 > get_connection(): Any
 
-- **returns**: Any - TODO add description
+- **returns**: Any - connection to a MySQL database
 
 
 #### get_database_name
-TODO add description
+Gets the database name
 
 > get_database_name(): str
 
-- **returns**: str - TODO add description
+- **returns**: str - database name
 
 
 #### is_open
@@ -117,7 +116,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### set_references

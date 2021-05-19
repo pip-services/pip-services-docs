@@ -7,12 +7,18 @@ description: >
     MongoDbConnectionResolver implementation.
     Helper class that resolves MongoDB connection
     and credential parameters, validates them and generates a connection URI.
-
-    It is able to process multiple connections to MongoDB cluster nodes.
+  
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
 
+### Description
+
+The MongoDbConnectionResolver class allows you to create a MongoDB connection resolver that resolves MongoDB connection and credential parameters, validates them and generates a connection URI.
+
+Important points
+
+-  It is able to process multiple connections to MongoDB cluster nodes.
 
 #### Configuration parameters
 
@@ -38,17 +44,17 @@ description: >
 <span class="hide-title-link">
 
 #### _connection_resolver
-TODO add description
+MongoDB connection resolver.
 > **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
-#### _connection_resolver
-TODO add description
+#### _credential_resolver
+MongoDB credential resolver.
 > **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -63,8 +69,8 @@ Resolves MongoDB connection URI from connection and credential parameters.
 
 > resolve(correlation_id: Optional[str]): str
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **returns**: str - a resolved URI
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **returns**: str - resolved URI
 
 #### set_references
 Sets references to dependent components.

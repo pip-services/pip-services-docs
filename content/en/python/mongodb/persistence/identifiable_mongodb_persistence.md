@@ -6,20 +6,20 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 description: >
     Abstract persistence component that stores data in MongoDB
     and implements a number of CRUD operations over data items with unique ids.
-    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
-
-
-    In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter),
-    [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter function.
-    All other operations can be used out of the box. 
-
-
-    In complex scenarios child classes can implement additional operations by 
-    accessing **self._collection** and **self._model** properties.
+    
 ---
 
 **Implements:** [MongoDbPersistence](../mongodb_persistence), [IIdentifiable](../../../commons/data/iidentifiable)
 
+### Description
+
+The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDBs and implement a numer of CRUD operations over data items with unique ids.
+
+Important points
+
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter functions. All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
 
 #### Configuration parameters
 
@@ -31,8 +31,8 @@ description: >
 
 **credential(s)**:
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **max_pool_size**: (optional) maximum connection pool size (default: 2)
@@ -52,27 +52,7 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
 
-**Example:**
-```python
-class MyMongoDbPersistence(MongoDbPersistence):
-    def __init__(self):
-        super(MyMongoDbPersistence, self).__init__("mydata", MyData)
 
-    def get_page_by_filter(self, correlation_id, filter, paging, sort = None, select = None):
-        super().def get_page_by_filter(correlation_id, filter, paging, None, None):
-
-persistence = MyMongoDbPersistence()
-persistence.configure(ConfigParams.from_tuples("host", "localhost", "port", 27017))
-
-persitence.open("123")
-persistence.create("123", { id: "1", name: "ABC" })
-mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None)
-
-print(mydata)
-persistence.delete_by_id("123", "1")
-# ...
-
-```
 
 ### Constructors
 Creates a new instance of the persistence component.
@@ -98,9 +78,9 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: Optional[dict] - a created item
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **item**: Any - item to be created.
+- **returns**: Optional[dict] - created item
 
 
 #### delete_by_id
@@ -108,9 +88,9 @@ Deleted a data item by it's unique id.
 
 > delete_by_id(correlation_id: Optional[str], id: Any): dict
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of the item to be deleted
-- **return**: dict - a deleted item.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **id**: Any - id of the item to be deleted
+- **return**: dict - deleted item.
 
 
 #### delete_by_ids
@@ -118,7 +98,7 @@ Deletes multiple data items by their unique ids.
 
 > delete_by_ids(correlation_id: Optional[str], ids: List[Any])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **ids**: List[Any] - ids of data items to be deleted.
 
 
@@ -127,7 +107,7 @@ Gets a list of data items retrieved by given unique ids.
 
 > get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **ids**: List[Any] - ids of data items to be retrieved
 - **return**: List[dict] - a data list of results by ids.
 
@@ -137,8 +117,8 @@ Gets a data item by its unique id.
 
 > get_one_by_id(correlation_id: Optional[str], id: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of data item to be retrieved.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **id**: Any - id of data item to be retrieved.
 - **returns**: Optional[dict] - data item by id.
 
 
@@ -147,9 +127,9 @@ Sets a data item. If the data item exists it updates it, otherwise it create a n
 
 > set(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be set. 
-- **returns**: Optional[dict] - an updated item
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **item**: Any - item to be set. 
+- **returns**: Optional[dict] - updated item
 
 
 #### update
@@ -157,7 +137,7 @@ Updates a data item.
 
 > update(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **item**: Any - an item to be updated.
 - **returns**: Optional[dict] - an updated item.
 
@@ -168,6 +148,29 @@ Updates only few selected fields in a data item.
 > update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of data item to be updated.
-- **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
+- **id**: Any - id of data item to be updated.
+- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **returns**: Optional[dict] - an updated item.
+
+### Examples
+
+```python
+class MyMongoDbPersistence(MongoDbPersistence):
+    def __init__(self):
+        super(MyMongoDbPersistence, self).__init__("mydata", MyData)
+
+    def get_page_by_filter(self, correlation_id, filter, paging, sort = None, select = None):
+        super().def get_page_by_filter(correlation_id, filter, paging, None, None):
+
+persistence = MyMongoDbPersistence()
+persistence.configure(ConfigParams.from_tuples("host", "localhost", "port", 27017))
+
+persitence.open("123")
+persistence.create("123", { id: "1", name: "ABC" })
+mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None)
+
+print(mydata)
+persistence.delete_by_id("123", "1")
+# ...
+
+```

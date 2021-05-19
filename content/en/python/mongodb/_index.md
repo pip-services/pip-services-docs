@@ -12,8 +12,8 @@ description: >
 ### Modules
 
 The module contains the following packages:
-- [**Build**](build) - factory to create MongoDB persistence components.
-- [**Connect**](connect) - connection component to configure MongoDB connection to database.
+- [**Build**](build) - Factory to create MongoDB persistence components.
+- [**Connect**](connect) - Connection component to configure MongoDB connection to database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 

@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDBs and implement a numer of CRUD operations over data items with unique ids.
+The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDBs and implement a number of CRUD operations over data items with unique ids.
 
 Important points
 

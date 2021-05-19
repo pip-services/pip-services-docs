@@ -8,7 +8,7 @@ description: >
 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Elasticsearch module contains logging components with data storage on the Elasticsearch server.
+    The Elasticsearch module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 

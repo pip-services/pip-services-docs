@@ -80,7 +80,7 @@ The MongoDB database name.
 > _database_name: str
 
 #### _db
-The MongoDb database object.
+The MongoDB database object.
 > _db: Any
 </span>
 
@@ -108,15 +108,15 @@ Gets the connection.
 
 > get_connection(): Any
 
-- **return**: Any - connection to a MongoDb
+- **return**: Any - connection to a MongoDB
 
 
 #### get_database
-Gets the MongoDb.
+Gets the MongoDB.
 
 > get_database(): Any
 
-- **return**: Any - a MongoDb
+- **return**: Any - a MongoDB
 
 
 #### is_open

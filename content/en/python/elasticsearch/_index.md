@@ -27,8 +27,8 @@ Install the Python package as
 pip install pip-services3-elasticsearch
 ```
 
-Microservice components shall perform logging usual way using CompositeLogger component.
-The CompositeLogger will get ElasticSearchLogger from references and will redirect log messages
+Microservice components shall perform logging the usual way using the CompositeLogger component.
+The CompositeLogger will get ElasticSearchLogger from references and will redirect the log messages
 there among other destinations.
 
 ```python
@@ -53,7 +53,7 @@ class MyComponent(IConfigurable, IReferenceable):
         # ...
 ```
 
-Configuration for your microservice that includes ElasticSearch logger may look the following way.
+The configuration for your microservice that includes ElasticSearch logger may look the following way.
 
 ```yaml
 ...

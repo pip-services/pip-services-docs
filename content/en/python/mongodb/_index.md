@@ -6,14 +6,14 @@ no_list: true
 description: > 
     MongoDB components for Pip.Services in Python
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement MongoDB persistence.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
 ---
 
 ### Modules
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create MongoDB persistence components.
-- [**Connect**](connect) - Connection component to configure MongoDB connection to database.
+- [**Build**](build) - factory to create MongoDB persistence components.
+- [**Connect**](connect) - connection component to configure MongoDB connection to database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 

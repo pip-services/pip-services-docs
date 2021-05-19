@@ -54,14 +54,14 @@ Creates a new instance of the logger.
 > ElasticSearchLogger()
 
 
-### Methods
+### Instance ethods
 
 #### close
 Closes component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
 
 
 #### configure
@@ -85,7 +85,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
 
 
 #### _save
@@ -101,7 +101,7 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **messages**: List[[LogMessage](../../../components/log/log_message)] - references to locate the component dependencies.
+- **messages**: List[[LogMessage](../../../components/log/log_message)] - references to locate the component's dependencies.
 
 ### Examples
 

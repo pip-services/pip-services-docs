@@ -108,7 +108,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### open

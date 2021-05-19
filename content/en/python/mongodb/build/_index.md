@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 description: >
-    TODO: add description
+    This package contains classes to create MongoDb components.
 ---
 ---
 <div class="module-body"> 

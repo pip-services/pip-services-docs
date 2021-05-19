@@ -16,7 +16,7 @@ description: >
 - DateTime: using ISO format
 - Boolean: "true" for true and "false" for false
 - Arrays: as comma-separated list  
-- Other objects: using *toString()* method
+- Other objects: using **to_string()** method
 
 ### Static methods
 

@@ -12,12 +12,9 @@ The OptionResolver class can be use to obtain all the parameters under the secti
 ### Static methods
 
 #### resolve
-Returns a ConfigParams object containing all the parameters under the section "option".
-
-#### resolve
 Resolves an "options" configuration section from component configuration parameters.
 
-> `static` resolve(config: [ConfigParams](../config_params), configAsDefault: boolean = false): [ConfigParams](../config_params)
+> `public static` resolve(config: [ConfigParams](../config_params), configAsDefault: boolean = false): [ConfigParams](../config_params)
 
 - **config**: [ConfigParams](../config_params) - configuration parameters
 - **configAsDefault**: boolean - (optional) When set true the method returns the entire parameter set when "options" section is not found. Default: false

@@ -81,7 +81,7 @@ Converts arbitrary values into strings using extended conversion rules:
 - DateTime: using ISO format
 - Boolean: "true" for true and "false" for false
 - Arrays: as comma-separated list
-- Other objects: using *toString()* method
+- Other objects: using **toString()** method
 
 #### [TypeConverter](type_converter)
 Converts arbitrary values into objects specific by TypeCodes.

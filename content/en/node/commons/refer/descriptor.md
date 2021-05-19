@@ -28,7 +28,7 @@ Important points
 ### Constructors
 Creates a new instance of the descriptor.
 
-> `public` constructor(group: string, type: string, kind: string, name: string, version: string): [Descriptor]()
+> `public` constructor(group: string, type: string, kind: string, name: string, version: string)
 
 - **group**: string - a logical component group
 - **type**: string - a logical component type or contract
@@ -120,9 +120,9 @@ The result is a colon-separated list of descriptor fields as
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
-> `public static` fromString(value: String): [Descriptor]()
+> `public static` fromString(value: string): [Descriptor]()
 
-- **value**: String - colon-separated descriptor fields to initialize Descriptor.
+- **value**: string - colon-separated descriptor fields to initialize Descriptor.
 - **returns**: [Descriptor]() - a newly created Descriptor.
 
 ### Examples

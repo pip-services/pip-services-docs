@@ -28,7 +28,6 @@ The result value is capitalized.
 
 > `static` color(): str
 
-- **value**: str - a string to distort.
 - **returns**: str - a random color name.
 
 #### email

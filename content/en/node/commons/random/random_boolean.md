@@ -21,7 +21,7 @@ Example: 1 chance out of 3 chances (or 33.3%)
 
 - **chance**: number - a chance proportional to maxChances.
 - **maxChances**: number - a maximum number of chances
-- **returns**: boolean - TODO add description
+- **returns**: boolean - true or false for settled chance
 
 #### nextBoolean
 Generates a random boolean value.

@@ -17,7 +17,7 @@ The ApplicationExceptionFactory acts as a factory to recreate from [ErrorDescrip
 Recreates ApplicationException object from serialized ErrorDescription.
 It tries to restore original exception type using type or error category fields.
 
-> `public static` create(description: ErrorDescription): [ApplicationException](../application_exception)
+> `public static` create(description: [ErrorDescription](../error_description)): [ApplicationException](../application_exception)
 
 - **description**: [ApplicationException](../application_exception) - a serialized error description received as a result of remote call
 

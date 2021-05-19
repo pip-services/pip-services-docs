@@ -58,6 +58,6 @@ let value4 = BooleanConverter.toNullableBoolean({})       // Returns None
 let value5 = BooleanConverter.toBooleanWithDefault(True,"verdadero")     // Returns True
 let value6 = BooleanConverter.toBooleanWithDefault(123,"verdadero")      // Returns verdadero
 
-let value7 = BooleanConverter.to_boolean("yes")     // Returns True
+let value7 = BooleanConverter.toBoolean("yes")     // Returns True
 
 ```

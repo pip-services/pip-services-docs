@@ -106,7 +106,7 @@ Sets the component references. References must match configured dependencies.
 
 > set_references(references: [IReferences](../ireferences))
 
-- references: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../ireferences) - references to set.
 
 ### Static methods
 

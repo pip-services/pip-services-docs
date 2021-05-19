@@ -65,7 +65,7 @@ Throws a [ReferenceException](../reference_exception) when no references found.
 #### getOptional
 Gets all component references that match specified locator.
 
-> getOptional<T>(locator: any): T[]
+> getOptional\<T\>(locator: any): T[]
 
 - **locator**: any - the locator to find references by.	 
 - **returns**: T[] - a list with matching component references or empty list if nothing was found.
@@ -101,7 +101,7 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 - **returns**: any - the removed component reference.
 
 
-#### remove
+#### removeAll
 Removes all component references that match the specified locator. 
 
 > removeAll(locator: any): any[]

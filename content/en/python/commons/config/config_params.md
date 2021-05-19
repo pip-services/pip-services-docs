@@ -119,7 +119,7 @@ See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 config = ConfigParams.from_tuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", True)
 
 # Create a ConfigParams object from a string
-configS = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
+config = ConfigParams.from_string("section1.key1=AAA;section1.key2=123;section2.key1=True")
 
 # Create a ConfigParams object from a value
 dict = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": True} # Create a dictionary

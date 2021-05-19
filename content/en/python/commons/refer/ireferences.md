@@ -101,10 +101,10 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 - **returns**: Any - the removed component reference.
 
 
-#### remove
+#### remove_all
 Removes all component references that match the specified locator. 
 
-> removeAll(locator: Any): List[Any]
+> remove_all(locator: Any): List[Any]
 
 - **locator**: Any - the locator to remove references by.
 - **returns**: List[Any] - a list, containing all removed references.

@@ -106,7 +106,7 @@ Sets the component references. References must match configured dependencies.
 
 > `public` setReferences(references: [IReferences](../ireferences)): void
 
-- references: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../ireferences) - references to set.
 
 ### Static methods
 

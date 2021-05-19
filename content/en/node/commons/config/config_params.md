@@ -122,10 +122,10 @@ See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 
 ```typescript
 // Create a ConfigParams object from a tuple
-config = ConfigParams.fromTuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", true);
+let config = ConfigParams.fromTuples("section1.key1", "AAA", "section1.key2", 123, "section2.key1", true);
 
 // Create a ConfigParams object from a string
-configS = ConfigParams.fromString("section1.key1=AAA;section1.key2=123;section2.key1=True");
+config = ConfigParams.fromString("section1.key1=AAA;section1.key2=123;section2.key1=True");
 
 // Create a ConfigParams object from a value
 let obj = {"section1.key1": "AAA", "section1.key2": 123, "section2.key1": true}; // Create a object

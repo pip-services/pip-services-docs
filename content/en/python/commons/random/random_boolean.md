@@ -17,11 +17,11 @@ The RandomBoolean class allows you to generate random boolean values.
 Calculates "chance" out of "max chances".
 Example: 1 chance out of 3 chances (or 33.3%)
 
-> `static` chance(chance: int, maxChances: int): bool
+> `static` chance(chance: float, maxChances: float): bool
 
-- **chance**: int - a chance proportional to maxChances.
-- **maxChances**: int - a maximum number of chances
-- **returns**: bool - TODO add description
+- **chance**: float - a chance proportional to maxChances.
+- **maxChances**: float - a maximum number of chances
+- **returns**: bool - true or false for settled chance
 
 #### next_boolean
 Generates a random boolean value.

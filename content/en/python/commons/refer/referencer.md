@@ -35,6 +35,15 @@ If they don't, the call to this method has no effect.
 - **references**: [IReferences](../ireferences) - the references to be set.
 - **component**: Any - the component to set references to.
 
+#### unset_references
+Unsets references in multiple components.
+To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
+If they don't the call to this method has no effect.
+
+> `static` unset_references(components: List[Any])
+
+- **components**: List[Any] - the list of components, whose references must be cleared.
+
 #### unset_references_for_one
 Unsets references in specific component.
 

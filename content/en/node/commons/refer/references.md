@@ -16,7 +16,7 @@ The References class allows you to store and locate component references.
 ### Constructors
 Creates a new instance of references and initializes it with references.
 
-> `public` constructor(tuples: any[] = null): [References]()
+> `public` constructor(tuples: any[] = null)
 
 - **tuples**: any[] - (optional) a list of values where odd elements are locators and the following even elements are component references
 

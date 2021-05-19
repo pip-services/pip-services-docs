@@ -16,7 +16,7 @@ The NotFoundException class is used to manage errors caused by attempts to acces
 ### Constructors
 Creates an error instance and assigns its values.
 
-> NotFoundException(correlation_id: string = null, code: string = null, message: string = null)
+> `public` NotFoundException(correlation_id: string = null, code: string = null, message: string = null)
 
 - **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
 - **code**: string - (optional) a unique error code. Default: "UNKNOWN"

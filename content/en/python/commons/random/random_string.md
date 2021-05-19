@@ -13,14 +13,6 @@ The class RandomString allows you to generate random strings.
 
 ### Static methods
 
-#### pick_char
-Picks a random character from a string.
-
-> `static` pick_char(values: str): str
-
-- **values**: str - a string to pick a char from
-- **returns**: str - a randomly picked char.
-
 #### distort
 Distorts a string by randomly replacing characters in it.
 
@@ -45,6 +37,22 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 - **min_size**: int - (optional) minimum string length.
 - **min_size**: int - maximum string length.
 - **returns**: str - a random string.
+
+#### pick
+Picks a random string from an array of string.
+
+> `static` pick(values: List[str]): str
+
+- **values**: List[str] - Picks a random character from an array of string.
+- **returns**: str - a randomly picked char.
+
+#### pick_char
+Picks a random character from a string.
+
+> `static` pick_char(values: str): str
+
+- **values**: str - picks a random character from a string.
+- **returns**: str - a randomly picked char.
 
 ### Examples
 

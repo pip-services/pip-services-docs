@@ -4,12 +4,14 @@ title: "DefaultElasticSearchFactory"
 linkTitle: "DefaultElasticSearchFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-python"
 description: > 
-    Creates MongoDb components by their descriptors.
+    Creates Elasticsearch components based on their descriptors.
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
 
-See also [ElasticSearchLogger](../../log/elastic_search_logger)
+### Description
+
+The DefaultElasticSearchFactory class allows you to create a factory used to create Elasticsearch components based on their descriptors. 
 
 ### Constructors
 

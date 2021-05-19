@@ -4,15 +4,20 @@ title: "MongoDbConnection"
 linkTitle: "MongoDbConnection"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 description: >
-    MongoDB connection using plain driver.
+    MongoDB connection using a plain driver.
 
-    By defining a connection and sharing it through multiple persistence components
-    you can reduce number of used database connections.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
 [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The MongoDbConnection class allows you to create a MongoDB connection using a plain driver.
+
+Important points
+
+- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
 
 #### Configuration parameters
 **connection(s)**:    
@@ -55,11 +60,11 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### _logger
-The logger
+The logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection_resolver
-The connection resolver
+The connection resolver.
 > **_connection_resolver**: [MongoDbConnectionResolver](../mongodb_connection_resolver) 
 
 #### _options
@@ -80,7 +85,7 @@ The MongoDb database object.
 </span>
 
 
-### Methods
+### Instance methods
 
 #### close
 Closes component and frees used resources.
@@ -99,19 +104,19 @@ Configures component by passing configuration parameters.
 
 
 #### get_connection
-TODO add description
+Gets the connection.
 
 > get_connection(): Any
 
-- **return**: Any - TODO add description
+- **return**: Any - connection to a MongoDb
 
 
 #### get_database
-TODO add description
+Gets the MongoDb.
 
 > get_database(): Any
 
-- **return**: Any - TODO add description
+- **return**: Any - a MongoDb
 
 
 #### is_open
@@ -131,7 +136,7 @@ Opens the component.
 
 
 #### set_references
-Sets references to dependent components.
+Sets the references to the dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 

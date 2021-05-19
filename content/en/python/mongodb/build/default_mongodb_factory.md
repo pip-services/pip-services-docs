@@ -9,7 +9,9 @@ description: >
 
 **Implements:** [Factory](../../../components/build/factory)
 
-See also [Factory](../../../components/build/factory), [MongoDbConnection](../../connect/mongodb_connection) 
+### Description
+
+The DefaultMongoDbFactory class provides a factory used to create MongoDb components based on their descriptors.
 
 ### Constructors
 

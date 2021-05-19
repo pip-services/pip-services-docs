@@ -7,13 +7,18 @@ description: >
     Helper class that resolves MySQL connection and credential parameters,
     validates them and generates a connection URI.
 
-
-    It is able to process multiple connections to MySQL cluster nodes.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
 [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The MySqlConnectionResolver class allows you to create a MySQL connection and credential parameters resolver that validates the parameters and generates a connection URI.
+
+Important points
+
+- It is able to process multiple connections to MySQL cluster nodes.
 
 #### Configuration parameters
 
@@ -26,8 +31,8 @@ description: >
 
 **credential(s)**:
 - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**:                    user name
-- **password**:                    user password
+- **username**:                    username
+- **password**:                    user's password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
@@ -54,11 +59,11 @@ The connection resolver
 </span>
 
 
-### Methods
+### Instance methods
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures components by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -66,11 +71,11 @@ Configures component by passing configuration parameters.
 
 
 #### resolve
-Resolves MySQL config from connection and credential parameters.
+Resolves a MySQL configuration from connection and credential parameters.
 
 > resolve(correlation_id: Optional[str]): str
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Any - resolved connection config or raise error
 
 

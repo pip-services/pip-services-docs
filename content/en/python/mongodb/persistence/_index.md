@@ -5,7 +5,7 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 description: >
-    TODO: add description
+    This package contains classes used to create MongoDB persistence components.
 ---
 ---
 

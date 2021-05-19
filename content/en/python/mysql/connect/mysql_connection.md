@@ -38,7 +38,7 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** (optional) credential stores to resolve credentials
 
 
 ### Fields

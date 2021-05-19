@@ -153,7 +153,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **filter**: Any - (optional) filter JSON object
 - **returns**: int - number of filtered items.
 
@@ -166,7 +166,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **filter**: Any - (optional) filter function used to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)

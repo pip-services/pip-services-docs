@@ -6,17 +6,18 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-pyt
 description: > 
     Logger that dumps execution logs to ElasticSearch service.
 
-
-    ElasticSearch is a popular search index. It is often used 
-    to store and index execution logs by itself or as a part of
-    ELK (ElasticSearch - Logstash - Kibana) stack.
-
-
-    Authentication is not supported in this version.
 ---
 
 **Implements:** [CachedLogger](../../../components/log/cached_logger), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The ElasticSearchLogger class allows you to create a logger that dumps execution logs to the ElasticSearch service.
+
+Important points
+
+- ElasticSearch is a popular search index. It is often used to store and index execution logs by itself or as a part of ELK (ElasticSearch - Logstash - Kibana) stack.
+- Authentication is not supported in this version.
 
 #### Configuration parameters
 
@@ -44,27 +45,7 @@ description: >
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
-
-**Example:**
-```python
-logger = new ElasticSearchLogger()
-logger.configure(ConfigParams.from_tuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 9200
-))
-
-try:
-    logger.open("123")
-except Exception as err:
-    logger.error("123", err, "Error occured: {}", err.message)
-    # do something
-
-logger.debug("123", "Everything is OK.");
-
-```
-
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify thecounters source.
 
 ### Constructors
 
@@ -122,3 +103,21 @@ Sets references to dependent components.
 
 - **messages**: List[[LogMessage](../../../components/log/log_message)] - references to locate the component dependencies.
 
+### Examples
+
+```python
+logger = new ElasticSearchLogger()
+logger.configure(ConfigParams.from_tuples(
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 9200
+))
+
+try:
+    logger.open("123")
+except Exception as err:
+    logger.error("123", err, "Error occured: {}", err.message)
+    # do something
+
+logger.debug("123", "Everything is OK.");
+```

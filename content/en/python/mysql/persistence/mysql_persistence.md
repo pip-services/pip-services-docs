@@ -154,8 +154,7 @@ Creates a data item.
 
 
 #### _create_schema
-TODO add description
-
+Checks if a table exists and if not, it creates the necessary database objects.
 > _create_schema(correlation_id: Optional[str])
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.

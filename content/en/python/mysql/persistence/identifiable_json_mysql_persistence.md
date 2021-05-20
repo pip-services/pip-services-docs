@@ -28,15 +28,15 @@ Important points
 - **collection**: (optional) MySQL collection name
 
 **connection(s)**:    
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:    
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -93,7 +93,7 @@ Updates only few selected fields in a data item.
 
 > update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of the data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **return**: Optional[dict] - updated item

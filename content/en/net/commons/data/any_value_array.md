@@ -2,14 +2,13 @@
 type: docs
 title: "AnyValueArray"
 linkTitle: "AnyValueArray"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Cross-language implementation of a dynamic array object that can hold values of any type.
     It also provides methods to convert the stored values to different types.
 ---
 
-**Extends:** Array\<any\> 
-**Implements:** [ICloneable](../icloneable)
+**Implements:** [ICloneable](../icloneable), List\<object\>
 
 ### Description
 
@@ -18,472 +17,574 @@ The AnyValueArray class provides a cross-language implementation of a dynamic ar
 ### Constructors
 Creates a new instance of the array and assigns its value.
 
-> `public` constructor(values: any[] = null)
+> `public` AnyValueArray(object[] values)
 
-- **values**: any[] - (optional) values to initialize this array.
+- **values**: object[] - (optional) values to initialize this array.
+
+Creates a new instance of the array and assigns its value.
+
+> `public` AnyValueArray(IEnumerable values)
+
+- **values**: IEnumerable - (optional) values to initialize this array.
+
+Creates a new instance of the array.
+
+> `public` AnyValueArray()
 
 
 ### Instance methods
 
-#### append
+#### Append
 Appends new elements to this array.
 
-> `public` append(elements: any[]): void
+> `public` void Append(object[] values)
 
-- **elements**: any[] - a list of elements to be added.
-
-
-#### clear
-Clears this array by removing all its elements.
-
-> `public` clear(): void
+- **values**: object[] - a list of elements to be added.
 
 
-#### clone
+#### Append
+Appends new elements to this array.
+
+> `public` void Append(IEnumerable values)
+
+- **values**: IEnumerable - a list of elements to be added.
+
+
+#### Clone
 Creates a binary clone of this object.
 
-> `public` clone(): any
+> `public` object Clone()
 
-- **returns**: any - a clone of this object.
+- **returns**: object - a clone of this object.
 
 
-#### contains
+#### Contains
 Checks if this array contains a value.
 The check uses direct comparison between elements and the specified value.
 
-> `public` contains(value: any): boolean
+> `public` bool Contains(object value)
 
-- **value**: any - a value to be checked
-- **returns**: boolean - true if this array contains the value or false otherwise.
+- **value**: object - a value to be checked
+- **returns**: bool - true if this array contains the value or false otherwise.
 
 
-#### containsAsType
+#### ContainsAs
 Checks if this array contains a value.
 The check before comparison converts elements and the value to type specified by type code.   
-See [TypeConverter.toType](../../convert/type_converter/#totype), [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
+See [TypeConverter.ToType](../../convert/type_converter/#totype), [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
 
-> `public` containsAsType\<T\>(typeCode: [TypeCode](../../convert/type_code), value: any): boolean
+> `public` bool ContainsAs\<T\>(object value)
 
-- **typeCode**: [TypeCode](../../convert/type_code) - a type code that defines a type to convert values before comparison
 - **value**: any - a value to be checked
-- **returns**: boolean - true if this array contains the value or false otherwise.
+- **returns**: bool - true if this array contains the value or false otherwise.
 
 
-#### get
+#### Get
 Gets an array element specified by its index.
 
-> `public` get(index: number): any
+> `public virtual` object Get(int index)
 
-- **index**: number - an index of the element to get.
-- **returns**: any - the value of the array element.
+- **index**: int - an index of the element to get.
+- **returns**: object - the value of the array element.
 
 
-#### getAsArray
+#### GetAsArray
 Converts array element into an AnyValueArray or returns empty AnyValueArray if conversion is not possible.
 
-> `public` getAsArray(index: number): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsArray(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or empty AnyValueArray if conversion is not supported. 
 
 
-#### getAsArrayWithDefault
+#### GetAsArrayWithDefault
 Converts array element into an AnyValueArray or returns default value if conversion is not possible.
 
-> `public` getAsArrayWithDefault(index: number, defaultValue: [AnyValueArray](../any_value_array)): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsArrayWithDefault(int index, [AnyValueArray](../any_value_array) defaultValue)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **defaultValue**: [AnyValueArray](../any_value_array) - the default value
 - **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or default value if conversion is not supported.
 
 
-#### getAsBoolean
-Converts array element into a boolean or returns false if conversion is not possible.
+#### GetAsBoolean
+Converts array element into a bool or returns false if conversion is not possible.
 
-> `public` getAsBoolean(index: number): boolean
+> `public` bool GetAsBoolean(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: boolean - boolean value ot the element or false if conversion is not supported. 
-
-
-#### getAsBooleanWithDefault
-Converts array element into a boolean or returns default value if conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
-
-> `public` getAsBooleanWithDefault(index: number, defaultValue: boolean): boolean
-
-- **index**: number - an index of element to get.
-- **defaultValue**: boolean - the default value
-- **returns**: boolean - boolean value ot the element or default value if conversion is not supported.
+- **index**: int - an index of element to get.
+- **returns**: bool - bool value ot the element or false if conversion is not supported. 
 
 
-#### getAsDateTime
-Converts array element into a Date or returns the current date if conversion is not possible.
+#### GetAsBooleanWithDefault
+Converts array element into a bool or returns default value if conversion is not possible.  
+See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
-> `public` getAsDateTime(index: number): Date
+> `public` bool GetAsBooleanWithDefault(int index, bool defaultValue)
 
-- **index**: number - an index of element to get.
-- **returns**: Date - Date value ot the element or the current date if conversion is not supported. 
-
-
-#### getAsDateTimeWithDefault
-Converts array element into a Date or returns default value if conversion is not possible.  
-See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
-
-> `public` getAsDateTimeWithDefault(index: number, defaultValue: Date): Date
-
-- **index**: number - an index of element to get.
-- **defaultValue**: Date - the default value
-- **returns**: Date - Date value ot the element or default value if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **defaultValue**: bool - the default value
+- **returns**: bool - bool value ot the element or default value if conversion is not supported.
 
 
-#### getAsDouble
+#### GetAsDateTime
+Converts array element into a DateTime or returns the current date if conversion is not possible.
+
+> `public` DateTime GetAsDateTime(int index)
+
+- **index**: int - an index of element to get.
+- **returns**: DateTime - DateTime value ot the element or the current date if conversion is not supported. 
+
+
+#### GetAsDateTimeWithDefault
+Converts array element into a DateTime or returns default value if conversion is not possible.  
+See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
+
+> `public` DateTime GetAsDateTimeWithDefault(int index, DateTime defaultValue?)
+
+- **index**: int - an index of element to get.
+- **defaultValue**: DateTime - the default value
+- **returns**: DateTime - DateTime value ot the element or default value if conversion is not supported. 
+
+
+#### GetAsNullableTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsNullableTimeSpan(int index)
+
+- **index**: int - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+
+#### GetAsTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpan(int index)
+
+- **index**: int - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+#### GetAsTimeSpanWithDefault
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpanWithDefault(int index, TimeSpan? defaultValue)
+
+- **index**: int - TODO: add description
+- **defaultValue**: TimeSpan - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+
+#### GetAsNullableEnum
+TODO: add description
+
+> `public` T GetAsNullableEnum\<T\>(int index)
+
+- **index**: int - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnum
+TODO: add description
+
+> `public` T GetAsEnum\<T\>(int index)
+
+- **index**: int - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnumWithDefault
+TODO: add description
+
+> `public` T GetAsEnumWithDefault\<T\>(int index, T defaultValue)
+
+- **index**: int - TODO: add description
+- **defaultValue**: T - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsDouble
 Converts array element into a double or returns 0 if conversion is not possible.
 
-> `public` getAsDouble(index: number): number
+> `public` double GetAsDouble(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - double value ot the element or 0 if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **returns**: double - double value ot the element or 0 if conversion is not supported. 
 
 
-#### getAsDoubleWithDefault
+#### GetAsDoubleWithDefault
 Converts array element into a double or returns default value if conversion is not possible.
 
-> `public` getAsDoubleWithDefault(index: number, defaultValue: number): number
+> `public` double GetAsDoubleWithDefault(int index, double defaultValue)
 
-- **index**: number - an index of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - double value ot the element or default value if conversion is not supported.
+- **index**: int - an index of element to get.
+- **defaultValue**: double - the default value
+- **returns**: double - double value ot the element or default value if conversion is not supported.
 
-#### getAsFloat
+#### GetAsFloat
 Converts array element into a float or returns 0 if conversion is not possible.
 
-> `public` getAsFloat(index: number): number
+> `public` float GetAsFloat(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - float value ot the element or 0 if conversion is not supported.
+- **index**: int - an index of element to get.
+- **returns**: float - float value ot the element or 0 if conversion is not supported.
 
 
-#### getAsFloatWithDefault
+#### GetAsFloatWithDefault
 Converts array element into a float or returns default value if conversion is not possible.   
-See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#toFloatWithDefault)
+See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
-> `public` getAsFloatWithDefault(index: number, defaultValue: number): number
+> `public` float GetAsFloatWithDefault(int index, float defaultValue)
 
-- **index**: number - an index of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - float value ot the element or default value if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **defaultValue**: float - the default value
+- **returns**: float - float value ot the element or default value if conversion is not supported. 
 
 
-#### getAsInteger
+#### GetAsInteger
 Converts array element into an integer or returns 0 if conversion is not possible.
 
-> `public` getAsInteger(index: number): number
+> `public` int GetAsInteger(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - integer value ot the element or 0 if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **returns**: int - integer value ot the element or 0 if conversion is not supported. 
 
 
-#### getAsIntegerWithDefault
+#### GetAsIntegerWithDefault
 Converts array element into an integer or returns default value if conversion is not possible.  
-See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
+See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
-> `public` getAsIntegerWithDefault(index: number, defaultValue: number): number
+> `public` int GetAsIntegerWithDefault(int index, int defaultValue)
 
-- **index**: number - an index of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - integer value ot the element or default value if conversion is not supported.
+- **index**: int - an index of element to get.
+- **defaultValue**: int - the default value
+- **returns**: int - integer value ot the element or default value if conversion is not supported.
 
 
-#### getAsLong
+#### GetAsLong
 Converts array element into a long or returns 0 if conversion is not possible.
 
-> `public` getAsLong(index: number): number
+> `public` long getAsLong(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - long value ot the element or 0 if conversion is not supported.
+- **index**: int - an index of element to get.
+- **returns**: long - long value ot the element or 0 if conversion is not supported.
 
 
-#### getAsLongWithDefault
+#### GetAsLongWithDefault
 Converts array element into a long or returns default value if conversion is not possible.  
-See [LongConverter.toLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
 
-> `public` getAsLongWithDefault(index: number, defaultValue: number): number
+> `public` long GetAsLongWithDefault(int index, long defaultValue)
 
-- **index**: number - an index of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - long value ot the element or default value if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **defaultValue**: long - the default value
+- **returns**: long - long value ot the element or default value if conversion is not supported. 
 
 
-#### getAsMap
+#### GetAsMap
 Converts array element into an AnyValueMap or returns empty AnyValueMap if conversion is not possible.  
-See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#fromvalue)
+See [AnyValueMap](../any_value_map), [AnyValueMap.FromValue](../any_value_map/#fromvalue)
 
-> `public` getAsMap(index: number): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsMap(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or empty AnyValueMap if conversion is not supported.
 
 
-#### getAsMapWithDefault
+#### GetAsMapWithDefault
 Converts array element into an AnyValueMap or returns default value if conversion is not possible.
 
-> `public` getAsMapWithDefault(index: number, defaultValue: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsMapWithDefault(int index, [AnyValueMap](../any_value_map) defaultValue)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **defaultValue**: [AnyValueMap](../any_value_map) - the default value
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported.
 
 
-#### getAsNullableArray
+#### GetAsNullableArray
 Converts array element into an AnyValueArray or returns null if conversion is not possible.
 
-> `public` getAsNullableArray(index: number): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsNullableArray(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableBoolean
-Converts array element into a boolean or returns null if conversion is not possible.  
-See [BooleanConverter.toNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
+#### GetAsNullableBoolean
+Converts array element into a bool or returns null if conversion is not possible.  
+See [BooleanConverter.ToNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
 
-> `public` getAsNullableBoolean(index: number): boolean
+> `public` bool GetAsNullableBoolean(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: boolean - boolean value of the element or null if conversion is not supported.
-
-
-#### getAsNullableDateTime
-Converts array element into a Date or returns null if conversion is not possible.  
-See [DateTimeConverter.toNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
-
-> `public` getAsNullableDateTime(index: number): Date
-
-- **index**: number - an index of element to get.
-- **returns**: Date - Date value of the element or null if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **returns**: bool - bool value of the element or null if conversion is not supported.
 
 
-#### getAsNullableDouble
+#### GetAsNullableDateTime
+Converts array element into a DateTime or returns null if conversion is not possible.  
+See [DateTimeConverter.ToNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
+
+> `public` DateTime GetAsNullableDateTime(int index)
+
+- **index**: int - an index of element to get.
+- **returns**: DateTime - DateTime value of the element or null if conversion is not supported. 
+
+
+#### GetAsNullableDouble
 Converts array element into a double or returns null if conversion is not possible.  
-See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
+See [DoubleConverter.ToNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> `public` getAsNullableDouble(index: number): number
+> `public` double GetAsNullableDouble(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - double value of the element or null if conversion is not supported.
+- **index**: int - an index of element to get.
+- **returns**: double - double value of the element or null if conversion is not supported.
 
 
-#### getAsNullableFloat
+#### GetAsNullableFloat
 Converts array element into a float or returns null if conversion is not possible.  
-See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
+See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> `public` getAsNullableFloat(index: number): number
+> `public` float GetAsNullableFloat(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - float value of the element or null if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **returns**: float - float value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableInteger
+#### GetAsNullableInteger
 Converts array element into a float or returns null if conversion is not possible.  
-See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
+See [IntegerConverter.ToNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> `public` getAsNullableInteger(index: number): number
+> `public` float GetAsNullableInteger(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - integer value of the element or null if conversion is not supported. 
+- **index**: int - an index of element to get.
+- **returns**: float - integer value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableLong
+#### GetAsNullableLong
 Converts array element into a long or returns null if conversion is not possible.  
-See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../../convert/long_converter/#tonullablelong)
 
-> `public` getAsNullableLong(index: number): number
+> `public` long GetAsNullableLong(int index)
 
-- **index**: number - an index of element to get.
-- **returns**: number - long value of the element or null if conversion is not supported.
+- **index**: int - an index of element to get.
+- **returns**: long - long value of the element or null if conversion is not supported.
 
 
-#### getAsNullableMap
+#### GetAsNullableMap
 Converts array element into a long or returns null if conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap](../any_value_map/#fromvalue)
 
-> `public` getAsNullableMap(index: number): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsNullableMap(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableString
+#### GetAsNullableString
 Converts array element into a string or returns null if conversion is not possible.  
-See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring),
+See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring),
 
-> `public` getAsNullableString(index: number): string
+> `public` string GetAsNullableString(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: string - string value of the element or null if conversion is not supported.
 
 
-#### getAsNullableType
+#### GetAsNullableType
 Converts array element into a value defined by specied typecode.
 If conversion is not possible it returns null.  
-See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
+See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
+**T** - the class type
 
-> `public` getAsNullableType\<T\>(type: [TypeCode](../../convert/type_code), index: number): T
+> `public` T GetAsNullableType\<T\>(int index)
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: T - element value defined by the typecode or null if conversion is not supported. 
 
 
-#### getAsObject
+#### GetAsNullableTypeWithDefault
+Converts array element into a value defined by specied typecode. 
+If conversion is not possible it returns default value.
+See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
+**T** - the class type
+
+> `public` T GetAsNullableType\<T\>(int index, T defaultValue)
+
+- **index**: int - an index of element to get.
+- **defaultValue**: T - the default value
+- **returns**: T - value of element defined by the typecode or default value if conversion is not supported.
+
+
+#### GetAsObject
+Gets the value stored in this array element without any conversions.
+
+> `public` object GetAsObject() 
+
+- **returns**: object - the value of the array element.
+
+
+#### GetAsObject
 Gets the value stored in array element without any conversions.
 When element index is not defined it returns the entire array value.
 
-> `public` getAsObject(index: number = undefined): any 
+> `public` object GetAsObject(int index) 
 
-- **index**: number - (optional) an index of the element to get
-- **returns**: any - the element value or value of the array when index is not defined.
+- **index**: int - (optional) an index of the element to get
+- **returns**: object - the element value or value of the array when index is not defined.
 
 
-#### getAsString
+#### GetAsString
 Converts array element into a string or returns *""* if conversion is not possible.
 
-> `public` getAsString(index: number): string
+> `public` string GetAsString(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: string - string value ot the element or *""* if conversion is not supported. 
 
 
-#### getAsStringWithDefault
+#### GetAsStringWithDefault
 Converts array element into a string or returns default value if conversion is not possible.  
-See [StringConverter.toStringWithDefault](../../convert/string_converter/#tostringwithdefault)
+See [StringConverter.ToStringWithDefault](../../convert/string_converter/#tostringwithdefault)
 
-> `public` getAsStringWithDefault(index: number, defaultValue: string): string
+> `public` string GetAsStringWithDefault(int index, string defaultValue)
 
-- **index**: number - an index of element to get.
-- **default_value**: string - the default value
+- **index**: int - an index of element to get.
+- **defaultValue**: string - the default value
 - **returns**: string - string value ot the element or default value if conversion is not supported.
 
 
-#### getAsType
+#### GetAsType!
+**TODO: this method is not realized yet for this language**
+
 Converts array element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.
 
-> `public` getAsType\<T\>(type: [TypeCode](../../convert/type_code), index: number): T
+> `public` T GetAsType\<T\>([TypeCode](../../convert/type_code) type, int index)
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: T - element value defined by the typecode or default if conversion is not supported.
 
 
-#### getAsTypeWithDefault
+#### GetAsTypeWithDefault!
+**TODO: this method is not realized yet for this language**
+
 Converts array element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.  
 See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithdefault)
 
-> `public` getAsTypeWithDefault\<T\>(type: [TypeCode](../../convert/type_code), index: number, defaultValue: T): T 
+> `public` T GetAsTypeWithDefault\<T\>([TypeCode](../../convert/type_code) type, int index, T defaultValue) 
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **defaultValue**: T - the default value
 - **returns**: T - element value defined by the typecode or default value if conversion is not supported. 
 
 
-#### getAsValue
+#### GetAsValue
 Converts array element into an AnyValue or returns an empty AnyValue if conversion is not possible.  
 See [AnyValue](../any_value), [AnyValues.constructors](../any_value/#constructors)
 
-> `public` getAsValue(index: number): [AnyValue](../any_value)
+> `public` [AnyValue](../any_value) GetAsValue(int index)
 
-- **index**: number - an index of element to get.
+- **index**: int - an index of element to get.
 - **returns**: [AnyValue](../any_value) - AnyValue value of the element or empty AnyValue if conversion is not supported. 
 
 
-#### put
-Puts a new value into array element specified by its index. 
+#### Set
+Sets a new value into array element specified by its index. 
 
-> `public` put(index: number, value: any): void
+> `public virtual` void Set(int index, object value)
 
-- **index**: number - an index of the element to put.
-- **value**: any - a new value for array element.
-
-
-#### remove
-Removes an array element specified by its index
-
-> `public` remove(index: number): void
-
-- **index**: number - an index of the element to remove.
+- **index**: int - an index of the element to put.
+- **value**: object - a new value for array element.
 
 
-#### setAsObject
+#### SetAsObject
+Sets a new value for this array element.
+See [ArrayConverter.ToArray](../../convert/array_converter/#toarray)
+
+> `public` void SetAsObject(object value)
+
+- **value**: object - a new element or array value.
+
+
+#### SetAsObject
 Sets a new value to array element specified by its index.
-When the index is not defined, it resets the entire array value.
-This method has double purpose because method overrides are not supported in JavaScript.  
+When the index is not defined, it resets the entire array value. 
 See [ArrayConverter.toArray](../../convert/array_converter/#toarray)
 
-> `public` setAsObject(index: any, value: any = undefined): void
+> `public` void SetAsObject(int index, object value)
 
-- **index**: number - (optional) an index of the element to set
-- **value**: any - a new element or array value.
+- **index**: int - (optional) an index of the element to set
+- **value**: object - a new element or array value.
 
 
-#### toString
+#### ToString
 Gets a string representation of the object.
 The result is a comma-separated list of string representations of individual elements as
 *"value1,value2,value3"*  
-See [StringConverter.toString](../../convert/string_converter/#tostring)
+See [StringConverter.ToString](../../convert/string_converter/#tostring)
 
-> `public` toString(): string
+> `public override` string ToString()
 
 - **returns**: string - a string representation of the object.
 
 
 ### Static methods
 
-#### fromString
+#### FromString
 Splits specified string into elements using a separator and assigns 
 the elements to a newly created AnyValueArray.
 
-> `public static` fromString(values: string, separator: string, removeDuplicates: boolean = false): [AnyValueArray](../any_value_array)
+> `public static` [AnyValueArray](../any_value_array) FromString(string values, char separator, bool removeDuplicates)
 
 - **values**: string - a string value to be split and assigned to AnyValueArray
-- **separator**: string - a separator to split the string
-- **removeDuplicates**: boolean - (optional) true to remove duplicated elements
+- **separator**: char - a separator to split the string
+- **removeDuplicates**: bool - (optional) true to remove duplicated elements
 - **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
 
 
-#### fromValue
+#### FromString
+Splits specified string into elements using a separator and assigns 
+the elements to a newly created AnyValueArray.
+
+> `public static` [AnyValueArray](../any_value_array) FromString(string values, char separator)
+
+- **values**: string - a string value to be split and assigned to AnyValueArray
+- **separator**: char - a separator to split the string
+- **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
+
+
+#### FromValue
 Splits specified string into elements using a separator and assigns 
 the elements to a newly created AnyValueArray.  
-See [ArrayConverter.toNullableArray](../../convert/array_converter/#tonullablearray)
+See [ArrayConverter.ToNullableArray](../../convert/array_converter/#tonullablearray)
 
-> `public static` fromValue(value: any): [AnyValueArray](../any_value_array)
+> `public static` [AnyValueArray](../any_value_array) FromValue(object value)
 
-- **values**: any - value to be converted
+- **values**: object - value to be converted
 - **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
 
 
-#### fromValues
+#### FromValues
 Creates a new AnyValueArray from a list of values
 
-> `public static` fromValues(...values: any[]): [AnyValueArray](../any_value_array)
+> `public static` [AnyValueArray](../any_value_array) FromValues(params object[] values)
 
-- **values**: any[] - a list of values to initialize the created AnyValueArray
+- **values**: object[] - a list of values to initialize the created AnyValueArray
 - **returns**: [AnyValueArray](../any_value_array) - a newly created AnyValueArray.
 
 
 
 
 ### Examples
-```typescript
-let value1 = new AnyValueArray([1, "123.456", "2018-01-01"]);
-   
-value1.getAsBoolean(0);   // Result: true
-value1.getAsInteger(1);   // Result: 123
-value1.getAsFloat(1);     // Result: 123.456
-value1.getAsDateTime(2);  // Result: new Date(2018,0,1)
+```cs
+var value1 = new AnyValueArray(new object[]{1, "123.456", "2018-01-01"});
+
+value1.GetAsBoolean(0);   // Result: true
+value1.GetAsInteger(1);   // Result: 123
+value1.GetAsFloat(1);     // Result: 123.456
+value1.GetAsDateTime(2);  // Result: new DateTime(2018,0,1)
 ```
 
 

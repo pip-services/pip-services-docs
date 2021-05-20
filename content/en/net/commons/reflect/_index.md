@@ -3,7 +3,7 @@ type: docs
 title: "Reflect"
 linkTitle: "Reflect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
 
     The Reflect package contains classes that can be used to examine the properties, methods and type of a class. In addition, it can be used to dynamically set the values of a property and create objects of a specific type.

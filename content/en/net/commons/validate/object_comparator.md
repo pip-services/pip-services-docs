@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectComparator"
 linkTitle: "ObjectComparator"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Comparator over two values of any type.
 ---
@@ -13,70 +13,70 @@ The ObjectComparator class allows you to perform a comparison over two values of
 
 ### Static methods
 
-#### areEqual
+#### AreEqual
 Checks if two values are equal.
 The operation can be performed over values of any type.
 
-> `public static` areEqual(value1: any, value2: any): boolean
+> `public static` bool AreEqual(object value1, object value2)
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if values are equal and false otherwise
+- **value1**: object - the first value to compare
+- **value2**: object - the second value to compare
+- **returns**: bool - true if values are equal and false otherwise
 
-#### areNotEqual
+#### AreNotEqual
 Checks if two values are NOT equal
 The operation can be performed over values of any type.
 
-> `public static` areNotEqual(value1: any, value2: any): boolean
+> `public static` bool AreNotEqual(object value1, object value2)
 
-- **value1**: any - the first value to compare 
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if values are NOT equal and false otherwise
+- **value1**: object - the first value to compare 
+- **value2**: object - the second value to compare
+- **returns**: bool - true if values are NOT equal and false otherwise
 
-#### compare
+#### Compare
 Perform comparison operation over two arguments.
 The operation can be performed over values of any type.
 
-> `public static` compare(value1: any, operation: string, value2: any): boolean
+> `public static` bool Compare(object value1, string operation, object value2)
 
-- **value1**: any - the first argument to compare
+- **value1**: object - the first argument to compare
 - **operation**: string - the comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value2**: any - the second argument to compare
-- **returns**: boolean - result of the comparison operation
+- **value2**: object - the second argument to compare
+- **returns**: bool - result of the comparison operation
 
-#### isGreater
+#### IsGreater
 Checks if first value is greater than the second one.
 The operation can be performed over numbers or strings.
 
-> `public static` isGreater(value1: any, value2: any): boolean
+> `public static` bool IsGreater(object value1, object value2)
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if the first value is greater than second and false otherwise.
+- **value1**: object - the first value to compare
+- **value2**: object - the second value to compare
+- **returns**: bool - true if the first value is greater than second and false otherwise.
 
-#### isLess
+#### IsLess
 Checks if first value is less than the second one.
 The operation can be performed over numbers or strings.
 
-> `public static` isLess(value1: any, value2: any): boolean
+> `public static` bool IsLess(object value1, object value2)
 
-- **value1**: any - the first value to compare
-- **value2**: any - the second value to compare
-- **returns**: boolean - true if the first value is less than second and false otherwise.
+- **value1**: object - the first value to compare
+- **value2**: object - the second value to compare
+- **returns**: bool - true if the first value is less than second and false otherwise.
 
-#### match
+#### Match
 Checks if string matches a regular expression
 
-> `public static` match(value: any, regexp: any): boolean
+> `public static` bool Match(object value1, object value2)
 
-- **value**: any - a string value to match
-- **regexp**: any - a regular expression string
-- **returns**: boolean - true if the value matches regular expression and false otherwise.
+- **value1**: object - a string value to match
+- **value2**: object - a regular expression string
+- **returns**: bool - true if the value matches regular expression and false otherwise.
 
 ### Examples
 
-```typescript
-ObjectComparator.compare(2, "GT", 1);        // Result: true
-ObjectComparator.areEqual("A", "B");         // Result: false
+```cs
+ObjectComparator.Compare(2, "GT", 1);        // Result: true
+ObjectComparator.AreEqual("A", "B");         // Result: false
 
 ```

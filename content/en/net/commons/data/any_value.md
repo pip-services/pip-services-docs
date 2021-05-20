@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValue"
 linkTitle: "AnyValue"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Cross-language implementation of a dynamic object that can hold a value of any type.
     It also provides methods to convert the stored value to different types.
@@ -17,338 +17,393 @@ The AnyValue class provides a cross-language implementation of a dynamic object 
 ### Constructors
 Creates a new instance of the object and assigns its value.
 
-> `public` constructor(value: any = null)
+> `public` AnyValue(object value = null)
 
-- **value**: any - (optional) value to initialize this object.
+- **value**: object - (optional) value to initialize this object.
 
-### Fields
+Creates a new instance of the object and assigns its value.
 
-<span class="hide-title-link">
+> `public` AnyValue([AnyValue]() value)
 
-#### value
+- **value**: object - (optional) value to initialize this object.
+
+### Properties
+
+#### Value
 The value stored by this object.
-> `public` **value**: any
+> `public` object **Value** [ get, private set ]
 
-</span>
 
 ### Instance methods
 
-#### clone
+#### Clone
 Creates a binary clone of this object.
 
-> `public` clone(): any
+> `public` object Clone()
 
-- **returns**: any - a clone of this object.
+- **returns**: object - a clone of this object.
 
-#### equals
+#### Equals
 Compares this object value to specified specified value.
 When direct comparison gives negative results it tries
 to compare values as strings.
 
-> `public` equals(obj: any): boolean
+> `public override` bool Equals(object obj)
 
-- **obj**: any - the value to be compared with.
-- **returns**: boolean - true when objects are equal and false otherwise.
+- **obj**: object - the value to be compared with.
+- **returns**: bool - true when objects are equal and false otherwise.
 
-#### equalsAsType
+#### EqualsAs
 Compares this object value to specified specified value.
 When direct comparison gives negative results it converts 
-values to type specified by type code and compare them again.    
-See [TypeConverter.toType](../../convert/type_converter/#totype)
+values to type specified by type code and compare them again.   
+**T** - the class type.
+See [TypeConverter.ToType](../../convert/type_converter/#totype)
 
-> `public` equalsAsType/<T/>(type: [TypeCode](../../convert/type_code), obj: any): boolean
+> `public` bool EqualsAs/<T/>(object obj)
 
-- **type**: [TypeCode](../../convert/type_code) - the value to be compared with.
-- **obj**: Any - the args to be compared with.
+- **obj**: object - the args to be compared with.
 - **returns**: any - true when objects are equal and false otherwise.
 
 
-#### getAsArray
+#### GetAsArray
 Converts object value into an AnyArray or returns empty AnyArray if conversion is not possible.  
-See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
+See [AnyValueArray.FromValue](../any_value_array/#fromvalue)
 
-> `public` getAsArray(): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsArray()
 
 - **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
-#### getAsBoolean
-Converts object value into a boolean or returns false if conversion is not possible.
+#### GetAsBoolean
+Converts object value into a bool or returns false if conversion is not possible.
 
-> `public` getAsBoolean(): boolean
+> `public` bool GetAsBoolean()
 
-- **returns**: boolean - string value or false if conversion is not supported. 
+- **returns**: bool - string value or false if conversion is not supported. 
 
-#### getAsBooleanWithDefault
-Converts object value into a boolean or returns default value if conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
+#### GetAsBooleanWithDefault
+Converts object value into a bool or returns default value if conversion is not possible.  
+See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
-> `public` getAsBooleanWithDefault(defaultValue: boolean): boolean
+> `public` bool GetAsBooleanWithDefault(bool defaultValue)
 
-- **defaultValue**: boolean - the default value.
-- **returns**: boolean - boolean value or default if conversion is not supported. 
+- **defaultValue**: bool - the default value.
+- **returns**: bool - bool value or default if conversion is not supported. 
 
-#### getAsDateTime
-Converts object value into a Date or returns current date if conversion is not possible.
+#### GetAsDateTime
+Converts object value into a DateTime or returns current date if conversion is not possible.
 
-> `public` getAsDateTime(): Date
+> `public` DateTime GetAsDateTime()
 
-- **returns**: Date - Date value or current date if conversion is not supported.
+- **returns**: DateTime - DateTime value or current date if conversion is not supported.
 
-#### getAsDateTimeWithDefault
-Converts object value into a Date or returns default value if conversion is not possible.   
-See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
+#### GetAsDateTimeWithDefault
+Converts object value into a DateTime or returns default value if conversion is not possible.   
+See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
-> `public` getAsDateTimeWithDefault(defaultValue: Date): Date
+> `public` DateTime GetAsDateTimeWithDefault(DateTime defaultValue)
 
-- **defaultValue**: Date - the default value.
-- **returns**: Date - Date value or default if conversion is not supported.
+- **defaultValue**: DateTime - the default value.
+- **returns**: DateTime - DateTime value or default if conversion is not supported.
 
 
-#### getAsDouble
+#### GetAsNullableTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsNullableTimeSpan()
+
+- **returns**: TimeSpan - TODO: add description
+
+
+#### GetAsTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpan()
+
+- **returns**: TimeSpan - TODO: add description
+
+#### GetAsTimeSpanWithDefault
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpanWithDefault(TimeSpan? defaultValue)
+
+- **defaultValue**: TimeSpan - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+
+#### GetAsNullableEnum
+TODO: add description
+
+> `public` T GetAsNullableEnum\<T\>()
+
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnum
+TODO: add description
+
+> `public` T GetAsEnum\<T\>(TimeSpan? key)
+
+- **key**: TimeSpan - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnumWithDefault
+TODO: add description
+
+> `public` T GetAsEnumWithDefault\<T\>(T defaultValue)
+
+- **defaultValue**: T - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsDouble
 Converts object value into a double or returns 0 if conversion is not possible.
 
-> `public` getAsDouble(): number
+> `public` double GetAsDouble()
 
-- **returns**: number - double value or 0 if conversion is not supported.
+- **returns**: double - double value or 0 if conversion is not supported.
 
 
-#### getAsDoubleWithDefault
+#### GetAsDoubleWithDefault
 Converts object value into a double or returns default value if conversion is not possible.    
-See [DoubleConverter.toDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
+See [DoubleConverter.ToDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
 
-> `public` getAsDoubleWithDefault(defaultValue: number): number
+> `public` double GetAsDoubleWithDefault(double defaultValue)
 
-- **defaultValue**: number - the default value.
-- **returns**: number - double value or default if conversion is not supported.
+- **defaultValue**: double - the default value.
+- **returns**: double - double value or default if conversion is not supported.
 
 
-#### getAsFloat
+#### GetAsFloat
 Converts object value into a float or returns 0 if conversion is not possible.
 
-> `public` getAsFloat(): number
+> `public` float GetAsFloat()
 
-- **returns**: number - float value or 0 if conversion is not supported. 
+- **returns**: float - float value or 0 if conversion is not supported. 
 
 
-#### getAsFloatWithDefault
+#### GetAsFloatWithDefault
 Converts object value into a float or returns default value if conversion is not possible.    
-See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
+See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
-> `public` getAsFloatWithDefault(defaultValue: number): number
+> `public` float GetAsFloatWithDefault(float defaultValue)
 
-- **defaultValue**: number - the default value.
-- **returns**: number - float value or default if conversion is not supported.
+- **defaultValue**: float - the default value.
+- **returns**: float - float value or default if conversion is not supported.
 
 
-#### getAsInteger
+#### GetAsInteger
 Converts object value into an integer or returns 0 if conversion is not possible.
 
-> `public` getAsInteger(): number
+> `public` int GetAsInteger()
 
-- **returns**: number - integer value or 0 if conversion is not supported. 
+- **returns**: GetAsInteger - integer value or 0 if conversion is not supported. 
 
 
-#### getAsIntegerWithDefault
+#### GetAsIntegerWithDefault
 Converts object value into a integer or returns default value if conversion is not possible.    
-See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
+See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
-> `public` getAsIntegerWithDefault(defaultValue: number): number
+> `public` int GetAsIntegerWithDefault(int defaultValue)
 
-- **default_value**: number - the default value.
-- **returns**: number -  integer value or default if conversion is not supported.
+- **defaultValue**: int - the default value.
+- **returns**: int -  integer value or default if conversion is not supported.
 
 
-#### getAsLong
+#### GetAsLong
 Converts object value into a long or returns 0 if conversion is not possible.
 
-> `public` getAsLong(): number
+> `public` long GetAsLong()
 
-- **returns**: number -  long value or 0 if conversion is not supported. 
+- **returns**: long -  long value or 0 if conversion is not supported. 
 
 
-#### getAsLongWithDefault
+#### GetAsLongWithDefault
 Converts object value into a long or returns default value if conversion is not possible.    
-See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
-> `public` getAsLongWithDefault(defaultValue: number): number
+> `public` long GetAsLongWithDefault(long defaultValue)
 
-- **default_value**: number - the default value.
-- **returns**: number -  long value or default if conversion is not supported. 
+- **defaultValue**: long - the default value.
+- **returns**: long -  long value or default if conversion is not supported. 
 
 
-#### getAsMap
+#### GetAsMap
 Converts object value into AnyMap or returns empty AnyMap if conversion is not possible.    
-See [AnyValueMap.fromValue](../any_value_map/#fromvalue)
+See [AnyValueMap.FromValue](../any_value_map/#fromvalue)
 
-> `public` getAsMap(): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsMap()
 
 - **returns**: [AnyValueMap](../any_value_map) -  AnyMap value or empty AnyMap if conversion is not supported.
 
 
-#### getAsNullableBoolean
-Converts object value into a boolean or returns null if conversion is not possible.  
-See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
+#### GetAsNullableBoolean
+Converts object value into a bool or returns null if conversion is not possible.  
+See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> `public` getAsNullableBoolean(): boolean
+> `public` bool GetAsNullableBoolean()
 
-- **returns**: boolean - boolean value or null if conversion is not supported.
-
-
-#### getAsNullableDateTime
-Converts object value into a Date or returns null if conversion is not possible.   
-See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
-
-> `public` getAsNullableDateTime(): Date
-
-- **returns**: Date - Date value or null if conversion is not supported.
+- **returns**: bool - bool value or null if conversion is not supported.
 
 
-#### getAsNullableDouble
+#### GetAsNullableDateTime
+Converts object value into a DateTime or returns null if conversion is not possible.   
+See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
+
+> `public` DateTime sGetAsNullableDateTime()
+
+- **returns**: DateTime - DateTime value or null if conversion is not supported.
+
+
+#### GetAsNullableDouble
 Converts object value into a double or returns null if conversion is not possible.    
-See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
+See [DoubleConverter.ToNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> `public` getAsNullableDouble(): number
+> `public` double GetAsNullableDouble()
 
-- **returns**: number - double value or null if conversion is not supported.
+- **returns**: double - double value or null if conversion is not supported.
 
 
-#### getAsNullableFloat
+#### GetAsNullableFloat
 Converts object value into a float or returns null if conversion is not possible.    
-See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
+See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> `public` getAsNullableFloat(): number
+> `public` float GetAsNullableFloat()
 
-- **returns**: number - float value or null if conversion is not supported.
+- **returns**: float - float value or null if conversion is not supported.
 
 
-#### getAsNullableInteger
+#### GetAsNullableInteger
 Converts object value into an integer or returns null if conversion is not possible.  
-See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
+See [IntegerConverter.ToNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> `public` getAsNullableInteger(): number
+> `public` int GetAsNullableInteger()
 
-- **returns**: number - integer value or null if conversion is not supported. 
+- **returns**: int - integer value or null if conversion is not supported. 
 
 
-#### getAsNullableLong
+#### GetAsNullableLong
 Converts object value into a long or returns null if conversion is not possible.   
-See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../../convert/long_converter/#tonullablelong)
 
-> `public` getAsNullableLong(): number
+> `public` long GetAsNullableLong()
 
-- **returns**: number - long value or null if conversion is not supported. 
+- **returns**: long - long value or null if conversion is not supported. 
 
 
-#### getAsNullableString
+#### GetAsNullableString
 Converts object value into a string or returns null if conversion is not possible.    
-See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
+See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
-> `public` getAsNullableString(): string
+> `public` string GetAsNullableString()
 
 - **returns**: string - string value or null if conversion is not supported. 
 
 
-#### getAsNullableType
+#### GetAsNullableType
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns null.  
+**T** - the class type
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
-> `public` getAsNullableType\<T\>(type: [TypeCode](../../convert/type_code)): T
+> `public` T GetAsNullableType\<T\>()
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **returns**: T - value defined by the typecode or null if conversion is not supported. 
 
 
-#### getAsObject
+#### GetAsObject
 Gets the value stored in this object without any conversions
 
-> `public` getAsObject(): any
+> `public` object GetAsObject()
 
-- **returns**: any - the object value. 
+- **returns**: object - the object value. 
 
 
-#### getAsString
+#### GetAsString
 Converts object value into a string or returns *""* if conversion is not possible.
 
-> `public` getAsString(): string
+> `public` string GetAsString()
 
 - **returns**: string - string value or *""* if conversion is not supported. 
 
 
-#### getAsStringWithDefault
+#### GetAsStringWithDefault
 Converts object value into a string or returns default value if conversion is not possible.
 
-> `public` getAsStringWithDefault(defaultValue: string): string
+> `public` string GetAsStringWithDefault(string defaultValue)
 
 - **defaultValue**: string - the default value.
 - **returns**: string - string value or default if conversion is not supported.
 
 
-#### getAsType
+#### GetAsType
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type.
+**T** - the class type.
 
-> `public` getAsType\<T\>(typeCode: [TypeCode](../../convert/type_code)): T
+> `public` T GetAsType\<T\>()
 
-- **typeCode**: string - the TypeCode that defined the type of the result
 - **returns**: string - value defined by the typecode or type default value if conversion is not supported. 
 
 
-#### getAsTypeWithDefault
+#### GetAsTypeWithDefault
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns default value.
+**T** - the class type.
 
-> `public` getAsTypeWithDefault\<T\>(typeCode: [TypeCode](../../convert/type_code), defaultValue: T): T
+> `public` T GetAsTypeWithDefault\<T\>(T defaultValue)
 
-- **typeCode**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **defaultValue**: T - the default value
 - **returns**: T - value defined by the typecode or type default value if conversion is not supported. 
 
 
-#### getTypeCode
-Gets type code for the value stored in this object.  
-See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode)
+#### GsetTypeCode!
+**TODO: this method is not realized yet for this language**
 
-> `public` getTypeCode(): [TypeCode](../../convert/type_code)
+Gets type code for the value stored in this object.  
+See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)
+
+> `public` [TypeCode](../../convert/type_code) GetTypeCode()
 
 - **returns**: [TypeCode](../../convert/type_code) - type code of the object value. 
 
 
-#### hashCode
+#### GetHashCode
 Gets an object hash code which can be used to optimize storing and searching.  
-See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode)
+See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)
 
-> `public` hashCode(): number
+> `public override ` int GetHashCode()
 
-- **returns**: number - an object hash code. 
+- **returns**: int - an object hash code. 
 
 
-#### setAsObject
+#### SetAsObject
 Sets a new value for this object
 
-> `public` setAsObject(value: any): void
+> `public` void SetAsObject(object value)
 
-- **value**: any - the new object value.
+- **value**: object - the new object value.
 
 
 
-#### toString
+#### ToString
 Gets a string representation of the object.  
-See [StringConverter.toString](../../convert/string_converter/#tostring)
+See [StringConverter.ToString](../../convert/string_converter/#tostring)
 
-> `public` toString(): any
+> `public override` string ToString()
 
 - **returns**: any - a string representation of the object.
 
 
 ### Examples
 
-```typescript
-let value1 = new AnyValue("123.456");
+```cs
+var value1 = new AnyValue("123.456");
 
-value1.getAsInteger();   // Result: 123
-value1.getAsString();    // Result: "123.456"
-value1.getAsFloat();     // Result: 123.456
+value1.GetAsInteger();   // Result: 123
+value1.GetAsString();    // Result: "123.456"
+value1.GetAsFloat();     // Result: 123.456
 ```
 
 ### See also

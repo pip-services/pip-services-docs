@@ -8,7 +8,7 @@ description: >
     It also provides several methods to convert the stored values to different types.
 ---
 
-**Implements:** [ICloneable](../icloneable), dict
+**Implements:** [ICloneable](../icloneable)
 
 ### Description
 
@@ -211,7 +211,7 @@ See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithde
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or empty AnyValueMap if conversion is not supported. 
 
 
-#### getAsLongWithDefault
+#### getAsMapWithDefault
 Converts map element into an AnyValueMap or returns default value if conversion is not possible.
 
 > `public` getAsMapWithDefault(key: string, defaultValue: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
@@ -221,7 +221,7 @@ Converts map element into an AnyValueMap or returns default value if conversion 
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported. 
 
 
-#### getAsLongWithDefault
+#### getAsNullableArray
 Converts map element into an AnyValueArray or returns null if conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#fromvalue)
 

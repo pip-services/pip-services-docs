@@ -2,7 +2,7 @@
 type: docs
 title: "ICleanable"
 linkTitle: "ICleanable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface that allows you to create components with a method to clean their states.
 
@@ -14,20 +14,22 @@ The ICleanable interface allows you to create components with a method to clean 
 
 ### Instance methods
 
-#### clear
+#### ClearAsync
 Clears component state.
 
-> clear(correlationId: string): Promise\<void\>;
+> Task ClearAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 ### Examples
-```typescript
-class MyObjectWithState implements ICleanable {
-    private _state: any = {};
+```cs
+class MyObjectWithState: ICleanable 
+{
+    var _state = new Object[]{};
     ...
-    public async clear(correlationId: string): void {
-        this._state = {};
+    public void Clear(string correlationId)
+    {
+        this._state = new Object[] { };
     }
 }
 

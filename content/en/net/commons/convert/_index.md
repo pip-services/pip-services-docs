@@ -3,7 +3,7 @@ type: docs
 title: "Convert"
 linkTitle: "Convert"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
    
     This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
@@ -81,7 +81,7 @@ Converts arbitrary values into strings using extended conversion rules:
 - DateTime: using ISO format
 - Boolean: "true" for true and "false" for false
 - Arrays: as comma-separated list
-- Other objects: using *toString()* method
+- Other objects: using **ToString()** method
 
 #### [TypeConverter](type_converter)
 Converts arbitrary values into objects specific by TypeCodes.

@@ -2,12 +2,12 @@
 type: docs
 title: "ArraySchema"
 linkTitle: "ArraySchema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Schema to validate arrays.
 ---
 
-**Extends:** [Schema](../schema)
+**Implements:** [Schema](../schema)
 
 ### Description
 
@@ -17,47 +17,43 @@ The ArraySchema class allows you to validate arrays based on a specified validat
 Creates a new validation rule and sets its values.
 See [TypeCode](../convert/type_code)
 
-> `public` constructor(valueType?: any, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
+> `public` ArraySchema(object valueType)
 
-- **valueType**: any - a type of array elements. Null means that elements may have any type.
-- **required**: boolean - (optional) true to always require non-null values.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **valueType**: object - a type of array elements. Null means that elements may have any type.
+
+
+Creates a new instance of validation schema.
+
+> `public` ArraySchema()
+
+
+### Properties
+
+#### ValueType
+Gets and Sets the type of array elements.
+Null means that elements may have any type.
+
+> `public` object ValueType [ get, set ]
 
 ### Instance methods
 
-#### getValueType
-Gets the type of array elements.
-Null means that elements may have any type.
 
-> `public` getValueType(): any
-
-- **returns**: any - the type of array elements.
-
-
-#### performValidation
+#### PerformValidation
 Validates a given value against the schema and configured validation rules.
 
-> `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **value**: object - a value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
 
-
-#### setValueType
-Sets the type of array elements.
-Null means that elements may have any type.
-
-> `public` setValueType(value: any): void
-
-- **value**: any - a type of array elements.
 
 ### Examples 
-```typescript
-let schema = new ArraySchema(TypeCode.String);
-   
-schema.validate(["A", "B", "C"]);    // Result: no errors
-schema.validate([1, 2, 3]);          // Result: element type mismatch
-schema.validate("A");                // Result: type mismatch          
+```cs
+var schema = new ArraySchema(TypeCode.String);
+
+schema.Validate(new String[]{"A", "B", "C"});   // Result: no errors
+schema.Validate(new int[] {1, 2, 3});           // Result: element type mismatch
+schema.Validate("A");                           // Result: type mismatch      
 
 ```

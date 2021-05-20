@@ -2,7 +2,7 @@
 type: docs
 title: "INotifiable"
 linkTitle: "INotifiable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface that allows you to create components that can be asynchronously notified.
     
@@ -18,27 +18,27 @@ Important points
 
 ### Instance methods
 
-#### notify
+#### NotifyAsync
 Notifies the component about occured event.
 
-> notify(correlationId: string, args: [Parameters](../parameters)): void
+> Task NotifyAsync(string correlationId, [Parameters](../parameters) args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
 
 ### Examples
 
-```typescript
-class MyComponent implements INotifable {
+```cs
+class MyComponent: INotifable 
+{
     ...
-    public notify(correlationId: string, args: Parameters): void {
-        console.log("Occured event " + args.getAsString("event"));
+    public void Notify(string correlationId, Parameters args)
+    {
+        Console.WriteLine("Occured event " + args.GetAsString("event"));
     }
 }
-   
-let myComponent = new MyComponent();
-    
-myComponent.notify("123", Parameters.fromTuples("event", "Test Event"));
+var myComponent = new MyComponent();
+myComponent.Notify("123", Parameters.FromTuples("event", "Test Event"));
 
 ```
 

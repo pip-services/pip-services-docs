@@ -189,7 +189,7 @@ Otherwise a new ApplicationException is created and original error is set as its
 
 ### Static methods
 
-#### unwrap_exception
+#### unwrap_exception!
 **TODO: this method is not realized yet for this language**
 
 Unwraps original exception through wrapped exception objects. 

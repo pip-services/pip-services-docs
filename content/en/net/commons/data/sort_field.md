@@ -2,7 +2,7 @@
 type: docs
 title: "SortField"
 linkTitle: "SortField"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Defines a field name and the order type used to sort query results.
 ---
@@ -14,33 +14,30 @@ The SortField class allows you to define a field used to sort query results. In 
 ### Constructors
 Creates a new instance and assigns its values.
 
-> `public` constructor(name: string = null, ascending: boolean = true)
+> `public` SortField(string name = null, bool ascending = true)
 
 - **name**: string - the name of the field to sort by.
-- **ascending**: boolean - true to sort in ascending order, and false to sort in descending order. 
+- **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
 
 
-### Fields
+### Properties
 
-<span class="hide-title-link">
-
-#### name
+#### Name
 The field name to sort by
-> `public` **name**: string
+> `public` string Name [ get, set ]
 
-#### ascending
+#### Ascending
 The flag to define sorting order. True to sort ascending, false to sort descending
-> `public` **ascending**: boolean
+> `public` Ascending [ get, set ]
 
-</span>
 
 ### Examples
-```typescript
-let filter = FilterParams.fromTuples("type", "Type1");
-let paging = new PagingParams(0, 100);
-let sorting = new SortingParams(new SortField("create_time", true));
-     
-myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
+```cs
+var filter = FilterParams.FromTuples("type", "Type1");
+var paging = new PagingParams(0, 100);
+var sorting = new SortingParams(new SortField("create_time", true));
+
+myDataClient.GetDataByFilter(filter, paging, sorting);
 ```
 
 ### See also

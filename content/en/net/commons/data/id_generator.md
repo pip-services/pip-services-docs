@@ -2,7 +2,7 @@
 type: docs
 title: "IdGenerator"
 linkTitle: "IdGenerator"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Helper class used to generate object IDs.
 
@@ -20,27 +20,27 @@ Important points
 
 ### Static methods
 
-#### nextLong
+#### NextLong
 Generates a globally unique 32-digit object ID.
 The value is a string representation of a GUID value.
 
-> `public static` nextLong(): string
+> `public static` string NextLong()
 
 - **returns**: string - a generated 32-digit object ID
 
 
-#### nextShort
+#### NextShort
 Generates a random 9-digit random ID (code).
 
 Remember: The returned value is not guaranteed to be unique.
 
-> `public static` nextShort(): string
+> `public static` string NextShort()
 
 - **returns**: string - a generated random 9-digit code
 
 ### Examples
 
-```typescript
-IdGenerator.nextLong();      // Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
-IdGenerator.nextShort();     // Possible result: "23495247"
+```cs
+IdGenerator.NextLong();      // Possible result: "234ab342c56a2b49c2ab42bf23ff991ac"
+IdGenerator.NextShort();     // Possible result: "23495247"
 ```

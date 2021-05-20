@@ -52,7 +52,7 @@ Parses comma-separated list of projection fields.
 Converts specified value into ProjectionParams.  
 See [AnyValueArray.from_value](../any_value_array/#from_value)
 
-> `static` from_value(value: Any): [ProjectionParams]()
+> `static` from_value(value: Any): [ProjectionParams](): [ProjectionParams]()
 
 - **value**: Any -  value to be converted.
 - **returns**: [ProjectionParams]() - a newly created ProjectionParams.

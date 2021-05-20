@@ -16,7 +16,7 @@ The SortParams class allows you to define a list of field names used to sort que
 ### Constructors
 Creates a new instance and initializes it with specified sort fields.
 
-> `public` constructor(...fields: [SortField](../sort_field)[]): [SortParams]()
+> `public` constructor(...fields: [SortField](../sort_field)[])
 
 - **fields**: [SortField](../sort_field)[] - a list of fields to sort by.
 

@@ -18,15 +18,12 @@ The IEvent interface allows you to define events that can send asynchronous noti
 
 #### Name
 Gets the name of the event.
-> `public` string Name
+> `public` string Name [ get ]
 
-- **returns**: string - the name of this event.
 
 #### Listeners
 Gets all listeners registered in this event.
-> `public` List<[IEventListener](../ievent_listener)> Listeners
-
-- **returns**: List<[IEventListener](../ievent_listener)> - all listeners registered in this event.
+> `public` List<[IEventListener](../ievent_listener)> Listeners [ get ]
 
 
 ### Instance methods

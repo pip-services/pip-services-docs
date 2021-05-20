@@ -3,7 +3,7 @@ type: docs
 title: "Errors"
 linkTitle: "Errors"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     
     Portable and localizable Exceptions classes. Each Exception has a unique string code and details array (which can be used for creating 

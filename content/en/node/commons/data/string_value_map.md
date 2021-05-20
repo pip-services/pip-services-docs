@@ -140,7 +140,7 @@ See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefau
 - **returns**: number - double value of the element or default value if conversion is not supported. 
 
 
-#### getAsDouble
+#### getAsFloat
 Converts map element into a float or returns 0 if conversion is not possible.
 
 > `public` getAsFloat(key: string): number

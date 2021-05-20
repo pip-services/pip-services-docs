@@ -2,7 +2,7 @@
 type: docs
 title: "TypeReflector"
 linkTitle: "TypeReflector"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to examine the type of an object, and create instancies of objects based on their type.
 
@@ -22,72 +22,93 @@ Important points
 
 ### Static methods
 
-#### createInstanceByType
-Creates an instance of an object type.
+#### CreateInstance
+Creates an instance of an object type specified by its name and library where it is defined.
 
-> `public static` createInstanceByType(type: any, ...args: any[]): any
+> `public static` object CreateInstance(string name, string library, params object[] args)
 
-- **type**: any - an object type (factory function) to create.
-- **args**: any[] - arguments for the object constructor.
-- **returns**: any - the created object instance.
+- **name**: string - an object type name.
+- **library**: string - a library (module) where object type is defined.
+- **args**: object[] - arguments for the object constructor.
+- **returns**: object - the created object instance.
 
-#### createInstanceByDescriptor
+#### CreateInstance
+Creates an instance of an object type specified by its name.
+
+> `public static` object CreateInstance(string name, params object[] args)
+
+- **name**: string - an object type name.
+- **args**: object[] - arguments for the object constructor.
+- **returns**: object - the created object instance.
+
+#### CreateInstanceByDescriptor
 Creates an instance of an object type specified by type descriptor.
 
-> `public static` createInstanceByDescriptor(descriptor: [TypeDescriptor](../type_descriptor), ...args: any[]): any
+> `public static` object CreateInstanceByDescriptor([TypeDescriptor](../type_descriptor) descriptor, params object[] args)
 
 - **descriptor**: [TypeDescriptor](../type_descriptor) - a type descriptor that points to an object type
-- **args**: any[] - arguments for the object constructor.
-- **returns**: any - the created object instance.
+- **args**: object[] - arguments for the object constructor.
+- **returns**: object - the created object instance.
 
-#### createInstanceByType
+#### CreateInstanceByType
 Creates an instance of an object type.
 
-> `public static` createInstanceByType(type: any, ...args: any[]): any
+> `public static` object CreateInstanceByType(Type type, params object[] args)
 
-- **type**: any - an object type (factory function) to create.
-- **args**: any[] - arguments for the object constructor.
-- **returns**: any - the created object instance.
+- **type**: Type - an object type (factory function) to create.
+- **args**: object[] - arguments for the object constructor.
+- **returns**: object - the created object instance.
 
 
-#### getType
+#### GetType
 Gets object type by its name and library where it is defined.
 
-> `public static` getType(name: string, library: string): any 
+> `public static` Type GetType(string name, string library) 
 
 - **name**: string - an object type name.
 - **library**: string - a library where the type is defined
-- **returns**: any - the object type or null is the type wasn't found.
+- **returns**: Type - the object type or null is the type wasn't found.
 
-#### getTypeByDescriptor
+#### GetType
+Gets object type by its name and library where it is defined.
+
+> `public static` Type GetType(string name, string library) 
+
+- **name**: string - an object type name.
+- **library**: string - a library where the type is defined
+- **returns**: Type - the object type or null is the type wasn't found.
+
+#### GetTypeByDescriptor
 Gets object type by type descriptor.
 
-> `public static` getTypeByDescriptor(descriptor: [TypeDescriptor](../type_descriptor)): any 
+> `public static` Type GetTypeByDescriptor([TypeDescriptor](../type_descriptor) descriptor) 
 
 - **descriptor**: [TypeDescriptor](../type_descriptor) - a type descriptor that points to an object type
-- **returns**: any - the object type or null is the type wasn't found.
+- **returns**: Type - the object type or null is the type wasn't found.
 
-#### isPrimitive
+#### IsPrimitive!
+**TODO: this method is not realized yet for this language**
+
 Checks if value has primitive type.
 
 Primitive types are: numbers, strings, booleans, date and time.
 Complex (non-primitive types are): objects, maps and arrays.  
-See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode), [TypeCode](../../convert/type_code)
+See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode), [TypeCode](../../convert/type_code)
 
-> `public static` isPrimitive(value: any): boolean 
+> `public static` bool IsPrimitive(object value) 
 
-- **value**: any - a value to check
-- **returns**:boolean - true if the value has primitive type and false if value type is complex.
+- **value**: object - a value to check
+- **returns**: bool - true if the value has primitive type and false if value type is complex.
 
 ### Examples
 
-```typescript
-let descriptor = new TypeDescriptor("MyObject", "mylibrary");
-Typeeflector.getTypeByDescriptor(descriptor);
-let myObj = TypeReflector.createInstanceByDescriptor(descriptor);
+```cs
+var descriptor = new TypeDescriptor("MyObject", "mylibrary");
+TypeReflector.GetTypeByDescriptor(descriptor);
+var myObj = TypeReflector.CreateInstanceByDescriptor(descriptor);
 
-TypeDescriptor.isPrimitive(myObject);   // Result: false
-TypeDescriptor.isPrimitive(123);        // Result: true
+TypeDescriptor.IsPrimitive(myObject);   // Result: false
+TypeDescriptor.IsPrimitive(123);        // Result: true
 
 ```
 

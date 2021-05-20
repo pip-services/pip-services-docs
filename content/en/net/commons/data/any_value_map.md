@@ -2,493 +2,546 @@
 type: docs
 title: "AnyValueMap"
 linkTitle: "AnyValueMap"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Cross-language implementation of a dynamic map (dictionary) object that can hold values of any type.
     It also provides several methods to convert the stored values to different types.
 ---
 
-**Implements:** [ICloneable](../icloneable), dict
+**Implements:** [ICloneable](../icloneable), Dictionary\<string, object\>
 
 ### Description
 
-The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types, such as boolean, integer or datetime.
+The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types, such as bool, integer or datetime.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
 
-> `public` constructor(values: any = null)
+> `public` AnyValueMap(IDictionary\<string, object\> values)
 
 - **values**: any - (optional) values to initialize this map.
+
+Creates a new instance of the map and assigns its value.
+
+> `public` AnyValueMap(IDictionary values)
+
+- **values**: any - (optional) values to initialize this map.
+
+Creates a new instance of the map and assigns its value.
+
+> `public` AnyValueMap()
 
 
 ### Instance methods
 
-#### append
+#### Append
 Appends new elements to this map.
 
-> `public` append(map: any): void
+> `public` void Append(IDictionary map)
 
-- **map**: any - a map with elements to be added.
-
-
-#### clear
-Clears this map by removing all its elements.
-
-> `public` clear(): void
+- **map**: IDictionary - a map with elements to be added.
 
 
-#### clone
+#### Append
+Appends new elements to this map.
+
+> `public` void Append(IDictionary\<string, object\> map)
+
+- **map**: IDictionary\<string, object\> - a map with elements to be added.
+
+
+#### Clone
 Creates a binary clone of this object.
 
-> `public` clone(): any
+> `public` object Clone()
 
-- **returns**: any - a clone of this object.
+- **returns**: object - a clone of this object.
 
 
-#### get
+#### Get
 Gets a map element specified by its key.
 
-> `public` get(key: string): any
+> `public virtual` object Get(string key)
 
 - **key**: string - a key of the element to get.
-- **returns**: any - the value of the map element.
+- **returns**: object - the value of the map element.
 
 
-#### getAsArray
+#### GetAsArray
 Converts map element into an AnyValueArray or returns empty AnyValueArray if conversion is not possible.  
-See [AnyValueArray](../any_value_array), [AnyValueArray.fromValue](../any_value_array/#fromvalue)
+See [AnyValueArray](../any_value_array), [AnyValueArray.FromValue](../any_value_array/#fromvalue)
 
-> `public` getAsArray(key: string): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsArray(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or empty AnyValueArray if conversion is not supported. 
 
 
 
-#### getAsArrayWithDefault
+#### GetAsArrayWithDefault
 Converts map element into an AnyValueArray or returns default value if conversion is not possible.  
 See [AnyValueArray](../any_value_array)
 
-> `public` getAsArrayWithDefault(key: string, defaultValue: [AnyValueArray](../any_value_array)): [AnyValueArray](../any_value_array)
+> `public` [AnyValueArray](../any_value_array) GetAsArrayWithDefault(string key, [AnyValueArray](../any_value_array) defaultValue)
 
 - **key**: string - a key of element to get.
 - **defaultValue**: [AnyValueArray](../any_value_array) - the default value
 - **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or default value if conversion is not supported.
 
 
-#### getAsBoolean
-Converts map element into a boolean or returns false if conversion is not possible.
+#### GetAsBoolean
+Converts map element into a bool or returns false if conversion is not possible.
 
-> `public` getAsBoolean(key: string): boolean
+> `public` bool GetAsBoolean(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: boolean - value of the element or false if conversion is not supported. 
+- **returns**: bool - value of the element or false if conversion is not supported. 
 
 
-#### getAsBooleanWithDefault
-Converts map element into a boolean or returns default value if conversion is not possible.  
+#### GetAsBooleanWithDefault
+Converts map element into a bool or returns default value if conversion is not possible.  
 See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
-> `public` getAsBooleanWithDefault(key: string, defaultValue: boolean): boolean
+> `public` bool GetAsBooleanWithDefault(string key, bool defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: boolean - the default value
-- **returns**: boolean - boolean value of the element or default value if conversion is not supported. 
+- **defaultValue**: bool - the default value
+- **returns**: bool - bool value of the element or default value if conversion is not supported. 
 
 
-#### getAsDateTime
-Converts map element into a Date or returns the current date if conversion is not possible.
+#### GetAsDateTime
+Converts map element into a DateTime or returns the current date if conversion is not possible.
 
-> `public` getAsDateTime(key: string): Date
+> `public` DateTime GetAsDateTime(string key) 
 
 - **key**: string - a key of element to get.
-- **returns**: Date - Date value of the element or the current date if conversion is not supported.
+- **returns**: DateTime - DateTime value of the element or the current date if conversion is not supported.
 
 
-
-#### getAsDateTimeWithDefault
-Converts map element into a Date or returns default value if conversion is not possible.  
+#### GetAsDateTimeWithDefault
+Converts map element into a DateTime or returns default value if conversion is not possible.  
 See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
-> `public` getAsDateTimeWithDefault(key: string, defaultValue: Date): Date
+> `public` DateTime GetAsDateTimeWithDefault(string key, DateTime defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: Date - the default value
-- **returns**: Date - Date value of the element or default value if conversion is not supported. 
+- **defaultValue**: DateTime - the default value
+- **returns**: DateTime - DateTime value of the element or default value if conversion is not supported. 
+
+#### GetAsNullableTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsNullableTimeSpan(string key)
+
+- **key**: string - TODO: add description
+- **returns**: TimeSpan - TODO: add description
 
 
-#### getAsDouble
+#### GetAsTimeSpan
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpan(string key)
+
+- **key**: string - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+#### GetAsTimeSpanWithDefault
+TODO: add description
+
+> `public` TimeSpan GetAsTimeSpanWithDefault(string key, TimeSpan? defaultValue)
+
+- **key**: string - TODO: add description
+- **defaultValue**: TimeSpan - TODO: add description
+- **returns**: TimeSpan - TODO: add description
+
+
+#### GetAsNullableEnum
+TODO: add description
+
+> `public` T GetAsNullableEnum\<T\>(string key)
+
+- **key**: string - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnum
+TODO: add description
+
+> `public` T GetAsEnum\<T\>(string key)
+
+- **key**: string - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsEnumWithDefault
+TODO: add description
+
+> `public` T GetAsEnumWithDefault\<T\>(string key, T defaultValue)
+
+- **key**: string - TODO: add description
+- **defaultValue**: T - TODO: add description
+- **returns**: T - TODO: add description
+
+
+#### GetAsDouble
 Converts map element into a double or returns 0 if conversion is not possible.
 
-> `public` getAsDouble(key: string): number
+> `public` double GetAsDouble(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - double value of the element or 0 if conversion is not supported. 
+- **returns**: double - double value of the element or 0 if conversion is not supported. 
 
 
-#### getAsDoubleWithDefault
+#### GetAsDoubleWithDefault
 Converts map element into a double or returns default value if conversion is not possible.  
-See [DoubleConverter.toDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
+See [DoubleConverter.ToDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
 
-> `public` getAsDoubleWithDefault(key: string, defaultValue: number): number
+> `public` double GetAsDoubleWithDefault(string key, double defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - double value of the element or default value if conversion is not supported. 
+- **defaultValue**: double - the default value
+- **returns**: double - double value of the element or default value if conversion is not supported. 
 
 
-#### getAsFloat
+#### GetAsFloat
 Converts map element into a float or returns 0 if conversion is not possible.   
 
-> `public` getAsFloat(key: string): number
+> `public` float GetAsFloat(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - float value of the element or 0 if conversion is not supported. 
+- **returns**: float - float value of the element or 0 if conversion is not supported. 
 
 
-#### getAsFloatWithDefault
+#### GetAsFloatWithDefault
 Converts map element into a flot or returns default value if conversion is not possible.  
-See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
+See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
-> `public` getAsFloatWithDefault(key: string, defaultValue: number): number
+> `public` float GetAsFloatWithDefault(string key, float defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - flot value of the element or default value if conversion is not supported. 
+- **defaultValue**: float - the default value
+- **returns**: float - flot value of the element or default value if conversion is not supported. 
 
 
-#### getAsInteger
+#### GetAsInteger
 Converts map element into an integer or returns 0 if conversion is not possible.   
 
-> `public` getAsInteger(key: string): number
+> `public` int GetAsInteger(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - integer value of the element or 0 if conversion is not supported. 
+- **returns**: int - integer value of the element or 0 if conversion is not supported. 
 
 
 
-#### getAsIntegerWithDefault
+#### GetAsIntegerWithDefault
 Converts map element into an integer or returns default value if conversion is not possible.  
-See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
+See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
-> `public` getAsIntegerWithDefault(key: string, defaultValue: number): number
+> `public` int GetAsIntegerWithDefault(string key, float defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - integer value of the element or default value if conversion is not supported.
+- **defaultValue**: float - the default value
+- **returns**: float - integer value of the element or default value if conversion is not supported.
 
 
-#### getAsLong
+#### GetAsLong
 Converts map element into a long or returns 0 if conversion is not possible.  
-See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
+See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
-> `public` getAsLong(key: string): number
+> `public` long GetAsLong(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - long value of the element or 0 if conversion is not supported. 
+- **returns**: long - long value of the element or 0 if conversion is not supported. 
 
 
 
-#### getAsLongWithDefault
+#### GetAsLongWithDefault
 Converts map element into a long or returns default value if conversion is not possible.  
-See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
-> `public` getAsLongWithDefault(key: string, defaultValue: number): number
+> `public` long GetAsLongWithDefault(string key, long defaultValue)
 
 - **key**: string - a key of element to get.
-- **defaultValue**: number - the default value
-- **returns**: number - long value of the element or default value if conversion is not supported.
+- **defaultValue**: long - the default value
+- **returns**: long - long value of the element or default value if conversion is not supported.
 
 
-#### getAsMap
+#### GetAsMap
 Converts map element into an AnyValueMap or returns empty AnyValueMap if conversion is not possible.    
-See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
-> `public` getAsMap(key: string): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsMap(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or empty AnyValueMap if conversion is not supported. 
 
 
-#### getAsLongWithDefault
+#### GetAsMapWithDefault
 Converts map element into an AnyValueMap or returns default value if conversion is not possible.
 
-> `public` getAsMapWithDefault(key: string, defaultValue: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsMapWithDefault(string key, [AnyValueMap](../any_value_map) defaultValue)
 
 - **key**: string - a key of element to get.
 - **defaultValue**: [AnyValueMap](../any_value_map) - the default value
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported. 
 
-
-#### getAsLongWithDefault
+#### GetAsNullableArray
 Converts map element into an AnyValueArray or returns null if conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#fromvalue)
 
-> `public` getAsNullableArray(key: string): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsNullableArray(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueArray value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableBoolean
-Converts map element into a boolean or returns null if conversion is not possible.  
+#### GetAsNullableBoolean
+Converts map element into a bool or returns null if conversion is not possible.  
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> `public` getAsNullableBoolean(key: string): boolean
+> `public` bool GetAsNullableBoolean(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: boolean - boolean value of the element or null if conversion is not supported. 
+- **returns**: bool - bool value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableDateTime
+#### GetAsNullableDateTime
 Converts map element into a long or returns default value if conversion is not possible.  
-See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> `public` getAsNullableDateTime(key: string): Date
+> `public` DateTime GetAsNullableDateTime(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: Date - Date value of the element or null if conversion is not supported. 
+- **returns**: DateTime - DateTime value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableDouble
+#### GetAsNullableDouble
 Converts map element into a double or returns null if conversion is not possible.  
-See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
+See [DoubleConverter.ToNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> `public` getAsNullableDouble(key: string): number
+> `public` double GetAsNullableDouble(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - double value of the element or null if conversion is not supported. 
+- **returns**: double - double value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableFloat
+#### GetAsNullableFloat
 Converts map element into a float or returns null if conversion is not possible. 
-See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
+See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> `public` getAsNullableFloat(key: string): number
+> `public` float GetAsNullableFloat(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - float value of the element or null if conversion is not supported. 
+- **returns**: float - float value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableInteger
+#### GetAsNullableInteger
 Converts map element into an integer or returns null if conversion is not possible.  
-See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
+See [IntegerConverter.ToNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> `public` getAsNullableInteger(key: string): number
+> `public` int GetAsNullableInteger(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - integer value of the element or null if conversion is not supported. 
+- **returns**: int - integer value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableLong
+#### GetAsNullableLong
 Converts map element into a long or returns null if conversion is not possible.  
-See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../../convert/long_converter/#tonullablelong)
 
-> `public` getAsNullableLong(key: string): number
+> `public` logn GetAsNullableLong(string key)
 
 - **key**: string - a key of element to get.
-- **returns**: number - long value of the element or null if conversion is not supported. 
+- **returns**: logn - long value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableMap
+#### GetAsNullableMap
 Converts map element into an AnyValueMap or returns null if conversion is not possible.  
 
-> `public` getAsNullableMap(key: string): [AnyValueMap](../any_value_map)
+> `public` [AnyValueMap](../any_value_map) GetAsNullableMap(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableString
+#### GetAsNullableString
 Converts map element into a string or returns null if conversion is not possible.    
-See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
+See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
-> `public` getAsNullableString(key: string): string
+> `public` string GetAsNullableString(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: string - string value of the element or null if conversion is not supported. 
 
 
-#### getAsNullableType
+#### GetAsNullableType
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns null.     
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
+**T** - the class type
 
-> `public` getAsNullableType\<T\>(type: [TypeCode](../../convert/type_code), key: string): T
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+> `public` T GetAsNullableType\<T\>(string key)
+
 - **key**: string - a key of element to get.
 - **returns**: T - element value defined by the typecode or null if conversion is not supported. 
 
 
-#### getAsObject
+#### GetAsObject
+Gets the value stored in this map element without any conversions
+
+> `public` object GetAsObject()
+
+- **key**: string - (optional) a key of the element to get
+- **returns**: object - the value of the map element.
+
+#### GetAsObject
 Gets the value stored in map element without any conversions.
 When element key is not defined it returns the entire map value.
 
-> `public` getAsObject(key: string = undefined): any
+> `public` object GetAsObject(string key)
 
 - **key**: string - (optional) a key of the element to get
-- **returns**: any - the element value or value of the map when index is not defined. 
+- **returns**: object - the element value or value of the map when index is not defined. 
 
 
-#### getAsString
+#### GetAsString
 Converts map element into a string or returns *""* if conversion is not possible.
 
-> `public` getAsString(key: string): string 
+> `public` string GetAsString(string key) 
 
 - **key**: string - a key of element to get.
 - **returns**: string - string value of the element or *""* if conversion is not supported. 
 
 
-#### getAsStringWithDefault
+#### GetAsStringWithDefault
 Converts map element into a string or returns default value if conversion is not possible. 
-See [StringConverter.toStringWithDefault](../../convert/string_converter/#tostringwithdefault)
+See [StringConverter.ToStringWithDefault](../../convert/string_converter/#tostringwithdefault)
 
-> `public` getAsStringWithDefault(key: string, defaultValue: string): string
+> `public` string GetAsStringWithDefault(string key, string defaultValue)
 
 - **key**: string - a key of element to get.
 - **defaultValue**: string - the default value
 - **returns**: string - string value of the element or default value if conversion is not supported.
 
 
-#### getAsType
+#### GetAsType
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value for the specified type. 
+**T** - the class type
 
-> `public` getAsType\<T\>(type: [TypeCode](../../convert/type_code), key: string): T
+> `public` T GetAsType\<T\>(string key)
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **key**: string - a key of element to get.
 - **returns**: T - element value defined by the typecode or default if conversion is not supported. 
 
 
-#### getAsTypeWithDefault
+#### GetAsTypeWithDefault
 Converts map element into a value defined by specied typecode.
 If conversion is not possible it returns default value.    
-See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithdefault)
+**T** - the class type
+See [TypeConverter.ToTypeWithDefault](../../convert/type_converter/#totypewithdefault)
 
-> `public` getAsTypeWithDefault\<T\>(type: [TypeCode](../../convert/type_code), key: string, defaultValue: T): T
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
+> `public` T GetAsTypeWithDefault\<T\>(string key, T defaultValue)
+
 - **key**: string - a key of element to get.
 - **defaultValue**: T - the default value
 - **returns**: T - element value defined by the typecode or default value if conversion is not supported.
 
 
 
-#### getAsValue
+#### GetAsValue
 Converts map element into an AnyValue or returns an empty AnyValue if conversion is not possible.   
 See [AnyValue](../any_value), [AnyValue.constructors](../any_value/#constructors)
 
-> `public` getAsValue(key: string): [AnyValue](../any_value)
+> `public` [AnyValue](../any_value) GetAsValue(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [AnyValue](../any_value) -AnyValue value of the element or empty AnyValue if conversion is not supported. 
 
 
-#### getKeys
-Gets keys of all elements stored in this map.
-
-> `public` getKeys(): string[]
-
-- **returns**: string[] - a list with all map keys. 
-
-
-#### length
-Gets a number of elements stored in this map.
-
-> `public` length(): number
-
-- **returns**: number - the number of elements in this map.
-
-
-#### put
+#### Set
 Puts a new value into map element specified by its key.
 
-> `public` put(key: string, value: any)
+> `public virtual` Set(string key, object value)
 
 - **key**: string - a key of the element to put.
-- **value**: any - a new value for map element.
+- **value**: object - a new value for map element.
 
 
-#### remove
-Removes a map element specified by its key
+#### SetAsObject
+Sets a new value for this array element
 
-> `public` remove(key: string): void
+> `public` void SetAsObject(object value)
 
-- **key**: string - a key of the element to remove.
-
-
-#### setAsObject
-Sets a new value to map element specified by its index.
-When the index is not defined, it resets the entire map value.
-This method has double purpose because method overrides are not supported in JavaScript.
-
-> `public` setAsObject(key: any, value: any = undefined): void
-
-- **key**: any - (optional) a key of the element to set
 - **value**: any - a new element or map value.
 
 
-#### toString
-Gets a string representation of the object.
-The result is a semicolon-separated list of key-value pairs as
-*"key1=value1;key2=value2;key=value3"*
+#### SetAsObject
+Sets a new value to map element specified by its index.
+When the index is not defined, it resets the entire map value.
 
-> `public` toString(): string
+> `public` void SetAsObject(string key, object value)
 
-- **returns**: string - a string representation of the object.
+- **key**: string - (optional) a key of the element to set
+- **value**: object - a new element or map value.
 
 
 ### Static methods
 
-#### fromMaps
+#### FromMaps
 Creates a new AnyValueMap by merging two or more maps.
 Maps defined later in the list override values from previously defined maps.
 
-> `public static` fromMaps(...maps: any[]): [AnyValueMap](../any_value_map)
+> `public static` [AnyValueMap](../any_value_map) FromMaps(params IDictionary[] maps)
 
-- **maps**: any[] - an array of maps to be merged
+- **maps**: IDictionary[] - an array of maps to be merged
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueMap.
 
 
-#### fromTuples
+#### FromTuples
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 
-> `public static` fromTuples(...tuples: any[]): [AnyValueMap](../any_value_map)
+> `public static` [AnyValueMap](../any_value_map) FromTuples(params object[] tuples)
 
-- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: object[] - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueArray.
 
 
-#### fromTuplesArray
+#### FromTuplesArray!
+**TODO: this method is not realized yet for this language**
+
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 The method is similar to [fromTuples](#fromtuples) but tuples are passed as array instead of parameters.
 
-> `public static` fromTuplesArray(tuples: any[]): [AnyValueMap](../any_value_map)
+> `public static` [AnyValueMap](../any_value_map) FromTuplesArray(params object[] tuples)
 
-- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
+- **tuples**: object[] - a list of values where odd elements are keys and the following even elements are values
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueArray.
 
 
-#### fromValue
+#### FromValue
 Converts specified value into AnyValueMap.
 
-> `public static` fromValue(value: any): [AnyValueMap](../any_value_map)
+> `public static` [AnyValueMap](../any_value_map) FromValue(object value)
 
-- **value**: any - value to be converted
+- **value**: object - value to be converted
 - **returns**: [AnyValueMap](../any_value_map) - a newly created AnyValueMap.
 
 
 ### Examples
-```typescript
-let value1 = new AnyValueMap({ key1: 1, key2: "123.456", key3: "2018-01-01" });
-     
-value1.getAsBoolean("key1");   // Result: true
-value1.getAsInteger("key2");   // Result: 123
-value1.getAsFloat("key2");     // Result: 123.456
-value1.getAsDateTime("key3");  // Result: new Date(2018,0,1)
+```cs
+var value1 = new AnyValueMap(new Dictionary<string, object>{
+    {"key1", 1},
+    {"key2", "123.456"},
+    {"key3", "2018-01-01" }
+    });
+
+value1.GetAsBoolean("key1");   // Result: true
+value1.GetAsInteger("key2");   // Result: 123
+value1.GetAsFloat("key2");     // Result: 123.456
+value1.GetAsDateTime("key3");  // Result: new DateTime(2018,0,1)
 
 ```
 

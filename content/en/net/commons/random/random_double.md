@@ -2,7 +2,7 @@
 type: docs
 title: "RandomDouble"
 linkTitle: "RandomDouble"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Random generator for double values.
 ---
@@ -13,29 +13,49 @@ The RandomDouble class allows you to generate random double values.
 
 ### Static methods
 
-#### nextDouble
+#### NextDouble
+Generates a random double value in the range to "max".
+
+> `public static` double NextDouble(double maxValue)
+
+- **maxValue**: double - max range value
+- **returns**: double - a random double value.
+
+
+#### NextDouble
 Generates a random double value in the range ['minYear', 'maxYear'].
 
-> `public static` nextDouble(min: number, max: number = null): number
+> `public static` double NextDouble(double minValue, double maxValue)		
 
-- **min**: number - (optional) minimum range value
-- **max**: number - max range value
-- **returns**: number - a random double value.
 
-#### updateDouble
+- **minValue**: double - (optional) minimum range value
+- **maxValue**: double - max range value
+- **returns**: double - a random double value.
+
+
+#### UpdateDouble
+Updates (drifts) a double value without specified range defined
+
+> `public static` double UpdateDouble(double value)
+
+- **value**: double - a double value to drift.
+- **returns**: double - updated double value.
+
+
+#### UpdateDouble
 Updates (drifts) a double value within specified range defined
 
-> `public static` updateDouble(value: number, range: number = null): number
+> `public static` double UpdateDouble(double value, double range)
 
-- **value**: number - a double value to drift.
-- **range**: number - (optional) a range. Default: 10% of the value
-- **returns**: number - updated float value.
+- **value**: double - a double value to drift.
+- **range**: double - (optional) a range. Default: 10% of the value
+- **returns**: double - updated double value.
 
 ### Examples
 
-```typescript
-let value1 = RandomDouble.nextDouble(5, 10);     // Possible result: 7.3
-let value2 = RandomDouble.nextDouble(10);        // Possible result: 3.7
-let value3 = RandomDouble.updateDouble(10, 3);   // Possible result: 9.2
+```cs
+var value1 = RandomDouble.NextDouble(5, 10);     // Possible result: 7.3
+var value2 = RandomDouble.NextDouble(10);        // Possible result: 3.7
+var value3 = RandomDouble.UpdateDouble(10, 3);   // Possible result: 9.2
 
 ```

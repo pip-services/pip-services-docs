@@ -2,7 +2,7 @@
 type: docs
 title: "Referencer"
 linkTitle: "Referencer"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to set and unset references to components.
 ---
@@ -13,48 +13,56 @@ The Referencer class allows you to set and unset references to components.
 
 ### Static methods
 
-#### setReferences
+#### SetReferences
 Sets references to multiple components.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` setReferences(references: [IReferenceable](../ireferenceable), components: any[]): void
+> `public static` void SetReferences([IReferenceable](../ireferenceable) references, IEnumerable components = null)
 
 - **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: any[] - a list of components to set the references to.
+- **component**: IEnumerable - a list of components to set the references to.
 
-#### setReferencesForOne
+#### SetReferencesForOne
 Sets references to specific component.
 
 To set references components must implement [IReferenceable](../ireferenceable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` setReferencesForOne(references: [IReferences](../ireferences), component: any): void
+> `public static` void SetReferencesForOne([IReferences](../ireferences) references, object component)
 
 - **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: any - the component to set references to.
+- **component**: object - the component to set references to.
 
-#### unsetReferencesForOne
+#### UnsetReferences
+Unsets references in multiple components.
+To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
+If they don't the call to this method has no effect.
+
+> `public static` void UnsetReferences(IEnumerable components) 
+
+- **components**: IEnumerable - the list of components, whose references must be cleared.
+
+#### UnsetReferences
+Unsets references in multiple components.
+To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
+If they don't the call to this method has no effect.
+
+> `public static` void UnsetReferences(IReferences components) 
+
+- **components**: IReferences - the list of components, whose references must be cleared.
+
+#### UnsetReferencesForOne
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` unsetReferencesForOne(component: any): void 
+> `public static` void UnsetReferencesForOne(object component) 
 
-- **component**: any - the component to unset references.
+- **component**: object - the component to unset references.
 
-#### unsetReferencesForOne
-Unsets references in specific component.
-
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
-See [IUnreferenceable](../iunreferenceable)
-
-> `public static` unsetReferencesForOne(component: any): void
-
-- **component**: any - the component to unset references.
 
 ### See also
 - #### [IReferenceable](../ireferenceable)

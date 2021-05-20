@@ -2,9 +2,9 @@
 type: docs
 title: "RandomDateTime"
 linkTitle: "RandomDateTime"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Random generator for Date time values.
+    Random generator for DateTime time values.
 ---
 
 ### Description
@@ -17,40 +17,86 @@ Important points:
 
 ### Static methods
 
-#### nextDate
-Generates a random Date in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+#### NextDate
+Generates a random DateTime in the range ['2000, 1, 1', 'maxYear']. 
+This method generate dates without time(or time set to 00:00:00)
 
-> `public static` nextDate(min: Date, max: Date = null): Date
+> `public static` DateTime NextDate(DateTime max)
 
-- **min**: Date - (optional) minimum range value
-- **max**: Date - max range value
-- **returns**: Date - a random Date value.
+- **max**: DateTime  - max range value
+- **returns**: DateTime  - a random DateTime value.
 
-#### nextDateTime
-Generates a random Date and time in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+#### NextDate
+Generates a random DateTime in the range ['minYear', 'maxYear']. 
+This method generate dates without time(or time set to 00:00:00)
 
-> `public static` nextDateTime(min: Date, max: Date = null): Date
+> `public static` DateTime  NextDate(DateTime min, DateTime max)
 
-- **min**: Date - (optional) minimum range value
-- **max**: Date - max range value
-- **returns**: Date - a random Date and time value.
+- **min**: DateTime  - (optional) minimum range value
+- **max**: DateTime  - max range value
+- **returns**: DateTime  - a random DateTime value.
 
-#### updateDateTime
-Updates (drifts) a Date value within specified range defined
+#### NextDateTime
+Generates a random DateTime and time in the range ['2000, 1, 1', 'maxYear']. 
+This method generate dates without time(or time set to 00:00:00)
 
-> `public static` updateDateTime(value: Date, range: number = null): Date
+> `public static` DateTime NextDateTime(DateTime max)
 
-- **value**: Date - a Date value to drift.
-- **range**: number - (optional) a range in milliseconds. Default: 10 days
-- **returns**: Date - an updated DateTime
+- **max**: DateTime - max range value
+- **returns**: DateTime - a random DateTime and time value.
+
+#### NextDateTime
+Generates a random DateTime and time in the range ['minYear', 'maxYear']. 
+This method generate dates without time(or time set to 00:00:00)
+
+> `public static` DateTime NextDateTime(DateTime min, DateTime max)
+
+- **min**: DateTime - (optional) minimum range value
+- **max**: DateTime - max range value
+- **returns**: DateTime - a random DateTime and time value.
+
+
+#### NextTime
+Generates a random TimeSpan in the range ['0', 'maxTime']. 
+
+> `public static` TimeSpan NextTime(long max)
+
+- **max**: long - max range value
+- **returns**: TimeSpan - a random TimeSpan value.
+
+
+#### NextTime
+Generates a random TimeSpan in the range ['minTime', 'maxTime']. 
+
+> `public static` TimeSpan NextTime(long min, long max)
+
+- **min**: long - minimum range value
+- **max**: long - max range value
+- **returns**: TimeSpan - a random TimeSpan value.
+
+
+#### UpdateDateTime
+Updates (drifts) a DateTime value.
+
+> `public static` DateTime UpdateDateTime(DateTime value)
+
+- **value**: DateTime - a DateTime value to drift.
+- **returns**: DateTime - an updated ZonedDateTime and time value.
+
+
+#### UpdateDateTime
+Updates (drifts) a ZonedDateTime value within specified range defined
+
+> `public static` DateTime UpdateDateTime(DateTime value, long range)
+
+- **value**: DateTime - a DateTime value to drift.
+- **range**: long  - (optional) a range in milliseconds. Default: 10 days
+- **returns**: DateTime - an updated DateTime and time value.
 
 ### Examples
 
-```typescript
-let value1 = RandomDateTime.nextDate(new Date(2010,0,1));    // Possible result: 2008-01-03
-let value2 = RandomDateTime.nextDateTime(new Date(2017,0.1));// Possible result: 2007-03-11 11:20:32
-let value3 = RandomDateTime.updateDateTime(new Date(2010,1,2));// Possible result: 2010-02-05 11:33:23
+```cs
+var value1 = RandomDateTime.NextDate(2010, 0);    // Possible result: 2008-01-03
+var value2 = RandomDateTime.NextDateTime(2017, 0);// Possible result: 20017-03-11 11:20:32
 
 ```

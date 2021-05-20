@@ -2,7 +2,7 @@
 type: docs
 title: "IVersioned"
 linkTitle: "IVersioned"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Interface used to define data objects that can be versioned.
 
@@ -18,30 +18,29 @@ Important points
 - The version doesn't have to be a number, but it is recommended to use sequential values to determine if one object has a newer or older version than another one.
 - It is common to use the time of change as the object version.
 
-### Fields
+### Properties
 
-<span class="hide-title-link">
-
-#### version
+#### Version
 The object's version.
-> **version**: string
+> string **Version** [ get, set ]
 
-</span>
 
 
 ### Examples
-```typescript
-export class MyData implements IStringIdentifiable, IVersioned {
-    public id: string;
-    public field1: string;
-    public field2: number;
-    public version: string;
+```cs
+public class MyData: IStringIdentifiable, IVersioned 
+{
+    string id {get; set;}
+    string field1;
+    int field2;
+    string version {get; set;}
     ...
 }
-   
-public updateData(correlationId: string, item: MyData): void {
+public void updateData(string correlationId, MyData item) 
+{
     ...
-    if (item.version < oldItem.version) {
+    if (item.Version < oldItem.Version) 
+    {
         throw new ConcurrencyException(null, "VERSION_CONFLICT", "The change has older version stored value");
     }
     ...

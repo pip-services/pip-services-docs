@@ -2,7 +2,7 @@
 type: docs
 title: "Opener"
 linkTitle: "Opener"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that can be used to check whether all components are opened or not, a component is opened or not, and to open one or more components.
 ---
@@ -13,48 +13,48 @@ The Opener class can be used to check whether all components are opened or not, 
 
 ### Static methods
 
-#### isOpen
+#### IsOpen
 Checks if all components are opened.
 
 To be checked components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method returns true.
 
-> `public static` isOpen(components: any[]): boolean
+> `public static` bool IsOpen(IEnumerable components)
 
-- **components**: any[] - a list of components that are to be checked.
-- **returns**: boolean - true if all components are opened and false if at least one component is closed.
+- **components**: IEnumerable - a list of components that are to be checked.
+- **returns**: bool - true if all components are opened and false if at least one component is closed.
 
-#### isOpenOne
+#### IsOpenOne
 Checks if specified component is opened.
 To be checked components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method returns true.
 
-> `public static` isOpenOne(component: any): boolean
+> `public static` bool IsOpenOne(object component)
 
-- **component**: any - the component that is to be checked.
-- **returns**: boolean - true if component is opened and false otherwise.
+- **component**: object - the component that is to be checked.
+- **returns**: bool - true if component is opened and false otherwise.
 
 
-#### open
+#### OpenAsync
 Opens multiple components.
 To be opened components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` open(correlationId: string, components: any[]): Promise\<void\>
+> `public static` Task OpenAsync(string correlationId, IEnumerable components)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - the list of components that are to be closed.
+- **components**: IEnumerable - the list of components that are to be closed.
 
 
-#### openOne
+#### OpenOneAsync
 Opens specific component.
 To be opened components must implement [IOpenable](../iopenable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` openOne(correlationId: string, component: any): Promise\<void\>
+> `public static` Task OpenOneAsync(string correlationId, object component)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be opened.
+- **component**: object - the component that is to be opened.
 
 
 

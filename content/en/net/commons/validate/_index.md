@@ -3,7 +3,7 @@ type: docs
 title: "Validate"
 linkTitle: "Validate"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     The Validate package contains interfaces and classes that can be used to create custom validation rules; such as rules based on combinations of the logical operators AND, OR and NOT.
  

@@ -2,14 +2,14 @@
 type: docs
 title: "Parameters"
 linkTitle: "Parameters"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Contains map with execution parameters.
 
 
 ---
 
-**Extends:** [AnyValueMap](../../data/any_value_map)
+**Implements:** [AnyValueMap](../../data/any_value_map)
 
 ### Description
 
@@ -24,171 +24,196 @@ Important points
 ### Constructors
 Creates a new instance of the map and assigns its value.
 
-> `public` constructor(map: any = null)
+> `public` Parameters(IDictionary map)
 
-- **map**: any - (optional) values to initialize this map.
+- **map**: IDictionary - (optional) values to initialize this map.
+
+Creates a new instance of the map.
+
+> `public` Parameters()
 
 ### Instance methods
 
-#### assignTo
+#### AssignTo
 Assigns (copies over) properties from the specified value to this map.
 
-> `public` assignTo(value: any): void
+> `public` void AssignTo(object value)
 
-- **value**: any - value whose properties shall be copied over.
+- **value**: object - value whose properties shall be copied over.
 
-#### containsKey
+#### ContainsKey
 Checks if this map contains an element with specified key.
 
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> `public` containsKey(key: string): boolean
+> `public` bool ContainsKey(string key)
 
 - **key**: string - a key to be checked
-- **returns**: boolean - true if this map contains the key or false otherwise.
+- **returns**: bool - true if this map contains the key or false otherwise.
 
-#### get
+#### Get
 Gets a map element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> `public` get(key: string): any
+> `public override` object Get(string key)
 
 - **key**: string - a key of the element to get.
-- **returns**: any - the value of the map element.
+- **returns**: object - the value of the map element.
 
 
-#### getAsNullableParameters
+#### GetAsNullableParameters
 Converts map element into an Parameters or returns null if conversion is not possible.
 
-> `public` getAsNullableParameters(key: string): [Parameters](../parameters)
+> `public` [Parameters](../parameters) GetAsNullableParameters(string key) 
 
 - **key**: string - a key of element to get.
 - **returns**: [Parameters](../parameters) - Parameters value of the element or null if conversion is not supported.
 
-#### getAsParameters
+#### GetAsParameters
 Converts map element into an Parameters or returns empty Parameters if conversion is not possible.
 
-> `public` getAsParameters(key: string): [Parameters](../parameters)
+> `public` [Parameters](../parameters) GetAsParameters(string key)
 
 - **key**: string - a key of element to get.
 - **returns**: [Parameters](../parameters) - Parameters value of the element or empty Parameters if conversion is not supported.
 
 
-#### getAsParametersWithDefault
+#### GetAsParametersWithDefault
 Converts map element into an Parameters or returns default value if conversion is not possible.
 
-> `public` getAsParametersWithDefault(key: string, defaultValue: [Parameters](../parameters)): [Parameters](../parameters)
+> `public` [Parameters](../parameters) GetAsParametersWithDefault(string key, [Parameters](../parameters) defaultValue)
 
 - **key**: string - a key of element to get.
 - **defaultValue**: [Parameters](../parameters) - the default value
 - **returns**: [Parameters](../parameters) - Parameters value of the element or default value if conversion is not supported.
 
 
-#### omit
+#### Omit
 Omits selected parameters from this Parameters and returns the rest as a new Parameters object.
 
-> `public` omit(...paths: string[]): [Parameters](../parameters)
+> `public` [Parameters](../parameters) Omit(params string[] paths)
 
 - **paths**: string[] - keys to be omitted from copying over to new [Parameters](../parameters).
 - **returns**: [Parameters](../parameters) - a new [Parameters](../parameters) object.
 
 
-#### override
+#### Override
+Overrides parameters with new values from specified [Parameters](../parameters) and returns a new [Parameters](../parameters) object.
 
-> `public` override(parameters: [Parameters](../parameters), recursive: boolean = false): [Parameters](../parameters)
+> `public` [Parameters](../parameters) Override([Parameters](../parameters) parameters)
 
 - **parameters**: [Parameters](../parameters) - Parameters with parameters to override the current values.
-- **recursive**: boolean - (optional) true to perform deep copy, and false for shallow copy. Default: false
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### pick
+#### Override
+Overrides parameters with new values from specified [Parameters](../parameters) and returns a new [Parameters](../parameters) object.
+
+> `public` [Parameters](../parameters) Override([Parameters](../parameters) parameters, bool recursive)
+
+- **parameters**: [Parameters](../parameters) - Parameters with parameters to override the current values.
+- **recursive**: bool - (optional) true to perform deep copy, and false for shallow copy. Default: false
+- **returns**: [Parameters](../parameters) - a new Parameters object.
+
+
+#### Pick
 Picks select parameters from this Parameters and returns them as a new Parameters object.
 
-> `public` pick(...paths: string[]): [Parameters](../parameters)
+> `public` [Parameters](../parameters) Pick(params string[] paths) 
 
 - **paths**: string[] - keys to be picked and copied over to new Parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### put
-Puts a new value into map element specified by its key.
+#### Set
+Sets a new value into map element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> `public` put(key: string, value: any): any
+> `public override` void Set(string key, object value)
 
 - **key**: string - a key of the element to put.
-- **value**: any - a new value for map element.
+- **value**: object - a new value for map element.
 
-#### setDefaults
+#### SetDefaults
 Set default values from specified Parameters and returns a new Parameters object.
 
-> `public` setDefaults(defaultParameters: [Parameters](../parameters), recursive: boolean = false): [Parameters](../parameters)
+> `public` [Parameters](../parameters) SetDefaults([Parameters](../parameters) defaultParameters)
 
 - **defaultParameters**: [Parameters](../parameters) - Parameters with default parameter values.
-- **recursive**: boolean - (optional) true to perform deep copy, and false for shallow copy. Default: false
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### toJson
-Converts this map to JSON object.
+#### SetDefaults
+Set default values from specified Parameters and returns a new Parameters object.
 
-> `public` toJson(): string
+> `public` [Parameters](../parameters) SetDefaults([Parameters](../parameters) defaultParameters, bool recursive)
 
-- **returns**: string - a JSON representation of this map.
+- **defaultParameters**: [Parameters](../parameters) - Parameters with default parameter values.
+- **recursive**: bool - (optional) true to perform deep copy, and false for shallow copy. Default: false
+- **returns**: [Parameters](../parameters) - a new Parameters object.
+
 
 ### Static methods
 
-#### fromConfig
+#### FromConfig
 Creates new Parameters from ConfigMap object.
 See [ConfigParams](../../config/config_params)
 
-> `public static` fromConfig(config: [ConfigParams](../../config/config_params)): [Parameters](../parameters) 
+> `public static` [Parameters](../parameters) FromConfig([ConfigParams](../../config/config_params) config) 
 
 - **config**: [ConfigParams](../../config/config_params) - a ConfigParams that contain parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### fromJson
+#### FromJson
 Creates new Parameters from ConfigMap object.
 
-> `public static` fromJson(json: string): [Parameters](../parameters) 
+> `public static` [Parameters](../parameters) FromJson(string json)
 
 - **config**: string - a json string that contain parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
-#### fromTuples
+#### FromTuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
-See [AnyValueMap.fromTuplesArray](../../data/any_value_map/#fromtuplesarray)
+See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 
-> `public static` fromTuples(...tuples: any[]): [Parameters](../parameters) 
+> `public static` [Parameters](../parameters) FromTuples(params object[] tuples)
 
-- **tuples**: any[] - a ConfigParams that contain parameters.
+- **tuples**: object[] - a ConfigParams that contain parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### fromValue
+#### FromValue!
+**TODO: this method is not realized yet for this language**
 Creates a new Parameters object filled with key-value pairs from specified object.
 
-> `public static` fromValue(value: any): [Parameters](../parameters) 
+> `public static` [Parameters](../parameters) FromValue(object value)
 
-- **tuples**: any - an object with key-value pairs used to initialize a new Parameters.
+- **tuples**: object - an object with key-value pairs used to initialize a new Parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
 
-#### mergeParams
+#### MergeParams
 Merges two or more Parameters into one. The following Parameters override
 previously defined parameters.
 See [AnyValueMap.fromMaps](../../data/any_value_map/#frommaps)
 
-> `public static` mergeParams(...parameters: [Parameters](../parameters)[]): [Parameters](../parameters) 
+> `public static` [Parameters](../parameters) MergeParams(params [Parameters](../parameters)[] parameters)
 
 - **parameters**: [Parameters](../parameters)[] - a list of Parameters objects to be merged.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
+
+
+#### ToJson
+Converts this map to JSON object.
+
+> `public string` string ToJson()
+
+- **returns**: string - a JSON representation of this map.
 
 
 ### See also

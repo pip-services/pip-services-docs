@@ -2,7 +2,7 @@
 type: docs
 title: "BooleanConverter"
 linkTitle: "BooleanConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The BooleanConverter class allows you to convert different values to boolean values using extended conversion rules.
     
@@ -21,43 +21,43 @@ The BooleanConverter class allows you to convert different values to boolean val
 
 ### Static methods
 
-#### toBoolean
+#### ToBoolean
 Converts value into boolean or returns false when conversion is not possible.
 
-> `public static` toBoolean(value: any): boolean
+> `public static` boolean ToBoolean(object value)
 
-- **value**: any - the value to convert.
+- **value**: object - the value to convert.
 - **returns**: boolean - boolean value or false when conversion is not supported.
 
-#### toBooleanWithDefault
+#### ToBooleanWithDefault
 Converts value into boolean or returns default value when conversion is not possible
 
-> `public static` toBooleanWithDefault(value: any, defaultValue: boolean = false): boolean
+> `public static` bool ToBooleanWithDefault(object value, bool defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: boolean - the default value
-- **returns**: boolean - boolean value or default when conversion is not supported.
+- **value**: object - the value to convert.
+- **defaultValue**: bool - the default value
+- **returns**: bool - boolean value or default when conversion is not supported.
 
 
-#### toNullableBoolean
+#### ToNullableBoolean
 Converts value into boolean or returns null when conversion is not possible.
 
-> `public static` toNullableBoolean(value: any): boolean
+> `public static` bool toNullableBoolean(object value)
 
-- **value**: any - the value to convert.
-- **returns**: boolean - boolean value or null when convertion is not supported.
+- **value**: object - the value to convert.
+- **returns**: bool - boolean value or null when convertion is not supported.
 
 ### Examples
 
-```typescript
-let value1 = BooleanConverter.toNullableBoolean(True)     // Returns True
-let value2 = BooleanConverter.toNullableBoolean("yes")    // Returns True
-let value3 = BooleanConverter.toNullableBoolean(123)      // Returns None
-let value4 = BooleanConverter.toNullableBoolean({})       // Returns None
+```cs
+var value1 = BooleanConverter.ToNullableBoolean(True);     // Returns True
+var value2 = BooleanConverter.ToNullableBoolean("yes");    // Returns True
+var value3 = BooleanConverter.ToNullableBoolean(123);      // Returns None
+var value4 = BooleanConverter.ToNullableBoolean({});       // Returns None
 
-let value5 = BooleanConverter.toBooleanWithDefault(True,"verdadero")     // Returns True
-let value6 = BooleanConverter.toBooleanWithDefault(123,"verdadero")      // Returns verdadero
+var value5 = BooleanConverter.ToBooleanWithDefault(True,"verdadero");     // Returns True
+var value6 = BooleanConverter.ToBooleanWithDefault(123,"verdadero");      // Returns verdadero
 
-let value7 = BooleanConverter.to_boolean("yes")     // Returns True
+var value7 = BooleanConverter.ToBoolean("yes");     // Returns True
 
 ```

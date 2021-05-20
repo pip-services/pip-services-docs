@@ -2,7 +2,7 @@
 type: docs
 title: "DataPage"
 linkTitle: "DataPage"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Data transfer object that is used to pass the results of a paginated query.
     This object contains items of the retrieved page.
@@ -23,34 +23,48 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> `public` constructor(data: T[] = null, total: number = null)
+> `public` DataPage(List\<T\> data, long? total = null)
 
-- **data**: T[] - a list of items from the retrieved page.
-- **total**: number - total amount of items in a request.
+- **data**: List\<T\> - a list of items from the retrieved page.
+- **total**: long - total amount of items in a request.
 
-### Fields
+
+Creates a new instance of data page.
+
+> `public` DataPage()
+
+
+
+### Properties
 
 
 <span class="hide-title-link">
 
 #### data
 The items of the retrieved page.
-> `public` **data**: T[]
+> `public` List\<T\> **Data** [ get, set ]
 
 #### total
 The total amount of items in a request.
-> `public` **total**: number
+> `public` long **Total** [ get, set ]
 
 </span>
 
 
 ### Examples
 
-```typescript
-page := await myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    new PagingParams(0, 100, true)
+```cs
+myDataClient.GetDataByFilter(
+    "123", 
+    FilterParams.FromTuples("completed", true),
+    new PagingParams(0, 100, true),
+    async(DataPage<MyData> page) => {
+    Console.WriteLine("Items: ");
+    for (MyData item : page.getData()) {
+        Console.WriteLine(item);
+    }
+    Console.WriteLine("Total items: " + page.getTotal());
+    };
 );
 
 ```

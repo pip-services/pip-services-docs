@@ -2,13 +2,13 @@
 type: docs
 title: "IOpenable"
 linkTitle: "IOpenable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface that allows you to create components with explicit opening and closing.
 
 ---
 
-**Extends:** [IClosable](../iclosable)
+**Implements:** [IClosable](../iclosable)
 
 ### Description
 
@@ -20,42 +20,47 @@ Important points
 
 ### Methods
 
-#### isOpen
+#### IsOpen
 Checks if the component is opened.
 
-> isOpen(): boolean
+> bool IsOpen()
 
-#### open
+- **returns**: bool - true if the component has been opened and false otherwise.
+
+#### OpenAsync
 Opens the component.
 
-> open(correlationId: string): Promise\<void\>
+> Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 ### Examples
 
-```typescript
-class MyPersistence implements IOpenable {
-    private _client: any;
+```cs
+class MyPersistence: IOpenable 
+{
+    private object _client;
     ...
-    public isOpen(): boolean {
+    public bool IsOpen()
+    {
         return this._client != null;
-    } 
-    
-    public async open(correlationId: string): Promise<void> {
-        if (this.isOpen()) {
+    }
+    public void Open(string correlationId)
+    {
+        if (this.isOpen())
+        {
             return;
         }
         ...
     }
-    
-    public async close(correlationId: string): Promise<void> {
-        if (this._client != null) {
-            this._client.close();
+    public void Close(string correlationId)
+    {
+        if (this._client != null)
+        {
+            this._client.Close();
             this._client = null;
         }
     }
-   
     ...
 }
 ```

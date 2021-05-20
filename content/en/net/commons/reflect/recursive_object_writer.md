@@ -2,7 +2,7 @@
 type: docs
 title: "RecursiveObjectWriter"
 linkTitle: "RecursiveObjectWriter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to dynamically set the properties of an object recursively using "dot" notation.
  
@@ -19,18 +19,18 @@ Important points
 
 ### Static methods
 
-#### copyProperties
+#### CopyProperties
 Copies content of one object to another object
 by recursively reading all properties from source object
 and then recursively writing them to destination object.
 
-> `public static` copyProperties(dest: any, src: any): void
+> `public static` void CopyProperties(object dest, object src)
 
-- **dest**: any - a destination object to write properties to.
-- **src**: any - a source object to read properties from
+- **dest**: object - a destination object to write properties to.
+- **src**: object - a source object to read properties from
 
 
-#### setProperties
+#### SetProperties
 Recursively sets values of some (all) object and its subobjects properties.
 
 The object can be a user defined object, map or array.
@@ -40,13 +40,13 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> `public static` setProperties(obj: any, values: any): void
+> `public static` void SetProperties(object obj, IDictionary\<string, object\> values)
 
-- **obj**: any - an object to write properties to. 
-- **values**: any - a map, containing property names and their values.
+- **obj**: object - an object to write properties to. 
+- **values**: IDictionary\<string, object\> - a map, containing property names and their values.
 
 
-#### setProperty
+#### SetProperty
 Recursively sets value of object and its subobjects property specified by its name.
 
 The object can be a user defined object, map or array.
@@ -56,11 +56,11 @@ map key or array index.
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't any throw errors.
 
-> `public static` setProperty(obj: any, name: string, value: any): void
+> `public static` void SetProperty(object obj, string name, object value)
 
-- **obj**: any - an object to write property to.
+- **obj**: object - an object to write property to.
 - **name**: string - a name of the property to set.
-- **value**: any - a new value for the property to set.
+- **value**: object - a new value for the property to set.
 
 
 

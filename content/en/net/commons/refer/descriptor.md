@@ -2,7 +2,7 @@
 type: docs
 title: "Descriptor"
 linkTitle: "Descriptor"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Component locator based on group, type, kind, name and version of the component.
 ---
@@ -19,7 +19,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 Important points
 
 - The locator matching can be done by all or only few selected fields. 
-- The fields that shall be excluded from the matching must be set to *"*"* or *None*.
+- The fields that shall be excluded from the matching must be set to *"*"* or *null*.
 - This approach allows to implement many interesting scenarios. For instance:
     - Locate all loggers (match by type and version)  
     - Locate persistence components for a microservice (match by group and type)  
@@ -28,7 +28,7 @@ Important points
 ### Constructors
 Creates a new instance of the descriptor.
 
-> `public` constructor(group: string, type: string, kind: string, name: string, version: string): [Descriptor]()
+> `public` Descriptor(string group, string type, string kind, string name, string version)
 
 - **group**: string - a logical component group
 - **type**: string - a logical component type or contract
@@ -37,102 +37,111 @@ Creates a new instance of the descriptor.
 - **version**: string - a component implementation version
 
 
+### Properties
+
+#### Group
+Gets the component's logical group.
+> `public` string Group [ get, private set ]
+
+- **returns**: string - the component's logical group
+
+#### Type
+> `public` string Type [ get, private set ]
+
+#### Kind
+Gets the component's implementation type.
+> `public` string Kind [ get, private set ]
+
+- **returns**: string - the component's implementation type.
+
+#### Name
+Gets the unique component's name.
+> `public` string Name [ get, private set ]
+
+- **returns**: string - the unique component's name.
+
+#### Version
+Gets the component's implementation version.
+> `public` string Version [ get, private set ]
+
+- **returns**: string - the component's implementation version.
+
+
+
 ### Instance methods
 
-#### equals
+#### Equals
 Compares this descriptor to a value.
 If value is a Descriptor it tries to match them,
 otherwise the method returns false.
 
-> `public` equals(value: any): boolean
+> `public override` bool Equals(object obj)
 
-- **value**: any - the value to match against this descriptor.
-- **returns**: boolean - true if the value is matching descriptor and false otherwise.
+- **obj**: object - the value to match against this descriptor.
+- **returns**: bool - true if the value is matching descriptor and false otherwise.
 
-#### exactMatch
+#### ExactMatch
 Matches this descriptor to another descriptor by all fields.
 No exceptions are made.
 
-> `public` exactMatch(descriptor: [Descriptor]()): boolean
+> `public` bool ExactMatch([Descriptor]() descriptor)
 
 - **descriptor**: [Descriptor]() - the descriptor to match this one against.
-- **returns**: boolean - true if descriptors match and false otherwise. 
+- **returns**: bool - true if descriptors match and false otherwise. 
 
+#### GetHashCode
+TODO add description
 
-#### getGroup
-Gets the component's logical group.
+> `public override` int GetHashCode()
 
-> `public` getGroup(): string
+- **returns**: int - TODO: add description
 
-- **returns**: string - the component's logical group
-
-#### getKind
-Gets the component's implementation type.
-
-> `public` getKind(): string
-
-- **returns**: string - the component's implementation type.
-    
-
-#### getName
-Gets the unique component's name.
-
-> `public` getName(): string
-
-- **returns**: string - the unique component's name.
-
-#### getVersion
-Gets the component's implementation version.
-
-> `public` getVersion(): string
-
-- **returns**: string - the component's implementation version.
-
-#### isComplete
+#### IsComplete
 Checks whether all descriptor fields are set.
 If descriptor has at least one "*" or null field it is considered "incomplete",
 
-> `public` isComplete(): boolean
+> `public` bool IsComplete()
 
-- **returns**: boolean - true if all descriptor fields are defined and false otherwise.
+- **returns**: bool - true if all descriptor fields are defined and false otherwise.
 
-#### match
+
+#### Match
 Partially matches this descriptor to another descriptor.
 Fields that contain "*" or null are excluded from the match.
 
-> `public` match(descriptor: [Descriptor]()): boolean
+> `public` bool Match([Descriptor]() descriptor)
 
 - **descriptor**: [Descriptor]() the descriptor to match this one against.
-- **returns**: boolean - true if descriptors match and false otherwise 
+- **returns**: bool - true if descriptors match and false otherwise 
 
-#### toString
+#### ToString
 Gets a string representation of the object.
 The result is a colon-separated list of descriptor fields as
 *"mygroup:connector:aws:default:1.0"*
 
-> `public` toString(): string
+> `public override` string ToString()
 
 - **returns**: string - a string representation of the object.
 
 ### Static methods
 
-#### fromString
+#### FromString
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
-> `public static` fromString(value: String): [Descriptor]()
+> `public static` [Descriptor]() FromString(string value)
 
-- **value**: String - colon-separated descriptor fields to initialize Descriptor.
+- **value**: string - colon-separated descriptor fields to initialize Descriptor.
 - **returns**: [Descriptor]() - a newly created Descriptor.
 
 ### Examples
 
-```typescript
-let locator1 = new Descriptor("mygroup", "connector", "aws", "default", "1.0");
-let locator2 = Descriptor.fromString("mygroup:connector:*:*:1.0");
+```cs
+var locator1 = new Descriptor("mygroup", "connector", "aws", "default", "1.0");
+var locator2 = Descriptor.fromString("mygroup:connector:*:*:1.0");
 
-locator1.match(locator2);		// Result: true
-locator1.equal(locator2);		// Result: true
-locator1.exactMatch(locator2);	// Result: false
+locator1.match(locator2);       // Result: true
+locator1.equal(locator2);       // Result: true
+locator1.exactMatch(locator2);  // Result: false
 
 ```

@@ -166,7 +166,7 @@ Converts array element into a float or returns 0 if conversion is not possible.
 
 #### getAsFloatWithDefault
 Converts array element into a float or returns default value if conversion is not possible.   
-See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#toFloatWithDefault)
+See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > `public` getAsFloatWithDefault(index: number, defaultValue: number): number
 
@@ -362,7 +362,7 @@ See [StringConverter.toStringWithDefault](../../convert/string_converter/#tostri
 > `public` getAsStringWithDefault(index: number, defaultValue: string): string
 
 - **index**: number - an index of element to get.
-- **default_value**: string - the default value
+- **defaultValue**: string - the default value
 - **returns**: string - string value ot the element or default value if conversion is not supported.
 
 

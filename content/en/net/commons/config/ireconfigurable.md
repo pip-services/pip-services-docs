@@ -2,13 +2,13 @@
 type: docs
 title: "IReconfigurable"
 linkTitle: "IReconfigurable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     An interface used to set configuration parameters to an object.  
 
 ---
 
-**Extends:** [IConfigurable](../iconfigurable)
+**Implements:** [IConfigurable](../iconfigurable)
 
 See also [IConfigurable](../iconfigurable)
 
@@ -22,13 +22,15 @@ Important points:
 
 ### Examples
 
-```js
-export class MyClass implements IReconfigurable {
-	private _myParam: string = "default args";
+```cs
+public class MyClass:IReconfigurable 
+{
+	private var _myParam = "default args";
 
 	// Implement configure
-	public configure(config: ConfigParams): void  {
-    	this._myParam = config.getAsStringWithDefault("options.param", myParam);
+	public Task Configure(ConfigParams config)
+	{
+    	this._myParam = config.GetAsStringWithDefault("options.param", myParam);
     	...
 	}
 }

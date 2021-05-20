@@ -32,15 +32,11 @@ Throws an Error if the name is null.
 
 #### Name
 Gets the name of the event.
-> `public` string Name
-
-- **returns**: string - the name of this event.
+> `public` string Name [ get ]
 
 #### Listeners
 Gets all listeners registered in this event.
-> `public` List<[IEventListener](../ievent_listener)> Listeners
-
-- **returns**: List<[IEventListener](../ievent_listener)> - all listeners registered in this event.
+> `public` List<[IEventListener](../ievent_listener)> Listeners [ get ]
 
 
 ### Instance methods

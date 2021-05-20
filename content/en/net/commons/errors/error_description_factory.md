@@ -2,7 +2,7 @@
 type: docs
 title: "ErrorDescriptionFactory"
 linkTitle: "ErrorDescriptionFactory"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Factory used to create a serializeable [ErrorDescription](../error_description) from [ApplicationException](../application_exception)
     or from arbitrary errors.  
@@ -20,13 +20,24 @@ Important points
 
 ### Static methods
 
-#### create
+#### Create
 Creates a serializable ErrorDescription from error object.
 
-> `public static` create(error: any): [ErrorDescription](../error_description)
+> `public static` [ErrorDescription](../error_description) Create([ApplicationException](../application_exception) error)
 
-- **error**: any - an error object
+- **error**: [ApplicationException](../application_exception) - an error object
 - **returns**: [ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+
+
+#### Create
+Creates a serializable ErrorDescription from throwable object with unknown error category.
+
+> `public static` [ErrorDescription](../error_description) Create(Exception ex, string correlationId = null)		
+
+- **ex**: Exception - an error object
+- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
+- **returns**: [ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+
 
 ### See also
 - #### [ApplicationException](../application_exception)

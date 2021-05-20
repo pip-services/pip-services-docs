@@ -429,7 +429,6 @@ Removes an array element specified by its index.
 #### set_as_object
 Sets a new value to array element specified by its index.
 When the index is not defined, it resets the entire array value.
-This method has double purpose because method overrides are not supported in JavaScript.  
 See [ArrayConverter.to_array](../../convert/array_converter/#to_array).
 
 > set_as_object(index: int, value: Any = None)

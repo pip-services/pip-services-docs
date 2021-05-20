@@ -2,7 +2,7 @@
 type: docs
 title: "RandomBoolean"
 linkTitle: "RandomBoolean"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Random generator for boolean values.
 ---
@@ -13,27 +13,27 @@ The RandomBoolean class allows you to generate random boolean values.
 
 ### Static methods
 
-#### chance
+#### Chance
 Calculates "chance" out of "max chances".
 Example: 1 chance out of 3 chances (or 33.3%)
 
-> `public static` chance(chance: number, maxChances: number): boolean
+> `public static` bool Chance(float chance, float maxChances)
 
-- **chance**: number - a chance proportional to maxChances.
-- **maxChances**: number - a maximum number of chances
-- **returns**: boolean - TODO add description
+- **chance**: float - a chance proportional to maxChances.
+- **maxChances**: float - a maximum number of chances
+- **returns**: bool - true or false for settled chance
 
-#### nextBoolean
+#### NextBoolean
 Generates a random boolean value.
 
-> `public static` nextBoolean(): boolean
+> `public static` bool NextBoolean()
 
-- **returns**: boolean - a random boolean.
+- **returns**: bool - a random boolean.
 
 ### Examples
 
-```typescript
-let value1 = RandomBoolean.nextBoolean()   // Possible result: True
-let value2 = RandomBoolean.chance(1,3)     // Possible result: False
+```cs
+var value1 = RandomBoolean.NextBoolean();    // Possible result: true
+var value2 = RandomBoolean.Chance(1,3);      // Possible result: false
 
 ```

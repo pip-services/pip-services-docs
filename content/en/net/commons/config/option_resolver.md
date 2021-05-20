@@ -2,7 +2,7 @@
 type: docs
 title: "OptionResolver"
 linkTitle: "OptionResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     A helper class to parameters from "options" configuration section.
 ---
@@ -11,13 +11,10 @@ The OptionResolver class can be use to obtain all the parameters under the secti
 
 ### Static methods
 
-#### resolve
-Returns a ConfigParams object containing all the parameters under the section "option".
-
-#### resolve
+#### Resolve
 Resolves an "options" configuration section from component configuration parameters.
 
-> `static` resolve(config: [ConfigParams](../config_params), configAsDefault: boolean = false): [ConfigParams](../config_params)
+> `public static` [ConfigParams](../config_params) resolve([ConfigParams](../config_params) config, boolean configAsDefault = true)
 
 - **config**: [ConfigParams](../config_params) - configuration parameters
 - **configAsDefault**: boolean - (optional) When set true the method returns the entire parameter set when "options" section is not found. Default: false
@@ -25,19 +22,19 @@ Resolves an "options" configuration section from component configuration paramet
 
 ### Examples
 
-```typescript
-let config = ConfigParams.fromTuples(
+```cs
+var config = ConfigParams.FromTuples(
   "abc.param1", "ABC",
   "options.param1", "ABC",
-  "options.param2", 123)
+  "options.param2", 123);
 
-let options = OptionsResolver.resolve(config)           // Returns {'param1': 'ABC', 'param2': '123'}
+var options = OptionsResolver.Resolve(config);  // Returns {'param1': 'ABC', 'param2': '123'}
 
 // If the configuration doesn't contain an "options" section, it returns an empty ConfigParams object.
-config = ConfigParams.fromTuples(
+config = ConfigParams.FromTuples(
           "section1.key1", "AAA",
           "section1.key2", 123,
           );
-options = OptionsResolver.resolve(config);           // Returns {}
+options = OptionsResolver.Resolve(config);  // Returns {}
 
 ```

@@ -2,7 +2,7 @@
 type: docs
 title: "IntegerConverter"
 linkTitle: "IntegerConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The IntegerConverter class allows you to convert arbitrary values into integers using extended conversion rules.
 
@@ -18,42 +18,42 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 
 ### Static methods
 
-#### toInteger
+#### ToInteger
 Converts value into integer or returns 0 when conversion is not possible.  
 See [LongConverter.toLong](../long_converter/#tolong),  
-[LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault)
+[LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
 
-> `public static` toInteger(value: any): number
+> `public static` int ToInteger(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - integer value or 0 when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: int - integer value or 0 when conversion is not supported.
 
-#### toIntegerWithDefault
+#### ToIntegerWithDefault
 Converts value into integer or returns default value when conversion is not possible.
 See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),  
 [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
-> `public static` toIntegerWithDefault(value: any, defaultValue: number): number
+> `public static` int ToIntegerWithDefault(object value, int defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: number - the default value.
-- **returns**: number - integer value or default when conversion is not supported. 
+- **value**: object - the value to convert.
+- **defaultValue**: int - the default value.
+- **returns**: int - integer value or default when conversion is not supported. 
 
-#### toNullableInteger
+#### ToNullableInteger
 Converts value into integer or returns null when conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
-> `public static` toNullableInteger(value: any): number
+> `public static` int ToNullableInteger(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - integer value or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: int - integer value or null when conversion is not supported.
 
 ### Examples
 
-```typescript
-let value1 = IntegerConverter.toNullableInteger("ABC"); // Result: null
-let value2 = IntegerConverter.toNullableInteger("123.456"); // Result: 123
-let value3 = IntegerConverter.toNullableInteger(true); // Result: 1
-let value4 = IntegerConverter.toNullableInteger(new Date()); // Result: current milliseconds (E.g. 1619869474907)
+```cs
+var value1 = IntegerConverter.ToNullableInteger("ABC"); // Result: null
+var value2 = IntegerConverter.ToNullableInteger("123.456"); // Result: 123.456
+var value3 = IntegerConverter.ToNullableInteger(true); // Result: 1
+var value4 = IntegerConverter.ToNullableInteger(new Date()); // Result: current milliseconds
 
 ```

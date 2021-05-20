@@ -2,12 +2,12 @@
 type: docs
 title: "SortParams"
 linkTitle: "SortParams"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Defines a list of field names used to sort query results.
 ---
 
-**Extends:** Array\<[SortField](../sort_field)\>
+**Implements:** List\<[SortField](../sort_field)\>
 
 ### Description
 
@@ -16,18 +16,24 @@ The SortParams class allows you to define a list of field names used to sort que
 ### Constructors
 Creates a new instance and initializes it with specified sort fields.
 
-> `public` constructor(...fields: [SortField](../sort_field)[]): [SortParams]()
+> `public` SortParams(IEnumerable<[SortField](../sort_field)> fields = null)
 
-- **fields**: [SortField](../sort_field)[] - a list of fields to sort by.
+- **fields**: IEnumerable<[SortField](../sort_field)> - a list of fields to sort by.
+
+Creates a new instance and initializes it with specified sort fields.
+
+> `public` SortParams([AnyValueArray](../any_value_array) fields)
+
+- **fields**: [AnyValueArray](../any_value_array) - a list of fields to sort by.
 
 
 ### Examples
-```typescript
-let filter = FilterParams.fromTuples("type", "Type1");
-let paging = new PagingParams(0, 100);
-let sorting = new SortingParams(new SortField("create_time", true));
+```cs
+var filter = FilterParams.FromTuples("type", "Type1");
+var paging = new PagingParams(0, 100);
+var sorting = new SortParams(new SortField("create_time", true));
 
-myDataClient.getDataByFilter(filter, paging, sorting, (err, page) => {...});
+myDataClient.GetDataByFilter(filter, paging, sorting);
 
 ```
 

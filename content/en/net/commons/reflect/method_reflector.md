@@ -2,7 +2,7 @@
 type: docs
 title: "MethodReflector"
 linkTitle: "MethodReflector"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
@@ -18,40 +18,39 @@ Important points
 
 ### Static methods
 
-#### getMethodNames
+#### GetMethodNames
 Gets names of all methods implemented in specified object.
 
-> `public static` getMethodNames(obj: any): string[]
+> `public static` IEnumerable\<string\> GetMethodNames(object obj)
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with method names.
+- **obj**: object - an objec to introspect.
+- **returns**: IEnumerable\<string\> - a list with method names.
 
-#### hasMethod
+#### HasMethod
 Checks if object has a method with specified name..
 
-> `public static` hasMethod(obj: any, name: string): boolean
+> `public static` bool HasMethod(object obj, string name)
 
-- **obj**: any - an object to introspect.
+- **obj**: object - an object to introspect.
 - **name**: string - a name of the method to check.
-- **returns**: boolean - true if the object has the method and false if it doesn't.
+- **returns**: bool - true if the object has the method and false if it doesn't.
 
-#### invokeMethod
+#### InvokeMethod
 Invokes an object method by its name with specified parameters.
 
-> `public static` invokeMethod(obj: any, name: string, ...args: any[]): any
+> `public static` object InvokeMethod(object obj, string name, params object[] args)
 
-- **obj**: any - an object to invoke.
+- **obj**: object - an object to invoke.
 - **name**: string -a name of the method to invoke.
-- **args**: any[] - a list of method arguments.
-- **returns**: any - the result of the method invocation or null if method returns void.
+- **args**: object[] - a list of method arguments.
+- **returns**: object - the result of the method invocation or null if method returns void.
 
 ### Examples
 
-```typescript
-let myObj = new MyObject();
-  
-let methods = MethodReflector.getMethodNames();
-MethodReflector.hasMethod(myObj, "myMethod");
-MethodReflector.invokeMethod(myObj, "myMethod", 123);
+```cs
+var myObj = new MyObject();
+var methods = MethodReflector.GetMethodNames();
+MethodReflector.HasMethod(myObj, "myMethod");
+MethodReflector.InvokeMethod(myObj, "myMethod", 123);
 
 ```

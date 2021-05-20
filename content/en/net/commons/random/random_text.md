@@ -2,7 +2,7 @@
 type: docs
 title: "RandomText"
 linkTitle: "RandomText"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Random generator for various text types such as names, addresses or phone numbers.
 ---
@@ -14,105 +14,125 @@ The RandomText class allows you to generate different types of randomt texts. Th
 
 ### Static methods
 
-#### adjective
+#### Adjective
 Generates a random adjective.
 The result value is capitalized.
 
-> `public static` adjective(): string 
+> `public static` string Adjective() 
 
 - **returns**: string - a random adjective.
 
-#### color
+#### Color
 Generates a random color name.
 The result value is capitalized.
 
-> `public static` color(): string
+> `public static` string Color()
 
-- **value**: string - a string to distort.
 - **returns**: string - a random color name.
 
-#### email
+#### Email
 Generates a random email address.
 
-> `public static` email(): string
+> `public static` string Email()
 
 - **returns**: string - a random email address.
 
-#### fullName
+#### Name
 Generates a random person's name which has the following structure
 \<optional prefix\> \<first name\> \<second name\> \<optional suffix\>
 
-> `public static` fullName(): string
+> `public static` string Name()
 
 - **returns**: string - a random name.
 
 
-#### noun
-Generates a random noun.
-The result value is capitalized.
-
-> `public static` noun(): string
-
-- **returns**: string - a random noun.
-
-#### phone
+#### Phone
 Generates a random phone number.
 The phone number has the format: (XXX) XXX-YYYY
 
-> `public static` phone(): string
+> `public static` string Phone()
 
 - **returns**: string -  a random phone number.
 
 
-#### phrase
-Generates a random phrase which consists of few words separated by spaces.
+#### Phrase
+Generates a random phrase which consists of few words separated by spaces. 
 The first word is capitalized, others are not.
 
-> `public static` phrase(minLength: number, maxLength: number = null): string 
+> `public static` string Phrase(int size) 
 
-- **minLength**: number - (optional) minimum string length.
-- **maxLength**: number -  maximum string length.
+- **size**: int - (optional) minimum string length.
 - **returns**: string -  a random phrase.
 
-#### text
+
+#### Phrase
+Generates a random phrase which consists of few words separated by spaces. 
+The first word is capitalized, others are not.
+
+> `public static` string Phrase(int minSize, int maxSize)  
+
+- **minSize**: int - (optional) minimum string length.
+- **maxSize**: int -  maximum string length.
+- **returns**: string -  a random phrase.
+
+
+#### Stuff
+Generates a random noun. The result value is capitalized.
+
+> `public static` string Stuff()
+
+- **returns**: string - a random noun.
+
+
+#### Text
 Generates a random text, consisting of first names, last names, colors, stuffs, adjectives, verbs, and punctuation marks.
 
-> `public static` text(minLength: number, maxLength: number = null): string
+> `public static` string Text(int size)
 
-- **minLength**: number - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
-- **maxLength**: number -  (optional) maximum amount of words to generate.
+- **size**: int - the size of text.
 - **returns**: string -  a random text.
 
-#### verb
+
+#### Text
+Generates a random text, consisting of first names, last names, colors, stuffs, adjectives, verbs, and punctuation marks.
+
+> `public static` string Text(int minSize, int maxSize)
+
+- **minSize**: int - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
+- **maxSize**: int -  (optional) maximum amount of words to generate.
+- **returns**: string -  a random text.
+
+
+#### Verb
 Generates a random verb.
 The result value is capitalized.
 
-> `public static` verb(): string
+> `public static` string Verb()
 
 - **returns**: string - a random verb.
 
 
-#### word
+#### Word
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> `public static` word(): string
+> `public static` string Word()
 
 - **returns**: string - a random word.
 
-#### words
+#### Words
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> `public static` words(min: number, max: number = null): string
+> `public static` string Words(int min, int max)
 
-- **min**: number - (optional) a minimum number of words.
-- **max**: number - a maximum number of words.
+- **min**: int - (optional) a minimum number of words.
+- **max**: int - a maximum number of words.
 - **returns**: string - a random text.
 
 ### Examples
 
-```typescript
-let value1 = RandomText.name();     // Possible result: "Segio"
-let value2 = RandomText.verb();      // Possible result: "Run"
-let value3 = RandomText.Text(50);    // Possible result: "Run jorge. Red high scream?"
+```cs
+var value1 = RandomText.Name();      // Possible result: "Sergio"
+var value2 = RandomText.Verb();      // Possible result: "Run"
+var value3 = RandomText.Text(50);    // Possible result: "Run jorge. Red high scream?"
 
 ```

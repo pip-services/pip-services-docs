@@ -2,7 +2,7 @@
 type: docs
 title: "TypeMatcher"
 linkTitle: "TypeMatcher"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to match value types based on equality.
  
@@ -19,46 +19,44 @@ Important points
 
 ### Static methods
 
-#### matchType
+#### MatchType
 Matches expected type to an actual type.
 The types can be specified as types, type names or [TypeCode](../../convert/type_code).
 
-> `public static` matchType(expectedType: any, actualType: [TypeCode](../../convert/type_code), actualValue: any = null): boolean
+> `public static` bool MatchType(object expectedType, Type actualType)
 
-- **expectedType**: any - an expected type to match.
-- **actualType**: [TypeCode](../../convert/type_code) - an actual type to match.
-- **actualValue**: any - an optional value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **expectedType**: object - an expected type to match.
+- **actualType**: Type - an actual type to match.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
-#### matchTypeByName
+#### MatchTypeByName
 
-> `public static` matchTypeByName(expectedType: string, actualType: [TypeCode](../../convert/type_code), actualValue: any = null): boolean
+> `public static` bool MatchTypeByName(expectedType: string, Type actualType)
 
 - **expectedType**: string - an expected type name to match. 
-- **actualType**: [TypeCode](../../convert/type_code) - an actual type to match defined by type code.
-- **actualValue**: any - an optional value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **actualType**: Type - an actual type to match defined by type code.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
-#### matchValueType
+#### MatchValue
 Matches expected type to a type of a value.
 The expected type can be specified by a type, type name or [TypeCode](../../convert/type_code).
 
-> `public static` matchValueType(expectedType: any, actualValue: any): boolean
+> `public static` bool MatchValue(object expectedType, object actualValue)
 
-- **expectedType**: any - an expected type to match.
-- **actualValue**: any -  a value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **expectedType**: object - an expected type to match.
+- **actualValue**: object -  a value to match its type to the expected one.
+- **returns**: bool - true if types are matching and false if they don't.
 
-#### matchValueTypeByName
+#### MatchValueByName
 Matches expected type to a type of a value.
 
-> `public static` matchValueTypeByName(expectedType: string, actualValue: any): boolean
+> `public static` bool MatchValueByName(string expectedType, object actualValue)
 
 - **expectedType**: any - an expected type name to match.
 - **actualValue**: any -  a value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
 ### See also

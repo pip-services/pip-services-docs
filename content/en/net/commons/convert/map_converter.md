@@ -2,7 +2,7 @@
 type: docs
 title: "MapConverter"
 linkTitle: "MapConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The MapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
 ---
@@ -15,37 +15,37 @@ The MapConverter class allows you to convert arbitrary values into map objects u
 
 ### Static methods
 
-#### toMap
+#### ToMap
 Converts value into map object or returns empty map when conversion is not possible
 
-> `public static` toMap(value: any): any
+> `public static` IDictionary\<string, object\> ToMap(object value)
 
-- **value**: any - the value to convert.
-- **returns**: any - map object or empty map when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: IDictionary\<string, object\> - map object or empty map when conversion is not supported.
 
-#### toMapWithDefault
+#### ToMapWithDefault
 Converts value into map object or returns default when conversion is not possible
 
-> `public static` toMapWithDefault(value: any, defaultValue: any): any
+> `public static` IDictionary\<string, object\> ToMapWithDefault(object value, IDictionary\<string, object\> defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: any - the default value.
-- **returns**: any - map object or empty map when conversion is not supported.
+- **value**: object - the value to convert.
+- **defaultValue**: IDictionary\<string, object\> - the default value.
+- **returns**: IDictionary\<string, object\> - map object or empty map when conversion is not supported.
 
-#### toNullableMap
+#### ToNullableMap
 Converts value into map object or returns null when conversion is not possible.
 
-> `public static` toNullableMap(value: any): any
+> `public static` IDictionary\<string, object\> ToNullableMap(object value)
 
-- **value**: any - the value to convert.
-- **returns**: any - map object or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: IDictionary\<string, object\> - map object or null when conversion is not supported.
 
 
 ### Examples
 
-```typescript
-let value1 = MapConverted.toNullableMap("ABC"); // Result: null
-let value2 = MapConverted.toNullableMap({ key: 123 }); // Result: { key: 123 }
-let value3 = MapConverted.toNullableMap([1,2,3]); // Result: { "0": 1, "1": 2, "2": 3 }
+```cs
+var value1 = MapConverted.ToNullableMap("ABC");                 // Result: null
+var value2 = MapConverted.ToNullableMap({ key: 123 });          // Result: { key: 123 }
+var value3 = MapConverted.ToNullableMap(new int[] { 1, 2, 3 }); // Result: { "0": 1, "1": 2, "2": 3 }
 
 ```

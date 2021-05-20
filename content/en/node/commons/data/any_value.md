@@ -154,7 +154,7 @@ See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#toi
 
 > `public` getAsIntegerWithDefault(defaultValue: number): number
 
-- **default_value**: number - the default value.
+- **defaultValue**: number - the default value.
 - **returns**: number -  integer value or default if conversion is not supported.
 
 
@@ -172,7 +172,7 @@ See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithde
 
 > `public` getAsLongWithDefault(defaultValue: number): number
 
-- **default_value**: number - the default value.
+- **defaultValue**: number - the default value.
 - **returns**: number -  long value or default if conversion is not supported. 
 
 
@@ -336,9 +336,9 @@ Sets a new value for this object
 Gets a string representation of the object.  
 See [StringConverter.toString](../../convert/string_converter/#tostring)
 
-> `public` toString(): any
+> `public` toString(): string
 
-- **returns**: any - a string representation of the object.
+- **returns**: string - a string representation of the object.
 
 
 ### Examples

@@ -2,7 +2,7 @@
 type: docs
 title: "DependencyResolver"
 linkTitle: "DependencyResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class for resolving component dependencies.  
 
@@ -33,10 +33,14 @@ Creates a new instance of the dependency resolver.
 
 See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 
-> `public` constructor(config?: [ConfigParams](../../config/config_params), references?: [IReferences](../ireferences))
+> `public` DependencyResolver([ConfigParams](../../config/config_params) config)
 
 - **config**: [ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
-- **references**: [IReferences](../ireferences) - (optional) default component references
+
+
+Creates a new instance of the dependency resolver.
+> `public` DependencyResolver()
+
 
 
 ### Instance methods
@@ -44,113 +48,172 @@ See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 #### configure
 Configures the component with specified parameters.
 
-> `public` configure(config: [ConfigParams](../../config/config_params)): void
+> `public` void Configure(config: [ConfigParams](../../config/config_params))
 
 - **config**: [ConfigParams](../../config/config_params) - configuration parameters to set.
 
-#### find
+
+#### Find
 Finds all matching dependencies by their name.
 
-> `public` find\<T\>(name: string, required: boolean): T[]
+> `public` List\<object\> Find(string name, bool required)
 
 - **name**: string - the dependency name to locate.
-- **required**: boolean - true to raise an exception when no dependencies are found.
-- **returns**: T[] - a list of found dependencies
+- **required**: bool - true to raise an exception when no dependencies are found.
+- **returns**: List\<object\> - a list of found dependencies
 
-#### getOneOptional
+#### Find
+Finds all matching dependencies by their name and matching to the specified type.
+**T** - the class type
+
+
+> `public` List\<T\> find\<T\>(string name, bool required)
+
+- **name**: string - the dependency name to locate.
+- **required**: bool - true to raise an exception when no dependencies are found.
+- **returns**: List\<T\> - a list of found dependencies
+
+#### GetOneOptional
 Gets one optional dependency by its name.
 
-> `public` getOneOptional\<T\>(name: string): T
+> `public` object GetOneOptional(name: string)
+
+- **name**: string - the dependency name to locate.
+- **returns**: object - a dependency reference or null of the dependency was not found
+
+#### GetOneOptional
+Gets one optional dependency by its name and matching to the specified type.
+**T** - the class type
+
+> `public` T GetOneOptional\<T\>(string name)
 
 - **name**: string - the dependency name to locate.
 - **returns**: T - a dependency reference or null of the dependency was not found
 
-#### getOneRequired
-Gets one required dependency by its name.
-At least one dependency must present.
-If the dependency was found it throws a [ReferenceException](../reference_exception)
+#### GetOneRequired
+Gets one required dependency by its name. 
+At least one dependency must present.If the dependency was found it throws a 
+[ReferenceException](../reference_exception)
 
-> `public` getOneRequired\<T\>(name: string): T
+> `public` object GetOneRequired\<T\>(string name)
+
+- **name**: string - the dependency name to locate.
+- **returns**: object - a dependency reference
+
+#### GetOneRequired
+Gets one required dependency by its name and matching to the specified type. 
+At least one dependency must present. 
+If the dependency was found it throws a [ReferenceException](../reference_exception)
+**T** - the class type.
+
+> `public` T GetOneRequired\<T\>(string name)
 
 - **name**: string - the dependency name to locate.
 - **returns**: T - a dependency reference
 
-#### getOptional
+
+#### GetOptional
 Gets all optional dependencies by their name.
 
-> `public` getOptional\<T\>(name: string): T[]
+> `public` List\<T\> GetOptional(string name)
 
 - **name**: string - the dependency name to locate.
-- **returns**: T[] - a list with found dependencies or empty list of no dependencies was found.
+- **returns**: List\<T\> - a list with found dependencies or empty list of no dependencies was found.
 
-#### getRequired
+
+#### GetOptional
+Gets all optional dependencies by their name.
+**T** - the class type.
+
+> `public` List\<T\> GetOptional\<T\>(string name)
+
+- **name**: string - the dependency name to locate.
+- **returns**: List\<T\> - a list with found dependencies or empty list of no dependencies was found.
+
+#### GetRequired
+Gets all required dependencies by their name. 
+At least one dependency must present.
+If no dependencies was found it throws a[ReferenceException](../reference_exception).
+
+> `public` List\<object\> GetRequired(string name)
+
+- **name**: string - the dependency name to locate.
+- **returns**: List\<T\> - a list with found dependencies.
+
+
+#### GetRequired
 Gets all required dependencies by their name.
 At least one dependency must be present.
-If no dependencies was found it throws a [ReferenceException](../reference_exception)
+If no dependencies was found it throws a [ReferenceException](../reference_exception).
+**T** - the class type
 
-> `public` getRequired\<T\>(name: string): T[]
+
+> `public` List\<T\> GetRequired\<T\>(string name)
 
 - **name**: string - the dependency name to locate.
-- **returns**: T[] - a list with found dependencies.
+- **returns**: List\<T\> - a list with found dependencies.
 
-#### put
+
+#### Put
 Adds a new dependency into this resolver.
 
-> `public` put(name: string, locator: any): void
+> `public` void Put(string name, any locator)
 
 - **name**: string - the dependency's name.
 - **locator**: any - the locator to find the dependency by.
 
-#### setReferences
+#### SetReferences
 Sets the component references. References must match configured dependencies.
 
-> `public` setReferences(references: [IReferences](../ireferences)): void
+> `public` void SetReferences([IReferences](../ireferences) references)
 
-- references: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../ireferences) - references to set.
 
 ### Static methods
 
-#### fromTuples
+#### FromTuples
 Creates a new DependencyResolver from a list of key-value pairs called tuples
 where key is dependency name and value the depedency locator (descriptor).
 
-> `public static` fromTuples(...tuples: any[]): [DependencyResolver]()
+> `public static` [DependencyResolver]() FromTuples(params object[] tuples)
 
-- **tuples**: any[] - a list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
+- **tuples**: object[] - a list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
 - **returns**: [DependencyResolver]() - a newly created DependencyResolver.
 
 ### Examples
 
-```typescript
-class MyComponent: IConfigurable, IReferenceable {
-    private _dependencyResolver: DependencyResolver = new DependencyResolver();
-    private _persistence: IMyPersistence;
+```cs
+class MyComponent: IConfigurable, IReferenceable 
+{
+    private DependencyResolver _dependencyResolver = new DependencyResolver();
+    private IMyPersistence _persistence;
     ...
     
-    public constructor() {
-        this._dependencyResolver.put("persistence", new Descriptor("mygroup", "persistence", "*", "*", "1.0"));
+    public MyComponent()
+    {
+        this._dependencyResolver.Put("persistence", new Descriptor("mygroup", "persistence", "*", "*", "1.0"));
     }
     
-    public configure(config: ConfigParams): void {
-        this._dependencyResolver.configure(config);
-    }  
+    public void Configure(ConfigParams config)
+    {
+        this._dependencyResolver.Configure(config);
+    }
     
-    public setReferences(references: IReferences): void {
-        this._dependencyResolver.setReferences(references);
-        this._persistence = this._dependencyResolver.getOneRequired<IMyPersistence>("persistence");
+    public void SetReferences(IReferences references)
+    {
+        this._dependencyResolver.SetReferences(references);
+        this._persistence = this._dependencyResolver.GetOneRequired<IMyPersistence>("persistence");
     }
 }
-     
+    /// 
 // Create mycomponent and set specific dependency out of many
-let component = new MyComponent();
-component.configure(ConfigParams.fromTuples(
-    "dependencies.persistence", "mygroup:persistence:*:persistence2:1.0" 
-// Override default persistence dependency
+var component = new MyComponent();
+component.Configure(ConfigParams.fromTuples(
+"dependencies.persistence", "mygroup:persistence:*:persistence2:1.0" // Override default persistence dependency
 ));
-component.setReferences(References.fromTuples(
-    new Descriptor("mygroup","persistence","*","persistence1","1.0"), new MyPersistence(),
-    new Descriptor("mygroup","persistence","*","persistence2","1.0"), new MyPersistence()  
-// This dependency shall be set
+component.SetReferences(References.fromTuples(
+new Descriptor("mygroup","persistence","*","persistence1","1.0"), new MyPersistence(),
+new Descriptor("mygroup","persistence","*","persistence2","1.0"), new MyPersistence()  // This dependency shall be set
 ));
 
 ```

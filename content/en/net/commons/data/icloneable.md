@@ -2,7 +2,7 @@
 type: docs
 title: "ICloneable"
 linkTitle: "ICloneable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Interface to create objects with binary clones.
 ---
@@ -13,26 +13,25 @@ The ICloneable interface allows you to create objects with binary clones.
 
 ### Instance methods
 
-#### clone
+#### Clone
 Creates a binary clone of this object.
 
-> clone(): any
+> object Clone()
 
-- **returns**: any - a clone of this object.
+- **returns**: object - a clone of this object.
 
 ### Examples
 
-```typescript
-export class MyClass implements IMyClass, ICloneable {
-  constructor() { };
- 
-  public clone(): any {
-      var cloneObj = new (<any>this.constructor());
-             
-      // Copy every attribute from this to cloneObj here.
-      ...
-             
-      return cloneObj;
-  }
+```cs
+public class MyClass: IMyClass, ICloneable 
+{
+    MyClass() { };
+    public object clone()
+    {
+        var cloneObj = new Object(this);
+        // Copy every attribute from this to cloneObj here.
+        ...
+        return cloneObj;
+    }
 }
 ```

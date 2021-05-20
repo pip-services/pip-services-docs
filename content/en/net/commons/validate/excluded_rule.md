@@ -2,7 +2,7 @@
 type: docs
 title: "ExcludedRule"
 linkTitle: "ExcludedRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Validation rule to check that one or more values are excluded from the list of constants.
 ---
@@ -16,31 +16,30 @@ The ExcludedRule allows you to verify that none of the values specified in the r
 ### Constructors
 Creates a new validation rule and sets its values
 
-> `public` constructor(...values: any[])
+> `public` ExcludedRule(params object[] values)
 
-- **values**: any[] - a list of constants that value must be excluded from
+- **values**: object[] - a list of constants that value must be excluded from
 
 ### Methods
 
-#### validate
+#### Validate
 Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void 
+> `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - the dot notation path to the value that is to be validated.
 - **schema**: [Schema](../schema) - (not used in this implementation).
-- **value**: any - the value that is to be validated.
-- **results**: [ValidationResult](../validation_result)[] - the results of the validation.
+- **value**: object - the value that is to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - the results of the validation.
 
 ### Examples
 
-```typescript
-let schema = new Schema()
-    .withRule(new ExcludedRule(1, 2, 3));
- 
-schema.validate(2);      // Result: 2 must not be one of 1, 2, 3
-schema.validate(10);     // Result: no errors
+```cs
+var schema = new Schema().WithRule(new ExcludedRule(1, 2, 3));
+
+schema.Validate(2);      // Result: 2 must not be one of 1, 2, 3
+schema.Validate(10);     // Result: no errors
 
 ```
 

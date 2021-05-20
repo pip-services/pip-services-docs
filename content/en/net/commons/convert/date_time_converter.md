@@ -2,7 +2,7 @@
 type: docs
 title: "DateTimeConverter"
 linkTitle: "DateTimeConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The DateTimeConverter class allows you to convert arbitrary values into Date values using extended conversion rules.
 
@@ -17,37 +17,37 @@ The DateTimeConverter class allows you to convert arbitrary values into Date val
 
 ### Static methods
 
-#### toDateTime
+#### ToDateTime
 Converts value into Date or returns current date when conversion is not possible.  
-See [toDateTimeWithDefault](#todatetimewithdefault)
+See [ToDateTimeWithDefault](#todatetimewithdefault)
 
-> `public static` toDateTime(value: any): Date
+> `public static` DateTime ToDateTime(object value)
 
-- **value**: any - the value to convert.
-- **returns**: Date - Date value or current date when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: DateTime - Date value or current date when conversion is not supported.
 
-#### toDateTimeWithDefault
+#### ToDateTimeWithDefault
 Converts value into Date or returns default when conversion is not possible.
 
-> `public static` toDateTimeWithDefault(value: any, defaultValue: Date = null): Date
+> `public static` DateTime toDateTimeWithDefault(object value, DateTime? defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: Date - the default value.
-- **returns**: Date - Date value or default when conversion is not supported.
+- **value**: object - the value to convert.
+- **defaultValue**: DateTime - the default value.
+- **returns**: DateTime - Date value or default when conversion is not supported.
 
-#### toNullableDateTime
+#### ToNullableDateTime
 Converts value into Date or returns null when conversion is not possible.
 
-> `public static` toNullableDateTime(value: any): Date
+> `public static` DateTime ToNullableDateTime(object value)
 
-- **value**: any - the value to convert.
-- **returns**: Date - Date value or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: DateTime - Date value or null when conversion is not supported.
 
 ### Examples
 
-```typescript
-let value1 = DateTimeConverter.toNullableDateTime("ABC"); // Result: null
-let value2 = DateTimeConverter.toNullableDateTime("2018-01-01T11:30:00.0"); // Result: Date(2018,0,1,11,30)
-let value3 = DateTimeConverter.toNullableDateTime(123); // Result: Date(123)
+```cs
+DateTime value1 = DateTimeConverter.ToNullableDateTime("ABC"); // Result: null
+DateTime value2 = DateTimeConverter.ToNullableDateTime("2018-01-01T11:30:00.0"); // Result: ZonedDateTime(2018,0,1,11,30)
+DateTime value3 = DateTimeConverter.ToNullableDateTime(123); // Result: ZonedDateTime(123)
 
 ```

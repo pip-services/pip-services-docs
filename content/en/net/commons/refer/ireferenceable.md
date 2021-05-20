@@ -2,7 +2,7 @@
 type: docs
 title: "IReferenceable"
 linkTitle: "IReferenceable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface with methods to set refernces for components that depend on other components. 
 
@@ -17,24 +17,27 @@ Important points
 
 - If component requires explicit notification to unset references, it must also implement the [IUnreferenceable](../iunreferenceable) interface.
 
+
 ### Instance methods
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> setReferences(references: [IReferences](../ireferences)): void
+> void SetReferences([IReferences](../ireferences) references)
 
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 
 ### Examples
 
-```typescript
-export class MyController implements IReferenceable {
-    public _persistence: IMyPersistence;
+```cs
+public class MyController: IReferenceable 
+{
+    public IMyPersistence _persistence;
     ...    
-    public setReferences(references: IReferences): void {
+    public void SetReferences(IReferences references)
+    {
         this._persistence = references.getOneRequired<IMyPersistence>(
-            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        new Descriptor("mygroup", "persistence", "*", "*", "1.0")
         );
     }
     ...

@@ -2,7 +2,7 @@
 type: docs
 title: "StringConverter"
 linkTitle: "StringConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The StringConverter class allows you to convert arbitrary values into strings.
 
@@ -16,41 +16,41 @@ description: >
 - DateTime: using ISO format
 - Boolean: "true" for true and "false" for false
 - Arrays: as comma-separated list  
-- Other objects: using *toString()* method
+- Other objects: using **ToString()** method
 
 ### Static methods
 
-#### toNullableString
+#### ToNullableString
 Converts value into string or returns null when value is null.
 
-> `public static` toNullableString(value: any): string
+> `public static` string ToNullableString(object value)
 
-- **value**: any - the value to convert.
+- **value**: object - the value to convert.
 - **returns**: string - string value or null when value is null.
 
-#### toString
+#### ToString
 Converts value into string or returns "" when value is null.
 
-> `public static` toString(value: any): string
+> `public static` string ToString(object value)
 
-- **value**: any - the value to convert.
+- **value**: object - the value to convert.
 - **returns**: string - string value or "" when value is null.
 
-#### toStringWithDefault
+#### ToStringWithDefault
 Converts value into string or returns default when value is null.
 
-> `public static` toStringWithDefault(value: any, defaultValue: string): string
+> `public static` string ToStringWithDefault(object value, string defaultValue)
 
-- **value**: any - the value to convert.
+- **value**: object - the value to convert.
 - **defaultValue**: string - the default value.
 - **returns**: string - string value or default when value is null.
 
 
 ### Examples
 
-```typescript
-let value1 = StringConverter.ToString(123.456); // Result: "123.456"
-let value2 = StringConverter.ToString(true); // Result: "true"
-let value3 = StringConverter.ToString(new Date(2018,0,1)); // Result: "2018-01-01T00:00:00.00"
-let value4 = StringConverter.ToString([1,2,3]); // Result: "1,2,3"
+```cs
+var value1 = StringConverter.ToString(123.456); // Result: "123.456"
+var value2 = StringConverter.ToString(true); // Result: "true"
+var value3 = StringConverter.ToString(ZonedDateTime.now()); // Result: "2018-01-01T00:00:00.00"
+var value4 = StringConverter.ToString(new int[]{1, 2, 3}); // Result: "1,2,3"
 ```

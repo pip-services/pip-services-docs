@@ -2,7 +2,7 @@
 type: docs
 title: "LongConverter"
 linkTitle: "LongConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The LongConverter class allows you to convert arbitrary values into longs using extended conversion rules.
 ---
@@ -17,37 +17,37 @@ The LongConverter class allows you to convert arbitrary values into longs using 
 
 ### Static methods
 
-#### toLong
+#### ToLong
 Converts value into long or returns 0 when conversion is not possible.
 
-> `public static` toLong(value: any): number
+> `public static` long ToLong(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - long value or 0 when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: long - long value or 0 when conversion is not supported.
 
-#### toLongWithDefault
+#### ToLongWithDefault
 Converts value into integer or returns default when conversion is not possible.
 
-> `public static` toLongWithDefault(value: any, defaultValue: number): number
+> `public static` long ToLongWithDefault(object value, long defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: number - the default value.
-- **returns**: number - long value or default when conversion is not supported
+- **value**: object - the value to convert.
+- **defaultValue**: long - the default value.
+- **returns**: long - long value or default when conversion is not supported
 
-#### toNullableLong
+#### ToNullableLong
 Converts value into long or returns null when conversion is not possible.
 
-> `public static` toNullableLong(value: any): number
+> `public static` long ToNullableLong(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - long value or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: long - long value or null when conversion is not supported.
 
 ### Examples
 
-```typescript
-let value1 = LongConverter.toNullableLong("ABC"); // Result: null
-let value2 = LongConverter.toNullableLong("123.456"); // Result: 123
-let value3 = LongConverter.toNullableLong(true); // Result: 1
-let value4 = LongConverter.toNullableLong(new Date()); // Result: current milliseconds (E.g. 1619869474907)
+```cs
+var value1 = LongConverter.ToNullableLong("ABC");       // Result: null
+var value2 = LongConverter.ToNullableLong("123.456");   // Result: 123
+var value3 = LongConverter.ToNullableLong(true);        // Result: 1
+var value4 = LongConverter.ToNullableLong(new Date());  // Result: current milliseconds
 
 ```

@@ -327,9 +327,9 @@ Sets a new value for this object.
 Gets a string representation of the object.  
 See [StringConverter.toString](../../convert/string_converter/#tostring)
 
-> to_string(): Any
+> to_string(): str
 
-- **returns**: Any - a string representation of the object.
+- **returns**: str - a string representation of the object.
 
 ### Examples
 

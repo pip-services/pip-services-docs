@@ -2,12 +2,12 @@
 type: docs
 title: "FileException"
 linkTitle: "FileException"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Errors in read/write local disk operations.
 ---
 
-**Extends:** [ApplicationException](../application_exception)
+**Implements:** [ApplicationException](../application_exception)
 
 The FileException class is used to manage errors in read/write local disk operations.
 
@@ -15,9 +15,30 @@ The FileException class is used to manage errors in read/write local disk operat
 ### Constructors
 Creates an error instance and assigns its values.
 
-> `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
+> `public` FileException(string correlationId = null, string code = null, string message = null)
 
-- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
 - **code**: string - (optional) a unique error code. Default: "UNKNOWN"
 - **message**: string - (optional) a human-readable description of the error.
 
+
+Creates an error instance with error message
+
+> `public` FileException(string message)
+
+- **message**: string - a human-readable description of the error.
+
+
+Creates an error instance and assigns its values.
+
+> `public` FileException(Exception innerException)
+
+- **innerException**: Exception - an error object
+
+
+TODO: add description
+
+> `protected` FileException(SerializationInfo info, StreamingContext context)
+
+- **info**: SerializationInfo - TODO: add description
+- **context**: StreamingContext - TODO: add description

@@ -2,7 +2,7 @@
 type: docs
 title: "PropertyReflector"
 linkTitle: "PropertyReflector"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to examine an object's properties and to dynamically get and set their values.
 ---
@@ -18,75 +18,74 @@ Important points
 
 ### Static methods
 
-#### getProperties
+#### GetProperties
 Get values of all properties in specified object
 and returns them as a map.
 
-> `public static` getProperties(obj: any): any
+> `public static` Dictionary\<string, object\> GetProperties(object obj)
 
-- **obj**: any - an object to get properties from.
-- **returns**: any - a map, containing the names of the object's properties and their values.
+- **obj**: object - an object to get properties from.
+- **returns**: Dictionary\<string, object\> - a map, containing the names of the object's properties and their values.
 
 
-#### getProperty
+#### GetProperty
 Gets value of object property specified by its name.
 
-> `public static` getProperty(obj: any, name: string): any
+> `public static` object GetProperty(object obj, string name)
 
-- **obj**: any - an object to read property from.
+- **obj**: object - an object to read property from.
 - **name**: string - a name of the property to get.
-- **returns**: any - the property value or null if property doesn't exist or introspection failed.
+- **returns**: object - the property value or null if property doesn't exist or introspection failed.
 
-#### getPropertyNames
+#### GetPropertyNames
 Gets names of all properties implemented in specified object.
 
-> `public static` getPropertyNames(obj: any): string[]
+> `public static` List\<string\> GetPropertyNames(object obj)
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with property names.
+- **obj**: object - an objec to introspect.
+- **returns**: List\<string\> - a list with property names.
 
-#### hasProperty
+#### HasProperty
 Checks if object has a property with specified name.
 
-> `public static` hasProperty(obj: any, name: string): boolean
+> `public static` bool HasProperty(object obj, string name)
 
-- **obj**: any - an object to introspect.
+- **obj**: object - an object to introspect.
 - **name**: string - a name of the property to check.
-- **returns**: boolean - true if the object has the property and false if it doesn't.
+- **returns**: bool - true if the object has the property and false if it doesn't.
 
-#### setProperties
+#### SetProperties
 Sets values of some (all) object properties.
  
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> `public static` setProperties(obj: any, values: any): void
+> `public static` void SetProperties(object obj, Dictionary\<string, object\> values)
 
-- **obj**: any - an object to write properties to.
-- **values**: any - a map, containing property names and their values.
+- **obj**: object - an object to write properties to.
+- **values**: Dictionary\<string, object\> - a map, containing property names and their values.
 
 
-#### setProperty
+#### SetProperty
 Sets value of object property specified by its name.
 
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't any throw errors.
 
-> `public static` setProperty(obj: any, name: string, value: any): void
+> `public static` void SetProperty(object obj, string name, object value)
 
-- **obj**: any - an object to write property to.
+- **obj**: object - an object to write property to.
 - **name**: string - a name of the property to set.
-- **value**: any - a new value for the property to set.
+- **value**: object - a new value for the property to set.
 
 ### Examples
 
-```typescript
-let myObj = new MyObject();
-   
-let properties = PropertyReflector.getPropertyNames();
-PropertyReflector.hasProperty(myObj, "myProperty");
+```cs
+var myObj = new MyObject();
+var properties = PropertyReflector.GetPropertyNames();
 
-let value = PropertyReflector.getProperty(myObj, "myProperty");
-PropertyReflector.setProperty(myObj, "myProperty", 123);
+PropertyReflector.HasProperty(myObj, "myProperty");
+var value = PropertyReflector.GetProperty(myObj, "myProperty");
+PropertyReflector.SetProperty(myObj, "myProperty", 123);
 
 ```

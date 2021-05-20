@@ -2,7 +2,7 @@
 type: docs
 title: "OnlyOneExistsRule"
 linkTitle: "OnlyOneExistsRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Validation rule that checks that only one property of a list of properties exists in an object.
 ---
@@ -16,32 +16,31 @@ The OnlyOneExistsRule allows you to check that only one property of a list of pr
 ### Constructors
 Creates a new validation rule and sets its values
 
-> `public` constructor(...properties: string[])
+> `public` OnlyOneExistsRule(params string[] properties)
 
 - **properties**: string[] - a list of property names where at only one property must exist
 
 ### Methods
 
-#### validate
+#### Validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
+- **value**: object - a value to be validated.
 - **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
 
 ### Examples
 
-```typescript
-let schema = new Schema()
-    .withRule(new OnlyOneExistsRule("field1", "field2"));
-     
-schema.validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
-schema.validate({ field1: 1 });                  // Result: no errors
-schema.validate({ });                            // Result: only one of properties field1, field2 must exist
+```cs
+var schema = new Schema().WithRule(new OnlyOneExistsRule("field1", "field2"));
+
+schema.Validate({ field1: 1, field2: "A" });     // Result: only one of properties field1, field2 must exist
+schema.Validate({ field1: 1 });                  // Result: no errors
+schema.Validate({ });                            // Result: only one of properties field1, field2 must exist
 
 ```
 

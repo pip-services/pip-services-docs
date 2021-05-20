@@ -28,15 +28,13 @@ Creates a new command object and assigns it's parameters.
 #### Name
 Gets the command name.
 
-> `public` string Name
-
-- **returns**: the command name.
+> `public` string Name [ get ]
 
 #### Schema
 Gets the command schema.
 
-> `public` [Schema](../../validate/schema) Schema
-- **returns**: [Schema](../../validate/schema) - the command schema.
+> `public` [Schema](../../validate/schema) Schema [ get ]
+
 
 ### Instance methods
 

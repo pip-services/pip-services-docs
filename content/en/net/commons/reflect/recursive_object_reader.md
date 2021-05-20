@@ -2,7 +2,7 @@
 type: docs
 title: "RecursiveObjectReader"
 linkTitle: "RecursiveObjectReader"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them recursively using "dot" notation.
 
@@ -21,7 +21,7 @@ Important points
 
 ### Static methods
 
-#### getProperties
+#### GetProperties
 Get values of all properties in specified object and its subobjects
 and returns them as a map.
 
@@ -29,43 +29,43 @@ The object can be a user defined object, map or array.
 Returned properties correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
-> `public static` getProperties(obj: any): any
+> `public static` IDictionary\<string, object\> GetProperties(object obj)
 
-- **obj**: any - an object to get properties from.
-- **returns**: any - a map, containing the names of the object's properties and their values.
+- **obj**: object - an object to get properties from.
+- **returns**: IDictionary\<string, object\> - a map, containing the names of the object's properties and their values.
 
-#### getProperty
+#### GetProperty
 Recursively gets value of object or its subobjects property specified by its name.
  
 The object can be a user defined object, map or array.
 The property name correspondently must be object property,
 map key or array index.
 
-> `public static` getProperty(obj: any, name: string): any
+> `public static` object GetProperty(object obj, string name)
 
-- **obj**: any - an object to read property from.
+- **obj**: object - an object to read property from.
 - **name**: string - a name of the property to get.
-- **returns**: any - the property value or null if property doesn't exist or introspection failed.
+- **returns**: object - the property value or null if property doesn't exist or introspection failed.
 
-#### getPropertyNames
+#### GetPropertyNames
 Recursively gets names of all properties implemented in specified object and its subobjects.
 
 The object can be a user defined object, map or array.
 Returned property name correspondently are object properties,
 map keys or array indexes.
 
-> `public static` getPropertyNames(obj: any): string[]
+> `public static` IList\<string\> GetPropertyNames(object obj)
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with property names.
+- **obj**: object - an objec to introspect.
+- **returns**: IList\<string\> - a list with property names.
 
-#### hasProperty
+#### HasProperty
 
-> `public static` hasProperty(obj: any, name: string): boolean
+> `public static` bool HasProperty(object obj, string name)
 
-- **obj**: any - an object to introspect. 
+- **obj**: object - an object to introspect. 
 - **name**: string - a name of the property to check.
-- **returns**: boolean - true if the object has the property and false if it doesn't.
+- **returns**: bool - true if the object has the property and false if it doesn't.
 
 
 ### See also

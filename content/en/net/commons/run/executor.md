@@ -2,7 +2,7 @@
 type: docs
 title: "Executor"
 linkTitle: "Executor"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to execute one or more components.
 ---
@@ -14,32 +14,32 @@ The Executor class allows you to execute one or more components.
 
 ### Static methods
 
-#### execute
+#### ExecuteAsync
 Executes multiple components.
 
 To be executed components must implement [IExecutable](../iexecutable) interface.
 If they don't the call to this method has no effect.  
 See [IExecutable](../iexecutable), [Parameters](../parameters)
 
-> `public static` execute(correlationId: string, components: any[], args: [Parameters](../parameters)): Promise<any[]>
+> `public static` Task\<List\<object\>\> ExecuteAsync(string correlationId, IEnumerable components, [Parameters](../parameters) args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - a list of components that are to be executed.
+- **components**: IEnumerable - a list of components that are to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**:  Promise<any[]> - an execution result
+- **returns**:  Task\<List\<object\>\> - an execution result
 
-#### executeOne
+#### ExecuteOneAsync
 Executes specific component.
 
 To be executed components must implement [IExecutable](../iexecutable) interface.
 If they don't the call to this method has no effect.
 
-> `public static` executeOne(correlationId: string, component: any, args: [Parameters](../parameters)): Promise\<any\>
+> `public static` Task\<object\> ExecuteOneAsync(string correlationId, object component, [Parameters](../parameters) args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be executed.
+- **component**: object - the component that is to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**:  Promise\<any\> - an execution result.
+- **returns**: Task\<object\> - an execution result.
 
 ### See also
 - #### [IExecutable](../iexecutable)

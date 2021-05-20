@@ -2,7 +2,7 @@
 type: docs
 title: "RandomFloat"
 linkTitle: "RandomFloat"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Random generator for float values.
 ---
@@ -13,30 +13,50 @@ The RandomFloat class allows you to generate random float values.
 
 ### Static methods
 
-#### nextFloat
-Generates a float in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
+#### NextFloat
+Generates a random float value in the range to "max".
 
-> `public static` nextFloat(min: number, max: number = null): number
+> `public static` float NextFloat(float maxValue)
 
-- **min**: number - (minimum value of the float that will be generated. 
+- **max**: float - max range value
+- **returns**: float - generated random float value.
+
+
+#### NextFloat
+Generates a float in the range ['min', 'max']. 
+If 'max' is omitted, then the range will be set to [0, 'min'].
+
+> `public static` float NextFloat(float minValue, float maxValue)
+
+- **min**: float - (minimum value of the float that will be generated. 
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
-- **max**: number - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
-- **returns**: number - generated random float value.
+- **max**: float - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
+- **returns**: float - generated random float value.
 
-#### updateFloat
+
+#### UpdateFloat
+Updates (drifts) a float value without specified range defined
+
+> `public static` float UpdateFloat(float value)
+
+- **value**: float  - a float value to drift.
+- **returns**: float  - updated random float value.
+
+
+#### UpdateFloat
 Updates (drifts) a float value within specified range defined
 
-> `public static` updateFloat(value: number, range: number = null): number
+> `public static` float UpdateFloat(float value, float range)
 
-- **value**: number - a float value to drift.
-- **range**: number - (optional) a range. Default: 10% of the value
-- **returns**: number - updated float value.
+- **value**: float - a float value to drift.
+- **range**: float - (optional) a range. Default: 10% of the value
+- **returns**: float - updated float value.
 
 ### Examples
 
-```typescript
-let value1 = RandomFloat.nextFloat(5, 10);     // Possible result: 7.3
-let value2 = RandomFloat.nextFloat(10);        // Possible result: 3.7
-let value3 = RandomFloat.updateFloat(10, 3);   // Possible result: 9.2
+```cs
+var value1 = RandomFloat.NextFloat(5, 10);     // Possible result: 7.3
+var value2 = RandomFloat.NextFloat(10);        // Possible result: 3.7
+var value3 = RandomFloat.UpdateFloat(10, 3);   // Possible result: 9.2
 
 ```

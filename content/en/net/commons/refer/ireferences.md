@@ -2,7 +2,7 @@
 type: docs
 title: "IReferences"
 linkTitle: "IReferences"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface to manage references stored in a map.
 
@@ -21,117 +21,171 @@ Important points
  
 ### Instance methods
 
-#### find
-Gets all component references that match specified locator.  
+#### Find
+Gets all component references that match specified locator. 
 Throws a [ReferenceException](../reference_exception) when required is set to true but no references found.
 
-> find\<T\>(locator: any, required: boolean): T[]
+> List\<object\> Find(object locator, bool required)
 
 - **locator**: any - the locator to find a reference by.
 - **required**: boolean - forces to raise an exception if no reference is found.
-- **returns**: T[] - a list with matching component references.
+- **returns**: List\<object\> - a list with matching component references.
 
-#### getAll
+#### Find
+Gets all component references that match specified locator and matching to the specified type.
+Throws a [ReferenceException](../reference_exception) when required is set to true but no references found.
+**T** - the class type.
+
+> List\<T\> Find\<T\>(object locator, bool required)
+
+- **locator**: object - the locator to find a reference by.
+- **required**: bool - forces to raise an exception if no reference is found.
+- **returns**: List\<T\> - a list with matching component references.
+
+#### GetAll
 Gets all component references registered in this reference map.
 
-> getAll(): any[]
+> List\<object\> GetAll()
 
-- **returns**: any[] - a list with component references.
+- **returns**: List\<object\> - a list with component references.
 
-#### getAllLocators
+#### GetAllLocators
 Gets locators for all registered component references in this reference map.
 
-> getAllLocators(): any[]
+> List\<object\> GetAllLocators()
 
-- **returns**: any[] - a list with component locators.
+- **returns**: List\<object\> - a list with component locators.
 
-#### getOneOptional
+#### GetOneOptional
 Gets an optional component reference that matches specified locator.
 
-> getOneOptional\<T\>(locator: any): T
+> object GetOneOptional(object locator)
 
-- **locator**: any - the locator to find references by.
+- **locator**: object - the locator to find references by.
+- **returns**: object - a matching component reference or null if nothing was found.
+
+
+#### GetOneOptional
+Gets an optional component reference that matches specified locator and matching to the specified type.
+
+> T GetOneOptional\<T\>(object locator)
+
+- **locator**: object - the locator to find references by.
 - **returns**: T - a matching component reference or null if nothing was found.
 
-#### getOneRequired
+
+#### GetOneRequired
 Gets a required component reference that matches specified locator.  
 Throws a [ReferenceException](../reference_exception) when no references found.
 
-> getOneRequired\<T\>(locator: any): T
+> object GetOneRequired(object locator)
 
-- **locator**: any - the locator to find a reference by.
+- **locator**: object  - the locator to find a reference by.
+- **returns**: object  - a matching component reference.
+
+
+#### GetOneRequired
+Gets a required component reference that matches specified locator and matching to the specified type.
+Throws a [ReferenceException](../reference_exception) when no references found.
+**T** - the class type
+
+> T GetOneRequired\<T\>(object locator)
+
+- **locator**: object - the locator to find a reference by.
 - **returns**: T - a matching component reference.
 
-#### getOptional
+
+#### GetOptional
 Gets all component references that match specified locator.
 
-> getOptional<T>(locator: any): T[]
+> List\<object\> GetOptional(object locator)
 
-- **locator**: any - the locator to find references by.	 
-- **returns**: T[] - a list with matching component references or empty list if nothing was found.
+- **locator**: object - the locator to find references by.	 
+- **returns**: List\<object\> - a list with matching component references or empty list if nothing was found.
 
-#### getRequired
-Gets all component references that match specified locator.
+
+#### GetOptional
+Gets all component references that match specified locator and matching to the specified type.
+**T** - the class type
+
+> List\<T\> GetOptional\<T\>(object locator)
+
+- **locator**: object - the locator to find references by.	 
+- **returns**: List\<T\> - a list with matching component references or empty list if nothing was found.
+
+
+#### GetRequired
+Gets all component references that match specified locator. 
 At least one component reference must be present.
-If it doesn't the method throws an error.  
+If it doesn't the method throws an error. 
 Throws a [ReferenceException](../reference_exception) when no references found.
 
-> getRequired\<T\>(locator: any): T[]
+> List\<object\> GetRequired(object locator)
 
-- **locator**: any - the locator to find references by.
-- **returns**: T[] - a list with matching component references.
+- **locator**: object - the locator to find references by.
+- **returns**: List\<object\>- a list with matching component references.
 
 
-#### put
+#### GetRequired
+Gets all component references that match specified locator. 
+At least one component reference must be present and matching to the specified type.
+Throws a [ReferenceException](../reference_exception) when no references found.
+**T** - the class type
+
+> List\<T\> GetRequired\<T\>(object locator)
+
+- **locator**: object - the locator to find references by.
+- **returns**: List\<T\> - a list with matching component references.
+
+
+#### Put
 Puts a new reference into this reference map.
 
-> put(locator: any, component: any): void
+> void Put(object locator, object component)
 
-- **locator**: any - a locator to find the reference by.
-- **component**: any - a component reference to be added.
+- **locator**: object - a locator to find the reference by.
+- **component**: object - a component reference to be added.
 
-#### remove
+#### Remove
 Removes a previously added reference that matches specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
-> remove(locator: any): any
+> object Remove(object locator)
 
-- **locator**: any - a locator to remove reference
-- **returns**: any - the removed component reference.
+- **locator**: object - a locator to remove reference
+- **returns**: object - the removed component reference.
 
 
-#### remove
+#### RemoveAll
 Removes all component references that match the specified locator. 
 
-> removeAll(locator: any): any[]
+> List\<object\> RemoveAll(object locator)
 
-- **locator**: any - the locator to remove references by.
-- **returns**: any[] - a list, containing all removed references.
+- **locator**: object - the locator to remove references by.
+- **returns**: List\<object\> - a list, containing all removed references.
 
 ### Examples
 
-```typescript
-export class MyController implements IReferenceable {
-    public _persistence: IMyPersistence;
+```cs
+public class MyController: IReferenceable 
+{
+    public IMyPersistence _persistence;
     ...    
-    public setReferences(references: IReferences): void {
+    public void SetReferences(IReferences references)
+    {
         this._persistence = references.getOneRequired<IMyPersistence>(
-            new Descriptor("mygroup", "persistence", "*", "*", "1.0")
+        new Descriptor("mygroup", "persistence", "*", "*", "1.0")
         );
     }
     ...
 }
-     
-let persistence = new MyMongoDbPersistence();
-    
-let controller = new MyController();
-     
-let references = References.fromTuples(
-    new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
-    new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
-);
-controller.setReferences(references);
+var persistence = new MyMongoDbPersistence();
+var controller = new MyController();
+var references = References.FromTuples(
+new Descriptor("mygroup", "persistence", "mongodb", "default", "1.0"), persistence,
+new Descriptor("mygroup", "controller", "default", "default", "1.0"), controller );
+controller.SetReferences(references);
 
 ```
 

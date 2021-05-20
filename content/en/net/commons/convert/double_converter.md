@@ -2,7 +2,7 @@
 type: docs
 title: "DoubleConverter"
 linkTitle: "DoubleConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The DoubleConverter class allows you to convert arbitrary values into double using extended conversion rules.
 
@@ -21,38 +21,38 @@ The DoubleConverter class allows you to convert arbitrary values into double usi
 
 ### Static methods
 
-#### toDouble
+#### ToDouble
 Converts value into doubles or returns 0 when conversion is not possible.  
 See [toDoubleWithDefault](#todoublewithdefault)
 
-> `public static` toDouble(value: any): number
+> `public static` double ToDouble(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - double value or 0 when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: double - double value or 0 when conversion is not supported.
 
-#### toDoubleWithDefault
+#### ToDoubleWithDefault
 Converts value into integer or returns default value when conversion is not possible.
 
-> `public static` toDoubleWithDefault(value: any, defaultValue: number = 0): number
+> `public static` double ToDoubleWithDefault(object value, double defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: number - the default value.
-- **returns**: number - double value or default when conversion is not supported.
+- **value**: object - the value to convert.
+- **defaultValue**: double - the default value.
+- **returns**: double - double value or default when conversion is not supported.
 
-#### toNullableDouble
+#### ToNullableDouble
 Converts value into doubles or returns null when conversion is not possible.
 
-> `public static` toNullableDouble(value: any): number
+> `public static` double ToNullableDouble(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - double value or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: double - double value or null when conversion is not supported.
 
 ### Examples
 
-```typescript
-let value1 = DoubleConverter.toNullableDouble("ABC")     // Returns None
-let value2 = DoubleConverter.toNullableDouble("123.456") // Returns 123.456
-let value3 = DoubleConverter.toNullableDouble(True)      // Returns 1
-let value4 = DoubleConverter.toNullableDouble(new Date()) // Returns current milliseconds (E.g. 1619812281454)
+```cs
+var value1 = DoubleConverter.ToNullableDouble("ABC");       // Result: null
+var value2 = DoubleConverter.ToNullableDouble("123.456");   // Result: 123.456
+var value3 = DoubleConverter.ToNullableDouble(true);        // Result: 1
+var value4 = DoubleConverter.ToNullableDouble(new Date());  // Result: current milliseconds
 
 ```

@@ -18,16 +18,13 @@ The ICommand interface is used to define Commands. Each command wraps a method o
 #### Name
 Gets the command name.
 
-> `public` string Name
-
-- **returns**: string - the command name.
+> `public` string Name [ get ]
 
 #### Schema
 Gets the command schema.
 
-> public [Schema](../../validate/schema) Schema
+> public [Schema](../../validate/schema) Schema [ get ]
 
-- **returns**: [Schema](../../validate/schema) - the command name.
 
 ### Instance methods
 

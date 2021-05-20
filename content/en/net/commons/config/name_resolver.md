@@ -2,7 +2,7 @@
 type: docs
 title: "NameResolver"
 linkTitle: "NameResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     A helper class that allows to extract component "name" from configuration parameters.
     
@@ -13,12 +13,12 @@ The name can be defined in the "id" or "name" parameters or inside a component o
 
 ### Static Methods
 
-#### resolve
+#### Resolve
 Resolves a component name from configuration parameters.
 The name can be stored in "id", "name" fields or inside a component descriptor.
 If name cannot be determined it returns a defaultName.
 
-> `public static` resolve(config: [ConfigParams](../config_params), defaultName: string = null): string
+> `public static` string Resolve([ConfigParams](../config_params) config, string defaultName = null)
 
 - **config**: [ConfigParams](../config_params) - configuration parameters that may contain a component name.
 - **defaultName**: string - (optional) a default component name.
@@ -26,28 +26,28 @@ If name cannot be determined it returns a defaultName.
 
 ### Examples
 
-```typescript
+```cs
 // Using the descriptor class (which has the following parameters: "group", "type", "kind", "name", "version") will extract the value of the "name" parameter.
-let config = ConfigParams.fromTuples("descriptor", "myservice:connector:aws:connector1:1.0",
+var config = ConfigParams.FromTuples("descriptor", "myservice:connector:aws:connector1:1.0",
                                  "param1", "ABC",
                                  "param2", 123);
 
-let name = NameResolver.resolve(config); // Returns connector1
+var name = NameResolver.Resolve(config); // Returns connector1
 
 // Using name
-config = ConfigParams.fromTuples("name", "myservice:connector:aws:connector1:1.0",
+config = ConfigParams.FromTuples("name", "myservice:connector:aws:connector1:1.0",
                                          "param1", "ABC",
                                          "param2", 123); 
-name = NameResolver.resolve(config) // Returns myservice:connector:aws:connector1:1.0
+name = NameResolver.Resolve(config) // Returns myservice:connector:aws:connector1:1.0
 
 // Using id
-config = ConfigParams.fromTuples("id", "myservice:connector:aws:connector1:1.0",
+config = ConfigParams.FromTuples("id", "myservice:connector:aws:connector1:1.0",
                                          "param1", "ABC",
                                          "param2", 123);
-let id = NameResolver.resolve(config);  // Returns myservice:connector:aws:connector1:1.0
+var id = NameResolver.Resolve(config);  // Returns myservice:connector:aws:connector1:1.0
 
 // If name cannot be determined
-config = ConfigParams.fromTuples("param1", "ABC",
+config = ConfigParams.FromTuples("param1", "ABC",
                                          "param2", 123);
-name = NameResolver.resolve(config,"default name"); // Returns "default name"
+name = NameResolver.Resolve(config,"default name"); // Returns "default name"
 ```

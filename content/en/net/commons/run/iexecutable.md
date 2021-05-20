@@ -2,7 +2,7 @@
 type: docs
 title: "IExecutable"
 linkTitle: "IExecutable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Interface that allows you to create a component that can be called to execute work.
 
@@ -14,30 +14,29 @@ The IExecutable interface allows you to create a component that can be called to
 
 ### Instance methods
 
-#### execute
+#### ExecuteAsync
 Executes component with arguments and receives execution result.
 
-> execute(correlationId: string, args: [Parameters](../parameters)): Promise\<any\>
+> Task\<object\> ExecuteAsync(string correlationId, [Parameters](../parameters) args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**: Promise\<any\> - the execution result. 
+- **returns**: Task\<object\> - the execution result. 
 
 ### Examples
 
-```typescript
-class EchoComponent implements IExecutable {
+```cs
+class EchoComponent: IExecutable 
+{
     ...
-    public async execute(correlationId: string, args: Parameters): Promise<any> {
-        let result = args.getAsObject("message");
-        return result;
+    public void Execute(string correlationId, Parameters args)
+    {
+        var result = args.GetAsObject("message");
     }
 }
-    
-let echo = new EchoComponent();
-let message = "Test";
-let result = await echo.execute("123", Parameters.fromTuples("message", message))
-console.log("Request: " + message + " Response: " + result);
+var echo = new EchoComponent();
+string message = "Test";
+echo.Execute("123", Parameters.FromTuples("message", message));
 
 ```
 

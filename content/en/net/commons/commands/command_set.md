@@ -33,9 +33,7 @@ Creates an empty CommandSet object.
 Gets all commands registered in this command set.
 See [ICommand](../icommand).
 
-> `public` List<[ICommand](../icommand)> Commands()
-
-- **returns**: List<[ICommand](../icommand)> - a list of commands.
+> `public` List<[ICommand](../icommand)> Commands [ get ]
 
 
 #### Events
@@ -43,8 +41,6 @@ Gets all events registred in this command set.
 See [IEvent](../ievent)
 
 > `public` List<[IEvent](../ievent)> Events()
-
-- **returns**: List<[IEvent](../ievent)> - a list of events.
 
 
 ### Instance methods
@@ -113,7 +109,7 @@ See [ICommand](../icommand), [Parameters](../../run/parameters)
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **command**: string - the name of that command that is to be executed.
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: Any - the execution result
+- **returns**: Task<\object\> - the execution result
 
 #### FindCommand
 Searches for a command by its name.

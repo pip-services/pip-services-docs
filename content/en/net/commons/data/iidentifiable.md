@@ -2,7 +2,7 @@
 type: docs
 title: "IIdentifiable<K>"
 linkTitle: "IIdentifiable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Interface used to create data objects that can be uniquely idendified by an ID.
 
@@ -16,22 +16,20 @@ Important points
 
 - The type specified in the interface defines the type of the ID field.
 
-### Fields
+### Properties
 
-<span class="hide-title-link">
-
-#### id
+#### Id
 The unique object identifier of type K.
-> **id**: K
+> T Id [ get, set ]
 
 ### Examples
-```typescript
-export class MyData implements IIdentifiable<string> {
-    public id: string;
-    public field1: string;
-    public field2: number; 
+```cs
+public class MyData: IIdentifiable<String> 
+{
+    string id {get; set;}
+    string field1;
+    int field2;
     ...
 }
 ```
 
-</span>

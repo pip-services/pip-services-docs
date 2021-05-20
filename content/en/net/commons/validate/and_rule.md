@@ -2,7 +2,7 @@
 type: docs
 title: "AndRule"
 linkTitle: "AndRule"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Validation rule that allows you to check combinations of rules created with AND logical operations.
 ---
@@ -21,28 +21,32 @@ Important points
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> `public` constructor(...rules: [IValidationRule](../ivalidation_rule)[])
+> `public` AndRule(params [IValidationRule](../ivalidation_rule)[] rules)
 
 - **rules**: [IValidationRule](../ivalidation_rule)[] - a list of rules to join with AND operator
 
 ### Instance methods
 
-#### validate
+#### Validate
 Validates a given value against this rule.
 
-> `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
+> `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
 - **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [IValidationRule](../ivalidation_rule)[] - a list with validation results to add new results.
+- **value**: object - a value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
 
 ### Example
-```typescript
-let schema = Schema().withRule(AndRule(ValueComparisonRule("GTE", 1), ValueComparisonRule("LTE", 10)))
-schema.validate(0)          // Result: 0 must be greater or equal to 1
-schema.validate(5)          // Result: no error
-schema.validate(20)         // Result: 20 must be letter or equal 10
+```cs
+var schema = new Schema().WithRule(new AndRule(
+    new ValueComparisonRule("GTE", 1),
+    new ValueComparisonRule("LTE", 10)
+));
+
+schema.Validate(0);          // Result: 0 must be greater or equal to 1
+schema.Validate(5);          // Result: no error
+schema.Validate(20);         // Result: 20 must be letter or equal 10
 
 ```
 

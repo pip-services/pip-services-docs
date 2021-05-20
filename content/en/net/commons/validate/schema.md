@@ -2,7 +2,7 @@
 type: docs
 title: "Schema"
 linkTitle: "Schema"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Basic schema used to validate values against a set of validation rules.
 
@@ -22,123 +22,110 @@ Creates a new instance of validation schema and sets its values.
 
 See [IValidationRule](../ivalidation_rule)
 
-> `public` constructor(required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
+> `public` Schema(bool required, List<[IValidationRule](../ivalidation_rule)> rules)
 
-- **required**: boolean - (optional) true to always require non-null values.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **required**: bool - (optional) true to always require non-null values.
+- **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) a list with validation rules.
+
+
+### Properties
+
+#### IsRequired
+Gets and sets a flag that always requires non-null values.
+For null values it raises a validation error.
+
+> `public` bool IsRequired [ get, set ]
+
+#### Rules
+Gets and sets validation rules to check values against.
+
+> `public` List<[IValidationRule](../ivalidation_rule)> Rules [ get, set ]
 
 
 ### Instance methods
 
-#### getRules
-Gets validation rules to check values against.
-
-> `public` getRules(): [IValidationRule](../ivalidation_rule)[]
-
-- **returns**: [IValidationRule](../ivalidation_rule)[] - a list with validation rules.
-
-#### isRequired
-Gets a flag that always requires non-null values.
-For null values it raises a validation error.
-
-> `public` isRequired(): boolean
-
-- **returns**: boolean - true to always require non-null values and false to allow null values.
-
-#### makeOptional
+#### MakeOptional
 Makes validated values optional.
 Validation for null values will be skipped.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> `public` makeOptional(): [Schema]()
+> `public` [Schema]() MakeOptional()
 
 - **returns**: [Schema]() - this validation schema
 
 
-#### makeRequired
+#### MakeRequired
 Makes validated values always required (non-null).
 For null values the schema will raise errors.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> `public` makeRequired(): [Schema]()
+> `public` [Schema]() MakeRequired()
 
 - **returns**: [Schema]() - this validation schema
 
-#### performTypeValidation
+#### PerformTypeValidation
 Validates a given value to match specified type.
 The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
-> `protected` performTypeValidation(path: string, type: any, value: any, results: [ValidationResult](../validation_result)[]): void
+> `protected` void PerformTypeValidation(string path, object type, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
 - **type**: any - a type to match the value type
 - **value**: any - a value to be validated.
 - **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
-#### performValidation
+#### PerformValidation
 Validates a given value against the schema and configured validation rules.
 
-> `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
+> `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
-
-#### setRequired
-Sets a flag that always requires non-null values.
-
-> `public` setRequired(value: boolean): void
-
-- **value**: boolean - true to always require non-null values and false to allow null values.
-
-#### setRules
-Sets validation rules to check values against.
-
-> `public` setRules(value: [IValidationRule](../ivalidation_rule)[]): void
-
-- **value**: [IValidationRule](../ivalidation_rule)[] - a list with validation rules.
+- **value**: object - a value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
 
 
-#### validate
+#### Validate
 Validates the given value and results validation results.
 See [ValidationResult](../validation_result)
 
-> `public` validate(value: any): [ValidationResult](../validation_result)[]
+> `public` List<[ValidationResult](../validation_result)> Validate(object value)
 
-- **value**: any - a value to be validated.
-- **returns**: [ValidationResult](../validation_result)[] - a list with validation results.
+- **value**: object - a value to be validated.
+- **returns**: List<[ValidationResult](../validation_result)> - a list with validation results.
 
 
-#### validateAndReturnException
+#### ValidateAndReturnException!
+**TODO: this method is not realized yet for this language**
+
 Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 
-> `public` validateAndReturnException(correlationId: string, value: any, strict: boolean = false): [ValidationException](../validation_exception)
+> `public` [ValidationException](../validation_exception) ValidateAndReturnException(string correlationId, object value, bool strict = false)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **value**: any -  a value to be validated.
-- **strict**: boolean - true to treat warnings as errors.
+- **value**: object -  a value to be validated.
+- **strict**: bool - true to treat warnings as errors.
 - **returns**: [ValidationException](../validation_exception) - validation exception.
 
-#### validateAndThrowException
+#### ValidateAndThrowException
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
 See [ValidationException.throwExceptionIfNeeded](../validation_exception/#throwexceptionifneeded)
 
-> `public` validateAndThrowException(correlationId: string, value: any, strict: boolean = false): void
+> `public` void ValidateAndThrowException(string correlationId, object value, bool strict = false)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **value**: any - a value to be validated.
-- **strict**: boolean - true to treat warnings as errors.
+- **value**: object - a value to be validated.
+- **strict**: bool - true to treat warnings as errors.
 
 
-#### withRule
+#### WithRule
 Adds validation rule to this schema.
 This method returns reference to this exception to implement Builder pattern
 to chain additional calls.
 
-> `public` withRule(rule: [IValidationRule](../ivalidation_rule)): [Schema]()
+> `public` [Schema]() WithRule([IValidationRule](../ivalidation_rule) rule)
 
 - **rule**: [IValidationRule](../ivalidation_rule) - a validation rule to be added.
 - **returns**: [Schema]() - this validation schema.

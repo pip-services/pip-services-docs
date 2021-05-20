@@ -2,7 +2,7 @@
 type: docs
 title: "FloatConverter"
 linkTitle: "FloatConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The FloatConverter class allows you to convert arbitrary values into float using extended conversion rules.
 
@@ -17,42 +17,42 @@ The FloatConverter class allows you to convert arbitrary values into float using
 
 ### Static methods
 
-#### toFloat
+#### ToFloat
 Converts value into float or returns 0 when conversion is not possible.  
 See [DoubleConverter.toDouble](../double_converter/#todouble)
 
-> `public static` toFloat(value: any): number
+> `public static` float ToFloat(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - float value or 0 when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: float - float value or 0 when conversion is not supported.
 
-#### toFloatWithDefault
+#### ToFloatWithDefault
 Converts value into float or returns default when conversion is not possible.  
-See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault),  
-[DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
+See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault),  
+[DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> `public static` toFloatWithDefault(value: any, defaultValue: number): number
+> `public static` float ToFloatWithDefault(object value, float defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: number - the default value.
-- **returns**: number - float value or default value when conversion is not supported.
+- **value**: object - the value to convert.
+- **defaultValue**: float - the default value.
+- **returns**: float - float value or default value when conversion is not supported.
 
-#### toNullableFloat
+#### ToNullableFloat
 Converts value into float or returns null when conversion is not possible.  
-See [DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
+See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> `public static` toNullableFloat(value: any): number
+> `public static` float toNullableFloat(object value)
 
-- **value**: any - the value to convert.
-- **returns**: number - float value or null when conversion is not supported.
+- **value**: object - the value to convert.
+- **returns**: float - float value or null when conversion is not supported.
 
 
 ### Examples
 
-```typescript
-let value1 = FloatConverter.toNullableFloat("ABC"); // Result: null
-let value2 = FloatConverter.toNullableFloat("123.456"); // Result: 123.456
-let value3 = FloatConverter.toNullableFloat(true); // Result: 1
-let value4 = FloatConverter.toNullableFloat(new Date()); // Result: current milliseconds (E.g. 1619869474907)
+```cs
+var value1 = FloatConverter.ToNullableFloat("ABC");         // Result: null
+var value2 = FloatConverter.ToNullableFloat("123.456");     // Result: 123.456
+var value3 = FloatConverter.ToNullableFloat(true);          // Result: 1
+var value4 = FloatConverter.ToNullableFloat(new Date());    // Result: current milliseconds
 
 ```

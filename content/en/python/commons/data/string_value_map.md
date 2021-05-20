@@ -419,7 +419,6 @@ Removes a map element specified by its key
 #### set_as_object
 Sets a new value to map element specified by its index.
 When the index is not defined, it resets the entire map value.
-This method has double purpose because method overrides are not supported in JavaScript.  
 See [MapConverter.to_map](../../convert/map_converter/#to_map)
 
 > set_as_object(key: Any, value: Any = None)

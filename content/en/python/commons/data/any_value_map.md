@@ -211,21 +211,21 @@ See [LongConverter.to_long_with_default](../../convert/long_converter/#to_long_w
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or empty AnyValueMap if conversion is not supported. 
 
 
-#### get_as_long_with_default
+#### get_as_map_with_default
 Converts map element into an AnyValueMap or returns default value if conversion is not possible.
 
-> get_as_long_with_default(key: str, default_value: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
+> get_as_map_with_default(key: str, default_value: [AnyValueMap](../any_value_map)): [AnyValueMap](../any_value_map)
 
 - **key**: str - a key of element to get.
 - **default_value**: [AnyValueMap](../any_value_map) - the default value.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or default value if conversion is not supported. 
 
 
-#### get_as_long_with_default
+#### get_as_nullable_array
 Converts map element into an AnyValueArray or returns None if conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap.from_value](../any_value_map/#from_value)
 
-> get_as_long_with_default(key: str): [AnyValueMap](../any_value_map)
+> get_as_nullable_array(key: str): [AnyValueMap](../any_value_map)
 
 - **key**: str - a key of element to get.
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueArray value of the element or None if conversion is not supported. 
@@ -423,7 +423,6 @@ Removes a map element specified by its key
 #### set_as_object
 Sets a new value to map element specified by its index.
 When the index is not defined, it resets the entire map value.
-This method has double purpose because method overrides are not supported in JavaScript.
 
 > set_as_object(key: Any, value: Any = None)
 

@@ -2,7 +2,7 @@
 type: docs
 title: "ArrayConverter"
 linkTitle: "ArrayConverter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     The ArrayConverter class provides methods to create an array from a set of values.
 ---
@@ -12,55 +12,54 @@ The ArrayConverter class provides methods to create an array from a set of value
 
 ### Static methods
 
-#### listToArray
+#### ListToArray!
+**TODO: this method is not realized yet for this language**
+
 Converts a list into array object with empty array as default.
 Strings with comma-delimited values are split into array of strings.
-See [toArray](#toArray)
+See [ToArray](#ToArray)
 
-> `public static` listToArray(value: any): any[]
+> `public static` IList\<object\> ListToArray(object value)
 
-- **value**: any - the list to convert.
-- **returns**: any[] - array object or empty array when value is null
+- **value**: object - the list to convert.
+- **returns**: IList\<object\>- array object or empty array when value is null
 
 
-#### toArray
+#### ToArray
 Converts value into array object with empty array as default.
 Single values are converted into arrays with single element.
 
-> `public static` toArray(value: any): any[]
+> `public static` IList\<object\> ToArray(object value)
 
-- **value**: any - the value to convert.
-- **returns**: any[] - array object or empty array when value is null.
+- **value**: object  - the value to convert.
+- **returns**: IList\<object\> - array object or empty array when value is null.
 
-#### toArrayWithDefault
+#### ToArrayWithDefault
 Converts value into array object with specified default.
 Single values are converted into arrays with single element.
 
-> `public static` toArrayWithDefault(value: any, defaultValue: any[]): any[]
+> `public static` IList\<object\> ToArrayWithDefault(object value, IList\<object\> defaultValue)
 
-- **value**: any - the value to convert.
-- **defaultValue**: any[] - default array object.
-- **returns**: any[] - array object or default array when value is null.
+- **value**: object - the value to convert.
+- **defaultValue**: IList\<object\> - default array object.
+- **returns**: IList\<object\> - array object or default array when value is null.
 
-#### toNullableArray
+#### ToNullableArray
 Converts value into array object.
 Single values are converted into arrays with a single element.
 
-> `public static` toNullableArray(value: any): any[]
+> `public static` IList\<object\> ToNullableArray(object value)
 
-- **value**: any - the value to convert.
-- **returns**: any[] - array object or null when value is null.
+- **value**: object - the value to convert.
+- **returns**: IList\<object\> - array object or null when value is null.
 
 ### Examples
 
-```typescript
+```cs
 // Array
-let value1 = ArrayConverter.toArray([1, 2]) ;      // Result: [1, 2]
+var value1 = ArrayConverter.ToArray(new int[]{1, 2}) ;      // Result: [1, 2]
 
 // Single value
-let value2 = ArrayConverter.toArray(1);            // Result: [1]
-
-// String with comma-delimited values
-let value3 = ArrayConverter.listToArray("1,2,3"); // Result: ["1", "2", "3"]
+var value2 = ArrayConverter.ToArray(1);            // Result: [1]
 
 ```

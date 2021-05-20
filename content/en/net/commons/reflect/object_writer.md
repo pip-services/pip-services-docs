@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectWriter"
 linkTitle: "ObjectWriter"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Helper class that allows you to dynamically set the properties of an object. 
 
@@ -22,7 +22,7 @@ Important points
 
 ### Static methods
 
-#### setProperties
+#### SetProperties
 Sets values of some (all) object properties.
 
 The object can be a user defined object, map or array.
@@ -32,12 +32,12 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> `public static` setProperties(obj: any, values: any): void
+> `public static` void SetProperties(object obj, IDictionary\<string, object\> values)
 
-- **obj**: any - an object to write properties to.
-- **values**: any - a map, containing property names and their values.
+- **obj**: object - an object to write properties to.
+- **values**: IDictionary\<string, object\> - a map, containing property names and their values.
 
-#### setProperty
+#### SetProperty
 Sets value of object property specified by its name.
  
 The object can be a user defined object, map or array.
@@ -47,24 +47,26 @@ map key or array index.
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't any throw errors.
 
-> `public static` setProperty(obj: any, name: string, value: any): void
+> `public static` void SetProperty(object obj, object string name, object value)
 
-- **obj**: any - an object to write property to.
+- **obj**: object - an object to write property to.
 - **name**: string - a name of the property to set.
-- **value**: any - a new value for the property to set.
+- **value**: object - a new value for the property to set.
 
 ### Examples
 
-```typescript
-let myObj = new MyObject();
-  
-ObjectWriter.setProperty(myObj, "myProperty", 123);
-    
-let myMap = { key1: 123, key2: "ABC" };
-ObjectWriter.setProperty(myMap, "key1", "XYZ");
-  
-let myArray = [1, 2, 3]
-ObjectWriter.setProperty(myArray, "0", 123);
+```cs
+var myObj = new MyObject();
+ObjectWriter.SetProperty(myObj, "myProperty", 123);
+
+var myMap = new Dictionary<string, object>(){
+    {"key1", 123},
+    {"key2", "ABC"}
+};
+ObjectWriter.SetProperty(myMap, "key1", "XYZ");
+
+var myArray = new int[] { 1, 2, 3 };
+ObjectWriter.SetProperty(myArray, "0", 123);
 
 ```
 

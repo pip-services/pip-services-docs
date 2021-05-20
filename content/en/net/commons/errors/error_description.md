@@ -2,7 +2,7 @@
 type: docs
 title: "ErrorDescription"
 linkTitle: "ErrorDescription"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Class used to pass information about errors between microservices implemented in different languages. On the receiving side
     [ErrorDescription]() is used to recreate the exception object close to its original type
@@ -13,47 +13,43 @@ description: >
 
 The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side [ErrorDescription]() is used to recreate the exception object close to its original type without missing additional details. This class is serializeable.
 
-### Fields
+### Properties
 
-<span class="hide-title-link">
-
-#### type
+#### Type
 Data type of the original error 
-> `public` type: string
+> `public` string Type [ get, set ]
 
-#### category
+#### Category
 Standard error category 
-> `public` category: string
+> `public` string Category [ get, set ]
 
-#### status
+#### Status
 HTTP status code associated with this error type 
-> `public` status: number
+> `public` int Status [ get, set ]
 
-#### code
+#### Code
 A unique error code 
-> `public` code: string
+> `public` string Code [ get, set ]
 
-#### message
+#### Message
 A human-readable error description (usually written in English) 
-> `public` message: string
+> `public` string Message [ get, set ]
 
-#### details
+#### Details
 A map with additional details that can be used to restore error description in other languages 
-> `public` details: any
+> `public` [StringValueMap](../../data/string_value_map) Details [ get, set ]
 
-#### correlation_id
+#### CorrelationId
 A unique transaction id to trace execution throug call chain    
-> `public` correlation_id: string
+> `public` string CorrelationId [ get, set ]
 
-#### cause
+#### Cause
 Original error wrapped by this exception  
-> `public` cause: string
+> `public` string Cause [ get, set ]
 
-#### stack_trace
+#### StackTrace
 Stack trace of the exception  
-> `public` stack_trace: string
-
-</span>
+> `public` string StackTrace [ get, set ]
 
 
 ### See also

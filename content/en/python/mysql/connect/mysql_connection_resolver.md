@@ -53,7 +53,7 @@ The connection resolver
 > **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credential_resolver
-The connection resolver
+The credential resolver
 > **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>

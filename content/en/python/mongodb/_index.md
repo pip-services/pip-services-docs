@@ -9,7 +9,7 @@ description: >
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
 ---
 
-### Modules
+### Packages
 
 The module contains the following packages:
 - [**Build**](build) - Factory to create MongoDB persistence components.

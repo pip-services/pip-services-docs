@@ -5,30 +5,32 @@ linkTitle: "MySqlPersistence"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
     Abstract persistence component that stores data in MySQL using plain driver.
-
-
-    This is the most basic persistence component that is only
-    able to store data items of any type. Specific CRUD operations
-    over the data items must be implemented in child classes by
-    accessing **self._db** or **self._collection** properties.
+    
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
+### Description
+
+The MySqlPersistence class allows you to create persistence components that store data in MySQL databases using the official driver.
+
+Important points
+
+- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **self._db** or **self._collection** properties.
 
 #### Configuration parameters
 
 - **collection**: (optional) MySQL collection name
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -41,41 +43,13 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
 
-**Example:**
-```python
-class MyMySqlPersistence(MySqlPersistence):
-
-    def __init__(self):
-        super(MyMySqlPersistence, self).__init__('mydata')
-
-    def get_by_name(self, correlation_id, name):
-        criteria = {'name':name}
-        return self._model.find_one(criteria)
-
-    def set(self,correlation_id, item):
-        criteria = {'name': item['name']}
-        options = {'upsert': True, 'new': True}
-        return self._model.find_one_and_update(criteria, item, options)
-
-persistence =MyMySqlPersistence()
-persistence.configure(ConfigParams.from_tuples(
-    "host", "localhost",
-    "port", 27017
-))
-
-persistence.open('123')
-persistence.set('123', {'name':'ABC'})
-
-item = persistence.get_by_name('123', 'ABC')
-print(item) # Result: { name: "ABC" }
-```
 
 ### Constructors
 Creates a new instance of the persistence component.
 
 > MySqlPersistence(table_name: str = None)
 
-- **table_name**: str - (optional) a table name.
+- **table_name**: str - (optional) table name.
 
 
 ### Fields
@@ -107,13 +81,13 @@ The MySql database name.
 > **_database_name**: str
 
 #### _max_page_size
-TODO add description
+the maximum number of records to return from the database per request.
 > **_max_page_size** = 100
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### _auto_create_object
 Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
@@ -123,11 +97,11 @@ Adds a statement to schema definition. This is a deprecated method. Use ensureSc
 - **schema_statement**: str - a statement to be added to the schema
 
 #### clear
-Clears component state.
+Clears a component's state.
 
 > clear(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **correlation_id**: Optional[str]- (optional) transaction id used to trace execution through the call chain.
 
 #### _clear_schema
 Clears all auto-created objects
@@ -136,27 +110,27 @@ Clears all auto-created objects
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees the used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **correlation_id**: Optional[str]- (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Closes component and frees used resources.
+Configures component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **config:**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### _convert_from_public
-Convert object value from public to internal format.
+Converts object value from public to internal format.
 
 > _convert_from_public(value: Any): Any
 
-- **value**: Any - an object in public format to convert.
+- **value**: Any - object in public format to convert.
 - **returns**: Any - converted object in internal format.
 
 
@@ -165,7 +139,7 @@ Converts object value from internal to public format.
 
 > _convert_to_public(value: Any): Any
 
-- **value**: Any - an object in internal format to convert.
+- **value**: Any - object in internal format to convert.
 - **returns**: Any - converted object in public format.
 
 
@@ -174,9 +148,9 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: Optional[dict] - a created item
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be created.
+- **returns**: Optional[dict] - created item
 
 
 #### _create_schema
@@ -184,7 +158,7 @@ TODO add description
 
 > _create_schema(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _define_schema
@@ -200,8 +174,8 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter function to filter items.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) filter function to filter items.
 
 
 #### _ensure_index
@@ -226,8 +200,8 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 > _generate_columns(values: Any): str
 
-- **values**: Any - an array with column values or a key-value map
-- **returns**: str - a generated list of column names 
+- **values**: Any - array with column values or a key-value map
+- **returns**: str - generated list of column names 
 
 
 #### _generate_parameters
@@ -244,8 +218,8 @@ Generates a list of column sets to use in UPDATE statements like:  *column1=$1,c
 
 > _generate_set_parameters(values: Any): str
 
-- **values**: Any - a key-value map with columns and values
-- **returns**: str - a generated list of column sets
+- **values**: Any - key-value map with columns and values
+- **returns**: str - generated list of column sets
 
 
 #### _generate_values
@@ -253,48 +227,48 @@ Generates a list of column parameters
 
 > _generate_values(values: Any): List[Any]
 
-- **values**: Any - a key-value map with columns and values
-- **returns**: List[Any] - a generated list of column values
+- **values**: Any - key-value map with columns and values
+- **returns**: List[Any] - generated list of column values
 
 
 
 #### get_count_by_filter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from child class that
+This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter JSON object
-- **returns**: int - a number of filtered items.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) JSON object filter
+- **returns**: int - number of filtered items.
 
 
 #### get_list_by_filter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from child class that
+This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter function to filter items
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
+- **filter**: Any - (optional) filter function to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[dict] - a data list of results by filter.
+- **returns**: List[dict] - data list of results by filter.
 
 
 #### get_one_random
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public [get_one_random](#get_one_random) method from child class
+This method shall be called by a public [get_one_random](#get_one_random) method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_one_random(correlation_id: Optional[str], filter: Any): dict
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 filter: Any
 - **returns**: dict - a random item.
 
@@ -302,13 +276,13 @@ filter: Any
 #### get_page_by_filter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from child class that
+This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from the a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter JSON object
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) filter for JSON objects.
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Any - (optional) sorting JSON object
 - **select**: Any - (optional) projection JSON object
@@ -329,11 +303,11 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _quote_identifier
-TODO add description
+Adds single quotes to a string.
 
 > _quote_identifier(value: str): Optional[str]
 
@@ -353,3 +327,33 @@ Sets references to dependent components.
 Unsets (clears) previously set references to dependent components.
 
 > unset_references()
+
+### Examples
+
+```python
+class MyMySqlPersistence(MySqlPersistence):
+
+    def __init__(self):
+        super(MyMySqlPersistence, self).__init__('mydata')
+
+    def get_by_name(self, correlation_id, name):
+        criteria = {'name':name}
+        return self._model.find_one(criteria)
+
+    def set(self,correlation_id, item):
+        criteria = {'name': item['name']}
+        options = {'upsert': True, 'new': True}
+        return self._model.find_one_and_update(criteria, item, options)
+
+persistence =MyMySqlPersistence()
+persistence.configure(ConfigParams.from_tuples(
+    "host", "localhost",
+    "port", 27017
+))
+
+persistence.open('123')
+persistence.set('123', {'name':'ABC'})
+
+item = persistence.get_by_name('123', 'ABC')
+print(item) # Result: { name: "ABC" }
+```

@@ -6,22 +6,21 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
     Abstract persistence component that stores data in MySQL in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.
-    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
 
-
-    The JSON table has only two fields: id and data.
-
-    
-    In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter),
-    [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter function.
-    All other operations can be used out of the box. 
-
-
-    In complex scenarios child classes can implement additional operations by 
-    accessing **self._collection** and **self._model** properties.
 ---
 
 **Implements:** [IdentifiableMySqlPersistence](../identifiable_mysql_persistence), [IIdentifiable](../../../commons/data/iidentifiable)
+
+### Description
+
+The IdentifiableJsonMySqlPersistence class allows you to create persistence components that store data in JSON or JSONB fields and implement a number of CRUD operations over data items with unique ids.
+
+Important points
+
+- The JSON table has only two fields: id and data.
+- In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter function. 
+- All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
 
 
 #### Configuration parameters
@@ -50,7 +49,57 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
 
-**Example:**
+
+
+### Constructors
+Creates a new instance of the persistence component.
+
+> IdentifiableJsonMySqlPersistence(table_name: str = None)
+
+- **table_name**: str - (optional) collection name.
+
+
+### Instance methods
+
+#### _convert_from_public
+Converts object value from public to internal format.
+
+> _convert_from_public(value: Any): Any
+
+- **value**: Any - an object in public format to convert.
+- **returns**: Any - converted object in internal format.
+
+
+#### _convert_to_public
+Converts object value from internal to public format.
+
+> _convert_to_public(value: Any): Any
+
+- **value**: Any - an object in internal format to convert.
+- **returns**: Any - converted object in public format.
+
+
+#### _ensure_table
+Adds DML statement to automatically create a JSON(B) table
+
+> _ensure_table(id_type: str = 'TEXT', data_type: str = 'JSONB')
+
+- **id_type**: str - type of the id column (default: TEXT)
+- **data_type**: str - type of the data column (default: JSONB)
+
+
+#### update_partially
+Updates only few selected fields in a data item.
+
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **id**: Any - id of the data item to be updated.
+- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
+- **return**: Optional[dict] - updated item
+
+### Examples
+
 ```python
 class MyMySqlPersistence(IdentifiableJsonMySqlPersistence):
 
@@ -83,50 +132,3 @@ persistence.delete_by_id("123", "1")
 # ...
 
 ```
-
-### Constructors
-Creates a new instance of the persistence component.
-
-> IdentifiableJsonMySqlPersistence(table_name: str = None)
-
-- **table_name**: str - (optional) a collection name.
-
-
-### Methods
-
-#### _convert_from_public
-Convert object value from public to internal format.
-
-> _convert_from_public(value: Any): Any
-
-- **value**: Any - an object in public format to convert.
-- **returns**: Any - converted object in internal format.
-
-
-#### _convert_to_public
-Converts object value from internal to public format.
-
-> _convert_to_public(value: Any): Any
-
-- **value**: Any - an object in internal format to convert.
-- **returns**: Any - converted object in public format.
-
-
-#### _ensure_table
-Adds DML statement to automatically create JSON(B) table
-
-> _ensure_table(id_type: str = 'TEXT', data_type: str = 'JSONB')
-
-- **id_type**: str - type of the id column (default: TEXT)
-- **data_type**: str - type of the data column (default: JSONB)
-
-
-#### update_partially
-Updates only few selected fields in a data item.
-
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of data item to be updated.
-- **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
-- **return**: Optional[dict] - updated item

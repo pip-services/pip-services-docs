@@ -4,12 +4,14 @@ title: "DefaultPostgresFactory"
 linkTitle: "DefaultPostgresFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 description: > 
-    Creates Postgres components by their descriptors.
+    Creates Postgres components based on their descriptors.
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
 
-See also [Factory](../../../components/build/factory), [PostgresConnection](../../connect/postgres_connection) 
+### Description
+
+The DefaultPostgresFactory class allows you to create a factory used to create Postgres components based on their descriptors.
 
 ### Constructors
 

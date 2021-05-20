@@ -7,21 +7,22 @@ description: >
 
     Abstract persistence component that stores data in MySQL
     and implements a number of CRUD operations over data items with unique ids.
-    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
     
-    
-    In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter),
-    [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with specific filter function.
-    All other operations can be used out of the box. 
-    
-    
-    In complex scenarios child classes can implement additional operations by 
-    accessing **self._collection** and **self._model** properties.
 
 ---
 
 **Implements:** [MySqlPersistence](../mysql_persistence), [IIdentifiable](../../../commons/data/iidentifiable)
 
+### Description
+
+The IdentifiableMySqlPersistence class allows you to create persistence components that store data in MySQL databases and implement a number of CRUD operations over data items with unique ids.
+
+Important points
+
+- The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with the specific filter function.
+- All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing the **self._collection** and **self._model** properties.
 
 #### Configuration parameters
 
@@ -35,8 +36,8 @@ description: >
 
 **credential(s)**:
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -49,7 +50,107 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
 
-**Example:**
+
+### Constructors
+Creates a new instance of the persistence component.
+
+> IdentifiableMySqlPersistence(table_name: str = None)
+
+- **table_name**: str - (optional) collection name.
+
+
+### Instance methods
+
+#### _convert_from_public_partial
+Converts the given object from the public partial format.
+
+> _convert_from_public_partial(value: Any): Any
+
+- **value**: Any - the object to convert from the public partial format.
+- **returns**: Any - the initial object.
+
+
+#### create
+Creates a data item.
+
+> create(correlation_id: Optional[str], item: Any): Optional[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be created.
+- **returns**: Optional[dict] - created item
+
+
+#### delete_by_id
+Deletes a data item by it's unique id.
+
+> delete_by_id(correlation_id: Optional[str], id: Any): dict
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **id**: Any - id of the item to be deleted
+- **returns**: dict - deleted item
+
+
+#### delete_by_ids
+Deletes multiple data items by their unique ids.
+
+> delete_by_ids(correlation_id: Optional[str], ids: List[Any])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **ids**: List[Any] - ids of the data items to be deleted.
+
+
+#### get_list_by_ids
+Gets a list of data items retrieved by given unique ids.
+
+> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **ids**: List[Any] - ids of the data items to be retrieved
+- **returns**: List[dict] - data list
+
+
+#### get_one_by_id
+Gets a data item by its unique id.
+
+> get_one_by_id(correlation_id: Optional[str], id: Any): dict
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **id**: Any - id of the data item to be retrieved.
+- **returns**: dict - data item
+
+
+#### set
+Sets a data item. If the data item exists it updates it,
+otherwise it create a new data item.
+
+> set(correlation_id: Optional[str], item: Any): Optional[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be set.
+- **returns**: Optional[dict] - new or updated item
+
+
+#### update
+Updates a data item.
+
+> update(correlation_id: Optional[str], item: Any): Optional[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be updated.
+- **returns**: Optional[dict] - updated item
+
+
+#### update_partially
+Updates only a few selected fields in a data item.
+
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **id**: Any - id of data item to be updated.
+- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
+- **returns**: Optional[dict] - updated item
+
+### Examples
 ```python
 class MyMySqlPersistence(IdentifiableMySqlPersistence):
     def __init__(self):
@@ -80,102 +181,3 @@ print(page.data) # Result: { id: "1", name: "ABC" }
 persistence.delete_by_id("123", "1")
 # ...
 ```
-
-### Constructors
-Creates a new instance of the persistence component.
-
-> IdentifiableMySqlPersistence(table_name: str = None)
-
-- **table_name**: str - (optional) a collection name.
-
-
-### Methods
-
-#### _convert_from_public_partial
-Converts the given object from the public partial format.
-
-> _convert_from_public_partial(value: Any): Any
-
-- **value**: Any - the object to convert from the public partial format.
-- **returns**: Any - the initial object.
-
-
-#### create
-Creates a data item.
-
-> create(correlation_id: Optional[str], item: Any): Optional[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: Optional[dict] - created item
-
-
-#### delete_by_id
-Deleted a data item by it's unique id.
-
-> delete_by_id(correlation_id: Optional[str], id: Any): dict
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of the item to be deleted
-- **returns**: dict - deleted item
-
-
-#### delete_by_ids
-Deletes multiple data items by their unique ids.
-
-> delete_by_ids(correlation_id: Optional[str], ids: List[Any])
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **ids**: List[Any] - ids of data items to be deleted.
-
-
-#### get_list_by_ids
-Gets a list of data items retrieved by given unique ids.
-
-> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **ids**: List[Any] - ids of data items to be retrieved
-- **returns**: List[dict] - data list
-
-
-#### get_one_by_id
-Gets a data item by its unique id.
-
-> get_one_by_id(correlation_id: Optional[str], id: Any): dict
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of data item to be retrieved.
-- **returns**: dict - data item
-
-
-#### set
-Sets a data item. If the data item exists it updates it,
-otherwise it create a new data item.
-
-> set(correlation_id: Optional[str], item: Any): Optional[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - a item to be set.
-- **returns**: Optional[dict] - updated item
-
-
-#### update
-Updates a data item.
-
-> update(correlation_id: Optional[str], item: Any): Optional[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be updated.
-- **returns**: Optional[dict] - updated item
-
-
-#### update_partially
-Updates only few selected fields in a data item.
-
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of data item to be updated.
-- **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
-- **returns**: Optional[dict] - updated item

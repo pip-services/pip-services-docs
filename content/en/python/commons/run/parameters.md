@@ -96,7 +96,8 @@ Omits selected parameters from this Parameters and returns the rest as a new Par
 
 
 #### override
-Overrides selected parameters and returs a new Paremeter object.
+Overrides parameters with new values from specified [Parameters](../parameters) and returns a new [Parameters](../parameters) object.
+
 > override(parameters: [Parameters](../parameters), recursive: bool = false): [Parameters](../parameters)
 
 - **parameters**: [Parameters](../parameters) - Parameters with parameters to override the current values.

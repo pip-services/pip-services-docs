@@ -17,7 +17,7 @@ The ICleanable interface allows you to create components with a method to clean 
 #### clear
 Clears component state.
 
-> clear(correlationId: string): Promise\<void\>;
+> clear(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 

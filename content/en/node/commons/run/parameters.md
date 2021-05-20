@@ -96,6 +96,7 @@ Omits selected parameters from this Parameters and returns the rest as a new Par
 
 
 #### override
+Overrides parameters with new values from specified [Parameters](../parameters) and returns a new [Parameters](../parameters) object.
 
 > `public` override(parameters: [Parameters](../parameters), recursive: boolean = false): [Parameters](../parameters)
 

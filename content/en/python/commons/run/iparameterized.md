@@ -18,7 +18,7 @@ Sets execution parameters.
 
 > set_parameters(parameters: [Parameters](../parameters))
 
-- **parameters**: [Parameters](../parameters)
+- **parameters**: [Parameters](../parameters) - execution parameters.
 
 
 ### See also

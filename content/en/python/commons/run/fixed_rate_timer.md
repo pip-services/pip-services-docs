@@ -126,5 +126,33 @@ Stops the timer.
 
 > stop()
 
+
+### Examples
+
+```python
+class MyComponent:
+
+    timer: FixedRateTimer = FixedRateTimer(self.__cleanup, 60000)
+
+    ...
+    def open(correlation_id: str): 
+        ...
+        timer.start()
+        ...
+    
+    
+    def close(correlationId: str): 
+        ...
+        timer.stop()
+        ...
+    
+    
+    def __cleanup(): 
+        ...
+    
+    ...
+
+```
+
 ### See also
 - #### [INotifiable](../inotifiable)

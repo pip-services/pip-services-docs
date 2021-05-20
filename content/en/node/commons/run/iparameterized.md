@@ -18,7 +18,8 @@ Sets execution parameters.
 
 > setParameters(parameters: [Parameters](../parameters)): void
 
-- **parameters**: [Parameters](../parameters)
+- **parameters**: [Parameters](../parameters) - execution parameters.
+
 
 
 ### See also

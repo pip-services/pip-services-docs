@@ -126,5 +126,30 @@ Stops the timer.
 
 > `public` stop(): void
 
+### Examples
+```typescript
+class MyComponent {
+    private timer: FixedRateTimer = new FixedRateTimer(() => { this.cleanup }, 60000);
+    ...
+    public async open(correlationId: string): Promise<void> {
+        ...
+        timer.start();
+        ...
+    }
+    
+    public async close(correlationId: string): Promise<void> {
+        ...
+        timer.stop();
+        ...
+    }
+    
+    private cleanup(): void {
+        ...
+    }
+    ...
+}
+
+```
+
 ### See also
 - #### [INotifiable](../inotifiable)

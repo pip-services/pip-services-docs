@@ -17,7 +17,7 @@ The IClosable interface allows you to create a component with a method that clos
 #### close
 Closes component and frees used resources.
 
-> close(correlationId: string): Promise\<void\>;
+> close(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 

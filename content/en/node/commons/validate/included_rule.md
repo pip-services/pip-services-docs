@@ -22,7 +22,7 @@ Creates a new validation rule and sets its values.
 
 ### Methods
 
-#### validate
+
 #### validate
 Validates a given value against this rule.
 

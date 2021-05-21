@@ -149,11 +149,11 @@ Creates a data item.
 
 
 #### _create_schema
-TODO add description
+Checks if a table exists and if it doesn't, it creates the necessary database objects.
 
 > _create_schema(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _define_schema
@@ -169,8 +169,8 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter function to filter items.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) filter function used to filter items.
 
 
 #### _ensure_index
@@ -187,7 +187,7 @@ Adds a statement to schema definition
 
 > _ensure_schema(schema_statement: str)
 
-- **schema_statement**: str - a statement to be added to the schema
+- **schema_statement**: str - statement to be added to the schema
 
 
 #### _generate_columns
@@ -196,7 +196,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 > _generate_columns(values: Any): str
 
 - **values**: Any - an array with column values or a key-value map
-- **returns**: str - a generated list of column names 
+- **returns**: str - generated list of column names 
 
 
 #### _generate_parameters
@@ -205,7 +205,7 @@ Generates a list of value parameters to use in SQL statements like: "%s,%s,%s"
 > _generate_parameters(values: Any): str
 
 - **values**: Any - an array with values or a key-value map
-- **returns**: str - a generated list of value parameters
+- **returns**: str - generated list of value parameters
 
 
 #### _generate_set_parameters
@@ -213,8 +213,8 @@ Generates a list of column sets to use in UPDATE statements like: column1=%s,col
 
 > _generate_set_parameters(values: Any): str
 
-- **values**: Any - a key-value map with columns and values
-- **returns**: str - a generated list of column sets
+- **values**: Any - key-value map with columns and values
+- **returns**: str - generated list of column sets
 
 
 #### _generate_values
@@ -222,15 +222,15 @@ Generates a list of column parameters
 
 > _generate_values(values: Any): List[Any]
 
-- **values**: Any - a key-value map with columns and values
-- **returns**: List[Any] - a generated list of column values
+- **values**: Any - key-value map with columns and values
+- **returns**: List[Any] - generated list of column values
 
 
 
 #### get_count_by_filter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from child class that
+This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
@@ -248,40 +248,40 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter function to filter items
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) filter function to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[dict] - a data list of results by filter.
+- **returns**: List[dict] - data list of filtered results.
 
 
 #### get_one_random
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public [get_one_random](#get_one_random) method from child class
+This method shall be called by a public [get_one_random](#get_one_random) method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_one_random(correlation_id: Optional[str], filter: Any): dict
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 filter: Any
-- **returns**: dict - a random item.
+- **returns**: dict - random item.
 
 
 #### get_page_by_filter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from child class that
+This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **filter**: Any - (optional) a filter JSON object
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **filter**: Any - (optional) filter for JSON objects
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Any - (optional) sorting JSON object
 - **select**: Any - (optional) projection JSON object
-- **returns**: [DataPage](../../../commons/data/data_page) - a data page of result by filter
+- **returns**: [DataPage](../../../commons/data/data_page) - data page with filtered result
 
 
 
@@ -290,7 +290,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### open
@@ -298,16 +298,16 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _quote_identifier
-TODO add description
+Adds a single quote to each side of the string.
 
 > _quote_identifier(value: str): Optional[str]
 
-- **value**: str - TODO add description
-- **returns**: Optional[str] - TODO add description
+- **value**: str - string where quotes need to be added
+- **returns**: Optional[str] - string with added quotes
 
 
 #### set_references

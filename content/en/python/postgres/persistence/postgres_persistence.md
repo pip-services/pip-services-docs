@@ -38,7 +38,7 @@ Important points
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 
 #### References
@@ -99,7 +99,7 @@ Clears component state.
 - **correlation_id**: Optional[str]- the object to convert from the public partial format.
 
 #### _clear_schema
-Clears all auto-created objects
+Clears all auto-created objects.
 
 > _clear_schema()
 
@@ -174,7 +174,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 
 #### _ensure_index
-Adds index definition to create it on opening
+Adds index definition to create it on opening.
 
 > _ensure_index(keys: Any, options: Any = None)
 
@@ -183,7 +183,7 @@ Adds index definition to create it on opening
 
 
 #### _ensure_schema
-Adds a statement to schema definition
+Adds a statement to schema definition.
 
 > _ensure_schema(schema_statement: str)
 
@@ -191,7 +191,7 @@ Adds a statement to schema definition
 
 
 #### _generate_columns
-Generates a list of column names to use in SQL statements like: "column1,column2,column3"
+Generates a list of column names to use in SQL statements like: "column1,column2,column3".
 
 > _generate_columns(values: Any): str
 
@@ -200,16 +200,16 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 
 #### _generate_parameters
-Generates a list of value parameters to use in SQL statements like: "%s,%s,%s"
+Generates a list of value parameters to use in SQL statements like: "%s,%s,%s".
 
 > _generate_parameters(values: Any): str
 
-- **values**: Any - an array with values or a key-value map
+- **values**: Any - array with values or a key-value map
 - **returns**: str - generated list of value parameters
 
 
 #### _generate_set_parameters
-Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s
+Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s.
 
 > _generate_set_parameters(values: Any): str
 
@@ -218,7 +218,7 @@ Generates a list of column sets to use in UPDATE statements like: column1=%s,col
 
 
 #### _generate_values
-Generates a list of column parameters
+Generates a list of column parameters.
 
 > _generate_values(values: Any): List[Any]
 
@@ -235,15 +235,15 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) a filter JSON object
-- **returns**: int - a number of filtered items.
+- **returns**: int - number of filtered items.
 
 
 #### get_list_by_filter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from child class that
+This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]

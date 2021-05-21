@@ -52,7 +52,7 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 ### Static methods
 
-#### read_config
+#### readConfig
 Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
 > `public static` readConfig(correlationId: string, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
@@ -66,7 +66,7 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### readObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `public static` read_config(correlationId: string, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): any
+> `public static` readObject(correlationId: string, path: string, parameters: [ConfigParams](../../../commons/config/config_params)): any
 
 - **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
 - **path**: string - a path to configuration file.

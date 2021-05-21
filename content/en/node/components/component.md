@@ -40,9 +40,9 @@ Components to pass log messages
 Components to pass collected measurements
 > `protected` **_counters**: [CompositeCounters](../count/composite_counters)
 
-#### _dependency_resolver
+#### _dependencyResolver
 A dependency resolver
-> `protected` **_dependency_resolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
+> `protected` **_dependencyResolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
 
 #### _tracer
 Components to record traces
@@ -63,6 +63,6 @@ Configures component by passing configuration parameters.
 #### setReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../commons/refer/ireferences))
+> `public` setReferences(references: [IReferences](../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../commons/refer/ireferences) - references to locate the component dependencies.

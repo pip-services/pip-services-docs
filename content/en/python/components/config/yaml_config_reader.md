@@ -65,7 +65,7 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### read_object
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `static` read_config(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
+> `static` read_object(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace the execution through a call chain.
 - **path**: str - a path to configuration file.

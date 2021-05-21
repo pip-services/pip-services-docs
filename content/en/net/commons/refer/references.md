@@ -7,7 +7,7 @@ description: >
     An implementation of [IReferences](../ireferences) that allows you to store and locate component references.
 ---
 
-**Implements**: [IReferences](../ireferences)
+**Inherits**: [IReferences](../ireferences)
 
 ### Description
 

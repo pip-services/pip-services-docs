@@ -58,7 +58,7 @@ linkTitle: "Python"
       <div class="card">
         <div class="card-body text-center">
           <img class="card-img-top" src="/images/langs/dotnet-icon.png" alt="Dotnet icon">
-          <a href="../net" class="stretched-link"></a>
+          <a href="../dotnet" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
             <b>.Net</b>

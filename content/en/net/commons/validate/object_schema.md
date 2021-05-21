@@ -29,7 +29,7 @@ True to allow undefined properties and false to disallow.
 > `public` IsUndefinedAllowed [ get, set ]
 
 
-#### Properties 
+### Properties 
 Gets and sets validation schemas for object properties.
 See [PropertySchema](../property_schema)
 

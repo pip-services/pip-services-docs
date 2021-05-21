@@ -22,7 +22,7 @@ This method searches for all registered components and returns
 a locator for the component it is able to create that matches the given locator.
 If the factory is not able to create the requested component is returns null.
 
->  canCreate(locator: any): any
+> `public` canCreate(locator: any): any
 
 - **locator**: any - a locator to identify component to be created.
 - **returns**: any - a locator for a component that the factory is able to create.
@@ -31,7 +31,7 @@ If the factory is not able to create the requested component is returns null.
 #### create
 Creates a component identified by given a locator.
 
-> create(locator: any): any
+> `public` create(locator: any): any
 
 - **locator**: any - a locator to identify component to be created.
 - **returns**: any - the created component.
@@ -40,7 +40,7 @@ Creates a component identified by given a locator.
 #### register
 Registers a component using a factory method.
 
-> register(locator: any, factory: any)
+> `public` register(locator: any, factory: any)
 
 - **locator**: any - a locator to identify component to be created.
 - **factory**: any - a factory function that receives a locator and returns a created component.
@@ -49,7 +49,7 @@ Registers a component using a factory method.
 #### registerAsType
 Registers a component using its type (a constructor function).
 
-> registerAsType(locator: any, type: any)
+> `public` registerAsType(locator: any, type: any)
 
 - **locator**: any - a locator to identify component to be created.
 - **type**: any - a component type.

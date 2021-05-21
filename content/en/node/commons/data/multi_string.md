@@ -40,7 +40,7 @@ Appends a map with language-translation pairs.
 #### clear
 Clears all translations from this MultiString object.
 
-> `public` clear(); void
+> `public` clear(): void
 
 
 #### get

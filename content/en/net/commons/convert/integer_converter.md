@@ -20,7 +20,7 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 
 #### ToInteger
 Converts value into integer or returns 0 when conversion is not possible.  
-See [LongConverter.toLong](../long_converter/#tolong),  
+See [LongConverter.ToLong](../long_converter/#tolong),  
 [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
 
 > `public static` int ToInteger(object value)
@@ -30,8 +30,8 @@ See [LongConverter.toLong](../long_converter/#tolong),
 
 #### ToIntegerWithDefault
 Converts value into integer or returns default value when conversion is not possible.
-See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),  
-[LongConverter.toNullableLong](../long_converter/#tonullablelong)
+See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),  
+[LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
 > `public static` int ToIntegerWithDefault(object value, int defaultValue)
 
@@ -41,7 +41,7 @@ See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),
 
 #### ToNullableInteger
 Converts value into integer or returns null when conversion is not possible.
-See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
 > `public static` int ToNullableInteger(object value)
 

@@ -4,31 +4,36 @@ title: "PostgresPersistence"
 linkTitle: "PostgresPersistence"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 description: >
-    Abstract persistence component that stores data in PostgreSQL using plain driver.
+    Abstract persistence component that stores data in PostgreSQL using the official driver.
 
 
-    This is the most basic persistence component that is only
-    able to store data items of any type. Specific CRUD operations
-    over the data items must be implemented in child classes by
-    accessing **self._db** or **self._collection** properties.
+    
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
+### Description
+
+The PostgresPersistence class allows you to create persistence components that store data in PostgreSQL using the official driver.
+
+Important points
+
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **self._db** or **self._collection** properties.
 
 #### Configuration parameters
 
 - **collection**: (optional) PostgreSQL collection name
 **connection(s)**:    
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:    
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -41,33 +46,6 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
 
-**Example:**
-```python
-class MyPostgresPersistence(PostgresPersistence):
-    def __init__(self):
-        super(MyPostgresPersistence, self).__init__('mydata')
-
-    def get_by_name(self, correlation_id, name):
-        criteria = {'name': name}
-        return self._model.find_one(criteria)
-
-    def set(self, correlation_id, item):
-        criteria = {'name': item['name']}
-        options = { 'upsert': True, 'new': True }
-        return self._model.find_one_and_update(criteria, item, options)
-
-persistence = MyPostgresPersistence()
-persistence.configure(ConfigParams.from_tuples(
-    "host", "localhost",
-    "port", 27017
-))
-
-persistence.open("123")
-persistence.set("123", {'name': "ABC"})
-
-item = persistence.get_by_name("123", "ABC")
-print(item) # Result: { 'name': "ABC" }
-```
 
 ### Constructors
 Creates a new instance of the persistence component.
@@ -105,13 +83,13 @@ The PostgreSQL database name.
 > **_database_name**: str
 
 #### _max_page_size
-TODO add description
+The maximum number of records to return from the database.
 > **_max_page_size** = 100
 
 </span>
 
 
-### Methods
+### Instance methods
 
 #### clear
 Clears component state.
@@ -127,7 +105,7 @@ Clears all auto-created objects
 
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -135,7 +113,7 @@ Closes component and frees used resources.
 
 
 #### configure
-Closes component and frees used resources.
+Configures the component.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -143,20 +121,20 @@ Closes component and frees used resources.
 
 
 #### _convert_from_public
-Convert object value from public to internal format.
+Converts an object value from public to internal format.
 
 > _convert_from_public(value: Any): Any
 
-- **value**: Any - an object in public format to convert.
+- **value**: Any - object in public format to convert.
 - **returns**: Any - converted object in internal format.
 
 
 #### _convert_to_public
-Converts object value from internal to public format.
+Converts an object value from internal to public format.
 
 > _convert_to_public(value: Any): Any
 
-- **value**: Any - an object in internal format to convert.
+- **value**: Any - object in internal format to convert.
 - **returns**: Any - converted object in public format.
 
 
@@ -165,9 +143,9 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: Optional[dict] - a created item
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be created.
+- **returns**: Optional[dict] - created item
 
 
 #### _create_schema
@@ -344,3 +322,35 @@ Sets references to dependent components.
 Unsets (clears) previously set references to dependent components.
 
 > unset_references()
+
+### Examples
+
+```python
+class MyPostgresPersistence(PostgresPersistence):
+    def __init__(self):
+        super(MyPostgresPersistence, self).__init__('mydata')
+
+    def get_by_name(self, correlation_id, name):
+        criteria = {'name': name}
+        return self._model.find_one(criteria)
+
+    def set(self, correlation_id, item):
+        criteria = {'name': item['name']}
+        options = { 'upsert': True, 'new': True }
+        return self._model.find_one_and_update(criteria, item, options)
+
+persistence = MyPostgresPersistence()
+persistence.configure(ConfigParams.from_tuples(
+    "host", "localhost",
+    "port", 27017
+))
+
+persistence.open("123")
+persistence.set("123", {'name': "ABC"})
+
+item = persistence.get_by_name("123", "ABC")
+print(item) # Result: { 'name': "ABC" }
+
+# ...
+
+```

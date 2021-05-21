@@ -72,8 +72,8 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: Any): Optional[dict]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: Any - item to be created.
 - **returns**: Optional[dict] - created item
 
 
@@ -83,7 +83,7 @@ Deletes a data item by it's unique id.
 > delete_by_id(correlation_id: Optional[str], id: Any): dict
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of the item to be deleted
+- **id**: Any - id of the item to be deleted
 - **returns**: dict - deleted item
 
 
@@ -111,7 +111,7 @@ Gets a data item by its unique id.
 
 > get_one_by_id(correlation_id: Optional[str], id: Any): dict
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of data item to be retrieved.
 - **returns**: dict - data item
 

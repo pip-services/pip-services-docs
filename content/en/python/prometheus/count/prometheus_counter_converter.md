@@ -22,4 +22,4 @@ Converts the given counters to a string that is returned by Prometheus metrics s
 - **counters**: List[[Counter](../../../components/count/counter)] - a list of counters to convert.
 - **source**: Optional[str] - a source (context) name.
 - **instance**: Optional[str] - a unique instance name (usually a host name).
-- **returns**: str - TODO add description
+- **returns**: str - converted counter

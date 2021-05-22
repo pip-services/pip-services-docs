@@ -5,13 +5,14 @@ linkTitle: "PrometheusMetricsService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-prometheus-python"
 description: >
     Service that exposes the **"/metrics"** and **"/metricsandreset"** routes 
-    for Prometheus to scap performance metrics.
+    for Prometheus to obtain performance metrics.
 ---
 
 **Implements:** [RestService](../../../rpc/services/rest_service)
 
-See also [RestService](../../../rpc/services/rest_service), [RestClient](../../../rpc/clients/rest_client)
+### Description
 
+The PrometheusMetricsService class allows you to create services that expose the **"/metrics"** and **"/metricsandreset"** routes for Prometheus to obtain performance metrics.
 
 #### Configuration parameters
 
@@ -20,7 +21,7 @@ See also [RestService](../../../rpc/services/rest_service), [RestClient](../../.
 - **prometheus_counters**: override for PrometheusCounters dependency
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+- **discovery_key**: (optional) key to retrieve the connection from IDiscovery
 - **protocol**: connection protocol: http or https
 - **host**: host name or IP address
 - **port**: port number
@@ -34,7 +35,29 @@ See also [RestService](../../../rpc/services/rest_service), [RestClient](../../.
  * - **\*:endpoint:http:\*:1.0** - (optional) [HttpEndpoint](../../../rpc/services/http_endpoint) reference to expose REST operation
  * - **\*:counters:prometheus:\*:1.0** - [PrometheusCounters](../../count/prometheus_counters) reference to retrieve collected metrics
 
-**Example:**
+
+### Constructors
+Creates a new instance of this service.
+
+> PrometheusMetricsService()
+
+
+### Instance methods
+
+#### configure
+Configures a component by passing configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+#### register
+Registers all service routes in HTTP endpoint.
+
+> register()
+
+### Examples
+
 ```python
     service = PrometheusMetricsService()
 
@@ -50,28 +73,6 @@ See also [RestService](../../../rpc/services/rest_service), [RestClient](../../.
     except Exception as err:
         # do something
 ```
-
-### Constructors
-Creates a new instance of this service.
-
-> PrometheusMetricsService()
-
-
-### Methods
-
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-#### register
-Registers all service routes in HTTP endpoint.
-
-> register()
-
-
 
 ### See also
 - #### [RestService](../../../rpc/services/rest_service)

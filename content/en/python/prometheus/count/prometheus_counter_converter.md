@@ -8,8 +8,11 @@ description: >
     a response from Prometheus metrics service.
 ---
 
+### Description
 
-### Methods
+The PrometheusCounterConverter class allows you to convert performance counter values into a response from the Prometheus metrics service.
+
+### Static methods
 
 #### to_string
 Converts the given counters to a string that is returned by Prometheus metrics service.

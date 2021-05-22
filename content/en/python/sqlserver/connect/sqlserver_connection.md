@@ -6,9 +6,6 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
     SQLServer connection using the official driver.
 
-
-    By defining a connection and sharing it through multiple persistence components
-    you can reduce number of used database connections.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
@@ -17,6 +14,10 @@ description: >
 ### Description
 
 The SqlServerConnection class allows you to create a connection to an SQLServer database using the official driver.
+
+Important points
+
+- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
 
 #### Configuration parameters
 

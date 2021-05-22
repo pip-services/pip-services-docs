@@ -6,7 +6,6 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
     Abstract persistence component that stores data in SQLServer in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.
-    The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
 
    
 ---
@@ -19,7 +18,8 @@ The IdentifiableJsonSqlServerPersistence class allows you to create persistence 
 
 Important points
 
--  In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with an specific filter function.
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with an specific filter function.
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
 
@@ -56,7 +56,7 @@ Creates a new instance of the persistence component.
 - **table_name**: str - (optional) collection name.
 
 
-### Methods
+### Instance methods
 
 #### _convert_from_public
 Converts an object value from public to internal format.

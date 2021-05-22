@@ -4,7 +4,7 @@ title: "SqlServerConnection"
 linkTitle: "SqlServerConnection"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
-    SQLServer connection using plain driver.
+    SQLServer connection using the official driver.
 
 
     By defining a connection and sharing it through multiple persistence components
@@ -14,6 +14,9 @@ description: >
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
 [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The SqlServerConnection class allows you to create a connection to an SQLServer database using the official driver.
 
 #### Configuration parameters
 
@@ -24,9 +27,9 @@ description: >
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: user name
-- **password**: user password
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: username
+- **password**: user's password
 
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
@@ -37,7 +40,7 @@ description: >
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** (optional) credential stores to resolve credentials
 
 
 ### Fields
@@ -69,18 +72,18 @@ The configuration options.
 </span>
 
 
-### Methods
+### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -88,16 +91,16 @@ Configures component by passing configuration parameters.
 
 
 #### get_connection
-TODO add description
+Gets the connection to an SQLServer database.
 
-> get_connection(): Any
+> get_connection(): connection to a 
 
-- **returns**: Any - TODO add description
+- **returns**: Any - connection to an SQLServer database.
 
 
 #### get_database_name
-TODO add description
+Gets the name of an SQLServer database.
 
 > get_database_name(): str
 
-- **returns**: str - TODO add description
+- **returns**: str - database name.

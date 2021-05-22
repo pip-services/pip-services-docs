@@ -4,12 +4,14 @@ title: "DefaultSqlServerFactory"
 linkTitle: "DefaultSqlServerFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: > 
-    Creates SqlServer components by their descriptors.
+    Creates SqlServer components based on their descriptors.
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
 
-See also [Factory](../../../components/build/factory), [SqlServerConnection](../../connect/sqlserver_connection) 
+### Description
+
+The DefaultSqlServerFactory class allows you to create a factory used to create SQLServer components based on their descriptors.
 
 ### Constructors
 

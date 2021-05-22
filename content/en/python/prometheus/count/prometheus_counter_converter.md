@@ -19,7 +19,7 @@ Converts the given counters to a string that is returned by Prometheus metrics s
 
 > `static` to_string(counters: List[[Counter](../../../components/count/counter)], source: Optional[str], instance: Optional[str]): str
 
-- **counters**: List[[Counter](../../../components/count/counter)] - a list of counters to convert.
-- **source**: Optional[str] - a source (context) name.
-- **instance**: Optional[str] - a unique instance name (usually a host name).
+- **counters**: List[[Counter](../../../components/count/counter)] - list of counters to convert.
+- **source**: Optional[str] - source (context) name.
+- **instance**: Optional[str] - unique instance name (usually a host name).
 - **returns**: str - converted counter

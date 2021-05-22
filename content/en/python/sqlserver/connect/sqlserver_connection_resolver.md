@@ -7,7 +7,7 @@ description: >
     Helper class that resolves SQLServer connection and credential parameters,
     validates them and generates a connection URI.
 
-    It is able to process multiple connections to PostgreSQL cluster nodes.
+   
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
@@ -17,6 +17,9 @@ description: >
 
 The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validates these parameters and generate a connection URI.
 
+Important points
+
+-  It is able to process multiple connections to PostgreSQL cluster nodes.
 
 #### Configuration parameters
 

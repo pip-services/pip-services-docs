@@ -9,7 +9,7 @@ description: >
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
 
-    The module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both in client mode through PushGateway, and as a service.
+    This module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both in client mode through PushGateway, and as a service.
 ---
 
 ### Packages

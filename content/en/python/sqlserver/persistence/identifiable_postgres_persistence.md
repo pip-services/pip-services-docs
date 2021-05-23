@@ -24,7 +24,7 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SqlServer collection name
+- **collection**: (optional) SqlServer collection name   
 **connection(s)**:   
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address

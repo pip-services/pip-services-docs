@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The IdentifiableSqlServerPersistence class allows you to create persistence components used to store data in SQLServer databases and to implement a number of CRUD operatons over data items with unique ids.
+The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQLServer databases and implement a number of CRUD operatons over data items with unique ids.
 
 Important points
 
@@ -37,7 +37,7 @@ Important points
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 
 #### References

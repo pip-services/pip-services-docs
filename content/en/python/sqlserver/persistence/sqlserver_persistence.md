@@ -16,7 +16,7 @@ The SqlServerPersistence class allows you to create persistence components that 
 
 Important points
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **self._db** or **self._collection** properties.
+- This is the most basic persistence component that is able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **self._db** or **self._collection** properties.
 
 #### Configuration parameters
 

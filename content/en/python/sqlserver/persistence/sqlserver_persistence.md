@@ -111,7 +111,7 @@ Clears all auto-created objects
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -185,7 +185,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **filter**: Any - (optional) filter function used to filter items.
 
 
@@ -268,7 +268,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **filter**: Any - (optional) filter function used to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[dict] - a data list of results by filter
+- **returns**: List[dict] - data list of filtered results
 
 
 #### get_one_random
@@ -279,7 +279,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 
 > get_one_random(correlation_id: Optional[str], filter: Any): dict
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 filter: Any
 - **returns**: dict - a random item.
 

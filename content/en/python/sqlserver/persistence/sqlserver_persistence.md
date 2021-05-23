@@ -173,14 +173,14 @@ Creates a schema.
 
 
 #### _define_schema
-Defines database schema via auto create objects or convenience methods.
+Defines a database schema via auto create objects or convenience methods.
 
 > _define_schema()
 
 
 #### delete_by_filter
 Deletes data items that match to a given filter.
-This method shall be called by a public [delete_by_filter](#delete_by_filter) method from child class that
+This method shall be called by a public [delete_by_filter](#delete_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)

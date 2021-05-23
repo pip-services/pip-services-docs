@@ -26,7 +26,7 @@ and implements a number of CRUD operations over data items with unique ids.
 #### [SqlServerPersistence](sqlserver_persistence)
 Abstract persistence component that stores data in SQLServer using the official driver.
 
-This is the most basic persistence component that is only
+This is the most basic persistence component that is
 able to store data items of any type. 
 
 </div>

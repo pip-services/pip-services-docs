@@ -4,14 +4,14 @@ title: "RestClient"
 linkTitle: "RestClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Abstract client that calls remove endpoints using HTTP/REST protocol.
+    Abstract client that calls remote endpoints using HTTP/REST protocol.
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
+### Description
 
-
-
+The RestClient class allows you to create clients that call remote endpoints using the HTTP/REST protocol.
 
 ##### Configuration parameters
 
@@ -38,26 +38,7 @@ description: >
 
 
 
-**Example:**
 
-```python
-class MyRestClient(RestClient, IMyClient):
-    def get_data(self, correlation_id, id):
-        timing = self.instrument(correlationId, 'myclient.get_data')
-        result = self._controller.get_data(correlationId, id)
-        timing.end_timing()
-        return result
-        
-    # ...
-
-client = MyRestClient()
-
-client.configure(ConfigParams.fromTuples("connection.protocol", "http",
-                                         "connection.host", "localhost",
-                                         "connection.port", 8080))
-data = client.getData("123", "1")
-# ...
-```
 
 ### Fields
 
@@ -219,6 +200,26 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
+### Examples
+
+```python
+class MyRestClient(RestClient, IMyClient):
+    def get_data(self, correlation_id, id):
+        timing = self.instrument(correlationId, 'myclient.get_data')
+        result = self._controller.get_data(correlationId, id)
+        timing.end_timing()
+        return result
+        
+    # ...
+
+client = MyRestClient()
+
+client.configure(ConfigParams.fromTuples("connection.protocol", "http",
+                                         "connection.host", "localhost",
+                                         "connection.port", 8080))
+data = client.getData("123", "1")
+# ...
+```
 
 ### See also
 - #### [RestService](../../services/rest_service)

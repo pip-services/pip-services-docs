@@ -5,11 +5,11 @@ linkTitle: "Clients"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Todo: add description
+    This package contains classes used to create 
 ---
 ---
 
-<div class="module-body"> 
+<div class="module-body"> commandable HTTP services and different types of clients.
 
 ### Classes
 

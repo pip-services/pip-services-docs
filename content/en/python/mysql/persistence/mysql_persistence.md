@@ -310,8 +310,8 @@ Adds single quotes to a string.
 
 > _quote_identifier(value: str): Optional[str]
 
-- **value**: str - TODO add description
-- **returns**: Optional[str] - TODO add description
+- **value**: str - string where quotes need to be added
+- **returns**: Optional[str] - string with added quotes
 
 
 #### set_references

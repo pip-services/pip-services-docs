@@ -5,7 +5,8 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-sqlserver-mysql-python"
 description: >
-    This package contains classes used to create persistence components used to store in MySQL databases. 
+    This package contains classes used to create MySQL persistence components.
+    
 ---
 ---
 

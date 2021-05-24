@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
-    TODO: add description
+    This package contains classes used to create SQLServer connection components.
 ---
 ---
 
@@ -14,14 +14,13 @@ description: >
 ### Classes
 
 #### [SqlServerConnection](sqlserver_connection)
-SQLServer connection using plain driver. 
-By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
+SQLServer connection using the official driver. 
+
 
 
 #### [SqlServerConnectionResolver](sqlserver_connection_resolver)
 Helper class that resolves SQLServer connection and credential parameters,
 validates them and generates a connection URI.
-It is able to process multiple connections to SQLServer cluster nodes.
+
 
 </div>

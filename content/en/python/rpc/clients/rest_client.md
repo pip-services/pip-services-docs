@@ -4,14 +4,14 @@ title: "RestClient"
 linkTitle: "RestClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Abstract client that calls remove endpoints using HTTP/REST protocol.
+    Abstract client that calls remote endpoints using HTTP/REST protocol.
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
+### Description
 
-See also [RestService](../../services/rest_service), [CommandableHttpService](../../services/commandable_http_service)
-
+The RestClient class allows you to create clients that call remote endpoints using the HTTP/REST protocol.
 
 ##### Configuration parameters
 
@@ -38,33 +38,14 @@ See also [RestService](../../services/rest_service), [CommandableHttpService](..
 
 
 
-**Example:**
 
-```python
-class MyRestClient(RestClient, IMyClient):
-    def get_data(self, correlation_id, id):
-        timing = self.instrument(correlationId, 'myclient.get_data')
-        result = self._controller.get_data(correlationId, id)
-        timing.end_timing()
-        return result
-        
-    # ...
-
-client = MyRestClient()
-
-client.configure(ConfigParams.fromTuples("connection.protocol", "http",
-                                         "connection.host", "localhost",
-                                         "connection.port", 8080))
-data = client.getData("123", "1")
-# ...
-```
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _counters
-TODO add description
+A list of counters.
 > **_counters**: List[[ICounters](../icounters)] = []
 
 #### _client
@@ -72,7 +53,7 @@ The HTTP client.
 > **_client**: Any
 
 #### _uri
-The remote service uri which is calculated on open.
+The remote service uri which is defined on openning.
 > **_uri**: str
 
 #### _timeout
@@ -116,28 +97,28 @@ The connection timeout in milliseconds.
 > **_connect_timeout** = 1000
 
 #### _correlation_id_location
-TODO add description
+Defines where to add the correlation id.
 > **_correlation_id_location**: str = "query"
 
 </span>
 
 
 
-### Methods
+### Instance methods
 
 #### add_correlation_id
-Adds a correlation id (correlation_id) to invocation parameter map.
+Adds a correlation id (correlation_id) to the invocation parameter map.
 
 > add_correlation_id(params: Any = None, correlation_id: Optional[str] = None): Any
 
 - **params**: Any - invocation parameters.
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **returns**: Any - invocation parameters with added correlation id.
 
 
 #### add_filter_params
 Adds filter parameters (with the same name as they defined)
-to invocation parameter map.
+to the invocation parameter map.
 
 > add_filter_params(params: Any = None, filters: Any = None): dict
 
@@ -163,22 +144,22 @@ Calls a remote method via HTTP/REST protocol.
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any
 - **method**: str - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: str - a command route. Base route will be added to this route
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **params**: Any - (optional) query parameters.
 - **data**: Any - (optional) body object.
 - **returns**: Any - result object
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -186,14 +167,14 @@ Configures component by passing configuration parameters.
 
 
 #### _instrument
-Adds instrumentation to log calls and measure call time.
+Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
 > _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing):
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object to end the time measurement.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **name**: str - method name.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 #### is_open
@@ -201,7 +182,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### open
@@ -209,7 +190,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 
 #### set_references
@@ -217,10 +198,28 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
+### Examples
 
+```python
+class MyRestClient(RestClient, IMyClient):
+    def get_data(self, correlation_id, id):
+        timing = self.instrument(correlationId, 'myclient.get_data')
+        result = self._controller.get_data(correlationId, id)
+        timing.end_timing()
+        return result
+        
+    # ...
 
+client = MyRestClient()
+
+client.configure(ConfigParams.fromTuples("connection.protocol", "http",
+                                         "connection.host", "localhost",
+                                         "connection.port", 8080))
+data = client.getData("123", "1")
+# ...
+```
 
 ### See also
 - #### [RestService](../../services/rest_service)

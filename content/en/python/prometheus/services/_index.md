@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-prometheus-python"
 description: >
-    TODO: add description
+    This package contains classes used to create Prometheus metric services.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [PrometheusMetricsService](prometheus_metrics_service)
-Service that exposes the **"/metrics"** and **"/metricsandreset"** routes for Prometheus to scap performance metrics.
+Service that exposes the **"/metrics"** and **"/metricsandreset"** routes for Prometheus to obtain performance metrics.
 
 
 </div>

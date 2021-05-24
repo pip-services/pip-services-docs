@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The CommandableHttpClient class allows you to create commandable services. Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable) objects. for .
+The CommandableHttpClient class allows you to create commandable services. Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable) objects.
 
 Important points
 
@@ -22,7 +22,7 @@ Important points
 
 - **base_route**: base route for remote URI
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol: http or https
     - **host**: host name or IP address
     - **port**: port number
@@ -42,7 +42,30 @@ Important points
 
 
 
-**Example:**
+
+### Constructors
+Creates a new instance of the client.
+
+> CommandableHttpClient(base_route: str)
+
+- **base_route**: str - base route for remote service.
+
+
+
+### Instance methods
+
+#### call_command
+Calls a remote method via the HTTP commadable protocol. The call is made via POST operation and all parameters are sent in body object. The complete route to remote method is defined as baseRoute + "/" + name.
+
+> call_command(name: str, correlation_id: Optional[str], params: Any): Any
+
+- **name**: str - name of the command to call.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **params**: Any - command parameters.
+- **returns**: Any - result of the command.
+
+
+### Examples
 
 ```python
 class MyCommandableHttpClient(CommandableHttpClient, IMyClient):
@@ -60,24 +83,3 @@ class MyCommandableHttpClient(CommandableHttpClient, IMyClient):
     data = client.getData("123", "1")
      # ...
 ```
-
-### Constructors
-Creates a new instance of the client.
-
-> CommandableHttpClient(base_route: str)
-
-- **base_route**: str - a base route for remote service.
-
-
-
-### Methods
-
-#### call_command
-Calls a remote method via HTTP commadable protocol. The call is made via POST operation and all parameters are sent in body object. The complete route to remote method is defined as baseRoute + "/" + name.
-
-> call_command(name: str, correlation_id: Optional[str], params: Any): Any
-
-- **name**: str - a name of the command to call.
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **params**: Any - command parameters.
-- **returns**: Any - result of the command.

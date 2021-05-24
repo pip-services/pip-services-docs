@@ -6,13 +6,18 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
     Abstract client that calls controller directly in the same memory space.
 
-    It is used when multiple microservices are deployed in a single container (monolyth)
-    and communication between them can be done by direct calls rather then through 
-    the network.
+   
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The DirectClientclass allows you to create clients that call a controller directly in the same memory space.
+
+Important points
+
+-  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather then through the network.
 
 ##### Configuration parameters
 
@@ -27,8 +32,96 @@ description: >
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
 
 
+### Fields
 
-**Example:**
+<span class="hide-title-link">
+
+#### _counters
+A list of counters.
+> **_counters**: List[[ICounters](../icounters)] = []
+
+#### _controller
+The controller reference.
+> **_controller**: Any
+
+#### _opened
+The open flag.
+> **_opened**: bool = True
+
+#### _logger
+The logger.
+> **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
+
+#### _tracer
+The tracer.
+> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
+
+#### _counters
+The performance counters
+> **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
+
+#### _dependency_resolver
+The dependency resolver to get controller reference.
+> **_dependency_resolver**: [DependencyResolver](../../../commons/refer/dependency_resolver) = DependencyResolver()
+
+</span>
+
+
+
+### Instance methods
+
+#### close
+Closes component and frees used resources.
+
+> close(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+
+
+#### configure
+Configures component by passing configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+
+#### _instrument
+Adds instrumentation to log calls and measures call time.
+It returns a Timing object that is used to end the time measurement.
+
+> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing)
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **name**: str - method name.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object to end the time measurement.
+
+
+
+#### is_open
+Checks if the component is opened.
+
+> is_open(): bool
+
+- **returns**: bool - True if the component has been opened and False otherwise.
+
+
+#### open
+Opens the component.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+
+
+#### set_references
+Sets references to dependent components.
+
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+**Examples
 
 ```python
 class MyDirectClient(DirectClient, IMyClient):
@@ -49,92 +142,3 @@ class MyDirectClient(DirectClient, IMyClient):
     data = client.get_data("123", "1")
     # ...
 ```
-
-### Fields
-
-<span class="hide-title-link">
-
-#### _counters
-TODO add description
-> **_counters**: List[[ICounters](../icounters)] = []
-
-#### _controller
-The controller reference.
-> **_controller**: Any
-
-#### _opened
-The open flag.
-> **_opened**: bool = True
-
-#### _logger
-The logger.
-> **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
-
-#### _tracer
-he tracer.
-> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
-
-#### _counters
-The performance counters
-> **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
-
-#### _dependency_resolver
-The dependency resolver to get controller reference.
-> **_dependency_resolver**: [DependencyResolver](../../../commons/refer/dependency_resolver) = DependencyResolver()
-
-</span>
-
-
-
-### Methods
-
-#### close
-Closes component and frees used resources.
-
-> close(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-
-
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-
-#### _instrument
-Adds instrumentation to log calls and measure call time.
-It returns a Timing object that is used to end the time measurement.
-
-> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing)
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object to end the time measurement.
-
-
-
-#### is_open
-Checks if the component is opened.
-
-> is_open(): bool
-
-- **returns**: bool - true if the component has been opened and false otherwise.
-
-
-#### open
-Opens the component.
-
-> open(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-
-
-#### set_references
-Sets references to dependent components.
-
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

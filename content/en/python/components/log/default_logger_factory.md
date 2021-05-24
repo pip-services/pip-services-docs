@@ -7,7 +7,7 @@ description: >
     Creates [ILogger](../ilogger) components based on their descriptors.
 ---
 
-**Implemenst:** [Factory](../../build/factory)
+**Implements:** [Factory](../../build/factory)
 
 ### Description
 

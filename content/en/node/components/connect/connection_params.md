@@ -186,7 +186,7 @@ Retrieves all ConnectionParams from configuration parameters
 from "connections" section. If "connection" section is present instead,
 then it returns a list with only one ConnectionParams.
 
-> `public static` many_from_config(config: [ConfigParams](../../../commons/config/config_params)): [ConnectionParams]()[]
+> `public static` manyFromConfig(config: [ConfigParams](../../../commons/config/config_params)): [ConnectionParams]()[]
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve connections
 

@@ -42,7 +42,7 @@ Increments counter by given value.
 #### incrementOne
 Increments counter by 1.
 
-> `public` increment_one(name: string): void
+> `public` incrementOne(name: string): void
 
 - **name**: string - a counter name of Increment type.
 
@@ -78,7 +78,7 @@ Records the given timestamp.
 #### timestampNow
 Records the current time as a timestamp.
 
-> `public`  timestamp_now(name: string): void
+> `public`  timestampNow(name: string): void
 
 - **name**: string - a counter name of Timestamp type.
 

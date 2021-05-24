@@ -17,7 +17,7 @@ The IChangeable interface allows you to store the last modified date and time in
 
 #### change_time
 The UTC time at which the object was last changed (created or updated).
-> change_time: datetime
+> **change_time**: datetime
 
 ### Examples
 ```python

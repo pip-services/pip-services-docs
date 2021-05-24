@@ -7,7 +7,7 @@ description: >
     Tracer that dumps recorded traces to a logger.
 ---
 
-**Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Implements:** [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 

@@ -10,7 +10,7 @@ description: >
    
 ---
 
-**Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable)
+**Implements:** [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 

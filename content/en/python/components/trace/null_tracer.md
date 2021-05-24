@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implemenst:** [ITracer](../itracer)
+**Implements:** [ITracer](../itracer)
 
 ### Description
 

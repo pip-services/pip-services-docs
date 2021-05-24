@@ -119,10 +119,10 @@ Records the given timestamp.
 - **value**: Date - a timestamp to record.
 
 
-#### timestamp_now
+#### timestampNow
 Records the current time as a timestamp.
 
-> `public` timestamp_now(name: string)
+> `public` timestampNow(name: string)
 
 - **name**: string - a counter name of Timestamp type.
 

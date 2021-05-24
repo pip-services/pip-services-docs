@@ -36,15 +36,15 @@ Creates a new instance and sets its values.
 
 #### skip
 The number of items to skip.
-> **skip**: number
+> `public` **skip**: number
 
 #### take
 The number of items to return. 
-> **take**: number
+> `public` **take**: number
 
 #### total
 The flag to return the total number of items.
-> **total**: boolean
+> `public` **total**: boolean
 
 </span>
 

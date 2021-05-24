@@ -25,7 +25,7 @@ Creates a new instance of references and initializes it with references.
 
 #### _references
  A list of values where odd elements are locators and the following even elements are component references.
-> `protected` _references: [Reference](../reference)[]
+> `protected` **_references**: [Reference](../reference)[]
 
 </span>
 

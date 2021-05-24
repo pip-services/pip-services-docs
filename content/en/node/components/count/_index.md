@@ -56,7 +56,7 @@ This object is used by [CachedCounters](../cached_counters) to store counters.
 
 
 #### [CounterTiming](counter_timing)
-Callback object returned by [ICounters.begintiming](icounters/#begintiming) to end timing
+Callback object returned by [ICounters.beginTiming](icounters/#begintiming) to end timing
 of execution block and update the associated counter.
 
 #### [DefaultCountersFactory](default_counters_factory)

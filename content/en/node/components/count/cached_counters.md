@@ -70,7 +70,7 @@ Timeout to reset timer
 #### beginTiming
 Begins measurement of execution time interval.
 It returns [CounterTiming](../counter_timing) object which has to be called at
-[CounterTiming.end_timing](../counter_timing/#end_timing) to end the measurement and update the counter.
+[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
 > `public` beginTiming(name: string): [CounterTiming](../counter_timing)
 

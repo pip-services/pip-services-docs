@@ -7,7 +7,7 @@ description: >
     Creates a factory used to create information components based on their descriptors.
 ---
 
-**Implemenst:** [Factory](../../build/factory)
+**Implements:** [Factory](../../build/factory)
 
 ### Description
 

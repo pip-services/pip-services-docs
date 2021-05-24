@@ -66,7 +66,7 @@ Gets all connections configured in component configuration.
 Redirect to Discovery services is not done at this point.
 If you need fully fleshed connection use **resolve** method instead.
 
->  getAll(): [ConnectionParams](../connection_params)[]
+> `public` getAll(): [ConnectionParams](../connection_params)[]
 
 - **returns**: [ConnectionParams](../connection_params)[] - a list with connection parameters
 

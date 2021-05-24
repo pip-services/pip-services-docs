@@ -156,7 +156,7 @@ Resolves connection options from connection and credential parameters.
 #### setReferences
 Sets references to dependent components.
 
->  setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

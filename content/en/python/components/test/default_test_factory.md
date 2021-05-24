@@ -7,7 +7,7 @@ description: >
     A factory for shutdowns.
 ---
 
-**Implemenst:** [Factory](../../build/factory)
+**Implements:** [Factory](../../build/factory)
 
 ### Description
 

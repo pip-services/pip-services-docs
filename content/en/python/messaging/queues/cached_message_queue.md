@@ -34,17 +34,17 @@ Creates a new instance of the persistence component.
 #### _auto_subscribe
 Boolean variable indicating whether a message queue auto-subscribes or not.  
 
-> _auto_subscribe: bool
+> **_auto_subscribe**: bool
 
 #### _lock
 Thread lock.
 
-> _lock: threading.Lock
+> **_lock**: threading.Lock
 
 #### _event
 Thread event.
 
-> _event: threading.Event
+> **_event**: threading.Event
 
 #### _messages
 List of messages in a queue. 

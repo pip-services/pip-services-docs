@@ -7,7 +7,7 @@ description: >
     Creates [ITracer](../itracer) components based on their descriptors.
 ---
 
-**Implemenst:** [Factory](../../build/factory)
+**Implements:** [Factory](../../build/factory)
 
 ### Description
 

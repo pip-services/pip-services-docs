@@ -19,39 +19,39 @@ The ErrorDescription class is used to pass information about errors between micr
 
 #### type
 Data type of the original error 
-> type: str
+> **type**: str
 
 #### category
 Standard error category 
-> category: str
+> **category**: str
 
 #### status
 HTTP status code associated with this error type 
-> status: number
+> **status**: number
 
 #### code
 A unique error code 
-> code: str
+> **code**: str
 
 #### message
 A human-readable error description (usually written in English) 
-> message: str
+> **message**: str
 
 #### details
 A map with additional details that can be used to restore error description in other languages 
-> details: Any
+> **details**: Any
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain    
-> correlation_id: Optional[str]
+> **correlation_id**: Optional[str]
 
 #### cause
 Original error wrapped by this exception  
-> cause: str
+> **cause**: str
 
 #### stack_trace
 Stack trace of the exception  
-> stack_trace: str
+> **stack_trace**: str
 
 </span>
 

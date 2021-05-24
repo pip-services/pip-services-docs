@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implemenst:** [Logger](../logger), [IReferenceable](../../../commons/refer/ireferenceable)
+**Implements:** [Logger](../logger), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 

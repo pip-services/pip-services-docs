@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implemenst:** [Logger](../logger)
+**Implements:** [Logger](../logger)
 
 ### Description
 

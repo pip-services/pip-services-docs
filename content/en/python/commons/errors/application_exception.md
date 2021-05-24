@@ -48,35 +48,35 @@ Creates a new instance of application exception and assigns its values.
 
 #### message
 A human-readable error description (usually written in English).
-> message: str
+> **message**: str
 
 #### category
 Standard error category.
-> category: str
+> **category**: str
 
 #### status
 HTTP status code associated with this error type.
-> status: int = 500
+> **status**: int = 500
 
 #### status
 A unique error code
-> code: str = 'UNKNOWN'
+> **code**: str = 'UNKNOWN'
 
 #### details
 A map with additional details that can be used to restore error description in other languages.
-> details: [StringValueMap](../../data/string_value_map)
+> **details**: [StringValueMap](../../data/string_value_map)
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain.
-> correlation_id: Optional[str]
+> **correlation_id**: Optional[str]
 
 #### stack_trace
 Stack trace of the exception.
-> stack_trace: str
+> **stack_trace**: str
 
 #### cause
 Original error wrapped by this exception.
-> cause: str
+> **cause**: str
 
 </span>
 

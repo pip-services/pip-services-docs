@@ -43,12 +43,12 @@ See also [MessagingCapabilities](../messaging_capabilities)
 #### _lock
 Threading lock.
 
-> _lock: threading.Lock
+> **_lock**: threading.Lock
 
 #### _event
 Threading event.
 
-> _event: threading.Event
+> **_event**: threading.Event
 
 
 </span>

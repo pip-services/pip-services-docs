@@ -41,7 +41,6 @@ It returns immediately a positive or negative result.
 - **correlationId**: string -(optional) transaction id to trace execution through call chain. 
 - **key**: string - a unique lock key to acquire.
 - **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
 - **return**: lock result
 
 

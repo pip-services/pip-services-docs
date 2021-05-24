@@ -7,7 +7,7 @@ description: >
     Discovery service that keeps connections in memory.
 ---
 
-**Implemenst:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Implements:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
@@ -72,7 +72,7 @@ Resolves all connection parameters by their key.
 #### resolveOne
 Resolves a single connection parameters by its key.
 
-> `public` resolve_one(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)>
+> `public` resolveOne(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)>
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the connection. 

@@ -9,7 +9,7 @@ description: >
     
 ---
 
-**Implemenst:** [Lock](../lock)
+**Implements:** [Lock](../lock)
 
 ### Description
 

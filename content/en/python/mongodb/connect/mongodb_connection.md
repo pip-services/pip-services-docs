@@ -73,15 +73,15 @@ The configuration options.
 
 #### _connection
 The MongoDB connection object.
-> _connection: Any
+> **_connection**: Any
 
 #### _database_name
 The MongoDB database name.
-> _database_name: str
+> **_database_name**: str
 
 #### _db
 The MongoDB database object.
-> _db: Any
+> **_db**: Any
 </span>
 
 

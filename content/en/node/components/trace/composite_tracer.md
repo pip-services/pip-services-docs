@@ -9,7 +9,7 @@ description: >
     It allows to record traces and conveniently send them to multiple destinations. 
 ---
 
-**Implemenst:** [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
+**Implements:** [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 

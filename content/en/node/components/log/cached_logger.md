@@ -73,7 +73,7 @@ Configures component by passing configuration parameters.
 #### dump
 Dumps (writes) the currently cached log messages.
 
-> dump(): void
+> `public` dump(): void
 
 #### update
 Sets message cache as updated and dumps it when timeout expires.
@@ -87,7 +87,7 @@ Saves log messages from the cache.
 
 > `protected abstract` save(messages: [LogMessage](../log_message)[])
 
-- messages: [LogMessage](../log_message)[] - a list with log messages
+- **messages**: [LogMessage](../log_message)[] - a list with log messages
 
 
 

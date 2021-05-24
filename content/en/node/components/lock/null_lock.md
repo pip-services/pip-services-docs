@@ -9,7 +9,7 @@ description: >
    
 ---
 
-**Implemenst:** [ILock](../ilock)
+**Implements:** [ILock](../ilock)
 
 ### Description
 

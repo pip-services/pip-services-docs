@@ -7,7 +7,7 @@ description: >
     Discovery service that keeps connections in memory.
 ---
 
-**Implemenst:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Implements:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 

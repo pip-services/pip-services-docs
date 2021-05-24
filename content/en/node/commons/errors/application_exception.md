@@ -47,35 +47,35 @@ Creates a new instance of application exception and assigns its values.
 
 #### message
 A human-readable error description (usually written in English)
-> `public` message: string
+> `public` **message**: string
 
 #### category
 Standard error category
-> `public` category: string
+> `public` **category**: string
 
 #### status
 HTTP status code associated with this error type
-> `public` status: number = 500
+> `public` **status**: number = 500
 
 #### status
 A unique error code
-> `public` code: string = 'UNKNOWN'
+> `public` **code**: string = 'UNKNOWN'
 
 #### details
 A map with additional details that can be used to restore error description in other languages
-> `public` details: [StringValueMap](../../data/string_value_map)
+> `public` **details**: [StringValueMap](../../data/string_value_map)
 
 #### correlation_id
 A unique transaction id to trace execution throug call chain
-> `public` correlation_id: string
+> `public` **correlation_id**: string
 
 #### stack_trace
 Stack trace of the exception
-> `public` stack_trace: string
+> `public` **stack_trace**: string
 
 #### cause
 Original error wrapped by this exception
-> `public` cause: string
+> `public` **cause**: string
 
 </span>
 

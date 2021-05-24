@@ -10,7 +10,7 @@ description: >
    
 ---
 
-**Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable)
+**Implements:** [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
@@ -42,52 +42,52 @@ Creates a new instance of this context info.
 #### contextId
 Gets the unique context id. Usually it is the current host name.
 
-> contextId(): string
+> `public` contextId(): string
 
 - **returns**: string - the unique context id.
 
 Gets the unique context id. Usually it is the current host name.
 
-> contextId(context_id: string)
+> `public` contextId(context_id: string)
 
 - **contextId**: string - the unique context id.
 
 #### description
 Gets the human-readable description of the context.
 
-> description(): string
+> `public` description(): string
 
 - **returns**: string - the human-readable description of the context.
 
 Sets the human-readable description of the context.
 
-> description(description: string)
+> `public` description(description: string)
 
 - **description**: string - a new human readable description of the context.
 
 #### name
 Gets the context name.
 
-> name(): string
+> `public` name(): string
 
 - **returns**: string - the context name
 
 Sets the context name.
 
-> name(name: string)
+> `public` name(name: string)
 
 - **name**: string - a new name for the context.
 
 #### properties
 Gets context additional parameters.
 
-> properties(): any
+> `public` properties(): any
 
 - **returns**: any - a JSON object with additional context parameters.
 
 Sets context additional parameters.
 
-> properties(properties: any)
+> `public` properties(properties: any)
 
 - **properties**: any - a JSON object with context additional parameters
 
@@ -95,13 +95,13 @@ Sets context additional parameters.
 #### startTime
 Gets the context start time.
 
-> startTime(): Date
+> `public` startTime(): Date
 
 - **returns**: any - a JSON object with additional context parameters.
 
 Sets the context start time.
 
-> startTime(start_time: Date)
+> `public` startTime(start_time: Date)
 
 - **start_time**: Date - a new context start time.
 

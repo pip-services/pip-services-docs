@@ -7,7 +7,7 @@ description: >
     Abstract lock that implements the default lock acquisition routine.
 ---
 
-**Implemenst:** [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Implements:** [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 

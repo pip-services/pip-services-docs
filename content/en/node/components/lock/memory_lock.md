@@ -29,7 +29,7 @@ Important points
 #### releaseLock
 Releases prevously acquired lock by its key.
 
-> `public` release_lock(correlationId: string, key: string)
+> `public` releaseLock(correlationId: string, key: string)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to release.
@@ -39,7 +39,7 @@ Releases prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `public` try_acquire_lock(correlationId: string, key: string, ttl: number): bool
+> `public` tryAcquireLock(correlationId: string, key: string, ttl: number): bool
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to acquire.

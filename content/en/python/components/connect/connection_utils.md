@@ -11,7 +11,7 @@ description: >
 
 The ConnectionUtils class provides a set of utility functions used to process connection parameters.
 
-### Instance methods
+### Static methods
 
 #### compose_uri
 Composes URI from config parameters.

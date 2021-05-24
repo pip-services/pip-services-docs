@@ -8,7 +8,7 @@ description: >
    
 ---
 
-**Implemenst:** [Logger](../logger)
+**Implements:** [Logger](../logger)
 
 ### Description
 
@@ -86,7 +86,7 @@ Saves log messages from the cache.
 
 > _save(messages: List[[LogMessage](../log_message)])
 
-- messages: List[[LogMessage](../log_message)] - a list with log messages
+- **messages**: List[[LogMessage](../log_message)] - a list with log messages
 
 
 

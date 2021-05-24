@@ -5,12 +5,18 @@ linkTitle: "CommandableHttpClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
     Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable)
-    Each command is exposed as POST operation that receives all parameters
-    in body object.
+   
 ---
 
 **Implements:** [RestClient](../../clients/rest_client)
 
+### Description
+
+The CommandableHttpClient class allows you to create commandable services. Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable) objects. for .
+
+Important points
+
+- Each command is exposed as POST operation that receives all parameters in body object.
 
 ##### Configuration parameters
 

@@ -4,7 +4,7 @@ title: "DirectClient"
 linkTitle: "DirectClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Abstract client that calls controller directly in the same memory space.
+    Abstract client that calls a controller directly in the same memory space.
 
    
 ---
@@ -61,7 +61,7 @@ The performance counters
 > **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### _dependency_resolver
-The dependency resolver to get controller reference.
+The dependency resolver used to get the controller's reference.
 > **_dependency_resolver**: [DependencyResolver](../../../commons/refer/dependency_resolver) = DependencyResolver()
 
 </span>
@@ -71,7 +71,7 @@ The dependency resolver to get controller reference.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -94,7 +94,7 @@ It returns a Timing object that is used to end the time measurement.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **name**: str - method name.
-- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object to end the time measurement.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 
@@ -121,7 +121,7 @@ Sets references to dependent components.
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-**Examples
+### Examples
 
 ```python
 class MyDirectClient(DirectClient, IMyClient):

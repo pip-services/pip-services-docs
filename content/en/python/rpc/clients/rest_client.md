@@ -10,7 +10,7 @@ description: >
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 
-See also [RestService](../../services/rest_service), [CommandableHttpService](../../services/commandable_http_service)
+
 
 
 ##### Configuration parameters
@@ -64,7 +64,7 @@ data = client.getData("123", "1")
 <span class="hide-title-link">
 
 #### _counters
-TODO add description
+A list of counters.
 > **_counters**: List[[ICounters](../icounters)] = []
 
 #### _client
@@ -72,7 +72,7 @@ The HTTP client.
 > **_client**: Any
 
 #### _uri
-The remote service uri which is calculated on open.
+The remote service uri which is defined on openning.
 > **_uri**: str
 
 #### _timeout
@@ -123,21 +123,21 @@ TODO add description
 
 
 
-### Methods
+### Instance methods
 
 #### add_correlation_id
-Adds a correlation id (correlation_id) to invocation parameter map.
+Adds a correlation id (correlation_id) to the invocation parameter map.
 
 > add_correlation_id(params: Any = None, correlation_id: Optional[str] = None): Any
 
 - **params**: Any - invocation parameters.
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **returns**: Any - invocation parameters with added correlation id.
 
 
 #### add_filter_params
 Adds filter parameters (with the same name as they defined)
-to invocation parameter map.
+to the invocation parameter map.
 
 > add_filter_params(params: Any = None, filters: Any = None): dict
 
@@ -163,22 +163,22 @@ Calls a remote method via HTTP/REST protocol.
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any
 - **method**: str - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: str - a command route. Base route will be added to this route
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **params**: Any - (optional) query parameters.
 - **data**: Any - (optional) body object.
 - **returns**: Any - result object
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -186,14 +186,14 @@ Configures component by passing configuration parameters.
 
 
 #### _instrument
-Adds instrumentation to log calls and measure call time.
+Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
 > _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing):
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object to end the time measurement.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **name**: str - method name.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 #### is_open
@@ -201,7 +201,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### open
@@ -209,7 +209,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 
 #### set_references
@@ -217,9 +217,7 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
-
-
+- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
 
 ### See also

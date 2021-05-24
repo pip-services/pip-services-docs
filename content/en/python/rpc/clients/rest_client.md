@@ -116,7 +116,7 @@ The connection timeout in milliseconds.
 > **_connect_timeout** = 1000
 
 #### _correlation_id_location
-TODO add description
+Defines where to add the correlation id.
 > **_correlation_id_location**: str = "query"
 
 </span>

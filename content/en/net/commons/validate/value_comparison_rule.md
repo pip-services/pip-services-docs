@@ -7,7 +7,7 @@ description: >
    Validation rule that compares a value to a constant.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

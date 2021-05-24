@@ -7,7 +7,7 @@ description: >
     Defines a list of field names used to sort query results.
 ---
 
-**Implements:** List\<[SortField](../sort_field)\>
+**Inherits**: List\<[SortField](../sort_field)\>
 
 ### Description
 

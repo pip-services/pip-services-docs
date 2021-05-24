@@ -7,7 +7,7 @@ description: >
     Errors caused by attempts to access missing objects.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

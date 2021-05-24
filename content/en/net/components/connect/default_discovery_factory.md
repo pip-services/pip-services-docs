@@ -7,7 +7,7 @@ description: >
     Creates an instance of [Factory](../../build/factory).
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -16,7 +16,7 @@ The DefaultDiscoveryFactory class allows you to create an instance of [Factory](
 ### Constructors
 Create a new instance of factory.
 
-> `public` constructor()
+> `public` DefaultDiscoveryFactory()
 
 
 ### See also 

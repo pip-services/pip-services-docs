@@ -7,7 +7,7 @@ description: >
     Errors caused by calls to unsupported or not yet implemented functionality.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

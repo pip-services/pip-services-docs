@@ -15,7 +15,7 @@ The TraceTiming class is used to create the timing object returned by [ITracer.b
 #### Constructors
 Creates a new instance of the timing callback object.
 
-> `public` constructor(correlationId: string, component: string, operation: string, tracer: [ITracer](../itracer) = null)
+> `public` TraceTiming(string correlationId, string component, string operation, [ITracer](../itracer) tracer = null)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - an associated component name
@@ -25,29 +25,32 @@ Creates a new instance of the timing callback object.
 
 ### Instance methods
 
-#### endFailure
+#### EndFailure
 Ends timing of a failed block, calculates elapsed time
 and records the associated trace.
 
-> `public` endFailure(error: Error): void
+> `public` void EndFailure(Exception error)
 
-- **error**: Error - an error object associated with this trace.
+- **error**: Exception - an error object associated with this trace.
 
 
-#### endTrace
+#### EndTrace
 Ends timing of an execution block, calculates the elapsed time
 and records the associated trace.
 
-> `public` endFailure(error: Error): void
+> `public` void EndTrace()
  
 ### Examples
 
-```typescript
-let timing = tracer.beginTrace("mymethod.exec_time");
-try {
+```cs
+var timing = tracer.BeginTrace("mymethod.exec_time");
+try 
+{
     ...
-    timing.endTrace();
-} catch (err) {
-    timing.endFailure(err);
+    timing.EndTrace();
+} 
+catch (Exception err)
+{
+     timing.EndFailure(err);
 }
 ```

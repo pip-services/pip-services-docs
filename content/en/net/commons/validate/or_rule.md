@@ -8,7 +8,7 @@ description: >
     
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

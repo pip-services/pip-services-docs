@@ -7,7 +7,7 @@ description: >
     Creates [ILogger](../ilogger) components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -17,7 +17,7 @@ The DefaultLoggerFactory class provides a factory used to create [ILogger](../il
 ### Constructors
 Create a new instance of the factory.
 
-> `public` constructor()
+> `public` DefaultLoggerFactory()
 
 
 ### See also

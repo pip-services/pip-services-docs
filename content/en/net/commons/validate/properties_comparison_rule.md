@@ -7,7 +7,7 @@ description: >
     Validation rule that compares two object properties.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

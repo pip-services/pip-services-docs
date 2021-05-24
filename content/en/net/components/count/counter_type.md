@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "CounterType"
-linkTitle: "CounterType"
+title: "CounterType!"
+linkTitle: "CounterType!"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
     Counter type enumeration containing the types of counters that measure different types of metrics.

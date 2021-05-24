@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Implements:** [AnyValueMap](../../data/any_value_map)
+**Inherits**: [AnyValueMap](../../data/any_value_map)
 
 ### Description
 

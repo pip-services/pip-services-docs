@@ -7,7 +7,7 @@ description: >
     Creates a factory that builds [ICounters](../icounters) components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -16,7 +16,7 @@ The DefaultCountersFactory class allows you to create a factory that builds [ICo
 ### Constructors
 Create a new instance of the factory.
 
-> `public` constructor()
+> `public` DefaultCountersFactory()
 
 
 ### See also

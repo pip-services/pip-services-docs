@@ -100,11 +100,11 @@ Logs fatal (unrecoverable) messages that caused the process to crash.
 #### formatAndWrite
 Formats the log message and writes it to the logger destination.
 
-> `protected` formatAndWrite(level: [LogLevel](../log_level), correlationId: string, error: Errro, message: string, ...args: any[]): void
+> `protected` formatAndWrite(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string, ...args: any[]): void
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Errro - an error object associated with this message.
+- **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
 - **args**: any[]- arguments to parameterize the message.
 
@@ -140,11 +140,11 @@ Logs an important information message
 #### log
 Logs a message at a specified log level.
 
-> `public` log(level: [LogLevel](../log_level), correlationId: string, error: Errro, message: string, ...args: any[]): void
+> `public` log(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string, ...args: any[]): void
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Errro - an error object associated with this message.
+- **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
 - **args**: any[]- arguments to parameterize the message.
 

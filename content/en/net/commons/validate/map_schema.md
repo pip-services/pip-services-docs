@@ -7,7 +7,7 @@ description: >
     Schema to validate maps.
 ---
 
-**Implements:** [Schema](../schema)
+**Inherits**: [Schema](../schema)
 
 ### Description
 

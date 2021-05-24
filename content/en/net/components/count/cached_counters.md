@@ -9,7 +9,7 @@ description: >
     
 ---
 
-**Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
+**Inherits**: [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
 [ICounterTimingCallback](../icounter_timing_callback)
 
 ### Description
@@ -31,190 +31,180 @@ Important points
 ### Constructors
 Creates a new CachedCounters object.
 
-> `public` constructor()
+> `public` CachedCounters()
 
 
 ### Fields
 
 <span class="hide-title-link">
 
-#### _interval
-Default time interval.
-> `protected` **_interval** = 300000
-
 #### _cache
 A dictionary containing the cached values.
-> `protected` **_cache**: { [id: string]: [Counter](../counter) }
+> `protected` **_cache**: IDictionary\<string, [Counter](../counter)\>
 
 #### _updated
 A boolean value that indicates whether the counter has been updated or not.
-> `protected` **_updated**: boolean
+> `protected` **_updated**: bool
+
 
 #### _lastDumpTime
 Time of the last dump.
-> `protected` **_lastDumpTime**: Date
+> `protected` **_lastDumpTime**: long = DateTime.UtcNow.Ticks
 
 #### _lastResetTime
 Last time when was reset timer
-> `protected` **_lastResetTime**: Date
+> `protected` **_lastResetTime**: long = DateTime.UtcNow.Ticks
+
+#### _lock
+TODO add description
+> `protected` **_lock**: object
+
+#### _interval
+Default time interval.
+> `protected` **_interval**: long = 300000
+
 
 #### _resetTimeout
 Timeout to reset timer
-> `protected` **_resetTimeout**: number
+> `protected` **_resetTimeout**: long = 0
 
 </span>
 
 
 ### Instance methods
 
-#### beginTiming
+#### BeginTiming
 Begins measurement of execution time interval.
 It returns [CounterTiming](../counter_timing) object which has to be called at
-[CounterTiming.end_timing](../counter_timing/#end_timing) to end the measurement and update the counter.
+[CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> `public` beginTiming(name: string): [CounterTiming](../counter_timing)
+> `public` [CounterTiming](../counter_timing) BeginTiming(string name)
 
 - **name**: string - a counter name of Interval type.
 - **returns**: [CounterTiming](../counter_timing) - a callback object to end timing.
 
 
-#### clear
+#### Clear
 Clears (resets) a counter specified by its name.
 
-> `public` clear(name: string): void
+> `public` void Clear(string name)
 
 - **name**: string - a counter name to clear.
 
 
-#### clearAll
+#### ClearAll
 Clears (resets) all counters.
 
-> `public` clearAll(): void
+> `public` void ClearAll()
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### dump
+#### Dump
 Dumps (saves) the current values of counters.
 
-> `public` dump(): void
+> `public` void Dump()
 
 
-#### endTiming
+#### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
 
-> `public` endTiming(name: string, elapsed: number): void
+> `public` void EndTiming(string name, double elapsed)
 
 - **name**: string - a counter name
-- **elapsed**: number - execution elapsed time in milliseconds to update the counter.
+- **elapsed**: double - execution elapsed time in milliseconds to update the counter.
 
 
-#### get
+#### Get
 Gets a counter specified by its name.
 It counter does not exist or its type doesn't match the specified type
 it creates a new one.
 
-> `public` get(name: string, typ: [CounterType](../counter_type)): [Counter](../counter)
+> `public` [Counter](../counter) Get(string name, [CounterType](../counter_type) type)
 
 - **name**: string - a counter name to retrieve.
 - **typ**: [CounterType](../counter_type) - a counter type.
 - **returns**: [Counter](../counter) - an existing or newly created counter of the specified type.
 
 
-#### getAll
+#### GetAll
 Gets all captured counters.
 
-> `public` getAll(): [Counter](../counter)[]
+> `public` IEnumerable\<[Counter](../counter)\> GetAll()
 
-- **returns**: [Counter](../counter)[] - a list with counters.
-
-
-#### getInterval
-Gets the counters dump/save interval.
-
-> `public` getInterval(): number
-
-- **returns**: number - the interval in milliseconds.
+- **returns**: IEnumerable\<[Counter](../counter)\> - a list with counters.
 
 
-#### increment
+#### Increment
 Increments counter by given value.
 
-> `public` increment(name: string, value: number): void
+> `public` void Increment(string name, int value)
 
 - **name**: string - a counter name of Increment type.
-- **value**: number - a value to add to the counter.
+- **value**: int - a value to add to the counter.
 
 
-#### incrementOne
+#### IncrementOne
 Increments counter by 1.
 
-> `public` incrementOne(name: string): void
+> `public` void IncrementOne(string name)
 
 - **name**: string - a counter name of Increment type.
 
 
-#### last
+#### Last
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> `public` last(name: string, value: number): void
+> `public` Last(string name, float value)
 
 - **name**: string - a counter name of Last type.
-- **value**: number - a last value to record.
+- **value**: float - a last value to record.
 
 
-#### setInterval
-Sets the counters dump/save interval.
-
-> `public` setInterval(value: number): void
-
-- **value**: number - a new interval in milliseconds. 
-
-
-#### stats
+#### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> `public` stats(name: string, value: number): void
+> `public` void Stats(string name, float value)
 
 - **name**: string - a counter name of Statistics type
-- **value**: number - a value to update statistics
+- **value**: float - a value to update statistics
 
 
-#### timestamp
+#### Timestamp
 Records the given timestamp.
 
-> `public` timestamp(name: string, value: Date): void
+> `public` void Timestamp(string name, DateTime value)
 
 - **name**: string - a counter name of Timestamp type.
-- **value**: Date - a timestamp to record.
+- **value**: DateTime - a timestamp to record.
 
 
-#### timestampNow
+#### TimestampNow
 Records the current time as a timestamp.
 
-> `public` timestampNow(name: string): void
+> `public` void TimestampNow(string name)
 
 - **name**: string - a counter name of Timestamp type.
 
 
-#### update
+#### Update
 Makes counter measurements as updated and dumps them when timeout expires.
 
-> `protected` update()
+> `protected` void Update()
 
 
 ### Abstract methods
 
-#### save
+#### Save
 Saves the current counters measurements.
 
-> `protected abstract` save(counters: [Counter](../counter)[]): void
+> `protected abstarct` void Save(IEnumerable<[Counter](../counter)> counters)
 
-- **counters**: [Counter](../counter)[] - current counters measurements to be saved.
+- **counters**: IEnumerable<[Counter](../counter)> - current counters measurements to be saves.

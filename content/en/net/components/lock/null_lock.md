@@ -6,10 +6,9 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet
 description: >
     Dummy lock implementation with no real effect.
 
-   
 ---
 
-**Implemenst:** [ILock](../ilock)
+**Inherits**: [ILock](../ilock)
 
 ### Description
 
@@ -21,35 +20,35 @@ Important points
 
 ### Instance methods
 
-#### acquireLock
+#### AcquireLock
 Makes multiple attempts to acquire a lock by its key within a given time interval.
 
-> `public` acquireLock(correlationId: string, key: string, ttl: number, timeout: number)
+> `public` AcquireLock(string correlationId, string key, long ttl, long timeout)
 
 - **correlationId**: string -(optional) transaction id to trace execution through call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **timeout**: long - a lock acquisition timeout.
 
 
-#### releaseLock
+#### ReleaseLock
 Releases prevously acquired lock by its key.
 
-> `public` releaseLock(correlationId: string, key: string)
+> `public` ReleaseLock(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to release.
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `public` tryAcquireLock(correlationId: string, key: string, ttl: number): bool
+> `public` bool TryAcquireLock(string correlationId, string key, long ttl)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 

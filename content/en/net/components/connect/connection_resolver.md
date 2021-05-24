@@ -37,7 +37,7 @@ Important points
 ### Constructors
 Creates a new instance of connection resolver.
 
-> `public` constructor(config: [ConfigParams](../../../commons/config/config_params) = null, references: [IReferences](../../../commons/refer/ireferences) = null)
+> `public` ConnectionResolver([ConfigParams](../../../commons/config/config_params) config = null, [IReferences](../../../commons/refer/ireferences) references = null)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
 - **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
@@ -45,84 +45,82 @@ Creates a new instance of connection resolver.
 
 ### Instance methods
 
-#### add
+#### Add
 Adds a new connection to component connections
 
-> `public` add(connection: [ConnectionParams](../connection_params)): void
+> `public` void Add([ConnectionParams](../connection_params) connection)
 
 - **connection**: [ConnectionParams](../connection_params) - new connection parameters to be added
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure(config: [ConfigParams](../../../commons/config/config_params))
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### getAll
+#### GetAll
 Gets all connections configured in component configuration.
 Redirect to Discovery services is not done at this point.
-If you need fully fleshed connection use **resolve** method instead.
+If you need fully fleshed connection use **Resolve** method instead.
 
->  getAll(): [ConnectionParams](../connection_params)[]
+> `public` List<[ConnectionParams](../connection_params)> GetAll()
 
-- **returns**: [ConnectionParams](../connection_params)[] - a list with connection parameters
+- **returns**: List<[ConnectionParams](../connection_params)> - a list with connection parameters
 
 
-#### register
+#### RegisterAsync
 Registers the given connection in all referenced discovery services.
 This method can be used for dynamic service discovery.
 
-> `public` register(correlationId: string, connection: [ConnectionParams](../connection_params)): Promise\<void\>
+> `public` Task\<void\> RegisterAsync(string correlationId, [ConnectionParams](../connection_params) connection)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **connection**: [ConnectionParams](../connection_params) - a connection to register.
 
 
-#### resolve
+#### ResolveAsync
 Resolves a single component connection. If connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
-> `public` resolve(correlationId: string): Promise<[ConnectionParams](../connection_params)>
+> `public` Task<[ConnectionParams](../connection_params)> ResolveAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
+- **returns**: Task<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
 
 
-#### resolveAll
+#### ResolveAllAsync
 Resolves all component connection. If connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
-> `public` resolveAll(correlationId: string): Promise<[ConnectionParams](../connection_params)[]>
+> `public` Task<List\<[ConnectionParams](../connection_params)\>> ResolveAllAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[ConnectionParams](../connection_params)[]> - a list of resolved connections.
+- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - a list of resolved connections.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences))
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 ### Examples
 
-```typescript
-let config = ConfigParams.fromTuples(
+```cs
+var config = ConfigParams.FromTuples(
     "connection.host", "10.1.1.100",
     "connection.port", 8080
 );
-   
-let connectionResolver = new ConnectionResolver();
-connectionResolver.configure(config);
-connectionResolver.setReferences(references);
-  
-let connection = await connectionResolver.resolve("123");
-// Now use connection...
+
+var connectionResolver = new ConnectionResolver();
+connectionResolver.Configure(config);
+connectionResolver.SetReferences(references);
+connectionResolver.ResolveAsync("123");
 ```
 
 ### See also

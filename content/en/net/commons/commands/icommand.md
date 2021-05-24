@@ -7,7 +7,7 @@ description: >
     An interface used to define Commands.
 ---
 
-**Implements:** [IExecutable](../../run/iexecutable)
+**Inherits**: [IExecutable](../../run/iexecutable)
 
 ### Description
 

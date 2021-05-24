@@ -8,7 +8,7 @@ description: >
     
 ---
 
-**Implemenst:** [ITracer](../itracer), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits**: [ITracer](../itracer), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
@@ -39,7 +39,7 @@ Source (context) name
 
 #### _cache
 List of traces
-> `protected` **_cache**: [OperationTrace](../operation_trace)[]
+> `protected` **_cache**: IList<[OperationTrace](../operation_trace)>
 
 #### _updated
 Boolean variable that indicates whether there has been an update or not.
@@ -47,25 +47,25 @@ Boolean variable that indicates whether there has been an update or not.
 
 #### _lastDumpTime
 Time of the last dump
-> `protected` **_lastDumpTime**: number
+> `protected` **_lastDumpTime**: long = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds()
 
 #### _maxCacheSize
 Maximum number of messages stored in this cache (default: 100)
-> `protected` **_maxCacheSize** = 100
+> `protected` **_maxCacheSize**: int = 100
 
 #### _interval
 Interval in milliseconds to save log messages (default: 10 seconds)
-> `protected` **_interval** = 10000
+> `protected` **_interval**: long = 10000
 
 </span>
 
 
 ### Instance methods
 
-#### beginTrace
+#### BeginTrace
 Begins recording an operation trace.
 
-> `public` beginTrace(correlationId: string, component: string, operation: string): [TraceTiming](../trace_timing)
+> `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of a called component
@@ -73,86 +73,86 @@ Begins recording an operation trace.
 - **return**: [TraceTiming](../trace_timing) - a trace timing object.
 
 
-#### clear
+#### Clear
 Clears (removes) all cached log messages.
 
-> `public` clear(): void
+> `public` void Clear()
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public void` Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### dump
+#### Dump
 Dumps (writes) the currently cached log messages.
 
-> `public` dump(): void
+> `public` void Dump()
 
 
-#### failure
+#### Failure
 Records an operation failure with its name, duration and error.
 
-> `public` failure(correlationId: string, component: string, operation: string, error: Error,
-duration: number): void
+> `public` void Failure(string correlationId, string component, string operation, Exception error,
+long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Error - an error object associated with this trace.
-- **duration**: number - execution duration in milliseconds.
+- **error**: Exception - an error object associated with this trace.
+- **duration**: long - execution duration in milliseconds.
 
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-#### trace
+#### Trace
 Records an operation trace with its name and duration.
 
-> `public` trace(correlationId: string, component: string, operation: string, duration: number): void
+> `public` void Trace(string correlationId, string component, string operation, long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **duration**: number - execution duration in milliseconds.
+- **duration**: long - execution duration in milliseconds.
 
 
-#### update
+#### Update
 Sets trace cache as updated
 and dumps it when timeout expires.
 
-> `protected` update(): void
+> `protected` void Update()
 
 
-#### write
+#### Write
 Writes a log message to the logger destination.
 
-> `protected` write(correlationId: string, component: string, operation: string, error: Error, duration: number): void
+> `protected` void Write(string correlationId, string component, string operation, Exception error, long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Error - an error object associated with this trace.
-- **duration**: number - execution duration in milliseconds.
+- **error**: Exception - an error object associated with this trace.
+- **duration**: long - execution duration in milliseconds.
 
 
 ### Abstract methods
 
-#### save
+#### Save
 Saves log messages from the cache.
 Throws error if not done.
 
-> `protected abstract` save(messages: [OperationTrace](../operation_trace)[])
+> `protected abstract` void Save(IList<[OperationTrace](../operation_trace)> messages)
 
-- **messages**: [OperationTrace](../operation_trace)[] - a list with log messages
+- **messages**: IList<[OperationTrace](../operation_trace)> - a list with log messages
 
 
 ### See also

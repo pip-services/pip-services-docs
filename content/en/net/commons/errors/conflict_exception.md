@@ -8,7 +8,7 @@ description: >
     posted by the user and those that are stored on the server.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

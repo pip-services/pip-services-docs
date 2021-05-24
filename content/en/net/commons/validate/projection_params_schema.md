@@ -7,7 +7,7 @@ description: >
    Schema to validate [ProjectionParams](../../data/projection_params).
 ---
 
-**Implements:** [ArraySchema](../array_schema)
+**Inherits**: [ArraySchema](../array_schema)
 
 ### Description
 

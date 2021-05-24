@@ -9,7 +9,7 @@ description: >
     It allows to record traces and conveniently send them to multiple destinations. 
 ---
 
-**Implemenst:** [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits**: [ITracer](../itracer), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
@@ -22,7 +22,7 @@ The CompositeTracer class allows you to aggregate all tracers from component ref
 ### Constructors
 Creates a new instance of the tracer.
 
-> `public` constructor(references: [IReferences](../../../commons/refer/ireferences) = null)
+> `public` CompositeTracer([IReferences](../../../commons/refer/ireferences) references = null)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
@@ -32,16 +32,16 @@ Creates a new instance of the tracer.
 
 #### _tracers
 List of tracers
-> `protected` **_tracers**: [ITracer](../itracer)[]
+> `protected` **_tracers**: IList<[ITracer](../itracer)> = new List<[ITracer](../itracer)>()
 
 </span>
 
 ### Methods
 
-#### beginTrace
+#### BeginTrace
 Begings recording an operation trace
 
-> `public` beginTrace(correlationId: string, component: string, operation: string): [TraceTiming](../trace_timing)
+> `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - name of the called component
@@ -49,54 +49,54 @@ Begings recording an operation trace
 - **return**: [TraceTiming](../trace_timing) - a trace timing object.
 
 
-#### failure
+#### Failure
 Records an operation failure with its name, duration and error
 
-> `public` failure(correlationId: string, component: string, operation: string, error: Error,
-duration: number)
+> `public` void Failure(string correlationId, string component, string operation, Exception error,
+long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Error - an error object associated with this trace.
-- **duration**: number - execution duration in milliseconds.
+- **error**: Exception - an error object associated with this trace.
+- **duration**: long - execution duration in milliseconds.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences))
+> `public` void SetReferences(references: [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-#### trace
+#### Trace
 Records an operation trace with its name and duration
 
-> `public` trace(correlationId: string, component: string, operation: string, duration: number)
+> `public` void Trace(string correlationId, string component, string operation, long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - a name of called component
 - **operation**: string - a name of the executed operation.
-- **duration**: number - execution duration in milliseconds.
+- **duration**: long - execution duration in milliseconds.
 
 ### Examples
 
-```typescript
-class MyComponent implements IReferenceable {
-    private _tracer: CompositeTracer = new CompositeTracer();
-
-    public setReferences(references: IReferences): void {
-        this._tracer.setReferences(references);
+```cs
+class MyComponent: IReferenceable {
+    private CompositeTracer _tracer = new CompositeTracer();
+    public void SetReferences(IReferences references)
+    {
+        _tracer.SetReferences(references);
         ...
     }
-
-    public myMethod(correlatonId: string): void {
-        var timing = this._tracer.beginTrace(correlationId, "mycomponent", "mymethod");
+    public void MyMethod(string correlatonId)
+    {
+        var timing = this._tracer.BeginTrace(correlationId, "mycomponent", "mymethod");
         try {
             ...
-            timing.endTrace();
-        } catch (err) {
-            timing.endFailure(err);
+            timing.EndTrace();
+        } catch {
+            timing.EndFailure(err);
         }
     }
 }

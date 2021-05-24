@@ -34,7 +34,7 @@ Creates a new instance of a config reader.
 
 #### _config
 
-> `protected` [ConfigParams](../../../commons/config/config_params) **_config** = new ConfigParams()
+> `protected` **_config**: [ConfigParams](../../../commons/config/config_params) = new ConfigParams()
 
 </span>
 

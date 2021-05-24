@@ -19,36 +19,35 @@ Important points
 
 ### Instance methods
 
-#### acquireLock
+#### AcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> acquireLock(correlationId: string, key: string, ttl: number, timeout: number): Promise\<void\>
+> void AcquireLock(string correlationId, string key, long ttl, long timeout)
 
 - **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **timeout**: long - a lock acquisition timeout.
 
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> tryAcquireLock(correlationId: string, key: string, ttl: number): Promise\<boolean\>
+> bool TryAcquireLock(string correlationId, string key, long ttl)
 
 - **correlationId**: string -(optional) transaction id to trace execution through call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
 - **return**: lock result
 
 
-#### releaseLock
+#### ReleaseLock
 Releases prevously acquired lock by its key.
 
-> releaseLock(correlationId: string, key: string) :Promise\<void\>
+> void ReleaseLock(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to release.

@@ -13,32 +13,32 @@ The IDiscovery interface is used to create discovery services which are used to 
 
 ### Instance methods
 
-#### register
+#### RegisterAsync
 Registers connection parameters into the discovery service.
 
->  register(correlationId: string, key: string, connection: [ConnectionParams](../connection_params)): Promise<[ConnectionParams](../connection_params)>
+> Task<[ConnectionParams](../connection_params)> RegisterAsync(string correlationId, string key, [ConnectionParams](../connection_params) connection)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a key to uniquely identify the connection parameters.
 - **connection**: [ConnectionParams](../connection_params) - a connection to be registered.
-- **returns**: Promise<[ConnectionParams](../connection_params)> - the registered connection parameters.
+- **returns**: Task<[ConnectionParams](../connection_params)> - the registered connection parameters.
 
 
-#### resolveAll
+#### ResolveAllAsync
 Resolves all connection parameters by their key.
 
->  resolveAll(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)[]>
+> Task<List\<[ConnectionParams](../connection_params)\>> ResolveAllAsync(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a key to uniquely identify the connections.
-- **returns**: Promise<[ConnectionParams](../connection_params)[]> - a list with resolved connections.
+- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - a list with resolved connections.
 
 
-#### resolveOne
+#### ResolveOneAsync
 Resolves a single connection parameters by its key.
 
->  resolveOne(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)>
+> Task<[ConnectionParams](../connection_params)> ResolveOneAsync(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the connection.
-- **returns**: Promise<[ConnectionParams](../connection_params)> - a resolved connection.
+- **returns**: Task<[ConnectionParams](../connection_params)> - a resolved connection.

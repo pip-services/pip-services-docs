@@ -7,7 +7,7 @@ description: >
     Validation rule that checks that at least one of the object properties exists.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

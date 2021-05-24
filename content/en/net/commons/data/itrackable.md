@@ -7,7 +7,7 @@ description: >
     Interface for data objects that can track their changes, including logical deletion.
 ---
 
-**Implements:** [IChangeable](../ichangeable)
+**Inherits**: [IChangeable](../ichangeable)
 
 ### Description
 

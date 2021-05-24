@@ -7,7 +7,7 @@ description: >
     Command allows to call a method or a function.
 ---
 
-**Implements:** [ICommand](../icommand)
+**Inherits**: [ICommand](../icommand)
 
 ### Description
 

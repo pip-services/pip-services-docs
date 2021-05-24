@@ -7,7 +7,7 @@ description: >
     Data transfer object used to pass filter parameters as key-value pairs.
 ---
 
-**Implements:** [StringValueMap](../string_value_map)
+**Inherits**: [StringValueMap](../string_value_map)
 
 ### Description
 

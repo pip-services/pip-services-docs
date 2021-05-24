@@ -8,7 +8,7 @@ description: >
     and performance counters.
 ---
 
-**Implemenst:** [IConfigurable](../../commons/config/iconfigurable), [IReferenceable](../../commons/refer/ireferenceable)
+**Inherits**: [IConfigurable](../../commons/config/iconfigurable), [IReferenceable](../../commons/refer/ireferenceable)
 
 ### Description
 

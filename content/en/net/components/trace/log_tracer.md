@@ -7,7 +7,7 @@ description: >
     Tracer that dumps recorded traces to a logger.
 ---
 
-**Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits**: [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
@@ -26,10 +26,10 @@ The LogTracer class allows you to create a tracer that dumps recorded traces to 
 
 ### Instance methods
 
-#### beginTrace 
+#### BeginTrace 
 Begings recording an operation trace.
 
-> `public` beginTrace(correlationId: string, component: string, operation: string): [TraceTiming](../trace_timing)
+> `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
@@ -37,58 +37,58 @@ Begings recording an operation trace.
 - **return**: [TraceTiming](../trace_timing) - a trace timing object.
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### failure
+#### Failure
 Records an operation failure with its name, duration and error
 
-> `public` failure(correlationId: string, component: string, operation: string, error: Error,
-duration: number): void
+> `public` void Failure(string correlationId, string component, string operation, Exception error,
+long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Error - an error object associated with this trace.
-- **duration**: number - execution duration in milliseconds.
+- **error**: Exception - an error object associated with this trace.
+- **duration**: long - execution duration in milliseconds.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-#### trace
+#### Trace
 Records an operation trace with its name and duration.
 
-> `public` trace(correlationId: string, component: string, operation: string, duration: number): void
+> `public` void Trace(string correlationId, string component, string operation, long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **duration**: number - execution duration in milliseconds.
+- **duration**: long - execution duration in milliseconds.
 
 ### Examples
 
-```typescript
-let tracer = new LogTracer();
-tracer.setReferences(References.fromTuples(
+```cs
+var tracer = new LogTracer();
+tracer.SetReferences(References.FromTuples(
     new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger()
 ));
-
-let timing = trcer.beginTrace("123", "mycomponent", "mymethod");
+var timing = trcer.BeginTrace("123", "mycomponent", "mymethod");
 try {
     ...
-    timing.endTrace();
-} catch(err) {
-    timing.endFailure(err);
+    timing.EndTrace();
+} catch
+{
+    timing.EndFailure(err);
 }
 ```
 

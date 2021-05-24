@@ -7,7 +7,7 @@ description: >
     TODO: add description
 ---
 
-**Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [ireconfigurable](../../../commons/config/ireconfigurable)
+**Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 

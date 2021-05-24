@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [IClosable](../iclosable)
+**Inherits**: [IClosable](../iclosable)
 
 ### Description
 

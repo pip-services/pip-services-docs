@@ -7,7 +7,7 @@ description: >
     Validation rule that checks that only one property of a list of properties exists in an object.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

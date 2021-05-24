@@ -13,11 +13,11 @@ The ICounterTimingCallback interface defines the method used for a callback to e
 
 ### Instance methods
 
-#### endTiming
+#### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
-See also [CounterTiming.endTiming](../counter_timing/#endtiming)
+See also [CounterTiming.EndTiming](../counter_timing/#endtiming)
 
-> endTiming(name: string, elapsed: number): void
+> void EndTiming(string name, double elapsed)
 
 - **name**: string - a counter name
-- **elapsed**: number - execution elapsed time in milliseconds to update the counter.
+- **elapsed**: double - execution elapsed time in milliseconds to update the counter.

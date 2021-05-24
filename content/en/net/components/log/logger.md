@@ -8,7 +8,7 @@ description: >
     
 ---
 
-**Implements:** [ILogger](../ilogger), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits**: [ILogger](../ilogger), [IReconfigurable](../../../commons/config/ireconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
@@ -33,149 +33,194 @@ Parameters to pass to the [configure](#configure) method for component configura
 
 #### _level
 Maximum log level to capture
-> `protected` **_level**: [LogLevel](../log_level) = LogLevel.Info
+> `protected` **_level**: [LogLevel](../log_level) = [LogLevel.Info](../log_level/#info)
 
 
 #### _source
 source (context) name
-> `protected` **_source**: string
+> `protected` **_source**: string = null
 
 </span>
 
 
+
 ### Instance methods
 
-#### composeError
+#### ComposeError
 Composes an human-readable error description
 
-> `protected` composeError(error: Error): string
+> `protected` string ComposeError(Exception error)
 
-- **error**: Error - an error to format.
+- **error**: Exception - an error to format.
 - **returns**: string - a human-redable error description.
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### debug
+#### Debug
 Logs high-level debug information for troubleshooting.
 
-> `public` debug(correlationId: string, message: string, ...args: any[]): void
+> `public` void Debug(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### error
+#### Debug
+Logs high-level debug information for troubleshooting.
+
+> `public` void Debug(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Error
 Logs recoverable application error.
 
-> `public` error(correlationId: string, error: Error, message: string, ...args: any[]): void
+> `public` void Error(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
+#### Error
+Logs recoverable application error.
 
-
-#### fatal
-Logs fatal (unrecoverable) messages that caused the process to crash.
-
-> `public` fatal(correlationId: string, error: Error, message: string, ...args: any[]): void
+> `public` void Error(string correlationId, Exception error, string message = null, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
+- **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Fatal
+Logs fatal (unrecoverable) message that caused the process to crash.
+
+> `public` void Fatal(string correlationId, string message, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Fatal
+Logs fatal (unrecoverable) message that caused the process to crash.
+
+> `public` void Fatal(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### formatAndWrite
+#### FormatAndWrite
 Formats the log message and writes it to the logger destination.
 
-> `protected` formatAndWrite(level: [LogLevel](../log_level), correlationId: string, error: Errro, message: string, ...args: any[]): void
+> `protected` void FormatAndWrite([LogLevel](../log_level) level, string correlationId, Exception error, string message, object[] args)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Errro - an error object associated with this message.
+- **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
 - **args**: any[]- arguments to parameterize the message.
 
 
-
-#### getLevel
-Gets the maximum log level. Messages with higher log level are filtered out.
-
-> `public` getLevel(): [LogLevel](../log_level)
-
-- **returns**: [LogLevel](../log_level) -  the maximum log level.
-
-
-#### getSource
-Gets the source (context) name.
-
-> `public` getSource(): string
-
-- **returns**: string -  the source (context) name.
-
-
-#### info
+#### Info
 Logs an important information message
 
-> `public` info(correlationId: string, message: string, ...args: any[]): void
+> `public` void Info(string correlationId, string message, params object[] args): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Info
+Logs an important information message
+
+> `public` void Info(string correlationId, Exception error, string message = null, params object[] args): void
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### log
+#### Log
 Logs a message at a specified log level.
 
-> `public` log(level: [LogLevel](../log_level), correlationId: string, error: Errro, message: string, ...args: any[]): void
+> `public` void Log([LogLevel](../log_level) level, string correlationId, Exception error, string message, params object[] args)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Errro - an error object associated with this message.
+- **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
+#### SetReferences
+Sets references to dependent components.
 
-#### setLevel
-Set the maximum log level.
+> `public override` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-> `public` setLevel(level: [LogLevel](../log_level)): void
-
-- **level**: [LogLevel](../log_level) - a new maximum log level.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### trace
-Logs a low-level debug information for troubleshooting.
+#### Trace
+Logs low-level debug information for troubleshooting.
 
-> `public` trace(correlationId: string, message: string, ...args: any[]): void
+> `public` void Trace(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
-#### warn
+#### Trace
+Logs low-level debug information for troubleshooting.
+
+> `public` void Trace(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Warn
 Logs a warning that may or may not have a negative impact.
 
-> `public` warn(correlationId: string, message: Error, ...args: any[]): void
+> `public` void Warn(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Warn
+Logs a warning that may or may not have a negative impact.
+
+> `public` void Warn(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
 
 

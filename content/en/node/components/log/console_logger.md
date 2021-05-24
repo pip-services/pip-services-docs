@@ -28,7 +28,7 @@ Important points
 
 ### Instance methods
 
-#### _write
+#### write
 Writes a log message to the logger destination.
 
 > `public` write(level: [LogLevel](../log_level), correlation_id: string, error: Error, message: string): void

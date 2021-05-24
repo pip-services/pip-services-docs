@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [ICounters](../icounters)
+**Inherits**: [ICounters](../icounters)
 
 ### Description
 
@@ -20,56 +20,56 @@ Important points
 
 ### Instance methods
 
-#### beginTiming
+#### BeginTiming
 Begins measurement of execution time interval.
 It returns [CounterTiming](../counter_timing) object which has to be called at
-[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
+[CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> `public` beginTiming(name: string): [CounterTiming](../counter_timing): void
+> `public` [CounterTiming](../counter_timing) BeginTiming(string name)
 
 - **name**: string - a counter name of Interval type.
 - **returns**: [CounterTiming](../counter_timing) - a callback object to end timing.
 
 
-#### increment
+#### Increment
 Increments counter by given value.
 
-> `public` increment(name: string, value: number): void
+> `public` void Increment(string name, int value)
 
 - **name**: string - a counter name of Increment type.
-- **value**: number - a value to add to the counter.
+- **value**: int - a value to add to the counter.
 
-#### incrementOne
+#### IncrementOne
 Increments counter by 1.
 
-> `public` increment_one(name: string): void
+> `public` void IncrementOne(string name)
 
 - **name**: string - a counter name of Increment type.
 
 
-#### last
+#### Last
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> `public` last(name: string, value: number): void
+> `public` void Last(string name, float value)
 
 - **name**: string - a counter name of Last type.
-- **value**: number - a last value to record.
+- **value**: float - a last value to record.
 
 
-#### stats
+#### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> `public` stats(name: string, value: number): void
+> `public` void Stats(string name, float value)
 
 - **name**: string - a counter name of Statistics type
-- **value**: number - a value to update statistics
+- **value**: float - a value to update statistics
 
 
-#### timestamp
+#### Timestamp
 Records the given timestamp.
 
-> `public` timestamp(name: string, value: Date): void
+> `public` void Timestamp(string name, DateTime value)
 
 - **name**: string - a counter name of Timestamp type.
 - **value**: Date - a timestamp to record.
@@ -78,7 +78,7 @@ Records the given timestamp.
 #### timestampNow
 Records the current time as a timestamp.
 
-> `public`  timestamp_now(name: string): void
+> `public` void timestampNow(string name)
 
 - **name**: string - a counter name of Timestamp type.
 

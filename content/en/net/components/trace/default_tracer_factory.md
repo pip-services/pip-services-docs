@@ -7,7 +7,7 @@ description: >
     Creates [ITracer](../itracer) components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -16,7 +16,7 @@ The DefaultTracerFactory class allows you to create a factory used to create [IT
 ### Constructors
 Creates a new instance of the factory.
 
-> `public` constructor()
+> `public` DefaultTracerFactory()
 
 
 ### See also

@@ -6,6 +6,9 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
     This package provides interfaces and classes used to create different types of tracers. The main tools available from this package are a tracer factory and a tracer composite class. The first allows to create a factory for tracers, and the second to combine different tracers into one. Additionally, it provides tracers that allow to store their contents in memory and logs. 
+
+
+
 ---
 ---
 
@@ -39,7 +42,7 @@ Dummy implementation of tracer that doesn't do anything.
 Data object to store captured operation traces.
 
 #### [TraceTiming](trace_timing)
-Timing object returned by [ITracer.beginTrace](itracer/#beginTrace) to end timing
+Timing object returned by [ITracer.BeginTrace](itracer/#beginTrace) to end timing
 of execution block and record the associated trace.
 
 

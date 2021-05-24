@@ -7,7 +7,7 @@ description: >
     Validation rule that allows you to check combinations of rules created with AND logical operations.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

@@ -7,7 +7,7 @@ description: >
     Creates a factory used to create information components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -16,7 +16,7 @@ The DefaultInfoFactory class allows you to create a factory used to create infor
 ### Constructors
 Creates a new instance of the factory.
 
-> `public` constructor()
+> `public` DefaultInfoFactory()
  
 ### See also 
 

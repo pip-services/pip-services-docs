@@ -8,8 +8,7 @@ description: >
 
 ---
 
-**Implemenst:** [IReferenceable](../../../commons/refer/ireferenceable)
-**Extends:** [Logger](../logger)
+**Inherits**: [IReferenceable](../../../commons/refer/ireferenceable), [Logger](../logger)
 
 ### Description
 
@@ -26,48 +25,58 @@ Important points
 ### Constructors
 Creates a new instance of the logger.
 
-> `public` constructor(references: [IReferences](../../../commons/refer/ireferences) = null)
+> `public` CompositeLogger([IReferences](../../../commons/refer/ireferences) references = null)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
+### Fields
+
+<span class="hide-title-link">
+
+#### _loggers
+
+> `protected` **_loggers**: List<[ILogger](../ilogger)> = new List<[ILogger](../ilogger)>()
+
+</span>
 
 ### Instance methods
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public override` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-#### write
+#### Write
 Writes a log message to the logger destination.
 
-> `protected` write(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string): void
+> `protected override` void Write([LogLevel](../log_level) level, string correlationId, Exception error, string message)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Error - an error object associated with this message.
+- **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
 
 
 ### Examples
-```typescript
-class MyComponent implements IConfigurable, IReferenceable {
-    private _logger: CompositeLogger = new CompositeLogger();
-
-    public configure(config: ConfigParams): void {
-        this._logger.configure(config);
+```cs
+class MyComponent: IConfigurable, IReferenceable 
+{
+    CompositeLogger _logger = new CompositeLogger();
+    public void Configure(ConfigParams config)
+    {
+        this._logger.Configure(config);
         ...
     }
-
-    public setReferences(references: IReferences): void {
-        this._logger.setReferences(references);
+    public void SetReferences(IReferences references)
+    {
+        this._logger.SetReferences(references);
         ...
     }
-
-    public myMethod(string correlationId): void {
-        this._logger.debug(correlationId, "Called method mycomponent.mymethod");
+    public void MyMethod(String correlationId)
+    {
+        this._logger.Debug(correlationId, "Called method mycomponent.mymethod");
         ...
     }
 }

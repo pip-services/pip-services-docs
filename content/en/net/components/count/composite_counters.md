@@ -9,7 +9,7 @@ description: >
    
 ---
 
-**Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
+**Inherits**: [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
 [ICounterTimingCallback](../icounter_timing_callback)
 
 
@@ -28,7 +28,7 @@ Important points
 ### Constructors
 Creates a new instance of the counters.
 
-> `public` constructor(references: [IReferences](../../../commons/refer/ireferences) = null)
+> `public` CompositeCounters([IReferences](../../../commons/refer/ireferences) references = null)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
@@ -39,111 +39,115 @@ Creates a new instance of the counters.
 
 #### _counters
 A list containig the aggregated counters.
-> `protected` **_counters**: [ICounters](../icounters)[] = []
+> `protected` **_counters**: List<[ICounters](../icounters)>
 
 </span>
 
 
 ### Instance methods
 
-#### beginTiming
+#### BeginTiming
 Begins measurement of execution time interval.
 It returns [CounterTiming](../counter_timing) object which has to be called at
-[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
+[CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> `public` beginTiming(name: string): [CounterTiming](../counter_timing)
+> `public` [CounterTiming](../counter_timing) BeginTiming(string name)
 
 - **name**: string - a counter name of Interval type.
 - **returns**: [CounterTiming](../counter_timing) - a callback object to end timing.
 
 
-#### endTiming
+#### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
 
-> `public` endTiming(name: string, elapsed: number): void
+> `public` void EndTiming(string name, double elapsed)
 
 - **name**: string - a counter name
-- **elapsed**: number - execution elapsed time in milliseconds to update the counter.
+- **elapsed**: double - execution elapsed time in milliseconds to update the counter.
 
 
 #### increment
 Increments counter by given value.
 
-> `public` increment(name: string, value: number): void
+> `public` int Increment(string name, int value)
 
 - **name**: string - a counter name of Increment type.
-- **value**: number - a value to add to the counter.
+- **value**: int - a value to add to the counter.
 
 
-#### incrementOne
+#### IncrementOne
 Increments counter by 1.
 
-> `public` incrementOne(name: string): void
+> `public` void IncrementOne(string name)
 
 - **name**: string - a counter name of Increment type.
 
 
-#### last
+#### Last
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> `public` last(name: string, value: number): void
+> `public` void Last(string name, float value)
 
 - **name**: string - a counter name of Last type.
-- **value**: number - last value to record.
+- **value**: float - last value to record.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### stats
+#### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> `public` stats(name: string, value: number): void
+> `public` void Stats(string name, float value)
 
 - **name**: string - a counter name of Statistics type
-- **value**: number - a value to update statistics
+- **value**: float - a value to update statistics
 
 
 #### timestamp
 Records the given timestamp.
 
-> `public` timestamp(name: string, value: Date)
+> `public` void Timestamp(string name, DateTime value)
 
 - **name**: string - a counter name of Timestamp type.
-- **value**: Date - a timestamp to record.
+- **value**: DateTime - a timestamp to record.
 
 
-#### timestamp_now
+#### TimestampNow
 Records the current time as a timestamp.
 
-> `public` timestamp_now(name: string)
+> `public` TimestampNow(string name)
 
 - **name**: string - a counter name of Timestamp type.
 
 
 ### Examples
-```typescript
-class MyComponent implements IReferenceable {
-    private _counters: CompositeCounters = new CompositeCounters();
-
-    public setReferences(references: IReferences): void {
-        this._counters.setReferences(references);
+```cs
+class MyComponent: IReferenceable 
+{
+    CompositeCounters _counters = new CompositeCounters();
+    public void SetReferences(IReferences references)
+    {
+        this._counters.SetReferences(references);
         ...
     }
-
-    public myMethod(): void {
-        this._counters.increment("mycomponent.mymethod.calls");
-        var timing = this._counters.beginTiming("mycomponent.mymethod.exec_time");
-        try {
+    public void MyMethod()
+    {
+        this._counters.Increment("mycomponent.mymethod.calls");
+        var timing = this._counters.BeginTiming("mycomponent.mymethod.exec_time");
+        try
+        {
             ...
-        } finally {
-            timing.endTiming();
+        }
+        finally
+        {
+            timing.EndTiming();
         }
     }
 }

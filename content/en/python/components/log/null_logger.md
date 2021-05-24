@@ -100,7 +100,7 @@ Logs low-level debug information for troubleshooting.
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> warn(correlation_id: Optional[str], message: Exception, *args: Any, **kwargs: Any)
+> warn(correlation_id: Optional[str], message: str, *args: Any, **kwargs: Any)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **message**: str - a human-readable message to log.

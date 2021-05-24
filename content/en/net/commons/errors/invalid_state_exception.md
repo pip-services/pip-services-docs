@@ -8,7 +8,7 @@ description: >
     For instance: business calls when the component is not ready.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

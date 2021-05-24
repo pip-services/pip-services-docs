@@ -38,7 +38,7 @@ and records the associated trace.
 Ends timing of an execution block, calculates the elapsed time
 and records the associated trace.
 
-> `public` endFailure(error: Error): void
+> `public` endTrace(): void
  
 ### Examples
 

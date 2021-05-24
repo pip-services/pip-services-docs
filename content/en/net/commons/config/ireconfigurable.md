@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [IConfigurable](../iconfigurable)
+**Inherits**: [IConfigurable](../iconfigurable)
 
 See also [IConfigurable](../iconfigurable)
 

@@ -7,7 +7,7 @@ description: >
     Validation rule to check that one or more values are excluded from the list of constants.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

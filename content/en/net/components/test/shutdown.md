@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Implemenst:** [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable)
+**Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 

@@ -18,56 +18,56 @@ The ErrorCategory class defines the 12 standard error categories supported by th
 
 #### Unknown
 Unknown or unexpected errors.
-> `public const` string Unknown = "Unknown"
+> `public const` **Unknown**: string = "Unknown"
 
 #### Internal
 Internal errors caused by programming mistakes.
-> `public const` string Internal = "Internal"
+> `public const` **Internal**: string  = "Internal"
 
 #### Misconfiguration	
 Errors related to mistakes in user-defined configurations.
-> `public const` string Misconfiguration = "Misconfiguration"
+> `public const` **Misconfiguration**: string = "Misconfiguration"
 	
 #### InvalidState
 Errors caused by incorrect object state.. 
 For example: business calls when the component is not ready.
-> `public const` string InvalidState = "InvalidState"
+> `public const` **InvalidState**: string = "InvalidState"
 	
 #### NoResponse	
 Errors caused by remote calls timeouted and not returning results.
 It allows to clearly separate communication related problems
 from other application errors.
-> `public const` string NoResponse = "NoResponse"
+> `public const` **NoResponse**: string = "NoResponse"
 
 #### FailedInvocation	
 Errors caused by remote calls failed due to unidenfied reasons.
-> `public const` string FailedInvocation = "FailedInvocation"
+> `public const` **FailedInvocation**: string = "FailedInvocation"
 
 #### FileError
 Errors in read/write local disk operations.
-> `public const` string NoFileAccess = "NoFileAccess"
+> `public const` **NoFileAccess**: string = "NoFileAccess"
 
 #### BadRequest
 Errors due to incorrectly specified invocation parameters.
 For example: missing or incorrect parameters.
-> `public const` string BadRequest = "BadRequest"
+> `public const` **BadRequest**: string = "BadRequest"
 	
 #### Unauthorized
 Access errors caused by missing user identity (authentication error)
 or incorrect security permissions (authorization error).
-> `public const` string Unauthorized = "Unauthorized"
+> `public const` **Unauthorized**: string = "Unauthorized"
 
 #### NotFound
 Errors caused by attempts to access missing objects.
-> `public const` string NotFound = "NotFound"
+> `public const` **NotFound**: string = "NotFound"
 	
 #### Conflict
 Errors raised by conflicts between object versions that were
 posted by the user and those that are stored on the server.
-> `public const` string Conflict = "Conflict"	
+> `public const` **Conflict**: string = "Conflict"	
 	
 #### Unsupported	
 Errors caused by calls to unsupported or not yet implemented functionality.
-> `public const` string Unsupported = "Unsupported"
+> `public const` **Unsupported** = "Unsupported"
 
 </span>

@@ -8,7 +8,7 @@ description: >
    
 ---
 
-**Extends:** [Logger](../logger)
+**Inherits**: [Logger](../logger)
 
 ### Description
 
@@ -35,59 +35,74 @@ Important points
 
 #### _cache
 List containing log messages.
-> `protected` **_cache**: [LogMessage](../log_message)[] = []
+> `protected` **_cache**: List<[LogMessage](../log_message)>
 
 #### _updated
 Boolean variable indicating whether there has been an update or not.
-> `protected` **_updated** = false
-
-#### _interval
-Interval in milliseconds to save log messages (default: 10 seconds)
-> `protected` **_interval** = 10000
+> `protected` **_updated**: bool = false
 
 #### _lastDumpTime
 Time of the last dump
-> `protected` **_lastDumpTime**: number
+> `protected` **_lastDumpTime**: long = DateTime.UtcNow.Ticks
 
 #### _maxCacheSize
 Maximum number of messages stored in the cache (default: 100)
-> `protected` **_maxCacheSize**: number = 100
+> `protected` **_maxCacheSize**: int = 100
+
+#### _interval
+Interval in milliseconds to save log messages (default: 10 seconds)
+> `protected` **_interval**: int = 10000
+
+#### _lock
+TODO add description
+> `protected` **_lock**: object
 
 </span>
 
 
 ### Instance methods
 
-#### clear
+#### Clear
 Clears (removes) all cached log messages.
 
-> clear(): void
+> void Clear()
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
-#### dump
+#### Dump
 Dumps (writes) the currently cached log messages.
 
-> dump(): void
+> `public` void Dump()
 
-#### update
+#### Update
 Sets message cache as updated and dumps it when timeout expires.
 
-> `protected` update()
+> `protected` void Update()
+
+
+#### Write
+Writes a log message to the logger destination.
+
+> `public override` void Write([LogLevel](../../log/log_level) level, string correlationId, Exception error, string message)
+
+- **level**: [LogLevel](../../log/log_level) - a log level.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
 
 ### Abstract methods
 
-#### save
+#### Save
 Saves log messages from the cache.
 
-> `protected abstract` save(messages: [LogMessage](../log_message)[])
+> `protected abstract` Save(List<[LogMessage](../log_message)> messages)
 
-- messages: [LogMessage](../log_message)[] - a list with log messages
+- **messages**: [LogMessage](../log_message) - a list with log messages
 
 
 

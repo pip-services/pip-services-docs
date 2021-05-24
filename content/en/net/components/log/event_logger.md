@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "ConsoleLogger"
-linkTitle: "ConsoleLogger"
+title: "EventLogger "
+linkTitle: "EventLogger "
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    Logger that writes log messages to console.
+    TODO: add description
 
 ---
 
@@ -12,24 +12,13 @@ description: >
 
 ### Description
 
-The  ConsoleLogger class provides a logger that writes log messages to console.
-
-Important points
-
-- Errors are written to standard err stream and all other messages to standard out stream.
-
-#### Configuration parameters
-- **level**: maximum log level to capture
-- **source**: source (context) name
-
-#### References
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
+TODO: add description
 
 
 ### Instance methods
 
 #### Write
-Writes a log message to the logger destination.
+Writes a log message to the logger destination(s).
 
 > `public override` void Write([LogLevel](../log_level) level, string correlation_id, Exception error, string message)
 

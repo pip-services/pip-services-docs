@@ -33,136 +33,106 @@ In addition to standard parameters ConnectionParams may contain any number of cu
 ### Constructors
 Creates a new connection parameters and fills it with values.
 
-> `public` constructor(map: any = null)
+> `public` ConnectionParams(IDictionary\<string, string\> map)
 
-- **map**: any - (optional) an object to be converted into key-value pairs to initialize this connection.
+- **map**: IDictionary\<string, string\> - (optional) an object to be converted into key-value pairs to initialize this connection.
+
+
+Creates a new connection parameters and fills it with values.
+
+> `public` ConnectionParams(IDictionary\<string, string\> map)
+
+
+### Properties
+
+#### UseDiscovery
+Checks if these connection parameters shall be retrieved from DiscoveryService.The connection parameters are redirected to DiscoveryService when discovery_key parameter is set.
+
+> `public` bool UseDiscovery [ get ]
+
+#### DiscoveryKey
+Gets or sets the key to retrieve this connection from DiscoveryService.
+
+> `public` string 	DiscoveryKey [ get, set ]
+
+#### Protocol
+Gets or sets the connection protocol
+
+> `public` string Protocol [ get, set ]
+
+#### Host
+Gets or sets the service host name or IP address.
+
+> `public` string Host [ get, set ]
+
+#### Port
+Gets or sets the service port number
+
+> `public` int Port [ get, set ]
+
+#### Uri
+Gets the resource URI or connection string. Usually it includes all connection parameters in it.
+
+> `public` string Uri [ get, set ]
+
+
 
 ### Instance methods
 
-#### getDiscoveryKey
-Gets the key to retrieve this connection from DiscoveryService.
-If this key is null, then all parameters are already present.
 
-> `public` get_discovery_key(): string
-
-- **returns**: string - resolved options or error.
-
-
-#### getHost
-Gets the host name or IP address.
-
-> `public` getHost(): string
-
-- **returns**: string - the host name or IP address.
-
-
-#### getPort
+#### GetPort
 Gets the port number.
 
-> `public` getPort(): number
+> `public` int GetPort()
 
-- **returns**: number - the port number.
+- **returns**: int - the port number.
 
 
-#### getPortWithDefault
+#### GetPortWithDefault
 Gets the port number with default value.
 
-> `public` getPortWithDefault(defaultPort: number): number
+> `public` int GetPortWithDefault(int defaultPort)
 
-- **defaultPort**: number - a default port number.
-- **returns**: number - the port number.
+- **defaultPort**: int - a default port number.
+- **returns**: int - the port number.
 
 
-#### getProtocol
+#### GetProtocol
 Gets the connection protocol.
 
-> `public` getProtocol(): string
+> `public` string GetProtocol()
 
 - **returns**: string - the connection protocol or the default value if it's not set.
 
 
-#### getProtocolWithDefault
+#### GetProtocolWithDefault
 Gets the connection protocol with default value.
 
-> `public` getProtocolWithDefault(defaultValue: string = null): string
+> `public` string GetProtocolWithDefault(string defaultValue)
 
 - **defaultValue**: string - (optional) the default protocol
 - **returns**: string - the connection protocol or the default value if it's not set.
 
 
-#### getUri
-Gets the resource URI or connection string. Usually it includes all connection parameters in it.
-
-> `public` getUri(): string
-
-- **returns**: string - the resource URI or connection string.
-
-
-#### setDiscoveryKey
-Sets the key to retrieve these parameters from DiscoveryService.
-
-> `public` setDiscoveryKey(value: string): void
-
-- **value**: string - a new key to retrieve connection.
-
-
-#### setHost
-Sets the host name or IP address.
-
-> `public` setHost(value: string): void
-
-- **value**: string - a new host name or IP address.
-
-
-#### setPort
-Sets the port number.
-
-> `public` setPort(value: number): void
-
-- **value**: number - a new port number.
-
-
-#### setProtocol
-Sets the connection protocol.
-
-> `public` setProtocol(value: string): void
-
-- **value**: string - a new connection protocol.
-
-
-#### setUri
-Sets the resource URI or connection string.
-
-> `public` setUri(value: string): void
-
-- **value**: string - a new resource URI or connection string.
-
-
-#### useDiscovery
-Checks if these connection parameters shall be retrieved from DiscoveryService.
-The connection parameters are redirected to DiscoveryService when discovery_key parameter is set.
-
-> `public` useDiscovery(): boolean
-
-- **returns**: boolean - true if connection shall be retrieved from DiscoveryService
-
 ### Static methods
 
-#### fromConfig
+#### FromConfig
 Retrieves a single ConnectionParams from configuration parameters
 from "connection" section. If "connections" section is present instead,
 then it returns only the first connection element.
 
-> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [ConnectionParams]()
+> `public static` [ConnectionParams]() FromConfig([ConfigParams](../../../commons/config/config_params) config, bool configAsDefault = True)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
+- **configAsDefault**: bool - boolean parameter for default configuration. If "true" the default value will be added to the result.
+
 - **returns**: [ConnectionParams]() - the generated ConnectionParams object.
 
 
-#### fromString
+#### FromString
 Creates a new ConnectionParams object filled with key-value pairs serialized as a string.
 
-> `public static` fromString(line: string): [ConnectionParams]()
+> `public static` [ConnectionParams]() FromString(string line)
 
 - **line**: [ConfigParams](../../../commons/config/config_params) - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
@@ -170,41 +140,44 @@ Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 - **returns**: [ConnectionParams]() - a new ConnectionParams object.
 
 
-#### fromTuples
+#### FromTuples!
+**TODO: this method is not realized yet for this language**
+
 Creates a new ConnectionParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
-> `public static` from_tuples(...tuples: any[]): [ConnectionParams]()
+> `public static` [ConnectionParams]() FromTuples(params object[] tuples)
 
-- **tuples**: any[] - the tuples to fill a new ConnectionParams object.
+- **tuples**: object[] - the tuples to fill a new ConnectionParams object.
 
 - **returns**: [ConnectionParams]() - a new ConnectionParams object.
 
 
-#### manyFromConfig
+#### ManyFromConfig
+
 Retrieves all ConnectionParams from configuration parameters
 from "connections" section. If "connection" section is present instead,
 then it returns a list with only one ConnectionParams.
 
-> `public static` many_from_config(config: [ConfigParams](../../../commons/config/config_params)): [ConnectionParams]()[]
+> `public static` List<[ConnectionParams]()> ManyFromConfig([ConfigParams](../../../commons/config/config_params) config, bool configAsDefault = true)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve connections
 
-- **returns**: [ConnectionParams]()[] - a list of retrieved ConnectionParams
+- **returns**: List<[ConnectionParams]()> - a list of retrieved ConnectionParams
 
 ### Examples
 
-```typescript
-let connection = ConnectionParams.fromTuples(
-    "protocol", "http",
-    "host", "10.1.1.100",
-    "port", "8080",
-    "cluster", "mycluster"
+```cs
+//Example ConnectionParams object usage:
+var connection = ConnectionParams.FromTuples(
+"protocol", "http",
+"host", "10.1.1.100",
+"port", "8080",
+"cluster", "mycluster"
 );
-   
-let host = connection.getHost();                             // Result: "10.1.1.100"
-let port = connection.getPort();                             // Result: 8080
-let cluster = connection.getAsNullableString("cluster");     // Result: "mycluster"   
+var host = connection.Host;                             // Result: "10.1.1.100"
+var port = connection.Port;                             // Result: 8080
+var cluster = connection.GetAsNullableString("cluster");     // Result: "mycluster" 
 ```
 
 ### See also

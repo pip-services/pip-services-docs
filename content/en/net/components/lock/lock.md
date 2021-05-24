@@ -7,7 +7,7 @@ description: >
     Abstract lock that implements the default lock acquisition routine.
 ---
 
-**Implemenst:** [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Inherits**: [ILock](../ilock), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
@@ -20,44 +20,44 @@ The Lock class represents an abstract lock that implements the defaul lock acqui
 
 ### Instance methods
 
-#### acquireLock
+#### AcquireLock
 Makes multiple attempts to acquire a lock by its key within a given time interval.
 
-> `public` acquireLock(correlationId: string, key: string, ttl: number, timeout: number): Promise\<void\>
+> `public` void AcquireLock(string correlationId, string key, long ttl, long timeout)
 
 - **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **timeout**: long - a lock acquisition timeout.
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 ### Abstract methods
 
-#### releaseLock
+#### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> `public abstract` releaseLock(correlationId: string, key: string): Promise\<void\>
+> `public abstract` void ReleaseLock(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique lock key to release.
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `public abstract` tryAcquireLock(correlationId: string, key: string, ttl: number): Promise\<boolean\>
+> `public abstract` bool TryAcquireLock(string correlationId, string key, long ttl)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 

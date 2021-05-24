@@ -9,7 +9,7 @@ description: >
   
 ---
 
-**Implements:** [StringValueMap](../../data/string_value_map)
+**Inherits**: [StringValueMap](../../data/string_value_map)
 
 See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
 

@@ -8,7 +8,7 @@ description: >
     It also provides several methods to convert the stored values to different types.
 ---
 
-**Implements:** [ICloneable](../icloneable), Dictionary\<string, object\>
+**Inherits**: [ICloneable](../icloneable), Dictionary\<string, object\>
 
 ### Description
 

@@ -7,7 +7,7 @@ description: >
     Schema to validate [FilterParams](../../data/filter_params).
 ---
 
-**Implements:** [MapSchema](../map_schema)
+**Inherits**: [MapSchema](../map_schema)
 
 ### Description
 

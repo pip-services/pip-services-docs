@@ -7,7 +7,7 @@ description: >
     Errors related to mistakes in microservice's user-defined configurations.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** List\<string\> 
+**Inherits**: List\<string\> 
 
 ### Description
 

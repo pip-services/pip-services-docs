@@ -16,51 +16,38 @@ Important points
 
 - This object is used by [CachedTracer](../cached_tracer). 
 
-### Constructors
-Create new instance of OperationTrace
-
-> `public` constructor(time: Date, source: string, component: string, operation: string, correlationId: string, duration: number, error: [ErrorDescription](../../../commons/errors/error_description))
-
-- **time**: Date - The time when operation was executed
-- **source**: string - source (context name)
-- **component**: string - name of the component
-- **operation**: string - name of the executed operation
-- **correlationId**: string - transaction id to trace execution through call chain. 
-- **duration**: number - duration of the operation in milliseconds
-- **error**: [ErrorDescription](../../../commons/errors/error_description) - The description of the captured error
-- 
 
 ### Fields
 
 <span class="hide-title-link">
 
-#### time
+#### Time
 The time when operation was executed
-> `public` **time**: Date
+> `public` **Time**: DateTime
 
-#### source
+#### Source
 The source (context name)
-> `public` **source**: string 
+> `public` **Source**: string 
 
 #### component
  The name of the component
-> `public` **component**: string
+> `public` **Component**: string
 
-#### operation
+#### Operation
 The name of the executed operation
-> `public` **operation**: string
+> `public` **Operation**: string
 
-#### correlationId
+#### CorrelationId
 The transaction id to trace execution through call chain. 
-> `public` **correlationId**: string
+> `public` **CorrelationId**: string
 
-#### duration
+#### Duration
 The duration of the operation in milliseconds
-> `public` **duration**: number
+> `public` **Duration**: long
 
-#### error
+#### Error
 The description of the captured error.  
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
-> `public` **error**: [ErrorDescription](../../../commons/errors/error_description)
+> `public` **Error**: [ErrorDescription](../../../commons/errors/error_description)
 
 </span>

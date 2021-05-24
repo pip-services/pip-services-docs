@@ -7,7 +7,7 @@ description: >
     Schema to validate object properties
 ---
 
-**Implements:** [Schema](../schema)
+**Inherits**: [Schema](../schema)
 
 ### Description
 

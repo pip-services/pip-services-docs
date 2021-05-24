@@ -8,7 +8,7 @@ description: >
    
 ---
 
-**Implements:** [IEvent](../ievent)
+**Inherits**: [IEvent](../ievent)
 
 ### Description
 

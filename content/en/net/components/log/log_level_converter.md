@@ -13,29 +13,29 @@ The LogLevelConverter class is used to convert log level values.
 
 ### Static methods
 
-#### toInteger
+#### ToInteger
 Converts log level to a number.
 
-> `public static` toInteger(level: [LogLevel](../log_level)): number
+> `public static` int ToInteger([LogLevel](../log_level level))
 
 - **level**: [LogLevel](../log_level) - a log level to convert.
-- **returns**: number - log level number value.
+- **returns**: int - log level number value.
 
 
-#### toLogLevel
+#### ToLogLevel
 Converts numbers and strings to standard log level values.
 
-> `public static` toLogLevel(value: any, defaultValue: [LogLevel](../log_level) = LogLevel.Info): [LogLevel](../log_level)
+> `public static` [LogLevel](../log_level) ToLogLevel(object value, [LogLevel](../log_level) defaultValue = LogLevel.Info)
 
-- **value**: any - a value to be converted
+- **value**: object - a value to be converted
 - **defaultValue**: [LogLevel](../log_level) - a default value if conversion is not possible
 - **returns**: [LogLevel](../log_level) - converted log level
 
 
-#### toString
+#### ToString
 Converts log level to a string.
 
-> `public static` toString(level: [LogLevel](../log_level)): string
+> `public static` string ToString([LogLevel](../log_level) level)
 
 - **level**: [LogLevel](../log_level) - a log level to convert
 - **returns**: string - log level name string.

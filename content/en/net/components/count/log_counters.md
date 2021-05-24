@@ -7,7 +7,7 @@ description: >
     Performance counters that periodically dump counters' measurements to logger.
 ---
 
-**Implements:** [CachedCounters](../cached_counters), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits**: [CachedCounters](../cached_counters), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
@@ -28,38 +28,40 @@ The LogCounters allows you to create performance counters that periodically dump
 
 ### Instance methods
 
-#### save
+#### Save
 Saves the current counters measurements.
 
-> `protected` save(counters: [Counter](../counter)[]): void
+> `protected override` void Save(IEnumerable<[Counter](../counter)> counters)
 
-- **counters**: [Counter](../counter)[] - current counters measurements to be saved.
+- **counters**: IEnumerable<[Counter](../counter)> - current counters measurements to be saved.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 
-```typescript
-let counters = new LogCounters();
-counters.setReferences(References.fromTuples(
-    new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger()
+```cs
+var counters = new LogCounters();
+counters.SetReferences(References.FromTuples(
+    new Descriptor("pip-services3", "logger", "console", "default", "1.0"), new ConsoleLogger()
 ));
- 
-counters.increment("mycomponent.mymethod.calls");
-let timing = counters.beginTiming("mycomponent.mymethod.exec_time");
+
+counters.Increment("mycomponent.mymethod.calls");
+var timing = counters.BeginTiming("mycomponent.mymethod.exec_time");
+
 try {
     ...
-} finally {
-    timing.endTiming();
+    }
+finally {
+    timing.EndTiming();
 }
 
-counters.dump();
+counters.Dump();
 ```
 
 ### See also

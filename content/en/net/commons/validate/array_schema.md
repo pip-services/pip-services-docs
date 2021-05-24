@@ -7,7 +7,7 @@ description: >
     Schema to validate arrays.
 ---
 
-**Implements:** [Schema](../schema)
+**Inherits**: [Schema](../schema)
 
 ### Description
 

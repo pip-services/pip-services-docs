@@ -11,7 +11,7 @@ description: >
 
 ---
 
-**Implements:** [IIdentifiable<string>](../iidentifiable)
+**Inherits**: [IIdentifiable<string>](../iidentifiable)
 
 ### Description
 

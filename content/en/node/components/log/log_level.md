@@ -19,12 +19,12 @@ description: >
 
 ### Enumeration members
 
-- **null** = 0 - Nothing to be logged
-- **Fatal** - Logs only fatal errors that cause microservice to fail
-- **Error** - Logs all errors - fatal or recoverable
-- **Warn** - Logs errors and warnings
-- **Info** 4 - Logs errors and important information messages
-- **Debug** 5 - Logs everything up to high-level debugging information
-- **Trace** 6 - Logs everything down to fine-granular debugging messages
+- **Null** = 0 - Nothing to be logged
+- **Fatal** = 1 - Logs only fatal errors that cause microservice to fail
+- **Error** = 2 - Logs all errors - fatal or recoverable
+- **Warn** = 3 - Logs errors and warnings
+- **Info** = 4 - Logs errors and important information messages
+- **Debug** = 5 - Logs everything up to high-level debugging information
+- **Trace** = 6 - Logs everything down to fine-granular debugging messages
 
 </span>

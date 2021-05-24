@@ -19,46 +19,47 @@ Important points
 ### Constructors
 Creates a instance of the data object.
 
-> `public` constructor(name: string = null, type: [CounterType](../counter_type) = null)
+> `public` Counter(string name, [CounterType](../counter_type) type)
 
 - **name**: string - a counter name.
 - **type**: [CounterType](../counter_type) - a counter type.
 
 
-### Fields
+Creates a instance of the data object.
 
-<span class="hide-title-link">
+> `public` Counter()
 
-#### last
-The last recorded value
-> `public` **last**: number
 
-#### count
-The total count
-> `public` **count**: number
+### Properties
 
-#### min
-The minimum value
-> `public` **min**: number
 
-#### max
-The maximum value
-> `public` **max**: number
-
-#### average
-The average value
-> `public` **average**: number
-
-#### time
-The recorded timestamp
-> `public` **time**: Date
-
-#### name
+#### Name
 The counter's unique name
-> `public` **name**: string
+> `public` string Name [ get, set ]
 
-#### type
+#### Type
 The counter type that defines the measurement algorithm
-> `public` **type**: [CounterType](../counter_type)
+> `public` [CounterType](../counter_type) Type [ get, set ]
 
-</span>
+#### Last
+The last recorded value
+> `public` double Last [ get, set ]
+
+#### Min
+The minimum value
+> `public` double Min [ get, set ]
+
+#### Max
+The maximum value
+> `public` double Max [ get, set ]
+
+#### Average
+The average value
+> `public` double Average [ get, set ]
+
+#### Time
+The recorded timestamp
+> `public` DateTime Time [ get, set ]
+
+
+

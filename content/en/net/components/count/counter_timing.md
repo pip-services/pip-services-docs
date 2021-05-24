@@ -10,42 +10,36 @@ description: >
 
 ### Description
 
-The CounterTiming class allows you to create callback objects that are returned by [ICounters.beginTiming](../icounters/#begintiming) to end the timing of execution blocks and update the associated counters.
+The CounterTiming class allows you to create callback objects that are returned by [ICounters.BeginTiming](../icounters/#begintiming) to end the timing of execution blocks and update the associated counters.
 
 ### Constructors
 Creates a new instance of the timing callback object.
 
-> `public` constructo(counter: string = null, callback: [ICounterTimingCallback](../icounter_timing_callback) = null)
+> `public` CounterTiming(string counter, [ICounterTimingCallback](../icounter_timing_callback) callback)
 
 - **counter**: string - an associated counter name
 - **callback**: [ICounterTimingCallback](../icounter_timing_callback) - a callback that shall be called when end_timing is called.
 
 
-### Fields
+Creates a new instance of the timing callback object.
 
-<span class="hide-title-link">
-
-#### _counters
-A list containing different counters
-> `protected` **_counters**: [ICounters](../icounters)[] = []
-
-</span>
+> `public` CounterTiming()
 
 
 ### Instance methods
 
-#### endTiming
+#### EndTiming
 Ends timing of an execution block, calculates elapsed time and updates the associated counter.
 
-> `public` endTiming(): void
+> `public` void EndTiming()
 
 ### Examples
 
-```typescript
-let timing = counters.beginTiming("mymethod.exec_time");
+```cs
+var timing = counters.beginTiming("mymethod.exec_time");
 try {
     ...
 } finally {
-    timing.endTiming();
+    timing.EndTiming();
 }
 ```

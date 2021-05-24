@@ -51,7 +51,7 @@ The credentials resolver.
 
 #### _clusterSupported
 The cluster support (multiple connections)
-> `protected` **_clusterSupported**: boolean
+> `protected` **_clusterSupported**: bool
 
 #### _defaultProtocol
 The default protocol
@@ -59,125 +59,125 @@ The default protocol
 
 #### _defaultPort
 The default port
-> `protected` **_defaultPort**: number
+> `protected` **_defaultPort**: int
 
 #### _supported_protocols
 The list of supported protocols
-> `protected` **_supportedProtocols**: string[]
+> `protected` **_supportedProtocols**: IList\<string\>
 
 
 </span>
 
 ### Instance methods
 
-#### compose
+#### Compose
 Composes Composite connection options from connection and credential parameters.
 
-> `public` compose(correlationId: string, connections: [ConnectionParams](../connection_params)[], credential: [CredentialParams](../../auth/credential_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `public` [ConfigParams](../../../commons/config/config_params) Compose(string correlationId, IList<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **connections**: [ConnectionParams](../connection_params)[] - connection parameters
+- **connections**: IList<[ConnectionParams](../connection_params)> - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved options or error.
 
 
-#### composeOptions
+#### ComposeOptions
 A composite of several merger options
 
-> `protected` composeOptions(connections: [ConnectionParams](../connection_params)[], credential: [CredentialParams](../../auth/credential_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `protected` [ConfigParams](../../../commons/config/config_params) ComposeOptions(IList<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **connections**: [ConnectionParams](../connection_params)[] - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
+- **parameters**: IList<[ConnectionParams](../connection_params)> - optional parameters
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved options or error
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### finalizeOptions
+#### FinalizeOptions
 Finalize merged options.
 This method can be overriden in child classes.
 
-> `protected` finalizeOptions(options: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `protected` [ConfigParams](../../../commons/config/config_params) FinalizeOptions([ConfigParams](../../../commons/config/config_params) options)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - options: connection options
 - **returns**: [ConfigParams](../../../commons/config/config_params) - finalized connection options
 
 
-#### mergeConnection
+#### MergeConnection
 Merges connection options with connection parameters. 
 This method can be overriden in child classes.
 
-> `protected` mergeConnection( options: [ConfigParams](../../../commons/config/config_params), connection: [ConnectionParams](../connection_params)): [ConfigParams](../../../commons/config/config_params)
+> `protected` [ConfigParams](../../../commons/config/config_params) MergeConnection([ConfigParams](../../../commons/config/config_params) options, [ConnectionParams](../connection_params) connection)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - connection options
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be merged
 - **returns**: [ConfigParams](../../../commons/config/config_params) - merged connection options.
 
 
-#### mergeCredential
+#### MergeCredential
 Merges connection options with credential parameters.
 This method can be overriden in child classes.
 
-> `protected` mergeCredential(options: [ConfigParams](../../../commons/config/config_params), credential: [CredentialParams](../../auth/credential_params)): [ConfigParams](../../../commons/config/config_params)
+> `protected` [ConfigParams](../../../commons/config/config_params) MergeCredential([ConfigParams](../../../commons/config/config_params) options, [CredentialParams](../../auth/credential_params) credential)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - connection options
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be merged
 - **returns**: [ConfigParams](../../../commons/config/config_params) - merged connection options.
 
 
-#### mergeOptional
+#### MergeOptional
 Merges connection options with optional parameters.
 This method can be overriden in child classes.
 
-> `protected` mergeOptional(options: [ConfigParams](../../../commons/config/config_params), parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `protected` [ConfigParams](../../../commons/config/config_params) MergeOptional([ConfigParams](../../../commons/config/config_params) options, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - connection options
 - **parameters**: [CredentialParams](../../auth/credential_params) - optional parameters to be merged
 - **returns**: [ConfigParams](../../../commons/config/config_params) - merged connection options.
 
 
-#### resolve
+#### ResolveAsync
 Resolves connection options from connection and credential parameters.
 
-> `public` resolve(correlationId: string): Promise<[ConfigParams](../../../commons/config/config_params)>
+> `public` Task<[ConfigParams](../../../commons/config/config_params)> ResolveAsync(string correlationId): 
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[ConfigParams](../../../commons/config/config_params)> - resolved options or error
+- **returns**: Task<[ConfigParams](../../../commons/config/config_params)> - resolved options or error
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
->  setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences(references: [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### validateConnection
+#### ValidateConnection
 Validates connection parameters. 
 Throws error if validation failed.
 This method can be overriden in child classes.
 
-> `protected` validateConnection(correlationId: string, connection: [ConnectionParams](../connection_params)): void
+> `protected` void ValidateConnection(string correlationId, [ConnectionParams](../connection_params)) connection)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
 
 
-#### validateCredential
+#### ValidateCredential
 Validates credential parameters.
 This method can be overriden in child classes.
 This method can be overriden in child classes.
 
-> `protected` validateCredential(correlationId: string, credential: [CredentialParams](../../auth/credential_params)): void
+> `protected` void ValidateCredential(string correlationId, [CredentialParams](../../auth/credential_params) credential)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

@@ -9,7 +9,7 @@ description: >
     
 ---
 
-**Extends:** [Lock](../lock)
+**Inherits**: [Lock](../lock)
 
 ### Description
 
@@ -26,38 +26,38 @@ Important points
 
 ### Instance methods
 
-#### releaseLock
+#### ReleaseLock
 Releases prevously acquired lock by its key.
 
-> `public` release_lock(correlationId: string, key: string)
+> `public override` void ReleaseLock(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to release.
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `public` try_acquire_lock(correlationId: string, key: string, ttl: number): bool
+> `public` bool TryAcquireLock(string correlationId, string key, long ttl)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
+- **ttl**: long - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 ### Examples
 
-```typescript
-let lock = new MemoryLock();
-   
-await lock.acquire("123", "key1");
+```cs
+var lock = new MemoryLock();
+lock.TryAcquireLock("123", "key1", 0);
 try {
    // Processing...
-} finally {
-   await lock.releaseLock("123", "key1");
 }
-// Continue...
+finally  {
+   lock.ReleaseLock("123", "key1");
+   // Continue...
+});
 
 ```
 

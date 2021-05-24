@@ -7,7 +7,7 @@ description: >
     Creates a factory used to create [ILock](../ilock) components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../build/factory)
+**Inherits**: [Factory](../../build/factory)
 
 ### Description
 
@@ -16,7 +16,7 @@ The DefaultLockFactory class allows you to create a factory used to create [ILoc
 ### Constructors
 Create a new instance of the factory.
 
-> `public` constructor()
+> `public` DefaultLockFactory()
 
 
 ### See also

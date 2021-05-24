@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Implements:** Exception
+**Inherits**: Exception
 
 ### Description
 

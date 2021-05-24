@@ -16,34 +16,32 @@ Important points
 
 - This object is used by [CachedLogger](../cached-logger).
 
-### Fields
+### Properties
 
-<span class="hide-title-link">
 
-#### time
+#### Time
 The time the message was generated
-> `public` **time**: Date
+> `public` DateTime Time [ get, set ]
 
 #### level
 This log level
-> `public` **level**: [LogLevel](../log_level)
+> `public` string Level [ get, set ]
 
-#### source
+#### Source
 The source (context name)
-> `public` **source**: string
+> `public` string Source [ get, set ]
 
-#### correlation_id
+#### CorrelationId
 The transaction id to trace execution through a call chain.
-> `public` **correlation_id**: string
+> `public` string CorrelationId [ get, set ]
 
-#### error
+#### Error
 The transaction id to trace execution through a call chain.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
-> `public` **error**: [ErrorDescription](../../../commons/errors/error_description)
+> `public` [ErrorDescription](../../../commons/errors/error_description) Error [ get, set ]
 
-#### message
+#### Message
 The human-readable message
-> `public` **message**: string
+> `public` string Message [ get, set ]
 
-</span>

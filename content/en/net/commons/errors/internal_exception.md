@@ -7,7 +7,7 @@ description: >
     Errors caused by programming mistakes.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

@@ -8,7 +8,7 @@ description: >
     
 ---
 
-**Implements:** [ICommand](../icommand)
+**Inherits**: [ICommand](../icommand)
 
 ### Description
 

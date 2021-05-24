@@ -7,7 +7,7 @@ description: >
     Validation rule to check that a list contains only specified values.
 ---
 
-**Implements:** [IValidationRule](../ivalidation_rule)
+**Inherits**: [IValidationRule](../ivalidation_rule)
 
 ### Description
 

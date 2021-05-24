@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [IReferenceable](../ireferenceable), [IReconfigurable](../../config/ireconfigurable)
+**Inherits**: [IReferenceable](../ireferenceable), [IReconfigurable](../../config/ireconfigurable)
 
 ### Description
 The DependencyResolver is a helper class that allows you to resolve component dependencies. It is configured to resolve named dependencies by a specific locator.  

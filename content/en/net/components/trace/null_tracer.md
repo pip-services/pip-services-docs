@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implemenst:** [ITracer](../itracer)
+**Inherits**: [ITracer](../itracer)
 
 ### Description
 
@@ -20,39 +20,39 @@ Important points
 
 ### Instance methods
 
-#### beginTrace
-Begings recording an operation trace
+#### BeginTrace 
+Begings recording an operation trace.
 
-> `public` beginTrace(correlationId: string, component: string, operation: string): [TraceTiming](../trace_timing)
+> `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **return**: [TraceTiming](../trace_timing) - a trace timing object.
 
 
-#### failure
+#### Failure
 Records an operation failure with its name, duration and error
 
-> `public` failure(correlationId: string, component: string, operation: string, error: Error,
-duration: number): void
+> `public` void Failure(string correlationId, string component, string operation, Exception error,
+long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Error - an error object associated with this trace.
-- **duration**: number - execution duration in milliseconds.
+- **error**: Exception - an error object associated with this trace.
+- **duration**: long - execution duration in milliseconds.
 
 
-#### trace
+#### Trace
 Records an operation trace with its name and duration.
 
-> `public` trace(correlationId: string, component: string, operation: string, duration: number): void
+> `public` void Trace(string correlationId, string component, string operation, long duration)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **duration**: number - execution duration in milliseconds.
+- **duration**: long - execution duration in milliseconds.
 
 ### See also
 - #### [ITracer](../itracer)

@@ -7,7 +7,7 @@ description: >
     Discovery service that keeps connections in memory.
 ---
 
-**Implemenst:** [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Inherits**: [IDiscovery](../idiscovery), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
@@ -25,74 +25,78 @@ The MemoryDiscovery class allows you to create discovery services that keep conn
 ### Constructors
 Creates a new instance of discovery service.
 
-> `public` constructor(config: [ConfigParams](../../../commons/config/config_params) = null)
+> `public` MemoryDiscovery([ConfigParams](../../../commons/config/config_params) config = null)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with connection parameters.
 
 
+Creates a new instance of discovery service.
+
+> `public` MemoryDiscovery()
+
+
 ### Instance methods
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### readConnections
+#### ReadConnections!
+**TODO: this method is not realized yet for this language**
+
 Reads connections from configuration parameters.
 Each section represents an individual Connection params
 
-> `public` readConnections(connections: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void ReadConnections([ConfigParams](../../../commons/config/config_params) connections)
 
 - **connections**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be read
 
 
-#### register
+#### RegisterAsync
 Registers connection parameters into the discovery service.
 
-> `public` register(correlationId: string, key: string, connection: [ConnectionParams](../connection_params)): Promise<[ConnectionParams](../connection_params)>
+> `public` Task\<void\> RegisterAsync(string correlationId, string key, [ConnectionParams](../connection_params) connection) 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a key to uniquely identify the connection parameters.
 - **connection**: [ConnectionParams](../connection_params) - a connection to be registered.
-- **returns**: Promise<[ConnectionParams](../connection_params)> - the registered connection parameters.
 
 
-#### resolveAll
+#### ResolveAllAsync
 Resolves all connection parameters by their key.
 
-> `public` resolveAll(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)[]>
+> `public` Task<List\<[ConnectionParams](../connection_params)\>> ResolveAllAsync(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the connections.
-- **returns**: Promise<[ConnectionParams](../connection_params)[]> - a list with resolved connections.
+- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - a list with resolved connections.
 
 
-#### resolveOne
+#### ResolveOneAsync
 Resolves a single connection parameters by its key.
 
-> `public` resolve_one(correlationId: string, key: string): Promise<[ConnectionParams](../connection_params)>
+> `public` Task<[ConnectionParams](../connection_params)> ResolveOneAsync(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a key to uniquely identify the connection. 
-- **returns**: Promise<[ConnectionParams](../connection_params)> - a resolved connection.
+- **returns**: Task<[ConnectionParams](../connection_params)> - a resolved connection.
 
 ### Examples
 
-```typescript
-let config = ConfigParams.fromTuples(
+```cs
+ConfigParams config = ConfigParams.FromTuples(
     "key1.host", "10.1.1.100",
     "key1.port", "8080",
     "key2.host", "10.1.1.100",
     "key2.port", "8082"
 );
 
-let discovery = new MemoryDiscovery();
-discovery.readConnections(config);
-
-let connection = await discovery.resolve("123", "key1");
-// Result: host=10.1.1.100;port=8080
+MemoryDiscovery discovery = new MemoryDiscovery();
+discovery.ReadConnections(config);
+discovery.Resolve("123", "key1");
 ```
 
 ### See also

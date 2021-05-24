@@ -7,7 +7,7 @@ description: >
     Unknown or unexpected errors.
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

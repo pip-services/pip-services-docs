@@ -12,98 +12,151 @@ description: >
 The ILogger interface provides a set of methods for logger components that capture log messages.
 
 
+### Properties
+
+#### Level
+Gets or sets the maximum log level. Messages with higher log level are filtered out.
+
+> [LogLevel](../log_level) Level [ get, set ]
+
+
 ### Instance methods
 
-#### debug
+#### Debug
 Logs high-level debug information for troubleshooting.
 
-> debug(correlationId: string, message: string, ...args: any[]): void
+> void Debug(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### error
+#### Debug
+Logs high-level debug information for troubleshooting.
+
+> void Debug(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Error
 Logs recoverable application error.
 
-> error(correlationId: string, error: Error, message: string, ...args: any[]): void
+> void Error(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
+
+#### Error
+Logs recoverable application error.
+
+> void Error(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
 
-#### fatal
+#### Fatal
 Logs fatal (unrecoverable) message that caused the process to crash.
 
-> fatal(correlationId: string, error: Error, message: string, ...args: any[]): void
+> void Fatal(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
+#### Fatal
+Logs fatal (unrecoverable) message that caused the process to crash.
 
-#### getLevel
-Gets the maximum log level. Messages with higher log level are filtered out.
+> void Fatal(string correlationId, Exception error, string message = null, params object[] args)
 
-> getLevel(): [LogLevel](../log_level)
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
-- **returns**: [LogLevel](../log_level) -  the maximum log level.
 
-
-#### info
+#### Info
 Logs an important information message
 
-> info(correlationId: string, message: string, ...args: any[]): void
+> void Info(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Info
+Logs an important information message
+
+> void Info(string correlationId, Exception error, string message = null, params object[] args): void
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### log
+#### Log
 Logs a message at a specified log level.
 
-> log(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string, ...args: any[]): void
+> void Log([LogLevel](../log_level) level, string correlationId, Exception error, string message, params object[] args)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
+- **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
 
-#### setLevel
-Set the maximum log level.
-
-> setLevel(level: [LogLevel](../log_level)): void
-
-- **level**: [LogLevel](../log_level) - a new maximum log level.
-
-
-#### trace
+#### Trace
 Logs low-level debug information for troubleshooting.
 
-> trace(correlationId: string, message: string, ...args: any[]): void
+> void Trace(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
 
-#### warn
+#### Trace
+Logs low-level debug information for troubleshooting.
+
+> void Trace(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.
+
+
+#### Warn
 Logs a warning that may or may not have a negative impact.
 
-> warn(correlationId: string, message: Error, ...args: any[]): void
+> void Warn(string correlationId, string message, params object[] args)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **message**: string - a human-readable message to log.
-- **args**: any[] - arguments to parameterize the message.
+- **args**: object[] - arguments to parameterize the message.
 
+
+#### Warn
+Logs a warning that may or may not have a negative impact.
+
+> void Warn(string correlationId, Exception error, string message = null, params object[] args)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message
+- **message**: string - a human-readable message to log.
+- **args**: object[] - arguments to parameterize the message.

@@ -7,7 +7,7 @@ description: >
     Schema to validate user defined objects.
 ---
 
-**Implements:** [Schema](../schema)
+**Inherits**: [Schema](../schema)
 
 ### Description
 

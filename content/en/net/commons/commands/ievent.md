@@ -7,7 +7,7 @@ description: >
     An interface for Events that can send asynchronious notifications to multiple subscribed listeners.
 ---
 
-**Implements:** [INotifiable](../../run/inotifiable)
+**Inherits**: [INotifiable](../../run/inotifiable)
 
 ### Description
 

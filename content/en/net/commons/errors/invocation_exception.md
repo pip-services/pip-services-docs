@@ -7,7 +7,7 @@ description: >
     Errors returned by remote services or by the network during call attempts.
 ---
 
-**Extends:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

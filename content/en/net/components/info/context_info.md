@@ -10,7 +10,7 @@ description: >
    
 ---
 
-**Implemenst:** [IReconfigurable](../../../commons/config/ireconfigurable)
+**Inherits**: [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
@@ -31,111 +31,85 @@ Important points
 ### Constructors
 Creates a new instance of this context info.
 
-> `public` constructor(name?: string, description?: string)
+> `public` ContextInfo(string name = null, string description = null)
 
 - **name**: string - (optional) a context name.
 - **description**: string - (optional) a human-readable description of the context.
 
+Creates a new instance of this context info.
+
+> `public` ContextInfo()
+
+
 
 ### Properties
 
-#### contextId
-Gets the unique context id. Usually it is the current host name.
+#### Name
+Gets or sets the context name.
 
-> contextId(): string
-
-- **returns**: string - the unique context id.
-
-Gets the unique context id. Usually it is the current host name.
-
-> contextId(context_id: string)
-
-- **contextId**: string - the unique context id.
-
-#### description
-Gets the human-readable description of the context.
-
-> description(): string
-
-- **returns**: string - the human-readable description of the context.
-
-Sets the human-readable description of the context.
-
-> description(description: string)
-
-- **description**: string - a new human readable description of the context.
-
-#### name
-Gets the context name.
-
-> name(): string
-
-- **returns**: string - the context name
-
-Sets the context name.
-
-> name(name: string)
-
-- **name**: string - a new name for the context.
-
-#### properties
-Gets context additional parameters.
-
-> properties(): any
-
-- **returns**: any - a JSON object with additional context parameters.
-
-Sets context additional parameters.
-
-> properties(properties: any)
-
-- **properties**: any - a JSON object with context additional parameters
+> `public` string Name [ get, set ]
 
 
-#### startTime
-Gets the context start time.
+#### Description
+Gets or sets the human-readable description of the context.
 
-> startTime(): Date
+> `public` string Description [ get, set ]
 
-- **returns**: any - a JSON object with additional context parameters.
 
-Sets the context start time.
+#### ContextId
+Gets or sets the unique context id. Usually it is the current host name.
 
-> startTime(start_time: Date)
+> `public` string ContextId = null [ get, set ]
 
-- **start_time**: Date - a new context start time.
+
+#### Properties
+Gets or sets context additional parameters.
+
+> `public` [StringValueMap](../../../commons/data/string_value_map) Properties [ get, set ]
+
+
+#### StartTime
+Gets or sets the context start time.
+
+> `public` DateTime StartTime = Environment.MachineName [ get, set ]
+
+
+#### Uptime
+Calculates the context uptime as from the start time.
+
+> `public` long Uptime = DateTime.UtcNow [ get ]
 
 
 ### Instance methods
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 ### Static methods
 
-#### fromConfig
+#### FromConfig
 Creates a new ContextInfo and sets its configuration parameters.
 
->  `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [ContextInfo]()
+>  `public static` [ContextInfo]() FromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
 - **returns**: [ContextInfo]() - a newly created ContextInfo
 
 ### Examples
 
-```typescript
-let contextInfo = new ContextInfo();
-contextInfo.configure(ConfigParams.fromTuples(
+```cs
+var contextInfo = new ContextInfo();
+contextInfo.Configure(ConfigParams.FromTuples(
     "name", "MyMicroservice",
     "description", "My first microservice"
 ));
 
-context.name;            // Result: "MyMicroservice"
-context.contextId;        // Possible result: "mylaptop"
-context.startTime;        // Possible result: 2018-01-01:22:12:23.45Z
-context.uptime;            // Possible result: 3454345
+context.Name;           // Result: "MyMicroservice"
+context.ContextId;      // Possible result: "mylaptop"
+context.StartTime;      // Possible result: 2018-01-01:22:12:23.45Z
+context.Uptime;         // Possible result: 3454345
 ```

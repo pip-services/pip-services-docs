@@ -7,7 +7,7 @@ description: >
     Access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
 ---
 
-**Implements:** [ApplicationException](../application_exception)
+**Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 

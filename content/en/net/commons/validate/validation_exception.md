@@ -9,7 +9,7 @@ description: >
     
 ---
 
-**Implements:** [BadRequestException](../../errors/bad_request_exception)
+**Inherits**: [BadRequestException](../../errors/bad_request_exception)
 
 ### Description
 

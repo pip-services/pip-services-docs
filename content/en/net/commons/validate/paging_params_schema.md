@@ -7,7 +7,7 @@ description: >
    Schema to validate [PagingParams](../../data/paging_params).
 ---
 
-**Implements:** [ObjectSchema](../object_schema)
+**Inherits**: [ObjectSchema](../object_schema)
 
 ### Description
 

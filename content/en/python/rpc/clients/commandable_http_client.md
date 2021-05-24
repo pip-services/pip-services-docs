@@ -16,7 +16,7 @@ The CommandableHttpClient class allows you to create commandable services. Comma
 
 Important points
 
-- Each command is exposed as POST operation that receives all parameters in body object.
+- Each command is exposed as POST operation that receives all parameters in the body object.
 
 ##### Configuration parameters
 
@@ -55,7 +55,7 @@ Creates a new instance of the client.
 ### Instance methods
 
 #### call_command
-Calls a remote method via the HTTP commadable protocol. The call is made via POST operation and all parameters are sent in body object. The complete route to remote method is defined as baseRoute + "/" + name.
+Calls a remote method via the HTTP commadable protocol. The call is made via POST operation and all parameters are sent in body object. The complete route to the remote method is defined as baseRoute + "/" + name.
 
 > call_command(name: str, correlation_id: Optional[str], params: Any): Any
 

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 4. Implementing a controller"
 linkTitle: "Step 4. Controller"
-gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
+gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
 ---
 
 Now that we know a bit about how we are going to be storing data and how microservice configuration works, it’s time to add some logic to our service. Our microservice needs to be able to calculate a device’s position based on the beacons it “sees”, as well as initiate CRUD operations for the data it handles. Let’s create a **logic** folder under the **src** directory and start by defining an interface:
@@ -175,7 +175,7 @@ Pay special attention to the following two methods in the code above:
 
 The first one sets a dependency upon a persistence using the descriptor **beacons:persistence:*:*:1.0.** This descriptor reads: we don’t necessarily care which persistence we are given, as long as it implements the IBeaconsPersistence interface via the Referenceable pattern. This way, our controller can be used with the memory persistence, the mongoDB one, or any other one that meets this requirement.
 
-The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you’re not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
+The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you’re not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../commons/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
 
 **/src/logic/BeaconsCommandSet.ts**
 

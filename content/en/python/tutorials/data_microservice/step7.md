@@ -3,25 +3,33 @@ type: docs
 no_list: true
 title: "Step 7. Running and testing the microservice" 
 linkTitle: "Step 7. Run" 
-gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
+gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
 To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following:
 
-**/bin/run.js**
+**/bin/main.py**
 
-```javascript
-let BeaconsProcess = require('../obj/src/container/BeaconsProcess').BeaconsProcess;
-‍
-try {
-    let proc = new BeaconsProcess();
-    proc._configPath = "./config/config.yml";
-    proc.run(process.argv);
-} catch (ex) {
-    console.error(ex);
-}
+```python
+import sys
+import traceback
+import os
 
+from pip_services3_components.log import ConsoleLogger
 
+# add parent directory to path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+
+from src.containers.BeaconsProcess import BeaconsProcess
+
+if __name__ == '__main__':
+    runner = BeaconsProcess()
+    try:
+        runner.run()
+    except Exception as ex:
+        ConsoleLogger().fatal("Beacons", ex, "Error: ")
+        print(traceback.format_exc())
+        sys.stderr.write(str(ex) + '\n')
 ```
 
 In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
@@ -29,12 +37,12 @@ In the code above, all we’re doing is creating an instance of the container we
 To run the microservice, execute the following command from a terminal at the root of the project:
 
 ```bash
- node ./bin/run.js
+ python ./bin/main.py
 ```
 
 You should get a result similar to the one shown below.
 
-![ConsoleScreen1](/images/tutorials/data_microservice/console_screen1.png)
+![ConsoleScreen1](/images/tutorials/data_microservice/python_console_screen1.png)
 
 Since we opted for the console logger in our configuration file, all information is going to be printed to the console. The service is using the in-memory persistence by default. To switch over to the MongoDB persistence, the MONGO_ENABLED environment variable has to be set and MongoDB should be running. This can be done either by starting the service from a script, in which we set our environment variables beforehand, or by configuring them in the OS’s environment.
 
@@ -43,7 +51,7 @@ Let’s use the following two commands to set our environment variable and start
 ```bash
 export MONGO_ENABLED=true
 
-node .\bin\run.js
+python .\bin\main.py
 ```
 
 Make sure that you have MongoDB running locally (see [Setup environment](../quick_start/setup_enviroment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
@@ -265,4 +273,4 @@ As a result, only the beacon with an id of “2” is returned.
 ```
 
 And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
-All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-node)
+All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-python)

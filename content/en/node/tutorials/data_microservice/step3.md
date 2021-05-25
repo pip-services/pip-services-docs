@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 3. Implementing persistence components"
 linkTitle: "Step 3. Persistence"
-gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
+gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
 ---
 
 In this step, we’ll be creating components for persisting the data model we defined in the previous step. In our projects, we always create at least two persistences: one for storing data in-memory (used for testing), and another for storing data in an external database (used in production). With the Beacons example, we’ll be doing the same.

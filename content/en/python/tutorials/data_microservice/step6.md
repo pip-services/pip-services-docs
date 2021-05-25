@@ -3,62 +3,65 @@ type: docs
 no_list: true
 title: "Step 6. Wrapping microservice into container"
 linkTitle: "Step 6. Container"
-gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
+gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
 Our service is pretty much done - all that is left is to place the components we’ve developed into a process container and configure it.
 
 When a container is started, it starts composing the microservice out of the components indicated in the configuration file. For the container to be able to build these components, it will need a component factory. In the **build** directory, create a `BeaconsServiceFactory` class and populate it with the following code:
 
-**/src/build/BeaconsServiceFactory.ts**
+**/src/build/BeaconsServiceFactory.py**
 
-```typescript
-import { Factory } from 'pip-services3-components-node';
-import { Descriptor } from 'pip-services3-commons-node';
-‍
-import { BeaconsMemoryPersistence } from '../../src/persistence/BeaconsMemoryPersistence';
-import { BeaconsFilePersistence } from '../../src/persistence/BeaconsFilePersistence';
-import { BeaconsMongoDbPersistence } from '../../src/persistence/BeaconsMongoDbPersistence';
-import { BeaconsController } from '../../src/logic/BeaconsController';
-import { BeaconsHttpServiceV1 } from '../../src/services/version1/BeaconsHttpServiceV1';
-‍
-export class BeaconsServiceFactory extends Factory{
-    public static MemoryPersistenceDescriptor = new Descriptor('beacons', 'persistence', 'memory', '*', '1.0');
-    public static FilePersistenceDescriptor = new Descriptor('beacons', 'persistence', 'file', '*', '1.0');
-    public static MongoDbPersistenceDescriptor = new Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0');
-    public static ControllerDescriptor = new Descriptor('beacons', 'controller', 'default', '*', '1.0');
-    public static HttpServiceV1Descriptor = new Descriptor('beacons', 'service', 'http', '*', '1.0');
-        constructor(){
-        super();
-‍
-        this.registerAsType(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence);
-        this.registerAsType(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence);
-        this.registerAsType(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence);
-        this.registerAsType(BeaconsServiceFactory.ControllerDescriptor, BeaconsController);
-        this.registerAsType(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1);
-    }
-}
+```python
+from pip_services3_commons.refer import Descriptor
+from pip_services3_components.build import Factory
 
+from ..logic.BeaconsController import BeaconsController
+from ..persistence.BeaconsFilePersistence import BeaconsFilePersistence
+from ..persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
+from ..persistence.BeaconsMongoDbPersistence import BeaconsMongoDbPersistence
+from ..services.version1.BeaconsHttpServiceV1 import BeaconsHttpServiceV1
+
+
+class BeaconsServiceFactory(Factory):
+
+    MemoryPersistenceDescriptor = Descriptor('beacons', 'persistence', 'memory', '*', '1.0')
+    FilePersistenceDescriptor = Descriptor('beacons', 'persistence', 'file', '*', '1.0')
+    MongoDbPersistenceDescriptor = Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0')
+    ControllerDescriptor = Descriptor('beacons', 'controller', 'default', '*', '1.0')
+    HttpServiceV1Descriptor = Descriptor('beacons', 'service', 'http', '*', '1.0')
+
+    def __init__(self):
+        super(BeaconsServiceFactory, self).__init__()
+
+        self.register_as_type(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence)
+        self.register_as_type(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence)
+        self.register_as_type(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence)
+        self.register_as_type(BeaconsServiceFactory.ControllerDescriptor, BeaconsController)
+        self.register_as_type(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1)
 ```
 
 As shown in the code above, we start by creating descriptors for all of our components, and then, in the constructor, we register each component in the factory using its descriptor.
 
 Now let’s move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
 
-```typescript
-import { ProcessContainer } from 'pip-services3-container-node';
-import { DefaultRpcFactory } from 'pip-services3-rpc-node';
-‍
-import {BeaconsServiceFactory} from '../build/BeaconsServiceFactory';
-‍
-export class BeaconsProcess extends ProcessContainer{
-    public constructor(){
-        super('beacons', 'Beacons microservice');
-‍
-        this._factories.add(new BeaconsServiceFactory());
-        this._factories.add(new DefaultRpcFactory());
-    }
-}
+```python
+import sys
+
+from pip_services3_container.ProcessContainer import ProcessContainer
+from pip_services3_rpc.build.DefaultRpcFactory import DefaultRpcFactory
+from pip_services3_swagger.build.DefaultSwaggerFactory import DefaultSwaggerFactory
+
+from ..build.BeaconsServiceFactory import BeaconsServiceFactory
+
+
+class BeaconsProcess(ProcessContainer):
+    def __init__(self):
+        super(BeaconsProcess, self).__init__('beacons', 'Beacons microservice')
+
+        self._factories.add(BeaconsServiceFactory())
+        self._factories.add(DefaultRpcFactory())
+        self._factories.add(DefaultSwaggerFactory())
 
 ```
 
@@ -74,46 +77,61 @@ Before we run the microservice, we need to prepare an initial configuration for 
 - descriptor: "pip-services:context-info:default:default:1.0"
   name: "beacons"
   description: "Beacons microservice"
-‍
+
 # Console logger
 - descriptor: "pip-services:logger:console:default:1.0"
   level: "trace"
-‍
-# Performance counter that post values to log
+
+# Tracer that posts records to log
+- descriptor: "pip-services:tracer:log:default:1.0"
+
+# Performance counters that post values to log
 - descriptor: "pip-services:counters:log:default:1.0"
-‍
-{{^if MONGO_ENABLED}}
-# Memory persistence- descriptor: "beacons:persistence:memory:default:1.0"
+
+{{#unless MONGO_ENABLED}}{{#unless FILE_ENABLED}}
+# Memory persistence
+- descriptor: "beacons:persistence:memory:default:1.0"
+{{/unless}}{{/unless}}
+
+{{#if FILE_ENABLED}}
+# File persistence
+- descriptor: "beacons:persistence:file:default:1.0"
+  path: {{FILE_PATH}}{{#unless FILE_PATH}}"./data/beacons.json"{{/unless}}
 {{/if}}
-‍
+
 {{#if MONGO_ENABLED}}
 # MongoDb persistence
 - descriptor: "beacons:persistence:mongodb:default:1.0"
   connection:
     uri: {{MONGO_SERVICE_URI}}
-    host: {{MONGO_SERVICE_HOST}}{{^if MONGO_SERVICE_HOST}}"localhost"{{/if}}
-    port: {{MONGO_SERVICE_PORT}}{{^if MONGO_SERVICE_PORT}}27017{{/if}}
-    database: {{MONGO_DB}}{{^if MONGO_DB}}"test"{{/if}}
+    host: {{MONGO_SERVICE_HOST}}{{#unless MONGO_SERVICE_HOST}}"localhost"{{/unless}}
+    port: {{MONGO_SERVICE_PORT}}{{#unless MONGO_SERVICE_PORT}}27017{{/unless}}
+    database: {{MONGO_DB}}{{#unless MONGO_DB}}"test"{{/unless}}
 {{/if}}
-‍
+
 # Controller
 - descriptor: "beacons:controller:default:default:1.0"
-‍
+
 # Shared HTTP Endpoint
 - descriptor: "pip-services:endpoint:http:default:1.0"
   connection:
     protocol: http
     host: 0.0.0.0
-    port: {{HTTP_PORT}}{{^if HTTP_PORT}}8080{{/if}}
-‍
+    port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8080{{/unless}}
+
 # HTTP Service V1
 - descriptor: "beacons:service:http:default:1.0"
-‍
-# Heartbeat service
+  swagger:
+    enable: true
+
+# Hearbeat service
 - descriptor: "pip-services:heartbeat-service:http:default:1.0"
- 
+
 # Status service
 - descriptor: "pip-services:status-service:http:default:1.0"
+
+# Swagger service
+- descriptor: "pip-services:swagger-service:http:default:1.0"
 
 ```
 

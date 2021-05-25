@@ -31,7 +31,7 @@ A facade can additionally be used for the following:
 
 The general architecture of a system that uses a facade is presented in the diagram below:
 
-![facade architecture diagram](/images/tutorials/microservice_facade/facade_architecture_diagram1.jpg)
+![facade architecture diagram](/images/tutorials/microservice_facade/facade_architecture_diagram1.png)
 
 
 Large systems that have a vast external interface might include a number of facades, each of which provides a logically isolated API. Moreover, specialized facades can be developed for specific clients, providing operations that are optimized for a specific user interface.

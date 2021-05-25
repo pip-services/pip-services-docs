@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Client Library"
 linkTitle: "Client Library" 
+gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 ---
 
 ### Introduction

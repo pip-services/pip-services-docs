@@ -75,7 +75,7 @@ it finds a IDiscovery and resolves the connection there.
 
 > resolve(correlation_id: Optional[str]): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved connection.
 
 

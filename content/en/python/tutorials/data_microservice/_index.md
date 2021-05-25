@@ -36,4 +36,4 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 ### See also
 
 - [Tutorial how to create a client library](../client_library)
-- [Tutorial how to dockerize a microservice](../microservice-dockerization)
+- [Tutorial how to dockerize a microservice](../microservice_dockerization)

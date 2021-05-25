@@ -4,7 +4,7 @@ title: "HttpConnectionResolver"
 linkTitle: "HttpConnectionResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Helper class to retrieve connections for HTTP-based services abd clients.
+    Helper class to retrieve connections for HTTP-based services and clients.
 
 ---
 
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The HttpConnectionResolver class is used to retrieve connections for HTTP-based services abd clients.
+The HttpConnectionResolver class is used to retrieve connections for HTTP-based services and clients.
 
 Important points
 

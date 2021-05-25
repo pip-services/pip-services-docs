@@ -80,7 +80,7 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 ### Examples
 
-```json
+```
 ======== config.json ======
 { "key1": "{{KEY1_VALUE}}", "key2": "{{KEY2_VALUE}}" }
 ===========================

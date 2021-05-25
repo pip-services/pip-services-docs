@@ -51,12 +51,12 @@ Reads a configuration and parameterizes it with given values.
 ### Examples
 
 ```python
-config = ConfigParams.from_tuples("connection.host", "{{SERVICE_HOST}}",
-    "connection.port", "{{SERVICE_PORT}}{{^SERVICE_PORT}}8080{{/SERVICE_PORT}}")
-
-configReader = MemoryConfigReader()
-configReader.configure(config)
-
-parameters = ConfigParams.fromValue(os.get_env())
-configReader.readConfig("123", parameters)
+config = ConfigParams.from_tuples(
+	"connection.host", "localhost",
+	"connection.port", "8080"
+)
+config_reader = MemoryConfigReader()
+config_reader.configure(config)
+parameters = ConfigParams.from_value(sys.argv)
+config_reader.read_config("123", parameters) # Result: connection.host=localhost;connection.port=8080
 ```

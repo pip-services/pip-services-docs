@@ -56,6 +56,13 @@ To start developing your first facade, head on over to [Step 1. Creating the pro
 
 <span class="hide-title-link">
 
-### [Step 1. Creating the project’s structure.](../step2)
+#### [Step 1. Creating the project’s structure](step1)
+#### [Step 2. Business operations](step2)
+#### [Step 3. Authentication and sessions](step3)
+#### [Step 4. Authorization](step4)
+#### [Step 5. Service and version support](step5)
+#### [Step 6. Testing operations](step6)
+#### [Step 7. Running the facade](step7)
+#### [Step 8. Manually Testing the Facade](step7)
 
 </span>

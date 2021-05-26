@@ -25,8 +25,13 @@ To make it easier to follow along, we’ve broken up this tutorial into the foll
 - [Step 4. Publishing a microservice container to a registry](step4)
 - [Step 5. Running a dockerized microservice](step5)
 
+
 <span class="hide-title-link">
 
-### [Step 1. Building a microservice](step1)
+#### [Step 1. Building a microservice](step1)
+#### [Step 2. Running automated tests](step2)
+#### [Step 3. Packaging a microservice into a container](step3)
+#### [Step 4. Publishing a microservice container to a registry](step4)
+#### [Step 5. Running a dockerized microservice](step5)
 
 </span>

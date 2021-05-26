@@ -35,9 +35,27 @@ To make it easier to follow along, we’ve broken up the tutorial on writing you
 - [Step 4. Implementing Mock client](step4)
 - [Step 5. Testing HTTP client with Remote Microservice](step5)
 
+
+<span class="hide-title-link">
+
+#### [Step 1. Setting up the project](step1)
+#### [Step 2. Implementing Direct Client](step2)
+#### [Step 3. Implementing HTTP Client](step3)
+#### [Step 4. Implementing Mock client](step4)
+#### [Step 5. Testing HTTP client with Remote Microservice](step5)
+
+</span>
+
 Let's get started! Head on over to Step 1. Setting up the project.
 
 ### See also
 
-[Tutorial how to create microservice facade](../microservice_facade)
-[Tutorial how to dockerize a microservice](../microservice_dockerization)
+- [Tutorial how to create microservice facade](../microservice_facade)
+- [Tutorial how to dockerize a microservice](../microservice_dockerization)
+
+<span class="hide-title-link">
+
+#### [Tutorial how to create microservice facade](../microservice_facade)
+#### [Tutorial how to dockerize a microservice](../microservice_dockerization)
+
+</span>

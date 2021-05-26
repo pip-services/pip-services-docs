@@ -1,26 +1,19 @@
 ---
 type: docs
 no_list: true
-title: "Active logic"
-linkTitle: "Active logic"
+title: "Active Logic"
+linkTitle: "Active Logic"
+weight: 40
 ---
-
-### Introduction
 
 - by Alex Mazur
 
+### Introduction
+
 Microservices are capable of successfully solving a wide variety of business tasks. However, where they really shine (and are especially effective) is when it comes to scaling. Scaling is the process of creating a number of identical instances of a microservice for performing large and resource-hungry tasks. Thanks to scaling, many tasks can now be completed in adequate time and with optimal use of resources. Archiving a database, batch processing, and 3D video rendering are all examples of tasks that benefit from scaling, and many others exist as well!
 
 Microservices are usually stateless, meaning that they don’t store any information about their state or the task they are running. Because of this, there arises the problem of multiple execution of the same task by different instances of a microservice. A number of Active Logic patterns were developed for the PipServices Toolkit to help solve such complexities. Three main strategies are used to accomplish this:
 
-
-
-TO RECIPES
-Active logic
-by Alex Mazur
-Microservices are capable of successfully solving a wide variety of business tasks. However, where they really shine (and are especially effective) is when it comes to scaling. Scaling is the process of creating a number of identical instances of a microservice for performing large and resource-hungry tasks. Thanks to scaling, many tasks can now be completed in adequate time and with optimal use of resources. Archiving a database, batch processing, and 3D video rendering are all examples of tasks that benefit from scaling, and many others exist as well!
-
-Microservices are usually stateless, meaning that they don’t store any information about their state or the task they are running. Because of this, there arises the problem of multiple execution of the same task by different instances of a microservice. A number of Active Logic patterns were developed for the PipServices Toolkit to help solve such complexities. Three main strategies are used to accomplish this:
 
 - using a timer and distributed locks
 - using message queues

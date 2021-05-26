@@ -1,13 +1,14 @@
 ---
 type: docs
 no_list: true
-title: "Component lifecycle"
-linkTitle: "Component lifecycle"
+title: "Component Lifecycle"
+linkTitle: "Component Lifecycle"
+weight: 30
 ---
 
-### Introduction
-
 - by Alex Mazur
+
+### Introduction
 
 A microservice is a set of loosely coupled components, each of which serves a specific purpose, such as logging events, reading records from a database, or connecting to a 3rd party service.
 One of the roles of the microservice’s container is to correctly initialize all internal components, each of which can have its own lifecycle. For example, loading its own configuration, running certain functional processes, and even waiting for results from other components. The order in which component lifecycle management methods are called is as follows:

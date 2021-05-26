@@ -3,11 +3,12 @@ type: docs
 no_list: true
 title: "Component References"
 linkTitle: "Component References"
+weight: 20
 ---
 
-### Introduction
-
 - by Anastas Fonotov
+
+### Introduction
 
 Developing systems out of loosely-coupled components significantly reduces complexity, improves testing, and increases developer productivity. The Pip.Services Toolkit offers a flexible and simple set of primitives for referencing components that is symmetrically implemented in all of the supported programming languages.
 

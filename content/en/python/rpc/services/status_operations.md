@@ -4,7 +4,7 @@ title: "StatusOperations"
 linkTitle: "StatusOperations"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Handles status request for REST operations.
+    Handles status requests for REST operations.
 ---
 
 **Implements:** [RestOperations](../rest_operations)

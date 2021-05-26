@@ -60,7 +60,7 @@ The performance counters.
 > **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### _debug
-Boolean that set debug to True or False.
+Boolean that set debugging to True or False.
 > **_debug** = False
 
 #### _base_route

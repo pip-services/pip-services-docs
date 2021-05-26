@@ -4,16 +4,19 @@ title: "StatusOperations"
 linkTitle: "StatusOperations"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Handles status request for REST operations.
 ---
 
 **Implements:** [RestOperations](../rest_operations)
 
+### Description
+
+The StatusOperations class allows you to handle status requests for REST operations.  
 
 ### Methods
 
 #### get_status_operation
-TODO add description
+Gets the status of the operation.
 
 > get_status_operation(): Callable
 
@@ -29,6 +32,6 @@ Sets references to dependent components.
 
 
 #### status
-Handles status requests
+Handles status requests.
 
 >  status(): str

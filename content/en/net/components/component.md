@@ -14,7 +14,7 @@ description: >
 
 The component class allows you to create components that support configurable dependencies, logging, and performance counters.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **dependencies**:
     - **[dependency name 1]**: Dependency 1 locator (descriptor)

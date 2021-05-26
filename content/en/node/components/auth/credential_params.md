@@ -18,7 +18,7 @@ Important points
 
 - Credential parameters are used together with connection parameters, but usually stored in a separate store, protected from unauthorized access.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **store_key**: key to retrieve parameters from credential store
 - **username**: user name

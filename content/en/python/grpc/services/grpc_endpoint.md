@@ -1,0 +1,137 @@
+---
+type: docs
+title: "GrpcEndpoint"
+linkTitle: "GrpcEndpoint"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
+description: > 
+    Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
+
+---
+
+**Implements:** [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+
+
+### Description
+TODO: add description
+
+#### Configuration parameters
+Parameters to pass to the :func:`configure` method for component configuration:
+
+**connection(s)**: the connection resolver's connections:
+- **"connection.discovery_key"**: the key to use for connection resolving in a discovery service;
+- **"connection.protocol"**: the connection's protocol;
+- **"connection.host"**: the target host;
+- **"connection.port"**: the target port;
+- **"connection.uri"**: the target URI.
+**credential**: the HTTPS credentials:
+- **"credential.ssl_key_file"**: the SSL private key in PEM
+- **"credential.ssl_crt_file"**: the SSL certificate in PEM
+- **"credential.ssl_ca_file"**: the certificate authorities (root cerfiticates) in PEM
+
+#### References
+A logger, counters, and a connection resolver can be referenced by passing the
+following references to the object's [set_references](#set_references)
+
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
+- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand specify the counter's source.
+
+### Constructors
+
+Creates a new instance of the service.
+
+> CommandableGrpcClient(name: str)
+
+- **name**: str - a service name.
+
+
+### Instance ethods
+
+
+#### close
+Closes this endpoint and the GRPC server (service) that was opened earlier.
+
+> close(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+
+#### configure
+Configures this HttpEndpoint using the given configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
+
+
+#### is_open
+Checks if the component is opened.
+
+> is_open(): bool
+
+- **reerror**: bool - whether or not this endpoint is open with an actively listening GRPC server.
+
+
+#### open
+Opens a connection using the parameters resolved by the referenced connection resolver and creates a GRPC server (service) using the set options and parameters.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+
+
+#### register
+Registers a registerable object for dynamic endpoint discovery.
+
+> register(registration: [IRegisterable](../iregisterable))
+
+- **registration**: [IRegisterable](../iregisterable) - the registration to add.
+
+
+#### _register_commandable_method
+Registers a commandable method in this objects GRPC server (service) by the given name.
+
+> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+
+- **method**: str - the GRPC method name.
+- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
+- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - the action to perform at the given route.
+
+
+#### _register_interceptor
+Registers a middleware for methods in GRPC endpoint.
+
+> _register_interceptor(interceptor: Callable)
+
+- **interceptor**: Callable - the middleware action to perform at the given route.
+
+
+#### _register_method!
+**TODO: this method is not implemented for Python**
+
+Registers a middleware for methods in GRPC endpoint.
+
+> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+
+- **name**: str - a method name
+- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
+- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
+
+
+### Examples
+
+```python
+def my_method(self, _config, _references):
+    endpoint = GrpcEndpoint()
+    if self._config:
+        endpoint.configure(self._config)
+    if self._references:
+        endpoint.set_references(self._references)
+    ...
+
+    self._endpoint.open(correlation_id)
+    ...
+
+```
+
+

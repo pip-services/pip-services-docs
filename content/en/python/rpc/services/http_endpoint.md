@@ -11,19 +11,19 @@ description: >
 
 
 
-##### Configuration parameters
+#### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
 
-- **connection(s)** - the connection resolver's connections:
-    - **"connection.discovery_key"** - the key to use for connection resolving in a discovery service;
-    - **"connection.protocol"** - the connection's protocol;
-    - **"connection.host"**- the target host;
-    - **"connection.port"** - the target port;
-    - **"connection.uri"** - the target URI.
-- **credential** - the HTTPS credentials:
-    - **"credential.ssl_key_file"** - the SSL private key in PEM
-    - **"credential.ssl_crt_file"** - the SSL certificate in PEM
-    - **"credential.ssl_ca_file"** - the certificate authorities (root cerfiticates) in PEM
+- **connection(s)**: the connection resolver's connections:
+    - **"connection.discovery_key"**: the key to use for connection resolving in a discovery service;
+    - **"connection.protocol"**: the connection's protocol;
+    - **"connection.host"**: the target host;
+    - **"connection.port"**: the target port;
+    - **"connection.uri"**: the target URI.
+- **credential**: the HTTPS credentials:
+    - **"credential.ssl_key_file"**: the SSL private key in PEM
+    - **"credential.ssl_crt_file"**: the SSL certificate in PEM
+    - **"credential.ssl_ca_file"**: the certificate authorities (root cerfiticates) in PEM
 
 
 #### References

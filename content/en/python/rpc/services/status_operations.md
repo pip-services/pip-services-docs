@@ -20,7 +20,7 @@ Gets the status of the operation.
 
 > get_status_operation(): Callable
 
-- **returns**: Callable - TODO add description
+- **returns**: Callable - status of the operation (JSON)
 
 
 #### set_references

@@ -13,7 +13,7 @@ description: >
 
 The StatusOperations class allows you to handle status requests for REST operations.  
 
-### Methods
+### Instance methods
 
 #### get_status_operation
 Gets the status of the operation.

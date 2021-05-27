@@ -169,10 +169,8 @@ config_reader.read_config("123", parameters) # Result: connection.host=localhost
 
 The JsonConfigReader is a Config Reader that can read configurations from a JSON file.
 
-```
-======== config.json ======
+```json
 { "key1": "{{KEY1_VALUE}}", "key2": "{{KEY2_VALUE}}" }
-===========================
 ```
 
 ```python

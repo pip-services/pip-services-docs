@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Active Logic"
-linkTitle: "Active Logic"
+title: "Active Logic!"
+linkTitle: "Active Logic!"
 weight: 40
 ---
 

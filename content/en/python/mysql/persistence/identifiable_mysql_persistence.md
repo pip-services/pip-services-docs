@@ -121,7 +121,7 @@ Gets a data item by its unique id.
 
 #### set
 Sets a data item. If the data item exists it updates it,
-otherwise it create a new data item.
+otherwise it creates a new data item.
 
 > set(correlation_id: Optional[str], item: T): Optional[T]
 

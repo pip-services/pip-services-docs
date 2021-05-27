@@ -13,23 +13,19 @@ Now, in the version1 folder, create a **BeaconV1** class that implements `IStrin
 **/src/data/version1/BeaconV1.py**
 
 ```python
-from typing import Any
+from pip_services3_commons.data import IStringIdentifiable
 
 
-class BeaconV1(dict):
-    def __init__(self, id: str, site_id: str, type: str, udi: str, label: str, center: Any, radius: float):
+class BeaconV1(IStringIdentifiable):
+    def __init__(self, id: str = None, site_id: str = None, type: str = None, udi: str = None, label: str = None, center: Any = None, radius: float = None):
         super(BeaconV1, self).__init__()
-        self['id'] = id
-        self['site_id'] = site_id
-        self['type'] = type
-        self['udi'] = udi
-        self['label'] = label
-        self['center'] = center
-        self['radius'] = radius
-
-        # set class attributes in runtime
-        for attr in self:
-            setattr(self, attr, self[attr])
+        self.id = id
+        self.site_id = site_id
+        self.type = type
+        self.udi = udi
+        self.label = label
+        self.center = center
+        self.radius = radius
 
 ```
 

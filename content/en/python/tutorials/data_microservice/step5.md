@@ -19,7 +19,6 @@ class BeaconsHttpServiceV1(CommandableHttpService):
     def __init__(self):
         super(BeaconsHttpServiceV1, self).__init__("v1/beacons")
         self._dependency_resolver.put("controller", Descriptor('beacons', 'controller', '*', '*', '1.0'))
-
 ```
 
 The `CommandableHttpService` class from the pip-services3-rpc module implements all of the basic functionality needed by the service, right out of the box. All that we need to do on our side is configure it in the child class. This is done by defining a base route to the API (e.g. 'v1/beacons') and by setting references to the controller. The rest is taken care of by the parent class and the process container: a controller will be searched for and referenced, after which the service will receive a set of commands, register it, and make those commands available through the API interface. This allows us to run commands by simply posting requests to a URL of the following format:
@@ -33,6 +32,30 @@ Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there
 **/test/services/version1/test_BeaconsHttpServiceV1.py**
 
 ```python
+import json
+import time
+from json import JSONDecodeError
+from typing import Union
+
+import requests
+from pip_services3_commons.config import ConfigParams
+from pip_services3_commons.refer import References, Descriptor
+from pip_services3_commons.reflect import PropertyReflector
+from pip_services3_commons.run import Parameters
+
+from src.data.version1 import BeaconV1, BeaconTypeV1
+from src.logic.BeaconsController import BeaconsController
+from src.persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
+from src.services.version1.BeaconsHttpServiceV1 import BeaconsHttpServiceV1
+
+BEACON1 = BeaconV1("1", "1", BeaconTypeV1.AltBeacon, "00001", "TestBeacon1", {"type": 'Point', "coordinates": [0, 0]},
+                   50.0)
+BEACON2 = BeaconV1("2", "1", BeaconTypeV1.iBeacon, "00002", "TestBeacon2", {"type": 'Point', "coordinates": [2, 2]},
+                   70.0)
+BEACON3 = BeaconV1("3", "2", BeaconTypeV1.AltBeacon, "00003", "TestBeacon3", {"type": 'Point', "coordinates": [10, 10]},
+                   50.0)
+
+
 class TestBeaconsHttpServiceV1:
     _persistence: BeaconsMemoryPersistence
     _controller: BeaconsController
@@ -69,30 +92,32 @@ class TestBeaconsHttpServiceV1:
     def test_crud_operations(self):
         time.sleep(2)
         # Create the first beacon
-        beacon1 = self.invoke("/v1/beacons/create_beacon", Parameters.from_tuples("beacon", BEACON1))
+        beacon1 = self.invoke("/v1/beacons/create_beacon",
+                              Parameters.from_tuples("beacon", PropertyReflector.get_properties(BEACON1)))
 
-        assert beacon1 != None
-        assert beacon1['id'] == BEACON1['id']
-        assert beacon1['site_id'] == BEACON1['site_id']
-        assert beacon1['udi'] == BEACON1['udi']
-        assert beacon1['type'] == BEACON1['type']
-        assert beacon1['label'] == BEACON1['label']
-        assert beacon1['center'] != None
+        assert beacon1 is not None
+        assert beacon1['id'] == BEACON1.id
+        assert beacon1['site_id'] == BEACON1.site_id
+        assert beacon1['udi'] == BEACON1.udi
+        assert beacon1['type'] == BEACON1.type
+        assert beacon1['label'] == BEACON1.label
+        assert beacon1['center'] is not None
 
         # Create the second beacon
-        beacon2 = self.invoke("/v1/beacons/create_beacon", Parameters.from_tuples("beacon", BEACON2))
+        beacon2 = self.invoke("/v1/beacons/create_beacon",
+                              Parameters.from_tuples("beacon", PropertyReflector.get_properties(BEACON2)))
 
-        assert beacon2 != None
-        assert beacon2['id'] == BEACON2['id']
-        assert beacon2['site_id'] == BEACON2['site_id']
-        assert beacon2['udi'] == BEACON2['udi']
-        assert beacon2['type'] == BEACON2['type']
-        assert beacon2['label'] == BEACON2['label']
-        assert beacon2['center'] != None
+        assert beacon2 is not None
+        assert beacon2['id'] == BEACON2.id
+        assert beacon2['site_id'] == BEACON2.site_id
+        assert beacon2['udi'] == BEACON2.udi
+        assert beacon2['type'] == BEACON2.type
+        assert beacon2['label'] == BEACON2.label
+        assert beacon2['center'] is not None
 
         # Get all beacons
         page = self.invoke("/v1/beacons/get_beacons", Parameters.from_tuples("beacons"))
-        assert page != None
+        assert page is not None
         assert len(page['data']) == 2
 
         beacon1 = page['data'][0]
@@ -100,19 +125,19 @@ class TestBeaconsHttpServiceV1:
         # Update the beacon
         beacon1['label'] = "ABC"
         beacon = self.invoke("/v1/beacons/update_beacon", Parameters.from_tuples("beacon", beacon1))
-        assert beacon != None
+        assert beacon is not None
         assert beacon1['id'] == beacon['id']
         assert "ABC" == beacon['label']
 
         # Get beacon by udi
         beacon = self.invoke("/v1/beacons/get_beacon_by_udi", Parameters.from_tuples("udi", beacon1['udi']))
-        assert beacon != None
+        assert beacon is not None
         assert beacon['id'] == beacon1['id']
 
         # Calculate position for one beacon
         position = self.invoke("/v1/beacons/calculate_position",
                                Parameters.from_tuples("site_id", '1', "udis", ['00001']))
-        assert position != None
+        assert position is not None
         assert "Point" == position["type"]
         assert 2 == len(position["coordinates"])
         assert 0 == position["coordinates"][0]
@@ -123,20 +148,21 @@ class TestBeaconsHttpServiceV1:
 
         # Try to get deleted beacon
         beacon = self.invoke("/v1/beacons/get_beacon_by_id", Parameters.from_tuples("id", beacon1['id']))
-        assert beacon == False
+        assert beacon is False
 
-    def invoke(self, route, entity):
+    def invoke(self, route, entity) -> Union[bool, dict]:
         params = {}
         route = "http://localhost:3002" + route
         response = None
         timeout = 10000
+        # Call the service
+        data = json.dumps(entity)
         try:
-            # Call the service
-            data = json.dumps(entity)
             response = requests.request('POST', route, params=params, json=data, timeout=timeout)
             return response.json()
-        except Exception as ex:
-            return False
+        except JSONDecodeError:
+            if response.status_code == 404:
+                return False
 
 ```
 

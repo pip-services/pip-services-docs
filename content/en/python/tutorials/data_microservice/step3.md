@@ -27,21 +27,20 @@ class IBeaconsPersistence:
     def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams) -> DataPage:
         raise NotImplementedError('Method from interface definition')
 
-    def get_one_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+    def get_one_by_id(self, correlation_id: Optional[str], id: str) -> BeaconV1:
         raise NotImplementedError('Method from interface definition')
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
+    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
         raise NotImplementedError('Method from interface definition')
 
-    def create(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+    def create(self, correlation_id: Optional[str], entity: BeaconV1) -> BeaconV1:
         raise NotImplementedError('Method from interface definition')
 
-    def update(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+    def update(self, correlation_id: Optional[str], entity: BeaconV1) -> BeaconV1:
         raise NotImplementedError('Method from interface definition')
 
-    def delete_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+    def delete_by_id(self, correlation_id: Optional[str], id: str) -> BeaconV1:
         raise NotImplementedError('Method from interface definition')
-
 ```
 
 The first persistence to implement this interface will be the memory persistence, which we will name **BeaconsMemoryPersistence**. This class will need to extend the `IdentifiableMemoryPersistence` class from the **pip-services3-data** module, and have a few additional functions added to it. One of these functions will be used to create filters for the `get_page_by_filter` method that we’re going to override from the parent class. This function will be called `__compose_filter`, as it’s going to allow us to filter data in accordance with the received filtering parameters. The overriding `get_page_by_filter` method then simply calls the parent’s method, passing the `__compose_filter` function as a filter parameter. The second function that we will need to implement is the `get_one_by_udi` method, whose purpose will be to retrieve a beacon by its `udi`.
@@ -57,6 +56,7 @@ from pip_services3_commons.data import FilterParams, DataPage, PagingParams
 from pip_services3_data.persistence import IdentifiableMemoryPersistence
 
 from .IBeaconsPersistence import IBeaconsPersistence
+from ..data.version1 import BeaconV1
 
 
 class BeaconsMemoryPersistence(IdentifiableMemoryPersistence, IBeaconsPersistence):
@@ -77,33 +77,32 @@ class BeaconsMemoryPersistence(IdentifiableMemoryPersistence, IBeaconsPersistenc
             udis = udis.split(",")
 
         def filter_beacons(item):
-            if id is not None and item['id'] != id:
+            if id is not None and item.id != id:
                 return False
-            if site_id is not None and item['site_id'] != site_id:
+            if site_id is not None and item.site_id != site_id:
                 return False
-            if label is not None and item['label'] != label:
+            if label is not None and item.label != label:
                 return False
-            if udi is not None and item['udi'] != udi:
+            if udi is not None and item.udi != udi:
                 return False
-            if udis is not None and item['udi'] not in udis:
+            if udis is not None and item.udi not in udis:
                 return False
             return True
-        
+
         return filter_beacons
 
     def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
                            sort: Any = None, select: Any = None) -> DataPage:
 
-        
-        return super(BeaconsMemoryPersistence, self).get_page_by_filter(correlation_id, self.__compose_filter(filter), paging=paging)
+        return super(BeaconsMemoryPersistence, self).get_page_by_filter(correlation_id,
+                                                                        self.__compose_filter(filter), paging=paging)
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
+    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
         if udi is None:
             return None
         for item in self._items:
-            if udi == item['udi']:
+            if udi == item.udi:
                 return item
-
 
 ```
 
@@ -120,6 +119,7 @@ from pip_services3_commons.data import FilterParams, PagingParams, DataPage
 from pip_services3_mongodb.persistence import IdentifiableMongoDbPersistence
 
 from .IBeaconsPersistence import IBeaconsPersistence
+from ..data.version1 import BeaconV1
 
 
 class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersistence):
@@ -156,7 +156,7 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
         return super(BeaconsMongoDbPersistence, self).get_page_by_filter(correlation_id, self.compose_filter(filter),
                                                                          paging, None, None)
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
+    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
         if udi is None:
             return None
         item = self._collection.find_one({'udi': udi})
@@ -199,34 +199,34 @@ class BeaconsPersistenceFixture():
         beacon1 = self._persistence.create(None, BEACON1)
 
         assert beacon1 != None
-        assert beacon1['id'] == BEACON1['id']
-        assert beacon1['site_id'] == BEACON1['site_id']
-        assert beacon1['udi'] == BEACON1['udi']
-        assert beacon1['type'] == BEACON1['type']
-        assert beacon1['label'] == BEACON1['label']
-        assert beacon1['center'] != None
+        assert beacon1.id == BEACON1.id
+        assert beacon1.site_id == BEACON1.site_id
+        assert beacon1.udi == BEACON1.udi
+        assert beacon1.type == BEACON1.type
+        assert beacon1.label == BEACON1.label
+        assert beacon1.center != None
 
         #Create the second beacon
         beacon2 = self._persistence.create(None, BEACON2)
 
         assert beacon2 != None
-        assert beacon2['id'] == BEACON2['id']
-        assert beacon2['site_id'] == BEACON2['site_id']
-        assert beacon2['udi'] == BEACON2['udi']
-        assert beacon2['type'] == BEACON2['type']
-        assert beacon2['label'] == BEACON2['label']
-        assert beacon2['center'] != None
+        assert beacon2.id == BEACON2.id
+        assert beacon2.site_id == BEACON2.site_id
+        assert beacon2.udi == BEACON2.udi
+        assert beacon2.type == BEACON2.type
+        assert beacon2.label == BEACON2.label
+        assert beacon2.center != None
 
         #Create the third beacon
         beacon3 = self._persistence.create(None, BEACON3)
 
         assert beacon3 != None
-        assert beacon3['id'] == BEACON3['id']
-        assert beacon3['site_id'] == BEACON3['site_id']
-        assert beacon3['udi'] == BEACON3['udi']
-        assert beacon3['type'] == BEACON3['type']
-        assert beacon3['label'] == BEACON3['label']
-        assert beacon3['center'] != None
+        assert beacon3.id == BEACON3.id
+        assert beacon3.site_id == BEACON3.site_id
+        assert beacon3.udi == BEACON3.udi
+        assert beacon3.type == BEACON3.type
+        assert beacon3.label == BEACON3.label
+        assert beacon3.center != None
 
     def test_crud_operations(self):
         #Create 3 beacons
@@ -243,19 +243,19 @@ class BeaconsPersistenceFixture():
         beacon1['label'] = "ABC"
         beacon = self._persistence.update(None, beacon1)
         assert beacon != None
-        assert beacon1['id'] == beacon['id']
-        assert "ABC" == beacon['label']
+        assert beacon1.id == beacon.id
+        assert "ABC" == beacon.label
 
         #Get beacon by udi
-        beacon = self._persistence.get_one_by_udi(None, beacon1['udi'])
+        beacon = self._persistence.get_one_by_udi(None, beacon1.udi)
         assert beacon != None
-        assert beacon['id'] == beacon1['id']
+        assert beacon.id == beacon1.id
 
         #Delete beacon
-        self._persistence.delete_by_id(None, beacon1['id'])
+        self._persistence.delete_by_id(None, beacon1.id)
 
         #Try to get deleted beacon
-        beacon = self._persistence.get_one_by_id(None, beacon1['id'])
+        beacon = self._persistence.get_one_by_id(None, beacon1.id)
         assert beacon == None
 
     def test_get_with_filter(self):

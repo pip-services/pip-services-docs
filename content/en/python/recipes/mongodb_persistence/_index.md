@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "MongoDB Persistence"
 linkTitle: "MongoDB Persistence"
-weight: 60
+weight: 50
 ---
 
 by Aleksey Dvoykin

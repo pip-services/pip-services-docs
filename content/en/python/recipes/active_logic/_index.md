@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Active Logic!"
 linkTitle: "Active Logic!"
-weight: 40
+weight: 60
 ---
 
 - by Alex Mazur

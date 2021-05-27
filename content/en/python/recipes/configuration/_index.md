@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Configuration"
 linkTitle: "Configuration"
-weight: 0
+weight: 10
 ---
 
 - by Aleksey Dvoykin

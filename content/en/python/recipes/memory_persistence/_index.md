@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Memory Persistence"
 linkTitle: "Memory Persistence"
-weight: 50
+weight: 40
 ---
 
 - by Artyom Grishchenko

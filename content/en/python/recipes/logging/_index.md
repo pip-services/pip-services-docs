@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Logging"
 linkTitle: "Logging"
-weight: 10
+weight: 1
 ---
 
 - by Dmitry Levichev

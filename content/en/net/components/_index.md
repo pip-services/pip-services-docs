@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Components"
+title: "Components module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 no_list: true
 description: > 

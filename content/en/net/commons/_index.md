@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Commons"
+title: "Commons module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 no_list: true
 description: > 

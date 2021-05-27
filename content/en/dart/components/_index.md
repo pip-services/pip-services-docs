@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Components"
+title: "Components module"
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 

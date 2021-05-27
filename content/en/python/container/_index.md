@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Container"
+title: "Container module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 no_list: true
 description: > 

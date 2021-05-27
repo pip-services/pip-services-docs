@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Commons"
+title: "Commons module"
 description: > 
     The Commons module provides portable abstractions and patterns that can be used to implement non-trivial business logic in applications and services. The code provides a reasonably thin abstraction layer over most fundamental functions and delivers symmetric implementation that can be quickly ported between different platforms.
 ---

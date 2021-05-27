@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "SQLServer"
+title: "SQLServer module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 no_list: true
 description: > 

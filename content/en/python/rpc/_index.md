@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "RPC"
+title: "RPC module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 no_list: true
 description: > 

@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Components"
+title: "Components module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 no_list: true
 description: > 

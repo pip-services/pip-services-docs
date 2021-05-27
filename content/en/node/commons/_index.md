@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Commons"
+title: "Commons module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 no_list: true
 description: > 

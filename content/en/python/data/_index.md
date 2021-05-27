@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Data"
+title: "Data module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 no_list: true
 description: > 

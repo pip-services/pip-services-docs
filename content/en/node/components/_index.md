@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Components"
+title: "Components module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-components-nodex"
 no_list: true
 description: > 

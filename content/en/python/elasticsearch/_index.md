@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "ElasticSearch"
+title: "ElasticSearch module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-python"
 no_list: true
 description: > 

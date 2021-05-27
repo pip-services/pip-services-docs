@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "MySQL"
+title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 no_list: true
 description: > 

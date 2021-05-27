@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "MongoDB"
+title: "MongoDB module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 no_list: true
 description: > 

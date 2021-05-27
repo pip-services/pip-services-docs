@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "GRPC"
+title: "gRPC module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 no_list: true
 description: > 

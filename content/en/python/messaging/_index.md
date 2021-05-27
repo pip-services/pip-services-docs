@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Messaging"
+title: "Messaging module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 no_list: true
 description: > 

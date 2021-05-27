@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "Commons"
+title: "Commons module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 no_list: true
 description: > 

@@ -178,7 +178,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 
 #### _ensure_index
-Adds index definition to create it on opening
+Adds index definition to create it on opening.
 
 > _ensure_index(keys: Any, options: Any = None)
 
@@ -187,7 +187,7 @@ Adds index definition to create it on opening
 
 
 #### _ensure_schema
-Adds a statement to schema definition
+Adds a statement to schema definition.
 
 > _ensure_schema(schema_statement: str)
 
@@ -195,7 +195,7 @@ Adds a statement to schema definition
 
 
 #### _generate_columns
-Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*
+Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
 
 > _generate_columns(values: Any): str
 
@@ -204,7 +204,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 
 #### _generate_parameters
-Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
+Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
 > _generate_parameters(values: Any): str
 
@@ -213,7 +213,7 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 
 #### _generate_set_parameters
-Generates a list of column sets to use in UPDATE statements like:  *column1=$1,column2=$2*
+Generates a list of column sets to use in UPDATE statements like:  *column1=$1,column2=$2*.
 
 > _generate_set_parameters(values: Any): str
 
@@ -222,7 +222,7 @@ Generates a list of column sets to use in UPDATE statements like:  *column1=$1,c
 
 
 #### _generate_values
-Generates a list of column parameters
+Generates a list of column parameters.
 
 > _generate_values(values: Any): List[Any]
 

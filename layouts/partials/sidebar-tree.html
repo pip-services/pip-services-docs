@@ -75,7 +75,11 @@
   {{ $mid := printf "m-%s" ($s.RelPermalink | anchorize) }}
   {{ $currentRootSectionName := .currentRootSectionName }}
   {{ $currentRootSection := .currentRootSection }}
-  {{if eq (lower $s.Name) .currentRootSectionName}}
+
+  <!-- fix for title "*lib* module" -->
+  {{ $sectionName := index (split $s.Name " ") 0 }}
+
+  {{if eq (lower $sectionName) .currentRootSectionName}}
     {{ $currentRootSection = $s }}
   {{ end }}
 

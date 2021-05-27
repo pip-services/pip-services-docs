@@ -7,11 +7,14 @@ description: >
     Interface to perform on-demand registrations.
 ---
 
+### Description
 
-### Methods
+The IRegisterable interface is used to perform on-demand registrations.
+
+### Instance methods
 
 #### register
-Perform required registration steps.
+Performs the required registration steps.
 
 > register()
 

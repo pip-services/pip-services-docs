@@ -22,7 +22,7 @@ counter_timing: Optional[[CounterTiming](../../../components/count/counter_timin
 trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)] - TODO add description
 
 
-### Methods
+### Instanc methods
 
 #### end_failure
 TODO add description

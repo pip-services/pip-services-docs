@@ -1,8 +1,9 @@
 ---
 type: docs
-no_list: true
 title: "Getting Started"
-linkTitle: "Getting Started"
-weight: 0
+linkTitle: "Getting Started" 
+weight: 80
+no_list: true
+exclude_from_list: true
 ---
-
+---

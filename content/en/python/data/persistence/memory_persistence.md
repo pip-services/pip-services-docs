@@ -112,11 +112,11 @@ Configures component by passing configuration parameters.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): dict
+> create(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: dict - a created item
+- **item**: T - an item to be created.
+- **returns**: T - a created item
 
 
 #### delete_by_filter
@@ -149,13 +149,13 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **get_list_by_filter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]:
+> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]:
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **filter**: Any - (optional) a filter function to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[dict] - a data list of results by filter.
+- **returns**: List[T] - a data list of results by filter.
 
 
 #### get_one_random
@@ -164,10 +164,10 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **get_one_random** method from child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_one_random(correlation_id: Optional[str]) -> T
+> get_one_random(correlation_id: Optional[str]): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **returns**: Any - a random item.
+- **returns**: T - a random item.
 
 
 #### get_page_by_filter

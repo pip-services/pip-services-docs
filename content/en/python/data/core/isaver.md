@@ -13,8 +13,8 @@ description: >
 #### save
 Saves given data items.
 
-> save(correlation_id: Optional[str], items: List[Any])
+> save(correlation_id: Optional[str], items: List[T])
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **items**: List[Any] - a list of items to save.
+- **items**: List[T] - a list of items to save.
 

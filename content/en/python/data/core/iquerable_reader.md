@@ -18,4 +18,4 @@ Gets a list of data items using a query string.
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **query**: Optional[str] - (optional) a query string
 - **sort**: Optional[[SortParams](../../../commons/data/sort_params)] - (optional) sort parameters
-- **returns**: List[Any] - list of items
+- **returns**: List[T] - list of items

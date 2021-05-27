@@ -27,13 +27,12 @@ pip install pip-services3-mongodb
 As an example, lets create persistence for the following data object.
 
 ```python
-from pip_services3_commons.data import IIdentifiable
-
-class MyObject(dict):
+class Dummy(IStringIdentifiable):
     def __init__(self, id=None, key=None, content=None):
-        self['id'] = id
-        self['key'] = key
-        self['content'] = content
+        self.id = id
+        self.key = key
+        self.content = content
+
 
 ```
 
@@ -48,19 +47,19 @@ class IMyPersistence:
     def get_page_by_filter(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> DataPage:
         pass
 
-    def get_one_by_id(self, correlation_id: str, id: str) -> dict:
+    def get_one_by_id(self, correlation_id: Optional[str], id: str) -> T:
         pass
 
-    def get_one_by_key(self, correlation_id: str, key: str) -> dict:
+    def get_one_by_key(self, correlation_id: Optional[str], key: str) -> T:
         pass
 
-    def create(self, correlation_id: str, item: Any)-> dict:
+    def create(self, correlation_id: Optional[str], item: T)-> T:
         pass
 
-    def update(self, correlation_id: str, item: Any)-> dict:
+    def update(self, correlation_id: Optional[str], item: T)-> T:
         pass
 
-    def delete_by_id(self, correlation_id: str, id: str) -> dict:
+    def delete_by_id(self, correlation_id: Optional[str], id: str) -> T:
         pass
 ```
 

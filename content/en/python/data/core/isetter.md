@@ -13,9 +13,9 @@ description: >
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
 
-> set(correlation_id: Optional[str], item: Any): dict
+> set(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - a item to be set.
-- **returns**: dict - updated item
+- **item**: T - a item to be set.
+- **returns**: T - updated item
 

@@ -18,5 +18,5 @@ Gets a list of data items using filter parameters.
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **filter**: Optional[[FilterParams](../../../commons/data/filter_params)] - (optional) filter parameters
 - **sort**: Optional[[SortParams](../../../commons/data/sort_params)] - (optional) sort parameters
-- **returns**: [DataPage](../../../commons/data/data_page) - list of items
+- **returns**: List[T] - list of items
 

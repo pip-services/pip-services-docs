@@ -76,21 +76,21 @@ Converts the given object from the public partial format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): Optional[dict]
+> create(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **item**: Any - item to be created.
-- **returns**: Optional[dict] - created item
+- **item**: T - item to be created.
+- **returns**: Optional[T] - created item
 
 
 #### delete_by_id
 Deleted a data item by it's unique id.
 
-> delete_by_id(correlation_id: Optional[str], id: Any): dict
+> delete_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **id**: Any - id of the item to be deleted
-- **return**: dict - deleted item.
+- **return**: T - deleted item.
 
 
 #### delete_by_ids
@@ -105,52 +105,52 @@ Deletes multiple data items by their unique ids.
 #### get_list_by_ids
 Gets a list of data items retrieved by given unique ids.
 
-> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
+> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **ids**: List[Any] - ids of data items to be retrieved
-- **return**: List[dict] - a data list of results by ids.
+- **return**: List[T] - a data list of results by ids.
 
 
 #### get_one_by_id
 Gets a data item by its unique id.
 
-> get_one_by_id(correlation_id: Optional[str], id: Any): Optional[dict]
+> get_one_by_id(correlation_id: Optional[str], id: Any): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **id**: Any - id of data item to be retrieved.
-- **returns**: Optional[dict] - data item by id.
+- **returns**: Optional[T] - data item by id.
 
 
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
 
-> set(correlation_id: Optional[str], item: Any): Optional[dict]
+> set(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **item**: Any - item to be set. 
-- **returns**: Optional[dict] - updated item
+- **item**: T - item to be set. 
+- **returns**: Optional[T] - updated item
 
 
 #### update
 Updates a data item.
 
-> update(correlation_id: Optional[str], item: Any): Optional[dict]
+> update(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **item**: Any - an item to be updated.
-- **returns**: Optional[dict] - an updated item.
+- **item**: T - an item to be updated.
+- **returns**: Optional[T] - an updated item.
 
 
 #### update_partially
 Updates only few selected fields in a data item.
 
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[dict]
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **returns**: Optional[dict] - an updated item.
+- **returns**: Optional[T] - an updated item.
 
 ### Examples
 

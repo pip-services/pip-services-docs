@@ -59,21 +59,21 @@ Creates a new instance of the persistence.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): dict
+> create(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - an item to be created.
-- **returns**: dict - a created item
+- **item**: T - an item to be created.
+- **returns**: T - a created item
 
 
 #### delete_by_id
 Deleted a data item by it's unique id.
 
-> delete_by_id(correlation_id: Optional[str], id: Any): dict
+> delete_by_id(correlation_id: Optional[str], id: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any -  an id of the item to be deleted
-- **returns**: dict - a deleted item.
+- **id**: T -  an id of the item to be deleted
+- **returns**: T - a deleted item.
 
 
 #### delete_by_ids
@@ -88,52 +88,52 @@ Deletes multiple data items by their unique ids.
 #### get_list_by_ids
 Gets a list of data items retrieved by given unique ids.
 
-> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[dict]
+> get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **ids**: List[Any] -  ids of data items to be retrieved
-- **returns**: List[dict] - a data list of results by ids.
+- **returns**: List[T] - a data list of results by ids.
 
 
 #### get_one_by_id
 Gets a data item by its unique id.
 
-> get_one_by_id(correlation_id: Optional[str], id: Any): dict
+> get_one_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be retrieved.
-- **returns**: dict - data item by id.
+- **returns**: T - data item by id.
 
 
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
 
-> set(correlation_id: Optional[str], item: Any): dict
+> set(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: Any - a item to be set.
-- **returns**: dict - updated item
+- **item**: T - a item to be set.
+- **returns**: T - updated item
 
 
 #### update
 Updates a data item.
 
-> update(correlation_id: Optional[str], new_item: Any): dict
+> update(correlation_id: Optional[str], new_item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **new_item**: Any - an item to be updated.
-- **returns**: dict - an updated item.
+- **new_item**: T - an item to be updated.
+- **returns**: T - an updated item.
 
 
 #### update_partially
 Updates only few selected fields in a data item.
 
-> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): dict
+> update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **id**: Any - an id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
-- **returns**: dict - an updated item.
+- **returns**: T - an updated item.
 
 
 ### See also

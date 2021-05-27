@@ -27,11 +27,12 @@ pip install pip-services3-postgres
 As an example, lets create persistence for the following data object.
 
 ```python
-class MyObject(dict):
-    def __init__(self, id=None, key=None, value=None):
-        self['id'] = id
-        self['key'] = key
-        self['content'] = content
+
+class MyObject(IStringIdentifiable):
+    def __init__(self, id=None, key=None, content=None):
+        self.id = id
+        self.key = key
+        self.content = content
 ```
 
 The persistence component shall implement the following interface with a basic set of CRUD operations.

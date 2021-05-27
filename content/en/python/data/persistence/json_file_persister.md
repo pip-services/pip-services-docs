@@ -63,16 +63,16 @@ Configures component by passing configuration parameters.
 #### load
 Loads data items from external JSON file.
 
-> load(correlation_id: Optional[str]): List[Any]
+> load(correlation_id: Optional[str]): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **returns**: List[Any] - loaded items
+- **returns**: List[T] - loaded items
 
 
 #### save
 Saves given data items to external JSON file.
 
-> save(correlation_id: Optional[str], items: List[Any])
+> save(correlation_id: Optional[str], items: List[T])
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **items**: List[Any] - list if data items to save
+- **items**: List[T] - list if data items to save

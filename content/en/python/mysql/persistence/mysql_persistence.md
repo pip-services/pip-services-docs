@@ -146,11 +146,11 @@ Converts object value from internal to public format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): Optional[dict]
+> create(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **item**: Any - item to be created.
-- **returns**: Optional[dict] - created item
+- **item**: T - item to be created.
+- **returns**: Optional[T] - created item
 
 
 #### _create_schema
@@ -250,13 +250,13 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[dict]
+> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
 - **filter**: Any - (optional) filter function to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
-- **returns**: List[dict] - data list of results by filter.
+- **returns**: List[T] - data list of results by filter.
 
 
 #### get_one_random
@@ -265,11 +265,11 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public [get_one_random](#get_one_random) method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_one_random(correlation_id: Optional[str], filter: Any): dict
+> get_one_random(correlation_id: Optional[str], filter: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 filter: Any
-- **returns**: dict - a random item.
+- **returns**: T - a random item.
 
 
 #### get_page_by_filter

@@ -13,8 +13,8 @@ description: >
 #### load
 Loads data items.
 
-> load(correlation_id: Optional[str]): List[Any]
+> load(correlation_id: Optional[str]): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **returns**: List[Any] - a list of data items
+- **returns**: List[T] - a list of data items
 

@@ -64,7 +64,7 @@ Creates a new instance of the persistence component.
 ### Instance methods
 
 #### clear
-Clears component state.
+Clears a component's state.
 
 > clear(correlation_id: Optional[str])
 
@@ -77,7 +77,7 @@ Clears all auto-created objects
 
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -115,7 +115,7 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used  to trace execution through a call chain.
 - **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
@@ -132,7 +132,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **filter**: Any - (optional) a filter function to filter items.
 
 
@@ -181,7 +181,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 
 > get_one_random(correlation_id: Optional[str], filter: Any): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 filter: Any
 - **returns**: Optional[T] - random item.
 

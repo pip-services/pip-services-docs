@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
+The MongoDbPersistence class allows you to create persistence components that store data in MongoDB databases using the official MongoDB driver.
 
 Important points
 

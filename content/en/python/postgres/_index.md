@@ -4,7 +4,7 @@ title: "Postgres module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 no_list: true
 description: > 
-    PostgreSQL components for Pip.Services in Python
+    PostgreSQL components for Pip.Services in Python. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement PostgreSQL persistence.
 ---
@@ -12,8 +12,8 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create PostreSQL persistence components.
-- [**Connect**](connect) - Connection component to configure PostgreSQL connection to database.
+- [**Build**](build) - factory to create PostreSQL persistence components.
+- [**Connect**](connect) - connection component to configure PostgreSQL connection to database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
@@ -66,7 +66,7 @@ class IMyPersistence(ABC):
 
 To implement postgresql persistence component you shall inherit `IdentifiablePostgresPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `get_page_by_filter` method with a custom filter function.
-And implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
+And, implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
 
 ```python
 class MyPostgresPersistence(IdentifablePostgresPersistence):
@@ -169,7 +169,7 @@ class MyPostgresPersistence(IdentifableJsonPostgresPersistence):
         return item
 ```
 
-Configuration for your microservice that includes postgresql persistence may look the following way.
+The configuration for your microservice that includes postgresql persistence may look the in following way:
 
 ```yaml
 ...

@@ -4,12 +4,18 @@ title: "HttpEndpoint"
 linkTitle: "HttpEndpoint"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Used for creating HTTP endpoints. An endpoint is a URL, at which a given service can be accessed by a client. 
+    Used for creating HTTP endpoints. 
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
+### Description
 
+The HttpEndpoint class allows you to crete HTTP endpoints. 
+
+Important points
+
+- An endpoint is a URL, at which a given service can be accessed by a client. 
 
 #### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
@@ -32,27 +38,10 @@ following references to the object's [set_references](#set_references) method:
 
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
 
 
-
-**Example:**
-
-```python
-def my_method(_config, _references):
-    endpoint = HttpEndpoint()
-    if (_config)
-        endpoint.configure(_config)
-    if (_references)
-        endpoint.setReferences(_references)
-    # ...
-
-    endpoint.open(correlationId)
-    # ...
-```
-
-
-### Methods
+### Instance methods
 
 #### close
 Closes this endpoint and the REST server (service) that was opened earlier.
@@ -142,7 +131,20 @@ Unregisters a registerable object, so that it is no longer used in dynamic endpo
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - the registration to remove.
 
+### Examples
 
+```python
+def my_method(_config, _references):
+    endpoint = HttpEndpoint()
+    if (_config)
+        endpoint.configure(_config)
+    if (_references)
+        endpoint.setReferences(_references)
+    # ...
+
+    endpoint.open(correlationId)
+    # ...
+```
 
 ### See also
 - #### [IConfigurable](../../../commons/config/iconfigurable)

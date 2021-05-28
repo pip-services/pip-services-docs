@@ -23,14 +23,14 @@ Important points
 #### Configuration parameters
 
 **connection(s)**:
-- **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**:               (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**:                        host name or IP address
 - **port**:                        port number (default: 27017)
 - **database**:                    database name
 - **uri**:                         resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **store_key**:                   (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**:                    username
 - **password**:                    user's password
 

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: " ISwaggerService"
-linkTitle: " ISwaggerService"
+title: "ISwaggerService"
+linkTitle: "ISwaggerService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
     Interface to perform Swagger registrations.

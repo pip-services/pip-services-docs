@@ -80,6 +80,12 @@ disableKinds = ["taxonomy", "term"]
   #  # pre = "<i class='fa fa-heart'></i>"
   #  url = "http://pipservices.org/"
   #  weight = 0
+
+[[menu.main]]
+    identifier = "microservices"
+    name = "Microservices"
+    url = "microservices/"
+    weight = 1
 [[menu.main]]
     identifier = "Node"
     name = "Node.js"

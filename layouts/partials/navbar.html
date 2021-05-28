@@ -28,7 +28,7 @@
 				<div class="dropdown-menu pt-0 pb-0" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
 					{{ $p := . }}
 					{{ range .Site.Menus.main }}
-					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
+					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) (not (eq .Name "Microservices"))}}
 						{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
 						{{ with .Page }}
 						{{ $active = or $active ( $.IsDescendant .) }}
@@ -94,13 +94,16 @@
 			</li>
 			{{ end }}
 			{{ end }} -->
+			<li class="nav-item d-none d-md-block m-auto">
+				<a class="nav-link" href="/microservices">Microservices</a>
+			</li>
 
 			<li class="nav-item dropdown m-auto">
 				{{ $activeLinkName := "" }}
 				<div class="dropdown-menu pt-0 pb-0" aria-labelledby="navbarDropdownMenuLink" id="dropdown-menu-mobile">
 					{{ $p := . }}
 					{{ range .Site.Menus.main }}
-					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
+					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) (not (eq .Name "Microservices")) }}
 					{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
 					{{ with .Page }}
 					{{ $active = or $active ( $.IsDescendant .) }}

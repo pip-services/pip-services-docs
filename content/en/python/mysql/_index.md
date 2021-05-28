@@ -4,7 +4,7 @@ title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 no_list: true
 description: > 
-    MySQL components for Python
+    MySQL components for Python. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 ---
@@ -23,4 +23,3 @@ Install the Python package as
 ```bash
 pip install pip-services3-mysql
 ```
-TODO: add example

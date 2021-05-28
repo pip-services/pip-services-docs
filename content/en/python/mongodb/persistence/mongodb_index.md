@@ -26,6 +26,6 @@ Index keys (fields)
 
 #### options
 Index options
-> **options**: Any;
+> **options**: Any
 
 </span>

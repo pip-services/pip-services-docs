@@ -30,7 +30,7 @@ Important points
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+- **store_key**: (optional) key to retrieve the credentials from ICredentialStore
 - **username**: username
 - **password**: user's password
 
@@ -57,7 +57,7 @@ MongoDB credential resolver.
 ### Instance methods
 
 #### configure
-Configures the component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -69,7 +69,7 @@ Resolves a MongoDB connection URI from connection and credential parameters.
 
 > resolve(correlation_id: Optional[str]): str
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: str - resolved URI
 
 #### set_references

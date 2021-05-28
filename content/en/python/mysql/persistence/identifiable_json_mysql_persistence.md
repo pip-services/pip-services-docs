@@ -41,7 +41,7 @@ Important points
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 
 #### References
@@ -66,7 +66,7 @@ Converts object value from public to internal format.
 
 > _convert_from_public(value: Any): Any
 
-- **value**: Any - an object in public format to convert.
+- **value**: Any - object in public format to convert.
 - **returns**: Any - converted object in internal format.
 
 
@@ -75,7 +75,7 @@ Converts object value from internal to public format.
 
 > _convert_to_public(value: Any): Any
 
-- **value**: Any - an object in internal format to convert.
+- **value**: Any - object in internal format to convert.
 - **returns**: Any - converted object in public format.
 
 

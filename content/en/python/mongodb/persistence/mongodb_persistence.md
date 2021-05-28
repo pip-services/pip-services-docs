@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MongoDbPersistence class allows you to create persistence components that store data in MongoDB databases using the official MongoDB driver.
+The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
 
 Important points
 
@@ -182,7 +182,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > get_one_random(correlation_id: Optional[str], filter: Any): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-filter: Any
+- **filter**: Any - fileter JSON object.
 - **returns**: Optional[T] - random item.
 
 

@@ -4,7 +4,7 @@ title: "MySqlConnection"
 linkTitle: "MySqlConnection"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
-    MySQL connection using a plain driver.
+    MySQL connection using the official driver.
 
 ---
 
@@ -19,13 +19,13 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 
 **connection(s)**:    
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:    
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: username
 - **password**: user's password
 

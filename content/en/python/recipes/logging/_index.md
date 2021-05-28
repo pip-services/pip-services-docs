@@ -89,11 +89,11 @@ Loggers are usually added to microservices dynamically using a yml configuration
   level: "trace"
 # ElasticSearch logger
 - descriptor: "pip-services:log:elasticsearch:default:1.0"
- source: "test"
- connection:
+  source: "test"
+  connection:
     protocol: "http"
-   host: "localhost"
-   port: 9200
+    host: "localhost"
+    port: 9200
   options:
     interval: 10000
     max_cache_size: 100

@@ -99,7 +99,7 @@ However, a component’s configuration is usually stored in the microservice’s
 ...
 # Controller
 - descriptor: "beacons:controller:default:default:1.0"
- max_page_size: 10
+  max_page_size: 10
 ...
 
 ```
@@ -185,10 +185,8 @@ configReader._read_config("123", parameters)    # Result: key1=1234;key2=ABCD
 The YamlConfigReader is a Config Reader that can read configurations from a YAML file.
 
 ```yml
-======== config.yml ======
 key1: "1234"
 key2: "ABCD"
-==========================
 ```
 
 ```python

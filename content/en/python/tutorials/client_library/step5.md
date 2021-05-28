@@ -15,18 +15,18 @@ version: '3.3'
 services:
   app:    
     image: "pipdevs/data-microservice-node:1.0"    
-ports:      
-  - "8080:8080"  
-depends_on:      
-  - mongo     
-environment:      
-  - HTTP_ENABLED=true      
-  - HTTP_PORT=8080      
-  - MONGO_ENABLED=true      
-  - MONGO_SERVICE_HOST=mongo      
-  - MONGO_SERVICE_PORT=27017
-mongo:    
-  image: mongo:latest      
+    ports:      
+      - "8080:8080"  
+    depends_on:      
+      - mongo     
+    environment:      
+      - HTTP_ENABLED=true      
+      - HTTP_PORT=8080      
+      - MONGO_ENABLED=true      
+      - MONGO_SERVICE_HOST=mongo      
+      - MONGO_SERVICE_PORT=27017
+  mongo:    
+    image: mongo:latest      
     ports:        
       - "27017:27017"
 

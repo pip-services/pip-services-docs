@@ -65,7 +65,7 @@ version: '3.3'
 
 services:
 
-mongo:
+  mongo:
     image: mongo:latest
     ports:
       - "27017:27017"

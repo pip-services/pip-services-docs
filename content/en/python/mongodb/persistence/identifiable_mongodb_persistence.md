@@ -137,7 +137,7 @@ Updates a data item.
 
 > update(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be updated.
 - **returns**: Optional[T] - updated item.
 

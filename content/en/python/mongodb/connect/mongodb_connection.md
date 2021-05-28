@@ -4,7 +4,7 @@ title: "MongoDbConnection"
 linkTitle: "MongoDbConnection"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 description: >
-    MongoDB connection using a plain driver.
+    MongoDB connection using the official driver.
 
 ---
 
@@ -13,23 +13,23 @@ description: >
 
 ### Description
 
-The MongoDbConnection class allows you to create a MongoDB connection using a plain driver.
+The MongoDbConnection class allows you to create a MongoDB connection using the official driver.
 
 Important points
 
-- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple persistence components you can reduce the number of used database connections.
 
 #### Configuration parameters
 **connection(s)**:    
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:    
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) user name
-- **password**: (optional) user password
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **username**: (optional) username
+- **password**: (optional) user's password
 
 **options**:
 - **max_pool_size**: (optional) maximum connection pool size (default: 2)
@@ -47,7 +47,7 @@ Important points
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials
 
 
 ### Constructors
@@ -88,15 +88,15 @@ The MongoDB database object.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -116,7 +116,7 @@ Gets the MongoDB.
 
 > get_database(): Any
 
-- **return**: Any - a MongoDB
+- **return**: Any - MongoDB database
 
 
 #### is_open
@@ -124,7 +124,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **return**: bool - true if the component has been opened and false otherwise.
+- **return**: bool - True if the component has been opened and False otherwise.
 
 
 #### open
@@ -132,7 +132,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### set_references

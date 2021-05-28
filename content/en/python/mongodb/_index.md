@@ -4,7 +4,7 @@ title: "MongoDB module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 no_list: true
 description: > 
-    MongoDB components for Pip.Services in Python
+    MongoDB components for Pip.Services in Python. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
 ---
@@ -113,7 +113,7 @@ class MyMongoDbPersistence(IdentifiableMongoDbPersistence):
             self._logger.trace(correlation_id, "Nothing found from {} with key = {}", self._collection_name, key)
 ```
 
-Configuration for your microservice that includes mongodb persistence may look the following way.
+Configuration for your microservice that includes mongodb persistence may look the following way:
 
 ```yaml
 ...

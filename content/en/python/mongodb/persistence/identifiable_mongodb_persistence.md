@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDBs and implement a number of CRUD operations over data items with unique ids.
+The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDB databases and implement a number of CRUD operations over data items with unique ids.
 
 Important points
 
@@ -59,7 +59,7 @@ Creates a new instance of the persistence component.
 
 > IdentifiableMongoDbPersistence(collection: str = None)
 
-- **collection**: str - (optional) a collection name.
+- **collection**: str - (optional) collection name.
 
 
 ### Instance methods
@@ -69,8 +69,8 @@ Converts the given object from the public partial format.
 
 > _convert_from_public_partial(value: Any): Any
 
-- **value**: Any - the object to convert from the public partial format.
-- **returns**: Any - the initial object.
+- **value**: Any - object to convert from the public partial format.
+- **returns**: Any - initial object.
 
 
 #### create
@@ -88,7 +88,7 @@ Deletes a data item by it's unique id.
 
 > delete_by_id(correlation_id: Optional[str], id: Any): T
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of the item to be deleted
 - **return**: T - deleted item.
 
@@ -98,7 +98,7 @@ Deletes multiple data items by their unique ids.
 
 > delete_by_ids(correlation_id: Optional[str], ids: List[Any])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **ids**: List[Any] - ids of data items to be deleted.
 
 
@@ -123,7 +123,7 @@ Gets a data item by its unique id.
 
 
 #### set
-Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
+Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.
 
 > set(correlation_id: Optional[str], item: T): Optional[T]
 

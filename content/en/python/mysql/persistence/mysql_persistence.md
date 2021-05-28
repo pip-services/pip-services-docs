@@ -4,7 +4,7 @@ title: "MySqlPersistence"
 linkTitle: "MySqlPersistence"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
-    Abstract persistence component that stores data in MySQL using plain driver.
+    Abstract persistence component that stores data in MySQL using the official driver.
     
 ---
 
@@ -81,7 +81,7 @@ The MySql database name.
 > **_database_name**: str
 
 #### _max_page_size
-the maximum number of records to return from the database per request.
+The maximum number of records to return from the database per request.
 > **_max_page_size** = 100
 
 </span>
@@ -94,7 +94,7 @@ Adds a statement to schema definition. This is a deprecated method. Use ensureSc
 
 > _auto_create_object(schema_statement: str)
 
-- **schema_statement**: str - a statement to be added to the schema
+- **schema_statement**: str - statement to be added to the schema
 
 #### clear
 Clears a component's state.
@@ -191,7 +191,7 @@ Adds a statement to schema definition.
 
 > _ensure_schema(schema_statement: str)
 
-- **schema_statement**: str - a statement to be added to the schema
+- **schema_statement**: str - statement to be added to the schema
 
 
 #### _generate_columns
@@ -208,8 +208,8 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 > _generate_parameters(values: Any): str
 
-- **values**: Any - an array with values or a key-value map
-- **returns**: str - a generated list of value parameters
+- **values**: Any - array with values or a key-value map
+- **returns**: str - generated list of value parameters
 
 
 #### _generate_set_parameters
@@ -294,7 +294,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### open

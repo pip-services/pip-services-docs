@@ -36,7 +36,7 @@ Detects the platform (using "user-agent") from which the given HTTP request was 
 
 > `static` detect_platform(req: bottle.Request): str
 
-- **req**: bottle.Request - an HTTP request to process.
+- **req**: bottle.Request - HTTP request to process.
 - **returns**: str - the detected platform and version. Detectable platforms: "mobile", "iphone",
 "ipad",  "macosx", "android",  "webos", "mac", "windows". Otherwise - "unknown" will
 be returned.

@@ -75,7 +75,7 @@ Resolves PostgreSQL config from connection and credential parameters.
 > resolve(correlation_id: Optional[str]) -> Any
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Any - resolved connection config or raised error
+- **returns**: Any - resolved connection config or raised error.
 
 
 #### set_references

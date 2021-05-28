@@ -15,7 +15,7 @@ The DefaultMongoDbFactory class provides a factory used to create MongoDb compon
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultMongoDbFactory()
 

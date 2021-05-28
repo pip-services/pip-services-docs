@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The HttpEndpoint class allows you to crete HTTP endpoints. 
+The HttpEndpoint class allows you to create HTTP endpoints. 
 
 Important points
 

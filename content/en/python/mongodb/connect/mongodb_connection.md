@@ -108,11 +108,11 @@ Gets the connection.
 
 > get_connection(): Any
 
-- **return**: Any - connection to a MongoDB
+- **return**: Any - connection to a MongoDB database
 
 
 #### get_database
-Gets the MongoDB.
+Gets the MongoDB database.
 
 > get_database(): Any
 

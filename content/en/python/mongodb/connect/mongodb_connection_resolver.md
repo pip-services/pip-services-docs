@@ -23,7 +23,7 @@ Important points
 #### Configuration parameters
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+- **discovery_key**: (optional) key to retrieve the connection from IDiscovery
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **database**: database name
@@ -31,12 +31,12 @@ Important points
 
 **credential(s)**:
 - **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
-- **username**: user name
-- **password**: user password
+- **username**: username
+- **password**: user's password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials
 
 
 ### Fields
@@ -57,7 +57,7 @@ MongoDB credential resolver.
 ### Instance methods
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -65,7 +65,7 @@ Configures component by passing configuration parameters.
 
 
 #### resolve
-Resolves MongoDB connection URI from connection and credential parameters.
+Resolves a MongoDB connection URI from connection and credential parameters.
 
 > resolve(correlation_id: Optional[str]): str
 

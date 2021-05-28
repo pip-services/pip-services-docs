@@ -36,12 +36,12 @@ Important points
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** (optional) credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** (optional) credential stores used to resolve credentials
 
 
 ### Fields
@@ -76,7 +76,7 @@ The configuration options.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -84,7 +84,7 @@ Closes component and frees used resources.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 

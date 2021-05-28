@@ -16,7 +16,7 @@ description: >
 #### [MongoDbConnection](mongodb_connection)
 MongoDB connection using the official driver.
 By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
+you can reduce the number of used database connections.
 
 
 #### [MongoDbConnectionResolver](mongodb_connection_resolver)

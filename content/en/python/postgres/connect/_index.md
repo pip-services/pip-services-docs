@@ -14,9 +14,9 @@ description: >
 ### Classes
 
 #### [PostgresConnection](postgres_connection)
-PostgreSQL connection using plain driver.
+PostgreSQL connection using the official driver.
 By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
+you can reduce the number of used database connections.
 
 #### [PostgresConnectionResolver](postgres_connection_resolver)
 Helper class that resolves PostgreSQL connection and credential parameters,

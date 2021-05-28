@@ -15,7 +15,7 @@ The DefaultPostgresFactory class allows you to create a factory used to create P
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultPostgresFactory()
 

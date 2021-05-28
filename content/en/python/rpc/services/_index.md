@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Todo: add description
+    This package contains a set of interfaces and classes used to create services and handle their operations.
 ---
 ---
 

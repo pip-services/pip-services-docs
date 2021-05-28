@@ -9,20 +9,23 @@ description: >
 
 **Implements:** [RestOperations](../rest_operations)
 
+### Description
 
-### Methods
+The HeartBeatOperations class is used to handle 
+
+### Instance methods
 
 #### heartbeat
-TODO add description
+Creates a heartbeat.
 
 > heartbeat(): str
 
-- **returns**: str - TODO add description
+- **returns**: str - string with the current time in UTC.
 
 
 #### get_heart_beat_operation
-TODO add description
+Gets the heartbeat operation
 
 > get_heart_beat_operation(): Callable
 
-- **returns**: Callable - TODO add description
+- **returns**: Callable - heartbeat operation

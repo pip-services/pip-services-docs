@@ -82,11 +82,6 @@ disableKinds = ["taxonomy", "term"]
   #  weight = 0
 
 [[menu.main]]
-    identifier = "microservices"
-    name = "Microservices"
-    url = "microservices/"
-    weight = 1
-[[menu.main]]
     identifier = "Node"
     name = "Node.js"
     url = "node/"
@@ -116,6 +111,11 @@ disableKinds = ["taxonomy", "term"]
     name = "Java"
     url = "java/"
     weight = 60
+[[menu.main]]
+    identifier = "microservices"
+    name = "Microservices"
+    url = "microservices/"
+    weight = 70
 #[[menu.main]]
   #  identifier = "Get Started"
   #  name = "Get Started"

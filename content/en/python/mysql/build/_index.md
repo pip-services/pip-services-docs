@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultMySqlFactory](default_mysql_factory)
-Creates MySQL components by their descriptors.
+Creates MySQL components based on their descriptors.
 
 
 </div>

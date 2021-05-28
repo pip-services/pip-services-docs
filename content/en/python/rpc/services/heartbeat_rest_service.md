@@ -7,18 +7,19 @@ description: >
     Service returns heartbeat via HTTP/REST protocol.
 
 
-    The service responds on /heartbeat route (can be changed)
-    with a string with the current time in UTC.
 
-
-    This service route can be used to health checks by loadbalancers and 
-    container orchestrators.
 ---
 
 **Implements:** [RestService](../rest_service)
 
-See also [RestService](../rest_service), [RestClient](../../clients/rest_client)
+### Description
 
+The HeartbeatRestService class allows you to create services that return heartbeat via HTTP/REST protocol. 
+
+Important points
+
+- The service responds on /heartbeat route (can be changed) with a string with the current time in UTC.
+- This service route can be used to health checks by loadbalancers and container orchestrators.
 
 ##### Configuration parameters
 
@@ -43,21 +44,7 @@ See also [RestService](../rest_service), [RestClient](../../clients/rest_client)
 
 
 
-**Example:**
-
-```python
-service = HeartbeatService()
-service.configure(ConfigParams.from_tuples("route", "ping",
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080))
-
-service.open("123")
-# ...
-```
-
-
-### Methods
+### Instance methods
 
 #### configure
 Configures component by passing configuration parameters.
@@ -81,6 +68,18 @@ Handles heartbeat requests
 - **returns**: str - http response to the request.
 
 
+### Examples
+
+```python
+service = HeartbeatService()
+service.configure(ConfigParams.from_tuples("route", "ping",
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 8080))
+
+service.open("123")
+# ...
+```
 
 ### See also
 - #### [RestService](../rest_service)

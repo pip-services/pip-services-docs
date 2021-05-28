@@ -35,7 +35,7 @@ function search(searchQuery) {
     searchResults.style.display = "block";
 
     // load your index file
-    getJSON("/pip-services-docs/index.json", function (contents) {
+    getJSON("/index.json", function (contents) {
         var results = [];
         let regex = new RegExp(searchQuery, "i");
         // iterate through posts and collect the ones with matches
@@ -86,10 +86,18 @@ function search(searchQuery) {
                 if (firstIndexOf !== 0) { summary = "...".concat(summary); }
                 if (lastIndexOf !== value.content.length - 1) { summary = summary.concat("..."); }
 
+                // fix for githubpages url
+                if (window.location.href.search("pip-services-docs") > -1){
+                    value.permalink = "/pip-services-docs/" + value.permalink;
+                }
+                
+
                 let div = "".concat("<div id=\"search-summary-", key, "\">")
-                    .concat("<h4 class=\"post-title\"><a href=\"", "/pip-services-docs/" + value.permalink, "\">", value.title, "</a></h4>")
+                    .concat("<h4 class=\"post-title\"><a href=\"", value.permalink, "\">", value.title, "</a></h4>")
                     .concat("<p>", summary, "</p>")
                     .concat("</div>");
+                
+
                 searchResults.appendChild(htmlToElement(div));
 
                 // optionaly highlight the search query in excerpts using mark.js

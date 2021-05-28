@@ -24,13 +24,13 @@ Important points
 #### Configuration parameters
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) username
 - **password**: (optional) user's password
 
@@ -78,7 +78,7 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
@@ -107,9 +107,9 @@ Gets a list of data items retrieved by given unique ids.
 
 > get_list_by_ids(correlation_id: Optional[str], ids: List[Any]): List[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **ids**: List[Any] - ids of data items to be retrieved
-- **return**: List[T] - a data list of results by ids.
+- **return**: List[T] - data list of results by ids.
 
 
 #### get_one_by_id
@@ -117,7 +117,7 @@ Gets a data item by its unique id.
 
 > get_one_by_id(correlation_id: Optional[str], id: Any): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of data item to be retrieved.
 - **returns**: Optional[T] - data item by id.
 
@@ -127,7 +127,7 @@ Sets a data item. If the data item exists it updates it, otherwise it create a n
 
 > set(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be set. 
 - **returns**: Optional[T] - updated item
 
@@ -147,7 +147,7 @@ Updates only few selected fields in a data item.
 
 > update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **returns**: Optional[T] - updated item.

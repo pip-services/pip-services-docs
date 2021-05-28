@@ -24,13 +24,13 @@ Important points
 - **collection**: (optional) MongoDB collection name
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
 **credential(s)**:
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) username
 - **password**: (optional) user's password
 
@@ -58,7 +58,7 @@ Creates a new instance of the persistence component.
 
 > MongoDbPersistence(collection: str = None)
 
-- **collection**: str - (optional) a collection name.
+- **collection**: str - (optional) collection name.
 
 
 ### Instance methods
@@ -85,7 +85,7 @@ Closes the component and frees used resources.
 
 
 #### configure
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -115,7 +115,7 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used  to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used  to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
@@ -132,12 +132,12 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-- **filter**: Any - (optional) a filter function to filter items.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) filter function used to filter items.
 
 
 #### _ensure_index
-Adds index definition to create it on opening
+Adds index definition to create it on opening.
 
 > _ensure_index(keys: Any, options: Any = None)
 
@@ -153,7 +153,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id usedto trace execution through the call chain.
 - **filter**: Any - (optional) filter JSON object
 - **returns**: int - number of filtered items.
 
@@ -166,7 +166,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) filter function used to filter items
 - **sort**: Any - (optional) sorting parameters
 - **select**: Any - (optional) projection parameters (not used yet)
@@ -181,7 +181,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 
 > get_one_random(correlation_id: Optional[str], filter: Any): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 filter: Any
 - **returns**: Optional[T] - random item.
 
@@ -194,7 +194,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) filter JSON object
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Any - (optional) sorting JSON object

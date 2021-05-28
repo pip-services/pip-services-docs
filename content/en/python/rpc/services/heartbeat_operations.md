@@ -4,14 +4,14 @@ title: "HeartBeatOperations"
 linkTitle: "HeartBeatOperations"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Handles the operations of a heartbeat service.
 ---
 
 **Implements:** [RestOperations](../rest_operations)
 
 ### Description
 
-The HeartBeatOperations class is used to handle 
+The HeartBeatOperations class is used to handle the operations of a heartbeat service.
 
 ### Instance methods
 

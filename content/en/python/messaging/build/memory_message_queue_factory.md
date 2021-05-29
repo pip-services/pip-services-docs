@@ -4,7 +4,7 @@ title: "MemoryMessageQueueFactory"
 linkTitle: "MemoryMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    Creates [MemoryMessageQueue](../../queues/memory_message_queue) components by their descriptors.
+    Creates [MemoryMessageQueue](../../queues/memory_message_queue) components based on their descriptors.
    
 ---
 
@@ -16,10 +16,10 @@ The MemoryMessageQueueFactory class allows you to create [MemoryMessageQueue](..
 
 Important points
 
--  The name of created message queue is taken from its descriptor. 
+-  The name of the created message queue is taken from its descriptor. 
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > MemoryMessageQueueFactory()
 
@@ -31,7 +31,7 @@ Creates a message queue component and assigns its name.
 > create_queue(name: str): [IMessageQueue](../../queues/imessage_queue)
 
 - **name**: str - name of the created message queue.
-- **returns**: [IMessageQueue](../../queues/imessage_queue) - a message queue.
+- **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue.
 
 
 

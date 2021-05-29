@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQLServer databases and implement a number of CRUD operatons over data items with unique ids.
+The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQLServer databases and implement a number of CRUD operations over data items with unique ids.
 
 Important points
 
@@ -24,7 +24,7 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SqlServer collection name   
+- **collection**: (optional) SQLServer collection name   
 **connection(s)**:   
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address

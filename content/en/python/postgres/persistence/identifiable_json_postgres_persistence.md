@@ -77,7 +77,7 @@ Converts object value from internal to public format.
 
 
 #### _ensure_table
-Adds DML statement to automatically create JSON(B) table
+Adds DML statement to automatically create a JSON(B) table
 
 > _ensure_table(id_type: str = 'TEXT', data_type: str = 'JSONB')
 
@@ -92,7 +92,7 @@ Updates only few selected fields in a data item.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of the data item to be updated.
-- **data**: [AnyValueMap](../../../commons/data/any_value_map) - a map with fields to be updated.
+- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **return**: Optional[T] - updated item
 
 ### Examples

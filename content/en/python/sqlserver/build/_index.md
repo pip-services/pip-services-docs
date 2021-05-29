@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
-    TODO: add description
+    This package contains a class used to create SQLServer components based on their descriptors.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultSqlServerFactory](default_sqlserver_factory)
-Creates SqlServer components by their descriptors.
+Creates SQLServer components by their descriptors.
 
 
 </div>

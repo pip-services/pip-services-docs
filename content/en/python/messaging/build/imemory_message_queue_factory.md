@@ -19,8 +19,8 @@ Creates a message queue component and assigns its name.
 
 > create_queue(name: str): [IMessageQueue](../../queues/imessage_queue)
 
-- **name**: str - a name of the created message queue.
-- **returns**: [IMessageQueue](../../queues/imessage_queue) - TODO: add description here
+- **name**: str - name of the created message queue.
+- **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue component
 
 
 ### See also

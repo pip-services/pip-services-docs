@@ -17,7 +17,7 @@ The PrometheusCounters class allows you to create performance counters that send
 
 Important points
 
-- The component is normally used in passive mode in conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
+- The component is normally used in passive mode conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
 
 
 #### Configuration parameters
@@ -51,7 +51,7 @@ Creates a new instance of the performance counters.
 ### Instance methods
 
 #### close
-Closes a component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
@@ -59,7 +59,7 @@ Closes a component and frees used resources.
 
 
 #### configure
-Configures a component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -71,7 +71,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### open

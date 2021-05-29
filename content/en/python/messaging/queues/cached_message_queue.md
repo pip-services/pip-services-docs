@@ -65,10 +65,10 @@ Clears component state.
 
 > `public` clear(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -80,7 +80,7 @@ When this method is call [listen](#listen) unblocks the thread and execution con
 
 > end_listen(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### listen
 Listens for incoming messages and blocks the current thread until the queue is closed.
@@ -88,8 +88,8 @@ See [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### open
@@ -97,7 +97,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### peek
@@ -106,8 +106,8 @@ If there are no messages available in the queue it returns None.
 
 > peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **returns**: [MessageEnvelope](../message_envelope) - a peeked message or **None**.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or **None**.
 
 
 #### peek_batch
@@ -118,7 +118,7 @@ Important: This method is not supported by MQTT.
 
 > peek_batch(correlation_id: Optional[str], message_count: int):List[[MessageEnvelope](../message_envelope)]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_count**: int - maximum number of messages to peek.
 - **returns**: List[[MessageEnvelope](../message_envelope)] - list with peeked messages.
 
@@ -134,9 +134,9 @@ Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: [MessageEnvelope](../message_envelope) - a received message or *None*.
+- **returns**: [MessageEnvelope](../message_envelope) - received message or *None*.
 
 
 #### _send_message_to_receiver
@@ -144,8 +144,8 @@ Sends a message to a receiver.
 
 > _send_message_to_receiver(receiver: [IMessageReceiver](../imessage_receiver), message: [MessageEnvelope](../message_envelope))
 
-- **receiver**: [IMessageReceiver](../imessage_receiver) - Receiver of the message.
-- **message**: [MessageEnvelope](../message_envelope) - Message to be sent.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver of the message.
+- **message**: [MessageEnvelope](../message_envelope) - message to be sent.
 
 ### Abstract methods
 
@@ -154,7 +154,7 @@ Subscribes to the message broker.
 
 > `abstractmethod` subscribe(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### unsubscribe
@@ -162,7 +162,7 @@ Unsubscribes from the message broker.
 
 > `abstractmethod` unsubscribe(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 ### See also

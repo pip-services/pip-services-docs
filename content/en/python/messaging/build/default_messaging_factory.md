@@ -4,7 +4,7 @@ title: "DefaultMessagingFactory"
 linkTitle: "DefaultMessagingFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: > 
-    Creates [MemoryMessageQueue](../../queues/memory_message_queue)  components by their descriptors.
+    Creates [MemoryMessageQueue](../../queues/memory_message_queue)  components based on their descriptors.
     
 ---
 

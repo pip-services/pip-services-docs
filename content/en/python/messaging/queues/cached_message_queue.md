@@ -45,7 +45,7 @@ Thread lock.
 Thread event.
 
 > **_event**: threading.Event
-
+t
 #### _messages
 List of messages in a queue. 
 
@@ -95,7 +95,7 @@ Configures a component by passing its configuration parameters.
 
 #### end_listen
 Ends listening for incoming messages.
-When this method is call [listen](#listen) unblocks the thread and execution continues.
+When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > end_listen(correlation_id: Optional[str])
 

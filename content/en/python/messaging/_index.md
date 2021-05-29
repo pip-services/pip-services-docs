@@ -4,7 +4,7 @@ title: "Messaging module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 no_list: true
 description: > 
-    Asynchronous Messaging for Pip.Services in Python
+    Asynchronous Messaging for Pip.Services in Python. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
@@ -16,7 +16,7 @@ The module contains the following packages:
 
 - [**Build**](build) - in-memory message queue factory
 - [**Queues**](queues) - contains interfaces for working with message queues, subscriptions for receiving messages from the queue, and an in-memory message queue implementation.
-- [**Connect**](connect) - TODO: add description
+- [**Connect**](connect) - contains an interface used to create message queue connections.
 
 
 ### Use
@@ -25,5 +25,3 @@ Install the Python package as
 ```bash
 pip install pip-services3-messaging
 ```
-
-TODO: add example

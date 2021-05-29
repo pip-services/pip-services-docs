@@ -20,7 +20,7 @@ Important points
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultMessagingFactory()
 

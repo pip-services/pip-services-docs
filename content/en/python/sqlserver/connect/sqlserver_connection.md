@@ -94,7 +94,7 @@ Configures a component by passing configuration parameters.
 #### get_connection
 Gets the connection to an SQLServer database.
 
-> get_connection(): connection to a 
+> get_connection(): connection
 
 - **returns**: Any - connection to an SQLServer database.
 

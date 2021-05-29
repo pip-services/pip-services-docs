@@ -26,16 +26,16 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SqlServer collection name
+- **collection**: (optional) SQLServer collection name    
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
-**credential(s)**:
+- **credential(s)**: credentials to access the SQLServer database
 - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) username
-- **password**: (optional) user's password
+- **password**: (optional) user's password   
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)

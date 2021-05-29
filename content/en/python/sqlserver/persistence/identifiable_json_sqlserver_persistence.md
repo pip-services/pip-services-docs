@@ -32,7 +32,7 @@ Important points
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
-- **credential(s)**: credentials to access the SQLServer database
+**credential(s)**: 
 - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) username
 - **password**: (optional) user's password   

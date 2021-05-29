@@ -58,6 +58,25 @@ Message receiver.
 
 </span>
 
+### Abstract methods
+
+#### subscribe
+Subscribes to the message broker.
+
+> `abstractmethod` subscribe(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+
+
+#### unsubscribe
+Unsubscribes from the message broker.
+
+> `abstractmethod` unsubscribe(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+
+
+
 ### Instance methods
 
 #### clear
@@ -147,22 +166,6 @@ Sends a message to a receiver.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver of the message.
 - **message**: [MessageEnvelope](../message_envelope) - message to be sent.
 
-### Abstract methods
-
-#### subscribe
-Subscribes to the message broker.
-
-> `abstractmethod` subscribe(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-
-
-#### unsubscribe
-Unsubscribes from the message broker.
-
-> `abstractmethod` unsubscribe(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 ### See also

@@ -24,4 +24,4 @@ Creates a message queue component and assigns its name.
 
 
 ### See also
-- #### [IMessageQueue](../../queues/imessage_queue)
+- #### [IMessageQueue](../../queues/imessage_queue) 

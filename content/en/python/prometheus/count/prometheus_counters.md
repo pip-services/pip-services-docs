@@ -17,7 +17,7 @@ The PrometheusCounters class allows you to create performance counters that send
 
 Important points
 
-- The component is normally used in passive mode conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
+- The component is normally used in passive mode in conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
 
 
 #### Configuration parameters

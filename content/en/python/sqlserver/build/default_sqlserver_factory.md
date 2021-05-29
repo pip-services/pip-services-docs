@@ -4,7 +4,7 @@ title: "DefaultSqlServerFactory"
 linkTitle: "DefaultSqlServerFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: > 
-    Creates SqlServer components based on their descriptors.
+    Creates SQLServer components based on their descriptors.
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
@@ -15,7 +15,7 @@ The DefaultSqlServerFactory class allows you to create a factory used to create 
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultPostgresFactory()
 

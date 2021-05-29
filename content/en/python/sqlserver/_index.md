@@ -4,7 +4,7 @@ title: "SQLServer module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 no_list: true
 description: > 
-    SQLServer components for Python
+    SQLServer components for Python. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 ---
@@ -65,7 +65,7 @@ class IMyPersistence(ABC):
 
 To implement sql server persistence component you shall inherit `IdentifiableSqlServerPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `get_page_by_filter` method with a custom filter function.
-And implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
+And, implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
 
 ```python
 class MySqlServerPersistence(IdentifiableSqlServerPersistence):
@@ -169,7 +169,7 @@ class MySqlServerPersistence(IdentifiableJsonSqlServerPersistence):
         return item
 ```
 
-Configuration for your microservice that includes sqlserver persistence may look the following way.
+The configuration for your microservice that includes sqlserver persistence may look the following way:
 
 ```yaml
 ...

@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The PrometheusCounterConverter class allows you to convert performance counter values into a response from the Prometheus metrics service.
+The PrometheusCounterConverter class allows you to convert performance counter values into a response from Prometheus metrics service.
 
 ### Static methods
 

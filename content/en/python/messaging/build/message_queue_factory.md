@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The MessageQueueFactory class allows you to 
+The MessageQueueFactory class allows you to create [IMessageQueue](../../queues/imessage_queue) components based on their descriptors.
 
 ### Fields
 
@@ -36,13 +36,13 @@ Creates a message queue component and assigns its name.
 
 > `abstractmethod` create_queue(name: str):  [IMessageQueue](../../queues/imessage_queue)
 
-- **name**: str - a name of the created message queue.
+- **name**: str - name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue
 
 ### Instance methods
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 

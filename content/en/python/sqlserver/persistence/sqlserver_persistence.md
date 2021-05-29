@@ -20,7 +20,7 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SqlServer collection name   
+- **collection**: (optional) SQLServer collection name   
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -88,10 +88,10 @@ The maximum number of records that can be returned from the database.
 </span>
 
 
-### Instanc methods
+### Instance methods
 
 #### _auto_create_object
-Adds index definition to create it on opening
+Adds an index definition to be created on opening
 
 > _auto_create_object(schema_statement: str)
 
@@ -149,7 +149,7 @@ Creates a data item.
 
 > create(correlation_id: Optional[str], item: T): Optional[T]
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
@@ -190,7 +190,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 
 #### _ensure_index
-Adds index definition to create it on opening.
+Adds an index definition to be created on opening.
 
 > _ensure_index(keys: Any, options: Any = None)
 
@@ -251,13 +251,13 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) filter for JSON objects
-- **returns**: int - number of filtered items.
+- **returns**: int - number of filtered items
 
 
 #### get_list_by_filter
-Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
+Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
 This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
@@ -279,20 +279,20 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 
 > get_one_random(correlation_id: Optional[str], filter: Any): T
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 filter: Any
 - **returns**: T - a random item.
 
 
 #### get_page_by_filter
-Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
+Gets a page of data items retrieved by a given filter and sorted according to sorting parameters.
 
 This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) filter for JSON objects.
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Any - (optional) sorting JSON object
@@ -314,7 +314,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _quote_identifier

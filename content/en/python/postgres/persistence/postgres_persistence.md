@@ -44,7 +44,7 @@ Important points
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials
 
 
 ### Constructors
@@ -52,7 +52,7 @@ Creates a new instance of the persistence component.
 
 > PostgresPersistence(table_name: str = None)
 
-- **table_name**: str - (optional) a table name.
+- **table_name**: str - (optional) table name.
 
 ### Fields
 
@@ -92,11 +92,11 @@ The maximum number of records to return from the database.
 ### Instance methods
 
 #### clear
-Clears component state.
+Clears a component's state.
 
 > clear(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **correlation_id**: Optional[str]- object to convert from the public partial format.
 
 #### _clear_schema
 Clears all auto-created objects.
@@ -109,7 +109,7 @@ Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **correlation_id**: Optional[str]- object to convert from the public partial format.
 
 
 #### configure
@@ -195,7 +195,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 > _generate_columns(values: Any): str
 
-- **values**: Any - an array with column values or a key-value map
+- **values**: Any - array with column values or a key-value map
 - **returns**: str - generated list of column names 
 
 
@@ -236,7 +236,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **filter**: Any - (optional) a filter JSON object
+- **filter**: Any - (optional) JSON object filter.
 - **returns**: int - number of filtered items.
 
 

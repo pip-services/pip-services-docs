@@ -15,7 +15,7 @@ description: >
 
 ### Description
 
-The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validates these parameters and generate a connection URI.
+The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validates these parameters, and generate a connection URI.
 
 Important points
 
@@ -54,7 +54,7 @@ The connection resolver
 > **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credential_resolver
-The connection resolver
+The credential resolver
 > **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
@@ -64,7 +64,7 @@ The connection resolver
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 

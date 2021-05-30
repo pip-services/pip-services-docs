@@ -4,7 +4,7 @@ title: "CommandableGrpcClient"
 linkTitle: "CommandableGrpcClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: > 
-    Abstract client that calls commandable GRPC service.
+    Abstract client that calls a commandable GRPC service.
 
 ---
 
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The CommandableGrpcClient class allows you to create clients that call the commandable GRPC service.
+The CommandableGrpcClient class allows you to create clients that call a commandable GRPC service.
 
 Important points
 

@@ -91,7 +91,7 @@ Component used to store the message queue.
 
 </span>
 
-### Methods
+### Abstract methods
 
 
 #### abandon
@@ -100,16 +100,6 @@ Returnes a message into the queue and makes it available for all subscribers to 
 > `abstractmethod` abandon(message: [MessageEnvelope](../message_envelope))
 
 - **message**: [MessageEnvelope](../message_envelope) - message to return.
-
-#### begin_listen
-Listens for incoming messages without blocking the current thread.  
-See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
-
-> beginListen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver)): void
-
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
-
 
 #### clear
 Clears a component's state.
@@ -133,36 +123,12 @@ Permanently removes a message from the queue. This method is usually used to rem
 - **message**: [MessageEnvelope](../message_envelope) - message to remove.
 
 
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-
 #### end_listen
 Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > `abstractmethod` end_listen(correlation_id: Optional[str])
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-
-
-#### get_capabilities
-Gets the queue capabilities
-
-> get_capabilities(): [MessagingCapabilities](../messaging_capabilities)
-
-- **returns**: [MessagingCapabilities](../messaging_capabilities) - the queue's capabilities object.
-
-
-#### get_name
-Gets the queue name
-
-> get_name(): str
-
-- **returns**: str - the queue name.
 
 
 #### is_open
@@ -190,12 +156,6 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 
 - **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
 
-#### open
-Opens the component.
-
-> open(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns None.
@@ -250,6 +210,46 @@ Sends a message into the queue.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
+### Instance methods
+
+#### begin_listen
+Listens for incoming messages without blocking the current thread.  
+See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
+
+> beginListen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver)): void
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
+
+
+#### configure
+Configures component by passing configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+#### get_capabilities
+Gets the queue capabilities
+
+> get_capabilities(): [MessagingCapabilities](../messaging_capabilities)
+
+- **returns**: [MessagingCapabilities](../messaging_capabilities) - the queue's capabilities object.
+
+
+#### get_name
+Gets the queue name
+
+> get_name(): str
+
+- **returns**: str - the queue name.
+
+#### open
+Opens the component.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 
 #### send_as_object
 Sends an object into the queue. Before sending it, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).  

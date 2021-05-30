@@ -57,7 +57,7 @@ Threading event.
 ### Instance methods
 
 #### abandon
-Returnes message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message that could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
+Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message that could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
 
 > abandon(message: [MessageEnvelope](../message_envelope))
 
@@ -65,18 +65,18 @@ Returnes message into the queue and makes it available for all subscribers to re
 
 
 #### clear
-Clears component state.
+Clears the component's state.
 
 > clear(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
@@ -86,7 +86,7 @@ Permanently removes a message from the queue. This method is usually used to rem
 - **message**: [MessageEnvelope](../message_envelope) - message to remove.
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -105,7 +105,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### listen
@@ -114,24 +114,24 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### peek
-Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns None.
+Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns None.
 
 > peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - transaction id to trace execution through a call chain.
-- **returns**: [MessageEnvelope](../message_envelope) - a peeked message or *None*.
+- **correlation_id**: Optional[str] - transaction id used to trace execution through the call chain.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or *None*.
 
 #### peek_batch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 > peek_batch(correlation_id: Optional[str], message_count: int): List[[MessageEnvelope](../message_envelope)]
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_count**: int - maximum number of messages to peek.
 - **returns**: List[[MessageEnvelope](../message_envelope)] - list with peeked messages.
 
@@ -165,7 +165,7 @@ Sends a message into the queue.
 
 > send(correlation_id: Optional[str], envelope: [MessageEnvelope](../message_envelope))
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 
@@ -174,7 +174,7 @@ Opens the component with given connection and credential parameters.
 
 > _open_with_params(correlation_id: Optional[str], connections: List[[ConnectionParams](../../../components/connect/connection_params)], credentials: [CredentialParams](../../../components/auth/credential_params))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **connections**: List[[ConnectionParams](../../../components/connect/connection_params)] - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 

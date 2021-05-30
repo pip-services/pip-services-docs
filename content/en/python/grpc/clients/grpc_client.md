@@ -17,16 +17,16 @@ The GrpcClient class allows you to create clients that call remote endpoints usi
 
 #### Configuration parameters
 
-**connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
-    - **host**: host name or IP address
-    - **port**: port number
-    - **uri**: resource URI or connection string with all parameters in it
-**options**:
-    - **retries**: number of retries (default: 3)
-    - **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
-    - **timeout**: invocation timeout in milliseconds (default: 10 sec)
+**connection(s)**:    
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
+    - **protocol**: connection protocol: http or https    
+    - **host**: host name or IP address    
+    - **port**: port number     
+    - **uri**: resource URI or connection string with all parameters in it    
+**options**:    
+    - **retries**: number of retries (default: 3)    
+    - **connect_timeout**: connection timeout in milliseconds (default: 10 sec)    
+    - **timeout**: invocation timeout in milliseconds (default: 10 sec)     
 
 
 ### Constructors

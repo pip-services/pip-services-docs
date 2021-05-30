@@ -65,21 +65,21 @@ See also [set_message_as_object](#set_message_as_object)
 
 > get_message_as(): Any 
 
-- **returns**: Any - the value that was stored in this message as a JSON string.
+- **returns**: Any - value that was stored in this message as a JSON string.
 
 #### get_message_as_string
 Returns the information stored in this message as a UTF-8 encoded string.
 
 > get_message_as_string(): Optional[str]
 
-- **returns**: Optional[str] - the information stored in this message as a UTF-8 encoded string.
+- **returns**: Optional[str] - information stored in this message as a UTF-8 encoded string.
 
 #### get_reference
 Returns the lock token that this [MessageEnvelope]() references.
 
 > get_reference(): Any
 
-- **returns**: Any - the lock token that this [MessageEnvelope]() references.
+- **returns**: Any - lock token that this [MessageEnvelope]() references.
 
 #### set_message_as_object
 Stores the given value as an object.
@@ -87,28 +87,28 @@ See also [get_message_as](#get_message_as)
 
 > set_message_as_object(value: Any)
 
-- **value**: Any -  the value to convert to JSON and store in this message.
+- **value**: Any -  value to convert to JSON and store in this message.
 
 #### set_message_as_string
 Stores the given string.
 
 > set_message_as_string(value: str)
 
-- **value**: str - the string to set. Will be converted to a buffer, using UTF-8 encoding.
+- **value**: str - string to set. It will be converted to a buffer using UTF-8 encoding.
 
 #### set_reference
 Sets a lock token reference for this [MessageEnvelope]().
 
 > set_reference(value: Any)
 
-- **value**: Any - the lock token to reference.
+- **value**: Any - lock token to reference the message envelope.
 
 #### to_json
 Converts this [MessageEnvelope]() to a JSON string. The message payload is passed as base64 string
 
 > to_json(): dict
 
-- **returns**: dict - A JSON encoded representation is this object.
+- **returns**: dict - A JSON encoded representation of the object.
 
 #### to_string
 Converts this [MessageEnvelope]() to a string, using the following format:  
@@ -118,13 +118,13 @@ If any of the values are *None*, they will be replaced with \-\-\-.
 
 > to_string(): str
 
-- **returns**: str - the generated string.
+- **returns**: str - generated string.
 
 #### from_json
 Converts a JSON string into a [MessageEnvelope]() The message payload is passed as a base64 string
 
 > `static` from_json(value: str): [MessageEnvelope]()
 
-- **value**: str - a JSON encoded string
-- **returns**: [MessageEnvelope]() - a decoded Message Envelope.
+- **value**: str - JSON encoded string
+- **returns**: [MessageEnvelope]() - decoded Message Envelope.
 

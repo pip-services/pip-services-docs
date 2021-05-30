@@ -13,7 +13,7 @@ The MessagingCapabilities class allows you to create data objects that contain s
 
 Important points
 
-- If certain capability is not supported a queue will throw NotImplemented exception.
+- If certain capability is not supported a queue will throw a NotImplemented exception.
 
 ### Constructors
 
@@ -21,15 +21,15 @@ Important points
 
 Creates a new instance of the capabilities object.
 
-- **canMessageCount**: boolean - true if the queue supports reading message count.
-- **canSend**: boolean - true if the queue is able to send messages.
-- **canReceive**: boolean - true if the queue is able to receive messages.
-- **canPeek**: boolean - true if the queue is able to peek messages.
-- **canPeekBatch**: boolean - true if the queue is able to peek multiple messages in one batch.
-- **canRenewLock**: boolean - true if the queue is able to renew message lock.
-- **canAbandon**: boolean - true if the queue is able to abandon messages.
-- **canDeadLetter**: boolean - true if the queue is able to send messages to dead letter queue.
-- **canClear**: boolean - true if the queue can be cleared.
+- **canMessageCount**: boolean - True if the queue supports reading message count.
+- **canSend**: boolean - True if the queue is able to send messages.
+- **canReceive**: boolean - True if the queue is able to receive messages.
+- **canPeek**: boolean - True if the queue is able to peek messages.
+- **canPeekBatch**: boolean - True if the queue is able to peek multiple messages in one batch.
+- **canRenewLock**: boolean - True if the queue is able to renew message lock.
+- **canAbandon**: boolean - True if the queue is able to abandon messages.
+- **canDeadLetter**: boolean - True if the queue is able to send messages to dead letter queue.
+- **canClear**: boolean - True if the queue can be cleared.
 - **returns**: [MessagingCapabilities]() - data object that contains supported capabilities of a message queue
 
 
@@ -41,7 +41,7 @@ Informs if the queue is able to abandon messages.
 
 > `public` get canAbandon(): boolean
 
-- **returns**: boolean - true if queue is able to abandon.
+- **returns**: boolean - True if queue is able to abandon.
 
 
 #### canClear
@@ -49,7 +49,7 @@ Informs if the queue can be cleared.
 
 > `public` get canClear(): boolean
 
-- **returns**: boolean - true if queue can be cleared.
+- **returns**: boolean - True if queue can be cleared.
 
 
 #### canDeadLetter
@@ -57,7 +57,7 @@ Informs if the queue is able to send messages to dead letter queue.
 
 > `public` get canDeadLetter(): boolean
 
-- **returns**: boolean - true if queue is able to send messages to dead letter queue.
+- **returns**: boolean - True if queue is able to send messages to dead letter queue.
 
 
 #### canMessageCount

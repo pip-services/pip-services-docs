@@ -4,7 +4,7 @@ title: "CallbackMessageReceiver"
 linkTitle: "CallbackMessageReceiver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    Wraps message callback into [IMessageReceiver](../imessage_receiver)
+    Wraps a message callback into [IMessageReceiver](../imessage_receiver)
 ---
 
 **Implements:** [IMessageReceiver](../imessage_receiver)
@@ -24,10 +24,10 @@ Creates an instance of the CallbackMessageReceiver.
 ### Instance methods
 
 #### receive_message
-Receives incoming message from the queue.  
+Receives incoming messages from the queue.  
 See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
 > receive_message(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue))
 
-- **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
-- **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from
+- **envelope**: [MessageEnvelope](../message_envelope) - incoming message
+- **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from

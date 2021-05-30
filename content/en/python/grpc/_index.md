@@ -27,5 +27,3 @@ Install the NPM package as
 ```bash
 npm install pip-services3-grpc-node --save
 ```
-
-TODO: add examples

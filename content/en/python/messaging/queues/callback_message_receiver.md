@@ -24,7 +24,7 @@ Creates an instance of the CallbackMessageReceiver.
 ### Instance methods
 
 #### receive_message
-Receives incoming messages from the queue.  
+Receives an incoming message from the queue.  
 See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
 > receive_message(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue))

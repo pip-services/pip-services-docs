@@ -18,17 +18,17 @@ The IMessageQueue interface is used for asynchronous message queues.
 Important points
 
 - Not all queues may implement all the methods.
-- Attempts to call non-supported method will result in NotImplemented exception.
-- To verify if a specific method is supported consult with [MessagingCapabilities](../messaging_capabilities). 
+- An ttempt to call a non-supported method will result in a NotImplemented exception.
+- To verify if a specific method is supported check [MessagingCapabilities](../messaging_capabilities). 
 
 ### Instance methods
 
 #### abandon
-Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
+Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment, to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
 
 > abandon(message: [MessageEnvelope](../message_envelope))
 
-- **message**: [MessageEnvelope](../message_envelope) - a message to return.
+- **message**: [MessageEnvelope](../message_envelope) - message to return.
 
 #### begin_listen
 Listens for incoming messages without blocking the current thread.  
@@ -36,8 +36,8 @@ See also [IMessageReceiver](../imessage_receiver), [listen](#listen)
 
 > begin_listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a the call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
@@ -51,21 +51,21 @@ Ends listening for incoming messages. When this method is called, [listen](#list
 
 > end_listen(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### get_capabilities
 Gets the queue capabilities
 
 > get_capabilities(): [MessagingCapabilities](../messaging_capabilities)
 
-- **returns**: [MessagingCapabilities](../messaging_capabilities) - the queue's capabilities object.
+- **returns**: [MessagingCapabilities](../messaging_capabilities) - queue's capabilities object.
 
 #### get_name
 Gets the queue name
 
 > get_name(): str
 
-- **returns**: str - the queue name.
+- **returns**: str - queue name.
 
 #### listen
 Listens for incoming messages and blocks the current thread until queue is closed.  
@@ -73,8 +73,8 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### move_to_dead_letter
@@ -89,15 +89,15 @@ Peeks a single incoming message from the queue without removing it. If there are
 
 > peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **returns**: [MessageEnvelope](../message_envelope) - a peeked message or *None*.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or *None*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 > peekBatch(orrelation_id: Optional[str], message_count: int): List[[MessageEnvelope](../message_envelope)]
 
-- **orrelation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **orrelation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_count**: int - maximum number of messages to peek.
 - **returns**: List[[MessageEnvelope](../message_envelope)] - peeked list with messages.
 
@@ -113,9 +113,9 @@ Receives an incoming message and removes it from the queue.
 
 > receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
-- **wait_timeout**: int - a timeout in milliseconds to wait for a message to come.
-- **returns**: [MessageEnvelope](../message_envelope) - a received message or *None*.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
+- **returns**: [MessageEnvelope](../message_envelope) - received message or *None*.
 
 #### renew_lock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.
@@ -130,15 +130,15 @@ Sends a message into the queue.
 
 > send(correlation_id: Optional[str], envelope: [MessageEnvelope](../message_envelope))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 #### send_as_object
-Sends an object into the queue. Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
+Sends an object into the queue. Before being sent, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
 > send_as_object(correlation_id: Optional[str], message_type: str, value: Any): 
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_type**: str - message type
 - **value**: Any - object value to be sent
 

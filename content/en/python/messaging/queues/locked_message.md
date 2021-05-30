@@ -17,7 +17,7 @@ The LockedMessage class allows you to create data objects used to store and lock
 
 #### expiration_time
 The expiration time for the message lock. 
-If it is None then the message is not locked.
+If it is None, then the message is not locked.
 
 > **expiration_time**: datetime.datetime
 

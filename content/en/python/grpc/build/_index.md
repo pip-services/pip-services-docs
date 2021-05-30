@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: >
-    TODO add description
+    This package contains a class used to create GRPC components by their descriptors.
 ---
 ---
 

@@ -4,7 +4,7 @@ title: "GrpcClient"
 linkTitle: "GrpcClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: > 
-    Abstract client that calls remove endpoints using GRPC protocol.
+    Abstract client that calls remote endpoints using the GRPC protocol.
 
 ---
 
@@ -13,12 +13,12 @@ description: >
 
 ### Description
 
-TODO add description
+The GrpcClient class allows you to create clients that call remote endpoints using the GRPC protocol.
 
 #### Configuration parameters
 
 **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol: http or https
     - **host**: host name or IP address
     - **port**: port number
@@ -35,7 +35,7 @@ Creates a new instance of the grpc client.
 
 > GrpcClient(client_name: str)
 
-- **client_name**: str - a client name.
+- **client_name**: str - client's name.
 
 
 ### Fields
@@ -71,7 +71,7 @@ The invocation timeout in milliseconds.
 > _timeout = 100000
 
 #### _uri
-The remote service uri which is calculated on open.
+The remote service uri which is calculated on openning.
 > _uri: str
 
 </span>
@@ -81,8 +81,8 @@ The remote service uri which is calculated on open.
 
 
 #### _add_filter_params
-AddFilterParams method are adds filter parameters (with the same name as they defined)
-to invocation parameter map.
+AddFilterParams method adds filter parameters (with the same name as they defined)
+to the invocation parameter map.
 
 > _add_filter_params(params: Any, filter: Any): Any
 
@@ -92,7 +92,7 @@ to invocation parameter map.
 
 
 #### _add_paging_params
-AddPagingParams method are adds paging parameters (skip, take, total) to invocation parameter map.
+AddPagingParams method adds paging parameters (skip, take, total) to the invocation parameter map.
 
 > _add_filter_params(params: Any, paging: Any): Any
 
@@ -109,19 +109,19 @@ Calls a remote method via GRPC protocol.
 - **method**: str - name of the calling method
 - **client**: Any - current client
 - **request**: Any - (optional) request object.
-- **returns**: Any - (optional) future that receives result object or error.
+- **returns**: Any - (optional) feature that receives the result object or error.
 
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -129,14 +129,14 @@ Configures component by passing configuration parameters.
 
 
 #### _instrument
-Adds instrumentation to log calls and measure call time.
+Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
 > _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object to end the time measurement.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **name**: str - method name.
+- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
 
 
 #### _instrument_error
@@ -144,10 +144,10 @@ Adds instrumentation to error handling.
 
 > _instrument_error(correlation_id: Optional[str], name: str, err: Exception, reerror=False)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **name**: str - method name.
 - **err**: Exception - an occured error
-- **reerror**: bool - if true - throw error
+- **reerror**: bool - if True - throw error
 
 
 #### is_open
@@ -155,7 +155,7 @@ Checks if the component is opened.
 
 > is_open(): bool
 
-- **reerror**: bool - Returns true if the component has been opened and false otherwise.
+- **reerror**: bool - Returns True if the component is open and False otherwise.
 
 
 #### open
@@ -163,7 +163,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### set_references

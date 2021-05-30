@@ -94,7 +94,7 @@ Component used to store the message queue.
 ### Abstract methods
 
 #### abandon
-Returnes a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and send to dead letter queue.
+Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
 
 > `abstractmethod` abandon(message: [MessageEnvelope](../message_envelope))
 
@@ -161,7 +161,7 @@ Peeks a single incoming message from the queue without removing it. If there are
 
 > `abstractmethod` peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: [MessageEnvelope](../message_envelope) - peeked message or *None*.
 
 
@@ -222,7 +222,7 @@ See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -251,7 +251,7 @@ Opens the component.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### send_as_object
-Sends an object into the queue. Before sending it, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).  
+Sends an object into the queue. Before sending it, the object is converted into a JSON string and wrapped in a [MessageEnvelope](../message_envelope).  
 
 > send_as_object(correlation_id: Optional[str], message_type: str, message: Any)
 

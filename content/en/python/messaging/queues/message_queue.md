@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The MessageQueue clas allows you to create a message queue that is used as a basis for specific message queue implementions.
+The MessageQueue class allows you to create a message queue that is used as a basis for specific message queue implementions.
 
 ##### Configuration parameters
 - **name**: name of the message queue
@@ -25,8 +25,8 @@ The MessageQueue clas allows you to create a message queue that is used as a bas
 
 **credential(s)**: 
 - **store_key**: key to retrieve parameters from credential store
-- **username**: user name
-- **password**: user password
+- **username**: username
+- **password**: user's password
 - **access_id**: application access id
 - **access_key**: application secret key
 
@@ -42,7 +42,7 @@ Creates a new instance of the message queue.
 
 > MessageQueue(name: str = None, capabilities: [MessagingCapabilities](../messaging_capabilities) = None)
 
-- **name**: str - (optional) a queue name
+- **name**: str - (optional) queue name
 - **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) capabilities of this message queue
 
 
@@ -80,7 +80,7 @@ Component used to resolve credentials.
 > **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver)
 
 #### _name
- Name of the message queue.
+Name of the message queue.
 
 > **_name**: str
 
@@ -92,7 +92,6 @@ Component used to store the message queue.
 </span>
 
 ### Abstract methods
-
 
 #### abandon
 Returnes a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and send to dead letter queue.
@@ -106,14 +105,14 @@ Clears a component's state.
 
 > `abstractmethod` clear(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### close
 Closes a component and frees the used resources.
 
 > `abstractmethod` close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
@@ -128,7 +127,7 @@ Ends listening for incoming messages. When this method is called, [listen](#list
 
 > `abstractmethod` end_listen(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### is_open
@@ -136,7 +135,7 @@ Checks if the component is opened.
 
 > `abstractmethod` is_open(): bool 
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component has been opened and False otherwise.
 
 
 #### listen
@@ -145,8 +144,8 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > `abstractmethod` listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver used to receive incoming messages.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### move_to_dead_letter
@@ -154,24 +153,24 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 
 > `abstractmethod` move_to_dead_letter(message: [MessageEnvelope](../message_envelope))
 
-- **message**: [MessageEnvelope](../message_envelope) - a message to be removed.
+- **message**: [MessageEnvelope](../message_envelope) - message to be removed.
 
 
 #### peek
-Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue it returns None.
+Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns None.
 
 > `abstractmethod` peek(correlation_id: Optional[str]): [MessageEnvelope](../message_envelope)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-- **returns**: [MessageEnvelope](../message_envelope) - a peeked message or *None*.
+- **returns**: [MessageEnvelope](../message_envelope) - peeked message or *None*.
 
 
 #### peek_batch
-Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue it returns an empty list.
+Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 > `abstractmethod` peek_batch(correlation_id: Optional[str], message_count: int): List[[MessageEnvelope](../message_envelope)]
 
-- **correlation_id**: Optional[str] -  (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] -  (optional) transaction id used to trace execution through the call chain.
 - **message_count**: int - maximum number of messages to peek.
 - **returns**: List[[MessageEnvelope](../message_envelope)] - list of peeked messages
 
@@ -189,9 +188,9 @@ Receives an incoming message and removes it from the queue.
 
 > `abstractmethod` receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: [MessageEnvelope](../message_envelope) - a received message or *None*.
+- **returns**: [MessageEnvelope](../message_envelope) - received message or *None*.
 
 
 #### renew_lock
@@ -199,15 +198,15 @@ Renews a lock on a message that makes it invisible from other receivers in the q
 
 > `abstractmethod` renew_lock(message: [MessageEnvelope](../message_envelope), lock_timeout: int)
 
-- **message**: [MessageEnvelope](../message_envelope) - a message to extend its lock.
-- **lock_timeout**: int - a locking timeout in milliseconds.
+- **message**: [MessageEnvelope](../message_envelope) - message to extend its lock.
+- **lock_timeout**: int - locking timeout in milliseconds.
 
 #### send
 Sends a message into the queue.
 
 > `abstractmethod` send(correlation_id: Optional[str], envelope: [MessageEnvelope](../message_envelope))
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 ### Instance methods
@@ -218,7 +217,7 @@ See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
 
 > beginListen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver)): void
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
@@ -234,7 +233,7 @@ Gets the queue capabilities
 
 > get_capabilities(): [MessagingCapabilities](../messaging_capabilities)
 
-- **returns**: [MessagingCapabilities](../messaging_capabilities) - the queue's capabilities object.
+- **returns**: [MessagingCapabilities](../messaging_capabilities) - queue's capabilities object.
 
 
 #### get_name
@@ -242,21 +241,21 @@ Gets the queue name
 
 > get_name(): str
 
-- **returns**: str - the queue name.
+- **returns**: str - queue name.
 
 #### open
 Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### send_as_object
 Sends an object into the queue. Before sending it, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).  
 
 > send_as_object(correlation_id: Optional[str], message_type: str, message: Any)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_type**: str - message type
 - **message**: Any - object value to be sent
 
@@ -272,7 +271,7 @@ Gets a string representation of the object.
 
 > to_string(): str
 
-- **returns**: str - a string representation of the object.
+- **returns**: str - string representation of the object.
 
 
 #### _open_with_params
@@ -280,7 +279,7 @@ Opens the component with the given connection and credential parameters.
 
 > _open_with_params(correlation_id: Optional[str], connections: List[[ConnectionParams](../../../components/connect/connection_params)], credentials: [CredentialParams](../../../components/auth/credential_params))
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **connections**: List[[ConnectionParams](../../../components/connect/connection_params)] - connection parameters
 - **credentials**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
         
@@ -290,6 +289,6 @@ Checks if the queue has been opened.
 
 > _check_open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Exception - an exception if queue wasn't opened or *None* otherwise
 

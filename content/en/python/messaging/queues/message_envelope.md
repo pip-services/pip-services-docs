@@ -22,7 +22,7 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 
 > MessageEnvelope(correlation_id: Optional[str], message_type: Optional[str], message: Optional[Any])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_type**: Optional[str] - a string value that defines the message's type.
 - **message**: Optional[Any] - the data being sent/received.
 
@@ -108,7 +108,7 @@ Converts this [MessageEnvelope]() to a JSON string. The message payload is passe
 
 > to_json(): dict
 
-- **returns**: dict - A JSON encoded representation of the object.
+- **returns**: dict - JSON encoded representation of the object.
 
 #### to_string
 Converts this [MessageEnvelope]() to a string, using the following format:  

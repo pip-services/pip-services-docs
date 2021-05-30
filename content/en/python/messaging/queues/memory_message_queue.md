@@ -148,7 +148,7 @@ Receives an incoming message and removes it from the queue.
 
 > receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **wait_timeout**: int - timeout in milliseconds to wait for a message to come.
 - **returns**: [MessageEnvelope](../message_envelope) - received message or *None*.
 

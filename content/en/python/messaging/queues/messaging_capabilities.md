@@ -13,7 +13,7 @@ The MessagingCapabilities class allows you to create data objects that contain s
 
 Important points
 
-- If certain capability is not supported a queue will throw NotImplemented exception.
+- If certain capability is not supported a queue will throw a NotImplemented exception.
 
 ### Constructors
 
@@ -42,7 +42,7 @@ Informs if the queue is able to abandon messages.
 
 > can_abandon(): bool
 
-- **returns**: bool - True if the queue is able to abandon.
+- **returns**: bool - True if the queue is able to abandon messages.
 
 
 #### can_clear
@@ -62,7 +62,7 @@ Informs if the queue is able to send messages to dead letter queue.
 
 
 #### can_message_count
-Informs if the queue is able to read number of messages.
+Informs if the queue is able to read the number of messages.
 
 > can_message_count(): bool
 

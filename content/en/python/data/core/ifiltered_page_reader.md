@@ -8,14 +8,14 @@ description: >
 ---
 
 
-### Methods
+### Instance methods
 
 #### get_page_by_filter
 Gets a page of data items using filter parameters.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Optional[[FilterParams](../../../commons/data/filter_params)], paging: Optional[[PagingParams](../../../commons/data/paging_params)], sort: Optional[[SortParams](../../../commons/data/sort_params)] = None): [DataPage](../../../commons/data/data_page)
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Optional[[FilterParams](../../../commons/data/filter_params)] - (optional) filter parameters
 - **paging**: Optional[[PagingParams](../../../commons/data/paging_params)] -  (optional) paging parameters
 - **sort**: Optional[[SortParams](../../../commons/data/sort_params)] - (optional) sort parameters

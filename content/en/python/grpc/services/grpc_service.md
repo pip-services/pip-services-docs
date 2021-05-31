@@ -25,10 +25,10 @@ The GrpcService class allows you to create services that receive remote calls vi
     - **host**: host name or IP address    
     - **port**: port number   
     - **uri**: resource URI or connection string with all parameters in it    
-**credential**: the HTTPS credentials:    
-    - **ssl_key_file**: the SSL private key in PEM    
-    - **ssl_crt_file**: the SSL certificate in PEM    
-    - **ssl_ca_file**: the certificate authorities (root cerfiticates) in PEM    
+**credentials**:   
+    - **ssl_key_file**: SSL private key in PEM    
+    - **ssl_crt_file**: SSL certificate in PEM    
+    - **ssl_ca_file**: certificate authorities (root cerfiticates) in PEM    
  
 
 
@@ -66,7 +66,7 @@ The performance counters.
 ### Abstract methods
 
 #### register
-Registers all service routes in HTTP endpoint.
+Registers all service routes in the HTTP endpoint.
 
 This method is called by the service and must be overriden in child classes.
 
@@ -132,7 +132,7 @@ Adds instrumentation to error handling.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **name**: str - method name.
-- **err**: Exception - an occured error
+- **err**: Exception - occured error
 - **reerror**: bool - if True - throw error
 
 
@@ -145,7 +145,7 @@ Opens the component.
 
 
 #### _register_commandable_method
-Registers a commandable method in this objects GRPC server (service) by the given name.
+Registers a commandable method in the object's GRPC server (service) by the given name.
 
 > _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
 

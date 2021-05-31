@@ -42,7 +42,7 @@ Creates a new instance of the client.
 
 > CommandableGrpcClient(name: str)
 
-- **name**: str - a service name.
+- **name**: str - service name.
 
 
 ### Fields

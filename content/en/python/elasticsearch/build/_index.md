@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultElasticSearchFactory](default_elasticsearch_factory)
-Creates ElasticSearch components by their descriptors.
+Creates ElasticSearch components based on their descriptors.
 
 
 </div>

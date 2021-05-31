@@ -7,6 +7,9 @@ description: >
     Interface for data processing components that can retrieve a page of data items by a filter.
 ---
 
+### Description
+
+The IFilteredPageReader interface is used by data processing components that can retrieve a page of data items through the use of a filter.
 
 ### Instance methods
 

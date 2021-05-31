@@ -15,7 +15,7 @@ The DefaultElasticSearchFactory class allows you to create a factory used to cre
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultElasticSearchFactory()
 

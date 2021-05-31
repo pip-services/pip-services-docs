@@ -26,15 +26,15 @@ GRPC-based remote interface.
 
 #### Configuration parameters
 
-**dependencies**:
-    - **endpoint**: override for HTTP Endpoint dependency
-    - **controller**: override for Controller dependency
-**connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
-    - **host**: host name or IP address
-    - **port**: port number
-    - **uri**: resource URI or connection string with all parameters in it
+**dependencies**:    
+    - **endpoint**: override for HTTP Endpoint dependency    
+    - **controller**: override for Controller dependency    
+**connection(s)**:    
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
+    - **protocol**: connection protocol: http or https    
+    - **host**: host name or IP address    
+    - **port**: port number    
+    - **uri**: resource URI or connection string with all parameters in it    
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services

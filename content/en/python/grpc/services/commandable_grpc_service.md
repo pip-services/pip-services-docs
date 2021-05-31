@@ -20,7 +20,7 @@ to operations automatically generated for commands defined in [ICommandable](../
 
 Important points
 
-- Each command is exposed as an invoke method that receives a command name and parameters.
+- Each command is exposed as an Invoke method that receives a command name and parameters.
 - Commandable services require only 3 lines of code to implement a robust external
 GRPC-based remote interface.
 
@@ -39,7 +39,7 @@ GRPC-based remote interface.
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand specified by the counter's source.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements as specified by the counter's source.
 - **\*:endpoint:grpc:*:1.0** - (optional) [GrpcEndpoint](../grpc_endpoint) reference
 
 ### Constructors

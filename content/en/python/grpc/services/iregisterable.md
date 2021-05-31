@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The IRegisterable is used to perform on-demand registration.
 
 
 ### Instance ethods

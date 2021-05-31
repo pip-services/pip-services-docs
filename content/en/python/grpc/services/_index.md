@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: >
-    TODO add description
+    This package contains interfaces and classes used to create GRPC services.
 ---
 ---
 <div class="module-body"> 
@@ -27,7 +27,7 @@ Each command is exposed as invoke method that receives command name and paramete
 Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
 
 #### [GrpcService](grpc_service)
-Abstract service that receives remove calls via GRPC protocol.
+Abstract service that receives remote calls via GRPC protocol.
 
 
 </div>

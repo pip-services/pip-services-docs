@@ -53,7 +53,7 @@ class MyComponent(IConfigurable, IReferenceable):
         # ...
 ```
 
-The configuration for your microservice that includes ElasticSearch logger may look the following way.
+The configuration for your microservice that includes ElasticSearch logger may look the following way:
 
 ```yaml
 ...

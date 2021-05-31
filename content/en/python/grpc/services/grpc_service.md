@@ -107,7 +107,7 @@ Configures component by passing configuration parameters.
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 
@@ -121,7 +121,7 @@ It returns a CounterTiming object that is used to end the time measurement.
 > _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **name**: str - a method name.
+- **name**: str - method name.
 - **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
 
 
@@ -169,9 +169,9 @@ Registers a middleware for methods in GRPC endpoint.
 
 > _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
 
-- **name**: str - a method name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
+- **name**: str - method name
+- **schema**: [Schema](../../../commons/validate/schema) - validation schema to validate received parameters.
+- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action function that is called when operation is invoked.
 
 
 ### Examples

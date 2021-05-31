@@ -4,7 +4,7 @@ title: "GrpcEndpoint"
 linkTitle: "GrpcEndpoint"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: > 
-    Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
+    Used for creating GRPC endpoints. 
 
 ---
 
@@ -12,21 +12,21 @@ description: >
 
 
 ### Description
-TODO: add description
+The GrpcEndpoint class allows you to create GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
 
 #### Configuration parameters
 Parameters to pass to the :func:`configure` method for component configuration:
 
 **connection(s)**: the connection resolver's connections:
-- **"connection.discovery_key"**: the key to use for connection resolving in a discovery service;
-- **"connection.protocol"**: the connection's protocol;
-- **"connection.host"**: the target host;
-- **"connection.port"**: the target port;
-- **"connection.uri"**: the target URI.
-**credential**: the HTTPS credentials:
-- **"credential.ssl_key_file"**: the SSL private key in PEM
-- **"credential.ssl_crt_file"**: the SSL certificate in PEM
-- **"credential.ssl_ca_file"**: the certificate authorities (root cerfiticates) in PEM
+- **"connection.discovery_key"**: key used for connection resolving in a discovery service;
+- **"connection.protocol"**: connection's protocol;
+- **"connection.host"**: target host;
+- **"connection.port"**: target port;
+- **"connection.uri"**: target URI.
+**credential**: HTTPS credentials:
+- **"credential.ssl_key_file"**: SSL private key in PEM
+- **"credential.ssl_crt_file"**: SSL certificate in PEM
+- **"credential.ssl_ca_file"**: certificate authorities (root cerfiticates) in PEM
 
 #### References
 A logger, counters, and a connection resolver can be referenced by passing the
@@ -34,7 +34,7 @@ following references to the object's [set_references](#set_references)
 
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand specify the counter's source.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand specified by the counter's source.
 
 ### Constructors
 
@@ -42,7 +42,7 @@ Creates a new instance of the service.
 
 > CommandableGrpcClient(name: str)
 
-- **name**: str - a service name.
+- **name**: str - service name.
 
 
 ### Instance ethods
@@ -53,7 +53,7 @@ Closes this endpoint and the GRPC server (service) that was opened earlier.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -77,7 +77,7 @@ Opens a connection using the parameters resolved by the referenced connection re
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### register
@@ -85,17 +85,17 @@ Registers a registerable object for dynamic endpoint discovery.
 
 > register(registration: [IRegisterable](../iregisterable))
 
-- **registration**: [IRegisterable](../iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
 
 #### _register_commandable_method
-Registers a commandable method in this objects GRPC server (service) by the given name.
+Registers a commandable method in the object's GRPC server (service) by the given name.
 
 > _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
 
-- **method**: str - the GRPC method name.
-- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - the action to perform at the given route.
+- **method**: str - GRPC method name.
+- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
+- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action to perform at the given route.
 
 
 #### _register_interceptor

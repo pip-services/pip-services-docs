@@ -146,12 +146,12 @@ Adds instrumentation to error handling.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **name**: str - method name.
-- **err**: Exception - an occured error
+- **err**: Exception - occured error
 - **reerror**: bool - if True - throw error
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 

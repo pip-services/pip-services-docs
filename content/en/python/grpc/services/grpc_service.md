@@ -4,7 +4,7 @@ title: "GrpcService"
 linkTitle: "GrpcService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 description: > 
-    Abstract service that receives remove calls via GRPC protocol.
+    Abstract service that receives remote calls via the GRPC protocol.
 
 ---
 
@@ -12,23 +12,24 @@ description: >
 
 
 ### Description
-TODO: add description
+
+The GrpcService class allows you to create services that receive remote calls via the GRPC protocol.
 
 #### Configuration parameters
-**dependencies**:
-    - **endpoint**: override for GRPC Endpoint dependency
-    - **controller**: override for Controller dependency
-**connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
-    - **host**: host name or IP address
-    - **port**: port number
-    - **uri**: resource URI or connection string with all parameters in it
-**credential**: the HTTPS credentials:
-    - **ssl_key_file**: the SSL private key in PEM
-    - **ssl_crt_file**: the SSL certificate in PEM
-    - **ssl_ca_file**: the certificate authorities (root cerfiticates) in PEM
-
+**dependencies**:   
+    - **endpoint**: override for GRPC Endpoint dependency    
+    - **controller**: override for Controller dependency    
+**connection(s)**:    
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
+    - **protocol**: connection protocol: http or https    
+    - **host**: host name or IP address    
+    - **port**: port number   
+    - **uri**: resource URI or connection string with all parameters in it    
+**credential**: the HTTPS credentials:    
+    - **ssl_key_file**: the SSL private key in PEM    
+    - **ssl_crt_file**: the SSL certificate in PEM    
+    - **ssl_ca_file**: the certificate authorities (root cerfiticates) in PEM    
+ 
 
 
 ### Constructors
@@ -37,7 +38,7 @@ Creates a new instance of the service.
 
 > GrpcService(service_name: str)
 
-- **service_name**: str - a service name.
+- **service_name**: str - service name.
 
 
 ### Fields
@@ -62,94 +63,6 @@ The performance counters.
 
 </span>
 
-
-### Instance ethods
-
-
-#### close
-Closes component and frees used resources.
-
-> close(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-
-
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-
-#### is_open
-Checks if the component is opened.
-
-> is_open(): bool
-
-- **reerror**: bool - whether or not this endpoint is open with an actively listening GRPC server.
-
-
-#### _instrument
-Adds instrumentation to log calls and measure call time. 
-It returns a CounterTiming object that is used to end the time measurement.
-
-> _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object to end the time measurement.
-
-
-#### _instrument_error
-Adds instrumentation to error handling.
-
-> _instrument_error(correlation_id: Optional[str], name: str, err: Exception, reerror=False)
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **name**: str - a method name.
-- **err**: Exception - an occured error
-- **reerror**: bool - if true - throw error
-
-
-#### open
-Opens the component.
-
-> open(correlation_id: Optional[str])
-
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-
-
-#### _register_commandable_method
-Registers a commandable method in this objects GRPC server (service) by the given name.
-
-> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
-
-- **method**: str - the GRPC method name.
-- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - the action to perform at the given route.
-
-
-#### _register_interceptor
-Registers a middleware for methods in GRPC endpoint.
-
-> _register_interceptor(interceptor: Callable)
-
-- **interceptor**: Callable - the middleware action to perform at the given route.
-
-
-#### _register_method!
-**TODO: this method is not implemented for Python**
-
-Registers a middleware for methods in GRPC endpoint.
-
-> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
-
-- **name**: str - a method name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
-
-
 ### Abstract methods
 
 #### register
@@ -173,6 +86,92 @@ Unsets (clears) previously set references to dependent components.
 
 > unset_references()
 
+
+### Instance methods
+
+
+#### close
+Closes the component and frees used resources.
+
+> close(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+
+
+#### configure
+Configures component by passing configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+
+#### is_open
+Checks if the component is opened.
+
+> is_open(): bool
+
+- **reerror**: bool -True if the endpoint is open with an actively listening GRPC server.
+
+
+#### _instrument
+Adds instrumentation to log calls and measures call time. 
+It returns a CounterTiming object that is used to end the time measurement.
+
+> _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **name**: str - a method name.
+- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
+
+
+#### _instrument_error
+Adds instrumentation to error handling.
+
+> _instrument_error(correlation_id: Optional[str], name: str, err: Exception, reerror=False)
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **name**: str - method name.
+- **err**: Exception - an occured error
+- **reerror**: bool - if True - throw error
+
+
+#### open
+Opens the component.
+
+> open(correlation_id: Optional[str])
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+
+
+#### _register_commandable_method
+Registers a commandable method in this objects GRPC server (service) by the given name.
+
+> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+
+- **method**: str - GRPC method name.
+- **schema**: [Schema](../../../commons/validate/schema) - schema used for parameter validation.
+- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action to perform at the given route.
+
+
+#### _register_interceptor
+Registers a middleware for methods in GRPC endpoint.
+
+> _register_interceptor(interceptor: Callable)
+
+- **interceptor**: Callable - middleware action to perform at the given route.
+
+
+#### _register_method!
+**TODO: this method is not implemented for Python**
+
+Registers a middleware for methods in GRPC endpoint.
+
+> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+
+- **name**: str - a method name
+- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
+- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
 
 
 ### Examples

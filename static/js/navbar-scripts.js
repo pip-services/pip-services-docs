@@ -65,6 +65,19 @@ function hideAlgoliaPopUp(event) {
     }
 }
 
+function getViewport() {
+    // https://stackoverflow.com/a/8876069
+    const width = Math.max(
+        document.documentElement.clientWidth,
+        window.innerWidth || 0
+    )
+    if (width <= 576) return 'xs'
+    if (width <= 768) return 'sm'
+    if (width <= 992) return 'md'
+    if (width <= 1200) return 'lg'
+    return 'xl'
+}
+
 function saveNavState(event) {
     let pressedEl = event.target
     if (pressedEl.classList.contains('nav-item-tree') || pressedEl.parentElement.classList.contains('nav-item-tree') || pressedEl.parentElement.parentElement.classList.contains('nav-item-tree'))
@@ -74,12 +87,8 @@ function saveNavState(event) {
 }
 
 function showSearch(event) {
-    const width = Math.max(
-        document.documentElement.clientWidth,
-        window.innerWidth || 0
-    );
 
-    if (width < 1200) {
+    if (getViewport() == "lg") {
         let searchButton = document.getElementById("search-btn")
         let searchBox = document.getElementById("hidden-search");
 
@@ -108,7 +117,11 @@ document.getElementById('td-section-nav').addEventListener(
 document.getElementById("search-btn").addEventListener("click", showSearch);
 document.getElementById("hidden-search").addEventListener("blur", showSearch);
 
-document.body.addEventListener('click', saveNavState);
+if (getViewport() == "sm") {
+    // save navbar in opened state for mobiles
+    document.body.addEventListener('click', saveNavState);
+}
+
 document.body.addEventListener("click", hideAlgoliaPopUp);
 
 

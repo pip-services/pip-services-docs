@@ -157,7 +157,6 @@ url_latest_version = "https://example.com"
 # User interface configuration
 [params.ui]
 sidebar_menu_compact = true
-addNavArrows = false 
 breadcrumb_disable = false
 sidebar_search_disable = true
 navbar_logo = true

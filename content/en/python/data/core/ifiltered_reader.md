@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The IFilteredReader interface is used for data processing components that can retrieve a list of data items through the use of a filter.
+The IFilteredReader interface is used y data processing components that can retrieve a list of data items through the use of a filter.
 
 ### Instance methods
 

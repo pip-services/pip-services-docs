@@ -9,15 +9,18 @@ description: >
 
 **Implements:** [IIdentifiable](../../../commons/data/iidentifiable)
 
+### Description
 
-### Methods
+The IGetter interface is used by data processing components that are capable of getting data items.
+
+### Instance methods
 
 #### get_one_by_id
-Gets a data items by its unique id.
+Gets a data item by its unique id.
 
 > get_one_by_id(correlation_id: Optional[str], id: Any): T
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **id**: Any - an id of item to be retrieved.
-- **returns**: T - an item by its id.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **id**: Any - id of item to be retrieved.
+- **returns**: T - item by its id.
 

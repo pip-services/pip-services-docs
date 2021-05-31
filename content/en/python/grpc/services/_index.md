@@ -21,7 +21,7 @@ Interface to perform on-demand registrations.
 #### [CommandableGrpcService](commandable_grpc_service)
 Abstract service that receives commands via GRPC protocol
 to operations automatically generated for commands defined in [ICommandable](../../commons/commands/icommandable).
-Each command is exposed as invoke method that receives command name and parameters.
+Each command is exposed as an invoke method that receives a command name and parameters.
 
 #### [GrpcEndpoint](grpc_endpoint)
 Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.

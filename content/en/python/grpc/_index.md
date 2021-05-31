@@ -8,7 +8,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    The grpc module is used to organize synchronous data exchange using calls through the gRPC protocol. It has implementations of both the server and client parts.
+    The grpc module is used to organize synchronous data exchange using calls through the gRPC protocol. It has implementations of both, the server and client parts.
 ---
 
 

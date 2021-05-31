@@ -2,6 +2,9 @@
 type: docs
 title: "Microservices"
 linkTitle: "Microservices"
+no_list: true
+exclude_from_list: true
+---
 ---
 
 ### Overview
@@ -88,3 +91,15 @@ As of today, there are dozens of reusable microservice available in the Pip.Serv
 All of these microservices have been tested and used in actual production systems. Thanks to the use of the Pip.Services Library, we’ve been able to cut time spent on backend development by up to 30% in our projects.
 ‍
 The Pip.Services Library is actively evolving. Practically every month new microservices are added, and existing ones are improved/expanded. Feel free to go on over and check out what microservices each of these categories contains and get some more information on each one of them.
+
+
+<span class="hide-title-link">
+
+#### [Infrastructure Management Microservices](infrastructure)
+#### [Users Management Microservices](users)
+#### [Product Support Microservices](support)
+#### [Content Management Microservices](content)
+#### [eCommerce Microservices](ecommrce)
+#### [Internet of Things Microservices](iot)
+
+</span>

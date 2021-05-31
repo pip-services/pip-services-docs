@@ -14,7 +14,7 @@ description: >
 
 #### [CommandableGrpcClient](commandable_grpc_client)
 Abstract client that calls a commandable GRPC service.
-Commandable services are generated automatically for [ICommandable](../../commons/commands/icommandable). Each command is exposed as Invoke method that receives all parameters as args.
+Commandable services are generated automatically for [ICommandable](../../commons/commands/icommandable). Each command is exposed as an Invoke method that receives all parameters as args.
 
 #### [GrpcClient](grpc_client)
 Abstract client that calls remote endpoints using the GRPC protocol.

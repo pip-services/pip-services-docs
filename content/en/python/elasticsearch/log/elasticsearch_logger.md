@@ -12,11 +12,11 @@ description: >
 
 ### Description
 
-The ElasticSearchLogger class allows you to create loggers that dump execution logs to the ElasticSearch service.
+The ElasticSearchLogger class allows you to create loggers that dump execution logs to an ElasticSearch service.
 
 Important points
 
-- ElasticSearch is a popular search index. It is often used to store and index execution logs by itself or as a part of ELK (ElasticSearch - Logstash - Kibana) stack.
+- Elasticsearch is a popular search index. It is often used to store and index execution logs by itself or as a part of ELK (ElasticSearch - Logstash - Kibana) stack.
 - Authentication is not supported in this version.
 
 #### Configuration parameters
@@ -36,7 +36,7 @@ Important points
 - **max_cache_size**: maximum number of messages stored in this cache (default: 100)
 - **index**: ElasticSearch index name (default: "log")
 - **date_format**: date format used to create the index name. Eg. log-YYYYMMDD (default: "YYYYMMDD").
-- **daily**: True to create a new index every day by adding date suffix to the index name (default: False)
+- **daily**: True to create a new index every day by adding a date suffix to the index name (default: False)
 - **reconnect**: reconnect timeout in milliseconds (default: 60 sec)
 - **timeout**: invocation timeout in milliseconds (default: 30 sec)
 - **max_retries**: maximum number of retries (default: 3)
@@ -61,11 +61,11 @@ Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -73,11 +73,11 @@ Closes component and frees used resources.
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### open
@@ -85,7 +85,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### _save

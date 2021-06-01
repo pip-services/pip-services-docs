@@ -47,11 +47,17 @@
 
 
 .btn-group {
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 1rem 0 1rem 0;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem 0 1rem 0;
+
+    @include media-breakpoint-down(sm) {
+        .btn {
+            padding: 0.175rem 0.40rem;
+        }
+    }
 }
 
 .td-content {

@@ -24,7 +24,7 @@ Performance, resilience and data integrity are a priority in microservice develo
 - Console and GUI runners to execute benchmarks
 
 
-<div class="btn-group" role="group" aria-label="Basic example">
+<div class="btn-group" role="group" aria-label="Lnguage selector">
   <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
   <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
   <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>

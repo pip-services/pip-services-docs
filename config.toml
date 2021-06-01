@@ -121,6 +121,16 @@ disableKinds = ["taxonomy", "term"]
     name = "Extras"
     url = "extras/"
     weight = 80
+[[menu.main]]
+    identifier = "Get help"
+    name = "Get help"
+    url = "get_help/"
+    weight = 90
+[[menu.main]]
+    identifier = "contribute"
+    name = "contribute"
+    url = "contribute/"
+    weight = 100
 #[[menu.main]]
   #  identifier = "Get Started"
   #  name = "Get Started"

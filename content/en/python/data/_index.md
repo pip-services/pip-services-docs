@@ -1,11 +1,24 @@
 
 ---
 type: docs
-title: "Data module"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
+title: "Container module"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 no_list: true
-description: >
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.
+description: > 
+    IoC container for Python 
+
+
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides an inversion-of-control (IoC) container to facilitate the development of services and applications composed of loosely coupled components.
+
+
+    The module containes a basic in-memory container that can be embedded inside a service or application, or can be run by itself.
+    The second container type can run as a system level process and can be configured via command line arguments.
+    Also it can be used to create docker containers.
+
+
+    The containers can read configuration from JSON or YAML files use it as a recipe for instantiating and configuring components.
+    Component factories are used to create components based on their locators (descriptor) defined in the container configuration.
+    The factories shall be registered in containers or dynamically in the container configuration file.
 ---
 
 Important points

@@ -25,17 +25,17 @@ Creates a new instance of the JSON file persistence component.
 
 > JsonFilePersister(path: str = None)
 
-- **path**: str - (optional) a path to the file where the data is stored.
+- **path**: str - (optional) path to the file where the data is stored.
 
 
 ### Properties
 
 #### path
-Gets the file path where data is stored.
+Gets the file path where the data is stored.
 
 > path(): str
 
-- **returns**: str - file path where data is stored.
+- **returns**: str - file path where the data is stored.
 
 Sets the file path where data is stored.
 

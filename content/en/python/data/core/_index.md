@@ -14,10 +14,10 @@ description: >
 ### Interfaces
 
 #### [IFilteredPageReader](ifiltered_page_reader)
-Interface for data processing components that can retrieve a page of data items by a filter.
+Interface for data processing components that can retrieve a page of data items by using a filter.
 
 #### [IFilteredReader](ifiltered_reader)
-Interface for data processing components that can retrieve a list of data items by filter.
+Interface for data processing components that can retrieve a list of data items by using a filter.
 
 #### [IGetter](igetter)
 Interface for data processing components that can get data items.

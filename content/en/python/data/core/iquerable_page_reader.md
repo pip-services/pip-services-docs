@@ -21,5 +21,5 @@ Gets a page of data items using a query string.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **query**: Optional[str] - (optional) query string
 - **paging**: Optional[[PagingParams](../../../commons/data/paging_params)] - (optional) paging parameters
-- **sort**: Optional[[SortParams](../../../commons/data/sort_params)] - (optional) sort parameters
+- **sort**: Optional[[SortParams](../../../commons/data/sort_params)] - (optional) sorting parameters
 - **returns**: [DataPage](../../../commons/data/data_page) - list of items

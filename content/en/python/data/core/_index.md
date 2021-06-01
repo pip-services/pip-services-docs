@@ -26,7 +26,7 @@ Interface for data processing components that can get data items.
 Interface for data processing components that load data items.
 
 #### [IPartialUpdater](ipartial_updater)
-Interface for data processing components to update data items partially.
+Interface for data processing components used to update data items partially.
 
 #### [IQuerablePageReader](iquerable_page_reader)
 Interface for data processing components that can query a page of data items.

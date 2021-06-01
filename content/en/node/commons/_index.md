@@ -32,7 +32,7 @@ The module contains the following packages:
 
 Install the NPM package as
 ```bash
-npm install pip-services3-commons-node --save
+npm install pip-services3-commons-nodex --save
 ```
 
 Then you are ready to start using the Pip.Services patterns to augment your backend code.

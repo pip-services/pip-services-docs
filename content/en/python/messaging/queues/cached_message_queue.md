@@ -82,7 +82,7 @@ Unsubscribes from the message broker.
 #### clear
 Clears component state.
 
-> `public` clear(correlation_id: Optional[str])
+> clear(correlation_id: Optional[str])
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
@@ -151,7 +151,7 @@ Reads the current number of messages in the queue to be delivered.
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> `public` receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
+> receive(correlation_id: Optional[str], wait_timeout: int): [MessageEnvelope](../message_envelope)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **wait_timeout**: int - timeout in milliseconds to wait for a message to come.

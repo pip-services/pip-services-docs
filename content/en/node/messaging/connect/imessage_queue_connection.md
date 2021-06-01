@@ -7,28 +7,32 @@ description: >
     Defines an interface for message queue connections
 ---
 
-### Methods
+### Description
+
+The IMessageQueueConnection interface is used to create message queue connections.
+
+### Instance methods
 
 #### createQueue
 Creates a message queue.
-If connection doesn't support this function it exists without error.
+If connection doesn't support this function, it exits without error.
 
-> `public` createQueue(name: string): Promise\<void\>
+> createQueue(name: string)
 
-- **name**: string - the name of the queue to be created.
+- **name**: string - name of the queue to be created.
 
 #### deleteQueue
 Deletes a message queue.
-If connection doesn't support this function it exists without error.
+If connection doesn't support this function, it exits without error.
 
-> `public` deleteQueue(name: string): Promise\<void\>
+> deleteQueue(name: string)
 
-- **name**: string - the name of the queue to be deleted.
+- **name**: string - name of the queue to be deleted.
 
 #### readQueueNames
-Reads a list of registered queue names. If connection doesn't support this function returnes an empty list.
+Reads a list of registered queue names. If connection doesn't support this function returns an empty list.
 
-> `public` readQueueNames(): Promise<string[]>
+> readQueueNames(): Promise<string[]>
 
-- **returns**: Promise<string[]> - a list with registered queue names.
+- **returns**: Promise<string[]> - list with registered queue names.
 

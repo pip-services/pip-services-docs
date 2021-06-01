@@ -7,55 +7,78 @@ description: >
     Message queue that caches received messages in memory to allow peek operations
     that may not be supported by the undelying queue.
  
-    This queue is users as a base implementation for other queues
 ---
 
 **Extends:** [MessageQueue](../message_queue) 
+**Implements:** [ICleanable](../../../commons/run/icleanable) 
 
-**Implements:** [ICleanable](../../../commons/run/icleanable)
+### Description
 
-See also [MessageQueue](../message_queue)
+The CachedMessageQueue class allows you to create message queues that cache received messages in memory, to allow peek operations that may not be supported by the undelying queue.
+
+Important points
+
+- This queue is used as a base implementation for other queues.
 
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(name?: string, capabilities?: [MessagingCapabilities](../messaging_capabilities)): [CachedMessageQueue]()
+> constructor(name?: string, capabilities?: [MessagingCapabilities](../messaging_capabilities))
 
-- **name**: string - (optional) a queue name
-- **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) a capabilities of this message queue
+- **name**: string - (optional) queue name
+- **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) capabilities of the message queue
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _autoSubscribe
-TODO: add description property  
+Boolean variable indicating whether a message queue auto-subscribes or not.  
 
-> `protected` _autoSubscribe: boolean
+> `protected` **_autoSubscribe**: boolean
 
 #### _messages
-TODO: add description property  
+List of messages in a queue. 
 
 > `protected` **_messages**: [MessageEnvelope](../message_envelope)[]
 
 #### _receiver
-TODO: add description property  
+Message receiver.
 
 > `protected` **_receiver**: [IMessageReceiver](../imessage_receiver)
 
 </span>
 
-### Methods
+### Abstract methods
+
+#### subscribe
+Subscribes to the message broker.
+
+> `abstract` subscribe(correlationId: string): Promise\<void\>
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+
+
+#### unsubscribe
+Unsubscribes from the message broker.
+
+> `abstract` unsubscribe(correlationId: string): Promise\<void\>
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+
+
+
+### Instance methods
 
 #### clear
 Clears component state.
 
 > `public` clear(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -63,20 +86,20 @@ Configures component by passing configuration parameters.
 
 #### endListen
 Ends listening for incoming messages.
-When this method is call [listen](#listen) unblocks the thread and execution continues.
+When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > `public` endListen(correlationId: string): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### listen
-Listens for incoming messages and blocks the current thread until queue is closed.
+Listens for incoming messages and blocks the current thread until the queue is closed.
 See [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > `public` listen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - a receiver to receive incoming messages.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### open
@@ -84,7 +107,7 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### peek
@@ -93,8 +116,8 @@ If there are no messages available in the queue it returns null.
 
 > `public` peek(correlationId: string): Promise<[MessageEnvelope](../message_envelope)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)> - a peeked message or **null**.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise<[MessageEnvelope](../message_envelope)> - peeked message or **null**.
 
 
 #### peekBatch
@@ -103,52 +126,37 @@ If there are no messages available in the queue it returns an empty list.
 
 Important: This method is not supported by MQTT.
 
-> `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]>
+> `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **messageCount**: number - a maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)[]> - a list with peeked messages.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **messageCount**: number - maximum number of messages to peek.
+- **returns**: Promise<[MessageEnvelope](../message_envelope)[]] - list with peeked messages.
 
-#### readMessageCount
+#### read_message_count
 Reads the current number of messages in the queue to be delivered.
 
 > `public` readMessageCount(): Promise\<number\>
 
-- **returns**: Promise\<number\> - a number of messages in the queue.
+- **returns**: number - number of messages in the queue.
 
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../message_envelope)> 
+> `public` receive(correlationId: string, waitTimeout: number): [MessageEnvelope](../message_envelope)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)> - a received message or *null*.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
+- **returns**: [MessageEnvelope](../message_envelope) - received message or *null*.
 
 
 #### sendMessageToReceiver
-TODO: add description
+Sends a message to a receiver.
 
 > `protected` sendMessageToReceiver(receiver: [IMessageReceiver](../imessage_receiver), message: [MessageEnvelope](../message_envelope)): Promise\<void\>
 
-- **receiver**: [IMessageReceiver](../imessage_receiver) - TODO: add description
-- **message**: [MessageEnvelope](../message_envelope) - TODO: add description
+- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver of the message.
+- **message**: [MessageEnvelope](../message_envelope) - message to be sent.
 
-
-#### subscribe
-Subscribes to the message broker.
-
-> `protected abstract` subscribe(correlationId: string): Promise\<void\>
-
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-
-
-#### unsubscribe
-Unsubscribes from the message broker.
-
-> `protected abstract` unsubscribe(correlationId: string): Promise\<void\>
-
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 
 ### See also

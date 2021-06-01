@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
-    TODO: add description
+    This package contains an interface used to create message queue connections.
 ---
 ---
 

@@ -13479,7 +13479,9 @@ nav .navbar-logo > svg {
   flex-direction: row;
   justify-content: center;
   padding: 1rem 0 1rem 0; }
-
+  @media (max-width: 767.98px) {
+    .btn-group .btn {
+      padding: 0.175rem 0.40rem; } }
 .td-content {
   order: 1; }
   .td-content .hide-title-link > blockquote {

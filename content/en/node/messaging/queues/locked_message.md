@@ -6,7 +6,10 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
     Data object used to store and lock incoming messages in [MemoryMessageQueue](../memory_message_queue).  
 ---
-See also [MemoryMessageQueue](../memory_message_queue)
+
+### Description
+
+The LockedMessage class allows you to create data objects used to store and lock incoming messages in [MemoryMessageQueue](../memory_message_queue).  
 
 ### Fields
 
@@ -14,7 +17,7 @@ See also [MemoryMessageQueue](../memory_message_queue)
 
 #### expirationTime
 The expiration time for the message lock. 
-If it is null then the message is not locked.
+If it is null, then the message is not locked.
 
 > `public` **expirationTime**: Date
 

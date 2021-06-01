@@ -7,8 +7,23 @@ description: >
   Callback interface to receive incoming messages.
 ---
 
+### Description
 
-**Example:**
+The IMessageReceive interface is used to receive incoming messages. 
+
+### Instance methods
+
+#### receiveMessage
+Receives an incoming message from the queue.
+
+See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
+
+> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)): Promise\<void\>
+
+- **envelope**: [MessageEnvelope](../message_envelope) - incoming message
+- **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from
+
+### Examples
 
 ```typescript
 class MyMessageReceiver implements IMessageReceiver {
@@ -20,17 +35,4 @@ let messageQueue = new MemoryMessageQueue();
 messageQueue.listen("123", new MyMessageReceiver());
 await messageQueue.open("123")
 await messageQueue.send("123", new MessageEnvelop(null, "mymessage", "ABC")); // Output in console: "ABC"
-
 ```
-
-### Methods
-
-#### receiveMessage
-Receives incoming message from the queue.
-
-See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
-
-> receiveMessage(envelope: [MessageEnvelope](../message_envelope), queue: [IMessageQueue](../imessage_queue)): Promise\<void\>
-
-- **envelope**: [MessageEnvelope](../message_envelope) - an incoming message
-- **queue**: [IMessageQueue](../imessage_queue) - a queue where the message comes from

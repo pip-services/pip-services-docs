@@ -209,13 +209,24 @@ Sends a message into the queue.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
+
+#### send_as_object
+Sends an object into the queue.
+Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_mnvelope).
+
+> `abstractmethod` send_as_object(correlation_id: Optional[str], message_type: str, message: Any)
+
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **message_type**: str - a message type
+- **message**: Any - an object value to be sent
+
 ### Instance methods
 
 #### begin_listen
 Listens for incoming messages without blocking the current thread.  
 See also [listen](#listen), [IMessageReceiver](../imessage_receiver)
 
-> beginListen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver)): void
+> begin_listen(correlation_id: Optional[str], receiver: [IMessageReceiver](../imessage_receiver))
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
@@ -262,7 +273,7 @@ Sends an object into the queue. Before sending it, the object is converted into 
 #### set_references
 Sets references to dependent components.
 
-> set_references(references: [IReferences](../../../commons/refer/ireferences)): void
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

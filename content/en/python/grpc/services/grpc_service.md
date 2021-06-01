@@ -70,7 +70,7 @@ Registers all service routes in the HTTP endpoint.
 
 This method is called by the service and must be overriden in child classes.
 
-> `abstract` register()
+> `abstractmethod` register()
 
 
 #### set_references

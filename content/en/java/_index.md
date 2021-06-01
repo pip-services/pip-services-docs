@@ -6,6 +6,14 @@ linkTitle: "Java"
 
 ### Welcome to the Pip.Services documentation site!
 
+Pip.Services Toolkit is a collection of patterns and components to simplify the development of microservice systems using multiple programming languages, and enabling deployment onto various on-premises and cloud platforms. With these patterns you can create highly customizable microservices composed of loosely coupled components that process information, persist data in relational and NoSQL databases, communicate through synchronous and asynchronous protocols, monitor performance, process errors, and much more. Moreover, Pip.Services can easily be extended and can coexist with other libraries and frameworks, thanks to its design being built on composition, not inheritance.
+
+Pip.Services is a true polyglot. At the moment, it supports 6 programming languages: .NET, Java, Node.js, Python, Golang, and Dart. Common design principles and code structures, as well as symmetric implementation allow developers to easily move from one language to another in the shortest time possible. And interoperability enables compatibility between microservices written in different languages, right out of the box.
+
+This guide will help you to learn Pip.Services and to develop your own microservices with it.
+
+<br>
+
 <div class="card-deck">
   <div class="card">
     <div class="card-body">

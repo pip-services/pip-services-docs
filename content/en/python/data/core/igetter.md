@@ -21,6 +21,6 @@ Gets a data item by its unique id.
 > get_one_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **id**: Any - id of item to be retrieved.
+- **id**: Any - id of the item to be retrieved.
 - **returns**: T - item by its id.
 

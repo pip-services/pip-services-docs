@@ -12,7 +12,7 @@ Our projects are constantly being improved and supported, striving to provide th
 
 If any questions arise while working with our products, or if you would like to share your ideas on how we could improve, please make a post on [stackoverflow.com](https://stackoverflow.com/questions/tagged/pipservice).
 
-If you would like to help the project, we recommend checking out the [“How to contribute”](https://www.pipservices.org/community/contribute) section, to familiarize yourself with coding and documentation standards adopted by our team.
+If you would like to help the project, we recommend checking out the [“How to contribute”](../contribute) section, to familiarize yourself with coding and documentation standards adopted by our team.
 
 If you’ve found a bug, report it on the GitHub repository’s bug tracking page. For any other questions, feel free to send us a [message](https://www.pipservices.org/community/contact-us).
 

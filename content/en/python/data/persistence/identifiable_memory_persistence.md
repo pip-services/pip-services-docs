@@ -17,9 +17,9 @@ The IdentifiableMemoryPersistence class allows you to create persistence compone
 
 Important points
 
-- The data items must implement [iidentifiable](../../../commons/data/iidentifiable).
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable).
 - In basic scenarios child classes shall only override **get_page_by_filter**, **get_list_by_filter** or **delete_by_filter** operations with a specific filter function. All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing cached items via this._items property and calling **save** method on updates.
+- In complex scenarios child classes can implement additional operations by accessing cached items via the this._items property and calling the **save** method on updates.
 
 #### Configuration parameters
 
@@ -90,7 +90,7 @@ Gets a data item based on its unique id.
 
 
 #### set
-Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it; otherwise, it creates a new data item.
 
 > set(correlation_id: Optional[str], item: T): T
 
@@ -110,7 +110,7 @@ Updates a data item.
 
 
 #### update_partially
-Updates only few selected fields in a data item.
+Updates only a few selected fields in a data item.
 
 > update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): T
 

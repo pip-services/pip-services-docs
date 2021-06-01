@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The ComponentConfig class allows you to configure a component inside a container.
+The ComponentConfig class allows you to configure a component residing inside a container.
 
 Important points
 
@@ -50,5 +50,5 @@ Creates a new instance of ComponentConfig based on a section from a container co
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [ComponentConfig]()
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - component's parameters from container configuration
+- **config**: [ConfigParams](../../../commons/config/config_params) - component's parameters from a container configuration
 - **returns**: [ComponentConfig]() - created ComponentConfig

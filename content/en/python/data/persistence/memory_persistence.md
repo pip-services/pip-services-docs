@@ -4,7 +4,7 @@ title: "MemoryPersistence"
 linkTitle: "MemoryPersistence"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 description: >
-    Abstract persistence component that stores data in memory.
+    Persistence component that stores data in memory.
 
 ---
 
@@ -18,7 +18,7 @@ The MemoryPersistence class allows you to create persistence components that sto
 Important points
     
 - This is the most basic persistence component that is only able to store data items of any type. 
-- Specific CRUD operations over the data items must be implemented in child classes by accessing <code>this._items</code> property and calling [[save]] method.
+- Specific CRUD operations over the data items must be implemented in child classes by accessing the this._items property and calling the **save** method.
 - The component supports loading and saving items from another data source. This allows to use it as a base class for file and other types of persistence components that cache all data in memory. 
 
 #### Configuration parameters
@@ -103,8 +103,8 @@ Creates a data item.
 
 #### delete_by_filter
 Deletes data items that match to a given filter.
-This method shall be called by a public delete_by_filter method from a child class that
-receives FilterParams and converts them into a filter function.
+This method shall be called by a public **delete_by_filter** method from a child class that
+receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
 
@@ -115,8 +115,8 @@ receives FilterParams and converts them into a filter function.
 #### get_count_by_filter
 Gets the number of items retrieved by a given filter.
 
-This method shall be called by a public get_count_by_filter method from a child class that
-receives FilterParams and converts them into a filter function.
+This method shall be called by a public **get_count_by_filter** method from a child class that
+receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
 
@@ -128,7 +128,7 @@ receives FilterParams and converts them into a filter function.
 #### get_list_by_filter
 Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **get_list_by_filter** method from child class that
+This method shall be called by a public **get_list_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]:
@@ -155,7 +155,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### get_page_by_filter
 Gets a page of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **get_page_by_filter** method from child class that
+This method shall be called by a public **get_page_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: [PagingParams](../../../commons/data/paging_params), sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)
@@ -173,7 +173,7 @@ Checks if the component is open.
 
 > is_open(): bool
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### load

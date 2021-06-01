@@ -13473,6 +13473,13 @@ nav .navbar-logo > svg {
   .h1 {
     font-size: 1.9125rem; } }
 
+.btn-group {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem 0 1rem 0; }
+
 .td-content {
   order: 1; }
   .td-content .hide-title-link > blockquote {

@@ -5,11 +5,9 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
-    Todo: Rewrite the description.
+    This package contains a container factory class used to create default container components, such as loggers, counters, caches, locks and more.
 
 
-    The default container factory provides generic functionality on-demand, 
-    such as logging and performance monitoring.
 ---
 ---
 
@@ -18,6 +16,6 @@ description: >
 ### Classes
 
 #### [DefaultContainerFactory](default_container_factory)
-Creates default container components (loggers, counters, caches, locks, etc.) by their descriptors.
+Creates default container components (loggers, counters, caches, locks, etc.) based on their descriptors.
 
 </div>

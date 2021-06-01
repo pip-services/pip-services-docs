@@ -7,16 +7,19 @@ description: >
     Interface for data processing components that can create, update and delete data items.
 ---
 
+### Description
 
-### Methods
+The IWriter interface is used by data processng components that can create, update and delete data items.
+
+### Instance methods
 
 #### create
 Creates a data item.
 
 > create(correlation_id: Optional[str], item: T): T
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be created.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: T - item to be created.
 - **returns**: T - created item
 
 
@@ -25,8 +28,8 @@ Updates a data item.
 
 > update(correlation_id: Optional[str], item: T): T
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **item**: T - an item to be updated.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **item**: T - item to be updated.
 - **returns**: T - updated item
 
 

@@ -5,7 +5,6 @@ linkTitle: "ComponentConfig"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
     Configuration of a component inside a container.
-
    
 ---
 

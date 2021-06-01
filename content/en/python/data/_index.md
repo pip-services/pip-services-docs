@@ -1,4 +1,3 @@
-
 ---
 type: docs
 title: "ElasticSearch module"
@@ -13,10 +12,7 @@ description: >
 ---
 
 
-Important points
-
-The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only a minimal set of operations. 
-The second kind is the so called "identifieable" persistence that works with "identifable" data objects, i.e. objects that have unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
+### Packages
     
 ### Packages
 

@@ -46,7 +46,13 @@
 // }
 
 
-
+.btn-group {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+}
 
 .td-content {
     order: 1;

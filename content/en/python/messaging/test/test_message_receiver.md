@@ -50,11 +50,11 @@ Clears all received messagers.
 
 
 #### receive_message
-Receives incoming message from the queue.
+Receives an incoming message from the queue.
 
 See also [MessageEnvelope](../../queues/message_envelope), [IMessageQueue](../../queues/imessage_queue)
 
 > receive_message(envelope: [MessageEnvelope](../../queues/message_envelope), queue: [IMessageQueue](../../queues/imessage_queue))
 
 - **envelope**: [MessageEnvelope](../../queues/message_envelope) - incoming message
-- **queue**: [IMessageQueue](../../queues/imessage_queue) - a queue where the message comes from
+- **queue**: [IMessageQueue](../../queues/imessage_queue) - queue where the message comes from

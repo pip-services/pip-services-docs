@@ -5,7 +5,7 @@ linkTitle: "Core"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 description: >
-    Contains interfaces for various design patterns that work with data.
+    This package contains interfaces for data processing components.
 ---
 ---
 

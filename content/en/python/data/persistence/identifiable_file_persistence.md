@@ -29,7 +29,36 @@ See also [MemoryPersistence](../memory_persistence)
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) (../../../components/log/ilogger) components to pass log messages
 
-**Example:**
+
+### Constructors
+Creates a new instance of the persistence.
+
+> IdentifiableFilePersistence(persister: Optional[[JsonFilePersister](../json_file_persister)] = None)
+
+- **persister**: [JsonFilePersister](../json_file_persister) - (optional) a persister component that loads and saves data from/to flat file.
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _persister
+JSON file persister.
+> **_persister**: [JsonFilePersister](../json_file_persister)
+
+</span>
+
+
+### Instance methods
+
+#### configure
+Configures component by passing configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+### Examples
+
 ```python
 class MyFilePersistence(IdentifiableFilePersistence):
     def __init__(self, path):
@@ -47,33 +76,6 @@ class MyFilePersistence(IdentifiableFilePersistence):
     persistence.delete_by_id("123", "1")
 
 ```
-
-### Constructors
-Creates a new instance of the persistence.
-
-> IdentifiableFilePersistence(persister: Optional[[JsonFilePersister](../json_file_persister)] = None)
-
-- **persister**: [JsonFilePersister](../json_file_persister) - (optional) a persister component that loads and saves data from/to flat file.
-
-### Fields
-
-<span class="hide-title-link">
-
-#### _persister
-TODO add description
-> **_persister**: [JsonFilePersister](../json_file_persister)
-
-</span>
-
-
-### Methods
-
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 ### See also

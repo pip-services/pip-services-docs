@@ -19,6 +19,6 @@ Updates only few selected fields in a data item.
 > update_partially(correlation_id: Optional[str], id: Any, data: [AnyValueMap](../../../commons/data/any_value_map)): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **id**: Any - id of data item to be updated.
+- **id**: Any - id of the data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **returns**: T - updated item

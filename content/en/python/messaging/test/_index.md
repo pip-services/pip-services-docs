@@ -5,7 +5,7 @@ linkTitle: "Test"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 description: >
-    TODO add description
+    This package contains a class used to test message reception.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [TestMessageReceiver](test_message_receiver)
-TODO add description
+Used to receive a message, obtain a list of received messages and the number of received messages, and to clear the message list. 
 
 
 </div>

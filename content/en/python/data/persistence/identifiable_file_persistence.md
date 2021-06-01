@@ -17,15 +17,15 @@ The IdentifiableFilePersistence class allows you to create persistence component
 
 Important points
 
-- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override **get_page_by_filter**, **get_list_by_filter** or **delete_by_filter** operations with specific filter function. All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing cached items via self._items property and calling **save** method on updates.
+- The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override **get_page_by_filter**, **get_list_by_filter** or **delete_by_filter** operations with a specific filter function. All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing cached items via the self._items property and calling the **save** method on updates.
 
 #### Configuration parameters
 
 - **path**: path to the file where data is stored
     - **options**:
-    - **max_page_size**: Maximum number of items returned in a single page (default: 100)
+    - **max_page_size**: maximum number of items returned in a single page (default: 100)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) (../../../components/log/ilogger) components to pass log messages

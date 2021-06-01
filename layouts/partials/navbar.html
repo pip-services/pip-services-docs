@@ -5,14 +5,14 @@
 	<div class="collapse navbar-collapse" id="navbarOffcanvas">
 		<ul class="navbar-nav mr-auto ">
 			<li class="nav-item m-auto d-md-block d-none">
-				<a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+				<a class="navbar-brand" href="https://www.pipservices.org/">
 					<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo.svg" }}{{ ( . |
 						minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title
 						}}</span>
 				</a>
 			</li>
 			<li class="nav-item m-auto d-md-none">
-				<a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
+				<a class="navbar-brand" href="https://www.pipservices.org/">
 					<span class="navbar-logo">{{ if .Site.Params.ui.navbar_logo }}{{ with resources.Get "icons/logo-small.svg" }}{{
 						( . |
 						minify).Content | safeHTML }}{{ end }}{{ end }}</span><span class="font-weight-semi-bold">{{ .Site.Title

@@ -49,7 +49,7 @@ Clears all received messagers.
 - **correlationId**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
-### receive_message
+#### receive_message
 Receives incoming message from the queue.
 
 See also [MessageEnvelope](../../queues/message_envelope), [IMessageQueue](../../queues/imessage_queue)

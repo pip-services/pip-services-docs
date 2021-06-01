@@ -7,14 +7,17 @@ description: >
     Interface for data processing components that save data items.
 ---
 
+### Description
 
-### Methods
+The ISaver interface is used by data processing components that save data items.
+
+### Instance methods
 
 #### save
 Saves given data items.
 
 > save(correlation_id: Optional[str], items: List[T])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **items**: List[T] - a list of items to save.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **items**: List[T] - list of items to save.
 

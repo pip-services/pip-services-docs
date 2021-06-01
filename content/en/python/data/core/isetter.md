@@ -19,6 +19,6 @@ Sets a data item. If the data item exists it updates it, otherwise it creates a 
 > set(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - a item to be set.
+- **item**: T - item to be set.
 - **returns**: T - updated item
 

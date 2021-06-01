@@ -8,15 +8,18 @@ description: >
     and caches them in memory.
 
 
-    This is the most basic persistence component that is only
-    able to store data items of any type. Specific CRUD operations
-    over the data items must be implemented in child classes by
-    accessing self._items property and calling *save* method.
 ---
 
 **Implements:** [MemoryPersistence](../memory_persistence), [IConfigurable](../../../commons/config/iconfigurable)
 
-See also [MemoryPersistence](../memory_persistence), [JsonFilePersister](../json_file_persister)
+### Description
+
+The FilePersistence class allows you to create persistence components that store data in flat files and chache the in memory.
+
+Important points
+
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing self._items property and calling *save* method.
 
 #### Configuration parameters
 - **path**: path to the file where data is stored
@@ -24,7 +27,37 @@ See also [MemoryPersistence](../memory_persistence), [JsonFilePersister](../json
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 
-**Example:**
+
+
+### Constructors
+Creates a new instance of the file persistence component.
+
+> FilePersistence(persister: Optional[[JsonFilePersister](../json_file_persister)] = None)
+
+- **persister**: [JsonFilePersister](../json_file_persister) - (optional) persister component that loads and saves data from/to a flat file.
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _persister
+JSON file persister.
+> **_persister**: [JsonFilePersister](../json_file_persister)
+
+</span>
+
+
+### Instance methods
+
+#### configure
+Configures the component by passing its configuration parameters.
+
+> configure(config: [ConfigParams](../../../commons/config/config_params))
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+### Examples
+
 ```python
 class MyJsonFilePersistence(FilePersistence):
     def __init__(self, path):
@@ -36,33 +69,6 @@ class MyJsonFilePersistence(FilePersistence):
         return item
 
 ```
-
-### Constructors
-Creates a new instance of the persistence.
-
-> FilePersistence(persister: Optional[[JsonFilePersister](../json_file_persister)] = None)
-
-- **persister**: [JsonFilePersister](../json_file_persister) - (optional) a persister component that loads and saves data from/to flat file.
-
-### Fields
-
-<span class="hide-title-link">
-
-#### _persister
-TODO add description
-> **_persister**: [JsonFilePersister](../json_file_persister)
-
-</span>
-
-
-### Methods
-
-#### configure
-Configures component by passing configuration parameters.
-
-> configure(config: [ConfigParams](../../../commons/config/config_params))
-
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 ### See also

@@ -22,7 +22,7 @@ The DefaultContainerFactory class allows you to create factories used to create 
 6. [DefaultCredentialStoreFactory](../../../components/auth/default_credential_store_factory)
 7. [DefaultDiscoveryFactory](../../../components/connect/default_discovery_factory)
 8. [DefaultTestFactory](../../../components/test/default_test_factory)
-9. [DefaultTracerFactory] (../../../components/trace/default_tracer_factory) 
+9. [DefaultTracerFactory](../../../components/trace/default_tracer_factory) 
 
 ### Constructors
 Creates a new instance of the factory and sets nested factories.

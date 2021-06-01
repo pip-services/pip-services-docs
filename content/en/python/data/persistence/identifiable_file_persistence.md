@@ -6,19 +6,20 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 description: >
     Abstract persistence component that stores data in flat files
     and implements a number of CRUD operations over data items with
-    unique ids. The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
-
-    In basic scenarios child classes shall only override
-    **get_page_by_filter**, **get_list_by_filter** or **delete_by_filter**
-    operations with specific filter function. All other operations can be
-    used out of the box. In complex scenarios child classes can implement
-    additional operations by accessing cached items via self._items
-    property and calling **save** method on updates.
+    unique ids. 
 ---
 
 **Implements:** [IdentifiableMemoryPersistence](../identifiable_memory_persistence), [iidentifiable](../../../commons/data/iidentifiable)
 
-See also [MemoryPersistence](../memory_persistence)
+### Description
+
+The IdentifiableFilePersistence class allows you to create persistence components that store data in flat files and implement a number of CRUD operations over data items with unique ids.
+
+Important points
+
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override **get_page_by_filter**, **get_list_by_filter** or **delete_by_filter** operations with specific filter function. All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing cached items via self._items property and calling **save** method on updates.
 
 #### Configuration parameters
 

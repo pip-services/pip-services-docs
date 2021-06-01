@@ -4,23 +4,18 @@ title: "Data module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 no_list: true
 description: > 
-    Persistence components for Python 
+        This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.
 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic 	interfaces for data access components as well as abstract implementations for in-memory and file persistence.
-
-
-    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and   provides only minimal set of operations. 
-    The second kind is so called "identifieable" persistence with works with "identifable" data objects, i.e. objects that have unique  ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
+    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only a minimal set of operations. 
+    The second kind is the so called "identifieable" persistence that works with "identifable" data objects, i.e. objects that have unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
 ---
 
 
-### Modules
+### Packages
 
 The module contains the following packages:
 
-The module contains the following packages:
-* [**Core**](core) - generic interfaces for data access components. 
+* [**Core**](core) - interfaces for data access components. 
 * [**Persistence**](persistence) - in-memory and file persistence components, as well as JSON persister class.
 
 
@@ -31,7 +26,7 @@ Install the Python package as
 pip install pip_services3_data
 ```
 
-As an example, lets implement persistence for the following data object.
+As an example, lets implement persistence for the following data object:
 
 ```python
 class Dummy(IStringIdentifiable):
@@ -41,7 +36,7 @@ class Dummy(IStringIdentifiable):
         self.content = content
 ```
 
-Our persistence component shall implement the following interface with a basic set of CRUD operations.
+Our persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```python
 class IMyPersistence(ABC):
@@ -68,7 +63,7 @@ class IMyPersistence(ABC):
 
 To implement in-memory persistence component you shall inherit `IdentifiableMemoryPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `get_page_by_filter` method with a custom filter function.
-And implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
+And then, implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
 
 ```python
 from pip_services3_commons.data import FilterParams, DataPage, PagingParams
@@ -130,7 +125,7 @@ class MyFilePersistence(MyMemoryPersistence):
         self._persister.configure(config)
 ```
 
-Configuration for your microservice that includes memory and file persistence may look the following way.
+Furthermore, the configuration of your microservice that includes memory and file persistence may look the following way:
 
 ```yaml
 ...

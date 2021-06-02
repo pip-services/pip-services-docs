@@ -180,7 +180,7 @@ Defines a database schema via auto create objects or convenience methods.
 
 #### delete_by_filter
 Deletes data items that match to a given filter.
-This method shall be called by a public [delete_by_filter](#delete_by_filter) method from a child class that
+This method shall be called by a public **delete_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
@@ -246,7 +246,7 @@ Generates a list of column parameters
 #### get_count_by_filter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from a child class that
+This method shall be called by a public **get_count_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
@@ -259,7 +259,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### get_list_by_filter
 Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from a child class that
+This method shall be called by a public **get_list_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
@@ -274,7 +274,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### get_one_random
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public [get_one_random](#get_one_random) method from a child class
+This method shall be called by a public **get_one_random** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_one_random(correlation_id: Optional[str], filter: Any): T
@@ -287,7 +287,7 @@ filter: Any
 #### get_page_by_filter
 Gets a page of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from a child class that
+This method shall be called by a public **get_page_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)

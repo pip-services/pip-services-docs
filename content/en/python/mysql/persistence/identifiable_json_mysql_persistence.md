@@ -82,10 +82,10 @@ Converts object value from internal to public format.
 #### _ensure_table
 Adds DML statement to automatically create a JSON(B) table
 
-> _ensure_table(id_type: str = 'TEXT', data_type: str = 'JSONB')
+> _ensure_table(id_type: str = 'VARCHAR(32)', data_type: str = 'JSON')
 
-- **id_type**: str - type of the id column (default: TEXT)
-- **data_type**: str - type of the data column (default: JSONB)
+- **id_type**: str - type of the id column (default: VARCHAR(32))
+- **data_type**: str - type of the data column (default: JSON)
 
 
 #### update_partially

@@ -1,10 +1,12 @@
 ---
 type: docs
-title: "MySqlPersistence<T>"
-linkTitle: "MySqlPersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+title: "PostgresPersistence"
+linkTitle: "PostgresPersistence"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
-    Abstract persistence component that stores data in MySQL using the official driver.
+    Abstract persistence component that stores data in PostgreSQL using the official driver.
+
+
     
 ---
 
@@ -12,22 +14,23 @@ description: >
 
 ### Description
 
-The MySqlPersistence class allows you to create persistence components that store data in MySQL databases using the official driver.
+The PostgresPersistence class allows you to create persistence components that store data in PostgreSQL using the official driver.
 
 Important points
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
 
 #### Configuration parameters
 
-- **collection**: (optional) MySQL collection name
-**connection(s)**:
+- **collection**: (optional) PostgreSQL collection name
+**connection(s)**:    
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
 - **port**: port number (default: 27017)
 - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:
+**credential(s)**:    
 - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
 - **username**: (optional) username
 - **password**: (optional) user's password
@@ -35,13 +38,13 @@ Important points
 **options**:
 - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
 - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials
 
 
 ### Constructors
@@ -51,14 +54,13 @@ Creates a new instance of the persistence component.
 
 - **tableName**: string - (optional) table name.
 
-
 ### Fields
 
 <span class="hide-title-link">
 
-#### _databaseName
-The MySql table object.
-> `protected` **_databaseName**: string
+#### _table_name
+The PostgreSQL table object.
+> `protected` **_table_name**: string
 
 #### _dependencyResolver
 The dependency resolver.
@@ -69,69 +71,61 @@ The logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The MySql connection component.
-> `protected` **_connection**: [MySqlConnection](../../connect/mysql_connection) 
+The PostgreSQL connection component.
+> `protected` **_connection**: [PostgresConnection](../../connect/postgres_connection) 
 
 #### _client
-The MySql connection pool object.
+The PostgreSQL connection pool object.
 > `protected` **_client**: any 
 
 #### _databaseName 
-The MySql database name.
+The PostgreSQL database name.
 > `protected` **_databaseName**: string
 
-#### _tableName 
-The MySQL table object.
-
-> `protected` _tableName: string
+#### _tableName
+The PostgreSQL table object.
+> `protected` **_tableName**: string
 
 #### _maxPageSize
-The maximum number of records to return from the database per request.
-> `protected` **_maxPageSize**: number = 100
+The maximum number of records to return from the database.
+> `protected` **_maxPageSize** = 100
 
 </span>
 
 
 ### Instance methods
 
-#### autoCreateObject
-Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
-
-> `protected` autoCreateObject(schemaStatement: string)
-
-- **schemaStatement**: string - statement to be added to the schema
-
 #### clear
 Clears a component's state.
 
 > `public` clear(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string- object to convert from the public partial format.
 
 #### clearSchema
-Clears all auto-created objects
+Clears all auto-created objects.
 
 > `protected` clearSchema(): void
 
 
 #### close
-Closes a component and frees the used resources.
+Closes the component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string- object to convert from the public partial format.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **config:**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **correlationId**: string- the object to convert from the public partial format.
 
 
 #### convertFromPublic
-Converts object value from public to internal format.
+Converts an object value from public to internal format.
 
 > `protected` convertFromPublic(value: any): any
 
@@ -140,7 +134,7 @@ Converts object value from public to internal format.
 
 
 #### convertToPublic
-Converts object value from internal to public format.
+Converts an object value from internal to public format.
 
 > `protected` convertToPublic(value: any): any
 
@@ -159,7 +153,8 @@ Creates a data item.
 
 
 #### createSchema
-Checks if a table exists and if not, it creates the necessary database objects.
+Checks if a table exists and if it doesn't, it creates the necessary database objects.
+
 > `protected` createSchema(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -173,19 +168,19 @@ Defines database schema via auto create objects or convenience methods.
 
 #### deleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **delete_by_filter** method from child class that
+This method shall be called by a public **deleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> `protected` deleteByFilter(correlationId: string, filter: any): Promise\<void\>
+> deleteByFilter(correlationId: string, filter: any): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) filter function to filter items.
+- **filter**: any - (optional) filter function used to filter items.
 
 
 #### ensureIndex
 Adds index definition to create it on opening.
 
-> `protected` ensureIndex(keys: any, options)
+> `protected` ensureIndex(name: string, keys: any, options?: any): void
 
 - **keys**: any - index keys (fields)
 - **options**: any - index options
@@ -200,7 +195,7 @@ Adds a statement to schema definition.
 
 
 #### generateColumns
-Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
+Generates a list of column names to use in SQL statements like: "column1,column2,column3".
 
 > `protected` generateColumns(values: any): string
 
@@ -209,7 +204,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
+Generates a list of value parameters to use in SQL statements like: "%s,%s,%s".
 
 > `protected` generateParameters(values: any): string
 
@@ -218,7 +213,7 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 
 #### generateSetParameters
-Generates a list of column sets to use in UPDATE statements like:  *column1=$1,column2=$2*.
+Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s.
 
 > `protected` generateSetParameters(values: any): string
 
@@ -239,65 +234,65 @@ Generates a list of column parameters.
 #### getCountByFilter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **get_count_by_filter** method from the child class that
+This method shall be called by a public **getCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getCountByFilter(correlationId: string, filter: any): Promise\<number\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) JSON object filter
+- **filter**: any - (optional) JSON object filter.
 - **returns**: Promise\<number\> - number of filtered items.
 
 
 #### getListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **get_list_by_filter** method from a child class that
+This method shall be called by a public **getListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getListByFilter(correlationId: string, filter: any, sort: any, select: any): Promise\<T[]\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: any - (optional) filter function to filter items
 - **sort**: any - (optional) sorting parameters
 - **select**: any - (optional) projection parameters (not used yet)
-- **returns**: Promise\<T[]\> - data list of results by filter.
+- **returns**: Promise\<T[]\> - data list of filtered results.
 
 
 #### getOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public **get_one_random** method from a child class
+This method shall be called by a public getOneRandom method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 filter: any
-- **returns**: Promise\<T\> - a random item.
+- **returns**: Promise\<T\> - random item.
 
 
 #### getPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **get_page_by_filter** method from the a child class that
+This method shall be called by a public **getPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getPageByFilter(correlationId: string, filter: any, paging: PagingParams, sort: any, select: any): Promise<[DataPage<T>](../../../commons/data/data_page)>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) filter for JSON objects.
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **filter**: any - (optional) filter for JSON objects
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: any - (optional) sorting JSON object
 - **select**: any - (optional) projection JSON object
-- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - a data page of result by filter
+- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - data page with filtered result
 
 
 
 #### isOpen
 Checks if the component is opened.
 
-> `public` isOpen(): boolean
+> isOpen(): boolean
 
 - **returns**: boolean - True if the component has been opened and False otherwise.
 
@@ -311,7 +306,7 @@ Opens the component.
 
 
 #### quoteIdentifier
-Adds single quotes to a string.
+Adds a single quote to each side of the string.
 
 > `protected` quoteIdentifier(value: string): string
 
@@ -327,7 +322,7 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### unsetReferences
+#### unset_references
 Unsets (clears) previously set references to dependent components.
 
 > `public` unsetReferences(): void
@@ -335,36 +330,51 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MyMySqlPersistence extends MySqlPersistence<MyData> {
-    public constructor() {
-        base("mydata");
-    }
+class MyPostgresPersistence extends PostgresPersistence<MyData> {
+  public constructor() {
+      base("mydata");
+  }
 
-    public getByName(correlationId: string, name: string, callback: (err, item) => void): void {
-      let criteria = { name: name };
-      this._model.findOne(criteria, callback);
-    }); 
+  public getByName(correlationId: string, name: string): Promise<MyData> {
+    let criteria = { name: name };
+    return new Promise((resolve, reject) => {
+      this._model.findOne(criteria, (err, item) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
+     });
+  }); 
 
-    public set(correlatonId: string, item: MyData, callback: (err) => void): void {
-      let criteria = { name: item.name };
-      let options = { upsert: true, new: true };
-      this._model.findOneAndUpdate(criteria, item, options, callback);
-    }
+  public set(correlatonId: string, item: MyData): Promise<MyData> {
+    let criteria = { name: item.name };
+    let options = { upsert: true, new: true };
+    
+    return new Promise((resolve, reject) => {
+      this.findOneAndUpdate(criteria, item, options, (err, item) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
+     });
+  }
 }
 
-let persistence = new MyMySqlPersistence();
+let persistence = new MyPostgresPersistence();
 persistence.configure(ConfigParams.fromTuples(
     "host", "localhost",
     "port", 27017
 ));
 
-persitence.open("123", (err) => {
-     ...
-});
+await persitence.open("123");
+let item = await persistence.set("123", { name: "ABC" });
+item = await persistence.getByName("123", "ABC");
+console.log(item);   // Result: { name: "ABC" }
 
-persistence.set("123", { name: "ABC" }, (err) => {
-    persistence.getByName("123", "ABC", (err, item) => {
-        console.log(item);                   // Result: { name: "ABC" }
-    });
-});
 ```

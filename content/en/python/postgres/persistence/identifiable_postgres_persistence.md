@@ -70,10 +70,10 @@ Converts the given object from the public partial format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): Optional[T]
+> create(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **item**: Any - item to be created.
+- **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
 
@@ -120,10 +120,10 @@ Gets a data item by its unique id.
 Sets a data item. If the data item exists it updates it.
 Otherwise, it creates a new data item.
 
-> set(correlation_id: Optional[str], item: Any): Optional[T]
+> set(correlation_id: Optional[str], item: T): Optional[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **item**: Any - item to be set.
+- **item**: T - item to be set.
 - **returns**: Optional[T] - updated item
 
 

@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresConnectionResolver"
 linkTitle: "PostgresConnectionResolver"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
     Helper class that resolves PostgreSQL connection and credential parameters,
     validates them and generates a connection URI.
@@ -10,7 +10,6 @@ description: >
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
-
 
 ### Description
 
@@ -38,22 +37,17 @@ Important points
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
 
 
-### Constructors
-Creates a new instance of the connection component.
-
-> PostgresConnectionResolver()
-
 ### Fields
 
 <span class="hide-title-link">
 
-#### _connection_resolver
+#### _connectionResolver
 The connection resolver
-> **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
+> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
-#### _credential_resolver
+#### _credentialResolver
 The credential resolver
-> **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
+> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
@@ -64,7 +58,7 @@ The credential resolver
 #### configure
 Configures component by passing configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params))
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -72,15 +66,15 @@ Configures component by passing configuration parameters.
 #### resolve
 Resolves PostgreSQL config from connection and credential parameters.
 
-> resolve(correlation_id: Optional[str]): Any
+> `public` resolve(correlationId: string): Promise\<any\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Any - resolved connection config or raised error.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise\<any\> - resolved connection config or raised error.
 
 
-#### set_references
+#### setReferences
 Sets references to dependent components.
 
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

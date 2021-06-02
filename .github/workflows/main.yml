@@ -39,6 +39,5 @@ jobs:
           bucket: ${{ secrets.S3_BUCKET }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           invalidation: /
-          delete-removed: true
           no-cache: true
           private: true

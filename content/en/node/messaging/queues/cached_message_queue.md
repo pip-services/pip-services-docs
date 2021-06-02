@@ -10,6 +10,7 @@ description: >
 ---
 
 **Extends:** [MessageQueue](../message_queue) 
+
 **Implements:** [ICleanable](../../../commons/run/icleanable) 
 
 ### Description

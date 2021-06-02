@@ -9,6 +9,7 @@ description: >
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable)
+
 **Extends:** [Logger](../logger)
 
 ### Description

@@ -10,6 +10,7 @@ description: >
 ---
 
 **Extends:** [CachedCounters](../../../components/count/cached_counters)
+
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description

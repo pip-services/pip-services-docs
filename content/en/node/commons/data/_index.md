@@ -125,6 +125,6 @@ Most often this object type is used to send responses to paginated queries.
 Data transfer object to pass tokenized paging parameters for queries.
 It can be used for complex paging scenarios, like paging across multiple databases
 where the previous state is encoded in a token. The token is usually retrieved from
-the previous response. The initial request shall go with token == *None*
+the previous response. The initial request shall go with token == *null*
 
 </div>

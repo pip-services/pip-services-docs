@@ -23,7 +23,7 @@ Creates a new validation rule and sets its values
 ### Methods
 
 #### validate
-Validates the given value. None of the values set in this ExcludedRule object must exist 
+Validates the given value. null of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
 > `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void 

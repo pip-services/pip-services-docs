@@ -19,7 +19,7 @@ The IdentifiableJsonSqlServerPersistence class allows you to create persistence 
 Important points
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with an specific filter function.
+- In basic scenarios child classes shall only override [get_page_by_filter](../sqlserver_persistence/#get_page_by_filter), [get_list_by_filter](../sqlserver_persistence/#get_list_by_filter) or [delete_by_filter](../sqlserver_persistence/#delete_by_filter) operations with an specific filter function.
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
 

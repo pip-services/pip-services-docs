@@ -18,7 +18,7 @@ The IdentifiableJsonPostgresPersistence class allows you to create persistence c
 Important points
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override the [get_page_by_filter](#get_page_by_filter), [get_list_by_filter](#get_list_by_filter) or [delete_by_filter](#delete_by_filter) operations with a specific filter function.
+- In basic scenarios child classes shall only override the [get_page_by_filter](../postgres_persistence/#get_page_by_filter), [get_list_by_filter](../postgres_persistence/#get_list_by_filter) or [delete_by_filter](../postgres_persistence/#delete_by_filter)  operations with a specific filter function.
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
 

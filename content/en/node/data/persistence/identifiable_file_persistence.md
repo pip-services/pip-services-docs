@@ -18,7 +18,7 @@ The IdentifiableFilePersistence class allows you to create persistence component
 Important points
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [getPageByFilter](../memory_persistence/#getPageByFilter), [getListByFilter](../memory_persistence/#getListByFilter) or [deleteByFilter](../memory_persistence/#deleteByFilter) operations with a specific filter function. All other operations can be used out of the box. 
+- In basic scenarios child classes shall only override [getPageByFilter](../mysql_persistence/#getpagebyfilter), [getListByFilter](../memory_persistence/#getlistbyfilter) or [deleteByFilter](../mysql_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing cached items via the self._items property and calling the **save** method on updates.
 
 #### Configuration parameters

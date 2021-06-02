@@ -234,7 +234,7 @@ Generates a list of column parameters.
 #### get_count_by_filter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from the child class that
+This method shall be called by a public **get_count_by_filter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int

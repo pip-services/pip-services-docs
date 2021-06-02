@@ -18,7 +18,7 @@ Important points
     - the *take* parameter sets how many items to return in a page.
 - Additionally, the optional *total* parameter tells to return the total number of items in the query.
 - However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.
-- In general, this class can be used for complex paging scenarios, like paging across multiple databases where the previous state is encoded in a token. The token is usually retrieved from the previous response. The initial request shall go with token == *None*
+- In general, this class can be used for complex paging scenarios, like paging across multiple databases where the previous state is encoded in a token. The token is usually retrieved from the previous response. The initial request shall go with token == *null*
 
 ### Constructors
 Creates a new instance and sets its values.

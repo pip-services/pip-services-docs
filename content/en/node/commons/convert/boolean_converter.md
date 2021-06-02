@@ -52,8 +52,8 @@ Converts value into boolean or returns null when conversion is not possible.
 ```typescript
 let value1 = BooleanConverter.toNullableBoolean(True)     // Returns True
 let value2 = BooleanConverter.toNullableBoolean("yes")    // Returns True
-let value3 = BooleanConverter.toNullableBoolean(123)      // Returns None
-let value4 = BooleanConverter.toNullableBoolean({})       // Returns None
+let value3 = BooleanConverter.toNullableBoolean(123)      // Returns null
+let value4 = BooleanConverter.toNullableBoolean({})       // Returns null
 
 let value5 = BooleanConverter.toBooleanWithDefault(True,"verdadero")     // Returns True
 let value6 = BooleanConverter.toBooleanWithDefault(123,"verdadero")      // Returns verdadero

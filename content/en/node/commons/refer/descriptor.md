@@ -19,7 +19,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 Important points
 
 - The locator matching can be done by all or only few selected fields. 
-- The fields that shall be excluded from the matching must be set to *"*"* or *None*.
+- The fields that shall be excluded from the matching must be set to *"*"* or *null*.
 - This approach allows to implement many interesting scenarios. For instance:
     - Locate all loggers (match by type and version)  
     - Locate persistence components for a microservice (match by group and type)  

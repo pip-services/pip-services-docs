@@ -127,7 +127,7 @@ Defines the database schema
 
 
 #### delete_by_filter
-This method shall be called by a public [delete_by_filter](#delete_by_filter) method from the child class that
+This method shall be called by a public **delete_by_filter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > delete_by_filter(correlation_id: Optional[str], filter: Any)
@@ -148,7 +148,7 @@ Adds index definition to create it on opening.
 #### get_count_by_filter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public [get_count_by_filter](#get_count_by_filter) method from the child class that
+This method shall be called by a public **get_count_by_filter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_count_by_filter(correlation_id: Optional[str], filter: Any): int
@@ -161,7 +161,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### get_list_by_filter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_list_by_filter](#get_list_by_filter) method from the child class that
+This method shall be called by a public **get_list_by_filter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
@@ -189,7 +189,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### get_page_by_filter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public [get_page_by_filter](#get_page_by_filter) method from the child class that
+This method shall be called by a public **get_page_by_filter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > get_page_by_filter(correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, select: Any = None): [DataPage](../../../commons/data/data_page)

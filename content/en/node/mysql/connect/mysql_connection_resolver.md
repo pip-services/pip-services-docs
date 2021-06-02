@@ -2,7 +2,7 @@
 type: docs
 title: "MySqlConnectionResolver"
 linkTitle: "MySqlConnectionResolver"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
 description: >
     Helper class that resolves MySQL connection and credential parameters,
     validates them and generates a connection URI.
@@ -38,22 +38,17 @@ Important points
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) stores to resolve credentials
 
 
-### Constructors
-Creates a new instance of the connection component.
-
-> MySqlConnectionResolver()
-
 ### Fields
 
 <span class="hide-title-link">
 
 #### _connection_resolver
 The connection resolver
-> **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
+> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credential_resolver
 The credential resolver
-> **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
+> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
@@ -64,7 +59,7 @@ The credential resolver
 #### configure
 Configures components by passing configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params))
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -72,15 +67,15 @@ Configures components by passing configuration parameters.
 #### resolve
 Resolves a MySQL configuration from connection and credential parameters.
 
-> resolve(correlation_id: Optional[str]): str
+> `public` resolve(correlationId: string): Promise\<string\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **returns**: str - resolved connection config or raise error
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise\<string\> - resolved connection config or raise error
 
 
-#### set_references
+#### setReferences
 Sets references to dependent components.
 
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

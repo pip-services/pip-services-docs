@@ -29,16 +29,21 @@ Objects can be defined in two ways:
   - using hard-coded types (objects are recreated directly, based on their type, bypassing 
     factories). 
 
-Each object can store various configurations.     
+Each object can store various configurations.  
+    
 2. Object creation    
+    
 Then,the container recreates the objects and, if they implement the IConfigurable interface, passes them their configurations. 
 
 Once the objects of a container are configured, if they implement the [IReferencable interface](../../commons/refer/ireferencable), they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the **open()** method is called and they   start to work.     
     
-3 . Start     
+3 . Start    
+    
 The container creates all connections to the different services and the objects and the container start running.
-Then, the objects carry out their tasks.     
-4. Closing     
+Then, the objects carry out their tasks.   
+    
+4. Closing   
+    
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **close()** method (which should make them stop working and disconnect from other services).     
 After this, those objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects.    
 Finally, the contains destroys all objects and turns off. 

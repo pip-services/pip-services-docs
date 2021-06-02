@@ -21,7 +21,8 @@ description: >
 
 ### Lifecycle 
 
-1 . Configuration       
+1 . Configuration    
+    
 External configurations (stored as YAML or JSON) are passed to the container and define the structure of objects that need to be recreated in the container.     
 Objects can be defined in two ways: 
   - using descriptors (using which registered factories can recreate the object) 

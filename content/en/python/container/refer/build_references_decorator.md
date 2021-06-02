@@ -11,6 +11,8 @@ description: >
 **Implements:** [ReferencesDecorator](../references_decorator)
 
 
+### Description
+
 ### Constructors
 Creates a new instance of the decorator.
 

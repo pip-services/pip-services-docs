@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missig components using available component factories upon component retrieval.
+The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missig components using available component factories upon component retrieval. 
 
 ### Constructors
 Creates a new instance of the decorator.

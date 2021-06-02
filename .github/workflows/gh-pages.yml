@@ -32,8 +32,11 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
 
-      # - name: Deploy to S3
-      #   run: hugo deploy --force --maxDeletes -1 --invalidateCDN
-      #   env:
-      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      - name: Set aws credentials file
+        run: echo ${{ secrets.AWS_CREDENTIALS_FILE }} > ~/.aws/credentials
+
+      - name: Deploy to S3
+        run: hugo deploy --force --maxDeletes -1 --invalidateCDN
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

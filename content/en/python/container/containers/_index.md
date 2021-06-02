@@ -29,7 +29,6 @@ Objects can be defined in two ways:
     factories). 
 
 Each object can store various configurations.     
-
 2. Object creation    
 Then,the container recreates the objects and, if they implement the IConfigurable interface, passes them their configurations. 
 

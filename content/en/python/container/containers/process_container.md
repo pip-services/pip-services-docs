@@ -28,30 +28,30 @@ Creates a new instance of the container.
 
 > ProcessContainer(name: str = None, description: str = None)
 
-- **name**: str - (optional) a container name (accessible via ContextInfo)
-- **description**: str - (optional) a container description (accessible via ContextInfo)
+- **name**: str - (optional) container's name (accessible via ContextInfo)
+- **description**: str - (optional) container description (accessible via ContextInfo)
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _config_path
-TODO: add description here
+Path to the configuration file.
 > **_config_path**: str = "./config/config.yml"
 
 #### _logger
-TODO: add description here
+Logger.
 > **_logger**: [ILogger](../../../components/log/ilogger)
 
 </span>
 
-### Methods
+### Instance methods
 
 #### run
 Runs the container by instantiating and running components inside the container.
 
 It reads the container configuration, creates, configures, references and opens components.
-On process exit it closes, unreferences and destroys components to gracefully shutdown.
+On process exit; it closes, unreferences and destroys components in order to shutdown properly.
 
 > run()
 

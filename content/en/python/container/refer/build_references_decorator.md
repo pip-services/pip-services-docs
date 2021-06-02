@@ -12,6 +12,7 @@ description: >
 
 
 ### Description
+The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missing components using availale component factories upon component retrieval.
 
 ### Constructors
 Creates a new instance of the decorator.

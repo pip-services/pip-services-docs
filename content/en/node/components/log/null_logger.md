@@ -2,7 +2,7 @@
 type: docs
 title: "NullLogger"
 linkTitle: "NullLogger"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-components-nodex"
 description: >
     Dummy implementation of logger with no real effect.
 

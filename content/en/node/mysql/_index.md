@@ -4,7 +4,7 @@ title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
 no_list: true
 description: > 
-    MySQL components for Python. 
+    MySQL components for Node.js / ES2017. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 ---

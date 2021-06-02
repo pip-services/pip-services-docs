@@ -2,7 +2,7 @@
 type: docs
 title: "PrometheusMetricsService"
 linkTitle: "PrometheusMetricsService"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-prometheus-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 description: >
     Service that exposes the **"/metrics"** and **"/metricsandreset"** routes 
     for Prometheus to obtain performance metrics.

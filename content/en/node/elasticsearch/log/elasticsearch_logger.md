@@ -2,7 +2,7 @@
 type: docs
 title: "ElasticSearchLogger"
 linkTitle: "ElasticSearchLogger"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-elasticsearch-nodex"
 description: > 
     Logger that dumps execution logs to ElasticSearch service.
 

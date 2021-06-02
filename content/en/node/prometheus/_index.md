@@ -4,7 +4,7 @@ title: "Prometheus module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 no_list: true
 description: > 
-    Prometheus components for Python. 
+    Prometheus components for nodex. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 

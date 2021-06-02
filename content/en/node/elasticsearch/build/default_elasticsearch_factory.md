@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultElasticSearchFactory"
 linkTitle: "DefaultElasticSearchFactory"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-elasticsearch-nodex"
 description: > 
     Creates Elasticsearch components based on their descriptors.
 ---

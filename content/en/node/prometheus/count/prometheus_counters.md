@@ -2,7 +2,7 @@
 type: docs
 title: "PrometheusCounters"
 linkTitle: "PrometheusCounters"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-prometheus-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 description: >
     Performance counters that send their metrics to Prometheus service.
 

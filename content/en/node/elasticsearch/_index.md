@@ -22,7 +22,7 @@ The module contains the following packages:
 
 ### Use
 
-Install the Python package as
+Install the Node.js package as
 ```bash
 npm install pip-services-elasticsearch-nodex --save
 ```

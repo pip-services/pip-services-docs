@@ -41,7 +41,7 @@ Once the objects of a container are configured, if they implement the [IReferenc
     
 The container creates all connections to the different services and the objects and the container start running.
 Then, the objects carry out their tasks.   
-    
+<BR/>   
 4. Closing   
     
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **close()** method (which should make them stop working and disconnect from other services).     

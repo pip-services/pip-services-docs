@@ -19,7 +19,7 @@ description: >
 
 <div class="module-body"> 
 
-### Lifecycle: 
+### Lifecycle 
 
 1 . Configuration       
 External configurations (stored as YAML or JSON) are passed to the container and define the structure of objects that need to be recreated in the container.     
@@ -38,7 +38,6 @@ Once the objects of a container are configured, if they implement the [IReferenc
 3 . Start     
 The container creates all connections to the different services and the objects and the container start running.
 Then, the objects carry out their tasks.     
-    
 4. Closing     
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **close()** method (which should make them stop working and disconnect from other services).     
 After this, those objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects.    

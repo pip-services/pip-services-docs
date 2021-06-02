@@ -47,7 +47,7 @@ Then, the objects carry out their tasks.
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **close()** method (which should make them stop working and disconnect from other services).     
 After this, those objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects.    
 Finally, the contains destroys all objects and turns off.     
-    
+<BR/>       
      
     
 ### Classes

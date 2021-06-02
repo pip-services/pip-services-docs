@@ -5,6 +5,7 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
+    This package contains classes used to 
     Container configuration serves as a recipe for instantiating and 
     configuring components inside the container.  
 
@@ -28,16 +29,10 @@ description: >
 
 ### Classes
 
-#### [Container](container)
-Inversion of control (IoC) container that creates components and manages their lifecycle.
+#### [ComponentConfig](component_config)
+Class used to configure a component residing inside a container.
 
-The container is driven by configuration, that usually stored in JSON or YAML file.
-The configuration contains a list of components identified by type or locator, followed
-by component configuration.
-
-#### [ProcessContainer](process_container)
-Inversion of control (IoC) container that runs as a system process.
-It processes command line arguments and handles unhandled exceptions and Ctrl-C signal
-to gracefully shutdown the container.
+#### [ContainerConfig](container_config)
+Class used to create a container configuration as a list of component configurations.
 
 </div>

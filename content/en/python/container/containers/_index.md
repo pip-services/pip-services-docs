@@ -40,7 +40,7 @@ Once the objects of a container are configured, if they implement the [IReferenc
 3 . Start    
     
 The container creates all connections to the different services and the objects and the container start running.
-Then, the objects carry out their tasks.   
+Then, the objects carry out their tasks.
 <BR/>   
 4. Closing   
     

@@ -33,7 +33,9 @@ jobs:
           publish_dir: ./public
 
       - name: Set aws credentials file
-        run: echo ${{ secrets.AWS_CREDENTIALS_FILE }} > ~/.aws/credentials
+        run: |
+          mkdir ~/.aws
+          echo ${{ secrets.AWS_CREDENTIALS_FILE }} > ~/.aws/credentials
 
       - name: Deploy to S3
         run: hugo deploy --force --maxDeletes -1 --invalidateCDN

@@ -8,7 +8,7 @@ description: >
     for Prometheus to obtain performance metrics.
 ---
 
-**Implements:** [RestService](../../../rpc/services/rest_service)
+**Extends:** [RestService](../../../rpc/services/rest_service)
 
 ### Description
 
@@ -39,39 +39,35 @@ The PrometheusMetricsService class allows you to create services that expose the
 ### Constructors
 Creates a new instance of this service.
 
-> PrometheusMetricsService()
+> `public` constructor()
 
 
 ### Instance methods
 
-#### set_references
+#### setReferences
 Sets references to dependent components.
 
-> set_references(references: [IReferences](../../../commons/refer/ireferences)) 
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void 
 
 - **references**: [IReferences](../../../commons/refer/ireferences)) - references to locate the component dependencies. 
 
 #### register
 Registers all service routes in a HTTP endpoint.
 
-> register()
+> `public` register(): void
 
 ### Examples
 
-```python
-    service = PrometheusMetricsService()
+```typescript
+let service = new PrometheusMetricsService();
+service.configure(ConfigParams.fromTuples(
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 8080
+));
 
-    service.configure(ConfigParams.from_tuples(
-        "connection.protocol", "http",
-        "connection.host", "localhost",
-        "connection.port", 8080
-    ))
-
-    try:
-        service.open("123")
-        print("The Prometheus metrics service is accessible at http://+:8080/metrics")
-    except Exception as err:
-        # do something
+await service.open("123");
+console.log("The Prometheus metrics service is accessible at http://+:8080/metrics");
 ```
 
 ### See also

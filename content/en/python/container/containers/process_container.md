@@ -5,31 +5,23 @@ linkTitle: "ProcessContainer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
     Inversion of control (IoC) container that runs as a system process.
-    It processes command line arguments and handles unhandled exceptions and Ctrl-C signal
-    to gracefully shutdown the container.
-
-
-    ### Command line arguments
-
-    - **--config / -c**            path to JSON or YAML file with container configuration (default: "./config/config.yml")
-
-    - **--param / --params / -p**   value(s) to parameterize the container configuration
-
-    - **--help / -h**              prints the container usage help
+   
 ---
 
 **Implements:** [Container](../container)
 
-See also [Container](../container)
+### Description
 
-**Example:**
+The ProcessContainer class allows you to create an inversion of control (IoC) container that runs as a system process.
 
-```python
-container = ProcessContainer()
-container.add_factory(MyComponentFactory())
+Important points
 
-container.run()
-```
+- It processes command line arguments and handles unhandled exceptions and Ctrl-C signal to gracefully shutdown the container.
+
+### Command line arguments
+- **--config / -c**            path to JSON or YAML file with container configuration (default: "./config/config.yml")
+- **--param / --params / -p**   value(s) to parameterize the container configuration
+- **--help / -h**              prints the container usage help
 
 ### Constructors
 Creates a new instance of the container.
@@ -63,6 +55,14 @@ On process exit it closes, unreferences and destroys components to gracefully sh
 
 > run()
 
+### Examples
+
+```python
+container = ProcessContainer()
+container.add_factory(MyComponentFactory())
+
+container.run()
+```
 
 ### See also
 - #### [Container](../container)

@@ -35,7 +35,7 @@ jobs:
       - name: Deploy to S3
         uses: reggionick/s3-deploy@v3
         with:
-          folder: .
+          folder: ./public
           bucket: ${{ secrets.S3_BUCKET }}
           bucket-region: ${{ secrets.S3_BUCKET_REGION }}
           invalidation: /

@@ -7,7 +7,8 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
     
     This package contains the Container class, which provides an inversion of control container that creates objects 
-    and controls their lifecycle using various configurations. 
+    and controls their lifecycle using various configurations.     
+    
     In addition, it contains the ProcessContainer class, which represents a system process. It receives its configuration file via the command line, 
     and creates a container, starts it, reads its configuration, recreates objects, and runs them.  
     After pressing ctrl-c, the process container turns off and destroys the objects.  

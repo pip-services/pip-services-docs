@@ -9,7 +9,8 @@ description: >
     
 ---
 
-**Extends:** [MemoryPersistence<T>](memory_persistence)
+**Extends:** [MemoryPersistence<T>](../memory_persistence)
+   
 **Implements:** [IWriter](../../core/iwriter), [IGetter](../../core/igetter), [ISetter](../../core/isetter)
 
 ### Description

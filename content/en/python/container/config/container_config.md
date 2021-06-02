@@ -39,5 +39,5 @@ The value is converted into ConfigParams object which is used to create the obje
 
 > `static` from_value(value: Any): [ContainerConfig]()
 
-- **value**: [ConfigParams](../../../commons/config/config_params) - an object with key-value pairs used to initialize a new ContainerConfig.
-- **returns**: [ContainerConfig]() - a new ContainerConfig object.
+- **value**: [ConfigParams](../../../commons/config/config_params) - object with key-value pairs used to initialize a new ContainerConfig.
+- **returns**: [ContainerConfig]() - created ContainerConfig object.

@@ -5,7 +5,8 @@ linkTitle: "Config"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
-    This package contains classes used to 
+    This package contains classes used to create container and component configurations.  
+    
     Container configuration serves as a recipe for instantiating and 
     configuring components inside the container.  
 

@@ -12,7 +12,7 @@ description: >
     and creates a container, starts it, reads its configuration, recreates objects, and runs them.  
     After pressing ctrl-c, the process container turns off and destroys the objects.  
   
-    ### Lifecycle:
+    ### Lifecycle: 
 
     1 . Configuration       
     External configurations (stored as YAML or JSON) are passed to the container 

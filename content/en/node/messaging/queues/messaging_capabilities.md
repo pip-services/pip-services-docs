@@ -40,7 +40,7 @@ Creates a new instance of the capabilities object.
 #### canAbandon
 Informs if the queue is able to abandon messages.
 
-> `public` get canAbandon(): boolean
+> `public` canAbandon(): boolean
 
 - **returns**: boolean - True if the queue is able to abandon messages.
 
@@ -48,7 +48,7 @@ Informs if the queue is able to abandon messages.
 #### canClear
 Informs if the queue can be cleared.
 
-> `public` get canClear(): boolean
+> `public` canClear(): boolean
 
 - **returns**: boolean - True if the queue can be cleared.
 

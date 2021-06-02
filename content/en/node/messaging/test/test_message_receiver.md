@@ -26,7 +26,7 @@ TODO add description
 #### messages
 Gets the list of received messages.
 
-> `public` get messages(): [MessageEnvelope](../message_envelope)[]
+> `public` messages(): [MessageEnvelope](../message_envelope)[]
 
 - **returns**: [MessageEnvelope](../message_envelope)[] - TODO add description
 
@@ -34,7 +34,7 @@ Gets the list of received messages.
 #### messageCount
 Gets the received message count.
 
-> `public` get messageCount(): number
+> `public` messageCount(): number
 
 - **returns**: number - TODO add description
 

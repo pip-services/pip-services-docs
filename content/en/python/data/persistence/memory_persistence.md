@@ -131,7 +131,7 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **get_list_by_filter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]:
+> get_list_by_filter(correlation_id: Optional[str], filter: Any, sort: Any = None, select: Any = None): List[T]
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Any - (optional) filter function used to filter items

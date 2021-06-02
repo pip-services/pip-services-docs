@@ -76,10 +76,10 @@ Saves given data items to an external JSON file.
 ```python
 persister = JsonFilePersister("./data/data.json")
 
-    persister.save("123", ["A", "B", "C"])
-    ...
+persister.save("123", ["A", "B", "C"])
+...
 
-    persister.load("123", items)
-    print items
+persister.load("123", items)
+print(items)
 
 ```

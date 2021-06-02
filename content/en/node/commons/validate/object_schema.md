@@ -28,13 +28,13 @@ See [IValidationRule](../ivalidation_rule)
 #### isUndefinedAllowed
 Gets flag to allow undefined properties
 
-> `public` get isUndefinedAllowed(): boolean
+> `public` isUndefinedAllowed(): boolean
 
 - **returns**: boolean - true to allow undefined properties and false to disallow.
 
 Sets flag to allow undefined properties
 
-> `public` set isUndefinedAllowed(value: boolean): void
+> `public` isUndefinedAllowed(value: boolean): void
 
 - **value**: boolean - true to allow undefined properties and false to disallow.
 

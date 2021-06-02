@@ -36,7 +36,7 @@ Updates a data item.
 #### delete_by_id
 Updates a data item.
 
-> delete_by_id(correlation_id: Optional[str], id: T): T
+> delete_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **id**: Any - id of the item to be deleted

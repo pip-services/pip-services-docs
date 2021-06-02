@@ -53,10 +53,10 @@ Creates a data item.
 #### delete_by_id
 Deletes a data item based on it's unique id.
 
-> delete_by_id(correlation_id: Optional[str], id: T): T
+> delete_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **id**: T -  id of the item to be deleted
+- **id**: Any -  id of the item to be deleted
 - **returns**: T - deleted item.
 
 
@@ -127,12 +127,12 @@ class MyMemoryPersistence(IdentifiableMemoryPersistence):
     def get_page_by_filter(self, correlationId, filter, paging):
         super().get_page_by_filter(correlationId, filter, paging, None)
         
-    persistence = MyMemoryPersistence("./data/data.json")
-    item = persistence.create("123", MyData("1", "ABC"))
-    mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None)
+persistence = MyMemoryPersistence("./data/data.json")
+item = persistence.create("123", MyData("1", "ABC"))
+mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None)
 
-    print str(mydata.get_data())
-    persistence.delete_by_id("123", "1")
+print(str(mydata.get_data())
+persistence.delete_by_id("123", "1")
 
 ```
 

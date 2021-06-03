@@ -19,32 +19,32 @@ Creates a new instance of the decorator.
 - **next_references**: [IReferences](../../../commons/refer/ireferences) - the next references or decorator in the chain.
 - **top_references**: [IReferences](../../../commons/refer/ireferences) - the decorator at the top of the chain.
 
-### Methods
+### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 #### open
 Opens the component.
 
 > open(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### put
-Puts a new reference into this reference map.
+Puts a new reference into the reference map.
 
 > put(locator: Any = None, component: Any = None)
-- **locator**: Any - a locator to find the reference by.
-- **component**: Any - a component reference to be added.
+- **locator**: Any - locator to find the reference by.
+- **component**: Any - component's reference to be added.
 
 
 #### remove

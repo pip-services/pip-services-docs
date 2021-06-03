@@ -6,27 +6,20 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
 
-    This package contains classes used to create reference decorators and managed references. 
-    
+    This package contains classes used to create reference decorators and managed references.      
+        
     Important points
     
     - It provides the inversion of control design pattern but does not contain the fully functional container (you can just only create a class that will set various references).
         
     - Once the objects of a container are configured, if they implement the [IReferencable](../../commons/refer/ireferencable) interface, they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the *open()* method is called and they 
     start to work. 
-    <BR/>
-    - Connections to various services are made, after which the objects start, the 
-    container starts running, and the objects carry out their tasks. 
-    - When the container 
-    starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) 
-    are closed via their 
-    *close()* method (which should make them stop working and disconnect from other services), 
-    after which objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable)
-    delete various links between objects, and, finally, the container destroys all objects and turns off. 
-    - [Build](build_references_decorator), [Link](link_references_decorator), and 
-    [Run](run_references_decorator) - ReferenceDecorators are used during the corresponding 
-    building, linking, and running stages and are united in [ManagedReferences](managed_references), which 
-    are extended by [ContainerReferences](container_references).
+    
+    - Connections to various services are made, after which the objects start, the container starts running, and the objects carry out their tasks. 
+    
+    - When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their *close()* method (which should make them stop working and disconnect from other services), after which objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects, and, finally, the container destroys all objects and turns off. 
+    
+    - [Build](build_references_decorator), [Link](link_references_decorator), and [Run](run_references_decorator) - ReferenceDecorators are used during the corresponding  building, linking, and running stages and are united in [ManagedReferences](managed_references), which are extended by [ContainerReferences](container_references).
 ---
 ---
 

@@ -13,15 +13,15 @@ description: >
 
 ### Description
 
-The LinkReferencesDecorator class allows you to create a references decorator that automaticall sets references to newly added components that implement the [IReferenceable interface](../../../commons/refer/ireferenceable) and unsets references from removed components that implement the [IUnreferenceable interface](../../../commons/refer/iunreferenceable).
+The LinkReferencesDecorator class allows you to create a references decorator that automaticall sets references to newly added components that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface and unsets references from removed components that implement the [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
 
 ### Constructors
 Creates a new instance of the decorator.
 
 > LinkReferencesDecorator(next_references: [IReferences](../../../commons/refer/ireferences), top_references: [IReferences](../../../commons/refer/ireferences))
 
-- **next_references**: [IReferences](../../../commons/refer/ireferences) - the next references or decorator in the chain.
-- **top_references**: [IReferences](../../../commons/refer/ireferences) - the decorator at the top of the chain.
+- **next_references**: [IReferences](../../../commons/refer/ireferences) - next references or decorator in the chain.
+- **top_references**: [IReferences](../../../commons/refer/ireferences) - decorator at the top of the chain.
 
 ### Instance methods
 

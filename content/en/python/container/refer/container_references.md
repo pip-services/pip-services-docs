@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The ContainerReferences class allows you to create containers managed references that can be created from a container configuration.
+The ContainerReferences class allows you to create container's managed references that can be created from a container configuration.
 
 ### Instance methods
 

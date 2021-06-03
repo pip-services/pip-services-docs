@@ -14,7 +14,7 @@ description: >
 The DefaultRpcFactory class allows you to create a factory used to create RPC components based on their descriptors.
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultRpcFactory()
 

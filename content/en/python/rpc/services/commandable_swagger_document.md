@@ -4,9 +4,12 @@ title: "CommandableSwaggerDocument"
 linkTitle: "CommandableSwaggerDocument"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Class used to generate Swagger code that describes created REST API methods and their parameters. 
 ---
 
+### Description
+
+The CommandableSwaggerDocument class allows you to generate Swagger code that describes created REST API methods and their parameters. 
 
 ### Constructors
 Creates a new instance of the service.
@@ -22,118 +25,118 @@ Creates a new instance of the service.
 <span class="hide-title-link">
 
 #### commands
-TODO add description
+List of commmands.
 > **commands**: List[[ICommand](../../../commons/commands/icommand)]
 
 #### version
-TODO add description
+Version number.
 > **version**: str
 
 #### base_route
-TODO add description
+Base route.
 > **base_route**: str
 
 #### info_title
-TODO add description
+Title.
 > **info_title**: str
 
 #### info_description
-TODO add description
+API description
 > **info_description**: str
 
 #### info_version
-TODO add description
+API version
 > **info_version**: str
 
 #### info_terms_of_service
-TODO add description
+Terms of service information.
 > **info_terms_of_service**: Optional[str]
 
 #### info_contact_name
-TODO add description
+Contact name..
 > **info_contact_name**: Optional[str]
 
 #### info_contact_url
-TODO add description
+Contact URL.
 > **info_contact_url**: Optional[str]
 
 #### info_contact_email
-TODO add description
+Contact email.
 > **info_contact_email**: Optional[str]
 
 #### info_license_name
-TODO add description
+License name.
 > **info_license_name**: Optional[str]
 
 #### info_license_url
-TODO add description
+License information URL.
 > **info_license_url**: Optional[str]
 
 </span>
 
 
-### Methods
+### Instance methods
 
 
 #### _get_spaces
-TODO add description
+Returns a string with spaces.
 
 > _get_spaces(length: int): str
 
-- **length**: int - TODO add description
-- **returns**: str - TODO add description
+- **length**: int - Determines the length of the string with spaces.
+- **returns**: str - String containing spaces.
 
 
 #### to_string
-TODO add description
+Returns a  string containing the API information.
 
 > to_string(): str
 
-- **returns**: str - TODO add description
+- **returns**: str - string with the API information.
 
 
 #### _type_to_string
-TODO add description
+Returns a string with the type name.
 
 > _type_to_string(type: Any): str
 
-- **type**: Any - TODO add description
-- **returns**: str - TODO add description
+- **type**: Any - type (e.g. Integer)
+- **returns**: str - name of the type (e.g. 'integer')
 
 
 #### _write_array_item
-TODO add description
+Adds an item to the Swagger code.
 
 > _write_array_item(indent: int, name: str, is_object_item: bool = False)
 
-- **indent**: int - TODO add description
-- **name**: str - TODO add description
-- **is_object_item**: bool - TODO add description
+- **indent**: int - number of spaces
+- **name**: str - item's name
+- **is_object_item**: bool - True is the item is an object. False otherwise.
 
 
 #### _write_as_object
-TODO add description
+Adds a property and its value
 
 > _write_as_object(indent: int, name: str, value: Any)
 
-- **indent**: int - TODO add description
-- **name**: str - TODO add description
-- **value**: Any - TODO add description
+- **indent**: int - number of spaces
+- **name**: str - name of the property
+- **value**: Any - value of the property
 
 
 #### _write_data
-TODO add description
+Adds data to the Swagger code.
 
 > _write_data(indent: int, data: Dict[str, Any])
 
-- **indent**: int - TODO add description
-- **name**: str - TODO add description
-- **data**: Dict[str, Any] - TODO add description
+- **indent**: int - number of spaces
+- **name**: str - name
+- **data**: Dict[str, Any] - data to be added
 
 #### _write_name
-TODO add description
+Adds identation to a string.
 
 > _write_name(indent: int, name: str)
 
-- **indent**: int - TODO add description
-- **name**: str - TODO add description
+- **indent**: int - number of spaces
+- **name**: str - string with added identation

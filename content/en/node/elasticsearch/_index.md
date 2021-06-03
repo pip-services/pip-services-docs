@@ -3,6 +3,7 @@ type: docs
 title: "ElasticSearch module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-elasticsearch-nodex"
 no_list: true
+weight: 30
 description: > 
     ElasticSearch components for Node.js/ES2017 
 

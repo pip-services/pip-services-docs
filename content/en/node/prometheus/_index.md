@@ -3,6 +3,7 @@ type: docs
 title: "Prometheus module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 no_list: true
+weight: 30
 description: > 
     Prometheus components for nodex. 
 

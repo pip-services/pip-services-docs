@@ -3,6 +3,7 @@ type: docs
 title: "RPC module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 no_list: true
+weight: 30
 description: > 
     Remote Procedure Calls for Pip.Services in Python 
 

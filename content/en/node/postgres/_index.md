@@ -3,6 +3,7 @@ type: docs
 title: "Postgres module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 no_list: true
+weight: 30
 description: > 
     PostgreSQL components for Pip.Services in Node.js / ES2017. 
 

@@ -3,6 +3,7 @@ type: docs
 title: "Data module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-data-nodex"
 no_list: true
+weight: 30
 description: > 
    
     Persistence components for Node.js This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      

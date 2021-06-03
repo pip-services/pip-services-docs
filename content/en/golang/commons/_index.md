@@ -3,6 +3,7 @@ type: docs
 title: "Commons module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 no_list: true
+weight: 30
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     It provides a set of basic patterns used in microservices or backend services.

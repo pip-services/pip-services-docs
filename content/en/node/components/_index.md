@@ -3,6 +3,7 @@ type: docs
 title: "Components module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-components-nodex"
 no_list: true
+weight: 30
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     It contains standard component definitions that can be used to build applications and services.

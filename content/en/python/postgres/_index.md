@@ -3,6 +3,7 @@ type: docs
 title: "Postgres module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
 no_list: true
+weight: 30
 description: > 
     PostgreSQL components for Pip.Services in Python. 
 

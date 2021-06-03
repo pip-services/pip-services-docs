@@ -3,6 +3,7 @@ type: docs
 title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 no_list: true
+weight: 30
 description: > 
     MySQL components for Python. 
 

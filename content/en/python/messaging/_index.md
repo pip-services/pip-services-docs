@@ -3,6 +3,7 @@ type: docs
 title: "Messaging module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-messaging-python"
 no_list: true
+weight: 30
 description: > 
     Asynchronous Messaging for Pip.Services in Python. 
 

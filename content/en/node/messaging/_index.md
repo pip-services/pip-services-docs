@@ -3,6 +3,7 @@ type: docs
 title: "Messaging module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 no_list: true
+weight: 30
 description: > 
     Asynchronous Messaging for Pip.Services in Node.js / ES2017  
 

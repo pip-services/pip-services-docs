@@ -3,6 +3,7 @@ type: docs
 title: "How to Get Help"
 linkTitle: "Get help" 
 no_list: true
+weight: 1000
 ---
 
 Thank you for your interest and for using our products!

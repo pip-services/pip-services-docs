@@ -2,7 +2,7 @@
 type: docs
 title: "Getting Started"
 linkTitle: "Getting Started" 
-weight: 80
+weight: 1
 no_list: true
 exclude_from_list: true
 ---

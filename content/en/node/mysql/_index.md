@@ -3,6 +3,7 @@ type: docs
 title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
 no_list: true
+weight: 30
 description: > 
     MySQL components for Node.js / ES2017. 
 

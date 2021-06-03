@@ -3,6 +3,7 @@ type: docs
 title: "MongoDB module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mongodb-python"
 no_list: true
+weight: 30
 description: > 
     MongoDB components for Pip.Services in Python. 
 

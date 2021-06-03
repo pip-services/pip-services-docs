@@ -3,6 +3,7 @@ type: docs
 title: "Container module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 no_list: true
+weight: 30
 description: > 
     IoC container for Python 
 

@@ -52,17 +52,17 @@ Puts a new reference into the reference map.
 
 
 #### remove
-Removes a previously added reference that matches specified locator.
+Removes a previously added reference that matches the specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use **remove_all** method instead.
 
 > remove(locator: Any): Any
-- **locator**: Any - a locator to remove reference
-- **returns**: Any - the removed component reference.
+- **locator**: Any - locator to remove reference
+- **returns**: Any - removed component reference.
 
 #### remove_all
 Removes all component references that match the specified locator.
 
 > remove_all(locator: Any): List[Any]
 - **locator**: Any - the locator to remove references by.
-- **returns**: List[Any] - a list, containing all removed references.
+- **returns**: List[Any] - list, containing all removed references.

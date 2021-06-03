@@ -3,7 +3,6 @@ type: docs
 title: "How to Get Help"
 linkTitle: "Get help" 
 no_list: true
-exclude_from_list: true
 ---
 
 Thank you for your interest and for using our products!

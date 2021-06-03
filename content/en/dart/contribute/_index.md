@@ -3,7 +3,6 @@ type: docs
 title: "Contributing to Pip.Services"
 linkTitle: "Contribute" 
 no_list: true
-exclude_from_list: true
 ---
 
 Pip.Services is a big project that includes a large amount of components, templates, examples, and documentation. This project could never have become a reality without the help of our active community.

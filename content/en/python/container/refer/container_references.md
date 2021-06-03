@@ -9,15 +9,17 @@ description: >
 
 **Implements:** [ManagedReferences](../managed_references)
 
-See also [ManagedReferences](../managed_references)
+### Description
 
-### Methods
+The ContainerReferences class allows you to create containers managed references that can be created from a container configuration.
+
+### Instance methods
 
 #### put_from_config
 Puts components into the references from container configuration.
 
 > put_from_config(config: [ContainerConfig](../../config/container_config))
-- **config**: [ContainerConfig](../../config/container_config) - a container configuration with information of components to be added.
+- **config**: [ContainerConfig](../../config/container_config) - container configuration with information of the components to be added.
 
 
 ### See also

@@ -11,6 +11,10 @@ description: >
 
 **Implements:** [ReferencesDecorator](../references_decorator), [IOpenable](../../../commons/run/iopenable)
 
+### Description
+
+The LinkReferencesDecorator class allows you to create a references decorator that automaticall sets references to newly added components that implement the [IReferenceable interface](../../../commons/refer/ireferenceable) and unsets references from removed components that implement the [IUnreferenceable interface](../../../commons/refer/iunreferenceable).
+
 ### Constructors
 Creates a new instance of the decorator.
 

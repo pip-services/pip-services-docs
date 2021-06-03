@@ -16,7 +16,8 @@ description: >
     interface, they are passed a set of references for recreating links between objects in the container. If the 
     objects implement the [IOpenable interface](../../commons/run/iopenable), 
     the *open()* method is called and they 
-    start to work.     
+    start to work. 
+    <BR/>
     - Connections to various services are made, after which the objects start, the 
     container starts running, and the objects carry out their tasks. 
     - When the container 

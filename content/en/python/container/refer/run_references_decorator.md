@@ -41,7 +41,7 @@ When all references shall be removed, use the **remove_all** method instead.
 
 > remove(locator: Any): Any
 - **locator**: Any - locator to remove component
-- **returns**: Any - removed component component.
+- **returns**: Any - removed component.
 
 
 #### remove_all

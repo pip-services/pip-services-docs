@@ -4,11 +4,14 @@ title: "AboutOperations"
 linkTitle: "AboutOperations"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Class used to obtain information about running services.
 ---
 
 **Implements:** [RestOperations](../rest_operations)
 
+### Description
+
+The AboutOperations class is used to obtain information about running services.
 
 ### Methods
 

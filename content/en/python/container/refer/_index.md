@@ -12,6 +12,7 @@ description: >
     
     - It provides the inversion of control design pattern but does not contain the fully 
     functional container (you can just only create a class that will set various references).
+        
     - Once the objects of a container are configured, if they implement the [IReferencable](../../commons/refer/ireferencable)
     interface, they are passed a set of references for recreating links between objects in the container. If the 
     objects implement the [IOpenable interface](../../commons/run/iopenable), 

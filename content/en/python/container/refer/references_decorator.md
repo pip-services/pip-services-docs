@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The ReferencesDecorator class allows you to create chainable decorators for IReferences that allow to inect addtional capabilities, such as automatic component creation, automatic registration and opening.
+The ReferencesDecorator class allows you to create chainable decorators for IReferences that allow to inject addtional capabilities, such as automatic component creation, automatic registration and opening.
 
 ### Constructors
 Creates a new instance of the decorator.
@@ -64,12 +64,12 @@ Gets locators for all registered component references in the reference map.
 Gets an optional component reference that matches the specified locator.
 
 > get_one_optional(locator: Any): Any
-- **locator**: Any - ocator to find references by.
+- **locator**: Any - locator to find references by.
 - **returns**: Any - matching component reference or None if nothing was found.
 
 
 #### get_one_required
-Gets a required component reference that matches specified locator.
+Gets a required component reference that matches the specified locator.
 Throws a [ReferenceException](../../../commons/refer/reference_exception) when no references were found.
 
 > get_one_required(locator: Any): Any
@@ -110,7 +110,7 @@ When all references shall be removed, use **remove_all** method instead.
 
 > remove(locator: Any): Any
 - **locator**: Any - locator to remove component
-- **returns**: Any - removed component component.
+- **returns**: Any - removed component.
 
 
 #### remove_all
@@ -118,7 +118,7 @@ Removes all component references that match the specified locator.
 
 > remove_all(locator: Any): List[Any]
 - **locator**: Any - locator to remove references by.
-- **returns**: Any - list, containing all removed references.
+- **returns**: Any - list containing all removed references.
 
 ### See also
 - #### [IReferences](../../../commons/refer/ireferences)

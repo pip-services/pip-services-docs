@@ -69,21 +69,21 @@ Converts the given object from the public partial format.
 #### create
 Creates a data item.
 
-> create(correlation_id: Optional[str], item: Any): Optional[dict]
+> create(correlation_id: Optional[str], item: T): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
-- **item**: Any - item to be created.
-- **returns**: Optional[dict] - created item
+- **item**: T - item to be created.
+- **returns**: T - created item
 
 
 #### delete_by_id
 Deleted a data item by it's unique id.
 
-> delete_by_id(correlation_id: Optional[str], id: Any): dict
+> delete_by_id(correlation_id: Optional[str], id: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **id**: Any - id of the item to be deleted
-- **returns**: dict - deleted item
+- **returns**: T - deleted item
 
 
 #### delete_by_ids
@@ -102,7 +102,7 @@ Gets a list of data items retrieved based on given unique ids.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **ids**: List[Any] - ids of data items to be retrieved
-- **returns**: List[dict] - data list
+- **returns**: List[T] - data list
 
 
 #### get_one_by_id

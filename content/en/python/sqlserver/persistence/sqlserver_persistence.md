@@ -192,8 +192,9 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### _ensure_index
 Adds an index definition to be created on opening.
 
-> _ensure_index(keys: Any, options: Any = None)
+> _ensure_index(name: str, keys: Any, options: Any = None)
 
+- **name**: str - the index name
 - **keys**: Any - index keys (fields)
 - **options**: Any - index options
 
@@ -280,7 +281,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > get_one_random(correlation_id: Optional[str], filter: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-filter: Any
+- **filter**: Any - (optional) a filter JSON object
 - **returns**: T - a random item.
 
 

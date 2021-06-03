@@ -2,7 +2,7 @@
 type: docs
 title: "SqlServerConnectionResolver"
 linkTitle: "SqlServerConnectionResolver"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlserver-nodex"
 description: >
     Helper class that resolves SQLServer connection and credential parameters,
     validates them and generates a connection URI.
@@ -48,13 +48,13 @@ Creates a new instance of the connection component.
 
 <span class="hide-title-link">
 
-#### _connection_resolver
+#### _connectionResolver
 The connection resolver
-> **_connection_resolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
+> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
-#### _credential_resolver
+#### _credentialResolver
 The credential resolver
-> **_credential_resolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
+> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
@@ -65,7 +65,7 @@ The credential resolver
 #### configure
 Configures the component by passing its configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params))
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -73,23 +73,15 @@ Configures the component by passing its configuration parameters.
 #### resolve
 Resolves SQLServer config from connection and credential parameters.
 
-> resolve(correlation_id: Optional[str]): str
+> `public` resolve(correlationId: string): Promise\<string\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **returns**: str - resolved connection config or raise error
-
-
-#### get_database
-Gets a connection to an SQLServer database
-
-> get_database(): Any
-
-- **return**: Any - connection to an SQLServer database
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise\<string\> - resolved connection config or raise error
 
 
-#### set_references
+#### setReferences
 Sets the references to dependent components.
 
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

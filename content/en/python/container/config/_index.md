@@ -15,7 +15,7 @@ description: >
     and define the structure of objects that need to be recreated in the container. 
     Objects can be defined in two ways:
 
-    - using descriptors (using which registered factories can recreate the object) 
+    - using descriptors (using those registered factories can recreate the object) 
     
     - using hard-coded types (objects are recreated directly, based on their type, bypassing 
     factories). 

@@ -4,7 +4,7 @@ title: "RestClient"
 linkTitle: "RestClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Abstract client that calls remote endpoints using HTTP/REST protocol.
+    Abstract client that calls remote endpoints using the HTTP/REST protocol.
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
@@ -18,7 +18,7 @@ The RestClient class allows you to create clients that call remote endpoints usi
 - **base_route**: base route for a remote URI
 - **connection(s)**:           
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
+    - **protocol**: connection protocol (http or https)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -178,11 +178,11 @@ It returns a Timing object that is used to end the time measurement.
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### open

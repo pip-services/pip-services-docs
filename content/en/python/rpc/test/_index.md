@@ -5,7 +5,7 @@ linkTitle: "Test"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Todo: add description
+    This package contains classes used to define a Commandable HTTP client and a REST client that can be used for automated testing.
 ---
 ---
 
@@ -15,7 +15,7 @@ description: >
 ### Classes
 
 #### [TestCommandableHttpClient](test_commandable_http_client)
-TODO add description
+Commandable HTTP client used for automated testing.
 
 
 #### [TestRestClient](test_rest_client)

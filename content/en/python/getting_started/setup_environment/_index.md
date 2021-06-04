@@ -43,7 +43,7 @@ docker --version
 
 If everything was installed successfully, the screen will display the latest version of Docker.
 
-Once all of the prerequisites are installed and set up - you’re ready to get started!
+Once all of the prerequisites are installed and set up, you’re ready to get started!
 
 
 

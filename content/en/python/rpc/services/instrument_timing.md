@@ -4,7 +4,7 @@ title: "InstrumentTiming"
 linkTitle: "InstrumentTiming"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Creates logs, counters and timings for methods that call _instrument.
+    Creates logs, counters and timings for methods that call  _instrument.
 ---
 
 ### Description

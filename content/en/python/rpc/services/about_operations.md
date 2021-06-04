@@ -20,7 +20,7 @@ Gets information from a service.
 
 > get_about(): str
 
-- **returns**: str - JSON string with information about the service
+- **returns**: str - JSON string with information about the service.
 
 
 #### get_about_operation
@@ -28,7 +28,7 @@ Gets the service's information.
 
 > get_about_operation(): Callable
 
-- **returns**: Callable - service information
+- **returns**: Callable - call to get_about()
 
 
 #### set_references
@@ -36,4 +36,4 @@ Sets the references of the service.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - TODO add description
+- **references**: [IReferences](../../../commons/refer/ireferences) - service's references.

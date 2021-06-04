@@ -33,4 +33,4 @@ Install the Python package as
 ```bash
 pip install pip-services3-rpc
 ```
-TODO: add example
+

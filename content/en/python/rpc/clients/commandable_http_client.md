@@ -20,10 +20,10 @@ Important points
 
 ##### Configuration parameters
 
-- **base_route**: base route for remote URI
+- **base_route**: base route for a remote URI
 - **connection(s)**:           
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
+    - **protocol**: connection protocol (http or https)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -38,7 +38,7 @@ Important points
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:traces:\*:\*:1.0** - (optional) [ITracer](../../../components/trace/itracer) components to record traces
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 
 

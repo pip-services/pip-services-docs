@@ -14,7 +14,7 @@ The ComponentConfig class allows you to configure a component residing inside a 
 
 Important points
 
-- The configuration includes the type of information or descriptor, and component configuration parameters.
+- The configuration includes the type of information or descriptor and component configuration parameters.
 
 ### Fields
 
@@ -35,7 +35,7 @@ Component's configuration parameters.
 </span>
 
 ### Constructors
-Creates a new instance of the component configuration.
+Creates a new instance of the configuration component.
 
 > ComponentConfig(descriptor: [Descriptor](../../../commons/refer/descriptor) = None, type: [TypeDescriptor](../../../commons/reflect/type_descriptor) = None, config: [ConfigParams](../../../commons/config/config_params) = None)
 
@@ -50,5 +50,5 @@ Creates a new instance of ComponentConfig based on a section from a container co
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [ComponentConfig]()
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - component's parameters from a container configuration
-- **returns**: [ComponentConfig]() - created ComponentConfig
+- **config**: [ConfigParams](../../../commons/config/config_params) - component's parameters from a container configuration.
+- **returns**: [ComponentConfig]() - created ComponentConfig.

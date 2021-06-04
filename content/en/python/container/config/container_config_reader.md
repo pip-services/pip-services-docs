@@ -4,7 +4,7 @@ title: "ContainerConfigReader"
 linkTitle: "ContainerConfigReader"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
-    Helper class that reads container configuration from a JSON or YAML file.
+    Helper class that reads a container's configuration from a JSON or YAML file.
 ---
 
 ### Description
@@ -26,7 +26,7 @@ The type of the file is determined by the file extension.
 
 
 #### read_from_json_file
-Reads a container's configuration from JSON file.
+Reads a container's configuration from a JSON file.
 
 > `static` read_from_json_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig](../container_config)
 
@@ -37,7 +37,7 @@ Reads a container's configuration from JSON file.
 
 
 #### read_from_yalm_file
-Reads container configuration from YAML file.
+Reads container configuration from a YAML file.
 
 > `static` read_from_yaml_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig](../container_config)
 

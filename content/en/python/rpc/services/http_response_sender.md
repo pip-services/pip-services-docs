@@ -35,11 +35,11 @@ as a parameter to business logic components.
 
 If object is not None, it returns 201 status code.
 For None results, it returns 204 status code.
-If an error occurs, it sends ErrorDescription with approproate status code.
+If an error occurs, it sends ErrorDescription with the approproate status code.
 
 > `static` send_deleted_result(result: Any = None): Optional[str]
 
-- **result**: Any - an execution result
+- **result**: Any - execution result
 - **return**: Optional[str] - JSON text response
 
 
@@ -62,7 +62,7 @@ If status code is not defined, it uses 500 status code.
 
 > `static` send_error(error: Any): str
 
-- **result**: Any - an execution result 
+- **result**: Any - execution result 
 - **return**: Optional[str] - JSON text response
 
 
@@ -73,10 +73,10 @@ as a parameter to business logic components.
 
 If object is not None, it returns 200 status code.
 For None results, it returns 204 status code.
-If error occur, it sends ErrorDescription with approproate status code.
+If error occur, it sends ErrorDescription with the approproate status code.
 
 
 > `static` send_result(result: Any): Optional[str]
 
-- **result**: Any - an execution result 
+- **result**: Any - execution result 
 - **return**: Optional[str] - JSON text response

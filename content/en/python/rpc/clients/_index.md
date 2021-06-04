@@ -18,15 +18,15 @@ Abstract client that calls a commandable HTTP service.
 
 Commandable services are generated automatically for
 [ICommandable](../../commons/commands/icommandable). 
-Each command is exposed as POST operation that receives all parameters
-in body object.
+Each command is exposed as a POST operation that receives all parameters
+in the body object.
 
 
 #### [DirectClient](direct_client)
 Abstract client that calls a controller directly in the same memory space.
 
 It is used when multiple microservices are deployed in a single container (monolyth)
-and communication between them can be done by direct calls rather then through 
+and communication between them can be done by direct calls rather than through 
 the network.
 
 

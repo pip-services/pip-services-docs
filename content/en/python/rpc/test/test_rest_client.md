@@ -9,6 +9,10 @@ description: >
 
 **Implements:** [RestClient](../../clients/rest_client)
 
+### Description
+
+The TestRestClient class allows you to create a REST client that can be used for automated testing.
+
 ### Constructors
 Creates a new instance of the TestRestClient class.
 
@@ -25,7 +29,7 @@ Calls a remote method via HTTP/REST protocol.
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any
 
 - **method**: str - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: str - command route. Base route will be added to this route
+- **route**: str - command route. base route will be added to this route
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **params**: Any - (optional) query parameters.
 - **data**: Any - (optional) body object.

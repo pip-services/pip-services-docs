@@ -4,14 +4,14 @@ title: "RestOperations"
 linkTitle: "RestOperations"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Handles REST services operations.
+    Handles REST services' operations.
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 
-The RestOperations class allows you to handle REST services operations.
+The RestOperations class allows you to handle REST services' operations.
 
 ### Fields
 
@@ -89,7 +89,7 @@ Sends a conflict error messge
 > _send_conflict(message: str): str
 
 - **message**: str - message
-- **returns**: str - conflict error message
+- **returns**: str - conflict error message.
 
 
 #### _send_created_result
@@ -97,7 +97,7 @@ Sends a JSON object with the created result.
 
 > _send_created_result(result: Any = None): Optional[str]
 
-- **result**: Any - result to be sent
+- **result**: Any - result to be sent.
 - **returns**: Optional[str] - JSON text response.
 
 
@@ -106,103 +106,84 @@ Sends the deleted result in JSON format.
 
 > _send_deleted_result(): Optional[str]
 
-- **result**: Any - an execution result or a promise with execution result
+- **result**: Any - execution result or a promise with execution result.
 - **returns**: JSON text response.
 
 
 #### _send_empty_result
-TODO add description
+Send an empty result with 204 status code.
 
 > _send_empty_result(result: Any = None): Optional[str]
 
 - **result**: Any - Optional[str] 
-- **returns**: Optional[str] - TODO add description
+- **returns**: Optional[str] - empty result with 204 status code.
 
 
 #### _send_error
-TODO add description
+Sends an error serialized as ErrorDescription object and appropriate HTTP status code.
 
 > _send_error(error: Any = None): str
 
-- **error**: Any - TODO add description
-- **returns**: Optional[str] - TODO add description
+- **error**: Any - error
+- **returns**: Optional[str] - error serialized as ErrorDescription object and appropriate HTTP status code.
 
 
 #### _send_internal_error
-TODO add description
+Sends an internal error message
 
 > _send_internal_error(message: str): str
 
-- **message**: Any - TODO add description
-- **returns**: Optional[str] - TODO add description
+- **message**: Any - message
+- **returns**: Optional[str] - internal error message
 
 
 #### _send_not_found
-TODO add description
+Sends a not found error message.
 
 > _send_not_found(message: str): str
 
-- **message**: Any - TODO add description
-- **returns**: Optional[str] - TODO add description
-
+- **message**: Any - message
+- **returns**: Optional[str] - not found error message.
 
 #### _send_result
-TODO add description
+Sends a result as a JSON object.
 
 > _send_result(result: Any = None): Optional[str]
 
-- **result**: Any - TODO add description
-- **returns**: Optional[str] - TODO add description
+- **result**: Any - result
+- **returns**: Optional[str] - result as a JSON object.
 
 
 #### _send_server_unavailable
-TODO add description
+Sends a server unavailable error message (Status code 503).
 
 > _send_server_unavailable(message: str): str
 
-- **message**: str - TODO add description
-- **returns**: str - TODO add description
+- **message**: str - message
+- **returns**: str - server unavailable error message (Status code 503).
 
 
 #### _send_session_expired
-TODO add description
+Sends a session expired error message (Status code 440).
 
 > _send_session_expired(message: str): str
 
-- **message**: str - TODO add description
-- **returns**: str - TODO add description
-
-
-#### _send_session_expired
-TODO add description
-
-> _send_session_expired(message: str): str
-
-- **message**: str - TODO add description
-- **returns**: str - TODO add description
+- **message**: str - message
+- **returns**: str -  session expired error message (Status code 440).
 
 
 #### _send_unauthorized
-TODO add description
+Sends an unauthorized error message.
 
 > _send_unauthorized(message: str): str
 
-- **message**: str - TODO add description
-- **returns**: str - TODO add description
-
-
-#### _send_unauthorized
-TODO add description
-
-> _send_unauthorized(message: str): str
-
-- **message**: str - TODO add description
-- **returns**: str - TODO add description
+- **message**: str - message
+- **returns**: str - unauthorized error message.
 
 
 #### set_references
-TODO add description
+Sets the specified references.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - TODO add description
+- **references**: [IReferences](../../../commons/refer/ireferences) - specified references

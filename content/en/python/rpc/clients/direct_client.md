@@ -17,7 +17,7 @@ The DirectClientclass allows you to create clients that call a controller direct
 
 Important points
 
--  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather then through the network.
+-  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather than through the network.
 
 ##### Configuration parameters
 

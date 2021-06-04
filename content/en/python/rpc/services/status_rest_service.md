@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The StatusRestService class allows you to create a service that returns micriservice status information via the HTTP/REST protocol.
+The StatusRestService class allows you to create a service that returns microservice status information via the HTTP/REST protocol.
 
 ```
 The service responds on /status route (can be changed) with a JSON object:
@@ -38,7 +38,7 @@ The service responds on /status route (can be changed) with a JSON object:
     - **controller**: override for Controller dependency
 - **connection(s)**:           
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **protocol**: connection protocol: http or https
+    - **protocol**: connection protocol (http or https)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -56,7 +56,7 @@ The service responds on /status route (can be changed) with a JSON object:
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 

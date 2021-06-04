@@ -16,11 +16,11 @@ The ProcessContainer class allows you to create an inversion of control (IoC) co
 
 Important points
 
-- It processes command line arguments and handles unhandled exceptions and Ctrl-C signal to gracefully shutdown the container.
+- It processes command line arguments and handles unhandled exceptions and Ctrl-C signal to shutdown the container properly.
 
 ### Command line arguments
 - **--config / -c**            path to a JSON or YAML file with the container's configuration (default: "./config/config.yml")
-- **--param / --params / -p**   value(s) to parameterize the container's configuration
+- **--param / --params / -p**   configuration parameters
 - **--help / -h**              prints the container usage help
 
 ### Constructors

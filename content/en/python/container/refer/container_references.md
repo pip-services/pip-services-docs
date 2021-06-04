@@ -4,7 +4,7 @@ title: "ContainerReferences"
 linkTitle: "ContainerReferences"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
-    Container managed references that can be created from container configuration.
+    Container's managed references that can be created from container configuration.
 ---
 
 **Implements:** [ManagedReferences](../managed_references)
@@ -16,10 +16,10 @@ The ContainerReferences class allows you to create container's managed reference
 ### Instance methods
 
 #### put_from_config
-Puts components into the references from container configuration.
+Puts components into the references from the container's configuration.
 
 > put_from_config(config: [ContainerConfig](../../config/container_config))
-- **config**: [ContainerConfig](../../config/container_config) - container configuration with information of the components to be added.
+- **config**: [ContainerConfig](../../config/container_config) - container's configuration with information of the components to be added.
 
 
 ### See also

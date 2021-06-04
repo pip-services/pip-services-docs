@@ -257,6 +257,13 @@
         }
     }
 
+    .more-useful-banner {
+        .card {
+            border-radius: 0;
+            border: none;
+        }
+    }
+
     .card-deck {
         .card {
             border-radius: 0.3rem;

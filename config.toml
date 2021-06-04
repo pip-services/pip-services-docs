@@ -82,6 +82,12 @@ disableKinds = ["taxonomy", "term"]
   #  weight = 0
 
 [[menu.main]]
+    identifier = "Home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
     identifier = "Node"
     name = "Node.js"
     url = "node/"

@@ -19,11 +19,11 @@ counter_timing: Optional[[CounterTiming](../../../components/count/counter_timin
 
 correlation_id: Optional[str] -  transaction id used to trace execution through the call chain    
 name: str - name    
-verb: str - verb or 'call'
-logger: [ILogger](../../../components/log/ilogger) - logger
-counters: [ICounters](../../../components/count/icounters) - counters
-counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)] - counter
-trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)] - time tracer
+verb: str - verb or 'call'     
+logger: [ILogger](../../../components/log/ilogger) - logger    
+counters: [ICounters](../../../components/count/icounters) - counters     
+counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)] - counter    
+trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)] - time tracer    
 
 
 ### Instance methods

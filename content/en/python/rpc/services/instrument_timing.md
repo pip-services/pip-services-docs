@@ -17,7 +17,7 @@ Creates a new instance of InstrumentTiming.
 > InstrumentTiming(correlation_id: Optional[str], name: str, verb: str, logger: [ILogger](../../../components/log/ilogger), counters: [ICounters](../../../components/count/icounters),
 counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)], trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)])
 
-correlation_id: Optional[str] -  transaction id used to trace execution through the call chain    
+correlation_id: Optional[str] -  transaction id used to trace execution through the call chain.    
 name: str - name    
 verb: str - verb or 'call'     
 logger: [ILogger](../../../components/log/ilogger) - logger    

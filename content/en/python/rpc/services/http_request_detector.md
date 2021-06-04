@@ -14,21 +14,21 @@ The HttpRequestDetector class allows you to retrieve parameters from HTTP reques
 ### Static methods
 
 #### detect_address
-Detects the IP address from which the given HTTP request was received.
+Detects the IP address from where the given HTTP request was received.
 
 > `static` detect_address(req: bottle.Request): str
 
 - **req**: bottle.Request - HTTP request to process.
-- **returns**: str - the detected IP address (without a port). If no IP is detected - *None* will be returned.
+- **returns**: str - detected IP address (without a port). If no IP is detected - *None* will be returned.
 
 
 #### detect_browser
-Detects the browser (using "user-agent") from which the given HTTP request was made.
+Detects the browser (using "user-agent") from where the given HTTP request was made.
 
 > `static` detect_browser(req: bottle.Request) -> str
 
 - **req**: bottle.Request - HTTP request to process.
-- **returns**: str - the detected browser. Detectable browsers: "chrome", "msie", "firefox", "safari". Otherwise - "unknown" will be returned.
+- **returns**: str - detected browser. Detectable browsers: "chrome", "msie", "firefox", "safari". Otherwise - "unknown" will be returned.
 
 
 #### detect_platform
@@ -37,7 +37,7 @@ Detects the platform (using "user-agent") from which the given HTTP request was 
 > `static` detect_platform(req: bottle.Request): str
 
 - **req**: bottle.Request - HTTP request to process.
-- **returns**: str - the detected platform and version. Detectable platforms: "mobile", "iphone",
+- **returns**: str - detected platform and version. Detectable platforms: "mobile", "iphone",
 "ipad",  "macosx", "android",  "webos", "mac", "windows". Otherwise - "unknown" will
 be returned.
 

@@ -17,7 +17,7 @@ description: >
 Abstract client that calls a commandable HTTP service.
 
 Commandable services are generated automatically for
-[ICommandable](../../commons/commands/icommandable)
+[ICommandable](../../commons/commands/icommandable). 
 Each command is exposed as POST operation that receives all parameters
 in body object.
 

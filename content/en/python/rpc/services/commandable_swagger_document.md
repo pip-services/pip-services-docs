@@ -83,8 +83,8 @@ Returns a string with spaces.
 
 > _get_spaces(length: int): str
 
-- **length**: int - Determines the length of the string with spaces.
-- **returns**: str - String containing spaces.
+- **length**: int - determines the length of the string with spaces.
+- **returns**: str - string containing spaces.
 
 
 #### to_string
@@ -115,7 +115,7 @@ Adds an item to the Swagger code.
 
 
 #### _write_as_object
-Adds a property and its value
+Adds a property and its value.
 
 > _write_as_object(indent: int, name: str, value: Any)
 

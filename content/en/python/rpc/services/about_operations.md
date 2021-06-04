@@ -13,7 +13,7 @@ description: >
 
 The AboutOperations class is used to obtain information about running services.
 
-### Methods
+### Instance methods
 
 #### get_about
 TODO add description
@@ -24,15 +24,15 @@ TODO add description
 
 
 #### get_about_operation
-TODO add description
+Returns the service's information.
 
 > get_about_operation(): Callable
 
-- **returns**: Callable - TODO add description
+- **returns**: Callable - service information
 
 
 #### set_references
-TODO add description
+Sets the references of the service.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 

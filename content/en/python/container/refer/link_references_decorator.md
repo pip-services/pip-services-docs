@@ -5,7 +5,7 @@ linkTitle: "LinkReferencesDecorator"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
 description: >
     References decorator that automatically sets references to newly added components
-    that implement [IReferenceable interface](../../../commons/refer/ireferenceable) and unsets references from removed components
+    that implement [IReferenceable interface](../../../commons/refer/ireferenceable), and unsets references from removed components
     that implement [IUnreferenceable interface](../../../commons/refer/iunreferenceable).
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The LinkReferencesDecorator class allows you to create a references decorator that automaticall sets references to newly added components that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface and unsets references from removed components that implement the [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
+The LinkReferencesDecorator class allows you to create a references decorator that automatically sets references to newly added components that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface, and unsets references from removed components that implement the [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
 
 ### Constructors
 Creates a new instance of the decorator.

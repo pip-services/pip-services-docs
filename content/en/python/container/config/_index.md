@@ -12,7 +12,7 @@ description: >
 
 
     External configurations (stored as YAML or JSON) are passed to the container 
-    and define the structure of objects that need to be recreated in the container. 
+    and define the structure of the objects that need to be recreated in the container. 
     Objects can be defined in two ways:
 
     - using descriptors (using those registered factories can recreate the object) 

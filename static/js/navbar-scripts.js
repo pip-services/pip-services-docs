@@ -65,17 +65,22 @@ function hideAlgoliaPopUp(event) {
     }
 }
 
-function getViewport() {
+function getViewport(getWidth=false) {
     // https://stackoverflow.com/a/8876069
     const width = Math.max(
         document.documentElement.clientWidth,
         window.innerWidth || 0
     )
-    if (width <= 576) return 'xs'
-    if (width <= 768) return 'sm'
-    if (width <= 992) return 'md'
-    if (width <= 1200) return 'lg'
-    return 'xl'
+    if (!getWidth){
+        if (width <= 576) return 'xs'
+        if (width <= 768) return 'sm'
+        if (width <= 992) return 'md'
+        if (width <= 1200) return 'lg'
+        return 'xl'
+    } else {
+        return width
+    }
+    
 }
 
 function saveNavState(event) {
@@ -88,14 +93,15 @@ function saveNavState(event) {
 
 function showSearch(event) {
 
-    if (getViewport() == "lg") {
+    if (getViewport(true) <= 1200) {
         let searchButton = document.getElementById("search-btn")
         let searchBox = document.getElementById("hidden-search");
 
         if (searchBox.classList.contains("d-md-none")) {
             searchBox.classList.remove("d-md-none");
+            
             // hide search icon for small screens
-            if (width <= 859) {
+            if (getViewport(true) <= 859) {
                 // hide btn
                 searchButton.classList.remove("d-md-inline-block");
                 searchButton.classList.add("d-md-none");

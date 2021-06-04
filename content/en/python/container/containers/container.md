@@ -16,7 +16,7 @@ The Container class allows you to create an inversion of control (IoC) container
 
 Important points
 
-- The container is driven by configuration, that is usually stored in a JSON or YAML file.
+- The container is driven by configuration, which is usually stored in a JSON or YAML file.
 - The configuration contains a list of components identified by their type or locator, followed by their configuration.
 - On start, a container performs the following actions:
     - Creates components using their types or calls registered factories to create them using their locators.
@@ -42,36 +42,36 @@ Creates a new instance of the container.
 
 > Container(name: str = None, description: str = None)
 
-- **name**: str - (optional) a container name (accessible via ContextInfo)
-- **description**: str - (optional) a container description (accessible via ContextInfo)
+- **name**: str - (optional) container's name (accessible via ContextInfo)
+- **description**: str - (optional) container's description (accessible via ContextInfo)
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _config
-TODO: add description here
+Configuration of the container
 > **_config**: [ContainerConfig](../../config/container_config)
 
 #### _references
-TODO: add description here
+Container's references
 > **_references**: [ContainerReferences](../../refer/container_references)
 
 #### _logger
-TODO: add description here
+Logger.
 > **_logger**: [ILogger](../../../components/log/ilogger)
 
 #### _info
-TODO: add description here
+Container's information.
 > **_info**: [ContextInfo](../../../components/info/context_info)
 
-#### _info
-TODO: add description here
+#### _factories
+Default factories.
 > **_factories**: [DefaultContainerFactory](../../build/default_container_factory)
 
 </span>
 
-### Methods
+### Instance methods
 
 #### add_factory
 Adds a factory to the container. The factory is used to create components          
@@ -79,18 +79,18 @@ added to the container by their locators (descriptors).
 
 > add_factory(factory: [IFactory](../../../components/build/ifactory))
 
-- **factory**: [IFactory](../../../components/build/ifactory) - a component factory to be added.
+- **factory**: [IFactory](../../../components/build/ifactory) - component factory to be added.
 
 #### close
-Closes component and frees used resources.
+Closes the component and frees used resources.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -98,11 +98,11 @@ Configures component by passing configuration parameters.
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - True if the component is open and false otherwise.
 
 
 #### open
@@ -114,13 +114,13 @@ Opens the component.
 
 
 #### read_config_from_file
-Reads container configuration from JSON or YAML file and parameterizes it with given values.
+Reads the container's configuration from a JSON or YAML file and parameterizes it with the given values.
 
 > read_config_from_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params))
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
-- **path**: str - a path to configuration file
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **path**: str - path to the configuration file
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or None to skip parameterization.
 
 
 #### set_references

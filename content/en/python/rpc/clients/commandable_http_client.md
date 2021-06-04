@@ -48,7 +48,7 @@ Creates a new instance of the client.
 
 > CommandableHttpClient(base_route: str)
 
-- **base_route**: str - base route for remote service.
+- **base_route**: str - base route for a remote service.
 
 
 

@@ -16,15 +16,15 @@ The AboutOperations class is used to obtain information about running services.
 ### Instance methods
 
 #### get_about
-TODO add description
+Gets information from a service.
 
 > get_about(): str
 
-- **returns**: str - TODO add description
+- **returns**: str - JSON string with information about the service
 
 
 #### get_about_operation
-Returns the service's information.
+Gets the service's information.
 
 > get_about_operation(): Callable
 

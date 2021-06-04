@@ -14,7 +14,7 @@ description: >
 The ContainerConfig class allows you to create a container configuration as a list of component configurations.
 
 ### Constructors
-Creates a new instance of container configuration.
+Creates a new instance of ContainerConfig.
 
 > ComponentConfig(components: Sequence[[ComponentConfig](../component_config)] = None)
 
@@ -34,8 +34,8 @@ Each section in the configuration parameters is converted into a component confi
 
 
 #### from_value
-Creates a new ContainerConfig object filled with key-value pairs from specified object.
-The value is converted into ConfigParams object which is used to create the object.
+Creates a new ContainerConfig object filled with key-value pairs from a specified object.
+The value is converted into ConfigParams object which is used to create the new object.
 
 > `static` from_value(value: Any): [ContainerConfig]()
 

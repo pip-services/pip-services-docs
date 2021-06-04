@@ -15,7 +15,7 @@ description: >
 
 The ManagedReferences class allows you to create managed references that in additon to keeping and locating references can also manage their lifecycle, such as:
 
-- Auto-creation of missing component using available factories
+- Auto-creation of missing components using available factories
 - Auto-linking newly added components
 - Auto-opening newly added components
 - Auto-closing removed components
@@ -52,7 +52,7 @@ Removes all component references that match the specified locator.
 
 > from_tuples(*tuples: Any): [ManagedReferences]()
 - **locator**: Any - locator to remove references by.
-- **returns**: [ManagedReferences]() - a list, containing all removed references.
+- **returns**: [ManagedReferences]() - list containing all removed references.
 
 
 ### See also

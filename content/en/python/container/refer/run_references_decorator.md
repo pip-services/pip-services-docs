@@ -27,7 +27,7 @@ Creates a new instance of the decorator.
 ### Instance methods
 
 #### put
-Puts a new reference into this reference map.
+Puts a new reference into the reference map.
 
 > put(locator: Any = None, reference: Any = None)
 - **locator**: Any - locator to find the reference by.

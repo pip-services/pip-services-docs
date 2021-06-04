@@ -47,7 +47,7 @@ Returns a correlationId from a request
 
 >  _get_correlation_id(): Optional[str]
 
-- **returns**: Optional[str] - returns a correlationId from a request
+- **returns**: Optional[str] - correlationId from a request
 
 
 #### _get_filter_params
@@ -98,7 +98,7 @@ Sends a JSON object with the created result.
 > _send_created_result(result: Any = None): Optional[str]
 
 - **result**: Any - result to be sent.
-- **returns**: Optional[str] - JSON text response.
+- **returns**: Optional[str] - JSON object with the created result.
 
 
 #### _send_deleted_result
@@ -107,7 +107,7 @@ Sends the deleted result in JSON format.
 > _send_deleted_result(): Optional[str]
 
 - **result**: Any - execution result or a promise with execution result.
-- **returns**: JSON text response.
+- **returns**: JSON object with the deleted result.
 
 
 #### _send_empty_result

@@ -13,27 +13,27 @@ TODO add description
 > InstrumentTiming(correlation_id: Optional[str], name: str, verb: str, logger: [ILogger](../../../components/log/ilogger), counters: [ICounters](../../../components/count/icounters),
 counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)], trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)])
 
-correlation_id: Optional[str] - TODO add description
-name: str - TODO add description
-verb: str - TODO add description
-logger: [ILogger](../../../components/log/ilogger) - TODO add description
-counters: [ICounters](../../../components/count/icounters) - TODO add description
-counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)] - TODO add description
-trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)] - TODO add description
+correlation_id: Optional[str] -  transaction id used to trace execution through the call chain    
+name: str - name    
+verb: str - verb or 'call'
+logger: [ILogger](../../../components/log/ilogger) - logger
+counters: [ICounters](../../../components/count/icounters) - counters
+counter_timing: Optional[[CounterTiming](../../../components/count/counter_timing)] - counter
+trace_timing: Optional[[TraceTiming](../../../components/trace/trace_timing)] - time tracer
 
 
-### Instanc methods
+### Instance methods
 
 #### end_failure
-TODO add description
+Manages a failed service end.
 
 > end_failure(err: Exception)
 
-- **err**: Exception - TODO add description
+- **err**: Exception - exception
 
 
 #### end_timing
-TODO add description
+Ends the service.
 
 > end_timing(err: Exception = None)
 
@@ -41,7 +41,7 @@ TODO add description
 
 
 #### end_success
-TODO add description
+Manages a successful service end.
 
 > end_success()
 

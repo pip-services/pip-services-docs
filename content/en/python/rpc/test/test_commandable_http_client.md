@@ -4,20 +4,23 @@ title: "TestCommandableHttpClient"
 linkTitle: "TestCommandableHttpClient"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    HTTP client for automated testing.
 ---
 
 **Implements:** [CommandableHttpClient](../../clients/commandable_http_client)
 
-### Constructors
-TODO add description
+### Description
 
+The TestCommandableHttpClient class allows you to create an HTTP client for automated testing.
+
+### Constructors
+Creates a new instance of the TestCommandableHttpClient class.
 > CommandableHttpClient(base_route: str)
 
-- **base_route**: str - TODO add description
+- **base_route**: str - base route to the remote method.
 
 
-### Methods
+### Instance methods
 
 #### call_command
 Calls a remote method via HTTP commadable protocol.
@@ -26,8 +29,8 @@ The complete route to remote method is defined as baseRoute + "/" + name.
 
 > call_command(name:str, correlation_id: Optional[str], params: Any): Any
 
-- **name**:str - a name of the command to call. 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through the call chain.
+- **name**:str - name of the command to call. 
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **params**: Any - command parameters.
-- **returns**: Any - a command execution result.
+- **returns**: Any - command execution result.
 

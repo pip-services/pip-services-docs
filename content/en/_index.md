@@ -45,7 +45,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
       <div class="card">
         <div class="card-body text-center">
           <img class="card-img-top" src="/images/langs/dotnet-icon.png" alt="Dotnet icon">
-          <a href="../dotnet" class="stretched-link"></a>
+          <a href="../net" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
             <b>.Net</b>

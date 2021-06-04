@@ -25,7 +25,7 @@ description: >
     
 External configurations (stored as YAML or JSON) are passed to the container and define the structure of objects that need to be recreated in the container.     
 Objects can be defined in two ways: 
-  - using descriptors (using which registered factories can recreate the object) 
+  - using descriptors (using those registered factories can recreate the object) 
   - using hard-coded types (objects are recreated directly, based on their type, bypassing 
     factories). 
 
@@ -33,7 +33,7 @@ Each object can store various configurations.
 <BR/>
 2. Object creation    
    
-Then,the container recreates the objects and, if they implement the IConfigurable interface, passes them their configurations. 
+Then, the container recreates the objects and, if they implement the IConfigurable interface, passes them their configurations. 
 
 Once the objects of a container are configured, if they implement the [IReferencable interface](../../commons/refer/ireferencable), they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the **open()** method is called and they   start to work.    
 <BR/>
@@ -42,7 +42,7 @@ Once the objects of a container are configured, if they implement the [IReferenc
 The container creates all connections to the different services and the objects and the container start running.
 Then, the objects carry out their tasks.
 <BR/>   
-4. Closing   
+4. Closure   
    
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **close()** method (which should make them stop working and disconnect from other services).     
 After this, those objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects.    
@@ -55,8 +55,8 @@ Finally, the contains destroys all objects and turns off.
 #### [Container](container)
 Inversion of control (IoC) container that creates components and manages their lifecycle.
 
-The container is driven by configuration, that is usually stored in a JSON or YAML file.
-The configuration contains a list of components identified by type or locator, followed
+The container is driven by a configuration, that is usually stored in a JSON or YAML file.
+This configuration contains a list of components identified by type or locator, followed
 by the component's configuration.
 
 #### [ProcessContainer](process_container)

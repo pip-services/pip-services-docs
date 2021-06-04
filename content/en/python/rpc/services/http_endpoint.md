@@ -21,15 +21,15 @@ Important points
 Parameters to pass to the [configure](#configure) method for component configuration:
 
 - **connection(s)**: the connection resolver's connections:
-    - **"connection.discovery_key"**: the key to use for connection resolving in a discovery service;
-    - **"connection.protocol"**: the connection's protocol;
-    - **"connection.host"**: the target host;
-    - **"connection.port"**: the target port;
-    - **"connection.uri"**: the target URI.
+    - **"connection.discovery_key"**: key to use for connection resolving in a discovery service;
+    - **"connection.protocol"**: connection's protocol;
+    - **"connection.host"**: target host;
+    - **"connection.port"**: target port;
+    - **"connection.uri"**: target URI.
 - **credential**: the HTTPS credentials:
-    - **"credential.ssl_key_file"**: the SSL private key in PEM
-    - **"credential.ssl_crt_file"**: the SSL certificate in PEM
-    - **"credential.ssl_ca_file"**: the certificate authorities (root cerfiticates) in PEM
+    - **"credential.ssl_key_file"**: SSL private key in PEM
+    - **"credential.ssl_crt_file"**: SSL certificate in PEM
+    - **"credential.ssl_ca_file"**: certificate authorities (root cerfiticates) in PEM
 
 
 #### References
@@ -48,7 +48,7 @@ Closes this endpoint and the REST server (service) that was opened earlier.
 
 > close(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -68,7 +68,7 @@ Returns correlationId from request
 
 
 #### is_open
-Checks if the component is opened.
+Checks if the component is open.
 
 > is_open(): bool
 
@@ -88,8 +88,8 @@ Registers a middleware action for the given route.
 
 > register_interceptor(route: str, action: Callable)
 
-- **route**: str - the route to register in this object's REST server (service).
-- **action**: Callable - the middleware action to perform at the given route.
+- **route**: str - route to register in this object's REST server (service).
+- **action**: Callable - middleware action to perform at the given route.
 
 
 #### register_route
@@ -97,10 +97,10 @@ Registers an action in this objects REST server (service) by the given method an
 
 > register_route(method: str, route: str, schema: [Schema](../../../commons/validate/schema), handler: Callable)
 
-- **method**: str - the HTTP method of the route.
-- **route**: str - the route to register in this object's REST server (service).
-- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
-- **handler**: Callable - the action to perform at the given route.
+- **method**: str - HTTP method of the route.
+- **route**: str - route to register in this object's REST server (service).
+- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
+- **handler**: Callable - action to perform at the given route.
 
 
 #### register_route_with_auth
@@ -109,11 +109,11 @@ by the given method and route.
 
 > register_route_with_auth(method: str, route: str, schema: Schema, authorize: Callable, action: Callable)
 
-- **method**: str - the HTTP method of the route.
-- **route**: str - the route to register in this object's REST server (service).
-- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
-- **authorize**: Callable - the authorization interceptor
-- **action**: Callable - the action to perform at the given route.
+- **method**: str - HTTP method of the route.
+- **route**: str - route to register in this object's REST server (service).
+- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
+- **authorize**: Callable - authorization interceptor
+- **action**: Callable - action to perform at the given route.
 
 
 #### set_references
@@ -121,7 +121,7 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **references**: [IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
 
 
 #### unregister
@@ -129,7 +129,7 @@ Unregisters a registerable object, so that it is no longer used in dynamic endpo
 
 > unregister(registration: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - the registration to remove.
+- **references**: [IReferences](../../../commons/refer/ireferences) - registration to remove.
 
 ### Examples
 

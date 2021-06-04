@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The TestCommandableHttpClient class allows you to create an HTTP client for automated testing.
+The TestCommandableHttpClient class allows you to create a commandable HTTP client for automated testing.
 
 ### Constructors
 Creates a new instance of the TestCommandableHttpClient class.
@@ -24,8 +24,8 @@ Creates a new instance of the TestCommandableHttpClient class.
 
 #### call_command
 Calls a remote method via HTTP commadable protocol.
-The call is made via POST operation and all parameters are sent in body object.
-The complete route to remote method is defined as baseRoute + "/" + name.
+The call is made via POST operation and all parameters are sent in the body object.
+The complete route to the remote method is defined as baseRoute + "/" + name.
 
 > call_command(name:str, correlation_id: Optional[str], params: Any): Any
 

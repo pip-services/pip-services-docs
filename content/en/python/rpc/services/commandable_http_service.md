@@ -18,8 +18,8 @@ The CommandableHttpService class allows you to create services that receive remo
 
 Important points
 
-- Each command is exposed as POST operation that receives all parameters in body object. 
-- Commandable services require only 3 lines of code to implement a robust external HTTP-based remote interface.
+- Each command is exposed as POST operation that receives all parameters in the body object. 
+- Commandable services require only three lines of code to implement a robust external HTTP-based remote interface.
 
 ##### Configuration parameters
 
@@ -87,7 +87,7 @@ Configures a component by passing configuration parameters.
 
 
 #### register
-Registers all service routes in HTTP endpoint.
+Registers all service routes in the HTTP endpoint.
 
 > register()
 

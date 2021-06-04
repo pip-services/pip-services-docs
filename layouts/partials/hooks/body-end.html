@@ -31,15 +31,21 @@
       // Filter by language
 
         hits = hits.filter((item) => {
-          let hitLangPage = item['url'].split('/')[4].toLowerCase();
-          let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
+          console.log(item);
+          
+          if (localStorage['dropdownState'].toLowerCase() != 'home'){
+            let hitLangPage = item['url'].split('/')[4].toLowerCase();
+            let isCorrectHit = localStorage['dropdownState'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
 
-          return isCorrectHit;
+            return isCorrectHit;
+          }
+
+          return true
+          
         });
 
         return hits;
       
-        
       },
 
 

@@ -15,9 +15,9 @@ The RestClient class allows you to create clients that call remote endpoints usi
 
 ##### Configuration parameters
 
-- **base_route**: base route for remote URI
+- **base_route**: base route for a remote URI
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol: http or https
     - **host**: host name or IP address
     - **port**: port number
@@ -34,7 +34,7 @@ The RestClient class allows you to create clients that call remote endpoints usi
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:traces:\*:\*:1.0** - (optional) [ITracer](../../../components/trace/itracer) components to record traces
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 
 
@@ -112,7 +112,7 @@ Adds a correlation id (correlation_id) to the invocation parameter map.
 > add_correlation_id(params: Any = None, correlation_id: Optional[str] = None): Any
 
 - **params**: Any - invocation parameters.
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Any - invocation parameters with added correlation id.
 
 

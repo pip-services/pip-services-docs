@@ -19,7 +19,7 @@ The HeartbeatRestService class allows you to create services that return heartbe
 Important points
 
 - The service responds on /heartbeat route (can be changed) with a string with the current time in UTC.
-- This service route can be used to health checks by loadbalancers and container orchestrators.
+- This service route can be used to perform health checks by loadbalancers and container orchestrators.
 
 ##### Configuration parameters
 
@@ -28,7 +28,7 @@ Important points
 - **dependencies**:
     - **endpoint**: override for HTTP Endpoint dependency
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol: http or https
     - **host**: host name or IP address
     - **port**: port number

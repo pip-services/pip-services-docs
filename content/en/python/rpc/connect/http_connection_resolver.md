@@ -32,7 +32,7 @@ Important points
 
 #### References
 
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 
 
@@ -66,16 +66,16 @@ Registers the given connection in all referenced discovery services. This method
 
 > register(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### resolve
-Resolves a single component connection. If connections are configured to be retrieved from Discovery service
+Resolves a single component connection. If the connections are configured to be retrieved from Discovery service,
 it finds a IDiscovery and resolves the connection there.
 
 > resolve(correlation_id: Optional[str]): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved connection.
 
 
@@ -84,7 +84,7 @@ Resolves all component connections. If connections are configured to be retrieve
 
 > resolve_all(correlation_id: Optional[str]): [ConfigParams](../../../commons/config/config_params)
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved connections.
 
 

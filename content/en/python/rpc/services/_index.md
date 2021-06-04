@@ -25,24 +25,24 @@ Interface to perform Swagger registrations.
 ### Classes
 
 #### [AboutOperations](about_operations)
-TODO add description
+Obtains information about running services
 
 
 #### [CommandableHttpService](commandable_http_service)
-Abstract service that receives remove calls via HTTP protocol
+Abstract service that receives remote calls via HTTP protocol
 to operations automatically generated for commands defined in [ICommandable](../../../commons/command/icommandable).
-Each command is exposed as POST operation that receives all parameters in body object.
+Each command is exposed as a POST operation that receives all parameters in body object.
 
-Commandable services require only 3 lines of code to implement a robust external
+Commandable services require only three lines of code to implement a robust external
 HTTP-based remote interface.
 
 
 #### [CommandableSwaggerDocument](commandable_swagger_document)
-TODO add description
+Generates Swagger code that describes created REST API methods and their parameters.
 
 
 #### [HeartbeatOperations](heartbeat_operations)
-TODO add description
+Handles the operations of a heartbeat service.
 
 
 #### [HeartbeatRestService](heartbeat_rest_service)
@@ -51,7 +51,7 @@ Service returns heartbeat via HTTP/REST protocol.
 The service responds on /heartbeat route (can be changed)
 with a string with the current time in UTC.
 
-This service route can be used to health checks by loadbalancers and
+This service route can be used to perform health checks by loadbalancers and
 container orchestrators.
 
 
@@ -72,7 +72,7 @@ TODO add description
 
 
 #### [RestOperations](rest_operations)
-TODO add description
+Handles REST services operations.
 
 
 #### [RestService](rest_service)
@@ -80,7 +80,7 @@ Abstract service that receives remove calls via HTTP/REST protocol.
 
 
 #### [StatusOperations](status_operations)
-TODO add description
+Handles status requests for REST operations.
 
 #### [StatusRestService](status_rest_service)
 Service that returns microservice status information via HTTP/REST protocol.

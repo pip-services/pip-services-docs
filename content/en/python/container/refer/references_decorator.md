@@ -87,7 +87,7 @@ Gets all component references that match the specified locator.
 
 #### get_required
 Gets all component references that match the specified locator.
-At least one component reference must be present. If it doesn't the method throws an error.
+At least one component reference must be present.
 Throws a [ReferenceException](../../../commons/refer/reference_exception) when no references were found.
 
 > get_required(locator: Any): List[Any]

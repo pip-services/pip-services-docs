@@ -19,8 +19,8 @@ Important points
 - It processes command line arguments and handles unhandled exceptions and Ctrl-C signal to gracefully shutdown the container.
 
 ### Command line arguments
-- **--config / -c**            path to JSON or YAML file with container configuration (default: "./config/config.yml")
-- **--param / --params / -p**   value(s) to parameterize the container configuration
+- **--config / -c**            path to a JSON or YAML file with the container's configuration (default: "./config/config.yml")
+- **--param / --params / -p**   value(s) to parameterize the container's configuration
 - **--help / -h**              prints the container usage help
 
 ### Constructors
@@ -29,7 +29,7 @@ Creates a new instance of the container.
 > ProcessContainer(name: str = None, description: str = None)
 
 - **name**: str - (optional) container's name (accessible via ContextInfo)
-- **description**: str - (optional) container description (accessible via ContextInfo)
+- **description**: str - (optional) container's description (accessible via ContextInfo)
 
 ### Fields
 
@@ -50,7 +50,7 @@ Logger.
 #### run
 Runs the container by instantiating and running components inside the container.
 
-It reads the container configuration, creates, configures, references and opens components.
+It reads the container configuration, and creates, configures, references and opens components.
 On process exit; it closes, unreferences and destroys components in order to shutdown properly.
 
 > run()

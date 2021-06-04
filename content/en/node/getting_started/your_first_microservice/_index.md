@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Your first microservice in Python"
+title: "Your first microservice in Node.js"
 linkTitle: "Your first microservice"
 weight: 30
 ---
@@ -19,44 +19,43 @@ The microservice is structurally made up of these components:
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
 
-**/requirements.txt**
+**/package.json**
 
-```txt
-iso8601 
-PyYAML 
-pystache 
-pytest  
-pytz 
-bottle 
-pybars3 
-requests 
-netifaces==0.10.9   
-pip_services3_commons 
-pip_services3_components 
-pip_services3_container 
-pip_services3_data 
-pip_services3_rpc
+```json
+{
+ "name": "hello-world",
+ "version": "1.0.0",
+  "dependencies": {
+    "pip-services-commons-node": "^3.0.*",
+    "pip-services-components-node": "^3.0.*",
+    "pip-services-container-node": "3.0.*",
+    "pip-services-data-node": "^3.0.*",
+    "pip-services-rpc-node": "^3.0.*"  
+ }
+}
 ```
 
 In the command line, type out the command below to install the dependencies:
 
 ```bash
-pip install -r requirements.txt
+npm install
 ```
 
 ### Step 2. Controller
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
 
-```python
-def greeting(name):        
-    return f"Hello, {name if name is not None else self.__defaultName} !"
+```typescript
+greeting(name, callback) {
+    callback(null, "Hello, " + (name || this._defaultName) + "!");
+}
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “__default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
 
-```python
-def configure(config):        
-    self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
+```typescript
+configure(config) {
+   this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+}
 ```
 
 Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
@@ -71,53 +70,55 @@ More details on this mechanism can be found in [The Configuration recipe](../../
 
 This is all the code of the controller in the file:
 
-**/HelloWorldController.py**
+**/HelloWorldController.js**
 
-```python
-# -*- coding: utf-8 -*- 
-class HelloWorldController:
-    __default_name = None
+```typescript
+"use strict";
 
-    def __init__(self):
-        self.__default_name = "Pip User"
+class HelloWorldController {
+    constructor() {
+        this._defaultName = "Pip User";   
+    }
 
-    def configure(config):
-        self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
+    configure(config) {
+        this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+    }
 
-    def greeting(name):
-        return f"Hello, {name if name is not None else self.__default_name} !"
+    greeting(name, callback) {
+        callback(null, "Hello, " + (name || this._defaultName) + "!");
+    }
+}
+
+exports.HelloWorldController = HelloWorldController
 
 ```
 
 ### Step 3. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
-```python
-class HelloWorldRestService(RestService):
+```typescript
+class HelloWorldRestService extends rpc.RestService
 ```
 
 Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
 
-```python
-def register(self):
-    self.register_route(method="GET", route=self._route, handler=self.greeting)
-
-
-def greeting(self, name):
-    result = Parameters.from_tuples("name", self._controller.greeting(name))
-
-    self.send_result(result)
-
+```typescript
+register() {
+   this.registerRoute("get", "/greeting", null, (req, res) => {
+       let name = req.param('name');
+       this._controller.greeting(name, this.sendResult(req, res));    
+   });
+}
 ```
 
 To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
 
-```python
-def __init__(self):
-    super(HelloWorldRestService, self).__init__()
-    self._base_route = "/hello_word"
-    ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-    self._dependency_resolver.put('controller', ControllerDescriptor)
+```typescript
+constructor() {
+    super();
+    this._baseRoute = "/hello_world";
+    this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));   
+}
 
 ```
 
@@ -129,72 +130,86 @@ We also need to set a base route in the service’s constructor using the _base_
 
 Full listing for the REST service found in the file:
 
-**/HelloWorldRestService.py**
-```python
-class HelloWorldRestService(RestService):
+**/HelloWorldRestService.js**
+```typescript
+"use strict";
+‍
+const rpc = require("pip-services-rpc-node");
+const commons = require("pip-services-commons-node");
 
-    def __init__(self):
-        super(HelloWorldRestService, self).__init__()
-        self._base_route = "/hello_word"
-        ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-        self._dependency_resolver.put('controller', ControllerDescriptor)
+class HelloWorldRestService extends rpc.RestService {
+    constructor() {
+        super();
+        this._baseRoute = "/hello_world";
+        this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
+    }
 
-    def set_references(self, references):
-        super(HelloWorldRestService, self).set_references(references)
-        self._controller = self._dependency_resolver.get_one_required('controller')
-
-    def register(self):
-        self.register_route(method="GET", route=self._route, handler=self.greeting, schema=None)
-
-    def greeting(self, name):
-        result = Parameters.from_tuples("name", self._controller.greeting(name))
-        self.send_result(result)
+    setReferences(references){
+        super.setReferences(references);
+        this._controller = this._dependencyResolver.getOneRequired('controller');
+    }    
+    register() {
+        this.registerRoute("get", "/greeting", null, (req, res) => {
+            let name = req.query.name;
+            this._controller.greeting(name, this.sendResult(req, res));
+        });
+    }
+}
+exports.HelloWorldRestService = HelloWorldRestService
 ```
 
 
 ### Step 4. Сomponent factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-```python
-class HelloWorldServiceFactory(Factory):
+```typescript
+class HelloWorldServiceFactory extends components.Factory
 ```
 
 Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
 
-```python
-def __init__(self):
-    super(HelloWorldServiceFactory, self).__init__()
-    ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
-    HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
-    self.register_as_type(ControllerDescriptor, HelloWorldController)
-    self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
-
-
+```typescript
+constructor() {
+    super();
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        controller.HelloWorldController
+    );
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        restService.HelloWorldRestService
+    );
+‍}
 ```
 
 For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
 
 Full listing of the factory’s code found in the file:
 
-**‍/HelloWorldServiceFactory.py**
+**‍/HelloWorldServiceFactory.js**
 
-```python
-# -*- coding: utf-8 -*- 
-from HelloWorldController import HelloWorldController
-from HelloWorldRestService import HelloWorldRestService
-from pip_services3_commons.refer import Descriptor
-from pip_services3_components.build import Factory
+```typescript
+"use strict";
 
+const components = require("pip-services-components-node");
+const commons = require("pip-services-commons-node");
+const controller = require("./HelloWorldController");
+const restService = require("./HelloWorldRestService");
 
-class HelloWorldServiceFactory(Factory):
-    def __init__(self):
-
-        super(HelloWorldServiceFactory, self).__init__()
-        ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
-        HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
-        self.register_as_type(ControllerDescriptor, HelloWorldController)
-        self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
-
+class HelloWorldServiceFactory extends components.Factory {
+    constructor() {
+        super();
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+            controller.HelloWorldController
+        );
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+            restService.HelloWorldRestService
+        );
+    }
+}
+exports.HelloWorldServiceFactory = HelloWorldServiceFactory
 ```
 
 ### Step 5. Container
@@ -204,23 +219,24 @@ Although containers can be populated by components manually, we’ll be using dy
 
 Full listing of the container’s code found in the file:
 
-**/HelloWorldProcess.py**
+**‍/HelloWorldProcess.js**
 
-```python
-# -*- coding: utf-8 -*- 
-from HelloWorldServiceFactory import HelloWorldServiceFactory
-from pip_services3_container.ProcessContainer import ProcessContainer
-from pip_services3_rpc.build import DefaultRpcFactory
+```typescript
+"use strict";
 
+const rpc = require("pip-services-rpc-node");
+const factory = require("./HelloWorldServiceFactory");
 
-class HelloWorldProcess(ProcessContainer):
-    def __init__(self):
+class HelloWorldProcess extends container.ProcessContainer {
+    constructor() {
+        super('hello-world', 'HelloWorld microservice');
+        this._configPath = './config.yml';
+        this._factories.add(new factory.HelloWorldServiceFactory());
+        this._factories.add(new rpc.DefaultRpcFactory());
+    }
+}
 
-        super(HelloWorldProcess, self).__init__('hello-world', 'HelloWorld microservice')
-        self._config_path = './config.yaml'
-        self._factories.add(HelloWorldServiceFactory())
-        self._factories.add(DefaultRpcFactory())
-
+exports.HelloWorldProcess = HelloWorldProcess;
 ```
 
 The dynamic configuration is defined in the file:
@@ -275,22 +291,20 @@ Looking at the configuration file, we can conclude that the following components
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
 ### Step 6. Run and test the microservice
-In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
-**/run.py**
+**/run.js**
 
-```python
+```typescript
+"use strict";
 
-# -*- coding: utf-8 -*- 
-from HelloWorldProcess import HelloWorldProcess
+const process = require("./HelloWorldProcess");
 
-if __name__ == '__main__':
-    runner = HelloWorldProcess()
-    print("run")
-    try:
-        runner.run()
-    except Exception as ex:
-        print(ex)
+try {
+    new process.HelloWorldProcess().run(process.argv);
+} catch(ex) {
+    console.error(ex);
+}
 
 ```
 
@@ -318,7 +332,7 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 To start the microservice, run the following command from a terminal:
 
 ```bash
-python ./run.py
+node ./run.js
 ```
 
 If the microservice started up successfully, you should see the following result in the terminal:
@@ -337,6 +351,6 @@ If all’s well, you should get the following string as a result:
 
 ```Hello, John!```
 
-All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-python).
+All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-nodex).
 
 To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!

@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Your first microservice in Python"
+title: "Your first microservice in .NET"
 linkTitle: "Your first microservice"
 weight: 30
 ---
@@ -16,50 +16,56 @@ The microservice is structurally made up of these components:
 - A container process, which will be filled with the necessary components, based on yml configuration.
 
 ### Step 1. Project setup
-Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
+Create a folder for the project, open it in Visual Studio Code and run the command:
 
+```bash
+dotnet new console
+```
 
-**/requirements.txt**
+This command will automatically create two files: HelloWorld.csproj and Program.cs. Open the HelloWorld.csproj file and add the necessary dependencies to it.
 
-```txt
-iso8601 
-PyYAML 
-pystache 
-pytest  
-pytz 
-bottle 
-pybars3 
-requests 
-netifaces==0.10.9   
-pip_services3_commons 
-pip_services3_components 
-pip_services3_container 
-pip_services3_data 
-pip_services3_rpc
+**/HelloWorld.csproj**
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">  
+  <PropertyGroup>    
+    <OutputType>Exe</OutputType>    
+    <TargetFramework>netcoreapp3.1</TargetFramework>  
+  </PropertyGroup>  
+  <ItemGroup>    
+    <PackageReference Include="PipServices3.Commons" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Components" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Container" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Data" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Rpc" Version="3.3.0" />  
+  </ItemGroup>
+</Project>
 ```
 
 In the command line, type out the command below to install the dependencies:
 
 ```bash
-pip install -r requirements.txt
+dotnet restore
 ```
 
 ### Step 2. Controller
-The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
+The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database. Since their execution time might take too long, business methods are implemented in .Net as asynchronous functions:
 
-```python
-def greeting(name):        
-    return f"Hello, {name if name is not None else self.__defaultName} !"
+```cs
+public async Task<string> GreetingAsync(string name){    
+  return await Task.FromResult($"Hello {name ?? _defaultName}!");
+}
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “__default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “_default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
 
-```python
-def configure(config):        
-    self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
+```cs
+public void Configure(ConfigParams config){
+    _defaultName = config.GetAsStringWithDefault("default_name", null);
+}
 ```
 
-Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+Now, parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
 
 ```yml
 # Controller
@@ -71,130 +77,141 @@ More details on this mechanism can be found in [The Configuration recipe](../../
 
 This is all the code of the controller in the file:
 
-**/HelloWorldController.py**
+**/HelloWorldController.cs**
 
-```python
-# -*- coding: utf-8 -*- 
-class HelloWorldController:
-    __default_name = None
+```cs
+using System.Threading.Tasks;using PipServices3.Commons.Config; 
+namespace HelloWorld {    
+    public class HelloWorldController : IConfigurable {        
+        private string _defaultName = null; 
 
-    def __init__(self):
-        self.__default_name = "Pip User"
+        public void Configure(ConfigParams config) {            
+            _defaultName = config.GetAsStringWithDefault("default_name", null);        
+        }   
 
-    def configure(config):
-        self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
-
-    def greeting(name):
-        return f"Hello, {name if name is not None else self.__default_name} !"
+        public async Task<string> GreetingAsync(string name) {            
+            return await Task.FromResult($"Hello {name ?? _defaultName}!");        
+        }    
+    }
+}
 
 ```
 
 ### Step 3. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
-```python
-class HelloWorldRestService(RestService):
+```cs
+public class HelloWorldRestService : RestService
 ```
 
 Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
 
-```python
-def register(self):
-    self.register_route(method="GET", route=self._route, handler=self.greeting)
-
-
-def greeting(self, name):
-    result = Parameters.from_tuples("name", self._controller.greeting(name))
-
-    self.send_result(result)
-
+```cs
+public override void Register(){    
+    base.Register();    
+    RegisterRoute("GET", "/greeting", async (request, response, routeData) => {        
+        string name = null;        
+        if (request.Query.TryGetValue("name", out StringValues values)) {            
+            name = values.FirstOrDefault();        
+        }        
+        await SendResultAsync(response, await _controller.GreetingAsync(name));    
+  });
+}
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+To get a reference to the controller, we’ll add its descriptor to the “_dependencyResolver” with a name of “controller”.
 
-```python
-def __init__(self):
-    super(HelloWorldRestService, self).__init__()
-    self._base_route = "/hello_word"
-    ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-    self._dependency_resolver.put('controller', ControllerDescriptor)
+```cs
+public HelloWorldRestService(){    
+    _baseRoute = "hello_world";    
+    _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));
+}
 
 ```
 
 Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](TODO/add/link) for more on how this mechanism works.
 
-We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
+We also need to set a base route in the service’s constructor using the _baseRoute property. As a result, the microservice’s full REST request will look something like:
 
 ```GET /hello_world/greeting?name=John```
 
 Full listing for the REST service found in the file:
 
-**/HelloWorldRestService.py**
-```python
-class HelloWorldRestService(RestService):
+**/HelloWorldRestService.cs**
+```cs
+using Microsoft.Extensions.Primitives;
+using PipServices3.Commons.Refer;
+using PipServices3.Rpc.Services;
+using System.Linq; 
+namespace HelloWorld {    
+    public class HelloWorldRestService : RestService {        
+        private HelloWorldController _controller;   
 
-    def __init__(self):
-        super(HelloWorldRestService, self).__init__()
-        self._base_route = "/hello_word"
-        ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
-        self._dependency_resolver.put('controller', ControllerDescriptor)
+        public HelloWorldRestService() {            
+            _baseRoute = "hello_world";            
+            _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));        
+        }    
 
-    def set_references(self, references):
-        super(HelloWorldRestService, self).set_references(references)
-        self._controller = self._dependency_resolver.get_one_required('controller')
+        public override void SetReferences(IReferences references) {            
+            base.SetReferences(references);            
+            _controller = _dependencyResolver.GetOneRequired<HelloWorldController>("controller");        
+        }  
 
-    def register(self):
-        self.register_route(method="GET", route=self._route, handler=self.greeting, schema=None)
-
-    def greeting(self, name):
-        result = Parameters.from_tuples("name", self._controller.greeting(name))
-        self.send_result(result)
+        public override void Register() {            
+            base.Register();            
+            RegisterRoute("GET", "/greeting", async (request, response, routeData) => {                
+                string name = null;                
+                if (request.Query.TryGetValue("name", out StringValues values)) {                    
+                  name = values.FirstOrDefault();                
+                }                
+              await SendResultAsync(response, await _controller.GreetingAsync(name));
+            });        
+        }    
+    }
+}
 ```
 
 
 ### Step 4. Сomponent factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-```python
-class HelloWorldServiceFactory(Factory):
+```cs
+public class HelloWorldServiceFactory : Factory
 ```
 
-Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+The factory’s constructor is used to register descriptors and their corresponding component types.
 
-```python
-def __init__(self):
-    super(HelloWorldServiceFactory, self).__init__()
-    ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
-    HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
-    self.register_as_type(ControllerDescriptor, HelloWorldController)
-    self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
-
-
+```cs
+public HelloWorldServiceFactory(){    
+    RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));    
+    RegisterAsType(HttpServiceDescriptor, typeof(HelloWorldRestService));
+}
 ```
 
 For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
 
 Full listing of the factory’s code found in the file:
 
-**‍/HelloWorldServiceFactory.py**
+**‍/HelloWorldServiceFactory.cs**
 
-```python
-# -*- coding: utf-8 -*- 
-from HelloWorldController import HelloWorldController
-from HelloWorldRestService import HelloWorldRestService
-from pip_services3_commons.refer import Descriptor
-from pip_services3_components.build import Factory
+```cs
+using PipServices3.Commons.Refer;
+using PipServices3.Components.Build; 
 
+namespace HelloWorld {    
 
-class HelloWorldServiceFactory(Factory):
-    def __init__(self):
+    public class HelloWorldServiceFactory : Factory {  
 
-        super(HelloWorldServiceFactory, self).__init__()
-        ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
-        HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
-        self.register_as_type(ControllerDescriptor, HelloWorldController)
-        self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
-
+        public static Descriptor Descriptor = new Descriptor("hello-world", "factory", "service", "default", "1.0");        
+        public static Descriptor ControllerDescriptor = new Descriptor("hello-world", "controller", "default", "*", "1.0");        
+        public static Descriptor RestServiceDescriptor = new Descriptor("hello-world", "service", "http", "*", "1.0");         
+        
+        public HelloWorldServiceFactory(){            
+            RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));            
+            RegisterAsType(RestServiceDescriptor, typeof(HelloWorldRestService));        
+        }    
+    }
+}
 ```
 
 ### Step 5. Container
@@ -204,23 +221,24 @@ Although containers can be populated by components manually, we’ll be using dy
 
 Full listing of the container’s code found in the file:
 
-**/HelloWorldProcess.py**
+**‍/HelloWorldProcess.cs**
 
-```python
-# -*- coding: utf-8 -*- 
-from HelloWorldServiceFactory import HelloWorldServiceFactory
-from pip_services3_container.ProcessContainer import ProcessContainer
-from pip_services3_rpc.build import DefaultRpcFactory
+```cs
+using PipServices3.Container;
+using PipServices3.Rpc.Build; 
 
+namespace HelloWorld {
 
-class HelloWorldProcess(ProcessContainer):
-    def __init__(self):
+    public class HelloWorldProcess : ProcessContainer {    
 
-        super(HelloWorldProcess, self).__init__('hello-world', 'HelloWorld microservice')
-        self._config_path = './config.yaml'
-        self._factories.add(HelloWorldServiceFactory())
-        self._factories.add(DefaultRpcFactory())
+        public HelloWorldProcess(): base("hello_world", "Hello world microservice") {            
+            _configPath = "config.yml";             
+            _factories.Add(new DefaultRpcFactory());            
+            _factories.Add(new HelloWorldServiceFactory());        
+        }   
 
+    }
+}
 ```
 
 The dynamic configuration is defined in the file:
@@ -275,23 +293,23 @@ Looking at the configuration file, we can conclude that the following components
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
 ### Step 6. Run and test the microservice
-In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+In .Net, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
-**/run.py**
+**/Program.cs**
 
-```python
+```cs
+namespace HelloWorld { 
 
-# -*- coding: utf-8 -*- 
-from HelloWorldProcess import HelloWorldProcess
+    class Program { 
 
-if __name__ == '__main__':
-    runner = HelloWorldProcess()
-    print("run")
-    try:
-        runner.run()
-    except Exception as ex:
-        print(ex)
+        static void Main(string[] args) {   
 
+            var process = new HelloWorldProcess();            
+            process.RunAsync(args).Wait();        
+        }
+
+    }
+}
 ```
 
 When a microservice starts up, the following sequence of events takes place:
@@ -318,7 +336,7 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 To start the microservice, run the following command from a terminal:
 
 ```bash
-python ./run.py
+dotnet run
 ```
 
 If the microservice started up successfully, you should see the following result in the terminal:
@@ -337,6 +355,6 @@ If all’s well, you should get the following string as a result:
 
 ```Hello, John!```
 
-All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-python).
+All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-dotnet).
 
 To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!

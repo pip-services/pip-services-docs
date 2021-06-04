@@ -10,14 +10,14 @@ description: >
 **Implements:** [RestClient](../../clients/rest_client)
 
 ### Constructors
-TODO add description
+Creates a new instance of the TestRestClient class.
 
 > TestRestClient(base_route: str)
 
-- **base_route**: str - TODO add description
+- **base_route**: str - base route to the REST client.
 
 
-### Methods
+### Instance methods
 
 #### call
 Calls a remote method via HTTP/REST protocol.
@@ -25,9 +25,9 @@ Calls a remote method via HTTP/REST protocol.
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any
 
 - **method**: str - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: str - a command route. Base route will be added to this route
-- **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **route**: str - command route. Base route will be added to this route
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **params**: Any - (optional) query parameters.
 - **data**: Any - (optional) body object.
-- **returns**: Any - a result object.
+- **returns**: Any - result object.
 

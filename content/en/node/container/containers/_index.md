@@ -3,7 +3,7 @@ type: docs
 title: "Containers"
 linkTitle: "Containers"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
 description: >
     
     This package contains the Container class, which provides an inversion of control container that creates objects 
@@ -20,6 +20,7 @@ description: >
 <div class="module-body"> 
 
 ### Lifecycle 
+
 <br>
 
 1 . Configuration    

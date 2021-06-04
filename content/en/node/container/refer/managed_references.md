@@ -2,14 +2,16 @@
 type: docs
 title: "ManagedReferences"
 linkTitle: "ManagedReferences"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
 description: >
     Managed references that in addition to keeping and locating references can also 
     manage their lifecycle.
 
 ---
 
-**Implements:** [ReferencesDecorator](../references_decorator), [IOpenable](../../../commons/run/iopenable)
+**Extends:** [ReferencesDecorator](../references_decorator)
+
+**Implements:** [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 
@@ -23,17 +25,17 @@ The ManagedReferences class allows you to create managed references that in addi
 ### Constructors
 Creates a new instance of the decorator.
 
-> ManagedReferences(tuples: Sequence[Any] = None)
+> `public` constructor(tuples: any[] = null)
 
-- **tuples**: Sequence[Any] - tuples where odd values are component locators (descriptors) and even values are component references
+- **tuples**: any[] - tuples where odd values are component locators (descriptors) and even values are component references
 
 ### Instance methods
 
 #### close
 Closes the component and frees used resources.
 
-> close(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+> `public` close(correlationId: string): Promise\<void\>
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### is_open
 Checks if the component is open.
@@ -44,16 +46,16 @@ Checks if the component is open.
 #### open
 Opens the component.
 
-> open(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+> `public` open(correlationId: string): Promise\<void\>
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Static methods
 
-#### from_tuples
+#### fromTuples
 Removes all component references that match the specified locator.
 
-> `static` from_tuples(*tuples: Any): [ManagedReferences]()
-- **locator**: Any - locator to remove references by.
+> `public static` fromTuples(...tuples: any[]): [ManagedReferences]()
+- **locator**: any[] - locator to remove references by.
 - **returns**: [ManagedReferences]() - list containing all removed references.
 
 

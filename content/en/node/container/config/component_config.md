@@ -2,7 +2,7 @@
 type: docs
 title: "ComponentConfig"
 linkTitle: "ComponentConfig"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
 description: >
     Configuration of a component inside a container.
    
@@ -22,22 +22,22 @@ Important points
 
 #### descriptor
 Component's descriptor (locator).
-> **descriptor**: [Descriptor](../../../commons/refer/descriptor)
+> `public` **descriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### type
 Component's type descriptor.
-> **type**: [TypeDescriptor](../../../commons/reflect/type_descriptor)
+> `public` **type**: [TypeDescriptor](../../../commons/reflect/type_descriptor)
 
 #### config
 Component's configuration parameters.
-> **config**: [ConfigParams](../../../commons/config/config_params)
+> `public` **config**: [ConfigParams](../../../commons/config/config_params)
 
 </span>
 
 ### Constructors
 Creates a new instance of the configuration component.
 
-> ComponentConfig(descriptor: [Descriptor](../../../commons/refer/descriptor) = None, type: [TypeDescriptor](../../../commons/reflect/type_descriptor) = None, config: [ConfigParams](../../../commons/config/config_params) = None)
+> `public` constructor(descriptor?: [Descriptor](../../../commons/refer/descriptor), type?: [TypeDescriptor](../../../commons/reflect/type_descriptor), config?: [ConfigParams](../../../commons/config/config_params))
 
 - **descriptor**: [Descriptor](../../../commons/refer/descriptor) - (optional) component's descriptor (locator).
 - **type**: [TypeDescriptor](../../../commons/reflect/type_descriptor) - (optional) component's type descriptor.
@@ -45,11 +45,11 @@ Creates a new instance of the configuration component.
 
 ### Static methods
 
-#### from_config
+#### fromConfig
 Creates a new instance of ComponentConfig based on a section from a container configuration.
 Throws [ConfigException](../commons/errors/config_exception) when neither component descriptor or type is found.
 
-> `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [ComponentConfig]()
+> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [ComponentConfig]()
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - component's parameters from a container configuration.
 - **returns**: [ComponentConfig]() - created ComponentConfig.

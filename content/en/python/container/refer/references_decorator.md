@@ -118,7 +118,7 @@ Removes all component references that match the specified locator.
 
 > remove_all(locator: Any): List[Any]
 - **locator**: Any - locator to remove references by.
-- **returns**: Any - list containing all removed references.
+- **returns**: List[Any] - list containing all removed references.
 
 ### See also
 - #### [IReferences](../../../commons/refer/ireferences)

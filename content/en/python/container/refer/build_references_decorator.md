@@ -55,6 +55,6 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when r
 Finds a factory capable creating a component by given descriptor
 from the components registered in the references.
 
-> find_factory(locator: Any): Optional[IFactory]
+> find_factory(locator: Any): Optional[[IFactory](../../../components/build/ifactory)]
 - **locator**: Any - locator of the component to be created.
-- **returns**: Optional[IFactory] - found factory or None if no factory was found.
+- **returns**: Optional[[IFactory](../../../components/build/ifactory)] - found factory or None if no factory was found.

@@ -40,7 +40,7 @@ weight: 40
 
 **Q: Can Pip.Services be used for commercial projects?**
 
-**A:** Absolutely! All Pip.Services code is provided under MIT license and it is safe to be used in commercial projects free of charge.
+**A:** Absolutely! All Pip.Services code is provided under [MIT license](https://choosealicense.com/licenses/mit/) and it is safe to be used in commercial projects free of charge.
 
 **Q: I like Pip.Services and would like to contribute. What can I do?**
 

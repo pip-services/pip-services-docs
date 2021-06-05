@@ -105,7 +105,7 @@ Returns a string with the type name.
 
 
 #### _write_array_item
-Writes an array item to Swagger code.
+Writes an array item into the Swagger description.
 
 > _write_array_item(indent: int, name: str, is_object_item: bool = False)
 
@@ -125,7 +125,7 @@ Adds a property and its value.
 
 
 #### _write_data
-Adds data to the Swagger code.
+Adds data to the Swagger description.
 
 > _write_data(indent: int, data: Dict[str, Any])
 

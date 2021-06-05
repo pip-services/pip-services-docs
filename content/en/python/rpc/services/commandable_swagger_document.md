@@ -88,7 +88,7 @@ Returns a string with spaces.
 
 
 #### to_string
-Returns a string with Swagger description language that represent the service methods.
+Returns a string with Swagger description language that represents the service methods.
 
 > to_string(): str
 

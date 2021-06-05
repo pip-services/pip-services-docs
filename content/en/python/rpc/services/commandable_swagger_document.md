@@ -4,12 +4,12 @@ title: "CommandableSwaggerDocument"
 linkTitle: "CommandableSwaggerDocument"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Class used to generate Swagger code that describes created REST API methods and their parameters. 
+    Class used to generate Swagger description language that represents the created REST API methods and their parameters. 
 ---
 
 ### Description
 
-The CommandableSwaggerDocument class allows you to generate Swagger code that describes created REST API methods and their parameters. 
+The CommandableSwaggerDocument class allows you to generate Swagger description language that represents the created REST API methods and their parameters. 
 
 ### Constructors
 Creates a new instance of the service.
@@ -88,7 +88,7 @@ Returns a string with spaces.
 
 
 #### to_string
-Returns string with Swagger code that describe service methods.
+Returns a string with Swagger description language that represent the service methods.
 
 > to_string(): str
 
@@ -134,7 +134,7 @@ Adds data to the Swagger code.
 - **data**: Dict[str, Any] - data to be added
 
 #### _write_name
-Write a property or object name.
+Writes a property or object name.
 
 > _write_name(indent: int, name: str)
 

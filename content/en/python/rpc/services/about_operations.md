@@ -28,7 +28,7 @@ Gets the service's information.
 
 > get_about_operation(): Callable
 
-- **returns**: Callable - call to get_about()
+- **returns**: Callable - the get_about method
 
 
 #### set_references

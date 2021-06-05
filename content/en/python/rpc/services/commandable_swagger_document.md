@@ -14,9 +14,9 @@ The CommandableSwaggerDocument class allows you to generate Swagger code that de
 ### Constructors
 Creates a new instance of the service.
 
->  CommandableHttpService(base_route: str, config: [ConfigParams](../../../commons/config/config_params), commands: List[[ICommand](../../../commons/commands/icommand)])
+> CommandableHttpService(base_route: str, config: [ConfigParams](../../../commons/config/config_params), commands: List[[ICommand](../../../commons/commands/icommand)])
 
-- **base_route**: str - 
+- **base_route**: str - base route of the service
 - **config**: [ConfigParams](../../../commons/config/config_params) - 
 - **commands**: List[[ICommand](../../../commons/commands/icommand)] - 
 
@@ -53,7 +53,7 @@ Terms of service information.
 > **info_terms_of_service**: Optional[str]
 
 #### info_contact_name
-Contact name..
+Contact name.
 > **info_contact_name**: Optional[str]
 
 #### info_contact_url
@@ -88,7 +88,7 @@ Returns a string with spaces.
 
 
 #### to_string
-Returns a  string containing the API information.
+Returns string with Swagger code that describe service methods.
 
 > to_string(): str
 
@@ -105,7 +105,7 @@ Returns a string with the type name.
 
 
 #### _write_array_item
-Adds an item to the Swagger code.
+Writes an array item to Swagger code.
 
 > _write_array_item(indent: int, name: str, is_object_item: bool = False)
 
@@ -134,7 +134,7 @@ Adds data to the Swagger code.
 - **data**: Dict[str, Any] - data to be added
 
 #### _write_name
-Adds identation to a string.
+Write a property or object name.
 
 > _write_name(indent: int, name: str)
 

@@ -23,7 +23,7 @@ The core of the toolkit is shown in green. It consists of two modules, both of w
 
 The main (basic) modules are shown in blue. Although they are not required, they are used in most microservices:
 
-- [Container](../../container) - A basic container, which is used to compose microservices from loosely-coupled components (see [The Structure of a Microservice](TODO/add/link)).
+- [Container](../../container) - A basic container, which is used to compose microservices from loosely-coupled components (see [The Structure of a Microservice](../microservice_structure)).
 
 - [Data](../../data) - Basic components for storing data and implementing storage of data in memory and in the file system.
 

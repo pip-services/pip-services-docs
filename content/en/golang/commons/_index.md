@@ -6,33 +6,28 @@ no_list: true
 weight: 30
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    It provides a set of basic patterns used in microservices or backend services.
-    Also the module implemenets a reasonably thin abstraction layer over most fundamental functions across
-    all languages supported by the toolkit to facilitate symmetric implementation.
+    It provides a set of tools used in microservices or backend services. It is designed to facilitate
+    symmetric implementation accross different programming languages.
+
 ---
 
-The module consists of the following packages:
 
-- [**Commands**](commands) - commanding and eventing patterns
-- [**Config**](config) - configuration framework
-- [**Convert**](convert) - soft value converters
-- [**Data**](data) - data patterns
-- [**Errors**](errors) - application errors
-- [**Random**](random) - random data generators
-- [**Refer**](refer) - locator (IoC) pattern
-- [**Reflect**](reflect) - reflection framework
-- [**Run**](run) - execution framework
-- [**Validate**](validate) - validation framework
----
+### Packages
 
-### Quick links
+The module contains the following packages:
 
-* [Configuration Pattern](https://www.pipservices.org/recipies/configuration) 
-* [Locator Pattern](https://www.pipservices.org/recipies/references)
-* [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
-* [Components with Active Logic](https://www.pipservices.org/recipies/active-logic)
-* [Data Patterns](https://www.pipservices.org/recipies/memory-persistence)
-* [Contribute](https://www.pipservices.org/community/contribute)
+* [**Commands**](commands) - commands and events 
+* [**Config**](config) - component configuration
+* [**Convert**](convert) - portable value converters
+* [**Data**](data) - data patterns
+* [**Errors**](errors) - application errors
+* [**Random**](random) - random data generators
+* [**Refer**](refer) - component dependencies (Based on the inversion of control (IoC) pattern)
+* [**Reflect**](reflect) - portable reflection utilities
+* [**Run**](run) - component life-cycle management
+* [**Validate**](validate) - validation rules
+
+
 
 ### Use
 
@@ -40,3 +35,5 @@ Get the package from the Github repository:
 ```bash
 go get -u github.com/pip-services3-go/pip-services3-commons-go@latest
 ```
+
+TODO add example

@@ -36,14 +36,10 @@ See [Parameters](../../run/parameters)
 - **returns**: Promise\<any\> - the execution result
 
 #### getName
-Gets the name of the wrapped command.
+Returns string the name of the command that is being intercepted.
 
-The interceptor can use this method to override the command name.
-Otherwise it shall just delegate the call to the wrapped command.
+> `public` getName(c): string
 
-> `public` getName(command: [ICommand](../icommand)): string
-
-- **command**: [ICommand](../icommand) - the next command in the call chain.
 - **returns**: string - the name of the command that is being intercepted.
 
 

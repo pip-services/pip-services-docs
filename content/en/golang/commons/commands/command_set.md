@@ -2,7 +2,7 @@
 type: docs
 title: "CommandSet"
 linkTitle: "CommandSet"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Contains a set of commands and events supported by a [commandable](../icommandable) object.
     The CommandSet supports command interceptors and command call chains.
@@ -24,163 +24,166 @@ Important points
 
 Creates an empty CommandSet object.
 
-> `public` constructor()
+> NewCommandSet() [*CommandSet]()
 
-### Instance methods
+### Funcs
 
-#### addCommand
+#### AddCommand
 Adds a [command](../icommand) to this command set.  
 See [ICommand](../icommand)
 
-> `public` addCommand(command: [ICommand](../icommand)): void
+> (c [*CommandSet]()) AddCommand(command [ICommand](../icommand))
 
 - **command**: [ICommand](../icommand) - the command to add.
 
-#### addCommandSet
+#### AddCommandSet
 Adds all of the commands and events from specified [command set](../command_set)
 into this one. 
 
-> `public` addCommandSet(commandSet: [CommandSet](../command_set)): void
+> (c [*CommandSet]()) AddCommandSet(commandSet [*CommandSet]())
 
-- **commandSet**: [CommandSet](../command_set) - the CommandSet to add.
+- **commandSet**: [*CommandSet]() - the CommandSet to add.
 
-#### addCommands
+#### AddCommands
 Adds multiple [commands](../icommand) to this command set.  
 See [ICommand](../icommand)
 
-> `public` addCommands(commands: [ICommand](../icommand)[]): void
+> (c *CommandSet) AddCommands(commands [][ICommand](../icommand))
 
-- **commands**: [ICommand](../icommand)[] - the array of commands to add.
+- **commands**: [][ICommand](../icommand) - the array of commands to add.
 
 
-#### addEvent
+#### AddEvent
 Adds an [event](../ievent) to this command set.  
 See [IEvent](../ievent)
 
-> `public` addEvent(event: [IEvent](../ievent)): void 
+> (c [*CommandSet]()) AddEvent(event [IEvent](../ievent))
 
 - **event**: [IEvent](../ievent) - the event to add.
 
-#### addEvents
+#### AddEvents
 Adds multiple [events](../ievent) to this command set.  
 See [IEvent](../ievent)
 
-> `public` addEvents(events: [IEvent](../ievent)[]): void
+> (c [*CommandSet]) AddEvents(events [][IEvent](../ievent))
 
-- **event**: [IEvent](../ievent)[] - the array of events to add.
+- **event**: [][IEvent](../ievent) - the array of events to add.
 
-#### addInterceptor
+#### AddInterceptor
 Adds a [command interceptor](../icommand_interceptor) to this command set.
 
-> `public` addInterceptor(interceptor: [ICommandInterceptor](../icommand_interceptor)): void
+> (c *CommandSet) AddInterceptor(interceptor [ICommandInterceptor](../icommand_interceptor))
 
 - **interceptor**: [ICommandInterceptor](../icommand_interceptor) the interceptor to add.
 
-#### addListener
+#### AddListener
 Adds a [listener](../ievent_listener) to receive notifications on fired events.  
 See [IEventListener](../ievent_listener)
 
-> `public` addListener(listener: [IEventListener](../ievent_listener)): void
+> (c *CommandSet) AddListener(listener [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener to add.
 
-#### execute
+#### Execute
 Executes a [command](../icommand) specificed by its name.  
 See [ICommand](../icommand), [Parameters](../../run/parameters)
 
-> `public` execute(correlationId: string, commandName: string, args: [Parameters](../../run/parameters)): Promise\<any\>
+> (c *CommandSet) Execute(correlationId string, commandName string, args [*run.Parameters](../../run/parameters)) (result interface{}, err error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **commandName**: string - the name of that command that is to be executed.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: Promise\<any\> - the execution result
+- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
+- **returns**:
+    - **result** interface{} - the execution result
+    - **err**: error
 
-#### findCommand
+#### FindCommand
 Searches for a command by its name.  
 See [ICommand](../icommand)
 
-> `public` findCommand(commandName: string): [ICommand](../icommand)
+> (c [*CommandSet]()) FindCommand(commandName string) [ICommand](../icommand)
 
 - **commandName**: [ICommand](../icommand) - the name of the command to search for.
 - **returns**: [ICommand](../icommand) - the command, whose name matches the provided name.
 
-#### findEvent
+#### FindEvent
 Searches for an event by its name in this command set.
 
-> `public` findEvent(eventName: string): [IEvent](../ievent)
+> (c [*CommandSet]()) FindEvent(eventName string) [IEvent](../ievent)
 
 - **eventName**: string - the name of the event to search for.
 - **returns**: [IEvent](../ievent) - the event, whose name matches the provided name.
 
-#### getCommands
+
+#### Commands
 Gets all commands registered in this command set.  
 See [ICommand](../icommand)
 
-> `public` getCommands(): [ICommand](../icommand)[]
+> (c [*CommandSet]()) Commands() [][ICommand](../icommand)
 
-- **returns**: [ICommand](../icommand)[] - a list of commands.
+- **returns**: [][ICommand](../icommand) - a list of commands.
 
 #### getEvents
 Gets all events registred in this command set.  
 See [IEvent](../ievent)
 
-> `public` getEvents(): [IEvent](../ievent)[]
+> (c *CommandSet) Events() [][IEvent](../ievent)
 
-- **returns**: [IEvent](../ievent)[] - a list of events.
+- **returns**: [][IEvent](../ievent) - a list of events.
 
-#### notify
+
+#### Notify
 Fires event specified by its name and notifies all registered
 [listeners](../ievent_listener)
 
-> `public` notify(correlationId: string, eventName: string, args: [Parameters](../../run/parameters)): void
+> (c [*CommandSet]()) Notify(correlationId string, eventName string, args [*run.Parameters](../../run/parameters))
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **eventName**: string - the name of the event that is to be fired.
-- **args**: [Parameters](../../run/parameters) - the event arguments (parameters).
+- **args**: [*run.Parameters](../../run/parameters) - the event arguments (parameters).
 
-#### removeListener
+#### RemoveListener
 Removes previosly added [listener](../ievent_listener).  
 See [IEventListener](../ievent_listener)
 
-> `public` removeListener(listener: [IEventListener](../ievent_listener)): void
-
+> (c *CommandSet) RemoveListener(listener [IEventListener](../ievent_listener))
 
 - **listener**: [IEventListener](../ievent_listener) - the listener to remove.
 
-#### validate
+#### Validate
 Validates [args](../../run/parameters) for command specified by its name using defined schema.
 If validation schema is not defined than the methods returns no errors.
 It returns validation error if the command is not found.
 
 
-> `public` validate(commandName: string, args: [Parameters](../../run/parameters)): [ValidationResult](../../validate/validation_result)[]
+> (c *CommandSet) Validate(commandName string, args [*run.Parameters](../../run/parameters)) [][*validate.ValidationResult](../../validate/validation_result)
 
 - **commandName**: string - the name of the command for which the 'args' must be validated.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: [ValidationResult](../../validate/validation_result)[] - an array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validation_result_type).
+- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to validate.
+- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - an array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validation_result_type).
 
 ### Examples
 
-```typescript
-export class MyDataCommandSet extends CommandSet {
-    private _controller: IMyDataController;
- 
-    constructor(controller: IMyDataController) { // Any data controller interface
-        super();
-        this._controller = controller;
-        this.addCommand(this.makeGetMyDataCommand());
-    }   
- 
-    private makeGetMyDataCommand(): ICommand {
-        return new Command(
-          'get_mydata',
-          null,
-          async (correlationId: string, args: Parameters) => Promise<any> {
-              let param = args.getAsString('param');
-              return await this._controller.getMyData(correlationId, param);
-          }
-        );
-    }
+```go
+type MyDataCommandSet {
+    CommandSet
+    _controller IMyDataController
+}
+
+func (dcs * MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataController) { // Any data controller interface
+    dcs._controller = controller
+    dcs.addCommand(dcs.makeGetMyDataCommand())
+}
+
+func (dcs * MyDataCommandSet) makeGetMyDataCommand() ICommand {
+    return NewCommand(
+      "get_mydata",
+      null,
+      (correlationId: string, args: Parameters, func (correlationId string, args *run.Parameters)(interface{}, err) {
+          let param = args.getAsString("param");
+          return dcs._controller.getMyData(correlationId, param,);
+      }
+    );
 }
 
 ```

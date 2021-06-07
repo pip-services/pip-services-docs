@@ -1,41 +1,45 @@
 ---
 type: docs
 title: "ICommandable"
-linkTitle: "ICommandable" 
+linkTitle: "ICommandable"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: > 
+    An interface used to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
+    
 ---
 
-### Type
+### Description
 
-```go
-type ICommandable interface {}
-```
+The ICommandable interface allows you to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
 
-An interface for commandable objects, which are part of the command design pattern.
-The commandable object exposes its functonality as commands and events groupped into a CommandSet.
+Important points
 
-This interface is typically implemented by controllers and is used to auto generate external interfaces.
-
-**Example:**
-
-```go
-type MyDataController {
-    _commandSet  CommandSet;
-}
-func (dc *MyDataController) getCommandSet() CommandSet {
-    if (dc._commandSet == nil)
-        dc._commandSet = NewDataCommandSet();
-    return dc._commandSet;
-    }
-```
+- This interface is typically implemented by controllers and is used to auto generate external interfaces. 
 
 ### Funcs
 
 #### GetCommandSet
-> GetCommandSet() *[CommandSet](../commandset)
-
 Gets a command set with all supported commands and events.
 
-- Returns *[CommandSet](../commandset) a command set with commands and events.
+> GetCommandSet() [*CommandSet](../command_set)
 
-see [CommandSet](../commandset)
+- **returns**: [CommandSet](../command_set) - a command set with commands and events.
+
+### Examples
+
+```go
+type MyDataController {
+ _commandSet  CommandSet;
+}
+
+func (dc *MyDataController) getCommandSet() CommandSet {
+  if (dc._commandSet == nil)
+    dc._commandSet = NewDataCommandSet();
+  return dc._commandSet;
+}
+ 
+
+```
+
+### See also
+- #### [CommandSet](../command_set)

@@ -47,10 +47,10 @@ Gets the command name.
 #### validate
 Validates the command [args](../../run/parameters) before execution using the defined schema.
 
-> `public` validate(args: [Parameters](../../run/parameters)): [ValidationResult]((../../validate/validation_result))[]
+> `public` validate(args: [Parameters](../../run/parameters)): [ValidationResult](../../validate/validation_result)[]
 
 - **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate using this command's schema.
-- **returns**: [ValidationResult]((../../validate/validation_result))[] - an array of ValidationResults or an empty array (if no schema is set).
+- **returns**: [ValidationResult](../../validate/validation_result)[] - an array of ValidationResults or an empty array (if no schema is set).
 
 ### Examples
 

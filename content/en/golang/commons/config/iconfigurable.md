@@ -1,30 +1,38 @@
 ---
 type: docs
 title: "IConfigurable"
-linkTitle: "IConfigurable" 
+linkTitle: "IConfigurable"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: > 
+    An interface used to set configuration parameters to an object. 
+
 ---
+See also [ConfigParams](../config_params)
 
-### Type
+### Description
 
-```go
-type IConfigurable interface {
+IConfigurable is an interface used to set configuration parameters. It can be implemented by any class that needs to define configuration parameters, such as access control credentials. 
 
-}
-```
+Important points:   
 
-An interface to set configuration parameters to an object.
-
-It can be added to any existing class by implementing a single configure() method.
-
-If you need to emphasis the fact that configure() method can be called multiple
-times to change object configuration in runtime, use IReconfigurable interface instead.
+- A class that implements this interface needs to implement a single **Configure()** method.  
+- If you need to emphasize the fact that **Configure()** method can be called multiple times 
+to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.  
 
 ### Funcs
 
 #### Configure
-> Configure(config *[ConfigParams](../configparams))
+Configures component by passing configuration parameters.
 
-Configures object by passing configuration parameters.
+> Configure(config [*ConfigParams](../config_params))
 
-- config: [ConfigParams](../configparams) configuration parameters to be set.
+- **config**: [*ConfigParams](../config_params) - configuration parameters to be set.
+
+### Examples
+
+```go
+TODO: add example
+
+```
+### See also
+- #### [ConfigParams](../config_params)

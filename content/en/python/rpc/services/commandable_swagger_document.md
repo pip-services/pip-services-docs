@@ -17,8 +17,8 @@ Creates a new instance of the service.
 > CommandableHttpService(base_route: str, config: [ConfigParams](../../../commons/config/config_params), commands: List[[ICommand](../../../commons/commands/icommand)])
 
 - **base_route**: str - base route of the service
-- **config**: [ConfigParams](../../../commons/config/config_params) - 
-- **commands**: List[[ICommand](../../../commons/commands/icommand)] - 
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters 
+- **commands**: List[[ICommand](../../../commons/commands/icommand)] - list of commands
 
 ### Fields
 

@@ -14,7 +14,7 @@ User account management microservice.
 - Communication protocols: Direct, Commandable HTTP, Commandable GRPC, GRPC
 - Persistence: Memory, Flat Files, MongoDB, Couchbase
 - Deployment options: Monolith, Process, [Docker](https://hub.docker.com/u/pipdevs), AWS Lambda
-- Client implementations: [NodeJS](https://github.com/pip-services-users/pip-clients-accounts-node), [.Net](https://github.com/pip-services-users/pip-clients-accounts-dotnet), [Golang](https://github.com/pip-services-users/pip-clients-accounts-go), [Dart](https://github.com/pip-services-users/pip-clients-accounts-dart)
+- Client implementations: [NodeJS](https://github.com/pip-services-users/pip-clients-accounts-node), [.NET](https://github.com/pip-services-users/pip-clients-accounts-dotnet), [Golang](https://github.com/pip-services-users/pip-clients-accounts-go), [Dart](https://github.com/pip-services-users/pip-clients-accounts-dart)
 
 
 This microservice has optional dependencies on the following microservices:

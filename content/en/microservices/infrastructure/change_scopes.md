@@ -12,4 +12,4 @@ Intended to implement change detection using simple pull mechanism. For instance
 - Communication protocols: Direct, Commandable HTTP, Commandable GRPC, GRPC
 - Persistence: Memory, Flat Files, MongoDB, Couchbase
 - Deployment options: Monolith, Process, [Docker](https://hub.docker.com/u/pipdevs), AWS Lambda
-- Client implementations: [NodeJS](https://github.com/pip-services-integration/pip-clients-changescopes-node), [.Net](https://github.com/pip-services-infrastructure/pip-clients-changescopes-dotnet)
+- Client implementations: [NodeJS](https://github.com/pip-services-integration/pip-clients-changescopes-node), [.NET](https://github.com/pip-services-infrastructure/pip-clients-changescopes-dotnet)

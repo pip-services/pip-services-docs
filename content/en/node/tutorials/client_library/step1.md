@@ -16,7 +16,7 @@ First, create the following directory structure to keep the source organized:
 
 <div class='col row'>
   <div class='col'>Node.js</div>
-  <div class='col'>.Net</div>
+  <div class='col'>.NET</div>
   <div class='col'>Python</div>
   <div class='col'>Java</div>
   <div class='col'>Go</div>

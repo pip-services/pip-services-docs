@@ -49,7 +49,7 @@ dotnet restore
 ```
 
 ### Step 2. Controller
-The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database. Since their execution time might take too long, business methods are implemented in .Net as asynchronous functions:
+The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database. Since their execution time might take too long, business methods are implemented in .NET as asynchronous functions:
 
 ```cs
 public async Task<string> GreetingAsync(string name){    
@@ -293,7 +293,7 @@ Looking at the configuration file, we can conclude that the following components
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
 ### Step 6. Run and test the microservice
-In .Net, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+In .NET, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 **/Program.cs**
 

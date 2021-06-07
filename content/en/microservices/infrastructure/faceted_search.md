@@ -11,4 +11,4 @@ Allows to search "facets" recorded by other microservices. For instance, statist
 - Communication protocols: Direct, Commandable HTTP, Commandable GRPC, GRPC
 - Persistence: Memory, Flat Files, MongoDB, Couchbase
 - Deployment options: Monolith, Process, [Docker](https://hub.docker.com/u/pipdevs), AWS Lambda
-- Client implementations: [NodeJS](https://github.com/pip-services-infrastructure/pip-clients-facets-node), [.Net](https://github.com/pip-services-infrastructure/pip-clients-facets-dotnet)
+- Client implementations: [NodeJS](https://github.com/pip-services-infrastructure/pip-clients-facets-node), [.NET](https://github.com/pip-services-infrastructure/pip-clients-facets-dotnet)

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Pip.Services Docs for .Net toolkit"
-linkTitle: ".Net"
+title: "Pip.Services Docs for .NET toolkit"
+linkTitle: ".NET"
 weight: 20
 ---
 
@@ -72,7 +72,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
           <a href="../net" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
-            <b>.Net</b>
+            <b>.NET</b>
         </div>
       </div>
       <div class="card">

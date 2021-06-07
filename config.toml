@@ -93,8 +93,8 @@ disableKinds = ["taxonomy", "term"]
     url = "node/"
     weight = 10
 [[menu.main]]
-    identifier = ".Net"
-    name = ".Net"
+    identifier = ".NET"
+    name = ".NET"
     url = "net/"
     weight = 20
 [[menu.main]]

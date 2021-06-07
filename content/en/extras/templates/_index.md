@@ -24,7 +24,7 @@ To get you started faster, we developed a number of microservice templates in al
     <div class="card-body">
       <h5 class="card-title"><b>Data microservice in .NET</b></h5>
       <p class="card-text">
-        Template for a simple data microservice with a client library and dockerization implemented in .Net
+        Template for a simple data microservice with a client library and dockerization implemented in .NET
       </p>
       <a href="https://github.com/pip-templates/pip-templates-microservice-dotnet" class="stretched-link"></a>
     </div>
@@ -73,7 +73,7 @@ To get you started faster, we developed a number of microservice templates in al
     <div class="card-body">
       <h5 class="card-title"><b>Microservice facade in .NET</b></h5>
       <p class="card-text">
-        Template for a microservice facade with authentication, versioning and dockerization implemented in .Net
+        Template for a microservice facade with authentication, versioning and dockerization implemented in .NET
       </p>
       <a href="https://github.com/pip-templates/pip-templates-facade-dotnet" class="stretched-link"></a>
     </div>

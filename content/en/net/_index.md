@@ -2,6 +2,7 @@
 type: docs
 title: "Pip.Services Docs for .Net toolkit"
 linkTitle: ".Net"
+weight: 20
 ---
 
 ### Welcome to the Pip.Services documentation site!

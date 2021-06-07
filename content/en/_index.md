@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Pip.Services Docs"
 linkTitle: "Home"
+weight: 1
 ---
 
 <!-- <script>

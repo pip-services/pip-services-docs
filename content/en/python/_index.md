@@ -2,6 +2,7 @@
 type: docs
 title: "Pip.Services Docs for Python toolkit"
 linkTitle: "Python"
+weight: 50
 ---
 
 ### Welcome to the Pip.Services documentation site!

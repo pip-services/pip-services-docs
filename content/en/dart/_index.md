@@ -2,6 +2,7 @@
 type: docs
 title: "Pip.Services Docs for Dart toolkit"
 linkTitle: "Dart"
+weight: 40
 ---
 
 ### Welcome to the Pip.Services documentation site!

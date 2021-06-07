@@ -2,6 +2,7 @@
 type: docs
 title: "Pip.Services Docs for Java toolkit"
 linkTitle: "Java"
+weight: 60
 ---
 
 ### Welcome to the Pip.Services documentation site!

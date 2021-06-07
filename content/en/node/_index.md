@@ -2,6 +2,7 @@
 type: docs
 title: "Pip.Services Docs for Node.js toolkit"
 linkTitle: "Node.js"
+weight: 1
 ---
 
 ### Welcome to the Pip.Services documentation site!

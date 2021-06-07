@@ -13290,7 +13290,7 @@ nav .navbar-logo > svg {
   @media (min-width: 768px) {
     @supports (position: sticky) {
       .td-sidebar-nav {
-        max-height: calc(100vh - 10rem);
+        max-height: calc(100vh - 5.5rem);
         overflow-y: auto; } } }
   @media (min-width: 768px) {
     .td-sidebar-nav {
@@ -13592,9 +13592,6 @@ nav .navbar-logo > svg {
     max-width: 250px; }
   .td-content .lang-cards img {
     max-width: 200px; }
-  .td-content .more-useful-banner .card, .td-content .more-useful-banner .highlight {
-    border-radius: 0;
-    border: none; }
   .td-content .card-deck .card, .td-content .card-deck .highlight {
     border-radius: 0.3rem; }
     .td-content .card-deck .card:hover, .td-content .card-deck .highlight:hover {

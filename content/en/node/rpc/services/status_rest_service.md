@@ -2,12 +2,12 @@
 type: docs
 title: "StatusRestService"
 linkTitle: "StatusRestService"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 description: >
     Service that returns microservice status information via HTTP/REST protocol.
 ---
 
-**Implements:** [RestService](../rest_service)
+**Extends:** [RestService](../rest_service)
 
 
 ### Description
@@ -58,10 +58,17 @@ The service responds on /status route (can be changed) with a JSON object:
 #### configure
 Configures the component by passing its configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params))
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
+
+#### setReferences
+Sets references to dependent components.
+
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### register
 Registers all service routes in HTTP endpoint.
@@ -69,23 +76,18 @@ Registers all service routes in HTTP endpoint.
 > `public` register(): void
 
 
-#### set_references
-Sets references to dependent components.
-
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
-
-
 ### Examples
 
-```python
-service = StatusService()
-service.configure(ConfigParams.from_tuples("connection.protocol", "http",
+```typescript
+let service = new StatusService();
+service.configure(ConfigParams.fromTuples(
+    "connection.protocol", "http",
     "connection.host", "localhost",
-    "connection.port", 8080))
-service.open("123")
-# ...
+    "connection.port", 8080
+));
+
+await service.open("123");
+console.log("The Status service is accessible at http://+:8080/status");
 ```
 
 

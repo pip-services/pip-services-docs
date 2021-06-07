@@ -170,7 +170,7 @@ Configures a component by passing configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing):
+> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../services/instrument_timing)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through a call chain.
 - **name**: str - method name.

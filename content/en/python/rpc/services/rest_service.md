@@ -117,7 +117,7 @@ Returns correlationId from a request
 
 > _get_correlation_id(self): Optional[str]
 
-- **returns**: Optional[str] - http response to the request.
+- **returns**: Optional[str] - the correlation id from request.
 
 
 #### _instrument
@@ -145,15 +145,6 @@ Opens the component.
 > open(correlation_id: Optional[str])
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-
-
-#### register
-Registers all service routes in a HTTP endpoint.
-
-This method is called by the service and must be overriden
-in child classes.
-
-> `abstractmethod` register()
 
 
 #### register_interceptor
@@ -263,6 +254,18 @@ Sets references to dependent components.
 Unsets (clears) previously set references to dependent components.
 
 > unset_references()
+
+
+### Abstract methods
+
+#### register
+Registers all service routes in a HTTP endpoint.
+
+This method is called by the service and must be overriden
+in child classes.
+
+> `abstractmethod` register()
+
 
 ### Examples
 

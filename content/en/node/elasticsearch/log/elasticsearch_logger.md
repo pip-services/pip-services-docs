@@ -101,7 +101,7 @@ Sets references to dependent components.
 
 > setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **messages**: List[[LogMessage](../../../components/log/log_message)] - references to locate the component's dependencies.
+- **messages**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 

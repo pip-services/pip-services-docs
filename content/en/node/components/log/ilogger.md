@@ -101,7 +101,7 @@ Logs low-level debug information for troubleshooting.
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> warn(correlationId: string, message: str, ...args: any[]): void
+> warn(correlationId: string, message: string, ...args: any[]): void
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **message**: string - a human-readable message to log.

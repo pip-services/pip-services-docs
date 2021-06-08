@@ -30,6 +30,43 @@ See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 
 > NewEmptyConfigParams() [*ConfigParams]()
 
+
+Creates a new ConfigParams from map.
+> NewConfigParams(values map[string]string) [*ConfigParams]()
+
+- **values**: map[string]string - map with key-value pairs
+
+Creates a new ConfigParams object filled with key-value pairs from specified object.
+> NewConfigParamsFromValue(value interface{}) [*ConfigParams]()
+
+- **values**: interface{} - an object with key-value pairs used to initialize a new ConfigParams.
+
+Creates a new ConfigParams object filled with provided key-value pairs called tuples.
+Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
+> NewConfigParamsFromTuples(tuples ...interface{}) [*ConfigParams]()
+
+- **values**: ...interface{} - the tuples to fill a new ConfigParams object.
+
+Creates a new StringValueMap from a list of key-value pairs called tuples.
+The method is similar to fromTuples but tuples are passed as array instead of parameters.
+> NewConfigParamsFromTuplesArray(tuples []interface{}) [*ConfigParams]()
+
+- **values**: []interface{} - a list of values where odd elements are keys and the following even elements are values
+
+Creates a new ConfigParams object filled with key-value pairs serialized as a string.
+
+Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
+> NewConfigParamsFromString(line string) [*ConfigParams]()
+
+- **line**: string - a string with serialized key-value pairs as *"key1=value1;key2=value2;..."*
+
+Creates a new ConfigParams by merging two or more maps.
+Maps defined later in the list override values from previously defined maps.
+> NewConfigParamsFromMaps(maps ...map[string]string) [*ConfigParams]()
+
+- **maps**: ...map[string]string - an array of maps to be merged
+
+
 ### Funcs
 
 #### AddSection

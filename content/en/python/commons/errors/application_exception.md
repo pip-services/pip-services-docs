@@ -58,7 +58,7 @@ Standard error category.
 HTTP status code associated with this error type.
 > **status**: int = 500
 
-#### status
+#### code
 A unique error code
 > **code**: str = 'UNKNOWN'
 

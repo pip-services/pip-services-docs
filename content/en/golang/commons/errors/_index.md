@@ -2,195 +2,99 @@
 type: docs
 title: "Errors"
 linkTitle: "Errors"
+no_list: true
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: >
+    
+    Portable and localizable Errors classes. Each Error has a unique string code and details array (which can be used for creating 
+    localized strings), in addition to a description and stack trace . 
+
+
+
+---
 ---
 
-# Command
+<div class="module-body"> 
 
-Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.
+**Important points**
 
-```dart
-var command =  Command('add', null, (correlationId, args) {
-    var param1 = args.getAsFloat('param1');
-    var param2 = args.getAsFloat('param2');
-    var result = param1 + param2;
-    return result;
-});
-result = await command.execute(
-  '123',
-  Parameters.fromTuples(
-    ['param1', 2,
-    'param2', 2]
-  )).catch(err) {
-    if (err!= null) print(err);
-    else print('2 + 2 = ' + result);
-  }
-);
-// Console output: 2 + 2 = 4
-```
+- There are three ways to use these classes:
+    1. Using an existing exception class.
+    2. Creating a child class that extends [ApplicationError](application_error).
+    3. Wrapping an exception in an existing application exception.
 
-See [ICommand](#icommand), [CommandSet](#commandset)
+- Although the exception classes themselves are not serializable, they can be converted to ErrorDescriptions, which are serializable in one language, transferred to the receiving side, and deserialized in another language. After deserialization, the initial exception class can be restored. 
 
+- When transferring an exception from one language to another, the exception type that is closest to the initial exception type is chosen from the exceptions available in the target language.
 
-### Constructors
+<br>
 
-> Command([String]() name, [Schema]() schema, dynamic func)
-Creates a new command object and assigns it's parameters. 
+### Classes
 
-#### Properties
+#### [ApplicationError](application_error)
+Defines a base class to defive various application exceptions.
+Most languages have own definition of base exception (error) types.
+However, this class is implemented symmetrically in all languages
+supported by PipServices toolkit. It allows to create portable implementations
+and support proper error propagation in microservices calls.
 
-> hashCode → [int]()
-The hash code for this object.
+#### [ApplicationErrorFactory](application_error_factory)
+Factory to recreate exceptions from [ErrorDescription](error_description) values passed through the wire.
 
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
+#### [BadRequestError](badRequest_error)
+Errors due to improper user requests. 
+For example: missing or incorrect parameters.
 
-#### Methods
+#### [ConfigError](config_error)
+Errors related to mistakes in the microservice's user-defined configurations.
 
-> execute([String]() correlationId, [Parameters]() args) → [Future]()
-Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback. 
+#### [ConflictError](conflict_error)
+Errors raised by conflicts between object versions that were
+posted by the user and those that are stored on the server.
 
-> getName() → [String]()
-Gets the command name. Returns the name of this command. (<i>override</i>)
+#### [ConnectionError](connection_error)
+Errors that occur during connections to remote services.
+They can be related to misconfiguration, network issues, or the remote service itself.
 
-> getSchema() → [Schema]()
-Gets the command validation schema. Returns the vsalidation schema of this command.
+#### [ErrorCategory](error_category)
+Defines standard error categories supported by PipServices toolkit.
 
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i> inherited </i>)
+#### [ErrorDescription](error_description)
+Serializeable error description. It is use to pass information about errors
+between microservices implemented in different languages. On the receiving side
+[ErrorDescription](error_description) is used to recreate exception object close to its original type
+without missing additional details.
 
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
+#### [ErrorDescriptionFactory](error_description_factory)
+Factory used to create serializeable [ErrorDescription](error_description) from
+[ApplicationError](application_error) or from arbitrary errors.
+The ErrorDescriptions are used to pass errors through the wire between microservices
+implemented in different languages. They allow to restore exceptions on the receiving side
+close to the original type and preserve additional information.
 
-> validate([Parameters]() args) → [List]()<[ValidationResult]()>
-Validates the command [Parameters]() `args` before execution using the defined schema. (<i>override</i>)
+#### [FileError](file_error)
+A helper class to parameters from "options" configuration section.
 
+#### [InternalError](internal_error)
+Errors caused by programming mistakes.
 
-# CommandSet
+#### [InvalidStateError](invalid_state_error)
+Errors related to calling operations, which require the component to be in a specific state.
+For instance: business calls when the component is not ready.
 
-Contains a set of commands and events supported by a [commandable](#icommandable) object. The CommandSet supports command interceptors to extend and the command call chain.
+#### [InvocationError](invocation_error)
+Errors returned by remote services or by the network during call attempts.
 
-CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
+#### [NotFoundError](not_found_error)
+Errors caused by attempts to access missing objects.
 
-See [Command](#command), [Event](#event), [ICommandable](#icommandable)
+#### [UnauthorizedError](unauthorized_error)
+Access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
 
-#### Example
-```dart
-class MyDataCommandSet extends CommandSet {
-     IMyDataController _controller ;
-    MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface
-        _controller = controller;
-        addCommand(makeGetMyDataCommand());
-    }
-    ICommand _makeGetMyDataCommand()  {
-        return  Command(
-          'get_mydata',
-          null,
-          (String correlationId, Parameters args) {
-              var param = args.getAsString('param');
-              return _controller.getMyData(correlationId, param);
-          }
-        );
-    }
-}
-```
+#### [UnknownError](unknown_error)
+Unknown or unexpected errors.
 
-### Constructors
+#### [UnsupportedError](unsupported_error)
+Errors caused by calls to unsupported or not yet implemented functionality.
 
-> CommandSet()
-Creates an empty CommandSet object.
-
-#### Properties
-
-> hashCode → [int]()
-The hash code for this object.
-
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
-
-#### Methods
-
-> addCommand([ICommand]() command) → void
-Adds a `ICommand` command to this command set. 
-
-> addCommands([List]()<[ICommand]()> commands) → void
-Adds multiple `ICommand` commands to this command set. 
-
-> addCommandSet([CommandSet]() commandSet) → void
-Adds all of the commands and events from specified `CommandSet` command set into this one. 
-
-> addEvent([IEvent]() event) → void
-Adds an `IEvent` event to this command set.
-
-> addEvents([List]()<[IEvent]()> events) → void
-Adds multiple `IEvent` events to this command set.
-
-> addInterceptor([ICommandInterceptor]() interceptor) → void
-Adds a `ICommandInterceptor` command interceptor to this command set.
-
-> addListener(IEventListener listener) → void
-Adds a `IEventListener` listener to receive notifications on fired events. 
-
-> execute([String]() correlationId, [String]() commandName, [Parameters]() args) → [Future]()
-Executes a [ICommand]() commandspecificed by its name. 
-
-> findCommand([String]() commandName) → [ICommand]()
-Searches for a command by its name. 
-
-> findEvent([String]() eventName) → [IEvent]()
-Searches for an event by its name in this command set. 
-
-> getCommands() → [List]()<[ICommand]()>
-Gets all commands registered in this command set. Returns a list of commands. 
-See [ICommand]()
-
-> getEvents() → [List]()<[IEvent]()>
-Gets all events registred in this command set. Returns a list of events. See IEvent
-
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i>inherited</i>)
-
-> notify([String]() correlationId, [String]() eventName, [Parameters]() args) → void
-Fires event specified by its name and notifies all registered IEventListener listeners 
-
-> removeListener([IEventListener]() listener) → void
-Removes previosly added IEventListener listener. 
-
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
-
-> validate([String]() commandName, [Parameters]() args) → [List]()<[ValidationResult]()
-Validates `Parameters` args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found. 
-
-# Event
-
-Concrete implementation of [IEvent](#ievent) interface. It allows to send asynchronous notifications to multiple subscribed listeners.
-See [IEvent](#ievent), [IEventListener](#ieventListener)
-
-#### Example
-```dart
-var event =  Event('my_event');
-
-event.addListener(myListener);
-
-event.notify('123', Parameters.fromTuples(
-  ['param1', 'ABC',
-  'param2', 123]
-));
-```
-
-# ICommand
-
-
-# ICommandable
-
-
-# ICommandIntercepter
-
-
-# IEvent
-
-
-# IEventListener
-
-
-# InterceptedCommand
+</div>

@@ -19,7 +19,8 @@ It tries to restore original exception type using type or error category fields.
 
 > `static` create(description: [ErrorDescription](../error_description)): [ApplicationException](../application_exception)
 
-- **description**: [ApplicationException](../application_exception) - a serialized error description received as a result of remote call
+- **description**: [ErrorDescription](../error_description) - a serialized error description received as a result of remote call
+- **returns**: [ApplicationException](../application_exception) - new instance of the [ApplicationException](../application_exception)
 
 ### See also
 - #### [ApplicationException](../application_exception)

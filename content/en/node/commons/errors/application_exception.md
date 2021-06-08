@@ -57,7 +57,7 @@ Standard error category
 HTTP status code associated with this error type
 > `public` **status**: number = 500
 
-#### status
+#### code
 A unique error code
 > `public` **code**: string = 'UNKNOWN'
 

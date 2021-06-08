@@ -20,8 +20,8 @@
   docsearch({
       // Your apiKey and indexName will be given to you once
       // we create your config
-      apiKey: '6974095177303d4ec7cb2a2d7c6f051a', //'3d05087a8e879e0b582e34bb08ff2715',
-      indexName: 'pip_docs_test', //'pipservices',
+      apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
+      indexName: window.location.host.indexOf('github') > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
       appId: 'ETKGUND67W',
       // Replace inputSelector with a CSS selector
       // matching your search input

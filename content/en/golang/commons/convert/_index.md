@@ -2,195 +2,90 @@
 type: docs
 title: "Convert"
 linkTitle: "Convert"
+no_list: true
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: >
+   
+    This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
+    found in typical programming language, due to the fact that they support rare conversions between 
+    various data types (such as integer to timespan, timespan to string, and so on).
+
+    These converters are useful due to the fact that data in enterprise systems is represented in 
+    various forms, requiring frequent conversion and at times in very difficult combinations.  
+---
 ---
 
-# Command
+<div class="module-body"> 
 
-Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.
+### Constants
 
-```dart
-var command =  Command('add', null, (correlationId, args) {
-    var param1 = args.getAsFloat('param1');
-    var param2 = args.getAsFloat('param2');
-    var result = param1 + param2;
-    return result;
-});
-result = await command.execute(
-  '123',
-  Parameters.fromTuples(
-    ['param1', 2,
-    'param2', 2]
-  )).catch(err) {
-    if (err!= null) print(err);
-    else print('2 + 2 = ' + result);
-  }
-);
-// Console output: 2 + 2 = 4
-```
+#### [TypeCode](type_code)
+Codes for the data types that can be
+converted using [TypeConverter](type_converter).
 
-See [ICommand](#icommand), [CommandSet](#commandset)
+<br>
 
+### Classes
 
-### Constructors
+#### [ArrayConverter](array_converter)
+Converts arbitrary values into array objects.
 
-> Command([String]() name, [Schema]() schema, dynamic func)
-Creates a new command object and assigns it's parameters. 
+#### [BooleanConverter](boolean_converter)
+Converts arbitrary values to boolean values using extended conversion rules:
+- Numbers: <>0 are true, =0 are false
+- Strings: "true", "yes", "T", "Y", "1" are true; "false", "no", "F", "N" are false
+- DateTime: <>0 total milliseconds are true, =0 are false
 
-#### Properties
+#### [DateTimeConverter](date_time_converter)
+Converts arbitrary values into Date values using extended conversion rules:
+- Strings: converted using ISO time format
+- Numbers: converted using milliseconds since unix epoch
 
-> hashCode → [int]()
-The hash code for this object.
+#### [DoubleConverter](double_converter)
+Converts arbitrary values into double using extended conversion rules:
+- Strings are converted to double values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
 
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
+#### [FloatConverter](float_сonverter)
+Converts arbitrary values into float using extended conversion rules:
+- Strings are converted to float values
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
 
-#### Methods
+#### [IntegerConverter](integer_converter)
+Converts arbitrary values into integers using extended conversion rules:
+- Strings are converted to floats, then to integers
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
 
-> execute([String]() correlationId, [Parameters]() args) → [Future]()
-Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback. 
+#### [JsonConverter](json_converter)
+Converts arbitrary values into longs using extended conversion rules:
+- Strings are converted to floats, then to longs
+- DateTime: total number of milliseconds since unix epoсh
+- Boolean: 1 for true and 0 for false
 
-> getName() → [String]()
-Gets the command name. Returns the name of this command. (<i>override</i>)
+#### [MapConverter](map_converter)
+Converts arbitrary values into map objects using extended conversion rules:
+- Objects: property names as keys, property values as values
+- Arrays: element indexes as keys, elements as values
 
-> getSchema() → [Schema]()
-Gets the command validation schema. Returns the vsalidation schema of this command.
+#### [RecursiveMapConverter](recursive_map_converter)
+Converts arbitrary values into map objects using extended conversion rules.
+This class is similar to [MapConverter](map_converter), but is recursively converts all values
+stored in objects and arrays.
 
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i> inherited </i>)
+#### [StringConverter](string_converter)
+Converts arbitrary values into strings using extended conversion rules:
+- Numbers: are converted with '.' as decimal point
+- DateTime: using ISO format
+- Boolean: "true" for true and "false" for false
+- Arrays: as comma-separated list
+- Other objects: using **ToString()** method
 
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
+#### [TypeConverter](type_converter)
+Converts arbitrary values into objects specific by TypeCodes.
+For each TypeCode this class calls corresponding converter which applies
+extended conversion rules to convert the values.
 
-> validate([Parameters]() args) → [List]()<[ValidationResult]()>
-Validates the command [Parameters]() `args` before execution using the defined schema. (<i>override</i>)
-
-
-# CommandSet
-
-Contains a set of commands and events supported by a [commandable](#icommandable) object. The CommandSet supports command interceptors to extend and the command call chain.
-
-CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
-
-See [Command](#command), [Event](#event), [ICommandable](#icommandable)
-
-#### Example
-```dart
-class MyDataCommandSet extends CommandSet {
-     IMyDataController _controller ;
-    MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface
-        _controller = controller;
-        addCommand(makeGetMyDataCommand());
-    }
-    ICommand _makeGetMyDataCommand()  {
-        return  Command(
-          'get_mydata',
-          null,
-          (String correlationId, Parameters args) {
-              var param = args.getAsString('param');
-              return _controller.getMyData(correlationId, param);
-          }
-        );
-    }
-}
-```
-
-### Constructors
-
-> CommandSet()
-Creates an empty CommandSet object.
-
-#### Properties
-
-> hashCode → [int]()
-The hash code for this object.
-
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
-
-#### Methods
-
-> addCommand([ICommand]() command) → void
-Adds a `ICommand` command to this command set. 
-
-> addCommands([List]()<[ICommand]()> commands) → void
-Adds multiple `ICommand` commands to this command set. 
-
-> addCommandSet([CommandSet]() commandSet) → void
-Adds all of the commands and events from specified `CommandSet` command set into this one. 
-
-> addEvent([IEvent]() event) → void
-Adds an `IEvent` event to this command set.
-
-> addEvents([List]()<[IEvent]()> events) → void
-Adds multiple `IEvent` events to this command set.
-
-> addInterceptor([ICommandInterceptor]() interceptor) → void
-Adds a `ICommandInterceptor` command interceptor to this command set.
-
-> addListener(IEventListener listener) → void
-Adds a `IEventListener` listener to receive notifications on fired events. 
-
-> execute([String]() correlationId, [String]() commandName, [Parameters]() args) → [Future]()
-Executes a [ICommand]() commandspecificed by its name. 
-
-> findCommand([String]() commandName) → [ICommand]()
-Searches for a command by its name. 
-
-> findEvent([String]() eventName) → [IEvent]()
-Searches for an event by its name in this command set. 
-
-> getCommands() → [List]()<[ICommand]()>
-Gets all commands registered in this command set. Returns a list of commands. 
-See [ICommand]()
-
-> getEvents() → [List]()<[IEvent]()>
-Gets all events registred in this command set. Returns a list of events. See IEvent
-
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i>inherited</i>)
-
-> notify([String]() correlationId, [String]() eventName, [Parameters]() args) → void
-Fires event specified by its name and notifies all registered IEventListener listeners 
-
-> removeListener([IEventListener]() listener) → void
-Removes previosly added IEventListener listener. 
-
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
-
-> validate([String]() commandName, [Parameters]() args) → [List]()<[ValidationResult]()
-Validates `Parameters` args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found. 
-
-# Event
-
-Concrete implementation of [IEvent](#ievent) interface. It allows to send asynchronous notifications to multiple subscribed listeners.
-See [IEvent](#ievent), [IEventListener](#ieventListener)
-
-#### Example
-```dart
-var event =  Event('my_event');
-
-event.addListener(myListener);
-
-event.notify('123', Parameters.fromTuples(
-  ['param1', 'ABC',
-  'param2', 123]
-));
-```
-
-# ICommand
-
-
-# ICommandable
-
-
-# ICommandIntercepter
-
-
-# IEvent
-
-
-# IEventListener
-
-
-# InterceptedCommand
+</div>

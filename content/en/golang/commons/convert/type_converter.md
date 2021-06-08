@@ -17,7 +17,7 @@ The TypeConverter class allows you to convert arbitrary values into objects spec
 #### ToNullableType
 Converts value into an object type specified by Type Code or returns null when conversion is not possible.
 
-> (c *TTypeConverter) ToNullableType(typ [TypeCode](../../convert/type_code), value interface{}) interface{}
+> ToNullableType(typ [TypeCode](../../convert/type_code), value interface{}) interface{}
 
 - **typ**: [TypeCode](../../convert/type_code) - the [TypeCode](../../convert/type_code) for the data type into which 'value' is to be converted.
 - **value**: interface{} - the value to convert.
@@ -26,7 +26,7 @@ Converts value into an object type specified by Type Code or returns null when c
 #### ToString
 Converts a [TypeCode](../../convert/type_code) into its string name.
 
-> (c *TTypeConverter) ToString(typ [TypeCode](../../convert/type_code)) string
+> ToString(typ [TypeCode](../../convert/type_code)) string
 
 - **typ**: [TypeCode](../../convert/type_code) - the TypeCode to convert into a string.
 - **returns**: string - the name of the [TypeCode](../../convert/type_code) passed as a string value.
@@ -34,7 +34,7 @@ Converts a [TypeCode](../../convert/type_code) into its string name.
 #### ToType
 Converts value into an object type specified by Type Code or returns type default when conversion is not possible.
 
-> (c *TTypeConverter) ToType(typ [TypeCode](../../convert/type_code), value interface{}) interface{}
+> ToType(typ [TypeCode](../../convert/type_code), value interface{}) interface{}
 
 - **typ**: [TypeCode](../../convert/type_code) - the value to convert.
 - **value**: interface{} - the value to convert.
@@ -44,7 +44,7 @@ Converts value into an object type specified by Type Code or returns type defaul
 #### ToTypeCode
 Gets TypeCode for specific value.
 
-> (c *TTypeConverter) ToTypeCode(value interface{}) [TypeCode](../../convert/type_code)
+> ToTypeCode(value interface{}) [TypeCode](../../convert/type_code)
 
 - **value**: interface{} - value whose TypeCode is to be resolved.
 - **returns**: [TypeCode](../../convert/type_code) - the TypeCode that corresponds to the passed object's type.
@@ -52,7 +52,7 @@ Gets TypeCode for specific value.
 #### ToTypeWithDefault
 Converts value into an object type specified by Type Code or returns default value when conversion is not possible.
 
-> (c *TTypeConverter) ToTypeWithDefault(typ [TypeCode](../../convert/type_code), value interface{}, defaultValue interface{}) interface{}
+> ToTypeWithDefault(typ [TypeCode](../../convert/type_code), value interface{}, defaultValue interface{}) interface{}
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: interface{} - the value to convert.

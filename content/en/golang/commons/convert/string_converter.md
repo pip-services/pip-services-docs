@@ -23,7 +23,7 @@ description: >
 #### ToNullableString
 Converts value into string or returns null when value is null.
 
-> (c *TStringConverter) ToNullableString(value interface{}) *string
+> ToNullableString(value interface{}) *string
 
 - **value**: interface{} - the value to convert.
 - **returns**: *string - string value or null when value is null.
@@ -31,7 +31,7 @@ Converts value into string or returns null when value is null.
 #### ToString
 Converts value into string or returns "" when value is null.
 
-> (c *TStringConverter) ToString(value interface{}) string
+> ToString(value interface{}) string
 
 - **value**: interface{} - the value to convert.
 - **returns**: string - string value or "" when value is null.
@@ -39,7 +39,7 @@ Converts value into string or returns "" when value is null.
 #### ToStringWithDefault
 Converts value into string or returns default when value is null.
 
-> (c *TStringConverter) ToStringWithDefault(value interface{}, defaultValue string) string
+> ToStringWithDefault(value interface{}, defaultValue string) string
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: string - the default value.

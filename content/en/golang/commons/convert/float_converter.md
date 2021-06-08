@@ -20,7 +20,7 @@ The FloatConverter class allows you to convert arbitrary values into float using
 #### ToFloat
 Converts value into float or returns 0 when conversion is not possible.
 
-> (c *TFloatConverter) ToFloat(value interface{}) float32
+> ToFloat(value interface{}) float32
 
 - **value**: interface{} - the value to convert.
 - **returns**: float32 - float value or 0 when conversion is not supported.
@@ -30,7 +30,7 @@ Converts value into float or returns default when conversion is not possible.
 See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault),  
 [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> (c *TFloatConverter) ToFloatWithDefault(value interface{}, defaultValue float32) float32
+> ToFloatWithDefault(value interface{}, defaultValue float32) float32
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: float32 - the default value.
@@ -40,7 +40,7 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 Converts value into float or returns null when conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> (c *TFloatConverter) ToNullableFloat(value interface{}) *float32
+> ToNullableFloat(value interface{}) *float32
 
 - **value**: interface{} - the value to convert.
 - **returns**: *float32 - float value or null when conversion is not supported.

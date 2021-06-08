@@ -123,7 +123,7 @@ See [ICommand](../icommand)
 
 - **returns**: [][ICommand](../icommand) - a list of commands.
 
-#### getEvents
+#### Events
 Gets all events registred in this command set.  
 See [IEvent](../ievent)
 

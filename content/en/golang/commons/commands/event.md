@@ -34,7 +34,7 @@ Adds a listener to receive notifications when this event is fired.
 
 - **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
 
-#### GetListeners
+#### Listeners
 Gets all listeners registred in this event.
 
 > (c [*Event]()) Listeners() [][IEventListener](../ievent_listener)

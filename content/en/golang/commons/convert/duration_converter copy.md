@@ -16,7 +16,7 @@ TODO: add description
 #### ToDuration
 Converts value into time.Duration or returns current when conversion is not possible.
 
-> (c *TDurationConverter) ToDuration(value interface{}) time.Duration
+> ToDuration(value interface{}) time.Duration
 
 - **value**: interface{} - the value to convert.
 - **returns**: time.Duration - value or current when conversion is not supported.
@@ -24,7 +24,7 @@ Converts value into time.Duration or returns current when conversion is not poss
 #### ToDurationWithDefault
 Converts value into time.Duration or returns default when conversion is not possible.
 
-> (c *TDurationConverter) ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration
+> ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: time.Duration - the default value.
@@ -33,7 +33,7 @@ Converts value into time.Duration or returns default when conversion is not poss
 #### ToNullableDuration
 Converts value into time.Duration or returns null when conversion is not possible.
 
-> (c *TDurationConverter) ToNullableDuration(value interface{}) *time.Duration
+> ToNullableDuration(value interface{}) *time.Duration
 
 - **value**: interface{} - the value to convert.
 - **returns**: *time.Duration - value or null when conversion is not supported.

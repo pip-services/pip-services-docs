@@ -18,7 +18,7 @@ The MapConverter class allows you to convert arbitrary values into map objects u
 #### ToMap
 Converts value into map object or returns empty map when conversion is not possible
 
-> (c *TMapConverter) ToMap(value interface{}) map[string]interface{}
+> ToMap(value interface{}) map[string]interface{}
 
 - **value**: interface{} - the value to convert.
 - **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
@@ -26,7 +26,7 @@ Converts value into map object or returns empty map when conversion is not possi
 #### ToMapWithDefault
 Converts value into map object or returns default when conversion is not possible
 
-> (c *TMapConverter) ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}
+> ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: map[string]interface{} - the default value.

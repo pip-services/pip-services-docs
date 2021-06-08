@@ -24,7 +24,7 @@ The BooleanConverter class allows you to convert different values to boolean val
 #### ToBoolean
 Converts value into boolean or returns false when conversion is not possible.
 
-> (c *TBooleanConverter) ToBoolean(value interface{}) bool
+> ToBoolean(value interface{}) bool
 
 - **value**: interface{} - the value to convert.
 - **returns**: bool - boolean value or false when conversion is not supported.
@@ -32,7 +32,7 @@ Converts value into boolean or returns false when conversion is not possible.
 #### ToBooleanWithDefault
 Converts value into boolean or returns default value when conversion is not possible
 
-> (c *TBooleanConverter) ToBooleanWithDefault(value interface{}, defaultValue bool) bool
+> ToBooleanWithDefault(value interface{}, defaultValue bool) bool
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: bool - the default value
@@ -42,7 +42,7 @@ Converts value into boolean or returns default value when conversion is not poss
 #### ToNullableBoolean
 Converts value into boolean or returns null when conversion is not possible.
 
-> (c *TBooleanConverter) ToNullableBoolean(value interface{}) *bool
+> ToNullableBoolean(value interface{}) *bool
 
 - **value**: interface{} - the value to convert.
 - **returns**: *bool - boolean value or null when convertion is not supported.

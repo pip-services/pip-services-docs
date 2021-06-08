@@ -23,7 +23,7 @@ Converts value into integer or returns 0 when conversion is not possible.
 See [LongConverter.ToLong](../long_converter/#tolong),  
 [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
 
-> (c *TIntegerConverter) ToInteger(value interface{}) int
+> ToInteger(value interface{}) int
 
 - **value**: interface{} - the value to convert.
 - **returns**: int - integer value or 0 when conversion is not supported.
@@ -33,7 +33,7 @@ Converts value into integer or returns default value when conversion is not poss
 See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),  
 [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
-> (c *TIntegerConverter) ToIntegerWithDefault(value interface{}, defaultValue int) int
+> ToIntegerWithDefault(value interface{}, defaultValue int) int
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: int - the default value.
@@ -53,7 +53,7 @@ See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 #### ToUInteger
 Converts value into unsigned integer or returns 0 when conversion is not possible.
 
-> (c *TIntegerConverter) ToUInteger(value interface{}) uint
+> ToUInteger(value interface{}) uint
 
 - **value**: interface{} - the value to convert.
 - **returns**: uint - integer value or 0 when conversion is not supported.
@@ -61,7 +61,7 @@ Converts value into unsigned integer or returns 0 when conversion is not possibl
 #### ToUIntegerWithDefault
 Converts value into unsigned integer or returns default when conversion is not possible.
 
-> (c *TIntegerConverter) ToUIntegerWithDefault(value interface{}, defaultValue uint) uint
+> ToUIntegerWithDefault(value interface{}, defaultValue uint) uint
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: uint - the default value.
@@ -71,7 +71,7 @@ Converts value into unsigned integer or returns default when conversion is not p
 Converts value into integer or returns null when conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
-> (c *TIntegerConverter) ToNullableUInteger(value interface{}) *uint
+> ToNullableUInteger(value interface{}) *uint
 
 - **value**: interface{} - the value to convert.
 - **returns**: *uint - integer value or null when conversion is not supported.

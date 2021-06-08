@@ -21,7 +21,7 @@ The DateTimeConverter class allows you to convert arbitrary values into Date val
 Converts value into Date or returns current date when conversion is not possible.  
 See [ToDateTimeWithDefault](#todatetimewithdefault)
 
-> (c *TDateTimeConverter) ToDateTime(value interface{}) time.Time
+> ToDateTime(value interface{}) time.Time
 
 - **value**: interface{} - the value to convert.
 - **returns**: time.Time - Date value or current date when conversion is not supported.
@@ -29,7 +29,7 @@ See [ToDateTimeWithDefault](#todatetimewithdefault)
 #### ToDateTimeWithDefault
 Converts value into Date or returns default when conversion is not possible.
 
-> (c *TDateTimeConverter) ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time
+> ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: time.Time - the default value.

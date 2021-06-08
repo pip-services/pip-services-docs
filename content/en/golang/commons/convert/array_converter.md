@@ -17,7 +17,7 @@ Converts a list into array object with empty array as default.
 Strings with comma-delimited values are split into array of strings.
 See [ToArray](#toarray)
 
-> (c *TArrayConverter) ListToArray(value interface{}) []interface{}
+> ListToArray(value interface{}) []interface{}
 
 - **value**: interface{} - the list to convert.
 - **returns**: []interface{} - array object or empty array when value is null
@@ -27,7 +27,7 @@ See [ToArray](#toarray)
 Converts value into array object with empty array as default.
 Single values are converted into arrays with single element.
 
-> (c *TArrayConverter) ToArray(value interface{}) []interface{}
+> ToArray(value interface{}) []interface{}
 
 - **value**: interface{} - the value to convert.
 - **returns**: []interface{} - array object or empty array when value is null.
@@ -36,7 +36,7 @@ Single values are converted into arrays with single element.
 Converts value into array object with specified default.
 Single values are converted into arrays with single element.
 
-> (c *TArrayConverter) ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}
+> ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: []interface{} - default array object.
@@ -46,7 +46,7 @@ Single values are converted into arrays with single element.
 Converts value into array object.
 Single values are converted into arrays with a single element.
 
-> (c *TArrayConverter) ToNullableArray(value interface{}) *[]interface{}
+> ToNullableArray(value interface{}) *[]interface{}
 
 - **value**: interface{} - the value to convert.
 - **returns**: *[]interface{} - array object or null when value is null.

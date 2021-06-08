@@ -42,7 +42,7 @@ Converts value into JSON string.
 Converts JSON string into map object or returns empty map when conversion is not possible.
 See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
-> (c *TJsonConverter) ToMap(value string) map[string]interface{}
+> ToMap(value string) map[string]interface{}
 
 - **value**: string - the JSON string to convert.
 - **returns**: map[string]interface{} - Map object value or empty object when conversion is not supported.
@@ -50,7 +50,7 @@ See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 #### ToMapWithDefault
 Converts JSON string into map object or returns default value when conversion is not possible.
 
-> (c *TJsonConverter) ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{}
+> ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{}
 
 - **value**: string - the JSON string to convert.
 - **defaultValue**: map[string]interface{} - the default value.
@@ -61,7 +61,7 @@ Converts JSON string into map object or returns default value when conversion is
 Converts JSON string into map object or returns null when conversion is not possible.  
 See [MapConverter.ToNullableMap](../map_converter/#tonullablemap)
 
-> (c *TJsonConverter) ToNullableMap(value string) *map[string]interface{}
+> ToNullableMap(value string) *map[string]interface{}
 
 - **value**: string - the JSON string to convert.
 - **returns**: *map[string]interface{} - Map object value or null when conversion is not supported.

@@ -20,7 +20,7 @@ The LongConverter class allows you to convert arbitrary values into longs using 
 #### ToLong
 Converts value into long or returns 0 when conversion is not possible.
 
-> (c *TLongConverter) ToLong(value interface{}) int64
+> ToLong(value interface{}) int64
 
 - **value**: interface{} - the value to convert.
 - **returns**: int64 - long value or 0 when conversion is not supported.
@@ -28,7 +28,7 @@ Converts value into long or returns 0 when conversion is not possible.
 #### ToLongWithDefault
 Converts value into integer or returns default when conversion is not possible.
 
-> (c *TLongConverter) ToLongWithDefault(value interface{}, defaultValue int64) int64
+> ToLongWithDefault(value interface{}, defaultValue int64) int64
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: int64 - the default value.
@@ -46,7 +46,7 @@ Converts value into long or returns null when conversion is not possible.
 #### ToULong
 Converts value into unsigned long or returns 0 when conversion is not possible.
 
-> (c *TLongConverter) ToULong(value interface{}) uint64
+> ToULong(value interface{}) uint64
 
 - **value**: interface{} - the value to convert.
 - **returns**: uint64 - long value or 0 when conversion is not supported.
@@ -54,7 +54,7 @@ Converts value into unsigned long or returns 0 when conversion is not possible.
 #### ToULongWithDefault
 Converts value into unsigned long or returns default when conversion is not possible.
 
-> (c *TLongConverter) ToULongWithDefault(value interface{}, defaultValue uint64) uint64
+> ToULongWithDefault(value interface{}, defaultValue uint64) uint64
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: uint64 - the default value.
@@ -63,7 +63,7 @@ Converts value into unsigned long or returns default when conversion is not poss
 #### ToNullableULong
 Converts value into unsigned long or returns null when conversion is not possible.
 
-> (c *TLongConverter) ToNullableULong(value interface{}) *uint64
+> ToNullableULong(value interface{}) *uint64
 
 - **value**: interface{} - the value to convert.
 - **returns**: *uint64 - long value or null when conversion is not supported.

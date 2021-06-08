@@ -25,7 +25,7 @@ The DoubleConverter class allows you to convert arbitrary values into double usi
 Converts value into doubles or returns 0 when conversion is not possible.  
 See [ToDoubleWithDefault](#todoublewithdefault)
 
-> (c *TDoubleConverter) ToDouble(value interface{}) float64
+> ToDouble(value interface{}) float64
 
 - **value**: interface{} - the value to convert.
 - **returns**: float64 - double value or 0 when conversion is not supported.
@@ -33,7 +33,7 @@ See [ToDoubleWithDefault](#todoublewithdefault)
 #### ToDoubleWithDefault
 Converts value into integer or returns default value when conversion is not possible.
 
-> (c *TDoubleConverter) ToDoubleWithDefault(value interface{}, defaultValue float64) float64
+> ToDoubleWithDefault(value interface{}, defaultValue float64) float64
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: float64 - the default value.

@@ -114,7 +114,9 @@
   {{end}}
   
   <!-- output sidebar tree for homepage or hardcoded sections-->
-  {{ $isHomePageOrHardcodeSection := or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome }}
+  {{ $isHomePageOrHardcodeSection := and 
+                                    (or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome) 
+                                    (not (eq $p.Name "Search"))}}
 
 
   {{ $show := cond (or (eq $s.LinkTitle "Home")

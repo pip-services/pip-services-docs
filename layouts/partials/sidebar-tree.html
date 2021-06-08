@@ -101,21 +101,35 @@
     {{ end }}
   {{ end }}
 
-  <!-- output sidebar tree for homepage -->
-  {{ $isHomePage := and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))}}
 
-  {{ $show := cond (or (and $isMatchRootSections (lt (len (split $s.URL "/")) $showModules))
-                        (and ( $p.IsDescendant $currentRootSection) (not (eq .FirstSection $p))  $showNeighbor)
-                        (lt $ulNr $ulShow) $activePath 
-                        (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
-                        (and (not $shouldDelayActive) (eq $s.Parent $p)) 
-                        (not $p.Site.Params.ui.sidebar_menu_compact))
-                        true false }}
+  {{ $isChildOfHome := false }}
+  {{ with $currentSection.Parent }}
+    <!-- Add hardcoded sections here -->
+    {{ if and (.IsAncestor $s) (eq .LinkTitle "Home")
+              (or (eq $currentSection.LinkTitle "Contribute") 
+              (eq $currentSection.LinkTitle "Get help"))
+    }}
+      {{ $isChildOfHome = true }}
+    {{ end }}
+  {{end}}
+  
+  <!-- output sidebar tree for homepage or hardcoded sections-->
+  {{ $isHomePageOrHardcodeSection := or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome }}
+
+
+  {{ $show := cond (or (eq $s.LinkTitle "Home")
+                       (and $isMatchRootSections (lt (len (split $s.URL "/")) $showModules))
+                       (and ( $p.IsDescendant $currentRootSection) (not (eq .FirstSection $p))  $showNeighbor)
+                       (lt $ulNr $ulShow) $activePath 
+                       (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
+                       (and (not $shouldDelayActive) (eq $s.Parent $p)) 
+                       (not $p.Site.Params.ui.sidebar_menu_compact))
+              true false }}
 
   {{ $reducer := 2 }} <!-- reduce the paddings for sidebar tree -->
   {{ $padding := mul 10 (sub .ulNr $reducer) }}
 
-  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections) $isHomePage }} 
+  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections) $isHomePageOrHardcodeSection (eq $s.LinkTitle "Home")}} 
 
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"

@@ -194,7 +194,7 @@ class IdentifiableMongoDbPersistence(MongoDbPersistence):
     def get_list_by_ids(self, correlation_id: Optional[str], ids: List[Any]) -> List[T]:
         ...
 
-    def get_one_by_id(self, correlation_id: Optional[str], id: Any) -> T:
+    def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
         ...
 
     def create(self, correlation_id: Optional[str], item: T) -> T:
@@ -299,14 +299,14 @@ result = persistence.get_page_by_filter(None, None, paging)
 As mentioned above, developers can also implement custom persistence methods. The _collection property can be used to access data objects from within such methods. Below is an example of a custom GetOneByNameAsync persistence method.
 
 ```python
-def get_one_by_id(self, correlation_id: Optional[str], name: Any) -> T:
+def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
 
     item = self._collection.find_one({'name': name})
 
     if item is None:
-        self._logger.trace(correlation_id, "Nothing found from %s with id = %s", self._collection_name, id)
+        self._logger.trace(correlation_id, "Nothing found from %s with name = %s", self._collection_name, name)
     else:
-        self._logger.trace(correlation_id, "Retrieved from %s with id = %s", self._collection_name, id)
+        self._logger.trace(correlation_id, "Retrieved from %s with name = %s", self._collection_name, name)
 
     item = self._convert_to_public(item)
 
@@ -348,14 +348,14 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
     def get(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> T
         return get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, None, None)
 
-    def get_one_by_id(self, correlation_id: Optional[str], name: Any) -> T:
+    def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
 
         item = self._collection.find_one({'name': name})
 
         if item is None:
-            self._logger.trace(correlation_id, "Nothing found from %s with id = %s", self._collection_name, id)
+            self._logger.trace(correlation_id, "Nothing found from %s with name = %s", self._collection_name, name)
         else:
-            self._logger.trace(correlation_id, "Retrieved from %s with id = %s", self._collection_name, id)
+            self._logger.trace(correlation_id, "Retrieved from %s with name = %s", self._collection_name, name)
 
         item = self._convert_to_public(item)
 

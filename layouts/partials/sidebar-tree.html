@@ -112,25 +112,10 @@
                         (not $p.Site.Params.ui.sidebar_menu_compact))
                         true false }}
 
-  {{$reducer := 2 }} <!-- reduce the paddings for sidebar tree -->
-
-  <!-- Hardcoded show sections for homepage -->
-  {{with $s.Parent}}
-    {{ $show = cond (and $isHomePage 
-                        (or (eq .Name "Extras")
-                            (eq .Name "Microservices")
-                        )
-                    )
-
-                    true $show }}
-
-    {{ $reducer = 0 }}
-  {{ end }}
-
+  {{ $reducer := 2 }} <!-- reduce the paddings for sidebar tree -->
+  {{ $padding := mul 10 (sub .ulNr $reducer) }}
 
   {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections) $isHomePage }} 
-  
-  {{ $padding := mul 10 (sub .ulNr $reducer) }}
 
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
@@ -146,7 +131,6 @@
           <div class="col {{ if or $active $isChildActive }}bold-font{{ end }} "> <!-- {{ if not (gt $padding 0) }}bold-font{{ end }} -->
             {{ $s.LinkTitle }}
           </div>
-          
           
         </div>
         </a>

@@ -101,33 +101,32 @@ This guide will help you to learn Pip.Services and to develop your own microserv
 ### More useful stuff...
 <br>
 
-<div class="card-deck card-group">
+<div class="card-deck">
   <div class="card">
-    <img class="card-img-top w-50" style="padding: 1.25rem" src="/images/icons/microservice_gears.svg" alt="microservices">
-    <div class="card-body">
-      <h5 class="card-title"><b>Microservices</b></h5>
-      <p class="card-text">Library of reusable microservices to manage infrastructure, users and content, to support and sell   products and more.</p>
+    <div class="card-body text-center">
+      <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/microservice_gears.svg" alt="microservices">
       <a href="microservices" class="stretched-link"></a>
     </div>
-  </div>
-  <div class="card">
-    <img class="card-img-top w-50" style="padding: 1.25rem" src="/images/icons/benchmark_icon.svg" alt="Benchmarks">
-    <div class="card-body">
-      <h5 class="card-title"><b>Benchmarks</b></h5>
-      <p class="card-text">
-          Benchmarking framework in 6 programming languages to develop performance, scalability, reliability and other non-functional tests.
-      </p>
-      <a href="extras/benchmarks/" class="stretched-link"></a>
+    <div class="card-footer text-center">
+      <b>Microservices</b>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top w-50" style="padding: 1.25rem" src="/images/icons/selenium_powershell_icon.svg" alt="Selenium Powershell">
-    <div class="card-body">
-      <h5 class="card-title"><b>Selenium Powershell</b></h5>
-      <p class="card-text">
-          PowerShell driver for Selenium UI testing. Helps DevOps teams to implement system-level testing using familiar scripting  language.
-      </p>
+    <div class="card-body text-center">
+      <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/benchmark_icon.svg" alt="Benchmarks">
+      <a href="extras/benchmarks/" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+      <b>Benchmarks</b>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+       <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/selenium_powershell_icon.svg" alt="Selenium Powershell">
       <a href="extras/ps_selenium" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+      <b>Selenium Powershell</b>
     </div>
   </div>
 </div>

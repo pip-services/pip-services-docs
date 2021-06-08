@@ -15,7 +15,7 @@ The FloatConverter class allows you to convert arbitrary values into float using
 - DateTime: total number of milliseconds since unix epoсh  
 - Boolean: 1 for true and 0 for false
 
-### Static methods
+### Methods
 
 #### ToFloat
 Converts value into float or returns 0 when conversion is not possible.

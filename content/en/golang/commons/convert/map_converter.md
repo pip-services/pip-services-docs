@@ -13,7 +13,7 @@ The MapConverter class allows you to convert arbitrary values into map objects u
 - Objects: property names as keys, property values as values   
 - Arrays: element indexes as keys, elements as values
 
-### Static methods
+### Methods
 
 #### ToMap
 Converts value into map object or returns empty map when conversion is not possible

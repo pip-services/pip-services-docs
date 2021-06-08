@@ -35,10 +35,10 @@ Converts value into JSON string.
 
 > ToJson(value interface{}) (string, error)
 
-- **value**: any - the value to convert.
+- **value**: interface{} - the value to convert.
 - **returns**: (string, error) - JSON string or null when value is null.
 
-#### toMap
+#### ToMap
 Converts JSON string into map object or returns empty map when conversion is not possible.
 See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 

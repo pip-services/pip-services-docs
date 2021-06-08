@@ -11,7 +11,7 @@ description: >
 ### Description
 TODO: add description
 
-### Funcs
+### Methods
 
 #### ToDuration
 Converts value into time.Duration or returns current when conversion is not possible.

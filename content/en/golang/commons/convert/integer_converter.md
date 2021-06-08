@@ -16,7 +16,7 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 - DateTime: total number of milliseconds since unix epoсh  
 - Boolean: 1 for True and 0 for False
 
-### Funcs
+### Methods
 
 #### toInteger
 Converts value into integer or returns 0 when conversion is not possible.  

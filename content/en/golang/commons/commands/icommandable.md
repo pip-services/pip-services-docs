@@ -16,7 +16,7 @@ Important points
 
 - This interface is typically implemented by controllers and is used to auto generate external interfaces. 
 
-### Funcs
+### Methods
 
 #### GetCommandSet
 Gets a command set with all supported commands and events.

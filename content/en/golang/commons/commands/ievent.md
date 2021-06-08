@@ -13,7 +13,7 @@ description: >
 
 The IEvent interface allows you to define events that can send asynchronous notifications to multiple subscribed listeners.
 
-### Funcs
+### Methods
 
 #### Name
 Gets the event name.

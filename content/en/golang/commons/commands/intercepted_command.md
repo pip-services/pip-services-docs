@@ -21,7 +21,7 @@ about the interceptor that is being used and the next command in the chain.
 - **interceptor**: [ICommandInterceptor](../icommand_interceptor) - the interceptor that is intercepting the command.
 - **next**: [ICommand](../icommand) - (link to) the next command in the command's execution chain.
 
-### Funcs
+### Methods
 
 #### Execute
 Executes the next command in the execution chain using the given [parameters](../../run/parameters) (arguments).  

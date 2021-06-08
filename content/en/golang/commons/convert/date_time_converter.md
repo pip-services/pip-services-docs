@@ -15,7 +15,7 @@ The DateTimeConverter class allows you to convert arbitrary values into Date val
 - Strings: converted using ISO time format
 - Numbers: converted using milliseconds since unix epoch
 
-### Funcs
+### Methods
 
 #### ToDateTime
 Converts value into Date or returns current date when conversion is not possible.  

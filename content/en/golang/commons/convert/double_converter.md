@@ -19,7 +19,7 @@ The DoubleConverter class allows you to convert arbitrary values into double usi
     
  - Boolean: 1 for true and 0 for false  
 
-### Funcs
+### Methods
 
 #### toDouble
 Converts value into doubles or returns 0 when conversion is not possible.  

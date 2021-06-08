@@ -11,7 +11,7 @@ description: >
 
 The IEventListener interface allows you to define actions to be taken by listener objects after receiving a notification on a fired event.
 
-### Funcs
+### Methods
 
 #### OnEvent
 A method called when events this listener is subscrubed to are fired.

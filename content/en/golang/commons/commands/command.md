@@ -21,7 +21,7 @@ Creates a new command object and assigns it's parameters.
 - **schema**: [Schema](../../validate/schema) - the schema to validate command arguments.
 - **action**:  func(correlationId string, args [*run.Parameters](../../run/parameters)) (interface{}, error) - the function to be executed by this command.
 
-### Funcs
+### Methods
 
 #### Execute
 Executes the command. Before execution it validates [args](../../run/parameters) using the defined schema.

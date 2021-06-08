@@ -12,7 +12,7 @@ See also [TypeCode](../../convert/type_code)
 The TypeConverter class allows you to convert arbitrary values into objects specified by a code type and to get the code type of an object. The code types are defined in the [TypeCode](../../convert/type_code) class.
 
 
-### Funcs
+### Methods
 
 #### ToNullableType
 Converts value into an object type specified by Type Code or returns null when conversion is not possible.

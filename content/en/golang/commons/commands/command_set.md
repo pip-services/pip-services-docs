@@ -26,7 +26,7 @@ Creates an empty CommandSet object.
 
 > NewCommandSet() [*CommandSet]()
 
-### Funcs
+### Methods
 
 #### AddCommand
 Adds a [command](../icommand) to this command set.  

@@ -11,7 +11,7 @@ description: >
 
 The JsonConverter class allows you to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings.
 
-### Funcs
+### Methods
 
 #### FromJson
 Converts value from JSON string

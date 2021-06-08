@@ -67,7 +67,7 @@ Maps defined later in the list override values from previously defined maps.
 - **maps**: ...map[string]string - an array of maps to be merged
 
 
-### Funcs
+### Methods
 
 #### AddSection
 Adds parameters into this ConfigParams under specified section.

@@ -17,7 +17,7 @@ Important points
 
 - This technique can be used for authentiction, logging, and several other functions.
 
-### Funcs
+### Methods
 
 #### Name
 Gets the name of the wrapped command.

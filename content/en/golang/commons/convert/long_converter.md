@@ -15,7 +15,7 @@ The LongConverter class allows you to convert arbitrary values into longs using 
 - DateTime: total number of milliseconds since unix epoсh   
 - Boolean: 1 for true and 0 for false
 
-### Funcs
+### Methods
 
 #### ToLong
 Converts value into long or returns 0 when conversion is not possible.

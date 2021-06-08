@@ -25,7 +25,7 @@ Throws an Error if the name is null.
 
 - **name**: string - the name of the event that is to be created.
 
-### Funcs
+### Methods
 
 #### AddListener
 Adds a listener to receive notifications when this event is fired.

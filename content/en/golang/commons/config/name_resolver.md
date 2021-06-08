@@ -11,7 +11,7 @@ description: >
 A helper class that allows to extract component "name" from configuration parameters.
 The name can be defined in the "id" or "name" parameters or inside a component of type descriptor.
 
-### Funcs
+### Methods
 
 #### Resolve
 Resolves a component name from configuration parameters. The name can be stored in "id",

@@ -13,7 +13,7 @@ description: >
 
 The ICommand interface is used to define Commands. Each command wraps a method or function and allows to call them in a uniform and safe manner.
 
-### Funcs
+### Methods
 
 #### Name
 Gets the command name.

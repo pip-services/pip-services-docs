@@ -10,7 +10,7 @@ description: >
 ### Description
 The ArrayConverter class provides methods to create an array from a set of values. These values can be in the form of a list,  a single value or a string of comma-delimited values.    
 
-### Funcs
+### Methods
 
 #### ListToArray
 Converts a list into array object with empty array as default.

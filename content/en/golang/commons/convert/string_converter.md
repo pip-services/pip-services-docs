@@ -18,7 +18,7 @@ description: >
 - Arrays: as comma-separated list  
 - Other objects: using **ToString()** method
 
-### Funcs
+### Methods
 
 #### ToNullableString
 Converts value into string or returns null when value is null.

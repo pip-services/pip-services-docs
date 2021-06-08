@@ -9,7 +9,7 @@ description: >
 ### Description
 The OptionResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
 
-### Funcs
+### Methods
 
 #### Resolve
 Resolves an "options" configuration section from component configuration parameters.

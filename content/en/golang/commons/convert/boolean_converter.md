@@ -19,7 +19,7 @@ The BooleanConverter class allows you to convert different values to boolean val
 - DateTime: <>0 total milliseconds are true, =0 are false
 
 
-### Funcs
+### Methods
 
 #### ToBoolean
 Converts value into boolean or returns false when conversion is not possible.

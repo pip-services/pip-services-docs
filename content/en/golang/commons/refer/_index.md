@@ -2,195 +2,61 @@
 type: docs
 title: "Refer"
 linkTitle: "Refer"
+no_list: true
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: >
+    
+    The Refer package provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish dependencies between them. 
+   
+---
 ---
 
-# Command
+<div class="module-body"> 
 
-Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.
+### Interfaces
 
-```dart
-var command =  Command('add', null, (correlationId, args) {
-    var param1 = args.getAsFloat('param1');
-    var param2 = args.getAsFloat('param2');
-    var result = param1 + param2;
-    return result;
-});
-result = await command.execute(
-  '123',
-  Parameters.fromTuples(
-    ['param1', 2,
-    'param2', 2]
-  )).catch(err) {
-    if (err!= null) print(err);
-    else print('2 + 2 = ' + result);
-  }
-);
-// Console output: 2 + 2 = 4
-```
+#### [IReferenceable](ireferenceable)
+Sets references to dependent components.
 
-See [ICommand](#icommand), [CommandSet](#commandset)
+#### [IReferences](ireferences)
+Interface for a map that holds component references and passes them to components
+to establish dependencies with each other.
+Together with [IReferenceable](ireferenceable) and [IUnreferenceable](iunreferenceable) interfaces it implements
+a Locator pattern that is used by PipServices toolkit for Inversion of Control
+to assign external dependencies to components. 
 
+#### [IUnreferenceable](iunreferenceable)
+Interface for components that require explicit clearing of references to dependent components.
 
-### Constructors
+<br>
 
-> Command([String]() name, [Schema]() schema, dynamic func)
-Creates a new command object and assigns it's parameters. 
+### Classes
 
-#### Properties
+#### [DependencyResolver](dependency_resolver)
+Helper class for resolving component dependencies.
+The resolver is configured to resolve named dependencies by specific locator.
+During deployment the dependency locator can be changed.
 
-> hashCode → [int]()
-The hash code for this object.
+#### [Descriptor](descriptor)
+Locator type that most often used in PipServices toolkit.
+It locates components using several fields:
+- Group: a package or just named group of components like "pip-services"
+- Type: logical component type that defines it's contract like "persistence"
+- Kind: physical implementation type like "mongodb"
+- Name: unique component name like "default"
+- Version: version of the component contract like "1.0"
 
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
+#### [Reference](reference)
+Contains a reference to a component and locator to find it.
+It is used by [References](references) to store registered component references.
 
-#### Methods
+#### [ReferenceError](reference_error)
+Error when required component dependency cannot be found.
 
-> execute([String]() correlationId, [Parameters]() args) → [Future]()
-Executes the command. Before execution it validates Parameters args using the defined schema. The command execution intercepts exceptions raised by the called function and returns them as an error in callback. 
+#### [Referencer](referencer)
+Helper class that sets and unsets references to components.
 
-> getName() → [String]()
-Gets the command name. Returns the name of this command. (<i>override</i>)
+#### [References](references)
+The most basic implementation of [IReferences](ireferences) to store and locate component references.
 
-> getSchema() → [Schema]()
-Gets the command validation schema. Returns the vsalidation schema of this command.
-
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i> inherited </i>)
-
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
-
-> validate([Parameters]() args) → [List]()<[ValidationResult]()>
-Validates the command [Parameters]() `args` before execution using the defined schema. (<i>override</i>)
-
-
-# CommandSet
-
-Contains a set of commands and events supported by a [commandable](#icommandable) object. The CommandSet supports command interceptors to extend and the command call chain.
-
-CommandSets can be used as alternative commandable interface to a business object. It can be used to auto generate multiple external services for the business object without writing much code.
-
-See [Command](#command), [Event](#event), [ICommandable](#icommandable)
-
-#### Example
-```dart
-class MyDataCommandSet extends CommandSet {
-     IMyDataController _controller ;
-    MyDataCommandSet(IMyDataController controller): super() { // Any data controller interface
-        _controller = controller;
-        addCommand(makeGetMyDataCommand());
-    }
-    ICommand _makeGetMyDataCommand()  {
-        return  Command(
-          'get_mydata',
-          null,
-          (String correlationId, Parameters args) {
-              var param = args.getAsString('param');
-              return _controller.getMyData(correlationId, param);
-          }
-        );
-    }
-}
-```
-
-### Constructors
-
-> CommandSet()
-Creates an empty CommandSet object.
-
-#### Properties
-
-> hashCode → [int]()
-The hash code for this object.
-
-> runtimeType → [Type]()
-A representation of the runtime type of the object.
-
-#### Methods
-
-> addCommand([ICommand]() command) → void
-Adds a `ICommand` command to this command set. 
-
-> addCommands([List]()<[ICommand]()> commands) → void
-Adds multiple `ICommand` commands to this command set. 
-
-> addCommandSet([CommandSet]() commandSet) → void
-Adds all of the commands and events from specified `CommandSet` command set into this one. 
-
-> addEvent([IEvent]() event) → void
-Adds an `IEvent` event to this command set.
-
-> addEvents([List]()<[IEvent]()> events) → void
-Adds multiple `IEvent` events to this command set.
-
-> addInterceptor([ICommandInterceptor]() interceptor) → void
-Adds a `ICommandInterceptor` command interceptor to this command set.
-
-> addListener(IEventListener listener) → void
-Adds a `IEventListener` listener to receive notifications on fired events. 
-
-> execute([String]() correlationId, [String]() commandName, [Parameters]() args) → [Future]()
-Executes a [ICommand]() commandspecificed by its name. 
-
-> findCommand([String]() commandName) → [ICommand]()
-Searches for a command by its name. 
-
-> findEvent([String]() eventName) → [IEvent]()
-Searches for an event by its name in this command set. 
-
-> getCommands() → [List]()<[ICommand]()>
-Gets all commands registered in this command set. Returns a list of commands. 
-See [ICommand]()
-
-> getEvents() → [List]()<[IEvent]()>
-Gets all events registred in this command set. Returns a list of events. See IEvent
-
-> noSuchMethod([Invocation]() invocation) → dynamic
-Invoked when a non-existent method or property is accessed. (<i>inherited</i>)
-
-> notify([String]() correlationId, [String]() eventName, [Parameters]() args) → void
-Fires event specified by its name and notifies all registered IEventListener listeners 
-
-> removeListener([IEventListener]() listener) → void
-Removes previosly added IEventListener listener. 
-
-> toString() → [String]()
-A string representation of this object. (<i>inherited</i>)
-
-> validate([String]() commandName, [Parameters]() args) → [List]()<[ValidationResult]()
-Validates `Parameters` args for command specified by its name using defined schema. If validation schema is not defined than the methods returns no errors. It returns validation error if the command is not found. 
-
-# Event
-
-Concrete implementation of [IEvent](#ievent) interface. It allows to send asynchronous notifications to multiple subscribed listeners.
-See [IEvent](#ievent), [IEventListener](#ieventListener)
-
-#### Example
-```dart
-var event =  Event('my_event');
-
-event.addListener(myListener);
-
-event.notify('123', Parameters.fromTuples(
-  ['param1', 'ABC',
-  'param2', 123]
-));
-```
-
-# ICommand
-
-
-# ICommandable
-
-
-# ICommandIntercepter
-
-
-# IEvent
-
-
-# IEventListener
-
-
-# InterceptedCommand
+</div>

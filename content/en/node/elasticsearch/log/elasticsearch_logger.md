@@ -54,7 +54,7 @@ Creates a new instance of the logger.
 > `public` constructor()
 
 
-### Instance ethods
+### Instance methods
 
 #### close
 Closes the component and frees used resources.

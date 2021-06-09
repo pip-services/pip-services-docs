@@ -18,7 +18,7 @@ Important points
 
 - Error descriptions are used to pass errors through the wire between microservices implemented in different languages. They allow to restore exceptions on the receiving side close to the original type and preserve additional information.
 
-### Static ethods
+### Static methods
 
 #### create
 Creates a serializable ErrorDescription from error object.

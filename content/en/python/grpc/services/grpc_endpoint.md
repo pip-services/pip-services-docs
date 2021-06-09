@@ -45,7 +45,7 @@ Creates a new instance of the service.
 - **name**: str - service name.
 
 
-### Instance ethods
+### Instance methods
 
 
 #### close

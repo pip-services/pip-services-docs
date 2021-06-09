@@ -77,7 +77,7 @@ The remote service uri which is calculated on openning.
 </span>
 
 
-### Instance ethods
+### Instance methods
 
 
 #### _add_filter_params

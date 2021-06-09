@@ -120,7 +120,7 @@ Removes all component references that match the specified locator.
 
 ### Static methods
 
-#### from_tuples
+#### fromTuples
 Creates a new References from a list of key-value pairs called tuples.
 
 > `public static` fromTuples(...tuples: any[]): [References](../references)

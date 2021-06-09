@@ -48,22 +48,13 @@ If they don't the call to this method has no effect.
 Unsets references in specific component.
 
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't, the call to this method has no effect.
+If they don't, the call to this method has no effect.  
+See [IUnreferenceable](../iunreferenceable)
 
 > `static` unset_references_for_one(component: Any) 
 
 - **component**: Any - the component to unset references.
 
-#### unset_references_for_one
-Unsets references in specific component.
-
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't, the call to this method has no effect.
-See [IUnreferenceable](../iunreferenceable)
-
-> `static` unset_references_for_one(component: Any)
-
-- **component**: Any - the component to unset references.
 
 ### See also
 - #### [IReferenceable](../ireferenceable)

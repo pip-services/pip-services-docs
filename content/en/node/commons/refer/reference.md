@@ -25,7 +25,7 @@ Create a new instance of the reference object and assigns its values.
 - **locator**: any - a locator to find the reference. 
 - **component**: any - a reference to component.
 
-###  Instance ethods
+###  Instance methods
 
 #### getComponent
 Gets the stored component reference.    

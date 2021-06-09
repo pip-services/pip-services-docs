@@ -105,12 +105,6 @@ Sets periodic timer triggering interval.
 
 - **value**: int - an interval in milliseconds.
 
-#### set_task
-Sets a new [INotifiable](../inotifiable) object to receive notifications from this timer.
-
-> set_task(value: [INotifiable](../inotifiable))
-
-- **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
 
 #### start
 Starts the timer.

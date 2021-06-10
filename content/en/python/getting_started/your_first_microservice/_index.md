@@ -13,7 +13,7 @@ The microservice is structurally made up of these components:
 - The controller, which generates responses to requests
 - A REST service for the transmission of responses and requests
 - The component factory for the dynamic creation of components
-- A container process, which will be filled with the necessary components, based on yml configuration.
+- A container process, which will be filled with the necessary components, based on a yaml file configuration.
 
 ### Step 1. Project setup
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.

@@ -57,7 +57,7 @@ True if the timer is started and false if it is stopped.
 > `public` bool IsStarted [ get, private set ]
 
 
-### Methods
+### Instance methods
 
 #### Restart
 Restart the timer.

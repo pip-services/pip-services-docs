@@ -21,7 +21,7 @@ Creates a new validation rule and sets its values.
 - **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
 - **value**: object - a constant value to compare to
 
-### Methods
+### Instance methods
 
 #### Validate
 Validates a given value against this rule.

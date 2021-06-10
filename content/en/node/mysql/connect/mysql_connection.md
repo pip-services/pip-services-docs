@@ -70,7 +70,7 @@ The configuration options.
 </span>
 
 
-### Methods
+### Instance methods
 
 #### close
 Closes the component and frees used resources.

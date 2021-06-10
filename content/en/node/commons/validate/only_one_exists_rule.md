@@ -20,7 +20,7 @@ Creates a new validation rule and sets its values
 
 - **properties**: string[] - a list of property names where at only one property must exist
 
-### Methods
+### Instance methods
 
 #### validate
 Validates a given value against this rule.

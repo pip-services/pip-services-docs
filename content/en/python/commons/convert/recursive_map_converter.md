@@ -15,7 +15,7 @@ description: >
  
  - This class is similar to [MapConverter](../map_converter). The difference is that it recursively converts all values stored in objects and arrays.
 
-### Methods
+### Instance methods
 
 #### to_map
 Converts value into map object or returns empty map when conversion is not possible

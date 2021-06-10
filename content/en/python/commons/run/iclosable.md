@@ -12,7 +12,7 @@ description: >
 
 The IClosable interface allows you to create a component with a method that closes it and frees used resources.
 
-### Methods
+### Instance methods
 
 #### close
 Closes a component and frees used resources.

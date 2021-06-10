@@ -18,7 +18,7 @@ Important points
     
 - For components that perform opening on demand consider using [IClosable](../iclosable) interface instead.
 
-### Methods
+### Instance methods
 
 #### isOpen
 Checks if the component is opened.

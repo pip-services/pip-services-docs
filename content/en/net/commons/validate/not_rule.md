@@ -22,7 +22,7 @@ Creates a new validation rule and sets its values
 - **rule**: [IValidationRule](../ivalidation_rule) - a rule to be negated.
 
 
-### Methods
+### Instance methods
 
 #### Validate
 Validates a given value against this rule.

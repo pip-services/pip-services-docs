@@ -23,7 +23,7 @@ Creates a new validation rule and sets its values
 
 
 
-### Methods
+### Instance methods
 
 #### validate
 Validates a given value against this rule.

@@ -36,7 +36,7 @@ List of tracers
 
 </span>
 
-### Methods
+### Instance methods
 
 #### BeginTrace
 Begings recording an operation trace

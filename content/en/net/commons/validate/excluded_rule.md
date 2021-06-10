@@ -20,7 +20,7 @@ Creates a new validation rule and sets its values
 
 - **values**: object[] - a list of constants that value must be excluded from
 
-### Methods
+### Instance methods
 
 #### Validate
 Validates the given value. None of the values set in this ExcludedRule object must exist 

@@ -20,7 +20,7 @@ Creates a new validation rule and sets its values.
 
 - **values**: Any - a list of constants that value must be included to
 
-### Methods
+### Instance methods
 
 #### validate
 Validates a given value against this rule.

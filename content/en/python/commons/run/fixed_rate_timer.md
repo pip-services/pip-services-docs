@@ -27,7 +27,7 @@ Creates new instance of the timer and sets its values.
 - **interval**: int - (optional) an interval to trigger timer in milliseconds.
 - **delay**: int - (optional) a delay before the first triggering in milliseconds.
 
-### Methods
+### Instance methods
 
 #### close
 Closes the timer.

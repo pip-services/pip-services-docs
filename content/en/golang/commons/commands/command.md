@@ -53,7 +53,7 @@ Validates the command [args](../../run/parameters) before execution using the de
 ### Examples
 
 ```go
-command := NewCommand("add", null, func (correlationId string, args *run.Parameters)(interface{}, err) {
+command := NewCommand("add", nil, func (correlationId string, args *run.Parameters)(interface{}, err) {
 	param1 := args.getAsFloat("param1");
   param2 := args.getAsFloat("param2");
   return (param1 + param2), nil;

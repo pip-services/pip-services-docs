@@ -36,12 +36,12 @@ Converts value into Date or returns default when conversion is not possible.
 - **returns**: time.Time - Date value or default when conversion is not supported.
 
 #### ToNullableDateTime
-Converts value into Date or returns null when conversion is not possible.
+Converts value into Date or returns nil when conversion is not possible.
 
 > ToNullableDateTime(value interface{}) *time.Time
 
 - **value**: interface{} - the value to convert.
-- **returns**: *time.Time - Date value or null when conversion is not supported.
+- **returns**: *time.Time - Date value or nil when conversion is not supported.
 
 ### Examples
 

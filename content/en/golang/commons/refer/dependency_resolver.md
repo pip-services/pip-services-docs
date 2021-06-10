@@ -74,7 +74,7 @@ Gets one optional dependency by its name.
 > (c [*DependencyResolver]()) GetOneOptional(name string) interface{}
 
 - **name**: string - the dependency name to locate.
-- **returns**: interface{} - a dependency reference or null of the dependency was not found
+- **returns**: interface{} - a dependency reference or nil of the dependency was not found
 
 #### GetOneRequired
 Gets one required dependency by its name.

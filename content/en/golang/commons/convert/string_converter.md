@@ -21,29 +21,29 @@ description: >
 ### Methods
 
 #### ToNullableString
-Converts value into string or returns null when value is null.
+Converts value into string or returns nil when value is nil.
 
 > ToNullableString(value interface{}) *string
 
 - **value**: interface{} - the value to convert.
-- **returns**: *string - string value or null when value is null.
+- **returns**: *string - string value or nil when value is nil.
 
 #### ToString
-Converts value into string or returns "" when value is null.
+Converts value into string or returns "" when value is nil.
 
 > ToString(value interface{}) string
 
 - **value**: interface{} - the value to convert.
-- **returns**: string - string value or "" when value is null.
+- **returns**: string - string value or "" when value is nil.
 
 #### ToStringWithDefault
-Converts value into string or returns default when value is null.
+Converts value into string or returns default when value is nil.
 
 > ToStringWithDefault(value interface{}, defaultValue string) string
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: string - the default value.
-- **returns**: string - string value or default when value is null.
+- **returns**: string - string value or default when value is nil.
 
 
 ### Examples

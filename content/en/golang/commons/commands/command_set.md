@@ -178,7 +178,7 @@ func (dcs * MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataControlle
 func (dcs * MyDataCommandSet) makeGetMyDataCommand() ICommand {
     return NewCommand(
       "get_mydata",
-      null,
+      nil,
       (correlationId: string, args: Parameters, func (correlationId string, args *run.Parameters)(interface{}, err) {
           let param = args.getAsString("param");
           return dcs._controller.getMyData(correlationId, param,);

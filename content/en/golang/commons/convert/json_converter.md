@@ -19,7 +19,7 @@ Converts value from JSON string
 > FromJson(value string) (interface{}, error)
 
 - **value**: string - the JSON string to convert.
-- **returns**: (interface{}, error) - converted object value or null when value is null.
+- **returns**: (interface{}, error) - converted object value or nil when value is nil.
 
 #### FromJsonAs
 Converts JSON string into a value of type specified by a TypeCode.
@@ -28,7 +28,7 @@ Converts JSON string into a value of type specified by a TypeCode.
 
 - **result**: interface{} - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: string - the JSON string to convert.
-- **returns**: (interface{}, error) - converted object value or null when value is null.
+- **returns**: (interface{}, error) - converted object value or nil when value is nil.
 
 #### ToJson
 Converts value into JSON string.
@@ -36,7 +36,7 @@ Converts value into JSON string.
 > ToJson(value interface{}) (string, error)
 
 - **value**: interface{} - the value to convert.
-- **returns**: (string, error) - JSON string or null when value is null.
+- **returns**: (string, error) - JSON string or nil when value is nil.
 
 #### ToMap
 Converts JSON string into map object or returns empty map when conversion is not possible.
@@ -58,13 +58,13 @@ Converts JSON string into map object or returns default value when conversion is
 
 
 #### ToNullableMap
-Converts JSON string into map object or returns null when conversion is not possible.  
+Converts JSON string into map object or returns nil when conversion is not possible.  
 See [MapConverter.ToNullableMap](../map_converter/#tonullablemap)
 
 > ToNullableMap(value string) *map[string]interface{}
 
 - **value**: string - the JSON string to convert.
-- **returns**: *map[string]interface{} - Map object value or null when conversion is not supported.
+- **returns**: *map[string]interface{} - Map object value or nil when conversion is not supported.
 
 
 ### Examples

@@ -11,7 +11,7 @@ description: >
 
 The IParameterized interface allows you to create components with execution parameters.
 
-### Instance methods
+### Methods
 
 #### SetParameters
 Sets execution parameters.

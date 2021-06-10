@@ -57,7 +57,7 @@ Gets object type by its name and library where it is defined.
 
 - **name**: string - an object type name.
 - **pkg**: string - a library where the type is defined
-- **returns**: refl.Type - the object type or null is the type wasn't found.
+- **returns**: refl.Type - the object type or nil is the type wasn't found.
 
 #### GetTypeByDescriptor
 Gets object type by type descriptor.
@@ -65,7 +65,7 @@ Gets object type by type descriptor.
 > (c *TTypeReflector) GetTypeByDescriptor(typ [*TypeDescriptor](../type_descriptor)) refl.Type
 
 - **typ**: [*TypeDescriptor](../type_descriptor) - a type descriptor that points to an object type
-- **returns**: refl.Type - the object type or null is the type wasn't found.
+- **returns**: refl.Type - the object type or nil is the type wasn't found.
 
 #### IsPrimitive!
 **TODO: is not implemented for this language yet**

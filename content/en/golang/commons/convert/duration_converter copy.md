@@ -31,12 +31,12 @@ Converts value into time.Duration or returns default when conversion is not poss
 - **returns**: time.Duration - value or default when conversion is not supported.
 
 #### ToNullableDuration
-Converts value into time.Duration or returns null when conversion is not possible.
+Converts value into time.Duration or returns nil when conversion is not possible.
 
 > ToNullableDuration(value interface{}) *time.Duration
 
 - **value**: interface{} - the value to convert.
-- **returns**: *time.Duration - value or null when conversion is not supported.
+- **returns**: *time.Duration - value or nil when conversion is not supported.
 
 
 ### Examples

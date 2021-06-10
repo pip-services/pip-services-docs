@@ -71,7 +71,7 @@ Gets an optional component reference that matches specified locator.
 > (c [*References]()) GetOneOptional(locator interface{}) interface{}
 
 - **locator**: interface{} - the locator to find references by.
-- **returns**: interface{} - a matching component reference or null if nothing was found.
+- **returns**: interface{} - a matching component reference or nil if nothing was found.
 
 #### GetOneRequired
 Gets a required component reference that matches specified locator.  

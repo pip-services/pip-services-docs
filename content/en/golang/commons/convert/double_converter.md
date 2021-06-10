@@ -40,12 +40,12 @@ Converts value into integer or returns default value when conversion is not poss
 - **returns**: float64 - double value or default when conversion is not supported.
 
 #### ToNullableDouble
-Converts value into doubles or returns null when conversion is not possible.
+Converts value into doubles or returns nil when conversion is not possible.
 
 > ToNullableDouble(value interface{}) *float64
 
 - **value**: interface{} - the value to convert.
-- **returns**: *float64 - double value or null when conversion is not supported.
+- **returns**: *float64 - double value or nil when conversion is not supported.
 
 ### Examples
 

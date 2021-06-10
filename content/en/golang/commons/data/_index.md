@@ -9,7 +9,7 @@ linkTitle: "Data"
 Concrete implementation of [ICommand](#icommand) interface. Command allows to call a method or function using Command pattern.
 
 ```dart
-var command =  Command('add', null, (correlationId, args) {
+var command =  Command('add', nil, (correlationId, args) {
     var param1 = args.getAsFloat('param1');
     var param2 = args.getAsFloat('param2');
     var result = param1 + param2;
@@ -21,7 +21,7 @@ result = await command.execute(
     ['param1', 2,
     'param2', 2]
   )).catch(err) {
-    if (err!= null) print(err);
+    if (err!= nil) print(err);
     else print('2 + 2 = ' + result);
   }
 );
@@ -84,7 +84,7 @@ class MyDataCommandSet extends CommandSet {
     ICommand _makeGetMyDataCommand()  {
         return  Command(
           'get_mydata',
-          null,
+          nil,
           (String correlationId, Parameters args) {
               var param = args.getAsString('param');
               return _controller.getMyData(correlationId, param);

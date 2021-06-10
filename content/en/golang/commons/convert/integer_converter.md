@@ -40,13 +40,13 @@ See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),
 - **returns**: int - integer value or default when conversion is not supported. 
 
 #### ToNullableInteger
-Converts value into integer or returns null when conversion is not possible.
+Converts value into integer or returns nil when conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > ToNullableInteger(value interface{}) *int
 
 - **value**: interface{} - the value to convert.
-- **returns**: *int - integer value or null when conversion is not supported.
+- **returns**: *int - integer value or nil when conversion is not supported.
 
 
 
@@ -68,13 +68,13 @@ Converts value into unsigned integer or returns default when conversion is not p
 - **returns**: uint - integer value or default when conversion is not supported.
 
 #### ToNullableUInteger
-Converts value into integer or returns null when conversion is not possible.
+Converts value into integer or returns nil when conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > ToNullableUInteger(value interface{}) *uint
 
 - **value**: interface{} - the value to convert.
-- **returns**: *uint - integer value or null when conversion is not supported.
+- **returns**: *uint - integer value or nil when conversion is not supported.
 
 
 ### Examples

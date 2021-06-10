@@ -19,7 +19,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 Important points
 
 - The locator matching can be done by all or only few selected fields. 
-- The fields that shall be excluded from the matching must be set to *"*"* or *null*.
+- The fields that shall be excluded from the matching must be set to *"*"* or *nil*.
 - This approach allows to implement many interesting scenarios. For instance:
     - Locate all loggers (match by type and version)  
     - Locate persistence components for a microservice (match by group and type)  
@@ -90,7 +90,7 @@ Gets the component's implementation version.
 
 #### IsComplete
 Checks whether all descriptor fields are set.
-If descriptor has at least one "*" or null field it is considered "incomplete",
+If descriptor has at least one "*" or nil field it is considered "incomplete",
 
 > (c [*Descriptor]()) IsComplete() bool
 
@@ -98,7 +98,7 @@ If descriptor has at least one "*" or null field it is considered "incomplete",
 
 #### Match
 Partially matches this descriptor to another descriptor.
-Fields that contain "*" or null are excluded from the match.
+Fields that contain "*" or nil are excluded from the match.
 
 > (c [*Descriptor]()) Match(descriptor [*Descriptor]()) bool
 

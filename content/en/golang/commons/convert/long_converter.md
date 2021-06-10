@@ -35,12 +35,12 @@ Converts value into integer or returns default when conversion is not possible.
 - **returns**: int64 - long value or default when conversion is not supported
 
 #### ToNullableLong
-Converts value into long or returns null when conversion is not possible.
+Converts value into long or returns nil when conversion is not possible.
 
 > ToNullableLong(value interface{}) *int64
 
 - **value**: interface{} - the value to convert.
-- **returns**: *int64 - long value or null when conversion is not supported.
+- **returns**: *int64 - long value or nil when conversion is not supported.
 
 
 #### ToULong
@@ -61,12 +61,12 @@ Converts value into unsigned long or returns default when conversion is not poss
 - **returns**: uint64 - long value or default when conversion is not supported.
 
 #### ToNullableULong
-Converts value into unsigned long or returns null when conversion is not possible.
+Converts value into unsigned long or returns nil when conversion is not possible.
 
 > ToNullableULong(value interface{}) *uint64
 
 - **value**: interface{} - the value to convert.
-- **returns**: *uint64 - long value or null when conversion is not supported.
+- **returns**: *uint64 - long value or nil when conversion is not supported.
 
 ### Examples
 

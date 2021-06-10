@@ -35,7 +35,7 @@ Gets value of object property specified by its name.
 
 - **obj**: interface{} - an object to read property from.
 - **name**: string - a name of the property to get.
-- **returns**: interface{} - the property value or null if property doesn't exist or introspection failed.
+- **returns**: interface{} - the property value or nil if property doesn't exist or introspection failed.
 
 #### GetPropertyNames
 Gets names of all properties implemented in specified object.

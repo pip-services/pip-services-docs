@@ -43,7 +43,7 @@ Invokes an object method by its name with specified parameters.
 - **obj**: interface{} - an object to invoke.
 - **name**: string -a name of the method to invoke.
 - **args**: ...interface{} - a list of method arguments.
-- **returns**: interface{} - the result of the method invocation or null if method returns void.
+- **returns**: interface{} - the result of the method invocation or nil if method returns void.
 
 ### Examples
 

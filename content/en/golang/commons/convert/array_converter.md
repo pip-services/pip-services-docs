@@ -20,7 +20,7 @@ See [ToArray](#toarray)
 > ListToArray(value interface{}) []interface{}
 
 - **value**: interface{} - the list to convert.
-- **returns**: []interface{} - array object or empty array when value is null
+- **returns**: []interface{} - array object or empty array when value is nil
 
 
 #### ToArray
@@ -30,7 +30,7 @@ Single values are converted into arrays with single element.
 > ToArray(value interface{}) []interface{}
 
 - **value**: interface{} - the value to convert.
-- **returns**: []interface{} - array object or empty array when value is null.
+- **returns**: []interface{} - array object or empty array when value is nil.
 
 #### ToArrayWithDefault
 Converts value into array object with specified default.
@@ -40,7 +40,7 @@ Single values are converted into arrays with single element.
 
 - **value**: interface{} - the value to convert.
 - **defaultValue**: []interface{} - default array object.
-- **returns**: []interface{} - array object or default array when value is null.
+- **returns**: []interface{} - array object or default array when value is nil.
 
 #### ToNullableArray
 Converts value into array object.
@@ -49,7 +49,7 @@ Single values are converted into arrays with a single element.
 > ToNullableArray(value interface{}) *[]interface{}
 
 - **value**: interface{} - the value to convert.
-- **returns**: *[]interface{} - array object or null when value is null.
+- **returns**: *[]interface{} - array object or nil when value is nil.
 
 ### Examples
 

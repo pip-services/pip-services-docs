@@ -37,18 +37,18 @@ Converts value into map object or returns default when conversion is not possibl
 - **returns**: any - map object or empty map when conversion is not supported.
 
 #### toNullableMap
-Converts value into map object or returns null when conversion is not possible.
+Converts value into map object or returns nil when conversion is not possible.
 
 > `public static` toNullableMap(value: any): any
 
 - **value**: any - the value to convert.
-- **returns**: any - map object or null when conversion is not supported.
+- **returns**: any - map object or nil when conversion is not supported.
 
 
 ### Examples
 
 ```typescript
-let value1 = RecursiveMapConverted.toNullableMap("ABC"); // Result: null
+let value1 = RecursiveMapConverted.toNullableMap("ABC"); // Result: nil
 let value2 = RecursiveMapConverted.toNullableMap({ key: 123 }); // Result: { key: 123 }
 let value3 = RecursiveMapConverted.toNullableMap([1,[2,3]); // Result: { "0": 1, { "0": 2, "1": 3 } }
 ```

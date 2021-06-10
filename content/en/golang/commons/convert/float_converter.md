@@ -37,13 +37,13 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 - **returns**: float32 - float value or default value when conversion is not supported.
 
 #### ToNullableFloat
-Converts value into float or returns null when conversion is not possible.  
+Converts value into float or returns nil when conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
 > ToNullableFloat(value interface{}) *float32
 
 - **value**: interface{} - the value to convert.
-- **returns**: *float32 - float value or null when conversion is not supported.
+- **returns**: *float32 - float value or nil when conversion is not supported.
 
 
 ### Examples

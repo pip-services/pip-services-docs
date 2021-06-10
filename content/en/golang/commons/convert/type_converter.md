@@ -15,13 +15,13 @@ The TypeConverter class allows you to convert arbitrary values into objects spec
 ### Methods
 
 #### ToNullableType
-Converts value into an object type specified by Type Code or returns null when conversion is not possible.
+Converts value into an object type specified by Type Code or returns nil when conversion is not possible.
 
 > ToNullableType(typ [TypeCode](../../convert/type_code), value interface{}) interface{}
 
 - **typ**: [TypeCode](../../convert/type_code) - the [TypeCode](../../convert/type_code) for the data type into which 'value' is to be converted.
 - **value**: interface{} - the value to convert.
-- **returns**: interface{} - object value of type corresponding to TypeCode, or null when conversion is not supported.
+- **returns**: interface{} - object value of type corresponding to TypeCode, or nil when conversion is not supported.
 
 #### ToString
 Converts a [TypeCode](../../convert/type_code) into its string name.
@@ -56,7 +56,7 @@ Converts value into an object type specified by Type Code or returns default val
 
 - **type**: [TypeCode](../../convert/type_code) - the TypeCode for the data type into which 'value' is to be converted.
 - **value**: interface{} - the value to convert.
-- **defaultValue**: interface{} - the default value to return if conversion is not possible (returns null).
+- **defaultValue**: interface{} - the default value to return if conversion is not possible (returns nil).
 - **returns**: interface{} - object value of type corresponding to TypeCode, or default value when conversion is not supported.
 
 ### Examples

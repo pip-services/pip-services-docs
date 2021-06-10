@@ -33,12 +33,12 @@ Converts value into map object or returns default when conversion is not possibl
 - **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
 
 #### ToNullableMap
-Converts value into map object or returns null when conversion is not possible.
+Converts value into map object or returns nil when conversion is not possible.
 
 > ToNullableMap(value interface{}) *map[string]interface{}
 
 - **value**: interface{} - the value to convert.
-- **returns**: *map[string]interface{} - map object or null when conversion is not supported.
+- **returns**: *map[string]interface{} - map object or nil when conversion is not supported.
 
 
 ### Examples

@@ -100,12 +100,12 @@ and allows to recursively access elements of elements.
 
 
 #### GetAsNullableParameters
-Converts map element into an Parameters or returns null if conversion is not possible.
+Converts map element into an Parameters or returns nil if conversion is not possible.
 
 > (c [*Parameters]()) GetAsNullableParameters(key string) [*Parameters](../parameters)
 
 - **key**: string - a key of element to get.
-- **returns**: [*Parameters](../parameters) - Parameters value of the element or null if conversion is not supported.
+- **returns**: [*Parameters](../parameters) - Parameters value of the element or nil if conversion is not supported.
 
 #### GetAsParameters
 Converts map element into an Parameters or returns empty Parameters if conversion is not possible.

@@ -1,0 +1,171 @@
+---
+type: docs
+title: "Schema"
+linkTitle: "Schema"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+description: >
+    Basic schema used to validate values against a set of validation rules.
+
+   
+---
+
+### Description
+
+The Schema class provides a basic schema to validate values against a set of validation rules.
+
+Important points
+
+- This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
+
+### Constructors
+Creates a new instance of validation schema and sets its values.
+
+See [IValidationRule](../ivalidation_rule)
+
+> NewSchemaWithRules(required bool, rules [][IValidationRule](../ivalidation_rule)) [*Schema]()
+
+- **required**: boolean - (optional) true to always require non-nil values.
+- **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
+
+
+Inherit schema
+
+> InheritSchema(base [ISchemaBase](../ischema_base)) [*Schema]
+
+
+Inherit schema with rules
+
+> InheritSchemaWithRules(base [ISchemaBase](../ischema_base), required bool, rules [][IValidationRule](../ivalidation_rule)) [*Schema]()
+
+- **base**: [ISchemaBase](../ischema_base) - base foe create new schema
+- **required**: bool - true to always require non-nil values.
+- **rules**: [][IValidationRule](../ivalidation_rule) - a list with validation rules.
+
+
+Creates a new instance of validation schema and sets its values.
+
+> NewSchema() [*Schema]()
+
+
+### Methods
+
+#### GetRules
+Gets validation rules to check values against.
+
+> (c [*Schema]()) Rules() [][IValidationRule](../ivalidation_rule)
+
+- **returns**: [][IValidationRule](../ivalidation_rule) - a list with validation rules.
+
+#### Required
+Gets a flag that always requires non-nil values.
+For nil values it raises a validation error.
+
+> (c [*Schema]()) Required() bool
+
+- **returns**: boolean - true to always require non-nil values and false to allow nil values.
+
+#### MakeOptional
+Makes validated values optional.
+Validation for nil values will be skipped.
+This method returns reference to this exception to implement Builder pattern
+to chain additional calls.
+
+> (c [*Schema]()) MakeOptional() [*Schema]()
+
+- **returns**: [Schema]() - this validation schema
+
+
+#### MakeRequired
+Makes validated values always required (non-nil).
+For nil values the schema will raise errors.
+This method returns reference to this exception to implement Builder pattern
+to chain additional calls.
+
+> (c [*Schema]()) MakeRequired() [*Schema]()
+
+- **returns**: [*Schema]() - this validation schema
+
+#### PerformTypeValidation
+Validates a given value to match specified type.
+The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
+When type is a Schema, it executes validation recursively against that Schema.
+
+> (c [*Schema]()) PerformTypeValidation(path string, typ interface{}, value interface{}) [][*ValidationResult](../validation_result)
+
+- **path**: string - a dot notation path to the value.
+- **type**: interface{} - a type to match the value type
+- **value**: interface{} - a value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+
+#### PerformValidation
+Validates a given value against the schema and configured validation rules.
+
+> (c [*Schema]()) PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
+
+- **path**: string - a dot notation path to the value.
+- **value**: interface{} - a value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+
+#### SetRequired
+Sets a flag that always requires non-nil values.
+
+> (c [*Schema]()) SetRequired(value bool)
+
+- **value**: bool - true to always require non-nil values and false to allow nil values.
+
+#### SetRules
+Sets validation rules to check values against.
+
+> (c [*Schema]()) SetRules(value [][IValidationRule](../ivalidation_rule))
+
+- **value**: [][IValidationRule](../ivalidation_rule) - a list with validation rules.
+
+
+#### Validate
+Validates the given value and results validation results.
+See [ValidationResult](../validation_result)
+
+> (c [*Schema]()) Validate(value interface{}) [][*IValidationRule](../ivalidation_rule)
+
+- **value**: interface{} - a value to be validated.
+- **returns**: [][*IValidationRule](../ivalidation_rule) - a list with validation results.
+
+
+#### ValidateAndReturnError
+Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
+
+> (c [*Schema]()) ValidateAndReturnError(correlationId string, value interface{}, strict bool) [*errors.ApplicationError](../../errors/application_error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **value**: interface{} -  a value to be validated.
+- **strict**: bool - true to treat warnings as errors.
+- **returns**: [*errors.ApplicationError](../../errors/application_error) - validation exception.
+
+#### ValidateAndThrowError
+Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
+See [ValidationException.ThrowExceptionIfNeeded](../validation_exception/#throwexceptionifneeded)
+
+> (c [*Schema]()) ValidateAndThrowError(correlationId string, value interface{}, strict bool)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **value**: interface{} - a value to be validated.
+- **strict**: bool - true to treat warnings as errors.
+
+
+#### WithRule
+Adds validation rule to this schema.
+This method returns reference to this exception to implement Builder pattern
+to chain additional calls.
+
+> (c [*Schema]()) WithRule(rule [IValidationRule](../ivalidation_rule)) [*Schema]()
+
+- **rule**: [IValidationRule](../ivalidation_rule) - a validation rule to be added.
+- **returns**: [*Schema]() - this validation schema.
+
+
+
+### See also
+- #### [ObjectSchema](../object_schema)
+- #### [PropertySchema](../property_schema) 
+- #### [ArraySchema](../array_schema)
+- #### [MapSchema](../map_schema)

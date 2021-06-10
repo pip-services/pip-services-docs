@@ -40,12 +40,12 @@ Converts value into boolean or returns default value when conversion is not poss
 
 
 #### ToNullableBoolean
-Converts value into boolean or returns null when conversion is not possible.
+Converts value into boolean or returns nil when conversion is not possible.
 
 > ToNullableBoolean(value interface{}) *bool
 
 - **value**: interface{} - the value to convert.
-- **returns**: *bool - boolean value or null when convertion is not supported.
+- **returns**: *bool - boolean value or nil when convertion is not supported.
 
 ### Examples
 

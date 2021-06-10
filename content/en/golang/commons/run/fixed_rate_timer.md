@@ -57,7 +57,7 @@ Gets the callback function that is called when this timer is triggered.
 
 > (c [*FixedRateTimer]()) Callback() func()
 
-- **returns**: func() - the callback function or null if it is not set. 
+- **returns**: func() - the callback function or nil if it is not set. 
 
 
 #### Delay
@@ -80,7 +80,7 @@ Gets the INotifiable object that receives notifications from this timer.
 
 > (c [*FixedRateTimer]()) Task() [INotifiable](../inotifiable)
 
-- **returns**: [INotifiable](../inotifiable) - the INotifiable object or null if it is not set.
+- **returns**: [INotifiable](../inotifiable) - the INotifiable object or nil if it is not set.
 
 
 #### SetTask

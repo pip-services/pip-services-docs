@@ -225,7 +225,7 @@ class HelloWorldProcess(ProcessContainer):
 
 The dynamic configuration is defined in the file:
 
-**‍/config.yml**
+**‍/config.yaml**
 
 ```yml
 ---

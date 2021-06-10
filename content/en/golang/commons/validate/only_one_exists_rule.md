@@ -12,6 +12,8 @@ description: >
 The OnlyOneExistsRule allows you to check that only one property of a list of properties exists in an object.
 
 ### Constructors
+
+#### NewOnlyOneExistsRule
 Creates a new validation rule and sets its values
 
 > NewOnlyOneExistsRule(properties ...string) [*OnlyOneExistsRule]()

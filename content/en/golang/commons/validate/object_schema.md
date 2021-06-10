@@ -14,6 +14,8 @@ description: >
 The ObjectSchema class allows you to create a validation schema that can be used to validate user defined objects.
 
 ### Constructors
+
+#### NewObjectSchemaWithRules
 Creates a new validation schema and sets its values. 
 See [IValidationRule](../ivalidation_rule)
 
@@ -23,7 +25,7 @@ See [IValidationRule](../ivalidation_rule)
 - **required**: bool - (optional) true to always require non-nil values.
 - **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
 
-
+#### NewObjectSchema
 Creates a new validation schema and sets its values.
 
 > NewObjectSchema() [*ObjectSchema]()

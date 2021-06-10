@@ -18,6 +18,9 @@ Important points
 - This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
 
 ### Constructors
+
+
+#### NewSchemaWithRules
 Creates a new instance of validation schema and sets its values.
 
 See [IValidationRule](../ivalidation_rule)
@@ -27,12 +30,12 @@ See [IValidationRule](../ivalidation_rule)
 - **required**: boolean - (optional) true to always require non-nil values.
 - **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
 
-
+#### InheritSchema
 Inherit schema
 
 > InheritSchema(base [ISchemaBase](../ischema_base)) [*Schema]
 
-
+#### InheritSchemaWithRules
 Inherit schema with rules
 
 > InheritSchemaWithRules(base [ISchemaBase](../ischema_base), required bool, rules [][IValidationRule](../ivalidation_rule)) [*Schema]()
@@ -41,7 +44,7 @@ Inherit schema with rules
 - **required**: bool - true to always require non-nil values.
 - **rules**: [][IValidationRule](../ivalidation_rule) - a list with validation rules.
 
-
+#### NewSchema
 Creates a new instance of validation schema and sets its values.
 
 > NewSchema() [*Schema]()

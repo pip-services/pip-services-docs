@@ -13,7 +13,7 @@ description: >
 
 The MessageQueue class allows you to create a message queue that is used as a basis for specific message queue implementions.
 
-##### Configuration parameters
+#### Configuration parameters
 - **name**: name of the message queue
 
 **connection(s)**: 
@@ -30,7 +30,7 @@ The MessageQueue class allows you to create a message queue that is used as a ba
 - **access_id**: application access id
 - **access_key**: application secret key
 
-##### References
+#### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) components to discover connection(s)

@@ -13,6 +13,8 @@ description: >
 The AtLeastOneExistsRule class allows you to check that given a set of properties, at least one of them exists. 
 
 ### Constructors
+
+#### NewAtLeastOneExistsRule
 Creates a new validation rule and sets its values
 
 > NewAtLeastOneExistsRule(properties ...string) [*AtLeastOneExistsRule]()

@@ -13,6 +13,8 @@ description: >
 The ExcludedRule allows you to verify that none of the values specified in the rule is present in a list of constants.
 
 ### Constructors
+
+#### NewExcludedRule
 Creates a new validation rule and sets its values
 
 > NewExcludedRule(values ...interface{}) [*ExcludedRule]()

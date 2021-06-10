@@ -18,6 +18,8 @@ Important points
 - It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
+
+#### NewFixedRateTimerFromCallback
 Creates new instance of the timer and sets its values.
 
 > NewFixedRateTimerFromCallback(callback func(), interval int, delay int) [*FixedRateTimer]()
@@ -26,7 +28,7 @@ Creates new instance of the timer and sets its values.
 - **interval**: int - (optional) an interval to trigger timer in milliseconds.
 - **delay**: int - (optional) a delay before the first triggering in milliseconds.
 
-
+#### NewFixedRateTimerFromTask
 Creates new instance of the timer and sets its values.
 
 > NewFixedRateTimerFromTask(task [INotifiable](../inotifiable), interval int, delay int) [*FixedRateTimer]()
@@ -35,7 +37,7 @@ Creates new instance of the timer and sets its values.
 - **interval**: int - (optional) an interval to trigger timer in milliseconds.
 - **delay**: int - (optional) a delay before the first triggering in milliseconds.
 
-
+#### NewFixedRateTimer
 Creates new instance of the timer and sets its values.
 
 > NewFixedRateTimer() [*FixedRateTimer]()

@@ -13,6 +13,7 @@ The ProjectionParamsSchema class allows you to create a schema to validate [Proj
 
 ### Constructors
 
+#### NewProjectionParamsSchema
 > NewProjectionParamsSchema() [*ArraySchema](../array_schema)
 
 ### See also

@@ -16,6 +16,8 @@ description: >
 TODO: add description
 
 ### Constructors
- Creates a new instance of validation schema.
+
+#### NewTokenizedPagingParamsSchema
+Creates a new instance of validation schema.
 
 > NewTokenizedPagingParamsSchema() [*ObjectSchema](../object_schema)

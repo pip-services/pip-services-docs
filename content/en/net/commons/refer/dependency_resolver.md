@@ -24,7 +24,7 @@ Important points:
     - ...
     - **[dependency name N]**: Dependency N locator (descriptor)
 
-##### References
+#### References
 
 References must match configured dependencies.
 

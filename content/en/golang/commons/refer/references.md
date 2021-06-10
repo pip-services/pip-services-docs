@@ -12,23 +12,26 @@ description: >
 The References class allows you to store and locate component references.
 
 ### Constructors
+
+#### NewReferences
 Creates a new instance of references and initializes it with references.
 
 > NewReferences(tuples []interface{}) [*References]()
 
-
+#### NewReferencesFromTuples
 Creates a new References from a list of key-value pairs called tuples.
 
 > NewReferencesFromTuples(tuples ...interface{}) [*References]()
 
 - **tuples**: ...interface{} - a list of values where odd elements are locators and the following even elements are component references
 
-
+#### NewEmptyReferences
 Creates a new instance of references and initializes it with references.
 
 > NewEmptyReferences() [*References]()
 
 - **tuples**: []interface{} - (optional) a list of values where odd elements are locators and the following even elements are component references
+
 
 ### Fields
 <span class="hide-title-link">

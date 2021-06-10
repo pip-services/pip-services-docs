@@ -21,7 +21,7 @@ Important points
 - The service responds on /heartbeat route (can be changed) with a string with the current time in UTC.
 - This service route can be used to perform health checks by loadbalancers and container orchestrators.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**: base route for remote URI (default: "")
 - **route**: route to heartbeat operation (default: "heartbeat")

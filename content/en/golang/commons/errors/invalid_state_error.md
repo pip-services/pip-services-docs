@@ -13,6 +13,8 @@ description: >
 The InvalidStateError class is used to manage errors related to calling opertaions that require the component to be in a specific state. For example, business calls when the component is not reay.
 
 ### Constructors
+
+#### NewInvalidStateError
 Creates an error instance and assigns its values.
 
 > NewInvalidStateError(correlationId, code, message string) [*ApplicationError](../application_error)

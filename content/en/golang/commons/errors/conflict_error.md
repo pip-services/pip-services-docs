@@ -13,6 +13,8 @@ description: >
 The Conflicterror class is used to manage errors raised by conflicts between object versions that were posted by the user and those that are stored on the server
 
 ### Constructors
+
+#### NewConflictError
 Creates an error instance and assigns its values.
 
 > NewConflictError(correlationId, code, message string) [*ApplicationError](../application_exception)

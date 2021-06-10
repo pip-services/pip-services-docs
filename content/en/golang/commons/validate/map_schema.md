@@ -14,6 +14,8 @@ description: >
 The MapSchema class provides you with a schema to validate maps
 
 ### Constructors
+
+#### NewMapSchemaWithRules
 Creates a new instance of validation schema and sets its values.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
@@ -24,7 +26,7 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 - **required**: bool - (optional) true to always require non-nil values.
 - **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
 
-
+#### NewMapSchema
 Creates a new instance of validation schema and sets its values.
 
 > NewMapSchema(keyType interface{}, valueType interface{}) [*MapSchema]()

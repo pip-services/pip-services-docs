@@ -12,6 +12,8 @@ description: >
 The FilterParamsSchema class allows you to create a schema to validate [FilterParams](../../data/filter_params).
 
 ### Constructors
+
+#### NewFilterParamsSchema
 Creates a new instance of validation schema.
 
 > NewFilterParamsSchema() [*MapSchema](../map_schema)

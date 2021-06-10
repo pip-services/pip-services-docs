@@ -28,7 +28,7 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
   - **username**: user name
   - **password**: user password
 
-##### References
+#### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials [ICredentialStore](../../auth/icredential_store)
 

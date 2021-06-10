@@ -18,10 +18,10 @@ Important points
 
 - This queue is typically used for testing to mock real queues.
 
-##### Configuration parameters
+#### Configuration parameters
 - **name**: name of the message queue
 
-##### References
+#### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
 

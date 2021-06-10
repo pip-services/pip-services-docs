@@ -13,6 +13,8 @@ description: >
 The NotFoundError class is used to manage errors caused by attempts to access missing objects.
 
 ### Constructors
+
+#### NewNotFoundError
 Creates an error instance and assigns its values.
 
 > NewNotFoundError(correlationId, code, message string) [*ApplicationError](../application_error)

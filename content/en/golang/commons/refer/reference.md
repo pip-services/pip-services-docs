@@ -18,6 +18,8 @@ Important points
 - It is used by [References](../references) to store registered component references.
 
 ### Constructors
+
+#### NewReference
 Create a new instance of the reference object and assigns its values.
 
 > NewReference(locator interface{}, component interface{}) [*Reference]()

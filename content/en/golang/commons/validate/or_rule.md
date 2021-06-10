@@ -18,6 +18,9 @@ Important points
 - When all combined rules return errors, then this rule returns all the errors.
 
 ### Constructors
+
+
+#### NewOrRule
 Creates a new validation rule and sets its values.
 
 > NewOrRule(rules ...[IValidationRule](../ivalidation_rule)) [*OrRule]()

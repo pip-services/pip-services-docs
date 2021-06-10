@@ -13,7 +13,7 @@ description: >
 
 The RestClient class allows you to create clients that call remote endpoints using the HTTP/REST protocol.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**: base route for a remote URI
 - **connection(s)**:           

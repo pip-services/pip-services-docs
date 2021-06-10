@@ -30,6 +30,8 @@ Important points
 - The ApplicationError class is not serializable. To pass errors through the wire it must be converted into a [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
 
 #### Constructors
+
+#### NewError
 Creates a new instance of application exception and assigns its values.
 
 > NewError(message string) [*ApplicationError]()

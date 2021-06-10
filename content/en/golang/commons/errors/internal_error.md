@@ -12,6 +12,8 @@ description: >
 The InternalError class is used to manage errors caused by programming mistakes.
 
 ### Constructors
+
+#### NewInternalError
 Creates an error instance and assigns its values.
 
 > NewInternalError(correlationId, code, message string) [*ApplicationError](../application_exception)

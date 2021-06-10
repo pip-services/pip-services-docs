@@ -69,7 +69,7 @@ See [AnyValueArray.from_value](../any_value_array/#from_value)
 
 > get_as_array(): [AnyValueArray](../any_value_array)
 
-- **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
+- **returns**: [AnyValueArray](../any_value_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
 #### get_as_boolean
 Converts object value into a boolean or returns false if conversion is not possible.

@@ -29,7 +29,7 @@ The service responds on /status route (can be changed) with a JSON object:
 
 ```
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**: base route for remote URI
 - **route**: status route (default: "status")

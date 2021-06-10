@@ -17,6 +17,8 @@ Important points
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 
 ### Constructors
+
+#### NewTypeDescriptor
 Creates a new instance of the type descriptor and sets its values.
 
 > NewTypeDescriptor(name string, pkg string) [*TypeDescriptor]()

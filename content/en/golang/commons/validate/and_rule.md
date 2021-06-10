@@ -17,6 +17,8 @@ Important points
 -  When none of the combined rules returns errors, then this rule also returns no errors.
 
 ### Constructors
+
+#### NewAndRule
 Creates a new validation rule and sets its values.
 
 > NewAndRule(rules ...[IValidationRule](../ivalidation_rule)) [*AndRule]()

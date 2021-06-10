@@ -15,7 +15,7 @@ description: >
 The RestService class allows you to create REST services that receive remote calls via the HTTP/REST protocol.
 
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**: base route for remote URI
 - **dependencies**:

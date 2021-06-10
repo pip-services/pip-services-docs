@@ -22,6 +22,7 @@ Important points
 
 ### Constructors
 
+#### NewCommandSet
 Creates an empty CommandSet object.
 
 > NewCommandSet() [*CommandSet]()

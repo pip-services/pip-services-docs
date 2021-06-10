@@ -28,7 +28,7 @@ Important points
     - Unsets references in components that implement [IUnreferenceable interface](../../../commons/refer/iunreferenceable)
     - Destroys components in the container.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **name**: context (container or process) name
 - **description**: human-readable description of the context

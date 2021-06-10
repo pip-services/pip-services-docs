@@ -12,6 +12,8 @@ description: >
 The UnauthorizedError class is used to manage access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
 
 ### Constructors
+
+#### NewUnauthorizedError
 Creates an error instance and assigns its values.
 
 > NewUnauthorizedError(correlationId, code, message string) [*ApplicationError](../application_error)

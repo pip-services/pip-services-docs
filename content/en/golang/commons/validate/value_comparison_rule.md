@@ -12,6 +12,8 @@ description: >
 The ValueComparisonRule class allows you to create a validation rule that compares a value to a constant.
 
 ### Constructors
+
+#### NewValueComparisonRule
 Creates a new validation rule and sets its values.
 
 > NewValueComparisonRule(operation string, value interface{}) [*ValueComparisonRule]()

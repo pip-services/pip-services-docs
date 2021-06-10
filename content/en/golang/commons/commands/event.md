@@ -18,6 +18,7 @@ Important points
 
 ### Constructors
 
+#### NewEvent
 Creates a new event and assigns its name.  
 Throws an Error if the name is nil.
 

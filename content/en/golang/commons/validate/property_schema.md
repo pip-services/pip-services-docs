@@ -14,6 +14,8 @@ description: >
 The PropertySchema class allows you to create schemas to validate object properties.
 
 ### Constructors
+
+#### NewPropertySchemaWithRules
 Creates a new validation rule and sets its arguments.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 

@@ -13,6 +13,8 @@ description: >
 The NotRule class allows you to negate a rule. Thus, when the embedded rule returns errors, then the negated rule returns no errors and vice versa.
 
 ### Constructors
+
+#### NewNotRule
 Creates a new validation rule and sets its values
 
 > NewNotRule(rule [IValidationRule](../ivalidation_rule)) [*NotRule]()

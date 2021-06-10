@@ -13,6 +13,7 @@ The PagingParamsSchema class allows you to create a schema to validate [PagingPa
 
 ### Constructors
 
+#### NewPagingParamsSchema
 > NewPagingParamsSchema() [*ObjectSchema]()
 
 ### See also

@@ -22,13 +22,15 @@ Important points
 - This class is often used to pass execution and notification arguments, and parameterize classes before execution.
 
 ### Constructors
+
+#### NewParameters
 Creates a new instance of the map and assigns its value.
 
 > NewParameters(values map[string]interface{}) [*Parameters]()
 
 - **map**: map[string]interface{} - (optional) values to initialize this map.
 
-
+#### NewParametersFromConfig
 Creates new Parameters from ConfigMap object.
 See [ConfigParams](../../config/config_params)
 
@@ -37,7 +39,7 @@ See [ConfigParams](../../config/config_params)
 - **config**: [*config.ConfigParams](../../config/config_params) - a ConfigParams that contain parameters.
 - **returns**: [*Parameters](../parameters) - a new Parameters object.
 
-
+#### NewParametersFromMaps
 Creates a new Parameters by merging two or more maps. Maps defined later in the list override values from previously defined maps.
 
 > NewParametersFromMaps(maps ...map[string]interface{}) [*Parameters]()
@@ -45,7 +47,7 @@ Creates a new Parameters by merging two or more maps. Maps defined later in the 
 - **maps**: ...map[string]interface{} - an array of maps to be merged
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
-
+#### NewParametersFromTuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
 See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
@@ -55,7 +57,7 @@ See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 - **tuples**: ...interface{} - a ConfigParams that contain parameters.
 - **returns**: [*Parameters](../parameters) - a new Parameters object.
 
-
+#### NewParametersFromValue
 Creates a new Parameters object filled with key-value pairs from specified object.
 
 > NewParametersFromValue(value interface{}) [*Parameters]()
@@ -63,10 +65,11 @@ Creates a new Parameters object filled with key-value pairs from specified objec
 - **value**: interface{} - an object with key-value pairs used to initialize a new Parameters.
 - **returns**: [Parameters](../parameters) - a new Parameters object.
 
-
+#### NewEmptyParameters
 Creates a new instance of the map and assigns its value.
 
 > NewEmptyParameters() [*Parameters]()
+
 
 ### Methods
 

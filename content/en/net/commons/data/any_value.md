@@ -72,7 +72,7 @@ See [AnyValueArray.FromValue](../any_value_array/#fromvalue)
 
 > `public` [AnyValueArray](../any_value_array) GetAsArray()
 
-- **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
+- **returns**: [AnyValueArray](../any_value_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
 #### GetAsBoolean
 Converts object value into a bool or returns false if conversion is not possible.

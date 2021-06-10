@@ -12,6 +12,8 @@ description: >
 The InvocationError class is used to manage errors returned by remote services or by the network during call attempts.
 
 ### Constructors
+
+#### NewInvocationError
 Creates an error instance and assigns its values.
 
 > NewInvocationError(correlationId, code, message string) [*ApplicationError](../application_error)

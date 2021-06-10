@@ -13,6 +13,8 @@ description: >
 The Connectionerror class is used to manage errors that occur during a connection to a remote service. These errors can be related to misconfiguration, network issues, or the remote service itself.
 
 ### Constructors
+
+#### NewConnectionError
 Creates an error instance and assigns its values.
 
 > NewConnectionError(correlationId, code, message string) [*ApplicationError](../application_exception)

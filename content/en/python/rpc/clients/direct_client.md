@@ -19,7 +19,7 @@ Important points
 
 -  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather than through the network.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **dependencies**:
     - **controller**: override controller descriptor

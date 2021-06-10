@@ -12,6 +12,8 @@ description: >
 The Configerror is used to manage errors related to mistakes in microservice's user-defined configurations. 
 
 ### Constructors
+
+#### NewConfigError
 Creates an error instance and assigns its values.
 
 > NewConfigError(correlationId, code, message string) [*ApplicationError](../application_exception)

@@ -26,6 +26,8 @@ Important points
     - Locate specific component by its name (match by name) 
 
 ### Constructors
+
+#### NewDescriptor
 Creates a new instance of the descriptor.
 
 > NewDescriptor(group string, typ string, kind string, name string, version string) [*Descriptor]()

@@ -19,6 +19,8 @@ Important points
 - If using strict mode, warnings will also raise validation exceptions.
 
 ### Constructors
+
+#### NewValidationError
 Creates a new instance of validation exception and assigns its values.  
 
 > NewValidationError(correlationId string, message string, results [][*ValidationResult](../validation_result)) [*errors.ApplicationError](../../errors/application_error)
@@ -27,6 +29,7 @@ Creates a new instance of validation exception and assigns its values.
 - **message**: string - (optional) a human-readable description of the error.
 - **results**: [][*ValidationResult](../validation_result) - (optional) a list of validation results
 
+#### NewValidationErrorFromResults
 Creates a new ValidationError based on errors in validation results. If validation results have no errors, than nil is returned.
 
 > NewValidationErrorFromResults(correlationId string, results [][*ValidationResult](../validation_result), strict bool) [*errors.ApplicationError](../../errors/application_error)

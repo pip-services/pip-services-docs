@@ -13,6 +13,7 @@ The Command class allows you to call a method or a function.
 
 ### Constructors
 
+#### NewCommand
 Creates a new command object and assigns it's parameters.
 
 > NewCommand(name string, schema [validate.ISchema](../../validate/ischema), action func(correlationId string, args [*run.Parameters](../../run/parameters)) (interface{}, error)) [*Command]()

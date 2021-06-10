@@ -18,7 +18,7 @@ Important points
 
 - If credentials are configured to be retrieved from [ICredentialStore](../icredentialStore), it will automatically locate [ICredentialStore](../icredentialStore) in component references and retrieve the credentials from there using the store_key parameter.
 
-##### Configuration parameters
+#### Configuration parameters
 
 **credential**: 
 - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../icredentialStore)
@@ -31,7 +31,7 @@ Important points
 - **[credential params N]**:       Nth credential parameters
     - **...** : credential parameters for key N
 
-##### References
+#### References
 - **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
 
 

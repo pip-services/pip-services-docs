@@ -14,6 +14,8 @@ description: >
 The InclidedRule class allows you to check that a list contains only specified values.
 
 ### Constructors
+
+#### NewIncludedRule
 Creates a new validation rule and sets its values.
 
 > NewIncludedRule(values ...interface{}) [*IncludedRule]()

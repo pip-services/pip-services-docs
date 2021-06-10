@@ -14,6 +14,8 @@ description: >
 The PropertiesComparisonRule class allows you to create a validation rule to compare two object properties.
 
 ### Constructors
+
+#### NewPropertiesComparisonRule
 Creates a new validation rule and sets its arguments.
 See [ObjectComparator.compare](../object_comparator/#compare)
 

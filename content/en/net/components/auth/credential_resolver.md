@@ -31,7 +31,7 @@ Important points
 - **[credential params N]**:       Nth credential parameters
     - **...** : credential parameters for key N
 
-##### References
+#### References
 - **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
 
 

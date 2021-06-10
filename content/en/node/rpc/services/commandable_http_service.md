@@ -21,7 +21,7 @@ Important points
 - Each command is exposed as POST operation that receives all parameters in the body object. 
 - Commandable services require only three lines of code to implement a robust external HTTP-based remote interface.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**:              base route for remote URI
 - **dependencies**:

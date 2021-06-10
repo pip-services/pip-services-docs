@@ -12,6 +12,8 @@ description: >
 The UnknownError class is used to manage unknown or unexpected errors.
 
 ### Constructors
+
+#### NewUnknownError
 Creates an error instance and assigns its values.
 
 > NewUnknownError(correlationId, code, message string) [*ApplicationError](../application_error)

@@ -24,11 +24,13 @@ Important points:
     - ...
     - **[dependency name N]**: Dependency N locator (descriptor)
 
-##### References
+#### References
 
 References must match configured dependencies.
 
 ### Constructors
+
+#### NewDependencyResolverWithParams
 Creates a new instance of the dependency resolver.
 
 See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
@@ -38,6 +40,7 @@ See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 - **config**: [*conf.ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
 - **references**: [IReferences](../ireferences) - (optional) default component references
 
+#### NewDependencyResolverFromTuples
 Creates a new DependencyResolver from a list of key-value pairs called tuples
 where key is dependency name and value the depedency locator (descriptor).
 
@@ -45,6 +48,7 @@ where key is dependency name and value the depedency locator (descriptor).
 
 - **tuples**: ...interface{} - a list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
 
+#### NewDependencyResolver
 Creates a new instance of the dependency resolver.
 
 > NewDependencyResolver() [*DependencyResolver]()

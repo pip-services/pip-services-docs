@@ -69,7 +69,7 @@ See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
 
 > `public` getAsArray(): [AnyValueArray](../any_value_array)
 
-- **returns**: [AnyArray](../any_array) - AnyArray value or empty AnyArray if conversion is not supported. 
+- **returns**: [AnyValueArray](../any_value_array) - AnyArray value or empty AnyArray if conversion is not supported. 
 
 #### getAsBoolean
 Converts object value into a boolean or returns false if conversion is not possible.
@@ -290,7 +290,7 @@ If conversion is not possible it returns default value for the specified type.
 
 > `public` getAsType\<T\>(typeCode: [TypeCode](../../convert/type_code)): T
 
-- **typeCode**: string - the TypeCode that defined the type of the result
+- **typeCode**: [TypeCode](../../convert/type_code) - the TypeCode that defined the type of the result
 - **returns**: string - value defined by the typecode or type default value if conversion is not supported. 
 
 

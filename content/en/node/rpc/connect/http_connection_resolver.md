@@ -18,7 +18,7 @@ Important points
 
 - In addition to its regular functions, ConnectionResolver is able to parse http:// URIs and validate connection parameters before returning them.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **connection**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)

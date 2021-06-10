@@ -12,6 +12,8 @@ description: >
 The ReferenceError` class provides a Reference error type, which can be used to create an error instance when a required component dependency cannot be found.
 
 ### Constructors
+
+#### NewReferenceError
 Creates an error instance and assigns its values.
 
 > NewReferenceError(correlationId string, locator interface{}) [*errors.ApplicationError](../../errors/application_error)

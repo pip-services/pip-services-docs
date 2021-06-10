@@ -18,7 +18,7 @@ Important points
 
 - Each command is exposed as a POST operation that receives all parameters in the body object.
 
-##### Configuration parameters
+#### Configuration parameters
 
 - **base_route**: base route for a remote URI
 - **connection(s)**:           

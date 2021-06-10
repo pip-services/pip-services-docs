@@ -21,7 +21,7 @@ The MemoryCredentialStore class is used to create credential stores that keep th
 - **...** : credential parameters for key N
 - **...** :
 
-##### References
+#### References
 - **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
 
 

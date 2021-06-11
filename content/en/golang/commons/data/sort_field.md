@@ -2,7 +2,7 @@
 type: docs
 title: "SortField"
 linkTitle: "SortField"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Defines a field name and the order type used to sort query results.
 ---

@@ -2,7 +2,7 @@
 type: docs
 title: "ProjectionParams"
 linkTitle: "ProjectionParams"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Defines projection parameters with a list of fields to be included in the query results.
 

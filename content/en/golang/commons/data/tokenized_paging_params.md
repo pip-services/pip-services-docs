@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedPagingParams"
 linkTitle: "TokenizedPagingParams"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Data transfer object used to pass tokenized paging parameters for queries. 
 ---

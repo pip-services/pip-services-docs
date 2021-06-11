@@ -2,7 +2,7 @@
 type: docs
 title: "MultiString"
 linkTitle: "MultiString"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Class used to create objects that contain string translations for multiple languages.
     

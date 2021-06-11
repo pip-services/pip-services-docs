@@ -2,7 +2,7 @@
 type: docs
 title: "PagingParams"
 linkTitle: "PagingParams"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Defines a data transfer object used to pass paging parameters for queries.
 

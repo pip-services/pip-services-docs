@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValue"
 linkTitle: "AnyValue"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Cross-language implementation of a dynamic object that can hold a value of any type.
     It also provides methods to convert the stored value to different types.

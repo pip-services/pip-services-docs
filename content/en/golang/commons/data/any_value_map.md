@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValueMap"
 linkTitle: "AnyValueMap"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Cross-language implementation of a dynamic map (dictionary) object that can hold values of any type.
     It also provides several methods to convert the stored values to different types.

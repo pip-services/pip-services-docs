@@ -2,7 +2,7 @@
 type: docs
 title: "StringValueMap"
 linkTitle: "StringValueMap"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Cross-language implementation of a map (dictionary) where all keys and values are strings.
     

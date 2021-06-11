@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedDataPage"
 linkTitle: "TokenizedDataPage"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Data transfer object that is used to pass the results of paginated queries.
            

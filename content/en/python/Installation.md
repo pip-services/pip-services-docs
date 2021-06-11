@@ -25,3 +25,59 @@ pip install pip-services3-commons
 ```bash
 pip install pip-services3-components
 ```
+
+#### Container module
+```bash
+pip install pip-services3-container
+```
+
+#### Data module
+```bash
+pip install pip_services3_data
+```
+
+#### ElasticSearch module
+```bash
+pip install pip-services3-elasticsearch
+```
+
+#### gRPC module
+```bash
+npm install pip-services3-grpc-node --save
+```
+
+#### Messaging module
+```bash
+pip install pip-services3-messaging
+```
+
+#### MongoDB module
+```bash
+pip install pip-services3-mongodb
+```
+
+#### MySQL module
+```bash
+pip install pip-services3-mysql
+```
+
+#### Postgres module
+```bash
+pip install pip-services3-postgres
+```
+
+#### Prometheus module
+```bash
+pip install pip-services3-prometheus
+```
+
+#### RPC module
+```bash
+pip install pip-services3-rpc
+```
+
+#### SQLServer module
+```bash
+pip install pip-services3-sqlserver
+```
+

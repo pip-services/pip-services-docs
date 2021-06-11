@@ -9,7 +9,7 @@ description: >-
 ### Intallation procedure
 
 PIP.Services needs to be installed per module. The general form is:
-
+:github:
 ```bash
 pip install module-name
 ```

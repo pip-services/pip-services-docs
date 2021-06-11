@@ -12,7 +12,7 @@ description: >
 
 The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of and execution block and record the associated trace.
 
-#### Constructors
+### Constructors
 Creates a new instance of the timing callback object.
 
 > `public` constructor(correlationId: string, component: string, operation: string, tracer: [ITracer](../itracer) = null)

@@ -9,7 +9,6 @@ description: >
 
 **Extends**: [Factory](../../build/factory)
 
-See also [Factory](../../build/factory), [ICache](../icache), [MemoryCache](../memory_cache), [NullCache](../null_cache)
 
 ### Constructors
 Create a new instance of the factory.

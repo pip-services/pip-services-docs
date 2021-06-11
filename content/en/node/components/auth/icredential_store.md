@@ -23,7 +23,7 @@ Lookups credential parameters by its key.
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a key to uniquely identify the credential.
-- **credential**: Promise<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found.
+- **returns**: Promise<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found.
 
 
 #### store

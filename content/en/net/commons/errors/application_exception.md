@@ -31,7 +31,7 @@ Important points
     - cause: the original error that is wrapped by this exception
 - The ApplicationException class is not serializable. To pass errors through the wire it must be converted into a [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
 
-#### Constructors
+### Constructors
 Creates a new instance of application exception and assigns its values.
 
 > `public` ApplicationException(string category = null, string correlationId = null, string code = null, string message = null)

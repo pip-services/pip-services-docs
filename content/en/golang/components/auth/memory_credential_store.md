@@ -1,0 +1,100 @@
+---
+type: docs
+title: "MemoryCredentialStore"
+linkTitle: "MemoryCredentialStore"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+description: >
+    Credential store that keeps credentials in memory.
+---
+
+
+### Description
+
+The MemoryCredentialStore class is used to create credential stores that keep their contained credentials in memory.
+
+#### Configuration parameters
+
+- **[credential key 1]**:
+- **...** : credential parameters for key 1
+- **[credential key 2]**:
+- **...** : credential parameters for key N
+- **...** :
+
+#### References
+- **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
+
+
+
+### Constructors
+
+#### NewMemoryCredentialStore
+Creates a new instance of the credential store.
+
+> NewMemoryCredentialStore(config [*config.ConfigParams](../../../commons/config/config_params)) [*MemoryCredentialStore]()
+
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - (optional) configuration with credential parameters.
+
+#### NewEmptyMemoryCredentialStore
+Creates a new instance of the credential store.
+
+> NewEmptyMemoryCredentialStore() [*MemoryCredentialStore]()
+
+
+### Methods
+
+#### Configure
+Configures component by passing configuration parameters.
+
+> (c [*MemoryCredentialStore]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+
+#### Lookup
+Lookups credential parameters by its key.
+
+> (c [*MemoryCredentialStore]()) Lookup(correlationId string, key string) (result [*CredentialParams](../credential_params), err error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **key**: string - a key to uniquely identify the credential.
+- **returns**: (result [*CredentialParams](../credential_params), err error) - found credential parameters or null if nothing was found
+
+
+#### ReadCredentials
+Reads credentials from configuration parameters.
+Each section represents an individual CredentialParams.
+
+> (c [*MemoryCredentialStore]()) ReadCredentials(config [*config.ConfigParams](../../../commons/config/config_params))
+
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be read
+
+
+#### Store
+Stores credential parameters into the store.
+
+> (c [*MemoryCredentialStore]()) Store(correlationId string, key string, credential [*CredentialParams](../credential_params)) error
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **key**: string - a key to uniquely identify the credential parameters.
+- **credential**: [*CredentialParams](../credential_params) - a credential parameters to be stored.
+- **returns**: error - return error if not stored.
+
+### Examples
+
+```go
+config := NewConfigParamsFromTuples(
+    "key1.user", "jdoe",
+    "key1.pass", "pass123",
+    "key2.user", "bsmith",
+    "key2.pass", "mypass"
+);
+  
+credentialStore := NewEmptyMemoryCredentialStore();
+credentialStore.ReadCredentials(config);
+res, err := credentialStore.Lookup("123", "key1");
+
+```
+
+### See also
+- #### [CredentialParams](../credential_params)
+- #### [ICredentialStore](../icredential_store)

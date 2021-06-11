@@ -164,7 +164,7 @@ Creates a new ConnectionParams object filled with key-value pairs serialized as 
 
 > `public static` fromString(line: string): [ConnectionParams]()
 
-- **line**: [ConfigParams](../../../commons/config/config_params) - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
+- **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 
 - **returns**: [ConnectionParams]() - a new ConnectionParams object.

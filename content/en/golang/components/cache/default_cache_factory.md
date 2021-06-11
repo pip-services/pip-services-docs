@@ -2,18 +2,17 @@
 type: docs
 title: "DefaultCacheFactory"
 linkTitle: "DefaultCacheFactory"
-gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
     Creates [ICache](../icache) components by their descriptors.
 ---
 
-**Inherits**: [Factory](../../build/factory)
-
-
 ### Constructors
+
+#### NewDefaultCacheFactory
 Create a new instance of the factory.
 
-> `public` DefaultCacheFactory()
+> NewDefaultCacheFactory() [*build.Factory](../../build/factory)
 
 
 ### Fields
@@ -22,15 +21,12 @@ Create a new instance of the factory.
 
 #### NullCacheDescriptor
 A description for a null cache (dummy cache).
-> `public static` **NullCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
+> **NullCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
-#### MemoryCacheDescriptor
-A descriptor for a memory cache.
-> `public static` **MemoryCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### Descriptor
 A descriptor for a factory cache.
-> `public static` **Descriptor**: [Descriptor](../../../commons/refer/descriptor)
+> **Descriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 </span>
 

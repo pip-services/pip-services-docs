@@ -23,7 +23,7 @@ The YamlConfigReader allows you to create a config reader that reads a configura
 ### Constructors
 Creates a new instance of the config reader.
 
-> public constructor(path: string = null)
+> `public` constructor(path: string = null)
 
 - **path**: string - (optional) path to the configuration file.
 

@@ -1,0 +1,104 @@
+---
+type: docs
+title: "JsonConfigReader"
+linkTitle: "JsonConfigReader"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+description: >
+    Config reader that reads a configuration from a JSON file.
+
+    
+---
+
+**Implements**: [FileConfigReader](../file_config_reader)
+
+### Description
+
+The JsonConfigReader class allows you to create a config reader that reads a configuration from a JSON file.
+
+Important points
+
+- The reader supports parameterization using Handlebar template engine.
+
+#### Configuration parameters
+
+- **path**: path to the configuration file
+- **parameters**: this entire section is used as template parameters
+- ...
+
+
+### Constructors
+
+#### NewJsonConfigReader
+Creates a new instance of the config reader.
+
+> NewJsonConfigReader(path string) [*JsonConfigReader]()
+
+- **path**: string - (optional) path to the configuration file.
+
+
+#### NewEmptyJsonConfigReader
+Creates a new instance of the config reader.
+
+> NewEmptyJsonConfigReader() [*JsonConfigReader]()
+
+
+### Methods
+
+#### ReadConfig
+Reads a configuration and parameterizes it with given values.
+
+> (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
+
+
+#### ReadObject
+Reads configuration file, parameterizes its content and converts it into JSON object.
+
+> (c [*JsonConfigReader]()) ReadObject(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
+- **returns**: (interface{}, error) - a JSON object with configuration.
+
+
+#### ReadConfig
+Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
+
+> (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **path**: string - a path to configuration file.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
+- **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
+
+
+#### ReadJsonObject
+Reads a configuration file, parameterizes its content and converts it into a JSON object.
+
+> ReadJsonObject(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **path**: string - a path to configuration file.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
+- **returns**: (interface{}, error) - a JSON object with configuration.
+
+### Examples
+
+```json
+{ "key1": "{{KEY1_VALUE}}", "key2": "{{KEY2_VALUE}}" }
+```
+    
+        
+```go
+configReader := NewJsonConfigReader("config.json")
+   
+parameters := NewConfigParamsFromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
+res, err := configReader.ReadConfig("123", parameters)
+```
+
+### See also
+- #### [IConfigReader](../iconfig_reader)
+- #### [FileConfigReader](../file_config_reader)

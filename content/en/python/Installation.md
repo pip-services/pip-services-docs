@@ -9,7 +9,7 @@ description: >-
 ### Intallation procedure
 
 PIP.Services needs to be installed per module. The general form is:
-:github:
+
 ```bash
 pip install module-name
 ```
@@ -30,7 +30,7 @@ python setup.py install
 ```bash
 pip install pip-services3-commons
 ```
-https://github.com/pip-services3-python/pip-services3-commons-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-commons-python)
 
 #### Components module 
 ```bash

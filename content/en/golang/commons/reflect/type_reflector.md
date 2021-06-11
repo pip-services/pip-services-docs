@@ -68,7 +68,7 @@ Gets object type by type descriptor.
 - **returns**: refl.Type - the object type or nil is the type wasn't found.
 
 #### IsPrimitive!
-**TODO: is not implemented for this language yet**
+**TODO: this is not implemented for this language yet**
 
 Checks if value has primitive type.
 

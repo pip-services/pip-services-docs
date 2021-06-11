@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**TODO: is not implemented for this language yet**
+**TODO: this is not implemented for this language yet**
 
 ### Description
  The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.

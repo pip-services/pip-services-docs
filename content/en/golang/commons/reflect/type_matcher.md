@@ -40,7 +40,7 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 
 
 #### MatchValueType!
-**TODO: is not implemented for this language yet**
+**TODO: this is not implemented for this language yet**
 
 Matches expected type to a type of a value.
 The expected type can be specified by a type, type name or [TypeCode](../../convert/type_code).
@@ -53,7 +53,7 @@ The expected type can be specified by a type, type name or [TypeCode](../../conv
 
 
 #### MatchValueTypeByName!
-**TODO: is not implemented for this language yet**
+**TODO: this is not implemented for this language yet**
 
 Matches expected type to a type of a value.
 

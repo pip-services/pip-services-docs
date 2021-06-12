@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Microservice Facade!"
-linkTitle: "Microservice Facade!" 
+title: "Microservice Facade"
+linkTitle: "Microservice Facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 ---
 ---

@@ -339,4 +339,4 @@ If all’s well, you should get the following string as a result:
 
 All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-python).
 
-To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!
+To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice/) as your next step!

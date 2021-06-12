@@ -23,7 +23,7 @@ Alternatively you can install each module manually by following these steps:
 python setup.py install
 ```
 
-### Modules' information:
+### Module information:
 
 #### Commons module
 

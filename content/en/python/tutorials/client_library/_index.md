@@ -26,15 +26,11 @@ To avoid running into problems, we recommend following the rules below:
 
 As we mentioned earlier, it’s highly recommended to implement mock versions of clients, as well as random data generators for simplifying the process of writing unit tests. And all mock clients should be tested using the same tests that are used to test the real clients, to exclude any and all differences in their implementation.
 
+
+### Creating your client library
+
 The client library that we will be creating in this tutorial is for the microservice described in the [Data microservice](../data_microservice) tutorial. To better understand the client’s logic, it’s a good idea to familiarize yourself with that tutorial first, if you haven’t done so already. 
 To make it easier to follow along, we’ve broken up the tutorial on writing your first client library into the following steps:
-
-- [Step 1. Setting up the project](step1)
-- [Step 2. Implementing Direct Client](step2)
-- [Step 3. Implementing HTTP Client](step3)
-- [Step 4. Implementing Mock client](step4)
-- [Step 5. Testing HTTP client with Remote Microservice](step5)
-
 
 <span class="hide-title-link">
 

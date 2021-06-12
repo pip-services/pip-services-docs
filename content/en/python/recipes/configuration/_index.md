@@ -12,7 +12,9 @@ weight: 10
 
 The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we"ll be taking a look at this mechanism"s capabilities and how it can be utilized.
 
-Configurable interface
+### Configuration
+
+#### The configurable interface
 
 A component can be made configurable by adding the IConfigurable interface and implementing its configure method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
 
@@ -22,6 +24,8 @@ class IConfigurable(ABC):
     def configure(self, config: ConfigParams):
         raise NotImplementedError('Method from interface definition')
 ```
+
+#### The ConfigParams object
 
 The only parameter that is passed to the configure method is ConfigParams object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, ConfigParams support initialization that is independent of the language being used.
 
@@ -49,6 +53,7 @@ config_with_sections = ConfigParams.from_tuples(
 )
 options = config_with_sections.get_section("options")
 ```
+#### Setting a default configuration
 
 Another helpful option is the ability to set a default configuration.
 
@@ -61,6 +66,8 @@ default_config = ConfigParams.from_tuples(
 config = config.set_defaults(default_config)
 ```
 
+#### Serializing the ConfigParams object
+
 Lastly - ConfigParams objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 ```python
@@ -68,6 +75,9 @@ another_config = ConfigParams.from_line("param1=123;param2=ABC")
 ```
 
 To read more about what functionality is available through ConfigParams, be sure to check out the [Commons module’s](../../commons)documentation. 
+
+#### Example
+
 Below is an example of a configurable component:
 
 ```python
@@ -83,6 +93,8 @@ class DataController(IConfigurable):
         # Get data using max page size constraint.
 
 ```
+
+#### Manual configuration
 
 Manual configuration can be done in the following manner:
 

@@ -36,19 +36,19 @@ pip install pip-services3-commons
 ```bash
 pip install pip-services3-components
 ```
-https://github.com/pip-services3-python/pip-services3-components-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-components-python)
 
 #### Container module
 ```bash
 pip install pip-services3-container
 ```
-https://github.com/pip-services3-python/pip-services3-container-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-container-python)
 
 #### Data module
 ```bash
 pip install pip_services3_data
 ```
-https://github.com/pip-services3-python/pip-services3-data-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-data-python)
 
 #### ElasticSearch module
 ```bash
@@ -60,46 +60,46 @@ https://github.com/pip-services3-python/pip-services3-elasticsearch-python
 ```bash
 npm install pip-services3-grpc-node --save
 ```
-https://github.com/pip-services3-python/pip-services3-grpc-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-grpc-python)
 
 #### Messaging module
 ```bash
 pip install pip-services3-messaging
 ```
-https://github.com/pip-services3-python/pip-services3-messaging-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-messaging-python)
 
 #### MongoDB module
 ```bash
 pip install pip-services3-mongodb
 ```
-https://github.com/pip-services3-python/pip-services3-mongodb-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-mongodb-python)
 
 #### MySQL module
 ```bash
 pip install pip-services3-mysql
 ```
-https://github.com/pip-services3-python/pip-services3-mysql-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-mysql-python)
 
 #### Postgres module
 ```bash
 pip install pip-services3-postgres
 ```
-https://github.com/pip-services3-python/pip-services3-postgres-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-postgres-python)
 
 #### Prometheus module
 ```bash
 pip install pip-services3-prometheus
 ```
-https://github.com/pip-services3-python/pip-services3-prometheus-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-prometheus-python)
 
 #### RPC module
 ```bash
 pip install pip-services3-rpc
 ```
-https://github.com/pip-services3-python/pip-services3-rpc-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-rpc-python)
 
 #### SQLServer module
 ```bash
 pip install pip-services3-sqlserver
 ```
-https://github.com/pip-services3-python/pip-services3-sqlserver-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-sqlserver-python)

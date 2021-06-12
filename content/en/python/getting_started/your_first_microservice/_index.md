@@ -18,6 +18,7 @@ The microservice is structurally made up of these components:
 ### Step 1. Project setup
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
+the external dependencies are defined in the file below:
 
 **/requirements.txt**
 
@@ -38,7 +39,7 @@ pip_services3_data
 pip_services3_rpc
 ```
 
-In the command line, type out the command below to install the dependencies:
+To install these dependencies use the following command:
 
 ```bash
 pip install -r requirements.txt

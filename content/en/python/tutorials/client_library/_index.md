@@ -6,7 +6,7 @@ linkTitle: "Client Library"
 gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 ---
 
-### Introduction
+### General considerations
 
 Knowing how to create a client library for your microservice is almost as important as knowing how to create the microservice itself. Some people question whether or not client libraries are actually necessary, and say that it’s enough to just describe the external interface and let the users of the microservice implement their own interaction protocol.
 
@@ -37,7 +37,7 @@ To make it easier to follow along, we’ve broken up the tutorial on writing you
 
 
 <span class="hide-title-link">
-
+### Creating your client library
 #### [Step 1. Setting up the project](step1)
 #### [Step 2. Implementing Direct Client](step2)
 #### [Step 3. Implementing HTTP Client](step3)

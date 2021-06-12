@@ -108,6 +108,6 @@ This finishes the process of preparing a microservice container for publishing. 
 
 <span class="hide-title-link">
 
-### [Step 4 to publish the image to a Docker registry.](../step4)
+### [Step 4. Publishing a microservice container to a registry.](../step4)
 
 </span>

@@ -8,7 +8,7 @@ weight: 30
 
 - by Alex Mazur
 
-### Introduction
+### Component lifecycle
 
 A microservice is a set of loosely coupled components, each of which serves a specific purpose, such as logging events, reading records from a database, or connecting to a 3rd party service.
 One of the roles of the microservice’s container is to correctly initialize all internal components, each of which can have its own lifecycle. For example, loading its own configuration, running certain functional processes, and even waiting for results from other components. The order in which component lifecycle management methods are called is as follows:
@@ -67,6 +67,8 @@ class IExecutable(ABC):
 
 ```
 
+### Implementation
+
 Microservice developers are free to implement just the interfaces needed by their components. When the container is started, all implemented methods will be called in the previously mentioned order. 
 For example: 
 
@@ -118,7 +120,7 @@ class CounterController(IReferenceable, IReconfigurable, IOpenable, IExecutable)
         return self.__counter
 
 ```
-
+### Utilities
 The Pip.Service’s Toolkit also includes a few utilities that can be used during microservice development:
 - Opener – initiates the functional processes of selected components.
 - Closer – stops the functional processes of selected components.

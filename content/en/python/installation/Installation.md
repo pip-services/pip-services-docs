@@ -54,7 +54,7 @@ pip install pip_services3_data
 ```bash
 pip install pip-services3-elasticsearch
 ```
-https://github.com/pip-services3-python/pip-services3-elasticsearch-python
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-elasticsearch-python)
 
 #### gRPC module
 ```bash

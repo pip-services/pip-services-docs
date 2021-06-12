@@ -1,9 +1,9 @@
 ---
+type: docs
 title: "Installation"
-linkTitle: "Installation"
-weight: 100
-description: >-
-     Intallation guidelines.
+linkTitle: "Installation" 
+no_list: true
+weight: 1
 ---
 
 ### Intallation procedure

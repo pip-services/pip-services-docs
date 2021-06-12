@@ -37,7 +37,7 @@ To make it easier to follow along, we’ve broken up the tutorial on writing you
 
 
 <span class="hide-title-link">
-### Creating your client library
+
 #### [Step 1. Setting up the project](step1)
 #### [Step 2. Implementing Direct Client](step2)
 #### [Step 3. Implementing HTTP Client](step3)

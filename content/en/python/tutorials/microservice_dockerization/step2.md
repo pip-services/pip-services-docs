@@ -99,6 +99,6 @@ Now that we have automated testing all set up, we can move on to [Step 3 to pack
 
 <span class="hide-title-link">
 
-### [Step 3 to package our microservice](../step3)
+### [Step 3. Packaging a microservice into a container.](../step3)
 
 </span>

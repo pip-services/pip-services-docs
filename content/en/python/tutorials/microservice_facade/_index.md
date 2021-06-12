@@ -36,6 +36,8 @@ The general architecture of a system that uses a facade is presented in the diag
 
 Large systems that have a vast external interface might include a number of facades, each of which provides a logically isolated API. Moreover, specialized facades can be developed for specific clients, providing operations that are optimized for a specific user interface.
 
+### Creating a Facade 
+
 In this tutorial, we will be taking a look at how to implement a simple facade that will provide a versioned external API for the microservice implemented in [the Data Microservice](../data_microservice) tutorial. Additionally, our facade will implement client authentication and authorization using microservices from the Pip.Services Library.
 
 To make it easier to follow along, this tutorial is broken up into the following steps:

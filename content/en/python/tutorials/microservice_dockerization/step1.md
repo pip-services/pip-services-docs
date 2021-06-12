@@ -96,6 +96,6 @@ This finishes up the build process. Continue on to [Step 2 to dockerize the test
 
 <span class="hide-title-link">
 
-### [Step 2 to dockerize the testing process.](../step2)
+### [Step 2. Running automated tests.](../step2)
 
 </span>

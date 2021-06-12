@@ -12,6 +12,8 @@ weight: 40
 
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 
+### The MemoryPersistence class
+
 The most basic implementation is the MemoryPersistence class defined in the [Data module](../../data). It is only capable of storing a collection of objects, opening, and closing. It does not provide any data access methods.
 
 The implementation we will be working with is called IdentifiableMemoryPersistence. It stores and processes data objects that have a unique ID field and implement the IIdentifiable interface defined in the [Commons module](../../commons).
@@ -22,7 +24,7 @@ class IIdentifiable:
 
 ```
 
-IdentifiableMemoryPersistence implements a number of CRUD methods:
+The IdentifiableMemoryPersistence implements a number of CRUD methods:
 
 ```python
 class IdentifiableMemoryPersistence(MemoryPersistence, IWriter, IGetter, ISetter, IIdentifiable):

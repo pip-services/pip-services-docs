@@ -13,6 +13,10 @@ weight: 1
 Any and all nontrivial systems need logging, and microservices are no exception. Messages in logs  help us track running transactions and sort out any problems that may occur. The quality of the information that is stored in logs largely defines how simple or difficult it is to support a system.
 The Pip.Services Toolkit contains logging components that can either output messages to the console, or hand them over to specialized services, such as ElasticSearch, AppInsights or CloudWatch.
 
+### Creating a logger
+
+#### The logger interface
+
 The logger interface is defined in the Log package of the Components module. This interface contains methods that are common for most logger implementations.
 
 ```python
@@ -57,6 +61,8 @@ if logger.Level >= LogLevel.Trace:
 ```
 
 One differentiating factor of the Pip.Services Toolkit is the required correlation_id parameter. correlation_id is used in all business methods and is passed in a standardized way when calling microservices. This way, the correlation_id is passed along the entire chain of microservice calls, from start to finish, and is included in any and all errors and log messages. This allows us to grasp an understanding of what’s going on, in conditions where information is fragmented and collected from various sources.
+
+#### Log levels
 To be able to generate quality logs, it’s crucial to know how the various LogLevels should be used. For some reason, most developers don’t consider this to be important, which makes it harder for users, technical support, and for developers themselves to use the system. The main purpose of LogLevel is to filter messages by their importance. When LogLevel is used incorrectly, important messages are bound to be lost, or the opposite can occur, where the output is spammed by various messages, making the search for information a real burden.
 
 - Nothing - disable all messages
@@ -69,6 +75,8 @@ To be able to generate quality logs, it’s crucial to know how the various LogL
 
 It’s also important to write messages to the log in such a way that they can be understood by people who don’t possess knowledge of the inner workings of the system.
 
+#### Logger types
+
 The Pip.Services Toolkit contains a variety of logger implementations: 
 
 - **NullLogger** - Empty logger for debugging (in the [Components](../../components/log/null_logger) module)
@@ -78,6 +86,8 @@ The Pip.Services Toolkit contains a variety of logger implementations:
 - **FluentdLogger** - Logger for transferring messages to Fluentd (in the [Fluentd](../../../fluentd/log/fluentd_logger) module)
 - **CloudWatchLogger** - Logger for collecting messages in AWS CloudWatch (in the [AWS](../../../aws/log/cloudwatch_logger) module)
 - **AppInsightsLogger** - Logger for collecting messages in Azure AppInsights (in the [Azure](../../../azure/log/app_insights_logger) module)
+
+#### Adding a logger
 
 Loggers are usually added to microservices dynamically using a yml configuration:
 **‍config.yml**
@@ -100,6 +110,8 @@ Loggers are usually added to microservices dynamically using a yml configuration
     index: "log"
     daily: true      
 ```
+
+#### Composite logger
 
 It’s not rare for multiple loggers to be used simultaneously. One logger can be used to output messages to the console, allowing developers to debug the microservice, while another logger collects messages from all running microservices in a distributed storage, allowing technical support to monitor the system.
 To simplify the collection of log messages in situations when the amount of loggers and/or their configurations are bound to change, the CompositeLogger from the [Components](../../components/log/console_logger) module is used. The CompositeLogger’s task is to pass along any messages it receives to all of the other loggers included in the container it’s in. Logger linking is performed in the SetReferences method ([see the References Recipe](../component_references)).

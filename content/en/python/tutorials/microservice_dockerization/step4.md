@@ -61,6 +61,6 @@ The publishing stage is the last step of a microservice’s Dockerized developme
 
 <span class="hide-title-link">
 
-### [Step 5 Rung](../step5)
+### [Step 5 Run](../step5)
     
 </span>

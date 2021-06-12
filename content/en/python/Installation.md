@@ -16,7 +16,7 @@ pip install module-name
 
 Alternatively you can install each module manually by following these steps:
 
-1. Download the from its respective GitHub repo.
+1. Download the code from its respective GitHub repo.
 2. Place the files in the correct folder and run the following command:
     
 ```bash

@@ -6,7 +6,7 @@ linkTitle: "Step 7. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following:
+To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following code:
 
 **/bin/main.py**
 
@@ -209,7 +209,7 @@ To calculate a device’s position, use the following request:
 curl -X POST -H "Content-Type: application/json" -d "{\"site_id\": \"1\",\"udis\": [\"00001\", \"00002\"]}" http://localhost:8080/v1/beacons/calculate_position
 ```
 
-As a result, we should get the following coordinates:
+As a result, you should get the following coordinates:
 
 ``json
 {"type":"Point","coordinates":[1,2]}

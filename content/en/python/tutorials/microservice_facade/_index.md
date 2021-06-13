@@ -53,7 +53,7 @@ To make it easier to follow along, this tutorial is broken up into the following
 
 The code for this tutorial can be found on [GitHub](https://github.com/pip-services-samples/).
 
-To start developing your first facade, head on over to [Step 1. Creating the project’s structure.](../step2)
+To start developing your first facade, head on over to [Step 1. Creating the project’s structure.](../step1)
 
 
 <span class="hide-title-link">

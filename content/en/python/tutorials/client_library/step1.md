@@ -8,7 +8,7 @@ gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 
 Let’s do some small preparation of the project before we start writing the client library.
 
-First, create the following directory structure to keep the source organized:
+First, create the following directory structure to keep the source code organized:
 
 ```
 /src

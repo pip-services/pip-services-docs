@@ -57,7 +57,7 @@ While running, the script will generate a name for the image using the data in t
 
 Please wait for the image to finish uploading. Once uploaded, the image will become available for use, alongside the other images in the repository.
 
-The publishing stage is the last step of a microservice’s Dockerized development process. However, sometimes there occurs the need to just run a microservice for demonstration or testing purposes. [Step 5](../Step 5) will focus on how we can use Docker to help us do that as well.
+The publishing stage is the last step of a microservice’s Dockerized development process. However, sometimes there occurs the need to just run a microservice for demonstration or testing purposes. [Step 5](../step 5) will focus on how we can use Docker to help us do that as well.
 
 <span class="hide-title-link">
 

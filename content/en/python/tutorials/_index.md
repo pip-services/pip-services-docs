@@ -10,7 +10,7 @@ exclude_from_list: true
 
 ### [Client Library](client_library)
 
-This tutorial explains how to create a client library in five easy to follow steps. In addition, it explains the reader why client libraries are important and provides some best practices for the development of client libraries.
+This tutorial explains how to create a client library in five easy-to-follow steps. In addition, it explains why client libraries are important and provides some advice for the development of client libraries.
 
 
 ### [Data Microservice](data_microservice)
@@ -20,5 +20,5 @@ In this tutorial, we’ll be writing from scratch a fully-functional Data micros
 
 ### [Microservice Dockerization](microservice_dockerization)
 
-Running microservices in Docker containers has become one of the most popular ways of deploying a system. Based on this, this tutorial explains how to create and run a dockerized microservice in five easy-to-follow steps.
+Running microservices in Docker containers has become one of the most popular ways of deploying a system. Based on this, this tutorial explains how to create and run a dockerized microservice in five well-defined steps.
 

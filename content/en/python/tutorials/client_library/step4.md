@@ -6,7 +6,7 @@ linkTitle: "Step 4. Mock Client"
 gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 ---
 
-Complex systems usually experience difficulties when it comes to writing unit tests for logic that calls external services. These tests are supposed to run quickly and without any additional infrastructure. The standard approach to solving this problem is to replace the calls to external services with a local approximation (a.k.a. a mock). However, writing mocks takes time and doesn’t always guarantee functionality that matches the real service.
+Complex systems usually experience difficulties when it comes to writing unit tests for a logic that calls external services. These tests are supposed to run quickly and without any additional infrastructure. The standard approach to solving this problem is to replace the calls to external services with a local approximation (a.k.a. a mock). However, writing mocks takes time and doesn’t always guarantee functionality that matches the real service.
 
 In our projects, we’ve come to the conclusion that it pays off to develop mocks alongside the real clients and test them using common tests, to guarantee that their behavior is identical. This way, all users of the microservice will receive both the client and mock from the library and will be able to start coding logic and unit tests for it without delay.
 
@@ -14,7 +14,7 @@ In this step we will be demonstrating how Mock clients are developed and how the
 
 The test client has to implement the same interface that the other clients did. However, the client’s methods are going to contain code that only imitates the microservice’s behavior.
 
-The implementation of this client is listed below:
+The code for this client is showed below:
 
 **/src/version1/BeaconsMockClientV1.py**
 

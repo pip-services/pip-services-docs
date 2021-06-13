@@ -6,7 +6,7 @@ linkTitle: "Step 1. Project’s Structure"
 gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 ---
 
-In this tutorial, we will be using a demo project to develop a small facade for a system that consists of a few microservice:
+In this tutorial, we will be using a demo project to develop a small facade for a system that consists of a few microservices:
 
 - Beacons - business logic microservice that performs the main operations of the system.
 - Accounts - microservice for managing user accounts

@@ -22,6 +22,7 @@ The Beacons microservice that we are going to be developing will consist of a nu
 
 ![BeaconDiagram](/images/tutorials/data_microservice/beacon_diagram.png)
 
+### Creating the data microservice
 
 To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
 

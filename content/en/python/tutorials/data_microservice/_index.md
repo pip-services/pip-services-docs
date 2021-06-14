@@ -18,7 +18,7 @@ In this tutorial, we’ll be writing from scratch a fully-functional Data micros
 
 Imagine the following situation: you are walking through a building that has beacons installed at various locations throughout the entire building. These beacons are broadcasting signals via bluetooth, at regular time intervals, which can be “seen” from about 200 feet away. The beacons, along with their positions, are stored in our microservice. When your smartphone starts “seeing” some of these signals, it sends a list of the beacons it “sees” to the microservice, which then calculates the position of your phone as being in the middle of the beacons it “sees”. Simple, but effective - wouldn’t you agree?
 
-The Beacons microservice that we are going to be developing will consist of a number of loosely-coupled components, following the [componentized microservice design](../../quick_start). The structure of this microservice is displayed on the diagram below:
+The Beacons microservice that we are going to be developing will consist of a number of loosely-coupled components, following the [componentized microservice design](../../getting_started). The structure of this microservice is displayed on the diagram below:
 
 ![BeaconDiagram](/images/tutorials/data_microservice/beacon_diagram.png)
 

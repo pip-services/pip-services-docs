@@ -54,7 +54,7 @@ export MONGO_ENABLED=true
 python .\bin\main.py
 ```
 
-Make sure that you have MongoDB running locally (see [Setup environment](../quick_start/setup_enviroment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
+Make sure that you have MongoDB running locally (see [Setup environment](../../../getting_started/setup_enviroment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
 
 We can use the following docker composer configuration to run MongoDB in Docker:
 

@@ -19,7 +19,7 @@ The Beacons microservice was demonstrated in [the Data Microservice tutorial](..
 
 The architecture of the system looks like this:
 
-![facade architecture diagram](/images/tutorials/microservice_facade/facade_architecture_diagram2.jpg)
+![facade architecture diagram](/images/tutorials/microservice_facade/facade_architecture_diagram1.png)
 
 The facade microservice will be responsible for:
 

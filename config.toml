@@ -179,23 +179,28 @@ footer_about_disable = false
 	name = "Email"
 	url = "mailto:info@entinco.com"
 	icon = "fa fa-envelope"
-        desc = "Discussion and help"
+        desc = "Suggestions and help"
 [[params.links.user]]
 	name ="YouTube"
 	url = "https://www.youtube.com/channel/UCDXBRWYD1-08BW3miK5LVdg"
 	icon = "fab fa-youtube"
         desc = "Our YouTube channel!"
+# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
+[[params.links.developer]]
+	name = "Discord"
+	url = "https://discord.com/invite/bcAP7yWxqs"
+	icon = "fab fa-discord"
+        desc = "Our discord community"
 [[params.links.developer]]
 	name = "Stack Overflow"
 	url = "https://stackoverflow.com/questions/tagged/pipservices"
 	icon = "fab fa-stack-overflow"
         desc = "Practical questions and curated answers"
-# Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
 	name = "GitHub"
 	url = "http://github.com/pip-services"
 	icon = "fab fa-github"
-        desc = "Development takes place here!"
+        desc = "Development"
 
 [outputFormats.Algolia]
   baseName = "algolia"

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Users Management Microservices"
-linkTitle: "Users Management"
+title: "User Management Microservices"
+linkTitle: "User Management"
 no_list: true
 weight: 10
 ---

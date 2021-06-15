@@ -17,7 +17,7 @@ The most basic implementation of this component is the MongoDbPersistence class 
 
 This is a basic component that stores data items of any type. Some basic operations for creating, getting, and deleting are already included. More advanced CRUD operations over the data items can be implemented in child classes by accessing the self._collection or self._model properties. This component also contains methods for opening and closing connections using the credentials provided.
 
-The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../tutorials/data_microservice/step2/). 
+The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../../tutorials/data_microservice/step2/). 
 
 ```python
 from typing import Any, Optional

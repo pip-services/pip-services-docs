@@ -9,7 +9,7 @@ description: >
 ---
 
 ### Description
-TODO: add description
+The DurationConverter class allows you to convert arbitrary values into time.Duration values.
 
 ### Methods
 
@@ -18,7 +18,7 @@ Converts value into time.Duration or returns current when conversion is not poss
 
 > ToDuration(value interface{}) time.Duration
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: time.Duration - value or current when conversion is not supported.
 
 #### ToDurationWithDefault
@@ -26,8 +26,8 @@ Converts value into time.Duration or returns default when conversion is not poss
 
 > ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: time.Duration - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: time.Duration - default value.
 - **returns**: time.Duration - value or default when conversion is not supported.
 
 #### ToNullableDuration
@@ -35,7 +35,7 @@ Converts value into time.Duration or returns nil when conversion is not possible
 
 > ToNullableDuration(value interface{}) *time.Duration
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *time.Duration - value or nil when conversion is not supported.
 
 

@@ -15,7 +15,7 @@ The ICommandInterceptor interface is used for stackable command interceptors, wh
 
 Important points
 
-- This technique can be used for authentiction, logging, and several other functions.
+- This technique can be used for authentication, logging, and several other functions.
 
 ### Methods
 
@@ -27,8 +27,8 @@ Otherwise it shall just delegate the call to the wrapped command.
 
 > Name(command [ICommand](../icommand)) string
 
-- **command**: [ICommand](../icommand) - the next command in the call chain.
-- **returns**: string - the name of the wrapped command.
+- **command**: [ICommand](../icommand) - next command in the call chain.
+- **returns**: string - name of the wrapped command.
 
 #### Execute
 Executes the wrapped command with specified arguments.
@@ -38,10 +38,10 @@ Otherwise it shall just delete the call to the wrapped command.
 
 > Execute(correlationId string, command ICommand, args *run.Parameters) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **command**: [ICommand](../icommand) - the next command in the call chain that is to be executed.
-- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: (interface{}, error) - the execution result
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **command**: [ICommand](../icommand) - next command in the call chain that is to be executed.
+- **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
+- **returns**: (interface{}, error) - execution result
 
 #### Validate
 Validates arguments of the wrapped command before its execution.
@@ -51,9 +51,9 @@ Otherwise it shall just delegate the call to the wrapped command.
 
 > Validate(command ICommand, args [*run.Parameters](../../run/parameters)) [][*validate.ValidationResult](../../validate/validation_result)
 
-- **command**: [ICommand](../icommand) - the next command in the call chain to be validated against.
-- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - an array of ValidationResults.
+- **command**: [ICommand](../icommand) - next command in the call chain to be validated against.
+- **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to validate.
+- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - array of ValidationResults.
 
 
 ### See also

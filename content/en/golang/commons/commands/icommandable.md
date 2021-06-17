@@ -23,7 +23,7 @@ Gets a command set with all supported commands and events.
 
 > GetCommandSet() [*CommandSet](../command_set)
 
-- **returns**: [CommandSet](../command_set) - a command set with commands and events.
+- **returns**: [CommandSet](../command_set) - command set with commands and events.
 
 ### Examples
 

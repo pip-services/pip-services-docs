@@ -13,143 +13,101 @@ To process requests made to the API’s first version, let’s create a file nam
 
 ```python
 # -*- coding: utf-8 -*-
-from pip_services3_commons.config import ConfigParams
-from pip_services3_commons.refer import IReferences
-from pip_services3_rpc.services.AboutOperations import AboutOperations
-from pip_services3_rpc.services.RestService import RestService
+from typing import List
 
-from pip_facades_sample_python.operations.version1.BeaconsOperationsV1 import BeaconsOperationsV1
-from pip_facades_sample_python.operations.version1.InvitationsOperationsV1 import InvitationsOperationsV1
-from pip_facades_sample_python.operations.version1.SessionsOperationsV1 import SessionsOperationsV1
-from pip_facades_sample_python.operations.version1.SitesOperationsV1 import SitesOperationsV1
-from pip_facades_sample_python.services.version1.AuthorizerV1 import AuthorizerV1
+import bottle
+from pip_services3_commons.convert import JsonConverter
+from pip_services3_commons.errors import UnauthorizedException
+from pip_services3_rpc.auth.BasicAuthorizer import BasicAuthorizer
+from pip_services3_rpc.auth.OwnerAuthorizer import OwnerAuthorizer
+from pip_services3_rpc.auth.RoleAuthorizer import RoleAuthorizer
 
 
-class FacadeServiceV1(RestService):
+class AuthorizerV1:
 
     def __init__(self):
-        super(FacadeServiceV1, self).__init__()
-        self._base_route = 'api/v1'
+        self.__basic_auth = BasicAuthorizer()
+        self.__role_auth = RoleAuthorizer()
+        self.__owner_auth = OwnerAuthorizer()
 
-        self.__about_operations = AboutOperations()
-        self.__session_operations = SessionsOperationsV1()
-        self.__sites_operations = SitesOperationsV1()
-        self.__invitations_operations = InvitationsOperationsV1()
-        self.__beacons_operations = BeaconsOperationsV1()
+    # Anybody who entered the system
+    def anybody(self):
+        return self.__basic_auth.anybody()
 
-    def configure(self, config: ConfigParams):
-        super().configure(config)
+    # Only registered and authenticated users
+    def signed(self):
+        return self.__basic_auth.signed()
 
-        self.__about_operations.configure(config)
-        self.__session_operations.configure(config)
-        self.__sites_operations.configure(config)
-        self.__invitations_operations.configure(config)
-        self.__beacons_operations.configure(config)
+    # Only the user session owner
+    def owner(self, id_param: str = 'user_id'):
+        return self.__owner_auth.owner(id_param)
 
-    def set_references(self, references: IReferences):
-        super().set_references(references)
+    def owner_or_admin(self, id_param: str = 'user_id'):
+        return self.__owner_auth.owner_or_admin(id_param)
 
-        self.__about_operations.set_references(references)
-        self.__session_operations.set_references(references)
-        self.__sites_operations.set_references(references)
-        self.__invitations_operations.set_references(references)
-        self.__beacons_operations.set_references(references)
+    def site_roles(self, roles: List[str], id_param: str = 'site_id'):
+        def inner():
+            user = None if not hasattr(bottle.request, 'user') else bottle.request.user
+            user.roles = user.roles or []
 
-    def register(self):
-        auth = AuthorizerV1()
+            if user is None:
+                raise UnauthorizedException(
+                    None, 'NOT_SIGNED',
+                    'User must be signed in to perform this operation'
+                ).with_status(401)
 
-        # Restore session middleware
-        self.register_interceptor('', lambda: self.__session_operations.load_session())
+            else:
+                site_id = bottle.request.params['kwargs'].get(id_param)
+                authorized = 'admin' in user.roles
+                if site_id is not None and not authorized:
+                    for role in roles:
+                        authorized = authorized or (site_id + ':' + role) in user.roles
 
-        self.register_route_with_auth('get', '/about', None, auth.anybody(),
-                                      lambda: self.__about_operations.get_about())
-        # Session Routes
-        self.register_route_with_auth('post', '/signup', None, auth.anybody(),
-                                      lambda: self.__session_operations.signup())
-        self.register_route_with_auth('get', '/signup/validate', None, auth.anybody(),
-                                      lambda: self.__session_operations.signup_validate())
-        self.register_route_with_auth('post', '/signin', None, auth.anybody(),
-                                      lambda: self.__session_operations.signin())
-        self.register_route_with_auth('post', '/signout', None, auth.anybody(),
-                                      lambda: self.__session_operations.signout())
-        self.register_route_with_auth('get', '/sessions', None, auth.admin(),
-                                      lambda: self.__session_operations.get_sessions())
-        self.register_route_with_auth('post', '/sessions/restore', None, auth.signed(),
-                                      lambda: self.__session_operations.restore_session())
-        self.register_route_with_auth('get', '/sessions/current', None, auth.signed(),
-                                      lambda: self.__session_operations.get_current_session())
-        self.register_route_with_auth('get', '/sessions/:user_id', None, auth.owner_or_admin('user_id'),
-                                      lambda user_id: self.__session_operations.get_user_sessions(user_id))
-        self.register_route_with_auth('del', '/sessions/:user_id/:session_id', None, auth.owner_or_admin('user_id'),
-                                      lambda user_id, session_id: self.__session_operations.close_session(user_id,
-                                                                                                          session_id))
+                if not authorized:
+                    raise UnauthorizedException(
+                        None, 'NOT_IN_SITE_ROLE',
+                        'User must be site:' + ' or site:'.join(roles) + ' to perform this operation'
+                    ).with_details('roles', roles).with_status(403)
 
-        # Site Routes
-        self.register_route_with_auth('get', '/sites', None, auth.signed(),
-                                      lambda: self.__sites_operations.get_authorized_sites())
-        self.register_route_with_auth('get', '/sites/all', None, auth.admin(),
-                                      lambda: self.__sites_operations.get_sites())
-        self.register_route_with_auth('get', '/sites/find_by_code', None, auth.anybody(),
-                                      lambda: self.__sites_operations.find_site_by_code())
-        self.register_route_with_auth('get', '/sites/:site_id', None, auth.site_user(),
-                                      lambda site_id: self.__sites_operations.get_site(site_id))
-        self.register_route_with_auth('post', '/sites/:site_id/generate_code', None, auth.site_admin(),
-                                      lambda site_id: self.__sites_operations.generate_code(site_id))
-        self.register_route_with_auth('post', '/sites', None, auth.signed(),
-                                      lambda: self.__sites_operations.create_site())
-        self.register_route_with_auth('post', '/sites/validate_code', None, auth.signed(),
-                                      lambda: self.__sites_operations.validate_site_code())
-        self.register_route_with_auth('put', '/sites/:site_id', None, auth.site_admin(),
-                                      lambda site_id: self.__sites_operations.update_site(site_id))
-        self.register_route_with_auth('delete', '/sites/:site_id', None, auth.admin(),
-                                      lambda site_id: self.__sites_operations.delete_site(site_id))
-        self.register_route_with_auth('post', '/sites/:site_id/remove', None, auth.site_user(),
-                                      lambda site_id: self.__sites_operations.remove_site(site_id))
+        return inner
 
-        # Invitation Routes
-        self.register_route_with_auth('get', '/sites/:site_id/invitations', None, auth.site_user(),
-                                      lambda site_id: self.__invitations_operations.get_invitations(site_id))
-        self.register_route_with_auth('get', '/sites/:site_id/invitations/:invitation_id', None, auth.site_user(),
-                                      lambda site_id, invitation_id: self.__invitations_operations.get_invitation(
-                                          site_id, invitation_id))
-        self.register_route_with_auth('post', '/sites/:site_id/invitations', None, auth.signed(),
-                                      lambda site_id: self.__invitations_operations.send_invitation(site_id))
-        self.register_route_with_auth('post', '/sites/:site_id/invitations/notify', None, auth.site_manager(),
-                                      lambda site_id: self.__invitations_operations.notify_invitation(site_id))
-        self.register_route_with_auth('delete', '/sites/:site_id/invitations/:invitation_id', None, auth.site_manager(),
-                                      lambda site_id, invitation_id: self.__invitations_operations.delete_invitation(
-                                          site_id, invitation_id))
-        self.register_route_with_auth('post', '/sites/:site_id/invitations/:invitation_id/approve', None,
-                                      auth.site_manager(),
-                                      lambda site_id, invitation_id: self.__invitations_operations.approve_invitation(
-                                          site_id, invitation_id))
-        self.register_route_with_auth('post', '/sites/:site_id/invitations/:invitation_id/deny', None,
-                                      auth.site_manager(),
-                                      lambda site_id, invitation_id: self.__invitations_operations.deny_invitation(
-                                          site_id, invitation_id))
-        self.register_route_with_auth('post', '/sites/:site_id/invitations/:invitation_id/resend', None,
-                                      auth.site_manager(),
-                                      lambda site_id, invitation_id: self.__invitations_operations.resend_invitation(
-                                          site_id, invitation_id))
+    def admin(self):
+        return self.__role_auth.user_in_role('admin')
 
-        # Beacon Routes
-        self.register_route_with_auth('get', '/sites/:site_id/beacons', None, auth.site_user(),
-                                      lambda site_id: self.__beacons_operations.get_beacons(site_id))
-        self.register_route_with_auth('get', '/sites/:site_id/beacons/:beacon_id', None, auth.site_user(),
-                                      lambda site_id, beacon_id: self.__beacons_operations.get_beacon(site_id,
-                                                                                                      beacon_id))
-        self.register_route_with_auth('post', '/sites/:site_id/beacons/calculate_position', None, auth.site_user(),
-                                      lambda site_id: self.__beacons_operations.calculate_position(site_id))
-        self.register_route_with_auth('post', '/sites/:site_id/beacons', None, auth.site_user(),
-                                      lambda site_id: self.__beacons_operations.create_beacon(site_id))
-        self.register_route_with_auth('post', '/sites/:site_id/beacons/validate_udi', None, auth.signed(),
-                                      lambda site_id: self.__beacons_operations.validate_beacon_udi(site_id))
-        self.register_route_with_auth('put', '/sites/:site_id/beacons/:beacon_id', None, auth.site_user(),
-                                      lambda site_id, beacon_id: self.__beacons_operations.update_beacon(site_id,
-                                                                                                         beacon_id))
-        self.register_route_with_auth('delete', '/sites/:site_id/beacons/:beacon_id', None, auth.site_user(),
-                                      lambda site_id, beacon_id: self.__beacons_operations.delete_beacon(site_id,
-                                                                                                         beacon_id))
+    def site_admin(self, id_param: str = 'site_id'):
+        return self.site_roles(['admin'], id_param)
+
+    def site_manager(self, id_param: str = 'site_id'):
+        return self.site_roles(['admin', 'manager'], id_param)
+
+    def site_user(self, id_param: str = 'site_id'):
+        return self.site_roles(['admin', 'manager', 'user'], id_param)
+
+    def site_admin_or_owner(self, user_id_param: str = 'user_id', site_id_param: str = 'site_id'):
+        def inner():
+            user = bottle.request.user
+            if user is None:
+                raise UnauthorizedException(
+                    None, 'NOT_SIGNED',
+                    'User must be signed in to perform this operation'
+                ).with_status(401)
+
+            else:
+                user_id = dict(bottle.request.query.decode()).get(user_id_param) or JsonConverter.to_json(
+                    bottle.request.json)
+                if user_id is not None and user_id == user.user_id:
+                    return
+                else:
+                    site_id = bottle.request.params.get(site_id_param)
+                    authorized = 'admin' in user.roles or site_id + ':admin' in user.roles
+                    if not authorized:
+                        raise UnauthorizedException(
+                            None, 'NOT_IN_SITE_ROLE',
+                            'User must be site:admin to perform this operation'
+                        ).with_details('roles', ['admin']).with_status(403)
+
+
+        return inner
 
 ```
 

@@ -35,7 +35,7 @@ See [ICommand](../icommand)
 
 > (c [*CommandSet]()) AddCommand(command [ICommand](../icommand))
 
-- **command**: [ICommand](../icommand) - the command to add.
+- **command**: [ICommand](../icommand) - command to add.
 
 #### AddCommandSet
 Adds all of the commands and events from specified [command set](../command_set)
@@ -43,7 +43,7 @@ into this one.
 
 > (c [*CommandSet]()) AddCommandSet(commandSet [*CommandSet]())
 
-- **commandSet**: [*CommandSet]() - the CommandSet to add.
+- **commandSet**: [*CommandSet]() - CommandSet to add.
 
 #### AddCommands
 Adds multiple [commands](../command) to this command set.  
@@ -51,7 +51,7 @@ See [ICommand](../icommand)
 
 > (c *CommandSet) AddCommands(commands [][ICommand](../icommand))
 
-- **commands**: [][ICommand](../icommand) - the array of commands to add.
+- **commands**: [][ICommand](../icommand) - array of commands to add.
 
 
 #### AddEvent
@@ -60,7 +60,7 @@ See [IEvent](../ievent)
 
 > (c [*CommandSet]()) AddEvent(event [IEvent](../ievent))
 
-- **event**: [IEvent](../ievent) - the event to add.
+- **event**: [IEvent](../ievent) - event to add.
 
 #### AddEvents
 Adds multiple [events](../event) to this command set.  
@@ -68,7 +68,7 @@ See [IEvent](../ievent)
 
 > (c [*CommandSet]) AddEvents(events [][IEvent](../ievent))
 
-- **event**: [][IEvent](../ievent) - the array of events to add.
+- **event**: [][IEvent](../ievent) - array of events to add.
 
 #### AddInterceptor
 Adds a [command interceptor](../command_interceptor) to this command set.

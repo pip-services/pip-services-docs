@@ -22,7 +22,7 @@ Converts value into float or returns 0 when conversion is not possible.
 
 > ToFloat(value interface{}) float32
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: float32 - float value or 0 when conversion is not supported.
 
 #### ToFloatWithDefault
@@ -32,8 +32,8 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 
 > ToFloatWithDefault(value interface{}, defaultValue float32) float32
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: float32 - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: float32 - default value.
 - **returns**: float32 - float value or default value when conversion is not supported.
 
 #### ToNullableFloat
@@ -42,7 +42,7 @@ See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
 > ToNullableFloat(value interface{}) *float32
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *float32 - float value or nil when conversion is not supported.
 
 

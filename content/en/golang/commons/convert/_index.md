@@ -72,7 +72,7 @@ Converts arbitrary values into map objects using extended conversion rules:
 
 #### [RecursiveMapConverter](recursive_map_converter)
 Converts arbitrary values into map objects using extended conversion rules.
-This class is similar to [MapConverter](map_converter), but is recursively converts all values
+This class is similar to [MapConverter](map_converter), but it recursively converts all values
 stored in objects and arrays.
 
 #### [StringConverter](string_converter)
@@ -84,8 +84,8 @@ Converts arbitrary values into strings using extended conversion rules:
 - Other objects: using **ToString()** method
 
 #### [TypeConverter](type_converter)
-Converts arbitrary values into objects specific by TypeCodes.
-For each TypeCode this class calls corresponding converter which applies
+Converts arbitrary values into objects specified by TypeCodes.
+For each TypeCode this class calls the corresponding converter which applies
 extended conversion rules to convert the values.
 
 </div>

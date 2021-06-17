@@ -22,7 +22,7 @@ This package allows you to create [Commandable Interfaces](icommandable), which 
 The package main components are:    
     
 - [Commandable Interfaces](icommandable) – used to make classes with a certain logic and, which are capable of receiving and processing commands in this universal form.  
-- [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions, and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, such as logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. 
+- [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions; and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, such as logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. 
    Moreover, when using interceptors, a command can pass through an execution chain, consisting of interceptors, which can: 
     - simply make some note of the command, notify, log, get metrics, or do some other passive task;
     - intercept the command completely and, for example, return a previous record of the call from the cache. 
@@ -71,7 +71,7 @@ without writing much code.
 
 #### [Command](command)
 Concrete implementation of [ICommand](icommand) interface. Command allows to call a method
-or function using Command pattern.
+or function using the Command pattern.
 
 #### [Event](event)
 Concrete implementation of [IEvent](ievent) interface.

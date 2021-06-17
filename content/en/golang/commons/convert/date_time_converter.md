@@ -23,7 +23,7 @@ See [ToDateTimeWithDefault](#todatetimewithdefault)
 
 > ToDateTime(value interface{}) time.Time
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: time.Time - Date value or current date when conversion is not supported.
 
 #### ToDateTimeWithDefault
@@ -31,8 +31,8 @@ Converts value into Date or returns default when conversion is not possible.
 
 > ToDateTimeWithDefault(value interface{}, defaultValue time.Time) time.Time
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: time.Time - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: time.Time - default value.
 - **returns**: time.Time - Date value or default when conversion is not supported.
 
 #### ToNullableDateTime

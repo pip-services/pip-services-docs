@@ -19,7 +19,7 @@ A method called when events this listener is subscrubed to are fired.
 > OnEvent(correlationId string, e [IEvent](../ievent), value [*run.Parameters](../../run/parameters))
 
 - **correlationId**: string - a fired evemt
-- **e**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
+- **e**: [IEvent](../ievent) - (optional) transaction id to used trace execution through the call chain.
 - **value**: [*run.Parameters](../../run/parameters) - event arguments.
 
 ### Examples

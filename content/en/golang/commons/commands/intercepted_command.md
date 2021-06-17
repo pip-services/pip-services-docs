@@ -20,7 +20,7 @@ about the interceptor that is being used and the next command in the chain.
 
 > NewInterceptedCommand(interceptor [ICommandInterceptor](../icommand_interceptor), next [ICommand](../icommand)) [*InterceptedCommand]()
 
-- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - the interceptor that is intercepting the command.
+- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - interceptor that is intercepting the command.
 - **next**: [ICommand](../icommand) - (link to) the next command in the command's execution chain.
 
 ### Methods
@@ -31,16 +31,16 @@ See [Parameters](../../run/parameters)
 
 > (c *InterceptedCommand) Execute(correlationId string, args [*run.Parameters](../../run/parameters)) (result interface{}, err error)
 
-- **correlationId**: string - unique transaction id to trace calls across components.
-- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: (result interface{}, err error) - the execution result
+- **correlationId**: string - unique transaction id used to trace calls across components.
+- **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
+- **returns**: (result interface{}, err error) - execution result
 
 #### Name
 Returns string the name of the command that is being intercepted.
 
 > (c *InterceptedCommand) Name() string
 
-- **returns**: string - the name of the command that is being intercepted.
+- **returns**: string - name of the command that is being intercepted.
 
 
 #### Validate
@@ -50,8 +50,8 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 
 > (c *InterceptedCommand) Validate(args [*run.Parameters](../../run/parameters)) [][*validate.ValidationResult](../../validate/validation_result)
 
-- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to validate for the next command.
-- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - an array of ValidationResults.
+- **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to validate for the next command.
+- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - array of ValidationResults.
 
 ### Examples
 

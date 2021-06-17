@@ -31,7 +31,7 @@ See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 > NewEmptyConfigParams() [*ConfigParams]()
 
 
-Creates a new ConfigParams from map.
+Creates a new ConfigParams from a map.
 > NewConfigParams(values map[string]string) [*ConfigParams]()
 
 - **values**: map[string]string - map with key-value pairs
@@ -39,7 +39,7 @@ Creates a new ConfigParams from map.
 Creates a new ConfigParams object filled with key-value pairs from specified object.
 > NewConfigParamsFromValue(value interface{}) [*ConfigParams]()
 
-- **values**: interface{} - an object with key-value pairs used to initialize a new ConfigParams.
+- **values**: interface{} - object with key-value pairs used to initialize a new ConfigParams.
 
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
@@ -48,10 +48,10 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 - **values**: ...interface{} - the tuples to fill a new ConfigParams object.
 
 Creates a new StringValueMap from a list of key-value pairs called tuples.
-The method is similar to fromTuples but tuples are passed as array instead of parameters.
+The method is similar to fromTuples but tuples are passed as an array instead of as parameters.
 > NewConfigParamsFromTuplesArray(tuples []interface{}) [*ConfigParams]()
 
-- **values**: []interface{} - a list of values where odd elements are keys and the following even elements are values
+- **values**: []interface{} - list of values where odd elements are keys and the following even elements are values
 
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.
 
@@ -93,7 +93,7 @@ Gets a list with all 1st level section names.
 
 > (c [*ConfigParams]()) GetSectionNames() []string
 
-- **returns**: string[] - a list of section names stored in this ConfigMap.
+- **returns**: string[] - list of section names stored in this ConfigMap.
 
 #### Override
 Overrides parameters with new values from specified [ConfigParams]()
@@ -102,7 +102,7 @@ and returns a new [ConfigParams]() object.
 > (c [*ConfigParams]()) Override(configParams [*ConfigParams]()) [*ConfigParams]()
 
 - **configParams**: [*ConfigParams]() - ConfigMap with parameters to override the current values.
-- **returns**: [*ConfigParams]() - a new ConfigParams object.
+- **returns**: [*ConfigParams]() - new ConfigParams object.
 
 #### SetDefaults
 Set default values from specified ConfigParams and returns a new ConfigParams object.
@@ -110,7 +110,7 @@ Set default values from specified ConfigParams and returns a new ConfigParams ob
 > (c [*ConfigParams]()) SetDefaults(defaults [*ConfigParams]()) [*ConfigParams]()
 
 - **defaults**: [*ConfigParams]() - ConfigMap with default parameter values.
-- **returns**: [*ConfigParams]() - a new ConfigParams object.
+- **returns**: [*ConfigParams]() - new ConfigParams object.
 
 
 ### Examples   

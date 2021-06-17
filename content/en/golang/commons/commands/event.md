@@ -24,7 +24,7 @@ Throws an Error if the name is nil.
 
 > NewEvent(name string) [*Event]()
 
-- **name**: string - the name of the event that is to be created.
+- **name**: string - name of the event that is to be created.
 
 ### Methods
 
@@ -33,21 +33,21 @@ Adds a listener to receive notifications when this event is fired.
 
 > (c *Event) AddListener(listener [IEventListener](../ievent_listener))
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
+- **listener**: [IEventListener](../ievent_listener) - listener's reference to add.
 
 #### Listeners
 Gets all listeners registred in this event.
 
 > (c [*Event]()) Listeners() [][IEventListener](../ievent_listener)
 
-- **returns**: [][IEventListener](../ievent_listener) - a list of listeners.
+- **returns**: [][IEventListener](../ievent_listener) - list of listeners.
 
 #### Name
 Gets the name of the event.
 
 > (c *Event) Name() string
 
-- **returns**: string - the name of this event.
+- **returns**: string - name of the event.
 
 #### Notify
 Fires this event and notifies all registred listeners.  
@@ -55,15 +55,15 @@ Throws an [InvocationException](../errors/invocation_exception) if the event fai
 
 > (c [*Event]()) Notify(correlationId string, args [*run.Parameters](../../run/parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **args**: [*run.Parameters](../../run/parameters) - the parameters to raise this event with.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **args**: [*run.Parameters](../../run/parameters) - parameters to raise this event with.
 
 #### RemoveListener
 Removes a listener, so that it no longer receives notifications for this event.
 
 > (c [*Event]()) RemoveListener(listener [IEventListener](../ievent_listener))
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to remove.
 
 **Example**:
 

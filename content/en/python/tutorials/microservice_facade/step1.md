@@ -30,10 +30,59 @@ The facade microservice will be responsible for:
 
 Before starting, be sure to set up your [environment](../../../getting_started/setup_environmen) and create a folder for the project. The directory structure of facade projects differs a bit from the structure we use when developing data microservices.
 
-TODO: complete this and other steps
+```
+/bin
+/config
+/docker
+/test
+└───/fixture
+└───/services
+    └───/version1
+        └───/src
+
+/pip_facades_sample_python
+└───/build
+└───/container
+└───/operations
+    └───/version1
+└───/services
+    └───/version1
+/requirements.txt
+/setup.py
+```
+
+Create a requirements.txt file at the root of the project with the following content to configure dependencies and project parameters:
+
+**/requirements.txt**
+
+```
+iso8601
+PyYAML
+pystache
+pytest
+pytz
+bottle
+requests
+cheroot
+beaker
+netifaces==0.10.9
+pip-services3-commons
+pip-services3-components
+pip-services3-container
+pip-services3-rpc
+```
+
+Install all necessary modules using the command:
+
+```bash
+pip install -r requirements.txt
+```
+
+Now our project is ready for development. Continue on to [Step 2 - Business operations](../step2) to start implementing the facade itself.
+
 
 <span class="hide-title-link">
 
-### [Step 2. Designing a Direct Client.](../step2)
+### [Step 2. Designing a Direct Client](../step2)
 
 </span>

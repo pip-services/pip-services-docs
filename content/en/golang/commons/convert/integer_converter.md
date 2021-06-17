@@ -14,7 +14,7 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 
 - Strings are converted to floats, then to integers
 - DateTime: total number of milliseconds since unix epoсh  
-- Boolean: 1 for True and 0 for False
+- Boolean: 1 for true and 0 for False
 
 ### Methods
 
@@ -25,7 +25,7 @@ See [LongConverter.ToLong](../long_converter/#tolong),
 
 > ToInteger(value interface{}) int
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: int - integer value or 0 when conversion is not supported.
 
 #### ToIntegerWithDefault
@@ -35,8 +35,8 @@ See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),
 
 > ToIntegerWithDefault(value interface{}, defaultValue int) int
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: int - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: int - default value.
 - **returns**: int - integer value or default when conversion is not supported. 
 
 #### ToNullableInteger
@@ -45,7 +45,7 @@ See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > ToNullableInteger(value interface{}) *int
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *int - integer value or nil when conversion is not supported.
 
 
@@ -55,16 +55,16 @@ Converts value into unsigned integer or returns 0 when conversion is not possibl
 
 > ToUInteger(value interface{}) uint
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: uint - integer value or 0 when conversion is not supported.
 
 #### ToUIntegerWithDefault
-Converts value into unsigned integer or returns default when conversion is not possible.
+Converts value into unsigned integer or returns the default value when conversion is not possible.
 
 > ToUIntegerWithDefault(value interface{}, defaultValue uint) uint
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: uint - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: uint - default value.
 - **returns**: uint - integer value or default when conversion is not supported.
 
 #### ToNullableUInteger
@@ -73,7 +73,7 @@ See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > ToNullableUInteger(value interface{}) *uint
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *uint - integer value or nil when conversion is not supported.
 
 

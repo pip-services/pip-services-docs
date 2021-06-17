@@ -13,23 +13,23 @@ The ArrayConverter class provides methods to create an array from a set of value
 ### Methods
 
 #### ListToArray
-Converts a list into array object with empty array as default.
-Strings with comma-delimited values are split into array of strings.
+Converts a list into an array object with empty array as default.
+Strings with comma-delimited values are split into an array of strings.
 See [ToArray](#toarray)
 
 > ListToArray(value interface{}) []interface{}
 
-- **value**: interface{} - the list to convert.
+- **value**: interface{} - list to convert.
 - **returns**: []interface{} - array object or empty array when value is nil
 
 
 #### ToArray
-Converts value into array object with empty array as default.
+Converts value into an array object with empty array as default.
 Single values are converted into arrays with single element.
 
 > ToArray(value interface{}) []interface{}
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: []interface{} - array object or empty array when value is nil.
 
 #### ToArrayWithDefault
@@ -38,7 +38,7 @@ Single values are converted into arrays with single element.
 
 > ToArrayWithDefault(value interface{}, defaultValue []interface{}) []interface{}
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **defaultValue**: []interface{} - default array object.
 - **returns**: []interface{} - array object or default array when value is nil.
 
@@ -48,7 +48,7 @@ Single values are converted into arrays with a single element.
 
 > ToNullableArray(value interface{}) *[]interface{}
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *[]interface{} - array object or nil when value is nil.
 
 ### Examples

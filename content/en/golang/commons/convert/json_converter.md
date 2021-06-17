@@ -18,52 +18,52 @@ Converts value from JSON string
 
 > FromJson(value string) (interface{}, error)
 
-- **value**: string - the JSON string to convert.
+- **value**: string - JSON string to convert.
 - **returns**: (interface{}, error) - converted object value or nil when value is nil.
 
 #### FromJsonAs
-Converts JSON string into a value of type specified by a TypeCode.
+Converts a JSON string into a value of type specified by a TypeCode.
 
 > FromJsonAs(result interface{}, value string) (interface{}, error) 
 
-- **result**: interface{} - the TypeCode for the data type into which 'value' is to be converted.
-- **value**: string - the JSON string to convert.
+- **result**: interface{} - TypeCode for the data type into which 'value' is to be converted.
+- **value**: string - JSON string to convert.
 - **returns**: (interface{}, error) - converted object value or nil when value is nil.
 
 #### ToJson
-Converts value into JSON string.
+Converts a value into a JSON string.
 
 > ToJson(value interface{}) (string, error)
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: (string, error) - JSON string or nil when value is nil.
 
 #### ToMap
-Converts JSON string into map object or returns empty map when conversion is not possible.
+Converts a JSON string into a map object or returns an empty map when conversion is not possible.
 See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
 > ToMap(value string) map[string]interface{}
 
-- **value**: string - the JSON string to convert.
+- **value**: string - JSON string to convert.
 - **returns**: map[string]interface{} - Map object value or empty object when conversion is not supported.
 
 #### ToMapWithDefault
-Converts JSON string into map object or returns default value when conversion is not possible.
+Converts a JSON string into a map object or returns a default value when conversion is not possible.
 
 > ToMapWithDefault(value string, defaultValue map[string]interface{}) map[string]interface{}
 
-- **value**: string - the JSON string to convert.
-- **defaultValue**: map[string]interface{} - the default value.
+- **value**: string - JSON string to convert.
+- **defaultValue**: map[string]interface{} - default value.
 - **returns**: map[string]interface{} - Map object value or default when conversion is not supported.
 
 
 #### ToNullableMap
-Converts JSON string into map object or returns nil when conversion is not possible.  
+Converts a JSON string into a map object or returns nil when conversion is not possible.  
 See [MapConverter.ToNullableMap](../map_converter/#tonullablemap)
 
 > ToNullableMap(value string) *map[string]interface{}
 
-- **value**: string - the JSON string to convert.
+- **value**: string - JSON string to convert.
 - **returns**: *map[string]interface{} - Map object value or nil when conversion is not supported.
 
 

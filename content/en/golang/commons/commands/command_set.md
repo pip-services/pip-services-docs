@@ -30,7 +30,7 @@ Creates an empty CommandSet object.
 ### Methods
 
 #### AddCommand
-Adds a [command](../icommand) to this command set.  
+Adds a [command](../command) to this command set.  
 See [ICommand](../icommand)
 
 > (c [*CommandSet]()) AddCommand(command [ICommand](../icommand))

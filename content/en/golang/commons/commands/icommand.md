@@ -20,15 +20,15 @@ Gets the command name.
 
 > Name() string
 
-- **returns**: string - the command name.
+- **returns**: string - command name.
 
 #### Validate
 Validates command arguments before execution using defined schema.
 
 > Validate(args [*run.Parameters](../../run/parameters)) [][*validate.ValidationResult](../../validate/validation_result)
 
-- **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - the command name.
+- **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to validate.
+- **returns**: [][*validate.ValidationResult](../../validate/validation_result) - command name.
 
 ### See also
 - #### [Command](../command)

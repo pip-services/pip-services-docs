@@ -16,28 +16,28 @@ The MapConverter class allows you to convert arbitrary values into map objects u
 ### Methods
 
 #### ToMap
-Converts value into map object or returns empty map when conversion is not possible
+Converts a value into a map object or returns an empty map when conversion is not possible
 
 > ToMap(value interface{}) map[string]interface{}
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
 
 #### ToMapWithDefault
-Converts value into map object or returns default when conversion is not possible
+Converts a value into a map object or returns a default map when conversion is not possible
 
 > ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: map[string]interface{} - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: map[string]interface{} - default value.
 - **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
 
 #### ToNullableMap
-Converts value into map object or returns nil when conversion is not possible.
+Converts a value into a map object or returns nil when conversion is not possible.
 
 > ToNullableMap(value interface{}) *map[string]interface{}
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *map[string]interface{} - map object or nil when conversion is not supported.
 
 

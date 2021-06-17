@@ -18,46 +18,46 @@ The LongConverter class allows you to convert arbitrary values into longs using 
 ### Methods
 
 #### ToLong
-Converts value into long or returns 0 when conversion is not possible.
+Converts a value into long or returns 0 when conversion is not possible.
 
 > ToLong(value interface{}) int64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: int64 - long value or 0 when conversion is not supported.
 
 #### ToLongWithDefault
-Converts value into integer or returns default when conversion is not possible.
+Converts a value into integer or returns default when conversion is not possible.
 
 > ToLongWithDefault(value interface{}, defaultValue int64) int64
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: int64 - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: int64 - default value.
 - **returns**: int64 - long value or default when conversion is not supported
 
 #### ToNullableLong
-Converts value into long or returns nil when conversion is not possible.
+Converts a value into long or returns nil when conversion is not possible.
 
 > ToNullableLong(value interface{}) *int64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *int64 - long value or nil when conversion is not supported.
 
 
 #### ToULong
-Converts value into unsigned long or returns 0 when conversion is not possible.
+Converts a value into unsigned long or returns 0 when conversion is not possible.
 
 > ToULong(value interface{}) uint64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: uint64 - long value or 0 when conversion is not supported.
 
 #### ToULongWithDefault
-Converts value into unsigned long or returns default when conversion is not possible.
+Converts a value into unsigned long or returns default when conversion is not possible.
 
 > ToULongWithDefault(value interface{}, defaultValue uint64) uint64
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: uint64 - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: uint64 - default value.
 - **returns**: uint64 - long value or default when conversion is not supported.
 
 #### ToNullableULong
@@ -65,7 +65,7 @@ Converts value into unsigned long or returns nil when conversion is not possible
 
 > ToNullableULong(value interface{}) *uint64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *uint64 - long value or nil when conversion is not supported.
 
 ### Examples

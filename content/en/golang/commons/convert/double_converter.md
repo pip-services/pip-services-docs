@@ -27,7 +27,7 @@ See [ToDoubleWithDefault](#todoublewithdefault)
 
 > ToDouble(value interface{}) float64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: float64 - double value or 0 when conversion is not supported.
 
 #### ToDoubleWithDefault
@@ -35,8 +35,8 @@ Converts value into integer or returns default value when conversion is not poss
 
 > ToDoubleWithDefault(value interface{}, defaultValue float64) float64
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: float64 - the default value.
+- **value**: interface{} - value to convert.
+- **defaultValue**: float64 - default value.
 - **returns**: float64 - double value or default when conversion is not supported.
 
 #### ToNullableDouble
@@ -44,7 +44,7 @@ Converts value into doubles or returns nil when conversion is not possible.
 
 > ToNullableDouble(value interface{}) *float64
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *float64 - double value or nil when conversion is not supported.
 
 ### Examples

@@ -34,8 +34,8 @@ Converts value into boolean or returns default value when conversion is not poss
 
 > ToBooleanWithDefault(value interface{}, defaultValue bool) bool
 
-- **value**: interface{} - the value to convert.
-- **defaultValue**: bool - the default value
+- **value**: interface{} - value to convert.
+- **defaultValue**: bool - default value
 - **returns**: bool - boolean value or default when conversion is not supported.
 
 
@@ -44,7 +44,7 @@ Converts value into boolean or returns nil when conversion is not possible.
 
 > ToNullableBoolean(value interface{}) *bool
 
-- **value**: interface{} - the value to convert.
+- **value**: interface{} - value to convert.
 - **returns**: *bool - boolean value or nil when convertion is not supported.
 
 ### Examples

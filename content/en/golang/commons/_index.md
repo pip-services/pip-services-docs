@@ -35,5 +35,3 @@ Get the package from the Github repository:
 ```bash
 go get -u github.com/pip-services3-go/pip-services3-commons-go@latest
 ```
-
-TODO add example

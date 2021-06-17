@@ -8,8 +8,8 @@ description: >
 
 ---
 
-**TODO: this is not implemented for this language yet**
-
+**Note: please note that this is not implemented for this language yet**
+ 
 ### Description
  The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
  
@@ -20,11 +20,11 @@ description: >
 ### Methods
 
 #### toMap
-Converts value into map object or returns empty map when conversion is not possible
+Converts a value into a map object or returns an empty map when conversion is not possible
 
 > `public static` toMap(value: any): any
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: any - map object or empty map when conversion is not supported.
 
 #### toMapWithDefault
@@ -32,16 +32,16 @@ Converts value into map object or returns default when conversion is not possibl
 
 > `public static` toMapWithDefault(value: any, defaultValue: any): any
 
-- **value**: any - the value to convert.
-- **defaultValue**: any - the default value.
+- **value**: any - value to convert.
+- **defaultValue**: any - default value.
 - **returns**: any - map object or empty map when conversion is not supported.
 
 #### toNullableMap
-Converts value into map object or returns nil when conversion is not possible.
+Converts a value into a map object or returns nil when conversion is not possible.
 
 > `public static` toNullableMap(value: any): any
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: any - map object or nil when conversion is not supported.
 
 

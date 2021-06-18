@@ -19,7 +19,7 @@ The type of the file is determined by the file extension.
 
 > `static` read_from_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig](../container_config)
 
-- **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **path**: str - path to the component's configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - read container configuration
@@ -30,7 +30,7 @@ Reads a container's configuration from a JSON file.
 
 > `static` read_from_json_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig](../container_config)
 
-- **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **path**: str - path to the component's configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - read container configuration
@@ -41,7 +41,7 @@ Reads container configuration from a YAML file.
 
 > `static` read_from_yaml_file(correlation_id: Optional[str], path: str, parameters: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig](../container_config)
 
-- **correlation_id**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **path**: str - path to the component's configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or None to skip parameterization.
 - **returns**: [ContainerConfig](../container_config) - read container configuration

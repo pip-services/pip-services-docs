@@ -37,11 +37,11 @@ Closes the component and frees used resources.
 > `public` close(correlationId: string): Promise\<void\>
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
-#### is_open
+#### isOpen
 Checks if the component is open.
 
-> is_open(): bool
-- **returns**: bool - True if the component is open and False otherwise.
+> isOpen(): boolean
+- **returns**: boolean - True if the component is open and False otherwise.
 
 #### open
 Opens the component.

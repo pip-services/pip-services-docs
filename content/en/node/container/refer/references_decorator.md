@@ -54,13 +54,13 @@ Gets all component references registered in this reference map.
 > `public` getAll(): any[]
 - **returns**: any[] - list with component references.
 
-#### get_all_locators
+#### getAllLocators
 Gets locators for all registered component references in the reference map.
 
 > `public` getAllLocators(): any[]
 - **returns**: any[] - list with component locators.
 
-#### get_one_optional
+#### getOneOptional
 Gets an optional component reference that matches the specified locator.
 
 > `public` getOneOptional\<T\>(locator: any): T
@@ -68,7 +68,7 @@ Gets an optional component reference that matches the specified locator.
 - **returns**: T - matching component reference or null if nothing was found.
 
 
-#### get_one_required
+#### getOneRequired
 Gets a required component reference that matches the specified locator.
 Throws a [ReferenceException](../../../commons/refer/reference_exception) when no references were found.
 
@@ -77,10 +77,10 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when n
 - **returns**: any - matching component reference.
 
 
-#### get_optional
+#### getOptional
 Gets all component references that match the specified locator.
 
-> public getOptional\<T\>(locator: any): T[]
+> `public` getOptional\<T\>(locator: any): T[]
 - **locator**: any - locator to find references by.
 - **returns**: T[] - list with matching component references or empty list if nothing was found.
 
@@ -106,7 +106,7 @@ Puts a new reference into the reference map.
 #### remove
 Removes a previously added component that matches the specified locator.
 If many references match the locator, it removes only the first one.
-When all references shall be removed, use **remove_all** method instead.
+When all references shall be removed, use **removeAll** method instead.
 
 > `public` remove(locator: any): any
 - **locator**: any - locator to remove component

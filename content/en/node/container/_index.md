@@ -26,7 +26,7 @@ description: >
 
 The module contains the following packages:
 
-* [**Core**](core) - Basic in-memory and process containers
+* [**Containers**](containers) - Basic in-memory and process containers
 * [**Build**](build) - Default container factory
 * [**Config**](config) - Container configuration components
 * [**Refer**](refer) - Inter-container reference management (implementation of the Referenceable pattern inside an IoC container)

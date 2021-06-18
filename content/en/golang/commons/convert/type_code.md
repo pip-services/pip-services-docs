@@ -15,16 +15,16 @@ The TypeCode class contains the codes for data types that are used by the class 
 
 The codes are as follows:
 
-- **Unknown** = 0
-- **String** = 1
-- **Boolean** = 2
-- **Integer** = 3
-- **Long** = 4
-- **Float** = 5
-- **Double** = 6
-- **DateTime** = 7
-- **Duration** = 8
-- **Object** = 9
-- **Enum** = 10
-- **Array** = 11
-- **Map** = 12
+- **Unknown** = iota
+- **String** = iota
+- **Boolean** = iota
+- **Integer** = iota
+- **Long** = iota
+- **Float** = iota
+- **Double** = iota
+- **DateTime** = iota
+- **Duration** = iota
+- **Object** = iota
+- **Enum** = iota
+- **Array** = iota
+- **Map** = iota

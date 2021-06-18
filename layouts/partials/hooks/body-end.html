@@ -33,9 +33,9 @@
         hits = hits.filter((item) => {
           console.log(item);
           
-          if (localStorage['dropdownState'].toLowerCase() != 'home'){
+          if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
             let hitLangPage = item['url'].split('/')[4].toLowerCase();
-            let isCorrectHit = localStorage['dropdownState'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
+            let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
 
             return isCorrectHit;
           }

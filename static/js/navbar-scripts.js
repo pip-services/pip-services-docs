@@ -14,7 +14,7 @@ function loadNavbar(event) {
 
     // Event save current menu active item
     Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem =>
-        navItem.addEventListener('click', () => localStorage['dropdownState'] = navItem.innerText)
+        navItem.addEventListener('click', () => localStorage['currentMenuActiveItem'] = navItem.innerText)
     )
 
     // load navbar scroll state
@@ -23,16 +23,16 @@ function loadNavbar(event) {
     // load navbar state
     if (document.getElementsByClassName('nav-link active dropdown-item').length == 0){
         Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
-            if (navItem.innerText.trim() == localStorage['dropdownState']) {
+            if (navItem.innerText.trim() == localStorage['currentMenuActiveItem']) {
                 navItem.classList.add('active');
                 navItem.firstElementChild.classList.add('active');
-                document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['dropdownState'];
-                document.getElementById('navbarDropdownMenuLinkMobile').innerText = localStorage['dropdownState'];
+                document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['currentMenuActiveItem'];
+                document.getElementById('navbarDropdownMenuLinkMobile').innerText = localStorage['currentMenuActiveItem'];
             }
         })
     }
     
-    localStorage['dropdownState'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
+    localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
     
 
     if (localStorage['openNav'] === 'true') {
@@ -124,7 +124,7 @@ document.getElementById('td-section-nav').addEventListener(
 document.getElementById("search-btn").addEventListener("click", showSearch);
 document.getElementById("hidden-search").addEventListener("blur", showSearch);
 
-if (getViewport() == "sm") {
+if (getViewport(true) < 768) {
     // save navbar in opened state for mobiles
     document.body.addEventListener('click', saveNavState);
 }

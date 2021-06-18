@@ -10,7 +10,7 @@ weight: 1
   
   // redirect to current language main page
   try{
-    let currentLangugeUri = localStorage['dropdownState'].toLowerCase().replace('.', '/').split('/');
+    let currentLangugeUri = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/');
     currentLangugeUri = currentLangugeUri.filter(word => word.length > 2)[0]
     window.location.href += currentLangugeUri;
   } catch {

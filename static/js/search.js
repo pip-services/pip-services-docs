@@ -53,8 +53,8 @@ function search(searchQuery) {
 
             // populate search results block with excerpts around the matched search query
             results.forEach(function (value, key) {
-                if (localStorage['dropdownState'].toLowerCase() != 'home'){
-                    let activeMenuItem = localStorage['dropdownState'].toLowerCase().replace('.', '/').split('/')
+                if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
+                    let activeMenuItem = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/')
                     let menuItemOfResult = value['permalink'].split('/')
                     let isFromCurrentMenu = activeMenuItem.filter(x => menuItemOfResult.includes(x) && x !== "").length > 0 ? true : false;
                     if (!isFromCurrentMenu)

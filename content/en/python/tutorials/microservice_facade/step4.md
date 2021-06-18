@@ -48,7 +48,8 @@ class AuthorizerV1:
 
     def site_roles(self, roles: List[str], id_param: str = 'site_id'):
         def inner():
-            user = None if not hasattr(bottle.request, 'user') else bottle.request.user
+            user = getattr(bottle.request, 'user', None)
+
             if user is None:
                 raise UnauthorizedException(
                     None, 'NOT_SIGNED',
@@ -56,6 +57,7 @@ class AuthorizerV1:
                 ).with_status(401)
 
             else:
+                user.roles = getattr(user, 'roles', False) or []
                 site_id = bottle.request.params['kwargs'].get(id_param)
                 authorized = 'admin' in user.roles
                 if site_id is not None and not authorized:
@@ -95,8 +97,7 @@ class AuthorizerV1:
                 user_id = dict(bottle.request.query.decode()).get(user_id_param) or JsonConverter.to_json(
                     bottle.request.json)
                 if user_id is not None and user_id == user.user_id:
-                    # next()
-                    pass
+                    return
                 else:
                     site_id = bottle.request.params.get(site_id_param)
                     authorized = 'admin' in user.roles or site_id + ':admin' in user.roles
@@ -106,12 +107,7 @@ class AuthorizerV1:
                             'User must be site:admin to perform this operation'
                         ).with_details('roles', ['admin']).with_status(403)
 
-                    else:
-                        # next()
-                        pass
-
         return inner
-
 
 ```
 

@@ -116,7 +116,7 @@ To get a reference to the controller, we’ll add its descriptor to the _depende
 ```python
 def __init__(self):
     super(HelloWorldRestService, self).__init__()
-    self._base_route = "/hello_word"
+    self._base_route = "/hello_world"
     ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
     self._dependency_resolver.put('controller', ControllerDescriptor)
 

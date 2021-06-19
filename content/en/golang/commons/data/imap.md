@@ -4,35 +4,35 @@ title: "IMap"
 linkTitle: "IMap"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
-   TODO add description
+   Interface used to create a map data structure.
 
 ---
 
 ### Description
 
-TODO add description
+The IMap interface is used to create a map data structure.
 
 ### Methods
 
 #### Get
-TODO add description
+Gets a value related to a given key.
 > Get(key string) interface{}
 
 - **key**: string - TODO add description
 - **returns**: interface{} - TODO add description
 
 #### Put
-TODO add description
+Inserts the given value and key.
 > Put(key string, value interface{})
 
 - **key**: string - TODO add description
 - **value**: interface{} - TODO add description
 
 #### Remove
-TODO add description
+Removes a value related to a given key.
 > Remove(key string)
 
-- **key** string - TODO add description
+- **key** string - value's key
 
 #### Contains
 TODO add description

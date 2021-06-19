@@ -27,7 +27,7 @@ Creates a new instance of data page and assigns its values.
 
 > NewDataPage(total *int64, data []interface{}) [*DataPage]()
 
-- **data**: *int64 - a list of items from the retrieved page.
+- **data**: *int64 - list of items from the retrieved page.
 - **total**: []interface{} - total amount of items in a request.
 
 #### NewEmptyDataPage

@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The SortField class allows you to define a field used to sort query results. In addition, it allows you to specify the order typer as ascending or descending.
+The SortField class allows you to define a field used to sort query results. In addition, it allows you to specify the order type as ascending or descending.
 
 ### Constructors
 
@@ -34,11 +34,11 @@ Creates a new empty instance.
 <span class="hide-title-link">
 
 #### Name
-The field name to sort by
+Field name to sort by
 > **Name**: string
 
 #### Ascending
-The flag to define sorting order. True to sort ascending, false to sort descending
+Flag to define sorting order. True to sort ascending, false to sort descending
 > **Ascending**: bool
 
 </span>

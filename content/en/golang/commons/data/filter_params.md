@@ -25,12 +25,12 @@ Creates a new instance and initalizes it with elements from the specified map.
 
 
 #### NewFilterParams
-Converts specified value into FilterParams.
+Converts a specified value into FilterParams.
 
 > NewFilterParamsFromValue(value interface{}) [*FilterParams]()
 
 - **value**: interface{} - value to be converted
-- **returns**: [*FilterParams]() - a newly created FilterParams.
+- **returns**: [*FilterParams]() - newly created FilterParams.
 
 #### NewFilterParamsFromString
 Parses semicolon-separated key-value pairs and returns them as a FilterParams.  
@@ -39,7 +39,7 @@ See [StringValueMap.NewStringValueMapFromString](../string_value_map/#newstringv
 > NewFilterParamsFromString(line string) [*FilterParams]()
 
 - **line**: string - semicolon-separated key-value list to initialize FilterParams.
-- **returns**: [*FilterParams]() - a newly created FilterParams.
+- **returns**: [*FilterParams]() - newly created FilterParams.
 
 
 #### NewFilterParamsFromTuples
@@ -47,8 +47,8 @@ Creates a new FilterParams from a list of key-value pairs called tuples.
 
 > NewFilterParamsFromTuples(tuples ...interface{}) [*FilterParams]()
 
-- **tuples**: ...interface{} - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [*FilterParams]() - a newly created FilterParams.
+- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **returns**: [*FilterParams]() - newly created FilterParams.
 
 
 ### Examples

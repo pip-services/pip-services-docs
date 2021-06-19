@@ -4,19 +4,19 @@ title: "IEquatable"
 linkTitle: "IEquatable"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
-    TODO add description
+    Interface for those classes that need an equal method.
 ---
 
 ### Description
 
-TODO add description
+The IEquatable interface is used by those classes that need an equal method.
 
 ### Methods
 
 #### Equals
-TODO add description
+Method used to compare two values. Returns true if these values are equal, and false otherwise.
 
 > Equals(value interface{}) bool
 
-- **value**: interface{} - TODO add description
-- **returns**: bool - TODO add description
+- **value**: interface{} - value to compare
+- **returns**: bool - boolean result of the evaluation

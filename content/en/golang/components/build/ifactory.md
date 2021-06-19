@@ -24,7 +24,7 @@ Checks if this factory is able to create component by given locator.
 
 This method searches for all registered components and returns
 a locator for component it is able to create that matches the given locator.
-If the factory is not able to create a requested component it returns null.
+If the factory is not able to create a requested component it returns nil.
 
 > CanCreate(locator interface{}) interface{}
 

@@ -26,5 +26,5 @@ Reads configuration and parameterizes it with given values.
 > ReadConfig(correlationId string, parameters [*c.ConfigParams](../../../commons/config/config_params)) ([*c.ConfigParams](../../../commons/config/config_params), error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **parameters**: [*c.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [*c.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: [*c.ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.

@@ -38,13 +38,13 @@ Removes a value from the cache by its key.
 
 #### Retrieve
 Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired, it returns null.
+If value is missing in the cache or expired, it returns nil.
 
 > (c [*NullCache]()) Retrieve(correlationId string, key string) (interface{}, error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique value key.
-- **returns**: (interface{}, error) - a cached value or null, if value wasn't found or timeout expired.
+- **returns**: (interface{}, error) - a cached value or nil, if value wasn't found or timeout expired.
 
 
 #### Store

@@ -86,7 +86,7 @@ from Credential store it finds a [ICredentialStore](../icredential_store)` and l
 > (c [*CredentialResolver]()) Lookup(correlationId string) ([*CredentialParams](../credential_params), error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: ([*CredentialParams](../credential_params), error) - resolved credential parameters or null if nothing was found.
+- **returns**: ([*CredentialParams](../credential_params), error) - resolved credential parameters or nil if nothing was found.
 
 
 #### SetReferences

@@ -96,7 +96,7 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 > (c [*ConnectionResolver]()) Resolve(correlationId string) ([*ConnectionParams](../connection_params), error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: ([*ConnectionParams](../connection_params), error) - resolved connection parameters or null if nothing was found.
+- **returns**: ([*ConnectionParams](../connection_params), error) - resolved connection parameters or nil if nothing was found.
 
 
 #### ResolveAll

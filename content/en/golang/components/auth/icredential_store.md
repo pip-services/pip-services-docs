@@ -21,7 +21,7 @@ Lookups credential parameters by its key.
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a key to uniquely identify the credential.
-- **returns**: ([*CredentialParams](../credential_params), error) - found credential parameters or null if nothing was found.
+- **returns**: ([*CredentialParams](../credential_params), error) - found credential parameters or nil if nothing was found.
 
 
 #### Store

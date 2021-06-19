@@ -127,7 +127,7 @@ Get the user password. The value can be stored in parameters "password" or "pass
 
 #### StoreKey
 Gets the key to retrieve these credentials from [ICredentialStore](../icredential_store).
-If this key is null, then all parameters are already present.
+If this key is nil, then all parameters are already present.
 
 > (c [*CredentialParams]()) StoreKey() string
 

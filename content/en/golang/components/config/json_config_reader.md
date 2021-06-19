@@ -50,7 +50,7 @@ Reads a configuration and parameterizes it with given values.
 > (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
 
 

@@ -94,7 +94,7 @@ then it returns a list with only one ConnectionParams.
 
 #### DiscoveryKey
 Gets the key to retrieve this connection from DiscoveryService.
-If this key is null, then all parameters are already present.
+If this key is nil, then all parameters are already present.
 
 > (c [*ConnectionParams]()) DiscoveryKey() string
 

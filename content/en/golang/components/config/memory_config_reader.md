@@ -49,7 +49,7 @@ Reads a configuration and parameterizes it with given values.
 > (c *MemoryConfigReader) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: [*cconfig.ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 ### Examples

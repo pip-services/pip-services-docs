@@ -32,11 +32,11 @@ The value is a string representation of a GUID value.
 #### NextShort
 Generates a random 9-digit random ID (code).
 
-Remember: The returned value is not guaranteed to be unique.
+Note: The returned value is not guaranteed to be unique.
 
 > (c *TIdGenerator) NextShort() string
 
-- **returns**: string - a generated random 9-digit code
+- **returns**: string - generated random 9-digit code
 
 ### Examples
 

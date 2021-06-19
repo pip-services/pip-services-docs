@@ -50,16 +50,16 @@ The result is a comma-separated list of projection fields
 
 > (c [*ProjectionParams]()) String() string
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 
 #### NewProjectionParamsFromStrings
-Parses comma-separated list of projection fields.
+Parses a comma-separated list of projection fields.
 
 > NewProjectionParamsFromStrings(values []string) [*ProjectionParams]()
 
 - **values**: []string - one or more comma-separated lists of projection fields
-- **returns**: [*ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [*ProjectionParams]() - newly created ProjectionParams.
 
 #### NewProjectionParamsFromValue
 Converts specified value into ProjectionParams.  
@@ -68,7 +68,7 @@ See [AnyValueArray.NewAnyValueArrayFromValue](../any_value_array/#newanyvaluearr
 > NewProjectionParamsFromValue(value interface{}) [*ProjectionParams]()
 
 - **value**: interface{} -  value to be converted
-- **returns**: [*ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [*ProjectionParams]() - newly created ProjectionParams.
 
 ### Examples
 

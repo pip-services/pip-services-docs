@@ -33,12 +33,12 @@ Creates a new instance and sets its values.
 
 
 #### NewPagingParamsFromMap
-Creates a new PagingParams and sets it parameters from the specified map
+Creates a new PagingParams and sets its parameters from the specified map
 
 > NewPagingParamsFromMap(value [*AnyValueMap](../../any_value_map)) [*PagingParams]()
 
-- **map**: [*AnyValueMap](../../any_value_map) - a AnyValueMap or StringValueMap to initialize this PagingParams
-- **returns**: [*PagingParams]() - a newly created PagingParams.
+- **map**: [*AnyValueMap](../../any_value_map) - AnyValueMap or StringValueMap to initialize this PagingParams
+- **returns**: [*PagingParams]() - newly created PagingParams.
 
 
 #### NewPagingParamsFromTuples
@@ -46,8 +46,8 @@ Creates a new PagingParams from a list of key-value pairs called tuples.
 
 > NewPagingParamsFromTuples(tuples ...interface{}) [*PagingParams]()
 
-- **tuples**: ...interface{} - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [*PagingParams]() - a newly created PagingParams.
+- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **returns**: [*PagingParams]() - newly created PagingParams.
 
 
 #### NewPagingParamsFromValue
@@ -56,7 +56,7 @@ Converts specified value into PagingParams.
 > NewPagingParamsFromValue(value interface{}) [*PagingParams]()
 
 - **value**: interface{} - value to be converted
-- **returns**: [*PagingParams]() - a newly created PagingParams.
+- **returns**: [*PagingParams]() - newly created PagingParams.
 
 
 #### NewEmptyPagingParams
@@ -70,15 +70,15 @@ Creates a new instance.
 <span class="hide-title-link">
 
 #### Skip
-The number of items to skip.
+Number of items to skip.
 > **Skip**: *int64
 
 #### take
-The number of items to return. 
+Number of items to return. 
 > **take**: *int64
 
 #### Total
-The flag to return the total number of items.
+Flag to return the total number of items.
 > **Total**: bool
 
 </span>
@@ -91,8 +91,8 @@ Gets the number of items to skip.
 
 > (c *PagingParams) GetSkip(minSkip int64) int64
 
-- **minSkip**: int64 - the minimum number of items to skip.
-- **returns**: int64 - the number of items to skip.
+- **minSkip**: int64 - minimum number of items to skip.
+- **returns**: int64 - number of items to skip.
 
 
 #### GetTake
@@ -100,8 +100,8 @@ Gets the number of items to return in a page.
 
 > (c *PagingParams) GetTake(maxTake int64) int64
 
-- **maxTake**: int64 - the maximum number of items to return.
-- **returns**: int64 - the number of items to return.
+- **maxTake**: int64 - Maximum number of items to return.
+- **returns**: int64 - Number of items to return.
 
 
 

@@ -38,11 +38,11 @@ A human-readable error description (usually written in English)
 > **Message**: string
 
 #### Details
-A map with additional details that can be used to restore error description in other languages 
+Map with additional details that can be used to restore error description in other languages 
 > **Details**: map[string]interface{}
 
 #### CorrelationId
-A unique transaction id to trace execution throug call chain    
+Unique transaction id used to trace execution through the call chain    
 > **CorrelationId**: string
 
 #### Cause

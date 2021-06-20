@@ -19,16 +19,16 @@ Example: 1 chance out of 3 chances (or 33.3%)
 
 > (c *TRandomBoolean) Chance(chances int, maxChances int) bool
 
-- **chances**: int - a chance proportional to maxChances.
-- **maxChances**: int - a maximum number of chances
-- **returns**: bool - true or false for settled chance
+- **chances**: int - chance proportional to maxChances.
+- **maxChances**: int - maximum number of chances
+- **returns**: bool - true or false for a settled chance
 
 #### NextBoolean
 Generates a random boolean value.
 
 > (c *TRandomBoolean) NextBoolean() bool
 
-- **returns**: bool - a random boolean.
+- **returns**: bool - random boolean.
 
 ### Examples
 

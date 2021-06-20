@@ -24,12 +24,12 @@ If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 - **returns**: int - generated random integer value.
 
 #### UpdateInteger
-Updates (drifts) a integer value within specified range defined
+Updates (drifts) an integer value within specified range defined
 
 > (c *TRandomInteger) UpdateInteger(value int, interval int) int
 
-- **value**: int - a integer value to drift.
-- **interval**: int - (optional) a range. Default: 10% of the value
+- **value**: int - integer value to drift.
+- **interval**: int - (optional) range. Default: 10% of the value
 - **returns**: int - updated integer value.
 
 ### Examples

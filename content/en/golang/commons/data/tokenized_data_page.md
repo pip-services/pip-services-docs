@@ -27,15 +27,15 @@ Important points
 ### Constructors
 
 #### NewTokenizedDataPage
-Creates a new instance of data page and assigns its values.
+Creates a new instance of a data page and assigns its values.
 
 > NewTokenizedDataPage(token string, data []interface{}) [*TokenizedDataPage]()
 
-- **token**: string - (optional) a token to define astarting point for the next search.
-- **data**: []interface{} - a list of items from the retrieved page.
+- **token**: string - (optional) token to define astarting point for the next search.
+- **data**: []interface{} - list of items from the retrieved page.
 
 #### NewEmptyTokenizedDataPage
-Creates a new empty instance of data page.
+Creates a new empty instance of a data page.
 
 > NewEmptyTokenizedDataPage() [*DataPage]
 
@@ -45,11 +45,11 @@ Creates a new empty instance of data page.
 <span class="hide-title-link">
 
 #### Data
-The items of the retrieved page.
+Items of the retrieved page.
 > **Data**: string
 
 #### Token
-The starting point for the next search.
+starting point for the next search.
 > **Token**: []interface{}
 
 

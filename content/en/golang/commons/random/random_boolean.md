@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The RandomBoolean class allows you to generate random boolean values.
+The RandomBoolean class allows you to generate random boolean values. 
 
 ### Methods
 

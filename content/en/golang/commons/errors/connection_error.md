@@ -20,6 +20,6 @@ Creates an error instance and assigns its values.
 > NewConnectionError(correlationId, code, message string) [*ApplicationError](../application_exception)
 
 - **correlation_id**: string - (optional) unique transaction id used to trace execution through the call chain.
-- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
+- **code**: string - (optional) unique error code. Default: "UNKNOWN"
 - **message**: string - (optional) a human-readable description of the error.
 

@@ -25,8 +25,8 @@ Creates a serializable ErrorDescription from error object.
 
 > (c *TErrorDescriptionFactory) Create(err interface{}) [*ErrorDescription](../error_description)
 
-- **error**: interface{} - an error object
-- **returns**: [*ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+- **error**: interface{} - error object
+- **returns**: [*ErrorDescription](../error_description) - serializeable ErrorDescription object that describes the error.
 
 ### See also
 - #### [ApplicationError](../application_error)

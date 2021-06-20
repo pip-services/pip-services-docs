@@ -14,12 +14,12 @@ The RandomArray class can be used as a random generator for array objects.
 ### Methods
 
 #### Pick
-Picks a random element from specified array.
+Picks a random element from a specified array.
 
 > (c *TRandomArray) Pick(value interface{}) interface{}
 
-- **values**: interface{} - an array of any type
-- **returns**: interface{} - a randomly picked item.
+- **values**: interface{} - array of any type
+- **returns**: interface{} - randomly picked item.
 
 ### Examples
 

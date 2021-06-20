@@ -20,15 +20,15 @@ Generates a random double value in the range ['minYear', 'maxYear'].
 
 - **min**: float64 - (optional) minimum range value
 - **max**: float64 - max range value
-- **returns**: float64 - a random double value.
+- **returns**: float64 - random double value.
 
 #### UpdateDouble
 Updates (drifts) a double value within specified range defined
 
 > (c *TRandomDouble) UpdateDouble(value float64, interval float64) float64
 
-- **value**: float64 - a double value to drift.
-- **interval**: float64 - (optional) a range. Default: 10% of the value
+- **value**: float64 - double value to drift.
+- **interval**: float64 - (optional) range. Default: 10% of the value
 - **returns**: float64 - updated double value.
 
 ### Examples

@@ -35,15 +35,15 @@ Creates a new instance and sets its values.
 <span class="hide-title-link">
 
 #### Token
-The start token
+Start token
 > **Token**: string
 
 #### Take
-The number of items to return.
+Number of items to return.
 > **Take**: *int64
 
 #### Total
-The flag to return the total number of items.
+Flag to return the total number of items.
 > **Total**: bool
 
 </span>
@@ -56,8 +56,8 @@ Gets the number of items to return in a page.
 
 > (c *TokenizedPagingParams) GetTake(maxTake int64) int64
 
-- **maxTake**: int64 - the maximum number of items to return.
-- **returns**: int64 - the number of items to return.
+- **maxTake**: int64 - maximum number of items to return.
+- **returns**: int64 - number of items to return.
 
 ### Methods
 
@@ -66,8 +66,8 @@ Creates a new TokenizedPagingParams and sets it parameters from the specified ma
 
 > NewTokenizedPagingParamsFromMap(value [*AnyValueMap](../any_value_map)) [*TokenizedPagingParams]()
 
-- **map**: [*AnyValueMap](../any_value_map) - a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
-- **returns**: [*TokenizedPagingParams]() - a newly created PagingParams.
+- **map**: [*AnyValueMap](../any_value_map) - AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
+- **returns**: [*TokenizedPagingParams]() - newly created PagingParams.
 
 
 #### NewTokenizedPagingParamsFromTuples
@@ -75,17 +75,17 @@ Creates a new TokenizedPagingParams from a list of key-value pairs called tuples
 
 > NewTokenizedPagingParamsFromTuples(tuples ...interface{}) [*TokenizedPagingParams]()
 
-- **tuples**: ...interface{} - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [TokenizedPagingParams]() - a newly created TokenizedPagingParams.
+- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **returns**: [TokenizedPagingParams]() - newly created TokenizedPagingParams.
 
 
 #### NewTokenizedPagingParamsFromValue
-Converts specified value into TokenizedPagingParams.
+Converts a specified value into TokenizedPagingParams.
 
 > NewTokenizedPagingParamsFromValue(value interface{}) [*TokenizedPagingParams]()
 
 - **value**: interface{} - value to be converted
-- **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
+- **returns**: [TokenizedPagingParams]() - newly created PagingParams.
 
 ### Examples
 

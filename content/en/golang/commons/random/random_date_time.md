@@ -25,7 +25,7 @@ This method generate dates without time (or time set to 00:00:00)
 
 - **min**: time.Time - (optional) minimum range value
 - **max**: time.Time - max range value
-- **returns**: time.Time - a random Date value.
+- **returns**: time.Time - random Date value.
 
 #### NextDateTime
 Generates a random Date and time in the range ['minYear', 'maxYear'].
@@ -35,16 +35,16 @@ This method generate dates without time (or time set to 00:00:00)
 
 - **min**: time.Time - (optional) minimum range value
 - **max**: time.Time - max range value
-- **returns**: time.Time - a random Date and time value.
+- **returns**: time.Time - random Date and time value.
 
 #### UpdateDateTime
 Updates (drifts) a Date value within specified range defined
 
 > (c *TRandomDateTime) UpdateDateTime(value time.Time, interval int64) time.Time
 
-- **value**: time.Time - a Date value to drift.
-- **range**: int64 - (optional) a range in milliseconds. Default: 10 days
-- **returns**: time.Time - an updated DateTime
+- **value**: time.Time - Date value to drift.
+- **range**: int64 - (optional) range in milliseconds. Default: 10 days
+- **returns**: time.Time - updated DateTime
 
 ### Examples
 

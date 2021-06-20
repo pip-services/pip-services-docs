@@ -29,12 +29,12 @@ Errors related to mistakes in user-defined configurations.
 > **Misconfiguration**: string = "Misconfiguration"
 	
 #### InvalidState
-Errors caused by incorrect object state.. 
+Errors caused by an incorrect object state.. 
 For example: business calls when the component is not ready.
 > **InvalidState**: string = "InvalidState"
 	
 #### NoResponse	
-Errors caused by remote calls timeouted and not returning results.
+Errors caused by remote calls timed out and not returning results.
 It allows to clearly separate communication related problems
 from other application errors.
 > **NoResponse**: string = "NoResponse"

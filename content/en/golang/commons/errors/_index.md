@@ -32,10 +32,10 @@ description: >
 ### Classes
 
 #### [ApplicationError](application_error)
-Defines a base class to defive various application exceptions.
+Defines a base class used to define various application exceptions.
 Most languages have own definition of base exception (error) types.
 However, this class is implemented symmetrically in all languages
-supported by PipServices toolkit. It allows to create portable implementations
+supported by the PipServices toolkit. It allows to create portable implementations
 and support proper error propagation in microservices calls.
 
 #### [ApplicationErrorFactory](application_error_factory)
@@ -57,16 +57,16 @@ Errors that occur during connections to remote services.
 They can be related to misconfiguration, network issues, or the remote service itself.
 
 #### [ErrorCategory](error_category)
-Defines standard error categories supported by PipServices toolkit.
+Defines standard error categories supported by the PipServices toolkit.
 
 #### [ErrorDescription](error_description)
-Serializeable error description. It is use to pass information about errors
-between microservices implemented in different languages. On the receiving side
-[ErrorDescription](error_description) is used to recreate exception object close to its original type
+Serializeable error description. It is used to pass information about errors
+between microservices implemented in different languages. On the receiving side, 
+[ErrorDescription](error_description) is used to recreate an exception object close to its original type
 without missing additional details.
 
 #### [ErrorDescriptionFactory](error_description_factory)
-Factory used to create serializeable [ErrorDescription](error_description) from
+Factory used to create serializeable a [ErrorDescription](error_description) from
 [ApplicationError](application_error) or from arbitrary errors.
 The ErrorDescriptions are used to pass errors through the wire between microservices
 implemented in different languages. They allow to restore exceptions on the receiving side

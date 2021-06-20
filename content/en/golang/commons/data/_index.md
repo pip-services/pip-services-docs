@@ -46,32 +46,32 @@ It is a common pattern to use the time of change as the object version.
 ### Classes
 
 #### [AnyValue](any_value)
-Cross-language implementation of dynamic object what can hold value of any type.
-The stored value can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object that can hold a value of any type.
+The stored value can be converted to different types using a variety of accessor methods.
 
 
 #### [AnyValueArray](any_value_array)
-Cross-language implementation of dynamic object array what can hold values of any type.
-The stored values can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object array that can hold values of any type.
+The stored values can be converted to different types using a variety of accessor methods.
 
 #### [AnyValueMap](any_value_map)
-Cross-language implementation of dynamic object map (dictionary) what can hold values of any type.
-The stored values can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object map (dictionary) that can hold values of any type.
+The stored values can be converted to different types using a variety of accessor methods.
 
 #### [DataPage](data_page)
 Data transfer object that is used to pass results of paginated queries.
-It contains items of retrieved page and optional total number of items.
+It contains items of the retrieved page and (optional) the total number of items.
 Most often this object type is used to send responses to paginated queries.
-Pagination parameters are defined by [PagingParams](PagingParams) object.
-The *skip* parameter in the PagingParams there means how many items to skip.
-The *takes* parameter sets number of items to return in the page.
-And the optional *total* parameter tells to return total number of items in the query.
+Pagination parameters are defined by the [PagingParams](PagingParams) object.
+The *skip* parameter in the PagingParams indicates how many items to skip.
+The *takes* parameter sets the number of items to return in the page.
+And the optional *total* parameter tells to return the total number of items in the query.
 
 #### [FilterParams](filter_params)
 Data transfer object used to pass filter parameters as simple key-value pairs.
 
 #### [IdGenerator](id_generator)
-Helper class to generate unique object IDs.
+Helper class used to generate unique object IDs.
 It supports two types of IDs: long and short. 
 Long IDs are string GUIDs. They are globally unique and 32-character long. 
 ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
@@ -83,7 +83,7 @@ When a translation for specified language does not exist it defaults to English 
 When English does not exist it falls back to the first defined language.
 
 #### [PagingParams](paging_params)
-Data transfer object to pass paging parameters for queries.
+Data transfer object used to pass paging parameters for queries.
 The page is defined by two parameters:
 - the *skip* parameter defines number of items to skip.
 - the *take* parameter sets how many items to return in a page.
@@ -91,7 +91,7 @@ The page is defined by two parameters:
 
 
 #### [ProjectionParams](projection_params)
-Defines projection parameters with list if fields to include into query results.
+Defines projection parameters with a list of the fields to include into query results.
 The parameters support two formats: dot format and nested format.
 The dot format is the standard way to define included fields and subfields using
 dot object notation: *"field1,field2.field21,field2.field22.field221"*
@@ -106,7 +106,7 @@ Defines a list of field names used to sort query results.
 
 #### [StringValueMap](string_value_map)
 Cross-language implementation of a map (dictionary) where all keys and values are strings.
-The stored values can be converted to different types using variety of accessor methods.
+The stored values can be converted to different types using a variety of accessor methods.
 The string map is highly versatile. It can be converted into many formats, stored and 
 sent over the wire.
 
@@ -117,9 +117,9 @@ like "This text has #hash_tag that can be used for search."
 
 
 #### [TokenizedDataPage](tokenized_data_page)
-Data transfer object that is used to pass results of paginated queries.
-It contains items of a retrieved page and total number of items (optional ).
-Most often this object type is used to send responses to paginated queries.
+Data transfer object that is used to pass the results of paginated queries.
+It contains items of a retrieved page and (optional) a total number of items .
+Most often, this object type is used to send responses to paginated queries.
 
 #### [TokenizedPagingParams](tokenized_paging_params)
 Data transfer object to pass tokenized paging parameters for queries.

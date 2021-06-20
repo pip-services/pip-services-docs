@@ -28,8 +28,8 @@ Updates (drifts) a float value within specified range defined
 
 > (c *TRandomFloat) UpdateFloat(value float32, interval float32) float32
 
-- **value**: float32 - a float value to drift.
-- **range**: float32 - (optional) a range. Default: 10% of the value
+- **value**: float32 - float value to drift.
+- **range**: float32 - (optional) range. Default: 10% of the value
 - **returns**: float32 - updated float value.
 
 ### Examples

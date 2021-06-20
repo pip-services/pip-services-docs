@@ -7,7 +7,7 @@ description: >
     Errors in read/write local disk operations.
 ---
 
-The FileError class is used to manage errors in read/write local disk operations.
+The FileError class is used to manage errors in read/write local disk operations. 
 
 
 ### Constructors

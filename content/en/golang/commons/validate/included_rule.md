@@ -20,7 +20,7 @@ Creates a new validation rule and sets its values.
 
 > NewIncludedRule(values ...interface{}) [*IncludedRule]()
 
-- **values**: ...interface{} - a list of constants that value must be included to
+- **values**: ...interface{} - list of constants that value must be included to
 
 ### Methods
 
@@ -30,10 +30,10 @@ Validates a given value against this rule.
 
 > (c [*IncludedRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [ISchema](../ischema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [ISchema](../ischema) - schema this rule is called from
+- **value**: any - value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 
 ### Examples

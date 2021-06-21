@@ -23,7 +23,7 @@ Creates a new validation rule and sets its values.
 
 > NewAndRule(rules ...[IValidationRule](../ivalidation_rule)) [*AndRule]()
 
-- **rules**: ...[IValidationRule](../ivalidation_rule) - a list of rules to join with AND operator
+- **rules**: ...[IValidationRule](../ivalidation_rule) - list of rules to join with AND operator
 
 ### Methods
 
@@ -32,10 +32,10 @@ Validates a given value against this rule.
 
 > (c [*AndRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../ivalidation_rule)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [ISchema](../ischema) - a schema this rule is called from
-- **value**: interface{} - a value to be validated.
-- **results**: [][*ValidationResult](../ivalidation_rule) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [ISchema](../ischema) - schema this rule is called from
+- **value**: interface{} - value to be validated.
+- **results**: [][*ValidationResult](../ivalidation_rule) - list with validation results to add new results.
 
 ### Example
 ```go

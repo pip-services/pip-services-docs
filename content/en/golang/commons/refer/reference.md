@@ -24,8 +24,8 @@ Create a new instance of the reference object and assigns its values.
 
 > NewReference(locator interface{}, component interface{}) [*Reference]()
 
-- **locator**: interface{} - a locator to find the reference. 
-- **component**: interface{} - a reference to component.
+- **locator**: interface{} - locator to find the reference. 
+- **component**: interface{} - reference to a component.
 
 ###  Methods
 
@@ -34,7 +34,7 @@ Gets the stored component reference.
 
 > (c *Reference) Component() interface{}
 
-- **returns**: interface{} - the component's references.
+- **returns**: interface{} - component's references.
 
 
 #### Locator
@@ -42,7 +42,7 @@ Gets the stored component locator.
 
 > (c *Reference) Locator() interface{}
 
-- **returns**: interface{} - the component's locator.
+- **returns**: interface{} - component's locator.
 
 #### Match
 Matches locator to this reference locator.

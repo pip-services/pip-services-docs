@@ -32,8 +32,8 @@ Opens the component.
 
 > Open(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: error - return error if not opened
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error returned if not opened
 
 ### Examples
 

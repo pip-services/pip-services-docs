@@ -21,17 +21,17 @@ Important points
 
 #### CopyProperties
 Copies content of one object to another object
-by recursively reading all properties from source object
-and then recursively writing them to destination object.
+by recursively reading all properties from a source object
+and then recursively writing them to a destination object.
 
 > (c *TRecursiveObjectWriter) CopyProperties(dest interface{}, src interface{})
 
-- **dest**: interface{} - a destination object to write properties to.
-- **src**: interface{} - a source object to read properties from
+- **dest**: interface{} - destination object to write properties to.
+- **src**: interface{} - source object to read properties from
 
 
 #### SetProperties
-Recursively sets values of some (all) object and its subobjects properties.
+Recursively sets values of some (all) object's and its subobjects' properties.
 
 The object can be a user defined object, map or array.
 Property values correspondently are object properties,
@@ -42,25 +42,25 @@ they are just silently skipped and no errors thrown.
 
 > (c *TRecursiveObjectWriter) SetProperties(obj interface{}, values map[string]interface{})
 
-- **obj**: interface{} - an object to write properties to. 
-- **values**: map[string]interface{} - a map, containing property names and their values.
+- **obj**: interface{} - object to write properties to. 
+- **values**: map[string]interface{} - map containing property names and their values.
 
 
 #### SetProperty
-Recursively sets value of object and its subobjects property specified by its name.
+Recursively sets value of an object's and its subobjects' property specified by its name.
 
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
+The property name correspondently must be an object property,
 map key or array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value interface{})
 
-- **obj**: interface{} - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: interface{} - a new value for the property to set.
+- **obj**: interface{} - object to write a property to.
+- **name**: string - name of the property to set.
+- **value**: interface{} - new value for the property to set.
 
 
 

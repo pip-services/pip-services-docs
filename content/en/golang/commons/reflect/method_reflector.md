@@ -19,20 +19,20 @@ Important points
 ### Methods
 
 #### GetMethodNames
-Gets names of all methods implemented in specified object.
+Gets the names of all methods implemented in specified object.
 
 > (c *TMethodReflector) GetMethodNames(obj interface{}) []string
 
-- **obj**: interface{} - an objec to introspect.
-- **returns**: []string - a list with method names.
+- **obj**: interface{} - objec to introspect.
+- **returns**: []string - list with method names.
 
 #### HasMethod
-Checks if object has a method with specified name..
+Checks if an object has a method with a specified name..
 
 > (c *TMethodReflector) HasMethod(obj interface{}, name string) bool
 
-- **obj**: interface{} - an object to introspect.
-- **name**: string - a name of the method to check.
+- **obj**: interface{} - object to introspect.
+- **name**: string - name of the method to check.
 - **returns**: bool - true if the object has the method and false if it doesn't.
 
 #### InvokeMethod
@@ -40,10 +40,10 @@ Invokes an object method by its name with specified parameters.
 
 > (c *TMethodReflector) InvokeMethod(obj interface{}, name string, args ...interface{}) interface{}
 
-- **obj**: interface{} - an object to invoke.
-- **name**: string -a name of the method to invoke.
-- **args**: ...interface{} - a list of method arguments.
-- **returns**: interface{} - the result of the method invocation or nil if method returns void.
+- **obj**: interface{} - object to invoke.
+- **name**: string - name of the method to invoke.
+- **args**: ...interface{} - list of method arguments.
+- **returns**: interface{} - result of the method invocation or nil if the method returns void.
 
 ### Examples
 

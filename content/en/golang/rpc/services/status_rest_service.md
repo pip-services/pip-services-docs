@@ -75,7 +75,7 @@ Sets references to dependent components.
 
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
-### Register
+#### Register
 Registers all service routes in HTTP endpoint.
 
 > (c [*StatusRestService]()) Register()

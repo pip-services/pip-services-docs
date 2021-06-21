@@ -19,20 +19,20 @@ Creates a new validation rule and sets its values
 
 > NewExcludedRule(values ...interface{}) [*ExcludedRule]()
 
-- **values**: ...interface{} - a list of constants that value must be excluded from
+- **values**: ...interface{} - list of values that must be excluded from a list of constants
 
 ### Methods
 
 #### Validate
-Validates the given value. nil of the values set in this ExcludedRule object must exist 
+Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
 > (c [*ExcludedRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - the dot notation path to the value that is to be validated.
+- **path**: string - dot notation path to the value that is to be validated.
 - **schema**: [ISchema](../ischema) - (not used in this implementation).
-- **value**: interface{} - the value that is to be validated.
-- **results**: [][*ValidationResult](../validation_result) - the results of the validation.
+- **value**: interface{} - value that is to be validated.
+- **results**: [][*ValidationResult](../validation_result) - results of the validation.
 
 ### Examples
 

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "ISchema"
-linkTitle: "ISchema"
+title: "ISchemaBase"
+linkTitle: "ISchemaBase"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: >
     TODO: add description

@@ -146,9 +146,10 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **get_one_random** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> get_one_random(correlation_id: Optional[str]): T
+> get_one_random(correlation_id: Optional[str], filter: Any = None): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **filter**: Any - (optional) a filter function to filter items.
 - **returns**: T - random item.
 
 

@@ -267,7 +267,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### getOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public **get_one_random** method from a child class
+This method shall be called by a public **getOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>

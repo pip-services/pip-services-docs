@@ -139,12 +139,13 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### getOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public **get_one_random** method from a child class
+This method shall be called by a public **getOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> `protected` getOneRandom(correlationId: string): Promise\<T\>
+> `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **filter**: any - (optional) a filter function to filter items.
 - **returns**: Promise\<T\> - random item.
 
 
@@ -167,7 +168,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### isOpen
 Checks if the component is open.
 
-> is_open(): boolean
+> isOpen(): boolean
 
 - **returns**: boolean - True if the component is open and False otherwise.
 

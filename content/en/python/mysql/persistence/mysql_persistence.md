@@ -268,7 +268,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > get_one_random(correlation_id: Optional[str], filter: Any): T
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-filter: Any
+- **filter**: Any - (optional) a filter function to filter items.
 - **returns**: T - a random item.
 
 

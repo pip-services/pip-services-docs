@@ -19,7 +19,7 @@ Creates a new validation rule and sets its values
 
 > NewAtLeastOneExistsRule(properties ...string) [*AtLeastOneExistsRule]()
 
-- **properties**: ...string - a list of property names where at least one property must exist
+- **properties**: ...string - list of property names where at least one property must exist
 
 ### Methods
 
@@ -28,10 +28,10 @@ Validates a given value against this rule.
 
 > (c [*AtLeastOneExistsRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [ISchema](../ischema) - a schema this rule is called from
-- **value**: interface{} - a value to be validated.
-- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [ISchema](../ischema) - schema this rule is called from
+- **value**: interface{} - value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 ### Examples
 ```go

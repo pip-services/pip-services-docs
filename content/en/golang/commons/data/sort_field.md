@@ -19,7 +19,7 @@ Creates a new instance and assigns its values.
 > NewSortField(name string, ascending bool) [SortField]() 
 
 - **name**: string - the name of the field to sort by.
-- **ascending**: boolean - true to sort in ascending order, and false to sort in descending order. 
+- **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
 
 
 #### NewEmptySortField

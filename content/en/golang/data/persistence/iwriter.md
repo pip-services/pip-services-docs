@@ -11,7 +11,7 @@ description: >
 
 The IWriter interface is used by data processng components that can create, update and delete data items.
 
-### Instance methods
+### Methods
 
 #### Create
 Creates a data item.

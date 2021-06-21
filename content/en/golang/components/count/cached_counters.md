@@ -48,7 +48,7 @@ A dictionary containing the cached values.
 
 #### updated
 A boolean value that indicates whether the counter has been updated or not.
-> **updated**: boolean
+> **updated**: bool
 
 #### lastDumpTime
 Time of the last dump.

@@ -197,7 +197,7 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 
 > (c [*ConnectionParams]()) UseDiscovery() bool
 
-- **returns**: boolean - true if connection shall be retrieved from DiscoveryService
+- **returns**: bool - true if connection shall be retrieved from DiscoveryService
 
 
 

@@ -36,7 +36,7 @@ the elements to a newly created AnyValueArray.
 
 - **values**: string - string value to be split and assigned to AnyValueArray
 - **separator**: string - separator used to split the string
-- **removeDuplicates**: boolean - (optional) true to remove duplicated elements
+- **removeDuplicates**: bool - (optional) true to remove duplicated elements
 - **returns**: [*AnyValueArray](../any_value_array) - newly created AnyValueArray.
 
 #### NewAnyValueArrayFromValues

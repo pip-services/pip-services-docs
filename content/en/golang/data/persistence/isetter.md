@@ -11,7 +11,7 @@ description: >
 
 The ISetter interface is used by data processing components that can set (create or update) data items.
 
-### Instance methods
+### Methods
 
 #### Set
 Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.

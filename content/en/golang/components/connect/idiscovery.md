@@ -11,7 +11,7 @@ description: >
 
 The IDiscovery interface is used to create discovery services which are used to store and resolve connection parameters used to connect to external services.
 
-### Instance methods
+### Methods
 
 #### Register
 Registers connection parameters into the discovery service.

@@ -76,7 +76,7 @@ Primitive types are: numbers, strings, booleans, date and time.
 Complex (non-primitive types are): objects, maps and arrays.  
 See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode), [TypeCode](../../convert/type_code)
 
-> `public static` isPrimitive(value: any): boolean 
+> `public static` isPrimitive(value: any): bool 
 
 - **value**: any - value to check
 - **returns**:boolean - true if the value has primitive type and false if value type is complex.

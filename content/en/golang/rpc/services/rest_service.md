@@ -79,7 +79,7 @@ Service's configuration paramters.
 
 #### SwaggerEnable
 Boolean that defines if the Swagger sevice is enabled or not.
-> **SwaggerEnable**: boolean = false
+> **SwaggerEnable**: bool = false
 
 #### SwaggerRoute
 Swagger's route.

@@ -27,7 +27,7 @@ See [IValidationRule](../ivalidation_rule)
 
 > NewSchemaWithRules(required bool, rules [][IValidationRule](../ivalidation_rule)) [*Schema]()
 
-- **required**: boolean - (optional) true to always require non-nil values.
+- **required**: bool - (optional) true to always require non-nil values.
 - **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
 
 #### InheritSchema
@@ -65,7 +65,7 @@ For nil values it raises a validation error.
 
 > (c [*Schema]()) Required() bool
 
-- **returns**: boolean - true to always require non-nil values and false to allow nil values.
+- **returns**: bool - true to always require non-nil values and false to allow nil values.
 
 #### MakeOptional
 Makes validated values optional.

@@ -45,11 +45,11 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 Matches expected type to a type of a value.
 The expected type can be specified by a type, type name or [TypeCode](../../convert/type_code).
 
-> `public static` matchValueType(expectedType: any, actualValue: any): boolean
+> `public static` matchValueType(expectedType: any, actualValue: any): bool
 
 - **expectedType**: any - expected type to match.
 - **actualValue**: any -  value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
 #### MatchValueTypeByName!
@@ -57,11 +57,11 @@ The expected type can be specified by a type, type name or [TypeCode](../../conv
 
 Matches expected type to a type of a value.
 
-> `public static` matchValueTypeByName(expectedType: string, actualValue: any): boolean
+> `public static` matchValueTypeByName(expectedType: string, actualValue: any): bool
 
 - **expectedType**: any - expected type name to match.
 - **actualValue**: any -  value to match its type to the expected one.
-- **returns**: boolean - true if types are matching and false if they don't.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
 ### See also

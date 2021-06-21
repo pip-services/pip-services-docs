@@ -71,7 +71,7 @@ Maximum amount of items per page.
 #### Clear
 Clears the component's state.
 
-> (c *MemoryPersistence) Clear(correlationId string) error
+> (c [*MemoryPersistence]()) Clear(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not cleaned
@@ -80,7 +80,7 @@ Clears the component's state.
 #### Create
 Creates a data item.
 
-> (c *MemoryPersistence) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*MemoryPersistence]()) Create(correlationId string, item interface{}) (result interface{}, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **item**: interface{} - item to be created.
@@ -92,7 +92,7 @@ Deletes data items that match to a given filter.
 This method shall be called by a public **DeleteByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MemoryPersistence) DeleteByFilter(correlationId string, filterFunc func(interface{}) bool) (err error)
+> (c [*MemoryPersistence]()) DeleteByFilter(correlationId string, filterFunc func(interface{}) bool) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filterFunc**: func(interface{}) bool - (optional) filter function used to filter items.
@@ -105,7 +105,7 @@ Gets the number of items retrieved by a given filter.
 This method shall be called by a public **GetCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MemoryPersistence) GetCountByFilter(correlationId string, filterFunc func(interface{}) bool) (count int64, err error)
+> (c [*MemoryPersistence]()) GetCountByFilter(correlationId string, filterFunc func(interface{}) bool) (count int64, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filterFunc**: func(interface{}) bool -  id of the item to be deleted
@@ -118,7 +118,7 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MemoryPersistence) GetListByFilter(correlationId string, filterFunc func(interface{}) bool, sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (results []interface{}, err error)
+> (c [*MemoryPersistence]()) GetListByFilter(correlationId string, filterFunc func(interface{}) bool, sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (results []interface{}, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filterFunc**: func(interface{}) bool - (optional) filter function used to filter items
@@ -133,7 +133,7 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **GetOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MemoryPersistence) GetOneRandom(correlationId string, filterFunc func(interface{}) bool) (result interface{}, err error)
+> (c [*MemoryPersistence]()) GetOneRandom(correlationId string, filterFunc func(interface{}) bool) (result interface{}, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filterFunc**: func(interface{}) bool - (optional) a filter function to filter items.
@@ -146,7 +146,7 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **GetPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MemoryPersistence) GetPageByFilter(correlationId string, filterFunc func(interface{}) bool, paging [*cdata.PagingParams](../../../commons/data/paging_params), sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (page [*cdata.DataPage](../../../commons/data/data_page), err error)
+> (c [*MemoryPersistence]()) GetPageByFilter(correlationId string, filterFunc func(interface{}) bool, paging [*cdata.PagingParams](../../../commons/data/paging_params), sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (page [*cdata.DataPage](../../../commons/data/data_page), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filterFunc**: func(interface{}) bool - filter function used to filter items
@@ -159,7 +159,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### IsOpen
 Checks if the component is open.
 
-> (c *MemoryPersistence) IsOpen() bool
+> (c [*MemoryPersistence]()) IsOpen() bool
 
 - **returns**: bool - True if the component is open and False otherwise.
 
@@ -167,7 +167,7 @@ Checks if the component is open.
 #### Load
 Loads items.
 
-> (c *MemoryPersistence) load(correlationId string) error
+> (c [*MemoryPersistence]()) load(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not loaded
@@ -176,7 +176,7 @@ Loads items.
 #### Open
 Opens the component.
 
-> (c *MemoryPersistence) Open(correlationId string) error
+> (c [*MemoryPersistence]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not opened
@@ -185,7 +185,7 @@ Opens the component.
 #### Save
 Saves items to an external data source using a configured saver component.
 
-> (c *MemoryPersistence) Save(correlationId string) error
+> (c [*MemoryPersistence]()) Save(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not saved
@@ -194,7 +194,7 @@ Saves items to an external data source using a configured saver component.
 #### SetReferences
 Sets the component's references. References must match configured dependencies.
 
-> (c *MemoryPersistence) SetReferences(references [refer.IReferences](../ireferences))
+> (c [*MemoryPersistence]()) SetReferences(references [refer.IReferences](../ireferences))
 
 - **references**: [refer.IReferences](../ireferences) - references to set.
 

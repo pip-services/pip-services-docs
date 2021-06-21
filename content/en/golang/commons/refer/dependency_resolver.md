@@ -68,7 +68,7 @@ Finds all matching dependencies by their name.
 
 > (c *DependencyResolver) Find(name string, required bool) ([]interface{}, error)
 
-- **name**: string - the dependency name to locate.
+- **name**: string - dependency name to locate.
 - **required**: bool - true to raise an exception when no dependencies are found.
 - **returns**: ([]interface{}, error) - list of found dependencies
 
@@ -87,7 +87,7 @@ If the dependency was found it throws a [ReferenceError](../reference_error)
 
 > (c [*DependencyResolver]()) GetOneRequired(name string) (interface{}, error)
 
-- **name**: string - the dependency name to locate.
+- **name**: string - dependency name to locate.
 - **returns**: (interface{}, error) - dependency reference
 
 #### GetOptional
@@ -101,7 +101,7 @@ Gets all optional dependencies by their name.
 #### GetRequired
 Gets all required dependencies by their name.
 At least one dependency must be present.
-If no dependencies was found it throws a [ReferenceError](../reference_error)
+If no dependencies were found it throws a [ReferenceError](../reference_error)
 
 > (c [*DependencyResolver]()) GetRequired(name string) ([]interface{}, error)
 

@@ -32,11 +32,11 @@ Creates a new instance of the descriptor.
 
 > NewDescriptor(group string, typ string, kind string, name string, version string) [*Descriptor]()
 
-- **group**: string - a logical component group
-- **typ**: string - a logical component type or contract
-- **kind**: string - a component implementation type
-- **name**: string - a unique component name
-- **version**: string - a component implementation version
+- **group**: string - logical component group
+- **typ**: string - logical component type or contract
+- **kind**: string - component implementation type
+- **name**: string - unique component name
+- **version**: string - component implementation version
 
 
 ### Methods
@@ -48,7 +48,7 @@ otherwise the method returns false.
 
 > (c [*Descriptor]()) Equals(value interface{}) bool
 
-- **value**: interface{} - the value to match against this descriptor.
+- **value**: interface{} - value to match against this descriptor.
 - **returns**: bool - true if the value is matching descriptor and false otherwise.
 
 #### ExactMatch
@@ -57,7 +57,7 @@ No exceptions are made.
 
 > (c [*Descriptor]()) ExactMatch(descriptor [*Descriptor]()) bool
 
-- **descriptor**: [*Descriptor]() - the descriptor to match this one against.
+- **descriptor**: [*Descriptor]() - descriptor to match this one against.
 - **returns**: bool - true if descriptors match and false otherwise. 
 
 
@@ -66,14 +66,14 @@ Gets the component's logical group.
 
 > (c [*Descriptor]()) Group() string
 
-- **returns**: string - the component's logical group
+- **returns**: string - component's logical group
 
 #### Kind
 Gets the component's implementation type.
 
 > (c [*Descriptor]()) Kind() string
 
-- **returns**: string - the component's implementation type.
+- **returns**: string - component's implementation type.
     
 
 #### Name
@@ -81,14 +81,14 @@ Gets the unique component's name.
 
 > (c [*Descriptor]()) Name() string
 
-- **returns**: string - the unique component's name.
+- **returns**: string - unique component's name.
 
 #### Version
 Gets the component's implementation version.
 
 > (c [*Descriptor]()) Version() string
 
-- **returns**: string - the component's implementation version.
+- **returns**: string - component's implementation version.
 
 #### IsComplete
 Checks whether all descriptor fields are set.
@@ -104,7 +104,7 @@ Fields that contain "*" or nil are excluded from the match.
 
 > (c [*Descriptor]()) Match(descriptor [*Descriptor]()) bool
 
-- **descriptor**: [*Descriptor]() the descriptor to match this one against.
+- **descriptor**: [*Descriptor]() descriptor to match this one against.
 - **returns**: bool - true if descriptors match and false otherwise
 
 
@@ -115,7 +115,7 @@ Throws a [ConfigError](../../errors/config_error) if the descriptor string is of
 > ParseDescriptorFromString(value string) ([*Descriptor](), error)
 
 - **value**: string - colon-separated descriptor fields to initialize Descriptor.
-- **returns**: [*Descriptor]() - a newly created Descriptor.
+- **returns**: [*Descriptor]() - newly created Descriptor.
 
 
 #### String
@@ -125,7 +125,7 @@ The result is a colon-separated list of descriptor fields as
 
 > (c [*Descriptor]()) String() string
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 
 ### Examples

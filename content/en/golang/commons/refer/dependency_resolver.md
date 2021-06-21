@@ -46,7 +46,7 @@ where key is dependency name and value the depedency locator (descriptor).
 
 > NewDependencyResolverFromTuples(tuples ...interface{}) [*DependencyResolver]()
 
-- **tuples**: ...interface{} - a list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
+- **tuples**: ...interface{} - list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
 
 #### NewDependencyResolver
 Creates a new instance of the dependency resolver.
@@ -70,15 +70,15 @@ Finds all matching dependencies by their name.
 
 - **name**: string - the dependency name to locate.
 - **required**: bool - true to raise an exception when no dependencies are found.
-- **returns**: ([]interface{}, error) - a list of found dependencies
+- **returns**: ([]interface{}, error) - list of found dependencies
 
 #### GetOneOptional
 Gets one optional dependency by its name.
 
 > (c [*DependencyResolver]()) GetOneOptional(name string) interface{}
 
-- **name**: string - the dependency name to locate.
-- **returns**: interface{} - a dependency reference or nil of the dependency was not found
+- **name**: string - dependency name to locate.
+- **returns**: interface{} - dependency reference or nil of the dependency was not found
 
 #### GetOneRequired
 Gets one required dependency by its name.
@@ -88,15 +88,15 @@ If the dependency was found it throws a [ReferenceError](../reference_error)
 > (c [*DependencyResolver]()) GetOneRequired(name string) (interface{}, error)
 
 - **name**: string - the dependency name to locate.
-- **returns**: (interface{}, error) - a dependency reference
+- **returns**: (interface{}, error) - dependency reference
 
 #### GetOptional
 Gets all optional dependencies by their name.
 
 > (c [*DependencyResolver]()) GetOptional(name string) []interface{}
 
-- **name**: string - the dependency name to locate.
-- **returns**: []interface{} - a list with found dependencies or empty list of no dependencies was found.
+- **name**: string - dependency name to locate.
+- **returns**: []interface{} - list with found dependencies or empty list of no dependencies was found.
 
 #### GetRequired
 Gets all required dependencies by their name.
@@ -105,16 +105,16 @@ If no dependencies was found it throws a [ReferenceError](../reference_error)
 
 > (c [*DependencyResolver]()) GetRequired(name string) ([]interface{}, error)
 
-- **name**: string - the dependency name to locate.
-- **returns**: ([]interface{}, error) - a list with found dependencies.
+- **name**: string - dependency name to locate.
+- **returns**: ([]interface{}, error) - list with found dependencies.
 
 #### Put
 Adds a new dependency into this resolver.
 
 > (c [*DependencyResolver]()) Put(name string, locator interface{})
 
-- **name**: string - the dependency's name.
-- **locator**: interface{} - the locator to find the dependency by.
+- **name**: string - dependency's name.
+- **locator**: interface{} - locator to find the dependency by.
 
 #### SetReferences
 Sets the component references. References must match configured dependencies.

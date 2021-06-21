@@ -2,12 +2,10 @@
 type: docs
 title: "HttpEndpoint"
 linkTitle: "HttpEndpoint"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
 description: >
     Used for creating HTTP endpoints. 
 ---
-
-**Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 
@@ -40,111 +38,104 @@ following references to the object's [set_references](#set_references) method:
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
 
+### Constructors
 
-### Instance methods
+#### NewHttpEndpoint
+NewHttpEndpoint creates new HttpEndpoint
 
-#### close
+> NewHttpEndpoint() [*HttpEndpoint]()
+
+### Methods
+
+#### Close
 Closes this endpoint and the REST server (service) that was opened earlier.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*HttpEndpoint]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - returns error if not closed
 
 
-#### configure
+#### Configure
 Configures this HttpEndpoint using the given configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*HttpEndpoint]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
-
-
-#### getCorrelationId
-Returns correlationId from request
-
-> `public` getCorrelationId(): string
-
-- **returns**: string - http response to the request.
+- **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> (c [*HttpEndpoint]()) IsOpen() bool
 
-- **returns**: boolean - whether or not this endpoint is open with an actively listening REST server.
+- **returns**: bool - whether or not this endpoint is open with an actively listening REST server.
 
 
-#### register
+#### Register
 Registers a registerable object for dynamic endpoint discovery.
 
-> `public` register(registration: [IRegisterable](../../services/iregisterable)): void
+> (c [*HttpEndpoint]()) Register(registration [IRegisterable](../../services/iregisterable))
 
 - **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
 
 
-#### registerInterceptor
+#### RegisterInterceptor
 Registers a middleware action for the given route.
 
-> `public` registerInterceptor(route: string, action: (req: any, res: any, next: () => void) => void): void
+> (c [*HttpEndpoint]()) RegisterInterceptor(route string, action func(w http.ResponseWriter, r *http.Request, next http.HandlerFunc))
 
 - **route**: string - route to register in this object's REST server (service).
-- **action**: (req: any, res: any, next: () => void) => void - middleware action to perform at the given route.
+- **action**: func(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) - middleware action to perform at the given route.
 
 
-#### registerRoute
+#### RegisterRoute
 Registers an action in this objects REST server (service) by the given method and route.
 
-> `public` registerRoute(method: string, route: string, schema: [Schema](../../../commons/validate/schema), action: (req: any, res: any) => void): void
+> (c [*HttpEndpoint]()) RegisterRoute(method string, route string, schema [*cvalid.Schema](../../../commons/validate/schema), action http.HandlerFunc)
 
 - **method**: string - HTTP method of the route.
 - **route**: string - route to register in this object's REST server (service).
-- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: (req: any, res: any) => void - action to perform at the given route.
+- **schema**: [*cvalid.Schema](../../../commons/validate/schema) - schema to use for parameter validation.
+- **action**: http.HandlerFunc - action to perform at the given route.
 
 
-#### registerRouteWithAuth
+#### RegisterRouteWithAuth
 Registers an action with authorization in this objects REST server (service)
 by the given method and route.
 
-> `public` registerRouteWithAuth(method: string, route: string, schema: Schema, authorize: (req: any, res: any, next: () => void) => void, action: (req: any, res: any) => void): void
+> (c [*HttpEndpoint]()) RegisterRouteWithAuth(method string, route string, schema [*cvalid.Schema](../../../commons/validate/schema), authorize func(w http.ResponseWriter, r *http.Request, next http.HandlerFunc), action http.HandlerFunc)
 
 - **method**: string - HTTP method of the route.
 - **route**: string - route to register in this object's REST server (service).
-- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **authorize**: (req: any, res: any, next: () => void) => void - authorization interceptor
-- **action**: (req: any, res: any) => void - action to perform at the given route.
+- **schema**: [*cvalid.Schema](../../../commons/validate/schema) - schema to use for parameter validation.
+- **authorize**: func(w http.ResponseWriter, r *http.Request, next http.HandlerFunc) - authorization interceptor
+- **action**: http.HandlerFunc - action to perform at the given route.
 
 
-#### setReferences
+#### SetReferences
 Sets references to this endpoint's logger, counters, and connection resolver.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*HttpEndpoint]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
+- **references**: [crefer.IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
 
 
-#### unregister
+#### Unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> `public` unregister(registration: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*HttpEndpoint]()) Unregister(registration [IRegisterable](../services/iregisterable))
 
 - **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
 
 ### Examples
 
-```typescript
-public MyMethod(_config: ConfigParams, _references: IReferences) {
-    let endpoint = new HttpEndpoint();
-    if (this._config)
-        endpoint.configure(this._config);
-    if (this._references)
-        endpoint.setReferences(this._references);
-    ...
-    await this._endpoint.open(correlationId);
-    this._opened = true;
-    ...
-}
+```go
+endpoint := NewHttpEndpoint();
+endpoint.Configure(config);
+endpoint.SetReferences(references);
+...
+endpoint.Open(correlationId)
 ```
 
 ### See also

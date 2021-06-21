@@ -36,10 +36,6 @@ Important points
 
 <span class="hide-title-link">
 
-#### _counters
-A list of counters.
-> **_counters**: List[[ICounters](../icounters)] = []
-
 #### _controller
 The controller reference.
 > **_controller**: Any
@@ -51,10 +47,6 @@ The open flag.
 #### _logger
 The logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
-
-#### _tracer
-The tracer.
-> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
 
 #### _counters
 The performance counters

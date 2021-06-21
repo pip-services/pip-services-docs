@@ -127,9 +127,9 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 #### unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> unregister(registration: [IReferences](../../../commons/refer/ireferences))
+> unregister(registration: [IRegisterable](../services/iregisterable))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - registration to remove.
+- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
 
 ### Examples
 

@@ -17,7 +17,7 @@ Creates a new instance of the service.
 > `public` constructor(baseRoute: string, config: [ConfigParams](../../../commons/config/config_params), commands: [ICommand](../../../commons/commands/icommand)[])
 
 - **baseRoute**: string - base route of the service
-- **config**: [ConfigParams](../../../commons/config/config_params) - 
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters 
 - **commands**: [ICommand](../../../commons/commands/icommand)[] - list of commmands.
 
 ### Fields

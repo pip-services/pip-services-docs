@@ -2,7 +2,7 @@
 type: docs
 title: "HttpRequestDetector"
 linkTitle: "HttpRequestDetector"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
 description: >
     Helper class that retrieves parameters from HTTP requests.
 ---
@@ -11,50 +11,50 @@ description: >
 
 The HttpRequestDetector class allows you to retrieve parameters from HTTP requests. 
 
-### Static methods
+### Methods
 
-#### detectAddress
+#### DetectAddress
 Detects the IP address from where the given HTTP request was received.
 
-> `static` detectAddress(req: any): string
+> (c *THttpRequestDetector) DetectAddress(req *http.Request) string
 
-- **req**: any - HTTP request to process.
-- **returns**: string - detected IP address (without a port). If no IP is detected - *null* will be returned.
+- **req**: *http.Request - HTTP request to process.
+- **returns**: string - detected IP address (without a port). If no IP is detected - *nil* will be returned.
 
 
-#### detectBrowser
+#### DetectBrowser
 Detects the browser (using "user-agent") from where the given HTTP request was made.
 
-> `static` detectBrowser(req: any) -> string
+> (c *THttpRequestDetector) DetectBrowser(req *http.Request) string
 
-- **req**: any - HTTP request to process.
+- **req**: *http.Request - HTTP request to process.
 - **returns**: string - detected browser. Detectable browsers: "chrome", "msie", "firefox", "safari". Otherwise - "unknown" will be returned.
 
 
-#### detectPlatform
+#### DetectPlatform
 Detects the platform (using "user-agent") from which the given HTTP request was made.
 
-> `static` detectPlatform(req: any): string
+> (c *THttpRequestDetector) DetectPlatform(req *http.Request) string
 
-- **req**: any - HTTP request to process.
+- **req**: *http.Request - HTTP request to process.
 - **returns**: string - detected platform and version. Detectable platforms: "mobile", "iphone",
 "ipad",  "macosx", "android",  "webos", "mac", "windows". Otherwise - "unknown" will
 be returned.
 
 
-#### detectServerHost
+#### DetectServerHost
 Detects the host name of the request's destination server.
 
-> `static` detectServerHost(req: any): string
+> (c *THttpRequestDetector) DetectServerHost(req *http.Request) string
 
-- **req**: any - HTTP request to process.
+- **req**: *http.Request - HTTP request to process.
 - **returns**: string - destination server's host name.
 
 
-#### detectServerPort
+#### DetectServerPort
 Detects the request's destination port number.
 
-> `static` detectServerPort(req: any): string
+> (c *THttpRequestDetector) DetectServerPort(req *http.Request) string
 
-- **req**: any - HTTP request to process.
+- **req**: *http.Request - HTTP request to process.
 - **returns**: string - detected port number or *80* (if none are detected).

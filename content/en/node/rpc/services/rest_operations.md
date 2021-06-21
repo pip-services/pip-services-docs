@@ -39,7 +39,6 @@ Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **req**: any - an HTTP request
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -57,6 +56,7 @@ Gets the filter parameters.
 
 >  `protected` getFilterParams(req: any): [FilterParams](../../../commons/data/filter_params)
 
+- **req**: any - an HTTP request
 - **returns**: [FilterParams](../../../commons/data/filter_params) - filter paramters
 
 #### getPagingParams
@@ -97,7 +97,7 @@ Sends a conflict error messge
 - **message**: string - message
 
 
-#### _send_created_result
+#### sendCreatedResult
 Sends a JSON object with the created result.
 
 > `protected` sendCreatedResult(req: any, res: any, result: any): void

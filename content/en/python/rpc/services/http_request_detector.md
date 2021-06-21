@@ -48,7 +48,7 @@ Detects the host name of the request's destination server.
 > `static` detect_server_host(req: bottle.Request): str
 
 - **req**: bottle.Request - HTTP request to process.
-- **returns**: destination server's host name.
+- **returns**: str - destination server's host name.
 
 
 #### detect_server_port
@@ -57,4 +57,4 @@ Detects the request's destination port number.
 > `static` detect_server_port(req: bottle.Request): str
 
 - **req**: bottle.Request - HTTP request to process.
-- **returns**: detected port number or *80* (if none are detected).
+- **returns**: string - detected port number or *80* (if none are detected).

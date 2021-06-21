@@ -36,10 +36,6 @@ Important points
 
 <span class="hide-title-link">
 
-#### _counters
-A list of counters.
-> `protected` **_counters**: [ICounters](../icounters)[]
-
 #### _controller
 The controller reference.
 > `protected` **_controller**: T
@@ -51,10 +47,6 @@ The open flag.
 #### _logger
 The logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
-
-#### _tracer
-The tracer.
-> `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
 
 #### _counters
 The performance counters
@@ -86,7 +78,7 @@ Configures component by passing configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### _instrument
+#### instrument
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 

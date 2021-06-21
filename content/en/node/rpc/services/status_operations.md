@@ -23,7 +23,7 @@ Gets the status of the operation.
 - **returns**: function - status operation method
 
 
-#### set_references
+#### setReferences
 Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
@@ -35,5 +35,5 @@ Sets references to dependent components.
 Handles status requests.
 
 > `public` status(req, res): void
-- **req**: an HTTP request
-- **res**: an HTTP response
+- **req**: any - an HTTP request
+- **res**: any - an HTTP response

@@ -22,7 +22,7 @@ Sets references to dependent components.
 Interface for a map that holds component references and passes them to components
 to establish dependencies with each other.
 Together with [IReferenceable](ireferenceable) and [IUnreferenceable](iunreferenceable) interfaces it implements
-a Locator pattern that is used by PipServices toolkit for Inversion of Control
+a Locator pattern that is used by the PipServices toolkit for Inversion of Control
 to assign external dependencies to components. 
 
 #### [IUnreferenceable](iunreferenceable)
@@ -38,7 +38,7 @@ The resolver is configured to resolve named dependencies by specific locator.
 During deployment the dependency locator can be changed.
 
 #### [Descriptor](descriptor)
-Locator type that most often used in PipServices toolkit.
+Locator type that is most often used in the PipServices toolkit.
 It locates components using several fields:
 - Group: a package or just named group of components like "pip-services"
 - Type: logical component type that defines it's contract like "persistence"

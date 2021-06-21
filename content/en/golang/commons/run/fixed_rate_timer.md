@@ -15,7 +15,7 @@ The FixerRateTimer class represents a timer that is triggered in equal time inte
 
 Important points
 
-- It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
+- It has a symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
 
@@ -24,18 +24,18 @@ Creates new instance of the timer and sets its values.
 
 > NewFixedRateTimerFromCallback(callback func(), interval int, delay int) [*FixedRateTimer]()
 
-- **callback**: func() - (optional) a Notifiable object or callback function to call when timer is triggered.
-- **interval**: int - (optional) an interval to trigger timer in milliseconds.
-- **delay**: int - (optional) a delay before the first triggering in milliseconds.
+- **callback**: func() - (optional) Notifiable object or callback function to call when timer is triggered.
+- **interval**: int - (optional) interval to trigger the timer in milliseconds.
+- **delay**: int - (optional) delay before the first triggering in milliseconds.
 
 #### NewFixedRateTimerFromTask
 Creates new instance of the timer and sets its values.
 
 > NewFixedRateTimerFromTask(task [INotifiable](../inotifiable), interval int, delay int) [*FixedRateTimer]()
 
-- **task**: [INotifiable](../inotifiable) - Notifiable object to call when timer is triggered.
-- **interval**: int - (optional) an interval to trigger timer in milliseconds.
-- **delay**: int - (optional) a delay before the first triggering in milliseconds.
+- **task**: [INotifiable](../inotifiable) - Notifiable object used to call when the timer is triggered.
+- **interval**: int - (optional) interval used to trigger the timer in milliseconds.
+- **delay**: int - (optional) delay before the first triggering in milliseconds.
 
 #### NewFixedRateTimer
 Creates new instance of the timer and sets its values.
@@ -48,33 +48,33 @@ Creates new instance of the timer and sets its values.
 Closes the timer.
 
 This is required by [ICloseable](../icloseable) interface,
-but besides that it is identical to [Stop()](#stop).
+but besides that, it is identical to [Stop()](#stop).
 
 > (c [*FixedRateTimer]()) Close(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### Callback
 Gets the callback function that is called when this timer is triggered.
 
 > (c [*FixedRateTimer]()) Callback() func()
 
-- **returns**: func() - the callback function or nil if it is not set. 
+- **returns**: func() - callback function or nil if it is not set. 
 
 
 #### Delay
-Gets initial delay before the timer is triggered for the first time.
+Gets the initial delay before the timer is triggered for the first time.
 
 > (c [*FixedRateTimer]()) Delay() int
 
-- **returns**: int - the delay in milliseconds.
+- **returns**: int - delay in milliseconds.
 
 #### Interval
-Gets periodic timer triggering interval.
+Gets the periodic timer's triggering interval.
 
 > (c [*FixedRateTimer]()) Interval() int
 
-- **returns**: int - the interval in milliseconds
+- **returns**: int - interval in milliseconds
 
 
 #### Task
@@ -82,7 +82,7 @@ Gets the INotifiable object that receives notifications from this timer.
 
 > (c [*FixedRateTimer]()) Task() [INotifiable](../inotifiable)
 
-- **returns**: [INotifiable](../inotifiable) - the INotifiable object or nil if it is not set.
+- **returns**: [INotifiable](../inotifiable) - INotifiable object or nil if it is not set.
 
 
 #### SetTask
@@ -90,7 +90,7 @@ Sets a new INotifiable object to receive notifications from this timer.
 
 > (c [*FixedRateTimer]()) SetTask(value [INotifiable](../inotifiable))
 
-- **value**: [INotifiable](../inotifiable) - a INotifiable object to be triggered.
+- **value**: [INotifiable](../inotifiable) - INotifiable object to be triggered.
 
 #### IsStarted
 Checks if the timer is started.
@@ -104,27 +104,27 @@ Sets the callback function that is called when this timer is triggered.
 
 > (c [*FixedRateTimer]()) SetCallback(value func())
 
-- **value**: func() - the callback function to be called.
+- **value**: func() - callback function to be called.
 
 #### SetDelay
 Sets initial delay before the timer is triggered for the first time.
 
 > (c [*FixedRateTimer]()) SetDelay(value int)
 
-- **value**: int - a delay in milliseconds. 
+- **value**: int - delay in milliseconds. 
 
 #### SetInterval
 Sets periodic timer triggering interval.
 
 > (c [*FixedRateTimer]()) SetInterval(value int)
 
-- **value**: int - an interval in milliseconds.
+- **value**: int - interval in milliseconds.
 
 #### Start
 Starts the timer.
 
-Initially the timer is triggered after delay.
-After that it is triggered after interval until it is stopped.
+Initially the timer is triggered after a delay.
+After that, it is triggered after the interval until it is stopped.
 
 > (c [*FixedRateTimer]()) Start()
 

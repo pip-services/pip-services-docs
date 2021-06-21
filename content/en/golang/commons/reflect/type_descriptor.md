@@ -23,8 +23,8 @@ Creates a new instance of the type descriptor and sets its values.
 
 > NewTypeDescriptor(name string, pkg string) [*TypeDescriptor]()
 
-- **name**: string - a name of the object type.
-- **pkg**: string - a library or module where this object type is implemented.
+- **name**: string - name of the object type.
+- **pkg**: string - library or module where this object type is implemented.
 
 
 ### Methods
@@ -36,7 +36,7 @@ Otherwise this method returns false.
 
 > (c [*TypeDescriptor]()) Equals(obj interface{}) bool
 
-- **obj**: interface{} - a value to compare.
+- **obj**: interface{} - value to compare.
 - **returns**: bool - true if value is identical TypeDescriptor and false otherwise.
 
 #### Package
@@ -44,7 +44,7 @@ Gets the name of the library or module where the object type is defined.
 
 > (c [*TypeDescriptor]()) Package() string
 
-- **returns**: string - the name of the library or module.
+- **returns**: string - name of the library or module.
 
 
 #### Name
@@ -52,7 +52,7 @@ Get the name of the object type.
 
 > (c [*TypeDescriptor]()) Name() string
 
-- **returns**: string - the name of the object type.
+- **returns**: string - name of the object type.
 
 
 #### ParseTypeDescriptorFromString
@@ -71,4 +71,4 @@ The result has format *name[,package]*
 
 > (c [*TypeDescriptor]()) String() string
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.

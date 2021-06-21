@@ -19,39 +19,39 @@ Important points
 ### Methods
 
 #### GetProperties
-Get values of all properties in specified object
+Get values of all properties in a specified object
 and returns them as a map.
 
 > (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface{}
 
-- **obj**: interface{} - an object to get properties from.
-- **returns**: map[string]interface{} - a map, containing the names of the object's properties and their values.
+- **obj**: interface{} - object to get properties from.
+- **returns**: map[string]interface{} - map, containing the names of the object's properties and their values.
 
 
 #### GetProperty
-Gets value of object property specified by its name.
+Gets the value of an object's property specified by its name.
 
 > (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface{}
 
-- **obj**: interface{} - an object to read property from.
-- **name**: string - a name of the property to get.
-- **returns**: interface{} - the property value or nil if property doesn't exist or introspection failed.
+- **obj**: interface{} - object to read property from.
+- **name**: string - name of the property to get.
+- **returns**: interface{} - property value or nil if property doesn't exist or introspection failed.
 
 #### GetPropertyNames
-Gets names of all properties implemented in specified object.
+Gets the names of all properties implemented in a specified object.
 
 > (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string
 
-- **obj**:interface{}any - an objec to introspect.
-- **returns**: []string - a list with property names.
+- **obj**:interface{}any - object to introspect.
+- **returns**: []string - list with property names.
 
 #### HasProperty
-Checks if object has a property with specified name.
+Checks if an object has a property with a specified name.
 
 > (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool
 
-- **obj**: interface{} - an object to introspect.
-- **name**: string - a name of the property to check.
+- **obj**: interface{} - object to introspect.
+- **name**: string - name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
 
 #### SetProperties
@@ -62,21 +62,21 @@ they are just silently skipped and no errors thrown.
 
 > (c *TPropertyReflector) SetProperties(obj interface{}, values map[string]interface{})
 
-- **obj**: interface{} - an object to write properties to.
-- **values**: map[string]interface{} - a map, containing property names and their values.
+- **obj**: interface{} - object to write properties to.
+- **values**: map[string]interface{} - map, containing property names and their values.
 
 
 #### SetProperty
-Sets value of object property specified by its name.
+Sets the value of an object's property specified by its name.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > (c *TPropertyReflector) SetProperty(obj interface{}, name string, value interface{})
 
-- **obj**: interface{} - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: interface{} - a new value for the property to set.
+- **obj**: interface{} - object to write property to.
+- **name**: string - name of the property to set.
+- **value**: interface{} - new value for the property to set.
 
 ### Examples
 

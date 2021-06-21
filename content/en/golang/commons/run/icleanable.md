@@ -15,11 +15,11 @@ The ICleanable interface allows you to create components with a method to clean 
 ### Methods
 
 #### Clear
-Clears component state.
+Clears a component's state.
 
 > Clear(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not cleared
 
 ### Examples

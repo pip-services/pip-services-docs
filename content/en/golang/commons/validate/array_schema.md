@@ -21,7 +21,7 @@ See [TypeCode](../convert/type_code)
 
 > NewArraySchema(valueType interface{}) [*ArraySchema]()
 
-- **valueType**: interface{} - a type of array elements. Null means that elements may have any type.
+- **valueType**: interface{} - type of array elements. Null means that elements may have any type.
 
 ### Methods
 
@@ -31,7 +31,7 @@ Null means that elements may have any type.
 
 > (c *ArraySchema) ValueType() interface{}
 
-- **returns**: interface{} - the type of array elements.
+- **returns**: interface{} - type of array elements.
 
 
 #### PerformValidation
@@ -39,18 +39,18 @@ Validates a given value against the schema and configured validation rules.
 
 > (c [*ArraySchema]()) PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **value**: interface{} - a value to be validated.
-- **returns**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: interface{} - value to be validated.
+- **returns**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 
 #### SetValueType
 Sets the type of array elements.
-Null means that elements may have any type.
+Null means that the elements may have any type.
 
 > (c [*ArraySchema]()) SetValueType(value interface{})
 
-- **value**: interface{} - a type of array elements.
+- **value**: interface{} - type of array elements.
 
 ### Examples 
 ```go

@@ -18,6 +18,6 @@ Creates an error instance and assigns its values.
 
 > NewReferenceError(correlationId string, locator interface{}) [*errors.ApplicationError](../../errors/application_error)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **locator**: interface{} - the locator to find reference to dependent component.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **locator**: interface{} - locator to find reference to dependent component.
 

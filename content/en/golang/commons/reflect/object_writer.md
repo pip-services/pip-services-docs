@@ -34,14 +34,14 @@ they are just silently skipped and no errors thrown.
 
 > (c *TObjectWriter) SetProperties(obj interface{}, values map[string]interface{})
 
-- **obj**: interface{} - an object to write properties to.
-- **values**: map[string]interface{} - a map, containing property names and their values.
+- **obj**: interface{} - object to write properties to.
+- **values**: map[string]interface{} - map, containing property names and their values.
 
 #### SetProperty
-Sets value of object property specified by its name.
+Sets value of an object property specified by its name.
  
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
+The property name correspondently must be an object property,
 map key or array index.
 
 If the property does not exist or introspection fails
@@ -49,9 +49,9 @@ this method doesn't do anything and doesn't any throw errors.
 
 > (c *TObjectWriter) SetProperty(obj interface{}, name string, value interface{})
 
-- **obj**: interface{} - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: interface{} - a new value for the property to set.
+- **obj**: interface{} - object to write property to.
+- **name**: string - name of the property to set.
+- **value**: interface{} - new value for the property to set.
 
 ### Examples
 

@@ -15,13 +15,13 @@ The IExecutable interface allows you to create a component that can be called to
 ### Methods
 
 #### Execute
-Executes component with arguments and receives execution result.
+Executes a component with arguments and receives the execution result.
 
 > Execute(correlationId string, args [*Parameters](../parameters)) (result interface{}, err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: [*Parameters](../parameters) - execution arguments.
-- **returns**: (result interface{}, err error) - the execution result. 
+- **returns**: (result interface{}, err error) - execution result. 
 
 ### Examples
 

@@ -23,7 +23,7 @@ But there may be situations when it can be done in production.
 #### [IClosable](iclosable)
 Interface for components that require explicit closure.
 For components that require opening as well as closing 
-use [IOpenable](iopenable) interface instead.
+use the [IOpenable](iopenable) interface instead.
 
 #### [IExecutable](iexecutable)
 Interface for components that can be called to execute work.
@@ -57,7 +57,7 @@ Helper class that executes components.
 #### [FixedRateTimer](fixed_rate_timer)
 Timer that is triggered in equal time intervals.
 It has a symmetric cross-language implementation 
-and is often used by Pip.Services toolkit to
+and is often used by the Pip.Services toolkit to
 perform periodic processing and cleanup in microservices.
 
 #### [Notifier](notifier)
@@ -72,7 +72,7 @@ In general, this map may contain non-serializable values.
 And in contrast with other maps, its getters and setters
 support dot notation and are able to access properties
 in the entire object graph.
-This class is often use to pass execution and notification
+This class is often used to pass execution and notification
 arguments, and parameterize classes before execution.
 
 </div>

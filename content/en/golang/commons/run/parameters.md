@@ -4,7 +4,7 @@ title: "Parameters"
 linkTitle: "Parameters"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: >
-    Contains map with execution parameters.
+    Contains a map with execution parameters.
 
 
 ---
@@ -31,21 +31,21 @@ Creates a new instance of the map and assigns its value.
 - **map**: map[string]interface{} - (optional) values to initialize this map.
 
 #### NewParametersFromConfig
-Creates new Parameters from ConfigMap object.
+Creates a new Parameters object from a ConfigMap object.
 See [ConfigParams](../../config/config_params)
 
 > NewParametersFromConfig(config [*config.ConfigParams](../../config/config_params)) [*Parameters]()
 
-- **config**: [*config.ConfigParams](../../config/config_params) - a ConfigParams that contain parameters.
-- **returns**: [*Parameters](../parameters) - a new Parameters object.
+- **config**: [*config.ConfigParams](../../config/config_params) - ConfigParams object that contains parameters.
+- **returns**: [*Parameters](../parameters) - new Parameters object.
 
 #### NewParametersFromMaps
 Creates a new Parameters by merging two or more maps. Maps defined later in the list override values from previously defined maps.
 
 > NewParametersFromMaps(maps ...map[string]interface{}) [*Parameters]()
 
-- **maps**: ...map[string]interface{} - an array of maps to be merged
-- **returns**: [Parameters](../parameters) - a new Parameters object.
+- **maps**: ...map[string]interface{} - array of maps to be merged
+- **returns**: [Parameters](../parameters) - new Parameters object.
 
 #### NewParametersFromTuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
@@ -54,16 +54,16 @@ See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 
 > NewParametersFromTuples(tuples ...interface{}) [*Parameters]()
 
-- **tuples**: ...interface{} - a ConfigParams that contain parameters.
-- **returns**: [*Parameters](../parameters) - a new Parameters object.
+- **tuples**: ...interface{} - ConfigParams object that contains parameters.
+- **returns**: [*Parameters](../parameters) - new Parameters object.
 
 #### NewParametersFromValue
-Creates a new Parameters object filled with key-value pairs from specified object.
+Creates a new Parameters object filled with key-value pairs from a specified object.
 
 > NewParametersFromValue(value interface{}) [*Parameters]()
 
-- **value**: interface{} - an object with key-value pairs used to initialize a new Parameters.
-- **returns**: [Parameters](../parameters) - a new Parameters object.
+- **value**: interface{} - object with key-value pairs used to initialize a new Parameters.
+- **returns**: [Parameters](../parameters) - new Parameters object.
 
 #### NewEmptyParameters
 Creates a new instance of the map and assigns its value.
@@ -81,61 +81,61 @@ Assigns (copies over) properties from the specified value to this map.
 - **value**: interface{} - value whose properties shall be copied over.
 
 #### Contains
-Checks if this map contains an element with specified key.
+Checks if the map contains an element with a specified key.
 
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
 > (c [*Parameters]()) Contains(key string) bool
 
-- **key**: string - a key to be checked
+- **key**: string - key to be checked
 - **returns**: bool - true if this map contains the key or false otherwise.
 
 #### Get
-Gets a map element specified by its key.
+Gets a map's element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
 > (c [*Parameters]()) Get(key string) interface{}
 
-- **key**: string - a key of the element to get.
-- **returns**: interface{} - the value of the map element.
+- **key**: string - key of the element to get.
+- **returns**: interface{} - value of the map's element.
 
 
 #### GetAsNullableParameters
-Converts map element into an Parameters or returns nil if conversion is not possible.
+Converts a map's element into an Parameters object or returns nil if the conversion is not possible.
 
 > (c [*Parameters]()) GetAsNullableParameters(key string) [*Parameters](../parameters)
 
-- **key**: string - a key of element to get.
-- **returns**: [*Parameters](../parameters) - Parameters value of the element or nil if conversion is not supported.
+- **key**: string - key of element to get.
+- **returns**: [*Parameters](../parameters) - Parameters value of the element or nil if the conversion is not supported.
 
 #### GetAsParameters
-Converts map element into an Parameters or returns empty Parameters if conversion is not possible.
+Converts map element into an Parameters or returns empty Parameters if the conversion is not possible.
 
 > (c [*Parameters]()) GetAsParameters(key string) [*Parameters]()
 
-- **key**: string - a key of element to get.
-- **returns**: [*Parameters]() - Parameters value of the element or empty Parameters if conversion is not supported.
+- **key**: string - key of element to get.
+- **returns**: [*Parameters]() - Parameters value of the element or empty Parameters if the conversion is not supported.
 
 
 #### GetAsParametersWithDefault
-Converts map element into an Parameters or returns default value if conversion is not possible.
+Converts a map's element into a Parameters object or returns a default value if the conversion is not possible.
 
 > (c [*Parameters]()) GetAsParametersWithDefault(key string, defaultValue [*Parameters]()) [*Parameters]()
 
-- **key**: string - a key of element to get.
-- **defaultValue**: [*Parameters](../parameters) - the default value
-- **returns**: [*Parameters](../parameters) - Parameters value of the element or default value if conversion is not supported.
+- **key**: string - key of element to get.
+- **defaultValue**: [*Parameters](../parameters) - default value
+- **returns**: [*Parameters](../parameters) - Parameters value of the element or default value if the conversion is not supported.
 
 
 #### Omit
-Omits selected parameters from this Parameters and returns the rest as a new Parameters object.
+Omits selected parameters from the Parameters object and returns the rest as a new Parameters object.
 
 > (c [*Parameters]()) Omit(paths ...string) [*Parameters]()
 
-- **paths**: string[] - keys to be omitted from copying over to new [Parameters](../parameters).
-- **returns**: [*Parameters](../parameters) - a new [*Parameters](../parameters) object.
+- **paths**: string[] - keys to be omitted from copying over to a new [Parameters](../parameters).
+- **returns**: [*Parameters](../parameters) - new [*Parameters](../parameters) object.
 
 
 #### Override
@@ -145,36 +145,36 @@ Overrides parameters with new values from specified [Parameters](../parameters) 
 
 - **parameters**: [*Parameters](../parameters) - Parameters with parameters to override the current values.
 - **recursive**: bool - (optional) true to perform deep copy, and false for shallow copy. Default: false
-- **returns**: [*Parameters](../parameters) - a new Parameters object.
+- **returns**: [*Parameters](../parameters) - new Parameters object.
 
 
 #### Pick
-Picks select parameters from this Parameters and returns them as a new Parameters object.
+Picks select parameters from the Parameters object and returns them as a new Parameters object.
 
 > (c [*Parameters]()) Pick(paths ...string) [*Parameters]()
 
-- **paths**: string[] - keys to be picked and copied over to new Parameters.
-- **returns**: [*Parameters](../parameters) - a new Parameters object.
+- **paths**: string[] - keys to be picked and copied over to the new Parameters object.
+- **returns**: [*Parameters](../parameters) - new Parameters object.
 
 
 #### Put
-Puts a new value into map element specified by its key.
+Puts a new value into a map element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
 > (c *Parameters) Put(key string, value interface{})
 
-- **key**: string - a key of the element to put.
-- **value**: interface{} - a new value for map element.
+- **key**: string - key of the element to put.
+- **value**: interface{} - new value for the map element.
 
 #### SetDefaults
 Set default values from specified Parameters and returns a new Parameters object.
 
 > (c [*Parameters]()) SetDefaults(defaultParameters [*Parameters](), recursive bool) [*Parameters]()
 
-- **defaultParameters**: [*Parameters](../parameters) - Parameters with default parameter values.
+- **defaultParameters**: [*Parameters](../parameters) - Parameters object with default parameter values.
 - **recursive**: bool - (optional) true to perform deep copy, and false for shallow copy. Default: false
-- **returns**: [*Parameters](../parameters) - a new Parameters object.
+- **returns**: [*Parameters](../parameters) - new Parameters object.
 
 
 ### See also

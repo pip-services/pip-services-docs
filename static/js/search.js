@@ -155,12 +155,12 @@ function htmlToElement(html) {
 }
 
 
-function assignQueryParams(event) {
-    if (window.location.search.split('=')[1] === "" || window.location.search.split('=')[1] === undefined) { return; }
-    let searchQuery = decodeURIComponent(window.location.search.split('=')[1]);
-    let searchInput = document.getElementById('search-query');
-    searchInput.value = searchQuery
-    searchInput.dispatchEvent(new KeyboardEvent('keyup'));
-}
+// function assignQueryParams(event) {
+//     if (window.location.search.split('=')[1] === "" || window.location.search.split('=')[1] === undefined) { return; }
+//     let searchQuery = decodeURIComponent(window.location.search.split('=')[1]);
+//     let searchInput = document.getElementById('search-query');
+//     searchInput.value = searchQuery
+//     searchInput.dispatchEvent(new KeyboardEvent('keyup'));
+// }
 
-document.addEventListener("DOMContentLoaded", () => { setTimeout(assignQueryParams, 100) })
+// document.addEventListener("DOMContentLoaded", () => { setTimeout(assignQueryParams, 100) })

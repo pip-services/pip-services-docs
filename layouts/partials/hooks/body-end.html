@@ -16,12 +16,14 @@
   }
 
   delHiddenLgSearch();
- 
+  
+  let isGitRepo = window.location.host.indexOf('github') > 0;
+
   docsearch({
       // Your apiKey and indexName will be given to you once
       // we create your config
       apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
-      indexName: window.location.host.indexOf('github') > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
+      indexName: isGitRepo > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
       appId: 'ETKGUND67W',
       // Replace inputSelector with a CSS selector
       // matching your search input
@@ -29,12 +31,13 @@
 
       transformData: function (hits) {
       // Filter by language
+        let langNamePosInUrl = isGitRepo ? 4 : 3 
 
         hits = hits.filter((item) => {
           console.log(item);
           
           if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
-            let hitLangPage = item['url'].split('/')[4].toLowerCase();
+            let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();
             let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
 
             return isCorrectHit;

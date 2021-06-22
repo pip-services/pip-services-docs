@@ -20,7 +20,6 @@ function showSelected(e) {
     // hide other
     selectButtons.forEach(button => {
         let sectionId = button.id.split('-')[1].trim();
-        console.log(sectionId)
         if (selectedLang != sectionId) {
             button.classList.remove('active')
             document.getElementById(sectionId).setAttribute('hidden', "");

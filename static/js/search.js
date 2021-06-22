@@ -33,9 +33,16 @@ function search(searchQuery) {
 
     sidebars.style.display = "none";
     searchResults.style.display = "block";
+    
+    let indexJsonPath = "/index.json";
+
+    // check if is githubpages url
+    if (window.location.href.search("pip-services-docs") > -1) {
+        indexJsonPath = "pip-services-docs/index.json"
+    }
 
     // load your index file
-    getJSON("/index.json", function (contents) {
+    getJSON(indexJsonPath, function (contents) {
         var results = [];
         let regex = new RegExp(searchQuery, "i");
         // iterate through posts and collect the ones with matches

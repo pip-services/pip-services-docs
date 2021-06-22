@@ -21,10 +21,10 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 > NewPropertySchemaWithRules(name string, typ interface{}, required bool, rules [][IValidationRule](../ivalidation_rule)) [*PropertySchema]()
 
-- **name**: string - (optional) a property name
-- **typ**: interface{} - (optional) a property type
+- **name**: string - (optional) property name
+- **typ**: interface{} - (optional) property type
 - **required**: bool -  (optional) true to always require non-nil values.
-- **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
+- **rules**: [][IValidationRule](../ivalidation_rule) - (optional) list with validation rules.
 
 Creates a new validation schema and sets its values.
 
@@ -45,7 +45,7 @@ Gets the property type.
 
 > (c [*PropertySchema]()) Type() interface{}
 
-- **returns**: interface{} - the property type.
+- **returns**: interface{} - property type.
 
 
 #### PerformValidation
@@ -53,9 +53,9 @@ Validates a given value against the schema and configured validation rules.
 
 > (c [*PropertySchema]()) PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **value**: interface{} - a value to be validated.
-- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: interface{} - value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 
 #### SetName
@@ -63,7 +63,7 @@ Sets the property name.
 
 > (c [*PropertySchema]()) SetName(value string)
 
-- **value**: string - a new property name.
+- **value**: string - new property name.
 
 
 #### SetType
@@ -72,7 +72,7 @@ The type can be defined as type, type name or [TypeCode](../convert/type_code)
 
 > (c [*PropertySchema]()) SetType(value interface{})
 
-- **value**: interface{} - a new property type.
+- **value**: interface{} - new property type.
 
 
 ### Examples

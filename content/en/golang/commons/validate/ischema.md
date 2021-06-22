@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The ISchema interface contains different validation methods.
 
 
 ### Methods
@@ -29,7 +29,7 @@ TODO: add description
 
 > ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **value**: interface{} - TODO: add description
 - **strict**: bool - TODO: add description
 - **returns**: [*errors.ApplicationError](../../errors/application_error) - TODO: add description

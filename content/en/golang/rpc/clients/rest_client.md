@@ -69,11 +69,14 @@ The connection resolver.
 
 #### Logger
 The logger.
-> **Logger**: [CompositeLogger](../../../components/log/composite_logger)
+> **Logger**: [*CompositeLogger](../../../components/log/composite_logger)
 
 #### Counters
 The performance counters.
-> **Counters**: [CompositeCounters](../../../components/count/composite_counters)
+> **Counters**: [*CompositeCounters](../../../components/count/composite_counters)
+
+#### Tracer
+> **Tracer**: [*CompositeTracer](../../../components/trace/composite_tracer)
 
 #### Options
 The configuration options.
@@ -94,6 +97,11 @@ The default headers to be added to every request.
 #### ConnectTimeout
 The connection timeout in milliseconds.
 > **ConnectTimeout**: int
+
+#### passCorrelationId
+Add correlation id to headers
+
+> **passCorrelationId**: string
 
 </span>
 
@@ -168,11 +176,11 @@ Configures a component by passing configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*RestClient]()) Instrument(correlationId string, name string) [*ccount.Timing](../../../components/count/timing)
+> (c [*RestClient]()) Instrument(correlationId string, name string) [*service.InstrumentTiming](../../services/instrument_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **name**: string - method name.
-- **returns**: [*ccount.Timing](../../../components/count/timing) - Instrument Timing object used to end the time measurement.
+- **returns**: [*service.InstrumentTiming](../../services/instrument_timing) - Instrument Timing object used to end the time measurement.
 
 
 #### IsOpen
@@ -206,14 +214,14 @@ type MyRestClient struct {
 	*RestClient
 }
 ...
-func (c *MyRestClient) GetData(correlationId string, id string) (result *testrpc.MyDataPage, err error) {
+func (c *MyRestClient) GetData(correlationId string, id string) (result *tdata.MyDataPage, err error) {
 	params := cdata.NewEmptyStringValueMap()
 	params.Set("id", id)
 	calValue, calErr := c.Call(MyDataPageType, "get", "/data", correlationId, params, nil)
 	if calErr != nil {
 		return nil, calErr
 	}
-	result, _ = calValue.(*testrpc.MyDataPage)
+	result, _ = calValue.(*tdata.MyDataPage)
 	c.Instrument(correlationId, "myData.get_page_by_filter")
 	return result, nil
 }

@@ -1,8 +1,182 @@
 ---
 type: docs
-title: "CompositeConnectionResolver!"
-linkTitle: "CompositeConnectionResolver!"
+title: "CompositeConnectionResolver"
+linkTitle: "CompositeConnectionResolver"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
-     **TODO: this is not implemented for this language yet**
+    Helper class that resolves connection and credential parameters,
+    validates them and generates connection options.
 ---
+
+### Description
+
+The CompositeConnectionResolver class allows you to resolve connection and credential parameters, validate them and generate connection options.
+
+#### Configuration parameters
+
+**connection(s)**:
+  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+  - **protocol**: communication protocol
+  - **host**: host name or IP address
+  - **port**: port number
+  - **uri**: resource URI or connection string with all parameters in it
+  
+**credential(s)**:
+  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
+  - **username**: user name
+  - **password**: user password
+
+#### References
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
+- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials [ICredentialStore](../../auth/icredential_store)
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### Options
+The connection options
+> **Options**: [ConfigParams](../../../commons/config/config_params)
+
+#### ConnectionResolver
+The connections resolver.
+> **ConnectionResolver**: [ConnectionResolver](../connection_resolver)
+
+#### CredentialResolver
+The credentials resolver.
+> **CredentialResolver**: [CredentialResolver](../../auth/credential_resolver)
+
+#### ClusterSupported
+The cluster support (multiple connections)
+> **ClusterSupported**: bool
+
+#### DefaultProtocol
+The default protocol
+> **DefaultProtocol**: string
+
+#### DefaultPort
+The default port
+> **DefaultPort**: number
+
+#### SupportedProtocols
+The list of supported protocols
+> **SupportedProtocols**: []string
+
+
+</span>
+
+### Methods
+
+#### Compose
+Composes Composite connection options from connection and credential parameters.
+
+> (c [*CompositeConnectionResolver]()) Compose(correlationId string, connections [][*ConnectionParams](../connection_params), credential [*auth.CredentialParams](../../auth/credential_params), parameters [*config.ConfigParams](../../../commons/config/config_params)) (options [*config.ConfigParams](../../../commons/config/config_params), err error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **connections**: [][*ConnectionParams](../connection_params) - connection parameters
+- **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters
+- **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - optional parameters
+- **returns**: (options [*config.ConfigParams](../../../commons/config/config_params), err error) - resolved options or error.
+
+
+#### ComposeOptions
+A composite of several merger options
+
+> (c [*CompositeConnectionResolver]()) ComposeOptions(connections [][*ConnectionParams](../connection_params), credential [*auth.CredentialParams](../../auth/credential_params), parameters [*config.ConfigParams](../../../commons/config/config_params)) [*config.ConfigParams](../../../commons/config/config_params)
+
+- **connections**: [][*ConnectionParams](../connection_params) - connection parameters
+- **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters
+- **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - optional parameters
+- **returns**: [*config.ConfigParams](../../../commons/config/config_params) - resolved options or error
+
+
+#### Configure
+Configures component by passing configuration parameters.
+
+> (c [*CompositeConnectionResolver]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+
+#### FinalizeOptions
+Finalize merged options.
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) FinalizeOptions(options [*config.ConfigParams](../../../commons/config/config_params)) [*config.ConfigParams](../../../commons/config/config_params)
+
+- **options**: [*config.ConfigParams](../../../commons/config/config_params) - options: connection options
+- **returns**: [*config.ConfigParams](../../../commons/config/config_params) - finalized connection options
+
+
+#### MergeConnection
+Merges connection options with connection parameters. 
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) MergeConnection(options [*config.ConfigParams](../../../commons/config/config_params), connection [*ConnectionParams](../connection_params)) [*config.ConfigParams](../../../commons/config/config_params)
+
+- **options**: [ConfigParams](../../../commons/config/config_params) - connection options
+- **connection**: [*ConnectionParams](../connection_params) - connection parameters to be merged
+- **returns**: [*config.ConfigParams](../../../commons/config/config_params) - merged connection options.
+
+
+#### MergeCredential
+Merges connection options with credential parameters.
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) MergeCredential(options [*config.ConfigParams](../../../commons/config/config_params), credential [*auth.CredentialParams](../../auth/credential_params)) [*config.ConfigParams](../../../commons/config/config_params)
+
+- **options**: [ConfigParams](../../../commons/config/config_params) - connection options
+- **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters to be merged
+- **returns**: [*config.ConfigParams](../../../commons/config/config_params) - merged connection options.
+
+
+#### MergeOptional
+Merges connection options with optional parameters.
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) MergeOptional(options [*config.ConfigParams](../../../commons/config/config_params), parameters [*config.ConfigParams](../../../commons/config/config_params)) [*config.ConfigParams](../../../commons/config/config_params)
+
+- **options**: [*config.ConfigParams](../../../commons/config/config_params) - connection options
+- **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - optional parameters to be merged
+- **returns**: [*config.ConfigParams](../../../commons/config/config_params) - merged connection options.
+
+
+#### Resolve
+Resolves connection options from connection and credential parameters.
+
+> (c [*CompositeConnectionResolver]()) Resolve(correlationId string) (options [*config.ConfigParams](../../../commons/config/config_params), err error)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **returns**: (options [*config.ConfigParams](../../../commons/config/config_params), err error) - resolved options or error
+
+
+#### SetReferences
+Sets references to dependent components.
+
+> (c [*CompositeConnectionResolver]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+
+- **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+
+#### ValidateConnection
+Validates connection parameters. 
+Throws error if validation failed.
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) ValidateConnection(correlationId string, connection [*ConnectionParams](../connection_params)) error
+
+- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **connection**: [*ConnectionParams](../connection_params) - connection parameters to be validated
+- **returns**: error - returns error if validation failed
+
+
+#### ValidateCredential
+Validates credential parameters.
+This method can be overriden in child classes.
+
+> (c [*CompositeConnectionResolver]()) ValidateCredential(correlationId string, credential [*auth.CredentialParams](../../auth/credential_params)) error
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters to be validated
+- **returns**: error - returns error if validation failed

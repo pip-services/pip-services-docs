@@ -154,24 +154,17 @@ param2: XYZ
 ```
 
 ```go
-container := NewEmptyContainer();
-container.AddFactory(newMyComponentFactory());
-  
-parameters := NewConfigParamsFromValue(process.env);
-container.ReadConfigFromFile("123", "./config/config.yml", parameters);
-  
+container := NewEmptyContainer()
+container.AddFactory(newMyComponentFactory())
+
+parameters := NewConfigParamsFromValue(process.env)
+container.ReadConfigFromFile("123", "./config/config.yml", parameters)
+
 err := container.Open("123")
-
-if err ==nil{
-    fmt.Printf("Container is opened")
-}
-
+ftm.Println("Container is opened")
 ...
-err := container.Close("123")
-
-if err == nil{
-    fmt.Printf("Container is closed")
-}
+err = container.Close("123")
+fmt.Println("Container is closed")
 
 ```
 

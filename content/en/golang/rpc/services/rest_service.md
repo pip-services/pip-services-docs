@@ -43,10 +43,12 @@ The RestService class allows you to create REST services that receive remote cal
 
 ### Constructors
 
-#### NewRestService
-NewRestService is create new instance of RestService
+#### InheritRestService
+InheritRestService is create new instance of RestService
 
-> NewRestService() [*RestService](../rest_service)
+> InheritRestService(overrides IRestServiceOverrides) *RestService
+
+- **overrides**: IRestServiceOverrides - ingerited rest service
 
 
 ### Fields
@@ -69,6 +71,10 @@ Performance counters.
 Base route.
 > **BaseRoute**: string
 
+#### Tracer
+Tracer.
+> **Tracer**: [*CompositeTracer](../../../components/trace/composite_tracer)
+
 #### Endpoint
 HTTP endpoint that exposes this service.
 > **Endpoint**: [HttpEndpoint](../http_endpoint)
@@ -76,6 +82,11 @@ HTTP endpoint that exposes this service.
 #### config
 Service's configuration paramters.
 > **config**: [ConfigParams](../../../commons/config/config_params)
+
+
+#### SwaggerService
+Swagger service.
+> **SwaggerService**: [ISwaggerService](../iswagger_service)
 
 #### SwaggerEnable
 Boolean that defines if the Swagger sevice is enabled or not.
@@ -111,22 +122,19 @@ Configures a component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*RestService]()) Instrument(correlationId string, name string) *ccount.Timing
+> (c [*RestService]()) Instrument(correlationId string, name string) [*InstrumentTiming](../instrument_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
-- **returns**: *ccount.Timing - instrument Timing object to end the time measurement.
+- **returns**: [*InstrumentTiming](../instrument_timing) - instrument Timing object to end the time measurement.
 
-#### InstrumentError
-InstrumentError method are adds instrumentation to error handling.
+#### GetCorrelationId
+GetCorrelationId method returns CorrelationId from request
 
-> (c [*RestService]()) InstrumentError(correlationId string, name string, errIn error, resIn interface{}) (result interface{}, err error)
+> (c [*RestService]()) GetCorrelationId(req *http.Request) string
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **name**: string - a method name.
-- **errIn**: error - an occured error.
-- **resIn**: interface{} - (optional) an execution result
-- **returns**: (result interface{}, err error) - (optional) an execution callback
+- **req**: *http.Request - an HTTP request
+- **returns**: string - correlation_id or empty string
 
 #### IsOpen
 Checks if the component is open.
@@ -193,6 +201,10 @@ Registers a route with authorization in HTTP endpoint.
 - **authorize**: func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc) - authorization interceptor
 - **action**: func(res http.ResponseWriter, req *http.Request) - action function that is called when an operation is invoked.
 
+#### Register
+Register method are registers all service routes in HTTP endpoint.
+
+> (c [*RestService]()) Register()
 
 
 #### SendCreatedResult

@@ -79,6 +79,13 @@ License information URL.
 
 ### Methods
 
+#### GetCorrelationId
+GetCorrelationId method returns CorrelationId from request
+
+> (c [*HttpEndpoint]()) GetCorrelationId(req *http.Request) string
+
+- **req**: *http.Request - an HTTP request
+- **returns**: string - correlation_id or empty string
 
 #### GetSpaces
 Returns a string with spaces.

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "ITimingCallback"
-linkTitle: "ITimingCallback"
+title: "ICounterTimingCallback"
+linkTitle: "ICounterTimingCallback"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
     Interface for a callback to end the measurement of the execution elapsed time.
@@ -9,13 +9,13 @@ description: >
 
 ### Description
 
-The ITimingCallback interface defines the method used for a callback to end the measurement of the execution elapsed time. 
+The ICounterTimingCallback interface defines the method used for a callback to end the measurement of the execution elapsed time. 
 
 ### Methods
 
-#### endTiming
+#### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
-See also [Timing.EndTiming](../timing/#endtiming)
+See also [CounterTiming.EndTiming](../counter_timing/#endtiming)
 
 > EndTiming(name string, elapsed float32)
 

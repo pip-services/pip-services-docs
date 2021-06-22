@@ -2,7 +2,7 @@
 type: docs
 title: "ILock"
 linkTitle: "ILock"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-components-nodex"
+MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
     Interface for locks used to synchronize work or parallel processes and to prevent collisions.
 
@@ -17,37 +17,39 @@ Important points
 
 - The interface allows to manage multiple locks identified by unique keys. 
 
-### Instance methods
+### Methods
 
-#### acquireLock
+#### AcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> acquireLock(correlationId: string, key: string, ttl: number, timeout: number): Promise\<void\>
+> AcquireLock(correlationId string, key string, ttl int64, timeout int64) error
 
 - **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **timeout**: number - a lock acquisition timeout.
+- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
+- **timeout**: int64 - a lock acquisition timeout.
+- **returns**: error - returns error if not ackuired
 
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> tryAcquireLock(correlationId: string, key: string, ttl: number): Promise\<boolean\>
+> TryAcquireLock(correlationId string, key string, ttl int64) (bool, error)
 
 - **correlationId**: string -(optional) transaction id to trace execution through call chain. 
 - **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
-- **return**: Promise\<boolean\> - lock result
+- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
+- **return**: (bool, error) - lock result
 
 
-#### releaseLock
+#### ReleaseLock
 Releases prevously acquired lock by its key.
 
-> releaseLock(correlationId: string, key: string) :Promise\<void\>
+> ReleaseLock(correlationId string, key string) error
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique lock key to release.
+- **returns**: error - returns error if not released

@@ -69,13 +69,13 @@ Timeout to reset timer
 
 #### BeginTiming
 Begins measurement of execution time interval.
-It returns [*Timing](../timing) object which has to be called at
-[Timing.EndTiming](../timing/#endtiming) to end the measurement and update the counter.
+It returns [*CounterTiming](../counter_timing) object which has to be called at
+[CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> (c [*CachedCounters]()) BeginTiming(name string) [*Timing](../timing)
+> (c [*CachedCounters]()) BeginTiming(name string) [*CounterTiming](../counter_timing)
 
 - **name**: string - a counter name of Interval type.
-- **returns**: [*Timing](../timing) - a callback object to end timing.
+- **returns**: [*CounterTiming](../counter_timing) - a callback object to end timing.
 
 
 #### Clear

@@ -175,7 +175,6 @@ This method can be overriden in child classes.
 #### ValidateCredential
 Validates credential parameters.
 This method can be overriden in child classes.
-This method can be overriden in child classes.
 
 > `protected` void ValidateCredential(string correlationId, [CredentialParams](../../auth/credential_params) credential)
 

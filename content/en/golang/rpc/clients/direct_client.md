@@ -60,6 +60,10 @@ The performance counters
 #### DependencyResolver
 The dependency resolver used to get the controller's reference.
 > **DependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
+
+#### Tracer
+The tracer.
+> Tracer [*ctrace.CompositeTracer](../../../components/trace/composite_tracer)
 </span>
 
 
@@ -83,15 +87,15 @@ Configures component by passing configuration parameters.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### _instrument
+#### Instrument
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*DirectClient]()) Instrument(correlationId string, name string) [*ccount.Timing](../../../components/count/timing)
+> (c [*DirectClient]()) Instrument(correlationId string, name string) [*service.InstrumentTiming](../../services/instrument_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **name**: string - method name.
-- **returns**: [*ccount.Timing](../../../components/count/timing) - InstrumentTiming object used to end the time measurement.
+- **returns**: [*service.InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 
@@ -132,7 +136,7 @@ type MyDirectClient struct {
 	}
 	func (c *MyDirectClient) SetReferences(references cref.IReferences) {
 		c.DirectClient.SetReferences(references)
-		specificController, ok := c.Controller.(testrpc.IMyDataController)
+		specificController, ok := c.Controller.(tdata.IMyDataController)
 		if !ok {
 			panic("MyDirectClient: Cant't resolv dependency 'controller' to IMyDataController")
 		}

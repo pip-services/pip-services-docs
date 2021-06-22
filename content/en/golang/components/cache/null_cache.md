@@ -47,6 +47,16 @@ If value is missing in the cache or expired, it returns nil.
 - **returns**: (interface{}, error) - a cached value or nil, if value wasn't found or timeout expired.
 
 
+#### RetrieveAs
+Retrieve cached value from the cache using its key and restore into reference object. If value is missing in the cache or expired it returns false.
+
+> (c *MemoryCache) RetrieveAs(correlationId string, key string, result interface{}) (interface{}, error)
+
+- **correlationId**: string - transaction id to trace execution through call chain.
+- **key**: string - a unique value key.
+- **result**: (interface{}, error) - pointer to object for restore
+
+
 #### Store
 Stores value in the cache with expiration time.
 

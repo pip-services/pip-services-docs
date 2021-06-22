@@ -175,7 +175,6 @@ This method can be overriden in child classes.
 #### _validate_credential
 Validates credential parameters.
 This method can be overriden in child classes.
-This method can be overriden in child classes.
 
 >  _validate_credential(correlation_id: Optional[str], credential: [CredentialParams](../../auth/credential_params))
 

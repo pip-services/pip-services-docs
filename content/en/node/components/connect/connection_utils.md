@@ -13,7 +13,7 @@ The ConnectionUtils class provides a set of utility functions used to process co
 
 ### Static methods
 
-#### compose_uri
+#### composeUri
 Composes URI from config parameters.
 The result URI will be in the following form:
 *protocol://username@password@host1:port1,host2:port2,...?param1=abc&param2=xyz&...*

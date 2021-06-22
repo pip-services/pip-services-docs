@@ -42,5 +42,5 @@ Validates the given value and throws a [ValidationException](../validation_excep
 
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **value**: interface{} - value to be validated.
-- **strict**: bool - 
+- **strict**: bool - if true,warnings will also raise validation exceptions.
 

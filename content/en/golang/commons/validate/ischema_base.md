@@ -9,14 +9,14 @@ description: >
 
 ### Description
 
-The ISchemaBase interface is used by classes that need to perform a validation.
+The ISchemaBase interface is used by classes that need to perform a validation against a schema.
 
 
 ### Methods
 
 
 #### PerformValidation
-Performs a validation.
+Validates a given value against the schema and configured validation rules..
 
 > PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
 

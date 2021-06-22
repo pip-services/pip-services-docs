@@ -131,7 +131,7 @@ Receives an incoming message and removes it from the queue.
 > `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../message_envelope)>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **wait_timeout**: number - timeout in milliseconds to wait for a message to come.
+- **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
 - **returns**: Promise<[MessageEnvelope](../message_envelope)> - received message or *null*.
 
 #### renewLock

@@ -4,18 +4,18 @@ title: "TestMessageReceiver"
 linkTitle: "TestMessageReceiver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
-    TODO add description
+    Class used to receive a message, obtain a list of received messages and the number of received messages, and to clear the message list. 
 ---
 
 **Implements:** [IMessageReceiver](../../queues/imessage_receiver), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
 
-TODO add description
+The TestMessageReceiver allows you to receive a message, obtain a list of received messages and the number of received messages, and to clear the message list. 
 
 ### Constructors
 
-TODO add description
+Creates a TestMessageReceiver component.
 
 > `public` constructor()
 
@@ -26,17 +26,17 @@ TODO add description
 #### messages
 Gets the list of received messages.
 
-> `public` messages(): [MessageEnvelope](../message_envelope)[]
+> messages(): [MessageEnvelope](../message_envelope)[]
 
-- **returns**: [MessageEnvelope](../message_envelope)[] - TODO add description
+- **returns**: [MessageEnvelope](../message_envelope)[] - list of received messages
 
 
 #### messageCount
 Gets the received message count.
 
-> `public` messageCount(): number
+> messageCount(): number
 
-- **returns**: number - TODO add description
+- **returns**: number - number of messages
 
 
 ### Instance methods

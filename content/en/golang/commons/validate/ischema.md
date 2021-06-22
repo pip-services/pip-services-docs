@@ -9,14 +9,14 @@ description: >
 
 ### Description
 
-The ISchema interface contains different validation methods.
+The ISchema interface contains several validation methods.
 
 
 ### Methods
 
 
 #### Validate
-TODO: add description
+Validates the given value and returns validation results 
 
 > Validate(value interface{}) [][*ValidationResult](../validation_result)
 
@@ -25,18 +25,18 @@ TODO: add description
 
 
 #### ValidateAndReturnError
-TODO: add description
+Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 
 > ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError
 
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **value**: interface{} - value to be validated.
-- **strict**: bool - 
+- **strict**: bool - if true,warnings will also raise validation exceptions.
 - **returns**: [*errors.ApplicationError](../../errors/application_error) - Application error
 
 
 #### ValidateAndThrowError
-TODO: add description
+Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.
 
 > ValidateAndThrowError(correlationId string, value interface{}, strict bool)
 

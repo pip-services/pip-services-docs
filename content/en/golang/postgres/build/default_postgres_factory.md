@@ -7,7 +7,7 @@ description: >
     Creates Postgres components based on their descriptors.
 ---
 
-**Extends:** [Factory](../../../components/build/factory)
+**Implements:** [Factory](../../../components/build/factory)
 
 ### Description
 
@@ -15,9 +15,10 @@ The DefaultPostgresFactory class allows you to create a factory used to create P
 
 ### Constructors
 
+#### NewDefaultPostgresFactory
 Creates a new instance of the factory.
 
-> `public` constructor()
+> NewDefaultPostgresFactory() [*DefaultPostgresFactory]()
 
 
 ### See also

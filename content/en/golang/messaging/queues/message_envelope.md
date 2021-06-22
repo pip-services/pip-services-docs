@@ -142,7 +142,7 @@ Sets a lock token reference for this [MessageEnvelope]().
 Converts this [MessageEnvelope]() to a string, using the following format:  
 *"[<correlationId>,<message_type>,<message.toString>]"*.
 
-If any of the values are *null*, they will be replaced with \-\-\-.
+If any of the values are *nil*, they will be replaced with \-\-\-.
 
 > (c [*MessageEnvelope]()) String() string
 

@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresConnectionResolver"
 linkTitle: "PostgresConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
     Helper class that resolves PostgreSQL connection and credential parameters,
     validates them and generates a connection URI.
@@ -37,44 +37,51 @@ Important points
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
 
 
+### Constructors
+
+#### NewPostgresConnectionResolver
+NewPostgresConnectionResolver creates new connection resolver
+
+> NewPostgresConnectionResolver() [*PostgresConnectionResolver]()
+
 ### Fields
 
 <span class="hide-title-link">
 
-#### _connectionResolver
+#### ConnectionResolver
 The connection resolver
-> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
+> **ConnectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
 The credential resolver
-> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
+> **ConnectionResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
 
-### Instance methods
+### Methods
 
 
-#### configure
+#### Configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*PostgresConnectionResolver]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### resolve
+#### Resolve
 Resolves PostgreSQL config from connection and credential parameters.
 
-> `public` resolve(correlationId: string): Promise\<any\>
+> (c [*PostgresConnectionResolver]()) Resolve(correlationId string) (uri string, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise\<any\> - resolved connection config or raised error.
+- **returns**: (uri string, err error) - resolved connection config or raised error.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*PostgresConnectionResolver]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

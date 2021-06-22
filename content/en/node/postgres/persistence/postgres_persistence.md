@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresPersistence"
 linkTitle: "PostgresPersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
 description: >
     Abstract persistence component that stores data in PostgreSQL using the official driver.
 
@@ -58,9 +58,9 @@ Creates a new instance of the persistence component.
 
 <span class="hide-title-link">
 
-#### _table_name
+#### _tableName
 The PostgreSQL table object.
-> `protected` **_table_name**: string
+> `protected` **_tableName**: string
 
 #### _dependencyResolver
 The dependency resolver.
@@ -121,7 +121,7 @@ Configures the component.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **correlationId**: string- the object to convert from the public partial format.
+- **config**: [ConfigParams](../../config/config_params) - configuration parameters to set.
 
 
 #### convertFromPublic
@@ -268,7 +268,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-filter: any
+- **filter**: any - (optional) filter for JSON objects
 - **returns**: Promise\<T\> - random item.
 
 
@@ -322,7 +322,7 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### unset_references
+#### unsetReferences
 Unsets (clears) previously set references to dependent components.
 
 > `public` unsetReferences(): void

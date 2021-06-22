@@ -43,65 +43,72 @@ Important points
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** (optional) credential stores used to resolve credentials
 
+### Constructors
+
+#### NewPostgresConnection
+NewPostgresConnection creates a new instance of the connection component.
+
+> NewPostgresConnection() [*PostgresConnection]()
 
 ### Fields
 
 <span class="hide-title-link">
 
 
-#### _connection
+#### Connection
 The PostgreSQL connection pool object.
-> `protected` **_connection**: any
+> **Connection**: *pgxpool.Pool
 
-#### _connectionResolver
+#### ConnectionResolver
 The connection resolver.
-> `protected` **_connectionResolver**: [PostgresConnectionResolver](../postgres_connection_resolver)
+> **ConnectionResolver**: [*PostgresConnectionResolver](../postgres_connection_resolver)
 
-#### _databaseName
+#### DatabaseName
 The PostgreSQL database name.
-> `protected` **_databaseName**: string
+> **DatabaseName**: string
 
-#### _logger
+#### Logger
 The logger.
-> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
+> **Logger**: [CompositeLogger](../../../components/log/composite_logger)
 
-#### _options
+#### Options
 The configuration options.
-> `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
+> **Options**: [*ConfigParams](../../../commons/config/config_params)
 
 
 </span>
 
 
-### Instance methods
+### Methods
 
-#### close
+#### Close
 Closes the component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*PostgresConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - returns error if not received.
 
 
-#### configure
+#### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*PostgresConnection]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### getConnection
+#### GetConnection
 Gets a connection to a Postgres database.
 
-> `public` getConnection(): any
+> (c [*PostgresConnection]()) GetConnection() *pgxpool.Pool
 
-- **returns**: any - connection to a Postgres database.
+- **returns**: *pgxpool.Pool - connection to a Postgres database.
 
 
-#### getDatabaseName
+#### GetDatabaseName
 Gets the database name.
 
-> `public` getDatabaseName(): string
+> (c [*PostgresConnection]()) GetDatabaseName() string
 
 - **returns**: string - database name

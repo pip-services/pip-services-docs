@@ -95,7 +95,7 @@ See also [Listen](#listen), [IMessageReceiver](../imessage_receiver)
 
 #### CheckOpen
 Checks if the queue has been opened.
-Raise an exception if queue wasn't opened or *null* otherwise
+Raise an exception if queue wasn't opened or *nil* otherwise
 
 > (c [*MessageQueue]()) CheckOpen(correlationId string) error
 

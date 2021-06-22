@@ -16,7 +16,7 @@ The  ISwaggerService interface is used to perform Swagger registrations.
 #### RegisterOpenApiSpec
 Performs the required Swagger registration steps.
 
-> RegisterOpenApiSpec(baseRoute string, content string)
+> RegisterOpenApiSpec(baseRoute string, swaggerRoute string)
 
 - **baseRoute**: string - base route
 - **swaggerRoute**: string - Swagger route

@@ -273,7 +273,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-filter: any
+- **filter**: any - (optional) a filter JSON object
 - **returns**: Promise\<T\> - a random item.
 
 

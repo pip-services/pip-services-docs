@@ -17,7 +17,7 @@ The LockedMessage class allows you to create data objects used to store and lock
 
 #### ExpirationTime
 The expiration time for the message lock. 
-If it is null, then the message is not locked.
+If it is nil, then the message is not locked.
 
 > **ExpirationTime**: time.Time
 

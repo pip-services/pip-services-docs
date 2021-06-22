@@ -30,6 +30,6 @@ Abstract persistence component that stores data in PostgreSQL using the official
 This is the most basic persistence component that is only
 able to store data items of any type. Specific CRUD operations
 over the data items must be implemented in child classes by
-accessing **this._db** or **this._collection** properties.
+accessing **c._db** or **c._collection** properties.
 
 </div>

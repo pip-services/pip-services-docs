@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "DirectClient<T>"
+title: "DirectClient"
 linkTitle: "DirectClient"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
 description: >

@@ -109,12 +109,12 @@ Opens the component with given connection and credential parameters.
 
 
 #### Peek
-Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
+Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns nil.
 
 > (c [*MemoryMessageQueue]()) Peek(correlationId string) (result [*MessageEnvelope](../message_envelope), err error)
 
 - **correlationId**: string - transaction id used to trace execution through the call chain.
-- **returns**: (result [*MessageEnvelope](../message_envelope), err error) - peeked message or *null*.
+- **returns**: (result [*MessageEnvelope](../message_envelope), err error) - peeked message or *nil*.
 
 #### PeekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
@@ -140,7 +140,7 @@ Receives an incoming message and removes it from the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
-- **returns**: ([*MessageEnvelope](../message_envelope), error) - received message or *null*.
+- **returns**: ([*MessageEnvelope](../message_envelope), error) - received message or *nil*.
 
 #### RenewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.

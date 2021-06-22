@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiablePostgresPersistence<T extends IIdentifiable<K>, K>"
 linkTitle: "IdentifiablePostgresPersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
 description: >
     Abstract persistence component that stores data in PostgreSQL
     and implements a number of CRUD operations over data items with unique ids.
@@ -20,7 +20,7 @@ Important points
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios child classes shall only override the [getPageByFilter](../postgres_persistence/#getpagebyfilter), [getListByFilter](../postgres_persistence/#getlistbyfilter) or [deleteByFilter](../postgres_persistence/#deletebyfilter) operations with a specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **self._collection** and **self._model** properties.
+- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 

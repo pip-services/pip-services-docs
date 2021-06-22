@@ -46,7 +46,7 @@ Creates a message queue component and assigns its name.
 - **name**: string - name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue
 
-### Instance methods
+### Methods
 
 #### Configure
 Configures the component by passing its configuration parameters.

@@ -34,7 +34,6 @@
         let langNamePosInUrl = isGitRepo ? 4 : 3 
 
         hits = hits.filter((item) => {
-          console.log(item);
           
           if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
             let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();

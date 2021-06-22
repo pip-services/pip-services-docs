@@ -21,9 +21,9 @@ See [ObjectComparator.compare](../object_comparator/#compare)
 
 > NewPropertiesComparisonRule(property1 string, operation string, property2 string) [*PropertiesComparisonRule]()
 
-- **property1**: string - a name of the first property to compare.
-- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **property2**: string - a name of the second property to compare.
+- **property1**: string - name of the first property to compare.
+- **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **property2**: string - name of the second property to compare.
 
 ### Methods
 
@@ -32,10 +32,10 @@ Validates a given value against this rule.
 
 > (c [*PropertiesComparisonRule]()) Validate(path string, schema ISchema, value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [ISchema](../ischema) - a schema this rule is called from
-- **value**: interface{} - a value to be validated.
-- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [ISchema](../ischema) - schema this rule is called from
+- **value**: interface{} - value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 ### Examples
 

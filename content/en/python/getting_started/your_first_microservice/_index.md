@@ -148,7 +148,7 @@ class HelloWorldRestService(RestService):
         self.register_route(method="GET", route=self._route, handler=self.greeting, schema=None)
 
     def greeting(self, name):
-        result = Parameters.from_tuples("name", self._controller.greeting(name))
+        result = self._controller.greeting(name)
         self.send_result(result)
 ```
 

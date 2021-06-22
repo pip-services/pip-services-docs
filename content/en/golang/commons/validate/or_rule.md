@@ -4,13 +4,13 @@ title: "OrRule"
 linkTitle: "OrRule"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: >
-    Validation rule that allows you to check combinations of rules created with OR logical operations.
+    Validation rule that allows you to check combinations of rules created with the OR logical operations.
     
 ---
 
 ### Description
 
-The OrRule class allows you to validate combinations of rules created with OR logical operations.
+The OrRule class allows you to validate combinations of rules created with the OR logical operations.
 
 Important points
 
@@ -25,7 +25,7 @@ Creates a new validation rule and sets its values.
 
 > NewOrRule(rules ...[IValidationRule](../ivalidation_rule)) [*OrRule]()
 
-- **rules**: ...[IValidationRule](../ivalidation_rule) - a list of rules to join with OR operator     
+- **rules**: ...[IValidationRule](../ivalidation_rule) - list of rules to join with OR operator     
 
 ### Methods
 
@@ -34,10 +34,10 @@ Validates a given value against this rule.
 
 > (c [*OrRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [ISchema](../ischema) - a schema this rule is called from
-- **value**: interface{} - a value to be validated.
-- **results**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [ISchema](../ischema) - schema this rule is called from
+- **value**: interface{} - value to be validated.
+- **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 
 ### Examples

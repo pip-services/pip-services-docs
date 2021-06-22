@@ -11,28 +11,28 @@ description: >
 
 ### Description
 
-The MapSchema class provides you with a schema to validate maps
+The MapSchema class provides you with a schema to validate maps.
 
 ### Constructors
 
 #### NewMapSchemaWithRules
-Creates a new instance of validation schema and sets its values.
+Creates a new instance of a validation schema and sets its values.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 > NewMapSchemaWithRules(keyType interface{}, valueType interface{}, required bool, rules [][IValidationRule](../ivalidation_rule)) [*MapSchema]()
 
-- **keyType**: interface{} - a type of map keys. Null means that keys may have any type.
-- **valueType**: interface{} - a type of map values. Null means that values may have any type.
+- **keyType**: interface{} - type of map keys. Null means that keys may have any type.
+- **valueType**: interface{} - type of map values. Null means that values may have any type.
 - **required**: bool - (optional) true to always require non-nil values.
-- **rules**: [][IValidationRule](../ivalidation_rule) - (optional) a list with validation rules.
+- **rules**: [][IValidationRule](../ivalidation_rule) - (optional) list with validation rules.
 
 #### NewMapSchema
-Creates a new instance of validation schema and sets its values.
+Creates a new instance of a validation schema and sets its values.
 
 > NewMapSchema(keyType interface{}, valueType interface{}) [*MapSchema]()
 
-- **keyType**: interface{} - a type of map keys. Null means that keys may have any type.
-- **valueType**: any - a type of map values. Null means that values may have any type.
+- **keyType**: interface{} - type of map keys. Null means that keys may have any type.
+- **valueType**: any - type of map values. Null means that values may have any type.
 
 
 ### Methods
@@ -43,24 +43,24 @@ Null means that keys may have any type.
 
 > (c [*MapSchema]()) KeyType() interface{}
 
-- **returns**: interface{} - the type of map keys.
+- **returns**: interface{} - type of map keys.
 
 #### ValueType
 Gets the type of map values.
-Null means that values may have any type.
+Null means that the values may have any type.
 
 > (c [*MapSchema]()) ValueType() interface{}
 
-- **returns**: interface{} - the type of map values.
+- **returns**: interface{} - type of map values.
 
 #### PerformValidation
 Validates a given value against the schema and configured validation rules.
 
 > (c [*MapSchema]()) PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: string - a dot notation path to the value.
-- **value**: interface{} - a value to be validated.
-- **returns**: [][*ValidationResult](../validation_result) - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: interface{} - value to be validated.
+- **returns**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 #### SetKeyType
 Sets the type of map keys.
@@ -68,7 +68,7 @@ Null means that keys may have any type.
 
 > (c [*MapSchema]()) SetKeyType(value interface{})
 
-- **value**: interface{} - a type of map keys.
+- **value**: interface{} - type of map keys.
 
 #### SetValueType
 Sets the type of map values.
@@ -76,7 +76,7 @@ Null means that values may have any type.
 
 > (c [*MapSchema]()) SetValueType(value interface{})
 
-- **value**: interface{} - a type of map values.
+- **value**: interface{} - type of map values.
 
 ### Examples
 ```go

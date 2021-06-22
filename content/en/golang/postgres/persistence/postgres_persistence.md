@@ -20,7 +20,7 @@ Important points
 able to store data items of any type. 
 - Specific CRUD operations
 over the data items must be implemented in child classes by
-accessing **c._db** or **c._collection** properties.
+accessing **c.Db** or **c.Collection** properties.
 
 #### Configuration parameters
 
@@ -264,7 +264,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: interface{} - (optional) filter function to filter items
 - **sort**: interface{} - (optional) sorting parameters
-- **select**: interface{} - (optional) projection parameters (not used yet)
+- **sel**: interface{} - (optional) projection parameters (not used yet)
 - **returns**: (items []interface{}, err error) - data list of filtered results.
 
 

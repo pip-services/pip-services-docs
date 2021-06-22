@@ -20,7 +20,7 @@ Important points
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios child classes shall only override the [GetPageByFilter](../postgres_persistence/#getpagebyfilter), [GetListByFilter](../postgres_persistence/#getlistbyfilter) or [DeleteByFilter](../postgres_persistence/#deletebyfilter) operations with a specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **c._collection** and **c._model** properties.
+- In complex scenarios child classes can implement additional operations by accessing **c.Db** or **c.Collection** properties.
 
 #### Configuration parameters
 

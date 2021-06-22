@@ -80,11 +80,11 @@ The MongoDB connection component.
 
 #### _collectionName
 The MongoDB colleciton name.
-> `protected` _collectionName: string;
+> `protected` **_collectionName**: string;
 
 #### _collection
 The MongoDb collection object.
-> `protected` _collection: any
+> `protected` **_collection**: any
 
 #### _client
 The MongoDB connection pool object.
@@ -97,7 +97,12 @@ The MongoDB database name.
 #### _tableName 
 The MongoDB table object.
 
-> `protected` _tableName: string
+> `protected` **_tableName**: string
+
+#### _db
+The MongoDb database object.
+
+> `protected` _db: any
 
 #### _maxPageSize
 The maximum number of records to return from the database per request.
@@ -190,10 +195,10 @@ Adds index definition to create it on opening.
 - **options**: any - index options
 
 
-#### get_count_by_filter
+#### getCountByFilter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **get_count_by_filter** method from the child class that
+This method shall be called by a public **getCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getCountByFilter(correlationId: string, filter: any): Promise\<number\>
@@ -218,7 +223,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **returns**: Promise<T[]> - data list of results by filter.
 
 
-#### get_one_random
+#### getOneRandom
 Gets a random item from items that match to a given filter.
 
 This method shall be called by a public [getOneRandom](#getonerandom) method from the child class
@@ -231,7 +236,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 - **returns**: Promise\<T\> - random item.
 
 
-#### get_page_by_filter
+#### getPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
 This method shall be called by a public **getPageByFilter** method from the child class that

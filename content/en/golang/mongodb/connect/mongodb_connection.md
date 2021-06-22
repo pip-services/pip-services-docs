@@ -2,14 +2,11 @@
 type: docs
 title: "MongoDbConnection"
 linkTitle: "MongoDbConnection"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mongodb-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-mongodb-go"
 description: >
     MongoDB connection using the official driver.
 
 ---
-
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
-[IOpenable](../../../commons/run/iopenable)
 
 ### Description
 
@@ -51,93 +48,96 @@ Important points
 
 
 ### Constructors
+
+#### NewMongoDbConnection
 Creates a new instance of the connection component.
 
-> `public` constructor()
+> NewMongoDbConnection() [*MongoDbConnection]()
 
 ### Fields
 
 <span class="hide-title-link">
 
-#### _logger
+#### Logger
 The logger.
-> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
+> **Logger**: [*CompositeLogger](../../../components/log/composite_logger)
 
-#### _connectionResolver
+#### ConnectionResolver
 The connection resolver.
-> `protected` **_connectionResolver**: [MongoDbConnectionResolver](../mongodb_connection_resolver) 
+> **ConnectionResolver**: [*MongoDbConnectionResolver](../mongodb_connection_resolver) 
 
-#### _options
+#### Options
 The configuration options.
-> `protected` **_options**: [ConfigParams](../../../commons/config/config_params) 
+> **Options**: [*ConfigParams](../../../commons/config/config_params) 
 
-#### _connection
+#### Connection
 The MongoDB connection object.
-> `protected` **_connection**: any
+> **Connection**: *mongodrv.Client
 
-#### _databaseName
+#### DatabaseName
 The MongoDB database name.
-> `protected` **_databaseName**: string
+> **DatabaseName**: string
 
-#### _db
+#### Db
 The MongoDB database object.
-> `protected` **_db**: any
+> **Db**: *mongodrv.Database
 </span>
 
 
-### Instance methods
+### Methods
 
-#### close
+#### Close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*MongoDbConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error -  error or nil no errors occured.
 
-
-#### configure
+#### Configure
 Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*MongoDbConnection]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### getConnection
+#### GetConnection
 Gets the connection.
 
-> `public` getConnection(): any
+> (c [*MongoDbConnection]()) GetConnection() *mongodrv.Client
 
-- **return**: any - connection to a MongoDB database
+- **return**: *mongodrv.Client - connection to a MongoDB database
 
 
-#### getDatabase
+#### GetDatabase
 Gets the MongoDB database.
 
-> `public` getDatabase(): any 
+> (c [*MongoDbConnection]()) GetDatabase() *mongodrv.Database
 
-- **return**: any - MongoDB database
+- **return**:  *mongodrv.Database - MongoDB database
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is opened.
 
-> `public` isOpen(): boolean
+> (c [*MongoDbConnection]()) IsOpen() bool
 
-- **return**: boolean - True if the component has been opened and False otherwise.
+- **return**: bool - True if the component has been opened and False otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` async open(correlationId: string): Promise\<void\>
+> (c [*MongoDbConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error -  error or nil no errors occured.
 
 
-#### setReferences
+#### SetReferences
 Sets the references to the dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*MongoDbConnection]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

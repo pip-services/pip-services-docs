@@ -9,8 +9,6 @@ description: >
 
 ---
 
-**Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable)
-
 ### Description
 
 The Shutdown class allows you to create a random shutdown component that crashes a process using various methods.
@@ -26,56 +24,58 @@ Important points
 - **min_timeout**: minimum crash timeout in milliseconds (default: 5 mins)
 - **max_timeout**: maximum crash timeout in milliseconds (default: 15 minutes)
 
+### Constructors
 
+#### NewShutdown
+Create new instance of Shutdown
+
+> NewShutdown() [*Shutdown]()
 
 
 ### Methods
 
 
-#### close
+#### Close
 Closes component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*Shutdown]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **returns**: error - returns error if not received.
 
-
-#### configure
+#### Configure
 Configures a component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*Shutdown]()) Configure(config [config.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is opened.
 
-> `public` isOpen(): boolean
+> (c [*Shutdown]()) IsOpen() bool
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component has been opened and false otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> (c [*Shutdown]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **returns**: error - returns error if not received.
 
 
-#### shutdown
+#### Shutdown
 Crashes the process using the configured crash mode.
 
-> `public` shutdown()
+> (c [*Shutdown]()) Shutdown()
  
 
 ### Examples
 
-```typescript
-let shutdown = new Shutdown();
-shutdown.configure(ConfigParams.fromTuples(
-    "mode": "exception"
-));
-shutdown.shutdown();         // Result: Bang!!! the process crashes
+```go
+TODO: add example
 ```

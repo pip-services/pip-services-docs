@@ -41,29 +41,29 @@ Important points
 
 <span class="hide-title-link">
 
-#### source
-Source (context) name
-> `protected` **source**: string
-
 #### Cache
 List of traces
-> `protected` **Cache**: [][*OperationTrace](../operation_trace)
+> **Cache**: [][*OperationTrace](../operation_trace)
+
+#### source
+Source (context) name
+> **source**: string
 
 #### updated
 Boolean variable that indicates whether there has been an update or not.
-> `protected` **updated**: bool
+> **updated**: bool
 
 #### lastDumpTime
 Time of the last dump
-> `protected` **lastDumpTime**: time.Time
+> **lastDumpTime**: time.Time
 
 #### maxCacheSize
 Maximum number of messages stored in this cache (default: 100)
-> `protected` **maxCacheSize**: int
+> **maxCacheSize**: int
 
 #### interval
 Interval in milliseconds to save log messages (default: 10 seconds)
-> `protected` **interval**: int64
+> **interval**: int64
 
 </span>
 

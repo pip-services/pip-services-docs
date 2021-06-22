@@ -60,7 +60,7 @@ export class MyComponent implements IConfigurable, IReferenceable {
     this._counters.setReferences(refs);
   }
   
-  public async myMethod(correlationId: string, param1: any): Promise<void> {
+  public async myMethod(correlationId: string, param1: any): Promise\<void\> {
     this._logger.trace(correlationId, "Executed method mycomponent.mymethod");
     this._counters.increment("mycomponent.mymethod.exec_count", 1);
     let timing = this._counters.beginTiming("mycomponent.mymethod.exec_time");
@@ -110,7 +110,7 @@ export class MyComponent implements IConfigurable, IReferenceable, IOpenable {
   
   ...
   
-  public async open(correlationId: string): Promise<void> {
+  public async open(correlationId: string): Promise\<void\> {
     let connection = await this._connectionResolver.resolve(correlationId);
     let credential = await this._credentialResolver.lookup(correlationId);
 

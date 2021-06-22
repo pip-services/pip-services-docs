@@ -39,27 +39,27 @@ NewMessageEnvelope method are creates an empty MessageEnvelope
 #### CorrelationId
 The unique business transaction id that is used to trace calls across components.
 
-> `public` **CorrelationId**: string
+> **CorrelationId**: string
 
 #### Message
 The stored message.
 
-> `public` **Message**: []byte
+> **Message**: []byte
 
 #### MessageId
 The message's auto-generated ID.
 
-> `public` **MessageId**: string
+> **MessageId**: string
 
 #### MessageType
 String value that defines the stored message's type.
 
-> `public` **MessageType**: string
+> **MessageType**: string
 
 #### SentTime
 The time at which the message was sent.
 
-> `public` **SentTime**: time.Time
+> **SentTime**: time.Time
 
 </span>
 

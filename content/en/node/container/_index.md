@@ -116,7 +116,7 @@ Support for environment variables works well in docker or other containers like 
 
 To instantiate and run the container we need a simple process launcher.
 
-```javascript
+```typescript
 let MyProcess = require('./MyProcess').MyProcess;
 
 try {

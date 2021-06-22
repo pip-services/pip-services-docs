@@ -28,7 +28,7 @@ class MyConnector implements ICloseable {
     
     ... // The _client can be lazy created
     
-    public async close(correlationId: string): Promise<void> {
+    public async close(correlationId: string): Promise\<void\> {
         if (this._client != null) {
             this._client.close();
             this._client = null;

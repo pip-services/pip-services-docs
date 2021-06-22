@@ -27,7 +27,7 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 
 ```typescript
 class MyMessageReceiver implements IMessageReceiver {
-  public async receiveMessage(envelop: MessageEnvelop, queue: IMessageQueue): Promise<void> {
+  public async receiveMessage(envelop: MessageEnvelop, queue: IMessageQueue): Promise\<void\> {
       console.log("Received message: " + envelop.getMessageAsString());
   }
 }

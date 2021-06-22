@@ -10,7 +10,7 @@ To run our microservice, we need to add just one last bit of code. In the bin fo
 
 **/bin/run.js**
 
-```javascript
+```typescript
 let BeaconsProcess = require('../obj/src/container/BeaconsProcess').BeaconsProcess;
 ‍
 try {

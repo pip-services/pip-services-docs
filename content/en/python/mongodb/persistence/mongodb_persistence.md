@@ -89,7 +89,7 @@ Closes the component and frees used resources.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
-- **correlation_id**: Optional[str]- object to convert from the public partial format.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### _convert_from_public

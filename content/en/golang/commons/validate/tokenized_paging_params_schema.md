@@ -13,11 +13,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The TokenizedPagingParamsSchema class allows you to create schemas to validate TokenizedPagingParams.
 
 ### Constructors
 
 #### NewTokenizedPagingParamsSchema
-Creates a new instance of validation schema.
+Creates a new instance of a validation schema.
 
 > NewTokenizedPagingParamsSchema() [*ObjectSchema](../object_schema)

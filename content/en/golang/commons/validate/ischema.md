@@ -20,8 +20,8 @@ TODO: add description
 
 > Validate(value interface{}) [][*ValidationResult](../validation_result)
 
-- **value**: interface{} - TODO: add description
-- **returns**: [][*ValidationResult](../validation_result) - TODO: add description
+- **value**: interface{} - value to be validated.
+- **returns**: [][*ValidationResult](../validation_result) - list with validation results
 
 
 #### ValidateAndReturnError
@@ -30,9 +30,9 @@ TODO: add description
 > ValidateAndReturnError(correlationId string, value interface{}, strict bool) *errors.ApplicationError
 
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
-- **value**: interface{} - TODO: add description
-- **strict**: bool - TODO: add description
-- **returns**: [*errors.ApplicationError](../../errors/application_error) - TODO: add description
+- **value**: interface{} - value to be validated.
+- **strict**: bool - 
+- **returns**: [*errors.ApplicationError](../../errors/application_error) - Application error
 
 
 #### ValidateAndThrowError
@@ -40,7 +40,7 @@ TODO: add description
 
 > ValidateAndThrowError(correlationId string, value interface{}, strict bool)
 
-- **correlationId**: string - TODO: add description
-- **value**: interface{} - TODO: add description
-- **strict**: bool - TODO: add description
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **value**: interface{} - value to be validated.
+- **strict**: bool - 
 

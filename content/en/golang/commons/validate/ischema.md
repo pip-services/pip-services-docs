@@ -32,7 +32,7 @@ Validates the given value and returns a [ValidationException](../validation_exce
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **value**: interface{} - value to be validated.
 - **strict**: bool - if true,warnings will also raise validation exceptions.
-- **returns**: [*errors.ApplicationError](../../errors/application_error) - Application error
+- **returns**: [*errors.ApplicationError](../../errors/application_error) - validation exception
 
 
 #### ValidateAndThrowError

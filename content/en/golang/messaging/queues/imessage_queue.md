@@ -146,7 +146,7 @@ Sends an object into the queue. Before being sent, the object is converted into 
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageType**: string - message type.
-- **value**: any - object value to be sent.
+- **value**: interface{} - object value to be sent.
 - **returns**: error -  error or nil no errors occured.
 
 

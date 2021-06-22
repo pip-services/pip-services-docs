@@ -177,7 +177,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > (c *MongoDbPersistence) DeleteByFilter(correlationId string, filter interface{}) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) filter function used to filter items.
+- **filter**: interface{} - (optional) filter function used to filter items.
 - **returns**: error -  error or nil no errors occured.
 
 

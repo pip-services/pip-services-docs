@@ -33,7 +33,7 @@ If they don't the call to this method has no effect.
 > (c *TCloser) CloseOne(correlationId string, component interface{}) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **component**: any - component that is to be closed.
+- **component**: interface{} - component that is to be closed.
 - **returns**: error - return error if not closed
 
 ### See also

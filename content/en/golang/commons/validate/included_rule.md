@@ -32,7 +32,7 @@ Validates a given value against this rule.
 
 - **path**: string - dot notation path to the value.
 - **schema**: [ISchema](../ischema) - schema this rule is called from
-- **value**: any - value to be validated.
+- **value**: interface{} - value to be validated.
 - **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 

@@ -32,7 +32,7 @@ Creates a new instance of a validation schema and sets its values.
 > NewMapSchema(keyType interface{}, valueType interface{}) [*MapSchema]()
 
 - **keyType**: interface{} - type of map keys. Null means that keys may have any type.
-- **valueType**: any - type of map values. Null means that values may have any type.
+- **valueType**: interface{} - type of map values. Null means that values may have any type.
 
 
 ### Methods

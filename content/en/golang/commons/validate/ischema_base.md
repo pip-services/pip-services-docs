@@ -9,16 +9,16 @@ description: >
 
 ### Description
 
-TODO: add description
+The ISchemaBase interface is used by classes that need to perform a validation.
 
 
 ### Methods
 
 
 #### PerformValidation
-TODO: add description
+Performs a validation.
 
 > PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
 
-- **path**: interface{} - TODO: add description
-- **returns**: [][*ValidationResult](../validation_result) - TODO: add description
+- **path**: interface{} - dot notation path to the value
+- **returns**: [][*ValidationResult](../validation_result) - list with validation results

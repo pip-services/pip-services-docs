@@ -7,7 +7,7 @@ gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 ---
 
 In the previous steps, we were looking at the development of clients and at the clients themselves. However, both the client and the microservice were implemented in the same language, which allowed us to run components of the microservice from right inside the tests. In a multi-language environment, there are times when you need to create clients in a language that is different from the one that was used to write the microservice. In this last step, we will be demonstrating a similar situation, showing how to use Docker to link and run microservices and other infrastructure services, and describing how to integrate this into the development process.
-This step will be using the BeaconsCommandableHttpClientV1 class that we created in step 3, along with a new set of tests that still uses the Beacons microservice, but this time - one that is running in a separate Docker container. In other words, the Beacon microservice that is on DockerHub is written in Node.js, which may or may not be the language that you have been using throughout this tutorial. 
+This step will be using the **BeaconsCommandableHttpClientV1** class that we created in step 3, along with a new set of tests that still uses the Beacons microservice, but this time - one that is running in a separate Docker container. In other words, the Beacon microservice that is on DockerHub is written in Node.js, which may or may not be the language that you have been using throughout this tutorial. 
 To run the microservice in Docker, we’ll first need to create a configuration file called  **docker/docker-compose.dev.yml**:
 
 ```yml
@@ -33,7 +33,7 @@ services:
 ```
 
 This configuration will run the microservice alongside a Mongo DB for data storage. HTTP services will also be started on port 8080 and will be made accessible from outside the container. You can set up the microservice to run with a memory persistence as well. To do this, comment out the MONGO environment variables, as well as any other Mongo-related parameters.
-The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. Place the code below into a file named test_BeaconsHttpClientV1.py.
+The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. Place the code below into a file named **test_BeaconsHttpClientV1.py**.
 
 **/test/version1/test_BeaconsHttpClientV1.py**
 

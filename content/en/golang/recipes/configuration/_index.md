@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Configuration"
-linkTitle: "Configuration"
+title: "Configuration!"
+linkTitle: "Configuration!"
 weight: 10
 ---
 

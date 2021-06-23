@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Component Lifecycle"
-linkTitle: "Component Lifecycle"
+title: "Component Lifecycle!"
+linkTitle: "Component Lifecycle!"
 weight: 30
 ---
 

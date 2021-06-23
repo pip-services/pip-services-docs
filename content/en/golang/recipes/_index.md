@@ -39,7 +39,9 @@ One of the roles of the microservice’s container is to correctly initialize al
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 
 
-### [MongoDB Persistence](mongodb_persistence)
+### [MongoDB Persistence!](mongodb_persistence)
+
+**TODO: this recipe is not implemented yet**
 
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 

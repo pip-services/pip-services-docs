@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Component References"
-linkTitle: "Component References"
+title: "Component References!"
+linkTitle: "Component References!"
 weight: 20
 ---
 

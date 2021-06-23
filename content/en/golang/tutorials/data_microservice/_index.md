@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Data Microservice"
-linkTitle: "Data Microservice" 
+title: "Data Microservice!"
+linkTitle: "Data Microservice!" 
 ---
 
 ### Overview

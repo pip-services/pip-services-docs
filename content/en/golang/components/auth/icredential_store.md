@@ -19,8 +19,8 @@ Lookups credential parameters by its key.
 
 > Lookup(correlationId string, key string) ([*CredentialParams](../credential_params), error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key used to uniquely identify the credential.
 - **returns**: ([*CredentialParams](../credential_params), error) - found credential parameters or nil if nothing was found.
 
 
@@ -29,9 +29,9 @@ Stores credential parameters into the store.
 
 > Store(correlationId string, key string, credential [*CredentialParams](../credential_params)) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential.
-- **credential**: [*CredentialParams](../credential_params) - a credential to be stored.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key used to uniquely identify the credential.
+- **credential**: [*CredentialParams](../credential_params) - credential to be stored.
 - **returns**: error - return error if not stored
 
 

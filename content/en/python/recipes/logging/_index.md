@@ -15,9 +15,9 @@ The Pip.Services Toolkit contains logging components that can either output mess
 
 ### Logging
 
-#### The logger interface
+#### The ILogger interface
 
-The logger interface is defined in the Log package of the Components module. This interface contains methods that are common for most logger implementations.
+The [ILogger](../../components/log/ilogger/) interface is defined in the Log package of the Components module. This interface contains methods that are common for most logger implementations.
 
 ```python
 
@@ -51,8 +51,8 @@ class ILogger(ABC):
         raise NotImplementedError('Method from interface definition')
 ```
 
-The log method writes messages to the log, using the provided log level. The other methods collect messages at various logging levels and can be used in your code to add transparency. 
-The level property can be used to optimize code. Generating log messages can cost you resources. We can optimize the use of these resources by only generating messages for the log level that is currently set, as is shown in the example below:
+The **log** method writes messages to the log, using the provided log level. The other methods collect messages at various logging levels and can be used in your code to add transparency. 
+The **level** property can be used to optimize code. Generating log messages can cost you resources. We can optimize the use of these resources by only generating messages for the log level that is currently set, as is shown in the example below:
 
 ```python
 if logger.Level >= LogLevel.Trace:
@@ -60,10 +60,10 @@ if logger.Level >= LogLevel.Trace:
     logger.trace(correlation_id, message)
 ```
 
-One differentiating factor of the Pip.Services Toolkit is the required correlation_id parameter. correlation_id is used in all business methods and is passed in a standardized way when calling microservices. This way, the correlation_id is passed along the entire chain of microservice calls, from start to finish, and is included in any and all errors and log messages. This allows us to grasp an understanding of what’s going on, in conditions where information is fragmented and collected from various sources.
+One differentiating factor of the Pip.Services Toolkit is the required **correlation_id** parameter. This parameter is used in all business methods and is passed in a standardized way when calling microservices. This way, the **correlation_id** is passed along the entire chain of microservice calls, from start to finish, and is included in any and all errors and log messages. This allows us to grasp an understanding of what’s going on, in conditions where information is fragmented and collected from various sources.
 
 #### Log levels
-To be able to generate quality logs, it’s crucial to know how the various LogLevels should be used. For some reason, most developers don’t consider this to be important, which makes it harder for users, technical support, and for developers themselves to use the system. The main purpose of LogLevel is to filter messages by their importance. When LogLevel is used incorrectly, important messages are bound to be lost, or the opposite can occur, where the output is spammed by various messages, making the search for information a real burden.
+To be able to generate quality logs, it’s crucial to know how the various log levels should be used. For some reason, most developers don’t consider this to be important, which makes it harder for users, technical support, and for developers themselves to use the system. The main purpose of [LogLevel](../../components/log/log_level/) is to filter messages by their importance. When **LogLevel** is used incorrectly, important messages are bound to be lost, or the opposite can occur, where the output is spammed by various messages, making the search for information a real burden.
 
 - Nothing - disable all messages
 - Fatal - critical errors that lead to partial or complete system failures 

@@ -24,4 +24,4 @@ The module contains the following packages:
 * [**Log**](log) - basic logging components that provide console and composite logging, as well as an interface for developing custom loggers
 * [**Test**](test) - minimal set of test components to make testing easier
 * [**Component**](component) - the root package
-
+ 

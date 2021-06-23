@@ -4,7 +4,7 @@ title: "ISchemaBase"
 linkTitle: "ISchemaBase"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: >
-    TODO: add description
+    Interface with a method to perform a validation.
 ---
 
 ### Description

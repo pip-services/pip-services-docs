@@ -25,11 +25,11 @@ One of the roles of the microservice’s container is to correctly initialize al
 
 A flexible and, at the same time, standardized approach was developed in the Pip.Services Toolkit for initializing components. This approach preserves the conceptual integrity of the whole microservice, while keeping the source code clean, coherent, and testable. A component’s lifecycle is determined by which of the following interfaces it implements:
 
-- IConfigurable – component configuration [Config](../../commons/config).
-- IReferenceable и IUnreferenceable – setting and destroying references to other components [Reference](../../commons/refer/reference).
-- IOpenable и IClosable – starting and stopping internal functional processes [Openable](../../commons/run/iopenable).
-- IExecutable – execution of functional processes [Executable](../../commons/run/iexecutable).
-- INotifiable - sending event notifications [Notifiable](../../commons/run/inotifiable).
+- [IConfigurable](../../commons/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../commons/refer/ireferenceable/) and [IUnreferenceable](../../commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../commons/run/iopenable) and [IClosable](../..//commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../commons/run/iexecutable) – execution of functional processes.
+- [INotifiable](../../commons/run/inotifiable) - sending event notifications.
 
 ```python
 
@@ -122,11 +122,11 @@ class CounterController(IReferenceable, IReconfigurable, IOpenable, IExecutable)
 ```
 ### Utilities
 The Pip.Service’s Toolkit also includes a few utilities that can be used during microservice development:
-- Opener – initiates the functional processes of selected components.
-- Closer – stops the functional processes of selected components.
-- Executor – runs the functional processes of selected components.
-- Notifier - sends event notifications for selected components.
-- Cleaner – cleans the current state of selected components.
+- [Opener](../../commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:

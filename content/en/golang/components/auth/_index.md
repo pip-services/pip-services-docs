@@ -15,7 +15,7 @@ description: >
     
 - Examples of credentials are passwords, logins, application keys, and secrets. 
 - Credentials' information is usually linked with connection parameters. 
-- Configuration and connection parameters are stored separately from authentication information as they need added security and protection
+- Configuration and connection parameters are stored separately from authentication information as they need added security and protection.
 
 <div class="module-body">  
 
@@ -41,7 +41,7 @@ Helper class to retrieve component credentials.
 
 If credentials are configured to be retrieved from [ICredentialStore](icredential_store),
 it automatically locates [ICredentialStore](icredential_store) in component references
-and retrieve credentials from there using store_key parameter.
+and retrieves credentials from there using store_key parameter.
 
 #### [DefaultCredentialStoreFactory](default_credential_store_factory)
 Creates [ICredentialStore](icredential_store) components based on their descriptors.

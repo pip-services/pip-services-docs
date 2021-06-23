@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 8. Manual testing of facade"
 linkTitle: "Step 8. Manual testing of facade" 
-gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
+gitUrl: "https://github.com/pip-services-samples/facade-sample-node"
 ---
 
 Once all of the system’s microservices are up and running, we can perform some manual testing of the facade we’ve created, to ensure that everything’s working as intended.
@@ -159,4 +159,4 @@ Feel free to explore the rest of the system’s functionality on your own using 
 
 Congratulations! Having completed all of the steps of this tutorial, you’ve created your first full-fledged facade and are now capable of creating your own using the Pip.Services Toolkit!
 
-This example’s source code is available in our repository on [GitHub](https://github.com/pip-services-samples/facade-sample-python)
+This example’s source code is available in our repository on [GitHub](https://github.com/pip-services-samples/facade-sample-node)

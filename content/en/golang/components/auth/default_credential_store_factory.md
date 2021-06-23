@@ -16,7 +16,7 @@ The DefaultCredentialStoreFactory class is used to create [ICredentialStore](../
 ### Constructors
 
 #### NewDefaultCredentialStoreFactory
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > NewDefaultCredentialStoreFactory() [*build.Factory](../../build/factory)
 

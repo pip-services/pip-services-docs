@@ -20,7 +20,7 @@ Important points
 #### Configuration parameters
 
 **credential**: 
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../icredentialStore)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../icredentialStore)
 - **...**: other credential parameters
 
 **credentials**: alternative to credential
@@ -53,7 +53,7 @@ Creates a new instance of credentials resolver.
 ### Methods
 
 #### Add
-Adds a new credential to component credentials
+Adds a new credential to a credential component.
 
 > (c [*CredentialResolver]()) Add(credential [*CredentialParams](../credential_params))
 
@@ -76,16 +76,16 @@ If you need fully fleshed credential use **lookup** method instead.
 
 > (c [*CredentialResolver]()) GetAll() [][*CredentialParams](../credential_params)
 
-- **returns**: [][*CredentialParams](../credential_params) - a list with credential parameters
+- **returns**: [][*CredentialParams](../credential_params) - list with credential parameters
 
 
 #### Lookup
-Looks up component credential parameters. If credentials are configured to be retrieved
-from Credential store it finds a [ICredentialStore](../icredential_store)` and lookups credentials there.
+Looks up component's credential parameters. If credentials are configured to be retrieved
+from a credential store it finds a [ICredentialStore](../icredential_store)` and lookups the credentials there.
 
 > (c [*CredentialResolver]()) Lookup(correlationId string) ([*CredentialParams](../credential_params), error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: ([*CredentialParams](../credential_params), error) - resolved credential parameters or nil if nothing was found.
 
 

@@ -12,13 +12,15 @@ Before we can start writing-up some microservices, we’ll need to install a few
 
 First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
-For working with the Python programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Python from their official site https://www.python.org/downloads/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+For working with the Go programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Go from their official site  https://golang.org/dl/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
 ```bash
-python --version
+go version
 ```
+
+If everything was installed successfully, the screen will display the latest version of the Go programming language.
 
 ### 2. Git client
 Example projects are stored in repositories on github.com. To download their source code to your computer, you’ll need a Git client. You can download and install Git using the following link: https://git-scm.com/downloads

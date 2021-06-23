@@ -91,11 +91,8 @@ def __compose_filter(self, filter: FilterParams) -> Any:
 
     return filter
  
-def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
-                           sort: Any = None, select: Any = None) -> DataPage:
-
-        return super(BeaconsMemoryPersistence, self).get_page_by_filter(correlation_id,
-                                                                        self.__compose_filter(filter), paging=paging)
+def get_page_by_filter(self, correlationId, filter, paging):
+    super().get_page_by_filter(correlationId, filter, paging, None)
 
 ```
 

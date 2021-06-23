@@ -14,7 +14,7 @@ The Factory class allows you to create components using registered types and fac
 ### Constructors
 
 #### NewFactory
-Create new factory
+Creates new factory.
 
 > NewFactory() [*Factory]()
 
@@ -25,12 +25,12 @@ Checks if this factory is able to create component by a given locator.
 
 This method searches for all registered components and returns
 a locator for the component it is able to create that matches the given locator.
-If the factory is not able to create the requested component is returns nil.
+If the factory is not able to create the requested component it returns nil.
 
 > (c [*Factory]()) CanCreate(locator interface{}) interface{}
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **returns**: interface{} - a locator for a component that the factory is able to create.
+- **locator**: interface{} - locator used to identify the component to be created.
+- **returns**: interface{} - locator for a component that the factory is able to create.
 
 
 #### Create
@@ -38,8 +38,8 @@ Creates a component identified by given a locator.
 
 > (c [*Factory]()) Create(locator interface{}) (interface{}, error)
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **returns**: (interface{}, error) - the created component.
+- **locator**: interface{} - locator used to identify the component to be created.
+- **returns**: (interface{}, error) - created component.
 
 
 #### Register
@@ -47,8 +47,8 @@ Registers a component using a factory method.
 
 > (c [*Factory]()) Register(locator interface{}, factory func() interface{})
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **factory**: func() interface{} - a factory function that receives a locator and returns a created component.
+- **locator**: interface{} - locator used to identify the component to be created.
+- **factory**: func() interface{} - factory function that receives a locator and returns the created component.
 
 
 #### RegisterType
@@ -56,8 +56,8 @@ Registers a component using its type (a constructor function).
 
 > (c [*Factory]()) RegisterType(locator interface{}, factory interface{})
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **factory**: interface{} - a component type.
+- **locator**: interface{} - locator used to identify a component to be created.
+- **factory**: interface{} - component type.
 
 ### Examples
 

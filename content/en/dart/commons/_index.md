@@ -25,7 +25,7 @@ description: >
 * [Configuration Pattern](https://www.pipservices.org/recipies/configuration)
 * [Locator Pattern](https://www.pipservices.org/recipies/references)
 * [Component Lifecycle](https://www.pipservices.org/recipies/component-lifecycle)
-* [Components with Active Logic](https://www.pipservices.org/recipies/active-logic)
+* [Components with Background Execution](https://www.pipservices.org/recipies/active-logic)
 * [Data Patterns](https://www.pipservices.org/recipies/memory-persistence)
 * [Get Help](https://www.pipservices.org/community/help)
 * [Contribute](https://www.pipservices.org/community/contribute)

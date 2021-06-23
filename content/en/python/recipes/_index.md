@@ -40,7 +40,7 @@ The Pip.Services Toolkit offers a few abstract implementations for developing pe
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 
 
-### [Active Logic](background_execution)
+### [Background Execution](background_execution)
 
 Microservices are capable of successfully solving a wide variety of business tasks. However, where they really shine (and are especially effective) is when it comes to scaling. Scaling is the process of creating a number of identical instances of a microservice for performing large and resource-hungry tasks. Thanks to scaling, many tasks can now be completed in adequate time and with optimal use of resources. Archiving a database, batch processing, and 3D video rendering are all examples of tasks that benefit from scaling, and many others exist as well!
 

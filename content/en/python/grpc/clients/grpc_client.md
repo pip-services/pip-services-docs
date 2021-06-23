@@ -44,35 +44,35 @@ Creates a new instance of the grpc client.
 
 #### _channel
 The GRPC client channel
-> _channel: grpc.Channel
+> **_channel**: grpc.Channel
 
 #### _connection_resolver
 The connection resolver.
-> _connection_resolver = [HttpConnectionResolver](../../../rpc/connect/http_connection_resolver)()
+> **_connection_resolver**: [HttpConnectionResolver](../../../rpc/connect/http_connection_resolver)
 
 #### _logger
 The logger.
-> _logger = [CompositeLogger](../../../components/log/composite_logger)()
+> **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _counters
 The performance counters.
-> _counters = [CompositeCounters](../../../components/count/composite_counters)()
+> **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _options
 The configuration options.
-> _options = [ConfigParams](../../../commons/config/config_params)()
+> **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _connection_timeout
 The connection timeout in milliseconds.
-> _connection_timeout = 100000
+> **_connection_timeout** = 100000
 
 #### _timeout
 The invocation timeout in milliseconds.
-> _timeout = 100000
+> **_timeout** = 100000
 
 #### _uri
 The remote service uri which is calculated on openning.
-> _uri: str
+> **_uri**: string
 
 </span>
 
@@ -155,7 +155,7 @@ Checks if the component is open.
 
 > is_open(): bool
 
-- **reerror**: bool - Returns True if the component is open and False otherwise.
+- **returns**: bool - Returns True if the component is open and False otherwise.
 
 
 #### open

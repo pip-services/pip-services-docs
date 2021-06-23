@@ -34,7 +34,7 @@ References used to locate the component dependencies
 #### createQueue
 Creates a message queue component and assigns its name.
 
-> `abstract` createQueue(name: string):  [IMessageQueue](../../queues/imessage_queue)
+> `public abstract` createQueue(name: string):  [IMessageQueue](../../queues/imessage_queue)
 
 - **name**: string - name of the created message queue.
 - **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue

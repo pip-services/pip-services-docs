@@ -274,7 +274,7 @@ Registers all service routes in a HTTP endpoint.
 This method is called by the service and must be overriden
 in child classes.
 
-> `abstract` register(): void
+> `public abstract` register(): void
 
 ### Examples
 

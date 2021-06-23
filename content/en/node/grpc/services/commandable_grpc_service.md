@@ -2,13 +2,13 @@
 type: docs
 title: "CommandableGrpcService"
 linkTitle: "CommandableGrpcService"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
 description: > 
     Abstract service that receives commands via the GRPC protocol.
 
 ---
 
-**Implements:** [GrpcClient](../grpc_client)
+**Extends:** [GrpcClient](../grpc_client)
 
 See also [CommandableGrpcClient](../../clients/commandable_grpc_client), 
 [GrpcService](../grpc_service)
@@ -46,9 +46,9 @@ GRPC-based remote interface.
 
 Creates a new instance of the service.
 
-> CommandableGrpcService(name: str)
+> `public` constructor(name: string)
 
-- **name**: str - service name.
+- **name**: string - service name.
 
 
 ### Instance methods
@@ -56,32 +56,44 @@ Creates a new instance of the service.
 #### register
 Registers all service routes in a HTTP endpoint.
 
-> register()
+> `public` register()
 
+#### registerCommadableMethod
+Registers a commandable method in this objects GRPC server (service) by the given name.,
+
+> `protected` registerCommadableMethod(method: string, schema: [Schema](../../../commons/validate/schema), action: (correlationId: string, data: any) => Promise\<any\>): void
+
+- **method**: string - the GRPC method name.
+- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
+- **action**: (correlationId: string, data: any) => Promise\<any\> - the action to perform at the given route.
 
 
 ### Examples
 
-```python
-class MyCommandableGrpcService(CommandableGrpcService):
-   def __init__(self):
-        super().__init__()
+```typescript
+class MyCommandableGrpcService extends CommandableGrpcService {
+   public constructor() {
+      base();
+      this._dependencyResolver.put(
+          "controller",
+          new Descriptor("mygroup","controller","*","*","1.0")
+      );
+   }
+}
 
-        self._dependency_resolver.put(
-            "controller",
-            Descriptor("mygroup","controller","*","*","1.0")
-        )
-
-service = MyCommandableGrpcService()
-service.configure(ConfigParams.from_tuples(
+let service = new MyCommandableGrpcService();
+service.configure(ConfigParams.fromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080
-))
-service.set_references(References.from_tuples(
-    Descriptor("mygroup","controller","default","default","1.0"), controller
-))
-service.open("123")
+));
+
+service.setReferences(References.fromTuples(
+   new Descriptor("mygroup","controller","default","default","1.0"), controller
+));
+
+await service.open("123");
+console.log("The GRPC service is running on port 8080");
 ```
 
 

@@ -38,15 +38,6 @@ References used to locate the component dependencies
 
 ### Methods
 
-#### createQueue
-Creates a message queue component and assigns its name.
-
-> `abstract` createQueue(name: string):  [IMessageQueue](../../queues/imessage_queue)
-
-- **name**: string - name of the created message queue.
-- **returns**: [IMessageQueue](../../queues/imessage_queue) - message queue
-
-### Methods
 
 #### Configure
 Configures the component by passing its configuration parameters.
@@ -55,7 +46,7 @@ Configures the component by passing its configuration parameters.
 
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) -  configuration parameters to be set.
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
 > (c [*MessageQueueFactory]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))

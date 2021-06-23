@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "gRPC module"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
 no_list: true
 weight: 30
 description: > 
-    GRPC components for Pip.Services in Python
+    GRPC components for Pip.Services in Node.js / ES2017
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
@@ -26,7 +26,5 @@ The module contains the following packages:
 
 Install the NPM package as
 ```bash
-pip install pip-services3-grpc
+npm install pip-services3-grpc-node --save
 ```
-
-TODO: add example

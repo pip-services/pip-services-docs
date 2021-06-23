@@ -2,7 +2,7 @@
 type: docs
 title: "GrpcEndpoint"
 linkTitle: "GrpcEndpoint"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
 description: > 
     Used for creating GRPC endpoints. 
 
@@ -43,87 +43,86 @@ following references to the object's [set_references](#set_references)
 #### close
 Closes this endpoint and the GRPC server (service) that was opened earlier.
 
-> close(correlation_id: Optional[str])
+> `public` close(correlationId: string): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
 Configures this HttpEndpoint using the given configuration parameters.
 
-> configure(config: [ConfigParams](../../../commons/config/config_params))
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 
-#### is_open
+#### isOpen
 Checks if the component is open.
 
-> is_open(): bool
+> `public` isOpen(): boolean
 
-- **returns**: bool - whether or not this endpoint is open with an actively listening GRPC server.
+- **returns**: boolean - whether or not this endpoint is open with an actively listening GRPC server.
 
 
 #### open
 Opens a connection using the parameters resolved by the referenced connection resolver and creates a GRPC server (service) using the set options and parameters.
 
-> open(correlation_id: Optional[str])
+> `public` open(correlationId: string): Promise\<void\>
 
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### register
 Registers a registerable object for dynamic endpoint discovery.
 
-> register(registration: [IRegisterable](../iregisterable))
+> `public` register(registration: [IRegisterable](../iregisterable)): void
 
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
 
-#### _register_commandable_method
+#### registerCommadableMethod
 Registers a commandable method in the object's GRPC server (service) by the given name.
 
-> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+> `public` registerCommadableMethod(method: string, schema: [Schema](../../../commons/validate/schema), action: (call: any) => Promise\<any\>): void
 
-- **method**: str - GRPC method name.
+- **method**: string - GRPC method name.
 - **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action to perform at the given route.
+- **action**: (call: any) => Promise\<any\> - action to perform at the given route.
 
+#### registerService
+Registers a service with related implementation
 
-#### _register_interceptor
-Registers a middleware for methods in GRPC endpoint.
+> `public` registerService(service: any, implementation: any): void
 
-> _register_interceptor(interceptor: Callable)
+- service: any - a GRPC service object.
+- implementation: any - the service implementation methods.
 
-- **interceptor**: Callable - the middleware action to perform at the given route.
+#### setReferences
+Sets references to this endpoint's logger, counters, and connection resolver.
 
+> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void 
+- **references**: [IReferences](../../../commons/refer/ireferences) - an IReferences object, containing references to a logger, counters, and a connection resolver.
 
-#### _register_method!
-**TODO: this method is not implemented for Python**
+#### unregister
+Unregisters a registerable object, so that it is no longer used in dynamic 
 
-Registers a middleware for methods in GRPC endpoint.
+> `public` unregister(registration: [IRegisterable](../iregisterable)): void
 
-> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
-
-- **name**: str - a method name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
+- **registration**: [IRegisterable](../iregisterable) - the registration to remove.
 
 
 ### Examples
 
-```python
-def my_method(self, _config, _references):
-    endpoint = GrpcEndpoint()
-    if self._config:
-        endpoint.configure(self._config)
-    if self._references:
-        endpoint.set_references(self._references)
+```typescript
+public MyMethod(_config: ConfigParams, _references: IReferences) {
+    let endpoint = new HttpEndpoint();
+    if (this._config)
+        endpoint.configure(this._config);
+    if (this._references)
+        endpoint.setReferences(this._references);
     ...
-
-    self._endpoint.open(correlation_id)
-    ...
-
+    await this._endpoint.open(correlationId);
+}
 ```
 
 

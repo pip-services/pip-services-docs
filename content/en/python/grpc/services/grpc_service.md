@@ -47,19 +47,19 @@ Creates a new instance of the service.
 
 #### _endpoint
 The GRPC endpoint that exposes this service.
-> **_endpoint**: GrpcEndpoint
+> **_endpoint**: [GrpcEndpoint](../grpc_endpoint)
 
 #### _dependency_resolver
 The dependency resolver.
-> **_dependency_resolver** = [DependencyResolver](../../../commons/refer/dependency_resolver)(GrpcService.__default_config)
+> **_dependency_resolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
 The logger.
-> **_logger** = [CompositeLogger](../../../components/log/composite_logger)()
+> **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _counters
 The performance counters.
-> **_counters** = [CompositeCounters](../../../components/count/composite_counters)()
+> **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 </span>
 
@@ -71,20 +71,6 @@ Registers all service routes in the HTTP endpoint.
 This method is called by the service and must be overriden in child classes.
 
 > `abstractmethod` register()
-
-
-#### set_references
-Sets references to dependent components.
-
-> set_references(references: [IReferences](../../../commons/refer/ireferences))
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
-
-
-#### unset_references
-Unsets (clears) previously set references to dependent components.
-
-> unset_references()
 
 
 ### Instance methods
@@ -111,7 +97,7 @@ Checks if the component is open.
 
 > is_open(): bool
 
-- **reerror**: bool -True if the endpoint is open with an actively listening GRPC server.
+- **returns**: bool -True if the endpoint is open with an actively listening GRPC server.
 
 
 #### _instrument
@@ -171,7 +157,21 @@ Registers a middleware for methods in GRPC endpoint.
 
 - **name**: str - method name
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema to validate received parameters.
-- **action**: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action function that is called when operation is invoked.
+- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action function that is called when operation is invoked.
+
+
+#### set_references
+Sets references to dependent components.
+
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+
+
+#### unset_references
+Unsets (clears) previously set references to dependent components.
+
+> unset_references()
 
 
 ### Examples

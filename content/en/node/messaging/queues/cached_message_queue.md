@@ -55,7 +55,7 @@ Message receiver.
 #### subscribe
 Subscribes to the message broker.
 
-> `abstract` subscribe(correlationId: string): Promise\<void\>
+> `public abstract` subscribe(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
@@ -63,7 +63,7 @@ Subscribes to the message broker.
 #### unsubscribe
 Unsubscribes from the message broker.
 
-> `abstract` unsubscribe(correlationId: string): Promise\<void\>
+> `public abstract` unsubscribe(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 

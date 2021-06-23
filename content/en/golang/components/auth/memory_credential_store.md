@@ -21,7 +21,7 @@ The MemoryCredentialStore class is used to create credential stores that keep th
 - **...** :
 
 #### References
-- **\*:credential-store:\*:\*:1.0** -  (optional) Credential stores to resolve credentials
+- **\*:credential-store:\*:\*:1.0** -  (optional) credential stores to resolve credentials
 
 
 
@@ -51,12 +51,12 @@ Configures component by passing configuration parameters.
 
 
 #### Lookup
-Lookups credential parameters by its key.
+Looks up credential parameters by its key.
 
 > (c [*MemoryCredentialStore]()) Lookup(correlationId string, key string) (result [*CredentialParams](../credential_params), err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key used to uniquely identify the credential.
 - **returns**: (result [*CredentialParams](../credential_params), err error) - found credential parameters or nil if nothing was found
 
 
@@ -74,9 +74,9 @@ Stores credential parameters into the store.
 
 > (c [*MemoryCredentialStore]()) Store(correlationId string, key string, credential [*CredentialParams](../credential_params)) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential parameters.
-- **credential**: [*CredentialParams](../credential_params) - a credential parameters to be stored.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the credential parameters.
+- **credential**: [*CredentialParams](../credential_params) - credential parameters to be stored.
 - **returns**: error - return error if not stored.
 
 ### Examples

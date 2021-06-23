@@ -80,13 +80,13 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
 And this is how we could use such a class:
 
 ```python
-var persistence = BeaconMongoDbPersistence()
+persistence = BeaconsMongoDbPersistence()
 persistence.open("test")
 
-beacon = BeaconV1(name = "Super Beacon")
+beacon = BeaconV1(id="1", site_id="0001", udi="0002")
 
 persistence.set("test", beacon)
-item = persistence.get_by_name("test", "Super Beacon")
+item = persistence.get_one_by_udi("test", "1")
 persistence.close("test")
 print(item) 
 
@@ -103,7 +103,7 @@ By default, MongoDbPersistence tries to establish a local connection on MongoDb�
 The example below demonstrates how the ConfigParams class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../configuration).
 
 ```python
-persistence = BeaconMongoDbPersistence()
+persistence = BeaconsMongoDbPersistence()
 # Let's say we need to connect to a local MongoDb, but on a non-standard port - 30000
 
 persistence.configure(ConfigParams.from_tuples(
@@ -137,10 +137,22 @@ First, add an element with the “pip-services” descriptor to the configuratio
 Next, register the persistence as a component in the microservice’s Factory:
 
 ```python
-class BeaconsFactory(Factory):
-    descriptor BeaconsMongoDbPersistneceDescriptor = Descriptor("beacons", "persistence", "mongodb", "default", "1.0")
-        def __init__(self):
-            self.register_as_type(BeaconsMongoDbPersistneceDescriptor, BeaconMongoDbPersistence)
+class BeaconsServiceFactory(Factory):
+
+    MemoryPersistenceDescriptor = Descriptor('beacons', 'persistence', 'memory', '*', '1.0')
+    FilePersistenceDescriptor = Descriptor('beacons', 'persistence', 'file', '*', '1.0')
+    MongoDbPersistenceDescriptor = Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0')
+    ControllerDescriptor = Descriptor('beacons', 'controller', 'default', '*', '1.0')
+    HttpServiceV1Descriptor = Descriptor('beacons', 'service', 'http', '*', '1.0')
+
+    def __init__(self):
+        super(BeaconsServiceFactory, self).__init__()
+
+        self.register_as_type(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence)
+        self.register_as_type(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence)
+        self.register_as_type(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence)
+        self.register_as_type(BeaconsServiceFactory.ControllerDescriptor, BeaconsController)
+        self.register_as_type(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1)
 
 ```
 
@@ -194,7 +206,7 @@ class IdentifiableMongoDbPersistence(MongoDbPersistence):
     def get_list_by_ids(self, correlation_id: Optional[str], ids: List[Any]) -> List[T]:
         ...
 
-    def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
+    def get_one_by_udi(self, correlation_id: Optional[str], id: Any) -> T:
         ...
 
     def create(self, correlation_id: Optional[str], item: T) -> T:
@@ -271,14 +283,31 @@ result = persistence.get_page_filter(None, filter, None)
 In the persistence component, the developer is responsible for parsing FilterParams and passing a filter function to the persistence’s methods of the base class.
 
 ```python
-def _compose_filter(self, filter: FilterParams) -> Any:
-    filter = filter if filter is not None else FilterParams()
-    criteria = {}
-    name  = filter.get_as_nullable_string("name")
-    if id is not None:
-        criteria['name'] = name
-    
-    return criteria
+def __compose_filter(self, filter: FilterParams) -> Callable:
+        filter = filter if filter is not None else FilterParams()
+
+        id = filter.get_as_nullable_string("id")
+        site_id = filter.get_as_nullable_string("site_id")
+        label = filter.get_as_nullable_string("label")
+        udi = filter.get_as_nullable_string("udi")
+        udis = filter.get_as_object("udis")
+        if udis is not None and len(udis) > 0:
+            udis = udis.split(",")
+
+        def filter_beacons(item):
+            if id is not None and item.id != id:
+                return False
+            if site_id is not None and item.site_id != site_id:
+                return False
+            if label is not None and item.label != label:
+                return False
+            if udi is not None and item.udi != udi:
+                return False
+            if udis is not None and item.udi not in udis:
+                return False
+            return True
+
+        return filter_beacons
 
 ```
 
@@ -296,17 +325,17 @@ result = persistence.get_page_by_filter(None, None, paging)
 
 ### Custom Persistence Methods
 
-As mentioned above, developers can also implement custom persistence methods. The _collection property can be used to access data objects from within such methods. Below is an example of a custom GetOneByNameAsync persistence method.
+As mentioned above, developers can also implement custom persistence methods. The _collection property can be used to access data objects from within such methods. Below is an example of a custom get_one_by_udi persistence method.
 
 ```python
-def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
+def get_one_by_udi(self, correlation_id: Optional[str], udi: Any) -> T:
 
-    item = self._collection.find_one({'name': name})
+    item = self._collection.find_one({'udi': udi})
 
     if item is None:
-        self._logger.trace(correlation_id, "Nothing found from %s with name = %s", self._collection_name, name)
+        self._logger.trace(correlation_id, "Nothing found from %s with udi = %s", self._collection_name, udi)
     else:
-        self._logger.trace(correlation_id, "Retrieved from %s with name = %s", self._collection_name, name)
+        self._logger.trace(correlation_id, "Retrieved from %s with udi = %s", self._collection_name, udi)
 
     item = self._convert_to_public(item)
 
@@ -345,17 +374,17 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
             criteria.append({"udi": {"$in": udis}})
         return {"$and": criteria} if len(criteria) > 0 else None
 
-    def get(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> T
+    def get_page_by_filter(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> T
         return get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, None, None)
 
-    def get_one_by_name(self, correlation_id: Optional[str], name: Any) -> T:
+    def get_one_by_udi(self, correlation_id: Optional[str], udi: Any) -> T:
 
-        item = self._collection.find_one({'name': name})
+        item = self._collection.find_one({'udi': udi})
 
         if item is None:
-            self._logger.trace(correlation_id, "Nothing found from %s with name = %s", self._collection_name, name)
+            self._logger.trace(correlation_id, "Nothing found from %s with udi = %s", self._collection_name, udi)
         else:
-            self._logger.trace(correlation_id, "Retrieved from %s with name = %s", self._collection_name, name)
+            self._logger.trace(correlation_id, "Retrieved from %s with udi = %s", self._collection_name, udi)
 
         item = self._convert_to_public(item)
 
@@ -365,16 +394,18 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
 The following example demonstrates how we can use our newly created persistence for writing and reading Beacon objects to a MongoDB:
 
 ```python
-persistence = BeaconMongoDbPersistence()
+persistence = BeaconsMongoDbPersistence()
 persistence.open(None)
-beacon = BeaconV1(name = "Super Beacon")
+beacon = BeaconV1(id="1", site_id="0001", udi="0002")
 
 persistence.set("test", beacon)
-item = persistence.GetByNameAsync("test", "Super Beacon")
-Console.Out.WriteLine(item) # Result: { name: "Super Beacon" }
-items_page = persistence.get_page_by_filter("test", FilterParams.from_tuples("name", "Super Beacon"), None)
+item = persistence.get_one_by_udi("test", "0002")
+
+print(item.udi)   # Result: 0002
+
+items_page = persistence.get_page_by_filter("test", FilterParams.from_tuples("udi", "0002"), None)
 
 print(len(items_page.data)) # Result: 1
-print(items_page.data[0])   # Result: { name: "Super Beacon" }
+print(items_page.data[0].udi)   # Result: 0002
 persistence.close("test")
 ```

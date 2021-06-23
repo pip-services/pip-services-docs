@@ -69,48 +69,41 @@ In this case, task execution is triggered by a message/signal that is received f
 
 
 ```python
-public Task OpenAsync(string correlationId)
-{
-   _messageQueue?.BeginListen(correlationId, async (message, q) =>
-   {
-           await PerformAnalysisAsync(correlationId);
-   	await q.CompleteAsync(message);
-   });
- 
-   return Task.CompletedTask;
-}
-public async Task PerformAnalysisAsync(string correlationId)
-{
-  ... // Long running tasks
-}
+
+def open(self, correlation_id):
+   self._message_queue.begin_listen(correlation_id, self.perform_analysis)
+
+
+def perform_analysis(self, correlation_id):
+   ... # Long running tasks
+
 
 ```
 
-### 3. 	Using the Jobs microservice
-For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-node). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
+### 3. Using the Jobs microservice
+For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-python). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
 1. a timer, 
 2. the Jobs service’s client, and 
 3. a type for the job/task being executed.
 
 ```python
-// Step 1 – Create a timer, the Jobs service’s client,  and a type for the job/task being executed
-private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
-private IJobsClientV1 JobsClient { get; set; }
-private const string JobType = “AnalysisOfNewFiles”;
+# Step 1 – Create a timer, the Jobs service’s client,  and a type for the job/task being executed
+__timer = FixedRateTimer()
+__jobs_client: IJobsClientV1 = None
+__job_type = "AnalysisOfNewFiles"
 ...
-// Step2 – Structure the processing of requests
-public Task OpenAsync(string correlationId)
-{
-   Timer.Task = new Action(async () =>  await PerformAnalysisAsync(correlationId));
-   Timer.Interval = Parameters.GetAsInteger("interval");
-   Timer.Delay = Parameters.GetAsInteger("delay");
-   Timer.Start();
 
-   return Task.CompletedTask;
-}
+# Step2 – Structure the processing of requests
+def open(self, correlation_id):
+   self.__timer.set_task(lambda: self.perform_analysis(correlation_id)) 
+   self.__timer.set_interval(Parameters.get_as_integer("interval"))
+   self.__timer.set_delay(Parameters.get_as_integer("delay"))
+   self.__timer.start()
+
 ```
 Now, in the task’s method, we need to add some code that checks whether or not a job of this type is already running or not. If it is, then no processing is required. If it isn’t, then a job is created, started, and eventually completed, once all processing has been performed.
 
+TODO: complete it for Python
 ```python
 public async Task PerformAnalysisAsync(string correlationId)
 {

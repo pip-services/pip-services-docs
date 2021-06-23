@@ -20,7 +20,7 @@ Important points
 
 #### Configuration parameters
 
-- **store_key**: key to retrieve parameters from credential store
+- **store_key**: key to retrieve parameters from a credential store
 - **username**: user name
 - **user**: alternative to username
 - **password**: user password
@@ -36,16 +36,16 @@ In addition to standard parameters CredentialParams may contain any number of cu
 ### Constructors
 
 #### NewEmptyCredentialParams
-Creates a new credential parameters and fills it with values.
+Creates a new CredentialParams object  and fills it with values.
 
 > NewEmptyCredentialParams() [*CredentialParams]()
 
 #### NewCredentialParams
-Creates a new credential parameters and fills it with values.
+Creates a new CredentialParams object and fills it with values.
 
 > NewCredentialParams(values map[string]string) [*CredentialParams]()
 
-- **values**: map[string]string - (optional) an object to be converted into key-value pairs to initialize these credentials.
+- **values**: map[string]string - (optional) object to be converted into key-value pairs to initialize these credentials.
 
 #### NewCredentialParamsFromValue
 Method that creates a ConfigParams object based on the values that are stored in the 'value' object's properties.
@@ -58,13 +58,13 @@ Method that creates a ConfigParams object based on the values that are stored in
 
 #### NewManyCredentialParamsFromConfig
 Retrieves a single CredentialParams from configuration parameters
-from "credential" section. If "credentials" section is present instead,
+from the "credential" section. If the "credentials" section is present instead,
 then it returns only the first credential element.
 
 > NewManyCredentialParamsFromConfig(config [*config.ConfigParams](../../../commons/config/config_params)) [][*CredentialParams]()
 
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) -  containing a section named "credential(s)".
-- **returns**: [][*CredentialParams]() - the generated CredentialParams object.
+- **returns**: [][*CredentialParams]() - generated CredentialParams object.
 
 
 #### NewCredentialParamsFromString
@@ -74,7 +74,7 @@ Creates a new CredentialParams object filled with key-value pairs serialized as 
 
 - **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
-- **returns**: [CredentialParams]() - a new CredentialParams object.
+- **returns**: [CredentialParams]() - new CredentialParams object.
 
 
 #### NewCredentialParamsFromTuples
@@ -83,7 +83,7 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
 > NewCredentialParamsFromTuples(tuples ...interface{}) [*CredentialParams]()
 
-- **tuples**: ...interface{} - the tuples to fill a new CredentialParams object.
+- **tuples**: ...interface{} - tuples used to fill a new CredentialParams object.
 - **returns**: [*CredentialParams]() - a new CredentialParams object.
 
 
@@ -94,8 +94,8 @@ then it returns a list with only one CredentialParams.
 
 > NewManyCredentialParamsFromConfig(config [*config.ConfigParams](../../../commons/config/config_params)) [][*CredentialParams]()
 
-- **config**: [*config.ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve credentials
-- **returns**: [][*CredentialParams]() - a list of retrieved CredentialParams
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve credentials
+- **returns**: [][*CredentialParams]() - list of retrieved CredentialParams
 
 
 ### Methods
@@ -105,7 +105,7 @@ Gets the application access id. The value can be stored in parameters "access_id
 
 > (c [*CredentialParams]()) AccessId() string
 
-- **returns**: string - the application access id.
+- **returns**: string - application access id.
 
 
 #### AccessKey
@@ -114,15 +114,15 @@ The value can be stored in parameters "access_key", "client_key" or "secret_key"
 
 > (c [*CredentialParams]()) AccessKey() string
 
-- **returns**: string - the application secret key.
+- **returns**: string - application secret key.
 
 
 #### Password
-Get the user password. The value can be stored in parameters "password" or "pass".
+Gets the user password. The value can be stored in parameters "password" or "pass".
 
 > (c [*CredentialParams]()) Password() string
 
-- **returns**: string - the user password.
+- **returns**: string - user password.
 
 
 #### StoreKey
@@ -131,7 +131,7 @@ If this key is nil, then all parameters are already present.
 
 > (c [*CredentialParams]()) StoreKey() string
 
-- **returns**: string - the store key to retrieve credentials.
+- **returns**: string - store key to retrieve credentials.
 
 
 #### Username
@@ -139,7 +139,7 @@ Gets the user name. The value can be stored in parameters "username" or "user".
 
 > (c [*CredentialParams]()) Username() string
 
-- **returns**: string - the user name.
+- **returns**: string - user name.
 
 
 #### SetAccessId
@@ -147,7 +147,7 @@ Sets the application access id.
 
 > (c [*CredentialParams]()) SetAccessId(value string)
 
-- **value**: string - a new application access id.
+- **value**: string - new application access id.
 
 
 #### SetAccessKey
@@ -155,7 +155,7 @@ Sets the application secret key.
 
 > (c [*CredentialParams]()) SetAccessKey(value string)
 
-- **value**: string - a new application secret key.
+- **value**: string - new application secret key.
 
 
 #### SetPassword
@@ -163,7 +163,7 @@ Sets the user password.
 
 > (c [*CredentialParams]()) SetPassword(value string)
 
-- **password**: string - a new user password.
+- **password**: string - new user password.
 
 
 #### SetStoreKey
@@ -171,7 +171,7 @@ Sets the key to retrieve these parameters from [ICredentialStore](../icredential
 
 > (c [*CredentialParams]()) SetStoreKey(value string)
 
-- **value**: string - a new key to retrieve credentials.
+- **value**: string - new key to retrieve credentials.
 
 
 #### SetUsername
@@ -179,12 +179,12 @@ Sets the user name.
 
 > (c [*CredentialParams]()) SetUsername(value string)
 
-- **value**: string - a new user name.
+- **value**: string - new user name.
 
 
 #### UseCredentialStore
 Checks if these credential parameters shall be retrieved from [ICredentialStore](../icredential_store).
-The credential parameters are redirected to [ICredentialStore](../icredential_store) when store_key parameter is set.
+The credential parameters are redirected to [ICredentialStore](../icredential_store) when the store_key parameter is set.
 
 > (c [*CredentialParams]()) UseCredentialStore() bool
 

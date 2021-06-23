@@ -112,7 +112,7 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> protected instrument(correlationId: string, name: string): [CounterTiming](../../../components/cout/counter_timing)
+> `protected` instrument(correlationId: string, name: string): [CounterTiming](../../../components/cout/counter_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.

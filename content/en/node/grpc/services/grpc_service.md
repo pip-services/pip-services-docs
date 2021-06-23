@@ -65,7 +65,7 @@ The performance counters.
 
 #### _tracer
 The tracer.
-> `protected` _tracer: [CompositeTracer](../../../components/trace/composite_tracer)
+> `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
 
 </span>
 

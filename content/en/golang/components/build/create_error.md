@@ -20,7 +20,7 @@ Creates an error instance and assigns its values.
 
 > NewCreateError(correlationId string, message string) [*errors.ApplicationError](../../../commons/errors/application_exception)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) a unique transaction id used to trace execution through the call chain.
 - **message**: string - human-readable error of the component that cannot be created.
 
 #### NewCreateErrorByLocator
@@ -28,7 +28,7 @@ Creates an error instance and assigns its values.
 
 > NewCreateErrorByLocator(correlationId string, locator interface{}) [*errors.ApplicationError](../../../commons/errors/application_exception)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) unique transaction used id to trace execution through the call chain.
 - **message**: interface{} - human-readable locator of the component that cannot be created.
 
 

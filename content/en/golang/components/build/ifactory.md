@@ -14,22 +14,22 @@ The IFactory interface defines methods used by component factories to create com
 
 Important points
 
-- Factories use locators to identify components to be created.
+- Factories use locators to identify the components to be created.
 - The locators are similar to those used to locate components in references. They can be of any type, like strings or integers. However the Pip.Services toolkit most often uses Descriptor objects as component locators.
 
 ### Methods
 
 #### CanCreate
-Checks if this factory is able to create component by given locator.
+Checks if this factory is able to create a component by given locator.
 
 This method searches for all registered components and returns
-a locator for component it is able to create that matches the given locator.
+a locator for a component it is able to create that matches the given locator.
 If the factory is not able to create a requested component it returns nil.
 
 > CanCreate(locator interface{}) interface{}
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **returns**: interface{} - a locator for a component that the factory is able to create.
+- **locator**: interface{} - locator used to identify the component to be created.
+- **returns**: interface{} - locator for the component that the factory is able to create.
 
 
 #### Create
@@ -38,8 +38,8 @@ Throws a [CreateError](../create_error) if the factory is not able to create the
 
 > Create(locator interface{}) (interface{}, error)
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **returns**: (interface{}, error) - the created component.
+- **locator**: interface{} - locator used to identify the component to be created.
+- **returns**: (interface{}, error) - created component.
 
 
 

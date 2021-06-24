@@ -18,8 +18,8 @@ Removes a value from the cache by its key.
 
 > Remove(correlationId string, key string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
 - **returns**: error - return error if not removed.
 
 #### Retrieve
@@ -28,9 +28,9 @@ If value is missing in the cache or expired it returns nil.
 
 > Retrieve(correlationId string, key string) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **returns**: (interface{}, error) - a cached value or nil if value wasn't found or timeout expired.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: (interface{}, error) - cached value or nil if value wasn't found or timeout expired.
 
 
 #### Store
@@ -38,8 +38,8 @@ Stores value in the cache with expiration time.
 
 > Store(correlationId string, key string, value interface{}, timeout int64) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: interface{} - a value to store.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: interface{} - value to store.
 - **timeout**: int64 - expiration timeout in milliseconds.
-- **returns**: (interface{}, error) - a cached value stored in the cache.
+- **returns**: (interface{}, error) - cached value stored in the cache.

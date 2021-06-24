@@ -21,10 +21,10 @@ Important points
 ### Methods
 
 #### ReadConfig
-Reads configuration and parameterizes it with given values.
+Reads a configuration and parameterizes it with given values.
 
 > ReadConfig(correlationId string, parameters [*c.ConfigParams](../../../commons/config/config_params)) ([*c.ConfigParams](../../../commons/config/config_params), error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*c.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: [*c.ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.

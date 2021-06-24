@@ -10,19 +10,19 @@ description: >
 
 ### Description
 
-The CompositeConnectionResolver class allows you to resolve connection and credential parameters, validate them and generate connection options.
+The CompositeConnectionResolver class allows you to resolve connection and credential parameters, validate them and generates connection options.
 
 #### Configuration parameters
 
 **connection(s)**:
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../idiscovery)
   - **protocol**: communication protocol
   - **host**: host name or IP address
   - **port**: port number
   - **uri**: resource URI or connection string with all parameters in it
   
 **credential(s)**:
-  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
+  - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
   - **username**: user name
   - **password**: user password
 
@@ -36,31 +36,31 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 <span class="hide-title-link">
 
 #### Options
-The connection options
+Connection options
 > **Options**: [ConfigParams](../../../commons/config/config_params)
 
 #### ConnectionResolver
-The connections resolver.
+Connections resolver.
 > **ConnectionResolver**: [ConnectionResolver](../connection_resolver)
 
 #### CredentialResolver
-The credentials resolver.
+Credentials resolver.
 > **CredentialResolver**: [CredentialResolver](../../auth/credential_resolver)
 
 #### ClusterSupported
-The cluster support (multiple connections)
+Cluster support (multiple connections)
 > **ClusterSupported**: bool
 
 #### DefaultProtocol
-The default protocol
+Default protocol
 > **DefaultProtocol**: string
 
 #### DefaultPort
-The default port
+Default port
 > **DefaultPort**: number
 
 #### SupportedProtocols
-The list of supported protocols
+List of supported protocols
 > **SupportedProtocols**: []string
 
 
@@ -73,7 +73,7 @@ Composes Composite connection options from connection and credential parameters.
 
 > (c [*CompositeConnectionResolver]()) Compose(correlationId string, connections [][*ConnectionParams](../connection_params), credential [*auth.CredentialParams](../../auth/credential_params), parameters [*config.ConfigParams](../../../commons/config/config_params)) (options [*config.ConfigParams](../../../commons/config/config_params), err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [][*ConnectionParams](../connection_params) - connection parameters
 - **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - optional parameters
@@ -147,7 +147,7 @@ Resolves connection options from connection and credential parameters.
 
 > (c [*CompositeConnectionResolver]()) Resolve(correlationId string) (options [*config.ConfigParams](../../../commons/config/config_params), err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (options [*config.ConfigParams](../../../commons/config/config_params), err error) - resolved options or error
 
 
@@ -166,7 +166,7 @@ This method can be overriden in child classes.
 
 > (c [*CompositeConnectionResolver]()) ValidateConnection(correlationId string, connection [*ConnectionParams](../connection_params)) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id usedd to trace execution through the call chain.
 - **connection**: [*ConnectionParams](../connection_params) - connection parameters to be validated
 - **returns**: error - returns error if validation failed
 
@@ -177,6 +177,6 @@ This method can be overriden in child classes.
 
 > (c [*CompositeConnectionResolver]()) ValidateCredential(correlationId string, credential [*auth.CredentialParams](../../auth/credential_params)) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **credential**: [*auth.CredentialParams](../../auth/credential_params) - credential parameters to be validated
 - **returns**: error - returns error if validation failed

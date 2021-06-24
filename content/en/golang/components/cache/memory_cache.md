@@ -9,7 +9,7 @@ description: >
 
 ---
 
-### Description
+### Description  
 
 The MemoryCache class allows you to create a cache that stores values in the process memory.
 

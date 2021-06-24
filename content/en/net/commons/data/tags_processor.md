@@ -52,11 +52,11 @@ Compresses a list of tags.
 #### equalTags
 Compares two tags using their compressed form.
 
-> `public static` equalTags(tag1: string, tag2: string): boolean
+> `public static` equalTags(tag1: string, tag2: string): bool
 
 - **tag1**: string - the first tag.
 - **tag2**: string - the second tag.
-- **returns**: boolean - true if the tags are equal and false otherwise.
+- **returns**: bool - true if the tags are equal and false otherwise.
 
 
 #### extractHashTags

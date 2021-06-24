@@ -51,9 +51,9 @@ Configures a component by passing configuration parameters.
 #### isOpen
 Checks if the component is opened.
 
-> `public` isOpen(): boolean
+> `public` isOpen(): bool
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component has been opened and false otherwise.
 
 
 #### open

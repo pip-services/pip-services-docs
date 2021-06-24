@@ -26,10 +26,10 @@ Important points
 ### Constructors
 Creates a new instance and sets its values.
 
-> `public` constructor(token: string = null, take: number = null, total: boolean = null)
+> `public` constructor(token: string = null, take: number = null, total: bool = null)
 - **token**: string - token that defines a starting point for the search.
 - **take**: number - the number of items to return. 
-- **total**: boolean - true to return the total number of items.
+- **total**: bool - true to return the total number of items.
 
 
 ### Fields
@@ -46,7 +46,7 @@ The number of items to return.
 
 #### total
 The flag to return the total number of items.
-> `public` **total**: boolean
+> `public` **total**: bool
 
 </span>
 

@@ -27,7 +27,7 @@ Converts value into boolean or returns false when conversion is not possible.
 > `public static` boolean ToBoolean(object value)
 
 - **value**: object - the value to convert.
-- **returns**: boolean - boolean value or false when conversion is not supported.
+- **returns**: bool - boolean value or false when conversion is not supported.
 
 #### ToBooleanWithDefault
 Converts value into boolean or returns default value when conversion is not possible

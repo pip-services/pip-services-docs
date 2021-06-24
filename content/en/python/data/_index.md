@@ -5,6 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-data-python"
 no_list: true
 weight: 30
 description: > 
+    Data processing and persistence components Python  
    
     Persistence components for Python This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
     

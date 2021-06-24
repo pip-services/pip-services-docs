@@ -43,7 +43,7 @@ Reads a configuration and parameterizes it with given values.
 
 > (c [*YamlConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or nil to skip parameterization.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
 
@@ -53,17 +53,17 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 > (c [*YamlConfigReader]()) ReadObject(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - a YAML object with a configuration.
+- **returns**: (interface{}, error) - YAML object with a configuration.
 
 #### ReadYamlConfig
-Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
+Reads a configuration from a file, parameterizes it with given values, and returns a new ConfigParams object.
 
 > ReadYamlConfig(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
 
-- **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace the execution through the call chain.
+- **path**: string - path to a configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: ([*cconfig.ConfigParams](../../../commons/config/config_params), error) - ConfigParams configuration.
 
@@ -73,10 +73,10 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 > ReadYamlObject(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace the execution through the call chain.
+- **path**: string - path to configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - a YAML object containing a configuration.
+- **returns**: (interface{}, error) - YAML object containing a configuration.
 
 ### Examples
 

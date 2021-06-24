@@ -27,7 +27,7 @@ Creates a new instance of the config reader.
 
 > NewFileConfigReader(path string) [*FileConfigReader]()
 
-- **path**: string - (optional) a path to configuration file.
+- **path**: string - (optional) path to a configuration file.
 
 #### NewEmptyFileConfigReader
 Creates a new instance of the config reader.
@@ -38,7 +38,7 @@ Creates a new instance of the config reader.
 ### Methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > (c [*FileConfigReader]()) Configure(config [*cconfig.ConfigParams](../../../commons/config/config_params))
 
@@ -46,19 +46,19 @@ Configures component by passing configuration parameters.
 
 
 #### Path
-Gets the path to configuration file.
+Gets the path to a configuration file.
 
 > (c [*FileConfigReader]()) Path() string 
 
-- **returns**: string - path to configuration file.
+- **returns**: string - path to a configuration file.
 
 
 #### SetPath
-Sets the path to configuration file.
+Sets the path to a configuration file.
 
 > (c [*FileConfigReader]()) SetPath(path string)
 
-- **path**: string - new path to configuration file.
+- **path**: string - new path to a configuration file.
 
 
 ### See also

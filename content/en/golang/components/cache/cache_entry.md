@@ -16,8 +16,8 @@ Creates a new instance of the cache entry and assigns its values.
 
 > NewCacheEntry(key string, value interface{}, timeout int64) [*CacheEntry]()
 
-- **key**: string - a unique key to locate the value.
-- **value**: interface{} - a value to be stored.
+- **key**: string - unique key to locate the value.
+- **value**: interface{} - value to be stored.
 - **timeout**: int64 - expiration timeout in milliseconds.
 
 
@@ -28,7 +28,7 @@ Gets the expiration timeout.
 
 > (c *CacheEntry) Expiration() time.Time
 
-- **returns**: time.Time - the expiration timeout in milliseconds.
+- **returns**: time.Time - expiration timeout in milliseconds.
 
 
 #### Key
@@ -36,7 +36,7 @@ Gets the key to locate the cached value.
 
 > (c *CacheEntry) Key() string
 
-- **returns**: string - the value key.
+- **returns**: string - value key.
 
 
 #### Value
@@ -44,7 +44,7 @@ Gets the cached value.
 
 > (c *CacheEntry) Value() interface{}
 
-- **returns**: interface{} - the value object.
+- **returns**: interface{} - value object.
 
 
 #### IsExpired
@@ -60,5 +60,5 @@ Sets a new value and extends its expiration.
 
 > (c *CacheEntry) SetValue(value interface{}, timeout int64)
 
-- **value**: interface{} - a new cached value.
-- **timeout**: int64 - a expiration timeout in milliseconds.
+- **value**: interface{} - new cached value.
+- **timeout**: int64 - expiration timeout in milliseconds.

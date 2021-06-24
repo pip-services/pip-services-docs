@@ -31,42 +31,42 @@ Removes a value from the cache by its key.
 
 > (c [*NullCache]()) Remove(correlationId string, key string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique value key.
-- **returns**: error - return error if not removed.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: error - return error if the value was not removed.
 
 
 #### Retrieve
-Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired, it returns nil.
+Retrieves a cached value from the cache using its key.
+If the value is missing in the cache or expired, it returns nil.
 
 > (c [*NullCache]()) Retrieve(correlationId string, key string) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique value key.
-- **returns**: (interface{}, error) - a cached value or nil, if value wasn't found or timeout expired.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: (interface{}, error) - cached value or nil, if value wasn't found or timeout expired.
 
 
 #### RetrieveAs
-Retrieve cached value from the cache using its key and restore into reference object. If value is missing in the cache or expired it returns false.
+Retrieves a cached value from the cache using its key and restores it into a reference object. If the value is missing in the cache or expired, it returns false.
 
 > (c *MemoryCache) RetrieveAs(correlationId string, key string, result interface{}) (interface{}, error)
 
-- **correlationId**: string - transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
 - **result**: (interface{}, error) - pointer to object for restore
 
 
 #### Store
-Stores value in the cache with expiration time.
+Stores value in the cache with an expiration time.
 
 > (c [*NullCache]()) Store(correlationId string, key string, value interface{}, timeout int64) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: interface{} - a value to store.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: interface{} - value to store.
 - **timeout**: int64 - expiration timeout in milliseconds.
-- **returns**: (interface{}, error) - a cached value stored in the cache.
+- **returns**: (interface{}, error) - cached value stored in the cache.
 
 
 ### See also

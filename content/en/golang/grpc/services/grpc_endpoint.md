@@ -93,10 +93,10 @@ Registers a registerable object for dynamic endpoint discovery.
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
 
-#### RegisterCommadableMethod
+#### RegisterCommandableMethod
 Registers a commandable method in the object's GRPC server (service) by the given name.
 
-> (c [*GrpcEndpoint]()) RegisterCommadableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error))
+> (c [*GrpcEndpoint]()) RegisterCommandableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error))
 
 - **method**: string - GRPC method name.
 - **schema**: [*cvalid.Schema](../../../commons/validate/schema) - schema to use for parameter validation.

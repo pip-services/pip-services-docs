@@ -128,11 +128,11 @@ Registers a middleware for methods in GRPC endpoint.
 - **action**: func(ctx context.Context, req interface{}, info *grpc.UnaryServerInfo, handler grpc.UnaryHandler) (interface{}, error) - an action function that is called when middleware is invoked.
 
 
-#### RegisterCommadableMethod
+#### RegisterCommandableMethod
 
-RegisterCommadableMethod method are registers a commandable method in c objects GRPC server (service) by the given name.
+RegisterCommandableMethod method are registers a commandable method in c objects GRPC server (service) by the given name.
 
-> (c [*GrpcService]()) RegisterCommadableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(correlationId string, data [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error))
+> (c [*GrpcService]()) RegisterCommandableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(correlationId string, data [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error))
 
 - **method**: string - the GRPC method name.
 - **schema**: [*cvalid.Schema](../../../commons/validate/schema) - validation schema to validate received parameters.

@@ -2,16 +2,14 @@
 type: docs
 title: "CommandableGrpcService"
 linkTitle: "CommandableGrpcService"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
     Abstract service that receives commands via the GRPC protocol.
 
 ---
 
-**Implements:** [GrpcClient](../grpc_client)
+**Inherits:** [GrpcClient](../grpc_client)
 
-See also [CommandableGrpcClient](../../clients/commandable_grpc_client), 
-[GrpcService](../grpc_service)
 
 ### Description
 
@@ -46,42 +44,50 @@ GRPC-based remote interface.
 
 Creates a new instance of the service.
 
-> CommandableGrpcService(name: str)
+> `public` CommandableGrpcService(string name = null)
 
-- **name**: str - service name.
+- **name**: string - service name.
 
 
 ### Instance methods
+TODO: add description
 
-#### register
-Registers all service routes in a gRPC endpoint.
+> `protected` Task\<InvokeReply\> InvokeAsync(InvokeRequest request, ServerCallContext context)
 
-> register()
+- **request**: InvokeRequest - TODO: add description
+- **context**: ServerCallContext - TODO: add description
 
+#### OnRegister
+Registers all service routes in gRPC endpoint.
+
+> `protected override` void OnRegister()
 
 
 ### Examples
 
-```python
-class MyCommandableGrpcService(CommandableGrpcService):
-   def __init__(self):
-        super().__init__()
-
-        self._dependency_resolver.put(
-            "controller",
-            Descriptor("mygroup","controller","*","*","1.0")
-        )
-
-service = MyCommandableGrpcService()
-service.configure(ConfigParams.from_tuples(
+```cs
+class MyCommandableHttpService: CommandableHttpService 
+{
+    public MyCommandableHttpService()
+    {
+        base();
+        this._dependencyResolver.Put(
+        "controller", new Descriptor("mygroup", "controller", "*", "*", "1.0") );
+    }
+}
+ 
+var service = new MyCommandableHttpService();
+service.Configure(ConfigParams.fromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
-    "connection.port", 8080
-))
-service.set_references(References.from_tuples(
-    Descriptor("mygroup","controller","default","default","1.0"), controller
-))
-service.open("123")
+    "connection.port", 8080 
+));
+
+service.SetReferences(References.FromTuples(
+    new Descriptor("mygroup","controller","default","default","1.0"), controller ));
+
+service.Open("123");
+Console.Out.WriteLine("The REST service is running on port 8080");
 ```
 
 

@@ -2,13 +2,13 @@
 type: docs
 title: "GrpcEndpoint"
 linkTitle: "GrpcEndpoint"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
     Used for creating GRPC endpoints. 
 
 ---
 
-**Implements:** [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Inherits:** [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 
 ### Description
@@ -40,88 +40,90 @@ following references to the object's [set_references](#set_references)
 ### Instance methods
 
 
-#### close
+#### Close
 Closes this endpoint and the GRPC server (service) that was opened earlier.
 
-> `public` close(correlationId: string): Promise\<void\>
+> `public virtual` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### configure
+#### Configure
 Configures this HttpEndpoint using the given configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
+#### Instrument
+Adds instrumentation to log calls and measure call time. It returns a CounterTiming 
+object that is used to end the time measurement.
 
-#### isOpen
+> `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, string name)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **name**: string - a method name.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object to end the time measurement.
+
+
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> `public virtual` bool IsOpen()
 
-- **returns**: boolean - whether or not this endpoint is open with an actively listening GRPC server.
+- **returns**: bool - whether or not this endpoint is open with an actively listening GRPC server.
 
 
-#### open
+#### Open
 Opens a connection using the parameters resolved by the referenced connection resolver and creates a GRPC server (service) using the set options and parameters.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public virtual` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### register
+#### Register
 Registers a registerable object for dynamic endpoint discovery.
 
-> `public` register(registration: [IRegisterable](../iregisterable)): void
+> `public` void Register([IRegisterable](../iregisterable) registration)
 
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
 
-#### registerCommandableMethod
-Registers a commandable method in the object's GRPC server (service) by the given name.
-
-> `public` registerCommandableMethod(method: string, schema: [Schema](../../../commons/validate/schema), action: (call: any) => Promise\<any\>): void
-
-- **method**: string - GRPC method name.
-- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: (call: any) => Promise\<any\> - action to perform at the given route.
-
-#### registerService
+#### RegisterService
 Registers a service with related implementation
 
-> `public` registerService(service: any, implementation: any): void
+> `public` void RegisterService(ServerServiceDefinition serverServiceDefinition)
 
-- **service**: any - a GRPC service object.
-- **implementation**: any - the service implementation methods.
+- **serverServiceDefinition**: ServerServiceDefinition - a GRPC service object.
 
-#### setReferences
+#### SetReferences
 Sets references to this endpoint's logger, counters, and connection resolver.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void 
+> `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 - **references**: [IReferences](../../../commons/refer/ireferences) - an IReferences object, containing references to a logger, counters, and a connection resolver.
 
-#### unregister
+#### Unregister
 Unregisters a registerable object, so that it is no longer used in dynamic 
 
-> `public` unregister(registration: [IRegisterable](../iregisterable)): void
+> `public` void Unregister([IRegisterable](../iregisterable) registration)
 
 - **registration**: [IRegisterable](../iregisterable) - the registration to remove.
 
 
 ### Examples
 
-```typescript
-public MyMethod(_config: ConfigParams, _references: IReferences) {
-    let endpoint = new HttpEndpoint();
+```cs
+public MyMethod(string correlationId, ConfigParams _config, IReferences _references) 
+{
+    var endpoint = new HttpEndpoint();
     if (this._config)
-        endpoint.configure(this._config);
+        endpoint.Configure(this._config);
     if (this._references)
-        endpoint.setReferences(this._references);
+        endpoint.SetReferences(this._references);
     ...
-    await this._endpoint.open(correlationId);
+    this._endpoint.Open(correlationId);
+    ...
 }
 ```
 

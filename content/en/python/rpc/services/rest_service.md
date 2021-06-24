@@ -256,7 +256,7 @@ Unsets (clears) previously set references to dependent components.
 ### Abstract methods
 
 #### register
-Registers all service routes in a HTTP endpoint.
+Registers all service routes in a gRPC endpoint.
 
 This method is called by the service and must be overriden
 in child classes.

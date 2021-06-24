@@ -54,14 +54,14 @@ Creates a new instance of the service.
 ### Instance methods
 
 #### register
-Registers all service routes in a HTTP endpoint.
+Registers all service routes in a gRPC endpoint.
 
 > `public` register()
 
-#### registerCommadableMethod
+#### registerCommandableMethod
 Registers a commandable method in this objects GRPC server (service) by the given name.,
 
-> `protected` registerCommadableMethod(method: string, schema: [Schema](../../../commons/validate/schema), action: (correlationId: string, data: any) => Promise\<any\>): void
+> `protected` registerCommandableMethod(method: string, schema: [Schema](../../../commons/validate/schema), action: (correlationId: string, data: any) => Promise\<any\>): void
 
 - **method**: string - the GRPC method name.
 - **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.

@@ -2,13 +2,13 @@
 type: docs
 title: "GrpcClient"
 linkTitle: "GrpcClient"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
     Abstract client that calls remote endpoints using the GRPC protocol.
 
 ---
 
-**Implements:** [IOpenable](../../../commons/run/iopenable), [IReferenceable](../../../commons/refer/ireferenceable),
+**Inherits:** [IOpenable](../../../commons/run/iopenable), [IReferenceable](../../../commons/refer/ireferenceable),
 [IConfigurable](../../../commons/config/iconfigurable)
 
 ### Description
@@ -33,20 +33,15 @@ The GrpcClient class allows you to create clients that call remote endpoints usi
 
 Creates a new instance of the grpc client.
 
-> `public` constructor(clientTypeOrPath: any, clientName?: string, packageOptions?: any)
+> `public` GrpcClient(string name = null)
 
-- **clientTypeOrPath**: any - TODO: add description
-- **clientName**: string - client's name.
-- **packageOptions**: any - TODO: add description
+- **name**: string - client's name.
+
 
 
 ### Fields
 
 <span class="hide-title-link">
-
-#### _client
-The GRPC client.
-> `protected` **_client**: any
 
 #### _connectionResolver
 The connection resolver.
@@ -66,120 +61,130 @@ The configuration options.
 
 #### _connectTimeout
 The connection timeout in milliseconds.
-> `protected` **_connectTimeout**: number = 100000
+> `protected` **_connectTimeout**: int = 100000
 
-#### _timeout
-The invocation timeout in milliseconds.
-> `protected` **_timeout**: number = 100000
-
-#### _uri
-The remote service uri which is calculated on openning.
-> `protected` **_uri**: string
+#### _serviceName
+TODO: add description
+> `protected` **_serviceName**: string
 
 </span>
 
 
 ### Instance methods
 
-#### call
+#### CallAsync
 Calls a remote method via GRPC protocol.
 
-> `protected` call(method: string, correlationId?: string, request: any = {}): Promise\<any\>
+> `protected` Task\<TResponse\> CallAsync\<TRequest, TResponse\>(string name, TRequest request)
 
-- **method**: string - name of the calling method
-- **client**: any - current client
-- **request**: any - (optional) request object.
-- **returns**: Promise\<any\> - (optional) feature that receives the result object or error.
+- **name**: string - name of the calling method
+- **request**: TRequest - request object.
+- **returns**: Task\<TResponse\> - feature that receives the result object .
 
 
-#### close
+#### CloseAsync
 Closes the component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> `public virtual` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### configure
+#### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### instrument
+#### Instrument
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> `protected` instrument(correlationId: string, name: string): [CounterTiming](../../../components/cout/counter_timing)
+> `protected` [CounterTiming](../../../components/cout/counter_timing) Instrument(string correlationId, [CallerMemberName] string methodName = null)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **name**: string - method name.
+- **methodName**: string - method name.
 - **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
 
 
-#### instrumentError
+#### InstrumentError
 Adds instrumentation to error handling.
 
-> `protected` instrumentError(correlationId: string, name: string, err: any, result: any = null, callback: (err: any, result: any) => void = null): void 
+> `protected` void InstrumentError(string correlationId, [CallerMemberName] string methodName = null, Exception ex = null, bool rethrow = false)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **name**: string - method name.
-- **err**: Exception - occured error
-- **result**: any - (optional) an execution result
-- **callback**: (err: any, result: any) => void - (optional) an execution callback
+- **methodName**: string - method name.
+- **ex**: Exception - occured error
+- **rethrow**: bool -  if True - throw error
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> `public virtual` bool IsOpen()
 
-- **returns**: boolean - Returns True if the component is open and False otherwise.
+- **returns**: bool - Returns True if the component is open and False otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public virtual` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
+#### GetOrCreateMethod
+Creates a method definition to be called using GRPC.
 
-#### setReferences
+- where TRequest : class, IMessage\<TRequest\>, new()
+- where TResponse : class, IMessage\<TResponse\>, new()
+
+> `protected` Method\<TRequest, TResponse\> GetOrCreateMethod\<TRequest, TResponse\>(string name)
+
+- **name**: string - name of gRPC method
+- **returns**: Method\<TRequest, TResponse\> - TRequest - type of request message, TResponse - type of response message.
+
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 ### Examples
 
-```typescript
-class MyGrpcClient extends GrpcClient implements IMyClient {
-   ...
-   public getData(correlationId: string, id: string, 
-       callback: (err: any, result: MyData) => void): void {
+```cs
+
+
+class MyCommandableHttpClient: GrpcClient, IMyClient 
+{
+    ...
+   public MyData GetData(string correlationId, string id) {
    
-       let timing = this.instrument(correlationId, 'myclient.get_data');
-       this.call("get_data", correlationId, { id: id }, (err, result) => {
-           timing.endTiming();
-           callback(err, result);
-       });        
+       var timing = this.Instrument(correlationId, 'myclient.get_data');
+       var request = new MyDataObjectRequest
+		{
+			CorrelationId = correlationId,
+			MyDataId = ConvertFromPublic(id)
+		};
+
+       var item = await this.CallAsync<MyDataObjectRequest, ProtoMyData>("get_data", correlationId, request);  
+       timing.EndTiming();      
+
+       return ConvertToPublic(item);
    }
    ...
 }
 
-let client = new MyGrpcClient();
-client.configure(ConfigParams.fromTuples(
+var client = new MyGrpcClient();
+client.Configure(ConfigParams.FromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080
 ));
 
-client.getData("123", "1", (err, result) => {
-  ...
-});
+client.GetData("123", "1");
 ```

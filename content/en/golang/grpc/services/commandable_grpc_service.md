@@ -54,7 +54,7 @@ Creates a new instance of the service.
 ### Instance methods
 
 #### register
-Registers all service routes in a HTTP endpoint.
+Registers all service routes in a gRPC endpoint.
 
 > (c *CommandableGrpcService) Register()
 

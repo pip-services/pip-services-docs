@@ -15,7 +15,7 @@ The ConnectionUtils class provides a set of utility functions used to process co
 
 #### ComposeUri
 Composes URI from config parameters.
-The result URI will be in the following form:
+The result URI will be in the following form:  
 *protocol://username@password@host1:port1,host2:port2,...?param1=abc&param2=xyz&...*
 
 > (c *TConnectionUtils) ComposeUri(options [*config.ConfigParams](../../../commons/config/config_params), defaultProtocol string, defaultPort int) string

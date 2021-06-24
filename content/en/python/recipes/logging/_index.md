@@ -82,7 +82,7 @@ The Pip.Services Toolkit contains a variety of logger implementations:
 - **NullLogger** - Empty logger for debugging (in the [Components](../../components/log/null_logger) module)
 - **ConsoleLogger** - Logger for writing messages to the console (in the [Components](../../components/log/console_logger) module)
 - **CompositeLogger** - Virtual logger for collecting and transferring messages to other loggers (in the [Components](../../components/log/composite_logger) module)
-- **ElasticSearchLogger** - Logger for saving messages in ElasticSearch (inthe [ElasticSearch](../../../elasticsearch/elastic_search_logger) module)
+- **ElasticSearchLogger** - Logger for saving messages in ElasticSearch (inthe [ElasticSearch](../../../elasticsearch/elasticsearch_logger) module)
 - **FluentdLogger** - Logger for transferring messages to Fluentd (in the [Fluentd](../../../fluentd/log/fluentd_logger) module)
 - **CloudWatchLogger** - Logger for collecting messages in AWS CloudWatch (in the [AWS](../../../aws/log/cloudwatch_logger) module)
 - **AppInsightsLogger** - Logger for collecting messages in Azure AppInsights (in the [Azure](../../../azure/log/app_insights_logger) module)

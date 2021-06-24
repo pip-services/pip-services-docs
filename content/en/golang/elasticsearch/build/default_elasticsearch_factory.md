@@ -22,5 +22,5 @@ Creates a new instance of the factory.
 
 
 ### See also
-- #### [ElasticSearchLogger](../../log/elastic_search_logger)
+- #### [ElasticSearchLogger](../../log/elasticsearch_logger)
 

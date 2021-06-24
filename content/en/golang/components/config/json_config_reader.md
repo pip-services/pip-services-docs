@@ -49,19 +49,19 @@ Reads a configuration and parameterizes it with given values.
 
 > (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
 
 
 #### ReadObject
-Reads configuration file, parameterizes its content and converts it into JSON object.
+Reads a configuration file, parameterizes its content and converts it into JSON object.
 
 > (c [*JsonConfigReader]()) ReadObject(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - a JSON object with configuration.
+- **returns**: (interface{}, error) - JSON object with configuration.
 
 
 #### ReadConfig
@@ -69,8 +69,8 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **path**: string - path to a configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
 
@@ -80,10 +80,10 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 > ReadJsonObject(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **path**: string - path to configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - a JSON object with configuration.
+- **returns**: (interface{}, error) - JSON object with configuration.
 
 ### Examples
 

@@ -73,7 +73,7 @@ Resolves a MongoDB connection URI from connection and credential parameters.
 
 > (c [*MongoDbConnectionResolver]()) Resolve(correlationId string) (uri string, err error)
 
-- **correlation_id**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (uri string, err error) - resolved URI
 
 #### SetReferences

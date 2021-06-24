@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "ICountersSaver"
-linkTitle: "ICountersSaver"
+title: "ICachedCountersOverrides"
+linkTitle: "ICachedCountersOverrides"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
     TODO: add description

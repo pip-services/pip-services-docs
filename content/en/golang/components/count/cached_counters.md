@@ -29,9 +29,9 @@ Important points
 Creates a new CachedCounters object. 
 Inherit cache counters from saver.
 
-> InheritCacheCounters(saver [ICountersSaver](../icounters_saver)) [*CachedCounters]()
+> InheritCacheCounters(saver [ICachedCountersOverrides](../icached_counters_overrides)) [*CachedCounters]()
 
-- **saver**: [ICountersSaver](../icounters_saver) - save ICountersSaver
+- **saver**: [ICachedCountersOverrides](../icached_counters_overrides) - save ICachedCountersOverrides
 
 
 ### Fields

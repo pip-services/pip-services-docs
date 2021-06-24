@@ -62,7 +62,7 @@ of execution block and update the associated counter.
 #### [DefaultCountersFactory](default_counters_factory)
 Creates [ICounters](icounters) components by their descriptors.
 
-#### [ICountersSaver](icounters_saver)
+#### [ICachedCountersOverrides](icached_counters_overrides)
 TODO: add description
 
 #### [LogCounters](log_counters)

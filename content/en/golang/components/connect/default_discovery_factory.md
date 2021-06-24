@@ -14,7 +14,7 @@ The DefaultDiscoveryFactory class allows you to create an instance of [Factory](
 ### Constructors
 
 #### NewDefaultDiscoveryFactory
-Create a new instance of factory.
+Create a new instance of Factory.
 
 > NewDefaultDiscoveryFactory() [*build.Factory](../../build/factory)
 

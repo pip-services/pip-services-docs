@@ -38,17 +38,14 @@ Creates a new instance of data page.
 ### Properties
 
 
-<span class="hide-title-link">
-
-#### data
+#### Data
 The items of the retrieved page.
-> `public` List\<T\> **Data** [ get, set ]
+> `public` List\<T\> Data [ get, set ]
 
-#### total
+#### Total
 The total amount of items in a request.
-> `public` long **Total** [ get, set ]
+> `public` long Total [ get, set ]
 
-</span>
 
 
 ### Examples

@@ -2,14 +2,15 @@
 type: docs
 title: "ManagedReferences"
 linkTitle: "ManagedReferences"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-container-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-container-dotnet"
 description: >
     Managed references that in addition to keeping and locating references can also 
     manage their lifecycle.
 
 ---
 
-**Implements:** [ReferencesDecorator](../references_decorator), [IOpenable](../../../commons/run/iopenable)
+**Inherits:** [ReferencesDecorator](../references_decorator), [IOpenable](../../../commons/run/iopenable)
+
 
 ### Description
 
@@ -23,9 +24,9 @@ The ManagedReferences class allows you to create managed references that in addi
 ### Constructors
 Creates a new instance of the decorator.
 
-> ManagedReferences(tuples: Sequence[Any] = None)
+> `public` ManagedReferences(object[] tuples = null)
 
-- **tuples**: Sequence[Any] - tuples where odd values are component locators (descriptors) and even values are component references
+- **tuples**: object[] - tuples where odd values are component locators (descriptors) and even values are component references
 
 ### Fields
 
@@ -33,50 +34,50 @@ Creates a new instance of the decorator.
 
 #### _references
 TODO: add description
-> **_references**: [References](../../../commons/refer/references)
+> `protected` **_references**: [References](../../../commons/refer/references)
 
 #### _builder
 TODO: add description
-> **_builder**: [BuildReferencesDecorator](../build_references_decorator)
+> `protected` **_builder**: [BuildReferencesDecorator](../build_references_decorator)
 
 #### _linker
 TODO: add description
-> **_linker**: [LinkReferencesDecorator](../link_references_decorator)
+> `protected` **_linker**: [LinkReferencesDecorator](../link_references_decorator)
 
 
 #### _runner
 TODO: add description
-> **_runner**: [RunReferencesDecorator](../run_references_decorator)
+> `protected` **_runner**: [RunReferencesDecorator](../run_references_decorator)
 
 </span>
 
 ### Instance methods
 
-#### close
+#### Close
 Closes the component and frees used resources.
 
-> close(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+> `public` Task CloseAsync(string correlationId)
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
-#### is_open
+#### IsOpen
 Checks if the component is open.
 
-> is_open(): bool
+> `public` bool IsOpen()
 - **returns**: bool - True if the component is open and False otherwise.
 
-#### open
+#### Open
 Opens the component.
 
-> open(correlation_id: Optional[str])
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+> `public` Task OpenAsync(string correlationId)
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Static methods
 
-#### from_tuples
+#### FromTuples
 Removes all component references that match the specified locator.
 
-> `static` from_tuples(*tuples: Any): [ManagedReferences]()
-- **locator**: Any - locator to remove references by.
+> `public static` [ManagedReferences]() FromTyples(params object[] tuples)
+- **locator**: object[] - locator to remove references by.
 - **returns**: [ManagedReferences]() - list containing all removed references.
 
 

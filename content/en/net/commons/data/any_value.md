@@ -31,7 +31,7 @@ Creates a new instance of the object and assigns its value.
 
 #### Value
 The value stored by this object.
-> `public` object **Value** [ get, private set ]
+> `public` object Value [ get, private set ]
 
 
 ### Instance methods

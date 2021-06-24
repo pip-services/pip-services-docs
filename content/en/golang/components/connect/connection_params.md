@@ -21,7 +21,7 @@ The ConnectionParams class allows you to create connection parameters used to co
 
 #### Configuration parameters
 
-- **discovery_key**: key to retrieve parameters from discovery service
+- **discovery_key**: key to retrieve parameters from a discovery service
 - **protocol**: connection protocol like http, https, tcp, udp
 - **host**: host name or IP address
 - **port**: port number
@@ -33,14 +33,14 @@ In addition to standard parameters ConnectionParams may contain any number of cu
 ### Constructors
 
 #### NewConnectionParams
-Creates a new connection parameters and fills it with values.
+Creates a new ConnectionParams object and fills it with values.
 
 > NewConnectionParams(values map[string]string) [*ConnectionParams]()
 
-- **map**: map[string]string - (optional) an object to be converted into key-value pairs to initialize this connection.
+- **map**: map[string]string - (optional) object to be converted into key-value pairs to initialize this connection.
 
 #### NewEmptyConnectionParams
-Creates a new connection parameters and fills it with values.
+Creates a new ConnectionParams object and fills it with values.
 
 > NewEmptyConnectionParams() [*ConnectionParams]()
 
@@ -53,7 +53,7 @@ then it returns only the first connection element.
 > NewManyConnectionParamsFromConfig(config [*config.ConfigParams](../../../commons/config/config_params)) [][*ConnectionParams]()
 
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
-- **returns**: [][*ConnectionParams]() - the generated ConnectionParams object.
+- **returns**: [][*ConnectionParams]() - generated ConnectionParams object.
 
 
 #### NewConnectionParamsFromString
@@ -64,7 +64,7 @@ Creates a new ConnectionParams object filled with key-value pairs serialized as 
 - **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 
-- **returns**: [*ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [*ConnectionParams]() - new ConnectionParams object.
 
 
 #### NewConnectionParamsFromTuples
@@ -75,7 +75,7 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
 - **tuples**: ...interface{} - the tuples to fill a new ConnectionParams object.
 
-- **returns**: [*ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [*ConnectionParams]() - new ConnectionParams object.
 
 
 #### NewManyConnectionParamsFromConfig
@@ -85,9 +85,9 @@ then it returns a list with only one ConnectionParams.
 
 > NewManyConnectionParamsFromConfig(config [*config.ConfigParams](../../../commons/config/config_params)) [][*ConnectionParams]()
 
-- **config**: [*config.ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve connections
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve connections
 
-- **returns**: [][*ConnectionParams]() - a list of retrieved ConnectionParams
+- **returns**: [][*ConnectionParams]() - list of retrieved ConnectionParams
 
 
 ### Methods
@@ -106,7 +106,7 @@ Gets the host name or IP address.
 
 > (c [*ConnectionParams]()) Host() string
 
-- **returns**: string - the host name or IP address.
+- **returns**: string - host name or IP address.
 
 
 #### Port
@@ -114,7 +114,7 @@ Gets the port number.
 
 > (c [*ConnectionParams]()) Port() int
 
-- **returns**: int - the port number.
+- **returns**: int - port number.
 
 
 #### PortWithDefault
@@ -122,8 +122,8 @@ Gets the port number with default value.
 
 > (c [*ConnectionParams]()) PortWithDefault(defaultValue int) int
 
-- **defaultPort**: int - a default port number.
-- **returns**: int - the port number.
+- **defaultPort**: int - default port number.
+- **returns**: int - port number.
 
 
 #### Protocol
@@ -131,7 +131,7 @@ Gets the connection protocol.
 
 > (c [*ConnectionParams]()) Protocol() string
 
-- **returns**: string - the connection protocol or the default value if it's not set.
+- **returns**: string - connection protocol or the default value if it's not set.
 
 
 #### ProtocolWithDefault
@@ -139,8 +139,8 @@ Gets the connection protocol with default value.
 
 > (c [*ConnectionParams]()) ProtocolWithDefault(defaultValue string) string
 
-- **defaultValue**: string - (optional) the default protocol
-- **returns**: string - the connection protocol or the default value if it's not set.
+- **defaultValue**: string - (optional) default protocol
+- **returns**: string - connection protocol or the default value if it's not set.
 
 
 #### Uri
@@ -148,7 +148,7 @@ Gets the resource URI or connection string. Usually it includes all connection p
 
 > (c [*ConnectionParams]()) Uri() string
 
-- **returns**: string - the resource URI or connection string.
+- **returns**: string - resource URI or connection string.
 
 
 #### SetDiscoveryKey
@@ -156,7 +156,7 @@ Sets the key to retrieve these parameters from DiscoveryService.
 
 > (c [*ConnectionParams]()) SetDiscoveryKey(value string)
 
-- **value**: string - a new key to retrieve connection.
+- **value**: string - new key to retrieve connection.
 
 
 #### SetHost
@@ -164,7 +164,7 @@ Sets the host name or IP address.
 
 > (c [*ConnectionParams]()) SetHost(value string)
 
-- **value**: string - a new host name or IP address.
+- **value**: string - new host name or IP address.
 
 
 #### SetPort
@@ -172,7 +172,7 @@ Sets the port number.
 
 > (c [*ConnectionParams]()) SetPort(value int)
 
-- **value**: int - a new port number.
+- **value**: int - new port number.
 
 
 #### SetProtocol
@@ -180,7 +180,7 @@ Sets the connection protocol.
 
 > (c [*ConnectionParams]()) SetProtocol(value string)
 
-- **value**: string - a new connection protocol.
+- **value**: string - new connection protocol.
 
 
 #### SetUri
@@ -188,7 +188,7 @@ Sets the resource URI or connection string.
 
 > (c [*ConnectionParams]()) SetUri(value string)
 
-- **value**: string - a new resource URI or connection string.
+- **value**: string - new resource URI or connection string.
 
 
 #### UseDiscovery
@@ -197,7 +197,7 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 
 > (c [*ConnectionParams]()) UseDiscovery() bool
 
-- **returns**: bool - true if connection shall be retrieved from DiscoveryService
+- **returns**: bool - true if the connection shall be retrieved from DiscoveryService
 
 
 

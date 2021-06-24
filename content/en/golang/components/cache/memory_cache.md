@@ -78,7 +78,7 @@ If value is missing in the cache or expired it returns nil.
 
 
 #### RetrieveAs
-Retrieves a cached value from the cache using its key and restores it into reference object. If the value is missing in the cache or expired, it returns false.
+Retrieves a cached value from the cache using its key and restores it into a reference object. If the value is missing in the cache or expired, it returns false.
 
 > (c *MemoryCache) RetrieveAs(correlationId string, key string, result interface{}) (interface{}, error)
 

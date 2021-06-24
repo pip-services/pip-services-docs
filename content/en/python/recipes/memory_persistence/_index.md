@@ -62,7 +62,7 @@ class IdentifiableMemoryPersistence(MemoryPersistence, IWriter, IGetter, ISetter
 
 ```
 
-In most scenarios, child classes only need to override the **GetPageByFilter()**, **GetListByFilter()**, or **DeleteByFilter()** operations using a custom filter function. All other operations can be used right out of the box. Developers can implement custom methods by accessing stored data objects via the **this._items** property and complete transactions by calling the Save() method. See the [Data module’s API](../../data) documentation for more details.
+In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function. All other operations can be used right out of the box. Developers can implement custom methods by accessing stored data objects via the **self._items** property and complete transactions by calling the **save()** method. See the [Data module’s API](../../data) documentation for more details.
 
 ### Filtering
 

@@ -114,7 +114,7 @@ Loggers are usually added to microservices dynamically using a yml configuration
 #### Composite logger
 
 It’s not rare for multiple loggers to be used simultaneously. One logger can be used to output messages to the console, allowing developers to debug the microservice, while another logger collects messages from all running microservices in a distributed storage, allowing technical support to monitor the system.
-To simplify the collection of log messages in situations when the amount of loggers and/or their configurations are bound to change, the [CompositeLogger](../../components/log/composite_logger/) from the [Components](../../components/) module is used. The **CompositeLogger**’s task is to pass along any messages it receives to all of the other loggers included in the container. Logger linking is performed in the **SetReferences** method ([see the References Recipe](../component_references)).
+To simplify the collection of log messages in situations when the amount of loggers and/or their configurations are bound to change, the [CompositeLogger](../../components/log/composite_logger/) from the [Components](../../components/) module is used. The **CompositeLogger**’s task is to pass along any messages it receives to all of the other loggers included in the container. Logger linking is performed in the **set_references** method ([see the References Recipe](../component_references)).
 
 
 The **CompositeLogger** is used in the following way:

@@ -15,7 +15,7 @@ The most basic implementation of this component is the MongoDbPersistence class 
 
 ### MongoDBPersistence
 
-This is a basic component that stores data items of any type. Some basic operations for creating, getting, and deleting are already included. More advanced CRUD operations over the data items can be implemented in child classes by accessing the self._collection or self._model properties. This component also contains methods for opening and closing connections using the credentials provided.
+This is a basic component that stores data items of any type. Some basic operations for creating, getting, and deleting are already included. More advanced CRUD operations over the data items can be implemented in child classes by accessing the **self._collection** or **self._model** properties. This component also contains methods for opening and closing connections using the credentials provided.
 
 The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../../tutorials/data_microservice/step2/). 
 
@@ -266,7 +266,7 @@ class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersiste
 ```
 
 
-In most scenarios, child classes only need to override the **GetPageByFilter()**, **GetListByFilter()**, or **DeleteByFilter()** operations using a custom filter function (like the **ComposeFilter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See [the MongoDb module’s API](../../mongodb) documentation for more details.
+In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See [the MongoDb module’s API](../../mongodb) documentation for more details.
 
 ### Filtering
 

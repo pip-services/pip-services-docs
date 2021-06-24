@@ -14,9 +14,10 @@ The Pip.Services Toolkit offers a few abstract implementations for developing pe
 
 ### The MemoryPersistence class
 
-The most basic implementation is the MemoryPersistence class defined in the [Data module](../../data). It is only capable of storing a collection of objects, opening, and closing. It does not provide any data access methods.
+The most basic implementation is the [MemoryPersistence](../../data/persistence/memory_persistence/) class defined in the [Data module](../../data). It is only capable of storing a collection of objects, opening, and closing. It does not provide any data access methods.
 
-The implementation we will be working with is called IdentifiableMemoryPersistence. It stores and processes data objects that have a unique ID field and implement the IIdentifiable interface defined in the [Commons module](../../commons).
+The implementation we will be working with is called [IdentifiableMemoryPersistence](../../data/persistence/identifiable_memory_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in the [Commons module](../../commons).
+
 
 ```typescript
 export interface IIdentifiable<K> {
@@ -25,7 +26,7 @@ export interface IIdentifiable<K> {
 
 ```
 
-The IdentifiableMemoryPersistence implements a number of CRUD methods:
+The **IdentifiableMemoryPersistence** implements a number of CRUD methods:
 
 ```typescript
 export class IdentifiableMemoryPersistence<T extends IIdentifiable<K>, K> extends MemoryPersistence<T>  implements IConfigurable {
@@ -65,11 +66,11 @@ export class IdentifiableMemoryPersistence<T extends IIdentifiable<K>, K> extend
 }
 ```
 
-In most scenarios, child classes only need to override the GetPageByFilter(), GetListByFilter(), or DeleteByFilter() operations using a custom filter function. All other operations can be used right out of the box. Developers can implement custom methods by accessing stored data objects via the this._items property and complete transactions by calling the Save() method. See the [Data module’s API](../../data) documentation for more details.
+In most scenarios, child classes only need to override the **getPageByFilter()**, **getListByFilter()**, or **deleteByFilter()** operations using a custom filter function. All other operations can be used right out of the box. Developers can implement custom methods by accessing stored data objects via the **this._items** property and complete transactions by calling the **save()** method. See the [Data module’s API](../../data) documentation for more details.
 
 ### Filtering
 
-Persistent components in the Pip.Services Toolkit use a number of data patterns. IdentifiedMemoryPersistence, for example, supports Filtering. This pattern allows clients to use a FilterParams object to describe a subset of data as key-value pairs. These FilterParams can then be used for retrieving data in accordance with certain search criteria (see the [Commons module](../../commons)).
+Persistent components in the Pip.Services Toolkit use a number of data patterns. **IdentifiedMemoryPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data as key-value pairs. These FilterParams can then be used for retrieving data in accordance with certain search criteria (see the [Commons module](../../commons)).
 
 ```typescript
 
@@ -81,7 +82,7 @@ persistence.getPageFilter(null, filter, null, (page, err) => {
 });
 ```
 
-In the persistence component, the developer is responsible for parsing the FilterParams and passing a filter function to the persistent methods of the base class.
+In the persistence component, the developer is responsible for parsing the **FilterParams** and passing a filter function to the persistent methods of the base class.
 
 
 ```typescript
@@ -102,7 +103,7 @@ public getPageByFilter(correlationId: string, filter: FilterParams, paging: Pagi
 
 ### Paging
 
-Another common data pattern is Paging. It is used to retrieve large datasets in chunks through multiple calls to the storage. To do this, a client specifies a set of PagingParams, which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using PagingParams, but this parameter is optional. The service returns a subset of the data as a DataPage object.
+Another common data pattern is Paging. It is used to retrieve large datasets in chunks through multiple calls to the storage. To do this, a client specifies a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. The service returns a subset of the data as a [DataPage](../../commons/data/data_page/) object.
 
 ```typescript
 //skip = 25, take = 50, total = false
@@ -114,7 +115,7 @@ persistence.getPageByFilter(null, null, paging, (page, err) => {
 
 ### Custom Persistence Methods
 
-As mentioned above, developers can also implement custom persistent methods. Inside those methods, they can access data objects via the _items property. When stored data is modified, developers must finish the transaction by calling the base class’s save() method.
+As mentioned above, developers can also implement custom persistent methods. Inside those methods, they can access data objects via the **_items** property. When stored data is modified, developers must finish the transaction by calling the base class’s **save()** method.
 Below is an example of a custom persistent method.
 
 ```typescript
@@ -189,7 +190,7 @@ public useMemoryPersistence(done) {
 
 ### FileMemoryPersistence
 
-The memory persistence component actually has one more trick up its sleeve: it can easily be extended to create a FileMemoryPersistence. The only thing you’ll need to add is the assignment of a PersisterObject in the FileMemoryPersistence’s constructor. The File persistence can be used for certain system test scenarios.
+The memory persistence component actually has one more trick up its sleeve: it can easily be extended to create a **FileMemoryPersistence**. The only thing you’ll need to add is the assignment of a **PersisterObject** in the **FileMemoryPersistence**’s constructor. The File persistence can be used for certain system test scenarios.
 
 ```typescript
 import { JsonFilePersister } from 'pip-services3-data-node';

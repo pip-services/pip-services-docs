@@ -6,7 +6,7 @@ linkTitle: "Step 7. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following code:
+To run our microservice, we need to add just one last bit of code. In the bin folder, create a **run.js** file with the following code:
 
 **/bin/main.py**
 
@@ -113,7 +113,7 @@ Let’s move on to testing the main functionality of our microservice. Our set o
 
 We could use a REST client to test our microservice, but for the sake of this example, we’ll be using curl instead.
 
-Let’s check the availability of our commands - the very same ones we defined in our CommandSet.
+Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../commons/commands/command_set/).
 
 First, we’ll attempt to create a few beacons in the system:
 

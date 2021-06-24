@@ -13,7 +13,7 @@ description: >
 The ConfigReader class allows you to create config readers that support configuration parameterization.
 
 #### Configuration parameters
-- **parameters**: this entire section is used as template parameters
+- **parameters**: this entire section is used as template parameters.
     - **...**
 
 ### Constructors
@@ -27,7 +27,7 @@ Creates a new instance of the config reader.
 ### Methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > (c [*ConfigReader]()) Configure(config [*cconfig.ConfigParams](../../../commons/config/config_params))
 
@@ -39,9 +39,9 @@ Parameterized configuration template given as string with dynamic parameters.
 
 > (c [*ConfigReader]()) Parameterize(config string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (string, error)
 
-- **cconfig**: string - a string with configuration template to be parameterized
+- **cconfig**: string - string with a configuration template to be parameterized
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
-- **returns**: (string, error) - a parameterized configuration string.
+- **returns**: (string, error) - parameterized configuration string.
 
 
 ### See also

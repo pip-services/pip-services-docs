@@ -27,11 +27,11 @@ Creates a new instance of the decorator.
 
 #### BaseReferences
 Next references or decorator in the chain.
-> `public` **BaseReferences**: [IReferences](../../../commons/refer/ireferences) [ get, set ]
+> `public` [IReferences](../../../commons/refer/ireferences) BaseReferences [ get, set ]
 
 #### ParentReferences
 Decorator at the top of the chain.
-> `public` **ParentReferences**: [IReferences](../../../commons/refer/ireferences) [ get, set ]
+> `public` [IReferences](../../../commons/refer/ireferences) ParentReferences [ get, set ]
 
 
 

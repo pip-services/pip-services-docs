@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "Messaging module"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet"
 no_list: true
 weight: 30
 description: > 
-    Asynchronous Messaging for Pip.Services in Node.js / ES2017  
+    Asynchronous Messaging for Pip.Services in .NET 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
@@ -22,9 +22,9 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Install the dotnet package as
 ```bash
-npm install pip-services3-messaging-nodex --save
+dotnet add package PipServices3.Messaging
 ```
 
 TODO: add example

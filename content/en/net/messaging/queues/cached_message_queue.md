@@ -2,16 +2,14 @@
 type: docs
 title: "CachedMessageQueue"
 linkTitle: "CachedMessageQueue"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet"
 description: >
     Message queue that caches received messages in memory to allow peek operations
     that may not be supported by the undelying queue.
  
 ---
 
-**Extends:** [MessageQueue](../message_queue) 
-
-**Implements:** [ICleanable](../../../commons/run/icleanable) 
+**Inherts:** [MessageQueue](../message_queue), [ICleanable](../../../commons/run/icleanable) 
 
 ### Description
 
@@ -24,7 +22,7 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(name?: string, capabilities?: [MessagingCapabilities](../messaging_capabilities))
+> `public` CachedMessageQueue(string name = null, [MessagingCapabilities](../messaging_capabilities) capabilities = null)
 
 - **name**: string - (optional) queue name
 - **capabilities**: [MessagingCapabilities](../messaging_capabilities) - (optional) capabilities of the message queue
@@ -36,7 +34,7 @@ Creates a new instance of the persistence component.
 #### _autoSubscribe
 Boolean variable indicating whether a message queue auto-subscribes or not.  
 
-> `protected` **_autoSubscribe**: boolean
+> `protected` **_autoSubscribe**: bool
 
 #### _messages
 List of messages in a queue. 
@@ -48,22 +46,26 @@ Message receiver.
 
 > `protected` **_receiver**: [IMessageReceiver](../imessage_receiver)
 
+#### _receiveEvent
+TODO: add description
+> `protected` **_receiveEvent**: ManualResetEvent
+
 </span>
 
 ### Abstract methods
 
-#### subscribe
+#### SubscribeAsync
 Subscribes to the message broker.
 
-> `public abstract` subscribe(correlationId: string): Promise\<void\>
+> `protected abstract` Task SubscribeAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### unsubscribe
+#### UnsubscribeAsync
 Unsubscribes from the message broker.
 
-> `public abstract` unsubscribe(correlationId: string): Promise\<void\>
+> `protected abstract` Task UnsubscribeAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
@@ -71,92 +73,83 @@ Unsubscribes from the message broker.
 
 ### Instance methods
 
-#### clear
+#### Clear
 Clears component state.
 
-> `public` clear(correlationId: string): Promise\<void\>
+> `public override` Task ClearAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
-#### configure
+#### Configure
 Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public override` Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
-#### endListen
+#### EndListen
 Ends listening for incoming messages.
 When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
-> `public` endListen(correlationId: string): void
+> `public override` void EndListen(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
-#### listen
+#### ListenAsync
 Listens for incoming messages and blocks the current thread until the queue is closed.
-See [IMessageReceiver](../imessage_receiver), [receive](#receive)
+See [IMessageReceiver](../imessage_receiver), [Receive](#receive)
 
-> `public` listen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
+> `public override` Task ListenAsync(string correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
-#### open
+#### OpenAsync
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public override` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### peek
+#### PeekAsync
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue it returns null.
 
-> `public` peek(correlationId: string): Promise<[MessageEnvelope](../message_envelope)>
+> `public override` Task\<[MessageEnvelope](../message_envelope)\> PeekAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)> - peeked message or **null**.
+- **returns**: Task\<[MessageEnvelope](../message_envelope)\> - peeked message or **null**.
 
 
-#### peekBatch
+#### PeekBatchAsync
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue it returns an empty list.
 
 Important: This method is not supported by MQTT.
 
-> `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope](../message_envelope)[]
+> `public override` Task\<List\<[MessageEnvelope](../message_envelope)\>\> PeekBatchAsync(string correlationId, int messageCount)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageCount**: number - maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope](../message_envelope)[]] - list with peeked messages.
+- **messageCount**: int - maximum number of messages to peek.
+- **returns**: Task\<List\<[MessageEnvelope](../message_envelope)\>\> - list with peeked messages.
 
-#### readMessageCount
+#### ReadMessageCountAsync
 Reads the current number of messages in the queue to be delivered.
 
-> `public` readMessageCount(): Promise\<number\>
+> `public override` Task\<long\> ReadMessageCountAsync()
 
-- **returns**: number - number of messages in the queue.
+- **returns**: Task\<long\> - number of messages in the queue.
 
-#### receive
+#### ReceiveAsync
 Receives an incoming message and removes it from the queue.
 
-> `public` receive(correlationId: string, waitTimeout: number): [MessageEnvelope](../message_envelope)
+> `public override` Task<[MessageEnvelope](../message_envelope)> ReceiveAsync(string correlationId, long waitTimeout)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
-- **returns**: [MessageEnvelope](../message_envelope) - received message or *null*.
-
-
-#### sendMessageToReceiver
-Sends a message to a receiver.
-
-> `protected` sendMessageToReceiver(receiver: [IMessageReceiver](../imessage_receiver), message: [MessageEnvelope](../message_envelope)): Promise\<void\>
-
-- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver of the message.
-- **message**: [MessageEnvelope](../message_envelope) - message to be sent.
+- **waitTimeout**: long - timeout in milliseconds to wait for a message to come.
+- **returns**: Task<[MessageEnvelope](../message_envelope)> - received message or *null*.
 
 
 

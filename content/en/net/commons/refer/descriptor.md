@@ -43,8 +43,6 @@ Creates a new instance of the descriptor.
 Gets the component's logical group.
 > `public` string Group [ get, private set ]
 
-- **returns**: string - the component's logical group
-
 #### Type
 > `public` string Type [ get, private set ]
 
@@ -52,19 +50,15 @@ Gets the component's logical group.
 Gets the component's implementation type.
 > `public` string Kind [ get, private set ]
 
-- **returns**: string - the component's implementation type.
 
 #### Name
 Gets the unique component's name.
 > `public` string Name [ get, private set ]
 
-- **returns**: string - the unique component's name.
 
 #### Version
 Gets the component's implementation version.
 > `public` string Version [ get, private set ]
-
-- **returns**: string - the component's implementation version.
 
 
 

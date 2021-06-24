@@ -41,5 +41,5 @@ Stores value in the cache with expiration time.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **key**: string - a unique value key.
 - **value**: any - a value to store.
-- **timeout**: number - expiration timeout in milliseconds.
+- **timeout**: long - expiration timeout in milliseconds.
 - **returns**: Task\<T\> - a cached value stored in the cache.

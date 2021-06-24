@@ -2,12 +2,12 @@
 type: docs
 title: "TestMessageReceiver"
 linkTitle: "TestMessageReceiver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet"
 description: >
     Class used to receive a message, obtain a list of received messages and the number of received messages, and to clear the message list. 
 ---
 
-**Implements:** [IMessageReceiver](../../queues/imessage_receiver), [ICleanable](../../../commons/run/icleanable)
+**Inherits:** [IMessageReceiver](../../queues/imessage_receiver), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
 
@@ -17,7 +17,7 @@ The TestMessageReceiver allows you to receive a message, obtain a list of receiv
 
 Creates a TestMessageReceiver component.
 
-> `public` constructor()
+> `public` TestMessageReceiver()
 
 
 ### Properties
@@ -26,35 +26,31 @@ Creates a TestMessageReceiver component.
 #### messages
 Gets the list of received messages.
 
-> `public` messages(): [MessageEnvelope](../message_envelope)[]
-
-- **returns**: [MessageEnvelope](../message_envelope)[] - list of received messages
+> public List<[MessageEnvelope](../message_envelope)> Messages [ get ]
 
 
-#### messageCount
+#### MessageCount
 Gets the received message count.
 
-> `public` messageCount(): number
-
-- **returns**: number - number of messages
+> public int MessageCount [ get ]
 
 
 ### Instance methods
 
-#### clear
+#### ClearAsync
 Clears all received messagers.
 
-> `public` clear(correlationId: string): Promise\<void\>
+> `public` Task ClearAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 
-### receiveMessage
+### ReceiveMessageAsync
 Receives incoming message from the queue.
 
 See also [MessageEnvelope](../../queues/message_envelope), [IMessageQueue](../../queues/imessage_queue)
 
-> `public` receiveMessage(envelope: [MessageEnvelope](../../queues/message_envelope), queue: [IMessageQueue](../../queues/imessage_queue)): Promise\<void\>
+> `public` Task ReceiveMessageAsync([MessageEnvelope](../../queues/message_envelope) message, [IMessageQueue](../../queues/imessage_queue) queue)
 
 - **envelope**: [MessageEnvelope](../../queues/message_envelope) - an incoming message
 - **queue**: [IMessageQueue](../../queues/imessage_queue) - a queue where the message comes from

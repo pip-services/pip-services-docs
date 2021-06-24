@@ -26,7 +26,7 @@ See [IValidationRule](../ivalidation_rule)
 Gets and sets flag to allow undefined properties.
 True to allow undefined properties and false to disallow.
 
-> `public` IsUndefinedAllowed [ get, set ]
+> `public` bool IsUndefinedAllowed [ get, set ]
 
 
 #### Properties 

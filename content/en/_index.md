@@ -33,10 +33,10 @@ This guide will help you to learn Pip.Services and to develop your own microserv
 
 <div class="row">
   <div class="col-6 col-md-12 d-flex pb-md-4 justify-content-center">
-    <div class="card-deck lang-cards">
+    <div class="card-deck title-cards">
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/nodejs-icon.png" alt="Node.js icon">
+          <img class="card-img-top" src="/images/icons/nodejs-icon.png" alt="Node.js icon">
           <a href="../node" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -45,7 +45,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
       </div>
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/dotnet-icon.png" alt="Dotnet icon">
+          <img class="card-img-top" src="/images/icons/dotnet-icon.png" alt="Dotnet icon">
           <a href="../net" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -54,7 +54,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
       </div>
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/golang-icon.png" alt="Golang icon">
+          <img class="card-img-top" src="/images/icons/golang-icon.png" alt="Golang icon">
           <a href="../golang" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -65,10 +65,10 @@ This guide will help you to learn Pip.Services and to develop your own microserv
   </div>
   
   <div class="col-6 col-md-12 d-flex justify-content-center">
-    <div class="card-deck lang-cards">
+    <div class="card-deck title-cards">
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/dart-icon.png" alt="Dart icon">
+          <img class="card-img-top" src="/images/icons/dart-icon.png" alt="Dart icon">
           <a href="../dart" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -77,7 +77,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
       </div>
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/python-icon.png" alt="Python icon">
+          <img class="card-img-top" src="/images/icons/python-icon.png" alt="Python icon">
           <a href="../python" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -86,7 +86,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
       </div>
       <div class="card">
         <div class="card-body text-center">
-          <img class="card-img-top" src="/images/langs/java-icon.png" alt="Java icon">
+          <img class="card-img-top" src="/images/icons/java-icon.png" alt="Java icon">
           <a href="../java" class="stretched-link"></a>
         </div>
         <div class="card-footer text-center">
@@ -100,35 +100,37 @@ This guide will help you to learn Pip.Services and to develop your own microserv
 
 ### More useful stuff...
 <br>
-
-<div class="card-deck">
-  <div class="card">
-    <div class="card-body text-center">
-      <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/microservice_gears.svg" alt="microservices">
-      <a href="microservices" class="stretched-link"></a>
+<div class="d-flex justify-content-center">
+  <div class="card-deck title-cards">
+    <div class="card">
+      <div class="card-body text-center">
+        <img class="card-img-top" src="/images/icons/microservice_gears.png" alt="microservices">
+        <a href="microservices" class="stretched-link"></a>
+      </div>
+      <div class="card-footer text-center">
+        <b>Microservices</b>
+      </div>
     </div>
-    <div class="card-footer text-center">
-      <b>Microservices</b>
+    <div class="card">
+      <div class="card-body text-center">
+        <img class="card-img-top" src="/images/icons/benchmark_icon.png" alt="Benchmarks">
+        <a href="extras/benchmarks/" class="stretched-link"></a>
+      </div>
+      <div class="card-footer text-center">
+        <b>Benchmarks</b>
+      </div>
     </div>
-  </div>
-  <div class="card">
-    <div class="card-body text-center">
-      <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/benchmark_icon.svg" alt="Benchmarks">
-      <a href="extras/benchmarks/" class="stretched-link"></a>
-    </div>
-    <div class="card-footer text-center">
-      <b>Benchmarks</b>
-    </div>
-  </div>
-  <div class="card">
-    <div class="card-body text-center">
-       <img class="card-img-top" style="padding: 1.25rem" src="/images/icons/selenium_powershell_icon.svg" alt="Selenium Powershell">
-      <a href="extras/ps_selenium" class="stretched-link"></a>
-    </div>
-    <div class="card-footer text-center">
-      <b>Selenium Powershell</b>
+    <div class="card">
+      <div class="card-body text-center">
+        <img class="card-img-top" src="/images/icons/selenium_powershell_icon.png" alt="Selenium Powershell">
+        <a href="extras/ps_selenium" class="stretched-link"></a>
+      </div>
+      <div class="card-footer text-center">
+        <b>Selenium Powershell</b>
+      </div>
     </div>
   </div>
 </div>
+
 
 

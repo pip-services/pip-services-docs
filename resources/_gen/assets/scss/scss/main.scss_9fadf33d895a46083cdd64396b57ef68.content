@@ -13473,6 +13473,10 @@ nav .navbar-logo > svg {
   .h1 {
     font-size: 1.9125rem; } }
 
+mark, .mark {
+  background-color: #fbf1bb;
+  border-radius: 0.5rem; }
+
 .btn-group {
   margin: auto;
   display: flex;
@@ -13594,9 +13598,9 @@ nav .navbar-logo > svg {
     .td-content .module-body h4 {
       margin-bottom: -0.1rem;
       margin-top: 1.5rem; }
-  .td-content .lang-cards .card, .td-content .lang-cards .highlight {
+  .td-content .title-cards .card, .td-content .title-cards .highlight {
     max-width: 250px; }
-  .td-content .lang-cards img {
+  .td-content .title-cards img {
     max-width: 200px; }
   .td-content .card-deck .card, .td-content .card-deck .highlight {
     border-radius: 0.3rem; }

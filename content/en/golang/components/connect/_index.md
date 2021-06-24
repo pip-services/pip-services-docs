@@ -36,7 +36,7 @@ to connect to external services.
 
 #### [CompositeConnectionResolver](composite_connection_resolver)
 Helper class that resolves connection and credential parameters,
-validates them and generates connection options.
+validates them, and generates connection options.
 
 #### [ConnectionParams](connection_params)
 Contains connection parameters to connect to external services.

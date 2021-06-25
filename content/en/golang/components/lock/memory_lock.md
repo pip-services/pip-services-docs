@@ -21,12 +21,12 @@ Important points
 
 #### Configuration parameters
 **options**:
-- **retry_timeout**: timeout in milliseconds to retry lock acquisition. (Default: 100)
+- **retry_timeout**: timeout (in milliseconds) to retry lock acquisition. (Default: 100)
 
 ### Constructors
 
 #### NewMemoryLock
-Create new memory lock
+Creates new memory lock
  
 > NewMemoryLock() [*MemoryLock]()
 
@@ -34,12 +34,12 @@ Create new memory lock
 ### Methods
 
 #### ReleaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > (c [*MemoryLock]()) ReleaseLock(correlationId string, key string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.
 - **returns**: error - returns error if not released
 
 
@@ -49,9 +49,9 @@ It returns immediately a positive or negative result.
 
 > (c [*MemoryLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (bool, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to acquire.
+- **ttl**: int64 - lock timeout (time to live) in milliseconds.
 - **returns**: (bool, error) - lock result
 
 ### Examples

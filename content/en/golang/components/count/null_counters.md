@@ -34,8 +34,8 @@ It returns [*CounterTiming](../counter_timing) object which has to be called at
 
 > (c *NullCounters) BeginTiming(name string) [*CounterTiming](../counter_timing)
 
-- **name**: string - a counter name of Interval type.
-- **returns**: [*CounterTiming](../counter_timing) - a callback object to end timing.
+- **name**: string - counter name of Interval type.
+- **returns**: [*CounterTiming](../counter_timing) - callback object to end timing.
 
 
 #### Increment
@@ -43,15 +43,15 @@ Increments counter by given value.
 
 > (c *NullCounters) Increment(name string, value float32)
 
-- **name**: string - a counter name of Increment type.
-- **value**: float32 - a value to add to the counter.
+- **name**: string - counter name of Increment type.
+- **value**: float32 - value to add to the counter.
 
 #### IncrementOne
 Increments counter by 1.
 
 > (c *NullCounters) IncrementOne(name string)
 
-- **name**: string - a counter name of Increment type.
+- **name**: string - counter name of Increment type.
 
 
 #### Last
@@ -60,8 +60,8 @@ Usually this method is used by metrics calculated externally.
 
 > (c *NullCounters) Last(name string, value float32)
 
-- **name**: string - a counter name of Last type.
-- **value**: float32 - a last value to record.
+- **name**: string - counter name of Last type.
+- **value**: float32 - last value to record.
 
 
 #### Stats
@@ -69,8 +69,8 @@ Calculates min/average/max statistics based on the current and previous values.
 
 > (c *NullCounters) Stats(name string, value float32)
 
-- **name**: string - a counter name of Statistics type
-- **value**: float32 - a value to update statistics
+- **name**: string - counter name of Statistics type
+- **value**: float32 - value to update statistics
 
 
 #### Timestamp
@@ -78,8 +78,8 @@ Records the given timestamp.
 
 > (c *NullCounters) Timestamp(name string, value time.Time)
 
-- **name**: string - a counter name of Timestamp type.
-- **value**: time.Time - a timestamp to record.
+- **name**: string - counter name of Timestamp type.
+- **value**: time.Time - timestamp to record.
 
 
 #### TimestampNow
@@ -87,7 +87,7 @@ Records the current time as a timestamp.
 
 > (c *NullCounters) TimestampNow(name string)
 
-- **name**: string - a counter name of Timestamp type.
+- **name**: string - counter name of Timestamp type.
 
 ### See also 
 

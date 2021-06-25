@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The ITracer interface is used to create tracer component that capture operation traces.
+The ITracer interface is used to create tracer components that capture operation traces.
 
 ### Methods
 
@@ -18,10 +18,10 @@ Begings recording an operation trace
 
 > BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [*TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [*TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Failure
@@ -29,10 +29,10 @@ Records an operation failure with its name, duration and error.
 
 > Failure(correlationId string, component string, operation string, err error, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: string - a name of called component
-- **operation**: string - a name of the executed operation.
-- **err**: error - an error object associated with this trace.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: string - name of called component
+- **operation**: string - name of the executed operation.
+- **err**: error - error object associated with this trace.
 - **duration**: int64 - execution duration in milliseconds.
 
 
@@ -41,7 +41,7 @@ Records an operation trace with its name and duration
 
 > Trace(correlationId string, component string, operation string, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: int64 - execution duration in milliseconds.

@@ -63,7 +63,7 @@ of execution block and update the associated counter.
 Creates [ICounters](icounters) components by their descriptors.
 
 #### [ICachedCountersOverrides](icached_counters_overrides)
-TODO: add description
+Provides a save method for counters.
 
 #### [LogCounters](log_counters)
 Performance counters that periodically dumps counters measurements to logger.

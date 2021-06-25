@@ -9,20 +9,20 @@ description: >
 ---
 ### Description
 A helper class that allows to extract component "name" from configuration parameters.
-The name can be defined in the "id" or "name" parameters or inside a component of type descriptor.
+The name can be defined in the "id" or "name" parameters or inside a component of descriptor type.
 
 ### Static Methods
 
 #### Resolve
-Resolves a component name from configuration parameters.
-The name can be stored in "id", "name" fields or inside a component descriptor.
-If name cannot be determined it returns a defaultName.
+Resolves a component's name from configuration parameters.
+The name can be stored in "id", "name" fields or inside a descriptor component.
+If name cannot be determined, it returns a defaultName.
 
 > `public static` string Resolve([ConfigParams](../config_params) config, string defaultName = null)
 
-- **config**: [ConfigParams](../config_params) - configuration parameters that may contain a component name.
-- **defaultName**: string - (optional) a default component name.
-- **returns**: string - resolved name or default name if the name cannot be determined.
+- **config**: [ConfigParams](../config_params) - configuration parameters that may contain a component's name.
+- **defaultName**: string - (optional) default component's name.
+- **returns**: string - resolved name or default name, if the name cannot be determined.
 
 ### Examples
 

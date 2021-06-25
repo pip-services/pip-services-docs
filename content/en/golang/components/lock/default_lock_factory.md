@@ -12,7 +12,7 @@ description: >
 The DefaultLockFactory class allows you to create a factory used to create [ILock](../ilock) components based on their descriptors.
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > NewDefaultLockFactory() [*build.Factory](../../build/factory)
 

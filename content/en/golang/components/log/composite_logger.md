@@ -51,10 +51,10 @@ Writes a log message to the logger destination.
 
 > (c [*CompositeLogger]()) Write(level int, correlationId string, err error, message string)
 
-- **level**: int - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **err**: error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: int - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **err**: error - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 
 ### Examples

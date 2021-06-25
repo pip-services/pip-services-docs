@@ -59,7 +59,7 @@ into this one.
 
 > `public` void AddCommandSet([CommandSet](../command_set) commandSet)
 
-- **commandSet**: [CommandSet](../command_set) - the CommandSet to add.
+- **commandSet**: [CommandSet](../command_set) - CommandSet to add.
 
 #### AddCommands
 Adds multiple [commands](../icommand) to this command set.  
@@ -67,7 +67,7 @@ See [ICommand](../icommand)
 
 > `public` void AddCommands(IEnumerable<[ICommand](../icommand)> commands)
 
-- **commands**: IEnumerable<[ICommand](../icommand)> - the array of commands to add.
+- **commands**: IEnumerable<[ICommand](../icommand)> - array of commands to add.
 
 #### AddEvent
 Adds an [event](../ievent) to this command set.  
@@ -75,7 +75,7 @@ See [IEvent](../ievent)
 
 > `public` void AddEvent([IEvent](../ievent) ev) 
 
-- **ev**: [IEvent](../ievent) - the event to add.
+- **ev**: [IEvent](../ievent) - event to add.
 
 #### AddEvents
 Adds multiple [events](../ievent) to this command set.  
@@ -83,7 +83,7 @@ See [IEvent](../ievent)
 
 > `public` void AddEvents(IEnumerable<[IEvent](../ievent)> events)
 
-- **events**: IEnumerable<[IEvent](../ievent)> - the array of events to add.
+- **events**: IEnumerable<[IEvent](../ievent)> - array of events to add.
 
 #### AddInterceptor
 Adds a [command interceptor](../icommand_interceptor) to this command set.
@@ -98,7 +98,7 @@ See [IEventListener](../ievent_listener)
 
 > `public` void AddListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener to add.
+- **listener**: [IEventListener](../ievent_listener) - listener to add.
 
 #### ExecuteAsync
 Executes a [command](../icommand) specificed by its name.  
@@ -106,10 +106,10 @@ See [ICommand](../icommand), [Parameters](../../run/parameters)
 
 > `public` Task<\object\> ExecuteAsync(string correlationId, string command,  [Parameters](../../run/parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **command**: string - the name of that command that is to be executed.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: Task<\object\> - the execution result
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **command**: string - name of that command that is to be executed.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
+- **returns**: Task<\object\> - execution result
 
 #### FindCommand
 Searches for a command by its name.
@@ -117,16 +117,16 @@ See [ICommand](../icommand)
 
 > `public` [ICommand](../icommand) FindCommand(string command)
 
-- **command**: [ICommand](../icommand) - the name of the command to search for.
-- **returns**: [ICommand](../icommand) - the command, whose name matches the provided name.
+- **command**: [ICommand](../icommand) - name of the command to search for.
+- **returns**: [ICommand](../icommand) - command, whose name matches the provided name.
 
 #### FindEvent
 Searches for an event by its name in this command set.
 
 > `public` [IEvent](../ievent) FindEvent(string ev)
 
-- **ev**: string - the name of the event to search for.
-- **returns**: [IEvent](../ievent) - the event, whose name matches the provided name.
+- **ev**: string - name of the event to search for.
+- **returns**: [IEvent](../ievent) - event whose name matches the provided name.
 
 #### NotifyAsync
 Fires event specified by its name and notifies all registered
@@ -134,9 +134,9 @@ Fires event specified by its name and notifies all registered
 
 > `public` Task NotifyAsync(correlationId: string, ev: string, args: [Parameters](../../run/parameters))
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **ev**: string - the name of the event that is to be fired.
-- **args**: [Parameters](../../run/parameters) - the event arguments (parameters).
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **ev**: string - name of the event that is to be fired.
+- **args**: [Parameters](../../run/parameters) - event arguments (parameters).
 
 
 
@@ -146,20 +146,20 @@ See [IEventListener](../ievent_listener)
 
 > `public` void RemoveListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener to remove.
 
 
 #### validate
-Validates [args](../../run/parameters) for command specified by its name using defined schema.
-If validation schema is not defined than the methods returns no errors.
-It returns validation error if the command is not found.
+Validates [args](../../run/parameters) for command specified by its name using a defined schema.
+If the validation schema is not defined, then the methods returns no errors.
+It returns a validation error if the command is not found.
 
 
 > IList<[ValidationResult](../../validate/validation_result)> validate(string command, [Parameters](../../run/parameters) args)
 
-- **command**: string - the name of the command for which the 'args' must be validated.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: IList<[ValidationResult](../../validate/validation_result)> - an array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validationresulttype).
+- **command**: string - name of the command for which the 'args' must be validated.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to validate.
+- **returns**: IList<[ValidationResult](../../validate/validation_result)> - array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validationresulttype).
 
 
 

@@ -22,7 +22,7 @@ Important points
 ### Constructors
 
 #### NewNullLock
-Create new null lock
+Creates a new null lock
 
 > NewNullLock() [*NullLock]()
 
@@ -33,20 +33,20 @@ Makes multiple attempts to acquire a lock by its key within a given time interva
 
 > (c [*NullLock]()) AcquireLock(correlationId string, key string, ttl int, timeout int) error
 
-- **correlationId**: string -(optional) transaction id to trace execution through call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int - a lock timeout (time to live) in milliseconds.
-- **timeout**: int - a lock acquisition timeout.
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: int - lock timeout (time to live) in milliseconds.
+- **timeout**: int - lock acquisition timeout.
 - **returns**: error - returns error if not acquired.
 
 
 #### ReleaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > (c [*NullLock]()) ReleaseLock(correlationId string, key string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.
 - **returns**: error - returns error if not released.
 
 
@@ -56,9 +56,9 @@ It returns immediately a positive or negative result.
 
 > (c [*NullLock]()) TryAcquireLock(correlationId string, key string, ttl int) (bool, error)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to acquire.
+- **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: (bool, error) - lock result
 
 

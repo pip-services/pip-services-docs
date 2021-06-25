@@ -30,7 +30,7 @@ Parameters to pass to the [configure](#configure) method for component configura
 ### Constructors
 
 #### InheritLogger
-Creates a new instance of the logger and inherite from ILogerWriter.
+Creates a new instance of the logger and inherites from ILogerWriter.
 
 > InheritLogger(overrides ILoggerOverrides) [*Logger]()
 
@@ -41,7 +41,7 @@ Creates a new instance of the logger and inherite from ILogerWriter.
 <span class="hide-title-link">
 
 #### level
-Maximum log level to capture
+Maximum log level to capture.
 > **level**: int
 
 
@@ -55,16 +55,16 @@ source (context) name
 ### Methods
 
 #### ComposeError
-Composes an human-readable error description
+Composes an human-readable error description.
 
 > (c [*Logger]()) ComposeError(err error) string
 
-- **err**: error - an error to format.
-- **returns**: string - a human-redable error description.
+- **err**: error - error to format.
+- **returns**: string - human-redable error description.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > (c [*Logger]()) Configure(cfg [*config.ConfigParams](../../../commons/config/config_params))
 
@@ -76,20 +76,20 @@ Logs high-level debug information for troubleshooting.
 
 > (c [*Logger]()) Debug(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**:...interface{}- arguments to parameterize the message.
 
 
 
 #### Error
-Logs recoverable application error.
+Logs recoverable application errors.
 
 > (c [*Logger]()) Error(correlationId string, err error, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **err**: error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **err**: error - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{}- arguments to parameterize the message.
 
 
@@ -99,9 +99,9 @@ Logs fatal (unrecoverable) messages that caused the process to crash.
 
 > (c [*Logger]()) Fatal(correlationId string, err error, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Error - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 
@@ -111,20 +111,20 @@ Formats the log message and writes it to the logger destination.
 
 > (c [*Logger]()) FormatAndWrite(level int, correlationId string, err error, message string, args []interface{})
 
-- **level**: int - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **err**: error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: int - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **err**: error - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: []interface{}- arguments to parameterize the message.
 
 
 
 #### Level
-Gets the maximum log level. Messages with higher log level are filtered out.
+Gets the maximum log level. Messages with a higher log level are filtered out.
 
 > (c [*Logger]()) Level() int
 
-- **returns**: int -  the maximum log level.
+- **returns**: int -  maximum log level.
 
 
 #### Source
@@ -132,16 +132,16 @@ Gets the source (context) name.
 
 > (c [*Logger]()) Source() string
 
-- **returns**: string -  the source (context) name.
+- **returns**: string -  source (context) name.
 
 
 #### Info
-Logs an important information message
+Logs an important information message.
 
 > (c [*Logger]()) Info(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 
@@ -151,20 +151,20 @@ Logs a message at a specified log level.
 
 > (c [*Logger]()) Log(level int, correlationId string, err error, message string, args ...interface{})
 
-- **level**: int - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: int - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: error - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 
 
 #### SetLevel
-Set the maximum log level.
+Sets the maximum log level.
 
 > (c [*Logger]()) SetLevel(value int)
 
-- **value**: int - a new maximum log level.
+- **value**: int - new maximum log level.
 
 
 #### Trace
@@ -172,8 +172,8 @@ Logs a low-level debug information for troubleshooting.
 
 > (c [*Logger]()) Trace(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{}- arguments to parameterize the message.
 
 
@@ -182,8 +182,8 @@ Logs a warning that may or may not have a negative impact.
 
 > (c [*Logger]()) Warn(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 

@@ -14,7 +14,7 @@ The DefaultCountersFactory class allows you to create a factory that builds [ICo
 ### Constructors
 
 #### NewDefaultCountersFactory
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > NewDefaultCountersFactory() [*build.Factory](../../build/factory)
 

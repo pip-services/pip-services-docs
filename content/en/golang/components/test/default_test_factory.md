@@ -16,7 +16,7 @@ The DefaultLoggerFactory class provides a factory for shutdowns.
 ### Constructors
 
 #### NewDefaultTestFactory
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > NewDefaultTestFactory() [*build.Factory](../../build/factory)
 

@@ -21,7 +21,7 @@ Important points
 
 #### Configuration parameters
 
-- **name**: the context (container or process) name
+- **name**: context's (container or process) name
 - **description**: human-readable description of the context
 - **properties**: entire section of additional descriptive properties
 - **...**
@@ -40,7 +40,7 @@ Creates a new ContextInfo and sets its configuration parameters.
 > NewContextInfoFromConfig(cfg [*config.ConfigParams](../../../commons/config/config_params)) [*ContextInfo]()
 
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
-- **returns**: [*ContextInfo]() - a newly created ContextInfo
+- **returns**: [*ContextInfo]() - newly created ContextInfo
 
 
 ### Fields
@@ -58,17 +58,17 @@ Gets and sets the human-readable description of the context.
 > Description: string
 
 #### Name
-Gets and sets  the context name.
+Gets and sets  the context's name.
 
 > Name: string
 
 #### Properties
-Gets context additional parameters.
+Gets context's additional parameters.
 
 > Properties: map[string]string
 
 #### StartTime
-Gets the context start time.
+Gets the context's start time.
 
 > StartTime: time.Time
 

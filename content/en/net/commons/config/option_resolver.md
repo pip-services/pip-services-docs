@@ -17,7 +17,7 @@ Resolves an "options" configuration section from component configuration paramet
 > `public static` [ConfigParams](../config_params) resolve([ConfigParams](../config_params) config, boolean configAsDefault = true)
 
 - **config**: [ConfigParams](../config_params) - configuration parameters
-- **configAsDefault**: bool - (optional) When set true the method returns the entire parameter set when "options" section is not found. Default: false
+- **configAsDefault**: bool - (optional) when set to true the method returns the entire parameter set when the "options" section is not found. Default: false
 - **returns**: [ConfigParams](../config_params) - configuration parameters from "options" section
 
 ### Examples

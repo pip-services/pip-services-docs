@@ -23,8 +23,8 @@ Creates a instance of the data object.
 
 > NewCounter(name string, typ int) [*Counter]()
 
-- **name**: string - a counter name.
-- **type**: int - a counter type.
+- **name**: string - counter name.
+- **type**: int - counter type.
 
 
 ### Fields
@@ -32,35 +32,35 @@ Creates a instance of the data object.
 <span class="hide-title-link">
 
 #### Last
-The last recorded value
+Last recorded value
 > **Last**: float32
 
 #### Count
-The total count
+Total count
 > **Count**: int
 
 #### Min
-The minimum value
+Minimum value
 > **Min**: float32
 
 #### max
-The maximum value
+Maximum value
 > **Max**: float32
 
 #### Average
-The average value
+Average value
 > **Average**: float32
 
 #### Time
-The recorded timestamp
+Recorded timestamp
 > **Time**: time.Time
 
 #### Name
-The counter's unique name
+Counter's unique name
 > **Name**: string
 
 #### Type
-The counter type that defines the measurement algorithm
+Counter's type that defines the measurement algorithm
 > **Type**: [CounterType](../counter_type)
 
 </span>

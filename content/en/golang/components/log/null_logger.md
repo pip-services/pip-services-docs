@@ -31,7 +31,7 @@ Gets the maximum log level. Messages with higher log level are filtered out.
 
 > (c [*Logger]()) Level() int
 
-- **returns**: int -  the maximum log level.
+- **returns**: int -  maximum log level.
 
 
 #### Info
@@ -39,8 +39,8 @@ Logs an important information message
 
 > (c [*Logger]()) Info(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 
@@ -50,20 +50,20 @@ Logs a message at a specified log level.
 
 > (c [*Logger]()) Log(level int, correlationId string, err error, message string, args ...interface{})
 
-- **level**: int - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: int - log level.
+- **correlationId**: string - (optional) transaction used id to trace execution through the call chain.
+- **error**: error - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 
 
 #### SetLevel
-Set the maximum log level.
+Sets the maximum log level.
 
 > (c [*Logger]()) SetLevel(value int)
 
-- **value**: int - a new maximum log level.
+- **value**: int - new maximum log level.
 
 
 #### Trace
@@ -71,8 +71,8 @@ Logs a low-level debug information for troubleshooting.
 
 > (c [*Logger]()) Trace(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{}- arguments to parameterize the message.
 
 
@@ -81,8 +81,8 @@ Logs a warning that may or may not have a negative impact.
 
 > (c [*Logger]()) Warn(correlationId string, message string, args ...interface{})
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: ...interface{} - arguments to parameterize the message.
 
 

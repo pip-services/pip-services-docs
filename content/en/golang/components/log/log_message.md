@@ -22,11 +22,11 @@ Important points
 
 > NewLogMessage(level int, source string, correlationId string, [errors.ErrorDescription](../../../commons/errors/error_description) , message string) [LogMessage]()
 
-- **level**: int - an log level.
-- **source**: string - an source.
-- **correlationId**: string -  transaction id to trace execution through call chain.
-- **err**: [errors.ErrorDescription](../../../commons/errors/error_description) - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: int - log level.
+- **source**: string - source.
+- **correlationId**: string -  transaction id used to trace execution through the call chain.
+- **err**: [errors.ErrorDescription](../../../commons/errors/error_description) - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 
 ### Fields
@@ -34,29 +34,29 @@ Important points
 <span class="hide-title-link">
 
 #### Time
-The time the message was generated
+Time the message was generated
 > **Time**: time.Time
 
 #### Level
-This log level
+Log level
 > **Level**: int
 
 #### Source
-The source (context name)
+Source (context name)
 > **Source**: string
 
 #### CorrelationId
-The transaction id to trace execution through a call chain.
+Transaction id used to trace execution through a call chain.
 > **CorrelationId**: string
 
 #### Error
-The transaction id to trace execution through a call chain.
+Transaction id used to trace execution through a call chain.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
 > **Error**: [ErrorDescription](../../../commons/errors/error_description)
 
 #### Message
-The human-readable message
+Human-readable message
 > **Message**: string
 
 </span>

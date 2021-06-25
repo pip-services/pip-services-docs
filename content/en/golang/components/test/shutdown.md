@@ -27,7 +27,7 @@ Important points
 ### Constructors
 
 #### NewShutdown
-Create new instance of Shutdown
+Creates new instance of Shutdown
 
 > NewShutdown() [*Shutdown]()
 
@@ -36,11 +36,11 @@ Create new instance of Shutdown
 
 
 #### Close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > (c [*Shutdown]()) Close(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not received.
 
 #### Configure
@@ -64,8 +64,8 @@ Opens the component.
 
 > (c [*Shutdown]()) Open(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: error - returns error if not received.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - returned error if not received.
 
 
 #### Shutdown

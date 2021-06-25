@@ -14,12 +14,12 @@ The LogTracer class allows you to create a tracer that dumps recorded traces to 
 #### Configuration parameters
 
 **options**:
-- **log_level**: log level to record traces (default: debug)    
+- **log_level**: log level used to record traces (default: debug)    
 
 #### References
 
 - **\*:logger:\*:\*:1.0** - [ILogger](../../log/ilogger) components to dump the captured counters
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) used to detect the context id and specify a counter's source
 
 ### Constructors
 
@@ -35,10 +35,10 @@ Begings recording an operation trace.
 
 > (c [*LogTracer]()) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [*TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [*TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Configure
@@ -54,10 +54,10 @@ Records an operation failure with its name, duration and error
 
 > (c [*LogTracer]()) Failure(correlationId string, component string, operation string, err error, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **err**: error - an error object associated with this trace.
+- **err**: error - error object associated with this trace.
 - **duration**: int64 - execution duration in milliseconds.
 
 
@@ -66,14 +66,14 @@ Sets references to dependent components.
 
 > (c [*LogTracer]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [cref.IReferences](../../../commons/refer/ireferences) - references used to locate the component's dependencies.
 
 #### Trace
 Records an operation trace with its name and duration.
 
 > (c [*LogTracer]()) Trace(correlationId string, component string, operation string, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: int64 - execution duration in milliseconds.

@@ -4,19 +4,19 @@ title: "ICachedCountersOverrides"
 linkTitle: "ICachedCountersOverrides"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
-    TODO: add description
+    Interface used to define a save method for counters.
 ---
 
 ### Description
 
-TODO: add description
+the ICachedCountersOverrides provides a save method for counters.
 
 ### Methods
 
 #### Save
-TODO: add description
+Save method for counters.
 
 > Save(counters []*Counter) error
 
-- **counters**: [][*Counter](../counter) - TODO: add description
-- **returns**: error - TODO: add description
+- **counters**: [][*Counter](../counter) - counters
+- **returns**: error - error if counters not saved

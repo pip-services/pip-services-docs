@@ -30,7 +30,7 @@ to change object configuration in runtime, use [IReconfigurable](ireconfigurable
 #### [IReconfigurable](ireconfigurable)
 An interface to set configuration parameters to an object.  
 It is similar to [IConfigurable](iconfigurable) interface, but emphasises the fact
-that **Сonfigure()** method can be called more than once to change object configuration
+that **Сonfigure()** method can be called more than once to change an object's configuration
 in runtime.
 
 <br>
@@ -43,7 +43,7 @@ All values stored as strings and can be serialized as JSON or string forms.
 When retrieved the values can be automatically converted on read using GetAsXXX methods.
 
 #### [NameResolver](name_resolver)
-A helper class that allows to extract component name from configuration parameters.
+A helper class that allows to extract a component's name from configuration parameters.
 The name can be defined in "id", "name" parameters or inside a component descriptor.
 
 #### [OptionResolver](option_resolver)

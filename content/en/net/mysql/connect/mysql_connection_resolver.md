@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
+**Inherits:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
 
 ### Description
 
@@ -46,7 +46,7 @@ Important points
 The connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
-#### _credentialResolver
+#### _connectionResolver
 The credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
@@ -56,26 +56,26 @@ The credential resolver
 ### Instance methods
 
 
-#### configure
+#### Configure
 Configures components by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### resolve
+#### Resolve
 Resolves a MySQL configuration from connection and credential parameters.
 
-> `public` resolve(correlationId: string): Promise\<string\>
+> `public` Task\<string\> ResolveAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise\<string\> - resolved connection config or raise error
+- **returns**: Task\<string\> - resolved connection config or raise error
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

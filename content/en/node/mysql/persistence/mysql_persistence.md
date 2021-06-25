@@ -173,7 +173,7 @@ Defines database schema via auto create objects or convenience methods.
 
 #### deleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **delete_by_filter** method from child class that
+This method shall be called by a public **deleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` deleteByFilter(correlationId: string, filter: any): Promise\<void\>
@@ -239,7 +239,7 @@ Generates a list of column parameters.
 #### getCountByFilter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **get_count_by_filter** method from the child class that
+This method shall be called by a public **getCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getCountByFilter(correlationId: string, filter: any): Promise\<number\>
@@ -252,7 +252,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### getListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **get_list_by_filter** method from a child class that
+This method shall be called by a public **getListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getListByFilter(correlationId: string, filter: any, sort: any, select: any): Promise\<T[]\>
@@ -280,7 +280,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### getPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **get_page_by_filter** method from the a child class that
+This method shall be called by a public **getPageByFilter** method from the a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` getPageByFilter(correlationId: string, filter: any, paging: PagingParams, sort: any, select: any): Promise<[DataPage<T>](../../../commons/data/data_page)>

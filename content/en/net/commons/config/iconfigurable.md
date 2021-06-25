@@ -17,12 +17,12 @@ Important points:
 
 - A class that implements this interface needs to implement a single **Configure()** method.  
 - If you need to emphasize the fact that **Configure()** method can be called multiple times
-    to change object configuration in runtime, use [IReconfigurable](../ireconfigurable) interface instead.  
+    to change object configuration in runtime, use the [IReconfigurable](../ireconfigurable) interface instead.  
 
 ### Instance methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by its passing configuration parameters.
 
 > void Configure([ConfigParams](../config_params) config)
 

@@ -46,7 +46,7 @@ Records an operation's failure with its name, duration and error
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **err**: error - an error object associated with this trace.
+- **err**: error - error object associated with this trace.
 - **duration**: int64 - execution duration in milliseconds.
 
 

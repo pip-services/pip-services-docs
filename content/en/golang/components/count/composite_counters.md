@@ -16,7 +16,7 @@ The CompositeCounters allows you to aggregate all counters from different compon
 
 Important points
 
--  It allows to capture metrics and conveniently send them to multiple destinations. 
+-  It allows to capture metrics and conveniently send them to multiple destinations.   
 
 #### References
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../icounters) components to pass collected measurements

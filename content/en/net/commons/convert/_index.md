@@ -7,11 +7,11 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
    
     This package contains "soft" data converters. Soft data converters differ from the data conversion algorithms 
-    found in typical programming language, due to the fact that they support rare conversions between 
+    found in typical programming languages, due to the fact that they support rare conversions between 
     various data types (such as integer to timespan, timespan to string, and so on).
 
     These converters are useful due to the fact that data in enterprise systems is represented in 
-    various forms, requiring frequent conversion and at times in very difficult combinations.  
+    various forms and at times in very difficult combinations, requiring frequent conversion .  
 ---
 ---
 
@@ -72,7 +72,7 @@ Converts arbitrary values into map objects using extended conversion rules:
 
 #### [RecursiveMapConverter](recursive_map_converter)
 Converts arbitrary values into map objects using extended conversion rules.
-This class is similar to [MapConverter](map_converter), but is recursively converts all values
+This class is similar to [MapConverter](map_converter), but it recursively converts all values
 stored in objects and arrays.
 
 #### [StringConverter](string_converter)
@@ -85,7 +85,7 @@ Converts arbitrary values into strings using extended conversion rules:
 
 #### [TypeConverter](type_converter)
 Converts arbitrary values into objects specific by TypeCodes.
-For each TypeCode this class calls corresponding converter which applies
+For each TypeCode this class calls the corresponding converter which applies
 extended conversion rules to convert the values.
 
 </div>

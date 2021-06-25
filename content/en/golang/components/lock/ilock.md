@@ -25,11 +25,11 @@ It returns immediately a positive or negative result.
 
 > AcquireLock(correlationId string, key string, ttl int64, timeout int64) error
 
-- **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
-- **timeout**: int64 - a lock acquisition timeout.
-- **returns**: error - returns error if not ackuired
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: int64 - lock timeout (time to live) in milliseconds.
+- **timeout**: int64 - lock acquisition timeout.
+- **returns**: error - returns error if not acquired
 
 
 
@@ -39,9 +39,9 @@ It returns immediately a positive or negative result.
 
 > TryAcquireLock(correlationId string, key string, ttl int64) (bool, error)
 
-- **correlationId**: string -(optional) transaction id to trace execution through call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: int64 - lock timeout (time to live) in milliseconds.
 - **return**: (bool, error) - lock result
 
 
@@ -50,6 +50,6 @@ Releases prevously acquired lock by its key.
 
 > ReleaseLock(correlationId string, key string) error
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.
 - **returns**: error - returns error if not released

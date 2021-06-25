@@ -19,8 +19,8 @@ Creates a new instance of the timing callback object.
 
 > NewCounterTiming(counter string, callback [ICounterTimingCallback](../icounter_timing_callback)) [*CounterTiming]()
 
-- **counter**: string - an associated counter name
-- **callback**: [ICounterTimingCallback](../icounter_timing_callback) - a callback that shall be called when end_timing is called.
+- **counter**: string - associated counter name
+- **callback**: [ICounterTimingCallback](../icounter_timing_callback) - callback that shall be called when end_timing is called.
 
 #### NewEmptyCounterTiming
 Creates a new instance of the timing callback object.

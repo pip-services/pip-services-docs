@@ -46,7 +46,7 @@ It allows to log messages and conveniently send them to multiple destinations.
 Logger that writes log messages to console.
 
 Errors are written to standard err stream
-and all other messages to standard out stream.
+and all other messages to the standard out stream.
 
 
 #### [DefaultLoggerFactory](default_logger_factory)
@@ -63,7 +63,7 @@ Helper class to convert log level values.
 
 
 #### [LogMessage](log_message)
-Data object to store captured log messages.
+Data object used to store captured log messages.
 This object is used by [CachedLogger](../cached_logger).
 
 

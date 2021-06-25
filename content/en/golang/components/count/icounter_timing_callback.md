@@ -19,5 +19,5 @@ See also [CounterTiming.EndTiming](../counter_timing/#endtiming)
 
 > EndTiming(name string, elapsed float32)
 
-- **name**: string - a counter name
-- **elapsed**: float32 - execution elapsed time in milliseconds to update the counter.
+- **name**: string - counter's name
+- **elapsed**: float32 - execution elapsed time (in milliseconds) to update the counter.

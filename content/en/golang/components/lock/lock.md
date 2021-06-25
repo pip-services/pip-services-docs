@@ -15,12 +15,12 @@ The Lock class represents an abstract lock that implements the defaul lock acqui
 
 #### Configuration parameters
 **options**:
-- **retry_timeout**: timeout in milliseconds to retry lock acquisition. (Default: 100)
+- **retry_timeout**: timeout (in milliseconds) to retry lock acquisition. (Default: 100)
 
 ### Constructors
 
 #### InheritLock
-Inherit lock from ILock
+Inherits lock from ILock
 
 > InheritLock(overrides ILockOverrides) [*Lock]()
 
@@ -33,11 +33,11 @@ Makes multiple attempts to acquire a lock by its key within a given time interva
 
 > (c [*Lock]()) AcquireLock(correlationId string, key string, ttl int64, timeout int64) error
 
-- **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: int64 - a lock timeout (time to live) in milliseconds.
-- **timeout**: int64 - a lock acquisition timeout.
-- **returns**: error - returns error if not ackuired
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: int64 - lock timeout (time to live) in milliseconds.
+- **timeout**: int64 - lock acquisition timeout.
+- **returns**: error - returns error if not acquired
 
 
 #### Configure

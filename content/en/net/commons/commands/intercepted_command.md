@@ -20,8 +20,8 @@ about the interceptor that is being used and the next command in the chain.
 
 > `public` InterceptedCommand([ICommandInterceptor](../icommand_interceptor) interceptor, [ICommand](../icommand) next)
 
-- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - the interceptor that is intercepting the command.
-- **next**: [ICommand](../icommand) - (link to) the next command in the command's execution chain.
+- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - interceptor that is intercepting the command.
+- **next**: [ICommand](../icommand) - (link to) next command in the command's execution chain.
 
 ### Properties
 
@@ -45,9 +45,9 @@ See [Parameters](../../run/parameters)
 
 > `public` Task\<object\> ExecuteAsync(string correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: string - unique transaction id to trace calls across components.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: Task\<object\> - the execution result
+- **correlationId**: string - unique transaction id used to trace calls across components.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
+- **returns**: Task\<object\> - execution result
 
 
 #### Validate
@@ -58,8 +58,8 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 > `public` IList<[ValidationResult](../../validate/validation_result)> Validate([Parameters](../../run/parameters) args)
 
 
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate for the next command.
-- **returns**: IList<[ValidationResult](../../validate/validation_result)> - an array of ValidationResults.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) used to validate for the next command.
+- **returns**: IList<[ValidationResult](../../validate/validation_result)> - array of ValidationResults.
 
 ### Examples
 

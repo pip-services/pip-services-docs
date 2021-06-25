@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of and execution block and record the associated trace.
+The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of an execution block and record the associated trace.
 
 ### Constructors
 
@@ -19,10 +19,10 @@ Creates a new instance of the timing callback object.
 
 > NewTraceTiming(correlationId string, component string, operation string, tracer [ITracer](../itracer)) [*TraceTiming]()
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **component**: string - an associated component name
-- **operation**: string - an associated operation name
-- **tracer**: [ITracer](../itracer) - a callback that shall be called when endTiming is called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: string - associated component name
+- **operation**: string - associated operation name
+- **tracer**: [ITracer](../itracer) - callback that shall be called when endTiming is called.
 
 
 ### Methods
@@ -33,7 +33,7 @@ and records the associated trace.
 
 > (c [*TraceTiming]()) EndFailure(err error)
 
-- **err**: error - an error object associated with this trace.
+- **err**: error - error object associated with this trace.
 
 
 #### EndTrace

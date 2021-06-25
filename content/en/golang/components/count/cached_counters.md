@@ -55,7 +55,7 @@ Time of the last dump.
 > **lastDumpTime**: time.Time
 
 #### lastResetTime
-Last time when was reset timer
+time of the last reset
 > **lastResetTime**: time.Time
 
 #### resetTimeout

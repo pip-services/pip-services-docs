@@ -21,7 +21,7 @@ Important points:
 - This class stores all values as strings. These values can be serialized as JSON or string forms. When retrieved the values can be automatically converted using GetAsXXX methods.
 - The keys are case-sensitive, so it is recommended to use consistent C-style, such as “my_param”.
 - Configuration parameters can be broken into sections and subsections using dot notation, such as “section1.subsection1.param1”. Using GetSection method all parameters from the specified section can be extracted from a ConfigMap.
-- The ConfigParams class supports serialization from/to plain strings as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
+- The ConfigParams class supports serialization from/to plain strings, such as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
 
 
 ### Constructors
@@ -30,12 +30,12 @@ See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 
 > `public` ConfigParams(IDictionary\<string, string\> content)
 
-- **content**: IDictionary\<string, string\> - (optional) an object to be converted into key-value pairs to initialize this config map.
+- **content**: IDictionary\<string, string\> - (optional) object to be converted into key-value pairs to initialize this config map.
 
 ### Instance Methods  
 
 #### AddSection
-Adds parameters into this ConfigParams under specified section.
+Adds parameters into this ConfigParams under a specified section.
 Keys for the new parameters are appended with section dot prefix.
 
 > `public` void AddSection(string section, [ConfigParams]() sectionParams)
@@ -67,7 +67,7 @@ Gets a list with all 1st level section names.
 
 > `public` IEnumerable\<string\> GetSectionNames()
 
-- **returns**: IEnumerable\<string\> - a list of section names stored in this ConfigMap.
+- **returns**: IEnumerable\<string\> - list of section names stored in this ConfigMap.
 
 #### Override
 Overrides parameters with new values from specified [ConfigParams]()
@@ -76,7 +76,7 @@ and returns a new [ConfigParams]() object.
 > `public` [ConfigParams]() Override([ConfigParams]() configParams)
 
 - **configParams**: [ConfigParams]() - ConfigMap with parameters to override the current values.
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 #### SetDefaults
 Set default values from specified ConfigParams and returns a new ConfigParams object.
@@ -84,7 +84,7 @@ Set default values from specified ConfigParams and returns a new ConfigParams ob
 > `public` [ConfigParams]() SetDefaults([ConfigParams]() defaultConfigParams)
 
 - **defaultConfigParams**: [ConfigParams]() - ConfigMap with default parameter values.
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 ### Static methods   
 
@@ -93,9 +93,9 @@ Creates a new ConfigParams object filled with key-value pairs serialized as a st
 
 > `public static` [ConfigParams]() FromString(line: string)
 
-- **line**: string - a string with serialized key-value pairs as "key1=value1;key2=value2;..."  
+- **line**: string - string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 #### FromTuples
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
@@ -104,17 +104,17 @@ See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarra
 
 > `public static` [ConfigParams]() FromTuples(params object[] 	tuples)
 
-- **tuples**: object[] - the tuples to fill a new ConfigParams object.
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **tuples**: object[] - tuples to fill a new ConfigParams object.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 
 #### FromValue
-Creates a new ConfigParams object filled with key-value pairs from specified object.
+Creates a new ConfigParams object filled with key-value pairs from the specified object.
 
 > `public static` [ConfigParams]() FromValue(object value)
 
-- **value**: object - an object with key-value pairs used to initialize a new ConfigParams.
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **value**: object - object with key-value pairs used to initialize a new ConfigParams.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 
 #### MergeConfigs
@@ -124,8 +124,8 @@ See [StringValueMap.fromMaps](../../data/string_value_map/#frommaps)
 
 > `public static` [ConfigParams]() MergeConfigs(params IDictionary\<string, string\>[] 	configs)
 
-- **configs**: IDictionary\<string, string\>[] - a list of ConfigParams objects to be merged.
-- **returns**: [ConfigParams]() - a new ConfigParams object.
+- **configs**: IDictionary\<string, string\>[] - list of ConfigParams objects to be merged.
+- **returns**: [ConfigParams]() - new ConfigParams object.
 
 ### Examples   
 

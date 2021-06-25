@@ -22,23 +22,23 @@ Important points
 <span class="hide-title-link">
 
 #### Time
-The time when operation was executed
+Time when an operation was executed
 > **Time**: time.Time
 
 #### Source
-The source (context name)
+Source (context name)
 > **Source**: string 
 
 #### Component
- The name of the component
+Name of the component
 > **Component**: string
 
 #### Operation
-The name of the executed operation
+Name of the executed operation
 > **Operation**: string
 
 #### CorrelationId
-The transaction id to trace execution through call chain. 
+Transaction id used to trace execution through the call chain. 
 > **CorrelationId**: string
 
 #### Duration

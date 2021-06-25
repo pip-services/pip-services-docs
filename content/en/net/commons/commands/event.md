@@ -46,7 +46,7 @@ Adds a listener to receive notifications when this event is fired.
 
 > `public` void AddListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
+- **listener**: [IEventListener](../ievent_listener) - listener's reference to add.
 
 
 #### NotifyAsync
@@ -55,15 +55,15 @@ Throws an [InvocationException](../errors/invocation_exception) if the event fai
 
 > `public` void NotifyAsync(string correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **args**: [Parameters](../../run/parameters) - the parameters to raise this event with.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **args**: [Parameters](../../run/parameters) - parameters to raise this event with.
 
 #### RemoveListener
 Removes a listener, so that it no longer receives notifications for this event.
 
 > `public` void RemoveListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener's reference to remove.
 
 **Example**:
 

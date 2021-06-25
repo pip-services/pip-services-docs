@@ -27,7 +27,7 @@ Important points
 
 #### References
 
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) used to detect the context id and specify a counter's source
 
 ### Constructors
 
@@ -75,10 +75,10 @@ Begins recording an operation trace.
 
 >(c *CachedTracer) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of a called component
 - **operation**: string - name of the executed operation.
-- **return**: [*TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [*TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Clear
@@ -106,10 +106,10 @@ Records an operation failure with its name, duration and error.
 
 > (c *CachedTracer) Failure(correlationId string, component string, operation string, err error, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **err**: error - an error object associated with this trace.
+- **err**: error - error object associated with this trace.
 - **duration**: int64 - execution duration in milliseconds.
 
 
@@ -144,10 +144,10 @@ Writes a log message to the logger destination.
 
 > (c *CachedTracer) Write(correlationId string, component string, operation string, err error, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **err**: error - an error object associated with this trace.
+- **err**: error - error object associated with this trace.
 - **duration**: int64 - execution duration in milliseconds.
 
 
@@ -157,7 +157,7 @@ Throws error if not done.
 
 > Save(operations [][*OperationTrace](../operation_trace)) error
 
-- **messages**: [][*OperationTrace](../operation_trace) - a list with log messages
+- **messages**: [][*OperationTrace](../operation_trace) - list with log messages
 
 
 ### See also

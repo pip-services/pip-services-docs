@@ -15,7 +15,7 @@ The TraceTiming class is used to create the timing object returned by [ITracer.b
 ### Constructors
 
 #### NewTraceTiming
-Creates a new instance of the timing callback object.
+Creates a new instance of the timing callback object. 
 
 > NewTraceTiming(correlationId string, component string, operation string, tracer [ITracer](../itracer)) [*TraceTiming]()
 

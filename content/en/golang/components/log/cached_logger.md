@@ -23,7 +23,7 @@ Important points
 - **level**: maximum log level to capture
 - **source**: source (context) name
 - **options**:
-    - **interval**: interval in milliseconds to save log messages (default: 10 seconds)
+    - **interval**: interval (in milliseconds) to save log messages (default: 10 seconds)
     - **max_cache_size**: maximum number of messages stored in this cache (default: 100)
 
 #### References
@@ -42,7 +42,7 @@ Boolean variable indicating whether there has been an update or not.
 > **Updated**: bool
 
 #### Interval
-Interval in milliseconds to save log messages (default: 10 seconds)
+Interval (in milliseconds) to save log messages (default: 10 seconds)
 > **Interval**: int
 
 #### LastDumpTime
@@ -64,7 +64,7 @@ Clears (removes) all cached log messages.
 > (c [*CachedLogger]()) Clear()
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > (c [*CachedLogger]()) Configure(cfg [*config.ConfigParams](../../../commons/config/config_params)
 
@@ -75,7 +75,7 @@ Dumps (writes) the currently cached log messages.
 
 > (c [*CachedLogger]()) Dump() error
 
-- **returns**: error - returns error if not dumped.
+- **returns**: error - returned error if not dumped.
 
 #### Update
 Sets message cache as updated and dumps it when timeout expires.
@@ -87,8 +87,8 @@ Saves log messages from the cache.
 
 > Save(messages [][*LogMessage](../log_message)) error
 
-- **messages**: [][*LogMessage](../log_message) - a list with log messages.
-- **returns**: error - returns error if not saved.
+- **messages**: [][*LogMessage](../log_message) - list with log messages.
+- **returns**: error - returned error if not saved.
 
 
 

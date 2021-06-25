@@ -33,7 +33,7 @@ Adds a listener to receive notifications for this event.
 
 > void AddListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to add.
 
 
 #### removeListener
@@ -41,7 +41,7 @@ Removes a listener, so that it no longer receives notifications for this event.
 
 > void RemoveListener([IEventListener](../ievent_listener) listener)
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to remove.
 
 
 ### See also

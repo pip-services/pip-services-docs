@@ -27,6 +27,12 @@ The GrpcService class allows you to create services that receive remote calls vi
     - **ssl_crt_file**: SSL certificate in PEM    
     - **ssl_ca_file**: certificate authorities (root cerfiticates) in PEM    
  
+#### References
+
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
+- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand as specified by the counter's source.
+ 
 
 
 ### Constructors

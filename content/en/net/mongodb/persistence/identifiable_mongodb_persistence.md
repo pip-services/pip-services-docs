@@ -41,14 +41,9 @@ Where K : class.
 **options**:
 - **max_pool_size**: (optional) maximum connection pool size (default: 2)
 - **keep_alive**: (optional) enable connection keep alive (default: true)
-- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
-- **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
+- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5 sec)
 - **auto_reconnect**: (optional) enable auto reconnection (default: true)
-- **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000)
 - **max_page_size**: (optional) maximum page size (default: 100)
-- **replica_set**: (optional) name of replica set
-- **ssl**: (optional) enable SSL connection (default: false)
-- **auth_source**: (optional) authentication source
 - **debug**: (optional) enable debug output (default: false).
 
 #### References

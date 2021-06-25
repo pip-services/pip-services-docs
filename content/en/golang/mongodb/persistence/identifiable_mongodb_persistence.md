@@ -40,13 +40,15 @@ Important points
 - **keep_alive**: (optional) enable connection keep alive (default: true)
 - **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
 - **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
-- **auto_reconnect**: (optional) enable auto reconnection (default: true)
-- **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000)
+- **auto_reconnect**: (optional) enable auto reconnection (default: true) (not used)
+- **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000) (not used)
 - **max_page_size**: (optional) maximum page size (default: 100)
 - **replica_set**: (optional) name of replica set
-- **ssl**: (optional) enable SSL connection (default: false)
+- **ssl**: (optional) enable SSL connection (default: false) (not implements in this release)
 - **auth_source**: (optional) authentication source
-- **debug**: (optional) enable debug output (default: false).
+- **auth_user**: (optional) authentication user name
+- **auth_password**: (optional) authentication user password
+- **debug**: (optional) enable debug output (default: false). (not used)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages

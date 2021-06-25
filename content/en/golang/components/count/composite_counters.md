@@ -43,7 +43,7 @@ Creates a new instance of the counters.
 <span class="hide-title-link">
 
 #### counters
-A list containig the aggregated counters.
+List containig the aggregated counters.
 > **counters**: [][ICounters](../icounters)
 
 </span>
@@ -58,7 +58,7 @@ It returns [*CounterTiming](../counter_timing) object which has to be called at
 
 > (c [*CompositeCounters]()) BeginTiming(name string) [*CounterTiming](../counter_timing)
 
-- **name**: string - a counter name of Interval type.
+- **name**: string - counter name of Interval type.
 - **returns**: [*CounterTiming](../counter_timing) - a callback object to end timing.
 
 
@@ -67,7 +67,7 @@ Ends measurement of execution elapsed time and updates specified counter.
 
 > (c [*CompositeCounters]()) EndTiming(name string, elapsed float32)
 
-- **name**: string - a counter name
+- **name**: string - counter name
 - **elapsed**: float32 - execution elapsed time in milliseconds to update the counter.
 
 
@@ -85,7 +85,7 @@ Increments counter by 1.
 
 > (c [*CompositeCounters]()) IncrementOne(name string)
 
-- **name**: string - a counter name of Increment type.
+- **name**: string - counter name of Increment type.
 
 
 #### Last
@@ -94,7 +94,7 @@ Usually this method is used by metrics calculated externally.
 
 > (c [*CompositeCounters]()) Last(name string, value float32)
 
-- **name**: string - a counter name of Last type.
+- **name**: string - counter name of Last type.
 - **value**: float32 - last value to record.
 
 
@@ -103,7 +103,7 @@ Sets references to dependent components.
 
 > (c [*CompositeCounters]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Stats
@@ -111,17 +111,17 @@ Calculates min/average/max statistics based on the current and previous values.
 
 > (c [*CompositeCounters]()) Stats(name string, value float32)
 
-- **name**: string - a counter name of Statistics type
-- **value**: float32 - a value to update statistics
+- **name**: string - counter name of Statistics type
+- **value**: float32 - value to update statistics
 
 
 #### Timestamp
-Records the given timestamp.
+Records a given timestamp.
 
 > (c [*CompositeCounters]()) Timestamp(name string, value time.Time)
 
-- **name**: string - a counter name of Timestamp type.
-- **value**: time.Time - a timestamp to record.
+- **name**: string - counter name of Timestamp type.
+- **value**: time.Time - timestamp to record.
 
 
 #### TimestampNow
@@ -129,7 +129,7 @@ Records the current time as a timestamp.
 
 > (c [*CompositeCounters]()) TimestampNow(name string)
 
-- **name**: string - a counter name of Timestamp type.
+- **name**: string - counter name of Timestamp type.
 
 
 ### Examples

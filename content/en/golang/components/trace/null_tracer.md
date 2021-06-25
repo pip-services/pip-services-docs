@@ -28,22 +28,22 @@ Creates a new instance of the tracer.
 ### Methods
 
 #### BeginTrace
-Begings recording an operation trace
+Begings recording an operation's trace
 
 > (c [*NullTracer]()) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [*TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [*TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Failure
-Records an operation failure with its name, duration and error
+Records an operation's failure with its name, duration and error
 
 > (c [*NullTracer]()) Failure(correlationId string, component string, operation string, err error, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **err**: error - an error object associated with this trace.
@@ -51,11 +51,11 @@ Records an operation failure with its name, duration and error
 
 
 #### Trace
-Records an operation trace with its name and duration.
+Records an operation's trace with its name and duration.
 
 > (c [*NullTracer]()) Trace(correlationId string, component string, operation string, duration int64)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: int64 - execution duration in milliseconds.

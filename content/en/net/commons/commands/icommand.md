@@ -29,12 +29,12 @@ Gets the command schema.
 ### Instance methods
 
 #### Validate
-Validates command arguments before execution using defined schema.
+Validates command arguments before execution using a defined schema.
 
 > IList<[ValidationResult](../../validate/validation_result)> Validate(args: [Parameters](../../run/parameters))
 
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate.
-- **returns**: [ValidationResult](../../validate/validation_result)[] - the command name.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to validate.
+- **returns**: [ValidationResult](../../validate/validation_result)[] - command name.
 
 ### See also
 - #### [Command](../command)

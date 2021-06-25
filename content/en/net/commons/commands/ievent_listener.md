@@ -18,8 +18,8 @@ A method called when events this listener is subscrubed to are fired.
 
 > void OnEvent(string correlationId, [IEvent](../ievent) event, [Parameters](../../run/parameters) args)
 
-- **correlationId**: string - a fired evemt
-- **event**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - fired evemt
+- **event**: [IEvent](../ievent) - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../../run/parameters) - event arguments.
 
 ### Examples

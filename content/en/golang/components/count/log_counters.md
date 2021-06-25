@@ -11,13 +11,13 @@ description: >
 
 ### Description
 
-The LogCounters allows you to create performance counters that periodically dump counters' measurements to logger.
+The LogCounters class allows you to create performance counters that periodically dump counters' measurements to a logger.
 
 #### Configuration parameters
 
 **options**:
-- **interval**: interval in milliseconds to save current counters measurements (default: 5 mins)
-- **reset_timeout**: timeout in milliseconds to reset the counters. 0 disables the reset (default: 0)
+- **interval**: interval (in milliseconds) to save current counters measurements (default: 5 mins)
+- **reset_timeout**: timeout (in milliseconds) to reset the counters. 0 disables the reset (default: 0)
 
 
 #### References

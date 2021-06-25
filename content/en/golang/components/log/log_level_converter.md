@@ -26,7 +26,7 @@ Converts log level to a string.
 
 > LogLevelToString(level int) string
 
-- **level**: int - a log level to convert.
+- **level**: int - log level to convert.
 - **returns**: string - log level name string.
 
 
@@ -35,16 +35,16 @@ Converts numbers and strings to standard log level values.
 
 > (c *TLogLevelConverter) ToLogLevel(value interface{}) int
 
-- **value**: interface{} - a value to be converted
+- **value**: interface{} - value to be converted
 - **returns**: int - converted log level
 
 
 #### ToString
-Converts log level to a string.
+Converts a log level to a string.
 
 > (c *TLogLevelConverter) ToString(level int) string
 
-- **level**: int - a log level to convert
+- **level**: int - log level to convert
 - **returns**: string - log level name string.
 
 

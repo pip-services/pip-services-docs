@@ -88,7 +88,7 @@ Adds a validation schema for a required object property.
 > `public` [ObjectSchema]() WithRequiredProperty(string name, object type, params [IValidationRule](../ivalidation_rule)[] rules)
 
 - **name**: string - a property name.
-- **type**: any - (optional) a property schema or type.
+- **type**: object - (optional) a property schema or type.
 - **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list of property validation rules.
 - **returns**: [ObjectSchema]() - the validation schema
 

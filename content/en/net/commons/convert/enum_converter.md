@@ -28,7 +28,7 @@ TODO add description
 
 > `public static` T ToEnumWithDefault\<T\>(object value, T defaultValue)
 
-- **value**: any - TODO add description
+- **value**: object - TODO add description
 - **defaultValue**: T - TODO add description
 - **returns**: T - TODO add description
 

@@ -63,7 +63,7 @@ See [TypeConverter.ToType](../../convert/type_converter/#totype)
 > `public` bool EqualsAs/<T/>(object obj)
 
 - **obj**: object - the args to be compared with.
-- **returns**: any - true when objects are equal and false otherwise.
+- **returns**: object - true when objects are equal and false otherwise.
 
 
 #### GetAsArray
@@ -393,7 +393,7 @@ See [StringConverter.ToString](../../convert/string_converter/#tostring)
 
 > `public override` string ToString()
 
-- **returns**: any - a string representation of the object.
+- **returns**: string - a string representation of the object.
 
 
 ### Examples

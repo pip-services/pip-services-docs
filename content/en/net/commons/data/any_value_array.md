@@ -75,7 +75,7 @@ See [TypeConverter.ToType](../../convert/type_converter/#totype), [TypeConverter
 
 > `public` bool ContainsAs\<T\>(object value)
 
-- **value**: any - a value to be checked
+- **value**: object - a value to be checked
 - **returns**: bool - true if this array contains the value or false otherwise.
 
 

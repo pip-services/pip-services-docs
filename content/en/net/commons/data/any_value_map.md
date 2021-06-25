@@ -19,13 +19,13 @@ Creates a new instance of the map and assigns its value.
 
 > `public` AnyValueMap(IDictionary\<string, object\> values)
 
-- **values**: any - (optional) values to initialize this map.
+- **values**: IDictionary\<string, object\> - (optional) values to initialize this map.
 
 Creates a new instance of the map and assigns its value.
 
 > `public` AnyValueMap(IDictionary values)
 
-- **values**: any - (optional) values to initialize this map.
+- **values**: IDictionary - (optional) values to initialize this map.
 
 Creates a new instance of the map and assigns its value.
 
@@ -475,7 +475,7 @@ Sets a new value for this array element
 
 > `public` void SetAsObject(object value)
 
-- **value**: any - a new element or map value.
+- **value**: object - a new element or map value.
 
 
 #### SetAsObject

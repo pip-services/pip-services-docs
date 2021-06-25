@@ -2,7 +2,7 @@
 type: docs
 title: "MongoDbConnectionResolver"
 linkTitle: "MongoDbConnectionResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mongodb-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mongodb-dotnet"
 description: >
     MongoDbConnectionResolver implementation.
     Helper class that resolves MongoDB connection
@@ -10,7 +10,7 @@ description: >
   
 ---
 
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
+**Inherits:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
 
 ### Description
 
@@ -56,25 +56,25 @@ MongoDB credential resolver.
 
 ### Instance methods
 
-#### configure
+#### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### resolve
+#### ResolveAsync
 Resolves a MongoDB connection URI from connection and credential parameters.
 
-> `public` resolve(correlationId: string): Promise\<string\>
+> `public` Task\<string\> ResolveAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: string - resolved URI
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

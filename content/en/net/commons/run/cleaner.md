@@ -32,7 +32,7 @@ If they don't the call to this method has no effect.
 > `public static` Task ClearOneAsync(string correlationId, object component)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be cleaned.
+- **component**: object - the component that is to be cleaned.
 
 ### See also
 - #### [ICleanable](../icleanable)

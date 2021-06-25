@@ -102,7 +102,7 @@ The MongoDB table object.
 #### _db
 The MongoDb database object.
 
-> `protected` _db: any
+> `protected` **_db**: any
 
 #### _maxPageSize
 The maximum number of records to return from the database per request.

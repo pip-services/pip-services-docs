@@ -465,7 +465,7 @@ Sets a new value into map element specified by its key.
 > `public virtual` void Set(string key, string value)
 
 - **key**: string - a key of the element to put.
-- **value**: any - a new value for map element.
+- **value**: string - a new value for map element.
 
 
 #### SetAsObject

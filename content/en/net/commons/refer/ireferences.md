@@ -27,7 +27,7 @@ Throws a [ReferenceException](../reference_exception) when required is set to tr
 
 > List\<object\> Find(object locator, bool required)
 
-- **locator**: any - the locator to find a reference by.
+- **locator**: object - the locator to find a reference by.
 - **required**: bool - forces to raise an exception if no reference is found.
 - **returns**: List\<object\> - a list with matching component references.
 

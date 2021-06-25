@@ -66,12 +66,12 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### ReadObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `public static` ReadObject(string correlationId, string path, [ConfigParams](../../../commons/config/config_params) parameters)
+> `public static` object ReadObject(string correlationId, string path, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **correlationId**: string - (optional) transaction id to trace the execution through a call chain.
 - **path**: string - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: any - a YAML object containing a configuration.
+- **returns**: object - a YAML object containing a configuration.
 
 ### Examples
 

@@ -54,8 +54,8 @@ Matches expected type to a type of a value.
 
 > `public static` bool MatchValueByName(string expectedType, object actualValue)
 
-- **expectedType**: any - an expected type name to match.
-- **actualValue**: any -  a value to match its type to the expected one.
+- **expectedType**: string - an expected type name to match.
+- **actualValue**: object -  a value to match its type to the expected one.
 - **returns**: bool - true if types are matching and false if they don't.
 
 

@@ -110,7 +110,7 @@ Formats the log message and writes it to the logger destination.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **args**: object[]- arguments to parameterize the message.
 
 
 #### Info

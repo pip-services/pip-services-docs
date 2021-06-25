@@ -157,10 +157,10 @@ If no dependencies was found it throws a [ReferenceException](../reference_excep
 #### Put
 Adds a new dependency into this resolver.
 
-> `public` void Put(string name, any locator)
+> `public` void Put(string name, object locator)
 
 - **name**: string - the dependency's name.
-- **locator**: any - the locator to find the dependency by.
+- **locator**: object - the locator to find the dependency by.
 
 #### SetReferences
 Sets the component references. References must match configured dependencies.

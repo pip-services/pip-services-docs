@@ -73,8 +73,8 @@ When type is a Schema, it executes validation recursively against that Schema.
 > `protected` void PerformTypeValidation(string path, object type, object value, List<[ValidationResult](../validation_result)> results)
 
 - **path**: string - a dot notation path to the value.
-- **type**: any - a type to match the value type
-- **value**: any - a value to be validated.
+- **type**: object - a type to match the value type
+- **value**: object - a value to be validated.
 - **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
 
 #### PerformValidation

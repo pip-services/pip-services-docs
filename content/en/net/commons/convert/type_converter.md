@@ -37,7 +37,7 @@ Converts value into an object type specified by Type Code or returns type defaul
 
 > `public static` T ToType\<T\>(object value)
 
-- **value**: any - the value to convert.
+- **value**: object - the value to convert.
 - **returns**: T - object value of type corresponding to [TypeCode](../../convert/type_code), or type default when conversion is not supported.
 
 

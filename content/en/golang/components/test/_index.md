@@ -21,7 +21,7 @@ Creates test components by their descriptors.
 Random shutdown component that crashes the process
 using various methods.
 
-The component is usually used for testing, but brave developers
+This component is usually used for testing, but brave developers
 can try to use it in production to randomly crash microservices.
 It follows the concept of "Chaos Monkey" popularized by Netflix.
 

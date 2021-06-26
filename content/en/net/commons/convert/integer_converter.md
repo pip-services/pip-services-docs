@@ -4,13 +4,13 @@ title: "IntegerConverter"
 linkTitle: "IntegerConverter"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
-    The IntegerConverter class allows you to convert arbitrary values into integers using extended conversion rules.
+    The IntegerConverter class allows you to convert arbitrary values to integers using extended conversion rules.
 
 ---
 
 ### Description
     
-The IntegerConverter class allows you to convert arbitrary values into integers using the following extended conversion rules:
+The IntegerConverter class allows you to convert arbitrary values to integers using the following extended conversion rules:
 
 - Strings are converted to floats, then to integers
 - DateTime: total number of milliseconds since unix epoсh  
@@ -19,17 +19,17 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 ### Static methods
 
 #### ToInteger
-Converts value into integer or returns 0 when conversion is not possible.  
+Converts value into integer or returns 0 when the conversion is not possible.  
 See [LongConverter.ToLong](../long_converter/#tolong),  
 [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
 
 > `public static` int ToInteger(object value)
 
-- **value**: object - the value to convert.
-- **returns**: int - integer value or 0 when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: int - integer value or 0 when the conversion is not supported.
 
 #### ToIntegerWithDefault
-Converts value into integer or returns default value when conversion is not possible.
+Converts value into integer or returns a given default value when the conversion is not possible.
 See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),  
 [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
@@ -37,7 +37,7 @@ See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),
 
 - **value**: object - the value to convert.
 - **defaultValue**: int - the default value.
-- **returns**: int - integer value or default when conversion is not supported. 
+- **returns**: int - integer value or default when the conversion is not supported. 
 
 #### ToNullableInteger
 Converts value into integer or returns null when conversion is not possible.
@@ -46,7 +46,7 @@ See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 > `public static` int ToNullableInteger(object value)
 
 - **value**: object - the value to convert.
-- **returns**: int - integer value or null when conversion is not supported.
+- **returns**: int - integer value or null when the conversion is not supported.
 
 ### Examples
 

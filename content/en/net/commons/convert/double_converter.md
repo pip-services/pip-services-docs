@@ -27,7 +27,7 @@ See [toDoubleWithDefault](#todoublewithdefault)
 
 > `public static` double ToDouble(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: double - double value or 0 when conversion is not supported.
 
 #### ToDoubleWithDefault
@@ -35,8 +35,8 @@ Converts value into integer or returns default value when conversion is not poss
 
 > `public static` double ToDoubleWithDefault(object value, double defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: double - the default value.
+- **value**: object - value to convert.
+- **defaultValue**: double - default value.
 - **returns**: double - double value or default when conversion is not supported.
 
 #### ToNullableDouble
@@ -44,7 +44,7 @@ Converts value into doubles or returns null when conversion is not possible.
 
 > `public static` double ToNullableDouble(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: double - double value or null when conversion is not supported.
 
 ### Examples

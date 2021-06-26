@@ -18,29 +18,29 @@ description: >
 ### Instance methods
 
 #### ToMap
-Converts value into map object or returns empty map when conversion is not possible
+Converts value into a map object or returns an empty map when the conversion is not possible
 
 > `public static` IDictionary\<string, object\> ToMap(object value)
 
-- **value**: object - the value to convert.
-- **returns**: IDictionary\<string, object\> - map object or empty map when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: IDictionary\<string, object\> - map object or empty map when the conversion is not supported.
 
 #### ToMapWithDefault
-Converts value into map object or returns default when conversion is not possible
+Converts value into map object or returns a given default value when the conversion is not possible
 
 > `public static` IDictionary\<string, object\> ToMapWithDefault(object value, IDictionary\<string, object\> defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: IDictionary\<string, object\> - the default value.
-- **returns**: IDictionary\<string, object\> - map object or empty map when conversion is not supported.
+- **value**: object - value to convert.
+- **defaultValue**: IDictionary\<string, object\> - default value.
+- **returns**: IDictionary\<string, object\> - map object or empty map when the conversion is not supported.
 
 #### ToNullableMap
-Converts value into map object or returns null when conversion is not possible.
+Converts value into map object or returns null when the conversion is not possible.
 
 > `public static` IDictionary\<string, object\> ToNullableMap(object value)
 
-- **value**: object - the value to convert.
-- **returns**: IDictionary\<string, object\> - map object or null when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: IDictionary\<string, object\> - map object or null when the conversion is not supported.
 
 
 ### Examples

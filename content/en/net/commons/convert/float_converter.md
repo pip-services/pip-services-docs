@@ -4,12 +4,12 @@ title: "FloatConverter"
 linkTitle: "FloatConverter"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
-    The FloatConverter class allows you to convert arbitrary values into float using extended conversion rules.
+    The FloatConverter class allows you to convert arbitrary values into a float using extended conversion rules.
 
 ---
 
 ### Description
-The FloatConverter class allows you to convert arbitrary values into float using the following extended conversion rules:
+The FloatConverter class allows you to convert arbitrary values into a float using the following extended conversion rules:
 
 - Strings are converted to float values
 - DateTime: total number of milliseconds since unix epoсh  
@@ -23,7 +23,7 @@ See [DoubleConverter.toDouble](../double_converter/#todouble)
 
 > `public static` float ToFloat(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: float - float value or 0 when conversion is not supported.
 
 #### ToFloatWithDefault
@@ -33,8 +33,8 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 
 > `public static` float ToFloatWithDefault(object value, float defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: float - the default value.
+- **value**: object - value to convert.
+- **defaultValue**: float - default value.
 - **returns**: float - float value or default value when conversion is not supported.
 
 #### ToNullableFloat

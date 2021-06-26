@@ -18,7 +18,7 @@ The FloatConverter class allows you to convert arbitrary values into a float usi
 ### Static methods
 
 #### ToFloat
-Converts value into float or returns 0 when conversion is not possible.  
+Converts value into float or returns 0 when the conversion is not possible.  
 See [DoubleConverter.toDouble](../double_converter/#todouble)
 
 > `public static` float ToFloat(object value)
@@ -27,7 +27,7 @@ See [DoubleConverter.toDouble](../double_converter/#todouble)
 - **returns**: float - float value or 0 when conversion is not supported.
 
 #### ToFloatWithDefault
-Converts value into float or returns a given default value when conversion is not possible.  
+Converts value into float or returns a given default value when the conversion is not possible.  
 See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault),  
 [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
@@ -38,7 +38,7 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 - **returns**: float - float value or default value when conversion is not supported.
 
 #### ToNullableFloat
-Converts value into float or returns null when conversion is not possible.  
+Converts value into float or returns null when the conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
 > `public static` float toNullableFloat(object value)

@@ -18,29 +18,29 @@ The LongConverter class allows you to convert arbitrary values into longs using 
 ### Static methods
 
 #### ToLong
-Converts value into long or returns 0 when conversion is not possible.
+Converts value into long or returns 0 when the conversion is not possible.
 
 > `public static` long ToLong(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: long - long value or 0 when conversion is not supported.
 
 #### ToLongWithDefault
-Converts value into integer or returns default when conversion is not possible.
+Converts value into integer or returns a given default value when the conversion is not possible.
 
 > `public static` long ToLongWithDefault(object value, long defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: long - the default value.
-- **returns**: long - long value or default when conversion is not supported
+- **value**: object - value to convert.
+- **defaultValue**: long - default value.
+- **returns**: long - long value or given default value when the conversion is not supported
 
 #### ToNullableLong
-Converts value into long or returns null when conversion is not possible.
+Converts value into long or returns null when the conversion is not possible.
 
 > `public static` long ToNullableLong(object value)
 
-- **value**: object - the value to convert.
-- **returns**: long - long value or null when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: long - long value or null when the conversion is not supported.
 
 ### Examples
 

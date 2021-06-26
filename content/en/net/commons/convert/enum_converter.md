@@ -24,7 +24,7 @@ Converts an object to an Enum.
 - **returns**: T - returned Enum
 
 #### ToEnumWithDefault
-Converts an object to an Enum or returns a given default value when conversion is not possible.  .
+Converts an object to an Enum or returns a given default value when the conversion is not possible.  .
 
 > `public static` T ToEnumWithDefault\<T\>(object value, T defaultValue)
 
@@ -33,7 +33,7 @@ Converts an object to an Enum or returns a given default value when conversion i
 - **returns**: T - returned Enum
 
 #### ToNullableEnum
-Converts an object to an Enum or returns null when conversion is not possible..
+Converts an object to an Enum or returns null when the conversion is not possible..
 
 > `public static` T ToNullableEnum\<T\>(object value)
 

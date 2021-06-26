@@ -11,31 +11,31 @@ description: >
 
 ### Description
 
-TODO add description
+Tje EnumConverter allows you to convert objects to Enums
 
 ### Static methods
 
 #### ToEnum
-TODO add description
+Converts an object to an Enum.
 
 > `public static` T ToEnum\<T\>(object value)
 
-- **value**: object - TODO add description
-- **returns**: T - TODO add description
+- **value**: object - object to be converted
+- **returns**: T - returned Enum
 
 #### ToEnumWithDefault
-TODO add description
+Converts an object to an Enum. Returns a given defalut value if the conversion is not possible.
 
 > `public static` T ToEnumWithDefault\<T\>(object value, T defaultValue)
 
-- **value**: object - TODO add description
-- **defaultValue**: T - TODO add description
-- **returns**: T - TODO add description
+- **value**: object - object to be converted
+- **defaultValue**: T - default value
+- **returns**: T - returned Enum
 
 #### ToNullableEnum
-TODO add description
+Converts an object to an Enum. Returns null if the converson is not possible.
 
 > `public static` T ToNullableEnum\<T\>(object value)
 
-- **value**: object - TODO add description
-- **returns**: T - TODO add description
+- **value**: object - value to be converted
+- **returns**: T - returned Enum

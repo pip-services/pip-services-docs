@@ -30,7 +30,7 @@ Converts an object to an Enum or returns a given default value when the conversi
 
 - **value**: object - object to be converted
 - **defaultValue**: T - default value
-- **returns**: T - returned Enum
+- **returns**: T - returned Enum or given default whe the conversion is not possible.
 
 #### ToNullableEnum
 Converts an object to an Enum or returns null when the conversion is not possible..
@@ -38,4 +38,4 @@ Converts an object to an Enum or returns null when the conversion is not possibl
 > `public static` T ToNullableEnum\<T\>(object value)
 
 - **value**: object - value to be converted
-- **returns**: T - returned Enum
+- **returns**: T - returned Enum or null when the conversion is not possible

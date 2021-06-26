@@ -30,7 +30,7 @@ Converts value into a map object or returns a gvien default value when the conve
 
 - **value**: object - value to convert.
 - **defaultValue**: IDictionary\<string, object\> - default value.
-- **returns**: IDictionary\<string, object\> - map object or empty map when the conversion is not supported.
+- **returns**: IDictionary\<string, object\> - map object or empty map when the conversion is not supported. 
 
 #### ToNullableMap
 Converts value into a map object or returns null when the conversion is not possible.

@@ -27,7 +27,7 @@ See [DoubleConverter.toDouble](../double_converter/#todouble)
 - **returns**: float - float value or 0 when conversion is not supported.
 
 #### ToFloatWithDefault
-Converts value into float or returns default when conversion is not possible.  
+Converts value into float or returns a given default value when conversion is not possible.  
 See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault),  
 [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 

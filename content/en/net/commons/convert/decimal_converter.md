@@ -11,7 +11,13 @@ description: >
 
 ### Description
 
-The DecimalConverter class can be used to convert objects to decimals.
+The DecimalConverter class can be used to convert objects to decimals according to the following rules:
+
+- Strings are converted to double values
+
+- DateTime: total number of milliseconds since unix epoсh
+    
+- Boolean: 1 for true and 0 for false  
 
 ### Static methods
 

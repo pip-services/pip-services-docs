@@ -32,7 +32,7 @@ Converts value into integer or returns a given default value when the conversion
 
 - **value**: object - value to convert.
 - **defaultValue**: long - default value.
-- **returns**: long - long value or given default value when the conversion is not supported
+- **returns**: long - long value or given default value when the conversion is not supported 
 
 #### ToNullableLong
 Converts value into long or returns null when the conversion is not possible.

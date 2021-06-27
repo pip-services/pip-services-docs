@@ -10,31 +10,31 @@ description: >
 
 ### Description
 
-TODO: add description
+The TimeSpanConverter class allows you to convert objects to TimeSpans. 
 
 ### Static methods
 
 #### ToNullableTimeSpan
-TODO: add description
+Converts value into TimeSpan or returns null when value is null.
 
 > `public static` TimeSpan? ToNullableTimeSpan(object value)
 
-- **value**: object - TODO: add description
-- **returns**: TimeSpan - TODO: add description
+- **value**: object - value to converted
+- **returns**: TimeSpan - TimeSpan value or null when value is null.
 
 #### ToTimeSpan
-TODO: add description
+Converts value into TimeSpan.
 
 > `public static` TimeSpan ToTimeSpan(object value)
 
-- **value**: object - TODO: add description
-- **returns**: TimeSpan - TODO: add description
+- **value**: object - value to converted
+- **returns**: TimeSpan - TimeSpan value or null when value is null.
 
 #### ToTimeSpanWithDefault
-TODO: add description
+Converts value into TimeSpan or returns a given default when value is null.
 
 > `public static` TimeSpan ToTimeSpanWithDefault(object value, TimeSpan? defaultValue)
 
-- **value**: object - TODO: add description
-- **defaultValue**: TimeSpan - TODO: add description
-- **returns**: TimeSpan - TODO: add description
+- **value**: object - value to converted
+- **defaultValue**: TimeSpan - default value
+- **returns**: TimeSpan - TimeSpan value or null when value is null.

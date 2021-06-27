@@ -14,7 +14,7 @@ description: >
 ### Interfaces
 
 #### [IChangeable](ichangeable)
-Interface for data objects that contain their latest change time.
+Interface for data objects that need to store the last modified date and time.
 
 #### [ICloneable](icloneable)
 Interface for data objects that are able to create their full binary copy.
@@ -38,7 +38,7 @@ Interface for data objects that can track their changes, including logical delet
 Interface for data objects that can be versioned.
 Versioning is often used as optimistic concurrency mechanism. 
 The version doesn't have to be a number, but it is recommended to use sequential
-values to determine if one object has newer or older version than another one.
+values to determine if one object has a newer or older version than another one.
 It is a common pattern to use the time of change as the object version.
 
 <br>
@@ -46,26 +46,26 @@ It is a common pattern to use the time of change as the object version.
 ### Classes
 
 #### [AnyValue](any_value)
-Cross-language implementation of dynamic object what can hold value of any type.
-The stored value can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object that can hold a value of any type.
+The stored value can be converted to different types using a variety of accessor methods.
 
 
 #### [AnyValueArray](any_value_array)
-Cross-language implementation of dynamic object array what can hold values of any type.
-The stored values can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object array that can hold values of any type.
+The stored values can be converted to different types using a variety of accessor methods.
 
 #### [AnyValueMap](any_value_map)
-Cross-language implementation of dynamic object map (dictionary) what can hold values of any type.
-The stored values can be converted to different types using variety of accessor methods.
+Cross-language implementation of a dynamic object map (dictionary) that can hold values of any type.
+The stored values can be converted to different types using a variety of accessor methods.
 
 #### [DataPage](data_page)
 Data transfer object that is used to pass results of paginated queries.
 It contains items of retrieved page and optional total number of items.
 Most often this object type is used to send responses to paginated queries.
-Pagination parameters are defined by [PagingParams](PagingParams) object.
-The *skip* parameter in the PagingParams there means how many items to skip.
+Pagination parameters are defined by a [PagingParams](PagingParams) object.
+The *skip* parameter in the PagingParams indicates how many items to skip.
 The *takes* parameter sets number of items to return in the page.
-And the optional *total* parameter tells to return total number of items in the query.
+And the optional *total* parameter tells to return the total number of items in the query.
 
 #### [FilterParams](filter_params)
 Data transfer object used to pass filter parameters as simple key-value pairs.
@@ -79,19 +79,19 @@ ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
 #### [MultiString](multi_string)
 An object that contains string translations for multiple languages.
 Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
-When a translation for specified language does not exist it defaults to English ('en').
-When English does not exist it falls back to the first defined language.
+When a translation for specified language does not exist, it defaults to English ('en').
+When an English translation does not exist, it falls back to the first defined language.
 
 #### [PagingParams](paging_params)
 Data transfer object to pass paging parameters for queries.
 The page is defined by two parameters:
-- the *skip* parameter defines number of items to skip.
+- the *skip* parameter defines the number of items to skip.
 - the *take* parameter sets how many items to return in a page.
 - additionally, the optional *total* parameter tells to return total number of items in the query.
 
 
 #### [ProjectionParams](projection_params)
-Defines projection parameters with list if fields to include into query results.
+Defines projection parameters with a list of fields to include into query results.
 The parameters support two formats: dot format and nested format.
 The dot format is the standard way to define included fields and subfields using
 dot object notation: *"field1,field2.field21,field2.field22.field221"*
@@ -106,7 +106,7 @@ Defines a list of field names used to sort query results.
 
 #### [StringValueMap](string_value_map)
 Cross-language implementation of a map (dictionary) where all keys and values are strings.
-The stored values can be converted to different types using variety of accessor methods.
+The stored values can be converted to different types using a variety of accessor methods.
 The string map is highly versatile. It can be converted into many formats, stored and 
 sent over the wire.
 
@@ -122,7 +122,7 @@ It contains items of a retrieved page and total number of items (optional ).
 Most often this object type is used to send responses to paginated queries.
 
 #### [TokenizedPagingParams](tokenized_paging_params)
-Data transfer object to pass tokenized paging parameters for queries.
+Data transfer object used to pass tokenized paging parameters for queries.
 It can be used for complex paging scenarios, like paging across multiple databases
 where the previous state is encoded in a token. The token is usually retrieved from
 the previous response. The initial request shall go with token == *None*

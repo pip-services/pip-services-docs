@@ -15,59 +15,59 @@ The TypeConverter class allows you to convert arbitrary values into objects spec
 ### Static methods
 
 #### ToNullableType
-Converts value into an object type specified by Type Code or returns null when conversion is not possible.
-**T** - the Class type for the data type.
+Converts value into an object type specified by Type Code or returns null when the conversion is not possible.
+**T** - Class type for the data type.
 
 > `public static` T ToNullableType\<T\>(object value)
 
-- **value**: object - the value to convert.
-- **returns**: T - object value of type corresponding to TypeCode, or null when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: T - object value of type corresponding to TypeCode, or null when the conversion is not supported.
 
 #### ToString
 Converts a [TypeCode](../../convert/type_code) into its string name.
 
 > `public static` string ToString([TypeCode](../../convert/type_code) type)
 
-- **type**: [TypeCode](../../convert/type_code) - the TypeCode to convert into a string.
+- **type**: [TypeCode](../../convert/type_code) - TypeCode to convert into a string.
 - **returns**: string - the name of the [TypeCode](../../convert/type_code) passed as a string value.
 
 #### ToType
-Converts value into an object type specified by Type Code or returns type default when conversion is not possible.
-**T** - the Class type for the data type into which 'value' is to be converted.
+Converts value into an object type specified by Type Code or returns the default type when the conversion is not possible.
+**T** - Class type for the data type into which 'value' is to be converted.
 
 > `public static` T ToType\<T\>(object value)
 
-- **value**: object - the value to convert.
-- **returns**: T - object value of type corresponding to [TypeCode](../../convert/type_code), or type default when conversion is not supported.
+- **value**: object - value to convert.
+- **returns**: T - object value of type corresponding to [TypeCode](../../convert/type_code), or the default type when the onversion is not supported.
 
 
 #### ToTypeCode
-Gets TypeCode for specific value.
+Gets the TypeCode for a specific value.
 
 > `public static` [TypeCode](../../convert/type_code) ToTypeCode(Type type)
 
-- **type**: Type - 	the Class type for the data type.
-- **returns**: [TypeCode](../../convert/type_code) - the TypeCode that corresponds to the passed object's type.
+- **type**: Type - 	Class type for the data type.
+- **returns**: [TypeCode](../../convert/type_code) - TypeCode that corresponds to the passed object's type.
 
 
 #### ToTypeCode
-Gets TypeCode for specific value.
+Gets the TypeCode for specific value.
 
 > `public static` [TypeCode](../../convert/type_code) ToTypeCode(object value)
 
 - **value**: object - value whose TypeCode is to be resolved.
-- **returns**: [TypeCode](../../convert/type_code) - the TypeCode that corresponds to the passed object's type.
+- **returns**: [TypeCode](../../convert/type_code) - TypeCode that corresponds to the passed object's type.
 
 
 #### ToTypeWithDefault
-Converts value into an object type specified by Type Code or returns default value when conversion is not possible.
-**T** - the Class type for the data type into which 'value' is to be converted.
+Converts a value into an object of type specified by TypeCode or returns a given default value when the conversion is not possible.
+**T** - Class type for the data type into which 'value' is to be converted.
 
 > `public static` T ToTypeWithDefault\<T\>(object value, T defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: T - the default value to return if conversion is not possible (returns null).
-- **returns**: T - object value of type corresponding to TypeCode, or default value when conversion is not supported.
+- **value**: object - value to convert.
+- **defaultValue**: T - default value to return if the conversion is not possible (returns null).
+- **returns**: T - object value of type corresponding to TypeCode, or the given default value when the conversion is not supported.
 
 ### Examples
 

@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultMySqlFactory"
 linkTitle: "DefaultMySqlFactory"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: > 
     Creates MySql components based on their descriptors.
 ---

@@ -2,7 +2,7 @@
 type: docs
 title: "IndexOptions"
 linkTitle: "IndexOptions"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: >
     TODO add description
 

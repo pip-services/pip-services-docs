@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
    This package contains classes used to create Postgres components based on their descriptors.
 ---

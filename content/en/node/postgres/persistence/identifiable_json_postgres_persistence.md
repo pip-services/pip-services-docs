@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiableJsonPostgresPersistence<T extends IIdentifiable<K>, K>"
 linkTitle: "IdentifiableJsonPostgresPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
     Abstract persistence component that stores data in PostgreSQL in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.

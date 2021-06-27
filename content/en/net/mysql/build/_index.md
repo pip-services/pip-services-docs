@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: >
     This package contains classes used to build MySQL components.
 ---

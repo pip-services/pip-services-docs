@@ -2,7 +2,7 @@
 type: docs
 title: "MySqlConnection"
 linkTitle: "MySqlConnection"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: >
     MySQL connection using the official driver.
 

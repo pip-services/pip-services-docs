@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresConnectionResolver"
 linkTitle: "PostgresConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
     Helper class that resolves PostgreSQL connection and credential parameters,
     validates them and generates a connection URI.

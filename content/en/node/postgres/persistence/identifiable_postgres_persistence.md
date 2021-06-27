@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiablePostgresPersistence<T extends IIdentifiable<K>, K>"
 linkTitle: "IdentifiablePostgresPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-postgres-nodex"
 description: >
     Abstract persistence component that stores data in PostgreSQL
     and implements a number of CRUD operations over data items with unique ids.

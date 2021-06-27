@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiableJsonMySqlPersistence<T, K>"
 linkTitle: "IdentifiableJsonMySqlPersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: >
     Abstract persistence component that stores data in MySQL in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.

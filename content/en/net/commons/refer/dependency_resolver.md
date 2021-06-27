@@ -208,7 +208,7 @@ class MyComponent: IConfigurable, IReferenceable
     /// 
 // Create mycomponent and set specific dependency out of many
 var component = new MyComponent();
-component.Configure(ConfigParams.fromTuples(
+component.Configure(ConfigParams.FromTuples(
 "dependencies.persistence", "mygroup:persistence:*:persistence2:1.0" // Override default persistence dependency
 ));
 component.SetReferences(References.fromTuples(

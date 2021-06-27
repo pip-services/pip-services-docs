@@ -172,7 +172,7 @@ class MyMongoDbPersistence: MongoDbPersistence<MyData, string>
 }
 
 var persistence = new MyMongoDbPersistence();
-persistence.Configure(ConfigParams.fromTuples(
+persistence.Configure(ConfigParams.FromTuples(
     "host", "localhost",
     "port", 27017 )
 );

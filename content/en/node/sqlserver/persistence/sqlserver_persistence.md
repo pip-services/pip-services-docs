@@ -189,7 +189,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > `public` deleteByFilter(correlationId: string, filter: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
-- **filter**: string - (optional) filter function used to filter items.
+- **filter**: string - (optional) a filter JSON object.
 
 
 #### ensureIndex
@@ -220,7 +220,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: *"?,?,?"*
+Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
 > `protected` generateParameters(values: any): string
 
@@ -308,7 +308,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### isOpen
 Checks if the component is opened.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - True if the component has been opened and False otherwise.
 

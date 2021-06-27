@@ -106,7 +106,7 @@ Gets the database name
 #### isOpen
 Checks if the component is opened.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - True if the component has been opened and False otherwise.
 

@@ -82,10 +82,6 @@ The PostgreSQL connection pool object.
 The PostgreSQL database name.
 > `protected` **_databaseName**: string
 
-#### _tableName
-The PostgreSQL table object.
-> `protected` **_tableName**: string
-
 #### _maxPageSize
 The maximum number of records to return from the database.
 > `protected` **_maxPageSize** = 100
@@ -204,7 +200,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: "%s,%s,%s".
+Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
 > `protected` generateParameters(values: any): string
 
@@ -292,7 +288,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### isOpen
 Checks if the component is opened.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - True if the component has been opened and False otherwise.
 

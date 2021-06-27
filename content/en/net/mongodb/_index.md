@@ -68,8 +68,7 @@ class MyMongoDbPersistence : IdentifiableMongoDbPersistence<MyObject, string>
 {
     public MyMongoDbPersistence() : base("myobjects") { }
 
-    override
-    protected FilterDefinition<MyObject> ComposeFilter(FilterParams filter)
+    protected override FilterDefinition<MyObject> ComposeFilter(FilterParams filter)
     {
         filter = filter != null ? filter : new FilterParams();
 
@@ -94,20 +93,24 @@ class MyMongoDbPersistence : IdentifiableMongoDbPersistence<MyObject, string>
         return criteria.Count > 0 ? new BsonDocument("$and", criteria) : null;
     }
 
-    DataPage<MyObject> GetPageByFilter(string correlationId, FilterParams filter, PagingParams paging)
+    public async Task<DataPage<MyObject>> GetPageByFilter(string correlationId, FilterParams filter, PagingParams paging)
     {
-        return base.GetPageByFilterAsync(correlationId, this.ComposeFilter(filter), paging).Result;
+        return await base.GetPageByFilterAsync(correlationId, this.ComposeFilter(filter), paging).Result;
     }
 
-    void GetOneByKey(string correlationId, string key)
+    public Task<MyObject> GetOneByKey(string correlationId, string key)
     {
         var filter = new BsonDocument("key", key);
-        var item = this._collection.Find(filter).First<MyObject>();
+        var item = await this._collection.FindAsync(filter).First<MyObject>();
 
         if (item == null)
             this._logger.Trace(correlationId, "Nothing found from %s with key = %s", this._collectionName, key);
         else
             this._logger.Trace(correlationId, "Retrieved from %s with key = %s", this._collectionName, key);
+
+        item = this.ConvertToPublic(item);
+
+        return item;
     }
 }
 ```

@@ -94,7 +94,7 @@ class MyCommandableHttpClient: CommandableHttpClient, IMyClient
 }
 
 var client = new MyCommandableHttpClient();
-client.Configure(ConfigParams.fromTuples(
+client.Configure(ConfigParams.FromTuples(
 "connection.protocol", "http",
 "connection.host", "localhost",
 "connection.port", 8080 ));

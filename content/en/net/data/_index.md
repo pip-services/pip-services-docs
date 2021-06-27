@@ -94,12 +94,12 @@ class MyMemoryPersistence : IdentifiableMemoryPersistence<MyObject, string>
 
     }
 
-    DataPage<MyObject> GetPageByFilter(string correlationId, FilterParams filter, PagingParams paging)
+    public async Task<DataPage<MyObject>> GetPageByFilter(string correlationId, FilterParams filter, PagingParams paging)
     {
-        return base.GetPageByFilterAsync(correlationId, this.ComposeFilter(filter), paging).Result;
+        return await base.GetPageByFilterAsync(correlationId, this.ComposeFilter(filter), paging).Result;
     }
 
-    void GetOneByKey(string correlationId, List<MyObject> item, string key)
+    public MyObjectGetOneByKey(string correlationId, List<MyObject> item, string key)
     {
         List<MyObject> items = item.Find(x => x.key == key);
 
@@ -107,6 +107,9 @@ class MyMemoryPersistence : IdentifiableMemoryPersistence<MyObject, string>
             this._logger.Trace(correlationId, "Found object by key=%s", key);
         else
             this._logger.Trace(correlationId, "Cannot find by key=%s", key);
+
+
+        return item;
     }
 }
 ```
@@ -121,7 +124,7 @@ class MyFilePersistence: MyMemoryPersistence
 {
     protected JsonFilePersister<MyObject> _persister;
 
-    MyFilePersistence(string path=null): base()
+    public MyFilePersistence(string path=null): base()
     {
         this._persister = new JsonFilePersister<MyObject>(path);
         this._loader = this._persister;

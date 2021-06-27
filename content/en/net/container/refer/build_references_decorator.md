@@ -8,7 +8,7 @@ description: >
     available component factories upon component retrival.
 ---
 
-**Implements:** [ReferencesDecorator](../references_decorator)
+**Inherits:** [ReferencesDecorator](../references_decorator)
 
 
 ### Description

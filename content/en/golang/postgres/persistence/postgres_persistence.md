@@ -182,7 +182,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > (c [*PostgresPersistence]()) DeleteByFilter(correlationId string, filter string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: string - (optional) filter function used to filter items.
+- **filter**: string - (optional) a filter JSON object.
 - **returns**: (err error) - returns error if not received.
 
 
@@ -213,7 +213,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 
 #### GenerateParameters
-Generates a list of value parameters to use in SQL statements like: "%s,%s,%s".
+Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
 > (c [*PostgresPersistence]()) GenerateParameters(values interface{}) string
 

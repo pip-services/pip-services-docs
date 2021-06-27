@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [CachedLogger](../../../components/log/cached_logger), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
+**Inherits:** [CachedLogger](../../../components/log/cached_logger), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 

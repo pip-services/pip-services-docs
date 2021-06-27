@@ -74,7 +74,7 @@ Crashes the process using the configured crash mode.
 
 ```typescript
 let shutdown = new Shutdown();
-shutdown.configure(ConfigParams.fromTuples(
+shutdown.configure(ConfigParams.FromTuples(
     "mode": "exception"
 ));
 shutdown.shutdown();         // Result: Bang!!! the process crashes

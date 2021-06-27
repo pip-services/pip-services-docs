@@ -77,7 +77,7 @@ class MyCommandableHttpService: CommandableHttpService
 }
  
 var service = new MyCommandableHttpService();
-service.Configure(ConfigParams.fromTuples(
+service.Configure(ConfigParams.FromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080 

@@ -21,19 +21,19 @@ description: >
 ### Static methods
 
 #### ToNullableString
-Converts value into string or returns null when value is null.
+Converts value into a string or returns null when value is null.
 
 > `public static` string ToNullableString(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: string - string value or null when value is null.
 
 #### ToString
-Converts value into string or returns "" when value is null.
+Converts value into a string or returns "" when value is null.
 
 > `public static` string ToString(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: string - string value or "" when value is null.
 
 #### ToStringWithDefault
@@ -41,8 +41,8 @@ Converts value into string or returns default when value is null.
 
 > `public static` string ToStringWithDefault(object value, string defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: string - the default value.
+- **value**: object - value to convert.
+- **defaultValue**: string - default value.
 - **returns**: string - string value or default when value is null.
 
 

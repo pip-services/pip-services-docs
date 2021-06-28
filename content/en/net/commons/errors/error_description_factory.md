@@ -21,22 +21,22 @@ Important points
 ### Static methods
 
 #### Create
-Creates a serializable ErrorDescription from error object.
+Creates a serializable ErrorDescription from an error object.
 
 > `public static` [ErrorDescription](../error_description) Create([ApplicationException](../application_exception) error)
 
-- **error**: [ApplicationException](../application_exception) - an error object
-- **returns**: [ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+- **error**: [ApplicationException](../application_exception) - error object
+- **returns**: [ErrorDescription](../error_description) - serializeable ErrorDescription object that describes the error.
 
 
 #### Create
-Creates a serializable ErrorDescription from throwable object with unknown error category.
+Creates a serializable ErrorDescription from a throwable object with an unknown error category.
 
 > `public static` [ErrorDescription](../error_description) Create(Exception ex, string correlationId = null)		
 
-- **ex**: Exception - an error object
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **returns**: [ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+- **ex**: Exception - error object
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **returns**: [ErrorDescription](../error_description) - serializeable ErrorDescription object that describes the error.
 
 
 ### See also

@@ -39,7 +39,7 @@ Updates (drifts) a float value without specified range defined
 
 > `public static` float UpdateFloat(float value)
 
-- **value**: float  - a float value to drift.
+- **value**: float  - float value to drift.
 - **returns**: float  - updated random float value.
 
 
@@ -48,8 +48,8 @@ Updates (drifts) a float value within specified range defined
 
 > `public static` float UpdateFloat(float value, float range)
 
-- **value**: float - a float value to drift.
-- **range**: float - (optional) a range. Default: 10% of the value
+- **value**: float - float value to drift.
+- **range**: float - (optional) range. Default: 10% of the value
 - **returns**: float - updated float value.
 
 ### Examples

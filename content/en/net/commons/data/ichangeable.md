@@ -7,7 +7,7 @@ description: >
     Interface for data objects that need to store the last modified date and time.
 
 
-    **TODO: this interface is not realized yet for this language**
+    **Note: this interface is not available for this language**
 ---
 
 ### Description

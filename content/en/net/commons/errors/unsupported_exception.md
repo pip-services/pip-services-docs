@@ -18,28 +18,28 @@ Creates an error instance and assigns its values.
 
 > `public` UnsupportedException(string correlationId = null, string code = null, string message = null)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: string - (optional) a human-readable description of the error.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **code**: string - (optional) unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) human-readable description of the error.
 
 
-Creates an error instance with error message
+Creates an error instance with error message.
 
 > `public` UnsupportedException(string message)
 
-- **message**: string - a human-readable description of the error.
+- **message**: string - human-readable description of the error.
 
 
 Creates an error instance and assigns its values.
 
 > `public` UnsupportedException(Exception innerException)
 
-- **innerException**: Exception - an error object
+- **innerException**: Exception - error object
 
 
-TODO: add description
+Creates an error instance.
 
 > `protected` UnsupportedException(SerializationInfo info, StreamingContext context)
 
-- **info**: SerializationInfo - TODO: add description
-- **context**: StreamingContext - TODO: add description
+- **info**: SerializationInfo - serialization information
+- **context**: StreamingContext - streaming context

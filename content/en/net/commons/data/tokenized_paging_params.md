@@ -7,5 +7,5 @@ description: >
     Data transfer object used to pass tokenized paging parameters for queries. 
 
 
-    **TODO: this class is not realized yet for this language**
+    **Note: this class is not available for this language**
 ---

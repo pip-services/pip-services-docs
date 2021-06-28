@@ -17,7 +17,7 @@ Important points
 - Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by a [PagingParams](../paging_params) object.
 - The *skip* parameter in the PagingParams indicates how many items to skip.
-- The *takes* parameter sets number of items to return in the page.
+- The *takes* parameter sets the number of items to return in the page.
 - An optional *total* paramter allows you to specify the total number of items returned from a request. However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.   
 
 ### Constructors
@@ -25,7 +25,7 @@ Creates a new instance of data page and assigns its values.
 
 > `public` DataPage(List\<T\> data, long? total = null)
 
-- **data**: List\<T\> - a list of items from the retrieved page.
+- **data**: List\<T\> - list of items from the retrieved page.
 - **total**: long - total amount of items in a request.
 
 
@@ -39,11 +39,11 @@ Creates a new instance of data page.
 
 
 #### Data
-The items of the retrieved page.
+Items of the retrieved page.
 > `public` List\<T\> Data [ get, set ]
 
 #### Total
-The total amount of items in a request.
+Total amount of items in a request.
 > `public` long Total [ get, set ]
 
 

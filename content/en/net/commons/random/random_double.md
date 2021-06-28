@@ -19,7 +19,7 @@ Generates a random double value in the range to "max".
 > `public static` double NextDouble(double maxValue)
 
 - **maxValue**: double - max range value
-- **returns**: double - a random double value.
+- **returns**: double - random double value.
 
 
 #### NextDouble
@@ -30,25 +30,25 @@ Generates a random double value in the range ['minYear', 'maxYear'].
 
 - **minValue**: double - (optional) minimum range value
 - **maxValue**: double - max range value
-- **returns**: double - a random double value.
+- **returns**: double - random double value.
 
 
 #### UpdateDouble
-Updates (drifts) a double value without specified range defined
+Updates (drifts) a double value without a defined range.
 
 > `public static` double UpdateDouble(double value)
 
-- **value**: double - a double value to drift.
+- **value**: double - double value to drift.
 - **returns**: double - updated double value.
 
 
 #### UpdateDouble
-Updates (drifts) a double value within specified range defined
+Updates (drifts) a double value within specified range defined.
 
 > `public static` double UpdateDouble(double value, double range)
 
-- **value**: double - a double value to drift.
-- **range**: double - (optional) a range. Default: 10% of the value
+- **value**: double - double value to drift.
+- **range**: double - (optional) range. Default: 10% of the value
 - **returns**: double - updated double value.
 
 ### Examples

@@ -98,7 +98,7 @@ Deletes multiple data items based on their unique ids.
 #### getListByIds
 Gets a list of data items retrieved based on given unique ids.
 
-> getListByIds(correlationId: string, ids: K[]): Promise<\T[]\>
+> `public` getListByIds(correlationId: string, ids: K[]): Promise<\T[]\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **ids**: K[] - ids of data items to be retrieved

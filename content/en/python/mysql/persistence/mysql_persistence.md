@@ -90,7 +90,8 @@ The maximum number of records to return from the database per request.
 ### Instance methods
 
 #### _auto_create_object
-Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
+Adds a statement to schema definition. 
+- This is a deprecated method. Use **_ensure_schema** instead.
 
 > _auto_create_object(schema_statement: str)
 

@@ -95,7 +95,8 @@ The SQL Server library
 ### Instance methods
 
 #### autoCreateObject
-Adds an index definition to be created on opening
+Adds an index definition to be created on opening.
+- This is a deprecated method. Use **ensureSchema** instead.
 
 > `protected` autoCreateObject(schemaStatement: string): void
 
@@ -123,11 +124,11 @@ Closes a component and frees used resources.
 
 
 #### configure
-Closes a component and frees used resources.
+Configures component by passing configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **correlationId**: string- the object to convert from the public partial format.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### convertFromPublic
@@ -161,7 +162,7 @@ Creates a data item.
 #### createRequest
 Creates request to the database.
 
-> createRequest(values: any[] = null): any
+> `protected` createRequest(values: any[] = null): any
 
 - **values**: any[] - optional list of query parameters
 - **returns**: any - a created request
@@ -175,7 +176,7 @@ Creates a schema.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
 
-#### _define_schema
+#### defineSchema
 Defines a database schema via auto create objects or convenience methods.
 
 > `protected` defineSchema(): void
@@ -220,7 +221,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
+Generates a list of value parameters to use in SQL statements like: *"@1,@2,@3"*.
 
 > `protected` generateParameters(values: any): string
 
@@ -229,7 +230,7 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 
 #### generateSetParameters
-Generates a list of column sets to use in UPDATE statements like: *column1=?1,column2=?2*
+Generates a list of column sets to use in UPDATE statements like: *"@1,@2,@3"*.
 
 > `protected` generateSetParameters(values: any): string
 

@@ -95,7 +95,8 @@ The maximum number of records to return from the database per request.
 ### Instance methods
 
 #### autoCreateObject
-Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
+Adds a statement to schema definition. 
+- This is a deprecated method. Use **ensureSchema** instead.
 
 > `protected` autoCreateObject(schemaStatement: string)
 
@@ -209,7 +210,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
+Generates a list of value parameters to use in SQL statements like: *"@1,@2,@3"*.
 
 > `protected` generateParameters(values: any): string
 
@@ -218,7 +219,7 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 
 #### generateSetParameters
-Generates a list of column sets to use in UPDATE statements like:  *column1=$1,column2=$2*.
+Generates a list of column sets to use in UPDATE statements like:  *"@1,@2,@3"*.
 
 > `protected` generateSetParameters(values: any): string
 

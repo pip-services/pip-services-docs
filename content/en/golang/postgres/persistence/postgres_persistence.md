@@ -222,7 +222,7 @@ Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*
 
 
 #### GenerateSetParameters
-Generates a list of column sets to use in UPDATE statements like: column1=%s,column2=%s.
+Generates a list of column sets to use in UPDATE statements like: *"$1,$2,$3"*.
 
 > (c [*PostgresPersistence]()) GenerateSetParameters(values interface{}) (setParams string, columns string)
 

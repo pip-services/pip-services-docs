@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "MySqlPersistence<T>"
-linkTitle: "MySqlPersistence"
-gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
+title: "SqlServerPersistence"
+linkTitle: "SqlServerPersistence"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Abstract persistence component that stores data in MySQL using the official driver.
+    Abstract persistence component that stores data in a SQLServer database using the official driver.
     
 ---
 
@@ -12,15 +12,15 @@ description: >
 
 ### Description
 
-The MySqlPersistence class allows you to create persistence components that store data in MySQL databases using the official driver.
+The SqlServerPersistence class allows you to create persistence components that store data in a SQLServer database using the official driver.
 
 Important points
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
+- This is the most basic persistence component that is able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._model** or **this._collection** properties.
 
 #### Configuration parameters
 
-- **collection**: (optional) MySQL collection name
+- **collection**: (optional) SQLServer collection name   
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -46,10 +46,11 @@ Important points
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
 
 
+
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` MySqlPersistence(string tableName)
+> `public` SqlServerPersistence(string tableName)
 
 - **tableName**: string - (optional) table name.
 
@@ -58,9 +59,9 @@ Creates a new instance of the persistence component.
 
 <span class="hide-title-link">
 
-#### _databaseName
-The MySql table object.
-> `protected` **_databaseName**: string
+#### _tableName
+The SQLServer table object.
+> `protected` **_tableName**: string
 
 #### _dependencyResolver
 The dependency resolver.
@@ -71,25 +72,26 @@ The logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The MySql connection component.
-> `protected` **_connection**: [MySqlConnection](../../connect/mysql_connection) 
+The SQLServer connection component.
+> `protected` **_connection**: [SqlServerConnection](../../connect/sqlserver_connection) 
 
 #### _client
-The MySql connection component.
-> `protected` **_client**: MySqlData.MySqlClient.MySqlConnection 
+The SQLServer connection pool object.
+> `protected` **_client**: SqlConnection 
 
 #### _databaseName 
-The MySql database name.
+The SQLServer database name.
 > `protected` **_databaseName**: string
 
-#### _tableName 
-The MySQL table object.
-
-> `protected` _tableName: string
-
 #### _maxPageSize
-The maximum number of records to return from the database per request.
-> `protected` **_maxPageSize**: number = 100
+The maximum number of records that can be returned from the database.
+> `protected` **_maxPageSize**: int = 100
+
+
+#### _tableName
+The SqlServer table name.
+> `protected` **_tableName**: string 
+
 
 </span>
 
@@ -97,18 +99,19 @@ The maximum number of records to return from the database per request.
 ### Instance methods
 
 #### AutoCreateObject
-Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
+Adds an index definition to be created on opening.
 - This is a deprecated method. Use **EnsureSchema** instead.
+
 > `protected` void AutoCreateObject(string schemaStatement)
 
-- **schemaStatement**: string - statement to be added to the schema
+- **schemaStatement**: string - DML statement to autocreate database object
 
 #### ClearAsync
-Clears a component's state.
+Clears component state.
 
 > `public virtual` Task ClearAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string- the object to convert from the public partial format.
 
 #### ClearSchema
 Clears all auto-created objects
@@ -117,23 +120,23 @@ Clears all auto-created objects
 
 
 #### CloseAsync
-Closes a component and frees the used resources.
+Closes a component and frees used resources.
 
 > `public virtual` Task CloseAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string- the object to convert from the public partial format.
 
 
 #### Configure
 Configures component by passing configuration parameters.
 
-> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
+> `public virtual` void Configure(ConfigParams config)
 
-- **config:**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### ConvertFromPublic
-Converts object value from public to internal format.
+Converts an object value from public to internal format.
 
 > `protected virtual` [AnyValueMap](../../../commons/data/any_value_map) ConvertFromPublic(T value)
 
@@ -142,11 +145,11 @@ Converts object value from public to internal format.
 
 
 #### ConvertToPublic
-Converts object value from internal to public format.
+Converts an object value from internal to public format.
 
 > `protected virtual` T ConvertToPublic([AnyValueMap](../../../commons/data/any_value_map) map)
 
-- **value**: [AnyValueMap](../../../commons/data/any_value_map) - object in internal format to convert.
+- **map**: [AnyValueMap](../../../commons/data/any_value_map) - object in internal format to convert.
 - **returns**: T - converted object in public format.
 
 
@@ -160,99 +163,94 @@ Creates a data item.
 - **returns**: Task\<T\> - created item
 
 
-#### CreateSchemaAsync
-Checks if a table exists and if not, it creates the necessary database objects.
+#### createSchema
+Creates a schema.
+
 > `protected` Task CreateSchemaAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
 
 #### DefineSchema
-Defines database schema via auto create objects or convenience methods.
+Defines a database schema via auto create objects or convenience methods.
+Override in chile classes
 
 > `protected virtual` void DefineSchema()
 
 
 #### DeleteByFilterAsync
 Deletes data items that match to a given filter.
-This method shall be called by a public **DeleteByFilterAsync** method from child class that
+This method shall be called by a public **DeleteByFilterAsync** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `public virtual` Task DeleteByFilterAsync(string correlationId, string filter)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) filter function to filter items.
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **filter**: string - (optional) a filter JSON object.
 
 
 #### EnsureIndex
-Adds index definition to create it on opening.
+Adds an index definition to be created on opening.
 
-> `protected` void EnsureIndex(string name, Dictionary\<string, bool\> keys, IndexOptions options)
+> `protected` void EnsureIndex(string name, Dictionary\<string, bool\> keys, [IndexOptions](../index_options) options)
 
-- **name**: string - the index name.
-- **keys**: Dictionary\<string, bool\> - index keys (fields).
-- **options**: [IndexOptions](../index_options) - index options.
+- **name**: string - the index name
+- **keys**: Dictionary\<string, bool\> - index keys (fields)
+- **options**: [IndexOptions](../index_options) - index options
 
 
 #### EnsureSchema
-Adds a statement to schema definition.
+Adds a statement to a schema definition
 
-> `protected` void EnsureSchema(string schemaStatement)
+> `protected` void EnsureSchema(string dmlStatement)
 
-- **schemaStatement**: string - statement to be added to the schema
+- **dmlStatement**: string - statement to be added to the schema
 
 
 #### GenerateColumns
-Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
+Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*
 
 > `protected` string GenerateColumns([AnyValueMap](../../../commons/data/any_value_map) map)
 
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - array with column values or a key-value map.
-- **returns**: string - generated list of column names.
+- **map**: [AnyValueMap](../../../commons/data/any_value_map) - array with column values or a key-value map
+- **returns**: string - generated list of column names 
 
-Generates a list of column names to use in SQL statements like: "column1,column2,column3"
-
-> `protected` string GenerateColumns(IEnumerable\<string\> values)
-
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - aan array with column values
-- **returns**: string - generated list of column names.
 
 #### GenerateParameters
 Generates a list of value parameters to use in SQL statements like: *"@Param1,@Param2,@Param3"*.
 
 > `protected` string GenerateParameters([AnyValueMap](../../../commons/data/any_value_map) map)
 
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - array with values or a key-value map
+- **map**: [AnyValueMap](../../../commons/data/any_value_map) - array with values or a key-value map
 - **returns**: string - generated list of value parameters
-
 
 > `protected` string GenerateParameters\<K\>(IEnumerable\<K\> values)
 
-- **values**: IEnumerable\<K\> - an array with column values
-- **returns**: string - generated list of value parameters
+- **values**: IEnumerable\<K\> - key-value map with columns and values
+- **returns**: string - generated list of column sets
+
 
 #### GenerateSetParameters
-Generates a list of column sets to use in UPDATE statements like: *"@Param1,@Param2,@Param3"*
+Generates a list of value parameters to use in SQL statements like: "@Param1,@Param2,@Param3"
 
 > `protected` string GenerateSetParameters([AnyValueMap](../../../commons/data/any_value_map) map)
 
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - key-value map with columns and values
+- **map**: [AnyValueMap](../../../commons/data/any_value_map) - key-value map with columns and values
 - **returns**: string - generated list of column sets
 
-Generates a list of column sets to use in UPDATE statements like: column1=@Param1,column2=@Param2
 
 > `protected` string GenerateSetParameters(IEnumerable\<string\> values)
 
-- **values**: IEnumerable\<string\> - an array with column names
+- **values**: IEnumerable\<string\> - key-value map with columns and values
 - **returns**: string - generated list of column sets
 
 
 #### GenerateValues
-Generates a list of column parameters.
+Generates a list of column parameters
 
 > `protected` List\<object\> GenerateValues([AnyValueMap](../../../commons/data/any_value_map) map)
 
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - key-value map with columns and values
+- **map**: [AnyValueMap](../../../commons/data/any_value_map) - key-value map with columns and values
 - **returns**: List\<object\> - generated list of column values
 
 
@@ -260,29 +258,29 @@ Generates a list of column parameters.
 #### GetCountByFilterAsync
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **GetCountByFilterAsync** method from the child class that
+This method shall be called by a public **GetCountByFilterAsync** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected virtual` Task\<long\> GetCountByFilterAsync(string correlationId, string filter)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: string - (optional) JSON object filter
-- **returns**: Promise\<number\> - number of filtered items.
+- **filter**: string - (optional) filter for JSON objects.
+- **returns**: Task\<long\> - number of filtered items.
 
 
 #### GetListByFilterAsync
-Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
+Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
 This method shall be called by a public **GetListByFilterAsync** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` Task\<List\<T\>\> GetListByFilterAsync(string correlationId, string filter, string sort = null, string select = null)
 
-- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
-- **filter**: string - (optional) a filter JSON object.
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **filter**: string - (optional) filter function used to filter items
 - **sort**: string - (optional) sorting parameters
 - **select**: string - (optional) projection parameters (not used yet)
-- **returns**: Task\<List\<T\>\> - data list of results by filter.
+- **returns**: Task\<List\<T\>\> - data list of filtered results
 
 
 #### GetOneRandomAsync
@@ -298,20 +296,20 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 - **returns**: Task\<T\> - a random item.
 
 
-#### GetPageByFilterAsync
-Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
+#### GetPageByFilter
+Gets a page of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **GetPageByFilterAsync** method from the a child class that
+This method shall be called by a public **getPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> `public virtual` async Task\<[DataPage<T>](../../../commons/data/data_page)\> GetPageByFilterAsync(string correlationId, string filter, [PagingParams](../../../commons/data/paging_params) paging = null, string sort = null, string select = null)
+> `public virtual` Task<[DataPage<T>](../../../commons/data/data_page)> GetPageByFilterAsync(string correlationId, string filter, [PagingParams](../../../commons/data/paging_params) paging = null, string sort = null, string select = null)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: string - (optional) filter for JSON objects.
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: string - (optional) sorting JSON object
 - **select**: string - (optional) projection JSON object
-- **returns**: Task\<[DataPage<T>](../../../commons/data/data_page)\> - a data page of result by filter
+- **returns**: Task<[DataPage<T>](../../../commons/data/data_page)> - a data page of result by filter
 
 
 
@@ -339,7 +337,6 @@ Adds single quotes to a string.
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
 
-
 #### SetReferences
 Sets references to dependent components.
 
@@ -356,9 +353,9 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```cs
-class MyMySqlPersistence: MySqlPersistence<MyData> 
+class MySqlServerPersistence: SqlServerPersistence<MyData> 
 {
-    public MyMySqlPersistence()
+    public MySqlServerPersistence()
     {
         base("mydata");
     }
@@ -382,15 +379,14 @@ class MyMySqlPersistence: MySqlPersistence<MyData>
     }
 }
 
-var persistence = new MyMySqlPersistence();
-persistence.Configure(ConfigParams.FromTuples(
+var persistence = new MySqlServerPersistence();
+persistence.Configure(ConfigParams.fromTuples(
     "host", "localhost",
-    "port", 27017 )
-);
+    "port", 27017 ));
 
 persitence.Open("123");
 var mydata = new MyData("ABC");
 persistence.Set("123", mydata);
 persistence.GetByName("123", "ABC");
-Console.Out.WriteLine(item);    // Result: { name: "ABC" }
+Console.Out.WriteLine(item);                   // Result: { name: "ABC" }
 ```

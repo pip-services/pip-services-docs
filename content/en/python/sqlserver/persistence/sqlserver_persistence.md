@@ -91,7 +91,8 @@ The maximum number of records that can be returned from the database.
 ### Instance methods
 
 #### _auto_create_object
-Adds an index definition to be created on opening
+Adds an index definition to be created on opening.
+- This is a deprecated method. Use **_ensure_schema** instead.
 
 > _auto_create_object(schema_statement: str)
 
@@ -119,11 +120,11 @@ Closes a component and frees used resources.
 
 
 #### configure
-Closes a component and frees used resources.
+Configures component by passing configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
-- **correlation_id**: Optional[str]- the object to convert from the public partial format.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### _convert_from_public

@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The RandomFloat class allows you to generate random float values.
+The RandomFloat class allows you to generate random float values. 
 
 ### Static methods
 

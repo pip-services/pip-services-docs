@@ -7,5 +7,5 @@ description: >
     Data transfer object that is used to pass the results of paginated queries.
     
 
-    **TODO: this class is not realized yet for this language**
+    **Note: this class is not available for this language**
 ---

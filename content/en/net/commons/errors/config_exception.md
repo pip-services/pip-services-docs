@@ -37,7 +37,7 @@ Creates an error instance with a misconfiguration error category and assigns its
 - **innerException**: Exception - error object
 
 
-Creates an error instance with a misconfiguration error category and assigns its values.
+Creates an error instance.
 
 > `protected` ConfigException(SerializationInfo info, StreamingContext context)
 

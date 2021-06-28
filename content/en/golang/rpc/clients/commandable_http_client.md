@@ -21,6 +21,7 @@ Important points
 #### Configuration parameters
 
 - **base_route**: base route for a remote URI
+
 - **connection(s)**:           
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol (http or https)

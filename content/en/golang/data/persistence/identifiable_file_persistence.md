@@ -25,8 +25,8 @@ Important points
 
 - **path**: path to the file where data is stored
 
-**options**:
-    - **max_page_size**: maximum number of items returned in a single page (default: 100)
+- **options**:
+	- **max_page_size**: maximum number of items returned in a single page (default: 100)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) (../../../components/log/ilogger) components to pass log messages

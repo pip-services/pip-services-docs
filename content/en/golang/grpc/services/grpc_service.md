@@ -13,16 +13,16 @@ description: >
 The GrpcService class allows you to create services that receive remote calls via the GRPC protocol.
 
 #### Configuration parameters
-**dependencies**:   
+- **dependencies**:   
     - **endpoint**: override for GRPC Endpoint dependency    
     - **controller**: override for Controller dependency    
-**connection(s)**:    
+- **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
     - **protocol**: connection protocol: http or https    
     - **host**: host name or IP address    
     - **port**: port number   
     - **uri**: resource URI or connection string with all parameters in it    
-**credentials**:   
+- **credentials**:   
     - **ssl_key_file**: SSL private key in PEM    
     - **ssl_crt_file**: SSL certificate in PEM    
     - **ssl_ca_file**: certificate authorities (root cerfiticates) in PEM    

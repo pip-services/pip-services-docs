@@ -25,7 +25,7 @@ Important points
 
 - **path**: path to the file where data is stored
 
-**options**:
+- **options**:
     - **max_page_size**: maximum number of items returned in a single page (default: 100)
 
 #### References

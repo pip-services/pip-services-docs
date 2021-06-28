@@ -24,10 +24,10 @@ GRPC-based remote interface.
 
 #### Configuration parameters
 
-**dependencies**:    
+- **dependencies**:    
     - **endpoint**: override for HTTP Endpoint dependency    
     - **controller**: override for Controller dependency    
-**connection(s)**:    
+- **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
     - **protocol**: connection protocol: http or https    
     - **host**: host name or IP address    

@@ -19,14 +19,14 @@ Creates a new instance and initalizes it with elements from the specified map.
 
 > `public` FilterParams(IDictionary\<string, string\> map)
 
-- **map**: IDictionary\<string, string\> - a map to initialize this instance.
+- **map**: IDictionary\<string, string\> - map to initialize this instance.
 
 
 Creates a new instance and initalizes it with elements from the specified map.
 
 > `public` FilterParams([AnyValueMap](../any_value_map) map)
 
-- **map**: [AnyValueMap](../any_value_map) - a map to initialize this instance.
+- **map**: [AnyValueMap](../any_value_map) - map to initialize this instance.
 
 Creates a new instance and initalizes it with elements from the specified map.
 
@@ -42,7 +42,7 @@ See [StringValueMap.FromString](../string_value_map/#fromstring)
 > `public static` [FilterParams]() FromString(string line)
 
 - **line**: string - semicolon-separated key-value list to initialize FilterParams.
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **returns**: [FilterParams]() - newly created FilterParams.
 
 
 #### FromTuples
@@ -50,17 +50,17 @@ Creates a new FilterParams from a list of key-value pairs called tuples.
 
 > `public static` [FilterParams]() FromTuples(params object[] tuples)
 
-- **tuples**: object[] - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **tuples**: object[] - list of values where odd elements are keys and the following even elements are values
+- **returns**: [FilterParams]() - newly created FilterParams.
 
 
 #### FromValue
-Converts specified value into FilterParams.
+Converts a specified value to FilterParams.
 
 > `public static` [FilterParams]() FromValue(object value)
 
 - **value**: object - value to be converted
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **returns**: [FilterParams]() - newly created FilterParams.
 
 
 ### Examples

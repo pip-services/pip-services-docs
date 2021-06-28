@@ -7,5 +7,5 @@ description: >
     Helper class used to extract and process search tags from objects.
 
 
-    **TODO: this class is not realized yet for this language**
+    **Note: this class is not available for this language**
 ---

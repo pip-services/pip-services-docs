@@ -145,7 +145,7 @@ func NewHelloWorldRestService() *HelloWorldRestService {
 
 ```
 
-Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](TODO/add/link) for more on how this mechanism works.
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
 
 We also need to set a base route in the service’s constructor using the _baseRoute property. As a result, the microservice’s full REST request will look something like:
 

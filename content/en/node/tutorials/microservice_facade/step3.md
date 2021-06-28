@@ -245,10 +245,6 @@ export class SessionsOperationsV1  extends RestOperations {
             if (err) 
                 this.sendError(req, res, err);
             else {
-                // Set cookie with session id
-                //if (session && this._cookieEnabled)
-                    ////res.cookie(this._cookie, session.id, { maxAge: this._maxCookieAge });
-                    //res.headers['Set-Cookie'] = this._cookie + '=' + session.id; // Todo: add max age
 
                 res.json(session);
             }
@@ -264,7 +260,6 @@ export class SessionsOperationsV1  extends RestOperations {
         async.series([
             // Validate password first
             (callback) => {
-                // Todo: complete implementation after validate password is added
                 callback();
             },
             // Create account

@@ -19,8 +19,8 @@ Example: 1 chance out of 3 chances (or 33.3%)
 
 > `public static` bool Chance(float chance, float maxChances)
 
-- **chance**: float - a chance proportional to maxChances.
-- **maxChances**: float - a maximum number of chances
+- **chance**: float - chance proportional to maxChances.
+- **maxChances**: float - maximum number of chances
 - **returns**: bool - true or false for settled chance
 
 #### NextBoolean
@@ -28,7 +28,7 @@ Generates a random boolean value.
 
 > `public static` bool NextBoolean()
 
-- **returns**: bool - a random boolean.
+- **returns**: bool - random boolean.
 
 ### Examples
 

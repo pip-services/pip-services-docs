@@ -19,12 +19,12 @@ Important points:
 
 #### NextDate
 Generates a random DateTime in the range ['2000, 1, 1', 'maxYear']. 
-This method generate dates without time(or time set to 00:00:00)
+This method generates dates without time(or time set to 00:00:00)
 
 > `public static` DateTime NextDate(DateTime max)
 
 - **max**: DateTime  - max range value
-- **returns**: DateTime  - a random DateTime value.
+- **returns**: DateTime  - random DateTime value.
 
 #### NextDate
 Generates a random DateTime in the range ['minYear', 'maxYear']. 
@@ -34,7 +34,7 @@ This method generate dates without time(or time set to 00:00:00)
 
 - **min**: DateTime  - (optional) minimum range value
 - **max**: DateTime  - max range value
-- **returns**: DateTime  - a random DateTime value.
+- **returns**: DateTime  - random DateTime value.
 
 #### NextDateTime
 Generates a random DateTime and time in the range ['2000, 1, 1', 'maxYear']. 
@@ -43,7 +43,7 @@ This method generate dates without time(or time set to 00:00:00)
 > `public static` DateTime NextDateTime(DateTime max)
 
 - **max**: DateTime - max range value
-- **returns**: DateTime - a random DateTime and time value.
+- **returns**: DateTime - random DateTime and time value.
 
 #### NextDateTime
 Generates a random DateTime and time in the range ['minYear', 'maxYear']. 
@@ -53,7 +53,7 @@ This method generate dates without time(or time set to 00:00:00)
 
 - **min**: DateTime - (optional) minimum range value
 - **max**: DateTime - max range value
-- **returns**: DateTime - a random DateTime and time value.
+- **returns**: DateTime - random DateTime and time value.
 
 
 #### NextTime
@@ -62,7 +62,7 @@ Generates a random TimeSpan in the range ['0', 'maxTime'].
 > `public static` TimeSpan NextTime(long max)
 
 - **max**: long - max range value
-- **returns**: TimeSpan - a random TimeSpan value.
+- **returns**: TimeSpan - random TimeSpan value.
 
 
 #### NextTime
@@ -72,7 +72,7 @@ Generates a random TimeSpan in the range ['minTime', 'maxTime'].
 
 - **min**: long - minimum range value
 - **max**: long - max range value
-- **returns**: TimeSpan - a random TimeSpan value.
+- **returns**: TimeSpan - random TimeSpan value.
 
 
 #### UpdateDateTime
@@ -80,18 +80,18 @@ Updates (drifts) a DateTime value.
 
 > `public static` DateTime UpdateDateTime(DateTime value)
 
-- **value**: DateTime - a DateTime value to drift.
-- **returns**: DateTime - an updated ZonedDateTime and time value.
+- **value**: DateTime - DateTime value to drift.
+- **returns**: DateTime - updated ZonedDateTime and time value.
 
 
 #### UpdateDateTime
-Updates (drifts) a ZonedDateTime value within specified range defined
+Updates (drifts) a ZonedDateTime value within a specified range.
 
 > `public static` DateTime UpdateDateTime(DateTime value, long range)
 
-- **value**: DateTime - a DateTime value to drift.
-- **range**: long  - (optional) a range in milliseconds. Default: 10 days
-- **returns**: DateTime - an updated DateTime and time value.
+- **value**: DateTime - DateTime value to drift.
+- **range**: long  - (optional) range in milliseconds. Default: 10 days
+- **returns**: DateTime - updated DateTime and time value.
 
 ### Examples
 

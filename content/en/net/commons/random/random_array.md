@@ -20,17 +20,17 @@ Picks a random element from specified array.
 
 > `public static` T Pick\<T\>(T[] values)
 
-- **values**: T[] - an array of any type
-- **returns**: T - a randomly picked item.
+- **values**: T[] - array of any type
+- **returns**: T - randomly picked item.
 
 #### Pick
 Picks a random element from specified list.
-**T** - the class type
+**T** - class type
 
 > `public static` T Pick\<T\>(List\<T\> values)
 
-- **values**: List\<T\> - an array of any type
-- **returns**: T - a randomly picked item.
+- **values**: List\<T\> - array of any type
+- **returns**: T - randomly picked item.
 
 ### Examples
 

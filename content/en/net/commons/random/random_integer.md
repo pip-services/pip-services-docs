@@ -48,28 +48,28 @@ Generates a random sequence of integers starting from 0 like: [0,1,2,3...??]
 > `public static` List/<int/> Sequence(int min, int max)
 
 - **min**: int - minimum value of the integer that will be generated. 
-If 'max' isomitted, then 'max' is set to 'min' and 'min' is set to 0.
+If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 - **max**: int - (optional) maximum value of the integer that will be generated.
 Defaults to 'min' if omitted.
 - **returns**: List\<int\> - generated array of integers.
 
 
 #### UpdateInteger
-Updates (drifts) a integer value without specified range defined
+Updates (drifts) an integer value without a defined range.
 
 > `public static` int UpdateInteger(int value)
 
-- **value**: int - a integer value to drift.
+- **value**: int - integer value to drift.
 - **returns**: int - updated integer value.
 
 
 #### UpdateInteger
-Updates (drifts) a integer value within specified range defined
+Updates (drifts) an integer value within specified range defined.
 
 > `public static` int UpdateInteger(int value, int range)
 
-- **value**: int - a integer value to drift.
-- **range**: int - (optional) a range. Default: 10% of the value
+- **value**: int - integer value to drift.
+- **range**: int - (optional) range. Default: 10% of the value
 - **returns**: int - updated integer value.
 
 ### Examples

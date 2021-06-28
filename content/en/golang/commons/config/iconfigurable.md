@@ -31,8 +31,21 @@ Configures component by passing configuration parameters.
 ### Examples
 
 ```go
-TODO: add example
+type MyStruct struct  {
+     myParam string 
+}
 
+func NewMyStruct() *MyStruct {
+    return &MyStruct{
+        myParam: "default value",
+    },
+}
+
+// Implement configure
+func (c* MyStruct) Configure(config *cconf.ConfigParams)  {
+    c.myParam = config.GetAsStringWithDefault("options.param", myParam);
+    ...
+}
 ```
 ### See also
 - #### [ConfigParams](../config_params)

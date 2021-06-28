@@ -23,7 +23,20 @@ Important points:
 ### Examples
 
 ```go
-TODO: add example
+type MyClass struct {
+	myParam string
+}
+
+func NewMyClass() *MyClass {
+    return &MyClass{
+        myParam: "default args",
+    },
+}
+// Implement configure
+func (c * MyClass) Configure(config *cconf.ConfigParams)  {
+    c.myParam = config.GetAsStringWithDefault("options.param", myParam);
+	...
+}
 ```
 
 

@@ -34,16 +34,16 @@ If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 
 
 #### Sequence
-Generates a random sequence of longs starting from 0 like: [0,1,2,3...??]
+Generates a random sequence of longs starting from 0, like: [0,1,2,3...??]
 
 > `public static` List\<long\> Sequence(long size)
 
-- **size**: long - size of sequence
+- **size**: long - size of the sequence
 - **returns**: List\<long\> - generated array of longs.
 
 
 #### Sequence
-Generates a random sequence of longs starting from 0 like: [0,1,2,3...??]
+Generates a random sequence of longs starting from 0, like: [0,1,2,3...??]
 
 > `public static` List/<long/> Sequence(long min, long max)
 
@@ -54,21 +54,21 @@ If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 
 
 #### UpdateInteger
-Updates (drifts) a long value without specified range defined
+Updates (drifts) a long value without a defined range.
 
 > `public static` long UpdateInteger(long value)
 
-- **value**: long - a long value to drift.
+- **value**: long - long value to drift.
 - **returns**: long - updated long value.
 
 
 #### UpdateInteger
-Updates (drifts) a long value within specified range defined
+Updates (drifts) a long value within a specified range.
 
 > `public static` long UpdateInteger(long value, long range)
 
-- **value**: long - a long value to drift.
-- **range**: long - (optional) a range. Default: 10% of the value
+- **value**: long - long value to drift.
+- **range**: long - (optional) range. Default: 10% of the value
 - **returns**: long - updated long value.
 
 ### Examples

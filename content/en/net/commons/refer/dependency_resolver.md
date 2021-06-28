@@ -35,7 +35,7 @@ See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 
 > `public` DependencyResolver([ConfigParams](../../config/config_params) config)
 
-- **config**: [ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
+- **config**: [ConfigParams](../../config/config_params) - (optional) default configuration where key is a dependency name and value is its locator (descriptor)
 
 
 Creates a new instance of the dependency resolver.
@@ -58,58 +58,58 @@ Finds all matching dependencies by their name.
 
 > `public` List\<object\> Find(string name, bool required)
 
-- **name**: string - the dependency name to locate.
+- **name**: string - dependency name to locate.
 - **required**: bool - true to raise an exception when no dependencies are found.
-- **returns**: List\<object\> - a list of found dependencies
+- **returns**: List\<object\> - list of found dependencies
 
 #### Find
 Finds all matching dependencies by their name and matching to the specified type.
-**T** - the class type
+**T** - class type
 
 
 > `public` List\<T\> find\<T\>(string name, bool required)
 
-- **name**: string - the dependency name to locate.
+- **name**: string - dependency name to locate.
 - **required**: bool - true to raise an exception when no dependencies are found.
-- **returns**: List\<T\> - a list of found dependencies
+- **returns**: List\<T\> - list of found dependencies
 
 #### GetOneOptional
 Gets one optional dependency by its name.
 
 > `public` object GetOneOptional(name: string)
 
-- **name**: string - the dependency name to locate.
-- **returns**: object - a dependency reference or null of the dependency was not found
+- **name**: string - dependency name to locate.
+- **returns**: object - dependency reference or null if the dependency was not found
 
 #### GetOneOptional
 Gets one optional dependency by its name and matching to the specified type.
-**T** - the class type
+**T** - class type
 
 > `public` T GetOneOptional\<T\>(string name)
 
-- **name**: string - the dependency name to locate.
-- **returns**: T - a dependency reference or null of the dependency was not found
+- **name**: string - dependency name to locate.
+- **returns**: T - dependency reference or null if the dependency was not found
 
 #### GetOneRequired
 Gets one required dependency by its name. 
-At least one dependency must present.If the dependency was found it throws a 
+At least one dependency must present. If the dependency was found, it throws a 
 [ReferenceException](../reference_exception)
 
 > `public` object GetOneRequired\<T\>(string name)
 
-- **name**: string - the dependency name to locate.
-- **returns**: object - a dependency reference
+- **name**: string - dependency name to locate.
+- **returns**: object - dependency reference
 
 #### GetOneRequired
 Gets one required dependency by its name and matching to the specified type. 
 At least one dependency must present. 
-If the dependency was found it throws a [ReferenceException](../reference_exception)
+If the dependency was found, it throws a [ReferenceException](../reference_exception)
 **T** - the class type.
 
 > `public` T GetOneRequired\<T\>(string name)
 
 - **name**: string - the dependency name to locate.
-- **returns**: T - a dependency reference
+- **returns**: T - dependency reference
 
 
 #### GetOptional
@@ -117,8 +117,8 @@ Gets all optional dependencies by their name.
 
 > `public` List\<T\> GetOptional(string name)
 
-- **name**: string - the dependency name to locate.
-- **returns**: List\<T\> - a list with found dependencies or empty list of no dependencies was found.
+- **name**: string - dependency name to locate.
+- **returns**: List\<T\> - list with found dependencies or empty list of no dependency was found.
 
 
 #### GetOptional
@@ -128,30 +128,30 @@ Gets all optional dependencies by their name.
 > `public` List\<T\> GetOptional\<T\>(string name)
 
 - **name**: string - the dependency name to locate.
-- **returns**: List\<T\> - a list with found dependencies or empty list of no dependencies was found.
+- **returns**: List\<T\> - list with found dependencies or empty list of no dependency was found.
 
 #### GetRequired
 Gets all required dependencies by their name. 
 At least one dependency must present.
-If no dependencies was found it throws a[ReferenceException](../reference_exception).
+If no dependency was found, it throws a[ReferenceException](../reference_exception).
 
 > `public` List\<object\> GetRequired(string name)
 
-- **name**: string - the dependency name to locate.
-- **returns**: List\<T\> - a list with found dependencies.
+- **name**: string - dependency name to locate.
+- **returns**: List\<T\> - list with found dependencies.
 
 
 #### GetRequired
 Gets all required dependencies by their name.
 At least one dependency must be present.
-If no dependencies was found it throws a [ReferenceException](../reference_exception).
-**T** - the class type
+If no dependency was found it throws a [ReferenceException](../reference_exception).
+**T** - class type
 
 
 > `public` List\<T\> GetRequired\<T\>(string name)
 
-- **name**: string - the dependency name to locate.
-- **returns**: List\<T\> - a list with found dependencies.
+- **name**: string - dependency name to locate.
+- **returns**: List\<T\> - list with found dependencies.
 
 
 #### Put
@@ -159,8 +159,8 @@ Adds a new dependency into this resolver.
 
 > `public` void Put(string name, object locator)
 
-- **name**: string - the dependency's name.
-- **locator**: object - the locator to find the dependency by.
+- **name**: string - dependency's name.
+- **locator**: object - locator used to find the dependency.
 
 #### SetReferences
 Sets the component references. References must match configured dependencies.
@@ -172,13 +172,13 @@ Sets the component references. References must match configured dependencies.
 ### Static methods
 
 #### FromTuples
-Creates a new DependencyResolver from a list of key-value pairs called tuples
+Creates a new DependencyResolver from a list of key-value pairs called tuples,
 where key is dependency name and value the depedency locator (descriptor).
 
 > `public static` [DependencyResolver]() FromTuples(params object[] tuples)
 
-- **tuples**: object[] - a list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
-- **returns**: [DependencyResolver]() - a newly created DependencyResolver.
+- **tuples**: object[] - list of values where odd elements are dependency names and the following even elements are dependency locators (descriptor)
+- **returns**: [DependencyResolver]() - newly created DependencyResolver.
 
 ### Examples
 

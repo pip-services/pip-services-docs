@@ -14,7 +14,7 @@ The RandomInteger class allows you to generate random long values.
 ### Static methods
 
 #### NextLong
-Generates a random long value in the range to "max".
+Generates a random long value in the range to "max". 
 
 > `public static` long NextLong(long maxValue)
 

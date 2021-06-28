@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The INamed interface is used to define data objects containing a human-readable name.
+The INamed interface is used to define data objects that have a human-readable name.
 
 ### Properties
 

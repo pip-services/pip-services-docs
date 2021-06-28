@@ -10,7 +10,7 @@ description: >
 ### Description
 The Descriptor class provides you with a component locator. This locator is often used in the PipServices toolkit. It locates components using the following fields:
 
-- **Group:** a package or just named group of components, like "pip-services". 
+- **Group:** package or just named group of components, like "pip-services". 
 - **Type:** logical component type that defines it's contract, like "persistence" .
 - **Kind:** physical implementation type, like "mongodb".  
 - **Name:** unique component name, like "default".  
@@ -18,7 +18,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 
 Important points
 
-- The locator matching can be done by all or only few selected fields. 
+- The locator matching can be done by all or only a few selected fields. 
 - The fields that shall be excluded from the matching must be set to *"*"* or *null*.
 - This approach allows to implement many interesting scenarios. For instance:
     - Locate all loggers (match by type and version)  
@@ -30,11 +30,11 @@ Creates a new instance of the descriptor.
 
 > `public` Descriptor(string group, string type, string kind, string name, string version)
 
-- **group**: string - a logical component group
-- **type**: string - a logical component type or contract
-- **kind**: string - a component implementation type
-- **name**: string - a unique component name
-- **version**: string - a component implementation version
+- **group**: string - logical component group
+- **type**: string - logical component type or contract
+- **kind**: string - component implementation type
+- **name**: string - unique component name
+- **version**: string - component implementation version
 
 
 ### Properties
@@ -66,12 +66,12 @@ Gets the component's implementation version.
 
 #### Equals
 Compares this descriptor to a value.
-If value is a Descriptor it tries to match them,
-otherwise the method returns false.
+If value is a Descriptor, it tries to match them;
+otherwise, the method returns false.
 
 > `public override` bool Equals(object obj)
 
-- **obj**: object - the value to match against this descriptor.
+- **obj**: object - value to match against this descriptor.
 - **returns**: bool - true if the value is matching descriptor and false otherwise.
 
 #### ExactMatch
@@ -80,19 +80,19 @@ No exceptions are made.
 
 > `public` bool ExactMatch([Descriptor]() descriptor)
 
-- **descriptor**: [Descriptor]() - the descriptor to match this one against.
-- **returns**: bool - true if descriptors match and false otherwise. 
+- **descriptor**: [Descriptor]() - descriptor to match this one against.
+- **returns**: bool - true if the descriptors match and false otherwise. 
 
 #### GetHashCode
-TODO add description
+Gets a Hash code
 
 > `public override` int GetHashCode()
 
-- **returns**: int - TODO: add description
+- **returns**: int - Hash code
 
 #### IsComplete
 Checks whether all descriptor fields are set.
-If descriptor has at least one "*" or null field it is considered "incomplete",
+If descriptor has at least one "*" or null field, it is considered "incomplete",
 
 > `public` bool IsComplete()
 
@@ -105,28 +105,28 @@ Fields that contain "*" or null are excluded from the match.
 
 > `public` bool Match([Descriptor]() descriptor)
 
-- **descriptor**: [Descriptor]() the descriptor to match this one against.
-- **returns**: bool - true if descriptors match and false otherwise 
+- **descriptor**: [Descriptor]() descriptor to match this one against.
+- **returns**: bool - true if the descriptors match and false otherwise 
 
 #### ToString
 Gets a string representation of the object.
-The result is a colon-separated list of descriptor fields as
+The result is a colon-separated list of the descriptor's fields as
 *"mygroup:connector:aws:default:1.0"*
 
 > `public override` string ToString()
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 ### Static methods
 
 #### FromString
-Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
+Parses a colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
 > `public static` [Descriptor]() FromString(string value)
 
-- **value**: string - colon-separated descriptor fields to initialize Descriptor.
-- **returns**: [Descriptor]() - a newly created Descriptor.
+- **value**: string - colon-separated descriptor fields used to initialize Descriptor.
+- **returns**: [Descriptor]() - newly created Descriptor.
 
 ### Examples
 

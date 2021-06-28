@@ -38,7 +38,7 @@ Creates an error instance with a bad request error category and assigns its valu
 - **innerException**: Exception - error object
 
 
-Creates an error instance with a bad request error category and assigns its values.
+Creates an error instance.
 
 > `protected` BadRequestException(SerializationInfo info, StreamingContext context)
 

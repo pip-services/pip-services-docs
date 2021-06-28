@@ -29,7 +29,7 @@ Errors related to mistakes in user-defined configurations.
 > `public const` **Misconfiguration**: string = "Misconfiguration"
 	
 #### InvalidState
-Errors caused by incorrect object state.. 
+Errors caused by an incorrect object state. 
 For example: business calls when the component is not ready.
 > `public const` **InvalidState**: string = "InvalidState"
 	
@@ -40,7 +40,7 @@ from other application errors.
 > `public const` **NoResponse**: string = "NoResponse"
 
 #### FailedInvocation	
-Errors caused by remote calls failed due to unidenfied reasons.
+Errors caused by remote calls that failed due to unidenfied reasons.
 > `public const` **FailedInvocation**: string = "FailedInvocation"
 
 #### FileError

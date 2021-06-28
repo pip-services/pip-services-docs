@@ -4,7 +4,7 @@
     let btn = document.createElement('a')
     btn.innerHTML = '<i class="fas fa-angle-left pr-2"></i> Back';
     btn.className = "btn ml-3"
-    btn.onclick = () => history.back(-1);
+    btn.onclick = () => history.length > 2 ? history.back(-1) : document.location.href = "/";
 
     sideBarEl.append(btn);
 </script>

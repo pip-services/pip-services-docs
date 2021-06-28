@@ -32,7 +32,13 @@ function loadNavbar(event) {
         })
     }
     
-    localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
+    // get current active or Home by default
+    if (document.getElementsByClassName('nav-link active dropdown-item')[0] == undefined){
+        localStorage['currentMenuActiveItem'] = "Home";
+    } else {
+        localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
+    }
+    
     
 
     if (localStorage['openNav'] === 'true') {

@@ -31,7 +31,7 @@ Creates a new instance of the projection parameters and assigns its value.
 
 > `public` ProjectionParams([AnyValueArray](../any_value_array) values)
 
-- **values**: [AnyValueArray](../any_value_array) - (optional) values to initialize this object.
+- **values**: [AnyValueArray](../any_value_array) - (optional) values used to initialize this object.
 
 
 Creates a new instance of the projection parameters.
@@ -48,37 +48,37 @@ The result is a comma-separated list of projection fields
 
 > `public override` string ToString()
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 ### Static methods
 
 #### FromValue
-Converts specified value into ProjectionParams.  
+Converts a specified value to ProjectionParams.  
 See [AnyValueArray.FromValue](../any_value_array/#fromvalue)
 
 > `public static` [ProjectionParams]() FromValue(object value)
 
 - **value**: object -  value to be converted
-- **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [ProjectionParams]() - newly created ProjectionParams.
 
 
 #### FromValues
-Parses comma-separated list of projection fields.
+Parses a comma-separated list of projection fields.
 
 > `public static` [ProjectionParams]() FromValues(params string[]  value)
 
 - **value**: string[] - one or more comma-separated lists of projection fields
-- **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [ProjectionParams]() - newly created ProjectionParams.
 
 
 #### FromValues
-Parses comma-separated list of projection fields.
+Parses a comma-separated list of projection fields.
 
 > `public static` [ProjectionParams]() FromValues(char delimiter, params string[]  value)
 
-- **delimiter**: char - a certain type of delimiter
+- **delimiter**: char - certain type of delimiter
 - **value**: string[] - one or more comma-separated lists of projection fields
-- **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [ProjectionParams]() - newly created ProjectionParams.
 
 
 ### Examples

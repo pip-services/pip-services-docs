@@ -7,7 +7,7 @@ description: >
     Interface for data objects that can be uniquely identifed by a string id. 
 
 
-    The interface extends [IIdentifiable](../iidentifiable) to hardcode id type to string.
+   
 
 ---
 
@@ -15,7 +15,7 @@ description: >
 
 ### Description
 
-The IIdentifiable interface extends [IIdentifiable](../iidentifiable) to hardcode id type to string.
+The IStringIdentifiable interface extends hte [IIdentifiable](../iidentifiable) interface hardcode id type to string.
 
 Important points
 

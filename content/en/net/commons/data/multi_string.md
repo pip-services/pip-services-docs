@@ -7,5 +7,5 @@ description: >
     Class used to create objects that contain string translations for multiple languages.
 
 
-    **TODO: this class is not realized yet for this language**
+    **Note: this class is not available for this language**
 ---

@@ -17,7 +17,7 @@ The INamed interface is used to define data objects that have a human-readable n
 
 #### Name
 The object's humand-readable name.
-> string Name [ get, set ]
+> string Name { get; set; }
 
 ### Examples
 ```cs

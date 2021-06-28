@@ -113,7 +113,7 @@ Returns a string with the type name.
 - **returns**: string - name of the type (e.g. 'integer')
 
 
-#### WriteArrayItem
+#### writeArrayItem
 Writes an array item to Swagger code.
 
 > (c [*CommandableSwaggerDocument]()) writeArrayItem(indent int, name string, isObjectItem bool)
@@ -123,7 +123,7 @@ Writes an array item to Swagger code.
 - **isObjectItem**: bool - True is the item is an object. false otherwise.
 
 
-#### WriteAsObject
+#### writeAsObject
 Adds a property and its value.
 
 > (c [*CommandableSwaggerDocument]()) writeAsObject(indent int, name string, value interface{})
@@ -131,6 +131,16 @@ Adds a property and its value.
 - **indent**: int - number of spaces
 - **name**: string - name of the property
 - **value**: interface{} - value of the property
+
+
+#### writeAsString
+Adds a string property and its string value.
+
+> (c [*CommandableSwaggerDocument]()) writeAsString(indent int, name string, value interface{})
+
+- **indent**: int - number of spaces
+- **name**: string - name of the property
+- **value**: string - value of the property
 
 
 #### WriteData

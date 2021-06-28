@@ -48,32 +48,32 @@ Creates a new connection parameters and fills it with values.
 #### UseDiscovery
 Checks if these connection parameters shall be retrieved from DiscoveryService.The connection parameters are redirected to DiscoveryService when discovery_key parameter is set.
 
-> `public` bool UseDiscovery [ get ]
+> `public` bool UseDiscovery { get; }
 
 #### DiscoveryKey
 Gets or sets the key to retrieve this connection from DiscoveryService.
 
-> `public` string 	DiscoveryKey [ get, set ]
+> `public` string 	DiscoveryKey { get; set; }
 
 #### Protocol
 Gets or sets the connection protocol
 
-> `public` string Protocol [ get, set ]
+> `public` string Protocol { get; set; }
 
 #### Host
 Gets or sets the service host name or IP address.
 
-> `public` string Host [ get, set ]
+> `public` string Host { get; set; }
 
 #### Port
 Gets or sets the service port number
 
-> `public` int Port [ get, set ]
+> `public` int Port { get; set; }
 
 #### Uri
 Gets the resource URI or connection string. Usually it includes all connection parameters in it.
 
-> `public` string Uri [ get, set ]
+> `public` string Uri { get; set; }
 
 
 

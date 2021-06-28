@@ -33,14 +33,14 @@ Creates an empty CommandSet object.
 Gets all commands registered in this command set.
 See [ICommand](../icommand).
 
-> `public` List<[ICommand](../icommand)> Commands [ get ]
+> `public` List<[ICommand](../icommand)> Commands { get; }
 
 
 #### Events
 Gets all events registred in this command set.  
 See [IEvent](../ievent)
 
-> `public` List<[IEvent](../ievent)> Events()
+> `public` List<[IEvent](../ievent)> Events { get; }
 
 
 ### Instance methods

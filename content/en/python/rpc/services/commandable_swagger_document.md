@@ -124,6 +124,16 @@ Adds a property and its value.
 - **value**: Any - value of the property
 
 
+#### _write_as_string
+Adds a string property and its string value.
+
+> _write_as_string(indent: int, name: str, value: str)
+
+- **indent**: int - number of spaces
+- **name**: str - name of the property
+- **value**: str - value of the property
+
+
 #### _write_data
 Adds data to the Swagger description.
 

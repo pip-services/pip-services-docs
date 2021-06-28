@@ -22,7 +22,7 @@ Important points
 
 #### Version
 The object's version.
-> string Version [ get, set ]
+> string Version { get; set; }
 
 
 

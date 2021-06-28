@@ -20,7 +20,7 @@ Important points
 
 #### Id
 The unique object identifier of type K.
-> T Id [ get, set ]
+> T Id { get; set; }
 
 ### Examples
 ```cs

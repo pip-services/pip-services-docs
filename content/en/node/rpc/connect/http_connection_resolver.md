@@ -44,7 +44,7 @@ Important points
 Creates a connection resolver.
 > `protected` **_credentialResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) = ConnectionResolver()
 
-#### _credential_resolver
+#### _credentialResolver
 The base credential resolver.
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) = CredentialResolver()
 

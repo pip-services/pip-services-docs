@@ -26,11 +26,11 @@ Important points
 
 #### Name
 Gets the queue name
-> string Name [ get ]
+> string Name { get; }
 
 #### MessagingCapabilities
 Gets the queue capabilities
-> [MessagingCapabilities](../messaging_capabilities) Capabilities [ get ]
+> [MessagingCapabilities](../messaging_capabilities) Capabilities { get; }
 
 ### Instance methods
 

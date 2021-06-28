@@ -33,7 +33,7 @@ Creates a new instance of validation schema.
 Gets and Sets the type of array elements.
 Null means that elements may have any type.
 
-> `public` object ValueType [ get, set ]
+> `public` object ValueType { get; set; }
 
 ### Instance methods
 

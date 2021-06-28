@@ -50,7 +50,7 @@ TODO: add description
 #### Component
 TODO: add description
 
-> `public abstract` string Component [ get ]
+> `public abstract` string Component { get; }
 
 
 

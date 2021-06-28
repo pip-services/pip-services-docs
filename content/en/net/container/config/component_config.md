@@ -20,15 +20,15 @@ Important points
 
 #### Descriptor
 Component's descriptor (locator).
-> `public` [Descriptor](../../../commons/refer/descriptor)  Descriptor [ get, set ]
+> `public` [Descriptor](../../../commons/refer/descriptor)  Descriptor { get; set; }
 
 #### Type
 Component's type descriptor.
-> `public` [TypeDescriptor](../../../commons/reflect/type_descriptor) Type [ get, set ]
+> `public` [TypeDescriptor](../../../commons/reflect/type_descriptor) Type { get; set; }
 
 #### Config
 Component's configuration parameters.
-> `public` [ConfigParams](../../../commons/config/config_params) Config [ get, set ]
+> `public` [ConfigParams](../../../commons/config/config_params) Config { get; set; }
 
 
 ### Constructors

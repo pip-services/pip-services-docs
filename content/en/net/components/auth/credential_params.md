@@ -51,34 +51,34 @@ Creates an empty instance of credential parameters.
 Checks if these credential parameters shall be retrieved from [ICredentialStore](../icredential_store).
 The credential parameters are redirected to [ICredentialStore](../icredential_store) when store_key parameter is set.
 
-> `public` bool UseCredentialStore [ get ]
+> `public` bool UseCredentialStore { get; }
 
 #### StoreKey
 Gets and sets the key to retrieve these credentials from [ICredentialStore](../icredential_store).
 If this key is null, then all parameters are already present.
 
-> `public` string StoreKey [ get, set ]
+> `public` string StoreKey { get; set; }
 
 #### Username
 Gets and sets the user name. The value can be stored in parameters "username" or "user".
 
-> `public` string Username [ get, set ]
+> `public` string Username { get; set; }
 
 #### Password
 Gets and sets the user password. The value can be stored in parameters "password" or "pass".
 
-> `public` string Password [ get, set ]
+> `public` string Password { get; set; }
 
 #### AccessId
 Gets and sets the application access id. The value can be stored in parameters "access_id" pr "client_id"
 
-> `public` string AccessId [ get, set ]
+> `public` string AccessId { get; set; }
 
 #### AccessKey
 Gets and sets the application secret key.
 The value can be stored in parameters "access_key", "client_key" or "secret_key".
 
-> `public` string AccessKey [ get, set ]
+> `public` string AccessKey { get; set; }
 
 
 ### Static methods

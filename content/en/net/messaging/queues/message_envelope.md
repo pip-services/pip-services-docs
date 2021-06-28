@@ -54,30 +54,30 @@ type to the data being sent/received.
 #### CorrelationId
 The unique business transaction id that is used to trace calls across components.
 
-> `public` string CorrelationId [ get, set ]
+> `public` string CorrelationId { get; set; }
 
 #### Message
 The stored message.
 
-> `public` byte[] Message [ get, set ]
+> `public` byte[] Message { get; set; }
 
 #### MessageId
 The message's auto-generated ID.
 
-> `public` string MessageId [ get, set ]
+> `public` string MessageId { get; set; }
 
 #### MessageType
 String value that defines the stored message's type.
 
-> `public` string MessageType [ get, set ]
+> `public` string MessageType { get; set; }
 
 #### SentTime
 The time at which the message was sent.
 
-> `public` DateTime SentTime [ get, set ]
+> `public` DateTime SentTime { get; set; }
 
 #### MessageBase64
-Used for serialization [ get, set ]
+Used for serialization { get; set; }
 
 > `public` string MessageBase64
 

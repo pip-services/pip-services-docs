@@ -16,7 +16,7 @@ The HttpRequestDetector class allows you to retrieve parameters from HTTP reques
 #### detectAddress
 Detects the IP address from where the given HTTP request was received.
 
-> `static` detectAddress(req: any): string
+> `public static` detectAddress(req: any): string
 
 - **req**: any - HTTP request to process.
 - **returns**: string - detected IP address (without a port). If no IP is detected - *null* will be returned.
@@ -25,7 +25,7 @@ Detects the IP address from where the given HTTP request was received.
 #### detectBrowser
 Detects the browser (using "user-agent") from where the given HTTP request was made.
 
-> `static` detectBrowser(req: any) -> string
+> `public static` detectBrowser(req: any) -> string
 
 - **req**: any - HTTP request to process.
 - **returns**: string - detected browser. Detectable browsers: "chrome", "msie", "firefox", "safari". Otherwise - "unknown" will be returned.
@@ -34,7 +34,7 @@ Detects the browser (using "user-agent") from where the given HTTP request was m
 #### detectPlatform
 Detects the platform (using "user-agent") from which the given HTTP request was made.
 
-> `static` detectPlatform(req: any): string
+> `public static` detectPlatform(req: any): string
 
 - **req**: any - HTTP request to process.
 - **returns**: string - detected platform and version. Detectable platforms: "mobile", "iphone",
@@ -45,7 +45,7 @@ be returned.
 #### detectServerHost
 Detects the host name of the request's destination server.
 
-> `static` detectServerHost(req: any): string
+> `public static` detectServerHost(req: any): string
 
 - **req**: any - HTTP request to process.
 - **returns**: string - destination server's host name.
@@ -54,7 +54,7 @@ Detects the host name of the request's destination server.
 #### detectServerPort
 Detects the request's destination port number.
 
-> `static` detectServerPort(req: any): string
+> `public static` detectServerPort(req: any): string
 
 - **req**: any - HTTP request to process.
 - **returns**: string - detected port number or *80* (if none are detected).

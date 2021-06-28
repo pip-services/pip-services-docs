@@ -33,7 +33,7 @@ Creates a new instance of the config reader.
 #### Path
 Gets and sets the path to configuration file.
 
-> `public` string Path [ get, set ]
+> `public` string Path { get; set; }
 
 
 ### Instance methods

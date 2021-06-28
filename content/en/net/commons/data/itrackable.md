@@ -18,15 +18,15 @@ The ITrackagle interface allows you to define data objects that can track their 
 
 #### CreatedTime
 UTC time at which the object was created.
-> DateTime CreatedTime [ get, set ]
+> DateTime CreatedTime { get; set; }
 
 #### LastChangeTime
 UTC time at which the object was last changed (created, updated, or deleted).
-> DateTime LastChangeTime [ get, set ]
+> DateTime LastChangeTime { get; set; }
 
 #### IsDeleted
 Logical deletion flag. True when object is deleted and null or false otherwise
-> bool IsDeleted [ get, set ]
+> bool IsDeleted { get; set; }
 
 
 ### Examples

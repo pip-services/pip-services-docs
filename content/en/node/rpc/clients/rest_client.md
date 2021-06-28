@@ -180,7 +180,7 @@ It returns a Timing object that is used to end the time measurement.
 #### isOpen
 Checks if the component is open.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - True if the component is open and False otherwise.
 

@@ -17,7 +17,7 @@ The ILogger interface provides a set of methods for logger components that captu
 #### Level
 Gets or sets the maximum log level. Messages with higher log level are filtered out.
 
-> [LogLevel](../log_level) Level [ get, set ]
+> [LogLevel](../log_level) Level { get; set; }
 
 
 ### Instance methods

@@ -4,12 +4,12 @@ title: "InstrumentTiming"
 linkTitle: "InstrumentTiming"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 description: >
-    Creates logs, counters and timings for methods that call  _instrument.
+    Creates logs, counters and timings for methods that call  instrument.
 ---
 
 ### Description
 
-The InstrumentTiming class allows you to create logs, countes and timings for methods that call _instrument.
+The InstrumentTiming class allows you to create logs, countes and timings for methods that call instrument.
 
 ### Constructors
 Creates a new instance of InstrumentTiming.

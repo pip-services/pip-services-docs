@@ -24,11 +24,11 @@ Creates a new instance and assigns its values.
 
 #### Name
 Field name to sort by
-> `public` string Name [ get, set ]
+> `public` string Name { get; set; }
 
 #### Ascending
 Flag used to define sorting order. True to sort ascending, false to sort descending
-> `public` Ascending [ get, set ]
+> `public` Ascending { get; set; }
 
 
 ### Examples

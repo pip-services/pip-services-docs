@@ -23,7 +23,7 @@ Important points
 #### isOpen
 Checks if the component is opened.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - true if the component has been opened and false otherwise.
 

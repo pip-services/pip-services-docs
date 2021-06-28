@@ -68,7 +68,7 @@ Helper class that handles HTTP-based responses.
 
 
 #### [InstrumentTiming](instrument_timing)
-Creates logs, counters and timings for methods that call _instrument.
+Creates logs, counters and timings for methods that call instrument.
 
 
 #### [RestOperations](rest_operations)

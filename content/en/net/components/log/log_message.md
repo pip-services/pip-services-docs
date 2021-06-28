@@ -21,27 +21,27 @@ Important points
 
 #### Time
 The time the message was generated
-> `public` DateTime Time [ get, set ]
+> `public` DateTime Time { get; set; }
 
 #### level
 This log level
-> `public` string Level [ get, set ]
+> `public` string Level { get; set; }
 
 #### Source
 The source (context name)
-> `public` string Source [ get, set ]
+> `public` string Source { get; set; }
 
 #### CorrelationId
 The transaction id to trace execution through a call chain.
-> `public` string CorrelationId [ get, set ]
+> `public` string CorrelationId { get; set; }
 
 #### Error
 The transaction id to trace execution through a call chain.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
-> `public` [ErrorDescription](../../../commons/errors/error_description) Error [ get, set ]
+> `public` [ErrorDescription](../../../commons/errors/error_description) Error { get; set; }
 
 #### Message
 The human-readable message
-> `public` string Message [ get, set ]
+> `public` string Message { get; set; }
 

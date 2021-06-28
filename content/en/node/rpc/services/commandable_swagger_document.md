@@ -123,6 +123,14 @@ Adds a property and its value.
 - **name**: string - name of the property
 - **value**: any - value of the property
 
+#### writeAsString
+Adds a string property and its string value.
+
+> `protected` writeAsString(indent: number, name: string, value: string)
+
+- **indent**: number - number of spaces
+- **name**: string - name of the property
+- **value**: string - value of the property
 
 #### writeData
 Adds data to the Swagger code.

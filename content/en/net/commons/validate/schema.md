@@ -34,12 +34,12 @@ See [IValidationRule](../ivalidation_rule)
 Gets and sets a flag that always requires non-null values.
 For null values it raises a validation error.
 
-> `public` bool IsRequired [ get, set ]
+> `public` bool IsRequired { get; set; }
 
 #### Rules
 Gets and sets validation rules to check values against.
 
-> `public` List<[IValidationRule](../ivalidation_rule)> Rules [ get, set ]
+> `public` List<[IValidationRule](../ivalidation_rule)> Rules { get; set; }
 
 
 ### Instance methods

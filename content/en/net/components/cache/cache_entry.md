@@ -26,7 +26,7 @@ Creates a new instance of the cache entry and assigns its values.
 #### Key
 Gets the key to locate the cached value.
 
-> `public` string Key [ get ]
+> `public` string Key { get; }
 
 #### Value
 Gets the cached value.

@@ -32,13 +32,13 @@ Creates a new validation schema.
 #### Name
 Gets and sets the property name.
 
-> `public` string Name [ get, set ]
+> `public` string Name { get; set; }
 
 #### Type
 Gets and sets the property type.
 The type can be defined as type, type name or [TypeCode](../convert/type_code)
 
-> `public` object Type [ get, set ]
+> `public` object Type { get; set; }
 
 ### Instance methods
 

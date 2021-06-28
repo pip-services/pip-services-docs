@@ -32,13 +32,13 @@ Creates a new instance of validation schema.
 #### KeyType
 Gets and sets the type of map keys.
 Null means that keys may have any type.
-> `public` object KeyType [ get, set ]
+> `public` object KeyType { get; set; }
 
 #### ValueType
 Gets and sets the type of map values.
 Null means that values may have any type.
 
-> `public` object ValueType [ get, set ]
+> `public` object ValueType { get; set; }
 
 
 

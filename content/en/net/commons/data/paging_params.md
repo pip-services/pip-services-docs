@@ -34,15 +34,15 @@ Creates a new instance and sets its values.
 
 #### Skip
 Number of items to skip.
-> `public` long Skip [ get, set ]
+> `public` long Skip { get; set; }
 
 #### Take
 Number of items to return. 
-> `public` long Take [ get, set ]
+> `public` long Take { get; set; }
 
 #### Total
 Flag used to return the total number of items.
-> `public` bool Total [ get, set ]
+> `public` bool Total { get; set; }
 
 
 ### Instance methods

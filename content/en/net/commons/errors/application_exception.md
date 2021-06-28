@@ -62,19 +62,19 @@ TODO: add description
 
 #### BaseMessage
 A human-readable error description (usually written in English)
-> `public` string BaseMessage [ get, set ]
+> `public` string BaseMessage { get; set; }
 
 #### Category
 Standard error category
-> `public` string Category [ get, set ]
+> `public` string Category { get; set; }
 
 #### Status
 HTTP status code associated with this error type
-> `public` int Status = 500 [ get, set ]
+> `public` int Status = 500 { get; set; }
 
 #### Code
 A unique error code
-> `public` string Code = 'UNKNOWN' [ get, set ]
+> `public` string Code = 'UNKNOWN' { get; set; }
 
 #### Details
 A map with additional details that can be used to restore error description in other languages
@@ -82,16 +82,16 @@ A map with additional details that can be used to restore error description in o
 
 #### CorrelationId
 A unique transaction id to trace execution throug call chain
-> `public` string CorrelationId [ get, set ]
+> `public` string CorrelationId { get; set; }
 
 
 #### StackTrace
 Stack trace of the exception
-> `public` string StackTrace [ get, set ]
+> `public` string StackTrace { get; set; }
 
 #### Cause
 Original error wrapped by this exception
-> `public` string Cause [ get, set ]
+> `public` string Cause { get; set; }
 
 
 

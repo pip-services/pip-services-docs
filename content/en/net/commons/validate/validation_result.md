@@ -34,25 +34,25 @@ Creates a new instance of validation result.
 
 #### Path
 Gets and sets dot notation path of the validated element.
-> `public` string Path [ get, set ]
+> `public` string Path { get; set; }
 
 #### Type
 Gets and sets dot notation path of the validated element.
-> `public` [ValidationResultType](../validation_result_type) Type [ get, set ]
+> `public` [ValidationResultType](../validation_result_type) Type { get; set; }
 
 #### Code
 Gets and sets the error code.
-> `public`string Code [ get, set ]
+> `public`string Code { get; set; }
 
 #### Message
 Gets and sets the human readable message.
-> `public`string Message [ get, set ]
+> `public`string Message { get; set; }
 
 #### Expected
 Gets and sets the value expected by schema validation.
-> `public`object Expected [ get, set ]
+> `public`object Expected { get; set; }
 
 #### Actual
 Gets and sets the actual value found by schema validation.
 
-> `public`object Actual [ get, set ]
+> `public`object Actual { get; set; }

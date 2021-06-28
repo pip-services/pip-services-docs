@@ -16,8 +16,8 @@ TODO add description
 
 #### Unique
 TODO add description
-> `public` bool Unique [ get, set ]
+> `public` bool Unique { get; set; }
 
 #### Type
 TODO add description
-> `public` string Type [ get, set ]
+> `public` string Type { get; set; }

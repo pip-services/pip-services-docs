@@ -168,7 +168,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### isOpen
 Checks if the component is open.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 
 - **returns**: boolean - True if the component is open and False otherwise.
 

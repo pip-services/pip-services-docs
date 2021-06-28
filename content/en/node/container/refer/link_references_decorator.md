@@ -36,7 +36,7 @@ Closes the component and frees used resources.
 #### isOpen
 Checks if the component is open.
 
-> isOpen(): boolean
+> `public` isOpen(): boolean
 - **returns**: boolean - True if the component is open and False otherwise.
 
 #### open

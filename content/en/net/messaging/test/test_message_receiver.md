@@ -26,13 +26,13 @@ Creates a TestMessageReceiver component.
 #### messages
 Gets the list of received messages.
 
-> public List<[MessageEnvelope](../message_envelope)> Messages [ get ]
+> public List<[MessageEnvelope](../message_envelope)> Messages { get; }
 
 
 #### MessageCount
 Gets the received message count.
 
-> public int MessageCount [ get ]
+> public int MessageCount { get; }
 
 
 ### Instance methods

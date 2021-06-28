@@ -19,7 +19,7 @@ TODO: add description
 #### Timeout
 TODO: add description
 
-> `public` long Timeout[ get, set ]
+> `public` long Timeout{ get; set; }
 
 ### Instance methods
 

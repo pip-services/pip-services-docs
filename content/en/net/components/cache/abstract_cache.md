@@ -18,7 +18,7 @@ TODO: add description
 
 #### Timeout
 Gets or sets the timeout.
-> `public` long Timeout [ get, set ]
+> `public` long Timeout { get; set; }
 
 
 ### Instance methods

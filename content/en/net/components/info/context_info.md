@@ -47,37 +47,37 @@ Creates a new instance of this context info.
 #### Name
 Gets or sets the context name.
 
-> `public` string Name [ get, set ]
+> `public` string Name { get; set; }
 
 
 #### Description
 Gets or sets the human-readable description of the context.
 
-> `public` string Description [ get, set ]
+> `public` string Description { get; set; }
 
 
 #### ContextId
 Gets or sets the unique context id. Usually it is the current host name.
 
-> `public` string ContextId = null [ get, set ]
+> `public` string ContextId = null { get; set; }
 
 
 #### Properties
 Gets or sets context additional parameters.
 
-> `public` [StringValueMap](../../../commons/data/string_value_map) Properties [ get, set ]
+> `public` [StringValueMap](../../../commons/data/string_value_map) Properties { get; set; }
 
 
 #### StartTime
 Gets or sets the context start time.
 
-> `public` DateTime StartTime = Environment.MachineName [ get, set ]
+> `public` DateTime StartTime = Environment.MachineName { get; set; }
 
 
 #### Uptime
 Calculates the context uptime as from the start time.
 
-> `public` long Uptime = DateTime.UtcNow [ get ]
+> `public` long Uptime = DateTime.UtcNow { get; }
 
 
 ### Instance methods

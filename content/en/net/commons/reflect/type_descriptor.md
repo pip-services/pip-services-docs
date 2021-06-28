@@ -35,12 +35,12 @@ Creates a new instance of the type descriptor.
 #### Name
 Get the name of the object type.
 
-> `public` string Name [ get ]
+> `public` string Name { get; }
 
 #### Library
 Gets the name of the library or module where the object type is defined.
 
-> `public` string Library [ get ]
+> `public` string Library { get; }
 
 
 

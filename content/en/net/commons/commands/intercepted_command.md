@@ -28,13 +28,13 @@ about the interceptor that is being used and the next command in the chain.
 #### Name
 Gets the command name.
 
-> `public` string Name [ get ]
+> `public` string Name { get; }
 
 
 #### Schema
 Gets the command schema.
 
-> public [Schema](../../validate/schema) Schema [ get ]
+> public [Schema](../../validate/schema) Schema { get; }
 
 
 ### Instance methods

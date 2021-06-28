@@ -55,7 +55,7 @@ Data object to store measurement for a performance counter.
 This object is used by [CachedCounters](../cached_counters) to store counters.
 
 
-#### [CounterTiming](timing)
+#### [CounterTiming](counter_timing)
 Callback object returned by [ICounters.BeginTiming](icounters/#begintiming) to end timing
 of execution block and update the associated counter.
 

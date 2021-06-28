@@ -35,31 +35,31 @@ Creates a instance of the data object.
 
 #### Name
 The counter's unique name
-> `public` string Name [ get, set ]
+> `public` string Name { get; set; }
 
 #### Type
 The counter type that defines the measurement algorithm
-> `public` [CounterType](../counter_type) Type [ get, set ]
+> `public` [CounterType](../counter_type) Type { get; set; }
 
 #### Last
 The last recorded value
-> `public` double Last [ get, set ]
+> `public` double Last { get; set; }
 
 #### Min
 The minimum value
-> `public` double Min [ get, set ]
+> `public` double Min { get; set; }
 
 #### Max
 The maximum value
-> `public` double Max [ get, set ]
+> `public` double Max { get; set; }
 
 #### Average
 The average value
-> `public` double Average [ get, set ]
+> `public` double Average { get; set; }
 
 #### Time
 The recorded timestamp
-> `public` DateTime Time [ get, set ]
+> `public` DateTime Time { get; set; }
 
 
 

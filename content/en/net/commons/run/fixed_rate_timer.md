@@ -37,17 +37,17 @@ Creates new instance of the timer with default parameters.
 
 #### Task
 Gets the INotifiable object that receives notifications from this timer.
-> `public` Action Task [ get, set ]
+> `public` Action Task { get; set; }
 
 
 #### Delay
 Gets initial delay before the timer is triggered for the first time.
-> `public` int Delay [ get, set ]
+> `public` int Delay { get; set; }
 
 
 #### Interval
 Gets periodic timer triggering interval.
-> `public` int Interval [ get, set ]
+> `public` int Interval { get; set; }
 
 
 #### IsStarted

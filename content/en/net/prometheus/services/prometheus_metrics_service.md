@@ -2,13 +2,13 @@
 type: docs
 title: "PrometheusMetricsService"
 linkTitle: "PrometheusMetricsService"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet"
 description: >
     Service that exposes the **"/metrics"** and **"/metricsandreset"** routes 
     for Prometheus to obtain performance metrics.
 ---
 
-**Extends:** [RestService](../../../rpc/services/rest_service)
+**Inherits:** [RestService](../../../rpc/services/rest_service)
 
 ### Description
 
@@ -39,35 +39,34 @@ The PrometheusMetricsService class allows you to create services that expose the
 ### Constructors
 Creates a new instance of this service.
 
-> `public` constructor()
+> `public` PrometheusMetricsService()
 
 
 ### Instance methods
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void 
+> `public override` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies. 
 
-#### register
+#### Register
 Registers all service routes in a HTTP endpoint.
 
-> `public` register(): void
+> `public override` void Register()
 
 ### Examples
 
-```typescript
-let service = new PrometheusMetricsService();
-service.configure(ConfigParams.fromTuples(
+```cs
+var service = new PrometheusMetricsService();
+service.Configure(ConfigParams.FromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
-    "connection.port", 8080
-));
+    "connection.port", 8080 ));
 
-await service.open("123");
-console.log("The Prometheus metrics service is accessible at http://+:8080/metrics");
+service.Open("123");
+Console.Out.WriteLine("The Prometheus metrics service is accessible at http://+:8080/metrics");
 ```
 
 ### See also

@@ -49,7 +49,7 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences)) 
 
-- **references**: [IReferences](../../../commons/refer/ireferences)) - references to locate the component dependencies. 
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies. 
 
 #### register
 Registers all service routes in a HTTP endpoint.

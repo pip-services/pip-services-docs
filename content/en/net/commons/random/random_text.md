@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The RandomText class allows you to generate different types of randomt texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
+The RandomText class allows you to generate different types of random texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
 
 
 ### Static methods
@@ -20,7 +20,7 @@ The result value is capitalized.
 
 > `public static` string Adjective() 
 
-- **returns**: string - a random adjective.
+- **returns**: string - random adjective.
 
 #### Color
 Generates a random color name.
@@ -28,22 +28,22 @@ The result value is capitalized.
 
 > `public static` string Color()
 
-- **returns**: string - a random color name.
+- **returns**: string - random color name.
 
 #### Email
 Generates a random email address.
 
 > `public static` string Email()
 
-- **returns**: string - a random email address.
+- **returns**: string - random email address.
 
 #### Name
-Generates a random person's name which has the following structure
+Generates a random person's name, which has the following structure
 \<optional prefix\> \<first name\> \<second name\> \<optional suffix\>
 
 > `public static` string Name()
 
-- **returns**: string - a random name.
+- **returns**: string - random name.
 
 
 #### Phone
@@ -52,28 +52,28 @@ The phone number has the format: (XXX) XXX-YYYY
 
 > `public static` string Phone()
 
-- **returns**: string -  a random phone number.
+- **returns**: string - random phone number.
 
 
 #### Phrase
-Generates a random phrase which consists of few words separated by spaces. 
-The first word is capitalized, others are not.
+Generates a random phrase which consists of a few words separated by spaces. 
+The first word is capitalized, the others are not.
 
 > `public static` string Phrase(int size) 
 
 - **size**: int - (optional) minimum string length.
-- **returns**: string -  a random phrase.
+- **returns**: string -  random phrase.
 
 
 #### Phrase
 Generates a random phrase which consists of few words separated by spaces. 
-The first word is capitalized, others are not.
+The first word is capitalized, the others are not.
 
 > `public static` string Phrase(int minSize, int maxSize)  
 
 - **minSize**: int - (optional) minimum string length.
 - **maxSize**: int -  maximum string length.
-- **returns**: string -  a random phrase.
+- **returns**: string -  random phrase.
 
 
 #### Stuff
@@ -81,7 +81,7 @@ Generates a random noun. The result value is capitalized.
 
 > `public static` string Stuff()
 
-- **returns**: string - a random noun.
+- **returns**: string - random noun.
 
 
 #### Text
@@ -89,8 +89,8 @@ Generates a random text, consisting of first names, last names, colors, stuffs, 
 
 > `public static` string Text(int size)
 
-- **size**: int - the size of text.
-- **returns**: string -  a random text.
+- **size**: int - size of text.
+- **returns**: string - random text.
 
 
 #### Text
@@ -100,7 +100,7 @@ Generates a random text, consisting of first names, last names, colors, stuffs, 
 
 - **minSize**: int - minimum amount of words to generate. Text will contain 'minSize' words if 'maxSize' is omitted.
 - **maxSize**: int -  (optional) maximum amount of words to generate.
-- **returns**: string -  a random text.
+- **returns**: string - random text.
 
 
 #### Verb
@@ -109,7 +109,7 @@ The result value is capitalized.
 
 > `public static` string Verb()
 
-- **returns**: string - a random verb.
+- **returns**: string - random verb.
 
 
 #### Word
@@ -117,16 +117,16 @@ Generates a random word from available first names, last names, colors, stuffs, 
 
 > `public static` string Word()
 
-- **returns**: string - a random word.
+- **returns**: string - random word.
 
 #### Words
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
 > `public static` string Words(int min, int max)
 
-- **min**: int - (optional) a minimum number of words.
-- **max**: int - a maximum number of words.
-- **returns**: string - a random text.
+- **min**: int - (optional) minimum number of words.
+- **max**: int - maximum number of words.
+- **returns**: string - random text.
 
 ### Examples
 

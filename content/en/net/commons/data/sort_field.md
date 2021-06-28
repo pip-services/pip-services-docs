@@ -16,18 +16,18 @@ Creates a new instance and assigns its values.
 
 > `public` SortField(string name = null, bool ascending = true)
 
-- **name**: string - the name of the field to sort by.
+- **name**: string - name of the field to sort by.
 - **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
 
 
 ### Properties
 
 #### Name
-The field name to sort by
+Field name to sort by
 > `public` string Name [ get, set ]
 
 #### Ascending
-The flag to define sorting order. True to sort ascending, false to sort descending
+Flag used to define sorting order. True to sort ascending, false to sort descending
 > `public` Ascending [ get, set ]
 
 

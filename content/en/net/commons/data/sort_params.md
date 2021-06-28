@@ -18,13 +18,13 @@ Creates a new instance and initializes it with specified sort fields.
 
 > `public` SortParams(IEnumerable<[SortField](../sort_field)> fields = null)
 
-- **fields**: IEnumerable<[SortField](../sort_field)> - a list of fields to sort by.
+- **fields**: IEnumerable<[SortField](../sort_field)> - list of fields to sort by.
 
 Creates a new instance and initializes it with specified sort fields.
 
 > `public` SortParams([AnyValueArray](../any_value_array) fields)
 
-- **fields**: [AnyValueArray](../any_value_array) - a list of fields to sort by.
+- **fields**: [AnyValueArray](../any_value_array) - list of fields to sort by.
 
 
 ### Examples

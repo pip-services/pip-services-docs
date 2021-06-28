@@ -16,39 +16,39 @@ The ErrorDescription class is used to pass information about errors between micr
 ### Properties
 
 #### Type
-Data type of the original error 
+Data type of the original error. 
 > `public` string Type { get; set; }
 
 #### Category
-Standard error category 
+Standard error category. 
 > `public` string Category { get; set; }
 
 #### Status
-HTTP status code associated with this error type 
+HTTP status code associated with this error type. 
 > `public` int Status { get; set; }
 
 #### Code
-A unique error code 
+A unique error code. 
 > `public` string Code { get; set; }
 
 #### Message
-A human-readable error description (usually written in English) 
+A human-readable error description (usually written in English). 
 > `public` string Message { get; set; }
 
 #### Details
-A map with additional details that can be used to restore error description in other languages 
+Map with additional details that can be used to restore an error description in other languages. 
 > `public` [StringValueMap](../../data/string_value_map) Details { get; set; }
 
 #### CorrelationId
-A unique transaction id to trace execution throug call chain    
+A unique transaction id to trace execution throug call chain.    
 > `public` string CorrelationId { get; set; }
 
 #### Cause
-Original error wrapped by this exception  
+Original error wrapped by this exception.  
 > `public` string Cause { get; set; }
 
 #### StackTrace
-Stack trace of the exception  
+Stack trace of the exception.  
 > `public` string StackTrace { get; set; }
 
 

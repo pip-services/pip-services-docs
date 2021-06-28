@@ -25,23 +25,23 @@ Creates a new instance and sets its values.
 
 > `public` PagingParams(object skip, object take, object total = null)
 
-- **skip**: object - the number of items to skip.
-- **take**: object - the number of items to return. 
+- **skip**: object - number of items to skip.
+- **take**: object - number of items to return. 
 - **total**: bool - true to return the total number of items.
 
 
 ### Properties
 
 #### Skip
-The number of items to skip.
+Number of items to skip.
 > `public` long Skip [ get, set ]
 
 #### Take
-The number of items to return. 
+Number of items to return. 
 > `public` long Take [ get, set ]
 
 #### Total
-The flag to return the total number of items.
+Flag used to return the total number of items.
 > `public` bool Total [ get, set ]
 
 
@@ -52,8 +52,8 @@ Gets the number of items to skip.
 
 > `public` long GetSkip(long minSkip = 0)
 
-- **minSkip**: long - the minimum number of items to skip.
-- **returns**: long - the number of items to skip.
+- **minSkip**: long - minimum number of items to skip.
+- **returns**: long - number of items to skip.
 
 
 #### GetTake
@@ -61,18 +61,18 @@ Gets the number of items to return in a page.
 
 > `public` long GetTake(long maxTake)
 
-- **maxTake**: long - the maximum number of items to return.
-- **returns**: long - the number of items to return.
+- **maxTake**: long - maximum number of items to return.
+- **returns**: long - number of items to return.
 
 ### Static methods
 
 #### FromMap
-Creates a new PagingParams and sets it parameters from the specified map
+Creates a new PagingParams and sets its parameters from the specified map.
 
 > `public static` [PagingParams]() FromMap([AnyValueMap](../any_value_map) map)
 
-- **map**: [AnyValueMap](../any_value_map) - a AnyValueMap or StringValueMap to initialize this PagingParams
-- **returns**: [PagingParams]() - a newly created PagingParams.
+- **map**: [AnyValueMap](../any_value_map) - AnyValueMap or StringValueMap used to initialize this PagingParams
+- **returns**: [PagingParams]() - newly created PagingParams.
 
 
 #### FromTuples
@@ -80,17 +80,17 @@ Creates a new PagingParams from a list of key-value pairs called tuples.
 
 > `public static` [PagingParams]() FromTuples(params object[] tuples)
 
-- **tuples**: object[] - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [PagingParams]() - a newly created PagingParams.
+- **tuples**: object[] - list of values where odd elements are keys and the following even elements are values.
+- **returns**: [PagingParams]() - newly created PagingParams.
 
 
 #### FromValue
-Converts specified value into PagingParams.
+Converts a specified value into PagingParams.
 
 > `public static` [PagingParams]() FromValue(object value)
 
 - **value**: object - value to be converted
-- **returns**: [PagingParams]() - a newly created PagingParams.
+- **returns**: [PagingParams]() - newly created PagingParams.
 
 ### Examples
 ```cs

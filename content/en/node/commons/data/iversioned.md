@@ -41,7 +41,7 @@ export class MyData implements IStringIdentifiable, IVersioned {
    
 public updateData(correlationId: string, item: MyData): void {
     ...
-    if (item.version < oldItem.version) {
+    if (item.version < this.version) {
         throw new ConcurrencyException(null, "VERSION_CONFLICT", "The change has older version stored value");
     }
     ...

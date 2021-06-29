@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
     TODO: add description
 ---

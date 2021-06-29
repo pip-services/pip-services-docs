@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultRpcFactory"
 linkTitle: "DefaultRpcFactory"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
     Creates Swagger components by their descriptors.
 ---

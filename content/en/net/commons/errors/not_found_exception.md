@@ -27,7 +27,7 @@ Creates an error instance with error message
 
 > `public` NotFoundException(string message)
 
-- **message**: string - human-readable description of the error.
+- **message**: string - human-readable description of the error. 
 
 
 Creates an error instance and assigns its values.

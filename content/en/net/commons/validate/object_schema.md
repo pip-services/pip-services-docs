@@ -23,7 +23,7 @@ See [IValidationRule](../ivalidation_rule)
 ### Properties
 
 #### IsUndefinedAllowed 
-Gets and sets flag to allow undefined properties.
+Gets and sets a flag to allow undefined properties.
 True to allow undefined properties and false to disallow.
 
 > `public` bool IsUndefinedAllowed { get; set; }
@@ -39,14 +39,14 @@ See [PropertySchema](../property_schema)
 ### Instance methods
 
 #### AllowUndefined
-Sets flag to allow undefined properties
-This method returns reference to this exception to implement Builder pattern
+Sets a flag to allow undefined properties
+This method returns a reference to this exception to the implement the Builder pattern
 to chain additional calls.
 
 > `public` [ObjectSchema](../object_schema) AllowUndefined(bool value)
 
 - **value**: bool - true to allow undefined properties and false to disallow.
-- **returns**: [ObjectSchema](../object_schema) - this validation schema.
+- **returns**: [ObjectSchema](../object_schema) - validation schema.
 
 
 
@@ -55,9 +55,9 @@ Validates a given value against the schema and configured validation rules.
 
 > `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - a dot notation path to the value.
-- **value**: object - a value to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: object - value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 
 
 #### WithOptionalProperty
@@ -65,21 +65,21 @@ Adds a validation schema for an optional object property.
 
 > `public` [ObjectSchema]() WithOptionalProperty(string name, object type, params [IValidationRule](../ivalidation_rule)[] rules)
 
-- **name**: string - a property name.
-- **type**: object - (optional) a property schema or type.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list of property validation rules.
+- **name**: string - property name.
+- **type**: object - (optional) property schema or type.
+- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) list of property validation rules.
 
 
 #### WithProperty
 Adds a validation schema for an object property.
-This method returns reference to this exception to implement Builder pattern
+This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 See [PropertySchema](../property_schema)
 
 > `public` [ObjectSchema]() WithProperty([PropertySchema](../property_schema) schema)
 
-- **schema**: [PropertySchema](../property_schema) - a property validation schema to be added.
-- **returns**: [ObjectSchema]() - this validation schema.
+- **schema**: [PropertySchema](../property_schema) - property validation schema to be added.
+- **returns**: [ObjectSchema]() - validation schema.
 
 
 #### WithRequiredProperty
@@ -87,10 +87,10 @@ Adds a validation schema for a required object property.
 
 > `public` [ObjectSchema]() WithRequiredProperty(string name, object type, params [IValidationRule](../ivalidation_rule)[] rules)
 
-- **name**: string - a property name.
-- **type**: object - (optional) a property schema or type.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list of property validation rules.
-- **returns**: [ObjectSchema]() - the validation schema
+- **name**: string - property name.
+- **type**: object - (optional) property schema or type.
+- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) list of property validation rules.
+- **returns**: [ObjectSchema]() - validation schema
 
 
 ### Examples

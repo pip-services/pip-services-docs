@@ -16,52 +16,52 @@ The Referencer class allows you to set and unset references to components.
 #### SetReferences
 Sets references to multiple components.
 
-To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+To set references, components must implement the [IReferenceable](../ireferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` void SetReferences([IReferenceable](../ireferenceable) references, IEnumerable components = null)
 
-- **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: IEnumerable - a list of components to set the references to.
+- **references**: [IReferences](../ireferences) - references to be set.
+- **component**: IEnumerable - list of components to set the references to.
 
 #### SetReferencesForOne
-Sets references to specific component.
+Sets references to a specific component.
 
-To set references components must implement [IReferenceable](../ireferenceable) interface.
+To set references, components must implement the [IReferenceable](../ireferenceable) interface.
 If they don't the call to this method has no effect.
 
 > `public static` void SetReferencesForOne([IReferences](../ireferences) references, object component)
 
-- **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: object - the component to set references to.
+- **references**: [IReferences](../ireferences) - references to be set.
+- **component**: object - component to set references to.
 
 #### UnsetReferences
 Unsets references in multiple components.
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+To unset references, components must implement the [IUnreferenceable](../iunreferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` void UnsetReferences(IEnumerable components) 
 
-- **components**: IEnumerable - the list of components, whose references must be cleared.
+- **components**: IEnumerable - list of components whose references must be cleared.
 
 #### UnsetReferences
 Unsets references in multiple components.
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+To unset references, components must implement the [IUnreferenceable](../iunreferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` void UnsetReferences(IReferences components) 
 
-- **components**: IReferences - the list of components, whose references must be cleared.
+- **components**: IReferences - list of components whose references must be cleared.
 
 #### UnsetReferencesForOne
-Unsets references in specific component.
+Unsets references in a specific component.
 
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+To unset references, components must implement the [IUnreferenceable](../iunreferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` void UnsetReferencesForOne(object component) 
 
-- **component**: object - the component to unset references.
+- **component**: object - component to unset references.
 
 
 ### See also

@@ -23,7 +23,7 @@ See [IValidationRule](../ivalidation_rule)
 ### Properties
 
 #### IsUndefinedAllowed 
-Gets and sets a flag to allow undefined properties.
+Gets and sets a flag to allow undefined properties. 
 True to allow undefined properties and false to disallow.
 
 > `public` bool IsUndefinedAllowed { get; set; }

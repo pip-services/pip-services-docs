@@ -17,29 +17,29 @@ The Executor class allows you to execute one or more components.
 #### ExecuteAsync
 Executes multiple components.
 
-To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.  
+To be executed, components must implement the [IExecutable](../iexecutable) interface.
+If they don't, the call to this method has no effect.  
 See [IExecutable](../iexecutable), [Parameters](../parameters)
 
 > `public static` Task\<List\<object\>\> ExecuteAsync(string correlationId, IEnumerable components, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: IEnumerable - a list of components that are to be executed.
+- **correlationId**: string - (optional) transaction id the to trace execution through the call chain.
+- **components**: IEnumerable - list of components that are to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**:  Task\<List\<object\>\> - an execution result
+- **returns**:  Task\<List\<object\>\> - execution result
 
 #### ExecuteOneAsync
 Executes specific component.
 
-To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.
+To be executed, components must implement the [IExecutable](../iexecutable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` Task\<object\> ExecuteOneAsync(string correlationId, object component, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: object - the component that is to be executed.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: object - component that is to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**: Task\<object\> - an execution result.
+- **returns**: Task\<object\> - execution result.
 
 ### See also
 - #### [IExecutable](../iexecutable)

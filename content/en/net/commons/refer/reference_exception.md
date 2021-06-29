@@ -16,36 +16,36 @@ Creates an error instance and assigns its values.
 
 > `public` ReferenceException(string correlationId, object locator)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **locator**: object - the locator to find reference to dependent component.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **locator**: object - locator used to find reference to a dependent component.
 
 Creates an error instance and assigns its values.
 > `public` ReferenceException(string correlationId, string message)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **message**: string - (optional) a human-readable description of the error.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **message**: string - (optional) human-readable description of the error.
 
 
 Creates an error instance and assigns its values.
 > `public` ReferenceException (string correlationId, string code, string message)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **message**: string - (optional) a human-readable description of the error.
-- **code**: string - a unique error code.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **message**: string - (optional) human-readable description of the error.
+- **code**: string - unique error code.
 
 
 Creates an error instance and assigns its values.
 > `public` ReferenceException(object locator)
 
-- **locator**: object - the locator to find reference to dependent component.
+- **locator**: object - locator used to find a reference to a dependent component.
 
 
 Creates an error instance and assigns its values.
 > `public` ReferenceException()
 
 
-TODO: add description
+Creates an error instance by processing native C# Exceptions.
 > `protected` ReferenceException(SerializationInfo info, StreamingContext context)
 
-- **info**: SerializationInfo -  TODO: add description
-- **context**: StreamingContext - TODO: add description
+- **info**: SerializationInfo -  serialized information containing the serialized object data about the exception being thrown.
+- **context**: StreamingContext - streaming context containing contextual information about the source or destination.

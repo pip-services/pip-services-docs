@@ -16,7 +16,7 @@ description: >
 ### Interfaces
 
 #### [ICleanable](icleanable)
-Interface for components that should clean their state.
+Interface for components that should clean their states.
 Cleaning state most often is used during testing. 
 But there may be situations when it can be done in production.
 
@@ -30,12 +30,12 @@ Interface for components that can be called to execute work.
 
 #### [INotifiable](inotifiable)
 Interface for components that can be asynchronously notified.
-The notification may include optional argument that describe
+The notification may include an optional argument that describes
 the occured event.
 
 #### [IOpenable](iopenable)
 Interface for components that require explicit opening and closing.
-For components that perform opening on demand consider using
+For components that perform opening on demand consider using the 
 [IClosable](iclosable) interface instead.
 
 #### [IParameterized](iparameterized)
@@ -46,7 +46,7 @@ Interface for components that require execution parameters.
 ### Classes
 
 #### [Cleaner](cleaner)
-Helper class that cleans a stored object state.
+Helper class that cleans a stored object's state.
 
 #### [Closer](closer)
 Helper class that closes previously opened components.
@@ -57,7 +57,7 @@ Helper class that executes components.
 #### [FixedRateTimer](fixed_rate_timer)
 Timer that is triggered in equal time intervals.
 It has a symmetric cross-language implementation 
-and is often used by Pip.Services toolkit to
+and is often used by the Pip.Services toolkit to
 perform periodic processing and cleanup in microservices.
 
 #### [Notifier](notifier)
@@ -72,7 +72,7 @@ In general, this map may contain non-serializable values.
 And in contrast with other maps, its getters and setters
 support dot notation and are able to access properties
 in the entire object graph.
-This class is often use to pass execution and notification
+This class is often used to pass execution and notification
 arguments, and parameterize classes before execution.
 
 </div>

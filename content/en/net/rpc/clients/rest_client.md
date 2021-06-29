@@ -181,6 +181,30 @@ Configures a component by passing configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
+#### ExecuteAsync
+Executes a remote method via HTTP/REST protocol.
+
+> `protected` Task ExecuteAsync(string correlationId, HttpMethod method, string route, object requestEntity)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - a command route. Base route will be added to this route
+- **requestEntity**: object - request body object.
+
+> `protected` async Task\<T\> ExecuteAsync\<T\>(string correlationId, HttpMethod method, string route)
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - a command route. Base route will be added to this route
+- **requestEntity**: object - request body object.
+- **returns**: Task\<T\> - result object.
+
+> `protected` Task\<T\> ExecuteAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - a command route. Base route will be added to this route
+- **requestEntity**: object - request body object.
+- **returns**: Task\<T\> - result object.
 
 #### Instrument
 Adds instrumentation to log calls and measures call time.
@@ -224,6 +248,24 @@ Sets references to dependent components.
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
+
+#### SafeExecuteAsync
+Safely executes a remote method via HTTP/REST protocol and logs execution time.
+
+> `protected` Task\<T\> SafeExecuteAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
+
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - a command route. Base route will be added to this route
+- **requestEntity**: object - request body object.
+- **returns**: Task\<T\> - result object.
+
+> `protected` async Task\<T\> SafeExecuteAsync\<T\>(string correlationId, HttpMethod method, string route)
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - a command route. Base route will be added to this route
+- **returns**: Task\<T\> - result object.
+
 
 #### SafeCallAsync
 Safely calls a remote method via HTTP/REST protocol and logs execution time.

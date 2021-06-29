@@ -14,7 +14,7 @@ The ValidationResultType class defines the types of validation results generated
 ### Enumeration members
 
 - **Information** = 0 - General information (not an error).
-- **Warning** = 1 - Warning about something suspecious. In strict mode is treated as error
+- **Warning** = 1 - Warning about something suspecious. In strict mode is treated as error.
 - **Error** = 2 - Validation error.
 
 ### See also

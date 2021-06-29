@@ -19,10 +19,10 @@ See [TypeCode](../convert/type_code)
 
 > `public` ArraySchema(object valueType)
 
-- **valueType**: object - a type of array elements. Null means that elements may have any type.
+- **valueType**: object - type of array elements. Null means that elements may have any type.
 
 
-Creates a new instance of validation schema.
+Creates a new instance of a validation schema.
 
 > `public` ArraySchema()
 
@@ -43,9 +43,9 @@ Validates a given value against the schema and configured validation rules.
 
 > `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - a dot notation path to the value.
-- **value**: object - a value to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: object - value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 
 
 ### Examples 

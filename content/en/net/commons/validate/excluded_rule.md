@@ -4,7 +4,7 @@ title: "ExcludedRule"
 linkTitle: "ExcludedRule"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Validation rule to check that one or more values are excluded from the list of constants.
+    Validation rule used to check that one or more values are excluded from the list of constants.
 ---
 
 **Inherits**: [IValidationRule](../ivalidation_rule)
@@ -18,20 +18,20 @@ Creates a new validation rule and sets its values
 
 > `public` ExcludedRule(params object[] values)
 
-- **values**: object[] - a list of constants that value must be excluded from
+- **values**: object[] - list of constants that value must be excluded from
 
 ### Instance methods
 
 #### Validate
-Validates the given value. null of the values set in this ExcludedRule object must exist 
+Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
 > `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - the dot notation path to the value that is to be validated.
+- **path**: string - dot notation path to the value that is to be validated.
 - **schema**: [Schema](../schema) - (not used in this implementation).
-- **value**: object - the value that is to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - the results of the validation.
+- **value**: object - value that is to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - results of the validation.
 
 ### Examples
 

@@ -4,7 +4,7 @@ title: "IncludedRule"
 linkTitle: "IncludedRule"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Validation rule to check that a list contains only specified values.
+    Validation rule used to check that a list contains only specified values.
 ---
 
 **Inherits**: [IValidationRule](../ivalidation_rule)
@@ -18,7 +18,7 @@ Creates a new validation rule and sets its values.
 
 > `public` IncludedRule(params object[] values)
 
-- **values**: object[] - a list of constants that value must be included to
+- **values**: object[] - list of constants that value must be included to
 
 ### Instance methods
 
@@ -28,10 +28,10 @@ Validates a given value against this rule.
 
 > `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: object - a value to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from
+- **value**: object - value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - list with validation results.
 
 
 ### Examples

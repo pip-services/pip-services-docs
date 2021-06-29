@@ -24,7 +24,7 @@ Important points
 ### Static methods
 
 #### GetProperties
-Get values of all properties in specified object
+Get the values of all properties in specified object
 and returns them as a map.
 
 The object can be a user defined object, map or array.
@@ -33,24 +33,24 @@ map key-pairs or array elements with their indexes.
 
 > `public static` Dictionary\<string, object\> GetProperties(object obj)
 
-- **obj**: object - an object to get properties from.
-- **returns**: Dictionary\<string, object\> - a map, containing the names of the object's properties and their values.
+- **obj**: object - object to get properties from.
+- **returns**: Dictionary\<string, object\> - map containing the names of the object's properties and their values.
 
 #### GetProperty
-Gets value of object property specified by its name.
+Gets value of a object property specified by its name.
 
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
+The property name correspondently must be and object property,
 map key or array index.
 
 > `public static` object GetProperty(object obj, string name)
 
-- **obj**: object - an object to read property from.
-- **name**: string - a name of the property to get.
-- **returns**: object - the property value or null if property doesn't exist or introspection failed.
+- **obj**: object - object to read property from.
+- **name**: string - name of the property to get.
+- **returns**: object - property value or null if property doesn't exist or introspection failed.
 
 #### GetPropertyNames
-Gets names of all properties implemented in specified object.
+Gets the names of all properties implemented in a specified object.
  
 The object can be a user defined object, map or array.
 Returned property name correspondently are object properties,
@@ -58,30 +58,30 @@ map keys or array indexes.
 
 > `public static` List\<string\> GetPropertyNames(object obj)
 
-- **obj**: object - an objec to introspect.
-- **returns**: List\<string\> - a list with property names.
+- **obj**: object - objec to introspect.
+- **returns**: List\<string\> - list with property names.
 
 #### GetValue
 Gets a real object value.
 If object is a wrapper, it unwraps the value behind it. 
-Otherwise it returns the same object value.
+Otherwise, it returns the same object value.
 
 > `public static` object GetValue(object obj)
 
-- **obj**: object - an object to unwrap..
-- **returns**: object - an actual (unwrapped) object value. 
+- **obj**: object - object to unwrap..
+- **returns**: object - actual (unwrapped) object value. 
 
 #### HasProperty
-Checks if object has a property with specified name.
+Checks if an object has a property with the specified name.
 
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
-map key or array index.
+The property name correspondently must be an object property,
+a map key or an array index.
 
 > `public static` bool HasProperty(object obj, string name)
 
-- **obj**: object - an object to introspect.
-- **name**: string - a name of the property to check.
+- **obj**: object - object to introspect.
+- **name**: string - name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
 
 ### Examples

@@ -317,7 +317,7 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 
 
 ```python
-//skip = 25, take = 50, total = False
+# skip = 25, take = 50, total = False
 paging = PagingParams(25, 50, False)
 result = persistence.get_page_by_filter(None, None, paging)
 ```

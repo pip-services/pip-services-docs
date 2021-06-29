@@ -111,7 +111,7 @@ class SimpleController(IReferenceable, IUnreferenceable):
     self._worker = None
   
   def greeting(self, name):
-    self._worker.do('level',  "Hello, " + (name) + "!")
+    self._worker.do(LogLevel.Info,  "Hello, " + (name) + "!")
   
 ```
 
@@ -120,13 +120,13 @@ We will be using the **References** class to pass dependencies into our componen
 ```python
 
 references = References.from_tuples(
-	111, Worker1(),
-	222, Worker2()
+	111, Worker1('worker1'),
+	222, Worker2('worker2')
 )
 
 controller = SimpleController()
 controller.set_references(references)
-console.log(controller.greeting("world"))
+controller.greeting("world")
 controller.unset_references()
 controller = None
 
@@ -239,9 +239,9 @@ Returning to our “worker” example, we could use **Descriptors** in the follo
 class SimpleController(IReferenceable, IUnreferenceable):
 	...
   	def set_references(self, references):
-    self._worker = self._references.get_one_required(
-    	Descriptor("*", "worker", "worker1", "*", "1.0")
-    )
+        self._worker = self._references.get_one_required(
+    	    Descriptor("*", "worker", "worker1", "*", "1.0")
+        )
   
 	...
 
@@ -251,7 +251,7 @@ references = References.from_tuples(
 )
 controller = SimpleController()
 controller.set_references(references)
-print(controller.greeting("world"))
+controller.greeting("world")
 controller.unset_references();
 controller = None
 
@@ -304,7 +304,7 @@ class DependencyResolver(IReconfigurable, IReferenceable):
 Below is the final version of our **“worker”** example, which now utilizes the **DependencyResolver**. By default, the **SimpleController** is capable of working with either of the worker services. However, once we configure **SimpleController** and, in turn, the **DependencyResolver** - the component is re-configured to work with just Worker1.
 
 ```python
-class SimpleController(IConfigirable, IReferenceable, IUnreferenceable):
+class SimpleController(IConfigurable, IReferenceable, IUnreferenceable):
 	_depedency_resolver = DependencyResolver.from_tuples(
     	"worker", Descriptor("*", "worker", "*", "*", 1.0)
   	)

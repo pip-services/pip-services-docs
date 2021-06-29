@@ -73,7 +73,7 @@ Persistent components in the Pip.Services Toolkit use a number of data patterns.
 filter = FilterParams.from_tuples(
     'name', 'ABC'
 )
-result = persistence.get_page_by_filter(self, correlation_id, filter, paging);
+result = persistence.get_page_by_filter(correlation_id, filter, paging);
 ```
 
 In the persistence component, the developer is responsible for parsing the **FilterParams** and passing a filter function to the persistent methods of the base class.
@@ -101,7 +101,7 @@ def get_page_by_filter(self, correlationId, filter, paging):
 Another common data pattern is Paging. It is used to retrieve large datasets in chunks through multiple calls to the storage. To do this, a client specifies a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. The service returns a subset of the data as a [DataPage](../../commons/data/data_page/) object.
 
 ```python
-//skip = 25, take = 50, total = False
+# skip = 25, take = 50, total = False
 paging = PagingParams(25, 50, False)
 result = persistence.get_page_by_filter(None, None, paging)
 ```

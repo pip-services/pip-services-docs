@@ -235,7 +235,7 @@ public configure(config: ConfigParams): void;
 Below is the final version of our **“worker”** example, which now utilizes the **DependencyResolver**. By default, the **SimpleController** is capable of working with either of the worker services. However, once we configure **SimpleController** and, in turn, the **DependencyResolver** - the component is re-configured to work with just Worker1.
 
 ```typescript
-class SimpleController implements IConfigirable, IReferenceable, IUnreferenceable {
+class SimpleController implements IConfigurable, IReferenceable, IUnreferenceable {
     private _depedencyResolver = DependencyResolver.fromTuples(
         "worker", new Descriptor("*","worker","*","*","1.0")
     );

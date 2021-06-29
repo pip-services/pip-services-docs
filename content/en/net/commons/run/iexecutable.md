@@ -15,13 +15,13 @@ The IExecutable interface allows you to create a component that can be called to
 ### Instance methods
 
 #### ExecuteAsync
-Executes component with arguments and receives execution result.
+Executes a component with arguments and receives an execution result.
 
 > Task\<object\> ExecuteAsync(string correlationId, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**: Task\<object\> - the execution result. 
+- **returns**: Task\<object\> - execution result. 
 
 ### Examples
 

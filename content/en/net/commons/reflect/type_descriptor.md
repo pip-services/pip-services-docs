@@ -21,8 +21,8 @@ Creates a new instance of the type descriptor and sets its values.
 
 > `public` TypeDescriptor(string name, string library)
 
-- **name**: string - a name of the object type.
-- **library**: string - a library or module where this object type is implemented.
+- **name**: string - name of the object type.
+- **library**: string - library or module where this object type is implemented.
 
 
 Creates a new instance of the type descriptor.
@@ -33,7 +33,7 @@ Creates a new instance of the type descriptor.
 ### Properties
 
 #### Name
-Get the name of the object type.
+Name of the object type.
 
 > `public` string Name { get; }
 
@@ -53,15 +53,15 @@ Otherwise this method returns false.
 
 > `public override` bool Equals(object value)
 
-- **value**: object - a value to compare.
+- **value**: object - value to compare.
 - **returns**: bool - true if value is identical TypeDescriptor and false otherwise.
 
 #### GetHashCode
-TODO add description
+Gets the Hash code
 
 > `public override` int GetHashCode()
 
-- **returns**: int - TODO: add description
+- **returns**: int - Hash code
 
 
 #### ToString
@@ -70,16 +70,16 @@ The result has format *name[,library]*
 
 > `public override` string ToString()
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 ### Static methods
 
 #### FromString
 Parses a string to get descriptor fields and returns them as a Descriptor.
-The string must have format *name[,library]*  
+The string must have format the *name[,library]*  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
 > `public static` [TypeDescriptor]() FromString(string value)
 
-- **value**: string - a string to parse.
-- **returns**: [TypeDescriptor]() - a newly created Descriptor.
+- **value**: string - string to parse.
+- **returns**: [TypeDescriptor]() - newly created Descriptor.

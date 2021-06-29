@@ -19,7 +19,7 @@ Closes component and frees used resources.
 
 > Task CloseAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 ```cs

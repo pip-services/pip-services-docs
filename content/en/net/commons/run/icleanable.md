@@ -15,11 +15,11 @@ The ICleanable interface allows you to create components with a method to clean 
 ### Instance methods
 
 #### ClearAsync
-Clears component state.
+Clears a component's state.
 
 > Task ClearAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 ```cs

@@ -18,20 +18,20 @@ Sets execution parameters.
 
 > `public static` Task NotifyAsync(string correlationId, IEnumerable components, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: IEnumerable - a list of components that are to be notified.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **components**: IEnumerable - list of components that are to be notified.
 - **args**: [Parameters](../parameters) - notification arguments.
 
 #### NotifyOneAsync
 Notifies specific component.
 
-To be notiied components must implement [INotifiable](../inotifiable) interface.
-If they don't the call to this method has no effect.
+To be notiied, components must implement [INotifiable](../inotifiable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` Task NotifyOneAsync(string correlationId, object component, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: object - the component that is to be notified.
+- **correlationId**: string - (optional) transaction id used to trace execution through teh call chain.
+- **component**: object - component that is to be notified.
 - **args**: [Parameters](../parameters) - notifiation arguments.
 
 

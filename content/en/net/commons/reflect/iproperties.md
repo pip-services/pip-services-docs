@@ -4,37 +4,37 @@ title: "IProperties"
 linkTitle: "IProperties"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    TODO: add description
+    This interface provides methods to get and set the properties of a class.
 
 ---
 
 ### Description
 
-TODO: add description
+This interface provides methods to get and set the properties of a class.
 
 ### Instance methods
 
 #### GetPropertyNames
-TODO: add description
+Gets all the property names.
 
 > List\<string\> GetPropertyNames()
 
-- **returns**: List\<string\> - TODO: add description
+- **returns**: List\<string\> - list with property names
 
 #### GetProperty
-TODO: add description
+Gets a property's value
 
 > object GetProperty(string name)
 
-- **name**: string - TODO: add description
-- **returns**: object - TODO: add description
+- **name**: string - property's name
+- **returns**: object - property's value
 
 #### SetProperty
-TODO: add description
+Sets the value of a property.
 
 > void SetProperty(string name, object value)
 
-- **name**: string - TODO: add description
-- **value**: object - TODO: add description
+- **name**: string - property's name
+- **value**: object - property's value
 
 

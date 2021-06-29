@@ -117,7 +117,7 @@ to the invocation parameter map.
 
 - **route**: string -  invocation parameters.
 - **filters**: [FilterParams](../../../commons/data/filter_params) -  (optional) filter parameters.
-- **returns**: any - invocation parameters with added filter parameters.
+- **returns**: string - invocation parameters with added filter parameters.
 
 
 #### AddPagingParams

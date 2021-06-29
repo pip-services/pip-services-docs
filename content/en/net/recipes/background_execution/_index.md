@@ -88,7 +88,7 @@ public async Task PerformAnalysisAsync(string correlationId)
 ```
 
 ### 3. Using the Jobs microservice
-For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-python). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
+For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-dotnet). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
 1. a timer, 
 2. the Jobs service’s client, and 
 3. a type for the job/task being executed.

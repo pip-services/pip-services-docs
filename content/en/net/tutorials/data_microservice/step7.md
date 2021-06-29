@@ -3,41 +3,43 @@ type: docs
 no_list: true
 title: "Step 7. Running and testing the microservice" 
 linkTitle: "Step 7. Run" 
-gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
+gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a **main.py** file with the following code:
+To run our microservice, we need to add just one last bit of code. In the bin folder, create a **Program.cs** file with the following code:
 
-**/bin/main.py**
+**/src/service/process/Program.cs**
 
-```python
-import sys
-import traceback
-import os
-
-from pip_services3_components.log import ConsoleLogger
-
-# add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
-
-from src.containers.BeaconsProcess import BeaconsProcess
-
-if __name__ == '__main__':
-    runner = BeaconsProcess()
-    try:
-        runner.run()
-    except Exception as ex:
-        ConsoleLogger().fatal("Beacons", ex, "Error: ")
-        print(traceback.format_exc())
-        sys.stderr.write(str(ex) + '\n')
+```cs
+namespace Process
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            try
+            {
+                var process = new BeaconsProcess();
+                process.RunAsync(args).Wait();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                Console.ReadLine();
+            }
+        }
+    }
+}
 ```
 
-In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
+In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `RunAsync()` method.
 
 To run the microservice, execute the following command from a terminal at the root of the project:
 
 ```bash
- python ./bin/main.py
+dotnet build # build
+
+dotnet src/process/bin/debug/net5.0/main.dll -c ./config/config.yml # start with config file
 ```
 
 You should get a result similar to the one shown below.
@@ -51,7 +53,7 @@ Let’s use the following two commands to set our environment variable and start
 ```bash
 export MONGO_ENABLED=true
 
-python .\bin\main.py
+dotnet src/process/bin/debug/net5.0/main.dll -c ./config/config.yml
 ```
 
 Make sure that you have MongoDB running locally (see [Setup environment](../../../getting_started/setup_environment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
@@ -273,4 +275,4 @@ As a result, only the beacon with an id of “2” is returned.
 ```
 
 And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
-All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-python)
+All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-dotnet)

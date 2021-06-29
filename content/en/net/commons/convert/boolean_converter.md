@@ -52,8 +52,8 @@ Converts value into boolean or returns null when the conversion is not possible.
 ```cs
 var value1 = BooleanConverter.ToNullableBoolean(True);     // Returns True
 var value2 = BooleanConverter.ToNullableBoolean("yes");    // Returns True
-var value3 = BooleanConverter.ToNullableBoolean(123);      // Returns None
-var value4 = BooleanConverter.ToNullableBoolean({});       // Returns None
+var value3 = BooleanConverter.ToNullableBoolean(123);      // Returns null
+var value4 = BooleanConverter.ToNullableBoolean({});       // Returns null
 
 var value5 = BooleanConverter.ToBooleanWithDefault(True,"verdadero");     // Returns True
 var value6 = BooleanConverter.ToBooleanWithDefault(123,"verdadero");      // Returns verdadero

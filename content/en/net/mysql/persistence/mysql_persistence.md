@@ -181,7 +181,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > `public virtual` Task DeleteByFilterAsync(string correlationId, string filter)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) filter function to filter items.
+- **filter**: string - (optional) filter function to filter items.
 
 
 #### EnsureIndex

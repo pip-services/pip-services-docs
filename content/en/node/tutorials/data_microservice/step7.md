@@ -6,7 +6,7 @@ linkTitle: "Step 7. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a run.js file with the following:
+To run our microservice, we need to add just one last bit of code. In the bin folder, create a **run.js** file with the following:
 
 **/bin/run.js**
 

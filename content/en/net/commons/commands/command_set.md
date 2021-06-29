@@ -2,7 +2,7 @@
 type: docs
 title: "CommandSet"
 linkTitle: "CommandSet"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
     Contains a set of commands and events supported by a [commandable](../icommandable) object.
     The CommandSet supports command interceptors and command call chains.

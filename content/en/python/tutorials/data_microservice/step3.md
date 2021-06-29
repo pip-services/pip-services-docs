@@ -47,7 +47,7 @@ The first persistence to implement this interface will be the memory persistence
 
 The resulting code for this class is listed below:
 
-**/src/persistence/BeaconsMemoryPersistence.ts**
+**/src/persistence/BeaconsMemoryPersistence.py**
 
 ```python
 from typing import Optional, Any, Callable
@@ -110,7 +110,7 @@ And that’s pretty much it for the memory persistence.
 
 Now let’s move on to something a bit more sophisticated - a MongoDB persistence. Here we’re also going to use an already existing base class, `IdentifiableMongoDbPersistence`, from the **pip-services3-mongodb** module, and write a few functions, the most important of which will be `__compose_filter`. This time around, its implementation is going to contain syntax for creating database requests. The resulting code for this class is listed below: 
 
-**/src/persistence/BeaconsMongoDbPersistence.ts**
+**/src/persistence/BeaconsMongoDbPersistence.py**
 
 ```python
 from typing import Any, Optional
@@ -176,7 +176,7 @@ To make sure that the code does just what we expect it to do, let’s add some t
 
 Thanks to the modular structure of microservices, each component is easily testable with the help of simple mock tests. We’ll start with creating a class that contains a set of testable commands and checks the results we receive with the help of standard testing libraries. This class will be accepting any persistence that implements our `IBeaconsPersistence` interface as a parameter. This way we can use the same set of commands to test both of our persistence implementations. This set of commands should contain standard CRUD operations, which are implemented in the parent class, as well as the methods we’ve added in the child classes.
 
-**/test/persistence/BeaconsPersistenceFixture.ts**
+**/test/persistence/BeaconsPersistenceFixture.py**
 
 ```python
 from pip_services3_commons.data import PagingParams, FilterParams

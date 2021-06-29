@@ -3,12 +3,13 @@ type: docs
 no_list: true
 title: "Data Microservice"
 linkTitle: "Data Microservice" 
+gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 ---
 
 ### Overview
 
-In this tutorial, we’ll be writing from scratch a fully-functional Data microservice, using the patterns and mechanisms available in the Pip.Services toolkit, as well as the programming language you have selected. The microservice that we are going to be using as an example in this tutorial is called [The Beacons microservice], which is part of [The IoT Microservices Collection]. This microservice is meant to perform the following simple tasks:
+In this tutorial, we’ll be writing from scratch a fully-functional Data microservice, using the patterns and mechanisms available in the Pip.Services toolkit, as well as the programming language you have selected. The microservice that we are going to be using as an example in this tutorial is called [The Beacons microservice](../../../microservices/iot/beacons/), which is part of [The IoT Microservices Collection](../../../microservices/iot/). This microservice is meant to perform the following simple tasks:
 
 - Store a list of BLE beacons (a.k.a. iBeacons), their unique identifiers, and the positions at which they were installed.
 - Calculate the position of a device, using the beacons it “sees” in its vicinity.
@@ -21,6 +22,7 @@ The Beacons microservice that we are going to be developing will consist of a nu
 
 ![BeaconDiagram](/images/tutorials/data_microservice/beacon_diagram.png)
 
+### Creating the data microservice
 
 To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
 
@@ -32,7 +34,26 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 - [Step 6. Wrapping microservice into container](step6)
 - [Step 7. Running and testing the microservice](step7)
 
+<span class="hide-title-link">
+
+#### [Step 1. Setting up the project](step1)
+#### [Step 2. Data model development](step2)
+#### [Step 3. Implementing persistence components (with tests)](step3)
+#### [Step 4. Implementing a controller (with tests)](step4)
+#### [Step 5. Implementing an HTTP service (with tests)](step5)
+#### [Step 6. Wrapping microservice into container](step6)
+#### [Step 7. Running and testing the microservice](step7)
+
+</span>
+
 ### See also
 
 - [Tutorial how to create a client library](../client_library)
-- [Tutorial how to dockerize a microservice](../microservice-dockerization)
+- [Tutorial how to dockerize a microservice](../microservice_dockerization)
+
+<span class="hide-title-link">
+
+#### [Tutorial how to create a client library](../client_library)
+#### [Tutorial how to dockerize a microservice](../microservice_dockerization)
+
+</span>

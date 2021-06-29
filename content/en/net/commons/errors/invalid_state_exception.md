@@ -39,10 +39,10 @@ Creates an error instance and assigns its values.
 - **innerException**: Exception - error object
 
 
-Creates an error instance.
+Creates an error instance by processing native C# Exceptions.
 
 > `protected` InvalidStateException(SerializationInfo info, StreamingContext context)
 
-- **info**: SerializationInfo - serialization information
-- **context**: StreamingContext - streaming context
+- **info**: SerializationInfo - serialized information containing the serialized object data about the exception being thrown.
+- **context**: StreamingContext - streaming context containing contextual information about the source or destination.
 

@@ -19,8 +19,8 @@ The operation can be performed over values of any type.
 
 > `public static` bool AreEqual(object value1, object value2)
 
-- **value1**: object - the first value to compare
-- **value2**: object - the second value to compare
+- **value1**: object - first value to compare
+- **value2**: object - second value to compare
 - **returns**: bool - true if values are equal and false otherwise
 
 #### AreNotEqual
@@ -29,48 +29,48 @@ The operation can be performed over values of any type.
 
 > `public static` bool AreNotEqual(object value1, object value2)
 
-- **value1**: object - the first value to compare 
-- **value2**: object - the second value to compare
+- **value1**: object - first value to compare 
+- **value2**: object - second value to compare
 - **returns**: bool - true if values are NOT equal and false otherwise
 
 #### Compare
-Perform comparison operation over two arguments.
+Perform a comparison operation over two arguments.
 The operation can be performed over values of any type.
 
 > `public static` bool Compare(object value1, string operation, object value2)
 
-- **value1**: object - the first argument to compare
+- **value1**: object - first argument to compare
 - **operation**: string - the comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value2**: object - the second argument to compare
+- **value2**: object - second argument to compare
 - **returns**: bool - result of the comparison operation
 
 #### IsGreater
-Checks if first value is greater than the second one.
+Checks if the first value is greater than the second one.
 The operation can be performed over numbers or strings.
 
 > `public static` bool IsGreater(object value1, object value2)
 
-- **value1**: object - the first value to compare
-- **value2**: object - the second value to compare
+- **value1**: object - first value to compare
+- **value2**: object - second value to compare
 - **returns**: bool - true if the first value is greater than second and false otherwise.
 
 #### IsLess
-Checks if first value is less than the second one.
+Checks if the first value is less than the second one.
 The operation can be performed over numbers or strings.
 
 > `public static` bool IsLess(object value1, object value2)
 
-- **value1**: object - the first value to compare
-- **value2**: object - the second value to compare
+- **value1**: object - first value to compare
+- **value2**: object - second value to compare
 - **returns**: bool - true if the first value is less than second and false otherwise.
 
 #### Match
-Checks if string matches a regular expression
+Checks if a string matches a regular expression
 
 > `public static` bool Match(object value1, object value2)
 
-- **value1**: object - a string value to match
-- **value2**: object - a regular expression string
+- **value1**: object - string value to match
+- **value2**: object - regular expression string
 - **returns**: bool - true if the value matches regular expression and false otherwise.
 
 ### Examples

@@ -25,7 +25,7 @@ Important points
 #### SetProperties
 Sets values of some (all) object properties.
 
-The object can be a user defined object, map or array.
+The object can be a user a defined object, a map or an array.
 Property values correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
@@ -34,24 +34,24 @@ they are just silently skipped and no errors thrown.
 
 > `public static` void SetProperties(object obj, IDictionary\<string, object\> values)
 
-- **obj**: object - an object to write properties to.
-- **values**: IDictionary\<string, object\> - a map, containing property names and their values.
+- **obj**: object - object to write properties to.
+- **values**: IDictionary\<string, object\> - map containing property names and their values.
 
 #### SetProperty
-Sets value of object property specified by its name.
+Sets the value of an object's property specified by its name.
  
-The object can be a user defined object, map or array.
-The property name correspondently must be object property,
-map key or array index.
+The object can be a user a defined object, a map or an array.
+The property name correspondently must be an object's property,
+a map key or an array index.
 
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't any throw errors.
 
 > `public static` void SetProperty(object obj, object string name, object value)
 
-- **obj**: object - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: object - a new value for the property to set.
+- **obj**: object - object to write property to.
+- **name**: string - name of the property to set.
+- **value**: object - new value for the property to set.
 
 ### Examples
 

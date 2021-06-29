@@ -18,8 +18,8 @@ Creates a new validation rule and sets its values.
 
 > `public` ValueComparisonRule(string operation, object value)
 
-- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: object - a constant value to compare to
+- **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: object - constant value to compare to
 
 ### Instance methods
 
@@ -28,10 +28,10 @@ Validates a given value against this rule.
 
 > `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: object - a value to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from
+- **value**: object - value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 
 ### Examples
 ```cs

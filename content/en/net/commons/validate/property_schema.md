@@ -19,8 +19,8 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 > `public` PropertySchema(string name, object type)
 
-- **name**: string - (optional) a property name
-- **type**: object - (optional) a property type
+- **name**: string - (optional) property name
+- **type**: object - (optional) property type
 
 
 Creates a new validation schema.
@@ -48,9 +48,9 @@ Validates a given value against the schema and configured validation rules.
 
 > `public internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - a dot notation path to the value.
-- **value**: object - a value to be validated.
-- **results**: List<[ValidationResult](../validation_result)> - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: object - value to be validated.
+- **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 
 
 ### Examples

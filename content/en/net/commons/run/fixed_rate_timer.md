@@ -23,9 +23,9 @@ Creates new instance of the timer and sets its values.
 
 > `public` FixedRateTimer(Action task, int interval, int delay)
 
-- **taskOrCallback**: Action - (optional) a Notifiable object or callback function to call when timer is triggered.
-- **interval**: int - (optional) an interval to trigger timer in milliseconds.
-- **delay**: int - (optional) a delay before the first triggering in milliseconds.
+- **taskOrCallback**: Action - (optional) Notifiable object or callback function to call when timer is triggered.
+- **interval**: int - (optional) interval to trigger timer (in milliseconds).
+- **delay**: int - (optional) delay before the first triggering (in milliseconds).
 
 
 Creates new instance of the timer with default parameters.
@@ -41,18 +41,18 @@ Gets the INotifiable object that receives notifications from this timer.
 
 
 #### Delay
-Gets initial delay before the timer is triggered for the first time.
+Gets the initial delay before the timer is triggered for the first time.
 > `public` int Delay { get; set; }
 
 
 #### Interval
-Gets periodic timer triggering interval.
+Gets the periodic timer triggering interval.
 > `public` int Interval { get; set; }
 
 
 #### IsStarted
-Checks if the timer is started. 
-True if the timer is started and false if it is stopped.
+Checks if the timer has started. 
+True if the timer has started and false if it has stopped.
 
 > `public` bool IsStarted [ get, private set ]
 
@@ -60,7 +60,7 @@ True if the timer is started and false if it is stopped.
 ### Instance methods
 
 #### Restart
-Restart the timer.
+Restarts the timer.
 
 > void Restart()
 
@@ -69,7 +69,7 @@ Restart the timer.
 Starts the timer.
 
 Initially the timer is triggered after delay.
-After that it is triggered after interval until it is stopped.
+After that, it is triggered after interval until it is stopped.
 
 > `public` void Start()
 

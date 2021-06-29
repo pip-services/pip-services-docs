@@ -11,7 +11,7 @@ description: >
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
 
-    The swagger module provides a Swagger UI that can be added into microservices and seamlessly integrated with existing REST and Commandable HTTP services.
+    The swagger module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
 ---
 
 
@@ -31,7 +31,7 @@ pip install pip-services3-swagger
 
 Develop a RESTful service component. For example, it may look the following way.
 In the `register` method we load an Open API specification for the service.
-You can also enable swagger by default in the constractor by setting `_swagger_enable` property.
+You can also enable swagger by default in the constructor by setting `_swagger_enable` property.
 ```python
 class MyRestService(RestService):
     def __init__(self):
@@ -92,7 +92,7 @@ paths:
 ```
 
 Include Swagger service into `config.yml` file and enable swagger for your REST or Commandable HTTP services.
-Also explicitely adding HttpEndpoint allows to share the same port betwee REST services and the Swagger service.
+Also explicitely adding HttpEndpoint allows to share the same port between REST services and the Swagger service.
 ```yaml
 ---
 ...
@@ -112,7 +112,7 @@ Also explicitely adding HttpEndpoint allows to share the same port betwee REST s
     enable: true
 ```
 
-Finally, remember to add factories to your container, to allow it creating required components.
+Finally, remember to add the necessary factories to your container, to allow creating the required components.
 ```python
 from pip_services3_rpc.build.DefaultRpcFactory import DefaultRpcFactory
 from pip_services3_swagger.build.DefaultSwaggerFactory import DefaultSwaggerFactory

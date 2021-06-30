@@ -14,12 +14,12 @@ The IEventListener interface allows you to define actions to be taken by listene
 ### Instance methods
 
 #### onEvent
-A method called when events this listener is subscrubed to are fired.
+A method called when events this listener is subscribed to are fired.
 
 > onEvent(correlationId: string, event: [IEvent](../ievent), args: [Parameters](../../run/parameters)): void
 
-- **correlationId**: string - a fired evemt
-- **event**: [IEvent](../ievent) - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - fired evemt
+- **event**: [IEvent](../ievent) - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../../run/parameters) - event arguments.
 
 ### Examples

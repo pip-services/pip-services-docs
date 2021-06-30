@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
-    TODO: add description
+    This package provides a class used to create a Swagger UI service.
 ---
 ---
 
@@ -15,7 +15,7 @@ description: >
 ### Classes
 
 #### [SwaggerService](swagger_service)
-TODO: add description
+The SwaggerService class allows you to create a Swagger UI service.
 
 
 </div>

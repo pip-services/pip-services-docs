@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultRpcFactory allows you to create a factory used to create Swagger components by their descriptors.
 
 ### Constructors
 Creates a new instance of the factory.

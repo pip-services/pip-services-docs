@@ -19,34 +19,34 @@ The IntegerConverter class allows you to convert arbitrary values into integers 
 ### Static methods
 
 #### toInteger
-Converts value into integer or returns 0 when conversion is not possible.  
+Converts a value into an integer or returns 0 when the conversion is not possible.  
 See [LongConverter.toLong](../long_converter/#tolong),  
 [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault)
 
 > `public static` toInteger(value: any): number
 
-- **value**: any - the value to convert.
-- **returns**: number - integer value or 0 when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: number - integer value or 0 when the conversion is not supported.
 
 #### toIntegerWithDefault
-Converts value into integer or returns default value when conversion is not possible.
+Converts a value into an integer or returns a given default value when the conversion is not possible.
 See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),  
 [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > `public static` toIntegerWithDefault(value: any, defaultValue: number): number
 
-- **value**: any - the value to convert.
-- **defaultValue**: number - the default value.
-- **returns**: number - integer value or default when conversion is not supported. 
+- **value**: any - value to convert.
+- **defaultValue**: number - default value.
+- **returns**: number - integer value or given default when the conversion is not supported. 
 
 #### toNullableInteger
-Converts value into integer or returns null when conversion is not possible.
+Converts a value into an integer or returns null when the conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
 > `public static` toNullableInteger(value: any): number
 
-- **value**: any - the value to convert.
-- **returns**: number - integer value or null when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: number - integer value or null when the conversion is not supported.
 
 ### Examples
 

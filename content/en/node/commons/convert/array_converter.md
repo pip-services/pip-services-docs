@@ -13,42 +13,42 @@ The ArrayConverter class provides methods to create an array from a set of value
 ### Static methods
 
 #### listToArray
-Converts a list into array object with empty array as default.
+Converts a list into an array object with an empty array as default.
 Strings with comma-delimited values are split into array of strings.
 See [toArray](#toarray)
 
 > `public static` listToArray(value: any): any[]
 
-- **value**: any - the list to convert.
-- **returns**: any[] - array object or empty array when value is null
+- **value**: any - list to convert.
+- **returns**: any[] - array object or empty array when value is null.
 
 
 #### toArray
-Converts value into array object with empty array as default.
-Single values are converted into arrays with single element.
+Converts a value into an array object with an empty array as default.
+Single values are converted into arrays with a single element.
 
 > `public static` toArray(value: any): any[]
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: any[] - array object or empty array when value is null.
 
 #### toArrayWithDefault
-Converts value into array object with specified default.
-Single values are converted into arrays with single element.
+Converts a value into an array object with a specified default.
+Single values are converted into arrays with a single element.
 
 > `public static` toArrayWithDefault(value: any, defaultValue: any[]): any[]
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: any[] - default array object.
 - **returns**: any[] - array object or default array when value is null.
 
 #### toNullableArray
-Converts value into array object.
+Converts a value into an array object.
 Single values are converted into arrays with a single element.
 
 > `public static` toNullableArray(value: any): any[]
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: any[] - array object or null when value is null.
 
 ### Examples

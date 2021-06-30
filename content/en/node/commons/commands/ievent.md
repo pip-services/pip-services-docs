@@ -20,21 +20,21 @@ Gets the event name.
 
 > getName(): string
 
-- **returns**: string - the name of the event.
+- **returns**: string - name of the event.
 
 #### getListeners
 Gets all subscribed listeners.
 
 > getListeners(): [IEventListener](../ievent_listener)[]
 
-- **returns**: [IEventListener](../ievent_listener)[] - a list of listeners.
+- **returns**: [IEventListener](../ievent_listener)[] - list of listeners.
 
 #### addListener
 Adds a listener to receive notifications for this event.
 
 > addListener(listener: [IEventListener](../ievent_listener)): void
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to add.
 
 
 #### removeListener
@@ -42,7 +42,7 @@ Removes a listener, so that it no longer receives notifications for this event.
 
 > removeListener(listener: [IEventListener](../ievent_listener)): void
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to remove.
 
 
 ### See also

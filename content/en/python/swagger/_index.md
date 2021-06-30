@@ -15,7 +15,7 @@ description: >
 ---
 
 
-### Modules
+### Packages
 
 The module contains the following packages:
 

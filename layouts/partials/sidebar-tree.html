@@ -54,7 +54,6 @@
   </nav>
 </div>
 
-
 {{ define "section-tree-nav-section" }}
   {{ $s := .section }}
   {{ $p := .page }}
@@ -92,7 +91,7 @@
   {{ range (seq $ulNr) }}
     {{with $parent}}
       {{$parent = .Parent }}
-      {{ if or ($s.InSection .) (eq $ulNr 3) }}
+      {{ if or ($s.InSection .) (eq $ulNr 3) (and (gt (len $s.Pages) 0) (eq $ulNr 4))}}
         {{ $showNeighbor = true }}
       {{ end }}
       {{ if $s.IsAncestor . }}
@@ -100,7 +99,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
-
 
   {{ $isChildOfHome := false }}
   {{ with $currentSection.Parent }}
@@ -121,7 +119,7 @@
 
   {{ $show := cond (or (eq $s.LinkTitle "Home")
                        (and $isMatchRootSections (lt (len (split $s.URL "/")) $showModules))
-                       (and ( $p.IsDescendant $currentRootSection) (not (eq .FirstSection $p))  $showNeighbor)
+                       (and ( $p.IsDescendant $currentRootSection) (not (eq .FirstSection $p)) $showNeighbor)
                        (lt $ulNr $ulShow) $activePath 
                        (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
                        (and (not $shouldDelayActive) (eq $s.Parent $p)) 

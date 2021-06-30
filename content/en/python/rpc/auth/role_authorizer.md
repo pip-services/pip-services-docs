@@ -4,12 +4,12 @@ title: "RoleAuthorizer"
 linkTitle: "RoleAuthorizer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Provides methods to check on a user's roles.
 ---
 
 ### Description
 
-TODO add description
+The RoleAuthorizer class provides methods to check on a user's roles.
 
 ### Instance methods
 

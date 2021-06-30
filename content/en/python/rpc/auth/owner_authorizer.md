@@ -4,12 +4,12 @@ title: "OwnerAuthorizer"
 linkTitle: "OwnerAuthorizer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Access granting methods.
 ---
 
 ### Description
 
-TODO add description
+The OwnerAuthorizer class provides access granting methods.
 
 ### Instance methods
 

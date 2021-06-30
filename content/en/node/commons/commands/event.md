@@ -25,7 +25,7 @@ Throws an Error if the name is null.
 
 > `public` constructor(name: string)
 
-- **name**: string - the name of the event that is to be created.
+- **name**: string - name of the event that is to be created.
 
 ### Instance methods
 
@@ -34,21 +34,21 @@ Adds a listener to receive notifications when this event is fired.
 
 > `public` addListener(listener: [IEventListener](../ievent_listener)): void
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to add.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to add.
 
 #### getListeners
 Gets all listeners registred in this event.
 
 > `public` getListeners(): [IEventListener](../ievent_listener)[]
 
-- **returns**: [IEventListener](../ievent_listener)[] - a list of listeners.
+- **returns**: [IEventListener](../ievent_listener)[] - list of listeners.
 
 #### getName
 Gets the name of the event.
 
 > `public` getName(): string 
 
-- **returns**: string - the name of this event.
+- **returns**: string - name of this event.
 
 #### notify
 Fires this event and notifies all registred listeners.  
@@ -56,15 +56,15 @@ Throws an [InvocationException](../errors/invocation_exception) if the event fai
 
 > `public`notify(correlationId: string, args: [Parameters](../../run/parameters)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **args**: [Parameters](../../run/parameters) - the parameters to raise this event with.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **args**: [Parameters](../../run/parameters) - parameters to raise this event with.
 
 #### removeListener
 Removes a listener, so that it no longer receives notifications for this event.
 
 > `public` removeListener(listener: [IEventListener](../ievent_listener)): void
 
-- **listener**: [IEventListener](../ievent_listener) - the listener reference to remove.
+- **listener**: [IEventListener](../ievent_listener) - listener reference to remove.
 
 **Example**:
 

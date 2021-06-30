@@ -22,30 +22,30 @@ The BooleanConverter class allows you to convert different values to boolean val
 ### Static methods
 
 #### toBoolean
-Converts value into boolean or returns false when conversion is not possible.
+Converts a value into a boolean or returns false when conversion is not possible.
 
 > `public static` toBoolean(value: any): boolean
 
-- **value**: any - the value to convert.
-- **returns**: boolean - boolean value or false when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: boolean - boolean value or false when the conversion is not supported.
 
 #### toBooleanWithDefault
-Converts value into boolean or returns default value when conversion is not possible
+Converts a value into a boolean or returns a given default value when the conversion is not possible
 
 > `public static` toBooleanWithDefault(value: any, defaultValue: boolean = false): boolean
 
-- **value**: any - the value to convert.
-- **defaultValue**: boolean - the default value
-- **returns**: boolean - boolean value or default when conversion is not supported.
+- **value**: any - value to convert.
+- **defaultValue**: boolean - default value
+- **returns**: boolean - boolean value or given default when the conversion is not supported.
 
 
 #### toNullableBoolean
-Converts value into boolean or returns null when conversion is not possible.
+Converts a value into boolean or returns null when the conversion is not possible.
 
 > `public static` toNullableBoolean(value: any): boolean
 
-- **value**: any - the value to convert.
-- **returns**: boolean - boolean value or null when convertion is not supported.
+- **value**: any - value to convert.
+- **returns**: boolean - boolean value or null when the convertion is not supported.
 
 ### Examples
 

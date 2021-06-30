@@ -5,7 +5,7 @@ linkTitle: "Auth"
 no_list: true
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO: add description
+    This package provides classes used to grant access.
 ---
 ---
 
@@ -14,12 +14,12 @@ description: >
 ### Classes
 
 #### [BasicAuthorizer](basic_authorizer)
-TODO: add description
+This class provides two methods: one to grant access to everyone and another to grant access to authorized users.
 
 #### [OwnerAuthorizer](owner_authorizer)
-TODO: add description
+This class provides access granting methods to owners and administrators.
 
 #### [RoleAuthorizer](role_authorizer)
-TODO: add description
+This class provides methods to check on a user’s roles
 
 </div>

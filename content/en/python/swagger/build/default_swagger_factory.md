@@ -14,7 +14,7 @@ description: >
 The DefaultSwaggerFactory allows you to create a factory used to create Swagger components by their descriptors.
 
 ### Constructors
-Creates a new instance of the factory. 
+Creates a new instance of the factory.  
 
 > DefaultSwaggerFactory()
 

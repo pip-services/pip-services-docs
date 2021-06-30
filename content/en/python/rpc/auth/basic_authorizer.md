@@ -4,12 +4,12 @@ title: "BasicAuthorizer"
 linkTitle: "BasicAuthorizer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    TODO add description
+    Basic authorizer.
 ---
 
 ### Description
 
-TODO add description
+The BasicAuthorizer provides two methods: one to grant access to everyone and another to grant access to authorized users.
 
 ### Instance methods
 

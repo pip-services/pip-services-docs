@@ -11,7 +11,7 @@ description: >
     various data types (such as integer to timespan, timespan to string, and so on).
 
     These converters are useful due to the fact that data in enterprise systems is represented in 
-    various forms, requiring frequent conversion and at times in very difficult combinations.  
+    various forms, requiring frequent conversions.  
 ---
 ---
 
@@ -38,7 +38,7 @@ Converts arbitrary values to boolean values using extended conversion rules:
 
 #### [DateTimeConverter](date_time_converter)
 Converts arbitrary values into Date values using extended conversion rules:
-- Strings: converted using ISO time format
+- Strings: converted using the ISO time format
 - Numbers: converted using milliseconds since unix epoch
 
 #### [DoubleConverter](double_converter)
@@ -72,7 +72,7 @@ Converts arbitrary values into map objects using extended conversion rules:
 
 #### [RecursiveMapConverter](recursive_map_converter)
 Converts arbitrary values into map objects using extended conversion rules.
-This class is similar to [MapConverter](map_converter), but is recursively converts all values
+This class is similar to [MapConverter](map_converter), but it recursively converts all values
 stored in objects and arrays.
 
 #### [StringConverter](string_converter)
@@ -85,7 +85,7 @@ Converts arbitrary values into strings using extended conversion rules:
 
 #### [TypeConverter](type_converter)
 Converts arbitrary values into objects specific by TypeCodes.
-For each TypeCode this class calls corresponding converter which applies
+For each TypeCode this class calls its corresponding converter, which then applies
 extended conversion rules to convert the values.
 
 </div>

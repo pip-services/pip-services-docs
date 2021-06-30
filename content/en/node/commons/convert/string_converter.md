@@ -13,7 +13,7 @@ description: >
  The StringConverter class allows you to convert arbitrary values into strings using the following extended conversion rules:
 
 - Numbers: are converted with '.' as decimal point
-- DateTime: using ISO format
+- DateTime: using the ISO format
 - Boolean: "true" for true and "false" for false
 - Arrays: as comma-separated list  
 - Other objects: using **toString()** method
@@ -21,29 +21,29 @@ description: >
 ### Static methods
 
 #### toNullableString
-Converts value into string or returns null when value is null.
+Converts a value into a string or returns null when the value is null.
 
 > `public static` toNullableString(value: any): string
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: string - string value or null when value is null.
 
 #### toString
-Converts value into string or returns "" when value is null.
+Converts a value into string or returns "" when the value is null.
 
 > `public static` toString(value: any): string
 
-- **value**: any - the value to convert.
+- **value**: any - value to convert.
 - **returns**: string - string value or "" when value is null.
 
 #### toStringWithDefault
-Converts value into string or returns default when value is null.
+Converts a value into a string or returns a given default when the value is null.
 
 > `public static` toStringWithDefault(value: any, defaultValue: string): string
 
-- **value**: any - the value to convert.
-- **defaultValue**: string - the default value.
-- **returns**: string - string value or default when value is null.
+- **value**: any - value to convert.
+- **defaultValue**: string - default value.
+- **returns**: string - string value or given default when value is null.
 
 
 ### Examples

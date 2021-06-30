@@ -23,7 +23,7 @@ Converts a  value into a map object or returns an empty map when the conversion 
 > `public static` toMap(value: any): any
 
 - **value**: any - value to convert.
-- **returns**: any - map object or empty map when the conversion is not supported.
+- **returns**: any - map object or empty map when the conversion is not supported.  
 
 #### toMapWithDefault
 Converts a value into a map object or returns default when the conversion is not possible.

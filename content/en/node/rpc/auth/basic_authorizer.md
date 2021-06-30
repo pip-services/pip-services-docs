@@ -2,7 +2,7 @@
 type: docs
 title: "BasicAuthorizer"
 linkTitle: "BasicAuthorizer"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 description: >
     Basic authorizer.
 ---
@@ -15,14 +15,14 @@ The BasicAuthorizer provides two methods: one to grant access to everyone and an
 
 #### anybody
 Allows everyone access, even unauthorized users.
-> anybody(): Callable
+> `public` anybody(): (req: any, res: any, next: () => void) => void
 
-- **returns**: Callable - returns anybody handler.
+- **returns**: (req: any, res: any, next: () => void) => void - returns anybody handler.
 
 #### signed
 Access is granted only to authorized users.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized.
 
-> signed(): Callable
+> `public` signed(): (req: any, res: any, next: () => void) => void
 
-- **returns**: Callable - returns sign handler.
+- **returns**: (req: any, res: any, next: () => void) => void - returns sign handler.

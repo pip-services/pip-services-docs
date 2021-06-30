@@ -2,7 +2,7 @@
 type: docs
 title: "RoleAuthorizer"
 linkTitle: "RoleAuthorizer"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 description: >
     Provides methods to check on a user's roles.
 ---
@@ -13,29 +13,29 @@ The RoleAuthorizer class provides methods to check on a user's roles.
 
 ### Instance methods
 
-#### user_in_roles
+#### userInRoles
 Checks on the roles a user has been assigned.
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> user_in_roles(roles: List[str]): Callable
+> `public` userInRoles(roles: string[]): (req: any, res: any, next: () => void) => void
 
-- **roles**: List[str] - roles list.
-- **returns**: Callable - returns roles handler.
+- **roles**: string[] - roles list.
+- **returns**: (req: any, res: any, next: () => void) => void - returns roles handler.
 
-#### user_in_role
+#### userInRole
 Check if the role is assigned to the user.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> user_in_role(role: str): Callable
+> `public` userInRole(role: string): (req: any, res: any, next: () => void) => void
 
-- **role**: str - the user role.
-- **returns**: Callable - returns role handler.
+- **role**: string - the user role.
+- **returns**: (req: any, res: any, next: () => void) => void - returns role handler.
 
 
 #### admin
 Check if the user has admin role.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> admin(): Callable
+> `public` admin(): (req: any, res: any, next: () => void) => void
 
-- **returns**: Callable - returns admin handler.
+- **returns**: (req: any, res: any, next: () => void) => void - returns admin handler.

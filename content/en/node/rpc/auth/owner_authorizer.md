@@ -2,7 +2,7 @@
 type: docs
 title: "OwnerAuthorizer"
 linkTitle: "OwnerAuthorizer"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 description: >
     Access granting methods for owners and administrators.
 ---
@@ -17,16 +17,16 @@ The OwnerAuthorizer class provides access granting methods for owners and admini
 Access is granted only for the session owner.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> owner(id_param: str = 'user_id'): Callable
+> `public` owner(idParam: string = 'user_id'): (req: any, res: any, next: () => void) => void
 
-- **id_param**: str - id of the current owner.
-- **returns**: Callable - returns owner handler.
+- **idParam**: string - id of the current owner.
+- **returns**: (req: any, res: any, next: () => void) => void - returns owner handler.
 
-#### owner_or_admin
+#### ownerOrAdmin
 Access is granted only to authorized users.   
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> owner_or_admin(id_param: str = 'user_id'): Callable
+> `public` ownerOrAdmin(idParam: string = 'user_id'): (req: any, res: any, next: () => void) => void
 
-- **id_param**: str - id of the current owner.
-- **returns**: Callable - returns owner or admin handler.
+- **idParam**: string - id of the current owner.
+- **returns**: (req: any, res: any, next: () => void) => void - returns owner or admin handler.

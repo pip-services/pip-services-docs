@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "AboutOperations"
-linkTitle: "AboutOperations"
+title: "SwaggerService"
+linkTitle: "SwaggerService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
     TODO: add description

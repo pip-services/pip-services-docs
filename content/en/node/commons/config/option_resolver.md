@@ -4,7 +4,7 @@ title: "OptionResolver"
 linkTitle: "OptionResolver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    A helper class to parameters from "options" configuration section.
+    A helper class used to obtain all the parameters from the "options" configuration section.
 ---
 ### Description
 The OptionResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "DefaultRpcFactory"
-linkTitle: "DefaultRpcFactory"
+title: "DefaultSwaggerFactory"
+linkTitle: "DefaultSwaggerFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
     Creates Swagger components by their descriptors.
@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The DefaultRpcFactory allows you to create a factory used to create Swagger components by their descriptors.
+The DefaultSwaggerFactory allows you to create a factory used to create Swagger components by their descriptors.
 
 ### Constructors
 Creates a new instance of the factory. 

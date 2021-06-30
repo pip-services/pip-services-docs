@@ -20,7 +20,7 @@ about the interceptor that is being used and the next command in the chain.
 
 > `public` constructor(interceptor: [ICommandInterceptor](../icommand_interceptor), next: [ICommand](../icommand))
 
-- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - the interceptor that is intercepting the command.
+- **interceptor**: [ICommandInterceptor](../icommand_interceptor) - interceptor that is intercepting the command.
 - **next**: [ICommand](../icommand) - (link to) the next command in the command's execution chain.
 
 ### Instance methods
@@ -31,16 +31,16 @@ See [Parameters](../../run/parameters)
 
 > `public` execute(correlationId: string, args: [Parameters](../../run/parameters)): Promise\<any\>
 
-- **correlationId**: string - unique transaction id to trace calls across components.
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to pass to the command for execution.
-- **returns**: Promise\<any\> - the execution result
+- **correlationId**: string - unique transaction id used to trace calls across components.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
+- **returns**: Promise\<any\> - execution result
 
 #### getName
-Returns string the name of the command that is being intercepted.
+Returns a string with the name of the command that is being intercepted.
 
 > `public` getName(c): string
 
-- **returns**: string - the name of the command that is being intercepted.
+- **returns**: string - name of the command that is being intercepted.
 
 
 #### validate
@@ -50,8 +50,8 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 
 > `public` validate(args: [Parameters](../../run/parameters)): [ValidationResult](../../validate/validation_result)[]
 
-- **args**: [Parameters](../../run/parameters) - the parameters (arguments) to validate for the next command.
-- **returns**: [ValidationResult](../../validate/validation_result)[] - an array of ValidationResults.
+- **args**: [Parameters](../../run/parameters) - parameters (arguments) to validate for the next command.
+- **returns**: [ValidationResult](../../validate/validation_result)[] - array of ValidationResults.
 
 ### Examples
 

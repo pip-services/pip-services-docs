@@ -4,12 +4,12 @@ title: "OwnerAuthorizer"
 linkTitle: "OwnerAuthorizer"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 description: >
-    Access granting methods.
+    Access granting methods for owners and administrators.
 ---
 
 ### Description
 
-The OwnerAuthorizer class provides access granting methods.
+The OwnerAuthorizer class provides access granting methods for owners and administrators.
 
 ### Instance methods
 

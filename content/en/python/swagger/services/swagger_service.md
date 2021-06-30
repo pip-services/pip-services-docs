@@ -4,26 +4,26 @@ title: "SwaggerService"
 linkTitle: "SwaggerService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-swagger-python"
 description: >
-    TODO: add description
+    Swagger UI service.
 ---
 
 **Implements:** [ISwaggerService](../../../rpc/services/iswagger_service)
 
 ### Description
 
-TODO: add description
+The SwaggerService class allows you to create a Swagger UI service.
 
 ### Instance methods
 
 #### register
-TODO: add description
+Registers the Swagger service.
 
 > register()
 
 #### register_open_api_spec
-TODO: add description
+Performs the required Swagger registration steps.
 
 > register_open_api_spec(base_route: str, swagger_route: str = None)
 
-- **base_route**: str - TODO: add description
-- **swagger_route**: str - TODO: add description
+- **base_route**: str - base route
+- **swagger_route**: str - Swagger route 

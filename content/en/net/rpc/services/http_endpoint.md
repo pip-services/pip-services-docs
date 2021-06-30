@@ -58,6 +58,13 @@ Configures this HttpEndpoint using the given configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
+#### Initialize
+TODO: add description
+
+> `public` void Initialize([IInitializable](../iinitializable) initialization)
+
+- **initialization**: [IInitializable](../iinitializable) - TODO: add description
+
 #### Instrument
 Adds instrumentation to log calls and measure call time. It returns a CounterTiming 
 object that is used to end the time measurement.
@@ -120,6 +127,14 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
+
+
+#### Uninitialize
+TODO: add description
+
+> `public` void Uninitialize([IInitializable](../iinitializable) initialization)
+
+- **initialization**: [IInitializable](../iinitializable) - TODO: add description
 
 
 #### Unregister

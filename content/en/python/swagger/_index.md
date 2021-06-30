@@ -92,7 +92,7 @@ paths:
 ```
 
 Include Swagger service into `config.yml` file and enable swagger for your REST or Commandable HTTP services.
-Also explicitely adding HttpEndpoint allows to share the same port between REST services and the Swagger service.
+Also explicitely adding HttpEndpoint allows sharing the same port between REST services and the Swagger service.
 ```yaml
 ---
 ...
@@ -130,7 +130,7 @@ class MyProcess(ProccesContainer):
 Launch the microservice and open the browser to open the Open API specification at
 [http://localhost:8080/greeting/swagger](http://localhost:8080/greeting/swagger)
 
-Then open the Swagger UI using the link [http://localhost:8080/swagger](http://localhost:8080/swagger).
+Then, open the Swagger UI using the link [http://localhost:8080/swagger](http://localhost:8080/swagger).
 The result shall look similar to the picture below.
 
 <img src="swagger-ui.png"/>

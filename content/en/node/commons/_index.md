@@ -6,7 +6,7 @@ no_list: true
 weight: 30
 description: > 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    It provides a set of tools used in microservices or backend services. It is designed to facilitate
+    It provides a set of tools used in microservices or backend services, and it is designed to facilitate
     symmetric implementation accross different programming languages.
 
 ---
@@ -38,8 +38,8 @@ npm install pip-services3-commons-nodex --save
 
 Then you are ready to start using the Pip.Services patterns to augment your backend code.
 
-For instance, here is how you can implement a component, that receives configuration, get assigned references,
-can be opened and closed using the patterns from this module.
+For instance, the code below shows how you can implement a component that receives a configuration, gets assigned references, and
+can be opened and closed using the patterns available from this module.
 
 ```typescript
 import { IConfigurable } from 'pip-services3-commons-node';
@@ -85,7 +85,7 @@ export class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
 }
 ```
 
-Then here is how the component can be used in the code
+The code below shows how this component can be used in practice:
 
 ```typescript
 import { ConfigParams } from 'pip-services3-commons-node';

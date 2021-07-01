@@ -19,32 +19,32 @@ Important points:
 
 #### nextDate
 Generates a random Date in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` nextDate(min: Date, max: Date = null): Date
 
-- **min**: Date - (optional) minimum range value
-- **max**: Date - max range value
-- **returns**: Date - a random Date value.
+- **min**: Date - (optional) minimum range value.
+- **max**: Date - max range value.
+- **returns**: Date - random Date value.
 
 #### nextDateTime
 Generates a random Date and time in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` nextDateTime(min: Date, max: Date = null): Date
 
 - **min**: Date - (optional) minimum range value
 - **max**: Date - max range value
-- **returns**: Date - a random Date and time value.
+- **returns**: Date - random Date and time value.
 
 #### updateDateTime
 Updates (drifts) a Date value within specified range defined
 
 > `public static` updateDateTime(value: Date, range: number = null): Date
 
-- **value**: Date - a Date value to drift.
-- **range**: number - (optional) a range in milliseconds. Default: 10 days
-- **returns**: Date - an updated DateTime
+- **value**: Date - Date value to drift.
+- **range**: number - (optional)  range in milliseconds. Default: 10 days
+- **returns**: Date - updated DateTime
 
 ### Examples
 

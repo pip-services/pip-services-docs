@@ -92,7 +92,7 @@
     {{with $parent}}
       {{$parent = .Parent }}
       {{ if or ($s.InSection .) (eq $ulNr 3) 
-        (and (gt (len $s.Pages) 0) 
+        (and (gt (len $s.Pages) 0) ($s.IsDescendant $currentSection)
              (eq $ulNr 4) (ge (len (split $currentSection.URL "/")) (len (split $s.URL "/"))) )
         }}
         {{ $showNeighbor = true }}
@@ -115,7 +115,7 @@
     {{ end }}
     
   {{end}}
-  
+
   <!-- output sidebar tree for homepage or hardcoded sections-->
   {{ $isHomePageOrHardcodeSection := and 
                                     (or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome) 

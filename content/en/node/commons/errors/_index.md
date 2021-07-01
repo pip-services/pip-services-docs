@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     
-    Portable and localizable Exceptions classes. Each Exception has a unique string code and details array (which can be used for creating 
+    Portable and localizable Exception classes. Each Exception has a unique string code and details array (which can be used for creating 
     localized strings), in addition to a description and stack trace . 
 
 
@@ -32,10 +32,10 @@ description: >
 ### Classes
 
 #### [ApplicationException](application_exception)
-Defines a base class to defive various application exceptions.
-Most languages have own definition of base exception (error) types.
+Defines a base class used to define various application exceptions.
+Most languages have their own definition of base exception (error) types.
 However, this class is implemented symmetrically in all languages
-supported by PipServices toolkit. It allows to create portable implementations
+supported by the PipServices toolkit. It allows to create portable implementations
 and support proper error propagation in microservices calls.
 
 #### [ApplicationExceptionFactory](application_exception_factory)
@@ -57,12 +57,12 @@ Errors that occur during connections to remote services.
 They can be related to misconfiguration, network issues, or the remote service itself.
 
 #### [ErrorCategory](error_category)
-Defines standard error categories supported by PipServices toolkit.
+Defines standard error categories supported by the PipServices toolkit.
 
 #### [ErrorDescription](error_description)
-Serializeable error description. It is use to pass information about errors
-between microservices implemented in different languages. On the receiving side
-[ErrorDescription](error_description) is used to recreate exception object close to its original type
+Serializeable error description. It is used to pass information about errors
+between microservices implemented in different languages. On the receiving side,
+[ErrorDescription](error_description) is used to recreate exception objects close to its original type
 without missing additional details.
 
 #### [ErrorDescriptionFactory](error_description_factory)

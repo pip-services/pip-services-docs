@@ -14,7 +14,7 @@ The RandomDouble class allows you to generate random double values.
 ### Static methods
 
 #### nextDouble
-Generates a random double value in the range ['minYear', 'maxYear'].
+Generates a random double value in the range ['minYear', 'maxYear']. 
 
 > `public static` nextDouble(min: number, max: number = null): number
 

@@ -18,7 +18,7 @@ Creates a binary clone of this object.
 
 > clone(): any
 
-- **returns**: any - a clone of this object.
+- **returns**: any - clone of this object.
 
 ### Examples
 

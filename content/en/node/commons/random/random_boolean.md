@@ -19,16 +19,16 @@ Example: 1 chance out of 3 chances (or 33.3%)
 
 > `public static` chance(chance: number, maxChances: number): boolean
 
-- **chance**: number - a chance proportional to maxChances.
-- **maxChances**: number - a maximum number of chances
-- **returns**: boolean - true or false for settled chance
+- **chance**: number - chance proportional to maxChances.
+- **maxChances**: number - maximum number of chances.
+- **returns**: boolean - true or false for settled chance.
 
 #### nextBoolean
 Generates a random boolean value.
 
 > `public static` nextBoolean(): boolean
 
-- **returns**: boolean - a random boolean.
+- **returns**: boolean - random boolean.
 
 ### Examples
 

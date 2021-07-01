@@ -91,7 +91,7 @@
   {{ range (seq $ulNr) }}
     {{with $parent}}
       {{$parent = .Parent }}
-      {{ if or ($s.InSection .) (eq $ulNr 3) (and (gt (len $s.Pages) 0) (eq $ulNr 4))}}
+      {{ if or ($s.InSection .) (eq $ulNr 3) (and (gt (len $s.Pages) 0) (eq $ulNr 4) ) }}
         {{ $showNeighbor = true }}
       {{ end }}
       {{ if $s.IsAncestor . }}
@@ -99,16 +99,18 @@
       {{ end }}
     {{ end }}
   {{ end }}
-
+  
   {{ $isChildOfHome := false }}
   {{ with $currentSection.Parent }}
-    <!-- Add hardcoded sections here -->
+
+    <!-- Add hardcoded child of home sections here -->
     {{ if and (.IsAncestor $s) (eq .LinkTitle "Home")
               (or (eq $currentSection.LinkTitle "Contribute") 
               (eq $currentSection.LinkTitle "Get help"))
     }}
       {{ $isChildOfHome = true }}
     {{ end }}
+    
   {{end}}
   
   <!-- output sidebar tree for homepage or hardcoded sections-->

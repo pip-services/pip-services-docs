@@ -21,11 +21,11 @@ Important points
 - An optional *total* paramter allows you to specify the total number of items returned from a request. However, not all implementations support the *total* parameter because its generation may lead to severe performance implications.   
 
 ### Constructors
-Creates a new instance of data page and assigns its values.
+Creates a new instance of DataPage and assigns its values.
 
 > `public` constructor(data: T[] = null, total: number = null)
 
-- **data**: T[] - a list of items from the retrieved page.
+- **data**: T[] - list of items from the retrieved page.
 - **total**: number - total amount of items in a request.
 
 ### Fields
@@ -34,11 +34,11 @@ Creates a new instance of data page and assigns its values.
 <span class="hide-title-link">
 
 #### data
-The items of the retrieved page.
+Items of the retrieved page.
 > `public` **data**: T[]
 
 #### total
-The total amount of items in a request.
+Total amount of items in a request.
 > `public` **total**: number
 
 </span>

@@ -19,7 +19,7 @@ Creates a new instance and initalizes it with elements from the specified map.
 
 > `public` constructor(map: any = null)
 
-- **map**: any - a map to initialize this instance.
+- **map**: any - map to initialize this instance.
 
 
 ### Static methods
@@ -31,7 +31,7 @@ See [StringValueMap.fromString](../string_value_map/#fromstring)
 > `public static` fromString(line: string): [FilterParams]()
 
 - **line**: string - semicolon-separated key-value list to initialize FilterParams.
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **returns**: [FilterParams]() - newly created FilterParams.
 
 
 #### fromTuples
@@ -39,17 +39,17 @@ Creates a new FilterParams from a list of key-value pairs called tuples.
 
 > `public static` fromTuples(...tuples: any[]): [FilterParams]()
 
-- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **tuples**: any[] - list of values where odd elements are keys and the following even elements are values.
+- **returns**: [FilterParams]() - newly created FilterParams.
 
 
 #### fromValue
-Converts specified value into FilterParams.
+Converts a specified value into a FilterParams object.
 
 > `public static` fromValue(value: any): [FilterParams]()
 
-- **value**: any - value to be converted
-- **returns**: [FilterParams]() - a newly created FilterParams.
+- **value**: any - value to be converted.
+- **returns**: [FilterParams]() - newly created FilterParams object.
 
 
 ### Examples

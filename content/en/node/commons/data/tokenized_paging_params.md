@@ -34,15 +34,15 @@ Creates a new instance and sets its values.
 <span class="hide-title-link">
 
 #### token
-The start token
+Start token
 > `public` **token**: string
 
 #### take
-The number of items to return.
+Number of items to return.
 > `public` **take**: number
 
 #### total
-The flag to return the total number of items.
+Flag used to define whether the total number of items must be returned or not.
 > `public` **total**: boolean
 
 </span>
@@ -55,36 +55,36 @@ Gets the number of items to return in a page.
 
 > `public` getTake(maxTake: number): number
 
-- **maxTake**: number - the maximum number of items to return.
-- **returns**: number - the number of items to return.
+- **maxTake**: number - maximum number of items to return.
+- **returns**: number - number of items to return.
 
 ### Static methods
 
 #### fromMap
-Creates a new TokenizedPagingParams and sets it parameters from the specified map
+Creates a new TokenizedPagingParams object and sets its parameters from the specified map.
 
 > `public static` fromMap(map: [AnyValueMap](../any_value_map)): [TokenizedPagingParams]()
 
-- **map**: [AnyValueMap](../any_value_map) - a AnyValueMap or StringValueMap to initialize this TokenizedPagingParams
-- **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
+- **map**: [AnyValueMap](../any_value_map) - AnyValueMap or StringValueMap object used to initialize this TokenizedPagingParams object.
+- **returns**: [TokenizedPagingParams]() - newly created TokenizedPagingParams object.
 
 
 #### fromTuples
-Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
+Creates a new TokenizedPagingParams object from a list of key-value pairs called tuples.
 
 > `public static` fromTuples(...tuples: any[]): [TokenizedPagingParams]()
 
-- **tuples**: any[] - a list of values where odd elements are keys and the following even elements are values
-- **returns**: [TokenizedPagingParams]() - a newly created TokenizedPagingParams.
+- **tuples**: any[] - list of values where odd elements are keys and the following even elements are values
+- **returns**: [TokenizedPagingParams]() - newly created TokenizedPagingParams object.
 
 
 #### fromValue
-Converts specified value into TokenizedPagingParams.
+Converts a specified value into a TokenizedPagingParams object.
 
 > `public static` fromValue(value: any): [TokenizedPagingParams]()
 
 - **value**: any - value to be converted
-- **returns**: [TokenizedPagingParams]() - a newly created PagingParams.
+- **returns**: [TokenizedPagingParams]() - newly created TokenizedPagingParams object.
 
 ### Examples
 

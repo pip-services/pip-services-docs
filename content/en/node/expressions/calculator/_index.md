@@ -26,6 +26,13 @@ TODO: add description
 
 <br>
 
+### Constants
+
+#### [SyntaxErrorCode](syntax_error_code)
+TODO: add description
+
+<br>
+
 ### Classes
 
 #### [CalculationStack](calculation_stack)
@@ -35,9 +42,6 @@ TODO: add description
 TODO: add description
 
 #### [ExpressionException](expression_exception)
-TODO: add description
-
-#### [SyntaxErrorCode](syntax_error_code)
 TODO: add description
 
 #### [SyntaxException](syntax_exception)

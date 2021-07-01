@@ -26,7 +26,7 @@ The function name.
 #### calculate
 The function calculation method.
 
-> `public` calculate(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)): Promise<[Variant](../../../variants/variant)>
+> calculate(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)): Promise<[Variant](../../../variants/variant)>
 
 - **params**: [Variant[]](../../../variants/variant) - an array with function parameters.
 - **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - Variants operations manager.

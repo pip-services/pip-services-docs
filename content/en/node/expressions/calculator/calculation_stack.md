@@ -17,6 +17,8 @@ TODO: add description
 TODO: add description
 > `public` length(): number
 
+- **returns**: number - TODO: add description
+
 
 ### Instance methods
 

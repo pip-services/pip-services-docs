@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "ExpressionException"
-linkTitle: "ExpressionException"
+title: "SyntaxErrorCode"
+linkTitle: "SyntaxErrorCode"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
     Exception that can be thrown by Expression Calculator.
@@ -18,32 +18,32 @@ TODO: add description
 <span class="hide-title-link">
 
 #### ErrorNear
-The unknown
-> `public static` ErrorNear: string = "ERROR_NEAR"
+ The error near
+> `public static` **ErrorNear**: string = "ERROR_NEAR"
 
 #### Internal
 The internal error
-> `public static` Internal: string = "INTERNAL"
+> `public static` **Internal**: string = "INTERNAL"
 
 #### MissedCloseParenthesis
 The missed close parenthesis
-> `public static` MissedCloseParenthesis: string = "MISSED_CLOSE_PARENTHESIS"
+> `public static` **MissedCloseParenthesis**: string = "MISSED_CLOSE_PARENTHESIS"
 
 #### MissedCloseSquareBracket
 The missed close square bracket
-> `public static` MissedCloseSquareBracket: string = "MISSED_CLOSE_SQUARE_BRACKET"
+> `public static` **MissedCloseSquareBracket**: string = "MISSED_CLOSE_SQUARE_BRACKET"
 
 #### UnexpectedEnd
 The unexpected end.
-> `public static` UnexpectedEnd: string = "UNEXPECTED_END";
+> `public static` **UnexpectedEnd**: string = "UNEXPECTED_END";
 
 #### Unknown
 The unknown
-> `public static` Unknown: string = "UNKNOWN"
+> `public static` **Unknown**: string = "UNKNOWN"
 
 #### UnknownSymbol
 The unknown symbol
-> `public static` UnknownSymbol: string = "UNKNOWN_SYMBOL"
+> `public static` **UnknownSymbol**: string = "UNKNOWN_SYMBOL"
 
 
 </span>

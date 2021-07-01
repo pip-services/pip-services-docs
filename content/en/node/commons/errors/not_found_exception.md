@@ -19,6 +19,6 @@ Creates an error instance and assigns its values.
 > `public` NotFoundException(correlation_id: string = null, code: string = null, message: string = null)
 
 - **correlation_id**: string - (optional) unique transaction id used to trace execution through a call chain.
-- **code**: string - (optional) unique error code. Default: "UNKNOWN".
+- **code**: string - (optional) unique error code. Default: "UNKNOWN". 
 - **message**: string - (optional) human-readable description of the error.
 

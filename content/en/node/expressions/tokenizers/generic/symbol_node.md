@@ -1,0 +1,121 @@
+---
+type: docs
+title: "SymbolNode"
+linkTitle: "SymbolNode"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
+description: > 
+    A *SymbolNode* object is a member of a tree that contains all possible prefixes
+    of allowable symbols. Multi-character symbols appear in a *SymbolNode* tree
+    with one node for each character.
+---
+
+### Description
+
+For example, the symbol *=:~* will appear in a tree as three nodes. The first
+node contains an equals sign, and has a child; that child contains a colon and has a child;
+this third child contains a tilde, and has no children of its own. If the colon node had
+another child for a dollar sign character, then the tree would contain the symbol *=:$*.
+
+
+A tree of *SymbolNode* objects collaborate to read a (potentially multi-character)
+symbol from an input stream. A root node with no character of its own finds an initial node
+that represents the first character in the input. This node looks to see if the next character
+in the stream matches one of its children. If so, the node delegates its reading task to its child.
+This approach walks down the tree, pulling symbols from the input that match the path down the tree.
+
+
+When a node does not have a child that matches the next character, we will have read the longest
+possible symbol prefix. This prefix may or may not be a valid symbol.
+Consider a tree that has had *=:~* added and has not had *=:* added.
+In this tree, of the three nodes that contain *=:~*, only the first and third contain
+complete symbols. If, say, the input contains *=:a*, the colon node will not have
+a child that matches the 'a' and so it will stop reading. The colon node has to "unread": it must
+push back its character, and ask its parent to unread. Unreading continues until it reaches
+an ancestor that represents a valid symbol.
+
+### Constructors
+Constructs a SymbolNode with the given parent, representing the given character.
+
+> `public` constructor(parent: [SymbolNode](), character: number)
+
+- **parent**: [SymbolNode]() - This node's parent
+- **character**: number - This node's associated character.
+
+
+### Properties
+
+#### tokenType
+TODO: add description
+> `public` tokenType(): [TokenType](../../token_type)
+
+- **returns**: [TokenType](../../token_type) - TODO: add description
+
+> `public` tokenType(value: [TokenType](../../token_type))
+
+- **value**: [TokenType](../../token_type) - TODO: add description
+
+#### valid
+TODO: add description
+
+> `public` valid(): boolean
+
+- **returns**: boolean - TODO: add description
+
+> `public` valid(value: boolean)
+
+- **value**: boolean - TODO: add description
+
+
+### Instance methods
+
+
+#### addDescendantLine
+Add a line of descendants that represent the characters in the given string.
+
+> `public` addDescendantLine(value: string, tokenType: [TokenType](../../token_type)): void
+
+- **value**: string - TODO: add description
+- **tokenType**: [TokenType](../../token_type) - TODO: add description
+
+#### ancestry
+Show the symbol this node represents.
+
+> `public` ancestry(): string
+
+- **returns**: string - The symbol this node represents.
+
+#### deepestRead
+Establish characters in the given range as valid characters for part of a word after the first character. Note that the tokenizer must determine which characters are valid as the beginning character of a word.
+
+> `public` deepestRead(scanner: [IScanner](../../../io/iscanner)): [SymbolNode]()
+
+- **scanner**: [IScanner](../../../io/iscanner) - TODO: add description
+- **returns**: [SymbolNode]() - TODO: add description
+
+
+#### ensureChildWithChar
+Find or create a child for the given character.
+
+> `public` ensureChildWithChar(value: number): [SymbolNode]()
+
+- **value**: number - TODO: add description
+- **returns**: [SymbolNode]() - TODO: add description
+
+
+#### findChildWithChar
+Find a child with the given character.
+
+> `public` findChildWithChar(value: number): [SymbolNode]()
+
+- **value**: number - TODO: add description
+- **returns**: [SymbolNode]() - TODO: add description
+
+
+#### unreadToValid
+Unwind to a valid node; this node is "valid" if its ancestry represents a complete symbol.
+If this node is not valid, put back the character and ask the parent to unwind.
+
+> `public` unreadToValid(scanner: [IScanner](../../../io/iscanner)): [SymbolNode]()
+
+- **scanner**: [IScanner](../../../io/iscanner) - TODO: add description
+- **returns**: [SymbolNode]() - TODO: add description

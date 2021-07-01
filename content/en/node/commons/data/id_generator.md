@@ -26,17 +26,17 @@ The value is a string representation of a GUID value.
 
 > `public static` nextLong(): string
 
-- **returns**: string - a generated 32-digit object ID
+- **returns**: string - generated 32-digit object ID
 
 
 #### nextShort
 Generates a random 9-digit random ID (code).
 
-Remember: The returned value is not guaranteed to be unique.
+Note: The returned value is not guaranteed to be unique.
 
 > `public static` nextShort(): string
 
-- **returns**: string - a generated random 9-digit code
+- **returns**: string - generated random 9-digit code
 
 ### Examples
 

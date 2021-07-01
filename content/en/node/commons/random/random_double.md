@@ -20,15 +20,15 @@ Generates a random double value in the range ['minYear', 'maxYear'].
 
 - **min**: number - (optional) minimum range value
 - **max**: number - max range value
-- **returns**: number - a random double value.
+- **returns**: number - random double value.
 
 #### updateDouble
-Updates (drifts) a double value within specified range defined
+Updates (drifts) a double value within specified range.
 
 > `public static` updateDouble(value: number, range: number = null): number
 
-- **value**: number - a double value to drift.
-- **range**: number - (optional) a range. Default: 10% of the value
+- **value**: number - double value to drift.
+- **range**: number - (optional) range. Default: 10% of the value.
 - **returns**: number - updated double value.
 
 ### Examples

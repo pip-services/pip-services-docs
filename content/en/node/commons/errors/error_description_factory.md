@@ -21,12 +21,12 @@ Important points
 ### Static methods
 
 #### create
-Creates a serializable ErrorDescription from error object.
+Creates a serializable ErrorDescription from n error object.
 
 > `public static` create(error: any): [ErrorDescription](../error_description)
 
-- **error**: any - an error object
-- **returns**: [ErrorDescription](../error_description) - a serializeable ErrorDescription object that describes the error.
+- **error**: any - error object
+- **returns**: [ErrorDescription](../error_description) - serializeable ErrorDescription object that describes the error.
 
 ### See also
 - #### [ApplicationException](../application_exception)

@@ -17,7 +17,7 @@ The INamed interface is used to define data objects containing a human-readable 
 <span class="hide-title-link">
 
 #### name
-The object's humand-readable name.
+Object's humand-readable name.
 > **name**: string
 
 ### Examples

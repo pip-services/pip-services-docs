@@ -21,7 +21,7 @@ Important points
 <span class="hide-title-link">
 
 #### id
-The unique object identifier of type K.
+Unique object identifier of type K.
 > **id**: K
 
 ### Examples

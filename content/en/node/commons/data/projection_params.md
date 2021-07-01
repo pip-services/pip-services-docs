@@ -21,11 +21,11 @@ Important points
 - As an alternative, the nested format offers a more compact representation. E.g. *"field1,field2(field21,field22(field221))"*.
 
 ### Constructors
-Creates a new instance of the projection parameters and assigns its value.
+Creates a new instance of ProjectionParams and assigns its value.
 
 > `public` constructor(values: any[] = null)
 
-- **values**: any[] - (optional) values to initialize this object.
+- **values**: any[] - (optional) values used to initialize this object.
 
 ### Instance methods
 
@@ -36,26 +36,26 @@ The result is a comma-separated list of projection fields
 
 > `public` toString(): string
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 ### Static methods
 
 #### fromString
-Parses comma-separated list of projection fields.
+Parses a comma-separated list of projection fields.
 
 > `public static` fromString(...values: string[])
 
 - **values**: string[] - one or more comma-separated lists of projection fields
-- **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [ProjectionParams]() - newly created ProjectionParams object.
 
 #### fromValue
-Converts specified value into ProjectionParams.  
+Converts a specified value into a ProjectionParams object.  
 See [AnyValueArray.fromValue](../any_value_array/#fromvalue)
 
 > `public static` fromValue(value: any): [ProjectionParams]()
 
 - **value**: any -  value to be converted
-- **returns**: [ProjectionParams]() - a newly created ProjectionParams.
+- **returns**: [ProjectionParams]() - newly created ProjectionParams object.
 
 ### Examples
 

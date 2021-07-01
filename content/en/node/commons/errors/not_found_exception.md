@@ -14,7 +14,7 @@ description: >
 The NotFoundException class is used to manage errors caused by attempts to access missing objects.
 
 ### Constructors
-Creates an error instance and assigns its values.
+Creates an error instance and assigns its values. 
 
 > `public` NotFoundException(correlation_id: string = null, code: string = null, message: string = null)
 

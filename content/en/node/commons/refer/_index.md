@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     
-    The Refer package provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish dependencies between them. 
+    The Refer package provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish relationships between them. 
    
 ---
 ---
@@ -21,8 +21,8 @@ Sets references to dependent components.
 #### [IReferences](ireferences)
 Interface for a map that holds component references and passes them to components
 to establish dependencies with each other.
-Together with [IReferenceable](ireferenceable) and [IUnreferenceable](iunreferenceable) interfaces it implements
-a Locator pattern that is used by PipServices toolkit for Inversion of Control
+Together with the [IReferenceable](ireferenceable) and [IUnreferenceable](iunreferenceable) interfaces, it implements
+a Locator pattern that is used by the PipServices toolkit for Inversion of Control
 to assign external dependencies to components. 
 
 #### [IUnreferenceable](iunreferenceable)
@@ -34,16 +34,16 @@ Interface for components that require explicit clearing of references to depende
 
 #### [DependencyResolver](dependency_resolver)
 Helper class for resolving component dependencies.
-The resolver is configured to resolve named dependencies by specific locator.
+The resolver is configured to resolve named dependencies by a specified locator.
 During deployment the dependency locator can be changed.
 
 #### [Descriptor](descriptor)
-Locator type that most often used in PipServices toolkit.
+Locator type that is most often used in the PipServices toolkit.
 It locates components using several fields:
-- Group: a package or just named group of components like "pip-services"
-- Type: logical component type that defines it's contract like "persistence"
-- Kind: physical implementation type like "mongodb"
-- Name: unique component name like "default"
+- Group: package or named group of components like "pip-services"
+- Type: logical component type that defines it's contract. like "persistence"
+- Kind: physical implementation type, like "mongodb".
+- Name: unique component name, like "default"
 - Version: version of the component contract like "1.0"
 
 #### [Reference](reference)

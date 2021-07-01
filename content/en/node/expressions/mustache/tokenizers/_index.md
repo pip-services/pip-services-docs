@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Parsers"
-linkTitle: "Parsers"
+title: "Tokenizers"
+linkTitle: "Tokenizers"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >

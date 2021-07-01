@@ -19,7 +19,7 @@ Important points
 - Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by a [TokenizedPagingParams](../tokenized_paging_params) object.
      - The *token* parameter in the TokenizedPagingParams defines where to start the search.
-     - The *takes* parameter sets number of items to be returned in the page.
+     - The *takes* parameter sets the number of items to be returned in the page.
 - The optional *total* parameter tells to return the total number of items in the query.
 - However, not all implementations support the *total* parameter, because its generation may lead to severe performance implications.
 
@@ -29,9 +29,9 @@ Creates a new instance of data page and assigns its values.
 
 > `public` constructor(data: T[] = null, token: string = null, total: number = null)
 
-- **data**: T[] - a list of items from the retrieved page.
-- **token**: string - (optional) a token to define astarting point for the next search.
-- **total**: number - (optional) a total number of objects in the result.
+- **data**: T[] - list of items from the retrieved page.
+- **token**: string - (optional) token used to define a starting point for the next search.
+- **total**: number - (optional) total number of objects in the result.
 
 
 ### Fields
@@ -39,15 +39,15 @@ Creates a new instance of data page and assigns its values.
 <span class="hide-title-link">
 
 #### data
-The items of the retrieved page.
+Items of the retrieved page.
 > `public` **data**: T[]
 
 #### token
-The starting point for the next search.
+starting point for the next search.
 > `public` **token**: string
 
 #### total
-The total amount of items in a request.
+Total amount of items in a request.
 > `public` **total**: number
 
 </span>

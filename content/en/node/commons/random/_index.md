@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
     
-    The Random package contains a set of classes that can be used to generate different type of random values, such as integer, double, long, float, and text. The random generated values can be used for multiple purposes, such as software testing.
+    The Random package contains a set of classes that can be used to generate different types of random values; such as integer, double, long, float, and text. The random generated values can be used for multiple purposes, such as software testing.
    
 ---
 ---

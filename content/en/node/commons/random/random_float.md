@@ -18,7 +18,7 @@ Generates a float in the range ['min', 'max']. If 'max' is omitted, then the ran
 
 > `public static` nextFloat(min: number, max: number = null): number
 
-- **min**: number - (minimum value of the float that will be generated. 
+- **min**: number - (minimum value of the float that will be generated.   
 If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 - **max**: number - (optional) maximum value of the float that will be generated. Defaults to 'min' if omitted.
 - **returns**: number - generated random float value.

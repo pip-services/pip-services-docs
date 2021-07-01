@@ -38,7 +38,7 @@ This method generates dates without time (or time set to 00:00:00)
 - **returns**: Date - random Date and time value.
 
 #### updateDateTime
-Updates (drifts) a Date value within specified range defined
+Updates (drifts) a Date value within specified range.
 
 > `public static` updateDateTime(value: Date, range: number = null): Date
 

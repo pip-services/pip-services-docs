@@ -91,7 +91,10 @@
   {{ range (seq $ulNr) }}
     {{with $parent}}
       {{$parent = .Parent }}
-      {{ if or ($s.InSection .) (eq $ulNr 3) (and (gt (len $s.Pages) 0) (eq $ulNr 4) ) }}
+      {{ if or ($s.InSection .) (eq $ulNr 3) 
+        (and (gt (len $s.Pages) 0) 
+             (eq $ulNr 4) (ge (len (split $currentSection.URL "/")) (len (split $s.URL "/"))) )
+        }}
         {{ $showNeighbor = true }}
       {{ end }}
       {{ if $s.IsAncestor . }}

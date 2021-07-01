@@ -3,6 +3,7 @@ type: docs
 title: "Parsers"
 linkTitle: "Parsers"
 no_list: true
+weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
     TODO: add description

@@ -18,7 +18,7 @@ Creates a new instance and initializes it with specified sort fields.
 
 > `public` constructor(...fields: [SortField](../sort_field)[])
 
-- **fields**: [SortField](../sort_field)[] - a list of fields to sort by.
+- **fields**: [SortField](../sort_field)[] - list of fields to sort by.
 
 
 ### Examples

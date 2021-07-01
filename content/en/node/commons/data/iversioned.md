@@ -23,7 +23,7 @@ Important points
 <span class="hide-title-link">
 
 #### version
-The object's version.
+Object's version.
 > **version**: string
 
 </span>

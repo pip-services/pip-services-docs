@@ -18,15 +18,15 @@ Distorts a string by randomly replacing characters in it.
 
 > `public static` distort(value: string): string
 
-- **value**: string - a string to distort.
-- **returns**: string - a distored string.
+- **value**: string - string to distort.
+- **returns**: string - distorted string.
 
 #### nextAlphaChar
-Generates random alpha characted [A-Za-z]
+Generates a random alpha characted [A-Za-z]
 
 > `public static` nextAlphaChar(): string
 
-- **returns**: string - a random characted.
+- **returns**: string - random characted.
 
 #### nextString
 Generates a random string, consisting of upper and lower case letters (of the English alphabet), 
@@ -36,24 +36,24 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 
 - **minLength**: number - (optional) minimum string length.
 - **maxLength**: number - maximum string length.
-- **returns**: string - a random string.
+- **returns**: string - random string.
 
 
 #### pick
-Picks a random string from an array of string.
+Picks a random string from an array of strings.
 
 > `public static` pick(values: string[]): string
 
-- **values**: string[] - Picks a random character from an array of string.
-- **returns**: string - a randomly picked char.
+- **values**: string[] - Picks a random character from an array of strings.
+- **returns**: string - randomly picked char.
 
 #### pickChar
 Picks a random character from a string.
 
 > `public static` pickChar(values: string): string
 
-- **values**: string - a string to pick a char from
-- **returns**: string - a randomly picked char.
+- **values**: string - string to pick a char from.
+- **returns**: string - randomly picked char.
 
 ### Examples
 

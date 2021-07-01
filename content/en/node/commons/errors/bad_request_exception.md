@@ -19,7 +19,7 @@ Creates an error instance and assigns its values.
 
 > `public` constructor(correlation_id: string = null, code: string = null, message: string = null)
 
-- **correlation_id**: string - (optional) a unique transaction id to trace execution through call chain.
-- **code**: string - (optional) a unique error code. Default: "UNKNOWN"
-- **message**: string - (optional) a human-readable description of the error.
+- **correlation_id**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **code**: string - (optional) unique error code. Default: "UNKNOWN"
+- **message**: string - (optional) human-readable description of the error.
 

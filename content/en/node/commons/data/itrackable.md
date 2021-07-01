@@ -18,15 +18,15 @@ The ITrackagle interface allows you to define data objects that can track their 
 <span class="hide-title-link">
 
 #### create_time
-The UTC time at which the object was created.
+UTC time at which the object was created.
 > **create_time**: Date
 
 #### change_time
-The UTC time at which the object was last changed (created, updated, or deleted).
+UTC time at which the object was last changed (created, updated, or deleted).
 > **change_time**: Date
 
 #### deleted
-The logical deletion flag. True when object is deleted and null or false otherwise
+Logical deletion flag. True when object is deleted and null or false otherwise
 > **deleted**: boolean
 
 </span>

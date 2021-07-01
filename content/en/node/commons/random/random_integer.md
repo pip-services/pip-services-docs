@@ -14,7 +14,7 @@ The RandomInteger class allows you to generate random integer values.
 ### Static methods
 
 #### nextInteger
-Generates a integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
+Generates an integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].
 
 > `public static` nextInteger(min: number, max: number = null): number
 
@@ -24,12 +24,12 @@ If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 - **returns**: number - generated random integer value.
 
 #### updateInteger
-Updates (drifts) a integer value within specified range defined
+Updates (drifts) a integer value within specified range.
 
 > `public static` updateInteger(value: number, range: number = null): number
 
-- **value**: number - a integer value to drift.
-- **range**: number - (optional) a range. Default: 10% of the value
+- **value**: number - integer value to drift.
+- **range**: number - (optional) range. Default: 10% of the value
 - **returns**: number - updated integer value.
 
 ### Examples

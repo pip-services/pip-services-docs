@@ -19,64 +19,64 @@ Important points
 ### Static methods
 
 #### getProperties
-Get values of all properties in specified object
+Gets the values of all properties in specified object
 and returns them as a map.
 
 > `public static` getProperties(obj: any): any
 
-- **obj**: any - an object to get properties from.
-- **returns**: any - a map, containing the names of the object's properties and their values.
+- **obj**: any - object to get properties from.
+- **returns**: any - map containing the names of the object's properties and their values.
 
 
 #### getProperty
-Gets value of object property specified by its name.
+Gets the value of an object's property specified by its name.
 
 > `public static` getProperty(obj: any, name: string): any
 
-- **obj**: any - an object to read property from.
-- **name**: string - a name of the property to get.
-- **returns**: any - the property value or null if property doesn't exist or introspection failed.
+- **obj**: any - object to read the property from.
+- **name**: string - name of the property to get.
+- **returns**: any - property value or null if property doesn't exist or introspection failed.
 
 #### getPropertyNames
-Gets names of all properties implemented in specified object.
+Gets names of all properties implemented in a specified object.
 
 > `public static` getPropertyNames(obj: any): string[]
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with property names.
+- **obj**: any - objec to introspect.
+- **returns**: string[] - list with property names.
 
 #### hasProperty
-Checks if object has a property with specified name.
+Checks if an object has a property with a specified name.
 
 > `public static` hasProperty(obj: any, name: string): boolean
 
-- **obj**: any - an object to introspect.
-- **name**: string - a name of the property to check.
+- **obj**: any - object to introspect.
+- **name**: string - name of the property to check.
 - **returns**: boolean - true if the object has the property and false if it doesn't.
 
 #### setProperties
-Sets values of some (all) object properties.
+Sets the values of some (all) object properties.
  
-If some properties do not exist or introspection fails
+If some properties do not exist or introspection fails, 
 they are just silently skipped and no errors thrown.
 
 > `public static` setProperties(obj: any, values: any): void
 
-- **obj**: any - an object to write properties to.
-- **values**: any - a map, containing property names and their values.
+- **obj**: any - object to write properties to.
+- **values**: any - map containing property names and their values.
 
 
 #### setProperty
-Sets value of object property specified by its name.
+Sets value of an object's property specified by its name.
 
-If the property does not exist or introspection fails
+If the property does not exist or introspection fails, 
 this method doesn't do anything and doesn't any throw errors.
 
 > `public static` setProperty(obj: any, name: string, value: any): void
 
-- **obj**: any - an object to write property to.
-- **name**: string - a name of the property to set.
-- **value**: any - a new value for the property to set.
+- **obj**: any - object to write a property to.
+- **name**: string - name of the property to set.
+- **value**: any - new value for the property to set.
 
 ### Examples
 

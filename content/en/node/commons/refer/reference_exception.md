@@ -16,6 +16,6 @@ Creates an error instance and assigns its values.
 
 > `public` constructor(correlationId: string, locator: any)
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **locator**: any - the locator to find reference to dependent component.
+- **correlationId**: string - (optional) unique transaction id used to trace execution through a call chain.
+- **locator**: any - locator to find reference to dependent component.
 

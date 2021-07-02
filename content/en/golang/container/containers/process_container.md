@@ -30,16 +30,16 @@ Creates a new instance of the container.
 
 > NewProcessContainer(name string, description string) [*ProcessContainer]()
 
-- **name**: string - (optional) container's name (accessible via ContextInfo)
-- **description**: string - (optional) container's description (accessible via ContextInfo)
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 #### NewEmptyProcessContainer
 Creates a new instance of the container.
 
 > NewEmptyProcessContainer() [*ProcessContainer]()
 
-- **name**: string - (optional) container's name (accessible via ContextInfo)
-- **description**: string - (optional) container's description (accessible via ContextInfo)
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 ### Fields
 

@@ -37,7 +37,6 @@ Creates a new empty instance of data page.
 
 ### Fields
 
-
 <span class="hide-title-link">
 
 #### Data

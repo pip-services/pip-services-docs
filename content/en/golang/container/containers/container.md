@@ -42,8 +42,8 @@ Creates a new instance of the container.
 
 > NewContainer(name string, description string) [*Container]()
 
-- **name**: string - (optional) container's name (accessible via ContextInfo)
-- **description**: string - (optional) container's description (accessible via ContextInfo)
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 #### NewEmptyContainer 
 Creates a new empty instance of the container.
@@ -55,8 +55,8 @@ Creates a new instance of the container inherit from reference.
 
 > InheritContainer(name string, description string, referenceable [IReferenceable](../refer/ireferenceable)) [*Container]()
 
-- **name**: string - a container name (accessible via ContextInfo)
-- **description**: string - a container description (accessible via ContextInfo)
+- **name**: string - a container name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - a container description (accessible via [ContextInfo](../../../components/info/context_info))
 - **referenceable**: [IReferenceable](../refer/ireferenceable) - referenceble object for inherit
 
 ### Fields

@@ -42,8 +42,8 @@ Creates a new instance of the container.
 
 > `public` constructor(name?: string, description?: string)
 
-- **name**: string - (optional) container's name (accessible via ContextInfo)
-- **description**: string - (optional) container's description (accessible via ContextInfo)
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 ### Fields
 

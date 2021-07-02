@@ -42,8 +42,8 @@ Creates a new instance of the container.
 
 > Container(name: str = None, description: str = None)
 
-- **name**: str - (optional) container's name (accessible via ContextInfo)
-- **description**: str - (optional) container's description (accessible via ContextInfo)
+- **name**: str - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: str - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 ### Fields
 

@@ -10,7 +10,7 @@ description: >
 ### Description
 The Descriptor class provides you with a component locator. This locator is often used in the PipServices toolkit. It locates components using the following fields:
 
-- **Group:** a package or just named group of components, like "pip-services". 
+- **Group:** package or named group of components, like "pip-services". 
 - **Type:** logical component type that defines it's contract, like "persistence" .
 - **Kind:** physical implementation type, like "mongodb".  
 - **Name:** unique component name, like "default".  
@@ -30,11 +30,11 @@ Creates a new instance of the descriptor.
 
 > `public` constructor(group: string, type: string, kind: string, name: string, version: string)
 
-- **group**: string - a logical component group
-- **type**: string - a logical component type or contract
-- **kind**: string - a component implementation type
-- **name**: string - a unique component name
-- **version**: string - a component implementation version
+- **group**: string - logical component group
+- **type**: string - logical component type or contract
+- **kind**: string - component implementation type
+- **name**: string - unique component name
+- **version**: string - component implementation version
 
 
 ### Instance methods
@@ -46,7 +46,7 @@ otherwise the method returns false.
 
 > `public` equals(value: any): boolean
 
-- **value**: any - the value to match against this descriptor.
+- **value**: any - value to match against this descriptor.
 - **returns**: boolean - true if the value is matching descriptor and false otherwise.
 
 #### exactMatch
@@ -55,7 +55,7 @@ No exceptions are made.
 
 > `public` exactMatch(descriptor: [Descriptor]()): boolean
 
-- **descriptor**: [Descriptor]() - the descriptor to match this one against.
+- **descriptor**: [Descriptor]() - descriptor to match this one against.
 - **returns**: boolean - true if descriptors match and false otherwise. 
 
 
@@ -64,14 +64,14 @@ Gets the component's logical group.
 
 > `public` getGroup(): string
 
-- **returns**: string - the component's logical group
+- **returns**: string - component's logical group
 
 #### getKind
 Gets the component's implementation type.
 
 > `public` getKind(): string
 
-- **returns**: string - the component's implementation type.
+- **returns**: string - component's implementation type.
     
 
 #### getName
@@ -79,14 +79,14 @@ Gets the unique component's name.
 
 > `public` getName(): string
 
-- **returns**: string - the unique component's name.
+- **returns**: string - unique component's name.
 
 #### getVersion
 Gets the component's implementation version.
 
 > `public` getVersion(): string
 
-- **returns**: string - the component's implementation version.
+- **returns**: string - component's implementation version.
 
 #### isComplete
 Checks whether all descriptor fields are set.
@@ -102,7 +102,7 @@ Fields that contain "*" or null are excluded from the match.
 
 > `public` match(descriptor: [Descriptor]()): boolean
 
-- **descriptor**: [Descriptor]() the descriptor to match this one against.
+- **descriptor**: [Descriptor]() descriptor to match this one against.
 - **returns**: boolean - true if descriptors match and false otherwise 
 
 #### toString
@@ -112,7 +112,7 @@ The result is a colon-separated list of descriptor fields as
 
 > `public` toString(): string
 
-- **returns**: string - a string representation of the object.
+- **returns**: string - string representation of the object.
 
 ### Static methods
 
@@ -123,7 +123,7 @@ Throws a [ConfigException](../../errors/config_exception) if the descriptor stri
 > `public static` fromString(value: string): [Descriptor]()
 
 - **value**: string - colon-separated descriptor fields to initialize Descriptor.
-- **returns**: [Descriptor]() - a newly created Descriptor.
+- **returns**: [Descriptor]() - newly created Descriptor.
 
 ### Examples
 

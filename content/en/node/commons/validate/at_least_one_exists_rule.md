@@ -4,7 +4,7 @@ title: "AtLeastOneExistsRule"
 linkTitle: "AtLeastOneExistsRule"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Validation rule that checks that at least one of the object properties exists.
+    Validation rule that checks that at least one of the object's properties exists.
 ---
 
 **Implements:** [IValidationRule](../ivalidation_rule)
@@ -18,7 +18,7 @@ Creates a new validation rule and sets its values
 
 > `public` constructor(...properties: string[])
 
-- **properties**: string[] - a list of property names where at least one property must exist
+- **properties**: string[] - list of property names where at least one property must exist
 
 ### Instance methods
 
@@ -27,10 +27,10 @@ Validates a given value against this rule.
 
 > `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void 
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from.
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results.
 
 ### Examples
 ```typescript

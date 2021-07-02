@@ -20,24 +20,25 @@ Important points
 ### Static methods
 
 #### matchType
-Matches expected type to an actual type.
+Matches the expected type to an actual type.
 The types can be specified as types, type names or [TypeCode](../../convert/type_code).
 
 > `public static` matchType(expectedType: any, actualType: [TypeCode](../../convert/type_code), actualValue: any = null): boolean
 
-- **expectedType**: any - an expected type to match.
-- **actualType**: [TypeCode](../../convert/type_code) - an actual type to match.
-- **actualValue**: any - an optional value to match its type to the expected one.
+- **expectedType**: any - expected type to match.
+- **actualType**: [TypeCode](../../convert/type_code) - actual type to match.
+- **actualValue**: any - optional value to match its type to the expected one.
 - **returns**: boolean - true if types are matching and false if they don't.
 
 
 #### matchTypeByName
+Matches the expected type to an actual type.
 
 > `public static` matchTypeByName(expectedType: string, actualType: [TypeCode](../../convert/type_code), actualValue: any = null): boolean
 
-- **expectedType**: string - an expected type name to match. 
-- **actualType**: [TypeCode](../../convert/type_code) - an actual type to match defined by type code.
-- **actualValue**: any - an optional value to match its type to the expected one.
+- **expectedType**: string - expected type name to match. 
+- **actualType**: [TypeCode](../../convert/type_code) - actual type to match defined by the type code.
+- **actualValue**: any - optional value to match its type to the expected one.
 - **returns**: boolean - true if types are matching and false if they don't.
 
 
@@ -47,17 +48,17 @@ The expected type can be specified by a type, type name or [TypeCode](../../conv
 
 > `public static` matchValueType(expectedType: any, actualValue: any): boolean
 
-- **expectedType**: any - an expected type to match.
-- **actualValue**: any -  a value to match its type to the expected one.
+- **expectedType**: any - expected type to match.
+- **actualValue**: any -  value to match its type to the expected one.
 - **returns**: boolean - true if types are matching and false if they don't.
 
 #### matchValueTypeByName
-Matches expected type to a type of a value.
+Matches an expected type to a type of a value.
 
 > `public static` matchValueTypeByName(expectedType: string, actualValue: any): boolean
 
-- **expectedType**: any - an expected type name to match.
-- **actualValue**: any -  a value to match its type to the expected one.
+- **expectedType**: any - expected type name to match.
+- **actualValue**: any - value to match its type to the expected one.
 - **returns**: boolean - true if types are matching and false if they don't.
 
 

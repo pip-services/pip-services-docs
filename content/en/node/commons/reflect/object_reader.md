@@ -17,14 +17,14 @@ Important points
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, this ObjectReader is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys.
-- For arrays, properties are elements identified by integer index.
+- For arrays, properties are elements identified by integer indexes.
 - This class has a symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, this ObjectReader treats all property names as case insensitive.
 
 ### Static methods
 
 #### getProperties
-Get values of all properties in specified object
+Get values of all properties in a specified object
 and returns them as a map.
 
 The object can be a user defined object, map or array.
@@ -33,55 +33,55 @@ map key-pairs or array elements with their indexes.
 
 > `public static` getProperties(obj: any): any
 
-- **obj**: any - an object to get properties from.
-- **returns**: any - a map, containing the names of the object's properties and their values.
+- **obj**: any - object to get properties from.
+- **returns**: any - map, containing the names of the object's properties and their values.
 
 #### getProperty
-Gets value of object property specified by its name.
+Gets the value of an object's property specified by its name.
 
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
+The property name correspondently must be an object property,
 map key or array index.
 
 > `public static` getProperty(obj: any, name: string): any
 
-- **obj**: any - an object to read property from.
-- **name**: string - a name of the property to get.
-- **returns**: any - the property value or null if property doesn't exist or introspection failed.
+- **obj**: any - object to read property from.
+- **name**: string - name of the property to get.
+- **returns**: any - property value or null if  the property doesn't exist or introspection failed.
 
 #### getPropertyNames
-Gets names of all properties implemented in specified object.
+Gets the names of all the properties implemented in a specified object.
  
 The object can be a user defined object, map or array.
-Returned property name correspondently are object properties,
+Returned property names correspondently are object properties,
 map keys or array indexes.
 
 > `public static` getPropertyNames(obj: any): string[]
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with property names.
+- **obj**: any - object to introspect.
+- **returns**: string[] - list with property names.
 
 #### getValue
-Gets a real object value.
+Gets an object's value.
 If object is a wrapper, it unwraps the value behind it. 
 Otherwise it returns the same object value.
 
 > `public static` getValue(obj: any): any
 
-- **obj**: any - an object to unwrap..
-- **returns**: any - an actual (unwrapped) object value. 
+- **obj**: any - object to unwrap..
+- **returns**: any - actual (unwrapped) object value. 
 
 #### hasProperty
-Checks if object has a property with specified name.
+Checks if an object has a property with a specified name.
 
 The object can be a user defined object, map or array.
-The property name correspondently must be object property,
+The property name correspondently must be an object property,
 map key or array index.
 
 > `public static` hasProperty(obj: any, name: string): boolean
 
-- **obj**: any - an object to introspect.
-- **name**: string - a name of the property to check.
+- **obj**: any - object to introspect.
+- **name**: string - name of the property to check.
 - **returns**: boolean - true if the object has the property and false if it doesn't.
 
 ### Examples

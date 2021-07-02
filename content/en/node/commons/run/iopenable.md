@@ -32,7 +32,7 @@ Opens the component.
 
 > open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 

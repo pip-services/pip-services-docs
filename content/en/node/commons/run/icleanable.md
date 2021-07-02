@@ -15,11 +15,11 @@ The ICleanable interface allows you to create components with a method to clean 
 ### Instance methods
 
 #### clear
-Clears component state.
+Clears a component's state.
 
 > clear(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 ```typescript

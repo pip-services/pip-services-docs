@@ -18,20 +18,20 @@ Sets execution parameters.
 
 > `public static` notify(correlationId: string, components: any[], args: [Parameters](../parameters)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - a list of components that are to be notified.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **components**: any[] - list of components that are to be notified.
 - **args**: [Parameters](../parameters) - notification arguments.
 
 #### notifyOne
-Notifies specific component.
+Notifies a specific component.
 
-To be notiied components must implement [INotifiable](../inotifiable) interface.
-If they don't the call to this method has no effect.
+To be notiied, components must implement the [INotifiable](../inotifiable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` notifyOne(correlationId: string, component: any, args: [Parameters](../parameters)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be notified.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: any - component that is to be notified.
 - **args**: [Parameters](../parameters) - notifiation arguments.
 
 

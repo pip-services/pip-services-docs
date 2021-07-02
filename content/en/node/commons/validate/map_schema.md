@@ -19,10 +19,10 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
 > `public` constructor(keyType?: any, valueType?: any, required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
 
-- **keyType**: any - a type of map keys. Null means that keys may have any type.
-- **valueType**: any - a type of map values. Null means that values may have any type.
+- **keyType**: any - type of map keys. Null means that keys may have any type.
+- **valueType**: any - type of map values. Null means that values may have any type.
 - **required**: boolean - (optional) true to always require non-null values.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) list with validation rules.
 
 
 
@@ -34,7 +34,7 @@ Null means that keys may have any type.
 
 > `public` getKeyType(): any
 
-- **returns**: any - the type of map keys.
+- **returns**: any - type of map keys.
 
 #### getValueType
 Gets the type of map values.
@@ -42,16 +42,16 @@ Null means that values may have any type.
 
 > `public` getValueType(): any
 
-- **returns**: any - the type of map values.
+- **returns**: any - type of map values.
 
 #### performValidation
 Validates a given value against the schema and configured validation rules.
 
 > `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results to add new results.
 
 #### setKeyType
 Sets the type of map keys.
@@ -59,7 +59,7 @@ Null means that keys may have any type.
 
 > `public` setKeyType(value: any): void
 
-- **value**: any - a type of map keys.
+- **value**: any - type of map keys.
 
 #### setValueType
 Sets the type of map values.
@@ -67,7 +67,7 @@ Null means that values may have any type.
 
 > `public` setValueType(value: any): void
 
-- **value**: any - a type of map values.
+- **value**: any - type of map values.
 
 ### Examples
 ```typescript

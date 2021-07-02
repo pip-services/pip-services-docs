@@ -27,7 +27,7 @@ Helper class used to perform property introspection and dynamic reading.
 In contrast to [PropertyReflector](property_reflector) which only introspects regular objects,
 this ObjectReader is also able to handle maps and arrays.
 For maps, properties are key-pairs identified by string keys,
-For arrays, properties are elements identified by integer index.
+For arrays, properties are elements identified by integer index.  
 
 #### [ObjectWriter](object_writer)
 Helper class used to perform property introspection and dynamic writing.

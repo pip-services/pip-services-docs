@@ -14,11 +14,11 @@ description: >
 The References class allows you to store and locate component references.
 
 ### Constructors
-Creates a new instance of references and initializes it with references.
+Creates a new instance of References and initializes it with references.
 
 > `public` constructor(tuples: any[] = null)
 
-- **tuples**: any[] - (optional) a list of values where odd elements are locators and the following even elements are component references
+- **tuples**: any[] - (optional) list of values where odd elements are locators and the following even elements are component references.
 
 ### Fields
 <span class="hide-title-link">
@@ -32,36 +32,36 @@ Creates a new instance of references and initializes it with references.
 ### Instance methods
 
 #### find
-Gets all component references that match specified locator.  
-Throws a [ReferenceException](../reference_exception) when required is set to true but no references found.
+Gets all component references that match a specified locator.  
+Throws a [ReferenceException](../reference_exception) when required is set to true but no references were found.
 
 > `public` find\<T\>(locator: any, required: boolean): T[]
 
-- **locator**: any - the locator to find a reference by.
+- **locator**: any - locator to find a reference by.
 - **required**: boolean - forces to raise an exception if no reference is found.
-- **returns**: T[] - a list with matching component references.
+- **returns**: T[] - list with matching component references.
 
 #### getAll
 Gets all component references registered in this reference map.
 
 > `public` getAll(): any[]
 
-- **returns**: any[] - a list with component references.
+- **returns**: any[] - list with component references.
 
 #### getAllLocators
 Gets locators for all registered component references in this reference map.
 
 > `public` getAllLocators(): any[]
 
-- **returns**: any[] - a list with component locators.
+- **returns**: any[] - list with component locators.
 
 #### getOneOptional
-Gets an optional component reference that matches specified locator.
+Gets an optional component reference that matches a specified locator.
 
 > `public` getOneOptional\<T\>(locator: any): T
 
-- **locator**: any - the locator to find references by.
-- **returns**: T - a matching component reference or null if nothing was found.
+- **locator**: any - locator to find references by.
+- **returns**: T - matching component reference or null if nothing was found.
 
 #### getOneRequired
 Gets a required component reference that matches specified locator.  
@@ -69,35 +69,35 @@ throws a [ReferenceException](../reference_exception) when no references found.
 
 > `public` getOneRequired\<T\>(locator: any): T
 
-- **locator**: any - the locator to find a reference by.	 
-- **returns**: T - a matching component reference.
+- **locator**: any - locator to find a reference by.	 
+- **returns**: T - matching component reference.
 
 #### getOptional
-Gets all component references that match specified locator.
+Gets all component references that match a specified locator.
 
 > `public` getOptional\<T\>(locator: any): T[]
 
-- **locator**: any - the locator to find references by.	 
-- **returns**: T[] - a list with matching component references or empty list if nothing was found.
+- **locator**: any - locator to find references by.	 
+- **returns**: T[] - list with matching component references or empty list if nothing was found.
 
 #### getRequired
-Gets all component references that match specified locator.
+Gets all component references that match a specified locator.
 At least one component reference must be present.
 If it doesn't the method throws an error.
 Throws a [ReferenceException](../reference_exception) when no references found.
 
 > `public` getRequired\<T\>(locator: any): T[]
 
-- **locator**: any - the locator to find references by.
-- **returns**: T[] - a list with matching component references.
+- **locator**: any - locator to find references by.
+- **returns**: T[] - list with matching component references.
 
 #### put
 Puts a new reference into this reference map.
 
 > `public` put(locator: any, component: any): void
 
-- **locator**: any - a locator to find the reference by.
-- **component**: any - a component reference to be added.
+- **locator**: any - locator to find the reference by.
+- **component**: any - component reference to be added.
 
 
 #### remove
@@ -107,16 +107,16 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 
 > `public` remove(locator: any): any
 
-- **locator**: any - a locator to remove reference
-- **returns**: any - the removed component reference.
+- **locator**: any - locator to remove reference
+- **returns**: any - removed component reference.
 
 #### removeAll
 Removes all component references that match the specified locator. 
 
 > `public` removeAll(locator: any): any[]
 
-- **locator**: any - the locator to remove references by.
-- **returns**: any[] - a list, containing all removed references.
+- **locator**: any - locator to remove references by.
+- **returns**: any[] - list containing all removed references.
 
 ### Static methods
 
@@ -125,8 +125,8 @@ Creates a new References from a list of key-value pairs called tuples.
 
 > `public static` fromTuples(...tuples: any[]): [References](../references)
 
-- **tuples**: any[] - a list of values where odd elements are locators and the following even elements are component references
-- **returns**: [References](../references) - a newly created References.
+- **tuples**: any[] - list of values where odd elements are locators and the following even elements are component references
+- **returns**: [References](../references) - newly created References.
 
 ### Examples
 

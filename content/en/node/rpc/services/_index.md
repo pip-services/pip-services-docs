@@ -21,6 +21,7 @@ Interface to perform on-demand registrations.
 #### [ISwaggerService](iswagger_service)
 Interface to perform Swagger registrations.
 
+<br>
 
 ### Classes
 

@@ -19,20 +19,20 @@ Important points
 ### Static methods
 
 #### getMethodNames
-Gets names of all methods implemented in specified object.
+Gets the names of all methods implemented in specified object.
 
 > `public static` getMethodNames(obj: any): string[]
 
-- **obj**: any - an objec to introspect.
-- **returns**: string[] - a list with method names.
+- **obj**: any - objec to introspect.
+- **returns**: string[] - list with method names.
 
 #### hasMethod
-Checks if object has a method with specified name..
+Checks if an object has a method with a specified name..
 
 > `public static` hasMethod(obj: any, name: string): boolean
 
-- **obj**: any - an object to introspect.
-- **name**: string - a name of the method to check.
+- **obj**: any - object to introspect.
+- **name**: string - name of the method to check.
 - **returns**: boolean - true if the object has the method and false if it doesn't.
 
 #### invokeMethod
@@ -40,10 +40,10 @@ Invokes an object method by its name with specified parameters.
 
 > `public static` invokeMethod(obj: any, name: string, ...args: any[]): any
 
-- **obj**: any - an object to invoke.
-- **name**: string -a name of the method to invoke.
-- **args**: any[] - a list of method arguments.
-- **returns**: any - the result of the method invocation or null if method returns void.
+- **obj**: any - object to invoke.
+- **name**: string - name of the method to invoke.
+- **args**: any[] - list of method arguments.
+- **returns**: any - result of the method invocation or null if the method returns void.
 
 ### Examples
 

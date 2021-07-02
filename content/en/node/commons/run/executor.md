@@ -17,29 +17,29 @@ The Executor class allows you to execute one or more components.
 #### execute
 Executes multiple components.
 
-To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.  
-See [IExecutable](../iexecutable), [Parameters](../parameters)
+To be executed, components must implement the [IExecutable](../iexecutable) interface.
+If they don't, the call to this method has no effect.  
+See [IExecutable](../iexecutable), [Parameters](../parameters).
 
 > `public static` execute(correlationId: string, components: any[], args: [Parameters](../parameters)): Promise\<any[]\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **components**: any[] - a list of components that are to be executed.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **components**: any[] - list of components that are to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**:  Promise\<any[]\> - an execution result
+- **returns**:  Promise\<any[]\> - execution result
 
 #### executeOne
-Executes specific component.
+Executes a specific component.
 
-To be executed components must implement [IExecutable](../iexecutable) interface.
-If they don't the call to this method has no effect.
+To be executed, components must implement the [IExecutable](../iexecutable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` executeOne(correlationId: string, component: any, args: [Parameters](../parameters)): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: any - the component that is to be executed.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: any - component that is to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
-- **returns**:  Promise\<any\> - an execution result.
+- **returns**:  Promise\<any\> - execution result.
 
 ### See also
 - #### [IExecutable](../iexecutable)

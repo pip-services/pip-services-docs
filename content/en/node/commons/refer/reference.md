@@ -18,12 +18,12 @@ Important points
 - It is used by [References](../references) to store registered component references.
 
 ### Constructors
-Create a new instance of the reference object and assigns its values.
+Creates a new instance of the reference object and assigns its values.
 
 > `public` constructor(locator: any, component: any)
 
-- **locator**: any - a locator to find the reference. 
-- **component**: any - a reference to component.
+- **locator**: any - locator to find the reference. 
+- **component**: any - reference to component.
 
 ###  Instance methods
 
@@ -32,7 +32,7 @@ Gets the stored component reference.
 
 > `public` getComponent(): any
 
-- **returns**: any - the component's references.
+- **returns**: any - component's references.
 
 
 #### getLocator
@@ -40,16 +40,16 @@ Gets the stored component locator.
 
 > `public` getLocator(): any
 
-- **returns**: any - the component's locator.
+- **returns**: any - component's locator.
 
 #### match
 Matches locator to this reference locator.
-Descriptors are matched using equal method.
+Descriptors are matched using the equal method.
 All other locator types are matched using direct comparison.
 
 > `public` match(locator: any): boolean
 
-- **locator**: any - the locator to match. 
+- **locator**: any - locator to match. 
 - **returns**: boolean - true if locators are matching and false it they don't.
 
 

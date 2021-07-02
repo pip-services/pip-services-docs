@@ -19,11 +19,11 @@ Important points
 ### Instance methods
 
 #### notify
-Notifies the component about occured event.
+Notifies the component about an occured event.
 
 > notify(correlationId: string, args: [Parameters](../parameters)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
 
 ### Examples

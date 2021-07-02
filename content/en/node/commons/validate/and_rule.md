@@ -23,7 +23,7 @@ Creates a new validation rule and sets its values.
 
 > `public` constructor(...rules: [IValidationRule](../ivalidation_rule)[])
 
-- **rules**: [IValidationRule](../ivalidation_rule)[] - a list of rules to join with AND operator
+- **rules**: [IValidationRule](../ivalidation_rule)[] - list of rules to join with the AND operator.
 
 ### Instance methods
 
@@ -32,10 +32,10 @@ Validates a given value against this rule.
 
 > `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [IValidationRule](../ivalidation_rule)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from.
+- **value**: any - value to be validated.
+- **results**: [IValidationRule](../ivalidation_rule)[] - list with validation results to add new results.
 
 ### Example
 ```typescript

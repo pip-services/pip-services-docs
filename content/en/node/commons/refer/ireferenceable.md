@@ -4,7 +4,7 @@ title: "IReferenceable"
 linkTitle: "IReferenceable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: >
-    Interface with methods to set refernces for components that depend on other components. 
+    Interface with methods used to set references for components that depend on other components. 
 
     
 ---
@@ -15,7 +15,7 @@ The IReferenceable interface allows you to set references for components that de
 
 Important points
 
-- If component requires explicit notification to unset references, it must also implement the [IUnreferenceable](../iunreferenceable) interface.
+- If a component requires explicit notification to unset references, it must also implement the [IUnreferenceable](../iunreferenceable) interface.
 
 ### Instance methods
 
@@ -24,7 +24,7 @@ Sets references to dependent components.
 
 > setReferences(references: [IReferences](../ireferences)): void
 
-- **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
+- **references**: [IReferences](../ireferences) - references to locate the component's dependencies. 
 
 ### Examples
 

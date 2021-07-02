@@ -23,19 +23,19 @@ But there may be situations when it can be done in production.
 #### [IClosable](iclosable)
 Interface for components that require explicit closure.
 For components that require opening as well as closing 
-use [IOpenable](iopenable) interface instead.
+use the [IOpenable](iopenable) interface instead.
 
 #### [IExecutable](iexecutable)
 Interface for components that can be called to execute work.
 
 #### [INotifiable](inotifiable)
 Interface for components that can be asynchronously notified.
-The notification may include optional argument that describe
+The notification may include an optional argument that describes
 the occured event.
 
 #### [IOpenable](iopenable)
 Interface for components that require explicit opening and closing.
-For components that perform opening on demand consider using
+For components that perform opening on demand consider using the 
 [IClosable](iclosable) interface instead.
 
 #### [IParameterized](iparameterized)

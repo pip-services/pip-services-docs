@@ -16,43 +16,43 @@ The Referencer class allows you to set and unset references to components.
 #### setReferences
 Sets references to multiple components.
 
-To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+To set references, components must implement the [IReferenceable](../ireferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` setReferences(references: [IReferenceable](../ireferenceable), components: any[]): void
 
-- **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: any[] - a list of components to set the references to.
+- **references**: [IReferences](../ireferences) - references to be set.
+- **component**: any[] - list of components to set the references to.
 
 #### setReferencesForOne
 Sets references to specific component.
 
-To set references components must implement [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+To set references, components must implement the [IReferenceable](../ireferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` setReferencesForOne(references: [IReferences](../ireferences), component: any): void
 
-- **references**: [IReferences](../ireferences) - the references to be set.
-- **component**: any - the component to set references to.
+- **references**: [IReferences](../ireferences) - references to be set.
+- **component**: any - component to set references to.
 
 #### unsetReferences
 Unsets references in multiple components.
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+To unset references, components must implement the [IUnreferenceable](../iunreferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` unsetReferences(components: any[]): void
 
-- **components**: any[] - the list of components, whose references must be cleared.
+- **components**: any[] - list of components, whose references must be cleared.
 
 #### unsetReferencesForOne
-Unsets references in specific component.
+Unsets references in a specific component.
 
-To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
-If they don't the call to this method has no effect.
+To unset references, components must implement the [IUnreferenceable](../iunreferenceable) interface.
+If they don't, the call to this method has no effect.
 
 > `public static` unsetReferencesForOne(component: any): void 
 
-- **component**: any - the component to unset references.
+- **component**: any - component to unset references.
 
 
 ### See also

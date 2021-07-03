@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The RoleAuthorizer class provides methods to check on a user's roles.
+The RoleAuthorizer class provides methods to check on user's roles.
 
 ### Instance methods
 
@@ -23,17 +23,17 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 - **returns**: Callable - returns roles handler.
 
 #### user_in_role
-Check if the role is assigned to the user.  
+Checks if the role is assigned to the user.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
 > user_in_role(role: str): Callable
 
-- **role**: str - the user role.
+- **role**: str - user role.
 - **returns**: Callable - returns role handler.
 
 
 #### admin
-Check if the user has admin role.  
+Checks if the user has admin role.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
 > admin(): Callable

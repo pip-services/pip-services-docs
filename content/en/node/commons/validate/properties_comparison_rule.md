@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The PropertiesComparisonRule class allows you to create a validation rule to compare two object properties.
+The PropertiesComparisonRule class allows you to create a validation rule used to compare two object's properties.
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
@@ -19,9 +19,9 @@ See [ObjectComparator.compare](../object_comparator/#compare)
 
 > `public` constructor(property1: string, operation: string, property2: string)
 
-- **property1**: string - a name of the first property to compare.
-- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **property2**: string - a name of the second property to compare.
+- **property1**: string - name of the first property to compare.
+- **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **property2**: string - name of the second property to compare.
 
 ### Instance methods
 
@@ -30,10 +30,10 @@ Validates a given value against this rule.
 
 > `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results to add new results.
 
 ### Examples
 

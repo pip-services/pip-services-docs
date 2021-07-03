@@ -18,8 +18,8 @@ Creates a new validation rule and sets its values.
 
 > `public` constructor(operation: string, value: any)
 
-- **operation**: string - a comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: any - a constant value to compare to
+- **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **value**: any - constant value to compare to
 
 ### Instance methods
 
@@ -28,10 +28,10 @@ Validates a given value against this rule.
 
 > `public` validate(path: string, schema: [Schema](../schema), value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **schema**: [Schema](../schema) - a schema this rule is called from
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **schema**: [Schema](../schema) - schema this rule is called from
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results to add new results.
 
 ### Examples
 ```typescript

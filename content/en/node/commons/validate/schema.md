@@ -25,7 +25,7 @@ See [IValidationRule](../ivalidation_rule)
 > `public` constructor(required?: boolean, rules?: [IValidationRule](../ivalidation_rule)[])
 
 - **required**: boolean - (optional) true to always require non-null values.
-- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) a list with validation rules.
+- **rules**: [IValidationRule](../ivalidation_rule)[] - (optional) list with validation rules.
 
 
 ### Instance methods
@@ -35,11 +35,11 @@ Gets validation rules to check values against.
 
 > `public` getRules(): [IValidationRule](../ivalidation_rule)[]
 
-- **returns**: [IValidationRule](../ivalidation_rule)[] - a list with validation rules.
+- **returns**: [IValidationRule](../ivalidation_rule)[] - list with validation rules.
 
 #### isRequired
 Gets a flag that always requires non-null values.
-For null values it raises a validation error.
+For null values, it raises a validation error.
 
 > `public` isRequired(): boolean
 
@@ -48,44 +48,44 @@ For null values it raises a validation error.
 #### makeOptional
 Makes validated values optional.
 Validation for null values will be skipped.
-This method returns reference to this exception to implement Builder pattern
+This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > `public` makeOptional(): [Schema]()
 
-- **returns**: [Schema]() - this validation schema
+- **returns**: [Schema]() - validation schema
 
 
 #### makeRequired
 Makes validated values always required (non-null).
 For null values the schema will raise errors.
-This method returns reference to this exception to implement Builder pattern
+This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > `public` makeRequired(): [Schema]()
 
-- **returns**: [Schema]() - this validation schema
+- **returns**: [Schema]() - validation schema
 
 #### performTypeValidation
-Validates a given value to match specified type.
+Validates a given value to match a specified type.
 The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
 > `protected` performTypeValidation(path: string, type: any, value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **type**: any - a type to match the value type
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **type**: any - type to match the value type
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results.
 
 #### performValidation
 Validates a given value against the schema and configured validation rules.
 
 > `protected` performValidation(path: string, value: any, results: [ValidationResult](../validation_result)[]): void
 
-- **path**: string - a dot notation path to the value.
-- **value**: any - a value to be validated.
-- **results**: [ValidationResult](../validation_result)[] - a list with validation results to add new results.
+- **path**: string - dot notation path to the value.
+- **value**: any - value to be validated.
+- **results**: [ValidationResult](../validation_result)[] - list with validation results to add new results.
 
 #### setRequired
 Sets a flag that always requires non-null values.
@@ -99,17 +99,17 @@ Sets validation rules to check values against.
 
 > `public` setRules(value: [IValidationRule](../ivalidation_rule)[]): void
 
-- **value**: [IValidationRule](../ivalidation_rule)[] - a list with validation rules.
+- **value**: [IValidationRule](../ivalidation_rule)[] - list with validation rules.
 
 
 #### validate
-Validates the given value and results validation results.
+Validates the given value and returns a list with validation results.
 See [ValidationResult](../validation_result)
 
 > `public` validate(value: any): [ValidationResult](../validation_result)[]
 
-- **value**: any - a value to be validated.
-- **returns**: [ValidationResult](../validation_result)[] - a list with validation results.
+- **value**: any - value to be validated.
+- **returns**: [ValidationResult](../validation_result)[] - list with validation results.
 
 
 #### validateAndReturnException
@@ -117,8 +117,8 @@ Validates the given value and returns a [ValidationException](../validation_exce
 
 > `public` validateAndReturnException(correlationId: string, value: any, strict: boolean = false): [ValidationException](../validation_exception)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **value**: any -  a value to be validated.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **value**: any -  value to be validated.
 - **strict**: boolean - true to treat warnings as errors.
 - **returns**: [ValidationException](../validation_exception) - validation exception.
 
@@ -128,20 +128,20 @@ See [ValidationException.throwExceptionIfNeeded](../validation_exception/#throwe
 
 > `public` validateAndThrowException(correlationId: string, value: any, strict: boolean = false): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **value**: any - a value to be validated.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **value**: any - value to be validated.
 - **strict**: boolean - true to treat warnings as errors.
 
 
 #### withRule
 Adds validation rule to this schema.
-This method returns reference to this exception to implement Builder pattern
+This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > `public` withRule(rule: [IValidationRule](../ivalidation_rule)): [Schema]()
 
-- **rule**: [IValidationRule](../ivalidation_rule) - a validation rule to be added.
-- **returns**: [Schema]() - this validation schema.
+- **rule**: [IValidationRule](../ivalidation_rule) - validation rule to be added.
+- **returns**: [Schema]() - validation schema.
 
 
 

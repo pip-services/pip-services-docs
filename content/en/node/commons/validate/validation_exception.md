@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The ValidationException is used to define errors in schema validation.
+The ValidationException is used to define errors in a schema validation.
 
 Important points
 
@@ -25,9 +25,9 @@ Creates a new instance of validation exception and assigns its values.
 
 > `public` constructor(correlationId: string, message?: string, results?: [ValidationResult](../validation_result)[])
 
-- **correlationId**: string - (optional) a unique transaction id to trace execution through call chain.
-- **message**: string - (optional) a human-readable description of the error.
-- **results**: [ValidationResult](../validation_result)[] - (optional) a list of validation results
+- **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
+- **message**: string - (optional) human-readable description of the error.
+- **results**: [ValidationResult](../validation_result)[] - (optional) list of validation results.
 
 
 ### Static methods
@@ -37,29 +37,29 @@ Composes human readable error message based on validation results.
 
 > `public static` composeMessage(results: [ValidationResult](../validation_result)[]): string
 
-- **results**: [ValidationResult](../validation_result)[] - a list of validation results.
-- **returns**: string - a composed error message.
+- **results**: [ValidationResult](../validation_result)[] - list of validation results.
+- **returns**: string - composed error message.
 
 
 #### fromResults
 Creates a new ValidationException based on errors in validation results.
-If validation results have no errors, than null is returned.
+If validation results have no errors, then null is returned.
 
 > `public static` fromResults(correlationId: string, results: [ValidationResult](../validation_result)[], strict: boolean): [ValidationException]()
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **results**: [ValidationResult](../validation_result)[] -  list of validation results that may contain errors
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **results**: [ValidationResult](../validation_result)[] -  list of validation results that may contain errors.
 - **strict**: boolean - true to treat warnings as errors.
-- **returns**: [ValidationException]() - a newly created ValidationException or null if no errors in found.
+- **returns**: [ValidationException]() - newly created ValidationException or null if no errors were found.
 
 #### throwExceptionIfNeeded
 Throws ValidationException based on errors in validation results.
-If validation results have no errors, than no exception is thrown.
+If validation results have no errors, then no exception is thrown.
 
 > `public static` throwExceptionIfNeeded(correlationId: string, results: [ValidationResult](../validation_result)[], strict: boolean): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **results**: [ValidationResult](../validation_result)[] - list of validation results that may contain errors
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **results**: [ValidationResult](../validation_result)[] - list of validation results that may contain errors.
 - **strict**: boolean - true to treat warnings as errors.
 
 

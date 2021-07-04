@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultFunctionCollection class allows you to implement a list filled with standard functions.
 
 ### Constructors
 Constructs this list and fills it with the standard functions.
@@ -24,14 +24,14 @@ Constructs this list and fills it with the standard functions.
 Checks if params contains the correct number of function parameters (must be stored on the top of the params).
 > `protected` checkParamCount(params: [Variant[]](../../../variants/variant), expectedParamCount: number): void 
 
-- **params**: [Variant[]](../../../variants/variant) - A list of function parameters.
-- **expectedParamCount**: number - The expected number of function parameters.
+- **params**: [Variant[]](../../../variants/variant) - list of function parameters.
+- **expectedParamCount**: number - expected number of function parameters.
 
 #### getParameter
-Gets function parameter by it's index.
+Gets a function's parameter by it's index.
 
 > `protected` getParameter(params: [Variant[]](../../../variants/variant), paramIndex: number): [Variant](../../../variants/variant)
 
-- **params**: [Variant[]](../../../variants/variant) - A list of function parameters.
-- **paramIndex**: number - Index for the function parameter (0 for the first parameter).
-- **returns**: [Variant](../../../variants/variant) - Function parameter value.
+- **params**: [Variant[]](../../../variants/variant) - list of function parameters.
+- **paramIndex**: number - index for the function parameter (0 for the first parameter).
+- **returns**: [Variant](../../../variants/variant) - function's parameter value.

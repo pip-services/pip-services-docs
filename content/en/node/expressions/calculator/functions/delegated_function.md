@@ -20,7 +20,7 @@ Constructs this function class with the specified parameters.
 
 - **params**: [Variant[]](../../../variants/variant) - name of this function.
 - **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)> - function calculator delegate.
-- **context**: any - TODO: add description
+- **context**: any - context
 
 ### Properties
 

@@ -11,22 +11,22 @@ description: >
 
 ### Description
 
-TODO: add description
+The ExpressionNumberState implements an expression-specific number state object.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### PLUS
-TODO: add description
+Represents a '+' symbol.
 > `protected` **PLUS**: number = '+'.charCodeAt(0)
 
 #### EXP1
-TODO: add description
+Represents an 'e' symbol.
 > `protected` **EXP1**: number = 'e'.charCodeAt(0)
 
 #### EXP2
-TODO: add description
+Represents an 'E' symbol.
 > `protected` **EXP2**: number = 'E'.charCodeAt(0)
 
 </span>
@@ -38,6 +38,6 @@ Gets the next token from the stream started from the character linked to this st
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../../tokenizers/itokenizer)): [Token](../../../tokenizers/token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - A textual string to be tokenized.
-- **tokenizer**: [ITokenizer](../../../tokenizers/itokenizer) - A tokenizer class that controls the process.
-- **returns**: [Token](../../../tokenizers/token) - The next token from the top of the stream.
+- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **tokenizer**: [ITokenizer](../../../tokenizers/itokenizer) - tokenizer class that controls the process.
+- **returns**: [Token](../../../tokenizers/token) - next token from the top of the stream.

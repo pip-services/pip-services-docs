@@ -4,30 +4,30 @@ title: "IFunction"
 linkTitle: "IFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements a functions list.
+    An interface for expression functions.
 ---
 
 
 ### Description
 
-TODO: add description
+The IFunction is an interface for expression functions.
 
 
 ### Properties
 
 #### name
-The function name.
+Function's name.
 > name(): string
 
-- **retuns**: string - function name.
+- **retuns**: string - function's name.
 
 ### Instance methods
 
 #### calculate
-The function calculation method.
+Function calculation method.
 
 > calculate(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)): Promise<[Variant](../../../variants/variant)>
 
-- **params**: [Variant[]](../../../variants/variant) - an array with function parameters.
-- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - Variants operations manager.
-- **returns**: Promise<[Variant](../../../variants/variant)> - return function result.
+- **params**: [Variant[]](../../../variants/variant) - array with function parameters.
+- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - variants operations manager.
+- **returns**: Promise<[Variant](../../../variants/variant)> - returned function's result.

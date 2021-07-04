@@ -14,29 +14,24 @@ description: >
 ### Interfaces
 
 #### [IFunction](ifunction)
-TODO: add description
+Implements a functions list.
 
 #### [IFunctionCollection](ifunction_collection)
-TODO: add description
+Implements a functions list.
 
-#### [Tokenizers](tokenizers)
-TODO: add description
-
-#### [Variables](variables)
-TODO: add description
 
 <br>
 
 ### Classes
 
 #### [DefaultFunctionCollection](default_function_collection)
-TODO: add description
+Implements a list filled with standard functions.
 
 #### [DelegatedFunction](delegated_function)
-TODO: add description
+Defines a delegate to implement a function.
 
 #### [FunctionCollection](function_collection)
-TODO: add description
+Implements a functions list.
 
 
 </div>

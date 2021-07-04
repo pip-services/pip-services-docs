@@ -5,8 +5,6 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 no_list: true
 weight: 30
 description: > 
-    Tokenizers, parsers and expression calculators in Node.js / ES2017
-
     This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
     It provides syntax and lexical analyzers and expression calculator optimized for repeated calculations.
 ---
@@ -14,7 +12,7 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Calculator**](calculator) - Expression calculator
+- [**Calculator**](calculator) - expression calculator
 - [**CSV**](csv) - CSV tokenizer
 - [**IO**](io) - input/output utility classes to support lexical analysis
 - [**Mustache**](mustache) - Mustache templating engine

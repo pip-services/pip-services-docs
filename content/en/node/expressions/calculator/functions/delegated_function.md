@@ -11,32 +11,32 @@ description: >
 
 ### Description
 
-TODO: add description
+The DelegatedFunction class allows you to define a delegate to implement a function.
 
 ### Constructors
-Constructs this function class with specified parameters.
+Constructs this function class with the specified parameters.
 
 > `public` constructor(name: string, calculator: (params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)>, context?: any)
 
-- **params**: [Variant[]](../../../variants/variant) - The name of this function.
-- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)> - The function calculator delegate.
+- **params**: [Variant[]](../../../variants/variant) - name of this function.
+- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)> - function calculator delegate.
 - **context**: any - TODO: add description
 
 ### Properties
 
 #### name
-The function name.
+Function's name.
 > `public` name(): string
 
-- **retuns**: string - function name.
+- **retuns**: string - function's name.
 
 ### Instance methods
 
 #### calculate
-The function calculation method.
+Function's calculation method.
 
 > `public` calculate(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)): Promise<[Variant](../../../variants/variant)>
 
 - **params**: [Variant[]](../../../variants/variant) - an array with function parameters.
-- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - Variants operations manager.
-- **returns**: Promise<[Variant](../../../variants/variant)> - return function result.
+- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - variants operations manager.
+- **returns**: Promise<[Variant](../../../variants/variant)> - returned function's result.

@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package provides interfaces and functions used to create lists of functions and delegates.
 ---
 ---
 <div class="module-body"> 

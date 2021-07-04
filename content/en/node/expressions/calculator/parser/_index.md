@@ -14,7 +14,7 @@ description: >
 ### Constants
 
 #### [ExpressionTokenType](expression_token_type)
-Implements an expression parser class.
+Define types of expression tokens.
 
 <br>
 

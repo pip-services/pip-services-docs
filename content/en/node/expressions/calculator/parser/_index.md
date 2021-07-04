@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains classes used to create expression parsers and expression token holders.
 ---
 ---
 <div class="module-body"> 
@@ -14,17 +14,17 @@ description: >
 ### Constants
 
 #### [ExpressionTokenType](expression_token_type)
-TODO: add description
+Implements an expression parser class.
 
 <br>
 
 ### Classes
 
 #### [ExpressionParser](expression_parser)
-TODO: add description
+Implements an expression parser class.
 
 #### [ExpressionToken](expression_token)
-TODO: add description
+Defines an expression token holder
 
 
 </div>

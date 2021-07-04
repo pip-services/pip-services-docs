@@ -4,12 +4,12 @@ title: "ExpressionTokenType"
 linkTitle: "ExpressionTokenType"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements an expression parser class.
+    Define types of expression tokens.
 ---
 
 ### Description
 
-TODO: add description
+The ExpressionTokenType class defines types of expression tokens.
 
 
 ### Enumeration members

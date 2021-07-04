@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The ExpressionToken class defines an expression token holder.
 
 
 ### Constructors
@@ -17,10 +17,10 @@ Creates an instance of this token and initializes it with specified values.
 
 > `public` constructor(type: [ExpressionTokenType](../expression_token_type), value: [Variant](../../../variants/variant), line: number, column: number)
 
-- **type**: [ExpressionTokenType](../expression_token_type) - The type of this token.
-- **value**: [Variant](../../../variants/variant) - The value of this token.
-- **line**: number - the line number where the token is.
-- **column**: number - the column number where the token is.
+- **type**: [ExpressionTokenType](../expression_token_type) - type of the token.
+- **value**: [Variant](../../../variants/variant) - value of the token.
+- **line**: number - line number where the token is.
+- **column**: number - column number where the token is.
 
 
 ### Properties
@@ -30,27 +30,27 @@ The column number where the token is.
 
 > `public` column(): number
 
-- **returns**: number - the column number.
+- **returns**: number - column number.
 
 #### line
 The line number where the token is.
 
 > `public` line(): number
 
-- **returns**: number - the column number.
+- **returns**: number - column number.
 
 #### type
-The type of this token.
+Type of the token.
 
 > `public` type(): [ExpressionTokenType](../expression_token_type)
 
-- **returns**: [ExpressionTokenType](../expression_token_type) - type of this token.
+- **returns**: [ExpressionTokenType](../expression_token_type) - type of the token.
 
 #### value
-The value of this token.
+Value of the token.
 
 > `public` value(): [Variant](../../../variants/variant)
 
-- **returns**: [Variant](../../../variants/variant) - value of this token.
+- **returns**: [Variant](../../../variants/variant) - value of the token.
 
 

@@ -22,12 +22,12 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Install the package by suing NPM as
 ```bash
 npm install pip-services3-expressions-nodex --save
 ```
 
-The example below shows how to use expression calculator to dynamically
+The example below shows how to use the expression calculator to dynamically
 calculate user-defined expressions.
 
 ```typescript
@@ -52,7 +52,7 @@ console.log("The result of the expression is " + result.asString);
 ...
 ```
 
-This is an example to process mustache templates.
+And, this is an example to process mustache templates:
 
 ```typescript
 let mustache = new MustacheTemplate();

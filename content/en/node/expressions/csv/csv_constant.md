@@ -9,22 +9,22 @@ description: >
 
 ### Description
 
-TODO: add description
+The CsvConstant class defines a set of constants, such as control return, line feed and nil.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### CR
-TODO: add description
+Control return
 > `public static` **CR**: number = '\r'.charCodeAt(0)
 
 #### Nil
-TODO: add description
+Nil
 > `public static` **Nil**: number = 0
 
 #### LF
-TODO: add description
+Line feed.
 > `public static` **LF**: number = '\n'.charCodeAt(0)
 
 </span>

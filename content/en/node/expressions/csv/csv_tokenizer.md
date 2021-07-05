@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The CsvTokenizer class allows you to implement a tokenizer class for CSV files.
 
 ### Constructors
 Constructs this object with default parameters.

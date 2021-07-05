@@ -1,17 +1,17 @@
 ---
 type: docs
-title: "MustacheSpecialState"
-linkTitle: "MustacheSpecialState"
+title: "MustacheTokenizer"
+linkTitle: "MustacheTokenizer"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    TODO: add description
+    Creates a Mustache tokenizer.
 ---
 
 **Extends**: [AbstractTokenizer](../../tokenizers/abstract_tokenizer)
 
 ### Description
 
-TODO: add description
+The MustacheTokenizer class allows you to create Mustache tokenizers.
 
 ### Constructors
 Constructs this object with default parameters.
@@ -21,8 +21,8 @@ Constructs this object with default parameters.
 ### Instance methods
 
 #### readNextToken
-TODO: add description
+Reads the next token
 
 > `protected` readNextToken(): [Token](../../tokenizers/token)
 
-- **returns**: [Token](../../tokenizers/token) - TODO: add description.
+- **returns**: [Token](../../tokenizers/token) - next token

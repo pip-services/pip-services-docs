@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains constants and classes used to create Mustache parsers.
 ---
 ---
 <div class="module-body"> 
@@ -14,23 +14,23 @@ description: >
 ### Constants
 
 #### [MustacheErrorCode](mustache_error_code)
-TODO: add description
+General syntax errors.
 
 #### [MustacheLexicalState](mustache_lexical_state)
-TODO: add description
+Defines states in Mustache lexical analysis.
 
 #### [MustacheTokenType](mustache_token_type)
-TODO: add description
+Defines types of Mustache tokens.
 
 <br>
 
 ### Classes
 
 #### [MustacheParser](mustache_parser)
-TODO: add description
+Implements an Mustache parser.
 
 #### [MustacheToken](mustache_token)
-TODO: add description
+Defines a Mustache token holder.
 
 
 </div>

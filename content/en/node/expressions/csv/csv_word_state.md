@@ -4,20 +4,19 @@ title: "CsvWordState"
 linkTitle: "CsvWordState"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements a word state to tokenize CSV stream.
+    Implements a word state to tokenize a CSV stream.
 ---
 
 **Extends**: [GenericWordState](../../tokenizers/generic/generic_word_state)
 
 ### Description
 
-TODO: add description
-
+The CsvWordState class implements a word state to tokenize a CSV stream.
 
 ### Constructors
 Constructs this object with specified parameters.
 
 > `public` constructor(fieldSeparators: number[], quoteSymbols: number[]) 
 
-- **fieldSeparators**: number[] - Separators for fields in CSV stream.
-- **quoteSymbols**: number[] - Delimiters character to quote strings.
+- **fieldSeparators**: number[] - separators for fields in a CSV stream.
+- **quoteSymbols**: number[] - delimiter characters used to quote strings.

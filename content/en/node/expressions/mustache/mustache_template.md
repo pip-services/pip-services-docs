@@ -1,38 +1,38 @@
 ---
 type: docs
-title: "MustacheException"
-linkTitle: "MustacheException"
+title: "MustacheTemplate"
+linkTitle: "MustacheTemplate"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements an mustache template class.
+    Implements an Mustache template class.
 ---
 
 ### Description
 
-TODO: add description
+The MustacheTemplate class allows you to implement a Mustache template class.
 
 ### Constructors
-Constructs this class and assigns mustache template.
+Constructs this class and assigns a mustache template.
 
 > `public` constructor(template?: string)
 
-- **template**: string - The mustache template.
+- **template**: string - mustache template.
 
 
 ### Properties
 
 #### autoVariables
-Gets the flag to turn on auto creation of variables for specified mustache.
+Gets the flag to turn on auto-creation of variables for the Mustache template.
 
 > `public` autoVariables(): boolean
 
 - **returns**: boolean - the flag to turn on auto creation of variables.
 
-Sets the flag to turn on auto creation of variables for specified mustache.
+Sets the flag to turn on auto creation of variables for the Mustache template.
 
 > `public` autoVariables(value: boolean)
 
-- **value**: boolean - the flag to turn on auto creation of variables.
+- **value**: boolean - flag to turn on auto-creation of variables.
 
 #### defaultVariables
 The list with default variables.
@@ -42,66 +42,65 @@ The list with default variables.
 - **returns**: any - default variables.
 
 #### initialTokens
-The list of original mustache tokens.
+List of original mustache tokens.
 
 > `public` initialTokens(): [MustacheToken[]](../parsers/mustache_token)
 
-- **returns**: [MustacheToken[]](../parsers/mustache_token) - mustache tokens
+- **returns**: [MustacheToken[]](../parsers/mustache_token) - Mustache tokens
 
 #### originalTokens
-TODO: add description
+Lists the original tokens
 > `public` originalTokens(): [Token[]](../../tokenizers/token)
 
-- **returns**: [Token[]](../../tokenizers/token) - TODO: add description
+- **returns**: [Token[]](../../tokenizers/token) - original tokens
 
 
 > `public` originalTokens(value: Token[])
 
-- **value**: [Token[]](../../tokenizers/token) - TODO: add description
-
+- **value**: [Token[]](../../tokenizers/token) - original tokens
 #### resultTokens
-The list of processed mustache tokens.
+The list of processed Mustache tokens.
 
 > `public` resultTokens(): [MustacheToken[]](../parsers/mustache_token)
 
-- **returns**: [MustacheToken[]](../parsers/mustache_token) - processed mustache tokens.
+- **returns**: [MustacheToken[]](../parsers/mustache_token) - processed Mustache tokens.
 
 
 ### Instance methods
 
 
 #### clear
-Cleans up this calculator from all data.
+Cleans up this calculator.
 
 > `public` clear(): void
 
 #### createVariables
-Populates the specified variables list with variables from parsed mustache.
+Populates the specified variables list with variables obtained from a parsed Mustache template.
 
 > `public` createVariables(variables: any): void
 
 - **variables**: any - The list of variables to be populated.
 
 #### evaluate
-Evaluates this mustache template using default variables.
+Evaluates this Mustache template using default variables.
 
 > `public` evaluate(): string
 
-- **returns**: string - the evaluated template.
+- **returns**: string - evaluated template.
 
 #### evaluateWithVariables
-Evaluates this mustache using specified variables.
+Evaluates this Mustache using specified variables.
 
 > `public` evaluateWithVariables(variables: any): string
 
-- **variables**: any - The collection of variables.
-- **returns**: string - the evaluated template
+- **variables**: any - collection of variables.
+- **returns**: string - evaluated template
 
 #### getVariable
 Gets a variable value from the collection of variables.
 
 > `public` getVariable(variables: any, name: string): any
 
-- **variables**: any - a collection of variables.
-- **name**: string - a variable name to get.
-- **returns**: any - a variable value or *undefined*.
+- **variables**: any - collection of variables.
+- **name**: string - variable name to get.
+- **returns**: any - variable value or *undefined*.

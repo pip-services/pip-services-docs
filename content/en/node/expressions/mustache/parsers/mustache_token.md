@@ -4,36 +4,36 @@ title: "MustacheToken"
 linkTitle: "MustacheToken"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Defines a mustache token holder.
+    Defines a Mustache token holder.
 ---
 
 ### Description
 
-TODO: add description
+The MustacheToken defines a Mustache token holder.
 
 
 ### Constructors
-Creates an instance of a mustache token.
+Creates an instance of a Mustache token.
 
 > `public` constructor(type: [MustacheTokenType](../mustache_token_type), value: string, line: number, column: number)
 
-- **type**: [MustacheTokenType](../mustache_token_type) - a token type.
-- **value**: string - a token value.
-- **line**: number - a line number where the token is.
-- **column**: number - a column numer where the token is.
+- **type**: [MustacheTokenType](../mustache_token_type) - token type.
+- **value**: string - token value.
+- **line**: number - line number where the token is.
+- **column**: number - column number where the token is.
 
 
 ### Properties
 
 #### column
-The column number where the token is.
+Column number where the token is.
 
 > `public` column(): number
 
-- **returns**: number - original mustache tokens.
+- **returns**: number - original Mustache tokens.
 
 #### line
-The line number where the token is.
+Line number where the token is.
 
 > `public` line(): number
 
@@ -41,7 +41,7 @@ The line number where the token is.
 
 
 #### tokens
-Gets a list of subtokens is this token a section.
+Gets a list of subtokens in this token a section.
 
 > `public` tokens(): [MustacheToken[]]()
 
@@ -52,7 +52,7 @@ Gets the token type.
 
 > `public` type(): [MustacheTokenType](../mustache_token_type)
 
-- **returns**: [MustacheTokenType](../mustache_token_type) - the token type.
+- **returns**: [MustacheTokenType](../mustache_token_type) - token type.
 
 
 #### value
@@ -60,4 +60,4 @@ Gets the token value or variable name.
 
 > `public` value(): string
 
-- **returns**: string - the token value or variable name.
+- **returns**: string - token value or variable name.

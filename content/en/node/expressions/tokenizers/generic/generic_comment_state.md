@@ -11,18 +11,18 @@ description: >
 
 ### Description
 
-TODO: add description
+The GenericCommentState class allows you to create a CommentState object that returns a comment from a scanner.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### CR
-TODO: add description
+Carrige return or \n character
 > `protected` **CR**: number = '\n'.charCodeAt(0)
 
 #### LF
-TODO: add description
+Line feed or \r character
 > `protected` **LF**: number = '\r'.charCodeAt(0)
 
 </span>
@@ -32,10 +32,10 @@ TODO: add description
 ### Instance methods
 
 #### nextToken
-Either delegate to a comment-handling state, or return a token with just a slash in it.
+Either delegates to a comment-handling state, or returns a token with just a slash in it.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - A textual string to be tokenized.
-- **tokenizer**: [ITokenizer](../../itokenizer) - A tokenizer class that controls the process.
-- **returns**: [Token](../../token) - The next token from the top of the stream.
+- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
+- **returns**: [Token](../../token) - next token from the top of the stream.

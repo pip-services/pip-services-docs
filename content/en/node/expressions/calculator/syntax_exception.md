@@ -4,22 +4,22 @@ title: "SyntaxException"
 linkTitle: "SyntaxException"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Exception that can be thrown by Expression Calculator.
+    Exception that can be thrown by ExpressionParser.
 ---
 
 **Extends**: [BadRequestException](../../../commons/errors/bad_request_exception)
 
 ### Description
 
-TODO: add description
+The SyntaxException class defines the exceptions that can be thrown by the [ExpressionCalculator]() class
 
 ### Constructors
-TODO: add description
+Creates a new instance of the SyntaxException class.
 
 > `public` constructor(correlationId: string, code: string, message: string, line: number, column: number)
 
-- **correlationId**: string - TODO: add description
-- **code**: string - TODO: add description
-- **message**: string - TODO: add description
-- **line**: number - TODO: add description
-- **column**: number - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **code**: string - code
+- **message**: string - human-readable error message.
+- **line**: number - line number
+- **column**: number - column number

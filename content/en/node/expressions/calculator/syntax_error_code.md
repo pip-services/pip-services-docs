@@ -4,45 +4,45 @@ title: "SyntaxErrorCode"
 linkTitle: "SyntaxErrorCode"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Exception that can be thrown by Expression Calculator.
+    General syntax errors.
 ---
 
 **Extends**: [BadRequestException](../../../commons/errors/bad_request_exception)
 
 ### Description
 
-TODO: add description
+The SyntaxErrorCode class defines general syntax errors.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### ErrorNear
- The error near
+Error near.
 > `public static` **ErrorNear**: string = "ERROR_NEAR"
 
 #### Internal
-The internal error
+Internal error.
 > `public static` **Internal**: string = "INTERNAL"
 
 #### MissedCloseParenthesis
-The missed close parenthesis
+Missed close parenthesis.
 > `public static` **MissedCloseParenthesis**: string = "MISSED_CLOSE_PARENTHESIS"
 
 #### MissedCloseSquareBracket
-The missed close square bracket
+Missed close square bracket.
 > `public static` **MissedCloseSquareBracket**: string = "MISSED_CLOSE_SQUARE_BRACKET"
 
 #### UnexpectedEnd
-The unexpected end.
+Unexpected end.
 > `public static` **UnexpectedEnd**: string = "UNEXPECTED_END";
 
 #### Unknown
-The unknown
+Unknown
 > `public static` **Unknown**: string = "UNKNOWN"
 
 #### UnknownSymbol
-The unknown symbol
+Unknown symbol
 > `public static` **UnknownSymbol**: string = "UNKNOWN_SYMBOL"
 
 

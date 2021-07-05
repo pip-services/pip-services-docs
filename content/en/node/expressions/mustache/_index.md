@@ -5,7 +5,7 @@ linkTitle: "Mustache"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This package contains several sub-packages used to create Mustache templates, parsers and tokenizers.
 ---
 ---
 <div class="module-body"> 

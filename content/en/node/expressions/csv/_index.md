@@ -5,7 +5,7 @@ linkTitle: "CSV"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This package contains constants and classes used to work with expression in csv files and streams. 
 ---
 ---
 <div class="module-body"> 
@@ -13,23 +13,23 @@ description: >
 ### Constants
 
 #### [CsvConstant](csv_constant)
-TODO: add description
+Defines a set of constants, such as control return, line feed and nil.
 
 <br>
 
 ### Classes
 
 #### [CsvQuoteState](csv_quote_state)
-TODO: add description
+Implements a quote string state object for CSV streams.
 
 #### [CsvSymbolState](csv_symbol_state)
-TODO: add description
+Implements a symbol state to tokenize delimiters in CSV streams.
 
 #### [CsvTokenizer](csv_tokenizer)
-TODO: add description
+Implements a tokenizer class for CSV files.
 
 #### [CsvWordState](csv_word_state)
-TODO: add description
+Implements a word state to tokenize CSV stream.
 
 
 </div>

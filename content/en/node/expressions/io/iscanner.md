@@ -10,24 +10,24 @@ description: >
 
 ### Description
 
-TODO: add description
+The IScanner interface defines a scanner that can read and unread characters and count lines.
 
 
 ### Instance methods
 
 #### column
-Gets the column in the current line
+Gets the column in the current line.
 
 > column(): number
 
-- **returns**: number - The column in the current line in the stream.
+- **returns**: number - Column in the current line in the stream.
 
 #### line
 Gets the current line number
 
 > line(): number
 
-- **returns**: number - The current line number in the stream
+- **returns**: number - Current line number in the stream
 
 
 #### peek
@@ -35,39 +35,39 @@ Returns the character from the top of the stream without moving the stream point
 
 > peek(): number
 
-- **returns**: number - A character from the top of the stream or *-1* if stream is empty.
+- **returns**: number - Character from the top of the stream or *-1* if the stream is empty.
 
 
 #### peekColumn
-Gets the next character column number
+Gets the next character column number.
 
 > peekColumn(): number
 
-- **returns**: number - The next character column number in the stream.
+- **returns**: number - Next character column number in the stream.
 
 
 #### peekLine
-Gets the next character line number
+Gets the next character line number.
 
 > peekLine(): number
 
-- **returns**: number - The next character line number in the stream.
+- **returns**: number - Next character line number in the stream.
 
 #### read
-Reads character from the top of the stream.
+Reads a character from the top of the stream.
 
 > read(): number
 
-- **returns**: number - A read character or *-1* if stream processed to the end.
+- **returns**: number - Read character or *-1* if the stream is processed to the end.
 
 #### reset
-Resets scanner to the initial position
+Resets a scanner to the initial position.
 
 > reset(): void 
 
 
 #### unread
-Puts the one character back into the stream stream.
+Puts a character back into the stream.
 
 > unread(): void 
 
@@ -75,4 +75,4 @@ Puts the one character back into the stream stream.
 Pushes the specified number of characters to the top of the stream.
 > unreadMany(count: number): void
 
-- **count**: number - A number of characcted to be pushed back.
+- **count**: number - number of characcted to be pushed back.

@@ -4,12 +4,12 @@ title: "MustacheLexicalState"
 linkTitle: "MustacheLexicalState"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Define states in mustache lexical analysis.
+    Defines states in Mustache lexical analysis.
 ---
 
 ### Description
 
-TODO: add description
+The MustacheLexicalState enum defines different states in Mustache lexical analysis.
 
 
 ### Enumeration members

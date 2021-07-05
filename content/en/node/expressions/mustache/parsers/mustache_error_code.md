@@ -8,7 +8,7 @@ description: >
 ---
 
 ### Description
-The MustacheErrorCode class provides definitions for different general syntax errors.
+The MustacheErrorCode class provides definitions for general syntax errors.
 
 
 ### Fields

@@ -1,18 +1,17 @@
 ---
 type: docs
-title: "ExpressionTokenizer"
-linkTitle: "ExpressionTokenizer"
+title: "ExpressionWordState"
+linkTitle: "ExpressionWordState"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-   Implements a symbol state object.
+   Implements a word state object.
 ---
 
 **Extends**: [GenericWordState](../../../tokenizers/generic/generic_word_state)
 
 ### Description
 
-TODO: add description
-
+The ExpressionTokenizer class allows you to implement a word state object.
 
 ### Constructors
 Constructs an instance of this class.

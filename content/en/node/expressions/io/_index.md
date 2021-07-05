@@ -5,7 +5,7 @@ linkTitle: "IO"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to define a scanner.
 ---
 ---
 <div class="module-body"> 
@@ -13,14 +13,14 @@ description: >
 ### Interfaces
 
 #### [IScanner](iscanner)
-TODO: add description
+Defines scanner that can read and unread characters and count lines. This scanner is used by tokenizers to process input streams.
 
 <br>
 
 ### Classes
 
 #### [StringScanner](string_scanner)
-TODO: add description
+Scan characters in a string that allows tokenizers to look ahead through stream to perform lexical analysis.
 
 </div>
 

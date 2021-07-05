@@ -11,32 +11,32 @@ description: >
 
 ### Description
 
-TODO: add description
+The Variable class allows you to implement a variable holder object.
 
 ### Constructors
 
 > `public` constructor(name: string, value?: [Variant](../../../variants/variant)) 
 
-- **name**: string - The name of this variable.
-- **value**: [Variant](../../../variants/variant) - The variable value.
+- **name**: string - name of this variable.
+- **value**: [Variant](../../../variants/variant) - variable's value.
 
 
 ### Properties
 
 #### name
-The variable name.
+Variable's name.
 > `public` name(): string
 
-- **returns**: string - the variable name.
+- **returns**: string - variable name.
 
 #### value
-Get the variable value.
+Gets the variable value.
 > `public` value(): [Variant](../../../variants/variant)
 
-- **returns**: [Variant](../../../variants/variant) - the variable value.
+- **returns**: [Variant](../../../variants/variant) - variable value.
 
-Set the variable value.
+Sets the variable value.
 
 > `public` value(value: [Variant](../../../variants/variant))
 
-- **value**: [Variant](../../../variants/variant) - the variable value.
+- **value**: [Variant](../../../variants/variant) - variable's value.

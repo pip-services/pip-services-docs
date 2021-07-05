@@ -10,19 +10,18 @@ description: >
 **Extends**: [GenericCommentState](../generic_comment_state)
 
 ### Description
-
-TODO: add description
+The CppCommentState class allows you to create a state that will either delegate to a comment-handling state, or return a token with just a slash in it.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### STAR
-TODO: add description
+Represents a star (*) char
 > `protected` **STAR**: number = '*'.charCodeAt(0)
 
 #### SLASH
-TODO: add description
+Represents a forward slash (/) char.
 > `protected` **SLASH**: number = '/'.charCodeAt(0)
 
 </span>
@@ -36,17 +35,16 @@ Ignore everything up to a closing star and slash, and then return the tokenizer'
 
 > `protected` getMultiLineComment(scanner: [IScanner](../../../io/iscanner)): string
 
-- **scanner**: [IScanner](../../../io/iscanner) - TODO: add description
-- **returns**: string - TODO: add description
+- **scanner**: [IScanner](../../../io/iscanner) - scanner
+- **returns**: string - comment
 
 #### getSingleLineComment
 Ignore everything up to an end-of-line and return the tokenizer's next token.
 
 > `protected` getSingleLineComment(scanner: [IScanner](../../../io/iscanner)): string
 
-- **scanner**: [IScanner](../../../io/iscanner) - TODO: add description
-- **returns**: string - TODO: add description
-
+- **scanner**: [IScanner](../../../io/iscanner) - scanner
+- **returns**: string - comment
 
 #### nextToken
 Either delegate to a comment-handling state, or return a token with just a slash in it.

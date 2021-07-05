@@ -4,7 +4,7 @@ title: "MustacheTemplate"
 linkTitle: "MustacheTemplate"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements an Mustache template class.
+    Implements a Mustache template class.
 ---
 
 ### Description

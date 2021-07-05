@@ -9,12 +9,12 @@ description: >
 
 ### Description
 
-TODO: add description
+The CalculationStack class allows you to implement a stack of Variant values.
 
 ### Properties
 
 #### length
-TODO: add description
+Length
 > `public` length(): number
 
 - **returns**: number - TODO: add description
@@ -23,16 +23,16 @@ TODO: add description
 ### Instance methods
 
 #### pop
-TODO: add description
+Removes and returns last value from the list.
 > `public` pop(): [Variant](../../variants/variant)
 
 
 #### peekAt
-TODO: add description
+Peeks a Variant value located at a specified index.
 > `public` peekAt(index: number): [Variant](../../variants/variant)
 
 #### peek
-TODO: add description
+Peeks a Varian value.
 > `public` peek(): [Variant](../../variants/variant)
 
 

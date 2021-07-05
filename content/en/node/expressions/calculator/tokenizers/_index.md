@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains classes used to create expression specific state object and tokenizers for lexical analysis. 
 ---
 ---
 <div class="module-body"> 
@@ -14,19 +14,19 @@ description: >
 ### Classes
 
 #### [ExpressionNumberState](expression_number_state)
-TODO: add description
+Implements an expression-specific number state object.
 
 #### [ExpressionQuoteState](expression_quote_state)
-TODO: add description
+Implements an expression-specific quote string state object
 
 #### [ExpressionSymbolState](expression_symbol_state)
-TODO: add description
+Implements a symbol state object.
 
 #### [ExpressionTokenizer](expression_tokenizer)
-TODO: add description
+Implement tokenizer to perform lexical analysis for expressions.
 
 #### [ExpressionWordState](expression_word_state)
-TODO: add description
+Implements a symbol state object.
 
 
 </div>

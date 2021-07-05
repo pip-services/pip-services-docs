@@ -4,14 +4,14 @@ title: "IVariableCollection"
 linkTitle: "IVariableCollection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Defines a variables list.
+    Defines a list of variables.
 ---
 
 **Implements**: [IVariableCollection](../ivariableCollection)
 
 ### Description
 
-TODO: add description
+The IVariableCollection interface defines a list of variables.
 
 
 ### Properties
@@ -20,7 +20,7 @@ TODO: add description
 Gets a number of variables stored in the collection.
 > length(): number
 
-- **returns**: number - a number of stored variables.
+- **returns**: number - number of stored variables.
 
 
 ### Instance methods
@@ -30,7 +30,7 @@ Adds a new variable to the collection.
 
 > add(variable: [IVariable](../ivariable)): void
 
-- **variable**: [IVariable](../ivariable) - a variable to be added.
+- **variable**: [IVariable](../ivariable) - variable to be added.
 
 
 #### clear
@@ -52,46 +52,46 @@ Clears all stored variables (assigns null values).
 
 
 #### findIndexByName
-Finds variable index in the list by it's name. 
+'sFinds a variable index in the list by the variable's name. 
 
 > findIndexByName(name: string): number
 
-- **name**: string - The variable name to be found.
-- **returns**: number - Variable index in the list or *-1* if variable was not found.
+- **name**: string - variable name to be found.
+- **returns**: number - variable index in the list or *-1* if variable was not found.
 
 
 #### get
-Get a variable by its index.
+Gets a variable by its index.
 
 > get(index: number): [IVariable](../ivariable)
 
-- **index**: string - a variable index.
-- **returns**: [IVariable](../ivariable) - a retrieved variable.
+- **index**: string - variable index.
+- **returns**: [IVariable](../ivariable) - retrieved variable.
 
 #### getAll
-Get all variables stores in the collection
+Gets all the variables stored in the collection.
 
 > getAll(): [IVariable[]](../ivariable)
-- **returns**: [IVariable[]](../ivariable) - a list with variables.
+- **returns**: [IVariable[]](../ivariable) - list with stored variables.
 
 #### locate
-Finds variable in the list or create a new one if variable was not found.
+Finds a variable in the list or creates a new one if the variable was not found.
 
 > locate(name: string): [IVariable](../ivariable)
 
-- **name**: string - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Found or created variable.
+- **name**: string - name of the variable to be found.
+- **returns**: [IVariable](../ivariable) - found or created variable.
 
 #### remove
 Removes a variable by its index.
 
 > remove(index: number): void
 
-- **index**: number - a index of the variable to be removed.
+- **index**: number - index of the variable to be removed.
 
 #### removeByName
-Removes variable by it's name.
+Removes a variable by it's name.
 
 > removeByName(name: string): void
 
-- **name**: string - The variable name to be removed.
+- **name**: string - name of the variable to be removed.

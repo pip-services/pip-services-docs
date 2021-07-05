@@ -4,14 +4,14 @@ title: "VariableCollection"
 linkTitle: "VariableCollection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements a variables list.
+    Implements a list of variables.
 ---
 
 **Implements**: [IVariableCollection](../ivariableCollection)
 
 ### Description
 
-TODO: add description
+The VariableCollection allows you to implement a list of variables.
 
 
 ### Properties
@@ -20,7 +20,7 @@ TODO: add description
 Gets a number of variables stored in the collection.
 > `public` length(): number
 
-- **returns**: number - a number of stored variables.
+- **returns**: number - number of stored variables.
 
 
 ### Instance methods
@@ -30,7 +30,7 @@ Adds a new variable to the collection.
 
 > `public` add(variable: [IVariable](../ivariable)): void
 
-- **variable**: [IVariable](../ivariable) - a variable to be added.
+- **variable**: [IVariable](../ivariable) - variable to be added.
 
 
 #### clear
@@ -65,33 +65,33 @@ Get a variable by its index.
 
 > `public` get(index: number): [IVariable](../ivariable)
 
-- **index**: string - a variable index.
-- **returns**: [IVariable](../ivariable) - a retrieved variable.
+- **index**: string - variable index.
+- **returns**: [IVariable](../ivariable) - retrieved variable.
 
 #### getAll
-Get all variables stores in the collection
+Get all variables stored in the collection
 
 > `public` getAll(): [IVariable[]](../ivariable)
-- **returns**: [IVariable[]](../ivariable) - a list with variables.
+- **returns**: [IVariable[]](../ivariable) - list with variables.
 
 #### locate
-Finds variable in the list or create a new one if variable was not found.
+Finds a variable in the list or creates a new one if the variable was not found.
 
 > `public` locate(name: string): [IVariable](../ivariable)
 
-- **name**: string - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Found or created variable.
+- **name**: string - name of the variable to be found.
+- **returns**: [IVariable](../ivariable) - found or created variable.
 
 #### remove
 Removes a variable by its index.
 
 > `public` remove(index: number): void
 
-- **index**: number - a index of the variable to be removed.
+- **index**: number - index of the variable to be removed.
 
 #### removeByName
-Removes variable by it's name.
+Removes a variable by it's name.
 
 > `public` removeByName(name: string): void
 
-- **name**: string - The variable name to be removed.
+- **name**: string - variable name to be removed.

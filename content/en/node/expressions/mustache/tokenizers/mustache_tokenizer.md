@@ -14,7 +14,7 @@ description: >
 The MustacheTokenizer class allows you to create Mustache tokenizers.
 
 ### Constructors
-Constructs this object with default parameters.
+Constructs this object with default parameters.  
 
 > `public` constructor()
 

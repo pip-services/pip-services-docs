@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The IVariable interface allows you to define a variable.
 
 
 ### Fields

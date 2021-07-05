@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains classes used to create Mustache tokenizers.
 ---
 ---
 <div class="module-body"> 
@@ -14,10 +14,10 @@ description: >
 ### Classes
 
 #### [MustacheSpecialState](mustache_special_state)
-TODO: add description
+Implements a quote string state object for Mustache templates.
 
 #### [MustacheTokenizer](mustache_tokenizer)
-TODO: add description
+Creates a Mustache tokenizer.
 
 
 </div>

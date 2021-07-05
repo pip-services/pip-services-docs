@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The ExpressionSymbolState allows you to implement a symbol state object.
 
 
 ### Constructors

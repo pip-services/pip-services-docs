@@ -12,20 +12,20 @@ description: >
 
 ### Description
 
-TODO: add description
+The StringScanner class is used to scan characters in a string that allows tokenizers to look ahead through a stream to perform lexical analysis.
 
 ### Constructors
 Creates an instance of this class.
 
 > `public` constructor(content: string)
 
-- **content**: string - A text content to be read.
+- **content**: string - text content to be read.
 
 
 ### Properties
 
 #### Eof
-TODO: add description
+EOF
 > `public static` Eof: number = -1
 
 ### Instance methods
@@ -35,14 +35,14 @@ Gets the column in the current line
 
 > `public` column(): number
 
-- **returns**: number - The column in the current line in the stream.
+- **returns**: number - column in the current line in the stream.
 
 #### line
 Gets the current line number
 
 > `public` line(): number
 
-- **returns**: number - The current line number in the stream
+- **returns**: number - current line number in the stream.
 
 
 #### peek
@@ -50,30 +50,30 @@ Returns the character from the top of the stream without moving the stream point
 
 > `public` peek(): number
 
-- **returns**: number - A character from the top of the stream or *-1* if stream is empty.
+- **returns**: number - character from the top of the stream or *-1* if the stream is empty.
 
 
 #### peekColumn
-Gets the next character column number
+Gets the next character column number.
 
 > `public` peekColumn(): number
 
-- **returns**: number - The next character column number in the stream.
+- **returns**: number - next character column number in the stream.
 
 
 #### peekLine
-Gets the next character line number
+Gets the next character line number.
 
 > `public` peekLine(): number
 
-- **returns**: number - The next character line number in the stream.
+- **returns**: number - next character line number in the stream.
 
 #### read
-Reads character from the top of the stream.
+Reads a character from the top of the stream.
 
 > `public` read(): number
 
-- **returns**: number - A read character or *-1* if stream processed to the end.
+- **returns**: number - read character or *-1* if the stream is processed to the end.
 
 #### reset
 Resets scanner to the initial position
@@ -82,7 +82,7 @@ Resets scanner to the initial position
 
 
 #### unread
-Puts the one character back into the stream stream.
+Puts one character back into the stream stream.
 
 > `public` unread(): void 
 
@@ -90,4 +90,4 @@ Puts the one character back into the stream stream.
 Pushes the specified number of characters to the top of the stream.
 > `public` unreadMany(count: number): void
 
-- **count**: number - A number of characcted to be pushed back.
+- **count**: number - number of characcted to be pushed back.

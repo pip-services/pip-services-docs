@@ -1,15 +1,15 @@
 ---
 type: docs
-title: "MustacheLexicalState"
-linkTitle: "MustacheLexicalState"
+title: "MustacheTokenType"
+linkTitle: "MustacheTokenType"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Define types of mustache tokens.
+    Defines types of Mustache tokens.
 ---
 
 ### Description
 
-TODO: add description
+The MustacheTokenType enum defines different types of Mustache tokens.
 
 
 ### Enumeration members

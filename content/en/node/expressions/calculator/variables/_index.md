@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains interfaces and clases used to create variables and collections of variables.
 ---
 ---
 <div class="module-body"> 
@@ -14,20 +14,20 @@ description: >
 ### Interfaces
 
 #### [IVariable](ivariable)
-TODO: add description
+The IVariable interface allows you to define a variable.
 
 #### [IVariableCollection](ivariable_collection)
-TODO: add description
+The IVariableCollection interface defines a list of variables.
 
 <br>
 
 ### Classes
 
 #### [Variable](variable)
-TODO: add description
+Implements a variable holder object.
 
 #### [VariableCollection](variable_collection)
-TODO: add description
+Implements a list of variables.
 
 
 </div>

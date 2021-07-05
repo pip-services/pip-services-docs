@@ -8,31 +8,31 @@ description: >
 ---
 
 ### Description
+The MustacheErrorCode class provides definitions for different general syntax errors.
 
-TODO: add description
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### ErrorAt
-The error near
+Error at
 > `public static` **ErrorAt**: string = "ERROR_AT"
 
 #### ErrorNear
-The error near
+Error near
 > `public static` **ErrorNear**: string = "ERROR_NEAR";
 
 #### Internal
-The internal error
+Internal error
 > `public static` **Internal**: string = "INTERNAL"
 
 #### MismatchedBrackets
-The mismatched brackets
+Mismatched brackets
 > `public static` **MismatchedBrackets**: string = "MISTMATCHED_BRACKETS"
 
 #### MissingVariable
-The missing variable
+Missing variable
 > `public static` **MissingVariable**: string = "MISSING_VARIABLE"
 
 #### NotClosedSection
@@ -40,19 +40,19 @@ Not closed section
 > `public static` **NotClosedSection**: string = "NOT_CLOSED_SECTION"
 
 #### UnexpectedEnd
-The unexpected end
+Unexpected end
 > `public static` **UnexpectedEnd**: string = "UNEXPECTED_END"
 
 #### UnexpectedSectionEnd
-The unknown symbol
+Unexpected section end
 > `public static` **UnexpectedSectionEnd**: string = "UNEXPECTED_SECTION_END"
 
 #### UnexpectedSymbol
-The unknown symbol
+Unexpected symbol
 > `public static` **UnexpectedSymbol**: string = "UNEXPECTED_SYMBOL"
 
 #### Unknown
-The unknown symbol
+Unknown symbol
 > `public static` **Unknown**: string = "UNKNOWN"
 
 

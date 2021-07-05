@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The ExpressionTokenizer allows you to implement a tokenizer to perform lexical analysis for expression.  
 
 
 ### Constructors

@@ -4,7 +4,8 @@ title: "CsvConstant"
 linkTitle: "CsvConstant"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    TODO: add description
+    Defines a set of constants, such as control return, line feed and nil.
+
 ---
 
 ### Description

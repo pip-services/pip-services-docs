@@ -13,20 +13,20 @@ description: >
 ### Sub-packages
 
 #### [Parsers](parsers)
-TODO: add description
+Contains constants and classes used to create Mustache parsers.
 
 #### [Tokenizers](tokenizers)
-TODO: add description
+Contains classes used to create Mustache tokenizers
 
 <br>
 
 ### Classes
 
 #### [MustacheException](mustache_exception)
-TODO: add description
+Exception that can be thrown by a Mustache template.
 
 #### [MustacheTemplate](mustache_template)
-TODO: add description
+Implements an Mustache template.
 
 
 </div>

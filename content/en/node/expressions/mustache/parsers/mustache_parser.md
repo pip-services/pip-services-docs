@@ -9,51 +9,51 @@ description: >
 
 ### Description
 
-TODO: add description
+The MustacheParser class allows you to implement a Mustache parser.
 
 
 ### Properties
 
 #### initialTokens
-The list of original mustache tokens.
+List of original Mustache tokens.
 
 > `public` initialTokens(): [MustacheToken[]](../mustache_token)
 
 - **returns**: [MustacheToken[]](../mustache_token) - original mustache tokens.
 
 #### originalTokens
-TODO: add description
+List of original Mustache tokens.
 
 > `public` originalTokens(): [Token[]](../../../tokenizers/token)
 
-- **returns**: [Token[]](../../../tokenizers/token) - TODO: add description
+- **returns**: [Token[]](../../../tokenizers/token) - original Mustache tokens.
 
 > `public` originalTokens(value: [Token[]](../../../tokenizers/token))
 
-- **value**: [Token[]](../../../tokenizers/token) - TODO: add description
+- **value**: [Token[]](../../../tokenizers/token) - original Mustache tokens.
 
 #### resultTokens
-The list of parsed mustache tokens.
+List of parsed Mustache tokens.
 
 > `public` resultTokens(): [MustacheToken[]](../mustache_token)
 
-- **returns**: [MustacheToken[]](../mustache_token) - parsed mustache tokens.
+- **returns**: [MustacheToken[]](../mustache_token) - parsed Mustache tokens.
 
 #### template
-The mustache template.
+Mustache template.
 
 > `public` template(): string
 
-- **returns**: string - mustache template.
+- **returns**: string - Mustache template.
 
 
 > `public` template(value: string)
 
-- **value**: string - mustache template.
+- **value**: string - Mustache template.
 
 
 #### variableNames
-The list of found variable names.
+List of found variable names.
 
 > `public` variableNames(): string[]
 
@@ -67,11 +67,11 @@ Clears parsing results.
 > `public` clear(): void
 
 #### parseString
-Sets a new mustache string and parses it into internal byte code.
+Sets a new Mustache string and parses it into internal byte code.
 
 > `public` parseString(mustache: string): void
 
-- **mustache**: string - A new mustache string.
+- **mustache**: string - new Mustache string.
 
 #### parseTokens
 

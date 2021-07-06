@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create connections to Amazon Web Services (AWS).
 ---
 ---
 
@@ -14,9 +14,9 @@ description: >
 ### Classes
 
 #### [AwsConnectionParams](aws_connection_params)
-TODO: add description
+Contains connection parameters to authenticate against Amazon Web Services (AWS) and connect to specific AWS resource.
 
 #### [AwsConnectionResolver](aws_connection_resolver)
-TODO: add description
+Helper class used to retrieve AWS connection and credential parameters, validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
 
 </div>

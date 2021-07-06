@@ -11,4 +11,4 @@ description: >
 
 ### Description
 
-TODO: add description
+The INumberState interface is used by tokenizer states that process numbers, such as Integers, Floats, HexDex, etc.

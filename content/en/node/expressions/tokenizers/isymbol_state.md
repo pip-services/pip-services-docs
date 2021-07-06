@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The ISymbolState interface is used for tokenizer states that process delimiters.
 
 ### Instance methods
 
@@ -20,5 +20,5 @@ Add a multi-character symbol.
 
 > add(value: string, tokenType: [TokenType](../token_type)): void
 
-- **value**: string - The symbol to add, such as *"=:="*.
-- **tokenType**: [TokenType](../token_type) - The token type.
+- **value**: string - symbol to add, such as *"=:="*.
+- **tokenType**: [TokenType](../token_type) - token type.

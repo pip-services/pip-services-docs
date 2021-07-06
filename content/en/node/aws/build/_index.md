@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create AWS components.
 ---
 ---
 
@@ -14,6 +14,6 @@ description: >
 ### Classes
 
 #### [DefaultAwsFactory](default_aws_factory)
-TODO: add description
+Creates AWS components by their descriptors.
 
 </div>

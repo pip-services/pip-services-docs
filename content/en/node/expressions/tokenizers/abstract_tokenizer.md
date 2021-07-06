@@ -4,14 +4,14 @@ title: "AbstractTokenizer"
 linkTitle: "AbstractTokenizer"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements an abstract tokenizer class.
+    Defines a general tokenizer.
 ---
 
 **Implements**: [ITokenizer](../itokenizer)
 
 ### Description
 
-TODO: add description
+The AbstractTokenizer class defines a general tokenizer.
 
 ### Fields
 

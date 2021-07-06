@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This sub-package contains utility classes used to create character intervals, keep references associated with specific characters and char validators.
 ---
 ---
 <div class="module-body"> 
@@ -14,13 +14,13 @@ description: >
 ### Classes
 
 #### [CharReferenceInterval](char_reference_interval)
-TODO: add description
+Represents a character interval that keeps a reference.
 
 #### [CharReferenceMap](char_reference_map)
-TODO: add description
+This class keeps references associated with specific characters.
 
 #### [CharValidator](char_validator)
-TODO: add description
+Validates characters that are processed by Tokenizers.
 
 
 </div>

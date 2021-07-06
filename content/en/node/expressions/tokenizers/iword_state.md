@@ -10,7 +10,7 @@ description: >
 **Extends**: [ITokenizerState](../itokenizer_state)
 
 ### Description
-TODO: add description
+The IWordState interface is used by tokenizer states that process words, identificators or keywords.
 
 ### Instance methods
 
@@ -27,6 +27,6 @@ as the beginning character of a word.
 
 > setWordChars(fromSymbol: number, toSymbol: number, enable: boolean): void
 
-- **fromSymbol**: number - First character index of the interval.
-- **toSymbol**: number - Last character index of the interval.
+- **fromSymbol**: number - first character index of the interval.
+- **toSymbol**: number - last character index of the interval.
 - **enable**: boolean - *true* if this state should use characters in the given range.

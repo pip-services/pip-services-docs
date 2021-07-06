@@ -9,10 +9,10 @@ description: >
 
 ### Description
 
-TODO: add description
+The CharReferenceMap class allows you to keep references associated with specific characters.
 
 ### Constructors
-TODO: add description
+Creates a new instance of this class.
 
 > `public` constructor()
 
@@ -20,33 +20,33 @@ TODO: add description
 ### Instance methods
 
 #### addDefaultInterval
-TODO: add description
+Adds a default interval.
 
 > `public` addDefaultInterval(reference: T): void
 
-- **reference**: T - TODO: add description
+- **reference**: T - reference
 
 
 #### addInterval
-TODO: add description
+Adds an interval.
 
 > `public` addInterval(start: number, end: number, reference: T)
 
-- **start**: number - TODO: add description
-- **end**: number - TODO: add description
-- **reference**: T - TODO: add description
+- **start**: number - start of the interval
+- **end**: number - end of the interval
+- **reference**: T - reference
 
 
 #### clear
-TODO: add description
+Clears up the intervals.
 
 > `public` clear(): void
 
 
 #### lookup
-TODO: add description
+Looks up for a specified symbol.
 
 > `public` lookup(symbol: number): T
 
-- **symbol**: number - TODO: add description
-- **returns**: T - TODO: add description
+- **symbol**: number - symbol
+- **returns**: T - reference

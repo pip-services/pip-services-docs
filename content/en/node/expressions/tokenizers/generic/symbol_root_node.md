@@ -1,17 +1,17 @@
 ---
 type: docs
-title: "SymbolNode"
-linkTitle: "SymbolNode"
+title: "SymbolRootNode"
+linkTitle: "SymbolRootNode"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    This class is a special case of a *SymbolNode*. A *SymbolRootNode*
+    This class is a special case of *SymbolNode*. A *SymbolRootNode*
     object has no symbol of its own, but has children that represent all possible symbols.
 ---
 
 **Extends**: [SymbolNode](../symbol_node)
 
 ### Description
-TODO: add description
+The SymbolRootNode class is a special case of *SymbolNode*. A *SymbolRootNode* object has no symbol of its own, but has children that represent all possible symbols.
 
 ### Constructors
 Creates and initializes a root node.
@@ -23,24 +23,24 @@ Creates and initializes a root node.
 
 
 #### add
-Add the given string as a symbol.
+Adds the given string as a symbol.
 
 > `public` add(value: string, tokenType: [TokenType](../../token_type)): void
 
-- **value**: string - The character sequence to add.
-- **tokenType**: [TokenType](../../token_type) - TODO: add description
+- **value**: string - character sequence to add.
+- **tokenType**: [TokenType](../../token_type) - token type
 
 #### ancestry
-Show the symbol this node represents.
+Shows the symbol this node represents.
 
 > `public` ancestry(): string
 
-- **returns**: string - The symbol this node represents.
+- **returns**: string - symbol this node represents.
 
 #### nextToken
-Return a symbol string from a scanner.
+Returns a symbol string from a scanner.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - A scanner to read from
-- **returns**: [SymbolNode]() - A symbol string from a scanner
+- **scanner**: [IScanner](../../../io/iscanner) - scanner to read from
+- **returns**: [SymbolNode]() - symbol string from a scanner

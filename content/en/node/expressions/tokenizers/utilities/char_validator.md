@@ -4,12 +4,12 @@ title: "CharValidator"
 linkTitle: "CharValidator"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Validates characters that are processed by Tokenizers.
+    Validates characters that are processed by tokenizers.
 ---
 
 ### Description
 
-TODO: add description
+The CharValidator class allows you to validate characters that are processed by tokenizers.
 
 ### Constructors
 Default contructor to prevent creation of a class instance.
@@ -20,41 +20,40 @@ Default contructor to prevent creation of a class instance.
 ### Properties
 
 #### Eof
-TODO: add description
+EOF
 > `public static` **Eof**: number = 0xffff
 
 #### Zero
-TODO: add description
+Zero
 > `public static` **Zero**: number = '0'.charCodeAt(0)
 
 #### Nine
-TODO: add description
+Nine
 > `public static` **Nine**: number = '9'.charCodeAt(0)
 
 ### Static methods
 
 #### isEof
-TODO: add description
+Checks if a character is an EOF.
 
 > `public static` isEof(value: number): boolean
 
-- **value**: number - TODO: add description
-- **returns**: boolean - TODO: add description
+- **value**: number - value to check
+- **returns**: boolean - validation result
 
 
 #### isEol
-TODO: add description
+Checks if a character is an EOL.
 
 > `public static` isEol(value: number): boolean
 
-- **value**: number - TODO: add description
-- **returns**: boolean - TODO: add description
-
+- **value**: number - value to check
+- **returns**: boolean - validation result
 
 #### isDigit
-TODO: add description
+Checks if a character is a digit.
 
 > `public static` isDigit(value: number): boolean
 
-- **value**: number - TODO: add description
-- **returns**: boolean - TODO: add description
+- **value**: number - value to check
+- **returns**: boolean - validation result

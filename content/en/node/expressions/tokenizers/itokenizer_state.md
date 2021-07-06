@@ -4,16 +4,18 @@ title: "ITokenizerState"
 linkTitle: "ITokenizerState"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    A tokenizerState returns a token, given a scanner, an initial character read from the scanner,
-    and a tokenizer that is conducting an overall tokenization of the scanner. 
+   Interface for TokenizerStates.
 ---
 
 ### Description
-The tokenizer will typically have a character state table that decides which state to use, depending on an initial 
-character. If a single character is insufficient, a state such as *SlashState*
-will read a second character, and may delegate to another state, such as *SlashStarState*.
-This prospect of delegation is the reason that the *nextToken()*
-method has a tokenizer argument.
+
+The ITokenizerState interface is used by TokenizerStates. A tokenizerState returns a token, given a scanner, an initial character read from the scanner, and a tokenizer that is conducting an overall tokenization of the scanner. 
+
+Important points
+
+- The tokenizer will typically have a character state table that decides which state to use, depending on an initial character. If a single character is insufficient, a state such as *SlashState* will read a second character, and may delegate to another state, such as *SlashStarState*.  
+  
+- This prospect of delegation is the reason that the *nextToken()* method has a tokenizer argument.
 
 ### Instance methods
 

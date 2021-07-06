@@ -11,10 +11,10 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultAwsFactory class allows you to create AWS components by their descriptors.
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

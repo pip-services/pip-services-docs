@@ -5,7 +5,7 @@ linkTitle: "Tokenizers"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    This package provides different sub-packages containing classes used to define and manage tokenizers.
 ---
 ---
 <div class="module-body"> 
@@ -13,45 +13,45 @@ description: >
 ### Packages
 
 #### [Generic](generic)
-TODO: add description
+The sub-package provides classes that define different tokenizer states and symbol nodes.
 
 #### [Utilities](utilities)
-TODO: add description
+This sub-package contains utility classes used to create character intervals, keep references associated with specific characters and char validators.
 
 <br>
 
 ### Constants
 
 #### [TokenType](token_type)
-TODO: add description
+Types (categories) of tokens such as “number”, “symbol” and “word”.
 
 <br>
 
 ### Interfaces
 
 #### [ICommentState](icomment_state)
-TODO: add description
+Defines an interface for tokenizer state that processes comments.
 
 #### [INumberState](inumber_state)
-TODO: add description
+Defines interface for tokenizer state that processes numbers - Integers, Floats, HexDec.
 
 #### [IQuoteState](iquote_state)
-TODO: add description
+Defines an interface for tokenizer state that processes quoted strings.
 
 #### [ISymbolState](isymbol_state)
-TODO: add description
+Defines an interface for tokenizer state that processes delimiters.
 
 #### [ITokenizer](itokenizer)
-TODO: add description
+Interface for tokenizers.
 
 #### [ITokenizerState](itokenizer_state)
-TODO: add description
+Interface for TokenizerStates.
 
 #### [IWhitespaceState](iwhitespace_state)
-TODO: add description
+Defines an interface for tokenizer state that processes whitespaces (' ‘, ‘\t’).
 
 #### [IWordState](iword_state)
-TODO: add description
+Defines an interface for tokenizer state that processes words, identificators or keywords.
 
 
 <br>
@@ -60,10 +60,10 @@ TODO: add description
 
 
 #### [AbstractTokenizer](abstract_tokenizer)
-TODO: add description
+Provides a general tokenizer.
 
 #### [Token](token)
-TODO: add description
+Represents a token.
 
 
 </div>

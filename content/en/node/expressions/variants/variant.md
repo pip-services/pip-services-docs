@@ -13,7 +13,7 @@ The Variant class allows you to define a container for variant values.
 
 
 ### Constructors
-Constructs this class and assignes a variant value.
+Constructs this class and assignes a variant value. 
 
 > `public` constructor(value?: any)
 

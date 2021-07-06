@@ -5,15 +5,18 @@ linkTitle: "AwsConnectionParams"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
     Contains connection parameters to authenticate against Amazon Web Services (AWS)
-    and connect to specific AWS resource.
+    and connect to specific AWS resources.
  
 ---
 
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
+The AwsConnectionParams class contains connection parameters used to authenticate against Amazon Web Services (AWS) and connect to specific AWS resources.
 
-The class is able to compose and parse AWS resource ARNs.
+Important points
+
+- This class is able to compose and parse AWS resource ARNs.
 
 
 #### Configuration parameters
@@ -24,14 +27,14 @@ The class is able to compose and parse AWS resource ARNs.
 - **client_key**: alternative to access_key
 - **secret_key**: alternative to access_key
 
-In addition to standard parameters [CredentialParams](../../../components/auth/credential_params) may contain any number of custom parameters
+In addition to standard parameters, [CredentialParams](../../../components/auth/credential_params) may contain any number of custom parameters
 
 ### Constructors
 Creates an new instance of the connection parameters.
 
 > `public` constructor(values: any = null)
 
-- **values**: any - (optional) an object to be converted into key-value pairs to initialize this connection.
+- **values**: any - (optional) object to be converted into key-value pairs to initialize this connection.
 
 ### Instance methods
 
@@ -40,35 +43,35 @@ Gets the AWS access id.
 
 > `public` getAccessId(): string
 
-- **returns**: string - the AWS access id.
+- **returns**: string - AWS access id.
 
 #### getAccessKey
 Gets the AWS client key.
 
 > `public` getAccessKey(): string
 
-- **returns**: string - the AWS client key.
+- **returns**: string - AWS client key.
 
 #### getAccount
 Gets the AWS account id.
 > `public` getAccount(): string
 
-- **returns**: string - the AWS account id.
+- **returns**: string - AWS account id.
 
 #### getArn
 Gets the AWS resource ARN.
-If the ARN is not defined it automatically generates it from other properties.
+If the ARN is not defined, it automatically generates it from other properties.
 
 > `public` getArn(): string
 
-- **returns**: string - the AWS resource ARN.
+- **returns**: string - AWS resource ARN.
 
 #### getPartition
 Gets the AWS partition name.
 
 > `public` getPartition(): string
 
-- **returns**: string - the AWS partition name.
+- **returns**: string - AWS partition name.
 
 
 #### getRegion
@@ -76,14 +79,14 @@ Gets the AWS region.
 
 > `public` getRegion(): string
 
-- **returns**: string - the AWS region.
+- **returns**: string - AWS region.
 
 #### getResource
 Gets the AWS resource id.
 
 > `public` getResource(): string
 
-- **returns**: string - the AWS resource id.
+- **returns**: string - AWS resource id.
 
 
 #### getResourceType
@@ -91,35 +94,35 @@ Gets the AWS resource type.
 
 > `public` getResourceType(): string
 
-- **returns**: string - the AWS resource type.
+- **returns**: string - AWS resource type.
 
 #### getService
 Gets the AWS service name.
 
 > `public` getService(): string
 
-- **returns**: string - the AWS service name.
+- **returns**: string - AWS service name.
 
 #### setAccessId
 Sets the AWS access id.
 
 > `public` setAccessId(value: string)
 
-- **value**: string - the AWS access id.
+- **value**: string - AWS access id.
 
 #### setAccessKey
 Sets the AWS client key.
 
 > `public` setAccessKey(value: string)
 
-- **value**: string - a new AWS client key.
+- **value**: string - new AWS client key.
 
 #### setAccount
 Sets the AWS account id.
 
 > `public` setAccount(value: string)
 
-- **value**: string - the AWS account id.
+- **value**: string - AWS account id.
 
 #### setArn
 Sets the AWS resource ARN.
@@ -128,28 +131,28 @@ and sets individual parameters.
 
 > `public` setArn(value: string)
 
-- **value**: string - a new AWS resource ARN.
+- **value**: string - new AWS resource ARN.
 
 #### setPartition
 Sets the AWS partition name.
 
 > `public` setPartition(value: string)
 
-- **value**: string - a new AWS partition name.
+- **value**: string - new AWS partition name.
 
 #### setRegion
 Sets the AWS region.
 
 > `public` setRegion(value: string)
 
-- **value**: string - a new AWS region.
+- **value**: string - new AWS region.
 
 #### setResource
 Sets the AWS resource id.
 
 > `public` setResource(value: string)
 
-- **value**: string - a new AWS resource id.
+- **value**: string - new AWS resource id.
 
 
 #### setResourceType
@@ -157,7 +160,7 @@ Sets the AWS resource type.
 
 > `public` setResourceType(value: string)
 
-- **value**: string - a new AWS resource type.
+- **value**: string - new AWS resource type.
 
 
 #### setService
@@ -165,27 +168,27 @@ Sets the AWS service name.
 
 > `public` setService(value: string)
 
-- **value**: string - a new AWS service name.
+- **value**: string - new AWS service name.
 
 #### validate
 Validates this connection parameters 
 
 > `public` validate(correlationId: string)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 ### Static methods
 
 #### fromConfig
 Retrieves AwsConnectionParams from configuration parameters.
-The values are retrieves from "connection" and "credential" sections.
+The values are retrieved from "connection" and "credential" sections.
 
 See [mergeConfigs](#mergeconfigs)
 
 > `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [AwsConnectionParams]()
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
-- **returns**: [AwsConnectionParams]() - the generated AwsConnectionParams object.
+- **returns**: [AwsConnectionParams]() - generated AwsConnectionParams object.
 
 
 #### fromString
@@ -195,17 +198,17 @@ Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
 
 > `public static` fromString(line: string): [AwsConnectionParams]()
 
-- **line**: string - a string with serialized key-value pairs as "key1=value1;key2=value2;...".
-- **returns**: [AwsConnectionParams]() - a new AwsConnectionParams object.
+- **line**: string - string with serialized key-value pairs as "key1=value1;key2=value2;...".
+- **returns**: [AwsConnectionParams]() - new AwsConnectionParams object.
 
 #### mergeConfigs
 Retrieves AwsConnectionParams from multiple configuration parameters.
-The values are retrieves from "connection" and "credential" sections.
+The values are retrieved from "connection" and "credential" sections.
 
 > `public static` mergeConfigs(...configs: [ConfigParams[]](../../../commons/config/config_params)): [AwsConnectionParams]()
 
 - **configs**: [ConfigParams[]](../../../commons/config/config_params) - list with configuration parameters.
-- **returns**: [AwsConnectionParams]() - the generated AwsConnectionParams object.
+- **returns**: [AwsConnectionParams]() - generated AwsConnectionParams object.
 
 
 ### Examples

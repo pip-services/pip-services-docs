@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The VariantType enum defines supported types of variant values.
 
 
 ### Enumeration members

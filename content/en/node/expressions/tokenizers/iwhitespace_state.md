@@ -10,7 +10,7 @@ description: >
 **Extends**: [ITokenizerState](../itokenizer_state)
 
 ### Description
-TODO: add description
+The IWhitespaceState interface is used by TokenizerStates that process whitespaces (' ', '\t').
 
 ### Instance methods
 
@@ -25,6 +25,6 @@ Establish the given characters as whitespace to ignore.
 
 > setWhitespaceChars(fromSymbol: number, toSymbol: number, enable: boolean): void
 
-- **fromSymbol**: number - First character index of the interval.
-- **toSymbol**: number - Last character index of the interval.
+- **fromSymbol**: number - first character index of the interval.
+- **toSymbol**: number - last character index of the interval.
 - **enable**: boolean - *true* if this state should ignore characters in the given range.

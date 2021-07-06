@@ -11,16 +11,16 @@ description: >
 
 ### Description
 
-TODO: add description
+The TypeSafeVariantOperations class allows you to implement a strongly typed (type safe) variant manager object.
 
 
 ### Instance methods
 
 #### convert
-Converts variant to specified type
+Converts a variant to a specified type.
 
 > `public` convert(value: [Variant](../variant), newType: [VariantType](../variant_type)): [Variant](../variant)
 
-- **value**: [Variant](../variant) - A variant value to be converted.
-- **newType**: [VariantType](../variant_type) - A type of object to be returned.
-- **returns**: [Variant](../variant) - A converted Variant value.
+- **value**: [Variant](../variant) - variant value to be converted.
+- **newType**: [VariantType](../variant_type) - type of object to be returned.
+- **returns**: [Variant](../variant) - converted Variant value.

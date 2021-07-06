@@ -11,9 +11,9 @@ description: >
 
 ### Description
 
-TODO: add description
+The GenericTokenizer allows you to implement a default tokenizer class.
 
 ### Constructors
-TODO: add description
+Creates an instance of GenericTokenizer
 
 > `public` constructor()

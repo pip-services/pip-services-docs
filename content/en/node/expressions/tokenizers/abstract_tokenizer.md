@@ -18,77 +18,77 @@ TODO: add description
 <span class="hide-title-link">
 
 #### _lastTokenType
-TODO: add description
+Last token type
 > `protected` **_lastTokenType**: [TokenType](../token_type) = [TokenType.Unknown](../token_type)
 
 #### _nextToken
-TODO: add description
+Next token
 > `protected` **_nextToken**: [Token](../token)
 
 #### _scanner
-TODO: add description
+Scanner
 > `protected` **_scanner**: [IScanner](../../io/iscanner)
 
 
 #### commentState
-TODO: add description
+Comment state
 > `public` **commentState**: [ICommentState](../icomment_state)
 
 
 #### decodeStrings
-TODO: add description
+Boolean that defines the option to decode strings or not.
 > `public` **decodeStrings**: boolean
 
 
 #### mergeWhitespaces
-TODO: add description
+Boolean that defines the option to unify white spaces.
 > `public` **mergeWhitespaces**: boolean
 
 
 #### numberState
-TODO: add description
+Number state
 > `public` **numberState**: [INumberState](../inumber_state)
 
 
 #### quoteState
-TODO: add description
+Quote state
 > `public` **quoteState**: [IQuoteState](../iquote_state)
 
 #### skipComments
-TODO: add description
+Boolean that defines the option to skip comments.
 > `public` **skipComments**: boolean
 
 
 #### skipEof
-TODO: add description
+Boolean that defines the option to skip EOF.
 > `public` **skipEof**: boolean
 
 #### skipUnknown
-TODO: add description
+Boolean that defines the option to skip unknowns.
 > `public` **skipUnknown**: boolean
 
 
 #### skipWhitespaces
-TODO: add description
+Boolean that defines the option to skip white spaces.
 > `public` **skipWhitespaces**: boolean
 
 
 #### symbolState
-TODO: add description
+Symbol state
 > `public` **symbolState**: [ISymbolState](../isymbol_state)
 
 #### unifyNumbers
-TODO: add description
+Boolean that defines the option to unify numbers.
 > `public` **unifyNumbers**: boolean
 
 
 #### whitespaceState
-TODO: add description
+White space state.
 > `public` **whitespaceState**: [IWhitespaceState](../iwhitespace_state)
 
 
 #### wordState
-TODO: add description
+Word state.
 > `public` **wordState**: [IWordState](../iword_state)
 
 
@@ -97,7 +97,7 @@ TODO: add description
 ### Properties
 
 #### scanner
-TODO: add description
+Scanner
 > `public` scanner(): [IScanner](../../io/iscanner)
 
 - **returns**: [IScanner](../../io/iscanner) - TODO: add description
@@ -112,74 +112,74 @@ TODO: add description
 
 
 #### clearCharacterStates
-TODO: add description
+Clears all character states.
 
 > `public` clearCharacterStates(): void
 
 #### getCharacterState
-TODO: add description
+Gest the state for a given character.
 > `public` getCharacterState(symbol: number): [ITokenizerState](../itokenizer_state)
 
-- **symbol**: number - TODO: add description
-- **returns**: [ITokenizerState](../itokenizer_state) - TODO: add description
+- **symbol**: number - symbol
+- **returns**: [ITokenizerState](../itokenizer_state) - tokenizer state
 
 #### hasNextToken
-TODO: add description
+Finds out if the tokenizer has a next token.
 > `public` hasNextToken(): boolean
 
-- **returns**: boolean - TODO: add description
+- **returns**: boolean - true if it has a next token, false otherwise.
 
 #### nextToken
-TODO: add description
+Gets the next token.
 > `public` nextToken(): [Token](../token)
 
-- **returns**: [Token](../token) - TODO: add description
+- **returns**: [Token](../token) - next token
 
 #### readNextToken
-TODO: add description
+Reads the next token.
 > `protected` readNextToken(): [Token](../token)
 
-- **returns**: [Token](../token) - TODO: add description
+- **returns**: [Token](../token) - next token
 
 #### setCharacterState
-TODO: add description
+Sets the characters state.
 > `public` setCharacterState(fromSymbol: number, toSymbol: number, state: [ITokenizerState](../itokenizer_state)): void
 
-- **fromSymbol**: number - TODO: add description
-- **toSymbol**: number - TODO: add description
-- **state**: [ITokenizerState](../itokenizer_state) - TODO: add description
+- **fromSymbol**: number - first symbol
+- **toSymbol**: number - last symbol
+- **state**: [ITokenizerState](../itokenizer_state) - tokenizer state
 
 #### tokenizeBuffer
-TODO: add description
+Provides a token for a string buffer.
 
 > `public` tokenizeBuffer(buffer: string): [Token[]](../token)
 
-- **buffer**: string - TODO: add description
-- **returns**: [Token[]](../token) - TODO: add description
+- **buffer**: string - buffer
+- **returns**: [Token[]](../token) - token
 
 #### tokenizeBufferToStrings
-TODO: add description
+Creates a list of token values.
 
 > `public` tokenizeBufferToStrings(buffer: string): string[]
 
-- **buffer**: string - TODO: add description
-- **returns**: string[] - TODO: add description
+- **buffer**: string - buffer
+- **returns**: string[] - list of token values
 
 
 #### tokenizeStream
-TODO: add description
+Creates a list of tokens
 
 > `public` tokenizeStream(scanner: [IScanner](../../io/iscanner)): [Token[]](../token)
 
-- **scanner**: [IScanner](../../io/iscanner) - TODO: add description
-- **returns**: [Token[]](../token) - TODO: add description
+- **scanner**: [IScanner](../../io/iscanner) - scanner
+- **returns**: [Token[]](../token) - list of tokens
 
 
 #### tokenizeStreamToStrings
-TODO: add description
+Creates a list of token values.
 
 > `public` tokenizeStreamToStrings(scanner: [IScanner](../../io/iscanner)): string[]
 
-- **scanner**: [IScanner](../../io/iscanner) - TODO: add description
-- **returns**: string[] - TODO: add description
+- **scanner**: [IScanner](../../io/iscanner) - scanner
+- **returns**: string[] - list of token values
 

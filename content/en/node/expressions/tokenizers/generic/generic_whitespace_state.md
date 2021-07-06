@@ -46,4 +46,4 @@ Establishes the given characters as whitespace to ignore.
 
 - **fromSymbol**: number - first character index of the interval.
 - **toSymbol**: number - last character index of the interval.
-- **enable**: boolean - *true* if true, this state should ignore characters in the given range.
+- **enable**: boolean - *true* if this state should ignore characters in the given range.

@@ -4,21 +4,23 @@ title: "ITokenizer"
 linkTitle: "ITokenizer"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    
+    Interface for tokenizers.
 ---
 
 ### Description
 
-The ITokenizer interface 
+The ITokenizer interface defines the main elements of a tokenizer.
 
 Important points
 
 - A tokenizer divides a string into tokens. This class is highly customizable with regard to exactly how this division occurs, but it also has defaults that are suitable for many languages. This class assumes that the character values read from the string lie in the range 0-255. For example, the Unicode value of a capital A is 65, so *String.fromCharCode(65)* prints out a capital A.
 
 - The behavior of a tokenizer depends on its character state table. This table is an array of 256 *TokenizerState* states. The state table decides which state to enter
-upon reading a character from the input string.
+upon reading a character from the input string.   
+
 - For example, by default, upon reading an 'A', a tokenizer will enter a "word" state. This means the tokenizer will ask a *WordState* object to consume the 'A',
-along with the characters after the 'A' that form a word. The state's responsibility is to consume characters and return a complete token.
+along with the characters after the 'A' that form a word. The state's responsibility is to consume characters and return a complete token.  
+
 - The default table sets a SymbolState for every character from 0 to 255, and then overrides this with:
 
 <blockquote><pre>

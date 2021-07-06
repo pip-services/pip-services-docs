@@ -4,20 +4,20 @@ title: "Variant"
 linkTitle: "Variant"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Defines container for variant values.
+    Defines a container for variant values.
 ---
 
 ### Description
 
-TODO: add description
+The Variant class allows you to define a container for variant values.
 
 
 ### Constructors
-Constructs this class and assignes another variant value.
+Constructs this class and assignes a variant value.
 
 > `public` constructor(value?: any)
 
-- **value**: any - a value to be assigned to this variant.
+- **value**: any - value to be assigned to this variant.
 
 
 ### Fields
@@ -33,80 +33,80 @@ TODO: add description
 ### Properties
 
 #### asArray
-Gets variant value as variant array
+Gets a variant value as a variant array.
 
 > `public` asArray(): [Variant[]]()
 
 - **returns**: [Variant[]]() - value as variant array.
 
 
-Sets variant value as variant array
+Sets a variant value as variant array.
 
 > `public` asArray(value: Variant[])
 
 - **value**: [Variant[]]() - a value to be set.
 
 #### asBoolean
-Gets variant value as boolean
+Gets a variant value as boolean.
 
 > `public` asBoolean(): boolean 
 
 - **returns**: boolean - value as boolean.
 
-Sets variant value as boolean
+Sets a variant value as boolean.
 > `public` asBoolean(value: boolean)
 
-- **value**: boolean - a value to be set
+- **value**: boolean - value to be set
 
 
 #### asDateTime
-Gets variant value as DateTime
+Gets a variant value as DateTime.
 
 > `public` asDateTime(): Date
 
 - **returns**: Date - value as DateTime.
 
-Sets variant value as DateTime
+Sets a variant value as DateTime
 
 > `public` asDateTime(value: Date)
 
 - **value**: Date - a value to be set
 
 #### asDouble
-Gets variant value as double
+Gets a variant value as double.
 
 > `public` asDouble(): number
 
 - **returns**: number - value as double.
 
-Sets variant value as double
+Sets a variant value as double
 
 > `public` asDouble(value: number)
 
-- **value**: number - a value to be set.
+- **value**: number - value to be set.
 
 
 #### asFloat
-Gets variant value as float
+Gets a variant value as float.
 
 > `public` asFloat(): number
 
 - **returns**: number - value as float.
 
-Sets variant value as float
+Sets a variant value as float.
 
 > `public` asFloat(value: number)
 
 - **value**: number - value as float.
 
 #### asInteger
-Gets variant value as integer
+Gets a variant value as integer.
 
 > `public` asInteger(): number
 
 - **returns**: number - value as integer.
 
-Sets variant value as integer
+Sets a variant value as integer.
 
 > `public` asInteger(value: number)
 
@@ -114,13 +114,13 @@ Sets variant value as integer
 
 
 #### asLong
-Gets variant value as long
+Gets a variant value as long.
 
 > `public` asLong(): number
 
 - **returns**: number - value as long.
 
-Sets variant value as long
+Sets a variant value as long
 
 > `public` asLong(value: number)
 
@@ -128,13 +128,13 @@ Sets variant value as long
 
 
 #### asObject
-Gets variant value as object
+Gets a variant value as object.
 
 > `public` asObject(): any
 
 - **returns**: any - value as object.
 
-Sets variant value as object
+Sets a variant value as object
 
 > `public` asObject(value: any)
 
@@ -142,13 +142,13 @@ Sets variant value as object
 
 
 #### asString
-Gets variant value as string
+Gets a variant value as string.
 
 > `public` asString(): string
 
 - **returns**: string - value as string.
 
-Sets variant value as string
+Sets a variant value as string.
 
 > `public` asString(value: string)
 
@@ -156,13 +156,13 @@ Sets variant value as string
 
 
 #### asTimeSpan
-Gets variant value as TimeSpan
+Gets a variant value as TimeSpan.
 
 > `public` asTimeSpan(): number
 
 - **returns**: number - value as TimeSpan.
 
-Sets variant value as TimeSpan
+Sets a variant value as TimeSpan.
 
 > `public` asTimeSpan(value: number)
 
@@ -170,17 +170,17 @@ Sets variant value as TimeSpan
 
 
 #### length
-Gets length of the array
+Gets the length of the array
 
 > `public` length(): number
 
-- **returns**: number - The length of the array or 0.
+- **returns**: number - length of the array or 0.
 
 Sets a new array length
 
 > `public` length(value: number)
 
-- **value**: number - a new array length
+- **value**: number - new array length
 
 
 #### type
@@ -188,7 +188,7 @@ Gets a type of the variant value
 
 > `public` type(): [VariantType](../variant_type)
 
-- **returns**: [VariantType](../variant_type) - the variant value type.
+- **returns**: [VariantType](../variant_type) - variant value type.
 
 
 
@@ -199,7 +199,7 @@ Assignes a new value to this object.
 
 > `public` assign(value: [Variant]()): void
 
-- **value**: [Variant]() - A new value to be assigned.
+- **value**: [Variant]() - new value to be assigned.
 
 
 #### clear
@@ -213,7 +213,7 @@ Cloning the variant value
 
 > `public` clone(): [Variant]()
 
-- **value**: [Variant]() - The cloned value of this variant
+- **value**: [Variant]() - cloned value of this variant
 
 
 #### equals
@@ -221,8 +221,8 @@ Compares this object to the specified one.
 
 > `public` equals(obj: any): boolean
 
-- **obj**: any - An object to be compared.
-- **returns**: boolean - *true* if objects are equal.
+- **obj**: any - object to be compared.
+- **returns**: boolean - *true* if the objects are equal.
 
 
 #### getByIndex
@@ -230,12 +230,12 @@ Gets an array element by its index.
 
 > `public` getByIndex(index: number): [Variant]()
 
-- **index**: number - an element index.
-- **returns**: [Variant]() - a requested array element.
+- **index**: number - element's index.
+- **returns**: [Variant]() - requested array element.
 
 
 #### isEmpty
-Checks is this variant value empty.
+Checks is this variant value is empty.
 
 > `public` isEmpty(): boolean
 
@@ -243,7 +243,7 @@ Checks is this variant value empty.
 
 
 #### isNull
-Checks is this variant value Null.
+Checks is this variant value is Null.
 
 > `public` isNull(): boolean
 
@@ -255,8 +255,8 @@ Sets an array element by its index.
 
 > `public` setByIndex(index: number, element: [Variant]()): void
 
-- **index**: number - an element index.
-- **element**: [Variant]() - an element value.
+- **index**: number - element index.
+- **element**: [Variant]() - element value.
 
 
 #### toString
@@ -264,7 +264,7 @@ Returns a string value for this object.
 
 > `public` toString(): string
 
-- **returns**: string - a string value for this object.
+- **returns**: string - string value for this object.
 
 ### Static methods
 
@@ -273,86 +273,86 @@ Creates a new variant from Array value.
 
 > `public static` fromArray(value: [Variant[]]()): [Variant]()
 
-- **value**: [Variant[]]() - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: [Variant[]]() - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromBoolean
-Creates a new variant from Boolean value.
+Creates a new variant from a Boolean value.
 
 > `public static` fromBoolean(value: boolean): [Variant]()
 
-- **value**: boolean - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: boolean - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromDateTime
-Creates a new variant from DateTime value.
+Creates a new variant from a DateTime value.
 
 > `public static` fromDateTime(value: Date): [Variant]()
 
-- **value**: Date - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: Date - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromDouble
-Creates a new variant from DateTime value.
+Creates a new variant from a DateTime value.
 
 > `public static` fromDouble(value: number): [Variant]()
 
-- **value**: number - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: number - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromFloat
-Creates a new variant from Float value.
+Creates a new variant from a Float value.
 
 > `public static` fromFloat(value: number): [Variant]()
 
-- **value**: number - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: number - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromInteger
-Creates a new variant from Integer value.
+Creates a new variant from an Integer value.
 
 > `public static` fromInteger(value: number): [Variant]()
 
-- **value**: number - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: number - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromLong
-Creates a new variant from Long value.
+Creates a new variant from a Long value.
 
 > `public static` fromLong(value: number): [Variant]()
 
-- **value**: number - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: number - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromObject
-Creates a new variant from Object value.
+Creates a new variant from an Object value.
 
 > `public static` fromObject(value: any): [Variant]()
 
-- **value**: any - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: any - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromString
-Creates a new variant from String value.
+Creates a new variant from a String value.
 
 > `public static` fromString(value: string): [Variant]()
 
-- **value**: string - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: string - variant value.
+- **returns**: [Variant]() - created variant object.
 
 
 #### fromTimeSpan
-Creates a new variant from TimeSpan value.
+Creates a new variant from a TimeSpan value.
 
 > `public static` fromTimeSpan(value: number): [Variant]()
 
-- **value**: number - a variant value.
-- **returns**: [Variant]() - a created variant object.
+- **value**: number - variant value.
+- **returns**: [Variant]() - created variant object.

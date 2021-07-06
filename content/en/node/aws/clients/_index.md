@@ -1,11 +1,11 @@
 ---
 type: docs
-title: "Build"
-linkTitle: "Build"
+title: "Clients"
+linkTitle: "Clients"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create AWS Lambda Functions.
 ---
 ---
 
@@ -14,10 +14,10 @@ description: >
 ### Classes
 
 #### [CommandableLambdaClient](commandable_lambda_client)
-TODO: add description
+Abstract client that calls commandable AWS Lambda Functions.
 
 
 #### [LambdaClient](lambda_client)
-TODO: add description
+Abstract client that calls AWS Lambda Functions.
 
 </div>

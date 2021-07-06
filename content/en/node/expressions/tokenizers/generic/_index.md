@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    The sub-package provides classes that define different tokenizer states and symbol nodes.
 ---
 ---
 <div class="module-body"> 

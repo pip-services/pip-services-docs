@@ -5,54 +5,56 @@ linkTitle: "CharReferenceInterval"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
     Represents a character interval that keeps a reference.
-    This class is internal and used by [CharReferenceMap](../char_reference_map).
+    
 ---
 
 ### Description
 
-TODO: add description
+The CharReferenceInterval allows you to represent a character interval that keeps a reference.
+Important points
+
+- This class is internal and used by [CharReferenceMap](../char_reference_map).
 
 ### Constructors
-TODO: add description
+Creates a new instance of the CharReferenceInterval class.
 
 > `public` constructor(start: number, end: number, reference: T)
 
-- **start**: number - TODO: add description
-- **end**: number - TODO: add description
-- **reference**: T - TODO: add description
-
+- **start**: number - start of the interval
+- **end**: number - end of the interval
+- **reference**: T - reference
 
 ### Properties
 
 #### end
-TODO: add description
+End of the interval
 
 > `public` end(): number
 
-- **returns**: number - TODO: add description
+- **returns**: number - end of the interval
 
 #### reference
-TODO: add description
+Reference
 
 > `public` reference(): T
 
-- **returns**: T - TODO: add description
+- **returns**: T - reference
 
 
 #### start
-TODO: add description
+Start of the interval
 
 > `public` start(): number
 
-- **returns**: number - TODO: add description
+- **returns**: number - start of the interval
 
 
 ### Instance methods
 
 #### inRange
-TODO: add description
+Determines if a symbol is within a range
 
 > `public` inRange(symbol: number): boolean
 
-- **symbol**: number - TODO: add description
-- **returns**: boolean - TODO: add description
+- **symbol**: number - symbol
+- **returns**: boolean - true if it is within the range and false otherwise.

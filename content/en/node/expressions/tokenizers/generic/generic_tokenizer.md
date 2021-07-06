@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The GenericTokenizer allows you to implement a default tokenizer class.
+The GenericTokenizer allows you to implement a default tokenizer class.  
 
 ### Constructors
 Creates an instance of GenericTokenizer

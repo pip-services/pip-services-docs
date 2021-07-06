@@ -5,7 +5,7 @@ linkTitle: "Variants"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    TODO: add description
+    The Variants package contains constants, interfaces and classes used to define variant values and their operations.
 ---
 ---
 <div class="module-body"> 
@@ -13,30 +13,30 @@ description: >
 ### Constants
 
 #### [VariantType](variant_type)
-TODO: add description
+Enum that defines supported types of variant values.
 
 <br>
 
 ### Interfaces
 
 #### [IVariantOperations](ivariant_operations)
-TODO: add description
+Implements an abstractd variant operations manager object.
 
 <br>
 
 ### Classes
 
 #### [AbstractVariantOperations](abstract_variant_operations)
-TODO: add description
+Implements an abstract variant operations manager object.
 
 #### [TypeSafeVariantOperations](type_safe_variant_operations)
-TODO: add description
+Implements a strongly typed (type safe) variant operations manager object.
 
 #### [TypeUnsafeVariantOperations](type_unsafe_variant_operations)
-TODO: add description
+Implements a type unsafe variant operations manager object.
 
 #### [Variant](variant)
-TODO: add description
+Defines a container for variant values.
 
 </div>
 

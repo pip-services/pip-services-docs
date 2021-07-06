@@ -4,7 +4,7 @@ title: "IWhitespaceState"
 linkTitle: "IWhitespaceState"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Defines an interface for tokenizer state that processes whitespaces (' ', '\t')
+    Defines an interface for tokenizer state that processes whitespaces (' ', '\t').
 ---
 
 **Extends**: [ITokenizerState](../itokenizer_state)

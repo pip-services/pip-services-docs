@@ -4,7 +4,7 @@ title: "CommandableLambdaFunction"
 linkTitle: "CommandableLambdaFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Abstract AWS Lambda function, that acts as a container to instantiate and run components
+    Abstract AWS Lambda function that acts as a container to instantiate and run components
     and expose them via external entry point.
 ---
 
@@ -12,13 +12,15 @@ description: >
 
 ### Description
 
-All actions are automatically generated for commands
-defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
+The CommandableLambdaFunction class allows you to create AWS Lambda function that acts as a container to instantiate and run components and expose them via external entry point.
+
+Important points
+
+- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
   
-Container configuration for this Lambda function is stored in *"./config/config.yml"* file.
-But this path can be overriden by *CONFIG_PATH* environment variable.
+- Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
  
-- Note: This component has been deprecated. Use [LambdaService](../../services/lambda_service) instead.
+- **Note**: This component has been deprecated. Use [LambdaService](../../services/lambda_service) instead.
 
 
 #### References
@@ -32,8 +34,8 @@ Creates a new instance of this lambda function.
 
 > `public` constructor(name: string, description?: string)
 
-- **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info)).
-- **description**: string - (optional) a container description (accessible via [ContextInfo](../../../components/info/context_info)).
+- **name**: string - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info)).
+- **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info)).
 
 ### Instance methods
 

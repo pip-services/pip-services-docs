@@ -4,12 +4,12 @@ title: "TokenType"
 linkTitle: "TokenType"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Types (categories) of tokens such as "number", "symbol" or "word".
+    Types (categories) of tokens such as "number", "symbol" and "word".
 ---
 
 ### Description
 
-TODO: add description
+The TokenType class defines different types (categories) of tokens, such as "number", "symbol" and "word".
 
 
 ### Enumeration members

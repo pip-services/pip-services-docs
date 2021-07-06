@@ -11,4 +11,4 @@ description: >
 
 ### Description
 
-TODO: add description
+The ICommentState interface is used for tokenizer states taht prcess comments.

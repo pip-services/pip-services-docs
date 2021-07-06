@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The IQuoteState interface is used for tokenizer states that process quoted strings.
 
 ### Instance methods
 
@@ -20,15 +20,15 @@ Decodes a string value.
 
 > decodeString(value: string, quoteSymbol: number): string
 
-- **value**: string - A string value to be decoded.
-- **quoteSymbol**: number - A string quote character.
-- **returns**: string - An decoded string.
+- **value**: string - string value to be decoded.
+- **quoteSymbol**: number - string quote character.
+- **returns**: string - decoded string.
 
 #### encodeString
 Encodes a string value.
 
 > encodeString(value: string, quoteSymbol: number): string
 
-- **value**: string - A string value to be encoded.
-- **quoteSymbol**: number - A string quote character.
-- **returns**: string - An encoded string.
+- **value**: string - string value to be encoded.
+- **quoteSymbol**: number - string quote character.
+- **returns**: string - encoded string.

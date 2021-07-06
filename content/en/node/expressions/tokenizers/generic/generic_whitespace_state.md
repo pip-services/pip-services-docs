@@ -26,7 +26,7 @@ Constructs a whitespace state with a default idea of what characters are, in fac
 
 
 #### clearWhitespaceChars
-Clears definitions of whitespace characters.
+Clears definitions of whitespace characters.  
 
 > `public` clearWhitespaceChars(): void
 

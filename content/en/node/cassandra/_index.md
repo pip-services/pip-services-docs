@@ -13,9 +13,9 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create Cassandra persistence components.
+- [**Build**](build) - Factory used to create Cassandra persistence components.
 - [**Connect**](connect) - Connection component to configure Cassandra connection to database.
-- [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
+- [**Persistence**](persistence) - abstract persistence components used to perform basic CRUD operations.
 
 
 ### Use
@@ -56,7 +56,7 @@ export interface IMyPersistence {
 ```
 
 To implement cassandraql persistence component you shall inherit `IdentifiableCassandraPersistence`. 
-Most CRUD operations will come from the base class. You only need to override `getPageByFilter` method with a custom filter function.
+Most CRUD operations will come from the base class. You only need to override the `getPageByFilter` method with a custom filter function.
 And implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```typescript
@@ -118,7 +118,7 @@ export class MyCassandraPersistence extends IdentifableCassandraPersistence {
 }
 ```
 
-Configuration for your microservice that includes cassandraql persistence may look the following way.
+A configuration for your microservice that includes cassandraql persistence may look the following way:
 
 ```yaml
 ...

@@ -14,13 +14,15 @@ description: >
 
 ### Description
 
-The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+Important points
+    
+- The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 
-In basic scenarios child classes shall only override [getPageByFilter](../cassandra_persistence/#getpagebyfilter), [getListByFilter](../cassandra_persistence/#getlistbyfilter) or [deleteByFilter](../cassandra_persistence/#deletebyfilter) operations with specific filter function.
-All other operations can be used out of the box. 
+- In basic scenarios child classes shall only override [getPageByFilter](../cassandra_persistence/#getpagebyfilter), [getListByFilter](../cassandra_persistence/#getlistbyfilter) or [deleteByFilter](../cassandra_persistence/#deletebyfilter) operations with specific filter function.
 
-In complex scenarios child classes can implement additional operations by 
-accessing **this._collection** and **this._model** properties.
+- All other operations can be used out of the box. 
+
+- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 
 #### Configuration parameters
@@ -28,14 +30,14 @@ accessing **this._collection** and **this._model** properties.
 - **table**: (optional) Cassandra table name
 - **keyspace**: (optional) Cassandra keyspace name
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 27017)
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) user name
-    - **password**: (optional) user password
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: (optional) username
+    - **password**: (optional) user's password
 - **options**:
     - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
     - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
@@ -45,7 +47,7 @@ accessing **this._collection** and **this._model** properties.
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
 
 
 ### Constructors
@@ -53,15 +55,15 @@ Creates a new instance of the persistence component.
 
 > `public` constructor(tableName: string, keyspaceName?: string)
 
-- **tableName**: string - (optional) collection name.
-- **keyspaceName**: string - (optional) a keyspace name.
+- **tableName**: string - (optional) collection's name.
+- **keyspaceName**: string - (optional) keyspace's name.
 
 
 ### Fields
 
 <span class="hide-title-link">
 
-Flag to turn on automated string ID generation
+Flag used to turn on automated string ID generation
 > `protected` **_autoGenerateId**: boolean = true
 
 </span>
@@ -73,8 +75,8 @@ Converts the given object from the public partial format.
 
 > `protected` convertFromPublicPartial(value: any): any
 
-- **value**: any - the object to convert from the public partial format.
-- **returns**: any - the initial object.
+- **value**: any - object to convert from the public partial format.
+- **returns**: any - initial object.
 
 
 #### create
@@ -127,8 +129,8 @@ Gets a data item by its unique id.
 
 
 #### set
-Sets a data item. If the data item exists it updates it,
-otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it.
+Otherwise, it creates a new data item.
 
 > `public` set(correlationId: string, item: T): Promise\<T\>
 

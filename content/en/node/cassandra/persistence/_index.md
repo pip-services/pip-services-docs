@@ -5,7 +5,7 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create Cassandra data persistence components.
     
 ---
 ---
@@ -15,9 +15,9 @@ description: >
 ### Classes
 
 #### [IdentifiableCassandraPersistence](identifiable_cassandra_persistence)
-TODO: add description
+Abstract persistence component that stores data in Cassandra and implements a number of CRUD operations over data items with unique ids.
 
 #### [CassandraPersistence](cassandra_persistence)
-TODO: add description
+Abstract persistence component that stores data in Cassandra using plain driver.
 
 </div>

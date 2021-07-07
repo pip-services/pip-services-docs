@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create DataDog components by their descriptors.
 ---
 ---
 
@@ -14,6 +14,6 @@ description: >
 ### Classes
 
 #### [DefaultDataDogFactory](default_datadog_factory)
-TODO: add description
+Creates DataDog components by their descriptors.
 
 </div>

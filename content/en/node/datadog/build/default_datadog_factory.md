@@ -9,10 +9,10 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultDataDogFactory is used to create DataDog components by their descriptors.
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

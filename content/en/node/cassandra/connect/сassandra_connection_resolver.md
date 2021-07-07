@@ -5,7 +5,7 @@ linkTitle: "CassandraConnectionResolver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
     Helper class that resolves Cassandra connection and credential parameters,
-	validates them and generates a connection URI.
+    validates them and generates a connection URI.
 
 ---
 

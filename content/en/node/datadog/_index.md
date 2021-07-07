@@ -8,7 +8,7 @@ description: >
     DataDog components for Pip.Services in Node.js / ES2017
    
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-	It contains the DataDog logger and performance counters components.
+    It contains the DataDog logger and performance counters components.
 
 ---
 

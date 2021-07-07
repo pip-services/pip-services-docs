@@ -5,7 +5,7 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create loggers.
 ---
 ---
 
@@ -15,7 +15,7 @@ description: >
 ### Classes
 
 #### [CloudWatchLogger](cloud_watch_logger)
-TODO: add description
+Logger that writes log messages to AWS Cloud Watch Log.
 
 
 </div>

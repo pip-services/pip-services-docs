@@ -4,12 +4,12 @@ title: "AzureFunctionAction"
 linkTitle: "AzureFunctionAction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    TODO: add description
+    Defines some fields such as action, cmd and schema.
 ---
 
 ### Description
 
-TODO: add description
+The AzureFunctionAction defines some fields such as action, cmd and schema.
 
 ### Fields
 

@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "SqlitePersistence<T>"
-linkTitle: "SqlitePersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
+title: "CassandraPersistence<T>"
+linkTitle: "CassandraPersistence"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
-    Abstract persistence component that stores data in SQLite using plain driver.
+    Abstract persistence component that stores data in Cassandra using plain driver.
     
 ---
 
@@ -19,21 +19,21 @@ accessing **this._db** or **this._collection** properties.
 
 #### Configuration parameters
 
-- **table**: (optional) SQLite table name
-- **schema**: (optional) SQLite schema name
-- **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **host**: host name or IP address
-    - **port**: port number (default: 27017)
-    - **uri**: resource URI or connection string with all parameters in it
-- **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) user name
-    - **password**: (optional) user password
-- **options**:
-    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-    - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- table:                       (optional) Cassandra table name
+- keyspace:                    (optional) Cassandra keyspace name
+- connection(s):    
+  	- discovery_key:             (optional) a key to retrieve the connection from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html IDiscovery]]
+  	- host:                      host name or IP address
+  	- port:                      port number (default: 27017)
+  	- uri:                       resource URI or connection string with all parameters in it
+- credential(s):    
+  	- store_key:                 (optional) a key to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
+  	- username:                  (optional) user name
+  	- password:                  (optional) user password
+- options:
+  	- connect_timeout:      (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+  	- idle_timeout:         (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+  	- max_pool_size:        (optional) maximum number of clients the pool should contain (default: 10)
 
 
 #### References
@@ -45,19 +45,15 @@ accessing **this._db** or **this._collection** properties.
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName?: string, schemaName?: string)
+> `public` constructor(tableName?: string, keyspaceName?: string)
 
 - **tableName**: string - (optional) a table name.
-- **schemaName**: string - (optional) a schema name.
+- **keyspaceName**: string - (optional) a keyspace name.
 
 
 ### Fields
 
 <span class="hide-title-link">
-
-#### _databaseName
-The SQLite database name.
-> `protected` **_databaseName**: string
 
 #### _dependencyResolver
 The dependency resolver.
@@ -68,25 +64,29 @@ The logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The SQLite connection component.
-> `protected` **_connection**: [SQLiteConnection](../../connect/sqlite_connection) 
+The Cassandra connection component.
+> `protected` **_connection**: [CassandraConnection](../../connect/cassandra_connection) 
 
 #### _client
-The SQLite connection pool object.
+The Cassandra connection pool object.
 > `protected` **_client**: any 
 
+#### _datacenter 
+The Cassandra datacenter name.
+> `protected` **_datacenter**: string
+
 #### _tableName 
-The SQLite table name.
+The Cassandra table name.
 
 > `protected` **_tableName**: string
+
+#### _keyspaceName
+The Cassandra keyspace name.
+> `protected` **_keyspaceName**: string
 
 #### _maxPageSize
 The maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: number = 100
-
-#### _schemaName
-The SQLite schema object.
-> `protected` **_schemaName**: string
 
 </span>
 
@@ -333,7 +333,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MySqlitePersistence extends SqlitePersistence<MyData> {
+class MyCassandraPersistence extends CassandraPersistence<MyData> {
   public constructor() {
       base("mydata");
   }
@@ -341,39 +341,41 @@ class MySqlitePersistence extends SqlitePersistence<MyData> {
   public getByName(correlationId: string, name: string): Promise<MyData> {
     let criteria = { name: name };
     return new Promise((resolve, reject) => {
-      this._model.findOne(criteria, (err, result) => {
-         if (err != null) {
-           reject(err);
-           return;
-         }
-         resolve(result);
+      this._model.findOne(criteria, (err, item) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        item = this.convertToPublic(item);
+        resolve(item);
       });
-    });
+     });
   }); 
 
   public set(correlatonId: string, item: MyData): Promise<MyData> {
     let criteria = { name: item.name };
     let options = { upsert: true, new: true };
     return new Promise((resolve, reject) => {
-      this._model.findOneAndUpdate(criteria, item, options, (err, result) => {
-         if (err != null) {
-           reject(err);
-           return;
-         }
-         resolve(result);
+      this.findOneAndUpdate(criteria, item, options, (err, item) => {
+        if (err != null) {
+          reject(err);
+          return;
+        }
+        item = this.convertToPublic(item);
+        resolve(item);
       });
-    });
+     });
   }
 }
 
-let persistence = new MySqlitePersistence();
+let persistence = new MyCassandraPersistence();
 persistence.configure(ConfigParams.fromTuples(
     "host", "localhost",
     "port", 27017
 ));
 
-await persitence.open("123",);
+await persitence.open("123");
 let item = await persistence.set("123", { name: "ABC" });
 item = await persistence.getByName("123", "ABC");
-console.log(item);                   // Result: { name: "ABC" }
+console.log(item);   // Result: { name: "ABC" }
 ```

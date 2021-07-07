@@ -76,10 +76,6 @@ The MySql connection component.
 The MySql connection pool object.
 > `protected` **_client**: any 
 
-#### _databaseName 
-The MySql database name.
-> `protected` **_databaseName**: string
-
 #### _tableName 
 The MySQL table name.
 

@@ -4,18 +4,19 @@ title: "AzureFunction"
 linkTitle: "AzureFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract Azure Function, that acts as a container to instantiate and run components and expose them via external entry point. 
+    Abstract Azure Function that acts as a container to instantiate and run components and expose them via an external entry point. 
 ---
 
 **Extends:** [Container](../../../container/containers/container)
 
 ### Description
+The AzureFunction class allows you to create an Abstract Azure Function that acts as a container to instantiate and run components and expose them via an external entry point. 
 
-When handling calls "cmd" parameter determines which what action shall be called, while
-other parameters are passed to the action itself.
+Importan points
 
-Container configuration for this Azure Function is stored in *"./config/config.yml"* file.
-But this path can be overriden by *CONFIG_PATH* environment variable.
+- When handling calls "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.
+
+- Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
 
 #### References
 
@@ -36,13 +37,13 @@ Creates a new instance of this Azure Function.
 ### Instance methods
 
 #### getBody
-Returns body from Azure Function context.
-This method can be overloaded in child classes
+Returns a body from Azure Function context.
+This method can be overloaded in child classes.
 
 > `protected` getBody(context: any): string
 
 - **context**: any - Azure Function context.
-- **returns**: string - Returns body from context.
+- **returns**: string - Returned body from context.
 
 #### register
 Registers all actions in this Azure Function.

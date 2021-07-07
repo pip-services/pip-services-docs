@@ -4,36 +4,36 @@ title: "AzureFunctionContextHelper"
 linkTitle: "AzureFunctionContextHelper"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    TODO: add description
+    Contains methods used to get correlationIds, commands and bodys from the Azure Function context.
 ---
 
 ### Description
 
-TODO: add description
+The AzureFunctionContextHelper class contains methods used to get correlationIds, commands and bodys from the Azure Function context.
 
 
 ### Instance methods
 
 #### getCorrelationId
-Returns correlationId from Azure Function context.
+Returns a correlationId from the Azure Function context.
 
 > `public static` getCorrelationId(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns correlationId from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned correlationId from context.
 
 #### getCommand
-Returns command from Azure Function context.
+Returns a command from the Azure Function context.
 
 > `public static` getCommand(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns command from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned command from context.
 
 #### getHttpRequestBody
-Returns body from Azure Function context http request.
+Returns a body from the Azure Function context http request.
 
 > `public static` getHttpRequestBody(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns body from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned body from context.

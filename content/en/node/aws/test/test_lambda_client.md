@@ -13,7 +13,7 @@ description: >
 The TestLambdaClient class allows you to create an AWS Lambda client that can be used for automated testing.
 
 ### Constructors
-Creates an instance of this class.
+Creates an instance of this class.  
 
 > `public` constructor()
 

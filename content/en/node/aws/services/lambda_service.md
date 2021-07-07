@@ -10,6 +10,9 @@ description: >
 **Implements**: [ILambdaService](../ilambda_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
+The LambdaService class allows you to create abstract services that receive remove calls via AWS Lambda protocol.
+
+Important points
 
 This service is intended to work inside LambdaFunction container that exploses registered actions externally.
 
@@ -30,26 +33,26 @@ Creates an instance of this service.
 
 > `public` constructor(name?: string)
 
-- **name**: string - a service name to generate action cmd.
+- **name**: string - service name to generate action cmd.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _counters
-The performance counters.
+Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../commons/count/composite_counters)
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The dependency resolver.
+Dependency resolver.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _tracer
-The tracer.
+Tracer.
 > `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
 
 </span>
@@ -59,7 +62,7 @@ Creates an instance of this service.
 
 > `public` constructor(name?: string)
 
-- **name**: string - a service name to generate action cmd.
+- **name**: string - service name to generate action cmd.
 
 
 ### Instance methods
@@ -74,31 +77,31 @@ what action shall be called.
 > `public` act(params: any): Promise\<any\>
 
 - **params**: any - action parameters.
-- **returns**: Promise\<any\> - TODO: add description
+- **returns**: Promise\<any\> - results
 
 #### applyInterceptors
-TODO: add description
+
 
 > `protected` applyInterceptors(action: (params: any) => Promise\<any\>): (params: any) => Promise\<any\>
 
-- **action**: (params: any) => Promise\<any\> - TODO: add description
-- **returns**: (params: any) => Promise\<any\> - TODO: add description
+- **action**: (params: any) => Promise\<any\> - parameters
+- **returns**: (params: any) => Promise\<any\> - results
 
 #### applyValidation
-TODO: add description
+Applies a validation according to a given schema.
 
 > `protected` applyValidation(schema: [Schema](../../../commons/validate/schema), action: (params: any) => Promise\<any\>): (params: any) => Promise\<any\>
 
-- **schema**: [Schema](../../../commons/validate/schema) - TODO: add description
-- **action**: (params: any) => Promise\<any\> - TODO: add description
-- **returns**: (params: any) => Promise\<any\> - TODO: add description
+- **schema**: [Schema](../../../commons/validate/schema) - validation schema
+- **action**: (params: any) => Promise\<any\> - action
+- **returns**: (params: any) => Promise\<any\> - results
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -110,18 +113,18 @@ Configures a component by passing configuration parameters.
 
 
 #### generateActionCmd
-TODO: add description
+Adds .cmd to the name of the command.
 > `protected` generateActionCmd(name: string): string
 
-- **name**: string - TODO: add description
-- **returns**: string - TODO: add description
+- **name**: string - name of the command
+- **returns**: string - T - generated command
 
 
 #### getActions
-Get all actions supported by the service.
+Gets all the actions supported by the service.
 > `public` getActions(): [LambdaAction[]](../lambda_action)
 
-- **returns**: [LambdaAction[]](../lambda_action) - an array with supported actions.
+- **returns**: [LambdaAction[]](../lambda_action) - array with supported actions.
 
 
 #### instrument
@@ -130,8 +133,8 @@ It returns a Timing object that is used to end the time measurement.
 
 > `protected` instrument(correlationId: string, name: string): [InstrumentTiming](../../../rpc/services/instrument_timing) 
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **name**: string -  a method name.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **name**: string -  method name.
 - **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing)  - InstrumentTiming object to end the time measurement.
 
 #### isOpen
@@ -147,26 +150,26 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### registerAction
 Registers a action in AWS Lambda function.
 
 > `protected` registerAction(name: string, schema: [Schema](../../../commons/validate/schema), action: (params: any) => Promise\<any\>): void
 
-- **name**: string - an action name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: (params: any) => Promise\<any\> - an action function that is called when operation is invoked.
+- **name**: string - action name
+- **schema**: [Schema](../../../commons/validate/schema) - a validation schema used to validate received parameters.
+- **action**: (params: any) => Promise\<any\> - action function that is called when operation is invoked.
 
 #### registerActionWithAuth
 Registers an action with authorization.
 
 > `protected` registerActionWithAuth(name: string, schema: Schema, authorize: (call: any, next: (call: any) => Promise\<any\>) => Promise\<any\>, action: (call: any) => Promise\<any\>): void
 
-- **name**: string - an action name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **authorize**: (call: any, next: (call: any) => Promise\<any\> - an authorization interceptor
-- **action**: (call: any) => Promise\<any\> - an action function that is called when operation is invoked.
+- **name**: string - action name
+- **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
+- **authorize**: (call: any, next: (call: any) => Promise\<any\> - authorization interceptor
+- **action**: (call: any) => Promise\<any\> - action function that is called when operation is invoked.
 
 
 #### registerInterceptor
@@ -174,7 +177,7 @@ Registers a middleware for actions in AWS Lambda service.
 
 > `protected` registerInterceptor(action: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\>): void
 
-- **action**: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\> - an action function that is called when middleware is invoked.
+- **action**: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\> - action function that is called when middleware is invoked.
 
 
 #### setReferences
@@ -182,7 +185,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
 ### Abstract methods
 

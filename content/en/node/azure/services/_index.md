@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to create services that do operations via the Azure Function protocol.
 ---
 ---
 
@@ -15,7 +15,7 @@ description: >
 ### Interfaces
 
 #### [IAzureFunctionService](iazure_function_service)
-TODO: add description
+An interface that allows to integrate Azure Function services into Azure Function containers and connect their actions to the function calls.
 
 <br>
 

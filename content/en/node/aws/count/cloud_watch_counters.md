@@ -13,15 +13,15 @@ description: >
 
 ### Description
 
-TODO: add descriptions
+The CloudWatchCounters class allows you to create performance counters taht periodically dump counters to AWS Cloud Watch Metrics.
 
 #### Configuration parameters
  
 - **connections**:                   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **region**: (optional) AWS region
 - **credentials**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
 - **options**:
@@ -32,7 +32,7 @@ TODO: add descriptions
 #### References
 - **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
 - **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
-- **\*:credential-store:\*:\*:1.0**: (optional) Credential stores to resolve credentials requests
+- **\*:credential-store:\*:\*:1.0**: (optional) credential stores to resolve credentials requests
 
 ### Constructors
 Creates a new instance of this counters.
@@ -47,7 +47,7 @@ Closes component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
 Configures a component by passing configuration parameters.
@@ -58,7 +58,7 @@ Configures a component by passing configuration parameters.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
@@ -69,21 +69,21 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### save
 Saves the current counters measurements.
 
 > `protected` save(counters: [Counter[]](../../../components/count/counter)): Promise\<void\>
 
-- **counters**: [Counter[]](../../../components/count/counter) - current counters measurements to be saves.
+- **counters**: [Counter[]](../../../components/count/counter) - current counters measurements to be saved.
 
 #### setReferences
 Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 

@@ -13,17 +13,17 @@ description: >
 
 ### Description
 
-TODO: add descriptions
+The CloudWatchLogger class allows you to create loggers that write log messages to AWS Cloud Watch Log.
 
 #### Configuration parameters
  
 - **stream**: (optional) Cloud Watch Log stream (default: context name)
 - **group**: (optional) Cloud Watch Log group (default: context instance ID or hostname)
 - **connections**:                   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **region**: (optional) AWS region
 - **credentials**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
  - **options**:
@@ -32,9 +32,9 @@ TODO: add descriptions
 
 
 #### References
-- **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
+- **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters source
 - **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
-- **\*:credential-store:\*:\*:1.0**: (optional) Credential stores to resolve credentials requests
+- **\*:credential-store:\*:\*:1.0**: (optional) credential stores used to resolve credentials requests
 
 ### Constructors
 Creates a new instance of this logger.
@@ -45,11 +45,11 @@ Creates a new instance of this logger.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
 Configures a component by passing configuration parameters.
@@ -60,7 +60,7 @@ Configures a component by passing configuration parameters.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
@@ -71,14 +71,14 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### save
-Saves the current counters measurements.
+Saves the current counters' measurements.
 
 > `protected` save(messages: [LogMessage[]](../../../components/log/log_message)): Promise\<void\> 
 
-- **messages**: [LogMessage[]](../../../components/log/log_message) - current counters measurements to be saves.
+- **messages**: [LogMessage[]](../../../components/log/log_message) - current counters' measurements to be saves.
 
 #### setReferences
 Sets references to dependent components.
@@ -92,10 +92,10 @@ Writes a log message to the logger destination.
 
 > `protected` write(level: [LogLevel](../../../components/log/log_level), correlationId: string, ex: Error, message: string): void
 
-- **level**: [LogLevel](../../../components/log/log_level) - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **ex**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: [LogLevel](../../../components/log/log_level) - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **ex**: Error - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 
 

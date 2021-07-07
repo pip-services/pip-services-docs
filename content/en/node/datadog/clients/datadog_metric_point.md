@@ -4,14 +4,14 @@ title: "DataDogMetricPoint"
 linkTitle: "DataDogMetricPoint"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    Defines fields for DataDog metric points.
 
 
 ---
 
 ### Description
 
-TODO: add description
+The DataDogMetricPoint class defines fields for DataDog metric points.
 
 
 ### Fields
@@ -19,11 +19,11 @@ TODO: add description
 <span class="hide-title-link">
 
 #### time
-TODO: add description
+Time
 > `public` **time**: Date;
 
 #### value
-TODO: add description
+Value
 > `public` **value**: number;
 
 </span>

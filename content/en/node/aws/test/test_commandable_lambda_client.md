@@ -4,14 +4,14 @@ title: "TestCommandableLambdaClient"
 linkTitle: "TestCommandableLambdaClient"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Calls a remote action in AWS Lambda function. Then, the name of the action is added as "cmd" parameter to the action parameters.
+    AWS Commandable Lambda client used for automated testing.
 ---
 
 **Extends:** [CommandableLambdaClient](../../clients/commandable_lambda_client)
 
 ### Description
 
-The TestCommandableLambdaClient class is used to call a remote action in AWS Lambda function. Then, the name of the action is added as "cmd" parameter to the action parameters. 
+The TestCommandableLambdaClient class provides an AWS Commandable Lambda client that can be used for automated testing.
 
 ### Constructors
 Creates a new instance of this class.

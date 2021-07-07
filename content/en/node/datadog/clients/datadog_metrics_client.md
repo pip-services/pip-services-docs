@@ -18,11 +18,11 @@ TODO: add description
 
 
 ### Constructors
-TODO: add description
+Creates an instance of this class.
 
 > `public` constructor(config?: [ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - TODO: add description
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
 
 
 ### Instance methods
@@ -35,23 +35,23 @@ Configures the component by passing its configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### open
-TODO: add description
+Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### sendMetrics
-TODO: add description
+Sends the given metrics.
 
 > `public` sendMetrics(correlationId: string, metrics: [DataDogMetric[]](../datadog_metric)): Promise\<void\>
 
-- **correlationId**: string - TODO: add description
-- **messages**: [DataDogMetric[]](../datadog_metric)
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **messages**: [DataDogMetric[]](../datadog_metric) - messages
 
 #### setReferences
 Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

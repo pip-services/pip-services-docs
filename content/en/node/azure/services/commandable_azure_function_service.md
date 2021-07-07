@@ -10,14 +10,15 @@ description: >
 **Extends**: [AzureFunctionService](../azure_function_service)
 
 ### Description
+The CommandableAzureFunctionService class allows you to create abstract services that receive commands via the Azure Function protocols to operations automatically generated for commnads defined in [ICommandable components](../../../commons/commands/icommandable).
 
-Each command is exposed as invoke method that receives command name and parameters.
+Important points 
 
-Commandable services require only 3 lines of code to implement a robust external
-Azure Function-based remote interface.
+- Each command is exposed as invoke method that receives command name and parameters.
 
-This service is intended to work inside Azure Function container that
-exploses registered actions externally.
+- Commandable services require only 3 lines of code to implement a robust external Azure Function-based remote interface.
+
+- This service is intended to work inside Azure Function container that exploses registered actions externally.
 
 #### Configuration parameters
  
@@ -33,13 +34,13 @@ exploses registered actions externally.
 
 > `public` constructor(name: string) 
 
-- **name**: string - a service name.
+- **name**: string - service's name.
 
 
 ### Instance methods
 
 #### getBody
-Returns body from Azure Function context.
+Returns a body from Azure Function context.
 
 This method can be overloaded in child classes.
 

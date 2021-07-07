@@ -92,7 +92,7 @@
     {{with $parent}}
       {{$parent = .Parent }}
       {{ if or ($s.InSection .) (eq $ulNr 3) 
-        (and (gt (len $s.Pages) 0) ($s.IsDescendant $currentSection) ($s.IsDescendant $currentSection.Parent)
+        (and (gt (len $s.Pages) 0) ($s.IsDescendant $currentRootSection) ($s.IsDescendant $currentSection.Parent)
              (eq $ulNr 4) (ge (len (split $currentSection.URL "/")) (len (split $s.URL "/"))) )
         }}
         {{ $showNeighbor = true }}

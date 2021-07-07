@@ -12,13 +12,14 @@ description: >
 
 ### Description
 
-All actions are automatically generated for commands
-defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
+
+Important points
+
+- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
   
-Container configuration for this Azure Function is stored in *"./config/config.yml"* file.
-But this path can be overridden by *CONFIG_PATH* environment variable.
+- Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overridden by *CONFIG_PATH* environment variable.
  
-- Note: This component has been deprecated. Use Azure [FunctionService](../../services/function_service) instead.
+- **Note**: This component has been deprecated. Use Azure [FunctionService](../../services/function_service) instead.
 
 
 #### References
@@ -29,38 +30,39 @@ But this path can be overridden by *CONFIG_PATH* environment variable.
 - **\*:service:commandable-azure-function:\*:1.0**: (optional) [IAzureFunctionService](../../services/iazure_function_service) services to handle action requests.
 
 ### Constructors
+Creates a new instance of this Azure Function.
 
 > `public` constructor(name: string, description?: string)
 
-- **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info))
-- **description**: string - (optional) a container description (accessible via [ContextInfo](../../../components/info/context_info))
+- **name**: string - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info))
 
 
 ### Instance methods
 
 #### getCorrelationId
-Returns correlationId from Azure Function context.
+Returns a correlationId from Azure Function context.
 
 > `public static` getCorrelationId(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns correlationId from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned correlationId from context.
 
 #### getCommand
-Returns command from Azure Function context.
+Returns a command from Azure Function context.
 
 > `public static` getCommand(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns command from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned command from context.
 
 #### getHttpRequestBody
-Returns body from Azure Function context http request.
+Returns a body from Azure Function context http request.
 
 > `public static` getHttpRequestBody(context: any): string
 
-- **context**: any - the Azure Function context.
-- **returns**: string - returns body from context.
+- **context**: any - Azure Function context.
+- **returns**: string - returned body from context.
 
 ### Examples
 

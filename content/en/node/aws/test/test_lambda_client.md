@@ -10,10 +10,10 @@ description: >
 **Extends:** [LambdaClient](../../clients/lambda_client)
 
 ### Description
-TODO: add description
+The TestLambdaClient class allows you to create an AWS Lambda client that can be used for automated testing.
 
 ### Constructors
-TODO: add description
+Creates an instance of this class.
 
 > `public` constructor()
 
@@ -26,17 +26,17 @@ to the action parameters.
 
 > `public` call(cmd: string, correlationId: string, params: any = {}): Promise\<any\>
 
-- **cmd**: string - an action name to be called.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **cmd**: string - action name to be called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: any - (optional) action parameters.
 - **returns**: Promise\<any\> - action result.
 
 #### callOneWay
-Calls a AWS Lambda Function action asynchronously without waiting for response.
+Calls an AWS Lambda Function action asynchronously without waiting for the response.
 
 > `public` callOneWay(cmd: string, correlationId: string, params: any = {}): Promise\<any\>
 
-- **cmd**: string - an action name to be called.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **cmd**: string - action name to be called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: any - (optional) action parameters.
 - **returns**: Promise\<any\> - action result.

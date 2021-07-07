@@ -4,14 +4,14 @@ title: "DataDogLogMessage"
 linkTitle: "DataDogLogMessage"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    Defines the fields for DataDog log messages.
 
 
 ---
 
 ### Description
 
-TODO: add description
+The DataDogLogMessage class defines the fields for DataDog log messages.
 
 
 ### Fields
@@ -19,40 +19,40 @@ TODO: add description
 <span class="hide-title-link">
 
 #### time
-TODO: add description
+Date
 > `public` **time**: Date
 #### tags
-TODO: add description
+Tags
 > `public` **tags**: any
 #### status
-TODO: add description
+Status
 > `public` **status**: string
 #### source
-TODO: add description
+Source
 > `public` **source**: string
 #### service
-TODO: add description
+Service
 > `public` **service**: string
 #### host
-TODO: add description
+Host
 > `public` **host**: string
 #### message
-TODO: add description
+Message
 > `public` **message**: string
 #### logger_name
-TODO: add description
+Logger name
 > `public` **logger_name**: string
 #### thread_name
-TODO: add description
+Thread name
 > `public` **thread_name**: string
 #### error_message
-TODO: add description
+Error message
 > `public` **error_message**: string
 #### error_kind
-TODO: add description
+Error kind
 > `public` **error_kind**: string
 #### error_stack
-TODO: add description
+Error stack
 > `public` **error_stack**: string
 
 </span>

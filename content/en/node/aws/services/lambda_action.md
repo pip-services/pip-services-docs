@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The LambdaAction class is used to define actions to be executed as Lambda functions.
 
 ### Fields
 

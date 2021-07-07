@@ -5,7 +5,7 @@ linkTitle: "Test"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains classes used for automated testing.
 ---
 ---
 
@@ -15,11 +15,11 @@ description: >
 ### Classes
 
 #### [TestCommandableLambdaClient](test_commandable_lambda_client)
-TODO: add description
+AWS Commandable Lambda client used for automated testing.
 
 
 #### [TestLambdaClient](test_lambda_client)
-TODO: add description
+AWS Lambda client used for automated testing.
 
 
 </div>

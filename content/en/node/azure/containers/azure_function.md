@@ -14,9 +14,9 @@ The AzureFunction class allows you to create an Abstract Azure Function that act
 
 Importan points
 
-- When handling calls "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.
+- When handling calls, the "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.
 
-- Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
+- The container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
 
 #### References
 

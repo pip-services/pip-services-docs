@@ -49,7 +49,7 @@ The Cassandra connection pool object.
 
 #### _connectionResolver
 The connection resolver.
-> `protected` **_connectionResolver**: [SqliteConnectionResolver](../sqlite_connection_resolver)
+> `protected` **_connectionResolver**: [CassandraConnectionResolver](../cassandra_connection_resolver)
 
 #### _logger
 The logger.
@@ -97,7 +97,7 @@ Configures the component by passing configuration parameters.
 Gets the connection.
 > `public` getConnection(): any
 
-- **returns**: any - connection to a SQLite database
+- **returns**: any - connection to a Cassandra database
 
 
 #### getDatacenter

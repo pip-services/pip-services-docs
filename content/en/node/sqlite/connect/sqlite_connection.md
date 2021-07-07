@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "MySqlConnection"
-linkTitle: "MySqlConnection"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
+title: "SqliteConnection"
+linkTitle: "SqliteConnection"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    MySQL connection using the official driver.
+    SQLite connection using plain driver.
 
 ---
 
@@ -13,26 +13,16 @@ description: >
 
 ### Description
 
-The MySqlConnection class allows you to create a connection to a MySQL database using a plain driver.
+By defining a connection and sharing it through multiple persistence components
+you can reduce number of used database connections.
 
 #### Configuration parameters
 
 
-**connection(s)**:    
-- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-- **host**: host name or IP address
-- **port**: port number (default: 27017)
-- **uri**: resource URI or connection string with all parameters in it
-
-**credential(s)**:    
-- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: username
-- **password**: user's password
-
-**options**:
-- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **connection(s)**:    
+    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **database**: database file path
+    - **uri**: resource URI with file:// protocol
 
 
 #### References
@@ -47,15 +37,15 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 
 #### _connection
-The MySQL connection pool object.
+The SQLite connection pool object.
 > `protected` **_connection**: any
 
 #### _connectionResolver
 The connection resolver.
-> `protected` **_connectionResolver**: [MySqlConnectionResolver](../mysql_connection_resolver)
+> `protected` **_connectionResolver**: [SqliteConnectionResolver](../sqlite_connection_resolver)
 
 #### _databaseName
-The MySQL database name.
+The SQLite database name.
 > `protected` **_databaseName**: string
 
 #### _logger
@@ -68,6 +58,11 @@ The configuration options.
 
 
 </span>
+
+### Constructors
+Creates a new instance of the connection component.
+
+> `public` constructor()
 
 
 ### Instance methods
@@ -92,7 +87,7 @@ Configures the component by passing configuration parameters.
 Gets the connection.
 > `public` getConnection(): any
 
-- **returns**: any - connection to a MySQL database
+- **returns**: any - connection to a SQLite database
 
 
 #### getDatabaseName

@@ -57,7 +57,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _table_name
-The MySql table object.
+The MySql table name.
 > **_table_name**: str
 
 #### _dependency_resolver

@@ -58,7 +58,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _table_name
-The SQLServer table object.
+The SQLServer table name.
 > **_table_name**: str
 
 #### _dependency_resolver

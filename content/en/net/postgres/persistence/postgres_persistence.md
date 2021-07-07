@@ -60,7 +60,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _tableName
-The PostgreSQL table object.
+The PostgreSQL table name.
 > `protected` **_tableName**: string
 
 #### _dependencyResolver

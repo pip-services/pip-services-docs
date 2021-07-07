@@ -64,7 +64,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### TableName
-The PostgreSQL table object.
+The PostgreSQL table name.
 > **TableName**: string
 
 #### DependencyResolver
@@ -86,10 +86,6 @@ The PostgreSQL connection pool object.
 #### DatabaseName 
 The PostgreSQL database name.
 > **DatabaseName**: string
-
-#### TableName
-The PostgreSQL table object.
-> **TableName**: string
 
 #### MaxPageSize
 The maximum number of records to return from the database.

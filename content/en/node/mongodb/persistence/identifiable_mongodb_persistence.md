@@ -11,7 +11,7 @@ description: >
 
 **Extends:** [MongoDbPersistence<T>](../mongodb_persistence)
 
-**Implements**: [IWriter<T, K>](../../../data/iwriter), [IGetter<T, K>](../../../data/igetter), [ISetter<T>](../../../data/isetter)
+**Implements**: [IWriter<T, K>](../../../data/core/iwriter), [IGetter<T, K>](../../../data/core/igetter), [ISetter<T>](../../../data/core/isetter)
 
 
 ### Description

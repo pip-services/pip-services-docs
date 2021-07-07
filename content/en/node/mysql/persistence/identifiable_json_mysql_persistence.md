@@ -18,7 +18,7 @@ The IdentifiableJsonMySqlPersistence class allows you to create persistence comp
 Important points
 
 - The JSON table has only two fields: id and data.
-- In basic scenarios child classes shall only override [getPageByFilter](../mysql_persistence/#getpagebyfilter), [getListByFilter](../memory_persistence/#getlistbyfilter) or [deleteByFilter](../mysql_persistence/#deletebyfilter) operations with a specific filter function. 
+- In basic scenarios child classes shall only override [getPageByFilter](../mysql_persistence/#getpagebyfilter), [getListByFilter](../mysql_persistence/#getlistbyfilter) or [deleteByFilter](../mysql_persistence/#deletebyfilter) operations with a specific filter function. 
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 

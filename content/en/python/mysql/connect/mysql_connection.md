@@ -47,7 +47,7 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 
 #### _connection
-The SQLServer connection pool object.
+The MySQL connection pool object.
 > **_connection**: Any
 
 #### _connection_resolver
@@ -55,7 +55,7 @@ The connection resolver.
 > **_connection_resolver**: [MySqlConnectionResolver](../mysql_connection_resolver)
 
 #### _database_name
-The SQLServer database name.
+The MySQL database name.
 > **_database_name**: str
 
 #### _logger

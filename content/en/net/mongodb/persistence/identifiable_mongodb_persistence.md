@@ -9,7 +9,7 @@ description: >
     
 ---
 
-**Inherits:** [MongoDbPersistence<T>](../mongodb_persistence), [IWriter<T, K>](../../../data/iwriter), [IGetter<T, K>](../../../data/igetter), [ISetter<T>](../../../data/isetter)
+**Inherits:** [MongoDbPersistence<T>](../mongodb_persistence), [IWriter<T, K>](../../../data/core/iwriter), [IGetter<T, K>](../../../data/core/igetter), [ISetter<T>](../../../data/core/isetter)
 
 
 ### Description

@@ -95,7 +95,7 @@ The MongoDB database name.
 > `protected` **_databaseName**: string
 
 #### _tableName 
-The MongoDB table object.
+The MongoDB table name.
 
 > `protected` **_tableName**: string
 

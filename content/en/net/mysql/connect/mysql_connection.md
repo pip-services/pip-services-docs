@@ -50,7 +50,7 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 
 #### _connection
-The SQLServer connection pool object.
+The MySQL connection pool object.
 > `private` **_connection**: MySqlData.MySqlClient.MySqlConnection
 
 #### _connectionResolver
@@ -58,7 +58,7 @@ The connection resolver.
 > `private` **_connectionResolver**: [MySqlConnectionResolver](../mysql_connection_resolver)
 
 #### _databaseName
-The SQLServer database name.
+The MySQL database name.
 > `private` **_databaseName**: string
 
 #### _databaseServer

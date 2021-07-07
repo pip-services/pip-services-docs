@@ -59,7 +59,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _tableName
-The PostgreSQL table object.
+The PostgreSQL table name.
 > `protected` **_tableName**: string
 
 #### _dependencyResolver
@@ -200,7 +200,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 
 #### generateParameters
-Generates a list of value parameters to use in SQL statements like: *"@1,@2,@3"*.
+Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
 > `protected` generateParameters(values: any): string
 

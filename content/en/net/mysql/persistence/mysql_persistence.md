@@ -59,7 +59,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _databaseName
-The MySql table object.
+The MySql database name.
 > `protected` **_databaseName**: string
 
 #### _dependencyResolver
@@ -83,9 +83,9 @@ The MySql database name.
 > `protected` **_databaseName**: string
 
 #### _tableName 
-The MySQL table object.
+The MySQL table name.
 
-> `protected` _tableName: string
+> `protected` **_tableName**: string
 
 #### _maxPageSize
 The maximum number of records to return from the database per request.

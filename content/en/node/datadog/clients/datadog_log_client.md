@@ -39,14 +39,14 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### sendLogs
 Sends log messages.
 
 > `public` sendLogs(correlationId: string, messages: DataDogLogMessage[]): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messages**: [DataDogLogMessage[]](../datadog_log_message) - messages to send.
 
 #### setReferences

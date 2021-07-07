@@ -5,7 +5,7 @@ linkTitle: "Containers"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    TODO: add description
+    This package contains classes that act as containers to instantiate and run components.
 ---
 ---
 
@@ -15,15 +15,14 @@ description: >
 ### Classes
 
 #### [AzureFunction](azure_function)
-TODO: add description
-
+Abstract Azure Function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 #### [AzureFunctionContextHelper](azure_function_context_helper)
-TODO: add description
+Contains methods used to get correlationIds, commands and bodys from the Azure Function context.
 
 
 #### [CommandableAzureFunction](commandable_azure_function)
-TODO: add description
+Abstract Azure Function function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 
 </div>

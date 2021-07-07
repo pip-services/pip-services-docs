@@ -15,7 +15,7 @@ The IAzureFunctionService interface allows for integration of Azure Function ser
 ### Instance methods
 
 #### getActions
-Gets all the actions supported by the service.
+Gets all the actions supported by the service.  
 
 > getActions(): [AzureFunctionAction[]](../azure_function_action)
 

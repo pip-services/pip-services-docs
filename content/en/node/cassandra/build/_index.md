@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create Cassandra components.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultCassandraFactory](default_cassandra_factory)
-TODO: add description
+Creates Cassandra components by their descriptors.
 
 
 </div>

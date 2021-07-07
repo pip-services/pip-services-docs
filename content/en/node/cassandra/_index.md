@@ -25,7 +25,7 @@ Install the NPM package as
 npm install pip-services3-cassandra-nodex --save
 ```
 
-As an example, lets create persistence for the following data object.
+As an example, lets create persistence for the following data object.  
 
 ```typescript
 import { IIdentifiable } from 'pip-services3-commons-nodex';

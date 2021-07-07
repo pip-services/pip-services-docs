@@ -22,14 +22,14 @@ TODO: add description
 ### Classes
 
 #### [AzureFunctionAction](azure_function_action)
-TODO: add description
+Defines some fields such as action, cmd and schema.
 
 
 #### [AzureFunctionService](azure_function_service)
-TODO: add description
+Abstract service that receives remove calls via the Azure Function protocol.
 
 #### [CommandableAzureFunctionService](commandable_azure_function_service)
-TODO: add description
+Abstract service that receives commands via the Azure Function protocol to operations automatically generated for commands defined in ICommandable components.
 
 
 </div>

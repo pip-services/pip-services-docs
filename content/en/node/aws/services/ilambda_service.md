@@ -10,14 +10,14 @@ description: >
 
 ### Description
 
-TODO: add descriptions
+The ILambdaService interface that allows to integrate lambda services into lambda function containers and connect their actions to the function calls. 
 
 
 ### Instance methods
 
 #### getActions
-Get all actions supported by the service.
+Gets all actions supported by the service.
 
 > getActions(): [LambdaAction[]](../lambda_action)
 
-- **returns**: [LambdaAction[]](../lambda_action) - an array with supported actions.
+- **returns**: [LambdaAction[]](../lambda_action) - array with supported actions.

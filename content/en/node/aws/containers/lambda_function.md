@@ -4,19 +4,20 @@ title: "LambdaFunction"
 linkTitle: "LambdaFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Abstract AWS Lambda function, that acts as a container to instantiate and run components
-    and expose them via external entry point. 
+    Abstract AWS Lambda function that acts as a container to instantiate and run components, 
+    and expose them via an external entry point. 
 ---
 
 **Extends:** [Container](../../../container/containers/container)
 
 ### Description
+The LambdaFunction class allows you to create an abstract AWS Lambda function that acts as a container to instantiate and run components, and expose them via an external entry point.
 
-When handling calls "cmd" parameter determines which what action shall be called, while
-other parameters are passed to the action itself.
+Important points
 
-Container configuration for this Lambda function is stored in *"./config/config.yml"* file.
-But this path can be overriden by *CONFIG_PATH* environment variable.
+- When handling calls "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.
+
+- Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
 
 
 #### References
@@ -38,27 +39,27 @@ Creates a new instance of this lambda function.
 <span class="hide-title-link">
 
 #### _actions
-The map of registered actions.
+Map containing registered actions.
 > `protected` **_actions**: { [id: string]: any }
 
 #### _configPath
-The default path to config file.
+Default path to config file.
 > `protected` **_configPath**: string = './config/config.yml'
 
 #### _counters
-The performanc counters.
+Performanc counters.
 > `protected` **_counters** = new [CompositeCounters()](../../../components/count/composite_counters)
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver** = new [DependencyResolver()](../../../commons/refer/dependency_resolver)
 
 #### _schemas
-The map of registred validation schemas.
+Map of registred validation schemas.
 > `protected` **_schemas**: { [id: string]: [Schema](../../../commons/validate/schema) }
 
 #### _tracer
-The tracer.
+Tracer.
 > `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = new [CompositeTracer()](../../../components/trace/composite_tracer)
 
 
@@ -69,7 +70,7 @@ The tracer.
 
 #### act
 Calls registered action in this lambda function.
-"cmd" parameter in the action parameters determin
+"cmd" parameter in the action parameters determines
 what action shall be called.
 
 - This method shall only be used in testing.
@@ -77,7 +78,7 @@ what action shall be called.
 > `public` act(params: any): Promise\<any\>
 
 - **params**: any - action parameters.
-- **returns**: Promise\<any\> - TODO: add description
+- **returns**: Promise\<any\> - result
 
 #### execute
 Executes this AWS Lambda function and returns the result.
@@ -86,23 +87,23 @@ if they need to change the default behavior
 
 > `protected` execute(event: any): Promise\<any\>
 
-- **event**: any - event the event parameters (or function arguments)
-- **returns**: Promise\<any\> - the result of the function execution.
+- **event**: any - event parameters (or function arguments)
+- **returns**: Promise\<any\> - result of the function execution.
 
 #### getHandler
-Gets entry point into this lambda function.
+Gets an entry point into this lambda function.
 
 > `public` getHandler(): (event: any) => Promise<\any\>
 
-- **returns**: (event: any) => Promise<\any\> - an incoming event object with invocation parameters.
+- **returns**: (event: any) => Promise<\any\> - incoming event object with invocation parameters.
 
 #### instrument
 Gets entry point into this lambda function.
 
 > `protected` instrument(correlationId: string, name: string): [InstrumentTiming](../../../rpc/services/instrument_timing)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **name**: string - a method name.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **name**: string - method name.
 - **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - object to end the time measurement.
 
 #### open
@@ -110,7 +111,7 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### register
 Registers all actions in this lambda function.
@@ -127,9 +128,9 @@ Registers an action in this lambda function.
 
 > `protected` registerAction(cmd: string, schema: [Schema](../../../commons/validate/schema), action: (params: any) => Promise\<any\>): void
 
-- **cmd**: string - a action/command name.
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: (params: any) => Promise\<any\> - an action function that is called when action is invoked.
+- **cmd**: string - action/command name.
+- **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
+- **action**: (params: any) => Promise\<any\> - action function that is called when action is invoked.
 
 
 #### registerServices
@@ -151,7 +152,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 

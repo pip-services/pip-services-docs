@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The CloudWatchUnit class contains constans used to determine cloud watch units.
 
 
 ### Fields

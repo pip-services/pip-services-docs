@@ -20,40 +20,76 @@
   let isGitRepo = window.location.host.indexOf('github') > 0;
 
   docsearch({
-      // Your apiKey and indexName will be given to you once
-      // we create your config
-      apiKey: '6974095177303d4ec7cb2a2d7c6f051a',
-      indexName: isGitRepo > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
-      appId: 'ETKGUND67W',
-      // Replace inputSelector with a CSS selector
-      // matching your search input
-      inputSelector: '.td-search-input',
+    algoliaOptions: {
+      // hitsPerPage: 10,
+      // See https://www.algolia.com/doc/api-reference/api-parameters/
+    },
 
-      transformData: function (hits) {
+    // Your apiKey and indexName will be given to you once
+    // we create your config
+    apiKey: 'd53c32f818dd6c6aac5dc342524ebad0', // 6974095177303d4ec7cb2a2d7c6f051a
+    indexName: 'pipservices_org', // isGitRepo > 0 ? 'pip_docs_test' : 'pip_docs_s3', //'pipservices',
+    //appId: 'ETKGUND67W',
+    // Replace inputSelector with a CSS selector
+    // matching your search input
+    inputSelector: '.td-search-input',
+
+    transformData: function(hits) {
       // Filter by language
-        let langNamePosInUrl = isGitRepo ? 4 : 3 
+      let langNamePosInUrl = isGitRepo ? 4 : 3 
 
-        hits = hits.filter((item) => {
+      console.log(hits.length);
+
+      hits = hits.filter((item, index) => {
+
+        
+
+        //for (let i = Object.getOwnPropertyNames(item.hierarchy).length; i > 1; i--) {
+        //  let prevIndex = i - 1;
+        //  item.hierarchy['lvl' + i] = copy(item.hierarchy['lvl' + prevIndex]);
+        //  item._highlightResult.hierarchy['lvl' + i] = copy(item._highlightResult.hierarchy['lvl' + prevIndex]);
+        //  item._highlightResult.hierarchy_camel[0]['lvl' + i] = copy(item._highlightResult.hierarchy_camel[0]['lvl' + prevIndex]);
+        //}
+
+        //item.hierarchy.lvl1 = language;
+        //item._highlightResult.hierarchy.lvl1 = undefined;
+        //item._highlightResult.hierarchy_camel[0].lvl1 = undefined;
+        
+        if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
+          let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();
+          let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
-          if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
-            let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();
-            let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
+          return isCorrectHit;
+        } else {
+          // Add current language to hits
+          let language = hits[index].url.split('/')[3]
+          // capitalize
+          language = language.charAt(0).toUpperCase() + language.slice(1);
 
-            return isCorrectHit;
+          if (!item.hierarchy.lvl6) {
+            item.hierarchy.lvl6 = language;
+            item._highlightResult.hierarchy.lvl6 = { value: '<span style="color:#81c7f9">' + language + '</span>' };
           }
+        }
+        
+        return true
+        
+      });
 
-          return true
-          
-        });
-
-        return hits;
+      return hits;
       
-      },
+    },
 
 
-      // Set debug to true to inspect the dropdown
-      debug: true,
+    // Set debug to true to inspect the dropdown
+    debug: true,
   });
+
+  function copy(obj){
+    if (obj != undefined)
+      return JSON.parse(JSON.stringify(obj));
+    return undefined;
+  }
 
 </script>
 {{ end }}

@@ -11,11 +11,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultCassandraFactory class allows you to create Cassandra components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

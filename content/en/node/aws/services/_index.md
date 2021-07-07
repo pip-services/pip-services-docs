@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to create Lambda services.
 ---
 ---
 
@@ -15,20 +15,20 @@ description: >
 ### Interfaces
 
 #### [ILambdaService](ilambda_service)
-TODO: add description
+An interface that allows to integrate lambda services into lambda function containers and connect their actions to the function calls.
 
 <br>
 
 ### Classes
 
 #### [CommandableLambdaService](commandable_lambda_service)
-TODO: add description
+Abstract service that receives commands via AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
 
 #### [LambdaAction](lambda_action)
-TODO: add description
+Define actions to be executed as Lambda functions
 
 
 #### [LambdaService](lambda_service)
-TODO: add description
+Abstract service that receives remove calls via AWS Lambda protocol.
 
 </div>

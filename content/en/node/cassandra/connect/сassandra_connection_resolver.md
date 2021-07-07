@@ -12,22 +12,25 @@ description: >
 **Extends:** [CompositeConnectionResolver](../../../components/connect/composite_connection_resolver)
 
 ### Description
+The CassandraConnectionResolver class is used to resolve Cassandra connections and credential parameters, validate them and generate connection URIs.
 
-It is able to process multiple connections to Cassandra cluster nodes.
+Important points
+
+- It is able to process multiple connections to Cassandra cluster nodes.
 
 
 #### Configuration parameters
 
 - **connection(s)**:
-	- **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+	- **discovery_key**:               (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 	- **host**: host name or IP address
 	- **port**: port number (default: 27017)
 	- **database**: database name
 	- **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-	- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-	- **username**: user name
-	- **password**: user password
+	- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+	- **username**: username
+	- **password**: user's password
 
 
 #### References
@@ -40,18 +43,18 @@ It is able to process multiple connections to Cassandra cluster nodes.
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
-The credential resolver
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
 
 ### Constructors
-Creates instance of this class.
+Creates an instance of this class.
 > `public` constructor()
 
 ### Instance methods

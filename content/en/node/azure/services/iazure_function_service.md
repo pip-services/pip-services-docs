@@ -10,13 +10,13 @@ description: >
 
 ### Description
 
-TODO: add description
+The IAzureFunctionService interface allows for integration of Azure Function services into Azure Function containers and the connection of their actions to the function calls.
 
 ### Instance methods
 
 #### getActions
-Get all actions supported by the service.
+Gets all the actions supported by the service.
 
 > getActions(): [AzureFunctionAction[]](../azure_function_action)
 
-- **returns**: [AzureFunctionAction[]](../azure_function_action) - an array with supported actions.
+- **returns**: [AzureFunctionAction[]](../azure_function_action) - array with supported actions.

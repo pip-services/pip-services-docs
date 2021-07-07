@@ -1,11 +1,10 @@
 ---
 type: docs
-title: "CassandraPersistence<T>"
-linkTitle: "CassandraPersistence"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
+title: "CouchbasePersistence<T>"
+linkTitle: "CouchbasePersistence"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    Abstract persistence component that stores data in Cassandra using plain driver.
-    
+    Abstract persistence component that stores data in Couchbase and is based using Couchbaseose object relational mapping.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
@@ -15,7 +14,7 @@ description: >
 This is the most basic persistence component that is only
 able to store data items of any type. Specific CRUD operations
 over the data items must be implemented in child classes by
-accessing **this._db** or **this._collection** properties.
+accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
@@ -26,11 +25,11 @@ accessing **this._db** or **this._collection** properties.
   - **host**: host name or IP address
   - **port**: port number (default: 27017)
   - **uri**: resource URI or connection string with all parameters in it
-- **credential(s)**:    
+- credential(s):    
   - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
   - **username**: (optional) user name
   - **password**: (optional) user password
-- **options**:
+- options:
   - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
   - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
   - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
@@ -45,10 +44,10 @@ accessing **this._db** or **this._collection** properties.
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName?: string, keyspaceName?: string)
+> `public` constructor(bucket?: string, collection?:string)
 
-- **tableName**: string - (optional) a table name.
-- **keyspaceName**: string - (optional) a keyspace name.
+- **bucket**: string - (optional) a bucket name.
+- **collection**: string - (optional) a collection name.
 
 
 ### Fields
@@ -63,26 +62,30 @@ The dependency resolver.
 The logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
+#### _collectionName
+TODO: add descritpion
+> `protected` **_collectionName**: string
+
 #### _connection
-The Cassandra connection component.
-> `protected` **_connection**: [CassandraConnection](../../connect/cassandra_connection) 
+The Couchbase connection component.
+> `protected` **_connection**: [CouchbaseConnection](../../connect/couchbase_connection) 
 
-#### _client
-The Cassandra connection pool object.
-> `protected` **_client**: any 
+#### _cluster
+The Couchbase cluster object.
+> `protected` **_cluster**: any 
 
-#### _datacenter 
-The Cassandra datacenter name.
-> `protected` **_datacenter**: string
+#### _bucketName 
+The Couchbase bucket name.
+> `protected` **_bucketName**: string
 
-#### _tableName 
-The Cassandra table name.
+#### _bucket 
+The Couchbase bucket object.
 
-> `protected` **_tableName**: string
+> `protected` **_bucket**: any
 
 #### _keyspaceName
-The Cassandra keyspace name.
-> `protected` **_keyspaceName**: string
+The Couchbase N1qlQuery object.
+> `protected` **_query**: any
 
 #### _maxPageSize
 The maximum number of records to return from the database per request.
@@ -100,11 +103,6 @@ Clears a component's state.
 > `public` clear(correlationId: string): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-
-#### clearSchema
-Clears all auto-created objects
-
-> `protected` clearSchema(): void
 
 
 #### close
@@ -132,6 +130,15 @@ Converts object value from public to internal format.
 - **returns**: any - converted object in internal format.
 
 
+#### convertFromPublicPartial
+Converts the given object from the public partial format.
+
+> `protected` convertFromPublicPartial(value: any): any
+
+- **value**: any - the object to convert from the public partial format. 
+- **returns**: any - the initial object.
+
+
 #### convertToPublic
 Converts object value from internal to public format.
 
@@ -151,17 +158,13 @@ Creates a data item.
 - **returns**: Promise\<T\> - created item
 
 
-#### createSchema
-Checks if a table exists and if not, it creates the necessary database objects.
-> `protected` createSchema(correlationId: string): Promise\<void\>
+#### createBucketFilter
+Creates a filters that includes a collection name in it.
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+> `protected` createBucketFilter(filter: string): string
 
-
-#### defineSchema
-Defines database schema via auto create objects or convenience methods.
-
-> `protected` defineSchema(): void
+- **filter**: string - a user-defined filter
+- **returns**: string - a filter that includes a collection name.
 
 
 #### deleteByFilter
@@ -175,57 +178,13 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **filter**: any - (optional) filter function to filter items.
 
 
-#### ensureIndex
-Adds index definition to create it on opening.
+#### generateBucketId
+Generates unique id for specific collection in the bucket
 
-> `protected` ensureIndex(keys: any, options)
+> `protected` generateBucketId(value: any): string 
 
-- **keys**: any - index keys (fields)
-- **options**: any - index options
-
-
-#### ensureSchema
-Adds a statement to schema definition.
-
-> `protected` ensureSchema(schemaStatement: string): void
-
-- **schemaStatement**: string - statement to be added to the schema
-
-
-#### generateColumns
-Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
-
-> `protected` generateColumns(values: any): string
-
-- **values**: any - array with column values or a key-value map
-- **returns**: string - generated list of column names 
-
-
-#### generateParameters
-Generates a list of value parameters to use in SQL statements like: "$1,$2,$3"
-
-> `protected` generateParameters(values: any): string
-
-- **values**: any - array with values or a key-value map
-- **returns**: string - generated list of value parameters
-
-
-#### generateSetParameters
-Generates a list of column sets to use in UPDATE statements like: column1=$1,column2=$2
-
-> `protected` generateSetParameters(values: any): string
-
-- **values**: any - key-value map with columns and values
-- **returns**: string - generated list of column sets
-
-
-#### generateValues
-Generates a list of column parameters.
-
-> `protected` generateValues(values: any): any[]
-
-- **values**: any - key-value map with columns and values
-- **returns**: any[] - generated list of column values
+- **value**: any - a public unique id.
+- **returns**: string - a unique bucket id.
 
 
 
@@ -311,11 +270,6 @@ Adds single quotes to a string.
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
 
-#### quotedTableName
-TODO: add description
-> `protected` quotedTableName(): string
-
-- **returns**: string - TODO: add description
 
 #### setReferences
 Sets references to dependent components.
@@ -333,42 +287,32 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MyCassandraPersistence extends CassandraPersistence<MyData> {
+class MyCouchbasePersistence extends CouchbasePersistence<MyData> {
   public constructor() {
-      base("mydata");
+    base("mydata", "mycollection", new MyDataCouchbaseSchema());
   }
-
   public getByName(correlationId: string, name: string): Promise<MyData> {
     let criteria = { name: name };
     return new Promise((resolve, reject) => {
-      this._model.findOne(criteria, (err, item) => {
-        if (err != null) {
-          reject(err);
-          return;
-        }
-        item = this.convertToPublic(item);
-        resolve(item);
-      });
-     });
-  }); 
-
-  public set(correlatonId: string, item: MyData): Promise<MyData> {
+       this._model.findOne(criteria, (err, value) => {
+           if (err == null) resolve(value);
+           else reject(err);
+       });
+    });
+  }
+  public set(correlatonId: string, item: MyData, callback: (err) => void): void {
     let criteria = { name: item.name };
     let options = { upsert: true, new: true };
     return new Promise((resolve, reject) => {
-      this.findOneAndUpdate(criteria, item, options, (err, item) => {
-        if (err != null) {
-          reject(err);
-          return;
-        }
-        item = this.convertToPublic(item);
-        resolve(item);
-      });
-     });
+       this._model.findOneAndUpdate(criteria, item, options, (err, value) => {
+           if (err == null) resolve(value);
+           else reject(err);
+       });
+    });
   }
 }
 
-let persistence = new MyCassandraPersistence();
+let persistence = new MyCouchbasePersistence();
 persistence.configure(ConfigParams.fromTuples(
     "host", "localhost",
     "port", 27017
@@ -377,5 +321,5 @@ persistence.configure(ConfigParams.fromTuples(
 await persitence.open("123");
 let item = await persistence.set("123", { name: "ABC" });
 item = await persistence.getByName("123", "ABC");
-console.log(item);   // Result: { name: "ABC" }
+console.log(item);                   // Result: { name: "ABC" }
 ```

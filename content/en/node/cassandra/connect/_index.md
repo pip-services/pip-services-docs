@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create and resolve Cassandra connections.
 ---
 ---
 
@@ -14,10 +14,10 @@ description: >
 ### Classes
 
 #### [CassandraConnection](сassandra_connection)
-TODO: add description
+Cassandra connection using plain driver.
 
 
 #### [CassandraConnectionResolver](сassandra_connection_resolver)
-TODO: add description
+Helper class that resolves Cassandra connection and credential parameters, validates them and generates a connection URI.
 
 </div>

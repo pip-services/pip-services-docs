@@ -4,7 +4,7 @@ title: "CassandraConnection"
 linkTitle: "CassandraConnection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 description: >
-    Cassandra connection using plain driver.
+    Cassandra connection using the default driver.
 
 ---
 
@@ -12,21 +12,23 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The CassandraConnection class allows you to create Cassandra connections using the default driver.
 
-By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
+Important points
+
+- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
 
 #### Configuration parameters
 
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key used to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 9042)
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
-    - **username**: user name
-    - **password**: user password
+    - **store_key**: (optional) key used to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
+    - **username**: username
+    - **password**: user's password
 - **options**:
     - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
     - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
@@ -44,27 +46,27 @@ you can reduce number of used database connections.
 
 
 #### _connection
-The Cassandra connection pool object.
+Cassandra connection pool object.
 > `protected` **_connection**: any
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [CassandraConnectionResolver](../cassandra_connection_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _datacenter
-The Cassandra datacenter name.
+Cassandra datacenter's name.
 > `protected` **_datacenter**: string
 
 #### _keyspace
-The Cassandra keyspace name.
+Cassandra keyspace's name.
 > `protected` **_keyspace**: string
 
 </span>
@@ -101,14 +103,14 @@ Gets the connection.
 
 
 #### getDatacenter
-Gets Cassandra datacenter name.
+Gets Cassandra datacenter's name.
 
 > `public` getDatacenter(): string
 
-- **returns**: string - Cassandra datacenter name.
+- **returns**: string - Cassandra datacenter's name.
 
 #### getKeyspace
-Gets Cassandra keyspace name.
+Gets Cassandra keyspace's name.
 > `public` getKeyspace(): string
 
 - **returns**: string - Cassandra keyspace name.
@@ -118,7 +120,7 @@ Checks if the component is opened.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component has been opened and false otherwise.
 
 
 #### open

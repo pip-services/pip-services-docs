@@ -12,7 +12,7 @@ description: >
 
 **Extends:** [MemoryPersistence<T>](../memory_persistence)
 
-**implements:** [IConfigurable](../../../commons/config/iconfigurable)
+**Implements:** [IConfigurable](../../../commons/config/iconfigurable)
 
 ### Description
 

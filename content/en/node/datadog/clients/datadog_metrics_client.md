@@ -4,7 +4,7 @@ title: "DataDogMetricsClient"
 linkTitle: "DataDogMetricsClient"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    REST client for DataDog metrics.
 
 
 ---
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DataDogMetricsClient class REST client for DataDog metrics.
 
 
 

@@ -4,7 +4,7 @@ title: "CouchbaseConnectionResolver"
 linkTitle: "CouchbaseConnectionResolver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-   	Helper class that resolves Couchbase connection and credential parameters, validates them and generates a connection URI.
+    Helper class that resolves Couchbase connection and credential parameters, validates them and generates a connection URI.
 
 ---
 
@@ -17,15 +17,15 @@ It is able to process multiple connections to Couchbase cluster nodes.
 #### Configuration parameters
 
 - **connection(s)**:
-	- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-	- **host**: host name or IP address
-	- **port**: port number (default: 27017)
-   	- **database**: database (bucket) name
-   	- **uri**: resource URI or connection string with all parameters in it
+    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **host**: host name or IP address
+    - **port**: port number (default: 27017)
+    - **database**: database (bucket) name
+    - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-	- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-	- **username**: user name
-	- **password**: user password
+    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: user name
+    - **password**: user password
 
 
 #### References

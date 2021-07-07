@@ -35,7 +35,7 @@ Configures the component by passing its configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### open
-Opens the client.
+Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 

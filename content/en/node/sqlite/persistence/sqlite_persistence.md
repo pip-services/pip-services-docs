@@ -4,32 +4,32 @@ title: "SqlitePersistence<T>"
 linkTitle: "SqlitePersistence"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    Abstract persistence component that stores data in SQLite using plain driver.
+    Abstract persistence component that stores data in SQLite using the default driver.
     
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
-
-This is the most basic persistence component that is only
-able to store data items of any type. Specific CRUD operations
-over the data items must be implemented in child classes by
-accessing **this._db** or **this._collection** properties.
+The SqlitePersistence class allows you to create abstract persistence components that store data in SQLite using the default driver.
+    
+Important points
+    
+- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
 
 #### Configuration parameters
 
 - **table**: (optional) SQLite table name
 - **schema**: (optional) SQLite schema name
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 27017)
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) user name
-    - **password**: (optional) user password
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: (optional) username
+    - **password**: (optional) user's password
 - **options**:
     - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
     - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
@@ -47,8 +47,8 @@ Creates a new instance of the persistence component.
 
 > `public` constructor(tableName?: string, schemaName?: string)
 
-- **tableName**: string - (optional) a table name.
-- **schemaName**: string - (optional) a schema name.
+- **tableName**: string - (optional) table name.
+- **schemaName**: string - (optional) schema name.
 
 
 ### Fields
@@ -56,36 +56,36 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _databaseName
-The SQLite database name.
+SQLite database name.
 > `protected` **_databaseName**: string
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The SQLite connection component.
+SQLite connection component.
 > `protected` **_connection**: [SQLiteConnection](../../connect/sqlite_connection) 
 
 #### _client
-The SQLite connection pool object.
+SQLite connection pool object.
 > `protected` **_client**: any 
 
 #### _tableName 
-The SQLite table name.
+SQLite table name.
 
 > `protected` **_tableName**: string
 
 #### _maxPageSize
-The maximum number of records to return from the database per request.
+Maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: number = 100
 
 #### _schemaName
-The SQLite schema object.
+SQLite schema object.
 > `protected` **_schemaName**: string
 
 </span>
@@ -116,7 +116,7 @@ Closes a component and frees the used resources.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -124,7 +124,7 @@ Configures component by passing configuration parameters.
 
 
 #### convertFromPublic
-Converts object value from public to internal format.
+Converts an object value from public to internal format.
 
 > `protected` convertFromPublic(value: any): any
 
@@ -133,7 +133,7 @@ Converts object value from public to internal format.
 
 
 #### convertToPublic
-Converts object value from internal to public format.
+Converts an object value from internal to public format.
 
 > `protected` convertToPublic(value: any): any
 
@@ -159,7 +159,7 @@ Checks if a table exists and if not, it creates the necessary database objects.
 
 
 #### defineSchema
-Defines database schema via auto create objects or convenience methods.
+Defines a database schema via auto-create objects or convenience methods.
 
 > `protected` defineSchema(): void
 
@@ -250,7 +250,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > `protected` getListByFilter(correlationId: string, filter: any, sort: any, select: any): Promise\<T[]\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: any - (optional) filter function to filter items
 - **sort**: any - (optional) sorting parameters
 - **select**: any - (optional) projection parameters (not used yet)
@@ -266,8 +266,8 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) a filter JSON object
-- **returns**: Promise\<T\> - a random item.
+- **filter**: any - (optional) filter JSON object
+- **returns**: Promise\<T\> - random item.
 
 
 #### getPageByFilter
@@ -283,16 +283,16 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: any - (optional) sorting JSON object
 - **select**: any - (optional) projection JSON object
-- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - a data page of result by filter
+- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - data page of result by filter
 
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component has been opened and false otherwise.
 
 
 #### open
@@ -312,7 +312,7 @@ Adds single quotes to a string.
 - **returns**: string - string with added quotes
 
 #### quotedTableName
-TODO: add description
+Adds the schema's name to the table's name
 > `protected` quotedTableName(): string
 
 - **returns**: string - TODO: add description
@@ -322,7 +322,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### unsetReferences

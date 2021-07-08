@@ -5,7 +5,7 @@ linkTitle: "Cache"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create a distributed cache that stores values in Memcached's caching service.
 ---
 ---
 
@@ -14,7 +14,7 @@ description: >
 ### Interfaces
 
 #### [MemcachedCache](memcached_cache)
-TODO: add description
+Distributed cache that stores values in Memcached's caching service.
 
 <br>
 

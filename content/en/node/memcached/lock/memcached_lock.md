@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "CachedMessageQueue"
-linkTitle: "CachedMessageQueue"
+title: "MemcachedLock"
+linkTitle: "MemcachedLock"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    Distributed lock that implemented based on Memcaches caching service.
+    Distributed lock that is implemented based on Memcached's caching service.
  
 ---
 
@@ -13,13 +13,15 @@ description: >
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The MemcachedLock class allows you to create a lock taht is implemented based on the Memcached's caching service.
 
-The current implementation does not support authentication.
+Important points
+- The current implementation does not support authentication.
 
 #### Configuration parameters
 
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -46,7 +48,7 @@ The current implementation does not support authentication.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes component a and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
@@ -60,27 +62,27 @@ Configures a component by passing its configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
-Checks if the component is opened.
+Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id usd to trace execution through the call chain.
 
 #### releaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > `public` releaseLock(correlationId: string, key: string): Promise\<void\> 
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - a unique lock key to release.
+- **key**: string - unique lock key to release.
 
 
 #### setReferences
@@ -88,7 +90,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### tryAcquireLock
@@ -98,8 +100,8 @@ It returns immediately a positive or negative result.
 > `public` tryAcquireLock(correlationId: string, key: string, ttl: number): Promise\<boolean\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - a unique lock key to acquire.
-- **ttl**: number - a lock timeout (time to live) in milliseconds.
+- **key**: string - unique lock key to acquire.
+- **ttl**: number - lock timeout (time to live) in milliseconds.
 - **returns**: Promise\<boolean\> - **true** if lock was successfull and **false** otherwise.
 
 

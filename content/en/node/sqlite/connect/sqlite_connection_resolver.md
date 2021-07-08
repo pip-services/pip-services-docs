@@ -4,7 +4,7 @@ title: "SqliteConnectionResolver"
 linkTitle: "SqliteConnectionResolver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    Helper class that resolves SQLite connection and credential parameters,
+    Helper class that resolves a SQLite connection and credential parameters,
     validates them and generates a connection URI.
 
 ---
@@ -12,14 +12,16 @@ description: >
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable)
 
 ### Description
+The SqliteConnectionResolver class is used to resolve SQLite connections and credential paramters, validate them and generate connection URIs.
 
+Important points
 It is able to process multiple connections to SQLite cluster nodes.
 
 
 #### Configuration parameters
 
 - **connection(s)**:    
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
   - **database**: database file path
   - **uri**: resource URI with file:// protocol
 
@@ -35,11 +37,11 @@ It is able to process multiple connections to SQLite cluster nodes.
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
-The credential resolver
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
@@ -49,7 +51,7 @@ The credential resolver
 
 
 #### configure
-Configures components by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -57,7 +59,7 @@ Configures components by passing configuration parameters.
 
 
 #### resolve
-Resolves SQLite connection URI from connection and credential parameters.
+Resolves a SQLite connection URI from connection and credential parameters.
 
 > `public` resolve(correlationId: string): Promise\<string\>
 

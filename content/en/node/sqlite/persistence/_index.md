@@ -5,7 +5,7 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create abstract persistence components to perform basic CRUD operations..
     
 ---
 ---
@@ -15,13 +15,13 @@ description: >
 ### Classes
 
 #### [IdentifiableJsonSqlitePersistence](identifiable_json_sqlite_persistence)
-TODO: add description
+Abstract persistence component that stores data in SQLite in JSON or JSONB fields and implements a number of CRUD operations over data items with unique ids.
 
 
 #### [IdentifiableSqlitePersistence](identifiable_sqlite_persistence)
-TODO: add description
+Abstract persistence component that stores data in SQLite and implements a number of CRUD operations over data items with unique ids.
 
 #### [SqlitePersistence](sqlite_persistence)
-TODO: add description
+Abstract persistence component that stores data in SQLite using the default driver.
 
 </div>

@@ -13,14 +13,13 @@ description: >
 
 ### Description
 
-The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
-The JSON table has only two fields: id and data.
-In basic scenarios child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter),
-[getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with specific filter function.
-All other operations can be used out of the box. 
-
-In complex scenarios child classes can implement additional operations by 
-accessing **this._collection** and **this._model** properties.
+Important points    
+    
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- The JSON table has only two fields: id and data.
+- In basic scenarios child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter), [getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with a specific filter function.
+- All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 
@@ -50,7 +49,7 @@ Creates a new instance of the persistence component.
 ### Instance methods
 
 #### convertFromPublic
-Converts object value from public to internal format.
+Converts an object value from public to internal format.
 
 > `protected` convertFromPublic(value: any): any
 
@@ -59,7 +58,7 @@ Converts object value from public to internal format.
 
 
 #### convertToPublic
-Converts object value from internal to public format.
+Converts an object value from internal to public format.
 
 > `protected` convertToPublic(value: any): any
 
@@ -68,7 +67,7 @@ Converts object value from internal to public format.
 
 
 #### ensureTable
-Adds DML statement to automatically create a JSON(B) table
+Adds a DML statement to automatically create a JSON(B) table
 
 > `protected` ensureTable(idType: string = 'VARCHAR(32)', dataType: string = 'JSON')
 
@@ -77,7 +76,7 @@ Adds DML statement to automatically create a JSON(B) table
 
 
 #### updatePartially
-Updates only few selected fields in a data item.
+Updates only a few selected fields in a data item.
 
 > `public` updatePartially(correlationId: string, id: K, data: [AnyValueMap](../../../commons/data/any_value_map)): Promise\<T\>
 

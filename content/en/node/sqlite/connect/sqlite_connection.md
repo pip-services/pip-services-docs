@@ -4,7 +4,7 @@ title: "SqliteConnection"
 linkTitle: "SqliteConnection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    SQLite connection using plain driver.
+    SQLite connection using the default driver.
 
 ---
 
@@ -12,6 +12,9 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The SqliteConnection class allows you to create SQLite connections using the default driver.
+
+Important points
 
 By defining a connection and sharing it through multiple persistence components
 you can reduce number of used database connections.
@@ -20,7 +23,7 @@ you can reduce number of used database connections.
 
 
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **database**: database file path
     - **uri**: resource URI with file:// protocol
 
@@ -37,23 +40,23 @@ you can reduce number of used database connections.
 
 
 #### _connection
-The SQLite connection pool object.
+SQLite connection pool object.
 > `protected` **_connection**: any
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [SqliteConnectionResolver](../sqlite_connection_resolver)
 
 #### _databaseName
-The SQLite database name.
+SQLite database name.
 > `protected` **_databaseName**: string
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 
@@ -91,7 +94,7 @@ Gets the connection.
 
 
 #### getDatabaseName
-Gets the database name
+Gets the database name.
 
 > `public` getDatabaseName(): string
 
@@ -99,11 +102,11 @@ Gets the database name
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -119,4 +122,4 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

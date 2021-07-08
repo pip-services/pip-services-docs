@@ -21,6 +21,6 @@ Creates a new instance of the factory.
 
 
 ### See also
-- #### [RedisCache](../../cahce/redis_cache)
+- #### [RedisCache](../../cache/redis_cache)
 - #### [RedisLock](../../lock/redis_lock) 
 

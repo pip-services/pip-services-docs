@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to crate Memcached components by their descriptors.
 ---
 ---
 <div class="module-body"> 
@@ -14,7 +14,7 @@ description: >
 ### Classes
 
 #### [DefaultMemcachedFactory](default_memcached_factory)
-Creates Redis components by their descriptors.
+Creates Memcached components by their descriptors.
 
 </div>
 

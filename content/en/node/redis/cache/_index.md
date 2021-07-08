@@ -5,7 +5,7 @@ linkTitle: "Cache"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-redis-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create distributed caches that store values in Redis in-memory database.
 ---
 ---
 
@@ -14,6 +14,6 @@ description: >
 ### Classes
 
 #### [RedisCache](redis_cache)
-TODO: add description
+Distributed cache that stores values in Redis in-memory database.
 
 </div>

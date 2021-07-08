@@ -17,7 +17,7 @@ The RedisCache class allows you to create distributed caches that store values i
 #### Configuration parameters
 
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -62,7 +62,7 @@ Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -97,7 +97,7 @@ Removes a value from the cache by its key.
 - **returns**: Promise\<any\> - removed value.
 
 #### retrieve
-Retrieves cached value from the cache using its key.
+Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns null.
 
 > `public` retrieve(correlationId: string, key: string): Promise\<any\>
@@ -115,7 +115,7 @@ Sets references to dependent components.
 
 
 #### store
-Stores a value in the cache with and expiration time.
+Stores a value in the cache with an expiration time.
 
 > `public` store(correlationId: string, key: string, value: any, timeout: number): Promise\<any\>
 

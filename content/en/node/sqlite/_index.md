@@ -37,7 +37,7 @@ export class MyObject implements IIdentifiable {
 }
 ```
 
-The persistence component shall implement the following interface with a basic set of CRUD operations.
+The persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```typescript
 export interface IMyPersistence {
@@ -56,7 +56,7 @@ export interface IMyPersistence {
 }
 ```
 
-To implement postgresql persistence component you shall inherit `IdentifiableSqlitePersistence`. 
+To implement SQLite persistence component you shall inherit `IdentifiableSqlitePersistence`. 
 Most CRUD operations will come from the base class. You only need to override `getPageByFilter` method with a custom filter function.
 And implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
@@ -182,7 +182,7 @@ export class MySqlitePersistence extends IdentifableJsonSqlitePersistence {
 }
 ```
 
-Configuration for your microservice that includes SQLite persistence may look the following way.
+The configuration for your microservice that includes SQLite persistence may look the following way:
 
 ```yaml
 ...

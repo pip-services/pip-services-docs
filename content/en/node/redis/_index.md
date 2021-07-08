@@ -9,7 +9,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    This module for working with a Redis database of type key-value contains components for working with cache and locks, namely RedisCache and RedisLock.
+    It contains packagesf for working with a Redis database of type key-value. 
 ---
 
 ### Packages

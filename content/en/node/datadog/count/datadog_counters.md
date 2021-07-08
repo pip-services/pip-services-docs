@@ -4,7 +4,7 @@ title: "DataDogCounters"
 linkTitle: "DataDogCounters"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    Performance counters that send their metrics to DataDog service.
+    Performance counters that send their metrics to a DataDog service.
 
 
 ---
@@ -14,9 +14,8 @@ description: >
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
 ### Description
+The DataDogCounters class allows you to create performance counters that send their metrics to a DataDog service.
 
-DataDog is a popular monitoring SaaS service. It collects logs, metrics, events
-from infrastructure and applications and analyze them in a single place.
 
 #### Configuration parameters
 
@@ -42,7 +41,7 @@ from infrastructure and applications and analyze them in a single place.
 - **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
 
 ### Constructors
-Creates a new instance of the performance counters.
+Creates a new instance of the class.
 
 > `public` constructor()
 
@@ -50,19 +49,19 @@ Creates a new instance of the performance counters.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id to trace execution through call chain.
+- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
 
 #### isOpen
 Checks if the component is opened.
@@ -77,15 +76,15 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### save
-Saves the current counters measurements.
+Saves the current counters' measurements.
 
 > `protected` save(counters: [Counter[]](../../../components/count/counter)): void
 
-- **counters**: [Counter[]](../../../components/count/counter) - current counters measurements to be saves.
+- **counters**: [Counter[]](../../../components/count/counter) - current counters' measurements to be saves.
 
 
 #### setReferences
@@ -93,7 +92,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

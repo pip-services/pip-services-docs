@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create SQLite components by their descriptors.
 ---
 ---
 <div class="module-body"> 
@@ -13,8 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultSqliteFactory](default_sqlite_factory)
-TODO: add description
-
+Creates SQLite components by their descriptors.
 
 </div>
 

@@ -14,10 +14,10 @@ description: >
 ### Description
 The SqliteConnection class allows you to create SQLite connections using the default driver.
 
-Important points
+**Important points**
 
 By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
+you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -79,7 +79,7 @@ Closes the component and frees used resources.
 
 
 #### configure
-Configures the component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 

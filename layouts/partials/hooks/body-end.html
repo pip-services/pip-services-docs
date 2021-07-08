@@ -37,11 +37,7 @@
       // Filter by language
       let langNamePosInUrl = isGitRepo ? 4 : 3 
 
-      console.log(hits.length);
-
       hits = hits.filter((item, index) => {
-
-        
 
         //for (let i = Object.getOwnPropertyNames(item.hierarchy).length; i > 1; i--) {
         //  let prevIndex = i - 1;
@@ -50,25 +46,29 @@
         //  item._highlightResult.hierarchy_camel[0]['lvl' + i] = copy(item._highlightResult.hierarchy_camel[0]['lvl' + prevIndex]);
         //}
 
-        //item.hierarchy.lvl1 = language;
-        //item._highlightResult.hierarchy.lvl1 = undefined;
-        //item._highlightResult.hierarchy_camel[0].lvl1 = undefined;
-        
+        // Add current menuSection and module to hits
+        let menuSection = item.url.split('/')[3];
+        let module = item.url.split('/')[4];
+        // capitalize
+        menuSection = menuSection.charAt(0).toUpperCase() + menuSection.slice(1);
+        module = module.charAt(0).toUpperCase() + module.slice(1);
+
         if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
           let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();
           let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
+          item.hierarchy.lvl0 = module;
+          item._highlightResult.hierarchy.lvl0 = module;
+
           return isCorrectHit;
         } else {
-          // Add current language to hits
-          let language = hits[index].url.split('/')[3]
-          // capitalize
-          language = language.charAt(0).toUpperCase() + language.slice(1);
+          item.hierarchy.lvl0 = menuSection + ' → ' + module;
+          item._highlightResult.hierarchy.lvl0 = menuSection + ' → ' + module;
 
-          if (!item.hierarchy.lvl6) {
-            item.hierarchy.lvl6 = language;
-            item._highlightResult.hierarchy.lvl6 = { value: '<span style="color:#81c7f9">' + language + '</span>' };
-          }
+          //if (!item.hierarchy.lvl6) {
+          //  item.hierarchy.lvl6 = menuSection;
+          //  item._highlightResult.hierarchy.lvl6 = { value: '<span style="color:#81c7f9">' + menuSection + '</span>' };
+          //}
         }
         
         return true

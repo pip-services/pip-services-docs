@@ -24,7 +24,7 @@ Important points
 #### Configuration parameters
 
 - **table**: (optional) SQLite table name
-- **schema**: (optional) SQLite schema name
+- **schema**: (optional) SQLite schema name 
 - **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **database**: database file path

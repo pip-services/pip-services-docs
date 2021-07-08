@@ -1,8 +1,8 @@
 ---
 type: docs
-title: "IKafkaMessageListener"
-linkTitle: "IKafkaMessageListener"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
+title: "IMqttMessageListener"
+linkTitle: "IMqttMessageListener"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
     TODO: add description
 

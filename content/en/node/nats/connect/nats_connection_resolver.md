@@ -1,10 +1,11 @@
 ---
 type: docs
-title: "KafkaConnection"
-linkTitle: "KafkaConnection"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
+title: "NatsConnectionResolver"
+linkTitle: "NatsConnectionResolver"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    Helper class that resolves Kafka connection and credential parameters, validates them and generates connection options.
+    Helper class that resolves NATS connection and credential parameters, 
+    validates them and generates connection options.
 
 ---
 
@@ -15,7 +16,6 @@ description: >
 TODO: add description
 
 #### Configuration parameters
-
 
 - **connection(s)**:
     - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
@@ -52,14 +52,14 @@ The connection resolver.
 ### Instance methods
 
 #### compose
-Composes Kafka connection options from connection and credential parameters.
+Composes NATS connection options from connection and credential parameters.
 
 > `public` compose(correlationId: string, connections: [ConnectionParams[]](../../../components/connect/connection_params), credential: [CredentialParams](../../../components/auth/credential_params)): Promise\<any\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **connections**: [ConnectionParams[]](../../../components/connect/connection_params) - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
-- **returns**: Promise\<any\> - resolved Kafka connection options.
+- **returns**: Promise\<any\> - resolved NATS connection options.
 
 
 #### configure
@@ -71,12 +71,12 @@ Configures the component by passing configuration parameters.
 
 
 #### resolve
-Resolves Kafka connection options from connection and credential parameters.
+Resolves NATS connection options from connection and credential parameters.
 
 > `public` resolve(correlationId: string): Promise\<any\>
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise\<any\> - resolved Kafka connection options.
+- **returns**: Promise\<any\> - resolved NATS connection options.
 
 
 #### setReferences

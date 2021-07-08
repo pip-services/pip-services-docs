@@ -51,14 +51,12 @@ Kafka is a popular light-weight protocol to communicate IoT devices.
 
 
 ### Constructors
-Creates a new instance of the persistence component.
+Creates a new instance of the message queue.
 
 > `public` constructor(name?: string)
 
 - **name**: string - (optional) a queue name.
 
-
-### Fields
 
 ### Fields
 
@@ -192,7 +190,6 @@ TODO: add description
 
 > `protected` getTopic(): string
 
-- **value**: any - TODO: add description
 - **returns**: string - TODO: add description
 
 
@@ -254,7 +251,7 @@ If there are no messages available in the queue it returns null.
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue it returns an empty list.
 
-- Important: This method is not supported by MQTT.
+- Important: This method is not supported by Kafka.
 
 > `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)>
 
@@ -276,7 +273,7 @@ Receives an incoming message and removes it from the queue.
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - a received message.
+- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - a received message or null if nothing was received.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.

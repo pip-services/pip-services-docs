@@ -4,7 +4,7 @@ title: "DefaultKafkaFactory"
 linkTitle: "DefaultKafkaFactory"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: > 
-    Creates [KafkaMessageQueue](../../../queues/kafka_message_queue) components by their descriptors.
+    Creates [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 ---
 
 **Extends:** [Factory](../../../components/build/factory)
@@ -22,5 +22,5 @@ Create a new instance of the factory.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [KafkaMessageQueue](../../../queues/kafka_message_queue)
+- #### [KafkaMessageQueue](../../queues/kafka_message_queue)
 

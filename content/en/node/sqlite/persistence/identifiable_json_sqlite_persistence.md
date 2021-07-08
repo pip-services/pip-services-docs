@@ -15,9 +15,9 @@ description: >
 
 Important points    
     
-- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - The JSON table has only two fields: id and data.
-- In basic scenarios child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter), [getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with a specific filter function.
+- In basic scenarios, child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter), [getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with a specific filter function.
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
@@ -26,7 +26,7 @@ Important points
 - **table**: (optional) SQLite table name
 - **schema**: (optional) SQLite schema name
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **database**: database file path
     - **uri**: resource URI with file:// protocol
 

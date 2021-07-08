@@ -1,5 +1,4 @@
 {{ with .Site.Params.algolia_docsearch }}
-<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
 <script>
   // fix docsearch bug with inputSelector
   function delHiddenLgSearch() {
@@ -79,8 +78,7 @@
       return hits;
       
     },
-
-
+    
     // Set debug to true to inspect the dropdown
     debug: true,
   });

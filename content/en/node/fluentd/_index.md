@@ -18,7 +18,7 @@ description: >
 
 The module contains the following packages:
 
-- [**Build**](build) - contains a factory for the construction of components
+- [**Build**](build) - contains a factory for the construction of components 
 - [**Log**](log) - Logging components
 
 

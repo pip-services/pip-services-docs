@@ -4,7 +4,7 @@ title: "DefaultMemcachedFactory"
 linkTitle: "DefaultMemcachedFactory"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: > 
-    TODO: add description
+    Creates Memcached components by their descriptors.
     
 ---
 
@@ -12,11 +12,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultMemcachedFactory class allows you to create Memcached components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

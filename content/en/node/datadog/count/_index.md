@@ -5,7 +5,7 @@ linkTitle: "Count"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create performance counters that send their metrics to a DataDog service.
 
 ---
 ---
@@ -16,7 +16,6 @@ description: >
 ### Classes
 
 #### [DataDogCounters](datadog_counters)
-TODO: add description
-
+Performance counters that send their metrics to a DataDog service.
 
 </div>

@@ -28,10 +28,10 @@ other parameters are passed to the action itself.
     - **connect_timeout**: (optional) connection timeout in milliseconds (default: 10 sec)
 
 #### References
-- **\*:logger:\*:\*:1.0**: (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
-- **\*:counters:\*:\*:1.0**: (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements.
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
-- **\*:credential-store:\*:\*:1.0**: (optional) Credential stores to resolve credentials.
+- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements.
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
+- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials.
 
 ### Constructors
 Creates a new instance of this client.

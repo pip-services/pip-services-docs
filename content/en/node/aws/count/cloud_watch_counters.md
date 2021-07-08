@@ -30,9 +30,9 @@ The CloudWatchCounters class allows you to create performance counters taht peri
 
 
 #### References
-- **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
-- **\*:credential-store:\*:\*:1.0**: (optional) credential stores to resolve credentials requests
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials requests
 
 ### Constructors
 Creates a new instance of this counters.

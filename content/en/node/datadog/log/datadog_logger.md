@@ -39,9 +39,9 @@ The DataDogLogger class allows you to create loggers that dump execution logs to
 
 #### References
 
-- **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
-- **\*:counters:\*:\*:1.0**: (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 ### Constructors
 Creates a new instance of the logger.

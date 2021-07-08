@@ -32,9 +32,9 @@ The CloudWatchLogger class allows you to create loggers that write log messages 
 
 
 #### References
-- **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters source
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
-- **\*:credential-store:\*:\*:1.0**: (optional) credential stores used to resolve credentials requests
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters source
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores used to resolve credentials requests
 
 ### Constructors
 Creates a new instance of this logger.

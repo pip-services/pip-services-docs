@@ -32,8 +32,8 @@ The AwsConnectionResolver class allows you to retrieve AWS connection and creden
     - **access_key**: AWS access/client id
 
 #### References
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
-- **\*:credential-store:\*:\*:1.0**: (optional) credential stores to resolve credentials.
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials.
 
 ### Fields
 

@@ -14,8 +14,9 @@ description: >
 ### Description
 The SqliteConnectionResolver class is used to resolve SQLite connections and credential paramters, validate them and generate connection URIs.
 
-Important points
-It is able to process multiple connections to SQLite cluster nodes.
+**Important points**  
+
+- It is able to process multiple connections to SQLite cluster nodes.
 
 
 #### Configuration parameters
@@ -64,7 +65,7 @@ Resolves a SQLite connection URI from connection and credential parameters.
 > `public` resolve(correlationId: string): Promise\<string\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise\<string\> - a resolved config.
+- **returns**: Promise\<string\> - resolved config.
 
 
 #### setReferences
@@ -72,4 +73,4 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

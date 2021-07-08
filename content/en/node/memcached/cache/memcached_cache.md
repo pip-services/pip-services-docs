@@ -4,13 +4,13 @@ title: "MemcachedCache"
 linkTitle: "MemcachedCache"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    Distributed cache that stores values in Memcache's caching service.
+    Distributed cache that stores values in Memcached's caching service.
 ---
 
 **Implements:** [ICache](../../../components/cache/icache), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
-The MemcachedCache class allows you to create distributed cache that stores values in Memcache's caching service
+The MemcachedCache class allows you to create distributed cache that stores values in Memcached's caching service
 
 Important points
 

@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-fluentd-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create Fluentd components by their descriptors.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultFluentdFactory](default_fluentd_factory)
-TODO: add description
+Creates Fluentd components by their descriptors.
 
 
 </div>

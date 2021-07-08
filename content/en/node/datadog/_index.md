@@ -17,10 +17,10 @@ description: >
 
 The module contains the following packages:
 
-- [**Build**](build) - TODO: add description
-- [**Clients**](clients) - TODO: add description
-- [**Count**](count) - TODO: add description
-- [**Log**](log) - TODO: add description
+- [**Build**](build) - Contains a class used to create DataDog components by their descriptors.
+- [**Clients**](clients) - Contains constants and classes used to define REST clients for DataDog
+- [**Count**](count) - Contains a class used to create performance counters that send their metrics to a DataDog service
+- [**Log**](log) - Contains a class used to create loggers that dump execution logs to a DataDog service.
 
 
 ### Use

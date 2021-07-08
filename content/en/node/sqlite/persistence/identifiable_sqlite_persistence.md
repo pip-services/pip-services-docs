@@ -14,20 +14,19 @@ description: >
 
 ### Description
 
-The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
-
-In basic scenarios child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter), [getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with specific filter function.
-All other operations can be used out of the box. 
-
-In complex scenarios child classes can implement additional operations by 
-accessing **this._collection** and **this._model** properties.
+Important points
+    
+- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- In basic scenarios child classes shall only override [getPageByFilter](../sqlite_persistence/#getpagebyfilter), [getListByFilter](../sqlite_persistence/#getlistbyfilter) or [deleteByFilter](../sqlite_persistence/#deletebyfilter) operations with specific filter function.
+- All other operations can be used out of the box. 
+- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 
 - **table**: (optional) SQLite table name
 - **schema**: (optional) SQLite schema name
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **database**: database file path
     - **uri**: resource URI with file:// protocol
 
@@ -62,8 +61,8 @@ Converts the given object from the public partial format.
 
 > `protected` convertFromPublicPartial(value: any): any
 
-- **value**: any - the object to convert from the public partial format.
-- **returns**: any - the initial object.
+- **value**: any - object to convert from the public partial format.
+- **returns**: any - initial object.
 
 
 #### create
@@ -116,8 +115,8 @@ Gets a data item by its unique id.
 
 
 #### set
-Sets a data item. If the data item exists it updates it,
-otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it.
+Otherwise, it creates a new data item.
 
 > `public` set(correlationId: string, item: T): Promise\<T\>
 

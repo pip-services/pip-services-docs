@@ -5,7 +5,7 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    This package contains classes used to create SQLite persistence components.
+    This package contains classes used to create abstract persistence components to perform basic CRUD operations..
     
 ---
 ---

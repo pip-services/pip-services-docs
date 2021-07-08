@@ -11,11 +11,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultRedisFactory class allows you to create Redis components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

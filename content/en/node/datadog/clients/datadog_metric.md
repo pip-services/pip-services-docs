@@ -4,14 +4,14 @@ title: "DataDogMetric"
 linkTitle: "DataDogMetric"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    Defines fields for DataDog metrics.
 
 
 ---
 
 ### Description
 
-TODO: add description
+The DataDogMetric class defines fields for DataDog metrics.
 
 
 ### Fields
@@ -19,25 +19,25 @@ TODO: add description
 <span class="hide-title-link">
 
 #### metric
-TODO: add description
+Metric
 > `public` **metric**: string
 #### service
-TODO: add description
+Service
 > `public` **service**: string
 #### host
-TODO: add description
+Host
 > `public` **host**: string
 #### tags
-TODO: add description
+Tags
 > `public` **tags**: any
 #### type
-TODO: add description
+Type
 > `public` **type**: string
 #### interval
-TODO: add description
+Interval
 > `public` **interval**: number
 #### points
-TODO: add description
+Points
 > `public` **points**: [DataDogMetricPoint[]](../datadog_metric_point)
 
 </span>

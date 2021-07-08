@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The DefaultDataDogFactory is used to create DataDog components by their descriptors.
+The DefaultDataDogFactory is used to create DataDog components by their descriptors.  
 
 ### Constructors
 Creates a new instance of the factory.

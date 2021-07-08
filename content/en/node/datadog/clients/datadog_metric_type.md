@@ -19,22 +19,22 @@ TODO: add description
 <span class="hide-title-link">
 
 #### Gauge
-TODO: add description
+Gauge
 > `public static` **Gauge**: string = "gauge"
 #### Count
-TODO: add description
+Count
 > `public static` **Count**: string = "count"
 #### Rate
-TODO: add description
+Rate
 > `public static` **Rate**: string = "rate"
 #### Set
-TODO: add description
+Set
 > `public static` **Set**: string = "set"
 #### Histogram
-TODO: add description
+Histogram
 > `public static` **Histogram**: string = "histogram"
 #### Distribution
-TODO: add description
+Distribution
 > `public static` **Distribution**: string = "distribution"
 
 </span>

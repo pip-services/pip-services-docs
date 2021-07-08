@@ -315,7 +315,7 @@ Adds single quotes to a string.
 Adds the schema's name to the table's name
 > `protected` quotedTableName(): string
 
-- **returns**: string - TODO: add description
+- **returns**: string - table's name with added schema's name.
 
 #### setReferences
 Sets references to dependent components.

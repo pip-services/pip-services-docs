@@ -4,14 +4,14 @@ title: "DataDogLogMessage"
 linkTitle: "DataDogLogMessage"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    Defines the fields for DataDog log messages.
+    Defines fields for DataDog log messages.
 
 
 ---
 
 ### Description
 
-The DataDogLogMessage class defines the fields for DataDog log messages.
+The DataDogLogMessage class defines fields for DataDog log messages.
 
 
 ### Fields

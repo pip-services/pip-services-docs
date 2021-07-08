@@ -4,18 +4,18 @@ title: "DefaultSqliteFactory"
 linkTitle: "DefaultSqliteFactory"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: > 
-    Creates Sqlite components by their descriptors.
+    Creates SQLite components by their descriptors.
 ---
 
 **Extends:** [Factory](../../../components/build/factory)
 
 ### Description
 
-TODO: add description
+The DefaultSqliteFactory class allows you to create SQLite components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

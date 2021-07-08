@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlite-nodex"
 description: >
-    TODO: add description
+    This package provides two classes used to create SQLite connections.
 ---
 ---
 
@@ -14,10 +14,9 @@ description: >
 ### Classes
 
 #### [SqliteConnection](sqlite_connection)
-TODO: add description
+SQLite connection using the default driver.
 
 
 #### [SqliteConnectionResolver](sqlite_connection_resolver)
-TODO: add description
-
+Helper class that resolves a SQLite connection and credential parameters, validates them and generates a connection URI.
 </div>

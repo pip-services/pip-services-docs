@@ -4,14 +4,14 @@ title: "DataDogStatus"
 linkTitle: "DataDogStatus"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    Defines the different status levels.
 
 
 ---
 
 ### Description
 
-TODO: add description
+The DataDogStatus class defines the different status levels.
 
 
 ### Fields
@@ -19,19 +19,19 @@ TODO: add description
 <span class="hide-title-link">
 
 #### Emergency
-TODO: add description
+Emergency
 > `public static` **Emergency**: string = "EMERGENCY"
 #### Error
-TODO: add description
+Error
 > `public static` **Error**: string = "ERROR"
 #### Warn
-TODO: add description
+Warn
 > `public static` **Warn**: string = "WARN"
 #### Info
-TODO: add description
+Info
 > `public static` **Info**: string = "INFO"
 #### Debug
-TODO: add description
+Debug
 > `public static` **Debug**: string = "DEBUG"
 
 </span>

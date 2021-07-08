@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+Defines fields for DataDog metric types.
 
 
 ### Fields

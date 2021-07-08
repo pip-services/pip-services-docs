@@ -4,19 +4,22 @@ title: "MemcachedCache"
 linkTitle: "MemcachedCache"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    Distributed cache that stores values in Memcaches caching service.
+    Distributed cache that stores values in Memcache's caching service.
 ---
 
 **Implements:** [ICache](../../../components/cache/icache), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The MemcachedCache class allows you to create distributed cache that stores values in Memcache's caching service
 
-The current implementation does not support authentication.
+Important points
+
+- The current implementation does not support authentication.
 
 #### Configuration parameters
 
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
@@ -42,21 +45,21 @@ The current implementation does not support authentication.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
@@ -64,11 +67,10 @@ Checks if the component is opened.
 
 
 #### open
-Checks if the component is opened.
-
+Opens the component.
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### remove
@@ -76,19 +78,19 @@ Removes a value from the cache by its key.
 
 > `public` remove(correlationId: string, key: string): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **return**: Promise\<any\> - the deleted value.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **return**: Promise\<any\> - deleted value.
 
 #### retrieve
-Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired it returns null.
+Retrieves a cached value from the cache using its key.
+If the value is missing in the cache or expired, it returns null.
 
 > `public` retrieve(correlationId: string, key: string): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **return**: Promise\<any\> - a cached value or *null* if nothing was found.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **return**: Promise\<any\> - cached value or *null* if nothing was found.
 
 #### setReferences
 Sets references to dependent components.
@@ -98,15 +100,15 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### store
-Stores value in the cache with expiration time.
+Stores a value in the cache with an expiration time.
 
 > `public` store(correlationId: string, key: string, value: any, timeout: number): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: any - a value to store.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: any - value to store.
 - **timeout**: number - expiration timeout in milliseconds.
-- **returns**: Promise\<any\> - the stored value
+- **returns**: Promise\<any\> - stored value
 
 
 ### Examples

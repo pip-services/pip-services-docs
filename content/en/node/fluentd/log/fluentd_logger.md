@@ -4,25 +4,25 @@ title: "FluentdLogger"
 linkTitle: "FluentdLogger"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-fluentd-nodex"
 description: > 
-    Logger that dumps execution logs to Fluentd service.
+    Logger that dumps execution logs to a Fluentd service.
 ---
 **Extends:** [CachedLogger](../../../components/log/cached_logger)
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The FluentdLogger class allows you to create loggers that dump execution logs to a Fluentd service.
 
-Fluentd is a popular logging service that is often used
-together with Kubernetes container orchestrator.
+Important points
 
-Authentication is not supported in this version.
+- Authentication is not supported in this version.
 
 #### Configuration parameters
 
 - **level**: maximum log level to capture
 - **source**: source (context) name
 - **connection(s)**:           
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: connection protocol: http or https
     - **host**: host name or IP address
     - **port**: port number
@@ -56,7 +56,7 @@ Closes the component and frees used resources.
 
 
 #### configure
-Closes the component and frees used resources.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -68,7 +68,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component is open and False otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -92,7 +92,7 @@ Sets references to dependent components.
 
 > setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **messages**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **messages**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

@@ -4,7 +4,7 @@ title: "DataDogLogger"
 linkTitle: "DataDogLogger"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    Logger that dumps execution logs to DataDog service.
+    Logger that dumps execution logs to a DataDog service.
 
 ---
 
@@ -13,16 +13,15 @@ description: >
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
 ### Description
+The DataDogLogger class allows you to create loggers that dump execution logs to a DataDog service.
 
-DataDog is a popular monitoring SaaS service. It collects logs, metrics, events
-from infrastructure and applications and analyze them in a single place.
 
 #### Configuration parameters
 
 - **level**: maximum log level to capture
 - **source**: source (context) name
 - **connection**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: (optional) connection protocol: http or https (default: https)
     - **host**: (optional) host name or IP address (default: http-intake.logs.datadoghq.com)
     - **port**: (optional) port number (default: 443)
@@ -42,7 +41,7 @@ from infrastructure and applications and analyze them in a single place.
 
 - **\*:context-info:\*:\*:1.0**: (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
 - **\*:counters:\*:\*:1.0**: (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0**: (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 ### Constructors
 Creates a new instance of the logger.
@@ -53,11 +52,11 @@ Creates a new instance of the logger.
 ### Instance methods
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -65,7 +64,7 @@ Configures component by passing configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id to trace execution through call chain.
+- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
 
 #### isOpen
 Checks if the component is opened.
@@ -80,7 +79,7 @@ Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### save
@@ -88,7 +87,7 @@ Saves log messages from the cache.
 
 > `protected` save(counters: [Counter[]](../../../components/count/counter)): void
 
-- **counters**: [Counter[]](../../../components/count/counter) - current counters measurements to be saves.
+- **counters**: [Counter[]](../../../components/count/counter) - current counters measurements to be saved.
 
 
 #### setReferences
@@ -96,7 +95,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

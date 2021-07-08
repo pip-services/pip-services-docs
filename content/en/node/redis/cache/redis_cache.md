@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The RedisCache class allows you to create distributed caches that store values in Redis in-memory database.
 
 #### Configuration parameters
 
@@ -23,8 +23,8 @@ TODO: add description
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
     - **store_key**: key to retrieve parameters from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: user name (currently is not used)
-    - **password**: user password
+    - **username**: username (currently is not used)
+    - **password**: user's password
 - **options**:
     - **retries**: number of retries (default: 3)
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
@@ -41,11 +41,11 @@ TODO: add description
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
-The credential resolver
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
@@ -58,7 +58,7 @@ Creates a new instance of this cache.
 ### Instance methods
 
 #### close
-Configures components by passing configuration parameters.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
@@ -66,7 +66,7 @@ Configures components by passing configuration parameters.
 
 
 #### configure
-Configures components by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -74,37 +74,37 @@ Configures components by passing configuration parameters.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 #### open
 Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### remove
 Removes a value from the cache by its key.
 
 > `public` remove(correlationId: string, key: string): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **returns**: Promise\<any\> - the removed value.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: Promise\<any\> - removed value.
 
 #### retrieve
 Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired it returns null.
+If the value is missing in the cache or expired, it returns null.
 
 > `public` retrieve(correlationId: string, key: string): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **returns**: Promise\<any\> - a retrieve cached value or *null* if nothing was found.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: Promise\<any\> - retrieved cached value or *null* if nothing was found.
 
 #### setReferences
 Sets references to dependent components.
@@ -115,15 +115,15 @@ Sets references to dependent components.
 
 
 #### store
-Stores value in the cache with expiration time.
+Stores a value in the cache with and expiration time.
 
 > `public` store(correlationId: string, key: string, value: any, timeout: number): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: any - a value to store.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: any - value to store.
 - **timeout**: number - expiration timeout in milliseconds.
-- **returns**: Promise\<any\> - the stored value.
+- **returns**: Promise\<any\> - stored value.
 
 
 ### Examples

@@ -5,7 +5,7 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create loggers that dump execution logs to a DataDog service.
 
 ---
 ---
@@ -16,7 +16,7 @@ description: >
 ### Classes
 
 #### [DataDogLogger](datadog_logger)
-TODO: add description
+Logger that dumps execution logs to a DataDog service.
 
 
 </div>

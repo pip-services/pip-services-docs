@@ -4,7 +4,9 @@
   <i>{{ with resources.Get "icons/search.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}</i>
 </button>
 
-<input id="hidden-search" type="search" class="d-md-none d-xl-inline-block d-sm-inline-block form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+<span style="position: relative; display: inline-block; direction: ltr;">
+  <input id="hidden-search" type="search" class="d-md-none d-xl-inline-block d-sm-inline-block form-control td-search-input" placeholder="{{ T "ui_search" }}" aria-label="{{ T "ui_search" }}" autocomplete="off">
+</span>
 
 {{ else if .Site.Params.offlineSearch }}
 {{ $offlineSearchIndex := resources.Get "json/offline-search-index.json" | resources.ExecuteAsTemplate "offline-search-index.json" . }}

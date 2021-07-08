@@ -28,7 +28,7 @@ Creates an instance of this class.
 ### Instance methods
 
 #### configure
-Configures the component by passing its configuration parameters.
+Configures the component by passing its configuration parameters. 
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 

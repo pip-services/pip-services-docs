@@ -14,9 +14,9 @@ description: >
 ### Description
 The CassandraConnection class allows you to create Cassandra connections using the default driver.
 
-Important points
+**Important points**
 
-- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple persistence components you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -26,7 +26,7 @@ Important points
     - **port**: port number (default: 9042)
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-    - **store_key**: (optional) key used to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
+    - **store_key**: (optional) key used to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store/)
     - **username**: username
     - **password**: user's password
 - **options**:
@@ -113,14 +113,14 @@ Gets Cassandra datacenter's name.
 Gets Cassandra keyspace's name.
 > `public` getKeyspace(): string
 
-- **returns**: string - Cassandra keyspace name.
+- **returns**: string - Cassandra keyspace's name.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -136,4 +136,4 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

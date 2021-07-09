@@ -88,13 +88,13 @@ Removes a value from the cache by its key.
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.
-If the value is missing in the cache or expired, it returns null.
+If the value is missing in the cache or expired, it returns nil.
 
 > (c [*MemcachedCache]()) Retrieve(correlationId string, key string) (value interface{}, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **return**: (value interface{}, err error) - cached value or *null* if nothing was found.
+- **return**: (value interface{}, err error) - cached value or *nil* if nothing was found.
 
 #### SetReferences
 Sets references to dependent components.

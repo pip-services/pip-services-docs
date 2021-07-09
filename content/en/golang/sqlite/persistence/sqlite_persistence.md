@@ -94,6 +94,7 @@ Clears a component's state.
 > (c [*SqlitePersistence]()) Clear(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error or nil no errors occured.
 
 #### ClearSchema
 Clears all auto-created objects

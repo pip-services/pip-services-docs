@@ -14,7 +14,7 @@ description: >
 ### Description
 The CassandraConnectionResolver class is used to resolve Cassandra connections and credential parameters, validate them and generate connection URIs.
 
-Important points
+**Important points**
 
 - It is able to process multiple connections to Cassandra cluster nodes.
 

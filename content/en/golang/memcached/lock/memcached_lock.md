@@ -2,15 +2,13 @@
 type: docs
 title: "MemcachedLock"
 linkTitle: "MemcachedLock"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
 description: >
     Distributed lock that is implemented based on Memcached's caching service.
  
 ---
 
-**Extends:** [Lock](../../../components/lock/lock) 
-
-**Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
+**Implements:** [*Lock](../../../components/lock/lock) 
 
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.
@@ -46,76 +44,85 @@ Important points
 
 ### Instance methods
 
-#### close
+#### Close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*MemcachedLock]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error or nil no errors occured
 
-#### configure
+#### Configure
 Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*MemcachedLock]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> (c [*MemcachedLock]()) IsOpen() bool
 
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> (c [*MemcachedLock]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id usd to trace execution through the call chain.
+- **returns**: error - error or nil no errors occured
 
-#### releaseLock
+#### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> `public` releaseLock(correlationId: string, key: string): Promise\<void\> 
+> (c [*MemcachedLock]()) ReleaseLock(correlationId string, key string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
+- **returns**: error - error or nil no errors occured
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*MemcachedLock]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
-#### tryAcquireLock
+#### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `public` tryAcquireLock(correlationId: string, key: string, ttl: number): Promise\<boolean\>
+> (c [*MemcachedLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (result bool, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
-- **ttl**: number - lock timeout (time to live) in milliseconds.
-- **returns**: Promise\<boolean\> - **true** if lock was successfull and **false** otherwise.
+- **ttl**: int64 - lock timeout (time to live) in milliseconds.
+- **returns**: (result bool, err error) - **true** if lock was successfull and **false** otherwise.
 
 
 ### Examples
-```typescript
-let lock = new MemcachedLock();
-lock.configure(ConfigParams.fromTuples(
+```go
+lock := NewMemcachedLock();
+lock.Configure(cconf.NewConfigParamsFromTuples(
   "host", "localhost",
-  "port", 11211
+  "port", 11211,
 ));
-await lock.open("123");
-await lock.acquire("123", "key1");
-try {
-  // Processing...
-} finally {
-  await lock.releaseLock("123", "key1");
+
+err := lock.Open("123")
+if err != nil {
+  ...
 }
+
+result, err := lock.TryAcquireLock("123", "key1", 3000)
+if result {
+	// Processing...
+}
+
+err = lock.ReleaseLock("123", "key1")
+// Continue...
 ```

@@ -17,8 +17,9 @@ function loadNavbar(event) {
         navItem.addEventListener('click', () => localStorage['currentMenuActiveItem'] = navItem.innerText)
     )
 
-    // load navbar scroll state
+    // load navbar scroll state 
     document.getElementById('td-section-nav').scrollTop = Number.parseFloat(localStorage['navbarScrollState']);
+    document.getElementById('js-bootstrap-offcanvas').scrollTop = Number.parseFloat(localStorage['navbarScrollState']);
 
     // load navbar state
     if (document.getElementsByClassName('nav-link active dropdown-item').length == 0){
@@ -123,8 +124,14 @@ function showSearch(event) {
     }
 }
 
+let saveScrollState = (e) => localStorage['navbarScrollState'] = e.target.scrollTop;
+
 document.getElementById('td-section-nav').addEventListener(
-    'scroll', (e) => localStorage['navbarScrollState'] = e.target.scrollTop
+    'scroll', saveScrollState
+);
+
+document.getElementById('js-bootstrap-offcanvas').addEventListener(
+    'scroll', saveScrollState
 );
 
 document.getElementById("search-btn").addEventListener("click", showSearch);

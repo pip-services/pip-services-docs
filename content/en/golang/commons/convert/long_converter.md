@@ -12,7 +12,7 @@ description: >
 The LongConverter class allows you to convert arbitrary values into longs using the following extended conversion rules:
 
 - Strings are converted to floats, then to longs
-- DateTime: total number of milliseconds since unix epoсh   
+- DateTime: total number of milliseconds since unix epoch   
 - Boolean: 1 for true and 0 for false
 
 ### Methods

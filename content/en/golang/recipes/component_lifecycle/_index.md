@@ -26,8 +26,8 @@ One of the roles of the microservice’s container is to correctly initialize al
 A flexible and, at the same time, standardized approach was developed in the Pip.Services Toolkit for initializing components. This approach preserves the conceptual integrity of the whole microservice, while keeping the source code clean, coherent, and testable. A component’s lifecycle is determined by which of the following interfaces it implements:
 
 - IConfigurable – component configuration [Config](../../commons/config).
-- IReferenceable и IUnreferenceable – setting and destroying references to other components [Reference](../../commons/refer/reference).
-- IOpenable и IClosable – starting and stopping internal functional processes [IOpenable](../../commons/run/iopenable).
+- IReferenceable and IUnreferenceable – setting and destroying references to other components [Reference](../../commons/refer/reference).
+- IOpenable and IClosable – starting and stopping internal functional processes [IOpenable](../../commons/run/iopenable).
 - IExecutable – execution of functional processes [Executable](../../commons/run/iexecutable).
 - INotifiable - sending event notifications [Notifiable](../../commons/run/inotifiable).
 

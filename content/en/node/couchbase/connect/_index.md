@@ -13,7 +13,7 @@ description: >
 
 ### Classes
 
-#### [CouchbaseConnection](сouchbase_connection)
+#### [CouchbaseConnection](couchbase_connection)
 TODO: add description
 
 #### [CouchbaseConnectionParams](couchbase_connection_params)

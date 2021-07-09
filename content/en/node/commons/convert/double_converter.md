@@ -15,7 +15,7 @@ The DoubleConverter class allows you to convert arbitrary values into doubles us
 
  - Strings are converted to double values
 
- - DateTime: total number of milliseconds since unix epoсh
+ - DateTime: total number of milliseconds since unix epoch
     
  - Boolean: 1 for true and 0 for false  
 

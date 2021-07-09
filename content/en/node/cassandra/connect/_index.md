@@ -13,11 +13,11 @@ description: >
 
 ### Classes
 
-#### [CassandraConnection](сassandra_connection)
+#### [CassandraConnection](cassandra_connection)
 Cassandra connection using plain driver.
 
 
-#### [CassandraConnectionResolver](сassandra_connection_resolver)
+#### [CassandraConnectionResolver](cassandra_connection_resolver)
 Helper class that resolves Cassandra connection and credential parameters, validates them and generates a connection URI.
 
 </div>

@@ -13,7 +13,7 @@ description: >
 The IntegerConverter class allows you to convert arbitrary values into integers using the following extended conversion rules:
 
 - Strings are converted to floats, then to integers
-- DateTime: total number of milliseconds since unix epoсh  
+- DateTime: total number of milliseconds since unix epoch  
 - Boolean: 1 for True and 0 for False
 
 ### Static methods

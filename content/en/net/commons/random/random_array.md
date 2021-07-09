@@ -34,7 +34,7 @@ Picks a random element from specified list.
 
 ### Examples
 
-```сы
+```go
 var value1 = RandomArray.Pick(new int []{1, 2, 3, 4}); // Possible result: 3
 
 ```

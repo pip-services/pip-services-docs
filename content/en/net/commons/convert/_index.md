@@ -44,25 +44,25 @@ Converts arbitrary values into Date values using extended conversion rules:
 #### [DoubleConverter](double_converter)
 Converts arbitrary values into double using extended conversion rules:
 - Strings are converted to double values
-- DateTime: total number of milliseconds since unix epoсh
+- DateTime: total number of milliseconds since unix epoch
 - Boolean: 1 for true and 0 for false
 
-#### [FloatConverter](float_сonverter)
+#### [FloatConverter](float_converter)
 Converts arbitrary values into float using extended conversion rules:
 - Strings are converted to float values
-- DateTime: total number of milliseconds since unix epoсh
+- DateTime: total number of milliseconds since unix epoch
 - Boolean: 1 for true and 0 for false
 
 #### [IntegerConverter](integer_converter)
 Converts arbitrary values into integers using extended conversion rules:
 - Strings are converted to floats, then to integers
-- DateTime: total number of milliseconds since unix epoсh
+- DateTime: total number of milliseconds since unix epoch
 - Boolean: 1 for true and 0 for false
 
 #### [JsonConverter](json_converter)
 Converts arbitrary values into longs using extended conversion rules:
 - Strings are converted to floats, then to longs
-- DateTime: total number of milliseconds since unix epoсh
+- DateTime: total number of milliseconds since unix epoch
 - Boolean: 1 for true and 0 for false
 
 #### [MapConverter](map_converter)

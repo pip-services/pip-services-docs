@@ -15,7 +15,7 @@ The DecimalConverter class can be used to convert objects to decimals according 
 
 - Strings are converted to double values
 
-- DateTime: total number of milliseconds since unix epoсh
+- DateTime: total number of milliseconds since unix epoch
     
 - Boolean: 1 for true and 0 for false  
 

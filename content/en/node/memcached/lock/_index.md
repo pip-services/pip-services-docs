@@ -5,7 +5,7 @@ linkTitle: "Lock"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-memcached-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create distributed locks that are implemented based on Memcached's caching service.
 ---
 ---
 
@@ -15,6 +15,6 @@ description: >
 ### Classes
 
 #### [MemcachedLock](memcached_lock)
-TODO: add description
+Distributed lock that is implemented based on Memcached’s caching service.
 
 </div>

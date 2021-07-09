@@ -39,7 +39,7 @@ Creates a new instance and initalizes it with elements from the specified map.
 Parses semicolon-separated key-value pairs and returns them as a FilterParams.  
 See [StringValueMap.FromString](../string_value_map/#fromstring)
 
-> `public static` [FilterParams]() FromString(string line)
+> `public new static` [FilterParams]() FromString(string line)
 
 - **line**: string - semicolon-separated key-value list to initialize FilterParams.
 - **returns**: [FilterParams]() - newly created FilterParams.
@@ -48,7 +48,7 @@ See [StringValueMap.FromString](../string_value_map/#fromstring)
 #### FromTuples
 Creates a new FilterParams from a list of key-value pairs called tuples.
 
-> `public static` [FilterParams]() FromTuples(params object[] tuples)
+> `public new static` [FilterParams]() FromTuples(params object[] tuples)
 
 - **tuples**: object[] - list of values where odd elements are keys and the following even elements are values
 - **returns**: [FilterParams]() - newly created FilterParams.
@@ -57,7 +57,7 @@ Creates a new FilterParams from a list of key-value pairs called tuples.
 #### FromValue
 Converts a specified value to FilterParams.
 
-> `public static` [FilterParams]() FromValue(object value)
+> `public new static` [FilterParams]() FromValue(object value)
 
 - **value**: object - value to be converted
 - **returns**: [FilterParams]() - newly created FilterParams.

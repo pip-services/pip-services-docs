@@ -97,7 +97,7 @@ then it returns only the first credential element.
 #### FromString
 Creates a new CredentialParams object filled with key-value pairs serialized as a string.
 
-> `public static` [CredentialParams]() FromString(string line)
+> `public new static` [CredentialParams]() FromString(string line)
 
 - **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**

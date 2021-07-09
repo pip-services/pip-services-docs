@@ -26,7 +26,7 @@ Gets the status of the operation.
 #### SetReferences
 Sets references to dependent components.
 
-> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
+> `public new` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

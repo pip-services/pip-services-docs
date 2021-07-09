@@ -22,12 +22,12 @@ Creates a new instance of the TestCommandableHttpClient class.
 
 ### Instance methods
 
-#### CallCommand
+#### CallCommandAsync
 Calls a remote method via HTTP commadable protocol.
 The call is made via POST operation and all parameters are sent in the body object.
 The complete route to the remote method is defined as baseRoute + "/" + name.
 
-> `public` new Task\<T\> CallCommandAsync\<T\>(string route, string correlationId, object requestEntity)
+> `public new` Task\<T\> CallCommandAsync\<T\>(string route, string correlationId, object requestEntity)
 
 - **name**:string - name of the command to call. 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.

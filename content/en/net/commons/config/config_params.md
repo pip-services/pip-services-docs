@@ -91,7 +91,7 @@ Set default values from specified ConfigParams and returns a new ConfigParams ob
 #### FromString
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.
 
-> `public static` [ConfigParams]() FromString(line: string)
+> `public new static` [ConfigParams]() FromString(line: string)
 
 - **line**: string - string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: *"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"*
@@ -102,7 +102,7 @@ Creates a new ConfigParams object filled with provided key-value pairs called tu
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.  
 See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarray)
 
-> `public static` [ConfigParams]() FromTuples(params object[] 	tuples)
+> `public new static` [ConfigParams]() FromTuples(params object[] 	tuples)
 
 - **tuples**: object[] - tuples to fill a new ConfigParams object.
 - **returns**: [ConfigParams]() - new ConfigParams object.
@@ -111,7 +111,7 @@ See [StringValueMap.fromTuplesArray](../../data/string_value_map/#fromtuplesarra
 #### FromValue
 Creates a new ConfigParams object filled with key-value pairs from the specified object.
 
-> `public static` [ConfigParams]() FromValue(object value)
+> `public new static` [ConfigParams]() FromValue(object value)
 
 - **value**: object - object with key-value pairs used to initialize a new ConfigParams.
 - **returns**: [ConfigParams]() - new ConfigParams object.

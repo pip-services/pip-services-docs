@@ -132,7 +132,7 @@ then it returns only the first connection element.
 #### FromString
 Creates a new ConnectionParams object filled with key-value pairs serialized as a string.
 
-> `public static` [ConnectionParams]() FromString(string line)
+> `public new static` [ConnectionParams]() FromString(string line)
 
 - **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**

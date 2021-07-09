@@ -87,7 +87,7 @@ A unique transaction id used to trace execution throug a call chain.
 
 #### StackTrace
 Stack trace of the exception.
-> `public` string StackTrace { get; set; }
+> `public new` string StackTrace { get; set; }
 
 #### Cause
 Original error wrapped by this exception.

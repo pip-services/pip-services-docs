@@ -35,6 +35,6 @@ Gets the service's information.
 #### SetReferences
 Sets the references of the service.
 
-> `public` void SetReferences([IReferences](../../../commons/refer/ireferences references)
+> `public new` void SetReferences([IReferences](../../../commons/refer/ireferences references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - service's references.

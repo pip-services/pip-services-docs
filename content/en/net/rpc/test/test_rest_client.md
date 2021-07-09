@@ -16,7 +16,7 @@ The TestRestClient class allows you to create a REST client that can be used for
 ### Constructors
 Creates a new instance of the TestRestClient class.
 
-> `public` TestRestClient(string baseRoute)
+> `public new` TestRestClient(string baseRoute)
 
 - **baseRoute**: string - base route to the REST client.
 
@@ -26,14 +26,14 @@ Creates a new instance of the TestRestClient class.
 #### CallAsync
 Calls a remote method via the HTTP/REST protocol.
 
-> `public` Task CallAsync(string correlationId, HttpMethod method, string route)
+> `public new` Task CallAsync(string correlationId, HttpMethod method, string route)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: string - command route. The base route will be added to this route
 
 
-> `public` Task CallAsync(string correlationId, HttpMethod method, string route, object requestEntity)
+> `public new` Task CallAsync(string correlationId, HttpMethod method, string route, object requestEntity)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
@@ -41,7 +41,7 @@ Calls a remote method via the HTTP/REST protocol.
 - **requestEntity**: object - request body object.
 
 
-> `public` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route)
+> `public new` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
@@ -50,7 +50,7 @@ Calls a remote method via the HTTP/REST protocol.
 
 
 
-> `public` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
+> `public new` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
@@ -61,7 +61,7 @@ Calls a remote method via the HTTP/REST protocol.
 #### SafeCallAsync
 Safely calls a remote method via HTTP/REST protocol and logs execution time.
 
-> `public` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
+> `public new` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete".
@@ -70,7 +70,7 @@ Safely calls a remote method via HTTP/REST protocol and logs execution time.
 - **returns**: Task\<T\> - result object.
 
 
-> `public` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route)
+> `public new` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete".

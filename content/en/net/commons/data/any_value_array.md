@@ -62,7 +62,7 @@ Creates a binary clone of this object.
 Checks if this array contains a value.
 The check uses direct comparison between elements and the specified value.
 
-> `public` bool Contains(object value)
+> `public new` bool Contains(object value)
 
 - **value**: object - value to be checked
 - **returns**: bool - true if this array contains the value or false otherwise.

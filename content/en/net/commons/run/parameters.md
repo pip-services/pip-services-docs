@@ -47,7 +47,7 @@ Checks if this map contains an element with a specified key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> `public` bool ContainsKey(string key)
+> `public new` bool ContainsKey(string key)
 
 - **key**: string - key to be checked
 - **returns**: bool - true if this map contains the key or false otherwise.
@@ -181,7 +181,7 @@ Creates a new Parameters object filled with provided key-value pairs called tupl
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
 See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 
-> `public static` [Parameters](../parameters) FromTuples(params object[] tuples)
+> `public new static` [Parameters](../parameters) FromTuples(params object[] tuples)
 
 - **tuples**: object[] - ConfigParams object that contain parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.

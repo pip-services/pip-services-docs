@@ -4,7 +4,7 @@ title: "MqttMessageQueue"
 linkTitle: "MqttMessageQueue"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    Message queue that sends and receives messages via MQTT message broker.
+    Message queue that sends and receives messages via an MQTT message broker.
     
 ---
 
@@ -13,27 +13,27 @@ description: >
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
-
-MQTT is a popular light-weight protocol to communicate IoT devices.
+The MqttMessageQueue class allows you to create message queues that send and receive messages via an MQTT message broker.
+.
 
 #### Configuration parameters
 
 - **topic**: name of MQTT topic to subscribe
 - **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html IDiscovery]]
+    - **discovery_key**: (optional) key to retrieve the connection from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html IDiscovery]]
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) a key to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
-    - **username**: user name
-    - **password**: user password
+    - **store_key**: (optional) key to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
+    - **username**: username
+    - **password**: user's password
 - **options**:
     - **serialize_envelope**: (optional) true to serialize entire message as JSON, false to send only message payload (default: true)
     - **autosubscribe**: (optional) true to automatically subscribe on option (default: false)
     - **qos**: (optional) quality of service level aka QOS (default: 0)
     - **retain**: (optional) retention flag for published messages (default: false)
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
+    - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
     - **connect_timeout**: (optional) number of milliseconds to wait for connection (default: 30000)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 1000)
     - **keepalive_timeout**: (optional) number of milliseconds to ping broker while inactive (default: 3000)
@@ -52,7 +52,7 @@ Creates a new instance of the message queue.
 
 > `public` constructor(name?: string)
 
-- **name**: string - (optional) a queue name.
+- **name**: string - (optional) queue name.
 
 
 ### Fields
@@ -60,52 +60,52 @@ Creates a new instance of the message queue.
 <span class="hide-title-link">
 
 #### _autoSubscribe
-TODO: add description
+Auto-subscribe option
 > `protected` **_autoSubscribe**: boolean
 
 
 #### _connection
-The MQTT connection component.
+MQTT connection component.
 > `protected` **_connection**: any
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
 
 
 #### _options
-TODO: add description
+Configuration options
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params) = new [ConfigParams()](../../../commons/config/config_params)
 
 
 #### _messages
-TODO: add description
+Message
 > `protected` **_messages**: [MessageEnvelope[]](../../../messaging/queues/message_envelope) = []
 
 #### _qos
-TODO: add description
+Quality of service
 > `protected` **_qos**: number
 
 #### _receiver
-TODO: add description
+Message receiver
 > `protected` **_receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 #### _serializeEnvelope
-TODO: add description
+Serialization option.
 > `protected` **_serializeEnvelope**: boolean
 
 
 #### _subscribed
-TODO: add description
+Subscribe option.
 > `protected` **_subscribed**: boolean
 
 #### _topic
-TODO: add description
+Topic
 > `protected` **_topic**: string
 
 </span>
@@ -114,7 +114,7 @@ TODO: add description
 ### Instance methods
 
 #### abandon
-Returnes message into the queue and makes it available for all subscribers to receive it again.
+Returnes a message into the queue and makes it available for all subscribers to receive it again.
 This method is usually used to return a message which could not be processed at the moment
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
 or/and send to dead letter queue.
@@ -123,7 +123,7 @@ or/and send to dead letter queue.
 
 > `public` abandon(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - a message to return.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
 
 #### clear
 Clears a component's state.
@@ -147,11 +147,11 @@ This method is usually used to remove the message after successful processing.
 - Important: This method is not supported by MQTT.
 > `public` complete(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - a message to remove.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -164,44 +164,44 @@ When this method is call [listen](#listen) unblocks the thread and execution con
 
 > `public` endListen(correlationId: string): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### fromMessage
-TODO: add description
+Returns the topic and the data of a message.
 
 > `protected` fromMessage(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): any
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description
-- **returns**: any - TODO: add description
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
+- **returns**: any - topic and data
 
 
 #### getTopic
-TODO: add description
+Obtains the topic.
 
 > `protected` getTopic(): string
 
-- **returns**: string - TODO: add description
+- **returns**: string - topic
 
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### listen
-Listens for incoming messages and blocks the current thread until queue is closed.
+Listens for incoming messages and blocks the current thread until the queue is closed.
 
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 > `public` listen(correlationId: string, receiver: [IMessageReceiver](../../../messaging/queues/imessage_receiver)): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - a receiver to receive incoming messages.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 
 #### moveToDeadLetter
 Permanently removes a message from the queue and sends it to dead letter queue.
@@ -210,16 +210,16 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 
 > `public` moveToDeadLetter(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - a message to be removed.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 
 #### onMessage
-TODO: add description
+Checks if the message comes from the right topic. If this is the case, deserializes it and sends it to the receiver if it's set. Otherwise, puts it into the queue.
 
 > `public` onMessage(topic: string, data: any, packet: any): void
 
-- **topic**: string - TODO: add description
-- **data**: any - TODO: add description
-- **packet**: any - TODO: add description
+- **topic**: string - topic
+- **data**: any - data
+- **packet**: any - packet
 
 #### open
 Opens the component.
@@ -235,36 +235,36 @@ If there are no messages available in the queue it returns null.
 
 > `public` peek(correlationId: string): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - a peeked message.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - peeked message.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them.
-If there are no messages available in the queue it returns an empty list.
+If there are no messages available in the queue, it returns an empty list.
 
 - Important: This method is not supported by MQTT.
 
 > `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **messageCount**: number - a maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)> - a list with peeked messages.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **messageCount**: number - maximum number of messages to peek.
+- **returns**: Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)> - list with peeked messages.
 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
 
 > `public` readMessageCount(): Promise\<number\>
 
-- ***returns**: Promise\<number\> - a number of messages in the queue.
+- ***returns**: Promise\<number\> - number of messages in the queue.
 
 #### receive
 Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **waitTimeout**: number - a timeout in milliseconds to wait for a message to come.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - a received message or null if nothing was received.
+- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
+- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.
@@ -274,40 +274,41 @@ This method is usually used to extend the message processing time.
 
 > `public` renewLock(message: [MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout: number): Promise\<void\>
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - a message to extend its lock.
-- **lockTimeout**: number - a locking timeout in milliseconds.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
+- **lockTimeout**: number - locking timeout in milliseconds.
 
 #### send
 Sends a message into the queue.
 
 > `public` send(correlationId: string, message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - a message envelop to be sent.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
 
 #### setReferences
 Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### subscribe
-TODO: add description
+Subscribes to a topic.
 > `protected` subscribe(correlationId: string): Promise\<void\> 
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### toMessage
-TODO: add description
+If the message has no data, it returns null. Otherwise, it returns the message.
+
 > `protected` toMessage(topic: string, data: any, packet: any): [MessageEnvelope](../../../messaging/queues/message_envelope) 
 
-- **topic**: string - TODO: add description
-- **data**: any - TODO: add description
-- **packet**: any - TODO: add description
-- **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description 
+- **topic**: string - topic
+- **data**: any - data
+- **packet**: any - packet
+- **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - Null if the message has no data. Otherwise, it returns the message.
 
 
 #### unsetReferences

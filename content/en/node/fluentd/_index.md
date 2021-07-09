@@ -10,7 +10,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    The Fluentd module contains logging components that store data on the Fluentd server.
+    It contains logging components that store data on the Fluentd server.
 ---
 
 

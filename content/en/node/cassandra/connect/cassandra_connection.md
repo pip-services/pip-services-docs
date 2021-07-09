@@ -51,7 +51,7 @@ Cassandra connection pool object.
 
 #### _connectionResolver
 Connection resolver.
-> `protected` **_connectionResolver**: [CassandraConnectionResolver](..cassandra_connection_resolver/)
+> `protected` **_connectionResolver**: [CassandraConnectionResolver](../cassandra_connection_resolver)
 
 #### _logger
 Logger.

@@ -18,6 +18,6 @@ description: >
 Abstract persistence component that stores data in Cassandra and implements a number of CRUD operations over data items with unique ids.
 
 #### [CassandraPersistence](cassandra_persistence)
-Abstract persistence component that stores data in Cassandra using plain driver.
+Abstract persistence component that stores data in Cassandra using the default driver.
 
 </div>

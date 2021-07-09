@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultMqttFactory class allows you to create [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors.
 
 ### Constructors
 

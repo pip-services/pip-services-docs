@@ -13,7 +13,7 @@ description: >
 **Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
-The MemcachedLock class allows you to create a lock taht is implemented based on the Memcached's caching service.
+The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.
 
 Important points
 - The current implementation does not support authentication.
@@ -48,7 +48,7 @@ Important points
 ### Instance methods
 
 #### close
-Closes component a and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 

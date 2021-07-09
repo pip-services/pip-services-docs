@@ -22,5 +22,5 @@ Creates a new instance of the factory.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [CassandraConnection](../../connect/cassandra_connection) 
+- #### [CassandraConnection](../../connect/%D1%81assandra_connection/) 
 

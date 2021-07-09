@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The Fluentd class allows you to create Fluentd components by their descriptors.
+The DefaultFluentdFactory class allows you to create Fluentd components by their descriptors.
 
 ### Constructors
 

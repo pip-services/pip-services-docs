@@ -18,4 +18,4 @@ Creates a new instance of the factory.
 
 
 ### See also
-- #### [DataDogLogger](../../datadog_logger)
+- #### [DataDogLogger](../../log/datadog_logger)

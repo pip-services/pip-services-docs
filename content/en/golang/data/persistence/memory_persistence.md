@@ -89,7 +89,7 @@ Creates a data item.
 
 #### DeleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **DeleteByFilter** method from a child class that
+This method shall be called by a func **DeleteByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*MemoryPersistence]()) DeleteByFilter(correlationId string, filterFunc func(interface{}) bool) (err error)
@@ -102,7 +102,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetCountByFilter
 Gets the number of items retrieved by a given filter.
 
-This method shall be called by a public **GetCountByFilter** method from a child class that
+This method shall be called by a func **GetCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*MemoryPersistence]()) GetCountByFilter(correlationId string, filterFunc func(interface{}) bool) (count int64, err error)
@@ -115,7 +115,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **GetListByFilter** method from a child class that
+This method shall be called by a func **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*MemoryPersistence]()) GetListByFilter(correlationId string, filterFunc func(interface{}) bool, sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (results []interface{}, err error)
@@ -130,7 +130,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public **GetOneRandom** method from a child class
+This method shall be called by a func **GetOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*MemoryPersistence]()) GetOneRandom(correlationId string, filterFunc func(interface{}) bool) (result interface{}, err error)
@@ -143,7 +143,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### GetPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **GetPageByFilter** method from a child class that
+This method shall be called by a func **GetPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*MemoryPersistence]()) GetPageByFilter(correlationId string, filterFunc func(interface{}) bool, paging [*cdata.PagingParams](../../../commons/data/paging_params), sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (page [*cdata.DataPage](../../../commons/data/data_page), err error)

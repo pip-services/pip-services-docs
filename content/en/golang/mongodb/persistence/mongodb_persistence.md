@@ -171,7 +171,7 @@ Defines the database schema
 
 
 #### DeleteByFilter
-This method shall be called by a public **DeleteByFilter** method from the child class that
+This method shall be called by a func **DeleteByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c *MongoDbPersistence) DeleteByFilter(correlationId string, filter interface{}) error
@@ -193,7 +193,7 @@ Adds index definition to create it on opening.
 #### GetCountByFilter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **GetCountByFilter** method from the child class that
+This method shall be called by a func **GetCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c *MongoDbPersistence) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error)
@@ -206,7 +206,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **GetListByFilter** method from the child class that
+This method shall be called by a func **GetListByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c *MongoDbPersistence) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error)
@@ -221,7 +221,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public [GetOneRandom](#getonerandom) method from the child class
+This method shall be called by a func [GetOneRandom](#getonerandom) method from the child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c *MongoDbPersistence) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error)
@@ -234,7 +234,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### GetPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **GetPageByFilter** method from the child class that
+This method shall be called by a func **GetPageByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c *MongoDbPersistence) GetPageByFilter(correlationId string, filter interface{}, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort interface{}, sel interface{}) (page [*cdata.DataPage](../../../commons/data/data_page), err error)

@@ -172,7 +172,7 @@ Defines database schema via auto create objects or convenience methods.
 
 #### DeleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **DeleteByFilter** method from child class that
+This method shall be called by a func **DeleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*PostgresPersistence]()) DeleteByFilter(correlationId string, filter string) (err error)
@@ -239,7 +239,7 @@ Generates a list of column parameters.
 #### GetCountByFilter
 Gets a number of data items retrieved by a given filter.
 
-This method shall be called by a public **GetCountByFilter** method from a child class that
+This method shall be called by a func **GetCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*PostgresPersistence]()) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error)
@@ -252,7 +252,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **getListByFilter** method from a child class that
+This method shall be called by a func **getListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*PostgresPersistence]()) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error)
@@ -267,7 +267,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetOneRandom
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public getOneRandom method from a child class
+This method shall be called by a func getOneRandom method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*PostgresPersistence]()) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error)
@@ -280,7 +280,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 #### GetPageByFilter
 Gets a page of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a public **GetPageByFilter** method from a child class that
+This method shall be called by a func **GetPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > (c [*PostgresPersistence]()) GetPageByFilter(correlationId string, filter interface{}, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort interface{}, sel interface{}) (page [*cdata.DataPage](../../../commons/data/data_page), err error)

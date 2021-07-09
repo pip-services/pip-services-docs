@@ -13,7 +13,7 @@ description: >
 ### Description
 The CassandraPersistence class allows you to create abstract persistence components that store data in Cassandra using the default driver.
     
-Important points
+**Important points**
     
 - This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
 
@@ -22,14 +22,14 @@ Important points
 - **table**: (optional) Cassandra table name
 - **keyspace**: (optional) Cassandra keyspace name
 - **connection(s)**:    
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
   - **host**: host name or IP address
   - **port**: port number (default: 27017)
   - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-  - **username**: (optional) user name
-  - **password**: (optional) user password
+  - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+  - **username**: (optional) username
+  - **password**: (optional) user's password
 - **options**:
   - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
   - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
@@ -47,8 +47,8 @@ Creates a new instance of the persistence component.
 
 > `public` constructor(tableName?: string, keyspaceName?: string)
 
-- **tableName**: string - (optional) table name.
-- **keyspaceName**: string - (optional) keyspace name.
+- **tableName**: string - (optional) table's name.
+- **keyspaceName**: string - (optional) keyspace's name.
 
 
 ### Fields
@@ -292,7 +292,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - frue if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open

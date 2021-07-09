@@ -23,14 +23,14 @@ The config package contains a set of classes and interfaces that allows you to a
 
 #### [IConfigurable](iconfigurable)
 An interface to set configuration parameters to an object. 
-It can be added to any existing class by implementing a single **Сonfigure()** method.
-If you need to emphasise the fact that **Сonfigure()** method can be called multiple times
+It can be added to any existing class by implementing a single **Configure()** method.
+If you need to emphasise the fact that **Configure()** method can be called multiple times
 to change object configuration in runtime, use [IReconfigurable](ireconfigurable) interface instead.
 
 #### [IReconfigurable](ireconfigurable)
 An interface to set configuration parameters to an object.  
 It is similar to [IConfigurable](iconfigurable) interface, but emphasises the fact
-that **Сonfigure()** method can be called more than once to change an object's configuration
+that **Configure()** method can be called more than once to change an object's configuration
 in runtime.
 
 <br>

@@ -25,7 +25,7 @@ If they don't, the call to this method has no effect.
 - **components**: []interface{} - list of components that are to be cleaned.
 - **returns**: error - return error if not cleared
 
-#### СlearOne
+#### ClearOne
 Clears state of specific component.
 To be cleaned, state components must implement the [ICleanable](../icleanable) interface.
 If they don't the call to this method has no effect.

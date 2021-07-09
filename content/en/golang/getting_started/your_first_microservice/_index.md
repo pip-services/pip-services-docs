@@ -197,7 +197,7 @@ func (c *HelloWorldRestService) Register() {
 ```
 
 
-### Step 4. Сomponent factory
+### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. To do this, use the HelloWorldServiceFactory structure into which the Factory from the Pip.Services toolkit will be embedded.
 
 ```go

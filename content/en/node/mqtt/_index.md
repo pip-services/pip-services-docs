@@ -9,7 +9,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
 
-    The MQTT module contains a set of components for messaging using the Mqtt protocol. Contains the implementation of the components   for working with messages: MqttMessageQueue, MqttConnectionResolver.
+    The MQTT module contains a set of components for messaging using the Mqtt protocol. 
 ---
 
 ### Packages

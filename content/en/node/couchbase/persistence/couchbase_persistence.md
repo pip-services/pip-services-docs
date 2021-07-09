@@ -18,21 +18,23 @@ accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
-- **table**: (optional) Cassandra table name
-- **keyspace**: (optional) Cassandra keyspace name
+
+- **bucket**: (optional) Couchbase bucket name
 - **connection(s)**:    
   - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
   - **host**: host name or IP address
   - **port**: port number (default: 27017)
   - **uri**: resource URI or connection string with all parameters in it
-- credential(s):    
+- **credential(s)**:    
   - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
   - **username**: (optional) user name
   - **password**: (optional) user password
-- options:
-  - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-  - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-  - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+- **options**:
+  - **auto_create**: (optional) automatically create missing bucket (default: false)
+  - **auto_index**: (optional) automatically create primary index (default: false)
+  - **flush_enabled**: (optional) bucket flush enabled (default: false)
+  - **bucket_type**: (optional) bucket type (default: couchbase)
+  - **ram_quota**: (optional) RAM quota in MB (default: 100)
 
 
 #### References

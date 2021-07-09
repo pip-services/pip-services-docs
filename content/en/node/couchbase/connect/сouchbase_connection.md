@@ -53,7 +53,7 @@ The Couchbase cluster connection object.
 
 #### _connectionResolver
 Connection resolver.
-> `protected` **_connectionResolver**: [CassandraConnectionResolver](../cassandra_connection_resolver)
+> `protected` **_connectionResolver**: [CouchbaseConnectionResolver](../couchbase_connection_resolver)
 
 #### _logger
 Logger.

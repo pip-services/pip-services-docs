@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Extends:** [CachedCounters](../../../rpc/services/rest_client)
+**Extends:** [CachedCounters](../../../components/count/cached_counters/)
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
@@ -20,7 +20,7 @@ The DataDogCounters class allows you to create performance counters that send th
 #### Configuration parameters
 
 - **connection(s)**:           
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**: (optional) connection protocol: http or https (default: https)
     - **host**: (optional) host name or IP address (default: api.datadoghq.com)
     - **port**: (optional) port number (default: 443)
@@ -64,7 +64,7 @@ Configures a component by passing its configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
@@ -84,7 +84,7 @@ Saves the current counters' measurements.
 
 > `protected` save(counters: [Counter[]](../../../components/count/counter)): void
 
-- **counters**: [Counter[]](../../../components/count/counter) - current counters' measurements to be saves.
+- **counters**: [Counter[]](../../../components/count/counter) - current counters' measurements to be saved.
 
 
 #### setReferences

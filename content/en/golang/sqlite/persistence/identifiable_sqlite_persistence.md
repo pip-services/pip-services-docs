@@ -8,7 +8,7 @@ description: >
     and implements a number of CRUD operations over data items with unique ids.
 ---
 
-**Implements:** [*SqlitePersistence](../sqlite_persistence)
+**Implements:** [SqlitePersistence](../sqlite_persistence)
 
 
 ### Description

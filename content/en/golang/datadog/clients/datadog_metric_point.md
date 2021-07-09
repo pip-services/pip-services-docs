@@ -2,7 +2,7 @@
 type: docs
 title: "DataDogMetricPoint"
 linkTitle: "DataDogMetricPoint"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-datadog-go"
 description: >
     Defines fields for DataDog metric points.
 
@@ -18,12 +18,12 @@ The DataDogMetricPoint class defines fields for DataDog metric points.
 
 <span class="hide-title-link">
 
-#### time
+#### Time
 Time
-> `public` **time**: Date
+> **Time**: time.Time
 
-#### value
+#### Value
 Value
-> `public` **value**: number
+> **Value**: float64
 
 </span>

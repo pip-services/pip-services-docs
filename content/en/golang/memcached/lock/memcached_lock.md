@@ -8,7 +8,7 @@ description: >
  
 ---
 
-**Implements:** [*Lock](../../../components/lock/lock) 
+**Implements:** [Lock](../../../components/lock/lock) 
 
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.

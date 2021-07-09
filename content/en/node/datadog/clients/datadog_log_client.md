@@ -9,7 +9,7 @@ description: >
 
 ---
 
-**Extends:** [RestClient](../../../rpc/services/rest_client)
+**Extends:** [RestClient](../../../rpc/clients/rest_client)
 
 ### Description
 

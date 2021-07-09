@@ -4,7 +4,7 @@ title: "DataDogMetricType"
 linkTitle: "DataDogMetricType"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 description: >
-    TODO: add description
+    Defines fields for DataDog metric types.
 
 
 ---

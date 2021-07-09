@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 no_list: true
 weight: 30
 description: > 
-    Cassandra components for Pip.Services in Node.js / ES2017
+    Cassandra components for Pip.Services in Node.js / ES2017. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement Cassandra persistence.
 ---
@@ -13,8 +13,8 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory used to create Cassandra persistence components.
-- [**Connect**](connect) - Connection component to configure Cassandra connection to database.
+- [**Build**](build) - factory used to create Cassandra persistence components.
+- [**Connect**](connect) - connection component to configure Cassandra connection to database.
 - [**Persistence**](persistence) - abstract persistence components used to perform basic CRUD operations.
 
 
@@ -37,7 +37,7 @@ export class MyObject implements IIdentifiable {
 }
 ```
 
-The persistence component shall implement the following interface with a basic set of CRUD operations.
+The persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```typescript
 export interface IMyPersistence {

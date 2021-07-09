@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Extends:** [CachedCounters](../../../rpc/services/rest_client)
+**Extends:** [CachedCounters](../../../components/count/cached_counters/)
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 

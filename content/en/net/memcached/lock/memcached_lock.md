@@ -2,13 +2,15 @@
 type: docs
 title: "MemcachedLock"
 linkTitle: "MemcachedLock"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet"
 description: >
     Distributed lock that is implemented based on Memcached's caching service.
  
 ---
 
-**Implements:** [Lock](../../../components/lock/lock) 
+**Extends:** [Lock](../../../components/lock/lock) 
+
+**Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.
@@ -44,51 +46,48 @@ Important points
 
 ### Instance methods
 
-#### Close
+#### CloseAsync
 Closes a component and frees used resources.
 
-> (c [*MemcachedLock]()) Close(correlationId string) error
+> `public` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*MemcachedLock]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> `public new` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*MemcachedLock]()) IsOpen() bool
+> `public` bool IsOpen()
 
 - **returns**: bool - true if the component is open and false otherwise.
 
 
-#### open
+#### OpenAsync
 Opens the component.
 
-> (c [*MemcachedLock]()) Open(correlationId string) error
+> `public` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id usd to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> (c [*MemcachedLock]()) ReleaseLock(correlationId string, key string) error
+> `public override` void ReleaseLock(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
-- **returns**: error - error or nil no errors occured
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MemcachedLock]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
@@ -97,32 +96,21 @@ Sets references to dependent components.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> (c [*MemcachedLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (result bool, err error)
+> `public override` bool TryAcquireLock(string correlationId, string key, long ttl)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
-- **ttl**: int64 - lock timeout (time to live) in milliseconds.
-- **returns**: (result bool, err error) - **true** if lock was successfull and **false** otherwise.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
+- **returns**: bool - **true** if lock was successfull and **false** otherwise.
 
 
 ### Examples
-```go
-lock := NewMemcachedLock();
-lock.Configure(cconf.NewConfigParamsFromTuples(
+```CS
+var lock = new MemcachedLock();
+lock.Configure(ConfigParams.FromTuples(
   "host", "localhost",
-  "port", 11211,
-));
-
-err := lock.Open("123")
-if err != nil {
-  ...
-}
-
-result, err := lock.TryAcquireLock("123", "key1", 3000)
-if result {
-	// Processing...
-}
-
-err = lock.ReleaseLock("123", "key1")
-// Continue...
+  "port", 11211));
+lock.Open("123");
+lock.TryAcquireLock("123", "key1", 0);
+lock.ReleaseLock("123", "key1");
 ```

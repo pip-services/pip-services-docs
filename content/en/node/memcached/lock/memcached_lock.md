@@ -34,9 +34,9 @@ Important points
     - **reconnect**: reconnection timeout in milliseconds (default: 10 sec)
     - **retries**: number of retries (default: 3)
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
-        - **failures**: number of failures before stop retrying (default: 5)
-        - **retry**: retry timeout in milliseconds (default: 30 sec)
-        - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
+    - **failures**: number of failures before stop retrying (default: 5)
+    - **retry**: retry timeout in milliseconds (default: 30 sec)
+    - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
 
 #### References
 

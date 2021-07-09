@@ -2,10 +2,12 @@
 type: docs
 title: "MemcachedCache"
 linkTitle: "MemcachedCache"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet"
 description: >
     Distributed cache that stores values in Memcached's caching service.
 ---
+
+**Implements:** [AbstractCache](../../../components/cache/abstract_cache)
 
 ### Description
 The MemcachedCache class allows you to create distributed cache that stores values in Memcached's caching service. 
@@ -39,99 +41,84 @@ Important points
 
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
 
-### Constructors
-Method are creates a new instance of this lock.
-
-#### NewMemcachedLock
-> NewMemcachedLock() [*MemcachedLock]()
 
 ### Instance methods
 
-#### Close
+#### CloseAsync
 Closes a component and frees used resources.
 
-> (c [*MemcachedCache]()) Close(correlationId string) error
+> `public override` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*MemcachedCache]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*MemcachedCache]()) IsOpen() bool
+> `public override` bool IsOpen()
 
 - **returns**: bool - true if the component has been opened and false otherwise.
 
 
 #### Open
 Opens the component.
-> (c [*MemcachedCache]()) Open(correlationId string) error
+> `public override` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
 
-#### Remove
+
+#### RemoveAsync
 Removes a value from the cache by its key.
 
-> (c [*MemcachedCache]()) Remove(correlationId string, key string) error
+> `public override` Task RemoveAsync(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **returns**: error - error or nil no errors occured
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.
-If the value is missing in the cache or expired, it returns nil.
+If the value is missing in the cache or expired, it returns null.
 
-> (c [*MemcachedCache]()) Retrieve(correlationId string, key string) (value interface{}, err error)
+> `public override` Task\<T\> RetrieveAsync\<T\>(string correlationId, string key)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **return**: (value interface{}, err error) - cached value or *nil* if nothing was found.
+- **return**: Task\<T\> - cached value or *null* if nothing was found.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MemcachedCache]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> `public override` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### Store
 Stores a value in the cache with an expiration time.
 
-> (c [*MemcachedCache]()) Store(correlationId string, key string, value interface{}, timeout int64) (result interface{}, err error)
+> `public override` async Task\<T\> StoreAsync\<T\>(string correlationId, string key, T value, long timeout)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **value**: interface{} - value to store.
-- **timeout**: int64 - expiration timeout in milliseconds.
-- **returns**: (result interface{}, err error) - stored value
+- **value**: T - value to store.
+- **timeout**: long - expiration timeout in milliseconds.
+- **returns**: Task\<T\> - stored value
 
 
 ### Examples
 
-```go
-lock := NewMemcachedLock();
-lock.Configure(cconf.NewConfigParamsFromTuples(
-  "host", "localhost",
-  "port", 11211,
-));
-err := lock.Open("123")
-if err != nil {
-  ...
-}
-result, err := lock.TryAcquireLock("123", "key1", 3000)
-if result {
-	// Processing...
-}
-err = lock.ReleaseLock("123", "key1")
-// Continue...
+```cs
+var cache = new MemcachedCache();
+cache.configure(ConfigParams.FromTuples(
+"host", "localhost",
+"port", 11211 ));
+cache.Open("123");
+
+cache.Store("123", "key1", "ABC");
 
 ```

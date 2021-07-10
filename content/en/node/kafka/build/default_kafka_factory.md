@@ -11,11 +11,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultKafkaFactory class allows you to create [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

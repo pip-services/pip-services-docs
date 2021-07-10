@@ -4,14 +4,14 @@ title: "DefaultMqttFactory"
 linkTitle: "DefaultMqttFactory"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: > 
-    Creates [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors.
+    Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.
 ---
 
 **Extends:** [Factory](../../../components/build/factory)
 
 ### Description
 
-The DefaultMqttFactory class allows you to create [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors.
+The DefaultMqttFactory class allows you to create [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.
 
 ### Constructors
 
@@ -22,5 +22,5 @@ Create a new instance of the factory.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [MqttMessageQueue](../../queues/mqtt_message_queue)
+- #### [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/)
 

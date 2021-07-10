@@ -15,7 +15,7 @@ The DefaultKafkaFactory class allows you to create [KafkaMessageQueue](../../que
 
 ### Constructors
 
-Creates a new instance of the factory.
+Creates a new instance of the factory. 
 
 > `public` constructor()
 

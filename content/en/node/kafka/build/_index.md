@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: >
-    TODO: add description
+    This package contains two classes used to create [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 ---
 ---
 <div class="module-body"> 
@@ -13,10 +13,10 @@ description: >
 ### Classes
 
 #### [DefaultKafkaFactory](default_kafka_factory)
-TODO: add description
+Creates [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 
 #### [KafkaMessageQueueFactory](kafka_message_queue_factory)
-TODO: add description
+Creates [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 
 
 </div>

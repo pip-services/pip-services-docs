@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 no_list: true
 weight: 30
 description: > 
-    Kafka messaging for Pip.Services in Node.js / ES2017  
+    Kafka messaging for Pip.Services in Node.js / ES2017.  
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 ---
@@ -13,9 +13,9 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - default Factory for create components
+- [**Build**](build) - default Factory for creating components
 - [**Connect**](connect) - generate and resolve connection options
-- [**Queues**](queues) - Message queue that create, sends and receives messages
+- [**Queues**](queues) - message queue that creates, sends and receives messages
 
 
 ### Use

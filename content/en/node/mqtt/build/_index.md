@@ -5,7 +5,7 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    This package contains classes used to create [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors. 
+    This package contains classes used to create [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors. 
 ---
 ---
 <div class="module-body"> 
@@ -13,10 +13,10 @@ description: >
 ### Classes
 
 #### [DefaultMqttFactory](default_mqtt_factory)
- Creates [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors.
+ Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.
 
 #### [MqttMessageQueueFactory](mqtt_message_queue_factory)
-Creates [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors. 
+Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors. 
 
 
 </div>

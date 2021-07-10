@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create message queues that send and receive messages via the Kafka message broker.
     
 ---
 ---
@@ -15,6 +15,6 @@ description: >
 ### Classes
 
 #### [KafkaMessageQueue](kafka_message_queue)
-TODO: add description
+Message queue that sends and receives messages via the Kafka message broker.
 
 </div>

@@ -4,24 +4,24 @@ title: "IKafkaMessageListener"
 linkTitle: "IKafkaMessageListener"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: >
-    TODO: add description
+    Defines a Kafka message listerner.
 
 ---
 
 
 ### Description
 
-TODO: add description
+The IKafkaMessageListener interface defines a Kafka message listener.
 
 
 ### Instance methods
 
 
 #### onMessage
-TODO: add description
+defines the actions to be done after a message is received.
 
 > onMessage(topic: string, partition: number, message: any): Promise\<void\>
 
-- **topic**: string - TODO: add description
-- **partition**: number - TODO: add description
-- **message**: any - TODO: add description
+- **topic**: string - topic
+- **partition**: number - partition
+- **message**: any - message

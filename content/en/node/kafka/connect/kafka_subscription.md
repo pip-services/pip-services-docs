@@ -4,13 +4,13 @@ title: "KafkaSubscription"
 linkTitle: "KafkaSubscription"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: >
-    TODO: add description
+    Defines fields for Kafka subscriptions.
 
 ---
 
 ### Description
 
-TODO: add description
+The KafkaSubscription class defines fields for Kafka subscriptions.
 
 
 ### Fields
@@ -18,19 +18,19 @@ TODO: add description
 <span class="hide-title-link">
 
 #### topic
-TODO: add description
+topic
 > `public` **topic**: string
 #### groupId
-TODO: add description
+Group id
 > `public` **groupId**: string
 #### options
-TODO: add description
+Options
 > `public` **options**: any
 #### handler
-TODO: add description
+Handler
 > `public` **handler**: any
 #### listener
-TODO: add description
+Listener
 > `public` **listener**: [IKafkaMessageListener](../ikafka_message_listener)
 
 </span>

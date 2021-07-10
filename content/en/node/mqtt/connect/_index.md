@@ -14,20 +14,20 @@ description: >
 ### Interfaces
 
 #### [IMqttMessageListener](imqtt_message_listener)
-TODO: add description
+Interface for MQTT messages.
 
 <br>
 
 ### Classes
 
 #### [MqttConnection](mqtt_connection)
-TODO: add description
+MQTT connection using the default driver.
 
 
 #### [MqttConnectionResolver](mqtt_connection_resolver)
-TODO: add description
+Helper class that resolves MQTT connection and credential parameters, validates them and generates connection options.
 
 #### [MqttSubscription](mqtt_subscription)
-TODO: add description
+Defines the fields for a subscription.
 
 </div>

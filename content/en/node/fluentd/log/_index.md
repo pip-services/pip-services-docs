@@ -5,7 +5,7 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-fluentd-nodex"
 description: >
-    TODO: add description
+    This package contains a class used to create loggers that dump execution logs to a Fluentd service.
 ---
 ---
 <div class="module-body"> 
@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [FluentdLogger](fluentd_logger)
-TODO: add description
+Logger that dumps execution logs to a Fluentd service.
 
 
 </div>

@@ -4,30 +4,29 @@ title: "MqttSubscription"
 linkTitle: "MqttSubscription"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    TODO: add description
+    Defines the fields for a subscription.
 
 ---
 
 ### Description
 
-TODO: add description
-
+The MqttSubscription class defines the main fields for a subscription.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### topic
-TODO: add description
+Topic
 > `public` **topic**: string;
 #### filter
-TODO: add description
+Filter
 > `public` **filter**: boolean;
 #### options
-TODO: add description
+Subscription options
 > `public` **options**: any;
 #### listener
-TODO: add description
+Listener
 > `public` **listener**: IMqttMessageListener;
 
 </span>

@@ -13,7 +13,7 @@ description: >
 ### Description
 The FluentdLogger class allows you to create loggers that dump execution logs to a Fluentd service.
 
-Important points
+**Important points**
 
 - Authentication is not supported in this version.
 

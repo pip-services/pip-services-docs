@@ -18,7 +18,7 @@ The IKafkaMessageListener interface defines a Kafka message listener.
 
 
 #### onMessage
-defines the actions to be done after a message is received.
+Defines the actions to be done after a message is received.
 
 > onMessage(topic: string, partition: number, message: any): Promise\<void\>
 

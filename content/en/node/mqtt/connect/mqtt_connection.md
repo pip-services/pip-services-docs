@@ -4,7 +4,7 @@ title: "MqttConnection"
 linkTitle: "MqttConnection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    MQTT connection using plain driver.
+    MQTT connection using the default driver.
 
 ---
 

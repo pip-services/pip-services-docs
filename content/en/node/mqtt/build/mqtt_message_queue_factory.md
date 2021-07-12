@@ -16,7 +16,7 @@ The MqttMessageQueueFactory class allows you to create [MqttMessageQueue](../../
     
 **Important points**    
 
-- The name of created message queue is taken from its descriptor.
+- The name of the created message queue is taken from its descriptor.
 
 
 ### Constructors

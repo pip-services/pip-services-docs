@@ -20,7 +20,7 @@ The KafkaMessageQueueFactory class allows you to create [KafkaMessageQueue](../.
 
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 > `public` constructor()
 
 ### Instance methods

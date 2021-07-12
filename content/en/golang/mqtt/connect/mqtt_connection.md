@@ -42,9 +42,11 @@ The MqttConnection class allows you to create MQTT connections using the default
 
 
 ### Constructors
+
+#### NewMqttConnection
 Creates a new instance of the connection component.
 
-> `public` constructor()
+> NewMqttConnection() [*MqttConnection]()
 
 ### Fields
 

@@ -28,7 +28,7 @@ The facade microservice will be responsible for:
 - checking whether or not a session has expired when an authorized user makes another request (session restoration);
 - providing access to the functionality of the Beacons microservice for authorized users.
 
-Before starting, be sure to set up your [environment](../../../getting_started/setup_environmen) and create a folder for the project. The directory structure of facade projects differs a bit from the structure we use when developing data microservices.
+Before starting, be sure to set up your [environment](../../../getting_started/setup_environment) and create a folder for the project. The directory structure of facade projects differs a bit from the structure we use when developing data microservices.
 
 ```
 /bin

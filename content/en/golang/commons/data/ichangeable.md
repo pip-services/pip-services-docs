@@ -17,7 +17,7 @@ The IChangeable interface allows you to store the last modified date and time in
 
 #### change_time
 The UTC time at which the object was last changed (created or updated).
-> `public` **change_time**: time.Time
+> **change_time**: time.Time
 
 ### Examples
 ```go

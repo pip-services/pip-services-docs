@@ -4,34 +4,34 @@ title: "CouchbasePersistence<T>"
 linkTitle: "CouchbasePersistence"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    Abstract persistence component that stores data in Couchbase and is based using Couchbaseose object relational mapping.
+    Abstract persistence component that stores data in Couchbase using Couchbase object relational mapping.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
-
-This is the most basic persistence component that is only
-able to store data items of any type. Specific CRUD operations
-over the data items must be implemented in child classes by
-accessing **this._collection** or **this._model** properties.
+The CouchbasePersistence class allows you to create abstract persistence components that store data in Couchbase using Couchbase object relational mapping.
+    
+**Important points*    
+    
+- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
 
-- **bucket**: (optional) Couchbase bucket name
+- **bucket**: (optional) Couchbase bucket's name
 - **connection(s)**:    
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
   - **host**: host name or IP address
   - **port**: port number (default: 27017)
   - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-  - **username**: (optional) user name
-  - **password**: (optional) user password
+  - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+  - **username**: (optional) username
+  - **password**: (optional) user's password
 - **options**:
-  - **auto_create**: (optional) automatically create missing bucket (default: false)
-  - **auto_index**: (optional) automatically create primary index (default: false)
+  - **auto_create**: (optional) automatically create a missing bucket (default: false)
+  - **auto_index**: (optional) automatically create a primary index (default: false)
   - **flush_enabled**: (optional) bucket flush enabled (default: false)
   - **bucket_type**: (optional) bucket type (default: couchbase)
   - **ram_quota**: (optional) RAM quota in MB (default: 100)
@@ -48,8 +48,8 @@ Creates a new instance of the persistence component.
 
 > `public` constructor(bucket?: string, collection?:string)
 
-- **bucket**: string - (optional) a bucket name.
-- **collection**: string - (optional) a collection name.
+- **bucket**: string - (optional) bucket's name.
+- **collection**: string - (optional) collection's name.
 
 
 ### Fields
@@ -57,40 +57,40 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _collectionName
-TODO: add descritpion
+Collection's name
 > `protected` **_collectionName**: string
 
 #### _connection
-The Couchbase connection component.
+Couchbase connection component.
 > `protected` **_connection**: [CouchbaseConnection](../../connect/couchbase_connection) 
 
 #### _cluster
-The Couchbase cluster object.
+Couchbase cluster's object.
 > `protected` **_cluster**: any 
 
 #### _bucketName 
-The Couchbase bucket name.
+Couchbase bucket's name.
 > `protected` **_bucketName**: string
 
 #### _bucket 
-The Couchbase bucket object.
+Couchbase bucket's object.
 
 > `protected` **_bucket**: any
 
 #### _keyspaceName
-The Couchbase N1qlQuery object.
+Couchbase N1qlQuery's object.
 > `protected` **_query**: any
 
 #### _maxPageSize
-The maximum number of records to return from the database per request.
+Maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: number = 100
 
 </span>
@@ -116,7 +116,7 @@ Closes a component and frees the used resources.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -124,7 +124,7 @@ Configures component by passing configuration parameters.
 
 
 #### convertFromPublic
-Converts object value from public to internal format.
+Converts an object's value from public to internal format.
 
 > `protected` convertFromPublic(value: any): any
 
@@ -137,12 +137,12 @@ Converts the given object from the public partial format.
 
 > `protected` convertFromPublicPartial(value: any): any
 
-- **value**: any - the object to convert from the public partial format. 
-- **returns**: any - the initial object.
+- **value**: any - object to convert from the public partial format. 
+- **returns**: any - initial object.
 
 
 #### convertToPublic
-Converts object value from internal to public format.
+Converts an object's value from internal to public format.
 
 > `protected` convertToPublic(value: any): any
 
@@ -161,17 +161,17 @@ Creates a data item.
 
 
 #### createBucketFilter
-Creates a filters that includes a collection name in it.
+Creates a filter that includes a collection name in it.
 
 > `protected` createBucketFilter(filter: string): string
 
-- **filter**: string - a user-defined filter
-- **returns**: string - a filter that includes a collection name.
+- **filter**: string - user-defined filter
+- **returns**: string - filter that includes a collection's name.
 
 
 #### deleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **deleteByFilter** method from child class that
+This method shall be called by a public **deleteByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `protected` deleteByFilter(correlationId: string, filter: any): Promise\<void\>
@@ -181,12 +181,12 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 
 #### generateBucketId
-Generates unique id for specific collection in the bucket
+Generates a unique id for a specific collection in the bucket.
 
 > `protected` generateBucketId(value: any): string 
 
-- **value**: any - a public unique id.
-- **returns**: string - a unique bucket id.
+- **value**: any - public unique id.
+- **returns**: string - unique bucket id.
 
 
 
@@ -211,7 +211,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > `protected` getListByFilter(correlationId: string, filter: any, sort: any, select: any): Promise\<T[]\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: any - (optional) filter function to filter items
 - **sort**: any - (optional) sorting parameters
 - **select**: any - (optional) projection parameters (not used yet)
@@ -227,8 +227,8 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected` getOneRandom(correlationId: string, filter: any): Promise\<T\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: any - (optional) a filter JSON object
-- **returns**: Promise\<T\> - a random item.
+- **filter**: any - (optional) filter JSON object
+- **returns**: Promise\<T\> - random item.
 
 
 #### getPageByFilter
@@ -244,16 +244,16 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: any - (optional) sorting JSON object
 - **select**: any - (optional) projection JSON object
-- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - a data page of result by filter
+- **returns**: Promise<[DataPage<T>](../../../commons/data/data_page)> - data page of result by filter
 
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component has been opened and false otherwise.
 
 
 #### open
@@ -278,7 +278,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### unsetReferences

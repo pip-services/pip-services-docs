@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to connect Couchbase databases.
 ---
 ---
 
@@ -14,12 +14,12 @@ description: >
 ### Classes
 
 #### [CouchbaseConnection](couchbase_connection)
-TODO: add description
+Couchbase connection using the default Couchbase driver.
 
 #### [CouchbaseConnectionParams](couchbase_connection_params)
-TODO: add description
+Defines the parameters used to connect to a Couchbase database.
 
 #### [CouchbaseConnectionResolver](couchbase_connection_resolver)
-TODO: add description
+Helper class that resolves Couchbase connection and credential parameters, validates them and generates a connection URI.
 
 </div>

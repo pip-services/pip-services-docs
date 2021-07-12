@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultCouchbaseFactory class allows you to create Couchbase components by their descriptors.
 
 ### Constructors
 

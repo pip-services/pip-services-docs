@@ -11,11 +11,11 @@ description: >
 
 ### Description
 
-TODO: add description
+The DefaultNatsFactory class allows you to create [NatsMessageQueue](../../queues/nats_message_queue) components by their descriptors.
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

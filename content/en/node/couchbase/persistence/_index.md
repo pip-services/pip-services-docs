@@ -15,9 +15,9 @@ description: >
 ### Classes
 
 #### [CouchbasePersistence](couchbase_persistence)
-TODO: add description
+Abstract persistence component that stores data in Couchbase using Couchbase object relational mapping.
 
 #### [IdentifiableCouchbasePersistence](identifiable_couchbase_persistence)
-TODO: add description
+Abstract persistence component that stores data in Couchbase and implements a number of CRUD operations over data items with unique ids.
 
 </div>

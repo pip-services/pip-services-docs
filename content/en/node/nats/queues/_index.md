@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to define NATS message queues.
     
 ---
 ---
@@ -15,12 +15,12 @@ description: >
 ### Classes
 
 #### [NatsAbstractMessageQueue](nats_abstract_message_queue)
-TODO: add description
+Abstract NATS message queue with the ability to connect to NATS server.
 
 #### [NatsBareMessageQueue](nats_bare_message_queue)
-TODO: add description
+Message queue that sends and receives messages via the NATS message broker.
 
 #### [NatsMessageQueue](nats_message_queue)
-TODO: add description
+Message queue that sends and receives messages via the NATS message broker.
 
 </div>

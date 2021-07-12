@@ -16,7 +16,7 @@ The CouchbaseConnectionParams class defines the parameters used to connect to a 
 <span class="hide-title-link">
 
 #### uri
-Database's URI
+Database's URI  
 > `public` **uri**: string;
 #### username
 Username

@@ -13,20 +13,20 @@ description: >
 
 ### Description
 
-MQTT is a popular light-weight protocol to communicate IoT devices.
+The MqttConnection class allows you to create MQTT connections using the default driver.
 
 #### Configuration parameters
 
 - **client_id**: (optional) name of the client id
 - **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: user name
-    - **password**: user password
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: username
+    - **password**: user's password
 - **options**:
     - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
     - **connect_timeout**: (optional) number of milliseconds to wait for connection (default: 30000)
@@ -55,37 +55,37 @@ The hostname as client id.
 > `protected` **_clientId**: string
 
 #### _connectTimeout
-TODO: add description
+Connection timeout
 > `protected` **_connectTimeout**: number = 30000
 
 #### _connection
-The MQTT connection pool object.
+MQTT connection pool object.
 > `protected` **_connection**: any
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [MqttConnectionResolver](../mqtt_connection_resolver)
 
 #### _keepAliveTimeout
-TODO: add description
+Keep alive timeout
 > `protected` **_keepAliveTimeout**: number = 60000
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
 
 
 #### _options
-TODO: add description
+Connection options
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params) = new [ConfigParams()](../../../commons/config/config_params)
 
 
 #### _reconnectTimeout
-TODO: add description
+Reconnect timeout
 > `protected` **_reconnectTimeout**: number = 1000
 
 #### _retryConnect
-TODO: add description
+Retry option
 > `protected` **_retryConnect**: boolean = true
 
 #### _subscriptions
@@ -98,22 +98,22 @@ Topic subscriptions
 ### Instance methods
 
 #### checkOpen
-Checks if connection is open.   
+Checks if the connection is open.   
 Raise an error is connection is closed.
 
 > `protected` checkOpen(): void
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
-Configures the component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -122,20 +122,20 @@ Configures the component by passing configuration parameters.
 
 #### createQueue
 Creates a message queue.
-If connection doesn't support this function it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > `public` createQueue(name: string): Promise\<void\>
 
-- **name**: string - the name of the queue to be created.
+- **name**: string - name of the queue to be created.
 
 
 #### deleteQueue
 Deletes a message queue.
-If connection doesn't support this function it exists without error.
+If connection doesn't support this function, it exists without error.
 
 > `public` deleteQueue(name: string): Promise\<void\>
 
-- **name**: string - the name of the queue to be deleted.
+- **name**: string - name of the queue to be deleted.
 
 
 #### getConnection
@@ -146,11 +146,11 @@ Gets the connection.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - True if the component has been opened and False otherwise.
+- **returns**: boolean - true if the component has been opened and false otherwise.
 
 
 #### open
@@ -162,18 +162,18 @@ Opens the component.
 
 
 #### publish
-Publish a message to a specified topic
+Publish a message to a specified topic.
 
 > `public` publish(topic: string, data: Buffer, options: any): Promise\<void\>
 
-- **topic**: string - a topic name
-- **data**: Buffer - a message to be published
+- **topic**: string - topic name
+- **data**: Buffer - message to be published
 - **options**: any - publishing options
 
 
 #### readQueueNames
 Reads a list of registered queue names.
-If connection doesn't support this function returnes an empty list.
+If the connection doesn't support this function, it returns an empty list.
 
 > `public` readQueueNames(): Promise\<string[]\>
 
@@ -189,22 +189,22 @@ Sets references to dependent components.
 
 
 #### subscribe
-Subscribe to a topic
+Subscribes to a topic
 
 > `public` subscribe(topic: string, options: any, listener: [IMqttMessageListener](../imqtt_message_listener)): Promise\<void\>
 
-- **topic**: string - a topic name
+- **topic**: string - topic name
 - **options**: any - subscription options
-- **listener**: [IMqttMessageListener](../imqtt_message_listener) - a message listener
+- **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
 
 
 #### unsubscribe
-Unsubscribe from a previously subscribed topic
+Unsubscribes from a previously subscribed topic.
 
 > `public` unsubscribe(topic: string, listener: [IMqttMessageListener](../imqtt_message_listener): Promise\<void\>
 
-- **topic**: string - a topic name
-- **listener**: [IMqttMessageListener](../imqtt_message_listener) - a message listener
+- **topic**: string - topic name
+- **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
 
 
 ### See also

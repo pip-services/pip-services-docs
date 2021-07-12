@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-kafka-nodex"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to create connections to Kafka.
 ---
 ---
 
@@ -14,20 +14,20 @@ description: >
 ### Interfaces
 
 #### [IKafkaMessageListener](ikafka_message_listener)
-TODO: add description
+Defines a Kafka message listerner.
 
 <br>
 
 ### Classes
 
 #### [KafkaConnection](kafka_connection)
-TODO: add description
+Kafka connection using the default driver.
 
 
 #### [KafkaConnectionResolver](kafka_connection_resolver)
-TODO: add description
+Helper class that resolves a Kafka connection and credential parameters, validates them and generates connection options.
 
 #### [KafkaSubscription](kafka_subscription)
-TODO: add description
+Defines fields for Kafka subscriptions.
 
 </div>

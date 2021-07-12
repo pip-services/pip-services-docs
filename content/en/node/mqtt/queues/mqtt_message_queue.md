@@ -20,12 +20,12 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 
 - **topic**: name of MQTT topic to subscribe
 - **connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html IDiscovery]]
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) key to retrieve the credentials from [[https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html ICredentialStore]]
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html)
     - **username**: username
     - **password**: user's password
 - **options**:
@@ -44,7 +44,7 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) to resolve credentials
-- **\*:connection:mqtt:\*:1.0** - (optional) Shared connection to MQTT service
+- **\*:connection:mqtt:\*:1.0** - (optional) shared connection to MQTT service
 
 
 ### Constructors
@@ -52,7 +52,7 @@ Creates a new instance of the message queue.
 
 > `public` constructor(name?: string)
 
-- **name**: string - (optional) queue name.
+- **name**: string - (optional) queue's name.
 
 
 ### Fields
@@ -65,11 +65,11 @@ Auto-subscribe option
 
 
 #### _connection
-MQTT connection component.
+MQTT connection component
 > `protected` **_connection**: any
 
 #### _dependencyResolver
-Dependency resolver.
+Dependency resolver
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 
@@ -96,12 +96,12 @@ Message receiver
 > `protected` **_receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 #### _serializeEnvelope
-Serialization option.
+Serialization option
 > `protected` **_serializeEnvelope**: boolean
 
 
 #### _subscribed
-Subscribe option.
+Subscribe option
 > `protected` **_subscribed**: boolean
 
 #### _topic
@@ -160,7 +160,7 @@ Configures a component by passing its configuration parameters.
 
 #### endListen
 Ends listening for incoming messages.
-When this method is call [listen](#listen) unblocks the thread and execution continues.
+When this method is call, [listen](#listen) unblocks the thread and execution continues.
 
 > `public` endListen(correlationId: string): void
 
@@ -213,7 +213,7 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 
 #### onMessage
-Checks if the message comes from the right topic. If this is the case, deserializes it and sends it to the receiver if it's set. Otherwise, puts it into the queue.
+Checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
 
 > `public` onMessage(topic: string, data: any, packet: any): void
 
@@ -231,7 +231,7 @@ Opens the component.
 
 #### peek
 Peeks a single incoming message from the queue without removing it.
-If there are no messages available in the queue it returns null.
+If there are no messages available in the queue, it returns null.
 
 > `public` peek(correlationId: string): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
@@ -262,7 +262,7 @@ Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
 - **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 

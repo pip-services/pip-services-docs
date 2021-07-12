@@ -11,21 +11,25 @@ description: >
 **Extends:** [CompositeConnectionResolver](../../../components/connect/composite_connection_resolver)
 
 ### Description
-It is able to process multiple connections to Couchbase cluster nodes.
+The CouchbaseConnectionResolver class is used to resolve Couchbase connections and credential parameters, validate them and generate connection URIs/
+
+**Important points**
+
+- It is able to process multiple connections to Couchbase cluster nodes.
 
 
 #### Configuration parameters
 
 - **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 27017)
     - **database**: database (bucket) name
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: user name
-    - **password**: user password
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: username
+    - **password**: user's password
 
 
 #### References
@@ -56,13 +60,13 @@ Creates an instance of this class.
 
 
 #### resolve
-Merges connection options with connection parameters
+Merges connection options with connection parameters. 
 This method can be overriden in child classes.
 
 > `public` resolve(correlationId: string): Promise<[CouchbaseConnectionParams](../couchbase_connection_params)>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Promise<[CouchbaseConnectionParams](../couchbase_connection_params)> - a resolved URI.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Promise<[CouchbaseConnectionParams](../couchbase_connection_params)> - resolved URI.
 
 
 #### setReferences
@@ -70,4 +74,4 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

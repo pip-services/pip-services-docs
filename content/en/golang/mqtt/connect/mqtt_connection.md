@@ -1,13 +1,10 @@
 ---
 type: docs
-title: "MqttConnection!"
-linkTitle: "MqttConnection!"
+title: "MqttConnection"
+linkTitle: "MqttConnection"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 description: >
     MQTT connection using the default driver.
-
-
-    **TODO: this class is not implemented**
 
 ---
 
@@ -53,47 +50,46 @@ Creates a new instance of the connection component.
 
 <span class="hide-title-link">
 
-#### _clientId
+#### clientId
 The hostname as client id
-> `protected` **_clientId**: string
+> **clientId**: string
 
-#### _connectTimeout
+#### connectTimeout
 Connection timeout
-> `protected` **_connectTimeout**: number = 30000
+> **connectTimeout**: int
 
-#### _connection
+#### Connection
 MQTT connection pool object
-> `protected` **_connection**: any
+> **Connection**: mqtt.Client
 
-#### _connectionResolver
+#### ConnectionResolver
 Connection resolver
-> `protected` **_connectionResolver**: [MqttConnectionResolver](../mqtt_connection_resolver)
+> **ConnectionResolver**: [MqttConnectionResolver](../mqtt_connection_resolver)
 
-#### _keepAliveTimeout
+#### keepAliveTimeout
 Keep alive timeout
-> `protected` **_keepAliveTimeout**: number = 60000
+> **keepAliveTimeout**: int = 60000
 
-#### _logger
+#### Logger
 Logger
-> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
+> **Logger**: [*CompositeLogger](../../../components/log/composite_logger)
 
-
-#### _options
+#### Options
 Connection options
-> `protected` **_options**: [ConfigParams](../../../commons/config/config_params) = new [ConfigParams()](../../../commons/config/config_params)
+> **Options**: [*ConfigParams](../../../commons/config/config_params)
 
 
-#### _reconnectTimeout
+#### reconnectTimeout
 Reconnect timeout
-> `protected` **_reconnectTimeout**: number = 1000
+> **reconnectTimeout**: int
 
-#### _retryConnect
+#### retryConnect
 Retry option
-> `protected` **_retryConnect**: boolean = true
+> **retryConnect**: bool
 
-#### _subscriptions
+#### subscriptions
 Topic subscriptions
-> `protected` **_subscriptions**: [MqttSubscription[]](../mqtt_subscription) = []
+> **subscriptions**: [[]*MqttSubscription](../mqtt_subscription)
 
 </span>
 
@@ -104,110 +100,116 @@ Topic subscriptions
 Checks if the connection is open.   
 Raises an error if the connection is closed.
 
-> `protected` checkOpen(): void
+> (c [*MqttConnection]()) checkOpen() error
+- **returns**: error - error or nil no errors occured.
 
 
-#### close
+#### Close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*MqttConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error or nil no errors occured.
 
 
-#### configure
+#### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*MqttConnection]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### createQueue
+#### CreateQueue
 Creates a message queue.
 If the connection doesn't support this function, it exists without error.
 
-> `public` createQueue(name: string): Promise\<void\>
+> (c [*MqttConnection]()) CreateQueue() error
 
 - **name**: string - name of the queue to be created.
+- **returns**: error - error or nil no errors occured.
 
-
-#### deleteQueue
+#### DeleteQueue
 Deletes a message queue.
 If connection doesn't support this function, it exists without error.
 
-> `public` deleteQueue(name: string): Promise\<void\>
+> (c [*MqttConnection]()) DeleteQueue() error
 
 - **name**: string - name of the queue to be deleted.
+- **returns**: error - error or nil no errors occured.
 
-
-#### getConnection
+#### GetConnection
 Gets the connection.
-> `public` getConnection(): any
+> (c [*MqttConnection]()) GetConnection() mqtt.Client
 
-- **returns**: any - connection to a MySQL database
+- **returns**: mqtt.Client - connection to a MySQL database
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> (c [*MqttConnection]()) IsOpen() bool
 
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> (c [*MqttConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error or nil no errors occured.
 
 
-#### publish
+#### Publish
 Publish a message to a specified topic.
 
-> `public` publish(topic: string, data: Buffer, options: any): Promise\<void\>
+> (c [*MqttConnection]()) Publish(topic string, qos byte, retained bool, data []byte) error
 
 - **topic**: string - topic name
-- **data**: Buffer - message to be published
-- **options**: any - publishing options
+- **qos**: Buffer - quality of service (QOS) for the message
+- **retained**: bool - retained flag for the message
+- **data**: []byte - a message to be published
+- **returns**: error - error or nil no errors occured.
 
 
-#### readQueueNames
+#### ReadQueueNames
 Reads a list of registered queue names.
 If the connection doesn't support this function, it returns an empty list.
 
-> `public` readQueueNames(): Promise\<string[]\>
+> (c [*MqttConnection]()) ReadQueueNames() ([]string, error)
 
-- **returns**: Promise\<string[]\> - queue names.
+- **returns**: ([]string, error) - queue names.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*MqttConnection]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
-#### subscribe
+#### Subscribe
 Subscribes to a topic
 
-> `public` subscribe(topic: string, options: any, listener: [IMqttMessageListener](../imqtt_message_listener)): Promise\<void\>
+> (c [*MqttConnection]()) Subscribe(topic string, qos byte, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
 - **topic**: string - topic name
-- **options**: any - subscription options
+- **qos**: byte - quality of service (QOS) for the subscription
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
+- **returns**: error - error or nil no errors occured.
 
-
-#### unsubscribe
+#### Unsubscribe
 Unsubscribes from a previously subscribed topic.
 
-> `public` unsubscribe(topic: string, listener: [IMqttMessageListener](../imqtt_message_listener): Promise\<void\>
+> (c [*MqttConnection]()) Unsubscribe(topic string, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
 - **topic**: string - topic name
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
+- **returns**: error - error or nil no errors occured.
 
 
 ### See also

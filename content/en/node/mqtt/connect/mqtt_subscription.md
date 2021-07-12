@@ -18,15 +18,15 @@ The MqttSubscription class defines the main fields for a subscription.
 
 #### topic
 Topic
-> `public` **topic**: string;
+> `public` **topic**: string
 #### filter
 Filter
-> `public` **filter**: boolean;
+> `public` **filter**: boolean
 #### options
 Subscription options
-> `public` **options**: any;
+> `public` **options**: any
 #### listener
 Listener
-> `public` **listener**: IMqttMessageListener;
+> `public` **listener**: [IMqttMessageListener](../imqtt_message_listener)
 
 </span>

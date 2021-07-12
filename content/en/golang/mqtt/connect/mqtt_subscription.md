@@ -1,13 +1,10 @@
 ---
 type: docs
-title: "MqttSubscription!"
-linkTitle: "MqttSubscription!"
+title: "MqttSubscription"
+linkTitle: "MqttSubscription"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 description: >
     Defines the fields for a subscription.
-
-
-    **TODO: this class is not implemented**
 
 ---
 
@@ -21,15 +18,15 @@ The MqttSubscription class defines the main fields for a subscription.
 
 #### topic
 Topic
-> `public` **topic**: string;
-#### filter
-Filter
-> `public` **filter**: boolean;
-#### options
-Subscription options
-> `public` **options**: any;
+> **topic**: string;
+#### Qos
+Quality of service (QOS) for the message
+> **Qos**: byte
 #### listener
 Listener
-> `public` **listener**: IMqttMessageListener;
+> **listener**: [IMqttMessageListener](../imqtt_message_listener)
+#### Skip
+Skip
+> **Skip**: int32
 
 </span>

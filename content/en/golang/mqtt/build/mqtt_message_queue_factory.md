@@ -1,12 +1,10 @@
 ---
 type: docs
-title: "MqttMessageQueueFactory!"
-linkTitle: "MqttMessageQueueFactory!"
+title: "MqttMessageQueueFactory"
+linkTitle: "MqttMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 description: > 
     Creates [MqttMessageQueue](../../queues/mqtt_message_queue) components by their descriptors. 
-
-    **TODO: this class is not implemented**
    
 ---
 
@@ -21,6 +19,21 @@ The MqttMessageQueueFactory class allows you to create [MqttMessageQueue](../../
 - The name of the created message queue is taken from its descriptor.
 
 
+### Constructors
+
+#### NewMqttMessageQueueFactory
+Creates a new instance of the factory.
+> NewMqttMessageQueueFactory() [*MqttMessageQueueFactory]()
+
+### Instance methods
+
+#### CreateQueue
+Creates a message queue component and assigns its name.
+
+> (c [*MqttMessageQueueFactory]()) CreateQueue(name string) [IMessageQueue](../../../messaging/queues/imessage_queue)
+
+- **name**: string - name of the created message queue.
+- **returns**: [IMessageQueue](../../../messaging/queues/imessage_queue) - created queue component.
 
 
 ### See also

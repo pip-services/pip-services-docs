@@ -10,9 +10,9 @@ In most cases, access to an application’s (service’s) resources is granted o
 
 Just like in the previous step, we’ll be placing the files of this step in the **operation/version1** folder.
 
-Let’s start by defining a data model for storing user information within a session. Create a new file named **SessionUserV1.py** with the following code:
+Let’s start by defining a data model for storing user information within a session. Create a new file named **SessionUserV1.ts** with the following code:
 
-**src/operations/version1/SessionUserV1.py**
+**src/operations/version1/SessionUserV1.ts**
 
 ```typescript
 export class SessionUserV1 {
@@ -42,9 +42,9 @@ export class SessionUserV1 {
 
 This data model will contain all necessary information about the user: the session’s ID, login, username, list of rolls, etc.
 
-We’ll be defining our operations for managing sessions and authenticating users in a file named **SessionOperationsV1.py**. A listing of this file’s code is presented below:
+We’ll be defining our operations for managing sessions and authenticating users in a file named **SessionOperationsV1.ts**. A listing of this file’s code is presented below:
 
-**src/operations/version1/SessionOperationsV1.py**
+**src/operations/version1/SessionOperationsV1.ts**
 
 ```typescript
 let _ = require('lodash');

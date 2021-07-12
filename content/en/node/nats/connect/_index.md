@@ -21,11 +21,11 @@ TODO: add description
 ### Classes
 
 #### [NatsConnection](nats_connection)
-TODO: add description
+NATS connection using the default driver.
 
 
 #### [NatsConnectionResolver](nats_connection_resolver)
-TODO: add description
+Helper class that resolves NATS connection and credential parameters, validates them and generates connection options.
 
 #### [NatsSubscription](nats_subscription)
 TODO: add description

@@ -5,7 +5,8 @@ linkTitle: "Build"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    TODO: add description
+    This package contains classes used to create [NatsMessageQueue](../../queues/nats_message_queue) components by their descriptors.
+
 ---
 ---
 <div class="module-body"> 
@@ -13,10 +14,10 @@ description: >
 ### Classes
 
 #### [DefaultNatsFactory](default_nats_factory)
-TODO: add description
+Creates [NatsMessageQueue](../../queues/nats_message_queue) components by their descriptors.
 
 #### [NatsMessageQueueFactory](nats_message_queue_factory)
-TODO: add description
+Creates [NatsMessageQueue](../../queues/nats_message_queue) components by their descriptors.
 
 
 </div>

@@ -40,9 +40,10 @@ Important points
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
 
 ### Constructors
-Method are creates a new instance of this lock.
 
 #### NewMemcachedLock
+Method are creates a new instance of this lock.
+
 > NewMemcachedLock() [*MemcachedLock]()
 
 ### Instance methods

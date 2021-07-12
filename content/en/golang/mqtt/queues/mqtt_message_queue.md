@@ -2,7 +2,7 @@
 type: docs
 title: "MqttMessageQueue"
 linkTitle: "MqttMessageQueue"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 description: >
     Message queue that sends and receives messages via an MQTT message broker.
     
@@ -10,7 +10,6 @@ description: >
 
 **Extends:** [MessageQueue](../../../messaging/queues/message_queue)
 
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
 The MqttMessageQueue class allows you to create message queues that send and receive messages via an MQTT message broker.
@@ -48,9 +47,11 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 
 
 ### Constructors
+
+#### NewMqttMessageQueue
 Creates a new instance of the message queue.
 
-> `public` constructor(name?: string)
+> NewMqttMessageQueue(name string) [*MqttMessageQueue]()
 
 - **name**: string - (optional) queue's name.
 
@@ -59,61 +60,33 @@ Creates a new instance of the message queue.
 
 <span class="hide-title-link">
 
-#### _autoSubscribe
-Auto-subscribe option
-> `protected` **_autoSubscribe**: boolean
+#### optionsResolver
+Connection resolver
+> **optionsResolver**: [MqttConnectionResolver](../../connect/mqtt_connection_resolver)
 
-
-#### _connection
-MQTT connection component
-> `protected` **_connection**: any
-
-#### _dependencyResolver
-Dependency resolver
-> `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
-
-
-#### _logger
-Logger
-> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
-
-
-#### _options
-Configuration options
-> `protected` **_options**: [ConfigParams](../../../commons/config/config_params) = new [ConfigParams()](../../../commons/config/config_params)
-
-
-#### _messages
+#### messages
 Message
-> `protected` **_messages**: [MessageEnvelope[]](../../../messaging/queues/message_envelope) = []
+> **messages**: [[]MessageEnvelope](../../../messaging/queues/message_envelope)
 
-#### _qos
-Quality of service
-> `protected` **_qos**: number
-
-#### _receiver
+#### receiver
 Message receiver
-> `protected` **_receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
-
-#### _serializeEnvelope
-Serialization option
-> `protected` **_serializeEnvelope**: boolean
+> **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
-#### _subscribed
+#### subscribed
 Subscribe option
-> `protected` **_subscribed**: boolean
+> **subscribed**: bool
 
-#### _topic
+#### topic
 Topic
-> `protected` **_topic**: string
+> **topic**: string
 
 </span>
 
 
 ### Instance methods
 
-#### abandon
+#### Abandon
 Returnes a message into the queue and makes it available for all subscribers to receive it again.
 This method is usually used to return a message which could not be processed at the moment
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
@@ -121,53 +94,52 @@ or/and send to dead letter queue.
 
 - Important: This method is not supported by MQTT.
 
-> `public` abandon(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
+> (c *MqttMessageQueue) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
+- **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
+- **returns**: (err error) - error or nil no errors occured.
 
-#### clear
+#### Clear
 Clears a component's state.
 
-> `public` clear(correlationId: string): Promise\<void\>
+> (c *MqttMessageQueue) Clear(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: (err error) - error or nil no errors occured.
 
-
-#### close
+#### Close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c *MqttMessageQueue) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: (err error) - error or nil no errors occured.
 
-#### complete
+#### Complete
 Permanently removes a message from the queue.
 This method is usually used to remove the message after successful processing.
 
 - Important: This method is not supported by MQTT.
-> `public` complete(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
+
+> (c *MqttMessageQueue) Complete(message *msgqueues.MessageEnvelope) (err error)
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
+- **returns**: (err error) - error or nil no errors occured.
 
 
-#### configure
-Configures a component by passing its configuration parameters.
-
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
-
-- **config:**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
-
-
-#### endListen
+#### EndListen
 Ends listening for incoming messages.
-When this method is call, [listen](#listen) unblocks the thread and execution continues.
+When this method is call, [Listen](#listen) unblocks the thread and execution continues.
 
-> `public` endListen(correlationId: string): void
+> (c *MqttMessageQueue) EndListen(correlationId string)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### fromMessage
+#### FromMessage!
+**TODO: method is not implemented**
+
+
 Returns the topic and the data of a message.
 
 > `protected` fromMessage(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): any
@@ -176,7 +148,10 @@ Returns the topic and the data of a message.
 - **returns**: any - topic and data
 
 
-#### getTopic
+#### GetTopic!
+**TODO: method is not implemented**
+
+
 Obtains the topic.
 
 > `protected` getTopic(): string
@@ -185,34 +160,38 @@ Obtains the topic.
 
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> (c *MqttMessageQueue) IsOpen() bool
 
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
-#### listen
+#### Listen
 Listens for incoming messages and blocks the current thread until the queue is closed.
 
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
-> `public` listen(correlationId: string, receiver: [IMessageReceiver](../../../messaging/queues/imessage_receiver)): void
+> (c *MqttMessageQueue) Listen(correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver))
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 
-#### moveToDeadLetter
+#### MoveToDeadLetter
 Permanently removes a message from the queue and sends it to dead letter queue.
 
 - Important: This method is not supported by MQTT.
 
-> `public` moveToDeadLetter(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
+> (c *MqttMessageQueue) MoveToDeadLetter(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
+- **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
+- **returns**: (err error) - error or nil no errors occured.
 
-#### onMessage
+#### OnMessage!
+**TODO: method is not implemented**
+
+
 Checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
 
 > `public` onMessage(topic: string, data: any, packet: any): void
@@ -221,123 +200,109 @@ Checks if the message comes from the right topic. If this is the case, deseriali
 - **data**: any - data
 - **packet**: any - packet
 
-#### open
-Opens the component.
+#### OpenWithParams
+Opens the component with given connection and credential parameters.
 
-> `public` open(correlationId: string): Promise\<void\>
+> (c *MqttMessageQueue) OpenWithParams(correlationId string, connection *ccon.ConnectionParams, credential *cauth.CredentialParams) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **connection**: [*ConnectionParams](../../../components/connect/connection_params) - connection parameters
+- **credential**: [*CredentialParams](../../../components/auth/credential_params) - credential parameters
+- **returns**: (err error) - error or nil no errors occured.
 
 
-#### peek
+#### Peek
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
-> `public` peek(correlationId: string): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
+> (c *MqttMessageQueue) Peek(correlationId string) (result [*MessageEnvelope](../../../messaging/queues/message_envelope), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - peeked message.
+- **returns**: (result [*MessageEnvelope](../../../messaging/queues/message_envelope), err error) - peeked message.
 
-#### peekBatch
+#### PeekBatch
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue, it returns an empty list.
 
 - Important: This method is not supported by MQTT.
 
-> `public` peekBatch(correlationId: string, messageCount: number): Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)>
+> (c *MqttMessageQueue) PeekBatch(correlationId string, messageCount int64) (result [[]MessageEnvelope](../../../messaging/queues/message_envelope), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageCount**: number - maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)> - list with peeked messages.
+- **messageCount**: int64 - maximum number of messages to peek.
+- **returns**: (result [[]MessageEnvelope](../../../messaging/queues/message_envelope), err error) - list with peeked messages.
 
-#### readMessageCount
+#### ReadMessageCount
 Reads the current number of messages in the queue to be delivered.
 
-> `public` readMessageCount(): Promise\<number\>
+> (c *MqttMessageQueue) ReadMessageCount() (count int64, err error)
 
-- ***returns**: Promise\<number\> - number of messages in the queue.
+- ***returns**: (count int64, err error)> - number of messages in the queue.
 
-#### receive
+#### Receive
 Receives an incoming message and removes it from the queue.
 
-> `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
+> (c *MqttMessageQueue) Receive(correlationId string, waitTimeout time.Duration) (result [*MessageEnvelope](../../../messaging/queues/message_envelope), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **waitTimeout**: number - timeout in milliseconds to wait for a message to come.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
+- **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
+- **returns**: (result [*MessageEnvelope](../../../messaging/queues/message_envelope), err error) - received message or null if nothing was received.
 
-#### renewLock
+#### RenewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.
 This method is usually used to extend the message processing time.
 
 - Important: This method is not supported by MQTT.
 
-> `public` renewLock(message: [MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout: number): Promise\<void\>
+> (c *MqttMessageQueue) RenewLock(message [*MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout time.Duration) (err error)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
-- **lockTimeout**: number - locking timeout in milliseconds.
+- **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
+- **lockTimeout**: time.Duration - locking timeout in milliseconds.
+- **returns**: (err error) - error or nil no errors occured.
 
-#### send
+#### Send
 Sends a message into the queue.
 
-> `public` send(correlationId: string, message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Promise\<void\>
+> (c *MqttMessageQueue) Send(correlationId string, envelop [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
-
-#### setReferences
-Sets references to dependent components.
-
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
-
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
+- **envelop**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
+- **returns**: (err error) - error or nil no errors occured.
 
 
-#### subscribe
+#### Subscribe
 Subscribes to a topic.
-> `protected` subscribe(correlationId: string): Promise\<void\> 
-
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+> (c *MqttMessageQueue) Subscribe()
 
 
-#### toMessage
+#### ToMessage
 If the message has no data, it returns null. Otherwise, it returns the message.
 
-> `protected` toMessage(topic: string, data: any, packet: any): [MessageEnvelope](../../../messaging/queues/message_envelope) 
+> (c *MqttMessageQueue) toMessage(msg mqtt.Message) [MessageEnvelope](../../../messaging/queues/message_envelope)
 
-- **topic**: string - topic
-- **data**: any - data
-- **packet**: any - packet
-- **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - Null if the message has no data. Otherwise, it returns the message.
+- **msg**: mqtt.Message - MQTT message with data and topic
+- **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - null if the message has no data. Otherwise, it returns the message.
 
-
-#### unsetReferences
-Unsets (clears) previously set references to dependent components.
-
-> `public` unsetReferences(): void
 
 ### Examples
 
-```typescript
-let queue = new MqttMessageQueue("myqueue");
-queue.configure(ConfigParams.fromTuples(
+```go
+queue := NewMqttMessageQueue("myqueue")
+queue.Configure(cconf.NewConfigParamsFromTuples(
   "topic", "mytopic",
   "connection.protocol", "mqtt"
   "connection.host", "localhost"
   "connection.port", 1883
-));
+))
 
-queue.open("123", (err) => {
-    ...
-});
+queue.open("123")
+queue.Send("123", NewMessageEnvelope("", "mymessage", "ABC"))
+message, err := queue.Receive("123")
 
-queue.send("123", new MessageEnvelope(null, "mymessage", "ABC"));
-queue.receive("123", (err, message) => {
-    if (message != null) {
-       ...
-       queue.complete("123", message);
-    }
-});
+if (message != nil) {
+   ...
+   queue.Complete("123", message);
+}
 ```
 
 

@@ -36,7 +36,7 @@ The MqttMessageQueue class allows you to create message queues that send and rec
     - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
     - **connect_timeout**: (optional) number of milliseconds to wait for connection (default: 30000)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 1000)
-    - **keepalive_timeout**: (optional) number of milliseconds to ping broker while inactive (default: 3000)
+    - **keepalive_timeout**: (optional) number of milliseconds to ping the broker while inactive (default: 3000)
 
 
 #### References
@@ -74,7 +74,7 @@ Dependency resolver
 
 
 #### _logger
-Logger.
+Logger
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
 
 
@@ -134,7 +134,7 @@ Clears a component's state.
 
 
 #### close
-Closes a component and frees the used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 

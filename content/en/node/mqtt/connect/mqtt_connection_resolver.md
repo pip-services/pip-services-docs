@@ -39,11 +39,11 @@ The MqttConnectionResolver class allows you to resolve MQTT connections and cred
 <span class="hide-title-link">
 
 #### _connectionResolver
-Connection resolver.
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver)
 
 #### _credentialResolver
-Connection resolver.
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver)
 
 </span>

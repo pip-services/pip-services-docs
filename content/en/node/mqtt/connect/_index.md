@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    TODO: add description
+    This package contains interfaces and classes used to connect to an MQTT broker.
 ---
 ---
 

@@ -8,6 +8,8 @@ description: >
     Kafka messaging for Pip.Services in Node.js / ES2017.  
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+
+    The Kafka module contains a set of components for messaging using the Kafka protocol. Contains the implementation of the components for working with messages: KafkaMessageQueue, KafkaConnectionResolver.
 ---
 
 ### Packages

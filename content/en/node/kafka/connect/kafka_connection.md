@@ -65,15 +65,15 @@ Hostname as client id.
 > `protected` **_clientId**: string
 
 #### _connectTimeout
-Connection time out./
+Connection time out
 > `protected` **_connectTimeout**: number = 1000
 
 #### _connection
-Kafka connection pool object.
+Kafka connection pool object
 > `protected` **_connection**: any
 
 #### _connectionResolver
-Connection resolver.
+Connection resolver
 > `protected` **_connectionResolver**: [KafkaConnectionResolver](../kafka_connection_resolver)
 
 #### _logLevel
@@ -117,7 +117,7 @@ Topic subscriptions
 
 #### checkOpen
 Checks if the connection is open.   
-Raise an error is connection is closed.
+Raises an error is the connection is closed.
 
 > `protected` checkOpen(): void
 
@@ -142,7 +142,7 @@ Commit a message offset.
 
 
 #### configure
-Configures the component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -166,7 +166,7 @@ If the connection doesn't support this function, it exists without error.
 
 #### deleteQueue
 Deletes a message queue.
-If connection doesn't support this function it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > `public` deleteQueue(name: string): Promise\<void\>
 
@@ -193,7 +193,7 @@ Checks if the component is opened.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component is open and False otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -216,7 +216,7 @@ Publish a message to a specified topic.
 
 #### readQueueNames
 Reads a list of registered queue names.
-If connection doesn't support this function, it returns an empty list.
+If the connection doesn't support this function, it returns an empty list.
 
 > `public` readQueueNames(): Promise\<string[]\>
 

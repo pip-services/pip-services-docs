@@ -4,7 +4,7 @@ title: "CouchbaseConnection"
 linkTitle: "CouchbaseConnection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    Couchbase connection using plain couchbase driver.
+    Couchbase connection using the default Couchbase driver.
 
 ---
 
@@ -12,26 +12,27 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
-This is the most basic persistence component that is only
-able to store data items of any type. Specific CRUD operations
-over the data items must be implemented in child classes by
-accessing **this._collection** or **this._model** properties.
+The CouchbaseConnection class allows you to create connections to the Couchbase database using the default Couchbase driver.
+
+**Important points**
+
+- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
 - **bucket**: (optional) Couchbase bucket name
 - **connection(s)**:    
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number (default: 27017)
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) user name
-    - **password**: (optional) user password
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: (optional) username
+    - **password**: (optional) user's password
 - **options**:
-    - **auto_create**: (optional) automatically create missing bucket (default: false)
-    - **auto_index**: (optional) automatically create primary index (default: false)
+    - **auto_create**: (optional) automatically create a missing bucket (default: false)
+    - **auto_index**: (optional) automatically create a primary index (default: false)
     - **flush_enabled**: (optional) bucket flush enabled (default: false)
     - **bucket_type**: (optional) bucket type (default: couchbase)
     - **ram_quota**: (optional) RAM quota in MB (default: 100)
@@ -48,7 +49,7 @@ accessing **this._collection** or **this._model** properties.
 
 
 #### _connection
-The Couchbase cluster connection object.
+Couchbase cluster connection object.
 > `protected` **_connection**: any
 
 #### _connectionResolver
@@ -64,11 +65,11 @@ Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _bucketName
-The Couchbase bucket name.
+Couchbase bucket's name.
 > `protected` **_bucketName**: string
 
 #### _bucket
-The Couchbase bucket object.
+Couchbase bucket's object.
 > `protected` **_bucket**: any
 
 </span>
@@ -78,7 +79,7 @@ Creates a new instance of the connection component.
 
 > `public` constructor(bucketName?: string)
 
-- **bucketName**: string - the name of couchbase bucket
+- **bucketName**: string - name of the couchbase bucket
 
 
 ### Instance methods
@@ -92,7 +93,7 @@ Closes the component and frees used resources.
 
 
 #### configure
-Configures the component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -100,18 +101,18 @@ Configures the component by passing configuration parameters.
 
 
 #### getBucket
-Gets Couchbase bucket object.
+Gets the Couchbase bucket's object.
 > `public` getBucket(): any
 
-- **returns**: any - Couchbase bucket object.
+- **returns**: any - Couchbase bucket's object.
 
 
 #### getBucketName
-Gets Couchbase bucket name.
+Gets Couchbase bucket's name.
 
 > `public` getBucketName(): string
 
-- **returns**: string - Couchbase bucket name.
+- **returns**: string - Couchbase bucket's name.
 
 #### getConnection
 Gets the connection.
@@ -120,11 +121,11 @@ Gets the connection.
 - **returns**: any - connection to a Couchbase database
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -140,4 +141,4 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

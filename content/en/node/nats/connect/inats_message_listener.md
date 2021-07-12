@@ -4,23 +4,23 @@ title: "INatsMessageListener"
 linkTitle: "INatsMessageListener"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    TODO: add description
+    Defines a listener for NATS messages.
 
 ---
 
 
 ### Description
 
-TODO: add description
+The INatsMessageListener interface defines a listener for NATS messages.
 
 
 ### Instance methods
 
 
 #### onMessage
-TODO: add description
+Defines the actions to be done after a message is received
 
 > onMessage(err: any, message: any): void
 
-- **err**: any - TODO: add description
-- **message**: any - TODO: add description
+- **err**: any - error
+- **message**: any - message

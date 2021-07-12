@@ -15,7 +15,7 @@ The DefaultMqttFactory class allows you to create [MqttMessageQueue](../../queue
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > `public` constructor()
 

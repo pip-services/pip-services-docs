@@ -54,7 +54,7 @@ Creates a new instance of the message queue.
 
 > `public` constructor(name?: string)
 
-- **name**: string - (optional) a queue name.
+- **name**: string - (optional) queue name.
 
 
 ### Fields
@@ -81,7 +81,7 @@ Kafka connection component.
 
 #### _dependencyResolver
 Dependency resolver.
-> `protected` **_dependencyResolver**: [DependencyResolver](../../../commonns/refer/dependency_resolver)
+> `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver/)
 
 #### _fromBeginning
 From beginning (Subscribe option)
@@ -101,7 +101,7 @@ Messages
 > `protected` **_messages**: [MessageEnvelope[]](../../../messaging/queues/message_envelope)
 
 #### _readPartitions
-Partition being read.
+Partition
 > `protected` **_readPartitions**: number = 1
 
 #### _receiver
@@ -113,7 +113,7 @@ Option to subscribe
 > `protected` **_subscribed**: boolean
 
 #### _topic
-topic
+Topic
 > `protected` **_topic**: string
 
 </span>
@@ -221,7 +221,7 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 
 #### onMessage
-Deserializes a message and then send it to a receiver if its set or puts it into the queue.
+Deserializes a message. Then, sends it to a receiver if its set or puts it into the queue.
 
 > `public` onMessage(topic: string, partition: number, msg: any): Promise\<void\>
 

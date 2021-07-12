@@ -4,13 +4,13 @@ title: "MqttSubscription"
 linkTitle: "MqttSubscription"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
 description: >
-    Defines the fields for a subscription.
+    Defines the fields for an MQTT subscription.
 
 ---
 
 ### Description
 
-The MqttSubscription class defines the main fields for a subscription.
+The MqttSubscription class defines the main fields for an MQTT subscription.
 
 ### Fields
 

@@ -51,7 +51,7 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### _clientId
-The hostname as client id.
+The hostname as client id
 > `protected` **_clientId**: string
 
 #### _connectTimeout
@@ -59,11 +59,11 @@ Connection timeout
 > `protected` **_connectTimeout**: number = 30000
 
 #### _connection
-MQTT connection pool object.
+MQTT connection pool object
 > `protected` **_connection**: any
 
 #### _connectionResolver
-Connection resolver.
+Connection resolver
 > `protected` **_connectionResolver**: [MqttConnectionResolver](../mqtt_connection_resolver)
 
 #### _keepAliveTimeout
@@ -71,7 +71,7 @@ Keep alive timeout
 > `protected` **_keepAliveTimeout**: number = 60000
 
 #### _logger
-Logger.
+Logger
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
 
 
@@ -99,7 +99,7 @@ Topic subscriptions
 
 #### checkOpen
 Checks if the connection is open.   
-Raise an error is connection is closed.
+Raises an error if the connection is closed.
 
 > `protected` checkOpen(): void
 
@@ -150,7 +150,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open

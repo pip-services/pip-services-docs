@@ -2,17 +2,18 @@
 type: docs
 title: "DataDogLogger"
 linkTitle: "DataDogLogger"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-datadog-dotnet"
 description: >
     Logger that dumps execution logs to a DataDog service.
 
 ---
 
-**Extends:** [CachedCounters](../../../components/count/cached_counters/)
-
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
+**Inherits:** [CachedCounters](../../../components/count/cached_counters/), [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
 ### Description
+DataDog is a popular monitoring SaaS service. It collects logs, metrics, events
+from infrastructure and applications and analyze them in a single place.
+
 The DataDogLogger class allows you to create loggers that dump execution logs to a DataDog service.
 
 
@@ -46,68 +47,68 @@ The DataDogLogger class allows you to create loggers that dump execution logs to
 ### Constructors
 Creates a new instance of the logger.
 
-> `public` constructor()
+> `public` DataDogLogger()
 
 
 ### Instance methods
 
-#### close
+#### CloseAsync
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> `public` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### configure
-Configures component by passing configuration parameters.
+#### Configure
+Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) transaction id used to trace execution through the call chain.
 
-#### isOpen
-Checks if the component is opened.
+#### IsOpen
+Checks if the component is open.
 
-> `public` isOpen(): boolean
+> `public` bool IsOpen()
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component has been opened and false otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### save
+#### Save
 Saves log messages from the cache.
 
-> `protected` save(counters: [LogMessage[]](../../../components/log/log_message)): void
+> `protected override` void Save(List<[LogMessage](../../../components/log/log_message)> messages)
 
-- **counters**: [LogMessage[]](../../../components/log/log_message) - current counters measurements to be saved.
+- **counters**: List<[LogMessage](../../../components/log/log_message)> - current counters measurements to be saved.
 
 
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples
 
-```typescript
+```cs
 let logger = new DataDogLogger();
-logger.configure(ConfigParams.fromTuples(
+logger.Configure(ConfigParams.FromTuples(
     "credential.access_key", "827349874395872349875493"
 ));
+ 
+await logger.OpenAsync("123");
 
-await logger.open("123");
-   
-logger.error("123", ex, "Error occured: %s", ex.message);
-logger.debug("123", "Everything is OK.");
+logger.Error("123", ex, "Error occured: {0}", ex.message);
+logger.Debug("123", "Everything is OK.");
 ```

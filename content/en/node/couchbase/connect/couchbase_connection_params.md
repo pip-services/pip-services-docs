@@ -8,7 +8,7 @@ description: >
 ---
 
 ### Description
-The CouchbaseConnectionParams class defines the parameters used to connect to a Couchbase database.
+The CouchbaseConnectionParams class defines the parameters used to connect to a Couchbase database. 
 
 
 ### Fields

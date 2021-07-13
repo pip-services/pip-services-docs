@@ -37,6 +37,6 @@ Function's calculation method.
 
 > `public` calculate(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)): Promise<[Variant](../../../variants/variant)>
 
-- **params**: [Variant[]](../../../variants/variant) - an array with function parameters.
+- **params**: [Variant[]](../../../variants/variant) - array with function parameters.
 - **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - variants operations manager.
 - **returns**: Promise<[Variant](../../../variants/variant)> - returned function's result.

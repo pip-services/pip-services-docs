@@ -7,7 +7,7 @@ description: >
     Implements a list of variables.
 ---
 
-**Implements**: [IVariableCollection](../ivariableCollection)
+**Implements**: [IVariableCollection](../ivariable_collection)
 
 ### Description
 

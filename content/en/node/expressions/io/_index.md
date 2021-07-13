@@ -20,7 +20,7 @@ Defines scanner that can read and unread characters and count lines. This scanne
 ### Classes
 
 #### [StringScanner](string_scanner)
-Scan characters in a string that allows tokenizers to look ahead through stream to perform lexical analysis.
+Scan characters in a string that allows tokenizers to look ahead through a stream to perform lexical analysis.
 
 </div>
 

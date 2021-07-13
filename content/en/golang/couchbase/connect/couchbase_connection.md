@@ -2,14 +2,11 @@
 type: docs
 title: "CouchbaseConnection"
 linkTitle: "CouchbaseConnection"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-couchbase-go"
 description: >
     Couchbase connection using the default Couchbase driver.
 
 ---
-
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IConfigurable](../../../commons/config/iconfigurable),
-[IOpenable](../../../commons/run/iopenable)
 
 ### Description
 The CouchbaseConnection class allows you to create connections to a Couchbase database using the default Couchbase driver.
@@ -17,7 +14,7 @@ The CouchbaseConnection class allows you to create connections to a Couchbase da
 **Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
-- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **c._collection** or **c._model** properties.
 
 #### Configuration parameters
 
@@ -43,89 +40,90 @@ The CouchbaseConnection class allows you to create connections to a Couchbase da
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** (optional) credential stores to resolve credentials
 
-
 ### Constructors
+
+#### NewCouchbaseConnection
 Creates a new instance of the connection component.
 
-> `public` constructor(bucketName?: string)
+> NewCouchbaseConnection(bucketName string) [*CouchbaseConnection]()
 
-- **bucketName**: string - name of the couchbase bucket
-
+- **bucketName**: string - the name of couchbase bucket
 
 ### Fields
 
 <span class="hide-title-link">
 
 
-#### _connection
+#### Connection
 Couchbase cluster connection object.
-> `protected` **_connection**: any
+> **Connection**: *gocb.Cluster
 
-#### _connectionResolver
+#### ConnectionResolver
 Connection resolver.
-> `protected` **_connectionResolver**: [CouchbaseConnectionResolver](../couchbase_connection_resolver)
+> **ConnectionResolver**: [*CouchbaseConnectionResolver](../couchbase_connection_resolver)
 
-#### _logger
+#### Logger
 Logger.
-> `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
+> **Logger**: [*CompositeLogger](../../../components/log/composite_logger)
 
-#### _options
+#### Options
 Configuration options.
-> `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
+> **Options**: [*ConfigParams](../../../commons/config/config_params)
 
-#### _bucketName
+#### BucketName
 Couchbase bucket's name.
-> `protected` **_bucketName**: string
+> **BucketName**: string
 
-#### _bucket
+#### Bucket
 Couchbase bucket's object.
-> `protected` **_bucket**: any
+> **Bucket**: *gocb.Bucket
 
 </span>
 
 
 ### Instance methods
 
-#### close
+#### Close
 Closes the component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> (c [*CouchbaseConnection]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: (err error) - error or nil no errors occured.
 
 
-#### configure
+#### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> (c [*CouchbaseConnection]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### getBucket
+#### GetBucket
 Gets the Couchbase bucket's object.
-> `public` getBucket(): any
+> (c [*CouchbaseConnection]()) GetBucket() *gocb.Bucket
 
-- **returns**: any - Couchbase bucket's object.
+- **returns**: *gocb.Bucket - Couchbase bucket's object.
 
 
-#### getBucketName
+#### GetBucketName
 Gets Couchbase bucket's name.
 
-> `public` getBucketName(): string
+> (c [*CouchbaseConnection]()) GetBucketName() string
 
 - **returns**: string - Couchbase bucket's name.
 
 #### getConnection
 Gets the connection.
-> `public` getConnection(): any
+> (c [*CouchbaseConnection]()) GetConnection() *gocb.Cluster
 
-- **returns**: any - connection to a Couchbase database
+- **returns**: *gocb.Cluster - connection to a Couchbase database
 
-#### isOpen
+#### IsOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> (c [*CouchbaseConnection]()) IsOpen() bool
 
 - **returns**: boolean - true if the component is open and false otherwise.
 
@@ -133,14 +131,14 @@ Checks if the component is open.
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> (c [*CouchbaseConnection]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: (err error) - error or nil no errors occured.
 
-
-#### setReferences
+#### SetReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> (c [*CouchbaseConnection]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

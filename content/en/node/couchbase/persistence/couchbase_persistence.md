@@ -86,7 +86,7 @@ Couchbase bucket's object.
 
 > `protected` **_bucket**: any
 
-#### _keyspaceName
+#### _query
 Couchbase N1qlQuery's object.
 > `protected` **_query**: any
 

@@ -175,7 +175,7 @@ export class MyDataCommandSet extends CommandSet {
         return new Command(
           'get_mydata',
           null,
-          async (correlationId: string, args: Parameters) => Promise<any> {
+          async (correlationId: string, args: Parameters) => Promise\<any\> {
               let param = args.getAsString('param');
               return await this._controller.getMyData(correlationId, param);
           }

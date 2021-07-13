@@ -28,7 +28,7 @@ Executes a component with arguments and receives the execution result.
 ```typescript
 class EchoComponent implements IExecutable {
     ...
-    public async execute(correlationId: string, args: Parameters): Promise<any> {
+    public async execute(correlationId: string, args: Parameters): Promise\<any\> {
         let result = args.getAsObject("message");
         return result;
     }

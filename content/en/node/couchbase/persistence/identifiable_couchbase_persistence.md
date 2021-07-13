@@ -56,10 +56,10 @@ The IdentifiableCouchbasePersistence class allows you to create abstract persist
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName: string, keyspaceName?: string)
+> `public` constructor(tableName: string, collection?: string)
 
 - **tableName**: string - (optional) collection's name.
-- **keyspaceName**: string - (optional) keyspace's name.
+- **collection**: string - (optional) a collection name.
 
 
 ### Fields

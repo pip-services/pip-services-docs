@@ -55,7 +55,7 @@ export interface IClosable {
 
 
 export interface IExecutable {
-	execute(correlationId: string, args: Parameters): Promise<any>;
+	execute(correlationId: string, args: Parameters): Promise\<any\>;
 }
 
 ```
@@ -115,7 +115,7 @@ class CounterController implements IReferenceable, IReconfigurable, IOpenable, I
     }
         
 
-    public execute(correlationId: string, args: Parameters): Promise<any> {
+    public execute(correlationId: string, args: Parameters): Promise\<any\> {
         this.counter += 1;
 
         this.logger.info(

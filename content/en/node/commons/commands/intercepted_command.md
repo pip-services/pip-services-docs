@@ -62,7 +62,7 @@ export class CommandLogger implements ICommandInterceptor {
         return command.getName();
     }
           
-    public async execute(correlationId: string, command: ICommand, args: Parameters): Promise<any> {
+    public async execute(correlationId: string, command: ICommand, args: Parameters): Promise\<any\> {
         console.log("Executed command " + command.getName());
         await command.execute(correlationId, args);
     }

@@ -156,7 +156,7 @@ export class MyComponent implements IReferenceable {
     this._lock = refs.getOneRequired<ILock>(new Descriptor("*", "lock", "*", "*", "1.0"));
   }
   
-  public async myMethod(correlationId: string, param1: any): Promise<any> {
+  public async myMethod(correlationId: string, param1: any): Promise\<any\> {
     // First check cache for result
     result := await this._cache.retrieve(correlationId, "mykey");
     if (result != null) {

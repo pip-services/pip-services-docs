@@ -14,7 +14,7 @@ description: >
 The DefaultFunctionCollection class allows you to implement a list filled with standard functions.
 
 ### Constructors
-Constructs this list and fills it with the standard functions.
+Constructs a list and fills it with the standard functions.
 
 > `public` constructor()
 

@@ -28,9 +28,9 @@ The NatsMessageQueue class allows you to create a message queue that sends and r
     - **username**: username
     - **password**: user's password
 - **options**:
-    - **serialize_message**: (optional) true to serialize entire message as JSON, false to send only message payload (default: true)
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
-    - **max_reconnect**: (optional) maximum reconnection attempts (default: 3)
+    - **serialize_message**: (optional) true to serialize entire message as JSON, false to send only the message payload (default: true)
+    - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
+    - **max_reconnect**: (optional) maximum number of reconnection attempts (default: 3)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 3000)
     - **flush_timeout**: (optional) number of milliseconds to wait on flushing messages (default: 3000)
 
@@ -95,7 +95,7 @@ Closes a component and frees used resources.
 
 
 #### configure
-Configures component by passing its configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
@@ -165,14 +165,14 @@ Reads the current number of messages in the queue to be delivered.
 
 > `public` readMessageCount(): Promise\<number\>
 
-- ***returns**: Promise\<number\> - a number of messages in the queue.
+- ***returns**: Promise\<number\> - number of messages in the queue.
 
 #### receive
 Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - Checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
+- **correlationId**: string - checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
 - **waitTimeout**: number - timeout (milliseconds) to wait for a message to come.
 - **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 

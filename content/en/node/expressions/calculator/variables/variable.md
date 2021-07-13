@@ -18,7 +18,7 @@ The Variable class allows you to implement a variable holder object.
 > `public` constructor(name: string, value?: [Variant](../../../variants/variant)) 
 
 - **name**: string - name of this variable.
-- **value**: [Variant](../../../variants/variant) - variable's value.
+- **value**: [Variant](../../../variants/variant) - value of this variable.
 
 
 ### Properties

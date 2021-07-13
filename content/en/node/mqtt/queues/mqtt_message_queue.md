@@ -301,7 +301,7 @@ Subscribes to a topic.
 
 
 #### toMessage
-If the message has no data, it returns null. Otherwise, it returns the message.
+If the message is null, it returns null. Otherwise, it returns the message.
 
 > `protected` toMessage(topic: string, data: any, packet: any): [MessageEnvelope](../../../messaging/queues/message_envelope) 
 

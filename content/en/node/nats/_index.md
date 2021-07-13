@@ -9,7 +9,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    The NATS module contains a set of components for messaging using the Nats protocol. 
+    The NATS module contains a set of components for messaging using the NATS protocol. 
 ---
 
 ### Packages

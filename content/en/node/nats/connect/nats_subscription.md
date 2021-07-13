@@ -4,13 +4,13 @@ title: "NatsSubscription"
 linkTitle: "NatsSubscription"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    TODO: add description
+    Defines the fields for NATS subscriptions.
 
 ---
 
 ### Description
 
-TODO: add description
+The NatsSubscription class defines the fields for NATS subscriptions.
 
 
 ### Fields
@@ -18,19 +18,19 @@ TODO: add description
 <span class="hide-title-link">
 
 #### subject
-TODO: add description
+Subject
 > `public` **subject**: string
 #### filter
-TODO: add description
+Filter
 > `public` **filter**: boolean
 #### options
-TODO: add description
+Options
 > `public` **options**: any
 #### handler
-TODO: add description
+Handler
 > `public` **handler**: any
 #### listener
-TODO: add description
+Listener
 > `public` **listener**: [INatsMessageListener](../inats_message_listener)
 
 </span>

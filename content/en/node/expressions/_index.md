@@ -5,8 +5,8 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 no_list: true
 weight: 30
 description: > 
-    This module is a part of the [Pip.Services](http://pip.services.org) polyglot microservices toolkit.
-    It provides syntax and lexical analyzers and expression calculator optimized for repeated calculations.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    It provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---
 
 ### Packages
@@ -22,7 +22,7 @@ The module contains the following packages:
 
 ### Use
 
-Install the package by suing NPM as
+Install the package by using NPM as
 ```bash
 npm install pip-services3-expressions-nodex --save
 ```

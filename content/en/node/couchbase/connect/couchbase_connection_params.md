@@ -4,11 +4,11 @@ title: "CouchbaseConnectionParams"
 linkTitle: "CouchbaseConnectionParams"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    TODO: add description
+   Defines the parameters used to connect to a Couchbase database.
 ---
 
 ### Description
-TODO: add description
+The CouchbaseConnectionParams class defines the parameters used to connect to a Couchbase database. 
 
 
 ### Fields
@@ -16,13 +16,13 @@ TODO: add description
 <span class="hide-title-link">
 
 #### uri
-TODO: add description
+Database's URI  
 > `public` **uri**: string;
 #### username
-TODO: add description
+Username
 > `public` **username**: string;
 #### password
-TODO: add description
+User's password
 > `public` **password**: string;
 
 </span>

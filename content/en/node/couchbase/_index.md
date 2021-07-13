@@ -5,22 +5,22 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 no_list: true
 weight: 30
 description: > 
-    Couchbase components for Pip.Services in Node.js / ES2017
+    Couchbase components for Pip.Services in Node.js / ES2017. 
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement Couchbase persistence.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement Couchbase persistence.
 ---
 
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create Couchbase persistence components.
-- [**Connect**](connect) - Connection component to configure Couchbase connection to database.
+- [**Build**](build) - factory to create Couchbase persistence components.
+- [**Connect**](connect) - connection component to configure a Couchbase connection to database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
 ### Use
 
-As an example, lets create persistence for the following data object.
+As an example, lets create persistence for the following data object. 
 
 ```typescript
 import { IIdentifiable } from 'pip-services3-commons-nodex';
@@ -52,8 +52,8 @@ export interface IMyPersistence {
 ```
 
 To implement couchbase persistence component you shall inherit `IdentifiableCouchbasePersistence`. 
-Most CRUD operations will come from the base class. You only need to override `getPageByFilter` method with a custom filter function.
-And implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
+Most CRUD operations will come from the base class. You only need to override the `getPageByFilter` method with a custom filter function.
+And then, implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```typescript
 import { IdentifiableCouchbasePersistence } from 'pip-services3-couchbase-nodex';
@@ -116,7 +116,7 @@ export class MyCouchbasePersistence extends IdentifableCouchbasePersistence {
 }
 ```
 
-Configuration for your microservice that includes couchbase persistence may look the following way.
+The configuration for your microservice that includes couchbase persistence may look the following way:
 
 ```yaml
 ...

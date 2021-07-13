@@ -17,7 +17,7 @@ The FunctionCollection class allows you to implement a list of functions
 ### Properties
 
 #### length
-Gets a number of functions stored in the collection.
+Gets the number of functions stored in the collection.
 > `public` length(): number
 
 - **retuns**: number - number of stored functions.
@@ -44,7 +44,7 @@ Finds a function in the list by it's name.
 > `public` findByName(name: string): [IFunction](../ifunction)
 
 - **name**: string - function name to be found.
-- **returns**: [IFunction](../ifunction) - function or *null* if function was not found.
+- **returns**: [IFunction](../ifunction) - function or *null* if no function was not found.
 
 #### findIndexByName
 Finds a function's index in the list by it's name. 
@@ -52,7 +52,7 @@ Finds a function's index in the list by it's name.
 > `public` findIndexByName(name: string): number
 
 - **name**: string - function name to be found.
-- **returns**: number - function's index in the list or *-1* if function was not found.
+- **returns**: number - function's index in the list or *-1* if nofunction was not found.
 
 #### get
 Gets a function by its index.

@@ -35,7 +35,7 @@ Type
 > **type**: string
 #### interval
 Interval
-> **interval**: number
+> **interval**: int
 #### points
 Points
 > **points**: [[]DataDogMetricPoint](../datadog_metric_point)

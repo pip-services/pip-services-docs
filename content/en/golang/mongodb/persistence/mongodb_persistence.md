@@ -103,7 +103,7 @@ The MongoDb database object.
 
 #### maxPageSize
 The maximum number of records to return from the database per request.
-> **maxPageSize**: number = 100
+> **maxPageSize**: int = 100
 
 </span
 

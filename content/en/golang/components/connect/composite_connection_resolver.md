@@ -57,7 +57,7 @@ Default protocol
 
 #### DefaultPort
 Default port
-> **DefaultPort**: number
+> **DefaultPort**: int
 
 #### SupportedProtocols
 List of supported protocols

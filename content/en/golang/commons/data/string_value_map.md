@@ -311,7 +311,7 @@ See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 > (c [*StringValueMap]()) GetAsNullableDouble(key string) *float64
 
 - **key**: string - key of element to get.
-- **returns**: number - double value of the element or nil if the conversion is not supported.
+- **returns**: *float64 - double value of the element or nil if the conversion is not supported.
 
 
 #### GetAsNullableDouble

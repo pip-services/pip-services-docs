@@ -355,7 +355,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap](../any_value_map/#fromvalue)
 
 > (c [*AnyValueArray]()) GetAsNullableMap(index int) [*AnyValueMap](../any_value_map)
 
-- **index**: number - index of the element to get.
+- **index**: int - index of the element to get.
 - **returns**: [*AnyValueMap](../any_value_map) - AnyValueMap value of the element or nil if conversion is not supported. 
 
 

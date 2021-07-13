@@ -4,12 +4,12 @@ title: "IFunctionCollection"
 linkTitle: "IFunctionCollection"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements a functions list.
+    Implements a list of functions.
 ---
 
 ### Description
 
-TODO: add description
+The IFunctionCollection class allows you to create a list of functions.
 
 
 ### Properties

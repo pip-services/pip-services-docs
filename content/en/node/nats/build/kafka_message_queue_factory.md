@@ -15,7 +15,7 @@ description: >
 The NatsMessageQueueFactory class allows you to create [NatsMessageQueue](../../queues/nats_message_queue) components by their descriptors.
 
 **Important points**
-- The name of created message queue is taken from its descriptor.
+- The name of the created message queue is taken from its descriptor.
 
 ### Constructors
 Creates a new instance of the factory.

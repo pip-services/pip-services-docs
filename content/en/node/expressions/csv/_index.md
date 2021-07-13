@@ -5,7 +5,7 @@ linkTitle: "CSV"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    This package contains constants and classes used to work with expression in csv files and streams. 
+    This package contains constants and classes used to work with expressions in csv files and streams. 
 ---
 ---
 <div class="module-body"> 

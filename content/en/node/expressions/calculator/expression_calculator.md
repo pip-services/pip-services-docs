@@ -11,7 +11,7 @@ description: >
 The ExpressionCalculator class allows you to create an expression calculator.
 
 ### Constructors
-Constructs this class and assigns expression string.
+Constructs this class and a assigns expression string.
 
 > `public` constructor(expression?: string)
 

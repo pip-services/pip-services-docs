@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 description: >
-    TODO: add description
+    This package contains classed used to create NATS connections.
 ---
 ---
 

@@ -38,7 +38,7 @@ NATS connection component
 
 #### _dependencyResolver
 Dependency resolver
-> `protected` **_dependencyResolver**: [DependencyResolver](../../../commonns/refer/dependency_resolver)
+> `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
 Logger

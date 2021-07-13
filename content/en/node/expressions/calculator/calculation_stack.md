@@ -17,13 +17,13 @@ The CalculationStack class allows you to implement a stack of Variant values.
 Length
 > `public` length(): number
 
-- **returns**: number - TODO: add description
+- **returns**: number - length
 
 
 ### Instance methods
 
 #### pop
-Removes and returns last value from the list.
+Removes and returns the last value from the list.
 > `public` pop(): [Variant](../../variants/variant)
 
 

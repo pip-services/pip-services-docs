@@ -12,15 +12,16 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
-The CouchbaseConnection class allows you to create connections to the Couchbase database using the default Couchbase driver.
+The CouchbaseConnection class allows you to create connections to a Couchbase database using the default Couchbase driver.
 
 **Important points**
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
-- **bucket**: (optional) Couchbase bucket name
+- **bucket**: (optional) Couchbase bucket's name
 - **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address

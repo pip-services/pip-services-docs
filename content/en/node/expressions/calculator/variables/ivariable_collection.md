@@ -17,7 +17,7 @@ The IVariableCollection interface defines a list of variables.
 ### Properties
 
 #### length
-Gets a number of variables stored in the collection.
+Gets the number of variables stored in the collection.
 > length(): number
 
 - **returns**: number - number of stored variables.
@@ -52,11 +52,11 @@ Clears all stored variables (assigns null values).
 
 
 #### findIndexByName
-'sFinds a variable index in the list by the variable's name. 
+Finds a variable index in the list by the variable's name. 
 
 > findIndexByName(name: string): number
 
-- **name**: string - variable name to be found.
+- **name**: string - name of the variable to be found.
 - **returns**: number - variable index in the list or *-1* if variable was not found.
 
 

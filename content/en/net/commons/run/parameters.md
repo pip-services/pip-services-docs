@@ -179,6 +179,7 @@ Creates a new Parameters from a ConfigMap object.
 #### FromTuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
+
 See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 
 > `public new static` [Parameters](../parameters) FromTuples(params object[] tuples)
@@ -200,7 +201,8 @@ Creates a new Parameters object filled with key-value pairs from specified objec
 #### MergeParams
 Merges two or more Parameters objects into one. The following Parameters override
 previously defined parameters.
-See [AnyValueMap.fromMaps](../../data/any_value_map/#frommaps)
+
+See [AnyValueMap.FromMaps](../../data/any_value_map/#frommaps)
 
 > `public static` [Parameters](../parameters) MergeParams(params [Parameters](../parameters)[] parameters)
 

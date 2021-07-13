@@ -164,7 +164,8 @@ Creates new Parameters object from a ConfigMap object.
 #### from_tuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
-See [AnyValueMap.fromTuplesArray](../../data/any_value_map/#fromtuplesarray).
+
+See [AnyValueMap.from_tuples_array](../../data/any_value_map/#from_tuples_array).
 
 > `static` fro_tuples(*tuples: Any): [Parameters](../parameters) 
 
@@ -184,7 +185,8 @@ Creates a new Parameters object filled with key-value pairs from specified objec
 #### merge_params
 Merges two or more Parameters into one. The following Parameters override
 previously defined parameters.
-See [AnyValueMap.fromMaps](../../data/any_value_map/#frommaps)
+
+See [AnyValueMap.from_maps](../../data/any_value_map/#from_maps)
 
 > `static` merge_params(*parameters: [Parameters](../parameters)): [Parameters](../parameters) 
 

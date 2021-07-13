@@ -33,7 +33,7 @@ References must match configured dependencies.
 #### NewDependencyResolverWithParams
 Creates a new instance of the dependency resolver.
 
-See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
+
 
 > NewDependencyResolverWithParams(config [*conf.ConfigParams](../../config/config_params), references [IReferences](../ireferences)) [*DependencyResolver]()
 

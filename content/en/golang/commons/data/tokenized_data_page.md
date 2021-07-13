@@ -60,7 +60,7 @@ starting point for the next search.
 ```go
 err, page = myDataClient.getDataByFilter(
   "123",
-  FilterParams.fromTuples("completed": true),
+  FilterParams.NewFilterParamsFromTuples("completed": true),
   NewTokenizedPagingParams("", 100, true)
 };
 

@@ -31,7 +31,7 @@ References must match configured dependencies.
 ### Constructors
 Creates a new instance of the dependency resolver.
 
-See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
+
 
 > `public` DependencyResolver([ConfigParams](../../config/config_params) config)
 

@@ -50,7 +50,8 @@ Creates a new Parameters by merging two or more maps. Maps defined later in the 
 #### NewParametersFromTuples
 Creates a new Parameters object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
-See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
+
+See [AnyValueMap.NewAnyValueMapFromTuplesArray](../../data/any_value_map/#newanyvaluemapfromtuplesarray)
 
 > NewParametersFromTuples(tuples ...interface{}) [*Parameters]()
 

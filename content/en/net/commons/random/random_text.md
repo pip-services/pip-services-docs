@@ -38,8 +38,9 @@ Generates a random email address.
 - **returns**: string - random email address.
 
 #### Name
-Generates a random person's name, which has the following structure
-\<optional prefix\> \<first name\> \<second name\> \<optional suffix\>
+Generates a random person's name, which has the following structure:
+
+**\<optional prefix\> \<first name\> \<second name\> \<optional suffix\>**
 
 > `public static` string Name()
 

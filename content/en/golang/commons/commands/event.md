@@ -72,7 +72,7 @@ event: = NewEvent("my_event");
 
 event.AddListener(myListener);
 
-event.Notify("123", Parameters.fromTuples(
+event.Notify("123", Parameters.NewParametersFromTuples(
   "param1", "ABC",
   "param2", 123
 ));

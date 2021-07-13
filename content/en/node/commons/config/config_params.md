@@ -11,8 +11,6 @@ description: >
 
 **Extends:** [StringValueMap](../../data/string_value_map)
 
-See also [IConfigurable](../iconfigurable), [StringValueMap](../../data/string_value_map)
-
 ### Description
 The ConfigParams class contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 

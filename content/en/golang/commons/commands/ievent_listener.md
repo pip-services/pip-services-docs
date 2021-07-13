@@ -37,7 +37,7 @@ let event = NewEvent("myevent");
 _listener := MyListener{};
 
 event.addListener(_listener);
-event.notify("123", Parameters.FromTuples("param1", "ABC"));
+event.notify("123", Parameters.NewParametersFromTuples("param1", "ABC"));
 // Console output: Fired event myevent
 
 ```

@@ -6,6 +6,8 @@ linkTitle: "Configuration!"
 weight: 10
 ---
 
+**TODO: need rewrite on Golang**
+
 - by Aleksey Dvoykin
 
 ### Introduction

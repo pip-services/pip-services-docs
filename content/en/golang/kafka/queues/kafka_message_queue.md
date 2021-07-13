@@ -248,7 +248,7 @@ Opens the component.
 
 #### Peek
 Peeks a single incoming message from the queue without removing it.
-If there are no messages available in the queue, it returns null.
+If there are no messages available in the queue, it returns nil.
 
 > (c [*KafkaMessageQueue]()) Peek(correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
@@ -281,7 +281,7 @@ Receives an incoming message and removes it from the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
-- **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or null if nothing was received.
+- **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
 
 #### RenewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.

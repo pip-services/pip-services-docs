@@ -6,6 +6,8 @@ linkTitle: "Component References!"
 weight: 20
 ---
 
+**TODO: need rewrite on Golang**
+
 - by Anastas Fonotov
 
 ### Introduction

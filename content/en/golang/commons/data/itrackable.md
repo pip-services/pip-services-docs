@@ -26,7 +26,7 @@ The UTC time at which the object was last changed (created, updated, or deleted)
 > **ChangeTime**: time.Time
 
 #### deleted
-The logical deletion flag. True when object is deleted and null or false otherwise
+The logical deletion flag. True when object is deleted and nil or false otherwise
 > **Deleted**: bool
 
 </span>

@@ -238,7 +238,7 @@ Opens the component.
 
 #### Peek
 Peeks a single incoming message from the queue without removing it.
-If there are no messages available in the queue, it returns null.
+If there are no messages available in the queue, it returns nil.
 
 > (c [*MqttMessageQueue]()) Peek(correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
@@ -271,7 +271,7 @@ Receives an incoming message and removes it from the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
-- **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or null if nothing was received.
+- **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
 
 #### RenewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.
@@ -311,7 +311,7 @@ Subscribes to a topic.
 
 
 #### ToMessage
-If the message has no data, it returns null. Otherwise, it returns the message.
+If the message has no data, it returns nil. Otherwise, it returns the message.
 
 > (c [*MqttMessageQueue]()) toMessage(msg mqtt.Message) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 

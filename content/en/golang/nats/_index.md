@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "NATS module"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
+gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
 no_list: true
 weight: 30
 description: > 
-    NATS Messaging for Pip.Services in Node.js / ES2017
+    NATS Messaging for Pip.Services in Golang
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
@@ -22,7 +22,7 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Get the package from the Github repository:
 ```bash
-npm install pip-services3-nats-nodex --save
+go get -u github.com/pip-services3-go/pip-services3-nats-go@latest
 ```

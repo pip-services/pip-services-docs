@@ -5,6 +5,8 @@ title: "Client Library!"
 linkTitle: "Client Library!" 
 ---
 
+**TODO: need rewrite on Golang**
+
 ### Introduction
 
 Knowing how to create a client library for your microservice is almost as important as knowing how to create the microservice itself. Some people question whether or not client libraries are actually necessary, and say that it’s enough to just describe the external interface and let the users of the microservice implement their own interaction protocol.

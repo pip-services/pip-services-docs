@@ -6,6 +6,8 @@ linkTitle: "Component Lifecycle!"
 weight: 30
 ---
 
+**TODO: need rewrite on Golang**
+
 - by Alex Mazur
 
 ### Component lifecycle

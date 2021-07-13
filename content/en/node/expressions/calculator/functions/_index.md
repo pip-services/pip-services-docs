@@ -14,10 +14,10 @@ description: >
 ### Interfaces
 
 #### [IFunction](ifunction)
-Implements a functions list.
+Interface for expression functions.
 
 #### [IFunctionCollection](ifunction_collection)
-Implements a functions list.
+Implements a list of functions.
 
 
 <br>
@@ -31,7 +31,7 @@ Implements a list filled with standard functions.
 Defines a delegate to implement a function.
 
 #### [FunctionCollection](function_collection)
-Implements a functions list.
+Implements a list of functions.
 
 
 </div>

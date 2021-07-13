@@ -14,7 +14,7 @@ description: >
 ### Constants
 
 #### [ExpressionTokenType](expression_token_type)
-Define types of expression tokens.
+Defines types of expression tokens.
 
 <br>
 

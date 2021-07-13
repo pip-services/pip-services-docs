@@ -7,8 +7,6 @@ description: >
     Defines a list of variables.
 ---
 
-**Implements**: [IVariableCollection](../ivariableCollection)
-
 ### Description
 
 The IVariableCollection interface defines a list of variables.

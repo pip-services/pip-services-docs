@@ -27,7 +27,7 @@ This sub-package contains interfaces and clases used to create variables and col
 <br>
 
 ### Constants
-
+ 
 #### [SyntaxErrorCode](syntax_error_code)
 General syntax errors.
 

@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The SyntaxException class defines the exceptions that can be thrown by the [ExpressionParser](../parser/expression_parser) class
+The SyntaxException class defines the exceptions that can be thrown by the [ExpressionParser](../parser/expression_parser) class.
 
 ### Constructors
 Creates a new instance of the SyntaxException class.

@@ -5,7 +5,7 @@ linkTitle: "Persistence"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    This package contains classes used to create Couchbase persitence components.
+    This package contains classes used to create Couchbase persitence components. 
     
 ---
 ---

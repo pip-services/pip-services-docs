@@ -12,11 +12,11 @@ description: >
 **Implements:** [IWriter<T, K>](../../../data/core/iwriter), [IGetter<T, K>](../../../data/core/igetter), [ISetter<T>](../../../data/core/isetter)
 
 ### Description
-The IdentifiableCouchbasePersistence class allows you to create abstract persistence components that store data in Couchbase and implement a number of CRUD operations over data items with unique ids.
+The IdentifiableCouchbasePersistence class allows you to create abstract persistence components that store data in a Couchbase database and implement a number of CRUD operations over data items with unique ids.
     
 **Important points**
     
-- The data items must implement [IIdentifiable](../../../commons/data/iidentifiable) interface.
+- The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 
 - In basic scenarios child classes shall only override [getPageByFilter](../couchbase_persistence/#getpagebyfilter), [getListByFilter](../couchbase_persistence/#getlistbyfilter) or [deleteByFilter](../couchbase_persistence/#deletebyfilter) operations with specific filter functions.
 - All other operations can be used out of the box. 
@@ -26,8 +26,8 @@ The IdentifiableCouchbasePersistence class allows you to create abstract persist
 #### Configuration parameters
 
 
-- **bucket**: (optional) Couchbase bucket name
-- **collection**: (optional) Couchbase collection name
+- **bucket**: (optional) Couchbase bucket's name
+- **collection**: (optional) Couchbase collection's name
 - **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
@@ -104,7 +104,7 @@ Deletes multiple data items by their unique ids.
 
 
 #### getListByIds
-Gets a list of data items retrieved by given unique ids.
+Gets a list of the data items retrieved by given unique ids.
 
 > `public` getListByIds(correlationId: string, ids: K[]): Promise\<T[]\>
 
@@ -137,7 +137,7 @@ Gets a list of data items retrieved by given unique ids.
 > `public` getListByIds(correlationId: string, ids: K[]): Promise\<T[]\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **ids**: K[] - ids of data items to be retrieved
+- **ids**: K[] - ids of the data items to be retrieved
 - **returns**: Promise\<T[]\> - list with requested data items.
 
 #### getOneById
@@ -146,7 +146,7 @@ Gets a data item by its unique id.
 > `public` getOneById(correlationId: string, id: K): Promise<T>
 
 - **correlationId**: string - (optional) transaction used id to trace execution through the call chain.
-- **id**: K - id of data item to be retrieved.
+- **id**: K - id of the data item to be retrieved.
 - **returns**: Promise<T> - found data item.
 
 

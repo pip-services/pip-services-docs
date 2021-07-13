@@ -62,7 +62,7 @@ Subject
 ### Instance methods
 
 #### abandon
-Returnes message into the queue and makes it available for all subscribers to receive it again. 
+Returnes a message into the queue and makes it available for all subscribers to receive it again. 
 This method is usually used to return a message which could not be processed at the moment 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed 
 permanently or/and send to dead letter queue.
@@ -133,7 +133,7 @@ Checks if the component is open.
 
 
 #### moveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 - Important: This method is not supported by NATS.
 
@@ -154,7 +154,7 @@ Reads the current number of messages in the queue to be delivered.
 
 > `public` readMessageCount(): Promise\<number\>
 
-- ***returns**: Promise\<number\> - a number of messages in the queue.
+- ***returns**: Promise\<number\> - number of messages in the queue.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.

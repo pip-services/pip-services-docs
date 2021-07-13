@@ -13,39 +13,39 @@ description: >
 ### Sub-Packages
 
 #### [Functions](functions)
-TODO: add description
+This sub-package provides interfaces and functions used to create lists of functions and delegates.
 
 #### [Parsers](parsers)
-TODO: add description
+This sub-package contains classes used to create expression parsers and expression token holders.
 
 #### [Tokenizers](tokenizers)
-TODO: add description
+This sub-package contains classes used to create expression specific state object and tokenizers for lexical analysis.
 
 #### [Variables](variables)
-TODO: add description
+This sub-package contains interfaces and clases used to create variables and collections of variables.
 
 <br>
 
 ### Constants
 
 #### [SyntaxErrorCode](syntax_error_code)
-TODO: add description
+General syntax errors.
 
 <br>
 
 ### Classes
 
 #### [CalculationStack](calculation_stack)
-TODO: add description
+Implements a stack of Variant values.
 
 #### [ExpressionCalculator](expression_calculator)
-TODO: add description
+Implements an expression calculator.
 
 #### [ExpressionException](expression_exception)
-TODO: add description
+Exception that can be thrown by Expression Calculator.
 
 #### [SyntaxException](syntax_exception)
-TODO: add description
+Exception that can be thrown by ExpressionParser.
 
 
 </div>

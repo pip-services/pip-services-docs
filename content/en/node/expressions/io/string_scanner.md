@@ -5,7 +5,7 @@ linkTitle: "StringScanner"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
     Scan characters in a string that allows tokenizers
-    to look ahead through stream to perform lexical analysis.
+    to look ahead through a stream to perform lexical analysis.
 ---
 
 **Implements**: [IScanner](../iscanner)
@@ -31,14 +31,14 @@ EOF
 ### Instance methods
 
 #### column
-Gets the column in the current line
+Gets the column in the current line.
 
 > `public` column(): number
 
 - **returns**: number - column in the current line in the stream.
 
 #### line
-Gets the current line number
+Gets the current line number.
 
 > `public` line(): number
 
@@ -76,13 +76,13 @@ Reads a character from the top of the stream.
 - **returns**: number - read character or *-1* if the stream is processed to the end.
 
 #### reset
-Resets scanner to the initial position
+Resets the scanner to the initial position.
 
 > `public` reset(): void 
 
 
 #### unread
-Puts one character back into the stream stream.
+Puts one character back into the stream.
 
 > `public` unread(): void 
 

@@ -20,6 +20,6 @@ Couchbase connection using the default Couchbase driver.
 Defines the parameters used to connect to a Couchbase database.
 
 #### [CouchbaseConnectionResolver](couchbase_connection_resolver)
-Helper class that resolves Couchbase connection and credential parameters, validates them and generates a connection URI.
+Helper class that resolves Couchbase connections and credential parameters, validates them and generates connection URIs.
 
 </div>

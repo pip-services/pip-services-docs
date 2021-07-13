@@ -5,7 +5,7 @@ linkTitle: "Calculator"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    This package contains several sub-packages used to create functions and delegates, expression parsers and expression token holders, tokenizers, and variables and collections of variables. It also contains a class to create an expression calculator.
+    This package contains several sub-packages used to create functions, delegates, expression parsers, expression token holders, tokenizers, variables and collections of variables. It also contains a class to create an expression calculator.
 ---
 ---
 <div class="module-body"> 

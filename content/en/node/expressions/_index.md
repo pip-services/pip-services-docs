@@ -52,7 +52,7 @@ console.log("The result of the expression is " + result.asString);
 ...
 ```
 
-And, this is an example to process mustache templates:
+And, this example shows hot to process mustache templates:
 
 ```typescript
 let mustache = new MustacheTemplate();

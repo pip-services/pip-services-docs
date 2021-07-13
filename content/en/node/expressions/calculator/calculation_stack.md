@@ -32,7 +32,7 @@ Peeks a Variant value located at a specified index.
 > `public` peekAt(index: number): [Variant](../../variants/variant)
 
 #### peek
-Peeks a Varian value.
+Peeks a Variant value.
 > `public` peek(): [Variant](../../variants/variant)
 
 

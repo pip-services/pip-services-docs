@@ -4,17 +4,18 @@ title: "CouchbasePersistence<T>"
 linkTitle: "CouchbasePersistence"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 description: >
-    Abstract persistence component that stores data in Couchbase using Couchbase object relational mapping.
+    Abstract persistence component that stores data in a Couchbase database using Couchbase object relational mapping.
 ---
 
 **Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
 
 ### Description
-The CouchbasePersistence class allows you to create abstract persistence components that store data in Couchbase using Couchbase object relational mapping.
+The CouchbasePersistence class allows you to create abstract persistence components that store data in a Couchbase database using Couchbase object relational mapping.
     
-**Important points*    
+**Important points**    
     
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this._model** properties.
 
 #### Configuration parameters
 
@@ -108,7 +109,7 @@ Clears a component's state.
 
 
 #### close
-Closes a component and frees the used resources.
+Closes a component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
@@ -142,7 +143,7 @@ Converts the given object from the public partial format.
 
 
 #### convertToPublic
-Converts an object's value from internal to public format.
+Converts an objecc  from internal to public format.
 
 > `protected` convertToPublic(value: any): any
 
@@ -161,7 +162,7 @@ Creates a data item.
 
 
 #### createBucketFilter
-Creates a filter that includes a collection name in it.
+Creates a filter that includes a collection's name in it.
 
 > `protected` createBucketFilter(filter: string): string
 
@@ -253,7 +254,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open

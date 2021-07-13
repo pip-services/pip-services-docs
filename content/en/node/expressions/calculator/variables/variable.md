@@ -24,18 +24,18 @@ The Variable class allows you to implement a variable holder object.
 ### Properties
 
 #### name
-Variable's name.
+Name of the variable
 > `public` name(): string
 
 - **returns**: string - variable name.
 
 #### value
-Gets the variable value.
+Gets the variable's value.
 > `public` value(): [Variant](../../../variants/variant)
 
 - **returns**: [Variant](../../../variants/variant) - variable value.
 
-Sets the variable value.
+Sets the variable's value.
 
 > `public` value(value: [Variant](../../../variants/variant))
 

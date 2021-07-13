@@ -12,9 +12,10 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The NatsConnection class is used to define NATS connections using the default driver.
 
 **Important points**
-- By defining a connection and sharing it through multiple message queues you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple message queues, you can reduce number of used database connections.
 
 #### Configuration parameters
 
@@ -29,8 +30,8 @@ description: >
     - **username**: username
     - **password**: user's password
 - **options**:
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
-    - **max_reconnect**: (optional) maximum reconnection attempts (default: 3)
+    - **retry_connect**: (optional) turns on/off automated reconnect when the connection is lost (default: true)
+    - **max_reconnect**: (optional) maximum number of reconnection attempts (default: 3)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 3000)
     - **flush_timeout**: (optional) number of milliseconds to wait on flushing messages (default: 3000)
 
@@ -71,7 +72,7 @@ Logger
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = new [CompositeLogger()](../../../components/log/composite_logger)
 
 #### _maxReconnect
-Maximum reconnection attempts (default: 3)
+Maximum number of reconnection attempts (default: 3)
 > `protected` **_maxReconnect**: number = 3
 
 #### _options
@@ -80,11 +81,11 @@ Connection options
 
 
 #### _reconnectTimeout
-nNumber of milliseconds to wait on each reconnection attempt (default: 3000)
+Number of milliseconds to wait on each reconnection attempt (default: 3000)
 > `protected` **_reconnectTimeout**: number = 3000
 
 #### _retryConnect
-TODO: add description
+Retry to connect option
 > `protected` **_retryConnect**: boolean = true
 
 #### _subscriptions
@@ -121,7 +122,7 @@ Configures the component by passing its configuration parameters.
 
 #### createQueue
 Creates a message queue.
-If connection doesn't support this function, it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > `public` createQueue(name: string): Promise\<void\>
 
@@ -141,7 +142,7 @@ If connection doesn't support this function, it exists without error.
 Gets the connection.
 > `public` getConnection(): any
 
-- **returns**: any - connection to a MySQL database
+- **returns**: any - connection to NATS
 
 
 #### isOpen
@@ -161,7 +162,7 @@ Opens the component.
 
 
 #### publish
-Publish a message to a specified topic.
+Publishes a message to a specified topic.
 
 > `public` publish(subject: string, message: any): Promise\<void\>
 
@@ -171,7 +172,7 @@ Publish a message to a specified topic.
 
 #### readQueueNames
 Reads a list of registered queue names.
-If connection doesn't support this function, it returns an empty list.
+If the connection doesn't support this function, it returns an empty list.
 
 > `public` readQueueNames(): Promise\<string[]\>
 
@@ -183,7 +184,7 @@ Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### subscribe

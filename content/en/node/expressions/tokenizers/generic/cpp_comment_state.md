@@ -31,7 +31,7 @@ Represents a forward slash (/) char.
 ### Instance methods
 
 #### getMultiLineComment
-Ignore everything up to a closing star and slash, and then return the tokenizer's next token.
+Ignores everything up to a closing star and slash, and then returns the tokenizer's next token.
 
 > `protected` getMultiLineComment(scanner: [IScanner](../../../io/iscanner)): string
 
@@ -39,7 +39,7 @@ Ignore everything up to a closing star and slash, and then return the tokenizer'
 - **returns**: string - comment
 
 #### getSingleLineComment
-Ignore everything up to an end-of-line and return the tokenizer's next token.
+Ignores everything up to an end-of-line, and then returns the tokenizer's next token.
 
 > `protected` getSingleLineComment(scanner: [IScanner](../../../io/iscanner)): string
 
@@ -47,10 +47,10 @@ Ignore everything up to an end-of-line and return the tokenizer's next token.
 - **returns**: string - comment
 
 #### nextToken
-Either delegate to a comment-handling state, or return a token with just a slash in it.
+Either delegates to a comment-handling state, or returns a token with just a slash in it.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - A textual string to be tokenized.
-- **tokenizer**: [ITokenizer](../../itokenizer) - A tokenizer class that controls the process.
-- **returns**: [Token](../../token) - The next token from the top of the stream.
+- **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
+- **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
+- **returns**: [Token](../../token) - next token from the top of the stream.

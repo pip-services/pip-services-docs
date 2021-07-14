@@ -30,7 +30,7 @@ Column number where the token is.
 
 > `public` column(): number
 
-- **returns**: number - original Mustache tokens.
+- **returns**: number - column number.
 
 #### line
 Line number where the token is.
@@ -41,7 +41,7 @@ Line number where the token is.
 
 
 #### tokens
-Gets a list of subtokens in this token a section.
+Gets a list of subtokens.
 
 > `public` tokens(): [MustacheToken[]]()
 

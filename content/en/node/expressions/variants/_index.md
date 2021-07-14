@@ -13,7 +13,7 @@ description: >
 ### Constants
 
 #### [VariantType](variant_type)
-Enum that defines supported types of variant values.
+Enum that defines the supported types of variant values.
 
 <br>
 

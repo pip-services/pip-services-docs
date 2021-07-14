@@ -5,7 +5,7 @@ linkTitle: "Clients"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    This package contains classes used to create AWS Lambda Functions.
+    This package contains classes used to call AWS Lambda Functions.
 ---
 ---
 

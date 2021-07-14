@@ -17,7 +17,7 @@ The AbstractVariantOperations class allows you to implement abstract variant ope
 ### Instance methods
 
 #### add
-Performs '+' operation for two variants.
+Performs the '+' operation for two variants.
 
 > `public` add(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -26,7 +26,7 @@ Performs '+' operation for two variants.
 - **returns**: [Variant](../variant) - result variant object.
 
 #### and
-Performs AND operation for two variants.
+Performs the AND operation for two variants.
 
 > `public` and(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -35,7 +35,7 @@ Performs AND operation for two variants.
 - **returns**: [Variant](../variant) - result variant object.
 
 #### div
-Performs '/' operation for two variants.
+Performs the '/' operation for two variants.
 
 > `public` div(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -45,7 +45,7 @@ Performs '/' operation for two variants.
 
 
 #### equal
-Performs '=' operation for two variants.
+Performs the '=' operation for two variants.
 
 > `public` equal(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -54,7 +54,7 @@ Performs '=' operation for two variants.
 - **returns**: [Variant](../variant) - result variant object.
 
 #### getElement
-Performs [] operation for two variants.
+Performs the [] operation for two variants.
 
 > `public` getElement(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -63,7 +63,7 @@ Performs [] operation for two variants.
 - **returns**: [Variant](../variant) - result variant object.
 
 #### in
-Performs IN operation for two variants.
+Performs the IN operation for two variants.
 
 > `public` in(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -73,7 +73,7 @@ Performs IN operation for two variants.
 
 
 #### less
-Performs '<' operation for two variants.
+Performs the '<' operation for two variants.
 
 > `public` less(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -83,7 +83,7 @@ Performs '<' operation for two variants.
 
 
 #### lessEqual
-Performs '<=' operation for two variants.
+Performs the '<=' operation for two variants.
 
 > `public` lessEqual(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -93,7 +93,7 @@ Performs '<=' operation for two variants.
 
 
 #### lsh
-Performs '<<' operation for two variants.
+Performs the '<<' operation for two variants.
 
 > `public` lsh(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -103,7 +103,7 @@ Performs '<<' operation for two variants.
 
 
 #### mod
-Performs '%' operation for two variants.
+Performs the '%' operation for two variants.
 
 > `public` mod(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -113,7 +113,7 @@ Performs '%' operation for two variants.
 
 
 #### more
-Performs '>' operation for two variants.
+Performs the '>' operation for two variants.
 
 > `public` more(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -123,7 +123,7 @@ Performs '>' operation for two variants.
 
 
 #### moreEqual
-Performs '>=' operation for two variants.
+Performs the '>=' operation for two variants.
 
 > `public` moreEqual(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -133,7 +133,7 @@ Performs '>=' operation for two variants.
 
 
 #### mul
-Performs '*' operation for two variants.
+Performs the '*' operation for two variants.
 
 > `public` mul(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -143,7 +143,7 @@ Performs '*' operation for two variants.
 
 
 #### negative
-Performs unary '-' operation for a variant.
+Performs the unary '-' operation for a variant.
 
 > `public` negative(value: [Variant](../variant)): [Variant](../variant)
 
@@ -152,7 +152,7 @@ Performs unary '-' operation for a variant.
 
 
 #### not
-Performs NOT operation for a variant.
+Performs the NOT operation for a variant.
 
 > `public` not(value: [Variant](../variant)): [Variant](../variant)
 
@@ -161,7 +161,7 @@ Performs NOT operation for a variant.
 
 
 #### notEqual
-Performs '<>' operation for two variants.
+Performs the '<>' operation for two variants.
 
 > `public` notEqual(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -171,7 +171,7 @@ Performs '<>' operation for two variants.
 
 
 #### or
-Performs OR operation for two variants.
+Performs the OR operation for two variants.
 
 > `public` or(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -181,7 +181,7 @@ Performs OR operation for two variants.
 
 
 #### pow
-Performs '^' operation for two variants.
+Performs the '^' operation for two variants.
 
 > `public` pow(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -191,7 +191,7 @@ Performs '^' operation for two variants.
 
 
 #### rsh
-Performs '>>' operation for two variants.
+Performs the '>>' operation for two variants.
 
 > `public` rsh(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -201,7 +201,7 @@ Performs '>>' operation for two variants.
 
 
 #### sub
-Performs '-' operation for two variants.
+Performs the '-' operation for two variants.
 
 > `public` sub(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
@@ -220,7 +220,7 @@ Converts variant type to string representation.
 
 
 #### xor
-Performs XOR operation for two variants.
+Performs the XOR operation for two variants.
 
 > `public` xor(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 

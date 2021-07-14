@@ -11,7 +11,8 @@ description: >
 ### Description
 
 The CharReferenceInterval allows you to represent a character interval that keeps a reference.
-Important points
+
+**Important points**
 
 - This class is internal and used by [CharReferenceMap](../char_reference_map).
 

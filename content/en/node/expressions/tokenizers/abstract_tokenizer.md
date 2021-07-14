@@ -100,12 +100,12 @@ Word state.
 Scanner
 > `public` scanner(): [IScanner](../../io/iscanner)
 
-- **returns**: [IScanner](../../io/iscanner) - TODO: add description
+- **returns**: [IScanner](../../io/iscanner) - scanner
 
 
 > `public` scanner(value: [IScanner](../../io/iscanner))
 
-- **value**: [IScanner](../../io/iscanner) - TODO: add description
+- **value**: [IScanner](../../io/iscanner) - scanner
 
 
 ### Instance methods
@@ -142,7 +142,7 @@ Reads the next token.
 - **returns**: [Token](../token) - next token
 
 #### setCharacterState
-Sets the characters state.
+Sets the characters' state.
 > `public` setCharacterState(fromSymbol: number, toSymbol: number, state: [ITokenizerState](../itokenizer_state)): void
 
 - **fromSymbol**: number - first symbol

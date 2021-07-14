@@ -39,6 +39,6 @@ Gets the next token from the stream started from the character linked to this st
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../token) - next token from the top of the stream.

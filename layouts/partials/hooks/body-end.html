@@ -39,13 +39,6 @@
 
       hits = hits.filter((item, index) => {
 
-        //for (let i = Object.getOwnPropertyNames(item.hierarchy).length; i > 1; i--) {
-        //  let prevIndex = i - 1;
-        //  item.hierarchy['lvl' + i] = copy(item.hierarchy['lvl' + prevIndex]);
-        //  item._highlightResult.hierarchy['lvl' + i] = copy(item._highlightResult.hierarchy['lvl' + prevIndex]);
-        //  item._highlightResult.hierarchy_camel[0]['lvl' + i] = copy(item._highlightResult.hierarchy_camel[0]['lvl' + prevIndex]);
-        //}
-
         // Add current menuSection and module to hits
         let menuSection = item.url.split('/')[3];
         let module = item.url.split('/')[4];
@@ -64,11 +57,6 @@
         } else {
           item.hierarchy.lvl0 = menuSection + ' → ' + module;
           item._highlightResult.hierarchy.lvl0 = menuSection + ' → ' + module;
-
-          //if (!item.hierarchy.lvl6) {
-          //  item.hierarchy.lvl6 = menuSection;
-          //  item._highlightResult.hierarchy.lvl6 = { value: '<span style="color:#81c7f9">' + menuSection + '</span>' };
-          //}
         }
         
         return true
@@ -79,6 +67,23 @@
       
     },
     
+    handleSelected: function (input, event, suggestion, datasetNumber, context) {
+      // Prevents the default behavior on click and rather opens the suggestion
+      // in a new tab.
+
+      if (context.selectionMethod === 'enterKey' || context.selectionMethod === 'click') {
+
+        if(document.getElementsByClassName('algolia-autocomplete')[0].getElementsByClassName('ds-cursor')[0] != undefined) {
+          window.open(suggestion.url, "_self");
+        } else {
+          let searchUrl = isGitRepo ? "{{ "pip-services-docs/search/" | absURL }}?q=" : "{{ "/search/" | absURL }}?q=";
+          window.open(searchUrl + input.getVal());
+        }
+      }
+
+      input.setVal('');
+    },
+
     // Set debug to true to inspect the dropdown
     debug: true,
   });

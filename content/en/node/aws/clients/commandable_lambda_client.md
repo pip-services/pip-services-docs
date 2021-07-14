@@ -12,16 +12,16 @@ description: >
 ### Description
 
 Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable).
-Each command is exposed as action determined by "cmd" parameter.
+Each command is exposed as an action determined by the "cmd" parameter.
 
 
 #### Configuration parameters
 
 - **connections**:                   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **region**: (optional) AWS region
 - **credentials**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
 
@@ -47,7 +47,7 @@ to the action parameters.
 
 > `public` callCommand(cmd: string, correlationId: string, params: any): Promise\<any\>
 
-- **cmd**: string - an action name
+- **cmd**: string - action name
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **params**: any - command parameters.
 - **returns**: Promise\<any\> - action result.

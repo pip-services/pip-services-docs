@@ -32,7 +32,7 @@ Opens the component.
 
 > Future open(String correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 

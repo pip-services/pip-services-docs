@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "INamed!"
-linkTitle: "INamed!"
+title: "INamed"
+linkTitle: "INamed"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description:  > 
    Interface for data objects that have human-readable names.
@@ -20,6 +20,8 @@ The INamed interface is used to define data objects containing a human-readable 
 The object's humand-readable name.
 > **name**: string
 
+</span>
+
 ### Examples
 ```go
 type MyData struct {
@@ -31,5 +33,4 @@ type MyData struct {
 }
 ```
 
-</span>
 

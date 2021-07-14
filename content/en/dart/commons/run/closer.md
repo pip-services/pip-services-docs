@@ -22,7 +22,7 @@ If they don't, the call to this method has no effect.
 > `static` Future close(String correlationId, List components)
 
 - **correlationId**: String - (optional) transaction id  used to trace execution through the call chain.
-- **components**: any[] - list of components that are to be closed.
+- **components**: List - list of components that are to be closed.
 
 #### closeOne
 Closes a specific component.

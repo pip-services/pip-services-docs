@@ -2,7 +2,7 @@
 type: docs
 title: "ITrackable"
 linkTitle: "ITrackable"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 description: > 
     Interface for data objects that can track their changes, including logical deletion.
 ---
@@ -19,29 +19,31 @@ The ITrackagle interface allows you to define data objects that can track their 
 
 #### create_time
 UTC time at which the object was created.
-> **create_time**: Date
+> **create_time**: DateTime
 
 #### change_time
 UTC time at which the object was last changed (created, updated, or deleted).
-> **change_time**: Date
+
+`@override`
+> **change_time**: DateTime
 
 #### deleted
 Logical deletion flag. True when object is deleted and null or false otherwise
-> **deleted**: boolean
+> **deleted**: bool
 
 </span>
 
 ### Examples
 
-```typescript
-export class MyData implements IStringIdentifiable, ITrackable {
-    public id: string;
-    public field1: string;
-    public field2: number;
+```dart
+class MyData implements IStringIdentifiable, ITrackable {
+    String id;
+    String  field1;
+    int field2;
     ...
-    public change_time: Date;
-    public create_time: Date;
-    public deleted: boolean;
+    DateTime change_time;
+    DateTime create_time;
+    bool deleted;
 }
 ```
 

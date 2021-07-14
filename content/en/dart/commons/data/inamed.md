@@ -2,7 +2,7 @@
 type: docs
 title: "INamed"
 linkTitle: "INamed"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 description: > 
    Interface for data objects that have human-readable names.
 
@@ -18,17 +18,18 @@ The INamed interface is used to define data objects containing a human-readable 
 
 #### name
 Object's humand-readable name.
-> **name**: string
+> **name**: String
 
 </span>
 
+
 ### Examples
-```typescript
-export class MyData implements IStringIdentifiable, INamed {
-    public id: string;
-    public name: string;
-    public field1: string;
-    public field2: number;
+```dart
+class MyData implements IStringIdentifiable, INamed {
+    String id;
+    String name;
+    String field1;
+    String field2;
     ...
 }
 ```

@@ -2,7 +2,7 @@
 type: docs
 title: "DataPage<T>"
 linkTitle: "DataPage"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 description: > 
     Data transfer object that is used to pass the results of a paginated query.
     This object contains items of the retrieved page.
@@ -23,10 +23,10 @@ Important points
 ### Constructors
 Creates a new instance of DataPage and assigns its values.
 
-> `public` constructor(data: T[] = null, total: number = null)
+> DataPage(List\<T\> data, int total)
 
-- **data**: T[] - list of items from the retrieved page.
-- **total**: number - total amount of items in a request.
+- **data**: List\<T\> - list of items from the retrieved page.
+- **total**: int - total amount of items in a request.
 
 ### Fields
 
@@ -35,24 +35,26 @@ Creates a new instance of DataPage and assigns its values.
 
 #### data
 Items of the retrieved page.
-> `public` **data**: T[]
+> **data**: List\<T\>
 
 #### total
 Total amount of items in a request.
-> `public` **total**: number
+> **total**: int
 
 </span>
 
 
 ### Examples
 
-```typescript
-page := await myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    new PagingParams(0, 100, true)
+```dart
+page = myDataClient.getDataByFilter(
+  '123',
+  FilterParams.fromTuples('completed': true),
+  NewPagingParams(0, 100, true)
 );
-
+for (item in page.Data) {
+      print(item);
+ }
 ```
 
 ### See also

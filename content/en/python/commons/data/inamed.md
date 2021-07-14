@@ -20,6 +20,8 @@ The INamed interface is used to define data objects containing a human-readable 
 The object's humand-readable name.
 > **name**: str
 
+</span>
+
 ### Examples
 ```python
 class MyData(IIdentifiable, INamed):
@@ -27,4 +29,4 @@ class MyData(IIdentifiable, INamed):
     name = None
 ```
 
-</span>
+

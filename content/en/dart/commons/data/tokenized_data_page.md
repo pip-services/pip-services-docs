@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedDataPage<T>"
 linkTitle: "TokenizedDataPage"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 description: > 
     Data transfer object that is used to pass the results of paginated queries.
            
@@ -27,11 +27,11 @@ Important points
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> `public` constructor(data: T[] = null, token: string = null, total: number = null)
+> TokenizedDataPage(List\<T\> data, [String token, int total])
 
-- **data**: T[] - list of items from the retrieved page.
-- **token**: string - (optional) token used to define a starting point for the next search.
-- **total**: number - (optional) total number of objects in the result.
+- **data**: List\<T\> - list of items from the retrieved page.
+- **token**: String - (optional) token used to define a starting point for the next search.
+- **total**: int - (optional) total number of objects in the result.
 
 
 ### Fields
@@ -40,25 +40,30 @@ Creates a new instance of data page and assigns its values.
 
 #### data
 Items of the retrieved page.
-> `public` **data**: T[]
+> **data**: List\<T\>
 
 #### token
 starting point for the next search.
-> `public` **token**: string
+> **token**: String
 
 #### total
 Total amount of items in a request.
-> `public` **total**: number
+> **total**: int
 
 </span>
 
 ### Examples
-```typescript
-page := await myDataClient.getDataByFilter(
-    "123",
-    FilterParams.fromTuples("completed": true),
-    new TokenizedPagingParams(null, 100, true)
+```dart
+
+page = myDataClient.getDataByFilter(
+  '123',
+  FilterParams.fromTuples('completed': true),
+  TokenizedPagingParams(0, 100, true)
 );
+
+for (item in page.Data) {
+      print(item);
+ }
 ```
 
 ### See also

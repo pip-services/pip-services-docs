@@ -87,6 +87,7 @@ Adds a validation schema for an optional object property.
 - **name**: str - a property name.
 - **typ**: Any - (optional) a property schema or type.
 - **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
+- **returns**: [ObjectSchema]() - returns Schema with added optional property
 
 
 #### with_property

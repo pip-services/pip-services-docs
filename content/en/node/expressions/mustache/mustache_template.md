@@ -26,7 +26,7 @@ Gets the flag to turn on auto-creation of variables for the Mustache template.
 
 > `public` autoVariables(): boolean
 
-- **returns**: boolean - the flag to turn on auto creation of variables.
+- **returns**: boolean - flag to turn on auto creation of variables.
 
 Sets the flag to turn on auto creation of variables for the Mustache template.
 
@@ -35,7 +35,7 @@ Sets the flag to turn on auto creation of variables for the Mustache template.
 - **value**: boolean - flag to turn on auto-creation of variables.
 
 #### defaultVariables
-The list with default variables.
+List with default variables.
 
 > `public` defaultVariables(): any
 
@@ -59,7 +59,7 @@ Lists the original tokens
 
 - **value**: [Token[]](../../tokenizers/token) - original tokens
 #### resultTokens
-The list of processed Mustache tokens.
+List of processed Mustache tokens.
 
 > `public` resultTokens(): [MustacheToken[]](../parsers/mustache_token)
 
@@ -79,7 +79,7 @@ Populates the specified variables list with variables obtained from a parsed Mus
 
 > `public` createVariables(variables: any): void
 
-- **variables**: any - The list of variables to be populated.
+- **variables**: any - List of variables to be populated.
 
 #### evaluate
 Evaluates this Mustache template using default variables.

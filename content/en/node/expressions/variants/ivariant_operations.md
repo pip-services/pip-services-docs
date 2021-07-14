@@ -135,8 +135,8 @@ Performs the '>=' operation for two variants.
 > moreEqual(value1: [Variant](../variant), value2: [Variant](../variant)): [Variant](../variant)
 
 - **value1**: [Variant](../variant) - first operand for this operation.
-- **value2**: [Variant](../variant) - The second operand for this operation.
-- **returns**: [Variant](../variant) - A result variant object.
+- **value2**: [Variant](../variant) - second operand for this operation.
+- **returns**: [Variant](../variant) - result variant object.
 
 
 #### mul

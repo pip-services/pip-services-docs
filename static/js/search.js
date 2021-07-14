@@ -37,8 +37,8 @@ function search(searchQuery) {
     let indexJsonPath = "/index.json";
 
     // check if is githubpages url
-    if (window.location.href.search("pip-services-docs") > -1) {
-        indexJsonPath = "pip-services-docs/index.json"
+    if (window.location.href.search("github") > -1) {
+        indexJsonPath = window.location.origin + "/pip-services-docs/index.json"
     }
 
     // load your index file

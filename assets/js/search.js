@@ -30,7 +30,7 @@ limitations under the License.
                     var searchUrl = "/search/?q=";
 
                     // check if is githubpages url
-                    if (window.location.href.search("pip-services-docs") > -1) {
+                    if (window.location.href.search("github") > -1) {
                         searchUrl = "{{ "pip-services-docs/search/" | absURL }}?q="
                     }
 

@@ -23,7 +23,7 @@ jobs:
           hugo-version: '0.84.4'
           extended: true
       
-      - name: Pre-Build
+      - name: Pre-Build # Pre-Build with caching data for check is correct markdown
         run: hugo --theme=docsy
         env:
           sidebar_cache_limit: 100

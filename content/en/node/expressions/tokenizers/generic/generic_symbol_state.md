@@ -14,7 +14,7 @@ description: >
 
 The GenericSymbolState class allows you to add multi-character symbols and obtain a symbol token from a scanner.
 
-Important points
+**Important points**
 
 - The idea of a symbol is a character that stands on its own, such as an ampersand or a parenthesis.  
 - For example, when tokenizing the expression *(isReady)& (isWilling)*, a typical tokenizer would return 7 tokens, including one for each parenthesis and one for the ampersand. Thus a series of symbols such as *)&(* becomes three tokens, while a series of letters such as *isReady* becomes a single word token.
@@ -40,6 +40,6 @@ Returns a symbol token from a scanner.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../token) - next token from the top of the stream.

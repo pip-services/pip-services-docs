@@ -15,10 +15,10 @@ The CCommentState class allows you to create a state that will either delegate t
 ### Instance methods
 
 #### nextToken
-Either delegate to a comment-handling state, or return a token with just a slash in it.
+Either delegates to a comment-handling state, or returns a token with just a slash in it.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../token) - next token from the top of the stream.

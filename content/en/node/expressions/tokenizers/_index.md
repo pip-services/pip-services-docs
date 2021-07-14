@@ -33,7 +33,7 @@ Types (categories) of tokens such as “number”, “symbol” and “word”.
 Defines an interface for tokenizer state that processes comments.
 
 #### [INumberState](inumber_state)
-Defines interface for tokenizer state that processes numbers - Integers, Floats, HexDec.
+Defines an interface for tokenizer state that processes numbers - Integers, Floats, HexDec.
 
 #### [IQuoteState](iquote_state)
 Defines an interface for tokenizer state that processes quoted strings.

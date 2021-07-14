@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The MustacheException class defines an exception that can e thrown by a Mustache template.
+The MustacheException class defines an exception that can be thrown by a Mustache template.
 
 ### Constructors
 Creates a new instance of the MustacheException class.

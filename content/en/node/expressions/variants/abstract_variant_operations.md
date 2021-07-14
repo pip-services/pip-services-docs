@@ -211,7 +211,7 @@ Performs '-' operation for two variants.
 
 
 #### typeToString
-Convert variant type to string representation
+Converts variant type to string representation.
 
 > `protected` typeToString(value: [VariantType](../variant_type)): string
 

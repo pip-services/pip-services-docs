@@ -6,7 +6,7 @@ no_list: true
 weight: 1
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: >
-    This sub-package contains utility classes used to create character intervals, keep references associated with specific characters and char validators.
+    This sub-package contains utility classes used to create character intervals, keep references associated with specific characters, and char validators.
 ---
 ---
 <div class="module-body"> 

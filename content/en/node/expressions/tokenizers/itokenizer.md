@@ -106,7 +106,7 @@ A token state to process white space delimiters.
 
 
 #### wordState
-A token state to process words or indentificators.
+A token state to process words or indentifiers.
 > **wordState**: [IWordState](../iword_state)
 
 
@@ -116,16 +116,16 @@ A token state to process words or indentificators.
 ### Instance methods
 
 #### hasNextToken
-Checks if there i a next token.
+Checks if there is a next token.
 > hasNextToken(): boolean
 
-- **returns**: boolean - **true** if scanner has the next token.
+- **returns**: boolean - **true** if scanner has a next token.
 
 #### nextToken
 Gets the next token from the scanner.
 > nextToken(): [Token](../token)
 
-- **returns**: [Token](../token) - next token of *null* if there are no more tokens left.
+- **returns**: [Token](../token) - next token or *null* if there are no more tokens left.
 
 
 #### tokenizeBuffer
@@ -146,18 +146,18 @@ Tokenizes a string buffer into a list of strings.
 
 
 #### tokenizeStream
-Tokenizes a textual stream into a list of token structures.
+Tokenizes a text stream into a list of token structures.
 
 > tokenizeStream(scanner: [IScanner](../../io/iscanner)): [Token[]](../token)
 
-- **scanner**: [IScanner](../../io/iscanner) - textual stream to be tokenized.
+- **scanner**: [IScanner](../../io/iscanner) - text stream to be tokenized.
 - **returns**: [Token[]](../token) - list of token structures.
 
 
 #### tokenizeStreamToStrings
-Tokenizes a textual stream into a list of strings.
+Tokenizes a text stream into a list of strings.
 
 > tokenizeStreamToStrings(scanner: [IScanner](../../io/iscanner)): string[]
 
-- **scanner**: [IScanner](../../io/iscanner) - textual stream to be tokenized.
+- **scanner**: [IScanner](../../io/iscanner) - text stream to be tokenized.
 - **returns**: string[] - list of token strings.

@@ -4,7 +4,7 @@ title: "MustacheParser"
 linkTitle: "MustacheParser"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 description: > 
-    Implements an mustache parser class.
+    Implements a Mustache parser class.
 ---
 
 ### Description

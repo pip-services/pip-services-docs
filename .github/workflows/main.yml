@@ -22,9 +22,15 @@ jobs:
         with:
           hugo-version: '0.84.4'
           extended: true
-
+      
+      - name: Pre-Build
+        run: hugo --theme=docsy
+        env:
+          sidebar_cache_limit: 100
+          
       - name: Build
         run: hugo --theme=docsy
+        
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

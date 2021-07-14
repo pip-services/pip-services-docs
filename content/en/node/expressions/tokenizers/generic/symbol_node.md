@@ -10,7 +10,7 @@ description: >
 ### Description
 The SymbolNode class allows you to construct a SymbolNode.
 
-Important points
+**Important points**
 
 - A *SymbolNode* object is a member of a tree that contains all possible prefixes of allowable symbols. Multi-character symbols appear in a *SymbolNode* tree with one node for each character.
 - For example, the symbol *=:~* will appear in a tree as three nodes. The first node contains an equals sign, and has a child; that child contains a colon and has a child; this third child contains a tilde, and has no children of its own. If the colon node had another child for a dollar sign character, then the tree would contain the symbol *=:$*.
@@ -86,7 +86,7 @@ Finds or creates a child for the given character.
 > `public` ensureChildWithChar(value: number): [SymbolNode]()
 
 - **value**: number - chararacters's 
-- **returns**: [SymbolNode]() - TODO: add description
+- **returns**: [SymbolNode]() - symbol's node
 
 
 #### findChildWithChar

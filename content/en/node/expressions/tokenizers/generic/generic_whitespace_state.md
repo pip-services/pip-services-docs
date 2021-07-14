@@ -13,12 +13,12 @@ description: >
 
 The GenericWhitespaceState allows you to create a whitespace state.
 
-Important points
+**Important points**
 
 - A whitespace state ignores whitespace (such as blanks and tabs), and returns the tokenizer's next token. By default, all characters from 0 to 32 are whitespace.
 
 ### Constructors
-Constructs a whitespace state with a default idea of what characters are, in fact, whitespace.
+Constructs a whitespace state with a default idea that characters are, in fact, whitespace.
 
 > `public` constructor()
 
@@ -35,7 +35,7 @@ Ignores whitespace (such as blanks and tabs), and returns the tokenizer's next t
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner), tokenizer: [ITokenizer](../../itokenizer)): [Token](../../token)
 
-- **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
+- **scanner**: [IScanner](../../../io/iscanner) - text string to be tokenized.
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../token) - next token from the top of the stream.
 

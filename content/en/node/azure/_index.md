@@ -5,13 +5,13 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 no_list: true
 weight: 30
 description: > 
-    Azure components for Pip.Services in Node.js / ES2017
+    Azure components for Pip.Services in Node.js / ES2017. 
 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
 
-    TODO: add description
+    It contains packages used to create containers and services that do operations via the Azure Function protocol.
 ---
 
 
@@ -19,8 +19,8 @@ description: >
 
 The module contains the following packages:
 
-- [**Container**](container) - TODO: add description
-- [**Services**](services) - TODO: add description
+- [**Container**](container) - contains classes that act as containers to instantiate and run components.
+- [**Services**](services) - contains interfaces and classes used to create services that do operations via the Azure Function protocol.
 
 
 ### Use

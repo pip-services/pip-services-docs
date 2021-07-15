@@ -22,7 +22,7 @@ Contains methods used to get correlationIds, commands and bodys from the Azure F
 
 
 #### [CommandableAzureFunction](commandable_azure_function)
-Abstract Azure Function function that acts as a container to instantiate and run components and expose them via an external entry point.
+Abstract Azure Function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 
 </div>

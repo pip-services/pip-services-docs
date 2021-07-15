@@ -14,7 +14,7 @@ description: >
 
 The module contains the following packages:
 - [**Build**](build) - factory to create Couchbase persistence components.
-- [**Connect**](connect) - connection component to configure a Couchbase connection to database.
+- [**Connect**](connect) - connection component to configure a Couchbase connection to a database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 

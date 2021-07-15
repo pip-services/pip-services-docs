@@ -4,7 +4,7 @@ title: "CommandableAzureFunctionService"
 linkTitle: "CommandableAzureFunctionService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract service that receives commands via Azure Function protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
+    Abstract service that receives commands via the Azure Function protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
 ---
 
 **Extends**: [AzureFunctionService](../azure_function_service)

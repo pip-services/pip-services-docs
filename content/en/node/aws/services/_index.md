@@ -25,10 +25,10 @@ An interface that allows to integrate lambda services into lambda function conta
 Abstract service that receives commands via AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
 
 #### [LambdaAction](lambda_action)
-Define actions to be executed as Lambda functions
+Defines actions to be executed as Lambda functions
 
 
 #### [LambdaService](lambda_service)
-Abstract service that receives remove calls via AWS Lambda protocol.
+Abstract service that receives remove calls via the AWS Lambda protocol.
 
 </div>

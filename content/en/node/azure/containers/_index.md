@@ -18,7 +18,7 @@ description: >
 Abstract Azure Function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 #### [AzureFunctionContextHelper](azure_function_context_helper)
-Contains methods used to get correlationIds, commands and bodys from the Azure Function context.
+Contains methods used to get correlationIds, commands and bodies from the Azure Function context.
 
 
 #### [CommandableAzureFunction](commandable_azure_function)

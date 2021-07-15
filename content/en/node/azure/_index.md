@@ -19,7 +19,7 @@ description: >
 
 The module contains the following packages:
 
-- [**Container**](container) - contains classes that act as containers to instantiate and run components.
+- [**Container**](containers) - contains classes that act as containers to instantiate and run components.
 - [**Services**](services) - contains interfaces and classes used to create services that do operations via the Azure Function protocol.
 
 

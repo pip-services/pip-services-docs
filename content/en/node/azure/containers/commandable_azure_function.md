@@ -13,7 +13,7 @@ description: >
 ### Description
 The CommandableAzureFunction allows you to create an abstract Azure Function function that acts as a container to instantiate and run components and expose them via an external entry point.
 
-Important points
+**Important points**
 
 - All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by the "cmd" parameter.
   

@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "contains classes that act as containers to instantiate and run components"
+title: "CommandableAzureFunction"
 linkTitle: "CommandableAzureFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >

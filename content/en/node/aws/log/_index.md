@@ -15,7 +15,7 @@ description: >
 ### Classes
 
 #### [CloudWatchLogger](cloud_watch_logger)
-Logger that writes log messages to AWS Cloud Watch Log.
+Logger that writes log messages to AWS CloudWatch Log.
 
 
 </div>

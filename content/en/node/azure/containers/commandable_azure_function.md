@@ -1,17 +1,17 @@
 ---
 type: docs
-title: "CommandableAzureFunction"
+title: "contains classes that act as containers to instantiate and run components"
 linkTitle: "CommandableAzureFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract Azure Function that acts as a container to instantiate and run components
+    Abstract Azure Function function that acts as a container to instantiate and run components
     and expose them via an external entry point.
 ---
 
 **Extends**: [AzureFunction](../azure_function)
 
 ### Description
-
+The CommandableAzureFunction allows you to create an abstract Azure Function function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 Important points
 

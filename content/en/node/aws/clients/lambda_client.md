@@ -11,17 +11,17 @@ description: >
 
 ### Description
 
-When making calls "cmd" parameter determines which what action shall be called, while
+When making calls, the "cmd" parameter determines which what action shall be called, while the 
 other parameters are passed to the action itself.
 
 
 #### Configuration parameters
 
 - **connections**:                   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **region**: (optional) AWS region
 - **credentials**:    
-    - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
 - **options**:
@@ -30,7 +30,7 @@ other parameters are passed to the action itself.
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements.
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections.
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials.
 
 ### Constructors
@@ -38,7 +38,7 @@ Creates a new instance of this client.
 
 > `public` constructor(name: string)
 
-- **name**: string - a service name.
+- **name**: string - service name.
 
 
 ### Fields
@@ -46,7 +46,7 @@ Creates a new instance of this client.
 <span class="hide-title-link">
 
 #### _connection
-The AWS connection parameters
+AWS connection parameters
 > `protected` **_connection**: [AwsConnectionParams](../../connect/aws_connection_params)
 
 ### _connectionResolver
@@ -54,28 +54,28 @@ The connection resolver.
 > `protected` **_connectionResolver**: [AwsConnectionResolver](../../connect/aws_connection_resolver)
 
 ### _counters
-The performance counters.
+Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 
 ### _dependencyResolver
-The dependencies resolver.
+Dependencies resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 ### _lambda
-The reference to AWS Lambda Function.
+Reference to AWS Lambda Function.
 > `protected` **_lambda**: any
 
 ### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 ### _opened
-The opened flag.
+Opened flag.
 > `protected` **_opened**: boolean
 
 ### _tracer
-The tracer.
+Tracer.
 > `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
 
 </span>
@@ -83,12 +83,12 @@ The tracer.
 ### Instance methods
 
 #### call
-Calls a AWS Lambda Function action.
+Calls an AWS Lambda Function action.
 
 > `protected` call(cmd: string, correlationId: string, params: any = {}): Promise\<any\>
 
-- **cmd**: string - an action name to be called.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **cmd**: string - action name to be called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: any - (optional) action parameters.
 - **returns**: Promise\<any\> - action result.
 
@@ -99,7 +99,7 @@ Calls a AWS Lambda Function action asynchronously without waiting for response.
 > `protected` callOneWay(cmd: string, correlationId: string, params: any = {}): Promise\<any\>
 
 - **cmd**: string - an action name to be called.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: any - (optional) action parameters.
 - **returns**: Promise\<any\> - action result.
 
@@ -108,22 +108,22 @@ Closes component and frees used resources.
 
 > `public` close(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### instrument
-Adds instrumentation to log calls and measure call time.
+Adds instrumentation to log calls and measures call time.
 It returns a InstrumentTiming object that is used to end the time measurement.
 
 > `protected` instrument(correlationId: string, name: string): [InstrumentTiming](../../../rpc/services/instrument_timing) 
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - a method name.
 - **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - object to end the time measurement.
 
@@ -132,25 +132,25 @@ Performs AWS Lambda Function invocation.
 
 > `protected` invoke(invocationType: string, cmd: string, correlationId: string, args: any): Promise\<any\>
 
-- **invocationType**: string - an invocation type: "RequestResponse" or "Event"
-- **cmd**: string - an action name to be called.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **invocationType**: string - invocation type: "RequestResponse" or "Event"
+- **cmd**: string - action name to be called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: any - action arguments
 - **returns**: Promise\<any\> - action result.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 #### open
 Opens the component.
 
 > `public` open(correlationId: string): Promise\<void\>
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### setReferences
 Sets references to dependent components.

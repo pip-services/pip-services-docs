@@ -7,7 +7,7 @@ description: >
     Constants that determine cloud watch units.
 ---
 
-**Extends:** [LambdaFunction](../lambda_function)
+**Extends:** [LambdaFunction](../../containers/lambda_function)
 
 ### Description
 

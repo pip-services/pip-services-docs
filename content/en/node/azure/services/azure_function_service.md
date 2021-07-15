@@ -60,7 +60,7 @@ Tracer.
 #### act
 
 Calls registered actions in this Azure Function.
-The "cmd" parameter in the action parameters determine
+The "cmd" parameter in the action parameters determines
 what action shall be called.
 
 This method shall only be used in testing.
@@ -109,7 +109,7 @@ Adds '.cmd' to a command name
 > `protected` generateActionCmd(name: string): string
 
 - **name**: string - command name
-- **returns**: string - command name with added '.cmd' added at its end.
+- **returns**: string - command name with '.cmd' added at its end.
 
 #### getActions
 Get all actions supported by the service.
@@ -205,7 +205,7 @@ Sets references to dependent components.
 ### Abstract methods
 
 #### register
-Registers all service routes in HTTP endpoint.
+Registers all service routes in an HTTP endpoint.
 
 This method is called by the service and must be overridden
 in child classes.

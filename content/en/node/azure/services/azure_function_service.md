@@ -12,7 +12,7 @@ description: >
 ### Description
 The AzureFunctionService class allows you to create a service that receives remove calls via the Azure Function protocol.
 
-Important points
+**Important points**
 
 - This service is intended to work inside an AzureFunction container that exposes registered actions externally.
 

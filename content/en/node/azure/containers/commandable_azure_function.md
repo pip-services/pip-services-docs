@@ -4,7 +4,7 @@ title: "CommandableAzureFunction"
 linkTitle: "CommandableAzureFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract Azure Function function, that acts as a container to instantiate and run components
+    Abstract Azure Function that acts as a container to instantiate and run components
     and expose them via external entry point.
 ---
 

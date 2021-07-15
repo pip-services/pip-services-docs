@@ -5,7 +5,7 @@ linkTitle: "Count"
 no_list: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    This package contains constants containing constants used as cloud watch units and classes used to create performance counters.
+    This package contains constants used used to determine cloud watch units and classes used to create performance counters.
 ---
 ---
 
@@ -21,7 +21,7 @@ Constants that determine cloud watch units.
 ### Classes
 
 #### [CloudWatchCounters](cloud_watch_counters)
-Performance counters that periodically dumps counters to AWS Cloud Watch Metrics.
+Performance counters that periodically dump counters to AWS Cloud Watch Metrics.
 
 
 </div>

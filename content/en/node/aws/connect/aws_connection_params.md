@@ -14,7 +14,7 @@ description: >
 ### Description
 The AwsConnectionParams class contains connection parameters used to authenticate against Amazon Web Services (AWS) and connect to specific AWS resources.
 
-Important points
+**Important points**
 
 - This class is able to compose and parse AWS resource ARNs.
 

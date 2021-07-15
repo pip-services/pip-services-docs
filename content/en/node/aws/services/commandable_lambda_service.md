@@ -4,18 +4,17 @@ title: "CommandableLambdaService"
 linkTitle: "CommandableLambdaService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Abstract service that receives commands via AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives command name and parameters.
+    Abstract service that receives commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.
 ---
 
 **Extends:** [LambdaService](../lambda_service)
 
 ### Description
+The CommandableLambdaService allows you to create abstract services that receive commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.
 
-Commandable services require only 3 lines of code to implement a robust external
-Lambda-based remote interface.
+**Important points**
 
-This service is intended to work inside a LambdaFunction container that
-exploses registered actions externally.
+- This service is intended to work inside a LambdaFunction container that exploses registered actions externally.
 
 #### Configuration parameters
  

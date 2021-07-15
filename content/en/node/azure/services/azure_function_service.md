@@ -39,14 +39,14 @@ Creates an instance of this service.
 
 #### _counters
 Performance counters.
-> `protected` **_counters**: [CompositeCounters](../../../commons/count/composite_counters)
+> `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _dependencyResolver
 Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-Dependency resolver.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _tracer
@@ -68,7 +68,7 @@ This method shall only be used in testing.
 > `public` act(context: any): Promise\<any\>
 
 - **context**: any - context context.
-- **returns**: Promise\<any\> - TODO: returned result
+- **returns**: Promise\<any\> - returned result
 
 #### applyInterceptors
 Applies interceptors to the action.
@@ -79,7 +79,7 @@ Applies interceptors to the action.
 - **returns**: (context: any) => Promise\<any\> - returned result
 
 #### applyValidation
-Performs a validation
+Performs a validation.
 
 > `protected` applyValidation(schema: [Schema](../../../commons/validate/schema), action: (context: any) => Promise\<any\>): (context: any) => Promise\<any\>
 
@@ -155,7 +155,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open

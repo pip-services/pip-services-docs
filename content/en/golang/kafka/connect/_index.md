@@ -25,7 +25,7 @@ Kafka connection using the default driver.
 
 
 #### [KafkaConnectionResolver](kafka_connection_resolver)
-Helper class that resolves a Kafka connection and credential parameters, validates them and generates connection options.  
+Resolves a Kafka connection and credential parameters, validates them and generates connection options.  
 
 #### [KafkaSubscription](kafka_subscription)
 Defines fields for Kafka subscriptions.

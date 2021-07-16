@@ -162,14 +162,14 @@ If the connection doesn't support this function, it exists without error.
 > (c [*KafkaConnection]()) DeleteQueue() error
 
 - **name**: string - name of the queue to be deleted.
-- **returns**: error - error or nil if no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### GetConnection
 Gets the connection.
 > (c [*KafkaConnection]()) GetConnection() kafka.SyncProducer
 
-- **returns**: kafka.SyncProducer - connection to a MySQL database
+- **returns**: kafka.SyncProducer - connection to Kafka
 
 
 #### IsOpen

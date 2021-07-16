@@ -37,7 +37,7 @@ The DataDogCounters class allows you to create performance counters that send th
 
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
 
 ### Constructors
 
@@ -55,7 +55,7 @@ Closes a component and frees used resources.
 > (c [*DataDogCounters]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -78,7 +78,7 @@ Opens the component.
 > (c [*DataDogCounters]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Save
@@ -87,7 +87,7 @@ Saves the current counters' measurements.
 > (c [*DataDogCounters]()) Save(counters [*[]Counter](../../../components/count/counter)) error
 
 - **counters**: [*[]Counter](../../../components/count/counter) - current counters' measurements to be saved.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### SetReferences

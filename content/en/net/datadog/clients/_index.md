@@ -19,7 +19,7 @@ description: >
 Defines fields for DataDog metric types.
 
 #### [DataDogStatus](datadog_status)
-Defines the different status levels
+Defines the different status levels.
 
 <br>
 

@@ -12,9 +12,6 @@ description: >
 **Inherits:** [CachedCounters](../../../components/count/cached_counters/), [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
 ### Description
-DataDog is a popular monitoring SaaS service. It collects logs, metrics, events
-from infrastructure and applications and analyze them in a single place.
-
 The DataDogCounters class allows you to create performance counters that send their metrics to a DataDog service.
 
 
@@ -37,9 +34,9 @@ The DataDogCounters class allows you to create performance counters that send th
 
 #### References
 
-- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements.
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections.
 
 ### Constructors
 Creates a new instance of the class.
@@ -69,7 +66,7 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open

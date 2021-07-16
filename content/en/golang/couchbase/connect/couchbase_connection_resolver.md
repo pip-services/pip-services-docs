@@ -9,7 +9,7 @@ description: >
 ---
 
 ### Description
-The CouchbaseConnectionResolver class is used to resolve Couchbase connections and credential parameters, validate them and generate connection URIs/
+The CouchbaseConnectionResolver class is used to resolve Couchbase connections and credential parameters, validate them and generate connection URIs.
 
 **Important points**
 

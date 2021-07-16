@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The DataDogMetricsClient class REST client for DataDog metrics.
+The DataDogMetricsClient class allows you to create REST clients for DataDog metrics.
 
 
 
@@ -42,7 +42,7 @@ Opens the component.
 > (c [*DataDogMetricsClient]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SendMetrics
 Sends the given metrics.
@@ -51,7 +51,7 @@ Sends the given metrics.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **metrics**: [[]DataDogMetric](../datadog_metric) - the datadog metrics
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.

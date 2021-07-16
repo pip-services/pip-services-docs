@@ -14,8 +14,8 @@ The ValidationResultType class defines the types of validation results generated
 ### Enumeration members
 
 - **Information** = iota - General information (not an error).
-- **Warning** = iota - Warning about something suspecious. In strict mode is treated as an error
-- **Error** = iota - Validation error.
+- **Warning** - Warning about something suspecious. In strict mode is treated as an error
+- **Error** - Validation error.
 
 ### See also
 - #### [ValidationResult](../validation_result)

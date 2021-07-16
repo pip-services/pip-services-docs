@@ -47,7 +47,7 @@ Credential resolver.
 </span>
 
 
-### Instance methods
+### Methods
 
 #### Compose
 Composes NATS connection options from connection and credential parameters.

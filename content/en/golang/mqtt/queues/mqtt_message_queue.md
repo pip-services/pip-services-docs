@@ -111,7 +111,7 @@ Topic
 </span>
 
 
-### Instance methods
+### Methods
 
 #### Abandon
 Returnes a message into the queue and makes it available for all subscribers to receive it again.

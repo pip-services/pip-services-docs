@@ -96,7 +96,7 @@ Maximum number of records to return from the database per request.
 </span>
 
 
-### Instance methods
+### Methods
 
 
 #### Clear

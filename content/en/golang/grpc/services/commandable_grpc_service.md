@@ -50,7 +50,7 @@ Creates a new instance of the service.
 - **name**: string - service name.
 
 
-### Instance methods
+### Methods
 
 #### register
 Registers all service routes in a gRPC endpoint.

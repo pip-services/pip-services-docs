@@ -17,3 +17,15 @@ The ExpressionTokenizer class allows you to implement a word state object.
 Constructs an instance of this class.
 
 > `public` constructor()
+
+
+### Fields
+
+<span class="hide-title-link">
+
+Supported expression keywords.
+> `public readonly` **keywords**: string[] = [
+   "AND", "OR", "NOT", "XOR", "LIKE", "IS", "IN", "NULL", "TRUE", "FALSE"
+]
+
+</span>

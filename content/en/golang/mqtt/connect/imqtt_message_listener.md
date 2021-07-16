@@ -14,7 +14,7 @@ description: >
 The IMqttMessageListener interface is used to create listeners for MQTT messages.
 
 
-### Instance methods
+### Methods
 
 
 #### onMessage

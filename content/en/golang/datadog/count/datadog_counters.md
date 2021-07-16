@@ -47,7 +47,7 @@ Creates a new instance of the class.
 > NewDataDogCounters() [*DataDogCounters]()
 
 
-### Instance methods
+### Methods
 
 #### Close
 Closes a component and frees used resources.

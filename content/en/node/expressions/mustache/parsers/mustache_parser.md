@@ -74,5 +74,9 @@ Sets a new Mustache string and parses it into internal byte code.
 - **mustache**: string - new Mustache string.
 
 #### parseTokens
+Sets a new mustache Token and parses it into internal byte code.
 
 > `public` parseTokens(tokens: [Token[]](../../../tokenizers/token)): void
+
+- **mustache**: [[]*Token](../../../tokenizers/token) - new Mustache string.
+- **returns**: error - error or nil no errors occured.

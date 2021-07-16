@@ -50,6 +50,8 @@ Clears all stored variables (assigns null values).
 
 > `public` findByName(name: string): [IVariable](../ivariable)
 
+- **name**: string - The variable name to be found.
+- **returns**: [IVariable](../ivariable) - Variable or *null* if function was not found.
 
 #### findIndexByName
 Finds a variable's index in the list by it's name. 

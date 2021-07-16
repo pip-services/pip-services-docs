@@ -14,7 +14,7 @@ description: >
 The INatsMessageListener interface defines a listener for NATS messages.
 
 
-### Instance methods
+### Methods
 
 
 #### OnMessage

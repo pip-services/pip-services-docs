@@ -30,17 +30,10 @@ Adds the given string as a symbol.
 - **value**: string - character sequence to add.
 - **tokenType**: [TokenType](../../token_type) - token type
 
-#### ancestry
-Shows the symbol this node represents.
-
-> `public` ancestry(): string
-
-- **returns**: string - symbol this node represents.
-
 #### nextToken
 Returns a symbol string from a scanner.
 
 > `public` nextToken(scanner: [IScanner](../../../io/iscanner)): [Token](../../token)
 
 - **scanner**: [IScanner](../../../io/iscanner) - scanner to read from
-- **returns**: [SymbolNode]() - symbol string from a scanner
+- **returns**: [Token](../../token) - symbol string from a scanner

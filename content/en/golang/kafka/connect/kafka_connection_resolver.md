@@ -52,7 +52,7 @@ Credential resolver.
 </span>
 
 
-### Instance methods
+### Methods
 
 #### Compose
 Composes Kafka connection options from connection and credential parameters.

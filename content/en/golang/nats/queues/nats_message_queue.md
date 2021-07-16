@@ -79,7 +79,7 @@ Subscrie option
 </span>
 
 
-### Instance methods
+### Methods
 
 #### Clear
 Clears a component's state.

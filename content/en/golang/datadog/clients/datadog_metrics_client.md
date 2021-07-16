@@ -27,7 +27,7 @@ Creates an instance of this class.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters
 
 
-### Instance methods
+### Methods
 
 #### Configure
 Configures the component by passing its configuration parameters. 

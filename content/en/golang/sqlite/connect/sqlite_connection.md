@@ -71,7 +71,7 @@ Creates a new instance of the connection component.
 > NewSqliteConnection() [*SqliteConnection]()
 
 
-### Instance methods
+### Methods
 
 #### Close
 Closes the component and frees used resources.

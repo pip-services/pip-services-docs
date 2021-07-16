@@ -17,7 +17,9 @@ Default contructor to prevent creation of a class instance.
 > `public` constructor()
 
 
-### Properties
+### Fields
+
+<span class="hide-title-link">
 
 #### Eof
 EOF
@@ -30,6 +32,8 @@ Zero
 #### Nine
 Nine
 > `public static` **Nine**: number = '9'.charCodeAt(0)
+
+</span>
 
 ### Static methods
 

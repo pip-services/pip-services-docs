@@ -96,7 +96,7 @@ Topic subscriptions
 </span>
 
 
-### Instance methods
+### Methods
 
 #### checkOpen
 Checks if the connection is open.   

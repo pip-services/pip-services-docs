@@ -55,7 +55,7 @@ Credential resolver
 </span>
 
 
-### Instance methods
+### Methods
 
 
 #### Configure

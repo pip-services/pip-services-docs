@@ -13,7 +13,7 @@ description: >
 The IRegisterable is used to perform on-demand registration.
 
 
-### Instance methods
+### Methods
 
 #### register
 Perform required registration steps.

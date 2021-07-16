@@ -21,7 +21,7 @@ Creates a new instance of the Swagger service.
 
 > NewSwaggerService() [*SwaggerService]()
 
-### Instance methods
+### Methods
 
 #### register
 Registers the Swagger service.

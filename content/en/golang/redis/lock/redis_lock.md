@@ -44,7 +44,7 @@ Method are creates a new instance of this lock.
 
 > NewRedisLock() [*RedisLock]()
 
-### Instance methods
+### Methods
 
 
 #### Close

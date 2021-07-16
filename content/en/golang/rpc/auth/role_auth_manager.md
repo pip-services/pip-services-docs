@@ -11,7 +11,7 @@ description: >
 
 The RoleAuthManager class provides methods to check on a user's roles.
 
-### Instance methods
+### Methods
 
 #### UserInRoles
 Checks on the roles a user has been assigned.

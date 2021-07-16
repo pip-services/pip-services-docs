@@ -54,7 +54,7 @@ Creates a new instance of the message queue.
 - **name**: string - (optional) a queue name.
 
 
-### Instance methods
+### Methods
 
 #### EndListen
 Ends listening for incoming messages.

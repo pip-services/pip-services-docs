@@ -48,7 +48,7 @@ Creates a new instance of the persistence component.
 - **tableName**: string - (optional) a table name.
 
 
-### Instance methods
+### Methods
 
 #### ConvertFromPublicPartial!
 

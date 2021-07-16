@@ -25,7 +25,7 @@ The MqttMessageQueueFactory class allows you to create [MqttMessageQueue](../../
 Creates a new instance of the factory.
 > NewMqttMessageQueueFactory() [*MqttMessageQueueFactory]()
 
-### Instance methods
+### Methods
 
 #### CreateQueue
 Creates a message queue component and assigns its name.

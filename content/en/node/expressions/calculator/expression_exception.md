@@ -18,8 +18,8 @@ Creates a new intance of this class.
 
 > `public` constructor(correlationId: string, code: string, message: string, line: number = 0, column: number = 0)
 
-- **correlationId**: string - TODO: add description
-- **code**: string - TODO: add description
-- **message**: string - TODO: add description
-- **line**: number - TODO: add description
-- **column**: number - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **code**: string - code
+- **message**: string - human-readable error message.
+- **line**: number - line number
+- **column**: number - column number

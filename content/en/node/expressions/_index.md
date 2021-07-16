@@ -5,6 +5,8 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 no_list: true
 weight: 30
 description: > 
+    Tokenizers, parsers and expression calculators for Pip.Services in Node.js / ES2017
+    
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     It provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---

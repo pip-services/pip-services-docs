@@ -81,7 +81,7 @@ Couchbase bucket's object.
 </span>
 
 
-### Instance methods
+### Methods
 
 #### Close
 Closes the component and frees used resources.

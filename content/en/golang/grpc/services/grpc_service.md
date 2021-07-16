@@ -73,7 +73,7 @@ The tracer.
 
 
 
-### Instance methods
+### Methods
 
 
 #### Close

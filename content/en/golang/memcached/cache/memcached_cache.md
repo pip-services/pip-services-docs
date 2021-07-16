@@ -46,7 +46,7 @@ Method are creates a new instance of this lock.
 
 > NewMemcachedLock() [*MemcachedLock]()
 
-### Instance methods
+### Methods
 
 #### Close
 Closes a component and frees used resources.

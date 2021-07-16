@@ -57,7 +57,7 @@ Creates a new instance of this cache.
 
 > NewRedisCache() [*RedisCache]()
 
-### Instance methods
+### Methods
 
 #### Close
 Closes a component and frees used resources.

@@ -1,6 +1,6 @@
 ---
 type: docs
-title: "SqlitePersistence<T>"
+title: "SqlitePersistence"
 linkTitle: "SqlitePersistence"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
 description: >
@@ -85,7 +85,7 @@ Maximum number of records to return from the database per request.
 </span>
 
 
-### Instance methods
+### Methods
 
 
 #### Clear

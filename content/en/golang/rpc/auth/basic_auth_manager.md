@@ -11,7 +11,7 @@ description: >
 
 The BasicAuthManager provides two methods: one to grant access to everyone and another to grant access to authorized users.
 
-### Instance methods
+### Methods
 
 #### Anybody
 Allows everyone access, even unauthorized users.

@@ -18,17 +18,6 @@ Expression string.
 
 > `public` expression(): string
 
-
-> `public` expression(value: string)
-
-- **value**: string - expression string.
-
-
-#### expression
-Expression string.
-
-> `public` expression(): string
-
 - **returns**: string - expression string.
 
 > `public` expression(value: string)

@@ -49,7 +49,7 @@ Creates a new instance of the logger.
 > NewDataDogLogger() [*DataDogLogger]()
 
 
-### Instance methods
+### Methods
 
 #### Close
 Closes a component and frees used resources.

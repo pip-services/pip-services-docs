@@ -42,7 +42,7 @@ Important points
 
 
 
-### Instance methods
+### Methods
 
 #### Close
 Closes a component and frees used resources.

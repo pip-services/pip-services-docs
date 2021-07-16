@@ -64,7 +64,7 @@ Creates a new instance of the persistence component.
 - **collection**: string - (optional) a collection name.
 
 
-### Instance methods
+### Methods
 
 
 #### Create

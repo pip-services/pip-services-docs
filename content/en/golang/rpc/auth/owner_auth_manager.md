@@ -11,7 +11,7 @@ description: >
 
 The OwnerAuthManager class provides access granting methods for owners and administrators.
 
-### Instance methods
+### Methods
 
 #### Owner
 Access is granted only for the session owner.  

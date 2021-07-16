@@ -71,11 +71,6 @@ Extracts hash tags from a text.
 
 Extracts hash tags from selected fields in an object.
 
-> `public static` extractHashTagsFromValue(obj: any, ...searchFields: string[]): string[]
-
-- **obj**: any - object which contains hash tags.
-- **searchFields**: string[] - list of fields in the objects where to extract tags
-- **returns**: string[] - list of extracted and compressed tags.
 
 
 #### NormalizeTag

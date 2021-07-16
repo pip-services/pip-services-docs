@@ -26,7 +26,7 @@ The KafkaMessageQueueFactory class allows you to create [KafkaMessageQueue](../.
 Creates a new instance of the factory.
 >  NewKafkaMessageQueueFactory() [*KafkaMessageQueueFactory]()
 
-### Instance methods
+### Methods
 
 #### CreateQueue
 Creates a message queue component and assigns its name.

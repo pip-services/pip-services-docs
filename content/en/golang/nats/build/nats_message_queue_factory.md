@@ -23,7 +23,7 @@ The NatsMessageQueueFactory class allows you to create [NatsMessageQueue](../../
 Creates a new instance of the factory.
 > NewNatsMessageQueueFactory() [*NatsMessageQueueFactory]()
 
-### Instance methods
+### Methods
 
 #### CreateQueue
 Creates a message queue component and assigns its name.

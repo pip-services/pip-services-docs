@@ -41,7 +41,7 @@ NewGrpcEndpoint method are creates new instance of GrpcEndpoint
 
 > NewGrpcEndpoint() [*GrpcEndpoint]()
 
-### Instance methods
+### Methods
 
 #### AddInterceptors
 AddInterceptors method are registers a middleware for methods in GRPC endpoint.

@@ -25,6 +25,25 @@ Represents a " symbol.
 
 ### Instance methods
 
+#### decodeString
+Decodes a string value.
+
+> `public` decodeString(value: string, quoteSymbol: number): string
+
+- **value**: string - A string value to be decoded.
+- **quoteSymbol**: number - A string quote character.
+- **returns**: string - An decoded string.
+
+#### encodeString
+Encodes a string value.
+> `public` encodeString(value: string, quoteSymbol: number): string
+
+- **value**: string - A string value to be encoded.
+- **quoteSymbol**: number - A string quote character.
+- **returns**: string - An encoded string.
+
+
+
 #### nextToken
 Gets the next token from the stream started from the character linked to this state.
 
@@ -33,3 +52,6 @@ Gets the next token from the stream started from the character linked to this st
 - **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
 - **tokenizer**: [ITokenizer](../../../tokenizers/itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../../tokenizers/token) - next token from the top of the stream.
+
+
+

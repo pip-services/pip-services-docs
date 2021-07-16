@@ -55,10 +55,6 @@ Creates a new instance of the connection component.
 Kafka admin client object;
 > **adminClient**: kafka.Client
 
-#### Options
-Kafka connection properties
-> **_clientConfig**: any
-
 #### clientId
 Hostname as client id.
 > **clientId**: string
@@ -107,7 +103,7 @@ Topic subscriptions
 </span>
 
 
-### Instance methods
+### Methods
 
 #### CheckOpen
 Checks if the connection is open.   

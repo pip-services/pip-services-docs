@@ -42,7 +42,7 @@ Gets a variant value as a variant array.
 
 Sets a variant value as variant array.
 
-> `public` asArray(value: Variant[])
+> `public` asArray(value: [Variant[]]())
 
 - **value**: [Variant[]]() - value to be set.
 
@@ -296,7 +296,7 @@ Creates a new variant from a DateTime value.
 
 
 #### fromDouble
-Creates a new variant from a DateTime value.
+Creates a new variant from a Double value.
 
 > `public static` fromDouble(value: number): [Variant]()
 

@@ -56,7 +56,7 @@ Credential resolver
 Creates an instance of this class.
 > NewCouchbaseConnectionResolver() [*CouchbaseConnectionResolver]()
 
-### Instance methods
+### Methods
 
 
 #### resolve

@@ -85,7 +85,7 @@ interceptors
 </span>
 
 
-### Instance methods
+### Methods
 
 #### AddInterceptors
 AddInterceptors method are registers a middleware for methods in gRPC client.

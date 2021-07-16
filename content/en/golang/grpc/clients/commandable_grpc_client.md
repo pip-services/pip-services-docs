@@ -57,7 +57,7 @@ A service name.
 </span>
 
 
-### Instance methods
+### Methods
 
 #### CallCommand
 Calls a remote method via the GRPC commadable protocol.

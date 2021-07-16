@@ -23,7 +23,6 @@ From     To
  'a',    'z'
  'A',    'Z'
  '0',    '9'
-  * 
    
 </pre></blockquote>
 As well as: minus sign, underscore, and apostrophe.
@@ -51,7 +50,7 @@ Ignores a word (such as blanks and tabs), and returns the tokenizer's next token
 - **tokenizer**: [ITokenizer](../../itokenizer) - tokenizer class that controls the process.
 - **returns**: [Token](../../token) - next token from the top of the stream.
 
-#### setWhitespaceChars
+#### setWordChars
 Establishes characters in the given range as valid characters for part of a word after the first character. Note that the tokenizer must determine which characters are valid as the beginning character of a word.
 
 > `public` setWordChars(fromSymbol: number, toSymbol: number, enable: boolean): void 

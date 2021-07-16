@@ -19,8 +19,6 @@ The DataDogLogClient class allows you to create a REST client for DataDog logs.
 
 ### Constructors
 
-#### 
-
 Creates a new instance of this class.
 
 > NewDataDogLogClient(config [*ConfigParams](../../../commons/config/config_params)) [*DataDogLogClient]()
@@ -31,7 +29,7 @@ Creates a new instance of this class.
 ### Instance methods
 
 #### Configure
-Configures the component by passing its configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > (c [*DataDogLogClient]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
 
@@ -43,7 +41,7 @@ Opens the component.
 > (c [*DataDogLogClient]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SendLogs
 Sends log messages.
@@ -52,7 +50,7 @@ Sends log messages.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messages**: [[]DataDogLogMessage](../datadog_log_message) - messages to send.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.

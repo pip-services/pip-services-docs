@@ -9,7 +9,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    The Kafka module contains a set of components for messaging using the Kafka protocol. Contains the implementation of the components for working with messages: KafkaMessageQueue, KafkaConnectionResolver.
+    It contains a set of components for messaging using the Kafka protocol. 
 ---
 
 ### Packages

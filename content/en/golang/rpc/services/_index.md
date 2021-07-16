@@ -23,7 +23,7 @@ Interface to perform Swagger registrations.
 
 <br>
 
-### Classes
+### Types
 
 #### [AboutOperations](about_operations)
 Obtains information about running services

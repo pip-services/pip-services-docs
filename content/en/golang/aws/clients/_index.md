@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CommandableLambdaClient](commandable_lambda_client)
 Abstract client that calls commandable AWS Lambda Functions.

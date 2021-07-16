@@ -33,7 +33,7 @@ General syntax errors.
 
 <br>
 
-### Classes
+### Types
 
 #### [CalculationStack](calculation_stack)
 Implements a stack of Variant values.

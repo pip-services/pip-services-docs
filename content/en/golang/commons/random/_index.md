@@ -14,7 +14,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [RandomArray](random_array)
 Random generator for array objects.

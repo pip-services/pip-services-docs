@@ -18,7 +18,7 @@ Interface for MQTT messages.
 
 <br>
 
-### Classes
+### Types
 
 #### [MqttConnection](mqtt_connection)
 MQTT connection using the default driver.

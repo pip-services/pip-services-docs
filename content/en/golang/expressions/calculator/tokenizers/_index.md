@@ -11,7 +11,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [ExpressionNumberState](expression_number_state)
 Implements an expression-specific number state object.

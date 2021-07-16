@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultCouchbaseFactory](default_couchbase_factory)
 Creates Couchbase components by their descriptors.

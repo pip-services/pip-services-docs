@@ -12,7 +12,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [SwaggerService](swagger_service)
 The SwaggerService class allows you to create a Swagger UI service.

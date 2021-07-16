@@ -22,7 +22,7 @@ Implements a list of functions.
 
 <br>
 
-### Classes
+### Types
 
 #### [DefaultFunctionCollection](default_function_collection)
 Implements a list filled with standard functions.

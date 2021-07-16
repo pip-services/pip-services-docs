@@ -23,7 +23,7 @@ Defines the different status levels
 
 <br>
 
-### Classes
+### Types
 
 #### [DataDogLogClient](datadog_log_client)
 REST client for DataDog logs.

@@ -18,7 +18,7 @@ Defines a Kafka message listerner.
 
 <br>
 
-### Classes
+### Types
 
 #### [KafkaConnection](kafka_connection)
 Kafka connection using the default driver.

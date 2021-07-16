@@ -52,7 +52,7 @@ Finally, the contains destroys all objects and turns off.
 <br>       
      
     
-### Classes
+### Types
 
 #### [Container](container)
 Inversion of control (IoC) container that creates components and manages their lifecycle.

@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CouchbaseConnection](couchbase_connection)
 Couchbase connection using the default Couchbase driver.

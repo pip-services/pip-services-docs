@@ -21,7 +21,7 @@ The IVariableCollection interface defines a list of variables.
 
 <br>
 
-### Classes
+### Types
 
 #### [Variable](variable)
 Implements a variable holder object.

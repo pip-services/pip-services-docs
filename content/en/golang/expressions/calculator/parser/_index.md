@@ -18,7 +18,7 @@ Defines types of expression tokens.
 
 <br>
 
-### Classes
+### Types
 
 #### [ExpressionParser](expression_parser)
 Implements an expression parser class.

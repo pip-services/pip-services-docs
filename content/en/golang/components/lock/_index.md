@@ -19,7 +19,7 @@ The lock allows to manage multiple locks identified by unique keys.
 
 <br>
 
-### Classes
+### Types
 
 #### [DefaultLockFactory](default_lock_factory)
 Creates [ILock](ilock) components by their descriptors.

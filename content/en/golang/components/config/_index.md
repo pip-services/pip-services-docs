@@ -26,7 +26,7 @@ The values may come from application command like arguments or environment varia
 
 <br>
 
-### Classes
+### Types
 
 #### [ConfigReader](config_reader)
 Data object used to store cached values with their keys used by [MemoryCache](../memory_cache)

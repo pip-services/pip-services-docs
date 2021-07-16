@@ -27,7 +27,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [BuildReferencesDecorator](build_references_decorator)
 References decorator that automatically creates missing components using

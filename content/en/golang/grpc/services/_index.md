@@ -16,7 +16,7 @@ description: >
 Interface to perform on-demand registrations.
 
 
-### Classes
+### Types
 
 #### [CommandableGrpcService](commandable_grpc_service)
 Abstract service that receives commands via GRPC protocol

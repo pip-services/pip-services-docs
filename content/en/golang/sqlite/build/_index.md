@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultSqliteFactory](default_sqlite_factory)
 Creates SQLite components by their descriptors.

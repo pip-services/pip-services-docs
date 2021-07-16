@@ -60,7 +60,7 @@ Events allows to send asynchronious notifications to multiple subscribed listene
 
 <br>
 
-### Classes
+### Types
 
 #### [CommandSet](command_set)
 Contains a set of commands and events supported by a [commandable](icommandable) object.

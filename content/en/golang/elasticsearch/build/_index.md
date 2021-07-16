@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultElasticSearchFactory](default_elasticsearch_factory)
 Creates ElasticSearch components based on their descriptors.

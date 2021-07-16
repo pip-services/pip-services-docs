@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [ElasticSearchLogger](elasticsearch_logger)
 Logger that dumps execution logs to ElasticSearch service.

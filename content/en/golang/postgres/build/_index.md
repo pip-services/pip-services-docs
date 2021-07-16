@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultPostgresFactory](default_postgres_factory)
 Creates Postgres components based on their descriptors.

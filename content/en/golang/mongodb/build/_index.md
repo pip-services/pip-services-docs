@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultMongoDbFactory](default_mongodb_factory)
 Creates MongoDb components by their descriptors.

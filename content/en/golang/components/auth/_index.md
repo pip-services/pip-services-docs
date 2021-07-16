@@ -29,7 +29,7 @@ to authenticate against external services.
 
 <br>
 
-### Classes
+### Types
 
 #### [CredentialParams](credential_params)
 Contains credentials used to authenticate against external services.

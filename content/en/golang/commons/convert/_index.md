@@ -25,7 +25,7 @@ converted using [TypeConverter](type_converter).
 
 <br>
 
-### Classes
+### Types
 
 #### [ArrayConverter](array_converter)
 Converts arbitrary values into array objects.

@@ -12,7 +12,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [TestCommandableLambdaClient](test_commandable_lambda_client)
 AWS Commandable Lambda client used for automated testing.

@@ -12,7 +12,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [CloudWatchLogger](cloud_watch_logger)
 Logger that writes log messages to AWS CloudWatch Log.

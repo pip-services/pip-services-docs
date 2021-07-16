@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [RedisCache](redis_cache)
 Distributed cache that stores values in Redis in-memory database.

@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CommandableLambdaFunction](commandable_lambda_function)
 Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.

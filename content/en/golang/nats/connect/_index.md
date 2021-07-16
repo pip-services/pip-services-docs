@@ -18,7 +18,7 @@ Defines a listener for NATS messages.
 
 <br>
 
-### Classes
+### Types
 
 #### [NatsConnection](nats_connection)
 NATS connection using the default driver.

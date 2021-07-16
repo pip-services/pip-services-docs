@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [IdentifiableJsonSqlitePersistence](identifiable_json_sqlite_persistence) 
 Abstract persistence component that stores data in SQLite in JSON or JSONB fields and implements a number of CRUD operations over data items with unique ids.

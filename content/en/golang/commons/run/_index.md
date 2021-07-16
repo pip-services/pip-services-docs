@@ -43,7 +43,7 @@ Interface for components that require execution parameters.
 
 <br>
 
-### Classes
+### Types
 
 #### [Cleaner](cleaner)
 Helper class that cleans a stored object state.

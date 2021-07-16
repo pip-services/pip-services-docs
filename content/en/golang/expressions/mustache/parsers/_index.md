@@ -24,7 +24,7 @@ Defines types of Mustache tokens.
 
 <br>
 
-### Classes
+### Types
 
 #### [MustacheParser](mustache_parser)
 Implements a Mustache parser.

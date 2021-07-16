@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [NatsAbstractMessageQueue](nats_abstract_message_queue)
 Abstract NATS message queue with the ability to connect to NATS server.

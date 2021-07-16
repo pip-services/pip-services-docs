@@ -17,7 +17,7 @@ Defines a set of constants, such as control return, line feed and nil.
 
 <br>
 
-### Classes
+### Types
 
 #### [CsvQuoteState](csv_quote_state)
 Implements a quote string state object for CSV streams.

@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [BasicAuthManager](basic_auth_manager)
 This class provides two methods: one to grant access to everyone and another to grant access to authorized users.

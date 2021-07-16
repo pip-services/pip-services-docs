@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [AwsConnectionParams](aws_connection_params)
 Contains connection parameters to authenticate against Amazon Web Services (AWS) and connect to specific AWS resources.

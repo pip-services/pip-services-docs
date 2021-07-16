@@ -28,7 +28,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [ComponentConfig](component_config)
 Class used to configure a component residing inside a container.

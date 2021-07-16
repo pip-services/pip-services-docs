@@ -11,7 +11,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CharReferenceInterval](char_reference_interval)
 Represents a character interval that keeps a reference.

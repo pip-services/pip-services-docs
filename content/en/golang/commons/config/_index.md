@@ -35,7 +35,7 @@ in runtime.
 
 <br>
 
-### Classes
+### Types
 
 #### [ConfigParams](config_params)
 Contains a key-value map with configuration parameters. 

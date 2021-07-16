@@ -20,7 +20,7 @@ Interface for caches that are used to cache values to improve performance.
 
 <br>
 
-### Classes
+### Types
 
 #### [CacheEntry](cache_entry)
 Data object to store cached values with their keys used by [MemoryCache](../memory_cache).

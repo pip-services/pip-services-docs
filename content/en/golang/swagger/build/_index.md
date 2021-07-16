@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultSwaggerFactory](default_swagger_factory)
 Creates Swagger components by their descriptors.

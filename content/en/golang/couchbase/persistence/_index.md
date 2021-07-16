@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CouchbasePersistence](couchbase_persistence)
 Abstract persistence component that stores data in a Couchbase database using Couchbase object relational mapping. 

@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [SqliteConnection](sqlite_connection)
 SQLite connection using the default driver.

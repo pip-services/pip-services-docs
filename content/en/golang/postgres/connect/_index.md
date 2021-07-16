@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [PostgresConnection](postgres_connection)
 PostgreSQL connection using the official driver.

@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CommandableGrpcClient](commandable_grpc_client)
 Client that calls a commandable GRPC service.

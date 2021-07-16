@@ -13,7 +13,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DataDogLogger](datadog_logger)
 Logger that dumps execution logs to a DataDog service.

@@ -37,7 +37,7 @@ Interface for a callback to end measurement of execution elapsed time.
 
 <br>
 
-### Classes
+### Types
 
 #### [CachedCounters](cached_counters)
 Abstract implementation of performance counters that measures and stores counters in memory.

@@ -32,7 +32,7 @@ to connect to external services.
 
 <br>
 
-### Classes
+### Types
 
 #### [CompositeConnectionResolver](composite_connection_resolver)
 Helper class that resolves connection and credential parameters,

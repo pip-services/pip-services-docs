@@ -11,7 +11,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [MustacheSpecialState](mustache_special_state)
 Implements a quote string state object for Mustache templates.

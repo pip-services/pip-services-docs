@@ -24,7 +24,7 @@ Callback interface used to receive incoming messages.
 
 <br>
 
-### Classes
+### Types
 
 #### [CachedMessageQueue](cached_message_queue)
 Message queue that caches received messages in memory to allow peek operations

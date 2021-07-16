@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultMqttFactory](default_mqtt_factory)
  Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.

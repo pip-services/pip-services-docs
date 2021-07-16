@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultRpcFactory](default_rpc_factory)
 Creates RPC components by their descriptors.

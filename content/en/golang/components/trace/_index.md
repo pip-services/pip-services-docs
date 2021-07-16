@@ -18,7 +18,7 @@ Interface for tracer components that capture operation traces.
 
 <br>
 
-### Classes
+### Types
 
 #### [CachedTracer](cached_tracer)
 Abstract tracer that caches recorded traces in memory and periodically dumps them.

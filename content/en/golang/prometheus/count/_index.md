@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [PrometheusCounterConverter](prometheus_counter_converter)
 Helper class that converts performance counter values into

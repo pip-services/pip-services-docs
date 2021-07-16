@@ -24,7 +24,7 @@ Implements an abstractd variant operations manager object.
 
 <br>
 
-### Classes
+### Types
 
 #### [AbstractVariantOperations](abstract_variant_operations)
 Implements an abstract variant operations manager object.

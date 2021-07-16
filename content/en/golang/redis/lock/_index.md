@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [RedisLock](redis_lock)
 Distributed lock that is implemented based on Redis in-memory database.  

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 no_list: true
 weight: 30
 description: > 
-    AWS specific components for Node.js / ES2017. 
+    AWS specific components for Golang
 
 
     This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
@@ -29,7 +29,7 @@ This module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Get the package from the Github repository:
 ```bash
-npm install pip-services3-aws-nodex --save
+go get -u github.com/pip-services3-go/pip-services3-aws-go@latest
 ```

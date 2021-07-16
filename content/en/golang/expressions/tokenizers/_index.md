@@ -56,7 +56,7 @@ Defines an interface for tokenizer state that processes words, identificators or
 
 <br>
 
-### Classes
+### Types
 
 
 #### [AbstractTokenizer](abstract_tokenizer)

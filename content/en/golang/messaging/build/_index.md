@@ -17,7 +17,7 @@ Creates message queue componens.
 
 <br>
 
-### Classes
+### Types
 
 #### [DefaultMessagingFactory](default_messaging_factory)
 Creates [MemoryMessageQueue](../queues/memory_message_queue)  components by their descriptors.

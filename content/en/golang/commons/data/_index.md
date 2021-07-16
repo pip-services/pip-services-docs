@@ -43,7 +43,7 @@ It is a common pattern to use the time of change as the object version.
 
 <br>
 
-### Classes
+### Types
 
 #### [AnyValue](any_value)
 Cross-language implementation of a dynamic object that can hold a value of any type.

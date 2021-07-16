@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [MqttMessageQueue](mqtt_message_queue)
 Message queue that sends and receives messages via an MQTT message broker.

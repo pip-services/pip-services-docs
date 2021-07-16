@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [MongoDbConnection](mongodb_connection)
 MongoDB connection using the official driver.

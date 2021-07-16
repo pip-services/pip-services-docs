@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultRedisFactory](default_redis_factory)
 Creates Redis components by their descriptors.

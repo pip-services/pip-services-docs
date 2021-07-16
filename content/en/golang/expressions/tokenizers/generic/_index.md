@@ -11,7 +11,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CCommentState](c_comment_state)
 This state will either delegate to a comment-handling state, or return a token with just a slash in it.

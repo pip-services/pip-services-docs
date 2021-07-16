@@ -13,7 +13,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [MethodReflector](method_reflector)
 Helper class used to perform method introspection and dynamic invocation.

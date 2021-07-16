@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultAwsFactory](default_aws_factory)
 Creates AWS components by their descriptors.

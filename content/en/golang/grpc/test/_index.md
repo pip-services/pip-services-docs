@@ -11,7 +11,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [TestCommandableGrpcClient](test_commandable_grpc_client)
 Commandable GRPC client used for automated testing.

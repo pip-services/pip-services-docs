@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [IdentifiableJsonPostgresPersistence](identifiable_json_postgres_persistence)
 Abstract persistence component that stores data in PostgreSQL in JSON or JSONB fields

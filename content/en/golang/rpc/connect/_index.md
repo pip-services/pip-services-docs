@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [HttpConnectionResolver](http_connection_resolver)
 Helper class to retrieve connections for HTTP-based services and clients.

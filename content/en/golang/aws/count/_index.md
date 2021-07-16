@@ -18,7 +18,7 @@ Constants that determine cloud watch units.
 
 <br>
 
-### Classes
+### Types
 
 #### [CloudWatchCounters](cloud_watch_counters)
 Performance counters that periodically dump counters to AWS Cloud Watch Metrics.

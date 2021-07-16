@@ -29,7 +29,7 @@ description: >
 
 <br>
 
-### Classes
+### Types
 
 #### [ApplicationError](application_error)
 Defines a base class used to define various application exceptions.

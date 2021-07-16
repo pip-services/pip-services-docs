@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultDataDogFactory](default_datadog_factory)
 Creates DataDog components by their descriptors.

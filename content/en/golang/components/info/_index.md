@@ -20,7 +20,7 @@ description: >
 
 <br>
 
-### Classes
+### Types
 
 #### [ContextInfo](context_info)
 Context information component that provides detailed information

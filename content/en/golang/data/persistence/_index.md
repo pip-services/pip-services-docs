@@ -50,7 +50,7 @@ Interface for data processing components that can set (create or update) data it
 #### [IWriter](iwriter)
 Interface for data processing components that can create, update and delete data items.
 
-### Classes
+### Types
 
 #### [FilePersistence](file_persistence)
 Abstract persistence component that stores data in flat files

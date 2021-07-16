@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [CommandableHttpClient](commandable_http_client)
 Abstract client that calls a commandable HTTP service.

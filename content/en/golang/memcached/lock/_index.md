@@ -12,7 +12,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [MemcachedLock](memcached_lock)
 Distributed lock that is implemented based on Memcached’s caching service.

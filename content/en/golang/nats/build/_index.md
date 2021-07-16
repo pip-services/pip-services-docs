@@ -11,7 +11,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultNatsFactory](default_nats_factory)
 Creates [NatsMessageQueue](../queues/nats_message_queue) components by their descriptors.

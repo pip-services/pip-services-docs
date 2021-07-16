@@ -17,7 +17,7 @@ TODO: add description
 
 <br>
 
-### Classes
+### Types
 
 #### [ExpressionError](expression_error)
 TODO: add description

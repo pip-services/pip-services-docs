@@ -11,7 +11,7 @@ description: >
 <div class="module-body"> 
 
 
-### Classes
+### Types
 
 #### [DefaultMemcachedFactory](default_memcached_factory)
 Creates Memcached components by their descriptors.

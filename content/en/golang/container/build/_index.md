@@ -13,7 +13,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultContainerFactory](default_container_factory)
 Creates default container components (loggers, counters, caches, locks, etc.) based on their descriptors.

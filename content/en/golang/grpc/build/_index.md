@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultGrpcFactory](default_grpc_factory)
 Creates GRPC components based on their descriptors.

@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [PrometheusMetricsService](prometheus_metrics_service)
 Service that exposes the **"/metrics"** and **"/metricsandreset"** routes for Prometheus to obtain performance metrics.

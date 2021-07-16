@@ -33,7 +33,7 @@ This interface allows to implement custom rules.
 
 <br>
 
-### Classes
+### Types
 
 #### [AndRule](and_rule)
 Validation rule to combine rules with AND logical operation.

@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultPrometheusFactory](default_prometheus_factory)
 Creates Prometheus components by their descriptors.

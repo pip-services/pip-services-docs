@@ -13,7 +13,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DataDogCounters](datadog_counters)
 Performance counters that send their metrics to a DataDog service.

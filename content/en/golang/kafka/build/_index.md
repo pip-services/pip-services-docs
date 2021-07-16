@@ -10,7 +10,7 @@ description: >
 ---
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultKafkaFactory](default_kafka_factory)
 Creates [KafkaMessageQueue](../queues/kafka_message_queue) components by their descriptors.

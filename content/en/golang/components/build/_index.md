@@ -20,7 +20,7 @@ Interface for component factories.
 
 <br>
 
-### Classes
+### Types
 
 #### [CompositeFactory](composite_factory)
 Aggregates multiple factories into a single factory component.

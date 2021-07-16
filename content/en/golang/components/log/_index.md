@@ -30,7 +30,7 @@ Interface for logger components that capture execution log messages.
 
 <br>
 
-### Classes
+### Types
 
 #### [CachedLogger](cached_logger)
 Abstract logger that caches captured log messages in memory and periodically dumps them.

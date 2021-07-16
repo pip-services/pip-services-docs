@@ -12,7 +12,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [KafkaMessageQueue](kafka_message_queue)
 Message queue that sends and receives messages via the Kafka message broker.

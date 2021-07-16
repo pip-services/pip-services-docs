@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [DefaultTestFactory](default_test_factory)
 Creates test components by their descriptors.

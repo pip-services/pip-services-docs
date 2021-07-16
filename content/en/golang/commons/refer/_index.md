@@ -30,7 +30,7 @@ Interface for components that require explicit clearing of references to depende
 
 <br>
 
-### Classes
+### Types
 
 #### [DependencyResolver](dependency_resolver)
 Helper class for resolving component dependencies.

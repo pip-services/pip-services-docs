@@ -11,7 +11,7 @@ description: >
 
 <div class="module-body"> 
 
-### Classes
+### Types
 
 #### [IdentifiableMongoDbPersistence](identifiable_mongodb_persistence)
 Abstract persistence component that stores data in MongoDB

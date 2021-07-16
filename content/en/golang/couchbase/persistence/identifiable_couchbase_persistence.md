@@ -59,8 +59,8 @@ Creates a new instance of the persistence component.
 > InheritIdentifiableCouchbasePersistence(overrides ICouchbasePersistenceOverrides, proto reflect.Type, bucket string, collection string) [*IdentifiableCouchbasePersistence]()
 
 - **overrides**: ICouchbasePersistenceOverrides - References to override virtual methods.
-- **proto**: reflect.Type - prototype for properly convert.
-- **tableName**: string - (optional) collection's name.
+- **proto**: reflect.Type - prototype.
+- **tableName**: string - (optional) table's name.
 - **collection**: string - (optional) a collection name.
 
 
@@ -94,7 +94,7 @@ Deletes multiple data items by their unique ids.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **ids**: []interface{} - ids of the data items to be deleted.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### GetListByIds

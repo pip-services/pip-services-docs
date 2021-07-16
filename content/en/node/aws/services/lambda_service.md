@@ -57,13 +57,6 @@ Tracer.
 
 </span>
 
-### Constructors
-Creates an instance of this service.
-
-> `public` constructor(name?: string)
-
-- **name**: string - service name to generate action cmd.
-
 
 ### Instance methods
 
@@ -80,12 +73,12 @@ the action shall be called.
 - **returns**: Promise\<any\> - results
 
 #### applyInterceptors
-
+Applies given action to the interseptors
 
 > `protected` applyInterceptors(action: (params: any) => Promise\<any\>): (params: any) => Promise\<any\>
 
-- **action**: (params: any) => Promise\<any\> - parameters
-- **returns**: (params: any) => Promise\<any\> - results
+- **action**: (params: any) => Promise\<any\> - applied action.
+- **returns**: (params: any) => Promise\<any\> - wrapped interceptors action.
 
 #### applyValidation
 Applies a validation according to a given schema.

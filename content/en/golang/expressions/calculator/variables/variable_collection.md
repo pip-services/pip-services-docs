@@ -31,13 +31,13 @@ Clears the collection.
 
 
 #### ClearValues
-Clears all stored variables (assigns null values).
+Clears all stored variables (assigns nil values).
 
 > (c [*VariableCollection]()) ClearValues()
 
 
 #### FindByName
-Clears all stored variables (assigns null values).
+Clears all stored variables (assigns nil values).
 
 > (c [*VariableCollection]()) FindByName(name string) IVariable
 

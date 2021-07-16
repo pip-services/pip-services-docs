@@ -12,7 +12,7 @@ description: >
 ### Description
 The AzureFunctionService class allows you to create a service that receives remove calls via the Azure Function protocol.
 
-Important points
+**Important points**
 
 - This service is intended to work inside an AzureFunction container that exposes registered actions externally.
 
@@ -39,14 +39,14 @@ Creates an instance of this service.
 
 #### _counters
 Performance counters.
-> `protected` **_counters**: [CompositeCounters](../../../commons/count/composite_counters)
+> `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _dependencyResolver
 Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-Dependency resolver.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _tracer
@@ -60,7 +60,7 @@ Tracer.
 #### act
 
 Calls registered actions in this Azure Function.
-The "cmd" parameter in the action parameters determine
+The "cmd" parameter in the action parameters determines
 what action shall be called.
 
 This method shall only be used in testing.
@@ -68,7 +68,7 @@ This method shall only be used in testing.
 > `public` act(context: any): Promise\<any\>
 
 - **context**: any - context context.
-- **returns**: Promise\<any\> - TODO: returned result
+- **returns**: Promise\<any\> - returned result
 
 #### applyInterceptors
 Applies interceptors to the action.
@@ -79,7 +79,7 @@ Applies interceptors to the action.
 - **returns**: (context: any) => Promise\<any\> - returned result
 
 #### applyValidation
-Performs a validation
+Performs a validation.
 
 > `protected` applyValidation(schema: [Schema](../../../commons/validate/schema), action: (context: any) => Promise\<any\>): (context: any) => Promise\<any\>
 
@@ -109,7 +109,7 @@ Adds '.cmd' to a command name
 > `protected` generateActionCmd(name: string): string
 
 - **name**: string - command name
-- **returns**: string - command name with added '.cmd' added at its end.
+- **returns**: string - command name with '.cmd' added at its end.
 
 #### getActions
 Get all actions supported by the service.
@@ -155,7 +155,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -205,7 +205,7 @@ Sets references to dependent components.
 ### Abstract methods
 
 #### register
-Registers all service routes in HTTP endpoint.
+Registers all service routes in an HTTP endpoint.
 
 This method is called by the service and must be overridden
 in child classes.

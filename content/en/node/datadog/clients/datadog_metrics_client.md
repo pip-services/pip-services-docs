@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The DataDogMetricsClient class REST client for DataDog metrics.
+The DataDogMetricsClient class allows you to create a REST client for DataDog metrics.
 
 
 

@@ -4,15 +4,15 @@ title: "LambdaService"
 linkTitle: "LambdaService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Abstract service that receives remove calls via AWS Lambda protocol.
+    Abstract service that receives remove calls via the AWS Lambda protocol.
 ---
 
 **Implements**: [ILambdaService](../ilambda_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
-The LambdaService class allows you to create abstract services that receive remove calls via AWS Lambda protocol.
+The LambdaService class allows you to create abstract services that receive remove calls via the AWS Lambda protocol.
 
-Important points
+**Important points**
 
 This service is intended to work inside LambdaFunction container that exploses registered actions externally.
 
@@ -41,7 +41,7 @@ Creates an instance of this service.
 
 #### _counters
 Performance counters.
-> `protected` **_counters**: [CompositeCounters](../../../commons/count/composite_counters)
+> `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _dependencyResolver
 Dependency resolver.
@@ -69,8 +69,8 @@ Creates an instance of this service.
 
 #### act
 Calls registered action in this lambda function.
-"cmd" parameter in the action parameters determin
-what action shall be called.
+The "cmd" parameter in the action parameters determines
+the action shall be called.
 
 - This method shall only be used in testing.
 
@@ -128,7 +128,7 @@ Gets all the actions supported by the service.
 
 
 #### instrument
-Adds instrumentation to log calls and measure call time.
+Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
 > `protected` instrument(correlationId: string, name: string): [InstrumentTiming](../../../rpc/services/instrument_timing) 
@@ -138,11 +138,11 @@ It returns a Timing object that is used to end the time measurement.
 - **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing)  - InstrumentTiming object to end the time measurement.
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 
 #### open
@@ -153,30 +153,30 @@ Opens the component.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### registerAction
-Registers a action in AWS Lambda function.
+Registers an action in AWS Lambda function.
 
 > `protected` registerAction(name: string, schema: [Schema](../../../commons/validate/schema), action: (params: any) => Promise\<any\>): void
 
 - **name**: string - action name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema used to validate received parameters.
-- **action**: (params: any) => Promise\<any\> - action function that is called when operation is invoked.
+- **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
+- **action**: (params: any) => Promise\<any\> - action function that is called when an operation is invoked.
 
 #### registerActionWithAuth
 Registers an action with authorization.
 
 > `protected` registerActionWithAuth(name: string, schema: Schema, authorize: (call: any, next: (call: any) => Promise\<any\>) => Promise\<any\>, action: (call: any) => Promise\<any\>): void
 
-- **name**: string - action name
+- **name**: string - action's name
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
 - **authorize**: (call: any, next: (call: any) => Promise\<any\> - authorization interceptor
-- **action**: (call: any) => Promise\<any\> - action function that is called when operation is invoked.
+- **action**: (call: any) => Promise\<any\> - action function that is called when an operation is invoked.
 
 
 #### registerInterceptor
 Registers a middleware for actions in AWS Lambda service.
 
-> `protected` registerInterceptor(action: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\>): void
-
+> `protected` registerInterceptor(action: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\>): void    
+     
 - **action**: (params: any, next: (params: any) => Promise\<any\>) => Promise\<any\> - action function that is called when middleware is invoked.
 
 
@@ -190,7 +190,7 @@ Sets references to dependent components.
 ### Abstract methods
 
 #### register
-Registers all service routes in HTTP endpoint.
+Registers all service routes in an HTTP endpoint.
 
 This method is called by the service and must be overriden
 in child classes.

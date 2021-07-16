@@ -14,9 +14,9 @@ description: >
 ### Classes
 
 #### [CommandableLambdaFunction](commandable_lambda_function)
-Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via external entry point.
+Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 #### [LambdaFunction](lambda_function)
-Abstract AWS Lambda function, that acts as a container to instantiate and run components and expose them via external entry point.
+Abstract AWS Lambda function, that acts as a container to instantiate and run components and expose them via an external entry point.
 
 </div>

@@ -4,12 +4,12 @@ title: "AzureFunctionContextHelper"
 linkTitle: "AzureFunctionContextHelper"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Contains methods used to get correlationIds, commands and bodys from the Azure Function context.
+    Contains methods used to get correlationIds, commands and bodies from the Azure Function context.
 ---
 
 ### Description
 
-The AzureFunctionContextHelper class contains methods used to get correlationIds, commands and bodys from the Azure Function context.
+The AzureFunctionContextHelper class contains methods used to get correlationIds, commands and bodies from the Azure Function context.
 
 
 ### Instance methods

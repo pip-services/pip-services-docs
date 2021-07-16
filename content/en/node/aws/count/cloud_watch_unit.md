@@ -4,14 +4,14 @@ title: "CloudWatchUnit"
 linkTitle: "CloudWatchUnit"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Constants that determine cloud watch units.
+    Constants that determine CloudWatch units.
 ---
 
-**Extends:** [LambdaFunction](../lambda_function)
+**Extends:** [LambdaFunction](../../containers/lambda_function)
 
 ### Description
 
-The CloudWatchUnit class contains constans used to determine cloud watch units.
+The CloudWatchUnit class contains constans used to determine CloudWatch units.
 
 
 ### Fields

@@ -172,7 +172,7 @@ Checks if there is a next token.
 Gets the next token from the scanner.
 > NextToken() [*Token](../token)
 
-- **returns**: [*Token](../token) - next token or *null* if there are no more tokens left.
+- **returns**: [*Token](../token) - next token or *nil* if there are no more tokens left.
 
 
 #### TokenizeBuffer

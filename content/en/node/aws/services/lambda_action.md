@@ -4,7 +4,7 @@ title: "LambdaAction"
 linkTitle: "LambdaAction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    TODO: add description
+    Defines actions to be executed as Lambda functions.
 ---
 
 ### Description

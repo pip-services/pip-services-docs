@@ -13,9 +13,9 @@ description: >
 ### Description
 The LambdaFunction class allows you to create an abstract AWS Lambda function that acts as a container to instantiate and run components, and expose them via an external entry point.
 
-Important points
+**Important points**
 
-- When handling calls "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.
+- When handling calls the "cmd" parameter determines what action shall be called, while the other parameters are passed to the action itself.
 
 - Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
 
@@ -32,7 +32,7 @@ Creates a new instance of this lambda function.
 > `public` constructor(name: string, description?: string)
 
 - **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info)).
-- **description**: string - (optional) a container description (accessible via [ContextInfo](../../../components/info/context_info)).
+- **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info)).
 
 ### Fields
 
@@ -47,7 +47,7 @@ Default path to config file.
 > `protected` **_configPath**: string = './config/config.yml'
 
 #### _counters
-Performanc counters.
+Performance counters.
 > `protected` **_counters** = new [CompositeCounters()](../../../components/count/composite_counters)
 
 #### _dependencyResolver
@@ -70,7 +70,7 @@ Tracer.
 
 #### act
 Calls registered action in this lambda function.
-"cmd" parameter in the action parameters determines
+The "cmd" parameter in the action parameters determines
 what action shall be called.
 
 - This method shall only be used in testing.
@@ -83,7 +83,7 @@ what action shall be called.
 #### execute
 Executes this AWS Lambda function and returns the result.
 This method can be overloaded in child classes
-if they need to change the default behavior
+if it is necessary to change the default behavior
 
 > `protected` execute(event: any): Promise\<any\>
 
@@ -130,7 +130,7 @@ Registers an action in this lambda function.
 
 - **cmd**: string - action/command name.
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
-- **action**: (params: any) => Promise\<any\> - action function that is called when action is invoked.
+- **action**: (params: any) => Promise\<any\> - action function that is called when the action is invoked.
 
 
 #### registerServices
@@ -141,8 +141,8 @@ Registers all lambda services in the container.
 
 #### run
 Runs this lambda function, loads container configuration,
-instantiate components and manage their lifecycle,
-makes this function ready to access action calls.
+instantiates components and manages their lifecycle.
+Makes this function ready to access action calls.
 
 > `public` run(): Promise\<void\> 
 

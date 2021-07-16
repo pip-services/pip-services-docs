@@ -57,7 +57,7 @@ Closes a component and frees used resources.
 > (c [*DataDogLogger]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Configure
@@ -81,7 +81,7 @@ Opens the component.
 > (c [*DataDogLogger]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Save
@@ -89,8 +89,8 @@ Saves log messages from the cache.
 
 > (c *DataDogLogger) Save(messages [[]*LogMessage](../../../components/log/log_message)) error
 
-- **messages**: [[]*LogMessage](../../../components/log/log_message) - a list with log messages
-- **returns**: error - error or nil no errors occured.
+- **messages**: [[]*LogMessage](../../../components/log/log_message) - list with log messages
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### SetReferences

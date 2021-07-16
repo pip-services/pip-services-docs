@@ -4,7 +4,7 @@ title: "CloudWatchLogger"
 linkTitle: "CloudWatchLogger"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
-    Logger that writes log messages to AWS Cloud Watch Log.
+    Logger that writes log messages to AWS CloudWatch Log.
 ---
 
 **Implements**: [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
@@ -13,12 +13,12 @@ description: >
 
 ### Description
 
-The CloudWatchLogger class allows you to create loggers that write log messages to AWS Cloud Watch Log.
+The CloudWatchLogger class allows you to create loggers that write log messages to AWS CloudWatch Log.
 
 #### Configuration parameters
  
-- **stream**: (optional) Cloud Watch Log stream (default: context name)
-- **group**: (optional) Cloud Watch Log group (default: context instance ID or hostname)
+- **stream**: (optional) CloudWatch Log stream (default: context name)
+- **group**: (optional) CloudWatch Log group (default: context instance ID or hostname)
 - **connections**:                   
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **region**: (optional) AWS region
@@ -32,7 +32,7 @@ The CloudWatchLogger class allows you to create loggers that write log messages 
 
 
 #### References
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters source
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters' source
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores used to resolve credentials requests
 
@@ -64,7 +64,7 @@ Checks if the component is open.
 
 > `public` isOpen(): boolean
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: boolean - true if the component is open and false otherwise.
 
 #### open
 Opens the component.
@@ -78,14 +78,14 @@ Saves the current counters' measurements.
 
 > `protected` save(messages: [LogMessage[]](../../../components/log/log_message)): Promise\<void\> 
 
-- **messages**: [LogMessage[]](../../../components/log/log_message) - current counters' measurements to be saves.
+- **messages**: [LogMessage[]](../../../components/log/log_message) - current counters' measurements to be saved.
 
 #### setReferences
 Sets references to dependent components.
 
 > `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### write
 Writes a log message to the logger destination.

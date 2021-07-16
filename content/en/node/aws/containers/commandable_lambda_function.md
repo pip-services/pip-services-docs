@@ -5,18 +5,18 @@ linkTitle: "CommandableLambdaFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 description: >
     Abstract AWS Lambda function that acts as a container to instantiate and run components
-    and expose them via external entry point.
+    and expose them via an external entry point.
 ---
 
 **Extends:** [LambdaFunction](../lambda_function)
 
 ### Description
 
-The CommandableLambdaFunction class allows you to create AWS Lambda function that acts as a container to instantiate and run components and expose them via external entry point.
+The CommandableLambdaFunction class allows you to create AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.
 
-Important points
+**Important points**
 
-- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
+- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by the "cmd" parameter.
   
 - Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
  

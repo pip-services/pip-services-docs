@@ -4,20 +4,20 @@ title: "CommandableAzureFunction"
 linkTitle: "CommandableAzureFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract Azure Function function, that acts as a container to instantiate and run components
-    and expose them via external entry point.
+    Abstract Azure Function function that acts as a container to instantiate and run components
+    and expose them via an external entry point.
 ---
 
 **Extends**: [AzureFunction](../azure_function)
 
 ### Description
+The CommandableAzureFunction allows you to create an abstract Azure Function function that acts as a container to instantiate and run components and expose them via an external entry point.
 
+**Important points**
 
-Important points
-
-- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by "cmd" parameter.
+- All actions are automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an action defined by the "cmd" parameter.
   
-- Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overridden by *CONFIG_PATH* environment variable.
+- Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overridden by the *CONFIG_PATH* environment variable.
  
 - **Note**: This component has been deprecated. Use Azure [FunctionService](../../services/function_service) instead.
 
@@ -34,8 +34,8 @@ Creates a new instance of this Azure Function.
 
 > `public` constructor(name: string, description?: string)
 
-- **name**: string - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info))
-- **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info))
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 
 ### Instance methods

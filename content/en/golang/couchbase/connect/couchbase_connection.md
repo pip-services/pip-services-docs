@@ -14,7 +14,7 @@ The CouchbaseConnection class allows you to create connections to a Couchbase da
 **Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
-- Specific CRUD operations over the data items must be implemented in child classes by accessing **c._collection** or **c._model** properties.
+- Specific CRUD operations over the data items must be implemented in child classes by accessing the **c._collection** or **c._model** properties.
 
 #### Configuration parameters
 
@@ -47,7 +47,7 @@ Creates a new instance of the connection component.
 
 > NewCouchbaseConnection(bucketName string) [*CouchbaseConnection]()
 
-- **bucketName**: string - the name of couchbase bucket
+- **bucketName**: string - name of couchbase bucket
 
 ### Fields
 
@@ -89,7 +89,7 @@ Closes the component and frees used resources.
 > (c [*CouchbaseConnection]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occured.
 
 
 #### Configure
@@ -134,7 +134,7 @@ Opens the component.
 > (c [*CouchbaseConnection]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or if nil no errors occured.
 
 #### SetReferences
 Sets references to dependent components.

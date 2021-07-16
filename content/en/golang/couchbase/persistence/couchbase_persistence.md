@@ -51,7 +51,7 @@ Creates a new instance of the persistence component.
 > InheritCouchbasePersistence(overrides ICouchbasePersistenceOverrides, proto reflect.Type, bucket string) [*CouchbasePersistence]()
 
 - **overrides**: ICouchbasePersistenceOverrides - References to override virtual methods
-- **proto**: reflect.Type - TODO: add description
+- **proto**: reflect.Type - prototype
 - **bucket**: string - (optional) bucket's name.
 
 
@@ -105,7 +105,7 @@ Clears a component's state.
 > (c [*CouchbasePersistence]()) Clear(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Close
@@ -114,7 +114,7 @@ Closes a component and frees used resources.
 > (c [*CouchbasePersistence]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -162,7 +162,7 @@ Creates a data item.
 
 
 #### CreateBucketFilter!
-**TODO: this mehtod is nopt implemented**
+**Note: this mehtod is not implemented**
 
 Creates a filter that includes a collection's name in it.
 
@@ -176,7 +176,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: string - (optional) filter function to filter items.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### GenerateBucketId
 Generates a unique id for a specific collection in the bucket.
@@ -189,7 +189,7 @@ Generates a unique id for a specific collection in the bucket.
 
 
 #### GetCountByFilter!
-**TODO: this mehtod is nopt implemented**
+**Note: this mehtod is not implemented**
 
 Gets a number of data items retrieved by a given filter.
 
@@ -256,7 +256,7 @@ Opens the component.
 > (c [*CouchbasePersistence]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occured.
 
 
 #### QuoteIdentifier

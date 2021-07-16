@@ -29,13 +29,13 @@ Clears the collection.
 
 
 #### ClearValues
-Clears all stored variables (assigns null values).
+Clears all stored variables (assigns nil values).
 
 > ClearValues()
 
 
 #### FindByName
-Clears all stored variables (assigns null values).
+Clears all stored variables (assigns nil values).
 
 > FindByName(name string) [IVariable](../ivariable)
 

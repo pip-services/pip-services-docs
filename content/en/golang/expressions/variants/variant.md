@@ -273,7 +273,7 @@ Gets a type of the variant value
 
 ### Methods
 
-#### assign
+#### Assign
 Assignes a new value to this object.
 
 > (c [*Variant]()) Assign(value [*Variant]())
@@ -287,7 +287,7 @@ Clears this object and assignes a [VariantType.Null](../variant_type) type.
 > (c [*Variant]()) Clear()
 
 
-#### clone
+#### Clone
 Clones the variant value
 
 > (c [*Variant]()) Clone() [*Variant]()

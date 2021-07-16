@@ -88,7 +88,7 @@ docker build -f docker/Dockerfile -t $rcImage -t $latestImage .
 $env:IMAGE = $rcImage
 
 # Set docker machine ip (on windows not localhost)
-if ($env:DOCKER_IP -ne $null) {
+if ($env:DOCKER_IP -ne $nil) {
     $dockerMachineIp = $env:DOCKER_IP
 } else {
     $dockerMachineIp = "localhost"

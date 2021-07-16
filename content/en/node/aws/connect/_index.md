@@ -14,9 +14,9 @@ description: >
 ### Classes
 
 #### [AwsConnectionParams](aws_connection_params)
-Contains connection parameters to authenticate against Amazon Web Services (AWS) and connect to specific AWS resource.
+Contains connection parameters to authenticate against Amazon Web Services (AWS) and connect to specific AWS resources.
 
 #### [AwsConnectionResolver](aws_connection_resolver)
-Helper class used to retrieve AWS connection and credential parameters, validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
+Helper class used to retrieve AWS connection and credential parameters, validate them and compose a [AwsConnectionParams](../connect/aws_connection_params/) value.
 
 </div>

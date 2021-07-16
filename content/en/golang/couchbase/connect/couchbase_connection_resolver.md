@@ -4,12 +4,12 @@ title: "CouchbaseConnectionResolver"
 linkTitle: "CouchbaseConnectionResolver"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-couchbase-go"
 description: >
-    Helper class that resolves Couchbase connection and credential parameters, validates them and generates a connection URI.
+    Helper class that resolves a Couchbase connection and credential parameters, validates them and generates a connection URI.
 
 ---
 
 ### Description
-The CouchbaseConnectionResolver class is used to resolve Couchbase connections and credential parameters, validate them and generate connection URIs/
+The CouchbaseConnectionResolver class is used to resolve Couchbase connections and credential parameters, validate them and generate connection URIs.
 
 **Important points**
 

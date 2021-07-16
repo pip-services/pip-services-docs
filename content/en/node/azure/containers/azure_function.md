@@ -14,7 +14,7 @@ The AzureFunction class allows you to create an Abstract Azure Function that act
 
 Importan points
 
-- When handling calls, the "cmd" parameter determines which what action shall be called, while other parameters are passed to the action itself.  
+- When handling calls, the "cmd" parameter determines the action that shall be called, while the other parameters are passed to the action itself.  
 
 - The container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
 
@@ -30,8 +30,8 @@ Creates a new instance of this Azure Function.
 
 > `public` constructor(name?: string, description?: string)
 
-- **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info))
-- **description**: string - (optional) a container description (accessible via [ContextInfo](../../../components/info/context_info))
+- **name**: string - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: string - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 
 ### Instance methods

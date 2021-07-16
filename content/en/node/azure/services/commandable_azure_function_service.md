@@ -4,7 +4,7 @@ title: "CommandableAzureFunctionService"
 linkTitle: "CommandableAzureFunctionService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
-    Abstract service that receives commands via Azure Function protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
+    Abstract service that receives commands via the Azure Function protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
 ---
 
 **Extends**: [AzureFunctionService](../azure_function_service)
@@ -12,13 +12,13 @@ description: >
 ### Description
 The CommandableAzureFunctionService class allows you to create abstract services that receive commands via the Azure Function protocols to operations automatically generated for commnads defined in [ICommandable components](../../../commons/commands/icommandable).
 
-Important points 
+**Important points** 
 
-- Each command is exposed as invoke method that receives command name and parameters.
+- Each command is exposed as an invoke method that receives a command's name and parameters.
 
 - Commandable services require only 3 lines of code to implement a robust external Azure Function-based remote interface.
 
-- This service is intended to work inside Azure Function container that exploses registered actions externally.
+- This service is intended to work inside an Azure Function container that exploses registered actions externally.
 
 #### Configuration parameters
  
@@ -47,7 +47,7 @@ This method can be overloaded in child classes.
 > `protected` getBody(context: any): string
 
 - **context**: any - Azure Function context
-- **returns**: string - Returns body from context
+- **returns**: string - returned body from context
 
 #### register
 Registers all actions in Azure Function.

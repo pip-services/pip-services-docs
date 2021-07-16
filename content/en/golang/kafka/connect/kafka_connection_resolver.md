@@ -4,7 +4,7 @@ title: "KafkaConnectionResolver"
 linkTitle: "KafkaConnectionResolver"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
 description: >
-    Helper class that resolves a Kafka connection and credential parameters, validates them and generates connection options.
+    Resolves a Kafka connection and credential parameters, validates them and generates connection options.
 
 ---
 

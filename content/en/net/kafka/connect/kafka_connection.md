@@ -12,9 +12,10 @@ description: >
 [IOpenable](../../../commons/run/iopenable)
 
 ### Description
+The KafkaConnection class allows you to create connections to Kafka using the default driver.
 
-By defining a connection and sharing it through multiple message queues
-you can reduce the number of used database connections.
+**Important points**
+- By defining a connection and sharing it through multiple message queues you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -26,8 +27,8 @@ you can reduce the number of used database connections.
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
     - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: user name
-    - **password**: user password
+    - **username**: username
+    - **password**: user's password
 - **options**:
     - **log_level**: (optional) log level 0 - None, 1 - Error, 2 - Warn, 3 - Info, 4 - Debug (default: 1)
     - **acks**: (optional) control the number of required acks: -1 - all, 0 - none, 1 - only leader (default: -1)
@@ -55,11 +56,11 @@ Creates a new instance of the connection component.
 
 
 #### _adminClient
-Kafka admin client object;
+Kafka admin client object
 > `protected` **_adminClient**: IAdminClient
 
 #### _clientId
-Hostname as client id.
+Hostname as client id
 > `protected` **_clientId**: string
 
 #### _connectTimeout
@@ -110,7 +111,7 @@ Topic subscriptions
 ### Instance methods
 
 #### СheckOpen!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Checks if the connection is open.   
 Raises an error is the connection is closed.
@@ -124,7 +125,7 @@ Closes a component and frees used resources.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### Commit!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Commit a message offset.
 
@@ -139,7 +140,7 @@ Configures the component by passing its configuration parameters.
 
 
 #### ConnectToAdmin!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Connects an admin client on demand.
 
@@ -166,11 +167,11 @@ If the connection doesn't support this function, it exists without error.
 Gets the connection.
 > `public` IProducer\<byte[], byte[]\> GetConnection()
 
-- **returns**: IProducer\<byte[], byte[]\> - connection to a MySQL database
+- **returns**: IProducer\<byte[], byte[]\> - connection to Kafka.
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` bool IsOpen()
 
@@ -203,7 +204,7 @@ If the connection doesn't support this function, it returns an empty list.
 - **returns**: Task\<List\<string\>\> - queue names.
 
 #### Seek!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Seeks a message offset.
 
@@ -213,11 +214,11 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### SubscribeAsync
-Subscribes to a topic
+Subscribes to a topic.
 
 > `public` Task SubscribeAsync(string topic, string groupId, ConsumerConfig config, [IKafkaMessageListener](../ikafka_message_listener) listener)
 
@@ -228,7 +229,7 @@ Subscribes to a topic
 
 
 #### UnsubscribeAsync
-Unsubscribes from a previously subscribed topic
+Unsubscribes from a previously subscribed topic.
 
 > `public` Task UnsubscribeAsync(string topic, string groupId, [IKafkaMessageListener](../ikafka_message_listener) listener)
 

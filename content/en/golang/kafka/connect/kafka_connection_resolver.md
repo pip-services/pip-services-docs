@@ -33,7 +33,7 @@ The KafkaConnectionResolver class is used to resolve Kafka connections and crede
 ### Constructors
 
 #### NewKafkaConnectionResolver
-Method are creates a new instance of connection resolver component.
+Method that creates a new instance of the connection resolver component.
 
 > NewKafkaConnectionResolver() [*KafkaConnectionResolver]()
 

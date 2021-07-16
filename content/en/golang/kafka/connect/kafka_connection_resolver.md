@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The KafkaConnectionResolver class is used to resolve Kafka connections and credential parameters, validate them and generate connection options.
+KafkaConnectionResolver is used to resolve Kafka connections and credential parameters, validate them and generate connection options.
 
 #### Configuration parameters
 

@@ -27,6 +27,9 @@ Kafka connection using the default driver.
 #### [KafkaConnectionResolver](kafka_connection_resolver)
 Resolves a Kafka connection and credential parameters, validates them and generates connection options.  
 
+#### [KafkaMessage](kafka_message)
+Defines Kafka message fields.
+    
 #### [KafkaSubscription](kafka_subscription)
 Defines fields for Kafka subscriptions.
 

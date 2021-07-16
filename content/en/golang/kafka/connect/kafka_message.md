@@ -4,13 +4,14 @@ title: "KafkaMessage"
 linkTitle: "KafkaMessage"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
 description: >
-    TODO: add description
+    Defines Kafka message fields.
 
 ---
 
 ### Description
 
-TODO: add description
+    Defines Kafka message fields.
+
 
 
 ### Fields
@@ -18,10 +19,10 @@ TODO: add description
 <span class="hide-title-link">
 
 #### Message
-TODO: add description
+Message
 > **Message** *kafka.ConsumerMessage
 #### Session
-TODO: add description
+Session
 > **Session** kafka.ConsumerGroupSession
 
 </span>

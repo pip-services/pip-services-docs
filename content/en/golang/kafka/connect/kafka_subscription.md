@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-The KafkaSubscription class defines fields for Kafka subscriptions.
+KafkaSubscription defines fields for Kafka subscriptions.
 
 
 ### Fields

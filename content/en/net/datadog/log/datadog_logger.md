@@ -11,9 +11,6 @@ description: >
 **Inherits:** [CachedCounters](../../../components/count/cached_counters/), [IReferenceable](../../../commons/refer/ireferenceable), [IReferenceable](../../../commons/run/iopenable)
 
 ### Description
-DataDog is a popular monitoring SaaS service. It collects logs, metrics, events
-from infrastructure and applications and analyze them in a single place.
-
 The DataDogLogger class allows you to create loggers that dump execution logs to a DataDog service.
 
 
@@ -40,7 +37,7 @@ The DataDogLogger class allows you to create loggers that dump execution logs to
 
 #### References
 
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify counters source
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters' source
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 

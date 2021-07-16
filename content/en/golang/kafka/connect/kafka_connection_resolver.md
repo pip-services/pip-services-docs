@@ -4,13 +4,13 @@ title: "KafkaConnectionResolver"
 linkTitle: "KafkaConnectionResolver"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
 description: >
-    Helper class that resolves a Kafka connection and credential parameters, validates them and generates connection options.
+    Resolves a Kafka connection and credential parameters, validates them and generates connection options.
 
 ---
 
 ### Description
 
-The KafkaConnectionResolver class is used to resolve Kafka connections and credential parameters, validate them and generate connection options.
+KafkaConnectionResolver is used to resolve Kafka connections and credential parameters, validate them and generate connection options.
 
 #### Configuration parameters
 
@@ -33,7 +33,7 @@ The KafkaConnectionResolver class is used to resolve Kafka connections and crede
 ### Constructors
 
 #### NewKafkaConnectionResolver
-Method are creates a new instance of connection resolver component.
+Method that creates a new instance of the connection resolver component.
 
 > NewKafkaConnectionResolver() [*KafkaConnectionResolver]()
 

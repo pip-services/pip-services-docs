@@ -191,4 +191,4 @@ pin = credential.get_as_nullable_string("pin") # Result: 321
 - #### [ConfigParams](../../../commons/config/config_params)
 - #### [ConnectionParams](../connect/connection_params)
 - #### [CredentialResolver](../credential_resolver)
-- #### [ICredentialStore](../icredentialStore)
+- #### [ICredentialStore](../icredential_store)

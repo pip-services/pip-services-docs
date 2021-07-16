@@ -208,4 +208,4 @@ password := credential.Password();             // Result: "pass123"
 - #### [ConfigParams](../../../commons/config/config_params)
 - #### [ConnectionParams](../connect/connection_params)
 - #### [CredentialResolver](../credential_resolver)
-- #### [ICredentialStore](../icredentialStore)
+- #### [ICredentialStore](../icredential_store)

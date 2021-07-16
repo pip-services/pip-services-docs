@@ -15,12 +15,12 @@ The CredentialResolver class is used to retrieve component credentials.
 
 Important points
 
-- If credentials are configured to be retrieved from [ICredentialStore](../icredentialStore), it will automatically locate [ICredentialStore](../icredentialStore) in component references and retrieve the credentials from there using the store_key parameter.
+- If credentials are configured to be retrieved from [ICredentialStore](../icredential_store), it will automatically locate [ICredentialStore](../icredential_store) in component references and retrieve the credentials from there using the store_key parameter.
 
 #### Configuration parameters
 
 **credential**: 
-- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../icredentialStore)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../icredential_store)
 - **...**: other credential parameters
 
 **credentials**: alternative to credential
@@ -115,4 +115,4 @@ credentialResolver.Lookup("123", (err, credential) => {
 
 ### See also
 - #### [CredentialParams](../credential_params)
-- #### [ICredentialStore](../icredentialStore)
+- #### [ICredentialStore](../icredential_store)

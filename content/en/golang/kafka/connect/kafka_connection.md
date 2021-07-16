@@ -9,7 +9,9 @@ description: >
 ---
 
 ### Description
+KafkaConnection is used to create Kafka connections using the default driver.
 
+**Important points**
 By defining a connection and sharing it through multiple message queues
 you can reduce the number of used database connections.
 
@@ -52,11 +54,11 @@ Creates a new instance of the connection component.
 
 
 #### adminClient
-Kafka admin client object;
+Kafka admin client object
 > **adminClient**: kafka.Client
 
 #### clientId
-Hostname as client id.
+Hostname as client id
 > **clientId**: string
 
 #### connectTimeout
@@ -107,10 +109,10 @@ Topic subscriptions
 
 #### CheckOpen
 Checks if the connection is open.   
-Raises an error is the connection is closed.
+Raises an error if the connection is closed.
 
 > (c [*KafkaConnection]()) checkOpen(correlationId string) error
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Close
@@ -119,10 +121,10 @@ Closes a component and frees used resources.
 > (c [*KafkaConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Commit!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Commit a message offset.
 
@@ -140,7 +142,7 @@ Configures the component by passing its configuration parameters.
 Connects an admin client on demand.
 
 > (c [*KafkaConnection]()) connectToAdmin(correlationId string) error
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### CreateQueue
@@ -150,7 +152,7 @@ If the connection doesn't support this function, it exists without error.
 > (c [*KafkaConnection]()) CreateQueue() error
 
 - **name**: string - name of the queue to be created.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### DeleteQueue
@@ -160,7 +162,7 @@ If the connection doesn't support this function, it exists without error.
 > (c [*KafkaConnection]()) DeleteQueue() error
 
 - **name**: string - name of the queue to be deleted.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### GetConnection
@@ -171,7 +173,7 @@ Gets the connection.
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > (c [*KafkaConnection]()) IsOpen() bool
 
@@ -184,7 +186,7 @@ Opens the component.
 > (c [*KafkaConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Publish
@@ -195,7 +197,7 @@ Publish a message to a specified topic.
 - **topic**: string - topic where the message will be placed.
 - **messages**: []*kafka.ProducerMessage - list of messages to be published.
 - **config**: *kafka.Config - publishing options.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### ReadQueueNames
@@ -207,7 +209,7 @@ If the connection doesn't support this function, it returns an empty list.
 - **returns**: ([]string, error) - queue names.
 
 #### Seek!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Seeks a message offset.
 
@@ -221,7 +223,7 @@ Sets references to dependent components.
 
 
 #### Subscribe
-Subscribes to a topic
+Subscribes to a topic.
 
 > (c [*KafkaConnection]()) Subscribe(topic string, groupId string, config *kafka.Config, listener [IKafkaMessageListener](../ikafka_message_listener)) error
 
@@ -229,7 +231,7 @@ Subscribes to a topic
 - **groupId**: string - (optional) consumer group id
 - **config**: *kafka.Config - subscription options
 - **listener**: [IKafkaMessageListener](../ikafka_message_listener) - message listener
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Unsubscribe
@@ -240,4 +242,4 @@ Unsubscribes from a previously subscribed topic
 - **topic**: string - topic name
 - **groupId**: string - (optional) consumer group id
 - **listener**: [IKafkaMessageListener](../ikafka_message_listener) - message listener
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.

@@ -125,9 +125,9 @@ Topic
 
 #### Abandon
 Returns a message into the queue and makes it available for all subscribers to receive it again.
-This method is usually used to return a message which could not be processed at the moment
+This method is usually used to return a message which could not be processed at the moment,
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
-or/and sent to dead letter queue.
+or/and sent to the dead letter queue.
 
 - Important: This method is not supported by Kafka.
 
@@ -142,7 +142,7 @@ Clears a component's state.
 > (c [*KafkaMessageQueue]()) Clear(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Close
@@ -151,7 +151,7 @@ Closes a component and frees used resources.
 > (c [*KafkaMessageQueue]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Complete
 Permanently removes a message from the queue.
@@ -217,17 +217,17 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### MoveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 - Important: This method is not supported by Kafka.
 
 > (c [*KafkaMessageQueue]()) MoveToDeadLetter(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### OnMessage
 Deserializes a message. Then, sends it to a receiver if its set or puts it into the queue.
@@ -242,7 +242,7 @@ Opens the component.
 > (c [*KafkaMessageQueue]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 
@@ -293,7 +293,7 @@ This method is usually used to extend the message processing time.
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Send
 Sends a message into the queue.
@@ -302,14 +302,14 @@ Sends a message into the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.
 
 > (c [*KafkaMessageQueue]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### subscribe
@@ -318,7 +318,7 @@ Subscribes to a topic.
 > (c [*KafkaMessageQueue]()) subscribe(correlationId string) error
 
 - **correlationId**: (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### toMessage

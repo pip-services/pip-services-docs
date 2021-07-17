@@ -15,7 +15,8 @@ description: >
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.
 
-Important points
+**Important points**
+    
 - The current implementation does not support authentication.
 
 #### Configuration parameters
@@ -36,7 +37,7 @@ Important points
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
     - **failures**: number of failures before stop retrying (default: 5)
     - **retry**: retry timeout in milliseconds (default: 30 sec)
-    - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
+    - **idle**: idle timeout (milliseconds) before disconnecting (default: 5 sec)
 
 #### References
 
@@ -73,7 +74,7 @@ Opens the component.
 
 > `public` Task OpenAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id usd to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.

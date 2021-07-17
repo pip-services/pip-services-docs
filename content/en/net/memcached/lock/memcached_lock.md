@@ -94,7 +94,7 @@ Sets references to dependent components.
 
 #### TryAcquireLock
 Makes a single attempt to acquire a lock by its key.
-It returns immediately a positive or negative result.
+It returns a positive or negative result immediately.
 
 > `public override` bool TryAcquireLock(string correlationId, string key, long ttl)
 

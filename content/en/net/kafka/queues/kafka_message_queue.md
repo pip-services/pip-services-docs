@@ -22,20 +22,20 @@ The KafkaMessageQueue class allows you to create message queues that send and re
 - **read_partitions**: (optional) number of partitions to be consumed concurrently (default: 1)
 - **autocommit**: (optional) turns on/off autocommit (default: true)
 - **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from  [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**: (optional) key to retrieve the connection from  [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
     - **store_key**: (optional) a key to retrieve the credentials from  [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: user name
-    - **password**: user password
+    - **username**: username
+    - **password**: user's password
 - **options**:
     - **autosubscribe**:        (optional) true to automatically subscribe on option(default: false)
-    - **acks**: (optional) control the number of required acks: -1 - all, 0 - none, 1 - only leader (default: -1)
+    - **acks**: (optional) controls the number of required acks: -1 - all, 0 - none, 1 - only leader (default: -1)
     - **autocommit_timeout**: (optional) number of milliseconds to perform autocommit offsets (default: 1000)
     - **connect_timeout**: (optional) number of milliseconds to connect to broker (default: 1000)
-    - **max_retries**: (optional) maximum retry attempts (default: 5)
+    - **max_retries**: (optional) maximum number of retry attempts (default: 5)
     - **retry_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 30000)
     - **request_timeout**: (optional) number of milliseconds to wait on broker request (default: 30000)
     - **flush_timeout**: (optional) number of milliseconds to wait on flushing messages (default: 30000)
@@ -102,9 +102,9 @@ Topic
 
 #### AbandonAsync
 Returns a message into the queue and makes it available for all subscribers to receive it again.
-This method is usually used to return a message which could not be processed at the moment
+This method is usually used to return a message which could not be processed at the moment, 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
-or/and sent to dead letter queue.
+or/and sent to the dead letter queue.
 
 - Important: This method is not supported by Kafka.
 
@@ -113,7 +113,7 @@ or/and sent to dead letter queue.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
 
 #### Clear!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Clears a component's state.
 
@@ -145,10 +145,10 @@ Configures a component by passing its configuration parameters.
 
 
 #### EndListen!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Ends listening for incoming messages.
-When this method is call, [Listen](#listen) unblocks the thread and execution continues.
+When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
 
 #### FromMessage
@@ -178,7 +178,7 @@ Checks if the component is open.
 
 
 #### Listen!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Listens for incoming messages and blocks the current thread until the queue is closed.
 
@@ -186,7 +186,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
 #### MoveToDeadLetterAsync
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 - Important: This method is not supported by Kafka.
 
@@ -210,13 +210,13 @@ Opens the component.
 
 
 #### Peek!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
 #### PeekBatch!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue, it returns an empty list.
@@ -225,7 +225,7 @@ If there are no messages available in the queue, it returns an empty list.
 
 
 #### ReadMessageCount!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Reads the current number of messages in the queue to be delivered.
 
@@ -260,7 +260,7 @@ Sets references to dependent components.
 
 > `public override` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### SubscribeAsync
@@ -279,7 +279,7 @@ Creates a new [MessageEnvelope](../../../messaging/queues/message_envelope).
 
 
 #### UnsetReferences!
-**TODO: this method is not implemented**
+**Note: this method is not implemented**
 
 Unsets (clears) previously set references to dependent components.
 

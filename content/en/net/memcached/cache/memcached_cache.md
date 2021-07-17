@@ -12,7 +12,7 @@ description: >
 ### Description
 The MemcachedCache class allows you to create distributed cache that stores values in Memcached's caching service. 
 
-Important points
+**Important points**
 
 - The current implementation does not support authentication.
 
@@ -34,7 +34,7 @@ Important points
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
     - **failures**: number of failures before stop retrying (default: 5)
     - **retry**: retry timeout in milliseconds (default: 30 sec)
-    - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
+    - **idle**: idle timeout (milliseconds) before disconnecting (default: 5 sec)
 
 
 #### References
@@ -63,7 +63,7 @@ Checks if the component is open.
 
 > `public override` bool IsOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -83,7 +83,7 @@ Removes a value from the cache by its key.
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.
-If the value is missing in the cache or expired, it returns null.
+If the value is missing in the cache or has expired, it returns null.
 
 > `public override` Task\<T\> RetrieveAsync\<T\>(string correlationId, string key)
 

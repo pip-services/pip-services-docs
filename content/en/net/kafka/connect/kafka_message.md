@@ -4,25 +4,25 @@ title: "KafkaMessage"
 linkTitle: "KafkaMessage"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-kafka-dotnet"
 description: >
-    TODO: add description
+    Defines Kafka message fields.
 
 ---
 
 ### Description
 
-TODO: add description
+Defines Kafka message fields.
 
 
 ### Properties
 
 
 #### Message
-TODO: add description
+Message
 > `public` Message\<byte[], byte[]\> Message { get; set; }
 #### Consumer
-TODO: add description
+Consumer
 > `public` IConsumer\<byte[], byte[]\> Consumer { get; set; }
 #### Result
-TODO: add description
+Result
 > `public` ConsumeResult\<byte[], byte[]\> Result { get; set; }
 

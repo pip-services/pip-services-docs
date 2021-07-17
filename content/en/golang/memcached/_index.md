@@ -18,7 +18,7 @@ The module contains the following packages:
 
 - [**Build**](build) - contains a standard factory for constructing components.
 - [**Cache**](cache) - cache components in Memcached
-- [**Lock**](lock) - components of working with locks in Memcached
+- [**Lock**](lock) - components for working with locks in Memcached
 
 ### Use
 

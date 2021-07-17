@@ -15,8 +15,9 @@ description: >
 
 The MqttConnection class allows you to create MQTT connections using the default driver.
 
-By defining a connection and sharing it through multiple message queues
-you can reduce number of used connections.
+**Important points**
+
+By defining a connection and sharing it through multiple message queues you can reduce number of used connections.
 
 #### Configuration parameters
 
@@ -31,7 +32,7 @@ you can reduce number of used connections.
     - **username**: username
     - **password**: user's password
 - **options**:
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
+    - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
     - **connect_timeout**: (optional) number of milliseconds to wait for connection (default: 30000)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 1000)
     - **keepalive_timeout**: (optional) number of milliseconds to ping broker while inactive (default: 3000)
@@ -134,7 +135,7 @@ If the connection doesn't support this function, it exists without error.
 
 #### DeleteQueueAsync
 Deletes a message queue.
-If connection doesn't support this function, it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > `public` Task DeleteQueueAsync(string name)
 
@@ -145,7 +146,7 @@ If connection doesn't support this function, it exists without error.
 Gets the connection.
 > `public` IMqttClient GetConnection()
 
-- **returns**: IMqttClient - connection to a MySQL database
+- **returns**: IMqttClient - connection to an MQTT broker. 
 
 
 #### IsOpen

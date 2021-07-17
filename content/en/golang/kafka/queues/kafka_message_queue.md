@@ -175,7 +175,7 @@ Configures a component by passing its configuration parameters.
 
 #### EndListen
 Ends listening for incoming messages.
-When this method is call, [Listen](#listen) unblocks the thread and execution continues.
+When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
 > (c [*KafkaMessageQueue]()) EndListen(correlationId string)
 

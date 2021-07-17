@@ -46,7 +46,7 @@ pip install pip-services3-container
 
 #### Data module
 ```bash
-pip install pip_services3_data
+pip install pip-services3-data
 ```
 [GitHub repo](https://github.com/pip-services3-python/pip-services3-data-python)
 
@@ -58,7 +58,7 @@ pip install pip-services3-elasticsearch
 
 #### gRPC module
 ```bash
-npm install pip-services3-grpc-node --save
+pip install pip-services3-grpc
 ```
 [GitHub repo](https://github.com/pip-services3-python/pip-services3-grpc-python)
 
@@ -103,3 +103,10 @@ pip install pip-services3-rpc
 pip install pip-services3-sqlserver
 ```
 [GitHub repo](https://github.com/pip-services3-python/pip-services3-sqlserver-python)
+
+
+#### Swagger module
+```bash
+pip install pip-services3-swagger
+```
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-swagger-pyth0on)

@@ -27,7 +27,7 @@ The module contains the following packages:
 
 Install the Python package as
 ```bash
-pip install pip_services3_data
+pip install pip-services3-data
 ```
 
 As an example, lets implement persistence for the following data object:

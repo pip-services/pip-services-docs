@@ -19,7 +19,7 @@ Not all queues may implement all the methods.
 Attempt to call non-supported method will result in NotImplemented exception.
 To verify if a specific method is supported check [MessagingCapabilities](messaging_capabilities).
 
-#### [IMessageReceive](imessage_receive)
+#### [IMessageReceiver](imessage_receiver)
 Callback interface used to receive incoming messages.
 
 <br>

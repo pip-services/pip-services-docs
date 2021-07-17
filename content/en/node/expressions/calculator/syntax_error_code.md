@@ -7,8 +7,6 @@ description: >
     General syntax errors.
 ---
 
-**Extends**: [BadRequestException](../../../commons/errors/bad_request_exception)
-
 ### Description
 
 The SyntaxErrorCode class defines general syntax errors.

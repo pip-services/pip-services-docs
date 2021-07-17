@@ -22,11 +22,15 @@ Creates an instance of this class.
 - **content**: string - text content to be read.
 
 
-### Properties
+### Fields
+
+<span class="hide-title-link">
 
 #### Eof
 EOF
-> `public static` Eof: number = -1
+> `public static` **Eof**: number = -1
+
+</span>
 
 ### Instance methods
 

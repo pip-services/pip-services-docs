@@ -7,7 +7,7 @@ description: >
     A NumberState object returns a number from a scanner. 
 ---
 
-**Implements**: [ICommentState](../../icomment_state)
+**Implements**: [INumberState](../../inumber_state)
 
 ### Description
 

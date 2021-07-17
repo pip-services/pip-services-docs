@@ -121,4 +121,4 @@ Gets a variable value from the collection of variables.
 
 - **variables**: map[string]string - collection of variables.
 - **name**: string - variable name to get.
-- **returns**: \*string - variable value or *undefined*.
+- **returns**: \*string - variable value or *nil*.

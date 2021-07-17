@@ -8,9 +8,7 @@ description: >
  
 ---
 
-**Extends:** [Lock](../../../components/lock/lock) 
-
-**Implements:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
+**Inherits:** [Lock](../../../components/lock/lock), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable)
 
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.

@@ -35,13 +35,13 @@ Creates a new validation schema and sets its values.
 ### Methods
 
 #### AllowUndefined
-Sets a flag to allow for undefined properties
+Sets a flag to allow for nil properties
 This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > (c [*ObjectSchema]()) AllowUndefined(value bool) [*ObjectSchema]()
 
-- **value**: bool - true to allow undefined properties and false otherwise.
+- **value**: bool - true to allow nil properties and false otherwise.
 - **returns**: [ObjectSchema](../object_schema) - validation schema.
 
 
@@ -65,11 +65,11 @@ Validates a given value against the schema and configured validation rules.
 
 
 #### SetUndefinedAllowed
-Sets a flag to allow for undefined properties
+Sets a flag to allow for nil properties
 
 > (c [*ObjectSchema]) SetUndefinedAllowed(value bool)
 
-- **value**: bool - true to allow for undefined properties and false otherwise.
+- **value**: bool - true to allow for nil properties and false otherwise.
 
 
 #### SetProperties
@@ -81,11 +81,11 @@ See [PropertySchema](../property_schema)
 - **value**: [][*PropertySchema](../property_schema) - list of property validation schemas.
 
 #### UndefinedAllowed
-Gets a flag to allow for undefined properties
+Gets a flag to allow for nil properties
 
 > (c [*ObjectSchema]()) UndefinedAllowed() bool
 
-- **returns**: bool - true to allow for undefined properties and false otherwise.
+- **returns**: bool - true to allow for nil properties and false otherwise.
 
 #### WithOptionalProperty
 Adds a validation schema for an optional object property.

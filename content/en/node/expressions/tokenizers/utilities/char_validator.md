@@ -14,7 +14,7 @@ The CharValidator class allows you to validate characters that are processed by 
 ### Constructors
 Default contructor to prevent creation of a class instance.
 
-> `public` constructor()
+> `private` constructor()
 
 
 ### Fields

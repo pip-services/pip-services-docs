@@ -46,7 +46,7 @@ Clears all stored variables (assigns null values).
 
 
 #### findByName
-Clears all stored variables (assigns null values).
+Finds variable in the list by it's name.
 
 > `public` findByName(name: string): [IVariable](../ivariable)
 

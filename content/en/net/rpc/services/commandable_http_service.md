@@ -8,7 +8,7 @@ description: >
     
 ---
 
-**Extends:** [RestService](../rest_service)
+**Inherits:** [RestService](../rest_service)
 
 See also [RestService](../rest_service), [CommandableHttpClient](../../clients/commandable_http_client)
 

@@ -18,7 +18,7 @@ Important points
 
 - It can be used in testing or in situations where a cache is required but must be disabled.
 
-### Static methods
+### Instance methods
 
 #### RemoveAsync
 Removes a value from the cache by its key.

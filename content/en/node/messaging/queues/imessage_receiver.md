@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "IMessageReceive"
-linkTitle: "IMessageReceive"
+title: "IMessageReceiver"
+linkTitle: "IMessageReceiver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 description: >
   Callback interface to receive incoming messages.

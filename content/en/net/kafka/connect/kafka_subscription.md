@@ -33,5 +33,5 @@ Listener
 > `public` [IKafkaMessageListener](../ikafka_message_listener) Listener { get; set; }
 
 #### Token
-TODO: add description
+Token
 > `public` CancellationTokenSource Token { get; set; }

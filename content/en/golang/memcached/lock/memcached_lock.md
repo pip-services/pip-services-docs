@@ -13,7 +13,7 @@ description: >
 ### Description
 The MemcachedLock class allows you to create a lock that is implemented based on the Memcached's caching service.
 
-Important points
+**Important points**
 - The current implementation does not support authentication.
 
 #### Configuration parameters
@@ -34,7 +34,7 @@ Important points
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
     - **failures**: number of failures before stop retrying (default: 5)
     - **retry**: retry timeout in milliseconds (default: 30 sec)
-    - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
+    - **idle**: idle timeout (milliseconds) before disconnecting (default: 5 sec)
 
 #### References
 
@@ -50,7 +50,7 @@ Closes a component and frees used resources.
 > (c [*MemcachedLock]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
+- **returns**: error - error or nil if no errors occurred
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -72,8 +72,8 @@ Opens the component.
 
 > (c [*MemcachedLock]()) Open(correlationId string) error
 
-- **correlationId**: string - (optional) transaction id usd to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - error or nil if no errors occurred
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
@@ -82,7 +82,7 @@ Releases a prevously acquired lock by its key.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
-- **returns**: error - error or nil no errors occured
+- **returns**: error - error or nil if no errors occurred
 
 
 #### SetReferences
@@ -102,7 +102,7 @@ It returns immediately a positive or negative result.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
 - **ttl**: int64 - lock timeout (time to live) in milliseconds.
-- **returns**: (result bool, err error) - **true** if lock was successfull and **false** otherwise.
+- **returns**: (result bool, err error) - true if lock was successfull and false otherwise.
 
 
 ### Examples

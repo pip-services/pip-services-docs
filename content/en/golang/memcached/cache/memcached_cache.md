@@ -10,7 +10,7 @@ description: >
 ### Description
 The MemcachedCache class allows you to create distributed cache that stores values in Memcached's caching service. 
 
-Important points
+**Important points**
 
 - The current implementation does not support authentication.
 
@@ -32,7 +32,7 @@ Important points
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
     - **failures**: number of failures before stop retrying (default: 5)
     - **retry**: retry timeout in milliseconds (default: 30 sec)
-    - **idle**: idle timeout before disconnect in milliseconds (default: 5 sec)
+    - **idle**: idle timeout before disconnecting in milliseconds (default: 5 sec)
 
 
 #### References
@@ -41,10 +41,10 @@ Important points
 
 ### Constructors
 
-#### NewMemcachedLock
-Method are creates a new instance of this lock.
+#### NewMemcachedCache
+Creates a new instance of this lock.
 
-> NewMemcachedLock() [*MemcachedLock]()
+> NewMemcachedCache() [*MemcachedCache]()
 
 ### Methods
 
@@ -54,7 +54,7 @@ Closes a component and frees used resources.
 > (c [*MemcachedCache]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
+- **returns**: error - error or nil if no errors occurred
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -68,7 +68,7 @@ Checks if the component is open.
 
 > (c [*MemcachedCache]()) IsOpen() bool
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -76,7 +76,7 @@ Opens the component.
 > (c [*MemcachedCache]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured
+- **returns**: error - error or nil if no errors occurred
 
 #### Remove
 Removes a value from the cache by its key.
@@ -85,7 +85,7 @@ Removes a value from the cache by its key.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **returns**: error - error or nil no errors occured
+- **returns**: error - error or nil if no errors occurred
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.

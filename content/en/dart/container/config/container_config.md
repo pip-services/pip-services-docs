@@ -2,12 +2,12 @@
 type: docs
 title: "ContainerConfig"
 linkTitle: "ContainerConfig"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 description: >
     Container configuration defined as a list of component configurations.
 ---
 
-**Extends:** Array<[ComponentConfig](../component_config)>
+**Extends:** ListBase<[ComponentConfig](../component_config)>
 
 ### Description
 
@@ -16,9 +16,9 @@ The ContainerConfig class allows you to create a container configuration as a li
 ### Constructors
 Creates a new instance of ContainerConfig.
 
-> `public` constructor(components?: [ComponentConfig](../component_config)[])
+> ContainerConfig([List<[ComponentConfig](../component_config)> components])
 
-- **components**: [ComponentConfig](../component_config)[] - (optional) list of component configurations.
+- **components**: List<[ComponentConfig](../component_config)> - (optional) list of component configurations.
 
 
 ### Static methods
@@ -27,7 +27,7 @@ Creates a new instance of ContainerConfig.
 Creates a new ContainerConfig object based on configuration parameters.
 Each section in the configuration parameters is converted into a component configuration.
 
-> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [ContainerConfig]()
+> `static` [ContainerConfig]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - object with key-value pairs used to initialize a new ContainerConfig.
 - **returns**: [ContainerConfig]() - created ContainerConfig object.
@@ -37,7 +37,7 @@ Each section in the configuration parameters is converted into a component confi
 Creates a new ContainerConfig object filled with key-value pairs from a specified object.
 The value is converted into ConfigParams object which is used to create the new object.
 
-> `public static` fromValue(value: any): [ContainerConfig]()
+> `static` [ContainerConfig]( fromValue(value)
 
-- **value**: any - object with key-value pairs used to initialize a new ContainerConfig.
+- **value**: dynamic - object with key-value pairs used to initialize a new ContainerConfig.
 - **returns**: [ContainerConfig]() - created ContainerConfig object.

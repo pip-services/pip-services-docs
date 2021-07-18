@@ -30,7 +30,7 @@ Creates a new instance of the decorator.
 
 #### _opened
 Flag of the component state
-> _opened: boolean = false
+> **_opened**: boolean = false
 
 </span>
 

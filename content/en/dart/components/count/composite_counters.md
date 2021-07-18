@@ -10,7 +10,7 @@ description: >
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
-[ICounterTimingCallback](../icounter_timing_callback)
+[ITimingCallback](../itiming_callback)
 
 
 ### Description
@@ -114,7 +114,7 @@ Calculates min/average/max statistics based on the current and previous values.
 > void stats(String name, int value)
 
 - **name**: String - a counter name of Statistics type
-- **value**: number - a value to update statistics
+- **value**: int - a value to update statistics
 
 
 #### timestamp

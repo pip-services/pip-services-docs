@@ -16,24 +16,6 @@ Important points
 
 - The configuration includes the type of information or descriptor and component configuration parameters.
 
-### Fields
-
-<span class="hide-title-link">
-
-#### Descriptor
-Component's descriptor (locator).
-> **Descriptor**: [Descriptor](../../../commons/refer/descriptor)
-
-#### Type
-Component's type descriptor.
-> **Type**: [TypeDescriptor](../../../commons/reflect/type_descriptor)
-
-#### Config
-Component's configuration parameters.
-> **Config**: [ConfigParams](../../../commons/config/config_params)
-
-</span>
-
 ### Constructors
 
 #### NewComponentConfigFromType
@@ -51,6 +33,25 @@ Creates a new instance of the configuration component.
 
 - **descriptor**: [*refer.Descriptor](../../../commons/refer/descriptor) - (optional) component's descriptor (locator).
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - (optional) component's configuration parameters.
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### Descriptor
+Component's descriptor (locator).
+> **Descriptor**: [Descriptor](../../../commons/refer/descriptor)
+
+#### Type
+Component's type descriptor.
+> **Type**: [TypeDescriptor](../../../commons/reflect/type_descriptor)
+
+#### Config
+Component's configuration parameters.
+> **Config**: [ConfigParams](../../../commons/config/config_params)
+
+</span>
 
 ### Methods
 

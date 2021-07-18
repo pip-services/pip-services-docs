@@ -33,7 +33,7 @@ Creates a new instance of the decorator.
 
 #### opened
 Flag of the component state
-> opened: bool = false
+> **opened**: bool = false
 
 </span>
 

@@ -32,7 +32,7 @@ The performance counters measure how code is performing:
 how fast or slow, how many transactions performed, how many objects
 are stored, what was the latest transaction time and so on.
 
-#### [ICounterTimingCallback](icounter_timing_callback)
+#### [ITimingCallback](itiming_callback)
 Interface for a callback to end measurement of execution elapsed time.
 
 <br>
@@ -55,7 +55,7 @@ Data object to store measurement for a performance counter.
 This object is used by [CachedCounters](../cached_counters) to store counters.
 
 
-#### [CounterTiming](counter_timing)
+#### [Timing](timing)
 Callback object returned by [ICounters.beginTiming](icounters/#begintiming) to end timing
 of execution block and update the associated counter.
 

@@ -37,7 +37,7 @@ Increments counter by a given value.
 > void increment(String name, int value)
 
 - **name**: String - a counter name of Increment type.
-- **value**: number - a value to add to the counter.
+- **value**: int - a value to add to the counter.
 
 #### incrementOne
 Increments counter by 1.
@@ -54,7 +54,7 @@ Usually this method is used by metrics calculated externally.
 > void last(String name, int value)
 
 - **name**: String - a counter name of Last type.
-- **value**: number - a last value to record.
+- **value**: int - a last value to record.
 
 
 #### stats
@@ -63,7 +63,7 @@ Calculates min/average/max statistics based on the current and previous values.
 > void stats(String name, int value)
 
 - **name**: String - a counter name of Statistics type
-- **value**: number - a value to update statistics
+- **value**: int - a value to update statistics
 
 
 #### timestamp

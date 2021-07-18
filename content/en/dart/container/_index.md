@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "Container module"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 no_list: true
 weight: 30
 description: > 
-    IoC container for Node.js / ES2017
+    IoC container for Dart
 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
@@ -34,41 +34,46 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  pip_services3_container: version
+```
+
+Now you can install package from the command line:
 ```bash
-npm install pip-services3-container-nodex --save
+pub get
 ```
 
 Create a factory to create components based on their locators (descriptors).
 
-```typescript
-import { Factory } from 'pip-services3-components-nodex';
-import { Descriptor } from 'pip-services3-commons-nodex';
+```dart
+import 'package:pip_services3_components/src/build/Factory.dart';
+import 'package:pip_services3_commons/src/refer/Descriptor.dart';
 
-export class MyFactory extends Factory {
-  public static MyComponentDescriptor = new Descritor("myservice", "mycomponent", "default", "*", "1.0");
+class MyFactory extends Factory {
+  static final MyComponentDescriptor =
+      Descritor("myservice", "mycomponent", "default", "*", "1.0");
 
-  public constructor() {
-    super();
-    
-    this.registerAsType(MyFactor.MyComponentDescriptor, MyComponent);
+  MyFactory() : super() {
+    this.registerAsType(MyFactory.MyComponentDescriptor, MyComponent);
   }
 }
+
 ```
 
 Then create a process container and register the factory there. You can also register factories defined in other
 modules if you plan to include external components into your container.
 
-```typescript
-import { ProcessContainer } from 'pip-services3-container-nodex';
-import { DefaultRpcFactory } from 'pip-services3-rpc-node'; 
+```dart
+import 'package:pip_services3_container/src/ProcessContainer.dart';
+import 'package:pip_services3_rpc/src/build/DefaultRpcFactory.dart';
 
-export class MyProcess extends ProcessContainer {
-  public constructor() {
-    super('myservice', 'My service running as a process');
+class MyProcess extends ProcessContainer {
+  MyProcess():super('myservice', 'My service running as a process') {
     
-    this._factories.add(new DefaultRpcFactory());
-    this._factories.add(new MyFactory());
+    this._factories.add(DefaultRpcFactory());
+    this._factories.add(MyFactory());
   }
 }
 ```
@@ -116,19 +121,19 @@ Support for environment variables works well in docker or other containers like 
 
 To instantiate and run the container we need a simple process launcher.
 
-```typescript
-let MyProcess = require('./MyProcess').MyProcess;
-
-try {
-    let proc = new MyProcess();
-    proc._configPath = "./config/config.yml";
-    proc.run(process.argv);
-} catch (ex) {
-    console.error(ex);
+```dart
+void main(List<String> args) {
+  try {
+    var proc = MyProcess();
+    proc.configPath = "./config/config.yml";
+    proc.run(args);
+  } catch (ex) {
+    print(ex);
+  }
 }
 ```
 
 And, finally, you can run your service launcher as
 ```bash
-node ./service.js
+dart run ./service.dart
 ```

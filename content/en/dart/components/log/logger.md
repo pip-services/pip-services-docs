@@ -27,18 +27,23 @@ Parameters to pass to the [configure](#configure) method for component configura
 #### References
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
 
+### Constructors
+Creates a new instance of the logger.
+
+> Logger()
+
 ### Fields
 
 <span class="hide-title-link">
 
 #### _level
 Maximum log level to capture
-> `protected` **_level**: [LogLevel](../log_level) = LogLevel.Info
+> **_level**: [LogLevel](../log_level) = LogLevel.Info
 
 
-#### _source
+#### source
 source (context) name
-> `protected` **_source**: string
+> **source**: String
 
 </span>
 
@@ -48,16 +53,17 @@ source (context) name
 #### composeError
 Composes an human-readable error description
 
-> `protected` composeError(error: Error): string
+> String composeError(Exception error)
 
-- **error**: Error - an error to format.
-- **returns**: string - a human-redable error description.
+- **error**: Exception - an error to format.
+- **returns**: String - a human-redable error description.
 
 
 #### configure
 Configures component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+`@override`
+> void configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -65,55 +71,56 @@ Configures component by passing configuration parameters.
 #### debug
 Logs high-level debug information for troubleshooting.
 
-> `public` debug(correlationId: string, message: string, ...args: any[]): void
+`@override`
+> void debug(String correlationId, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **message**: String - a human-readable message to log.
+- **args**: List- arguments to parameterize the message.
 
 
 
 #### error
 Logs recoverable application error.
 
-> `public` error(correlationId: string, error: Error, message: string, ...args: any[]): void
+`@override`
+> void error(String correlationId, Exception error, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
-
+- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 #### fatal
-Logs fatal (unrecoverable) messages that caused the process to crash.
+Logs fatal (unrecoverable) message that caused the process to crash.
 
-> `public` fatal(correlationId: string, error: Error, message: string, ...args: any[]): void
+`@override`
+> void fatal(String correlationId, Exception error, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
-
-#### formatAndWrite
+#### _formatAndWrite
 Formats the log message and writes it to the logger destination.
 
-> `protected` formatAndWrite(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string, ...args: any[]): void
+> void _formatAndWrite([LogLevel](../log_level) level, String correlationId, Exception error, String message, List args)
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
-
+- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 #### getLevel
 Gets the maximum log level. Messages with higher log level are filtered out.
 
-> `public` getLevel(): [LogLevel](../log_level)
+`@override`
+> [LogLevel](../log_level) getLevel()
 
 - **returns**: [LogLevel](../log_level) -  the maximum log level.
 
@@ -121,61 +128,66 @@ Gets the maximum log level. Messages with higher log level are filtered out.
 #### getSource
 Gets the source (context) name.
 
-> `public` getSource(): string
+> String getSource()
 
-- **returns**: string -  the source (context) name.
+- **returns**: String -  the source (context) name.
 
 
 #### info
 Logs an important information message
 
-> `public` info(correlationId: string, message: string, ...args: any[]): void
+`@override`
+> void info(String correlationId, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 
 #### log
 Logs a message at a specified log level.
 
-> `public` log(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string, ...args: any[]): void
+`@override`
+> void log([LogLevel](../log_level) level, String correlationId, Exception error, String message, [List args])
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Error - an error object associated with this message.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 
 #### setLevel
 Set the maximum log level.
 
-> `public` setLevel(level: [LogLevel](../log_level)): void
+`@override`
+> void setLevel([LogLevel](../log_level) value)
 
 - **level**: [LogLevel](../log_level) - a new maximum log level.
 
 
 #### trace
-Logs a low-level debug information for troubleshooting.
+Logs low-level debug information for troubleshooting.
 
-> `public` trace(correlationId: string, message: string, ...args: any[]): void
+`@override`
+> void trace(String correlationId, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> `public` warn(correlationId: string, message: Error, ...args: any[]): void
+`@override`
+> void warn(String correlationId, String message, [List args])
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
-- **args**: any[]- arguments to parameterize the message.
+- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **message**: String - a human-readable message to log.
+- **args**: List - arguments to parameterize the message.
 
 
 

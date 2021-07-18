@@ -10,7 +10,7 @@ description: >
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
-[ICounterTimingCallback](../icounter_timing_callback)
+[ITimingCallback](../itiming_callback)
 
 ### Description
 

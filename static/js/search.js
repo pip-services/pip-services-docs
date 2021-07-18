@@ -18,6 +18,11 @@ searchInput.addEventListener("keyup", function () {
     );
 });
 
+// weights for search prioritet
+const title = 10;
+const description = 5;
+const content = 3;
+
 function search(searchQuery) {
     // clear previous search results
     while (searchResults.firstChild) {
@@ -44,19 +49,47 @@ function search(searchQuery) {
     // load your index file
     getJSON(indexJsonPath, function (contents) {
         var results = [];
+
+        
+
         let regex = new RegExp(searchQuery, "i");
         // iterate through posts and collect the ones with matches
         contents.forEach(function (post) {
+            post.weight = 0; // post priority for search
+
             // here you can also search in tags, categories
             // or whatever you put into the index.json layout
-            if (post.title.match(regex) || post.content.match(regex)) {
+            if (post.title.match(regex))
+                post.weight += title; 
+            
+            if (post.description && post.description.match(regex))
+                post.weight += description;
+            
+            if (post.content.match(regex))
+                post.weight += content;
+
+            if (post.weight > 0)
                 results.push(post);
-            }
+            
         });
 
         if (results.length > 0) {
             let foundCount = 0;
             
+            // ranging by weights
+            results = results.sort(
+                (a, b) => {
+
+                    if (a.weight > b.weight) 
+                        return -1;
+  
+                    if (a.weight < b.weight) 
+                        return 1;
+
+                // its equal
+                return 0;
+                }
+            );
 
             // populate search results block with excerpts around the matched search query
             results.forEach(function (value, key) {

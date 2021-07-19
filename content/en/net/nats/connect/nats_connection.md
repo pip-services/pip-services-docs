@@ -15,7 +15,7 @@ description: >
 The NatsConnection class is used to define NATS connections using the default driver.
 
 **Important points**
-- By defining a connection and sharing it through multiple message queues, you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple message queues, you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -131,7 +131,7 @@ If the connection doesn't support this function, it exists without error.
 
 #### DeleteQueueAsync
 Deletes a message queue.
-If connection doesn't support this function, it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > `public` Task DeleteQueueAsync(string name)
 
@@ -166,7 +166,7 @@ Publishes a message to a specified topic.
 
 > `public` Task PublishAsync(string subject, Msg message)
 
-- **subject**: string - subject(topic) where the message will be placed
+- **subject**: string - subject (topic) where the message will be placed
 - **message**: Msg - message to be published
 
 
@@ -192,7 +192,7 @@ Subscribes to a topic.
 
 > `public` Task SubscribeAsync(string subject, string queue, [INatsMessageListener](../inats_message_listener) listener)
 
-- **subject**: string - subject(topic) name
+- **subject**: string - subject (topic) name
 - **options**: string - subscription options
 - **listener**: [INatsMessageListener](../inats_message_listener) - message listener
 
@@ -203,5 +203,5 @@ Unsubscribes from a previously subscribed topic.
 > `public` Task UnsubscribeAsync(string subject, string queue, [INatsMessageListener](../inats_message_listener) listener)
 
 - **subject**: string - subject (topic) name
-- **queue**: string - TODO: add desscription
+- **queue**: string - subscription queue
 - **listener**: [INatsMessageListener](../inats_message_listener) - message listener

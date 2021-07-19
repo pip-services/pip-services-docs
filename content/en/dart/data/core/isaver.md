@@ -1,0 +1,23 @@
+---
+type: docs
+title: "ISaver<T>"
+linkTitle: "ISaver"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-data-dart"
+description: >
+    Interface for data processing components that save data items.
+---
+
+### Description
+
+The ISaver interface is used by data processing components that save data items.
+
+### Instance methods
+
+#### save
+Saves given data items.
+
+> Future save(String correlation_id, List\<T\> items)
+
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **items**: List\<T\> - a list of items to save.
+

@@ -28,6 +28,6 @@ MQTT connection using the default driver.
 Helper class that resolves an MQTT connection and credential parameters, validates them and generates connection options.
 
 #### [MqttSubscription](mqtt_subscription)
-Defines the fields for a subscription.
+Defines subscription fields.
 
 </div>

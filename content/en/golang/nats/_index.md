@@ -17,7 +17,7 @@ description: >
 The module contains the following packages:
 - [**Build**](build) - factory default implementation
 - [**Connect**](connect) - components for setting up the connection to the NATS broker
-- [**Queues**](queues) - components of working with a message queue via the NATS protocol
+- [**Queues**](queues) - components for working with a message queue via the NATS protocol
 
 
 ### Use

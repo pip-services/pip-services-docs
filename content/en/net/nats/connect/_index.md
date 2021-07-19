@@ -25,9 +25,9 @@ NATS connection using the default driver.
 
 
 #### [NatsConnectionResolver](nats_connection_resolver)
-Helper class that resolves NATS connection and credential parameters, validates them and generates connection options.
+Helper class that resolves NATS connections and credential parameters, validates them and generates connection options.
 
 #### [NatsSubscription](nats_subscription)
-Defines the fields for NATS subscriptions.
+Defines subscription fields.
 
 </div>

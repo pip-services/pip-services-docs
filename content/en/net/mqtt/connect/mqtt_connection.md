@@ -17,7 +17,7 @@ The MqttConnection class allows you to create MQTT connections using the default
 
 **Important points**
 
-By defining a connection and sharing it through multiple message queues you can reduce number of used connections.
+By defining a connection and sharing it through multiple message queues you can reduce the number of used connections.
 
 #### Configuration parameters
 

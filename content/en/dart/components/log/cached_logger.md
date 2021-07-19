@@ -86,8 +86,6 @@ Sets message cache as updated and dumps it when timeout expires.
 
 > void update()
 
-### Abstract methods
-
 #### save
 Saves log messages from the cache.
 

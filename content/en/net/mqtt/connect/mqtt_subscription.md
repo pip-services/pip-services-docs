@@ -4,13 +4,13 @@ title: "MqttSubscription"
 linkTitle: "MqttSubscription"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mqtt-dotnet"
 description: >
-    Defines the fields for a subscription.
+    Defines subscription fields.
 
 ---
 
 ### Description
 
-The MqttSubscription class defines the main fields for a subscription.
+The MqttSubscription class defines subscription fields.
 
 ### Properties
 

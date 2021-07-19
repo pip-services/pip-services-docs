@@ -7,5 +7,5 @@ description: >
     Abstract NATS message queue with the ability to connect to NATS server.
     
 
-    **TODO: this module is not implemented yet**
+    **Note: this module is not implemented yet**
 ---

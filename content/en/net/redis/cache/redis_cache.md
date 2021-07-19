@@ -4,7 +4,7 @@ title: "RedisCache"
 linkTitle: "RedisCache"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-redis-dotnet"
 description: >
-    Distributed cache that stores values in Redis in-memory database.
+    Distributed cache that stores values in  Redis in-memory database.
 
 ---
 
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The RedisCache class allows you to create distributed caches that store values in Redis in-memory database.
+The RedisCache class allows you to create distributed caches that store values in a Redis in-memory database.
 
 #### Configuration parameters
 
@@ -97,7 +97,7 @@ Removes a value from the cache by its key.
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.
-If the value is missing in the cache or expired, it returns null.
+If the value is missing in the cache or has expired, it returns null.
 
 > `public override` Task\<T\> RetrieveAsync\<T\>(string correlationId, string key)
 

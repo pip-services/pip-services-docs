@@ -34,7 +34,7 @@ Creates a message queue component and assigns its name.
 #### CreateBareQueue!
 Creates a bare message queue component and assigns its name.
 
-**TODO: method is not implemented**
+**Note: method is not implemented**
 
 
 ### See also

@@ -34,20 +34,20 @@ Creates a new instance of the decorator.
 <span class="hide-title-link">
 
 #### _references
-TODO: add description
+References
 > `protected` **_references**: [References](../../../commons/refer/references)
 
 #### _builder
-TODO: add description
+Builder
 > `protected` **_builder**: [BuildReferencesDecorator](../build_references_decorator)
 
 #### _linker
-TODO: add description
+Linker
 > `protected` **_linker**: [LinkReferencesDecorator](../link_references_decorator)
 
 
 #### _runner
-TODO: add description
+Runner
 > `protected` **_runner**: [RunReferencesDecorator](../run_references_decorator)
 
 </span>

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
 no_list: true
 weight: 30
 description: > 
-    Asynchronous Messaging for Pip.Services in Node.js / ES2017  
+    Asynchronous Messaging for Pip.Services in Node.js / ES2017.   
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 

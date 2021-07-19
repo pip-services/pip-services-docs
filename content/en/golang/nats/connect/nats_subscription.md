@@ -4,13 +4,13 @@ title: "NatsSubscription"
 linkTitle: "NatsSubscription"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
 description: >
-    Defines the fields for NATS subscriptions.
+    Defines NATS subscription fields.
 
 ---
 
 ### Description
 
-The NatsSubscription class defines the fields for NATS subscriptions.
+The NatsSubscription class defines the NATS subscription fields.
 
 
 ### Fields

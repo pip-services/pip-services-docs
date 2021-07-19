@@ -19,12 +19,12 @@ The NatsMessageQueue class allows you to create a message queue that sends and r
 - **subject**: name of NATS topic (subject) to subscribe
 - **queue_group**: name of NATS queue group
 - **connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**: username
     - **password**: user's password
 - **options**:
@@ -73,7 +73,7 @@ Message receiver
 > **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 #### subscribed
-Subscrie option
+Subscribe option
 > **subscribed**: bool
 
 </span>
@@ -87,7 +87,7 @@ Clears a component's state.
 > (c *NatsMessageQueue) Clear(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Close
@@ -96,7 +96,7 @@ Closes a component and frees used resources.
 > (c *NatsMessageQueue) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Configure
@@ -109,7 +109,7 @@ Configures a component by passing its configuration parameters.
 
 #### EndListen
 Ends listening for incoming messages.
-When this method is call, [Listen](#listen) unblocks the thread and execution continues.
+When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
 > (c *NatsMessageQueue) EndListen(correlationId string)
 
@@ -129,7 +129,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
 #### OnMessage
-Checks if the message is not nil. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
+Checks if the message is not nil. If this is the case, it deserializes and sends the message to the receiver if it’s set. Otherwise, puts the message into the queue.
 
 > (c *NatsMessageQueue) OnMessage(msg *nats.Msg)
 
@@ -142,7 +142,7 @@ Opens the component.
 > (c *NatsMessageQueue) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Peek
@@ -178,7 +178,7 @@ Receives an incoming message and removes it from the queue.
 
 > (c *NatsMessageQueue) Receive(correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
-- **correlationId**: string - checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
+- **correlationId**: string - checks if the message comes from the right topic. If this is the case, it deserializes and sends the message to the receiver if it’s set. Otherwise, it puts the message into the queue.
 - **waitTimeout**: time.Duration - timeout (milliseconds) to wait for a message to come.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
 
@@ -188,7 +188,7 @@ Subscribes to a subject.
 > (c *NatsMessageQueue) subscribe(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 ### Examples

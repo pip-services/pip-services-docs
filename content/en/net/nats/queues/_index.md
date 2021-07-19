@@ -15,7 +15,7 @@ description: >
 ### Classes
 
 #### [NatsAbstractMessageQueue](nats_abstract_message_queue)
-Abstract NATS message queue with the ability to connect to NATS server.
+Abstract NATS message queue with the ability to connect to NATS servers.
 
 #### [NatsBareMessageQueue](nats_bare_message_queue)
 Message queue that sends and receives messages via the NATS message broker.

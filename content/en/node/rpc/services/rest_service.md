@@ -208,7 +208,7 @@ If the object is not null, it returns 200 status code. For null results it retur
 
 - **req**: any - an HTTP request
 - **res**: any - an HTTP response
-- **result**: any - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **result**: any - an execution result
 
 
 #### sendDeletedResult

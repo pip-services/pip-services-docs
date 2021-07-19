@@ -202,7 +202,7 @@ Creates a callback function that sends newly created object as JSON. That callac
 
 > send_created_result(result: Any): Optional[str]
 
-- **result**: Any - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **result**: Any - an execution result
 - **returns**: Optional[str] - JSON response text
 
 

@@ -217,7 +217,7 @@ If the object is not nil, it returns 200 status code. For nil results it returns
 
 - **res**: http.ResponseWriter - an HTTP request
 - **req**: *http.Request - an HTTP response
-- **result**: interface{} - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **result**: interface{} - an execution result
 - **error**: error - (optional) error objrct to send
 
 

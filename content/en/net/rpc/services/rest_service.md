@@ -221,7 +221,7 @@ If the object is not null, it returns 200 status code. For null results it retur
 > `protected` Task SendCreatedResultAsync(HttpResponse response, object result)
 
 - **res**: HttpResponse - an HTTP response
-- **result**: object - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **result**: object - an execution result
 
 
 #### SendDeletedAsync

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-data-dart"
 no_list: true
 weight: 30
 description: > 
-    Persistence components for for Node.js / ES2017. 
+    Persistence components for for Dart 
 
     
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
@@ -26,38 +26,45 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
-```bash
-npm install pip-services3-data-nodex --save
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  pip_services3_data: version
 ```
 
-As an example, lets implement persistence for the following data object.
+Now you can install package from the command line:
+```bash
+pub get
+```
 
-```typescript
-import { IIdentifiable } from 'pip-services3-commons-nodex';
+For example, you need to implement persistence for a data object defined as following.
 
-export class MyObject implements IIdentifiable {
-  public id: string;
-  public key: string;
-  public value: number;
+```dart
+import 'package:pip_services3_commons/src/data/IIdentifiable.dart';
+
+class MyObject implements IIdentifiable<String> {
+  String id;
+  String key;
+  int value;
 }
+
 ```
 
 Our persistence component shall implement the following interface with a basic set of CRUD operations.
 
-```typescript
-export interface IMyPersistence {
-    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>>;
+```dart
+abstract class IMyPersistence {
+    void getPageByFilter(String correlationId, FilterParams filter, PagingParams paging);
     
-    getOneById(correlationId: string, id: string): Promise<MyObject>;
+    getOneById(String correlationId, String id);
     
-    getOneByKey(correlationId: string, key: string): Promise<MyObject>
+    getOneByKey(String correlationId, String key;
     
-    create(correlationId: string, item: MyObject): Promise<MyObject>;
+    create(String correlationId, MyObject item);
     
-    update(correlationId: string, item: MyObject): Promise<MyObject>;
+    update(String correlationId, MyObject item);
     
-    deleteById(correlationId: string, id: string): Promise<MyObject>;
+    deleteById(String correlationId, String id);
 }
 ```
 
@@ -65,86 +72,74 @@ To implement in-memory persistence component you shall inherit `IdentifiableMemo
 Most CRUD operations will come from the base class. You only need to override `getPageByFilter` method with a custom filter function.
 And implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
-```typescript
-import { IdentifiableMemoryPersistence } from 'pip-services3-data-nodex';
+```dart
+import 'package:pip_services3_data/src/persistence/IdentifiableMemoryPersistence.dart';
+import 'package:pip_services3_commons/src/data/FilterParams.dart';
+import 'package:pip_services3_commons/src/data/PagingParams.dart';
 
-export class MyMemoryPersistence extends IdentifableMemoryPersistence {
-  public constructor() {
-    super();
-  }
+class MyMemoryPersistence extends IdentifiableMemoryPersistence {
+  MyMemoryPersistence(): super() {}
 
-  private composeFilter(filter: FilterParams): any {
-    filter = filter || new FilterParams();
+  composeFilter(FilterParams filter) {
+    filter = filter != null ? filter : FilterParams();
     
-    let id = filter.getAsNullableString("id");
-    let tempIds = filter.getAsNullableString("ids");
-    let ids = tempIds != null ? tempIds.split(",") : null;
-    let key = filter.getAsNullableString("key");
+    String id = filter.getAsNullableString("id");
+    String tempIds = filter.getAsNullableString("ids");
+    List<String> ids = tempIds != null ? tempIds.split(",") : null;
+    String key = filter.getAsNullableString("key");
 
-    return (item) => {
-        if (id != null && item.id != id)
+    return (item) {
+      if (id != null && item.id != id)
+        return false;
+      if (ids != null && ids.indexOf(item.id) < 0)
+        return false;
+      if (key != null && item.key != key)
             return false;
-        if (ids != null && ids.indexOf(item.id) < 0)
-            return false;
-        if (key != null && item.key != key)
-            return false;
-        return true;
+      return true;
     };
   }
   
-  public async getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
-      return await super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+  Future<DataPage<MyData>> getPageByFilter(String correlationId, FilterParams filter, PagingParams paging){
+    return super.getPageByFilterEx(correlationId, composeFilter(filter), paging, null);
   }  
   
-  public async getOneByKey(correlationId: string, key: string): Promise<MyObject> {
-    let item = this._items.find(item => item.key == key);
+  Future<String> getOneByKey(String correlationId, String key) {
+    
+    final item =
+      this._items.firstWhere((item) =>
+          item.name == item.key == key,
+          orElse: () {
+            return null;
+    });
     
     if (item != null) {
       this._logger.trace(correlationId, "Found object by key=%s", key);
     } else {
       this._logger.trace(correlationId, "Cannot find by key=%s", key);
     }
-    
-    return item;
   }
-
 }
 ```
 
 It is easy to create file persistence by adding a persister object to the implemented in-memory persistence component.
 
-```typescript
-import { ConfigParams } from 'pip-services3-commons-nodex';
-import { JsonFilePersister } from 'pip-services3-data-nodex';
+```dart
+import 'package:pip_services3_commons/src/config/ConfigParams.dart';
+import 'package:pip_services3_data/src/persistence/JsonFilePersister.dart';
 
-export class MyFilePersistence extends MyMemoryPersistence {
-  protected _persister: JsonFilePersister<MyObject>;
 
-  constructor(path?: string) {
-      super();
-      this._persister = new JsonFilePersister<MyObject>(path);
-      this._loader = this._persister;
-      this._saver = this._persister;
+class MyFilePersistence extends MyMemoryPersistence {
+  JsonFilePersister<MyObject> _persister;
+
+  MyFilePersistence([String path]):super(){
+    this._persister = new JsonFilePersister<MyObject>(path);
+    this._loader = this._persister;
+    this._saver = this._persister;
   }
 
-  public configure(config: ConfigParams) {
+  configure(ConfigParams config) {
       super.configure(config);
       this._persister.configure(config);
   }
 }
-```
-
-Configuration for your microservice that includes memory and file persistence may look the following way.
-
-```yaml
-...
-{{#if MEMORY_ENABLED}}
-- descriptor: "myservice:persistence:memory:default:1.0"
-{{/if}}
-
-{{#if FILE_ENABLED}}
-- descriptor: "myservice:persistence:file:default:1.0"
-  path: {{FILE_PATH}}{{#unless FILE_PATH}}"../data/data.json"{{/unless}}
-{{/if}}
-...
 ```

@@ -33,7 +33,7 @@ Creates a message queue component and assigns its name.
 > (c [*MqttMessageQueueFactory]()) CreateQueue(name string) [IMessageQueue](../../../messaging/queues/imessage_queue)
 
 - **name**: string - name of the created message queue.
-- **returns**: [IMessageQueue](../../../messaging/queues/imessage_queue) - created queue component.
+- **returns**: [IMessageQueue](../../../messaging/queues/imessage_queue) - created message queue component.
 
 
 ### See also

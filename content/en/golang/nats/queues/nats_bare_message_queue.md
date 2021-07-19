@@ -13,24 +13,24 @@ description: >
 
 ### Description
 
-The NatsBareMessageQueue class allows you to create message queues that send and receive messages via NATS message broker.
+The NatsBareMessageQueue class allows you to create message queues that send and receive messages via a NATS message broker.
 
 #### Configuration parameters
 
 - **subject**: name of NATS topic (subject) to subscribe
 - **queue_group**: name of NATS queue group
 - **connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**: username
     - **password**: user's password
 - **options**:
     - **serialize_message**: (optional) true to serialize the entire message as JSON, false to only send the message payload (default: true)
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
+    - **retry_connect**: (optional) turns on/off automated reconnect when the connection is lost (default: true)
     - **max_reconnect**: (optional) maximum number of reconnection attempts (default: 3)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 3000)
     - **flush_timeout**: (optional) number of milliseconds to wait on flushing messages (default: 3000)
@@ -51,14 +51,14 @@ Creates a new instance of the message queue.
 
 > NewNatsBareMessageQueue(name string) [*NatsBareMessageQueue]()
 
-- **name**: string - (optional) a queue name.
+- **name**: string - (optional) queue name.
 
 
 ### Methods
 
 #### EndListen
 Ends listening for incoming messages.
-When this method is call, [Listen](#listen) unblocks the thread and execution continues.
+When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
 > (c *NatsBareMessageQueue) EndListen(correlationId string)
 
@@ -74,7 +74,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Peek

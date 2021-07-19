@@ -4,25 +4,25 @@ title: "RedisCache"
 linkTitle: "RedisCache"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
 description: >
-    Distributed cache that stores values in Redis in-memory database.
+    Distributed cache that stores values in a Redis in-memory database.
 
 ---
 
 ### Description
 
-The RedisCache class allows you to create distributed caches that store values in Redis in-memory database.
+The RedisCache class allows you to create distributed caches that store values in a Redis in-memory database.
 
 #### Configuration parameters
 
 - **connection(s)**:
-    - **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+    - **discovery_key**: (optional) key to retrieve the connection from IDiscovery
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - credential(s):
     - **store_key**: key to retrieve parameters from credential store
-    - **username**: user name (currently is not used)
-    - **password**: user password
+    - **username**: username (currently is not used)
+    - **password**: user's password
 - options:
     - **retries**: number of retries (default: 3)
     - **timeout**: default caching timeout in milliseconds (default: 1 minute)
@@ -65,7 +65,7 @@ Closes a component and frees used resources.
 > (c [*RedisCache]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -88,7 +88,7 @@ Opens the component.
 > (c [*RedisCache]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Remove
 Removes a value from the cache by its key.
@@ -97,11 +97,11 @@ Removes a value from the cache by its key.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Retrieve
 Retrieves a cached value from the cache using its key.
-If the value is missing in the cache or expired, it returns nil.
+If the value is missing in the cache or has expired, it returns nil.
 
 > (c [*RedisCache]()) Retrieve(correlationId string, key string) (value interface{}, err error)
 

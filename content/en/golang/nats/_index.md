@@ -9,7 +9,7 @@ description: >
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
-    The NATS module contains a set of components for working with the message queue via NATS server [https://nats.io/](https://nats.io/).
+    The NATS module contains a set of components for working with the message queue via [NATS server] (https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

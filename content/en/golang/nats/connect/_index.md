@@ -5,7 +5,7 @@ linkTitle: "Connect"
 no_list: true
 gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
 description: >
-    This package contains classed used to create NATS connections.
+    This package contains classes used to create NATS connections.
 ---
 ---
 
@@ -25,9 +25,9 @@ NATS connection using the default driver.
 
 
 #### [NatsConnectionResolver](nats_connection_resolver)
-Helper class that resolves NATS connection and credential parameters, validates them and generates connection options.
+Helper class that resolves NATS connections and credential parameters, validates them and generates connection options.
 
 #### [NatsSubscription](nats_subscription)
-Defines the fields for NATS subscriptions.
+Defines NATS subscriptions fields.
 
 </div>

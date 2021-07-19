@@ -28,6 +28,6 @@ NATS connection using the default driver.
 Helper class that resolves NATS connections and credential parameters, validates them and generates connection options.
 
 #### [NatsSubscription](nats_subscription)
-Defines NATS subscriptions fields.
+Defines NATS subscription fields.
 
 </div>

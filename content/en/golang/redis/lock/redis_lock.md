@@ -40,7 +40,7 @@ The RedisLock class allows you to create a distributed lock that is implemented 
 ### Constructors
 
 #### NewRedisLock
-Method are creates a new instance of this lock.
+Creates a new instance of this lock.
 
 > NewRedisLock() [*RedisLock]()
 
@@ -76,7 +76,7 @@ Opens the component.
 > (c [*RedisLock]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
@@ -85,7 +85,7 @@ Releases a prevously acquired lock by its key.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.

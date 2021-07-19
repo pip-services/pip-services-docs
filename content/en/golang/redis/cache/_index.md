@@ -5,7 +5,7 @@ linkTitle: "Cache"
 no_list: true
 gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
 description: >
-    This package contains a class used to create distributed caches that store values in Redis in-memory database.
+    This package contains a class used to create distributed caches that store values in Redis a in-memory database.
 ---
 ---
 
@@ -14,6 +14,6 @@ description: >
 ### Types
 
 #### [RedisCache](redis_cache)
-Distributed cache that stores values in Redis in-memory database.
+Distributed cache that stores values in a Redis in-memory database.
 
 </div>

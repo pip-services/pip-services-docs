@@ -4,7 +4,7 @@ title: "MqttSubscription"
 linkTitle: "MqttSubscription"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 description: >
-    Defines the fields for a subscription.
+    Defines subscription fields.
 
 ---
 

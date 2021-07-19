@@ -28,7 +28,7 @@ The MqttConnection class allows you to create MQTT connections using the default
     - **username**: username
     - **password**: user's password
 - **options**:
-    - **retry_connect**: (optional) turns on/off automated reconnect when connection is log (default: true)
+    - **retry_connect**: (optional) turns on/off automated reconnect when connection is lost (default: true)
     - **connect_timeout**: (optional) number of milliseconds to wait for connection (default: 30000)
     - **reconnect_timeout**: (optional) number of milliseconds to wait on each reconnection attempt (default: 1000)
     - **keepalive_timeout**: (optional) number of milliseconds to ping broker while inactive (default: 3000)
@@ -53,7 +53,7 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### clientId
-The hostname as client id
+Hostname as client id
 > **clientId**: string
 
 #### connectTimeout
@@ -103,7 +103,7 @@ Checks if the connection is open.
 Raises an error if the connection is closed.
 
 > (c [*MqttConnection]()) checkOpen() error
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Close
@@ -112,7 +112,7 @@ Closes a component and frees used resources.
 > (c [*MqttConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Configure
@@ -139,13 +139,13 @@ If connection doesn't support this function, it exists without error.
 > (c [*MqttConnection]()) DeleteQueue() error
 
 - **name**: string - name of the queue to be deleted.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### GetConnection
 Gets the connection.
 > (c [*MqttConnection]()) GetConnection() mqtt.Client
 
-- **returns**: mqtt.Client - connection to a MySQL database
+- **returns**: mqtt.Client - connection to an MQTT broker.
 
 
 #### IsOpen
@@ -162,19 +162,19 @@ Opens the component.
 > (c [*MqttConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Publish
-Publish a message to a specified topic.
+Publishes a message to a specified topic.
 
 > (c [*MqttConnection]()) Publish(topic string, qos byte, retained bool, data []byte) error
 
 - **topic**: string - topic name
 - **qos**: Buffer - quality of service (QOS) for the message
 - **retained**: bool - retained flag for the message
-- **data**: []byte - a message to be published
-- **returns**: error - error or nil no errors occured.
+- **data**: []byte - message to be published
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### ReadQueueNames
@@ -191,7 +191,7 @@ Sets references to dependent components.
 
 > (c [*MqttConnection]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Subscribe
@@ -199,19 +199,19 @@ Subscribes to a topic
 
 > (c [*MqttConnection]()) Subscribe(topic string, qos byte, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
-- **topic**: string - topic name
+- **topic**: string - name of the topic
 - **qos**: byte - quality of service (QOS) for the subscription
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Unsubscribe
 Unsubscribes from a previously subscribed topic.
 
 > (c [*MqttConnection]()) Unsubscribe(topic string, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
-- **topic**: string - topic name
+- **topic**: string - name of the topic
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 ### See also

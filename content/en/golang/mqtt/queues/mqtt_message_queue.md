@@ -18,12 +18,12 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 
 - **topic**: name of MQTT topic to subscribe
 - **connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery]../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../auth/icredential_store)
     - **username**: username
     - **password**: user's password
 - **options**:
@@ -115,9 +115,9 @@ Topic
 
 #### Abandon
 Returnes a message into the queue and makes it available for all subscribers to receive it again.
-This method is usually used to return a message which could not be processed at the moment
+This method is usually used to return a message which could not be processed at the moment, 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
-or/and send to dead letter queue.
+or/and send to the dead letter queue.
 
 - Important: This method is not supported by MQTT.
 
@@ -132,7 +132,7 @@ Clears a component's state.
 > (c [*MqttMessageQueue]()) Clear(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Close
@@ -141,7 +141,7 @@ Closes a component and frees used resources.
 > (c [*MqttMessageQueue]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Complete
@@ -152,7 +152,7 @@ This method is usually used to remove the message after successful processing.
 > (c [*MqttMessageQueue]()) Complete(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Configure
@@ -165,7 +165,7 @@ Configures a component by passing its configuration parameters.
 
 #### EndListen
 Ends listening for incoming messages.
-When this method is call, [Listen](#listen) unblocks the thread and execution continues.
+When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
 > (c [*MqttMessageQueue]()) EndListen(correlationId string)
 
@@ -207,21 +207,21 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### MoveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 - Important: This method is not supported by MQTT.
 
 > (c [*MqttMessageQueue]()) MoveToDeadLetter(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error 
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### OnMessage
-Checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
+Checks if the message comes from the right topic. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, it puts the message into the queue.
 
 > (c [*MqttMessageQueue]()) OnMessage(msg mqtt.Message)
 
@@ -233,7 +233,7 @@ Opens the component.
 > (c [*MqttMessageQueue]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Peek
@@ -283,7 +283,7 @@ This method is usually used to extend the message processing time.
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Send
 Sends a message into the queue.
@@ -292,7 +292,7 @@ Sends a message into the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.
@@ -307,7 +307,7 @@ Subscribes to a topic.
 > (c [*MqttMessageQueue]()) subscribe(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### ToMessage

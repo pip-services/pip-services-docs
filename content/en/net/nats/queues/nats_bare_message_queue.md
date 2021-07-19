@@ -7,5 +7,5 @@ description: >
     Message queue that sends and receives messages via a NATS message broker.
     
 
-    **TODO: this module is not implemented yet**
+    **Note: this module is not implemented yet**
 ---

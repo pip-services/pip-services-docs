@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "Prometheus module"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-prometheus-dart"
 no_list: true
 weight: 30
 description: > 
-    Prometheus components for Pip.Services Node.js / ES2017.  
+    Prometheus components for Pip.Services Dart  
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
@@ -23,8 +23,14 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  pip_services3_prometheus: version
+```
+
+Now you can install package from the command line:
 ```bash
-npm install pip-services3-prometheus-nodex --save
+pub get
 ```
 

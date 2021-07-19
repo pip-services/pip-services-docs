@@ -177,7 +177,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: boolean - True if the component is open and False otherwise.
+- **returns**: bool - True if the component is open and False otherwise.
 
 
 #### open

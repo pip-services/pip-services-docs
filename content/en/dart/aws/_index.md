@@ -34,7 +34,7 @@ The service is not finished at the moment. Development progress is as follows:
 - The components for creating a client for Lambda services are not fully tested. Requires full testing on AWS.
 
 
-## Use
+### Use
 
 Add this to your package's pubspec.yaml file:
 ```yaml

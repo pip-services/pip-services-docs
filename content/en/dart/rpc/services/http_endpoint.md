@@ -67,7 +67,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: boolean - whether or not this endpoint is open with an actively listening REST server.
+- **returns**: bool - whether or not this endpoint is open with an actively listening REST server.
 
 
 #### register

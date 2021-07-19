@@ -1,11 +1,11 @@
 ---
 type: docs
 title: "gRPC module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 no_list: true
 weight: 30
 description: > 
-    GRPC components for Pip.Services in Golang
+    GRPC components for Pip.Services in Dart
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
@@ -24,7 +24,13 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  pip_services3_grpc: version
+```
+
+Now you can install package from the command line:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-grpc-go@latest
+pub get
 ```

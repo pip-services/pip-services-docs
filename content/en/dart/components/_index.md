@@ -37,7 +37,6 @@ The module contains the following packages:
 Config package now not work with condition **{{#if var}} something {{/}}** in config files.
 Use **Mustache** syntax, for example **{{#var}} something {{/var}}**
 
-## Use
 
 Add this to your package's pubspec.yaml file:
 ```yaml

@@ -17,7 +17,7 @@ Creates a new instance and assigns its values.
 > SortField([String name, bool ascending = true])
 
 - **name**: String - name of the field to sort by.
-- **ascending**: boolean - true to sort in ascending order, and false to sort in descending order. 
+- **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
 
 
 ### Fields

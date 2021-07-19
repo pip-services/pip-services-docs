@@ -25,7 +25,7 @@ Checks if the component is opened.
 
 > bool isOpen()
 
-- **returns**: boolean - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component has been opened and false otherwise.
 
 #### open
 Opens the component.

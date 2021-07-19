@@ -4,7 +4,7 @@ title: "NatsConnectionResolver"
 linkTitle: "NatsConnectionResolver"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-nats-dotnet"
 description: >
-    Helper class that resolves NATS connection and credential parameters, 
+    Helper class that resolves NATS connections and credential parameters, 
     validates them and generates connection options.
 
 ---
@@ -57,8 +57,8 @@ Composes NATS connection options from connection and credential parameters.
 > `public` [ConfigParams](../../../commons/config/config_params) Compose(string correlationId, List<[ConnectionParams](../../../components/connect/connection_params)> connections, [CredentialParams](../../../components/auth/credential_params) credential)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **connections**: List<[ConnectionParams](../../../components/connect/connection_params)> - connection parameters
-- **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
+- **connections**: List<[ConnectionParams](../../../components/connect/connection_params)> - connection parameters.
+- **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - resolved NATS connection options.
 
 

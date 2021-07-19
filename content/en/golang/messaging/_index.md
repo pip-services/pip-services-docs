@@ -17,7 +17,8 @@ The module contains the following packages:
 
 - [**Build**](build) - in-memory message queue factory
 - [**Queues**](queues) - contains interfaces for working with message queues, subscriptions for receiving messages from the queue, and an in-memory message queue implementation.
-- [**Connect**](connect) - TODO: add description
+- [**Connect**](connect) - contains an interface used to create message queue connections
+- [**Test**](test) - contains a class used to test message reception
 
 ### Use
 

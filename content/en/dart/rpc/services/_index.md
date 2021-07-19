@@ -18,9 +18,6 @@ description: >
 Interface to perform on-demand registrations.
 
 
-#### [ISwaggerService](iswagger_service)
-Interface to perform Swagger registrations.
-
 <br>
 
 ### Classes
@@ -36,10 +33,6 @@ Each command is exposed as a POST operation that receives all parameters in body
 
 Commandable services require only three lines of code to implement a robust external
 HTTP-based remote interface.
-
-
-#### [CommandableSwaggerDocument](commandable_swagger_document)
-Generates Swagger code that describes created REST API methods and their parameters.
 
 
 #### [HeartbeatOperations](heartbeat_operations)
@@ -66,10 +59,6 @@ Helper class that retrieves parameters from HTTP requests.
 
 #### [HttpResponseSender](http_response_sender)
 Helper class that handles HTTP-based responses.
-
-
-#### [InstrumentTiming](instrument_timing)
-Creates logs, counters and timings for methods that call instrument.
 
 
 #### [RestOperations](rest_operations)

@@ -10,22 +10,11 @@ description: >
 ---
 <div class="module-body"> 
 
-### Interfaces
-
-#### [IMessageQueueFactory](imemory_message_queue_factory)
-Creates message queue componens.
-
-<br>
-
 ### Classes
 
 #### [DefaultMessagingFactory](default_messaging_factory)
 Creates [MemoryMessageQueue](../queues/memory_message_queue)  components by their descriptors.
 The name of the created message queue is taken from its descriptor.
-
-#### [MemoryMessageQueueFactory](memory_message_queue_factory)
-Creates [MemoryMessageQueue](../queues/memory_message_queue) components by their descriptors.
-The name of the created message queue is taken from its descriptor. 
 
 #### [MessageQueueFactory](message_queue_factory)
 Creates [IMessageQueue](../queues/imessage_queue) components by their descriptors.

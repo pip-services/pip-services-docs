@@ -26,14 +26,6 @@ Callback interface used to receive incoming messages.
 
 ### Classes
 
-#### [CachedMessageQueue](cached_message_queue)
-Message queue that caches received messages in memory to allow peek operations
-that may not be supported by the undelying queue.  
-This queue is used as a base implementation for other queues
-
-#### [CallbackMessageReceiver](callback_message_receiver)
-Wraps a message callback into IMessageReceiver
-
 #### [LockedMessage](locked_message)
 Data object used to store and lock incoming messages in [MemoryMessageQueue](memory_message_queue).
 

@@ -4,7 +4,7 @@ title: "NatsAbstractMessageQueue"
 linkTitle: "NatsAbstractMessageQueue"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
 description: >
-    Abstract NATS message queue with the ability to connect to NATS server.
+    Abstract NATS message queue with the ability to connect to a NATS server.
     
 ---
 
@@ -22,7 +22,7 @@ Creates a new instance of the component.
 
 > InheritNatsAbstractMessageQueue(overrides cqueues.IMessageQueueOverrides, name string, capabilities [*MessagingCapabilities](../../../messaging/queues/messaging_capabilities)) [*NatsAbstractMessageQueue]()
 
-- **overrides**: cqueues.IMessageQueueOverrides - TODO: add description
+- **overrides**: cqueues.IMessageQueueOverrides - override
 - **name**: string - (optional) queue name.
 - **capabilities**: [*MessagingCapabilities](../../../messaging/queues/messaging_capabilities) - supported capabilities
 
@@ -60,17 +60,17 @@ Subject
 ### Methods
 
 #### Abandon
-Returnes a message into the queue and makes it available for all subscribers to receive it again. 
-This method is usually used to return a message which could not be processed at the moment 
+Returns a message into the queue and makes it available for all subscribers to receive it again. 
+This method is usually used to return a message which could not be processed at the moment,  
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed 
-permanently or/and send to dead letter queue.
+permanently or/and send to the dead letter queue.
 
 - Important: This method is not supported by NATS.
 
 > (c [*NatsAbstractMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Clear
 Clears a component's state.
@@ -78,7 +78,7 @@ Clears a component's state.
 > (c [*NatsAbstractMessageQueue]()) Clear(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Close
@@ -87,7 +87,7 @@ Closes a component and frees the used resources.
 > (c [*NatsAbstractMessageQueue]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Complete
 Permanently removes a message from the queue.
@@ -134,7 +134,7 @@ Permanently removes a message from the queue and sends it to the dead letter que
 > (c [*NatsAbstractMessageQueue]()) MoveToDeadLetter(message *cqueues.MessageEnvelope) (err error)
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Open
 Opens the component.
@@ -142,7 +142,7 @@ Opens the component.
 > (c [*NatsAbstractMessageQueue]()) Open(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### ReadMessageCount
@@ -162,7 +162,7 @@ This method is usually used to extend the message processing time.
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Send
@@ -172,7 +172,7 @@ Sends a message into the queue.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### SetReferences
 Sets references to dependent components.

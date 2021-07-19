@@ -13,7 +13,7 @@ description: >
 The NatsConnection class is used to define NATS connections using the default driver.
 
 **Important points**
-- By defining a connection and sharing it through multiple message queues, you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple message queues, you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -99,7 +99,7 @@ Raises an error if the connection is closed.
 
 > (c [*NatsConnection]()) checkOpen() error
 
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Close
@@ -108,7 +108,7 @@ Closes a component and frees used resources.
 > (c [*NatsConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Configure
@@ -126,17 +126,17 @@ If the connection doesn't support this function, it exists without error.
 > (c [*NatsConnection]()) CreateQueue() error
 
 - **name**: string - name of the queue to be created.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### DeleteQueue
 Deletes a message queue.
-If connection doesn't support this function, it exists without error.
+If the connection doesn't support this function, it exists without error.
 
 > (c [*NatsConnection]()) DeleteQueue() error
 
 - **name**: string - name of the queue to be deleted.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### GetConnection
@@ -160,7 +160,7 @@ Opens the component.
 > (c [*NatsConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Publish
@@ -170,7 +170,7 @@ Publishes a message to a specified topic.
 
 - **subject**: string - subject(topic) where the message will be placed
 - **message**: *nats.Msg - message to be published
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### ReadQueueNames
@@ -198,7 +198,7 @@ Subscribes to a topic.
 - **subject**: string - subject(topic) name
 - **options**: string - subscription options
 - **listener**: [INatsMessageListener](../inats_message_listener) - message listener
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Unsubscribe

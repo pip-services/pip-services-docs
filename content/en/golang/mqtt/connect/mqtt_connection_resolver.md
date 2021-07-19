@@ -33,7 +33,7 @@ The MqttConnectionResolver class allows you to resolve MQTT connections and cred
 ### Constructors
 
 #### NewMqttConnectionResolver
-Method are creates a new instance of connection resolver component.
+Creates a new instance of connection resolver component.
 
 > NewMqttConnectionResolver() [*MqttConnectionResolver]()
 
@@ -87,4 +87,4 @@ Sets references to dependent components.
 
 > (c [*MqttConnectionResolver]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

@@ -111,7 +111,7 @@ Gets the connection.
 
 
 #### GetDatabaseName
-Gets the database name
+Gets the database name.
 
 > `public` string GetDatabaseName()
 
@@ -119,11 +119,11 @@ Gets the database name
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync

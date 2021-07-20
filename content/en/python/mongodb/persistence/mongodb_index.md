@@ -20,7 +20,7 @@ Creates a new instance of the index.
 
 <span class="hide-title-link">
 
-#### options
+#### keys
 Index keys (fields)
 > **keys**: Any
 

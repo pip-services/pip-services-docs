@@ -16,7 +16,7 @@ The MongoDbIndex class allows you to create an index for MongoDB.
 
 <span class="hide-title-link">
 
-#### options
+#### keys
 Index keys (fields)
 > `public` **keys**: any
 

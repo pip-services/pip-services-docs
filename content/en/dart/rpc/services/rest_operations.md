@@ -38,8 +38,7 @@ Dependency resolver component
 Configures a component by passing its configuration parameters.
 
 `@override`
-> void configure(ConfigParams config)
-
+void configure([ConfigParams](../../../commons/config/config_params) config)
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 

@@ -20,12 +20,12 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 
 - **topic**: name of MQTT topic to subscribe
 - **connection(s)**:
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/connect.idiscovery.html)
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**: host name or IP address
     - **port**: port number
     - **uri**: resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](https://pip-services3-nodex.github.io/pip-services3-components-nodex/interfaces/auth.icredentialstore.html)
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**: username
     - **password**: user's password
 - **options**:

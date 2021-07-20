@@ -57,8 +57,7 @@ The base credential resolver.
 Configures component by passing configuration parameters.
 
 `@override`
-> void configure(ConfigParams config)
-
+void configure([ConfigParams](../../../commons/config/config_params) config)
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 

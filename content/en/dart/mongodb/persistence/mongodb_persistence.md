@@ -125,8 +125,7 @@ Closes the component and frees used resources.
 Closes the component and frees used resources.
 
 `@override`
-> void configure(ConfigParams config)
-
+void configure([ConfigParams](../../../commons/config/config_params) config)
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 

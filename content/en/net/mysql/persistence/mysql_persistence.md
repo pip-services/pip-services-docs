@@ -14,9 +14,10 @@ description: >
 
 The MySqlPersistence class allows you to create persistence components that store data in MySQL databases using the official driver.
 
-Important points
+**Important points**
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
 
 #### Configuration parameters
 
@@ -59,32 +60,32 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _databaseName
-The MySql database name.
+MySql database name.
 > `protected` **_databaseName**: string
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The MySql connection component.
+MySql connection component.
 > `protected` **_connection**: [MySqlConnection](../../connect/mysql_connection) 
 
 #### _client
-The MySql connection component.
+MySql connection component.
 > `protected` **_client**: MySqlData.MySqlClient.MySqlConnection 
 
 #### _tableName 
-The MySQL table name.
+MySQL table name.
 
 > `protected` **_tableName**: string
 
 #### _maxPageSize
-The maximum number of records to return from the database per request.
+Maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: number = 100
 
 </span>
@@ -93,7 +94,7 @@ The maximum number of records to return from the database per request.
 ### Instance methods
 
 #### AutoCreateObject
-Adds a statement to schema definition. This is a deprecated method. Use ensureSchema instead.
+Adds a statement to a schema definition.  
 - This is a deprecated method. Use **EnsureSchema** instead.
 > `protected` void AutoCreateObject(string schemaStatement)
 
@@ -121,7 +122,7 @@ Closes a component and frees the used resources.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 > `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -164,14 +165,14 @@ Checks if a table exists and if not, it creates the necessary database objects.
 
 
 #### DefineSchema
-Defines database schema via auto create objects or convenience methods.
+Defines a database schema via auto create objects or convenience methods.
 
 > `protected virtual` void DefineSchema()
 
 
 #### DeleteByFilterAsync
 Deletes data items that match to a given filter.
-This method shall be called by a public **DeleteByFilterAsync** method from child class that
+This method shall be called by a public **DeleteByFilterAsync** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `public virtual` Task DeleteByFilterAsync(string correlationId, string filter)
@@ -191,7 +192,7 @@ Adds index definition to create it on opening.
 
 
 #### EnsureSchema
-Adds a statement to schema definition.
+Adds a statement to a schema definition.
 
 > `protected` void EnsureSchema(string schemaStatement)
 
@@ -210,7 +211,7 @@ Generates a list of column names to use in SQL statements like: "column1,column2
 
 > `protected` string GenerateColumns(IEnumerable\<string\> values)
 
-- **values**: [AnyValueMap](../../../commons/data/any_value_map) - aan array with column values
+- **values**: [AnyValueMap](../../../commons/data/any_value_map) - array with column values
 - **returns**: string - generated list of column names.
 
 #### GenerateParameters
@@ -224,7 +225,7 @@ Generates a list of value parameters to use in SQL statements like: *"@Param1,@P
 
 > `protected` string GenerateParameters\<K\>(IEnumerable\<K\> values)
 
-- **values**: IEnumerable\<K\> - an array with column values
+- **values**: IEnumerable\<K\> - array with column values
 - **returns**: string - generated list of value parameters
 
 #### GenerateSetParameters
@@ -239,7 +240,7 @@ Generates a list of column sets to use in UPDATE statements like: column1=@Param
 
 > `protected` string GenerateSetParameters(IEnumerable\<string\> values)
 
-- **values**: IEnumerable\<string\> - an array with column names
+- **values**: IEnumerable\<string\> - array with column names
 - **returns**: string - generated list of column sets
 
 
@@ -275,7 +276,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > `protected` Task\<List\<T\>\> GetListByFilterAsync(string correlationId, string filter, string sort = null, string select = null)
 
 - **correlationId**: string - (optional) transaction id to trace execution through the call chain.
-- **filter**: string - (optional) a filter JSON object.
+- **filter**: string - (optional) filter for JSON objects.
 - **sort**: string - (optional) sorting parameters
 - **select**: string - (optional) projection parameters (not used yet)
 - **returns**: Task\<List\<T\>\> - data list of results by filter.
@@ -290,8 +291,8 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected virtual` Task\<T\> GetOneRandomAsync(string correlationId, string filter)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: string - (optional) a filter JSON object
-- **returns**: Task\<T\> - a random item.
+- **filter**: string - (optional) filter JSON object
+- **returns**: Task\<T\> - random item.
 
 
 #### GetPageByFilterAsync
@@ -307,16 +308,16 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: string - (optional) sorting JSON object
 - **select**: string - (optional) projection JSON object
-- **returns**: Task\<[DataPage<T>](../../../commons/data/data_page)\> - a data page of result by filter
+- **returns**: Task\<[DataPage<T>](../../../commons/data/data_page)\> - data page containing the results by the filter
 
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync
@@ -341,7 +342,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

@@ -82,6 +82,8 @@ The MongoDB database name.
 #### _db
 The MongoDB database object.
 > `protected` **_db**: any
+
+  
 </span>
 
 

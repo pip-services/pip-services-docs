@@ -14,7 +14,7 @@ description: >
 
 The MongoDbConnection class allows you to create a MongoDB connection using the official driver.
 
-Important points
+**Important points**
 
 - By defining a connection and sharing it through multiple persistence components you can reduce the number of used database connections.
 
@@ -63,28 +63,29 @@ Determines if the database supports sessions or not
 > `private` **_areSessionsSupported**: bool
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [MongoDbConnectionResolver](../mongodb_connection_resolver) 
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params) 
 
 #### _connection
-The MongoDB connection object.
+MongoDB connection object.
 > `protected` **_connection**: MongoClient
 
 #### _databaseName
-The MongoDB database name.
+MongoDB database name.
 > `protected` **_databaseName**: string
 
 #### _database
-The MongoDB database object.
+MongoDB database object.
 > `protected` **_database**: IMongoDatabase
+
 </span>
 
 
@@ -123,11 +124,11 @@ Gets the MongoDB database.
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **return**: bool - True if the component has been opened and False otherwise.
+- **return**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -143,4 +144,4 @@ Sets the references to the dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

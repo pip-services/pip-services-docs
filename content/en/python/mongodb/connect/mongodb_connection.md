@@ -60,28 +60,30 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### _logger
-The logger.
+Logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection_resolver
-The connection resolver.
+Connection resolver.
 > **_connection_resolver**: [MongoDbConnectionResolver](../mongodb_connection_resolver) 
 
 #### _options
-The configuration options.
+Configuration options.
 > **_options**: [ConfigParams](../../../commons/config/config_params) 
 
 #### _connection
-The MongoDB connection object.
+MongoDB connection object.
 > **_connection**: Any
 
 #### _database_name
-The MongoDB database name.
+MongoDB database name.
 > **_database_name**: str
 
 #### _db
-The MongoDB database object.
+MongoDB database object.
 > **_db**: Any
+    
+     
 </span>
 
 

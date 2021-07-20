@@ -5,7 +5,7 @@ linkTitle: "Lock"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-redis-dotnet"
 description: >
-    This package contains a class used to create distributed locks that are implemented based on Redis in-memory database.
+    This package contains a class used to create distributed locks that are implemented based on the Redis in-memory database.
     
 ---
 ---
@@ -15,6 +15,6 @@ description: >
 ### Classes
 
 #### [RedisLock](redis_lock)
-Distributed lock that is implemented based on Redis in-memory database.  
+Distributed lock that is implemented based on the Redis in-memory database.  
 
 </div>

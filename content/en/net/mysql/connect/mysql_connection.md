@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The MySqlConnection class allows you to create a connection to a MySQL database using a plain driver.
+The MySqlConnection class allows you to create a connection to a MySQL database using the official driver.
 
 #### Configuration parameters
 
@@ -30,10 +30,10 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 - **password**: user's password
 
 **options**:
-- **max_pool_size**: (optional) maximum connection pool size (default
-- **keep_alive**: (optional) enable connection keep alive (default
-- **connect_timeout**: (optional) connection timeout in milliseconds (d
-- **auto_reconnect**: (optional) enable auto reconnection (default: tr
+- **max_pool_size**: (optional) maximum connection pool size 
+- **keep_alive**: (optional) enable connection keep alive 
+- **connect_timeout**: (optional) connection timeout in milliseconds 
+- **auto_reconnect**: (optional) enable auto reconnection (default: true)
 - **max_page_size**: (optional) maximum page size (default: 100)
 - **debug**: (optional) enable debug output (default: false).
 
@@ -50,35 +50,35 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 
 #### _connection
-The MySQL connection pool object.
+MySQL connection pool object.
 > `private` **_connection**: MySqlData.MySqlClient.MySqlConnection
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `private` **_connectionResolver**: [MySqlConnectionResolver](../mysql_connection_resolver)
 
 #### _databaseName
-The MySQL database name.
+MySQL database name.
 > `private` **_databaseName**: string
 
 #### _databaseServer
-The database server name.
+Database server name.
 > `private` **_databaseServer**: string
 
 #### _logger
-The logger.
+Logger.
 > `private` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _options
-The configuration options.
+Configuration options.
 > `private` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _sshConfigs
-The SSH configuration object.
+SSH configuration object.
 > `private` **_sshConfigs**: [ConfigParams](../../../commons/config/config_params)
 
 #### _sshEnabled
-The flag enabled ssh.
+Flag enabled ssh.
 > `private` **_sshEnabled**: bool
 
 
@@ -111,7 +111,7 @@ Gets the connection.
 
 
 #### GetDatabaseName
-Gets the database name
+Gets the database name.
 
 > `public` string GetDatabaseName()
 
@@ -119,11 +119,11 @@ Gets the database name
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync

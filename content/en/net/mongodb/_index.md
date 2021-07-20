@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mongodb-dotnet"
 no_list: true
 weight: 30
 description: > 
-    MongoDB components for Pip.Services for Pip.Services .NET
+    MongoDB components for Pip.Services for Pip.Services .NET. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
 ---
@@ -13,8 +13,8 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create MongoDB persistence components.
-- [**Connect**](connect) - Connection component to configure MongoDB connection to database.
+- [**Build**](build) - factory to create MongoDB persistence components.
+- [**Connect**](connect) - connection component to configure connections to MongoDB databases.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
@@ -39,7 +39,7 @@ class MyObject : IIdentifiable<string>
 
 ```
 
-The persistence component shall implement the following interface with a basic set of CRUD operations.
+The persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```cs
 interface IMyPersistance
@@ -61,7 +61,7 @@ interface IMyPersistance
 
 To implement mongodb persistence component you shall inherit `IdentifiableMongoDbPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `GetPageByFilter` method with a custom filter function.
-And implement a `GetOneByKey` custom persistence method that doesn't exist in the base class.
+And then, implement a `GetOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```cs
 class MyMongoDbPersistence : IdentifiableMongoDbPersistence<MyObject, string>
@@ -115,7 +115,7 @@ class MyMongoDbPersistence : IdentifiableMongoDbPersistence<MyObject, string>
 }
 ```
 
-Configuration for your microservice that includes mongodb persistence may look the following way.
+The configuration for your microservice that includes mongodb persistence may look the following way:
 
 ```yaml
 ...

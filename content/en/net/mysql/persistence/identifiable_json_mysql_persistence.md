@@ -13,15 +13,12 @@ description: >
 
 ### Description
 
-The IdentifiableJsonMySqlPersistence class allows you to create persistence components that store data in JSON or JSONB fields and implement a number of CRUD operations over data items with unique ids.
+The IdentifiableJsonMySqlPersistence class allows you to create persistence components that store data in MySQL in JSON or JSONB fields and implement a number of CRUD operations over data items with unique ids.
 
-Important points
-
-Where T : [IIdentifiable<K>](../../../commons/data/iidentifiable), new()
-Where K : class.
+**Important points**
 
 - The JSON table has only two fields: id and data.
-- In basic scenarios child classes shall only override [GetPageByFilterAsync](../mysql_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../memory_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../mysql_persistence/#deletebyfilterasync) operations with a specific filter function. 
+- In basic scenarios child classes shall only override [GetPageByFilterAsync](../mysql_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../mysql_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../mysql_persistence/#deletebyfilterasync) operations with a specific filter function. 
 - All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
@@ -59,7 +56,7 @@ Creates a new instance of the persistence component.
 
 > `public` IdentifiableJsonMySqlPersistence(tableName: string)
 
-- **tableName**: string - (optional) collection name.
+- **tableName**: string - (optional) collection's name.
 
 
 ### Instance methods

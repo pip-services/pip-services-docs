@@ -119,7 +119,7 @@ Closes a component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> `public` void Configure(ConfigParams config)
+> `public` void Configure([ConfigParams](../../../commons/config/config_params config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 

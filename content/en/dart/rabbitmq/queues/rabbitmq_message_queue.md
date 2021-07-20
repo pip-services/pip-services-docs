@@ -10,8 +10,6 @@ description: >
 
 **Extends:** [MessageQueue](../../../messaging/queues/message_queue)
 
-**Implements:** [IReferenceable](../../../commons/refer/ireferenceable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IConfigurable](../../../commons/config/iconfigurable), [IOpenable](../../../commons/run/iopenable), [ICleanable](../../../commons/run/icleanable)
-
 ### Description
 The RabbitMQMessageQueue class allows you to create message queues that send and receive messages via an RabbitMQ message broker.
 

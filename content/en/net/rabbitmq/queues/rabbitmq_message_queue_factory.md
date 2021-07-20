@@ -2,7 +2,7 @@
 type: docs
 title: "RabbitMQMessageQueueFactory"
 linkTitle: "RabbitMQMessageQueueFactory"
-gitUrl: "https://github.com/pip-services3-dart/pip-services3-rabbitmq-dart"
+gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet"
 description: >
     TODO: add description
     
@@ -17,7 +17,7 @@ TODO: add description
 ### Constructors
 TODO: add description
 
-> RabbitMQMessageQueueFactory()
+> `public` RabbitMQMessageQueueFactory()
 
 
 ### Instance methods
@@ -25,6 +25,6 @@ TODO: add description
 #### configure
 Configures the component by passing its configuration parameters.
 
-> void configure([ConfigParams](../../../commons/config/config_params) config)
+> `public` void Configure([ConfigParams](../../../commons/config/config_params config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.

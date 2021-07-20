@@ -24,31 +24,31 @@ Index keys (fields)
 > **keys**: Map\<String, dynamic\>
 
 #### key
-TODO: add description
+Key
 > **key**: String 
 
 #### unique
-TODO: add description
+Unique option
 > **unique**: bool 
 
 #### sparse
-TODO: add description
+Sparse option
 > **sparse**: bool 
 
 #### background
-TODO: add description
+Background option
 > **background**: bool 
 
 #### dropDups
-TODO: add description
+dropDups option
 > **dropDups**: bool 
 
 #### partialFilterExpression
-TODO: add description
+Partial filter expression
 > **partialFilterExpression**: Map\<String, dynamic\> 
 
 #### name
-TODO: add description
+Name
 > **name**: String 
 
 </span>

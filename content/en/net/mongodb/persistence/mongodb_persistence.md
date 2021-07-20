@@ -181,7 +181,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 > `public virtual` Task\<[DataPage](../../../commons/data/data_page)\<T\>\> GetPageByFilterAsync(string correlationId, FilterDefinition\<T\> filterDefinition, [PagingParams](../../../commons/data/paging_params) paging = null, SortDefinition\<T\> sortDefinition = null)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterDefinition**: FilterDefinition\<T\> - (optional) filter JSON object
+- **filterDefinition**: FilterDefinition\<T\> - (optional) filter for JSON object
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sortDefinition**: SortDefinition\<T\> - (optional) sorting JSON object
 - **returns**: Task\<[DataPage](../../../commons/data/data_page)\<T\>\> - data page obtained by filtering

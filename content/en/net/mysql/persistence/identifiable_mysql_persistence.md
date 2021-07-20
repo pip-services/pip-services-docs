@@ -19,9 +19,6 @@ The IdentifiableMySqlPersistence class allows you to create persistence componen
 
 Important points
 
-where T : [IIdentifiable<K>](../../../commons/data/iidentifiable), new()  
-where K : class.
-
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios, child classes shall only override [GetPageByFilterAsync](../mysql_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../memory_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../mysql_persistence/#deletebyfilterasync) operations with the specific filter function.
 - All other operations can be used out of the box. 
@@ -43,10 +40,10 @@ where K : class.
 - **password**: (optional) user's password
 
 **options**:
-- **max_pool_size**: (optional) maximum connection pool size (default
-- **keep_alive**: (optional) enable connection keep alive (default
-- **connect_timeout**: (optional) connection timeout in milliseconds (d
-- **auto_reconnect**: (optional) enable auto reconnection (default: tr
+- **max_pool_size**: (optional) maximum connection pool size (default: 2)
+- **keep_alive**: (optional) enable connection keep alive (default: true)
+- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5 sec)
+- **auto_reconnect**: (optional) enable auto reconnection (default: true)
 - **max_page_size**: (optional) maximum page size (default: 100)
 - **debug**: (optional) enable debug output (default: false).
 
@@ -54,7 +51,7 @@ where K : class.
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
-- **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials ([ICredentialStore](../../../components/auth/icredential_store))
 
 
 ### Constructors
@@ -62,7 +59,7 @@ Creates a new instance of the persistence component.
 
 > `public` IdentifiableMySqlPersistence(tableName: string)
 
-- **tableName**: string - (optional) collection name.
+- **tableName**: string - (optional) collection's name.
 
 
 ### Instance methods
@@ -118,8 +115,8 @@ Gets a data item by its unique id.
 
 
 #### SetAsync
-Sets a data item. If the data item exists it updates it,
-otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it. 
+Otherwise, it creates a new data item.
 
 > `public virtual` async Task\<T\> SetAsync(string correlationId, T item)
 

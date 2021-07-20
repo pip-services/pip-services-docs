@@ -162,7 +162,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### GetOneRandomAsync
 Gets a random item from items that match to a given filter.
 
-This method shall be called by a public [GetOneRandomAsync](#getonerandomasync) method from the child class
+This method shall be called by a public **GetOneRandomAsync** method from the child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `public virtual` async Task\<T\> GetOneRandomAsync(string correlationId, FilterDefinition\<T\> filterDefinition)

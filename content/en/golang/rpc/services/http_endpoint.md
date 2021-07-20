@@ -29,6 +29,7 @@ Parameters to pass to the [configure](#configure) method for component configura
     - **"credential.ssl_crt_file"**: SSL certificate in PEM
     - **"credential.ssl_ca_file"**: certificate authorities (root cerfiticates) in PEM
 
+- **cors-headers** - pair CORS headers: origin. Example: MyHeader1: \*.\*
 
 #### References
 A logger, counters, and a connection resolver can be referenced by passing the 
@@ -46,6 +47,13 @@ NewHttpEndpoint creates new HttpEndpoint
 > NewHttpEndpoint() [*HttpEndpoint]()
 
 ### Methods
+
+#### AddCorsHeader
+Method adds allowed header, ignore if it already exist
+> (c [*HttpEndpoint]()) AddCorsHeader(header string, origin string)
+
+- **header**: string - the header
+- **origin**: string - origin header
 
 #### Close
 Closes this endpoint and the REST server (service) that was opened earlier.

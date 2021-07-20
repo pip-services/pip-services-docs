@@ -14,13 +14,10 @@ description: >
 ### Classes
 
 #### [MySqlConnection](mysql_connection)
-MySQL connection using plain driver.
-By defining a connection and sharing it through multiple persistence components
-you can reduce number of used database connections.
-
+MySQL connection using the default driver.
 
 #### [MySqlConnectionResolver](mysql_connection_resolver)
-Helper class that resolves MySQL connection and credential parameters,
+Helper class that resolves MySQL connections and credential parameters,
 validates them and generates a connection URI.
 It is able to process multiple connections to MySQL cluster nodes.
 

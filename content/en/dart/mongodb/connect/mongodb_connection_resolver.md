@@ -16,7 +16,7 @@ description: >
 
 The MongoDbConnectionResolver class allows you to create a MongoDB connection resolver that resolves MongoDB connection and credential parameters, validates them, and generates a connection URI.
 
-Important points
+**Important points**
 
 -  It is able to process multiple connections to MongoDB cluster nodes.
 
@@ -78,4 +78,4 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

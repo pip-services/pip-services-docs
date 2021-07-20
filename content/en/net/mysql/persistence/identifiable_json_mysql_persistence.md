@@ -15,7 +15,7 @@ description: >
 
 The IdentifiableJsonMySqlPersistence class allows you to create persistence components that store data in MySQL in JSON or JSONB fields and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The JSON table has only two fields: id and data.
 - In basic scenarios child classes shall only override [GetPageByFilterAsync](../mysql_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../mysql_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../mysql_persistence/#deletebyfilterasync) operations with a specific filter function. 

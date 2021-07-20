@@ -15,7 +15,7 @@ description: >
 
 The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
 
-Important points
+**Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
 - Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this.__model** properties.

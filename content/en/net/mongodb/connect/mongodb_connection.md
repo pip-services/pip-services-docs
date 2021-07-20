@@ -124,11 +124,11 @@ Gets the MongoDB database.
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **return**: bool - True if the component has been opened and False otherwise.
+- **return**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -144,4 +144,4 @@ Sets the references to the dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

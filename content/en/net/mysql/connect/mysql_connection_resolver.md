@@ -4,7 +4,7 @@ title: "MySqlConnectionResolver"
 linkTitle: "MySqlConnectionResolver"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 description: >
-    Helper class that resolves MySQL connection and credential parameters,
+    Helper class that resolves a MySQL connection and credential parameters,
     validates them and generates a connection URI.
 
 ---
@@ -43,11 +43,11 @@ Important points
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _connectionResolver
-The credential resolver
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
@@ -78,4 +78,4 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

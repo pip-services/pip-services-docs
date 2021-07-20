@@ -18,9 +18,10 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 
 A component can be made configurable by adding the [IConfigurable](../../commons/config/iconfigurable/) interface and implementing its **Configure** method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
 
-```typescript
-interface IConfigurable {
-	configure(config: ConfigParams): void;
+```dart
+abstract class IConfigurable {
+
+  void configure(ConfigParams config);
 }
 ```
 
@@ -28,8 +29,8 @@ interface IConfigurable {
 
 The only parameter that is passed to the configure method is [ConfigParams](../../commons/config/config_params/) object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
 
-```typescript
-let config = ConfigParams.fromTuples(
+```dart
+var config = ConfigParams.fromTuples(
   	"param1", 123,
   	"param2", "2020-01-01T11:00:00.0Z"
 );
@@ -37,28 +38,28 @@ let config = ConfigParams.fromTuples(
 
 **ConfigParams** also provide some additional functionality. All keys and values are stored as strings, but **ConfigParams** supports performing data type conversion when extracting values. Another option available is the opportunity to set default values.
 
-```typescript
-let param1 = config.getAsInteger("param1");
-let param2 = config.getAsDateTimeWithDefault("param2", new Date());
+```dart
+var param1 = config.getAsInteger("param1");
+var param2 = config.getAsDateTimeWithDefault("param2", DateTime());
 ```
 
 The parameter kets can have a complex structure, grouped by sections using dot notation. **ConfigParams** can be used to work with entire sections as well.
 
-```typescript
-let configWithSections = ConfigParams.fromTuples(
+```dart
+var configWithSections = ConfigParams.fromTuples(
   	"param1", 123
   	"options.param1", "ABC",
   	"options.param2", "XYZ"
 );
-let options = configWithSections.getSection("options");
+var options = configWithSections.getSection("options");
 ```
 #### Setting a default configuration
 
 Another helpful option is the ability to set a default configuration.
 
-```typescript
+```dart
 
-let defaultConfig = ConfigParams.fromTuples(
+var defaultConfig = ConfigParams.fromTuples(
   	"param1", 1,
   	"param2", "Default Value"
 );
@@ -69,8 +70,8 @@ config = config.setDefaults(defaultConfig);
 
 Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
-```typescript
-let anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");
+```dart
+var anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");
 ```
 
 To read more about what functionality is available through ConfigParams, be sure to check out the [Commons module’s](../../commons)documentation. 
@@ -79,19 +80,18 @@ To read more about what functionality is available through ConfigParams, be sure
 
 Below is an example of a configurable component:
 
-```typescript
-export class DataController implements IConfigurable {
-   	private _max_page_size: number = 5;
-   	public constructor() { }
+```dart
+class DataController implements IConfigurable {
+   	int _max_page_size = 5;
+   	DataController() {}
 
-   	public configure(config: ConfigParams): void {
+   	void configure(ConfigParams config) {
 		this._max_page_size = config.getAsIntegerWithDefault('max_page_size', this._max_page_size);
    	}
 
-   	public getData(correlationId: string, filter: FilterParams, paging: PagingParams,
-   	    callback: (err: any, page: DataPage<BeaconV1>) => void): void {
-		    paging.take = Math.min(paging.take, this._max_page_size);    
-   	  // Get data using max page size constraint.
+   	Future<DataPage<BeaconV1> getData(correlationId: string, filter: FilterParams, paging: PagingParams) {
+		return paging.take = min(paging.take, this._max_page_size);    
+   	  	// Get data using max page size constraint.
    	}
 }
 ```
@@ -100,9 +100,9 @@ export class DataController implements IConfigurable {
 
 Manual configuration can be done in the following manner:
 
-```typescript
-let component = new DataController();
-let config = ConfigParams.fromTuple("max_page_size", 100);
+```dart
+var component = new DataController();
+var config = ConfigParams.fromTuple("max_page_size", 100);
 component.configure(config);
 
 ```
@@ -128,14 +128,14 @@ The [NameResolver](../../commons/config/name_resolver/) and [OptionResolver](../
 
 Below is a simple example of how it can be used:
 
-```typescript
-let config = ConfigParams.fromTuples(
+```dart
+var config = ConfigParams.fromTuples(
 	"descriptor", "myservice:connector:aws:connector1:1.0",
 	"param1", "ABC",
 	"param2", 123
 );
 
-let name = NameResolver.resolve(config); // Result: connector1
+var name = NameResolver.resolve(config); // Result: connector1
 
 ```
 
@@ -143,23 +143,22 @@ let name = NameResolver.resolve(config); // Result: connector1
 
 **OptionResolver** is a helper class that extracts parameters from the "options" configuration section.
 
-```typescript
-let config = ConfigParams.fromTuples(
+```dart
+var config = ConfigParams.fromTuples(
 	...
 	"options.param1", "ABC",
 	"options.param2", 123
 );
-let options = OptionsResolver.resolve(config); // Result: param1=ABC;param2=123
+var options = OptionsResolver.resolve(config); // Result: param1=ABC;param2=123
 ```
 
 ### Configuration readers
 
 Configuration parameters can be stored in microservice configurations, configuration files, or in configuration services. To help with configuration extraction, the Pip.Services Toolkit offers two special **ConfigReader** components. The interface for these components is defined in the [Components](../../components) module.
 
-```typescript
-interface IConfigReader {
-	readConfig(correlationId: string, parameters: ConfigParams, 
-        callback: (err: any, config: ConfigParams) => void): void;
+```dart
+abstract class IConfigReader {
+  Future<ConfigParams> readConfig(String correlationId, ConfigParams parameters);
 }
 
 ```
@@ -168,19 +167,17 @@ interface IConfigReader {
 
 The [MemoryConfigReader](../../components/config/memory_config_reader/) is a **ConfigReader** that stores configuration data in memory.
 
-```typescript
-let config = ConfigParams.fromTuples(
+```dart
+var config = ConfigParams.fromTuples(
 	"connection.host", "localhost",
 	"connection.port", "8080"
 );
 
-let configReader = new MemoryConfigReader();
+var configReader = MemoryConfigReader();
 configReader.configure(config);
 
-let parameters = ConfigParams.fromValue(process.env);
-configReader.readConfig("123", parameters, (err, config) => {
-	// Result: connection.host=localhost;connection.port=8080
-});
+var parameters = ConfigParams.fromValue(process.env);
+var result = await configReader.readConfig("123", parameters);
 
 ```
 
@@ -192,12 +189,10 @@ The [JsonConfigReader](../../components/config/json_config_reader/) is a **Confi
 { "key1": "{{KEY1_VALUE}}", "key2": "{{KEY2_VALUE}}" }
 ```
 
-```typescript
-let configReader = new JsonConfigReader("config.json");
-let parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
-configReader.readConfig("correlationId", parameters, (err, config) => {
-	// Result: key1=1234;key2=ABCD
-});
+```dart
+var configReader = new JsonConfigReader("config.json");
+var parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
+var result = await configReader.readConfig("correlationId", parameters);  // Result: key1=1234;key2=ABCD
 
 ```
 
@@ -210,12 +205,10 @@ key1: "1234"
 key2: "ABCD"
 ```
 
-```typescript
-let configReader = new YamlConfigReader("config.yml");
-let parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
-configReader.readConfig("correlationId", parameters, (err, config) => {
-   // Result: key1=1234;key2=ABCD
-});
+```dart
+var configReader = new YamlConfigReader("config.yml");
+var parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
+var result = await configReader.readConfig("correlationId", parameters)  // Result: key1=1234;key2=ABCD
 ```
 
 

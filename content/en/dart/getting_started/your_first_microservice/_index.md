@@ -199,7 +199,7 @@ class HelloWorldRestService extends RestService {
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-```typescript
+```dart
 class HelloWorldServiceFactory extends Factory
 ```
 

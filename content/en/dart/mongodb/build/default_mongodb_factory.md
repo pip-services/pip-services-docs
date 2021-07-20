@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultMongoDbFactory"
 linkTitle: "DefaultMongoDbFactory"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-messaging-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-messaging-dart"
 description: > 
     Creates MongoDb components by their descriptors.
 ---

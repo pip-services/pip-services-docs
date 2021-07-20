@@ -160,29 +160,28 @@ Sets references to dependent components.
 
 ### Examples
 
-```typescript
+```dart
 class MyGrpcClient extends GrpcClient implements IMyClient {
    ...
-   public getData(correlationId: String, id: String, 
-       callback: (err: any, result: MyData) => void): void {
-   
-       let timing = this.instrument(correlationId, 'myclient.get_data');
-       this.call("get_data", correlationId, { id: id }, (err, result) => {
-           timing.endTiming();
-           callback(err, result);
-       });        
+   Future<MyData> getData(String correlationId, string id) async {
+       var timing = this.instrument(correlationId, 'myclient.get_data');
+       var request = MyDataRequest();
+       request.id = id;
+       var response = await call<MydataRequest,MyDataResponse>('get_data', correlationId, request)
+       timing.endTiming();
+       MyData item;
+       ///... convert MyDataResponse to MyData
+       return item;
    }
    ...
 }
+var client = MyGrpcClient();
+client.configure(ConfigParams.fromTuples([
+    'connection.protocol', 'http',
+    'connection.host', 'localhost',
+    'connection.port', 8080
+]));
 
-let client = new MyGrpcClient();
-client.configure(ConfigParams.fromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080
-));
-
-client.getData("123", "1", (err, result) => {
+var item = await client.getData('123', '1')
   ...
-});
 ```

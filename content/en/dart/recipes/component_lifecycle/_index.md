@@ -31,33 +31,28 @@ A flexible and, at the same time, standardized approach was developed in the Pip
 - IExecutable – execution of functional processes [Executable](../../commons/run/iexecutable).
 - INotifiable - sending event notifications [Notifiable](../../commons/run/inotifiable).
 
-```typescript
+```dart
 
-export interface IConfigurable {
-    configure(config: ConfigParams): void;
+abstract class IConfigurable {
+  void configure(ConfigParams config);
 }
 
-export interface IReferenceable {
-	setReferences(references: IReferences): void;
+abstract class IReferenceable {
+  void setReferences(IReferences references);
 }
 
-export interface IOpenable extends IClosable {
-
-	isOpen(): boolean;
-
-	open(correlationId: string): Promise<void>;
+abstract class IOpenable implements IClosable {
+  bool isOpen();
+  Future open(String correlationId);
 }
 
-
-export interface IClosable {
-	close(correlationId: string): Promise<void>;
+abstract class IClosable {
+    Future close(String correlationId);
 }
 
-
-export interface IExecutable {
-	execute(correlationId: string, args: Parameters): Promise\<any\>;
+abstract class IExecutable {
+   Future<dynamic> execute(String correlationId, Parameters args);
 }
-
 ```
 
 ### Implementation
@@ -65,67 +60,44 @@ export interface IExecutable {
 Microservice developers are free to implement just the interfaces needed by their components. When the container is started, all implemented methods will be called in the previously mentioned order. 
 For example: 
 
-```typescript
-import { ConfigParams, FixedRateTimer, Parameters } from "pip-services3-commons-nodex";
-import { IReconfigurable, IReferenceable, IExecutable, IOpenable, IReferences } from "pip-services3-commons-nodex";
-import { CompositeLogger, LogLevel } from "pip-services3-components-nodex";
-
-class CounterController implements IReferenceable, IReconfigurable, IOpenable, IExecutable {
-    
-
-    private logger = new CompositeLogger();
-    private timer = new FixedRateTimer();
-    private parameters = new Parameters();
-    private counter = 0;
-    
-    public constructor(){
-        this.logger.setLevel(LogLevel.Debug);
-    }
-
-    public configure(config: ConfigParams){
-        this.parameters = Parameters.fromConfig(config);
-    }
-        
-
-    public setReferences(references: IReferences){
-        this.logger.setReferences(references);
-    }
-        
-
-    public isOpen(): boolean{
-        return this.timer.isStarted();
-    }
-
-    public async open(correlationId: string): Promise<void> {
-        if (this.isOpen()) {
-            return;
-        }
-
-        this.timer.setCallback(() => this.execute(correlationId, this.parameters))
-        this.timer.setInterval(1000)
-        this.timer.setDelay(1000)
-        this.timer.start()
-        this.logger.trace(correlationId, "Counter controller opened")
-
-    }
-        
-    public async close(correlationId: string): Promise<void> {
-        this.timer.stop()
-        this.logger.trace(correlationId, "Counter controller closed")
-    }
-        
-
-    public execute(correlationId: string, args: Parameters): Promise\<any\> {
-        this.counter += 1;
-
-        this.logger.info(
-            correlationId,
-            this.counter + " - " + this.parameters.getAsStringWithDefault('message', 'Hello World!')
-        )
-
-        let result = args.getAsObject("message");
-        return result;
-    }
+```dart
+class CounterController implements IReferenceable, IReconfigurable, IOpenable, IExecutable
+{
+  final CompositeLogger _logger = new CompositeLogger();
+  final FixedRateTimer timer = new FixedRateTimer();
+  final Parameters parameters  = new Parameters();
+  int counter  = 0;
+  void configure(config ConfigParams )
+  {
+    parameters = Parameters.fromConfig(config);
+  }
+  public void setReferences(references IReferences)
+  {
+    _logger.setReferences(references);
+  }
+  public bool IsOpen()
+  {
+    return timer.isStarted;
+  }
+  Future open(correlationId String) async
+  {
+    timer.task = () async {return await Execute(correlationId, parameters)};
+    timer.interval = 1000;
+    timer.delay = 1000;
+    timer.start();
+    _logger.trace(correlationId, "Counter controller opened");
+  }
+  Future close(correlationId String)
+  {
+    timer.stop();
+    _logger.trace(correlationId, "Counter controller closed");
+  }
+  Future<int> Execute(correlationId String, parameters Parameters ) async
+  {
+    _logger.info(correlationId, "$s - $s", counter++, 
+    parameters.getAsStringWithDefault("message", "Hello World!"));
+    return counter;
+  }
 }
     
 ```
@@ -140,8 +112,8 @@ The Pip.Service’s Toolkit also includes a few utilities that can be used durin
 
 For example:
 
-```typescript
-Opener.open(correlationId, references.getAll());
+```dart
+await Opener.open(correlationId, references.getAll());
 ...
-Closer.close(correlationId, references.getAll());
+await Closer.close(correlationId, references.getAll());
 ```

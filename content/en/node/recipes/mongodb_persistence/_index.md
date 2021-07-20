@@ -179,8 +179,10 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../ommons/data/iidentifiable/) interface defined in [the Commons module](../commons).
 
 ```typescript
-class IIdentifiable(ABC):
-    id: Any
+export interface IIdentifiable<K> {
+	/** The unique object identifier of type K. */
+	id: K;
+}
 
 ```
 
@@ -331,8 +333,8 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 
 ```typescript
 //skip = 25, take = 50, total = False
-let paging = PagingParams(25, 50, False)
-let result = await persistence.getPageByFilter(null, null, paging)
+let paging = new PagingParams(25, 50, false);
+let result = await persistence.getPageByFilter(null, null, paging);
 ```
 
 

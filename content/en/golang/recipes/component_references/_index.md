@@ -66,7 +66,7 @@ class Worker1 {
     }
 
     public do(level, message) {
-        console.log(`Write to ${this._defaultName}.${level} message: ${message}`);
+        console.log('Write to ${this._defaultName}.${level} message: ${message}');
     }
 }
 
@@ -76,7 +76,7 @@ class Worker2 {
     }
 
     public do(level, message) {
-        console.log(`Write to ${this._defaultName}.${level} message: ${message}`);
+        console.log('Write to ${this._defaultName}.${level} message: ${message}');
     }
 }
 ```
@@ -111,7 +111,7 @@ let references = References.fromTuples(
 
 let controller = new SimpleController();
 controller.setReferences(references);
-console.log(controller.greeting(“world”));
+console.log(controller.greeting("world"));
 controller.unsetReferences();
 controller = null;
 
@@ -206,7 +206,7 @@ let references = References.fromTuples(
 
 let controller = new SimpleController();
 controller.setReferences(references);
-console.log(controller.greeting(“world”));
+console.log(controller.greeting("world"));
 controller.unsetReferences();
 controller = null;
 
@@ -269,7 +269,7 @@ let config = ConfigParams.fromTuples(
 let controller = new SimpleController();
 controller.configure(config);
 controller.setReferences(references);
-console.log(controller.greeting(“world”));
+console.log(controller.greeting("world"));
 controller.unsetReferences();
 controller = null;
 ```

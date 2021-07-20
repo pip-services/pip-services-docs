@@ -63,7 +63,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
@@ -193,7 +193,7 @@ Unsets (clears) previously set references to dependent components.
 #### SetReferences
 Sets references to dependent components.
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

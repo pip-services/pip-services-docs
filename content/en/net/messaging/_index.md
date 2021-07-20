@@ -5,10 +5,10 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet"
 no_list: true
 weight: 30
 description: > 
-    Asynchronous Messaging for Pip.Services in .NET 
+    Asynchronous Messaging for Pip.Services in .NET.  
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
+    It contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
 ---
 
 ### Modules

@@ -16,10 +16,7 @@ description: >
 
 The IdentifiableMongoDbPersistence class allows you to create persistance components that store data in MongoDB databases and implement a number of CRUD operations over data items with unique ids.
 
-Important points
-
-Where T : [IIdentifiable<K>](../../../commons/data/iidentifiable).
-Where K : class.
+**Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios child classes shall only override [GetPageByFilterAsync](../mongodb_persistence/#getpagebyfilterasync), [GetListByFilter](../mongodb_persistence/#getlistbyfilterasync) or [GeleteByFilter](../mongodb_persistence/#deletebyfilterasync)  operations with specific filter functions. All other operations can be used out of the box. 
@@ -66,7 +63,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### InternalIdFieldName
-TODO: add description
+Internal field name
 > `protected` **InternalIdFieldName**: string = = "_id"
 
 </span>
@@ -125,7 +122,7 @@ Gets a data item by its unique id.
 
 
 #### SetAsync
-Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it. Otherwise, it creates a new data item.
 
 > `public virtual` Task\<T\> SetAsync(string correlationId, T item)
 

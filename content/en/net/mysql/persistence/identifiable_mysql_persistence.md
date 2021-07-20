@@ -17,7 +17,7 @@ description: >
 
 The IdentifiableMySqlPersistence class allows you to create persistence components that store data in MySQL databases and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios, child classes shall only override [GetPageByFilterAsync](../mysql_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../memory_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../mysql_persistence/#deletebyfilterasync) operations with the specific filter function.

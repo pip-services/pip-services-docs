@@ -11,7 +11,7 @@ description: >
    
 ---
 
-**Inherits:** [IdentifiableMongoDbPersistence<T, K>](../persistence/identifiable_mongodb_persistence)
+**Inherits:** [IdentifiableMongoDbPersistence<T, K>](../identifiable_mongodb_persistence)
 
 ### Description
 
@@ -19,7 +19,7 @@ The MongoDbPersistence class allows you to create persistence components that st
 
 **Important points**
 
-- In basic scenarios child classes shall only override **GetPageByFilterAsync()**, **GetListByFilterAsync()** or **DeleteByFilterAsync()** operations with specific filter function.
+- In basic scenarios child classes shall only override [GetPageByFilterAsync](../mongodb_persistence/#getpagebyfilterasync), [GetListByFilter](../mongodb_persistence/#getlistbyfilterasync) or [DeleteByFilter](../mongodb_persistence/#deletebyfilterasync)  operations with specific filter functions.
 - All other operations can be used out of the box.
 - In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 

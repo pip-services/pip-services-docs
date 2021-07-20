@@ -6,28 +6,22 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mongodb-dotnet"
 description: >
     Abstract persistence component that stores data in MongoDB
     and implements a number of CRUD operations over data items with partitionKey.
-    The data items must implement IIdentifiable interface.  
+    The data items must implement the [IIdentifiable<K>](../../../commons/data/iidentifiable) interface.  
 
    
 ---
 
-**Inherits:** [IdentifiableMongoDbPersistence<T, K>](../../identifiable_mongodb_persistence)
+**Inherits:** [IdentifiableMongoDbPersistence<T, K>](../persistence/identifiable_mongodb_persistence)
 
 ### Description
 
-The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
+The MongoDbPersistence class allows you to create persistence components that store data in MongoDB databases using the official MongoDB driver.
 
-Important points
+**Important points**
 
-Where T : [IIdentifiable<K>](../../../commons/data/iidentifiable).
-Where K : class.
-
-In basic scenarios child classes shall only override **GetPageByFilterAsync()**,
-**GetListByFilterAsync()** or **DeleteByFilterAsync()** operations with specific filter function.
-All other operations can be used out of the box.
-
-In complex scenarios child classes can implement additional operations by
-accessing **this._collection** and **this._model** properties.
+- In basic scenarios child classes shall only override **GetPageByFilterAsync()**, **GetListByFilterAsync()** or **DeleteByFilterAsync()** operations with specific filter function.
+- All other operations can be used out of the box.
+- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 
@@ -64,15 +58,14 @@ Creates a new instance of the persistence component.
 > `public` PartitionMongoDbPersistence(string collectionName, string partitionKey)
 
 - **collectionName**: string - (optional) collection name.
-- **partitionKey**: string - TODO add description
-
+- **partitionKey**: string - partition key
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _partitionKey
-TODO: add description
+Partition key
 > `protected` **_partitionKey**: string
 
     
@@ -85,18 +78,18 @@ TODO: add description
 #### Configure
 Configures component by passing configuration parameters.
 
-> `public` void Configure([ConfigParams](../../commons/config/config_params) config)
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../commons/config/config_params) - configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### DeleteByIdAsync
-Deleted a data item by it's unique id.
+Deletes a data item by it's unique id.
 
 > `public override` Task\<T\> DeleteByIdAsync(string correlationId, K id)
 
 - **correlationId**: string - object to convert from the public partial format.
-- **id**: K - an id of the item to be deleted
+- **id**: K - id of the item to be deleted
 
 
 #### GetOneByFilterAsync
@@ -105,37 +98,37 @@ Gets one first data item by filter.
 > `public` Task\<T\> GetOneByFilterAsync(string correlationId, FilterDefinition\<T\> filterDefinition)
 
 - **correlationId**: string - (optional) transaction id used  to trace execution through the call chain.
-- **filterDefinition**: FilterDefinition\<T\> - (optional) a filter JSON object
-- **returns**: Task\<T\> - a data item by id.
+- **filterDefinition**: FilterDefinition\<T\> - (optional) filter for JSON object
+- **returns**: Task\<T\> - data item.
 
 Gets one first data item by filter.
 
 > `protected` Task\<object\> GetOneByFilterAsync(string correlationId, FilterDefinition\<T\> filterDefinition, ProjectionParams projection)
 
 - **correlationId**: string - (optional) transaction id used  to trace execution through the call chain.
-- **filterDefinition**: FilterDefinition\<T\> - (optional) a filter JSON object.
+- **filterDefinition**: FilterDefinition\<T\> - (optional) filter for JSON object.
 - **projection**: [ProjectionParams](../../../commons/data/projection_params) - (optional) projection parameters.
-- **returns**: Task\<object\> - a data item by id.
+- **returns**: Task\<object\> - data item.
 
 
 #### ModifyByIdAsync
-Modify a data item by it's unique id.
+Modifies a data item by it's unique id.
 
 > `public override` Task\<T\> ModifyByIdAsync(string correlationId, K id, UpdateDefinition\<T\> updateDefinition)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - (optional) filter function used to filter items.
-- **updateDefinition**: UpdateDefinition\<T\> - (optional) a JSON object to update
+- **updateDefinition**: UpdateDefinition\<T\> - (optional) JSON object to update
 - **returns**: Task\<T\> - updated item.
 
 
 #### SetAsync
-Sets a data item. If the data item exists it updates it, otherwise it create a new data item.
+Sets a data item. If the data item exists, it updates it. Otherwise, it create a new data item.
 
 > `public override` Task\<T\> SetAsync(string correlationId, T item)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - an item to be set.
+- **item**: T - item to be set.
 - **returns**: Task\<T\> - updated item.
 
 
@@ -145,7 +138,7 @@ Updates a data item.
 > `public override` Task\<T\> UpdateAsync(string correlationId, T item)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - an item to be updated.
+- **item**: T - item to be updated.
 - **returns**: Task\<T\> - updated item.
 
 

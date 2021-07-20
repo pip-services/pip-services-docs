@@ -17,7 +17,8 @@ The MongoDbPersistence class allows you to create persistence components that st
 
 Important points
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this.__model** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this.__model** properties.
 
 #### Configuration parameters
 
@@ -66,39 +67,40 @@ The dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The MongoDB connection component.
+MongoDB connection component.
 > `protected` **_connection**: [MongoDBConnection](../../connect/mongodb_connection) 
 
 #### _collectionName
-The MongoDB colleciton name.
+MongoDB collection name.
 > `protected` **_collectionName**: string;
 
 #### _collection
-The MongoDb collection object.
+MongoDb collection object.
 > `protected` **_collection**: IMongoCollection\<T\>
 
 #### _client
-The MongoDB connection pool object.
+MongoDB connection pool object.
 > `protected` **_client**: MongoClient 
 
 #### _database
-The MongoDb database object.
+MongoDb database object.
 
 > `protected` **_database**: IMongoDatabase
 
 #### _maxPageSize
-The maximum number of records to return from the database per request.
+Maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: int = 100
 
-</span
+
+</span>
 
 
 ### Instance methods
-
+    
 #### ClearAsync
 Clears a component's state.
 
@@ -166,7 +168,7 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `public virtual` async Task\<T\> GetOneRandomAsync(string correlationId, FilterDefinition\<T\> filterDefinition)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterDefinition**: FilterDefinition\<T\> - fileter JSON object.
+- **filterDefinition**: FilterDefinition\<T\> - filter JSON object.
 - **returns**: Task\<T\> - random item.
 
 

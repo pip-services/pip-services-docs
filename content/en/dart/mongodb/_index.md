@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-mongodb-dart"
 no_list: true
 weight: 30
 description: > 
-    MongoDB components for Pip.Services for Pip.Services in Dart
+    MongoDB components for Pip.Services for Pip.Services in Dart. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
 ---
@@ -13,8 +13,8 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - Factory to create MongoDB persistence components.
-- [**Connect**](connect) - Connection component to configure MongoDB connection to database.
+- [**Build**](build) - factory to create MongoDB persistence components.
+- [**Connect**](connect) - connection component to configure MongoDB connection to database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
@@ -31,7 +31,7 @@ Now you can install package from the command line:
 pub get
 ```
 
-As an example, lets create persistence for the following data object.
+As an example, lets create persistence for the following data object:
 
 ```dart
 import 'package:pip_services3_commons/src/data/IIdentifiable.dart';
@@ -44,7 +44,7 @@ class MyObject implements IIdentifiable<String> {
 
 ```
 
-The persistence component shall implement the following interface with a basic set of CRUD operations.
+The persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```dart
 abstract class IMyPersistence {
@@ -119,7 +119,7 @@ class MyMongoDbPersistence extends IdentifiableMongoDbPersistence {
 }
 ```
 
-Configuration for your microservice that includes mongodb persistence may look the following way.
+The configuration for your microservice that includes mongodb persistence may look the following way:
 
 ```yaml
 ...

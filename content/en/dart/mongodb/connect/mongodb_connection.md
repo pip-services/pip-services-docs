@@ -60,11 +60,11 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### logger
-The logger.
+Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### connectionResolver
-The connection resolver.
+Connection resolver.
 > **connectionResolver**: [MongoDbConnectionResolver](../mongodb_connection_resolver) 
 
 #### options
@@ -72,11 +72,11 @@ The configuration options.
 > **options**: [ConfigParams](../../../commons/config/config_params) 
 
 #### connection
-The MongoDB database object.
+MongoDB database object.
 > **connection**: mongo.Db
 
 #### databaseName
-The MongoDB database name.
+MongoDB database name.
 > **databaseName**: String
   
 </span>
@@ -120,12 +120,12 @@ Gets the MongoDB database.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 `@override`
 > bool isOpen()
 
-- **return**: bool - True if the component has been opened and False otherwise.
+- **return**: bool - True if the component is open and False otherwise.
 
 
 #### open
@@ -143,4 +143,4 @@ Sets the references to the dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

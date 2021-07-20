@@ -15,7 +15,7 @@ description: >
 
 The MySqlConnectionResolver class allows you to create a MySQL connection and credential parameters resolver that validates the parameters and generates a connection URI.
 
-Important points
+**Important points**
 
 - It is able to process multiple connections to MySQL cluster nodes.
 
@@ -70,7 +70,7 @@ Resolves a MySQL configuration from connection and credential parameters.
 > `public` Task\<string\> ResolveAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Task\<string\> - resolved connection config or raise error
+- **returns**: Task\<string\> - resolved connection config or raised error
 
 
 #### SetReferences

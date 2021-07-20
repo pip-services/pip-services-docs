@@ -13,11 +13,12 @@ description: >
 
 ### Description
 
-The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
+The MongoDbPersistence class allows you to create persistence components that store data in MongoDB databases using the official MongoDB driver.
 
-Important points
+**Important points**
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this.__collection** or **this.__model** properties.
+- This is the most basic persistence component that is only able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this.__collection** or **this.__model** properties.
 
 #### Configuration parameters
 
@@ -71,34 +72,36 @@ The dependency resolver.
 > **dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### logger
-The logger.
+Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### connection
-The MongoDB connection component.
+MongoDB connection component.
 > **connection**: [MongoDBConnection](../../connect/mongodb_connection) 
 
 #### collectionName
-The MongoDB colleciton name.
+MongoDB colleciton name.
 > **collectionName**: String;
 
 #### collection
-The MongoDb collection object.
+MongoDb collection object.
 > **collection**: mongo.DbCollection
 
 #### client
-The MongoDB connection pool object.
+MongoDB connection pool object.
 > **client**: mongo.Db 
 
 #### databaseName 
-The MongoDB database name.
+MongoDB database name.
 > **databaseName**: String
 
 #### maxPageSize
-The maximum number of records to return from the database per request.
+Maximum number of records to return from the database per request.
 > **maxPageSize**: int = 100
 
-</span
+    
+
+</span>
 
 
 ### Instance methods

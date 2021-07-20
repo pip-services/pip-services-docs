@@ -5,29 +5,24 @@ title: "Step 1. Build"
 linkTitle: "Step 1. Build" 
 ---
 
+**TODO: rewrite for Dart**
+
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special “build” Docker image. The project’s source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
 
 To perform the build process for a Node.js project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
 
 ```dockerfile
-FROM node:8
-‍
-# Install development tools
-RUN npm install typescript -g
-‍
+FROM google/dart
+
 # set working directory
 WORKDIR /app
-‍
-# Copy project file
-COPY package*.json ./
-‍
-# install ALL node_modules, including 'devDependencies'
-RUN npm install
 
 # copy all project
 COPY . .
-# compile source code
-RUN tsc
+
+# get all dependencies
+RUN pub get
+RUN pub get --offline
 
 ```
 

@@ -7,7 +7,7 @@ linkTitle: "Step 1. Build"
 
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special “build” Docker image. The project’s source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
 
-To perform the build process for a .NET project, we’ll be creating a Docker container build scenario in a file named Dockerfile.build. Copy the following into this file:
+To perform the build process for a .NET project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
 
 ```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
@@ -52,7 +52,7 @@ Let’s have a look at what this Docker script will be doing. The standard Core 
 
 Note these the **csproj** files is copied first, then the dependencies are installed, and only after that do we copy the rest of the source code. This is done to speed up container creation during future runs, as the steps that haven’t changed from the last run are simply taken from Docker’s cache. In other words, unless we add or remove a dependency, Docker can use the cached image with all of the dependencies already installed, and only has to perform the “copy” and “compile” steps when we change the project’s source code.
 
-In our projects, we strive to make our scripts as universal as possible. Because of this, all variable values are defined in a separate file named component.json, which looks like this:
+In our projects, we strive to make our scripts as universal as possible. Because of this, all variable values are defined in a separate file named **component.json**, which looks like this:
 
 ```json
 {

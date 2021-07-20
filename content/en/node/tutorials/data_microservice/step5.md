@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Step 5. Implementing an HTTP service"
 linkTitle: "Step 5. HTTP service" 
+gitUrl: "https://github.com/pip-services-samples/service-beacons-nodex"
 ---
 
 The Pip.Services Toolkit has a dedicated component in the RPC module for processing external requests. To make use of this service, create a new class `BeaconsHttpServiceV1`, extending the `CommandableHttpService` class:

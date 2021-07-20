@@ -2,7 +2,7 @@
 type: docs
 title: "RedisCache"
 linkTitle: "RedisCache"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-redis-nodex"
+gitUrl: "https://github.com/pip-services3-dart/pip-services3-redis-dart"
 description: >
     Distributed cache that stores values in Redis in-memory database.
 
@@ -38,7 +38,7 @@ The RedisCache class allows you to create distributed caches that store values i
 ### Constructors
 Creates a new instance of this cache.
 
-> `public` constructor()
+> RedisCache()
 
 ### Fields
 
@@ -46,11 +46,11 @@ Creates a new instance of this cache.
 
 #### _connectionResolver
 Connection resolver
-> `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
+> **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
 Credential resolver
-> `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
+> **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
 
@@ -60,15 +60,17 @@ Credential resolver
 #### close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+`@override`
+> Future close(String correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
 Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+`@override`
+> void configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -76,40 +78,45 @@ Configures a component by passing its configuration parameters.
 #### isOpen
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+`@override`
+> bool isOpen()
 
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+`@override`
+> Future open(String correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 #### remove
 Removes a value from the cache by its key.
 
-> `public` remove(correlationId: string, key: string): Promise\<any\>
+`@override`
+> Future\<dynamic\> remove(String correlationId, String key)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **returns**: Promise\<any\> - removed value.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - unique value key.
+- **returns**: Future\<dynamic\> - removed value.
 
 #### retrieve
 Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns null.
 
-> `public` retrieve(correlationId: string, key: string): Promise\<any\>
+`@override`
+> Future\<dynamic\> retrieve(String correlationId, String key)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **returns**: Promise\<any\> - retrieved cached value or *null* if nothing was found.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - unique value key.
+- **returns**: Future\<dynamic\> - retrieved cached value or *null* if nothing was found.
 
 #### setReferences
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+`@override`
+> void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
@@ -117,25 +124,27 @@ Sets references to dependent components.
 #### store
 Stores a value in the cache with an expiration time.
 
-> `public` store(correlationId: string, key: string, value: any, timeout: number): Promise\<any\>
+> Future\<dynamic\> store(String correlationId, String key, value, int timeout)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **value**: any - value to store.
-- **timeout**: number - expiration timeout in milliseconds.
-- **returns**: Promise\<any\> - stored value.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - unique value key.
+- **value**: dynamic - value to store.
+- **timeout**: int - expiration timeout in milliseconds.
+- **returns**: Future\<dynamic\> - stored value.
 
 
 ### Examples
-```typescript
-let cache = new RedisCache();
-cache.configure(ConfigParams.fromTuples(
-  "host", "localhost",
-  "port", 6379
-));
+```dart
+var cache = RedisCache();
+cache.configure(ConfigParams.fromTuples([
+   "host", "localhost",
+   "port", 6379
+]));
 
 await cache.open("123");
+   ...
 await cache.store("123", "key1", "ABC");
-let value = await cache.store("123", "key1"); // Result: "ABC"
+var value = await cache.retrieve("123", "key1");
+// Result: "ABC"
 
 ```

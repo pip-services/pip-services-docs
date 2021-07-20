@@ -30,9 +30,9 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 - **password**: user's password
 
 **options**:
-- **max_pool_size**: (optional) maximum connection pool size 
-- **keep_alive**: (optional) enable connection keep alive 
-- **connect_timeout**: (optional) connection timeout in milliseconds 
+- **max_pool_size**: (optional) maximum connection pool size (default: 2)
+- **keep_alive**: (optional) enable connection keep alive (default: true)
+- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5 sec)
 - **auto_reconnect**: (optional) enable auto reconnection (default: true)
 - **max_page_size**: (optional) maximum page size (default: 100)
 - **debug**: (optional) enable debug output (default: false).

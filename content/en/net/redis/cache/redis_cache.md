@@ -35,6 +35,10 @@ The RedisCache class allows you to create distributed caches that store values i
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) stores to resolve credentials
 
+### Constructors
+Creates a new instance of this cache.
+
+> `public` RedisCache()
 
 ### Fields
 
@@ -50,10 +54,6 @@ Credential resolver
 
 </span>
 
-### Constructors
-Creates a new instance of this cache.
-
-> `public` RedisCache()
 
 ### Instance methods
 

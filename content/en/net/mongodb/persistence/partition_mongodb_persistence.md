@@ -75,7 +75,9 @@ Creates a new instance of the persistence component.
 TODO: add description
 > `protected` **_partitionKey**: string
 
-</span
+    
+
+</span>
 
 
 ### Instance methods

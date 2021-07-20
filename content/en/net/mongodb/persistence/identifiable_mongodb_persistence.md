@@ -19,7 +19,7 @@ The IdentifiableMongoDbPersistence class allows you to create persistance compon
 **Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [GetPageByFilterAsync](../mongodb_persistence/#getpagebyfilterasync), [GetListByFilter](../mongodb_persistence/#getlistbyfilterasync) or [GeleteByFilter](../mongodb_persistence/#deletebyfilterasync)  operations with specific filter functions. All other operations can be used out of the box. 
+- In basic scenarios child classes shall only override [GetPageByFilterAsync](../mongodb_persistence/#getpagebyfilterasync), [GetListByFilter](../mongodb_persistence/#getlistbyfilterasync) or [DeleteByFilter](../mongodb_persistence/#deletebyfilterasync)  operations with specific filter functions. All other operations can be used out of the box. 
 - In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
@@ -118,7 +118,7 @@ Gets a data item by its unique id.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - id of data item to be retrieved.
-- **returns**: Task\<T\> - data item by id.
+- **returns**: Task\<T\> - data item.
 
 
 #### SetAsync

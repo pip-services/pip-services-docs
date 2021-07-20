@@ -15,7 +15,7 @@ description: >
 
 The MongoDbPersistence class allows you to create persistence components that store data in MongoDBs using the official MongoDB driver.
 
-Important points
+**Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
 - Specific CRUD operations over the data items must be implemented in child classes by accessing **this._collection** or **this.__model** properties.
@@ -63,7 +63,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
@@ -193,7 +193,7 @@ Unsets (clears) previously set references to dependent components.
 #### SetReferences
 Sets references to dependent components.
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

@@ -21,7 +21,7 @@ Important points
 #### Configuration parameters
 
 - **connection(s)**:   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
     - **protocol**: connection protocol: http or https   
     - **host**: host name or IP address   
     - **port**: port number   
@@ -63,9 +63,9 @@ Service's name.
 ### Instance methods
 
 #### callCommand
-Calls a remote method via the GRPC commadable protocol.
-The call is made via the Invoke method and all parameters are sent in args object.
-The complete route to remote method is defined as serviceName + '.' + name.
+Calls a remote method via the gRPC commadable protocol.
+The call is made via the Invoke method and all parameters are sent in the args object.
+The complete route to the remote method is defined as serviceName + '.' + name.
 
 > `public` Task\<T\> CallCommandAsync\<T\>(string name, string correlationId, object requestEntity)
 

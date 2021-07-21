@@ -4,7 +4,7 @@ title: "GrpcService"
 linkTitle: "GrpcService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Abstract service that receives remote calls via the GRPC protocol.
+    Abstract service that receives remote calls via the gRPC protocol.
 
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The GrpcService class allows you to create services that receive remote calls via the GRPC protocol.
+The GrpcService class allows you to create services that receive remote calls via the gRPC protocol.
 
 #### Configuration parameters
 - **dependencies**:   
@@ -51,19 +51,19 @@ Creates a new instance of the service.
 <span class="hide-title-link">
 
 #### _endpoint
-The GRPC endpoint that exposes this service.
+gRPC endpoint that exposes this service.
 > `protected` **_endpoint**: [GrpcEndpoint](../grpc_endpoint)
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _counters
-The performance counters.
+Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _serviceName
@@ -96,7 +96,7 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool -True if the endpoint is open with an actively listening GRPC server.
+- **returns**: bool -true if the endpoint is open with an actively listening gRPC server.
 
 
 #### Instrument
@@ -114,12 +114,12 @@ Adds instrumentation to error handling.
 
 > `protected` void InstrumentError(string correlationId, string methodName, Exception ex, bool rethrow = false)
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **methodName**: string - a method name.
-- **ex**: Exception - Error that occured during the method call
-- **rethrow**: bool - True to throw the exception
+- **methodName**: string - method name.
+- **ex**: Exception - error that occured during the method call.
+- **rethrow**: bool - true to throw the exception.
 
 #### OnRegister
-Registers all service routes in gRPC endpoint.
+Registers all service routes in a gRPC endpoint.
 
 This method is called by the service and must be overriden
 in child classes.
@@ -142,7 +142,7 @@ Registers all service routes in the HTTP endpoint.
 
 #### RegisterMethod
 
-Registers a method in GRPC service.
+Registers a method in a gRPC service.
 
 - where TRequest : class, IMessage\<TRequest\>, new()
 - where TResponse : class, IMessage\<TResponse\>, new()
@@ -150,14 +150,13 @@ Registers a method in GRPC service.
 > `protected` void RegisterMethod\<TRequest, TResponse\>(string name, UnaryServerMethod\<TRequest, TResponse\> handler)
 
 - **name**: string - method name
-- **handler**: UnaryServerMethod\<TRequest, TResponse\> - TODO add description
-
+- **handler**: UnaryServerMethod\<TRequest, TResponse\> - handler
 #### SetReferences
 Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

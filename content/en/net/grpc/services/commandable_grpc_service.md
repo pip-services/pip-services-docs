@@ -60,7 +60,7 @@ Accepts a request and waits for the response.
 - **context**: ServerCallContext - context
 
 #### OnRegister
-Registers all service routes in gRPC endpoint.
+Registers all service routes in a gRPC endpoint.
 
 > `protected override` void OnRegister()
 

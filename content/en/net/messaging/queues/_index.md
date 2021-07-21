@@ -16,10 +16,10 @@ description: >
 #### [IMessageQueue](imessage_queue)
 Interface for asynchronous message queues.
 Not all queues may implement all the methods.
-Attempt to call non-supported method will result in NotImplemented exception.
+Attempt to call non-supported method will result in a NotImplemented exception.
 To verify if a specific method is supported check [MessagingCapabilities](messaging_capabilities).
 
-#### [IMessageReceive](imessage_receive)
+#### [IMessageReceiver](imessage_receiver)
 Callback interface used to receive incoming messages.
 
 <br>
@@ -28,11 +28,10 @@ Callback interface used to receive incoming messages.
 
 #### [CachedMessageQueue](cached_message_queue)
 Message queue that caches received messages in memory to allow peek operations
-that may not be supported by the undelying queue.  
-This queue is used as a base implementation for other queues
+that may not be supported by the undelying queue. This queue is used as a base implementation for other queues
 
 #### [CallbackMessageReceiver](callback_message_receiver)
-Wraps a message callback into IMessageReceiver
+Wraps a message callback into [IMessageReceiver](imessage_receiver)
 
 #### [LockedMessage](locked_message)
 Data object used to store and lock incoming messages in [MemoryMessageQueue](memory_message_queue).

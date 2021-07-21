@@ -43,7 +43,7 @@ Creates a new instance of the gRPC client.
 <span class="hide-title-link">
 
 #### _channel
-The gRPC client.
+gRPC client.
 > **_channel**: grpc.ClientChannel
 
 #### _connectionResolver
@@ -71,7 +71,7 @@ Invocation timeout in milliseconds.
 > **_timeout**: int = 100000
 
 #### _uri
-Remote service uri which is calculated on openning.
+Remote service URI which is calculated on openning.
 > **_uri**: String
 
 </span>
@@ -110,7 +110,7 @@ Configures the component by passing its configuration parameters.
 
 
 #### instrument
-Adds instrumentation to log calls and measures call time.
+Adds instrumentation to log calls and measure call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
 > [Timing](../../../components/count/timing) instrument(String correlationId, String name)
@@ -137,7 +137,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - Returns True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open

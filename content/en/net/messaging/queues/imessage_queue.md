@@ -15,11 +15,11 @@ description: >
 
 The IMessageQueue interface is used for asynchronous message queues.
 
-Important points
+**Important points**
 
 - Not all queues may implement all the methods.
 - An ttempt to call a non-supported method will result in a NotImplemented exception.
-- To verify if a specific method is supported check [MessagingCapabilities](../messaging_capabilities). 
+- To verify if a specific method is supported, check [MessagingCapabilities](../messaging_capabilities). 
 
 
 ### Properties
@@ -47,7 +47,7 @@ See also [IMessageReceiver](../imessage_receiver), [ListenAsync](#listenasync)
 
 > void BeginListen(string correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
@@ -55,7 +55,7 @@ Listens for incoming messages without blocking the current thread.
 
 > void BeginListen(string correlationId, Func<[MessageEnvelope](../message_envelope), [IMessageQueue](), Task> callback)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **callback**: Func<[MessageEnvelope](../message_envelope), [IMessageQueue](), Task> - receiver used to receive incoming messages.
 
 
@@ -74,7 +74,7 @@ Ends listening for incoming messages. When this method is called, [listen](#list
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### ListenAsync
-Listens for incoming messages and blocks the current thread until queue is closed.  
+Listens for incoming messages and blocks the current thread until the queue is closed.  
 See also [IMessageReceiver](../imessage_receiver), [ReceiveAsync](#receiveasync)
 
 > Task ListenAsync(string correlationId, [IMessageReceiver](../imessage_receiver) receiver)
@@ -82,7 +82,7 @@ See also [IMessageReceiver](../imessage_receiver), [ReceiveAsync](#receiveasync)
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
-Listens for incoming messages and blocks the current thread until queue is closed.  
+Listens for incoming messages and blocks the current thread until the queue is closed.  
 
 > Task ListenAsync(string correlationId, Func\<[MessageEnvelope](../message_envelope), [IMessageReceiver](../imessage_receiver), Task\> callback)
 
@@ -147,13 +147,13 @@ Sends a message into the queue.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 #### SendAsObjectAsync
-Sends an object into the queue. Before being sent, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
+Sends an object into the queue. Before being sent, the object is converted into a JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
 > Task SendAsObjectAsync(string correlationId, string messageType, object message)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageType**: string - message type
-- **message**: object - an object value to be sent
+- **message**: object - object value to be sent
 
 
 

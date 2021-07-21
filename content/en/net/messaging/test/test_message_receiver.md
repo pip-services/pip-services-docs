@@ -26,7 +26,7 @@ Creates a TestMessageReceiver component.
 #### messages
 Gets the list of received messages.
 
-> public List<[MessageEnvelope](../message_envelope)> Messages { get; }
+> public List<[MessageEnvelope](../../queues/message_envelope)> Messages { get; }
 
 
 #### MessageCount
@@ -42,7 +42,7 @@ Clears all received messagers.
 
 > `public` Task ClearAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 ### ReceiveMessageAsync
@@ -52,5 +52,5 @@ See also [MessageEnvelope](../../queues/message_envelope), [IMessageQueue](../..
 
 > `public` Task ReceiveMessageAsync([MessageEnvelope](../../queues/message_envelope) message, [IMessageQueue](../../queues/imessage_queue) queue)
 
-- **envelope**: [MessageEnvelope](../../queues/message_envelope) - an incoming message
-- **queue**: [IMessageQueue](../../queues/imessage_queue) - a queue where the message comes from
+- **envelope**: [MessageEnvelope](../../queues/message_envelope) - incoming message
+- **queue**: [IMessageQueue](../../queues/imessage_queue) - queue where the message comes from

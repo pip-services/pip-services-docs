@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Extends:** [GrpcClient](../../grpc_client)
+**Extends:** [GrpcClient](../../clients/grpc_client)
 
 See also [CommandableGrpcClient](../../clients/commandable_grpc_client), 
 [GrpcService](../grpc_service)

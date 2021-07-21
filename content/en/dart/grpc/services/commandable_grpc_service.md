@@ -4,25 +4,25 @@ title: "CommandableGrpcService"
 linkTitle: "CommandableGrpcService"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 description: > 
-    Abstract service that receives commands via the GRPC protocol.
+    Abstract service that receives commands via the gRPC protocol.
 
 ---
 
-**Extends:** [GrpcClient](../grpc_client)
+**Extends:** [GrpcClient](../../grpc_client)
 
 See also [CommandableGrpcClient](../../clients/commandable_grpc_client), 
 [GrpcService](../grpc_service)
 
 ### Description
 
-Abstract service that receives commands via GRPC protocol
+Abstract service that receives commands via gRPC protocol
 to operations automatically generated for commands defined in [ICommandable](../../../commons/commands/icommandable).
 
-Important points
+**Important points**
 
 - Each command is exposed as an Invoke method that receives a command name and parameters.
 - Commandable services require only 3 lines of code to implement a robust external
-GRPC-based remote interface.
+gRPC-based remote interface.
 
 #### Configuration parameters
 

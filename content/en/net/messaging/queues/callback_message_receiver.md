@@ -7,7 +7,7 @@ description: >
     Wraps a message callback into [IMessageReceiver](../imessage_receiver)
 ---
 
-**Inherts:** [IMessageReceiver](../imessage_receiver)
+**Inherits:** [IMessageReceiver](../imessage_receiver)
 
 ### Description
 
@@ -19,7 +19,7 @@ Creates an instance of the CallbackMessageReceiver.
 > `public` CallbackMessageReceiver(Func\<[MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue), Task\> callback)
     
 
-- **callback**: Func\<[MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue), Task\> - a callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
+- **callback**: Func\<[MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue), Task\> - callback function that shall be wrapped into [IMessageReceiver](../imessage_receiver)
 
 ### Instance methods
 

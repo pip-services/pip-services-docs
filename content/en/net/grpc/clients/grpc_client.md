@@ -4,7 +4,7 @@ title: "GrpcClient"
 linkTitle: "GrpcClient"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Abstract client that calls remote endpoints using the GRPC protocol.
+    Abstract client that calls remote endpoints using the gRPC protocol.
 
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The GrpcClient class allows you to create clients that call remote endpoints using the GRPC protocol.
+The GrpcClient class allows you to create clients that call remote endpoints using the gRPC protocol.
 
 #### Configuration parameters
 
@@ -31,7 +31,7 @@ The GrpcClient class allows you to create clients that call remote endpoints usi
 
 ### Constructors
 
-Creates a new instance of the grpc client.
+Creates a new instance of the gRPC client.
 
 > `public` GrpcClient(string name = null)
 
@@ -44,27 +44,27 @@ Creates a new instance of the grpc client.
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [HttpConnectionResolver](../../../rpc/connect/http_connection_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)()
 
 #### _counters
-The performance counters.
+Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters)()
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)()
 
 #### _connectTimeout
-The connection timeout in milliseconds.
+Connection timeout in milliseconds.
 > `protected` **_connectTimeout**: int = 100000
 
 #### _serviceName
-TODO: add description
+Service's name
 > `protected` **_serviceName**: string
 
 </span>
@@ -73,7 +73,7 @@ TODO: add description
 ### Instance methods
 
 #### CallAsync
-Calls a remote method via GRPC protocol.
+Calls a remote method via gRPC protocol.
 
 > `protected` Task\<TResponse\> CallAsync\<TRequest, TResponse\>(string name, TRequest request)
 
@@ -102,11 +102,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> `protected` [CounterTiming](../../../components/cout/counter_timing) Instrument(string correlationId, [CallerMemberName] string methodName = null)
+> `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, [CallerMemberName] string methodName = null)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **methodName**: string - method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
+- **methodName**: string - method's name.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
 
 
 #### InstrumentError
@@ -115,9 +115,9 @@ Adds instrumentation to error handling.
 > `protected` void InstrumentError(string correlationId, [CallerMemberName] string methodName = null, Exception ex = null, bool rethrow = false)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **methodName**: string - method name.
+- **methodName**: string - method's name.
 - **ex**: Exception - occured error
-- **rethrow**: bool -  if True - throw error
+- **rethrow**: bool -  if true - throw error
 
 
 #### IsOpen
@@ -125,7 +125,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - Returns True if the component is open and False otherwise.
+- **returns**: bool - Returns true if the component is open and false otherwise.
 
 
 #### Open
@@ -136,14 +136,14 @@ Opens the component.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### GetOrCreateMethod
-Creates a method definition to be called using GRPC.
+Creates a method definition to be called using gRPC.
 
 - where TRequest : class, IMessage\<TRequest\>, new()
 - where TResponse : class, IMessage\<TResponse\>, new()
 
 > `protected` Method\<TRequest, TResponse\> GetOrCreateMethod\<TRequest, TResponse\>(string name)
 
-- **name**: string - name of gRPC method
+- **name**: string - name of the gRPC method
 - **returns**: Method\<TRequest, TResponse\> - TRequest - type of request message, TResponse - type of response message.
 
 #### SetReferences
@@ -151,7 +151,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

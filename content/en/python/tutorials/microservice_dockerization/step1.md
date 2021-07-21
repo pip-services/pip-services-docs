@@ -5,11 +5,11 @@ title: "Step 1. Build"
 linkTitle: "Step 1. Build" 
 ---
 
-**TODO rewrite this step for Python (Python is an interpreted language and not a compiled one)**
-
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special “build” Docker image. The project’s source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
 
-To perform the build process for a Node.js project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
+Python is an interpreted language and does not require compilation. But to save an identical pipeline, a stub script is used.
+
+To perform the build process for a Python project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
 
 ```bash
 FROM python:3
@@ -30,7 +30,7 @@ COPY . .
 
 This file, along with the others we will be creating, should be placed in the docker folder at the root of the project.
 
-Let’s have a look at what this Docker script will be doing. The standard Python v.3 image is going to be used as the base image, and Python is going to be installed on top of it. Next, /app is set as the working directory and our project’s requirements.txt file is copied there. This file contains a list of dependencies that are required to build the project, which are installed using the npm install command. The last steps of the script simply copies the rest of the project to the image.
+Let’s have a look at what this Docker script will be doing. The standard Python v.3 image is going to be used as the base image, and Python is going to be installed on top of it. Next, /app is set as the working directory and our project’s requirements.txt file is copied there. This file contains a list of dependencies that are required to build the project, which are installed using the **pip install -r requirements.txt** command. The last steps of the script simply copies the rest of the project to the image.
 
 Note that the file requirements.txt is copied first, then the dependencies are installed, and only after that do we copy the rest of the source code. This is done to speed up container creation during future runs, as the steps that haven’t changed from the last run are simply taken from Docker’s cache. In other words, unless we add or remove a dependency, Docker can use the cached image with all of the dependencies already installed, and only has to perform the “copy” steps when we change the project’s source code.
 
@@ -66,11 +66,6 @@ $container=$component.name
 $component.build = $env:BUILD_NUMBER
 Set-Content -Path "component.json" -Value $($component | ConvertTo-Json)
 
-# Remove build files
-if (Test-Path "obj") {
-    Remove-Item -Recurse -Force -Path "obj"
-}
-
 # Copy private keys to access git repo
 if (-not (Test-Path -Path "docker/id_rsa")) {
     if ($env:GIT_PRIVATE_KEY -ne $null) {
@@ -83,7 +78,7 @@ if (-not (Test-Path -Path "docker/id_rsa")) {
 # Build docker image
 docker build -f docker/Dockerfile.build -t $buildImage .
 
-# Create and copy compiled files, then destroy
+# Create container, then destroy
 docker create --name $container $buildImage
 docker rm $container
 

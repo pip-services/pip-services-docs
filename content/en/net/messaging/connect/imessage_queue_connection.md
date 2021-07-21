@@ -15,7 +15,7 @@ The IMessageQueueConnection interface is used to create message queue connection
 
 #### CreateQueueAsync
 Creates a message queue.
-If connection doesn't support this function, it exits without error.
+If the connection doesn't support this function, it exits without error.
 
 > Task CreateQueueAsync(string name)
 
@@ -23,14 +23,14 @@ If connection doesn't support this function, it exits without error.
 
 #### DeleteQueueAsync
 Deletes a message queue.
-If connection doesn't support this function, it exits without error.
+If the connection doesn't support this function, it exits without error.
 
 > Task DeleteQueueAsync(string name)
 
 - **name**: string - name of the queue to be deleted.
 
 #### ReadQueueNamesAsync
-Reads a list of registered queue names. If connection doesn't support this function returns an empty list.
+Reads a list of registered queue names. If the connection doesn't support this function returns an empty list.
 
 > Task\<List\<string\>\> ReadQueueNamesAsync()
 

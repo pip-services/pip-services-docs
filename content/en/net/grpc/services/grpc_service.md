@@ -17,7 +17,7 @@ The GrpcService class allows you to create services that receive remote calls vi
 
 #### Configuration parameters
 - **dependencies**:   
-    - **endpoint**: override for GRPC Endpoint dependency    
+    - **endpoint**: override for gRPC Endpoint dependency    
     - **controller**: override for Controller dependency    
 - **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
@@ -96,11 +96,11 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool -true if the endpoint is open with an actively listening gRPC server.
+- **returns**: bool - true if the endpoint is open with an actively listening gRPC server.
 
 
 #### Instrument
-Adds instrumentation to log calls and measures call time. 
+Adds instrumentation to log calls and measure call time. 
 It returns a CounterTiming object that is used to end the time measurement.
 
 > `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, string methodName)

@@ -17,7 +17,7 @@ Client that calls a commandable gRPC service.
 Commandable services are generated automatically for [ICommandable](../../commons/commands/icommandable). Each command is exposed as an invoke method that receives all parameters as args.
 
 #### [GrpcClient](grpc_client)
-Client that calls remote endpoints using the GRPC protocol.
+Client that calls remote endpoints using the gRPC protocol.
 
 
 </div>

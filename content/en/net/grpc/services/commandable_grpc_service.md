@@ -4,23 +4,23 @@ title: "CommandableGrpcService"
 linkTitle: "CommandableGrpcService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Abstract service that receives commands via the GRPC protocol.
+    Abstract service that receives commands via the gRPC protocol.
 
 ---
 
-**Inherits:** [GrpcClient](../grpc_client)
+**Inherits:** [GrpcClient](../clients/grpc_client)
 
 
 ### Description
 
-Abstract service that receives commands via GRPC protocol
+Abstract service that receives commands via the gRPC protocol
 to operations automatically generated for commands defined in [ICommandable](../../../commons/commands/icommandable).
 
-Important points
+**Important points**
 
 - Each command is exposed as an Invoke method that receives a command name and parameters.
 - Commandable services require only 3 lines of code to implement a robust external
-GRPC-based remote interface.
+gRPC-based remote interface.
 
 #### Configuration parameters
 
@@ -50,12 +50,14 @@ Creates a new instance of the service.
 
 
 ### Instance methods
-TODO: add description
+
+#### InvokeAsync
+Accepts a request and waits for the response.
 
 > `protected` Task\<InvokeReply\> InvokeAsync(InvokeRequest request, ServerCallContext context)
 
-- **request**: InvokeRequest - TODO: add description
-- **context**: ServerCallContext - TODO: add description
+- **request**: InvokeRequest - request
+- **context**: ServerCallContext - context
 
 #### OnRegister
 Registers all service routes in gRPC endpoint.

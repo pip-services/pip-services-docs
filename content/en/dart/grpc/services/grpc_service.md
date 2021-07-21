@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The GrpcService class allows you to create services that receive remote calls via the GRPC protocol.
+The GrpcService class allows you to create services that receive remote calls via the gRPC protocol.
 
 #### Configuration parameters
 - **dependencies**:   
@@ -42,19 +42,19 @@ The GrpcService class allows you to create services that receive remote calls vi
 <span class="hide-title-link">
 
 #### endpoint
-The GRPC endpoint that exposes this service.
+GRPC endpoint that exposes this service.
 > **endpoint**: [GrpcEndpoint](../grpc_endpoint)
 
 #### dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > **dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### logger
-The logger.
+Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### counters
-The performance counters.
+Performance counters.
 > **counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 </span>
@@ -86,7 +86,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool -True if the endpoint is open with an actively listening GRPC server.
+- **returns**: bool -true if the endpoint is open with an actively listening gRPC server.
 
 
 #### instrument
@@ -119,7 +119,7 @@ This method is called by the service and must be overriden in child classes.
 
 
 #### registerInterceptor
-Registers a middleware for methods in GRPC endpoint.
+Registers a middleware for methods in gRPC endpoint.
 
 > void registerInterceptor(grpc.Interceptor action)
 
@@ -131,7 +131,7 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references) 
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### unsetReferences

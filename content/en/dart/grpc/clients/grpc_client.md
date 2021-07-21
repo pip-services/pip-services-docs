@@ -4,7 +4,7 @@ title: "GrpcClient"
 linkTitle: "GrpcClient"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 description: > 
-    Abstract client that calls remote endpoints using the GRPC protocol.
+    Abstract client that calls remote endpoints using the gRPC protocol.
 
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The GrpcClient class allows you to create clients that call remote endpoints using the GRPC protocol.
+The GrpcClient class allows you to create clients that call remote endpoints using the gRPC protocol.
 
 #### Configuration parameters
 
@@ -31,7 +31,7 @@ The GrpcClient class allows you to create clients that call remote endpoints usi
 
 ### Constructors
 
-Creates a new instance of the grpc client.
+Creates a new instance of the gRPC client.
 
 > GrpcClient(String clientName)
 
@@ -43,35 +43,35 @@ Creates a new instance of the grpc client.
 <span class="hide-title-link">
 
 #### _channel
-The GRPC client.
+The gRPC client.
 > **_channel**: grpc.ClientChannel
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > **_connectionResolver**: [HttpConnectionResolver](../../../rpc/connect/http_connection_resolver)
 
 #### _logger
-The logger.
+Logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger)()
 
 #### _counters
-The performance counters.
+Performance counters.
 > **_counters**: [CompositeCounters](../../../components/count/composite_counters)()
 
 #### _options
-The configuration options.
+Configuration options.
 > **_options**: [ConfigParams](../../../commons/config/config_params)()
 
 #### _connectTimeout
-The connection timeout in milliseconds.
+Connection timeout in milliseconds.
 > **_connectTimeout**: int = 100000
 
 #### _timeout
-The invocation timeout in milliseconds.
+Invocation timeout in milliseconds.
 > **_timeout**: int = 100000
 
 #### _uri
-The remote service uri which is calculated on openning.
+Remote service uri which is calculated on openning.
 > **_uri**: String
 
 </span>
@@ -80,7 +80,7 @@ The remote service uri which is calculated on openning.
 ### Instance methods
 
 #### call
-Calls a remote method via GRPC protocol.
+Calls a remote method via gRPC protocol.
 
 > grpc.ResponseFuture\<R\>call\<Q extends GeneratedMessage, R extends GeneratedMessage\>(String method, String correlationId, Q request, {grpc.CallOptions options})
 

@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Inherits:** [GrpcClient](../clients/grpc_client)
+**Inherits:** [GrpcClient](../../clients/grpc_client)
 
 
 ### Description

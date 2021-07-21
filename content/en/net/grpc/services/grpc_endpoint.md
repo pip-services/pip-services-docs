@@ -4,7 +4,7 @@ title: "GrpcEndpoint"
 linkTitle: "GrpcEndpoint"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Used for creating GRPC endpoints. 
+    Used for creating gRPC endpoints. 
 
 ---
 
@@ -12,17 +12,17 @@ description: >
 
 
 ### Description
-The GrpcEndpoint class allows you to create GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
+The GrpcEndpoint class allows you to create gRPC endpoints. An endpoint is a URL at which a given service can be accessed by a client.
 
 #### Configuration parameters
 Parameters to pass to the :func:`configure` method for component configuration:
 
 **connection(s)**: the connection resolver's connections:
-- **"connection.discovery_key"**: key used for connection resolving in a discovery service;
-- **"connection.protocol"**: connection's protocol;
-- **"connection.host"**: target host;
-- **"connection.port"**: target port;
-- **"connection.uri"**: target URI.
+- **"connection.discovery_key"**: key used for connection resolving in a discovery service
+- **"connection.protocol"**: connection's protocol
+- **"connection.host"**: target host
+- **"connection.port"**: target port
+- **"connection.uri"**: target URI    
 **credential**: HTTPS credentials:
 - **"credential.ssl_key_file"**: SSL private key in PEM
 - **"credential.ssl_crt_file"**: SSL certificate in PEM
@@ -30,18 +30,18 @@ Parameters to pass to the :func:`configure` method for component configuration:
 
 #### References
 A logger, counters, and a connection resolver can be referenced by passing the
-following references to the object's [set_references](#set_references)
+following references to the object's [set_references](#setreferences)
 
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand as specified by the counter's source.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements as specified by the counter's source.
 
 
 ### Instance methods
 
 
 #### Close
-Closes this endpoint and the GRPC server (service) that was opened earlier.
+Closes this endpoint and the gRPC server (service) that was opened earlier.
 
 > `public virtual` Task CloseAsync(string correlationId)
 
@@ -61,8 +61,8 @@ object that is used to end the time measurement.
 
 > `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, string name)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **name**: string - a method name.
+- **correlationId**: string - (optional) transaction id to trace execution through the call chain.
+- **name**: string - method name.
 - **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object to end the time measurement.
 
 
@@ -71,7 +71,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - whether or not this endpoint is open with an actively listening GRPC server.
+- **returns**: bool - true if this endpoint is open with an actively listening gRPC server and false otherwise
 
 
 #### Open
@@ -95,20 +95,20 @@ Registers a service with related implementation
 
 > `public` void RegisterService(ServerServiceDefinition serverServiceDefinition)
 
-- **serverServiceDefinition**: ServerServiceDefinition - a GRPC service object.
+- **serverServiceDefinition**: ServerServiceDefinition - a gRPC service object.
 
 #### SetReferences
 Sets references to this endpoint's logger, counters, and connection resolver.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
-- **references**: [IReferences](../../../commons/refer/ireferences) - an IReferences object, containing references to a logger, counters, and a connection resolver.
+- **references**: [IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
 
 #### Unregister
-Unregisters a registerable object, so that it is no longer used in dynamic 
+Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
 > `public` void Unregister([IRegisterable](../iregisterable) registration)
 
-- **registration**: [IRegisterable](../iregisterable) - the registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 
 ### Examples

@@ -11,9 +11,9 @@ description: >
 
 The MessagingCapabilities class allows you to create data objects that contain supported capabilities of message queues.
 
-Important points
+**Important points**
 
-- If certain capability is not supported a queue will throw a NotImplemented exception.
+- If certain capability is not supported, a queue will throw a NotImplemented exception.
 
 ### Constructors
 
@@ -23,15 +23,15 @@ Creates a new instance of the capabilities object.
 
 
 
-- **canMessageCount**: bool - True if the queue supports reading message count.
-- **canSend**: bool - True if the queue is able to send messages.
-- **canReceive**: bool - True if the queue is able to receive messages.
-- **canPeek**: bool - True if the queue is able to peek messages.
-- **canPeekBatch**: bool - True if the queue is able to peek multiple messages in one batch.
-- **canRenewLock**: bool - True if the queue is able to renew message lock.
-- **canAbandon**: bool - True if the queue is able to abandon messages.
-- **canDeadLetter**: bool - True if the queue is able to send messages to dead letter queue.
-- **canClear**: bool - True if the queue can be cleared.
+- **canMessageCount**: bool - true if the queue supports reading message count.
+- **canSend**: bool - true if the queue is able to send messages.
+- **canReceive**: bool - true if the queue is able to receive messages.
+- **canPeek**: bool - true if the queue is able to peek messages.
+- **canPeekBatch**: bool - true if the queue is able to peek multiple messages in one batch.
+- **canRenewLock**: bool - true if the queue is able to renew message lock.
+- **canAbandon**: bool - true if the queue is able to abandon messages.
+- **canDeadLetter**: bool - true if the queue is able to send messages to the dead letter queue.
+- **canClear**: bool - true if the queue can be cleared.
 
 
 ### Properties
@@ -50,7 +50,7 @@ Informs if the queue can be cleared.
 
 
 #### CanDeadLetter
-Informs if the queue is able to send messages to dead letter queue.
+Informs if the queue is able to send messages to the dead letter queue.
 
 > `public` bool CanDeadLetter [ get, private set ]
 

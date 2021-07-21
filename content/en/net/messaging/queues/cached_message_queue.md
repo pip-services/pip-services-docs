@@ -15,7 +15,7 @@ description: >
 
 The CachedMessageQueue class allows you to create message queues that cache received messages in memory, to allow peek operations that may not be supported by the undelying queue.
 
-Important points
+**Important points**
 
 - This queue is used as a base implementation for other queues.
 
@@ -47,7 +47,7 @@ Message receiver.
 > `protected` **_receiver**: [IMessageReceiver](../imessage_receiver)
 
 #### _receiveEvent
-TODO: add description
+Receive event
 > `protected` **_receiveEvent**: ManualResetEvent
 
 </span>
@@ -115,7 +115,7 @@ Opens the component.
 
 #### PeekAsync
 Peeks a single incoming message from the queue without removing it.
-If there are no messages available in the queue it returns null.
+If there are no messages available in the queue, it returns null.
 
 > `public override` Task\<[MessageEnvelope](../message_envelope)\> PeekAsync(string correlationId)
 
@@ -125,7 +125,7 @@ If there are no messages available in the queue it returns null.
 
 #### PeekBatchAsync
 Peeks multiple incoming messages from the queue without removing them.
-If there are no messages available in the queue it returns an empty list.
+If there are no messages available in the queue, it returns an empty list.
 
 Important: This method is not supported by MQTT.
 

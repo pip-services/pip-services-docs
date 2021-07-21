@@ -4,7 +4,7 @@ title: "CommandableGrpcClient"
 linkTitle: "CommandableGrpcClient"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 description: > 
-    Abstract client that calls a commandable GRPC service.
+    Abstract client that calls a commandable gRPC service.
 
 ---
 
@@ -12,16 +12,16 @@ description: >
 
 ### Description
 
-The CommandableGrpcClient class allows you to create clients that call a commandable GRPC service.
+The CommandableGrpcClient class allows you to create clients that call a commandable gRPC service.
 
-Important points
+**Important points**
 
 - Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable). Each command is exposed as an Invoke method that receives all parameters as args.
 
 #### Configuration parameters
 
 - **connection(s)**:   
-    - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
     - **protocol**: connection protocol: http or https   
     - **host**: host name or IP address   
     - **port**: port number   
@@ -50,7 +50,7 @@ Creates a new instance of the client.
 <span class="hide-title-link">
 
 #### _serviceName
-A service name.
+Service name.
 > **_serviceName**: String
 
 </span>
@@ -59,7 +59,7 @@ A service name.
 ### Instance methods
 
 #### callCommand
-Calls a remote method via the GRPC commadable protocol.
+Calls a remote method via the GRPC commandable protocol.
 The call is made via Invoke method and all parameters are sent in args object.
 The complete route to remote method is defined as serviceName + '.' + name.
 

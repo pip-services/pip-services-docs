@@ -9,7 +9,7 @@ description: >
  
 ---
 
-**Inherts:** [MessageQueue](../message_queue), [ICleanable](../../../commons/run/icleanable) 
+**Inherits:** [MessageQueue](../message_queue), [ICleanable](../../../commons/run/icleanable) 
 
 ### Description
 

@@ -4,7 +4,7 @@ title: "CommandableGrpcClient"
 linkTitle: "CommandableGrpcClient"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Abstract client that calls a commandable GRPC service.
+    Abstract client that calls a commandable gRPC service.
 
 ---
 
@@ -54,7 +54,7 @@ Creates a new instance of the client.
 <span class="hide-title-link">
 
 #### name
-A service name.
+Service's name.
 > `protected` **name**: string
 
 </span>
@@ -64,7 +64,7 @@ A service name.
 
 #### callCommand
 Calls a remote method via the GRPC commadable protocol.
-The call is made via Invoke method and all parameters are sent in args object.
+The call is made via the Invoke method and all parameters are sent in args object.
 The complete route to remote method is defined as serviceName + '.' + name.
 
 > `public` Task\<T\> CallCommandAsync\<T\>(string name, string correlationId, object requestEntity)

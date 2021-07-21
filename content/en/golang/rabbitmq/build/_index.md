@@ -13,7 +13,7 @@ description: >
 ### Classes
 
 #### [DefaultRabbitMQFactory](default_rabbitmq_factory)
-Creates [RabbitMQMessageQueue](../../queues/rabbitmq_message_queue/) components by their descriptors.
+Creates [RabbitMQMessageQueue](../../rabbitmq/queues/rabbitmq_message_queue/) components by their descriptors.
 
 
 </div>

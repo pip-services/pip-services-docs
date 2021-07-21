@@ -5,7 +5,7 @@ linkTitle: "Services"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 description: >
-    This package contains interfaces and classes used to create GRPC services.
+    This package contains interfaces and classes used to create gRPC services.
 ---
 ---
 <div class="module-body"> 
@@ -24,10 +24,10 @@ to operations automatically generated for commands defined in [ICommandable](../
 Each command is exposed as an invoke method that receives a command name and parameters.
 
 #### [GrpcEndpoint](grpc_endpoint)
-Used for creating GRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
+Used for creating gRPC endpoints. An endpoint is a URL, at which a given service can be accessed by a client.
 
 #### [GrpcService](grpc_service)
-Abstract service that receives remote calls via GRPC protocol.
+Abstract service that receives remote calls via gRPC protocol.
 
 
 </div>

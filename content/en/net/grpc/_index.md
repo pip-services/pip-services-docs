@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 no_list: true
 weight: 30
 description: > 
-    GRPC components for Pip.Services in .NET
+    gRPC components for Pip.Services in .NET
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 

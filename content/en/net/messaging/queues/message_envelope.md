@@ -11,7 +11,7 @@ description: >
 
 The MessageEnvelope class allows you to add additional information to messages.
 
-Important points
+**Important points**
 
 - A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
 - A MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
@@ -26,8 +26,8 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 > `public` MessageEnvelope(string correlationId, string messageType, byte[] message)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: string - a string value that defines the message's type.
-- **message**: byte[] - the data being sent/received.
+- **messageType**: string - string value that defines the message's type.
+- **message**: byte[] - data being sent/received.
 
 Creates a new MessageEnvelop, which adds a correlation id, message id, and a
 type to the data being sent/received.
@@ -35,8 +35,8 @@ type to the data being sent/received.
 > `public` MessageEnvelope(string correlationId, string messageType, string message)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: string - a string value that defines the message's type.
-- **message**: string - the data being sent/received.
+- **messageType**: string - string value that defines the message's type.
+- **message**: string - data being sent/received.
 
 
 Creates a new MessageEnvelop, which adds a correlation id, message id, and a
@@ -45,24 +45,24 @@ type to the data being sent/received.
 > `public` MessageEnvelope(string correlationId, string messageType, object message)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: string - a string value that defines the message's type.
-- **message**: object - the data being sent/received.
+- **messageType**: string - string value that defines the message's type.
+- **message**: object - data being sent/received.
 
 ### Properties
 
 
 #### CorrelationId
-The unique business transaction id that is used to trace calls across components.
+Unique business transaction id that is used to trace calls across components.
 
 > `public` string CorrelationId { get; set; }
 
 #### Message
-The stored message.
+Stored message.
 
 > `public` byte[] Message { get; set; }
 
 #### MessageId
-The message's auto-generated ID.
+Message's auto-generated ID.
 
 > `public` string MessageId { get; set; }
 
@@ -72,7 +72,7 @@ String value that defines the stored message's type.
 > `public` string MessageType { get; set; }
 
 #### SentTime
-The time at which the message was sent.
+Time at which the message was sent.
 
 > `public` DateTime SentTime { get; set; }
 

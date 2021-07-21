@@ -4,7 +4,7 @@ title: "DefaultGrpcFactory"
 linkTitle: "DefaultGrpcFactory"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 description: > 
-    Creates GRPC components based on their descriptors.
+    Creates gRPC components based on their descriptors.
 ---
 
 **Inherits:** [Factory](../../../components/build/factory)
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The DefaultGrpcFactory class allows you to create a factory used to create GRPC components based on their descriptors.
+The DefaultGrpcFactory class allows you to create a factory used to create gRPC components based on their descriptors.
 
 ### Constructors
 

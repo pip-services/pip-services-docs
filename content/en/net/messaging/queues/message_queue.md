@@ -32,7 +32,7 @@ The MessageQueue class allows you to create a message queue that is used as a ba
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) components to discover connection(s)
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) componetns to lookup credential(s)
 
@@ -83,7 +83,7 @@ Name of the message queue.
 ### Abstract methods
 
 #### AbandonAsync
-Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to dead letter queue.
+Returns a message into the queue and makes it available for all subscribers to receive it again. This method is usually used to return a message which could not be processed at the moment, to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently or/and sent to the dead letter queue.
 
 > `public abstract` Task AbandonAsync([MessageEnvelope](../message_envelope) message);
 
@@ -120,11 +120,11 @@ Ends listening for incoming messages. When this method is called, [listen](#list
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public abstract` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### ListenAsync
@@ -138,7 +138,7 @@ See also [IMessageReceiver](../imessage_receiver), [ReceiveAsync](#receiveasync)
 
 
 #### MoveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 > `public abstract` Task MoveToDeadLetterAsync([MessageEnvelope](../message_envelope) message)
 
@@ -148,10 +148,10 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 #### PeekAsync
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
-> `public abstract` Task<\[MessageEnvelope](../message_envelope)\> PeekAsync(string correlationId)
+> `public abstract` Task [MessageEnvelope](../message_envelope) PeekAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Task<\[MessageEnvelope](../message_envelope)\> - peeked message or *null*.
+- **returns**: Task [MessageEnvelope](../message_envelope) - peeked message or *null*.
 
 
 #### PeekBatch
@@ -221,13 +221,13 @@ Opens the component with the given connection and credential parameters.
 
 #### SendAsObjectAsync
 Sends an object into the queue.
-Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_mnvelope).
+Before sending, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
 > `public` Task SendAsObjectAsync(string correlationId, string messageType, object message)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: string - a message type
-- **message**: object - an object value to be sent
+- **messageType**: string - message type
+- **message**: object - object value to be sent
 
 
 #### SetReferences

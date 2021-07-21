@@ -19,7 +19,7 @@ Parameters to pass to the :func:`configure` method for component configuration:
 
 **connection(s)**: the connection resolver's connections:
 - **"connection.discovery_key"**: key used for connection resolving in a discovery service
-- **"connection.protocol"**: connection's protocol
+- **"connection.protocol"**: connection protocol
 - **"connection.host"**: target host
 - **"connection.port"**: target port
 - **"connection.uri"**: target URI    
@@ -75,7 +75,7 @@ Checks if the component is open.
 
 
 #### Open
-Opens a connection using the parameters resolved by the referenced connection resolver and creates a GRPC server (service) using the set options and parameters.
+Opens a connection using the parameters resolved by the referenced connection resolver and creates a gRPC server (service) using the set options and parameters.
 
 > `public virtual` Task OpenAsync(string correlationId)
 

@@ -17,12 +17,12 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
 #### Configuration parameters
 
 - **connection(s)**:    
-    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
+    - **discovery_key**:               (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
     - **host**:                        host name or IP address    
     - **port**:                        port number   
     - **uri**:                         resource URI or connection string with all parameters in it   
 - **credential(s)**:
-    - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **store_key**:                   (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**:                    username
     - **password**:                    user's password
 
@@ -48,7 +48,7 @@ Creates a new instance of the message queue with configuration.
 
 > NewRabbitMQMessageQueueFromConfig(name string, config [*ConfigParams](../../../commons/config/config_params)) [*RabbitMQMessageQueue]()
 
-- **name**: string - (optional) queue's name.
+- **name**: string - (optional) queue name.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters
 
 
@@ -57,7 +57,7 @@ Creates a new instance of the message queue.
 
 > NewRabbitMQMessageQueue(name string, mqChanel *rabbitmq.Channel, queue string) [*RabbitMQMessageQueue]()
 
-- **name**: string - (optional) queue's name.
+- **name**: string - (optional) queue name.
 - **mqChanel**: rabbitmq.Channel - mq channel
 - **queue**: string - queue
 
@@ -84,7 +84,7 @@ or/and send to the dead letter queue.
 > (c [*RabbitMQMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
-- **returns**: (err error) - error or if nil if no errors occurred.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Clear
 Clears a component's state.
@@ -100,7 +100,7 @@ Closes a component and frees used resources.
 > (c [*RabbitMQMessageQueue]()) Close(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Complete
 Permanently removes a message from the queue.

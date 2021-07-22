@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
 description: >
-    This package contains a class used to define message queues that send and receive messages via an RabbitMQ broker.
+    This package contains a class used to define message queues that send and receive messages via a RabbitMQ broker.
     
 ---
 ---
@@ -15,6 +15,6 @@ description: >
 ### Classes
 
 #### [RabbitMQMessageQueue](rabbitmq_message_queue)
-Message queue that sends and receives messages via an RabbitMQ message broker.
+Message queue that sends and receives messages via a RabbitMQ message broker.
 
 </div>

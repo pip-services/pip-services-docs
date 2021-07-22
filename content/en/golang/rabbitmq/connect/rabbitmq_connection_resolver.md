@@ -55,7 +55,7 @@ Credential resolver
 ### Instance methods
 
 #### Compose
-Compose method are composes RabbitMQ connection options from connection and credential parameters.
+Composes RabbitMQ connection options from connection and credential parameters.
 
 > (c [*RabbitMQConnectionResolver]()) Compose(correlationId string, connection [*ConnectionParams](../../../components/connect/connection_params), credential [*CredentialParams](../../../components/auth/credential_params)) (options [*ConfigParams](../../../commons/config/config_params), err error)
 

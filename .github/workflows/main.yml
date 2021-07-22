@@ -1,6 +1,8 @@
 name: build and deploy
 
 on:
+  schedule:
+    - cron:  '52 14 * * *'
   push:
     branches:
       - master  # Set a branch to deploy

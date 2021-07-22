@@ -4,7 +4,7 @@ title: "RabbitMQConnectionResolver"
 linkTitle: "RabbitMQConnectionResolver"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
 description: >
-    Helper class that resolves an RabbitMQ connection and credential parameters, 
+    Helper class that resolves a RabbitMQ connection and credential parameters, 
     validates them and generates connection options.
 
 ---
@@ -87,4 +87,4 @@ Sets references to dependent components.
 
 > (c [*RabbitMQConnectionResolver]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

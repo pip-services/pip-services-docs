@@ -4,7 +4,7 @@ title: "GrpcService"
 linkTitle: "GrpcService"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 description: > 
-    Abstract service that receives remote calls via the GRPC protocol.
+    Abstract service that receives remote calls via the gRPC protocol.
 
 ---
 
@@ -17,7 +17,7 @@ The GrpcService class allows you to create services that receive remote calls vi
 
 #### Configuration parameters
 - **dependencies**:   
-    - **endpoint**: override for GRPC Endpoint dependency    
+    - **endpoint**: override for gRPC Endpoint dependency    
     - **controller**: override for Controller dependency    
 - **connection(s)**:    
     - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)    
@@ -34,7 +34,7 @@ The GrpcService class allows you to create services that receive remote calls vi
 
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurementsand as specified by the counter's source.
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements as specified by the counter's source.
 
 
 ### Fields
@@ -42,7 +42,7 @@ The GrpcService class allows you to create services that receive remote calls vi
 <span class="hide-title-link">
 
 #### endpoint
-GRPC endpoint that exposes this service.
+gRPC endpoint that exposes this service.
 > **endpoint**: [GrpcEndpoint](../grpc_endpoint)
 
 #### dependencyResolver
@@ -72,7 +72,7 @@ Closes the component and frees used resources.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)

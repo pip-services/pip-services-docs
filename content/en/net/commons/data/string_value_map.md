@@ -526,8 +526,7 @@ Creates a new [StringValueMap](../string_value_map) from a list of key-value pai
 - **returns**: [StringValueMap](../string_value_map) - newly created StringValueMap.
 
 
-#### FromTuplesArray!
-**Note: this method is not available for this language**
+#### FromTuplesArray
 
 Creates a new StringValueMap from a list of key-value pairs called tuples.
 The method is similar to [FromTuples](#fromtuples) but tuples are passed as an array instead of parameters.
@@ -537,8 +536,7 @@ The method is similar to [FromTuples](#fromtuples) but tuples are passed as an a
 - **tuples**: object[] - list of values where odd elements are keys and the following even elements are values
 - **returns**: [StringValueMap](../string_value_map) - newly created StringValueMap.
 
-#### FromValue!
-**Note: this method is not available for this language**
+#### FromValue
 
 Converts a specified value into StringValueMap.
 

@@ -451,29 +451,25 @@ See [StringConverter.ToStringWithDefault](../../convert/string_converter/#tostri
 - **returns**: string - string value ot the element or given default value if the conversion is not supported.
 
 
-#### GetAsType!
-**Note: this method is not available for this language**
+#### GetAsType
 
 Converts an array element into a value defined by a specified typecode.
 If the conversion is not possible, it returns default value for the specified type.
 
-> `public` T GetAsType\<T\>([TypeCode](../../convert/type_code) type, int index)
+> `public` T GetAsType\<T\>(int index)
 
-- **type**: [TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **index**: int - index of the element to get.
 - **returns**: T - element value defined by the typecode or default if the conversion is not supported.
 
 
-#### GetAsTypeWithDefault!
-**Note: this method is not available for this language**
+#### GetAsTypeWithDefault
 
 Converts an array element into a value defined by specied typecode.
 If conversion is not possible, it returns a given default value for the specified type.  
 See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithdefault)
 
-> `public` T GetAsTypeWithDefault\<T\>([TypeCode](../../convert/type_code) type, int index, T defaultValue) 
+> `public` T GetAsTypeWithDefault\<T\>(int index, T defaultValue) 
 
-- **type**: [TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **index**: int - index of the element to get.
 - **defaultValue**: T - default value
 - **returns**: T - element value defined by the typecode or given default value if the conversion is not supported. 

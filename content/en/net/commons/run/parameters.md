@@ -188,16 +188,6 @@ See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 
-#### FromValue!
-**Note: this method is not availale for this language**
-Creates a new Parameters object filled with key-value pairs from specified object.
-
-> `public static` [Parameters](../parameters) FromValue(object value)
-
-- **tuples**: object - object with key-value pairs used to initialize a new Parameters.
-- **returns**: [Parameters](../parameters) - new Parameters object.
-
-
 #### MergeParams
 Merges two or more Parameters objects into one. The following Parameters override
 previously defined parameters.

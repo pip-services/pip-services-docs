@@ -509,8 +509,7 @@ Creates a new AnyValueMap from a list of key-value pairs called tuples.
 - **returns**: [AnyValueMap](../any_value_map) - newly created AnyValueArray.
 
 
-#### FromTuplesArray!
-**Note: this method is not available for this language**
+#### FromTuplesArray
 
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 The method is similar to [fromTuples](#fromtuples) but tuples are passed as an array instead of parameters.

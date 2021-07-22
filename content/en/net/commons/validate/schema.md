@@ -97,8 +97,7 @@ See [ValidationResult](../validation_result)
 - **returns**: List<[ValidationResult](../validation_result)> - list with validation results.
 
 
-#### ValidateAndReturnException!
-**Note: this method is not available for this language**
+#### ValidateAndReturnException
 
 Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 

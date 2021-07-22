@@ -185,21 +185,6 @@ Otherwise, a new ApplicationException is created and the original error is set a
 
 ### Static methods
 
-#### UnwrapError!
-**Note: this method is not available for this language**
-
-Unwraps original exception through wrapped exception objects. 
-
-Many frameworks like Seneca or restify wrap original exceptions.
-That may result in propagating less specific errors and can hide the
-causes of the errors.
-
-> `public static` [ApplicationException]() UnwrapError(Exception error)
-
-- **error**: Exception - error object
-- **returns**: [ApplicationException]() - original error object
-
-
 #### WrapException
 Wraps another exception into a specified application exception object.
 

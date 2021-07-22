@@ -48,16 +48,15 @@ Composes a human readable error message based on validation results.
 - **returns**: string - composed error message.
 
 
-#### FromResults!
-**Note: this method is not available for this language**
+#### FromResults
 
 Creates a new ValidationException based on errors in validation results.
 If validation results have no errors, then null is returned.
 
-> `public static` [ValidationException]() FromResults(correlationId: string, IList<[ValidationResult](../validation_result)> IList<[ValidationResult](../validation_result)> results, bool strict)
+> `public static` [ValidationException]() FromResults(correlationId: string, List<[ValidationResult](../validation_result)> List<[ValidationResult](../validation_result)> results, bool strict)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **results**: IList<[ValidationResult](../validation_result)> -  list of validation results that may contain errors.
+- **results**: List<[ValidationResult](../validation_result)> -  list of validation results that may contain errors.
 - **strict**: bool - true to treat warnings as errors.
 - **returns**: [ValidationException]() - newly created ValidationException or null if no errors in found.
 

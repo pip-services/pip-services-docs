@@ -86,8 +86,7 @@ Gets an object type by  its type descriptor.
 - **descriptor**: [TypeDescriptor](../type_descriptor) - type descriptor that points to an object type
 - **returns**: Type - object type or null is the type wasn't found.
 
-#### IsPrimitive!
-**Note: this method is not available for this language**
+#### IsPrimitive
 
 Checks if value has a primitive type.
 

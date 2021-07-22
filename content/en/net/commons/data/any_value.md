@@ -357,8 +357,7 @@ If conversion is not possible, it returns default value.
 - **returns**: T - value defined by the typecode or given type default value if the conversion is not supported. 
 
 
-#### GsetTypeCode!
-**Note: this method is not available for this language**
+#### GetTypeCode
 
 Gets the type code for the value stored in this object.  
 See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)

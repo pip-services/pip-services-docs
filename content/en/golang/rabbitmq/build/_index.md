@@ -15,6 +15,7 @@ description: >
 #### [DefaultRabbitMQFactory](default_rabbitmq_factory)
 Creates [RabbitMQMessageQueue](../../rabbitmq/queues/rabbitmq_message_queue/) components by their descriptors.
 
-
+#### [RabbitMQMessageQueueFactory](rabbitmq_message_queue_factory)
+Creates [RabbitMQMessageQueue](../../rabbitmq/queues/rabbitmq_message_queue/) components by their descriptors.
 </div>
 

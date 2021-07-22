@@ -4,14 +4,14 @@ title: "RabbitMQMessageQueueFactory"
 linkTitle: "RabbitMQMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
 description: >
-    Creates RabbitMQ message queues.
+    Creates [RabbitMQMessageQueue](../../rabbitmq/queues/rabbitmq_message_queue/) components by their descriptors.
     
 ---
 
 **Implements:** [Factory](../../../components/build/factory)
 
 ### Description
-The RabbitMQMessageQueueFactory class allows you to create RabbitMQ message queues.
+The RabbitMQMessageQueueFactory class allows you to create [RabbitMQMessageQueue](../../rabbitmq/queues/rabbitmq_message_queue/) components by their descriptors..
 
 
 ### Constructors

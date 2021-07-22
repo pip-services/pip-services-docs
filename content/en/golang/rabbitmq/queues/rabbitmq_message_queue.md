@@ -4,27 +4,27 @@ title: "RabbitMQMessageQueue"
 linkTitle: "RabbitMQMessageQueue"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
 description: >
-    Message queue that sends and receives messages via RabbitMQ message broker.
+    Message queue that sends and receives messages via a RabbitMQ message broker.
     
 ---
 
 **Implements:** [MessageQueue](../../../messaging/queues/message_queue)
 
 ### Description
-The RabbitMQMessageQueue class allows you to create message queues that send and receive messages via an RabbitMQ message broker.
+The RabbitMQMessageQueue class allows you to create message queues that send and receive messages via a RabbitMQ message broker.
 
 
 #### Configuration parameters
 
-**connection(s)**:
-    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **host**:                        host name or IP address
-    - **port**:                        port number
-    - **uri**:                         resource URI or connection string with all parameters in it
+- **connection(s)**:    
+    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)   
+    - **host**:                        host name or IP address    
+    - **port**:                        port number   
+    - **uri**:                         resource URI or connection string with all parameters in it   
 - **credential(s)**:
     - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**:                    user name
-    - **password**:                    user password
+    - **username**:                    username
+    - **password**:                    user's password
 
 
 #### References
@@ -53,13 +53,13 @@ Creates a new instance of the message queue with configuration.
 
 
 #### NewRabbitMQMessageQueue
-TODO: add description
+Creates a new instance of the message queue.
 
 > NewRabbitMQMessageQueue(name string, mqChanel *rabbitmq.Channel, queue string) [*RabbitMQMessageQueue]()
 
 - **name**: string - (optional) queue's name.
-- **mqChanel**: rabbitmq.Channel - TODO: add description
-- **queue**: string - TODO: add description
+- **mqChanel**: rabbitmq.Channel - mq channel
+- **queue**: string - queue
 
 
 ### Fields
@@ -76,15 +76,15 @@ Contains filtered or unexported fields
 ### Instance methods
 
 #### Abandon
-Returnes message into the queue and makes it available for all subscribers to receive it again.
+Returnes a message into the queue and makes it available for all subscribers to receive it again.
 This method is usually used to return a message which could not be processed at the moment
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
-or/and send to dead letter queue.
+or/and send to the dead letter queue.
 
 > (c [*RabbitMQMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or if nil if no errors occurred.
 
 #### Clear
 Clears a component's state.
@@ -92,7 +92,7 @@ Clears a component's state.
 > (c [*RabbitMQMessageQueue]()) Clear(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Close
 Closes a component and frees used resources.
@@ -111,7 +111,7 @@ This method is usually used to remove the message after successful processing.
 > (c [*RabbitMQMessageQueue]()) Complete(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### Configure
 Configures the component by passing its configuration parameters.
@@ -147,14 +147,14 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 
 #### MoveToDeadLetter
-Permanently removes a message from the queue and sends it to dead letter queue.
+Permanently removes a message from the queue and sends it to the dead letter queue.
 
 - Important: This method is not supported by RabbitMQ.
 
 > (c [*RabbitMQMessageQueue]()) MoveToDeadLetter(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 #### OpenWithParams
 Opens the component with given connection and credential parameters.
@@ -164,7 +164,7 @@ Opens the component with given connection and credential parameters.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **connection**: [[]*ConnectionParams](../../../components/connect/connection_params) - connection parameters
 - **credential**: [[]*CredentialParams](../../../components/auth/credential_params) - credential parameters
-- **returns**: error - error or if nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### Peek
@@ -218,13 +218,13 @@ This method is usually used to extend the message processing time.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
 
 #### Send
-Send method are sends a message into the **_queue**.
+Sends a message into the queue.
 
 > (c [*RabbitMQMessageQueue]()) Send(correlationId string, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
-- **returns**: (err error) - error or if nil no errors occured.
+- **returns**: (err error) - error or nil if no errors occured.
 
 
 ### Examples

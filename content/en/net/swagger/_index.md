@@ -5,13 +5,9 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-swagger-dotnet"
 no_list: true
 weight: 30
 description: > 
-    Swagger UI for Pip.Services in .NET
-
-
+    Swagger UI for Pip.Services in .NET.
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-
-    The swagger module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
+    It provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
 ---
 
 
@@ -29,9 +25,11 @@ Install the NuGet package as
 dotnet add package PipServices3.Swagger
 ```
 
-Develop a RESTful service component. For example, it may look the following way.
+Below there is an example on how to develop a RESTful service component:
+   
 In the `Register` method we load an Open API specification for the service.
-You can also enable swagger by default in the constractor by setting `_swaggerEnable` property.
+In the same class, you can enable swagger by default by setting the `_swaggerEnable` property to true in the constructor.
+   
 ```csharp
 public class MyRestService: RestService 
 {
@@ -64,7 +62,9 @@ public class MyRestService: RestService
 ```
 
 The Open API specification for the service shall be prepared either manually
-or using [Swagger Editor](https://editor.swagger.io/)
+or using [Swagger Editor](https://editor.swagger.io/). Below there is an example of a yaml file created for this purpose.
+
+
 ```yaml
 openapi: '3.0.2'
 info:
@@ -100,7 +100,8 @@ paths:
 ```
 
 Include Swagger service into `config.yml` file and enable swagger for your REST or Commandable HTTP services.
-Also explicitely adding HttpEndpoint allows to share the same port betwee REST services and the Swagger service.
+You can add an HttpEndpoint to allows sharing the same port between REST services and the Swagger service.
+
 ```yaml
 ---
 ...
@@ -120,7 +121,8 @@ Also explicitely adding HttpEndpoint allows to share the same port betwee REST s
     enable: true
 ```
 
-Finally, remember to add factories to your container, to allow it creating required components.
+Finally, to create the required components, add the necessary factories to your container.
+
 ```csharp
 ...
 using PipServices3.Rpc.Build
@@ -138,10 +140,10 @@ public class MyProcess: ProcessContainer {
 }
 ```
 
-Launch the microservice and open the browser to open the Open API specification at
+Now, launch the microservice and open the browser. Then, open the Open API specification by invoking the following URL 
 [http://localhost:8080/greeting/swagger](http://localhost:8080/greeting/swagger)
 
-Then open the Swagger UI using the link [http://localhost:8080/swagger](http://localhost:8080/swagger).
-The result shall look similar to the picture below.
+Then, open the Swagger UI using the link [http://localhost:8080/swagger](http://localhost:8080/swagger).
+The result shall look similar to the one showed in the picture below.
 
 <img src="swagger-ui.png"/>

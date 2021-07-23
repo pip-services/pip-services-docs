@@ -126,8 +126,8 @@ var values = MultiString.FromTuples(
    "ru", "Привет мир!"
 );
 
-var value1 = values.Get('ru'); // Result: "Привет мир!"
-var value2 = values.Get('pt'); // Result: "Hello World!"
+var value1 = values.Get("ru"); // Result: "Привет мир!"
+var value2 = values.Get("pt"); // Result: "Hello World!"
 
 
 ```

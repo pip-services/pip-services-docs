@@ -153,17 +153,14 @@ Updates only few selected fields in a data item.
 ```cs
 class MySqlServerPersistence: SqlServerPersistence<MyData, string> 
 {
-    public constructor()
-    {
-        base("mydata", MyData.class);
-    }
-    /// 
+    public MySqlServerPersistence(): base("mydata") { }
+    
     private FilterDefinition<MyData> ComposeFilter(FilterParams filter)
     {
         filterParams = filterParams ?? new FilterParams();
         var builder = Builders<BeaconV1>.Filter;
         var filter = builder.Empty;
-        String name = filter.getAsNullableString('name');
+        String name = filter.getAsNullableString("name");
         if (name != null)
             filter &= builder.Eq(b => b.Name, name);
         return filter;

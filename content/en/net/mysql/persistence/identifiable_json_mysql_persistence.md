@@ -101,6 +101,53 @@ Updates only few selected fields in a data item.
 ### Examples
 
 ```cs
-TODO: add example
+class MyMySqlPersistence: IdentifiableJsonMySqlPersistence<MyData, string> 
+{
+    public MyMySqlPersistence(): base("mydata") { }
+
+    private List<Func<MyData, bool>> ComposeFilter(FilterParams filter)
+    {
+        filter = filter ?? new FilterParams();
+
+        var id = filter.GetAsNullableString("id");
+        var label = filter.GetAsNullableString("label");
+        var udi = filter.GetAsNullableString("udi");
+
+        return new List<Func<MyData, bool>>() {
+            (item) =>
+            {
+                if (id != null && item.Id != id)
+                    return false;
+                if (label != null && item.Label != label)
+                    return false;
+                if (udi != null && item.Udi != udi)
+                return true;
+            }
+        };
+    }
+
+    public Task<DataPage<MyData>> GetPageByFilterAsync(string correlationId, FilterParams filter, PagingParams paging)
+    {
+        return base.GetPageByFilterAsync(correlationId, ComposeFilter(filter), paging);
+    }
+}
+
+var persistence = new MyMySqlPersistence();
+persistence.Configure(ConfigParams.FromTuples(
+    "host", "localhost",
+    "port", 27017
+));
+
+persistence.OpenAsync("123");
+
+persistence.CreateAsync("123", MyData());
+var result = persistence.GetPageByFilterAsync(
+        "123", 
+        FilterParams.FromTuples("name", "ABC"), 
+        null
+    );
+Console.WriteLine(result.Result.Data);
+persistence.DeleteByIdAsync("123", "1");
+
 
 ```

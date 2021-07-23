@@ -333,10 +333,8 @@ Unsets (clears) previously set references to dependent components.
 ```cs
 class MyPostgresPersistence: PostgresPersistence<MyData> 
 {
-    public MyPostgresPersistence()
-    {
-        base("mydata");
-    }
+    public MyPostgresPersistence(): base("mydata") { }
+    
     public MyData getByName(string correlationId, string name)
     {
         var builder = Builders<BeaconV1>.Filter;

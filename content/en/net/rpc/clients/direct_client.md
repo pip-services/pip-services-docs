@@ -131,7 +131,7 @@ class MyDirectClient: DirectClient<IMyController>, IMyClient
     public MyDirectClient()
     {   
         base();
-        this._dependencyResolver.put('controller', new Descriptor("mygroup", "controller", "*", "*", "*"));
+        this._dependencyResolver.put("controller", new Descriptor("mygroup", "controller", "*", "*", "*"));
     }
     ...
     

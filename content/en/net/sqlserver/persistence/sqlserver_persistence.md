@@ -355,10 +355,8 @@ Unsets (clears) previously set references to dependent components.
 ```cs
 class MySqlServerPersistence: SqlServerPersistence<MyData> 
 {
-    public MySqlServerPersistence()
-    {
-        base("mydata");
-    }
+    public MySqlServerPersistence(): base("mydata") { }
+    
     public MyData getByName(string correlationId, string name)
     {
         var builder = Builders<BeaconV1>.Filter;

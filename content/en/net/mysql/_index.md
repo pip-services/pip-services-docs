@@ -24,5 +24,3 @@ Install the dotnet package as
 ```bash
 dotnet add package PipServices3.Mysql
 ```
-
-TODO: add example

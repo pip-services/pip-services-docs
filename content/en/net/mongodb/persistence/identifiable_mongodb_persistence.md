@@ -147,17 +147,14 @@ Updates a data item.
 ```cs
 class MyMongoDbPersistence: MongoDbPersistence<MyData, string> 
 {
-    public constructor()
-    {
-        base("mydata", MyData.class);
-    }
+    public MyMongoDbPersistence(): base("mydata") { }
 
     private FilterDefinition<MyData> ComposeFilter(FilterParams filter)
     {
         filterParams = filterParams ?? new FilterParams();
         var builder = Builders<BeaconV1>.Filter;
         var filter = builder.Empty;
-        String name = filter.getAsNullableString('name');
+        String name = filter.getAsNullableString("name");
         if (name != null)
             filter &= builder.Eq(b => b.Name, name);
         return filter;

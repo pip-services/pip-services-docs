@@ -87,7 +87,7 @@ public class DataController: IConfigurable
 
    	public void Configure(ConfigParams config)
    	{
-		this._maxPageSize = config.GetAsIntegerWithDefault('max_page_size', this._maxPageSize);
+		this._maxPageSize = config.GetAsIntegerWithDefault("max_page_size", this._maxPageSize);
    	}
 		
    	public DataPage get_data(string correlationId, FilterParams filter, PagingParams paging)

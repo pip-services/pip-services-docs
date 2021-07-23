@@ -201,10 +201,8 @@ Sets references to dependent components.
 ```cs
 class MyMongoDbPersistence: MongoDbPersistence<MyData> 
 {
-    public MyMongoDbPersistence()
-    {
-        base("mydata");
-    }
+    public MyMongoDbPersistence(): base("mydata") { }
+    
     public MyData getByName(string correlationId, string name)
     {
         var builder = Builders<BeaconV1>.Filter;

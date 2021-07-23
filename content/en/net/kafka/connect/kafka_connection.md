@@ -110,12 +110,12 @@ Topic subscriptions
 
 ### Instance methods
 
-#### СheckOpen!
-**Note: this method is not implemented**
+#### СheckOpen
 
 Checks if the connection is open.   
 Raises an error is the connection is closed.
 
+> `private` void CheckOpen()
 
 #### CloseAsync
 Closes a component and frees used resources.

@@ -140,8 +140,7 @@ Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 - **returns**: [ConnectionParams]() - a new ConnectionParams object.
 
 
-#### FromTuples!
-**TODO: this method is not realized yet for this language**
+#### FromTuples
 
 Creates a new ConnectionParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.

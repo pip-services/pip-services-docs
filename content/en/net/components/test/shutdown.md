@@ -35,47 +35,49 @@ Important points
 #### close
 Closes component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> `public` Task CloseAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 
-#### configure
+#### Configure
 Configures a component by passing configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### isOpen
+#### IsOpen
 Checks if the component is opened.
 
-> `public` isOpen(): bool
+> `public` bool IsOpen()
 
 - **returns**: bool - true if the component has been opened and false otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> `public` Task OpenAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
 
-#### shutdown
+#### Shutdown
 Crashes the process using the configured crash mode.
 
-> `public` shutdown()
+> `public` void Shutdowns()
  
 
 ### Examples
 
-```typescript
-let shutdown = new Shutdown();
-shutdown.configure(ConfigParams.FromTuples(
-    "mode": "exception"
-));
-shutdown.shutdown();         // Result: Bang!!! the process crashes
+```cs
+var shutdown = new Shutdown(); 
+shutdown.Configure(ConfigParams.FromTuples(
+    "mode", "exception"
+ ));
+
+shutdown.Shutdowns();         // Result: Bang!!! the process crashes
+
 ```

@@ -45,13 +45,12 @@ Configures component by passing configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### ReadConnections!
-**TODO: this method is not realized yet for this language**
+#### ReadConnections
 
 Reads connections from configuration parameters.
 Each section represents an individual Connection params
 
-> `public` void ReadConnections([ConfigParams](../../../commons/config/config_params) connections)
+> `private` void ReadConnections([ConfigParams](../../../commons/config/config_params) connections)
 
 - **connections**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be read
 

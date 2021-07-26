@@ -4,44 +4,44 @@ title: "QueryParam"
 linkTitle: "QueryParam"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    TODO: add description
+    Defines query paramters.
 
 ---
 
 
 ### Description
 
-TODO: add description
+The QueryParam class defines query paramters.
 
 
 ### Properties
 
 #### Name
-TODO: add description
+Name
 
 > `public` string Name { get; set; }
 
 
 #### TypeCode
-TODO: add description
+Code type.
 
 > `public` [TypeCode](../../../commons/convert/type_code) TypeCode { get; set; }
 
 
 #### Required
-TODO: add description
+Required option.
 
 > `public` bool Required { get; set; }
 
 
 #### DefaultValue
-TODO: add description
+Default value.
 
 > `public` object DefaultValue { get; set; }
 
 
 #### Description
-TODO: add description
+Description
 
 > `public` string Description { get; set; }
 

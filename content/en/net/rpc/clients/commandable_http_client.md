@@ -14,7 +14,7 @@ description: >
 
 The CommandableHttpClient class allows you to create commandable services. Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable) objects.
 
-Important points
+**Important points**
 
 - Each command is exposed as a POST operation that receives all parameters in the body object.
 
@@ -59,7 +59,7 @@ Calls a remote method via the HTTP commadable protocol. The call is made via a P
 
 > `protected` Task\<T\> CallCommandAsync\<T\>(string route, string correlationId, object requestEntity)
 
-- **route**: string - a name of the command to call.
+- **route**: string - name of the command to call.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **requestEntity**: object - body object.
 - **returns**: Task\<T\> - result of the command.

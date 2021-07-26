@@ -4,20 +4,20 @@ title: "IndexOptions"
 linkTitle: "IndexOptions"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-postgres-dotnet"
 description: >
-    TODO add description
+    Defines index options.
 
 ---
 
 ### Description
 
-TODO add description
+Defines index options.
 
 ### Properties
 
 #### Unique
-TODO add description
+Unique option.
 > `public` bool Unique { get; set; }
 
 #### Type
-TODO add description
+Type
 > `public` string Type { get; set; }

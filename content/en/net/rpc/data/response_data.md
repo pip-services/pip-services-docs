@@ -4,38 +4,38 @@ title: "ResponseData"
 linkTitle: "ResponseData"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    TODO: add description
+    Defines response data paramters.
 
 ---
 
 
 ### Description
 
-TODO: add description
+The ResponseData class defines response data parameters.
 
 
 ### Properties
 
 #### Name
-TODO: add description
+Name
 
 > `public` string Name { get; set; }
 
 
 #### StatusCode
-TODO: add description
+Status code
 
 > `public` int StatusCode { get; set; }
 
 
 #### Description
-TODO: add description
+Description
 
 > `public` string Description { get; set; }
 
 
 #### Schema
-TODO: add description
+Schema
 
 > `public` object Schema { get; set; }
 

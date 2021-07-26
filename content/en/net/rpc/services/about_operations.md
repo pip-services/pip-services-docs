@@ -17,11 +17,11 @@ The AboutOperations class is used to obtain information about running services.
 
 #### About
 Gets information from a service.
-Send JSON string with information about the service.
+Sends a JSON string with information about the service.
 
 > `public` Task AboutAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user)
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP response.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP response.
 - **user**: ClaimsPrincipal - to identify current user.
 
 #### GetAboutOperation
@@ -29,7 +29,7 @@ Gets the service's information.
 
 > `public` Func\<HttpRequest, HttpResponse, ClaimsPrincipal, Task\> GetAboutOperation()
 
-- **returns**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, Task\> - the about method
+- **returns**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, Task\> - about method
 
 
 #### SetReferences

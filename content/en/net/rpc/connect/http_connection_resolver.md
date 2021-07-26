@@ -14,7 +14,7 @@ description: >
 
 The HttpConnectionResolver class is used to retrieve connections for HTTP-based services and clients.
 
-Important points
+**Important points**                             
 
 - In addition to its regular functions, ConnectionResolver is able to parse http:// URIs and validate connection parameters before returning them.
 
@@ -45,7 +45,7 @@ Creates a connection resolver.
 > `protected` **_credentialResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) = ConnectionResolver()
 
 #### _credentialResolver
-The base credential resolver.
+Base credential resolver.
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) = CredentialResolver()
 
 </span>
@@ -54,7 +54,7 @@ The base credential resolver.
 ### Instance methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -80,7 +80,7 @@ it finds a IDiscovery and resolves the connection there.
 
 
 #### ResolveAllAsync
-Resolves all component connections. If connections are configured to be retrieved from Discovery service it finds a IDiscovery and resolves the connection there.
+Resolves all component connections. If the connections are configured to be retrieved from a Discovery service it finds a IDiscovery and resolves the connection there.
 
 > `public` Task\<List\<[ConnectionParams](../../../components/connect/connection_params)\>\> ResolveAllAsync(string correlationId)
 
@@ -93,7 +93,7 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

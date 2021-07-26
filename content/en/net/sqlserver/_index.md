@@ -13,7 +13,7 @@ description: >
 ### Packages
 
 The module contains the following packages:
-- [**Build**](build) - a standard factory for constructing components
+- [**Build**](build) - standard factory for constructing components
 - [**Connect**](connect) - instruments for configuring connections to the database.
 - [**Persistence**](persistence) - abstract classes for working with the database that can be used for connecting to collections and performing basic CRUD operations
 
@@ -59,7 +59,7 @@ interface IMyPersistance
 
 To implement sql server persistence component you shall inherit `IdentifiableSqlServerPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `getPageByFilter` method with a custom filter function.
-And implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
+And then, implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```cs
 using PipServices3.SqlServer.Persistence;
@@ -135,7 +135,7 @@ class MySqlServerPersistence : IdentifiableJsonSqlServerPersistence<MyObject, st
 
 Alternatively you can store data in non-relational format using `IdentificableJsonSqlServerPersistence`.
 It stores data in tables with two columns - `id` with unique object id and `data` with object data serialized as JSON.
-To access data fields you shall use `JSON_VALUE([data],'$.field')` expression.
+To access data fields you shall use the `JSON_VALUE([data],'$.field')` expression.
 
 ```cs
 class MySqlServerPersistence : IdentifiableJsonSqlServerPersistence<MyObject, string>
@@ -205,7 +205,7 @@ class MySqlServerPersistence : IdentifiableJsonSqlServerPersistence<MyObject, st
 }
 ```
 
-Configuration for your microservice that includes sqlserver persistence may look the following way.
+The configuration for your microservice that includes sqlserver persistence may look the following way.
 
 ```yaml
 ...

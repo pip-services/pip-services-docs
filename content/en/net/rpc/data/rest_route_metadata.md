@@ -17,49 +17,49 @@ TODO: add description
 ### Properties
 
 #### Method
-TODO: add description
+Method
 
 > `public` string Method { get; set; }
 
 
 #### Route
-TODO: add description
+Route
 
 > `public` string Route { get; set; }
 
 
 #### Tags
-TODO: add description
+Tags
 
 > `public` string[] Tags { get; set; }
 
 
 #### QueryParams
-TODO: add description
+Query paramters
 
 > `public` List<[QueryParam](../query_param)> QueryParams { get; set; } = new List<[QueryParam](../query_param)>()
 
 
 #### BodySchema
-TODO: add description
+Body schema
 
 > `public` [ObjectSchema](../../../commons/validate/object_schema) BodySchema { get; set; }
 
 
 #### NeedsFile
-TODO: add description
+Needs a file option
 
 > `public` bool NeedsFile { get; set; }
 
 
 #### Responses
-TODO: add description
+List containing responses.
 
 > `public` List<[ResponseData](../response_data)> Responses { get; set; } = new List<[ResponseData](../response_data)>()
 
 
 #### Authentication
-TODO: add description
+Authentication
 
 > `public` string Authentication { get; set; }
 
@@ -67,13 +67,13 @@ TODO: add description
 ### Instance methods
 
 
-#### RestRouteMetadata
-TODO: add description
+#### SetsMethodAndRoute
+Sets the method and route.
 
 > `public` [RestRouteMetadata]() SetsMethodAndRoute(string method, string route)
 
-- **method**: string - TODO: add description
-- **route**: string - TODO: add description
+- **method**: string - method
+- **route**: string - route
 - **returns**: [RestRouteMetadata]() - TODO: add description
 
 
@@ -87,7 +87,7 @@ TODO: add description
 
 
 #### ExpectsHeader
-TODO: add description
+Expects header 
 
 > `public` [RestRouteMetadata]() ExpectsHeader()
 

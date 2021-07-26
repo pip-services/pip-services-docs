@@ -15,7 +15,7 @@ description: >
 
 The DirectClientclass allows you to create clients that call a controller directly in the same memory space.
 
-Important points
+**Important points**
 
 -  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather than through the network.
 
@@ -37,23 +37,23 @@ Important points
 <span class="hide-title-link">
 
 #### _controller
-The controller reference.
+Controller reference.
 > `protected` **_controller**: T
 
 #### _opened
-The open flag.
+Open flag.
 > `protected` **_opened**: boolean = True
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
 #### _counters
-The performance counters
+Performance counters
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### _dependencyResolver
-The dependency resolver used to get the controller's reference.
+Dependency resolver used to get the controller's reference.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver) = DependencyResolver()
 
 </span>
@@ -67,11 +67,11 @@ Closes a component and frees used resources.
 
 > `public virtual` Task CloseAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the a chain.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures component by passing its configuration parameters.
 
 > `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -96,8 +96,8 @@ Adds instrumentation to error handling.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **methodName**: [CallerMemberName]string - method name.
-- **ex**: Exception - Error that occured during the method call.
-- **rethrow**: bool - True to throw the exception.
+- **ex**: Exception - error that occured during the method call.
+- **rethrow**: bool - true to throw the exception.
 
 
 #### IsOpen
@@ -105,7 +105,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync
@@ -121,7 +121,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

@@ -23,7 +23,7 @@ Name
 
 
 #### TypeCode
-Code type.
+Data type code.
 
 > `public` [TypeCode](../../../commons/convert/type_code) TypeCode { get; set; }
 

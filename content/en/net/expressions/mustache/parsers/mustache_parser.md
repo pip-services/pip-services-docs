@@ -63,4 +63,3 @@ Sets a new mustache Token and parses it into internal byte code.
 > `public` void ParseTokens(IList<[Token](../../../tokenizers/token)> tokens)
 
 - **mustache**: IList<[Token](../../../tokenizers/token)> - new Mustache string.
-- **returns**: error - error or nil no errors occured.

@@ -32,6 +32,18 @@ List of original expression tokens.
 
 - **returns**: [ExpressionToken[]](../expression_token) - list of expression tokens.
 
+#### originalTokens
+Gets the original tokens
+
+> `public` originalTokens(): [Token[]](../../../tokenizers/token)
+
+- **returns**: [Token[]](../../../tokenizers/token) - the token list
+
+Sets the original tokens
+> `public` originalTokens(value: [Token[]](../../../tokenizers/token))
+
+- **value**: [Token[]](../../../tokenizers/token) - the token list
+
 #### resultTokens
 List of parsed expression tokens.
 

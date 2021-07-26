@@ -75,7 +75,7 @@ Removes a function by its index.
 - **index**: number - index of the function to be removed.
 
 #### removeByName
-
+Removes a function by its name.
 > removeByName(name: string): void
 
 - **name**: string - name of the function to be removed.

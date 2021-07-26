@@ -72,7 +72,7 @@ Removes a function by its index.
 - **index**: int - index of the function to be removed.
 
 #### RemoveByName
-
+Removes a function by its name.
 > (c [*FunctionCollection]()) RemoveByName(name string)
 
 - **name**: string - name of the function to be removed.

@@ -18,8 +18,8 @@ Constructs this function class with the specified parameters.
 
 > `public` constructor(name: string, calculator: (params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)>, context?: any)
 
-- **params**: [Variant[]](../../../variants/variant) - name of this function.
-- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)> - function calculator delegate.
+- **name**: string - name of this function.
+- **calculator**:(params: [Variant[]](../../../variants/variant), variantOperations: [IVariantOperations](../../../variants/ivariant_operations)) => Promise<[Variant](../../../variants/variant)> - function calculator delegate.
 - **context**: any - context
 
 ### Properties

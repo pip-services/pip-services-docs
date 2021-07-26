@@ -7,8 +7,6 @@ description: >
     Defines a variable interface.
 ---
 
-**Extends**: [GenericNumberState](../../../tokenizers/generic/generic_number_state)
-
 ### Description
 
 The IVariable interface allows you to define a variable.

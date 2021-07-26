@@ -55,7 +55,7 @@ Lists the original tokens
 - **returns**: [Token[]](../../tokenizers/token) - original tokens
 
 
-> `public` originalTokens(value: Token[])
+> `public` originalTokens(value: [Token[]](../../tokenizers/token))
 
 - **value**: [Token[]](../../tokenizers/token) - original tokens
 #### resultTokens

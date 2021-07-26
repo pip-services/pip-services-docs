@@ -24,6 +24,11 @@ List of original expression tokens.
 
 > `public` IList<[ExpressionToken](../expression_token)> InitialTokens { get; }
 
+#### OriginalTokens
+Gets and sets the original tokens
+
+> `public` IList<[Token](../../../tokenizers/token)> OriginalTokens { get; set; }
+
 
 #### ResultTokens
 List of parsed expression tokens.

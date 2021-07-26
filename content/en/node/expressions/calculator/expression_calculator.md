@@ -70,7 +70,7 @@ List of expression tokens.
 
 - **returns**: [Token[]](../../tokenizers/token) - list of expression tokens.
 
-> `public` originalTokens(value: Token[])
+> `public` originalTokens(value: [Token[]](../../tokenizers/token))
 
 - **value**: [Token[]](../../tokenizers/token) - list of expression tokens.
 

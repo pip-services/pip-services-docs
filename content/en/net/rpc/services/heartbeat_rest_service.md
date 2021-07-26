@@ -4,7 +4,7 @@ title: "HeartbeatRestService"
 linkTitle: "HeartbeatRestService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    Service returns heartbeat via HTTP/REST protocol.
+    Service that returns a heartbeat via HTTP/REST protocol.
 
 
 
@@ -14,9 +14,9 @@ description: >
 
 ### Description
 
-The HeartbeatRestService class allows you to create services that return heartbeat via HTTP/REST protocol. 
+The HeartbeatRestService class allows you to create services that return a heartbeat via the HTTP/REST protocol. 
 
-Important points
+**Important points**
 
 - The service responds on /heartbeat route (can be changed) with a string with the current time in UTC.
 - This service route can be used to perform health checks by loadbalancers and container orchestrators.
@@ -47,7 +47,7 @@ Important points
 ### Instance methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 

@@ -24,7 +24,7 @@ The module contains the following packages:
 - [**Clients**](clients) - mechanisms for retrieving connection settings from the microservice’s configuration and providing clients and services with these settings
 - [**Connect**](connect) - helper module to retrieve connections for HTTP-based services and clients
 - [**Services**](services) - basic implementation of services for connecting via the HTTP/REST protocol and using the Commandable pattern over HTTP
-- [**Test**](test) -  a Commandable HTTP client and a REST client that can be used for automated testing
+- [**Test**](test) -  Commandable HTTP client and a REST client that can be used for automated testing
 
 
 ### Use

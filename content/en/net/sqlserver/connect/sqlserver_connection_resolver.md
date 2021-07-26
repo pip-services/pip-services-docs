@@ -14,11 +14,11 @@ description: >
 
 ### Description
 
-The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validates these parameters, and generate a connection URI.
+The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validate these parameters, and generate a connection URI.
 
-Important points
+**Important points**
 
--  It is able to process multiple connections to PostgreSQL cluster nodes.
+-  It is able to process multiple connections to SQL Server cluster nodes.
 
 #### Configuration parameters
 
@@ -49,11 +49,11 @@ Creates a new instance of the connection component.
 <span class="hide-title-link">
 
 #### _connectionResolver
-The connection resolver
+Connection resolver
 > `protected` **_connectionResolver**: [ConnectionResolver](../../../components/connect/connection_resolver) 
 
 #### _credentialResolver
-The credential resolver
+Credential resolver
 > `protected` **_credentialResolver**: [CredentialResolver](../../../components/auth/credential_resolver) 
 
 </span>
@@ -76,7 +76,7 @@ Resolves SQLServer config from connection and credential parameters.
 > `public` Task\<string\> ResolveAsync(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Task\<string\> - resolved connection config or raise error
+- **returns**: Task\<string\> - resolved connection config or raised error
 
 
 #### SetReferences
@@ -84,4 +84,4 @@ Sets the references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

@@ -17,7 +17,7 @@ The SqlServerConnection class allows you to create a connection to an SQLServer 
 
 Important points
 
-- By defining a connection and sharing it through multiple persistence components you can reduce number of used database connections.
+- By defining a connection and sharing it through multiple persistence components you can reduce the number of used database connections.
 
 #### Configuration parameters
 
@@ -53,23 +53,23 @@ Important points
 
 
 #### _connection
-The SQLServer connection pool object.
+SQLServer connection pool object.
 > `protected` **_connection**: SqlConnection
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [SqlServerConnectionResolver](../sqlserver_connection_resolver)
 
 #### _databaseName
-The SQLServer database name.
+SQLServer database name.
 > `protected` **_databaseName**: string
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 
@@ -87,7 +87,7 @@ Closes a component and frees used resources.
 
 
 #### Configure
-Configures a component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -107,4 +107,4 @@ Gets the name of an SQLServer database.
 
 > `public` string GetDatabaseName()
 
-- **returns**: string - database name.
+- **returns**: string - database's name.

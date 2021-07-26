@@ -15,7 +15,7 @@ The RoleAuthorizer class provides methods to check on a user's roles.
 
 #### UserInRoles
 Checks on the roles a user has been assigned.
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws an [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
 > `public` Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> UserInRoles(string[] roles)
 
@@ -24,7 +24,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 
 #### UserInRole
 Check if the role is assigned to the user.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws an [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
 > `public` Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> UserInRole(string role)
 
@@ -34,7 +34,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 
 #### Admin
 Check if the user has admin role.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws an [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
 > `public` Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> Admin()
 

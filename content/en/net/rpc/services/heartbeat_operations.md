@@ -17,12 +17,12 @@ The HeartBeatOperations class is used to handle the operations of a heartbeat se
 
 #### heartbeat
 Creates a heartbeat.
-Send request with the current time in UTC.
+Sends request with the current time in UTC.
 
 > `private` Task HeartbeatAsync(HttpRequest httpRequest, HttpResponse response, ClaimsPrincipal user)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP response.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP response.
 - **user**: ClaimsPrincipal - to identify current user.
 
 

@@ -5,7 +5,7 @@ linkTitle: "Auth"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    This package provides classes used to grant access.
+    This package contains classes used to grant access.
 ---
 ---
 
@@ -14,12 +14,12 @@ description: >
 ### Classes
 
 #### [BasicAuthorizer](basic_authorizer)
-This class provides two methods: one to grant access to everyone and another to grant access to authorized users.
+This class contains two methods: one to grant access to everyone and another to grant access to authorized users.
 
 #### [OwnerAuthorizer](owner_authorizer)
-This class provides access granting methods to owners and administrators.
+This class contains access granting methods to owners and administrators.
 
 #### [RoleAuthorizer](role_authorizer)
-This class provides methods to check on a user’s roles
+This class contains methods to check on a user’s roles
 
 </div>

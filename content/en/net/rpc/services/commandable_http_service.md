@@ -4,7 +4,7 @@ title: "CommandableHttpService"
 linkTitle: "CommandableHttpService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    Abstract service that receives remote calls via HTTP/REST protocol to operations automatically generated for commands defined in ICommandable components. 
+    Abstract service that receives remote calls via the HTTP/REST protocol to operations automatically generated for commands defined in ICommandable components. 
     
 ---
 
@@ -16,9 +16,9 @@ See also [RestService](../rest_service), [CommandableHttpClient](../../clients/c
 
 The CommandableHttpService class allows you to create services that receive remote calls via the HTTP/REST protocol to operations automatically generated for commands defined in ICommandable components.
 
-Important points
+**Important points**
 
-- Each command is exposed as POST operation that receives all parameters in the body object. 
+- Each command is exposed as a POST operation that receives all parameters in the body object. 
 - Commandable services require only three lines of code to implement a robust external HTTP-based remote interface.
 
 #### Configuration parameters
@@ -28,7 +28,7 @@ Important points
     - **endpoint**:              override for HTTP Endpoint dependency
     - **controller**:            override for Controller dependency
 - **connection(s)**:           
-    - **discovery_key**:         (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**:         (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **protocol**:              connection protocol: http or https
     - **host**:                  host name or IP address
     - **port**:                  port number
@@ -40,7 +40,7 @@ Important points
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:traces:\*:\*:1.0** - (optional) [ITracer](../../../components/trace/itracer) components to record traces
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve a connection
 
 
 
@@ -50,7 +50,7 @@ Creates a new instance of the service.
 
 > `public` CommandableHttpService(baseRoute: string)
 
-- **baseRoute**: string - a service base route.
+- **baseRoute**: string - service base route.
 
 
 ### Fields

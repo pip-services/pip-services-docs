@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The BasicAuthorizer provides two methods: one to grant access to everyone and another to grant access to authorized users.
+The BasicAuthorizer class contains two methods: one to grant access to everyone and another to grant access to authorized users.
 
 ### Instance methods
 

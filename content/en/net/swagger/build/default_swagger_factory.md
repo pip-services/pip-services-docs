@@ -22,6 +22,6 @@ Creates a new instance of the factory.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [HttpEndpoint](../../services/http_endpoint)
-- #### [HeartbeatRestService](../../services/heartbeat_rest_service)
-- #### [StatusRestService](../../services/status_rest_service)
+- #### [HttpEndpoint](../../../rpc/services/http_endpoint)
+- #### [HeartbeatRestService](../../../rpc/services/heartbeat_rest_service)
+- #### [StatusRestService](../../../rpc/services/status_rest_service)

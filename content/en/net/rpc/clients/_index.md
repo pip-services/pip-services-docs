@@ -35,7 +35,7 @@ Abstract client that calls remote endpoints using the HTTP/REST protocol.
 
 
 #### [RouteBuilder](route_builder)
-Route builder helper class to create route based on input parameters.
+Route builder helper class to create routes based on input parameters.
 
 
 </div>

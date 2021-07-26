@@ -4,14 +4,14 @@ title: "RestRouteMetadata"
 linkTitle: "RestRouteMetadata"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    TODO: add description
+    Describes additional metadata for a route.
 
 ---
 
 
 ### Description
 
-TODO: add description
+The RestRouteMetadata class describes additional metadata for a route.
 
 
 ### Properties
@@ -59,7 +59,7 @@ List containing responses.
 
 
 #### Authentication
-Authentication
+Authentication. Accepted values are "basic" and "bearer".
 
 > `public` string Authentication { get; set; }
 
@@ -74,16 +74,16 @@ Sets the method and route.
 
 - **method**: string - method
 - **route**: string - route
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance with defined method and route.
 
 
 #### SetsTags
-TODO: add description
+Sets the tags.
 
 > `public` [RestRouteMetadata]() SetsTags(params string[] tags)
 
-- **tags**: params string[] - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **tags**: params string[] -tags
+- **returns**: [RestRouteMetadata]() - instance with defined tags.
 
 
 #### ExpectsHeader
@@ -91,127 +91,127 @@ Expects header
 
 > `public` [RestRouteMetadata]() ExpectsHeader()
 
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance of the class.
 
 
 #### ReceivesQueryParam
-TODO: add description
+Sets the name, type code, required, default value and description.
 
 > `public` [RestRouteMetadata]() ReceivesQueryParam(string name, [TypeCode](../../../commons/convert/type_code) typeCode, bool required = false, object defaultValue = null, string description = null)
 
-- **name**: string - TODO: add description
-- **typeCode**: [TypeCode](../../../commons/convert/type_code) - TODO: add description
-- **required**: bool - TODO: add description
-- **defaultValue**: object - TODO: add description
-- **description**: string - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **name**: string - name
+- **typeCode**: [TypeCode](../../../commons/convert/type_code) - data type code
+- **required**: bool - true if required and false otherwise
+- **defaultValue**: object - default value
+- **description**: string - description
+- **returns**: [RestRouteMetadata]() - instance with defined name, type code, required, default value and description.
 
 
 #### ReceivesOptionalQueryParam
-TODO: add description
+Sets the parameter as optional.
 
 > `public` [RestRouteMetadata]() ReceivesOptionalQueryParam(string name, [TypeCode](../../../commons/convert/type_code) typeCode, object defaultValue = null, string description = null)
 
-- **name**: string - TODO: add description
-- **typeCode**: [TypeCode](../../../commons/convert/type_code) - TODO: add description
-- **defaultValue**: object - TODO: add description
-- **description**: string - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **name**: string - name
+- **typeCode**: [TypeCode](../../../commons/convert/type_code) - data type code
+- **defaultValue**: object - default value
+- **description**: string - description
+- **returns**: [RestRouteMetadata]() - instance with parameter set as optional.
 
 
 #### ReceivesRequiredQueryParam
-TODO: add description
+Sets a parameter as required.
 
 > `public` [RestRouteMetadata]() ReceivesRequiredQueryParam(string name, [TypeCode](../../../commons/convert/type_code) typeCode, object defaultValue = null, string description = null)
 
 
-- **name**: string - TODO: add description
-- **typeCode**: [TypeCode](../../../commons/convert/type_code) - TODO: add description
-- **defaultValue**: object - TODO: add description
-- **description**: string - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **name**: string - name
+- **typeCode**: [TypeCode](../../../commons/convert/type_code) - data type code
+- **defaultValue**: object - default value
+- **description**: string - description
+- **returns**: [RestRouteMetadata]() - instance with the parameter set as required.
 
 
 #### ReceivesCorrelationIdParam
-TODO: add description
+Sets the CorrelationId parameter.
 
 > `public` [RestRouteMetadata]() ReceivesCorrelationIdParam()
 
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance with correlationId
 
 
 #### ReceivesBodyFromSchema
-TODO: add description
+Sets the body from a schema.
 
 > `public` [RestRouteMetadata]() ReceivesBodyFromSchema([ObjectSchema](../../../commons/validate/object_schema) schema)
 
 
-- **schema**: [ObjectSchema](../../../commons/validate/object_schema) - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **schema**: [ObjectSchema](../../../commons/validate/object_schema) - schema
+- **returns**: [RestRouteMetadata]() - instance with body.
 
 
 #### ReceivesFile
-TODO: add description
+Sets  NeedsFile as true.
 
 > `public` [RestRouteMetadata]() ReceivesFile()
 
 
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance with  NeedsFile set as true.
 
 
 #### SendsData
-TODO: add description
+Sets the status code, description and schema for responses.
 
 > `public` [RestRouteMetadata]() SendsData(int statusCode, string description, object schema = null)
 
 
-- **statusCode**: int - TODO: add description
-- **description**: string - TODO: add description
-- **schema**: object - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **statusCode**: int - status code
+- **description**: string - description
+- **schema**: object - schema
+- **returns**: [RestRouteMetadata]() - instance with defined status code, description and schema for responses.
 
 
 #### SendsData200
-TODO: add description
+Sets SendData to 200 (Success).
 
 > `public` [RestRouteMetadata]() SendsData200(object schema = null)
 
-- **schema**: object - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **schema**:schema
+- **returns**: [RestRouteMetadata]() - instance with SendsData set as 200 (Success).
 
 
 #### SendsDataPage200
-TODO: add description
+Sets SendData to 200 (Success).
 
 > `public` [RestRouteMetadata]() SendsDataPage200(object schema)
 
-- **schema**: object - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **schema**: object - schema
+- **returns**: [RestRouteMetadata]() - instance with SendsData set as 200 (Success).
 
 
 #### SendsData400
-TODO: add description
+Sets SendData to 400 (Bad request).
 
 > `public` [RestRouteMetadata]() SendsData400(object schema = null)
 
-- **schema**: object - TODO: add description
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **schema**: object - schema
+- **returns**: [RestRouteMetadata]() - instance with SendsData set as 400 (Bad request).
 
 
 #### UsesBasicAuthentication
-TODO: add description
+Sets Authentication to basic.
 
 > `public` [RestRouteMetadata]() UsesBasicAuthentication()
 
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance with Authentication set as basic.
 
 
 #### UsesBearerAuthentication
-TODO: add description
+Sets Authentication to bearer.
 
 > `public` [RestRouteMetadata]() UsesBearerAuthentication()
 
-- **returns**: [RestRouteMetadata]() - TODO: add description
+- **returns**: [RestRouteMetadata]() - instance with Authentication set as bearer.
 
 
 

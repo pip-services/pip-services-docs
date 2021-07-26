@@ -14,9 +14,10 @@ description: >
 
 The SqlServerPersistence class allows you to create persistence components that store data in a SQLServer database using the official driver.
 
-Important points
+**Important points**
 
-- This is the most basic persistence component that is able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **this._model** or **this._collection** properties.
+- This is the most basic persistence component that is able to store data items of any type. 
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **this._model** or **this._collection** properties.
 
 #### Configuration parameters
 
@@ -60,36 +61,36 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _tableName
-The SQLServer table name.
+SQLServer table name.
 > `protected` **_tableName**: string
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The SQLServer connection component.
+SQLServer connection component.
 > `protected` **_connection**: [SqlServerConnection](../../connect/sqlserver_connection) 
 
 #### _client
-The SQLServer connection pool object.
+SQLServer connection pool object.
 > `protected` **_client**: SqlConnection 
 
 #### _databaseName 
-The SQLServer database name.
+SQLServer database name.
 > `protected` **_databaseName**: string
 
 #### _maxPageSize
-The maximum number of records that can be returned from the database.
+Maximum number of records that can be returned from the database.
 > `protected` **_maxPageSize**: int = 100
 
 
 #### _tableName
-The SqlServer table name.
+SqlServer table name.
 > `protected` **_tableName**: string 
 
 
@@ -100,18 +101,18 @@ The SqlServer table name.
 
 #### AutoCreateObject
 Adds an index definition to be created on opening.
-- This is a deprecated method. Use **EnsureSchema** instead.
+- This is a deprecated method. Use [EnsureSchema](#ensureschema) instead.
 
 > `protected` void AutoCreateObject(string schemaStatement)
 
-- **schemaStatement**: string - DML statement to autocreate database object
+- **schemaStatement**: string - DML statement to autocreate a database object
 
 #### ClearAsync
-Clears component state.
+Clears a component's state.
 
 > `public virtual` Task ClearAsync(string correlationId)
 
-- **correlationId**: string- the object to convert from the public partial format.
+- **correlationId**: string- object to convert from the public partial format.
 
 #### ClearSchema
 Clears all auto-created objects
@@ -124,11 +125,11 @@ Closes a component and frees used resources.
 
 > `public virtual` Task CloseAsync(string correlationId)
 
-- **correlationId**: string- the object to convert from the public partial format.
+- **correlationId**: string- object to convert from the public partial format.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public virtual` void Configure(ConfigParams config)
 
@@ -168,12 +169,12 @@ Creates a schema.
 
 > `protected` Task CreateSchemaAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### DefineSchema
 Defines a database schema via auto create objects or convenience methods.
-Override in chile classes
+Override it in child classes
 
 > `protected virtual` void DefineSchema()
 
@@ -309,16 +310,16 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: string - (optional) sorting JSON object
 - **select**: string - (optional) projection JSON object
-- **returns**: Task<[DataPage<T>](../../../commons/data/data_page)> - a data page of result by filter
+- **returns**: Task<[DataPage<T>](../../../commons/data/data_page)> - data page of result by filter
 
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and False otherwise.
 
 
 #### OpenAsync
@@ -342,7 +343,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

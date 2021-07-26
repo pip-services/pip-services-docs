@@ -44,48 +44,48 @@ The RestClient class allows you to create clients that call remote endpoints usi
 <span class="hide-title-link">
 
 #### _counters
-A list of counters.
-> `protected` **_counters**: [ICounters](../components/count/icounters)[] = []
+List of counters.
+> `protected` **_counters**: [ICounters](../../../components/count/icounters)[] = []
 
 #### _client
-The HTTP client.
+HTTP client.
 > `protected` **_client**: HttpClient
 
 #### _address
-The remote service uri which is defined on openning.
+Remote service uri which is defined on openning.
 > `protected` **_address**: string
 
 #### _timeout
-The invocation timeout in milliseconds.
+Invocation timeout in milliseconds.
 > `protected` **_timeout**: int = 1000
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [HttpConnectionResolver](../../connect/http_connection_resolver) = HttpConnectionResolver()
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
 #### _counters
-The performance counters.
+Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params) = ConfigParams()
 
 #### _baseRoute
-The base route.
+Base route.
 > `protected` **_baseRoute**: string
 
 #### _retries
-The number of retries.
+Number of retries.
 > `protected` **_retries**: int = 1
 
 #### _headers
-The default headers to be added to every request.
+Default headers to be added to every request.
 > `protected` **_headers**: [StringValueMap](../../../commons/data/string_value_map)
 
 
@@ -121,7 +121,7 @@ to the invocation parameter map.
 
 
 #### AddPagingParams
-Adds paging parameters (skip, take, total) to invocation parameter map.
+Adds paging parameters (skip, take, total) to an invocation parameter map.
 
 > `protected` string AddPagingParams(string route, [PagingParams](../../../commons/data/paging_params) paging)
 
@@ -136,32 +136,32 @@ Calls a remote method via HTTP/REST protocol.
 
 > `protected` Task CallAsync(string correlationId, HttpMethod method, string route)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 
 
 > `protected` Task CallAsync(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 
 
 > `protected` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **returns**: Task\<T\> - result object
 
 
 > `protected` Task\<T\> CallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object
 
@@ -171,7 +171,7 @@ Closes a component and frees used resources.
 
 > `public virtual` Task CloseAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### Configure
@@ -182,27 +182,27 @@ Configures a component by passing configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### ExecuteAsync
-Executes a remote method via HTTP/REST protocol.
+Executes a remote method via the HTTP/REST protocol.
 
 > `protected` Task ExecuteAsync(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 
 > `protected` async Task\<T\> ExecuteAsync\<T\>(string correlationId, HttpMethod method, string route)
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
 
 > `protected` Task\<T\> ExecuteAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
 
@@ -212,7 +212,7 @@ It returns a Timing object that is used to end the time measurement.
 
 > `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, [CallerMemberName]string methodName = null)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **methodName**: [CallerMemberName]string - method name.
 - **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
 
@@ -221,17 +221,17 @@ Adds instrumentation to error handling.
 
 > `protected` void InstrumentError(string correlationId, [CallerMemberName]string methodName = null, Exception ex = null, bool rethrow = false)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **methodName**: [CallerMemberName]string - method name.
 - **ex**: Exception - Error that occured during the method call.
-- **rethrow**: bool - True to throw the exception.
+- **rethrow**: bool - true to throw the exception.
 
 #### IsOpen
 Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync
@@ -239,7 +239,7 @@ Opens the component.
 
 > `public virtual` Task OpenAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### SetReferences
@@ -247,43 +247,43 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component's dependencies.
 
 #### SafeExecuteAsync
 Safely executes a remote method via HTTP/REST protocol and logs execution time.
 
 > `protected` Task\<T\> SafeExecuteAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
 
 > `protected` async Task\<T\> SafeExecuteAsync\<T\>(string correlationId, HttpMethod method, string route)
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **returns**: Task\<T\> - result object.
 
 
 #### SafeCallAsync
-Safely calls a remote method via HTTP/REST protocol and logs execution time.
+Safely calls a remote method via the HTTP/REST protocol and logs execution time.
 
 > `protected` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route, object requestEntity)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "post", "put", "patch".
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
 
 
 > `protected` Task\<T\> SafeCallAsync\<T\>(string correlationId, HttpMethod method, string route)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "post", "put", "patch".
-- **route**: string - a command route. Base route will be added to this route
+- **route**: string - command route. Base route will be added to this route
 - **returns**: Task\<T\> - result object.
 
 ### Examples

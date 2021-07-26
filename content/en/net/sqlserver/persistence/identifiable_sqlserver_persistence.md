@@ -4,7 +4,7 @@ title: "IdentifiableSqlServerPersistence<T, K>"
 linkTitle: "IdentifiableSqlServerPersistence"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Abstract persistence component that stores data in SQLServer
+    Abstract persistence component that stores data in an SQLServer database
     and implements a number of CRUD operations over data items with unique ids.
     
 ---
@@ -16,9 +16,6 @@ description: >
 The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQLServer databases and implement a number of CRUD operations over data items with unique ids.
 
 Important points
-
-Where T : [IIdentifiable<K>](../../../commons/data/iidentifiable), new().
-Where K : class.
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilter), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync)   operations with a specific filter function.
@@ -62,7 +59,7 @@ Creates a new instance of the persistence component.
 
 > `public` IdentifiableSqlServerPersistence(string tableName)
 
-- **tableName**: string - (optional) a collection name.
+- **tableName**: string - (optional) collection name.
 
 
 ### Instance methods

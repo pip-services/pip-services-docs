@@ -105,12 +105,12 @@ Gets or sets the AWS resource type.
 ### Instance methods
 
 #### Validate
-Validates this connection parameters 
+Validates this connection parameters. 
 
 > [ConfigException](../../../commons/errors/config_exception) Validate(string correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: [ConfigException](../../../commons/errors/config_exception) - a ConfigException or null if validation passed successfully
+- **returns**: [ConfigException](../../../commons/errors/config_exception) - ConfigException or null if validation passed successfully
 
 ### Static methods
 

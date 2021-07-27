@@ -25,14 +25,14 @@ The CloudWatchLogger class allows you to create loggers that write log messages 
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
  - **options**:
-    - **interval**: interval in milliseconds to save current counters measurements (default: 5 mins)
+    - **interval**: interval in milliseconds to save current counters' measurements (default: 5 mins)
     - **reset_timeout**: timeout in milliseconds to reset the counters. 0 disables the reset (default: 0)
 
 
 #### References
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../../components/info/context_info) to detect the context id and specify the counters' source
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
-- **\*:credential-store:\*:\*:1.0** - (optional) credential stores used to resolve credentials requests
+- **\*:credential-store:\*:\*:1.0** - (optional) credential stores used to resolve credential requests
 
 ### Constructors
 Creates a new instance of this logger.

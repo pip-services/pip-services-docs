@@ -14,7 +14,7 @@ description: >
 
 The module contains the following packages:
 - [**Build**](build) - factory to create PostreSQL persistence components.
-- [**Connect**](connect) - connection component to configure PostgreSQL connection to database.
+- [**Connect**](connect) - connection component to configure a connection to a PostgreSQL database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 
@@ -25,7 +25,7 @@ Install the dotnet package as
 dotnet add package PipServices3.Postgres
 ```
 
-As an example, lets create persistence for the following data object.
+As an example, lets create persistence for the following data object:
 
 ```cs
 using PipServices3.Commons.Data;
@@ -195,7 +195,7 @@ class MyPostgresPersistence : IdentifiableJsonPostgresPersistence<MyObject, stri
 }
 ```
 
-Configuration for your microservice that includes postgresql persistence may look the following way.
+The configuration for your microservice that includes postgresql persistence may look the following way:
 
 ```yaml
 ...

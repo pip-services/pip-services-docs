@@ -34,7 +34,7 @@ The CloudWatchCounters class allows you to create performance counters that peri
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials requests
 
 ### Constructors
-Creates a new instance of this counters.
+Creates a new instance of this class.
 
 > `public` CloudWatchCounters()
 

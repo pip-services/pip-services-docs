@@ -134,7 +134,7 @@ class MySqlServerPersistence : IdentifiableJsonSqlServerPersistence<MyObject, st
 ```
 
 Alternatively you can store data in non-relational format using `IdentificableJsonSqlServerPersistence`.
-It stores data in tables with two columns - `id` with unique object id and `data` with object data serialized as JSON.
+It stores data in tables with two columns: `id` with unique object id and `data` with object data serialized as JSON.
 To access data fields you shall use the `JSON_VALUE([data],'$.field')` expression.
 
 ```cs
@@ -205,7 +205,7 @@ class MySqlServerPersistence : IdentifiableJsonSqlServerPersistence<MyObject, st
 }
 ```
 
-The configuration for your microservice that includes sqlserver persistence may look the following way.
+The configuration for your microservice that includes SQL Server persistence may look the following way:
 
 ```yaml
 ...

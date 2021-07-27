@@ -52,23 +52,23 @@ Important points
 
 
 #### _connection
-The PostgreSQL connection pool object.
+PostgreSQL connection pool object.
 > `protected` **_connection**: NpgsqlConnection
 
 #### _connectionResolver
-The connection resolver.
+Connection resolver.
 > `protected` **_connectionResolver**: [PostgresConnectionResolver](../postgres_connection_resolver)
 
 #### _databaseName
-The PostgreSQL database name.
+PostgreSQL database name.
 > `protected` **_databaseName**: string
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _options
-The configuration options.
+Configuration options.
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 
@@ -86,11 +86,11 @@ Configures the component by passing its configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 #### OpenAsync
 Opens the component.
@@ -112,12 +112,12 @@ Gets the database name.
 
 > `public` string GetDatabaseName()
 
-- **returns**: string - database name
+- **returns**: string - database's name
 
 #### SetReferences
 Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 

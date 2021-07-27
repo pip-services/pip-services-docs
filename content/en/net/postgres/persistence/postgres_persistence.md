@@ -16,7 +16,7 @@ description: >
 
 The PostgresPersistence class allows you to create persistence components that store data in PostgreSQL using the official driver.
 
-Important points
+**Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
 - Specific CRUD operations over the data items must be implemented in child classes by accessing **this._db** or **this._collection** properties.
@@ -53,42 +53,42 @@ Creates a new instance of the persistence component.
 > `public` PostgresPersistence(string tableName = null, string schemaName = null)
 
 - **tableName**: string - (optional) table name.
-- **schemaName**: string - (optional) a schema name.
+- **schemaName**: string - (optional) schema name.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### _tableName
-The PostgreSQL table name.
+PostgreSQL table name.
 > `protected` **_tableName**: string
 
 #### _dependencyResolver
-The dependency resolver.
+Dependency resolver.
 > `protected` **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### _logger
-The logger.
+Logger.
 > `protected` **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _connection
-The PostgreSQL connection component.
+PostgreSQL connection component.
 > `protected` **_connection**: [PostgresConnection](../../connect/postgres_connection) 
 
 #### _client
-The PostgreSQL connection pool object.
+PostgreSQL connection pool object.
 > `protected` **_client**: NpgsqlConnection 
 
 #### _databaseName 
-The PostgreSQL database name.
+PostgreSQL database name.
 > `protected` **_databaseName**: string
 
 #### _maxPageSize
-The maximum number of records to return from the database.
+Maximum number of records to return from the database.
 > `protected` **_maxPageSize** = 100
 
 #### _schemaName
-The PostgreSQL schema object.
+PostgreSQL schema object.
 > `protected` **_schemaName**: string
 
 </span>
@@ -169,13 +169,13 @@ Defines database schema via auto create objects or convenience methods.
 
 #### deleteByFilter
 Deletes data items that match to a given filter.
-This method shall be called by a public **DeleteByFilterAsync** method from child class that
+This method shall be called by a public **DeleteByFilterAsync** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > `public virtual` Task DeleteByFilterAsync(string correlationId, string filter)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: string - (optional) a filter JSON object.
+- **filter**: string - (optional) filter for JSON object.
 
 
 #### EnsureIndex
@@ -281,7 +281,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > `public virtual` Task<[DataPage<T>](../../../commons/data/data_page)> GetPageByFilterAsync(string correlationId, string filter, [PagingParams](../../../commons/data/paging_params) paging = null, string sort = null, string select = null)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: string - (optional) filter for JSON objects
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: string - (optional) sorting JSON object
@@ -291,11 +291,11 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and talse otherwise.
 
 
 #### OpenAsync
@@ -320,7 +320,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

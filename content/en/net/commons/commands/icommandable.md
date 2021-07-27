@@ -12,9 +12,9 @@ description: >
 
 The ICommandable interface allows you to expose the functionality of commandable objects as commands and events grouped into a [CommandSet](../command_set) object.
 
-Important points
+**Important points**
 
-- This interface is typically implemented by controllers and is used to auto generate external interfaces. 
+- This interface is typically implemented by controllers and is used to autogenerate external interfaces. 
 
 ### Instance methods
 

@@ -14,7 +14,7 @@ description: >
 
 The Event class allows you to create events.
 
-Important points
+**Important points**
 
 - It allows you to send asynchronous notifications to multiple subscribed listeners.
 
@@ -25,7 +25,7 @@ Throws an Error if the name is null.
 
 > `public` Event(string name)
 
-- **name**: string - the name of the event that is to be created.
+- **name**: string - name of the event that is to be created.
 
 
 ### Properties
@@ -51,7 +51,7 @@ Adds a listener to receive notifications when this event is fired.
 
 #### NotifyAsync
 Fires this event and notifies all registred listeners.  
-Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
+Throws an [InvocationException](../../errors/invocation_exception) if the event fails to be raised.
 
 > `public` void NotifyAsync(string correlationId, [Parameters](../../run/parameters) args)
 

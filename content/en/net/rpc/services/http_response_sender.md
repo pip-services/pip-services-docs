@@ -15,7 +15,7 @@ The HttpResponseSender class allows you to handle HTTP-based responses.
 
 #### SendCreatedResultAsync
 Creates a callback function that sends a newly created object as JSON.
-This callack function call be called directly or passed
+This callack function can be called directly or passed
 as a parameter to business logic components.
 
 If the object is not null, it returns 201 status code.
@@ -30,7 +30,7 @@ If an error occurs, it sends ErrorDescription with approproate status code.
 
 #### SendDeletedResultAsync
 Creates a SendDeletedResult function that sends a deleted object as JSON.
-That callack function call be called directly or passed
+That callack function can be called directly or passed
 as a parameter to business logic components.
 
 If object is not null, it returns 201 status code.
@@ -39,7 +39,7 @@ If an error occurs, it sends ErrorDescription with the approproate status code.
 
 > `public static` Task SendDeletedResultAsync(HttpResponse response, object result)
 
-- **response**: HttpResponse - an HTTP response.
+- **response**: HttpResponse - HTTP response.
 - **result**: object - execution result
 
 
@@ -50,7 +50,7 @@ If an error occurs, it sends ErrorDescription with approproate status code.
 
 > `public static` Task SendEmptyResultAsync(HttpResponse response)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 
 
 #### SendErrorAsync
@@ -61,13 +61,13 @@ If status code is not defined, it uses 500 status code.
 
 > `public static` Task SendErrorAsync(HttpResponse response, Exception ex)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 - **ex**: Exception - execution result 
 
 
 #### SendResultAsync
 Creates a callback function that sends a result as a JSON object.
-That callack function call be called directly or passed
+That callack function can be called directly or passed
 as a parameter to business logic components.
 
 If object is not null, it returns 200 status code.
@@ -77,5 +77,5 @@ If error occur, it sends ErrorDescription with the approproate status code.
 
 > `public static` Task SendResultAsync(HttpResponse response, object result)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 - **result**: object - execution result 

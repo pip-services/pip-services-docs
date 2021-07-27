@@ -4,7 +4,7 @@ title: "SqlServerPersistence"
 linkTitle: "SqlServerPersistence"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Abstract persistence component that stores data in a SQLServer database using the official driver.
+    Abstract persistence component that stores data in a SQL Server database using the official driver.
     
 ---
 
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The SqlServerPersistence class allows you to create persistence components that store data in a SQLServer database using the official driver.
+The SqlServerPersistence class allows you to create persistence components that store data in a SQL Server database using the official driver.
 
 **Important points**
 
@@ -21,7 +21,8 @@ The SqlServerPersistence class allows you to create persistence components that 
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **collection**: (optional) SQLServer collection name     
+  
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -61,7 +62,7 @@ Creates a new instance of the persistence component.
 <span class="hide-title-link">
 
 #### _tableName
-SQLServer table name.
+SQL Server table name.
 > `protected` **_tableName**: string
 
 #### _dependencyResolver
@@ -77,11 +78,11 @@ SQLServer connection component.
 > `protected` **_connection**: [SqlServerConnection](../../connect/sqlserver_connection) 
 
 #### _client
-SQLServer connection pool object.
+SQL Server connection pool object.
 > `protected` **_client**: SqlConnection 
 
 #### _databaseName 
-SQLServer database name.
+SQL Server database name.
 > `protected` **_databaseName**: string
 
 #### _maxPageSize
@@ -90,7 +91,7 @@ Maximum number of records that can be returned from the database.
 
 
 #### _tableName
-SqlServer table name.
+SQL Server table name.
 > `protected` **_tableName**: string 
 
 
@@ -186,8 +187,8 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 > `public virtual` Task DeleteByFilterAsync(string correlationId, string filter)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
-- **filter**: string - (optional) a filter JSON object.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **filter**: string - (optional) filter for JSON object.
 
 
 #### EnsureIndex
@@ -195,13 +196,13 @@ Adds an index definition to be created on opening.
 
 > `protected` void EnsureIndex(string name, Dictionary\<string, bool\> keys, [IndexOptions](../index_options) options)
 
-- **name**: string - the index name
+- **name**: string - index name
 - **keys**: Dictionary\<string, bool\> - index keys (fields)
 - **options**: [IndexOptions](../index_options) - index options
 
 
 #### EnsureSchema
-Adds a statement to a schema definition
+Adds a statement to a schema definition.
 
 > `protected` void EnsureSchema(string dmlStatement)
 
@@ -293,8 +294,8 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `protected virtual` Task\<T\> GetOneRandomAsync(string correlationId, string filter)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: string - (optional) a filter JSON object
-- **returns**: Task\<T\> - a random item.
+- **filter**: string - (optional) filter for JSON objects
+- **returns**: Task\<T\> - random item.
 
 
 #### GetPageByFilter
@@ -319,7 +320,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - true if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync

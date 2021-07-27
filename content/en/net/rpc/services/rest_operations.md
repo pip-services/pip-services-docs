@@ -56,7 +56,7 @@ Gets the filter parameters.
 
 >  `protected` [FilterParams](../../../commons/data/filter_params) GetFilterParams(HttpRequest request)
 
-- **request**: HttpRequest - an HTTP request
+- **request**: HttpRequest - HTTP request
 - **returns**: [FilterParams](../../../commons/data/filter_params) - filter paramters
 
 #### GetPagingParams
@@ -64,7 +64,7 @@ Gets the paging parameters.
 
 > `protected` [PagingParams](../../../commons/data/paging_params) GetPagingParams(HttpRequest request)
 
-- **request**: HttpRequest - an HTTP request
+- **request**: HttpRequest - HTTP request
 - **returns**: [PagingParams](../../../commons/data/paging_params) - paging paramters
 
 
@@ -74,7 +74,7 @@ Invokes an operation.
 > `public` Task InvokeAsync(string operation, object[] parameters)
 
 - **operation**: string - operation to be invoked.
-- **parameters**: object[] - TODO: add description.
+- **parameters**: object[] - operation's parameters.
 
 
 #### InvokeWithResponseAsync
@@ -83,7 +83,7 @@ Invokes an operation with returning response.
 > `public` Task\<dynamic\> InvokeWithResponseAsync(string operation, object[] parameters)
 
 - **operation**: string - operation to be invoked.
-- **parameters**: object[] - TODO: add description.
+- **parameters**: object[] - operation's parameters.
 - **returns**: Task\<dynamic\> - operation.
 
 
@@ -92,8 +92,8 @@ Sends a bad request error message.
 
 > `protected` Task SendBadRequestAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -102,8 +102,8 @@ Sends a conflict error messge
 
 > `protected` Task SendConflictAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -112,8 +112,8 @@ Sends a JSON object with the created result.
 
 > `protected` Task SendCreatedResultAsync(HttpResponse response, object result)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -122,35 +122,35 @@ Sends the deleted result in JSON format.
 
 > `protected` Task SendDeletedResultAsync(HttpResponse response, object result)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 
 
 #### SendEmptyResultAsync
-Send an empty result with 204 status code.
+Sends an empty result with 204 status code.
 
 > `protected` Task SendEmptyResultAsync(HttpResponse response)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 
 #### SendErrorAsync
 Sends an error serialized as ErrorDescription object and appropriate HTTP status code.
 
 > `protected` Task SendErrorAsync(HttpResponse response, Exception error)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **error**: Exception - error
 
 
 #### SendInternalErrorAsync
-Sends an internal error message
+Sends an internal error message.
 
 > `protected` Task SendInternalErrorAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -159,8 +159,8 @@ Sends a not found error message.
 
 > `protected` Task SendNotFoundAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -169,8 +169,8 @@ Sends a result as a JSON object.
 
 > `protected` Task SendResultAsync(HttpResponse response, object result)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **result**: object - result.
 
 
@@ -179,8 +179,8 @@ Sends a server unavailable error message (Status code 503).
 
 > `protected` Task SendServerUnavailableAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -189,8 +189,8 @@ Sends a session expired error message (Status code 440).
 
 > `protected` Task SendSessionExpiredASync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 
@@ -199,8 +199,8 @@ Sends an unauthorized error message.
 
 > `protected` Task SendUnauthorizedAsync(HttpRequest request, HttpResponse response, string message)
 
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP request.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP request.
 - **message**: string - message
 
 

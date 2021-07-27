@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
-    TODO: add description
+    This package contains classes used to create message queues for Amazon SQS (Simple Queue Service).
 ---
 ---
 
@@ -14,10 +14,10 @@ description: >
 ### Classes
 
 #### [SqsMessageQueue](sqs_message_queue)
-TODO: add description
+Class used to create message queues for Amazon SQS (Simple Queue Service).
 
 #### [SqsMessageQueueFactory](sqs_message_queue_factory)
-TODO: add description
+Factory to create message queues for Amazon SQS (Simple Queue Service).
 
 
 </div>

@@ -4,7 +4,7 @@ title: "StatusRestService"
 linkTitle: "StatusRestService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    Service that returns microservice status information via HTTP/REST protocol.
+    Service that returns microservice status information via the HTTP/REST protocol.
 ---
 
 **Inherits:** [RestService](../rest_service)

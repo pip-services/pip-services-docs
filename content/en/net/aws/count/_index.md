@@ -5,7 +5,7 @@ linkTitle: "Count"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
-    This package contains constants used used to determine cloud watch units and classes used to create performance counters.
+    This package contains constants used to determine cloud watch units and classes used to create performance counters.
 ---
 ---
 

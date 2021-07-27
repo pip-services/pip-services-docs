@@ -15,7 +15,7 @@ description: >
 
 The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQL Server databases and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios, child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilter), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync)   operations with a specific filter function.
@@ -24,7 +24,7 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **collection**: (optional) SQL Server collection name   
 
 **connection(s)**:   
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
@@ -76,7 +76,7 @@ Creates a data item.
 
 
 #### DeleteByIdAsync
-Deleted a data item by it's unique id.
+Deletes a data item by it's unique id.
 
 > `public virtual` Task\<T\> DeleteByIdAsync(string correlationId, K id)
 

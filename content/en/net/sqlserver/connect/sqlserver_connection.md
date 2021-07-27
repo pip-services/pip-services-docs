@@ -13,9 +13,9 @@ description: >
 
 ### Description
 
-The SqlServerConnection class allows you to create a connection to an SQLServer database using the official driver.
+The SqlServerConnection class allows you to create a connection to an SQL Server database using the official driver.
 
-Important points
+**Important points**
 
 - By defining a connection and sharing it through multiple persistence components you can reduce the number of used database connections.
 
@@ -53,7 +53,7 @@ Important points
 
 
 #### _connection
-SQLServer connection pool object.
+SQL Server connection pool object.
 > `protected` **_connection**: SqlConnection
 
 #### _connectionResolver
@@ -61,7 +61,7 @@ Connection resolver.
 > `protected` **_connectionResolver**: [SqlServerConnectionResolver](../sqlserver_connection_resolver)
 
 #### _databaseName
-SQLServer database name.
+SQL Server database name.
 > `protected` **_databaseName**: string
 
 #### _logger
@@ -95,15 +95,15 @@ Configures a component by passing its configuration parameters.
 
 
 #### GetConnection
-Gets the connection to an SQLServer database.
+Gets the connection to an SQL Server database.
 
 > `public` SqlConnection GetConnection()
 
-- **returns**: SqlConnection - connection to an SQLServer database.
+- **returns**: SqlConnection - connection to an SQL Server database.
 
 
 #### GetDatabaseName
-Gets the name of an SQLServer database.
+Gets the name of an SQL Server database.
 
 > `public` string GetDatabaseName()
 

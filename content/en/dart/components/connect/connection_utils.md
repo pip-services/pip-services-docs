@@ -28,7 +28,7 @@ The result URI will be in the following form:
 #### concat
 Concatinates two options by combining duplicated properties into comma-separated list
 
-> `static` [ConfigParams](../../../commons/config/config_params) concat([ConfigParams](../../../commons/config/config_params) options1, [ConfigParams](../../../commons/config/config_params) options2, List\<String\> keys)
+> `static` [ConfigParams](../../../commons/config/config_params) concat([ConfigParams](../../../commons/config/config_params) options1, [ConfigParams](../../../commons/config/config_params) options2, [List\<String\> keys])
 
 - **options1**: [ConfigParams](../../../commons/config/config_params) - first options to merge
 - **options2**: [ConfigParams](../../../commons/config/config_params) - second options to merge

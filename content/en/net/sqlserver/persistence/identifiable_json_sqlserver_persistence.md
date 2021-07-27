@@ -4,7 +4,7 @@ title: "IdentifiableJsonSqlServerPersistence<T, K>"
 linkTitle: "IdentifiableJsonSqlServerPersistence"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Abstract persistence component that stores data in SQLServer in JSON or JSONB fields
+    Abstract persistence component that stores data in an SQL Server database in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.
 
    
@@ -19,14 +19,14 @@ The IdentifiableJsonSqlServerPersistence class allows you to create persistence 
 **Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync) operations with an specific filter function.
+- In basic scenarios, child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilterasync), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync) operations with an specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
+- In complex scenarios, child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **collection**: (optional) SQL Server collection name   
 
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
@@ -89,7 +89,7 @@ Adds DML statement to automatically create a JSON(B) table
 
 
 #### UpdatePartially
-Updates only few selected fields in a data item.
+Updates only a few selected fields in a data item.
 
 > `public override` Task\<T\> UpdatePartially(string correlationId, K id, [AnyValueMap](../../../commons/data/any_value_map) data)
 

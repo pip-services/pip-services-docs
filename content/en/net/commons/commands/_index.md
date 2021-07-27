@@ -21,7 +21,7 @@ This package allows you to create [Commandable Interfaces](icommandable), which 
 The package main components are:    
     
 - [Commandable Interfaces](icommandable) – used to make classes with a certain logic and, which are capable of receiving and processing commands in this universal form.  
-- [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions, and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, such as logging, caching, blocking), which can be removed from the business logic and added to these perpendicular calls. 
+- [Command interceptors](icommand_interceptor) – modify the message execution pipeline. Command interceptors are used to intercept calls, perform a set of actions, and, optionally, cancel the command's actual execution by simply returning a result. This logic is used in aspect-oriented programming. Aspect-oriented programming contains perpendicular logic (aspects, such as logging, caching, and blocking), which can be removed from the business logic and added to these perpendicular calls. 
    Moreover, when using interceptors, a command can pass through an execution chain, consisting of interceptors, which can: 
     - simply take note of the command, notify, log, get metrics, or do some other passive task;
     - intercept the command completely and, for example, return a previous record of the call from the cache. 
@@ -65,7 +65,7 @@ Events allow sending asynchronious notifications to multiple subscribed listener
 Contains a set of commands and events supported by a [commandable](icommandable) object.
 The CommandSet supports command interceptors to extend and the command call chain.   
 CommandSets can be used as alternative commandable interface to a business object.
-It can be used to auto generate multiple external services for the business object
+It can be used to autogenerate multiple external services for the business object
 without writing much code.
 
 #### [Command](command)

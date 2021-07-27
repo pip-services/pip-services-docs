@@ -38,7 +38,7 @@ dotnet add package PipServices3.Commons
 
 Then, you are ready to start using the Pip.Services patterns to augment your backend code.
 
-For instance, here is how you can implement a component, that receives configuration, get assigned references, and
+For instance, here below is an example on how you can implement a component that receives configuration, gets assigned references, and
 can be opened and closed using the patterns from this module.
 
 ```cs
@@ -97,7 +97,7 @@ public class MyComponentA : IConfigurable, IReferenceable, IOpenable
 
 ```
 
-Then, here is how the component can be used in the code
+Then, here is how the component can be used in the code:
 
 ```cs
 using PipServices3.Commons.Config;

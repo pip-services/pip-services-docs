@@ -15,14 +15,12 @@ description: >
 
 The IdentifiableJsonPostgresPersistence class allows you to create persistence components used to store data in PosgreSQL databases in JSON or JSONB fields and implement a number of CRUD operations over data items with unique ids.
 
-Important points
-
-Where T : [IIdentifiable<K>](../../../commons/data/iidentifiable), new().
+**Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override the [getPageByFilter](../postgres_persistence/#getpagebyfilter), [getListByFilter](../postgres_persistence/#getlistbyfilter) or [deleteByFilter](../postgres_persistence/#deletebyfilter)  operations with a specific filter function.
+- In basic scenarios, child classes shall only override the [getPageByFilter](../postgres_persistence/#getpagebyfilter), [getListByFilter](../postgres_persistence/#getlistbyfilter) or [deleteByFilter](../postgres_persistence/#deletebyfilter)  operations with a specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
+- In complex scenarios, child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 
@@ -55,7 +53,7 @@ Creates a new instance of the persistence component.
 
 > `public` IdentifiableJsonPostgresPersistence(string tableName)
 
-- **tableName**: string - (optional) a collection name.
+- **tableName**: string - (optional) collection name.
 
 
 ### Instance methods

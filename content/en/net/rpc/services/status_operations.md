@@ -28,13 +28,13 @@ Sets references to dependent components.
 
 > `public new` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### StatusAsync
 Handles status requests.
 
 > `public` Task StatusAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user)
-- **request**: HttpRequest - an HTTP request.
-- **response**: HttpResponse - an HTTP response.
+- **request**: HttpRequest - HTTP request.
+- **response**: HttpResponse - HTTP response.
 - **user**: ClaimsPrincipal - to identify current user.

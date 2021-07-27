@@ -5,7 +5,7 @@ linkTitle: "Log"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
-    This package contains classes used to create loggers.
+    This package contains a class used to create loggers.
 ---
 ---
 

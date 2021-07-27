@@ -19,13 +19,11 @@ description: >
 This module contains the following packages:
 
 - [**Build**](build) - factories for constructing module components
-- [**Clients**](clients) - client components for working with Lambda AWS
 - [**Connect**](connect) - components for installation and connection settings
-- [**Container**](containers) - components for container creation for Lambda server-side AWS functions
 - [**Count**](count) - components for working with counters (metrics) with data saving in the CloudWatch AWS service
 - [**Log**](log) - logging components with saving data in the CloudWatch AWS service
-- [**Services**](log) - contains interfaces and classes used to create Lambda services
-- [**Test**](test) - contains classes used for automated testing
+- [**Queues**](queues) - contains classes to create message queues
+
 
 ### Use
 

@@ -4,7 +4,7 @@ title: "RestService"
 linkTitle: "RestService"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    Abstract service that receives remove calls via HTTP/REST protocol.
+    Abstract service that receives remove calls via the HTTP/REST protocol.
 ---
 
 **Inherits:** [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable), [IOpenable](../../../commons/run/iopenable), [IUnreferenceable](../../../commons/refer/iunreferenceable), [IRegisterable](../iregisterable)
@@ -38,7 +38,7 @@ The RestService class allows you to create REST services that receive remote cal
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:traces:\*:\*:1.0** - (optional) [ITracer](../../../components/trace/itracer) components to record traces
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections
 - **\*:endpoint:http:\*:1.0** - (optional) [HttpEndpoint](../http_endpoint) reference
 
 
@@ -60,7 +60,7 @@ Performance counters.
 > `protected` **_counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### _debug
-Boolean that set debugging to True or False.
+Boolean that set debugging to true or false.
 > `protected` **_debug**: boolean = false
 
 #### _baseRoute
@@ -113,8 +113,8 @@ Returns correlationId from a request
 
 > `protected` string GetCorrelationId(HttpRequest request)
 
-- **request**: HttpRequest - an HTTP request
-- **returns**: string - the correlation id from request.
+- **request**: HttpRequest - HTTP request
+- **returns**: string - correlation id from request.
 
 
 #### Instrument
@@ -133,7 +133,7 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync
@@ -144,7 +144,7 @@ Opens the component.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### Register
-Registers all service routes in a HTTP endpoint.
+Registers all service routes in an HTTP endpoint.
 
 This method is called by the service and must be overriden
 in child classes.
@@ -153,12 +153,12 @@ in child classes.
 
 
 #### RegisterInterceptor
-Registers a middleware for a given route in HTTP endpoint.
+Registers a middleware for a given route in an HTTP endpoint.
 
 > `public` void RegisterInterceptor(string route, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\>, Task\> action)
 
 - **route**: string - command route. Base route will be added to this route
-- **action**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> - action function that is called when middleware is invoked.
+- **action**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> - action function that is called when the middleware is invoked.
 
 
 #### RegisterOpenApiSpec
@@ -177,7 +177,7 @@ Registers the open api spec from a file.
 - **path**: string - path to the file
 
 #### RegisterOpenApiSpecFromResource
-Registers the open api spec from resource.
+Registers the open api spec from a resource.
 
 > `protected virtual` void RegisterOpenApiSpecFromResource(string name)
 
@@ -191,75 +191,75 @@ Registers the open api spec from metadata.
 
 
 #### RegisterRoute
-Registers a route in HTTP endpoint.
+Registers a route in an HTTP endpoint.
 
 > `protected virtual` void RegisterRoute(string method, string route, Func\<HttpRequest, HttpResponse, RouteData, Task\> action)
 
 - **method**: string - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - command route. The base route will be added to this route
+- **route**: string - command route. base route will be added to this route
 - **action**: Func\<HttpRequest, HttpResponse, RouteData, Task\> - action function that is called when an operation is invoked.
 
 
 #### RegisterRouteWithAuth
-Registers a route with authorization in HTTP endpoint.
+Registers a route with authorization in an HTTP endpoint.
 
 > `protected virtual` void RegisterRouteWithAuth(string method, string route, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> autorize, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> action)
 
 - **method**: string - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - command route. The base route will be added to this route
+- **route**: string - command route. base route will be added to this route
 - **authorize**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> - authorization interceptor
 - **action**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> - action function that is called when an operation is invoked.
 
 
 
 #### SendCreatedResult
-Creates a callback function that sends a newly created object as JSON. The callack function call be called directly or passed as a parameter to business logic components.
+Creates a callback function that sends a newly created object as JSON. The callack function can be called directly or passed as a parameter to business logic components.
 
 If the object is not null, it returns 200 status code. For null results it returns
 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
 
 > `protected` Task SendCreatedResultAsync(HttpResponse response, object result)
 
-- **res**: HttpResponse - an HTTP response
-- **result**: object - an execution result
+- **res**: HttpResponse - HTTP response
+- **result**: object - execution result
 
 
 #### SendDeletedAsync
-Creates a callback function that sends deleted object as JSON.
-That callack function call be called directly or passed
+Creates a callback function that sends a deleted object as JSON.
+That callack function can be called directly or passed
 as a parameter to business logic components.
 
-If object is not null it returns 200 status code.
+If object is not null, it returns 200 status code.
 For null results it returns 204 status code.
-If error occur it sends ErrorDescription with approproate status code.
+If an error occurs, it sends ErrorDescription with approproate status code.
 
 
 > `protected` Task SendDeletedAsync(HttpResponse response, object result)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 - **result**: object - body object to result.
 
 
 #### SendErrorAsync
-Sends an error serialized as ErrorDescription object and the appropriate HTTP status code. If status code is not defined, it uses 500 status code.
+Sends an error serialized as ErrorDescription object and the appropriate HTTP status code. If status code is not defined, it uses the 500 status code.
 
 
 > `protected` Task SendErrorAsync(HttpResponse response, Exception ex)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 - **ex**: Exception - error object to be sent.
 
 
 #### SendResultAsync
-Creates a callback function that sends a result as a JSON object. The callack function call be called directly or passed as a parameter to business logic components.
+Creates a callback function that sends a result as a JSON object. The callack function can be called directly or passed as a parameter to business logic components.
 
-If the object is not null it returns 200 status code. For null results, it returns
+If the object is not null, it returns 200 status code. For null results, it returns
 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
 
 
 > `protected` Task SendResultAsync(HttpResponse response, object result)
 
-- **response**: HttpResponse - an HTTP response
+- **response**: HttpResponse - HTTP response
 - **result**: object - body object to result.
 
 
@@ -268,7 +268,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

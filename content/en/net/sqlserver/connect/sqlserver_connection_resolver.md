@@ -4,7 +4,7 @@ title: "SqlServerConnectionResolver"
 linkTitle: "SqlServerConnectionResolver"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Helper class that resolves SQLServer connection and credential parameters,
+    Helper class that resolves SQL Server connection and credential parameters,
     validates them and generates a connection URI.
 
    
@@ -14,7 +14,7 @@ description: >
 
 ### Description
 
-The SqlServerConnectionResolver class allows you to resolve connection and credential parameters, validate these parameters, and generate a connection URI.
+The SqlServerConnectionResolver class allows you to resolve SQL Server connection and credential parameters, validate these parameters, and generate a connection URI.
 
 **Important points**
 
@@ -71,7 +71,7 @@ Configures the component by passing its configuration parameters.
 
 
 #### ResolveAsync
-Resolves SQLServer config from connection and credential parameters.
+Resolves a SQL Server config from connection and credential parameters.
 
 > `public` Task\<string\> ResolveAsync(string correlationId)
 

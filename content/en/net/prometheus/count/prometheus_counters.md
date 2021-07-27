@@ -16,7 +16,7 @@ description: >
 
 The PrometheusCounters class allows you to create performance counters that send their metrics to Pormetheus service.
 
-Important points
+**Important points**
 
 - The component is normally used in passive mode conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
 
@@ -72,7 +72,7 @@ Checks if the component is opened.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### OpenAsync
@@ -96,7 +96,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

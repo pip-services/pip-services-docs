@@ -4,7 +4,7 @@ title: "SqsMessageQueue"
 linkTitle: "SqsMessageQueue"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
-    Used to create message queues for Amazon SQS (Simple Queue Service)
+    Used to create message queues for Amazon SQS (Simple Queue Service).
 ---
 
 **Inherits:** [MessageQueue](../../../messaging/queues/message_queue)

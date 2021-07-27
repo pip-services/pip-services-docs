@@ -36,7 +36,7 @@ Typical uses of this package would be intercepting messages and various logging 
 
 #### [ICommandInterceptor](icommand_interceptor)
 Implements a [command](icommand) wrapped by an interceptor.
-It allows to build command a call chains. The interceptor can alter execution
+It allows to build command call chains. The interceptor can alter execution
 and delegate calls to a next command, which can be intercepted or concrete.
 
 #### [ICommand](icommand)
@@ -45,7 +45,7 @@ calling them in uniform and safe manner.
 
 #### [ICommandable](icommandable)
 An interface for commandable objects, which are part of the command design pattern.
-The commandable object exposes its functonality as commands and events groupped
+The commandable object exposes its functonality as commands and events grouped
 into a [CommandSet](command_set).
 This interface is typically implemented by controllers and is used to auto generate
 external interfaces.
@@ -70,7 +70,7 @@ without writing much code.
 
 #### [Command](command)
 Concrete implementation of the [ICommand](icommand) interface. Command allows to call a method
-or function using Command pattern.
+or function using the Command pattern.
 
 #### [Event](event)
 Concrete implementation of the [IEvent](ievent) interface.

@@ -15,7 +15,7 @@ description: >
 
 The CommandSet class allows you to create a set of commands and events supported by a [commandable](../icommandable) object. In addition, it supports command interceptors and command call chains.
 
-Important points
+**Important points**
 
 - CommandSets can be used as an alternative commandable interface to a business object.
 - This class can be used to auto generate multiple external services for a business object.
@@ -38,7 +38,7 @@ See [ICommand](../icommand).
 
 #### Events
 Gets all events registred in this command set.  
-See [IEvent](../ievent)
+See [IEvent](../ievent).
 
 > `public` List<[IEvent](../ievent)> Events { get; }
 
@@ -47,14 +47,14 @@ See [IEvent](../ievent)
 
 #### AddCommand
 Adds a [command](../icommand) to this command set.  
-See [ICommand](../icommand)
+See [ICommand](../icommand).
 
 > `public` void AddCommand([ICommand](../icommand) command)
 
-- **command**: [ICommand](../icommand) - the command to add.
+- **command**: [ICommand](../icommand) - command to add.
 
 #### AddCommandSet
-Adds all of the commands and events from specified [command set](../command_set)
+Adds all of the commands and events from a specified [command set](../command_set)
 into this one. 
 
 > `public` void AddCommandSet([CommandSet](../command_set) commandSet)
@@ -63,7 +63,7 @@ into this one.
 
 #### AddCommands
 Adds multiple [commands](../icommand) to this command set.  
-See [ICommand](../icommand)
+See [ICommand](../icommand).
 
 > `public` void AddCommands(IEnumerable<[ICommand](../icommand)> commands)
 
@@ -71,7 +71,7 @@ See [ICommand](../icommand)
 
 #### AddEvent
 Adds an [event](../ievent) to this command set.  
-See [IEvent](../ievent)
+See [IEvent](../ievent).
 
 > `public` void AddEvent([IEvent](../ievent) ev) 
 
@@ -79,7 +79,7 @@ See [IEvent](../ievent)
 
 #### AddEvents
 Adds multiple [events](../ievent) to this command set.  
-See [IEvent](../ievent)
+See [IEvent](../ievent).
 
 > `public` void AddEvents(IEnumerable<[IEvent](../ievent)> events)
 
@@ -90,11 +90,11 @@ Adds a [command interceptor](../icommand_interceptor) to this command set.
 
 > `public` void AddInterceptor([ICommandInterceptor](../icommand_interceptor) intercepter)
 
-- **intercepter**: [ICommandInterceptor](../icommand_interceptor) the interceptor to add.
+- **intercepter**: [ICommandInterceptor](../icommand_interceptor) interceptor to add.
 
 #### AddListener
 Adds a [listener](../ievent_listener) to receive notifications on fired events.  
-See [IEventListener](../ievent_listener)
+See [IEventListener](../ievent_listener).
 
 > `public` void AddListener([IEventListener](../ievent_listener) listener)
 
@@ -102,7 +102,7 @@ See [IEventListener](../ievent_listener)
 
 #### ExecuteAsync
 Executes a [command](../icommand) specificed by its name.  
-See [ICommand](../icommand), [Parameters](../../run/parameters)
+See [ICommand](../icommand), [Parameters](../../run/parameters).
 
 > `public` Task<\object\> ExecuteAsync(string correlationId, string command,  [Parameters](../../run/parameters) args)
 
@@ -113,7 +113,7 @@ See [ICommand](../icommand), [Parameters](../../run/parameters)
 
 #### FindCommand
 Searches for a command by its name.
-See [ICommand](../icommand)
+See [ICommand](../icommand).
 
 > `public` [ICommand](../icommand) FindCommand(string command)
 
@@ -130,7 +130,7 @@ Searches for an event by its name in this command set.
 
 #### NotifyAsync
 Fires event specified by its name and notifies all registered
-[listeners](../ievent_listener)
+[listeners](../ievent_listener).
 
 > `public` Task NotifyAsync(correlationId: string, ev: string, args: [Parameters](../../run/parameters))
 
@@ -141,8 +141,8 @@ Fires event specified by its name and notifies all registered
 
 
 #### RemoveListener
-Removes previosly added [listener](../ievent_listener).  
-See [IEventListener](../ievent_listener)
+Removes a previosly added [listener](../ievent_listener).  
+See [IEventListener](../ievent_listener).
 
 > `public` void RemoveListener([IEventListener](../ievent_listener) listener)
 
@@ -150,7 +150,7 @@ See [IEventListener](../ievent_listener)
 
 
 #### validate
-Validates [args](../../run/parameters) for command specified by its name using a defined schema.
+Validates [args](../../run/parameters) for a command specified by its name using a defined schema.
 If the validation schema is not defined, then the methods returns no errors.
 It returns a validation error if the command is not found.
 
@@ -159,7 +159,7 @@ It returns a validation error if the command is not found.
 
 - **command**: string - name of the command for which the 'args' must be validated.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to validate.
-- **returns**: IList<[ValidationResult](../../validate/validation_result)> - array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validationresulttype).
+- **returns**: IList<[ValidationResult](../../validate/validation_result)> - array of ValidationResults. If no command is found by the given name, then the returned array of ValidationResults will contain a single entry, whose type will be [ValidationResultType.Error](../../validate/validation_result_type).
 
 
 

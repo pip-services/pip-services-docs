@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 no_list: true
 weight: 30
 description: > 
-    SQLServer components for Node.js / ES2017. 
+    SQL Server components for Node.js / ES2017. 
 
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 ---

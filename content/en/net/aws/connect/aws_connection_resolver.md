@@ -5,7 +5,7 @@ linkTitle: "AwsConnectionResolver"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
     Helper class used to retrieve AWS connection and credential parameters,
-    validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
+    validate them and compose an [AwsConnectionParams](../aws_connection_params) value.
  
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The AwsConnectionResolver class allows you to retrieve AWS connection and credential parameters, validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
+The AwsConnectionResolver class allows you to retrieve AWS connection and credential parameters, validate them and compose an [AwsConnectionParams](../aws_connection_params) value.
 
 
 #### Configuration parameters
@@ -32,7 +32,7 @@ The AwsConnectionResolver class allows you to retrieve AWS connection and creden
     - **access_key**: AWS access/client id
 
 #### References
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
+- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connections.
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials.
 
 ### Fields

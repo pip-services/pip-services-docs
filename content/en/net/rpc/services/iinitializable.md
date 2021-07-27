@@ -4,17 +4,17 @@ title: "IInitializable"
 linkTitle: "IInitializable"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    TODO: add description
+    Interface for initialization.
 ---
 
 ### Description
 
-TODO: add description
+The IInitializable interface is used to define initializable classes.
 
 ### Instance methods
 
 #### Initialize
-TODO: add description
+Initialization method.
 > void Initialize(IApplicationBuilder applicationBuilder)
 
-- **applicationBuilder**: IApplicationBuilder - TODO: add description
+- **applicationBuilder**: IApplicationBuilder - configuration builder.

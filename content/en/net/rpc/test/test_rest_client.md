@@ -37,7 +37,7 @@ Calls a remote method via the HTTP/REST protocol.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - command route. The base route will be added to this route
+- **route**: string - command route. The base route will be added to this route.
 - **requestEntity**: object - request body object.
 
 
@@ -45,7 +45,7 @@ Calls a remote method via the HTTP/REST protocol.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - command route. The base route will be added to this route
+- **route**: string - command route. The base route will be added to this route.
 - **returns**: Task\<T\> - result object.
 
 
@@ -54,7 +54,7 @@ Calls a remote method via the HTTP/REST protocol.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: string - command route. The base route will be added to this route
+- **route**: string - command route. The base route will be added to this route.
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
 

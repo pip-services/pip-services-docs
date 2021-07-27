@@ -165,6 +165,22 @@ Calls a remote method via HTTP/REST protocol.
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object
 
+#### CallStringAsync
+TODO: add ddescription
+> `protected` Task\<string\> CallStringAsync(string correlationId, HttpMethod method, string route)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - command route. Base route will be added to this route
+- **returns**: Task\<string\> - TODO: add ddescription
+
+> `protected` Task\<string\> CallStringAsync(string correlationId, HttpMethod method, string route, object requestEntity)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - command route. Base route will be added to this route
+- **requestEntity**: object - request body object.
+- **returns**: Task\<string\> - TODO: add ddescription
 
 #### CloseAsync
 Closes a component and frees used resources.
@@ -180,6 +196,27 @@ Configures a component by passing configuration parameters.
 > `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+#### ConstructQueryString
+TODO: add description
+> `protected` string ConstructQueryString(NameValueCollection parameters)
+
+- **parameters**: NameValueCollection - TODO: add description
+- **returns**: string - TODO: add description
+
+#### CreateRequestUri
+TODO: add description
+> `protected` Uri CreateRequestUri(string route)
+
+- **route**: string - TODO: add description
+- **returns**: Uri - TODO: add description
+
+#### CreateEntityContent
+TODO: add description
+> `protected` HttpContent CreateEntityContent(object value)
+
+- **value**: object - TODO: add description
+- **returns**: HttpContent - TODO: add description
 
 #### ExecuteAsync
 Executes a remote method via the HTTP/REST protocol.
@@ -205,6 +242,23 @@ Executes a remote method via the HTTP/REST protocol.
 - **route**: string - command route. Base route will be added to this route
 - **requestEntity**: object - request body object.
 - **returns**: Task\<T\> - result object.
+
+#### ExecuteStringAsync
+TODO: add description
+
+> `protected` Task\<string\> ExecuteStringAsync(string correlationId, HttpMethod method, string route)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - command route. Base route will be added to this route
+- **returns**: Task\<string\> - TODO: add description
+
+> `protected` Task\<string\> ExecuteStringAsync(string correlationId, HttpMethod method, string route, object requestEntity)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **method**: HttpMethod - HTTP method: "get", "head", "post", "put", "delete"
+- **route**: string - command route. Base route will be added to this route
+- **returns**: Task\<string\> - TODO: add description
 
 #### Instrument
 Adds instrumentation to log calls and measures call time.

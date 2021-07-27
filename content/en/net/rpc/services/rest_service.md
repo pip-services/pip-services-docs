@@ -116,6 +116,33 @@ Returns correlationId from a request
 - **request**: HttpRequest - HTTP request
 - **returns**: string - correlation id from request.
 
+#### GetFilterParams
+TODO: add description
+> `protected` [FilterParams](../../../commons/data/filter_params) GetFilterParams(HttpRequest request)
+
+- **request**: HttpRequest - TODO: add description
+- **returns**: [FilterParams](../../../commons/data/filter_params) - TODO: add description
+
+#### GetSortParams
+TODO: add description
+> `protected` [SortParams](../../../commons/data/sort_params) GetSortParams(HttpRequest request)
+
+- **request**: HttpRequest - TODO: add description
+- **returns**: [SortParams](../../../commons/data/sort_params) - TODO: add description
+
+#### GetParameters
+TODO: add description
+> `protected` [RestOperationParameters](../rest_operation_parameters) GetParameters(HttpRequest request)
+
+- **request**: HttpRequest - TODO: add description
+- **returns**: [RestOperationParameters](../rest_operation_parameters) - TODO: add description
+
+#### GetContextItem
+TODO: add description
+> `public static` T GetContextItem\<T\>(HttpRequest request, string name)
+
+- **request**: HttpRequest - TODO: add description
+- **name**: string - TODO: add description
 
 #### Instrument
 Adds instrumentation to log calls and measure call time.
@@ -125,7 +152,17 @@ It returns a Timing object that is used to end the time measurement.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **methodName**: string - method name.
-- **returns**: [CounterTiming](../../../components/count/counter_timing) - InstrumentTiming object to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object to end the time measurement.
+
+#### InstrumentError
+Adds instrumentation to error handling.
+
+> `protected` void InstrumentError(string correlationId, string methodName, Exception ex, bool rethrow = false)
+
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **methodName**: string - method name.
+- **ex**: Exception - Error that occured during the method call
+- **rethrow**: bool - True to throw the exception
 
 
 #### IsOpen
@@ -211,6 +248,27 @@ Registers a route with authorization in an HTTP endpoint.
 - **action**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> - action function that is called when an operation is invoked.
 
 
+#### RegisterRouteWithMetadata
+TODO: add description
+
+> `protected virtual` void RegisterRouteWithMetadata(string method, string route, Func\<HttpRequest, HttpResponse, RouteData, Task\> action, [RestRouteMetadata](../rest_route_metadata) metadata)
+
+- **method**: string - TODO: add description
+- **action**: Func\<HttpRequest, HttpResponse, RouteData, Task\> - TODO: add description
+- **metadata**: [RestRouteMetadata](../rest_route_metadata) - TODO: add description
+
+
+#### RegisterRouteWithAuthAndMetadata
+TODO: add description
+
+> `protected virtual` void RegisterRouteWithAuthAndMetadata(string method, string route, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> autorize, Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> action, [RestRouteMetadata](../rest_route_metadata) metadata)
+
+- **method**: string - TODO: add description
+- **route**: string - TODO: add description
+- **autorize**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Func\<Task\>, Task\> - TODO: add description
+- **action**: Func\<HttpRequest, HttpResponse, ClaimsPrincipal, RouteData, Task\> - TODO: add description
+- **metadata**: [RestRouteMetadata](../rest_route_metadata) - TODO: add description
+
 
 #### SendCreatedResult
 Creates a callback function that sends a newly created object as JSON. The callack function can be called directly or passed as a parameter to business logic components.
@@ -262,6 +320,13 @@ If the object is not null, it returns 200 status code. For null results, it retu
 - **response**: HttpResponse - HTTP response
 - **result**: object - body object to result.
 
+#### SendEmptyResultAsync
+Creates a callback function that sends an empty result with 204 status code.
+If error occur it sends ErrorDescription with approproate status code.
+
+> `protected` Task SendEmptyResultAsync(HttpResponse response)
+
+- **response**: HttpResponse - a Http response
 
 #### SetReferences
 Sets references to dependent components.

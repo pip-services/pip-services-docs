@@ -14,6 +14,10 @@ description: >
 
 ### Interfaces
 
+#### [IInitializable](iinitializable)
+Interface for initialization.
+
+
 #### [IRegisterable](iregisterable)
 Interface to perform on-demand registrations.
 
@@ -67,14 +71,15 @@ Helper class that retrieves parameters from HTTP requests.
 #### [HttpResponseSender](http_response_sender)
 Helper class that handles HTTP-based responses.
 
-
-#### [InstrumentTiming](instrument_timing)
-Creates logs, counters and timings for methods that call instrument.
-
+#### [Interceptor](interceptor)
+Stores interceptors for routes.
 
 #### [RestOperations](rest_operations)
 Handles REST services operations.
 
+
+#### [RestOperationParameters](rest_operations_parameters)
+TODO: add description
 
 #### [RestService](rest_service)
 Abstract service that receives remove calls via HTTP/REST protocol.

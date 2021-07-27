@@ -64,17 +64,27 @@ Gets the port number.
 - **returns**: int - the port number.
 
 
-#### getPortWithDefault!
-**TODO: this method is not implemented**
-
+#### getPortWithDefault
 
 Gets the port number with default value.
 
+> int getPortWithDefault(int defaultPort)
+
+- **defaultPort**: int - a default port number.
+- **returns**: int - the port number.
 
 #### getProtocol
 Gets the connection protocol.
 
 > String getProtocol([String defaultValue])
+
+- **defaultValue**: String - (optional) the default protocol
+- **returns**: String - the connection protocol or the default value if it's not set.
+
+#### getProtocolWithDefault
+Gets the connection protocol with default value.
+
+> String getProtocolWithDefault(String defaultValue)
 
 - **defaultValue**: String - (optional) the default protocol
 - **returns**: String - the connection protocol or the default value if it's not set.

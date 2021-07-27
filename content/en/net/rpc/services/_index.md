@@ -60,7 +60,7 @@ container orchestrators.
 Used for creating HTTP endpoints. An endpoint is a URL, at which a given service can be accessed by a client. 
 
 
-#### [HttpRequestDetector](http_request_detector)
+#### [HttpRequestHelper](http_request_helper)
 Helper class that retrieves parameters from HTTP requests.
 
 

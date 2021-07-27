@@ -10,7 +10,7 @@ description: >
 
 ### Description
 
-Defines index options.
+The IndexOptions class contains the definitions of different index options
 
 ### Properties
 

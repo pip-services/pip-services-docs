@@ -4,43 +4,42 @@ title: "SqsMessageQueue"
 linkTitle: "SqsMessageQueue"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 description: >
-    TODO: add description
+    Used to create message queues for Amazon SQS (Simple Queue Service)
 ---
 
 **Inherits:** [MessageQueue](../../../messaging/queues/message_queue)
 
 ### Description
-TODO: add description
+The SqsMessageQueue class allows you to create message queues for Amazon SQS (SqsMessageQueue).
 
 
 ### Constructors
-TODO: add description
-
+Creates a new instance of this class.
 > `public` SqsMessageQueue(string name = null)
 
-- **name**: string - TODO: add description
+- **name**: string - name
 
-TODO: add description
+Creates a new instance of this class based on given configuration parameters.
 
 > `public` SqsMessageQueue(string name, [ConfigParams](../../../commons/config/config_params) config)
 
-- **name**: string - TODO: add description
-- **config**: [ConfigParams](../../../commons/config/config_params) - TODO: add description
+- **name**: string - name
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
 
 
-TODO: add description
+Creates a new instance of this class based on a given Amazon SQS client and queue.
 
 > `public` SqsMessageQueue(string name, AmazonSQSClient client, string queue)
 
-- **name**: string - TODO: add description
-- **client**: AmazonSQSClient - TODO: add description
-- **queue**: string - TODO: add description
+- **name**: string - name
+- **client**: AmazonSQSClient - Amazon SQS client
+- **queue**: string - queue
 
 
 ### Properties
 
 #### Interval
-TODO: add description
+Interval
 
 > `public` long Interval { get; set; }
 
@@ -48,124 +47,121 @@ TODO: add description
 ### Instance methods
 
 #### AbandonAsync
-TODO: add description
+Abandons a message
 
 > `public override` Task AbandonAsync([MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
 
 #### ClearAsync
-TODO: add description
+Clears a queue.
 
 > `public override` ClearAsync(string correlationId)
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
 
 
 #### CloseAsync
-TODO: add description
+Closes a queue.
 
 > `public override` Task CloseAsync(string correlationId)
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
 
 #### Configure
-TODO: add description
+Configures a queue.
 
 > `public override` void Configure ([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - TODO: add description
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters.
 
 #### EndListen
-TODO: add description
-
+Ends listening
 > `public override` void EndListen(string correlationId)
 
-- **correlationId**: string - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
 
 #### IsOpen
-TODO: add description
+Checks if the component is open.
 
 > `public override` bool IsOpen()
 
-- **returns**: bool - TODO: add description
+- **returns**: bool - true if the queue is not null and false otherwise.
 
 #### ListenAsync
-TODO: add description
+Starts listening messages
 
 > `public override` Task ListenAsync(string correlationId, [IMessageReceiver](../../../messaging/queues/imessage_receiver) receiver)
 
-- **correlationId**: string - TODO: add description
-- **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - TODO: add description
+- **correlationId**: transaction id used to trace execution through the call chain.
+- **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - message receiver
 
 
 #### MoveToDeadLetterAsync
-TODO: add description
+Sends a message to the dead queue if it is defined.
 
 > `public override` Task MoveToDeadLetterAsync([MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
 
 #### OpenAsync
-TODO: add description
+Opens an existing queue or creates a new one if it doesn't exist.
 
 > `public override` Task OpenAsync(string correlationId, List<[ConnectionParams](../../../components/connect/connection_params)> connections, [CredentialResolver](../../../components/auth/credential_resolver) credential)
 
-- **correlationId**: string - TODO: add description
-- **connections**: List<[ConnectionParams](../../../components/connect/connection_params)> - TODO: add description
-- **credential**: [CredentialResolver](../../../components/auth/credential_resolver) - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **connections**: List<[ConnectionParams](../../../components/connect/connection_params)> - connection parameters
+- **credential**: [CredentialResolver](../../../components/auth/credential_resolver) - credential resolver
 
 
 #### PeekAsync
-TODO: add description
+Peeks a message.
 
 > `public override` Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> PeekAsync(string correlationId)
 
-- **correlationId**: string - TODO: add description
-- **returns**: Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **returns**: Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> - message
 
-
-#### PeekAsync
-TODO: add description
+#### PeekBatchAsync
+Peeks a given number of messages.
 
 > `public override` Task\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\> PeekBatchAsync(string correlationId, int messageCount)
 
-- **correlationId**: string - TODO: add description
-- **messageCount**: int - TODO: add description
-- **returns**: Task\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\>  - TODO: add description
-
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **messageCount**: int - message count
+- **returns**: Task\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\>  - message
 
 #### ReceiveAsync
-TODO: add description
+Receives a message.
 
 > `public override` Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> ReceiveAsync(string correlationId, long waitTimeout)
 
-- **correlationId**: string - TODO: add description
-- **waitTimeout**: long - TODO: add description
-- **returns**: Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **waitTimeout**: long - wait timeout
+- **returns**: Task<[MessageEnvelope](../../../messaging/queues/message_envelope)> - message
 
 
 #### RenewLockAsync
-TODO: add description
+Renews a lock for a message in the queue.
 
 > `public override` Task RenewLockAsync([MessageEnvelope](../../../messaging/queues/message_envelope) message, long lockTimeout)
 
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description
-- **lockTimeout**: long - TODO: add description
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
+- **lockTimeout**: long - lock's timeout.
 
 #### ReadMessageCountAsync
-TODO: add description
+Counts the number of messages.
 
 > `public override` Task\<long\> ReadMessageCountAsync()
 
-- **returns**: Task\<long\> - TODO: add description
+- **returns**: Task\<long\> - number of messages.
 
 
 #### SendAsync
-TODO: add description
+Sends a message.
 
 > `public override` Task SendAsync(string correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
-- **correlationId**: string - TODO: add description
-- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - TODO: add description
+- **correlationId**: string - transaction id used to trace execution through the call chain.
+- **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
 

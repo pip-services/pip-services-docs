@@ -54,10 +54,10 @@ See [Parameters](../../run/parameters)
 #### validate
 Validates the command [args](../../run/parameters) before execution using the defined schema.
 
-> `public` IList<[ValidationResult]((../../validate/validation_result))> validate([Parameters](../../run/parameters) args)
+> `public` IList<[ValidationResult](../../validate/validation_result)> validate([Parameters](../../run/parameters) args)
 
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) used to validate using this command's schema.
-- **returns**: IList<[ValidationResult]((../../validate/validation_result))> - array of ValidationResults or an empty array (if no schema is set).
+- **returns**: IList<[ValidationResult](../../validate/validation_result)> - array of ValidationResults or an empty array (if no schema is set).
 
 ### Examples
 

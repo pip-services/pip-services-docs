@@ -4,7 +4,7 @@ title: "IdentifiableSqlServerPersistence<T, K>"
 linkTitle: "IdentifiableSqlServerPersistence"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 description: >
-    Abstract persistence component that stores data in an SQLServer database
+    Abstract persistence component that stores data in an SQL Server database
     and implements a number of CRUD operations over data items with unique ids.
     
 ---
@@ -13,14 +13,14 @@ description: >
 
 ### Description
 
-The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQLServer databases and implement a number of CRUD operations over data items with unique ids.
+The IdentifiableSqlServerPersistence class allows you to create persistence components that store data in SQL Server databases and implement a number of CRUD operations over data items with unique ids.
 
 Important points
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilter), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync)   operations with a specific filter function.
+- In basic scenarios, child classes shall only override [GetPageByFilterAsync](../sqlserver_persistence/#getpagebyfilter), [GetListByFilterAsync](../sqlserver_persistence/#getlistbyfilterasync) or [DeleteByFilterAsync](../sqlserver_persistence/#deletebyfilterasync)   operations with a specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
+- In complex scenarios, child classes can implement additional operations by accessing **this._collection** and **this._model** properties.
 
 #### Configuration parameters
 
@@ -70,7 +70,7 @@ Creates a data item.
 
 > `public override` async Task\<T\> CreateAsync(string correlationId, T item)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Task\<T\> - created item
 
@@ -80,7 +80,7 @@ Deleted a data item by it's unique id.
 
 > `public virtual` Task\<T\> DeleteByIdAsync(string correlationId, K id)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - id of the item to be deleted
 - **returns**: Task\<T\> - deleted item
 
@@ -90,7 +90,7 @@ Deletes multiple data items based on their unique ids.
 
 > `public virtual` Task DeleteByIdsAsync(string correlationId, K[] ids)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **ids**: K[] - ids of data items to be deleted.
 
 
@@ -99,7 +99,7 @@ Gets a list of data items retrieved based on given unique ids.
 
 > `public virtual` Task\<List\<T\>\> GetListByIdsAsync(string correlationId, K[] ids)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **ids**: K[] - ids of data items to be retrieved
 - **returns**: Promise<\T[]\> - data list
 
@@ -109,18 +109,18 @@ Gets a data item by its unique id.
 
 > `public virtual` Task\<T\> GetOneByIdAsync(string correlationId, K id)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - id of data item to be retrieved.
 - **returns**: Task\<T\> - data item
 
 
 #### SetAsync
-Sets a data item. If the data item exists it updates it,
-otherwise it creates a new data item.
+Sets a data item. If the data item exists, it updates it.
+Otherwise, it creates a new data item.
 
 > `public virtual` Task\<T\> SetAsync(string correlationId, T item)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be set.
 - **returns**: Task\<T\> - updated item
 
@@ -130,17 +130,17 @@ Updates a data item.
 
 > `public virtual` Task\<T\> UpdateAsync(string correlationId, T item)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be updated.
 - **returns**: Task\<T\> - updated item
 
 
 #### UpdatePartially
-Updates only few selected fields in a data item.
+Updates only a few selected fields in a data item.
 
 > `public virtual` Task\<T\> UpdatePartially(string correlationId, K id, [AnyValueMap](../../../commons/data/any_value_map) data)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - id of data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **returns**: Task\<T\> - updated item

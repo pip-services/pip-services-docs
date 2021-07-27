@@ -13,9 +13,9 @@ description: >
 
 The HttpEndpoint class allows you to create HTTP endpoints. 
 
-Important points
+**Important points**
 
-- An endpoint is a URL, at which a given service can be accessed by a client. 
+- An endpoint is a URL at which a given service can be accessed by a client. 
 
 #### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
@@ -59,11 +59,11 @@ Configures this HttpEndpoint using the given configuration parameters.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 #### Initialize
-TODO: add description
+Initializes the HttpEndpoint object. 
 
 > `public` void Initialize([IInitializable](../iinitializable) initialization)
 
-- **initialization**: [IInitializable](../iinitializable) - TODO: add description
+- **initialization**: [IInitializable](../iinitializable) - List with initialization values.
 
 #### Instrument
 Adds instrumentation to log calls and measure call time. It returns a CounterTiming 
@@ -71,7 +71,7 @@ object that is used to end the time measurement.
 
 > `protected` [CounterTiming](../../../components/count/counter_timing) Instrument(string correlationId, string name)
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **name**: string - a method name.
+- **name**: string - method name.
 - **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object to end the time measurement.
 
 #### IsOpen
@@ -79,7 +79,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - whether or not this endpoint is open with an actively listening REST server.
+- **returns**: bool - true if this endpoint is open with an actively listening REST server and false otherwise.
 
 
 #### Register
@@ -87,7 +87,7 @@ Registers a registerable object for dynamic endpoint discovery.
 
 > `public` void Register([IRegisterable](../../services/iregisterable) registration)
 
-- **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../../services/iregisterable) - registration to add.
 
 
 #### RegisterInterceptor
@@ -130,19 +130,19 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 
 
 #### Uninitialize
-TODO: add description
+Removes an initialization.
 
 > `public` void Uninitialize([IInitializable](../iinitializable) initialization)
 
-- **initialization**: [IInitializable](../iinitializable) - TODO: add description
+- **initialization**: [IInitializable](../iinitializable) - initialization to remove.
 
 
 #### Unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> `public` void Unregister([IRegisterable](../services/iregisterable) registration)
+> `public` void Unregister([IRegisterable](../iregisterable) registration)
 
-- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 ### Examples
 

@@ -4,12 +4,12 @@ title: "InstrumentTiming"
 linkTitle: "InstrumentTiming"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet"
 description: >
-    Creates logs, counters and timings for methods that call  instrument.
+    Creates logs, counters and timings for methods that call an instrument.
 ---
 
 ### Description
 
-The InstrumentTiming class allows you to create logs, countes and timings for methods that call instrument.
+The InstrumentTiming class allows you to create logs, countes and timings for methods that call an instrument.
 
 ### Constructors
 Creates a new instance of InstrumentTiming.

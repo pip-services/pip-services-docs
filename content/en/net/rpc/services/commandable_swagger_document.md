@@ -84,7 +84,7 @@ Returns a string with spaces.
 
 
 #### ToString
-Returns string with Swagger code that describe service methods.
+Returns string with Swagger code that describes service methods.
 
 > `public override` string ToString()
 
@@ -98,7 +98,7 @@ Writes an array item to Swagger code.
 
 - **indent**: int - number of spaces
 - **name**: string - item's name
-- **isObjectItem**: bool - True is the item is an object. false otherwise.
+- **isObjectItem**: bool - true is the item is an object and false otherwise.
 
 
 #### WriteAsObject
@@ -130,7 +130,7 @@ Adds data to the Swagger code.
 - **data**: Dictionary\<string, object\> - data to be added
 
 #### WriteName
-Write a property or object name.
+Writes a property or object's name.
 
 > `protected` void WriteName(int indent, string name)
 

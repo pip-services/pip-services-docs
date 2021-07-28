@@ -12,7 +12,7 @@ description: >
 
 The TagsProcessor class allows you to extract and process search tags from objects.
 
-Important points
+**Important points**
 
 - The search tags can be kept individually or embedded as hash tags inside text. E.g. "This text has #hash_tag that can be used for search."
 

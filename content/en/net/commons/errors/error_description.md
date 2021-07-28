@@ -4,14 +4,14 @@ title: "ErrorDescription"
 linkTitle: "ErrorDescription"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Class used to pass information about errors between microservices implemented in different languages. On the receiving side
+    Class used to pass information about errors between microservices implemented in different languages. On the receiving side,
     [ErrorDescription]() is used to recreate the exception object close to its original type
     without missing additional details.
 ---
 
 ### Description
 
-The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side [ErrorDescription]() is used to recreate the exception object close to its original type without missing additional details. This class is serializeable.
+The ErrorDescription class is used to pass information about errors between microservices implemented in different languages. On the receiving side, [ErrorDescription]() is used to recreate the exception object close to its original type without missing additional details. This class is serializeable.
 
 ### Properties
 

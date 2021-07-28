@@ -41,19 +41,19 @@ Gets the command schema.
 
 #### ExecuteAsync
 Executes the next command in the execution chain using the given [parameters](../../run/parameters) (arguments).  
-See [Parameters](../../run/parameters)
+See [Parameters](../../run/parameters).
 
 > `public` Task\<object\> ExecuteAsync(string correlationId, [Parameters](../../run/parameters) args)
 
 - **correlationId**: string - unique transaction id used to trace calls across components.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
-- **returns**: Task\<object\> - execution result
+- **returns**: Task\<object\> - execution result.
 
 
 #### Validate
 Validates the [parameters](../../run/parameters) (arguments) that are to be passed to the command that is next 
 in the execution chain.  
-See [Parameters](../../run/parameters), [ValidationResult](../../validate/validation_result)
+See [Parameters](../../run/parameters), [ValidationResult](../../validate/validation_result).
 
 > `public` IList<[ValidationResult](../../validate/validation_result)> Validate([Parameters](../../run/parameters) args)
 

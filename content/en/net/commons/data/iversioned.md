@@ -12,7 +12,7 @@ description: >
 
 The IVersioned interface allows you to define data objects that can be versioned.
 
-Important points
+**Important points**
 
 - Versioning is often used as an optimistic concurrency mechanism.
 - The version doesn't have to be a number, but it is recommended to use sequential values to determine if one object has a newer or older version than another one.

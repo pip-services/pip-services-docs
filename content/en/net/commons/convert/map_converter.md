@@ -24,7 +24,7 @@ Converts value into a map object or returns an empty map when the conversion is 
 - **returns**: IDictionary\<string, object\> - map object or empty map when the conversion is not supported.
 
 #### ToMapWithDefault
-Converts value into a map object or returns a gvien default value when the conversion is not possible
+Converts value into a map object or returns a given default value when the conversion is not possible
 
 > `public static` IDictionary\<string, object\> ToMapWithDefault(object value, IDictionary\<string, object\> defaultValue)
 

@@ -15,7 +15,7 @@ description: >
 
 The ApplicationException class defines a base class used to define various application exceptions.
 
-Important points
+**Important points**
 
 - Most languages have their own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit and  allows to create portable implementations and support proper error propagation in microservices calls.
 - Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
@@ -25,11 +25,11 @@ Important points
     - category: one of the 12 standard error categories
     - status: numeric HTTP status code for REST invocations
     - code: a unique error code, usually defined as "MY_ERROR_CODE"
-    - correlation_id: a unique transaction id used to trace execution through a call chain
+    - correlation_id: unique transaction id used to trace execution through a call chain
     - details: map with error parameters that can help to recreate meaningful error description in other languages
-    - stack_trace: a stack trace
+    - stack_trace: stack trace
     - cause: the original error that is wrapped by this exception
-- The ApplicationException class is not serializable. To pass errors through the wire it must be converted into a [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
+- The ApplicationException class is not serializable. To pass errors through the wire it must be converted into an [ErrorDescription](../error_description) object and then restored on the receiving end into an identical exception type.
 
 ### Constructors
 Creates a new instance of application exception and assigns its values.
@@ -98,12 +98,12 @@ Original error wrapped by this exception.
 ### Instance methods
 
 #### GetObjectData
-TODO: add description
+Gets information such as category, correlation_id, etc.
 
 > `public override` void GetObjectData(SerializationInfo info, StreamingContext context)
 
-- **info**: SerializationInfo - TODO: add description
-- **context**: StreamingContext - TODO: add description
+- **info**: SerializationInfo - serialization information
+- **context**: StreamingContext - streaming context
 
 #### WithCause
 Sets a original error wrapped by this exception
@@ -132,7 +132,7 @@ to chain additional calls.
 
 > `public` [ApplicationException]() WithCorrelationId(string correlationId)
 
-- **correlationId**: string - unique transaction id used to trace an error through a call chain
+- **correlationId**: string - unique transaction id used to trace an error through the call chain
 - **returns**: [ApplicationException]() - exception object
 
 #### WithDetails
@@ -156,7 +156,7 @@ to chain additional calls
 
 > `public` [ApplicationException]() WithStackTrace(string stackTrace)
 
-- **stackTrace**: string - stackTrace a stack trace where this error occured
+- **stackTrace**: string - stack trace where this error occured
 - **returns**: [ApplicationException]() - exception object
 
 

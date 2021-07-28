@@ -4,14 +4,14 @@ title: "ConfigException"
 linkTitle: "ConfigException"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Errors related to mistakes in microservice's user-defined configurations.
+    Errors related to mistakes in microservices' user-defined configurations.
 ---
 
 **Inherits**: [ApplicationException](../application_exception)
 
 ### Description
 
-The ConfigException is used to manage errors related to mistakes in microservice's user-defined configurations. 
+The ConfigException is used to manage errors related to mistakes in microservices' user-defined configurations. 
 
 ### Constructors
 Creates an error instance and assigns its values.

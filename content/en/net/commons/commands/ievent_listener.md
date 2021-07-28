@@ -14,7 +14,7 @@ The IEventListener interface allows you to define actions to be taken by listene
 ### Instance methods
 
 #### OnEvent
-A method called when events this listener is subscrubed to are fired.
+A method called when events this listener is subscribed to are fired.
 
 > void OnEvent(string correlationId, [IEvent](../ievent) event, [Parameters](../../run/parameters) args)
 

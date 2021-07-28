@@ -38,7 +38,7 @@ Converts value to a JSON string.
 - **returns**: string - JSON string or null when value is null.
 
 #### ToMap
-Converts JSON string into map object or returns empty map when the conversion is not possible.
+Converts a JSON string into map object or returns empty map when the conversion is not possible.
 See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
 > `public static` IDictionary\<string, object\> ToMap(string value)

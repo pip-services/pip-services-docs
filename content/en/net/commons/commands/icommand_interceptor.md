@@ -13,7 +13,7 @@ description: >
 
 The ICommandInterceptor interface is used for stackable command interceptors, which can extend and modify the command call chain.
 
-Important points
+**Important points**
 
 - This technique can be used for authentication, logging, and several other functions.
 
@@ -23,7 +23,7 @@ Important points
 Gets the name of the wrapped command.
 
 The interceptor can use this method to override the command name.
-Otherwise it shall just delegate the call to the wrapped command.
+Otherwise, it shall just delegate the call to the wrapped command.
 
 > string GetName([ICommand](../icommand) command)
 

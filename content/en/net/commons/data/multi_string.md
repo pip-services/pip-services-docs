@@ -14,7 +14,7 @@ description: >
 
 The MultiString class allows you to create objects that contain string translations for multiple languages.
 
-Important points
+**Important points**
 
 - Language keys use two-letter codes like: *'en', 'sp', 'de', 'ru', 'fr', 'pr'*.
 - When a translation for a specific language does not exists, it defaults to English ('en').
@@ -46,7 +46,7 @@ Clears all translations from this MultiString object.
 
 
 #### Get
-Gets a string translation by specified language.
+Gets a string translation by a specified language.
 When the language is not found, it defaults to English ('en').
 When English is not found, it takes the first value.
 

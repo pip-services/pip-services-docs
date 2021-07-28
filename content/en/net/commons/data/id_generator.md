@@ -12,7 +12,7 @@ description: >
 
 The IdGenerator class allows you to generate IDs for objects. 
 
-Important points
+**Important points**
 
 - It supports two types of IDs: short and long.
 - ShortIDs are 9-digit random numbers. They are not guaranteed be unique.

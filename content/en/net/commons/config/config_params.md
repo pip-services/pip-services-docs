@@ -14,11 +14,12 @@ description: >
 ### Description
 The ConfigParams class contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 
-Important points:   
-- In general, ConfigParams is used to pass configurations to IConfigurable objects. It also serves as a basis for more concrete configurations, such as ConnectionParams or CredentialParams. 
+**Important points**
+
+- In general, ConfigParams is used to pass configurations to [IConfigurable]((../iconfigurable) objects. It also serves as a basis for more concrete configurations, such as ConnectionParams or CredentialParams. 
 - This class stores all values as strings. These values can be serialized as JSON or string forms. When retrieved the values can be automatically converted using GetAsXXX methods.
 - The keys are case-sensitive, so it is recommended to use consistent C-style, such as “my_param”.
-- Configuration parameters can be broken into sections and subsections using dot notation, such as “section1.subsection1.param1”. Using GetSection method all parameters from the specified section can be extracted from a ConfigMap.
+- Configuration parameters can be broken into sections and subsections using dot notation, such as “section1.subsection1.param1”. Using the [GetSection](#getsection) method all parameters from the specified section can be extracted from a ConfigMap.
 - The ConfigParams class supports serialization from/to plain strings, such as: “key1=123;key2=ABC;key3=2016-09-16T00:00:00.00Z”
 
 
@@ -48,7 +49,7 @@ Detect commented sections.
 
 > `protected` bool IsShadowName(string name)
 
-- **name**: bool - true if is the "shadow" section
+- **name**: bool - true if it is the "shadow" section
 
 
 #### GetSection

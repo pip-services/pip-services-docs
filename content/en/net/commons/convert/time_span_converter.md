@@ -27,7 +27,7 @@ Converts value into TimeSpan.
 
 > `public static` TimeSpan ToTimeSpan(object value)
 
-- **value**: object - value to converted
+- **value**: object - value to convert
 - **returns**: TimeSpan - TimeSpan value or null when value is null.
 
 #### ToTimeSpanWithDefault
@@ -35,6 +35,6 @@ Converts value into TimeSpan or returns a given default when value is null.
 
 > `public static` TimeSpan ToTimeSpanWithDefault(object value, TimeSpan? defaultValue)
 
-- **value**: object - value to converted
+- **value**: object - value to convert
 - **defaultValue**: TimeSpan - default value
 - **returns**: TimeSpan - TimeSpan value or null when value is null.

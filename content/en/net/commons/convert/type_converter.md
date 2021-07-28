@@ -4,18 +4,18 @@ title: "TypeConverter"
 linkTitle: "TypeConverter"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: > 
-    The TypeConverter class allows you to convert arbitrary values into objects specified by a code type and to get the code type of an object.
+    The TypeConverter class allows you to convert arbitrary values into objects specified by a code type and to get the type code of an object.
 ---
-See also [TypeCode](../../convert/type_code)
+See also [TypeCode](../../convert/type_code).
 
 ### Description
-The TypeConverter class allows you to convert arbitrary values into objects specified by a code type and to get the code type of an object. The code types are defined in the [TypeCode](../../convert/type_code) class.
+The TypeConverter class allows you to convert arbitrary values into objects specified by a type code and to get the type code of an object. The type codes are defined in the [TypeCode](../../convert/type_code) class.
 
 
 ### Static methods
 
 #### ToNullableType
-Converts value into an object type specified by Type Code or returns null when the conversion is not possible.
+Converts value into an object type specified by a type code or returns null when the conversion is not possible.
 **T** - Class type for the data type.
 
 > `public static` T ToNullableType\<T\>(object value)
@@ -32,7 +32,7 @@ Converts a [TypeCode](../../convert/type_code) into its string name.
 - **returns**: string - the name of the [TypeCode](../../convert/type_code) passed as a string value.
 
 #### ToType
-Converts value into an object type specified by Type Code or returns the default type when the conversion is not possible.
+Converts value into an object type specified by a type code or returns the default type when the conversion is not possible.
 **T** - Class type for the data type into which 'value' is to be converted.
 
 > `public static` T ToType\<T\>(object value)
@@ -42,7 +42,7 @@ Converts value into an object type specified by Type Code or returns the default
 
 
 #### ToTypeCode
-Gets the TypeCode for a specific value.
+Gets the type code for a specific value.
 
 > `public static` [TypeCode](../../convert/type_code) ToTypeCode(Type type)
 

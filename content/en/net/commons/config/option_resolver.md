@@ -7,7 +7,7 @@ description: >
     A helper class to parameters from "options" configuration section.
 ---
 ### Description
-The OptionResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
+The OptionResolver class can be use to obtain all the parameters under the section "options" from a [ConfigfParams](../config_params) object. It has a single method called "resolve".
 
 ### Static methods
 

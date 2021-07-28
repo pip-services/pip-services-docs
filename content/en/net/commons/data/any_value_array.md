@@ -113,18 +113,18 @@ Converts an array element to a bool or returns false if the conversion is not po
 > `public` bool GetAsBoolean(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: bool - bool value ot the element or false if the conversion is not supported. 
+- **returns**: bool - bool value of the element or false if the conversion is not supported. 
 
 
 #### GetAsBooleanWithDefault
 Converts an array element to a bool or returns a given default value if the conversion is not possible.  
-See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault).
 
 > `public` bool GetAsBooleanWithDefault(int index, bool defaultValue)
 
 - **index**: int - index of the element to get.
 - **defaultValue**: bool - default value
-- **returns**: bool - bool value ot the element or given default value if the conversion is not supported.
+- **returns**: bool - bool value of the element or given default value if the conversion is not supported.
 
 
 #### GetAsDateTime
@@ -138,7 +138,7 @@ Converts an array element to a DateTime or returns the current date if the conve
 
 #### GetAsDateTimeWithDefault
 Converts an array element to a DateTime or returns a given default value if the conversion is not possible.  
-See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
+See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault).
 
 > `public` DateTime GetAsDateTimeWithDefault(int index, DateTime defaultValue?)
 
@@ -207,7 +207,7 @@ Converts an array element into a double or returns 0 if the conversion is not po
 > `public` double GetAsDouble(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: double - double value ot the element or 0 if conversion is not supported. 
+- **returns**: double - double value ot the element or 0 if the conversion is not supported. 
 
 
 #### GetAsDoubleWithDefault
@@ -215,16 +215,16 @@ Converts array element into a double or returns a given default value if the con
 
 > `public` double GetAsDoubleWithDefault(int index, double defaultValue)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **defaultValue**: double - default value
-- **returns**: double - double value of the element or a given default value if conversion is not supported.
+- **returns**: double - double value of the element or a given default value if the conversion is not supported.
 
 #### GetAsFloat
 Converts an array element into a float or returns 0 if the conversion is not possible.
 
 > `public` float GetAsFloat(int index)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **returns**: float - float value ot the element or 0 if the conversion is not supported.
 
 
@@ -254,7 +254,7 @@ See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#toi
 
 > `public` int GetAsIntegerWithDefault(int index, int defaultValue)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **defaultValue**: int - default value
 - **returns**: int - integer value of the element or given default value if the conversion is not supported.
 
@@ -264,7 +264,7 @@ Converts an array element into a long or returns 0 if the conversion is not poss
 
 > `public` long getAsLong(int index)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **returns**: long - long value of the element or 0 if the conversion is not supported.
 
 
@@ -274,7 +274,7 @@ See [LongConverter.ToLongWithDefault](../../convert/LongConverter/#tolongwithdef
 
 > `public` long GetAsLongWithDefault(int index, long defaultValue)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **defaultValue**: long - default value
 - **returns**: long - long value of the element or given default value if the conversion is not supported. 
 
@@ -294,7 +294,7 @@ Converts an array element into an AnyValueMap or returns a give default value if
 
 > `public` [AnyValueMap](../any_value_map) GetAsMapWithDefault(int index, [AnyValueMap](../any_value_map) defaultValue)
 
-- **index**: int - index of element to get.
+- **index**: int - index of the element to get.
 - **defaultValue**: [AnyValueMap](../any_value_map) - default value
 - **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or given default value if the conversion is not supported.
 
@@ -437,7 +437,7 @@ Converts an array element into a string or returns *""* if the conversion is not
 > `public` string GetAsString(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: string - string value ot the element or *""* if the conversion is not supported. 
+- **returns**: string - string value of the element or *""* if the conversion is not supported. 
 
 
 #### GetAsStringWithDefault
@@ -448,13 +448,13 @@ See [StringConverter.ToStringWithDefault](../../convert/string_converter/#tostri
 
 - **index**: int - index of the element to get.
 - **defaultValue**: string - default value
-- **returns**: string - string value ot the element or given default value if the conversion is not supported.
+- **returns**: string - string value of the element or given default value if the conversion is not supported.
 
 
 #### GetAsType
 
 Converts an array element into a value defined by a specified typecode.
-If the conversion is not possible, it returns default value for the specified type.
+If the conversion is not possible, it returns the default value for the specified type.
 
 > `public` T GetAsType\<T\>(int index)
 

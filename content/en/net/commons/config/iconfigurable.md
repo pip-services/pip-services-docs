@@ -13,7 +13,7 @@ See also [ConfigParams](../config_params)
 
 IConfigurable is an interface used to set configuration parameters. It can be implemented by any class that needs to define configuration parameters, such as access control credentials. 
 
-Important points:   
+**Important points**   
 
 - A class that implements this interface needs to implement a single **Configure()** method.  
 - If you need to emphasize the fact that **Configure()** method can be called multiple times
@@ -22,7 +22,7 @@ Important points:
 ### Instance methods
 
 #### Configure
-Configures a component by its passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > void Configure([ConfigParams](../config_params) config)
 

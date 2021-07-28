@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types; such as bool, integer or datetime.
+The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. In addition, it provides several methods to convert the stored values to different types, such as bool, integer or datetime.
 
 ### Constructors
 Creates a new instance of the map and assigns its value.
@@ -146,7 +146,7 @@ Converts a map element into a TimeSpan.
 - **returns**: TimeSpan - TimeSpan
 
 #### GetAsTimeSpanWithDefault
-TODO: add description
+Converts a map element into a TimeSpan or returns a given default value if the conversion is not possible.
 
 > `public` TimeSpan GetAsTimeSpanWithDefault(string key, TimeSpan? defaultValue)
 
@@ -213,14 +213,14 @@ Converts a map element into a float or returns 0 if the conversion is not possib
 
 
 #### GetAsFloatWithDefault
-Converts a map element into a flot or returns a given default value if the conversion is not possible.  
+Converts a map element into a float or returns a given default value if the conversion is not possible.  
 See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > `public` float GetAsFloatWithDefault(string key, float defaultValue)
 
 - **key**: string - key of the element to get.
 - **defaultValue**: float - default value
-- **returns**: float - flot value of the element or given default value if the conversion is not supported. 
+- **returns**: float - float value of the element or given default value if the conversion is not supported. 
 
 
 #### GetAsInteger

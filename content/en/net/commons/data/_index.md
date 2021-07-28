@@ -74,7 +74,7 @@ Data transfer object used to pass filter parameters as simple key-value pairs.
 Helper class to generate unique object IDs.
 It supports two types of IDs: long and short. 
 Long IDs are string GUIDs. They are globally unique and 32-character long. 
-ShortIDs are just 9-digit random numbers. They are not guaranteed be unique.
+ShortIDs are just 9-digit random numbers. They are not guaranteed to be unique.
 
 #### [MultiString](multi_string)
 An object that contains string translations for multiple languages.
@@ -119,12 +119,12 @@ like "This text has #hash_tag that can be used for search."
 #### [TokenizedDataPage](tokenized_data_page)
 Data transfer object that is used to pass results of paginated queries.
 It contains items of a retrieved page and total number of items (optional ).
-Most often this object type is used to send responses to paginated queries.
+Most often, this object type is used to send responses to paginated queries.
 
 #### [TokenizedPagingParams](tokenized_paging_params)
 Data transfer object used to pass tokenized paging parameters for queries.
 It can be used for complex paging scenarios, like paging across multiple databases
 where the previous state is encoded in a token. The token is usually retrieved from
-the previous response. The initial request shall go with token == *null*
+the previous response. The initial request shall go with token == *null*.
 
 </div>

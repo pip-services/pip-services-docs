@@ -24,8 +24,8 @@ The config package contains a set of classes and interfaces that allows you to a
 #### [IConfigurable](iconfigurable)
 An interface to set configuration parameters to an object. 
 It can be added to any existing class by implementing a single **Configure()** method.
-If you need to emphasise the fact that **Configure()** method can be called multiple times
-to change object configuration in runtime, use [IReconfigurable](ireconfigurable) interface instead.
+If you need to emphasise the fact that the **Configure()** method can be called multiple times
+to change object configuration in runtime, use the [IReconfigurable](ireconfigurable) interface instead.
 
 #### [IReconfigurable](ireconfigurable)
 An interface to set configuration parameters to an object.  
@@ -44,7 +44,7 @@ When retrieved the values can be automatically converted on read using GetAsXXX 
 
 #### [NameResolver](name_resolver)
 A helper class that allows to extract a component's name from configuration parameters.
-The name can be defined in "id", "name" parameters or inside a component descriptor.
+The name can be defined in the "id" or "name" parameters, or inside a component descriptor.
 
 #### [OptionResolver](option_resolver)
 A helper class to parameters from "options" configuration section.

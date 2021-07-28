@@ -84,8 +84,8 @@ Converts arbitrary values into strings using extended conversion rules:
 - Other objects: using **ToString()** method
 
 #### [TypeConverter](type_converter)
-Converts arbitrary values into objects specific by TypeCodes.
-For each TypeCode this class calls the corresponding converter which applies
+Converts arbitrary values into objects specified by TypeCodes.
+For each TypeCode, this class calls the corresponding converter which applies
 extended conversion rules to convert the values.
 
 </div>

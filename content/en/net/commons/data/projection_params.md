@@ -14,7 +14,7 @@ description: >
 
 The ProjectionParams class allows you to define projection parameters with a list of fields to be included in your query results. 
 
-Important points
+**Important points**
 
 - The parameters support two formats: dot and nested.
 - The dot format is the standard way to define the included fields and subfields by using dot object notation. E.g. *"field1,field2.field21,field2.field22.field221"*.

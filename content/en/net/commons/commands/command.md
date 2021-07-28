@@ -23,20 +23,15 @@ Creates a new command object and assigns it's parameters.
 - **schema**: [Schema](../../validate/schema) - schema to validate command arguments.
 - **action**:  [ExecutableDelegate](../executable_delegate) - function to be executed by this command.
 
-### ExecutableDelegate
 
-**Delegate:** Task\<object\>
-
-#### Description
-TODO add description
-
-
-#### Constructors
+### Delegate Constructors
+nitializes a delegate that invokes the specified instance method.
 
 > ExecutableDelegate(string correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: string - TODO add description
-- **args**: [Parameters](../../run/parameters) - TODO add description
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **args**: [Parameters](../../run/parameters) - parameters
+
 
 ### Properties
 

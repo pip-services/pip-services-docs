@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-Tje EnumConverter allows you to convert objects to Enums
+The EnumConverter allows you to convert objects to Enums
 
 ### Static methods
 

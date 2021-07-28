@@ -16,7 +16,7 @@ The ArrayConverter class provides methods to create an array from a set of value
 
 Converts a list into an array object with an empty array as the default.
 Strings with comma-delimited values are split into array of strings.
-See [ToArray](#ToArray)
+See [ToArray](#toarray).
 
 > `public static` IList\<object\> ListToArray(object value)
 

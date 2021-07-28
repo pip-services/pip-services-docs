@@ -12,7 +12,7 @@ description: >
 
 The PagingParams class allows you to create data transfer objects used to pass paging parameters for queries.
 
-Important points
+**Important points**
 
 - A page is defined by two parameters:
     - *skip*: number of items to skip.

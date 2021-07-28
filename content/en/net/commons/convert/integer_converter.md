@@ -35,8 +35,8 @@ See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),
 
 > `public static` int ToIntegerWithDefault(object value, int defaultValue)
 
-- **value**: object - the value to convert.
-- **defaultValue**: int - the default value.
+- **value**: object - value to convert.
+- **defaultValue**: int - default value.
 - **returns**: int - integer value or default when the conversion is not supported. 
 
 #### ToNullableInteger
@@ -45,7 +45,7 @@ See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
 > `public static` int ToNullableInteger(object value)
 
-- **value**: object - the value to convert.
+- **value**: object - value to convert.
 - **returns**: int - integer value or null when the conversion is not supported.
 
 ### Examples

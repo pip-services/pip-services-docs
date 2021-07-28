@@ -9,14 +9,14 @@ description: >
 ---
 ### Description
 A helper class that allows to extract component "name" from configuration parameters.
-The name can be defined in the "id" or "name" parameters or inside a component of descriptor type.
+The name can be defined in the "id" or "name" parameters, or inside a component of descriptor type.
 
 ### Static Methods
 
 #### Resolve
 Resolves a component's name from configuration parameters.
-The name can be stored in "id", "name" fields or inside a descriptor component.
-If name cannot be determined, it returns a defaultName.
+The name can be stored in the "id" or "name" fields, or inside a descriptor component.
+If name cannot be determined, it returns a default name.
 
 > `public static` string Resolve([ConfigParams](../config_params) config, string defaultName = null)
 

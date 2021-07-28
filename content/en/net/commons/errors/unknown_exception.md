@@ -23,7 +23,7 @@ Creates an error instance and assigns its values.
 - **message**: string - (optional) human-readable description of the error.
 
 
-Creates an error instance with error message
+Creates an error instance with error message.
 
 > `public` UnknownException(string message)
 

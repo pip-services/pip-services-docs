@@ -25,12 +25,12 @@ Creates a new instance of the object and assigns its value.
 
 > `public` AnyValue([AnyValue]() value)
 
-- **value**: object - (optional) value to initialize this object.
+- **value**: object - (optional) value used to initialize this object.
 
 ### Properties
 
 #### Value
-The value stored by this object.
+Value stored by this object.
 > `public` object Value [ get, private set ]
 
 
@@ -44,8 +44,8 @@ Creates a binary clone of this object.
 - **returns**: object - clone of this object.
 
 #### Equals
-Compares this object's value to a specified specified value.
-When a direct comparison gives a negative results it tries
+Compares this object's value to a specified value.
+When a direct comparison gives a negative results, it tries
 to compare values as strings.
 
 > `public override` bool Equals(object obj)
@@ -54,9 +54,9 @@ to compare values as strings.
 - **returns**: bool - true when objects are equal and false otherwise.
 
 #### EqualsAs
-Compares this object's value to a specified specified value.
-When direct comparison gives negative results it converts the
-values to a type specified by type code and compares them again.   
+Compares this object's value to a specified value.
+When direct comparison gives negative results, it converts the
+values to a type specified by a type code and compares them again.   
 **T** - the class type.
 See [TypeConverter.ToType](../../convert/type_converter/#totype)
 
@@ -243,7 +243,7 @@ See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonull
 
 > `public` bool GetAsNullableBoolean()
 
-- **returns**: bool - bool value or null if conversion is not supported.
+- **returns**: bool - bool value or null if the conversion is not supported.
 
 
 #### GetAsNullableDateTime
@@ -301,8 +301,8 @@ See [StringConverter.ToNullableString](../../convert/string_converter/#tonullabl
 
 
 #### GetAsNullableType
-Converts an object's value into a value defined by specified typecode.
-If conversion is not possible, it returns null.  
+Converts an object's value into a value defined by a specified typecode.
+If the conversion is not possible, it returns null.  
 **T** - the class type
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
@@ -337,7 +337,7 @@ Converts an object value into a string or returns a given default value if the c
 
 
 #### GetAsType
-Converts an object's value into a value defined by specified typecode.
+Converts an object's value into a value defined by a specified typecode.
 If the conversion is not possible, it returns a given default value for the specified type.
 **T** - the class type.
 
@@ -348,7 +348,7 @@ If the conversion is not possible, it returns a given default value for the spec
 
 #### GetAsTypeWithDefault
 Converts an object's value into a value defined by a specified typecode.
-If conversion is not possible, it returns default value.
+If the conversion is not possible, it returns the default value.
 **T** - the class type.
 
 > `public` T GetAsTypeWithDefault\<T\>(T defaultValue)
@@ -360,7 +360,7 @@ If conversion is not possible, it returns default value.
 #### GetTypeCode
 
 Gets the type code for the value stored in this object.  
-See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)
+See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode).
 
 > `public` [TypeCode](../../convert/type_code) GetTypeCode()
 
@@ -369,7 +369,7 @@ See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)
 
 #### GetHashCode
 Gets an object hash code which can be used to optimize storing and searching.  
-See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode)
+See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode).
 
 > `public override ` int GetHashCode()
 
@@ -387,7 +387,7 @@ Sets a new value for this object.
 
 #### ToString
 Gets a string representation of the object.  
-See [StringConverter.ToString](../../convert/string_converter/#tostring)
+See [StringConverter.ToString](../../convert/string_converter/#tostring).
 
 > `public override` string ToString()
 

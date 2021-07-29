@@ -15,7 +15,7 @@ description: >
 
 The Parameters class contains a map with execution paramters. 
 
-Important points
+**Important points**
 
 - In general, this map may contain non-serializable values.
 - In contrast to other maps, its getters and setters support dot notation and are able to access properties in the entire object graph.
@@ -100,7 +100,7 @@ Omits selected parameters from this Parameters object and returns the remaining 
 
 
 #### Override
-Overrides parameters with new values from specified [Parameters](../parameters) object and returns a new [Parameters](../parameters) object.
+Overrides parameters with new values from a specified [Parameters](../parameters) object and returns a new [Parameters](../parameters) object.
 
 > `public` [Parameters](../parameters) Override([Parameters](../parameters) parameters)
 
@@ -119,7 +119,7 @@ Overrides parameters with new values from a specified [Parameters](../parameters
 
 
 #### Pick
-Picks select parameters from this Parameters object and returns them as a new Parameters object.
+Picks selected parameters from this Parameters object and returns them as a new Parameters object.
 
 > `public` [Parameters](../parameters) Pick(params string[] paths) 
 
@@ -138,7 +138,7 @@ and allows to recursively access elements of elements.
 - **value**: object - new value for map element.
 
 #### SetDefaults
-Set default values from a specified Parameters object and returns a new Parameters object.
+Sets default values from a specified Parameters object and returns a new Parameters object.
 
 > `public` [Parameters](../parameters) SetDefaults([Parameters](../parameters) defaultParameters)
 
@@ -147,7 +147,7 @@ Set default values from a specified Parameters object and returns a new Paramete
 
 
 #### SetDefaults
-Set default values from a specified Parameters object and returns a new Parameters object.
+Sets default values from a specified Parameters object and returns a new Parameters object.
 
 > `public` [Parameters](../parameters) SetDefaults([Parameters](../parameters) defaultParameters, bool recursive)
 
@@ -164,7 +164,7 @@ See [ConfigParams](../../config/config_params)
 
 > `public static` [Parameters](../parameters) FromConfig([ConfigParams](../../config/config_params) config) 
 
-- **config**: [ConfigParams](../../config/config_params) - ConfigParams object that contain parameters.
+- **config**: [ConfigParams](../../config/config_params) - ConfigParams object that contains parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 
@@ -173,7 +173,7 @@ Creates a new Parameters from a ConfigMap object.
 
 > `public static` [Parameters](../parameters) FromJson(string json)
 
-- **config**: string - json string that contain parameters.
+- **config**: string - json string that contains parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 #### FromTuples
@@ -184,7 +184,7 @@ See [AnyValueMap.FromTuplesArray](../../data/any_value_map/#fromtuplesarray)
 
 > `public new static` [Parameters](../parameters) FromTuples(params object[] tuples)
 
-- **tuples**: object[] - ConfigParams object that contain parameters.
+- **tuples**: object[] - ConfigParams object that contains parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 

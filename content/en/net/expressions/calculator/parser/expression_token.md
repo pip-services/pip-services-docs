@@ -32,12 +32,12 @@ Creates an instance of this class with specified type and Null value.
 ### Properties
 
 #### Column
-The column number where the token is.
+Column number where the token is.
 
 > `public` int Column { get; }
 
 #### Line
-The line number where the token is.
+Line number where the token is.
 
 > `public` int Line { get; }
 

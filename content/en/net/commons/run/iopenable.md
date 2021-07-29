@@ -14,18 +14,18 @@ description: >
 
 The IOpenable interface allows you to create components with explicit opening and closing.
 
-Important points
+**Important points**
     
-- For components that perform opening on demand consider using [IClosable](../iclosable) interface instead.
+- For components that perform opening on demand, consider using the [IClosable](../iclosable) interface instead.
 
 ### Instance methods
 
 #### IsOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 > bool IsOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 #### OpenAsync
 Opens the component.

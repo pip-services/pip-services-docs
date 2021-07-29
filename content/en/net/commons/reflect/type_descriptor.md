@@ -12,7 +12,7 @@ description: >
 
 The TypeDescriptor class stores a reference to a type represented by the type name and library (module) where the type is defined.
 
-Important points
+**Important points**
 
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 
@@ -54,7 +54,7 @@ Otherwise this method returns false.
 > `public override` bool Equals(object value)
 
 - **value**: object - value to compare.
-- **returns**: bool - true if value is identical TypeDescriptor and false otherwise.
+- **returns**: bool - true if value is an identical TypeDescriptor and false otherwise.
 
 #### GetHashCode
 Gets the Hash code
@@ -66,7 +66,7 @@ Gets the Hash code
 
 #### ToString
 Gets a string representation of the object.
-The result has format *name[,library]*
+The result has the format *name[,library]*
 
 > `public override` string ToString()
 
@@ -76,7 +76,7 @@ The result has format *name[,library]*
 
 #### FromString
 Parses a string to get descriptor fields and returns them as a Descriptor.
-The string must have format the *name[,library]*  
+The string must have the format *name[,library]*  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
 > `public static` [TypeDescriptor]() FromString(string value)

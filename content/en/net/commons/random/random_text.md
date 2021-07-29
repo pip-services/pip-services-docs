@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The RandomText class allows you to generate different types of random texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
+The RandomText class allows you to generate different types of random texts. The includedoptions are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
 
 
 ### Static methods
@@ -67,7 +67,7 @@ The first word is capitalized, the others are not.
 
 
 #### Phrase
-Generates a random phrase which consists of few words separated by spaces. 
+Generates a random phrase which consists of a few words separated by spaces. 
 The first word is capitalized, the others are not.
 
 > `public static` string Phrase(int minSize, int maxSize)  

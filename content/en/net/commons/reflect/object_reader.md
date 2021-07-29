@@ -13,18 +13,18 @@ description: >
 
 The ObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
-Important points
+**Important points**
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, this ObjectReader is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys.
 - For arrays, properties are elements identified by integer index.
-- This class has a symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
+- This class has a symmetric implementation across all languages supported by the Pip.Services toolkit and is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, this ObjectReader treats all property names as case insensitive.
 
 ### Static methods
 
 #### GetProperties
-Get the values of all properties in specified object
+Get the values of all properties in a specified object
 and returns them as a map.
 
 The object can be a user defined object, map or array.
@@ -37,7 +37,7 @@ map key-pairs or array elements with their indexes.
 - **returns**: Dictionary\<string, object\> - map containing the names of the object's properties and their values.
 
 #### GetProperty
-Gets value of a object property specified by its name.
+Gets the value of an object's property specified by its name.
 
 The object can be a user defined object, map or array.
 The property name correspondently must be and object property,
@@ -45,9 +45,9 @@ map key or array index.
 
 > `public static` object GetProperty(object obj, string name)
 
-- **obj**: object - object to read property from.
+- **obj**: object - object to read the property from.
 - **name**: string - name of the property to get.
-- **returns**: object - property value or null if property doesn't exist or introspection failed.
+- **returns**: object - property value or null if the property doesn't exist or introspection failed.
 
 #### GetPropertyNames
 Gets the names of all properties implemented in a specified object.
@@ -63,13 +63,13 @@ map keys or array indexes.
 
 #### GetValue
 Gets a real object value.
-If object is a wrapper, it unwraps the value behind it. 
-Otherwise, it returns the same object value.
+If the object is a wrapper, it unwraps the value behind it. 
+Otherwise, it returns the same object's value.
 
 > `public static` object GetValue(object obj)
 
 - **obj**: object - object to unwrap..
-- **returns**: object - actual (unwrapped) object value. 
+- **returns**: object - actual (unwrapped) object's value. 
 
 #### HasProperty
 Checks if an object has a property with the specified name.

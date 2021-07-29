@@ -14,7 +14,7 @@ The Opener class can be used to check whether all components are opened or not, 
 ### Static methods
 
 #### IsOpen
-Checks if all components are opened.
+Checks if all components are open.
 
 To be checked, components must implement the [IOpenable](../iopenable) interface.
 If they don't, the call to this method returns true.
@@ -22,7 +22,7 @@ If they don't, the call to this method returns true.
 > `public static` bool IsOpen(IEnumerable components)
 
 - **components**: IEnumerable - list of components that are to be checked.
-- **returns**: bool - true if all components are opened and false if at least one component is closed.
+- **returns**: bool - true if all components are open and false if at least one component is closed.
 
 #### IsOpenOne
 Checks if a specified component is opened.
@@ -32,7 +32,7 @@ If they don't, the call to this method returns true.
 > `public static` bool IsOpenOne(object component)
 
 - **component**: object - component that is to be checked.
-- **returns**: bool - true if component is opened and false otherwise.
+- **returns**: bool - true if the component is opened and false otherwise.
 
 
 #### OpenAsync
@@ -47,7 +47,7 @@ If they don't, the call to this method has no effect.
 
 
 #### OpenOneAsync
-Opens specific component.
+Opens a specific component.
 To be opened, components must implement the [IOpenable](../iopenable) interface.
 If they don't, the call to this method has no effect.
 

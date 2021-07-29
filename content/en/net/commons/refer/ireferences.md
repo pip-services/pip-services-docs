@@ -14,7 +14,7 @@ The IReferences interface can be used to manage references stored in a map, and 
 
 Generally speaking, an IReferences object is a simple map, where keys are locators and values are component references. Thus, it allows you to add, remove and find components    by their locators. Locators can be any values like integers, strings or component types. 
 
-Important points  
+**Important points**  
 
 - Together with the [IReferenceable](../ireferenceable) and [IUnreferenceable](../iunreferenceable) interfaces, it implements a Locator pattern that is used by the PipServices toolkit for Inversion of Control to assign external dependencies to components. 
 - Generally, the PipServices toolkit uses [Descriptor](../descriptor) as locators that match according to the following fields: group, type, kind, name and version.
@@ -153,7 +153,7 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 
 > object Remove(object locator)
 
-- **locator**: object - locator used to remove reference
+- **locator**: object - locator used to remove a reference
 - **returns**: object - removed component reference.
 
 

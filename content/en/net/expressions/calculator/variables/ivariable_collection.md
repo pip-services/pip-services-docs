@@ -43,11 +43,11 @@ Clears all stored variables (assigns null values).
 
 
 #### FindByName
-Finds variable in the list by it's name.
+Finds a variable in the list by it's name.
 
 > [IVariable](../ivariable) FindByName(string name)
 
-- **name**: string - The variable name to be found.
+- **name**: string - variable name to be found.
 - **returns**: [IVariable](../ivariable) - Variable or *null* if function was not found.
 
 #### FindIndexByName

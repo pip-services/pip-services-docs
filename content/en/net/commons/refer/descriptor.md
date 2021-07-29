@@ -44,10 +44,11 @@ Gets the component's logical group.
 > `public` string Group [ get, private set ]
 
 #### Type
+Gets the component's type.
 > `public` string Type [ get, private set ]
 
 #### Kind
-Gets the component's implementation type.
+Gets the component's kind.
 > `public` string Kind [ get, private set ]
 
 
@@ -106,7 +107,7 @@ Fields that contain "*" or null are excluded from the match.
 > `public` bool Match([Descriptor]() descriptor)
 
 - **descriptor**: [Descriptor]() descriptor to match this one against.
-- **returns**: bool - true if the descriptors match and false otherwise 
+- **returns**: bool - true if the descriptors match and false otherwise. 
 
 #### ToString
 Gets a string representation of the object.

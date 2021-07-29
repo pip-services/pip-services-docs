@@ -15,7 +15,7 @@ The ExpressionCalculator class allows you to create an expression calculator.
 Constructs this class with default parameters.
 > `public` ExpressionCalculator()
 
-Constructs this class and a assigns expression string.
+Constructs this class and assigns a expression string.
 
 > `public` ExpressionCalculator(string expression)
 
@@ -45,7 +45,7 @@ Expression string.
 
 #### InitialTokens
 List of original expression tokens.
-> `public` IList<[ExpressionToken](../parsers/expression_token)> InitialTokens { get; }
+> `public` IList<[ExpressionToken](../parser/expression_token)> InitialTokens { get; }
 
 #### OriginalTokens
 List of expression tokens.
@@ -55,7 +55,7 @@ List of expression tokens.
 
 #### ResultTokens
 List of processed expression tokens.
-> `public` IList<[ExpressionToken](../parsers/expression_token)> ResultTokens { get; }
+> `public` IList<[ExpressionToken](../parser/expression_token)> ResultTokens { get; }
 
 #### VariantOperations
 Gets and sets the manager for operations on variant values.

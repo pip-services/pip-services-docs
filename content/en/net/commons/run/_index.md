@@ -22,7 +22,7 @@ But there may be situations when it can be done in production.
 
 #### [IClosable](iclosable)
 Interface for components that require explicit closure.
-For components that require opening as well as closing 
+For components that require opening as well as closing,  
 use [IOpenable](iopenable) interface instead.
 
 #### [IExecutable](iexecutable)

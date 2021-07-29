@@ -14,7 +14,7 @@ description: >
 
 The OrRule class allows you to validate combinations of rules created with OR logical operations.
 
-Important points
+**Important points**
 
 - When one of the combined rules returns no errors, then this rule also returns no errors.
 - When all combined rules return errors, then this rule returns all the errors.
@@ -33,7 +33,7 @@ Validates a given value against this rule.
 
 > `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value in dot notation.
 - **schema**: [Schema](../schema) - schema this rule is called from
 - **value**: object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.

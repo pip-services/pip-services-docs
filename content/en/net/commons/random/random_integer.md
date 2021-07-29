@@ -64,7 +64,7 @@ Updates (drifts) an integer value without a defined range.
 
 
 #### UpdateInteger
-Updates (drifts) an integer value within specified range defined.
+Updates (drifts) an integer value within a specified range.
 
 > `public static` int UpdateInteger(int value, int range)
 

@@ -14,12 +14,12 @@ description: >
 
 The FixerRateTimer class represents a timer that is triggered in equal time intervals.
 
-Important points
+**Important points**
 
-- It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
+- It has a symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
 ### Constructors
-Creates new instance of the timer and sets its values.
+Creates a new instance of the timer and sets its values.
 
 > `public` FixedRateTimer(Action task, int interval, int delay)
 
@@ -69,7 +69,7 @@ Restarts the timer.
 Starts the timer.
 
 Initially the timer is triggered after delay.
-After that, it is triggered after interval until it is stopped.
+After that, it is triggered after an interval, until it is stopped.
 
 > `public` void Start()
 

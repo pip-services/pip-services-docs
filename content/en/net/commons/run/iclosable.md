@@ -15,7 +15,7 @@ The IClosable interface allows you to create a component with a method that clos
 ### Instance methods 
 
 #### CloseAsync
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 > Task CloseAsync(string correlationId)
 

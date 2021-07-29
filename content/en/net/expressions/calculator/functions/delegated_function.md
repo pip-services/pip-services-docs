@@ -19,7 +19,7 @@ Constructs this function class with the specified parameters.
 > `public` DelegatedFunction(string name, [FunctionCalculator](#function_calculator) calculator)
 
 - **name**: string - name of this function.
-- **calculator**: [FunctionCalculator](#function_calculator) - The function calculator delegate.
+- **calculator**: [FunctionCalculator](#function_calculator) - function calculator delegate.
 
 ### Delegate
 
@@ -27,9 +27,9 @@ Constructs this function class with the specified parameters.
 Defines a delegate to implement a function
 > `public delegate` Task<[Variant](../../../variants/variant)> FunctionCalculator(IList<[Variant](../../../variants/variant)> parameters, [IVariantOperations](../../../variants/ivariant_operations) variantOperations)
 
-- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - A list with function parameters
-- **parameters**: IList<[Variant](../../../variants/variant)> - A manager for variant operations.
-- **returns**: Task<[Variant](../../../variants/variant)> - A calculated function value.
+- **variantOperations**: [IVariantOperations](../../../variants/ivariant_operations) - list with function parameters
+- **parameters**: IList<[Variant](../../../variants/variant)> - manager for variant operations.
+- **returns**: Task<[Variant](../../../variants/variant)> - calculated function value.
 
 ### Properties
 

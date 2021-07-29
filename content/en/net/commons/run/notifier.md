@@ -23,16 +23,16 @@ Sets execution parameters.
 - **args**: [Parameters](../parameters) - notification arguments.
 
 #### NotifyOneAsync
-Notifies specific component.
+Notifies a specific component.
 
 To be notiied, components must implement [INotifiable](../inotifiable) interface.
 If they don't, the call to this method has no effect.
 
 > `public static` Task NotifyOneAsync(string correlationId, object component, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id used to trace execution through teh call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: object - component that is to be notified.
-- **args**: [Parameters](../parameters) - notifiation arguments.
+- **args**: [Parameters](../parameters) - notification arguments.
 
 
 ### See also

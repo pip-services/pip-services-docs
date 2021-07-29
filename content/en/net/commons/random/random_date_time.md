@@ -11,7 +11,7 @@ description: >
 
 The RandomDateTime class allows you to generate random dates.
 
-Important points:
+**Important points**
 
 - Month must be in 1..12 format.
 
@@ -19,7 +19,7 @@ Important points:
 
 #### NextDate
 Generates a random DateTime in the range ['2000, 1, 1', 'maxYear']. 
-This method generates dates without time(or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` DateTime NextDate(DateTime max)
 
@@ -28,7 +28,7 @@ This method generates dates without time(or time set to 00:00:00)
 
 #### NextDate
 Generates a random DateTime in the range ['minYear', 'maxYear']. 
-This method generate dates without time(or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` DateTime  NextDate(DateTime min, DateTime max)
 
@@ -38,7 +38,7 @@ This method generate dates without time(or time set to 00:00:00)
 
 #### NextDateTime
 Generates a random DateTime and time in the range ['2000, 1, 1', 'maxYear']. 
-This method generate dates without time(or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` DateTime NextDateTime(DateTime max)
 
@@ -47,7 +47,7 @@ This method generate dates without time(or time set to 00:00:00)
 
 #### NextDateTime
 Generates a random DateTime and time in the range ['minYear', 'maxYear']. 
-This method generate dates without time(or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `public static` DateTime NextDateTime(DateTime min, DateTime max)
 

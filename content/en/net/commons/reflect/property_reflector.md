@@ -11,15 +11,15 @@ description: >
 
 The PropertyReflector class allows you to examine an object's properties and to dynamically get and set their values.
 
-Important points
+**Important points**
 
-- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the PropertyReflector class treats all property names as case insensitive.
 
 ### Static methods
 
 #### GetProperties
-Get the values of all the properties in a specified object
+Gets the values of all the properties in a specified object
 and returns them as a map.
 
 > `public static` Dictionary\<string, object\> GetProperties(object obj)
@@ -33,7 +33,7 @@ Gets value of an object's property specified by its name.
 
 > `public static` object GetProperty(object obj, string name)
 
-- **obj**: object - object to read property from.
+- **obj**: object - object to read a property from.
 - **name**: string - name of the property to get.
 - **returns**: object - property's value or null if the property doesn't exist or introspection failed.
 
@@ -57,7 +57,7 @@ Checks if object has a property with a specified name.
 #### SetProperties
 Sets values of some (all) object's properties.
  
-If some properties do not exist or introspection fails
+If some properties do not exist or introspection fails,
 they are just silently skipped and no errors thrown.
 
 > `public static` void SetProperties(object obj, Dictionary\<string, object\> values)
@@ -70,7 +70,7 @@ they are just silently skipped and no errors thrown.
 Sets value of an object's property specified by its name.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `public static` void SetProperty(object obj, string name, object value)
 

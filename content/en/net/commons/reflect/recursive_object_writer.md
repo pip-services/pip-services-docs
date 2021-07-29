@@ -12,7 +12,7 @@ description: >
 
 The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object recursively using dot notation.
 
-Important points
+**Important points**
 
 - It is similar to [ObjectWriter](../object_writer) but writes properties recursively through the entire object graph. 
 - Nested property names are defined using dot notation as "object.subobject.property"
@@ -21,7 +21,7 @@ Important points
 
 #### CopyProperties
 Copies the content of one object to another object
-by recursively reading all properties from source object
+by recursively reading all properties from a source object
 and then recursively writing them to the destination object.
 
 > `public static` void CopyProperties(object dest, object src)
@@ -54,7 +54,7 @@ The property name correspondently must be an object's property,
 a map key or an array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `public static` void SetProperty(object obj, string name, object value)
 

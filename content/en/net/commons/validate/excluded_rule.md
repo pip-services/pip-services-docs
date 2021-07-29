@@ -28,7 +28,7 @@ in the value that is given for validation to pass.
 
 > `public` void Validate(string path, [Schema](../schema) schema, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value that is to be validated.
+- **path**: string - path to the value that is to be validated (in dot notation).
 - **schema**: [Schema](../schema) - (not used in this implementation).
 - **value**: object - value that is to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - results of the validation.

@@ -43,7 +43,7 @@ Validates a given value against the schema and configured validation rules.
 
 > `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value in dot notation.
 - **value**: object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 

@@ -40,7 +40,7 @@ Finds a function in the list by it's name.
 > [IFunction](../ifunction) FindByName(string name)
 
 - **name**: string - function name to be found.
-- **returns**: [IFunction](../ifunction) - function or *null* if no function was not found.
+- **returns**: [IFunction](../ifunction) - function or *null* if no function was found.
 
 #### FindIndexByName
 Finds a function's index in the list by it's name. 

@@ -14,7 +14,7 @@ description: >
 
 The ElasticSearchLogger class allows you to create loggers that dump execution logs to an ElasticSearch service.
 
-Important points
+**Important points**
 
 - Elasticsearch is a popular search index. It is often used to store and index execution logs by itself or as a part of ELK (ElasticSearch - Logstash - Kibana) stack.
 - Authentication is not supported in this version.
@@ -25,7 +25,7 @@ Important points
 - **source**: source (context) name
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **protocol**: connection protocol: http or https
 - **host**: host name or IP address
 - **port**: port number
@@ -36,11 +36,11 @@ Important points
 - **max_cache_size**: maximum number of messages stored in this cache (default: 100)
 - **index**: ElasticSearch index name (default: "log")
 - **date_format**: date format used to create the index name. Eg. log-YYYYMMDD (default: "YYYYMMDD").
-- **daily**: True to create a new index every day by adding a date suffix to the index name (default: False)
+- **daily**: true to create a new index every day by adding a date suffix to the index name (default: False)
 - **reconnect**: reconnect timeout in milliseconds (default: 60 sec)
 - **timeout**: invocation timeout in milliseconds (default: 30 sec)
 - **max_retries**: maximum number of retries (default: 3)
-- **index_message**: True to enable indexing for message object (default: False)
+- **index_message**: true to enable indexing for message object (default: False)
 - **include_type_name**: will create using a "typed" index compatible with ElasticSearch 6.x (default: false)
 
 #### References
@@ -77,7 +77,7 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -108,10 +108,10 @@ Writes a log message to the logger destination.
 
 > `protected override` void Write([LogLevel](../../../components/log/log_level) level, string correlationId, Exception error, string message)
 
-- **level**: [LogLevel](../../../components/log/log_level - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: [LogLevel](../../../components/log/log_level - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 
 ### Examples

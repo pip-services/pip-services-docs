@@ -39,8 +39,8 @@ See [PropertySchema](../property_schema)
 ### Instance methods
 
 #### AllowUndefined
-Sets a flag to allow undefined properties
-This method returns a reference to this exception to the implement the Builder pattern
+Sets a flag to allow undefined properties. 
+This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
 > `public` [ObjectSchema](../object_schema) AllowUndefined(bool value)

@@ -28,7 +28,7 @@ Install the dotnet package as
 dotnet add package PipServices3.ElasticSearch
 ```
 
-Microservice components shall perform logging usual way using CompositeLogger component.
+Microservice components shall perform logging the usual way using the CompositeLogger component.
 The CompositeLogger will get ElasticSearchLogger from references and will redirect log messages
 there among other destinations.
 
@@ -58,7 +58,7 @@ class MyComponent: IConfigurable, IReferenceable
 }
 ```
 
-Configuration for your microservice that includes ElasticSearch logger may look the following way.
+The configuration for your microservice that includes ElasticSearch logger may look the following way.
 
 ```yaml
 ...

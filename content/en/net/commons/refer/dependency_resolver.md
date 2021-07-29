@@ -13,9 +13,9 @@ description: >
 ### Description
 The DependencyResolver is a helper class that allows you to resolve component dependencies. It is configured to resolve named dependencies by a specific locator.  
 
-Important points:
+**Important points**
 
-- During deployment the dependency locator can be changed. This mechanism can be used to clarify a specific dependency among several alternatives. Typically components are configured to retrieve the first dependency that matches a logical group, type and version. However, if the container contains more than one instance and the resolution has to be specific about those instances; they can be given a unique name, and the dependency resolvers can be reconfigured to retrieve dependencies according to their name.
+- During deployment the dependency locator can be changed. This mechanism can be used to clarify a specific dependency among several alternatives. Typically components are configured to retrieve the first dependency that matches a logical group, type and version. However, if the container contains more than one instance and the resolution has to be specific about those instances, they can be given a unique name and the dependency resolvers can be reconfigured to retrieve dependencies according to their name.
 
 #### Configuration parameters
 
@@ -92,7 +92,7 @@ Gets one optional dependency by its name and matching to the specified type.
 
 #### GetOneRequired
 Gets one required dependency by its name. 
-At least one dependency must present. If the dependency was found, it throws a 
+At least one dependency must be present. If the dependency was found, it throws a 
 [ReferenceException](../reference_exception)
 
 > `public` object GetOneRequired\<T\>(string name)
@@ -102,13 +102,13 @@ At least one dependency must present. If the dependency was found, it throws a
 
 #### GetOneRequired
 Gets one required dependency by its name and matching to the specified type. 
-At least one dependency must present. 
+At least one dependency must be present. 
 If the dependency was found, it throws a [ReferenceException](../reference_exception)
 **T** - the class type.
 
 > `public` T GetOneRequired\<T\>(string name)
 
-- **name**: string - the dependency name to locate.
+- **name**: string - dependency name to locate.
 - **returns**: T - dependency reference
 
 
@@ -118,7 +118,7 @@ Gets all optional dependencies by their name.
 > `public` List\<T\> GetOptional(string name)
 
 - **name**: string - dependency name to locate.
-- **returns**: List\<T\> - list with found dependencies or empty list of no dependency was found.
+- **returns**: List\<T\> - list with found dependencies or empty list if no dependency was found.
 
 
 #### GetOptional
@@ -133,7 +133,7 @@ Gets all optional dependencies by their name.
 #### GetRequired
 Gets all required dependencies by their name. 
 At least one dependency must present.
-If no dependency was found, it throws a[ReferenceException](../reference_exception).
+If no dependency was found, it throws a [ReferenceException](../reference_exception).
 
 > `public` List\<object\> GetRequired(string name)
 

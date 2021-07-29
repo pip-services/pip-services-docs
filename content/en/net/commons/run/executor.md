@@ -23,13 +23,13 @@ See [IExecutable](../iexecutable), [Parameters](../parameters)
 
 > `public static` Task\<List\<object\>\> ExecuteAsync(string correlationId, IEnumerable components, [Parameters](../parameters) args)
 
-- **correlationId**: string - (optional) transaction id the to trace execution through the call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **components**: IEnumerable - list of components that are to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
 - **returns**:  Task\<List\<object\>\> - execution result
 
 #### ExecuteOneAsync
-Executes specific component.
+Executes a specific component.
 
 To be executed, components must implement the [IExecutable](../iexecutable) interface.
 If they don't, the call to this method has no effect.

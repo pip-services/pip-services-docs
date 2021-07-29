@@ -12,12 +12,12 @@ description: >
 
 The ObjectWriter class allows you to dynamically set the properties of an object. 
 
-Important points
+**Important points**
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, the ObjectWriter class is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys,
-- For arrays, properties are elements identified by integer index.
-- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
+- For arrays, properties are elements identified by an integer index.
+- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and is used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the ObjectWriter class treats all property names as case insensitive.
 
 ### Static methods
@@ -29,7 +29,7 @@ The object can be a user a defined object, a map or an array.
 Property values correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
-If some properties do not exist or introspection fails
+If some properties do not exist or introspection fails, 
 they are just silently skipped and no errors thrown.
 
 > `public static` void SetProperties(object obj, IDictionary\<string, object\> values)
@@ -45,7 +45,7 @@ The property name correspondently must be an object's property,
 a map key or an array index.
 
 If the property does not exist or introspection fails
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `public static` void SetProperty(object obj, object string name, object value)
 

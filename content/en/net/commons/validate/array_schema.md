@@ -15,7 +15,7 @@ The ArraySchema class allows you to validate arrays based on a specified validat
 
 ### Constructors
 Creates a new validation rule and sets its values.
-See [TypeCode](../convert/type_code)
+See [TypeCode](../../convert/type_code)
 
 > `public` ArraySchema(object valueType)
 

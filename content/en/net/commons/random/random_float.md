@@ -35,7 +35,7 @@ If 'max' is omitted, then 'max' is set to 'min' and 'min' is set to 0.
 
 
 #### UpdateFloat
-Updates (drifts) a float value without specified range defined
+Updates (drifts) a float value without a specified range.
 
 > `public static` float UpdateFloat(float value)
 
@@ -44,7 +44,7 @@ Updates (drifts) a float value without specified range defined
 
 
 #### UpdateFloat
-Updates (drifts) a float value within specified range defined
+Updates (drifts) a float value within a specified range.
 
 > `public static` float UpdateFloat(float value, float range)
 

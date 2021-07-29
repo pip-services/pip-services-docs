@@ -4,7 +4,7 @@ title: "PropertySchema"
 linkTitle: "PropertySchema"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    Schema to validate object properties
+    Schema to validate object properties.
 ---
 
 **Inherits**: [Schema](../schema)
@@ -15,7 +15,7 @@ The PropertySchema class allows you to create schemas to validate object propert
 
 ### Constructors
 Creates a new validation rule and sets its arguments.
-See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
+See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
 > `public` PropertySchema(string name, object type)
 
@@ -36,7 +36,7 @@ Gets and sets the property name.
 
 #### Type
 Gets and sets the property type.
-The type can be defined as type, type name or [TypeCode](../convert/type_code)
+The type can be defined as type, type name or [TypeCode](../../convert/type_code)
 
 > `public` object Type { get; set; }
 
@@ -48,7 +48,7 @@ Validates a given value against the schema and configured validation rules.
 
 > `public internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value dot notation.
 - **value**: object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 

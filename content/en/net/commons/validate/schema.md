@@ -13,7 +13,7 @@ description: >
 
 The Schema class provides a basic schema to validate values against a set of validation rules.
 
-Important points
+**Important points**
 
 - This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
 
@@ -67,12 +67,12 @@ to chain additional calls.
 
 #### PerformTypeValidation
 Validates a given value to match a specified type.
-The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
+The type can be defined as a Schema, type, a type name or [TypeCode](../../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
 > `protected` void PerformTypeValidation(string path, object type, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value in dot notation.
 - **type**: object - type to match the value type
 - **value**: object - value to be validated.
 - **results**: [ValidationResult](../validation_result)[] - list with validation results.
@@ -82,7 +82,7 @@ Validates a given value against the schema and configured validation rules.
 
 > `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value in dot notation.
 - **value**: object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.
 

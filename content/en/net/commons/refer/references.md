@@ -4,7 +4,7 @@ title: "References"
 linkTitle: "References"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
-    An implementation of [IReferences](../ireferences) that allows you to store and locate component references.
+    An implementation of [IReferences](../ireferences) that allows you to store and locate a component's references.
 ---
 
 **Inherits**: [IReferences](../ireferences)
@@ -92,7 +92,7 @@ Gets an optional component's reference that matches a specified locator and matc
 - **returns**: T - matching component reference or null if nothing was found.
 
 #### GetOneRequired
-Gets a required component's reference that matches specified locator.
+Gets a required component's reference that matches a specified locator.
 throws a [ReferenceException](../reference_exception) when no references found.
 
 > `public virtual` object GetOneRequired(object locator)

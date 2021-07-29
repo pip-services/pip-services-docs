@@ -16,10 +16,10 @@ The DelegatedFunction class allows you to define a delegate to implement a funct
 ### Constructors
 Constructs this function class with the specified parameters.
 
-> `public` DelegatedFunction(string name, [FunctionCalculator](#function_calculator) calculator)
+> `public` DelegatedFunction(string name, [FunctionCalculator](#functioncalculator) calculator)
 
 - **name**: string - name of this function.
-- **calculator**: [FunctionCalculator](#function_calculator) - function calculator delegate.
+- **calculator**: [FunctionCalculator](#functioncalculator) - function calculator delegate.
 
 ### Delegate
 

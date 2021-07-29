@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "RandomInteger"
-linkTitle: "RandomInteger"
+title: "RandomLong"
+linkTitle: "RandomLong"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-commons-dotnet"
 description: >
     Random generator for long values.

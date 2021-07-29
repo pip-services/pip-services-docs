@@ -18,6 +18,7 @@ description: >
 #### IProperties    
     
 The IProperties interface provides methods to get and set the properties of a class. 
+        
     
 ### Classes
 

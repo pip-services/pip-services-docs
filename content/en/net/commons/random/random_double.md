@@ -43,7 +43,7 @@ Updates (drifts) a double value without a defined range.
 
 
 #### UpdateDouble
-Updates (drifts) a double value within specified range defined.
+Updates (drifts) a double value within a specified range.
 
 > `public static` double UpdateDouble(double value, double range)
 

@@ -21,17 +21,17 @@ Decodes a string value.
 
 > `public` string DecodeString(string value, char quoteSymbol)
 
-- **value**: string - A string value to be decoded.
-- **quoteSymbol**: char - A string quote character.
-- **returns**: string - An decoded string.
+- **value**: string - string value to be decoded.
+- **quoteSymbol**: char - string quote character.
+- **returns**: string - decoded string.
 
 #### EncodeString
 Encodes a string value.
 > `public` string EncodeString(string value, char quoteSymbol)
 
-- **value**: string - A string value to be encoded.
-- **quoteSymbol**: char - A string quote character.
-- **returns**: string - An encoded string.
+- **value**: string - string value to be encoded.
+- **quoteSymbol**: char - string quote character.
+- **returns**: string - encoded string.
 
 
 

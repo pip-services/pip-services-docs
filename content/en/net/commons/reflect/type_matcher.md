@@ -13,9 +13,9 @@ description: >
 
 The TypeMatcher class allows you to match value types based on equality.
 
-Important points
+**Important points**
 
-- This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
+- This class has a symmetric implementation across all languages supported by the Pip.Services toolkit and is used to support dynamic data processing.
 
 ### Static methods
 
@@ -52,7 +52,7 @@ The expected type can be specified by a type, type name or [TypeCode](../../conv
 - **returns**: bool - true if the types are matching and false if they don't.
 
 #### MatchValueByName
-Matches expected type to a type of a value.
+Matches a expected type to a type of a value.
 
 > `public static` bool MatchValueByName(string expectedType, object actualValue)
 

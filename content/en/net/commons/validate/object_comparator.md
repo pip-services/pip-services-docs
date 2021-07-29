@@ -24,7 +24,7 @@ The operation can be performed over values of any type.
 - **returns**: bool - true if values are equal and false otherwise
 
 #### AreNotEqual
-Checks if two values are NOT equal
+Checks if two values are NOT equal. 
 The operation can be performed over values of any type.
 
 > `public static` bool AreNotEqual(object value1, object value2)
@@ -40,7 +40,7 @@ The operation can be performed over values of any type.
 > `public static` bool Compare(object value1, string operation, object value2)
 
 - **value1**: object - first argument to compare
-- **operation**: string - the comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
+- **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
 - **value2**: object - second argument to compare
 - **returns**: bool - result of the comparison operation
 
@@ -71,7 +71,7 @@ Checks if a string matches a regular expression
 
 - **value1**: object - string value to match
 - **value2**: object - regular expression string
-- **returns**: bool - true if the value matches regular expression and false otherwise.
+- **returns**: bool - true if the value matches the regular expression and false otherwise.
 
 ### Examples
 

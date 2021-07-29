@@ -12,7 +12,7 @@ description: >
 
 The INotifiable interface allows you to create components that can be asynchronously notified.
 
-Important points
+**Important points**
 
 - The notification can include an optional argument that describes an occurred event.
 

@@ -28,7 +28,7 @@ If they don't, the call to this method has no effect.
 Sets references to a specific component.
 
 To set references, components must implement the [IReferenceable](../ireferenceable) interface.
-If they don't the call to this method has no effect.
+If they don't, the call to this method has no effect.
 
 > `public static` void SetReferencesForOne([IReferences](../ireferences) references, object component)
 

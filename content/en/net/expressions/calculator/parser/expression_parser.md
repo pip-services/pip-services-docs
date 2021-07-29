@@ -14,7 +14,7 @@ The ExpressionParser class allows you to implement an expression parser.
 ### Properties
 
 #### Expression
-Gets and sets expression string.
+Gets and sets an expression string.
 
 > `public` string Expression { get; set; }
 

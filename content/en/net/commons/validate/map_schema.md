@@ -14,15 +14,15 @@ description: >
 The MapSchema class provides you with a schema to validate maps.
 
 ### Constructors
-Creates a new instance of validation schema and sets its values.
-See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
+Creates a new instance of a validation schema and sets its values.
+See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
 > `public` MapSchema(object keyType, object valueType)
 
 - **keyType**: object  - type of map keys. Null means that keys may have any type.
 - **valueType**: object  - type of map values. Null means that values may have any type.
 
-Creates a new instance of validation schema.
+Creates a new instance of a validation schema.
 
 > `public` MapSchema()
 
@@ -50,7 +50,7 @@ Validates a given value against the schema and configured validation rules.
 
 > `protected internal override` void PerformValidation(string path, object value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: string - dot notation path to the value.
+- **path**: string - path to the value (in dot notation).
 - **value**: object - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.
 

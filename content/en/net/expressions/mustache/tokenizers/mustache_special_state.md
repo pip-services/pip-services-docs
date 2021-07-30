@@ -18,8 +18,8 @@ The MustacheSpecialState class allows you to implement a quote string state obje
 #### NextToken
 Gets the next token from the stream started from the character linked to this state.
 
-> `public` [Token](../../tokenizers/token) NextToken([IScanner](../../../io/iscanner) scanner, [ITokenizer](../../tokenizers/itokenizer) tokenizer)
+> `public` [Token](../../../tokenizers/token) NextToken([IScanner](../../../io/iscanner) scanner, [ITokenizer](../../../tokenizers/itokenizer) tokenizer)
 
 - **scanner**: [IScanner](../../../io/iscanner) - textual string to be tokenized.
-- **tokenizer**: [ITokenizer](../../tokenizers/itokenizer) - tokenizer class that controls the process.
-- **returns**: [Token](../../tokenizers/token) - next token from the top of the stream.
+- **tokenizer**: [ITokenizer](../../../tokenizers/itokenizer) - tokenizer class that controls the process.
+- **returns**: [Token](../../../tokenizers/token) - next token from the top of the stream.

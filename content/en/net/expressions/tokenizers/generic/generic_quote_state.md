@@ -13,7 +13,7 @@ description: >
 
 The GenericQuoteState allows you to create a quoteState that returns a quoted string token from a scanner.
 
-Important points
+**Important points**
 
 - This state will collect characters until it sees a match to the character that the tokenizer used to switch to this state. 
 - For example, if a tokenizer uses a double-quote character to enter this state, then *nextToken()* will search for another double-quote until it finds one or finds the end of the scanner.

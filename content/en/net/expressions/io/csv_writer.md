@@ -9,16 +9,15 @@ description: >
 
 ### Description
 
-TODO: add description
-
+The CsvWriter class allows you to implement a writer for CSV streams.
 ### Constructors
-Constructs this object with text writer.
+Constructs this object with a text writer.
 
 > `public` CsvWriter(TextWriter writer, char fieldSeparator, char quoteSymbol)
 
-- **writer**: TextWriter - A text writer to writer the CSV data.
-- **fieldSeparators**: writer - Separators for fields in CSV stream.
-- **quoteSymbols**: writer - Characters to quote strings.
+- **writer**: TextWriter - text writer to writer the CSV data.
+- **fieldSeparators**: writer - separators for fields in CSV stream.
+- **quoteSymbols**: writer - characters to quote strings.
 
 
 ### Properties
@@ -42,20 +41,20 @@ Encodes a string value.
 
 > `public` string EncodeString(string value, char quoteSymbol)
 
-- **value**: string - A string value to be encoded.
-- **quoteSymbol**: char - A string quote character.
-- **returns**: string - An encoded string.
+- **value**: string - string value to be encoded.
+- **quoteSymbol**: char - string quote character.
+- **returns**: string - encoded string.
 
 
 #### WriteField
-Writer a field value to CSV stream.
+Writes a field value to a CSV stream.
 
 > `public` void WriteField(string fieldValue)
 
-- **fieldValue**: string - A field value to be written.
+- **fieldValue**: string - field value to be written.
 
 
 #### WriteLine
-Writes a line terminator to CSV stream.
+Writes a line terminator to a CSV stream.
 
 > `public` void WriteLine()

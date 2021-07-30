@@ -157,7 +157,7 @@ Registers an action in AWS Lambda function.
 #### registerActionWithAuth
 Registers an action with authorization.
 
-> `protected` registerActionWithAuth(name: string, schema: Schema, authorize: (call: any, next: (call: any) => Promise\<any\>) => Promise\<any\>, action: (call: any) => Promise\<any\>): void
+> `protected` registerActionWithAuth(name: string, schema: [Schema](../../../commons/validate/schema), authorize: (call: any, next: (call: any) => Promise\<any\>) => Promise\<any\>, action: (call: any) => Promise\<any\>): void
 
 - **name**: string - action's name
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.

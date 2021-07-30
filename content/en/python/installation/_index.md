@@ -25,6 +25,13 @@ python setup.py install
 
 ### Module information:
 
+#### AWS module
+
+```bash
+pip install pip-services3-aws
+```
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-aws-python)
+
 #### Commons module
 
 ```bash

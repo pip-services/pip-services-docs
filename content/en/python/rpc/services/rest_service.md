@@ -187,7 +187,7 @@ Registers a route in HTTP endpoint.
 #### register_route_with_auth
 Registers a route with authorization in HTTP endpoint.
 
-> register_route_with_auth(method: str, route: str, schema: Schema, authorize: Callable, action: Callable)
+> register_route_with_auth(method: str, route: str, schema: [Schema](../../../commons/validate/schema), authorize: Callable, action: Callable)
 
 - **method**: str - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: str - command route. The base route will be added to this route

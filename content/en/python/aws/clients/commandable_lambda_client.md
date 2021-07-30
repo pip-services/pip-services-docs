@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableLambdaClient"
 linkTitle: "CommandableLambdaClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-aws-python"
 description: >
     Abstract client that calls commandable AWS Lambda Functions.
 ---
@@ -24,7 +24,7 @@ Each command is exposed as an action determined by the "cmd" parameter.
     - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
- - **options**:
+- **options**:
     - **connect_timeout**: (optional) connection timeout in milliseconds (default: 10 sec)
 
 #### References
@@ -34,59 +34,50 @@ Each command is exposed as an action determined by the "cmd" parameter.
 - **\*:credential-store:\*:\*:1.0** - (optional) Credential stores to resolve credentials.
 
 ### Constructors
-
-#### NewCommandableLambdaClient
 Creates a new instance of this client.
 
-> NewCommandableLambdaClient(name string) [*CommandableLambdaClient]()
+> constructor(name: str)
 
-- **name**: string - a service name.
+- **name**: str - a service name.
 
-### Methods
+### Instance methods
 
-#### CallCommand
+#### call_command
 Calls a remote action in AWS Lambda function.
 The name of the action is added as "cmd" parameter
 to the action parameters. 
 
-> (c [*CommandableLambdaClient]()) CallCommand(prototype reflect.Type, cmd string, correlationId string, params [*AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> call_command(cmd: str, correlation_id: Optional[str], params: dict): Any
 
-- **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
-- **cmd**: string - action name
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **params**: [*AnyValueMap](../../../commons/data/any_value_map) - command parameters.
-- **returns**: (result interface{}, err error) - action result.
+- **cmd**: str - action name
+- **correlation_id**: correlation_id: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **params**: dict - command parameters.
+- **returns**: Any - action result.
 
 
 
 ### Examples
 
-```go
-type MyLambdaClient struct {
-     *CommandableLambdaClient
-}
+```python
+class MyLambdaClient(CommandableLambdaClient, IMyClient):
 
-...
+    ...
 
-func (c* MyLambdaClient) GetData(correlationId string, id string)(result MyDataPage, err error) {
-  return c.callCommand(MyDataPageType,
-        "get_data",
-        correlationId,
-        map[string]interface{}{ "id": id })
-}
+    def get_data(self, correlation_id: str, id: str) -> Any
+        return this.callCommand("get_data", correlation_id, { 'id': id })
 
-...
+    ...
 
-client := NewMyLambdaClient();
+client = MyLambdaClient()
 
-client.Configure(NewConfigParamsFromTuples(
+client.configure(ConfigParams.from_еuples(
     "connection.region", "us-east-1",
     "connection.access_id", "XXXXXXXXXXX",
     "connection.access_key", "XXXXXXXXXXX",
     "connection.arn", "YYYYYYYYYYYYY"
-));
+))
 
-res, err := client.GetData("123", "1")
+result = client.get_data("123", "1")
 ...
 ```
 

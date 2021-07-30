@@ -24,6 +24,8 @@ Each command is exposed as an action determined by the "cmd" parameter.
     - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
+- **options**:
+    - **connect_timeout**: (optional) connection timeout in milliseconds (default: 10 sec)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
@@ -79,3 +81,4 @@ const result = await client.getData("123", "1");
 
 ### See also
 - #### [LambdaFunction](../../containers/lambda_function)
+- #### [CommandableLambdaClient](../../clients/commandable_lambda_client)

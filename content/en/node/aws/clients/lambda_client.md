@@ -187,3 +187,4 @@ const result = await client.getData("123", "1");
 
 ### See also
 - #### [LambdaFunction](../../containers/lambda_function)
+- #### [CommandableLambdaClient](../../clients/commandable_lambda_client)

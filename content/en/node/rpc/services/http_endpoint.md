@@ -107,7 +107,7 @@ Registers an action in this objects REST server (service) by the given method an
 Registers an action with authorization in this objects REST server (service)
 by the given method and route.
 
-> `public` registerRouteWithAuth(method: string, route: string, schema: Schema, authorize: (req: any, res: any, next: () => void) => void, action: (req: any, res: any) => void): void
+> `public` registerRouteWithAuth(method: string, route: string, schema: [Schema](../../../commons/validate/schema), authorize: (req: any, res: any, next: () => void) => void, action: (req: any, res: any) => void): void
 
 - **method**: string - HTTP method of the route.
 - **route**: string - route to register in this object's REST server (service).

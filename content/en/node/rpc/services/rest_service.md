@@ -188,7 +188,7 @@ Registers a route in HTTP endpoint.
 #### registerRouteWithAuth
 Registers a route with authorization in HTTP endpoint.
 
-> `protected` registerRouteWithAuth(method: string, route: string, schema: Schema, authorize: (req: any, res: any, next: () => void) => void, action: (req: any, res: any) => void): void
+> `protected` registerRouteWithAuth(method: string, route: string, schema: [Schema](../../../commons/validate/schema), authorize: (req: any, res: any, next: () => void) => void, action: (req: any, res: any) => void): void
 
 - **method**: string - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: string - command route. The base route will be added to this route

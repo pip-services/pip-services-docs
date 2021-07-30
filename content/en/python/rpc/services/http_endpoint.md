@@ -107,7 +107,7 @@ Registers an action in this objects REST server (service) by the given method an
 Registers an action with authorization in this objects REST server (service)
 by the given method and route.
 
-> register_route_with_auth(method: str, route: str, schema: Schema, authorize: Callable, action: Callable)
+> register_route_with_auth(method: str, route: str, schema: [Schema](../../../commons/validate/schema), authorize: Callable, action: Callable)
 
 - **method**: str - HTTP method of the route.
 - **route**: str - route to register in this object's REST server (service).

@@ -4,50 +4,53 @@ title: "BufferStream"
 linkTitle: "BufferStream"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    This class is used for buffered read/write to the other stream.
+    This class is used for buffered read/write to other stream.
 ---
 
 **Inherits**: Stream
 
 ### Description
+This class is used for buffered read/write to other stream.
 
-This class is used at least in FieldComm for reading/writing messages to the NetworkStream.
-This class is a port for .Net Compact Framework from System.IO.BufferedStream (Full .Net Framework).
+**Important points**
+
+- This class is used at least in FieldComm for reading/writing messages to the NetworkStream.
+- This class is a port for .Net Compact Framework from System.IO.BufferedStream (Full .Net Framework).
 
 ### Constructors
-TODO: add description
+Creates a new instance of this class.
 
 > `public` BufferStream(Stream stream)
 
-- **stream**: Stream - TODO: add description
+- **stream**: Stream - stream
 
 > `public` BufferStream(Stream stream, int bufferSize)
 
-- **stream**: Stream - TODO: add description
-- **bufferSize**: int - TODO: add description
+- **stream**: Stream - stream
+- **bufferSize**: int - buffer size
 
 
 ### Properties
 
 
 #### CanRead
-TODO: add description
+Can read option.
 > `public override` bool CanRead { get; }
 
 #### CanSeek
-TODO: add description
+Can seek option.
 > `public override` bool CanSeek { get; }
 
 #### CanWrite
-TODO: add description
+Can write option.
 > `public override` bool CanWrite { get; }
 
 #### Length
-TODO: add description
+Length
 > `public override` long Length { get; }
 
-#### Length
-TODO: add description
+#### Position
+Position
 > `public override` long Position { get; set; }
 
 
@@ -56,61 +59,61 @@ TODO: add description
 ### Instance methods
 
 #### Flush
-TODO: add description
+Flushes the stream.
 
 > `public override` void Flush()
 
 
 #### Read
-TODO: add description
+Reads from a stream.
 
 > `public override` int Read(byte[] array, int offset, int count)
 
-- **array**: byte[] - TODO: add description
-- **offset**: int - TODO: add description
-- **count**: int - TODO: add description
-- **returns**: int - TODO: add description
+- **array**: byte[] - array
+- **offset**: int - offset value
+- **count**: int - count value
+- **returns**: int - position
 
 
 #### ReadByte
-TODO: add description
+Read from a stream
 
 > `public override` int ReadByte()
 
-- **returns**: int - TODO: add description
+- **returns**: int - position
 
 
 #### Seek
-TODO: add description
+Seeks within a stream.
 
 > `public override` long Seek(long offset, SeekOrigin origin)
 
-- **offset**: long - TODO: add description
-- **origin**: SeekOrigin - TODO: add description
-- **returns**: long - TODO: add description
+- **offset**: long - offset value
+- **origin**: SeekOrigin - origin
+- **returns**: long - position
 
 
 #### SetLength
-TODO: add description
+Sets the length.
 
 > `public override` void SetLength(long value)
 
 - **value**: long - TODO: add description
 
 
-#### SetLength
-TODO: add description
+#### Write
+Writes to a stream.
 
 > `public override` void Write(byte[] array, int offset, int count)
 
-- **array**: byte[] - TODO: add description
-- **offset**: int - TODO: add description
-- **count**: int - TODO: add description
+- **array**: byte[] - array
+- **offset**: int - offset value
+- **count**: int - count
 
 
-#### SetLength
-TODO: add description
+#### WriteByte
+Writes to a stream.
 
 > `public override` void WriteByte(byte value)
 
-- **value**: byte - TODO: add description
+- **value**: byte - value

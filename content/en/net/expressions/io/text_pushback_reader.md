@@ -12,14 +12,14 @@ description: >
 
 ### Description
 
-TODO: add description
+The TextPushbackReader class allows you to wrap aTextReader to provide an unlimited pushback that allows tokenizers to look ahead through a stream to perform lexical analysis.
 
 ### Constructors
 Creates an instance of this class.
 
 > `public` TextPushbackReader(TextReader reader)
 
-- **content**: TextReader - A text reader to be wrapped to add pushback functionality.
+- **content**: TextReader - text reader to be wrapped to add pushback functionality.
 
 
 ### Fields
@@ -39,15 +39,15 @@ Returns the character from the top of the stream without moving the stream point
 
 > `public` char Peek()
 
-- **returns**: char - A character from the top of the stream or **-1** if stream is empty.
+- **returns**: char - character from the top of the stream or **-1** if the stream is empty.
 
 
 #### Pushback
-Puts the specified character to the top of the stream.
+Puts the specified character on the top of the stream.
 
 > `public` void Pushback(char value)
 
-- **value**: char - A character to be pushed back.
+- **value**: char - character to be pushed back.
 
 
 #### PushbackString
@@ -55,12 +55,12 @@ Pushes the specified string to the top of the stream.
 
 > `public` void PushbackString(string value)
 
-- **value**: string - A string to be pushed back.
+- **value**: string - string to be pushed back.
 
 
 #### Read
-Reads character from the top of the stream.
+Reads a character from the top of the stream.
 
 > `public` char Read()
 
-- **value**: char - A read character or **-1** if stream processed to the end.
+- **value**: char - read character or **-1** if the stream was processed to the end.

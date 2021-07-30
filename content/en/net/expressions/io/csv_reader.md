@@ -4,49 +4,49 @@ title: "CsvReader"
 linkTitle: "CsvReader"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    Implements a reader of CSV stream
+    Implements a reader of CSV streams.
 ---
 
 ### Description
 
-TODO: add description
+The CsvReader class allows you to create a reader of CSV streams.
 
 ### Constructors
 Constructs this object with text reader.
 
 > `public` CsvReader(TextReader reader, char[] fieldSeparators, char[] quoteSymbols, string endOfLine)
 
-- **reader**: TextReader - A text reader to read the CSV data.
-- **fieldSeparators**: char[] - Separators for fields in CSV stream.
-- **quoteSymbols**: char[] - Characters to quote strings.
-- **endOfLine**: string - TODO: add description
+- **reader**: TextReader - text reader to read the CSV data.
+- **fieldSeparators**: char[] - separators for fields in CSV stream.
+- **quoteSymbols**: char[] - characters to quote strings.
+- **endOfLine**: end of line.
 
 Constructs this object with string buffer.
 
 > `public` CsvReader(TextReader reader, char[] fieldSeparators, char[] quoteSymbols)
 
-- **reader**: TextReader - A text reader to read the CSV data.
-- **fieldSeparators**: char[] - Separators for fields in CSV stream.
-- **quoteSymbols**: char[] - Characters to quote strings.
+- **reader**: TextReader - text reader to read the CSV data.
+- **fieldSeparators**: char[] - separators for fields in CSV stream.
+- **quoteSymbols**: char[] - characters to quote strings.
 
 
 Constructs this object with string buffer.
 
 > `public` CsvReader(string buffer, char[] fieldSeparators, char[] quoteSymbols)
 
-- **buffer**: string - A text reader to read the CSV data.
-- **fieldSeparators**: char[] - Separators for fields in CSV stream.
-- **quoteSymbols**: char[] - Characters to quote strings.
+- **buffer**: string - text reader to read the CSV data.
+- **fieldSeparators**: char[] - separators for fields in a CSV stream.
+- **quoteSymbols**: char[] - characters to quote strings.
 
 
 Constructs this object with string buffer.
 
 > `public` CsvReader(string buffer, char[] fieldSeparators, char[] quoteSymbols, string endOfLine)
 
-- **reader**: string - A text reader to read the CSV data.
-- **fieldSeparators**: char[] - Separators for fields in CSV stream.
-- **quoteSymbols**: char[] - Characters to quote strings.
-- **endOfLine**: string - TODO: add description
+- **reader**: string - text reader to read the CSV data.
+- **fieldSeparators**: char[] - separators for fields in a CSV stream.
+- **quoteSymbols**: char[] - characters to quote strings.
+- **endOfLine**: string - end of line
 
 
 ### Properties

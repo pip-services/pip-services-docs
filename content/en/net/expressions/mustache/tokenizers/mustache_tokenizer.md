@@ -7,7 +7,7 @@ description: >
     Creates a Mustache tokenizer.
 ---
 
-**Extends**: [AbstractTokenizer](../../tokenizers/abstract_tokenizer)
+**Extends**: [AbstractTokenizer](../../../tokenizers/abstract_tokenizer)
 
 ### Description
 
@@ -23,6 +23,6 @@ Constructs this object with default parameters.
 #### ReadNextToken
 Reads the next token
 
-> `protected override` [Token](../../tokenizers/token) ReadNextToken()
+> `protected override` [Token](../../../tokenizers/token) ReadNextToken()
 
-- **returns**: [Token](../../tokenizers/token) - next token
+- **returns**: [Token](../../../tokenizers/token) - next token

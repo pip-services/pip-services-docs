@@ -16,7 +16,7 @@ The GenericWordState class allows you to create a WordState that returns a word 
 **Important points**
 
 - Like other states, a tokenizer transfers the job of reading to this state, depending on an initial character.
-- This state determines which characters may appear as a second or later character in a word. These are typically different sets of characters; in particular, it is typical for digits to appear as parts of a word, but not as the initial character of a word.
+- This state determines which characters may appear as a second or later character in a word. These are typically different sets of characters. In particular, it is typical for digits to appear as parts of a word, but not as the initial character of a word.
 - By default, the following characters may appear in a word (The method *setWordChars()* allows customizing this):
 <blockquote><pre>
 From     To

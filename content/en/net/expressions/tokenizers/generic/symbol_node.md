@@ -13,7 +13,7 @@ The SymbolNode class allows you to construct a SymbolNode.
 **Important points**
 
 - A *SymbolNode* object is a member of a tree that contains all possible prefixes of allowable symbols. Multi-character symbols appear in a *SymbolNode* tree with one node for each character.
-- For example, the symbol *=:~* will appear in a tree as three nodes. The first node contains an equals sign, and has a child; that child contains a colon and has a child; this third child contains a tilde, and has no children of its own. If the colon node had another child for a dollar sign character, then the tree would contain the symbol *=:$*.
+- For example, the symbol *=:~* will appear in a tree as three nodes. The first node contains an equals sign and has a child. That child contains a colon and has a child. This third child contains a tilde, and has no children of its own. If the colon node had another child for a dollar sign character, then the tree would contain the symbol *=:$*.
 - A tree of *SymbolNode* objects collaborate to read a (potentially multi-character) symbol from an input stream. A root node with no character of its own finds an initial node
 that represents the first character in the input. This node looks to see if the next character in the stream matches one of its children. If so, the node delegates its reading task to its child.
 - This approach walks down the tree, pulling symbols from the input that match the path down the tree.
@@ -75,7 +75,7 @@ Finds or creates a child for the given character.
 
 > `internal` [SymbolNode]() EnsureChildWithChar(char value)
 
-- **value**: char - chararacters's 
+- **value**: char - chararacters's value
 - **returns**: [SymbolNode]() - symbol's node
 
 
@@ -89,7 +89,7 @@ Finds a child with the given character.
 
 
 #### UnreadToValid
-Unwinds to a valid node; this node is "valid" if its ancestry represents a complete symbol.
+Unwinds to a valid node. This node is "valid" if its ancestry represents a complete symbol.
 If this node is not valid, puts back the character and asks the parent to unwind.
 
 > `internal` [SymbolNode]() UnreadToValid([IScanner](../../../io/iscanner) scanner)

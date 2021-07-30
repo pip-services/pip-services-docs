@@ -98,7 +98,7 @@ Sets the length.
 
 > `public override` void SetLength(long value)
 
-- **value**: long - TODO: add description
+- **value**: long - length value
 
 
 #### Write
@@ -112,7 +112,7 @@ Writes to a stream.
 
 
 #### WriteByte
-Writes to a stream.
+Write bytes to a stream.
 
 > `public override` void WriteByte(byte value)
 

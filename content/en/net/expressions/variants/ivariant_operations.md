@@ -34,7 +34,7 @@ Performs the AND operation for two variants.
 
 
 #### Convert
-Converts variant to specified type.
+Converts a variant to a specified type.
 
 > `public abstract` [Variant](../variant) Convert([Variant](../variant) value, [VariantType](../variant_type) newType);
 
@@ -101,7 +101,7 @@ Performs the '<=' operation for two variants.
 
 
 #### Like
-Performs LIKE operation for two variants.
+Performs the LIKE operation for two variants.
 > [Variant](../variant) Like([Variant](../variant) value1, [Variant](../variant) value2)
 
 - **value1**: [Variant](../variant) - first operand for this operation.

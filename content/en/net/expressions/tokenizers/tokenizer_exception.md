@@ -4,17 +4,17 @@ title: "TokenizerException"
 linkTitle: "TokenizerException"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    TODO: add description
+    Exception that can be thrown by Tokenizer.
 ---
 
 **Inherits**: [BadRequestException](../../../commons/errors/bad_request_exception)
 
 ### Description
 
-TODO: add description
+The TokenizerException defines an exception that can be thrown by Tokenizer.
 
 ### Constructors
-Exception that can be thrown by Tokenizer.
+
 
 > `public` TokenizerException(string correlationId = null, string code = null, string message = null, Exception innerException = null)
 

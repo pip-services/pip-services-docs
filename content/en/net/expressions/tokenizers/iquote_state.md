@@ -4,7 +4,7 @@ title: "IQuoteState"
 linkTitle: "IQuoteState"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    Defines an interface for tokenizer state that processes quoted strings.
+    Defines an interface for tokenizer states that process quoted strings.
 ---
 
 **Inherits**: [ITokenizerState](../itokenizer_state)

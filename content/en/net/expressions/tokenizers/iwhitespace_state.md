@@ -4,13 +4,13 @@ title: "IWhitespaceState"
 linkTitle: "IWhitespaceState"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    Defines an interface for tokenizer state that processes whitespaces (' ', '\t').
+    Defines an interface for tokenizer states that processes whitespaces (' ', '\t').
 ---
 
 **Inherits**: [ITokenizerState](../itokenizer_state)
 
 ### Description
-The IWhitespaceState interface is used by TokenizerStates that process whitespaces (' ', '\t').
+The IWhitespaceState interface is used by tokenizer states that process whitespaces (' ', '\t').
 
 ### Instance methods
 
@@ -21,7 +21,7 @@ Clears definitions of whitespace characters.
 
 
 #### SetWhitespaceChars
-Establish the given characters as whitespace to ignore.
+Establishes the given characters as whitespace to ignore.
 
 > void SetWhitespaceChars(char fromSymbol, char toSymbol, bool enable)
 

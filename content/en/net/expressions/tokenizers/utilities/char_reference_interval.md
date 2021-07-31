@@ -47,7 +47,7 @@ Start of the interval
 ### Instance methods
 
 #### InRange
-Determines if a symbol is within a range
+Determines if a symbol is within a range.
 
 > `public` bool InRange(char symbol)
 

@@ -12,7 +12,7 @@ description: >
 The CharValidator class allows you to validate characters that are processed by tokenizers.
 
 ### Constructors
-Default contructor to prevent creation of a class instance.
+Default contructor to prevent the creation of a class instance.
 
 > `private` CharValidator()
 

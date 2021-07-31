@@ -11,7 +11,7 @@ description: >
 
 The ITokenizer interface defines the main elements of a tokenizer.
 
-Important points
+**Important points**
 
 - A tokenizer divides a string into tokens. This class is highly customizable with regard to exactly how this division occurs, but it also has defaults that are suitable for many languages. This class assumes that the character values read from the string lie in the range 0-255. For example, the Unicode value of a capital A is 65, so *String.fromCharCode(65)* prints out a capital A.
 

@@ -240,7 +240,7 @@ Performs the XOR operation for two variants.
 ### Abstract methods
 
 #### Convert
-Converts variant to specified type.
+Converts a variant to a specified type.
 
 > `public abstract` [Variant](../variant) Convert([Variant](../variant) value, [VariantType](../variant_type) newType);
 

@@ -76,7 +76,7 @@ Skips comments.
 
 
 #### SkipEof
-Skips End-Of-File token at the end of stream.
+Skips End-Of-File token at the end of a stream.
 > bool SkipEof { get; set; }
 
 #### SkipUnknown

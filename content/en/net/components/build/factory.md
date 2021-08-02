@@ -33,8 +33,8 @@ Creates a component identified by given a locator.
 
 > `public` object Create(object locator)
 
-- **locator**: object - a locator to identify component to be created.
-- **returns**: object - the created component.
+- **locator**: object - locator to identify component to be created.
+- **returns**: object - created component.
 
 
 #### Register
@@ -42,8 +42,8 @@ Registers a component using a factory method.
 
 > `public` void Register(object locator, Func\<object, object\> factory)
 
-- **locator**: object - a locator to identify component to be created.
-- **factory**: Func\<object, object\> - a factory function that receives a locator and returns a created component.
+- **locator**: object - locator to identify component to be created.
+- **factory**: Func\<object, object\> - factory function that receives a locator and returns a created component.
 
 
 #### RegisterAsType
@@ -51,8 +51,8 @@ Registers a component using its type (a constructor function).
 
 > `public` void RegisterAsType(object locator, Type type)
 
-- **locator**: object - a locator to identify component to be created.
-- **type**: Type - a component type.
+- **locator**: object - locator to identify component to be created.
+- **type**: Type - component type.
 
 ### Examples
 

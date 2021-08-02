@@ -14,7 +14,7 @@ description: >
 
 The CredentialParams class allows you to create credential parameters that can be used to authenticate against external services.
 
-Important points
+**Important points**
 
 - Credential parameters are used together with connection parameters, but usually stored in a separate store, protected from unauthorized access.
 
@@ -23,7 +23,7 @@ Important points
 - **store_key**: key to retrieve parameters from credential store
 - **username**: user name
 - **user**: alternative to username
-- **password**: user password
+- **password**: user's password
 - **pass**: alternative to password
 - **access_id**: application access id
 - **client_id**: alternative to access_id
@@ -38,7 +38,7 @@ Creates a new credential parameters and fills it with values.
 
 > `public` CredentialParams(IDictionary\<string, string\> values)
 
-- **values**: IDictionary\<string, string\> - (optional) an object to be converted into key-value pairs to initialize these credentials.
+- **values**: IDictionary\<string, string\> - (optional) object to be converted into key-value pairs to initialize these credentials.
 
 Creates an empty instance of credential parameters.
 
@@ -60,12 +60,12 @@ If this key is null, then all parameters are already present.
 > `public` string StoreKey { get; set; }
 
 #### Username
-Gets and sets the user name. The value can be stored in parameters "username" or "user".
+Gets and sets the username. The value can be stored in the parameters "username" or "user".
 
 > `public` string Username { get; set; }
 
 #### Password
-Gets and sets the user password. The value can be stored in parameters "password" or "pass".
+Gets and sets the user's password. The value can be stored in parameters "password" or "pass".
 
 > `public` string Password { get; set; }
 
@@ -91,7 +91,7 @@ then it returns only the first credential element.
 > `public static` [CredentialParams]() FromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) -  containing a section named "credential(s)".
-- **returns**: [CredentialParams]() - the generated CredentialParams object.
+- **returns**: [CredentialParams]() - generated CredentialParams object.
 
 
 #### FromString
@@ -99,20 +99,20 @@ Creates a new CredentialParams object filled with key-value pairs serialized as 
 
 > `public new static` [CredentialParams]() FromString(string line)
 
-- **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
+- **line**: string - string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
-- **returns**: [CredentialParams]() - a new CredentialParams object.
+- **returns**: [CredentialParams]() - new CredentialParams object.
 
 
 #### ManyFromConfig
 Retrieves all CredentialParams from configuration parameters
-from "credentials" section. If "credential" section is present instead,
+from the "credentials" section. If the "credential" section is present instead,
 then it returns a list with only one CredentialParams.
 
 > `public static` List<[CredentialParams]()> ManyFromConfig([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve credentials
-- **returns**: List<[CredentialParams]()> - a list of retrieved CredentialParams
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve credentials
+- **returns**: List<[CredentialParams]()> - list of retrieved CredentialParams
 
 ### Examples
 

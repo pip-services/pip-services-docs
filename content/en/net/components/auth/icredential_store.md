@@ -39,4 +39,4 @@ Stores credential parameters into the store.
 
 ### See also
 - #### [CredentialParams](../credential_params)
-- #### [ConnectionParams](../connection_params)
+- #### [ConnectionParams](../../connect/cconnection_params)

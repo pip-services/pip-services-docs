@@ -103,7 +103,7 @@ credentialResolver.Configure(config);
 
 credentialResolver.SetReferences(references);
 credentialResolver.LookupAsync("123");
-
+```
 
 ### See also
 - #### [CredentialParams](../credential_params)

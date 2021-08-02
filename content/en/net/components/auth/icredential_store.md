@@ -21,8 +21,8 @@ Lookups credential parameters by its key.
 
 > Task<[CredentialParams](../credential_params)> LookupAsync(string correlationId, stringkey)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the credential.
 - **returns**: Task<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found.
 
 
@@ -31,9 +31,9 @@ Stores credential parameters into the store.
 
 > Task StoreAsync(string correlationId, string key, [CredentialParams](../credential_params) credential)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential.
-- **credential**: [CredentialParams](../credential_params) - a credential to be stored.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the credential.
+- **credential**: [CredentialParams](../credential_params) - credential to be stored.
 
 
 

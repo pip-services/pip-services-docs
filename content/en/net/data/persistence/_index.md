@@ -11,7 +11,7 @@ description: >
 ---
 ---
 
-Important points
+**Important points**
 
 - These components only connect to data sources and do not implement the operations and methods to handle the data. Therefore, the classes that extend these persistences must implement this logic on their own.  
 - Identifiable Persistences work with Identifiable objects, which have primary keys. A few standard operations are defined by default for these objects: reading arrays and data pages; searching for an object by its id; and creating, updating and deleting records of objects. 

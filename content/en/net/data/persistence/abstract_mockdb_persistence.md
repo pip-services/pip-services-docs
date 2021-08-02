@@ -9,11 +9,10 @@ description: >
 ---
 
 ### Description
-
+The AbstractMockDbPersistence class allows you to keep data in memory with the ability to test basic projections.
+    
+**Important points**
 The class that contains "Id" property (with no dependencies to [IIdentifiable](../../../commons/data/iidentifiable)).
-
-TODO: add description
-
 
 ### Constructors
 Creates a new instance of the file persistence component.
@@ -27,11 +26,11 @@ Creates a new instance of the file persistence component.
 <span class="hide-title-link">
 
 #### MaxPageSize
-TODO: add description
+Maximum page size
 > `protected` MaxPageSize: int = 100
 
 #### _objects
-TODO: add description
+Objects
 > `protected` _objects: Dictionary\<string, T\>
 
 </span>

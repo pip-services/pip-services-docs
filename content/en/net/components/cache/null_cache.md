@@ -14,7 +14,7 @@ description: >
 
 The NullCache class allows you to implement a dummy cache that doesn't do anything.
 
-Important points
+**Important points**
 
 - It can be used in testing or in situations where a cache is required but must be disabled.
 
@@ -25,31 +25,31 @@ Removes a value from the cache by its key.
 
 > `public override` Task Remove(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique value key.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
 
 
 #### RetrieveAsync
-Retrieves cached value from the cache using its key.
+Retrieves a cached value from the cache using its key.
 If value is missing in the cache or expired, it returns null.
 
 > `public` Task\<T\> RetrieveAsync\<T\>(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique value key.
-- **returns**: Task\<T\> - a cached value or null, if value wasn't found or timeout expired.
+- **correlationId**: string - (optional) transaction id to used trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: Task\<T\> - cached value or null, if value wasn't found or timeout expired.
 
 
 #### StoreAsync
-Stores value in the cache with expiration time.
+Stores a value in the cache with expiration time.
 
 > `public` Task\<T\> StoreAsync\<T\>(string correlationId, string key, T value, long timeout)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: T - a value to store.
-- **timeout**: long - expiration timeout in milliseconds.
-- **returns**: Task\<T\> - a cached value stored in the cache.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: T - value to store.
+- **timeout**: long - timeout in milliseconds.
+- **returns**: Task\<T\> - cached value stored in the cache.
 
 
 ### See also

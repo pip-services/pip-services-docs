@@ -4,14 +4,14 @@ title: "CachedConfigReader"
 linkTitle: "CachedConfigReader"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    TODO: add description
+    Creates a cached configuration reader.
 ---
 
 **Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [IReconfigurable](../../../commons/config/ireconfigurable)
 
 ### Description
 
-TODO: add description
+The CachedConfigReader class allows you to create a cached configuration reader.
 
 
 ### Properties

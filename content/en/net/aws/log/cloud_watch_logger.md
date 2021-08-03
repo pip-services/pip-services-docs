@@ -99,7 +99,7 @@ Writes a log message to the logger destination.
 
 ### Examples
 
-```go
+```cs
 var logger = new Logger();
 logger.Configure(ConfigParams.FromTuples(
     "stream", "mystream",
@@ -109,14 +109,15 @@ logger.Configure(ConfigParams.FromTuples(
     "connection.access_key", "XXXXXXXXXXX"));
 
 logger.SetReferences(References.FromTuples(
-new Descriptor("pip-services3", "logger", "console", "default", "1.0"), 
-new ConsoleLogger() ));
+    ew Descriptor("pip-services3", "logger", "console", "default", "1.0"), 
+    new ConsoleLogger()
+));
 
-logger.Open("123");
+logger.OpenAsync("123");
 
-logger.SetLevel(LogLevel.debug);
+logger.Level = LogLevel.Debug;
 
-logger.Error("123", ex, "Error occured: %s", ex.message);
+logger.Error("123", ex, "Error occured: %s", ex.Message);
 logger.Debug("123", "Everything is OK.");
 ```
 

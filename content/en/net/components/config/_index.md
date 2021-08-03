@@ -39,16 +39,16 @@ Child classes add support for config files in their specific format
 like JSON, YAML or property files.
 
 #### [JsonConfigReader](json_config_reader)
-Config reader that reads configuration from JSON file.
+Config reader that reads a configuration from a JSON file.
 
 The reader supports parameterization using Handlebar template engine.
 
 
 #### [MemoryConfigReader](memory_config_reader)
-Config reader that stores configuration in memory.
+Config reader that stores a configuration in memory.
 
 #### [YamlConfigReader](yaml_config_reader)
-Config reader that reads configuration from YAML file.
+Config reader that reads a configuration from a YAML file.
 
 
 </div>

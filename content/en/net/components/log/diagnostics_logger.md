@@ -30,7 +30,7 @@ Writes a log message to the logger destination(s).
 ### Examples
 
 ```cs
-var logger = new ConsoleLogger();
+var logger = new DiagnosticsLogger();
 logger.Level = LogLevel.Debug;
 
 logger.Error("123", ex, "Error occured: %s", ex.Message);

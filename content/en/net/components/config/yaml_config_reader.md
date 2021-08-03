@@ -4,7 +4,7 @@ title: "YamlConfigReader"
 linkTitle: "YamlConfigReader"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    Config reader that reads configuration from YAML file.
+    Config reader that reads a configuration from a YAML file.
 ---
 
 **Inherits**: [FileConfigReader](../file_config_reader)

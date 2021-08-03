@@ -27,7 +27,7 @@ Context information component that provides detail information
 about execution context: container or/and process.
 
 Most often ContextInfo is used by logging and performance counters
-to identify source of the collected logs and metrics.
+to identify the source of the collected logs and metrics.
 
 
 #### [DefaultInfoFactory](default_info_factory)

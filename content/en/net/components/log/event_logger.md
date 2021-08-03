@@ -4,7 +4,7 @@ title: "EventLogger "
 linkTitle: "EventLogger "
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    TODO: add description
+    Creates an event logger.
 
 ---
 
@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The EventLogger allows you to create an event logger.
 
 
 ### Instance methods

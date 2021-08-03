@@ -12,7 +12,7 @@ description: >
 
 The LogMessage class allows you to create data objects used to store captured log messages.
 
-Important points
+**Important points**
 
 - This object is used by [CachedLogger](../cached-logger).
 
@@ -20,28 +20,28 @@ Important points
 
 
 #### Time
-The time the message was generated
+Time the message was generated
 > `public` DateTime Time { get; set; }
 
 #### level
-This log level
+Log level
 > `public` string Level { get; set; }
 
 #### Source
-The source (context name)
+Source (context name)
 > `public` string Source { get; set; }
 
 #### CorrelationId
-The transaction id to trace execution through a call chain.
+Transaction id used to trace execution through a call chain.
 > `public` string CorrelationId { get; set; }
 
 #### Error
-The transaction id to trace execution through a call chain.
+Error
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
 > `public` [ErrorDescription](../../../commons/errors/error_description) Error { get; set; }
 
 #### Message
-The human-readable message
+Human-readable message
 > `public` string Message { get; set; }
 

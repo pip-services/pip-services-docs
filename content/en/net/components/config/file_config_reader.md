@@ -25,7 +25,7 @@ Creates a new instance of the config reader.
 
 > `public` FileConfigReader(string path = null)
 
-- **path**: string - (optional) a path to configuration file.
+- **path**: string - (optional) path to configuration file.
 
 
 ### Properties
@@ -39,7 +39,7 @@ Gets and sets the path to configuration file.
 ### Instance methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by its passing configuration parameters.
 
 > `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 

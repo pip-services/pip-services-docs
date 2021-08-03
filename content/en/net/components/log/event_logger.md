@@ -30,10 +30,10 @@ Writes a log message to the logger destination(s).
 ### Examples
 
 ```cs
-var logger = new ConsoleLogger();
-logger.SetLevel(LogLevel.debug);
+var logger = new EventLogger();
+logger.Level = LogLevel.Debug;
 
-logger.Error("123", ex, "Error occured: %s", ex.message);
+logger.Error("123", ex, "Error occured: %s", ex.Message);
 logger.Debug("123", "Everything is OK.");
 ```
 

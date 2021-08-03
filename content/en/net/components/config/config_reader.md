@@ -35,7 +35,7 @@ Parameterized configuration template given as string with dynamic parameters.
 
 - **config**: string - a string with configuration template to be parameterized
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
-- **returns**: string - a parameterized configuration string.
+- **returns**: string - parameterized configuration string.
 
 ### Abstract methods
 
@@ -44,11 +44,11 @@ Reads configuration and parameterizes it with given values.
 
 > `public abstract` [ConfigParams](../../../commons/config/config_params) ReadConfig(string correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters of the configuration or null to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
 
 ### See also
-- #### [IConfigReader](../iconfigReader)
+- #### [IConfigReader](../iconfig_reader)

@@ -23,14 +23,14 @@ The MemoryDiscovery class allows you to create discovery services that keep conn
 
 
 ### Constructors
-Creates a new instance of discovery service.
+Creates a new instance of this class.
 
 > `public` MemoryDiscovery([ConfigParams](../../../commons/config/config_params) config = null)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with connection parameters.
 
 
-Creates a new instance of discovery service.
+Creates a new instance of this class.
 
 > `public` MemoryDiscovery()
 
@@ -38,7 +38,7 @@ Creates a new instance of discovery service.
 ### Instance methods
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -48,7 +48,7 @@ Configures component by passing configuration parameters.
 #### ReadConnections
 
 Reads connections from configuration parameters.
-Each section represents an individual Connection params
+Each section represents an individual Connection params.
 
 > `private` void ReadConnections([ConfigParams](../../../commons/config/config_params) connections)
 
@@ -59,9 +59,9 @@ Each section represents an individual Connection params
 Registers connection parameters into the discovery service.
 
 > `public` Task\<void\> RegisterAsync(string correlationId, string key, [ConnectionParams](../connection_params) connection) 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the connection parameters.
-- **connection**: [ConnectionParams](../connection_params) - a connection to be registered.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the connection parameters.
+- **connection**: [ConnectionParams](../connection_params) - connection to be registered.
 
 
 #### ResolveAllAsync
@@ -69,9 +69,9 @@ Resolves all connection parameters by their key.
 
 > `public` Task<List\<[ConnectionParams](../connection_params)\>> ResolveAllAsync(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a key to uniquely identify the connections.
-- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - a list with resolved connections.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the connections.
+- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - list with resolved connections.
 
 
 #### ResolveOneAsync
@@ -79,9 +79,9 @@ Resolves a single connection parameters by its key.
 
 > `public` Task<[ConnectionParams](../connection_params)> ResolveOneAsync(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a key to uniquely identify the connection. 
-- **returns**: Task<[ConnectionParams](../connection_params)> - a resolved connection.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - key to uniquely identify the connection. 
+- **returns**: Task<[ConnectionParams](../connection_params)> - resolved connection.
 
 ### Examples
 

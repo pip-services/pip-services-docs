@@ -15,7 +15,7 @@ description: >
 
 The JsonConfigReader class allows you to create a config reader that reads a configuration from a JSON file.
 
-Important points
+**Important points**
 
 - The reader supports parameterization using Handlebar template engine.
 
@@ -42,7 +42,7 @@ Reads a configuration and parameterizes it with given values.
 
 > `public override` ReadConfig(string correlationId, [ConfigParams](../../../commons/config/config_params) [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
@@ -52,9 +52,9 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 > `private` object ReadObject(string correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: object - a JSON object with configuration.
+- **returns**: object - JSON object with configuration.
 
 
 #### Static methods
@@ -64,8 +64,8 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > `public static` [ConfigParams](../../../commons/config/config_params) ReadConfig(string correlationId, string path, [ConfigParams](../../../commons/config/config_params) parameters) 
 
-- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **path**: string - path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
@@ -75,10 +75,10 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 > `public static` object ReadObject(string correlationId, string path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **path**: string - a path to configuration file.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **path**: string - path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: object - a JSON object with configuration.
+- **returns**: object - JSON object with configuration.
 
 ### Examples
 

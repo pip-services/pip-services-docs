@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Inherits**: [Logger](../logger)
+**Inherits**: EventSource
 
 ### Description
 

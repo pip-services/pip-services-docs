@@ -15,7 +15,7 @@ description: >
 
 The MemoryCache class allows you to create a cache that stores values in the process memory.
 
-Important points
+**Important points**
 
 - This implementation is not suitable for synchronization of distributed processes.
 
@@ -26,13 +26,13 @@ Important points
 
 
 ### Constructors
-Creates instance of local in-memory cache component
+Creates an instance of a local in-memory cache component
 
 > `public` MemoryCache([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters.
 
-Creates instance of local in-memory cache component
+Creates an instance of a local in-memory cache component.
 
 > `public` MemoryCache()
 
@@ -41,15 +41,15 @@ Creates instance of local in-memory cache component
 ### Instance methods
 
 #### ClearAsync
-Clears component state.
+Clears the component's state.
 
 > Task ClearAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -61,31 +61,31 @@ Removes a value from the cache by its key.
 
 > `public override` Task RemoveAsync(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
 
 
 #### RetrieveAsync
-Retrieves cached value from the cache using its key.
-If value is missing in the cache or expired it returns null.
+Retrieves a cached value from the cache using its key.
+If value is missing in the cache or expired, it returns null.
 
 > `public` Task\<T\> RetrieveAsync\<T\>(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **returns**: Task\<T\> - a cached value or null if value wasn't found or timeout expired.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: Task\<T\> - cached value or null if value wasn't found or timeout expired.
 
 
 #### StoreAsync
-Stores value in the cache with expiration time.
+Stores a value in the cache with an expiration time.
 
 > `public` Task\<T\> StoreAsync\<T\>(string correlationId, string key, T value, long timeout)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique value key.
-- **value**: T - a value to store.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **value**: T - value to store.
 - **timeout**: long - expiration timeout in milliseconds.
-- **returns**: Task\<T\> - a cached value stored in the cache.
+- **returns**: Task\<T\> - cached value stored in the cache.
 
 ### Examples
 

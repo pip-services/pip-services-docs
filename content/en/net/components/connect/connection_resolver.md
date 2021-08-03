@@ -12,14 +12,14 @@ description: >
 
 The ConnectionResolver class is used to retrieve component connections.
 
-Important points
+**Important points**
 
 - If the connections are configured to be retrieved from [IDiscovery](../idiscovery), the connection resolver will automatically locate [IDiscovery](../idiscovery) in component references and retrieve the connections from there using the discovery_key parameter.
 
 #### Configuration parameters
 
 **connection**:  
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../idiscovery)
 - **...** : other connection parameters
 
 **connections**:  alternative to connection
@@ -35,18 +35,18 @@ Important points
 
 
 ### Constructors
-Creates a new instance of connection resolver.
+Creates a new instance of this class.
 
 > `public` ConnectionResolver([ConfigParams](../../../commons/config/config_params) config = null, [IReferences](../../../commons/refer/ireferences) references = null)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
-- **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
+- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component's configuration parameters
+- **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component's references
 
 
 ### Instance methods
 
 #### Add
-Adds a new connection to component connections
+Adds a new connection.
 
 > `public` void Add([ConnectionParams](../connection_params) connection)
 
@@ -54,7 +54,7 @@ Adds a new connection to component connections
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures the component by passing its configuration parameters.
 
 > `public` void Configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -64,11 +64,11 @@ Configures component by passing configuration parameters.
 #### GetAll
 Gets all connections configured in component configuration.
 Redirect to Discovery services is not done at this point.
-If you need fully fleshed connection use **Resolve** method instead.
+If you need a fully fleshed connection, use **Resolve** method instead.
 
 > `public` List<[ConnectionParams](../connection_params)> GetAll()
 
-- **returns**: List<[ConnectionParams](../connection_params)> - a list with connection parameters
+- **returns**: List<[ConnectionParams](../connection_params)> - list with connection parameters
 
 
 #### RegisterAsync
@@ -77,28 +77,28 @@ This method can be used for dynamic service discovery.
 
 > `public` Task\<void\> RegisterAsync(string correlationId, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **connection**: [ConnectionParams](../connection_params) - a connection to register.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **connection**: [ConnectionParams](../connection_params) - connection to register.
 
 
 #### ResolveAsync
 Resolves a single component connection. If connections are configured to be retrieved
-from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
+from Discovery service, it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
 > `public` Task<[ConnectionParams](../connection_params)> ResolveAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Task<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
 
 
 #### ResolveAllAsync
 Resolves all component connection. If connections are configured to be retrieved
-from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
+from Discovery service, it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
 > `public` Task<List\<[ConnectionParams](../connection_params)\>> ResolveAllAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - a list of resolved connections.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Task<List\<[ConnectionParams](../connection_params)\>> - list of resolved connections.
 
 
 #### SetReferences
@@ -106,7 +106,7 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

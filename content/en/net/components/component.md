@@ -41,7 +41,7 @@ Components to pass collected measurements
 > `protected` **_counters**: [CompositeCounters](../count/composite_counters)
 
 #### _dependencyResolver
-A dependency resolver
+Dependency resolver
 > `protected` **_dependencyResolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
 
 #### _tracer
@@ -65,4 +65,4 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../commons/refer/ireferences) - references to locate the component's dependencies.

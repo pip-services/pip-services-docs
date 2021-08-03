@@ -17,7 +17,7 @@ description: >
 
 The CompositeCounters allows you to aggregate all counters from different component references into a single one.
 
-Important points
+**Important points**
 
 -  It allows to capture metrics and conveniently send them to multiple destinations. 
 
@@ -48,31 +48,31 @@ A list containig the aggregated counters.
 
 #### BeginTiming
 Begins measurement of execution time interval.
-It returns [CounterTiming](../counter_timing) object which has to be called at
+It returns a [CounterTiming](../counter_timing) object which has to be called at
 [CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
 > `public` [CounterTiming](../counter_timing) BeginTiming(string name)
 
-- **name**: string - a counter name of Interval type.
-- **returns**: [CounterTiming](../counter_timing) - a callback object to end timing.
+- **name**: string - counter name of Interval type.
+- **returns**: [CounterTiming](../counter_timing) - callback object to end timing.
 
 
 #### EndTiming
-Ends measurement of execution elapsed time and updates specified counter.
+Ends measurement of execution elapsed time and updates the specified counter.
 
 > `public` void EndTiming(string name, double elapsed)
 
-- **name**: string - a counter name
+- **name**: string - counter's name
 - **elapsed**: double - execution elapsed time in milliseconds to update the counter.
 
 
 #### increment
-Increments counter by given value.
+Increments a counter by given value.
 
 > `public` int Increment(string name, int value)
 
-- **name**: string - a counter name of Increment type.
-- **value**: int - a value to add to the counter.
+- **name**: string - counter's name of Increment type.
+- **value**: int - value to add to the counter.
 
 
 #### IncrementOne
@@ -80,7 +80,7 @@ Increments counter by 1.
 
 > `public` void IncrementOne(string name)
 
-- **name**: string - a counter name of Increment type.
+- **name**: string - counter's name of Increment type.
 
 
 #### Last
@@ -89,7 +89,7 @@ Usually this method is used by metrics calculated externally.
 
 > `public` void Last(string name, float value)
 
-- **name**: string - a counter name of Last type.
+- **name**: string - counter's name of Last type.
 - **value**: float - last value to record.
 
 
@@ -98,7 +98,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Stats
@@ -106,8 +106,8 @@ Calculates min/average/max statistics based on the current and previous values.
 
 > `public` void Stats(string name, float value)
 
-- **name**: string - a counter name of Statistics type
-- **value**: float - a value to update statistics
+- **name**: string - counter's name of Statistics type
+- **value**: float - value to update statistics
 
 
 #### timestamp
@@ -115,8 +115,8 @@ Records the given timestamp.
 
 > `public` void Timestamp(string name, DateTime value)
 
-- **name**: string - a counter name of Timestamp type.
-- **value**: DateTime - a timestamp to record.
+- **name**: string - counter's name of Timestamp type.
+- **value**: DateTime - timestamp to record.
 
 
 #### TimestampNow
@@ -124,7 +124,7 @@ Records the current time as a timestamp.
 
 > `public` TimestampNow(string name)
 
-- **name**: string - a counter name of Timestamp type.
+- **name**: string - counter's name of Timestamp type.
 
 
 ### Examples

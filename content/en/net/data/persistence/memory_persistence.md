@@ -14,7 +14,7 @@ description: >
 
 The MemoryPersistence class allows you to create persistence components that store data in memory.
 
-Important points
+**Important points**
     
 - This is the most basic persistence component that is only able to store data items of any type. 
 - Specific CRUD operations over the data items must be implemented in child classes by accessing the this._items property and calling the **Save** method.
@@ -113,7 +113,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 
 #### GetCountByFilter
 
-**TODO: this method is not implemented yet**
+**Note: this method is not implemented yet**
 
 Gets the number of items retrieved by a given filter.
 
@@ -149,8 +149,8 @@ that receives [FilterParams](../../../commons/data/filter_params) and converts t
 > `public` Task\<T\> GetOneRandomAsync(string correlationId, IList\<Func\<T, bool\>\> matchFunctions)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **matchFunctions**: IList\<Func\<T, bool\>\> - (optional) a filter function to filter items.
-- **returns**: Task\<T\> - a random item.
+- **matchFunctions**: IList\<Func\<T, bool\>\> - (optional) filter function to filter items.
+- **returns**: Task\<T\> - random item.
 
 
 #### GetPageByFilter
@@ -172,7 +172,7 @@ Checks if the component is open.
 
 > `public` bool IsOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### LoadAsync
@@ -202,9 +202,9 @@ Saves items to an external data source using a configured saver component.
 #### SetReferences
 Sets the component's references. References must match configured dependencies.
 
-> `public` void SetReferences([IReferences](../ireferences) references)
+> `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to set.
 
 ### Examples
 
@@ -232,5 +232,3 @@ Console.Out.WriteLine(persistence.getByName("123", "ABC")).toString(); // Result
 
 ```
 
-### See also
-- #### [MemoryPersistence](../memory_persistence)

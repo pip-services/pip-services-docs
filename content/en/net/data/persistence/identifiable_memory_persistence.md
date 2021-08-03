@@ -16,14 +16,11 @@ description: >
 
 The IdentifiableMemoryPersistence class allows you to create persistence components that store data in memory and implement a number of CRUD operations over data items with unique ids.
 
-Important points
-
-Where T : [IIdentifiable\<K\>](../../../commons/data/iidentifiable).  
-Where K : class.
+**Important points**
 
 - The data items must implement [IIdentifiable](../../../commons/data/iidentifiable).
-- In basic scenarios child classes shall only override [GetPageByFilter](../memory_persistence/#getpagebyfilter), [GetListByFilter](../memory_persistence/#getlistbyfilter) or [DeleteByFilter](../memory_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing cached items via the this._items property and calling the **Save** method on updates.
+- In basic scenarios, child classes shall only override [GetPageByFilter](../memory_persistence/#getlistbyfilterasync), [GetListByFilter](../memory_persistence/#getlistbyfilter) or [DeleteByFilter](../memory_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
+- In complex scenarios, child classes can implement additional operations by accessing cached items via the this._items property and calling the **Save** method on updates.
 
 #### Configuration parameters
 
@@ -119,7 +116,7 @@ Updates a data item.
 
 #### UpdatePartially
 
-**TODO: this method is not implemented yet**
+**Note: this method is not implemented yet.**
 
 Updates only a few selected fields in a data item.
 

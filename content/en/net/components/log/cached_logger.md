@@ -14,20 +14,20 @@ description: >
 
 The CachedLogger class allows you to create a logger that caches captured log messages in memory and periodically dumps them.
 
-Important points
+**Important points**
 
 - Child classes implement saving cached messages to their specified destinations.
 
 #### Configuration parameters
 
 - **level**: maximum log level to capture
-- **source**: source (context) name
+- **source**: source's (context) name
 - **options**:
-    - **interval**: interval in milliseconds to save log messages (default: 10 seconds)
-    - **max_cache_size**: maximum number of messages stored in this cache (default: 100)
+    - **interval**: interval in milliseconds to save log messages (default: 10 seconds).
+    - **max_cache_size**: maximum number of messages stored in this cache (default: 100).
 
 #### References
-- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
+- **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify the counters' source
 
 ### Fields
 
@@ -54,7 +54,7 @@ Interval in milliseconds to save log messages (default: 10 seconds)
 > `protected` **_interval**: int = 10000
 
 #### _lock
-TODO add description
+Lock
 > `protected` **_lock**: object
 
 </span>
@@ -68,7 +68,7 @@ Clears (removes) all cached log messages.
 > void Clear()
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public override` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -86,14 +86,14 @@ Sets message cache as updated and dumps it when timeout expires.
 
 
 #### Write
-Writes a log message to the logger destination.
+Writes a log message to the logger's destination.
 
 > `public override` void Write([LogLevel](../../log/log_level) level, string correlationId, Exception error, string message)
 
-- **level**: [LogLevel](../../log/log_level) - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: [LogLevel](../../log/log_level) - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 ### Abstract methods
 
@@ -102,7 +102,7 @@ Saves log messages from the cache.
 
 > `protected abstract` Save(List<[LogMessage](../log_message)> messages)
 
-- **messages**: [LogMessage](../log_message) - a list with log messages
+- **messages**: [LogMessage](../log_message) - list with log messages
 
 
 

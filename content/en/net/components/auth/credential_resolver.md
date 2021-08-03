@@ -14,14 +14,14 @@ description: >
 
 The CredentialResolver class is used to retrieve component credentials.
 
-Important points
+**Important points**
 
 - If credentials are configured to be retrieved from [ICredentialStore](../icredential_store), it will automatically locate [ICredentialStore](../icredential_store) in component references and retrieve the credentials from there using the store_key parameter.
 
 #### Configuration parameters
 
 **credential**: 
-- **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../icredential_store)
+- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../icredential_store)
 - **...**: other credential parameters
 
 **credentials**: alternative to credential
@@ -67,11 +67,11 @@ Configures component by passing configuration parameters.
 Gets all credentials configured in component configuration.
 
 Redirect to CredentialStores is not done at this point.
-If you need fully fleshed credential use **lookup** method instead.
+If you need fully fleshed credential use the **lookup** method instead.
 
 > `public` List<[CredentialParams](../credential_params)> GetAll()
 
-- **returns**: List<[CredentialParams](../credential_params)> - a list with credential parameters
+- **returns**: List<[CredentialParams](../credential_params)> - list with credential parameters
 
 
 #### LookupAsync
@@ -80,7 +80,7 @@ from Credential store it finds a [ICredentialStore](../icredential_store)` and l
 
 > `public` Task<[CredentialParams](../credential_params)> LookupAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Task<[CredentialParams](../credential_params)> - resolved credential parameters or null if nothing was found.
 
 
@@ -89,7 +89,7 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 ```cs
@@ -103,7 +103,7 @@ credentialResolver.Configure(config);
 
 credentialResolver.SetReferences(references);
 credentialResolver.LookupAsync("123");
-
+```
 
 ### See also
 - #### [CredentialParams](../credential_params)

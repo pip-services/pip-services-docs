@@ -4,7 +4,7 @@ title: "IWordState"
 linkTitle: "IWordState"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    Defines an interface for tokenizer state that processes words, identificators or keywords
+    Defines an interface for tokenizer states that processes words, identificators or keywords
 ---
 
 **Inherits**: [ITokenizerState](../itokenizer_state)

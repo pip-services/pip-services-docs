@@ -29,11 +29,11 @@ The LogCounters allows you to create performance counters that periodically dump
 ### Instance methods
 
 #### Save
-Saves the current counters measurements.
+Saves the current counters' measurements.
 
 > `protected override` void Save(IEnumerable<[Counter](../counter)> counters)
 
-- **counters**: IEnumerable<[Counter](../counter)> - current counters measurements to be saved.
+- **counters**: IEnumerable<[Counter](../counter)> - current counters' measurements to be saved.
 
 
 #### SetReferences
@@ -41,7 +41,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

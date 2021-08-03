@@ -16,7 +16,7 @@ description: >
 
 The CachedCounters class allows you to create performace counters that measure and store those values in memory.
 
-Important points
+**Important points**
 
 - Child classes can implement saving of the counters into various different destinations.
 
@@ -39,11 +39,11 @@ Creates a new CachedCounters object.
 <span class="hide-title-link">
 
 #### _cache
-A dictionary containing the cached values.
+Dictionary containing the cached values.
 > `protected` **_cache**: IDictionary\<string, [Counter](../counter)\>
 
 #### _updated
-A boolean value that indicates whether the counter has been updated or not.
+Boolean value that indicates whether the counter has been updated or not.
 > `protected` **_updated**: bool
 
 
@@ -56,7 +56,7 @@ Last time when was reset timer
 > `protected` **_lastResetTime**: long = DateTime.UtcNow.Ticks
 
 #### _lock
-TODO add description
+Lock
 > `protected` **_lock**: object
 
 #### _interval
@@ -117,7 +117,7 @@ Ends measurement of execution elapsed time and updates specified counter.
 
 > `public` void EndTiming(string name, double elapsed)
 
-- **name**: string - a counter name
+- **name**: string - counter name
 - **elapsed**: double - execution elapsed time in milliseconds to update the counter.
 
 
@@ -129,8 +129,8 @@ it creates a new one.
 > `public` [Counter](../counter) Get(string name, [CounterType](../counter_type) type)
 
 - **name**: string - a counter name to retrieve.
-- **typ**: [CounterType](../counter_type) - a counter type.
-- **returns**: [Counter](../counter) - an existing or newly created counter of the specified type.
+- **typ**: [CounterType](../counter_type) - counter type.
+- **returns**: [Counter](../counter) - existing or newly created counter of the specified type.
 
 
 #### GetAll
@@ -138,16 +138,16 @@ Gets all captured counters.
 
 > `public` IEnumerable\<[Counter](../counter)\> GetAll()
 
-- **returns**: IEnumerable\<[Counter](../counter)\> - a list with counters.
+- **returns**: IEnumerable\<[Counter](../counter)\> - list with counters.
 
 
 #### Increment
-Increments counter by given value.
+Increments counter by a given value.
 
 > `public` void Increment(string name, int value)
 
-- **name**: string - a counter name of Increment type.
-- **value**: int - a value to add to the counter.
+- **name**: string - counter name of Increment type.
+- **value**: int - value to add to the counter.
 
 
 #### IncrementOne
@@ -155,7 +155,7 @@ Increments counter by 1.
 
 > `public` void IncrementOne(string name)
 
-- **name**: string - a counter name of Increment type.
+- **name**: string - counter name of Increment type.
 
 
 #### Last
@@ -164,8 +164,8 @@ Usually this method is used by metrics calculated externally.
 
 > `public` Last(string name, float value)
 
-- **name**: string - a counter name of Last type.
-- **value**: float - a last value to record.
+- **name**: string - counter name of Last type.
+- **value**: float - last value to record.
 
 
 #### Stats
@@ -173,8 +173,8 @@ Calculates min/average/max statistics based on the current and previous values.
 
 > `public` void Stats(string name, float value)
 
-- **name**: string - a counter name of Statistics type
-- **value**: float - a value to update statistics
+- **name**: string - counter name of Statistics type
+- **value**: float - value to update statistics
 
 
 #### Timestamp
@@ -182,8 +182,8 @@ Records the given timestamp.
 
 > `public` void Timestamp(string name, DateTime value)
 
-- **name**: string - a counter name of Timestamp type.
-- **value**: DateTime - a timestamp to record.
+- **name**: string - counter's name of Timestamp type.
+- **value**: DateTime - timestamp to record.
 
 
 #### TimestampNow
@@ -191,7 +191,7 @@ Records the current time as a timestamp.
 
 > `public` void TimestampNow(string name)
 
-- **name**: string - a counter name of Timestamp type.
+- **name**: string - counter's name of Timestamp type.
 
 
 #### Update
@@ -203,8 +203,8 @@ Makes counter measurements as updated and dumps them when timeout expires.
 ### Abstract methods
 
 #### Save
-Saves the current counters measurements.
+Saves the current counters' measurements.
 
 > `protected abstarct` void Save(IEnumerable<[Counter](../counter)> counters)
 
-- **counters**: IEnumerable<[Counter](../counter)> - current counters measurements to be saves.
+- **counters**: IEnumerable<[Counter](../counter)> - current counters' measurements to be saved.

@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-TODO: add description
+The DiagnosticsLogger class allow you to define a logger that provides some extra diagnosis information.
 
 
 ### Instance methods
@@ -22,10 +22,10 @@ Writes a log message to the logger destination(s).
 
 > `public override` void Write([LogLevel](../log_level) level, string correlation_id, Exception error, string message)
 
-- **level**: [LogLevel](../log_level) - a log level.
-- **correlation_id**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: [LogLevel](../log_level) - log level.
+- **correlation_id**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 
 ### Examples
 

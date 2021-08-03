@@ -17,16 +17,16 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 #### Configuration parameters
 
 **connection(s)**:
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../idiscovery)
   - **protocol**: communication protocol
   - **host**: host name or IP address
   - **port**: port number
   - **uri**: resource URI or connection string with all parameters in it
   
 **credential(s)**:
-  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
-  - **username**: user name
-  - **password**: user password
+  - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
+  - **username**: username
+  - **password**: user's password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
@@ -38,31 +38,31 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 <span class="hide-title-link">
 
 #### _options
-The connection options
+Connection options
 > `protected` **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _connectionResolver
-The connections resolver.
+Connections resolver.
 > `protected` **_connectionResolver**: [ConnectionResolver](../connection_resolver)
 
 #### _credentialResolver
-The credentials resolver.
+Credentials resolver.
 > `protected` **_credentialResolver**: [CredentialResolver](../../auth/credential_resolver)
 
 #### _clusterSupported
-The cluster support (multiple connections)
+Cluster support (multiple connections)
 > `protected` **_clusterSupported**: bool
 
 #### _defaultProtocol
-The default protocol
+Default protocol
 > `protected` **_defaultProtocol**: string
 
 #### _defaultPort
-The default port
+Default port
 > `protected` **_defaultPort**: int
 
 #### _supported_protocols
-The list of supported protocols
+List of supported protocols
 > `protected` **_supportedProtocols**: IList\<string\>
 
 
@@ -71,11 +71,11 @@ The list of supported protocols
 ### Instance methods
 
 #### Compose
-Composes Composite connection options from connection and credential parameters.
+Composes composite connection options from connection and credential parameters.
 
 > `public` [ConfigParams](../../../commons/config/config_params) Compose(string correlationId, IList<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **connections**: IList<[ConnectionParams](../connection_params)> - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
@@ -83,7 +83,7 @@ Composes Composite connection options from connection and credential parameters.
 
 
 #### ComposeOptions
-A composite of several merger options
+Composite of several merger options
 
 > `protected` [ConfigParams](../../../commons/config/config_params) ComposeOptions(IList<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
@@ -149,7 +149,7 @@ Resolves connection options from connection and credential parameters.
 
 > `public` Task<[ConfigParams](../../../commons/config/config_params)> ResolveAsync(string correlationId): 
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Task<[ConfigParams](../../../commons/config/config_params)> - resolved options or error
 
 
@@ -168,7 +168,7 @@ This method can be overriden in child classes.
 
 > `protected` void ValidateConnection(string correlationId, [ConnectionParams](../connection_params)) connection)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
 
 
@@ -178,5 +178,5 @@ This method can be overriden in child classes.
 
 > `protected` void ValidateCredential(string correlationId, [CredentialParams](../../auth/credential_params) credential)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

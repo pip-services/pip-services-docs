@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The MustacheToken defines a Mustache token holder.
+The MustacheToken class defines a Mustache token holder.
 
 
 ### Constructors

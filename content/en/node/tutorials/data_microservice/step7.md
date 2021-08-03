@@ -34,7 +34,7 @@ To run the microservice, execute the following command from a terminal at the ro
 
 You should get a result similar to the one shown below.
 
-![ConsoleScreen1](/images/tutorials/data_microservice/console_screen1.png)
+![ConsoleScreen1](/images/tutorials/data_microservice/node_console_screen1.png)
 
 Since we opted for the console logger in our configuration file, all information is going to be printed to the console. The service is using the in-memory persistence by default. To switch over to the MongoDB persistence, the MONGO_ENABLED environment variable has to be set and MongoDB should be running. This can be done either by starting the service from a script, in which we set our environment variables beforehand, or by configuring them in the OS’s environment.
 

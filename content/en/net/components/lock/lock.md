@@ -25,14 +25,14 @@ Makes multiple attempts to acquire a lock by its key within a given time interva
 
 > `public` void AcquireLock(string correlationId, string key, long ttl, long timeout)
 
-- **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: long - a lock timeout (time to live) in milliseconds.
-- **timeout**: long - a lock acquisition timeout.
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
+- **timeout**: long - lock acquisition timeout.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public virual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -45,8 +45,8 @@ Releases a prevously acquired lock by its key.
 
 > `public abstract` void ReleaseLock(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.
 
 
 #### TryAcquireLock
@@ -55,9 +55,9 @@ It returns immediately a positive or negative result.
 
 > `public abstract` bool TryAcquireLock(string correlationId, string key, long ttl)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to acquire.
-- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to acquire.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 

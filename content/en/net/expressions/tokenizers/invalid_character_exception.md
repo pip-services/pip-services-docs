@@ -4,17 +4,17 @@ title: "InvalidCharacterException"
 linkTitle: "InvalidCharacterException"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 description: > 
-    TODO: add description
+    Exception thrown when an incorrect character is detected.
 ---
 
 **Inherits**: [TokenizerException](../tokenizer_exception)
 
 ### Description
 
-TODO: add description
+The InvalidCharacterException class defines an exception thrown when an incorrect character is detected.
 
 ### Constructors
-Exception thrown when incorrect character is detected input stream. 
+Creates a new instance of the class. 
 
 > `public` InvalidCharacterException(string correlationId = null, string code = null, string message = null, Exception innerException = null)
 

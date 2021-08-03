@@ -5,7 +5,7 @@ linkTitle: "Logic"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    TODO: add description
+   This package contains a class used to create abstract loggers that cache captured log messages in memory and periodically dump them.
     
 ---
 ---

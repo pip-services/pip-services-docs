@@ -27,8 +27,8 @@ Logs high-level debug information for troubleshooting.
 
 > void Debug(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -38,9 +38,9 @@ Logs high-level debug information for troubleshooting.
 
 > void Debug(string correlationId, Exception error, string message = null, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -49,8 +49,8 @@ Logs recoverable application error.
 
 > void Error(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 #### Error
@@ -58,9 +58,9 @@ Logs recoverable application error.
 
 > void Error(string correlationId, Exception error, string message = null, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -69,8 +69,8 @@ Logs fatal (unrecoverable) message that caused the process to crash.
 
 > void Fatal(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -79,9 +79,9 @@ Logs fatal (unrecoverable) message that caused the process to crash.
 
 > void Fatal(string correlationId, Exception error, string message = null, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -90,8 +90,8 @@ Logs an important information message
 
 > void Info(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -100,9 +100,9 @@ Logs an important information message
 
 > void Info(string correlationId, Exception error, string message = null, params object[] args): void
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -112,10 +112,10 @@ Logs a message at a specified log level.
 
 > void Log([LogLevel](../log_level) level, string correlationId, Exception error, string message, params object[] args)
 
-- **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **level**: [LogLevel](../log_level) - log level.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -125,8 +125,8 @@ Logs low-level debug information for troubleshooting.
 
 > void Trace(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -135,9 +135,9 @@ Logs low-level debug information for troubleshooting.
 
 > void Trace(string correlationId, Exception error, string message = null, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -146,8 +146,8 @@ Logs a warning that may or may not have a negative impact.
 
 > void Warn(string correlationId, string message, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
 
@@ -156,7 +156,7 @@ Logs a warning that may or may not have a negative impact.
 
 > void Warn(string correlationId, Exception error, string message = null, params object[] args)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message
-- **message**: string - a human-readable message to log.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message
+- **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.

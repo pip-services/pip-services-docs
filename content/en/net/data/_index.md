@@ -10,7 +10,7 @@ description: >
    
     Persistence components for Node.js This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
     
-    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only minimal set of operations. The second kind is so called "identifieable" persistence with works with "identifable" data objects, i.e. objects that have unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
+    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only a minimal set of operations. The second kind is called "identifieable" persistence and works with "identifable" data objects, i.e. objects that have a unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
 
 
 ---
@@ -21,7 +21,7 @@ description: >
 The module contains the following packages:
 
 * [**Core**](core) - interfaces for data access components. 
-* [**Persistence**](persistence) - in-memory and file persistence components, as well as JSON persister class.
+* [**Persistence**](persistence) - in-memory and file persistence components, as well as a JSON persister class.
 
 
 ### Use
@@ -31,7 +31,7 @@ Install the dotnet package as
 dotnet add package PipServices3.Data
 ```
 
-As an example, lets implement persistence for the following data object.
+As an example, lets implement persistence for the following data object:
 
 ```cs
 using PipServices3.Commons.Data;
@@ -44,7 +44,7 @@ using PipServices3.Commons.Data;
 }
 ```
 
-Our persistence component shall implement the following interface with a basic set of CRUD operations.
+Our persistence component shall implement the following interface with a basic set of CRUD operations:
 
 ```cs
 interface IMyPersistance
@@ -66,7 +66,7 @@ interface IMyPersistance
 
 To implement in-memory persistence component you shall inherit `IdentifiableMemoryPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `GetPageByFilter` method with a custom filter function.
-And implement a `GetOneByKey` custom persistence method that doesn't exist in the base class.
+Then, implement a `GetOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```cs
 using PipServices3.Data.Persistence;
@@ -140,7 +140,7 @@ class MyFilePersistence: MyMemoryPersistence
 }
 ```
 
-Configuration for your microservice that includes memory and file persistence may look the following way.
+The configuration for your microservice that includes memory and file persistence may look the following way.
 
 ```yaml
 ...

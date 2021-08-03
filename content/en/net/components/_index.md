@@ -38,8 +38,8 @@ Install the dotnet package as
 dotnet add package PipServices3.Components
 ```
 
-Example how to use Logging and Performance counters.
-Here we are going to use CompositeLogger and CompositeCounters components.
+**Example on how to use Logging and Performance counters**   
+In this case, we are going to use CompositeLogger and CompositeCounters components.
 They will pass through calls to loggers and counters that are set in references.
 
 ```cs
@@ -84,8 +84,8 @@ class MyComponent : IConfigurable, IReferenceable
 }
 ```
 
-Example how to get connection parameters and credentials using resolvers.
-The resolvers support "discovery_key" and "store_key" configuration parameters
+**Example on how to get connection parameters and credentials using resolvers**    
+The resolvers support "discovery_key" and "store_key" configuration parameters, 
 to retrieve configuration from discovery services and credential stores respectively.
 
 ```cs
@@ -150,7 +150,7 @@ myComponent.Configure(ConfigParams.FromTuples(
 myComponent.OpenAsync(null);
 ```
 
-Example how to use caching and locking.
+**Example on how to use caching and locking.**    
 Here we assume that references are passed externally.
 
 ```cs
@@ -200,8 +200,9 @@ myComponent.SetReferences(References.FromTuples(
 myComponent.MyMethod(null);
 ```
 
-If you need to create components using their locators (descriptors) implement 
-component factories similar to the example below.
+**Example on how to create components using their locators (descriptors)**    
+
+Implement component factories similarly to the example below.
 
 ```cs
 using PipServices3.Components.Build;

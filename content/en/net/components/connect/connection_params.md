@@ -14,31 +14,31 @@ description: >
 
 The ConnectionParams class allows you to create connection parameters used to connect to external services.
 
- Important points
+ **Important points**
     
  - Usually, connection parameters are used together with credential parameters, but are stored
     separately from these more protected and sensitive values.
 
 #### Configuration parameters
 
-- **discovery_key**: key to retrieve parameters from discovery service
+- **discovery_key**: key to retrieve parameters from a discovery service
 - **protocol**: connection protocol like http, https, tcp, udp
 - **host**: host name or IP address
 - **port**: port number
 - **uri**: resource URI or connection string with all parameters in it
 
-In addition to standard parameters ConnectionParams may contain any number of custom parameters.
+In addition to standard parameters, ConnectionParams may contain any number of custom parameters.
 
 
 ### Constructors
-Creates a new connection parameters and fills it with values.
+Creates a new instance of this class and fills it with values.
 
 > `public` ConnectionParams(IDictionary\<string, string\> map)
 
-- **map**: IDictionary\<string, string\> - (optional) an object to be converted into key-value pairs to initialize this connection.
+- **map**: IDictionary\<string, string\> - (optional) object to be converted into key-value pairs to initialize this connection.
 
 
-Creates a new connection parameters and fills it with values.
+Creates a new instance of this class and fills it with values.
 
 > `public` ConnectionParams(IDictionary\<string, string\> map)
 
@@ -46,7 +46,7 @@ Creates a new connection parameters and fills it with values.
 ### Properties
 
 #### UseDiscovery
-Checks if these connection parameters shall be retrieved from DiscoveryService.The connection parameters are redirected to DiscoveryService when discovery_key parameter is set.
+Checks if these connection parameters shall be retrieved from DiscoveryService. The connection parameters are redirected to DiscoveryService when discovery_key parameter is set.
 
 > `public` bool UseDiscovery { get; }
 
@@ -93,8 +93,8 @@ Gets the port number with default value.
 
 > `public` int GetPortWithDefault(int defaultPort)
 
-- **defaultPort**: int - a default port number.
-- **returns**: int - the port number.
+- **defaultPort**: int - default port number.
+- **returns**: int - port number.
 
 
 #### GetProtocol
@@ -102,7 +102,7 @@ Gets the connection protocol.
 
 > `public` string GetProtocol()
 
-- **returns**: string - the connection protocol or the default value if it's not set.
+- **returns**: string - connection protocol or default value if it's not set.
 
 
 #### GetProtocolWithDefault
@@ -110,15 +110,15 @@ Gets the connection protocol with default value.
 
 > `public` string GetProtocolWithDefault(string defaultValue)
 
-- **defaultValue**: string - (optional) the default protocol
-- **returns**: string - the connection protocol or the default value if it's not set.
+- **defaultValue**: string - (optional) default protocol
+- **returns**: string - connection protocol or the default value if it's not set.
 
 
 ### Static methods
 
 #### FromConfig
 Retrieves a single ConnectionParams from configuration parameters
-from "connection" section. If "connections" section is present instead,
+from the "connection" section. If the "connections" section is present instead,
 then it returns only the first connection element.
 
 > `public static` [ConnectionParams]() FromConfig([ConfigParams](../../../commons/config/config_params) config, bool configAsDefault = True)
@@ -126,7 +126,7 @@ then it returns only the first connection element.
 - **config**: [ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
 - **configAsDefault**: bool - boolean parameter for default configuration. If "true" the default value will be added to the result.
 
-- **returns**: [ConnectionParams]() - the generated ConnectionParams object.
+- **returns**: [ConnectionParams]() - generated ConnectionParams object.
 
 
 #### FromString
@@ -134,10 +134,10 @@ Creates a new ConnectionParams object filled with key-value pairs serialized as 
 
 > `public new static` [ConnectionParams]() FromString(string line)
 
-- **line**: string - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
+- **line**: string - string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 
-- **returns**: [ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [ConnectionParams]() - new ConnectionParams object.
 
 
 #### FromTuples
@@ -147,22 +147,22 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
 > `public static` [ConnectionParams]() FromTuples(params object[] tuples)
 
-- **tuples**: object[] - the tuples to fill a new ConnectionParams object.
+- **tuples**: object[] - tuples to fill a new ConnectionParams object.
 
-- **returns**: [ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [ConnectionParams]() - new ConnectionParams object.
 
 
 #### ManyFromConfig
 
 Retrieves all ConnectionParams from configuration parameters
-from "connections" section. If "connection" section is present instead,
+from the "connections" section. If the "connection" section is present instead,
 then it returns a list with only one ConnectionParams.
 
 > `public static` List<[ConnectionParams]()> ManyFromConfig([ConfigParams](../../../commons/config/config_params) config, bool configAsDefault = true)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve connections
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve connections
 
-- **returns**: List<[ConnectionParams]()> - a list of retrieved ConnectionParams
+- **returns**: List<[ConnectionParams]()> - list of retrieved ConnectionParams
 
 ### Examples
 

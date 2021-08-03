@@ -21,15 +21,15 @@ Create a new instance of the factory.
 <span class="hide-title-link">
 
 #### NullCacheDescriptor
-A description for a null cache (dummy cache).
+Description for a null cache (dummy cache).
 > `public static` **NullCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### MemoryCacheDescriptor
-A descriptor for a memory cache.
+Descriptor for a memory cache.
 > `public static` **MemoryCacheDescriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 #### Descriptor
-A descriptor for a factory cache.
+Descriptor for a factory cache.
 > `public static` **Descriptor**: [Descriptor](../../../commons/refer/descriptor)
 
 </span>

@@ -17,8 +17,8 @@ Creates a new instance of the timing callback object.
 
 > `public` CounterTiming(string counter, [ICounterTimingCallback](../icounter_timing_callback) callback)
 
-- **counter**: string - an associated counter name
-- **callback**: [ICounterTimingCallback](../icounter_timing_callback) - a callback that shall be called when end_timing is called.
+- **counter**: string - associated counter name
+- **callback**: [ICounterTimingCallback](../icounter_timing_callback) - callback that shall be called when end_timing is called.
 
 
 Creates a new instance of the timing callback object.

@@ -14,7 +14,7 @@ The CounterType class enumerates the types of counters that measure different ty
 ### Enumeration members
 
 - **Interval** = 0 - Counters that measure execution time intervals
-- **LastValue** = 1 - Counters that keeps the latest measured value
+- **LastValue** = 1 - Counters that keep the latest measured value
 - **Statistics** = 2 - Counters that measure min/average/max statistics
 - **Timestamp** = 3 - Counter that record timestamps
 - **Increment** = 4 - Counter that increment counters

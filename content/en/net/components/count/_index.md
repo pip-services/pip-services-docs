@@ -5,7 +5,7 @@ linkTitle: "Count"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-   This packag provides a set of interfaces and classes used to create performance counters.
+   This package contains a set of interfaces and classes used to create performance counters.
     
 ---
 ---
@@ -19,7 +19,7 @@ description: >
 ### Constants
 
 #### [CounterType](counter_type)
-Types of counters that measure different types of metrics
+Types of counters that measure different types of metrics.
 
 <br>
 

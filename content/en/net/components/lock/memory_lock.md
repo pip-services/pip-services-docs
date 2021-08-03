@@ -15,7 +15,7 @@ description: >
 
 The MemoryLock class is used to synchronize the execution of a process using shared memory.
 
-Important points
+**Important points**
 
 - This implementation is not suitable for synchronization of distributed processes.
 
@@ -27,12 +27,12 @@ Important points
 ### Instance methods
 
 #### ReleaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > `public override` void ReleaseLock(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.
 
 
 #### TryAcquireLock
@@ -41,9 +41,9 @@ It returns immediately a positive or negative result.
 
 > `public` bool TryAcquireLock(string correlationId, string key, long ttl)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to acquire.
-- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to acquire.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 ### Examples

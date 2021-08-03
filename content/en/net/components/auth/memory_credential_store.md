@@ -74,8 +74,8 @@ Stores credential parameters into the store.
 > `public` Task StoreAsync(string correlationId, string key, [CredentialParams](../credential_params) credential)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a key to uniquely identify the credential parameters.
-- **credential**: [CredentialParams](../credential_params) - a credential parameters to be stored.
+- **key**: string - key to uniquely identify the credential parameters.
+- **credential**: [CredentialParams](../credential_params) - credential parameters to be stored.
 
 ### Examples
 

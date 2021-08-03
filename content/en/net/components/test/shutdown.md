@@ -15,7 +15,7 @@ description: >
 
 The Shutdown class allows you to create a random shutdown component that crashes a process using various methods.
 
-Important points
+**Important points**
 
 - The component is usually used for testing, but it can also be used in production to randomly crash microservices.
 - It follows the concept of "Chaos Monkey" popularized by Netflix.
@@ -37,7 +37,7 @@ Closes component and frees used resources.
 
 > `public` Task CloseAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### Configure
@@ -61,7 +61,7 @@ Opens the component.
 
 > `public` Task OpenAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### Shutdown

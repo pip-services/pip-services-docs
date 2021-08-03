@@ -30,16 +30,16 @@ Types (categories) of tokens such as “number”, “symbol” and “word”.
 ### Interfaces
 
 #### [ICommentState](icomment_state)
-Defines an interface for tokenizer state that processes comments.
+Defines an interface for a tokenizer state that processes comments.
 
 #### [INumberState](inumber_state)
-Defines an interface for tokenizer state that processes numbers - Integers, Floats, HexDec.
+Defines an interface for a tokenizer state that processes numbers - Integers, Floats, HexDec.
 
 #### [IQuoteState](iquote_state)
-Defines an interface for tokenizer state that processes quoted strings.
+Defines an interface for a tokenizer state that processes quoted strings.
 
 #### [ISymbolState](isymbol_state)
-Defines an interface for tokenizer state that processes delimiters.
+Defines an interface for a tokenizer state that processes delimiters.
 
 #### [ITokenizer](itokenizer)
 Interface for tokenizers.
@@ -48,10 +48,10 @@ Interface for tokenizers.
 Interface for TokenizerStates.
 
 #### [IWhitespaceState](iwhitespace_state)
-Defines an interface for tokenizer state that processes whitespaces (' ‘, ‘\t’).
+Defines an interface for a tokenizer state that processes whitespaces (' ‘, ‘\t’).
 
 #### [IWordState](iword_state)
-Defines an interface for tokenizer state that processes words, identificators or keywords.
+Defines an interface for a tokenizer state that processes words, identificators or keywords.
 
 
 <br>

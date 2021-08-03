@@ -11,9 +11,9 @@ description: >
 
 ### Description
 
-The ILock interface provides the methods to create locks used to synchronize work or parallel processes and to prevent collisions.
+The ILock interface provides methods to create locks used to synchronize work or parallel processes and to prevent collisions.
 
-Important points
+**Important points**
 
 - The interface allows to manage multiple locks identified by unique keys. 
 
@@ -25,10 +25,10 @@ It returns immediately a positive or negative result.
 
 > void AcquireLock(string correlationId, string key, long ttl, long timeout)
 
-- **correlationId**: string -(optional) transaction id to trace execution through a call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: long - a lock timeout (time to live) in milliseconds.
-- **timeout**: long - a lock acquisition timeout.
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
+- **timeout**: long - lock acquisition timeout.
 
 
 
@@ -38,16 +38,16 @@ It returns immediately a positive or negative result.
 
 > bool TryAcquireLock(string correlationId, string key, long ttl)
 
-- **correlationId**: string -(optional) transaction id to trace execution through call chain. 
-- **key**: string - a unique lock key to acquire.
-- **ttl**: long - a lock timeout (time to live) in milliseconds.
+- **correlationId**: string -(optional) transaction id used to trace execution through the call chain. 
+- **key**: string - unique lock key to acquire.
+- **ttl**: long - lock timeout (time to live) in milliseconds.
 - **return**: bool - lock result
 
 
 #### ReleaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 > void ReleaseLock(string correlationId, string key)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **key**: string - a unique lock key to release.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique lock key to release.

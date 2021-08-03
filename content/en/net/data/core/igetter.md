@@ -9,8 +9,6 @@ description: >
 
 ### Description
 
-where T : [IIdentifiable\<K\>](../../../commons/data/iidentifiable)
-
 The IGetter interface is used by data processing components that are capable of getting data items.
 
 ### Instance methods

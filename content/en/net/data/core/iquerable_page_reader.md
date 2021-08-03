@@ -9,8 +9,6 @@ description: >
 
 ### Description
 
-Where T : class.
-
 The IQuerablePageReader interface is used by data processing components that can query a page of data items.
 
 ### Instance methods

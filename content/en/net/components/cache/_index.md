@@ -6,7 +6,7 @@ no_list: true
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
     
-    The Cache package contains interfaces and classes that can be used to create caches that can be employed to improve a system's performance.
+    The Cache package contains interfaces and classes used to create caches.
 
 ---
 ---
@@ -23,7 +23,7 @@ Interface for caches that are used to cache values to improve performance.
 ### Classes
 
 #### [CacheEntry](cache_entry)
-Data object to store cached values with their keys used by [MemoryCache](../memory_cache).
+Data object to store cached values with their keys used by [MemoryCache](memory_cache).
 
 #### [DefaultCacheFactory](default_cache_factory)
 Creates [ICache](icache) components by their descriptors.
@@ -35,7 +35,7 @@ Remember: This implementation is not suitable for synchronization of distributed
 #### [NullCache](null_cache)
 Dummy cache implementation that doesn't do anything.
 
-It can be used in testing or in situations when cache is required
+It can be used in testing or in situations when a cache is required
 but shall be disabled.
 
 

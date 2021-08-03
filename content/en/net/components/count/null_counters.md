@@ -14,7 +14,7 @@ description: >
 
 The NullCounters class allows you to create dummy performance counters.
 
-Important points
+**Important points**
 
 - It can be used in testing or in situations when a counter is required but must be disabled.
 
@@ -36,15 +36,15 @@ Increments counter by given value.
 
 > `public` void Increment(string name, int value)
 
-- **name**: string - a counter name of Increment type.
-- **value**: int - a value to add to the counter.
+- **name**: string - counter's name of Increment type.
+- **value**: int - value to add to the counter.
 
 #### IncrementOne
-Increments counter by 1.
+Increments a counter by 1.
 
 > `public` void IncrementOne(string name)
 
-- **name**: string - a counter name of Increment type.
+- **name**: string - counter's name of Increment type.
 
 
 #### Last
@@ -53,8 +53,8 @@ Usually this method is used by metrics calculated externally.
 
 > `public` void Last(string name, float value)
 
-- **name**: string - a counter name of Last type.
-- **value**: float - a last value to record.
+- **name**: string - counter's name of Last type.
+- **value**: float - last value to record.
 
 
 #### Stats
@@ -62,8 +62,8 @@ Calculates min/average/max statistics based on the current and previous values.
 
 > `public` void Stats(string name, float value)
 
-- **name**: string - a counter name of Statistics type
-- **value**: float - a value to update statistics
+- **name**: string - counter's name of Statistics type
+- **value**: float - value to update statistics
 
 
 #### Timestamp
@@ -71,8 +71,8 @@ Records the given timestamp.
 
 > `public` void Timestamp(string name, DateTime value)
 
-- **name**: string - a counter name of Timestamp type.
-- **value**: Date - a timestamp to record.
+- **name**: string - counter's name of Timestamp type.
+- **value**: Date - timestamp to record.
 
 
 #### timestampNow
@@ -80,7 +80,7 @@ Records the current time as a timestamp.
 
 > `public` void timestampNow(string name)
 
-- **name**: string - a counter name of Timestamp type.
+- **name**: string - counter's name of Timestamp type.
 
 ### See also 
 

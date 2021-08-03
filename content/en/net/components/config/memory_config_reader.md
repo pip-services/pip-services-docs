@@ -54,7 +54,7 @@ Reads a configuration and parameterizes it with given values.
 
 > `public virtual` [ConfigParams](../../../commons/config/config_params) ReadConfig(string correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 

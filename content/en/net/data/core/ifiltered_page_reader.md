@@ -9,8 +9,6 @@ description: >
 
 ### Description
 
-Where T : class.
-
 The IFilteredPageReader interface is used by data processing components that can retrieve a page of data items through the use of a filter.
 
 ### Instance methods

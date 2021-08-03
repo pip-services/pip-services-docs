@@ -11,9 +11,9 @@ description: >
 
 ### Description
 
- The LogLevel class provides an enumeration of standard log levels.
+ The LogLevel enum provides an enumeration of standard log levels.
  
- Important points
+ **Important points**
  
  - Logs at debug and trace levels are usually captured only locally for troubleshooting and never sent to consolidated log services.
 

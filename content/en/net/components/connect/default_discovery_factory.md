@@ -14,7 +14,7 @@ description: >
 The DefaultDiscoveryFactory class allows you to create an instance of [Factory](../../build/factory) to create [IDiscovery](../idiscovery) components based on their descriptors.
 
 ### Constructors
-Create a new instance of factory.
+Create a new instance of [Factory](../../build/factory).
 
 > `public` DefaultDiscoveryFactory()
 

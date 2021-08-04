@@ -14,18 +14,18 @@ description: >
 
 The Container class allows you to create an inversion of control (IoC) container that creates components and manages their lifecycle.
 
-Important points
+**Important points**
 
 - The container is driven by configuration, which is usually stored in a JSON or YAML file.
 - The configuration contains a list of components identified by their type or locator, followed by their configuration.
 - On start, a container performs the following actions:
     - Creates components using their types or calls registered factories to create them using their locators.
-    - Configures components that implement [IConfigurable interface](../../../commons/config/iconfigurable) and passes them their configuration parameters.
-    - Sets references to components that implement [IReferenceable interface](../../../commons/refer/ireferenceable) and passes them references of all components in the container.
-    - Opens components that implement [IOpenable interface](../../../commons/run/iopenable).
+    - Configures components that implement the [IConfigurable](../../../commons/config/iconfigurable) interface and passes them their configuration parameters.
+    - Sets references to components that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface and passes them references of all components in the container.
+    - Opens components that implement the [IOpenable](../../../commons/run/iopenable) interface.
 - On stop, a container reverses the orden of its actions:
-    - Closes components that implement [IClosable interface](../../../commons/run/iclosable)
-    - Unsets references in components that implement [IUnreferenceable interface](../../../commons/refer/iunreferenceable)
+    - Closes components that implement the [IClosable](../../../commons/run/iclosable) interface.
+    - Unsets references in components that implement the [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
     - Destroys components in the container.
 
 #### Configuration parameters
@@ -102,7 +102,7 @@ Checks if the component is open.
 
 > `public virtual` bool IsOpen()
 
-- **returns**: bool - True if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open
@@ -110,7 +110,7 @@ Opens the component.
 
 > `public` Task OpenAsync(string correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### ReadConfigFromFile
@@ -128,7 +128,7 @@ Sets references to dependent components.
 
 > `public virtual` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences

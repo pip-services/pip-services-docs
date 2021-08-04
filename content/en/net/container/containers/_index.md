@@ -37,7 +37,7 @@ Each object can store various configurations.
    
 Then, the container recreates the objects and, if they implement the IConfigurable interface, passes them their configurations. 
 
-Once the objects of a container are configured, if they implement the [IReferencable interface](../../commons/refer/ireferencable), they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the **Open()** method is called and they   start to work.    
+Once the objects of a container are configured, if they implement the [IReferencable interface](../../commons/refer/ireferenceable), they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the **Open()** method is called and they   start to work.    
 <br>
 3 . Start    
    
@@ -48,7 +48,7 @@ Then, the objects carry out their tasks.
    
 When the container starts to close, the objects that implement the [IClosable interface](../../commons/run/iclosable) are closed via their **Close()** method (which should make them stop working and disconnect from other services).     
 After this, those objects that implement the [IUnreferenceable interface](../../commons/refer/iunreferenceable) delete various links between objects.    
-Finally, the contains destroys all objects and turns off.     
+Finally, the container destroys all objects and turns off.     
 <br>       
      
     

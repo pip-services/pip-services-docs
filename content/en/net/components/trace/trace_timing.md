@@ -4,13 +4,13 @@ title: "TraceTiming"
 linkTitle: "TraceTiming"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    Timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing
+    Timing object returned by [ITracer.begin_trace](../itracer/#begintrace) to end the timing
     of an execution block and record the associated trace.
 ---
 
 ### Description
 
-The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of and execution block and record the associated trace.
+The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begintrace) to end the timing of and execution block and record the associated trace.
 
 ### Constructors
 Creates a new instance of the timing callback object.

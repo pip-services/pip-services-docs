@@ -74,7 +74,7 @@ Gets an object from the _objects variable.
 
 
 #### GetAsync
-TODO: add description
+Gets an object based on a given projection.
 
 > `public virtual` Task\<[DataPage](../../../commons/data/data_page)\<object\>\> GetAsync(string correlationId, [FilterParams](../../../commons/data/filter_params) filter, [PagingParams](../../../commons/data/paging_params) paging, [ProjectionParams](../../commons/data/projection_params) projection)
 
@@ -82,41 +82,41 @@ TODO: add description
 - **filter**: [FilterParams](../../../commons/data/filter_params) - filter
 - **paging**: [PagingParams](../../../commons/data/paging_params) - paging parameters
 - **projection**: [ProjectionParams](../../commons/data/projection_params) - projection parameters
-- **returns**: Task\<[DataPage](../../../commons/data/data_page)\<object\>\> - TODO: add description
+- **returns**: Task\<[DataPage](../../../commons/data/data_page)\<object\>\> - data page
 
 #### GetByIdAsync
-TODO: add description
+Gets an object from the _objects variable based on a given id.
 
 > `public virtual` Task\<T\> GetByIdAsync(string correlationId, string id)
 
 - **correlationId**: string -  (optional) transaction id used to trace execution through the call chain.
 - **id**: string - id
 
-TODO: add description
+Gets an object based on a given id and projection.
 
 > `public virtual` Task\<object\> GetByIdAsync(string correlationId, string id, [ProjectionParams](../../commons/data/projection_params) projection)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: string - id
-- **projection**: [ProjectionParams](../../commons/data/projection_params) - TODO: add description
+- **projection**: [ProjectionParams](../../commons/data/projection_params) - projection parameters
 
 
 #### UpdateAsync
-TODO: add description
+Updates an object stored in _objects.
 
 > `public virtual` Task\<T\> UpdateAsync(string correlationId, T @object)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **@object**: T - TODO: add description
+- **@object**: T - object to update
 
 
 #### ModifyAsync
-TODO: add description
+Modifies a value of the field of an object.
 
 > `public virtual` Task\<T\> ModifyAsync(string correlationId, string id, [AnyValueMap](../../../commons/data/any_value_map) updateMap)
 
 - **correlationId**: string - TODO: (optional) transaction id used to trace execution through the call chain.
 - **id**: string - id
-- **updateMap**: [AnyValueMap](../../../commons/data/any_value_map) - TODO: add description
+- **updateMap**: [AnyValueMap](../../../commons/data/any_value_map) - update map
 
 

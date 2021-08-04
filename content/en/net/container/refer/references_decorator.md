@@ -39,7 +39,7 @@ Decorator at the top of the chain.
 
 #### Find
 Gets all component references that match the specified locator.
-Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to True but no references were found.
+Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to true but no references were found.
 
 > `public virtual` List\<object\> Find(object locator, bool required)
 - **locator**: object - locator to find a reference by.
@@ -66,7 +66,7 @@ Gets an optional component reference that matches the specified locator.
 - **returns**: object - matching component reference or null if nothing was found.
 
 > `public virtual` T GetOneOptional\<T\>(object locator)
-- **locator**: object - the locator to find references by.
+- **locator**: object - locator to find references by.
 - **returns**: T - matching component reference or null if nothing was found.
 
 

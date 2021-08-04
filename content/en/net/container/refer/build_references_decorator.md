@@ -12,15 +12,15 @@ description: >
 
 
 ### Description
-The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missing components using availale component factories upon component retrieval.
+The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missing components using available component factories upon component retrieval.
 
 ### Constructors
 Creates a new instance of the decorator.
 
 > `public` BuildReferencesDecorator([IReferences](../../../commons/refer/ireferences) baseReferences = null, [IReferences](../../../commons/refer/ireferences) parentReferences = null)
 
-- **nextReferences**: [IReferences](../../../commons/refer/ireferences) - the next references or decorator in the chain.
-- **topReferences**: [IReferences](../../../commons/refer/ireferences) - the decorator at the top of the chain.
+- **nextReferences**: [IReferences](../../../commons/refer/ireferences) - next references or decorator in the chain.
+- **topReferences**: [IReferences](../../../commons/refer/ireferences) - decorator at the top of the chain.
 
 ### Instance methods
 

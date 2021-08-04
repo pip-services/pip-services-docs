@@ -4,13 +4,13 @@ title: "CommandableLambdaService"
 linkTitle: "CommandableLambdaService"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 description: >
-    Abstract service that receives commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.
+    Abstract service that receives commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable](../../../commons/commands/icommandable) components. Each command is exposed as an invoke method that receives a command's name and parameters.
 ---
 
 **Implements:** [LambdaService](../lambda_service)
 
 ### Description
-The CommandableLambdaService allows you to create abstract services that receive commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable). Each command is exposed as an invoke method that receives a command's name and parameters.
+The CommandableLambdaService allows you to create abstract services that receive commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable](../../../commons/commands/icommandable) components. Each command is exposed as an invoke method that receives a command's name and parameters.
 
 **Important points**
 
@@ -33,7 +33,7 @@ Creates a new instance of the service.
 
 > InheritCommandableLambdaService(overrides ILambdaServiceOverrides, name string) [*CommandableLambdaService]()
 
-- **overrides**: ILambdaServiceOverrides - TODO: add desctiption
+- **overrides**: ILambdaServiceOverrides - Lambda service overrides.
 - **name**: string - service name.
 
 

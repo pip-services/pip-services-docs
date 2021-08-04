@@ -24,10 +24,10 @@ The LambdaFunction class allows you to create an abstract AWS Lambda function th
 - **dependencies**:
     - **controller**: override for Controller dependency
 - **connections**:
-    - **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+    - **discovery_key**: (optional) key to retrieve the connection from IDiscovery
     - **region**: (optional) AWS region
 - **credentials**:
-    - **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+    - **store_key**: (optional) key to retrieve the credentials from ICredentialStore
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
 
@@ -44,9 +44,9 @@ Creates a new instance of this lambda function.
 
 > InheriteLambdaFunction(name string, description string, register [IRegisterable](../iregisterable)) [*LambdaFunction]()
 
-- **name**: string - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info)).
+- **name**: string - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info)).
 - **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info)).
-- register: [IRegisterable](../iregisterable) - TODO: add description
+- register: [IRegisterable](../iregisterable) - created instance
 
 ### Fields
 
@@ -109,8 +109,8 @@ Gets an entry point into this lambda function.
 > (c [*LambdaFunction]()) GetHandler() func(ctx context.Context, event map[string]interface{}) (string, error)
 
 - **returns**: func(ctx context.Context, event map[string]interface{}) (string, error) - incoming event object with invocation parameters.
-    - **context**: context.Context - a context object with local references.
-    - **event**: map[string]interface{} - an incoming event object with invocation parameters.
+    - **context**: context.Context - context object with local references.
+    - **event**: map[string]interface{} - incoming event object with invocation parameters.
 
 
 #### Instrument
@@ -128,7 +128,7 @@ Opens the component.
 > (c [*LambdaFunction]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### RegisterAction
@@ -141,7 +141,7 @@ Registers an action in this lambda function.
 - **cmd**: string - action/command name.
 - **schema**: [*Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
 - **action**: func(params map[string]interface{}) - action function that is called when the action is invoked.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### RegisterServices

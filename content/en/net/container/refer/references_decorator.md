@@ -43,7 +43,7 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when r
 
 > `public virtual` List\<object\> Find(object locator, bool required)
 - **locator**: object - locator to find a reference by.
-- **required**: bool - if True, it forces to raise an exception when no reference is found.
+- **required**: bool - if true, it forces to raise an exception when no reference is found.
 - **returns**: List\<object\> -  list with matching component references.
 
 #### GetAll
@@ -67,7 +67,7 @@ Gets an optional component reference that matches the specified locator.
 
 > `public virtual` T GetOneOptional\<T\>(object locator)
 - **locator**: object - the locator to find references by.
-- **returns**: T - a matching component reference or null if nothing was found.
+- **returns**: T - matching component reference or null if nothing was found.
 
 
 #### GetOneRequired
@@ -78,11 +78,11 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when n
 - **locator**: object - locator to find a reference by.
 - **returns**: object - matching component reference.
 
-Gets a required component reference that matches specified locator.
+Gets a required component reference that matches the specified locator.
 
 > `public virtual` T GetOneRequired\<T\>(object locator)
 
-- **locator**: object - the locator to find a reference by.
+- **locator**: object - locator to find a reference by.
 - **returns**: T - matching component reference.
 
 

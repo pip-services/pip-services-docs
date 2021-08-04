@@ -17,10 +17,10 @@ Creates a new instance of the timing callback object.
 
 > `public` TraceTiming(string correlationId, string component, string operation, [ITracer](../itracer) tracer = null)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
-- **component**: string - an associated component name
-- **operation**: string - an associated operation name
-- **tracer**: [ITracer](../itracer) - a callback that shall be called when endTiming is called.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: string - associated component name
+- **operation**: string - associated operation name
+- **tracer**: [ITracer](../itracer) - callback that shall be called when endTiming is called.
 
 
 ### Instance methods
@@ -31,7 +31,7 @@ and records the associated trace.
 
 > `public` void EndFailure(Exception error)
 
-- **error**: Exception - an error object associated with this trace.
+- **error**: Exception - error object associated with this trace.
 
 
 #### EndTrace

@@ -40,7 +40,7 @@ Creates a new instance of this client.
 
 > NewCommandableLambdaClient(name string) [*CommandableLambdaClient]()
 
-- **name**: string - a service name.
+- **name**: string - service's name.
 
 ### Methods
 
@@ -53,7 +53,7 @@ to the action parameters.
 
 - **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
 - **cmd**: string - action name
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: [*AnyValueMap](../../../commons/data/any_value_map) - command parameters.
 - **returns**: (result interface{}, err error) - action result.
 

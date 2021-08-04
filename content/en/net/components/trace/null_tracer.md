@@ -14,7 +14,7 @@ description: >
 
 The NullTracer class allows you to create a dummy tracer with no real effect.
 
-Important points
+**Important points**
 
 - It can be used in testing or in situations when tracing is required but must be disabled.
 
@@ -25,10 +25,10 @@ Begings recording an operation trace.
 
 > `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Failure
@@ -37,10 +37,10 @@ Records an operation failure with its name, duration and error
 > `public` void Failure(string correlationId, string component, string operation, Exception error,
 long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Exception - an error object associated with this trace.
+- **error**: Exception - error object associated with this trace.
 - **duration**: long - execution duration in milliseconds.
 
 
@@ -49,7 +49,7 @@ Records an operation trace with its name and duration.
 
 > `public` void Trace(string correlationId, string component, string operation, long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: long - execution duration in milliseconds.

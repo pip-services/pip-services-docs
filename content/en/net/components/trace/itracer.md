@@ -18,10 +18,10 @@ Begings recording an operation trace
 
 > [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Failure
@@ -30,10 +30,10 @@ Records an operation failure with its name, duration and error.
 > void Failure(string correlationId, string component, string operation, Exception error,
 long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **component**: string - a name of called component
-- **operation**: string - a name of the executed operation.
-- **error**: Exception - an error object associated with this trace.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **component**: string - name of the called component
+- **operation**: string - name of the executed operation.
+- **error**: Exception - error object associated with this trace.
 - **duration**: long - execution duration in milliseconds.
 
 
@@ -42,7 +42,7 @@ Records an operation trace with its name and duration
 
 > void Trace(string correlationId, string component, string operation, long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: long - execution duration in milliseconds.

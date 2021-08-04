@@ -12,7 +12,7 @@ description: >
 
 ### Description
 
-The CommandableLambdaFunction class allows you to create AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.
+The CommandableLambdaFunction class allows you to create AWS Lambda functions that acts as containers to instantiate and run components and expose them via an external entry point.
 
 **Important points**
 
@@ -27,10 +27,10 @@ The CommandableLambdaFunction class allows you to create AWS Lambda function tha
 - **dependencies**:
     - **controller**: override for Controller dependency
 - **connections**:
-    - **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+    - **discovery_key**: (optional) key to retrieve the connection from IDiscovery
     - **region**: (optional) AWS region
 - **credentials**:
-    - **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+    - **store_key**: (optional) key to retrieve the credentials from ICredentialStore
     - **access_id**: AWS access/client id
     - **access_key**: AWS access/client id
 

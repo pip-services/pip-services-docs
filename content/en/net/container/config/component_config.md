@@ -12,7 +12,7 @@ description: >
 
 The ComponentConfig class allows you to configure a component residing inside a container.
 
-Important points
+**Important points**
 
 - The configuration includes the type of information or descriptor and component configuration parameters.
 
@@ -44,7 +44,7 @@ Creates a new instance of the configuration component.
 
 #### FromConfig
 Creates a new instance of ComponentConfig based on a section from a container configuration.
-Throws [ConfigException](../commons/errors/config_exception) when neither component descriptor or type is found.
+Throws [ConfigException](../../../commons/errors/config_exception) when neither component descriptor or type is found.
 
 > `public static` [ComponentConfig]() FromConfig([ConfigParams](../../../commons/config/config_params) config)
 

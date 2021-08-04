@@ -4,7 +4,7 @@ title: "RunReferencesDecorator"
 linkTitle: "RunReferencesDecorator"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-container-dotnet"
 description: >
-    References decorator that automatically opens to newly added components
+    References decorator that automatically opens newly added components
     that implement the [IOpenable](../../../commons/run/iopenable) interface and closes removed components
     that implement the [IClosable](../../../commons/run/iclosable) interface.
 ---
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The RunReferencesDecorator class allows you to create a references decorator that automatically opens to newly added components that implement the [IOpenable](../../../commons/run/iopenable) interface and closes removed components that implement the [IClosable](../../../commons/run/iclosable) interface.
+The RunReferencesDecorator class allows you to create a references decorator that automatically opens newly added components that implement the [IOpenable](../../../commons/run/iopenable) interface and closes removed components that implement the [IClosable](../../../commons/run/iclosable) interface.
 
 ### Constructors
 Creates a new instance of the decorator.

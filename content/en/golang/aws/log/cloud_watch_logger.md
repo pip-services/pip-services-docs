@@ -50,7 +50,7 @@ Closes a component and frees used resources.
 > (c *CloudWatchLogger) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### Configure
 Configures a component by passing configuration parameters.
@@ -73,7 +73,7 @@ Opens the component.
 > (c *CloudWatchLogger) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### Save
 Saves the current counters' measurements.

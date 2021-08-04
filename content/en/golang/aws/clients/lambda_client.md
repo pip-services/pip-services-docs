@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-When making calls, the "cmd" parameter determines which what action shall be called, while the 
+When making calls, the "cmd" parameter determines what action shall be called, while the 
 other parameters are passed to the action itself.
 
 
@@ -95,12 +95,12 @@ Calls an AWS Lambda Function action.
 
 
 #### CallOneWay
-Calls a AWS Lambda Function action asynchronously without waiting for response.
+Calls an AWS Lambda Function action asynchronously without waiting for response.
 
 > (c [*LambdaClient]()) CallOneWay(prototype reflect.Type, cmd string, correlationId string, params map[string]interface{}) error
 
 - **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
-- **cmd**: string - an action name to be called.
+- **cmd**: string - action name to be called.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: map[string]interface{} - (optional) action parameters.
 - **returns**: error - error or null for success.
@@ -122,12 +122,12 @@ Configures a component by passing its configuration parameters.
 
 #### Instrument
 Adds instrumentation to log calls and measures call time.
-It returns a InstrumentTiming object that is used to end the time measurement.
+It returns an InstrumentTiming object that is used to end the time measurement.
 
 > (c [*LambdaClient]()) Instrument(correlationId string, name string) [*CounterTiming](../../../components/count/counter_timing) 
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **name**: string - a method name.
+- **name**: string - method name.
 - **returns**: [*CounterTiming](../../../components/count/counter_timing) - object to end the time measurement.
 
 #### Invoke

@@ -4,14 +4,14 @@ title: "ContainerReferences"
 linkTitle: "ContainerReferences"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-container-dotnet"
 description: >
-    Container's managed references that can be created from container configuration.
+    Container's managed references that can be created from a container's configuration.
 ---
 
 **Inherits:** [ManagedReferences](../managed_references)
 
 ### Description
 
-The ContainerReferences class allows you to create container's managed references that can be created from a container configuration.
+The ContainerReferences class allows you to create container's managed references that can be created from a container's configuration.
 
 ### Instance methods
 

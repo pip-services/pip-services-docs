@@ -48,7 +48,7 @@ Closes component and frees used resources.
 > (c [*CloudWatchCounters]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Configure
 Configures a component by passing its configuration parameters.
@@ -71,7 +71,7 @@ Opens the component.
 > (c [*CloudWatchCounters]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### Save
 Saves the current counters' measurements.

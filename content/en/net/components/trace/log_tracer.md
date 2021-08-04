@@ -31,14 +31,14 @@ Begings recording an operation trace.
 
 > `public` [TraceTiming](../trace_timing) BeginTrace(string correlationId, string component, string operation)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **return**: [TraceTiming](../trace_timing) - a trace timing object.
+- **return**: [TraceTiming](../trace_timing) - trace timing object.
 
 
 #### Configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > `public` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -51,10 +51,10 @@ Records an operation failure with its name, duration and error
 > `public` void Failure(string correlationId, string component, string operation, Exception error,
 long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
-- **error**: Exception - an error object associated with this trace.
+- **error**: Exception - error object associated with this trace.
 - **duration**: long - execution duration in milliseconds.
 
 
@@ -63,14 +63,14 @@ Sets references to dependent components.
 
 > `public` void SetReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### Trace
 Records an operation trace with its name and duration.
 
 > `public` void Trace(string correlationId, string component, string operation, long duration)
 
-- **correlationId**: string - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
 - **duration**: long - execution duration in milliseconds.

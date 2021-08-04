@@ -39,7 +39,7 @@ Creates an new instance of the connection parameters.
 - **values**: map[string]string - (optional) object to be converted into key-value pairs to initialize this connection.
 
 #### NewAwsConnectionParams
-Creates an new instance of the connection parameters.
+Creates a new instance of the connection parameters.
 
 > NewEmptyAwsConnectionParams() [*AwsConnectionParams]()
 
@@ -47,7 +47,7 @@ Creates an new instance of the connection parameters.
 Retrieves AwsConnectionParams from configuration parameters.
 The values are retrieved from "connection" and "credential" sections.
 
-See [mergeConfigs](#mergeconfigs)
+See [NewAwsConnectionParamsMergeConfigs ](#newawsconnectionparamsmergeconfigs)
 
 > NewAwsConnectionParamsFromConfig(config [*ConfigParams](../../../commons/config/config_params)) [*AwsConnectionParams]()
 
@@ -214,7 +214,7 @@ Validates this connection parameters
 > (c [*AwsConnectionParams]()) Validate(correlationId string) [*ApplicationError](../../../commons/errors/application_error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: [*ApplicationError](../../../commons/errors/application_error) - a ConfigException or nil if validation passed successfully.
+- **returns**: [*ApplicationError](../../../commons/errors/application_error) - ConfigException or nil if validation passed successfully.
 
 
 ### Examples

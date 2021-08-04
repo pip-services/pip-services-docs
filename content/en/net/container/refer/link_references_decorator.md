@@ -5,8 +5,8 @@ linkTitle: "LinkReferencesDecorator"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-container-dotnet"
 description: >
     References decorator that automatically sets references to newly added components
-    that implement [IReferenceable interface](../../../commons/refer/ireferenceable), and unsets references from removed components
-    that implement [IUnreferenceable interface](../../../commons/refer/iunreferenceable).
+    that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface, and unsets references from removed components
+    that implement [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
 ---
 
 **Inherits:** [ReferencesDecorator](../references_decorator), [IOpenable](../../../commons/run/iopenable)
@@ -36,7 +36,7 @@ Closes the component and frees used resources.
 Checks if the component is open.
 
 > `public` bool IsOpen()
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 #### Open
 Opens the component.
@@ -55,7 +55,7 @@ Puts a new reference into the reference map.
 #### Remove
 Removes a previously added reference that matches the specified locator.
 If many references match the locator, it removes only the first one.
-When all references shall be removed, use **RemoveAll** method instead.
+When all references shall be removed, use the **RemoveAll** method instead.
 
 > `public override` object Remove(object locator)
 - **locator**: object - locator to remove reference
@@ -65,5 +65,5 @@ When all references shall be removed, use **RemoveAll** method instead.
 Removes all component references that match the specified locator.
 
 > `public override` List\<object\> RemoveAll(object locator)
-- **locator**: object - the locator to remove references by.
+- **locator**: object - locator to remove references by.
 - **returns**: List\<object\> - list, containing all removed references.

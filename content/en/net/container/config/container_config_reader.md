@@ -14,7 +14,7 @@ The ContainerConfigReader class allows you to read a container's configuration f
 ### Static methods
 
 #### ReadFromFile
-Reads a container's configuration from JSON or YAML file.
+Reads a container's configuration from a JSON or YAML file.
 The type of the file is determined by the file extension.
 
 > `public static` [ContainerConfig](../container_config) ReadFromFile(string correlationId, string path, [ConfigParams](../../../commons/config/config_params) parameters)

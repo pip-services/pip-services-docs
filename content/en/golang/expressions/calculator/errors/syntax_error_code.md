@@ -15,7 +15,7 @@ The SyntaxErrorCode class defines general syntax errors.
 
 The codes are as follows:
 
-The unknown
+Unknown     
 - **ErrUnknown** = "UNKNOWN"   
 Internal error
 - **ErrInternal** = "INTERNAL"    

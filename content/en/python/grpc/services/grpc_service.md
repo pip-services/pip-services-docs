@@ -63,6 +63,8 @@ The dependency resolver.
 The logger.
 > **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
+> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
+
 #### _counters
 The performance counters.
 > **_counters**: [CompositeCounters](../../../components/count/composite_counters)
@@ -81,6 +83,21 @@ This method is called by the service and must be overriden in child classes.
 
 ### Instance methods
 
+#### _apply_validation
+TODO: add description
+> _apply_validation(schema: Schema, action: Callable[[InvokeRequest, ServicerContext], Any]): Callable[[InvokeRequest, ServicerContext], Any]
+
+- **schema**: [Schema](../../../commons/validate/schema) - TODO: add description
+- **action**: Callable[[InvokeRequest, ServicerContext], Any] - TODO: add description
+- **returns**: Callable[[InvokeRequest, ServicerContext], Any] - TODO: add description
+
+#### _apply_interceptors
+TODO: add description
+
+> _apply_interceptors(action: Callable[[InvokeRequest, ServicerContext], Any]): Callable[[InvokeRequest, ServicerContext], Any]
+
+- **action**: Callable[[InvokeRequest, ServicerContext], Any] - TODO: add description
+- **returns**: Callable[[InvokeRequest, ServicerContext], Any] - TODO: add description
 
 #### close
 Closes the component and frees used resources.
@@ -110,11 +127,11 @@ Checks if the component is open.
 Adds instrumentation to log calls and measures call time. 
 It returns a CounterTiming object that is used to end the time measurement.
 
-> _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
+> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../../rpc/services/instrument_timing)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **name**: str - method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - CounterTiming object used to end the time measurement.
 
 
 #### _instrument_error
@@ -136,34 +153,33 @@ Opens the component.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
-#### _register_commandable_method
-Registers a commandable method in the object's GRPC server (service) by the given name.
-
-> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
-
-- **method**: str - GRPC method name.
-- **schema**: [Schema](../../../commons/validate/schema) - schema used for parameter validation.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action to perform at the given route.
-
-
 #### _register_interceptor
 Registers a middleware for methods in GRPC endpoint.
 
-> _register_interceptor(interceptor: Callable)
+> _register_interceptor(interceptor: Callable[[InvokeRequest, ServicerContext, Callable], Any])
 
-- **interceptor**: Callable - middleware action to perform at the given route.
+- **interceptor**: Callable[[InvokeRequest, ServicerContext, Callable], Any] - middleware action to perform at the given route.
 
 
-#### _register_method!
-**TODO: this method is not implemented for Python**
+#### _register_method
 
 Registers a middleware for methods in GRPC endpoint.
 
-> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[InvokeRequest, ServicerContext], Any])
 
 - **name**: str - method name
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema to validate received parameters.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action function that is called when operation is invoked.
+- **action**: Callable[[InvokeRequest, ServicerContext], Any] - action function that is called when operation is invoked.
+
+#### _register_method_with_auth
+Registers a method with authorization.
+
+> _register_method_with_auth(name: str, schema: [Schema](../../../commons/validate/schema), authorize: Callable[[InvokeRequest, ServicerContext, Callable], Any], action: Callable[[InvokeRequest, ServicerContext, Callable], Any])
+
+- **name**: str - a method name
+- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
+- **authorize**: Callable[[InvokeRequest, ServicerContext, Callable], Any] - an authorization interceptor
+- **action**: Callable[[InvokeRequest, ServicerContext, Callable], Any] - an action function that is called when operation is invoked.
 
 
 #### set_references
@@ -183,32 +199,42 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```python
-class MyGrpcService(GrpcService):
+class MyGrpcService(GrpcService, my_data_pb2_grpc.MyDataServicer):
+
     __controller: IMyController
+
     ...
+
     def __init__(self):
-        suoer().__init__('... path to proto ...', '.. service name ...')
+        suoer().__init__('.. service name ...')
         self._dependency_resolver.put(
             "controller",
             Descriptor("mygroup","controller","*","*","1.0")
         )
 
+    def add_servicer_to_server(self, server):
+        my_data_pb2_grpc.add_MyDataServicer_to_server(self, server)
 
     def set_references(self, references):
         super().set_references(references)
         self._controller = this._dependency_resolver.get_required("controller")
 
+    def __number_of_calls_interceptor(self, request: InvokeRequest, context: ServicerContext,
+                            next: Callable[[InvokeRequest, ServicerContext], Any]): Any:
+        self.__number_of_calls += 1
+        return next(request, context)
+
+    def __method(request: InvokeRequest, context: ServicerContext):
+        correlationId = request.correlationId
+        id = request.id
+        return self._controller.get_my_data(correlationId, id)
 
     def register(self):
-        def method(correlation_id, args, getted_method):
-            correlationId = call.request.correlationId;
-            id = call.request.id;
-            self._controller.getMyData(correlationId, id, callback);
-
-        self.register_commadable_method("get_mydata", None, method)
+        self._register_interceptor(self.__number_of_calls_interceptor)
+        self._register_method("get_mydata", None, method)
+        
+        self._register_service(self)
         ...
-
-
 
 service = MyGrpcService()
 service.configure(ConfigParams.from_tuples(

@@ -79,6 +79,13 @@ Registers a registerable object for dynamic endpoint discovery.
 
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
+#### registerService
+Registers a service with related implementation
+
+> `public` registerService(service: any, implementation: any): void
+
+- **service**: any - a GRPC service object.
+- **implementation**: any - the service implementation methods.
 
 #### registerCommandableMethod
 Registers a commandable method in the object's GRPC server (service) by the given name.

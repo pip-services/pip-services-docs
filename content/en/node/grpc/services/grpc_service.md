@@ -167,6 +167,7 @@ Registers a middleware for methods in GRPC endpoint.
 - **action**: (call: any) => Promise\<any\> - action function that is called when operation is invoked.
 
 #### registerMethodWithAuth
+Registers a method with authorization.
 
 > `protected` registerMethodWithAuth(name: string, schema: [Schema](../../../commons/validate/schema), authorize: (call: any, next: (call: any) => Promise\<any\>) => Promise\<any\>, action: (call: any) => Promise\<any\>): void
 

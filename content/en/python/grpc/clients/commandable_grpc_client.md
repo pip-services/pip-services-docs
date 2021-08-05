@@ -63,11 +63,11 @@ Calls a remote method via the GRPC commadable protocol.
 The call is made via Invoke method and all parameters are sent in args object.
 The complete route to remote method is defined as serviceName + '.' + name.
 
-> call_command(name: str, correlation_id: Optional[str], params: Any): Any
+> call_command(name: str, correlation_id: Optional[str], params: dict): Any
 
 - **name**: str - name of the command to call.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **params**: Any - command parameters.
+- **params**: dict - command parameters.
 - **returns**: Any - feature that receives the result
 
 

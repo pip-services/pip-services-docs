@@ -59,13 +59,23 @@ Registers all service routes in a gRPC endpoint.
 > register()
 
 
+#### _register_commandable_method
+Registers a commandable method in this objects GRPC server (service) by the given name.,
+
+> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Any], Any])
+
+- **method**: str - the GRPC method name.
+- **schema**: [Schema](../../../commons/validate/schema) - the schema to use for parameter validation.
+- **action**: Callable[[Optional[str], Any], Any] - the action to perform at the given route.
+
+
 
 ### Examples
 
 ```python
 class MyCommandableGrpcService(CommandableGrpcService):
    def __init__(self):
-        super().__init__()
+        super().__init__('service name')
 
         self._dependency_resolver.put(
             "controller",

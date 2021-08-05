@@ -80,41 +80,31 @@ Registers a registerable object for dynamic endpoint discovery.
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
 
+#### register_service
+Registers a service with related implementation
+
+> register_service(service: Any)
+
+- **service**: Any - a GRPC service object.
+
+
 #### _register_commandable_method
 Registers a commandable method in the object's GRPC server (service) by the given name.
 
-> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
+> _register_commandable_method(method: str, schema: [Schema](../../../commons/validate/schema), action: Callable[[Optional[str], Any], Any])
 
 - **method**: str - GRPC method name.
 - **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - action to perform at the given route.
-
-
-#### _register_interceptor
-Registers a middleware for methods in GRPC endpoint.
-
-> _register_interceptor(interceptor: Callable)
-
-- **interceptor**: Callable - the middleware action to perform at the given route.
-
-
-#### _register_method!
-**TODO: this method is not implemented for Python**
-
-Registers a middleware for methods in GRPC endpoint.
-
-> _register_method(name: str, schema: [Schema](../../../commons/validate/schema), action: action: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None])
-
-- **name**: str - a method name
-- **schema**: [Schema](../../../commons/validate/schema) - a validation schema to validate received parameters.
-- **action**: Callable[[Optional[str], Optional[str], [Parameters](../../../commons/run/parameters)], None] - an action function that is called when operation is invoked.
+- **action**: action: Callable[[Optional[str], Any], Any] - action to perform at the given route.
 
 
 ### Examples
 
 ```python
 def my_method(self, _config, _references):
+    
     endpoint = GrpcEndpoint()
+
     if self._config:
         endpoint.configure(self._config)
     if self._references:

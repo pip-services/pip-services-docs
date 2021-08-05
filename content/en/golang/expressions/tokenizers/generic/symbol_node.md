@@ -106,7 +106,7 @@ Finds a child with the given character.
 
 
 #### UnreadToValid
-Unwinds to a valid node; this node is "valid" if its ancestry represents a complete symbol.
+Unwinds to a valid node. This node is "valid" if its ancestry represents a complete symbol.
 If this node is not valid, puts back the character and asks the parent to unwind.
 
 > (c [*SymbolNode]()) UnreadToValid(scanner [IScanner](../../../io/iscanner)) [*SymbolNode]()

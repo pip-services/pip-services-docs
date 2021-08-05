@@ -56,6 +56,7 @@ To get you started faster, we developed a number of microservice templates in al
 
 </div>
 
+<br>
 
 ### Microservice Facade Templates
 
@@ -105,6 +106,7 @@ To get you started faster, we developed a number of microservice templates in al
 
 </div>
 
+<br>
 
 ### Scripted Environment Templates
 
@@ -275,6 +277,8 @@ To get you started faster, we developed a number of microservice templates in al
 
 </div>
 
+
+<br>
 
 ### Automated CI/CD Pipelines
 

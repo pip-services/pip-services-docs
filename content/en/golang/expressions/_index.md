@@ -59,7 +59,7 @@ if err != nil {
 ...
 ```
 
-This is an example to process mustache templates.
+The following example shows how to process mustache templates.
 
 ```golang
 import (

@@ -4,15 +4,15 @@ title: "LambdaService"
 linkTitle: "LambdaService"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 description: >
-    Abstract service that receives remove calls via the AWS Lambda protocol.
+    Abstract service that receives remote calls via the AWS Lambda protocol.
 ---
 
 ### Description
-The LambdaService class allows you to create abstract services that receive remove calls via the AWS Lambda protocol.
+The LambdaService class allows you to create abstract services that receive remote calls via the AWS Lambda protocol.
 
 **Important points**
 
-This service is intended to work inside LambdaFunction container that exploses registered actions externally.
+This service is intended to work inside a LambdaFunction container that exposes registered actions externally.
 
 
 #### Configuration parameters
@@ -33,7 +33,7 @@ Creates an instance of this service.
 
 > InheritLambdaService(overrides ILambdaServiceOverrides, name string) [*LambdaService]()
 
-- **overrides**: ILambdaServiceOverrides - TODO: add description
+- **overrides**: ILambdaServiceOverrides - Lambda service overrides
 - **name**: string - service name to generate action cmd.
 
 ### Fields
@@ -49,7 +49,7 @@ Dependency resolver.
 > **DependencyResolver**: [*DependencyResolver](../../../commons/refer/dependency_resolver)
 
 #### Logger
-Dependency resolver.
+Logger.
 > **Logger**: [*CompositeLogger](../../../components/log/composite_logger)
 
 #### Tracer
@@ -74,7 +74,7 @@ the action shall be called.
 - **returns**: (interface{}, error) - results
 
 #### ApplyInterceptors
-Applies given action to the interseptors
+Applies given action to the interceptors
 
 > (c [*LambdaService]()) ApplyInterceptors(action func(map[string]interface{}) (interface{}, error)) func(map[string]interface{}) (interface{}, error)
 
@@ -96,7 +96,7 @@ Closes a component and frees used resources.
 > (c [*LambdaService]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### Configure

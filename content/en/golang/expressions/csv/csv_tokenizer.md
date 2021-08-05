@@ -23,14 +23,14 @@ Constructs this object with default parameters.
 ### Properties
 
 #### EndOfLine
-Separator for rows in CSV stream.
+Separator for rows in a CSV stream.
 
 > (c [*CsvTokenizer]()) EndOfLine() string
 
 - **returns**: string - separator for rows.
 
 #### FieldSeparators
-Separator for fields in CSV stream.
+Separator for fields in a CSV stream.
 
 > (c [*CsvTokenizer]()) FieldSeparators() []rune
 
@@ -44,7 +44,7 @@ Character to quote strings.
 - **returns**: []rune - character to quote strings.
 
 #### SetEndOfLine
-Sets a separator for rows in CSV stream.
+Sets a separator for rows in a CSV stream.
 
 > (c [*CsvTokenizer]()) SetEndOfLine(value string)
 
@@ -52,14 +52,14 @@ Sets a separator for rows in CSV stream.
 
 
 #### SetFieldSeparators
-Sets separators for fields in CSV stream.
+Sets separators for fields in a CSV stream.
 > (c [*CsvTokenizer]()) SetFieldSeparators(value []rune)
 
 - **value**: []rune - separator for fields.
 
 
 #### SetQuoteSymbols
-Sets characters to quote strings
+Sets characters to quote strings.
 > (c [*CsvTokenizer]()) SetQuoteSymbols(value []rune)
 
 - **value**: []rune - character to quote strings.

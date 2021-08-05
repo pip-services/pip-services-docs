@@ -16,7 +16,7 @@ The TypeUnsafeVariantOperations class allows you to implement a type unsafe vari
 ### Constructors
 
 #### NewTypeUnsafeVariantOperations
-Create new instance of the component
+Creates a new instance of the component
 > NewTypeUnsafeVariantOperations() [*TypeUnsafeVariantOperations]()
 
 ### Methods

@@ -18,8 +18,8 @@ Constructs this function class with the specified parameters.
 
 > NewDelegatedFunction(name string, calculator FunctionCalculator) [*DelegatedFunction]()
 
-- **name**: string - The name of this function.
-- **calculator**: FunctionCalculator - The function calculator delegate.
+- **name**: string - name of this function.
+- **calculator**: FunctionCalculator - function calculator delegate.
 
 ### Fields
 

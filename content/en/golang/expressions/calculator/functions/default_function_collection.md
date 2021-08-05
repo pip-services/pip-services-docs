@@ -29,7 +29,7 @@ Checks if params contains the correct number of function parameters (must be sto
 
 - **params**: [[]*Variant](../../../variants/variant) - list of function parameters.
 - **expectedParamCount**: int - expected number of function parameters.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### getParameter
 Gets a function's parameter by it's index.

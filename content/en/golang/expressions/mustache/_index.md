@@ -22,7 +22,7 @@ Contains classes used to create Mustache tokenizers.
 
 ### Types
 
-#### [MustacheError](mustache_error)
+#### [MustacheError](errors/mustache_error)
 Exception that can be thrown by a Mustache template.
 
 #### [MustacheTemplate](mustache_template)

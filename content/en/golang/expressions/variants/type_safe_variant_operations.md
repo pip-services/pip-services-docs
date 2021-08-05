@@ -16,7 +16,7 @@ The TypeSafeVariantOperations class allows you to implement a strongly typed (ty
 ### Constructors
 
 #### NewTypeSafeVariantOperations
-Create new instance of the component
+Creates a new instance of the component
 > NewTypeSafeVariantOperations() [*TypeSafeVariantOperations]()
 
 ### Methods

@@ -15,7 +15,7 @@ description: >
 #### [Functions](functions)
 This sub-package provides interfaces and functions used to create lists of functions and delegates.
 
-#### [Parsers](parsers)
+#### [Parsers](parser)
 This sub-package contains classes used to create expression parsers and expression token holders.
 
 #### [Tokenizers](tokenizers)
@@ -28,7 +28,7 @@ This sub-package contains interfaces and clases used to create variables and col
 
 ### Constants
  
-#### [SyntaxErrorCode](syntax_error_code)
+#### [SyntaxErrorCode](errors/syntax_error_code/)
 General syntax errors.
 
 <br>

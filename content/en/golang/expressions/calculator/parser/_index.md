@@ -24,7 +24,7 @@ Defines types of expression tokens.
 Implements an expression parser class.
 
 #### [ExpressionToken](expression_token)
-Defines an expression token holder
+Defines an expression token holder.
 
 
 </div>

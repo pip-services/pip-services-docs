@@ -23,7 +23,7 @@ other parameters are passed to the action itself.
 - **credentials**:    
     - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **access_id**: AWS access/client id
-    - **access_key**: AWS access/client id
+    - **access_key**: AWS access/client key
 - **options**:
     - **connect_timeout**: (optional) connection timeout in milliseconds (default: 10 sec)
 

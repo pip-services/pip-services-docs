@@ -32,7 +32,7 @@ The CommandableLambdaFunction class allows you to create AWS Lambda functions th
 - **credentials**:
     - **store_key**: (optional) key to retrieve the credentials from ICredentialStore
     - **access_id**: AWS access/client id
-    - **access_key**: AWS access/client id
+    - **access_key**: AWS access/client key
 
 
 #### References

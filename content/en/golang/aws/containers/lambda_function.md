@@ -29,7 +29,7 @@ The LambdaFunction class allows you to create an abstract AWS Lambda function th
 - **credentials**:
     - **store_key**: (optional) key to retrieve the credentials from ICredentialStore
     - **access_id**: AWS access/client id
-    - **access_key**: AWS access/client id
+    - **access_key**: AWS access/client key
 
 #### References
 - **\*:logger:\*:\*:1.0**: (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.

@@ -18,14 +18,14 @@ Constructs this class with default parameters.
 > NewExpressionCalculator() [*ExpressionCalculator]()
 
 #### ExpressionCalculatorFromExpression
-Constructs this class and a assigns expression string.
+Constructs this class and assigns expression string.
 
 > ExpressionCalculatorFromExpression(expression string) ([*ExpressionCalculator](), error)
 
 - **expression**: string - expression string.
 
 #### ExpressionCalculatorFromExpression
-Constructs this class and a assigns token values.
+Constructs this class and assigns token values.
 
 > ExpressionCalculatorFromTokens(originalTokens []*tokenizers.Token) [*ExpressionCalculator]()
 
@@ -65,9 +65,9 @@ Expression string.
 
 #### InitialTokens
 List of original expression tokens.
-> (c *ExpressionCalculator) InitialTokens() [[]*ExpressionToken](../parsers/expression_token)
+> (c *ExpressionCalculator) InitialTokens() [[]*ExpressionToken](../parser/expression_token)
 
-- **returns**: [[]*ExpressionToken](../parsers/expression_token) - list of original expression tokens.
+- **returns**: [[]*ExpressionToken](../parser/expression_token) - list of original expression tokens.
 
 #### OriginalTokens
 List of expression tokens.
@@ -78,9 +78,9 @@ List of expression tokens.
 
 #### ResultTokens
 List of processed expression tokens.
-> (c *ExpressionCalculator) ResultTokens() [[]*ExpressionToken](../parsers/expression_token)
+> (c *ExpressionCalculator) ResultTokens() [[]*ExpressionToken](../parser/expression_token)
 
-- **returns**: [[]*ExpressionToken](../parsers/expression_token) - list of processed expression tokens.
+- **returns**: [[]*ExpressionToken](../parser/expression_token) - list of processed expression tokens.
 
 #### VariantOperations
 Gets the manager for operations on variant values.
@@ -102,7 +102,7 @@ Gets the expression string.
 > (c *ExpressionCalculator) SetExpression(value string) error
 
 - **value**: string - expression string.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### SetOriginalTokens

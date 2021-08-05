@@ -14,7 +14,7 @@ The CsvQuoteState implements a quote string state object for CSV streams.
 ### Constructors
 
 #### NewCsvQuoteState
-Create new instance
+Creates new instance.
 
 > NewCsvQuoteState() [*CsvQuoteState]()
 

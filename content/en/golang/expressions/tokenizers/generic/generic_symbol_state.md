@@ -23,7 +23,7 @@ The GenericSymbolState class allows you to add multi-character symbols and obtai
 ### Constructors
 
 #### NewGenericSymbolState
-Create new instance of the component
+Creates new instance of the component
 > NewGenericSymbolState() [*GenericSymbolState]()
 
 

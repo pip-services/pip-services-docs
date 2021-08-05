@@ -39,7 +39,7 @@ Gets the original tokens
 
 > (c [*ExpressionParser]()) OriginalTokens() [[]*Token](../../../tokenizers/token)
 
-- **returns**: [[]*Token](../../../tokenizers/token) - the token list
+- **returns**: [[]*Token](../../../tokenizers/token) - token list
 
 
 #### ParseString
@@ -48,14 +48,14 @@ Sets a new expression string and parses it into internal byte code.
 > (c [*ExpressionParser]()) ParseString(expression string) error
 
 - **expression**: string - new expression string.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### ParseTokens
 Parses a given token.
 > (c [*ExpressionParser]()) ParseTokens(tokens [[]*Token](../../../tokenizers/token)) error
 
 - **tokens**: [[]*Token](../../../tokenizers/token) - token to be parsed.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### ResultTokens
 Gets the list of parsed expression tokens.
@@ -70,7 +70,7 @@ Sets the expression string.
 > (c [*ExpressionParser]()) SetExpression(value string) error
 
 - **value** string - expression string.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### SetOriginalTokens
@@ -79,7 +79,7 @@ Sets the original tokens
 > (c [*ExpressionParser]()) SetOriginalTokens(value [[]*Token](../../../tokenizers/token)) error
 
 - **value**: [[]*Token](../../../tokenizers/token) - the token list
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### VariableNames

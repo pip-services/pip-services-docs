@@ -17,7 +17,7 @@ The Variable class allows you to implement a variable holder object.
 Constructs a new empty variable.
 > EmptyVariable(name string) [*Variant](../../../variants/variant)
 
-- **name**: string - The name of this variable.
+- **name**: string - name of this variable.
 
 #### NewVariable
 Constructs this variable with name and value.
@@ -33,7 +33,7 @@ Constructs this variable with name and value.
 Name of the variable
 > (c [*Variable]()) Name() string
 
-- **returns**: string - variable name.
+- **returns**: string - variable's name.
 
 #### Value
 Gets the variable's value.

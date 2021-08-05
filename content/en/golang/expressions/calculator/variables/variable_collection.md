@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The VariableCollection allows you to implement a list of variables.
+The VariableCollection class allows you to implement a list of variables.
 
 
 ### Methods
@@ -37,12 +37,12 @@ Clears all stored variables (assigns nil values).
 
 
 #### FindByName
-Clears all stored variables (assigns nil values).
+Finds a variable by its name.
 
 > (c [*VariableCollection]()) FindByName(name string) IVariable
 
-- **name**: string - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Variable or *nil* if function was not found.
+- **name**: string - variable name to be found.
+- **returns**: [IVariable](../ivariable) - Variable or *nil* if the variable was not found.
 
 
 #### FindIndexByName

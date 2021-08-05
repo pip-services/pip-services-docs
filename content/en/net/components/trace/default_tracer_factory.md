@@ -22,5 +22,4 @@ Creates a new instance of the factory.
 ### See also
 - #### [Factory](../../build/factory)
 - #### [NullTracer](../null_tracer)
-- #### [ConsoleTracer](../console_tracer)
 - #### [CompositeTracer](../composite_tracer)

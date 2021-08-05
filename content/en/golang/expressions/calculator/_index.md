@@ -12,6 +12,9 @@ description: >
 
 ### Sub-Packages
 
+#### [Errors](errors)
+This sub-package defines expression and syntax errors
+
 #### [Functions](functions)
 This sub-package provides interfaces and functions used to create lists of functions and delegates.
 
@@ -26,12 +29,6 @@ This sub-package contains interfaces and clases used to create variables and col
 
 <br>
 
-### Constants
- 
-#### [SyntaxErrorCode](errors/syntax_error_code/)
-General syntax errors.
-
-<br>
 
 ### Types
 
@@ -40,12 +37,6 @@ Implements a stack of Variant values.
 
 #### [ExpressionCalculator](expression_calculator)
 Implements an expression calculator.
-
-#### [ExpressionException](expression_exception)
-Exception that can be thrown by Expression Calculator.
-
-#### [SyntaxException](syntax_exception)
-Exception that can be thrown by ExpressionParser.
 
 
 </div>

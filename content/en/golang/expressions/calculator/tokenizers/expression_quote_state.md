@@ -28,17 +28,17 @@ Decodes a string value.
 
 > (c [*ExpressionQuoteState]()) DecodeString(value string, quoteSymbol rune) string
 
-- **value**: string - A string value to be decoded.
-- **quoteSymbol**: rune - A string quote character.
-- **returns**: string - An decoded string.
+- **value**: string - string value to be decoded.
+- **quoteSymbol**: rune - string quote character.
+- **returns**: string - decoded string.
 
 #### EncodeString
 Encodes a string value.
 > (c [*ExpressionQuoteState]()) EncodeString(value string, quoteSymbol rune) string
 
-- **value**: string - A string value to be encoded.
-- **quoteSymbol**: rune - A string quote character.
-- **returns**: string - An encoded string.
+- **value**: string - string value to be encoded.
+- **quoteSymbol**: rune - string quote character.
+- **returns**: string - encoded string.
 
 
 #### NextToken

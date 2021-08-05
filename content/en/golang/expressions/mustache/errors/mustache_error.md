@@ -4,17 +4,17 @@ title: "MustacheError"
 linkTitle: "MustacheError"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
 description: > 
-    Exception that can be thrown by a Mustache template.
+    Error that can be thrown by a Mustache template.
 ---
 
 ### Description
 
-The MustacheException class defines an exception that can be thrown by a Mustache template.
+The MustacheError class defines an error that can be thrown by a Mustache template.
 
 ### Constructors
 
 #### NewMustacheError
-Creates a new instance of the MustacheException class.
+Creates a new instance of this class.
 
 > NewMustacheError(correlationId, code, message string, line, column int) [*ApplicationError](../../../commons/errors/application_error)
 

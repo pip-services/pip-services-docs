@@ -84,4 +84,4 @@ Puts one character back into the stream.
 Pushes the specified number of characters to the top of the stream.
 > (c [*StringScanner]()) UnreadMany(count int)
 
-- **count**: int - number of characcted to be pushed back.
+- **count**: int - number of characters to be pushed back.

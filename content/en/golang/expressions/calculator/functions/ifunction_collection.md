@@ -18,7 +18,7 @@ Adds a new function to the collection.
 
 > (c [*FunctionCollection]()) Add(function [IFunction](../ifunction))
 
-- **func**: [IFunction](../ifunction) - an array with function parameters.
+- **func**: [IFunction](../ifunction) - array with function parameters.
 
 
 #### Clear
@@ -33,22 +33,22 @@ Finds a function in the list by it's name.
 > (c [*FunctionCollection]()) FindByName(name string) [IFunction](../ifunction)
 
 - **name**: string - name of the function to be found.
-- **returns**: [IFunction](../ifunction) - function or *nil* if function was not found.
+- **returns**: [IFunction](../ifunction) - function or *nil* if the function was not found.
 
 #### FindIndexByName
-Finds function index in the list by it's name. 
+Finds a function's index in the list by it's name. 
 
 > (c [*FunctionCollection]()) FindIndexByName(name string) int
 
 - **name**: string - name of the function to be found.
-- **returns**: int - function index in the list or *-1* if function was not found.
+- **returns**: int - function's index in the list or *-1* if function was not found.
 
 #### Get
 Gets a function by its index.
 
 > (c [*FunctionCollection]()) Get(index int) [IFunction](../ifunction)
 
-- **index**: int - function index.
+- **index**: int - function's index.
 - **returns**: [IFunction](../ifunction) - retrieved function.
 
 #### GetAll

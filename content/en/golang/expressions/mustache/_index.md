@@ -16,7 +16,7 @@ description: >
 Contains constants and classes used to create Mustache parsers.
 
 #### [Tokenizers](tokenizers)
-Contains classes used to create Mustache tokenizers
+Contains classes used to create Mustache tokenizers.
 
 <br>
 

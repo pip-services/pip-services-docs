@@ -30,17 +30,17 @@ Decodes a string value.
 
 > decode_string(value: str, quote_symbol: int): str
 
-- **value**: str - A string value to be decoded.
-- **quote_symbol**: int - A string quote character.
-- **returns**: str - An decoded string.
+- **value**: str - string value to be decoded.
+- **quote_symbol**: int - string quote character.
+- **returns**: str - decoded string.
 
 #### encode_string
 Encodes a string value.
 > encode_string(value: str, quote_symbol: int): str
 
-- **value**: str - A string value to be encoded.
-- **quote_symbol**: int - A string quote character.
-- **returns**: str - An encoded string.
+- **value**: str - string value to be encoded.
+- **quote_symbol**: int - string quote character.
+- **returns**: str - encoded string.
 
 
 

@@ -4,7 +4,7 @@ title: "ISymbolState"
 linkTitle: "ISymbolState"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-expressions-python"
 description: > 
-    Defines an interface for tokenizer state that processes delimiters.
+    Defines an interface for a tokenizer state that processes delimiters.
 ---
 
 **Implements**: [ITokenizerState](../itokenizer_state)

@@ -50,7 +50,7 @@ to the action parameters.
 > call_command(cmd: str, correlation_id: Optional[str], params: dict): Any
 
 - **cmd**: str - action name
-- **correlation_id**: correlation_id: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **correlation_id**: correlation_id: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **params**: dict - command parameters.
 - **returns**: Any - action result.
 

@@ -22,7 +22,7 @@ Decodes a string value.
 
 - **value**: str - string value to be decoded.
 - **quote_symbol**: int - string quote character.
-- **returns**: str - An decoded string.
+- **returns**: str - decoded string.
 
 
 #### encode_string

@@ -15,11 +15,11 @@ description: >
 #### [Functions](functions)
 This sub-package provides interfaces and functions used to create lists of functions and delegates.
 
-#### [Parsers](parsers)
+#### [Parsers](parser)
 This sub-package contains classes used to create expression parsers and expression token holders.
 
 #### [Tokenizers](tokenizers)
-This sub-package contains classes used to create expression specific state object and tokenizers for lexical analysis.
+This sub-package contains classes used to create expression specific state objects and tokenizers for lexical analysis.
 
 #### [Variables](variables)
 This sub-package contains interfaces and clases used to create variables and collections of variables.

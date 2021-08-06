@@ -38,12 +38,12 @@ Gets the original tokens
 
 > original_tokens(): List[[Token](../../../tokenizers/token)]
 
-- **returns**: List[[Token](../../../tokenizers/token)] - the token list
+- **returns**: List[[Token](../../../tokenizers/token)] - token list
 
 Sets the original tokens
 > original_tokens(value: List[[Token](../../../tokenizers/token)])
 
-- **value**: List[[Token](../../../tokenizers/token)] - the token list
+- **value**: List[[Token](../../../tokenizers/token)] - token list
 
 #### result_tokens
 List of parsed expression tokens.

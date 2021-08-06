@@ -49,7 +49,7 @@ Finds variable in the list by it's name.
 > findByName(name: str): [IVariable](../ivariable)
 
 - **name**: str - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Variable or *None* if function was not found.
+- **returns**: [IVariable](../ivariable) - Variable or *None* if the variable was not found.
 
 #### find_index_by_name
 Finds a variable index in the list by the variable's name. 

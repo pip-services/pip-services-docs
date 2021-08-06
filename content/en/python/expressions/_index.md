@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-expressions-pytho
 no_list: true
 weight: 30
 description: > 
-    Tokenizers, parsers and expression calculators for Pip.Services in Python
+    Tokenizers, parsers and expression calculators for Pip.Services in Python. 
     
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
     It provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
@@ -29,7 +29,7 @@ Install the Python package as
 pip install pip_services3_expressions
 ```
 
-The example below shows how to use expression calculator to dynamically
+The example below shows how to use the expression calculator to dynamically
 calculate user-defined expressions.
 
 ```python
@@ -52,7 +52,7 @@ print('The result of the expression is ' + result.as_string)
 # ...
 ```
 
-This is an example to process mustache templates.
+The following is an example on how to process mustache templates.
 ```python
 mustache = MustacheTemplate()
 mustache.template = "Hello, {{{NAME}}}{{#ESCLAMATION}}!{{/ESCLAMATION}}{{#unless ESCLAMATION}}.{{/unless}}"

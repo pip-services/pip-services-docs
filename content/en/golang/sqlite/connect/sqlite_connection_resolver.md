@@ -35,7 +35,7 @@ The SqliteConnectionResolver class is used to resolve SQLite connections and cre
 ### Constructors
 
 #### NewSqliteConnectionResolver
-NewSqliteConnectionResolver creates new connection resolver
+Creates a new instance of this class.
 
 > NewSqliteConnectionResolver() [*SqliteConnectionResolver]()
 

@@ -49,8 +49,8 @@ Creates a new instance of the persistence component.
 
 > InheritSqlitePersistence(overrides ISqlitePersistenceOverrides, proto reflect.Type, tableName string) [*SqlitePersistence]()
 
-- **overrides**: ISqlitePersistenceOverrides - a references to child class that overrides virtual methods
-- **proto**: reflect.Type -  TODO: add description
+- **overrides**: ISqlitePersistenceOverrides - references to child class that overrides virtual methods
+- **proto**: reflect.Type -  type of object
 - **tableName**: string - (optional) a table name.
 
 

@@ -26,7 +26,7 @@ Contains classes used to create Mustache tokenizers
 Exception that can be thrown by a Mustache template.
 
 #### [MustacheTemplate](mustache_template)
-Implements an Mustache template.
+Implements a Mustache template.
 
 
 </div>

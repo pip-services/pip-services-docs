@@ -10,6 +10,9 @@ description: >
 **Implements:** [LambdaClient](../lambda_client)
 
 ### Description
+The CommandableLambdaClient class allows you to create an abstract client that calls commandable AWS Lambda Functions.
+
+**Important points**
 
 Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable).
 Each command is exposed as an action determined by the "cmd" parameter.

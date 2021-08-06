@@ -21,7 +21,7 @@ Constructs this object with default parameters.
 ### Properties
 
 #### end_of_line
-Separator for rows in CSV stream.
+Separator for rows in a CSV stream.
 
 > end_of_line(): str
 
@@ -32,7 +32,7 @@ Separator for rows in CSV stream.
 - **value**: str - separator for rows.
 
 #### field_separators
-Separator for fields in CSV stream.
+Separator for fields in a CSV stream.
 
 > field_separators(): List[int]
 

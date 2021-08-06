@@ -4,17 +4,17 @@ title: "LambdaService"
 linkTitle: "LambdaService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-aws-python"
 description: >
-    Abstract service that receives remove calls via the AWS Lambda protocol.
+    Abstract service that receives remote calls via the AWS Lambda protocol.
 ---
 
 **Implements**: [ILambdaService](../ilambda_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
-The LambdaService class allows you to create abstract services that receive remove calls via the AWS Lambda protocol.
+The LambdaService class allows you to create abstract services that receive remote calls via the AWS Lambda protocol.
 
 **Important points**
 
-This service is intended to work inside LambdaFunction container that exploses registered actions externally.
+This service is intended to work inside a LambdaFunction container that exploses registered actions externally.
 
 
 #### Configuration parameters
@@ -63,7 +63,7 @@ Tracer.
 #### act
 Calls registered action in this lambda function.
 The "cmd" parameter in the action parameters determines
-the action shall be called.
+the action that shall be called.
 
 - This method shall only be used in testing.
 
@@ -73,7 +73,7 @@ the action shall be called.
 - **returns**: Any - results
 
 #### _apply_interceptors
-Applies given action to the interseptors
+Applies given action to the interceptors
 
 > _apply_interceptors(action: Callable[[dict], Any]): Callable[[dict], Any]
 
@@ -98,7 +98,7 @@ Closes a component and frees used resources.
 
 
 #### configure
-Configures a component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > configure(config: [ConfigParams](../../../commons/config/config_params))
 
@@ -186,7 +186,7 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component's dependencies.
 
 
 

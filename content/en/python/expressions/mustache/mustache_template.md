@@ -26,7 +26,7 @@ Gets the flag to turn on auto-creation of variables for the Mustache template.
 
 > auto_variables(): bool
 
-- **returns**: bool - flag to turn on auto creation of variables.
+- **returns**: bool - flag to turn on auto-creation of variables.
 
 Sets the flag to turn on auto creation of variables for the Mustache template.
 
@@ -80,7 +80,7 @@ Populates the specified variables list with variables obtained from a parsed Mus
 
 > create_variables(variables: Any)
 
-- **variables**: Any - List of variables to be populated.
+- **variables**: Any - list of variables to be populated.
 
 #### evaluate
 Evaluates this Mustache template using default variables.

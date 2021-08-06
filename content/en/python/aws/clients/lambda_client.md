@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-When making calls, the "cmd" parameter determines which what action shall be called, while the 
+When making calls, the "cmd" parameter determines what action shall be called, while the 
 other parameters are passed to the action itself.
 
 

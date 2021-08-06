@@ -233,7 +233,6 @@ class MyGrpcService(GrpcService, my_data_pb2_grpc.MyDataServicer):
         self._register_interceptor(self.__number_of_calls_interceptor)
         self._register_method("get_mydata", None, method)
         
-        self._register_service(self)
         ...
 
 service = MyGrpcService()

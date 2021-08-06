@@ -183,7 +183,7 @@ Validates this connection parameters
 Retrieves AwsConnectionParams from configuration parameters.
 The values are retrieved from "connection" and "credential" sections.
 
-See [mergeConfigs](#mergeconfigs)
+See [mergeConfigs](#merge_configs)
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [AwsConnectionParams]()
 

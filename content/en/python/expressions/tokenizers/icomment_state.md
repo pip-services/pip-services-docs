@@ -4,11 +4,11 @@ title: "ICommentState"
 linkTitle: "ICommentState"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-expressions-python"
 description: > 
-    Defines an interface for tokenizer states that process comments.
+    Defines an interface for tokenizer states that processes comments.
 ---
 
 **Implements**: [ITokenizerState](../itokenizer_state)
 
 ### Description
 
-The ICommentState interface is used for tokenizer states that process comments.
+The ICommentState interface is used for tokenizer states that processes comments.

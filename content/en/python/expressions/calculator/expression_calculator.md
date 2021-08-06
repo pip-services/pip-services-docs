@@ -11,7 +11,7 @@ description: >
 The ExpressionCalculator class allows you to create an expression calculator.
 
 ### Constructors
-Constructs this class and a assigns expression string.
+Constructs this class and assigns a expression string.
 
 > ExpressionCalculator(expression: str = None)
 
@@ -61,7 +61,7 @@ Expression string.
 List of original expression tokens.
 > initial_tokens(): List[[ExpressionToken](../parsers/expression_token)]
 
-- **returns**: List[[ExpressionToken](../parsers/expression_token)] - list of original expression tokens.
+- **returns**: List[[ExpressionToken](../parser/expression_token)] - list of original expression tokens.
 
 #### original_tokens
 List of expression tokens.
@@ -77,9 +77,9 @@ List of expression tokens.
 
 #### result_tokens
 List of processed expression tokens.
-> result_tokens(): List[[ExpressionToken](../parsers/expression_token)]
+> result_tokens(): List[[ExpressionToken](../parser/expression_token)]
 
-- **returns**: List[[ExpressionToken](../parsers/expression_token)] - list of processed expression tokens.
+- **returns**: List[[ExpressionToken](../parser/expression_token)] - list of processed expression tokens.
 
 #### variant_operations
 Gets the manager for operations on variant values.

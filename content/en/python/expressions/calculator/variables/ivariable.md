@@ -24,10 +24,10 @@ The variable name.
 Gets the variable value.
 > value(): [Variant](../../../variants/variant)
 
-- **returns**: str - variable name.
+- **returns**: str - variable value.
 
 Sets the variable value.
 > value(value: [Variant](../../../variants/variant))
 
-- **value**: str - variable name.
+- **value**: str - variable's name.
 </span>

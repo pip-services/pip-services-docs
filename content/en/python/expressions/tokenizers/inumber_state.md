@@ -4,7 +4,7 @@ title: "INumberState"
 linkTitle: "INumberState"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-expressions-python"
 description: > 
-    Defines interface for tokenizer state that processes numbers - Integers, Floats, HexDec.
+    Defines an interface for a tokenizer state that processes numbers - Integers, Floats, HexDec.
 ---
 
 **Implements**: [ITokenizerState](../itokenizer_state)

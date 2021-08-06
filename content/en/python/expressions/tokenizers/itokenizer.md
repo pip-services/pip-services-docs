@@ -45,7 +45,7 @@ From    To        State
 
 
 #### comment_state
-A token state to process comments.
+Token state to process comments.
 > **comment_state**: [ICommentState](../icomment_state)
 
 
@@ -60,16 +60,16 @@ Merges whitespaces.
 
 
 #### number_state
-A token state to process numbers.
+Token state to process numbers.
 > **number_state**: [INumberState](../inumber_state)
 
 
 #### quote_state
-A token state to process quoted strings.
+Token state to process quoted strings.
 > **quote_state**: [IQuoteState](../iquote_state)
 
 #### scanner
-The stream scanner to tokenize.
+Stream scanner to tokenize.
 > **scanner**: [IScanner](../../io/iscanner)
 
 #### skip_comments
@@ -92,7 +92,7 @@ Skips whitespaces.
 
 
 #### symbol_state
-A token state to process symbols (single like "=" or muti-character like "<>")
+Token state to process symbols (single like "=" or muti-character like "<>")
 > **symbol_state**: [ISymbolState](../isymbol_state)
 
 #### unify_numbers
@@ -101,12 +101,12 @@ Unifies numbers: "Integers" and "Floats" makes just "Numbers".
 
 
 #### whitespace_state
-A token state to process white space delimiters.
+Token state to process white space delimiters.
 > **whitespace_state**: [IWhitespaceState](../iwhitespace_state)
 
 
 #### word_state
-A token state to process words or indentifiers.
+Token state to process words or indentifiers.
 > **word_state**: [IWordState](../iword_state)
 
 

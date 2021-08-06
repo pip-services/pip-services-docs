@@ -5,7 +5,7 @@ linkTitle: "AwsConnectionResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-aws-python"
 description: >
     Helper class used to retrieve AWS connection and credential parameters,
-    validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
+    validate them and compose an [AwsConnectionParams](../aws_connection_params) value.
  
 ---
 
@@ -13,7 +13,7 @@ description: >
 
 ### Description
 
-The AwsConnectionResolver class allows you to retrieve AWS connection and credential parameters, validate them and compose a [AwsConnectionParams](../aws_connection_params) value.
+The AwsConnectionResolver class allows you to retrieve AWS connection and credential parameters, validate them and compose an [AwsConnectionParams](../aws_connection_params) value.
 
 
 #### Configuration parameters

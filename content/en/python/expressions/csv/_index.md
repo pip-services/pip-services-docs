@@ -29,7 +29,7 @@ Implements a symbol state to tokenize delimiters in CSV streams.
 Implements a tokenizer class for CSV files.
 
 #### [CsvWordState](csv_word_state)
-Implements a word state to tokenize CSV stream.
+Implements a word state to tokenize  a CSV stream.
 
 
 </div>

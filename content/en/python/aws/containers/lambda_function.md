@@ -17,7 +17,7 @@ The LambdaFunction class allows you to create an abstract AWS Lambda function th
 
 - When handling calls the "cmd" parameter determines what action shall be called, while the other parameters are passed to the action itself.
 
-- Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by *CONFIG_PATH* environment variable.
+- Container configuration for this Lambda function is stored in *"./config/config.yml"* file. But this path can be overriden by the *CONFIG_PATH* environment variable.
 
 
 #### References
@@ -31,7 +31,7 @@ Creates a new instance of this lambda function.
 
 > LambdaFunction(name: str, description: str = None)
 
-- **name**: str - (optional) a container name (accessible via [ContextInfo](../../../components/info/context_info)).
+- **name**: str - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info)).
 - **description**: str - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info)).
 
 ### Fields
@@ -43,7 +43,7 @@ Map containing registered actions.
 > **_actions**: Dict[str, Any]
 
 #### _config_path
-Default path to config file.
+Default path to the config file.
 > **_config_path**: str = './config/config.yml'
 
 #### _counters

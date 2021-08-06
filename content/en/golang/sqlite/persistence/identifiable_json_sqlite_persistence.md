@@ -46,7 +46,7 @@ Creates a new instance of the persistence component.
 > InheritIdentifiableJsonSqlitePersistence(overrides ISqlitePersistenceOverrides, proto reflect.Type, tableName string) [*IdentifiableJsonSqlitePersistence]()
 
 - **overrides**: ISqlitePersistenceOverrides - references to child class that overrides virtual methods
-- **proto**: reflect.Type - TODO: add description
+- **proto**: reflect.Type - type of object
 - **tableName**: string - (optional) a table name.
 
 

@@ -46,12 +46,12 @@ Clears all stored variables (assigns None values).
 
 
 #### find_by_name
-Finds variable in the list by it's name.
+Finds a variable in the list by it's name.
 
 > find_by_name(name: str): [IVariable](../ivariable)
 
-- **name**: str - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Variable or *None* if function was not found.
+- **name**: str - variable name to be found.
+- **returns**: [IVariable](../ivariable) - Variable or *None* if the variale was not found.
 
 #### find_index_by_name
 Finds a variable's index in the list by it's name. 

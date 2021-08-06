@@ -16,45 +16,45 @@ The IFunctionCollection class allows you to create a list of functions.
 #### Add
 Adds a new function to the collection.
 
-> (c [*FunctionCollection]()) Add(function [IFunction](../ifunction))
+> (c [*FunctionCollection](../function_collection)) Add(function [IFunction](../ifunction))
 
-- **func**: [IFunction](../ifunction) - an array with function parameters.
+- **func**: [IFunction](../ifunction) - array with function parameters.
 
 
 #### Clear
 Clears the collection.
 
-> (c [*FunctionCollection]()) Clear()
+> (c [*FunctionCollection](../function_collection)) Clear()
 
 
 #### FindByName
 Finds a function in the list by it's name.
 
-> (c [*FunctionCollection]()) FindByName(name string) [IFunction](../ifunction)
+> (c [*FunctionCollection](../function_collection)) FindByName(name string) [IFunction](../ifunction)
 
 - **name**: string - name of the function to be found.
-- **returns**: [IFunction](../ifunction) - function or *nil* if function was not found.
+- **returns**: [IFunction](../ifunction) - function or *nil* if the function was not found.
 
 #### FindIndexByName
-Finds function index in the list by it's name. 
+Finds a function's index in the list by it's name. 
 
-> (c [*FunctionCollection]()) FindIndexByName(name string) int
+> (c [*FunctionCollection](../function_collection)) FindIndexByName(name string) int
 
 - **name**: string - name of the function to be found.
-- **returns**: int - function index in the list or *-1* if function was not found.
+- **returns**: int - function's index in the list or *-1* if the function was not found.
 
 #### Get
 Gets a function by its index.
 
-> (c [*FunctionCollection]()) Get(index int) [IFunction](../ifunction)
+> (c [*FunctionCollection](../function_collection)) Get(index int) [IFunction](../ifunction)
 
-- **index**: int - function index.
+- **index**: int - function's index.
 - **returns**: [IFunction](../ifunction) - retrieved function.
 
 #### GetAll
 Gets all functions stores in the collection.
 
-> (c [*FunctionCollection]()) GetAll() [[]IFunction](../ifunction)
+> (c [*FunctionCollection](../function_collection)) GetAll() [[]IFunction](../ifunction)
 
 - **returns**: [[]IFunction](../ifunction) - list with functions.
 
@@ -67,12 +67,12 @@ Gets the number of functions stored in the collection.
 
 #### remove
 Removes a function by its index.
-> (c [*FunctionCollection]()) Remove(index int)
+> (c [*FunctionCollection](../function_collection)) Remove(index int)
 
 - **index**: int - index of the function to be removed.
 
 #### RemoveByName
 Removes a function by its name.
-> (c [*FunctionCollection]()) RemoveByName(name string)
+> (c [*FunctionCollection](../function_collection)) RemoveByName(name string)
 
 - **name**: string - name of the function to be removed.

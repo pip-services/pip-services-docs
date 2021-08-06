@@ -4,7 +4,7 @@ title: "IQuoteState"
 linkTitle: "IQuoteState"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
 description: > 
-    Defines an interface for tokenizer state that processes quoted strings.
+    Defines an interface for a tokenizer state that processes quoted strings.
 ---
 
 **Implements**: [ITokenizerState](../itokenizer_state)

@@ -14,7 +14,7 @@ description: >
 
 The module contains the following packages:
 - [**Build**](build) - factory to create SQLite persistence components. 
-- [**Connect**](connect) - connection component to configure SQLite connection to database.
+- [**Connect**](connect) - connection component to configure SQLite connection to a database.
 - [**Persistence**](persistence) - abstract persistence components to perform basic CRUD operations.
 
 

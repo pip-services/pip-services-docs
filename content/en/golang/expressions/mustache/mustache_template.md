@@ -14,7 +14,7 @@ The MustacheTemplate class allows you to implement a Mustache template class.
 ### Constructors
 
 #### NewMustacheTemplate
-Creates a new instance of mustache template
+Creates a new instance of a mustache template.
 
 > NewMustacheTemplate() [*MustacheTemplate]()
 
@@ -45,7 +45,7 @@ Sets the flag to turn on auto creation of variables for the Mustache template.
 - **value**: bool - flag to turn on auto-creation of variables.
 
 #### DefaultVariables
-Sets the list with default variables.
+ Gets the list with default variables.
 
 > (c [*MustacheTemplate]()) DefaultVariables() map[string]string
 
@@ -65,7 +65,7 @@ List of original mustache tokens.
 - **returns**: [[]*MustacheToken](../parsers/mustache_token) - Mustache tokens
 
 #### OriginalTokens
-Gets Lists the original tokens
+Lists the original tokens
 > (c [*MustacheTemplate]()) OriginalTokens() [[]*Token[]](../../tokenizers/token)
 
 - **returns**: [[]*Token[]](../../tokenizers/token) - original tokens

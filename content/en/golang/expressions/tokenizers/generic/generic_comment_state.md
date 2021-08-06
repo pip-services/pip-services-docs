@@ -14,7 +14,7 @@ The GenericCommentState class allows you to create a CommentState object that re
 ### Constructors
 
 #### NewGenericCommentState
-Create new instance of the component
+Creates new instance of the component
 > NewGenericCommentState() [*GenericCommentState]()
 
 ### Methods

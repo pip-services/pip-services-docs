@@ -16,10 +16,10 @@ The AbstractVariantOperations class allows you to implement abstract variant ope
 ### Constructors
 
 #### InheritAbstractVariantOperations
-TODO: add description
+Implements an abstractd variant operations manager object.
 > InheritAbstractVariantOperations(overrides IVariantOperationsOverrides) [*AbstractVariantOperations]()
 
-- **overrides**: IVariantOperationsOverrides - TODO: add description
+- **overrides**: IVariantOperationsOverrides - Variant operation overrides
 
 ### Methods
 
@@ -42,7 +42,7 @@ Performs the AND operation for two variants.
 - **returns**: ([*Variant](../variant), error) - result variant object.
 
 #### Convert
-Converts variant to specified type.
+Converts a variant to a specified type.
 
 > Convert(value [*Variant](../variant), newType int) ([*Variant](../variant), error)
 
@@ -227,7 +227,7 @@ Performs the '-' operation for two variants.
 
 
 #### typeToString
-Converts variant type to string representation.
+Converts a variant type to string representation.
 
 > typeToString(value int) string
 

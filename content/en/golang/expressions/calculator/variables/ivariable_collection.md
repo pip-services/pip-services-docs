@@ -35,12 +35,12 @@ Clears all stored variables (assigns nil values).
 
 
 #### FindByName
-Finds variable in the list by it's name.
+Finds a variable in the list by it's name.
 
 > FindByName(name string) [IVariable](../ivariable)
 
-- **name**: string - The variable name to be found.
-- **returns**: [IVariable](../ivariable) - Variable or *null* if function was not found.
+- **name**: string - variable name to be found.
+- **returns**: [IVariable](../ivariable) - Variable or *null* if the variable was not found.
 
 
 #### FindIndexByName
@@ -57,7 +57,7 @@ Gets a variable by its index.
 
 > Get(index int) [IVariable](../ivariable)
 
-- **index**: string - variable index.
+- **index**: string - variable's index.
 - **returns**: [IVariable](../ivariable) - retrieved variable.
 
 #### getAll

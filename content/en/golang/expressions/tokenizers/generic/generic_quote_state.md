@@ -20,7 +20,7 @@ Important points
 ### Constructors
 
 #### NewGenericQuoteState
-Create new instance of the component
+Creates new instance of the component
 > NewGenericQuoteState() [*GenericQuoteState]()
 
 ### Methods

@@ -29,4 +29,4 @@ The variable value.
 Sets the variable value.
 > SetValue(value [*Variant](../../../variants/variant))
 
-- **value**: [*Variant](../../../variants/variant) - the variable value.
+- **value**: [*Variant](../../../variants/variant) - variable value.

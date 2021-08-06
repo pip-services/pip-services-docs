@@ -15,19 +15,19 @@ The SyntaxErrorCode class defines general syntax errors.
 
 The codes are as follows:
 
-The unknown
-- **ErrUnknown** = "UNKNOWN"
-The internal error
-- **ErrInternal** = "INTERNAL"
-The unexpected end.
-- **ErrUnexpectedEnd** = "UNEXPECTED_END"
-The error near
-- **ErrErrorNear** = "ERROR_NEAR"
-The error at
-- **ErrErrorAt** = "ERROR_AT"
-The unknown symbol
-- **ErrUnknownSymbol** = "UNKNOWN_SYMBOL"
-The missed close parenthesis
-- **ErrMissedCloseParenthesis** = "MISSED_CLOSE_PARENTHESIS"
-The missed close square bracket
+Unknown     
+- **ErrUnknown** = "UNKNOWN"   
+Internal error
+- **ErrInternal** = "INTERNAL"    
+Unexpected end.
+- **ErrUnexpectedEnd** = "UNEXPECTED_END"    
+Error near
+- **ErrErrorNear** = "ERROR_NEAR"   
+Error at
+- **ErrErrorAt** = "ERROR_AT"     
+Unknown symbol
+- **ErrUnknownSymbol** = "UNKNOWN_SYMBOL"    
+Missed close parenthesis
+- **ErrMissedCloseParenthesis** = "MISSED_CLOSE_PARENTHESIS"    
+Missed close square bracket
 - **ErrMissedCloseSquareBracket** = "MISSED_CLOSE_SQUARE_BRACKET"

@@ -11,7 +11,7 @@ description: >
 
 The ITokenizer interface defines the main elements of a tokenizer.
 
-Important points
+**Important points**
 
 - A tokenizer divides a string into tokens. This class is highly customizable with regard to exactly how this division occurs, but it also has defaults that are suitable for many languages. This class assumes that the character values read from the string lie in the range 0-255. For example, the Unicode value of a capital A is 65, so *String.fromCharCode(65)* prints out a capital A.
 
@@ -43,28 +43,28 @@ From    To        State
 ### Properties
 
 #### CommentState
-A token state to process comments.
+Token state to process comments.
 > CommentState() [ICommentState](../icomment_state)
 
-- **returns**: [ICommentState](../icomment_state) - a token state to process comments.
+- **returns**: [ICommentState](../icomment_state) - token state to process comments.
 
 #### DecodeStrings
-Gets decodes quoted strings flag.
+Gets the decode quoted strings flag.
 > DecodeStrings() bool
 - **returns**: bool - decodes quoted strings flag.
 
 #### SetDecodeStrings
-Sets decodes quoted strings flag.
+Sets the decode quoted strings flag.
 > SetDecodeStrings(value bool)
 - **value**: bool - decodes quoted strings flag.
 
 #### MergeWhitespaces
-Gets merges whitespaces flag.
+Gets the merge whitespaces flag.
 > MergeWhitespaces() bool
 - **returns**: bool - whitespaces flag.
 
 #### SetMergeWhitespaces
-Sets merges whitespaces flag.
+Sets the merge whitespaces flag.
 > SetMergeWhitespaces(value bool)
 - **value**: bool - whitespaces flag.
 
@@ -83,52 +83,52 @@ Gets a token state to process quoted strings.
 #### Reader
 Gets the stream scanner to tokenize.
 > Reader() [IScanner](../../io/iscanner)
-- **returns**: [IScanner](../../io/iscanner) - the stream scanner
+- **returns**: [IScanner](../../io/iscanner) - stream scanner
 
 #### SetReader
 Sets the stream scanner to tokenize.
 > SetReader(scanner [IScanner](../../io/iscanner))
-- **scanner**: [IScanner](../../io/iscanner) - the stream scanner
+- **scanner**: [IScanner](../../io/iscanner) - stream scanner
 
 #### SkipComments
-Gets skip comments flag.
+Gets the skip comments flag.
 > SkipComments() bool
 - **returns**: bool - skip comments flag.
 
 
 #### SetSkipComments
-Sets skip comments flag.
+Sets the skip comments flag.
 > SetSkipComments(value bool)
 - **value**: bool - skip comments flag.
 
 
 #### SkipEof
-Gets skip End-Of-File token at the end of stream flag.
+Gets the skip End-Of-File token at the end of stream flag.
 > SkipEof() bool
 - **returns**: bool - stream flag.
 
 #### SetSkipEof
-Sets skip End-Of-File token at the end of stream flag.
+Sets the skip End-Of-File token at the end of stream flag.
 > SetSkipEof(value bool)
 - **value**: bool - stream flag.
 
 #### SkipUnknown
-Gets skip unknown characters flag.
+Gets the skip unknown characters flag.
 > SkipUnknown() bool
 - **returns**: bool - skip unknown characters flag.
 
 #### SetSkipUnknown
-Sets skip unknown characters flag.
+Sets the skip unknown characters flag.
 > SetSkipUnknown(value bool)
 - **value**: bool - skip unknown characters flag.
 
 #### SkipWhitespaces
-Gets skip whitespaces flag.
+Gets the skip whitespaces flag.
 > SkipWhitespaces() bool
 - **returns**: bool - skip whitespaces flag.
 
 #### SetSkipWhitespaces
-Sets skip whitespaces flag.
+Sets the skip whitespaces flag.
 > SetSkipWhitespaces(value bool)
 - **value**: bool - skip whitespaces flag.
 
@@ -136,15 +136,15 @@ Sets skip whitespaces flag.
 #### SymbolState
 Gets a token state to process symbols (single like "=" or muti-character like "<>")
 > SymbolState() [ISymbolState](../isymbol_state)
-- **returns**: [ISymbolState](../isymbol_state) - a token state to process symbols.
+- **returns**: [ISymbolState](../isymbol_state) - token state to process symbols.
 
 #### UnifyNumbers
-Gets unifies numbers: "Integers" and "Floats" makes just "Numbers".
+Gets unify numbers: "Integers" and "Floats" makes just "Numbers".
 > UnifyNumbers() bool
 - **returns**: bool - unifies numbers.
 
 #### SetUnifyNumbers
-Sets unifies numbers: "Integers" and "Floats" makes just "Numbers" flag
+Sets unify numbers: "Integers" and "Floats" makes just "Numbers" flag
 > SetUnifyNumbers(value bool)
 - **value**: bool - unifies numbers.
 

@@ -15,7 +15,7 @@ The MustacheParser class allows you to implement a Mustache parser.
 ### Constructors
 
 #### NewMustacheParser
-Create new instance of parser
+Creates a new instance of this class.
 
 > NewMustacheParser() [*MustacheParser]()
 
@@ -40,7 +40,7 @@ Gets the list of original tokens
 > (c [*MustacheParser]()) SetOriginalTokens(value [[]*Token](../../../tokenizers/token)) error
 
 - **value**: [[]*Token](../../../tokenizers/token) - original Mustache tokens.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### ResultTokens
 List of parsed Mustache tokens.
@@ -62,7 +62,7 @@ Sets the mustache template.
 > (c [*MustacheParser]()) SetTemplate(value string) error
 
 - **value**: string - Mustache template.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 
 #### VariableNames
@@ -85,7 +85,7 @@ Sets a new Mustache string and parses it into internal byte code.
 > (c [*MustacheParser]()) ParseString(mustache string) error
 
 - **mustache**: string - new Mustache string.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.
 
 #### ParseTokens
 Sets a new mustache Token and parses it into internal byte code.
@@ -93,4 +93,4 @@ Sets a new mustache Token and parses it into internal byte code.
 > (c [*MustacheParser]()) ParseTokens(tokens [[]*Token](../../../tokenizers/token)) error
 
 - **mustache**: [[]*Token](../../../tokenizers/token) - new Mustache string.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occurred.

@@ -13,13 +13,13 @@ description: >
 
 ### Description
 
-Important points    
+**Important points**    
     
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - The JSON table has only two fields: id and data.
 - In basic scenarios, child classes shall only override [GetPageByFilter](../sqlite_persistence/#getpagebyfilter), [GetListByFilter](../sqlite_persistence/#getlistbyfilter) or [DeleteByFilter](../sqlite_persistence/#deletebyfilter) operations with a specific filter function.
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **c._collection** and **c._model** properties.
+- In complex scenarios, child classes can implement additional operations by accessing **c._collection** and **c._model** properties.
 
 #### Configuration parameters
 
@@ -45,7 +45,7 @@ Creates a new instance of the persistence component.
 
 > InheritIdentifiableJsonSqlitePersistence(overrides ISqlitePersistenceOverrides, proto reflect.Type, tableName string) [*IdentifiableJsonSqlitePersistence]()
 
-- **overrides**: ISqlitePersistenceOverrides - a references to child class that overrides virtual methods
+- **overrides**: ISqlitePersistenceOverrides - references to child class that overrides virtual methods
 - **proto**: reflect.Type - TODO: add description
 - **tableName**: string - (optional) a table name.
 

@@ -26,66 +26,66 @@ Constructs this class and assignes a variant value.
 - **value**: interface{} - value to be assigned to this variant.
 
 #### VariantFromInteger
-Creates a new variant from a Integer value.
+Creates a new variant from an Integer value.
 > VariantFromInteger(value int) [*Variant]()
 
-- **value**: int - a variant value.
+- **value**: int - variant value.
 
 #### VariantFromLong
 Creates a new variant from a Long value.
 > VariantFromLong(value int64) [*Variant]()
 
-- **value**: int64 - a variant value.
+- **value**: int64 - variant value.
 
 #### VariantFromBoolean
 Creates a new variant from a Boolean value.
 > VariantFromBoolean(value bool) [*Variant]()
 
-- **value**: bool - a variant value.
+- **value**: bool - variant value.
 
 #### VariantFromFloat
 Creates a new variant from a Float value.
 > VariantFromFloat(value float32) [*Variant]()
 
-- **value**: float32 - a variant value.
+- **value**: float32 - variant value.
 
 #### VariantFromDouble
 Creates a new variant from a Double value.
 > VariantFromDouble(value float64) [*Variant]()
 
-- **value**: float64 - a variant value.
+- **value**: float64 - variant value.
 
 #### VariantFromString
 Creates a new variant from a String value.
 > VariantFromString(value string) [*Variant]()
 
-- **value**: string - a variant value.
+- **value**: string - variant value.
 
 
 #### VariantFromDateTime
 Creates a new variant from a DateTime value.
 > VariantFromDateTime(value time.Time) [*Variant]()
 
-- **value**: time.Time - a variant value.
+- **value**: time.Time - variant value.
 
 
 #### VariantFromTimeSpan
 Creates a new variant from a TimeSpan value.
 > VariantFromTimeSpan(value time.Duration) [*Variant]()
 
-- **value**: time.Duration - a variant value.
+- **value**: time.Duration - variant value.
 
 #### VariantFromObject
 Creates a new variant from a Object value.
 > VariantFromObject(value interface{}) [*Variant]()
 
-- **value**: interface{} - a variant value.
+- **value**: interface{} - variant value.
 
 #### VariantFromArray
-Creates a new variant from a Array value.
+Creates a new variant from an Array value.
 > VariantFromArray(value [[]*Variant]()) [*Variant]()
 
-- **value**: [[]*Variant]() - a variant value.
+- **value**: [[]*Variant]() - variant value.
 
 
 ### Fields
@@ -248,14 +248,14 @@ Sets a variant value as TimeSpan.
 
 
 #### Length
-Gets the length of the array
+Gets the length of the array.
 
 > (c [*Variant]()) Length() int
 
 - **returns**: int - length of the array or 0.
 
 #### SetLength
-Sets a new array length
+Sets a new array length.
 
 > (c [*Variant]()) SetLength(value int)
 
@@ -288,7 +288,7 @@ Clears this object and assignes a [VariantType.Null](../variant_type) type.
 
 
 #### Clone
-Clones the variant value
+Clones the variant value.
 
 > (c [*Variant]()) Clone() [*Variant]()
 

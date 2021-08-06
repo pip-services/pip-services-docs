@@ -28,14 +28,14 @@ Creates an instance of this token and initializes it with specified values.
 ### Methods
 
 #### Column
-The column number where the token is.
+Column number where the token is.
 
 > (c [*ExpressionToken]()) Column() int
 
 - **returns**: int - column number.
 
 #### Line
-The line number where the token is.
+Line number where the token is.
 
 > (c [*ExpressionToken]()) Line() int
 

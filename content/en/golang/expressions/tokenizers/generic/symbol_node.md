@@ -41,20 +41,20 @@ Gets token type
 - **returns**: int - token type ([TokenType](../../token_type))
 
 #### SetTokenType
-Sets token type
+Sets the token type
 > (c [*SymbolNode]()) SetTokenType(value int)
 
 - **value**: int - token type [TokenType](../../token_type)
 
 #### Valid
-Gets boolean variable 
+Finds out if a symbol node is valid or not.
 
 > (c [*SymbolNode]()) Valid() bool
 
 - **returns**: bool - true or false
 
 #### SetValid
-Sets boolean variable 
+Sets a boolean variable 
 > (c [*SymbolNode]()) SetValid(value bool)
 
 - **value**: bool - true or false

@@ -16,13 +16,13 @@ description: >
 Contains constants and classes used to create Mustache parsers.
 
 #### [Tokenizers](tokenizers)
-Contains classes used to create Mustache tokenizers
+Contains classes used to create Mustache tokenizers.
 
 <br>
 
 ### Types
 
-#### [MustacheException](mustache_exception)
+#### [MustacheError](errors/mustache_error)
 Exception that can be thrown by a Mustache template.
 
 #### [MustacheTemplate](mustache_template)

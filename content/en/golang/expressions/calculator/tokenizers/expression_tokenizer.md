@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The ExpressionTokenizer allows you to implement a tokenizer to perform lexical analysis for expressions.  
+The ExpressionTokenizer class allows you to implement a tokenizer to perform lexical analysis for expressions.  
 
 
 ### Constructors

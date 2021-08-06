@@ -79,7 +79,7 @@ Closes the component and frees used resources.
 > (c [*SqliteConnection]()) Close(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 
 #### Configure
@@ -119,7 +119,7 @@ Opens the component.
 > (c [*SqliteConnection]()) Open(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - error or nil no errors occured.
+- **returns**: error - error or nil if no errors occured.
 
 #### SetReferences
 Sets references to dependent components.

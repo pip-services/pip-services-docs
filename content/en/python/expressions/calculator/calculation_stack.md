@@ -26,19 +26,19 @@ Length
 Removes and returns the last value from the list.
 > pop(): [Variant](../../variants/variant)
 
-- **returns**: [Variant](../../variants/variant) - the last value from the list.
+- **returns**: [Variant](../../variants/variant) - last value from the list.
 
 #### peek_at
 Peeks a Variant value located at a specified index.
 > peek_at(index: int): [Variant](../../variants/variant)
 
 - **index**: int - a specified index.
-- **returns**: [Variant](../../variants/variant) - a Variant value.
+- **returns**: [Variant](../../variants/variant) - Variant value.
 
 #### peek
 Peeks a Variant value.
 > peek(): [Variant](../../variants/variant)
 
-- **returns**: [Variant](../../variants/variant) - a Variant value.
+- **returns**: [Variant](../../variants/variant) - Variant value.
 
 

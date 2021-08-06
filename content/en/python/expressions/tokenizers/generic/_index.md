@@ -20,13 +20,13 @@ This state will either delegate to a comment-handling state, or return a token w
 This state will either delegate to a comment-handling state, or return a token with just a slash in it.
 
 #### [GenericCommentState](generic_comment_state)
-A CommentState object returns a comment from a scanner.
+A CommentState object that returns a comment from a scanner.
 
 #### [GenericNumberState](generic_number_state)
-A NumberState object returns a number from a scanner.
+A NumberState object that returns a number from a scanner.
 
 #### [GenericQuoteState](generic_quote_state)
-A quoteState returns a quoted string token from a scanner.
+A quoteState that returns a quoted string token from a scanner.
 
 #### [GenericSymbolState](generic_symbol_state)
 The GenericSymbolState class allows you to add multi-character symbols and obtain a symbol token from a scanner.
@@ -38,7 +38,7 @@ Implements a default tokenizer class.
 Creates a whitespace state.
 
 #### [GenericWordState](generic_word_state)
-A WordState returns a word from a scanner.
+A WordState that returns a word from a scanner.
 
 #### [SymbolNode](symbol_node)
 Constructs a SymbolNode.

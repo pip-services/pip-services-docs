@@ -7,7 +7,7 @@ description: >
     Creates a Mustache tokenizer.
 ---
 
-**Implements**: [AbstractTokenizer](../../tokenizers/abstract_tokenizer)
+**Implements**: [AbstractTokenizer](../../../tokenizers/abstract_tokenizer)
 
 ### Description
 
@@ -23,6 +23,6 @@ Constructs this object with default parameters.
 #### read_next_token
 Reads the next token
 
-> read_next_token(): [Token](../../tokenizers/token)
+> read_next_token(): [Token](../../../tokenizers/token)
 
-- **returns**: [Token](../../tokenizers/token) - next token
+- **returns**: [Token](../../../tokenizers/token) - next token

@@ -127,6 +127,13 @@ dotnet add package PipServices3.Prometheus
 ```
 [GitHub repo](https://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet)
 
+#### RabbitMQ
+```bash
+dotnet add package PipServices3.Rabbitmq
+```
+[GitHub repo](https://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet)
+
+
 #### Redis module
 ```bash
 dotnet add package PipServices3.Redis

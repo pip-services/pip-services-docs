@@ -13,7 +13,7 @@ The microservice is structurally made up of these components:
 - The controller, which generates responses to requests
 - A REST service for the transmission of responses and requests
 - The component factory for the dynamic creation of components
-- A container process, which will be filled with the necessary components, based on yml configuration.
+- A container process, which will be filled with the necessary components, based on a yml configuration file.
 
 ### Step 1. Project setup
 Create a folder for the project, open it in Visual Studio Code and run the command:
@@ -65,7 +65,7 @@ public void Configure(ConfigParams config){
 }
 ```
 
-Now, parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
+Now, the parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
 
 ```yml
 # Controller
@@ -293,7 +293,7 @@ Looking at the configuration file, we can conclude that the following components
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
 ### Step 6. Run and test the microservice
-In .NET, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
 
 **/Program.cs**
 
@@ -320,9 +320,9 @@ When a microservice starts up, the following sequence of events takes place:
 
 2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [The Container recipe](../../recipes/container));
 
-4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yml passed as a parameter (see [The Configuration recipe]((../../recipes/configuration)));
+4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yml passed as a parameter (see [The Configuration recipe](../../recipes/configuration);
 
-5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The References recipe]);
+5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The References recipe]());
 
 6. Components with active processes are run. A component is considered to contain active processes if it implements the IOpenable interface and has an open method defined (see [The Component Lifecycle recipe](../../recipes/component_lifecycle)).
 
@@ -357,4 +357,4 @@ If all’s well, you should get the following string as a result:
 
 All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-dotnet).
 
-To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!
+To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice) as your next step!

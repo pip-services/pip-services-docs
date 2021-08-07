@@ -28,7 +28,7 @@ weight: 40
 
 **Q: How stable is Pip.Services toolkit?**
 
-**A:** It depends. Core of the toolkit (commons, components, container, data, rpc, messaging) is stable, while some technology-specific modules can be less stable. Also it depends on the language. Our team developed hundreds of microservices in .NET and Node.js in many projects and that implementation is very stable. Golang and Dart are quite new. Golang is being quickly adopted and maturing fast. Many 3rd party libraries in Dart are still low quality and using Dart in production carries a lot of risks (mid 2020). Python was added mainly to experiment with BigData, AI and Natural Languages and hasn’t been used a lot. And Java implementation didn’t get much attention yet. SpringBoot is a great framework which dominates the Java world. We are not trying to compete with it directly. We keep the Java version for clients who value code symmetry more than bells and whistles that SpringBoot provides.
+**A:** It depends. Core of the toolkit (commons, components, container, data, rpc, messaging) is stable, while some technology-specific modules can be less stable. Also it depends on the language. Our team developed hundreds of microservices in .NET and Node.js in many projects and that implementation is very stable. Golang and Dart are quite new. Golang is being quickly adopted and maturing fast. Many 3rd party libraries in Dart are still low quality and using Dart in production carries a lot of risks (mid 2020). Python was added mainly to experiment with BigData, AI and Natural Languages and hasn’t been used a lot. And Java implementation didn’t get much attention yet. SpringBoot is a great framework which dominates the Java world. We are not trying to compete with it directly. We keep the Java version for clients who value code symmetry more than the bells and whistles that SpringBoot provides.
 
 **Q: I’m not sure microservices is the right approach or/and there is a resistance to microservice in my organization. What shall I do?**
 
@@ -48,4 +48,4 @@ weight: 40
 
 **Q: I haven’t found an answer to my question. What shall I do?**
 
-**A:** Ask you question on [stackoverflow] or send us a message, and we may add you question to this FAQ
+**A:** Ask you question on [stackoverflow](https://stackoverflow.com/) or send us a message, and we may add you question to this FAQ.

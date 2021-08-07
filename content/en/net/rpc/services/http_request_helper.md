@@ -41,10 +41,10 @@ Gets the paging paramters
 #### GetParameters
 Gets the paramters from an Http request.
 
-> `public static` [RestOperationParameters](../rest_operation_parameters) GetParameters(HttpRequest request)
+> `public static` [RestOperationParameters](../rest_operations_parameters) GetParameters(HttpRequest request)
 
 - **request**: HttpRequest - HTTP request to process.
-- **returns**: [RestOperationParameters](../rest_operation_parameters) - parameters.
+- **returns**: [RestOperationParameters](../rest_operations_parameters) - parameters.
 
 #### GetSortParams
 Gets sort parameters.
@@ -70,4 +70,4 @@ Gets a parameter from a query.
 
 - **parameter**: string - parameter
 - **request**: HttpRequest - HTTP request to process.
-- **returns**: [RestOperationParameters](../rest_operation_parameters) - parameter or empty string.
+- **returns**: [RestOperationParameters](../rest_operations_parameters) - parameter or empty string.

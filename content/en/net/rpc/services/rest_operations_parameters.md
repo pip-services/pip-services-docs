@@ -14,11 +14,11 @@ description: >
 TODO: add description
 
 ### Constructors
-TODO: add description
+Creates a new instance of this class.
 
 > `public` RestOperationParameters()
 
-TODO: add description
+Creates a new instance of this class.
 
 > `public` RestOperationParameters(IDictionary values)
 
@@ -29,23 +29,23 @@ TODO: add description
 <span class="hide-title-link">
 
 #### BodyParameters
-TODO: add description
+Body parameters
 > `public` **BodyParameters**: [AnyValueMap](../../../commons/data/any_value_map)
 
 #### Headers
-TODO: add description
+Headers
 > `public` **Headers**: [AnyValueMap](../../../commons/data/any_value_map)
 
 #### RequestBody
-TODO: add description
+Request body
 > `public` **RequestBody**: string 
 
 #### RequestFiles
-TODO: add description
+Request files
 > `public` **RequestFiles**: IFormFileCollection
 
 #### QueryParameters
-TODO: add description
+Query parameters
 > `public` **QueryParameters**: [AnyValueMap](../../../commons/data/any_value_map)
 
 </span>
@@ -54,147 +54,149 @@ TODO: add description
 ### Instance methods
 
 #### AssignTo
-TODO: add description
+Assigns a value to a property.
 > `public` void AssignTo(object value)
 
-- **value**: object - TODO: add description
+- **value**: object - value to be assigned.
 
 #### ContainsKey
-TODO: add description
+Checks if the object contains a given key.
 
 > `public new` bool ContainsKey(string key)
 
-- **key**: string - TODO: add description
-- **returns**: bool - TODO: add description
+- **key**: string - key
+- **returns**: bool - ture if the key was found and false otherwise.
 
 #### Get
-TODO: add description
+Gets a property for a given path.
 
 > `public override` object Get(string path)
 
-- **path**: string - TODO: add description
-- **returns**: object - TODO: add description
+- **path**: string - Path
+- **returns**: object - property or null if path is empty.
 
 #### GetAsNullableParameters
-TODO: add description
+Gets the requested parameters or null if not found.
 
 > `public` [RestOperationParameters]() GetAsNullableParameters(string key)
 
-- **key**: string - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **key**: string - key
+- **returns**: [RestOperationParameters]() - requested parameters or null if not found.
 
 
 #### GetAsParameters
-TODO: add description
+Gets the requested parameters.
 
 > `public` [RestOperationParameters]() GetAsParameters(string key)
 
-- **key**: string - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **key**: string - key
+- **returns**: [RestOperationParameters]() - requested parameters
 
 
 #### GetAsParametersWithDefault
-TODO: add description
+Gets the requested parameters or the given defauls if not found.
 
 > `public` [RestOperationParameters]() GetAsParametersWithDefault(string key, [RestOperationParameters]() defaultValue)
 
 - **key**: string - TODO: add description
-- **defaultValue**: [RestOperationParameters]() - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **defaultValue**: [RestOperationParameters]() - defaults
+- **returns**: [RestOperationParameters]() - requested parameters or defaults if not found.
 
 #### Override
-TODO: add description
+Overrides the given parameters.
 
 > `public` [RestOperationParameters]() Override([RestOperationParameters]() parameters)
 
-- **parameters**: [RestOperationParameters]() - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **parameters**: [RestOperationParameters]() - given parameters.
+- **returns**: [RestOperationParameters]() - overrided object.
 
-TODO: add description
+Overrides the given parameters recursively.
 
 > `public` [RestOperationParameters]() Override([RestOperationParameters]() parameters, bool recursive)
 
-- **parameters**: [RestOperationParameters]() - TODO: add description
-- **recursive**: bool - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **parameters**: [RestOperationParameters]() - new parameters
+- **recursive**: bool - true is recursion is allowed and false otherwise.
+- **returns**: [RestOperationParameters]() - object with new parameters
 
 #### Omit
-TODO: add description
+Removes the specified parameters.
 > `public` [RestOperationParameters]() Omit(params string[] paths)
 
-- **paths**: params string[] - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **paths**: params string[] - parameters to omit
+- **returns**: [RestOperationParameters]() - updated object
 
 #### Pick
-TODO: add description
+Picks the specified parameters.
 > `public` [RestOperationParameters]() Pick(params string[] paths)
 
-- **paths**: params string[] - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **paths**: params string[] - requested parameters
+- **returns**: [RestOperationParameters]() - picked parameters
 
 #### Set
-TODO: add description
+Sets the specified properties.
 
 > `public override` void Set(string path, object value)
 
-- **path**: string - TODO: add description
-- **value**: object - TODO: add description
+- **path**: string - Properties to set.
+- **value**: object - values of the properties to set.
 
 #### SetDefaults
-TODO: add description
+Sets defaults values for parameters.
 
 > `public` [RestOperationParameters]() SetDefaults([RestOperationParameters]() defaultParameters)
 
-- **defaultParameters**: [RestOperationParameters]() - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **defaultParameters**: [RestOperationParameters]() - default values.
+- **returns**: [RestOperationParameters]() - object with default values.
 
 > `public` [RestOperationParameters]() SetDefaults([RestOperationParameters]() defaultParameters, bool recursive)
 
-- **defaultParameters**: [RestOperationParameters]() - TODO: add description
-- **recursive**: bool - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **defaultParameters**: [RestOperationParameters]() - default values.
+- **recursive**: bool - true is recursion is allowed and false otherwise.
+- **returns**: [RestOperationParameters]() - object with default values.
+
 
 #### ToJson
-TODO: add description
+Converts a JSON object into a string.
 > `public` string ToJson()
 
-- **returns**: string - TODO: add description
+- **returns**: string - string
 
 ### Static methods
 
 #### FromBody
-TODO: add description
+Adds body parameters from a JSON string.
 > `public static` [RestOperationParameters]() FromBody(string json)
 
-- **json**: string - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **json**: string - JSON string
+- **returns**: [RestOperationParameters]() - updated object.
 
 
 #### FromConfig
-TODO: add description
+Adds parameters from a ConfigParams object.
 > `public static` [RestOperationParameters]() FromConfig([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters.
+- **returns**: [RestOperationParameters]() - updated object.
 
 #### FromJson
-TODO: add description
+Adds parameters from a JSON string.
 > `public static` [RestOperationParameters]() FromJson(string json)
 
-- **json**: string - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **json**: string - JSON string with parameters and their values.
+- **returns**: [RestOperationParameters]() - updated object.
 
 #### FromTuples
-TODO: add description
+Adds parameters from a tuple.
 > `public new static` [RestOperationParameters]() FromTuples(params object[] tuples)
 
-- **tuples**: params object[] - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **tuples**: params object[] - tuple with parameters and their values.
+- **returns**: [RestOperationParameters]() - updated object.
 
 
 #### MergeParams
-TODO: add description
+Merges two RestOperationParameters objects.
+
 > `public static` [RestOperationParameters]() MergeParams(params [RestOperationParameters[]]() parameters)
 
-- **parameters**: params [RestOperationParameters[]]() - TODO: add description
-- **returns**: [RestOperationParameters]() - TODO: add description
+- **parameters**: params [RestOperationParameters[]]() - RestOperationParameters object to be merged with this object.
+- **returns**: [RestOperationParameters]() - merged object.

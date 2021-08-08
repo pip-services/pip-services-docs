@@ -64,16 +64,18 @@ if (logger.Level >= LogLevel.Trace):
     logger.Trace(correlationId, message);
 ```
 
-One differentiating factor of the Pip.Services Toolkit is the required **correlationId** parameter. This parameter is used in all business methods and is passed in a standardized way when calling microservices. This way, the **correlationId** is passed along the entire chain of microservice calls, from start to finish, and is included in any and all errors and log messages. This allows us to grasp an understanding of what’s going on, in conditions where information is fragmented and collected from various sources.
+One differentiating factor of the Pip.Services Toolkit is the required **correlationId** parameter. This parameter is used in all business methods and is passed in a standardized way when calling microservices. This way, the **correlationId** is passed along the entire chain of microservice calls, from start to finish, and is included in any and all errors and log messages. This allows us to follow the chain of events and grasp an understanding of what’s going on; particularly, in conditions where information is fragmented and collected from various sources.
 
 #### Log levels
 To be able to generate quality logs, it’s crucial to know how the various log levels should be used. For some reason, most developers don’t consider this to be important, which makes it harder for users, technical support, and for developers themselves to use the system. The main purpose of [LogLevel](../../components/log/log_level/) is to filter messages by their importance. When **LogLevel** is used incorrectly, important messages are bound to be lost, or the opposite can occur, where the output is spammed by various messages, making the search for information a real burden.
+
+The log levels considered by PIP.Services are:    
 
 - **Nothing** - disable all messages
 - **Fatal** - critical errors that lead to partial or complete system failures 
 - **Error** - user errors that don’t affect the system’s performance
 - **Warning** - warnings that technical support should check out 
-- **Info** - messages relating to important transactions running in the system. These help get an idea of what’s going on in the system under normal conditions.
+- **Info** - messages relating to important transactions running in the system. These messages help get an idea of what’s going on in the system under normal conditions.
 - **Debug** - detailed information on what’s happening in the system. These messages are used by technical support and are turned on for short periods of time to help debug the system.
 - **Trace** - very detailed information on what’s happening in the system. These messages are used only by developers and are almost never turned on in production. 
 

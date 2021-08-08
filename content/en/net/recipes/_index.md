@@ -16,7 +16,7 @@ The Pip.Services Toolkit contains logging components that can either output mess
 
 ### [Configuration](configuration)
 
-The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we"ll be taking a look at this mechanism"s capabilities and how it can be utilized.
+The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism"s capabilities and how it can be utilized.
 
 
 ### [Component References](component_references)
@@ -37,10 +37,10 @@ The Pip.Services Toolkit offers a few abstract implementations for developing pe
 
 ### [MongoDB Persistence](mongodb_persistence)
 
-The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
+Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
 
 
 ### [Background Execution](background_execution)
 
-Microservices are capable of successfully solving a wide variety of business tasks. However, where they really shine (and are especially effective) is when it comes to scaling. Scaling is the process of creating a number of identical instances of a microservice for performing large and resource-hungry tasks. Thanks to scaling, many tasks can now be completed in adequate time and with optimal use of resources. Archiving a database, batch processing, and 3D video rendering are all examples of tasks that benefit from scaling, and many others exist as well!
+Sometimes you may need to use your microservices as background tasks. From an architectural point of view, we call this type of tasks Background Execution, as they don’t need any external event to prompt them but a background task logic only. There are several ways to design this task. One approach consists of adding a timer to the microservice’s controller and distributed locks. Another method would be using a message queue to manage the execution process. Lastly, we can use a microservice, such as the Pip.Services’ Job microservice, which keeps a list of jobs performed by other microservices and manages their execution. This article explains how to tackle those three approaches through the use of a practical example.
 

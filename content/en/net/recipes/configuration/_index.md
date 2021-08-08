@@ -10,7 +10,7 @@ weight: 10
 
 ### Introduction
 
-The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we"ll be taking a look at this mechanism"s capabilities and how it can be utilized.
+The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources: configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism"s capabilities and how it can be utilized.
 
 ### Configuration
 
@@ -27,7 +27,7 @@ public interface IConfigurable
 
 #### The ConfigParams object
 
-The only parameter that is passed to the configure method is [ConfigParams](../../commons/config/config_params/) object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
+The only parameter that is passed to the configure method is [ConfigParams](../../commons/config/config_params/) object. Simply put, this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
 
 ```cs
 var config = ConfigParams.FromTuples(
@@ -74,7 +74,7 @@ Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAM
 var anotherConfig = ConfigParams.FromString("param1=123;param2=ABC");
 ```
 
-To read more about what functionality is available through **ConfigParams**, be sure to check out the [Commons module’s](../../commons)documentation. 
+To read more about what functionality is available through **ConfigParams**, be sure to check out the [Commons module’s](../../commons) documentation. 
 
 #### Example
 
@@ -202,7 +202,7 @@ configReader.ReadConfig("123", parameters);    // Result: key1=1234;key2=ABCD
 
 #### YamlConfigReader
 
-The [YamlConfigReader](../..//components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
+The [YamlConfigReader](../../components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
 
 ```yml
 key1: "1234"

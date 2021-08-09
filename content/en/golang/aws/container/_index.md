@@ -16,6 +16,10 @@ description: >
 #### [CommandableLambdaFunction](commandable_lambda_function)
 Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.
 
+
+#### [ILambdaFunctionOverrides](ilambda_function_overrides)
+TODO: add description
+
 #### [LambdaFunction](lambda_function)
 Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.
 

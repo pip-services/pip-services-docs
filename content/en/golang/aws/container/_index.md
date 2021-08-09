@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Containers"
-linkTitle: "Containers"
+title: "Container"
+linkTitle: "Container"
 no_list: true
 gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 description: >

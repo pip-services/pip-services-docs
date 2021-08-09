@@ -196,5 +196,5 @@ data, err := client.GetData("123", "1",)
 ```
 
 ### See also
-- #### [LambdaFunction](../../containers/lambda_function)
+- #### [LambdaFunction](../../container/lambda_function)
 - #### [CommandableLambdaClient](../../clients/commandable_lambda_client)

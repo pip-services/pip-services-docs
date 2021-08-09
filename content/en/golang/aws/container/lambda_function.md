@@ -8,7 +8,7 @@ description: >
     and expose them via an external entry point. 
 ---
 
-**Implements:** [Container](../../../container/containers/container), [ILambdaFunctionOverrides](../ilambda_function_overrides)
+**Implements:** [Container](../../../container/container/container), [ILambdaFunctionOverrides](../ilambda_function_overrides)
 
 ### Description
 The LambdaFunction class allows you to create an abstract AWS Lambda function that acts as a container to instantiate and run components, and expose them via an external entry point.

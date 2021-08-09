@@ -67,7 +67,7 @@ class IMyPersistence(ABC):
 
 To implement postgresql persistence component you shall inherit `IdentifiablePostgresPersistence`. 
 Most CRUD operations will come from the base class. You only need to override `get_page_by_filter` method with a custom filter function.
-And, implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
+And implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
 
 ```python
 class MyPostgresPersistence(IdentifablePostgresPersistence):
@@ -100,7 +100,7 @@ class MyPostgresPersistence(IdentifablePostgresPersistence):
         return super().get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, 'id', None)
 
     def get_one_by_key(self, correlation_id, key):
-        query = "SELECT * FROM " + self._quote_identifier(self._table_name) + " WHERE \"key\"=%s"
+        query = "SELECT * FROM " + self._quoted_table_name() + " WHERE \"key\"=%s"
         params = [key]
 
         result = self._request(query, params)
@@ -154,7 +154,7 @@ class MyPostgresPersistence(IdentifableJsonPostgresPersistence):
         return super().get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, 'id', None)
 
     def get_one_by_key(self, correlation_id, key):
-        query = "SELECT * FROM " + self._quote_identifier(self._table_name) + " WHERE data->>'key'=%s"
+        query = "SELECT * FROM " + self._quoted_table_name() + " WHERE data->>'key'=%s"
         params = [key]
 
         result = self._request(query, params)
@@ -170,7 +170,7 @@ class MyPostgresPersistence(IdentifableJsonPostgresPersistence):
         return item
 ```
 
-The configuration for your microservice that includes postgresql persistence may look the in following way:
+Configuration for your microservice that includes postgresql persistence may look the following way.
 
 ```yaml
 ...

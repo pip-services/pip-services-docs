@@ -26,7 +26,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) MySQL collection name
+- **table**: (optional) MySQL table name
+- **schema**: (optional) MySQL schema name
 
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
@@ -54,10 +55,23 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName: string)
+> `public` constructor(tableName: string, schemaName?: string)
 
 - **tableName**: string - (optional) collection name.
+- **schemaName**: string - (optional) a schema name
 
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _autoGenerateId
+
+Flag to turn on automated string ID generation
+
+> `protected` **_autoGenerateId**: boolean = true
+
+</span>
 
 ### Instance methods
 

@@ -20,7 +20,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **table**: (optional) SQLServer table name
+- **schema**: (optional) SQLServer table name
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -48,10 +49,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName?: string)
+> `public` constructor(tableName?: string, _schemaName? string)
 
 - **tableName**: string - (optional) table name.
-
+- **_schemaName**: string - (optional) a schema name.
 
 ### Fields
 
@@ -89,18 +90,14 @@ The maximum number of records that can be returned from the database.
 The SQL Server library
 > `protected` **_requestFactory**: any
 
+#### _schemaName
+The SQLServer schema object.
+> `protected` **_schemaName**: string
+
 </span>
 
 
 ### Instance methods
-
-#### autoCreateObject
-Adds an index definition to be created on opening.
-- This is a deprecated method. Use **ensureSchema** instead.
-
-> `protected` autoCreateObject(schemaStatement: string): void
-
-- **schemaStatement**: string - DML statement to autocreate database object
 
 #### clear
 Clears component state.
@@ -328,6 +325,14 @@ Adds single quotes to a string.
 > `protected` quoteIdentifier(value: string): string
 
 - **value**: string - string where quotes need to be added
+- **returns**: string - string with added quotes
+
+
+#### quotedTableName
+Joins schema and database name in dot notation
+
+> `protected` quotedTableName(): string
+
 - **returns**: string - string with added quotes
 
 #### setReferences

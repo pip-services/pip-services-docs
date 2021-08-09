@@ -20,7 +20,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **table**: (optional) SQLServer table name
+- **schema**: (optional) SQLServer table name  
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -48,9 +49,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> SqlServerPersistence(table_name: str = None)
+> SqlServerPersistence(table_name: str = None, schema_name: str = None)
 
-- **table_name**: str - (optional) table name.
+- **table_name**: str - (optional) a table name.
+- **schema_name**: str - (optional) a schema name.
 
 
 ### Fields
@@ -85,18 +87,15 @@ The SQLServer database name.
 The maximum number of records that can be returned from the database.
 > **_max_page_size** = 100
 
+
+#### _schema_name
+The SQLServer schema object.
+> **_schema_name**: str
+
 </span>
 
 
 ### Instance methods
-
-#### _auto_create_object
-Adds an index definition to be created on opening.
-- This is a deprecated method. Use **_ensure_schema** instead.
-
-> _auto_create_object(schema_statement: str)
-
-- **schema_statement**: str - DML statement to autocreate database object
 
 #### clear
 Clears component state.
@@ -325,6 +324,14 @@ Adds single quotes to a string.
 > _quote_identifier(value: str): Optional[str]
 
 - **value**: str - string where quotes need to be added
+- **returns**: Optional[str] - string with added quotes
+
+
+#### _quoted_table_name
+Joins schema and database name in dot notation
+
+> _quoted_table_name(): Optional[str]
+
 - **returns**: Optional[str] - string with added quotes
 
 #### set_references

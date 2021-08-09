@@ -26,7 +26,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name    
+- **table**: (optional) SQLServer table name
+- **schema**: (optional) SQLServer table name  
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -51,9 +52,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> IdentifiableJsonSqlServerPersistence(table_name: str = None)
+> IdentifiableJsonSqlServerPersistence(table_name: str = None, schema_name: str = None)
 
-- **table_name**: str - (optional) collection name.
+- **table_name**: str - (optional) a table name.
+- **schema_name**: str - (optional) a schema name.
 
 
 ### Instance methods

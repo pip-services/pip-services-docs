@@ -26,7 +26,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name    
+- **table**: (optional) SQLServer table name
+- **schema**: (optional) SQLServer table name     
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -51,10 +52,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName: string)
+> `public` constructor(tableName: string, schemaName?: string)
 
-- **tableName**: string - (optional) collection name.
-
+- **tableName**: string - (optional) table name.
+- **schemaName**: string - (optional) a schema name.
 
 ### Instance methods
 

@@ -24,7 +24,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) SQLServer collection name   
+- **table**: (optional) SQLServer table name
+- **schema**: (optional) SQLServer table name  
 **connection(s)**:   
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -50,9 +51,24 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> IdentifiableSqlServerPersistence(table_name: str = None)
+> IdentifiableSqlServerPersistence(table_name: str = None, schema_name: str = None)
 
 - **table_name**: str - (optional) a collection name.
+- **schema_name**: str - (optional) a schema name.
+
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _auto_generate_id
+
+Flag to turn on automated string ID generation
+
+> **_auto_generate_id**: bool = True
+
+</span>
 
 
 ### Instance methods

@@ -64,6 +64,19 @@ Creates a new instance of the persistence component.
 - **collection**: str - (optional) collection name.
 
 
+### Fields
+
+<span class="hide-title-link">
+
+#### _auto_generate_id
+
+Flag to turn on automated string ID generation
+
+> **_auto_generate_id**: bool = True
+
+</span>
+
+
 ### Instance methods
 
 #### _convert_from_public_partial

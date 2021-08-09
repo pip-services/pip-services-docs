@@ -55,7 +55,7 @@ Creates a new instance of the persistence component.
 
 - **overrides**: IPostgresPersistenceOverrides - References to override virtual methods.
 - **proto**: reflect.Type - TODO: add description. 
-- **tableName**: string - (optional) a collection name.
+- **tableName**: string - (optional) a table name.
 
 
 ### Methods

@@ -20,7 +20,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) MySQL collection name
+- **table**: (optional) MySQL table name
+- **schema**: (optional) MySQL schema name
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -47,9 +48,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> MySqlPersistence(table_name: str = None)
+> MySqlPersistence(table_name: str = None, schema_name: str = None)
 
-- **table_name**: str - (optional) table name.
+- **table_name**: str - (optional) a table name.
+- **schema_name**: str - (optional) a schema name.
 
 
 ### Fields
@@ -84,18 +86,14 @@ The MySql database name.
 The maximum number of records to return from the database per request.
 > **_max_page_size** = 100
 
+#### _schema_name
+The SQLServer schema object.
+> **_schema_name**: str
+
 </span>
 
 
 ### Instance methods
-
-#### _auto_create_object
-Adds a statement to schema definition. 
-- This is a deprecated method. Use **_ensure_schema** instead.
-
-> _auto_create_object(schema_statement: str)
-
-- **schema_statement**: str - statement to be added to the schema
 
 #### clear
 Clears a component's state.
@@ -312,6 +310,14 @@ Adds single quotes to a string.
 > _quote_identifier(value: str): Optional[str]
 
 - **value**: str - string where quotes need to be added
+- **returns**: Optional[str] - string with added quotes
+
+
+#### _quoted_table_name
+Joins schema and database name in dot notation
+
+> _quoted_table_name(): Optional[str]
+
 - **returns**: Optional[str] - string with added quotes
 
 

@@ -23,7 +23,9 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) PostgreSQL collection name
+- **table**: (optional) PostgreSQL table name
+- **schema**: (optional) PostgreSQL schema name
+
 **connection(s)**:    
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -50,9 +52,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName?: string)
+> `public` constructor(tableName?: string,  schemaName?: string)
 
 - **tableName**: string - (optional) table name.
+- **schemaName**: string - (optional) a schema name.
 
 ### Fields
 
@@ -85,6 +88,10 @@ The PostgreSQL database name.
 #### _maxPageSize
 The maximum number of records to return from the database.
 > `protected` **_maxPageSize** = 100
+
+#### _schemaName
+The SQLServer schema object.
+> `protected` **_schemaName**: string
 
 </span>
 
@@ -307,6 +314,14 @@ Adds a single quote to each side of the string.
 > `protected` quoteIdentifier(value: string): string
 
 - **value**: string - string where quotes need to be added
+- **returns**: string - string with added quotes
+
+
+#### quotedTableName
+Joins schema and database name in dot notation
+
+> `protected` quotedTableName(): string
+
 - **returns**: string - string with added quotes
 
 

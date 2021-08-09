@@ -20,7 +20,9 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) MySQL collection name
+- **table**: (optional) MySQL table name
+- **schema**: (optional) MySQL schema name
+
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -47,9 +49,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName?: string)
+> `public` constructor(tableName?: string, schemaName?: string)
 
 - **tableName**: string - (optional) table name.
+- **schemaName**: string - (optional) a schema name.
 
 
 ### Fields
@@ -85,18 +88,14 @@ The MySQL table name.
 The maximum number of records to return from the database per request.
 > `protected` **_maxPageSize**: number = 100
 
+#### _schemaName
+The SQLServer schema object.
+> `protected` **_schemaName**: string
+
 </span>
 
 
 ### Instance methods
-
-#### autoCreateObject
-Adds a statement to schema definition. 
-- This is a deprecated method. Use **ensureSchema** instead.
-
-> `protected` autoCreateObject(schemaStatement: string)
-
-- **schemaStatement**: string - statement to be added to the schema
 
 #### clear
 Clears a component's state.
@@ -313,6 +312,14 @@ Adds single quotes to a string.
 > `protected` quoteIdentifier(value: string): string
 
 - **value**: string - string where quotes need to be added
+- **returns**: string - string with added quotes
+
+
+#### quotedTableName
+Joins schema and database name in dot notation
+
+> `protected` quotedTableName(): string
+
 - **returns**: string - string with added quotes
 
 

@@ -96,7 +96,7 @@ export class MyPostgresPersistence extends IdentifablePostgresPersistence {
   }  
   
   public getOneByKey(correlationId: string, key: string): Promise<MyObject> {
-    let query = "SELECT * FROM " + this.quoteIdentifier(this._tableName) + " WHERE \"key\"=$1";
+    let query = "SELECT * FROM " + this.quotedTableName() + " WHERE \"key\"=$1";
     let params = [ key ];
 
     return new Promise((resolve, reject) => {
@@ -163,7 +163,7 @@ export class MyPostgresPersistence extends IdentifableJsonPostgresPersistence {
   }  
   
   public getOneByKey(correlationId: string, key: string): Promise<MyObject> { 
-    let query = "SELECT * FROM " + this.quoteIdentifier(this._tableName) + " WHERE data->>'key'=$1";
+    let query = "SELECT * FROM " + this.quotedTableName() + " WHERE data->>'key'=$1";
     let params = [ key ];
 
     return new Promise((resolve, reject) => {

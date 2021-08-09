@@ -24,7 +24,9 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) PostgreSQL collection name
+- **table**: (optional) PostgreSQL table name
+- **schema**: (optional) PostgreSQL schema name
+
 **connection(s)**:    
 - **discovery_key**: (optional) key used to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **host**: host name or IP address
@@ -51,9 +53,10 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> IdentifiableJsonPostgresPersistence(table_name: str = None)
+> IdentifiableJsonPostgresPersistence(table_name: str = None, schema_name: str = None)
 
-- **table_name**: str - (optional) a collection name.
+- **table_name**: str - (optional) a table name.
+- **schema_name**: str - (optional) a schema name.
 
 
 ### Instance methods

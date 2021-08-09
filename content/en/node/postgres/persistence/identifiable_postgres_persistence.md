@@ -24,7 +24,8 @@ Important points
 
 #### Configuration parameters
 
-- **collection**: (optional) Postgres collection name
+- **table**: (optional) PostgreSQL table name
+- **schema**: (optional) PostgreSQL schema name
 
 **connection(s)**:
 - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
@@ -51,9 +52,22 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> `public` constructor(tableName: string)
+> `public` constructor(tableName: string, schemaName?: string)
 
-- **tableName**: string - (optional) a collection name.
+- **tableName**: string - (optional) a table name.
+- **schemaName**: string - (optional) a schema name.
+
+
+### Fields
+
+<span class="hide-title-link">
+
+#### _autoGenerateId
+Flag to turn on auto generation of object ids.
+
+> `protected` **_autoGenerateId**: boolean
+
+</span>
 
 
 ### Instance methods

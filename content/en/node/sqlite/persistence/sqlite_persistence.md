@@ -94,6 +94,14 @@ SQLite schema object.
 ### Instance methods
 
 
+#### autoCreateObject
+Adds a statement to schema definition. 
+- This is a deprecated method. Use **_ensure_schema** instead.
+
+> `protected` autoCreateObject(schemaStatement: string): void
+
+- **schemaStatement**: string - statement to be added to the schema
+
 #### clear
 Clears a component's state.
 

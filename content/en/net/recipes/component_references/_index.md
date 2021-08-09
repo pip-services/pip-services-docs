@@ -168,7 +168,7 @@ class SimpleController : IReferenceable, IUnreferenceable
         worker = null;
     }
 
-    public void Greetenig(string name)
+    public void Greeting(string name)
     {
         worker.Do(LogLevel.Info, "Hello, " + (name) + "!");
     }
@@ -188,7 +188,7 @@ var references = References.FromTuples(
 
 var controller = new SimpleController();
 controller.SetReferences(references);
-controller.Greetenig("world");
+controller.Greeting("world");
 controller.UnsetReferences();
 controller = null;
 
@@ -287,7 +287,7 @@ var references = References.FromTuples(
 
 var controller = new SimpleController();
 controller.SetReferences(references);
-controller.Greetenig("world");
+controller.Greeting("world");
 controller.UnsetReferences();
 controller = null;
 

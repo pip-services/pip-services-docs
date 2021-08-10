@@ -10,9 +10,9 @@ Before we start actually writing our microservice, we need to first set up our e
 
 To set up our environment, we’ll need to install all the necessary tools, as described on the [Setup environment](../../../getting_started/setup_environment) page.
 
-Don’t forget to select the programming language that you plan on using.
+(Don’t forget to select the programming language that you plan on using.)
 
-Create a folder for the project and, inside it, a directory structure to match the one below:
+We must create a folder for the project and, inside it, a directory structure as the one below:
 
 ```
 /bin
@@ -38,7 +38,7 @@ Create a folder for the project and, inside it, a directory structure to match t
 
 ```
 
-Add a csproj files with the following lines to the next project folders:
+Now, we must add a csproj files with the following lines to the next project folders:
 
 **src/interface/Interface.csproj**
 
@@ -126,7 +126,7 @@ Add a csproj files with the following lines to the next project folders:
 
 ```
 
-To install all necessary dependencies, run the following command from a terminal at the root of the project’s directory:
+To install all necessary dependencies, we must run the following command from a terminal at the root of the project’s directory:
 
 ```bash
 dotnet restore

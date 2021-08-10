@@ -23,12 +23,12 @@ The Lock class represents an abstract lock that implements the defaul lock acqui
 #### acquire_lock
 Makes multiple attempts to acquire a lock by its key within a given time interval.
 
-> acquire_lock(correlation_id: Optional[str], key: str, ttl: float, timeout: float)
+> acquire_lock(correlation_id: Optional[str], key: str, ttl: int, timeout: int)
 
 - **correlation_id**: Optional[str] -(optional) transaction id to trace execution through a call chain. 
 - **key**: str - a unique lock key to acquire.
-- **ttl**: float - a lock timeout (time to live) in milliseconds.
-- **timeout**: float - a lock acquisition timeout.
+- **ttl**: int - a lock timeout (time to live) in milliseconds.
+- **timeout**: int - a lock acquisition timeout.
 
 
 #### configure
@@ -53,11 +53,11 @@ Releases a prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> `abstractmethod` try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
+> `abstractmethod` try_acquire_lock(correlation_id: Optional[str], key: str, ttl: int): bool
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **key**: str - a unique lock key to acquire.
-- **ttl**: float - a lock timeout (time to live) in milliseconds.
+- **ttl**: int - a lock timeout (time to live) in milliseconds.
 - **returns**: bool - lock result
 
 

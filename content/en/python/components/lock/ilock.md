@@ -23,12 +23,12 @@ Important points
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> acquire_lock(correlation_id: Optional[str], key: str, ttl: float, timeout: float)
+> acquire_lock(correlation_id: Optional[str], key: str, ttl: int, timeout: int)
 
 - **correlation_id**: Optional[str] -(optional) transaction id to trace execution through a call chain. 
 - **key**: str - a unique lock key to acquire.
-- **ttl**: float - a lock timeout (time to live) in milliseconds.
-- **timeout**: float - a lock acquisition timeout.
+- **ttl**: int - a lock timeout (time to live) in milliseconds.
+- **timeout**: int - a lock acquisition timeout.
 
 
 
@@ -36,11 +36,11 @@ It returns immediately a positive or negative result.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: float): bool
+> try_acquire_lock(correlation_id: Optional[str], key: str, ttl: int): bool
 
 - **correlation_id**: Optional[str] -(optional) transaction id to trace execution through call chain. 
 - **key**: str - a unique lock key to acquire.
-- **ttl**: float - a lock timeout (time to live) in milliseconds.
+- **ttl**: int - a lock timeout (time to live) in milliseconds.
 - **return**: bool - lock result
 
 

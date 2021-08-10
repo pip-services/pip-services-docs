@@ -2,7 +2,7 @@
 type: docs
 title: "RedisCache"
 linkTitle: "RedisCache"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-redis-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-redis-python"
 description: >
     Distributed cache that stores values in Redis in-memory database.
 
@@ -38,7 +38,7 @@ The RedisCache class allows you to create distributed caches that store values i
 ### Constructors
 Creates a new instance of this cache.
 
-> `public` constructor()
+> RedisCache()
 
 
 ### Instance methods
@@ -46,56 +46,56 @@ Creates a new instance of this cache.
 #### close
 Closes a component and frees used resources.
 
-> `public` close(correlationId: string): Promise\<void\>
+> close(correlation_id: Optional[str])
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
 Configures a component by passing its configuration parameters.
 
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> configure(config: [ConfigParams](../../../commons/config/config_params))
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
-#### isOpen
+#### is_open
 Checks if the component is open.
 
-> `public` isOpen(): boolean
+> is_open(): bool
 
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 #### open
 Opens the component.
 
-> `public` open(correlationId: string): Promise\<void\>
+> open(correlation_id: Optional[str])
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### remove
 Removes a value from the cache by its key.
 
-> `public` remove(correlationId: string, key: string): Promise\<any\>
+> remove(correlation_id: Optional[str], key: str): Any
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **returns**: Promise\<any\> - removed value.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **key**: str - unique value key.
+- **returns**: Any - removed value.
 
 #### retrieve
 Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns null.
 
-> `public` retrieve(correlationId: string, key: string): Promise\<any\>
+> retrieve(correlation_id: Optional[str], key: str): Any
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **returns**: Promise\<any\> - retrieved cached value or *null* if nothing was found.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **key**: str - unique value key.
+- **returns**: Any - retrieved cached value or *null* if nothing was found.
 
-#### setReferences
+#### set_references
 Sets references to dependent components.
 
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
@@ -103,25 +103,25 @@ Sets references to dependent components.
 #### store
 Stores a value in the cache with an expiration time.
 
-> `public` store(correlationId: string, key: string, value: any, timeout: number): Promise\<any\>
+> store(correlation_id: Optional[str], key: str, value: Any, timeout: int): Promise\<any\>
 
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **value**: any - value to store.
-- **timeout**: number - expiration timeout in milliseconds.
-- **returns**: Promise\<any\> - stored value.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
+- **key**: str - unique value key.
+- **value**: Any - value to store.
+- **timeout**: int - expiration timeout in milliseconds.
+- **returns**: Any - stored value.
 
 
 ### Examples
-```typescript
-let cache = new RedisCache();
-cache.configure(ConfigParams.fromTuples(
-  "host", "localhost",
-  "port", 6379
-));
+```python
+cache = RedisCache()
+cache.configure(ConfigParams.from_tuples(
+    "host", "localhost",
+    "port", 6379
+))
 
-await cache.open("123");
-await cache.store("123", "key1", "ABC");
-let value = await cache.store("123", "key1"); // Result: "ABC"
+cache.open("123")
+cache.store("123", "key1", "ABC", None)
+value = cache.retrieve("123", "key1") # Result: "ABC"
 
 ```

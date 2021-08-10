@@ -33,7 +33,7 @@ services:
 ```
 
 This configuration will run the microservice alongside a Mongo DB for data storage. HTTP services will also be started on port 8080 and will be made accessible from outside the container. You can set up the microservice to run with a memory persistence as well. To do this, comment out the MONGO environment variables, as well as any other Mongo-related parameters.
-The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. Place the code below into a file named **test_BeaconsHttpClientV1.py**.
+The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. We place the code below into a file named **test_BeaconsHttpClientV1.py**.
 
 **/test/version1/BeaconsHttpClientV1Test.py**
 
@@ -103,7 +103,7 @@ The image parameter contains the name of the Docker image being hosted on Docker
 ```
 
 This test differs from the previous one mainly in that we aren’t running the microservice’s components in the test itself. Instead, we are configuring our client to connect to the microservice, which will be running in our Docker container. Another difference is that we will be deleting all data from the microservice before each test, so that our test always starts off with a clean DB.
-Before we can start testing, we need to get our containerized microservice up and running. To do this, run the command:
+Before we can start testing, we need to get our containerized microservice up and running. To do this, we run the command:
 
 ```bash
 docker-compose -f ./docker/docker-compose.dev.yml up 

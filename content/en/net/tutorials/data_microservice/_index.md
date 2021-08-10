@@ -16,7 +16,7 @@ In this tutorial, we’ll be writing from scratch a fully-functional Data micros
 
 ![Beacon](/images/tutorials/data_microservice/beacon.png)
 
-Imagine the following situation: you are walking through a building that has beacons installed at various locations throughout the entire building. These beacons are broadcasting signals via bluetooth, at regular time intervals, which can be “seen” from about 200 feet away. The beacons, along with their positions, are stored in our microservice. When your smartphone starts “seeing” some of these signals, it sends a list of the beacons it “sees” to the microservice, which then calculates the position of your phone as being in the middle of the beacons it “sees”. Simple, but effective - wouldn’t you agree?
+To understand how this works, imagine the following situation: you are walking through a building that has beacons installed at various locations throughout the entire building. These beacons are broadcasting signals via bluetooth, at regular time intervals, which can be “seen” from about 200 feet away. The beacons, along with their positions, are stored in our microservice. When your smartphone starts “seeing” some of these signals, it sends a list of the beacons it “sees” to the microservice, which then calculates the position of your phone as being in the middle of the beacons it “sees”. Simple, but effective - wouldn’t you agree?
 
 The Beacons microservice that we are going to be developing will consist of a number of loosely-coupled components, following the [componentized microservice design](../../getting_started). The structure of this microservice is displayed on the diagram below:
 
@@ -24,7 +24,7 @@ The Beacons microservice that we are going to be developing will consist of a nu
 
 ### Creating the data microservice
 
-To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
+To make it easier to follow along, this tutorial is divided into the following 7 steps:
 
 - [Step 1. Setting up the project](step1)
 - [Step 2. Data model development](step2)
@@ -53,7 +53,7 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 
 <span class="hide-title-link">
 
-#### [Tutorial how to create a client library](../client_library)
-#### [Tutorial how to dockerize a microservice](../microservice_dockerization)
+#### [Client Library](../client_library)
+#### [Microservice Dockerization](../microservice_dockerization)
 
 </span>

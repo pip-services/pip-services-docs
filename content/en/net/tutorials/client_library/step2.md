@@ -29,7 +29,7 @@ public interface IBeaconsClientV1
 
 ```
 
-Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
+Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipe](../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
 The direct client’s code is listed below:
 
 **src/version1/BeaconsDirectClientV1.cs**
@@ -167,15 +167,14 @@ public class BeaconsDirectClientV1 : DirectClient<IBeaconsController>, IBeaconsC
 ```
 
 Now that we’re done writing the client, we should test it. 
-To be sure that our code works as intended, we need to perform some functional testing. Let’s start with creating, in a separate class, a set of tests that will be common to all our clients. This will help us simplify the process of testing multiple clients, as well as make sure that they all work the same. We’ll place the code for our tests in the **test/version1** folder. The code for this class can be found in the [repository](https://github.com/pip-services-samples/client-beacons-dotnet).
+To be sure that our code works as intended, we need to perform some functional testing. Let’s start with creating, in a separate class, a set of tests that will be common to all our clients. This will help us simplify the process of testing multiple clients, as well as make sure that they all work the same. We’ll place the code for our tests in the **test/version1** folder. 
 
+Now, let’s test the direct client. To do this, we create an instance of the direct client and pass it as a parameter to our set of tests. 
+The code for this class and tests can be found in the [repository](https://github.com/pip-services-samples/client-beacons-dotnet).
 
-Now, let’s test the direct client. To do this, create an instance of the direct client and pass it as a parameter to our set of tests. 
-An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-dotnet)
-
-
-Run the tests using the testing methods that are standard for the programming language you are using. All tests should pass successfully.This finishes the development of the Direct client.
-Move on to [Step 3 to create the HTTP client](../step3).
+We run the tests using the testing methods that are standard for the programming language we are using. All tests should pass successfully.This finishes the development of the Direct client.
+    
+Let's move on to [Step 3 to create the HTTP client](../step3).
 
 
 <span class="hide-title-link">

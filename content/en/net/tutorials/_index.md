@@ -21,3 +21,8 @@ In this tutorial, we’ll be writing from scratch a fully-functional Data micros
 ### [Microservice Dockerization](microservice_dockerization)
 
 Running microservices in Docker containers has become one of the most popular ways of deploying a system. Based on this, this tutorial explains how to create and run a dockerized microservice in five well-defined steps.
+
+
+### [Microservice Facade](microservice_facade)
+
+In this tutorial, we will be taking a look at how to implement a simple facade that will provide a versioned external API for the microservice implemented in [the Data Microservice](data_microservice) tutorial. Additionally, our facade will implement client authentication and authorization using microservices from the Pip.Services Library.

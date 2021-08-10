@@ -154,7 +154,7 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 
 ### Identifiable data objects and IdentifiableMongoDBPersistence
 
-The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../ommons/data/iidentifiable/) interface defined in [the Commons module](../commons).
+The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in ehe [Commons](../../commons) module.
 
 ```cs
 public interface IIdentifiable<T>
@@ -244,11 +244,11 @@ In most scenarios, child classes only need to override the **GetPageByFilterAsyn
 
 ### Filtering
 
-Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria [(see the Commons module)](../../commons).
+Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria see the [Commons](../../commons) module.
 
 ```cs
 var filter = FilterParams.FromTuples(
-    'name', 'ABC'
+    "name", "ABC"
 );
 var result = await persistence.GetPageByFilterAsync(null, filter, null);
 

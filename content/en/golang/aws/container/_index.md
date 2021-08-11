@@ -18,7 +18,7 @@ Abstract AWS Lambda function that acts as a container to instantiate and run com
 
 
 #### [ILambdaFunctionOverrides](ilambda_function_overrides)
-TODO: add description
+Interface for performing on-demand registrations.
 
 #### [LambdaFunction](lambda_function)
 Abstract AWS Lambda function that acts as a container to instantiate and run components and expose them via an external entry point.

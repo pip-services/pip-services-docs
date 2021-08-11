@@ -3,7 +3,7 @@ type: docs
 title: "Templates"
 linkTitle: "Templates"
 no_list: true
-weight: 10
+weight: 80
 ---
 
 To get you started faster, we developed a number of microservice templates in all of the supported languages. They include every essential component, support versioning, and instrumentation. Additionally, you can find templates to script development and production environments and automate microservice CI/CD pipelines. These templates are a great starting point to create your own templates to achieve consistency and spread the best practices across your entire organization.

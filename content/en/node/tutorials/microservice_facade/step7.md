@@ -201,6 +201,96 @@ The process of running a service in a Docker container is described in detail in
 
 To run our system using Docker Compose, create a docker-compose.yml file with the following:
 
+**/docker/docker-compose.yml**
+
+```yml
+version: '3.3'
+
+services:
+
+  app:
+    image: ${IMAGE}
+    environment:
+      - MAGIC_CODE=magic
+      - MONGO_SERVICE_URI=
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=app   
+    ports:
+      - "8080:8080"
+    links:
+      - mongo
+      - accounts
+      - role
+      - passwords
+      - sessions
+      - beacons     
+      
+    command: node /app/bin/run.js -c /app/config/config-distributed.yml
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  accounts:
+    image: pipdevs/pip-services-accounts-node:latest
+    environment:
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=accounts
+    links:
+      - mongo   
+    ports:
+      - "8082:8080"
+  
+  role:
+    image: pipdevs/pip-services-roles-node:latest
+    environment:
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=roles
+    links:
+        - mongo
+    ports:
+      - "8083:8080"
+
+  passwords: 
+    image: pipdevs/pip-services-passwords-node:1.0.1-12-rc
+    environment:
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=passwd
+    links:
+        - mongo
+    ports:
+      - "8084:8080"
+
+  sessions:
+    image: pipdevs/pip-services-sessions-node:1.0.1-19-rc
+    environment:
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=sessions
+    links:
+        - mongo
+    ports:
+      - "8085:8080"
+
+  beacons:
+    image: pipdevs/pip-services-beacons-node:1.0
+    environment:
+      - MONGO_SERVICE_HOST=mongo
+      - MONGO_SERVICE_PORT=27017
+      - MONGO_DB=beacons
+    links:
+        - mongo
+    ports:
+      - "8086:8080"
+  
+```
+
+
 Build and run the facade using the respective scripts (described in the [Docker tutorial](../../microservice_dockerization) we mentioned above), which can be found in this example project’s [repository](https://github.com/pip-services-samples/facade-sample-node).
 
 To build the facade’s image and load the rest of the services’ images, run the “package” script using the command below:

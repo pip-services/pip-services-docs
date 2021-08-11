@@ -116,4 +116,4 @@ pip install pip-services3-sqlserver
 ```bash
 pip install pip-services3-swagger
 ```
-[GitHub repo](https://github.com/pip-services3-python/pip-services3-swagger-pyth0on)
+[GitHub repo](https://github.com/pip-services3-python/pip-services3-swagger-python)

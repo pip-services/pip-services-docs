@@ -42,12 +42,11 @@ The LambdaFunction class allows you to create an abstract AWS Lambda function th
 #### InheriteLambdaFunction
 Creates a new instance of this lambda function.
 
-> InheriteLambdaFunction(overrides [ILambdaFunctionOverrides](../ilambda_function_overrides), name string, description string, register [IRegisterable](../iregisterable)) [*LambdaFunction]()
+> InheriteLambdaFunction(overrides [ILambdaFunctionOverrides](../ilambda_function_overrides), name string, description string) [*LambdaFunction]()
 
-- **overrides**: [ILambdaFunctionOverrides](../ilambda_function_overrides) - TODO: add description
+- **overrides**: [ILambdaFunctionOverrides](../ilambda_function_overrides) - overrides.
 - **name**: string - (optional) container name (accessible via [ContextInfo](../../../components/info/context_info)).
 - **description**: string - (optional) container description (accessible via [ContextInfo](../../../components/info/context_info)).
-- **register**: [IRegisterable](../iregisterable) - created instance
 
 ### Fields
 

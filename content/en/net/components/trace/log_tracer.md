@@ -93,6 +93,6 @@ try {
 ```
 
 ### See also
-- #### [Tracer](../tracer)
+- #### [ITracer](../itracer/)
 - #### [CachedCounters](../../count/cached_counters)
 - #### [CompositeLogger](../../log/composite_logger)

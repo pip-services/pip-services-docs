@@ -278,7 +278,7 @@ namespace Beacons.Logic
 To sum up this class’s code: we’re creating commands for each of the controller’s methods, and then registering them in the constructor. To create a command, we give it a name, a validation schema (if needed), and a callback function with the following three parameters:
 
 - `correlationId`: string – used to identify the operation,
-- `args`: Parameters - the set of parameters received from the command being called,
+- `args`: Parameters - set of parameters received from the command being called,
 - `callback` – callback function for returning the command’s result, or an error, if one occurs.
 
 To be sure that our new methods are working correctly, let’s add some tests for the controller. The code for testing the controller is listed below:

@@ -12,7 +12,7 @@ description: >
 ### Description
 The MemcachedCache class allows you to create distributed cache that stores values in Memcached's caching service. 
 
-Important points
+**Important points**
 
 - The current implementation does not support authentication.
 

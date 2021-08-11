@@ -6,7 +6,7 @@ linkTitle: "Step 3. Persistence"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
-In this step, we’ll be creating components for persisting the data model we defined in the previous step. In our projects, we always create at least two persistences: one for storing data in-memory (used for testing), and another for storing data in an external database (used in production). With the Beacons example, we’ll be doing the same.
+In this step, we’ll be creating the components for persisting the data model that we defined in the previous step. In our projects, it is advisale to create at least two persistences: one for storing data in-memory (used for testing), and another for storing data in an external database (used in production). With the Beacons example, we’ll be doing the same.
 
 Let’s start by navigating to the **src/service** directory and creating a **persistence** directory inside it. This directory is going to contain all of the files that relate to this step of the tutorial.
 
@@ -394,7 +394,7 @@ namespace Beacons.Persistence
 
 ```
 
-To run these tests, run the command npm test from a terminal at the root of the project.
+To run these tests, we run the command npm test from a terminal at the root of the project.
 
 *“But where exactly is the data going to be stored when we get the service actually up and running?”* you may ask. Jumping ahead, we’ll tell you that the config.yml configuration file takes care of that. It contains configurations for all of the service’s components, such as: which logger to use, where performance counter output should be, what database to connect to and using what parameters, etc. We’ll discuss this in more detail later on in this tutorial.
 

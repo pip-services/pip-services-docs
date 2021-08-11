@@ -4,8 +4,7 @@ title: "DiagnosticsLogger "
 linkTitle: "DiagnosticsLogger "
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    Diagnostic logger.
-
+    Logger that provides some extra diagnosis information.
 ---
 
 **Inherits**: [Logger](../logger)

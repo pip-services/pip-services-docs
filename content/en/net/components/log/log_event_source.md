@@ -4,15 +4,14 @@ title: "LogEventSource  "
 linkTitle: "LogEventSource  "
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-components-dotnet"
 description: >
-    TODO: add description
-
+    Defines the levels that describe log events.
 ---
 
 **Inherits**: EventSource
 
 ### Description
 
-TODO: add description
+The LogEventSource class defines the levels that descrie log events.
 
 
 ### Fields
@@ -20,7 +19,7 @@ TODO: add description
 <span class="hide-title-link">
 
 #### Current
-TODO: add description
+Current
 
 > `public static` Current: [LogEventSource]() = new LogEventSource();
 
@@ -29,7 +28,7 @@ TODO: add description
 ### Instance methods
 
 #### Debug
-TODO: add description
+Debug
 
 > void Debug(string correlationId, string message)
 
@@ -39,7 +38,7 @@ TODO: add description
 
 
 #### Error
-TODO: add description
+Error
 
 > void Error(string correlationId, string message)
 
@@ -48,7 +47,7 @@ TODO: add description
 
 
 #### Fatal
-TODO: add description
+Fatal
 
 > void Fatal(string correlationId, string message)
 
@@ -58,7 +57,7 @@ TODO: add description
 
 
 #### Info
-TODO: add description
+Info
 
 > void Info(string correlationId, string message)
 
@@ -67,7 +66,7 @@ TODO: add description
 
 
 #### Trace
-TODO: add description
+Trace
 
 > void Trace(string correlationId, string message)
 
@@ -76,7 +75,7 @@ TODO: add description
 
 
 #### Warn
-TODO: add description
+Warn
 
 > void Warn(string correlationId, string message)
 

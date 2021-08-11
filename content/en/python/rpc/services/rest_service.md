@@ -198,7 +198,7 @@ Registers a route with authorization in HTTP endpoint.
 
 
 #### send_created_result
-Creates a callback function that sends newly created object as JSON. That callack function call be called directly or passed as a parameter to business logic components. If object is not null it returns 201 status code. For null results it returns 204 status code. If error occur it sends ErrorDescription with approproate status code.
+Creates a callback function that sends newly created object as JSON. That callack function call be called directly or passed as a parameter to business logic components. If object is not None it returns 201 status code. For None results it returns 204 status code. If error occur it sends ErrorDescription with approproate status code.
 
 > send_created_result(result: Any): Optional[str]
 

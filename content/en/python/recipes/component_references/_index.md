@@ -61,7 +61,7 @@ class IReferences(ABC):
 ```
 
 The “locator” parameters are special keys that are used to search for necessary dependencies. Technically, any primitive value can be a locator - a number, string, or even a complex object (as long as it supports the “equals” operation).
-The **put** method is used to add a component and its locator/key to the list of dependencies. The rest of the methods are used for extracting dependencies. For example, the **get_required** method can be used for extracting essential dependencies, as an exception will be raised if no matches are found. The **get_one_optional** method, on the other hand, can be used for optional dependencies - it will simply return null if no matching dependencies are found.
+The **put** method is used to add a component and its locator/key to the list of dependencies. The rest of the methods are used for extracting dependencies. For example, the **get_required** method can be used for extracting essential dependencies, as an exception will be raised if no matches are found. The **get_one_optional** method, on the other hand, can be used for optional dependencies - it will simply return None if no matching dependencies are found.
 
 ### The IReferenceable & IUnreferenceable Interfaces
 

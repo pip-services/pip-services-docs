@@ -164,7 +164,7 @@ def use_memory_persistence():
 
     # Create items
     persistence = new MyMemoryPersistence();
-    created_item = persistence.create("123", { id: "1", name: "ABC" }, null);
+    created_item = persistence.create("123", { id: "1", name: "ABC" }, None);
 
     # Filter by name
     page = persistence.get_page_by_filter(

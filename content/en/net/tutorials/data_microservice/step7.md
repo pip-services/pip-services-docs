@@ -6,7 +6,7 @@ linkTitle: "Step 7. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a **Program.cs** file with the following code:
+To run our microservice, we need to add just one last bit of code. In the bin folder, we create a **Program.cs** file with the following code:
 
 **/src/service/process/Program.cs**
 
@@ -34,7 +34,7 @@ namespace Process
 
 In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `RunAsync()` method.
 
-To run the microservice, execute the following command from a terminal at the root of the project:
+To run the microservice, we execute the following command from a terminal at the root of the project:
 
 ```bash
 dotnet build # build
@@ -56,7 +56,7 @@ export MONGO_ENABLED=true
 dotnet src/process/bin/debug/net5.0/main.dll -c ./config/config.yml
 ```
 
-Make sure that you have MongoDB running locally (see [Setup environment](../../../getting_started/setup_environment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
+Just a reminder: make sure that you have MongoDB running locally (see [Setup environment](../../../getting_started/setup_environment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
 
 We can use the following docker composer configuration to run MongoDB in Docker:
 
@@ -115,7 +115,7 @@ Let’s move on to testing the main functionality of our microservice. Our set o
 
 We could use a REST client to test our microservice, but for the sake of this example, we’ll be using curl instead.
 
-Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../commons/commands/command_set/).
+Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../../commons/commands/command_set/).
 
 First, we’ll attempt to create a few beacons in the system:
 
@@ -126,14 +126,14 @@ curl -X POST -H "Content-Type: application/json" -d "{\"beacon\":{\"id\": \"2\",
 
 ```
 
-Update the second beacon by changing its coordinates and radius:
+We update the second beacon by changing its coordinates and radius:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"beacon\":{\"id\": \"2\", \"udi\": \"00002\", \"type\": \"altbeacon\", \"site_id\": \"1\", \"label\": \"TestBeacon2\", \"center\": { \"type\": \"Point\", \"coordinates\": [ 2, 4 ] },\"radius\": 80}}" http://localhost:8080/v1/beacons/update_beacon
 
 ```
 
-Retrieve a list of all available beacons using the command below:
+We retrieve a list of all available beacons using the command below:
 
 ```bash
 curl -X POST http://localhost:8080/v1/beacons/get_beacons
@@ -179,7 +179,7 @@ We should get the following JSON response with all of the beacons currently in t
 }
 ```
 
-Try to get the first beacon by its UDI using the command:
+Now, we try to get the first beacon by its UDI using the command:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"udi\":\"00001\"}" http://localhost:8080/v1/beacons/get_beacon_by_udi
@@ -205,13 +205,13 @@ We should receive the following response:
 }
 ```
 
-To calculate a device’s position, use the following request:
+To calculate a device’s position, we use the following request:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"site_id\": \"1\",\"udis\": [\"00001\", \"00002\"]}" http://localhost:8080/v1/beacons/calculate_position
 ```
 
-As a result, you should get the following coordinates:
+As a result, we should get the following coordinates:
 
 ``json
 {"type":"Point","coordinates":[1,2]}

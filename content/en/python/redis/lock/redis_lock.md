@@ -85,7 +85,7 @@ Sets references to dependent components.
 
 > set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### try_acquire_lock

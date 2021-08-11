@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 7. Running facade"
+title: "Step 7. Running the facade"
 linkTitle: "Step 7. Running facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-dotnet"
 ---

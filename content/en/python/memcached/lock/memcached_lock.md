@@ -71,7 +71,7 @@ Opens the component.
 
 > open(correlation_id: Optional[str])
 
-- **correlation_id**: Optional[str] - (optional) transaction id usd to trace execution through the call chain.
+- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 #### release_lock
 Releases a prevously acquired lock by its key.
@@ -99,7 +99,7 @@ It returns immediately a positive or negative result.
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **key**: str - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
-- **returns**: bool - **true** if lock was successfull and **false** otherwise.
+- **returns**: bool - true if lock was successfull and false otherwise.
 
 
 ### Examples

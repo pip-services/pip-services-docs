@@ -24,7 +24,7 @@ weight: 40
 
 **Q: What is a recommended strategy for incremental adoption of Pip.Services?**
 
-**A:** Irrelevant to implementation details, the first step in microservices development is always to establish consolidated logging and metrics across all microservices. Whether you instrument your existing microservices using loggers and performance counters from Pip.Services toolkit, or wrap your existing logging and monitoring into Pip.Services components. Then you shall go through 3 steps in any order: decompose microservice code into loosely coupled components, implement properly versioned interfaces, and package microservice components into appropriate containers.
+**A:** Irrelevant to implementation details, the first step in microservices development is always to establish consolidated logging and metrics across all microservices. Whether you instrument your existing microservices using loggers and performance counters from Pip.Services toolkit, or wrap your existing logging and monitoring into Pip.Services components. Then you shall go through three steps in any order: decompose microservice code into loosely coupled components, implement properly versioned interfaces, and package microservice components into appropriate containers.
 
 **Q: How stable is Pip.Services toolkit?**
 

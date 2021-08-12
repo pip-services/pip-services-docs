@@ -203,7 +203,7 @@ Last but not least, our microservice needs a container component. This component
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 
-Full listing of the container’s code found in the file:
+The full listing of the container’s code can be found in the file:
 
 **/HelloWorldProcess.py**
 
@@ -270,8 +270,8 @@ Looking at the configuration file, we can conclude that the following components
 - HelloWorldController - the controller of our microservice, implemented in step 2. Make note of the controller’s descriptor, as it will be used to link the controller class to the REST service.
 - [HttpEndpoint](../../rpc/services/http_endpoint) - standard Pip.Services component that allows multiple services to use a single HTTP port simultaneously.
 - HelloWorldRestServices - the REST service we implemented on step 3.
-- [HeartbeatHttpService](../../rpc/services/heartbeat_http_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
-- [StatusHttpService](../../rpc/services/status_http_service) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
+- [HeartbeatRestService](../../rpc/services/heartbeat_rest_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
+- [StatusRestService](../../rpc/services/status_rest_service/) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
 
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 

@@ -177,14 +177,14 @@ class HelloWorldRestService extends RestService {
        'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
   }
 
-  @override
+ @override
   void setReferences(references) {
     super.setReferences(references);
     controller =
         dependencyResolver.getOneRequired<HelloWorldController>('controller');
   }
 ‍
-  @override
+@override
   void register() {
     registerRoute('get', '/greeting', null,
         (angel.RequestContext req, angel.ResponseContext res) async{
@@ -217,7 +217,7 @@ HelloWorldServiceFactory() : super() {
 
 For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
 
-Full listing of the factory’s code found in the file:
+The full listing of the factory’s code can found in the file:
 
 **‍/lib/src/HelloWorldServiceFactory.dart**
 
@@ -306,8 +306,8 @@ Looking at the configuration file, we can conclude that the following components
 - HelloWorldController - the controller of our microservice, implemented in step 2. Make note of the controller’s descriptor, as it will be used to link the controller class to the REST service.
 - [HttpEndpoint](../../rpc/services/http_endpoint) - standard Pip.Services component that allows multiple services to use a single HTTP port simultaneously.
 - HelloWorldRestServices - the REST service we implemented on step 3.
-- [HeartbeatHttpService](../../rpc/services/heartbeat_http_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
-- [StatusHttpService](../../rpc/services/status_http_service) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
+- [HeartbeatRestService](../../rpc/services/heartbeat_rest_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
+- [StatusRestService](../../rpc/services/status_rest_service) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
 
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
@@ -346,7 +346,7 @@ When a microservice starts up, the following sequence of events takes place:
 
 When the microservice receives a signal to stop the process, the reverse sequence takes place:
 
-1. Components with active processes are closed - classes implementing the IClosable interface get their close methods called;
+1. Components with active processes are closed - classes implementing the IClosable interface get their close methods called.
 Components are unlinked. All components that implement the IUnreferenceable interface have their unsetReferences methods called;
 2. The components previously created in the container are destroyed;
 3. The container is stopped.
@@ -375,4 +375,4 @@ If all’s well, you should get the following string as a result:
 
 All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-dart).
 
-To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!
+To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice/) as your next step!

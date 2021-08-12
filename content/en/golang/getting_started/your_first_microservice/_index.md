@@ -333,8 +333,8 @@ Looking at the configuration file, we can conclude that the following components
 - HelloWorldController - the controller of our microservice, implemented in step 2. Make note of the controller’s descriptor, as it will be used to link the controller class to the REST service.
 - [HttpEndpoint](../../rpc/services/http_endpoint) - standard Pip.Services component that allows multiple services to use a single HTTP port simultaneously.
 - HelloWorldRestServices - the REST service we implemented on step 3.
-- [HeartbeatHttpService](../../rpc/services/heartbeat_http_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
-- [StatusHttpService](../../rpc/services/status_http_service) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
+- [HeartbeatRestService](../../rpc/services/heartbeat_rest_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
+- [StatusRestService](../../rpc/services/status_rest_service) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
 
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
@@ -365,7 +365,7 @@ When a microservice starts up, the following sequence of events takes place:
 
 2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [The Container recipe](../../recipes/container));
 
-4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yml passed as a parameter (see [The Configuration recipe]((../../recipes/configuration)));
+4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yml passed as a parameter (see [The Configuration recipe](../../recipes/configuration);
 
 5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The References recipe]);
 
@@ -402,4 +402,4 @@ If all’s well, you should get the following string as a result:
 
 All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-go).
 
-To learn even more about Pip.Services, consider creating a [Data Microservice](../../turptials/data_microservice) as your next step!
+To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice) as your next step!

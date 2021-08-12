@@ -1,8 +1,14 @@
 {{ define "main"}}
     <main id="main">
-      <div>
-       <h1 id="title">Not found</h1>
-          <p>Oops! This page doesn't exist. Try going back to our <a href="{{ "/" | relURL }}">home page</a>.</p>
+      <div class="jumbotron">
+          <div class="d-flex justify-content-center p-3">
+            <h1 class="text-center">Not found</h1>
+          </div>
+          <br>
+          <div class="d-flex justify-content-center p-3">
+            <h4 class="text-center">Oops! This page doesn't exist or has not yet been created.
+              Try going back to our <a href="{{ "/" | relURL }}">home page</a>.</h4>
+          </div>
       </div>
     </main>
 {{ end }}

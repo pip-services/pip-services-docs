@@ -64,4 +64,4 @@ Configuration files are often used for building microservices and configuring co
 A microservice’s container can read this configuration, use the descriptors in a factory to create all necessary components, provide these components with some configuration parameters, link the components with one another, and start up all available active processes.
 
 
-This approach was used to implement [The Pip.Services Library](../../../microservices/overview), which offers dozens of reusable microservices. And as a result, these microservices are all incredibly flexible: to configure them for a specific platform, all you need to do is provide them with the correct configuration, and you’re done! No coding needed!
+This approach was used to implement [The Pip.Services Library](../../../microservices/#overview), which offers dozens of reusable microservices. And as a result, these microservices are all incredibly flexible: to configure them for a specific platform, all you need to do is provide them with the correct configuration, and you’re done! No coding needed!

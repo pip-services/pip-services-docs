@@ -232,10 +232,10 @@ Opens the component.
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
-> peek(correlation_id: Optional[str]): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
+> peek(correlation_id: Optional[str]): [MessageEnvelope](../../../messaging/queues/message_envelope)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - peeked message.
+- **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - peeked message.
 
 #### peek_batch
 Peeks multiple incoming messages from the queue without removing them.
@@ -247,7 +247,7 @@ If there are no messages available in the queue, it returns an empty list.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **message_count**: int - maximum number of messages to peek.
-- **returns**: Promise<[MessageEnvelope[]](../../../messaging/queues/message_envelope)> - list with peeked messages.
+- **returns**: [MessageEnvelope[]](../../../messaging/queues/message_envelope) - list with peeked messages.
 
 #### read_message_count
 Reads the current number of messages in the queue to be delivered.

@@ -19,15 +19,15 @@ The microservice is structurally made up of these components:
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node1" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet1" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang1" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart1" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python1" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java1" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
+<div  id="node1">
 **/package.json**
 
 ```json
@@ -50,7 +50,7 @@ In the command line, type out the command below to install the dependencies:
 npm install
 ```
 </div>
-<div id="dotnet">
+<div id="dotnet1">
   
  ```bash
 dotnet new console
@@ -82,7 +82,7 @@ In the command line, type out the command below to install the dependencies:
 dotnet restore
 ```
 </div>
-<div id="golang">
+<div id="golang1">
 Run the following command in the command line:
 
 ```bash
@@ -112,7 +112,7 @@ go get -u
 ``` 
 </div>
 
-<div id="dart">
+<div id="dart1">
 
 **/pubspec.yaml**
 
@@ -167,7 +167,7 @@ These files are necessary export classes outside the library.
 
 </div>
 
-<div id="python">
+<div id="python1">
 
 the external dependencies are defined in the file below:
 
@@ -198,7 +198,7 @@ pip install -r requirements.txt
 
 </div>
 
-<div id="java">
+<div id="java1">
 
 Java code
 
@@ -208,15 +208,15 @@ Java code
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
     
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node2" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet2" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang2" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart2" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python2" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java2" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
+<div  id="node2">
 
 ```typescript
 greeting(name, callback) {
@@ -268,7 +268,7 @@ exports.HelloWorldController = HelloWorldController
 ```	  
 </div>
 
-<div  id="dotnet">
+<div  id="dotnet2">
 
 ```cs
 public async Task<string> GreetingAsync(string name){    
@@ -317,7 +317,7 @@ namespace HelloWorld {
 ```	  
 </div>
 
-<div  id="golang">
+<div  id="golang2">
 
 ```go
 func (c *HelloWorldController) Greeting(name string) (result string, err error) {
@@ -380,7 +380,7 @@ func (c *HelloWorldController) Greeting(name string) (result string, err error) 
 ```	  
 </div>
 	  
-<div  id="dart">
+<div  id="dart2">
 
 ```dart
 Future<String> greeting(name) async{
@@ -432,7 +432,7 @@ class HelloWorldController implements IConfigurable {
 	  
 </div>
 
-<div  id="python">
+<div  id="python2">
 
 ```python
 def greeting(name):        
@@ -477,7 +477,7 @@ class HelloWorldController:
 ```	  
 </div>
 
-<div  id="java">
+<div  id="java2">
 	  
 </div>
 
@@ -491,35 +491,35 @@ One of the most popular ways of transferring data between microservices is using
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node4" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet4" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang4" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart4" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-pytho4n" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java4" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
-	  
-</div>
-
-<div  id="dotnet">
+<div  id="node4">
 	  
 </div>
 
-<div  id="golang">
-	  
-</div>
-	  
-<div  id="dart">
+<div  id="dotnet4">
 	  
 </div>
 
-<div  id="python">
+<div  id="golang4">
+	  
+</div>
+	  
+<div  id="dart4">
 	  
 </div>
 
-<div  id="java">
+<div  id="python4">
+	  
+</div>
+
+<div  id="java4">
 	  
 </div>	  
 	  
@@ -529,15 +529,15 @@ Last but not least, our microservice needs a container component. This component
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 	  
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node5" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet5" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang5" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart5" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python5" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java5" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
+<div  id="node5">
 Full listing of the container’s code found in the file:
 
 **‍/HelloWorldProcess.js**
@@ -599,7 +599,7 @@ The dynamic configuration is defined in the file:
 ```	  
 </div>
 
-<div  id="dotnet">
+<div  id="dotnet5">
 Full listing of the container’s code found in the file:
 
 **‍/HelloWorldProcess.cs**
@@ -661,7 +661,7 @@ The dynamic configuration is defined in the file:
 ```	  
 </div>
 
-<div  id="golang">
+<div  id="golang5">
 Full listing of the container’s code found in the file:
 
 **‍/HelloWorldProcess.go**
@@ -727,7 +727,7 @@ The dynamic configuration is defined in the file:
 ```	  
 </div>
 	  
-<div  id="dart">
+<div  id="dart5">
 Full listing of the container’s code found in the file:
 
 **‍‍/lib/src/HelloWorldProcess.dart**
@@ -785,7 +785,7 @@ The dynamic configuration is defined in the file:
 ```	  
 </div>
 
-<div  id="python">
+<div  id="python5">
 The full listing of the container’s code can be found in the file:
 
 **/HelloWorldProcess.py**
@@ -846,7 +846,7 @@ The dynamic configuration is defined in the file:
 ```	  
 </div>
 
-<div  id="java">
+<div  id="java5">
 	  
 </div>
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
@@ -866,15 +866,15 @@ As you may have noticed, more than half of the components are being taken from P
 ### Step 6. Run and test the microservice
 	  
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node6" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet6" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang6" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart6" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python6" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java6" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
+<div  id="node6">
 In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 **/run.js**
@@ -893,7 +893,7 @@ try {
 ```	  
 </div>
 
-<div  id="dotnet">
+<div  id="dotnet6">
 In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
 
 **/Program.cs**
@@ -914,7 +914,7 @@ namespace HelloWorld {
 ```	  
 </div>
 
-<div  id="golang">
+<div  id="golang6">
 In Golang, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line. Let's place it separately from the rest in the folder bin.
 
 **/bin/run.go**
@@ -934,7 +934,7 @@ func main() {
 ```	  
 </div>
 	  
-<div  id="dart">
+<div  id="dart6">
 In Dart, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 **/bin/run.dart.**
@@ -954,7 +954,7 @@ void main(List<String> argv) {
 ```	  
 </div>
 
-<div  id="python">
+<div  id="python6">
 In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 **/run.py**
@@ -975,7 +975,7 @@ if __name__ == '__main__':
 ```	  
 </div>
 
-<div  id="java">
+<div  id="java6">
 	  
 </div>
 	  

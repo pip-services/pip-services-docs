@@ -207,24 +207,285 @@ Java code
 ### Step 2. Controller
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
     
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “__default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
-   
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node">
+
+```typescript
+greeting(name, callback) {
+    callback(null, "Hello, " + (name || this._defaultName) + "!");
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```typescript
+configure(config) {
+   this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
 More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.js**
+
+```typescript
+"use strict";
+
+class HelloWorldController {
+    constructor() {
+        this._defaultName = "Pip User";   
+    }
+
+    configure(config) {
+        this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+    }
+
+    greeting(name, callback) {
+        callback(null, "Hello, " + (name || this._defaultName) + "!");
+    }
+}
+
+exports.HelloWorldController = HelloWorldController
+
+```	  
+</div>
+
+<div  id="dotnet">
+
+```cs
+public async Task<string> GreetingAsync(string name){    
+  return await Task.FromResult($"Hello {name ?? _defaultName}!");
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “_default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```cs
+public void Configure(ConfigParams config){
+    _defaultName = config.GetAsStringWithDefault("default_name", null);
+}
+```
+
+Now, the parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.cs**
+
+```cs
+using System.Threading.Tasks;using PipServices3.Commons.Config; 
+namespace HelloWorld {    
+    public class HelloWorldController : IConfigurable {        
+        private string _defaultName = null; 
+
+        public void Configure(ConfigParams config) {            
+            _defaultName = config.GetAsStringWithDefault("default_name", null);        
+        }   
+
+        public async Task<string> GreetingAsync(string name) {            
+            return await Task.FromResult($"Hello {name ?? _defaultName}!");        
+        }    
+    }
+}
+
+```	  
+</div>
+
+<div  id="golang">
+
+```go
+func (c *HelloWorldController) Greeting(name string) (result string, err error) {
+    if name == "" { 
+        name = c.defaultName
+    }
+    return "Hello, " + name + "!", nil
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```go
+func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {	
+    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.go**
+
+```go
+package quickstart
+
+import ( 
+    cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+)
+
+type HelloWorldController struct { 
+    defaultName string
+}
+func NewHelloWorldController() *HelloWorldController {
+    c := HelloWorldController{}
+    c.defaultName = "Pip User"
+    return &c
+}
+
+func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {
+    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+}
+
+func (c *HelloWorldController) Greeting(name string) (result string, err error) {
+    if name == "" {
+        name = c.defaultName
+    }
+    return "Hello, " + name + "!", nil
+}
+
+```	  
+</div>
+	  
+<div  id="dart">
+
+```dart
+Future<String> greeting(name) async{
+    return 'Hello, ' + (name ?? defaultName) + '!';
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```dart
+void configure(config) {
+    defaultName = config.getAsStringWithDefault('default_name', defaultName);  
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/lib/src/HelloWorldController.dart**
+
+```dart
+import 'dart:async';
+
+class HelloWorldController implements IConfigurable {
+  var defaultName;
+  HelloWorldController() {
+    defaultName = 'Pip User';
+  }
+
+  @override  void configure(ConfigParams config) {
+    defaultName = config.getAsStringWithDefault('default_name', defaultName);
+  }
+‍
+  Future<String> greeting(name) async{
+    return 'Hello, ' + (name ?? defaultName) + '!';
+  }
+}
+
+```
+	  
+</div>
+
+<div  id="python">
+
+```python
+def greeting(name):        
+    return f"Hello, {name if name is not None else self.__defaultName} !"
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “__default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```python
+def configure(config):        
+    self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.py**
+
+```python
+# -*- coding: utf-8 -*- 
+class HelloWorldController:
+    __default_name = None
+
+    def __init__(self):
+        self.__default_name = "Pip User"
+
+    def configure(config):
+        self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
+
+    def greeting(name):
+        return f"Hello, {name if name is not None else self.__default_name} !"
+
+```	  
+</div>
+
+<div  id="java">
+	  
+</div>
+
 
 ### Step 3. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
 
-To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
-
-Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
-
-We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
-
-```GET /hello_world/greeting?name=John```
-
-Full listing for the REST service found in the file:
 
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.

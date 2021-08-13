@@ -2,7 +2,7 @@
 type: docs
 title: "IMqttMessageListener"
 linkTitle: "IMqttMessageListener"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mqtt-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-mqtt-python"
 description: >
     Interface for MQTT messages.
 
@@ -17,11 +17,11 @@ The IMqttMessageListener interface is used to create listeners for MQTT messages
 ### Instance methods
 
 
-#### onMessage
+#### on_message
 Defines the actions to be done once a message is received.
 
-> onMessage(topic: string, message: any, packet: any): Promise\<void\>
+> on_message(topic: str, partition: Any, packet: Any)
 
-- **topic**: string - topic
-- **message**: number - partition
-- **packet**: any - message
+- **topic**: str - topic
+- **message**: Any - message
+- **packet**: Any - packet

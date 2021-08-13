@@ -490,365 +490,14 @@ One of the most popular ways of transferring data between microservices is using
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node4" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet4" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang4" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart4" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-pytho4n" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java4" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
-
-<div  id="node4">
 	  
-</div>
-
-<div  id="dotnet4">
-	  
-</div>
-
-<div  id="golang4">
-	  
-</div>
-	  
-<div  id="dart4">
-	  
-</div>
-
-<div  id="python4">
-	  
-</div>
-
-<div  id="java4">
-	  
-</div>	  
 	  
 ### Step 5. Container
 Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we’ll be running our example microservice as a system process. To do this, we’ll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 	  
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node5" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet5" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang5" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart5" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python5" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java5" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
 
-<div  id="node5">
-Full listing of the container’s code found in the file:
-
-**‍/HelloWorldProcess.js**
-
-```typescript
-"use strict";
-
-const rpc = require("pip-services-rpc-node");
-const factory = require("./HelloWorldServiceFactory");
-
-class HelloWorldProcess extends container.ProcessContainer {
-    constructor() {
-        super('hello-world', 'HelloWorld microservice');
-        this._configPath = './config.yml';
-        this._factories.add(new factory.HelloWorldServiceFactory());
-        this._factories.add(new rpc.DefaultRpcFactory());
-    }
-}
-
-exports.HelloWorldProcess = HelloWorldProcess;
-```
-
-The dynamic configuration is defined in the file:
-
-**‍/config.yml**
-
-```yml
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-```	  
-</div>
-
-<div  id="dotnet5">
-Full listing of the container’s code found in the file:
-
-**‍/HelloWorldProcess.cs**
-
-```cs
-using PipServices3.Container;
-using PipServices3.Rpc.Build; 
-
-namespace HelloWorld {
-
-    public class HelloWorldProcess : ProcessContainer {    
-
-        public HelloWorldProcess(): base("hello_world", "Hello world microservice") {            
-            _configPath = "config.yml";             
-            _factories.Add(new DefaultRpcFactory());            
-            _factories.Add(new HelloWorldServiceFactory());        
-        }   
-
-    }
-}
-```
-
-The dynamic configuration is defined in the file:
-
-**‍/config.yml**
-
-```yml
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-```	  
-</div>
-
-<div  id="golang5">
-Full listing of the container’s code found in the file:
-
-**‍/HelloWorldProcess.go**
-
-```go
-package quickstart
-
-import (
-    cproc "github.com/pip-services3-go/pip-services3-container-go/container"
-    rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
-)
-
-type HelloWorldProcess struct {
-    cproc.ProcessContainer
-}
-
-func NewHelloWorldProcess() *HelloWorldProcess {
-    c := HelloWorldProcess{}
-    c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
-    c.SetConfigPath("./config.yml")
-    c.AddFactory(NewHelloWorldServiceFactory())
-    c.AddFactory(rpcbuild.NewDefaultRpcFactory())
-    return &c
-}
-```
-
-The dynamic configuration is defined in the file:
-
-**‍/config.yml**
-
-```yml
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-```	  
-</div>
-	  
-<div  id="dart5">
-Full listing of the container’s code found in the file:
-
-**‍‍/lib/src/HelloWorldProcess.dart**
-
-```dart
-import 'package:pip_services3_rpc/pip_services3_rpc.dart';
-import 'package:pip_services3_container/pip_services3_container.dart';
-import './HelloWorldServiceFactory.dart';
-
-class HelloWorldProcess extends ProcessContainer {
-  HelloWorldProcess() : super('hello-world', 'HelloWorld microservice') {
-    configPath = './config.yml';
-    factories.add(HelloWorldServiceFactory());
-    factories.add(DefaultRpcFactory());
-  }
-}
-```
-
-The dynamic configuration is defined in the file:
-
-**‍/config.yml**
-
-```yml
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-```	  
-</div>
-
-<div  id="python5">
-The full listing of the container’s code can be found in the file:
-
-**/HelloWorldProcess.py**
-
-```python
-# -*- coding: utf-8 -*- 
-from HelloWorldServiceFactory import HelloWorldServiceFactory
-from pip_services3_container.ProcessContainer import ProcessContainer
-from pip_services3_rpc.build import DefaultRpcFactory
-
-
-class HelloWorldProcess(ProcessContainer):
-    def __init__(self):
-
-        super(HelloWorldProcess, self).__init__('hello-world', 'HelloWorld microservice')
-        self._config_path = './config.yaml'
-        self._factories.add(HelloWorldServiceFactory())
-        self._factories.add(DefaultRpcFactory())
-
-```
-
-The dynamic configuration is defined in the file:
-
-**‍/config.yaml**
-
-```yml
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
-# Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-```	  
-</div>
-
-<div  id="java5">
-	  
-</div>
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
 
 - [ContextInfo](../../components/info/context_info) - standard Pip.Services component for determining the name and description of a microservice.
@@ -865,119 +514,7 @@ As you may have noticed, more than half of the components are being taken from P
 	  
 ### Step 6. Run and test the microservice
 	  
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node6" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet6" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang6" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart6" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python6" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java6" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
 
-<div  id="node6">
-In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
-
-**/run.js**
-
-```typescript
-"use strict";
-
-const process = require("./HelloWorldProcess");
-
-try {
-    new process.HelloWorldProcess().run(process.argv);
-} catch(ex) {
-    console.error(ex);
-}
-
-```	  
-</div>
-
-<div  id="dotnet6">
-In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
-
-**/Program.cs**
-
-```cs
-namespace HelloWorld { 
-
-    class Program { 
-
-        static void Main(string[] args) {   
-
-            var process = new HelloWorldProcess();            
-            process.RunAsync(args).Wait();        
-        }
-
-    }
-}
-```	  
-</div>
-
-<div  id="golang6">
-In Golang, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line. Let's place it separately from the rest in the folder bin.
-
-**/bin/run.go**
-
-```go
-package main
-
-import (
-    "os"
-    "quickstart"
-)
-
-func main() {
-    proc := quickstart.NewHelloWorldProcess()
-    proc.Run(os.Args)
-}
-```	  
-</div>
-	  
-<div  id="dart6">
-In Dart, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
-
-**/bin/run.dart.**
-
-```dart
-import 'package:pip_quickstart/pip_quickstart.dart';
-
-void main(List<String> argv) {
-  try {
-    var proc = HelloWorldProcess();
-    proc.run(argv);
-  } catch (ex) {
-    print(ex);
-  }
-}
-
-```	  
-</div>
-
-<div  id="python6">
-In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
-
-**/run.py**
-
-```python
-
-# -*- coding: utf-8 -*- 
-from HelloWorldProcess import HelloWorldProcess
-
-if __name__ == '__main__':
-    runner = HelloWorldProcess()
-    print("run")
-    try:
-        runner.run()
-    except Exception as ex:
-        print(ex)
-
-```	  
-</div>
-
-<div  id="java6">
-	  
-</div>
 	  
 When a microservice starts up, the following sequence of events takes place:
 
@@ -1000,54 +537,43 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 2. The components previously created in the container are destroyed;
 3. The container is stopped.
 
-To start the microservice, run the following command from a terminal:
+
 <div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node6-2" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet6-2" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang6-2" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart6-2" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python6-2" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java6-2" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+  <button id="select-node6b" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet6b" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang6b" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart6b" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python6b" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java6b" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node6-2">
-	  	         
-```bash
-node ./run.js
-```	  
+<div  id="node6b">
+node	  
 </div>
 
-<div  id="dotnet6-2">
-
-```bash
-dotnet run
-```	  
+<div  id="dotnet6b">
+dotnet	  
 </div>
 
-<div  id="golang6-2">
-
-```bash
-go run ./bin/run.go
-```	  
+<div  id="golang6b">
+golang	  
 </div>
 	  
-<div  id="dart6-2">
-
-```bash
-dart./bin/run.dart
-```	  
+<div  id="dart6b">
+dart	  
 </div>
 
-<div  id="python6-2">
-
-```bash
-python ./run.py
-```	  
+<div  id="python6b">
+python	  
 </div>
 
-<div  id="java6-2">
-	  
+<div  id="java6b">
+java	  
 </div>
+
+
+
+
 
 If the microservice started up successfully, you should see the following result in the terminal:
 

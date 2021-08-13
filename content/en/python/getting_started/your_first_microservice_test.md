@@ -229,11 +229,76 @@ Full listing for the REST service found in the file:
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node">
+	  
+</div>
+
+<div  id="dotnet">
+	  
+</div>
+
+<div  id="golang">
+	  
+</div>
+	  
+<div  id="dart">
+	  
+</div>
+
+<div  id="python">
+	  
+</div>
+
+<div  id="java">
+	  
+</div>	  
+	  
 ### Step 5. Container
 Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we’ll be running our example microservice as a system process. To do this, we’ll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
+	  
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
 
+<div  id="node">
+	  
+</div>
+
+<div  id="dotnet">
+	  
+</div>
+
+<div  id="golang">
+	  
+</div>
+	  
+<div  id="dart">
+	  
+</div>
+
+<div  id="python">
+	  
+</div>
+
+<div  id="java">
+	  
+</div>
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
 
 - [ContextInfo](../../components/info/context_info) - standard Pip.Services component for determining the name and description of a microservice.

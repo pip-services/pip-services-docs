@@ -637,19 +637,234 @@ namespace HelloWorld {
 
 <div  id="golang3">
 
-golang
+
+```go
+type HelloWorldRestService struct {
+    *rpc.RestService
+    controller *HelloWorldController
+}
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s Register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```go
+func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
+    name := req.URL.Query().Get("name")
+    result, err := c.controller.Greeting(name)
+    c.SendResult(res, req, result, err)
+}
+
+func (c *HelloWorldRestService) Register() {
+    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+}
+```
+
+To get a reference to the controller, add its handle to the DependencyResolver under the name “controller”. And for the registration mechanism to work correctly, you must pass a pointer to RestService on the component that implements the IRegistrable interface. Let's do it in the component constructing method:
+
+```go
+func NewHelloWorldRestService() *HelloWorldRestService {
+    c := HelloWorldRestService{}
+    c.RestService = rpc.NewRestService()
+    c.RestService.IRegisterable = &c
+    c.BaseRoute = "/hello_world"
+    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+    return &c
+}
+
+```
+
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
+
+We also need to set a base route in the service’s constructor using the _baseRoute property. As a result, the microservice’s full REST request will look something like:
+
+```GET /hello_world/greeting?name=John```
+
+Full listing for the REST service found in the file:
+
+**/HelloWorldRestService.go**
+```go
+package quickstart
+
+import (
+    "net/http"
+    crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+)
+
+type HelloWorldRestService struct {
+    *rpc.RestService
+    controller *HelloWorldController
+}
+
+func NewHelloWorldRestService() *HelloWorldRestService {
+    c := HelloWorldRestService{}
+    c.RestService = rpc.NewRestService()
+    c.RestService.IRegisterable = &c
+    c.BaseRoute = "/hello_world"
+    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+    return &c
+}
+
+func (c *HelloWorldRestService) SetReferences(references crefer.IReferences) { 
+    c.RestService.SetReferences(references)
+    depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
+    if depErr == nil && depRes != nil {
+        c.controller = depRes.(*HelloWorldController)
+    }
+}
+
+func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
+    name := req.URL.Query().Get("name")
+    result, err := c.controller.Greeting(name)
+    c.SendResult(res, req, result, err)
+}
+
+func (c *HelloWorldRestService) Register() {
+    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+}
+```
+
   
 </div>
 	  
 <div  id="dart3">
 
-dart
+
+```dart
+class HelloWorldRestService extends rpc.RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```dart
+@override
+  void register() {
+    registerRoute('get', '/greeting', null,
+        (angel.RequestContext req, angel.ResponseContext res) async{
+      var name = req.queryParameters['name'];
+      sendResult(req, res, null, await controller.greeting(name));
+    });
+  }
+```
+
+To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+
+```dart
+HelloWorldRestService() : super() {
+    baseRoute = '/hello_world';
+    dependencyResolver.put(
+        'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
+}
+
+```
+
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
+
+We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
+
+```GET /hello_world/greeting?name=John```
+
+Full listing for the REST service found in the file:
+
+**/lib/src/HelloWorldRestService.dart**
+```dart
+import 'package:angel_framework/angel_framework.dart' as angel;
+import 'package:pip_services3_rpc/pip_services3_rpc.dart';
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import './HelloWorldController.dart';
+
+class HelloWorldRestService extends RestService {
+  HelloWorldController controller;
+
+  HelloWorldRestService() : super() {
+    baseRoute = '/hello_world';
+    dependencyResolver.put( 
+       'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
+  }
+
+ @override
+  void setReferences(references) {
+    super.setReferences(references);
+    controller =
+        dependencyResolver.getOneRequired<HelloWorldController>('controller');
+  }
+‍
+@override
+  void register() {
+    registerRoute('get', '/greeting', null,
+        (angel.RequestContext req, angel.ResponseContext res) async{
+      var name = req.queryParameters['name'];
+      sendResult(req, res, null, await controller.greeting(name));
+    });
+  }
+}
+```
+
+
 	  
 </div>
 
 <div  id="python3">
 
-python 
+```python
+class HelloWorldRestService(RestService):
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```python
+def register(self):
+    self.register_route(method="GET", route=self._route, handler=self.greeting)
+
+
+def greeting(self, name):
+    result = Parameters.from_tuples("name", self._controller.greeting(name))
+
+    self.send_result(result)
+
+```
+
+To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+
+```python
+def __init__(self):
+    super(HelloWorldRestService, self).__init__()
+    self._base_route = "/hello_world"
+    ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
+    self._dependency_resolver.put('controller', ControllerDescriptor)
+
+```
+
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
+
+We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
+
+```GET /hello_world/greeting?name=John```
+
+Full listing for the REST service found in the file:
+
+**/HelloWorldRestService.py**
+```python
+class HelloWorldRestService(RestService):
+
+    def __init__(self):
+        super(HelloWorldRestService, self).__init__()
+        self._base_route = "/hello_word"
+        ControllerDescriptor = Descriptor('hello-world', 'controller', '*', '*', '1.0')
+        self._dependency_resolver.put('controller', ControllerDescriptor)
+
+    def set_references(self, references):
+        super(HelloWorldRestService, self).set_references(references)
+        self._controller = self._dependency_resolver.get_one_required('controller')
+
+    def register(self):
+        self.register_route(method="GET", route=self._route, handler=self.greeting, schema=None)
+
+    def greeting(self, name):
+        result = self._controller.greeting(name)
+        self.send_result(result)
+```
+ 
 </div>
 
 <div  id="java3">
@@ -770,19 +985,150 @@ namespace HelloWorld {
 
 <div  id="golang4">
 
-golang
+```go
+type HelloWorldServiceFactory struct {
+    cbuild.Factory
+}
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```go
+func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
+    c := HelloWorldServiceFactory{}
+    c.Factory = *cbuild.NewFactory()
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+        NewHelloWorldController,
+    )
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+        NewHelloWorldRestService,
+    )
+    return &c
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.go**
+
+```go
+package quickstart
+
+import (
+    cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+)
+
+type HelloWorldServiceFactory struct {
+    cbuild.Factory
+} 
+func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
+    c := HelloWorldServiceFactory{}
+    c.Factory = *cbuild.NewFactory()
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+        NewHelloWorldController,
+    )
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+        NewHelloWorldRestService,
+    )
+    return &c
+}
+```
   
 </div>
 	  
 <div  id="dart4">
 
-dart
+```dart
+class HelloWorldServiceFactory extends Factory
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```dart
+HelloWorldServiceFactory() : super() {
+    registerAsType(
+        Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        HelloWorldController);
+    registerAsType(Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        HelloWorldRestService);
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+The full listing of the factory’s code can found in the file:
+
+**‍/lib/src/HelloWorldServiceFactory.dart**
+
+```dart
+import 'package:pip_services3_components/pip_services3_components.dart';
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import './HelloWorldController.dart';import './HelloWorldRestService.dart';
+
+class HelloWorldServiceFactory extends Factory {
+  HelloWorldServiceFactory() : super() {
+    registerAsType(
+        Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        HelloWorldController);
+    registerAsType(Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        HelloWorldRestService);
+  }
+}
+```
 	  
 </div>
 
 <div  id="python4">
 
-python 
+```python
+class HelloWorldServiceFactory(Factory):
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```python
+def __init__(self):
+    super(HelloWorldServiceFactory, self).__init__()
+    ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
+    HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
+    self.register_as_type(ControllerDescriptor, HelloWorldController)
+    self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
+
+
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+A full listing of the factory’s code can be found in the file:
+
+**‍/HelloWorldServiceFactory.py**
+
+```python
+# -*- coding: utf-8 -*- 
+from HelloWorldController import HelloWorldController
+from HelloWorldRestService import HelloWorldRestService
+from pip_services3_commons.refer import Descriptor
+from pip_services3_components.build import Factory
+
+
+class HelloWorldServiceFactory(Factory):
+    def __init__(self):
+
+        super(HelloWorldServiceFactory, self).__init__()
+        ControllerDescriptor = Descriptor('hello-world', 'controller', 'default', '*', '1.0')
+        HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
+        self.register_as_type(ControllerDescriptor, HelloWorldController)
+        self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
+
+```
+
 </div>
 
 <div  id="java4">

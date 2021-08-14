@@ -200,7 +200,9 @@ pip install -r requirements.txt
 
 <div id="java1">
 
-Java code
+**Not available**
+	        
+	        
 
 </div>
 
@@ -478,7 +480,9 @@ class HelloWorldController:
 </div>
 
 <div  id="java2">
-	  
+**Not available**     
+	       
+	       
 </div>
 
 
@@ -868,7 +872,9 @@ class HelloWorldRestService(RestService):
 </div>
 
 <div  id="java3">
-java	  
+**Not available**    
+	      
+	      
 </div>
 
 
@@ -1132,7 +1138,9 @@ class HelloWorldServiceFactory(Factory):
 </div>
 
 <div  id="java4">
-java	  
+**Not available**     
+	       
+	        
 </div>
 	  
 	  
@@ -1470,7 +1478,9 @@ The dynamic configuration is defined in the file:
 </div>
 
 <div  id="java5">
-java	  
+**Not available**     
+	        
+	        
 </div>
 
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
@@ -1612,7 +1622,9 @@ python
 </div>
 
 <div  id="java6a">
-java	  
+**Not available**    
+	       
+	       
 </div>
 
 	  
@@ -1687,7 +1699,9 @@ python ./run.py
 </div>
 
 <div  id="java6b">
-	  
+**Not availale**    
+	        
+	       
 </div>
 
 

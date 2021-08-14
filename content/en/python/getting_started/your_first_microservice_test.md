@@ -1280,7 +1280,70 @@ The dynamic configuration is defined in the file:
 
 <div  id="golang5">
 
-golang
+Full listing of the container’s code found in the file:
+
+**‍/HelloWorldProcess.go**
+
+```go
+package quickstart
+
+import (
+    cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+    rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
+)
+
+type HelloWorldProcess struct {
+    cproc.ProcessContainer
+}
+
+func NewHelloWorldProcess() *HelloWorldProcess {
+    c := HelloWorldProcess{}
+    c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
+    c.SetConfigPath("./config.yml")
+    c.AddFactory(NewHelloWorldServiceFactory())
+    c.AddFactory(rpcbuild.NewDefaultRpcFactory())
+    return &c
+}
+```
+
+The dynamic configuration is defined in the file:
+
+**‍/config.yml**
+
+```yml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0" 
+  name: "hello-world" 
+  description: "HelloWorld microservice" 
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0" 
+  level: "trace" 
+
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0" 
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0" 
+  default_name: "World" 
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0" 
+  connection: 
+    protocol: http 
+    host: 0.0.0.0 
+    port: 8080 
+
+# HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0" 
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
+‍
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+```
+
   
 </div>
 	  
@@ -1482,7 +1545,25 @@ namespace HelloWorld {
 </div>
 
 <div  id="golang6a">
-golang 
+
+In Golang, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line. Let's place it separately from the rest in the folder bin.
+
+**/bin/run.go**
+
+```go
+package main
+
+import (
+    "os"
+    "quickstart"
+)
+
+func main() {
+    proc := quickstart.NewHelloWorldProcess()
+    proc.Run(os.Args)
+}
+```
+ 
 </div>
 	  
 <div  id="dart6a">

@@ -1286,13 +1286,124 @@ golang
 	  
 <div  id="dart5">
 
-dart
+Full listing of the container’s code found in the file:
+
+**‍‍/lib/src/HelloWorldProcess.dart**
+
+```dart
+import 'package:pip_services3_rpc/pip_services3_rpc.dart';
+import 'package:pip_services3_container/pip_services3_container.dart';
+import './HelloWorldServiceFactory.dart';
+
+class HelloWorldProcess extends ProcessContainer {
+  HelloWorldProcess() : super('hello-world', 'HelloWorld microservice') {
+    configPath = './config.yml';
+    factories.add(HelloWorldServiceFactory());
+    factories.add(DefaultRpcFactory());
+  }
+}
+```
+
+The dynamic configuration is defined in the file:
+
+**‍/config.yml**
+
+```yml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0" 
+  name: "hello-world" 
+  description: "HelloWorld microservice" 
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0" 
+  level: "trace" 
+
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0" 
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0" 
+  default_name: "World" 
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0" 
+  connection: 
+    protocol: http 
+    host: 0.0.0.0 
+    port: 8080 
+
+# HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0" 
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
+‍
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+```
 	  
 </div>
 
 <div  id="python5">
+The full listing of the container’s code can be found in the file:
 
-python 
+**/HelloWorldProcess.py**
+
+```python
+# -*- coding: utf-8 -*- 
+from HelloWorldServiceFactory import HelloWorldServiceFactory
+from pip_services3_container.ProcessContainer import ProcessContainer
+from pip_services3_rpc.build import DefaultRpcFactory
+
+
+class HelloWorldProcess(ProcessContainer):
+    def __init__(self):
+
+        super(HelloWorldProcess, self).__init__('hello-world', 'HelloWorld microservice')
+        self._config_path = './config.yaml'
+        self._factories.add(HelloWorldServiceFactory())
+        self._factories.add(DefaultRpcFactory())
+
+```
+
+The dynamic configuration is defined in the file:
+
+**‍/config.yaml**
+
+```yml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0" 
+  name: "hello-world" 
+  description: "HelloWorld microservice" 
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0" 
+  level: "trace" 
+
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0" 
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0" 
+  default_name: "World" 
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0" 
+  connection: 
+    protocol: http 
+    host: 0.0.0.0 
+    port: 8080 
+
+# HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0" 
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
+‍
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+```
+
 </div>
 
 <div  id="java5">
@@ -1376,7 +1487,24 @@ golang
 	  
 <div  id="dart6a">
 
-dart
+In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+
+**/bin/run.dart.**
+
+```dart
+import 'package:pip_quickstart/pip_quickstart.dart';
+
+void main(List<String> argv) {
+  try {
+    var proc = HelloWorldProcess();
+    proc.run(argv);
+  } catch (ex) {
+    print(ex);
+  }
+}
+
+```
+
 	  
 </div>
 

@@ -12,7 +12,7 @@ description: >
 
 The LogMessage class allows you to create data objects used to store captured log messages.
 
-Important points
+**Important points**
 
 - This object is used by [CachedLogger](../cached-logger).
 

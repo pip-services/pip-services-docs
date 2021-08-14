@@ -496,7 +496,6 @@ One of the most popular ways of transferring data between microservices is using
 
 <div  id="node3">
 
-
 ```typescript
 class HelloWorldRestService extends rpc.RestService
 ```
@@ -563,7 +562,77 @@ exports.HelloWorldRestService = HelloWorldRestService
 
 <div  id="dotnet3">
 
-dotnet
+```cs
+public class HelloWorldRestService : RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```cs
+public override void Register(){    
+    base.Register();    
+    RegisterRoute("GET", "/greeting", async (request, response, routeData) => {        
+        string name = null;        
+        if (request.Query.TryGetValue("name", out StringValues values)) {            
+            name = values.FirstOrDefault();        
+        }        
+        await SendResultAsync(response, await _controller.GreetingAsync(name));    
+  });
+}
+```
+
+To get a reference to the controller, we’ll add its descriptor to the “_dependencyResolver” with a name of “controller”.
+
+```cs
+public HelloWorldRestService(){    
+    _baseRoute = "hello_world";    
+    _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));
+}
+
+```
+
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
+
+We also need to set a base route in the service’s constructor using the _baseRoute property. As a result, the microservice’s full REST request will look something like:
+
+```GET /hello_world/greeting?name=John```
+
+Full listing for the REST service found in the file:
+
+**/HelloWorldRestService.cs**
+```cs
+using Microsoft.Extensions.Primitives;
+using PipServices3.Commons.Refer;
+using PipServices3.Rpc.Services;
+using System.Linq; 
+namespace HelloWorld {    
+    public class HelloWorldRestService : RestService {        
+        private HelloWorldController _controller;   
+
+        public HelloWorldRestService() {            
+            _baseRoute = "hello_world";            
+            _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));        
+        }    
+
+        public override void SetReferences(IReferences references) {            
+            base.SetReferences(references);            
+            _controller = _dependencyResolver.GetOneRequired<HelloWorldController>("controller");        
+        }  
+
+        public override void Register() {            
+            base.Register();            
+            RegisterRoute("GET", "/greeting", async (request, response, routeData) => {                
+                string name = null;                
+                if (request.Query.TryGetValue("name", out StringValues values)) {                    
+                  name = values.FirstOrDefault();                
+                }                
+              await SendResultAsync(response, await _controller.GreetingAsync(name));
+            });        
+        }    
+    }
+}
+```
+
 </div>
 
 <div  id="golang3">
@@ -657,7 +726,45 @@ exports.HelloWorldServiceFactory = HelloWorldServiceFactory
 
 <div  id="dotnet4">
 
-dotnet
+
+```cs
+public class HelloWorldServiceFactory : Factory
+```
+
+The factory’s constructor is used to register descriptors and their corresponding component types.
+
+```cs
+public HelloWorldServiceFactory(){    
+    RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));    
+    RegisterAsType(HttpServiceDescriptor, typeof(HelloWorldRestService));
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.cs**
+
+```cs
+using PipServices3.Commons.Refer;
+using PipServices3.Components.Build; 
+
+namespace HelloWorld {    
+
+    public class HelloWorldServiceFactory : Factory {  
+
+        public static Descriptor Descriptor = new Descriptor("hello-world", "factory", "service", "default", "1.0");        
+        public static Descriptor ControllerDescriptor = new Descriptor("hello-world", "controller", "default", "*", "1.0");        
+        public static Descriptor RestServiceDescriptor = new Descriptor("hello-world", "service", "http", "*", "1.0");         
+        
+        public HelloWorldServiceFactory(){            
+            RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));            
+            RegisterAsType(RestServiceDescriptor, typeof(HelloWorldRestService));        
+        }    
+    }
+}
+```
 
 </div>
 
@@ -763,7 +870,65 @@ The dynamic configuration is defined in the file:
 
 <div  id="dotnet5">
 
-dotnet
+Full listing of the container’s code found in the file:
+
+**‍/HelloWorldProcess.cs**
+
+```cs
+using PipServices3.Container;
+using PipServices3.Rpc.Build; 
+
+namespace HelloWorld {
+
+    public class HelloWorldProcess : ProcessContainer {    
+
+        public HelloWorldProcess(): base("hello_world", "Hello world microservice") {            
+            _configPath = "config.yml";             
+            _factories.Add(new DefaultRpcFactory());            
+            _factories.Add(new HelloWorldServiceFactory());        
+        }   
+
+    }
+}
+```
+
+The dynamic configuration is defined in the file:
+
+**‍/config.yml**
+
+```yml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0" 
+  name: "hello-world" 
+  description: "HelloWorld microservice" 
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0" 
+  level: "trace" 
+
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0" 
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0" 
+  default_name: "World" 
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0" 
+  connection: 
+    protocol: http 
+    host: 0.0.0.0 
+    port: 8080 
+
+# HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0" 
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
+‍
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+```
 
 </div>
 
@@ -836,14 +1001,31 @@ try {
 
 <div  id="dotnet6a">
 
-dotnet
+In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
+
+**/Program.cs**
+
+```cs
+namespace HelloWorld { 
+
+    class Program { 
+
+        static void Main(string[] args) {   
+
+            var process = new HelloWorldProcess();            
+            process.RunAsync(args).Wait();        
+        }
+
+    }
+}
+```
+
+
 
 </div>
 
 <div  id="golang6a">
-
-golang
-  
+golang 
 </div>
 	  
 <div  id="dart6a">
@@ -919,19 +1101,25 @@ node ./run.js
 
 <div  id="dotnet6b">
 
-dotnet
+```bash
+dotnet run
+```
 
 </div>
 
 <div  id="golang6b">
 
-golang
-  
+```bash
+go run ./bin/run.go
+```
+   
 </div>
 	  
 <div  id="dart6b">
 
-dart
+```bash
+dart./bin/run.dart
+```
 	  
 </div>
 
@@ -944,7 +1132,7 @@ python ./run.py
 </div>
 
 <div  id="java6b">
-java	  
+	  
 </div>
 
 

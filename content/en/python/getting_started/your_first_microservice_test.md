@@ -496,8 +496,69 @@ One of the most popular ways of transferring data between microservices is using
 
 <div  id="node3">
 
-node
-  
+
+```typescript
+class HelloWorldRestService extends rpc.RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```typescript
+register() {
+   this.registerRoute("get", "/greeting", null, (req, res) => {
+       let name = req.param('name');
+       this._controller.greeting(name, this.sendResult(req, res));    
+   });
+}
+```
+
+To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+
+```typescript
+constructor() {
+    super();
+    this._baseRoute = "/hello_world";
+    this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));   
+}
+
+```
+
+Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
+
+We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
+
+```GET /hello_world/greeting?name=John```
+
+Full listing for the REST service found in the file:
+
+**/HelloWorldRestService.js**
+```typescript
+"use strict";
+‍
+const rpc = require("pip-services-rpc-node");
+const commons = require("pip-services-commons-node");
+
+class HelloWorldRestService extends rpc.RestService {
+    constructor() {
+        super();
+        this._baseRoute = "/hello_world";
+        this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
+    }
+
+    setReferences(references){
+        super.setReferences(references);
+        this._controller = this._dependencyResolver.getOneRequired('controller');
+    }    
+    register() {
+        this.registerRoute("get", "/greeting", null, (req, res) => {
+            let name = req.query.name;
+            this._controller.greeting(name, this.sendResult(req, res));
+        });
+    }
+}
+exports.HelloWorldRestService = HelloWorldRestService
+```
+ 
 </div>
 
 <div  id="dotnet3">
@@ -541,7 +602,56 @@ When a microservice is being populated by components based on the configuration 
 
 <div  id="node4">
 
-node
+
+```typescript
+class HelloWorldServiceFactory extends components.Factory
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```typescript
+constructor() {
+    super();
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        controller.HelloWorldController
+    );
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        restService.HelloWorldRestService
+    );
+‍}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.js**
+
+```typescript
+"use strict";
+
+const components = require("pip-services-components-node");
+const commons = require("pip-services-commons-node");
+const controller = require("./HelloWorldController");
+const restService = require("./HelloWorldRestService");
+
+class HelloWorldServiceFactory extends components.Factory {
+    constructor() {
+        super();
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+            controller.HelloWorldController
+        );
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+            restService.HelloWorldRestService
+        );
+    }
+}
+exports.HelloWorldServiceFactory = HelloWorldServiceFactory
+```
   
 </div>
 
@@ -589,7 +699,65 @@ Although containers can be populated by components manually, we’ll be using dy
 
 <div  id="node5">
 
-node
+Full listing of the container’s code found in the file:
+
+**‍/HelloWorldProcess.js**
+
+```typescript
+"use strict";
+
+const rpc = require("pip-services-rpc-node");
+const factory = require("./HelloWorldServiceFactory");
+
+class HelloWorldProcess extends container.ProcessContainer {
+    constructor() {
+        super('hello-world', 'HelloWorld microservice');
+        this._configPath = './config.yml';
+        this._factories.add(new factory.HelloWorldServiceFactory());
+        this._factories.add(new rpc.DefaultRpcFactory());
+    }
+}
+
+exports.HelloWorldProcess = HelloWorldProcess;
+```
+
+The dynamic configuration is defined in the file:
+
+**‍/config.yml**
+
+```yml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0" 
+  name: "hello-world" 
+  description: "HelloWorld microservice" 
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0" 
+  level: "trace" 
+
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0" 
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0" 
+  default_name: "World" 
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0" 
+  connection: 
+    protocol: http 
+    host: 0.0.0.0 
+    port: 8080 
+
+# HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0" 
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
+‍
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+```
   
 </div>
 
@@ -647,7 +815,22 @@ As you may have noticed, more than half of the components are being taken from P
 
 <div  id="node6a">
 
-node
+In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+
+**/run.js**
+
+```typescript
+"use strict";
+
+const process = require("./HelloWorldProcess");
+
+try {
+    new process.HelloWorldProcess().run(process.argv);
+} catch(ex) {
+    console.error(ex);
+}
+
+```
   
 </div>
 
@@ -670,7 +853,24 @@ dart
 </div>
 
 <div  id="python6a">
+In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
+**/run.py**
+
+```python
+
+# -*- coding: utf-8 -*- 
+from HelloWorldProcess import HelloWorldProcess
+
+if __name__ == '__main__':
+    runner = HelloWorldProcess()
+    print("run")
+    try:
+        runner.run()
+    except Exception as ex:
+        print(ex)
+
+```
 python 
 </div>
 
@@ -711,7 +911,9 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 
 <div  id="node6b">
 
-node
+```bash
+node ./run.js
+```
   
 </div>
 
@@ -735,7 +937,10 @@ dart
 
 <div  id="python6b">
 
-python 
+```bash
+python ./run.py
+```
+ 
 </div>
 
 <div  id="java6b">

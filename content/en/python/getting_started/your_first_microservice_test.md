@@ -485,11 +485,92 @@ class HelloWorldController:
 ### Step 3. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node3" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet3" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang3" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart3" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python3" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java3" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node3">
+
+node
+  
+</div>
+
+<div  id="dotnet3">
+
+dotnet
+</div>
+
+<div  id="golang3">
+
+golang
+  
+</div>
+	  
+<div  id="dart3">
+
+dart
+	  
+</div>
+
+<div  id="python3">
+
+python 
+</div>
+
+<div  id="java3">
+java	  
+</div>
 
 
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node4" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet4" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang4" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart4" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python4" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java4" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node4">
+
+node
+  
+</div>
+
+<div  id="dotnet4">
+
+dotnet
+
+</div>
+
+<div  id="golang4">
+
+golang
+  
+</div>
+	  
+<div  id="dart4">
+
+dart
+	  
+</div>
+
+<div  id="python4">
+
+python 
+</div>
+
+<div  id="java4">
+java	  
+</div>
 	  
 	  
 ### Step 5. Container
@@ -497,6 +578,47 @@ Last but not least, our microservice needs a container component. This component
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 	  
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node5" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet5" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang5" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart5" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python5" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java5" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node5">
+
+node
+  
+</div>
+
+<div  id="dotnet5">
+
+dotnet
+
+</div>
+
+<div  id="golang5">
+
+golang
+  
+</div>
+	  
+<div  id="dart5">
+
+dart
+	  
+</div>
+
+<div  id="python5">
+
+python 
+</div>
+
+<div  id="java5">
+java	  
+</div>
 
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
 
@@ -514,6 +636,47 @@ As you may have noticed, more than half of the components are being taken from P
 	  
 ### Step 6. Run and test the microservice
 	  
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+  <button id="select-node6a" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+  <button id="select-dotnet6a" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+  <button id="select-golang6a" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+  <button id="select-dart6a" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+  <button id="select-python6a" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+  <button id="select-java6a" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+</div>
+
+<div  id="node6a">
+
+node
+  
+</div>
+
+<div  id="dotnet6a">
+
+dotnet
+
+</div>
+
+<div  id="golang6a">
+
+golang
+  
+</div>
+	  
+<div  id="dart6a">
+
+dart
+	  
+</div>
+
+<div  id="python6a">
+
+python 
+</div>
+
+<div  id="java6a">
+java	  
+</div>
 
 	  
 When a microservice starts up, the following sequence of events takes place:
@@ -537,7 +700,6 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 2. The components previously created in the container are destroyed;
 3. The container is stopped.
 
-
 <div class="btn-group" role="group" aria-label="Lnguage selector">
   <button id="select-node6b" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
   <button id="select-dotnet6b" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
@@ -548,31 +710,37 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 </div>
 
 <div  id="node6b">
-node	  
+
+node
+  
 </div>
 
 <div  id="dotnet6b">
-dotnet	  
+
+dotnet
+
 </div>
 
 <div  id="golang6b">
-golang	  
+
+golang
+  
 </div>
 	  
 <div  id="dart6b">
-dart	  
+
+dart
+	  
 </div>
 
 <div  id="python6b">
-python	  
+
+python 
 </div>
 
 <div  id="java6b">
 java	  
 </div>
-
-
-
 
 
 If the microservice started up successfully, you should see the following result in the terminal:

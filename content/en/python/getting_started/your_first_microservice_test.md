@@ -18,16 +18,17 @@ The microservice is structurally made up of these components:
 ### Step 1. Project setup
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node1" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet1" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang1" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart1" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python1" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java1" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node1">
+  <div class="content-tab-section">
 **/package.json**
 
 ```json
@@ -50,7 +51,7 @@ In the command line, type out the command below to install the dependencies:
 npm install
 ```
 </div>
-<div id="dotnet1">
+<div class="content-tab-section">
   
  ```bash
 dotnet new console
@@ -82,7 +83,7 @@ In the command line, type out the command below to install the dependencies:
 dotnet restore
 ```
 </div>
-<div id="golang1">
+<div class="content-tab-section">
 Run the following command in the command line:
 
 ```bash
@@ -112,7 +113,7 @@ go get -u
 ``` 
 </div>
 
-<div id="dart1">
+<div class="content-tab-section">
 
 **/pubspec.yaml**
 
@@ -167,7 +168,7 @@ These files are necessary export classes outside the library.
 
 </div>
 
-<div id="python1">
+<div class="content-tab-section">
 
 the external dependencies are defined in the file below:
 
@@ -198,7 +199,7 @@ pip install -r requirements.txt
 
 </div>
 
-<div id="java1">
+<div class="content-tab-section">
 
 **Not available**
 	        
@@ -206,19 +207,24 @@ pip install -r requirements.txt
 
 </div>
 
+</div>
+
+
+
 ### Step 2. Controller
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
     
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node2" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet2" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang2" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart2" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python2" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java2" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
-
-<div  id="node2">
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+  
+<div class="content-tab-section">
 
 ```typescript
 greeting(name, callback) {
@@ -270,7 +276,7 @@ exports.HelloWorldController = HelloWorldController
 ```	  
 </div>
 
-<div  id="dotnet2">
+<div class="content-tab-section">
 
 ```cs
 public async Task<string> GreetingAsync(string name){    
@@ -319,7 +325,7 @@ namespace HelloWorld {
 ```	  
 </div>
 
-<div  id="golang2">
+<div class="content-tab-section">
 
 ```go
 func (c *HelloWorldController) Greeting(name string) (result string, err error) {
@@ -382,7 +388,7 @@ func (c *HelloWorldController) Greeting(name string) (result string, err error) 
 ```	  
 </div>
 	  
-<div  id="dart2">
+<div class="content-tab-section">
 
 ```dart
 Future<String> greeting(name) async{
@@ -434,7 +440,7 @@ class HelloWorldController implements IConfigurable {
 	  
 </div>
 
-<div  id="python2">
+<div class="content-tab-section">
 
 ```python
 def greeting(name):        
@@ -479,26 +485,30 @@ class HelloWorldController:
 ```	  
 </div>
 
-<div  id="java2">
+<div class="content-tab-section">
+
 **Not available**     
 	       
 	       
+</div>
+
 </div>
 
 
 ### Step 3. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node3" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet3" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang3" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart3" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python3" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java3" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node3">
+<div class="content-tab-section">
 
 ```typescript
 class HelloWorldRestService extends rpc.RestService
@@ -564,7 +574,7 @@ exports.HelloWorldRestService = HelloWorldRestService
  
 </div>
 
-<div  id="dotnet3">
+<div class="content-tab-section">
 
 ```cs
 public class HelloWorldRestService : RestService
@@ -639,7 +649,7 @@ namespace HelloWorld {
 
 </div>
 
-<div  id="golang3">
+<div class="content-tab-section">
 
 
 ```go
@@ -731,7 +741,7 @@ func (c *HelloWorldRestService) Register() {
   
 </div>
 	  
-<div  id="dart3">
+<div class="content-tab-section">
 
 
 ```dart
@@ -808,7 +818,7 @@ class HelloWorldRestService extends RestService {
 	  
 </div>
 
-<div  id="python3">
+<div class="content-tab-section">
 
 ```python
 class HelloWorldRestService(RestService):
@@ -871,26 +881,30 @@ class HelloWorldRestService(RestService):
  
 </div>
 
-<div  id="java3">
+<div class="content-tab-section">
+
 **Not available**    
 	      
 	      
+</div>
+
 </div>
 
 
 ### Step 4. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node4" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet4" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang4" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart4" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python4" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java4" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node4">
+<div class="content-tab-section">
 
 
 ```typescript
@@ -945,7 +959,7 @@ exports.HelloWorldServiceFactory = HelloWorldServiceFactory
   
 </div>
 
-<div  id="dotnet4">
+<div class="content-tab-section">
 
 
 ```cs
@@ -989,7 +1003,7 @@ namespace HelloWorld {
 
 </div>
 
-<div  id="golang4">
+<div class="content-tab-section">
 
 ```go
 type HelloWorldServiceFactory struct {
@@ -1049,7 +1063,7 @@ func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
   
 </div>
 	  
-<div  id="dart4">
+<div class="content-tab-section">
 
 ```dart
 class HelloWorldServiceFactory extends Factory
@@ -1091,7 +1105,7 @@ class HelloWorldServiceFactory extends Factory {
 	  
 </div>
 
-<div  id="python4">
+<div class="content-tab-section">
 
 ```python
 class HelloWorldServiceFactory(Factory):
@@ -1137,10 +1151,13 @@ class HelloWorldServiceFactory(Factory):
 
 </div>
 
-<div  id="java4">
+<div class="content-tab-section">
+
 **Not available**     
 	       
 	        
+</div>
+
 </div>
 	  
 	  
@@ -1149,16 +1166,17 @@ Last but not least, our microservice needs a container component. This component
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 	  
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node5" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet5" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang5" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart5" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python5" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java5" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node5">
+<div class="content-tab-section">
 
 Full listing of the container’s code found in the file:
 
@@ -1222,7 +1240,7 @@ The dynamic configuration is defined in the file:
   
 </div>
 
-<div  id="dotnet5">
+<div class="content-tab-section">
 
 Full listing of the container’s code found in the file:
 
@@ -1286,7 +1304,7 @@ The dynamic configuration is defined in the file:
 
 </div>
 
-<div  id="golang5">
+<div class="content-tab-section">
 
 Full listing of the container’s code found in the file:
 
@@ -1355,7 +1373,7 @@ The dynamic configuration is defined in the file:
   
 </div>
 	  
-<div  id="dart5">
+<div class="content-tab-section">
 
 Full listing of the container’s code found in the file:
 
@@ -1415,7 +1433,7 @@ The dynamic configuration is defined in the file:
 	  
 </div>
 
-<div  id="python5">
+<div class="content-tab-section">
 The full listing of the container’s code can be found in the file:
 
 **/HelloWorldProcess.py**
@@ -1477,11 +1495,16 @@ The dynamic configuration is defined in the file:
 
 </div>
 
-<div  id="java5">
+<div class="content-tab-section">
+
 **Not available**     
 	        
 	        
 </div>
+
+</div>
+
+
 
 Looking at the configuration file, we can conclude that the following components will be created in the microservice:
 
@@ -1499,16 +1522,18 @@ As you may have noticed, more than half of the components are being taken from P
 	  
 ### Step 6. Run and test the microservice
 	  
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node6a" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet6a" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang6a" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart6a" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python6a" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java6a" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node6a">
+
+<div class="content-tab-section">
 
 In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
@@ -1529,7 +1554,7 @@ try {
   
 </div>
 
-<div  id="dotnet6a">
+<div class="content-tab-section">
 
 In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
 
@@ -1554,7 +1579,7 @@ namespace HelloWorld {
 
 </div>
 
-<div  id="golang6a">
+<div class="content-tab-section">
 
 In Golang, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line. Let's place it separately from the rest in the folder bin.
 
@@ -1576,7 +1601,7 @@ func main() {
  
 </div>
 	  
-<div  id="dart6a">
+<div class="content-tab-section">
 
 In Node.js, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
@@ -1599,7 +1624,7 @@ void main(List<String> argv) {
 	  
 </div>
 
-<div  id="python6a">
+<div class="content-tab-section">
 In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 **/run.py**
@@ -1618,14 +1643,17 @@ if __name__ == '__main__':
         print(ex)
 
 ```
-python 
+
 </div>
 
-<div  id="java6a">
-**Not available**    
-	       
+<div class="content-tab-section">
+
+**Not available**
 	       
 </div>
+</div>
+
+
 
 	  
 When a microservice starts up, the following sequence of events takes place:
@@ -1649,16 +1677,17 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 2. The components previously created in the container are destroyed;
 3. The container is stopped.
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node6b" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet6b" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang6b" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart6b" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python6b" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java6b" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-<div  id="node6b">
+<div class="content-tab-section">
 
 ```bash
 node ./run.js
@@ -1666,7 +1695,7 @@ node ./run.js
   
 </div>
 
-<div  id="dotnet6b">
+<div class="content-tab-section">
 
 ```bash
 dotnet run
@@ -1674,7 +1703,7 @@ dotnet run
 
 </div>
 
-<div  id="golang6b">
+<div class="content-tab-section">
 
 ```bash
 go run ./bin/run.go
@@ -1682,7 +1711,7 @@ go run ./bin/run.go
    
 </div>
 	  
-<div  id="dart6b">
+<div class="content-tab-section">
 
 ```bash
 dart./bin/run.dart
@@ -1690,7 +1719,7 @@ dart./bin/run.dart
 	  
 </div>
 
-<div  id="python6b">
+<div class="content-tab-section">
 
 ```bash
 python ./run.py
@@ -1698,10 +1727,12 @@ python ./run.py
  
 </div>
 
-<div  id="java6b">
+<div class="content-tab-section">
 **Not availale**    
 	        
 	       
+</div>
+
 </div>
 
 

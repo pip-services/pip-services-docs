@@ -13477,6 +13477,9 @@ mark, .mark {
   background-color: #fbf1bb;
   border-radius: 0.5rem; }
 
+.draft {
+  display: none; }
+
 .btn-group {
   margin: auto;
   display: flex;

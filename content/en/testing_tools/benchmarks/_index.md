@@ -24,17 +24,17 @@ Performance, resilience and data integrity are a priority in microservice develo
 - Console and GUI runners to execute benchmarks
 
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-</div>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-
-<div  id="node">
+<div class="content-tab-section">
 
 Example of use:
 
@@ -108,7 +108,7 @@ node ./bin/run.js
 ```
 </div>
 
-<div id="dotnet">
+<div class="content-tab-section">
 
 Example of use:
 Create your own benchmark in file **SampleBenchmark.cs**
@@ -201,7 +201,7 @@ namespace ConsoleApp1
 
 </div>
 
-<div id="golang">
+<div class="content-tab-section">
 
 Example of use:
 **main.go**
@@ -288,7 +288,7 @@ go run ./main.go
 
 </div>
 
-<div id="dart">
+<div class="content-tab-section">
 
 Example of use:
 
@@ -296,7 +296,7 @@ Example of use:
 
 </div>
 
-<div id="python">
+<div class="content-tab-section">
 
 Example of use:
 
@@ -304,10 +304,16 @@ Example of use:
 
 </div>
 
-<div id="java">
+<div class="content-tab-section">
 
 Example of use:
 
 **TODO**
 
 </div>
+
+
+</div>
+
+
+

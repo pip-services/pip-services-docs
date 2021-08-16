@@ -17,7 +17,7 @@ The microservice is structurally made up of these components:
 
 Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
 
-Step 1. Environment setup
+### Step 1. Environment setup
 
 #### 1. Compiler and IDE
 

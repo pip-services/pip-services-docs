@@ -15,9 +15,9 @@ The microservice is structurally made up of these components:
 - The component factory for the dynamic creation of components
 - A container process, which will be filled with the necessary components, based on a yml configuration file.
 
-Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
-
 ### Step 1. Environment setup
+
+Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
 
 #### 1. Compiler and IDE
 

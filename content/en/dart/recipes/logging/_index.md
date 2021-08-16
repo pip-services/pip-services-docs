@@ -68,10 +68,10 @@ The Pip.Services Toolkit contains a variety of logger implementations:
 - **NullLogger** - Empty logger for debugging (in the [Components](../../components/log/null_logger) module)
 - **ConsoleLogger** - Logger for writing messages to the console (in the [Components](../../components/log/console_logger) module)
 - **CompositeLogger** - Virtual logger for collecting and transferring messages to other loggers (in the [Components](../../components/log/composite_logger) module)
-- **ElasticSearchLogger** - Logger for saving messages in ElasticSearch (inthe [ElasticSearch](../../../elasticsearch/elasticsearch_logger) module)
-- **FluentdLogger** - Logger for transferring messages to Fluentd (in the [Fluentd](../../../fluentd/log/fluentd_logger) module)
-- **CloudWatchLogger** - Logger for collecting messages in AWS CloudWatch (in the [AWS](../../../aws/log/cloudwatch_logger) module)
-- **AppInsightsLogger** - Logger for collecting messages in Azure AppInsights (in the [Azure](../../../azure/log/app_insights_logger) module)
+- **ElasticSearchLogger** - Logger for saving messages in ElasticSearch (in the [ElasticSearch](../../elasticsearch/log/elasticsearch_logger) module)
+- **FluentdLogger** - Logger for transferring messages to Fluentd (in the [Fluentd](../../fluentd/log/fluentd_logger) module)
+- **CloudWatchLogger** - Logger for collecting messages in AWS CloudWatch (in the [AWS](../../aws/log/cloudwatch_logger) module)
+- **AppInsightsLogger** - Logger for collecting messages in Azure AppInsights (in the [Azure](../../azure/log/app_insights_logger) module)
 
 #### Adding a logger
 
@@ -100,7 +100,7 @@ Loggers are usually added to microservices dynamically using a yml configuration
 #### Composite logger
 
 It’s not rare for multiple loggers to be used simultaneously. One logger can be used to output messages to the console, allowing developers to debug the microservice, while another logger collects messages from all running microservices in a distributed storage, allowing technical support to monitor the system.
-To simplify the collection of log messages in situations when the amount of loggers and/or their configurations are bound to change, the [CompositeLogger](../../components/log/composite_logger/) from the [Components](../../components/) module is used. The **CompositeLogger**’s task is to pass along any messages it receives to all of the other loggers included in the container. Logger linking is performed in the **setReferences** method ([see the References Recipe](../component_references)).
+To simplify the collection of log messages in situations when the amount of loggers and/or their configurations are bound to change, the [CompositeLogger](../../components/log/composite_logger/) from the [Components](../../components/) module is used. The **CompositeLogger**’s task is to pass along any messages it receives to all of the other loggers included in the container. Logger linking is performed in the **setReferences** method (see the [References Recipe](../component_references)).
 
 
 The **CompositeLogger** is used in the following way:

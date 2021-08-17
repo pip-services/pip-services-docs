@@ -333,7 +333,7 @@ Looking at the configuration file, we can conclude that the following components
 
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
-### Step 6. Run and test the microservice
+### Step 7. Run and test the microservice
 In .NET, we’ll need a special file to run the microservice. All this file does is to create a container instance and run it with the parameters provided from the command line.
 
 **/Program.cs**

@@ -180,7 +180,7 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 
 ### Identifiable data objects and IdentifiableMongoDBPersistence
 
-The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../ommons/data/iidentifiable/) interface defined in [the Commons module](../commons).
+The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in the [Commons module](../../commons).
 
 ```dart
 abstract class IIdentifiable<K> {
@@ -287,11 +287,11 @@ class BeaconsMongoDbPersistence
 ```
 
 
-In most scenarios, child classes only need to override the **getPageByFilter()**, **getListByFilter()**, or **deleteByFilter()** operations using a custom filter function (like the **composeFilter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See [the MongoDb module’s API](../../mongodb) documentation for more details.
+In most scenarios, child classes only need to override the **getPageByFilter()**, **getListByFilter()**, or **deleteByFilter()** operations using a custom filter function (like the **composeFilter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the [MongoDb module](../../mongodb)’s API documentation for more details.
 
 ### Filtering
 
-Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria [(see the Commons module)](../../commons).
+Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [Commons module](../../commons)).
 
 ```dart
 var filter = FilterParams.fromTuples(
@@ -368,7 +368,7 @@ var result = await persistence.getPageByFilter(null, null, paging)
 As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **getOneByUdi** persistence method.
 
 ```dart
-  @override
+@override
   Future<BeaconV1> getOneByUdi(String correlationId, String udi) async {
     var filter = {'udi': udi};
     var query = mngquery.SelectorBuilder();

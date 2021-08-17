@@ -244,7 +244,7 @@ In most scenarios, child classes only need to override the **GetPageByFilterAsyn
 
 ### Filtering
 
-Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria see the [Commons](../../commons) module.
+Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [Commons](../../commons) module).
 
 ```cs
 var filter = FilterParams.FromTuples(

@@ -10,7 +10,7 @@ weight: 10
 
 ### Introduction
 
-The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we"ll be taking a look at this mechanism"s capabilities and how it can be utilized.
+The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism's capabilities and how it can be utilized.
 
 ### Configuration
 
@@ -68,7 +68,7 @@ config = config.setDefaults(defaultConfig);
 
 #### Serializing the ConfigParams object
 
-Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
+Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 ```dart
 var anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");
@@ -198,7 +198,7 @@ var result = await configReader.readConfig("correlationId", parameters);  // Res
 
 #### YamlConfigReader
 
-The [YamlConfigReader](../..//components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
+The [YamlConfigReader](../../components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
 
 ```yml
 key1: "1234"

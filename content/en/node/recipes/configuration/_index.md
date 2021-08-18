@@ -73,7 +73,7 @@ Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAM
 let anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");
 ```
 
-To read more about what functionality is available through ConfigParams, be sure to check out the [Commons module’s](../../commons)documentation. 
+To read more about what functionality is available through ConfigParams, be sure to check out the [Commons module](../../commons)’s documentation. 
 
 #### Example
 
@@ -203,7 +203,7 @@ configReader.readConfig("correlationId", parameters, (err, config) => {
 
 #### YamlConfigReader
 
-The [YamlConfigReader](../..//components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
+The [YamlConfigReader](../../components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
 
 ```yml
 key1: "1234"

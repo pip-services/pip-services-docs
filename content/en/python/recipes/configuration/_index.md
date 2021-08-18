@@ -68,7 +68,7 @@ config = config.set_defaults(default_config)
 
 #### Serializing the ConfigParams object
 
-Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
+Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 ```python
 another_config = ConfigParams.from_line("param1=123;param2=ABC")

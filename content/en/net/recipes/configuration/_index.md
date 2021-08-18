@@ -68,7 +68,7 @@ var config = config.SetDefaults(defaultConfig);
 
 #### Serializing the ConfigParams object
 
-Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
+Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 ```cs
 var anotherConfig = ConfigParams.FromString("param1=123;param2=ABC");

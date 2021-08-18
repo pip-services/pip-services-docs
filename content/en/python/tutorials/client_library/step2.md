@@ -47,7 +47,7 @@ class IBeaconsClientV1:
 
 ```
 
-Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
+Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
 The direct client’s code is listed below:
 
 **src/version1/BeaconsDirectClientV1.py**

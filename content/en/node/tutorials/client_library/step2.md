@@ -38,7 +38,7 @@ export interface IBeaconsClientV1 {
 
 ```
 
-Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
+Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
 The direct client’s code is listed below:
 
 **src/version1/BeaconsDirectClientV1.ts**
@@ -130,7 +130,7 @@ To be sure that our code works as intended, we need to perform some functional t
 
 
 Now, let’s test the direct client. To do this, create an instance of the direct client and pass it as a parameter to our set of tests. 
-An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-node/blob/master/test/version1/test_BeaconsDirectClientV1.tsthon)
+An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-node/blob/master/test/version1/BeaconsDirectClientV1.test.ts)
 
 
 Run the tests using the testing methods that are standard for the programming language you are using. All tests should pass successfully.This finishes the development of the Direct client.

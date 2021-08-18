@@ -67,7 +67,7 @@ config = config.setDefaults(defaultConfig);
 
 #### Serializing the ConfigParams object
 
-Lastly **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
+Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 ```typescript
 let anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");

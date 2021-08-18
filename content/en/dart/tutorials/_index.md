@@ -22,7 +22,3 @@ In this tutorial, we’ll be writing from scratch a fully-functional Data micros
 
 Running microservices in Docker containers has become one of the most popular ways of deploying a system. Based on this, this tutorial explains how to create and run a dockerized microservice in five well-defined steps.
 
-
-### [Microservice Facade](microservice_facade)
-
-A Facade is a microservice that serves as a point of entry to a system for external clients. The facade provides a stable external interface and hides the inner workings of a system. All requests made by external clients first arrive at the facade, which then forwards them to the appropriate microservices. The facade can also implement additional functionality, such as: authenticating and authorizing users, caching and aggregating requests, logging, etc.

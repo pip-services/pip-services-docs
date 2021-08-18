@@ -57,7 +57,7 @@ Let's get started! Head on over to Step 1. Setting up the project.
 
 <span class="hide-title-link">
 
-#### [Tutorial how to create microservice facade](../microservice_facade)
+
 #### [Tutorial how to dockerize a microservice](../microservice_dockerization)
 
 </span>

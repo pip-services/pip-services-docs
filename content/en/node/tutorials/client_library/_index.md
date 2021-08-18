@@ -53,7 +53,7 @@ Let's get started! Head on over to Step 1. Setting up the project.
 ### See also
 
 - [Microservice Facade](../microservice_facade)
-- [Tutorial how to dockerize a microservice](../microservice_dockerization)
+- [Microservice Dockerization](../microservice_dockerization)
 
 <span class="hide-title-link">
 

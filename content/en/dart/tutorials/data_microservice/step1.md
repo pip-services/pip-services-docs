@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Project structure"
+title: "Step 1. Setting up the project"
 linkTitle: "Step 1. Setting up" 
 gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-dart"
 ---

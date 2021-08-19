@@ -281,6 +281,6 @@ Congratulations! This step finishes off the development of our microservice! How
 
 <span class="hide-title-link">
 
-### [Step 6. Wrapping microservice into container.](../step6)
+### [Step 6. Wrapping the microservice into a container.](../step6)
 
 </span>

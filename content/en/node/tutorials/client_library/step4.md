@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Implementing Mock Client"
+title: "Step 4. Implementing a Mock Client"
 linkTitle: "Step 4. Mock Client" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-node"
 ---

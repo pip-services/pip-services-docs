@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Client Library!"
-linkTitle: "Client Library!" 
+linkTitle: "Client Library!"
+draft: true
 ---
 
 **TODO: need rewrite on Golang**

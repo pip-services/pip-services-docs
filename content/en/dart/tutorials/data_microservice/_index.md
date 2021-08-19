@@ -9,7 +9,7 @@ gitUrl: "https://github.com/pip-services-samples/service-beacons-dart"
 
 ### Overview
 
-In this tutorial, we’ll be writing from scratch a fully-functional Data microservice, using the patterns and mechanisms available in the Pip.Services toolkit, as well as the programming language you have selected. The microservice that we are going to be using as an example in this tutorial is called [The Beacons microservice], which is part of [The IoT Microservices Collection]. This microservice is meant to perform the following simple tasks:
+In this tutorial, we’ll be writing from scratch a fully-functional Data microservice, using the patterns and mechanisms available in the Pip.Services toolkit, as well as the programming language you have selected. The microservice that we are going to be using as an example in this tutorial is called [The Beacons microservice](../../../microservices/iot/beacons/), which is part of [The IoT Microservices Collection](../../../microservices/iot/). This microservice is meant to perform the following simple tasks:
 
 - Store a list of BLE beacons (a.k.a. iBeacons), their unique identifiers, and the positions at which they were installed.
 - Calculate the position of a device, using the beacons it “sees” in its vicinity.
@@ -30,15 +30,15 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 - [Step 3. Implementing persistence components (with tests)](step3)
 - [Step 4. Implementing a controller (with tests)](step4)
 - [Step 5. Implementing an HTTP service (with tests)](step5)
-- [Step 6. Wrapping microservice into container](step6)
+- [Step 6. Wrapping the microservice into a container](step6)
 - [Step 7. Running and testing the microservice](step7)
 
 
 
 ### See also
 
-- #### [Tutorial how to create a client library](../client_library)
-- #### [Tutorial how to dockerize a microservice](../microservice-dockerization)
+- #### [Client Library](../client_library)
+- #### [Microservice Dockerization](../microservice_dockerization)
 
 
 <span class="hide-title-link">

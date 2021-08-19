@@ -30,15 +30,15 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 - [Step 3. Implementing persistence components (with tests)](step3)
 - [Step 4. Implementing a controller (with tests)](step4)
 - [Step 5. Implementing an HTTP service (with tests)](step5)
-- [Step 6. Wrapping microservice into container](step6)
+- [Step 6. Wrapping the microservice into a container](step6)
 - [Step 7. Running and testing the microservice](step7)
 
 
 
 ### See also
 
-- #### [Tutorial how to create a client library](../client_library)
-- #### [Tutorial how to dockerize a microservice](../microservice-dockerization)
+- #### [Client Library](../client_library)
+- #### [Microservice Dockerization](../microservice-dockerization)
 
 
 <span class="hide-title-link">

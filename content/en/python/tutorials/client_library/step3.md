@@ -102,11 +102,11 @@ An example implementation of the tests can be found in the example’s [reposito
 
 All tests should pass successfully.This finishes the development of our clients. As a result, we ended up with 2 clients: one for working from within a monolithic application, and another for working with the microservice from a different application, when utilizing a distributed architecture.
 
-To simulate the service, let's create a test client in [Step 4. Implementing Test Memory Client.](../step4)
+To simulate the service, let's create a test client in [Step 4. Implementing a Mock Client.](../step4)
 
 
 <span class="hide-title-link">
 
-### [Step 4. Implementing Test Memory Client.](../step4)
+### [Step 4. Implementing a Mock Client.](../step4)
 
 </span>

@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 3. Package"
+title: "Step 3. Packaging a microservice into a container"
 linkTitle: "Step 3. Package"
 ---
 
@@ -103,7 +103,7 @@ exit $exitCode
 
 This script performs an automatic build of the Docker image and then runs and checks it from within the Docker Compose environment. The Docker Compose environment allows us to run our microservice alongside its dependencies, while keeping them all in separate containers. The script then runs the microservice and, if all is well, the service can be checked by requesting the http://localhost:8080/heartbeat URL from a browser. This URL returns and displays the current time in the JSON format, which indicates that the application is up and running in the container. All build results will be outputted to the console. Once the container tests are done, the containers are stopped.
 
-This finishes the process of preparing a microservice container for publishing. When you’re ready, continue on to [Step 4 to publish the image to a Docker registry.](../step4)
+This finishes the process of preparing a microservice container for publishing. When you’re ready, continue on to [Step 4](../step4) to publish the image to a Docker registry.
 
 <span class="hide-title-link">
 

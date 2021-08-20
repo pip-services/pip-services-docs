@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Build"
+title: "Step 1. Building a microservice"
 linkTitle: "Step 1. Build" 
 ---
 
@@ -87,7 +87,7 @@ docker rm $container
 
 This script generates a name for the image using the data in the **component.json** file, cleans the project of files from previous compilations, runs the Docker build scenario, and then copies the compiled files from the image back into the project. Once the files are copied, the container is deleted, and the script outputs the results of the build to the console.
 
-This finishes up the build process. Continue on to [Step 2 to dockerize the testing process.](../step2)
+This finishes up the build process. Continue on to [Step 2](../step2) to dockerize the testing process.
 
 <span class="hide-title-link">
 

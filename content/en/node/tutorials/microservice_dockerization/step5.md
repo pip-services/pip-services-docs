@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 5. Run"
+title: "Step 5. Running a dockerized microservice"
 linkTitle: "Step 5. Run"
 ---
 

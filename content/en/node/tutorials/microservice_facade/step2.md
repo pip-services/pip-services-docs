@@ -131,7 +131,7 @@ export class BeaconsOperationsV2  extends RestOperations {
 This component’s logic is based on calling the Beacons microservice via any client that implements the IBeaconsClientV1 interface. The component receives a link to the client through its SetReferences method (see the [Component References](../../../recipes/component_references)  recipe). The component’s business methods mainly just wrap the client’s methods to convert facade’s RESTful requests into calls to the client. Generally speaking, all of these methods perform the same set of steps: extract parameters from the request, call the corresponding method in the Beacons client, receive any results or errors, and send this information back as a response.
 
 
-In the next (third) [Step 3 - Authentication and sessions](../step3), we’ll be examining the second set of operations, which manage sessions and authenticate users.
+In the next (third) [Step 3 - Authentication and sessions](../step3) - we’ll be examining the second set of operations, which manage sessions and authenticate users.
 
 <span class="hide-title-link">
 

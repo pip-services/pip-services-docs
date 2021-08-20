@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Build"
+title: "Step 1. Building a microservice"
 linkTitle: "Step 1. Build" 
 ---
 
@@ -88,7 +88,7 @@ This script generates a name for the image using the data in the component.json 
 
 If the build was successful, the project will have an /obj directory added, containing the newly compiled files.
 
-This finishes up the build process. Continue on to [Step 2 to dockerize the testing process.](../step2)
+This finishes up the build process. Continue on to [Step 2](../step2) to dockerize the testing process.
 
 <span class="hide-title-link">
 

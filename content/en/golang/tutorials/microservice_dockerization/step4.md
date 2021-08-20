@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Publish"
+title: "Step 4. Publishing a microservice container to a registry"
 linkTitle: "Step 4. Publish"
 ---
 

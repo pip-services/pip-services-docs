@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Build"
+title: "Step 1. Building a microservice"
 linkTitle: "Step 1. Build" 
 ---
 

@@ -14,7 +14,7 @@ In this tutorial, we will be using a demo project to develop a small facade for 
 - Roles - microservice for managing user roles
 - Sessions - microservice for processing user sessions
 
-The Beacons microservice was demonstrated in [the Data Microservice tutorial](../../data_microservice). The rest of the microservices are from our free Pip.Services Library.
+The Beacons microservice was demonstrated in the [Data Microservice](../../data_microservice)  tutorial. The rest of the microservices are from our free Pip.Services Library.
 
 
 The architecture of the system looks like this:

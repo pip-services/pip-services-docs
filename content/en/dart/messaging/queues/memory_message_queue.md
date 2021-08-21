@@ -14,7 +14,7 @@ description: >
 
 The MemoryMessageQueue class is used to create message queues that send and receive messages within the same process by using shared memory.
 
-Important points
+**Important points**
 
 - This queue is typically used for testing to mock real queues.
 
@@ -23,7 +23,7 @@ Important points
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 
 
 ### Constructors
@@ -33,7 +33,7 @@ See also [MessagingCapabilities](../messaging_capabilities)
 
 > MemoryMessageQueue([String name])
 
-- **name**: String - (optional) a queue name.
+- **name**: String - (optional) queue name.
 
 
 ### Instance methods
@@ -77,7 +77,7 @@ Ends listening for incoming messages. When this method is called, [listen](#list
 `@override`
 > void endListen(String correlationId)
  
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 
 #### isOpen
@@ -86,7 +86,7 @@ Checks if the component is opened.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### listen

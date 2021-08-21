@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 8. Manual testing of facade"
-linkTitle: "Step 8. Manual testing of facade" 
+title: "Step 8. Manually Testing the Facade"
+linkTitle: "Step 8. Manually Testing the Facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-dotnet"
 ---
 

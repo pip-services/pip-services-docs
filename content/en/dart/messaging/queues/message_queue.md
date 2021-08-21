@@ -32,9 +32,9 @@ The MessageQueue class allows you to create a message queue that is used as a ba
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) components to discover connection(s)
-- **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) componetns to lookup credential(s)
+- **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) components to lookup credential(s)
 
 
 ### Constructors
@@ -129,7 +129,7 @@ Checks if the component is opened.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component has been opened and false otherwise.
 
 
 #### listen
@@ -232,12 +232,12 @@ Gets the queue capabilities
 
 
 #### getName
-Gets the queue name
+Gets the queue's name.
 
 `@override`
 > String getName()
 
-- **returns**: String - queue name.
+- **returns**: String - queue's name.
 
 #### open
 Opens the component.
@@ -249,14 +249,14 @@ Opens the component.
 
 #### sendAsObject
 Sends an object into the queue.
-Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_mnvelope).
+Before sending it, the object is converted into a JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
 `@override`
 > Future sendAsObject(String correlationId, String messageType, message)
 
 - **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: String - a message type
-- **message**: dynamic - an object value to be sent
+- **messageType**: String - message type
+- **message**: dynamic - object value to be sent
 
 
 #### setReferences
@@ -265,7 +265,7 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### toString
 Gets a string representation of the object.

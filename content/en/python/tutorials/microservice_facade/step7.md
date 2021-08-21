@@ -296,7 +296,7 @@ services:
   
 ```
 
-Build and run the facade using the respective scripts (described in the [Docker tutorial](../../microservice_dockerization) we mentioned above), which can be found in this example project’s [repository](https://github.com/pip-services-samples/facade-sample-python).
+Build and run the facade using the respective scripts (described in the [Microservice Dockerization](../../microservice_dockerization) we mentioned above) tutorial, which can be found in this example project’s [repository](https://github.com/pip-services-samples/facade-sample-python).
 
 To build the facade’s image and load the rest of the services’ images, run the “package” script using the command below:
 

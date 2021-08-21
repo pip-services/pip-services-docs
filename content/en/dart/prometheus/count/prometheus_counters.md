@@ -17,7 +17,7 @@ description: >
 
 The PrometheusCounters class allows you to create performance counters that send their metrics to Pormetheus service.
 
-Important points
+**Important points**
 
 - The component is normally used in passive mode conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service). Alternatively, when connection parameters are set, it can push metrics to Prometheus PushGateway.
 
@@ -76,7 +76,7 @@ Checks if the component is opened.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open

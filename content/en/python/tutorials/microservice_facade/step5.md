@@ -175,6 +175,6 @@ Continue on to [Step 6 - Testing of Operations](../step6) to see how we can auto
 
 <span class="hide-title-link">
 
-### [Step 6 - Testing Operations](../step6)
+### [Step 6 - Testing of Operations](../step6)
 
 </span>

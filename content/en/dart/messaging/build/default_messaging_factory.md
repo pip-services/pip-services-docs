@@ -14,9 +14,9 @@ description: >
 
 The DefaultMessagingFactory class allows you to create  [MemoryMessageQueue](../../queues/memory_message_queue)  components based on their descriptors.
 
-Important points
+**Important points**
 
-- The name of created message queue is taken from its descriptor.
+- The name of the created message queue is taken from its descriptor.
 
 ### Constructors
 

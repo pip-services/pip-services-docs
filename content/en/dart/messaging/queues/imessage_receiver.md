@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The IMessageReceive interface is used to receive incoming messages. 
+The IMessageReceiver interface is used to receive incoming messages. 
 
 ### Instance methods
 

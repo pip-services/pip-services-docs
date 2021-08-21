@@ -34,7 +34,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 - **req**: angel.RequestContext - request context
 - **res**: angel.ResponseContext - response context
 - **user**: dynamic - authorized users
-- **role**: String - the user role.
+- **role**: String - user's role.
 - **returns**: Future\<bool\> - returns role handler.
 
 

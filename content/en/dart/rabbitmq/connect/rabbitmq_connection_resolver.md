@@ -51,7 +51,7 @@ Credential resolver
 ### Instance methods
 
 #### compose
-Compose method are composes RabbitMQ connection options from connection and credential parameters.
+Composes RabbitMQ connection options from connection and credential parameters.
 
 > Future<[ConfigParams](../../../commons/config/config_params)> compose(String correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
 

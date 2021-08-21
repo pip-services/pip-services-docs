@@ -17,14 +17,14 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
 #### Configuration parameters
 
 **connection(s)**:
-    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **discovery_key**:               (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**:                        host name or IP address
     - **port**:                        port number
     - **uri**:                         resource URI or connection string with all parameters in it
 - **credential(s)**:
-    - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**:                    user name
-    - **password**:                    user password
+    - **store_key**:                   (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**:                    username
+    - **password**:                    user's password
 
 
 #### References
@@ -181,7 +181,7 @@ Opens the component with given connection and credential parameters.
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
-- Important: This method are not supported in this release!
+- Important: This method are not supported in this release.
 
 `@override`
 > Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> peek(String correlationId)
@@ -193,7 +193,7 @@ If there are no messages available in the queue, it returns null.
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue, it returns an empty list.
 
-- Important: This method are not supported in this release!
+- Important: This method are not supported in this release.
 
 `@override`
 > Future\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\> peekBatch(String correlationId, int messageCount)
@@ -233,7 +233,7 @@ This method is usually used to extend the message processing time.
 - **lockTimeout**: int - locking timeout in milliseconds.
 
 #### send
-Send method are sends a message into the **_queue**.
+Sends a message into the **_queue**.
 
 `@override`
 > Future send(String correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) envelop)

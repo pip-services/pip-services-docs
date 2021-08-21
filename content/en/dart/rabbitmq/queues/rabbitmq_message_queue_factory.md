@@ -4,18 +4,18 @@ title: "RabbitMQMessageQueueFactory"
 linkTitle: "RabbitMQMessageQueueFactory"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-rabbitmq-dart"
 description: >
-    TODO: add description
+    Factory for RabbitMQMessageQueue.
     
 ---
 
 **Extends:** [Factory](../../../components/build/factory)
 
 ### Description
-TODO: add description
+The abbitMQMessageQueueFactory class provides a factory for RabbitMQMessageQueue.
 
 
 ### Constructors
-TODO: add description
+Creates a new instance of the class.
 
 > RabbitMQMessageQueueFactory()
 

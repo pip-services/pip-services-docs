@@ -203,7 +203,7 @@ Our facade will need to be configured before running, so create a **config-distr
 
 For demonstration purposes, we’ll be running our system in a distributed mode, with all of its components running in their own, individual containers. The configuration above is designed specifically for this type of distributed deployment.
 
-The process of running a service in a Docker container is described in detail in the [Dockerization tutorial](../../microservice_dockerization)
+The process of running a service in a Docker container is described in detail in the [Microservice Dockerization](../../microservice_dockerization) tutorial.
 
 To run our system using Docker Compose, create a docker-compose.yml file with the following:
 

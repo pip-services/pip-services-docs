@@ -14,7 +14,7 @@ description: >
 ### Interfaces
 
 #### [IMessageQueueConnection](imessage_queue_connection)
-Defines an interface for message queue connections
+Defines an interface for message queue connections.
 
 
 </div>

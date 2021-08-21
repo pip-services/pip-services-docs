@@ -11,7 +11,7 @@ description: >
 
 The MessageEnvelope class allows you to add additional information to messages.
 
-Important points
+**Important points**
 
 - A correlation id, message id, and a message type are added to the data being sent/received. Additionally, a MessageEnvelope can reference a lock token.
 - A MessageEnvelope's message is stored as a buffer, so strings are converted using utf8 conversions.
@@ -23,25 +23,25 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 > MessageEnvelope(String correlationId, String messageType, message)
 
 - **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: String - a string value that defines the message's type.
-- **message**: dynamic - the data being sent/received.
+- **messageType**: String - string value that defines the message's type.
+- **message**: dynamic - data being sent/received.
 
 ### Fields
 
 <span class="hide-title-link">
 
 #### correlationId
-The unique business transaction id that is used to trace calls across components.
+Unique business transaction id that is used to trace calls across components.
 
 > **correlationId**: String
 
 #### message
-The stored message.
+Stored message.
 
 > **message**: String
 
 #### message_id
-The message's auto-generated ID.
+Message's auto-generated ID.
 
 > **message_id**: String
 

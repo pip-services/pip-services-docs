@@ -15,7 +15,7 @@ The IMessageQueueConnection interface is used to create message queue connection
 
 #### createQueue
 Creates a message queue.
-If connection doesn't support this function, it exits without error.
+If the connection doesn't support this function, it exits without error.
 
 > createQueue(name: string)
 
@@ -23,16 +23,16 @@ If connection doesn't support this function, it exits without error.
 
 #### deleteQueue
 Deletes a message queue.
-If connection doesn't support this function, it exits without error.
+If the connection doesn't support this function, it exits without error.
 
 > deleteQueue(name: string)
 
 - **name**: string - name of the queue to be deleted.
 
 #### readQueueNames
-Reads a list of registered queue names. If connection doesn't support this function returns an empty list.
+Reads a list of registered queue names. If the connection doesn't support this function returns an empty list.
 
 > readQueueNames(): Promise<string[]>
 
-- **returns**: Promise<string[]> - list with registered queue names.
+- **returns**: Promise<string[]> - list with the registered queue names.
 

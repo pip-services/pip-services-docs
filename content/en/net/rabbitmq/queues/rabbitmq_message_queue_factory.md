@@ -11,7 +11,7 @@ description: >
 **Extends:** [Factory](../../../components/build/factory)
 
 ### Description
-The RabbitMQMessageQueueFactory class is a factory for RabbitMQMessageQueue.
+The RabbitMQMessageQueueFactory class provides a factory for RabbitMQMessageQueue.
 
 
 ### Constructors

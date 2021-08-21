@@ -171,7 +171,7 @@ When implementing a new version of the API, the following must be done:
 2. Create a new FacadeServiceVx and set a new “/api/vx” base route;
 3. Register routes for the new API and delegate their processing to the newly added and to already existing REST operations.
 
-Continue on to [Step 6 - Testing Operations](../step6) to see how we can automate the testing of the service and operations we’ve created, including the authentication and authorization of requests.
+Continue on to [Step 6 - Testing of Operations](../step6) to see how we can automate the testing of the service and operations we’ve created, including the authentication and authorization of requests.
 
 <span class="hide-title-link">
 

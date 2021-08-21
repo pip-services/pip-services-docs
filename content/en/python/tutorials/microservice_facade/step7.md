@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 7. Running facade"
-linkTitle: "Step 7. Running facade" 
+title: "Step 7. Running the facade"
+linkTitle: "Step 7. Running the facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 ---
 Before we can run our facade, we need to add three more things: a factory for the component’s we’ve created, a container, and the code that will run it all. The process of implementing these pieces is the same as the one described in [Data Microservice](../../data_microservice), so this time around we’ll just list the code:
@@ -36,7 +36,7 @@ class FacadeFactory(Factory):
 
 ```
 
-And last but not least, a factory for the clients that that facade depends on in a file named  **ClientFacadeFactory.py**:
+And last but not least, a factory for the clients that the facade depends on in a file named  **ClientFacadeFactory.py**:
 
 **/pip_facades_sample_python/build/ClientFacadeFactory.py**
 

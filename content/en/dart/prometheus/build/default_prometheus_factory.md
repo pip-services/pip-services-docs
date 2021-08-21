@@ -15,7 +15,7 @@ The DefaultPrometheusFactory class allows you to create a factory used to create
 
 ### Constructors
 
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultPrometheusFactory()
 
@@ -23,5 +23,5 @@ Create a new instance of the factory.
 ### See also
 - #### [Factory](../../../components/build/factory)
 - #### [PrometheusCounters](../../count/prometheus_counters)
-- #### [PrometheusMetricsService](../../services/prometheus_metrics_service)
+- #### [PrometheusMetricsService](../services/prometheus_metrics_service)
 

@@ -37,7 +37,7 @@ export class FacadeFactory extends Factory {
 
 ```
 
-And last but not least, a factory for the clients that that facade depends on in a file named  **ClientFacadeFactory.ts**:
+And last but not least, a factory for the clients that the facade depends on in a file named  **ClientFacadeFactory.ts**:
 
 **/src/build/ClientFacadeFactory.ts**
 

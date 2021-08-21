@@ -49,7 +49,7 @@ To make it easier to follow along, this tutorial is broken up into the following
 - [Step 5. Service and version support](step5)
 - [Step 6. Testing operations](step6)
 - [Step 7. Running the facade](step7)
-- [Step 8. Manually Testing the Facade](step7)
+- [Step 8. Manually Testing the Facade](step8)
 
 The code for this tutorial can be found on [GitHub](https://github.com/pip-services-samples/).
 
@@ -65,6 +65,6 @@ To start developing your first facade, head on over to [Step 1. Creating the pro
 #### [Step 5. Service and version support](step5)
 #### [Step 6. Testing operations](step6)
 #### [Step 7. Running the facade](step7)
-#### [Step 8. Manually Testing the Facade](step7)
+#### [Step 8. Manually Testing the Facade](step8)
 
 </span>

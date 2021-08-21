@@ -37,7 +37,7 @@ namespace PipServices.Templates.Facade.Build
 }
 ```
 
-And last but not least, a factory for the clients that that facade depends on in a file named  **ClientFacadeFactory.cs**:
+And last but not least, a factory for the clients that the facade depends on in a file named  **ClientFacadeFactory.cs**:
 
 **/src/service/build/ClientFacadeFactory.cs**
 

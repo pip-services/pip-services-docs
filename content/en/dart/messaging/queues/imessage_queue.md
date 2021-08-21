@@ -15,7 +15,7 @@ description: >
 
 The IMessageQueue interface is used for asynchronous message queues.
 
-Important points
+**Important points**
 
 - Not all queues may implement all the methods.
 - An ttempt to call a non-supported method will result in a NotImplemented exception.
@@ -36,7 +36,7 @@ See also [IMessageReceiver](../imessage_receiver), [listen](#listen)
 
 > void beginListen(String correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 #### complete
@@ -61,14 +61,14 @@ Gets the queue capabilities
 - **returns**: [MessagingCapabilities](../messaging_capabilities) - queue's capabilities object.
 
 #### getName
-Gets the queue name
+Gets the queue's name
 
 > String getName()
 
-- **returns**: String - queue name.
+- **returns**: String - queue's name.
 
 #### listen
-Listens for incoming messages and blocks the current thread until queue is closed.  
+Listens for incoming messages and blocks the current thread until the queue is closed.  
 See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 > void listen(String correlationId, [IMessageReceiver](../imessage_receiver) receiver)

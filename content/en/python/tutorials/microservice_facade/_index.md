@@ -46,14 +46,14 @@ To make it easier to follow along, this tutorial is broken up into the following
 - [Step 2. Business operations](step2)
 - [Step 3. Authentication and sessions](step3)
 - [Step 4. Authorization](step4)
-- [Step 5. Services and versioning](step5)
+- [Step 5. Service and versioning](step5)
 - [Step 6. Testing of operations](step6)
 - [Step 7. Running the facade](step7)
 - [Step 8. Manually Testing the Facade](step8)
 
 The code for this tutorial can be found on [GitHub](https://github.com/pip-services-samples/).
 
-To start developing your first facade, head on over to [Step 1. Creating the project’s structure.](../step1)
+To start developing your first facade, head on over to [Step 1. Creating the project’s structure.](step1)
 
 
 <span class="hide-title-link">

@@ -14,7 +14,7 @@ description: >
 
 The CommandableHttpClient class allows you to create commandable services. Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable) objects.
 
-Important points
+**Important points**
 
 - Each command is exposed as a POST operation that receives all parameters in the body object.
 

@@ -5,7 +5,7 @@ linkTitle: "Queues"
 no_list: true
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-rabbitmq-dart"
 description: >
-    This package contains a class used to define message queues that send and receive messages via an RabbitMQ broker.
+    This package contains a class used to define message queues that send and receive messages via a RabbitMQ broker.
     
 ---
 ---

@@ -4,7 +4,7 @@ title: "HttpConnectionResolver"
 linkTitle: "HttpConnectionResolver"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-rpc-dart"
 description: >
-    Helper class to retrieve connections for HTTP-based services and clients.
+    Helper class used to retrieve connections for HTTP-based services and clients.
 
 ---
 
@@ -14,7 +14,7 @@ description: >
 
 The HttpConnectionResolver class is used to retrieve connections for HTTP-based services and clients.
 
-Important points
+**Important points**
 
 - In addition to its regular functions, ConnectionResolver is able to parse http:// URIs and validate connection parameters before returning them.
 
@@ -80,7 +80,7 @@ it finds a IDiscovery and resolves the connection there.
 
 
 #### resolveAll
-Resolves all component connections. If connections are configured to be retrieved from Discovery service it finds a IDiscovery and resolves the connection there.
+Resolves all component connections. If the connections are configured to be retrieved from Discovery service, it finds a IDiscovery and resolves the connection there.
 
 > Future\<List\<[ConnectionParams](../../../components/connect/connection_params)\>\> resolveAll(String correlationId)
 
@@ -94,7 +94,7 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

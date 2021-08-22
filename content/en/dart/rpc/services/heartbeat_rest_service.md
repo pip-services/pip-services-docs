@@ -16,7 +16,7 @@ description: >
 
 The HeartbeatRestService class allows you to create services that return heartbeat via HTTP/REST protocol. 
 
-Important points
+**Important points**
 
 - The service responds on /heartbeat route (can be changed) with a string with the current time in UTC.
 - This service route can be used to perform health checks by loadbalancers and container orchestrators.

@@ -37,5 +37,5 @@ Handles status requests.
 
 > void status(angel.RequestContext req, angel.ResponseContext res)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context

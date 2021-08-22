@@ -14,7 +14,7 @@ description: >
 ### Classes
 
 #### [HttpConnectionResolver](http_connection_resolver)
-Helper class to retrieve connections for HTTP-based services and clients.
+Helper class used to retrieve connections for HTTP-based services and clients.
 
 In addition to regular functions of ConnectionResolver, this class is able to parse http://URIs
 and validate connection parameters before returning them.

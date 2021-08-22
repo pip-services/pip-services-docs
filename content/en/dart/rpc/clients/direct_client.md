@@ -15,7 +15,7 @@ description: >
 
 The DirectClientclass allows you to create clients that call a controller directly in the same memory space.
 
-Important points
+**Important points**
 
 -  It is used when multiple microservices are deployed in a single container (monolyth) and communication between them can be done by direct calls rather than through the network.
 
@@ -101,7 +101,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
@@ -119,7 +119,7 @@ Sets references to dependent components.
 `@override`
 > void setReferences(IReferences references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 ### Examples
 

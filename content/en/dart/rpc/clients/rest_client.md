@@ -45,51 +45,51 @@ The RestClient class allows you to create clients that call remote endpoints usi
 <span class="hide-title-link">
 
 #### counters
-A list of counters.
-> **counters**: [CompositeCounters](../components/count/composite_counters)
+List of counters.
+> **counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### client
-The HTTP client.
+HTTP client.
 > **client**: http.Client
 
 #### uri
-The remote service uri which is defined on openning.
+Remote service uri which is defined on openning.
 > **uri**: String
 
 #### timeout
-The invocation timeout in milliseconds.
+Invocation timeout in milliseconds.
 > **timeout**: int = 1000
 
 #### connectionResolver
-The connection resolver.
+Connection resolver.
 > **connectionResolver**: [HttpConnectionResolver](../../connect/http_connection_resolver) = HttpConnectionResolver()
 
 #### logger
-The logger.
+Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
 #### counters
-The performance counters.
+Performance counters.
 > **counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### options
-The configuration options.
+Configuration options.
 > **options**: [ConfigParams](../../../commons/config/config_params) = ConfigParams()
 
 #### baseRoute
-The base route.
+Base route.
 > **baseRoute**: String
 
 #### retries
-The number of retries.
+Number of retries.
 > **retries**: int = 1
 
 #### headers
-The default headers to be added to every request.
+Default headers to be added to every request.
 > **headers**: Map\<String, String\>
 
 #### connectTimeout
-The connection timeout in milliseconds.
+Connection timeout in milliseconds.
 > **connectTimeout**: int = 1000
 
 </span>
@@ -135,7 +135,7 @@ Calls a remote method via HTTP/REST protocol.
 
 > Future call(String method, String route, String correlationId, Map\<String, String\> params, [data])
 - **method**: String - HTTP method: "get", "head", "post", "put", "delete"
-- **route**: String - a command route. Base route will be added to this route
+- **route**: String - command route. Base route will be added to this route
 - **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
 - **params**: Map\<String, String\> - (optional) query parameters.
 - **data**: dynamic - (optional) body object.
@@ -168,7 +168,7 @@ It returns a Timing object that is used to end the time measurement.
 
 - **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/timing) - InstrumentTiming object used to end the time measurement.
+- **returns**: [Timing](../../../components/count/timing/) - InstrumentTiming object used to end the time measurement.
 
 
 #### isOpen
@@ -177,7 +177,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open

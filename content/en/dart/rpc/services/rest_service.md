@@ -98,11 +98,11 @@ Configures a component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a Timing object that is used to end the time measurement.
 
-> [Timing](../../../components/counnt/timing) instrument(String correlationId, String name)
+> [Timing](../../../components/count/timing) instrument(String correlationId, String name)
 
 - **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/counnt/timing) - InstrumentTiming object to end the time measurement.
+- **returns**: [Timing](../../../components/count/timing) - InstrumentTiming object to end the time measurement.
 
 
 #### isOpen
@@ -111,7 +111,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component has been opened and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
@@ -172,10 +172,10 @@ If the object is not null, it returns 200 status code. For null results it retur
 
 > void sendCreatedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
-- **err**: dynamic - an execution error
-- **result**: dynamic - an execution result
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
+- **err**: dynamic - execution error
+- **result**: dynamic - execution result
 
 
 #### sendDeletedResult
@@ -190,8 +190,8 @@ If error occur it sends ErrorDescription with approproate status code.
 
 > void sendDeletedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **result**: dynamic - body object to result.
 
 
@@ -201,8 +201,8 @@ Sends an error serialized as ErrorDescription object and the appropriate HTTP st
 
 > void sendError(angel.RequestContext req, angel.ResponseContext res, error)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **error**: dynamic - error object to be sent.
 
 
@@ -215,8 +215,8 @@ If the object is not null it returns 200 status code. For null results, it retur
 
 > void sendResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **error**: dynamic - error object to be sent.
 - **result**: dynamic - body object to result.
 

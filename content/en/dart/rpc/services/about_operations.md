@@ -17,7 +17,7 @@ The AboutOperations class is used to obtain information about running services.
 
 #### about
 Gets information from a service.
-Send JSON string with information about the service.
+Sends a JSON string with information about the service.
 
 > void about(req, res)
 - **req**: dynamic - an HTTP request
@@ -29,7 +29,7 @@ Gets the service's information.
 
 > Function(angel.RequestContext req, angel.ResponseContext res) getAboutOperation()
 
-- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - the about method
+- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - about method
 
 
 #### setReferences

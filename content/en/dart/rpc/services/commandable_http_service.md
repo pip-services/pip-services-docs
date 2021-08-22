@@ -16,7 +16,7 @@ See also [RestService](../rest_service), [CommandableHttpClient](../../clients/c
 
 The CommandableHttpService class allows you to create services that receive remote calls via the HTTP/REST protocol to operations automatically generated for commands defined in ICommandable components.
 
-Important points
+**Important points**
 
 - Each command is exposed as POST operation that receives all parameters in the body object. 
 - Commandable services require only three lines of code to implement a robust external HTTP-based remote interface.
@@ -50,7 +50,7 @@ Creates a new instance of the service.
 
 > CommandableHttpService(String baseRoute)
 
-- **baseRoute**: String - a service base route.
+- **baseRoute**: String - service base route.
 
 
 ### Fields

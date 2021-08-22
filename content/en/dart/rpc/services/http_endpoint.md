@@ -13,7 +13,7 @@ description: >
 
 The HttpEndpoint class allows you to create HTTP endpoints. 
 
-Important points
+**Important points**
 
 - An endpoint is a URL, at which a given service can be accessed by a client. 
 
@@ -34,7 +34,7 @@ Parameters to pass to the [configure](#configure) method for component configura
 
 #### References
 A logger, counters, and a connection resolver can be referenced by passing the 
-following references to the object's [set_references](#set_references) method:
+following references to the object's [set_references](#setreferences) method:
 
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
@@ -75,7 +75,7 @@ Registers a registerable object for dynamic endpoint discovery.
 
 > void register([IRegisterable](../../services/iregisterable) registration)
 
-- **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../../services/iregisterable) - registration to add.
 
 
 #### registerInterceptor
@@ -123,9 +123,9 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 #### unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> void unregister([IRegisterable](../services/iregisterable) registration)
+> void unregister([IRegisterable](../iregisterable) registration)
 
-- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 ### Examples
 

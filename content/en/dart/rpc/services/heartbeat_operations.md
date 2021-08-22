@@ -17,7 +17,7 @@ The HeartBeatOperations class is used to handle the operations of a heartbeat se
 
 #### heartbeat
 Creates a heartbeat.
-Send request with the current time in UTC.
+Sends requests with the current time in UTC.
 
 > void heartbeat(angel.RequestContext req, angel.ResponseContext res)
 
@@ -26,7 +26,7 @@ Send request with the current time in UTC.
 
 
 #### getHeartbeatOperation
-Gets the heartbeat operation
+Gets the heartbeat operation.
 
 > Function(angel.RequestContext req, angel.ResponseContext res) getHeartbeatOperation()
 

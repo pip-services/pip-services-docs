@@ -82,8 +82,8 @@ Sends a bad request error message.
 
 > sendBadRequest(req: any, res: any, message: String): void
 
-- **req**: any - an HTTP request
-- **res**: any - an HTTP response
+- **req**: any - HTTP request
+- **res**: any - HTTP response
 - **message**: String - message
 
 
@@ -92,8 +92,8 @@ Sends a conflict error messge
 
 > void sendBadRequest(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext res - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext res - HTTP response context
 - **message**: String - message
 
 
@@ -102,8 +102,8 @@ Sends a JSON object with the created result.
 
 > void sendCreatedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
 
@@ -113,8 +113,8 @@ Sends the deleted result in JSON format.
 
 > void sendDeletedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
 
@@ -124,8 +124,8 @@ Send an empty result with 204 status code.
 
 > void sendEmptyResult(angel.RequestContext req, angel.ResponseContext res, err)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **err**: dynamic - error to be sent.
 
 #### sendError
@@ -133,8 +133,8 @@ Sends an error serialized as ErrorDescription object and appropriate HTTP status
 
 > void sendError(angel.RequestContext req, angel.ResponseContext res, error)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **err**: dynamic - error to be sent.
 
 
@@ -143,8 +143,8 @@ Sends an internal error message
 
 > void sendInternalError(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **message**: String - message
 
 
@@ -153,8 +153,8 @@ Sends a not found error message.
 
 > void sendNotFound(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **message**: String - message
 
 
@@ -163,8 +163,8 @@ Sends a result as a JSON object.
 
 > void sendResult(angel.RequestContext req, angel.ResponseContext res, err, result)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
 
@@ -174,8 +174,8 @@ Sends a server unavailable error message (Status code 503).
 
 > void sendServerUnavailable(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **message**: String - message
 
 
@@ -184,8 +184,8 @@ Sends a session expired error message (Status code 440).
 
 > void sendSessionExpired(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **message**: String - message
 
 
@@ -194,8 +194,8 @@ Sends an unauthorized error message.
 
 > void sendUnauthorized(angel.RequestContext req, angel.ResponseContext res, String message)
 
-- **req**: angel.RequestContext - an HTTP request context
-- **res**: angel.ResponseContext - an HTTP response context
+- **req**: angel.RequestContext - HTTP request context
+- **res**: angel.ResponseContext - HTTP response context
 - **message**: String - message
 
 

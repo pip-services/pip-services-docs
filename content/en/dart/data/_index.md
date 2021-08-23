@@ -10,7 +10,7 @@ description: >
     
     This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
     
-    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only minimal set of operations. The second kind is so called "identifieable" persistence with works with "identifable" data objects, i.e. objects that have unique ID field. The identifiable persistence provides a full set or CRUD operations that covers most common cases.
+    The persistence components come in two kinds. The first kind is a basic persistence that can work with any object types and provides only a minimal set of operations. The second kind is so called "identifieable" persistence with works with "identifable" data objects, i.e. objects that have an unique ID field. The identifiable persistence provides a full set of CRUD operations that covers most common cases.
 
 
 ---

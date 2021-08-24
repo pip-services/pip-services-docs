@@ -32,12 +32,12 @@ accessing the this._items property and calling the [save](file_persistence/#save
 #### [IdentifiableFilePersistence](identifiable_file_persistence)
 Abstract persistence component that stores data in flat files
 and implements a number of CRUD operations over data items with unique ids.
-The data items must implement the [IIdentifiable interface][IIdentifiable](../../commons/data/iidentifiable)
+The data items must implement the [IIdentifiable](../../commons/data/iidentifiable) interface.
 
 #### [IdentifiableMemoryPersistence](identifiable_memory_persistence)
 Abstract persistence component that stores data in memory
 and implements a number of CRUD operations over data items with unique ids.
-The data items must implement the [IIdentifiable interface][IIdentifiable](../../commons/data/iidentifiable)
+The data items must implement the [IIdentifiable](../../commons/data/iidentifiable) interface.
 
 #### [JsonFilePersister](json_file_persister)
 Persistence component that loads and saves data from/to a flat file.

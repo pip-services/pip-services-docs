@@ -16,7 +16,7 @@ description: >
 
 The ElasticSearchLogger class allows you to create loggers that dump execution logs to an ElasticSearch service.
 
-Important points
+**Important points**
 
 - Elasticsearch is a popular search index. It is often used to store and index execution logs by itself or as a part of ELK (ElasticSearch - Logstash - Kibana) stack.
 - Authentication is not supported in this version.
@@ -27,7 +27,7 @@ Important points
 - **source**: source (context) name
 
 **connection(s)**:
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
 - **protocol**: connection protocol: http or https
 - **host**: host name or IP address
 - **port**: port number
@@ -82,7 +82,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open

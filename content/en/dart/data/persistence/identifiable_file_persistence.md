@@ -15,11 +15,11 @@ description: >
 
 The IdentifiableFilePersistence class allows you to create persistence components that store data in flat files and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-- In basic scenarios child classes shall only override [getPageByFilter](../memory_persistence/#getpagebyfilter), [getListByFilter](../memory_persistence/#getlistbyfilter) or [deleteByFilter](../memory_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing cached items via the self._items property and calling the **save** method on updates.
+- In basic scenarios, child classes shall only override [getPageByFilter](../memory_persistence/#getpagebyfilter), [getListByFilter](../memory_persistence/#getlistbyfilter) or [deleteByFilter](../memory_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
+- In complex scenarios, child classes can implement additional operations by accessing cached items via the self._items property and calling the **save** method on updates.
 
 #### Configuration parameters
 
@@ -37,7 +37,7 @@ Creates a new instance of the persistence.
 
 > IdentifiableFilePersistence([[JsonFilePersister<T>](../json_file_persister) persister])
 
-- **persister**: [JsonFilePersister<T>](../json_file_persister) - (optional) a persister component that loads and saves data from/to flat file.
+- **persister**: [JsonFilePersister<T>](../json_file_persister) - (optional) persister component that loads and saves data from/to flat file.
 
 ### Fields
 
@@ -53,7 +53,7 @@ JSON file persister.
 ### Instance methods
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)

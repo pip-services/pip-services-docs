@@ -15,7 +15,7 @@ description: >
 
 The MemoryPersistence class allows you to create persistence components that store data in memory.
 
-Important points
+**Important points**
     
 - This is the most basic persistence component that is only able to store data items of any type. 
 - Specific CRUD operations over the data items must be implemented in child classes by accessing the this._items property and calling the **save** method.
@@ -153,7 +153,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **filter**: Function - filter function used to filter items
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Function - (optional) sorting parameters
-- **returns**: Future<[DataPage<T>](../../../commons/data/data_page)> - data page with filterd results.
+- **returns**: Future<[DataPage<T>](../../../commons/data/data_page)> - data page with filtered results.
 
 
 #### isOpen
@@ -162,7 +162,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and False otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### load
@@ -196,7 +196,7 @@ Sets the component's references. References must match configured dependencies.
 `@override`
 > void setReferences(IReferences references)
 
-- **references**: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../../../commons/refer/ireferences/) - references to set.
 
 ### Examples
 

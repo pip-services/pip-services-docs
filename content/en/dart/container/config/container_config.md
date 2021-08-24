@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The ContainerConfig class allows you to create a container configuration as a list of component configurations.
+The ContainerConfig class allows you to create a container configuration defined as a list of component configurations.
 
 ### Constructors
 Creates a new instance of ContainerConfig.

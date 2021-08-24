@@ -78,7 +78,7 @@ class MyProcess extends ProcessContainer {
 }
 ```
 
-Define YAML configuration file with components and their descriptors.
+Define a YAML configuration file with components and their descriptors.
 The configuration file is pre-processed using [Handlebars templating engine](https://handlebarsjs.com)
 that allows to inject configuration parameters or dynamically include/exclude components using conditional blocks.
 The values for the templating engine are defined via process command line arguments or via environment variables.

@@ -17,7 +17,7 @@ description: >
 
 The IdentifiableMemoryPersistence class allows you to create persistence components that store data in memory and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The data items must implement [IIdentifiable](../../../commons/data/iidentifiable).
 - In basic scenarios child classes shall only override [getPageByFilter](../memory_persistence/#getpagebyfilter), [getListByFilter](../memory_persistence/#getlistbyfilter) or [deleteByFilter](../memory_persistence/#deletebyfilter) operations with a specific filter function. All other operations can be used out of the box. 
@@ -95,7 +95,7 @@ Gets a data item based on its unique id.
 
 
 #### set
-Sets a data item. If the data item exists, it updates it; otherwise, it creates a new data item.
+Sets a data item. If the data item exists, it updates it. Otherwise, it creates a new data item.
 
 > Future\<T\> set(String correlationId, T item)
 

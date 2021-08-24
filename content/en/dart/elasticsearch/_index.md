@@ -29,7 +29,7 @@ dependencies:
   pip_services3_elasticsearch: version
 ```
 
-Now you can install package from the command line:
+Now you can install the package from the command line:
 ```bash
 pub get
 ```

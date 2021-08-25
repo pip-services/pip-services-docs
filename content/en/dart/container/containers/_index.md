@@ -10,7 +10,7 @@ description: >
     and controls their lifecycle using various configurations.     
            
     In addition, it contains the ProcessContainer class, which represents a system process. It receives its configuration file via the command line, 
-    and creates a container, starts it, reads its configuration, recreates objects, and runs them.  
+    creates a container, starts it, reads its configuration, recreates objects, and runs them.  
     After pressing ctrl-c, the process container turns off and destroys the objects.  
   
 

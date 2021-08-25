@@ -4,7 +4,7 @@ title: "BuildReferencesDecorator"
 linkTitle: "BuildReferencesDecorator"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 description: >
-    References decorator that automatically creates missing components using
+    Reference decorator that automatically creates missing components using
     available component factories upon component retrival.
 ---
 
@@ -12,15 +12,15 @@ description: >
 
 
 ### Description
-The BuildReferencesDecorator class allows you to create a references decorator that automatically creates missing components using availale component factories upon component retrieval.
+The BuildReferencesDecorator class allows you to create a reference decorator that automatically creates missing components using availale component factories upon component retrieval.
 
 ### Constructors
 Creates a new instance of the decorator.
 
 > BuildReferencesDecorator([IReferences](../../../commons/refer/ireferences) nextReferences, [IReferences](../../../commons/refer/ireferences) topReferences)
 
-- **nextReferences**: [IReferences](../../../commons/refer/ireferences) - the next references or decorator in the chain.
-- **topReferences**: [IReferences](../../../commons/refer/ireferences) - the decorator at the top of the chain.
+- **nextReferences**: [IReferences](../../../commons/refer/ireferences) - next references or decorator in the chain.
+- **topReferences**: [IReferences](../../../commons/refer/ireferences) - decorator at the top of the chain.
 
 ### Instance methods
 
@@ -48,12 +48,12 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when r
 
 > List\<T\> find\<T\>(locator, bool required)
 - **locator**: dynamic - locator to find a reference by.
-- **required**: bool - it True, it forces to raise an exception when no reference is found.
+- **required**: bool - it true, it forces to raise an exception when no reference is found.
 - **returns**: List\<T\> - list with matching component references.
 
 
 #### findFactory
-Finds a factory capable creating a component by given descriptor
+Finds a factory capable creating a component by a given descriptor
 from the components registered in the references.
 
 > [IFactory](../../../components/build/ifactory) findFactory(locator)

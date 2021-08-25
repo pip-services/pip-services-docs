@@ -14,7 +14,7 @@ description: >
 
 The Container class allows you to create an inversion of control (IoC) container that creates components and manages their lifecycle.
 
-Important points
+**Important points**
 
 - The container is driven by configuration, which is usually stored in a JSON or YAML file.
 - The configuration contains a list of components identified by their type or locator, followed by their configuration.
@@ -74,7 +74,7 @@ Default factories.
 ### Instance methods
 
 #### addFactory
-Adds a factory to the container. The factory is used to create components          
+Adds a factory to the container. The factory is used to create the components          
 added to the container by their locators (descriptors).
 
 > void addFactory([IFactory](../../../components/build/ifactory) factory)
@@ -105,7 +105,7 @@ Checks if the component is open.
 `@override`
 > bool isOpen()
 
-- **returns**: bool - True if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
@@ -114,7 +114,7 @@ Opens the component.
 `@override`
 > Future open(String correlationId)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 
 #### readConfigFromFile

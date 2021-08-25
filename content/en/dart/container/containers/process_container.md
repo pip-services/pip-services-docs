@@ -14,7 +14,7 @@ description: >
 
 The ProcessContainer class allows you to create an inversion of control (IoC) container that runs as a system process.
 
-Important points
+**Important points**
 
 - It processes command line arguments and handles unhandled exceptions and Ctrl-C signal to shutdown the container properly.
 
@@ -46,8 +46,8 @@ Path to the configuration file.
 #### run
 Runs the container by instantiating and running components inside the container.
 
-It reads the container configuration, and creates, configures, references and opens components.
-On process exit; it closes, unreferences and destroys components in order to shutdown properly.
+It reads the container configuration and creates, configures, references and opens components.
+On process exit; it closes, unreferences and destroys components, in order to shutdown properly.
 
 > void run(List\<String\> args)
 

@@ -42,12 +42,12 @@ Decorator at the top of the chain.
 #### find
 Gets all component references that match the specified locator.
 
-Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to True but no references were found.
+Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to true but no references were found.
 
 `@override`
 > List\<T\> find\<T\>(locator, bool required)
 - **locator**: dynamic - locator to find a reference by.
-- **required**: bool - if True, it forces to raise an exception when no reference is found.
+- **required**: bool - if true, it forces to raise an exception when no reference is found.
 - **returns**: List\<T\> -  list with matching component references.
 
 #### getAll

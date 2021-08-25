@@ -4,7 +4,7 @@ title: "ContainerReferences"
 linkTitle: "ContainerReferences"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 description: >
-    Container's managed references that can be created from container configuration.
+    Container's managed references that can be created from a container's configuration.
 ---
 
 **Extends:** [ManagedReferences](../managed_references)

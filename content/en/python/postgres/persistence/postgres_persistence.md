@@ -154,6 +154,15 @@ Creates a data item.
 - **item**: T - item to be created.
 - **returns**: Optional[T] - created item
 
+#### _request
+Performs a request to the database.
+
+> _request(query: str, params: List[str] = None): dict
+
+- **query**: str - string with sql query to database
+- **params**: List[str] - optional list of query parameters
+- **returns**: dict - result of the query
+
 
 #### _create_schema
 Checks if a table exists and if it doesn't, it creates the necessary database objects.

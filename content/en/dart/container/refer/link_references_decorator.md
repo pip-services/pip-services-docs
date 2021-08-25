@@ -5,8 +5,8 @@ linkTitle: "LinkReferencesDecorator"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 description: >
     References decorator that automatically sets references to newly added components
-    that implement [IReferenceable interface](../../../commons/refer/ireferenceable), and unsets references from removed components
-    that implement [IUnreferenceable interface](../../../commons/refer/iunreferenceable).
+    that implement the [IReferenceable](../../../commons/refer/ireferenceable) interface, and unsets references from removed components
+    that implement [IUnreferenceable](../../../commons/refer/iunreferenceable) interface.
 ---
 
 **Extends:** [ReferencesDecorator](../references_decorator)
@@ -72,5 +72,5 @@ Removes all component references that match the specified locator.
 
 `@override`
 > List removeAll(locator)
-- **locator**: dynamic - the locator to remove references by.
+- **locator**: dynamic - locator to remove references by.
 - **returns**: List - list, containing all removed references.

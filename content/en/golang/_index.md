@@ -3,7 +3,7 @@ type: docs
 title: "Pip.Services Docs for Golang toolkit"
 linkTitle: "Golang"
 weight: 30
-draft: true
+
 ---
 
 ### Welcome to the Pip.Services documentation site!

@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 6. Wrapping the microservice into a container"
-linkTitle: "Step 6. Container"
+title: "Step 7. Wrapping the microservice into a container"
+linkTitle: "Step 7. Container"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 

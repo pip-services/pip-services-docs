@@ -11,6 +11,8 @@ description: >
     This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
     It contains components for supporting work with the AWS cloud platform.
+    
+draft: true
 ---
 
 

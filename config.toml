@@ -122,11 +122,11 @@ disableKinds = ["taxonomy", "term"]
     name = "Microservices"
     url = "microservices/"
     weight = 70
-[[menu.main]]
-    identifier = "Templates"
-    name = "Templates"
-    url = "templates/"
-    weight = 80
+# [[menu.main]]
+#     identifier = "Templates"
+#     name = "Templates"
+#     url = "templates/"
+#     weight = 80
 [[menu.main]]
     identifier = "Testing Tools"
     name = "Testing Tools"

@@ -8,7 +8,7 @@ description: >
 
     This package contains classes used to create reference decorators and managed references.      
         
-   **Important points**
+    **Important points**
     
     - It provides the inversion of control design pattern but does not contain the fully functional container (you can just only create a class that will set various references).    
     

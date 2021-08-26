@@ -26,34 +26,35 @@ The Beacons microservice that we are going to be developing will consist of a nu
 
 To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
 
-- [Step 1. Setting up the project](step1)
-- [Step 2. Data model development](step2)
-- [Step 3. Implementing persistence components (with tests)](step3)
-- [Step 4. Implementing a controller (with tests)](step4)
-- [Step 5. Implementing an HTTP service (with tests)](step5)
-- [Step 6. Wrapping microservice into container](step6)
-- [Step 7. Running and testing the microservice](step7)
+- [Step 1. Setting up the environment](step1)
+- [Step 2. Setting up the project](step2)
+- [Step 3. Data model development](step3)
+- [Step 4. Implementing persistence components (with tests)](step4)
+- [Step 5. Implementing a controller (with tests)](step5)
+- [Step 6. Implementing an HTTP service (with tests)](step6)
+- [Step 7. Wrapping microservice into container](step7)
+- [Step 8. Running and testing the microservice](step8)
 
 <span class="hide-title-link">
-
-#### [Step 1. Setting up the project](step1)
-#### [Step 2. Data model development](step2)
-#### [Step 3. Implementing persistence components (with tests)](step3)
-#### [Step 4. Implementing a controller (with tests)](step4)
-#### [Step 5. Implementing an HTTP service (with tests)](step5)
-#### [Step 6. Wrapping the microservice into a container](step6)
-#### [Step 7. Running and testing the microservice](step7)
+#### [Step 1. Setting up the environment](step1)
+#### [Step 1. Setting up the project](step2)
+#### [Step 2. Data model development](step3)
+#### [Step 3. Implementing persistence components (with tests)](step34)
+#### [Step 4. Implementing a controller (with tests)](step5)
+#### [Step 5. Implementing an HTTP service (with tests)](step6)
+#### [Step 6. Wrapping the microservice into a container](step7)
+#### [Step 7. Running and testing the microservice](step8)
 
 </span>
 
 ### See also
 
-- [Tutorial how to create a client library](../client_library)
-- [Tutorial how to dockerize a microservice](../microservice_dockerization)
+- [Client Library](../client_library)
+- [Microservice Dockerization](../microservice_dockerization)
 
 <span class="hide-title-link">
 
-#### [Client Library(../client_library)
+#### [Client Library](../client_library)
 #### [Microservice Dockerization](../microservice_dockerization)
 
 </span>

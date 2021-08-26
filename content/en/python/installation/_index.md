@@ -4,6 +4,7 @@ title: "Installation"
 linkTitle: "Installation" 
 no_list: true
 weight: 1
+draft: true
 ---
 
 ### Intallation procedure

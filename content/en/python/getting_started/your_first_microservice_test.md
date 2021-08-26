@@ -4,6 +4,8 @@ no_list: true
 title: "Your first microservice in Python (test)"
 linkTitle: "Your first microservice (test)"
 weight: 30
+draft: true
+
 ---
 
 So, let’s start developing microservices using the Pip.Services toolkit. As a simple example, we will make a Hello World microservice, which will greet you in response to your request. The communication protocol will be HTTP REST.

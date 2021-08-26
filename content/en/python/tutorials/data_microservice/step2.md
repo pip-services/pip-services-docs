@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Data model development"
+title: "Step 3. Data model development"
 linkTitle: "Step 3. Data model."
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
@@ -74,6 +74,6 @@ With our data model defined, we can now move on to [Step 3. Implementing persist
 
 <span class="hide-title-link">
 
-### [Step 3. Implementing persistence components.](../step3)
+### [Step 4. Implementing persistence components.](../step3)
 
 </span>

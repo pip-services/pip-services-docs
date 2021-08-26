@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step1. Step 1. Setting up the environment"
+title: "Step1. Setting up the environment"
 linkTitle: "Step 1. Environment"
 
 ---

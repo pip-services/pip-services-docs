@@ -66,6 +66,6 @@ Now that we’ve got the project all set up, we can move on to [Step 2. Data mod
 
 <span class="hide-title-link">
 
-### [Step 2. Data model development.](../step2)
+### [Step 3. Data model development.](../step2)
 
 </span>

@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Setting up the project"
-linkTitle: "Step 1. Setting up" 
+title: "Step 2. Setting up the project"
+linkTitle: "Step 2. Setting up" 
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 

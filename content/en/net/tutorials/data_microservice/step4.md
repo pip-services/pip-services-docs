@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Implementing a controller"
-linkTitle: "Step 4. Controller"
+title: "Step 5. Implementing a controller"
+linkTitle: "Step 5. Controller"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
@@ -455,6 +455,6 @@ Our service is now just one step away from being completed! All that we have lef
 
 <span class="hide-title-link">
 
-### [Step 5. Implementing an HTTP service.](../step5)
+### [Step 6. Implementing an HTTP service.](../step5)
 
 </span>

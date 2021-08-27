@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 3. Implementing persistence components"
-linkTitle: "Step 3. Persistence"
+title: "Step 4. Implementing persistence components"
+linkTitle: "Step 4. Persistence"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
 ---
 
@@ -519,6 +519,6 @@ Now that we can persist our data, let’s move on to [Step 4. Implementing a con
 
 <span class="hide-title-link">
 
-### [Step 4. Implementing a controller.](../step4)
+### [Step 5. Implementing a controller.](../step4)
 
 </span>

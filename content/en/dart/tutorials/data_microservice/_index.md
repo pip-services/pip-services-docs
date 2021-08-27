@@ -23,7 +23,7 @@ The Beacons microservice that we are going to be developing will consist of a nu
 ![BeaconDiagram](/images/tutorials/data_microservice/beacon_diagram.png)
 
 
-To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
+To make it easier to follow along, we’ve divided the tutorial into the following 8 steps:
 
 - [Step 1. Setting up the environment](step0)
 - [Step 2. Setting up the project](step1)

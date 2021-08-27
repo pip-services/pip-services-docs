@@ -577,7 +577,7 @@ suite('BeaconsController', () => {
 
 These tests can be run using the same npm test command that we used to run the persistence tests.
 
-Our service is now just one step away from being completed! All that we have left to write is [Step 5. Implementing an HTTP service.](../step5)
+Our service is now just one step away from being completed! All that we have left to write is [Step 6. Implementing an HTTP service.](../step5)
 
 <span class="hide-title-link">
 

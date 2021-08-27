@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Project structure"
-linkTitle: "Step 1. Setting up" 
+title: "Step 2. Project structure"
+linkTitle: "Step 2. Setting up" 
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
@@ -136,6 +136,6 @@ Now that we’ve got the project all set up, we can move on to [Step 2. Data mod
 
 <span class="hide-title-link">
 
-### [Step 2. Data model development.](../step2)
+### [Step 3. Data model development.](../step2)
 
 </span>

@@ -146,7 +146,7 @@ The descriptor in the next section creates our HTTP service, which will automati
 
 The last section configures services that monitor the health and status of our microservice.
 
-Now that we’ve set up the container and a valid configuration, it’s time to move on to the final [Step 7. Running and testing the microservice.](../step7)
+Now that we’ve set up the container and a valid configuration, it’s time to move on to the final [Step 8. Running and testing the microservice.](../step7)
 
 <span class="hide-title-link">
 

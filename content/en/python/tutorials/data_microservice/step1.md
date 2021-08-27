@@ -62,7 +62,7 @@ To install all necessary dependencies, run the following command from a terminal
 pip install -r requirements.txt
 ```
 
-Now that we’ve got the project all set up, we can move on to [Step 2. Data model development.](../step2)
+Now that we’ve got the project all set up, we can move on to [Step 3. Data model development.](../step2)
 
 <span class="hide-title-link">
 

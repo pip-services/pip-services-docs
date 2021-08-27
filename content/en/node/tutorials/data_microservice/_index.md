@@ -44,6 +44,6 @@ To make it easier to follow along, we’ve divided the tutorial into the followi
 
 <span class="hide-title-link">
 
-### [Step 2. Setting up the project](step1)
+### [Step 1. Setting up the environment](step0)
 
 </span>

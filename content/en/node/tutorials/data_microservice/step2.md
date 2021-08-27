@@ -68,7 +68,7 @@ Let’s take a closer look at what’s going on in this class. First and foremos
 
 Since everything we’ve done so far is quite simple and transparent, we’re not going to be writing any tests yet for the data model we’ve created.
 
-With our data model defined, we can now move on to [Step 3. Implementing persistence components.](../step3)
+With our data model defined, we can now move on to [Step 4. Implementing persistence components.](../step3)
 
 
 <span class="hide-title-link">

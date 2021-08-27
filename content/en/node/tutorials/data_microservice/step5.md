@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 5. Implementing an HTTP service"
-linkTitle: "Step 5. HTTP service" 
+title: "Step 6. Implementing an HTTP service"
+linkTitle: "Step 6. HTTP service" 
 gitUrl: "https://github.com/pip-services-samples/service-beacons-nodex"
 ---
 
@@ -281,6 +281,6 @@ Congratulations! This step finishes off the development of our microservice! How
 
 <span class="hide-title-link">
 
-### [Step 6. Wrapping the microservice into a container.](../step6)
+### [Step 7. Wrapping the microservice into a container.](../step6)
 
 </span>

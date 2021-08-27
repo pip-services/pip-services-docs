@@ -1,16 +1,14 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Setting up the project"
-linkTitle: "Step 1. Setting up" 
+title: "Step 2. Setting up the project"
+linkTitle: "Step 2. Setting up" 
 gitUrl: "https://github.com/pip-services-samples/pip-samples-beacons-node"
 ---
 
-Before we start actually writing our microservice, we need to first set up our environment and create a directory structure in the project’s folder.
+Before we start actually writing our microservice, we need to create a directory structure in the project’s folder.
 
-To set up our environment, we’ll need to install all the necessary tools, as described on the [Setup environment](../../../getting_started/setup_environment) page.
 
-Don’t forget to select the programming language that you plan on using.
 
 Create a folder for the project and, inside it, a directory structure to match the one below:
 
@@ -79,6 +77,6 @@ Now that we’ve got the project all set up, we can move on to [Step 2. Data mod
 
 <span class="hide-title-link">
 
-### [Step 2. Data model development.](../step2)
+### [Step 3. Data model development.](../step2)
 
 </span>

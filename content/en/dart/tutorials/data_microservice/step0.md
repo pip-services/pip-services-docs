@@ -42,10 +42,10 @@ docker --version
 
 If everything was installed successfully, the screen will display the latest version of Docker.
 
-Once all of the prerequisites are installed and set up - you’re ready to get started!
+Now that we’ve got the environment all set up, we can move on to [Step 2. Setting up the project.](../step2)
 
 <span class="hide-title-link">
 
-### [Step 2. Implementing persistence components.](../step1)
+### [Step 2. Setting up the project.](../step1)
 
 </span>

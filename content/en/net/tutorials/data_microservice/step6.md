@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 6. Wrapping microservice into container"
-linkTitle: "Step 6. Container"
+title: "Step 7. Wrapping microservice into container"
+linkTitle: "Step 7. Container"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 
@@ -150,6 +150,6 @@ Now that we’ve set up the container and a valid configuration, it’s time to 
 
 <span class="hide-title-link">
 
-### [Step 7. Running and testing the microservice.](../step7)
+### [Step 8. Running and testing the microservice.](../step7)
 
 </span>

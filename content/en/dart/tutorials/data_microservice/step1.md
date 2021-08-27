@@ -61,10 +61,10 @@ To install all necessary dependencies, run the following command from a terminal
 pub get
 ```
 
-Now that we’ve got the project all set up, we can move on to [Step 4. Data model development.](../step2)
+Now that we’ve got the project all set up, we can move on to [Step 3. Data model development.](../step2)
 
 <span class="hide-title-link">
 
-### [Step 4. Data model development.](../step2)
+### [Step 3. Data model development.](../step2)
 
 </span>

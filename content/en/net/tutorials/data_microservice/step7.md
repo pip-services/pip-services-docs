@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 7. Running and testing the microservice" 
-linkTitle: "Step 7. Run" 
+title: "Step 8. Running and testing the microservice" 
+linkTitle: "Step 8. Run" 
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 

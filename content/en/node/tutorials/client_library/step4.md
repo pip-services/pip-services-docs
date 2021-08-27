@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Implementing a Mock Client"
-linkTitle: "Step 4. Mock Client" 
+title: "Step 5. Implementing a Mock Client"
+linkTitle: "Step 5. Mock Client" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-node"
 ---
 
@@ -278,11 +278,11 @@ export class RandomBeaconV1 {
 In this implementation, the ranges of generated values are statically set, but they can be passed as parameters to the methods and dynamically set as needed.
 Using this instrument, we can easily generate large volumes of realistic data. This, in turn, can be used to test, for example, how fast the system can create elements in the persistence it’s using.
 
-In the [Step 5. Testing the Client with a Remote Microservice](../step5), we’ll be taking a look at how to test our client using a microservice that is remotely deployed in a Docker container.
+In the [Step 6. Testing the Client with a Remote Microservice](../step5), we’ll be taking a look at how to test our client using a microservice that is remotely deployed in a Docker container.
 
 
 <span class="hide-title-link">
 
-### [Step 5. Testing the Client with a Remote Microservice](../step5)
+### [Step 6. Testing the Client with a Remote Microservice](../step5)
 
 </span>

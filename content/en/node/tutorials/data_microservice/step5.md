@@ -276,7 +276,7 @@ suite('BeaconsHttpServiceV1', () => {
 
 Run the npm test command and make sure that all of the tests pass successfully.
 
-Congratulations! This step finishes off the development of our microservice! However, before we can start our service up as a fully fledged microservice, we’ll first need to compose all of its components using a process container. And that’s exactly what we’ll be doing in [Step 6. Wrapping microservice into container.](../step6)
+Congratulations! This step finishes off the development of our microservice! However, before we can start our service up as a fully fledged microservice, we’ll first need to compose all of its components using a process container. And that’s exactly what we’ll be doing in [Step 7. Wrapping microservice into container.](../step6)
 
 
 <span class="hide-title-link">

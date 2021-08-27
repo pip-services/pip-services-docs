@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Setup environment"
-linkTitle: "Setup environment"
+title: "Step 1. Setting up the environment"
+linkTitle: "Step 1. Setup environment"
 
 
 ---

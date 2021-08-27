@@ -44,3 +44,8 @@ If everything was installed successfully, the screen will display the latest ver
 
 Once all of the prerequisites are installed and set up - you’re ready to get started!
 
+<span class="hide-title-link">
+
+### [Step 2. Setting up the project.](../step1)
+
+</span>

@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Data model development"
-linkTitle: "Step 2. Data model."
+title: "Step 3. Data model development"
+linkTitle: "Step 3. Data model."
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dart"
 ---
 
@@ -112,11 +112,11 @@ Let’s take a closer look at what’s going on in this class. First and foremos
 
 Since everything we’ve done so far is quite simple and transparent, we’re not going to be writing any tests yet for the data model we’ve created.
 
-With our data model defined, we can now move on to [Step 3. Implementing persistence components.](../step3)
+With our data model defined, we can now move on to [Step 4. Implementing persistence components.](../step3)
 
 
 <span class="hide-title-link">
 
-### [Step 3. Implementing persistence components.](../step3)
+### [Step 4. Implementing persistence components.](../step3)
 
 </span>

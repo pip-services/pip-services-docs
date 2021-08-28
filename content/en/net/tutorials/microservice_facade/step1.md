@@ -130,7 +130,7 @@ Install all necessary dependencies using the command:
 dotnet restore
 ```
 
-Now our project is ready for development. Continue on to [Step 3 - Business operations](../step2) to start implementing the facade itself.
+Now our project is ready for development. Continue on to [Step 3 - Business operations](../step2).
 
 
 <span class="hide-title-link">

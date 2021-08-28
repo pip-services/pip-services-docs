@@ -20,20 +20,21 @@ The scripts used in this tutorial are meant to be used by developers, as well as
 
 To make it easier to follow along, we’ve broken up this tutorial into the following steps:
 
-
-- [Step 1. Building a microservice](step1)
-- [Step 2. Running automated tests](step2)
-- [Step 3. Packaging a microservice into a container](step3)
-- [Step 4. Publishing a microservice container to a registry](step4)
-- [Step 5. Running a dockerized microservice](step5)
+- [Step 1. Setting up the environment](step0)
+- [Step 2. Building a microservice](step1)
+- [Step 3. Running automated tests](step2)
+- [Step 4. Packaging a microservice into a container](step3)
+- [Step 5. Publishing a microservice container to a registry](step4)
+- [Step 6. Running a dockerized microservice](step5)
 
 
 <span class="hide-title-link">
 
-#### [Step 1. Building a microservice](step1)
-#### [Step 2. Running automated tests](step2)
-#### [Step 3. Packaging a microservice into a container](step3)
-#### [Step 4. Publishing a microservice container to a registry](step4)
-#### [Step 5. Running a dockerized microservice](step5)
+#### [Step 1. Setting up the environment](step0)
+#### [Step 2. Building a microservice](step1)
+#### [Step 3. Running automated tests](step2)
+#### [Step 4. Packaging a microservice into a container](step3)
+#### [Step 5. Publishing a microservice container to a registry](step4)
+#### [Step 6. Running a dockerized microservice](step5)
 
 </span>

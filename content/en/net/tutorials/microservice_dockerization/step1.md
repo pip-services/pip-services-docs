@@ -109,7 +109,7 @@ This script generates a name for the image using the data in the component.json 
 
 If the build was successful, the project will have an /obj directory added, containing the newly compiled files.
 
-This finishes up the build process. Continue on to [Step 2](../step2) to dockerize the testing process.
+This finishes up the build process. Continue on to [Step 3](../step2) to dockerize the testing process.
 
 <span class="hide-title-link">
 

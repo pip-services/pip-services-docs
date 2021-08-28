@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 4. Authorization"
-linkTitle: "Step 4. Authorization" 
+title: "Step 5. Authorization"
+linkTitle: "Step 5. Authorization" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-node"
 ---
 
@@ -145,10 +145,10 @@ Let’s take a closer look at each of these methods:
 The logic pretty much boils down to making a decision about whether we should allow further access, or send an answer with the corresponding error. In case of the latter, the error is based on the information provided by the clients and the information about the user that is embedded into the interceptor’s request for the active session.
 
 
-Setting specific access levels to certain resources is configured when registering routes in the service. The service’s implementation is described in [Step 5 - REST services and versioning](../step5).
+Setting specific access levels to certain resources is configured when registering routes in the service. The service’s implementation is described in [Step 6 - REST services and versioning](../step5).
 
 <span class="hide-title-link">
 
-### [Step 5 - REST services and versioning](../step5)
+### [Step 6 - REST services and versioning](../step5)
 
 </span>

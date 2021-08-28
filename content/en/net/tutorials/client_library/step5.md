@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 5. Testing the Client with a Remote Microservice"
-linkTitle: "Step 5. Testing the Client" 
+title: "Step 6. Testing the Client with a Remote Microservice"
+linkTitle: "Step 6. Testing the Client" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-dotnet"
 ---
 

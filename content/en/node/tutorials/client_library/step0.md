@@ -45,7 +45,7 @@ Data microservice examples use MongoDB for storing data. You can either install 
 
 To install MongoDB locally, download the installer from their official website https://www.mongodb.org/downloads . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
 
-### 4.Docker
+### 4.Docker and Docker Compose.
 Microservices that are developed using Pip.Services have more than just one way of being launched. For example, they can be launched as a system process, as a serverless (Lambda) function, or as a Service Fabric microservice. However, the most popular method of launching these microservices is to assemble them into a Docker container. Additionally, Docker will allow us to start up all the necessary infrastructure services, such as: databases, message brokers, logging, and monitoring.
 
 To install Docker, download the Docker Desktop installer that corresponds to the operating system you’re using from the official Docker site https://www.docker.com/get-started. Once downloaded, launch the installer and follow the installation instructions.
@@ -57,6 +57,8 @@ docker --version
 ```
 
 If everything was installed successfully, the screen will display the latest version of Docker.
+
+To install Docker Compose, follow the guideles available [here](https://docs.docker.com/compose/install/).   
 
 Once all of the prerequisites are installed and set up, we can move on to [Step 2. Setting up the project.](../step1)
 

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 1. Setting up the environment"
 linkTitle: "Step 1. Environment setup"
-weight: 20
+
 
 ---
 

@@ -35,4 +35,4 @@ npm install typedoc -g
 npm install mocha -g
 ```
 
-Now our project is set up. Continue on to [Step 2 - Creating the Project’s Structure](../step1) to start implementing the facade itself.
+Now our environemnt is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step1) to start implementing the facade itself.

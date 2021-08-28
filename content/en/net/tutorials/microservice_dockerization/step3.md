@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 3. Packaging a microservice into a container"
-linkTitle: "Step 3. Package"
+title: "Step 4. Packaging a microservice into a container"
+linkTitle: "Step 4. Package"
 ---
 
 Once a microservice has successfully passed the previous “build” and “test” stages, it is ready to be published and tested as a part of the system. But before we can do this, we need to correctly package it into a Docker container.
@@ -114,10 +114,10 @@ try {
 
 This script performs an automatic build of the Docker image and then runs and checks it from within the Docker Compose environment. The Docker Compose environment allows us to run our microservice alongside its dependencies, while keeping them all in separate containers. The script then runs the microservice and, if all is well, the service can be checked by requesting the http://localhost:8080/heartbeat URL from a browser. This URL returns and displays the current time in the JSON format, which indicates that the application is up and running in the container. All build results will be outputted to the console. Once the container tests are done, the containers are stopped.
 
-This finishes the process of preparing a microservice container for publishing. When you’re ready, continue on to [Step 4](../step4 to publish the image to a Docker registry.
+This finishes the process of preparing a microservice container for publishing. When you’re ready, continue on to [Step 5](../step4 to publish the image to a Docker registry.
 
 <span class="hide-title-link">
 
-### [Step 4. Publishing a microservice container to a registry.](../step4)
+### [Step 5. Publishing a microservice container to a registry.](../step4)
 
 </span>

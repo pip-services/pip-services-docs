@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 7. Running the facade"
-linkTitle: "Step 7. Running facade" 
+title: "Step 8. Running the facade"
+linkTitle: "Step 8. Running facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-node"
 ---
 Before we can run our facade, we need to add three more things: a factory for the component’s we’ve created, a container, and the code that will run it all. The process of implementing these pieces is the same as the one described in [Data Microservice](../../data_microservice), so this time around we’ll just list the code:
@@ -313,11 +313,11 @@ app_1    | [pip-facades-example:DEBUG:2021-06-17T22:03:56.128800] Opened REST se
 app_1    | [pip-facades-example:INFO:2021-06-17T22:03:56.180451] Container pip-facades-example started.
 app_1    | [pip-facades-example:INFO:2021-06-17T22:03:56.180451] Press Control-C to stop the microservice...
 ```
-Now we’re ready to move on to manually testing our facade. In [Step 8 - Manually testing the facade](../step8) - we’ll show you how this can be done.
+Now we’re ready to move on to manually testing our facade. In [Step 9 - Manually testing the facade](../step8) - we’ll show you how this can be done.
 
 
 <span class="hide-title-link">
 
-### [Step 8 - Manually testing the facade](../step8)
+### [Step 9 - Manually testing the facade](../step8)
 
 </span>

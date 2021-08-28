@@ -1,16 +1,39 @@
 ---
-title: "Long Page Title"
-linkTitle: "Short Nav Title"
-weight: 100
-description: >-
-     Page description for heading and indexes.
+type: docs
+no_list: true
+title: "Step 1. Setting up the environment"
+linkTitle: "Step 1. Setup environment"
+
+
 ---
 
-## Heading
+Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
 
-Edit this template to create your new page.
+### 1. Compiler and IDE
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
+
+For working with the .NET programming language, you’ll need to perform its installation and setup the environment. To do this, download and install .NET from the official site, as well as the following packages:
+
+Visual Studio 2015 Professional or Community Edition: https://www.visualstudio.com
+
+Core .NET SDK with Visual Studio extensions: https://www.microsoft.com/net/core
+
+### 4.Docker
+To install Docker, download the Docker Desktop installer that corresponds to the operating system you’re using from the official Docker site https://www.docker.com/get-started. Once downloaded, launch the installer and follow the installation instructions.
+
+Once installed, check that the installation was completed successfully by running the following commands from your console:
+
+```bash
+docker --version
+```
+
+If everything was installed successfully, the screen will display the latest version of Docker.
+
+Now that we’ve got the environment set up, we can move on to [Step 2. Building a microservice.](../step1)
+
+<span class="hide-title-link">
+
+### [Step 2. Building a microservice.](../step1)
+
+</span>

@@ -145,13 +145,13 @@ Opens the component.
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
-#### _register
+#### register
 Registers all service routes in an HTTP endpoint.
 
 This method is called by the service and must be overriden
 in child classes.
 
-> _register()
+> register()
 
 #### _register_action
 Registers an action in AWS Lambda function.
@@ -215,7 +215,7 @@ class MyLambdaService(LambdaService):
         id = params.id
         return self._controller.get_my_data(correlationId, id)
 
-   def _register(self):
+   def register(self):
        self.register_action("get_my_data", None, __action)
 
        ...

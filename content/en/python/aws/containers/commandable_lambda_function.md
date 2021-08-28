@@ -39,10 +39,10 @@ Creates a new instance of this lambda function.
 
 ### Instance methods
 
-#### _register
+#### register
 Registers all actions in this lambda function.
 
-> _register()
+> register()
 
 
 

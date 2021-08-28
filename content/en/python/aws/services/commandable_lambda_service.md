@@ -36,10 +36,10 @@ Creates a new instance of the service.
 
 ### Instance methods
 
-#### _register
+#### register
 Registers all actions in AWS Lambda function.
 
-> _register()
+> register()
 
 
 ### Examples

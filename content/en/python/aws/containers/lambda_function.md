@@ -113,12 +113,12 @@ Opens the component.
 
 - **correlationId**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
-#### _register
+#### register
 Registers all actions in this lambda function.
 
 - Note: Overloading of this method has been deprecated. Use [LambdaService](../../services/lambda_service) instead.
 
-> _register() 
+> register() 
 
 
 #### _register_action

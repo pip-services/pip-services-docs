@@ -50,7 +50,7 @@ To make it easier to follow along, we’ve broken up the tutorial on writing you
 
 </span>
 
-Let's get started! Head on over to Step 1. Setting up the project.
+Let's get started! Head on over to [Step 1. Setting up the project structure](step1).
 
 ### See also
 

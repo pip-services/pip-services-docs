@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 6. Testing of operations"
-linkTitle: "Step 6. Testing" 
+title: "Step 7. Testing of operations"
+linkTitle: "Step 7. Testing" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 ---
 
@@ -504,11 +504,11 @@ Run the tests using the following command:
 python test.py
 ```
 
-Once all the tests pass successfully, you can move on to [Step 7 - Running the facade](../step7) - to learn how to deploy all of these microservices using Docker.
+Once all the tests pass successfully, you can move on to [Step 8 - Running the facade](../step7) - to learn how to deploy all of these microservices using Docker.
 
 
 <span class="hide-title-link">
 
-### [Step 7 - Running the facade](../step7)
+### [Step 8 - Running the facade](../step7)
 
 </span>

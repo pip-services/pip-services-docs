@@ -28,7 +28,7 @@ Copy the files from the microservice’s data folder into the **src/data/version
 
 For “strongly typed” languages (e.g. Dart), you’ll have to import the data model files from the microservice using the import directive, instead of just copying the directory over. This will guarantee an exact type match.
 
-Now we’re ready to start writing our client library. When you’re ready, continue on to [Step 3. Designing a Direct Client.](../step2).
+Now we’re ready to start writing our client library. When you’re ready, continue on to [Step 3. Designing a Direct Client](../step2).
 
 <span class="hide-title-link">
 

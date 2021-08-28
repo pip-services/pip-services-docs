@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Environment setup"
-linkTitle: "Environment setup"
+title: "Step 1. Setting up the environment"
+linkTitle: "Step 1. Environment setup"
 
 
 ---
@@ -34,3 +34,5 @@ npm install typedoc -g
 # Install mocha test runner
 npm install mocha -g
 ```
+
+Now our project is set up. Continue on to [Step 2 - Creating the Project’s Structure](../step1) to start implementing the facade itself.

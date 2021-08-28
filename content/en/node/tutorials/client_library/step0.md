@@ -60,10 +60,10 @@ If everything was installed successfully, the screen will display the latest ver
 
 To install Docker Compose, follow the guideles available [here](https://docs.docker.com/compose/install/).   
 
-Once all of the prerequisites are installed and set up, we can move on to [Step 2. Setting up the project.](../step1)
+Once all of the prerequisites are installed and set up, we can move on to [Step 2. Setting up the project structure.](../step1)
 
 <span class="hide-title-link">
 
-### [Step 2. Setting up the project.](../step1)
+### [Step 2. Setting up the project structure.](../step1)
 
 </span>

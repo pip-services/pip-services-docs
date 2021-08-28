@@ -174,11 +174,11 @@ The code for this class and tests can be found in the [repository](https://githu
 
 We run the tests using the testing methods that are standard for the programming language we are using. All tests should pass successfully.This finishes the development of the Direct client.
     
-Let's move on to [Step 3 to create the HTTP client](../step3).
+Let's move on to [Step 3. Designing an HTTP Client](../step3).
 
 
 <span class="hide-title-link">
 
-### [Step 3 to create the HTTP client](../step3)
+### [Step 3. Designing an HTTP Client](../step3)
 
 </span>

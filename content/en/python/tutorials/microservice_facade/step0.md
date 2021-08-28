@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Setting up the environment"
-linkTitle: "Environment setup"
+title: "Step 1. Setting up the environment"
+linkTitle: "Step 1. Environment setup"
 
 ---
 
@@ -19,3 +19,5 @@ Once installed, check that the installation was completed successfully by runnin
 ```bash
 python --version
 ```
+
+Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step2)

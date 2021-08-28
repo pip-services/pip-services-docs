@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Creating the Project’s Structure"
-linkTitle: "Step 1. Project’s Structure" 
+title: "Step 2. Creating the Project’s Structure"
+linkTitle: "Step 2. Project’s Structure" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-dotnet"
 ---
 
@@ -130,11 +130,11 @@ Install all necessary dependencies using the command:
 dotnet restore
 ```
 
-Now our project is ready for development. Continue on to [Step 2 - Business operations](../step2) to start implementing the facade itself.
+Now our project is ready for development. Continue on to [Step 3 - Business operations](../step2) to start implementing the facade itself.
 
 
 <span class="hide-title-link">
 
-### [Step 2. Designing a Direct Client](../step2)
+### [Step 3. Designing a Direct Client](../step2)
 
 </span>

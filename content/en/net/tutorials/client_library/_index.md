@@ -32,19 +32,21 @@ Additionally, as we mentioned earlier, it’s highly recommended to implement mo
 The client library that we will be creating in this tutorial is for the microservice described in the [Data microservice](../data_microservice) tutorial. To better understand the client’s logic, it’s a good idea to familiarize yourself with that tutorial first, if you haven’t done so already. 
 To make it easier to follow along, we’ve broken up the tutorial on writing your first client library into the following steps:
 
-- [Step 1. Setting up the project structure](step1)
-- [Step 2. Designing a Direct Client](step2)
-- [Step 3. Designing an HTTP Client](step3)
-- [Step 4. Implementing a Mock client (with tests)](step4)
-- [Step 5. Testing the Client with a Remote Microservice](step5)
+- [Step 1. Setting up the environment](step0)
+- [Step 2. Setting up the project structure](step1)
+- [Step 3. Designing a Direct Client](step2)
+- [Step 4. Designing an HTTP Client](step3)
+- [Step 5. Implementing a Mock client (with tests)](step4)
+- [Step 6. Testing the Client with a Remote Microservice](step5)
 
 <span class="hide-title-link">
 
-#### [Step 1. Setting up the project structure](step1)
-#### [Step 2. Designing a Direct Client](step2)
-#### [Step 3. Designing an HTTP Client](step3)
-#### [Step 4. Implementing a Mock Client](step4)
-#### [Step 5. Testing the Client with a Remote Microservice](step5)
+#### [Step 1. Setting up the environment](step0)
+#### [Step 2. Setting up the project structure](step1)
+#### [Step 3. Designing a Direct Client](step2)
+#### [Step 4. Designing an HTTP Client](step3)
+#### [Step 5. Implementing a Mock Client](step4)
+#### [Step 6. Testing the Client with a Remote Microservice](step5)
 
 </span>
 
@@ -52,8 +54,8 @@ Let's get started! Head on over to Step 1. Setting up the project.
 
 ### See also
 
-- [Tutorial how to create microservice facade](../microservice_facade)
-- [Tutorial how to dockerize a microservice](../microservice_dockerization)
+- [Microservice Facade](../microservice_facade)
+- [Microservice Dockerization](../microservice_dockerization)
 
 <span class="hide-title-link">
 

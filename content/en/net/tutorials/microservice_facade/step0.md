@@ -17,3 +17,5 @@ For working with the .NET programming language, you’ll need to perform its ins
 Visual Studio 2015 Professional or Community Edition: https://www.visualstudio.com
 
 Core .NET SDK with Visual Studio extensions: https://www.microsoft.com/net/core
+
+Now our is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step2) to start implementing the facade itself.

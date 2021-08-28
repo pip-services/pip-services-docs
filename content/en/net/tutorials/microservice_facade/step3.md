@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 3. Authentication and sessions"
-linkTitle: "Step 3. Authentication and sessions" 
+title: "Step 4. Authentication and sessions"
+linkTitle: "Step 4. Authentication and sessions" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-dotnet"
 ---
 
@@ -555,10 +555,10 @@ The **LoadSessionAsync** interceptor checks a session’s validity, and whether 
 To perform these operations, our microservice needs to be able to interact with the microservices it depends on. This communication is made simple using standard clients, the links to which are set in the setReferences method.
 
 
-The authorization mechanism will be responsible for limiting access to resources, depending on the roles a user has been assigned. This part’s implementation will be discussed in [Step 4 - Authorization](../step4).
+The authorization mechanism will be responsible for limiting access to resources, depending on the roles a user has been assigned. This part’s implementation will be discussed in [Step 5 - Authorization](../step4).
 
 <span class="hide-title-link">
 
-### [Step 4. Authorization](../step4)
+### [Step 5. Authorization](../step4)
 
 </span>

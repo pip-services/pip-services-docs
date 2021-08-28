@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Environment setup"
 linkTitle: "Environment setup"
-weight: 20
+
 
 ---
 

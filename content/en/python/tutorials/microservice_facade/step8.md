@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 8. Manual testing of facade"
-linkTitle: "Step 8. Manual testing of facade" 
+title: "Step 9. Manual testing of facade"
+linkTitle: "Step 9. Manual testing of facade" 
 gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 ---
 

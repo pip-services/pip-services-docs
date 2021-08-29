@@ -34,7 +34,7 @@ If everything was installed successfully, the screen will display the latest ver
 
 To install Docker Compose, follow the guideles available [here](https://docs.docker.com/compose/install/).     
 
-Now that we’ve got the environment all set up, we can move on to [Step 2. Setting up the project.](../step2)
+Now that we’ve got the environment all set up, we can move on to [Step 2. Setting up the project.](../step1)
 
 <span class="hide-title-link">
 

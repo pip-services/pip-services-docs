@@ -56,7 +56,7 @@ export MONGO_ENABLED=true
 dotnet src/process/bin/debug/net5.0/main.dll -c ./config/config.yml
 ```
 
-Just a reminder: make sure that you have MongoDB running locally (see [Setup environment](../../../getting_started/setup_environment)) or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
+Just a reminder: make sure that you have MongoDB running locally or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
 
 We can use the following docker composer configuration to run MongoDB in Docker:
 

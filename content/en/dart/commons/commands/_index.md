@@ -70,11 +70,11 @@ It can be used to auto generate multiple external services for the business obje
 without writing much code.
 
 #### [Command](command)
-Concrete implementation of [ICommand](icommand) interface. Command allows to call a method
+Concrete implementation of the [ICommand](icommand) interface. Command allows to call a method
 or function using Command pattern.
 
 #### [Event](event)
-Concrete implementation of [IEvent](ievent) interface.
+Concrete implementation of the [IEvent](ievent) interface.
 It allows to send asynchronous notifications to multiple subscribed listeners.
 
 </div>

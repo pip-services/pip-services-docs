@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Setting up the project structure"
-linkTitle: "Step 1. Setting up" 
+title: "Step 2. Setting up the project structure"
+linkTitle: "Step 2. Setting up" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-dotnet"
 ---
 
@@ -28,10 +28,10 @@ Finally, we copy the files from the microservice’s data folder into the **src/
 
 For “strongly typed” languages (e.g. Dart), you’ll have to import the data model files from the microservice using the import directive, instead of just copying the directory over. This will guarantee an exact type match.
 
-Now we’re ready to start writing our client library. When you’re ready, continue on to [Step 2. Designing a Direct Client.](../step2)
+Now we’re ready to start writing our client library. When you’re ready, continue on to [Step 3. Designing a Direct Client.](../step2)
 
 <span class="hide-title-link">
 
-### [Step 2. Designing a Direct Client.](../step2)
+### [Step 3. Designing a Direct Client.](../step2)
 
 </span>

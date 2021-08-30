@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Designing a Direct Client"
-linkTitle: "Step 2. Direct Client" 
+title: "Step 3. Designing a Direct Client"
+linkTitle: "Step 3. Direct Client" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
 ---
 
@@ -121,11 +121,11 @@ An example implementation of the tests can be found in the example’s [reposito
 
 
 Run the tests using the testing methods that are standard for the programming language you are using. All tests should pass successfully.This finishes the development of the Direct client.
-Move on to [Step 3 to create the HTTP client](../step3).
+Move on to [Step 4. Designing an HTTP Client](../step3).
 
 
 <span class="hide-title-link">
 
-### [Step 3 to create the HTTP client](../step3)
+### [Step 4. Designing an HTTP Client](../step3)
 
 </span>

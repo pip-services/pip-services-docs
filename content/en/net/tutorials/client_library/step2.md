@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Designing a Direct Client"
-linkTitle: "Step 2. Direct Client" 
+title: "Step 3. Designing a Direct Client"
+linkTitle: "Step 3. Direct Client" 
 gitUrl: "https://github.com/pip-services-samples/client-beacons-dotnet"
 ---
 
@@ -174,11 +174,11 @@ The code for this class and tests can be found in the [repository](https://githu
 
 We run the tests using the testing methods that are standard for the programming language we are using. All tests should pass successfully.This finishes the development of the Direct client.
     
-Let's move on to [Step 3 to create the HTTP client](../step3).
+Let's move on to [Step 4. Designing an HTTP Client](../step3).
 
 
 <span class="hide-title-link">
 
-### [Step 3 to create the HTTP client](../step3)
+### [Step 4. Designing an HTTP Client](../step3)
 
 </span>

@@ -13,7 +13,7 @@ description: >
 
 The ICommandInterceptor interface is used for stackable command interceptors, which can extend and modify the command call chain.
 
-Important points
+**Important points**
 
 - This technique can be used for authentication, logging, and several other functions.
 

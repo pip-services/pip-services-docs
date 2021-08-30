@@ -14,7 +14,7 @@ description: >
 
 The Event class allows you to create events.
 
-Important points
+**Important points**
 
 - It allows you to send asynchronous notifications to multiple subscribed listeners.
 
@@ -55,7 +55,7 @@ Gets the name of the event.
 
 #### notify
 Fires this event and notifies all registred listeners.  
-Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
+Throws an [InvocationException](../../errors/invocation_exception) if the event fails to be raised.
 
 `@override`
 > void notify(String correlationId, [Parameters](../../run/parameters) args)

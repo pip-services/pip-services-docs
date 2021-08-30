@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Building a microservice"
-linkTitle: "Step 1. Build" 
+title: "Step 2. Building a microservice"
+linkTitle: "Step 2. Build" 
 ---
 
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special “build” Docker image. The project’s source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
@@ -109,10 +109,10 @@ This script generates a name for the image using the data in the component.json 
 
 If the build was successful, the project will have an /obj directory added, containing the newly compiled files.
 
-This finishes up the build process. Continue on to [Step 2](../step2) to dockerize the testing process.
+This finishes up the build process. Continue on to [Step 3](../step2) to dockerize the testing process.
 
 <span class="hide-title-link">
 
-### [Step 2. Running automated tests.](../step2)
+### [Step 3. Running automated tests.](../step2)
 
 </span>

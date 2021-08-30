@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 5. Running a dockerized microservice"
-linkTitle: "Step 5. Run"
+title: "Step 6. Running a dockerized microservice"
+linkTitle: "Step 6. Run"
 ---
 
 While developing and debugging a project, you may find the need to run and connect to a microservice, for example, using a client. Readily available Docker images, like the ones we made in the previous steps, are quite handy in such situations.

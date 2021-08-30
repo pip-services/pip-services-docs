@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Test"
-linkTitle: "Step 2. Test"
+title: "Step 3. Test"
+linkTitle: "Step 3. Test"
 ---
 
 Automated tests play a key role in achieving a guaranteed quality of microservices. Testing can be performed on various levels - unit tests for separate classes, end-to-end or integrated tests for microservices with dependencies, and tests that show how microservices work together within the actual system. In this tutorial however, we will only be looking at testing individual microservices, and system tests will not be covered.
@@ -94,11 +94,11 @@ To run the script, simply type:
 
 When run, this script will perform an automatic build of the test image and run it in the Docker Compose environment we’ve set up. While it runs, the testing process’s progress will be outputted to the console. When finished, the container will automatically be stopped, regardless of the test’s results.
 
-Now that we have automated testing all set up, we can move on to [Step 3 to package our microservice](../step3) into a Docker container, before we publish it.
+Now that we have automated testing all set up, we can move on to [Step 4](../step3) to package our microserviceinto a Docker container, before we publish it.
 
 
 <span class="hide-title-link">
 
-### [Step 3. Packaging a microservice into a container.](../step3)
+### [Step 4. Packaging a microservice into a container.](../step3)
 
 </span>

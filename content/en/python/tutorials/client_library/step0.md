@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Step 1. Setting up the environment"
+title: "Step1. Setting up the environment"
 linkTitle: "Step 1. Environment setup"
 
 ---
@@ -20,4 +20,24 @@ Once installed, check that the installation was completed successfully by runnin
 python --version
 ```
 
-Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step2)
+### 2.Docker and Docker Compose
+To install Docker, download the Docker Desktop installer that corresponds to the operating system you’re using from the official [Docker site](https://www.docker.com/get-started). Once downloaded, launch the installer and follow the installation instructions.
+
+Once installed, check that the installation was completed successfully by running the following commands from your console:
+
+```bash
+docker --version
+```
+
+If everything was installed successfully, the screen will display the latest version of Docker.
+
+To install Docker Compose, follow the guideles available [here](https://docs.docker.com/compose/install/).    
+
+Now that we’ve got the environment set up, we can move on to [Step 2. Setting up the project.](../step1)
+
+<span class="hide-title-link">
+
+### [Step 2. Setting up the project.](../step1)
+
+</span>
+

@@ -23,7 +23,7 @@ Creates a new instance of the TestRestClient class.
 
 ### Instance methods
 
-#### call
+#### _call
 Calls a remote method via the HTTP/REST protocol.
 
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any

@@ -23,7 +23,7 @@ Creates a new instance of the TestGrpcClient class.
 
 ### Instance methods
 
-#### call
+#### _call
 Calls a remote method via the HTTP/REST protocol.
 
 > call(method: str, correlation_id: str, request: dict = {}): Any

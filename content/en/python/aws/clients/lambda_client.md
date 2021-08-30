@@ -82,7 +82,7 @@ Tracer.
 
 ### Instance methods
 
-#### call
+#### _call
 Calls an AWS Lambda Function action.
 
 > _call(cmd: str, correlation_id: Optional[str], params: dict = None): Any

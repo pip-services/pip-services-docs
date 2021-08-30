@@ -138,7 +138,7 @@ Adds paging parameters (skip, take, total) to invocation parameter map.
 
 
 
-#### call
+#### _call
 Calls a remote method via HTTP/REST protocol.
 
 > call(method: str, route: str, correlation_id: Optional[str] = None, params: Any = None, data: Any = None): Any

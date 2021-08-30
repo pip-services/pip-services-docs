@@ -19,7 +19,7 @@ Creates an instance of this class.
 
 ### Instance methods
 
-#### call
+#### _call
 Calls a remote action in AWS Lambda function.
 The name of the action is added as "cmd" parameter
 to the action parameters. 

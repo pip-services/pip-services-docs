@@ -101,7 +101,7 @@ AddPagingParams method adds paging parameters (skip, take, total) to the invocat
 - **returns**: Any - invocation parameters with added paging parameters.
 
 
-#### call
+#### _call
 Calls a remote method via GRPC protocol.
 
 > call(method: str, client: Any, request: Any): Any
@@ -181,7 +181,7 @@ class MyGrpcClient(GrpcClient, IMyClient):
     ...
     def get_data(self, correlation_id, id ):
         timing = self.instrument(correlation_id, 'myclient.get_data')
-        result = self.call("get_data", correlation_id, { id: id })
+        result = self._call("get_data", correlation_id, { id: id })
         timing.end_timing()
         return result
     ...

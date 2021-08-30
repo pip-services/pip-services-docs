@@ -72,7 +72,11 @@ The invocation timeout in milliseconds.
 
 #### _uri
 The remote service uri which is calculated on openning.
-> **_uri**: string
+> **_uri**: str
+
+#### _tracer
+The tracer.
+> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
 
 </span>
 
@@ -104,7 +108,7 @@ AddPagingParams method adds paging parameters (skip, take, total) to the invocat
 #### _call
 Calls a remote method via GRPC protocol.
 
-> call(method: str, client: Any, request: Any): Any
+> _call(method: str, client: Any, request: Any): Any
 
 - **method**: str - name of the calling method
 - **client**: Any - current client
@@ -132,22 +136,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> _instrument(correlation_id: Optional[str], name: str): [CounterTiming](../../../components/cout/counter_timing)
+> _instrument(correlation_id: Optional[str], name: str): [InstrumentTiming](../../../rpc/services/instrument_timing)
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 - **name**: str - method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
-
-
-#### _instrument_error
-Adds instrumentation to error handling.
-
-> _instrument_error(correlation_id: Optional[str], name: str, err: Exception, reerror=False)
-
-- **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
-- **name**: str - method name.
-- **err**: Exception - occured error
-- **reerror**: bool - if True - throw error
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 #### is_open

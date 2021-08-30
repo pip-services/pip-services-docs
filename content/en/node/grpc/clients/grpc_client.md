@@ -76,6 +76,10 @@ The invocation timeout in milliseconds.
 The remote service uri which is calculated on openning.
 > `protected` **_uri**: string
 
+#### _tracer
+The tracer.
+> `protected` **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
+
 </span>
 
 
@@ -112,23 +116,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> `protected` instrument(correlationId: string, name: string): [CounterTiming](../../../components/cout/counter_timing)
+> `protected` instrument(correlationId: string, name: string): [InstrumentTiming](../../../rpc/services/instrument_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
-- **returns**: [CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
-
-
-#### instrumentError
-Adds instrumentation to error handling.
-
-> `protected` instrumentError(correlationId: string, name: string, err: any, result: any = null, callback: (err: any, result: any) => void = null): void 
-
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **name**: string - method name.
-- **err**: Exception - occured error
-- **result**: any - (optional) an execution result
-- **callback**: (err: any, result: any) => void - (optional) an execution callback
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - CounterTiming object used to end the time measurement.
 
 
 #### isOpen

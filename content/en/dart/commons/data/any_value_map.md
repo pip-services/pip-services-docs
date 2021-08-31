@@ -106,7 +106,7 @@ Converts a map's element into Date or returns the current date if the conversion
 
 > DateTime getAsDateTime(String key)
 
-- **key**: String - akey of the element to get.
+- **key**: String - key of the element to get.
 - **returns**: DateTime - Date value of the element or the current date if the conversion is not supported.
 
 
@@ -152,7 +152,7 @@ Converts a map's element into a float or returns 0 if conversion the is not poss
 
 
 #### getAsFloatWithDefault
-Converts map's element into a float or returns a given default value if the conversion is not possible.   
+Converts a map's element into a float or returns a given default value if the conversion is not possible.   
 See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > double getAsFloatWithDefault(String key, double defaultValue)
@@ -316,7 +316,7 @@ See [StringConverter.toNullableString](../../convert/string_converter/#tonullabl
 
 #### getAsNullableType
 Converts a map element into a value defined by a specified typecode.
-If conversion is not possible, it returns null.     
+If the conversion is not possible, it returns null.     
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
 > T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, String key)
@@ -378,7 +378,6 @@ See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithde
 - **key**: String - key of element to get.
 - **defaultValue**: T - default value
 - **returns**: T - element's value defined by the typecode or default value if the conversion is not supported.
-
 
 
 #### getAsValue

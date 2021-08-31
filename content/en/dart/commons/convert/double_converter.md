@@ -31,7 +31,7 @@ See [toDoubleWithDefault](#todoublewithdefault)
 - **returns**: double - double value or 0 when the conversion is not supported.
 
 #### toDoubleWithDefault
-Converts value into integer or returns default value when the conversion is not possible.
+Converts value into an integer or returns a default value when the conversion is not possible.
 
 > `static` double toDoubleWithDefault(value, double defaultValue)
 

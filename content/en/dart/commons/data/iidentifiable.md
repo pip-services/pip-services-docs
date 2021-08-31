@@ -12,7 +12,7 @@ description: >
 
 The IIdentifiable interface is used to create data objects that can be uniquely idendified by an ID.
 
-Important points
+**Important points**
 
 - The type specified in the interface defines the type of the ID field.
 

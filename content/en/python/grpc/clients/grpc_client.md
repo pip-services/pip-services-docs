@@ -171,6 +171,9 @@ Sets references to dependent components.
 
 ```python
 class MyGrpcClient(GrpcClient, IMyClient):
+    def __init__(self):
+        self._client = my_data_pb2_grpc.MyDataStub
+
     ...
     def get_data(self, correlation_id, id ):
         timing = self.instrument(correlation_id, 'myclient.get_data')

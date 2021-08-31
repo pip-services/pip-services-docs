@@ -14,7 +14,7 @@ description: >
 
 The CredentialParams class allows you to create credential parameters that can be used to authenticate against external services.
 
-Important points
+**Important points**
 
 - Credential parameters are used together with connection parameters, but usually stored in a separate store, protected from unauthorized access.
 

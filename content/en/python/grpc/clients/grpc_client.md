@@ -108,10 +108,10 @@ AddPagingParams method adds paging parameters (skip, take, total) to the invocat
 #### _call
 Calls a remote method via GRPC protocol.
 
-> _call(method: str, client: Any, request: Any): Any
+> _call(method: str, correlation_id: Optional[str], request: Any): Any
 
 - **method**: str - name of the calling method
-- **client**: Any - current client
+- **correlation_id**: Any - (optional) transaction id to trace execution through call chain.
 - **request**: Any - (optional) request object.
 - **returns**: Any - (optional) feature that receives the result object or error.
 

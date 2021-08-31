@@ -91,7 +91,7 @@ Calls a remote method via GRPC protocol.
 > `protected` call(method: string, correlationId?: string, request: any = {}): Promise\<any\>
 
 - **method**: string - name of the calling method
-- **client**: any - current client
+- **correlationId**: any - (optional) transaction id to trace execution through call chain.
 - **request**: any - (optional) request object.
 - **returns**: Promise\<any\> - (optional) feature that receives the result object or error.
 

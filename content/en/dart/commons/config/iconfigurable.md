@@ -13,7 +13,7 @@ See also [ConfigParams](../config_params)
 
 IConfigurable is an interface used to set configuration parameters. It can be implemented by any class that needs to define configuration parameters, such as access control credentials. 
 
-Important points:   
+**Important points**  
 
 - A class that implements this interface needs to implement a single **configure()** method.  
 - If you need to emphasize the fact that **configure()** method can be called multiple times

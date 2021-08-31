@@ -33,10 +33,10 @@ The GrpcClient class allows you to create clients that call remote endpoints usi
 
 Creates a new instance of the grpc client.
 
-> GrpcClient(client_name: str)
+> GrpcClient(service_client: Any, client_name: str)
 
 - **client_name**: str - client's name.
-
+- **service_client**: Any - service client class
 
 ### Fields
 
@@ -171,8 +171,8 @@ Sets references to dependent components.
 
 ```python
 class MyGrpcClient(GrpcClient, IMyClient):
-    def __init__(self):
-        self._client = my_data_pb2_grpc.MyDataStub
+     def __init__(self):
+        super().__init__(my_data_pb2_grpc.MyDataStub, 'my_data_v1')
 
     ...
     def get_data(self, correlation_id, id ):

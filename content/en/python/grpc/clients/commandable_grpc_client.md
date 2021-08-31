@@ -76,6 +76,8 @@ The complete route to remote method is defined as serviceName + '.' + name.
 
 ```python
 class MyCommandableGrpcClient(CommandableGrpcClient, IMyClient):
+     def __init__(self):
+        super().__init__('my_data')
     ...
     def get_data(self, correlation_id, id):
 

@@ -16,7 +16,7 @@ description: >
 
 The StringValueMap class allows you to create a cross-language implementation of a map (dictionary) where all keys and values are strings.
 
-Important points
+**Important points**
 
 - The class provides several methods to convert the stored values to different types, such as array, boolean or datetime.
 - This class is widely used in Pip.Services as a basis for variety of classes, such as [ConfigParams](../../config/config_params), [ConnectionParams](../../../components/connect/connection_params), [CredentialParams](../../../components/auth/credential_params) (in the Pip.Services components package) and others.
@@ -95,7 +95,7 @@ Converts a map's element into a boolean or returns false if the conversion is no
 
 #### getAsBooleanWithDefault
 Converts a map's  element into a boolean or returns a given default value if the conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > bool getAsBooleanWithDefault(String key, bool defaultValue)
 
@@ -106,7 +106,7 @@ See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### getAsDateTime
 Converts a map's element into a Date or returns the current date if the conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > DateTime getAsDateTime(String key)
 
@@ -116,7 +116,7 @@ See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### getAsDateTimeWithDefault
 Converts a map's element into a Date or returns a given default value if the conversion is not possible.  
-See [DateTimeConverter.toDateTimeWithDefault](../date_time_converter/#todatetimewithdefault)
+See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
 > DateTime getAsDateTimeWithDefault(String key, DateTime defaultValue)
 
@@ -136,7 +136,7 @@ Converts a map's element into a double or returns 0 if the conversion is not pos
 
 #### getAsDoubleWithDefault
 Converts a map's element into a double or returns a given default value if the conversion is not possible.  
-See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault)
+See [DoubleConverter.toDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
 
 > double getAsDoubleWithDefault(String key, double defaultValue)
 
@@ -156,7 +156,7 @@ Converts a map's element into a float or returns 0 if the conversion is not poss
 
 #### getAsFloatWithDefault
 Converts a map's element into a float or returns a given default value if the conversion is not possible.  
-See [FloatConverter.toFloatWithDefault](../float_converter/#tofloatwithdefault)
+See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > double getAsFloatWithDefault(String key, double defaultValue)
 
@@ -176,7 +176,7 @@ Converts a map's element into an integer or returns 0 if the conversion is not p
 
 #### getAsIntegerWithDefault
 Converts a map's element into an integer or returns a given default value if the conversion is not possible.  
-See [IntegerConverter.toIntegerWithDefault](../integer_converter/#tointegerwithdefault)
+See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
 > int getAsIntegerWithDefault(String key, int defaultValue)
 
@@ -196,7 +196,7 @@ Converts a map's element into a long or returns 0 if the conversion is not possi
 
 #### getAsLongWithDefault
 Converts a map's element into a long or returns a given default value if the conversion is not possible.  
-See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault)
+See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > int getAsLongWithDefault(String key, int defaultValue)
 

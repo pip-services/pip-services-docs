@@ -11,7 +11,7 @@ description: >
 ### Description
  The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
  
- Important points:
+**Important points:**
  
  - This class is similar to [MapConverter](../map_converter). The difference is that it recursively converts all values stored in objects and arrays.
 
@@ -26,7 +26,7 @@ Converts a  value into a map object or returns an empty map when the conversion 
 - **returns**: dynamic - map object or empty map when the conversion is not supported.  
 
 #### toMapWithDefault
-Converts a value into a map object or returns default when the conversion is not possible.
+Converts a value into a map object or returns a default value when the conversion is not possible.
 
 > `static` dynamic toMapWithDefault(value, Map\<String, dynamic\> defaultValue)
 

@@ -251,7 +251,7 @@ See [StringConverter.toNullableString](../../convert/string_converter/#tonullabl
 
 #### getAsNullableType
 Converts an object's value into a value defined by a specified typecode.
-If conversion is not possible it returns null.  
+If conversion is not possible, it returns null.  
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
 > T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type)
@@ -330,7 +330,7 @@ Sets a new value for this object.
 
 > void setAsObject(value)
 
-- **value**: dynamic - new object value.
+- **value**: dynamic - new object's value.
 
 
 

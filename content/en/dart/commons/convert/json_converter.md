@@ -23,11 +23,11 @@ Converts a JSON string into a value of the type specified by a TypeCode.
 - **returns**: T - converted object value or null when value is null.
 
 #### toJson
-Converts JSON string into a value of type specified by a TypeCode.
+Converts a JSON string into a value of type specified by a TypeCode.
 
 > `static` T fromJson\<T\>([TypeCode](../type_code) type, String value)
 
-- **type**: [TypeCode](../type_code) - the TypeCode for the data type into which 'value' is to be converted.
+- **type**: [TypeCode](../type_code) - TypeCode for the data type into which 'value' is to be converted.
 - **value**: String - value to convert.
 - **returns**: T - JSON string or null when value is null.
 

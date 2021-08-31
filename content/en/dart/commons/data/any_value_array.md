@@ -83,7 +83,7 @@ Gets an array element specified by its index.
 
 
 #### getAsArray
-Converts array element into an AnyValueArray or returns an empty AnyValueArray if the conversion is not possible.
+Converts an array element into an AnyValueArray or returns an empty AnyValueArray if the conversion is not possible.
 
 > [AnyValueArray](../any_value_array) getAsArray(int index)
 
@@ -92,7 +92,7 @@ Converts array element into an AnyValueArray or returns an empty AnyValueArray i
 
 
 #### getAsArrayWithDefault
-Converts array element into an AnyValueArray or returns a givne default value if conversion is not possible.
+Converts an array element into an AnyValueArray or returns a given default value if conversion is not possible.
 
 > [AnyValueArray](../any_value_array) getAsArrayWithDefault(int index, [AnyValueArray](../any_value_array) defaultValue)
 
@@ -138,7 +138,7 @@ See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/
 
 - **index**: int - index of the element to get.
 - **defaultValue**: DateTime - default value
-- **returns**: DateTime - Date value ot the element or given default value if theconversion is not supported. 
+- **returns**: DateTime - Date value ot the element or given default value if the conversion is not supported. 
 
 
 #### getAsDouble
@@ -210,7 +210,7 @@ Converts an array's element into a long or returns 0 if the conversion is not po
 
 #### getAsLongWithDefault
 Converts an array's element into a long or returns a given default value if the conversion is not possible.   
-See [LongConverter.toLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
+See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > int getAsLongWithDefault(int index, int defaultValue)
 
@@ -226,7 +226,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#f
 > [AnyValueMap](../any_value_map) getAsMap(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or empty AnyValueMap object if conversion is not supported.
+- **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or an empty AnyValueMap object if the conversion is not supported.
 
 
 #### getAsMapWithDefault
@@ -250,7 +250,7 @@ Converts an array's element into an AnyValueArray object or returns null if the 
 
 #### getAsNullableBoolean
 Converts an array's element into a boolean or returns null if the conversion is not possible.   
-See [BooleanConverter.toNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
+See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > bool getAsNullableBoolean(int index)
 
@@ -260,7 +260,7 @@ See [BooleanConverter.toNullableBoolean](../../converter/boolean_converter/#tonu
 
 #### getAsNullableDateTime
 Converts an array's element into a Date or returns null if the conversion is not possible.   
-See [DateTimeConverter.toNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
 > DateTime getAsNullableDateTime(int index)
 
@@ -330,7 +330,7 @@ See [StringConverter.toNullableString](../../convert/string_converter/#tonullabl
 
 #### getAsNullableType
 Converts an array's element into a value defined by a specified typecode.
-If conversion is not possible, it returns null.   
+If the conversion is not possible, it returns null.   
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
 > T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, int index)

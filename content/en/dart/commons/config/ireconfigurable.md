@@ -13,7 +13,7 @@ description: >
 ### Description
 The IReconfigurable interface is used to set configuration parameters to an object.
 
-Important points:
+**Important points**
 
 - It is similar to [IConfigurable](../iconfigurable) interface, but emphasises the fact that the **configure()** method can be called more than once to change an object configuration in runtime.  
 

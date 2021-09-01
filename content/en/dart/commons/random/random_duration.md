@@ -20,7 +20,7 @@ Generates a random Duration in the range ['min', 'max'].
 
 - **min**: Duration - (optional) minimum range value
 - **max**: Duration - max range value
-- **returns**: Duration - a random Date value.
+- **returns**: Duration - random Date value.
 
 #### updateDuration
 Updates (drifts) a Date value within specified range defined
@@ -28,7 +28,7 @@ Updates (drifts) a Date value within specified range defined
 > `static` Duration updateDuration(Duration value, [int range])
 
 - **value**: Duration - Date value to drift.
-- **range**: int - (optional) a range in milliseconds. Default: 10 days
+- **range**: int - (optional) range in milliseconds. Default: 10 days
 - **returns**: Duration - updated duration value.
 
 ### Examples

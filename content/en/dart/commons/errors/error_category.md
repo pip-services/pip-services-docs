@@ -29,7 +29,7 @@ Errors related to mistakes in user-defined configurations.
 > `static final` **Misconfiguration**: String = "Misconfiguration"
 	
 #### InvalidState
-Errors caused by incorrect object state.. 
+Errors caused by incorrect object state. 
 For example: business calls when the component is not ready.
 > `static final` **InvalidState**: String = "InvalidState"
 	

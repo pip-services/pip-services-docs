@@ -79,7 +79,10 @@ persister = JsonFilePersister("./data/data.json")
 persister.save("123", ["A", "B", "C"])
 ...
 
-persister.load("123", items)
+items = persister.load("123")
 print(items)
 
 ```
+The result is:   
+
+["A", "B", "C"]

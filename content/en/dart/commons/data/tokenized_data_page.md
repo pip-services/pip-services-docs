@@ -12,7 +12,7 @@ description: >
 
 The TokenizedDataPageData allows you to create a transfer object that is used to pass the results of paginated queries. 
 
-Important points
+**Important points**
 
 - This object contains the items of the retrieved page and the total number of items (optional).
 - Additionally, the data page returns a token that has to be passed to the next search as a starting point.

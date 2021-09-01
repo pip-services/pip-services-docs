@@ -15,7 +15,7 @@ description: >
 
 The ApplicationException class defines a base class used to define various application exceptions.
 
-Important points
+**Important points**
 
 - Most languages have their own definition of base exception (error) types. However, this class is implemented symmetrically in all languages supported by the PipServices toolkit and  allows to create portable implementations and support proper error propagation in microservices calls.
 - Error propagation means that when a microservice implemented in one language calls a microservice(s) implemented in a different language(s), errors are returned throught the entire call chain and restored in their original (or close) type.
@@ -192,8 +192,8 @@ Otherwise, a new ApplicationException object is created and the original error i
 #### unwrapError
 Unwraps an original exception through wrapped exception objects. 
 
-Many frameworks like Seneca or restify wrap original exceptions.
-That may result in propagating less specific errors and can hide
+Many frameworks like Seneca or Restify wrap original exceptions.
+That may result in propagating less specific errors and can hide the
 causes of the errors.
 
 > `static` dynamic unwrapError(error)

@@ -58,14 +58,14 @@ Stack trace of the exception.
 ### Instance methods
 
 #### fromJson
-Adds field to [ErrorDescription]() from json map
+Adds field to [ErrorDescription]() from a json map
 
 > void fromJson(Map\<String, dynamic\> json)
 
 - json: Map\<String, dynamic\> - serealized json map
 
 #### toJson
-Converts [ErrorDescription]() to json Map
+Converts [ErrorDescription]() to a json Map
 
 > Map\<String, dynamic\> toJson()
 

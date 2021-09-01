@@ -11,7 +11,7 @@ description: >
 
 The TokenizedPagingParams allows you to create data transfer objects used to pass tokenized parameters for queries.
 
-Important points
+**Important points**
 
 - The page is defined by two parameters:
     - the *token* token that defines a starting point for the search.
@@ -26,7 +26,7 @@ Creates a new instance and sets its values.
 > TokenizedPagingParams([dynamic token, dynamic take, dynamic total])
 
 - **token**: dynamic - token that defines a starting point for the search.
-- **take**: dynamic - the number of items to return. 
+- **take**: dynamic - number of items to return. 
 - **total**: dynamic - true to return the total number of items.
 
 

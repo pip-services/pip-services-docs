@@ -13,7 +13,7 @@ description: >
 ### Description
 The DependencyResolver is a helper class that allows you to resolve component dependencies. It is configured to resolve named dependencies by a specific locator.  
 
-Important points:
+**Important points**
 
 - During deployment the dependency locator can be changed. This mechanism can be used to clarify a specific dependency among several alternatives. Typically components are configured to retrieve the first dependency that matches a logical group, type and version. However, if the container contains more than one instance and the resolution has to be specific about those instances, they can be given a unique name and the dependency resolvers can be reconfigured to retrieve dependencies according to their name.
 
@@ -82,7 +82,7 @@ Gets all optional dependencies by their name.
 > List\<T\> getOptional\<T\>(String name)
 
 - **name**: String - dependency name to locate.
-- **returns**: List\<T\> - list with found dependencies or empty list of no dependencies was found.
+- **returns**: List\<T\> - list with found dependencies or empty list if no dependency was found.
 
 #### getRequired
 Gets all required dependencies by their name.

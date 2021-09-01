@@ -236,7 +236,7 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#f
 
 #### getAsNullableBoolean
 Converts a map's element into a boolean or returns null if the conversion is not possible.  
-See [BooleanConverter.toNullableBoolean](../boolean_converter/#tonullableboolean)
+See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > bool getAsNullableBoolean(String key)
 

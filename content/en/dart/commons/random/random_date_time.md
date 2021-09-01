@@ -11,7 +11,7 @@ description: >
 
 The RandomDateTime class allows you to generate random dates.
 
-Important points:
+**Important points**
 
 - Month must be in 1..12 format.
 

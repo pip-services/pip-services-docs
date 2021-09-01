@@ -16,7 +16,7 @@ The Descriptor class provides you with a component locator. This locator is ofte
 - **Name:** unique component name, like "default".  
 - **Version:** version of the component contract, like "1.0".  
 
-Important points
+**Important points**
 
 - The locator matching can be done by all or only few selected fields. 
 - The fields that shall be excluded from the matching must be set to *"*"* or *null*.

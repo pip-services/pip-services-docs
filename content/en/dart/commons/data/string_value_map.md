@@ -246,7 +246,7 @@ See [BooleanConverter.toNullableBoolean](../boolean_converter/#tonullableboolean
 
 #### getAsNullableDateTime
 Converts a map's element into a Date or returns null if the conversion is not possible.  
-See [DateTimeConverter.toNullableDateTime](../date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
 > DateTime getAsNullableDateTime(String key)
 
@@ -256,7 +256,7 @@ See [DateTimeConverter.toNullableDateTime](../date_time_converter/#tonullabledat
 
 #### getAsNullableDouble
 Converts a map's element into a double or returns null if the conversion is not possible.  
-See [DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
+See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
 
 > double getAsNullableDouble(String key)
 
@@ -266,7 +266,7 @@ See [DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
 
 #### getAsNullableFloat
 Converts a map's element into a float or returns null if the conversion is not possible.  
-See [FloatConverter.toNullableFloat](../float_converter/#tonullablefloat)
+See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
 
 > double getAsNullableFloat(String key)
 
@@ -276,7 +276,7 @@ See [FloatConverter.toNullableFloat](../float_converter/#tonullablefloat)
 
 #### getAsNullableInteger
 Converts a map's element into an integer or returns null if the conversion is not possible.  
-See [IntegerConverter.toNullableInteger](../integer_converter/#tonullableinteger)
+See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
 > int getAsNullableInteger(String key)
 
@@ -286,7 +286,7 @@ See [IntegerConverter.toNullableInteger](../integer_converter/#tonullableinteger
 
 #### getAsNullableLong
 Converts a map's element into a long or returns null if the conversion is not possible.  
-See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
+See [LongConverter.toNullableLong](../..convert/long_converter/#tonullablelong)
 
 > int getAsNullableLong(String key)
 
@@ -305,7 +305,7 @@ Converts a map's element into an AnyValueMap object or returns null if the conve
 
 #### getAsNullableString
 Converts a map's element into a string or returns null if the conversion is not possible.  
-See [StringConverter.toNullableString](../string_converter/#tonullablestring)
+See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
 
 > String getAsNullableString(String key)
 
@@ -316,7 +316,7 @@ See [StringConverter.toNullableString](../string_converter/#tonullablestring)
 #### getAsNullableType
 Converts a map's element into a value defined by a specified typecode.
 If conversion is not possible, it returns null.    
-See [TypeConverter.toNullableType](../type_converter/#tonullabletype)
+See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
 > T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, String key)
 
@@ -368,7 +368,7 @@ If conversion is not possible it returns the default value for the specified typ
 #### getAsTypeWithDefault
 Converts a map's element into a value defined by a specified typecode.
 If the conversion is not possible, it returns the default value for the specified type.  
-See [TypeConverter.toTypeWithDefault](../type_converter/#totypewithdefault)
+See [TypeConverter.toTypeWithDefault](../../convert/type_converter/#totypewithdefault)
 
 > T getAsTypeWithDefault\<T\>([TypeCode](../../convert/type_code) type, String key, T defaultValue)
 

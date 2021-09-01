@@ -41,7 +41,7 @@ and support proper error propagation in microservices calls.
 #### [ApplicationExceptionFactory](application_exception_factory)
 Factory to recreate exceptions from [ErrorDescription](error_description) values passed through the wire.
 
-#### [BadRequestException](badRequest_exception)
+#### [BadRequestException](bad_request_exception)
 Errors due to improper user requests. 
 For example: missing or incorrect parameters.
 

@@ -122,19 +122,68 @@ Updates only a few selected fields in a data item.
 ### Examples
 
 ```python
-class MyMemoryPersistence(IdentifiableMemoryPersistence):
-
-    def get_page_by_filter(self, correlationId, filter, paging):
-        super().get_page_by_filter(correlationId, filter, paging, None)
-        
-persistence = MyMemoryPersistence("./data/data.json")
-item = persistence.create("123", MyData("1", "ABC"))
-mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None)
-
-print(str(mydata.get_data())
-persistence.delete_by_id("123", "1")
+from typing import Any, Optional, Callable 
+ 
+from pip_services3_commons.data import DataPage, PagingParams, IStringIdentifiable, FilterParams 
+from pip_services3_data.persistence import IdentifiableMemoryPersistence 
+ 
+ 
+class MyData(IStringIdentifiable): 
+    def __init__(self, id: str = None, name: str = None, content: str = None): 
+        self.id = id 
+        self.name = name 
+        self.content = content 
+ 
+    def get_data(self): 
+        # Helper method for output data 
+        return { 
+            'id': self.id, 
+            'name': self.name, 
+            'content': self.content 
+        } 
+ 
+ 
+class MyMemoryPersistence(IdentifiableMemoryPersistence): 
+ 
+    def __compose_filter(self, filter_params: FilterParams) -> Callable[[MyData], bool]: 
+        filter_params = filter_params or FilterParams() 
+ 
+        id = filter_params.get_as_nullable_string('id') 
+        content = filter_params.get_as_nullable_string('content') 
+        name = filter_params.get_as_nullable_string('name') 
+ 
+        def filter_action(item: MyData) -> bool: 
+            if id is not None and item.id != id: 
+                return False 
+            if content is not None and item.content != content: 
+                return False 
+            if name is not None and item.name != name: 
+                return False 
+            return True 
+ 
+        return filter_action 
+ 
+    def get_page_by_filter(self, correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None, 
+                           select: Any = None) -> DataPage: 
+        return super().get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, None) 
+ 
+ 
+persistence = MyMemoryPersistence() 
+item = persistence.create("123", MyData('1', 'ABC', 'Content 1')) 
+mydata = persistence.get_page_by_filter("123", FilterParams.from_tuples("name", "ABC"), None, None) 
+ 
+print(mydata.data[0].get_data()) 
+ 
+result = persistence.delete_by_id("123", "1") 
+ 
+if result is not None: 
+    print(f'Deleted item: {result.get_data()}')
 
 ```
+The result is:
+
+{'id': '1', 'name': 'ABC', 'content': 'Content 1'}      
+Deleted item: {'id': '1', 'name': 'ABC', 'content': 'Content 1'}
 
 ### See also
 - #### [MemoryPersistence](../memory_persistence)

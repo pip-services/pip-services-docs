@@ -12,14 +12,14 @@ description: >
 
 The MethodReflector class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-Important points
+**Important points**
 
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing. Moreover, because all languages have different casing and case sensitivity rules, this class treats all method names as case insensitive.
 
 ### Static methods
 
 #### getMethodNames
-Gets the names of all methods implemented in specified object.
+Gets the names of all the methods implemented in a specified object.
 
 > `static` List\<String\> getMethodNames(obj)
 

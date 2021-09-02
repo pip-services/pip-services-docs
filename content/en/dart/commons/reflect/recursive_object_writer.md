@@ -12,7 +12,7 @@ description: >
 
 The RecursiveObjectWriter class allows you to dynamically set the properties of an object and to copy them to another object recursively using dot notation.
 
-Important points
+**Important points**
 
 - It is similar to [ObjectWriter](../object_writer) but writes properties recursively through the entire object graph. 
 - Nested property names are defined using dot notation as "object.subobject.property"
@@ -54,7 +54,7 @@ The property name correspondently must be object's property,
 map key or array index.
 
 If the property does not exist or introspection fails,
-this method doesn't do anything and doesn't any throw errors.
+this method doesn't do anything and doesn't throw any errors.
 
 > `static` void setProperty(obj, String name, value)
 

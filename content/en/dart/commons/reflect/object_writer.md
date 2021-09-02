@@ -12,7 +12,7 @@ description: >
 
 The ObjectWriter class allows you to dynamically set the properties of an object. 
 
-Important points
+**Important points**
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, the ObjectWriter class is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys,

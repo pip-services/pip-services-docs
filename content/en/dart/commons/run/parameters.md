@@ -15,7 +15,7 @@ description: >
 
 The Parameters class contains a map with execution paramters. 
 
-Important points
+**Important points**
 
 - In general, this map may contain non-serializable values.
 - In contrast with other maps, its getters and setters support dot notation and are able to access properties in the entire object graph.
@@ -77,7 +77,7 @@ Converts a map's element into a Parameters object or returns an empty Parameters
 
 
 #### getAsParametersWithDefault
-Converts a map's element into an Parameters or returns a given default value if the conversion is not possible.
+Converts a map's element into a Parameters object or returns a given default value if the conversion is not possible.
 
 > [Parameters](../parameters) getAsParametersWithDefault(String key, Parameters defaultValue)
 

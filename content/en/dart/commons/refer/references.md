@@ -69,7 +69,7 @@ Gets an optional component reference that matches a specified locator.
 
 #### getOneRequired
 Gets a required component reference that matches specified locator.  
-Throws a [ReferenceException](../reference_exception) when no references found.
+Throws a [ReferenceException](../reference_exception) when no references were found.
 
 `@override`
 > T getOneRequired\<T\>(locator)
@@ -89,8 +89,8 @@ Gets all component references that match a specified locator.
 #### getRequired
 Gets all component references that match a specified locator.
 At least one component reference must be present.
-If it doesn't the method throws an error.
-Throws a [ReferenceException](../reference_exception) when no references found.
+If it doesn't, the method throws an error.
+Throws a [ReferenceException](../reference_exception) when no were references found.
 
 > List\<T\> getRequired\<T\>(locator)
 
@@ -107,7 +107,7 @@ Puts a new reference into this reference map.
 
 
 #### remove
-Removes a previously added reference that matches specified locator.
+Removes a previously added reference that matches a specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
@@ -117,7 +117,7 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 - **returns**: dynamic - removed component reference.
 
 #### removeAll
-Removes all component references that match the specified locator. 
+Removes all component references that match a specified locator. 
 
 > List removeAll(locator)
 
@@ -127,7 +127,7 @@ Removes all component references that match the specified locator.
 ### Static methods
 
 #### fromTuples
-Creates a new References from a list of key-value pairs called tuples.
+Creates a new References object from a list of key-value pairs called tuples.
 
 > `static` [References](../references) fromTuples(List tuples)
 

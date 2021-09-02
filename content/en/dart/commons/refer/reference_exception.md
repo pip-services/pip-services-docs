@@ -17,5 +17,5 @@ Creates an error instance and assigns its values.
 > ReferenceException(String correlationId, locator)
 
 - **correlationId**: String - (optional) unique transaction id used to trace execution through a call chain.
-- **locator**: dynamic - locator to find reference to dependent component.
+- **locator**: dynamic - locator used to find a reference to a dependent component.
 

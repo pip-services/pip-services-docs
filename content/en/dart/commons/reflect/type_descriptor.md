@@ -12,7 +12,7 @@ description: >
 
 The TypeDescriptor class stores a reference to a type represented by the type name and library (module) where the type is defined.
 
-Important points
+**Important points**
 
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing.
 

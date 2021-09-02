@@ -25,7 +25,7 @@ If they don't, the call to this method has no effect.
 - **component**: List - list of components to set the references to.
 
 #### setReferencesForOne
-Sets references to specific component.
+Sets references to a specific component.
 
 To set references, components must implement the [IReferenceable](../ireferenceable) interface.
 If they don't, the call to this method has no effect.
@@ -42,7 +42,7 @@ If they don't, the call to this method has no effect.
 
 > `static` void unsetReferences(List components)
 
-- **components**: List - list of components, whose references must be cleared.
+- **components**: List - list of components whose references must be cleared.
 
 #### unsetReferencesForOne
 Unsets references in a specific component.

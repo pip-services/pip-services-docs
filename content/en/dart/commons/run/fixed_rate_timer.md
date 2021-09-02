@@ -14,7 +14,7 @@ description: >
 
 The FixerRateTimer class represents a timer that is triggered in equal time intervals.
 
-Important points
+**Important points**
 
 - It has symmetric cross-language implementation and is often used by the Pip.Services toolkit to perform periodic processing and cleanup in microservices.
 
@@ -32,7 +32,7 @@ Creates new instance of the timer and sets its values.
 #### close
 Closes the timer.
 
-This is required by the [ICloseable](../icloseable) interface,
+This is required by the [IClosable](../iclosable) interface,
 but besides that it is identical to [stop()](#stop).
 
 `@override`

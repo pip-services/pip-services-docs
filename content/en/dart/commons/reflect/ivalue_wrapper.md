@@ -10,12 +10,12 @@ description: >
 
 ### Description
 
-TODO: add description
+The IValueWrapper class is a helper class used to wrap a value.
 
 ### Instance methods
 
 #### innerValue
-TODO: add description
+Gets the wrapped value.
 > dynamic innerValue()
 
-- **return**: dynamic - TODO: add description
+- **return**: dynamic - wrapped value.

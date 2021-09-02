@@ -13,7 +13,7 @@ description: >
 
 The Reference class allows you to store a reference to a component and a locator to find it.
 
-Important points
+**Important points**
 
 - It is used by [References](../references) to store registered component references.
 
@@ -50,6 +50,6 @@ All other locator types are matched using direct comparison.
 >  bool match(locator)
 
 - **locator**: dynamic - locator to match. 
-- **returns**: bool - true if locators are matching and false it they don't.
+- **returns**: bool - true if locators are match and false it they don't.
 
 

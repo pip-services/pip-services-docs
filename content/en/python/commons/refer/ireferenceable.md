@@ -13,7 +13,7 @@ description: >
 
 The IReferenceable interface allows you to set references for components that depend on other components.
 
-Important points
+**Important points**
 
 - If component requires explicit notification to unset references, it must also implement the [IUnreferenceable](../iunreferenceable) interface.
 

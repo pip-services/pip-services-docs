@@ -25,8 +25,8 @@ If the factory is not able to create the requested component is returns null.
 `@override`
 > dynamic canCreate(locator)
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **returns**: dynamic - a locator for a component that the factory is able to create.
+- **locator**: dynamic - locator to identify component to be created.
+- **returns**: dynamic - locator for a component that the factory is able to create.
 
 
 #### create
@@ -35,8 +35,8 @@ Creates a component identified by given a locator.
 `@override`
 > dynamic create(locator)
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **returns**: dynamic - the created component.
+- **locator**: dynamic - locator to identify component to be created.
+- **returns**: dynamic - created component.
 
 
 #### register
@@ -44,8 +44,8 @@ Registers a component using a factory method.
 
 > void register(locator, factory(locator))
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **factory**: dynamic - a factory function that receives a locator and returns a created component.
+- **locator**: dynamic - locator to identify component to be created.
+- **factory**: dynamic - factory function that receives a locator and returns a created component.
 
 
 #### registerAsType
@@ -53,8 +53,8 @@ Registers a component using its type (a constructor function).
 
 > void registerAsType(locator, type)
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **type**: dynamic - a component type.
+- **locator**: dynamic - locator to identify component to be created.
+- **type**: dynamic - component type.
 
 ### Examples
 

@@ -13,7 +13,7 @@ description: >
 
 The AndRule class allows you to validate combinations of rules created with AND logical operations.
 
-Important points
+**Important points**
 
 -  When one or more of the combined rules return errors, then this rule returns all the errors that appeared.
 -  When none of the combined rules returns errors, then this rule also returns no errors.

@@ -14,7 +14,7 @@ description: >
 
 The CompositeFactory class allows you to aggregate multiple factories into a single factory component.
 
-Important points
+**Important points**
 
 - When a new component is requested, it iterates through factories to locate the one able to create the requested component.
 - Usually used to keep all supported factories in a single place.
@@ -24,7 +24,7 @@ Creates a new instance of the factory.
 
 > CompositeFactory(List<[IFactory](../ifactory)> factories)
 
-- **factories**: List<[IFactory](../ifactory)> - a list of factories to embed into this factory.
+- **factories**: List<[IFactory](../ifactory)> - list of factories to embed into this factory.
 
 
 ### Instance methods
@@ -34,7 +34,7 @@ Adds a factory into the list of embedded factories.
 
 > void add([IFactory](../ifactory) factory)
 
-- **factory**: [IFactory](../ifactory) - a factory to be added.
+- **factory**: [IFactory](../ifactory) - factory to be added.
 
 
 #### canCreate
@@ -47,8 +47,8 @@ If the factory is not able to create a requested component it returns null.
 `@override`
 > dynamic canCreate(locator)
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **returns**: dynamic - a locator for a component that the factory is able to create.
+- **locator**: dynamic - locator to identify component to be created.
+- **returns**: dynamic - locator for a component that the factory is able to create.
 
 
 #### create
@@ -57,8 +57,8 @@ Creates a component identified by given locator.
 `@override`
 > dynamic create(locator)
 
-- **locator**: dynamic - a locator to identify component to be created.
-- **returns**: dynamic - the created component.
+- **locator**: dynamic - locator to identify component to be created.
+- **returns**: dynamic - created component.
 
 
 #### remove
@@ -66,7 +66,7 @@ Removes a factory from the list of embedded factories.
 
 > void remove([IFactory](../ifactory) factory)
 
-- **factory**: [IFactory](../ifactory) - the factory to remove.
+- **factory**: [IFactory](../ifactory) - factory to remove.
 
 ### Examples
 

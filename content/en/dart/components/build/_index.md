@@ -26,7 +26,7 @@ Interface for component factories.
 Aggregates multiple factories into a single factory component.
 
 #### [CreateException](create_exception)
-Error raised when factory is not able to create the requested component.
+Error raised when a factory is not able to create the requested component.
 
 #### [Factory](factory)
 Basic component factory that creates components using registered types and factory functions.

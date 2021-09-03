@@ -38,30 +38,30 @@ Creates a new credential parameters and fills it with values.
 
 > CredentialParams([dynamic values])
 
-- **values**: dynamic - (optional) an object to be converted into key-value pairs to initialize these credentials.
+- **values**: dynamic - (optional) object to be converted into key-value pairs to initialize these credentials.
 
 
 ### Instance methods
 
 #### getAccessId
-Gets the application access id. The value can be stored in parameters "access_id" pr "client_id"
+Gets the application's access id. The value can be stored in parameters "access_id" or "client_id".
 
 > String getAccessId()
 
-- **returns**: String - the application access id.
+- **returns**: String - application's access id.
 
 
 #### getAccessKey
-Gets the application secret key.
+Gets the application's secret key.
 The value can be stored in parameters "access_key", "client_key" or "secret_key".
 
 > String getAccessKey()
 
-- **returns**: String - the application secret key.
+- **returns**: String - application's secret key.
 
 
 #### getPassword
-Get the user password. The value can be stored in parameters "password" or "pass".
+Get the user's password. The value can be stored in parameters "password" or "pass".
 
 > String getPassword()
 
@@ -78,35 +78,35 @@ If this key is null, then all parameters are already present.
 
 
 #### getUsername
-Gets the user name. The value can be stored in parameters "username" or "user".
+Gets the username. The value can be stored in parameters "username" or "user".
 
 > String getUsername()
 
-- **returns**: String - the user name.
+- **returns**: String - username.
 
 
 #### setAccessId
-Sets the application access id.
+Sets the application's access id.
 
 > void setAccessId(String value)
 
-- **value**: String - a new application access id.
+- **value**: String - new application's access id.
 
 
 #### setAccessKey
-Sets the application secret key.
+Sets the application's secret key.
 
 > void setAccessKey(String value)
 
-- **value**: String - a new application secret key.
+- **value**: String - new application's secret key.
 
 
 #### setPassword
-Sets the user password.
+Sets the user's password.
 
 > void setPassword(String value)
 
-- **password**: String - a new user password.
+- **password**: String - new user's password.
 
 
 #### setStoreKey
@@ -114,15 +114,15 @@ Sets the key to retrieve these parameters from [ICredentialStore](../icredential
 
 > void setStoreKey(String value)
 
-- **value**: String - a new key to retrieve credentials.
+- **value**: String - new key to retrieve credentials.
 
 
 #### setUsername
-Sets the user name.
+Sets the username.
 
 > void setUsername(String value)
 
-- **value**: String - a new user name.
+- **value**: String - new username.
 
 
 #### useCredentialStore
@@ -137,13 +137,13 @@ The credential parameters are redirected to [ICredentialStore](../icredential_st
 
 #### fromConfig
 Retrieves a single CredentialParams from configuration parameters
-from "credential" section. If "credentials" section is present instead,
+from "credential" section. If the "credentials" section is present instead,
 then it returns only the first credential element.
 
 > `static` [CredentialParams]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) -  containing a section named "credential(s)".
-- **returns**: [CredentialParams]() - the generated CredentialParams object.
+- **returns**: [CredentialParams]() - generated CredentialParams object.
 
 
 #### fromString
@@ -151,9 +151,9 @@ Creates a new CredentialParams object filled with key-value pairs serialized as 
 
 > `static` [CredentialParams]() fromString(String line)
 
-- **line**: String - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
+- **line**: String - string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
-- **returns**: [CredentialParams]() - a new CredentialParams object.
+- **returns**: [CredentialParams]() - new CredentialParams object.
 
 
 #### fromTuples
@@ -162,8 +162,8 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
 > `static` [CredentialParams]() fromTuples(List\<dynamic\> tuples)
 
-- **tuples**: List\<dynamic\> - the tuples to fill a new CredentialParams object.
-- **returns**: [CredentialParams]() - a new CredentialParams object.
+- **tuples**: List\<dynamic\> - tuples to fill a new CredentialParams object.
+- **returns**: [CredentialParams]() - new CredentialParams object.
 
 
 #### manyFromConfig
@@ -173,8 +173,8 @@ then it returns a list with only one CredentialParams.
 
 > `static` List<[CredentialParams]()> manyFromConfig([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve credentials
-- **returns**: List<[CredentialParams]()> - a list of retrieved CredentialParams
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve credentials
+- **returns**: List<[CredentialParams]()> - list of retrieved CredentialParams
 
 ### Examples
 

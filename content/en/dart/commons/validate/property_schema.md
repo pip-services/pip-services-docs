@@ -64,7 +64,7 @@ Sets the property name.
 
 #### setType
 Sets a new property type.
-The type can be defined as type, type name or [TypeCode](../convert/type_code)
+The type can be defined as type, type name or [TypeCode](../../convert/type_code)
 
 > void setType(dynamic value)
 

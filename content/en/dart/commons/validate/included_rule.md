@@ -18,7 +18,7 @@ Creates a new validation rule and sets its values.
 
 > IncludedRule(List\<dynamic\> values)
 
-- **values**: List\<dynamic\> - list of constants that value must be included to.
+- **values**: List\<dynamic\> - list of constants with values that must be included.
 
 ### Instance methods
 

@@ -16,11 +16,11 @@ The ArraySchema class allows you to validate arrays based on a specified validat
 ### Constructors
 Creates a new validation rule and sets its values.
 
-See [TypeCode](../convert/type_code)
+See [TypeCode](../../convert/type_code)
 
 > ArraySchema([dynamic valueType, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
 
-- **valueType**: dynamic - a type of array elements. Null means that elements may have any type.
+- **valueType**: dynamic - type of array elements. Null means that elements may have any type.
 - **required**: bool - (optional) true to always require non-null values.
 - **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) list with validation rules.
 

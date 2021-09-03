@@ -16,8 +16,8 @@ Creates a new instance of the cache entry and assigns its values.
 
 > CacheEntry(String key, dynamic value, int timeout)
 
-- **key**: String - a unique key to locate the value.
-- **value**: dynamic - a value to be stored.
+- **key**: String - unique key to locate the value.
+- **value**: dynamic - value to be stored.
 - **timeout**: int - expiration timeout in milliseconds.
 
 
@@ -28,7 +28,7 @@ Gets the expiration timeout.
 
 > int getExpiration()
 
-- **returns**: int - the expiration timeout in milliseconds.
+- **returns**: int - expiration timeout in milliseconds.
 
 
 #### getKey
@@ -36,7 +36,7 @@ Gets the key to locate the cached value.
 
 > String getKey()
 
-- **returns**: String - the value key.
+- **returns**: String - value key.
 
 
 #### getValue
@@ -44,7 +44,7 @@ Gets the cached value.
 
 > dynamic getValue()
 
-- **returns**: dynamic - the value object.
+- **returns**: dynamic - value object.
 
 
 #### isExpired
@@ -60,5 +60,5 @@ Sets a new value and extends its expiration.
 
 > void setValue(value, int timeout)
 
-- **value**: dynamic - a new cached value.
-- **timeout**: int - a expiration timeout in milliseconds.
+- **value**: dynamic - new cached value.
+- **timeout**: int - expiration timeout in milliseconds.

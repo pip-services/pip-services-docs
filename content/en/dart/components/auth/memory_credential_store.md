@@ -51,8 +51,8 @@ Lookups credential parameters by its key.
 `@override`
 > Future<[CredentialParams](../credential_params)> lookup(String correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a key to uniquely identify the credential.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - key to uniquely identify the credential.
 - **returns**: Future<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found
 
 
@@ -70,9 +70,9 @@ Stores credential parameters into the store.
 
 > Future store(String correlationId, String key, [CredentialParams](../credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a key to uniquely identify the credential parameters.
-- **credential**: [CredentialParams](../credential_params) - a credential parameters to be stored.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - key to uniquely identify the credential parameters.
+- **credential**: [CredentialParams](../credential_params) - credential parameters to be stored.
 
 ### Examples
 

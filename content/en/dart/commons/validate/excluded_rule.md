@@ -18,7 +18,7 @@ Creates a new validation rule and sets its values
 
 > ExcludedRule(List\<dynamic\> values)
 
-- **values**: List\<dynamic\> - list of constants that value must be excluded from
+- **values**: List\<dynamic\> - list of constants with value must be excluded from
 
 ### Instance methods
 

@@ -13,7 +13,7 @@ description: >
 
 The Schema class provides a basic schema to validate values against a set of validation rules.
 
-Important points
+**Important points**
 
 - This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
 
@@ -68,7 +68,7 @@ to chain additional calls.
 
 #### performTypeValidation
 Validates a given value to match a specified type.
-The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
+The type can be defined as a Schema, type, a type name or [TypeCode](../../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
 > void performTypeValidation(String path, dynamic type, dynamic value, List<[ValidationResult](../validation_result)> results)
@@ -136,7 +136,7 @@ See [ValidationException.throwExceptionIfNeeded](../validation_exception/#throwe
 
 
 #### withRule
-Adds validation rule to this schema.
+Adds a validation rule to this schema.
 This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 

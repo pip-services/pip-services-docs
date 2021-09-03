@@ -25,7 +25,6 @@ The component class allows you to create components that support configurable de
 #### References
 - **\*:counters:\*:\*:1.0** - (optional) [ICounters](../count/icounters) components to pass collected measurements
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../log/ilogger) components to pass log messages
-- **\*:tracer:\*:\*:1.0** - (optional) [ITracer](../trace/itracer) components to trace executed operations
 - ...                                    References must match configured dependencies.
 
 ### Fields
@@ -43,10 +42,6 @@ Components to pass collected measurements
 #### dependencyResolver
 Dependency resolver
 > **dependencyResolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
-
-#### tracer
-Components to record traces
-> **tracer**: [CompositeTracer](../trace/composite_tracer)
 
 </span>
 

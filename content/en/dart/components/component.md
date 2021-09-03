@@ -41,7 +41,7 @@ Components to pass collected measurements
 > **_counters**: [CompositeCounters](../count/composite_counters)
 
 #### dependencyResolver
-A dependency resolver
+Dependency resolver
 > **dependencyResolver**: [DependencyResolver](../../commons/refer/dependency_resolver)
 
 #### tracer
@@ -53,7 +53,7 @@ Components to record traces
 ### Instance methods
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../commons/config/config_params) config)
@@ -67,4 +67,4 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../commons/refer/ireferences) - references to locate the component's dependencies.

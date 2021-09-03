@@ -31,7 +31,7 @@ Creates a new instance of the config reader.
 ### Instance methods
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)
@@ -44,7 +44,7 @@ Gets the path to a configuration file.
 
 > String getPath()
 
-- **returns**: String - path to a configuration file.
+- **returns**: String - path to the configuration file.
 
 
 #### setPath

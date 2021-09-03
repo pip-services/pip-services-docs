@@ -15,7 +15,7 @@ description: >
 
 The ValidationException is used to define errors in a schema validation.
 
-Important points
+**Important points**
 
 - Validation errors are usually generated based in [ValidationResult](../validation_result).
 - If using strict mode, warnings will also raise validation exceptions.

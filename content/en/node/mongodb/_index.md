@@ -41,18 +41,17 @@ The persistence component shall implement the following interface with a basic s
 
 ```typescript
 export interface IMyPersistence {
-    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-      callback: (err: any, page: DataPage<MyObject>) => void): void;
+    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>>;
     
-    getOneById(correlationId: string, id: string, callback: (err: any, item: MyObject) => void): void;
+    getOneById(correlationId: string, id: string): Promise<MyObject>;
     
-    getOneByKey(correlationId: string, key: string, callback: (err: any, item: MyObject) => void): void;
+    getOneByKey(correlationId: string, key: string): Promise<MyObject>;
     
-    create(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+    create(correlationId: string, item: MyObject): Promise<MyObject>;
     
-    update(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+    update(correlationId: string, item: MyObject): Promise<MyObject>;
     
-    deleteById(correlationId: string, id: string, callback?: (err: any, item: MyObject) => void): void;
+    deleteById(correlationId: string, id: string): Promise<MyObject>;
 }
 ```
 
@@ -63,7 +62,7 @@ And implement a `getOneByKey` custom persistence method that doesn't exist in th
 ```typescript
 import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-nodex';
 
-export class MyMongoDbPersistence extends IdentifableMongoDbPersistence {
+export class MyMongoDbPersistence extends IdentifableMongoDbPersistence<MyObject, string> {
   public constructor() {
     super("myobjects");
     this.ensureIndex({ key: 1 }, { unique: true });
@@ -91,9 +90,8 @@ export class MyMongoDbPersistence extends IdentifableMongoDbPersistence {
     return criteria.length > 0 ? { $and: criteria } : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "_id", null, callback);
+  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
+    return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "_id", null);
   }  
   
   public getOneByKey(correlationId: string, key: string,
@@ -101,14 +99,16 @@ export class MyMongoDbPersistence extends IdentifableMongoDbPersistence {
     
     let filter = { key: key };
 
-    this._collection.findOne(filter, (err, item) => {
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._collectionName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._collectionName, key);
+    return return new Promise((resolve, reject) => {
+        this._collection.findOne(filter, (err, item) => {
+          if (item == null)
+            this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._collectionName, key);
+          else
+            this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._collectionName, key);
 
-      item = this.convertToPublic(item);
-      callback(err, item);
+          item = this.convertToPublic(item);
+          resolve(item)
+      });
     });
   }
 

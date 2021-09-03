@@ -86,37 +86,29 @@ suite('BeaconsHttpClientV1', () => {
 
         fixture = new BeaconsClientV1Fixture(client);
 
-        persistence.open(null, (err) => {
-            if (err) {
-                done(err);
-                return;
-            }
-
-            service.open(null, (err) => {
-                if (err) {
-                    done(err);
-                    return;
-                }
-
-                client.open(null, done);
-            });
-        });
+        try{
+            await persistence.open(null);
+            await service.open(null);
+            await client.open(null);
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
     });
 
     teardown((done) => {
-        client.close(null, (err) => {
-            service.close(null, (err) => {
-                persistence.close(null, done);
-            });    
-        });
+        await client.close(null);
+        await service.close(null);
+        await persistence.close(null);
+        
     });
 
     test('CRUD Operations', (done) => {
-        fixture.testCrudOperations(done);
+        fixture.testCrudOperations();
     });
 
     test('Calculate Position', (done) => {
-        fixture.testCalculatePosition(done);
+        fixture.testCalculatePosition();
     });
 
 });

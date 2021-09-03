@@ -70,13 +70,12 @@ export class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
         return this._opened;
     }
 
-    public open(correlationId: string, callback: (err: any) => void): void {
+    public async open(correlationId: string): Promise<void> {
         this._opened = true;
         console.log("MyComponentA has been opened.");
-        callback(null);
     }
 
-    public close(correlationId: string, callback: (err: any) => void): void {
+    public async close(correlationId: string): Promise<void> {
         this._opened = true;
         console.log("MyComponentA has been closed.");
         callback(null);
@@ -106,8 +105,6 @@ myComponentA.setReferences(References.fromTuples(
 ));
 
 // Open the component
-myComponentA.open("123", (err) => {
-   console.log("MyComponentA has been opened.");
-   ...
-});
+await myComponentA.open("123");
+console.log("MyComponentA has been opened.")
 ```

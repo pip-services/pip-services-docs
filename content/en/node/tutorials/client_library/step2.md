@@ -20,20 +20,19 @@ import { PagingParams } from 'pip-services3-commons-node';
 import { DataPage } from 'pip-services3-commons-node';
 import { BeaconV1 } from '../../../src/data/version1/BeaconV1';
 export interface IBeaconsClientV1 {    
-  getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<BeaconV1>) => void): void;  
+  getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<BeaconV1>>;  
 
-  getBeaconById(correlationId: string, beaconId: string, callback: (err: any, beacon: BeaconV1) => void): void;
+  getBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1>;
 
-  getBeaconByUdi(correlationId: string, udi: string, callback: (err: any, beacon: BeaconV1) => void): void;  
+  getBeaconByUdi(correlationId: string, udi: string): Promise<BeaconV1>;  
 
-  calculatePosition(correlationId: string, siteId: string, udis: string[], callback: (err: any, position: any) => void): void;    
+  calculatePosition(correlationId: string, siteId: string, udis: string[]): Promise<any>;    
 
-  createBeacon(correlationId: string, beacon: BeaconV1, callback: (err: any, beacon: BeaconV1) => void): void;  
+  createBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1>;
 
-  updateBeacon(correlationId: string, beacon: BeaconV1, callback: (err: any, beacon: BeaconV1) => void): void;  
+  updateBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1>;
 
-  deleteBeaconById(correlationId: string, beaconId: string, callback: (err: any, beacon: BeaconV1) => void): void;            
+  deleteBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1>;     
 }
 
 ```
@@ -60,67 +59,88 @@ export class BeaconsDirectClientV1 extends DirectClient<IBeaconsController> impl
         this._dependencyResolver.put('controller', new Descriptor('beacons', 'controller', '*', '*', '1.0'));
     }
 
-    public getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
+    public async getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<BeaconV1>> {
         let timing = this.instrument(correlationId, 'beacons.get_beacons');
-        this._controller.getBeacons(correlationId, filter, paging, (err, page) => {
-            timing.endTiming();
-            callback(err, page);
-        });
+
+        try {
+            return await this._controller.getBeacons(correlationId, filter, paging);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        }
     }
 
-    public getBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async getBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
         let timing = this.instrument(correlationId, 'beacons.get_beacon_by_id');
-        this._controller.getBeaconById(correlationId, beaconId, (err, beacon) => {
-            timing.endTiming();
-            callback(err, beacon);
-        }); 
+
+        try {
+            return await this._controller.getBeaconById(correlationId, beaconId);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 
-    public getBeaconByUdi(correlationId: string, udi: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async getBeaconByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
         let timing = this.instrument(correlationId, 'beacons.get_beacon_by_udi');
-        this._controller.getBeaconByUdi(correlationId, udi, (err, beacon) => {
-            timing.endTiming();
-            callback(err, beacon);
-        }); 
+
+        try {
+            return await this._controller.getBeaconByUdi(correlationId, udi);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 
-    public calculatePosition(correlationId: string, siteId: string, udis: string[], 
-        callback: (err: any, position: any) => void): void {
+    public async calculatePosition(correlationId: string, siteId: string, udis: string[]): Promise<any> {
         let timing = this.instrument(correlationId, 'beacons.calculate_position');
-        this._controller.calculatePosition(correlationId, siteId, udis, (err, position) => {
-            timing.endTiming();
-            callback(err, position);
-        }); 
+
+        try {
+            return await this._controller.calculatePosition(correlationId, siteId, udis);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 
-    public createBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async createBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
         let timing = this.instrument(correlationId, 'beacons.create_beacon');
-        this._controller.createBeacon(correlationId, beacon, (err, beacon) => {
-            timing.endTiming();
-            callback(err, beacon);
-        }); 
+
+        try {
+            return await this._controller.createBeacon(correlationId, beacon);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 
-    public updateBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async updateBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
         let timing = this.instrument(correlationId, 'beacons.update_beacon');
-        this._controller.updateBeacon(correlationId, beacon, (err, beacon) => {
-            timing.endTiming();
-            callback(err, beacon);
-        }); 
+
+        try {
+            return await this._controller.updateBeacon(correlationId, beacon);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 
-    public deleteBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async deleteBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
         let timing = this.instrument(correlationId, 'beacons.delete_beacon_by_id');
-        this._controller.deleteBeaconById(correlationId, beaconId, (err, beacon) => {
-            timing.endTiming();
-            callback(err, beacon);
-        }); 
+
+        try {
+            return await this._controller.deleteBeaconById(correlationId, beaconId);
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        } 
     }
 }
 ```

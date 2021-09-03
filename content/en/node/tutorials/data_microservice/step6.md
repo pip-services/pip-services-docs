@@ -13,24 +13,25 @@ When a container is started, it starts composing the microservice out of the com
 **/src/build/BeaconsServiceFactory.ts**
 
 ```typescript
-import { Factory } from 'pip-services3-components-node';
-import { Descriptor } from 'pip-services3-commons-node';
-‍
+import { Factory } from 'pip-services3-components-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex';
+
 import { BeaconsMemoryPersistence } from '../../src/persistence/BeaconsMemoryPersistence';
 import { BeaconsFilePersistence } from '../../src/persistence/BeaconsFilePersistence';
 import { BeaconsMongoDbPersistence } from '../../src/persistence/BeaconsMongoDbPersistence';
 import { BeaconsController } from '../../src/logic/BeaconsController';
 import { BeaconsHttpServiceV1 } from '../../src/services/version1/BeaconsHttpServiceV1';
-‍
+
 export class BeaconsServiceFactory extends Factory{
     public static MemoryPersistenceDescriptor = new Descriptor('beacons', 'persistence', 'memory', '*', '1.0');
     public static FilePersistenceDescriptor = new Descriptor('beacons', 'persistence', 'file', '*', '1.0');
     public static MongoDbPersistenceDescriptor = new Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0');
     public static ControllerDescriptor = new Descriptor('beacons', 'controller', 'default', '*', '1.0');
     public static HttpServiceV1Descriptor = new Descriptor('beacons', 'service', 'http', '*', '1.0');
-        constructor(){
+    
+    constructor(){
         super();
-‍
+
         this.registerAsType(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence);
         this.registerAsType(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence);
         this.registerAsType(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence);
@@ -38,25 +39,28 @@ export class BeaconsServiceFactory extends Factory{
         this.registerAsType(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1);
     }
 }
-
 ```
 
 As shown in the code above, we start by creating descriptors for all of our components, and then, in the constructor, we register each component in the factory using its descriptor.
 
 Now let’s move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
 
+**/src/run/BeaconsProcess.ts**
+
 ```typescript
-import { ProcessContainer } from 'pip-services3-container-node';
-import { DefaultRpcFactory } from 'pip-services3-rpc-node';
-‍
+import { ProcessContainer } from 'pip-services3-container-nodex';
+import { DefaultRpcFactory } from 'pip-services3-rpc-nodex';
+import { DefaultSwaggerFactory } from 'pip-services3-swagger-nodex';
+
 import {BeaconsServiceFactory} from '../build/BeaconsServiceFactory';
-‍
+
 export class BeaconsProcess extends ProcessContainer{
     public constructor(){
         super('beacons', 'Beacons microservice');
-‍
-        this._factories.add(new BeaconsServiceFactory());
-        this._factories.add(new DefaultRpcFactory());
+
+        this.addFactory(new BeaconsServiceFactory());
+        this.addFactory(new DefaultRpcFactory());
+        this.addFactory(new DefaultSwaggerFactory());
     }
 }
 

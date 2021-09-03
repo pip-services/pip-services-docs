@@ -38,7 +38,7 @@ export class BeaconsMongoDbPersistence
         this._maxPageSize = 1000;
     }
 
-    public getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
+    public async getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
         let criteria = {
             udi: udi
         };
@@ -194,13 +194,13 @@ export class IdentifiableMongoDbPersistence<T extends IIdentifiable<K>, K> exten
 
     public constructor(collection: string);
 
-    protected convertFromPublicPartial(value: any): any;
+    protected async convertFromPublicPartial(value: any): any;
 
-    public getListByIds(correlationId: string, ids: K[]): Promise<T[]>;
+    public async getListByIds(correlationId: string, ids: K[]): Promise<T[]>;
 
     public async getOneByUdi(correlationId: string, id: K): Promise<T>;
 
-    public create(correlationId: string, item: T): Promise<T>;
+    public async create(correlationId: string, item: T): Promise<T>;
 
     public async set(correlationId: string, item: T): Promise<T>;
 
@@ -210,7 +210,7 @@ export class IdentifiableMongoDbPersistence<T extends IIdentifiable<K>, K> exten
 
     public async deleteById(correlationId: string, id: K): Promise<T> ;
 
-    public deleteByIds(correlationId: string, ids: K[]): Promise<void>;
+    public async deleteByIds(correlationId: string, ids: K[]): Promise<void>;
 }
 
 ```
@@ -263,9 +263,9 @@ export class BeaconsMongoDbPersistence
         return criteria.length > 0 ? { $and: criteria } : null;
     }
 
-    public getPageByFilter(correlationId: string, filter: FilterParams,
+    public async getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<BeaconV1>> {
-        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return await super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 
 ```
@@ -289,40 +289,40 @@ In the persistence component, the developer is responsible for parsing **FilterP
 
 ```typescript
 private composeFilter(filter: FilterParams): any {
-        filter = filter || new FilterParams();
+    filter = filter || new FilterParams();
 
-        let criteria = [];
+    let criteria = [];
 
-        let id = filter.getAsNullableString('id');
-        if (id != null) {
-            criteria.push({ _id: id });
-        }
-
-        let siteId = filter.getAsNullableString('site_id');
-        if (siteId != null) {
-            criteria.push({ site_id: siteId });
-        }
-
-        let label = filter.getAsNullableString('label');
-        if (label != null) {
-            criteria.push({ label: label });
-        }
-
-        let udi = filter.getAsNullableString('udi');
-        if (udi != null) {
-            criteria.push({ udi: udi });
-        }
-
-        let udis = filter.getAsObject('udis');
-        if (typeof udis === "string") {
-            udis = udis.split(',');
-        }
-        if (Array.isArray(udis)) {
-            criteria.push({ udi: { $in: udis } });
-        }
-
-        return criteria.length > 0 ? { $and: criteria } : null;
+    let id = filter.getAsNullableString('id');
+    if (id != null) {
+        criteria.push({ _id: id });
     }
+
+    let siteId = filter.getAsNullableString('site_id');
+    if (siteId != null) {
+        criteria.push({ site_id: siteId });
+    }
+
+    let label = filter.getAsNullableString('label');
+    if (label != null) {
+        criteria.push({ label: label });
+    }
+
+    let udi = filter.getAsNullableString('udi');
+    if (udi != null) {
+        criteria.push({ udi: udi });
+    }
+
+    let udis = filter.getAsObject('udis');
+    if (typeof udis === "string") {
+        udis = udis.split(',');
+    }
+    if (Array.isArray(udis)) {
+        criteria.push({ udi: { $in: udis } });
+    }
+
+    return criteria.length > 0 ? { $and: criteria } : null;
+}
 
 ```
 
@@ -343,7 +343,7 @@ let result = await persistence.getPageByFilter(null, null, paging);
 As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **getOneByUdi** persistence method.
 
 ```typescript
-public getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
+public async getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
     let criteria = {
         udi: udi
     };
@@ -412,13 +412,13 @@ export class BeaconsMongoDbPersistence
         return criteria.length > 0 ? { $and: criteria } : null;
     }
 
-    public getPageByFilter(correlationId: string, filter: FilterParams,
+    public async getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<BeaconV1>> {
             DataPage.
         return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 
-    public getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
+    public async getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
         let criteria = {
             udi: udi
         };

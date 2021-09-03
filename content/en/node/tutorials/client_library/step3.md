@@ -27,86 +27,72 @@ export class BeaconsHttpClientV1 extends CommandableHttpClient implements IBeaco
         super('v1/beacons');
     }
 
-    public getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
-        this.callCommand(
+    public getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<BeaconV1>> {
+        return this.callCommand(
             'get_beacons',
             correlationId,
-            { filter: filter, paging: paging },
-            callback
+            { filter: filter, paging: paging }
         );
     }
 
-    public getBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
-        this.callCommand(
+    public getBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
+        return this.callCommand(
             'get_beacon_by_id',
             correlationId,
             {
                 beacon_id: beaconId
-            },
-            callback
+            }
         );
     }
 
-    public getBeaconByUdi(correlationId: string, udi: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
-        this.callCommand(
+    public getBeaconByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
+        return this.callCommand(
             'get_beacon_by_udi',
             correlationId,
             {
                 udi: udi
-            },
-            callback
+            }
         );
     }
 
-    public calculatePosition(correlationId: string, siteId: string, udis: string[], 
-        callback: (err: any, position: any) => void): void {
-        this.callCommand(
+    public calculatePosition(correlationId: string, siteId: string, udis: string[]): Promise<any> {
+        return this.callCommand(
             'calculate_position',
             correlationId,
             {
                 site_id: siteId,
                 udis: udis
-            },
-            callback
+            }
         );    
     }
 
-    public createBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
-        this.callCommand(
+    public createBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
+        return this.callCommand(
             'create_beacon',
             correlationId,
             {
                 beacon: beacon
-            },
-            callback
+            }
         );
     }
 
-    public updateBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
-        this.callCommand(
+    public updateBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
+        return this.callCommand(
             'update_beacon',
             correlationId,
             {
                 beacon: beacon
-            },
-            callback
+            }
         );    
     }
 
-    public deleteBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
-        this.callCommand(
+    public deleteBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
+        return this.callCommand(
             'delete_beacon_by_id',
             correlationId,
             {
                 beacon_id: beaconId
-            },
-            callback
+            }
         );
     }
 }

@@ -15,30 +15,25 @@ The first thing we are going to do is define what functionality our persistent s
 **/src/persistence/IBeaconsPersistence.ts**
 
 ```typescript
-import { FilterParams } from 'pip-services3-commons-node';
-import { PagingParams } from 'pip-services3-commons-node';
-import { DataPage } from 'pip-services3-commons-node';
-‍
-import { BeaconV1 } from '../data/version1/BeaconV1';
-‍
-export interface IBeaconsPersistence {
-    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-         callback: (err: any, page: DataPage<BeaconV1>) => void): void;
-‍
-   getOneById(correlationId: string, id: string,
-         callback: (err: any, item: BeaconV1) => void): void;
-‍
-   getOneByUdi(correlationId: string, udi: string,
-         callback: (err: any, item: BeaconV1) => void): void;
-‍
-    create(correlationId: string, item: BeaconV1,
-         callback: (err: any, item: BeaconV1) => void): void;
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
+import { DataPage } from 'pip-services3-commons-nodex';
 
-    update(correlationId: string, item: BeaconV1,
-         callback: (err: any, item: BeaconV1) => void): void;
-‍
-    deleteById(correlationId: string, id: string,
-         callback: (err: any, item: BeaconV1) => void): void;
+import { BeaconV1 } from '../data/version1/BeaconV1';
+
+export interface IBeaconsPersistence {
+    getPageByFilter(correlationId: string, filter: FilterParams,
+        paging: PagingParams): Promise<DataPage<BeaconV1>>;
+    
+    getOneById(correlationId: string, id: string): Promise<BeaconV1>;
+    
+    getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1>;
+
+    create(correlationId: string, item: BeaconV1): Promise<BeaconV1>;
+    
+    update(correlationId: string, item: BeaconV1): Promise<BeaconV1>;
+
+    deleteById(correlationId: string, id: string): Promise<BeaconV1>;
 }
 
 ```
@@ -50,39 +45,40 @@ The resulting code for this class is listed below:
 **/src/persistence/BeaconsMemoryPersistence.ts**
 
 ```typescript
-let _ = require('lodash');
-‍
-import { FilterParams } from 'pip-services3-commons-node';
-import { PagingParams } from 'pip-services3-commons-node';
-import { DataPage } from 'pip-services3-commons-node';
-‍
-import { IdentifiableMemoryPersistence } from 'pip-services3-data-node';
-‍
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
+import { DataPage } from 'pip-services3-commons-nodex';
+
+import { IdentifiableMemoryPersistence } from 'pip-services3-data-nodex';
+
 import { BeaconV1 } from '../data/version1/BeaconV1';
 import { IBeaconsPersistence } from './IBeaconsPersistence';
-‍
+
 export class BeaconsMemoryPersistence
     extends IdentifiableMemoryPersistence<BeaconV1, string>
     implements IBeaconsPersistence {
-‍
+
     constructor() {
         super();
-‍
-        this._maxPageSize = 1000;    }
-‍
+
+        this._maxPageSize = 1000;
+    }
+
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-‍
+
         let id = filter.getAsNullableString('id');
         let siteId = filter.getAsNullableString('site_id');
         let label = filter.getAsNullableString('label');
         let udi = filter.getAsNullableString('udi');
         let udis = filter.getAsObject('udis');
-        if (_.isString(udis))
+        if (typeof udis === "string") {
             udis = udis.split(',');
-        if (!_.isArray(udis))
+        }
+        if (!Array.isArray(udis)) {
             udis = null;
-‍
+        }
+
         return (item) => {
             if (id != null && item.id != id)
                 return false;
@@ -92,25 +88,26 @@ export class BeaconsMemoryPersistence
                 return false;
             if (udi != null && item.udi != udi)
                 return false;
-            if (udis != null && _.indexOf(udis, item.udi) < 0)
+            if (udis != null && udis.indexOf(item.udi) < 0)
                 return false;
             return true;
         };
     }
-    public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
-        super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
+
+    public getPageByFilter(correlationId: string, filter: FilterParams,
+        paging: PagingParams): Promise<DataPage<BeaconV1>> {
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
-    public getOneByUdi(correlationId: string, udi: string,
-        callback: (err: any, item: BeaconV1) => void): void {
-‍
-        let item = _.find(this._items, (item) => item.udi == udi);
-‍
+
+    public async getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {        
+        let item = this._items.find((item) => item.udi == udi);
+
         if (item != null) this._logger.trace(correlationId, "Found beacon by %s", udi);
         else this._logger.trace(correlationId, "Cannot find beacon by %s", udi);
-‍
-        callback(null, item);
+
+       return item;
     }
+
 }
 
 ```
@@ -122,67 +119,84 @@ Now let’s move on to something a bit more sophisticated - a MongoDB persistenc
 **/src/persistence/BeaconsMongoDbPersistence.ts**
 
 ```typescript
-import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-node';
-‍
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
+import { DataPage } from 'pip-services3-commons-nodex';
+
+import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-nodex';
+
 import { BeaconV1 } from '../data/version1/BeaconV1';
 import { IBeaconsPersistence } from './IBeaconsPersistence';
-import { BeaconsMongoDbSchema } from './BeaconsMongoDbSchema';
-‍
+
 export class BeaconsMongoDbPersistence
     extends IdentifiableMongoDbPersistence<BeaconV1, string>
     implements IBeaconsPersistence {
+
     constructor() {
-        super('beacons', BeaconsMongoDbSchema());
+        super('beacons');
         this._maxPageSize = 1000;
     }
-‍
+
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
+
         let criteria = [];
+
         let id = filter.getAsNullableString('id');
-        if (id != null)
-             criteria.push({ _id: id });
-‍
+        if (id != null) {
+            criteria.push({ _id: id });
+        }
+
         let siteId = filter.getAsNullableString('site_id');
-        if (siteId != null)
+        if (siteId != null) {
             criteria.push({ site_id: siteId });
-‍
+        }
+
         let label = filter.getAsNullableString('label');
-        if (label != null)
+        if (label != null) {
             criteria.push({ label: label });
-‍
+        }
+
         let udi = filter.getAsNullableString('udi');
         if (udi != null) {
             criteria.push({ udi: udi });
         }
-‍
+
         let udis = filter.getAsObject('udis');
-        if (_.isString(udis))
+        if (typeof udis === "string") {
             udis = udis.split(',');
-        if (_.isArray(udis))
+        }
+        if (Array.isArray(udis)) {
             criteria.push({ udi: { $in: udis } });
-‍
+        }
+
         return criteria.length > 0 ? { $and: criteria } : null;
     }
-‍
-    public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
-        super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
+
+    public getPageByFilter(correlationId: string, filter: FilterParams,
+        paging: PagingParams): Promise<DataPage<BeaconV1>> {
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
-    public getOneByUdi(correlationId: string, udi: string,
-        callback: (err: any, item: BeaconV1) => void): void {
-‍
+
+    public getOneByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
         let criteria = {
             udi: udi
         };
-‍
-        this._model.findOne(criteria, (err, item) => {
-            item = this.convertFromPublic(item);
-            if (item != null) this._logger.trace(correlationId, "Found beacon by %s", udi);
-            else this._logger.trace(correlationId, "Cannot find beacon by %s", udi);
-‍
-            callback(err, item);
-        });
+
+        return new Promise((resolve, reject) => {
+            this._collection.findOne(criteria, (err, item) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+
+                if (item != null) this._logger.trace(correlationId, "Found beacon by %s", udi);
+                else this._logger.trace(correlationId, "Cannot find beacon by %s", udi);
+                
+                item = this.convertToPublic(item);
+                resolve(item);
+            });    
+        });     
     }
 }
 ```
@@ -196,17 +210,15 @@ Thanks to the modular structure of microservices, each component is easily testa
 **/test/persistence/BeaconsPersistenceFixture.ts**
 
 ```typescript
-let _ = require('lodash');
-let async = require('async');
-let assert = require('chai').assert;
-‍
-import { FilterParams } from 'pip-services3-commons-node';
-import { PagingParams } from 'pip-services3-commons-node';
+const assert = require('chai').assert;
+
+import { FilterParams } from 'pip-services3-commons-nodex';
+import { PagingParams } from 'pip-services3-commons-nodex';
 
 import { BeaconV1 } from '../../src/data/version1/BeaconV1';
 import { BeaconTypeV1 } from '../../src/data/version1/BeaconTypeV1';
 import { IBeaconsPersistence } from '../../src/persistence/IBeaconsPersistence';
-‍
+
 const BEACON1: BeaconV1 = {
     id: '1',
     udi: '00001',
@@ -234,245 +246,149 @@ const BEACON3: BeaconV1 = {
     center: { type: 'Point', coordinates: [ 10, 10 ] },
     radius: 50
 };
-export
- class BeaconsPersistenceFixture {
+
+export class BeaconsPersistenceFixture {
     private _persistence: IBeaconsPersistence;
-‍
+
     public constructor(persistence: IBeaconsPersistence) {
         assert.isNotNull(persistence);
         this._persistence = persistence;
     }
-‍
-    private testCreateBeacons(done) {
-        async.series([
-            // Create the first beacon
-            (callback) => {
-                this._persistence.create(
-                    null,
-                    BEACON1,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(BEACON1.udi, beacon.udi);
-                        assert.equal(BEACON1.site_id, beacon.site_id);
-                        assert.equal(BEACON1.type, beacon.type);
-                        assert.equal(BEACON1.label, beacon.label);
-                        assert.isNotNull(beacon.center);
-‍
-                        callback();
-                    }
-                );
-            },
-            // Create the second beacon
-            (callback) => {
-                this._persistence.create(
-                    null,
-                    BEACON2,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(BEACON2.udi, beacon.udi);
-                        assert.equal(BEACON2.site_id, beacon.site_id);
-                        assert.equal(BEACON2.type, beacon.type);
-                        assert.equal(BEACON2.label, beacon.label);
-                        assert.isNotNull(beacon.center);
-‍
-                        callback();
-                    }
-                );
-            },
-            // Create the third beacon
-            (callback) => {
-                this._persistence.create(
-                    null,
-                    BEACON3,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(BEACON3.udi, beacon.udi);
-                        assert.equal(BEACON3.site_id, beacon.site_id);
-                        assert.equal(BEACON3.type, beacon.type);
-                        assert.equal(BEACON3.label, beacon.label);
-                        assert.isNotNull(beacon.center);
-‍
-                        callback();
-                    }
-                );
-            }
-        ], done);
+
+    private async testCreateBeacons() {
+        // Create the first beacon
+        let beacon = await this._persistence.create(
+            null,
+            BEACON1
+        );
+        assert.isObject(beacon);
+        assert.equal(BEACON1.udi, beacon.udi);
+        assert.equal(BEACON1.site_id, beacon.site_id);
+        assert.equal(BEACON1.type, beacon.type);
+        assert.equal(BEACON1.label, beacon.label);
+        assert.isNotNull(beacon.center);
+
+        // Create the second beacon
+        beacon = await this._persistence.create(
+            null,
+            BEACON2
+        );
+        assert.isObject(beacon);
+        assert.equal(BEACON2.udi, beacon.udi);
+        assert.equal(BEACON2.site_id, beacon.site_id);
+        assert.equal(BEACON2.type, beacon.type);
+        assert.equal(BEACON2.label, beacon.label);
+        assert.isNotNull(beacon.center);
+
+        // Create the third beacon
+        beacon = await this._persistence.create(
+            null,
+            BEACON3
+        );
+        assert.isObject(beacon);
+        assert.equal(BEACON3.udi, beacon.udi);
+        assert.equal(BEACON3.site_id, beacon.site_id);
+        assert.equal(BEACON3.type, beacon.type);
+        assert.equal(BEACON3.label, beacon.label);
+        assert.isNotNull(beacon.center);
     }
-‍
-    public testCrudOperations(done) {
-        let beacon1: BeaconV1;
-‍
-        async.series([
-            // Create items
-            (callback) => {
-                this.testCreateBeacons(callback);
-            },
-            // Get all beacons
-            (callback) => {
-                this._persistence.getPageByFilter(
-                    null,
-                    new FilterParams(),
-                    new PagingParams(),
-                    (err, page) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(page);
-                        assert.lengthOf(page.data, 3);
-‍
-                        beacon1 = page.data[0];
-‍
-                        callback();
-                    }
-                )
-            },
-            // Update the beacon
-            (callback) => {
-                beacon1.label = 'ABC';
-‍
-                this._persistence.update(
-                    null,
-                    beacon1,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-                        assert.equal('ABC', beacon.label);
-‍
-                        callback();
-                    }
-                )
-            },
-            // Get beacon by udi
-            (callback) => {
-                this._persistence.getOneByUdi(
-                    null,
-                     beacon1.udi,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-‍
-                        callback();
-                    }
-                )
-            }
-,            // Delete the beacon
-            (callback) => {
-                this._persistence.deleteById(
-                    null,
-                    beacon1.id,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-‍
-                        callback();
-                    }
-                )
-            },
-            // Try to get deleted beacon
-            (callback) => {
-                this._persistence.getOneById(
-                    null,
-                    beacon1.id,
-                    (err, beacon) => {
-                        assert.isNull(err);
-‍
-                        assert.isNull(beacon || null);
-‍
-                        callback();
-                    }
-                )
-            }
-        ], done);
+
+    public async testCrudOperations() {
+        // Create items
+        await this.testCreateBeacons();
+
+        // Get all beacons
+        let page = await this._persistence.getPageByFilter(
+            null,
+            new FilterParams(),
+            new PagingParams()
+        );
+        assert.isObject(page);
+        assert.lengthOf(page.data, 3);
+
+        let beacon1 = page.data[0];
+
+        // Update the beacon
+        beacon1.label = 'ABC';
+
+        let beacon = await this._persistence.update(
+            null,
+            beacon1
+        );
+        assert.isObject(beacon);
+        assert.equal(beacon1.id, beacon.id);
+        assert.equal('ABC', beacon.label);
+
+        // Get beacon by udi
+        beacon = await this._persistence.getOneByUdi(
+            null, 
+            beacon1.udi,
+        );
+        assert.isObject(beacon);
+        assert.equal(beacon1.id, beacon.id);
+
+        // Delete the beacon
+        beacon = await this._persistence.deleteById(
+            null,
+            beacon1.id
+        );
+        assert.isObject(beacon);
+        assert.equal(beacon1.id, beacon.id);
+
+        // Try to get deleted beacon
+        beacon = await this._persistence.getOneById(
+            null,
+            beacon1.id
+        );
+        assert.isNull(beacon || null);
     }
-‍
-    public testGetWithFilters(done) {
-        async.series([
-            // Create items
-            (callback) => {
-                this.testCreateBeacons(callback);
-            },
-            // Filter by id
-            (callback) => {
-                this._persistence.getPageByFilter(
-                    null,
-                    FilterParams.fromTuples(
-                        'id', '1'
-                    ),
-                    new PagingParams(),
-                    (err, page) => {
-                        assert.isNull(err);
-‍
-                        assert.lengthOf(page.data, 1);
-‍
-                        callback();
-                    }
-                )
-            },
-            // Filter by udi
-            (callback) => {
-                this._persistence.getPageByFilter(
-                    null,
-                    FilterParams.fromTuples(
-                        'udi', '00002'
-                    ),
-                    new PagingParams(),
-                    (err, page) => {
-                        assert.isNull(err);
-‍
-                        assert.lengthOf(page.data, 1);
-‍
-                        callback();
-                    }
-                )
-            },
-            // Filter by udis
-            (callback) => {
-                this._persistence.getPageByFilter(
-                    null,
-                    FilterParams.fromTuples(
-                        'udis', '00001,00003'
-                    ),
-                    new PagingParams(),
-                    (err, page) => {
-                        assert.isNull(err);
-‍
-                        assert.lengthOf(page.data, 2);
-‍
-                        callback();
-                    }
-                )
-            },
-            // Filter by site_id
-            (callback) => {
-                this._persistence.getPageByFilter(
-                    null,
-                    FilterParams.fromTuples(
-                        'site_id', '1'
-                    )
-,                    new PagingParams(),
-                    (err, page) => {
-                        assert.isNull(err);
-‍
-                        assert.lengthOf(page.data, 2);
-‍
-                        callback();
-                    }
-                )
-            },
-        ], done);
+
+    public async testGetWithFilters() {
+        // Create items
+        await this.testCreateBeacons();
+
+        // Filter by id
+        let page = await this._persistence.getPageByFilter(
+            null,
+            FilterParams.fromTuples(
+                'id', '1'
+            ),
+            new PagingParams()
+        );
+        assert.lengthOf(page.data, 1);
+
+        // Filter by udi
+        page = await this._persistence.getPageByFilter(
+            null,
+            FilterParams.fromTuples(
+                'udi', '00002'
+            ),
+            new PagingParams()
+        );
+        assert.lengthOf(page.data, 1);
+
+        // Filter by udis
+        page = await this._persistence.getPageByFilter(
+            null,
+            FilterParams.fromTuples(
+                'udis', '00001,00003'
+            ),
+            new PagingParams()
+        );
+        assert.lengthOf(page.data, 2);
+
+        // Filter by site_id
+        page = await this._persistence.getPageByFilter(
+            null,
+            FilterParams.fromTuples(
+                'site_id', '1'
+            ),
+            new PagingParams()
+        );
+        assert.lengthOf(page.data, 2);
     }
 }
+
 ```
 
 Now that we have a set of tests, we can dive into the testing itself. To do this, we’ll create files for testing each of our persistences and run them.
@@ -480,35 +396,37 @@ Now that we have a set of tests, we can dive into the testing itself. To do this
 **/test/persistence/BeaconsMemoryPersistence.test.ts**
 
 ```typescript
-import { ConfigParams } from 'pip-services3-commons-node';
-import {BeaconsMemoryPersistence} from  '../../src/persistence/BeaconsMemoryPersistence';
+import { ConfigParams } from 'pip-services3-commons-nodex';
+
+import { BeaconsMemoryPersistence } from '../../src/persistence/BeaconsMemoryPersistence';
 import { BeaconsPersistenceFixture } from './BeaconsPersistenceFixture';
-‍
+
 suite('BeaconsMemoryPersistence', () => {
     let persistence: BeaconsMemoryPersistence;
     let fixture: BeaconsPersistenceFixture;
-‍
-    setup((done) => {
+
+    setup(async () => {
         persistence = new BeaconsMemoryPersistence();
         persistence.configure(new ConfigParams());
-‍
-        fixture = new BeaconsPersistenceFixture(persistence);
-‍
-        persistence.open(null, done);
-    });
-‍
-    teardown((done) => {
-        persistence.close(null, done);
-    });
-‍
-    test('CRUD Operations', (done) => {
-        fixture.testCrudOperations(done);
-    });
-    test('Get with Filters', (done) => {
-        fixture.testGetWithFilters(done);
-    });
-});
 
+        fixture = new BeaconsPersistenceFixture(persistence);
+
+        await persistence.open(null);
+    });
+
+    teardown(async () => {
+        await persistence.close(null);
+    });
+
+    test('CRUD Operations', async () => {
+        await fixture.testCrudOperations();
+    });
+
+    test('Get with Filters', async () => {
+        await fixture.testGetWithFilters();
+    });
+
+});
 ```
 
 To run these tests, run the command npm test from a terminal at the root of the project.

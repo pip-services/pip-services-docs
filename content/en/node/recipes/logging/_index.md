@@ -21,15 +21,16 @@ The [ILogger](../../components/log/ilogger/) interface is defined in the Log pac
 
 ```typescript
 
-interface ILogger {
-    LogLevel Level { get; set; }
-    void Log(LogLevel level, String correlationId, Exception error, String message, params Object[] args);
-    void Fatal(String correlationId, Exception error, String message, params Object[] args); 
-    void Error(String correlationId, Exception error, String message, params Object[] args); 
-    void Warn(String correlationId, String message, params Object[] args); 
-    void Info(String correlationId, String message, params Object[] args); 
-    void Debug(String correlationId, String message, params Object[] args);
-    void Trace(String correlationId, String message, params Object[] args); 
+export interface interface ILogger {
+    getLevel(): LogLevel;
+    setLevel(value: LogLevel): void;
+    log(level: LogLevel, correlationId: string, error: Error, message: string, ...args: any[]) : void;
+    fatal(correlationId: string, error: Error, message: string, ...args: any[]) : void;
+    error(correlationId: string, error: Error, message: string, ...args: any[]) : void;
+    warn(correlationId: string, message: string, ...args: any[]) : void;
+    info(correlationId: string, message: string, ...args: any[]) : void;
+    debug(correlationId: string, message: string, ...args: any[]) : void;
+    trace(correlationId: string, message: string, ...args: any[]) : void;
 }
 ```
 
@@ -39,7 +40,7 @@ The level property can be used to optimize code. Generating log messages can cos
 ```typescript
 if (logger.Level >= LogLevel.Trace) {
     message = ...  // Costly message preparation
-    logger.Trace(correlationId, message);
+    logger.trace(correlationId, message);
 }
 ```
 
@@ -114,8 +115,8 @@ class MyComponent {
 	    ...
     }
     
-    public myMethod(String correlationId, ...) {
-        this._logger.trace(correlationId, “MyMethod is executed.”);
+    public myMethod(String correlationId, ...): void {
+        this._logger.trace(correlationId, "MyMethod is executed.");
     }
 }
 ```

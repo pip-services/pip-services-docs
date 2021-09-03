@@ -41,18 +41,17 @@ The persistence component shall implement the following interface with a basic s
 
 ```typescript
 export interface IMyPersistence {
-  getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void;
+  getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>>;
     
-  getOneById(correlationId: string, id: string, callback: (err: any, item: MyObject) => void): void;
+  getOneById(correlationId: string, id: string): Promise<MyObject>;
     
-  getOneByKey(correlationId: string, key: string, callback: (err: any, item: MyObject) => void): void;
+  getOneByKey(correlationId: string, key: string): Promise<MyObject>;
     
-  create(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+  create(correlationId: string, item: MyObject): Promise<MyObject>;
     
-  update(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+  update(correlationId: string, item: MyObject): Promise<MyObject>;
     
-  deleteById(correlationId: string, id: string, callback?: (err: any, item: MyObject) => void): void;
+  deleteById(correlationId: string, id: string): Promise<MyObject>;
 }
 ```
 
@@ -63,7 +62,7 @@ And implement a `getOneByKey` custom persistence method that doesn't exist in th
 ```typescript
 import { IdentifiableSqlServerPersistence } from 'pip-services3-sqlserver-nodex';
 
-export class MySqlServerPersistence extends IdentifableSqlServerPersistence {
+export class MySqlServerPersistence extends IdentifableSqlServerPersistence<MyObject, string> {
   public constructor() {
     super("myobjects");
     this.ensureSchema("CREATE TABLE [myobjects] ([id] VARCHAR(32) PRIMARY KEY, [key] VARCHAR(50), [value] NVARCHAR(255)");
@@ -92,30 +91,32 @@ export class MySqlServerPersistence extends IdentifableSqlServerPersistence {
     return criteria.length > 0 ? criteria.join(" AND ") : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null, callback);
+  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
+    return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null);
   }  
   
-  public getOneByKey(correlationId: string, key: string,
-    callback: (err: any, item: MyObject) => void): void {
+  public getOneByKey(correlationId: string, key: string): Promise<MyObject> {
     
     let query = "SELECT * FROM " + this.quoteIdentifier(this._tableName) + " WHERE [key]=@1";
     let params = [ key ];
 
     let request = this.createRequest(params);
-    request.query(query, (err, result) => {
-      err = err || null;
+    return return new Promise((resolve, reject) => {
+      request.query(query, (err, result) => {
+        err = err || null;
 
-      let item = result && result.recordset ? result.recordset[0] || null : null; 
+        let item = result && result.recordset ? result.recordset[0] || null : null; 
 
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
+        if (item == null)
+          this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
+        else
+          this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
 
-      item = this.convertToPublic(item);
-      callback(err, item);
+        if (err) reject(err);
+
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
     });
   }
 
@@ -129,7 +130,7 @@ To access data fields you shall use `JSON_VALUE([data],'$.field')` expression.
 ```typescript
 import { IdentifiableJsonSqlServerPersistence } from 'pip-services3-sqlserver-nodex';
 
-export class MySqlServerPersistence extends IdentifableJsonSqlServerPersistence {
+export class MySqlServerPersistence extends IdentifableJsonSqlServerPersistence<MyObject, string> {
   public constructor() {
     super("myobjects");
     this.ensureTable();
@@ -159,30 +160,33 @@ export class MySqlServerPersistence extends IdentifableJsonSqlServerPersistence 
     return criteria.length > 0 ? criteria.join(" AND ") : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null, callback);
+  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
+    return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null);
   }  
   
-  public getOneByKey(correlationId: string, key: string,
-    callback: (err: any, item: MyObject) => void): void {
+  public getOneByKey(correlationId: string, key: string): Promise<MyObject> {
     
     let query = "SELECT * FROM " + this.quoteIdentifier(this._tableName) + " WHERE JSON_VALUE([data],'$.key')=@1";
     let params = [ key ];
 
     let request = this.createRequest(params);
-    request.query(query, (err, result) => {
-      err = err || null;
+    return return new Promise((resolve, reject) => {
 
-      let item = result && result.recordset ? result.recordset[0] || null : null; 
+      request.query(query, (err, result) => {
+        err = err || null;
 
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
+        let item = result && result.recordset ? result.recordset[0] || null : null; 
 
-      item = this.convertToPublic(item);
-      callback(err, item);
+        if (item == null)
+          this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
+        else
+          this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
+
+        if (err) reject(err);
+
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
     });
   }
 

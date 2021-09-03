@@ -36,18 +36,17 @@ The persistence component shall implement the following interface with a basic s
 
 ```typescript
 export interface IMyPersistence {
-    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-      callback: (err: any, page: DataPage<MyObject>) => void): void;
+    getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>>;
     
-    getOneById(correlationId: string, id: string, callback: (err: any, item: MyObject) => void): void;
+    getOneById(correlationId: string, id: string): Promise<MyObject>;
     
-    getOneByKey(correlationId: string, key: string, callback: (err: any, item: MyObject) => void): void;
+    getOneByKey(correlationId: string, key: string): Promise<MyObject>;
     
-    create(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+    create(correlationId: string, item: MyObject): Promise<MyObject>;
     
-    update(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+    update(correlationId: string, item: MyObject): Promise<MyObject>;
     
-    deleteById(correlationId: string, id: string, callback?: (err: any, item: MyObject) => void): void;
+    deleteById(correlationId: string, id: string): Promise<MyObject>;
 }
 ```
 
@@ -56,9 +55,7 @@ Most CRUD operations will come from the base class. You only need to override th
 And then, implement a `getOneByKey` custom persistence method that doesn't exist in the base class.
 
 ```typescript
-import { IdentifiableCouchbasePersistence } from 'pip-services3-couchbase-nodex';
-
-export class MyCouchbasePersistence extends IdentifableCouchbasePersistence {
+export class MyCouchbasePersistence extends IdentifiableCouchbasePersistence<MyObject, string>  {
   public constructor() {
     super("app", "myobjects");
     this.ensureIndex({ key: 1 }, { unique: true });
@@ -87,32 +84,36 @@ export class MyCouchbasePersistence extends IdentifableCouchbasePersistence {
     return criteria.length > 0 ? criteria.join(" AND ") : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null, callback);
+  public async getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams):  Promise<DataPage<MyObject>> {
+    return await super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null);
   }  
   
-  public getOneByKey(correlationId: string, key: string,
-    callback: (err: any, item: MyObject) => void): void {
+  public async getOneByKey(correlationId: string, key: string): Promise<MyObject> {
     
-    let statement = "SELECT * FROM `" + this._bucketName + "` WHERE "_c='" + this._collectionName + "' AND key='" + key + "'";
+    let statement = "SELECT * FROM `" + this._bucketName + "` WHERE _c='" + this._collectionName + "' AND key='" + key + "'";
     let query = this._query.fromString(statement);
     query.consistency(this._query.Consistency.REQUEST_PLUS);
-    this._bucket.query(query, [], (err, items) => {
-      err = err || null;
+    let item = await new Promise<any>((resolve, reject) => {
+        this._bucket.query(query, [], (err, items) => {
+          err = err || null;
 
-      items = _.map(items, this.convertToPublic);
-      let item = item != null ? item[0] : null;
+          items = _.map(items, this.convertToPublic);
+          let item = item != null ? item[0] : null;
 
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._collectionName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._collectionName, key);
+          if (item == null)
+            this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._collectionName, key);
+          else
+            this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._collectionName, key);
 
-      callback(err, item);
+          if (err != null) reject(err);
+            
+          resolve(item);
+        });
     });
-  }
 
+    item = this.convertToPublic(item);
+    return item;
+  }
 }
 ```
 

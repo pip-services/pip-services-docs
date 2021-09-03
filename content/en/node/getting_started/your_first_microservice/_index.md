@@ -75,9 +75,9 @@ npm install
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
 
 ```typescript
-greeting(name, callback) {
-    callback(null, "Hello, " + (name || this._defaultName) + "!");
-}
+public async greeting(name) {
+    return "Hello, " + (name || this._defaultName) + "!";
+  }
 ```
 
 To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
@@ -106,17 +106,17 @@ This is all the code of the controller in the file:
 "use strict";
 
 class HelloWorldController {
-    constructor() {
-        this._defaultName = "Pip User";   
-    }
+  constructor() {
+    this._defaultName = "Pip User";
+  }
 
-    configure(config) {
-        this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
-    }
+  public configure(config) {
+    this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+  }
 
-    greeting(name, callback) {
-        callback(null, "Hello, " + (name || this._defaultName) + "!");
-    }
+  public async greeting(name) {
+    return "Hello, " + (name || this._defaultName) + "!";
+  }
 }
 
 exports.HelloWorldController = HelloWorldController
@@ -133,11 +133,16 @@ class HelloWorldRestService extends rpc.RestService
 Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
 
 ```typescript
-register() {
-   this.registerRoute("get", "/greeting", null, (req, res) => {
-       let name = req.param('name');
-       this._controller.greeting(name, this.sendResult(req, res));    
-   });
+public register() {
+    this.registerRoute("get", "/greeting", null, async (req, res) => {
+        let name = req.query.name;
+        try {
+            let result = await this._controller.greeting(name);
+            this.sendResult(req, res, result);
+        } catch (ex) {
+            this.sendError(req, res, ex);
+        }
+    });
 }
 ```
 
@@ -147,7 +152,7 @@ To get a reference to the controller, we’ll add its descriptor to the _depende
 constructor() {
     super();
     this._baseRoute = "/hello_world";
-    this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));   
+    this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
 }
 
 ```
@@ -163,9 +168,9 @@ Full listing for the REST service found in the file:
 **/HelloWorldRestService.js**
 ```typescript
 "use strict";
-‍
-const rpc = require("pip-services-rpc-node");
-const commons = require("pip-services-commons-node");
+
+const rpc = require("pip-services3-rpc-nodex");
+const commons = require("pip-services3-commons-nodex");
 
 class HelloWorldRestService extends rpc.RestService {
     constructor() {
@@ -174,17 +179,24 @@ class HelloWorldRestService extends rpc.RestService {
         this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
     }
 
-    setReferences(references){
+    public setReferences(references) {
         super.setReferences(references);
         this._controller = this._dependencyResolver.getOneRequired('controller');
-    }    
-    register() {
-        this.registerRoute("get", "/greeting", null, (req, res) => {
+    }
+
+    public register() {
+        this.registerRoute("get", "/greeting", null, async (req, res) => {
             let name = req.query.name;
-            this._controller.greeting(name, this.sendResult(req, res));
+            try {
+                let result = await this._controller.greeting(name);
+                this.sendResult(req, res, result);
+            } catch (ex) {
+                this.sendError(req, res, ex);
+            }
         });
     }
 }
+
 exports.HelloWorldRestService = HelloWorldRestService
 ```
 
@@ -209,7 +221,7 @@ constructor() {
         new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
         restService.HelloWorldRestService
     );
-‍}
+}
 ```
 
 For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
@@ -221,8 +233,8 @@ Full listing of the factory’s code found in the file:
 ```typescript
 "use strict";
 
-const components = require("pip-services-components-node");
-const commons = require("pip-services-commons-node");
+const components = require("pip-services3-components-nodex");
+const commons = require("pip-services3-commons-nodex");
 const controller = require("./HelloWorldController");
 const restService = require("./HelloWorldRestService");
 
@@ -239,6 +251,7 @@ class HelloWorldServiceFactory extends components.Factory {
         );
     }
 }
+
 exports.HelloWorldServiceFactory = HelloWorldServiceFactory
 ```
 
@@ -254,7 +267,8 @@ Full listing of the container’s code found in the file:
 ```typescript
 "use strict";
 
-const rpc = require("pip-services-rpc-node");
+const rpc = require("pip-services3-rpc-nodex");
+const container = require('pip-services3-container-nodex');
 const factory = require("./HelloWorldServiceFactory");
 
 class HelloWorldProcess extends container.ProcessContainer {
@@ -328,12 +342,12 @@ In Node.js, we’ll need a special file to run the microservice. All this file d
 ```typescript
 "use strict";
 
-const process = require("./HelloWorldProcess");
+const proc = require("./HelloWorldProcess");
 
 try {
-    new process.HelloWorldProcess().run(process.argv);
-} catch(ex) {
-    console.error(ex);
+   new proc.HelloWorldProcess().run(process.argv);
+} catch (ex) {
+   console.error(ex);
 }
 
 ```

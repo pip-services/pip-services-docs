@@ -29,40 +29,27 @@ export interface IIdentifiable<K> {
 The **IdentifiableMemoryPersistence** implements a number of CRUD methods:
 
 ```typescript
-export class IdentifiableMemoryPersistence<T extends IIdentifiable<K>, K> extends MemoryPersistence<T>  implements IConfigurable {
-    protected _items: any[];
+export class IdentifiableMemoryPersistence<T extends IIdentifiable<K>, K> extends MemoryPersistence<T> 
+    implements IWriter<T, K>, IGetter<T, K>, ISetter<T> {
 
-    protected getPageByFilter(correlationId: string, filter: any, 
-        paging: PagingParams, sort: any, select: any, 
-        callback: (err: any, page: DataPage<T>) => void): void;
+    public constructor(loader?: ILoader<T>, saver?: ISaver<T>);
 
-    protected getCountByFilter(correlationId: string, filter: any, 
-        callback: (err: any, count: number) => void): void;
+    public async getListByIds(correlationId: string, ids: K[]): Promise<T[]>;
 
-    protected getListByFilter(correlationId: string, filter: any, sort: any, select: any,
-        callback: (err: any, items: T[]) => void): void;
+    public async getOneById(correlationId: string, id: K): Promise<T> ;
 
-    public getListByIds(correlationId: string, ids: K[],
-        callback: (err: any, items: T[]) => void): void;
+    public async create(correlationId: string, item: T): Promise<T>;
 
-    protected getOneRandom(correlationId: string, filter: any, callback: (err: any, item: T) => void): void;
+    public async set(correlationId: string, item: T): Promise<T>;
 
-    public getOneById(correlationId: string, id: K, callback: (err: any, item: T) => void): void;
+    public async update(correlationId: string, item: T): Promise<T>;
 
-    public create(correlationId: string, item: T, callback?: (err: any, item: T) => void): void;
+    public async updatePartially(correlationId: string, id: K, data: AnyValueMap): Promise<T>;;
 
-    public set(correlationId: string, item: T, callback?: (err: any, item: T) => void): void;
+    public async deleteById(correlationId: string, id: K): Promise<T>;
 
-    public update(correlationId: string, item: T, callback?: (err: any, item: T) => void): void;
+    public async deleteByIds(correlationId: string, ids: K[]): Promise<void>;
 
-    public updatePartially(correlationId: string, id: K, data: AnyValueMap,
-        callback?: (err: any, item: T) => void): void;
-
-    public deleteById(correlationId: string, id: K, callback?: (err: any, item: T) => void): void;
-
-    protected deleteByFilter(correlationId: string, filter: any, callback?: (err: any) => void): void;
-
-    public deleteByIds(correlationId: string, ids: K[], callback?: (err: any) => void): void;
 }
 ```
 
@@ -77,9 +64,7 @@ Persistent components in the Pip.Services Toolkit use a number of data patterns.
 let filter = FilterParams.fromTuples(
     "name", 'ABC'
 )
-persistence.getPageFilter(null, filter, null, (page, err) => {
-    ...
-});
+let result = await persistence.getPageFilter(null, filter, null);
 ```
 
 In the persistence component, the developer is responsible for parsing the **FilterParams** and passing a filter function to the persistent methods of the base class.
@@ -95,9 +80,8 @@ private composeFilter(filter: FilterParams): any {
         return true;
     };
 }     
-public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
-    callback: (err: any, page: DataPage<MyData>) => void): void {
-        super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
+public async getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
+    return await super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
 }
 ```
 
@@ -108,9 +92,7 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 ```typescript
 //skip = 25, take = 50, total = false
 let paging = new PagingParams(25, 50, false);
-persistence.getPageByFilter(null, null, paging, (page, err) => {
-    ...
-});
+let result = await persistence.getPageByFilter(null, null, paging);
 ```
 
 ### Custom Persistence Methods
@@ -119,12 +101,11 @@ As mentioned above, developers can also implement custom persistent methods. Ins
 Below is an example of a custom persistent method.
 
 ```typescript
-public getOneByName(correlationId: string, name: string,
-    callback: (err: any, item: MyData) => void): void {
-        let item = _.find(this._items, (item) => item.name == name);
-        if (item != null) this._logger.trace(correlationId, "Found by %s", name);
-        else this._logger.trace(correlationId, "Cannot find by %s", name);
-        callback(null, item);
+public async getOneByName(correlationId: string, name: string): Promise<MyData> {
+    let item = _.find(this._items, (item) => item.name == name);
+    if (item != null) this._logger.trace(correlationId, "Found by %s", name);
+    else this._logger.trace(correlationId, "Cannot find by %s", name);
+    return item
 }
 ```
 
@@ -143,17 +124,19 @@ class MyMemoryPersistence extends IdentifiableMemoryPersistence<MyData, string> 
          };
     }
 
-    public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams, 
-        callback: (err: any, page: DataPage<MyData>) => void): void {
-            super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
+    public async getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
+        return await super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 
-    public getOneByName(correlationId: string, name: string,
-        callback: (err: any, item: MyData) => void): void {
-            let item = _.find(this._items, (item) => item.name == name);
+    public async getOneByName(correlationId: string, name: string): Promise<MyData> {
+
+        return new Promise((resolve, reject) => {
+            let item = this._items.find((item) => item.name == name);
             if (item != null) this._logger.trace(correlationId, "Found by %s", name);
             else this._logger.trace(correlationId, "Cannot find by %s", name);
-            callback(null, item);
+            resolve(item);
+        }
+        
     }
 }
 ```
@@ -162,28 +145,18 @@ A demonstration of how we can use our custom memory persistence is presented bel
 
 
 ```typescript
-public useMemoryPersistence(done) {
-        async.series([
-            // Create items
-            (callback) => {
-	    let persistence = new MyMemoryPersistence();
-                persistence.create("123", { id: "1", name: "ABC" }, null);
-            },
-            // Filter by name
-            (callback) => {
-                persistence.getPageByFilter(
-                    null,
-                    FilterParams.fromTuples(
-                       "name", "ABC"
-                    ),
-                    new PagingParams(0, 100, false),
-                    (err, page) => {
-                        callback();
-                    }
-                )
-            },
-        ], done);
-    }
+public async useMemoryPersistence(): Promise<void> { 
+    // Create items  
+	let persistence = new MyMemoryPersistence();
+            
+    let result = await persistence.create("123", { id: "1", name: "ABC" });
+    
+    // Filter by name
+    let page = await persistence.getPageByFilter(
+        null,
+        FilterParams.fromTuples("name", "ABC"),
+        new PagingParams(0, 100, false),
+    )
 }
 
 ```
@@ -193,22 +166,24 @@ public useMemoryPersistence(done) {
 The memory persistence component actually has one more trick up its sleeve: it can easily be extended to create a **FileMemoryPersistence**. The only thing you’ll need to add is the assignment of a **PersisterObject** in the **FileMemoryPersistence**’s constructor. The File persistence can be used for certain system test scenarios.
 
 ```typescript
-import { JsonFilePersister } from 'pip-services3-data-node';
-import { BeaconV1 } from '../data/version1/BeaconV1';
-import { MyMemoryPersistence } from './MyMemoryPersistence';
-import { ConfigParams } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-nodex';
 
-export class MyFilePersistence extends MyMemoryPersistence {
-    protected _persister: JsonFilePersister<BeaconV1>;
-    
-    constructor(path?: string) {
+import { JsonFilePersister } from '../../src/persistence/JsonFilePersister';
+import { MyMemoryPersistence } from './MyMemoryPersistence';
+import { MyData } from '../data/version1/MyData';
+
+export class MyDataFilePersistence extends MyMemoryPersistence {
+	protected _persister: JsonFilePersister<MyData>;
+
+    public constructor(path?: string) {
         super();
-        this._persister = new JsonFilePersister<BeaconV1>(path);
+
+        this._persister = new JsonFilePersister<MyData>(path);
         this._loader = this._persister;
         this._saver = this._persister;
     }
 
-    public configure(config: ConfigParams) {
+    public configure(config: ConfigParams): void {
         super.configure(config);
         this._persister.configure(config);
     }

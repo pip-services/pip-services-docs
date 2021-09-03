@@ -6,13 +6,13 @@ linkTitle: "Step 8. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-node"
 ---
 
-To run our microservice, we need to add just one last bit of code. In the bin folder, create a **run.js** file with the following:
+To run our microservice, we need to add just one last bit of code. In the bin folder, create a **main.js** file with the following:
 
-**/bin/run.js**
+**/bin/main.js**
 
 ```typescript
-let BeaconsProcess = require('../obj/src/container/BeaconsProcess').BeaconsProcess;
-‍
+const BeaconsProcess = require('../obj/src/containers/BeaconsProcess').BeaconsProcess;
+
 try {
     let proc = new BeaconsProcess();
     proc._configPath = "./config/config.yml";
@@ -20,8 +20,6 @@ try {
 } catch (ex) {
     console.error(ex);
 }
-
-
 ```
 
 In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
@@ -29,7 +27,7 @@ In the code above, all we’re doing is creating an instance of the container we
 To run the microservice, execute the following command from a terminal at the root of the project:
 
 ```bash
- node ./bin/run.js
+ node ./bin/main.js
 ```
 
 You should get a result similar to the one shown below.
@@ -43,7 +41,7 @@ Let’s use the following two commands to set our environment variable and start
 ```bash
 export MONGO_ENABLED=true
 
-node .\bin\run.js
+node .\bin\main.js
 ```
 
 Make sure that you have MongoDB running locally or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.

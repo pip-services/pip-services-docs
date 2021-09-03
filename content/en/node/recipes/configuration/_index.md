@@ -88,10 +88,9 @@ export class DataController implements IConfigurable {
 		this._max_page_size = config.getAsIntegerWithDefault('max_page_size', this._max_page_size);
    	}
 
-   	public getData(correlationId: string, filter: FilterParams, paging: PagingParams,
-   	    callback: (err: any, page: DataPage<BeaconV1>) => void): void {
-		    paging.take = Math.min(paging.take, this._max_page_size);    
-   	  // Get data using max page size constraint.
+   	public getData(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
+		paging.take = Math.min(paging.take, this._max_page_size);    
+   	  	// Get data using max page size constraint.
    	}
 }
 ```
@@ -158,8 +157,7 @@ Configuration parameters can be stored in microservice configurations, configura
 
 ```typescript
 interface IConfigReader {
-	readConfig(correlationId: string, parameters: ConfigParams, 
-        callback: (err: any, config: ConfigParams) => void): void;
+	readConfig(correlationId: string, parameters: ConfigParams): Promise<ConfigParams>;
 }
 
 ```
@@ -178,9 +176,8 @@ let configReader = new MemoryConfigReader();
 configReader.configure(config);
 
 let parameters = ConfigParams.fromValue(process.env);
-configReader.readConfig("123", parameters, (err, config) => {
-	// Result: connection.host=localhost;connection.port=8080
-});
+let result = await configReader.readConfig("123", parameters); 
+// Result: connection.host=localhost;connection.port=8080
 
 ```
 
@@ -195,9 +192,7 @@ The [JsonConfigReader](../../components/config/json_config_reader/) is a **Confi
 ```typescript
 let configReader = new JsonConfigReader("config.json");
 let parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
-configReader.readConfig("correlationId", parameters, (err, config) => {
-	// Result: key1=1234;key2=ABCD
-});
+let result = await configReader.readConfig("correlationId", parameters); // Result: key1=1234;key2=ABCD
 
 ```
 
@@ -213,9 +208,7 @@ key2: "ABCD"
 ```typescript
 let configReader = new YamlConfigReader("config.yml");
 let parameters = ConfigParams.fromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
-configReader.readConfig("correlationId", parameters, (err, config) => {
-   // Result: key1=1234;key2=ABCD
-});
+let result = await configReader.readConfig("correlationId", parameters); // Result: key1=1234;key2=ABCD
 ```
 
 

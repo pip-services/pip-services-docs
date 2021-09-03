@@ -41,18 +41,17 @@ The persistence component shall implement the following interface with a basic s
 
 ```typescript
 export interface IMyPersistence {
-  getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void;
+  getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>>;
     
-  getOneById(correlationId: string, id: string, callback: (err: any, item: MyObject) => void): void;
+  getOneById(correlationId: string, id: string): Promise<MyObject>;
     
-  getOneByKey(correlationId: string, key: string, callback: (err: any, item: MyObject) => void): void;
+  getOneByKey(correlationId: string, key: string): Promise<MyObject>;
     
-  create(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+  create(correlationId: string, item: MyObject): Promise<MyObject>;
     
-  update(correlationId: string, item: MyObject, callback?: (err: any, item: MyObject) => void): void;
+  update(correlationId: string, item: MyObject): Promise<MyObject>;
     
-  deleteById(correlationId: string, id: string, callback?: (err: any, item: MyObject) => void): void;
+  deleteById(correlationId: string, id: string): Promise<MyObject>;
 }
 ```
 
@@ -63,7 +62,7 @@ And implement a `getOneByKey` custom persistence method that doesn't exist in th
 ```typescript
 import { IdentifiableSqlitePersistence } from 'pip-services3-sqlite-nodex';
 
-export class MySqlitePersistence extends IdentifableSqlitePersistence {
+export class MySqlitePersistence extends IdentifableSqlitePersistence<MyObject, string> {
   public constructor() {
     super("myobjects");
     this.autoCreateObject("CREATE TABLE myobjects (id VARCHAR(32) PRIMARY KEY, key VARCHAR(50), value TEXT");
@@ -92,27 +91,29 @@ export class MySqlitePersistence extends IdentifableSqlitePersistence {
     return criteria.length > 0 ? criteria.join(" AND ") : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null, callback);
+  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
+    return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null);
   }  
   
-  public getOneByKey(correlationId: string, key: string,
-    callback: (err: any, item: MyObject) => void): void {
+  public getOneByKey(correlationId: string, key: string): Promise<MyObject> {
     
     let query = "SELECT * FROM " + this.quotedTableName() + " WHERE \"key\"=?";
     let params = [ key ];
 
-    this._client.get(query, params, (err, result) => {
-      err = err || null;
+    return return new Promise((resolve, reject) => {
+      this._client.get(query, params, (err, result) => {
+        err = err || null;
 
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
+        if (item == null)
+          this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
+        else
+          this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
 
-      item = this.convertToPublic(item);
-      callback(err, item);
+        if (err) reject(err);
+        
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
     });
   }
 
@@ -126,7 +127,7 @@ To access data fields you shall use `JSON_EXTRACT(data, '$.field')` expression.
 ```typescript
 import { IdentifiableJsonSqlitePersistence } from 'pip-services3-sqlite-nodex';
 
-export class MySqlitePersistence extends IdentifableJsonSqlitePersistence {
+export class MySqlitePersistence extends IdentifableJsonSqlitePersistence<MyObject, string> {
   public constructor() {
     super("myobjects");
     this.ensureTable("VARCHAR(32)", "JSON");
@@ -155,9 +156,8 @@ export class MySqlitePersistence extends IdentifableJsonSqlitePersistence {
     return criteria.length > 0 ? criteria.join(" AND ") : null;
   }
   
-  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-    callback: (err: any, page: DataPage<MyObject>) => void): void {
-    super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null, callback);
+  public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyObject>> {
+    return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "id", null);
   }  
   
   public getOneByKey(correlationId: string, key: string,
@@ -166,16 +166,20 @@ export class MySqlitePersistence extends IdentifableJsonSqlitePersistence {
     let query = "SELECT * FROM " + this.quotedTableName() + " WHERE JSON_EXTRACT(data, '$.key')=?";
     let params = [ key ];
 
-    this._client.get(query, params, (err, result) => {
-      err = err || null;
+    return return new Promise((resolve, reject) => {
+      this._client.get(query, params, (err, result) => {
+        err = err || null;
 
-      if (item == null)
-        this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
-      else
-        this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
+        if (item == null)
+          this._logger.trace(correlationId, "Nothing found from %s with key = %s", this._tableName, key);
+        else
+          this._logger.trace(correlationId, "Retrieved from %s with key = %s", this._tableName, key);
 
-      item = this.convertToPublic(item);
-      callback(err, item);
+        if (err) reject(err);
+
+        item = this.convertToPublic(item);
+        resolve(item);
+      });
     });
   }
 

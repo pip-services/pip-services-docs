@@ -66,8 +66,7 @@ export class BeaconsMockClientV1 implements IBeaconsClientV1 {
         };
     }
 
-    public getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<BeaconV1>) => void): void {
+    public async getBeacons(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<BeaconV1>> {
         let filterBeacons = this.composeFilter(filter);
         let beacons = _.filter(this._items, filterBeacons);
 
@@ -84,82 +83,68 @@ export class BeaconsMockClientV1 implements IBeaconsClientV1 {
             beacons = _.slice(beacons, skip);
         beacons = _.take(beacons, take);
 
-        let page = new DataPage<BeaconV1>(beacons, total);
-        callback(null, page);
+        return new DataPage<BeaconV1>(beacons, total);
     }
 
-    public getBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async getBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
         let beacons = this._items.filter((x) => { return x.id == beaconId; });
         let beacon = beacons.length > 0 ? beacons[0] : null;
 
-        callback(null, beacon);
+        return beacon;
     }
 
-    public getBeaconByUdi(correlationId: string, udi: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async getBeaconByUdi(correlationId: string, udi: string): Promise<BeaconV1> {
         let beacons = this._items.filter((x) => { return x.udi == udi; });
         let beacon = beacons.length > 0 ? beacons[0] : null;
 
-        callback(null, beacon);
+        return beacon;
     }
 
-    public calculatePosition(correlationId: string, siteId: string, udis: string[],
-        callback: (err: any, position: any) => void): void {
+    public async calculatePosition(correlationId: string, siteId: string, udis: string[]): Promise<BeaconV1> {
         let beacons: BeaconV1[];
         let position: any = null;
 
         if (udis == null || udis.length == 0) {
-            callback(null, null);
             return;
         }
 
-        async.series([
-            (callback) => {
-                this.getBeacons(
+        let page = await this.getBeacons(
                     correlationId,
                     FilterParams.fromTuples(
                         'site_id', siteId,
                         'udis', udis
                     ),
                     null,
-                    (err, page) => {
-                        beacons = page ? page.data : [];
-                        callback(err);
-                    }
                 );
-            },
-            (callback) => {
-                let lat = 0;
-                let lng = 0;
-                let count = 0;
+                
+        let beacons = page ? page.data : [];
 
-                for (let beacon of beacons) {
-                    if (beacon.center != null
-                        && beacon.center.type == 'Point'
-                        && _.isArray(beacon.center.coordinates)) {
-                        lng += beacon.center.coordinates[0];
-                        lat += beacon.center.coordinates[1];
-                        count += 1;
-                    }
-                }
+        let lat = 0;
+        let lng = 0;
+        let count = 0;
 
-                if (count > 0) {
-                    position = {
-                        type: 'Point',
-                        coordinates: [lng / count, lat / count]
-                    }
-                }
-
-                callback();
+        for (let beacon of beacons) {
+            if (beacon.center != null
+                && beacon.center.type == 'Point'
+                && _.isArray(beacon.center.coordinates)) {
+                lng += beacon.center.coordinates[0];
+                lat += beacon.center.coordinates[1];
+                count += 1;
             }
-        ], (err) => { callback(err, err == null ? position : null); });
+        }
+
+        if (count > 0) {
+            position = {
+                type: 'Point',
+                coordinates: [lng / count, lat / count]
+            }
+        }
+
+        return position
     }
 
-    public createBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async createBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
         if (beacon == null) {
-            if (callback) callback(null, null);
             return;
         }
 
@@ -168,34 +153,30 @@ export class BeaconsMockClientV1 implements IBeaconsClientV1 {
 
         this._items.push(beacon);
 
-        if (callback) callback(null, beacon)
+        return beacon
     }
 
-    public updateBeacon(correlationId: string, beacon: BeaconV1,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async updateBeacon(correlationId: string, beacon: BeaconV1): Promise<BeaconV1> {
         let index = this._items.map((x) => { return x.id; }).indexOf(beacon.id);
 
         if (index < 0) {
-            callback(null, null);
             return;
         }
 
         beacon = _.clone(beacon);
         this._items[index] = beacon;
-        if (callback) callback(null, beacon)
+        return beacon;
     }
 
-    public deleteBeaconById(correlationId: string, beaconId: string,
-        callback: (err: any, beacon: BeaconV1) => void): void {
+    public async deleteBeaconById(correlationId: string, beaconId: string): Promise<BeaconV1> {
         var index = this._items.map((x) => { return x.id; }).indexOf(beaconId);
         var item = this._items[index];
 
         if (index < 0) {
-            callback(null, null);
             return;
         }
         this._items.splice(index, 1);
-        if (callback) callback(null, item)
+        return item;
     }
 }
 ```
@@ -209,28 +190,20 @@ Now let’s test the client we’ve created. We’ll be using the set of tests t
 import { BeaconsMockClientV1 } from '../../src/version1/BeaconsMockClientV1';
 import { BeaconsClientV1Fixture } from './BeaconsClientV1Fixture';
 
-suite('BeaconsMockClientV1', () => {
-   
+suite("BeaconsMockClientV1", () => {
     let client: BeaconsMockClientV1;
     let fixture: BeaconsClientV1Fixture;
 
-    setup((done) => {
-    
+    setup(() => {
         client = new BeaconsMockClientV1();
         fixture = new BeaconsClientV1Fixture(client);
-        done();
+    });
+    
+    teardown(() => {
     });
 
-    teardown((done) => {
-        done();
-    });
-
-    test('CRUD Operations', (done) => {
-        fixture.testCrudOperations(done);
-    });
-
-    test('Calculate Positions', (done) => {
-        fixture.testCalculatePosition(done);
+    test("CRUD Operations", async () => {
+        await fixture.testCrudOperations();
     });
 });
 

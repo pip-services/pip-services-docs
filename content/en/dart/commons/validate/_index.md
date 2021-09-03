@@ -53,7 +53,7 @@ Validation rule to check that value is excluded from the list of constants.
 Schema to validate [FilterParams](../data/filter_params)
 
 #### [IncludedRule](included_rule)
-Validation rule to check that value is included into the list of constants.
+Validation rule to check that a value is included into the list of constants.
 
 #### [MapSchema](map_schema)
 Schema to validate maps.

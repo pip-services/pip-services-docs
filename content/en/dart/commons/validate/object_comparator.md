@@ -41,7 +41,7 @@ The operation can be performed over values of any type.
 
 - **value1**: dynamic - first argument to compare.
 - **operation**: String - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value2**: dynamic - the second argument to compare.
+- **value2**: dynamic - second argument to compare.
 - **returns**: bool - result of the comparison operation.
 
 #### isGreater
@@ -52,17 +52,17 @@ The operation can be performed over numbers or strings.
 
 - **value1**: dynamic - first value to compare
 - **value2**: dynamic - second value to compare
-- **returns**: bool - true if the first value is greater than second and false otherwise.
+- **returns**: bool - true if the first value is greater than the second one and false otherwise.
 
 #### isLess
-Checks if first value is less than the second one.
+Checks if the first value is less than the second one.
 The operation can be performed over numbers or strings.
 
 > `static` bool isLess(dynamic value1, dynamic value2)
 
 - **value1**: dynamic - first value to compare
 - **value2**: dynamic - second value to compare
-- **returns**: bool - true if the first value is less than second and false otherwise.
+- **returns**: bool - true if the first value is less than the second one and false otherwise.
 
 #### match
 Checks if a string matches a regular expression

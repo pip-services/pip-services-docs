@@ -29,7 +29,7 @@ The values may come from application command like arguments or environment varia
 ### Classes
 
 #### [ConfigReader](config_reader)
-Data object to store cached values with their keys used by [MemoryCache](../memory_cache)
+Data object to store cached values with their keys used by [MemoryCache](../cache/memory_cache)
 
 #### [DefaultConfigReaderFactory](default_config_reader_factory)
 Creates [IConfigReader](iconfig_reader) components by their descriptors.
@@ -40,7 +40,7 @@ Child classes add support for config files in their specific format
 like JSON, YAML or property files.
 
 #### [JsonConfigReader](json_config_reader)
-Config reader that reads configuration from JSON file.
+Config reader that reads configuration from a JSON file.
 
 The reader supports parameterization using Handlebar template engine.
 
@@ -49,7 +49,7 @@ The reader supports parameterization using Handlebar template engine.
 Config reader that stores configuration in memory.
 
 #### [YamlConfigReader](yaml_config_reader)
-Config reader that reads configuration from YAML file.
+Config reader that reads configuration from a YAML file.
 
 
 </div>

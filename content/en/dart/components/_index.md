@@ -34,8 +34,8 @@ The module contains the following packages:
 ### Use
 
 * Warning!
-Config package now not work with condition **{{#if var}} something {{/}}** in config files.
-Use **Mustache** syntax, for example **{{#var}} something {{/var}}**
+Ath present, the Config package is not working with condition **{{#if var}} something {{/}}** in config files.
+Pleae, use **Mustache** syntax, for example **{{#var}} something {{/var}}**
 
 
 Add this to your package's pubspec.yaml file:
@@ -91,7 +91,7 @@ class MyComponent implements IConfigurable, IReferenceable {
 }
 ```
 
-Example how to get connection parameters and credentials using resolvers.
+Example on how to get connection parameters and credentials using resolvers.
 The resolvers support "discovery_key" and "store_key" configuration parameters
 to retrieve configuration from discovery services and credential stores respectively.
 
@@ -140,7 +140,7 @@ class MyComponent implements IConfigurable, IReferenceable, IOpenable {
 }
 ```
 
-Example how to use caching and locking.
+Example on how to use caching and locking.
 Here we assume that references are passed externally.
 
 ```dart

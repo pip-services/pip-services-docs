@@ -94,8 +94,7 @@ export class MyMongoDbPersistence extends IdentifableMongoDbPersistence<MyObject
     return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, "_id", null);
   }  
   
-  public getOneByKey(correlationId: string, key: string,
-    callback: (err: any, item: MyObject) => void): void {
+  public getOneByKey(correlationId: string, key: string): Promise<MyObject> {
     
     let filter = { key: key };
 

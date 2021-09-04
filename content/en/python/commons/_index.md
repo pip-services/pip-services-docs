@@ -54,7 +54,7 @@ class MyComponentA(IConfigurable, IReferenceable, IOpenable):
     _opened = True
 
     def configure(self, config):
-        self._param1 = ConfigParams.get_as_string_with_default("param1", self._param1)
+        self._param1 = config.get_as_string_with_default("param1", self._param1)
         self._param2 = config.get_as_integer_with_default("param2", self._param2)
 
     def set_references(self, references):
@@ -70,7 +70,7 @@ class MyComponentA(IConfigurable, IReferenceable, IOpenable):
         print("MyComponentA has been opened.")
 
     def close(self, correlation_id):
-        self._opened = True
+        self._opened = False
         print("MyComponentA has been closed.")
 ```
 
@@ -95,5 +95,5 @@ my_component_A.set_references(References.from_tuples(
 
 # Open the component
 my_component_A.open("123")
-print("MyComponentA has been opened.")
+
 ```

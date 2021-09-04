@@ -34,7 +34,7 @@ Validates a given value against this rule.
 
 ### Examples
 ```python
-schema = new Schema().with_rule(IncludedRule(1, 2, 3))
+schema = Schema().with_rule(IncludedRule(1, 2, 3))
 
 schema.validate(2)      # Result: no errors
 schema.validate(10)     # Result: 10 must be one of 1, 2, 3

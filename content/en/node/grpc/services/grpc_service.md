@@ -197,14 +197,14 @@ class MyGrpcService extends GrpcService {
    private _controller: IMyController;
    ...
    public constructor() {
-      base('... path to proto ...', '.. service name ...');
+      super('... path to proto ...', '.. service name ...');
       this._dependencyResolver.put(
           "controller",
           new Descriptor("mygroup","controller","*","*","1.0")
       );
    }
    public setReferences(references: IReferences): void {
-      base.setReferences(references);
+      super.setReferences(references);
       this._controller = this._dependencyResolver.getRequired<IMyController>("controller");
    }
    public register(): void {
@@ -228,7 +228,7 @@ service.setReferences(References.fromTuples(
    new Descriptor("mygroup","controller","default","default","1.0"), controller
 ));
 
-service.open("123");
+await service.open("123");
 console.log("The GRPC service is running on port 8080");
 ```
 

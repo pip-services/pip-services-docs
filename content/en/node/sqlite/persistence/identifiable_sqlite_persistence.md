@@ -161,7 +161,7 @@ class MySqlitePersistence extends IdentifiableSqlitePersistence<MyData, string> 
     }
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
-        return base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 

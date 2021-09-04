@@ -343,7 +343,7 @@ Unsets (clears) previously set references to dependent components.
 ```typescript
 class MySqlitePersistence extends SqlitePersistence<MyData> {
   public constructor() {
-      base("mydata");
+      super("mydata");
   }
 
   public getByName(correlationId: string, name: string): Promise<MyData> {

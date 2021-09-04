@@ -110,7 +110,7 @@ Updates only few selected fields in a data item.
 ```typescript
 class MySqlServerPersistence extends IdentifiableSqlServerJsonPersistence<MyData, string> {
     public constructor() {
-        base("mydata");
+        super("mydata");
     }
 
     private composeFilter(filter: FilterParams): any {
@@ -124,7 +124,7 @@ class MySqlServerPersistence extends IdentifiableSqlServerJsonPersistence<MyData
 
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
-        return base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 

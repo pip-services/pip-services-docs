@@ -151,16 +151,18 @@ Sets references to dependent components.
 
 ```typescript
 class MyGrpcClient extends GrpcClient implements IMyClient {
-   ...
-   public getData(correlationId: string, id: string, 
-       callback: (err: any, result: MyData) => void): void {
+    ...
+    public getData(correlationId: string, id: string): Promise<MyData> {
    
-       let timing = this.instrument(correlationId, 'myclient.get_data');
-       this.call("get_data", correlationId, { id: id }, (err, result) => {
-           timing.endTiming();
-           callback(err, result);
-       });        
-   }
+        let timing = this.instrument(correlationId, 'myclient.get_data');
+        try {
+           return await this.call("get_data", correlationId, { id: id });
+        } catch (err) {
+            timing.endFailure(err);
+        } finally {
+            timing.endSuccess();
+        }
+    }       
    ...
 }
 
@@ -171,7 +173,5 @@ client.configure(ConfigParams.fromTuples(
     "connection.port", 8080
 ));
 
-client.getData("123", "1", (err, result) => {
-  ...
-});
+let result = await client.getData("123", "1", );
 ```

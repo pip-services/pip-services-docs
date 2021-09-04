@@ -54,7 +54,7 @@ Total amount of items in a request.
 
 ### Examples
 ```typescript
-page := await myDataClient.getDataByFilter(
+let page = await myDataClient.getDataByFilter(
     "123",
     FilterParams.fromTuples("completed": true),
     new TokenizedPagingParams(null, 100, true)

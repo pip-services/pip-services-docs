@@ -197,8 +197,9 @@ Updates only a few selected fields in a data item.
 ```typescript
 class MyCouchbasePersistence extends CouchbasePersistence<MyData, string> {
     public constructor() {
-        base("mybucket", "mydata", new MyDataCouchbaseSchema());
+        super("mybucket", "mydata", new MyDataCouchbaseSchema());
     }
+
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
         let criteria = [];
@@ -207,9 +208,10 @@ class MyCouchbasePersistence extends CouchbasePersistence<MyData, string> {
             criteria.push({ name: name });
         return criteria.length > 0 ? { $and: criteria } : null;
     }
+
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
-        return base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 

@@ -257,7 +257,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 ```typescript
 class MyMongoDbPersistence extends MongoDbPersistence<MyData> {
   public constructor() {
-      base("mydata");
+      super("mydata");
   }
   public async getByName(correlationId: string, name: string) {
     let criteria = { name: name };

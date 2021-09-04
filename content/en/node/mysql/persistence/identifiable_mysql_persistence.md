@@ -168,7 +168,7 @@ Updates only a few selected fields in a data item.
 ```typescript
 class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
     public constructor() {
-        base("mydata", new MyDataMySqlSchema());
+        super("mydata", new MyDataMySqlSchema());
     }
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
@@ -178,9 +178,8 @@ class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
             criteria.push({ name: name });
         return criteria.length > 0 ? { $and: criteria } : null;
     }
-    public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams,
-        callback: (err: any, page: DataPage<MyData>) => void): void {
-        base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null, callback);
+    public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 
@@ -190,21 +189,16 @@ persistence.configure(ConfigParams.fromTuples(
     "port", 27017
 ));
 
-persitence.open("123", (err) => {
-    ...
-});
+await persitence.open("123");
 
-persistence.create("123", { id: "1", name: "ABC" }, (err, item) => {
-    persistence.getPageByFilter(
-        "123",
-        FilterParams.fromTuples("name", "ABC"),
-        null,
-        (err, page) => {
-            console.log(page.data);          // Result: { id: "1", name: "ABC" }
-            persistence.deleteById("123", "1", (err, item) => {
-               ...
-            });
-        }
-    )
-});
+let item = await persistence.create("123", { id: "1", name: "ABC" });
+
+let page = await persistence.getPageByFilter(
+    "123",
+    FilterParams.fromTuples("name", "ABC"),
+    null,
+)
+
+console.log(page.data);     // Result: { id: "1", name: "ABC" }
+item = await persistence.deleteById("123", "1");
 ```

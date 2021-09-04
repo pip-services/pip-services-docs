@@ -116,17 +116,15 @@ queue.configure(ConfigParams.fromTuples(
   "connection.port", 1883
 ));
 
-queue.open("123", (err) => {
-    ...
-});
+await queue.open("123");
 
-queue.send("123", new MessageEnvelope(null, "mymessage", "ABC"));
-queue.receive("123", (err, message) => {
-    if (message != null) {
-       ...
-       queue.complete("123", message);
-    }
-});
+await queue.send("123", new MessageEnvelope(null, "mymessage", "ABC"));
+let message = await queue.receive("123");
+
+if (message != null) {
+   ...
+   await queue.complete("123", message);
+}
 ```
 
 

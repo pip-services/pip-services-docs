@@ -101,6 +101,6 @@ Converts a specified value into PagingParams object.
 let filter = FilterParams.fromTuples("type", "Type1");
 let paging = new PagingParams(0, 100);
     
-myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+let result = await myDataClient.getDataByFilter(filter, paging);
 
 ```

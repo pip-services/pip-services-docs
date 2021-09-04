@@ -166,7 +166,7 @@ Updates only a few selected fields in a data item.
 ```typescript
 class MyPostgresPersistence extends IdentifiablePostgresPersistence<MyData, string> {
     public constructor() {
-        base("mydata", new MyDataPostgresSchema());
+        super("mydata", new MyDataPostgresSchema());
     }
 
     private composeFilter(filter: FilterParams): any {
@@ -180,7 +180,7 @@ class MyPostgresPersistence extends IdentifiablePostgresPersistence<MyData, stri
 
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
-        return base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 

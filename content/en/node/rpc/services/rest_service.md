@@ -283,14 +283,14 @@ class MyRestService extends RestService {
    private _controller: IMyController;
    ...
    public constructor() {
-      base();
+      super();
       this._dependencyResolver.put(
           "controller",
           new Descriptor("mygroup","controller","*","*","1.0")
       );
    }
    public setReferences(references: IReferences): void {
-      base.setReferences(references);
+      super.setReferences(references);
       this._controller = this._dependencyResolver.getRequired<IMyController>("controller");
    }
    public register(): void {

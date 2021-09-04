@@ -73,7 +73,7 @@ Registers a commandable method in this objects GRPC server (service) by the give
 ```typescript
 class MyCommandableGrpcService extends CommandableGrpcService {
    public constructor() {
-      base();
+      super();
       this._dependencyResolver.put(
           "controller",
           new Descriptor("mygroup","controller","*","*","1.0")

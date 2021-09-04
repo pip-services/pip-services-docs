@@ -31,8 +31,10 @@ class MyMessageReceiver implements IMessageReceiver {
       console.log("Received message: " + envelop.getMessageAsString());
   }
 }
+
 let messageQueue = new MemoryMessageQueue();
 messageQueue.listen("123", new MyMessageReceiver());
+
 await messageQueue.open("123")
 await messageQueue.send("123", new MessageEnvelop(null, "mymessage", "ABC")); // Output in console: "ABC"
 ```

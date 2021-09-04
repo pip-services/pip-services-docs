@@ -341,18 +341,34 @@ Unsets (clears) previously set references to dependent components.
 ```typescript
 class MyMySqlPersistence extends MySqlPersistence<MyData> {
     public constructor() {
-        base("mydata");
+        super("mydata");
     }
 
-    public getByName(correlationId: string, name: string, callback: (err, item) => void): void {
+    public getByName(correlationId: string, name: string, callback: (err, item) => void): Promise<void> {
       let criteria = { name: name };
-      this._model.findOne(criteria, callback);
+      return new Promise((resolve, reject) => {
+        this._model.findOne(criteria, (err, result) => {
+            if (err != null) {
+                reject(err);
+                return;
+            }
+            resolve(result);
+            });
+        });
     }); 
 
-    public set(correlatonId: string, item: MyData, callback: (err) => void): void {
+    public set(correlatonId: string, item: MyData): Promise<MyData> {
       let criteria = { name: item.name };
       let options = { upsert: true, new: true };
-      this._model.findOneAndUpdate(criteria, item, options, callback);
+      return new Promise((resolve, reject) => {
+        this._model.findOneAndUpdate(criteria, item, options, (err, result) => {
+            if (err != null) {
+                reject(err);
+                return;
+            }
+            resolve(result);
+        });
+      });
     }
 }
 
@@ -362,13 +378,8 @@ persistence.configure(ConfigParams.fromTuples(
     "port", 27017
 ));
 
-persitence.open("123", (err) => {
-     ...
-});
-
-persistence.set("123", { name: "ABC" }, (err) => {
-    persistence.getByName("123", "ABC", (err, item) => {
-        console.log(item);                   // Result: { name: "ABC" }
-    });
-});
+await persitence.open("123",);
+let item = await persistence.set("123", { name: "ABC" });
+item = await persistence.getByName("123", "ABC");
+console.log(item);                   // Result: { name: "ABC" }
 ```

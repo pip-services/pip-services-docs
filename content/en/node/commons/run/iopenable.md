@@ -44,14 +44,14 @@ class MyPersistence implements IOpenable {
         return this._client != null;
     } 
     
-    public async open(correlationId: string): Promise\<void\> {
+    public async open(correlationId: string): Promise<void> {
         if (this.isOpen()) {
             return;
         }
         ...
     }
     
-    public async close(correlationId: string): Promise\<void\> {
+    public async close(correlationId: string): Promise<void> {
         if (this._client != null) {
             this._client.close();
             this._client = null;

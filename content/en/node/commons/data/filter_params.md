@@ -62,7 +62,7 @@ let filter = FilterParams.fromTuples(
 );
 let paging = new PagingParams(0, 100);
     
-myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+let result = await myDataClient.getDataByFilter(filter, paging);
 
 ```
 

@@ -165,7 +165,9 @@ Opens the component with given connection and credential parameters.
 ```typescript
 let queue = new MessageQueue("myqueue");
 await queue.send("123", new MessageEnvelop(null, "mymessage", "ABC"));
+
 let message = await queue.receive("123");
+
 if (message != null) {
    ...
    await queue.complete("123", message);

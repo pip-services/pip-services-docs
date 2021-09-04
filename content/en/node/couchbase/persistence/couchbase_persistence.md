@@ -292,8 +292,9 @@ Unsets (clears) previously set references to dependent components.
 ```typescript
 class MyCouchbasePersistence extends CouchbasePersistence<MyData> {
   public constructor() {
-    base("mydata", "mycollection", new MyDataCouchbaseSchema());
+    super("mydata", "mycollection", new MyDataCouchbaseSchema());
   }
+
   public getByName(correlationId: string, name: string): Promise<MyData> {
     let criteria = { name: name };
     return new Promise((resolve, reject) => {
@@ -303,6 +304,7 @@ class MyCouchbasePersistence extends CouchbasePersistence<MyData> {
        });
     });
   }
+
   public set(correlatonId: string, item: MyData, callback: (err) => void): void {
     let criteria = { name: item.name };
     let options = { upsert: true, new: true };

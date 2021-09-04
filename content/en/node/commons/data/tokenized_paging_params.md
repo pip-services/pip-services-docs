@@ -92,5 +92,5 @@ Converts a specified value into a TokenizedPagingParams object.
 let filter = FilterParams.fromTuples("type", "Type1");
 let paging = new TokenizedPagingParams(null, 100);
      
-myDataClient.getDataByFilter(filter, paging, (err, page) => {...});
+let page = await myDataClient.getDataByFilter(filter, paging);
 ```

@@ -13,7 +13,7 @@ description: >
 
 The IConfigReader interface is used in configuration readers that retrieve a configuration from various sources and make it availale for other components.
 
-Important points
+**Important points**
 
 - Some IConfigReader implementations may support configuration parameterization.
 - The parameterization allows to use configuration as a template and inject there dynamic values. The values may come from application command like arguments or environment variables.

@@ -82,10 +82,10 @@ See [PropertySchema](../property_schema)
 #### with_optional_property
 Adds a validation schema for an optional object property.
 
-> with_optional_property(name: str, typ: Any, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
+> with_optional_property(name: str, typ: Optional[Any] = None, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
 
 - **name**: str - a property name.
-- **typ**: Any - (optional) a property schema or type.
+- **typ**: Optional[Any] - (optional) a property schema or type.
 - **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
 - **returns**: [ObjectSchema]() - returns Schema with added optional property
 
@@ -105,10 +105,10 @@ See [PropertySchema](../property_schema)
 #### with_required_property
 Adds a validation schema for a required object property.
 
-> with_required_property(name: str, typ: Any, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
+> with_required_property(name: str, typ: Optional[Any] = None, *rules: [IValidationRule](../ivalidation_rule)): [ObjectSchema]()
 
 - **name**: str - a property name.
-- **typ**: Any - (optional) a property schema or type.
+- **typ**: Optional[Any] - (optional) a property schema or type.
 - **rules**: [IValidationRule](../ivalidation_rule) - (optional) a list of property validation rules.
 
 ### Examples

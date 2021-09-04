@@ -14,7 +14,7 @@ description: >
 
 The IOpenable interface allows you to create components with explicit opening and closing.
 
-Important points
+**Important points**
     
 - For components that perform opening on demand consider using [IClosable](../iclosable) interface instead.
 

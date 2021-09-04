@@ -13,7 +13,7 @@ description: >
 
 The Schema class provides a basic schema to validate values against a set of validation rules.
 
-Important points
+**Important points**
 
 - This schema is used as a basis for specific schemas to validate objects, project properties, arrays and maps.
 

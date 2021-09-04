@@ -95,5 +95,5 @@ my_component_A.set_references(References.from_tuples(
 
 # Open the component
 my_component_A.open("123")
-print("MyComponentA has been opened.")
+
 ```

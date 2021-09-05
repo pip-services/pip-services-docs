@@ -53,15 +53,15 @@ Create a folder for the project and within it, add a requirements.txt file with 
 
 ```json
 {
- "name": "hello-world",
- "version": "1.0.0",
+  "name": "hello-world",
+  "version": "1.0.0",
   "dependencies": {
-    "pip-services-commons-node": "^3.0.*",
-    "pip-services-components-node": "^3.0.*",
-    "pip-services-container-node": "3.0.*",
-    "pip-services-data-node": "^3.0.*",
-    "pip-services-rpc-node": "^3.0.*"  
- }
+    "pip-services3-commons-nodex": "^1.0.*",
+    "pip-services3-components-nodex": "^1.0.*",
+    "pip-services3-container-nodex": "^1.0.*",
+    "pip-services3-data-nodex": "^1.0.*",
+    "pip-services3-rpc-nodex": "^1.0.*"
+  }
 }
 ```
 

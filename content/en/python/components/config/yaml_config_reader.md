@@ -31,20 +31,20 @@ Creates a new instance of the config reader.
 ### Instance methods
 
 
-#### _read_config
+#### read_config_
 Reads a configuration and parameterizes it with given values.
 
-> _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> read_config_(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or None to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
 
-#### _read_object
+#### read_object_
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> _read_object(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
+> read_object_(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): Any
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
@@ -83,7 +83,7 @@ key2: "{{KEY2_VALUE}}"
 ```python
 configReader = YamlConfigReader("config.yml")
 parameters = ConfigParams.from_tuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
-configReader._read_config("123", parameters)
+configReader.read_config_("123", parameters)
 ```
 
 ### See also

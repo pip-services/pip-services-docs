@@ -49,10 +49,10 @@ Registers a component using a factory method.
 #### register_as_type
 Registers a component using its type (a constructor function).
 
-> register_as_type(locator: Any, object_factory: Any)
+> register_as_type(locator: Any, component_type: Any)
 
 - **locator**: Any - a locator to identify component to be created.
-- **object_factory**: Any - a component type.
+- **component_type**: Any - a component type.
 
 ### Examples
 

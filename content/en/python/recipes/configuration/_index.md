@@ -156,7 +156,7 @@ Configuration parameters can be stored in microservice configurations, configura
 ```python
 class IConfigReader(ABC):
 
-    def _read_config(self, correlation_id: Optional[str], parameters: ConfigParams) -> ConfigParams:
+    def read_config_(self, correlation_id: Optional[str], parameters: ConfigParams) -> ConfigParams:
         raise NotImplementedError('Method from interface definition')
 
 ```
@@ -188,7 +188,7 @@ The [JsonConfigReader](../../components/config/json_config_reader/) is a **Confi
 ```python
 configReader = JsonConfigReader("config.json")
 parameters = ConfigParams.from_tuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
-configReader._read_config("123", parameters)    # Result: key1=1234;key2=ABCD
+configReader.read_config_("123", parameters)    # Result: key1=1234;key2=ABCD
 
 ```
 
@@ -204,7 +204,7 @@ key2: "ABCD"
 ```python
 configReader = YamlConfigReader("config.yml")
 parameters = ConfigParams.from_tuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
-configReader._read_config("123", parameters)    # Result: key1=1234;key2=ABCD
+configReader.read_config_("123", parameters)    # Result: key1=1234;key2=ABCD
 ```
 
 

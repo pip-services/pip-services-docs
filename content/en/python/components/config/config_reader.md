@@ -39,10 +39,10 @@ Parameterized configuration template given as string with dynamic parameters.
 
 ### Abstract methods
 
-#### _read_config
+#### read_config_
 Reads configuration and parameterizes it with given values.
 
-> `abstractmethod` _read_config(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
+> `abstractmethod` read_config_(correlation_id: Optional[str], parameters: [ConfigParams](../../../commons/config/config_params)): [ConfigParams](../../../commons/config/config_params)
 
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters of the configuration or None to skip parameterization.

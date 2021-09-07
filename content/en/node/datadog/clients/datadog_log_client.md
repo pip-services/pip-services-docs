@@ -44,7 +44,7 @@ Opens the component.
 #### sendLogs
 Sends log messages.
 
-> `public` sendLogs(correlationId: string, messages: DataDogLogMessage[]): Promise\<void\>
+> `public` sendLogs(correlationId: string, messages: [DataDogLogMessage[]](../datadog_log_message)): Promise\<void\>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messages**: [DataDogLogMessage[]](../datadog_log_message) - messages to send.

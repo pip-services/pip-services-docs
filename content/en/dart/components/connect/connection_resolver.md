@@ -12,14 +12,14 @@ description: >
 
 The ConnectionResolver class is used to retrieve component connections.
 
-Important points
+**Important points**
 
 - If the connections are configured to be retrieved from [IDiscovery](../idiscovery), the connection resolver will automatically locate [IDiscovery](../idiscovery) in component references and retrieve the connections from there using the discovery_key parameter.
 
 #### Configuration parameters
 
 **connection**:  
-- **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../idiscovery)
 - **...** : other connection parameters
 
 **connections**:  alternative to connection
@@ -35,18 +35,18 @@ Important points
 
 
 ### Constructors
-Creates a new instance of connection resolver.
+Creates a new instance of the class.
 
 > ConnectionResolver([[ConfigParams](../../../commons/config/config_params) config, [IReferences](../../../commons/refer/ireferences) references])
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
-- **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
+- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component's configuration parameters
+- **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component's references
 
 
 ### Instance methods
 
 #### add
-Adds a new connection to component connections
+Adds a new connection to the object.
 
 > void add([ConnectionParams](../connection_params) connection)
 
@@ -54,7 +54,7 @@ Adds a new connection to component connections
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 > void configure([ConfigParams](../../../commons/config/config_params) config)
 
@@ -62,13 +62,13 @@ Configures component by passing configuration parameters.
 
 
 #### getAll
-Gets all connections configured in component configuration.
+Gets all configured connections.
 Redirect to Discovery services is not done at this point.
 If you need fully fleshed connection use **resolve** method instead.
 
 > List<[ConnectionParams](../connection_params)> getAll()
 
-- **returns**: List<[ConnectionParams](../connection_params) - a list with connection parameters
+- **returns**: List<[ConnectionParams](../connection_params) - list with connection parameters
 
 
 #### register
@@ -77,8 +77,8 @@ This method can be used for dynamic service discovery.
 
 > Future\<[ConnectionParams](../connection_params)\> register(String correlationId, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **connection**: Future\<[ConnectionParams](../connection_params)\> - a connection to register.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **connection**: Future\<[ConnectionParams](../connection_params)\> - connection to register.
 - **returns**: Future\<[ConnectionParams](../connection_params)\> - Future that receives registered connection or throws error.
 
 
@@ -88,18 +88,18 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 
 > Future<[ConnectionParams](../connection_params)> resolve(String correlationId)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
 
 
 #### resolveAll
-Resolves all component connection. If connections are configured to be retrieved
+Resolves all the component's connections. If the connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
 > Future\<List\<[ConnectionParams](../connection_params)\>\> resolveAll(String correlationId)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **returns**: Future\<List\<[ConnectionParams](../connection_params)\>\> - a list of resolved connections.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **returns**: Future\<List\<[ConnectionParams](../connection_params)\>\> - list of resolved connections.
 
 
 #### setReferences
@@ -107,7 +107,7 @@ Sets references to dependent components.
 
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 ### Examples

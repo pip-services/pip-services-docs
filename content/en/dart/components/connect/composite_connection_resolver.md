@@ -17,16 +17,16 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 #### Configuration parameters
 
 **connection(s)**:
-  - **discovery_key**: (optional) a key to retrieve the connection from [IDiscovery](../idiscovery)
+  - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../idiscovery)
   - **protocol**: communication protocol
   - **host**: host name or IP address
   - **port**: port number
   - **uri**: resource URI or connection string with all parameters in it
   
 **credential(s)**:
-  - **store_key**: (optional) a key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
-  - **username**: user name
-  - **password**: user password
+  - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../auth/icredential_store)
+  - **username**: username
+  - **password**: user's password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../idiscovery) services to resolve connections
@@ -38,31 +38,31 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 <span class="hide-title-link">
 
 #### _options
-The connection options
+Connection options
 >  **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _connectionResolver
-The connections resolver.
+Connections resolver.
 >  **_connectionResolver**: [ConnectionResolver](../connection_resolver)
 
 #### _credentialResolver
-The credentials resolver.
+Credentials resolver.
 >  **_credentialResolver**: [CredentialResolver](../../auth/credential_resolver)
 
 #### _clusterSupported
-The cluster support (multiple connections)
+Cluster support (multiple connections)
 >  **_clusterSupported**: bool
 
 #### _defaultProtocol
-The default protocol
+Default protocol
 >  **_defaultProtocol**: String
 
 #### _defaultPort
-The default port
+Default port
 >  **_defaultPort**: int
 
 #### _supported_protocols
-The list of supported protocols
+List of supported protocols
 >  **_supportedProtocols**: List\<String\>
 
 
@@ -71,11 +71,11 @@ The list of supported protocols
 ### Instance methods
 
 #### compose
-Composes Composite connection options from connection and credential parameters.
+Composes composite connection options from connection and credential parameters.
 
 > [ConfigParams](../../../commons/config/config_params) compose(correlationId: String, List<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
 - **connections**: List<[ConnectionParams](../connection_params)> - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
@@ -94,7 +94,7 @@ A composite of several merger options
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)
@@ -150,7 +150,7 @@ Resolves connection options from connection and credential parameters.
 
 >  Future<[ConfigParams](../../../commons/config/config_params)> resolve(String correlationId)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - resolved options or error
 
 
@@ -170,7 +170,7 @@ This method can be overriden in child classes.
 
 > void validateConnection(String correlationId, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
 
 
@@ -180,5 +180,5 @@ This method can be overriden in child classes.
 
 > void validateCredential(String correlationId, [CredentialParams](../../auth/credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

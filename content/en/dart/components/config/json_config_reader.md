@@ -15,9 +15,9 @@ description: >
 
 The JsonConfigReader class allows you to create a config reader that reads a configuration from a JSON file.
 
-Important points
+**Important points**
 
-- The reader supports parameterization using Handlebar template engine.
+- The reader supports parameterization using the Handlebar template engine.
 
 #### Configuration parameters
 
@@ -53,7 +53,7 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 `@override`
 > dynamic readObject(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: dynamic - a JSON object with configuration.
 
@@ -65,7 +65,7 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **path**: String - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
@@ -76,10 +76,10 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 
 > `static` dynamic readObject_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
-- **path**: String - a path to configuration file.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: dynamic - a JSON object with configuration.
+- **returns**: dynamic - JSON object with configuration.
 
 ### Examples
 

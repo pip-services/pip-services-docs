@@ -26,5 +26,5 @@ Reads configuration and parameterizes it with given values.
 > Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String correlationId, ConfigParams parameters)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration or null to skip parameterization.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.

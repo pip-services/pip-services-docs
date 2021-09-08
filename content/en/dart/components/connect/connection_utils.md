@@ -21,12 +21,12 @@ The result URI will be in the following form:
 > `static` String composeUri([ConfigParams](../../../commons/config/config_params) options, String defaultProtocol, int defaultPort) 
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
-- **defaultProtocol**: String - a default protocol
-- **defaultPort**: int - a default port
-- **returns**: String - a composed URI
+- **defaultProtocol**: String - default protocol
+- **defaultPort**: int - default port
+- **returns**: String - composed URI
 
 #### concat
-Concatinates two options by combining duplicated properties into comma-separated list
+Concatinates two options by combining duplicated properties into a comma-separated list
 
 > `static` [ConfigParams](../../../commons/config/config_params) concat([ConfigParams](../../../commons/config/config_params) options1, [ConfigParams](../../../commons/config/config_params) options2, [List\<String\> keys])
 
@@ -42,8 +42,8 @@ Excludes specified keys from the config parameters.
 > `static` [ConfigParams](../../../commons/config/config_params) exclude([ConfigParams](../../../commons/config/config_params) options, List\<String\> keys)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be processed.
-- **keys**: List\<String\> - a list of keys to be excluded.
-- **returns**: [ConfigParams](../../../commons/config/config_params) - a processed config parameters.
+- **keys**: List\<String\> - ist of keys to be excluded.
+- **returns**: [ConfigParams](../../../commons/config/config_params) - processed config parameters.
 
 
 #### include
@@ -52,8 +52,8 @@ Includes specified keys from the config parameters.
 > `static` [ConfigParams](../../../commons/config/config_params) include([ConfigParams](../../../commons/config/config_params) options, List\<String\> keys)
 
 - **options**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be processed.
-- **keys**: List\<String\> - a list of keys to be included.
-- **returns**: [ConfigParams](../../../commons/config/config_params) - a processed config parameters.
+- **keys**: List\<String\> - list of keys to be included.
+- **returns**: [ConfigParams](../../../commons/config/config_params) - processed config parameters.
 
 
 #### parseUri
@@ -63,7 +63,7 @@ The URI shall be in the following form:
 
 > `static` [ConfigParams](../../../commons/config/config_params) parseUri(String uri, String defaultProtocol, String defaultPort)
 
-- **uri**: String - the URI to be parsed
-- **defaultProtocol**: String - a default protocol
-- **defaultPort**: String - a default port
-- **returns**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters with URI elements
+- **uri**: String - URI to be parsed
+- **defaultProtocol**: String - default protocol
+- **defaultPort**: String - default port
+- **returns**: [ConfigParams](../../../commons/config/config_params) - configuration parameters with URI elements

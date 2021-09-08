@@ -12,17 +12,17 @@ description: >
 
 The Counter class allows you to create data objects used to store the measurements of performance counters.
 
-Important points
+**Important points**
 
 - This object is used by [CachedCounters](../cached_counters) to store counters.
 
 ### Constructors
-Creates a instance of the data object.
+Creates an instance of the data object.
 
 > Counter(String name, [CounterType](../counter_type) type)
 
-- **name**: string - a counter name.
-- **type**: [CounterType](../counter_type) - a counter type.
+- **name**: string - counter name.
+- **type**: [CounterType](../counter_type) - counter type.
 
 
 ### Fields
@@ -30,35 +30,35 @@ Creates a instance of the data object.
 <span class="hide-title-link">
 
 #### last
-The last recorded value
+Last recorded value
 > **last**: int
 
 #### count
-The total count
+Total count
 > **count**: int
 
 #### min
-The minimum value
+Minimum value
 > **min**: int
 
 #### max
-The maximum value
+Maximum value
 > **max**: int
 
 #### average
-The average value
+Average value
 > **average**: int
 
 #### time
-The recorded timestamp
+Recorded timestamp
 > **time**: DateTime
 
 #### name
-The counter's unique name
+Counter's unique name
 > **name**: String
 
 #### type
-The counter type that defines the measurement algorithm
+Counter type that defines the measurement algorithm
 > **type**: [CounterType](../counter_type)
 
 </span>

@@ -14,7 +14,7 @@ description: >
 
 **Important information**
 - This package is useful for various logging functions where it is necessary to know things like: what source we are logging from, what is 
-    the process name, or what the process is/does. 
+    the name of the process, or what the process is/does. 
 
 <div class="module-body"> 
 

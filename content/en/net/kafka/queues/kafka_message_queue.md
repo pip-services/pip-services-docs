@@ -106,8 +106,6 @@ This method is usually used to return a message which could not be processed at 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
 or/and sent to the dead letter queue.
 
-- Important: This method is not supported by Kafka.
-
 > `public override` async Task AbandonAsync([MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
@@ -128,8 +126,6 @@ Closes a component and frees used resources.
 #### CompleteAsync
 Permanently removes a message from the queue.
 This method is usually used to remove the message after successful processing.
-
-- Important: This method is not supported by Kafka.
 
 > `public override` Task CompleteAsync([MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
@@ -220,8 +216,6 @@ If there are no messages available in the queue, it returns null.
 
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue, it returns an empty list.
-
-- Important: This method is not supported by Kafka.
 
 
 #### ReadMessageCount!

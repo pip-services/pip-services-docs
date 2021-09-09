@@ -129,8 +129,6 @@ This method is usually used to return a message which could not be processed at 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed permanently
 or/and sent to the dead letter queue.
 
-- Important: This method is not supported by Kafka.
-
 > (c [*KafkaMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
@@ -156,8 +154,6 @@ Closes a component and frees used resources.
 #### Complete
 Permanently removes a message from the queue.
 This method is usually used to remove the message after successful processing.
-
-- Important: This method is not supported by Kafka.
 
 > (c [*KafkaMessageQueue]()) Complete(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
@@ -258,8 +254,6 @@ If there are no messages available in the queue, it returns nil.
 #### PeekBatch
 Peeks multiple incoming messages from the queue without removing them.
 If there are no messages available in the queue, it returns an empty list.
-
-- Important: This method is not supported by Kafka.
 
 > (c [*KafkaMessageQueue]()) PeekBatch(correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 

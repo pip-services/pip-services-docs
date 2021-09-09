@@ -14,7 +14,7 @@ description: >
 
 The Container class allows you to create an inversion of control (IoC) container that creates components and manages their lifecycle.
 
-Important points
+**Important points**
 
 - The container is driven by configuration, which is usually stored in a JSON or YAML file.
 - The configuration contains a list of components identified by their type or locator, followed by their configuration.

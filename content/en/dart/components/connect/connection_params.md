@@ -14,7 +14,7 @@ description: >
 
 The ConnectionParams class allows you to create connection parameters used to connect to external services.
 
- Important points
+ **Important points**
     
  - Usually, connection parameters are used together with credential parameters, but are stored
     separately from these more protected and sensitive values.
@@ -31,11 +31,11 @@ In addition to standard parameters ConnectionParams may contain any number of cu
 
 
 ### Constructors
-Creates a new connection parameters and fills it with values.
+Creates a new ConnectionParams object and fills it with values.
 
 > ConnectionParams([values])
 
-- **values**: dynamic - (optional) an object to be converted into key-value pairs to initialize this connection.
+- **values**: dynamic - (optional) object to be converted into key-value pairs to initialize this connection.
 
 ### Instance methods
 
@@ -53,7 +53,7 @@ Gets the host name or IP address.
 
 > String getHost()
 
-- **returns**: String - the host name or IP address.
+- **returns**: String - host name or IP address.
 
 
 #### getPort
@@ -61,7 +61,7 @@ Gets the port number.
 
 > int getPort()
 
-- **returns**: int - the port number.
+- **returns**: int - port number.
 
 
 #### getPortWithDefault
@@ -70,24 +70,24 @@ Gets the port number with default value.
 
 > int getPortWithDefault(int defaultPort)
 
-- **defaultPort**: int - a default port number.
-- **returns**: int - the port number.
+- **defaultPort**: int - default port number.
+- **returns**: int - port number.
 
 #### getProtocol
 Gets the connection protocol.
 
 > String getProtocol([String defaultValue])
 
-- **defaultValue**: String - (optional) the default protocol
-- **returns**: String - the connection protocol or the default value if it's not set.
+- **defaultValue**: String - (optional) default protocol
+- **returns**: String - connection protocol or default value if it's not set.
 
 #### getProtocolWithDefault
 Gets the connection protocol with default value.
 
 > String getProtocolWithDefault(String defaultValue)
 
-- **defaultValue**: String - (optional) the default protocol
-- **returns**: String - the connection protocol or the default value if it's not set.
+- **defaultValue**: String - (optional) default protocol
+- **returns**: String - connection protocol or the default value if it's not set.
 
 
 #### getUri
@@ -95,7 +95,7 @@ Gets the resource URI or connection string. Usually it includes all connection p
 
 > String getUri()
 
-- **returns**: String - the resource URI or connection string.
+- **returns**: String - resource URI or connection string.
 
 
 #### setDiscoveryKey
@@ -103,7 +103,7 @@ Sets the key to retrieve these parameters from DiscoveryService.
 
 > void setDiscoveryKey(String value)
 
-- **value**: String - a new key to retrieve connection.
+- **value**: String - new key to a retrieve connection.
 
 
 #### setHost
@@ -111,7 +111,7 @@ Sets the host name or IP address.
 
 > void setHost(String value)
 
-- **value**: String - a new host name or IP address.
+- **value**: String - new host name or IP address.
 
 
 #### setPort
@@ -119,7 +119,7 @@ Sets the port number.
 
 > void setPort(int value)
 
-- **value**: int - a new port number.
+- **value**: int - new port number.
 
 
 #### setProtocol
@@ -127,7 +127,7 @@ Sets the connection protocol.
 
 > void setProtocol(String value)
 
-- **value**: String - a new connection protocol.
+- **value**: String - new connection protocol.
 
 
 #### setUri
@@ -135,7 +135,7 @@ Sets the resource URI or connection string.
 
 > void setUri(String value)
 
-- **value**: String - a new resource URI or connection string.
+- **value**: String - new resource URI or connection string.
 
 
 #### useDiscovery
@@ -144,7 +144,7 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 
 > bool useDiscovery()
 
-- **returns**: bool - true if connection shall be retrieved from DiscoveryService
+- **returns**: bool - true if the connection shall be retrieved from DiscoveryService
 
 ### Static methods
 
@@ -156,7 +156,7 @@ then it returns only the first connection element.
 > `static` List<[ConnectionParams]()> manyFromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
-- **returns**: List<[ConnectionParams]()> - the generated ConnectionParams object.
+- **returns**: List<[ConnectionParams]()> - generated ConnectionParams object.
 
 
 #### fromString
@@ -164,10 +164,10 @@ Creates a new ConnectionParams object filled with key-value pairs serialized as 
 
 > `static` [ConnectionParams]() fromString(String line)
 
-- **line**: String - a string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
+- **line**: String - string with serialized key-value pairs as **"key1=value1;key2=value2;..."**
 Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 
-- **returns**: [ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [ConnectionParams]() - new ConnectionParams object.
 
 
 #### fromTuples
@@ -176,9 +176,9 @@ Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
 > `static` [ConnectionParams]() fromTuples(List\<dynamic\> tuples)
 
-- **tuples**: List\<dynamic\> - the tuples to fill a new ConnectionParams object.
+- **tuples**: List\<dynamic\> - tuples to fill a new ConnectionParams object.
 
-- **returns**: [ConnectionParams]() - a new ConnectionParams object.
+- **returns**: [ConnectionParams]() - new ConnectionParams object.
 
 
 #### manyFromConfig
@@ -188,9 +188,9 @@ then it returns a list with only one ConnectionParams.
 
 > `static` List<[ConnectionParams]()> manyFromConfig([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters to retrieve connections
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to retrieve connections
 
-- **returns**: List<[ConnectionParams]()> - a list of retrieved ConnectionParams
+- **returns**: List<[ConnectionParams]()> - list of retrieved ConnectionParams
 
 ### Examples
 

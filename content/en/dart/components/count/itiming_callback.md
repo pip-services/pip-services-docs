@@ -14,10 +14,10 @@ The ITimingCallback interface defines the method used for a callback to end the 
 ### Instance methods
 
 #### endTiming
-Ends measurement of execution elapsed time and updates specified counter.
+Ends measurement of execution elapsed time and updates a specified counter.
 See also [Timing.endTiming](../timing/#endtiming)
 
 > void endTiming(String name, int elapsed)
 
-- **name**: String - a counter name
+- **name**: String - counter name
 - **elapsed**: int - execution elapsed time in milliseconds to update the counter.

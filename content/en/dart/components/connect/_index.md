@@ -7,7 +7,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-components-dart"
 description: >
     
 
-    This package contains interfaces and classes used to define connection parameters
+    This package contains interfaces and classes used to define connection parameters.
     
     
 ---

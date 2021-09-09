@@ -47,9 +47,9 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 > dynamic readObject(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: dynamic - a YAML object with a configuration.
+- **returns**: dynamic - YAML object with a configuration.
 
 ### Static methods
 
@@ -58,8 +58,8 @@ Reads a configuration from a file, parameterizes it with given values and return
 
 > `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace the execution through a call chain.
-- **path**: String - a path to configuration file.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
 
@@ -69,10 +69,10 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 
 > `static` dynamic readObject_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace the execution through a call chain.
-- **path**: String - a path to configuration file.
+- **correlationId**: String - (optional) transaction id used to trace the execution through the call chain.
+- **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: dynamic - a YAML object containing a configuration.
+- **returns**: dynamic - YAML object containing a configuration.
 
 ### Examples
 

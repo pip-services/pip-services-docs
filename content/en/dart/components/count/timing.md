@@ -17,14 +17,14 @@ Creates a new instance of the timing callback object.
 
 > Timing([String counter, ITimingCallback callback])
 
-- **counter**: string - an associated counter name
-- **callback**: [ITimingCallback](../itiming_callback) - a callback that shall be called when end_timing is called.
+- **counter**: string - associated counter name
+- **callback**: [ITimingCallback](../itiming_callback) - callback that shall be called when end_timing is called.
 
 
 ### Instance methods
 
 #### endTiming
-Ends timing of an execution block, calculates elapsed time and updates the associated counter.
+Ends the timing of an execution block, calculates the elapsed time and updates the associated counter.
 
 > void endTiming()
 

@@ -16,12 +16,12 @@ The IDiscovery interface is used to create discovery services which are used to 
 #### register
 Registers connection parameters into the discovery service.
 
-> Future<[ConnectionParams](../[ConnectionParams](../connection_params))> register(String correlationId, String key, [ConnectionParams](../connection_params) connection)
+> Future<[ConnectionParams](../connection_params)> register(String correlationId, String key, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a key to uniquely identify the connection parameters.
-- **connection**: [ConnectionParams](../connection_params) - a connection to be registered.
-- **returns**: Future<[ConnectionParams](../connection_params)> - the registered connection parameters.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - key to uniquely identify the connection parameters.
+- **connection**: [ConnectionParams](../connection_params) - connection to be registered.
+- **returns**: Future<[ConnectionParams](../connection_params)> - registered connection parameters.
 
 
 #### resolveAll
@@ -29,9 +29,9 @@ Resolves all connection parameters by their key.
 
 > Future\<List\<[ConnectionParams](../connection_params)\>\> resolveAll(String correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a key to uniquely identify the connections.
-- **returns**: Future\<List\<[ConnectionParams](../connection_params)\>\> - a list with resolved connections.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - key to uniquely identify the connections.
+- **returns**: Future\<List\<[ConnectionParams](../connection_params)\>\> - list with resolved connections.
 
 
 #### resolveOne
@@ -39,6 +39,6 @@ Resolves a single connection parameters by its key.
 
 > Future<[ConnectionParams](../connection_params)> resolveOne(String correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
-- **key**: String - a key to uniquely identify the connection.
-- **returns**: Future<[ConnectionParams](../connection_params)> - a resolved connection.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **key**: String - key to uniquely identify the connection.
+- **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection.

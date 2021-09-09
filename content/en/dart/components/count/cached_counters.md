@@ -16,7 +16,7 @@ description: >
 
 The CachedCounters class allows you to create performace counters that measure and store those values in memory.
 
-Important points
+**Important points**
 
 - Child classes can implement saving of the counters into various different destinations.
 
@@ -74,8 +74,8 @@ It returns [Timing](../timing) object which has to be called at
 
 > [Timing](../timing) beginTiming(String name)
 
-- **name**: String - a counter name of Interval type.
-- **returns**: [Timing](../timing) - a callback object to end timing.
+- **name**: String - counter name of Interval type.
+- **returns**: [Timing](../timing) - callback object to end timing.
 
 
 #### clear
@@ -83,7 +83,7 @@ Clears (resets) a counter specified by its name.
 
 > void clear(String name)
 
-- **name**: String - a counter name to clear.
+- **name**: String - name of counter to clear.
 
 
 #### clearAll
@@ -108,12 +108,12 @@ Dumps (saves) the current values of counters.
 
 
 #### endTiming
-Ends measurement of execution elapsed time and updates specified counter.
+Ends measurement of execution elapsed time and updates a specified counter.
 
 `@override`
 > void endTiming(String name, int elapsed)
 
-- **name**: String - a counter name
+- **name**: String - counter's name
 - **elapsed**: int - execution elapsed time in milliseconds to update the counter.
 
 
@@ -124,9 +124,9 @@ it creates a new one.
 
 > [Counter](../counter) get(String name, [CounterType](../counter_type) type)
 
-- **name**: String - a counter name to retrieve.
-- **typ**: [CounterType](../counter_type) - a counter type.
-- **returns**: [Counter](../counter) - an existing or newly created counter of the specified type.
+- **name**: String - name of counter to retrieve.
+- **type**: [CounterType](../counter_type) - counter type.
+- **returns**: [Counter](../counter) - existing or newly created counter of the specified type.
 
 
 #### getAll
@@ -134,7 +134,7 @@ Gets all captured counters.
 
 > List<[Counter](../counter)> getAll()
 
-- **returns**: List<[Counter](../counter)> - a list with counters.
+- **returns**: List<[Counter](../counter)> - list with counters.
 
 
 #### getInterval
@@ -142,17 +142,17 @@ Gets the counters dump/save interval.
 
 > int getInterval()
 
-- **returns**: int - the interval in milliseconds.
+- **returns**: int - interval in milliseconds.
 
 
 #### increment
-Increments counter by given value.
+Increments a counter by given value.
 
 `@override`
 > void increment(String name, int value)
 
-- **name**: String - a counter name of Increment type.
-- **value**: int - a value to add to the counter.
+- **name**: String - counter name of Increment type.
+- **value**: int - value to add to the counter.
 
 
 #### incrementOne
@@ -161,7 +161,7 @@ Increments counter by 1.
 `@override`
 > void incrementOne(String name)
 
-- **name**: String - a counter name of Increment type.
+- **name**: String - counter name of Increment type.
 
 
 #### last
@@ -171,8 +171,8 @@ Usually this method is used by metrics calculated externally.
 `@override`
 > void last(String name, int value)
 
-- **name**: String - a counter name of Last type.
-- **value**: int - a last value to record.
+- **name**: String - counter name of Last type.
+- **value**: int - last value to record.
 
 #### save
 Saves the current counters measurements.
@@ -187,7 +187,7 @@ Sets the counters dump/save interval.
 `@override`
 > void setInterval(int value)
 
-- **value**: int - a new interval in milliseconds. 
+- **value**: int - new interval in milliseconds. 
 
 
 #### stats
@@ -196,8 +196,8 @@ Calculates min/average/max statistics based on the current and previous values.
 `@override`
 > void stats(String name, int value)
 
-- **name**: String - a counter name of Statistics type
-- **value**: int - a value to update statistics
+- **name**: String - counter name of Statistics type
+- **value**: int - value to update statistics
 
 
 #### timestamp
@@ -206,8 +206,8 @@ Records the given timestamp.
 `@override`
 > void timestamp(String name, DateTime value)
 
-- **name**: String - a counter name of Timestamp type.
-- **value**: DateTime - a timestamp to record.
+- **name**: String - counter name of Timestamp type.
+- **value**: DateTime - timestamp to record.
 
 
 #### timestampNow
@@ -216,7 +216,7 @@ Records the current time as a timestamp.
 `@override`
 > void timestampNow(String name)
 
-- **name**: String - a counter name of Timestamp type.
+- **name**: String - counter name of Timestamp type.
 
 
 #### update

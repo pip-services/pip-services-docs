@@ -11,7 +11,7 @@ description: >
 ### Description
 The ConfigParams class contains a key-value map with configuration parameters. It allows you to define configuration parameters that can be used, for example, to define access control credentials.  
 
-Important points:   
+**Important points**   
 - In general, ConfigParams is used to pass configurations to IConfigurable objects. It also serves as a basis for more concrete configurations, such as ConnectionParams or CredentialParams. 
 - This class stores all values as strings. These values can be serialized as JSON or string forms. When retrieved the values can be automatically converted using GetAsXXX methods.
 - The keys are case-sensitive, so it is recommended to use consistent C-style, such as “my_param”.

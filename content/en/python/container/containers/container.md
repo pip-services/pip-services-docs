@@ -153,7 +153,7 @@ param2: XYZ
 container = Container()
 container.add_factory(MyComponentFactory())
 
-parameters = ConfigParams.from_value(os.env)
+parameters = ConfigParams.from_value(os.environ)
 container.read_config_from_file("123", "./config/config.yml", parameters)
 
 container.open("123")

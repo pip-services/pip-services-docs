@@ -40,29 +40,20 @@ Creates a new instance of this Azure Function.
 
 ### Instance methods
 
-#### getCorrelationId
-Returns a correlationId from Azure Function context.
+#### getParametrs
+Returns body from Azure Function context.
+This method can be overloaded in child classes
 
-> `public static` getCorrelationId(context: any): string
-
-- **context**: any - Azure Function context.
-- **returns**: string - returned correlationId from context.
-
-#### getCommand
-Returns a command from Azure Function context.
-
-> `public static` getCommand(context: any): string
+> `protected` getParametrs(context: any): [Parameters](../../../commons/run/parameters)
 
 - **context**: any - Azure Function context.
-- **returns**: string - returned command from context.
+- **returns**: [Parameters](../../../commons/run/parameters) - Returns Parameters from context
 
-#### getHttpRequestBody
-Returns a body from Azure Function context http request.
+#### register
+Registers all actions in this Azure Function.
 
-> `public static` getHttpRequestBody(context: any): string
+> `public` register(): void
 
-- **context**: any - Azure Function context.
-- **returns**: string - returned body from context.
 
 ### Examples
 

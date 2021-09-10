@@ -30,10 +30,10 @@ Returns a command from the Azure Function context.
 - **context**: any - Azure Function context.
 - **returns**: string - returned command from context.
 
-#### getHttpRequestBody
+#### getParametrs
 Returns a body from the Azure Function context http request.
 
-> `public static` getHttpRequestBody(context: any): string
+> `public static` getParametrs(context: any): [Parameters](../../../commons/run/parameters)
 
 - **context**: any - Azure Function context.
-- **returns**: string - returned body from context.
+- **returns**: [Parameters](../../../commons/run/parameters) - returned body from context.

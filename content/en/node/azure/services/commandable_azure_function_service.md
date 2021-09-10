@@ -39,15 +39,14 @@ The CommandableAzureFunctionService class allows you to create abstract services
 
 ### Instance methods
 
-#### getBody
-Returns a body from Azure Function context.
+#### getParametrs
+Returns body from Azure Function context.
+This method can be overloaded in child classes
 
-This method can be overloaded in child classes.
+> `protected` getParametrs(context: any): [Parameters](../../../commons/run/parameters)
 
-> `protected` getBody(context: any): string
-
-- **context**: any - Azure Function context
-- **returns**: string - returned body from context
+- **context**: any - Azure Function context.
+- **returns**: [Parameters](../../../commons/run/parameters) - Returns Parameters from context
 
 #### register
 Registers all actions in Azure Function.

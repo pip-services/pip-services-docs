@@ -313,22 +313,23 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```python
- queue = KafkaMessageQueue("myqueue")
-
- queue.configure(ConfigParams.from_tuples(
-   "topic", "mytopic",
-   "connection.protocol", "tcp"
-   "connection.host", "localhost"
-   "connection.port", 9092
- ))
-
- queue.open("123")
- queue.send("123", MessageEnvelope(None, "mymessage", "ABC"))
- queue.receive("123")
-
- if message is not None:
-     ...
-     queue.complete("123", message)
+queue = KafkaMessageQueue("myqueue")
+queue.configure(ConfigParams.from_tuples(
+    "topic", "mytopic",
+    'connection.protocol', 'tcp',
+    "connection.host", "localhost",
+    "connection.port", 9092,
+))
+        
+queue.open("123")
+queue.send("123", MessageEnvelope(None, "mymessage", "ABC"))
+message = queue.receive("123", 10000)
+        
+print(message)
+        
+if message is not None:
+    ...
+    queue.complete(message)
 ```
 
 

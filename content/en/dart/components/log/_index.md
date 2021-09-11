@@ -70,7 +70,7 @@ This object is used by [CachedLogger](../cached_logger).
 #### [NullLogger](null_logger)
 Dummy implementation of logger that doesn't do anything.
 
-It can be used in testing or in situations when logger is required
+It can be used in testing or in situations when a logger is required
 but shall be disabled.
 
 

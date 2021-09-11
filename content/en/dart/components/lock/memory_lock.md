@@ -15,7 +15,7 @@ description: >
 
 The MemoryLock class is used to synchronize the execution of a process using shared memory.
 
-Important points
+**Important points**
 
 - This implementation is not suitable for synchronization of distributed processes.
 
@@ -27,25 +27,25 @@ Important points
 ### Instance methods
 
 #### releaseLock
-Releases prevously acquired lock by its key.
+Releases a prevously acquired lock by its key.
 
 `@override`
 > Future releaseLock(String correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a unique lock key to release.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **key**: String - unique lock key to release.
 
 
 #### tryAcquireLock
 Makes a single attempt to acquire a lock by its key.
-It returns immediately a positive or negative result.
+It returns a positive or negative result immediately.
 
 `@override`
 > Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a unique lock key to acquire.
-- **ttl**: int - a lock timeout (time to live) in milliseconds.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **key**: String - unique lock key to acquire.
+- **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: Future\<bool\> - lock result
 
 ### Examples

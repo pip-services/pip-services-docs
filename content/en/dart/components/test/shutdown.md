@@ -15,7 +15,7 @@ description: >
 
 The Shutdown class allows you to create a random shutdown component that crashes a process using various methods.
 
-Important points
+**Important points**
 
 - The component is usually used for testing, but it can also be used in production to randomly crash microservices.
 - It follows the concept of "Chaos Monkey" popularized by Netflix.
@@ -33,16 +33,16 @@ Important points
 
 
 #### close
-Closes component and frees used resources.
+Closes a component and frees used resources.
 
 `@override`
 > Future close(String correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
 
 #### configure
-Configures a component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)
@@ -51,12 +51,12 @@ Configures a component by passing configuration parameters.
 
 
 #### isOpen
-Checks if the component is opened.
+Checks if the component is open.
 
 `@override`
 > bool isOpen()
 
-- **returns**: bool - true if the component has been opened and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
@@ -65,7 +65,7 @@ Opens the component.
 `@override`
 > Future open(String correlationId)
 
-- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### shutdown

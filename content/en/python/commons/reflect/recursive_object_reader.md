@@ -13,7 +13,7 @@ description: >
 The RecursiveObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them recursively using "dot" notation (e.g property.property.method).
 
 
-Important points
+**Important points**
 
 - It is similar to [ObjectReader](../object_reader) but reads properties recursively through the entire object graph. 
 - Nested property names are defined using dot notation as "object.subobject.property".

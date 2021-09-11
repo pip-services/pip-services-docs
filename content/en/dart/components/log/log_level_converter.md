@@ -27,8 +27,8 @@ Converts numbers and strings to standard log level values.
 
 > `static` LogLevel toLogLevel(dynamic value, [[LogLevel](../log_level) defaultValue = [LogLevel.Info](../log_level)])
 
-- **value**: dynamic - a value to be converted
-- **defaultValue**: [LogLevel](../log_level) - a default value if conversion is not possible
+- **value**: dynamic - value to be converted
+- **defaultValue**: [LogLevel](../log_level) - default value if conversion is not possible
 - **returns**: [LogLevel](../log_level) - converted log level
 
 
@@ -37,7 +37,7 @@ Converts log level to a string.
 
 > `static` String toString2([LogLevel](../log_level) level)
 
-- **level**: [LogLevel](../log_level) - a log level to convert
+- **level**: [LogLevel](../log_level) - log level to convert
 - **returns**: String - log level name string.
 
 

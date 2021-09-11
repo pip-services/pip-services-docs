@@ -37,7 +37,7 @@ Transaction id used to trace execution through a call chain.
 > **correlation_id**: String
 
 #### error
-Human-readable message.
+Logs recoverable application error.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
 > **error**: [ErrorDescription](../../../commons/errors/error_description)

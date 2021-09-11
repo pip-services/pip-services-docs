@@ -59,7 +59,7 @@ this method doesn't do anything and doesn't throw any errors.
 myObj = MyObject()
 ObjectWriter.set_property(myObj, "myProperty", 123)
 
-myMap = { key1: 123, key2: "ABC" }
+myMap = { 'key1': 123, 'key2': "ABC" }
 ObjectWriter.set_property(myMap, "key1", "XYZ")
 
 myArray = [1, 2, 3]

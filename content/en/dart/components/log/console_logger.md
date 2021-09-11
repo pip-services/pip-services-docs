@@ -14,13 +14,13 @@ description: >
 
 The  ConsoleLogger class provides a logger that writes log messages to console.
 
-Important points
+**Important points**
 
-- Errors are written to standard err stream and all other messages to standard out stream.
+- Errors are written to the standard err stream and all other messages to the standard out stream.
 
 #### Configuration parameters
 - **level**: maximum log level to capture
-- **source**: source (context) name
+- **source**: source (context)'s name
 
 #### References
 - **\*:context-info:\*:\*:1.0** - (optional) [ContextInfo](../../info/context_info) to detect the context id and specify counters source
@@ -38,9 +38,9 @@ Writes a log message to the logger destination.
 > void write([LogLevel](../log_level) level, String correlationId, Exception error, String message)
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlation_id**: String - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: String - a human-readable message to log.
+- **correlation_id**: String - (optional) transaction id used to trace execution through the call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: String - human-readable message to log.
 
 ### Examples
 

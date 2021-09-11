@@ -11,7 +11,7 @@ description: >
 
 ### Description
 
-The Lock class represents an abstract lock that implements the defaul lock acquisition routine. 
+The Lock class represents an abstract lock that implements the default lock acquisition routine. 
 
 #### Configuration parameters
 **options**:
@@ -26,14 +26,14 @@ Makes multiple attempts to acquire a lock by its key within a given time interva
 `@override`
 > Future acquireLock(String correlationId, String key, int ttl, int timeout)
 
-- **correlationId**: String -(optional) transaction id to trace execution through a call chain. 
-- **key**: String - a unique lock key to acquire.
-- **ttl**: int - a lock timeout (time to live) in milliseconds.
-- **timeout**: int - a lock acquisition timeout.
+- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **key**: String - unique lock key to acquire.
+- **ttl**: int - lock timeout (time to live) in milliseconds.
+- **timeout**: int - lock acquisition timeout.
 
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)
@@ -46,19 +46,19 @@ Releases a prevously acquired lock by its key.
 `@override`
 > Future releaseLock(String correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
-- **key**: String - a unique lock key to release.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **key**: String - unique lock key to release.
 
 
 #### tryAcquireLock
 Makes a single attempt to acquire a lock by its key.
-It returns immediately a positive or negative result.
+It returns a positive or negative result immediately.
 
 > Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **key**: String - a unique lock key to acquire.
-- **ttl**: int - a lock timeout (time to live) in milliseconds.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **key**: String - unique lock key to acquire.
+- **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: Future\<bool\> - lock result
 
 

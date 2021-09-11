@@ -93,12 +93,12 @@ properties = ObjectReader.get_property_names()
 ObjectReader.has_property(myObj, "myProperty")
 args = PropertyReflector.get_property(myObj, "myProperty")
 
-myMap = { key1: 123, key2: "ABC" }
+myMap = { 'key1': 123, 'key2': "ABC" }
 ObjectReader.has_property(myMap, "key1")
 args = ObjectReader.get_property(myMap, "key1")
 
 myArray = [1, 2, 3]
-ObjectReader.has_property(myArraY, "0")
+ObjectReader.has_property(myArray, "0")
 args = ObjectReader.get_property(myArray, "0")
 
 ```

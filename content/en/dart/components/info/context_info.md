@@ -16,7 +16,7 @@ description: >
 
 The ContextInfo class allows you to create context information components that provide detailed information about execution contexts.
 
-Important points
+**Important points**
 
 - Most often ContextInfo is used by logging and performance counters to identify the source of the collected logs and metrics.
 
@@ -50,46 +50,46 @@ Gets the unique context id. Usually it is the current host name.
 
 > set contextId(String value)
 
-- **contextId**: String - the unique context id.
+- **contextId**: String - unique context id.
 
 #### description
 Gets the human-readable description of the context.
 
 > String get description
 
-- **returns**: String - the human-readable description of the context.
+- **returns**: String - human-readable description of the context.
 
 Sets the human-readable description of the context.
 
 > set description(String value)
 
-- **description**: String - a new human readable description of the context.
+- **description**: String - new human readable description of the context.
 
 #### name
-Gets the context name.
+Gets the context's name.
 
 > String get name
 
-- **returns**: String - the context name
+- **returns**: String - context's name
 
-Sets the context name.
+Sets the context's name.
 
 > set name(String value)
 
-- **name**: String - a new name for the context.
+- **name**: String - new name for the context.
 
 #### properties
 Gets context additional parameters.
 
 > dynamic get properties
 
-- **returns**: dynamic - a JSON object with additional context parameters.
+- **returns**: dynamic - JSON object with additional context parameters.
 
 Sets context additional parameters.
 
 > set properties(dynamic properties)
 
-- **properties**: dynamic - a JSON object with context additional parameters
+- **properties**: dynamic - JSON object with context additional parameters
 
 
 #### startTime
@@ -97,13 +97,13 @@ Gets the context start time.
 
 > DateTime get startTime
 
-- **returns**: DateTime - a JSON object with additional context parameters.
+- **returns**: DateTime - JSON object with additional context parameters.
 
 Sets the context start time.
 
 > set startTime(DateTime value)
 
-- **value**: DateTime - a new context start time.
+- **value**: DateTime - new context start time.
 
 
 ### Instance methods
@@ -124,7 +124,7 @@ Creates a new ContextInfo and sets its configuration parameters.
 > `static` [ContextInfo]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
-- **returns**: [ContextInfo]() - a newly created ContextInfo
+- **returns**: [ContextInfo]() - newly created ContextInfo
 
 ### Examples
 

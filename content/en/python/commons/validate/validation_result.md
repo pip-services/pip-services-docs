@@ -20,9 +20,9 @@ See [ValidationResultType](../validation_result_type)
 - **path**: str - a dot notation path of the validated element.
 - **type**: [ValidationResultType](../validation_result_type) - a type of the validation result: Information, Warning, or Error.
 - **code**: str - an error code.
-- **message**: str - a human readable message.
-- **expected**: Any - an value expected by schema validation.
-- **actual**: Any - an actual value found by schema validation.
+- **message**: str - human readable message.
+- **expected**: Any - value expected by schema validation.
+- **actual**: Any - aactual value found by schema validation.
 
 
 ### Instance methods

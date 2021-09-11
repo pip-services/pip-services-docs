@@ -17,11 +17,11 @@ The DateTimeConverter class allows you to convert arbitrary values into Date val
 
 ### Static methods
 
-#### to_date_time
+#### to_datetime
 Converts value into Date or returns current date when conversion is not possible.  
 See [to_date_time_with_default](#to_date_time_with_default)
 
-> `static` to_date_time(value: Any): datetime
+> `static` to_datetime(value: Any): datetime
 
 - **value**: Any - value to convert.
 - **returns**: datetime - Date value or current date when conversion is not supported.

@@ -11,7 +11,7 @@ description: >
 ### Description
  The RecursiveMapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
  
- Important points:
+**Important points**
  
  - This class is similar to [MapConverter](../map_converter). The difference is that it recursively converts all values stored in objects and arrays.
 

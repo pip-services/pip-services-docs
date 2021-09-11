@@ -13,7 +13,7 @@ description: >
 
 The ObjectReader class allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
-Important points
+**Important points**
 
 - In contrast to [PropertyReflector](../property_reflector) which only introspects regular objects, this ObjectReader is also able to handle maps and arrays.
 - For maps, properties are key-pairs identified by string keys.

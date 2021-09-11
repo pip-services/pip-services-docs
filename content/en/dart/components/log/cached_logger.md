@@ -14,14 +14,14 @@ description: >
 
 The CachedLogger class allows you to create a logger that caches captured log messages in memory and periodically dumps them.
 
-Important points
+**Important points**
 
 - Child classes implement saving cached messages to their specified destinations.
 
 #### Configuration parameters
 
 - **level**: maximum log level to capture
-- **source**: source (context) name
+- **source**: source (context)'s name
 - **options**:
     - **interval**: interval in milliseconds to save log messages (default: 10 seconds)
     - **max_cache_size**: maximum number of messages stored in this cache (default: 100)
@@ -51,11 +51,11 @@ Interval in milliseconds to save log messages (default: 10 seconds)
 > **interval**: int = 10000
 
 #### lastDumpTime
-Time of the last dump
+Time of the last dump.
 > **lastDumpTime**: int
 
 #### maxCacheSize
-Maximum number of messages stored in the cache (default: 100)
+Maximum number of messages stored in the cache (default: 100).
 > **maxCacheSize**: int = 100
 
 </span>
@@ -69,7 +69,7 @@ Clears (removes) all cached log messages.
 > void clear()
 
 #### configure
-Configures component by passing configuration parameters.
+Configures a component by passing its configuration parameters.
 
 `@override`
 > void configure([ConfigParams](../../../commons/config/config_params) config)
@@ -91,7 +91,7 @@ Saves log messages from the cache.
 
 > Future save(List<[LogMessage](../log_message)> messages)
 
-- **messages**: List<[LogMessage](../log_message)> - a list with log messages
+- **messages**: List<[LogMessage](../log_message)> - list with log messages
 
 
 

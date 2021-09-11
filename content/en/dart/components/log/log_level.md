@@ -13,15 +13,15 @@ description: >
 
  The LogLevel class provides an enumeration of standard log levels.
  
- Important points
+ **Important points**
  
  - Logs at debug and trace levels are usually captured only locally for troubleshooting and never sent to consolidated log services.
 
 ### Enumeration members
 
 - **Null** = 0 - Nothing to be logged
-- **Fatal** = 1 - Logs only fatal errors that cause microservice to fail
-- **Error** = 2 - Logs all errors - fatal or recoverable
+- **Fatal** = 1 - Logs only fatal errors that cause a microservice to fail
+- **Error** = 2 - Logs all errors - fatal or recoverable errors
 - **Warn** = 3 - Logs errors and warnings
 - **Info** = 4 - Logs errors and important information messages
 - **Debug** = 5 - Logs everything up to high-level debugging information

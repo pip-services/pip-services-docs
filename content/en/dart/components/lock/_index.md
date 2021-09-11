@@ -26,7 +26,7 @@ Creates [ILock](ilock) components by their descriptors.
 
 
 #### [Lock](lock)
-Abstract lock that implements default lock acquisition routine.
+Abstract lock that implements a default lock acquisition routine.
 
 #### [MemoryLock](memory_lock)
 Lock that is used to synchronize execution within one process using shared memory.
@@ -35,7 +35,7 @@ This implementation is not suitable for synchronization of distributed processes
 #### [NullLock](null_lock)
 Dummy lock implementation that doesn't do anything.
 
-It can be used in testing or in situations when lock is required
+It can be used in testing or in situations when a lock is required
 but shall be disabled.
 
 </div>

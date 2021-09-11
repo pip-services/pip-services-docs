@@ -16,7 +16,7 @@ description: >
 
 The CompositeLogger class allows you to aggregate loggers from component references into a single component.
 
-Important points
+**Important points**
 
 - It allows to log messages and conveniently send them to multiple destinations. 
 
@@ -40,17 +40,17 @@ Sets references to dependent components.
 `@override`
 > void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### write
 Writes a log message to the logger destination.
 
 > void write([LogLevel](../log_level) level, String correlationId, Exception error, String message)
 
-- **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
-- **error**: Exception - an error object associated with this message.
-- **message**: String - a human-readable message to log.
+- **level**: [LogLevel](../log_level) - log level.
+- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **error**: Exception - error object associated with this message.
+- **message**: String - human-readable message to log.
 
 
 ### Examples

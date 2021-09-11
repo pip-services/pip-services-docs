@@ -22,7 +22,7 @@ Creates a new instance of the type descriptor and sets its values.
 > TypeDescriptor(name: str, library: str)
 
 - **name**: str - name of the object type.
-- **library**: str - a library or module where this object type is implemented.
+- **library**: str - library or module where this object type is implemented.
 
 
 ### Instance methods
@@ -34,7 +34,7 @@ Otherwise this method returns false.
 
 > equals(value: Any): bool
 
-- **value**: Any - a value to compare.
+- **value**: Any - value to compare.
 - **returns**: bool - true if value is identical TypeDescriptor and false otherwise.
 
 #### get_library
@@ -42,7 +42,7 @@ Gets the name of the library or module where the object type is defined.
 
 > get_library(): str
 
-- **returns**: str - the name of the library or module.
+- **returns**: str - name of the library or module.
 
 
 #### get_name
@@ -50,7 +50,7 @@ Gets the name of the object type.
 
 > get_name(): str
 
-- **returns**: str - the name of the object type.
+- **returns**: str - name of the object type.
 
 
 #### to_string
@@ -59,7 +59,7 @@ The result has format *name[,library]*
 
 > to_string(): str
 
-- **returns**: str - a string representation of the object.
+- **returns**: str - string representation of the object.
 
 ### Static methods
 
@@ -70,5 +70,5 @@ Throws a [ConfigException](../../errors/config_exception) if the descriptor stri
 
 > `static` from_string(value: str): [TypeDescriptor]()
 
-- **value**: str - a string to parse.
-- **returns**: [TypeDescriptor]() - a newly created Descriptor.
+- **value**: str - string to parse.
+- **returns**: [TypeDescriptor]() - newly created Descriptor.

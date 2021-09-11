@@ -15,7 +15,7 @@ The DefaultLoggerFactory class provides a factory used to create [ILogger](../il
 
 
 ### Constructors
-Create a new instance of the factory.
+Creates a new instance of the factory.
 
 > DefaultLoggerFactory()
 

@@ -13,7 +13,7 @@ description: >
 
 The TypeReflector class allows you to examine the type of an object, and create instancies of objects based on their type.
 
-Important points
+**Important points**
 
 - This class has symmetric implementation across all languages supported by Pip.Services toolkit and used to support dynamic data processing.
 - Because all languages have different casing and case sensitivity rules, the TypeReflector class treats all type names as case insensitive.

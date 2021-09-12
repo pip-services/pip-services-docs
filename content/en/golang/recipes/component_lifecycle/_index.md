@@ -4,6 +4,7 @@ no_list: true
 title: "Component Lifecycle!"
 linkTitle: "Component Lifecycle!"
 weight: 30
+draft: true
 ---
 
 **TODO: need rewrite on Golang**

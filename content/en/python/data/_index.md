@@ -34,7 +34,7 @@ As an example, lets implement persistence for the following data object:
 
 ```python
 class Dummy(IStringIdentifiable):
-    def __init__(self, id=None, key=None, content=None):
+    def __init__(self, id: str = None, key: str = None, content: str = None):
         self.id = id
         self.key = key
         self.content = content
@@ -70,42 +70,40 @@ Most CRUD operations will come from the base class. You only need to override `g
 And then, implement a `get_one_by_key` custom persistence method that doesn't exist in the base class.
 
 ```python
-from pip_services3_commons.data import FilterParams, DataPage, PagingParams
-from pip_services3_data.persistence.IdentifiableMemoryPersistence import IdentifiableMemoryPersistence
-
-
 class MyMemoryPersistence(IdentifiableMemoryPersistence):
     def __init__(self):
         super(MyMemoryPersistence, self).__init__()
 
-    def __composeFilter(self, filterr):
-        filterr = filterr or FilterParams()
-        id = filterr.get_as_nullable_string("id")
-        temp_ids = filterr.get_as_nullable_string("ids")
+    def __compose_filter(self, filter_params: FilterParams) -> Callable[[Dummy], bool]:
+        filter_params = filter_params or FilterParams()
+        id = filter_params.get_as_nullable_string("id")
+        temp_ids = filter_params.get_as_nullable_string("ids")
         ids = temp_ids.split(",") if temp_ids is not None else None
-        key = filterr.get_as_nullable_string("key")
+        key = filter_params.get_as_nullable_string("key")
 
-        def inner(item):
-            if id is not None and item['id'] != id:
+        def inner(item: Dummy) -> bool:
+            if id is not None and item.id != id:
                 return False
-            if ids is not None and item['ids'] != ids:
+            if ids is not None and item.id in ids:
                 return False
-            if key is not None and item['key'] != key:
+            if key is not None and item.key != key:
                 return False
             return True
 
         return inner
 
-    def get_page_by_filter(self, correlation_id, filter, paging, sort=None, select=None):
-        return super().get_page_by_filter(correlation_id, filter, paging, sort, select)
+    def get_page_by_filter(self, correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any = None,
+                           select: Any = None) -> DataPage:
+        return super().get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, sort, select)
 
     def get_one_by_key(self, correlation_id, key):
         for item in self._items:
-            if item['key'] == key:
+            if item.key == key:
                 self._logger.trace(correlation_id, "Found object by key={}", key)
                 return item
             else:
                 self._logger.trace(correlation_id, "Cannot find by key={}", key)
+
 ```
 
 It is easy to create file persistence by adding a persister object to the implemented in-memory persistence component.

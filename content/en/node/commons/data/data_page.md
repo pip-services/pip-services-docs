@@ -12,7 +12,7 @@ description: >
 
 The DataPage class allows you to create a data transfer object that can be used to pass the results of a paginated query. This object contains items of the retrieved page.
 
-Important points
+**Important points**
 
 - Most often, this object type is used to send responses to paginated queries.
 - Pagination parameters are defined by a [PagingParams](../paging_params) object.

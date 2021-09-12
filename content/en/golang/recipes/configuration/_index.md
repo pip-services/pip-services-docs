@@ -4,6 +4,7 @@ no_list: true
 title: "Configuration!"
 linkTitle: "Configuration!"
 weight: 10
+draft: true
 ---
 
 **TODO: need rewrite on Golang**

@@ -37,7 +37,7 @@ Last but not least are the additional (optional) modules, shown in red. These mo
 - [AWS](../../aws) - components for working with the AWS cloud
 - [MongoDB](../../mongodb) - components for storing data in MongoDB
 - [GRPC](../../grpc) - components for synchronous communication via GRPC
-- [ActiveMQ](../../activemq) - components for asynchronous communication via ActiveMQ
+- ActiveMQ - components for asynchronous communication via ActiveMQ
 - [MQTT](../../mqtt) - components for asynchronous communication via the MQTT protocol
 - [Memcached](../../memcached) - components for caching and synchronizing with Memcached
 - [Redis](../../redis) - components for caching and synchronizing with Redis

@@ -4,6 +4,7 @@ no_list: true
 title: "Component References!"
 linkTitle: "Component References!"
 weight: 20
+draft: true
 ---
 
 **TODO: need rewrite on Golang**

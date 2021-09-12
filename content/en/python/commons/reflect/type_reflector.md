@@ -84,7 +84,7 @@ See [TypeConverter.to_type_code](../../convert/type_converter/#to_type_code), [T
 ```python
 
 descriptor = TypeDescriptor("MyObject", "mylibrary")
-Typeeflector.get_type_by_descriptor(descriptor)
+TypeReflector.get_type_by_descriptor(descriptor)
 myObj = TypeReflector.create_instance_by_descriptor(descriptor)
 TypeDescriptor.is_primitive(myObject)           # Result: false
 TypeDescriptor.is_primitive(123)                # Result: true

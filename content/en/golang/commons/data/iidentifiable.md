@@ -5,7 +5,7 @@ linkTitle: "IIdentifiable!"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
 description: > 
     Interface used to create data objects that can be uniquely idendified by an ID.
-
+draft: true
 ---
 
 ### Description

@@ -7,7 +7,7 @@ description: >
     Creates a cached configuration reader.
 ---
 
-**Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [IReconfigurable](../../../commons/config/ireconfigurable)
+**Inherits**: [IConfigurable](../../../commons/config/iconfigurable), [IReconfigurable](../../../commons/config/ireconfigurable), [IConfigReader](../iconfig_reader)
 
 ### Description
 

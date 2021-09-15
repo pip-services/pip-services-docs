@@ -21,17 +21,12 @@ Once installed, check that the installation was completed successfully by runnin
 dart --version
 ```
 
-### 2. Git client
-Example projects are stored in repositories on github.com. To download their source code to your computer, you’ll need a Git client. You can download and install Git using the following link: https://git-scm.com/downloads
-
-If you don’t feel comfortable using the Git CLI, you can download and install an additional UI utility called GitHub Desktop. The installation procedure for GitHub Desktop can be found on github.com.
-
-### 3. MongoDB
+### 2. MongoDB
 Data microservice examples use MongoDB for storing data. You can either install MongoDB locally on your computer, or start it in a docker container.
 
 To install MongoDB locally, download the installer from their official website https://www.mongodb.org/downloads . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
 
-### 4.Docker
+### 3.Docker
 To install Docker, download the Docker Desktop installer that corresponds to the operating system you’re using from the official Docker site https://www.docker.com/get-started. Once downloaded, launch the installer and follow the installation instructions.
 
 Once installed, check that the installation was completed successfully by running the following commands from your console:

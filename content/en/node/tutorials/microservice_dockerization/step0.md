@@ -20,9 +20,9 @@ docker --version
 
 If everything was installed successfully, the screen will display the latest version of Docker.
 
-Now, we need to install Docker Compose. To do this, follow the instructions given [here](https://docs.docker.com/compose/install/).
+Next, we need to install Docker Compose. To do this, follow the instructions given [here](https://docs.docker.com/compose/install/).
 
-TLastly, we need to install Powershell. The instructions to install this tool are available [here](https://docs.microsoft.com/en-us/powershell/) 
+Lastly, we need to install Powershell. The instructions to install this tool are available [here](https://docs.microsoft.com/en-us/powershell/) 
 
 Once all of the prerequisites are installed and set up, we can move on to [Step 2. Building a microservice.](../step1)
 

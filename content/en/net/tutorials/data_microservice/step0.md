@@ -35,10 +35,10 @@ docker --version
 
 If everything was installed successfully, the screen will display the latest version of Docker.
 
-Now that we’ve got the environment set up, we can move on to [Step 2. Setting up the project.](../step1)
+Now that we’ve got the environment set up, we can move on to [Step 2. Project structure.](../step1)
 
 <span class="hide-title-link">
 
-### [Step 2. Setting up the project.](../step1)
+### [Step 2. Project structure.](../step1)
 
 </span>

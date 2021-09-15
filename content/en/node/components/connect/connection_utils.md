@@ -67,3 +67,14 @@ The URI shall be in the following form:
 - **defaultProtocol**: string - a default protocol
 - **defaultPort**: string - a default port
 - **returns**: [ConfigParams](../../../commons/config/config_params) - a configuration parameters with URI elements
+
+
+#### rename
+Renames property if the target name is not used.
+
+> `public static` rename(options: ConfigParams, fromName: string, toName: string): [ConfigParams](../../../commons/config/config_params)
+
+- **options**: ConfigParams - configuration options 
+- **fromName**: string - original property name.
+- **toName**: string - property name to rename to.
+- **returns**: [ConfigParams](../../../commons/config/config_params) - updated configuration options

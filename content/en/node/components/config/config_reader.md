@@ -7,7 +7,7 @@ description: >
     Abstract config reader that supports configuration parameterization.
 ---
 
-**Implements**: [IConfigurable](../../../commons/config/iconfigurable)
+**Implements**: [IConfigurable](../../../commons/config/iconfigurable), [IConfigReader](../iconfig_reader)
 
 ### Description
 

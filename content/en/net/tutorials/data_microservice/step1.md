@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Step 2. Project structure"
-linkTitle: "Step 2. Setting up" 
+linkTitle: "Step 2. Project structure" 
 gitUrl: "https://github.com/pip-services-samples/service-beacons-dotnet"
 ---
 

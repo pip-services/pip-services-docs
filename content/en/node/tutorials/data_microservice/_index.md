@@ -26,7 +26,7 @@ The Beacons microservice that we are going to be developing will consist of a nu
 To make it easier to follow along, we’ve divided the tutorial into the following 7 steps:
 
 - [Step 1. Setting up the environment](step0)
-- [Step 2. Setting up the project](step1)
+- [Step 2. Projec structure](step1)
 - [Step 3. Data model development](step2)
 - [Step 4. Implementing persistence components (with tests)](step3)
 - [Step 5. Implementing a controller (with tests)](step4)

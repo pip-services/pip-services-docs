@@ -12,7 +12,7 @@ description: >
 
 The ComponentConfig class allows you to configure a component residing inside a container.
 
-Important points
+**Important points**
 
 - The configuration includes the type of information or descriptor and component configuration parameters.
 

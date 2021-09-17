@@ -4,7 +4,7 @@ no_list: true
 title: "Your first microservice in Python (test)"
 linkTitle: "Your first microservice (test)"
 weight: 30
-draft: true
+
 
 ---
 

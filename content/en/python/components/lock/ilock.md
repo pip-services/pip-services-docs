@@ -13,7 +13,7 @@ description: >
 
 The ILock interface provides the methods to create locks used to synchronize work or parallel processes and to prevent collisions.
 
-Important points
+**Important points**
 
 - The interface allows to manage multiple locks identified by unique keys. 
 

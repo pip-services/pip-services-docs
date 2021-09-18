@@ -15,7 +15,7 @@ description: >
 
 The IdentifiableMemoryPersistence class allows you to create persistence components that store data in memory and implement a number of CRUD operations over data items with unique ids.
 
-Important points
+**Important points**
 
 - The data items must implement [IIdentifiable](../../../commons/data/iidentifiable).
 - In basic scenarios child classes shall only override [get_page_by_filter](../mysql_persistence/#get_page_by_filter), [get_list_by_filter](../memory_persistence/#get_list_by_filter) or [delete_by_filter](../mysql_persistence/#delete_by_filter) operations with a specific filter function. All other operations can be used out of the box. 

@@ -16,11 +16,10 @@ The DelegatedFunction class allows you to define a delegate to implement a funct
 ### Constructors
 Constructs this function class with the specified parameters.
 
-> DelegatedFunction(name: str, calculator: Callable[[List[[Variant](../../../variants/variant)], [IVariantOperations](../../../variants/ivariant_operations)], [Variant](../../../variants/variant)], context: Optional[Any] = None)
+> DelegatedFunction(name: str, calculator: Callable[[List[[Variant](../../../variants/variant)], [IVariantOperations](../../../variants/ivariant_operations)], [Variant](../../../variants/variant)])
 
 - **name**: str - name of this function.
 - **calculator**: Callable[[List[[Variant](../../../variants/variant)], [IVariantOperations](../../../variants/ivariant_operations)] - function calculator delegate.
-- **context**: Optional[Any] - context
 
 ### Properties
 

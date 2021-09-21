@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Pip.Services Docs"
-linkTitle: "Home"
+linkTitle: "Toolkit"
 weight: 1
 ---
 
@@ -97,6 +97,47 @@ This guide will help you to learn Pip.Services and to develop your own microserv
   </div>
 </div>
 
+### Learn more
+
+<br>
+
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>Getting started</b></h5>
+      <p class="card-text">How to get up and running with Pip.Services toolkit in minutes</p>
+      <a href="getting_started" class="stretched-link"></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>Tutorials</b></h5>
+      <p class="card-text">
+        Deep, in-context explorations of enterprise microservice development topics, leaving you ready to implement real-world  solutions.
+      </p>
+      <a href="tutorials" class="stretched-link"></a>
+    </div>
+  </div>
+</div>
+<br>
+<div class="card-deck">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>API documentation</b></h5>
+      <p class="card-text">Detail documentation on the toolkit API</p>
+      <a href="commons" class="stretched-link"></a>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><b>Recipes</b></h5>
+      <p class="card-text">Quick, hands-on instructions for solving typical development problems</p>
+      <a href="recipes" class="stretched-link"></a>
+    </div>
+  </div>
+</div>
+
+<br>
 
 ### More useful stuff...
 <br>

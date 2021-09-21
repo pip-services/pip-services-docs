@@ -82,8 +82,8 @@ disableKinds = ["taxonomy", "term"]
   #  weight = 0
 
 [[menu.main]]
-    identifier = "Home"
-    name = "Home"
+    identifier = "Toolkit"
+    name = "Toolkit"
     url = "/"
     weight = 1
 
@@ -127,16 +127,30 @@ disableKinds = ["taxonomy", "term"]
 #     name = "Templates"
 #     url = "templates/"
 #     weight = 80
+
 [[menu.main]]
     identifier = "Testing Tools"
     name = "Testing Tools"
     url = "testing_tools/"
     weight = 90
-#[[menu.main]]
-  #  identifier = "Get Started"
-  #  name = "Get Started"
-  #  url = "/get_started"
-  #  weight = 70
+
+[[menu.main]]
+    identifier = "Getting Started"
+    name = "Getting Started"
+    url = "getting_started/"
+    weight = 100
+
+[[menu.main]]
+    identifier = "Tutorials"
+    name = "Tutorials"
+    url = "tutorials/"
+    weight = 110
+[[menu.main]]
+    identifier = "Recipes"
+    name = "Recipes"
+    url = "recipes/"
+    weight = 120
+
 
 [params]
 copyright = "Enterprise Innovation Consulting."

@@ -12,7 +12,7 @@ description: >
 
 The MethodReflector class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
-Important points
+**Important points**
 
 - This class has symmetric implementation across all languages supported by the Pip.Services toolkit and it is used to support dynamic data processing. Moreover, because all languages have different casing and case sensitivity rules, this class treats all method names as case insensitive.
 

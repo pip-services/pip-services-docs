@@ -81,11 +81,11 @@ disableKinds = ["taxonomy", "term"]
   #  url = "http://pipservices.org/"
   #  weight = 0
 
-[[menu.main]]
-    identifier = "Home"
-    name = "Home"
-    url = "/"
-    weight = 1
+#[[menu.main]]
+#    identifier = "Home"
+#    name = "Home"
+#    url = "/"
+#    weight = 1
 
 [[menu.main]]
     identifier = "Node"
@@ -122,7 +122,7 @@ disableKinds = ["taxonomy", "term"]
     identifier = "Toolkit"
     name = "Toolkit"
     url = "toolkit/"
-    weight = 70
+    weight = 1
 [[menu.main]]
     identifier = "Microservices"
     name = "Microservices"

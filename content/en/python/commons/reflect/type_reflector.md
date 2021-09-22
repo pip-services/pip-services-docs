@@ -40,16 +40,6 @@ Creates an instance of an object type specified by type descriptor.
 - **args**: Any - arguments for the object constructor.
 - **returns**: Any - the created object instance.
 
-#### create_instance_by_type
-Creates an instance of an object type.
-
-> `static` create_instance_by_type(obj_type: Any, *args: Any): Any:
-
-- **type**: Any - an object type (factory function) to create.
-- **args**: Any - arguments for the object constructor.
-- **returns**: Any - the created object instance.
-
-
 #### get_type
 Gets object type by its name and library where it is defined.
 

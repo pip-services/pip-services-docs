@@ -24,7 +24,7 @@ function loadNavbar(event) {
     // load navbar state
     if (document.getElementsByClassName('nav-link active dropdown-item').length == 0){
         Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
-            if (navItem.innerText.trim() == localStorage['currentMenuActiveItem']) {
+            if (navItem.innerText.trim() == localStorage['currentMenuActiveItem'] && document.location.pathname != '/') {
                 navItem.classList.add('active');
                 navItem.firstElementChild.classList.add('active');
                 document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['currentMenuActiveItem'];
@@ -35,7 +35,7 @@ function loadNavbar(event) {
     
     // get current active or Home by default
     if (document.getElementsByClassName('nav-link active dropdown-item')[0] == undefined){
-        localStorage['currentMenuActiveItem'] = "Home";
+        // localStorage['currentMenuActiveItem'] = "Home";
     } else {
         localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
     }

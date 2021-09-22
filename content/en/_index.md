@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Pip.Services Docs"
-linkTitle: "Toolkit"
+linkTitle: "Home"
 weight: 1
 ---
 

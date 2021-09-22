@@ -82,8 +82,8 @@ disableKinds = ["taxonomy", "term"]
   #  weight = 0
 
 [[menu.main]]
-    identifier = "Toolkit"
-    name = "Toolkit"
+    identifier = "Home"
+    name = "Home"
     url = "/"
     weight = 1
 
@@ -117,39 +117,23 @@ disableKinds = ["taxonomy", "term"]
     name = "Java"
     url = "java/"
     weight = 60
+
+[[menu.main]]
+    identifier = "Toolkit"
+    name = "Toolkit"
+    url = "toolkit/"
+    weight = 70
 [[menu.main]]
     identifier = "Microservices"
     name = "Microservices"
     url = "microservices/"
-    weight = 70
-# [[menu.main]]
-#     identifier = "Templates"
-#     name = "Templates"
-#     url = "templates/"
-#     weight = 80
+    weight = 80
 
 [[menu.main]]
     identifier = "Testing Tools"
     name = "Testing Tools"
     url = "testing_tools/"
     weight = 90
-
-[[menu.main]]
-    identifier = "Getting Started"
-    name = "Getting Started"
-    url = "getting_started/"
-    weight = 100
-
-[[menu.main]]
-    identifier = "Tutorials"
-    name = "Tutorials"
-    url = "tutorials/"
-    weight = 110
-[[menu.main]]
-    identifier = "Recipes"
-    name = "Recipes"
-    url = "recipes/"
-    weight = 120
 
 
 [params]

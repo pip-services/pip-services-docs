@@ -1,6 +1,3 @@
-// loadNavbar
-document.addEventListener("readystatechange", loadNavbar);
-
 function loadNavbar(event) {
 
     // fix bug with toc tree empty lines
@@ -11,6 +8,7 @@ function loadNavbar(event) {
             if (el.firstChild != null && el.firstChild.innerText === '') { el.firstChild.remove(); }
         }
     }
+
 
     // Event save current menu active item
     Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem =>
@@ -24,7 +22,7 @@ function loadNavbar(event) {
     // load navbar state
     if (document.getElementsByClassName('nav-link active dropdown-item').length == 0){
         Array.from(document.getElementsByClassName('nav-link dropdown-item')).forEach(navItem => {
-            if (navItem.innerText.trim() == localStorage['currentMenuActiveItem'] && document.location.pathname != '/') {
+            if (navItem.innerText.trim() == localStorage['currentMenuActiveItem'] && !['/', '/pip-services-docs/'].includes(document.location.pathname )) {
                 navItem.classList.add('active');
                 navItem.firstElementChild.classList.add('active');
                 document.getElementById('navbarDropdownMenuLinkDesktop').innerText = localStorage['currentMenuActiveItem'];
@@ -35,7 +33,7 @@ function loadNavbar(event) {
     
     // get current active or Home by default
     if (document.getElementsByClassName('nav-link active dropdown-item')[0] == undefined){
-        // localStorage['currentMenuActiveItem'] = "Home";
+        localStorage['currentMenuActiveItem'] = 'home';
     } else {
         localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
     }
@@ -126,6 +124,23 @@ function showSearch(event) {
 
 let saveScrollState = (e) => localStorage['navbarScrollState'] = e.target.scrollTop;
 
+/// Adding events
+
+// loadNavbar
+document.addEventListener("readystatechange", loadNavbar);
+
+// flush local storage
+window.addEventListener('close', () => {
+    localStorage.removeItem('currentMenuActiveItem');
+    localStorage.removeItem('openNav');
+});
+
+// window.onbeforeunload = function () {
+//     localStorage.removeItem('currentMenuActiveItem');
+//     localStorage.removeItem('openNav');
+// };
+
+// save scroll state
 document.getElementById('td-section-nav').addEventListener(
     'scroll', saveScrollState
 );
@@ -137,14 +152,15 @@ document.getElementById('js-bootstrap-offcanvas').addEventListener(
 document.getElementById("search-btn").addEventListener("click", showSearch);
 document.getElementById("hidden-search").addEventListener("blur", showSearch);
 
+// save navbar in opened state for mobiles
 if (getViewport(true) < 768) {
-    // save navbar in opened state for mobiles
     document.body.addEventListener('click', saveNavState);
 }
 
+// algolia search animation
 document.body.addEventListener("click", hideAlgoliaPopUp);
 
-
+// fade background event
 Array.from(document.getElementsByClassName('mobile-dropdown-btn')).forEach(navEl => {
     for (let btn of navEl.getElementsByTagName('a')){
         btn.addEventListener('click', fadeBg);

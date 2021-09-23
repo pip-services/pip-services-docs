@@ -106,7 +106,7 @@ Sets references to dependent components.
 ### Examples
 
 ```python
-logger = new ElasticSearchLogger()
+logger = ElasticSearchLogger()
 logger.configure(ConfigParams.from_tuples(
     "connection.protocol", "http",
     "connection.host", "localhost",

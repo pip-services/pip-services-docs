@@ -100,7 +100,7 @@ Writes a log message to the logger destination.
 ### Examples
 
 ```python
-logger = Logger()
+logger = CloudWatchLogger()
 logger.config(ConfigParams.from_tuples(
     "stream", "mystream",
     "group", "mygroup",

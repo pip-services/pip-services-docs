@@ -19,9 +19,86 @@ The microservice is structurally made up of these components:
 
 Before we can start writing-up some microservices, we’ll need to install:
 
-#### 1. Compiler and IDE
+#### Compiler and IDE
 
 First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+For working with the Node.js programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Node.js from their official site https://nodejs.org/en/download/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+
+Once installed, check that the installation was completed successfully by running the following command from your console:
+
+```bash
+node -version
+```
+
+If everything was installed successfully, the screen will display the latest version of the Node.js programming language.
+We’ll be needing a few additional instruments - use the following commands to install them as well:
+
+```bash
+# Install typescript compiler
+npm install typescript -g
+# Install typescript definitions utility
+npm install tsd -g 
+# Install typescript api document generator
+npm install typedoc -g
+# Install mocha test runner
+npm install mocha -g
+```
+
+</div>
+
+<div class="content-tab-section">
+
+First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
+
+For working with the .NET programming language, you’ll need to perform its installation and setup the environment. To do this, download and install .NET from the official site, as well as the following packages:
+
+Visual Studio 2015 Professional or Community Edition: https://www.visualstudio.com
+
+Core .NET SDK with Visual Studio extensions: https://www.microsoft.com/net/core
+
+</div>
+
+<div class="content-tab-section">
+
+For working with the Go programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Go from their official site  https://golang.org/dl/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+
+Once installed, check that the installation was completed successfully by running the following command from your console:
+
+```bash
+go version
+```
+
+If everything was installed successfully, the screen will display the latest version of the Go programming language.
+
+</div>
+
+<div class="content-tab-section">
+
+For working with the Dart programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Dart from their official site https://dart.dev/get-dart#install. Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+
+Once installed, check that the installation was completed successfully by running the following command from your console:
+
+```bash
+dart --version
+```
+
+</div>
+
+<div class="content-tab-section">
 
 For working with the Python programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Python from their [official site](https://www.python.org/downloads/) . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
 
@@ -31,10 +108,177 @@ Once installed, check that the installation was completed successfully by runnin
 python --version
 ```
 
+</div>
+
+<div class="content-tab-section">
+```
+TODO: add language
+```
+</div>
+
+</div>
+
+
 ### Step 2. Project setup
 Create a folder for the project and within it, add a requirements.txt file with the name of your microservice and a list of dependencies for your necessary components. For editing, you can use any text editor or IDE of your choice.
 
-the external dependencies are defined in the file below:
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+**/package.json**
+
+```json
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "dependencies": {
+    "pip-services3-commons-nodex": "^1.0.*",
+    "pip-services3-components-nodex": "^1.0.*",
+    "pip-services3-container-nodex": "^1.0.*",
+    "pip-services3-data-nodex": "^1.0.*",
+    "pip-services3-rpc-nodex": "^1.0.*"
+  }
+}
+```
+
+In the command line, type out the command below to install the dependencies:
+
+```bash
+npm install
+```
+
+</div>
+
+<div class="content-tab-section">
+Create a folder for the project, open it and run the command:
+
+```bash
+dotnet new console
+```
+
+This command will automatically create two files: HelloWorld.csproj and Program.cs. Open the HelloWorld.csproj file and add the necessary dependencies to it.
+
+**/HelloWorld.csproj**
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">  
+  <PropertyGroup>    
+    <OutputType>Exe</OutputType>    
+    <TargetFramework>netcoreapp3.1</TargetFramework>  
+  </PropertyGroup>  
+  <ItemGroup>    
+    <PackageReference Include="PipServices3.Commons" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Components" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Container" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Data" Version="3.1.0" />    
+    <PackageReference Include="PipServices3.Rpc" Version="3.3.0" />  
+  </ItemGroup>
+</Project>
+```
+
+In the command line, type out the command below to install the dependencies:
+
+```bash
+dotnet restore
+```
+</div>
+
+<div class="content-tab-section">
+
+```bash
+go mod init quickstart
+```
+
+Update the generated /go.mod file to add there dependencies to Pip.Services toolkit.
+
+**/go.mod**
+
+```
+module quickstart
+go 1.13
+require (
+	github.com/pip-services3-go/pip-services3-commons-go v1.0.0
+	github.com/pip-services3-go/pip-services3-components-go v1.0.2
+	github.com/pip-services3-go/pip-services3-container-go v1.0.0
+	github.com/pip-services3-go/pip-services3-rpc-go v1.0.0
+)
+```
+
+In the command line execute the following command to install the dependencies:
+
+```bash
+go get -u
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/pubspec.yaml**
+
+```yml
+name: pip_quickstart
+version: "1.0.0"
+author: Anonymous <anonymouse@somewhere.com>
+description: Quick start for Pip.Services toolkit on Dart
+homepage: http://pipservices.org
+
+environment:
+  sdk: ">=2.0.0 <3.0.0"
+
+dependencies:
+  pip_services3_commons: ">=1.0.5 <2.0.0"
+  pip_services3_components: ">=1.0.2 <2.0.0"
+  pip_services3_rpc: ">=1.0.2 <2.0.0"
+  pip_services3_container: ">=1.0.3 <2.0.0"
+  angel_framework: ^2.1.1
+
+dev_dependencies:
+  test: '>=1.14.2 <2.0.0'
+```
+
+In the command line, type out the command below to install the dependencies:
+
+```bash
+pub get
+```
+
+Create the file:
+
+**/lib/src/pip_quickstart.dart**
+
+```dart
+library pip_quickstart;
+export './src/helloworld.dart';
+```
+
+Create a file:
+
+**/lib/helloworld.dart**
+
+```dart
+export './HelloWorldController.dart';
+export './HelloWorldProcess.dart';
+export './HelloWorldRestService.dart';
+export './HelloWorldServiceFactory.dart';
+```
+
+These files are necessary export classes outside the library.
+
+</div>
+
+<div class="content-tab-section">
+
+The external dependencies are defined in the file below:
 
 **/requirements.txt**
 
@@ -61,8 +305,252 @@ To install these dependencies use the following command:
 pip install -r requirements.txt
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
 ### Step 3. Controller
 The controller will be a simple class that implements a single business method, which receives a name and generates a greeting. In general, business methods can call other built-in services or work with a database.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+```typescript
+public async greeting(name) {
+    return "Hello, " + (name || this._defaultName) + "!";
+  }
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```typescript
+configure(config) {
+   this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.js**
+
+```typescript
+"use strict";
+
+class HelloWorldController {
+  constructor() {
+    this._defaultName = "Pip User";
+  }
+
+  public configure(config) {
+    this._defaultName = config.getAsStringWithDefault("default_name", this._defaultName);
+  }
+
+  public async greeting(name) {
+    return "Hello, " + (name || this._defaultName) + "!";
+  }
+}
+
+exports.HelloWorldController = HelloWorldController
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+ Since their execution time might take too long, business methods are implemented in .NET as asynchronous functions:
+
+```cs
+public async Task<string> GreetingAsync(string name){    
+  return await Task.FromResult($"Hello {name ?? _defaultName}!");
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “_default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```cs
+public void Configure(ConfigParams config){
+    _defaultName = config.GetAsStringWithDefault("default_name", null);
+}
+```
+
+Now, the parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.cs**
+
+```cs
+using System.Threading.Tasks;using PipServices3.Commons.Config; 
+namespace HelloWorld {    
+    public class HelloWorldController : IConfigurable {        
+        private string _defaultName = null; 
+
+        public void Configure(ConfigParams config) {            
+            _defaultName = config.GetAsStringWithDefault("default_name", null);        
+        }   
+
+        public async Task<string> GreetingAsync(string name) {            
+            return await Task.FromResult($"Hello {name ?? _defaultName}!");        
+        }    
+    }
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```go
+func (c *HelloWorldController) Greeting(name string) (result string, err error) {
+    if name == "" { 
+        name = c.defaultName
+    }
+    return "Hello, " + name + "!", nil
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```go
+func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {	
+    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/HelloWorldController.go**
+
+```go
+package quickstart
+
+import ( 
+    cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+)
+
+type HelloWorldController struct { 
+    defaultName string
+}
+func NewHelloWorldController() *HelloWorldController {
+    c := HelloWorldController{}
+    c.defaultName = "Pip User"
+    return &c
+}
+
+func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {
+    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+}
+
+func (c *HelloWorldController) Greeting(name string) (result string, err error) {
+    if name == "" {
+        name = c.defaultName
+    }
+    return "Hello, " + name + "!", nil
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```dart
+Future<String> greeting(name) async{
+    return 'Hello, ' + (name ?? defaultName) + '!';
+}
+```
+
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+
+```dart
+void configure(config) {
+    defaultName = config.getAsStringWithDefault('default_name', defaultName);  
+}
+```
+
+Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+
+```yml
+# Controller
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+```
+
+More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+
+This is all the code of the controller in the file:
+
+**/lib/src/HelloWorldController.dart**
+
+```dart
+import 'dart:async';
+
+class HelloWorldController implements IConfigurable {
+  var defaultName;
+  HelloWorldController() {
+    defaultName = 'Pip User';
+  }
+
+  @override  void configure(ConfigParams config) {
+    defaultName = config.getAsStringWithDefault('default_name', defaultName);
+  }
+‍
+  Future<String> greeting(name) async{
+    return 'Hello, ' + (name ?? defaultName) + '!';
+  }
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
 
 ```python
 def greeting(name):        
@@ -106,8 +594,169 @@ class HelloWorldController:
 
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
 ### Step 4. REST service
 One of the most popular ways of transferring data between microservices is using the synchronous HTTP REST protocol. The HelloWorldRestService will be used to implement an external REST interface. This component extends the abstract RestService of the Pip.Services toolkit, which implements all the necessary functionality for processing REST HTTP requests.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+```typescript
+class HelloWorldRestService extends rpc.RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```typescript
+public register() {
+    this.registerRoute("get", "/greeting", null, async (req, res) => {
+        let name = req.query.name;
+        try {
+            let result = await this._controller.greeting(name);
+            this.sendResult(req, res, result);
+        } catch (ex) {
+            this.sendError(req, res, ex);
+        }
+    });
+}
+```
+
+To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+
+```typescript
+constructor() {
+    super();
+    this._baseRoute = "/hello_world";
+    this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```cs
+public class HelloWorldRestService : RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```cs
+public override void Register(){    
+    base.Register();    
+    RegisterRoute("GET", "/greeting", async (request, response, routeData) => {        
+        string name = null;        
+        if (request.Query.TryGetValue("name", out StringValues values)) {            
+            name = values.FirstOrDefault();        
+        }        
+        await SendResultAsync(response, await _controller.GreetingAsync(name));    
+  });
+}
+```
+
+To get a reference to the controller, we’ll add its descriptor to the “_dependencyResolver” with a name of “controller”.
+
+```cs
+public HelloWorldRestService(){    
+    _baseRoute = "hello_world";    
+    _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```go
+type HelloWorldRestService struct {
+    *rpc.RestService
+    controller *HelloWorldController
+}
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s Register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```go
+func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
+    name := req.URL.Query().Get("name")
+    result, err := c.controller.Greeting(name)
+    c.SendResult(res, req, result, err)
+}
+
+func (c *HelloWorldRestService) Register() {
+    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+}
+```
+
+To get a reference to the controller, add its handle to the DependencyResolver under the name “controller”. And for the registration mechanism to work correctly, you must pass a pointer to RestService on the component that implements the IRegistrable interface. Let's do it in the component constructing method:
+
+```go
+func NewHelloWorldRestService() *HelloWorldRestService {
+    c := HelloWorldRestService{}
+    c.RestService = rpc.NewRestService()
+    c.RestService.IRegisterable = &c
+    c.BaseRoute = "/hello_world"
+    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+    return &c
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```dart
+class HelloWorldRestService extends rpc.RestService
+```
+
+Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+
+```dart
+@override
+  void register() {
+    registerRoute('get', '/greeting', null,
+        (angel.RequestContext req, angel.ResponseContext res) async{
+      var name = req.queryParameters['name'];
+      sendResult(req, res, null, await controller.greeting(name));
+    });
+  }
+```
+
+To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+
+```dart
+HelloWorldRestService() : super() {
+    baseRoute = '/hello_world';
+    dependencyResolver.put(
+        'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
 
 ```python
 class HelloWorldRestService(RestService):
@@ -138,6 +787,16 @@ def __init__(self):
 
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
 Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
 
 We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
@@ -145,6 +804,180 @@ We also need to set a base route in the service’s constructor using the _base_
 ```GET /hello_world/greeting?name=John```
 
 Full listing for the REST service found in the file:
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+**/HelloWorldRestService.js**
+```typescript
+"use strict";
+
+const rpc = require("pip-services3-rpc-nodex");
+const commons = require("pip-services3-commons-nodex");
+
+class HelloWorldRestService extends rpc.RestService {
+    constructor() {
+        super();
+        this._baseRoute = "/hello_world";
+        this._dependencyResolver.put("controller", new commons.Descriptor("hello-world", "controller", "*", "*", "1.0"));
+    }
+
+    public setReferences(references) {
+        super.setReferences(references);
+        this._controller = this._dependencyResolver.getOneRequired('controller');
+    }
+
+    public register() {
+        this.registerRoute("get", "/greeting", null, async (req, res) => {
+            let name = req.query.name;
+            try {
+                let result = await this._controller.greeting(name);
+                this.sendResult(req, res, result);
+            } catch (ex) {
+                this.sendError(req, res, ex);
+            }
+        });
+    }
+}
+
+exports.HelloWorldRestService = HelloWorldRestService
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/HelloWorldRestService.cs**
+```cs
+using Microsoft.Extensions.Primitives;
+using PipServices3.Commons.Refer;
+using PipServices3.Rpc.Services;
+using System.Linq; 
+namespace HelloWorld {    
+    public class HelloWorldRestService : RestService {        
+        private HelloWorldController _controller;   
+
+        public HelloWorldRestService() {            
+            _baseRoute = "hello_world";            
+            _dependencyResolver.Put("controller", new Descriptor("hello-world", "controller", "default", "*", "1.0"));        
+        }    
+
+        public override void SetReferences(IReferences references) {            
+            base.SetReferences(references);            
+            _controller = _dependencyResolver.GetOneRequired<HelloWorldController>("controller");        
+        }  
+
+        public override void Register() {            
+            base.Register();            
+            RegisterRoute("GET", "/greeting", async (request, response, routeData) => {                
+                string name = null;                
+                if (request.Query.TryGetValue("name", out StringValues values)) {                    
+                  name = values.FirstOrDefault();                
+                }                
+              await SendResultAsync(response, await _controller.GreetingAsync(name));
+            });        
+        }    
+    }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/HelloWorldRestService.go**
+```go
+package quickstart
+
+import (
+    "net/http"
+    crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+)
+
+type HelloWorldRestService struct {
+    *rpc.RestService
+    controller *HelloWorldController
+}
+
+func NewHelloWorldRestService() *HelloWorldRestService {
+    c := HelloWorldRestService{}
+    c.RestService = rpc.NewRestService()
+    c.RestService.IRegisterable = &c
+    c.BaseRoute = "/hello_world"
+    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+    return &c
+}
+
+func (c *HelloWorldRestService) SetReferences(references crefer.IReferences) { 
+    c.RestService.SetReferences(references)
+    depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
+    if depErr == nil && depRes != nil {
+        c.controller = depRes.(*HelloWorldController)
+    }
+}
+
+func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
+    name := req.URL.Query().Get("name")
+    result, err := c.controller.Greeting(name)
+    c.SendResult(res, req, result, err)
+}
+
+func (c *HelloWorldRestService) Register() {
+    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/lib/src/HelloWorldRestService.dart**
+```dart
+import 'package:angel_framework/angel_framework.dart' as angel;
+import 'package:pip_services3_rpc/pip_services3_rpc.dart';
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import './HelloWorldController.dart';
+
+class HelloWorldRestService extends RestService {
+  HelloWorldController controller;
+
+  HelloWorldRestService() : super() {
+    baseRoute = '/hello_world';
+    dependencyResolver.put( 
+       'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
+  }
+
+ @override
+  void setReferences(references) {
+    super.setReferences(references);
+    controller =
+        dependencyResolver.getOneRequired<HelloWorldController>('controller');
+  }
+‍
+@override
+  void register() {
+    registerRoute('get', '/greeting', null,
+        (angel.RequestContext req, angel.ResponseContext res) async{
+      var name = req.queryParameters['name'];
+      sendResult(req, res, null, await controller.greeting(name));
+    });
+  }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
 
 **/HelloWorldRestService.py**
 ```python
@@ -168,9 +1001,230 @@ class HelloWorldRestService(RestService):
         self.send_result(result)
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 ### Step 5. Component factory
 When a microservice is being populated by components based on the configuration being used, it requires a special factory to create components in accordance with their descriptors. The HelloWorldServiceFactory class is used for just that, as it extends the Factory class of the Pip.Services toolkit.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+```typescript
+class HelloWorldServiceFactory extends components.Factory
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```typescript
+constructor() {
+    super();
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        controller.HelloWorldController
+    );
+    this.registerAsType(
+        new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        restService.HelloWorldRestService
+    );
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.js**
+
+```typescript
+"use strict";
+
+const components = require("pip-services3-components-nodex");
+const commons = require("pip-services3-commons-nodex");
+const controller = require("./HelloWorldController");
+const restService = require("./HelloWorldRestService");
+
+class HelloWorldServiceFactory extends components.Factory {
+    constructor() {
+        super();
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+            controller.HelloWorldController
+        );
+        this.registerAsType(
+            new commons.Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+            restService.HelloWorldRestService
+        );
+    }
+}
+
+exports.HelloWorldServiceFactory = HelloWorldServiceFactory
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```cs
+public class HelloWorldServiceFactory : Factory
+```
+
+The factory’s constructor is used to register descriptors and their corresponding component types.
+
+```cs
+public HelloWorldServiceFactory(){    
+    RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));    
+    RegisterAsType(HttpServiceDescriptor, typeof(HelloWorldRestService));
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.cs**
+
+```cs
+using PipServices3.Commons.Refer;
+using PipServices3.Components.Build; 
+
+namespace HelloWorld {    
+
+    public class HelloWorldServiceFactory : Factory {  
+
+        public static Descriptor Descriptor = new Descriptor("hello-world", "factory", "service", "default", "1.0");        
+        public static Descriptor ControllerDescriptor = new Descriptor("hello-world", "controller", "default", "*", "1.0");        
+        public static Descriptor RestServiceDescriptor = new Descriptor("hello-world", "service", "http", "*", "1.0");         
+        
+        public HelloWorldServiceFactory(){            
+            RegisterAsType(ControllerDescriptor, typeof(HelloWorldController));            
+            RegisterAsType(RestServiceDescriptor, typeof(HelloWorldRestService));        
+        }    
+    }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```go
+type HelloWorldServiceFactory struct {
+    cbuild.Factory
+}
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```go
+func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
+    c := HelloWorldServiceFactory{}
+    c.Factory = *cbuild.NewFactory()
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+        NewHelloWorldController,
+    )
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+        NewHelloWorldRestService,
+    )
+    return &c
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+Full listing of the factory’s code found in the file:
+
+**‍/HelloWorldServiceFactory.go**
+
+```go
+package quickstart
+
+import (
+    cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+)
+
+type HelloWorldServiceFactory struct {
+    cbuild.Factory
+} 
+func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
+    c := HelloWorldServiceFactory{}
+    c.Factory = *cbuild.NewFactory()
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+        NewHelloWorldController,
+    )
+    c.RegisterType(
+        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+        NewHelloWorldRestService,
+    )
+    return &c
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```dart
+class HelloWorldServiceFactory extends Factory
+```
+
+Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+
+```dart
+HelloWorldServiceFactory() : super() {
+    registerAsType(
+        Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        HelloWorldController);
+    registerAsType(Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        HelloWorldRestService);
+}
+```
+
+For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+
+The full listing of the factory’s code can found in the file:
+
+**‍/lib/src/HelloWorldServiceFactory.dart**
+
+```dart
+import 'package:pip_services3_components/pip_services3_components.dart';
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import './HelloWorldController.dart';import './HelloWorldRestService.dart';
+
+class HelloWorldServiceFactory extends Factory {
+  HelloWorldServiceFactory() : super() {
+    registerAsType(
+        Descriptor('hello-world', 'controller', 'default', '*', '1.0'),
+        HelloWorldController);
+    registerAsType(Descriptor('hello-world', 'service', 'http', '*', '1.0'),
+        HelloWorldRestService);
+  }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
 
 ```python
 class HelloWorldServiceFactory(Factory):
@@ -185,7 +1239,6 @@ def __init__(self):
     HttpServiceDescriptor = Descriptor('hello-world', 'service', 'http', '*', '1.0')
     self.register_as_type(ControllerDescriptor, HelloWorldController)
     self.register_as_type(HttpServiceDescriptor, HelloWorldRestService)
-
 
 ```
 
@@ -214,12 +1267,133 @@ class HelloWorldServiceFactory(Factory):
 
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
 ### Step 6. Container
 Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we’ll be running our example microservice as a system process. To do this, we’ll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
 
 Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
 
 The full listing of the container’s code can be found in the file:
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+**‍/HelloWorldProcess.js**
+
+```typescript
+"use strict";
+
+const rpc = require("pip-services3-rpc-nodex");
+const container = require('pip-services3-container-nodex');
+const factory = require("./HelloWorldServiceFactory");
+
+class HelloWorldProcess extends container.ProcessContainer {
+    constructor() {
+        super('hello-world', 'HelloWorld microservice');
+        this._configPath = './config.yml';
+        this._factories.add(new factory.HelloWorldServiceFactory());
+        this._factories.add(new rpc.DefaultRpcFactory());
+    }
+}
+
+exports.HelloWorldProcess = HelloWorldProcess;
+```
+
+</div>
+
+
+<div class="content-tab-section">
+
+**‍/HelloWorldProcess.cs**
+
+```cs
+using PipServices3.Container;
+using PipServices3.Rpc.Build; 
+
+namespace HelloWorld {
+
+    public class HelloWorldProcess : ProcessContainer {    
+
+        public HelloWorldProcess(): base("hello_world", "Hello world microservice") {            
+            _configPath = "config.yml";             
+            _factories.Add(new DefaultRpcFactory());            
+            _factories.Add(new HelloWorldServiceFactory());        
+        }   
+
+    }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**‍/HelloWorldProcess.go**
+
+```go
+package quickstart
+
+import (
+    cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+    rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
+)
+
+type HelloWorldProcess struct {
+    cproc.ProcessContainer
+}
+
+func NewHelloWorldProcess() *HelloWorldProcess {
+    c := HelloWorldProcess{}
+    c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
+    c.SetConfigPath("./config.yml")
+    c.AddFactory(NewHelloWorldServiceFactory())
+    c.AddFactory(rpcbuild.NewDefaultRpcFactory())
+    return &c
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**‍‍/lib/src/HelloWorldProcess.dart**
+
+```dart
+import 'package:pip_services3_rpc/pip_services3_rpc.dart';
+import 'package:pip_services3_container/pip_services3_container.dart';
+import './HelloWorldServiceFactory.dart';
+
+class HelloWorldProcess extends ProcessContainer {
+  HelloWorldProcess() : super('hello-world', 'HelloWorld microservice') {
+    configPath = './config.yml';
+    factories.add(HelloWorldServiceFactory());
+    factories.add(DefaultRpcFactory());
+  }
+}
+```
+
+</div>
+
+
+<div class="content-tab-section">
 
 **/HelloWorldProcess.py**
 
@@ -239,6 +1413,17 @@ class HelloWorldProcess(ProcessContainer):
         self._factories.add(DefaultRpcFactory())
 
 ```
+
+</div>
+
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 The dynamic configuration is defined in the file:
 
@@ -292,7 +1477,99 @@ Looking at the configuration file, we can conclude that the following components
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
 ### Step 7. Run and test the microservice
-In Python, we’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+We’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+**/run.js**
+
+```typescript
+"use strict";
+
+const proc = require("./HelloWorldProcess");
+
+try {
+   new proc.HelloWorldProcess().run(process.argv);
+} catch (ex) {
+   console.error(ex);
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/Program.cs**
+
+```cs
+namespace HelloWorld { 
+
+    class Program { 
+
+        static void Main(string[] args) {   
+
+            var process = new HelloWorldProcess();            
+            process.RunAsync(args).Wait();        
+        }
+
+    }
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/bin/run.go**
+
+```go
+package main
+
+import (
+    "os"
+    "quickstart"
+)
+
+func main() {
+    proc := quickstart.NewHelloWorldProcess()
+    proc.Run(os.Args)
+}
+```
+
+</div>
+
+<div class="content-tab-section">
+
+**/bin/run.dart.**
+
+```dart
+import 'package:pip_quickstart/pip_quickstart.dart';
+
+void main(List<String> argv) {
+  try {
+    var proc = HelloWorldProcess();
+    proc.run(argv);
+  } catch (ex) {
+    print(ex);
+  }
+}
+
+```
+
+</div>
+
+<div class="content-tab-section">
 
 **/run.py**
 
@@ -310,6 +1587,16 @@ if __name__ == '__main__':
         print(ex)
 
 ```
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 When a microservice starts up, the following sequence of events takes place:
 
@@ -334,9 +1621,63 @@ Components are unlinked. All components that implement the IUnreferenceable inte
 
 To start the microservice, run the following command from a terminal:
 
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+```bash
+node ./run.js
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```bash
+dotnet run
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```bash
+go run ./bin/run.go
+```
+
+</div>
+
+<div class="content-tab-section">
+
+```bash
+dart./bin/run.dart
+```
+
+</div>
+
+<div class="content-tab-section">
+
 ```bash
 python ./run.py
 ```
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 If the microservice started up successfully, you should see the following result in the terminal:
 
@@ -354,6 +1695,6 @@ If all’s well, you should get the following string as a result:
 
 ```Hello, John!```
 
-All source codes are available on [GitHub](https://github.com/pip-services-samples/service-quickstart-python).
+All source codes are available on [GitHub](https://github.com/pip-services-samples).
 
 To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice/) as your next step!

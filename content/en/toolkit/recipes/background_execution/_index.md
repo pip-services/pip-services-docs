@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Background Execution!"
-linkTitle: "Background Execution!"
+title: "Background Execution"
+linkTitle: "Background Execution"
 weight: 60
 ---
 
@@ -33,88 +33,278 @@ Let’s now take a look at how we can approach this task using the strategies me
 
 When creating the controller, we can add in a timer and structure the processing of requests in the following manner:
 
-```python
-__timer = FixedRateTimer()
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+```cs
+private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
 ...
-
-def open(self, correlation_id: Optional[str]):
-    self.__timer.set_callback(lambda: self.perform_analysis(correlation_id))
-    self.__timer.set_interval(1000)
-    self.__timer.set_delay(1000)
-    self.__timer.start()
-    self.__logger.trace(correlation_id, "Counter controller opened")
+public Task OpenAsync(string correlationId)
+{
+   Timer.Task = new Action(async () =>  await PerformAnalysisAsync(correlationId));
+   Timer.Interval = Parameters.GetAsInteger("interval");
+   Timer.Delay = Parameters.GetAsInteger("delay"); 
+   Timer.Start();
+   return Task.CompletedTask;
+ }
 
 ```
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 As long as the execution time of the task does not exceed the timer’s interval, this implementation will work as expected. However, if there’s a large amount of files to process and the task takes too long, the timer will create another thread for running the task. This would result in an error, as we’d end up processing the data more than once. To prevent this from happening, the controller should expose distributed locks (e.g. **CloudStorageTableLock** from pip-services-azure) while it’s executing the task:
 
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-def perform_analysis(self, correlation_id):
+<div class="content-tab-section">
 
-    key = ImageBatchProcessor.__name__
-    if not Lock.try_acquire_lock(correlation_id, key, Parameters.get_as_integer("interval")):
- 	    return
-   
-    ... # Long running tasks
-    Lock.release_lock(correlation_id, key)
+**TODO: add language**
 
-```
+</div>
 
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
 
 ### 2. Using message queues
 
 In this case, task execution is triggered by a message/signal that is received from a message queue (preferably with guaranteed delivery). A simple listener can be used to watch the queue and initiate the task. Once the listener receives a message, it starts the task, but leaves the message/signal in the queue as a lock for the duration of the processing event. Once the task has been processed, the message/signal is deleted from the queue. This method guarantees that the task will be executed once and only once.
 
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
+<div class="content-tab-section">
 
-def open(self, correlation_id):
-   self._message_queue.begin_listen(correlation_id, self.perform_analysis)
+**TODO: add language**
 
+</div>
 
-def perform_analysis(self, correlation_id):
-   ... # Long running tasks
+<div class="content-tab-section">
 
+```cs
 
+public Task OpenAsync(string correlationId)
+{
+   _messageQueue?.BeginListen(correlationId, async (message, q) =>
+   {
+      await PerformAnalysisAsync(correlationId);
+    	await q.CompleteAsync(message);
+   }); 
+   return Task.CompletedTask;
+}
+public async Task PerformAnalysisAsync(string correlationId)
+{
+  ... // Long running tasks
+}
 ```
 
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
 ### 3. Using the Jobs microservice
-For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-python). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
+For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-dotnet). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
 1. a timer, 
 2. the Jobs service’s client, and 
 3. a type for the job/task being executed.
 
-```python
-# Step 1 – Create a timer, the Jobs service’s client,  and a type for the job/task being executed
-__timer = FixedRateTimer()
-__jobs_client: IJobsClientV1 = None
-__job_type = "AnalysisOfNewFiles"
-...
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-# Step2 – Structure the processing of requests
-def open(self, correlation_id):
-   self.__timer.set_task(lambda: self.perform_analysis(correlation_id)) 
-   self.__timer.set_interval(Parameters.get_as_integer("interval"))
-   self.__timer.set_delay(Parameters.get_as_integer("delay"))
-   self.__timer.start()
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+```cs
+private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
+private IJobsClientV1 JobsClient { get; set; }
+private const string JobType = “AnalysisOfNewFiles”;
+...
+public Task OpenAsync(string correlationId)
+{
+   Timer.Task = new Action(async () =>  await PerformAnalysisAsync(correlationId));
+   Timer.Interval = Parameters.GetAsInteger("interval");
+   Timer.Delay = Parameters.GetAsInteger("delay");
+   Timer.Start();
+   return Task.CompletedTask;
+}
 
 ```
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>
+
+
 Now, in the task’s method, we need to add some code that checks whether or not a job of this type is already running or not. If it is, then no processing is required. If it isn’t, then a job is created, started, and eventually completed, once all processing has been performed.
 
-TODO: complete it for Python
-```python
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+```cs
 public async Task PerformAnalysisAsync(string correlationId)
 {
-// Step 1: check whether or not a job of this type is already running or not
    if (await JobsClient.IsJobExecutingAsync(correlationId, JobType))
-   {
-	// Case 1: a job of this type is already running
-  	return Task.CompletedTask; 
-   }
-  
-// Case 2: no job of this type is already running
+  	   return Task.CompletedTask;
+ 
    var newJob = new NewJobV1()
    {
    	Type = JobType,
@@ -122,8 +312,36 @@ public async Task PerformAnalysisAsync(string correlationId)
    };
    var job = await JobsClient.AddJobAsync(correlationId, newJob);
    await JobsClient.StartJobByIdAsync(correlationId, job.Id, TimeSpan.FromHours(2));
-   ... // Long running tasks
-   …// Extend job if needed
+   ...   // Long running tasks
+   ...   // Extend job if needed
    await JobsClient.CompleteJobAsync(correlationId, job.Id);
 }
 ```
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+<div class="content-tab-section">
+
+**TODO: add language**
+
+</div>
+
+</div>

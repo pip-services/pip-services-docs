@@ -509,9 +509,9 @@ The Pip.Service’s Toolkit also includes a few utilities that can be used durin
 For example:
 
 ```typescript
-Opener.open(correlationId, references.getAll());
+await Opener.open(correlationId, references.getAll());
 ...
-Closer.close(correlationId, references.getAll());
+await Closer.close(correlationId, references.getAll());
 ```
 
 </div>

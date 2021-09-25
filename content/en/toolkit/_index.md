@@ -9,13 +9,13 @@ weight: 1
 ---
 
 ### [Getting Started](getting_started)
-TODO: add description
+This section contains introductory learning material. After mastering the content of these tutorials, the reader should be able to use the PIP.Services toolkit with a good level of proficiency. 
 
 ### [Recipes](recipes)
-TODO: add description
+This section contains intermediate level learning material. The tutorials address more specific topics, such as logging or specific types of persistance. 
 
 ### [Tutorials](tutorials)
-TODO: add description
+This section contains advanced learning material. The tutorials address more complex concepts and examples. 
 
 ### [Contribute](contribute)
-TODO: add description
+A guide on how to contribute to the PIP.Services toolkit project.

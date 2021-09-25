@@ -15,7 +15,7 @@ This section contains introductory learning material. After mastering the conten
 This section contains intermediate level learning material. The tutorials address more specific topics, such as logging or specific types of persistance. 
 
 ### [Tutorials](tutorials)
-This section contains advanced learning material. The tutorials address more complex concepts and examples. 
+This section contains advanced learning material. The tutorials address more complex concepts and provide full examples of microservice systems. 
 
 ### [Contribute](contribute)
 A guide on how to contribute to the PIP.Services toolkit project.

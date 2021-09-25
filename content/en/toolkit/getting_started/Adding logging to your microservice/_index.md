@@ -1,9 +1,9 @@
 ---
-title: "Adding logging to your microservice"
+type: docs
+no_list: true
+title: "Adding logging to a component"
 linkTitle: "Logging"
-weight: 100
-description: >-
-     How to add a logger to a component.
+weight: 1
 ---
 
 ## Key takeaways

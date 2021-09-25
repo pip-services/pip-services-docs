@@ -1,4 +1,4 @@
- ---
+---
 title: "Adding logging to your microservice"
 linkTitle: "Logging"
 weight: 100

@@ -5,10 +5,11 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-components-nodex"
 no_list: true
 weight: 30
 description: > 
-    Component definitions for Node.js / ES2017
+    Component definitions for Pip.Services in Node.js / ES2017.  
 
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+    
     It contains standard component definitions that can be used to build applications and services.
 ---
 

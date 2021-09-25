@@ -5,12 +5,12 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 no_list: true
 weight: 30
 description: > 
-    Prometheus components for Pip.Services Node.js / ES2017.  
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    Prometheus components for Pip.Services in Node.js / ES2017.  
 
 
-    This module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both, in client mode through PushGateway and as a service.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+
+    This module contains components for working with meters in the Prometheus service. The [PrometheusCounters](count/prometheus_counters) and [PrometheusMetricsService](/services/prometheus_metrics_service) components allow you to work both, in client mode through PushGateway and as a service.
 ---
 
 ### Packages

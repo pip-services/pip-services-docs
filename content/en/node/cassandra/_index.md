@@ -5,9 +5,12 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 no_list: true
 weight: 30
 description: > 
-    Cassandra components for Pip.Services in Node.js / ES2017. 
+    Cassandra components for Pip.Services in Node.js / ES2017.  
+    
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement Cassandra persistence.
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+
+    It provides a set of components to implement Cassandra persistence.
 ---
 
 ### Packages

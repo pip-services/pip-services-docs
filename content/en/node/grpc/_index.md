@@ -5,9 +5,10 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-grpc-nodex"
 no_list: true
 weight: 30
 description: > 
-    GRPC components for Pip.Services in Node.js / ES2017
+    GRPC components for Pip.Services in Node.js / ES2017.  
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
 
     The grpc module is used to organize synchronous data exchange using calls through the gRPC protocol. It has implementations of both, the server and client parts.
 ---

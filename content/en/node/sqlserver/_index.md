@@ -5,9 +5,10 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlserver-nodex"
 no_list: true
 weight: 30
 description: > 
-    SQLServer components for Node.js / ES2017. 
+    SQLServer components for Pip.Services in Node.js / ES2017.  
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
 ---
 
 ### Packages

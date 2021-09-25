@@ -5,7 +5,11 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 no_list: true
 weight: 30
 description: > 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    Commons abstractions and instruments for Pip.Services in Node.js / ES2017.  
+    
+
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+    
     It provides a set of tools used in microservices or backend services, and it is designed to facilitate
     symmetric implementation accross different programming languages.
 

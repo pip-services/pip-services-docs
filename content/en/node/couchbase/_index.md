@@ -5,9 +5,12 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 no_list: true
 weight: 30
 description: > 
-    Couchbase components for Pip.Services in Node.js / ES2017. 
+    Couchbase components for Pip.Services in Node.js / ES2017.  
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement Couchbase persistence.
+
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+    
+    It provides a set of components used to implement Couchbase persistence.
 ---
 
 ### Packages

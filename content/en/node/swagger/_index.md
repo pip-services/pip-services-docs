@@ -5,11 +5,10 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-swagger-nodex"
 no_list: true
 weight: 30
 description: > 
-    Swagger UI for Pip.Services in Node.js / ES2017
+    Swagger UI for Pip.Services in Node.js / ES2017.  
 
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
+    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
 
     The swagger module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
 ---

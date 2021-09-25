@@ -90,4 +90,9 @@ There are different logging levels. PIP.Services defines them as:
     <td>Logs everything down to fine-granular debugging messages.</td>
   </tr>		
 		
+Once generated, log messages need to be stored or displayed. PIP.Services provides specific tools for this: [CachedLogger](http://docs.pipservices.org/python/components/log/cached_logger/) and [ConsoleLogger](http://docs.pipservices.org/python/components/log/console_logger/). The first class stores log messages in memory. The second class displays them on a console. The toolkit also provides us with the [CompositeLogger](http://docs.pipservices.org/python/components/log/composite_logger/), which allows for message aggregation and thus, creating a centralized logging point.
+	
+Additionally, PIP.Services provides implementations of loggers for [CloudWatch](http://docs.pipservices.org/python/aws/log/cloud_watch_logger/), [ElasticSearch](http://docs.pipservices.org/python/elasticsearch/log/elasticsearch_logger/), and [DataDog](http://docs.pipservices.org/python/datadog/log/datadog_logger/).  
+
+Now, we will see how to create a console logger and a composite logger.
 

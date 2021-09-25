@@ -47,4 +47,47 @@ Finally, we will see how to add loggers for Datadog, Elasticsearch, and Amazon C
 Logging is the capacity to create tagged messages from events in our code. These messages can inform us about the running process. 
 
 There are different logging levels. PIP.Services defines them as:
- 
+
+<table>
+  <tr>
+    <th>Level name</th>
+    <th>Level number</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Nothing</td>
+    <td>0</td>
+    <td>Nothing to be logged.</td>
+  </tr>		
+  <tr>
+    <td>Fatal</td>
+    <td>1</td>
+    <td>Logs only fatal errors that cause a microservice to fail.</td>
+  </tr>		
+  <tr>
+    <td>Error</td>
+    <td>2</td>
+    <td>Logs all errors - fatal or recoverable.</td>
+  </tr>		
+  <tr>
+    <td>Warn</td>
+    <td>3</td>
+    <td>Logs errors and warnings.</td>
+  </tr>		
+  <tr>
+    <td>Info</td>
+    <td>4</td>
+    <td>Logs errors and important information messages.</td>
+  </tr>		
+  <tr>
+    <td>Debug</td>
+    <td>5</td>
+    <td>Logs everything up to high-level debugging information.</td>
+  </tr>		
+  <tr>
+    <td>Trace</td>
+    <td>6</td>
+    <td>Logs everything down to fine-granular debugging messages.</td>
+  </tr>		
+		
+

@@ -12,10 +12,10 @@ weight: 1
 This section contains introductory learning material. After mastering the content of these tutorials, the reader should be able to use the PIP.Services toolkit with a good level of proficiency. 
 
 ### [Recipes](recipes)
-This section contains intermediate level learning material. The tutorials address more specific topics, such as logging or specific types of persistance. 
+This section contains intermediate level learning material. The tutorials address more advanced topics, such as logging or specific types of persistance. 
 
 ### [Tutorials](tutorials)
-This section contains advanced learning material. The tutorials address more complex concepts and provide full examples of microservice systems. 
+This section contains advanced learning material. The tutorials address more complex concepts and examples. 
 
 ### [Contribute](contribute)
 A guide on how to contribute to the PIP.Services toolkit project.

@@ -143,8 +143,10 @@ Finally, we will force an exception in the my_task method. As we had explained i
 </div>
 
 
-And, our final code will look like this:
+And, our final code will look like this:    
+
 a)	Our components
+
 <div class="btn-group" role="group" aria-label="Lnguage selector">
 
   <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
@@ -155,6 +157,7 @@ a)	Our components
 
 <div  id="python">
 ```python
+
 from pip_services3_commons.config import IConfigurable, ConfigParams, IExecutable
 from pip_services3_commons.refer import IReferenceable, IReferences, Descriptor, IUnreferenceable
 from pip_services3_commons.run import IOpenable, ICleanable

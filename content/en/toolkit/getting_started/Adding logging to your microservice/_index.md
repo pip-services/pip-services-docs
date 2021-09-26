@@ -109,6 +109,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 <embed type="text/html" src="code1.html" width:"100%" height="100%">
 
 <img src="code1.html" alt="Console logger messages" width:"100%" height="100%">
+
 And, our final code will look like this:    
 
 a)	Our components

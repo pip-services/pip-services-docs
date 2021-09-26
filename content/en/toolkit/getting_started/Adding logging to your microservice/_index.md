@@ -100,13 +100,13 @@ Now, we will see how to create a console logger and a composite logger.
 
 ### Adding a console logger to our component
 
-In our example, we will add a logger that sends messages to our console. For this, we will use the ConsoleLogger class. After we created an instance of this class, we will set the logging level to five, which will allow us to log everything up to debug level. 
+In our example, we will add a logger that sends messages to our console. For this, we will use the **ConsoleLogger** class. After we created an instance of this class, we will set the logging level to five, which will allow us to log everything up to debug level. 
 
  <!--#include file="code1.html" -->    
 
 Then, we will replace our print messages with info-level log messages. For example, *print("MyComponentA has been created.")* will be replaced with  *logger.info(None, "MyComponentA has been created.")*.
 
-Finally, we will force an exception in the my_task method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
+Finally, we will force an exception in the **my_task** method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
 
 
 And, our final code will look like this:    
@@ -134,12 +134,17 @@ Our code will remain the same, except that now we need to create a composite log
 
 Then, we will use the configure and set_references methods to let our composite logger know where to ask for log messages. 
 Our factory and process container code sections will remain the same, but we will have to add a reference to our console logger in our configuration file. The syntax will be:
-
-
+```  
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: {{LOG_LEVEL}}{{^LOG_LEVEL}}info{{/LOG_LEVEL}}
+``` 
 Finally, we will add a console logger to MyComponentB.
 After these changes, our component section will look like this:
 
 Once we run our service with the re-defined components, we will get the following results:
+
+<img src="figure2.jpg" alt="Composite logger messages" style="width:100%">
 
 As we can see, we have log messages received from both MyComponentA and MyComponentB. 
 

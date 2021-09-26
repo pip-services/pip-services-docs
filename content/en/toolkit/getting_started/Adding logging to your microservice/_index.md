@@ -109,8 +109,8 @@ Then, we will replace our print messages with info-level log messages. For examp
 
 Finally, we will force an exception in the **my_task** method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
 
-<embed type="text/html" src="code1.html">
-
+<embed type="text/html" src="code1.html" style="width:100%">
+<img src="code1.html" alt="Console logger messages" style="width:100%">
 And, our final code will look like this:    
 
 a)	Our components

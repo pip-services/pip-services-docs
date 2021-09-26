@@ -111,21 +111,7 @@ In our example, we will add a logger that sends messages to our console. For thi
   <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
 </div>
 
-<div  id="node">
-	  
-</div>
 
-<div  id="dotnet">
-	  
-</div>
-
-<div  id="golang">
-	  
-</div>
-	  
-<div  id="dart">
-	  
-</div>
 
 <div  id="python">
 ```python
@@ -135,9 +121,6 @@ logger.set_level(5)
 ```  
 </div>
 
-<div  id="java">
-	  
-</div>
 
 Then, we will replace our print messages with info-level log messages. For example, *print("MyComponentA has been created.")* will be replaced with  *logger.info(None, "MyComponentA has been created.")*.
 

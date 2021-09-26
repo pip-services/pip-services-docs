@@ -41,7 +41,7 @@ To add values to the persistence object, we will use the **create** method. This
 
 After creating the persisted objects, we will obtain the following output:
 
-<img src="figure1.jpg" alt="figure 1" style="width:100%">
+<img src="figure1.png" alt="figure 1" style="width:100%">
 
 As we can see, the memory persistence object allocated a value to the id of dummy3, which we had declared as None.
 
@@ -51,13 +51,13 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 
 The **result** object is of type [DataPage](http://docs.pipservices.org/python/commons/data/data_page/), which has two fields: data and total. The first is a list containing the items on the retrieved page, and the second is the total number of items in our request. After running this code, we will see the following output with the values of the obtained object.
 
-<img src="figure2.jpg" alt="Figure 2" style="width:100%">
+<img src="figure2.png" alt="Figure 2" style="width:100%">
 
 Similarly, we can obtain all the persisted objects by using None as our filter.
 
 After running the above code, we will obtain the following result:
 
-<img src="figure3.jpg" alt="Figure 3" style="width:100%">
+<img src="figure3.png" alt="Figure 3" style="width:100%">
 
 #### Update a value in the persistence object
 
@@ -67,7 +67,7 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 
 And get the updated object:
 
-<img src="figure4.jpg" alt="Figure 4" style="width:100%">
+<img src="figure4.png" alt="Figure 4" style="width:100%">
 
 We can also use the **update_partially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
 
@@ -75,7 +75,7 @@ To verify the change, we can use the filter defined earlier.
 
 And, we will obtain the updated persisted object.
 
-<img src="figure5.jpg" alt="Figure 5" style="width:100%">
+<img src="figure5.png" alt="Figure 5" style="width:100%">
 
 #### Delete a value from the persistence object
 
@@ -85,7 +85,7 @@ To verify that the object has been deleted, we can apply a filter and search for
 
 As expected, the answer will be:
 
-<img src="figure6.jpg" alt="Figure 6" style="width:100%">
+<img src="figure6.png" alt="Figure 6" style="width:100%">
 
 ### Wrapping up
 

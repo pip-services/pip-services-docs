@@ -132,9 +132,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 # Logger setting
 logger = ConsoleLogger()
 logger.set_level(5) 
-```
-![image](https://user-images.githubusercontent.com/68734409/134788835-97fe2f2a-c45f-4625-ab84-1b2fa02049e0.png)
-	  
+```  
 </div>
 
 <div  id="java">

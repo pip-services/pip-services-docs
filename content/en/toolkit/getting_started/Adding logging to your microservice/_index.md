@@ -113,3 +113,47 @@ And, our final code will look like this:
 
 a)	Our components
 
+b)	Our factory
+
+c)	Our service
+
+d)	Running our service
+
+After running this code, we will get the following result:
+
+As we can see from the above figure, the program has logged all messages with level info and from our artificial error. 
+
+This concludes our first task. 
+
+### Adding a composite logger to our component
+
+Now, we will extend our logging capacity by adding a composite logger. This logger will allow us to aggregate all loggers from our component’s references into a centralized log. 
+Our code will remain the same, except that now we need to create a composite logger for MyComponentA. For this, we will create an instance of this logger and set the logging level to 5. 
+
+Then, we will use the configure and set_references methods to let our composite logger know where to ask for log messages. 
+Our factory and process container code sections will remain the same, but we will have to add a reference to our console logger in our configuration file. The syntax will be:
+
+
+Finally, we will add a console logger to MyComponentB.
+After these changes, our component section will look like this:
+
+Once we run our service with the re-defined components, we will get the following results:
+
+As we can see, we have log messages received from both MyComponentA and MyComponentB. 
+
+### Adding specific loggers
+As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch, and  Amazon CloudWatch. The process to add any of them to a component is similar to what we saw in our console logger example: we need to declare an instance of the logger, configure it, set the message level, and add the messages we need. Here below are examples of how to define each of them.
+
+#### a)	Datadog
+
+#### b) Elasticsearch
+
+#### c)	Amazon CloudWatch
+
+### Wrapping up
+In this tutorial, we have learned what logging is, the different logging levels, and how to use the **ConsoleLogger** and **CompositeLogger** from PIP.Services to display log messages. The main advantage of the composite logger is its capacity to aggregate all logging messages, thus creating a centralized logging point.
+
+We have also learned that PIP.Services provides several implementations of loggers, such as **CloudWatchLogger**, **ElasticSearchLogger**, and **DataDogLogger**.  
+
+Although the examples presented here are quite general, the concepts learned continue to apply to the development of more complex applications.
+

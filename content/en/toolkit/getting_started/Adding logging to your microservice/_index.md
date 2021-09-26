@@ -122,7 +122,8 @@ d)	Running our service
 
 After running this code, we will get the following result:
 
-<img src="../figure1.jpg" alt="Console logger messages" style="width:100%">
+
+<img src="figure1.png" alt="Console logger messages" style="width:100%">
 
 As we can see from the above figure, the program has logged all messages with level info and from our artificial error. 
 
@@ -145,7 +146,7 @@ After these changes, our component section will look like this:
 
 Once we run our service with the re-defined components, we will get the following results:
 
-<img src="figure2.jpg" alt="Composite logger messages" style="width:100%">
+<img src="figure2.png" alt="Composite logger messages" style="width:100%">
 
 As we can see, we have log messages received from both MyComponentA and MyComponentB. 
 

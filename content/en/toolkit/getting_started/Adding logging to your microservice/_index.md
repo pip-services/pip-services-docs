@@ -178,8 +178,7 @@ def my_task(self, correlation_id):
        logger.error(None, inst, "Error created.")  
 
 ```
-![image](https://user-images.githubusercontent.com/68734409/134788871-80980c85-4a3c-4c09-8b74-6c6833c17328.png)
-	  
+  
 </div>
 
 <div  id="java">

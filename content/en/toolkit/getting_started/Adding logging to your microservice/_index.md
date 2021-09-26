@@ -122,3 +122,25 @@ logger.set_level(5)
 Then, we will replace our print messages with info-level log messages. For example, *print("MyComponentA has been created.")* will be replaced with  *logger.info(None, "MyComponentA has been created.")*.
 
 Finally, we will force an exception in the my_task method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
+
+<div class="btn-group" role="group" aria-label="Lnguage selector">
+
+  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+
+</div>
+
+
+
+<div  id="python">
+```python
+    def my_task(self, correlation_id):
+        # create an artificial problem        
+        try:
+            raise Exception('Logging demo', 'Error created')
+        except Exception as inst:
+            logger.error(None, inst, "Error created.") 
+```  
+</div>
+
+And, our final code will look like this:
+a)	Our components

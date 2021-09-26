@@ -193,19 +193,10 @@ class MyComponentB(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         pass
 
     def unset_references(self):
-        """
-        Unsets (clears) previously set references to dependent components.
-        """
         pass
     
     def clear(self, correlation_id):
-        """
-        Clears component state.
-        :param correlation_id: (optional) transaction id to trace execution through call chain.
-        """
         pass
-
-
 
 class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, ICleanable, IExecutable):
     _param1 = 'ABC'
@@ -259,18 +250,11 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
             logger.error(None, inst, "Error created.")  
 
     def unset_references(self):
-        """
-        Unsets (clears) previously set references to dependent components.
-        """
         self._another_component = None
         self._status = "Un-referenced"
         logger.info(None, "References cleared")
     
     def clear(self, correlation_id):
-        """
-        Clears component state.
-        :param correlation_id: (optional) transaction id to trace execution through call chain.
-        """
         self.dummy_variable = None
         self._status = None
         logger.info(None, "Resources cleared")

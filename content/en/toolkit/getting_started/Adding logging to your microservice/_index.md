@@ -102,8 +102,8 @@ Now, we will see how to create a console logger and a composite logger.
 
 In our example, we will add a logger that sends messages to our console. For this, we will use the **ConsoleLogger** class. After we created an instance of this class, we will set the logging level to five, which will allow us to log everything up to debug level. 
 
- <!--#include file="code1.html" -->    
-<div w3-include-html="code1.html"></div>
+ <!-- #include virtual="code1.html" -->    
+ <!-- #include file="code1.html" -->
 
 Then, we will replace our print messages with info-level log messages. For example, *print("MyComponentA has been created.")* will be replaced with  *logger.info(None, "MyComponentA has been created.")*.
 

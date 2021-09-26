@@ -122,7 +122,7 @@ d)	Running our service
 
 After running this code, we will get the following result:
 
-<img src="figure1.jpg" alt="Console logger messages" style="width:100%">
+<img src="../figure1.jpg" alt="Console logger messages" style="width:100%">
 
 As we can see from the above figure, the program has logged all messages with level info and from our artificial error. 
 

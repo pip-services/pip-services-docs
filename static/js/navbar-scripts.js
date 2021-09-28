@@ -33,8 +33,8 @@ function loadNavbar(event) {
     
     // get current active or Menu by default
     if (document.getElementsByClassName('nav-link active dropdown-item')[0] == undefined){
-        localStorage['currentMenuActiveItem'] = 'menu'.toUpperCase();
-        localStorage['dropdownState'] = 'menu'.toUpperCase();
+        localStorage['currentMenuActiveItem'] = 'Menu';
+        localStorage['dropdownState'] = 'Menu';
     } else {
         localStorage['currentMenuActiveItem'] = document.getElementsByClassName('nav-link active dropdown-item')[0].innerText.trim();
     }

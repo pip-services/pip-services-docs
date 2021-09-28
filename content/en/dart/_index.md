@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Pip.Services Toolkit for Dart"
-linkTitle: "Python"
+linkTitle: "Dart"
 weight: 40
 ---
 

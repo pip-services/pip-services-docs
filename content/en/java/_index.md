@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Pip.Services Toolkit for Java"
-linkTitle: "Python"
+linkTitle: "Java"
 weight: 60
 ---
 

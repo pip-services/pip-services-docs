@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Pip.Services Toolkit for Node.js"
-linkTitle: "Python"
+linkTitle: "Node"
 weight: 1
 ---
 

@@ -1,0 +1,4 @@
+{{ $path := .Get 0 }}
+{{ $file := readFile $path }}
+{{ $lang := .Get "language" }}
+{{ (print "" $lang "\n" $file "\n") | markdownify }}

@@ -106,42 +106,41 @@ Then, we will replace our print messages with info-level log messages. For examp
 
 Finally, we will force an exception in the **my_task** method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
 
-<div class="btn-group" role="group" aria-label="Lnguage selector">
-  <button id="select-node" type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-  <button id="select-dotnet" type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-  <button id="select-golang" type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-  <button id="select-dart" type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-  <button id="select-python" type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-  <button id="select-java" type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
 </div>
 
-<div  id="node">
-	Not available  
+<div class="content-tab-section">
+  Not available  
 </div>
 
-<div  id="dotnet">
-	Not available    
+<div class="content-tab-section">
+  Not available  
 </div>
 
-<div  id="golang">
-	Not available  
-	  
-</div>
-	  
-<div  id="dart"> 
-	Not available  
+<div class="content-tab-section">
+  Not available  
 </div>
 
-<div  id="python">
-	 {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
 </div>
 
-<div  id="java">
-	  Not available
+<div class="content-tab-section">
+  Not available  
 </div>
 
-
-
+</div>
 
 
 

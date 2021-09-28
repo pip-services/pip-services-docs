@@ -133,7 +133,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 </div>
 
 <div  id="python">
-	 {{< include "__code1_python.md" >}}
+	 {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
 </div>
 
 <div  id="java">

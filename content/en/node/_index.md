@@ -2,7 +2,7 @@
 type: docs
 title: "Pip.Services Toolkit for Node.js"
 linkTitle: "Node"
-weight: 1
+weight: 10
 ---
 
 ### Modules

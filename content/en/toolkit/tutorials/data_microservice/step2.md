@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Step 3. Data model development"
-linkTitle: "Step 3. Data model."
+linkTitle: "Step 3. Data model"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 

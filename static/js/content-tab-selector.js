@@ -9,10 +9,27 @@ tabSelectors.forEach(tabSelector => {
         button.addEventListener('click', showSelected);
     })
 
-    // by default show first
-    showSelected({ target: buttons[0] });
+    
+    showFirstWithContent(buttons);
 });
 
+// by default show first with content
+function showFirstWithContent(buttons){
+    const reservedKeywords = ['not available']
+    let contentSections = Array.from(buttons[0].parentElement.parentElement.getElementsByClassName('content-tab-section'));
+
+    for (let index = 0; index < contentSections.length; index++){
+        let value = contentSections[index];
+        if (value.innerText != undefined 
+            && value.innerText != null 
+            && value.innerText != '' 
+            && !reservedKeywords.includes(value.innerText.trim().toLowerCase())) {
+
+            showSelected({ target: buttons[index] });
+            break;
+        }
+    }
+}
 
 
 function showSelected(e) {

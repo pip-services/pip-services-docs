@@ -57,7 +57,7 @@ The code will look something like this:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -99,7 +99,7 @@ The next step is to create a memory persistence object. Here, we need to use the
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code2_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code2_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -145,7 +145,7 @@ To add values to the persistence object, we will use the **create** method. This
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code3_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code3_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -195,7 +195,7 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code4_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code4_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -240,7 +240,7 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code5_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code5_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -287,7 +287,7 @@ To update a value in the persistence object, we need to use the **update** metho
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code6_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code6_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -328,7 +328,7 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code7_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code7_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -373,7 +373,7 @@ We can also use the **update_partially** function. In this case, we need to spec
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code8_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code8_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -414,7 +414,7 @@ To verify the change, we can use the filter defined earlier.
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code9_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code9_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -461,7 +461,7 @@ Similarly, we can delete an object stored in the persistence object by using the
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code10_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code10_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -502,7 +502,7 @@ To verify that the object has been deleted, we can apply a filter and search for
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code11_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/creating_a_memory_persistence_component/__code11_python.md" >}}
 </div>
 
 <div class="content-tab-section">

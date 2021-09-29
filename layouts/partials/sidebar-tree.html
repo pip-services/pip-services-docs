@@ -129,13 +129,15 @@
                        (and (not $shouldDelayActive) (eq $s.Parent $p.Parent)) 
                        (and (not $shouldDelayActive) (eq $s.Parent $p)) 
                        (not $p.Site.Params.ui.sidebar_menu_compact))
-              true false }}
+              true false }} <!-- rules for collapse sections -->
+
+  {{ $isIncludeSection := not ( eq $s.LinkTitle "") }} <!-- hide if is included files -->
 
   {{ $reducer := 2 }} <!-- reduce the paddings for sidebar tree -->
   {{ $padding := mul 10 (sub .ulNr $reducer) }}
 
-  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections) $isHomePageOrHardcodeSection (eq $s.LinkTitle "Home")}} 
-
+  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections $isIncludeSection) $isHomePageOrHardcodeSection (eq $s.LinkTitle "Home")}} 
+    
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
       id="{{ $mid }}-li">

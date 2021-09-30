@@ -100,7 +100,7 @@ function search(searchQuery) {
                 // filter empty and localhost vals
                 subSections = subSections.filter(x => !x.includes('localhost') && x != "").slice(0, -1);
 
-                if (localStorage['currentMenuActiveItem'].toLowerCase() != 'menu'){
+                if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
                     subSections = subSections.slice(1);
                     
                     let activeMenuItem = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/');

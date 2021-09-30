@@ -22,6 +22,8 @@ parametern: valueN
 ```
 Where the configuration parameters depend on the component considered, and can be obtained from the component’s Configuration parameters section available in the reference manual.
 
+<img src="figure1.png" alt="figure 1" style="width:100%">
+
 ### Configuration examples
 The following sections show several configuration examples for the most common components available in the PIP.Services toolkit. They are presented in alphabetical order and serve as a guide that can be adapted to your specific needs.
 

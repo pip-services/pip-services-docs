@@ -32,7 +32,7 @@ The example below demonstrates a class that implements the MongoDB persistence c
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code1_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -71,7 +71,7 @@ And this is how we could use such a class:
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code2_node.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -119,7 +119,7 @@ The example below demonstrates how the [ConfigParams](../../commons/config/confi
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code3_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -179,7 +179,7 @@ Next, register the persistence as a component in the microservice’s **Factory*
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code4_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -218,7 +218,7 @@ And add the [DefaultMongoDbFactory](../../mongodb/build/default_mongodb_factory/
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code5_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -272,7 +272,7 @@ The implementation we will be working with going forward is called the [Identifi
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code6_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -311,7 +311,7 @@ The implementation we will be working with going forward is called the [Identifi
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code7_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -350,7 +350,7 @@ We can build upon the **IdentifiableMongoDbPersistence** by overriding its **Com
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code8_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -393,7 +393,7 @@ Persistence components in the Pip.Services Toolkit use a number of data patterns
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code9_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -432,7 +432,7 @@ In the persistence component, the developer is responsible for parsing **FilterP
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code10_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -473,7 +473,7 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code11_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -515,7 +515,7 @@ As mentioned above, developers can also implement custom persistence methods. Th
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code12_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -554,7 +554,7 @@ When we put everything together, we end up with the following component:
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code13_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -593,7 +593,7 @@ The following example demonstrates how we can use our newly created persistence 
 	</div>
 
 <div class="content-tab-section">
-  Not available  
+    {{< include "/content/en/toolkit/getting_started/mongodb_persistence/__code14_node.md" >}}  
 </div>
 
 <div class="content-tab-section">

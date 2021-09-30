@@ -8,6 +8,17 @@ description: >-
 
 ### Key takeaways
 
+<table>
+  <tr>
+    <td>General case</td>
+    <td>In general, a configuration is composed of a descriptor and the component’s configuration parameters.</td>
+  </tr>
+  <tr>
+    <td>Configuration examples</td>
+    <td>These examples show how to configure some of the most common components available in the PIP.Services toolkit.</td>
+  </tr>
+ </table>
+
 ### Introduction
 In this tutorial you will learn how to create yml configuration files. First, we will see a general case. Then, we will show examples of the most common components in PIP.Services. These examples are valid for any of the six languages used by the toolkit.
 ### Syntax

@@ -19,6 +19,8 @@ This is a basic component that stores data items of any type. Some basic operati
 
 The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../../tutorials/data_microservice/step2/). 
 
+    
+
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
 	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
@@ -55,7 +57,7 @@ The example below demonstrates a class that implements the MongoDB persistence c
 
 </div>
 
-
+    
 And this is how we could use such a class:
 
 <div class="content-tab-selector">
@@ -105,6 +107,7 @@ By default, **MongoDbPersistence** tries to establish a local connection on Mong
 
 The example below demonstrates how the [ConfigParams](../../commons/config/config_params/) class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../configuration).
 
+    	
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
 	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
@@ -162,7 +165,7 @@ First, add an element with the “pip-services” descriptor to the configuratio
     port: 30000
 ...
 ```
-
+     
 Next, register the persistence as a component in the microservice’s **Factory**:
 
 <div class="content-tab-selector">
@@ -201,7 +204,7 @@ Next, register the persistence as a component in the microservice’s **Factory*
 
 </div>
 
-
+     
 And add the [DefaultMongoDbFactory](../../mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
 
 <div class="content-tab-selector">
@@ -294,7 +297,7 @@ The implementation we will be working with going forward is called the [Identifi
 
 </div>
 
-
+    
 **IdentifiableMongoDbPersistence** implements a number of CRUD operations that are based on working with the model's id in a predefined manner. In addition, it provides methods for getting paginated results and listing data using detailed filter, sort, and even projection parameters. 
 
 <div class="content-tab-selector">
@@ -333,7 +336,7 @@ The implementation we will be working with going forward is called the [Identifi
 
 </div>
 
-
+    
 We can build upon the **IdentifiableMongoDbPersistence** by overriding its **ComposeFilter** method:
 
 <div class="content-tab-selector">
@@ -415,7 +418,7 @@ Persistence components in the Pip.Services Toolkit use a number of data patterns
 
 </div>
 
-
+     
 In the persistence component, the developer is responsible for parsing **FilterParams** and passing a filter function to the persistence’s methods of the base class.
 
 <div class="content-tab-selector">
@@ -453,7 +456,7 @@ In the persistence component, the developer is responsible for parsing **FilterP
 </div>
 
 </div>
-
+    
 ### Paging
 
 Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
@@ -495,7 +498,7 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 
 </div>
 
-
+    
 
 ### Custom Persistence Methods
 
@@ -537,7 +540,7 @@ As mentioned above, developers can also implement custom persistence methods. Th
 
 </div>
 
-
+    
 When we put everything together, we end up with the following component:
 
 <div class="content-tab-selector">
@@ -576,7 +579,7 @@ When we put everything together, we end up with the following component:
 
 </div>
 
-
+     
 The following example demonstrates how we can use our newly created persistence for writing and reading Beacon objects to a MongoDB:
 
 <div class="content-tab-selector">

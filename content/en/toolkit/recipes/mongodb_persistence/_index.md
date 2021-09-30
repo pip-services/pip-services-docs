@@ -19,78 +19,81 @@ This is a basic component that stores data items of any type. Some basic operati
 
 The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../../tutorials/data_microservice/step2/). 
 
-```python
-from typing import Any, Optional
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-from pip_services3_commons.data import FilterParams, PagingParams, DataPage
-from pip_services3_mongodb.persistence import IdentifiableMongoDbPersistence
+<div class="content-tab-section">
+  Not available  
+</div>
 
-from .IBeaconsPersistence import IBeaconsPersistence
-from ..data.version1 import BeaconV1
+<div class="content-tab-section">
+  Not available  
+</div>
 
+<div class="content-tab-section">
+  Not available  
+</div>
 
-class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersistence):
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def __init__(self):
-        super(BeaconsMongoDbPersistence, self).__init__("beacons")
-        self._max_page_size = 1000
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
+</div>
 
-    def compose_filter(self, filter: FilterParams) -> Any:
-        filter = filter if filter is not None else FilterParams()
-        criteria = []
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        id = filter.get_as_nullable_string("id")
-        if id is not None:
-            criteria.append({"id": id})
-        site_id = filter.get_as_nullable_string("site_id")
-        if site_id is not None:
-            criteria.append({"site_id": site_id})
-        label = filter.get_as_nullable_string("label")
-        if label is not None:
-            criteria.append({"label": label})
-        udi = filter.get_as_nullable_string("udi")
-        if udi is not None:
-            criteria.append({"udi": udi})
-        udis = filter.get_as_object("udis")
-        if udis is not None and len(udis) > 0:
-            udis = udis.split(",")
-            criteria.append({"udi": {"$in": udis}})
-        return {"$and": criteria} if len(criteria) > 0 else None
+</div>
 
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
-                           sort: Any = None, select: Any = None) -> DataPage:
-        filter = filter if filter is not None else FilterParams()
-        return super(BeaconsMongoDbPersistence, self).get_page_by_filter(correlation_id, self.compose_filter(filter),
-                                                                         paging, None, None)
-
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: str) -> BeaconV1:
-        if udi is None:
-            return None
-        item = self._collection.find_one({'udi': udi})
-        item = self._convert_to_public(item)
-
-        if item is None:
-            self._logger.trace(correlation_id, "Found beacon by %s", udi)
-        else:
-            self._logger.trace(correlation_id, "Cannot find beacon by %s", udi)
-
-        return item
-```
 
 And this is how we could use such a class:
 
-```python
-persistence = BeaconsMongoDbPersistence()
-persistence.open("test")
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-beacon = BeaconV1(id="1", site_id="0001", udi="0002")
+<div class="content-tab-section">
+  Not available  
+</div>
 
-persistence.set("test", beacon)
-item = persistence.get_one_by_udi("test", "1")
-persistence.close("test")
-print(item) 
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code2_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 ### Configuring database connections
 
@@ -102,16 +105,42 @@ By default, **MongoDbPersistence** tries to establish a local connection on Mong
 
 The example below demonstrates how the [ConfigParams](../../commons/config/config_params/) class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../configuration).
 
-```python
-persistence = BeaconsMongoDbPersistence()
-# Let's say we need to connect to a local MongoDb, but on a non-standard port - 30000
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-persistence.configure(ConfigParams.from_tuples(
-	"connection.host", "localhost",
-	"connection.port", "30000"
-))
-persistence.open(None) # While opening, it will try to establish a connection with the locally hosted MongoDb on port 30000
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code3_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 Likewise, a connection can be configured using a configuration file. In this case, there exist two approaches:
 1. configuring multiple persistences using a common **MongoDbConnection**.
@@ -136,38 +165,81 @@ First, add an element with the “pip-services” descriptor to the configuratio
 
 Next, register the persistence as a component in the microservice’s **Factory**:
 
-```python
-class BeaconsServiceFactory(Factory):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    MemoryPersistenceDescriptor = Descriptor('beacons', 'persistence', 'memory', '*', '1.0')
-    FilePersistenceDescriptor = Descriptor('beacons', 'persistence', 'file', '*', '1.0')
-    MongoDbPersistenceDescriptor = Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0')
-    ControllerDescriptor = Descriptor('beacons', 'controller', 'default', '*', '1.0')
-    HttpServiceV1Descriptor = Descriptor('beacons', 'service', 'http', '*', '1.0')
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def __init__(self):
-        super(BeaconsServiceFactory, self).__init__()
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        self.register_as_type(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence)
-        self.register_as_type(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence)
-        self.register_as_type(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence)
-        self.register_as_type(BeaconsServiceFactory.ControllerDescriptor, BeaconsController)
-        self.register_as_type(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code4_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 And add the [DefaultMongoDbFactory](../../mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
 
-```python
-class BeaconsProcess(ProcessContainer):
-    def __init__(self):
-        super(BeaconsProcess, self).__init__('beacons', 'Beacons microservice')
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-        self._factories.add(BeaconsServiceFactory())
-        self._factories.add(DefaultRpcFactory())
-        self._factories.add(DefaultSwaggerFactory())
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code5_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 If we’re configuring just a single connection to the Beacons MongoDB persistence, the connection configuration should use the “beacons” descriptor:
 
@@ -186,84 +258,120 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 
 The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in [the Commons module](../../commons).
 
-```python
-class IIdentifiable(ABC):
-    id: Any
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code6_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 ```
 
 **IdentifiableMongoDbPersistence** implements a number of CRUD operations that are based on working with the model's id in a predefined manner. In addition, it provides methods for getting paginated results and listing data using detailed filter, sort, and even projection parameters. 
 
-```python
-class IdentifiableMongoDbPersistence(MongoDbPersistence):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self, collection: str = None):
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def _convert_from_public_partial(self, value: Any) -> Any:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_list_by_ids(self, correlation_id: Optional[str], ids: List[Any]) -> List[T]:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_one_by_udi(self, correlation_id: Optional[str], id: Any) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def create(self, correlation_id: Optional[str], item: T) -> T:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code7_python.md" >}}
+</div>
 
-    def set(self, correlation_id: Optional[str], item: T) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def update(self, correlation_id: Optional[str], item: T) -> Optional[T]:
-        ...
+</div>
 
-    def update_partially(self, correlation_id: Optional[str], id: Any, data: AnyValueMap) -> T:
-        ...
-
-    def delete_by_id(self, correlation_id: Optional[str], id: Any) -> T:
-        ...
-
-    def delete_by_ids(self, correlation_id: Optional[str], ids: List[Any]):
-        ...
-
-```
 
 We can build upon the **IdentifiableMongoDbPersistence** by overriding its **ComposeFilter** method:
 
-```python
-class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersistence):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self):
-        super(BeaconsMongoDbPersistence, self).__init__("beacons")
-        self._max_page_size = 1000
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def compose_filter(self, filter: FilterParams) -> Any:
-        filter = filter if filter is not None else FilterParams()
-        criteria = []
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        id = filter.get_as_nullable_string("id")
-        if id is not None:
-            criteria.append({"id": id})
-        site_id = filter.get_as_nullable_string("site_id")
-        if site_id is not None:
-            criteria.append({"site_id": site_id})
-        label = filter.get_as_nullable_string("label")
-        if label is not None:
-            criteria.append({"label": label})
-        udi = filter.get_as_nullable_string("udi")
-        if udi is not None:
-            criteria.append({"udi": udi})
-        udis = filter.get_as_object("udis")
-        if udis is not None and len(udis) > 0:
-            udis = udis.split(",")
-            criteria.append({"udi": {"$in": udis}})
-        return {"$and": criteria} if len(criteria) > 0 else None
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> T
-        return get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, None, None)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code8_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 
 In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the [MongoDb module](../../mongodb)’s API documentation for more details.
@@ -272,140 +380,239 @@ In most scenarios, child classes only need to override the **get_page_by_filter(
 
 Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [(Commons module)](../../commons)).
 
-```python
-filter = FilterParams.from_tuples(
-    'name', 'ABC'
-)
-result = persistence.get_page_filter(None, filter, None)
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code9_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 In the persistence component, the developer is responsible for parsing **FilterParams** and passing a filter function to the persistence’s methods of the base class.
 
-```python
-def __compose_filter(self, filter: FilterParams) -> Callable:
-        filter = filter if filter is not None else FilterParams()
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-        id = filter.get_as_nullable_string("id")
-        site_id = filter.get_as_nullable_string("site_id")
-        label = filter.get_as_nullable_string("label")
-        udi = filter.get_as_nullable_string("udi")
-        udis = filter.get_as_object("udis")
-        if udis is not None and len(udis) > 0:
-            udis = udis.split(",")
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        def filter_beacons(item):
-            if id is not None and item.id != id:
-                return False
-            if site_id is not None and item.site_id != site_id:
-                return False
-            if label is not None and item.label != label:
-                return False
-            if udi is not None and item.udi != udi:
-                return False
-            if udis is not None and item.udi not in udis:
-                return False
-            return True
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        return filter_beacons
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code10_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 ### Paging
 
 Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
 
 
-```python
-# skip = 25, take = 50, total = False
-paging = PagingParams(25, 50, False)
-result = persistence.get_page_by_filter(None, None, paging)
-```
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code11_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 
 ### Custom Persistence Methods
 
 As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **get_one_by_udi** persistence method.
 
-```python
-def get_one_by_udi(self, correlation_id: Optional[str], udi: Any) -> T:
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    item = self._collection.find_one({'udi': udi})
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    if item is None:
-        self._logger.trace(correlation_id, "Nothing found from %s with udi = %s", self._collection_name, udi)
-    else:
-        self._logger.trace(correlation_id, "Retrieved from %s with udi = %s", self._collection_name, udi)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    item = self._convert_to_public(item)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    return item
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code12_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 When we put everything together, we end up with the following component:
 
-```python
-class BeaconsMongoDbPersistence(IdentifiableMongoDbPersistence, IBeaconsPersistence):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self):
-        super(BeaconsMongoDbPersistence, self).__init__("beacons")
-        self._max_page_size = 1000
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def compose_filter(self, filter: FilterParams) -> Any:
-        filter = filter if filter is not None else FilterParams()
-        criteria = []
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        id = filter.get_as_nullable_string("id")
-        if id is not None:
-            criteria.append({"id": id})
-        site_id = filter.get_as_nullable_string("site_id")
-        if site_id is not None:
-            criteria.append({"site_id": site_id})
-        label = filter.get_as_nullable_string("label")
-        if label is not None:
-            criteria.append({"label": label})
-        udi = filter.get_as_nullable_string("udi")
-        if udi is not None:
-            criteria.append({"udi": udi})
-        udis = filter.get_as_object("udis")
-        if udis is not None and len(udis) > 0:
-            udis = udis.split(",")
-            criteria.append({"udi": {"$in": udis}})
-        return {"$and": criteria} if len(criteria) > 0 else None
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_page_by_filter(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> T
-        return get_page_by_filter(correlation_id, self.__compose_filter(filter), paging, None, None)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_one_by_udi(self, correlation_id: Optional[str], udi: Any) -> T:
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code13_python.md" >}}
+</div>
 
-        item = self._collection.find_one({'udi': udi})
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        if item is None:
-            self._logger.trace(correlation_id, "Nothing found from %s with udi = %s", self._collection_name, udi)
-        else:
-            self._logger.trace(correlation_id, "Retrieved from %s with udi = %s", self._collection_name, udi)
+</div>
 
-        item = self._convert_to_public(item)
-
-        return item
-```
 
 The following example demonstrates how we can use our newly created persistence for writing and reading Beacon objects to a MongoDB:
 
-```python
-persistence = BeaconsMongoDbPersistence()
-persistence.open(None)
-beacon = BeaconV1(id="1", site_id="0001", udi="0002")
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-persistence.set("test", beacon)
-item = persistence.get_one_by_udi("test", "0002")
+<div class="content-tab-section">
+  Not available  
+</div>
 
-print(item.udi)   # Result: 0002
+<div class="content-tab-section">
+  Not available  
+</div>
 
-items_page = persistence.get_page_by_filter("test", FilterParams.from_tuples("udi", "0002"), None)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-print(len(items_page.data)) # Result: 1
-print(items_page.data[0].udi)   # Result: 0002
-persistence.close("test")
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code14_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+

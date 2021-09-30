@@ -27,40 +27,139 @@ The following sections show several configuration examples for the most common c
 
 #### CloudWatch
 
+```
+
+```
+
 #### Console logger
+
+```
+
+```
+
 #### Container
+
+```
+
+```
 
 #### Controller
 
+```
+# Controller
+- descriptor: "pip-service-data:controller:default:default:1.0"
+```
+
 #### Couchbase
+
+```
+
+```
 
 #### DataDog
 
+```
+{{#if DATADOG_ENABLED}}
+# DataDog counters
+- descriptor: "pip-services:counters:datadog:default:1.0"
+  connection:
+    protocol: {{DATADOG_PROTOCOL}}{{#unless DATADOG_PROTOCOL}}https{{/unless}}
+    uri: {{DATADOG_URI}}
+    host: {{DATADOG_HOST}}{{#unless DATADOG_HOST}}"api.datadoghq.com"{{/unless}}
+    port: {{DATADOG_PORT}}{{#unless DATADOG_PORT}}443{{/unless}}
+  credential:
+    access_key: {{DATADOG_ACCRSS_KEY}}
+
+# DataDog logger
+- descriptor: "pip-services:logger:datadog:default:1.0"
+  connection:
+    protocol: {{DATADOG_PROTOCOL}}{{#unless DATADOG_PROTOCOL}}https{{/unless}}
+    uri: {{DATADOG_URI}}
+    host: {{DATADOG_HOST}}{{#unless DATADOG_HOST}}"api.datadoghq.com"{{/unless}}
+    port: {{DATADOG_PORT}}{{#unless DATADOG_PORT}}443{{/unless}}
+  credential:
+    access_key: {{DATADOG_ACCRSS_KEY}}
+{{/if}}
+```
+
 #### Elasticsearch
+
+```
+
+```
 
 #### File persistence
 
+```
+
+```
+
 #### gRPC
+
+```
+
+```
 
 #### Hearbeat
 
+```
+# Hearbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+```
+
 #### HTTP
+
+```
+
+```
 
 #### Lambda
 
+```
+
+```
+
 #### MongoDB
+
+```
+
+```
 
 #### MySQL
 
+```
+
+```
+
 #### Performance log counters
+
+```
+
+```
 
 #### PostreSQL
 
+```
+
+```
+
 #### Prometheus
+
+```
+
+```
 
 #### SQLServer
 
+```
+
+```
+
 #### Status
+
+```
+
+```
 
 #### Swagger
 

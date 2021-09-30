@@ -24,6 +24,8 @@ Where the configuration parameters depend on the component considered, and can b
 
 <img src="figure1.png" alt="figure 1" style="width:100%">
 
+Figure 1 – Example of a Configuration parameters section
+
 ### Configuration examples
 The following sections show several configuration examples for the most common components available in the PIP.Services toolkit. They are presented in alphabetical order and serve as a guide that can be adapted to your specific needs.
 

@@ -294,7 +294,6 @@ The implementation we will be working with going forward is called the [Identifi
 
 </div>
 
-```
 
 **IdentifiableMongoDbPersistence** implements a number of CRUD operations that are based on working with the model's id in a predefined manner. In addition, it provides methods for getting paginated results and listing data using detailed filter, sort, and even projection parameters. 
 

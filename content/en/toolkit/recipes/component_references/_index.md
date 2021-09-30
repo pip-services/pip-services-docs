@@ -22,43 +22,41 @@ The main distinction is that our implementation of Inversion of Control uses the
 
 The [IReferences](../../commons/refer/ireferences/)interface can be used to pass a so-called [References](../../commons/refer/references/) object to a component. This **References** object can be used by the component to retrieve any and all required dependencies. **IReferences** is defined as follows:
 
-```python
-class IReferences(ABC):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def put(self, locator: Any = None, reference: Any = None):
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_node.md" >}}  
+</div>
 
-    def remove(self, locator: Any) -> Any:
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+</div>
 
-    def remove_all(self, locator: Any) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_all_locators(self) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_dart.md" >}}    
+</div>
 
-    def get_all(self) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
+</div>
 
-    def get_optional(self, locator: Any) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_required(self, locator: Any) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
-
-    def get_one_optional(self, locator: Any) -> Any:
-        raise NotImplementedError('Method from interface definition')
-
-    def get_one_required(self, locator: Any) -> Any:
-        raise NotImplementedError('Method from interface definition')
-
-    def get_one_before(self, reference, locator) -> Any:
-        raise NotImplementedError('Method from interface definition')
-
-    def find(self, locator: Any, required: bool) -> List[Any]:
-        raise NotImplementedError('Method from interface definition')
-
-```
+</div>
 
 The “locator” parameters are special keys that are used to search for necessary dependencies. Technically, any primitive value can be a locator - a number, string, or even a complex object (as long as it supports the “equals” operation).
 The **put** method is used to add a component and its locator/key to the list of dependencies. The rest of the methods are used for extracting dependencies. For example, the **get_required** method can be used for extracting essential dependencies, as an exception will be raised if no matches are found. The **get_one_optional** method, on the other hand, can be used for optional dependencies - it will simply return None if no matching dependencies are found.
@@ -67,70 +65,158 @@ The **put** method is used to add a component and its locator/key to the list of
 
 A component must implement the [IReferenceable](../../commons/refer/ireferenceable/) interface to be able to receive dependencies. Dependencies are set in the component’s **setReferences** method, which is called with a link to a **References** object (described in the previous section).
 
-```python
-class IUnreferenceable(ABC):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def unset_references(self):
-        raise NotImplementedError('Method from interface definition')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_node.md" >}}  
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
+</div>
 
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 Dependencies can be set and removed either manually, or automatically by the component container. The setting of dependencies should be performed right after component creation and configuration, and their deletion - after stopping all active processes and right before destroying the component. For more information, see the [Component Lifecycle Recipe](../component_lifecycle).
 
 ### Example of Dependency Setting
 
 Let’s take a look at a simple example of setting dependencies between components using the Pip.Services Toolkit’s References pattern. Suppose we have 2 services, Worker1 and Worker2, which are defined as follows:
 
-```python
-class Worker1:
-  def __init(self, name):
-		self._default_name = name or "Default name1"
-  
-	def do(self, level, message):
-    	print(f'Write to {self._default_name}.${level} message: ${message}')
-  
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-class Worker2: 
-	def __init(self, name):
-		self._default_name = name or "Default name2"
-  
-	def do(self, level, message):
-		print(f'Write to {self._default_name}.${level} message: ${message}')
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_node.md" >}}  
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 Now let’s add a **SimpleController** component with a **greeting()** method. This method will perform just one simple operation - output a message that was generated by one of the Worker services. This component will be implementing the **IReferenceable** interface, and its **set_references** method will receive and set a reference to the Worker service via the 111 locator. We can also implement [IUnreferenceable](../../commons/refer/iunreferenceable/) and use the **unset_references** method to delete the previously set reference.
 
-```python
-class SimpleController(IReferenceable, IUnreferenceable):
-  
-  def set_references(self, references):
-    self._worker = self._references.get_one_required(111)
-  
-  def unset_references(self):
-    self._worker = None
-  
-  def greeting(self, name):
-    self._worker.do(LogLevel.Info,  "Hello, " + (name) + "!")
-  
-```
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 We will be using the **References** class to pass dependencies into our components. This class is defined in the **Commons** module and implements the **IReferenceable** interface. We can use the **References.from_tuples** method to populate our list of dependencies using locator-reference pairs.
 
-```python
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-references = References.from_tuples(
-	111, Worker1('worker1'),
-	222, Worker2('worker2')
-)
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_node.md" >}}  
+</div>
 
-controller = SimpleController()
-controller.set_references(references)
-controller.greeting("world")
-controller.unset_references()
-controller = None
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 ### Component Descriptors
 
@@ -145,63 +231,41 @@ For such complex cases, the Pip.Services Toolkit includes a special locator that
 
 The **Descriptor** class’s definition is as follows:
 
-```python
-class Descriptor:
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self, group: Optional[str], type: Optional[str], kind: Optional[str], name: Optional[str],
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_node.md" >}}  
+</div>
 
-    def get_group(self) -> str:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_net.md" >}}    
+</div>
 
-    def get_type(self) -> str:
-       ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_kind(self) -> str:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_dart.md" >}}    
+</div>
 
-    def get_name(self) -> str:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_python.md" >}}
+</div>
 
-    def get_version(self) -> str:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def __match_field(self, field1: str, field2: str) -> bool:
-        ...
-
-    def match(self, descriptor: 'Descriptor') -> bool:
-        ...
-
-    def __exact_match_field(self, field1: str, field2: str) -> bool:
-        ...
-
-    def exact_match(self, descriptor: 'Descriptor') -> bool:
-        ...
-
-    def is_complete(self) -> bool:
-        ...
-
-    def equals(self, value: Any) -> bool:
-        ...
-
-    def to_string(self) -> str:
-        ...
-
-    def __eq__(self, other):
-        ...
-
-    def __ne__(self, other):
-        ...
-
-    def __str__(self):
-        ...
-
-    @staticmethod
-    def from_string(value: str) -> Optional['Descriptor']:
-		...
-
-```
-
+</div>
 This way, we can define more than one logger in the system
 
 ```
@@ -235,106 +299,120 @@ my_library:*:*:*:*
 
 Returning to our “worker” example, we could use **Descriptors** in the following manner: 
 
-```python
-class SimpleController(IReferenceable, IUnreferenceable):
-	...
-  	def set_references(self, references):
-        self._worker = self._references.get_one_required(
-    	    Descriptor("*", "worker", "worker1", "*", "1.0")
-        )
-  
-	...
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-references = References.from_tuples(
-	Descriptor("sample", "worker", "worker1", "111", "1.0"), Worker1(),
-	Descriptor("sample", "worker", "worker2", "222", "1.0"), Worker2()
-)
-controller = SimpleController()
-controller.set_references(references)
-controller.greeting("world")
-controller.unset_references();
-controller = None
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_node.md" >}}  
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 ### The Dependency Resolver
 
 In complex systems, which often contain a number of components of the same type, it can be impossible to select a dependency from the list using just a set of predefined rules (descriptors). That’s where the [DependencyResolver](../../commons/refer/dependency_resolver/) helper class steps in. This class allows for dependency extraction using flexible configurations. When a **DependencyResolver** is created, a set of dependency names and corresponding default descriptors are defined inside it. Afterwards, these descriptors can be changed in the configuration’s “dependencies” section (see the [Component Configuration Recipe](../configuration) for more info on the specifics of component configuration).
 The **DependencyResolver** class:
 
-```python
-class DependencyResolver(IReconfigurable, IReferenceable):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self, config: ConfigParams = None, references: IReferences = None):
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_node.md" >}}  
+</div>
 
-    def configure(self, config: ConfigParams):
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_net.md" >}}    
+</div>
 
-    def set_references(self, references: IReferences):
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def put(self, name: str, locator: Any):
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_dart.md" >}}    
+</div>
 
-    def __locate(self, name: str) -> Any:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_python.md" >}}
+</div>
 
-    def get_optional(self, name: str) -> List[Any]:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_required(self, name: str) -> List[Any]:
-        ...
-
-    def get_one_optional(self, name: str) -> Any:
-        ...
-
-    def get_one_required(self, name: str) -> Any:
-        ...
-
-    def find(self, name: str, required: bool) -> Optional[List[Any]]:
-        ...
-
-    @staticmethod
-    def from_tuples(*tuples: Any) -> 'DependencyResolver':
-        ...
-
-```
+</div>
 
 Below is the final version of our **“worker”** example, which now utilizes the **DependencyResolver**. By default, the **SimpleController** is capable of working with either of the worker services. However, once we configure **SimpleController** and, in turn, the **DependencyResolver** - the component is re-configured to work with just Worker1.
 
-```python
-class SimpleController(IConfigurable, IReferenceable, IUnreferenceable):
-	_depedency_resolver = DependencyResolver.from_tuples(
-    	"worker", Descriptor("*", "worker", "*", "*", 1.0)
-  	)
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-  	def configure(self, config):
-    	self._depedency_resolver.configure(config);
-  
-  	def set_references(self, references):
-    	self._depedency_resolver.set_references(references)
-    	self._worker = self._depedency_resolver.get_one_required("worker")
-  
-  	def unset_references():
-    	self._dependency_resolver.unsetReferences()
-  
-	...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_node.md" >}}  
+</div>
 
-references = References.from_tuples(
-	Descriptor("sample", "worker", "worker1", "111", "1.0"), Worker1(),
-	Descriptor("sample", "worker", "worker2", "222", "1.0"), Worker2()
-)
-config = ConfigParams.from_tuples(
-	"dependencies.worker", "*:worker:worker1:111:1.0"
-)
-controller = SimpleController()
-controller.configure(config)
-controller.setReferences(references)
-print(controller.greeting("world"))
-controller.unset_references()
-controller = None
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 When creating such a configuration for a container, the configuration file might look something like the example below (see the [Container Configuration Recipe](../configuration) for more details):
 
@@ -356,22 +434,41 @@ When creating such a configuration for a container, the configuration file might
 
 The [Referencer](../../commons/refer/referencer/) helper class can be used as well for setting and removing dependencies:
 
-```python
-class Reference(object):
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def __init__(self, locator: Any, component: Any):
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_node.md" >}}  
+</div>
 
-    def match(self, locator: Any) -> bool:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_net.md" >}}    
+</div>
 
-    def get_component(self) -> Any:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_locator(self) -> Any:
-        ...
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_dart.md" >}}    
+</div>
 
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 ### See Also
 
 - [Service Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/)

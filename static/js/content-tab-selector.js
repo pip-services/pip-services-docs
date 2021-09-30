@@ -15,14 +15,14 @@ tabSelectors.forEach(tabSelector => {
 
 // by default show first with content
 function showFirstWithContent(buttons){
-    const reservedKeywords = ['not available']
+    const reservedKeywords = ['not available'];
     let contentSections = Array.from(buttons[0].parentElement.parentElement.getElementsByClassName('content-tab-section'));
 
     for (let index = 0; index < contentSections.length; index++){
         let value = contentSections[index];
         if (value.innerText != undefined 
             && value.innerText != null 
-            && value.innerText != '' 
+            && value.innerText.trim() != '' 
             && !reservedKeywords.includes(value.innerText.trim().toLowerCase())) {
 
             showSelected({ target: buttons[index] });

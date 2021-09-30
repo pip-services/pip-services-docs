@@ -38,23 +38,33 @@
       let langNamePosInUrl = isGitRepo ? 4 : 3 
 
       hits = hits.filter((item, index) => {
+        
+        // hide included pages
+        if ((item.url.split('#').at(-1) != undefined && item.url.split('#').at(-2) != undefined && item.url.split('#').at(-2).startsWith('__')) 
+            || (item.url.split('/').at(-1).startsWith('__') 
+            || item.url.split('/').at(-2).startsWith('__'))) {
+          
+          return false;
+        }
 
         // Add current menuSection and module to hits
         let menuSection = item.url.split('/')[3];
         let module = item.url.split('/')[4];
         // capitalize
         menuSection = menuSection.charAt(0).toUpperCase() + menuSection.slice(1);
-        module = module.charAt(0).toUpperCase() + module.slice(1);
+        module = module!=undefined && module != '' ? module.charAt(0).toUpperCase() + module.slice(1) : null;
 
         if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
           let hitLangPage = item['url'].split('/')[langNamePosInUrl].toLowerCase();
           let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
-          item.hierarchy.lvl0 = module;
-          item._highlightResult.hierarchy.lvl0 = module;
+          if (module != null) {
+            item.hierarchy.lvl0 = module;
+            item._highlightResult.hierarchy.lvl0 = module;
+          }
 
           return isCorrectHit;
-        } else {
+        } else if (module != null){
           item.hierarchy.lvl0 = menuSection + ' → ' + module;
           item._highlightResult.hierarchy.lvl0 = menuSection + ' → ' + module;
         }

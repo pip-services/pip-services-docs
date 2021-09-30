@@ -100,6 +100,8 @@ function search(searchQuery) {
                 // filter empty and localhost vals
                 subSections = subSections.filter(x => !x.includes('localhost') && x != "").slice(0, -1);
 
+                if (value.title == undefined || value.title == '') return; // hide included pages
+
                 if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
                     subSections = subSections.slice(1);
                     
@@ -109,8 +111,6 @@ function search(searchQuery) {
                     if (!isFromCurrentMenu)
                         return;
                 }
-
-                
 
                 // capitalize names
                 subSections.forEach((item, index) => {

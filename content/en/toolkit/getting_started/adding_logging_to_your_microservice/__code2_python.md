@@ -5,5 +5,5 @@ def my_task(self, correlation_id):
     try:
         raise Exception('Logging demo', 'Error created')
     except Exception as inst:
-        logger.error(None, inst, "Error created.")  
+        logger.error(correlation_id, inst, "Error created.")  
 ```

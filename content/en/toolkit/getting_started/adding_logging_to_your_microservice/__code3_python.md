@@ -11,6 +11,8 @@ class MyComponentB(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
     _param2 = 456
     _opened = False
 
+    dummy_variable = "resource variable"
+
     def __init__(self):
         """
         Creates a new instance of the component.
@@ -90,19 +92,19 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         self._status = "Open"
         logger.info(None,"MyComponentA has been opened.")
         # artificial problem
-        self.my_task(None)
+        self.my_task(correlation_id)
 
     def close(self, correlation_id):
         self._opened = False
         self._status = "Closed"
-        logger.info(None,"MyComponentA has been closed.")
+        logger.info(correlation_id,"MyComponentA has been closed.")
         
     def my_task(self, correlation_id):
         # create an artificial problem        
         try:
             raise Exception('Logging demo', 'Error created')
         except Exception as inst:
-            logger.error(None, inst, "Error created.")  
+            logger.error(correlation_id, inst, "Error created.")  
 
     def unset_references(self):
         """
@@ -119,6 +121,6 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         """
         self.dummy_variable = None
         self._status = None
-        logger.info(None, "Resources cleared")
+        logger.info(correlation_id, "Resources cleared")
                 
 ```

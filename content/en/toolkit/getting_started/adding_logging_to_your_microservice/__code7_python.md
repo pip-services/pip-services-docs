@@ -13,6 +13,8 @@ class MyComponentB(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
 
     __logger = ConsoleLogger()
     __logger.set_level(5)
+
+    dummy_variable = "resource variable"
     
     def __init__(self):
         """
@@ -96,19 +98,19 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         self._status = "Open"
         self.__logger.info(None,"MyComponentA has been opened.")
         # artificial problem
-        self.my_task(None)
+        self.my_task(correlation_id)
 
     def close(self, correlation_id):
         self._opened = False
         self._status = "Closed"
-        self.__logger.info(None,"MyComponentA has been closed.")
+        self.__logger.info(correlation_id,"MyComponentA has been closed.")
         
     def my_task(self, correlation_id):
         # create an artificial problem        
         try:
             raise Exception('Logging demo', 'Error created')
         except Exception as inst:
-            self.__logger.error(None, inst, "Error created.")  
+            self.__logger.error(correlation_id, inst, "Error created.")  
 
     def unset_references(self):
         """
@@ -125,6 +127,6 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         """
         self.dummy_variable = None
         self._status = None
-        self.__logger.info(None, "Resources cleared")
+        self.__logger.info(correlation_id, "Resources cleared")
         
 ```

@@ -44,54 +44,31 @@ When creating the controller, we can add in a timer and structure the processing
 	</div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-```cs
-private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
-...
-public Task OpenAsync(string correlationId)
-{
-   Timer.Task = new Action(async () =>  await PerformAnalysisAsync(correlationId));
-   Timer.Interval = Parameters.GetAsInteger("interval");
-   Timer.Delay = Parameters.GetAsInteger("delay"); 
-   Timer.Start();
-   return Task.CompletedTask;
- }
-
-```
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 </div>
+
 
 As long as the execution time of the task does not exceed the timer’s interval, this implementation will work as expected. However, if there’s a large amount of files to process and the task takes too long, the timer will create another thread for running the task. This would result in an error, as we’d end up processing the data more than once. To prevent this from happening, the controller should expose distributed locks (e.g. **CloudStorageTableLock** from pip-services-azure) while it’s executing the task:
 
@@ -106,41 +83,27 @@ As long as the execution time of the task does not exceed the timer’s interval
 	</div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
-</div>
-
+  Not available  
 </div>
 
 ### 2. Using message queues
@@ -158,58 +121,28 @@ In this case, task execution is triggered by a message/signal that is received f
 	</div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-```cs
-
-public Task OpenAsync(string correlationId)
-{
-   _messageQueue?.BeginListen(correlationId, async (message, q) =>
-   {
-      await PerformAnalysisAsync(correlationId);
-    	await q.CompleteAsync(message);
-   }); 
-   return Task.CompletedTask;
-}
-public async Task PerformAnalysisAsync(string correlationId)
-{
-  ... // Long running tasks
-}
-```
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
-
-</div>
-
 ### 3. Using the Jobs microservice
 For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-dotnet). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
 1. a timer, 
@@ -227,55 +160,27 @@ For cases where distributed locks and message queues can’t be used, the PipSer
 	</div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-```cs
-private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
-private IJobsClientV1 JobsClient { get; set; }
-private const string JobType = “AnalysisOfNewFiles”;
-...
-public Task OpenAsync(string correlationId)
-{
-   Timer.Task = new Action(async () =>  await PerformAnalysisAsync(correlationId));
-   Timer.Interval = Parameters.GetAsInteger("interval");
-   Timer.Delay = Parameters.GetAsInteger("delay");
-   Timer.Start();
-   return Task.CompletedTask;
-}
-
-```
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
-</div>
-
+  Not available  
 </div>
 
 
@@ -292,56 +197,25 @@ Now, in the task’s method, we need to add some code that checks whether or not
 	</div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-```cs
-public async Task PerformAnalysisAsync(string correlationId)
-{
-   if (await JobsClient.IsJobExecutingAsync(correlationId, JobType))
-  	   return Task.CompletedTask;
- 
-   var newJob = new NewJobV1()
-   {
-   	Type = JobType,
-   	ReferenceId = correlationId
-   };
-   var job = await JobsClient.AddJobAsync(correlationId, newJob);
-   await JobsClient.StartJobByIdAsync(correlationId, job.Id, TimeSpan.FromHours(2));
-   ...   // Long running tasks
-   ...   // Extend job if needed
-   await JobsClient.CompleteJobAsync(correlationId, job.Id);
-}
-```
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available  
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  Not available    
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
 </div>
 
 <div class="content-tab-section">
-
-**TODO: add language**
-
-</div>
-
+  Not available  
 </div>

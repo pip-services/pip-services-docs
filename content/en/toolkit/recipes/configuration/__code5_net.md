@@ -7,7 +7,6 @@ var defaultConfig = ConfigParams.FromTuples(
 );
 var config = config.SetDefaults(defaultConfig);
 
-
 ```
 
 

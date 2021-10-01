@@ -1280,7 +1280,7 @@ class HelloWorldServiceFactory(Factory):
 ### Step 6. Container
 Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we’ll be running our example microservice as a system process. To do this, we’ll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
 
-Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yml file. All we have left to do is register the factory for creating components from their descriptors.
+Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yaml file. All we have left to do is register the factory for creating components from their descriptors.
 
 The full listing of the container’s code can be found in the file:
 
@@ -1308,7 +1308,7 @@ const factory = require("./HelloWorldServiceFactory");
 class HelloWorldProcess extends container.ProcessContainer {
     constructor() {
         super('hello-world', 'HelloWorld microservice');
-        this._configPath = './config.yml';
+        this._configPath = './config.yaml';
         this._factories.add(new factory.HelloWorldServiceFactory());
         this._factories.add(new rpc.DefaultRpcFactory());
     }
@@ -1333,7 +1333,7 @@ namespace HelloWorld {
     public class HelloWorldProcess : ProcessContainer {    
 
         public HelloWorldProcess(): base("hello_world", "Hello world microservice") {            
-            _configPath = "config.yml";             
+            _configPath = "config.yaml";             
             _factories.Add(new DefaultRpcFactory());            
             _factories.Add(new HelloWorldServiceFactory());        
         }   
@@ -1363,7 +1363,7 @@ type HelloWorldProcess struct {
 func NewHelloWorldProcess() *HelloWorldProcess {
     c := HelloWorldProcess{}
     c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
-    c.SetConfigPath("./config.yml")
+    c.SetConfigPath("./config.yaml")
     c.AddFactory(NewHelloWorldServiceFactory())
     c.AddFactory(rpcbuild.NewDefaultRpcFactory())
     return &c
@@ -1383,7 +1383,7 @@ import './HelloWorldServiceFactory.dart';
 
 class HelloWorldProcess extends ProcessContainer {
   HelloWorldProcess() : super('hello-world', 'HelloWorld microservice') {
-    configPath = './config.yml';
+    configPath = './config.yaml';
     factories.add(HelloWorldServiceFactory());
     factories.add(DefaultRpcFactory());
   }
@@ -1432,32 +1432,34 @@ The dynamic configuration is defined in the file:
 ```yml
 ---
 # Container context
-- descriptor: "pip-services:context-info:default:default:1.0" 
-  name: "hello-world" 
-  description: "HelloWorld microservice" 
-
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "hello-world"
+  description: "HelloWorld microservice"
+     
 # Console logger
-- descriptor: "pip-services:logger:console:default:1.0" 
-  level: "trace" 
-
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
+     
 # Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0" 
+- descriptor: "pip-services:counters:log:default:1.0"
+     
 # Controller
-- descriptor: "hello-world:controller:default:default:1.0" 
-  default_name: "World" 
+- descriptor: "hello-world:controller:default:default:1.0"
+  default_name: "World"
+     
 # Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0" 
-  connection: 
-    protocol: http 
-    host: 0.0.0.0 
-    port: 8080 
-
-# HTTP Service V1
-- descriptor: "hello-world:service:http:default:1.0" 
-
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: 8080
+     
+    # HTTP Service V1
+- descriptor: "hello-world:service:http:default:1.0"
+     
 # Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0" 
-‍
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+     
 # Status service
 - descriptor: "pip-services:status-service:http:default:1.0"
 
@@ -1602,11 +1604,11 @@ When a microservice starts up, the following sequence of events takes place:
 
 1. A container is created and started;
 
-2. The container reads the configuration found in config.yml;
+2. The container reads the configuration found in config.yaml;
 
 2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [The Container recipe](../../recipes/container));
 
-4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yml passed as a parameter (see [The Configuration recipe](../../recipes/configuration));
+4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yaml passed as a parameter (see [The Configuration recipe](../../recipes/configuration));
 
 5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The References recipe](../../recipes/component_references));
 

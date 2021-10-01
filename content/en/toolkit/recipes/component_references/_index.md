@@ -33,11 +33,11 @@ The [IReferences](../../commons/refer/ireferences/)interface can be used to pass
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code1_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code1_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -45,11 +45,11 @@ The [IReferences](../../commons/refer/ireferences/)interface can be used to pass
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code1_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -76,11 +76,11 @@ A component must implement the [IReferenceable](../../commons/refer/ireferenceab
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code2_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code2_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -88,11 +88,11 @@ A component must implement the [IReferenceable](../../commons/refer/ireferenceab
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code2_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code2_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -117,11 +117,11 @@ Let’s take a look at a simple example of setting dependencies between componen
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code3_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code3_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -129,11 +129,11 @@ Let’s take a look at a simple example of setting dependencies between componen
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code3_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code3_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -155,11 +155,11 @@ Now let’s add a **SimpleController** component with a **greeting()** method. T
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code4_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code4_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -167,11 +167,11 @@ Now let’s add a **SimpleController** component with a **greeting()** method. T
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code4_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code4_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -193,11 +193,11 @@ We will be using the **References** class to pass dependencies into our componen
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code5_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code5_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -205,11 +205,11 @@ We will be using the **References** class to pass dependencies into our componen
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code5_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code5_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -242,11 +242,11 @@ The **Descriptor** class’s definition is as follows:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code6_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code6_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -254,11 +254,11 @@ The **Descriptor** class’s definition is as follows:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code6_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code6_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -310,11 +310,11 @@ Returning to our “worker” example, we could use **Descriptors** in the follo
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code7_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code7_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -322,11 +322,11 @@ Returning to our “worker” example, we could use **Descriptors** in the follo
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code7_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code7_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -351,11 +351,11 @@ The **DependencyResolver** class:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code8_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code8_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -363,11 +363,11 @@ The **DependencyResolver** class:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code8_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code8_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -389,11 +389,11 @@ Below is the final version of our **“worker”** example, which now utilizes t
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code9_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code9_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -401,11 +401,11 @@ Below is the final version of our **“worker”** example, which now utilizes t
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code9_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code9_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -445,11 +445,11 @@ The [Referencer](../../commons/refer/referencer/) helper class can be used as we
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_node.md" >}}  
+  {{< include "/content/en/toolkit/recipes/component_references/__code10_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_net.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code10_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -457,11 +457,11 @@ The [Referencer](../../commons/refer/referencer/) helper class can be used as we
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_dart.md" >}}    
+  {{< include "/content/en/toolkit/recipes/component_references/__code10_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/component_references/__code10_python.md" >}}
 </div>
 
 <div class="content-tab-section">

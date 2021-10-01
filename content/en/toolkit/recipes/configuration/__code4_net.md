@@ -1,7 +1,11 @@
 
 ```cs
-var param1 = config.GetAsInteger("param1");
-var param2 = config.GetAsDateTimeWithDefault("param2", new DateTime());
+var configWithSections = ConfigParams.FromTuples(
+  "param1", 123,
+  "options.param1", "ABC",
+  "options.param2", "XYZ"
+);
+var options = configWithSections.GetSection("options");
 
 ```
 

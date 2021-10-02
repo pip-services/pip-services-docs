@@ -1,1 +1,5 @@
 
+```bash
+pub run test
+
+```

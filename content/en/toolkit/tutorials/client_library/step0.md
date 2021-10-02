@@ -12,13 +12,42 @@ Before we can start writing-up some microservices, we’ll need to install a few
 
 First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
-For working with the Python programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Python from their [official site](https://www.python.org/downloads/) . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-Once installed, check that the installation was completed successfully by running the following command from your console:
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_node.md" >}}  
+</div>
 
-```bash
-python --version
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 ### 2.Docker and Docker Compose
 To install Docker, download the Docker Desktop installer that corresponds to the operating system you’re using from the official [Docker site](https://www.docker.com/get-started). Once downloaded, launch the installer and follow the installation instructions.

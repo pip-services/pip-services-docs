@@ -81,10 +81,42 @@ docker-compose -f ./docker/docker-compose.dev.yml up
 ```
 
 In a separate console, run the test using the following command:
-```bash
-python test.py
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 The tests should all pass, and the container’s console should display information about what it was doing in the process:
 

@@ -12,90 +12,42 @@ Then, creates a new class for the Commandable REST client and an implementation 
 
 The client’s resulting code is listed below:
 
-**/src/version1/BeaconsHttpClientV1.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-from typing import Optional, List, Any
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_node.md" >}}  
+</div>
 
-from pip_services3_commons.data import DataPage, FilterParams, PagingParams
-from pip_services3_rpc.clients import CommandableHttpClient
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_net.md" >}}    
+</div>
 
-from .IBeaconsClientV1 import IBeaconsClientV1
-from ...data.version1 import BeaconV1
+<div class="content-tab-section">
+  Not available  
+</div>
 
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_dart.md" >}}    
+</div>
 
-class BeaconsHttpClientV1(CommandableHttpClient, IBeaconsClientV1):
-    def __init__(self):
-        super(BeaconsHttpClientV1, self).__init__("v1/beacons")
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_python.md" >}}
+</div>
 
-    def get_beacons_by_filter(self, correlation_id: Optional[str], filter: FilterParams,
-                              paging: PagingParams) -> DataPage:
-        result = self.call_command(
-            'get_beacons',
-            correlation_id,
-            {
-                'filter': filter,
-                'paging': paging
-            }
-        )
-        return DataPage(result['data'], result['total'])
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
-        return self.call_command(
-            'get_beacon_by_id',
-            correlation_id,
-            {
-                'id': id
-            }
-        )
+</div>
 
-    def get_beacon_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
-        return self.call_command(
-            'get_beacon_by_udi',
-            correlation_id,
-            {
-                'udi': udi
-            }
-        )
-
-    def calculate_position(self, correlation_id: Optional[str], site_id: str, udis: List[str]) -> Any:
-        return self.call_command(
-            'calculate_position',
-            correlation_id,
-            {
-                'site_id': site_id,
-                'udis': udis
-            }
-        )
-
-    def create_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
-        return self.call_command(
-            'create_beacon',
-            correlation_id,
-            {
-                'beacon': entity
-            }
-        )
-
-    def update_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
-        return self.call_command(
-            'update_beacon',
-            correlation_id,
-            {
-                'beacon': entity
-            }
-        )
-
-    def delete_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
-        return self.call_command(
-            'delete_beacon_by_id',
-            correlation_id,
-            {
-                'id': id
-            }
-        )
-
-```
 
 To be sure that our code works as intended, we should perform some functional testing. Test the Commandable HTTP REST client using the class with tests that we developed in the previous step. To do this, create an instance of the HTTP REST client and pass it as a parameter to our set of tests.
 An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-python/blob/master/test/version1/test_BeaconsHttpClient.py)

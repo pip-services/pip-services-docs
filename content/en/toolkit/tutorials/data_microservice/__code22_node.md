@@ -1,5 +1,6 @@
 
 ```bash
- node ./bin/main.js
-```
+export MONGO_ENABLED=true
 
+node .\bin\main.js
+```

@@ -35,71 +35,42 @@ services:
 This configuration will run the microservice alongside a Mongo DB for data storage. HTTP services will also be started on port 8080 and will be made accessible from outside the container. You can set up the microservice to run with a memory persistence as well. To do this, comment out the MONGO environment variables, as well as any other Mongo-related parameters.
 The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. Place the code below into a file named **test_BeaconsHttpClientV1.py**.
 
-**/test/version1/test_BeaconsHttpClientV1.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-from pip_services3_commons.config import ConfigParams
-from pip_services3_commons.refer import References, Descriptor
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_node.md" >}}  
+</div>
 
-from src.clients.version1.BeaconsHttpClientV1 import BeaconsHttpClientV1
-from src.logic.BeaconsController import BeaconsController
-from src.persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
-from src.services.version1.BeaconsHttpServiceV1 import BeaconsHttpServiceV1
-from test.clients.version1.BeaconsClientV1Fixture import BeaconsClientV1Fixture
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_net.md" >}}    
+</div>
 
-http_config = ConfigParams.from_tuples(
-    'connection.protocol', 'http',
-    'connection.port', 3000,
-    'connection.host', 'localhost')
+<div class="content-tab-section">
+  Not available  
+</div>
 
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_dart.md" >}}    
+</div>
 
-class TestBeaconsHttpClientV1:
-    persistence: BeaconsMemoryPersistence
-    controller: BeaconsController
-    service: BeaconsHttpServiceV1
-    client: BeaconsHttpClientV1
-    fixture: BeaconsClientV1Fixture
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_python.md" >}}
+</div>
 
-    @classmethod
-    def setup_class(cls):
-        cls.controller = BeaconsController()
-        cls.persistence = BeaconsMemoryPersistence()
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        cls.service = BeaconsHttpServiceV1()
-        cls.service.configure(http_config)
+</div>
 
-        cls.client = BeaconsHttpClientV1()
-        cls.client.configure(http_config)
-
-        cls.references = References.from_tuples(
-            Descriptor('beacons', 'persistence', 'memory', 'default', '1.0'), cls.persistence,
-            Descriptor('beacons', 'controller', 'default', 'default', '1.0'), cls.controller,
-            Descriptor('beacons', 'service', 'http', 'default', '1.0'), cls.service,
-            Descriptor('beacons', 'client', 'http', 'default', '1.0'), cls.client
-        )
-        cls.controller.set_references(cls.references)
-        cls.client.set_references(cls.references)
-        cls.service.set_references(cls.references)
-
-        cls.fixture = BeaconsClientV1Fixture(cls.client)
-
-        cls.persistence.open(None)
-        cls.service.open(None)
-        cls.client.open(None)
-
-    @classmethod
-    def teardown_class(cls):
-        cls.client.close(None)
-        cls.service.close(None)
-        cls.persistence.close(None)
-
-    def test_crud_operations(self):
-        self.fixture.test_crud_operations()
-
-    def test_calculate_position(self):
-        self.fixture.test_calculate_position()
-
-```
 
 This test differs from the previous one mainly in that we aren’t running the microservice’s components in the test itself. Instead, we are configuring our client to connect to the microservice, which will be running in our Docker container. Another difference is that we will be deleting all data from the microservice before each test, so that our test always starts off with a clean DB.
 Before we can start testing, we need to get our containerized microservice up and running. To do this, run the command:

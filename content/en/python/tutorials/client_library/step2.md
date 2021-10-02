@@ -12,82 +12,105 @@ Direct clients are key to creating microservice-based monoliths. A direct client
 
 First off, let's define an interface for our clients to implement. This interface should contain a list of all the methods that are provided by our microservice’s API. As a result, we get the following code:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-	</div>
+**/src/version1/IBeaconClientV1.py**
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_node.md" >}}  
-</div>
+```python
+from typing import Optional, List, Any
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_net.md" >}}    
-</div>
+from pip_services3_commons.data import PagingParams, DataPage, FilterParams
 
-<div class="content-tab-section">
-  Not available  
-</div>
+from src.data.version1 import BeaconV1
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_dart.md" >}}    
-</div>
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_python.md" >}}
-</div>
+class IBeaconsClientV1:
+    def get_beacons_by_filter(self, correlation_id: Optional[str], filter: FilterParams,
+                              paging: PagingParams) -> DataPage:
+        raise NotImplementedError('Method from interface definition')
 
-<div class="content-tab-section">
-  Not available  
-</div>
+    def get_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+        raise NotImplementedError('Method from interface definition')
 
-</div>
+    def get_beacon_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
+        raise NotImplementedError('Method from interface definition')
 
+    def calculate_position(self, correlation_id: Optional[str], site_id: str, udis: List[str]) -> Any:
+        raise NotImplementedError('Method from interface definition')
+
+    def create_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+        raise NotImplementedError('Method from interface definition')
+
+    def update_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+        raise NotImplementedError('Method from interface definition')
+
+    def delete_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+        raise NotImplementedError('Method from interface definition')
+
+```
 
 Let’s start writing our direct client. This will be a class that implements the interface we defined above, that has our controller set as a dependency in the controller, and that will call the controller’s methods when asked to. To learn more about the referencing and linking mechanisms, be sure to read [The Referenceable Recipes](../../../recipes/component_references/). Ultimately, this will just be a wrapper class for the container. 
 The direct client’s code is listed below:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
-	</div>
+**src/version1/BeaconsDirectClientV1.py**
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_node.md" >}}  
-</div>
+```python
+from typing import Optional, List, Any
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_net.md" >}}    
-</div>
+from pip_services3_commons.data import PagingParams, FilterParams
+from pip_services3_commons.refer import Descriptor
+from pip_services3_rpc.clients import DirectClient
 
-<div class="content-tab-section">
-  Not available  
-</div>
+from .IBeaconsClientV1 import IBeaconsClientV1
+from ...data.version1 import BeaconV1
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_dart.md" >}}    
-</div>
 
-<div class="content-tab-section">
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_python.md" >}}
-</div>
+class BeaconsDirectClientV1(DirectClient, IBeaconsClientV1):
+    def __init__(self):
+        super(BeaconsDirectClientV1, self).__init__()
+        self._dependency_resolver.put('controller', Descriptor('beacons', 'controller', '*', '*', '1.0'))
 
-<div class="content-tab-section">
-  Not available  
-</div>
+    def get_beacons_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.get_beacons')
+        result = self._controller.get_beacons_by_filter(correlation_id, filter, paging)
+        timing.end_timing()
+        return result
 
-</div>
+    def get_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.get_beacon_by_id')
+        result = self._controller.get_beacon_by_id(correlation_id, id)
+        timing.end_timing()
+        return result
 
+    def get_beacon_by_udi(self, correlation_id: Optional[str], udi: str) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.get_beacon_by_udi')
+        result = self._controller.get_beacon_by_udi(correlation_id, udi)
+        timing.end_timing()
+        return result
+
+    def calculate_position(self, correlation_id: Optional[str], site_id: str, udis: List[str]) -> Any:
+        timing = self._instrument(correlation_id, 'beacons.calculate_position')
+        result = self._controller.calculate_position(correlation_id, site_id, udis)
+        timing.end_timing()
+        return result
+
+    def create_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.create_beacon')
+        result = self._controller.create_beacon(correlation_id, entity)
+        timing.end_timing()
+        return result
+
+    def update_beacon(self, correlation_id: Optional[str], entity: BeaconV1) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.update_beacon')
+        result = self._controller.update_beacon(correlation_id, entity)
+        timing.end_timing()
+        return result
+
+    def delete_beacon_by_id(self, correlation_id: Optional[str], id: str) -> dict:
+        timing = self._instrument(correlation_id, 'beacons.delete_beacon_by_id')
+        result = self._controller.delete_beacon_by_id(correlation_id, id)
+        timing.end_timing()
+        return result
+
+```
 
 Now that we’re done writing the client, we should test it. 
 To be sure that our code works as intended, we need to perform some functional testing. Let’s start with creating, in a separate class, a set of tests that will be common to all our clients. This will help us simplify the process of testing multiple clients, as well as make sure that they all work the same. We’ll place the code for our tests in the **test/version1** folder. The code for this class can be found in the [repository](https://github.com/pip-services-samples/client-beacons-python/blob/master/test/version1/BeaconsClientV1Fixture.py).

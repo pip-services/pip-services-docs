@@ -13,26 +13,41 @@ Dockerizing automated tests provides you with a 100%-repeatable environment that
 
 Let’s create a separate Docker container for running tests. This container’s build scenario will be defined in a file named **Dockerfile.test**:
 
-```dockerfile
-FROM python:3
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-# set working directory
-WORKDIR /usr/src/app
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_node.md" >}}  
+</div>
 
-# copy project file
-COPY requirements.txt .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_net.md" >}}    
+</div>
 
-# install dependencies
-RUN pip install -r requirements.txt
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_go.md" >}}    
+</div>
 
-# copy all project
-COPY . .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_dart.md" >}}    
+</div>
 
-# run test
-CMD [ "python", "./test.py" ]
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_python.md" >}}
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
 
+</div>
 The scenario for testing is nearly identical to the one we wrote for the build process - the only difference being the last command, which will run the tests in this case.
 
 Oftentimes, tests may require dependent microservices, databases, message brokers, and other infrastructure services. We can use a docker-compose file to start these services in separate containers and connect them to our test Docker container. We’ll be calling this file **docker-compose.test.yml**, and the configuration it should contain is listed below:

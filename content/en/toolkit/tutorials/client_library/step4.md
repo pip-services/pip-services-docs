@@ -27,11 +27,11 @@ The code for this client is showed below:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code5_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code5_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -39,11 +39,11 @@ The code for this client is showed below:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code5_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code5_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -68,11 +68,11 @@ Now let’s test the client we’ve created. We’ll be using the set of tests t
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code6_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code6_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -80,11 +80,11 @@ Now let’s test the client we’ve created. We’ll be using the set of tests t
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code6_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code6_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -112,11 +112,11 @@ To performing non-fuctional testing, we need to generate a large amount of reali
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code7_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code7_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -124,11 +124,11 @@ To performing non-fuctional testing, we need to generate a large amount of reali
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code7_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code7_python.md" >}}
 </div>
 
 <div class="content-tab-section">

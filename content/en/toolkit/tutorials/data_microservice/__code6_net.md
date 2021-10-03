@@ -1,34 +1,21 @@
 
-**/src/interface/data/version1/BeaconV1.cs**
+**/src/interface/data/version1/BeaconV1Schema.cs**
 
 ```cs
 namespace Beacons.Data.Version1
 {
-    [DataContract]
-    public class BeaconV1 : IStringIdentifiable
+    public class BeaconV1Schema : ObjectSchema
     {
-        [DataMember(Name = "id")]
-        public string Id { get; set; }
-
-        [DataMember(Name = "site_id")]
-        public string SiteId { get; set; }
-
-        [DataMember(Name = "type")]
-        public string Type { get; set; }
-
-        [DataMember(Name = "udi")]
-        public string Udi { get; set; }
-
-        [DataMember(Name = "label")]
-        public string Label { get; set; }
-
-        [DataMember(Name = "center")]
-        public CenterObjectV1 Center { get; set; }
-
-        [DataMember(Name = "radius")]
-        public double Radius { get; set; }
-
+        public BeaconV1Schema()
+        {
+            this.WithOptionalProperty("id", TypeCode.String);
+            this.WithRequiredProperty("site_id", TypeCode.String);
+            this.WithOptionalProperty("type", TypeCode.String);
+            this.WithRequiredProperty("udi", TypeCode.String);
+            this.WithOptionalProperty("label", TypeCode.String);
+            this.WithOptionalProperty("center", null);
+            this.WithOptionalProperty("radius", TypeCode.Double);
+        }
     }
 }
-
 ```

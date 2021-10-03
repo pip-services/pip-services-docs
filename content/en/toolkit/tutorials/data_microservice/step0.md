@@ -16,9 +16,43 @@ For working with the Python programming language, you’ll need to perform its i
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
-```bash
-python --version
-```
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
 ### 2. MongoDB
 Data microservice examples use MongoDB for storing data. You can either install MongoDB locally on your computer, or start it in a docker container.
 

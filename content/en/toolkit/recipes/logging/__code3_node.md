@@ -39,15 +39,12 @@ export class MyComponentB implements IReferenceable, IUnreferenceable, IConfigur
 
     public isOpen(): boolean {
         // pass
-        return;
     }
     public open(correlationId: string): Promise<void> {
         // pass
-        return;
     }
     public close(correlationId: string): Promise<void> {
         // pass
-        return;
     }
 
     public myTask(correlationId: string): void {
@@ -127,13 +124,11 @@ export class MyComponentA implements IReferenceable, IUnreferenceable, IConfigur
         this._logger.info(correlationId, "MyComponentA has been opened.")
         // artificial problem
         this.myTask(correlationId);
-        return;
     }
     public close(correlationId: string): Promise<void> {
         this._opened = false;
         this._status = "Closed";
         this._logger.info(correlationId, "MyComponentA has been closed.");
-        return;
     }
 
     public myTask(correlationId: string): void {
@@ -164,7 +159,6 @@ export class MyComponentA implements IReferenceable, IUnreferenceable, IConfigur
         this.dummy_variable = null;
         this._status = null;
         this._logger.info(null, "Resources cleared");
-        return;
     }
 }
 ```

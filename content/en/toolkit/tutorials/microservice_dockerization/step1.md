@@ -11,22 +11,42 @@ Python is an interpreted language and does not require compilation. But to save 
 
 To perform the build process for a Python project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
 
-```bash
-FROM python:3
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-# set working directory
-WORKDIR /usr/src/app
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_node.md" >}}  
+</div>
 
-# copy project file
-COPY requirements.txt .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_net.md" >}}    
+</div>
 
-# install dependencies
-RUN pip install -r requirements.txt
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_go.md" >}}    
+</div>
 
-# copy all project
-COPY . .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_dart.md" >}}    
+</div>
 
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 This file, along with the others we will be creating, should be placed in the docker folder at the root of the project.
 

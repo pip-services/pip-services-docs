@@ -23,11 +23,11 @@ The client’s resulting code is listed below:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -35,11 +35,11 @@ The client’s resulting code is listed below:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_python.md" >}}
 </div>
 
 <div class="content-tab-section">

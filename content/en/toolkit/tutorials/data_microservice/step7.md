@@ -8,37 +8,84 @@ gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 
 To run our microservice, we need to add just one last bit of code. In the bin folder, create a **main.py** file with the following code:
 
-**/bin/main.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-import sys
-import traceback
-import os
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_node.md" >}}  
+</div>
 
-from pip_services3_components.log import ConsoleLogger
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_net.md" >}}    
+</div>
 
-# add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+<div class="content-tab-section">
+  Not available  
+</div>
 
-from src.containers.BeaconsProcess import BeaconsProcess
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_dart.md" >}}    
+</div>
 
-if __name__ == '__main__':
-    runner = BeaconsProcess()
-    try:
-        runner.run()
-    except Exception as ex:
-        ConsoleLogger().fatal("Beacons", ex, "Error: ")
-        print(traceback.format_exc())
-        sys.stderr.write(str(ex) + '\n')
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
 
 In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
 
 To run the microservice, execute the following command from a terminal at the root of the project:
 
-```bash
- python ./bin/main.py
-```
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 You should get a result similar to the one shown below.
 
@@ -48,11 +95,43 @@ Since we opted for the console logger in our configuration file, all information
 
 Let’s use the following two commands to set our environment variable and start our microservice using the MongoDB persistence:
 
-```bash
-export MONGO_ENABLED=true
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-python .\bin\main.py
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
 
 Make sure that you have MongoDB running locally or in an accessible Docker container (i.e. whose ports are exposed), and that the connection parameters set in the configuration file are correct.
 

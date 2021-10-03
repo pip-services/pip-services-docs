@@ -13,31 +13,41 @@ Furthermore, a flexibly configurable container can easily be included in various
 
 We’ll be creating a separate container for packaging our microservice and defining its build instructions in a file named **Dockerfile**:
 
-```dockerfile
-FROM python:3
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-# set working directory
-WORKDIR /usr/src/app
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_node.md" >}}  
+</div>
 
-# copy project file
-COPY requirements.txt .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_net.md" >}}    
+</div>
 
-# install dependencies
-RUN pip install -r requirements.txt
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_go.md" >}}    
+</div>
 
-# copy all project
-COPY . .
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_dart.md" >}}    
+</div>
 
-ENV HTTP_PORT=8080
-ENV MONGO_SERVICE_HOST=mongo
-ENV MONGO_SERVICE_PORT=27017
-EXPOSE "8080:8080"
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_python.md" >}}
+</div>
 
-# run 
-CMD [ "python", "./bin/run.py" ]
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
-
+</div>
 Once again, this script is pretty similar to the ones we’ve already written. What’s new in this script is the indication of which file needs to be used to start the application, as well as what port we need to expose to make the service available from outside the container (EXPOSE "8080:8080").
 
 We checked that our microservice is functional in the previous “testing” step, but this doesn’t guarantee that the container that the microservice is running in will work as needed. To check this, we can create a special Docker Compose environment. Place the following code into a file named **docker-compose.yml**:

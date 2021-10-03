@@ -10,60 +10,85 @@ Our service is pretty much done - all that is left is to place the components we
 
 When a container is started, it starts composing the microservice out of the components indicated in the configuration file. For the container to be able to build these components, it will need a component factory. In the **build** directory, create a `BeaconsServiceFactory` class and populate it with the following code:
 
-**/src/build/BeaconsServiceFactory.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-from pip_services3_commons.refer import Descriptor
-from pip_services3_components.build import Factory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_node.md" >}}  
+</div>
 
-from ..logic.BeaconsController import BeaconsController
-from ..persistence.BeaconsFilePersistence import BeaconsFilePersistence
-from ..persistence.BeaconsMemoryPersistence import BeaconsMemoryPersistence
-from ..persistence.BeaconsMongoDbPersistence import BeaconsMongoDbPersistence
-from ..services.version1.BeaconsHttpServiceV1 import BeaconsHttpServiceV1
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 
-class BeaconsServiceFactory(Factory):
-
-    MemoryPersistenceDescriptor = Descriptor('beacons', 'persistence', 'memory', '*', '1.0')
-    FilePersistenceDescriptor = Descriptor('beacons', 'persistence', 'file', '*', '1.0')
-    MongoDbPersistenceDescriptor = Descriptor('beacons', 'persistence', 'mongodb', '*', '1.0')
-    ControllerDescriptor = Descriptor('beacons', 'controller', 'default', '*', '1.0')
-    HttpServiceV1Descriptor = Descriptor('beacons', 'service', 'http', '*', '1.0')
-
-    def __init__(self):
-        super(BeaconsServiceFactory, self).__init__()
-
-        self.register_as_type(BeaconsServiceFactory.MemoryPersistenceDescriptor, BeaconsMemoryPersistence)
-        self.register_as_type(BeaconsServiceFactory.FilePersistenceDescriptor, BeaconsFilePersistence)
-        self.register_as_type(BeaconsServiceFactory.MongoDbPersistenceDescriptor, BeaconsMongoDbPersistence)
-        self.register_as_type(BeaconsServiceFactory.ControllerDescriptor, BeaconsController)
-        self.register_as_type(BeaconsServiceFactory.HttpServiceV1Descriptor, BeaconsHttpServiceV1)
-```
 
 As shown in the code above, we start by creating descriptors for all of our components, and then, in the constructor, we register each component in the factory using its descriptor.
 
 Now let’s move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
 
-```python
-import sys
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-from pip_services3_container.ProcessContainer import ProcessContainer
-from pip_services3_rpc.build.DefaultRpcFactory import DefaultRpcFactory
-from pip_services3_swagger.build.DefaultSwaggerFactory import DefaultSwaggerFactory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_node.md" >}}  
+</div>
 
-from ..build.BeaconsServiceFactory import BeaconsServiceFactory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 
-class BeaconsProcess(ProcessContainer):
-    def __init__(self):
-        super(BeaconsProcess, self).__init__('beacons', 'Beacons microservice')
-
-        self._factories.add(BeaconsServiceFactory())
-        self._factories.add(DefaultRpcFactory())
-        self._factories.add(DefaultSwaggerFactory())
-
-```
 
 Next, add the factories that are missing from the standard container (the one from the pip-services3-container module), so that we can build all the objects our service needs. In our case, this means adding the factory for the components we’ve written, as well as the default RPC factory (from the pip-services3-rpc module), which is needed for the HTTP service to work.
 

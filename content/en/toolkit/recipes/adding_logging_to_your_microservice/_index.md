@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Adding logging to a component"
-linkTitle: "Logging"
+linkTitle: "Adding logging"
 weight: 1
 ---
 
@@ -113,7 +113,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code1_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -121,7 +121,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code1_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -129,7 +129,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code1_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -154,7 +154,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code2_node.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code2_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -162,7 +162,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code2_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code2_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -170,7 +170,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code2_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code2_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -196,7 +196,7 @@ a)	Our components
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code3_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code3_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -204,7 +204,7 @@ a)	Our components
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code3_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code3_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -212,7 +212,7 @@ a)	Our components
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code3_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code3_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -235,7 +235,7 @@ b)	Our factory
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code4_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code4_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -243,7 +243,7 @@ b)	Our factory
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code4_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code4_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -251,7 +251,7 @@ b)	Our factory
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code4_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code4_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -274,7 +274,7 @@ c)	Our service
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code5_node.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code5_node.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -282,7 +282,7 @@ c)	Our service
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code5_go.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code5_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -290,7 +290,7 @@ c)	Our service
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code5_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code5_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -331,7 +331,7 @@ e)	Running our service
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code6_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code6_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -339,7 +339,7 @@ e)	Running our service
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code6_go.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code6_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -347,7 +347,7 @@ e)	Running our service
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code6_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code6_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -392,7 +392,7 @@ After these changes, our component section will look like this:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code7_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code7_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -400,7 +400,7 @@ After these changes, our component section will look like this:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code7_go.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code7_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -408,7 +408,7 @@ After these changes, our component section will look like this:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code7_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code7_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -439,7 +439,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code8_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code8_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -447,7 +447,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code8_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code8_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -455,7 +455,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code8_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code8_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -477,7 +477,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code9_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code9_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -485,7 +485,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code9_go.md" >}} 
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code9_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -493,7 +493,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code9_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code9_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -515,7 +515,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code10_node.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code10_node.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -523,7 +523,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code10_go.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code10_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -531,7 +531,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/getting_started/adding_logging_to_your_microservice/__code10_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/adding_logging_to_your_microservice/__code10_python.md" >}}
 </div>
 
 <div class="content-tab-section">

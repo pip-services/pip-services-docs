@@ -1,199 +1,523 @@
 ---
 type: docs
 no_list: true
-title: "Memory Persistence"
-linkTitle: "Memory Persistence"
-weight: 40
+title: "Creating a memory persistence component"
+linkTitle: "Memory persistence"
+weight: 1
 ---
 
-- by Artyom Grishchenko
+### Key takeaways
 
+<table>
+  <tr>
+    <td>Memory persistence</td>
+    <td>Create a memory persistence component and perform CRUD operations.</td>
+  </tr>
+ </table>
+ 
 ### Introduction
 
-The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
+In this tutorial, you will learn how to create a persistence component, which will store some objects in memory. Then, we will see how to perform CRUD operations, such as adding data, reading it, updating stored values and deleting them. We will use a dummy object, which has the characteristic of being identifiable via an id parameter. All concepts learned here can be expanded to other more complex objects.
 
-### The MemoryPersistence class
+### Create a memory persistence component
+In order to create our memory persistence component, we will follow these two steps.
 
-The most basic implementation is the [MemoryPersistence](../../data/persistence/memory_persistence/) class defined in the [Data module](../../data). It is only capable of storing a collection of objects, opening, and closing. It does not provide any data access methods.
+#### Step 1 - Creating a dummy class
 
-The implementation we will be working with is called [IdentifiableMemoryPersistence](../../data/persistence/identifiable_memory_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in the [Commons module](../../commons).
+We will create a dummy class, which represents an object that is identifiable via an id. PIP.Services provides us with the [IStringdentifiable](http://docs.pipservices.org/python/commons/data/istring_identifiable/) interface that can be used to create data objects with this characteristic. We will also define a **content** parameter for the class, which can include any text. 
 
-```python
-class IIdentifiable:
-    id: Any
-
-```
-
-The **IdentifiableMemoryPersistence** implements a number of CRUD methods:
-
-```python
-class IdentifiableMemoryPersistence(MemoryPersistence, IWriter, IGetter, ISetter, IIdentifiable):
-
-    def __init__(self, loader: ILoader = None, saver: ISaver = None):
-        ...
+Once we created our class, we will create three instances of it, each with a different id. For one of the objects, we will use **None** to let the program define its id.
+The code will look something like this: 
 
 
-    def get_list_by_ids(self, correlation_id: Optional[str], ids: List[Any]) -> List[T]:
-        ...
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    def _find_one(self, id: str):
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def get_one_by_id(self, correlation_id: Optional[str], id: Any) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def create(self, correlation_id: Optional[str], item: T) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def set(self, correlation_id: Optional[str], item: T) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def update(self, correlation_id: Optional[str], new_item: T) -> T:
-        ...
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_python.md" >}}
+</div>
 
-    def update_partially(self, correlation_id: Optional[str], id: Any, data: AnyValueMap) -> T:
-        ...
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    def delete_by_id(self, correlation_id: Optional[str], id: Any) -> T:
-        ...
-
-    def delete_by_ids(self, correlation_id: Optional[str], ids: List[Any]):
-        ...
-
-```
-
-In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function. All other operations can be used right out of the box. Developers can implement custom methods by accessing stored data objects via the **self._items** property and complete transactions by calling the **save()** method. See the [Data module](../../data)’s API documentation for more details.
-
-### Filtering
-
-Persistent components in the Pip.Services Toolkit use a number of data patterns. **IdentifiedMemoryPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data as key-value pairs. These FilterParams can then be used for retrieving data in accordance with certain search criteria (see the [Commons module](../../commons)).
-
-```python
-
-filter = FilterParams.from_tuples(
-    'name', 'ABC'
-)
-result = persistence.get_page_by_filter(correlation_id, filter, paging);
-```
-
-In the persistence component, the developer is responsible for parsing the **FilterParams** and passing a filter function to the persistent methods of the base class.
+</div>
 
 
-```python
-def __compose_filter(self, filter: FilterParams) -> Any: 
-    filter = filter or FilterParams()
-    name = filter.get_as_nullable_string("name")
 
-    def filter(item):
-        if name is not None and item.name is not name:
-            return false
-        return true
+#### Step 2 – Create a memory persistence object
+The next step is to create a memory persistence object. Here, we need to use the [IdentifiableMemoryPersistence](http://docs.pipservices.org/python/data/persistence/identifiable_memory_persistence/) class, which is an abstract persistence component that stores data in memory and implements CRUD operations over data items with unique ids. We will also define two methods namely, **get_page_by_filter** and **get_one_by_key**, which will be used to read the persisted values.
 
-    return filter
  
-def get_page_by_filter(self, correlationId, filter, paging):
-    super().get_page_by_filter(correlationId, filter, paging, None)
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
 
-### Paging
+<div class="content-tab-section">
+  Not available  
+</div>
 
-Another common data pattern is Paging. It is used to retrieve large datasets in chunks through multiple calls to the storage. To do this, a client specifies a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. The service returns a subset of the data as a [DataPage](../../commons/data/data_page/) object.
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```python
-# skip = 25, take = 50, total = False
-paging = PagingParams(25, 50, False)
-result = persistence.get_page_by_filter(None, None, paging)
-```
+<div class="content-tab-section">
+  Not available  
+</div>
 
-### Custom Persistence Methods
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_python.md" >}}
+</div>
 
-As mentioned above, developers can also implement custom persistent methods. Inside those methods, they can access data objects via the **_items** property. When stored data is modified, developers must finish the transaction by calling the base class’s **save()** method.
-Below is an example of a custom persistent method.
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```python
-def get_one_by_name(self, correlation_id: string, name: string) -> MyData: 
-    item = list(filter(lambda item: item.name == name, self._items))[0]
-    if item is None: 
-        self._logger.trace(correlation_id, "Found by %s", name)
+</div>
 
-    else:
-        self._logger.trace(correlation_id, "Cannot find by %s", name)
-    
-    return item
-```
-
-When we put everything together, we get the following component:
-
-```python
-class MyMemoryPersistence(IdentifiableMemoryPersistence):
-    def __compose_filter(self, filter: FilterParams) -> Any: 
-        filter = filter or FilterParams()
-        name = filter.get_as_nullable_string("name")
-
-        def filter(item):
-            if name is not None and item.name is not name:
-                return false
-            return true
-
-        return filter
  
-    def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
-                           sort: Any = None, select: Any = None) -> DataPage:
+  
+### CRUD operations
 
-        return super(BeaconsMemoryPersistence, self).get_page_by_filter(correlation_id,
-                                                                        self.__compose_filter(filter), paging=paging)
+Now that we have a persistence object, we will perform CRUD operations.
 
-    def get_one_by_name(self, correlation_id: string, name: string) -> MyData: 
-        item = list(filter(lambda item: item.name == name, self._items))[0]
-        if item is None: 
-            self._logger.trace(correlation_id, "Found by %s", name)
-
-        else:
-            self._logger.trace(correlation_id, "Cannot find by %s", name)
-    
-        return item
-
-```
-
-A demonstration of how we can use our custom memory persistence is presented below:
+#### Create the persisted objects
+To add values to the persistence object, we will use the **create** method. This method asks for two parameters: correlation_id and the object to persist. For the correlation_id we will use None as in our example we are not interested in following a sequence of operations.
 
 
-```python
-def use_memory_persistence():
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-    # Create items
-    persistence = new MyMemoryPersistence();
-    created_item = persistence.create("123", { id: "1", name: "ABC" }, None);
+<div class="content-tab-section">
+  Not available  
+</div>
 
-    # Filter by name
-    page = persistence.get_page_by_filter(
-            None,
-            FilterParams.from_tuples("name", "ABC"),
-            PagingParams(0, 100, False)
-        )
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
 
-### FileMemoryPersistence
+<div class="content-tab-section">
+  Not available  
+</div>
 
-The memory persistence component actually has one more trick up its sleeve: it can easily be extended to create a **FileMemoryPersistence**. The only thing you’ll need to add is the assignment of a **PersisterObject** in the **FileMemoryPersistence**’s constructor. The File persistence can be used for certain system test scenarios.
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_python.md" >}}
+</div>
 
-```python
-from pip_services3_data.persistence.JsonFilePersister import JsonFilePersister
-from ..data.version1.BeaconV1 import BeaconV1
-from .MyMemoryPersistence import MyMemoryPersistence
-from pip_services3_commons.config.ConfigParams import ConfigParams 
-class MyFilePersistence(MyMemoryPersistence):
-    _persister: JsonFilePersister
-    def _init__(self, path: str = None):
-        super();
-        self._persister = JsonFilePersister(path)
-        self._loader = self._persister
-        self._saver = self._persister
-    
-    def configure(self, config: ConfigParams):
-        super().configure(config)
-        self._persister.configure(config)
-    
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+  
+ 
+  
+After creating the persisted objects, we will obtain the following output:
+
+<img src="figure1.png" alt="figure 1" style="width:100%">
+
+As we can see, the memory persistence object allocated a value to the id of dummy3, which we had declared as None.
+
+#### Read the values from the persistence object
+
+To read the persisted values, we can use the **get_page_by_filter** method that we defined when we created the memory persistence object. Here, we will use a filter to indicate that we are only looking for the dummy2 object. 
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+  
+  
+The **result** object is of type [DataPage](http://docs.pipservices.org/python/commons/data/data_page/), which has two fields: data and total. The first is a list containing the items on the retrieved page, and the second is the total number of items in our request. After running this code, we will see the following output with the values of the obtained object.
+
+<img src="figure2.png" alt="Figure 2" style="width:100%">
+
+Similarly, we can obtain all the persisted objects by using None as our filter.
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
+  
+ After running the above code, we will obtain the following result:
+
+<img src="figure3.png" alt="Figure 3" style="width:100%">
+
+#### Update a value in the persistence object
+
+To update a value in the persistence object, we need to use the **update** method. For example, we can change the content of the dummy2 persisted object to “new content 2”. 
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
+  
+To verify the change, we can extract the dummy2 object by applying a filter:
+ 
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
+
+And get the updated object:
+
+<img src="figure4.png" alt="Figure 4" style="width:100%">
+
+We can also use the **update_partially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+  
+  
+To verify the change, we can use the filter defined earlier.
+  
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
+
+And, we will obtain the updated persisted object.
+
+<img src="figure5.png" alt="Figure 5" style="width:100%">
+
+#### Delete a value from the persistence object
+
+Similarly, we can delete an object stored in the persistence object by using the **delete_by_id** function. In our example, we ask to delete dummy1 by indicating its id.
+  
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
+
+To verify that the object has been deleted, we can apply a filter and search for it.
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+  
+  
+As expected, the answer will be:
+
+<img src="figure6.png" alt="Figure 6" style="width:100%">
+
+### Wrapping up
+
+In this tutorial, we have seen how to create a memory persistence component and apply CRUD operations to it. Although we used a simple dummy object to create an example, the principles explained continue to apply to more complex objects.
+

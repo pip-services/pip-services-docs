@@ -1,4 +1,6 @@
 ---
+type: docs
+no_list: true
 title: "Config File Syntax"
 linkTitle: "Config File Syntax"
 weight: 100

@@ -46,11 +46,11 @@ The image parameter contains the name of the Docker image being hosted on Docker
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -58,11 +58,11 @@ The image parameter contains the name of the Docker image being hosted on Docker
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -92,11 +92,11 @@ In a separate console, run the test using the following command:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -104,11 +104,11 @@ In a separate console, run the test using the following command:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_python.md" >}}
 </div>
 
 <div class="content-tab-section">

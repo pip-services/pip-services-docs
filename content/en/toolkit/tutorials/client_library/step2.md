@@ -23,11 +23,11 @@ First off, let's define an interface for our clients to implement. This interfac
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code2_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code2_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -35,11 +35,11 @@ First off, let's define an interface for our clients to implement. This interfac
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code2_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code2_python.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -62,11 +62,11 @@ The direct client’s code is listed below:
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code3_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code3_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -74,11 +74,11 @@ The direct client’s code is listed below:
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code3_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code3_python.md" >}}
 </div>
 
 <div class="content-tab-section">

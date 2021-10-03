@@ -31,36 +31,84 @@ Create a folder for the project and, inside it, a directory structure to match t
 
 ```
 
-Add a requirements.txt file with the following lines to the root of the project’s folder:
 
-**/requirements.txt**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```txt
-iso8601
-PyYAML
-pystache
-pytest
-pytz
-bottle
-pybars3
-requests
-netifaces==0.10.9
- 
-pip_services3_commons
-pip_services3_expressions
-pip_services3_components
-pip_services3_container
-pip_services3_data
-pip_services3_mongodb
-pip_services3_rpc
-pip_services3_swagger
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
 
 To install all necessary dependencies, run the following command from a terminal at the root of the project’s directory:
 
-```bash
-pip install -r requirements.txt
-```
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_node.md" >}}  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_net.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_dart.md" >}}    
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+
 
 Now that we’ve got the project all set up, we can move on to [Step 3. Data model development.](../step2)
 

@@ -23,11 +23,11 @@ First and foremost - we’ll need a compiler for your programming language of ch
 	</div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_node.md" >}}  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code1_node.md" >}}  
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code1_net.md" >}}    
 </div>
 
 <div class="content-tab-section">
@@ -35,11 +35,11 @@ First and foremost - we’ll need a compiler for your programming language of ch
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_dart.md" >}}    
+  {{< include "/content/en/toolkit/tutorials/client_library/__code1_dart.md" >}}    
 </div>
 
 <div class="content-tab-section">
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
+  {{< include "/content/en/toolkit/tutorials/client_library/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">

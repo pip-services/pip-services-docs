@@ -117,7 +117,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code1_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -158,7 +158,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code2_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -200,7 +200,7 @@ a)	Our components
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code3_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -239,7 +239,7 @@ b)	Our factory
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code4_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -278,7 +278,7 @@ c)	Our service
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code5_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -335,7 +335,7 @@ e)	Running our service
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code6_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -396,7 +396,7 @@ After these changes, our component section will look like this:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code7_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -443,7 +443,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code8_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -481,7 +481,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code9_net.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -519,7 +519,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code10_net.md" >}}
 </div>
 
 <div class="content-tab-section">

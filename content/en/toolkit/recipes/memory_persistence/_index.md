@@ -49,7 +49,7 @@ The code will look something like this:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -91,7 +91,7 @@ The next step is to create a memory persistence object. Here, we need to use the
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_go.md" >}} 
 </div>
 
 <div class="content-tab-section">
@@ -137,7 +137,7 @@ To add values to the persistence object, we will use the **create** method. This
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -187,7 +187,7 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -232,7 +232,7 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -279,7 +279,7 @@ To update a value in the persistence object, we need to use the **update** metho
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -320,7 +320,7 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -365,7 +365,7 @@ We can also use the **update_partially** function. In this case, we need to spec
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -406,7 +406,7 @@ To verify the change, we can use the filter defined earlier.
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -453,7 +453,7 @@ Similarly, we can delete an object stored in the persistence object by using the
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -494,7 +494,7 @@ To verify that the object has been deleted, we can apply a filter and search for
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_go.md" >}}
 </div>
 
 <div class="content-tab-section">

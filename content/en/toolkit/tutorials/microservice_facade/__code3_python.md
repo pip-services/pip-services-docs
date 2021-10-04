@@ -1,4 +1,4 @@
 
 ```bash
-dotnet restore
+pip install -r requirements.txt
 ```

@@ -76,4 +76,8 @@ func (c *MyMemoryPersistence) GetPageByFilter(correlationId string, filter *cdat
 	return page, err
 }
 
+...
+
+persistence := mypersistence.NewMyMemoryPersistence()
+
 ```

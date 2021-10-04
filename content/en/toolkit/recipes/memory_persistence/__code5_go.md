@@ -1,7 +1,7 @@
 
 ```go
 // get all items
-result, _ = persistence.GetPageByFilter(correlationId, nil, nil)
+result, _ = persistence.GetPageByFilter(correlationId, nil, cdata.NewPagingParams(0, nil, true))
 
 page, _ = result.(*mypersistence.DummyPage)
 fmt.Printf("Has %v items \n", *page.Total)

@@ -36,8 +36,8 @@ class MyMemoryPersistence(IdentifiableMemoryPersistence):
             if item.key == key: 
                 self._logger.trace(correlation_id, "Found object by key={}", key) 
                 return item 
-            else: 
-                self._logger.trace(correlation_id, "Cannot find by key={}", key) 
+             
+        self._logger.trace(correlation_id, "Cannot find by key={}", key) 
  
 
 persistence = MyMemoryPersistence() 

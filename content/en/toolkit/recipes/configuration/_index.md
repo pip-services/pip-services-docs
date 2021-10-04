@@ -37,7 +37,7 @@ A component can be made configurable by adding the [IConfigurable](../../commons
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code1_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -78,7 +78,7 @@ The only parameter that is passed to the configure method is [ConfigParams](../.
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code2_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -117,7 +117,7 @@ The only parameter that is passed to the configure method is [ConfigParams](../.
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code3_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -156,7 +156,7 @@ The parameter kets can have a complex structure, grouped by sections using dot n
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code4_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -196,7 +196,7 @@ Another helpful option is the ability to set a default configuration.
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code5_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -237,7 +237,7 @@ Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YA
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code6_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -280,7 +280,7 @@ Below is an example of a configurable component:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code7_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -321,7 +321,7 @@ Manual configuration can be done in the following manner:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code8_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -379,7 +379,7 @@ Below is a simple example of how it can be used:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code9_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -420,7 +420,7 @@ Below is a simple example of how it can be used:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code10_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -461,7 +461,7 @@ Configuration parameters can be stored in microservice configurations, configura
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code11_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -502,7 +502,7 @@ The [MemoryConfigReader](../../components/config/memory_config_reader/) is a **C
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code12_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -546,7 +546,7 @@ The [JsonConfigReader](../../components/config/json_config_reader/) is a **Confi
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code13_go.md" >}}  
 </div>
 
 <div class="content-tab-section">
@@ -592,7 +592,7 @@ key2: "ABCD"
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/configuration/__code14_go.md" >}}   
 </div>
 
 <div class="content-tab-section">

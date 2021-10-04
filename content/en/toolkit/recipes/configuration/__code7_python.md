@@ -8,7 +8,7 @@ class DataController(IConfigurable):
 		self.__max_page_size = config.get_as_integer_with_default('max_page_size', self.__max_page_size)
    
    def get_data(self, correlation_id: str, filter: FilterParams, paging: PagingParams) -> DataPage: 
-	    paging.take = min(paging.take, self.__max_page_size)   
+	paging.take = min(paging.take, self.__max_page_size)   
         # Get data using max page size constraint.
 
 

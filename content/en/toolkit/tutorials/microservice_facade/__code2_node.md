@@ -1,3 +1,4 @@
+Create a /package.json file at the root of the project with the following content to configure dependencies and project parameters:
 
 **/package.json**
 

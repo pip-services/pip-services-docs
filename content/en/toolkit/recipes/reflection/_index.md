@@ -44,6 +44,8 @@ description: >-
     <td>Component used to dynamically set the properties of an object in a recursive way using “dot” notation.</td>
   </tr>
  </table>
+
+    
 ### Introduction
 In this tutorial, you will learn how to use the Reflect package. This package provides different classes that will allow you to develop code with introspection capacity. We will start by briefly describing reflection. Then, we will learn how to use each of the different components provided in the package through the use of examples.
 

@@ -1,5 +1,5 @@
 /public
-/resources/_gen
+/resources
 /idea
 /node_modules
 package-lock.json

@@ -48,4 +48,4 @@ First and foremost - we’ll need a compiler for your programming language of ch
 </div>
 
 </div>
-Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step2)
+Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](step1)

@@ -28,7 +28,7 @@ Executes a component with arguments and receives the execution result.
 ```go
 type EchoComponent {}
 ...
-func  (ec* EchoComponent) Execute(correlationId: string, args: Parameters) (result interface{}, err error) {
+func  (ec* EchoComponent) Execute(correlationId string, args Parameters) (result interface{}, err error) {
     return nil, result = args.getAsObject("message")
 }
  

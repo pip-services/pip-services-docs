@@ -327,3 +327,138 @@ After running, this code produces the following output:
 
 <img src="figure7.png" alt="figure 7" style="width:100%">
 
+#### g)	TypeDescriptor
+This class stores a reference to a type represented by the type name and library (module) where the type is defined. This class has three methods. The equals method compares a descriptor to a value. The get_library method gets the library or module of a descriptor.  The get_name method obtains the name of the object type. The to_string method returns a string representation of the descriptor with the format name[,library]. And, the static method from_string transforms a string into a Descriptor object. Below are some examples of these methods’ usage.
+
+	
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code8_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+The output from this code is:
+
+<img src="figure8.png" alt="figure 8" style="width:100%">
+
+#### h)	TypeMatcher
+This class allows us to match values based on equality. The match_type method matches an expected value to an actual one. The match_type_by_name method matches an expected type to an actual type. The match_value_type and match_value_type_by_name methods match an expected type to a type of value. The following code shows examples of their usage.
+
+	
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code9_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+After running this code, we will obtain the following results:
+	
+<img src="figure9.png" alt="figure 9" style="width:100%">
+	
+#### i)	TypeReflector
+This class is used to examine the type of an object and create instances based on its type. Its create_instance_by_type method provides a way to create an instance of an object based on a type. The create_instance_by_descriptor method is similar to the previous one but uses a descriptor as input. 
+The example below shows how to create an object of classA and verify that the values of its parameters are the ones defined in the class.
+
+	
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code10_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+After running it, we get:
+
+<img src="figure9.png" alt="figure 10" style="width:100%">
+	
+### Wrapping up
+In this tutorial, we have learned what reflection is and how to use the Reflect library available in the PIP.Services toolkit, which provides several tools for class introspection. We have seen all its classes and examples of their main methods’ usage. 

@@ -11,7 +11,7 @@ by Aleksey Dvoykin
 ### Introduction
 
 In our previous tutorials, we took a look at in-memory and file persistence component implementations. Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database.
-The most basic implementation of this component is the MongoDbPersistence class defined in the [MongoDb module](../../mongodb). It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations. 
+The most basic implementation of this component is the MongoDbPersistence class defined in the [MongoDb module](../../../node/mongodb). It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations. 
 
 ### MongoDBPersistence
 

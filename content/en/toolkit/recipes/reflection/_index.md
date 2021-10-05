@@ -60,3 +60,7 @@ The MethodReflector class allows us to examine an object’s methods and to exec
 </div>
 
 </div>
+
+After running the above code, we will get the following output:
+
+<img src="figure1.png" alt="figure 1" style="width:100%">

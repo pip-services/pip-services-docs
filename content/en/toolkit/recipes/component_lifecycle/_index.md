@@ -374,7 +374,60 @@ public sealed class CounterController : IReferenceable, IReconfigurable, IOpenab
 
 <div class="content-tab-section">
 
-**TODO: add CounterController**
+```go
+type CounterController struct {
+	logger     clog.CompositeLogger
+	timer      crun.FixedRateTimer
+	parameters crun.Parameters
+	counter    int
+}
+
+func NewCounterController() *CounterController {
+	instance := &CounterController{
+		logger:     *clog.NewCompositeLogger(),
+		timer:      *crun.NewFixedRateTimer(),
+		parameters: *crun.NewEmptyParameters(),
+		counter:    0,
+	}
+
+	instance.logger.SetLevel(clog.Debug)
+
+	return instance
+}
+
+func (c *CounterController) SetReferences(references crefer.IReferences) {
+	c.logger.SetReferences(references)
+}
+
+func (c *CounterController) IsOpen() bool {
+	return c.timer.IsStarted()
+}
+
+func (c *CounterController) Open(correlationId string) error {
+	if c.IsOpen() {
+		return nil
+	}
+
+	c.timer.SetCallback(func() { c.Execute(correlationId, c.parameters) })
+	c.timer.SetInterval(1000)
+	c.timer.SetDelay(1000)
+	c.timer.Start()
+	c.logger.Trace(correlationId, "Counter controller opened")
+
+	return nil
+}
+
+func (c *CounterController) Close(correlationId string) error {
+	c.timer.Stop()
+	c.logger.Trace(correlationId, "Counter controller closed")
+
+	return nil
+}
+
+func (c *CounterController) Execute(correlationId string, args crun.Parameters) (result interface{}, err error) {
+	return args.GetAsObject("message"), nil
+}
+```
 
 </div>
 
@@ -547,7 +600,9 @@ await Closer.CloseAsync(correlationId, _references.GetAll());
 For example:
 
 ```go
-TODO: add example
+err := crun.Opener.Open(correlationId, references.GetAll())
+// ...
+err = crun.Closer.Close(correlationId, references.GetAll())
 ```
 
 </div>

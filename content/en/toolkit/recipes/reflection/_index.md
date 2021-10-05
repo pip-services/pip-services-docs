@@ -110,3 +110,92 @@ Once the code above is executed, we will get the following result:
 
 <img src="figure2.png" alt="figure 2" style="width:100%">
 
+The methods in this component can also be used with maps and arrays to find out if they contain certain elements and their values.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code3_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+<img src="figure3.png" alt="figure 3" style="width:100%">	
+
+#### c)	ObjectWriter
+
+This component helps us to dynamically set the properties of an object. Its set_property method can be used to set the value of the property of an object at runtime. Similarly, the set_propeties method allows us to set the values of some or all the properties of an object with an input defined as a map. These methods can also be used with common objects such as maps and arrays.
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code4_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+
+After running the above code, we will get the following result:
+	
+<img src="figure4.png" alt="figure 4" style="width:100%">
+	
+#### d)	PropertyReflector
+
+This class allows us to examine an object’s properties and to dynamically get and set their values. The get_property_names is used to obtain a list containing all the properties of an object. The has_property   method allows us to find out whether an object has a property or not. The get_properties method obtains all the properties of an object and their values and places the result in the form of a dictionary. And, the set_property method is used to set the value of an object’s property. The code below provides examples of these methods.
+
+	

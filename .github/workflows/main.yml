@@ -10,16 +10,11 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
     
-      - name: Intsall post-scss
-        run: npm install postcss-cli
-        
       - uses: actions/checkout@v2
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
           
-      
-      
       - name: Update submodules
         run: git submodule update --init --recursive
 
@@ -29,6 +24,9 @@ jobs:
           hugo-version: 0.84.4 # 'latest'
           extended: true
       
+      - name: Intsall post-scss (hugo pre reqs)
+        run: npm install postcss-cli
+      
       - name: Pre-Build # Pre-Build with caching data for check is correct markdown
         run: hugo --theme=docsy
         env:
@@ -37,7 +35,6 @@ jobs:
       - name: Build
         run: hugo --theme=docsy
         
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

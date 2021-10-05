@@ -10,7 +10,7 @@ class SimpleController implements IReferenceable, IUnreferenceable {
         this._worker = null;
     }
     public greeting(name) {
-        this._worker.do('level',  "Hello, " + (name) + "!");
+        this._worker.do(LogLevel.Debug,  "Hello, " + (name) + "!");
     }
 }
   

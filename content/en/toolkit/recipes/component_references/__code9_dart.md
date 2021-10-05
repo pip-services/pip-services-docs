@@ -16,7 +16,7 @@ class SimpleController implements IConfigurable, IReferenceable, IUnreferenceabl
     }
 
     void unsetReferences() {
-      this._dependencyResolver.unsetReferences();
+      this._dependencyResolver = DependencyResolver();
     }
 ...
 }
@@ -33,7 +33,7 @@ var config = ConfigParams.fromTuples(
 var controller = SimpleController();
 controller.configure(config);
 controller.setReferences(references);
-print(controller.greeting("world"));
+controller.greeting("world");
 controller.unsetReferences();
 controller = null;
 

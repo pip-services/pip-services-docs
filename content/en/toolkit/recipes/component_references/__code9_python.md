@@ -2,7 +2,7 @@
 ```python
 class SimpleController(IConfigurable, IReferenceable, IUnreferenceable):
 	_depedency_resolver = DependencyResolver.from_tuples(
-    	"worker", Descriptor("*", "worker", "*", "*", 1.0)
+    	"worker", Descriptor("*", "worker", "*", "*", "1.0")
   	)
 
   	def configure(self, config):
@@ -13,7 +13,7 @@ class SimpleController(IConfigurable, IReferenceable, IUnreferenceable):
     	self._worker = self._depedency_resolver.get_one_required("worker")
   
   	def unset_references():
-    	self._dependency_resolver.unsetReferences()
+    	self._dependency_resolver = DependencyResolver()
   
 	...
 
@@ -27,7 +27,7 @@ config = ConfigParams.from_tuples(
 controller = SimpleController()
 controller.configure(config)
 controller.setReferences(references)
-print(controller.greeting("world"))
+controller.greeting("world")
 controller.unset_references()
 controller = None
 

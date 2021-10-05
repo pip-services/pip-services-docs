@@ -13477,6 +13477,37 @@ mark, .mark {
   background-color: #fbf1bb;
   border-radius: 0.5rem; }
 
+.lang-select-btn.active {
+  border: none;
+  color: black;
+  background: linear-gradient(0deg, #fed955 35%, #ffffff 35%); }
+  @media (max-width: 991.98px) {
+    .lang-select-btn.active {
+      background: linear-gradient(0deg, #fed955 30%, #ffffff 3%); } }
+.lang-select-btn.btn:focus {
+  outline: none;
+  box-shadow: none; }
+
+.lang-select-btn {
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  width: auto;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  color: #2C4154; }
+  @media (max-width: 767.98px) {
+    .lang-select-btn {
+      font-size: 0.8rem;
+      width: auto; } }
+  .lang-select-btn:hover {
+    color: black;
+    background: linear-gradient(0deg, #fed955 35%, #ffffff 35%); }
+    @media (max-width: 991.98px) {
+      .lang-select-btn:hover {
+        background: linear-gradient(0deg, #fed955 30%, #ffffff 30%); } }
 .draft {
   display: none; }
 

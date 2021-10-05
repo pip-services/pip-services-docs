@@ -24,6 +24,7 @@ This package belongs to the commons module and contains several classes used to 
 The MethodReflector class allows us to examine an object’s methods and to execute them dynamically. The get_method_names method returns a list with all the methods in a class. The has_method method returns a boolean indicating whether or not a method belongs to a class. And, the invoke_method provides a way to invoke the execution of a method at runtime. The example below shows how to obtain the names of all methods in an object, find out if a method belongs to that object, and invoke its execution.
 
 
+
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
 	  <button type="button" class="btn lang-select-btn">Node</button>
@@ -35,15 +36,7 @@ The MethodReflector class allows us to examine an object’s methods and to exec
 	</div>
 
 <div class="content-tab-section">
-  Not available
-</div>
-
-<div class="content-tab-section">
-  Not available
-</div>
-
-<div class="content-tab-section">
-  Not availalble
+  Not available 
 </div>
 
 <div class="content-tab-section">
@@ -51,35 +44,15 @@ The MethodReflector class allows us to examine an object’s methods and to exec
 </div>
 
 <div class="content-tab-section">
-```python 
- # Method Reflector
+  Not available  
+</div>
 
-from pip_services3_commons.reflect import MethodReflector
+<div class="content-tab-section">
+  Not available   
+</div>
 
-class classA:
-    def methodA(self):     
-        return 123
-    
-    def methodB(self):
-        print("hello world b")
-
-my_classA = classA()
-
-# Obtain all methods in classA
-methods1 = MethodReflector.get_method_names(my_classA)
-print("The methods in my_classA are: ", methods1)
-
-# Ask whether a specific method exists or not
-methods2 = MethodReflector.has_method(my_classA, "methodA")
-print("methodA belongs to my_classA: ", methods2)
-
-methods3 = MethodReflector.has_method(my_classA, "methodC") 
-print("methodC belongs to my_classA: ", methods3)
-
-# Invoke a method in classA
-methods4= MethodReflector.invoke_method(my_classA, "methodA")          
-print("After running methodA the result is: ", methods4)
-```
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code1_python.md" >}}
 </div>
 
 <div class="content-tab-section">

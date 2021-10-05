@@ -41,7 +41,7 @@ The [IReferences](../../commons/refer/ireferences/)interface can be used to pass
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code1_go.md" >}}   
 </div>
 
 <div class="content-tab-section">
@@ -84,7 +84,7 @@ A component must implement the [IReferenceable](../../commons/refer/ireferenceab
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code2_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -125,7 +125,7 @@ Let’s take a look at a simple example of setting dependencies between componen
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code3_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -163,7 +163,7 @@ Now let’s add a **SimpleController** component with a **greeting()** method. T
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code4_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -201,7 +201,7 @@ We will be using the **References** class to pass dependencies into our componen
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code5_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -250,7 +250,7 @@ The **Descriptor** class’s definition is as follows:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code6_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -318,7 +318,7 @@ Returning to our “worker” example, we could use **Descriptors** in the follo
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code7_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -359,7 +359,7 @@ The **DependencyResolver** class:
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code8_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -397,7 +397,7 @@ Below is the final version of our **“worker”** example, which now utilizes t
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code9_go.md" >}}
 </div>
 
 <div class="content-tab-section">
@@ -453,7 +453,7 @@ The [Referencer](../../commons/refer/referencer/) helper class can be used as we
 </div>
 
 <div class="content-tab-section">
-  Not available  
+  {{< include "/content/en/toolkit/recipes/component_references/__code10_go.md" >}}
 </div>
 
 <div class="content-tab-section">

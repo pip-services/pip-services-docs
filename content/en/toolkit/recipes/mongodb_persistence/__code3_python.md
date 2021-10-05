@@ -5,7 +5,8 @@ persistence = BeaconsMongoDbPersistence()
 
 persistence.configure(ConfigParams.from_tuples(
 	"connection.host", "localhost",
-	"connection.port", "30000"
+	"connection.port", "30000",
+	"connection.database", "test"
 ))
 persistence.open(None) # While opening, it will try to establish a connection with the locally hosted MongoDb on port 30000
 

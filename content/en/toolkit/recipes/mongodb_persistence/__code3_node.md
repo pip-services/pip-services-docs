@@ -6,7 +6,8 @@ let persistence = new BeaconsMongoDbPersistence();
 
 persistence.configure(ConfigParams.fromTuples(
 	"connection.host", "localhost",
-	"connection.port", "30000"
+	"connection.port", "30000",
+	"connection.database", "test"
 ))
 await persistence.open(null) // While opening, it will try to establish a connection with the locally hosted MongoDb on port 30000
 

@@ -12,15 +12,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/banalna/hugo-docs.git"
+    "url": "git+https://github.com/pip-services/pip-services-docs.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/banalna/hugo-docs/issues"
+    "url": "https://github.com/pip-services/pip-services-docs/issues"
   },
-  "homepage": "https://github.com/banalna/hugo-docs#readme",
+  "homepage": "https://github.com/pip-services/pip-services-docs#readme",
   "devDependencies": {
-    "atomic-algolia": "^0.3.19"
+    "atomic-algolia": "^0.3.19",
+    "autoprefixer": "^10.2.5",
+    "postcss-cli": "^8.3.1"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.3.0"
   }
 }

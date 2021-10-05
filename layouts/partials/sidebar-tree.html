@@ -43,6 +43,7 @@
               </form>
             
           </li>
+          
           {{ template "section-tree-nav-section" (dict "page" . "section" $navRoot "FirstSection" .FirstSection
               "currentRootSectionName" (lower (index (split .CurrentSection.URL "/") 2))
               "shouldDelayActive" $shouldDelayActive "CurrentSection" .CurrentSection
@@ -118,7 +119,7 @@
 
   <!-- output sidebar tree for homepage or hardcoded sections-->
   {{ $isHomePageOrHardcodeSection := and 
-                                    (or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome) 
+                                    (or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome (eq $s.LinkTitle "Home")) 
                                     (not (eq $p.Name "Search"))}}
 
 
@@ -131,12 +132,12 @@
                        (not $p.Site.Params.ui.sidebar_menu_compact))
               true false }} <!-- rules for collapse sections -->
 
-  {{ $isIncludeSection := not ( eq $s.LinkTitle "") }} <!-- hide if is included files -->
+  {{ $isNotIncludeSection := not ( eq $s.LinkTitle "") }} <!-- hide if is included files -->
 
   {{ $reducer := 2 }} <!-- reduce the paddings for sidebar tree -->
   {{ $padding := mul 10 (sub .ulNr $reducer) }}
 
-  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections $isIncludeSection) $isHomePageOrHardcodeSection (eq $s.LinkTitle "Home")}} 
+  {{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections $isNotIncludeSection) $isHomePageOrHardcodeSection}} 
     
     <li
       class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
@@ -157,7 +158,7 @@
         </a>
       </span>
     {{ end }}
-    
+
     {{if $withChild }}
       {{ $ulNr := add $ulNr 1 }}
       <ul class="pl-0 md-3 ul-{{ $ulNr }} container">

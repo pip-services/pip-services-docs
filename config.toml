@@ -171,6 +171,7 @@ sidebar_search_disable = true
 navbar_logo = true
 footer_about_disable = false
 sidebar_cache_limit = 50000
+sidebar_menu_truncate = 150
 
 [params.links]
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.

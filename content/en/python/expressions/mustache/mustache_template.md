@@ -35,7 +35,7 @@ Sets the flag to turn on auto creation of variables for the Mustache template.
 - **value**: bool - flag to turn on auto-creation of variables.
 
 #### default_variables
-List with default variables.
+Dictionary with default variables.
 
 > default_variables(): Any
 

@@ -12,124 +12,156 @@ Create three factories in the **pip_facades_sample_python/build/** folder:
 
 One factory for the facade in a file named **FacadeFactory.py**, containing the following code:
 
-**/pip_facades_sample_python/build/FacadeFactory.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-# -*- coding: utf-8 -*-
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_node.md" >}}  
+</div>
 
-from pip_services3_commons.refer.Descriptor import Descriptor
-from pip_services3_components.build.Factory import Factory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_net.md" >}}    
+</div>
 
-from pip_facades_sample_python.services.version1.FacadeServiceV1 import FacadeServiceV1
-from pip_facades_sample_python.services.version2.FacadeServiceV2 import FacadeServiceV2
+<div class="content-tab-section">
+  Not available  
+</div>
 
+<div class="content-tab-section">
+  Not available   
+</div>
 
-class FacadeFactory(Factory):
-    FacadeServiceV1Descriptor = Descriptor("nov-facades-application", "service", "http", "*", "1.0")
-    FacadeServiceV2Descriptor = Descriptor("nov-facades-application", "service", "http", "*", "2.0")
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_python.md" >}}
+</div>
 
-    def __init__(self):
-        super(FacadeFactory, self).__init__()
-        self.register_as_type(FacadeFactory.FacadeServiceV1Descriptor, FacadeServiceV1)
-        self.register_as_type(FacadeFactory.FacadeServiceV2Descriptor, FacadeServiceV2)
+<div class="content-tab-section">
+  Not available  
+</div>
 
-
-```
+</div>
 
 And last but not least, a factory for the clients that the facade depends on in a file named  **ClientFacadeFactory.py**:
 
-**/pip_facades_sample_python/build/ClientFacadeFactory.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-# -*- coding: utf-8 -*-
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_node.md" >}}  
+</div>
 
-from pip_services3_commons.refer import Descriptor
-from pip_services3_components.build import Factory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_net.md" >}}    
+</div>
 
-from pip_facades_sample_python.clients.version1.AccountsMemoryClientV1 import AccountsMemoryClientV1
-from pip_facades_sample_python.clients.version1.BeaconsMemoryClientV1 import BeaconsMemoryClientV1
-from pip_facades_sample_python.clients.version1.EmailSettingsMemoryClientV1 import EmailSettingsMemoryClientV1
-from pip_facades_sample_python.clients.version1.InvitationsNullClientV1 import InvitationsNullClientV1
-from pip_facades_sample_python.clients.version1.PasswordsNullClientV1 import PasswordsNullClientV1
-from pip_facades_sample_python.clients.version1.RolesMemoryClientV1 import RolesMemoryClientV1
-from pip_facades_sample_python.clients.version1.SessionsMemoryClientV1 import SessionsMemoryClientV1
-from pip_facades_sample_python.clients.version1.SettingsNullClientV1 import SettingsNullClientV1
-from pip_facades_sample_python.clients.version1.SitesMemoryClientV1 import SitesMemoryClientV1
+<div class="content-tab-section">
+  Not available  
+</div>
 
+<div class="content-tab-section">
+  Not available   
+</div>
 
-class ClientFacadeFactory(Factory):
-    SettingsNullClientV1Descriptor = Descriptor("pip-services-settings", "client", "null", "*", "1.0")
-    AccountsMemoryClientV1Descriptor = Descriptor("pip-services-accounts", "client", "memory", "*", "1.0")
-    PasswordNullClientV1Descriptor = Descriptor("pip-services-passwords", "client", "null", "*", "1.0")
-    RolesMemoryClientV1Descriptor = Descriptor("pip-services-roles", "client", "memory", "*", "1.0")
-    SessionsMemoryClientV1Descriptor = Descriptor("pip-services-sessions", "client", "memory", "*", "1.0")
-    EmailSettingsMemoryClientV1Descriptor = Descriptor("pip-services-emailsettings", "client", "memory", "*", "1.0")
-    SitesMemoryClientV1Descriptor = Descriptor("nov-services-sites", "client", "memory", "*", "1.0")
-    InvitationsNullClientV1Descriptor = Descriptor("nov-services-invitations", "client", "null", "*", "1.0")
-    BeaconsMemoryClientV1Descriptor = Descriptor("nov-services-beacons", "client", "memory", "*", "1.0")
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_python.md" >}}
+</div>
 
-    def __init__(self):
-        super(ClientFacadeFactory, self).__init__()
+<div class="content-tab-section">
+  Not available  
+</div>
 
-        self.register_as_type(ClientFacadeFactory.SettingsNullClientV1Descriptor, SettingsNullClientV1)
-        self.register_as_type(ClientFacadeFactory.AccountsMemoryClientV1Descriptor, AccountsMemoryClientV1)
-        self.register_as_type(ClientFacadeFactory.PasswordNullClientV1Descriptor, PasswordsNullClientV1)
-        self.register_as_type(ClientFacadeFactory.RolesMemoryClientV1Descriptor, RolesMemoryClientV1)
-        self.register_as_type(ClientFacadeFactory.SessionsMemoryClientV1Descriptor, SessionsMemoryClientV1)
-        self.register_as_type(ClientFacadeFactory.EmailSettingsMemoryClientV1Descriptor, EmailSettingsMemoryClientV1)
-        self.register_as_type(ClientFacadeFactory.SitesMemoryClientV1Descriptor, SitesMemoryClientV1)
-        self.register_as_type(ClientFacadeFactory.InvitationsNullClientV1Descriptor, InvitationsNullClientV1)
-        self.register_as_type(ClientFacadeFactory.BeaconsMemoryClientV1Descriptor, BeaconsMemoryClientV1)
-
-
-```
+</div>
 
 The container that we want to run our facade in should be implemented in a file named **FacadeProcess.py** and placed in the **/container** folder:
 
 
-**/pip_facades_sample_python/container/FacadeProcess.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-# -*- coding: utf-8 -*-
-from pip_services3_container import ProcessContainer
-from pip_services3_rpc.build.DefaultRpcFactory import DefaultRpcFactory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_node.md" >}}  
+</div>
 
-from ..build.ClientFacadeFactory import ClientFacadeFactory
-from ..build.FacadeFactory import FacadeFactory
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_net.md" >}}    
+</div>
 
+<div class="content-tab-section">
+  Not available  
+</div>
 
-class FacadeProcess(ProcessContainer):
+<div class="content-tab-section">
+  Not available   
+</div>
 
-    def __init__(self):
-        super(FacadeProcess, self).__init__("pip-facades-example", "Example Pip.Services facade")
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_python.md" >}}
+</div>
 
-        self._factories.add(ClientFacadeFactory())
-        self._factories.add(FacadeFactory())
-        self._factories.add(DefaultRpcFactory())
+<div class="content-tab-section">
+  Not available  
+</div>
 
-```
+</div>
 
 For us to be able to run the container, create a run.js file in the **/bin** folder with the following code:
 
-**/bin/run.py**
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
+	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	</div>
 
-```python
-# -*- coding: utf-8 -*-
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_node.md" >}}  
+</div>
 
-import os
-import sys
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_net.md" >}}    
+</div>
 
-# add parent directory to path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+<div class="content-tab-section">
+  Not available  
+</div>
 
-from pip_facades_sample_python.container.FacadeProcess import FacadeProcess
+<div class="content-tab-section">
+  Not available   
+</div>
 
-try:
-    FacadeProcess().run()
-except Exception as ex:
-    sys.stderr.write(str(ex))
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_python.md" >}}
+</div>
 
-```
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 
 Our facade will need to be configured before running, so create a **config-distributed.yml** file in the **/config** folder of the project with the following:
 

@@ -8,7 +8,7 @@ gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
 
 Before we integrate our new facade with the actual system, we should put it through its paces and thoroughly test it. So let’s develop a set of tests and helper elements for testing all of the operations registered in the facade. We’ll start off by creating a set of helper classes. One will test our dependencies, another will test how well the facade works with users, and the last one will contain a set of test users. All of these files will be placed in the folder **/test/fixtures**.
 
-The file for testing dependencies will be called **TestReferences.py** and will allow us to test how well the facade is able to work with the microservices it depends on. This file’s code is listed below:
+The file for testing dependencies will be called **TestReferences** and will allow us to test how well the facade is able to work with the microservices it depends on. This file’s code is listed below:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
@@ -46,7 +46,7 @@ The file for testing dependencies will be called **TestReferences.py** and will 
 
 </div>
 
-Now, let’s create a file with a test client, which will help us test our user and session related operations. Place the code below into a file named **RestClientTest.py**:
+Now, let’s create a file with a test client, which will help us test our user and session related operations. Place the code below into a file named **RestClientTest**:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
@@ -124,7 +124,7 @@ Lastly, define some test users in a file named **TestUsers.py**, as shown below:
 
 Now we can move on to the tests themselves. Create the following files in the folder **test/operations**:
 
-**test_BeaconsRoutesV1.py** - for testing business logic operations of the Beacons microservice:
+**test_BeaconsRoutesV1** - for testing business logic operations of the Beacons microservice:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
@@ -162,7 +162,7 @@ Now we can move on to the tests themselves. Create the following files in the fo
 
 </div>
 
-**test_SessionsRoutesV1.py** - for testing user and session related operations:
+**test_SessionsRoutesV1** - for testing user and session related operations:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">

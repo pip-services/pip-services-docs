@@ -8,7 +8,7 @@ linkTitle: "Step 1. Environment setup"
 
 Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
 
-##### 1. Compiler and IDE
+##### Compiler and IDE
 
 First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
@@ -49,10 +49,10 @@ First and foremost - we’ll need a compiler for your programming language of ch
 
 </div>
 
-Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](../step2)
+Now our environment is ready. Continue on to [Step 2 - Creating the Project’s Structure](step1)
 
 <span class="hide-title-link">
 
-### [Step 2 - Creating the Project’s Structure](../step2)
+### [Step 2 - Creating the Project’s Structure](../step1)
 
 </span>

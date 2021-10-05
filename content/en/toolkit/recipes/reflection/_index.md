@@ -64,3 +64,49 @@ The MethodReflector class allows us to examine an object’s methods and to exec
 After running the above code, we will get the following output:
 
 <img src="figure1.png" alt="figure 1" style="width:100%">
+
+
+#### b)	ObjectReader
+This class helps us to investigate the properties of an object. Its get_property_names method returns a list of the properties in a class. The get_property method is used to obtain the value of a property, and the get_properties method reads the properties of an object and returns a map (dictionary) with their names and values. The code below shows examples of their usage.
+	
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code2_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+Once the code above is executed, we will get the following result:
+
+<img src="figure2.png" alt="figure 2" style="width:100%">
+

@@ -51,55 +51,6 @@ mark, .mark {
 //     }
 // }
 
-.lang-select-btn.active {
-    border: none;
-    color: black;
-    background: linear-gradient(0deg, #fed955 35%, #ffffff 35%);
-
-    @include media-breakpoint-down(md) {
-        background: linear-gradient(0deg, #fed955 30%, #ffffff 03%);
-    }
-    // @include media-breakpoint-down(xs) {
-    //     background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
-    // }
-}
-
-.lang-select-btn.btn:focus {
-  outline: none;
-  box-shadow: none;
-}
-
-.lang-select-btn {
-    font-weight: $font-weight-bold;
-    font-size: 1.5rem;
-    
-    
-    // width: fit-content;
-    border: none;
-    width: auto;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-
-    @include media-breakpoint-down(sm) {
-        font-size: 0.8rem;
-        width: auto;
-    }
-    color: $primary;
-
-    &:hover {
-        color: black;
-        background: linear-gradient(0deg, #fed955 35%, #ffffff 35%);
-        @include media-breakpoint-down(md) {
-            background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
-        }
-        // @include media-breakpoint-down(xs) {
-        //     background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
-        // }
-    }
-}
-
 .draft {
     display: none;
 }

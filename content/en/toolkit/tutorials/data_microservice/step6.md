@@ -12,12 +12,12 @@ When a container is started, it starts composing the microservice out of the com
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -54,12 +54,12 @@ Now let’s move on to creating the container itself. In the **container** direc
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">

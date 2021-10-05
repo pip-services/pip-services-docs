@@ -32,12 +32,12 @@ The code will look something like this:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -74,12 +74,12 @@ The next step is to create a memory persistence object. Here, we need to use the
  
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -120,12 +120,12 @@ To add values to the persistence object, we will use the **create** method. This
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -170,12 +170,12 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -215,12 +215,12 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -262,12 +262,12 @@ To update a value in the persistence object, we need to use the **update** metho
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -303,12 +303,12 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -348,12 +348,12 @@ We can also use the **update_partially** function. In this case, we need to spec
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -389,12 +389,12 @@ To verify the change, we can use the filter defined earlier.
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -436,12 +436,12 @@ Similarly, we can delete an object stored in the persistence object by using the
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -477,12 +477,12 @@ To verify that the object has been deleted, we can apply a filter and search for
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">

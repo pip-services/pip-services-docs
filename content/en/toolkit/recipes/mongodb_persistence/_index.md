@@ -23,12 +23,12 @@ The example below demonstrates a class that implements the MongoDB persistence c
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -62,12 +62,12 @@ And this is how we could use such a class:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -110,12 +110,12 @@ The example below demonstrates how the [ConfigParams](../../commons/config/confi
     	
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -170,12 +170,12 @@ Next, register the persistence as a component in the microservice’s **Factory*
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -209,12 +209,12 @@ And add the [DefaultMongoDbFactory](../../mongodb/build/default_mongodb_factory/
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -263,12 +263,12 @@ The implementation we will be working with going forward is called the [Identifi
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -302,12 +302,12 @@ The implementation we will be working with going forward is called the [Identifi
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -341,12 +341,12 @@ We can build upon the **IdentifiableMongoDbPersistence** by overriding its **Com
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -384,12 +384,12 @@ Persistence components in the Pip.Services Toolkit use a number of data patterns
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -423,12 +423,12 @@ In the persistence component, the developer is responsible for parsing **FilterP
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -464,12 +464,12 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -506,12 +506,12 @@ As mentioned above, developers can also implement custom persistence methods. Th
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -545,12 +545,12 @@ When we put everything together, we end up with the following component:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -584,12 +584,12 @@ The following example demonstrates how we can use our newly created persistence 
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">

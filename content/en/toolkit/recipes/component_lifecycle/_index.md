@@ -27,12 +27,12 @@ A flexible and, at the same time, standardized approach was developed in the Pip
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 
@@ -247,12 +247,12 @@ For example:
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">
@@ -490,12 +490,12 @@ The Pip.Service’s Toolkit also includes a few utilities that can be used durin
 
 <div class="content-tab-selector">
 	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Node</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">.NET</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Golang</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Dart</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Python</button>
-	  <button type="button" class="btn btn-outline-secondary lang-select-btn">Java</button>
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
 	</div>
 
 <div class="content-tab-section">

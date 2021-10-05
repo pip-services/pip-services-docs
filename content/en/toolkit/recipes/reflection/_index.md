@@ -10,6 +10,40 @@ description: >-
 
 ### Key takeaways
 
+<table>
+  <tr>
+    <td>Reflection</td>
+    <td>The capacity of code to introspect upon itself.</td>
+  </tr>
+  <tr>
+    <td>Reflect</td>
+    <td>PIP.Services package with reflection functionality.</td>
+  </tr>
+  <tr>
+    <td>MethodReflector</td>
+    <td>Component used to examine an object’s methods and to dynamically invoke them.</td>
+  </tr>
+  <tr>
+    <td>ObjectReader</td>
+    <td>Component used to examine the properties of an object and to dynamically read them.</td>
+  </tr>
+  <tr>
+    <td>ObjectWriter</td>
+    <td>Component used to dynamically set the properties of an object.</td>
+  </tr>
+  <tr>
+    <td>PropertyReflector</td>
+    <td>Component used to examine an object’s properties and to dynamically get and set their values.</td>
+  </tr>
+  <tr>
+    <td>RecursiveObjectReader</td>
+    <td>Component used to examine the properties of an object and to dynamically read them recursively using “dot” notation.</td>
+  </tr>
+  <tr>
+    <td>RecursiveObjectWriter</td>
+    <td>Component used to dynamically set the properties of an object in a recursive way using “dot” notation.</td>
+  </tr>
+ </table>
 ### Introduction
 In this tutorial, you will learn how to use the Reflect package. This package provides different classes that will allow you to develop code with introspection capacity. We will start by briefly describing reflection. Then, we will learn how to use each of the different components provided in the package through the use of examples.
 

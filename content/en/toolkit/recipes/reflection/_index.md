@@ -198,4 +198,132 @@ After running the above code, we will get the following result:
 
 This class allows us to examine an object’s properties and to dynamically get and set their values. The get_property_names is used to obtain a list containing all the properties of an object. The has_property   method allows us to find out whether an object has a property or not. The get_properties method obtains all the properties of an object and their values and places the result in the form of a dictionary. And, the set_property method is used to set the value of an object’s property. The code below provides examples of these methods.
 
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code5_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
 	
+After running the above code, we will get the following results.
+
+<img src="figure5.png" alt="figure 5" style="width:100%">
+
+#### e)	RecursiveObjectReader
+This class helps us to examine the properties of an object and to dynamically read them using dot notation (object.subobject.property). The get_property_names gives a list containing all the properties in an object, and the has_property method returns a Boolean that indicates whether an object contains a property or not. The get_properties method provides us with a map containing all the properties of an object and their values, and the get_property method is used to obtain the value of a specific property. 
+
+The example below shows how to use this component. As we can see from the results obtained, when we apply the get_properties method to my_classB, we also obtain the parameters inherited from my_classA and their values.
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code6_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+<img src="figure6.png" alt="figure 6" style="width:100%">
+	
+#### f)	RecursiveObjectWriter
+This class is used to dynamically set the properties of an object recursively using dot notation. Its set_property method allows us to set the value of a property. The set_properties method is used to set the values of some or all the properties in an object and accepts a dictionary as input. The copy_properties method copies the properties of one object into another one. This code shows examples of their usage:
+
+
+<div class="content-tab-selector">
+	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
+	  <button type="button" class="btn lang-select-btn">Node</button>
+	  <button type="button" class="btn lang-select-btn">.NET</button>
+	  <button type="button" class="btn lang-select-btn">Golang</button>
+	  <button type="button" class="btn lang-select-btn">Dart</button>
+	  <button type="button" class="btn lang-select-btn">Python</button>
+	  <button type="button" class="btn lang-select-btn">Java</button>
+	</div>
+
+<div class="content-tab-section">
+  Not available 
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+<div class="content-tab-section">
+  Not available   
+</div>
+
+<div class="content-tab-section">
+  {{< include "/content/en/toolkit/recipes/reflection/__code7_python.md" >}}
+</div>
+
+<div class="content-tab-section">
+  Not available  
+</div>
+
+</div>
+	
+After running, this code produces the following output:
+
+<img src="figure7.png" alt="figure 7" style="width:100%">
+

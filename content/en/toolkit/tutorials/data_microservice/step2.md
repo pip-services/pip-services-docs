@@ -6,125 +6,90 @@ linkTitle: "Step 3. Data model"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 We’ll start the development of our microservice with defining and implementing the data model that it is going to be working with. We’ll start by adding some folders to our project’s directory structure. In the **src** folder, create a **data** folder and, inside it, a **version1** folder. This is done to allow us to create new versions of the data model later on, without breaking the old one.
 
 Now, in the version1 folder, create a **BeaconV1** class that implements `IStringIdentifiable`. By implementing the `IStringIdentifiable` interface, we can be sure that all objects of that given class have a string key by which they can be identified. Below is a listing of this class’s code:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
 
 All fields are of simple data types, and their names give us a good idea of their purpose. The only exception to this is the center field, in which we are going to be storing data of type GeoJSON. The beacon’s type will be represented by a string, but we’re going to have a separate class be responsible for managing the available types, using static fields. This class is going to be called **BeaconTypeV1**, and it’s going to simply contain a list of beacon types:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 For checking the validity of the data we are going to be receiving, let’s create a data validation schema in a class called **BeaconV1Schema**: 
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
 
 Let’s take a closer look at what’s going on in this class. First and foremost, we create a new class that extends the standard validation class Schema, implemented in the components module of the Pip.Services Toolkit. This class contains all of the functions that we need for checking the validity of the data we receive. All that we have to do is state which fields we are expecting, what their types should be, and whether or not any of them are required. All of this is done in the class’s constructor.

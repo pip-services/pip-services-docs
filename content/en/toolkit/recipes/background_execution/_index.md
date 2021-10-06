@@ -35,189 +35,138 @@ Let’s now take a look at how we can approach this task using the strategies me
 
 When creating the controller, we can add in a timer and structure the processing of requests in the following manner:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 As long as the execution time of the task does not exceed the timer’s interval, this implementation will work as expected. However, if there’s a large amount of files to process and the task takes too long, the timer will create another thread for running the task. This would result in an error, as we’d end up processing the data more than once. To prevent this from happening, the controller should expose distributed locks (e.g. **CloudStorageTableLock** from pip-services-azure) while it’s executing the task:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
 ### 2. Using message queues
 
 In this case, task execution is triggered by a message/signal that is received from a message queue (preferably with guaranteed delivery). A simple listener can be used to watch the queue and initiate the task. Once the listener receives a message, it starts the task, but leaves the message/signal in the queue as a lock for the duration of the processing event. Once the task has been processed, the message/signal is deleted from the queue. This method guarantees that the task will be executed once and only once.
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
+
 ### 3. Using the Jobs microservice
 For cases where distributed locks and message queues can’t be used, the PipServices Job Queue microservice can be used instead (https://github.com/pip-services-infrastructure/pip-services-jobs-dotnet). This microservice acts as a simple manager for the tasks that are running and provides relevant information to any interested services. For our example of periodic file processing, we’ll need 
 1. a timer, 
 2. the Jobs service’s client, and 
 3. a type for the job/task being executed.
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
 
 Now, in the task’s method, we need to add some code that checks whether or not a job of this type is already running or not. If it is, then no processing is required. If it isn’t, then a job is created, started, and eventually completed, once all processing has been performed.
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}

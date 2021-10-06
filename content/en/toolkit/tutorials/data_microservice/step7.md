@@ -6,85 +6,62 @@ linkTitle: "Step 8. Run"
 gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 To run our microservice, we need to add just one last bit of code. In the bin folder, create a **main.py** file with the following code:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
 
 In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
 
 To run the microservice, execute the following command from a terminal at the root of the project:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 You should get a result similar to the one shown below.
@@ -95,41 +72,29 @@ Since we opted for the console logger in our configuration file, all information
 
 Let’s use the following two commands to set our environment variable and start our microservice using the MongoDB persistence:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 

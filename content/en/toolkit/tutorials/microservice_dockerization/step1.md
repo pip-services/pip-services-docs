@@ -5,47 +5,38 @@ title: "Step 2. Building a microservice"
 linkTitle: "Step 2. Build" 
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 Some of the programming languages used in the Pip.Services Toolkit require a project to be built, yielding executable files. A separate stage is used for this, which builds a special “build” Docker image. The project’s source code is copied to the image, after which the container is run and the project is compiled from inside the container. If the project compiles successfully, the generated files will be copied from the container back to the project for further use.
 
 Python is an interpreted language and does not require compilation. But to save an identical pipeline, a stub script is used.
 
 To perform the build process for a Python project, we’ll be creating a Docker container build scenario in a file named **Dockerfile.build**. Copy the following into this file:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_go.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 This file, along with the others we will be creating, should be placed in the docker folder at the root of the project.

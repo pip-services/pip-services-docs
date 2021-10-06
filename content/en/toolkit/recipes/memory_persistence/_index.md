@@ -6,6 +6,8 @@ linkTitle: "Memory persistence"
 weight: 1
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 <table>
@@ -30,83 +32,58 @@ Once we created our class, we will create three instances of it, each with a dif
 The code will look something like this: 
 
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_go.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
 
 #### Step 2 – Create a memory persistence object
 The next step is to create a memory persistence object. Here, we need to use the [IdentifiableMemoryPersistence](http://docs.pipservices.org/python/data/persistence/identifiable_memory_persistence/) class, which is an abstract persistence component that stores data in memory and implements CRUD operations over data items with unique ids. We will also define two methods namely, **get_page_by_filter** and **get_one_by_key**, which will be used to read the persisted values.
 
- 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_go.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
  
   
@@ -117,42 +94,29 @@ Now that we have a persistence object, we will perform CRUD operations.
 #### Create the persisted objects
 To add values to the persistence object, we will use the **create** method. This method asks for two parameters: correlation_id and the object to persist. For the correlation_id we will use None as in our example we are not interested in following a sequence of operations.
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
   
  
@@ -167,42 +131,29 @@ As we can see, the memory persistence object allocated a value to the id of dumm
 
 To read the persisted values, we can use the **get_page_by_filter** method that we defined when we created the memory persistence object. Here, we will use a filter to indicate that we are only looking for the dummy2 object. 
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
   
   
@@ -212,46 +163,32 @@ The **result** object is of type [DataPage](http://docs.pipservices.org/python/c
 
 Similarly, we can obtain all the persisted objects by using None as our filter.
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
   
- After running the above code, we will obtain the following result:
+After running the above code, we will obtain the following result:
 
 <img src="figure3.png" alt="Figure 3" style="width:100%">
 
@@ -259,84 +196,57 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 
 To update a value in the persistence object, we need to use the **update** method. For example, we can change the content of the dummy2 persisted object to “new content 2”. 
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_go.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
 
   
 To verify the change, we can extract the dummy2 object by applying a filter:
  
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
 
 And get the updated object:
@@ -345,84 +255,57 @@ And get the updated object:
 
 We can also use the **update_partially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
   
   
 To verify the change, we can use the filter defined earlier.
-  
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_node.md" >}} 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
+{{< /tabsection >}}
 
 
 And, we will obtain the updated persisted object.
@@ -434,82 +317,56 @@ And, we will obtain the updated persisted object.
 Similarly, we can delete an object stored in the persistence object by using the **delete_by_id** function. In our example, we ask to delete dummy1 by indicating its id.
   
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_node.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
-
-
+{{< /tabsection >}}
 
 To verify that the object has been deleted, we can apply a filter and search for it.
 
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_node.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_net.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_go.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
-
-</div>
+{{< /tabsection >}}
 
   
   

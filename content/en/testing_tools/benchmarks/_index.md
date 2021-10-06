@@ -6,6 +6,8 @@ no_list: true
 weight: 1
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 Performance, resilience and data integrity are a priority in microservice development. To make your life easier, we implemented a benchmarking framework to keep critical non-functional characteristics under constant control.  In a similar vein with Pip.Service Toolkit, the framework has symmetrical implementations to make it easier to switch between programming languages.
 
 ![Benchmarks diagram](/images/extras/benchmarks/benchmarks_diagram.png)
@@ -23,18 +25,7 @@ Performance, resilience and data integrity are a priority in microservice develo
 - Capture and errors or validation results
 - Console and GUI runners to execute benchmarks
 
-
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 Example of use:
 
@@ -106,9 +97,9 @@ Compile and run benchmark:
 tsc
 node ./bin/run.js
 ```
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 Example of use:
 Create your own benchmark in file **SampleBenchmark.cs**
@@ -199,9 +190,9 @@ namespace ConsoleApp1
 }
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 Example of use:
 **main.go**
@@ -286,34 +277,31 @@ Run benchmark:
 go run ./main.go
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
-
-Example of use:
-
-**TODO**
-
-</div>
-
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 Example of use:
 
 **TODO**
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 Example of use:
 
 **TODO**
 
-</div>
+{{< /tabsection >}}
 
+{{< tabsection isMarkdown=true >}}
 
-</div>
+Example of use:
+
+**TODO**
+
+{{< /tabsection >}}
 
 
 

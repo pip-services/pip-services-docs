@@ -5,6 +5,8 @@ title: "Step 3. Test"
 linkTitle: "Step 3. Test"
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 Automated tests play a key role in achieving a guaranteed quality of microservices. Testing can be performed on various levels - unit tests for separate classes, end-to-end or integrated tests for microservices with dependencies, and tests that show how microservices work together within the actual system. In this tutorial however, we will only be looking at testing individual microservices, and system tests will not be covered.
 
 To correctly perform testing, especially iterative testing, we need to correctly configure our environment with all of the necessary services and correct configuration parameters. Replicating and supporting testing configurations manually, especially across different operating systems, is far from being easy. Pretty much every development team knows that sometimes tests work perfectly locally, but break on the build server. And finding the cause of this inconsistency is usually quite time consuming.
@@ -13,41 +15,30 @@ Dockerizing automated tests provides you with a 100%-repeatable environment that
 
 Let’s create a separate Docker container for running tests. This container’s build scenario will be defined in a file named **Dockerfile.test**:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_node.md" >}}  
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_net.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_go.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_dart.md" >}}    
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_python.md" >}}
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection >}}
   Not available  
-</div>
+{{< /tabsection >}}
 
-</div>
 The scenario for testing is nearly identical to the one we wrote for the build process - the only difference being the last command, which will run the tests in this case.
 
 Oftentimes, tests may require dependent microservices, databases, message brokers, and other infrastructure services. We can use a docker-compose file to start these services in separate containers and connect them to our test Docker container. We’ll be calling this file **docker-compose.test.yml**, and the configuration it should contain is listed below:

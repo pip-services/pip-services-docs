@@ -6,6 +6,8 @@ linkTitle: "Component Lifecycle"
 weight: 30
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 - by Alex Mazur
 
 ### Component lifecycle
@@ -25,18 +27,7 @@ One of the roles of the microservice’s container is to correctly initialize al
 
 A flexible and, at the same time, standardized approach was developed in the Pip.Services Toolkit for initializing components. This approach preserves the conceptual integrity of the whole microservice, while keeping the source code clean, coherent, and testable. A component’s lifecycle is determined by which of the following interfaces it implements:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [IConfigurable](../../../node/commons/config/iconfigurable/) – component configuration.
 - [IReferenceable](../../../node/commons/refer/ireferenceable/) and [IUnreferenceable](../../../node/commons/refer/iunreferenceable/) – setting and destroying references to other components.
@@ -73,9 +64,9 @@ export interface IExecutable {
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [IConfigurable](../../../net/commons/config/iconfigurable/) – component configuration.
 - [IReferenceable](../../../net/commons/refer/ireferenceable/) and [IUnreferenceable](../../../net/commons/refer/iunreferenceable/) – setting and destroying references to other components.
@@ -109,10 +100,10 @@ public interface IExecutable
 
 ```
 
-</div>
+{{< /tabsection >}}
 
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [IConfigurable](../../../go/commons/config/iconfigurable/) – component configuration.
 - [IReferenceable](../../../go/commons/refer/ireferenceable/) and [IUnreferenceable](../../../go/commons/refer/iunreferenceable/) – setting and destroying references to other components.
@@ -150,9 +141,9 @@ type IExecutable interface {
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [IConfigurable](../../../dart/commons/config/iconfigurable/) – component configuration.
 - [IReferenceable](../../../dart/commons/refer/ireferenceable/) and [IUnreferenceable](../../../dart/commons/refer/iunreferenceable/) – setting and destroying references to other components.
@@ -184,9 +175,9 @@ abstract class IExecutable {
 }
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [IConfigurable](../../../python/commons/config/iconfigurable/) – component configuration.
 - [IReferenceable](../../../python/commons/refer/ireferenceable/) and [IUnreferenceable](../../../python/commons/refer/iunreferenceable/) – setting and destroying references to other components.
@@ -230,32 +221,20 @@ class IExecutable(ABC):
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 **TODO: add language**
 
-</div>
-
-</div>
+{{< /tabsection >}}
 
 ### Implementation
 
 Microservice developers are free to implement just the interfaces needed by their components. When the container is started, all implemented methods will be called in the previously mentioned order. 
 For example: 
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 ```typescript
 import { ConfigParams, FixedRateTimer, Parameters } from "pip-services3-commons-nodex";
@@ -322,9 +301,9 @@ class CounterController implements IReferenceable, IReconfigurable, IOpenable, I
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 ```cs
 public sealed class CounterController : IReferenceable, IReconfigurable, IOpenable, IExecutable
@@ -370,9 +349,9 @@ public sealed class CounterController : IReferenceable, IReconfigurable, IOpenab
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 ```go
 type CounterController struct {
@@ -429,9 +408,9 @@ func (c *CounterController) Execute(correlationId string, args crun.Parameters) 
 }
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 ```dart
 class CounterController implements IReferenceable, IReconfigurable, IOpenable, IExecutable
@@ -475,9 +454,9 @@ class CounterController implements IReferenceable, IReconfigurable, IOpenable, I
     
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 ```python
 from typing import Optional
@@ -528,30 +507,18 @@ class CounterController(IReferenceable, IReconfigurable, IOpenable, IExecutable)
 
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 **TODO: add language**
 
-</div>
-
-</div>
+{{< /tabsection >}}
 
 ### Utilities
 The Pip.Service’s Toolkit also includes a few utilities that can be used during microservice development:
 
-<div class="content-tab-selector">
-	<div class="btn-group tab-selector-btn-group" role="group" aria-label="Language selector">
-	  <button type="button" class="btn lang-select-btn">Node</button>
-	  <button type="button" class="btn lang-select-btn">.NET</button>
-	  <button type="button" class="btn lang-select-btn">Golang</button>
-	  <button type="button" class="btn lang-select-btn">Dart</button>
-	  <button type="button" class="btn lang-select-btn">Python</button>
-	  <button type="button" class="btn lang-select-btn">Java</button>
-	</div>
-
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [Opener](../../../node/commons/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../node/commons/run/closer/) – stops the functional processes of selected components.
@@ -567,9 +534,9 @@ await Opener.open(correlationId, references.getAll());
 await Closer.close(correlationId, references.getAll());
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [Opener](../../../net/commons/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../net/commons/run/closer/) – stops the functional processes of selected components.
@@ -586,9 +553,9 @@ await Opener.OpenAsync(correlationId, _references.GetAll());
 await Closer.CloseAsync(correlationId, _references.GetAll());
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [Opener](../../../go/commons/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../go/commons/run/closer/) – stops the functional processes of selected components.
@@ -605,9 +572,9 @@ err := crun.Opener.Open(correlationId, references.GetAll())
 err = crun.Closer.Close(correlationId, references.GetAll())
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [Opener](../../../dart/commons/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../dart/commons/run/closer/) – stops the functional processes of selected components.
@@ -624,9 +591,9 @@ await Opener.open(correlationId, references.getAll());
 await Closer.close(correlationId, references.getAll());
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 - [Opener](../../../python/commons/run/opener/) – initiates the functional processes of selected components.
 - [Closer](../../../python/commons/run/closer/) – stops the functional processes of selected components.
@@ -643,14 +610,12 @@ Opener.open(correlation_id, _references.get_all())
 Closer.close(correlation_id, _references.get_all())
 ```
 
-</div>
+{{< /tabsection >}}
 
-<div class="content-tab-section">
+{{< tabsection isMarkdown=true >}}
 
 **TODO: add language**
 
-</div>
-
-</div>
+{{< /tabsection >}}
 
 

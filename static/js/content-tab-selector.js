@@ -2,16 +2,20 @@
 // Set events
 let tabSelectors = Array.from(document.getElementsByClassName("content-tab-selector"));
 
-tabSelectors.forEach(tabSelector => {
-    let buttons = Array.from(tabSelector.getElementsByClassName('tab-selector-btn-group')[0].getElementsByTagName('button'));
+if (tabSelectors.length > 0){
+    tabSelectors.forEach(tabSelector => {
+        let buttons = Array.from(tabSelector.getElementsByClassName('tab-selector-btn-group')[0].getElementsByTagName('button'));
 
-    buttons.forEach(button => {
-        button.addEventListener('click', showSelected);
-    })
+        buttons.forEach(button => {
+            button.addEventListener('click', showSelected);
+        })
 
-    
-    showFirstWithContent(buttons);
-});
+
+        showFirstWithContent(buttons);
+    });
+}
+
+
 
 // by default show first with content
 function showFirstWithContent(buttons){

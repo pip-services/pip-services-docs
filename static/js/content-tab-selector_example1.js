@@ -1,20 +1,15 @@
 // Set events
+let buttonGroups = document.getElementsByClassName('tab-selector-btn-group2')
 
-let buttons = document.getElementsByClassName('tab-selector-btn-group2')
-
-if (buttons.length > 0){
-    buttons = Array.from(buttons[0].getElementsByTagName('button'));
+if (buttonGroups.length > 0){
+    let buttons = Array.from(buttonGroups[0].getElementsByTagName('button'));
 
     buttons.forEach(button => {
         button.addEventListener('click', showSelected);
     })
 
-
     showFirstWithContent(buttons);
 }
-
-
-
 
 // by default show first with content
 function showFirstWithContent(buttons) {
@@ -33,8 +28,7 @@ function showFirstWithContent(buttons) {
         }
     }
 }
-
-
+// show selected section
 function showSelected(e) {
     let contentSections = Array.from(document.getElementsByClassName('content-tab-section2'));
     let buttons = Array.from(e.target.parentElement.getElementsByTagName('button'));
@@ -58,13 +52,10 @@ function showSelected(e) {
         contentSections[index].removeAttribute('hidden');
     }
 
-
     // Hide other
     buttons.forEach((button, index) => {
         if (selectedIndex != index) {
             button.classList.remove('active');
-
         }
-
     });
 }

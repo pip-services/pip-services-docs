@@ -496,7 +496,7 @@ The example below shows how to create an object of classA and verify that the va
 	
 After running it, we get:
 
-<img src="figure9.png" alt="figure 10" style="width:100%">
+<img src="figure10.png" alt="figure 10" style="width:100%">
 	
 ### Wrapping up
 In this tutorial, we have learned what reflection is and how to use the Reflect library available in the PIP.Services toolkit, which provides several tools for class introspection. We have seen all its classes and examples of their main methods’ usage. 

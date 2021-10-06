@@ -1,8 +1,8 @@
 // Set events
-let buttonGroups = document.getElementsByClassName('tab-selector-btn-group2')
+let buttonGroups2 = document.getElementsByClassName('tab-selector-btn-group2')
 
-if (buttonGroups.length > 0){
-    let buttons = Array.from(buttonGroups[0].getElementsByTagName('button'));
+if (buttonGroups2.length > 0){
+    let buttons = Array.from(buttonGroups2[0].getElementsByTagName('button'));
 
     buttons.forEach(button => {
         button.addEventListener('click', showSelected);

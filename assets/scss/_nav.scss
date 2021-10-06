@@ -15,10 +15,12 @@
     display: none;
 }
 
+$button-background: linear-gradient(0deg, #ffffff 10%, #fed955 0%, #fed955 40%, #ffffff 40%);
+
 .lang-select-btn.active {
     border: none;
     color: black;
-    background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
+    background: $button-background;
 
     // @include media-breakpoint-down(md) {
     //     background: linear-gradient(0deg, #fed955 30%, #ffffff 03%);
@@ -35,16 +37,18 @@
 
 .lang-select-btn {
     font-weight: $font-weight-bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     
     
     // width: fit-content;
     border: none;
     width: auto;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+    padding: 0rem 0.2rem 0rem 0.2rem;
+    // padding-left: 0.2rem;
+    // padding-right: 0.2rem;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+    max-height: 2.5rem;
 
     @include media-breakpoint-down(sm) {
         margin-left: 0.5rem;
@@ -57,7 +61,7 @@
 
     &:hover {
         color: black;
-        background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
+        background: $button-background;
         // @include media-breakpoint-down(md) {
         //     background: linear-gradient(0deg, #fed955 30%, #ffffff 30%);
         // }

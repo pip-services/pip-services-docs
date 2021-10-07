@@ -3,7 +3,7 @@ type: docs
 title: "Container module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-container-dotnet"
 no_list: true
-weight: 30
+weight: 50
 description: > 
     IoC container for .NET
 

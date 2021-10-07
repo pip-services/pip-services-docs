@@ -3,7 +3,7 @@ type: docs
 title: "Kafka module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-kafka-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Kafka messaging for Pip.Services in .NET   
 

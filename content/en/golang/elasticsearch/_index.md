@@ -3,7 +3,7 @@ type: docs
 title: "ElasticSearch module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-elasticsearch-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     ElasticSearch components for Golang
 

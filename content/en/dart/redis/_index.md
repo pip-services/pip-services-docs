@@ -3,7 +3,7 @@ type: docs
 title: "Redis module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-redis-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Redis components for Pip.Services in Dart 
 

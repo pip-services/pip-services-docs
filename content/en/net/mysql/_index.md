@@ -3,7 +3,7 @@ type: docs
 title: "MySQL module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     MySQL components for Pip.Services in .NET. 
 

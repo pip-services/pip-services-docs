@@ -3,7 +3,7 @@ type: docs
 title: "Prometheus module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-prometheus-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Prometheus components for Golang
 

@@ -3,7 +3,7 @@ type: docs
 title: "MongoDB module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-mongodb-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     MongoDB components for Pip.Services for Pip.Services in Dart. 
 

@@ -3,7 +3,7 @@ type: docs
 title: "Data module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-data-dotnet"
 no_list: true
-weight: 30
+weight: 60
 description: > 
     Data processing and persistence components for .NET
 

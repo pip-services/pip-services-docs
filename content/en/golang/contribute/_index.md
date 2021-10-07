@@ -3,6 +3,7 @@ type: docs
 title: "Contributing to Pip.Services"
 linkTitle: "Contribute" 
 no_list: true
+exclude_from_list: true
 weight: 1010
 ---
 

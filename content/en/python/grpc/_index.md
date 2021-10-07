@@ -3,7 +3,7 @@ type: docs
 title: "gRPC module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-grpc-python"
 no_list: true
-weight: 30
+weight: 80
 description: > 
     GRPC components for Pip.Services in Python
 

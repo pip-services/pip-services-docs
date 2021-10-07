@@ -3,7 +3,7 @@ type: docs
 title: "AWS module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-aws-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     AWS specific components for Dart  
 

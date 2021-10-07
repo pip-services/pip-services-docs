@@ -3,7 +3,7 @@ type: docs
 title: "Container module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-container-dart"
 no_list: true
-weight: 30
+weight: 50
 description: > 
     IoC container for Dart
 

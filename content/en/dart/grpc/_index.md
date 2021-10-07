@@ -3,7 +3,7 @@ type: docs
 title: "gRPC module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-grpc-dart"
 no_list: true
-weight: 30
+weight: 80
 description: > 
     gRPC components for Pip.Services in Dart. 
 

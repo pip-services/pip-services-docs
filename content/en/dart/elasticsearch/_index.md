@@ -3,7 +3,7 @@ type: docs
 title: "ElasticSearch module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-elasticsearch-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     ElasticSearch components for Dart
 

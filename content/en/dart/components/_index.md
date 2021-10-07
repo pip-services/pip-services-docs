@@ -3,7 +3,7 @@ type: docs
 title: "Components module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-components-dart"
 no_list: true
-weight: 30
+weight: 40
 description: > 
     Component definitions for Dart
 

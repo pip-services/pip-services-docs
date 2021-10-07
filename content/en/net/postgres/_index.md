@@ -3,7 +3,7 @@ type: docs
 title: "Postgres module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-postgres-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     PostgreSQL components for Pip.Services in .NET
 

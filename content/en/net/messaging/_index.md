@@ -3,7 +3,7 @@ type: docs
 title: "Messaging module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet"
 no_list: true
-weight: 30
+weight: 90
 description: > 
     Asynchronous Messaging for Pip.Services in .NET.  
 

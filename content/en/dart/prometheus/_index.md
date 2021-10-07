@@ -3,7 +3,7 @@ type: docs
 title: "Prometheus module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-prometheus-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Prometheus components for Pip.Services Dart  
 

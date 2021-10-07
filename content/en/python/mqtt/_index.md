@@ -3,7 +3,7 @@ type: docs
 title: "MQTT module"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-mqtt-python"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     MQTT Messaging for Pip.Services in Python  
     

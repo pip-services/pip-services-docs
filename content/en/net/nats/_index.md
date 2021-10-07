@@ -3,7 +3,7 @@ type: docs
 title: "NATS module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-nats-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     NATS Messaging for Pip.Services in .NET. 
 

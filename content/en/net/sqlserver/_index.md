@@ -3,7 +3,7 @@ type: docs
 title: "SQLServer module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-sqlserver-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     SQL Server components for Pip.Services in .NET
 

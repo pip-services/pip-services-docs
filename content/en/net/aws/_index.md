@@ -3,7 +3,7 @@ type: docs
 title: "AWS module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     AWS specific components for .NET
 

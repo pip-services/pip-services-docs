@@ -3,7 +3,7 @@ type: docs
 title: "gRPC module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
 no_list: true
-weight: 30
+weight: 80
 description: > 
     GRPC components for Pip.Services in Golang
 

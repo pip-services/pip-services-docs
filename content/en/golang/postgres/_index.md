@@ -3,7 +3,7 @@ type: docs
 title: "Postgres module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     PostgreSQL components for Pip.Services in Golang. 
 

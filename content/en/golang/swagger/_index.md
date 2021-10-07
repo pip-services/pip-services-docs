@@ -3,7 +3,7 @@ type: docs
 title: "Swagger module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Swagger UI for Pip.Services in Golang
 

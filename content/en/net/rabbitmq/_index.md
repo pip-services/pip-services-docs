@@ -3,7 +3,7 @@ type: docs
 title: "RabbitMQ module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     RabbitMQ specific components for .NET  
 

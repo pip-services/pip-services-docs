@@ -3,7 +3,7 @@ type: docs
 title: "AWS module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     AWS specific components for Golang
 

@@ -3,7 +3,7 @@ type: docs
 title: "Data module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-data-go"
 no_list: true
-weight: 30
+weight: 60
 description: > 
     Data processing and persistence components Golang  
    

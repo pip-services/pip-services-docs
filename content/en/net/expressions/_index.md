@@ -3,7 +3,7 @@ type: docs
 title: "Expressions module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotnet"
 no_list: true
-weight: 30
+weight: 100
 description: > 
     Tokenizers, parsers and expression calculators for Pip.Services in .NET
     

@@ -3,7 +3,7 @@ type: docs
 title: "MQTT module"
 gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mqtt-dotnet"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     MQTT Messaging for Pip.Services in .NET. 
 

@@ -3,7 +3,7 @@ type: docs
 title: "MQTT module"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-mqtt-dart"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     MQTT Messaging for Pip.Services in Dart  
 

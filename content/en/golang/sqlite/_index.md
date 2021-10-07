@@ -3,7 +3,7 @@ type: docs
 title: "SQLite module"
 gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     SQLite components for Pip.Services in Golang
 

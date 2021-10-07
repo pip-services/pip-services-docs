@@ -5,7 +5,9 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-redis-nodex"
 no_list: true
 weight: 500
 description: > 
-This module contains packages for working with Redis databases of type key-value. 
+
+ 
+   This module contains packages for working with Redis dataases of type key-value.
 ---
 
 ### Packages

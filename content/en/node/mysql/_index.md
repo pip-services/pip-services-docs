@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
 no_list: true
 weight: 500
 description: > 
-    This module contains components used to work with MySQL databases.  
+    This module contains components used to implement MySQL persistence.  
 ---
 
 ### Packages

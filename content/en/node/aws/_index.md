@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-aws-nodex"
 no_list: true
 weight: 500
 description: > 
-    AWS specific components for Pip.Services in Node.js / ES2017.  
-
-
-    This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
-
-    It contains components for supporting work with the AWS cloud platform.
+    This module contains components for supporting work with the AWS cloud platform.
 ---
 
 

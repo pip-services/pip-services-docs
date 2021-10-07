@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-elasticsearch-node
 no_list: true
 weight: 500
 description: > 
-    ElasticSearch components for Pip.Services in Node.js / ES2017.  
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
-    
-    The Elasticsearch module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
+    This module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 

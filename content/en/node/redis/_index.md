@@ -5,12 +5,9 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-redis-nodex"
 no_list: true
 weight: 500
 description: > 
-    Redis components for Pip.Services in Node.js / ES2017.  
 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
-
-    It contains packages for working with a Redis database of type key-value. 
+ 
+   This module contains packages for working with Redis dataases of type key-value.
 ---
 
 ### Packages

@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 no_list: true
 weight: 500
 description: > 
-    NATS Messaging for Pip.Services in Node.js / ES2017.  
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
-
-    The NATS module contains a set of components for working with the message queue via NATS server [https://nats.io/](https://nats.io/).
+   This module contains a set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

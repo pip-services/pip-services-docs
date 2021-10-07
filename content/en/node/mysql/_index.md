@@ -5,10 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-mysql-nodex"
 no_list: true
 weight: 500
 description: > 
-    MySQL components for Pip.Services in Node.js / ES2017.  
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
+    This module contains components used to implement MySQL persistence.  
 ---
 
 ### Packages

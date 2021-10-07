@@ -5,10 +5,9 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-datadog-nodex"
 no_list: true
 weight: 500
 description: > 
-This module contains a DataDog logger and performance counters components.
 
+   This module contains a DataDog logger and performance counters components.
 ---
-
 
 ### Packages
 

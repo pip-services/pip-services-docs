@@ -3,7 +3,7 @@ type: docs
 title: "SQLServer module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-sqlserver-nodex"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     SQLServer components for Pip.Services in Node.js / ES2017.  
 

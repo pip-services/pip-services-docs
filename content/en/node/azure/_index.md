@@ -3,7 +3,7 @@ type: docs
 title: "Azure module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Azure components for Pip.Services in Node.js / ES2017.  
 

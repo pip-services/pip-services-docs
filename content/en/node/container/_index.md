@@ -3,7 +3,7 @@ type: docs
 title: "Container module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
 no_list: true
-weight: 30
+weight: 50
 description: > 
     IoC container for Pip.Services in Node.js / ES2017.  
 

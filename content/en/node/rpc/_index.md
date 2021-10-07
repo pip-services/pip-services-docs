@@ -3,7 +3,7 @@ type: docs
 title: "RPC module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 no_list: true
-weight: 30
+weight: 70
 description: > 
     Remote Procedure Calls for Pip.Services in Node.js / ES2017.  
 

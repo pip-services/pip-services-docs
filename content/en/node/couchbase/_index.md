@@ -3,7 +3,7 @@ type: docs
 title: "Couchbase module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-couchbase-nodex"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Couchbase components for Pip.Services in Node.js / ES2017.  
 

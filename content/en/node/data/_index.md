@@ -3,7 +3,7 @@ type: docs
 title: "Data module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-data-nodex"
 no_list: true
-weight: 30
+weight: 60
 description: > 
    
     Persistence components for for Pip.Services in Node.js / ES2017.  

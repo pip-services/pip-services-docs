@@ -3,7 +3,7 @@ type: docs
 title: "Cassandra module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Cassandra components for Pip.Services in Node.js / ES2017.  
     

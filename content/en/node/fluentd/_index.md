@@ -3,7 +3,7 @@ type: docs
 title: "Fluentd module"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-fluentd-nodex"
 no_list: true
-weight: 30
+weight: 500
 description: > 
     Fluentd Logger for Pip.Services in Node.js / ES2017.  
 

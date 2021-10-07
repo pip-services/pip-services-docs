@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-container-nodex"
 no_list: true
 weight: 50
 description: > 
-    IoC container for Pip.Services in Node.js / ES2017.  
-
-
+    
     This module provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
 
 ---

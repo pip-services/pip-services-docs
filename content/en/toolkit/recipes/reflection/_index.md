@@ -76,7 +76,7 @@ The MethodReflector class allows us to examine an object’s methods and to exec
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available   
+  {{< include "/content/en/toolkit/recipes/reflection/__code1_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ This class helps us to investigate the properties of an object. Its get_property
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code2_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,7 +132,7 @@ The methods in this component can also be used with maps and arrays to find out 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code3_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -163,7 +163,7 @@ This component helps us to dynamically set the properties of an object. Its set_
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code4_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -196,7 +196,7 @@ This class allows us to examine an object’s properties and to dynamically get 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code5_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -229,7 +229,7 @@ The example below shows how to use this component. As we can see from the result
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code6_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -258,7 +258,7 @@ This class is used to dynamically set the properties of an object recursively us
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code7_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -289,7 +289,7 @@ This class stores a reference to a type represented by the type name and library
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code8_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -321,7 +321,7 @@ This class allows us to match values based on equality. The match_type method ma
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code9_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -353,7 +353,7 @@ The example below shows how to create an object of classA and verify that the va
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/reflection/__code10_net.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

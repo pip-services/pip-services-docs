@@ -33,7 +33,7 @@ export function main(){
     let type4 = TypeMatcher.matchValueTypeByName("Object", objectA1);
     console.log("ObjectA1 is of type Object:", type4);
 
-    let string1 = "Hello World"
+    let string1 = "Hello World";
     let type5 = TypeMatcher.matchValueTypeByName("String", string1);
     console.log("string1 is of type String:", type5);
 }

@@ -36,7 +36,7 @@ func main() {
 	fmt.Println("objectA1 is an object:", type1)
 
 	// expected type: Object, actual type: String
-	type2 := creflect.TypeMatcher.MatchValueByName("Object", "String")
+	type2 := creflect.TypeMatcher.MatchTypeByName("Object", refl.TypeOf("string"))
 	fmt.Println("String is an object:", type2)
 
 	// expected type: objectA1, expected value: objectA1

@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-rpc-nodex"
 no_list: true
 weight: 70
 description: > 
-    Remote Procedure Calls for Pip.Services in Node.js / ES2017.  
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.  
-
-    The rpc module provides the synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
+    This module provides synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
 ---
 
 

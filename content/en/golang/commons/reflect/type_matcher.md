@@ -39,18 +39,24 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 - **returns**: bool - true if types are matching and false if they don't.
 
 
-#### MatchValueType!
-**Note: this is not implemented for this language yet**
-
+#### MatchValue
 Matches expected type to a type of a value.
 The expected type can be specified by a type, type name or [TypeCode](../../convert/type_code).
 
+> func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interface{}) bool
 
+- **expectedType**: interface{} - an expected type to match.
+- **actualValue**: interface{} -  a value to match its type to the expected one.
+- **returns**: bool - true if types are matching and false if they don't.
 
-#### MatchValueTypeByName!
-**Note: this is not implemented for this language yet**
-
+#### MatchValueByName
 Matches expected type to a type of a value.
+
+> func (c *TTypeMatcher) MatchValueByName(expectedType string, actualValue interface{}) bool
+
+- **expectedType**: string - an expected type name to match.
+- **actualValue**: interface{} -  a value to match its type to the expected one.
+- **returns**: bool - true if types are matching and false if they don't.
 
 
 

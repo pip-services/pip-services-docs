@@ -8,19 +8,8 @@ description: >
     IoC container for Pip.Services in Node.js / ES2017.  
 
 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.   
-    
-    It provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
+    This module provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
 
-
-    The module containes a basic in-memory container that can be embedded inside a service or application, or can be run by itself.
-    The second container type can run as a system level process and can be configured via command line arguments.
-    Also, it can be used to create docker containers.
-
-
-    The containers can read configuration from JSON or YAML files, and use it as a recipe for instantiating and configuring components.
-    Component factories are used to create components based on their locators (descriptor) defined in the container configuration.
-    The factories shall be registered in containers or dynamically in the container configuration file.
 ---
 
 

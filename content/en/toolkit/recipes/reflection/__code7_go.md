@@ -27,12 +27,14 @@ func (c *ObjectA) MethodA() int {
 }
 
 type ObjectB struct {
+	*ObjectA
 	Param4 string
 }
 
 func NewObjectB() *ObjectB {
 	return &ObjectB{
-		Param4: "inside 2",
+		ObjectA: NewObjectA(),
+		Param4:  "inside 2",
 	}
 }
 
@@ -51,12 +53,12 @@ func main() {
 	myObjectC := NewObjectB()
 
 	// set_property
-	creflect.RecursiveObjectWriter.SetProperty(myObjectB, "param2", "new value")
-	value1 := creflect.RecursiveObjectReader.GetProperty(myObjectB, "param2")
+	creflect.RecursiveObjectWriter.SetProperty(myObjectB, "Param2", "new value")
+	value1 := creflect.RecursiveObjectReader.GetProperty(myObjectB, "Param2")
 	fmt.Println("The new values for the myObjectB object are:", value1)
 
 	// set_properties
-	myMap := map[string]interface{}{"param1": 789456, "param2": "ABCaccc"}
+	myMap := map[string]interface{}{"Param1": 789456, "Param2": "ABCaccc"}
 	creflect.RecursiveObjectWriter.SetProperties(myObjectB, myMap)
 	value2 := creflect.RecursiveObjectReader.GetProperties(myObjectB)
 	fmt.Println("The new values for the myObjectB object are:", value2)

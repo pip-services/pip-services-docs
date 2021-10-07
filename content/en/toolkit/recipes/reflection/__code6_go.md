@@ -27,12 +27,14 @@ func (c *ObjectA) MethodA() int {
 }
 
 type ObjectB struct {
+	*ObjectA
 	Param4 string
 }
 
 func NewObjectB() *ObjectB {
 	return &ObjectB{
-		Param4: "inside 2",
+		ObjectA: NewObjectA(),
+		Param4:  "inside 2",
 	}
 }
 

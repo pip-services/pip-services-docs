@@ -35,7 +35,7 @@
             {{ range $pages }}
                 {{ if and (eq .Parent $parent) (not .Params.exclude_from_list) }}
                     <tr>
-                        <td onClick="document.location.href='{{ .RelPermalink }}';">
+                        <td onClick="document.location.href= document.location.href.includes('pip-services-docs') ? '/pip-services-docs/' + '{{ .RelPermalink }}' : '{{ .RelPermalink }}';">
                             <h5>
                                 {{- .Title -}}
                             </h5>

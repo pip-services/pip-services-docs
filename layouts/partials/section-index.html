@@ -35,9 +35,9 @@
             {{ range $pages }}
                 {{ if and (eq .Parent $parent) (not .Params.exclude_from_list) }}
                     <tr>
-                        <td>
+                        <td onClick="document.location.href='{{ .RelPermalink }}';">
                             <h5>
-                                <a href="{{ .RelPermalink }}" class="">{{- .Title -}}</a>
+                                {{- .Title -}}
                             </h5>
                         </td>
                         <td>

@@ -11,7 +11,6 @@ class classA:
         return 123
 
 objectA1 = classA()
-objectA2 = classA()
 
 # expected type: Object, actual type: classA, actualvalue: objectA1
 type1 = TypeMatcher.match_type("Object",classA, objectA1)

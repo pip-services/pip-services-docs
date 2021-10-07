@@ -15,7 +15,6 @@ class classA:
 class classB(classA):
         param4 = "inside 2"
 
-my_classA = classA()
 my_classB = classB()
 my_classC = classB()
 

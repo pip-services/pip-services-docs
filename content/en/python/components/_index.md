@@ -5,8 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python
 no_list: true
 weight: 40
 description: > 
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    It contains standard component definitions that can be used to build applications and services.
+    This module contains standard component definitions that can be used to build applications and services.
 ---
 
 

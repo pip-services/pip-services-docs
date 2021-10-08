@@ -42,3 +42,8 @@ Sometimes you may need to use your microservices as background tasks. From an ar
 
 Page description for heading and indexes.
 In this tutorial you will learn how to create yml configuration files. First, we will see a general case. Then, we will show examples of the most common components in PIP.Services. These examples are valid for any of the six languages used by the toolkit.
+
+### [Reflection](reflection)
+
+How to allow a component to examine itself and manage its internal properties.  
+This package provides different classes that will allow you to develop code with introspection capacity. We will start by briefly describing reflection. Then, we will learn how to use each of the different components provided in the package through the use of examples.

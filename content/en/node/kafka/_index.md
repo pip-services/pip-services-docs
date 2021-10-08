@@ -8,6 +8,9 @@ description: >
  This module contains a set of components for messaging using the Kafka protocol.
 ---
 
+### Important points
+* It contains the implementation of the components for working with messages: KafkaMessageQueue, KafkaConnectionResolver.
+
 ### Packages
 
 The module contains the following packages:

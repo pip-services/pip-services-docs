@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 2. Creating the Project’s Structure"
 linkTitle: "Step 2. Project’s Structure" 
-gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

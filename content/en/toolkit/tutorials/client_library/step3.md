@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 4. Designing an HTTP Client"
 linkTitle: "Step 4. HTTP Client" 
-gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

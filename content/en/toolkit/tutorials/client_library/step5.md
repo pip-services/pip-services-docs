@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 6. Testing the Client with a Remote Microservice"
 linkTitle: "Step 6. Testing the Client" 
-gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

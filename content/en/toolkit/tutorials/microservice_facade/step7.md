@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 8. Running the facade"
 linkTitle: "Step 8. Running the facade" 
-gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 6. Implementing an HTTP service"
 linkTitle: "Step 6. HTTP service" 
-gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 3. Business operations"
 linkTitle: "Step 3. Business operations" 
-gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

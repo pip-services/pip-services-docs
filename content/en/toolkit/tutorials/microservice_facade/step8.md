@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 9. Manual testing of facade"
 linkTitle: "Step 9. Manual testing of facade" 
-gitUrl: "https://github.com/pip-services-samples/facade-sample-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 Once all of the system’s microservices are up and running, we can perform some manual testing of the facade we’ve created, to ensure that everything’s working as intended.

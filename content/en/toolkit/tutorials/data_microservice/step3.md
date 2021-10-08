@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 4. Implementing persistence components"
 linkTitle: "Step 4. Persistence"
-gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

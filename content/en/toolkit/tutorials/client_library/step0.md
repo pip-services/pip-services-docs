@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step1. Setting up the environment"
 linkTitle: "Step 1. Environment setup"
-
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 5. Implementing a Mock Client"
 linkTitle: "Step 5. Mock Client" 
-gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

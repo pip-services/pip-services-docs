@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 2. Project structure"
 linkTitle: "Step 2. Project structure" 
-gitUrl: "https://github.com/pip-services-samples/service-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

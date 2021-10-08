@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 2. Setting up the project structure"
 linkTitle: "Step 2. Setting up" 
-gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 Let’s do some small preparation of the project before we start writing the client library.

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Step 3. Designing a Direct Client"
 linkTitle: "Step 3. Direct Client" 
-gitUrl: "https://github.com/pip-services-samples/client-beacons-python"
+gitUrl: "https://github.com/pip-services-samples"
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

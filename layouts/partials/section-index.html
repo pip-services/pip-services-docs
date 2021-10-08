@@ -34,15 +34,34 @@
         <table class="table entry-table">
             {{ range $pages }}
                 {{ if and (eq .Parent $parent) (not .Params.exclude_from_list) }}
-                    <tr>
-                        <td onClick="document.location.href= document.location.href.includes('pip-services-docs') ? '/pip-services-docs' + '{{ .RelPermalink }}' : '{{ .RelPermalink }}';">
-                            <h5>
-                                {{- .Title -}}
-                            </h5>
-                        </td>
-                        <td>
-                            <p>{{ .Description | markdownify }}</p>
-                        </td>
+                    <tr onClick="document.location.href= document.location.href.includes('pip-services-docs') ? '/pip-services-docs' + '{{ .RelPermalink }}' : '{{ .RelPermalink }}';">
+                        
+                            <td>
+                                <a href='{{ .RelPermalink }}'>
+                                    <h5>
+                                        <!-- truncate word for module names"module" -->
+                                        {{ $titleSlice := split .Title " " }}
+                                        {{ $lastIndex := sub (len $titleSlice) 1 }}
+                                        {{ $title := "" }}
+                                        {{ if eq ( index $titleSlice $lastIndex ) "module" }}
+                                        {{ range (seq 0 (sub $lastIndex 1)) }}
+                                        {{ $title = printf "%s %s" $title (index $titleSlice .) }}
+                                        {{ end }}
+                                        {{- $title -}}
+                                        {{ else }}
+                                        {{- .Title -}}
+                                        {{ end }}
+                                    </h5>
+                                </a>
+                            </td>
+                            <td>
+                                <a href='{{ .RelPermalink }}' style="color: #222;">
+                                    <p>{{ .Description | markdownify }}</p>
+                                </a>
+                                
+                            </td>
+                        
+                        
                     </tr>
                 {{ end }}
             {{ end }}

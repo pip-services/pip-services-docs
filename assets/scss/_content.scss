@@ -58,19 +58,29 @@ mark, .mark {
         border: 0.1px solid rgba(0, 0, 0, 0.2); 
         padding-left: 1rem;
     }
+    p {
+        margin-bottom: 0px;
+    }
     td:first-child {
-        width: 25%;
-        text-align: center;
+        width: 17%;
+        text-align: left;
         vertical-align: inherit;
         a {
             font-size: 1.3rem;
             line-height: 1.8rem;
         }
-        cursor: pointer;
+        
         color: #1C90F3;
         &:hover {
             // background-color: lighten(black, 97%);
             color: #167ad0;
+        }
+    }
+
+    tr {
+        cursor: pointer;
+        &:hover {
+            background-color: #F5F8FA;
         }
     }
     tr:first-child td {

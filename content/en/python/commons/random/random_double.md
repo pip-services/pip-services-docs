@@ -23,7 +23,7 @@ Generates a random double value in the range ['min_value', 'max_value'].
 - **returns**: float - a random double value.
 
 #### update_double
-Updates (drifts) a double value within specified range defined
+Updates (drifts) a double value within a specified range defined
 
 > `static` update_double(value: float, rrange: float = None): float
 

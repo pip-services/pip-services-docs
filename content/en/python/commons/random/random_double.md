@@ -14,7 +14,7 @@ The RandomDouble class allows you to generate random double values.
 ### Static methods
 
 #### next_double
-Generates a random double value in the range ['min_year', 'max_year'].
+Generates a random double value in the range ['min_value', 'max_value'].
 
 > `static` next_double(mmin: float, mmax: float = None): float
 

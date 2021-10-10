@@ -1,4 +1,4 @@
-
+Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
 
 - Azure - components for working with the Azure cloud
 - [AWS](../../aws) - components for working with the AWS cloud

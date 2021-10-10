@@ -65,7 +65,7 @@ async def check_links(links: List[str]):
                 continue
 
             links_count += 1
-            logger.info('%s:%s', links_count, link)
+            logger.info('%s: %s', links_count, link)
 
             if link not in checked_urls:
                 try:
@@ -89,7 +89,7 @@ async def check_links(links: List[str]):
                         continue
 
                     links_count += 1
-                    logger.info('%s:%s', links_count, page_link)
+                    logger.info('%s: %s', links_count, page_link)
 
                     if page_link not in checked_urls:
                         try:
@@ -105,9 +105,9 @@ async def check_links(links: List[str]):
         if len(invalid_urls) > 0:
 
             for page, url in invalid_urls:
-                logger.error('Invalid url: %s, on page %s: ', url, page)
+                logger.error('Invalid url: %s , on page %s ', url, page)
 
-            logger.error('Invalid urls count: %s: ', len(invalid_urls))
+            logger.error('Invalid urls count: %s', len(invalid_urls))
             raise Exception('There are broken links on the site.')
 
         logger.info('Checked links: %s', links_count)

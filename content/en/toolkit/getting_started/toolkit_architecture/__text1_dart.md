@@ -17,12 +17,12 @@ The main (basic) modules are shown in blue. Although they are not required, they
 Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
 
 - Azure - components for working with the Azure cloud
-- [AWS](../../../dart/aws) - components for working with the AWS cloud
+- AWS - components for working with the AWS cloud
 - [MongoDB](../../../dart/mongodb) - components for storing data in MongoDB
 - [GRPC](../../../dart/grpc) - components for synchronous communication via GRPC
 - ActiveMQ - components for asynchronous communication via ActiveMQ
 - [MQTT](../../../dart/mqtt) - components for asynchronous communication via the MQTT protocol
-- [Memcached](../../../dart/memcached) - components for caching and synchronizing with Memcached
+- Memcached - components for caching and synchronizing with Memcached
 - [Redis](../../../dart/redis) - components for caching and synchronizing with Redis
 - [ElasticSearch](../../../dart/elasticsearch) - components for logging with ElasticSearch
 - [Prometheus](../../../dart/prometheus) - components for using performance counters with Prometheus

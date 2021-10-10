@@ -19,7 +19,7 @@ The RandomDateTime class allows you to generate random dates.
 
 #### next_date
 Generates a random Date in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `static` next_date(min_year: datetime, max_year: datetime = None): datetime
 
@@ -29,7 +29,7 @@ This method generate dates without time (or time set to 00:00:00)
 
 #### next_date_time
 Generates a random Date and time in the range ['minYear', 'maxYear'].
-This method generate dates without time (or time set to 00:00:00)
+This method generates dates without time (or time set to 00:00:00)
 
 > `static` next_datetime(min_year: datetime, max_year: datetime = None): datetime
 

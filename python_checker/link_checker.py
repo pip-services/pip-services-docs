@@ -5,7 +5,6 @@ import json
 import logging
 import os
 import urllib.parse
-import urllib.request
 from typing import List
 from urllib.parse import urlparse
 
@@ -16,12 +15,11 @@ logger = logging.getLogger('Link-checker')
 logging.basicConfig(level=logging.INFO)
 
 BASE_URL = 'https://pip-services.github.io/pip-services-docs'
-URL_FILE_WITH_URLS = 'https://raw.githubusercontent.com/pip-services/pip-services-docs/gh-pages/index.json'
 
 os.environ['CHECK_ONLY_IN_BODY'] = 'true'
 
 
-def read_all_site_links(path: str = None) -> List[str]:
+def read_all_site_links(path: str = '../public/index.json') -> List[str]:
     """
     Reads urls from index.json file
 
@@ -31,12 +29,9 @@ def read_all_site_links(path: str = None) -> List[str]:
     data: str
     links: List[str] = []
 
-    if path:
-        # Opening JSON file
-        with open(path, encoding='utf-8') as f:
-            data = json.load(f)
-    else:
-        data = json.loads(urllib.request.urlopen(URL_FILE_WITH_URLS).read().decode('utf-8'))
+    # Opening JSON file
+    with open(path, encoding='utf-8') as f:
+        data = json.load(f)
 
     for item in data:
         links.append(BASE_URL + item['permalink'])
@@ -59,10 +54,6 @@ async def check_links(links: List[str]):
 
         # check site urls
         for link in links:
-            # skip mail links
-            if 'mailto:' in link:
-                continue
-
             links_count += 1
             logger.info('%s:%s', links_count, link)
 
@@ -82,10 +73,6 @@ async def check_links(links: List[str]):
 
                 # check urls on the current page
                 for page_link in page_links:
-                    # skip mail links
-                    if 'mailto:' in link:
-                        continue
-
                     links_count += 1
                     logger.info('%s:%s', links_count, page_link)
 

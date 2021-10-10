@@ -61,7 +61,6 @@ async def check_links(links: List[str]):
         for link in links:
             # skip mail links
             if link.find('mailto:') > -1:
-                checked_urls.append(link)
                 continue
 
             links_count += 1
@@ -85,7 +84,6 @@ async def check_links(links: List[str]):
                 for page_link in page_links:
                     # skip mail links
                     if page_link.find('mailto:') > -1:
-                        checked_urls.append(page_link)
                         continue
 
                     links_count += 1
@@ -105,7 +103,7 @@ async def check_links(links: List[str]):
         if len(invalid_urls) > 0:
 
             for page, url in invalid_urls:
-                logger.error('Invalid url: %s , on page %s ', url, page)
+                logger.error('Invalid url: %s on page %s ', url, page)
 
             logger.error('Invalid urls count: %s', len(invalid_urls))
             raise Exception('There are broken links on the site.')

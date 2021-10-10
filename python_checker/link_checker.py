@@ -5,6 +5,7 @@ import json
 import logging
 import os
 import urllib.parse
+import urllib.request
 from typing import List
 from urllib.parse import urlparse
 
@@ -15,11 +16,12 @@ logger = logging.getLogger('Link-checker')
 logging.basicConfig(level=logging.INFO)
 
 BASE_URL = 'https://pip-services.github.io/pip-services-docs'
+URL_FILE_WITH_URLS = 'https://raw.githubusercontent.com/pip-services/pip-services-docs/gh-pages/index.json'
 
 os.environ['CHECK_ONLY_IN_BODY'] = 'true'
 
 
-def read_all_site_links(path: str = '../public/index.json') -> List[str]:
+def read_all_site_links(path: str = None) -> List[str]:
     """
     Reads urls from index.json file
 
@@ -29,9 +31,12 @@ def read_all_site_links(path: str = '../public/index.json') -> List[str]:
     data: str
     links: List[str] = []
 
-    # Opening JSON file
-    with open(path, encoding='utf-8') as f:
-        data = json.load(f)
+    if path:
+        # Opening JSON file
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+    else:
+        data = json.loads(urllib.request.urlopen(URL_FILE_WITH_URLS).read().decode('utf-8'))
 
     for item in data:
         links.append(BASE_URL + item['permalink'])
@@ -54,6 +59,11 @@ async def check_links(links: List[str]):
 
         # check site urls
         for link in links:
+            # skip mail links
+            if link.find('mailto:') > -1:
+                checked_urls.append(link)
+                continue
+
             links_count += 1
             logger.info('%s:%s', links_count, link)
 
@@ -73,6 +83,11 @@ async def check_links(links: List[str]):
 
                 # check urls on the current page
                 for page_link in page_links:
+                    # skip mail links
+                    if page_link.find('mailto:') > -1:
+                        checked_urls.append(page_link)
+                        continue
+
                     links_count += 1
                     logger.info('%s:%s', links_count, page_link)
 
@@ -129,5 +144,5 @@ def is_url(url):
 
 
 if __name__ == '__main__':
-    links = read_all_site_links()
+    links = read_all_site_links('./public/index.json')
     asyncio.run(check_links(links))

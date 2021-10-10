@@ -1,0 +1,46 @@
+name: Check site urls
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '00 05 * * *' # UTC 0 timezone
+
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          # fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      
+      - name: Update submodules
+        run: git submodule update --init --recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 0.84.4 # 'latest'
+          extended: true
+        
+      - name: Pre-Build
+        run: npm install && hugo --theme=docsy
+        env:
+          sidebar_cache_limit: 100
+          CHECK_ONLY_IN_BODY: true
+
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8 
+
+      - name: Display Python version
+        run: python -c "import sys; print(sys.version)"
+      
+      - name: Install Python requirements
+        run: pip install -r ./python_checker/requirements.txt
+
+      - name: Check site urls
+        run: python ./python_checker/link_checker.py
+        env:
+          CHECK_ONLY_IN_BODY: true

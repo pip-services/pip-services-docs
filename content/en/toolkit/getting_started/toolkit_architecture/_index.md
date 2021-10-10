@@ -20,23 +20,23 @@ The core of the toolkit is shown in green. It consists of two modules, both of w
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_node.md" >}} 
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_net.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_go.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/logging/__text1_dart.md" >}} 
+   {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -49,23 +49,23 @@ Last but not least are the additional (optional) modules, shown in red. These mo
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_node.md" >}} 
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_net.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_go.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/logging/__text1_dart.md" >}} 
+   {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__text1_python.md" >}}
+  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -1,3 +1,4 @@
+The core of the toolkit is shown in green. It consists of two modules, both of which are required:
 
 - [Commons](../../commons) - Basic primitives for symmetrical development on various programming languages, as well as patterns, that are used in the rest of the modules.
 

@@ -5,6 +5,7 @@ title: "Architecture of the Pip.Services toolkit"
 linkTitle: "Toolkit Architecture"
 weight: 1
 ---
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 The Pip.Services toolkit is divided into a few dozen modules. A small part of these modules make up the core itself, while the rest are optional add ons. This approach simplifies adding new functionality and minimizes dependencies on 3rd party libraries.
 
@@ -16,6 +17,12 @@ The general structure of the Pip.Services toolkit is shown on the following diag
 The foundation of the toolkit is shown in grey. It is made up of the stacks for the 6 supported programming languages: Java, Node.js, .NET Core, Python, Dart, and Golang.
 
 The core of the toolkit is shown in green. It consists of two modules, both of which are required:
+
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/logging/__text1_node.md" >}} 
+{{< /tabsection >}}
+
 
 - [Commons](../../commons) - Basic primitives for symmetrical development on various programming languages, as well as patterns, that are used in the rest of the modules.
 
@@ -32,6 +39,11 @@ The main (basic) modules are shown in blue. Although they are not required, they
 - [Messaging](../../messaging) - Basic components for asynchronous communication and implementing local queues.
 
 Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
+
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/logging/__text2_node.md" >}} 
+{{< /tabsection >}}
 
 - Azure - components for working with the Azure cloud
 - [AWS](../../aws) - components for working with the AWS cloud

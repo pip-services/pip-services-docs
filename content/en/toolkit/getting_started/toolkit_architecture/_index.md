@@ -44,34 +44,5 @@ The core of the toolkit is shown in green. It consists of two modules, both of w
 {{< /tabsection >}}
 
 
-Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
-
-
-
-{{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_node.md" >}} 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_net.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_dart.md" >}} 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-
 The Pip.Services toolkit is an actively growing project. While the core has proven to be stable over the course of many years, additional modules are constantly being expanded and added. Be sure to regularly check our [news](https://www.pipservices.org/news) to be informed of the latest updates and releases.
 

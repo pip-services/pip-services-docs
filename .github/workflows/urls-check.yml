@@ -1,4 +1,4 @@
-name: Check site urls
+name: check site urls
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
           hugo-version: 0.84.4 # 'latest'
           extended: true
         
-      - name: Pre-Build
+      - name: Pre-Build Hugo
         run: npm install && hugo --theme=docsy
         env:
           sidebar_cache_limit: 100
@@ -33,9 +33,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 
-
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
       
       - name: Install Python requirements
         run: pip install -r ./python_checker/requirements.txt

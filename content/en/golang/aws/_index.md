@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
 no_list: true
 weight: 500
 description: > 
-    AWS specific components for Golang
-
-
-    This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains components for supporting work with the AWS cloud platform.
+    This module contains components for supporting work with the AWS cloud platform.
 ---
 
 

@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-aws-dotnet"
 no_list: true
 weight: 500
 description: > 
-    AWS specific components for .NET
-
-
-    This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains components for supporting work with the AWS cloud platform.
+    This module contains components for supporting work with the AWS cloud platform.
 ---
 
 

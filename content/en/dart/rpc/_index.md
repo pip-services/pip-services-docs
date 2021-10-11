@@ -5,13 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-rpc-dart"
 no_list: true
 weight: 70
 description: > 
-    Remote Procedure Calls for Pip.Services Dart
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-
-    The rpc module provides the synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
+    This module provides synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
 ---
 
 

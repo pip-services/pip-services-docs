@@ -5,14 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-aws-dart"
 no_list: true
 weight: 500
 description: > 
-    AWS specific components for Dart  
-
-
-    This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains components for supporting work with the AWS cloud platform.
-    
-draft: true
+    This module contains components for supporting work with the AWS cloud platform.
 ---
 
 

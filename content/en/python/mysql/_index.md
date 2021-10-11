@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 no_list: true
 weight: 500
 description: > 
-    MySQL components for Python. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    This module contains components used to implement MySQL persistence.  
 ---
 
 ### Packages

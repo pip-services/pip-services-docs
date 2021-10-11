@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 no_list: true
 weight: 500
 description: > 
-    MQTT Messaging for Pip.Services in Golang. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains a set of components for messaging using the Mqtt protocol. 
+    This module contains a set of components for messaging using the Mqtt protocol. 
 ---
 
 ### Packages

@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet"
 no_list: true
 weight: 500
 description: > 
-    Memcached components for Pip.Services in .NET
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. 
-
-    It contains components for connecting and working with Memcached.
+  This module contains the following components: MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
 ---
 
 ### Modules

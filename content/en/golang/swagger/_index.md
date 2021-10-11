@@ -5,13 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
 no_list: true
 weight: 500
 description: > 
-    Swagger UI for Pip.Services in Golang
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-
-    The swagger module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
+  This module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
 ---
 
 

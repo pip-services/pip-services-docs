@@ -5,9 +5,6 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
 no_list: true
 weight: 500
 description: > 
-    RabbitMQ specific components for Golang.
-
-    This library is a part of [Pip.Services](http://pipservices.org) project.
     The RabbitMQ module contains a set of components for working with the message queue in RabbitMQ through the AMQP protocol.
 ---
 

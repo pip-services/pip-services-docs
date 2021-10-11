@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-memcached-python"
 no_list: true
 weight: 500
 description: > 
-    Memcached components for Pip.Services in Python  
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    The Memcached module contains the following components: MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
+  This module contains the following components: MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
 ---
 
 ### Modules

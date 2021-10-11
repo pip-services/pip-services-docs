@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-nats-dotnet"
 no_list: true
 weight: 500
 description: > 
-    NATS Messaging for Pip.Services in .NET. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains a set of components for working with message queues via [NATS](https://nats.io/](https://nats.io/).
+   This module contains a set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-rabbitmq-dart"
 no_list: true
 weight: 500
 description: > 
-    RabbitMQ specific components for Dart  
 
-    This library is a part of [Pip.Services](https://www.pipservices.org/) project.
     The RabbitMQ module contains a set of components for working with the message queue in RabbitMQ through the AMQP protocol.
 ---
 

@@ -5,13 +5,9 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-aws-python"
 no_list: true
 weight: 500
 description: > 
-    AWS specific components for Python
-
-
-    This module is part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains components for supporting work with the AWS cloud platform.
+    This module contains components for supporting work with the AWS cloud platform.
 ---
+
 
 
 ### Modules

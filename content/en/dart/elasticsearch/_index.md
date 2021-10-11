@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-elasticsearch-dart"
 no_list: true
 weight: 500
 description: > 
-    ElasticSearch components for Dart
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Elasticsearch module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
+    This module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 

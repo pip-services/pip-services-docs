@@ -5,12 +5,11 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
 no_list: true
 weight: 500
 description: > 
-    Kafka messaging for Pip.Services in Golang.  
-    
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It contains a set of components for messaging using the Kafka protocol. 
+ This module contains a set of components for messaging using the Kafka protocol.
 ---
+
+### Important points
+* It contains the implementation of the components for working with messages: KafkaMessageQueue, KafkaConnectionResolver.
 
 ### Packages
 

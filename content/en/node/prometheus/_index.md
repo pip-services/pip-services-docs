@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-prometheus-nodex"
 no_list: true
 weight: 500
 description: > 
- This module contains components for working with meters in the Prometheus service. The [PrometheusCounters](count/prometheus_counters) and [PrometheusMetricsService](/services/prometheus_metrics_service) components allow you to work both, in client mode through PushGateway and as a service.
+ This module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both, in client mode through PushGateway and as a service.
 ---
 
 ### Packages

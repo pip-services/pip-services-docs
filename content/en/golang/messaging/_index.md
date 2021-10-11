@@ -5,10 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
 no_list: true
 weight: 90
 description: > 
-    Asynchronous Messaging for Pip.Services in Golang  
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
+      This module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
 ---
 
 ### Modules

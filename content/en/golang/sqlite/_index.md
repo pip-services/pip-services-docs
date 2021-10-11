@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
 no_list: true
 weight: 500
 description: > 
-    SQLite components for Pip.Services in Golang
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components to implement SQLite persistence.
+  This module provides a set of components to implement SQLite persistence.
 ---
 
 ### Packages

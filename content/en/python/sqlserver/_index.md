@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 no_list: true
 weight: 500
 description: > 
-    SQLServer components for Python. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+ This module provides a set of components to implement SQLServer persistence.  
 ---
 
 ### Packages

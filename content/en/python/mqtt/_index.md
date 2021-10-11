@@ -5,10 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-mqtt-python"
 no_list: true
 weight: 500
 description: > 
-    MQTT Messaging for Pip.Services in Python  
-    
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It contains a set of components for messaging using the Mqtt protocol. 
+    This module contains a set of components for messaging using the Mqtt protocol. 
 ---
 
 ### Packages

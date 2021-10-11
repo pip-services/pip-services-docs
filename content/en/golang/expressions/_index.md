@@ -5,10 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
 no_list: true
 weight: 100
 description: > 
-    Tokenizers, parsers and expression calculators for Pip.Services Golang
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    It provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
+    This module provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---
 
 ### Packages

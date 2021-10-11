@@ -5,12 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-prometheus-dart"
 no_list: true
 weight: 500
 description: > 
-    Prometheus components for Pip.Services Dart  
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-
-    This module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both, in client mode through PushGateway and as a service.
+ This module contains components for working with meters in the Prometheus service. The PrometheusCounters and PrometheusMetricsService components allow you to work both, in client mode through PushGateway and as a service.
 ---
 
 ### Packages

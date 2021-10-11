@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-elasticsearch-pyt
 no_list: true
 weight: 500
 description: > 
-    ElasticSearch components for Python 
-
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-    The Elasticsearch module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
+    This module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 

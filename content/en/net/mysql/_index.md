@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-mysql-dotnet"
 no_list: true
 weight: 500
 description: > 
-    MySQL components for Pip.Services in .NET. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
+    This module contains components used to implement MySQL persistence.  
 ---
 
 ### Packages

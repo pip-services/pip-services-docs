@@ -53,8 +53,8 @@ async def check_links(links: List[str]):
     :return: list of invalid links
     """
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
-        invalid_urls = []
-        checked_urls = []
+        invalid_urls: List[List[str]] = []
+        checked_urls: List[str] = []
         links_count = 0
 
         # check site urls
@@ -74,35 +74,35 @@ async def check_links(links: List[str]):
                             logger.error('%s:Invalid url: %s', links_count, link)
                         html = await resp.text('utf-8')
                 except:
-                    invalid_urls.append(['current', link])
+                    invalid_urls.append([link, 'current'])
                 finally:
                     checked_urls.append(link)
 
-                page_links = parse_page_links(link, html)
+                inner_links = parse_page_links(link, html)
 
                 # check urls on the current page
-                for page_link in page_links:
+                for inner_link in inner_links:
                     # skip mail links
-                    if page_link.find('mailto:') > -1:
+                    if inner_link.find('mailto:') > -1:
                         continue
 
                     links_count += 1
-                    logger.info('%s: %s', links_count, page_link)
+                    logger.info('%s: %s', links_count, inner_link)
 
-                    if page_link not in checked_urls:
+                    if inner_link not in checked_urls:
                         try:
-                            async with session.get(page_link) as resp:
+                            async with session.get(inner_link) as resp:
                                 if resp.status >= 400:
-                                    invalid_urls.append([link, page_link])
-                                    logger.error('%s:Invalid url: %s', links_count, page_link)
+                                    invalid_urls.append([inner_link, link])
+                                    logger.error('%s:Invalid url: %s', links_count, inner_link)
                         except:
-                            invalid_urls.append([link, page_link])
+                            invalid_urls.append([inner_link, link])
                         finally:
-                            checked_urls.append(page_link)
+                            checked_urls.append(inner_link)
 
         if len(invalid_urls) > 0:
 
-            for page, url in invalid_urls:
+            for url, page in invalid_urls:
                 logger.error('Invalid url: %s on page %s ', url, page)
 
             logger.error('Invalid urls count: %s', len(invalid_urls))

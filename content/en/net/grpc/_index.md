@@ -5,11 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-grpc-dotnet"
 no_list: true
 weight: 80
 description: > 
-    gRPC components for Pip.Services in .NET. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
-
-    It is used to organize synchronous data exchange using calls through the gRPC protocol. It has implementations of both, the server and client parts.
+  This module is used to organize synchronous data exchange using calls through the gRPC protocol. It has implementations of both, the server and client parts.
 ---
 
 

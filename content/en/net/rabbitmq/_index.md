@@ -5,9 +5,6 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet"
 no_list: true
 weight: 500
 description: > 
-    RabbitMQ specific components for .NET  
-
-    This library is a part of [Pip.Services](https://github.com/pip-services/pip-services) project.
     The RabbitMQ module contains a set of components for working with the message queue in RabbitMQ through the AMQP protocol.
 ---
 

@@ -5,9 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-mongodb-dart"
 no_list: true
 weight: 500
 description: > 
-    MongoDB components for Pip.Services for Pip.Services in Dart. 
-
-    This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit. It provides a set of components used to implement MongoDB persistence.
+ This module provides a set of components used to implement MongoDB persistence.
 ---
 
 ### Packages

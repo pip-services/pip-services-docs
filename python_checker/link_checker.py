@@ -6,7 +6,7 @@ import logging
 import os
 import urllib.parse
 import urllib.request
-from typing import List
+from typing import List, Tuple
 from urllib.parse import urlparse
 
 import aiohttp
@@ -46,71 +46,82 @@ def read_all_site_links(path: str = None) -> List[str]:
     return links
 
 
+async def make_request(link: str,
+                       return_html: bool = False, try_count: int = 3) -> Tuple[str, bool]:
+    success = False
+    html = ''
+    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
+        for i in range(try_count):
+            async with session.get(link) as resp:
+                if resp.status >= 500:
+                    await asyncio.sleep(0.5)
+                    continue
+                elif resp.status >= 400:
+                    break
+                else:
+                    if return_html:
+                        html = await resp.text('utf-8')
+                    success = True
+                    break
+
+    return html, success
+
+
 async def check_links(links: List[str]):
     """
     Check list of the links
     :param links:
     :return: list of invalid links
     """
-    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
-        invalid_urls: List[List[str]] = []
-        checked_urls: List[str] = []
-        links_count = 0
 
-        # check site urls
-        for link in links:
-            # skip mail links
-            if link.find('mailto:') > -1:
-                continue
+    invalid_urls: List[List[str]] = []
+    checked_urls: List[str] = []
+    links_count = 0
 
-            links_count += 1
-            logger.info('%s: %s', links_count, link)
+    # check site urls
+    for link in links:
+        # skip mail links
+        if link.find('mailto:') > -1 or link.split('/')[-2].startswith('__'):
+            continue
 
-            if link not in checked_urls:
-                await asyncio.sleep(0.05)
-                try:
-                    async with session.get(link) as resp:
-                        if resp.status >= 400:
-                            invalid_urls.append(['current', link])
-                            logger.error('%s:Invalid url: %s', links_count, link)
-                        html = await resp.text('utf-8')
-                except:
-                    invalid_urls.append([link, 'current'])
-                finally:
-                    checked_urls.append(link)
+        links_count += 1
+        logger.info('%s: %s', links_count, link)
 
-                inner_links = parse_page_links(link, html)
+        if link not in checked_urls:
+            html, ok = await make_request(link, return_html=True)
+            checked_urls.append(link)
+            if not ok:
+                invalid_urls.append(['current', link])
+                logger.error('%s:Invalid url: %s', links_count, link)
 
-                # check urls on the current page
-                for inner_link in inner_links:
-                    # skip mail links
-                    if inner_link.find('mailto:') > -1:
-                        continue
+            inner_links = parse_page_links(link, html)
 
-                    links_count += 1
-                    logger.info('%s: %s', links_count, inner_link)
+            # check urls on the current page
+            for inner_link in inner_links:
+                # skip mail links and include files
+                if inner_link.find('mailto:') > -1 or inner_link.split('/')[-2].startswith('__'):
+                    continue
 
-                    if inner_link not in checked_urls:
-                        try:
-                            async with session.get(inner_link) as resp:
-                                if resp.status >= 400:
-                                    invalid_urls.append([inner_link, link])
-                                    logger.error('%s:Invalid url: %s', links_count, inner_link)
-                        except:
-                            invalid_urls.append([inner_link, link])
-                        finally:
-                            checked_urls.append(inner_link)
+                links_count += 1
+                logger.info('%s: %s', links_count, inner_link)
 
-        if len(invalid_urls) > 0:
+                if inner_link not in checked_urls:
+                    _, ok = await make_request(inner_link)
+                    checked_urls.append(inner_link)
+                    if not ok:
+                        invalid_urls.append([inner_link, link])
+                        logger.error('%s:Invalid url: %s', links_count, inner_link)
 
-            for url, page in invalid_urls:
-                logger.error('Invalid url: %s on page %s ', url, page)
+    if len(invalid_urls) > 0:
 
-            logger.error('Invalid urls count: %s', len(invalid_urls))
-            raise Exception('There are broken links on the site.')
+        for url, page in invalid_urls:
+            logger.error('Invalid url: %s on page %s ', url, page)
 
-        logger.info('Checked links: %s', links_count)
-        logger.info('All done!')
+        logger.error('Invalid urls count: %s', len(invalid_urls))
+        raise Exception('There are broken links on the site.')
+
+    logger.info('Checked links: %s', links_count)
+    logger.info('All done!')
 
 
 def parse_page_links(current_link: str, html: str) -> List[str]:

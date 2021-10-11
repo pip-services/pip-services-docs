@@ -67,6 +67,7 @@ async def check_links(links: List[str]):
             logger.info('%s: %s', links_count, link)
 
             if link not in checked_urls:
+                await asyncio.sleep(0.05)
                 try:
                     async with session.get(link) as resp:
                         if resp.status >= 400:

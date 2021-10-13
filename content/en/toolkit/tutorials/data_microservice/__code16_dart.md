@@ -1,5 +1,5 @@
 
-**/src/service/version1/BeaconsCommandableHttpServiceV1.dart**
+**/lib/service/version1/BeaconsCommandableHttpServiceV1.dart**
 
 ```dart
 import 'package:pip_services3_rpc/pip_services3_rpc.dart';

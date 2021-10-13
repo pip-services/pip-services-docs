@@ -1,5 +1,5 @@
 
-**/src/persistence/BeaconsMemoryPersistence.dart**
+**/lib/persistence/BeaconsMemoryPersistence.dart**
 
 ```dart
 import 'dart:async';

@@ -1,5 +1,5 @@
 
-**/src/data/version1/BeaconV1.dart**
+**/lib/data/version1/BeaconV1.dart**
 
 ```dart
 import 'package:pip_services3_commons/pip_services3_commons.dart';

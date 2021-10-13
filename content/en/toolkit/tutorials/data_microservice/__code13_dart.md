@@ -1,5 +1,5 @@
 
-**/src/logic/BeaconsController.dart**
+**/lib/logic/BeaconsController.dart**
 
 ```dart
 import 'dart:async';

@@ -1,5 +1,5 @@
 
-**/src/build/BeaconsServiceFactory.dart**
+**/lib/build/BeaconsServiceFactory.dart**
 
 ```dart
 import 'package:pip_services3_components/pip_services3_components.dart';

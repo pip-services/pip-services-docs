@@ -12,6 +12,8 @@ Before we start actually writing our microservice, we need to create a directory
 
 Create a folder for the project and, inside it, a directory structure to match the one below:
 
+{{< tabsection isMarkdown=true >}}
+
 ```
 /bin
 /config
@@ -32,6 +34,108 @@ Create a folder for the project and, inside it, a directory structure to match t
     └───/version1
 
 ```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/src
+└───/build
+└───/container
+└───/data
+│   └───/version1
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+/test
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+
+/build
+/container
+/data
+└───/version1
+/logic
+/persistence
+/service
+└───/version1
+
+/test
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/lib
+└───/build
+└───/container
+└───/data
+│   └───/version1
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+/test
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/src
+└───/build
+└───/container
+└───/data
+│   └───/version1
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+/test
+└───/logic
+└───/persistence
+└───/service
+    └───/version1
+
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+Not available
+{{< /tabsection >}}
 
 
 {{< tabsection >}}

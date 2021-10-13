@@ -6,9 +6,14 @@ linkTitle: "Step 2. Setting up"
 gitUrl: "https://github.com/pip-services-samples"
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 Let’s do some small preparation of the project before we start writing the client library.
 
 First, create the following directory structure to keep the source code organized:
+
+
+{{< tabsection >}}
 
 ```
 /src
@@ -17,6 +22,51 @@ First, create the following directory structure to keep the source code organize
 └───/version1
 
 ```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/src
+└───/version1
+/test
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/version1
+/test
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/lib
+└───/version1
+/test
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/src
+└───/version1
+/test
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+Not available
+{{< /tabsection >}}
+
 
 Prepare the initial project files, as described in the tutorial on [creating a data microservice](../../data_microservice), for the language of your choice and perform the initialization process.
 

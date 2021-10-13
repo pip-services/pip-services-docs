@@ -1,5 +1,5 @@
 
-**/src/version1/BeaconsCommandableHttpClientV1.dart**
+**/lib/version1/BeaconsCommandableHttpClientV1.dart**
 
 ```dart
 import 'dart:async';

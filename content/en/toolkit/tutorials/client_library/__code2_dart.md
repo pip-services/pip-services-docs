@@ -1,5 +1,5 @@
 
-**/src/version1/IBeaconClientV1.dart**
+**/lib/version1/IBeaconClientV1.dart**
 
 ```dart
 import 'dart:async';

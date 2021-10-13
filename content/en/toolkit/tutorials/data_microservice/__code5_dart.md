@@ -1,5 +1,5 @@
 
-**/src/data/version1/BeaconTypeV1.dart**
+**/lib/data/version1/BeaconTypeV1.dart**
 
 ```dart
 class BeaconTypeV1 {

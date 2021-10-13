@@ -32,6 +32,8 @@ The facade microservice will be responsible for:
 
 Before starting, create a folder for the project. The directory structure of facade projects differs a bit from the structure we use when developing data microservices.
 
+{{< tabsection isMarkdown=true >}}
+
 ```
 /bin
 /config
@@ -48,9 +50,84 @@ Before starting, create a folder for the project. The directory structure of fac
     └───/version1
 └───/services
     └───/version1
-/requirements.txt
-/setup.py
 ```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+```
+/src
+└───/version1
+/test
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/test
+└───/fixture
+└───/services
+    └───/version1
+
+/build
+/container
+/operations
+└───/version1
+/services
+└───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/test
+└───/fixture
+└───/services
+    └───/version1
+
+/lib
+└───/build
+└───/container
+└───/operations
+    └───/version1
+└───/services
+    └───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+
+```
+/bin
+/config
+/docker
+/test
+└───/fixture
+└───/services
+    └───/version1
+
+/src
+└───/build
+└───/container
+└───/operations
+    └───/version1
+└───/services
+    └───/version1
+```
+{{< /tabsection >}}
+
+{{< tabsection isMarkdown=true >}}
+Not available
+{{< /tabsection >}}
+
 
 {{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_node.md" >}}  

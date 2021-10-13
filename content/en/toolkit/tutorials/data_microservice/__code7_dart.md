@@ -1,5 +1,5 @@
 
-**/src/persistence/IBeaconsPersistence.dart**
+**/lib/persistence/IBeaconsPersistence.dart**
 
 ```dart
 import 'dart:async';

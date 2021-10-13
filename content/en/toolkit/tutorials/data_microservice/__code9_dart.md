@@ -1,5 +1,5 @@
 
-**/src/persistence/BeaconsMongoDbPersistence.dart**
+**/lib/persistence/BeaconsMongoDbPersistence.dart**
 
 ```dart
 import 'dart:async';

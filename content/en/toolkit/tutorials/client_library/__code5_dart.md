@@ -1,5 +1,5 @@
 
-**/src/version1/BeaconsMockClientV1.dart**
+**/lib/version1/BeaconsMockClientV1.dart**
 
 ```dart
 import 'dart:async';

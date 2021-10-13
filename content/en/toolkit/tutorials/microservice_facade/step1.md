@@ -40,9 +40,8 @@ Before starting, create a folder for the project. The directory structure of fac
 └───/fixture
 └───/services
     └───/version1
-        └───/src
 
-/pip_facades_sample_python
+/src
 └───/build
 └───/container
 └───/operations

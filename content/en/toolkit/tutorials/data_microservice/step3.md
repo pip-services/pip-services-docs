@@ -23,7 +23,7 @@ The first thing we are going to do is define what functionality our persistent s
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -52,7 +52,7 @@ The resulting code for this class is listed below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -81,7 +81,7 @@ Now let’s move on to something a bit more sophisticated - a MongoDB persistenc
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,7 +112,7 @@ Thanks to the modular structure of microservices, each component is easily testa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -139,7 +139,7 @@ Now that we have a set of tests, we can dive into the testing itself. To do this
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

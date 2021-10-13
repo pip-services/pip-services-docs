@@ -21,7 +21,7 @@ When a container is started, it starts composing the microservice out of the com
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -50,7 +50,7 @@ Now let’s move on to creating the container itself. In the **container** direc
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

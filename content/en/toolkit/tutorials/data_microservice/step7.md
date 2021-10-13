@@ -19,7 +19,7 @@ To run our microservice, we need to add just one last bit of code. In the bin fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,7 +48,7 @@ To run the microservice, execute the following command from a terminal at the ro
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -81,7 +81,7 @@ Let’s use the following two commands to set our environment variable and start
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

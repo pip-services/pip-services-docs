@@ -19,7 +19,7 @@ The Pip.Services Toolkit has a dedicated component in the RPC module for process
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -52,7 +52,7 @@ Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

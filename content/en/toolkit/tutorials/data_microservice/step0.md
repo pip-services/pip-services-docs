@@ -27,7 +27,7 @@ Once installed, check that the installation was completed successfully by runnin
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -23,7 +23,7 @@ First and foremost - we’ll need a compiler for your programming language of ch
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code1_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}

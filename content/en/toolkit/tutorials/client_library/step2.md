@@ -23,7 +23,7 @@ First off, let's define an interface for our clients to implement. This interfac
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code2_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -50,7 +50,7 @@ The direct client’s code is listed below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

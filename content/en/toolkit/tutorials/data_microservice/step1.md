@@ -43,7 +43,7 @@ Create a folder for the project and, inside it, a directory structure to match t
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -70,7 +70,7 @@ To install all necessary dependencies, run the following command from a terminal
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

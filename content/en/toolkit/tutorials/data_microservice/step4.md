@@ -19,7 +19,7 @@ Now that we know a bit about how we are going to be storing data and how microse
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -46,7 +46,7 @@ Once our interface is ready, we can move on to implementing the actual controlle
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,7 +79,7 @@ The second method is used to get a set of commands, with which we can control th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,7 +112,7 @@ To be sure that our new methods are working correctly, let’s add some tests fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

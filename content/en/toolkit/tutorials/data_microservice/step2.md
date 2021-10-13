@@ -22,7 +22,7 @@ Now, in the version1 folder, create a **BeaconV1** class that implements `IStrin
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -49,7 +49,7 @@ All fields are of simple data types, and their names give us a good idea of thei
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ For checking the validity of the data we are going to be receiving, let’s crea
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

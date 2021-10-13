@@ -1,9 +1,11 @@
 ---
-title: "Long Page Title"
-linkTitle: "Short Nav Title"
+type: docs
+no_list: true
+title: "Creating a component"
+linkTitle: "Component creation"
 weight: 100
 description: >-
-     Page description for heading and indexes.
+     How to create a component and assemble a service from it.
 ---
 
 ## Heading

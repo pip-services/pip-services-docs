@@ -385,7 +385,7 @@ Once our factory is ready, we can proceed to create our container. First, we wil
 
 Our configuration file must declare our component’s descriptor and the values we want to assign to our parameters. We will use YAML syntax for this purpose. Below is an example of this type of declaration.
 
-<img src="figure3.png" alt="Console logger messages" style="width:100%">
+<img src="figure3.png" alt="Console logger messages" style="width:70%">
 
 ### Using our component
 We have a service, and to use it, we just need to create an instance of our container and call the run method. 

@@ -4,7 +4,7 @@
 
 from pip_services3_components.build import Factory 
 
-class MyClassesFactory(Factory):
+class MyClassFactory(Factory):
     def __init__(self):
         super(MyClassesFactory, self).__init__()
 

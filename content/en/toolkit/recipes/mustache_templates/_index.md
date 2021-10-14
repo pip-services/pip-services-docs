@@ -371,3 +371,32 @@ Moreover, as variables have a dictionary structure, we can also define the defau
 ##### f)	Clearing the template
 
 The class offers the clear method to erase all the information stored in a template. The syntax is as follows:
+
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+### Wrapping up
+
+In this tutorial, we have seen how to manage basic Mustache templates. We have learned the basic constructions handled by PIP.Services and seen examples of each of them. We have also learned how to use default variables and how to clear a MustacheTemplate object.

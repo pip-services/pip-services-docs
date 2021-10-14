@@ -44,9 +44,9 @@ following references to the object's [set_references](#set_references)
 Closes this endpoint and the gRPC server (service) that was opened earlier.
 
 `@override`
-> Future close(String? correlationId)
+> Future close(String correlationId)
 
-- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -71,9 +71,9 @@ Checks if the component is open.
 Opens a connection using the parameters resolved by the referenced connection resolver and creates a gRPC server (service) using the set options and parameters.
 
 `@override`
-> Future open(String? correlationId)
+> Future open(String correlationId)
 
-- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 
 
 #### register
@@ -83,6 +83,21 @@ Registers a registerable object for dynamic endpoint discovery.
 
 - **registration**: [IRegisterable](../iregisterable) - registration to be added.
 
+#### registerCommadableMethod
+Registers a commandable method in this objects GRPC server (service) by the given name.
+
+> void registerCommadableMethod(String method, [Schema?](../../../commons/validate/schema) schema, Future\<dynamic\> Function(String? correlationId, [Parameters](../../../commons/run/parameters) args) action)
+
+- **method**: String - the GRPC method name.
+- **schema**: [Schema?](../../../commons/validate/schema) - the schema to use for parameter validation.
+- **action**: Future\<dynamic\> Function(String? correlationId, [Parameters](../../../commons/run/parameters) args) - the action to perform at the given route.
+
+#### registerInterceptor
+Registers a interceptor in this objects GRPC server (service)
+
+> void registerInterceptor(grpc.Interceptor action)
+
+- **action**: grpc.Interceptor - the action to perform.
 
 #### registerService
 Registers a service with related implementation.

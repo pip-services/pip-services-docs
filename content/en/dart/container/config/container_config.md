@@ -16,9 +16,9 @@ The ContainerConfig class allows you to create a container configuration defined
 ### Constructors
 Creates a new instance of ContainerConfig.
 
-> ContainerConfig([List<[ComponentConfig](../component_config)> components])
+> ContainerConfig([List<[ComponentConfig](../component_config)>? components])
 
-- **components**: List<[ComponentConfig](../component_config)> - (optional) list of component configurations.
+- **components**: List<[ComponentConfig](../component_config)>? - (optional) list of component configurations.
 
 
 ### Static methods
@@ -27,9 +27,9 @@ Creates a new instance of ContainerConfig.
 Creates a new ContainerConfig object based on configuration parameters.
 Each section in the configuration parameters is converted into a component configuration.
 
-> `static` [ContainerConfig]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
+> `static` [ContainerConfig]() fromConfig([ConfigParams?](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - object with key-value pairs used to initialize a new ContainerConfig.
+- **config**: [ConfigParams?](../../../commons/config/config_params) - object with key-value pairs used to initialize a new ContainerConfig.
 - **returns**: [ContainerConfig]() - created ContainerConfig object.
 
 

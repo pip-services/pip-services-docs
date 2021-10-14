@@ -16,9 +16,9 @@ The ISetter interface is used by data processing components that can set (create
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.
 
-> Future\<T\> set(String correlation_id, T item)
+> Future\<T?\> set(String? correlation_id, T? item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - item to be set.
-- **returns**: Future\<T\> - updated item
+- **item**: T? - item to be set.
+- **returns**: Future\<T?\> - updated item
 

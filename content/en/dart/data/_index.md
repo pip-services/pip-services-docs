@@ -42,9 +42,21 @@ For example, you need to implement persistence for a data object defined as foll
 import 'package:pip_services3_commons/src/data/IIdentifiable.dart';
 
 class MyObject implements IIdentifiable<String> {
-  String id;
+  @override
+  String? id;
   String key;
-  int value;
+  String value;
+
+  Dummy({String? id, String key, String value})
+      : id = id,
+        key = key,
+        content = content;
+
+  void fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    key = json['key'];
+    content = json['content'];
+  }
 }
 
 ```
@@ -53,17 +65,17 @@ Our persistence component shall implement the following interface with a basic s
 
 ```dart
 abstract class IMyPersistence {
-    void getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging);
+    void getPageByFilter(String correlationId, FilterParams filter, PagingParams paging);
     
-    getOneById(String? correlationId, String id);
+    getOneById(String correlationId, String id);
     
-    getOneByKey(String? correlationId, String key;
+    getOneByKey(String correlationId, String key;
     
-    create(String? correlationId, MyObject item);
+    create(String correlationId, MyObject item);
     
-    update(String? correlationId, MyObject item);
+    update(String correlationId, MyObject item);
     
-    deleteById(String? correlationId, String id);
+    deleteById(String correlationId, String id);
 }
 ```
 
@@ -98,11 +110,11 @@ class MyMemoryPersistence extends IdentifiableMemoryPersistence {
     };
   }
   
-  Future<DataPage<MyData>> getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging){
+  Future<DataPage<MyData>> getPageByFilter(String correlationId, FilterParams filter, PagingParams paging){
     return super.getPageByFilterEx(correlationId, composeFilter(filter), paging, null);
   }  
   
-  Future<String> getOneByKey(String? correlationId, String key) {
+  Future<String> getOneByKey(String correlationId, String key) {
     
     final item =
       this._items.firstWhere((item) =>

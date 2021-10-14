@@ -44,7 +44,7 @@ Creates a new instance of the gRPC client.
 
 #### _channel
 gRPC client.
-> **_channel**: grpc.ClientChannel
+> **_channel**: grpc.ClientChannel?
 
 #### _connectionResolver
 Connection resolver.
@@ -52,15 +52,15 @@ Connection resolver.
 
 #### _logger
 Logger.
-> **_logger**: [CompositeLogger](../../../components/log/composite_logger)()
+> **_logger**: [CompositeLogger](../../../components/log/composite_logger)
 
 #### _counters
 Performance counters.
-> **_counters**: [CompositeCounters](../../../components/count/composite_counters)()
+> **_counters**: [CompositeCounters](../../../components/count/composite_counters)
 
 #### _options
 Configuration options.
-> **_options**: [ConfigParams](../../../commons/config/config_params)()
+> **_options**: [ConfigParams](../../../commons/config/config_params)
 
 #### _connectTimeout
 Connection timeout in milliseconds.
@@ -70,24 +70,47 @@ Connection timeout in milliseconds.
 Invocation timeout in milliseconds.
 > **_timeout**: int = 100000
 
+#### _tracer
+The tracer.
+> **_tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
+
 #### _uri
 Remote service URI which is calculated on openning.
-> **_uri**: String
+> **_uri**: String?
 
 </span>
 
 
 ### Instance methods
 
+#### addFilterParams
+AddFilterParams method are adds filter parameters (with the same name as they defined)
+to invocation parameter map.
+
+> [StringValueMap](../../../commons/data/string_value_map) addFilterParams([StringValueMap?](../../../commons/data/string_value_map) params, [FilterParams?](../../../commons/data/filter_params) filter)
+
+- **params**: [StringValueMap?](../../../commons/data/string_value_map) - invocation parameters.
+- **filter**: [FilterParams?](../../../commons/data/filter_params) - (optional) filter parameters
+- **returns**: [StringValueMap](../../../commons/data/string_value_map) -  invocation parameters with added filter parameters.
+
+#### addPagingParams
+AddPagingParams method are adds paging parameters (skip, take, total) to invocation parameter map.
+
+> [StringValueMap](../../../commons/data/string_value_map) addPagingParams([StringValueMap?](../../../commons/data/string_value_map) params, [PagingParams?](../../../commons/data/paging_params) paging)
+
+- **params**: [StringValueMap?](../../../commons/data/string_value_map) - invocation parameters.
+- **paging**: [PagingParams?](../../../commons/data/paging_params) - (optional) paging parameters
+- **returns**: [StringValueMap](../../../commons/data/string_value_map) -  invocation parameters with added paging parameters.
+
 #### call
 Calls a remote method via gRPC protocol.
 
-> grpc.ResponseFuture\<R\>call\<Q extends GeneratedMessage, R extends GeneratedMessage\>(String method, String? correlationId, Q request, {grpc.CallOptions options})
+> grpc.ResponseFuture\<R\>call\<Q extends GeneratedMessage, R extends GeneratedMessage\>(String method, String? correlationId, Q request, {grpc.CallOptions? options})
 
 - **method**: String - name of the calling method
 - **correlationId**: String? - current client
 - **request**: Q - (optional) request object.
-- **options**: grpc.CallOptions - (optional) call options
+- **options**: grpc.CallOptions? - (optional) call options
 - **returns**: grpc.ResponseFuture\<R\> - (optional) Future that receives result object or error.
 
 
@@ -113,22 +136,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> [CounterTiming](../../../components/count/counter_timing) instrument(String? correlationId, String name)
+> [InstrumentTiming](../../../rpc/services/instrument_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
-
-
-#### instrumentError
-Adds instrumentation to error handling.
-
-> void instrumentError(String? correlationId, String name, err, [bool reerror = false])
-
-- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **name**: String - method name.
-- **err**: dynamic - occured error
-- **reerror**: bool - if true - throw error
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - CounterTiming object used to end the time measurement.
 
 
 #### isOpen

@@ -26,10 +26,10 @@ The ProcessContainer class allows you to create an inversion of control (IoC) co
 ### Constructors
 Creates a new instance of the container.
 
-> ProcessContainer([String name, String description])
+> ProcessContainer([String? name, String? description])
 
-- **name**: String - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
-- **description**: String - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
+- **name**: String? - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: String? - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 ### Fields
 

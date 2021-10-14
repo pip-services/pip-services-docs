@@ -43,7 +43,7 @@ The GrpcService class allows you to create services that receive remote calls vi
 
 #### endpoint
 gRPC endpoint that exposes this service.
-> **endpoint**: [GrpcEndpoint](../grpc_endpoint)
+> **endpoint**: [GrpcEndpoint](../grpc_endpoint)?
 
 #### dependencyResolver
 Dependency resolver.
@@ -52,6 +52,10 @@ Dependency resolver.
 #### logger
 Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger)
+
+#### tracer
+The tracer.
+> **tracer**: [CompositeTracer](../../../components/trace/composite_tracer)
 
 #### counters
 Performance counters.
@@ -90,14 +94,14 @@ Checks if the component is open.
 
 
 #### instrument
-Adds instrumentation to log calls and measures call time. 
-It returns a CounterTiming object that is used to end the time measurement.
+Adds instrumentation to log calls and measure call time.
+It returns a Timing object that is used to end the time measurement.
 
-> [CounterTiming](../../../components/count/counter_timing) instrument(String? correlationId, String name)
+> [InstrumentTiming](../../../rpc/services/instrument_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object to end the time measurement.
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - CounterTiming object used to end the time measurement.
 
 
 #### open
@@ -117,6 +121,14 @@ This method is called by the service and must be overriden in child classes.
 `@override`
 > void register()
 
+#### registerCommadableMethod
+Registers a commandable method in this objects GRPC server (service) by the given name.
+
+> void registerCommadableMethod(String method, [Schema?](../../../commons/validate/schema) schema, Future\<dynamic\> Function(String? correlationId, [Parameters](../../../commons/run/parameters) args) action)
+
+- **method**: String - the GRPC method name.
+- **schema**: [Schema?](../../../commons/validate/schema) - the schema to use for parameter validation.
+- **action**: Future\<dynamic\> Function(String? correlationId, [Parameters](../../../commons/run/parameters) args) - the action to perform at the given route.
 
 #### registerInterceptor
 Registers a middleware for methods in gRPC endpoint.
@@ -124,6 +136,13 @@ Registers a middleware for methods in gRPC endpoint.
 > void registerInterceptor(grpc.Interceptor action)
 
 - **action**: grpc.Interceptor - an action function that is called when middleware is invoked.
+
+#### registerService
+Registers a service with related implementation
+
+> void registerService(grpc.Service implementation)
+
+- **implementation**: grpc.Service - service implementation methods.
 
 #### setReferences
 Sets references to dependent components.

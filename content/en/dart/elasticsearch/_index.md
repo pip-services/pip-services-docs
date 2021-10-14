@@ -46,7 +46,7 @@ class MyComponent implements IConfigurable, IReferenceable {
     this._logger.setReferences(refs);
   }
   
-  myMethod(String? correlationId, param1) {
+  myMethod(String correlationId, param1) {
     this._logger.trace(correlationId, "Executed method mycomponent.mymethod");
     ....
   }

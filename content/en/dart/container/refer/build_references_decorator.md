@@ -28,17 +28,17 @@ Creates a new instance of the decorator.
 Clarifies a component locator by merging two descriptors into one to replace missing fields.
 That allows to get a more complete descriptor that includes all possible fields.
 
-> dynamic clarifyLocator(locator, [IFactory](../../../components/build/ifactory) factory)
+> dynamic clarifyLocator(locator, [IFactory?](../../../components/build/ifactory) factory)
 - **locator**: dynamic - component locator to clarify.
-- **factory**: [IFactory](../../../components/build/ifactory) - factory that shall create the component.
+- **factory**: [IFactory?](../../../components/build/ifactory) - factory that shall create the component.
 - **returns**: dynamic - clarified component descriptor (locator)
 
 #### create
 Creates a component identified by the given locator.
 
-> dynamic create(locator, [IFactory](../../../components/build/ifactory) factory)
+> dynamic create(locator, [IFactory?](../../../components/build/ifactory) factory)
 - **locator**: dynamic - locator used to identify the component to be created.
-- **factory**: [IFactory](../../../components/build/ifactory) - factory that shall create the component.
+- **factory**: [IFactory?](../../../components/build/ifactory) - factory that shall create the component.
 - **returns**: dynamic - created component.
 
 #### find
@@ -56,6 +56,6 @@ Throws a [ReferenceException](../../../commons/refer/reference_exception) when r
 Finds a factory capable creating a component by a given descriptor
 from the components registered in the references.
 
-> [IFactory](../../../components/build/ifactory) findFactory(locator)
+> [IFactory?](../../../components/build/ifactory) findFactory(locator)
 - **locator**: dynamic - locator of the component to be created.
 - **returns**: [IFactory](../../../components/build/ifactory) - found factory or null if no factory was found.

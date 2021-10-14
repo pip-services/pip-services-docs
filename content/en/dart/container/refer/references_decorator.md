@@ -17,10 +17,10 @@ The ReferencesDecorator class allows you to create chainable decorators for IRef
 ### Constructors
 Creates a new instance of the decorator.
 
-> ReferencesDecorator([IReferences](../../../commons/refer/ireferences) nextReferences, [IReferences](../../../commons/refer/ireferences) topReferences)
+> ReferencesDecorator([IReferences?](../../../commons/refer/ireferences) nextReferences, [IReferences?](../../../commons/refer/ireferences) topReferences)
 
-- **nextReferences**: [IReferences](../../../commons/refer/ireferences) - next references or decorator in the chain.
-- **topReferences**: [IReferences](../../../commons/refer/ireferences) - decorator at the top of the chain.
+- **nextReferences**: [IReferences?](../../../commons/refer/ireferences) - next references or decorator in the chain.
+- **topReferences**: [IReferences?](../../../commons/refer/ireferences) - decorator at the top of the chain.
 
 ### Fields
 
@@ -28,11 +28,11 @@ Creates a new instance of the decorator.
 
 #### nextReferences
 Next references or decorator in the chain.
-> **nextReferences**: [IReferences](../../../commons/refer/ireferences)
+> **nextReferences**: [IReferences?](../../../commons/refer/ireferences)
 
 #### topReferences
 Decorator at the top of the chain.
-> **topReferences**: [IReferences](../../../commons/refer/ireferences)
+> **topReferences**: [IReferences?](../../../commons/refer/ireferences)
 
 </span>
 
@@ -68,9 +68,9 @@ Gets locators for all registered component references in the reference map.
 Gets an optional component reference that matches the specified locator.
 
 `@override`
-> T getOneOptional\<T\>(locator)
+> T? getOneOptional\<T\>(locator)
 - **locator**: dynamic - locator to find references by.
-- **returns**: T - matching component reference or null if nothing was found.
+- **returns**: T? - matching component reference or null if nothing was found.
 
 
 #### getOneRequired

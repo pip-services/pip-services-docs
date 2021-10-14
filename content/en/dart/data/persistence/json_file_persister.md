@@ -68,10 +68,10 @@ Loads data items from an external JSON file.
 Saves given data items to an external JSON file.
 
 `@override`
-> Future save(String correlation_id, List\<T\> items)
+> Future save(String correlation_id, List\<T?\> items)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **items**: List\<T\> - list if data items to save
+- **items**: List\<T?\> - list if data items to save
 
 
 ### Examples

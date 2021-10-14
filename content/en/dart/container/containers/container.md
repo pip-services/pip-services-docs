@@ -40,10 +40,10 @@ The Container class allows you to create an inversion of control (IoC) container
 ### Constructors
 Creates a new instance of the container.  
 
-> Container([String name, String description])
+> Container([String? name, String? description])
 
-- **name**: String - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
-- **description**: String - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
+- **name**: String? - (optional) container's name (accessible via [ContextInfo](../../../components/info/context_info))
+- **description**: String? - (optional) container's description (accessible via [ContextInfo](../../../components/info/context_info))
 
 ### Fields
 
@@ -51,11 +51,11 @@ Creates a new instance of the container.
 
 #### config
 Configuration of the container
-> **config**: [ContainerConfig](../../config/container_config)
+> **config**: [ContainerConfig?](../../config/container_config)
 
 #### references
 Container's references
-> **references**: [ContainerReferences](../../refer/container_references)
+> **references**: [ContainerReferences?](../../refer/container_references)
 
 #### logger
 Logger.
@@ -63,7 +63,7 @@ Logger.
 
 #### info
 Container's information.
-> **info**: [ContextInfo](../../../components/info/context_info)
+> **info**: [ContextInfo?](../../../components/info/context_info)
 
 #### factories
 Default factories.
@@ -120,7 +120,7 @@ Opens the component.
 #### readConfigFromFile
 Reads the container's configuration from a JSON or YAML file and parameterizes it with the given values.
 
-> void readConfigFromFile(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> Future readConfigFromFile(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **path**: String - path to the configuration file

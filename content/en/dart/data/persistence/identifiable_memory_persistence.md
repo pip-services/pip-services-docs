@@ -46,22 +46,22 @@ Creates a new instance of the identifiable file persistence component.
 Creates a data item.
 
 `@override`
-> Future\<T\> create(String? correlationId, T item)
+> Future\<T?\> create(String? correlationId, T? item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - item to be created.
-- **returns**: Future\<T\> - created item
+- **item**: T? - item to be created.
+- **returns**: Future\<T?\> - created item
 
 
 #### deleteById
 Deletes a data item based on it's unique id.
 
 `@override`
-> Future\<T\> deleteById(String? correlationId, K id)
+> Future\<T?\> deleteById(String? correlationId, K? id)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **id**: K -  id of the item to be deleted
-- **returns**: Future\<T\> - deleted item.
+- **id**: K? -  id of the item to be deleted
+- **returns**: Future\<T?\> - deleted item.
 
 
 #### deleteByIds

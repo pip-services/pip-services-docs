@@ -82,7 +82,7 @@ Clears the component's state.
 #### create
 Creates a data item.
 
-> Future\<T\> create(String? correlationId, T item)
+> Future\<T?\> create(String? correlationId, T item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be created.
@@ -113,10 +113,10 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 - **returns**: Future\<int\> - number of data items that satisfy the filter.
 
 
-#### getListByFilter
+#### getListByFilterEx
 Gets a list of data items retrieved by a given filter and sorted according to sorting parameters.
 
-This method shall be called by a public **getListByFilter** method from a child class that
+This method shall be called by a public **getListByFilterEx** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
 > Future\<List\<T\>\> getListByFilterEx(String? correlationId, filter, sort, select)

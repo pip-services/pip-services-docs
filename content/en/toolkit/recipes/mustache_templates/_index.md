@@ -54,7 +54,7 @@ In order to use the Mustache template library, we must first install the Express
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/logging/__code1_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -87,3 +87,67 @@ The library supports the following injections and conditional blocks:
     <td>{{ #if VARIABLE }} Some value or {{{VARIABLE}}} {{/if}}{{{^VARIABLE}}} Some value or {{{VARIABLE}}} {{{/VARIABLE}}}</td>
   </tr>
 </table>
+
+#### Pre-requisites
+
+To use Mustache templates, we must import the **MustacheTemplate** class. The following command shows how to do this:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### Examples
+
+Below are some examples of evaluations:
+
+##### a)	Variable
+
+Variables that have a dictionary structure can be used to validate a template. The following example shows how to use the evaluate_with_variables method.
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Which produces the following output:
+
+<img src="figure1.png" alt="figure 1" style="width:100%">

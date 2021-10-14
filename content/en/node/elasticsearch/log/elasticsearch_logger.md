@@ -74,6 +74,13 @@ Closes the component and frees used resources.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
+#### getLogItem
+Converts elasticsearch object to 6.x or 7.x version by **include_type_name** parameter.
+
+> protected getLogItem(): any
+
+- **returns**: any - map in elasticsearch object format
+
 #### isOpen
 Checks if the component is open.
 

@@ -29,9 +29,9 @@ The JsonConfigReader class allows you to create a config reader that reads a con
 ### Constructors
 Creates a new instance of the config reader.
 
-> JsonConfigReader([String path])
+> JsonConfigReader([String? path])
 
-- **path**: String - (optional) path to the configuration file.
+- **path**: String? - (optional) path to the configuration file.
 
 
 ### Instance methods

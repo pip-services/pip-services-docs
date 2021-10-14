@@ -37,8 +37,8 @@ Resolves all connection parameters by their key.
 #### resolveOne
 Resolves a single connection parameters by its key.
 
-> Future<[ConnectionParams](../connection_params)> resolveOne(String? correlationId, String key)
+> Future<[ConnectionParams?](../connection_params)> resolveOne(String? correlationId, String key)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - key to uniquely identify the connection.
-- **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection.
+- **returns**: Future<[ConnectionParams?](../connection_params)> - resolved connection.

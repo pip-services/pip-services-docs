@@ -162,13 +162,13 @@ Configures a component by passing configuration parameters.
 
 #### instrument
 Adds instrumentation to log calls and measures call time.
-It returns a Timing object that is used to end the time measurement.
+It returns a CounterTiming object that is used to end the time measurement.
 
-> Timing instrument(String? correlationId, String name)
+> CounterTiming instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/count/timing/) - InstrumentTiming object used to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing/) - InstrumentTiming object used to end the time measurement.
 
 
 #### isOpen
@@ -203,13 +203,13 @@ Sets references to dependent components.
 class MyRestClient extends RestClient implements IMyClient {
    ...
     Future<MyData> getData(String? correlationId, String id) async {
-       var timing = instrument(correlationId, 'myclient.get_data');
+       var counter_timing = instrument(correlationId, 'myclient.get_data');
       try{
         var result = await call('get', '/get_data' correlationId, { id: id }, null);
-        timing.endTiming();
+        counter_timing.endTiming();
         return result;
       } catch (err) {
-           timing.endTiming();
+           counter_timing.endTiming();
            rethrow;
        });
    }

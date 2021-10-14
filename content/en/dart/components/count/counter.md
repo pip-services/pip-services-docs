@@ -31,27 +31,27 @@ Creates an instance of the data object.
 
 #### last
 Last recorded value
-> **last**: int
+> **last**: int?
 
 #### count
 Total count
-> **count**: int
+> **count**: int?
 
 #### min
 Minimum value
-> **min**: int
+> **min**: int?
 
 #### max
 Maximum value
-> **max**: int
+> **max**: int?
 
 #### average
 Average value
-> **average**: int
+> **average**: int?
 
 #### time
 Recorded timestamp
-> **time**: DateTime
+> **time**: DateTime?
 
 #### name
 Counter's unique name

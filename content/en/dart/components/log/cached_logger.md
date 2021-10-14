@@ -93,6 +93,17 @@ Saves log messages from the cache.
 
 - **messages**: List<[LogMessage](../log_message)> - list with log messages
 
+#### write
+Writes a log message to the logger destination.
+
+`@override`
+> void write([LogLevel](../log_level) level, String? correlationId, Exception? error, String message)
+
+- **level**: [LogLevel](../log_level) - a log level.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
+- **error**: Exception? - an error object associated with this message.
+- **message**: String - a human-readable message to log.
+
 
 
 ### See also

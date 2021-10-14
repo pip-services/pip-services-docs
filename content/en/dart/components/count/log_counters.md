@@ -34,9 +34,9 @@ Creates a new instance of the counters.
 Saves the current counters measurements.
 
 `@override`
-> void save(List<[Counter](../counter)> counters)
+> void save(List<[Counter](../counter)>? counters)
 
-- **counters**: List<[Counter](../counter)> - current counters measurements to be saved.
+- **counters**: List<[Counter](../counter)>? - current counters measurements to be saved.
 
 
 #### setReferences
@@ -56,12 +56,12 @@ counters.setReferences(References.fromTuples([
 ]));
 
 counters.increment("mycomponent.mymethod.calls");
-var timing = counters.beginTiming("mycomponent.mymethod.exec_time");
+var counter_timing = counters.beginTiming("mycomponent.mymethod.exec_time");
 
 try {
     ...
 } finally {
-    timing.endTiming();
+    counter_timing.endTiming();
 }
 
 counters.dump();

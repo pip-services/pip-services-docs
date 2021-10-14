@@ -112,11 +112,11 @@ Configures a component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a InstrumentTiming object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String correlationId, String name) 
+> [CounterTiming](../../../components/count/counter_timing) instrument(String correlationId, String name) 
 
 - **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - a method name.
-- **returns**: [Timing](../../../components/count/timing) - object to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - object to end the time measurement.
 
 #### invoke
 Performs AWS Lambda Function invocation.
@@ -161,9 +161,9 @@ class MyLambdaClient extends LambdaClient implements IMyClient {
     ...
     public getData(String correlationId, id: string,
         callback: (err: any, result: MyData) => void): void {
-        var timing = this.instrument(correlationId, 'myclient.get_data');
+        var counter_timing = this.instrument(correlationId, 'myclient.get_data');
         this.call('get_data' correlationId, { id: id }, (err, result) => {
-            timing.endTiming();
+            counter_timing.endTiming();
             callback(err, result);
         });
     }

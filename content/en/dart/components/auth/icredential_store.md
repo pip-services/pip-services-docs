@@ -19,11 +19,11 @@ The ICredentialStore interface is used to store and look up credentials used to 
 #### lookup
 Lookups credential parameters by its key.
 
-> Future<[CredentialParams](../credential_params)> lookup(String? correlationId, String key)
+> Future<[CredentialParams?](../credential_params)> lookup(String? correlationId, String? key)
 
 - **correlationId**: String? - (optional) transaction id to trace execution through the call chain.
 - **key**: String - key to uniquely identify the credential.
-- **returns**: Future<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found.
+- **returns**: Future<[CredentialParams?](../credential_params)> - found credential parameters or null if nothing was found.
 
 
 #### store

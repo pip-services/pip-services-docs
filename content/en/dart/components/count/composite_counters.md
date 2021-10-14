@@ -10,7 +10,7 @@ description: >
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
-[ITimingCallback](../itiming_callback)
+[ICounterTimingCallback](../icounter_timing_callback)
 
 
 ### Description
@@ -28,9 +28,9 @@ The CompositeCounters allows you to aggregate all counters from different compon
 ### Constructors
 Creates a new instance of the counters.
 
-> CompositeCounters([[IReferences](../../../commons/refer/ireferences) references])
+> CompositeCounters([[IReferences?](../../../commons/refer/ireferences) references])
 
-- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
+- **references**: [IReferences?](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 ### Fields
@@ -48,23 +48,23 @@ A list containing the aggregated counters.
 
 #### beginTiming
 Begins measurement of execution time interval.
-It returns [Timing](../timing) object which has to be called at
-[[Timing.endTiming](../timing/#endtiming) to end the measurement and update the counter.
+It returns [CounterTiming](../counter_timing) object which has to be called at
+[[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
 `@override`
-> [Timing](../timing) beginTiming(String name)
+> [CounterTiming](../counter_timing) beginTiming(String name)
 
 - **name**: String - counter name of Interval type.
-- **returns**: [Timing](../timing) - callback object to end timing.
+- **returns**: [CounterTiming](../counter_timing) - callback object to end counter_timing.
 
 
 #### endTiming
 Ends measurement of execution elapsed time and updates specified counter.
 
 `@override`
-> void endTiming(String name, int elapsed)
+> void endTiming(String? name, int elapsed)
 
-- **name**: String - counter name
+- **name**: String? - counter name
 - **elapsed**: int - execution elapsed time in milliseconds to update the counter.
 
 
@@ -72,7 +72,7 @@ Ends measurement of execution elapsed time and updates specified counter.
 Increments counter by given value.
 
 `@override`
-> void increment(String name, int value)
+> void increment(String? name, int value)
 
 - **name**: String - counter name of Increment type.
 - **value**: int - value to add to the counter.
@@ -147,11 +147,11 @@ class MyComponent implements IReferenceable {
 
     void myMethod() {
        _counters.increment('mycomponent.mymethod.calls');
-        var timing =_counters.beginTiming('mycomponent.mymethod.exec_time');
+        var counter_timing =_counters.beginTiming('mycomponent.mymethod.exec_time');
         try {
             ...
         } finally {
-            timing.endTiming();
+            counter_timing.endTiming();
         }
     }
 }

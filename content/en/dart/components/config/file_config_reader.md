@@ -23,9 +23,9 @@ The FileConfigReader class allows you to create a config reader that reads a con
 ### Constructors
 Creates a new instance of the config reader.
 
-> FileConfigReader([String path])
+> FileConfigReader([String? path])
 
-- **path**: String - (optional) path to a configuration file.
+- **path**: String? - (optional) path to a configuration file.
 
 
 ### Instance methods
@@ -42,9 +42,9 @@ Configures a component by passing its configuration parameters.
 #### getPath
 Gets the path to a configuration file.
 
-> String getPath()
+> String? getPath()
 
-- **returns**: String - path to the configuration file.
+- **returns**: String? - path to the configuration file.
 
 
 #### setPath

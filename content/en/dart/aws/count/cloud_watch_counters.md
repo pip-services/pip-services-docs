@@ -111,11 +111,11 @@ counters.setReferences(References.fromTuples([
 await counters.open('123');
     ...
 counters.increment('mycomponent.mymethod.calls');
-var timing = counters.beginTiming('mycomponent.mymethod.exec_time');
+var counter_timing = counters.beginTiming('mycomponent.mymethod.exec_time');
 try {
     ...
 } finally {
-    timing.endTiming();
+    counter_timing.endTiming();
 }
 counters.dump();
 ```

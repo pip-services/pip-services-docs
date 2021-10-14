@@ -80,6 +80,16 @@ Sets message cache as updated and dumps it when timeout expires.
 
 > `protected` update()
 
+#### write
+Writes a log message to the logger destination.
+
+> `protected` write(level: [LogLevel](../log_level), correlationId: string, error: Error, message: string): void
+
+- **level**: [LogLevel](../log_level) - a log level.
+- **correlationId**:  - (optional) transaction id to trace execution through call chain.
+- **error**: Error - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+
 ### Abstract methods
 
 #### save

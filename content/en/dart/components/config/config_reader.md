@@ -32,15 +32,16 @@ Configures component by passing configuration parameters.
 #### parameterize
 Parameterized configuration template given as string with dynamic parameters.
 
-> String parameterize(String config, [ConfigParams](../../../commons/config/config_params) parameters)
+> String? parameterize(String config, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **config**: String - string with configuration template to be parameterized
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
-- **returns**: String - parameterized configuration string.
+- **returns**: String? - parameterized configuration string.
 
 #### readConfig
 Reads configuration and parameterizes it with given values.
 
+`@override`
 > Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.

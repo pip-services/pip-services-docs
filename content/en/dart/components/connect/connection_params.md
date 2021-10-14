@@ -43,25 +43,25 @@ Creates a new ConnectionParams object and fills it with values.
 Gets the key to retrieve this connection from DiscoveryService.
 If this key is null, then all parameters are already present.
 
-> String getDiscoveryKey()
+> String? getDiscoveryKey()
 
-- **returns**: String - resolved options or error.
+- **returns**: String? - resolved options or error.
 
 
 #### getHost
 Gets the host name or IP address.
 
-> String getHost()
+> String? getHost()
 
-- **returns**: String - host name or IP address.
+- **returns**: String? - host name or IP address.
 
 
 #### getPort
 Gets the port number.
 
-> int getPort()
+> int? getPort()
 
-- **returns**: int - port number.
+- **returns**: int? - port number.
 
 
 #### getPortWithDefault
@@ -76,10 +76,10 @@ Gets the port number with default value.
 #### getProtocol
 Gets the connection protocol.
 
-> String getProtocol([String defaultValue])
+> String? getProtocol([String? defaultValue])
 
-- **defaultValue**: String - (optional) default protocol
-- **returns**: String - connection protocol or default value if it's not set.
+- **defaultValue**: String? - (optional) default protocol
+- **returns**: String? - connection protocol or default value if it's not set.
 
 #### getProtocolWithDefault
 Gets the connection protocol with default value.
@@ -93,25 +93,25 @@ Gets the connection protocol with default value.
 #### getUri
 Gets the resource URI or connection string. Usually it includes all connection parameters in it.
 
-> String getUri()
+> String? getUri()
 
-- **returns**: String - resource URI or connection string.
+- **returns**: String? - resource URI or connection string.
 
 
 #### setDiscoveryKey
 Sets the key to retrieve these parameters from DiscoveryService.
 
-> void setDiscoveryKey(String value)
+> void setDiscoveryKey(String? value)
 
-- **value**: String - new key to a retrieve connection.
+- **value**: String? - new key to a retrieve connection.
 
 
 #### setHost
 Sets the host name or IP address.
 
-> void setHost(String value)
+> void setHost(String? value)
 
-- **value**: String - new host name or IP address.
+- **value**: String? - new host name or IP address.
 
 
 #### setPort
@@ -125,9 +125,9 @@ Sets the port number.
 #### setProtocol
 Sets the connection protocol.
 
-> void setProtocol(String value)
+> void setProtocol(String? value)
 
-- **value**: String - new connection protocol.
+- **value**: String? - new connection protocol.
 
 
 #### setUri
@@ -153,10 +153,10 @@ Retrieves a single ConnectionParams from configuration parameters
 from "connection" section. If "connections" section is present instead,
 then it returns only the first connection element.
 
-> `static` List<[ConnectionParams]()> manyFromConfig([ConfigParams](../../../commons/config/config_params) config)
+> `static` List<[ConnectionParams?]()> manyFromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
-- **returns**: List<[ConnectionParams]()> - generated ConnectionParams object.
+- **returns**: List<[ConnectionParams?]()> - generated ConnectionParams object.
 
 
 #### fromString

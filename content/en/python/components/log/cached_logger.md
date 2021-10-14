@@ -80,6 +80,15 @@ Sets message cache as updated and dumps it when timeout expires.
 
 > _update()
 
+#### _write
+Writes a log message to the logger destination.
+
+> _write(level: [LogLevel](../log_level), correlation_id: Optional[str], ex: Exception, message: str)
+
+- **level**: [LogLevel](../log_level) - a log level.
+- **correlationId**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **ex**: Exception - an error object associated with this message.
+- **message**: str - a human-readable message to log.
 
 #### _save
 Saves log messages from the cache.

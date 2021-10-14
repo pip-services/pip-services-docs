@@ -29,9 +29,9 @@ The MemoryCredentialStore class is used to create credential stores that keep th
 ### Constructors
 Creates a new instance of the credential store.
 
-> MemoryCredentialStore([[ConfigParams](../../../commons/config/config_params) config])
+> MemoryCredentialStore([[ConfigParams?](../../../commons/config/config_params) config])
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with credential parameters.
+- **config**: [ConfigParams?](../../../commons/config/config_params) - (optional) configuration with credential parameters.
 
 
 ### Instance methods
@@ -49,11 +49,11 @@ Configures component by passing configuration parameters.
 Lookups credential parameters by its key.
 
 `@override`
-> Future<[CredentialParams](../credential_params)> lookup(String? correlationId, String key)
+> Future<[CredentialParams?](../credential_params)> lookup(String? correlationId, String? key)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **key**: String - key to uniquely identify the credential.
-- **returns**: Future<[CredentialParams](../credential_params)> - found credential parameters or null if nothing was found
+- **key**: String? - key to uniquely identify the credential.
+- **returns**: Future<[CredentialParams?](../credential_params)> - found credential parameters or null if nothing was found
 
 
 #### readCredentials
@@ -68,11 +68,11 @@ Each section represents an individual CredentialParams.
 #### store
 Stores credential parameters into the store.
 
-> Future store(String? correlationId, String key, [CredentialParams](../credential_params) credential)
+> Future store(String? correlationId, String key, [CredentialParams?](../credential_params) credential)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - key to uniquely identify the credential parameters.
-- **credential**: [CredentialParams](../credential_params) - credential parameters to be stored.
+- **credential**: [CredentialParams?](../credential_params) - credential parameters to be stored.
 
 ### Examples
 

@@ -87,11 +87,11 @@ Gets an entry point into this lambda function.
 #### instrument
 Gets entry point into this lambda function.
 
->  [Timing](../../../components/count/timing) instrument(String correlationId, String name)
+>  [CounterTiming](../../../components/count/counter_timing) instrument(String correlationId, String name)
 
 - **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/count/timing) - object to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - object to end the time measurement.
 
 
 #### register

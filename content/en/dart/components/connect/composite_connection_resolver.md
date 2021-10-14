@@ -39,7 +39,7 @@ The CompositeConnectionResolver class allows you to resolve connection and crede
 
 #### _options
 Connection options
->  **_options**: [ConfigParams](../../../commons/config/config_params)
+>  **_options**: [ConfigParams?](../../../commons/config/config_params)
 
 #### _connectionResolver
 Connections resolver.
@@ -55,7 +55,7 @@ Cluster support (multiple connections)
 
 #### _defaultProtocol
 Default protocol
->  **_defaultProtocol**: String
+>  **_defaultProtocol**: String?
 
 #### _defaultPort
 Default port
@@ -63,7 +63,7 @@ Default port
 
 #### _supported_protocols
 List of supported protocols
->  **_supportedProtocols**: List\<String\>
+>  **_supportedProtocols**: List\<String\>?
 
 
 </span>
@@ -168,17 +168,17 @@ Validates connection parameters.
 Throws error if validation failed.
 This method can be overriden in child classes.
 
-> void validateConnection(String? correlationId, [ConnectionParams](../connection_params) connection)
+> void validateConnection(String? correlationId, [ConnectionParams?](../connection_params) connection)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
+- **connection**: [ConnectionParams?](../connection_params) - connection parameters to be validated
 
 
 #### validateCredential
 Validates credential parameters.
 This method can be overriden in child classes.
 
-> void validateCredential(String? correlationId, [CredentialParams](../../auth/credential_params) credential)
+> void validateCredential(String? correlationId, [CredentialParams?](../../auth/credential_params) credential)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

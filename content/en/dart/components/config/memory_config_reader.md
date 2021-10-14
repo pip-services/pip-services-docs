@@ -24,9 +24,9 @@ The configuration parameters are the configuration template
 ### Constructors
 Creates a new instance of a config reader.
 
-> MemoryConfigReader([[ConfigParams](../../../commons/config/config_params) config])
+> MemoryConfigReader([[ConfigParams?](../../../commons/config/config_params) config])
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
+- **config**: [ConfigParams?](../../../commons/config/config_params) - (optional) component configuration parameters
 
 
 ### Instance methods
@@ -44,10 +44,10 @@ Configures a component by passing its configuration parameters.
 Reads a configuration and parameterizes it with given values.
 
 `@override`
-> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
+> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String? correlationId, [ConfigParams?](../../../commons/config/config_params) parameters)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters of the configuration or null to skip parameterization.
+- **parameters**: [ConfigParams?](../../../commons/config/config_params) - values to parameters of the configuration or null to skip parameterization.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.
 
 ### Examples

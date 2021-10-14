@@ -31,10 +31,10 @@ The ContextInfo class allows you to create context information components that p
 ### Constructors
 Creates a new instance of this context info.
 
-> ContextInfo([String name, String description]) 
+> ContextInfo([String? name, String? description]) 
 
-- **name**: String - (optional) a context name.
-- **description**: String - (optional) a human-readable description of the context.
+- **name**: String? - (optional) a context name.
+- **description**: String? - (optional) a human-readable description of the context.
 
 
 ### Properties
@@ -55,26 +55,26 @@ Gets the unique context id. Usually it is the current host name.
 #### description
 Gets the human-readable description of the context.
 
-> String get description
+> String? get description
 
-- **returns**: String - human-readable description of the context.
+- **returns**: String? - human-readable description of the context.
 
 Sets the human-readable description of the context.
 
-> set description(String value)
+> set description(String? value)
 
-- **description**: String - new human readable description of the context.
+- **description**: String? - new human readable description of the context.
 
 #### name
 Gets the context's name.
 
-> String get name
+> String? get name
 
 - **returns**: String - context's name
 
 Sets the context's name.
 
-> set name(String value)
+> set name(String? value)
 
 - **name**: String - new name for the context.
 

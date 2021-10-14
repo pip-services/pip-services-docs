@@ -222,6 +222,18 @@ Logs a warning that may or may not have a negative impact.
 - **message**: string - human-readable message to log.
 - **args**: object[] - arguments to parameterize the message.
 
+### Abstract methods
+
+#### Write
+Writes a log message to the logger destination.
+
+> `protected abstract` void Write([LogLevel](../log_level) level, string correlationId, Exception error, string message)
+
+- **level**: [LogLevel](../log_level) - a log level.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **error**: Exception - an error object associated with this message.
+- **message**: string - a human-readable message to log.
+
 
 
 ### See also

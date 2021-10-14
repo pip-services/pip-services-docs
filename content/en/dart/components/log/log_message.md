@@ -22,25 +22,25 @@ The LogMessage class allows you to create data objects used to store captured lo
 
 #### time
 Time the message was generated
-> **time**: DateTime
+> **time**: DateTime?
 
 #### level
 Log level
-> **level**: String
+> **level**: String?
 
 #### source
 Source (context name)
-> **source**: String
+> **source**: String?
 
 #### correlation_id
 Transaction id used to trace execution through a call chain.
-> **correlation_id**: String
+> **correlation_id**: String?
 
 #### error
 Logs recoverable application error.
 
 See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
-> **error**: [ErrorDescription](../../../commons/errors/error_description)
+> **error**: [ErrorDescription?](../../../commons/errors/error_description)
 
 #### message
 The human-readable message

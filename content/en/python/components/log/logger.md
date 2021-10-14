@@ -178,6 +178,18 @@ Logs a warning that may or may not have a negative impact.
 - **args**: Any - arguments to parameterize the message.
 - **kwargs**: Any - arguments to parameterize the message.
 
+### Abstract methods
+
+#### _write
+Writes a log message to the logger destination.
+
+> `abstractmethod` _write(level: [LogLevel](../log_level), correlation_id: Optional[str], error: Optional[Exception], message: Optional[str]):
+
+- **level**: [LogLevel](../log_level) - a log level.
+- **correlationId**: Optional[str] - (optional) transaction id to trace execution through call chain.
+- **error**: Optional[Exception] - an error object associated with this message.
+- **message**: Optional[str] - a human-readable message to log.
+
 
 ### See also
 - #### [ILogger](../ilogger)

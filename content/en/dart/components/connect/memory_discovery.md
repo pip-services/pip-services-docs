@@ -25,7 +25,7 @@ The MemoryDiscovery class allows you to create discovery services that keep conn
 ### Constructors
 Creates a new instance of the class.
 
-> MemoryDiscovery([[ConfigParams](../../../commons/config/config_params) config])
+> MemoryDiscovery([[ConfigParams?](../../../commons/config/config_params) config])
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) configuration with connection parameters.
 
@@ -76,11 +76,11 @@ Resolves all connection parameters by their key.
 Resolves a single connection parameters by its key.
 
 `@override`
-> Future<[ConnectionParams](../connection_params)> resolveOne(String? correlationId, String key)
+> Future<[ConnectionParams?](../connection_params)> resolveOne(String? correlationId, String key)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - key to uniquely identify the connection. 
-- **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection.
+- **returns**: Future<[ConnectionParams?](../connection_params)> - resolved connection.
 
 ### Examples
 

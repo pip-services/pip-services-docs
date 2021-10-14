@@ -23,9 +23,9 @@ The YamlConfigReader allows you to create a config reader that reads a configura
 ### Constructors
 Creates a new instance of the config reader.
 
-> YamlConfigReader([String path])
+> YamlConfigReader([String? path])
 
-- **path**: String - (optional) path to the configuration file.
+- **path**: String? - (optional) path to the configuration file.
 
 
 ### Instance methods

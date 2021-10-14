@@ -150,9 +150,10 @@ Writes a log message to the logger destination.
 Saves log messages from the cache.
 Throws error if not done.
 
-> `protected abstract` save(messages: [OperationTrace](../operation_trace)[])
+> `protected abstract` save(messages: [OperationTrace](../operation_trace)[], callback: (err: any) => void): void
 
 - **messages**: [OperationTrace](../operation_trace)[] - a list with log messages
+- **callback**: (err: any) => void - callback function that receives error or null for success.
 
 
 ### See also

@@ -96,13 +96,13 @@ Configures a component by passing its configuration parameters.
 
 #### instrument
 Adds instrumentation to log calls and measure call time.
-It returns a Timing object that is used to end the time measurement.
+It returns a CounterTiming object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String? correlationId, String name)
+> [CounterTiming](../../../components/count/counter_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/count/timing) - InstrumentTiming object to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - InstrumentTiming object to end the time measurement.
 
 
 #### isOpen

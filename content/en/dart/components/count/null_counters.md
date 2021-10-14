@@ -22,14 +22,14 @@ The NullCounters class allows you to create dummy performance counters.
 
 #### beginTiming
 Begins measurement of execution time interval.
-It returns a [Timing](../timing) object which has to be called at
-[Timing.endTiming](../timing/#endtiming) to end the measurement and update the counter.
+It returns a [CounterTiming](../counter_timing) object which has to be called at
+[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
 `@override`
-> [Timing](../timing) beginTiming(String name)
+> [CounterTiming](../counter_timing) beginTiming(String name)
 
 - **name**: String - counter name of Interval type.
-- **returns**: [Timing](../timing) - callback object to end timing.
+- **returns**: [CounterTiming](../counter_timing) - callback object to end counter_timing.
 
 
 #### increment

@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "ITimingCallback"
-linkTitle: "ITimingCallback"
+title: "ICounterTimingCallback"
+linkTitle: "ICounterTimingCallback"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-components-dart"
 description: >
     Interface for a callback to end the measurement of the execution elapsed time.
@@ -9,15 +9,15 @@ description: >
 
 ### Description
 
-The ITimingCallback interface defines the method used for a callback to end the measurement of the execution elapsed time. 
+The ICounterTimingCallback interface defines the method used for a callback to end the measurement of the execution elapsed time. 
 
 ### Instance methods
 
 #### endTiming
 Ends measurement of execution elapsed time and updates a specified counter.
-See also [Timing.endTiming](../timing/#endtiming)
+See also [CounterTiming.endTiming](../counter_timing/#endtiming)
 
-> void endTiming(String name, int elapsed)
+> void endTiming(String? name, int elapsed)
 
-- **name**: String - counter name
+- **name**: String? - counter name
 - **elapsed**: int - execution elapsed time in milliseconds to update the counter.

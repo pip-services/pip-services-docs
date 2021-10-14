@@ -113,11 +113,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String? correlationId, String name)
+> [CounterTiming](../../../components/count/counter_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [Timing](../../../components/count/timing) - CounterTiming object used to end the time measurement.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
 
 
 #### instrumentError
@@ -164,11 +164,11 @@ Sets references to dependent components.
 class MyGrpcClient extends GrpcClient implements IMyClient {
    ...
    Future<MyData> getData(String? correlationId, string id) async {
-       var timing = this.instrument(correlationId, 'myclient.get_data');
+       var counter_timing = this.instrument(correlationId, 'myclient.get_data');
        var request = MyDataRequest();
        request.id = id;
        var response = await call<MydataRequest,MyDataResponse>('get_data', correlationId, request)
-       timing.endTiming();
+       counter_timing.endTiming();
        MyData item;
        ///... convert MyDataResponse to MyData
        return item;

@@ -46,43 +46,43 @@ Creates a new credential parameters and fills it with values.
 #### getAccessId
 Gets the application's access id. The value can be stored in parameters "access_id" or "client_id".
 
-> String getAccessId()
+> String? getAccessId()
 
-- **returns**: String - application's access id.
+- **returns**: String? - application's access id.
 
 
 #### getAccessKey
 Gets the application's secret key.
 The value can be stored in parameters "access_key", "client_key" or "secret_key".
 
-> String getAccessKey()
+> String? getAccessKey()
 
-- **returns**: String - application's secret key.
+- **returns**: String? - application's secret key.
 
 
 #### getPassword
 Get the user's password. The value can be stored in parameters "password" or "pass".
 
-> String getPassword()
+> String? getPassword()
 
-- **returns**: String - the user password.
+- **returns**: String? - the user password.
 
 
 #### getStoreKey
 Gets the key to retrieve these credentials from [ICredentialStore](../icredential_store).
 If this key is null, then all parameters are already present.
 
-> String getStoreKey()
+> String? getStoreKey()
 
-- **returns**: String - the store key to retrieve credentials.
+- **returns**: String? - the store key to retrieve credentials.
 
 
 #### getUsername
 Gets the username. The value can be stored in parameters "username" or "user".
 
-> String getUsername()
+> String? getUsername()
 
-- **returns**: String - username.
+- **returns**: String? - username.
 
 
 #### setAccessId
@@ -96,33 +96,33 @@ Sets the application's access id.
 #### setAccessKey
 Sets the application's secret key.
 
-> void setAccessKey(String value)
+> void setAccessKey(String? value)
 
-- **value**: String - new application's secret key.
+- **value**: String? - new application's secret key.
 
 
 #### setPassword
 Sets the user's password.
 
-> void setPassword(String value)
+> void setPassword(String? value)
 
-- **password**: String - new user's password.
+- **password**: String? - new user's password.
 
 
 #### setStoreKey
 Sets the key to retrieve these parameters from [ICredentialStore](../icredential_store).
 
-> void setStoreKey(String value)
+> void setStoreKey(String? value)
 
-- **value**: String - new key to retrieve credentials.
+- **value**: String? - new key to retrieve credentials.
 
 
 #### setUsername
 Sets the username.
 
-> void setUsername(String value)
+> void setUsername(String? value)
 
-- **value**: String - new username.
+- **value**: String? - new username.
 
 
 #### useCredentialStore
@@ -140,10 +140,10 @@ Retrieves a single CredentialParams from configuration parameters
 from "credential" section. If the "credentials" section is present instead,
 then it returns only the first credential element.
 
-> `static` [CredentialParams]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
+> `static` [CredentialParams?]() fromConfig([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) -  containing a section named "credential(s)".
-- **returns**: [CredentialParams]() - generated CredentialParams object.
+- **returns**: [CredentialParams?]() - generated CredentialParams object.
 
 
 #### fromString

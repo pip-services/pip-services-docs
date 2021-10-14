@@ -30,9 +30,10 @@ The module contains the following packages:
 ### Use
 
 * Warning!
-Ath present, the Config package is not working with condition **{{#if var}} something {{/}}** in config files.
-Pleae, use **Mustache** syntax, for example **{{#var}} something {{/var}}**
+Config package now not work with condition **{{#if var}} something {{/}}** in config files.
+Use **Mustache** syntax, for example **{{#var}} something {{/var}}**
 
+## Use
 
 Add this to your package's pubspec.yaml file:
 ```yaml
@@ -72,7 +73,7 @@ class MyComponent implements IConfigurable, IReferenceable {
     this._counters.setReferences(refs);
   }
   
-  myMethod(String? correlationId, dynamic param1) {
+  myMethod(String correlationId, dynamic param1) {
     try{
       this._logger.trace(correlationId, "Executed method mycomponent.mymethod");
       this._counters.increment("mycomponent.mymethod.exec_count", 1);
@@ -87,7 +88,7 @@ class MyComponent implements IConfigurable, IReferenceable {
 }
 ```
 
-Example on how to get connection parameters and credentials using resolvers.
+Example how to get connection parameters and credentials using resolvers.
 The resolvers support "discovery_key" and "store_key" configuration parameters
 to retrieve configuration from discovery services and credential stores respectively.
 
@@ -102,45 +103,60 @@ import 'package:pip_services3_components/src/connect/ConnectionResolver.dart';
 import 'package:pip_services3_components/src/auth/CredentialParams.dart';
 import 'package:pip_services3_components/src/auth/CredentialResolver.dart';
 
-
 class MyComponent implements IConfigurable, IReferenceable, IOpenable {
-  ConnectionResolver _connectionResolver = ConnectionResolver();
-  CredentialResolver _credentialResolver = CredentialResolver();
-  
-  configure(ConfigParams config) {
-    this._connectionResolver.configure(config);
-    this._credentialResolver.configure(config);
-  }
-  
-  setReferences(IReferences refs) {
-    this._connectionResolver.setReferences(refs);
-    this._credentialResolver.setReferences(refs);
-  }
-  
-  ...
-  
-  open(String? correlationId) async{
+  final _connectionResolver = ConnectionResolver();
+  final _credentialResolver = CredentialResolver();
+  bool _opened = false;
 
-      ConnectionParams connection = await this._connectionResolver.resolve(correlationId);
-      
-      CredentialParams credential = await this._credentialResolver.lookup(correlationId);
-      
-      String host = connection.getHost();
-      int port = connection.getPort();
-      String user = credential.getUsername();
-      String pass = credential.getPassword();
-        ...
-      }
+  @override
+  void configure(ConfigParams config) {
+    _connectionResolver.configure(config);
+    _credentialResolver.configure(config);
+  }
+
+  @override
+  void setReferences(IReferences refs) {
+    _connectionResolver.setReferences(refs);
+    _credentialResolver.setReferences(refs);
+  }
+
+  // ...
+  @override
+  Future open(String? correlationId) async {
+    ConnectionParams? connection =
+        await _connectionResolver.resolve(correlationId);
+
+    CredentialParams? credential =
+        await _credentialResolver.lookup(correlationId);
+
+    if (connection != null && credential != null) {
+      String? host = connection.getHost();
+      int? port = connection.getPort();
+      String? user = credential.getUsername();
+      String? pass = credential.getPassword();
+      // ...
+      _opened = true;
     }
   }
+
+  @override
+  Future close(String? correlationId) {
+    // do closing
+    return Future.value();
+  }
+
+  @override
+  bool isOpen() {
+    return _opened;
+  }
 }
+
 ```
 
-Example on how to use caching and locking.
+Example how to use caching and locking.
 Here we assume that references are passed externally.
 
 ```dart
-
 import 'package:pip_services3_commons/src/refer/Descriptor.dart';
 import 'package:pip_services3_commons/src/refer/References.dart';
 import 'package:pip_services3_commons/src/refer/IReferences.dart';
@@ -150,46 +166,49 @@ import 'package:pip_services3_components/src/lock/MemoryLock.dart';
 import 'package:pip_services3_components/src/cache/ICache.dart';
 import 'package:pip_services3_components/src/cache/MemoryCache.dart';
 
-
 class MyComponent implements IReferenceable {
-  ICache _cache;
-  ILock _lock;
-  
-  setReferences(IReferences refs) {
-    this._cache = refs.getOneRequired<ICache>(Descriptor("*", "cache", "*", "*", "1.0"));
-    this._lock = refs.getOneRequired<ILock>(Descriptor("*", "lock", "*", "*", "1.0"));
-  }
-  
-  myMethod(String? correlationId, dynamic param1) async {
-    // First check cache for result
-    dynamic result = await this._cache.retrieve(correlationId, "mykey")
-      
-      // Lock..
-      this._lock.acquireLock(correlationId, "mykey", 1000, 1000)
-        
-      // Do processing
-      ...
-      
-      // Store result to cache async
-      this._cache.store(correlationId, "mykey", result, 3600000);
+  ICache? _cache;
+  ILock? _lock;
 
-      // Release lock async
-      this._lock.releaseLock(correlationId, "mykey");
-      
-      };
-    }
+  @override
+  void setReferences(IReferences refs) {
+    _cache =
+        refs.getOneRequired<ICache>(Descriptor('*', 'cache', '*', '*', '1.0'));
+    _lock =
+        refs.getOneRequired<ILock>(Descriptor('*', 'lock', '*', '*', '1.0'));
+  }
+
+  Future myMethod(String? correlationId, dynamic param1) async {
+    // First check cache for result
+    dynamic result = await _cache!.retrieve(correlationId, 'mykey');
+
+    // Lock..
+    await _lock!.acquireLock(correlationId, 'mykey', 1000, 1000);
+
+    // Do processing
+    // ...
+
+    // Store result to cache async
+    await _cache!.store(correlationId, 'mykey', result, 3600000);
+
+    // Release lock async
+    await _lock!.releaseLock(correlationId, 'mykey');
   }
 }
 
+void main() async {
 // Use the component
-MyComponent myComponent = new MyComponent();
+  MyComponent myComponent = MyComponent();
 
-myComponent.setReferences(References.fromTuples([
-  Descriptor("pip-services", "cache", "memory", "default", "1.0"), MemoryCache(),
-  Descriptor("pip-services", "lock", "memory", "default", "1.0"), MemoryLock(),
-]);
+  myComponent.setReferences(References.fromTuples([
+    Descriptor('pip-services', 'cache', 'memory', 'default', '1.0'),
+    MemoryCache(),
+    Descriptor('pip-services', 'lock', 'memory', 'default', '1.0'),
+    MemoryLock(),
+  ]));
 
-myComponent.myMethod(null);
+  await myComponent.myMethod(null, 'param1');
+}
 ```
 
 If you need to create components using their locators (descriptors) implement 
@@ -199,12 +218,12 @@ component factories similar to the example below.
 import 'package:pip_services3_components/src/build/Factory.dart';
 import 'package:pip_services3_commons/src/refer/Descriptor.dart';
 
-
 class MyFactory extends Factory {
-  static Descriptor myComponentDescriptor  = new Descriptor("myservice", "mycomponent", "default", "*", "1.0");
-  
-  MyFactory():super() {
-    this.registerAsType(MyFactory.myComponentDescriptor, MyComponent);    
+  static Descriptor myComponentDescriptor =
+      Descriptor('myservice', 'mycomponent', 'default', '*', '1.0');
+
+  MyFactory() : super() {
+    registerAsType(MyFactory.myComponentDescriptor, MyComponent);
   }
 }
 
@@ -212,7 +231,9 @@ class MyFactory extends Factory {
 
 MyFactory myFactory = MyFactory();
 
-MyComponent1 myComponent1 = myFactory.create(new Descriptor("myservice", "mycomponent", "default", "myComponent1", "1.0"));
-MyComponent2 myComponent2 = myFactory.create(new Descriptor("myservice", "mycomponent", "default", "myComponent2", "1.0"));
+MyComponent1 myComponent1 = myFactory.create(
+    Descriptor('myservice', 'mycomponent', 'default', 'myComponent1', '1.0'));
+MyComponent2 myComponent2 = myFactory.create(
+    Descriptor('myservice', 'mycomponent', 'default', 'myComponent2', '1.0'));
 ...
 ```

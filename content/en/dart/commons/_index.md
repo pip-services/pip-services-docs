@@ -47,47 +47,47 @@ Then you are ready to start using the Pip.Services patterns to augment your back
 For instance, here is how you can implement a component, that receives configuration, get assigned references,
 can be opened and closed using the patterns from this module.
 
-```dart
-import 'package:pip_services3_commons/src/config/IConfigurable.dart';
-import 'package:pip_services3_commons/src/config/ConfigParams.dart';
-import 'package:pip_services3_commons/src/refer/IReferenceable.dart';
-import 'package:pip_services3_commons/src/refer/IReferences.dart';
-import 'package:pip_services3_commons/src/refer/Descriptor.dart';
-import 'package:pip_services3_commons/src/run/IOpenable.dart';
 
+```dart
 class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
   MyComponentA();
 
-  String _param1 = "ABC";
+  String _param1 = 'ABC';
   int _param2 = 123;
   MyComponentB _anotherComponent;
   bool _opened = true;
 
-  configure(ConfigParams config) {
-    this._param1 = config.getAsStringWithDefault("param1", this._param1);
-    this._param2 = config.getAsIntegerWithDefault("param2", this._param2);
+  @override
+  void configure(ConfigParams config) {
+    this._param1 = config.getAsStringWithDefault('param1', this._param1);
+    this._param2 = config.getAsIntegerWithDefault('param2', this._param2);
   }
 
-  setReferences(IReferences refs) {
+  @override
+  void setReferences(IReferences refs) {
     this._anotherComponent = refs.getOneRequired<MyComponentB>(
-        new Descriptor("myservice", "mycomponent-b", "*", "*", "1.0"));
+      Descriptor('myservice', 'mycomponent-b', '*', '*', '1.0')
+    );
   }
 
-  isOpen() {
+  @override
+  bool isOpen() {
     return this._opened;
   }
 
-  open(String? correlationId) {
+  @override
+  Future open(String? correlationId) {
     return Future(() {
       this._opened = true;
-      print("MyComponentA has been opened.");
+      print('MyComponentA has been opened.');
     });
   }
 
-  close(String? correlationId) {
+  @override
+  Future close(String? correlationId) {
     return Future(() {
       this._opened = true;
-      print("MyComponentA has been closed.");
+      print('MyComponentA has been closed.');
     });
   }
 }
@@ -100,7 +100,7 @@ import 'package:pip_services3_commons/src/config/ConfigParams.dart';
 import 'package:pip_services3_commons/src/refer/References.dart';
 import 'package:pip_services3_commons/src/refer/DependencyResolver.dart';
 
-MyComponentA myComponentA = MyComponentA();
+var myComponentA = MyComponentA();
 
 // Configure the component
 myComponentA.configure(ConfigParams.fromTuples([
@@ -110,9 +110,9 @@ myComponentA.configure(ConfigParams.fromTuples([
 
 // Set references to the component
 myComponentA.setReferences(References.fromTuples([
-   Descriptor("myservice", "mycomponent-b", "default", "default", "1.0",) myComponentB
+   Descriptor('myservice', 'mycomponent-b', 'default', 'default', '1.0',) myComponentB
 ]));
 
 // Open the component
-myComponentA.open("123");
+myComponentA.open('123');
 ```

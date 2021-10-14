@@ -22,13 +22,13 @@ The ICounters interface defines the methods for performance counters that measur
 
 #### beginTiming
 Begins measurement of execution time interval.
-It returns [Timing](../timing) object which has to be called at
-[Timing.endTiming](../timing/#endtiming) to end the measurement and update the counter.
+It returns [CounterTiming](../counter_timing) object which has to be called at
+[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> [Timing](../timing) beginTiming(String name)
+> [CounterTiming](../counter_timing) beginTiming(String name)
 
 - **name**: String - counter name of Interval type.
-- **returns**: [Timing](../timing) - callback object to end timing.
+- **returns**: [CounterTiming](../counter_timing) - callback object to end counter_timing.
 
 
 #### increment

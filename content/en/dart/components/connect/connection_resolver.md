@@ -37,10 +37,10 @@ The ConnectionResolver class is used to retrieve component connections.
 ### Constructors
 Creates a new instance of the class.
 
-> ConnectionResolver([[ConfigParams](../../../commons/config/config_params) config, [IReferences](../../../commons/refer/ireferences) references])
+> ConnectionResolver([[ConfigParams?](../../../commons/config/config_params) config, [IReferences?](../../../commons/refer/ireferences) references])
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component's configuration parameters
-- **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component's references
+- **config**: [ConfigParams?](../../../commons/config/config_params) - (optional) component's configuration parameters
+- **references**: [IReferences?](../../../commons/refer/ireferences) - (optional) component's references
 
 
 ### Instance methods
@@ -86,10 +86,10 @@ This method can be used for dynamic service discovery.
 Resolves a single component connection. If connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
-> Future<[ConnectionParams](../connection_params)> resolve(String? correlationId)
+> Future<[ConnectionParams?](../connection_params)> resolve(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
+- **returns**: Future<[ConnectionParams?](../connection_params)> - resolved connection parameters or null if nothing was found.
 
 
 #### resolveAll

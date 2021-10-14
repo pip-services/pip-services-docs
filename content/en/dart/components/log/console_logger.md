@@ -35,11 +35,11 @@ Creates a new instance of the logger.
 #### write
 Writes a log message to the logger destination.
 
-> void write([LogLevel](../log_level) level, String? correlationId, Exception error, String message)
+> void write([LogLevel](../log_level) level, String? correlationId, Exception? error, String message)
 
 - **level**: [LogLevel](../log_level) - a log level.
 - **correlation_id**: String - (optional) transaction id used to trace execution through the call chain.
-- **error**: Exception - error object associated with this message.
+- **error**: Exception? - error object associated with this message.
 - **message**: String - human-readable message to log.
 
 ### Examples

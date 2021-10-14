@@ -10,7 +10,7 @@ description: >
 ---
 
 **Implements:** [ICounters](../icounters), [IReconfigurable](../../../commons/config/ireconfigurable), 
-[ITimingCallback](../itiming_callback)
+[ICounterTimingCallback](../icounter_timing_callback)
 
 ### Description
 
@@ -48,7 +48,7 @@ A dictionary containing the cached values.
 
 #### _updated
 A boolean value that indicates whether the counter has been updated or not.
-> **_updated**: bool
+> **_updated**: bool = false
 
 #### _lastDumpTime
 Time of the last dump.
@@ -69,13 +69,13 @@ Timeout to reset timer
 
 #### beginTiming
 Begins measurement of execution time interval.
-It returns [Timing](../timing) object which has to be called at
-[[Timing.endTiming](../timing/#endtiming) to end the measurement and update the counter.
+It returns [CounterTiming](../counter_timing) object which has to be called at
+[[CounterTiming.endTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> [Timing](../timing) beginTiming(String name)
+> [CounterTiming](../counter_timing) beginTiming(String name)
 
 - **name**: String - counter name of Interval type.
-- **returns**: [Timing](../timing) - callback object to end timing.
+- **returns**: [CounterTiming](../counter_timing) - callback object to end counter_timing.
 
 
 #### clear
@@ -111,9 +111,9 @@ Dumps (saves) the current values of counters.
 Ends measurement of execution elapsed time and updates a specified counter.
 
 `@override`
-> void endTiming(String name, int elapsed)
+> void endTiming(String? name, int elapsed)
 
-- **name**: String - counter's name
+- **name**: String? - counter's name
 - **elapsed**: int - execution elapsed time in milliseconds to update the counter.
 
 
@@ -122,7 +122,7 @@ Gets a counter specified by its name.
 It counter does not exist or its type doesn't match the specified type
 it creates a new one.
 
-> [Counter](../counter) get(String name, [CounterType](../counter_type) type)
+> [Counter](../counter) get(String? name, [CounterType](../counter_type) type)
 
 - **name**: String - name of counter to retrieve.
 - **type**: [CounterType](../counter_type) - counter type.

@@ -90,7 +90,15 @@ Saves log messages from the cache.
 - **messages**: [][*LogMessage](../log_message) - list with log messages.
 - **returns**: error - returned error if not saved.
 
+#### Write
+Writes a log message to the logger destination.
 
+> func (c *CachedLogger) Write(level int, correlationId string, err error, message string)
+
+- **level**: int - a log level.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **ex**: error - an error object associated with this message.
+- **message**: string - a human-readable message to log.
 
 ### See also
 - #### [Logger](../logger)

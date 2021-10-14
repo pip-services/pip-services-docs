@@ -38,7 +38,7 @@ Important points
 ### Constructors
 Creates a new instance of credentials resolver.
 
-> CredentialResolver([[ConfigParams](../../../commons/config/config_params) config, [IReferences](../../../commons/refer/ireferences) references])
+> CredentialResolver([[ConfigParams?](../../../commons/config/config_params) config, [IReferences](../../../commons/refer/ireferences) references])
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
 - **references**: [IReferences](../../../commons/refer/ireferences) - (optional) component references
@@ -77,10 +77,10 @@ If you need fully fleshed credential use **lookup** method instead.
 Looks up component credential parameters. If credentials are configured to be retrieved
 from Credential store it finds a [ICredentialStore](../icredential_store)` and lookups credentials there.
 
-> Future<[CredentialParams](../credential_params)> lookup(String? correlationId)
+> Future<[CredentialParams?](../credential_params)> lookup(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
-- **returns**: Future<[CredentialParams](../credential_params)> - resolved credential parameters or null if nothing was found.
+- **returns**: Future<[CredentialParams?](../credential_params)> - resolved credential parameters or null if nothing was found.
 
 
 #### setReferences

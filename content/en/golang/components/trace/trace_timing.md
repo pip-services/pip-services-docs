@@ -4,13 +4,13 @@ title: "TraceTiming"
 linkTitle: "TraceTiming"
 MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: >
-    Timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing
+    Timing object returned by [ITracer.BeginTrace](../itracer/#begintrace) to end the timing
     of an execution block and record the associated trace.
 ---
 
 ### Description
 
-The TraceTiming class is used to create the timing object returned by [ITracer.begin_trace](../itracer/#begin_trace) to end the timing of an execution block and record the associated trace.
+The TraceTiming class is used to create the timing object returned by [ITracer.BeginTrace](../itracer/#begintrace) to end the timing of an execution block and record the associated trace.
 
 ### Constructors
 

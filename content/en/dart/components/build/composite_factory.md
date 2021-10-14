@@ -22,9 +22,9 @@ The CompositeFactory class allows you to aggregate multiple factories into a sin
 ### Constructors
 Creates a new instance of the factory.
 
-> CompositeFactory(List<[IFactory](../ifactory)> factories)
+> CompositeFactory(List<[IFactory](../ifactory)>? factories)
 
-- **factories**: List<[IFactory](../ifactory)> - list of factories to embed into this factory.
+- **factories**: List<[IFactory](../ifactory)>? - list of factories to embed into this factory.
 
 
 ### Instance methods
@@ -32,9 +32,9 @@ Creates a new instance of the factory.
 #### add
 Adds a factory into the list of embedded factories.
 
-> void add([IFactory](../ifactory) factory)
+> void add([IFactory?](../ifactory) factory)
 
-- **factory**: [IFactory](../ifactory) - factory to be added.
+- **factory**: [IFactory?](../ifactory) - factory to be added.
 
 
 #### canCreate

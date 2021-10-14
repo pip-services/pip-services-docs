@@ -249,3 +249,125 @@ In the first case, our code is:
 And the result is:
 
 <img src="figure4.png" alt="figure 4" style="width:100%">
+
+In the second case, we just modify the value of EXCLAMATION to true,
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+and we get a string ended in an exclamation mark.
+
+<img src="figure5.png" alt="figure 5" style="width:100%">
+
+##### d)	If-else equivalent
+
+We can also create an equivalent if-else structure by using the #unless helper.  The following code shows how to do this:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+<img src="figure6.png" alt="figure 6" style="width:100%">
+
+##### e)	Using default variables
+
+We can also assign default variables to a template and use the evaluate function to check their values. The following is an example of this:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Which will result in:
+
+<img src="figure6.png" alt="figure 6" style="width:100%">
+
+Moreover, as variables have a dictionary structure, we can also define the default value as:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### f)	Clearing the template
+
+The class offers the clear method to erase all the information stored in a template. The syntax is as follows:

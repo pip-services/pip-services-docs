@@ -187,3 +187,65 @@ The following example shows how to create a conditional template:
 After running the above code, we will see the following result:
 
 <img src="figure2.png" alt="figure 2" style="width:100%">
+
+And, if we set the exclamation to None, we will get a message without an exclamation mark:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+<img src="figure3.png" alt="figure 3" style="width:100%">
+
+##### c)	Conditional negation (if-else)
+
+Now, we want to modify our program to define a template that if the exclamation value is equal to false, it adds a dot at the end. Otherwise, it ends with an exclamation mark.
+
+In the first case, our code is:
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+And the result is:
+
+<img src="figure4.png" alt="figure 4" style="width:100%">

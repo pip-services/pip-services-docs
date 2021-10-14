@@ -78,4 +78,12 @@ The library supports the following injections and conditional blocks:
     <td>Conditional (if)</td>
     <td>{{ #if VARIABLE }}Some value or {{{VARIABLE2}}} {{/if}}</td>
   </tr>
+  <tr>
+    <td>Conditional negation (if – else)</td>
+    <td>{{{#unless VARIABLE}}} Some value or {{{VARIABLE}}} {{{/unless}}}</td>
+  </tr>
+  <tr>
+    <td>If-else equivalent</td>
+    <td>{{ #if VARIABLE }} Some value or {{{VARIABLE}}} {{/if}}{{{^VARIABLE}}} Some value or {{{VARIABLE}}} {{{/VARIABLE}}}</td>
+  </tr>
 </table>

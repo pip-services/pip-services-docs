@@ -14,7 +14,7 @@ In this tutorial, we will be demonstrating the entire process of building a micr
 
 The scripts used in this tutorial are meant to be used by developers, as well as by CI/CD pipelines. At the same time however, the CI/CD pipelines are always simple and look alike, no matter the language or features of the microservice itself. Build, Test, Package, and Publish scripts make up the standard set that we use in our projects.
 
-![Pipeline scheme](/images/tutorials/microservice_dockerization/pipeline_scheme.png)
+![Pipeline scheme](/images/tutorials/microservice_dockerization/pipeline_scheme.jpg)
 
 ### Creating a dockerized microservice
 

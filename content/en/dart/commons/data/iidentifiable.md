@@ -22,12 +22,13 @@ The IIdentifiable interface is used to create data objects that can be uniquely 
 
 #### id
 Unique object identifier of type K.
-> **id**: K
+> `abstract` **id**: K?
 
 ### Examples
 ```dart
 class MyData implements IIdentifiable<string> {
-     String id;
+     @override
+     String? id;
      String field1;
      int field2;
     ...

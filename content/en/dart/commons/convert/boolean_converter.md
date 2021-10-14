@@ -42,10 +42,10 @@ Converts a value into a boolean or returns a given default value when the conver
 #### toNullableBoolean
 Converts a value into boolean or returns null when the conversion is not possible.
 
-> `static` bool toNullableBoolean(value)
+> `static` bool? toNullableBoolean(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: bool - boolean value or null when the convertion is not supported.
+- **returns**: bool? - boolean value or null when the convertion is not supported.
 
 ### Examples
 

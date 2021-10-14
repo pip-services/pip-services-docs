@@ -83,6 +83,13 @@ Gets the unique component's name.
 
 - **returns**: string - unique component's name.
 
+#### Type
+Gets the component's logical type.
+
+> (c [*Descriptor]()) Type() string
+
+- **returns**: string - the component's logical type.
+
 #### Version
 Gets the component's implementation version.
 

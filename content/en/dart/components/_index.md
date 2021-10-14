@@ -72,7 +72,7 @@ class MyComponent implements IConfigurable, IReferenceable {
     this._counters.setReferences(refs);
   }
   
-  myMethod(String correlationId, dynamic param1) {
+  myMethod(String? correlationId, dynamic param1) {
     try{
       this._logger.trace(correlationId, "Executed method mycomponent.mymethod");
       this._counters.increment("mycomponent.mymethod.exec_count", 1);
@@ -119,7 +119,7 @@ class MyComponent implements IConfigurable, IReferenceable, IOpenable {
   
   ...
   
-  open(String correlationId) async{
+  open(String? correlationId) async{
 
       ConnectionParams connection = await this._connectionResolver.resolve(correlationId);
       
@@ -160,7 +160,7 @@ class MyComponent implements IReferenceable {
     this._lock = refs.getOneRequired<ILock>(Descriptor("*", "lock", "*", "*", "1.0"));
   }
   
-  myMethod(String correlationId, dynamic param1) async {
+  myMethod(String? correlationId, dynamic param1) async {
     // First check cache for result
     dynamic result = await this._cache.retrieve(correlationId, "mykey")
       

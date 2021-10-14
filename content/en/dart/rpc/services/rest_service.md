@@ -80,9 +80,9 @@ Service's configuration paramters.
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -98,9 +98,9 @@ Configures a component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a Timing object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String correlationId, String name)
+> [Timing](../../../components/count/timing) instrument(String? correlationId, String name)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
 - **returns**: [Timing](../../../components/count/timing) - InstrumentTiming object to end the time measurement.
 
@@ -118,9 +118,9 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### register
 Registers all service routes in a HTTP endpoint.

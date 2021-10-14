@@ -44,9 +44,9 @@ following references to the object's [set_references](#set_references)
 Closes this endpoint and the gRPC server (service) that was opened earlier.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -71,9 +71,9 @@ Checks if the component is open.
 Opens a connection using the parameters resolved by the referenced connection resolver and creates a gRPC server (service) using the set options and parameters.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### register

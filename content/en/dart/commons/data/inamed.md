@@ -18,7 +18,7 @@ The INamed interface is used to define data objects containing a human-readable 
 
 #### name
 Object's humand-readable name.
-> **name**: String
+> `abstract` **name**: String
 
 </span>
 
@@ -27,6 +27,7 @@ Object's humand-readable name.
 ```dart
 class MyData implements IStringIdentifiable, INamed {
     String id;
+    @override
     String name;
     String field1;
     String field2;

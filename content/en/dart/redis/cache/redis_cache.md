@@ -61,9 +61,9 @@ Credential resolver
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -87,17 +87,17 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### remove
 Removes a value from the cache by its key.
 
 `@override`
-> Future\<dynamic\> remove(String correlationId, String key)
+> Future\<dynamic\> remove(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - unique value key.
 - **returns**: Future\<dynamic\> - removed value.
 
@@ -106,9 +106,9 @@ Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns null.
 
 `@override`
-> Future\<dynamic\> retrieve(String correlationId, String key)
+> Future\<dynamic\> retrieve(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - unique value key.
 - **returns**: Future\<dynamic\> - retrieved cached value or *null* if nothing was found.
 
@@ -124,9 +124,9 @@ Sets references to dependent components.
 #### store
 Stores a value in the cache with an expiration time.
 
-> Future\<dynamic\> store(String correlationId, String key, value, int timeout)
+> Future\<dynamic\> store(String? correlationId, String key, value, int timeout)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - unique value key.
 - **value**: dynamic - value to store.
 - **timeout**: int - expiration timeout in milliseconds.

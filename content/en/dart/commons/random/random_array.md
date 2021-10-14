@@ -18,8 +18,8 @@ Picks a random element from a specified array.
 
 > `static` T pick\<T\>(List\<T\> values)
 
-- **values**: List\<T\> - array of any type
-- **returns**: T - randomly picked item.
+- **values**: List\<T\>? - array of any type
+- **returns**: T? - randomly picked item.
 
 ### Examples
 

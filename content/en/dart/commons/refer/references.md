@@ -16,9 +16,9 @@ The References class allows you to store and locate component references.
 ### Constructors
 Creates a new instance of References and initializes it with references.
 
-> References([List tuples])
+> References([List? tuples])
 
-- **tuples**: List - (optional) list of values where odd elements are locators and the following even elements are component references.
+- **tuples**: List? - (optional) list of values where odd elements are locators and the following even elements are component references.
 
 ### Fields
 <span class="hide-title-link">
@@ -62,10 +62,10 @@ Gets locators for all registered component references in this reference map.
 Gets an optional component reference that matches a specified locator.
 
 `@override`
-> T getOneOptional\<T\>(locator)
+> T? getOneOptional\<T\>(locator)
 
 - **locator**: dynamic - locator to find references by.
-- **returns**: T - matching component reference or null if nothing was found.
+- **returns**: T? - matching component reference or null if nothing was found.
 
 #### getOneRequired
 Gets a required component reference that matches specified locator.  

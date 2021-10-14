@@ -58,8 +58,8 @@ Runner
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+> Future close(String? correlationId)
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### isOpen
 Checks if the component is open.
@@ -72,8 +72,8 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+> Future open(String? correlationId)
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 ### Static methods
 

@@ -77,14 +77,14 @@ class MyComponentA implements IConfigurable, IReferenceable, IOpenable {
     return this._opened;
   }
 
-  open(String correlationId) {
+  open(String? correlationId) {
     return Future(() {
       this._opened = true;
       print("MyComponentA has been opened.");
     });
   }
 
-  close(String correlationId) {
+  close(String? correlationId) {
     return Future(() {
       this._opened = true;
       print("MyComponentA has been closed.");

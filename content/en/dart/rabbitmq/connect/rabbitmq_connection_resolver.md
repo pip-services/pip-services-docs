@@ -53,9 +53,9 @@ Credential resolver
 #### compose
 Composes RabbitMQ connection options from connection and credential parameters.
 
-> Future<[ConfigParams](../../../commons/config/config_params)> compose(String correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future<[ConfigParams](../../../commons/config/config_params)> compose(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - resolved RabbitMQ connection options
@@ -73,9 +73,9 @@ Configures the component by passing its configuration parameters.
 #### resolve
 Resolves RabbitMQ connection options from connection and credential parameters.
 
-> Future<[ConfigParams](../../../commons/config/config_params)> resolve(String correlationId)
+> Future<[ConfigParams](../../../commons/config/config_params)> resolve(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - resolved RabbitMQ connection options.
 
 

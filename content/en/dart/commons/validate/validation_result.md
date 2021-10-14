@@ -16,12 +16,12 @@ Creates a new instance of a validation ressult and sets its values.
 
 See [ValidationResultType](../validation_result_type)
 
-> ValidationResult([String path, [ValidationResultType](../validation_result_type) type, String code, String message, dynamic expected, dynamic actual])
+> ValidationResult([String? path, [ValidationResultType?](../validation_result_type) type, String? code, String? message, dynamic expected, dynamic actual])
 
-- **path**: String - dot notation path of the validated element.
-- **type**: [ValidationResultType](../validation_result_type) - type of the validation result: Information, Warning, or Error.
-- **code**: String - error code.
-- **message**: String - human readable message.
+- **path**: String? - dot notation path of the validated element.
+- **type**: [ValidationResultType?](../validation_result_type) - type of the validation result: Information, Warning, or Error.
+- **code**: String? - error code.
+- **message**: String? - human readable message.
 - **expected**: dynamic - value expected by a schema validation.
 - **actual**: dynamic - actual value found by a schema validation.
 

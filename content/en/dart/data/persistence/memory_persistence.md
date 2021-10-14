@@ -74,17 +74,17 @@ Maximum amount of items per page.
 #### clear
 Clears the component's state.
 
-> Future clear(String correlationId)
+> Future clear(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### create
 Creates a data item.
 
-> Future\<T\> create(String correlationId, T item)
+> Future\<T\> create(String? correlationId, T item)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Future\<T\> - created item
 
@@ -94,9 +94,9 @@ Deletes data items that match to a given filter.
 This method shall be called by a public **deleteByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future deleteByFilterEx(String correlationId, filter)
+> Future deleteByFilterEx(String? correlationId, filter)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: dynamic - (optional) filter function used to filter items.
 
 
@@ -106,9 +106,9 @@ Gets the number of items retrieved by a given filter.
 This method shall be called by a public **getCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<int\> getCountByFilterEx(String correlationId, filter)
+> Future\<int\> getCountByFilterEx(String? correlationId, filter)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: dynamic -  id of the item to be deleted
 - **returns**: Future\<int\> - number of data items that satisfy the filter.
 
@@ -119,9 +119,9 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<List\<T\>\> getListByFilterEx(String correlationId, filter, sort, select)
+> Future\<List\<T\>\> getListByFilterEx(String? correlationId, filter, sort, select)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: dynamic - (optional) filter function used to filter items
 - **sort**: dynamic - (optional) sorting parameters
 - **select**: dynamic - (optional) projection parameters (not used yet)
@@ -134,9 +134,9 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **getOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<T\> getOneRandom(String correlationId, filter)
+> Future\<T\> getOneRandom(String? correlationId, filter)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: dynamic - (optional) a filter function to filter items.
 - **returns**: Future\<T\> - random item.
 
@@ -147,9 +147,9 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future<[DataPage<T>](../../../commons/data/data_page)> getPageByFilterEx(String correlationId, Function filter, [PagingParams](../../../commons/data/paging_params) paging, Function sort)
+> Future<[DataPage<T>](../../../commons/data/data_page)> getPageByFilterEx(String? correlationId, Function filter, [PagingParams](../../../commons/data/paging_params) paging, Function sort)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Function - filter function used to filter items
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Function - (optional) sorting parameters
@@ -168,26 +168,26 @@ Checks if the component is open.
 #### load
 Loads items.
 
-> Future _load(String correlationId)
+> Future _load(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### open
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### save
 Saves items to an external data source using a configured saver component.
 
-> Future save(String correlationId)
+> Future save(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### setReferences
@@ -202,7 +202,7 @@ Sets the component's references. References must match configured dependencies.
 
 ```dart
 class MyMemoryPersistence extends MemoryPersistence<MyData> {
-   Future<MyData> getByName(String correlationId, String name) async {
+   Future<MyData> getByName(String? correlationId, String name) async {
         var item = items.firstWhere((d) => d.name == name);
        return item;
     });

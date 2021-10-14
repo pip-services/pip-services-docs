@@ -48,10 +48,10 @@ Gets locators for all registered component references in this reference map.
 #### getOneOptional
 Gets an optional component reference that matches specified locator.
 
-> T getOneOptional\<T\>(locator)
+> T? getOneOptional\<T\>(locator)
 
 - **locator**: dynamic - locator to find references by.
-- **returns**: T - matching component reference or null if nothing was found.
+- **returns**: T? - matching component reference or null if nothing was found.
 
 #### getOneRequired
 Gets a required component reference that matches a specified locator.  

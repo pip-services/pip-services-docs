@@ -65,7 +65,7 @@ Configures the component by passing its configuration parameters.
 class MyJsonFilePersistence extends FilePersistence<MyData> {
     MyJsonFilePersistence([String path]): super(JsonPersister(path)) {
     }
-     Future<MyData> getByName(String correlationId, String name) async {
+     Future<MyData> getByName(String? correlationId, String name) async {
         var item = items.firstWhere((d) => d.name == name);
         return item;
     });

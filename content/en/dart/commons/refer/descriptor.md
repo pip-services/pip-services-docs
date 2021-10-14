@@ -28,13 +28,13 @@ The Descriptor class provides you with a component locator. This locator is ofte
 ### Constructors
 Creates a new instance of the descriptor.
 
-> Descriptor(String group, String type, String kind, String name, String version)
+> Descriptor(String? group, String? type, String? kind, String? name, String? version)
 
-- **group**: String - logical component group
-- **type**: String - logical component type or contract
-- **kind**: String - component implementation type
-- **name**: String - unique component name
-- **version**: String - component implementation version
+- **group**: String? - logical component group
+- **type**: String? - logical component type or contract
+- **kind**: String? - component implementation type
+- **name**: String? - unique component name
+- **version**: String? - component implementation version
 
 
 ### Instance methods
@@ -62,31 +62,31 @@ No exceptions are made.
 #### getGroup
 Gets the component's logical group.
 
-> String getGroup()
+> String? getGroup()
 
-- **returns**: String - component's logical group
+- **returns**: String? - component's logical group
 
 #### getKind
 Gets the component's implementation type.
 
-> String getKind()
+> String? getKind()
 
-- **returns**: String - component's implementation type.
+- **returns**: String? - component's implementation type.
     
 
 #### getName
 Gets the unique component's name.
 
-> String getName()
+> String? getName()
 
-- **returns**: String - unique component's name.
+- **returns**: String? - unique component's name.
 
 #### getVersion
 Gets the component's implementation version.
 
-> String getVersion()
+> String? getVersion()
 
-- **returns**: String - component's implementation version.
+- **returns**: String? - component's implementation version.
 
 #### isComplete
 Checks whether all descriptor fields are set.
@@ -121,10 +121,10 @@ The result is a colon-separated list of descriptor fields as
 Parses colon-separated list of descriptor fields and returns them as a Descriptor.  
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
-> `static` [Descriptor]() fromString(String value)
+> `static` [Descriptor?]() fromString(String? value)
 
-- **value**: String - colon-separated descriptor fields to initialize Descriptor.
-- **returns**: [Descriptor]() - newly created Descriptor.
+- **value**: String? - colon-separated descriptor fields to initialize Descriptor.
+- **returns**: [Descriptor?]() - newly created Descriptor.
 
 ### Examples
 

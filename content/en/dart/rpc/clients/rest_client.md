@@ -101,10 +101,10 @@ Connection timeout in milliseconds.
 #### addCorrelationId
 Adds a correlation id (correlationId) to the invocation parameter map.
 
-> Map\<String, String\> addCorrelationId(Map\<String, String\> params, String correlationId)
+> Map\<String, String\> addCorrelationId(Map\<String, String\> params, String? correlationId)
 
 - **params**: Map\<String, String\> - invocation parameters.
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Map\<String, String\> - invocation parameters with added correlation id.
 
 
@@ -133,10 +133,10 @@ Adds paging parameters (skip, take, total) to invocation parameter map.
 #### call
 Calls a remote method via HTTP/REST protocol.
 
-> Future call(String method, String route, String correlationId, Map\<String, String\> params, [data])
+> Future call(String method, String route, String? correlationId, Map\<String, String\> params, [data])
 - **method**: String - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: String - command route. Base route will be added to this route
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **params**: Map\<String, String\> - (optional) query parameters.
 - **data**: dynamic - (optional) body object.
 - **returns**: Future - that receives result object
@@ -146,9 +146,9 @@ Calls a remote method via HTTP/REST protocol.
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 
 
 #### configure
@@ -164,9 +164,9 @@ Configures a component by passing configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> Timing instrument(String correlationId, String name)
+> Timing instrument(String? correlationId, String name)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
 - **returns**: [Timing](../../../components/count/timing/) - InstrumentTiming object used to end the time measurement.
 
@@ -184,9 +184,9 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 
 
 #### setReferences
@@ -202,7 +202,7 @@ Sets references to dependent components.
 ```dart
 class MyRestClient extends RestClient implements IMyClient {
    ...
-    Future<MyData> getData(String correlationId, String id) async {
+    Future<MyData> getData(String? correlationId, String id) async {
        var timing = instrument(correlationId, 'myclient.get_data');
       try{
         var result = await call('get', '/get_data' correlationId, { id: id }, null);

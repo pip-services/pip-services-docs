@@ -17,16 +17,16 @@ The IClosable interface allows you to create a component with a method that clos
 #### close
 Closes a component and frees used resources.
 
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 ```dart
 class MyConnector implements ICloseable {
     dynamic _client = null;
     ... // The _client can be lazy created
-    Future close(String correlationId){
+    Future close(String? correlationId){
         if (_client != null) {
             _client.close();
             _client = null;

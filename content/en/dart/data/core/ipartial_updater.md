@@ -18,7 +18,7 @@ Updates only few selected fields in a data item.
 
 > Future\<T\> updatePartially(String correlation_id, K id, [AnyValueMap](../../../commons/data/any_value_map) data)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **id**: K - id of the data item to be updated.
 - **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
 - **returns**: Future\<T\> - updated item

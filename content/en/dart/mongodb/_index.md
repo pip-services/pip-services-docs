@@ -46,17 +46,17 @@ The persistence component shall implement the following interface with a basic s
 
 ```dart
 abstract class IMyPersistence {
-    void getPageByFilter(String correlationId, FilterParams filter, PagingParams paging);
+    void getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging);
     
-    getOneById(String correlationId, String id);
+    getOneById(String? correlationId, String id);
     
-    getOneByKey(String correlationId, String key;
+    getOneByKey(String? correlationId, String key;
     
-    create(String correlationId, MyObject item);
+    create(String? correlationId, MyObject item);
     
-    update(String correlationId, MyObject item);
+    update(String? correlationId, MyObject item);
     
-    deleteById(String correlationId, String id);
+    deleteById(String? correlationId, String id);
 }
 ```
 
@@ -97,11 +97,11 @@ class MyMongoDbPersistence extends IdentifiableMongoDbPersistence {
     return criteria.length > 0 ? { "\$and": criteria } : null;
   }
   
-  Future<DataPage<MyData>> getPageByFilter(String correlationId, FilterParams filter, PagingParams paging){
+  Future<DataPage<MyData>> getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging){
     return super.getPageByFilterEx(correlationId, composeFilter(filter), paging, null);
   } 
   
-  getOneByKey(String correlationId, String key) async {
+  getOneByKey(String? correlationId, String key) async {
     
     Map<String, String> filter = { key: key };
 

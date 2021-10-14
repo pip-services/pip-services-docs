@@ -64,27 +64,27 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 #### register
 Registers the given connection in all referenced discovery services. This method can be used for dynamic service discovery.
 
-> Future register(String correlationId)
+> Future register(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### resolve
 Resolves a single component connection. If the connections are configured to be retrieved from Discovery service,
 it finds a IDiscovery and resolves the connection there.
 
-> Future<[ConnectionParams](../../../components/connect/connection_params)> resolve(String correlationId)
+> Future<[ConnectionParams](../../../components/connect/connection_params)> resolve(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConnectionParams](../../../components/connect/connection_params)>  - resolved connection.
 
 
 #### resolveAll
 Resolves all component connections. If the connections are configured to be retrieved from Discovery service, it finds a IDiscovery and resolves the connection there.
 
-> Future\<List\<[ConnectionParams](../../../components/connect/connection_params)\>\> resolveAll(String correlationId)
+> Future\<List\<[ConnectionParams](../../../components/connect/connection_params)\>\> resolveAll(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future\<List\<[ConnectionParams](../../../components/connect/connection_params)\>\> - resolved connections.
 
 

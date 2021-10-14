@@ -23,9 +23,9 @@ The ILock interface provides the methods to create locks used to synchronize wor
 Makes a single attempt to acquire a lock by its key.
 It returns a positive or negative result immediately.
 
-> Future acquireLock(String correlationId, String key, int ttl, int timeout)
+> Future acquireLock(String? correlationId, String key, int ttl, int timeout)
 
-- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **correlationId**: String? -(optional) transaction id used to trace execution through a call chain. 
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **timeout**: int - lock acquisition timeout.
@@ -36,9 +36,9 @@ It returns a positive or negative result immediately.
 Makes a single attempt to acquire a lock by its key.
 It returns a positive or negative result immediately.
 
-> Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
+> Future\<bool\> tryAcquireLock(String? correlationId, String key, int ttl)
 
-- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **correlationId**: String? -(optional) transaction id used to trace execution through a call chain. 
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **return**: Future\<bool\> - lock result
@@ -47,7 +47,7 @@ It returns a positive or negative result immediately.
 #### releaseLock
 Releases a prevously acquired lock by its key.
 
-> Future releaseLock(String correlationId, String key)
+> Future releaseLock(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to release.

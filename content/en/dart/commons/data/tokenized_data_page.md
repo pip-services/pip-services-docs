@@ -27,11 +27,11 @@ The TokenizedDataPageData allows you to create a transfer object that is used to
 ### Constructors
 Creates a new instance of data page and assigns its values.
 
-> TokenizedDataPage(List\<T\> data, [String token, int total])
+> TokenizedDataPage(List\<T\> data, [String? token, int? total])
 
 - **data**: List\<T\> - list of items from the retrieved page.
-- **token**: String - (optional) token used to define a starting point for the next search.
-- **total**: int - (optional) total number of objects in the result.
+- **token**: String? - (optional) token used to define a starting point for the next search.
+- **total**: int? - (optional) total number of objects in the result.
 
 
 ### Fields
@@ -44,11 +44,11 @@ Items of the retrieved page.
 
 #### token
 starting point for the next search.
-> **token**: String
+> **token**: String?
 
 #### total
 Total amount of items in a request.
-> **total**: int
+> **total**: int?
 
 </span>
 

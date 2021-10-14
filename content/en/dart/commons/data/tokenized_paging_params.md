@@ -36,11 +36,11 @@ Creates a new instance and sets its values.
 
 #### token
 Start token
-> **token**: String
+> **token**: String?
 
 #### take
 Number of items to return.
-> **take**: int
+> **take**: int?
 
 #### total
 Flag used to define whether the total number of items must be returned or not.

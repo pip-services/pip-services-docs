@@ -24,9 +24,9 @@ The Lock class represents an abstract lock that implements the default lock acqu
 Makes multiple attempts to acquire a lock by its key within a given time interval.
 
 `@override`
-> Future acquireLock(String correlationId, String key, int ttl, int timeout)
+> Future acquireLock(String? correlationId, String key, int ttl, int timeout)
 
-- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **correlationId**: String? -(optional) transaction id used to trace execution through a call chain. 
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **timeout**: int - lock acquisition timeout.
@@ -44,9 +44,9 @@ Configures a component by passing its configuration parameters.
 Releases a prevously acquired lock by its key.
 
 `@override`
-> Future releaseLock(String correlationId, String key)
+> Future releaseLock(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to release.
 
 
@@ -54,9 +54,9 @@ Releases a prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns a positive or negative result immediately.
 
-> Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
+> Future\<bool\> tryAcquireLock(String? correlationId, String key, int ttl)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: Future\<bool\> - lock result

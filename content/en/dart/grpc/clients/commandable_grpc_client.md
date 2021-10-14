@@ -63,10 +63,10 @@ Calls a remote method via the GRPC commandable protocol.
 The call is made via Invoke method and all parameters are sent in args object.
 The complete route to remote method is defined as serviceName + '.' + name.
 
-> Future callCommand(String name, String correlationId, params)
+> Future callCommand(String name, String? correlationId, params)
 
 - **name**: String - name of the command to call.
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **params**: dynamic - command parameters.
 - **returns**: Future - feature that receives the result
 
@@ -77,7 +77,7 @@ The complete route to remote method is defined as serviceName + '.' + name.
 ```dart
 class MyCommandableGrpcClient extends CommandableGrpcClient implements IMyClient {
    ...
-    Future<MyData> getData(String correlationId, String id) async {
+    Future<MyData> getData(String? correlationId, String id) async {
        var result = await callCommand(
            'get_data',
            correlationId,

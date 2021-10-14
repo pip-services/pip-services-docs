@@ -77,7 +77,7 @@ If you need fully fleshed credential use **lookup** method instead.
 Looks up component credential parameters. If credentials are configured to be retrieved
 from Credential store it finds a [ICredentialStore](../icredential_store)` and lookups credentials there.
 
-> Future<[CredentialParams](../credential_params)> lookup(String correlationId)
+> Future<[CredentialParams](../credential_params)> lookup(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **returns**: Future<[CredentialParams](../credential_params)> - resolved credential parameters or null if nothing was found.

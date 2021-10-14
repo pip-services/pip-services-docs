@@ -31,9 +31,9 @@ Executes the next command in the execution chain using the given [parameters](..
 See [Parameters](../../run/parameters)
 
 `@override`
-> Future\<dynamic\> execute(String correlationId, [Parameters](../../run/parameters) args)
+> Future\<dynamic\> execute(String? correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - unique transaction id used to trace calls across components.
+- **correlationId**: String? - unique transaction id used to trace calls across components.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
 - **returns**: Future\<dynamic\> - execution result
 
@@ -65,7 +65,7 @@ class CommandLogger implements ICommandInterceptor {
     String getName(ICommand command) {
         return command.getName();
     }
-    void execute(String correlationId, ICommand command , Parameters args,) async {
+    void execute(String? correlationId, ICommand command , Parameters args,) async {
         print('Executed command ' + command.getName());
         return await command.execute(correlationId, args);
     }

@@ -23,9 +23,9 @@ The ProjectionParams class allows you to define projection parameters with a lis
 ### Constructors
 Creates a new instance of ProjectionParams and assigns its value.
 
-> ProjectionParams([List\<dynamic\> values])
+> ProjectionParams([List\<dynamic\>? values])
 
-- **values**: List\<dynamic\> - (optional) values used to initialize this object.
+- **values**: List\<dynamic\>? - (optional) values used to initialize this object.
 
 ### Instance methods
 

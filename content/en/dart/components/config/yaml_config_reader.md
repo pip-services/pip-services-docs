@@ -35,9 +35,9 @@ Creates a new instance of the config reader.
 Reads a configuration and parameterizes it with given values.
 
 `@override`
-> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
+> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or null to skip parameterization.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.
 
@@ -45,9 +45,9 @@ Reads a configuration and parameterizes it with given values.
 #### readObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> dynamic readObject(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
+> dynamic readObject(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: dynamic - YAML object with a configuration.
 
@@ -56,9 +56,9 @@ Reads a configuration file, parameterizes its content and converts it into a YAM
 #### readConfig_
 Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
-> `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
@@ -67,9 +67,9 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### readObject_
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> `static` dynamic readObject_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> `static` dynamic readObject_(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace the execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace the execution through the call chain.
 - **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: dynamic - YAML object containing a configuration.

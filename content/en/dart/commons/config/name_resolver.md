@@ -18,11 +18,11 @@ Resolves a component's name from configuration parameters.
 The name can be stored in "id", "name" fields or inside a component descriptor.
 If the name cannot be determined it returns a defaultName.
 
-> `static` String resolve([ConfigParams](../config_params) config, [String defaultName])
+> `static` String? resolve([ConfigParams](../config_params) config, [String? defaultName])
 
 - **config**: [ConfigParams](../config_params) - configuration parameters that may contain a component name.
-- **defaultName**: String - (optional) default component name.
-- **returns**: String - resolved name or default name if the name cannot be determined.
+- **defaultName**: String? - (optional) default component name.
+- **returns**: String? - resolved name or default name if the name cannot be determined.
 
 ### Examples
 

@@ -17,9 +17,9 @@ The NotRule class allows you to negate a rule. Thus, when the embedded rule retu
 ### Constructors
 Creates a new validation rule and sets its values
 
-> NotRule([IValidationRule](../ivalidation_rule) rule)
+> NotRule([IValidationRule?](../ivalidation_rule) rule)
 
-- **rule**: [IValidationRule](../ivalidation_rule) - rule to be negated.
+- **rule**: [IValidationRule?](../ivalidation_rule) - rule to be negated.
 
 
 ### Instance methods
@@ -27,9 +27,9 @@ Creates a new validation rule and sets its values
 #### validate
 Validates a given value against this rule.
 
-> void validate(String path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationRule](../validation_result)> - list with validation results to add new results.

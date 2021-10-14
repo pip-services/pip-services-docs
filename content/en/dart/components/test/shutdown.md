@@ -36,7 +36,7 @@ The Shutdown class allows you to create a random shutdown component that crashes
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
@@ -63,7 +63,7 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 

@@ -17,9 +17,9 @@ The CreateException class allows you to manage the error raised when a factory i
 ### Constructors
 Creates an error instance and assigns its values.
 
-> CreateException(String correlationId, dynamic messageOrLocator)
+> CreateException(String? correlationId, dynamic messageOrLocator)
 
-- **correlationId**: String - (optional) a unique transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) a unique transaction id to trace execution through a call chain.
 - **messageOrLocator**: dynamic - human-readable error or locator of the component that cannot be created.
 
 

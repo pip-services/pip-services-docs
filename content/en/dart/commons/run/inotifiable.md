@@ -21,9 +21,9 @@ The INotifiable interface allows you to create components that can be asynchrono
 #### notify
 Notifies the component about an occured event.
 
-> void notify(String correlationId, [Parameters](../parameters) args)
+> void notify(String? correlationId, [Parameters](../parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../parameters) - notification arguments. 
 
 ### Examples
@@ -31,7 +31,7 @@ Notifies the component about an occured event.
 ```dart
 class MyComponent implements INotifable {
     ...
-    void notify(String correlationId, Parameters args) {
+    void notify(String? correlationId, Parameters args) {
         console.log('Occured event ' + args.getAsString('event'));
     }
 }

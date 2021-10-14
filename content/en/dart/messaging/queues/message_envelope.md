@@ -20,9 +20,9 @@ The MessageEnvelope class allows you to add additional information to messages.
 
 Creates a new [MessageEnvelope](), which adds a correlation id, message id, and a type to the data being sent/received.
 
-> MessageEnvelope(String correlationId, String messageType, message)
+> MessageEnvelope(String? correlationId, String messageType, message)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **messageType**: String - string value that defines the message's type.
 - **message**: dynamic - data being sent/received.
 
@@ -33,7 +33,7 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 #### correlationId
 Unique business transaction id that is used to trace calls across components.
 
-> **correlationId**: String
+> **correlationId**: String?
 
 #### message
 Stored message.

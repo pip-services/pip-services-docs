@@ -51,17 +51,17 @@ Returns a message into the queue and makes it available for all subscribers to r
 Clears the component's state.
 
 `@override`
-> Future clear(String correlationId)
+> Future clear(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### close
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### complete
 Permanently removes a message from the queue. This method is usually used to remove the message after successful processing.
@@ -75,9 +75,9 @@ Permanently removes a message from the queue. This method is usually used to rem
 Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 `@override`
-> void endListen(String correlationId)
+> void endListen(String? correlationId)
  
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### isOpen
@@ -94,9 +94,9 @@ Listens for incoming messages and blocks the current thread until the queue is c
 See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
 `@override`
-> void listen(String correlationId, [IMessageReceiver](../imessage_receiver) receiver)
+> void listen(String? correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
@@ -104,18 +104,18 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> peek(String correlationId)
+> Future<[MessageEnvelope](../message_envelope)> peek(String? correlationId)
 
-- **correlationId**: String - transaction id used to trace execution through the call chain.
+- **correlationId**: String? - transaction id used to trace execution through the call chain.
 - **returns**: Future<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 `@override`
-> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
 - **returns**: Future\<List\<[MessageEnvelope](../message_envelope)\>\> - list with peeked messages.
 
@@ -132,9 +132,9 @@ Reads the current number of messages in the queue to be delivered.
 Receives an incoming message and removes it from the queue.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> receive(String correlationId, int waitTimeout)
+> Future<[MessageEnvelope](../message_envelope)> receive(String? correlationId, int waitTimeout)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
 - **returns**: Future<[MessageEnvelope](../message_envelope)> - received message or *null*.
 
@@ -151,18 +151,18 @@ Renews a lock on a message that makes it invisible from other receivers in the q
 Sends a message into the queue.
 
 `@override`
-> Future send(String correlationId, [MessageEnvelope](../message_envelope) envelope)
+> Future send(String? correlationId, [MessageEnvelope](../message_envelope) envelope)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 
 #### openWithParams
 Opens the component with given connection and credential parameters.
 
-> Future openWithParams(String correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 

@@ -36,11 +36,11 @@ Creates a new instance and sets its values.
 
 #### skip
 Number of items to skip.
-> **skip**: int
+> **skip**: int?
 
 #### take
 Number of items to return. 
-> **take**: int
+> **take**: int?
 
 #### total
 Flag to return the total number of items.

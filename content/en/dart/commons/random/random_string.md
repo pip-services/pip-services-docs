@@ -42,17 +42,17 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 #### pick
 Picks a random string from an array of strings.
 
-> `static` String pick(List\<String\> values)
+> `static` String pick(List\<String\>? values)
 
-- **values**: List\<String\> - Picks a random character from an array of strings.
+- **values**: List\<String\>? - Picks a random character from an array of strings.
 - **returns**: String - randomly picked char.
 
 #### pickChar
 Picks a random character from a string.
 
-> `static` String pickChar(String values)
+> `static` String pickChar(String? values)
 
-- **values**: String - string to pick a char from.
+- **values**: String? - string to pick a char from.
 - **returns**: String - randomly picked char.
 
 ### Examples

@@ -190,63 +190,73 @@ See [AnyValueMap.fromValue](../any_value_map/#fromvalue)
 Converts an object's value into a boolean or returns null if the conversion is not possible.   
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> bool getAsNullableBoolean()
+> bool? getAsNullableBoolean()
 
-- **returns**: bool - boolean value or null if the conversion is not supported.
+- **returns**: bool? - boolean value or null if the conversion is not supported.
 
 
 #### getAsNullableDateTime
 Converts an object's value into Date or returns null if the conversion is not possible.   
 See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> DateTime getAsNullableDateTime()
+> DateTime? getAsNullableDateTime()
 
-- **returns**: DateTime - Date value or null if the conversion is not supported.
+- **returns**: DateTime? - Date value or null if the conversion is not supported.
 
 
 #### getAsNullableDouble
 Converts an object's value into a double or returns null if the conversion is not possible.    
 See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> double getAsNullableDouble()
+> double? getAsNullableDouble()
 
-- **returns**: double - double value or null if the conversion is not supported.
+- **returns**: double? - double value or null if the conversion is not supported.
+
+
+#### getAsNullableDuration
+Converts object value into a Duration or returns null if conversion is not possible.
+
+See [DurationConverter.toNullableDuration](../../convert/duration_converter/#tonullableduration)
+
+> Duration? getAsNullableDuration()
+
+- **returns**: Duration? - Duration value or null if conversion is not supported.
 
 
 #### getAsNullableFloat
 Converts an object's value into a float or returns null if the conversion is not possible.    
 See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> double getAsNullableFloat()
+> double? getAsNullableFloat()
 
-- **returns**: double - float value or null if the conversion is not supported.
+- **returns**: double? - float value or null if the conversion is not supported.
 
 
 #### getAsNullableInteger
 Converts an object's value into an integer or returns null if the conversion is not possible.  
 See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> int getAsNullableInteger()
+> int? getAsNullableInteger()
 
-- **returns**: int - integer value or null if the conversion is not supported. 
+- **returns**: int? - integer value or null if the conversion is not supported. 
 
 
 #### getAsNullableLong
 Converts an object's value into a long or returns null if the conversion is not possible.   
 See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
 
-> int getAsNullableLong()
+> int? getAsNullableLong()
 
-- **returns**: int - long value or null if the conversion is not supported. 
+- **returns**: int? - long value or null if the conversion is not supported. 
 
 
 #### getAsNullableString
 Converts an object's value into a string or returns null if the conversion is not possible.    
 See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
 
-> String getAsNullableString()
+> String? getAsNullableString()
 
-- **returns**: String - string value or null if the conversion is not supported. 
+- **returns**: String? - string value or null if the conversion is not supported. 
 
 
 #### getAsNullableType
@@ -254,10 +264,10 @@ Converts an object's value into a value defined by a specified typecode.
 If conversion is not possible, it returns null.  
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
-> T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type)
+> T? getAsNullableType\<T\>([TypeCode](../../convert/type_code) type)
 
 - **type**: [TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
-- **returns**: T - value defined by the typecode or null if the conversion is not supported. 
+- **returns**: T? - value defined by the typecode or null if the conversion is not supported. 
 
 
 #### getAsObject

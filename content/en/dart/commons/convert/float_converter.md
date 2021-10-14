@@ -41,10 +41,10 @@ See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefau
 Converts a value into a float or returns null when the conversion is not possible.  
 See [DoubleConverter.toNullableDouble](../double_converter/#tonullabledouble)
 
-> `static` double toNullableFloat(value)
+> `static` double? toNullableFloat(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: double - float value or null when the conversion is not supported.
+- **returns**: double? - float value or null when the conversion is not supported.
 
 
 ### Examples

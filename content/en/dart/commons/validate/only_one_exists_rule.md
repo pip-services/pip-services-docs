@@ -26,9 +26,9 @@ Creates a new validation rule and sets its values.
 Validates a given value against this rule.
 
 `@override`
-> void performValidation(String path, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.

@@ -34,12 +34,12 @@ The ApplicationException class defines a base class used to define various appli
 ### Constructors
 Creates a new instance of ApplicationException and assigns its values.
 
-> ApplicationException([String category, String correlation_id, String code, String message])
+> ApplicationException([String? category, String? correlation_id, String? code, String? message])
 
-- **category**: String - (optional) standard error category. Default: Unknown
-- **correlation_id**: String - (optional) unique transaction id used to trace execution through the call chain.
-- **code**: String - (optional) unique error code. Default: "UNKNOWN"
-- **message**: String - (optional) human-readable description of the error.
+- **category**: String? - (optional) standard error category. Default: Unknown
+- **correlation_id**: String? - (optional) unique transaction id used to trace execution through the call chain.
+- **code**: String? - (optional) unique error code. Default: "UNKNOWN"
+- **message**: String? - (optional) human-readable description of the error.
 
 ### Fields
 
@@ -47,7 +47,7 @@ Creates a new instance of ApplicationException and assigns its values.
 
 #### message
 Human-readable error description (usually written in English).
-> **message**: String
+> **message**: String?
 
 #### category
 Standard error category.
@@ -63,19 +63,19 @@ Unique error code.
 
 #### details
 Map with additional details that can be used to restore error descriptions in other languages.
-> **details**: [StringValueMap](../../data/string_value_map)
+> **details**: [StringValueMap?](../../data/string_value_map)
 
 #### correlation_id
 Unique transaction id used to trace execution through a call chain.
-> **correlation_id**: String
+> **correlation_id**: String?
 
 #### stack_trace
 Stack trace of the exception.
-> **stack_trace**: String
+> **stack_trace**: String?
 
 #### cause
 Original error wrapped by this exception.
-> **cause**: String
+> **cause**: String?
 
 </span>
 
@@ -84,16 +84,16 @@ Original error wrapped by this exception.
 #### getCauseString
 Gets the original error wrapped by this exception as a string message.
 
-> String getCauseString()
+> String? getCauseString()
 
-- **returns**: String - original error message.
+- **returns**: String? - original error message.
 
 #### getStackTraceString
 Gets a stack trace where this exception occured.
 
-> String getStackTraceString()
+> String? getStackTraceString()
 
-- **returns**: String - stack trace as a string.
+- **returns**: String? - stack trace as a string.
 
 #### setCauseString
 Sets original error wrapped by this exception as a string message.
@@ -134,9 +134,9 @@ Sets a correlation id which can be used to trace this error through a call chain
 This method returns a reference to this exception to implement the Builder pattern
 to chain additional calls.
 
-> [ApplicationException]() withCorrelationId(String correlationId)
+> [ApplicationException]() withCorrelationId(String? correlationId)
 
-- **correlationId**: String - unique transaction id used to trace error through a call chain.
+- **correlationId**: String? - unique transaction id used to trace error through a call chain.
 - **returns**: [ApplicationException]() - exception object
 
 #### withDetails

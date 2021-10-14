@@ -38,10 +38,10 @@ Converts value into Date or returns default when conversion is not possible.
 #### toNullableDuration
 Converts value into Date or returns null when conversion is not possible.
 
-> `static` Duration toNullableDuration(value)
+> `static` Duration? toNullableDuration(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: Duration - Date value or null when conversion is not supported.
+- **returns**: Duration? - Date value or null when conversion is not supported.
 
 ### Examples
 

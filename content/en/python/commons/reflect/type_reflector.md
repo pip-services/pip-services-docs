@@ -22,6 +22,21 @@ The TypeReflector class allows you to examine the type of an object, and create 
 
 ### Static methods
 
+#### create_instance
+
+Creates an instance of an object type specified by its name
+and library where it is defined.
+
+See [get_type](#get_type)
+See [create_instance_by_type](#create_instance_by_type)
+
+> `static` create_instance(name: str, library: str, *args: Any) -> Any:
+
+- **name**: str - an object type name.
+- **library**: str - a library (module) where object type is defined.
+- **args**: Any - arguments for the object constructor.
+- **returns**: Any - the created object instance.
+
 #### create_instance_by_type
 Creates an instance of an object type.
 

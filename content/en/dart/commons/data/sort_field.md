@@ -14,7 +14,7 @@ The SortField class allows you to define a field used to sort query results. In 
 ### Constructors
 Creates a new instance and assigns its values.
 
-> SortField([String name, bool ascending = true])
+> SortField([String? name, bool ascending = true])
 
 - **name**: String - name of the field to sort by.
 - **ascending**: bool - true to sort in ascending order, and false to sort in descending order. 
@@ -26,7 +26,7 @@ Creates a new instance and assigns its values.
 
 #### name
 Field name to sort by.
-> **name**: String
+> **name**: String?
 
 #### ascending
 Flag used to define the sorting order. True to sort ascending, false to sort descending

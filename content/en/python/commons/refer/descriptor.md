@@ -81,6 +81,13 @@ Gets the unique component's name.
 
 - **returns**: str - the unique component's name.
 
+#### get_type
+Gets the component's logical type.
+
+> get_type(): str
+
+- **returns**: str - the component's logical type.
+
 #### get_version
 Gets the component's implementation version.
 

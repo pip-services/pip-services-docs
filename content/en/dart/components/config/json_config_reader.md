@@ -40,9 +40,9 @@ Creates a new instance of the config reader.
 #### readConfig
 Reads a configuration and parameterizes it with given values.
 
-> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
+> Future<[ConfigParams](../../../commons/config/config_params)> readConfig(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration or null to skip parameterization.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - ConfigParams configuration.
 
@@ -51,9 +51,9 @@ Reads a configuration and parameterizes it with given values.
 Reads a configuration file, parameterizes its content and converts it into a JSON object.
 
 `@override`
-> dynamic readObject(String correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
+> dynamic readObject(String? correlationId, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: dynamic - a JSON object with configuration.
 
@@ -63,9 +63,9 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
 #### readConfig_
 Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
-> `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> `static` [ConfigParams](../../../commons/config/config_params) readConfig_(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **path**: String - a path to configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
@@ -74,9 +74,9 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### readObject_
 Reads a configuration file, parameterizes its content and converts it into a JSON object.
 
-> `static` dynamic readObject_(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> `static` dynamic readObject_(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **path**: String - path to the configuration file.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
 - **returns**: dynamic - JSON object with configuration.

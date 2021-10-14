@@ -16,9 +16,9 @@ The ExcludedRule allows you to verify that none of the values specified in the r
 ### Constructors
 Creates a new validation rule and sets its values
 
-> ExcludedRule(List\<dynamic\> values)
+> ExcludedRule(List\<dynamic\>? values)
 
-- **values**: List\<dynamic\> - list of constants with value must be excluded from
+- **values**: List\<dynamic\>? - list of constants with value must be excluded from
 
 ### Instance methods
 
@@ -27,10 +27,10 @@ Validates the given value. none of the values set in this ExcludedRule object mu
 in the value that is given for validation to pass.
 
 `@override`
-> void validate(String path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
 
 
-- **path**: String - dot notation path to the value that is to be validated.
+- **path**: String? - dot notation path to the value that is to be validated.
 - **schema**: [Schema](../schema) - (not used in this implementation).
 - **value**: dynamic - value that is to be validated.
 - **results**: List<[ValidationRule](../validation_result)> - results of the validation.

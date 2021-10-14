@@ -75,7 +75,7 @@ Composes composite connection options from connection and credential parameters.
 
 > [ConfigParams](../../../commons/config/config_params) compose(correlationId: String, List<[ConnectionParams](../connection_params)> connections, [CredentialParams](../../auth/credential_params) credential, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **connections**: List<[ConnectionParams](../connection_params)> - connection parameters
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - optional parameters
@@ -148,9 +148,9 @@ This method can be overriden in child classes.
 #### resolve
 Resolves connection options from connection and credential parameters.
 
->  Future<[ConfigParams](../../../commons/config/config_params)> resolve(String correlationId)
+>  Future<[ConfigParams](../../../commons/config/config_params)> resolve(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConfigParams](../../../commons/config/config_params)> - resolved options or error
 
 
@@ -168,9 +168,9 @@ Validates connection parameters.
 Throws error if validation failed.
 This method can be overriden in child classes.
 
-> void validateConnection(String correlationId, [ConnectionParams](../connection_params) connection)
+> void validateConnection(String? correlationId, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connection**: [ConnectionParams](../connection_params) - connection parameters to be validated
 
 
@@ -178,7 +178,7 @@ This method can be overriden in child classes.
 Validates credential parameters.
 This method can be overriden in child classes.
 
-> void validateCredential(String correlationId, [CredentialParams](../../auth/credential_params) credential)
+> void validateCredential(String? correlationId, [CredentialParams](../../auth/credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **credential**: [CredentialParams](../../auth/credential_params) - credential parameters to be validated

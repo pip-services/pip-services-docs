@@ -22,7 +22,7 @@ The OrRule class allows you to validate combinations of rules created with OR lo
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> OrRule(List<[IValidationRule](../ivalidation_rule)> rules)
+> OrRule(List<[IValidationRule](../ivalidation_rule)>? rules)
 
 - **rules**: List<[IValidationRule](../ivalidation_rule)> - list of rules to join with an OR operator.     
 
@@ -32,9 +32,9 @@ Creates a new validation rule and sets its values.
 Validates a given value against this rule.
 
 `@override`
-> void performValidation(String path, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.

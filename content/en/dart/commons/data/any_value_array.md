@@ -19,9 +19,9 @@ The AnyValueArray class provides a cross-language implementation of a dynamic ar
 ### Constructors
 Creates a new instance of the array and assigns its value.
 
-> AnyValueArray([Iterable values])
+> AnyValueArray([Iterable? values])
 
-- **values**: Iterable - (optional) values used to initialize this array.
+- **values**: Iterable? - (optional) values used to initialize this array.
 
 
 ### Instance methods
@@ -242,90 +242,101 @@ Converts an array's element into an AnyValueMap oject or returns a given default
 #### getAsNullableArray
 Converts an array's element into an AnyValueArray object or returns null if the conversion is not possible.
 
-> [AnyValueArray](../any_value_array) getAsNullableArray(int index)
+> [AnyValueArray?](../any_value_array) getAsNullableArray(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: [AnyValueArray](../any_value_array) - AnyValueArray value of the element or null if the conversion is not supported. 
+- **returns**: [AnyValueArray?](../any_value_array) - AnyValueArray value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableBoolean
 Converts an array's element into a boolean or returns null if the conversion is not possible.   
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> bool getAsNullableBoolean(int index)
+> bool? getAsNullableBoolean(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: bool - boolean value of the element or null if the conversion is not supported.
+- **returns**: bool? - boolean value of the element or null if the conversion is not supported.
 
 
 #### getAsNullableDateTime
 Converts an array's element into a Date or returns null if the conversion is not possible.   
 See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> DateTime getAsNullableDateTime(int index)
+> DateTime? getAsNullableDateTime(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: DateTime - Date value of the element or null if the conversion is not supported. 
+- **returns**: DateTime? - Date value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableDouble
 Converts an array's element into a double or returns null if the conversion is not possible.   
 See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> double getAsNullableDouble(int index)
+> double? getAsNullableDouble(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: double - double value of the element or null if the conversion is not supported.
+- **returns**: double? - double value of the element or null if the conversion is not supported.
+
+
+#### getAsNullableDuration
+Converts array element into a Duration or returns null if conversion is not possible.
+
+See [DurationConverter.toNullableDuration](../../convert/duration_converter/#tonullableduration)
+
+> Duration? getAsNullableDuration(int index)
+
+- **index**: int - an index of element to get.
+- **returns**: Duration? - value of the element or null if conversion is not supported.
 
 
 #### getAsNullableFloat
 Converts an array's element into a float or returns null if the conversion is not possible.   
 See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> double getAsNullableFloat(int index)
+> double? getAsNullableFloat(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: double - float value of the element or null if the conversion is not supported. 
+- **returns**: double? - float value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableInteger
 Converts an array's element into a float or returns null if the conversion is not possible.   
 See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> int getAsNullableInteger(int index)
+> int? getAsNullableInteger(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: int - integer value of the element or null if the conversion is not supported. 
+- **returns**: int? - integer value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableLong
 Converts an array's element into a long or returns null if the conversion is not possible.   
 See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
 
-> int getAsNullableLong(int index)
+> int? getAsNullableLong(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: int - long value of the element or null if the conversion is not supported.
+- **returns**: int? - long value of the element or null if the conversion is not supported.
 
 
 #### getAsNullableMap
 Converts an array's element into a long or returns null if the conversion is not possible.   
 See [AnyValueMap](../any_value_map), [AnyValueMap](../any_value_map/#fromvalue)
 
-> [AnyValueMap](../any_value_map) getAsNullableMap(int index)
+> [AnyValueMap?](../any_value_map) getAsNullableMap(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or null if the conversion is not supported. 
+- **returns**: [AnyValueMap?](../any_value_map) - AnyValueMap value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableString
 Converts an array's element into a string or returns null if the conversion is not possible.   
 See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring),
 
-> String getAsNullableString(int index)
+> String? getAsNullableString(int index)
 
 - **index**: int - index of the element to get.
-- **returns**: String - string value of the element or null if the conversion is not supported.
+- **returns**: String? - string value of the element or null if the conversion is not supported.
 
 
 #### getAsNullableType
@@ -333,20 +344,20 @@ Converts an array's element into a value defined by a specified typecode.
 If the conversion is not possible, it returns null.   
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
-> T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, int index)
+> T? getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, int index)
 
 - **type**: [TypeCode](../../convert/type_code) - TypeCode that defines the type of the result
 - **index**: int - index of the element to get.
-- **returns**: T - element value defined by the typecode or null if the conversion is not supported. 
+- **returns**: T? - element value defined by the typecode or null if the conversion is not supported. 
 
 
 #### getAsObject
 Gets the value stored in an array element without any conversion.
 When the element's index is not defined, it returns the entire array value.
 
-> dynamic getAsObject([int index])
+> dynamic getAsObject([int? index])
 
-- **index**: int - (optional) index of the element to get
+- **index**: int? - (optional) index of the element to get
 - **returns**: dynamic - element value or value of the array when the index is not defined.
 
 
@@ -442,9 +453,9 @@ See [StringConverter.toString](../../convert/string_converter/#tostring)
 Splits a specified string into elements using a separator and assigns 
 the elements to a newly created AnyValueArray.
 
-> `static` [AnyValueArray](../any_value_array) fromString(String values, String separator, [bool removeDuplicates = false])
+> `static` [AnyValueArray](../any_value_array) fromString(String? values, String separator, [bool removeDuplicates = false])
 
-- **values**: String - string value to be split and assigned to an AnyValueArray object.
+- **values**: String? - string value to be split and assigned to an AnyValueArray object.
 - **separator**: String - separator to split the string.
 - **removeDuplicates**: bool - (optional) true to remove duplicated elements.
 - **returns**: [AnyValueArray](../any_value_array) - newly created AnyValueArray object.

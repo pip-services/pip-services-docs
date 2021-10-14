@@ -17,12 +17,12 @@ The MapSchema class provides you with a schema to validate maps
 Creates a new instance of validation schema and sets its values.
 See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
-> MapSchema([dynamic keyType, dynamic valueType, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
+> MapSchema([dynamic keyType, dynamic valueType, bool? req, List<[IValidationRule](../ivalidation_rule)> rules])
 
 - **keyType**: dynamic - type of map keys. Null means that keys may have any type.
 - **valueType**: dynamic - type of map values. Null means that values may have any type.
-- **required**: bool - (optional) true to always require non-null values.
-- **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) list with validation rules.
+- **req**: bool? - (optional) true to always require non-null values.
+- **rules**: List<[IValidationRule](../ivalidation_rule)>? - (optional) list with validation rules.
 
 
 
@@ -48,9 +48,9 @@ Null means that values may have any type.
 Validates a given value against the schema and configured validation rules.
 
 `@override`
-> void performValidation(String path, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void performValidation(String? path, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results to add new results.
 

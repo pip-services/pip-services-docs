@@ -8,7 +8,7 @@ description: >
     It also provides several methods to convert the stored values to different types.
 ---
 
-**Extends:** MapBase\<String, dynamic\>
+**Extends:** MapBase\<dynamic, dynamic\>
 
 **Implements:** [ICloneable](../icloneable), [IValueWrapper](../../reflect/ivalue_wrapper)
 
@@ -49,6 +49,12 @@ Creates a binary clone of this object.
 
 - **returns**: dynamic - clone of this object.
 
+#### fromJson
+Initialize this object from JSON Map object
+
+void fromJson(Map\<String, dynamic\> json)
+
+- **json** - json map object
 
 #### get
 Gets a map's element specified by its key.
@@ -58,6 +64,13 @@ Gets a map's element specified by its key.
 - **key**: String - key of the element to get.
 - **returns**: dynamic - value of the map's element.
 
+
+#### getValue
+Gets an map with values.
+
+> Map\<dynamic, dynamic\> getValue()
+
+- **returns**: Map\<dynamic, dynamic\> - the value of the map elements. 
 
 #### getAsArray
 Converts a map's element into an AnyValueArray object or returns an empty AnyValueArray object if theconversion is not possible.   
@@ -229,89 +242,99 @@ Converts a map's element into an AnyValueMap object or returns a given default v
 Converts a map's element into an AnyValueArray object or returns null if the conversion is not possible.   
 See [AnyValueMap](../any_value_map), [AnyValueMap.fromValue](../any_value_map/#fromvalue)
 
-> [AnyValueMap](../any_value_map) getAsNullableArray(String key)
+> [AnyValueMap?](../any_value_map) getAsNullableArray(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: [AnyValueMap](../any_value_map) - AnyValueArray value of the element or null if the conversion is not supported. 
+- **returns**: [AnyValueMap?](../any_value_map) - AnyValueArray value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableBoolean
 Converts a map's element into a boolean or returns null if the conversion is not possible.   
 See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> bool getAsNullableBoolean(String key)
+> bool? getAsNullableBoolean(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: bool - boolean value of the element or null if the conversion is not supported. 
+- **returns**: bool? - boolean value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableDateTime
 Converts map element into a long or returns a given default value if the conversion is not possible.   
 See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> DateTime getAsNullableDateTime(String key)
+> DateTime? getAsNullableDateTime(String key)
 
 - **key**: String - key of element to get.
-- **returns**: DateTime - Date value of the element or null if the conversion is not supported. 
+- **returns**: DateTime? - Date value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableDouble
 Converts a map's element into a double or returns null if the conversion is not possible.   
 See [DoubleConverter.toNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> double getAsNullableDouble(String key)
+> double? getAsNullableDouble(String key)
 
 - **key**: String - key of element to get.
-- **returns**: double - double value of the element or null if the conversion is not supported. 
+- **returns**: double? - double value of the element or null if the conversion is not supported.
 
+
+#### getAsNullableDuration
+Converts map element into a Duration or returns null if conversion is not possible.
+
+See [DurationConverter.toNullableDuration](../../convert/duration_converter/#tonullableduration)
+
+> Duration? getAsNullableDuration(String key)
+
+- **key**: String - a key of element to get.
+- **returns**: Duration? - Duration value of the element or null if conversion is not supported.
 
 #### getAsNullableFloat
 Converts a map's element into a float or returns null if the conversion is not possible.   
 See [FloatConverter.toNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> double getAsNullableFloat(String key)
+> double? getAsNullableFloat(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: double - float value of the element or null if the conversion is not supported. 
+- **returns**: double? - float value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableInteger
 Converts a map's element into an integer or returns null if the conversion is not possible.   
 See [IntegerConverter.toNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> int getAsNullableInteger(String key)
+> int? getAsNullableInteger(String key)
 
 - **key**: String - key of element to get.
-- **returns**: int - integer value of the element or null if the conversion is not supported. 
+- **returns**: int? - integer value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableLong
 Converts a map's element into a long or returns null if conversion is not possible.   
 See [LongConverter.toNullableLong](../../convert/long_converter/#tonullablelong)
 
-> int getAsNullableLong(String key)
+> int? getAsNullableLong(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: int - long value of the element or null if the conversion is not supported. 
+- **returns**: int? - long value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableMap
 Converts a map's element into an AnyValueMap object or returns null if the conversion is not possible.  
 
-> [AnyValueMap](../any_value_map) getAsNullableMap(String key)
+> [AnyValueMap?](../any_value_map) getAsNullableMap(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: [AnyValueMap](../any_value_map) - AnyValueMap value of the element or null if the conversion is not supported. 
+- **returns**: [AnyValueMap?](../any_value_map) - AnyValueMap value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableString
 Converts a map's element into a string or returns null if the conversion is not possible.   
 See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
 
-> String getAsNullableString(String key)
+> String? getAsNullableString(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: String - string value of the element or null if the conversion is not supported. 
+- **returns**: String? - string value of the element or null if the conversion is not supported. 
 
 
 #### getAsNullableType
@@ -319,20 +342,20 @@ Converts a map element into a value defined by a specified typecode.
 If the conversion is not possible, it returns null.     
 See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
-> T getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, String key)
+> T? getAsNullableType\<T\>([TypeCode](../../convert/type_code) type, String key)
 
 - **type**: [TypeCode](../../convert/type_code) - TypeCode that defines the type of the result.
 - **key**: String - key of the element to get.
-- **returns**: T - element's value defined by the type code or null if the conversion is not supported. 
+- **returns**: T? - element's value defined by the type code or null if the conversion is not supported. 
 
 
 #### getAsObject
 Gets the value stored in a map's element without any conversions.
 When the element's key is not defined, it returns the entire map value.
 
-> dynamic getAsObject([String key])
+> dynamic getAsObject([String? key])
 
-- **key**: String - (optional) key of the element to get
+- **key**: String? - (optional) key of the element to get
 - **returns**: dynamic - element's value or value of the map when the index is not defined. 
 
 
@@ -360,11 +383,11 @@ See [StringConverter.toStringWithDefault](../../convert/string_converter/#tostri
 Converts a map's element into a value defined by a specified type code.
 If the conversion is not possible, it returns the default value for the specified type. 
 
-> T getAsType\<T\>([TypeCode](../../convert/type_code) type, String key)
+> T? getAsType\<T\>([TypeCode](../../convert/type_code) type, String key)
 
 - **type**: [TypeCode](../../convert/type_code) - TypeCode that defines the type of the result.
 - **key**: String - key of the element to get.
-- **returns**: T - element's value defined by the typecode or default if the conversion is not supported. 
+- **returns**: T? - element's value defined by the typecode or default if the conversion is not supported. 
 
 
 #### getAsTypeWithDefault
@@ -426,6 +449,13 @@ This method has a double purpose because method overrides are not supported in J
 - **key**: dynamic - (optional) key of the element to set
 - **value**: dynamic - new element or map value.
 
+#### toJson
+Convert JSON Map object from values of this object
+
+Map\<dynamic, dynamic\> toJson()
+
+- **returns**: Map<dynamic, dynamic> - JSON Map object
+
 
 #### toString
 Gets a string representation of the object.
@@ -444,9 +474,9 @@ Creates a new AnyValueMap object by merging two or more maps.
 Maps defined later in the list override values from previously defined maps.
 
 `@override`
-> `static` [AnyValueMap](../any_value_map) fromMaps(List maps)
+> `static` [AnyValueMap](../any_value_map) fromMaps(List? maps)
 
-- **maps**: List - array of maps to be merged
+- **maps**: List? - array of maps to be merged
 - **returns**: [AnyValueMap](../any_value_map) - newly created AnyValueMap object.
 
 
@@ -463,9 +493,9 @@ Creates a new AnyValueMap object from a list of key-value pairs called tuples.
 Creates a new AnyValueMap object from a list of key-value pairs called tuples.
 The method is similar to [fromTuples](#fromtuples) but tuples are passed as array instead of parameters.
 
-> `static` [AnyValueMap](../any_value_map) fromTuplesArray(List tuples)
+> `static` [AnyValueMap](../any_value_map) fromTuplesArray(List? tuples)
 
-- **tuples**: List - list of values where odd elements are keys and the following even elements are values.
+- **tuples**: List? - list of values where odd elements are keys and the following even elements are values.
 - **returns**: [AnyValueMap](../any_value_map) - newly created AnyValueArray object.
 
 

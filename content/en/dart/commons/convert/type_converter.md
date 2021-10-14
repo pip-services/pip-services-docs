@@ -24,11 +24,11 @@ Converts a [TypeCode](../../convert/type_code) into its string name.
 #### toNullableType
 Converts a value into an object of the type specified by a TypeCode or returns null when the conversion is not possible.
 
-> `static` T toNullableType\<T\>([TypeCode](../../convert/type_code) type, value) 
+> `static` T? toNullableType\<T\>([TypeCode?](../../convert/type_code) type, value) 
 
 - **type**: [TypeCode](../../convert/type_code) - type code for the data type into which 'value' is to be converted.
 - **value**: dynamic - value to convert.
-- **returns**: T - object value of type corresponding to TypeCode, or null when the conversion is not supported.
+- **returns**: T? - object value of type corresponding to TypeCode, or null when the conversion is not supported.
 
 #### toType
 Converts a value into an object of the type specified by Type Code or returns an object of default type when the conversion is not possible.

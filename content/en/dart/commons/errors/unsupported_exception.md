@@ -16,8 +16,8 @@ The UnsupportedException class is used to manage errors caused by calls to unsup
 ### Constructors
 Creates an error instance and assigns its values.
 
-> UnsupportedException([String correlation_id, String code, String message])
+> UnsupportedException([String? correlation_id, String? code, String? message])
 
-- **correlation_id**: String - (optional) unique transaction id used to trace execution through the call chain.
-- **code**: String - (optional) unique error code. Default: "UNKNOWN".
-- **message**: String - (optional) human-readable description of the error.
+- **correlation_id**: String? - (optional) unique transaction id used to trace execution through the call chain.
+- **code**: String? - (optional) unique error code. Default: "UNKNOWN".
+- **message**: String? - (optional) human-readable description of the error.

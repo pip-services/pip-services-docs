@@ -19,19 +19,20 @@ Clears state of multiple components.
 To be cleaned, state components must implement the [ICleanable](../icleanable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future clear(String correlationId, List components)
+> `static` Future clear(String? correlationId, List? components)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
-- **components**: List - list of components that are to be cleaned.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+- **components**: List? - list of components that are to be cleaned.
+- **returns**: Future - that returns error or null no errors occured.
 
 #### clearOne
 Clears the state of a specific component.
 To be cleaned, state components must implement [ICleanable](../icleanable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future clearOne(String correlationId, component)
+> `static` Future clearOne(String? correlationId, component)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **component**: dynamic - component that is to be cleaned.
 
 ### See also

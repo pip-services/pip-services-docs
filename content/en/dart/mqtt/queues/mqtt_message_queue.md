@@ -107,18 +107,18 @@ or/and send to dead letter queue.
 Clears a component's state.
 
 `@override`
-> Future clear(String correlationId)
+> Future clear(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### close
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### complete
 Permanently removes a message from the queue.
@@ -137,9 +137,9 @@ Ends listening for incoming messages.
 When this method is call, [listen](#listen) unblocks the thread and execution continues.
 
 `@override`
-> void endListen(String correlationId)
+> void endListen(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### isOpen
 Checks if the component is open.
@@ -156,9 +156,9 @@ Listens for incoming messages and blocks the current thread until the queue is c
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 `@override`
-> void listen(String correlationId, [IMessageReceiver](../../../messaging/queues/imessage_receiver) receiver)
+> void listen(String? correlationId, [IMessageReceiver](../../../messaging/queues/imessage_receiver) receiver)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 
 #### moveToDeadLetter
@@ -175,9 +175,9 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 Opens the component.
 
 `@override`
-> Future openWithParams(String correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connection**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
 - **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
 - **returns**: Future - that receives null no errors occured.
@@ -188,9 +188,9 @@ Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
 `@override`
-> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> peek(String correlationId)
+> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> peek(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> - peeked message.
 
 #### peekBatch
@@ -200,9 +200,9 @@ If there are no messages available in the queue, it returns an empty list.
 - Important: This method is not supported by MQTT.
 
 `@override`
-> Future\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\> peekBatch(String correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
 - **returns**: Future\<List\<[MessageEnvelope](../../../messaging/queues/message_envelope)\>\> - list with peeked messages.
 
@@ -218,9 +218,9 @@ Reads the current number of messages in the queue to be delivered.
 Receives an incoming message and removes it from the queue.
 
 `@override`
-> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> receive(String correlationId, int waitTimeout)
+> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> receive(String? correlationId, int waitTimeout)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
 - **returns**: Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 
@@ -240,9 +240,9 @@ This method is usually used to extend the message processing time.
 Sends a message into the queue.
 
 `@override`
-> Future send(String correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) envelop)
+> Future send(String? correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) envelop)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
 
 

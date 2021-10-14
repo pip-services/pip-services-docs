@@ -42,10 +42,10 @@ Converts value into an integer or returns a default value when the conversion is
 #### toNullableDouble
 Converts a value into a double or returns null when the conversion is not possible.
 
-> `static` double toNullableDouble(value)
+> `static` double? toNullableDouble(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: double - double value or null when the conversion is not supported.
+- **returns**: double? - double value or null when the conversion is not supported.
 
 ### Examples
 

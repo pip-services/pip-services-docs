@@ -18,10 +18,10 @@ Creates a new validation rule and sets its values.
 
 See [TypeCode](../../convert/type_code)
 
-> ArraySchema([dynamic valueType, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
+> ArraySchema([dynamic valueType, bool? req, List<[IValidationRule](../ivalidation_rule)> rules])
 
 - **valueType**: dynamic - type of array elements. Null means that elements may have any type.
-- **required**: bool - (optional) true to always require non-null values.
+- **required**: bool? - (optional) true to always require non-null values.
 - **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) list with validation rules.
 
 ### Instance methods
@@ -39,9 +39,9 @@ Null means that elements may have any type.
 Validates a given value against the schema and configured validation rules.
 
 `@override`
-> void performValidation(String path, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void performValidation(String? path, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.
 

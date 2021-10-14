@@ -22,9 +22,9 @@ Creates a new instance of validation schema and sets its values.
 
 See [IValidationRule](../ivalidation_rule)
 
-> Schema([bool req, List<[IValidationRule](../ivalidation_rule)> rules])
+> Schema([bool? req, List<[IValidationRule](../ivalidation_rule)> rules])
 
-- **required**: bool - (optional) true to always require non-null values.
+- **required**: bool? - (optional) true to always require non-null values.
 - **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) list with validation rules.
 
 
@@ -33,9 +33,9 @@ See [IValidationRule](../ivalidation_rule)
 #### getRules
 Gets validation rules to check values against.
 
-> List<[IValidationRule](../ivalidation_rule)> getRules()
+> List<[IValidationRule](../ivalidation_rule)>? getRules()
 
-- **returns**: List<[IValidationRule](../ivalidation_rule)> - list with validation rules.
+- **returns**: List<[IValidationRule](../ivalidation_rule)>? - list with validation rules.
 
 #### isRequired
 Gets a flag that always requires non-null values.
@@ -71,9 +71,9 @@ Validates a given value to match a specified type.
 The type can be defined as a Schema, type, a type name or [TypeCode](../../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
-> void performTypeValidation(String path, dynamic type, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void performTypeValidation(String? path, dynamic type, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **type**: dynamic - type to match the value type
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.
@@ -116,21 +116,21 @@ See [ValidationResult](../validation_result)
 #### validateAndReturnException
 Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 
-> [ValidationException](../validation_exception) validateAndReturnException(String correlationId, dynamic value, [bool strict = false])
+> [ValidationException?](../validation_exception) validateAndReturnException(String? correlationId, dynamic value, [bool strict = false])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **value**: dynamic -  value to be validated.
 - **strict**: bool - true to treat warnings as errors.
-- **returns**: [ValidationException](../validation_exception) - validation exception.
+- **returns**: [ValidationException?](../validation_exception) - validation exception.
 
 #### validateAndThrowException
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
 
 See [ValidationException.throwExceptionIfNeeded](../validation_exception/#throwexceptionifneeded)
 
-> void validateAndThrowException(String correlationId, dynamic value, [bool strict = false])
+> void validateAndThrowException(String? correlationId, dynamic value, [bool strict = false])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **value**: dynamic - value to be validated.
 - **strict**: bool - true to treat warnings as errors.
 

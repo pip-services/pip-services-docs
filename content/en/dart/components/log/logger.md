@@ -72,9 +72,9 @@ Configures component by passing configuration parameters.
 Logs high-level debug information for troubleshooting.
 
 `@override`
-> void debug(String correlationId, String message, [List args])
+> void debug(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
 - **message**: String - a human-readable message to log.
 - **args**: List- arguments to parameterize the message.
 
@@ -84,9 +84,9 @@ Logs high-level debug information for troubleshooting.
 Logs recoverable application error.
 
 `@override`
-> void error(String correlationId, Exception error, String message, [List args])
+> void error(String? correlationId, Exception error, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -96,9 +96,9 @@ Logs recoverable application error.
 Logs fatal (unrecoverable) message that caused the process to crash.
 
 `@override`
-> void fatal(String correlationId, Exception error, String message, [List args])
+> void fatal(String? correlationId, Exception error, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -107,10 +107,10 @@ Logs fatal (unrecoverable) message that caused the process to crash.
 #### _formatAndWrite
 Formats the log message and writes it to the logger destination.
 
-> void _formatAndWrite([LogLevel](../log_level) level, String correlationId, Exception error, String message, List args)
+> void _formatAndWrite([LogLevel](../log_level) level, String? correlationId, Exception error, String message, List args)
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -137,9 +137,9 @@ Gets the source (context) name.
 Logs an important information message
 
 `@override`
-> void info(String correlationId, String message, [List args])
+> void info(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through a call chain.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 
@@ -149,10 +149,10 @@ Logs an important information message
 Logs a message at a specified log level.
 
 `@override`
-> void log([LogLevel](../log_level) level, String correlationId, Exception error, String message, [List args])
+> void log([LogLevel](../log_level) level, String? correlationId, Exception error, String message, [List args])
 
 - **level**: [LogLevel](../log_level) - a log level.
-- **correlationId**: String - (optional) transaction id to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through a call chain.
 - **error**: Exception - an error object associated with this message.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -172,9 +172,9 @@ Set the maximum log level.
 Logs low-level debug information for troubleshooting.
 
 `@override`
-> void trace(String correlationId, String message, [List args])
+> void trace(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 
@@ -183,9 +183,9 @@ Logs low-level debug information for troubleshooting.
 Logs a warning that may or may not have a negative impact.
 
 `@override`
-> void warn(String correlationId, String message, [List args])
+> void warn(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id to trace execution through call chain.
+- **correlationId**: String? - (optional) transaction id to trace execution through call chain.
 - **message**: String - a human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 

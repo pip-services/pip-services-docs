@@ -30,9 +30,9 @@ Checks if the component is open.
 #### open
 Opens the component.
 
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 ### Examples
 
@@ -43,14 +43,14 @@ class MyPersistence implements IOpenable {
     bool isOpen() {
         return _client != null;
     }
-    Future open(String correlationId) {
+    Future open(String? correlationId) {
         if (isOpen()) {
             return Future(Duration(), (){
              })
         }
         ...
     }
-    Future close(String correlationId) async {
+    Future close(String? correlationId) async {
         if (_client != null) {
             result = await _client.close();
             _client = null;

@@ -21,29 +21,29 @@ The RandomDateTime class allows you to generate random dates.
 Generates a random Date in the range ['minYear', 'maxYear'].
 This method generates dates without time (or time set to 00:00:00)
 
-> `static` DateTime nextDate(DateTime min, [DateTime max])
+> `static` DateTime nextDate(DateTime min, [DateTime? max])
 
 - **min**: DateTime - (optional) minimum range value.
-- **max**: DateTime - max range value.
+- **max**: DateTime? - max range value.
 - **returns**: DateTime - random Date value.
 
 #### nextDateTime
 Generates a random Date and time in the range ['minYear', 'maxYear'].
 This method generates dates without time (or time set to 00:00:00)
 
-> `static` DateTime nextDateTime(DateTime min, [DateTime max])
+> `static` DateTime nextDateTime(DateTime min, [DateTime? max])
 
 - **min**: DateTime - (optional) minimum range value
-- **max**: DateTime - max range value
+- **max**: DateTime? - max range value
 - **returns**: DateTime - random Date and time value.
 
 #### updateDateTime
 Updates (drifts) a Date value within specified range.
 
-> `static` DateTime updateDateTime(DateTime value, [int range])
+> `static` DateTime updateDateTime(DateTime value, [int? range])
 
 - **value**: DateTime - Date value to drift.
-- **range**: int - (optional)  range in milliseconds. Default: 10 days
+- **range**: int? - (optional)  range in milliseconds. Default: 10 days
 - **returns**: DateTime - updated DateTime
 
 ### Examples

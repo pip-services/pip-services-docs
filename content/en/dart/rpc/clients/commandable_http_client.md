@@ -57,7 +57,7 @@ Creates a new instance of the client.
 #### callCommand
 Calls a remote method via the HTTP commadable protocol. The call is made via a POST operation and all parameters are sent in the body object. The complete route to the remote method is defined as baseRoute + "/" + name.
 
-> Future callCommand(String name, String correlationId, params)
+> Future callCommand(String name, String? correlationId, params)
 
 - **name**: String - name of the command to call.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
@@ -70,7 +70,7 @@ Calls a remote method via the HTTP commadable protocol. The call is made via a P
 ```dart
 class MyCommandableHttpClient extends CommandableHttpClient implements IMyClient {
    ...
-   Future<MyData> getData(String correlationId, String id) async {
+   Future<MyData> getData(String? correlationId, String id) async {
        var result = await callCommand(
            "get_data",
            correlationId,

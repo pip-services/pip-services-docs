@@ -18,7 +18,7 @@ Gets a list of data items using a query string.
 
 > Future\<List\<T\>\> getListByQuery(String correlation_id, String query, [SortParams](../../../commons/data/sort_params) sort)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **query**: String - (optional) query string
 - **sort**: [SortParams](../../../commons/data/sort_params) - (optional) sorting parameters
 - **returns**: Future\<List\<T\>\> - list of items

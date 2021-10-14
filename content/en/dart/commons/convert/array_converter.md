@@ -46,10 +46,10 @@ Single values are converted into arrays with a single element.
 Converts a value into an array object.
 Single values are converted into arrays with a single element.
 
-> `static` List toNullableArray(value)
+> `static` List? toNullableArray(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: List - array object or null when value is null.
+- **returns**: List? - array object or null when value is null.
 
 ### Examples
 

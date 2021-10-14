@@ -35,10 +35,10 @@ Converts a value into a map object or returns a given default when the conversio
 #### toNullableMap
 Converts a value into a map object or returns null when the conversion is not possible.
 
-> `static` Map\<String, dynamic\> toNullableMap(value)
+> `static` Map\<String, dynamic\>? toNullableMap(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: Map\<String, dynamic\> - map object or null when the conversion is not supported.
+- **returns**: Map\<String, dynamic\>? - map object or null when the conversion is not supported.
 
 
 ### Examples

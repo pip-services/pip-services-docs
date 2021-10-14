@@ -18,6 +18,6 @@ Saves given data items.
 
 > Future save(String correlation_id, List\<T\> items)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **items**: List\<T\> - list of items to save.
 

@@ -85,9 +85,9 @@ added to the container by their locators (descriptors).
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -112,17 +112,17 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### readConfigFromFile
 Reads the container's configuration from a JSON or YAML file and parameterizes it with the given values.
 
-> void readConfigFromFile(String correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
+> void readConfigFromFile(String? correlationId, String path, [ConfigParams](../../../commons/config/config_params) parameters)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **path**: String - path to the configuration file
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or null to skip parameterization.
 

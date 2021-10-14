@@ -21,9 +21,9 @@ The AndRule class allows you to validate combinations of rules created with AND 
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> AndRule(List<[IValidationRule](../ivalidation_rule)> rules)
+> AndRule(List<[IValidationRule](../ivalidation_rule)>? rules)
 
-- **rules**: List<[IValidationRule](../ivalidation_rule)> - list of rules to join with the AND operator.
+- **rules**: List<[IValidationRule](../ivalidation_rule)>? - list of rules to join with the AND operator.
 
 ### Instance methods
 
@@ -31,9 +31,9 @@ Creates a new validation rule and sets its values.
 Validates a given value against this rule.
 
 `@override`
-> void validate(String path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
 
-- **path**: sString - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationRule](../validation_result)> - list with validation results to add new results.

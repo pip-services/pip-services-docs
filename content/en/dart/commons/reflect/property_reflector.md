@@ -60,10 +60,10 @@ Sets the values of some (all) object properties.
 If some properties do not exist or introspection fails, 
 they are just silently skipped and no errors thrown.
 
-> `static` void setProperties(obj, Map\<String, dynamic\> values)
+> `static` void setProperties(obj, Map\<String, dynamic\>? values)
 
 - **obj**: dynamic - object to write properties to.
-- **values**: Map\<String, dynamic\> - map containing property names and their values.
+- **values**: Map\<String, dynamic\>? - map containing property names and their values.
 
 
 #### setProperty

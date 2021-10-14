@@ -19,10 +19,10 @@ The TypeDescriptor class stores a reference to a type represented by the type na
 ### Constructors
 Creates a new instance of the type descriptor and sets its values.
 
-> TypeDescriptor(String name, String library)
+> TypeDescriptor(String name, String? library)
 
 - **name**: String - name of the object type.
-- **library**: String - library or module where this object type is implemented.
+- **library**: String? - library or module where this object type is implemented.
 
 
 ### Instance methods
@@ -40,9 +40,9 @@ Otherwise this method returns false.
 #### getLibrary
 Gets the name of the library or module where the object type is defined.
 
-> String getLibrary()
+> String? getLibrary()
 
-- **returns**: String - name of the library or module.
+- **returns**: String? - name of the library or module.
 
 
 #### getName
@@ -69,7 +69,7 @@ Parses a string to get descriptor fields and returns them as a Descriptor.
 The string must have the format *name[,library]*.   
 Throws a [ConfigException](../../errors/config_exception) if the descriptor string is of a wrong format.
 
-> `static` [TypeDescriptor]() fromString(String value)
+> `static` [TypeDescriptor?]() fromString(String value)
 
 - **value**: String - string to parse.
-- **returns**: [TypeDescriptor]() - newly created Descriptor.
+- **returns**: [TypeDescriptor?]() - newly created Descriptor.

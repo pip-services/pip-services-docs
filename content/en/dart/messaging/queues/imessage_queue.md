@@ -34,9 +34,9 @@ Returns a message into the queue and makes it available for all subscribers to r
 Listens for incoming messages without blocking the current thread.  
 See also [IMessageReceiver](../imessage_receiver), [listen](#listen)
 
-> void beginListen(String correlationId, [IMessageReceiver](../imessage_receiver) receiver)
+> void beginListen(String? correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 #### complete
@@ -49,9 +49,9 @@ Permanently removes a message from the queue. This method is usually used to rem
 #### endListen
 Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
-> void endListen(String correlationId)
+> void endListen(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### getCapabilities
 Gets the queue capabilities
@@ -71,9 +71,9 @@ Gets the queue's name
 Listens for incoming messages and blocks the current thread until the queue is closed.  
 See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 
-> void listen(String correlationId, [IMessageReceiver](../imessage_receiver) receiver)
+> void listen(String? correlationId, [IMessageReceiver](../imessage_receiver) receiver)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
@@ -87,15 +87,15 @@ Permanently removes a message from the queue and sends it to the dead letter que
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
-> Future<[MessageEnvelope](../message_envelope)> peek(String correlationId)
+> Future<[MessageEnvelope](../message_envelope)> peek(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
-> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
 - **orrelation_id**: String - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
@@ -111,9 +111,9 @@ Reads the current number of messages in the queue to be delivered.
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> Future<[MessageEnvelope](../message_envelope)> receive(String correlationId, int waitTimeout)
+> Future<[MessageEnvelope](../message_envelope)> receive(String? correlationId, int waitTimeout)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
 - **returns**: Future<[MessageEnvelope](../message_envelope)> - received message or *null*.
 
@@ -128,17 +128,17 @@ Renews a lock on a message that makes it invisible from other receivers in the q
 #### send
 Sends a message into the queue.
 
-> Future send(String correlationId, [MessageEnvelope](../message_envelope) envelope)
+> Future send(String? correlationId, [MessageEnvelope](../message_envelope) envelope)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **envelope**: [MessageEnvelope](../message_envelope) - message envelop to be sent.
 
 #### sendAsObject
 Sends an object into the queue. Before being sent, the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
-> Future sendAsObject(String correlationId, String messageType, value)
+> Future sendAsObject(String? correlationId, String messageType, value)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **messageType**: String - message type
 - **value**: dynamic - object value to be sent
 

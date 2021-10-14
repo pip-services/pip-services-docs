@@ -19,9 +19,9 @@ Checks if all components are opened.
 To be checked, components must implement the [IOpenable](../iopenable) interface.
 If they don't, the call to this method returns true.
 
-> `static` bool isOpen(List components)
+> `static` bool isOpen(List? components)
 
-- **components**: List - list of components that are to be checked.
+- **components**: List? - list of components that are to be checked.
 - **returns**: bool - true if all components are opened and false if at least one component is closed.
 
 #### isOpenOne
@@ -40,10 +40,10 @@ Opens multiple components.
 To be opened, components must implement [IOpenable](../iopenable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future open(String correlationId, List components)
+> `static` Future open(String? correlationId, List? components)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
-- **components**: List - list of components that are to be closed.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+- **components**: List? - list of components that are to be closed.
 
 
 #### openOne
@@ -51,9 +51,9 @@ Opens a specific component.
 To be opened, components must implement the [IOpenable](../iopenable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future openOne(String correlationId, component)
+> `static` Future openOne(String? correlationId, component)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **component**: dynamic - component that is to be opened.
 
 

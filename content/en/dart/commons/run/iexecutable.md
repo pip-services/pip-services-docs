@@ -17,9 +17,9 @@ The IExecutable interface allows you to create a component that can be called to
 #### execute
 Executes a component with arguments and receives the execution result.
 
-> Future\<dynamic\> execute(String correlationId, [Parameters](../parameters) args)
+> Future\<dynamic\> execute(String? correlationId, [Parameters](../parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../parameters) - execution arguments.
 - **returns**: Future\<dynamic\> - execution result. 
 
@@ -28,7 +28,7 @@ Executes a component with arguments and receives the execution result.
 ```dart
 class EchoComponent implements IExecutable {
     ...
-    Future<dynamic> execute(String correlationId, Parameters args)  {
+    Future<dynamic> execute(String? correlationId, Parameters args)  {
        return Future.delayed(Duration(), (){
            return args.getAsObject('message');
        })

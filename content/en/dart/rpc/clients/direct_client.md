@@ -70,7 +70,7 @@ The dependency resolver used to get the controller's reference.
 Closes a component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
@@ -87,9 +87,9 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> [Timing](../../../components/timing) instrument(String correlationId, String name)
+> [Timing](../../../components/timing) instrument(String? correlationId, String name)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
 - **returns**: [Timing](../../../components/timing) - InstrumentTiming object used to end the time measurement.
 
@@ -108,7 +108,7 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 
@@ -130,7 +130,7 @@ class MyDirectClient extends DirectClient<IMyController> implements IMyClient {
           "mygroup", "controller", "*", "*", "*"));
     }
     ...
-    Future<MyData> getData(String correlationId, String id) async {
+    Future<MyData> getData(String? correlationId, String id) async {
       var timing = instrument(correlationId, 'myclient.get_data');
       try {
       var result = await controller.getData(correlationId, id)

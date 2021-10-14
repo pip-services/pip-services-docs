@@ -26,9 +26,9 @@ Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
 `@override`
-> Future acquireLock(String correlationId, String key, int ttl, int timeout)
+> Future acquireLock(String? correlationId, String key, int ttl, int timeout)
 
-- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **correlationId**: String? -(optional) transaction id used to trace execution through a call chain. 
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **timeout**: int - lock acquisition timeout.
@@ -40,9 +40,9 @@ Makes a single attempt to acquire a lock by its key.
 It returns a positive or negative result immediately.
 
 `@override`
-> Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
+> Future\<bool\> tryAcquireLock(String? correlationId, String key, int ttl)
 
-- **correlationId**: String -(optional) transaction id used to trace execution through a call chain. 
+- **correlationId**: String? -(optional) transaction id used to trace execution through a call chain. 
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **return**: Future\<bool\> - lock result
@@ -52,9 +52,9 @@ It returns a positive or negative result immediately.
 Releases prevously acquired lock by its key.
 
 `@override`
-> Future releaseLock(String correlationId, String key)
+> Future releaseLock(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to release.
 
 

@@ -16,9 +16,9 @@ The InclidedRule class allows you to check that a list contains only specified v
 ### Constructors
 Creates a new validation rule and sets its values.
 
-> IncludedRule(List\<dynamic\> values)
+> IncludedRule(List\<dynamic\>? values)
 
-- **values**: List\<dynamic\> - list of constants with values that must be included.
+- **values**: List\<dynamic\>? - list of constants with values that must be included.
 
 ### Instance methods
 
@@ -27,9 +27,9 @@ Creates a new validation rule and sets its values.
 Validates a given value against this rule.
 
 `@override`
-> void validate(String path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
+> void validate(String? path, [Schema](../schema) schema, dynamic value, List<[ValidationRule](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **schema**: [Schema](../schema) - schema this rule is called from.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationRule](../validation_result)> - list with validation results.

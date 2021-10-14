@@ -46,9 +46,9 @@ The RedisLock class allows you to create a distributed lock that is implemented 
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -72,17 +72,17 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### releaseLock
 Releases a prevously acquired lock by its key.
 
 `@override`
-> Future releaseLock(String correlationId, String key)
+> Future releaseLock(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - unique lock key to release.
 
 #### setReferences
@@ -99,9 +99,9 @@ Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
 `@override`
-> Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl) 
+> Future\<bool\> tryAcquireLock(String? correlationId, String key, int ttl) 
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: Future\<bool\> - *true* if lock was successfully acquired and *false* otherwise.

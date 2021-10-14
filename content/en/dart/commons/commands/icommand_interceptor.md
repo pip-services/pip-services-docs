@@ -36,9 +36,9 @@ Executes the wrapped command with specified arguments.
 The interceptor can use this method to intercept and alter the command execution.
 Otherwise, it shall just delete the call to the wrapped command.
 
-> Future\<dynamic\> execute(String correlationId, [ICommand](../icommand) command, [Parameters](../../run/parameters) args)
+> Future\<dynamic\> execute(String? correlationId, [ICommand](../icommand) command, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - (optional) transaction id to used trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id to used trace execution through the call chain.
 - **command**: [ICommand](../icommand) - next command in the call chain that is to be executed.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
 - **returns**: Future\<dynamic\> - execution result.

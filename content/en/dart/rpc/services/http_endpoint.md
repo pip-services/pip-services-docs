@@ -47,9 +47,9 @@ following references to the object's [set_references](#setreferences) method:
 Closes this endpoint and the REST server (service) that was opened earlier.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure

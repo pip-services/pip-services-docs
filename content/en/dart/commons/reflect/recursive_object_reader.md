@@ -41,7 +41,7 @@ The object can be a user defined object, map or array.
 The property name correspondently must be an object's property,
 map key or array index.
 
-> `static` dynamic getProperty(obj, String name)
+> `static` dynamic getProperty(obj, String? name)
 
 - **obj**: dynamic - object to read the property from.
 - **name**: String - name of the property to get.
@@ -61,10 +61,10 @@ map keys or array indexes.
 
 #### hasProperty
 
-> `static` bool hasProperty(obj, String name)
+> `static` bool hasProperty(obj, String? name)
 
 - **obj**: dynamic - object to introspect. 
-- **name**: String - name of the property to check.
+- **name**: String? - name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
 
 

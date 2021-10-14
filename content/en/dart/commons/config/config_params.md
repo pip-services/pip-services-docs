@@ -36,10 +36,10 @@ See [StringValueMap.constructors](../../data/string_value_map/#constructors)
 Adds parameters into this ConfigParams under a specified section.
 Keys for the new parameters are appended with section dot prefix.
 
-> void addSection(String section, [ConfigParams]() sectionParams)
+> void addSection(String? section, [ConfigParams?]() sectionParams)
 
-- **section**: String - name of the section where add new parameters
-- **sectionParams**: [ConfigParams]() - new parameters to be added.
+- **section**: String? - name of the section where add new parameters
+- **sectionParams**: [ConfigParams?]() - new parameters to be added.
 
 
 #### getSection

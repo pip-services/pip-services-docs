@@ -22,10 +22,10 @@ If they don't, the call to this method has no effect.
 
 See [IExecutable](../iexecutable), [Parameters](../parameters).
 
-> `static` Future\<List\> execute(String correlationId, List components, [Parameters](../parameters) args)
+> `static` Future\<List\> execute(String? correlationId, List? components, [Parameters](../parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
-- **components**: List - list of components that are to be executed.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+- **components**: List? - list of components that are to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
 - **returns**: Future\<List\> - execution result
 
@@ -35,9 +35,9 @@ Executes a specific component.
 To be executed, components must implement the [IExecutable](../iexecutable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future\<dynamic\> executeOne(String correlationId, component, [Parameters](../parameters) args)
+> `static` Future\<dynamic\> executeOne(String? correlationId, component, [Parameters](../parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **component**: dynamic - component that is to be executed.
 - **args**: [Parameters](../parameters) - execution arguments.
 - **returns**: Future\<dynamic\> - execution result.

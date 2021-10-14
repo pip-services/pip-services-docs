@@ -37,10 +37,10 @@ Converts a value into an integer or returns a given default when the conversion 
 #### toNullableLong
 Converts a value into a long or returns null when the conversion is not possible.
 
-> `static` int toNullableLong(value)
+> `static` int? toNullableLong(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: int - long value or null when the conversion is not supported.
+- **returns**: int? - long value or null when the conversion is not supported.
 
 ### Examples
 

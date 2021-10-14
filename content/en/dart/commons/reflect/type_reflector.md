@@ -22,13 +22,28 @@ The TypeReflector class allows you to examine the type of an object, and create 
 
 ### Static methods
 
+#### createInstance
+
+Creates an instance of an object type specified by its name
+and library where it is defined.
+
+See [getType](#gettype)
+See [createInstanceByType](#createinstancebytype)
+
+> `static` dynamic createInstance(String name, String library, List args) {
+
+- **name**: String - an object type name.
+- **library**: String - a library (module) where object type is defined.
+- **args**: List - arguments for the object constructor.
+- **returns**: dynamic - the created object instance.
+
 #### createInstanceByType
 Creates an instance of an object type.
 
-> `static` dynamic createInstanceByType(Type type, List args)
+> `static` dynamic createInstanceByType(Type? type, List? args)
 
-- **type**: Type - object type (factory function) to create.
-- **args**: List - arguments for the object constructor.
+- **type**: Type? - object type (factory function) to create.
+- **args**: List? - arguments for the object constructor.
 - **returns**: dynamic - created object's instance.
 
 #### createInstanceByDescriptor
@@ -53,19 +68,19 @@ Creates an instance of an object's type.
 #### getType
 Gets an object's type by its name and library where it is defined.
 
-> `static` Type getType(String name, [String library])
+> `static` Type? getType(String name, [String library])
 
 - **name**: String - object type name.
 - **library**: String - library where the type is defined.
-- **returns**: Type - object type or null is the type wasn't found.
+- **returns**: Type? - object type or null is the type wasn't found.
 
 #### getTypeByDescriptor
 Gets an object's type by type descriptor.
 
-> `static` Type getTypeByDescriptor([TypeDescriptor](../type_descriptor) descriptor) 
+> `static` Type? getTypeByDescriptor([TypeDescriptor](../type_descriptor) descriptor) 
 
 - **descriptor**: [TypeDescriptor](../type_descriptor) - type descriptor that points to an object type.
-- **returns**: Type - object type or null is the type wasn't found.
+- **returns**: Type? - object type or null is the type wasn't found.
 
 #### isPrimitive
 Checks if a value has a primitive type.

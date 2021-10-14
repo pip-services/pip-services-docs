@@ -19,17 +19,17 @@ The ITrackagle interface allows you to define data objects that can track their 
 
 #### create_time
 UTC time at which the object was created.
-> **create_time**: DateTime
+> `abstract` **create_time**: DateTime
 
 #### change_time
 UTC time at which the object was last changed (created, updated, or deleted).
 
 `@override`
-> **change_time**: DateTime
+> `abstract` **change_time**: DateTime
 
 #### deleted
 Logical deletion flag. True when object is deleted and null or false otherwise
-> **deleted**: bool
+> `abstract` **deleted**: bool
 
 </span>
 
@@ -41,8 +41,11 @@ class MyData implements IStringIdentifiable, ITrackable {
     String  field1;
     int field2;
     ...
+    @override
     DateTime change_time;
+    @override
     DateTime create_time;
+    @override
     bool deleted;
 }
 ```

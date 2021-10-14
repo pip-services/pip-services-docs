@@ -66,9 +66,9 @@ Performance counters.
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -93,9 +93,9 @@ Checks if the component is open.
 Adds instrumentation to log calls and measures call time. 
 It returns a CounterTiming object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String correlationId, String name)
+> [Timing](../../../components/count/timing) instrument(String? correlationId, String name)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
 - **returns**: [Timing](../../../components/count/timing) - Timing object to end the time measurement.
 
@@ -104,9 +104,9 @@ It returns a CounterTiming object that is used to end the time measurement.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### register

@@ -19,19 +19,20 @@ Closes multiple components.
 To be closed, components must implement the [IClosable](../iclosable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future close(String correlationId, List components)
+> `static` Future close(String? correlationId, List? components)
 
-- **correlationId**: String - (optional) transaction id  used to trace execution through the call chain.
-- **components**: List - list of components that are to be closed.
+- **correlationId**: String? - (optional) transaction id  used to trace execution through the call chain.
+- **components**: List? - list of components that are to be closed.
+- **returns**: Future - that receives error or null no errors occured.
 
 #### closeOne
 Closes a specific component.
 To be closed, components must implement the [IClosable](../iclosable) interface.
 If they don't, the call to this method has no effect.
 
-> `static` Future closeOne(String correlationId, component)
+> `static` Future closeOne(String? correlationId, component)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **component**: dynamic - component that is to be closed.
 
 ### See also

@@ -16,9 +16,9 @@ The ConfigException is used to manage errors related to mistakes in microservice
 ### Constructors
 Creates an error instance and assigns its values.
 
-> ConfigException([String correlation_id, String code, String message])
+> ConfigException([String? correlation_id, String? code, String? message])
 
-- **correlation_id**: String - (optional) unique transaction id used to trace execution through the call chain.
-- **code**: String - (optional) unique error code. Default: "UNKNOWN".
-- **message**: String - (optional) human-readable description of the error.
+- **correlation_id**: String? - (optional) unique transaction id used to trace execution through the call chain.
+- **code**: String? - (optional) unique error code. Default: "UNKNOWN".
+- **message**: String? - (optional) human-readable description of the error.
 

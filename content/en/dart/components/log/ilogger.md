@@ -17,9 +17,9 @@ The ILogger interface provides a set of methods for logger components that captu
 #### debug
 Logs high-level debug information for troubleshooting.
 
-> void debug(String correlationId, String message, [List args])
+> void debug(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 
@@ -28,9 +28,9 @@ Logs high-level debug information for troubleshooting.
 #### error
 Logs recoverable application errors.
 
-> void error(String correlationId, Exception error, String message, [List args])
+> void error(String? correlationId, Exception error, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **error**: Exception - error object associated with this message.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -39,9 +39,9 @@ Logs recoverable application errors.
 #### fatal
 Logs fatal (unrecoverable) message that caused the process to crash.
 
-> void fatal(String correlationId, Exception error, String message, [List args])
+> void fatal(String? correlationId, Exception error, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **error**: Exception - error object associated with this message.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -59,9 +59,9 @@ Gets the maximum log level. Messages with higher log level are filtered out.
 #### info
 Logs an important information message.
 
-> void info(String correlationId, String message, [List args])
+> void info(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 
@@ -70,10 +70,10 @@ Logs an important information message.
 #### log
 Logs a message at a specified log level.
 
-> void log([LogLevel](../log_level) level, String correlationId, Exception error, String message, [List args])
+> void log([LogLevel](../log_level) level, String? correlationId, Exception error, String message, [List args])
 
 - **level**: [LogLevel](../log_level) - log level.
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **error**: Exception - error object associated with this message.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
@@ -91,9 +91,9 @@ Set the maximum log level.
 #### trace
 Logs low-level debug information for troubleshooting.
 
-> void trace(String correlationId, String message, [List args])
+> void trace(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 
@@ -101,9 +101,9 @@ Logs low-level debug information for troubleshooting.
 #### warn
 Logs a warning that may or may not have a negative impact.
 
-> void warn(String correlationId, String message, [List args])
+> void warn(String? correlationId, String message, [List args])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **message**: String - human-readable message to log.
 - **args**: List - arguments to parameterize the message.
 

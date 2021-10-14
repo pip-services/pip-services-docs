@@ -43,9 +43,9 @@ Checks if this map contains an element with a specified key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> bool containsKey(Object key)
+> bool containsKey(Object? key)
 
-- **key**: Object - key to be checked
+- **key**: Object? - key to be checked
 - **returns**: bool - true if this map contains the key or false otherwise.
 
 #### get
@@ -53,19 +53,19 @@ Gets a map's element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> dynamic get(String key)
+> dynamic get(String? key)
 
-- **key**: String - key of the element to get.
+- **key**: String? - key of the element to get.
 - **returns**: dynamic - value of the map element.
 
 
 #### getAsNullableParameters
 Converts a map's element into a Parameters object or returns null if the conversion is not possible.
 
-> [Parameters](../parameters) getAsNullableParameters(String key)
+> [Parameters?](../parameters) getAsNullableParameters(String key)
 
 - **key**: String - key of the element to get.
-- **returns**: [Parameters](../parameters) - Parameters value of the element or null if the conversion is not supported.
+- **returns**: [Parameters?](../parameters) - Parameters value of the element or null if the conversion is not supported.
 
 #### getAsParameters
 Converts a map's element into a Parameters object or returns an empty Parameters object if the conversion is not possible.
@@ -98,9 +98,9 @@ Omits selected parameters from this Parameters object and returns the rest as a 
 #### override
 Overrides parameters with new values from a specified [Parameters](../parameters) object and returns a new [Parameters](../parameters) object.
 
-> [Parameters](../parameters) override([Parameters](../parameters) parameters, [bool recursive = false])
+> [Parameters](../parameters) override([Parameters?](../parameters) parameters, [bool recursive = false])
 
-- **parameters**: [Parameters](../parameters) - Parameters with parameters to override the current values.
+- **parameters**: [Parameters?](../parameters) - Parameters with parameters to override the current values.
 - **recursive**: bool - (optional) true to perform a deep copy, and false for a shallow copy. Default: false
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
@@ -119,9 +119,9 @@ Puts a new value into a map's element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> void put(String key, value)
+> void put(String? key, value)
 
-- **key**: String - key of the element to put.
+- **key**: String? - key of the element to put.
 - **value**: dynamic - new value for map element.
 
 #### setDefaults
@@ -137,9 +137,9 @@ Sets default values from a specified Parameters object and returns a new Paramet
 #### toJsonString
 Converts this map to a JSON object.
 
-> String toJsonString()
+> String? toJsonString()
 
-- **returns**: String - JSON representation of this map.
+- **returns**: String? - JSON representation of this map.
 
 ### Static methods
 
@@ -147,9 +147,9 @@ Converts this map to a JSON object.
 Creates new Parameters object from a ConfigMap object.
 See [ConfigParams](../../config/config_params)
 
-> `static` [Parameters](../parameters) fromConfig([ConfigParams](../../config/config_params) config)
+> `static` [Parameters](../parameters) fromConfig([ConfigParams?](../../config/config_params) config)
 
-- **config**: [ConfigParams](../../config/config_params) - ConfigParams object that contains parameters.
+- **config**: [ConfigParams?](../../config/config_params) - ConfigParams object that contains parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 

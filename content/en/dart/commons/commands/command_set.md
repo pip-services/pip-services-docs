@@ -90,9 +90,9 @@ See [IEventListener](../ievent_listener)
 Executes a [command](../icommand) specificed by its name.  
 See [ICommand](../icommand), [Parameters](../../run/parameters)
 
-> Future<\dynamic\> execute(String correlationId, String commandName, [Parameters](../../run/parameters) args)
+> Future<\dynamic\> execute(String? correlationId, String commandName, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **commandName**: String - name of the command that is to be executed.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
 - **returns**: Future<\dynamic\> - execution result
@@ -101,18 +101,18 @@ See [ICommand](../icommand), [Parameters](../../run/parameters)
 Searches for a command by its name.  
 See [ICommand](../icommand)
 
->  [ICommand](../icommand) findCommand(String commandName)
+>  [ICommand?](../icommand) findCommand(String commandName)
 
 - **commandName**: [ICommand](../icommand) - name of the command to search for.
-- **returns**: [ICommand](../icommand) - command, whose name matches the provided name.
+- **returns**: [ICommand?](../icommand) - command, whose name matches the provided name.
 
 #### findEvent
 Searches for an event by its name in this command set.
 
-> [IEvent](../ievent) findEvent(String eventName)
+> [IEvent?](../ievent) findEvent(String eventName)
 
 - **eventName**: String - name of the event to search for.
-- **returns**: [IEvent](../ievent) - event, whose name matches the provided name.
+- **returns**: [IEvent?](../ievent) - event, whose name matches the provided name.
 
 #### getCommands
 Gets all commands registered in this command set.  
@@ -134,9 +134,9 @@ See [IEvent](../ievent)
 Fires an event specified by its name and notifies all registered
 [listeners](../ievent_listener)
 
-> void notify(String correlationId, String eventName, [Parameters](../../run/parameters) args)
+> void notify(String? correlationId, String eventName, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **eventName**: String - name of the event that is to be fired.
 - **args**: [Parameters](../../run/parameters) - event arguments (parameters).
 
@@ -175,7 +175,7 @@ class MyDataCommandSet extends CommandSet {
         return  Command(
           'get_mydata',
           null,
-          (String correlationId, Parameters args) {
+          (String? correlationId, Parameters args) {
               var param = args.getAsString('param');
               return _controller.getMyData(correlationId, param);
           }

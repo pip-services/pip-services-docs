@@ -22,6 +22,22 @@ Important points
 
 ### Static methods
 
+#### createInstance
+
+Creates an instance of an object type specified by its name
+and library where it is defined.
+
+See [getType](#gettype)
+See [createInstanceByType](#createinstancebytype)
+
+> `public static` createInstance(name: string, library: string, ...args: any[]): any
+
+- **name**: string - an object type name.
+- **library**: string - a library (module) where object type is defined.
+- **args**: any[] - arguments for the object constructor.
+- **returns**: any - the created object instance.
+
+
 #### createInstanceByType
 Creates an instance of an object type.
 

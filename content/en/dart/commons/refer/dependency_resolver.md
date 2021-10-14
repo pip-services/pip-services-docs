@@ -33,7 +33,7 @@ Creates a new instance of the dependency resolver.
 
 See [ConfigParams](../../config/config_params), [IReferences](../ireferences)
 
-> DependencyResolver([[ConfigParams](../../config/config_params) config, [IReferences](../ireferences) references])
+> DependencyResolver([[ConfigParams?](../../config/config_params) config, [IReferences?](../ireferences) references])
 
 - **config**: [ConfigParams](../../config/config_params) - (optional) default configuration where key the is dependency name and value is the locator (descriptor)
 - **references**: [IReferences](../ireferences) - (optional) default component references
@@ -61,10 +61,10 @@ Finds all matching dependencies by their name.
 #### getOneOptional
 Gets one optional dependency by its name.
 
-> T getOneOptional\<T\>(String name)
+> T? getOneOptional\<T\>(String name)
 
 - **name**: String - dependency name to locate.
-- **returns**: T - dependency reference or null if the dependency was not found.
+- **returns**: T? - dependency reference or null if the dependency was not found.
 
 #### GetOneRequired
 Gets one required dependency by its name.

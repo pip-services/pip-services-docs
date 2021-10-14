@@ -40,10 +40,10 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails, 
 they are just silently skipped and no errors thrown.
 
-> `static` void setProperties(obj, Map\<String, dynamic\> values)
+> `static` void setProperties(obj, Map\<String, dynamic\>? values)
 
 - **obj**: dynamic - object to write properties to. 
-- **values**: Map\<String, dynamic\> - map containing property names and their values.
+- **values**: Map\<String, dynamic\>? - map containing property names and their values.
 
 
 #### setProperty
@@ -56,10 +56,10 @@ map key or array index.
 If the property does not exist or introspection fails,
 this method doesn't do anything and doesn't throw any errors.
 
-> `static` void setProperty(obj, String name, value)
+> `static` void setProperty(obj, String? name, value)
 
 - **obj**: dynamic - object to write property to.
-- **name**: String - name of the property to set.
+- **name**: String? - name of the property to set.
 - **value**: dynamic - new value for the property to set.
 
 

@@ -81,6 +81,14 @@ Gets the unique component's name.
 
 - **returns**: string - unique component's name.
 
+
+#### getType
+Gets the component's logical type.
+
+> `public` getType(): string
+
+- **returns**: string - the component's logical type.
+
 #### getVersion
 Gets the component's implementation version.
 

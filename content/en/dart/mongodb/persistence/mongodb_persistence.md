@@ -110,18 +110,18 @@ Maximum number of records to return from the database per request.
 Clears a component's state.
 
 `@override`
-> Future clear(String correlationId)
+> Future clear(String? correlationId)
 
-- **correlationId**: String - object to convert from the public partial format.
+- **correlationId**: String? - object to convert from the public partial format.
 
 
 #### close
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - object to convert from the public partial format.
+- **correlationId**: String? - object to convert from the public partial format.
 
 
 #### configure
@@ -154,9 +154,9 @@ Converts and object value from internal to public format.
 #### create
 Creates a data item.
 
-> Future\<T\> create(String correlationId, T item)
+> Future\<T\> create(String? correlationId, T item)
 
-- **correlationId**: String - (optional) transaction id used  to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used  to trace execution through the call chain.
 - **item**: T - item to be created.
 - **returns**: Future\<T\> - created item
 
@@ -165,9 +165,9 @@ Creates a data item.
 This method shall be called by a public **deleteByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future deleteByFilterEx(String correlationId, Map\<String, dynamic\> filter)
+> Future deleteByFilterEx(String? correlationId, Map\<String, dynamic\> filter)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - (optional) filter function used to filter items.
 
 
@@ -191,9 +191,9 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a public **getCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<int\> getCountByFilterEx(String correlationId, Map\<String, dynamic\> filter)
+> Future\<int\> getCountByFilterEx(String? correlationId, Map\<String, dynamic\> filter)
 
-- **correlationId**: String - (optional) transaction id usedto trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id usedto trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - (optional) filter JSON object
 - **returns**: uture\<int\> - number of filtered items.
 
@@ -204,9 +204,9 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getListByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<List\<T\>\> getListByFilterEx(String correlationId, Map\<String, dynamic\> filter, Map\<String, dynamic\> sort)
+> Future\<List\<T\>\> getListByFilterEx(String? correlationId, Map\<String, dynamic\> filter, Map\<String, dynamic\> sort)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - (optional) filter function used to filter items
 - **sort**: Map\<String, dynamic\> - (optional) sorting parameters
 - **returns**: Future\<List\<T\>\> - data list of results by filter.
@@ -218,9 +218,9 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public [getOneRandom](#getonerandom) method from the child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<T\> getOneRandom(String correlationId, Map\<String, dynamic\> filter)
+> Future\<T\> getOneRandom(String? correlationId, Map\<String, dynamic\> filter)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - fileter JSON object.
 - **returns**: Future\<T\> - random item.
 
@@ -231,9 +231,9 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getPageByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future<[DataPage](../../../commons/data/data_page)\<T\>> getPageByFilterEx(String correlationId, Map\<String, dynamic\> filter, [PagingParams](../../../commons/data/paging_params) paging, Map\<String, dynamic\> sort)
+> Future<[DataPage](../../../commons/data/data_page)\<T\>> getPageByFilterEx(String? correlationId, Map\<String, dynamic\> filter, [PagingParams](../../../commons/data/paging_params) paging, Map\<String, dynamic\> sort)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - (optional) filter JSON object
 - **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
 - **sort**: Map\<String, dynamic\> - (optional) sorting JSON object
@@ -246,7 +246,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 class MyMongoDbPersistence extends MongoDbPersistence<MyData> {
   MyMongoDbPersistence():base('mydata');
 
-  Future<MyData> getByName(String correlationId, String name) {
+  Future<MyData> getByName(String? correlationId, String name) {
       var filter = {'name': name};
       var query = mngquery.SelectorBuilder();
       var selector = <String, dynamic>{};

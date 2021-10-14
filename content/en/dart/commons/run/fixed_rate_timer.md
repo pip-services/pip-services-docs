@@ -21,11 +21,11 @@ The FixerRateTimer class represents a timer that is triggered in equal time inte
 ### Constructors
 Creates new instance of the timer and sets its values.
 
-> FixedRateTimer([dynamic taskOrCallback, int interval, int delay])
+> FixedRateTimer([dynamic taskOrCallback, int? interval, int? delay])
 
 - **taskOrCallback**: dynamic - (optional) Notifiable object or callback function to call when timer is triggered.
-- **interval**: int - (optional) interval to trigger timer in milliseconds.
-- **delay**: int - (optional) delay before the first triggering in milliseconds.
+- **interval**: int? - (optional) interval to trigger timer in milliseconds.
+- **delay**: int? - (optional) delay before the first triggering in milliseconds.
 
 ### Instance methods
 
@@ -36,39 +36,39 @@ This is required by the [IClosable](../iclosable) interface,
 but besides that it is identical to [stop()](#stop).
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 #### getCallback
 Gets the callback function that is called when this timer is triggered.
 
-> Function() getCallback()
+> Function()? getCallback()
 
-- **returns**: Function() - callback function or null if it is not set. 
+- **returns**: Function()? - callback function or null if it is not set. 
 
 
 #### getDelay
 Gets an initial delay before the timer is triggered for the first time.
 
-> int getDelay()
+> int? getDelay()
 
-- **returns**: int - delay in milliseconds.
+- **returns**: int? - delay in milliseconds.
 
 #### getInterval
 Gets a periodic timer triggering interval.
 
-> int getInterval()
+> int? getInterval()
 
-- **returns**: int - interval in milliseconds
+- **returns**: int? - interval in milliseconds
 
 
 #### getTask
 Gets the INotifiable object that receives notifications from this timer.
 
-> [INotifiable](../inotifiable) getTask()
+> [INotifiable?](../inotifiable) getTask()
 
-- **returns**: [INotifiable](../inotifiable) - INotifiable object or null if it is not set.
+- **returns**: [INotifiable?](../inotifiable) - INotifiable object or null if it is not set.
 
 
 #### setTask
@@ -95,16 +95,16 @@ Sets the callback function that is called when this timer is triggered.
 #### setDelay
 Sets an initial delay before the timer is triggered for the first time.
 
-> void setDelay(int value)
+> void setDelay(int? value)
 
-- **value**: int - delay in milliseconds. 
+- **value**: int? - delay in milliseconds. 
 
 #### setInterval
 Sets a periodic timer triggering interval.
 
-> void setInterval(int value)
+> void setInterval(int? value)
 
-- **value**: int - interval in milliseconds.
+- **value**: int? - interval in milliseconds.
 
 
 #### start
@@ -126,12 +126,12 @@ Stops the timer.
 class MyComponent {
     FixedRateTimer timer  = FixedRateTimer(() { cleanup }, 60000);
     ...
-    Future open(String correlationId) {
+    Future open(String? correlationId) {
         ...
         timer.start();
         ...
     }
-    Future close(String correlationId) {
+    Future close(String? correlationId) {
         ...
         timer.stop();
         ...

@@ -58,9 +58,9 @@ Fires this event and notifies all registred listeners.
 Throws an [InvocationException](../../errors/invocation_exception) if the event fails to be raised.
 
 `@override`
-> void notify(String correlationId, [Parameters](../../run/parameters) args)
+> void notify(String? correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../../run/parameters) - parameters to raise this event with.
 
 #### RemoveListener

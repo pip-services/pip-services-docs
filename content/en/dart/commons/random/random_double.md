@@ -16,19 +16,19 @@ The RandomDouble class allows you to generate random double values.
 #### nextDouble
 Generates a random double value in the range ['minYear', 'maxYear']. 
 
-> `static` double nextDouble(double min, [double max])
+> `static` double nextDouble(double min, [double? max])
 
 - **min**: double - (optional) minimum range value
-- **max**: double - max range value
+- **max**: double? - max range value
 - **returns**: double - random double value.
 
 #### updateDouble
 Updates (drifts) a double value within specified range.
 
-> `static` double updateDouble(double value, [double range])
+> `static` double updateDouble(double value, [double? range])
 
 - **value**: double - double value to drift.
-- **range**: double - (optional) range. Default: 10% of the value.
+- **range**: double? - (optional) range. Default: 10% of the value.
 - **returns**: double - updated double value.
 
 ### Examples

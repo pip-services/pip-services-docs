@@ -18,9 +18,9 @@ Creates a new validation rule and sets its arguments.
 
 See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 
-> PropertySchema([String name, dynamic type, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
+> PropertySchema([String? name, dynamic type, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
 
-- **name**: String - (optional) property name
+- **name**: String? - (optional) property name
 - **type**: dynamic - (optional) property type
 - **required**: bool -  (optional) true to always require non-null values.
 - **rules**: List<[IValidationRule](../ivalidation_rule)> - (optional) list with validation rules.
@@ -30,9 +30,9 @@ See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
 #### getName
 Gets the property name.
 
-> String getName()
+> String? getName()
 
-- **returns**: String - property name.
+- **returns**: String? - property name.
 
 
 #### getType
@@ -47,9 +47,9 @@ Gets the property type.
 Validates a given value against the schema and configured validation rules.
 
 `@override`
-> void performValidation(String path, dynamic value, List<[ValidationResult](../validation_result)> results)
+> void performValidation(String? path, dynamic value, List<[ValidationResult](../validation_result)> results)
 
-- **path**: String - dot notation path to the value.
+- **path**: String? - dot notation path to the value.
 - **value**: dynamic - value to be validated.
 - **results**: List<[ValidationResult](../validation_result)> - list with validation results.
 

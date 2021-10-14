@@ -50,10 +50,10 @@ Compresses a list of tags.
 #### equalTags
 Compares two tags using their compressed form.
 
-> `static` bool equalTags(String tag1, String tag2)
+> `static` bool equalTags(String? tag1, String? tag2)
 
-- **tag1**: String - first tag.
-- **tag2**: String - second tag.
+- **tag1**: String? - first tag.
+- **tag2**: String? - second tag.
 - **returns**: bool - true if the tags are equal and false otherwise.
 
 

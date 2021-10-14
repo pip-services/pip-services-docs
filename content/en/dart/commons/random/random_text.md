@@ -68,19 +68,19 @@ The phone number has the format: (XXX) XXX-YYYY
 Generates a random phrase which consists of few words separated by spaces.
 The first word is capitalized, others are not.
 
-> `static` String phrase(int minLength, [int maxLength])
+> `static` String phrase(int minLength, [int? maxLength])
 
 - **minLength**: int - (optional) minimum string length.
-- **maxLength**: int -  maximum string length.
+- **maxLength**: int? -  maximum string length.
 - **returns**: String -  random phrase.
 
 #### text
 Generates a random text, consisting of first names, last names, colors, stuffs, adjectives, verbs, and punctuation marks.
 
-> `static` String text(int minLength, [int maxLength])
+> `static` String text(int minLength, [int? maxLength])
 
 - **minLength**: int - minimum amount of words to generate. The text will contain 'minSize' words if 'maxSize' is omitted.
-- **maxLength**: int -  (optional) maximum amount of words to generate.
+- **maxLength**: int? -  (optional) maximum amount of words to generate.
 - **returns**: String -  random text.
 
 #### verb
@@ -102,10 +102,10 @@ Generates a random word from available first names, last names, colors, stuffs, 
 #### words
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> `static` String words(int min, [int max])
+> `static` String words(int min, [int? max])
 
 - **min**: int - (optional) minimum number of words.
-- **max**: int - maximum number of words.
+- **max**: int? - maximum number of words.
 - **returns**: String - random text.
 
 ### Examples

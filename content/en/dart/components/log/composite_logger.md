@@ -45,10 +45,10 @@ Sets references to dependent components.
 #### write
 Writes a log message to the logger destination.
 
-> void write([LogLevel](../log_level) level, String correlationId, Exception error, String message)
+> void write([LogLevel](../log_level) level, String? correlationId, Exception error, String message)
 
 - **level**: [LogLevel](../log_level) - log level.
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **error**: Exception - error object associated with this message.
 - **message**: String - human-readable message to log.
 
@@ -65,7 +65,7 @@ MyComponent implements IConfigurable, IReferenceable {
        _logger.setReferences(references);
        ...
    }
-   myMethod(String correlationId) {
+   myMethod(String? correlationId) {
        _logger.debug(correlationId, 'Called method mycomponent.mymethod');
        ...
    }

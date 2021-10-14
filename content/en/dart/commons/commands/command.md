@@ -17,11 +17,11 @@ The Command class allows you to call a method or a function.
 
 Creates a new command object and assigns it's parameters.
 
-> Command(String name, [Schema](../../validate/schema) schema, func)
+> Command(String name, [Schema](../../validate/schema)? schema, [IExecutable](../../run/iexecutable) func)
 
 - **name**: String - command name.
-- **schema**: [Schema](../../validate/schema) - schema to validate command arguments.
-- **func**:  dynamyc - function to be executed by this command.
+- **schema**: [Schema](../../validate/schema)? - schema to validate command arguments.
+- **func**:  [IExecutable](../../run/iexecutable) - function to be executed by this command.
 
 ### Instance methods
 
@@ -31,9 +31,9 @@ Executes the command. Before execution it validates [args](../../run/parameters)
 Raise [ApplicationException](../../errors/application_exception) when execution fails for whatever reason.  
 See [Parameters](../../run/parameters)
 
-> Future\<dynamic\> execute(String correlationId, [Parameters](../../run/parameters) args)
+> Future\<dynamic\> execute(String? correlationId, [Parameters](../../run/parameters) args)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String?? - (optional) transaction id used to trace execution through the call chain.
 - **args**: [Parameters](../../run/parameters) - parameters (arguments) to pass to this command for execution.
 - **returns**: Future\<dynamic\> - execution result
 

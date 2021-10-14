@@ -38,10 +38,10 @@ Converts a value into Date or returns a given default when the conversion is not
 #### toNullableDateTime
 Converts a value into Date or returns null when the conversion is not possible.
 
-> `static` DateTime toNullableDateTime(value)
+> `static` DateTime? toNullableDateTime(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: DateTime - Date value or null when the conversion is not supported.
+- **returns**: DateTime? - Date value or null when the conversion is not supported.
 
 ### Examples
 

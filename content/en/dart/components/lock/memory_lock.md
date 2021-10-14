@@ -30,9 +30,9 @@ The MemoryLock class is used to synchronize the execution of a process using sha
 Releases a prevously acquired lock by its key.
 
 `@override`
-> Future releaseLock(String correlationId, String key)
+> Future releaseLock(String? correlationId, String key)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to release.
 
 
@@ -41,9 +41,9 @@ Makes a single attempt to acquire a lock by its key.
 It returns a positive or negative result immediately.
 
 `@override`
-> Future\<bool\> tryAcquireLock(String correlationId, String key, int ttl)
+> Future\<bool\> tryAcquireLock(String? correlationId, String key, int ttl)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through a call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **key**: String - unique lock key to acquire.
 - **ttl**: int - lock timeout (time to live) in milliseconds.
 - **returns**: Future\<bool\> - lock result

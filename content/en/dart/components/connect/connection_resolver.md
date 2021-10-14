@@ -75,9 +75,9 @@ If you need fully fleshed connection use **resolve** method instead.
 Registers the given connection in all referenced discovery services.
 This method can be used for dynamic service discovery.
 
-> Future\<[ConnectionParams](../connection_params)\> register(String correlationId, [ConnectionParams](../connection_params) connection)
+> Future\<[ConnectionParams](../connection_params)\> register(String? correlationId, [ConnectionParams](../connection_params) connection)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connection**: Future\<[ConnectionParams](../connection_params)\> - connection to register.
 - **returns**: Future\<[ConnectionParams](../connection_params)\> - Future that receives registered connection or throws error.
 
@@ -86,9 +86,9 @@ This method can be used for dynamic service discovery.
 Resolves a single component connection. If connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
-> Future<[ConnectionParams](../connection_params)> resolve(String correlationId)
+> Future<[ConnectionParams](../connection_params)> resolve(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future<[ConnectionParams](../connection_params)> - resolved connection parameters or null if nothing was found.
 
 
@@ -96,9 +96,9 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 Resolves all the component's connections. If the connections are configured to be retrieved
 from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the connection there.
 
-> Future\<List\<[ConnectionParams](../connection_params)\>\> resolveAll(String correlationId)
+> Future\<List\<[ConnectionParams](../connection_params)\>\> resolveAll(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future\<List\<[ConnectionParams](../connection_params)\>\> - list of resolved connections.
 
 

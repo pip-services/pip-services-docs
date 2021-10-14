@@ -34,9 +34,9 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 #### matchTypeByName
 Matches the expected type to an actual type.
 
-> `static` bool matchTypeByName(String expectedType, [TypeCode](../../convert/type_code) actualType, [actualValue])
+> `static` bool matchTypeByName(String? expectedType, [TypeCode](../../convert/type_code) actualType, [actualValue])
 
-- **expectedType**: String - expected type name to match. 
+- **expectedType**: String? - expected type name to match. 
 - **actualType**: [TypeCode](../../convert/type_code) - actual type to match defined by the type code.
 - **actualValue**: dynamic - optional value to match its type to the expected one.
 - **returns**: bool - true if types are matching and false if they don't.

@@ -22,6 +22,21 @@ Important points
 
 ### Methods
 
+#### CreateInstance
+
+Creates an instance of an object type specified by its name
+and library where it is defined.
+
+See [GetType](#gettype)
+See [CreateInstanceByType](#createinstancebytype)
+
+> func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...interface{}) (interface{}, error)
+
+- **name**: string - an object type name.
+- **pkg**: string - a library (module) where object type is defined.
+- **args**: interface{} - arguments for the object constructor.
+- **returns**: (interface{}, error) - the created object instance.
+
 #### CreateInstanceByType
 Creates an instance of an object type.
 

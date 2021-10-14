@@ -23,10 +23,10 @@ description: >
 #### toNullableString
 Converts a value into a string or returns null when the value is null.
 
-> `static` String toNullableString(value)
+> `static` String? toNullableString(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: String - string value or null when value is null.
+- **returns**: String? - string value or null when value is null.
 
 #### toString2
 Converts a value into string or returns "" when the value is null.

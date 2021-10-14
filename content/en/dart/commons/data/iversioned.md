@@ -24,7 +24,7 @@ The IVersioned interface allows you to define data objects that can be versioned
 
 #### version
 Object's version.
-> **version**: String
+> `abstract` **version**: String
 
 </span>
 
@@ -35,10 +35,11 @@ class MyData implements IStringIdentifiable, IVersioned {
      String id;
     String  field1;
     int field2;
+    @override
     String version;
     ...
 }
- void updateData(String correlationId, MyData item ) {
+ void updateData(String? correlationId, MyData item ) {
     ...
     if (item.version < oldItem.version) {
         throw  ConcurrencyException(null, 'VERSION_CONFLICT', 'The change has older version stored value');

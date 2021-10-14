@@ -67,9 +67,9 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 #### resolve
 Resolves a MongoDB connection URI from connection and credential parameters.
 
-> Future\<String\> resolve(String correlationId)
+> Future\<String\> resolve(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future\<String\> - resolved URI
 
 #### setReferences

@@ -18,6 +18,6 @@ Loads data items.
 
 > Future\<List\<T\>\> load(String correlation_id)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Future\<List\<T\>\> - list of data items
 

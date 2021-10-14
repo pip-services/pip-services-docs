@@ -43,10 +43,10 @@ See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault),
 Converts a value into an integer or returns null when the conversion is not possible.
 See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
 
-> `static` int toNullableInteger(value)
+> `static` int? toNullableInteger(value)
 
 - **value**: dynamic - value to convert.
-- **returns**: int - integer value or null when the conversion is not supported.
+- **returns**: int? - integer value or null when the conversion is not supported.
 
 ### Examples
 

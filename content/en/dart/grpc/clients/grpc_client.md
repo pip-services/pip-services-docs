@@ -82,10 +82,10 @@ Remote service URI which is calculated on openning.
 #### call
 Calls a remote method via gRPC protocol.
 
-> grpc.ResponseFuture\<R\>call\<Q extends GeneratedMessage, R extends GeneratedMessage\>(String method, String correlationId, Q request, {grpc.CallOptions options})
+> grpc.ResponseFuture\<R\>call\<Q extends GeneratedMessage, R extends GeneratedMessage\>(String method, String? correlationId, Q request, {grpc.CallOptions options})
 
 - **method**: String - name of the calling method
-- **correlationId**: String - current client
+- **correlationId**: String? - current client
 - **request**: Q - (optional) request object.
 - **options**: grpc.CallOptions - (optional) call options
 - **returns**: grpc.ResponseFuture\<R\> - (optional) Future that receives result object or error.
@@ -95,9 +95,9 @@ Calls a remote method via gRPC protocol.
 Closes the component and frees used resources.
 
 `@override`
-> Future close(String correlationId)
+> Future close(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### configure
@@ -113,9 +113,9 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> [Timing](../../../components/count/timing) instrument(String correlationId, String name)
+> [Timing](../../../components/count/timing) instrument(String? correlationId, String name)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
 - **returns**: [Timing](../../../components/count/timing) - CounterTiming object used to end the time measurement.
 
@@ -123,9 +123,9 @@ It returns a CounterTiming object that is used to end the time measurement.
 #### instrumentError
 Adds instrumentation to error handling.
 
-> void instrumentError(String correlationId, String name, err, [bool reerror = false])
+> void instrumentError(String? correlationId, String name, err, [bool reerror = false])
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
 - **err**: dynamic - occured error
 - **reerror**: bool - if true - throw error
@@ -144,9 +144,9 @@ Checks if the component is open.
 Opens the component.
 
 `@override`
-> Future open(String correlationId)
+> Future open(String? correlationId)
 
-- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### setReferences
@@ -163,7 +163,7 @@ Sets references to dependent components.
 ```dart
 class MyGrpcClient extends GrpcClient implements IMyClient {
    ...
-   Future<MyData> getData(String correlationId, string id) async {
+   Future<MyData> getData(String? correlationId, string id) async {
        var timing = this.instrument(correlationId, 'myclient.get_data');
        var request = MyDataRequest();
        request.id = id;

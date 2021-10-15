@@ -91,7 +91,7 @@ Omits selected parameters from this Parameters object and returns the rest as a 
 
 > [Parameters](../parameters) omit(List\<String\> paths)
 
-- **paths**: String[] - keys to be omitted from copying over to new [Parameters](../parameters).
+- **paths**: List\<String\> - keys to be omitted from copying over to new [Parameters](../parameters).
 - **returns**: [Parameters](../parameters) - new [Parameters](../parameters) object.
 
 

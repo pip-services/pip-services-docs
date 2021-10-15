@@ -115,8 +115,8 @@ Closes a component and frees used resources.
 
 #### configure
 Configures the component by passing its configuration parameters.
-
-> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
+`@override`
+> void configure([ConfigParams](../../../commons/config/config_params) config)
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -150,18 +150,18 @@ Gets the connection.
 
 #### isOpen
 Checks if the component is open.
+`@override`
+> bool isOpen()
 
-> `public` isOpen(): boolean
-
-- **returns**: boolean - true if the component is open and false otherwise.
+- **returns**: bool - true if the component is open and false otherwise.
 
 
 #### open
 Opens the component.
+`@override`
+> Future open(String? correlationId)
 
-> `public` open(correlationId: string): Promise\<void\>
-
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 
 
 #### publish
@@ -186,8 +186,8 @@ If the connection doesn't support this function, it returns an empty list.
 
 #### setReferences
 Sets references to dependent components.
-
-> `public` setReferences(references: [IReferences](../../../commons/refer/ireferences)): void
+`@override`
+> void setReferences(IReferences references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 

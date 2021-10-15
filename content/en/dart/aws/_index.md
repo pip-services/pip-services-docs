@@ -6,6 +6,7 @@ no_list: true
 weight: 500
 description: > 
     This module contains components for supporting work with the AWS cloud platform.
+draft: true
 ---
 
 

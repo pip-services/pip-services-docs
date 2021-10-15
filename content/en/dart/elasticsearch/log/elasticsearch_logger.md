@@ -104,9 +104,9 @@ Opens the component.
 Saves log messages from the cache.
 
 `@override`
-> Future close(String? correlationId)
+> Future save(List<[LogMessage](../../../components/log/log_message)> messages)
 
-- **messages**: [LogMessage](../../../components/log/log_message)[] - list with log messages
+- **messages**: List<[LogMessage](../../../components/log/log_message)> - list with log messages
 
 
 #### setReferences

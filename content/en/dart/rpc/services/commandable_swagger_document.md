@@ -18,7 +18,7 @@ Creates a new instance of the service.
 
 - **baseRoute**: String - base route of the service
 - **config**: [ConfigParams?](../../../commons/config/config_params) - configuration parameters 
-- **commands**: [ICommand](../../../commons/commands/icommand)[] - list of commmands.
+- **commands**: List<[ICommand](../../../commons/commands/icommand)>  - list of commmands.
 
 ### Fields
 

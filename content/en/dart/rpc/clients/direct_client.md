@@ -129,7 +129,7 @@ Sets references to dependent components.
 
 ```dart
 class MyDirectClient extends DirectClient<IMyController> implements IMyClient {
-    public MyDirectClient(): super() {
+    MyDirectClient(): super() {
       dependencyResolver.put('controller', Descriptor(
           "mygroup", "controller", "*", "*", "*"));
     }

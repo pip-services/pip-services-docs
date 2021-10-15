@@ -173,11 +173,13 @@ class MyGrpcService extends MyDataGrpcServiceBase with GrpcService {
           Descriptor('mygroup','controller','*','*','1.0')
       );
    }
+   
    void setReferences(IReferences references) {
       base.setReferences(references);
       _controller = dependencyResolver.getRequired<IMyController>('controller');
    }
-   public register() {
+
+   void register() {
        registerInterceptor(_incrementNumberOfCalls);
        registerService(this);
     }

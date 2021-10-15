@@ -24,15 +24,15 @@ In this section, we will see how to use each of the methods available in the Ran
 The RandomArray class provides a way to randomly choose an element from an array via its pick method. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available 
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

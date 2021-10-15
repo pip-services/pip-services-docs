@@ -99,6 +99,21 @@ The RandomBoolean class offers two methods namely chance and next_boolean. The f
 #### c)	Random DateTimes
 The RandomDateTime class contains two methods: **next_date** and **update_datetime**. The description and examples of their usage are found in the table and code below:
 
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>next_date(min_year: datetime, max_year: datetime = None)</td>
+    <td>Generates a random Date in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
+  </tr>
+  <tr>
+    <td>next_datetime(min_year: datetime, max_year: datetime = None)</td>
+    <td>Generates a random Date and time in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
+  </tr>
+</table>
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}
@@ -125,6 +140,21 @@ The RandomDateTime class contains two methods: **next_date** and **update_dateti
 
 #### d)	Random doubles
 The RandomDouble class has two methods that can be used to generate random double values. The table and code below explain them.
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>next_double(mmin: float, mmax: float = None)</td>
+    <td>Generates a random double value in the range [‘min_value’, ‘max_value.’], where min_value is optional.</td>
+  </tr>
+  <tr>
+    <td>update_double(value: float, rrange: float = None)</td>
+    <td>Updates (drifts) a double value within a specified range.</td>
+  </tr>
+</table>
 
 {{< tabsection >}}
   Not available 
@@ -153,6 +183,21 @@ The RandomDouble class has two methods that can be used to generate random doubl
 #### e)	Random floats
 The **RandomFloat** class contains two methods that can be used to obtain random floats. The table and code below describe their usage.
 
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>next_float(min: float, max: float = None)</td>
+    <td>Generates a float in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
+  </tr>
+  <tr>
+    <td>update_float(value: float, range: float = None)</td>
+    <td>Updates (drifts) a float value within a specified range.</td>
+  </tr>
+</table>
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}
@@ -179,6 +224,21 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 
 #### f)	Random integers
 The **RandomInteger** class has two methods for generating random integers. Their usage is explained in the following table and code:
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>next_integer(min: int, max: int = None)</td>
+    <td>Generates an integer in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
+  </tr>
+  <tr>
+    <td>update_integer(value: int, range: int = None)</td>
+    <td>Updates (drifts) an integer value within the specified range.</td>
+  </tr>
+</table>
 
 {{< tabsection >}}
   Not available 
@@ -207,6 +267,34 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 #### g)	Random strings
 The **RandomString** class presents methods that can be used to create random strings and to randomly pick a character from a string or an array of strings. The following table and code explain their usage:
 
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>distort(value: str)</td>
+    <td>Distorts a string by randomly replacing characters in it.</td>
+  </tr>
+  <tr>
+    <td>next_alpha_char()</td>
+    <td>Generates random alpha characted [A-Za-z].</td>
+  </tr>
+    <tr>
+    <td>next_string(min_size: int, min_size: int)</td>
+    <td>Generates a random string consisting of upper and lower case letters (of the English alphabet), digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() “).</td>
+  </tr>
+  </tr>
+  <tr>
+    <td>pick(values: List[str])</td>
+    <td>Picks a random string from an array of strings.</td>
+  </tr>
+  <tr>
+    <td>pick_char(values: str)</td>
+    <td>Picks a random character from a string.</td>
+  </tr>
+</table>
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}
@@ -234,6 +322,56 @@ The **RandomString** class presents methods that can be used to create random st
 #### h)	Random texts
 
 The **RandomText** class can be used to generate different types of random texts. The options include colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts. The following table summarizes all the methods in this class and the examples after it show how to use each of them.
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>adjective()</td>
+    <td>Generates a random adjective. The result value is capitalized.</td>
+  </tr>
+  <tr>
+    <td>color()</td>
+    <td>Generates a random color name. The result value is capitalized.</td>
+  </tr>
+  <tr>
+    <td>email()</td>
+    <td>Generates a random email address.</td>
+  </tr>
+  <tr>
+    <td>noun()</td>
+    <td>Generates a random person’s name with  the following structure:
+
+     (optional) prefix + first name + second name + (optional suffix)
+   </td>
+   </tr>
+   <tr>
+    <td>phone()</td>
+    <td>Generates a random phone number with the format: (XXX) XXX-YYYY.</td>
+  </tr>
+  <tr>
+    <td>phrase(min_size: int, max_size: int = None)</td>
+    <td>Generates a random phrase that consists of a few words separated by spaces. The first word is capitalized, and the following ones are not.</td>
+  </tr>
+  <tr>
+    <td>text(min_size: int, max_size: int = None)</td>
+    <td>Generates a random text, consisting of first names, last names, colors, things, adjectives, verbs, and punctuation marks.</td>
+  </tr>
+  <tr>
+    <td>verb()</td>
+    <td>Generates a random verb. The result value is capitalized.</td>
+  </tr>
+  <tr>
+    <td>word()</td>
+    <td>Generates a random word from available first names, last names, colors, things, adjectives, or verbs.</td>
+  </tr>
+  <tr>
+    <td>words(min_size: int, max_size: int = None)</td>
+    <td>Generates a random word from available first names, last names, colors, things, adjectives, or verbs.</td>
+  </tr>
+</table>
 
 {{< tabsection >}}
   Not available 

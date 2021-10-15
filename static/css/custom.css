@@ -114,8 +114,6 @@ a:hover {
     background-color: #f8f9fa;
     border-color: #272822;
     border: 0px solid;
-    /* border-radius: 3px 3px 0px 0px; */
-    
 
     /* right-align */
     display: block;
@@ -125,10 +123,6 @@ a:hover {
     margin-left: auto;
     border-radius: 5px;
     padding: 0.1rem 0.3rem 0.1rem 0.3rem;
-
-    /* margin-bottom: -20px; */
-    /* padding: 3px 8px; */
-    /* font-size: 0.8em; */
 }
 
 .copy-code-button:hover {
@@ -153,20 +147,6 @@ a:hover {
     margin: 0;
 }
 
-/* .arrow {
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em;
-} */
-
-/* .nav-item-tree:hover {
-    background: #ffffff;
-}  */
-
 .nav-item-tree {
     min-height: auto;
 }
-
-/* .nav-item-tree.active{
-    background: #ffffff;
-} */

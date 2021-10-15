@@ -62,7 +62,7 @@ A component can be seen as a class that has a default constructor. Thus, we will
 
 #### Step 2 – Configuration
 
-Now that we have a component, we will add configuration capabilities to it. For this, we need to use the Iconfigurable interface and define the configure method. In this method, we will receive a ConfigParams object (key-value map) with the values of the parameters and assign them to our variables. 
+Now that we have a component, we will add configuration capabilities to it. For this, we need to use the **Iconfigurable** interface and define the configure method. In this method, we will receive a **ConfigParams** object (key-value map) with the values of the parameters and assign them to our variables. 
 
 {{< tabsection >}}
    Not available 
@@ -90,7 +90,7 @@ Now that we have a component, we will add configuration capabilities to it. For 
 
 
 #### Step 3 – Referencing
-After configuring our component, we want to link MyComponentA to another component called MyComponentB. To do this, we need to use the IReferenceable interface. This interface contains the set_references method, which allows us to define references to dependent components. As a component locator, we will use a Descriptor object with the connection parameters.  Our code will be like this:
+After configuring our component, we want to link MyComponentA to another component called MyComponentB. To do this, we need to use the **IReferenceable** interface. This interface contains the **set_references** method, which allows us to define references to dependent components. As a component's locator, we will use a **Descriptor** object with the connection parameters.  Our code will be like this:
 
 {{< tabsection >}}
    Not available 
@@ -118,9 +118,9 @@ After configuring our component, we want to link MyComponentA to another compone
 
 #### Step 4 – Opening
 
-To help define those components that require opening, PIP.services offers the IOpenable interface. This interface is part of the Commons module and offers two methods: open and isOpen. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
+To help define those components that require opening, PIP.services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
 
-Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called correlation_id. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as “123”. 
+Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called **correlation_id**. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as “123”. 
 
 Now, our code expands to this:
 
@@ -177,10 +177,10 @@ We will now define a function that will be used to perform business tasks, and w
 
 #### Step 6 – Closing
 
-As any open component needs to be closed to ensure that the resources used are being freed for other processes, we now need to define our close method. To do this, we use the IClosable interface. 
+As any open component needs to be closed to ensure that the resources used are being freed for other processes, we now need to define our close method. To do this, we use the **IClosable** interface. 
 
-Here, we must note that the IClosable interface was already called by the IOpenable interface in step 4. Thus, we don’t need to explicitly call it now.
-As our component already has access to this interface, we will define the close method for our class. The code below shows a simplified version of this method.
+Here, we must note that the **IClosable** interface was already called by the **IOpenable** interface in step 4. Thus, we don’t need to explicitly call it now.
+As our component already has access to this interface, we will define the **close** method for our class. The code below shows a simplified version of this method.
 
 {{< tabsection >}}
    Not available 
@@ -208,7 +208,7 @@ As our component already has access to this interface, we will define the close 
 
 #### Step 7 – Un-referencing
 
-Once our component has been closed, we need to clear the component’s previously defined references. PIP.services provides the IUnreferenceable interface, which defines the unset_references method. In our example this method will be coded as:
+Once our component has been closed, we need to clear the component’s previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
 
 {{< tabsection >}}
    Not available 
@@ -295,7 +295,7 @@ The complete code for our example is:
 
 ### Executing our code
 
-We can now execute our code step-by-step. Our program will look something like this:
+Now, we can execute our code step-by-step. Our program will look something like this:
 
 {{< tabsection >}}
    Not available 
@@ -327,11 +327,11 @@ Which, after running, results in the following output:
 
 ### Assembling a service from our component
 
-Now, we have a component that is capable of connecting to another component and can execute some actions defined by us. This component is ready for use. However, running it step-by-step can be laborious and inefficient. 
+At present, we have a component that is capable of connecting to another component and can execute some actions defined by us. This component is ready for use. However, running it step-by-step can be laborious and inefficient. 
 
-To solve this problem, we can use a container. PIP.Services offers the ProcessContainer, which is an Inversion of control (IoC) container that runs as a system process. 
+To solve this problem, we can use a container. PIP.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
 
-As this container uses a factory to create the contained components, we will create one via the Factory class. Once again, we will use Descriptor objects to locate each component, and we will use the method register_as_type to register the component in our factory. This method requires the locator and the component’s type. Our updated code is:
+As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component’s type. Our updated code is:
 
 {{< tabsection >}}
    Not available 
@@ -357,7 +357,7 @@ As this container uses a factory to create the contained components, we will cre
   Not available  
 {{< /tabsection >}}
 
-Once our factory is ready, we can proceed to create our container. First, we will create a class named MyProcess as a subclass of ProcessContainer. Inside this class, we will state the path to our configuration file, and add our previously created factory. 
+Once our factory is ready, we can proceed to create our container. First, we will create a class named MyProcess as a subclass of **ProcessContainer**. Inside this class, we will state the path to our configuration file, and add our previously created factory. 
 
 {{< tabsection >}}
    Not available 
@@ -417,11 +417,11 @@ We have a service, and to use it, we just need to create an instance of our cont
 After running our service, we should see the following output, which confirms that components A and B have been created and linked:
 
 <img src="figure4.png" alt="Console logger messages" style="width:100%">
-
+     
 As our component is complete and fully functional, this step marks the end of our task.
 
 ### Wrapping up
 
 In this tutorial, we have created a component, defined all the necessary methods for managing its lifecycle, and assembled a service from it. We also saw that containers offer a more efficient way to run components.
 
-More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the Data Microservice tutorial.
+More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](https://pip-services.github.io/pip-services-docs/toolkit/tutorials/data_microservice/) tutorial.

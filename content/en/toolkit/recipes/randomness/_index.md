@@ -12,6 +12,13 @@ description: >-
 
 ### Key takeaways
 
+<table>
+  <tr>
+    <td>Random package</td>
+    <td>The Commons module offers the Random package, which contains a set of classes and methods that can be used to generate different types of random values such as Booleans, doubles, datetimes, floats and integers.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, we will learn how to use the Random package available in the Commons module. This package contains a set of classes and methods that can be used to generate different types of random values, such as Booleans, doubles, floats, and integers. It also offers methods to generate different types of texts such as names and surnames, and methods to randomly select an element from an array or text.

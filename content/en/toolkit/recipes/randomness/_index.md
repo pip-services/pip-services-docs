@@ -36,7 +36,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -44,5 +44,5 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  Not available
 {{< /tabsection >}}

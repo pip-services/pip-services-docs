@@ -19,23 +19,23 @@ The AboutOperations class is used to obtain information about running services.
 Gets information from a service.
 Sends a JSON string with information about the service.
 
-> void about(req, res)
-- **req**: dynamic - an HTTP request
-- **res**: dynamic - an HTTP response
+> FutureOr\<shelf.Response\> about(shelf.Request req)
+- **req**: shelf.Request - an HTTP request
+- **returns**: FutureOr\<shelf.Response\> - an HTTP response
 
 
 #### getAboutOperation
 Gets the service's information.
 
-> Function(angel.RequestContext req, angel.ResponseContext res) getAboutOperation()
+> Function(shelf.Request req) getAboutOperation()
 
-- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - about method
+- **returns**: Function(shelf.Request req) - about method
 
 
 #### setReferences
 Sets the references of the service.
 
 `@override`
-> void setReferences(IReferences references)
+> void setReferences([IReferences](../../../commons/refer/ireferences) references)
 
 - **references**: [IReferences](../../../commons/refer/ireferences) - service's references.

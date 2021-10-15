@@ -68,7 +68,7 @@ Registers all service routes in HTTP endpoint.
 ### Examples
 
 ```dart
-var service = new HeartbeatService();
+var service = HeartbeatService();
 service.configure(ConfigParams.fromTuples(
     'route', 'ping',
     'connection.protocol', 'http',
@@ -76,9 +76,9 @@ service.configure(ConfigParams.fromTuples(
     'connection.port', 8080
 ));
 
-service.open('123', (err) => {
-   console.log('The Heartbeat service is accessible at http://+:8080/ping');
-});
+await service.open('123');
+
+print('The Heartbeat service is accessible at http://+:8080/ping');
 ```
 
 ### See also

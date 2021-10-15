@@ -35,7 +35,8 @@ As an example, lets create persistence for the following data object:
 import 'package:pip_services3_commons/src/data/IIdentifiable.dart';
 
 class MyObject implements IIdentifiable<String> {
-  String id;
+  @override
+  String? id;
   String key;
   int value;
 }
@@ -46,7 +47,7 @@ The persistence component shall implement the following interface with a basic s
 
 ```dart
 abstract class IMyPersistence {
-    void getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging);
+    Future<DataPage<MyData>> getPageByFilter(String? correlationId, FilterParams filter, PagingParams paging);
     
     getOneById(String? correlationId, String id);
     

@@ -15,19 +15,17 @@ The BasicAuthorizer provides two methods: one to grant access to everyone and an
 
 #### anybody
 Allows everyone access, even unauthorized users.
-> Future\<bool\> anybody(angel.RequestContext req, angel.ResponseContext res)
+> Future\<shelf.Response?\> anybody(shelf.Request req)
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
-- **returns**: Future\<bool\> - returns anybody handler.
+- **req**: shelf.Request - request context
+- **returns**: Future\<shelf.Response?\> - returns anybody handler.
 
 #### signed
 Access is granted only to authorized users.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized.
 
-> Future\<bool\> signed(angel.RequestContext req, angel.ResponseContext res, user)
+> Future\<shelf.Response?\> signed(shelf.Request req, user)
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
-- **returns**: Future\<bool\> - returns sign handler.
+- **returns**: Future\<shelf.Response?\> - returns sign handler.

@@ -13,6 +13,18 @@ description: >
 
 The RestOperations class allows you to handle REST services' operations.
 
+
+### Constructors
+Create instance of rest operations
+
+> RestOperations()
+
+Creates rest operations with name
+
+> RestOperations.withName(String name)
+
+- **name**: String - component name
+
 ### Fields
 
 <span class="hide-title-link">
@@ -45,158 +57,167 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 #### getCorrelationId
 Returns a correlationId from a request
 
-> dynamic getCorrelationId(angel.RequestContext req)
+> String? getCorrelationId(shelf.Request req)
 
-- **req**: angel.RequestContext - an HTTP request
-- **returns**: dynamic - correlationId from a request
+- **req**: shelf.Request - an HTTP request
+- **returns**: String? - correlationId from a request
 
 
 #### getFilterParams
 Gets the filter parameters.
 
->  [FilterParams](../../../commons/data/filter_params) getFilterParams(angel.RequestContext req)
+>  [FilterParams](../../../commons/data/filter_params) getFilterParams(shelf.Request req)
 
-- **req**: angel.RequestContext - an HTTP request
+- **req**: shelf.Request - an HTTP request
 - **returns**: [FilterParams](../../../commons/data/filter_params) - filter paramters
 
 #### getPagingParams
 Gets the paging parameters.
 
-> [PagingParams](../../../commons/data/paging_params) getPagingParams(angel.RequestContext req)
+> [PagingParams](../../../commons/data/paging_params) getPagingParams(shelf.Request req)
 
-- **req**: angel.RequestContext - an HTTP request
+- **req**: shelf.Request - an HTTP request
 - **returns**: [PagingParams](../../../commons/data/paging_params) - paging paramters
 
 
 #### invoke
 Invokes an operation.
 
-> Function(angel.RequestContext req, angel.ResponseContext res) invoke(String operation)
+> Function(shelf.Request req) invoke(String operation)
 
 - **operation**: String - operation to be invoked
-- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - operation
+- **returns**: Function(shelf.Request req) - operation
 
+#### instrument
+Adds instrumentation to log calls and measures call time.
+It returns a CounterTiming object that is used to end the time measurement.
+
+>  [CounterTiming](../../../components/count/counter_timing) instrument(String correlationId, String name)
+
+- **correlationId**: String - (optional) transaction id used to trace execution through the call chain.
+- **name**: String - method name.
+- **returns**: [CounterTiming](../../../components/count/counter_timing) - object to end the time measurement.
 
 #### sendBadRequest
 Sends a bad request error message.
 
-> sendBadRequest(req: any, res: any, message: String): void
+> FutureOr\<shelf.Response\> sendBadRequest(shelf.Request req, String message)
 
 - **req**: any - HTTP request
-- **res**: any - HTTP response
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response
 
 
 #### sendConflict
 Sends a conflict error messge
 
-> void sendBadRequest(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendBadRequest(shelf.Request req, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext res - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response
 
 
 #### sendCreatedResult
 Sends a JSON object with the created result.
 
-> void sendCreatedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
+> FutureOr\<shelf.Response\> sendCreatedResult(shelf.Request req, err, result)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendDeletedResult
 Sends the deleted result in JSON format.
 
-> void sendDeletedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
+> FutureOr\<shelf.Response\> sendDeletedResult(shelf.Request req, err, result)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendEmptyResult
 Send an empty result with 204 status code.
 
-> void sendEmptyResult(angel.RequestContext req, angel.ResponseContext res, err)
+> FutureOr\<shelf.Response\> sendEmptyResult(shelf.Request req, err)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - error to be sent.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 #### sendError
 Sends an error serialized as ErrorDescription object and appropriate HTTP status code.
 
-> void sendError(angel.RequestContext req, angel.ResponseContext res, error)
+> FutureOr\<shelf.Response\> sendError(shelf.Request req, error)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - error to be sent.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendInternalError
 Sends an internal error message
 
-> void sendInternalError(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendInternalError(shelf.Request req,, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendNotFound
 Sends a not found error message.
 
-> void sendNotFound(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendNotFound(shelf.Request req, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendResult
 Sends a result as a JSON object.
 
-> void sendResult(angel.RequestContext req, angel.ResponseContext res, err, result)
+> FutureOr\<shelf.Response\> sendResult(shelf.Request req, err, result)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - error to be sent.
 - **result**: dynamic - result to be sent.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendServerUnavailable
 Sends a server unavailable error message (Status code 503).
 
-> void sendServerUnavailable(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendServerUnavailable(shelf.Request req,, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendSessionExpired
 Sends a session expired error message (Status code 440).
 
-> void sendSessionExpired(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendSessionExpired(shelf.Request req,, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendUnauthorized
 Sends an unauthorized error message.
 
-> void sendUnauthorized(angel.RequestContext req, angel.ResponseContext res, String message)
+> FutureOr\<shelf.Response\> sendUnauthorized(shelf.Request req, String message)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **message**: String - message
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### setReferences

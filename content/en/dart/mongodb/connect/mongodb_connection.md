@@ -73,11 +73,11 @@ The configuration options.
 
 #### connection
 MongoDB database object.
-> **connection**: mongo.Db
+> **connection**: mongo.Db?
 
 #### databaseName
 MongoDB database name.
-> **databaseName**: String
+> **databaseName**: String?
   
 </span>
 
@@ -114,9 +114,9 @@ Gets the connection.
 #### getDatabase
 Gets the MongoDB database.
 
-> String getDatabaseName()
+> String? getDatabaseName()
 
-- **return**: String - MongoDB database
+- **return**: String? - MongoDB database
 
 
 #### isOpen

@@ -50,11 +50,11 @@ List of counters.
 
 #### client
 HTTP client.
-> **client**: http.Client
+> **client**: http.Client?
 
 #### uri
 Remote service uri which is defined on openning.
-> **uri**: String
+> **uri**: String?
 
 #### timeout
 Invocation timeout in milliseconds.
@@ -68,6 +68,10 @@ Connection resolver.
 Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
+#### tracer
+The tracer.
+> **tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
+
 #### counters
 Performance counters.
 > **counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
@@ -78,7 +82,7 @@ Configuration options.
 
 #### baseRoute
 Base route.
-> **baseRoute**: String
+> **baseRoute**: String?
 
 #### retries
 Number of retries.
@@ -101,9 +105,9 @@ Connection timeout in milliseconds.
 #### addCorrelationId
 Adds a correlation id (correlationId) to the invocation parameter map.
 
-> Map\<String, String\> addCorrelationId(Map\<String, String\> params, String? correlationId)
+> Map\<String, String\> addCorrelationId(Map\<String, String\>? params, String? correlationId)
 
-- **params**: Map\<String, String\> - invocation parameters.
+- **params**: Map\<String, String\>? - invocation parameters.
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **returns**: Map\<String, String\> - invocation parameters with added correlation id.
 
@@ -112,20 +116,20 @@ Adds a correlation id (correlationId) to the invocation parameter map.
 Adds filter parameters (with the same name as they defined)
 to the invocation parameter map.
 
-> Map\<String, String\> addFilterParams(Map\<String, String\> params, [FilterParams](../../../commons/data/filter_params) filter)
+> Map\<String, String\> addFilterParams(Map\<String, String\>? params, [FilterParams?](../../../commons/data/filter_params) filter)
 
-- **params**: dynamic -  invocation parameters.
-- **filter**: [FilterParams](../../../commons/data/filter_params) -  (optional) filter parameters
+- **params**: Map\<String, String\>? -  invocation parameters.
+- **filter**: [FilterParams?](../../../commons/data/filter_params) -  (optional) filter parameters
 - **returns**: Map\<String, String\> - invocation parameters with added filter parameters.
 
 
 #### addPagingParams
 Adds paging parameters (skip, take, total) to invocation parameter map.
 
-> Map<String, String> addPagingParams(Map\<String, String\> params, [PagingParams](../../../commons/data/paging_params) paging)
+> Map<String, String> addPagingParams(Map\<String, String\>? params, [PagingParams?](../../../commons/data/paging_params) paging)
 
-- **params**: Map\<String, String\> - invocation parameters.
-- **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
+- **params**: Map\<String, String\>? - invocation parameters.
+- **paging**: [PagingParams?](../../../commons/data/paging_params) - (optional) paging parameters
 - **returns**: Map\<String, String\> - invocation parameters with added paging parameters.
 
 
@@ -164,11 +168,11 @@ Configures a component by passing configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> CounterTiming instrument(String? correlationId, String name)
+> [InstrumentTiming](../../services/instrument_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
-- **returns**: [CounterTiming](../../../components/count/counter_timing/) - InstrumentTiming object used to end the time measurement.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 #### isOpen

@@ -20,6 +20,8 @@ The HttpEndpoint class allows you to create HTTP endpoints.
 #### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
 
+- **cors_headers**: a comma-separated list of allowed CORS headers
+- **cors_origins**: a comma-separated list of allowed CORS origins
 - **connection(s)**: the connection resolver's connections:
     - **"connection.discovery_key"**: key to use for connection resolving in a discovery service;
     - **"connection.protocol"**: connection's protocol;
@@ -60,6 +62,21 @@ Configures this HttpEndpoint using the given configuration parameters.
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
+#### getServer
+Gets an HTTP server instance.
+
+> HttpServer? getServer()
+
+- **returns**: HttpServer? - an HTTP server instance of `null` if endpoint is closed.
+
+#### getCorrelationId
+Returns correlationId from request
+
+> String? getCorrelationId(shelf.Request req)
+
+- **req**: shelf.Request - http request
+- **returns**: String? - Returns correlationId from request
+
 
 #### isOpen
 Checks if the component is open.
@@ -81,34 +98,36 @@ Registers a registerable object for dynamic endpoint discovery.
 #### registerInterceptor
 Registers a middleware action for the given route.
 
-> void registerInterceptor(String route, Future action(angel.RequestContext req, angel.ResponseContext res))
+> void registerInterceptor(String? route, Function(shelf.Request req) action)
 
-- **route**: String - route to register in this object's REST server (service).
-- **action**: Future action(angel.RequestContext req, angel.ResponseContext res) - middleware action to perform at the given route.
+- **route**: String? - route to register in this object's REST server (service).
+- **action**: Function(shelf.Request req) - middleware action to perform at the given route.
 
 
 #### registerRoute
 Registers an action in this objects REST server (service) by the given method and route.
 
-> void registerRoute(String method, String route, [Schema](../../../commons/validate/schema) schema, action(angel.RequestContext req, angel.ResponseContext res))
+> void registerRoute(String method, String route, [Schema?](../../../commons/validate/schema) schema, FutureOr\<shelf.Response\> Function(shelf.Request req) action)
+
+void registerRoute(String method, String route, [Schema?](../../../commons/validate/schema) schema, action(angel.RequestContext req, angel.ResponseContext res))
 
 - **method**: String - HTTP method of the route.
 - **route**: String - route to register in this object's REST server (service).
-- **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: action(angel.RequestContext req, angel.ResponseContext res) - action to perform at the given route.
+- **schema**: [Schema?](../../../commons/validate/schema) - schema to use for parameter validation.
+- **action**: FutureOr\<shelf.Response\> Function(shelf.Request req) - action to perform at the given route.
 
 
 #### registerRouteWithAuth
 Registers an action with authorization in this objects REST server (service)
 by the given method and route.
 
-> void registerRouteWithAuth(String method, String route, [Schema](../../../commons/validate/schema) schema, authorize(angel.RequestContext req, angel.ResponseContext res, next()), action(angel.RequestContext req, angel.ResponseContext res))
+> void registerRouteWithAuth(String method, String route, [Schema](../../../commons/validate/schema) schema, Future Function(shelf.Request req, Function next)? authorize, Future Function(shelf.Request req) action)
 
 - **method**: String - HTTP method of the route.
 - **route**: String - route to register in this object's REST server (service).
 - **schema**: [Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **authorize**: authorize(angel.RequestContext req, angel.ResponseContext res, next()) - authorization interceptor
-- **action**: action(angel.RequestContext req, angel.ResponseContext res) - action to perform at the given route.
+- **authorize**: Future Function(shelf.Request req, Function next)? - authorization interceptor
+- **action**: Future Function(shelf.Request req) - action to perform at the given route.
 
 
 #### setReferences

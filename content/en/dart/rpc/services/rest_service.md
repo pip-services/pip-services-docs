@@ -55,21 +55,25 @@ Dependency resolver.
 Logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
+#### tracer
+The tracer.
+> **tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
+
 #### counters
 Performance counters.
 > **counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
 
 #### baseRoute
 Base route.
-> **baseRoute**: String
+> **baseRoute**: String?
 
 #### endpoint
 HTTP endpoint that exposes this service.
-> **endpoint**: [HttpEndpoint](../http_endpoint)
+> **endpoint**: [HttpEndpoint?](../http_endpoint)
 
 #### _config
 Service's configuration paramters.
-> **_config**: [ConfigParams](../../../commons/config/config_params)
+> **_config**: [ConfigParams?](../../../commons/config/config_params)
 
 </span>
 
@@ -96,14 +100,21 @@ Configures a component by passing its configuration parameters.
 
 #### instrument
 Adds instrumentation to log calls and measure call time.
-It returns a CounterTiming object that is used to end the time measurement.
+It returns a Timing object that is used to end the time measurement.
 
-> [CounterTiming](../../../components/count/counter_timing) instrument(String? correlationId, String name)
+> [InstrumentTiming](../../../rpc/services/instrument_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **name**: String - method name.
-- **returns**: [CounterTiming](../../../components/count/counter_timing) - InstrumentTiming object to end the time measurement.
+- **returns**: [InstrumentTiming](../../../rpc/services/instrument_timing) - CounterTiming object used to end the time measurement.
 
+#### getCorrelationId
+Returns correlationId from request
+
+> String? getCorrelationId(shelf.Request req)
+
+- **req**: shelf.Request -  http request
+- **returns**: String? - returns correlationId from request
 
 #### isOpen
 Checks if the component is open.
@@ -135,33 +146,33 @@ in child classes.
 #### registerInterceptor
 Registers a middleware for a given route in HTTP endpoint.
 
-> void registerInterceptor(String route, action(angel.RequestContext req, angel.ResponseContext res))
+> void registerInterceptor(String route, Function(shelf.Request req) action)
 
 - **route**: String - command route. Base route will be added to this route
-- **action**: action(angel.RequestContext req, angel.ResponseContext res) - action function that is called when middleware is invoked.
+- **action**: Function(shelf.Request req) - action function that is called when middleware is invoked.
 
 
 #### registerRoute
 Registers a route in HTTP endpoint.
 
-> void registerRoute(String method, String route, Schema schema, action(angel.RequestContext req, angel.ResponseContext res))
+> void registerRoute(String method, String route, [Schema?](../../../commons/validate/schema) schema, FutureOr\<shelf.Response\> Function(shelf.Request req) action)
 
 - **method**: String - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: String - command route. The base route will be added to this route
-- **schema**: [Schema](../../../commons/validate/schema) - validation schema to validate received parameters.
-- **action**: action(angel.RequestContext req, angel.ResponseContext res)- action function that is called when an operation is invoked.
+- **schema**: [Schema?](../../../commons/validate/schema) - validation schema to validate received parameters.
+- **action**: Function(shelf.Request req) - action function that is called when an operation is invoked.
 
 
 #### registerRouteWithAuth
 Registers a route with authorization in HTTP endpoint.
 
-> void registerRouteWithAuth(String method, String route, [Schema](../../../commons/validate/schema) schema, authorize(angel.RequestContext req, angel.ResponseContext res, next()), action(angel.RequestContext req, angel.ResponseContext res))
+> void registerRouteWithAuth(String method, String route, [Schema](../../../commons/validate/schema) schema, Future Function(shelf.Request req, Function next) authorize, Future Function(shelf.Request req) action)
 
 - **method**: String - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: String - command route. The base route will be added to this route
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema to validate received parameters.
-- **authorize**: authorize(angel.RequestContext req, angel.ResponseContext res, next()) - authorization interceptor
-- **action**: action(angel.RequestContext req, angel.ResponseContext res) - action function that is called when an operation is invoked.
+- **authorize**: Future Function(shelf.Request req, Function next) - authorization interceptor
+- **action**: Future Function(shelf.Request req) - action function that is called when an operation is invoked.
 
 
 #### sendCreatedResult
@@ -170,12 +181,12 @@ Creates a callback function that sends a newly created object as JSON. The calla
 If the object is not null, it returns 200 status code. For null results it returns
 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
 
-> void sendCreatedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
+> FutureOr\<shelf.Response\> sendCreatedResult(shelf.Request req, result)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **err**: dynamic - execution error
 - **result**: dynamic - execution result
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### sendDeletedResult
@@ -185,25 +196,24 @@ as a parameter to business logic components.
 
 If object is not null it returns 200 status code.
 For null results it returns 204 status code.
-If error occur it sends ErrorDescription with approproate status code.
+If error occur it sends ErrorDescription with approproate status code.`
 
+> FutureOr\<Response\> sendDeletedResult(Request req, result)
 
-> void sendDeletedResult(angel.RequestContext req, angel.ResponseContext res, err, result)
-
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **result**: dynamic - body object to result.
+- **returns**: FutureOr\<Response\> - HTTP response context
 
 
 #### sendError
 Sends an error serialized as ErrorDescription object and the appropriate HTTP status code. If status code is not defined, it uses 500 status code.
 
 
-> void sendError(angel.RequestContext req, angel.ResponseContext res, error)
+> void sendError(shelf.Request req, error)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **error**: dynamic - error object to be sent.
+- **returns**: FutureOr\<Response\> - HTTP response context
 
 
 #### sendResult
@@ -213,12 +223,12 @@ If the object is not null it returns 200 status code. For null results, it retur
 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
 
 
-> void sendResult(angel.RequestContext req, angel.ResponseContext res, err, result)
+> FutureOr\<shelf.Response\> sendResult(shelf.Request req, result)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
 - **error**: dynamic - error object to be sent.
 - **result**: dynamic - body object to result.
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context
 
 
 #### setReferences

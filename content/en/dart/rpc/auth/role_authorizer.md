@@ -17,34 +17,31 @@ The RoleAuthorizer class provides methods to check on a user's roles.
 Checks on the roles a user has been assigned.
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> Future\<bool\> userInRoles(angel.RequestContext req, angel.ResponseContext res, user, List\<String\> roles)
+> Future\<shelf.Response?\> userInRoles(shelf.Request req, user, List\<String\> roles)
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
 - **roles**: List\<String\> - roles list.
-- **returns**: Future\<bool\> => void - returns roles handler.
+- **returns**: Future\<shelf.Response?\> - returns roles handler.
 
 #### userInRole
 Check if the role is assigned to the user.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> Future\<bool\> userInRole(angel.RequestContext req, angel.ResponseContext res, user, String role)
+> Future\<shelf.Response?\> userInRole(shelf.Request req, user, String role)
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
 - **role**: String - user's role.
-- **returns**: Future\<bool\> - returns role handler.
+- **returns**: Future\<shelf.Response?\> - returns role handler.
 
 
 #### admin
 Check if the user has admin role.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> Future\<bool\> admin(angel.RequestContext req, angel.ResponseContext res, user)
+> Future\<shelf.Response?\> admin(shelf.Request req, user)
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
-- **returns**: Future\<bool\> - returns admin handler.
+- **returns**: Future\<shelf.Response?\> - returns admin handler.

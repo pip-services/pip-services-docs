@@ -17,22 +17,20 @@ The OwnerAuthorizer class provides access granting methods for owners and admini
 Access is granted only for the session owner.  
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> Future\<bool\> owner(angel.RequestContext req, angel.ResponseContext res, user, {String idParam = 'user_id'})
+> Future\<shelf.Response?\> owner(shelf.Request req, user, {String idParam = 'user_id'})
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
 - **idParam**: String - id of the current owner.
-- **returns**: Future\<bool\> - returns owner handler.
+- **returns**: Future\<shelf.Response?\> - returns owner handler.
 
 #### ownerOrAdmin
 Access is granted only to authorized users.   
 Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
 
-> Future\<bool\> ownerOrAdmin(angel.RequestContext req, angel.ResponseContext res, user, {String idParam = 'user_id'})
+> Future\<shelf.Response?\> ownerOrAdmin(shelf.Request, user, {String idParam = 'user_id'})
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **req**: shelf.Request - request context
 - **user**: dynamic - authorized users
 - **idParam**: string - id of the current owner.
-- **returns**: (req: any, res: any, next: () => void) => void - returns owner or admin handler.
+- **returns**: Future\<shelf.Response?\> - returns owner or admin handler.

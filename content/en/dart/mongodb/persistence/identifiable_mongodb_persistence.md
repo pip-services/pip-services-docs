@@ -62,9 +62,9 @@ The IdentifiableMongoDbPersistence class allows you to create persistance compon
 ### Constructors
 Creates a new instance of the persistence component.
 
-> IdentifiableMongoDbPersistence(String collection)
+> IdentifiableMongoDbPersistence(String? collection)
 
-- **collection**: String - (optional) collection name.
+- **collection**: String? - (optional) collection name.
 
 
 ### Instance methods
@@ -74,22 +74,22 @@ Creates a new instance of the persistence component.
 Creates a data item.
 
 `@override`
-> Future\<T\> create(String? correlationId, T item)
+> Future\<T?\> create(String? correlationId, T? item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - item to be created.
-- **returns**: Future\<T\> - created item
+- **item**: T? - item to be created.
+- **returns**: Future\<T?\> - created item
 
 
 #### deleteById
 Deletes a data item by it's unique id.
 
 `@override`
-> Future\<T\> deleteById(String? correlationId, K id)
+> Future\<T?\> deleteById(String? correlationId, K? id)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **id**: K - id of the item to be deleted
-- **return**: Future\<T\> - deleted item.
+- **id**: K? - id of the item to be deleted
+- **return**: Future\<T?\> - deleted item.
 
 
 #### deleteByIds
@@ -115,42 +115,42 @@ Gets a list of data items retrieved by given unique ids.
 Gets a data item by its unique id.
 
 `@override`
-> Future\<T\> getOneById(String? correlationId, K id)
+> Future\<T?\> getOneById(String? correlationId, K? id)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **id**: K - id of data item to be retrieved.
-- **returns**: Future\<T\> - data item by id.
+- **id**: K? - id of data item to be retrieved.
+- **returns**: Future\<T?\> - data item by id.
 
 
 #### set
 Sets a data item. If the data item exists it updates it, otherwise it creates a new data item.
 
-> Future\<T\> set(String? correlationId, T item)
+> Future\<T?\> set(String? correlationId, T? item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - item to be set. 
-- **returns**: Future\<T\> - updated item
+- **item**: T? - item to be set. 
+- **returns**: Future\<T?\> - updated item
 
 
 #### update
 Updates a data item.
 
-> Future\<T\> update(String? correlationId, T item)
+> Future\<T\> update(String? correlationId, T? item)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **item**: T - item to be updated.
-- **returns**: Future\<T\> - updated item.
+- **item**: T? - item to be updated.
+- **returns**: Future\<T?\> - updated item.
 
 
 #### updatePartially
 Updates only few selected fields in a data item.
 
-> Future\<T\> updatePartially(String? correlationId, K id, [AnyValueMap](../../../commons/data/any_value_map) data)
+> Future\<T?\> updatePartially(String? correlationId, K? id, [AnyValueMap?](../../../commons/data/any_value_map) data)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **id**: K - id of data item to be updated.
-- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **returns**: Future\<T\> - updated item.
+- **id**: K? - id of data item to be updated.
+- **data**: [AnyValueMap?](../../../commons/data/any_value_map) - map with fields to be updated.
+- **returns**: Future\<T?\> - updated item.
 
 ### Examples
 

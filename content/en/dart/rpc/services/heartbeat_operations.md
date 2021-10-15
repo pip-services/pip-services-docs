@@ -19,15 +19,15 @@ The HeartBeatOperations class is used to handle the operations of a heartbeat se
 Creates a heartbeat.
 Sends requests with the current time in UTC.
 
-> void heartbeat(angel.RequestContext req, angel.ResponseContext res)
+> Future\<shelf.Response\> Function(shelf.Request req) getHeartbeatOperation()
 
-- **req**: angel.RequestContext - request context
-- **res**: angel.ResponseContext - response context
+- **returns**: Future\<shelf.Response\> Function(shelf.Request req) - function that takes request and receive response
 
 
 #### getHeartbeatOperation
 Gets the heartbeat operation.
 
-> Function(angel.RequestContext req, angel.ResponseContext res) getHeartbeatOperation()
+> FutureOr\<shelf.Response\> heartbeat(shelf.Request req)
 
-- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - heartbeat operation
+- **req**: shelf.Request - HTTP request to process.
+- **returns**: FutureOr\<shelf.Response\> - heartbeat operation

@@ -18,7 +18,7 @@ The MongoDbPersistence class allows you to create persistence components that st
 **Important points**
 
 - This is the most basic persistence component that is only able to store data items of any type. 
-- Specific CRUD operations over the data items must be implemented in child classes by accessing **this.__collection** or **this.__model** properties.
+- Specific CRUD operations over the data items must be implemented in child classes by accessing **collection** or **model** properties.
 
 #### Configuration parameters
 
@@ -57,9 +57,9 @@ The MongoDbPersistence class allows you to create persistence components that st
 ### Constructors
 Creates a new instance of the persistence component.
 
-> MongoDbPersistence([String collection])
+> MongoDbPersistence([String? collection])
 
-- **collection**: String - (optional) collection name.
+- **collection**: String? - (optional) collection name.
 
 
 
@@ -77,23 +77,23 @@ Logger.
 
 #### connection
 MongoDB connection component.
-> **connection**: [MongoDBConnection](../../connect/mongodb_connection) 
+> **connection**: [MongoDBConnection?](../../connect/mongodb_connection) 
 
 #### collectionName
 MongoDB colleciton name.
-> **collectionName**: String;
+> **collectionName**: String?
 
 #### collection
 MongoDb collection object.
-> **collection**: mongo.DbCollection
+> **collection**: mongo.DbCollection?
 
 #### client
 MongoDB connection pool object.
-> **client**: mongo.Db 
+> **client**: mongo.Db?
 
 #### databaseName 
 MongoDB database name.
-> **databaseName**: String
+> **databaseName**: String?
 
 #### maxPageSize
 Maximum number of records to return from the database per request.
@@ -135,30 +135,37 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 #### convertFromPublic
 Converts an object value from public to internal format.
 
-> Map\<String, dynamic\> convertFromPublic(dynamic item, {bool createUid = false})
+> Map\<String, dynamic\>? convertFromPublic(dynamic item, {bool createUid = false})
 
 - **value**: dynamic - object in public format to convert.
 - **createUid**: bool - autocreation flag Uid
-- **returns**: Map\<String, dynamic\> - converted object in internal format.
+- **returns**: Map\<String, dynamic\>? - converted object in internal format.
 
+#### convertFromPublicPartial
+Converts the given object from the public partial format.
+
+> Map\<String, dynamic\>? convertFromPublicPartial(Map\<String, dynamic\>? item)
+
+- **item**: Map\<String, dynamic\>? - the object to convert from the public partial format.
+- **returns**: Map\<String, dynamic\>? - the initial object.
 
 #### convertToPublic
 Converts and object value from internal to public format.
 
-> dynamic convertToPublic(Map\<String, dynamic\> item)
+> dynamic convertToPublic(Map\<String, dynamic\>? item)
 
 - **value**: dynamic - object in internal format to convert.
-- **returns**: Map\<String, dynamic\> - converted object in public format.
+- **returns**: Map\<String, dynamic\>? - converted object in public format.
 
 
 #### create
 Creates a data item.
 
-> Future\<T\> create(String? correlationId, T item)
+> Future\<T?\> create(String? correlationId, T? item)
 
 - **correlationId**: String? - (optional) transaction id used  to trace execution through the call chain.
-- **item**: T - item to be created.
-- **returns**: Future\<T\> - created item
+- **item**: T? - item to be created.
+- **returns**: Future\<T?\> - created item
 
 
 #### deleteByFilter
@@ -191,11 +198,11 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a public **getCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<int\> getCountByFilterEx(String? correlationId, Map\<String, dynamic\> filter)
+> Future\<int\> getCountByFilterEx(String? correlationId, Map\<String, dynamic\>? filter)
 
 - **correlationId**: String? - (optional) transaction id usedto trace execution through the call chain.
-- **filter**: Map\<String, dynamic\> - (optional) filter JSON object
-- **returns**: uture\<int\> - number of filtered items.
+- **filter**: Map\<String, dynamic\>? - (optional) filter JSON object
+- **returns**: Future\<int\> - number of filtered items.
 
 
 #### getListByFilter
@@ -204,11 +211,11 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **getListByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<List\<T\>\> getListByFilterEx(String? correlationId, Map\<String, dynamic\> filter, Map\<String, dynamic\> sort)
+> Future\<List\<T\>\> getListByFilterEx(String? correlationId, Map\<String, dynamic\>? filter, Map\<String, dynamic\>? sort)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **filter**: Map\<String, dynamic\> - (optional) filter function used to filter items
-- **sort**: Map\<String, dynamic\> - (optional) sorting parameters
+- **filter**: Map\<String, dynamic\>? - (optional) filter function used to filter items
+- **sort**: Map\<String, dynamic\>? - (optional) sorting parameters
 - **returns**: Future\<List\<T\>\> - data list of results by filter.
 
 
@@ -218,11 +225,11 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public [getOneRandom](#getonerandom) method from the child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> Future\<T\> getOneRandom(String? correlationId, Map\<String, dynamic\> filter)
+> Future\<T?\> getOneRandom(String? correlationId, Map\<String, dynamic\> filter)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **filter**: Map\<String, dynamic\> - fileter JSON object.
-- **returns**: Future\<T\> - random item.
+- **returns**: Future\<T?\> - random item.
 
 
 #### getPageByFilter

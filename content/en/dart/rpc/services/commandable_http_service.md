@@ -59,7 +59,7 @@ Creates a new instance of the service.
 
 #### _commandSet
 Set of commands.
-> **_commandSet**: [CommandSet](../../../commons/commands/command_set)
+> **_commandSet**: [CommandSet?](../../../commons/commands/command_set)
 
 </span>
 
@@ -97,8 +97,8 @@ service.setReferences(References.fromTuples([
    new Descriptor("mygroup","controller","default","default","1.0"), controller
 ]));
 
- await service.open("123");
- print("The REST service is running on port 8080");
+await service.open("123");
+print("The REST service is running on port 8080");
 ```
 
 

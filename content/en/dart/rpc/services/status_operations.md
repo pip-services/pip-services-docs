@@ -19,9 +19,9 @@ The StatusOperations class allows you to handle status requests for REST operati
 #### getStatusOperation
 Gets the status of the operation.
 
-> Function(angel.RequestContext req, angel.ResponseContext res) getStatusOperation()
+> Function(shelf.Request req) getStatusOperation()
 
-- **returns**: Function(angel.RequestContext req, angel.ResponseContext res) - status operation method
+- **returns**: Function(shelf.Request req) - status operation method
 
 
 #### setReferences
@@ -35,7 +35,7 @@ Sets references to dependent components.
 #### status
 Handles status requests.
 
-> void status(angel.RequestContext req, angel.ResponseContext res)
+> FutureOr\<shelf.Response\> status(shelf.Request req)
 
-- **req**: angel.RequestContext - HTTP request context
-- **res**: angel.ResponseContext - HTTP response context
+- **req**: shelf.Request - HTTP request context
+- **returns**: FutureOr\<shelf.Response\> - HTTP response context

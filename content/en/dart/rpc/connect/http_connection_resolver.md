@@ -73,10 +73,10 @@ Registers the given connection in all referenced discovery services. This method
 Resolves a single component connection. If the connections are configured to be retrieved from Discovery service,
 it finds a IDiscovery and resolves the connection there.
 
-> Future<[ConnectionParams](../../../components/connect/connection_params)> resolve(String? correlationId)
+> Future<[ConnectionParams?](../../../components/connect/connection_params)> resolve(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Future<[ConnectionParams](../../../components/connect/connection_params)>  - resolved connection.
+- **returns**: Future<[ConnectionParams?](../../../components/connect/connection_params)>  - resolved connection.
 
 
 #### resolveAll

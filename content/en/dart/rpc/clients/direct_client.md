@@ -52,6 +52,10 @@ The open flag.
 The logger.
 > **logger**: [CompositeLogger](../../../components/log/composite_logger) = CompositeLogger()
 
+#### tracer
+The tracer.
+> **tracer**: [CompositeTracer](../../../components/trace/composite_tracer) = CompositeTracer()
+
 #### counters
 The performance counters
 > **counters**: [CompositeCounters](../../../components/count/composite_counters) = CompositeCounters()
@@ -87,11 +91,11 @@ void configure([ConfigParams](../../../commons/config/config_params) config)
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> [CounterTiming](../../../components/counter_timing) instrument(String? correlationId, String name)
+> [InstrumentTiming](../../services/instrument_timing) instrument(String? correlationId, String name)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through a call chain.
 - **name**: String - method name.
-- **returns**: [CounterTiming](../../../components/counter_timing) - InstrumentTiming object used to end the time measurement.
+- **returns**: [InstrumentTiming](../../services/instrument_timing) - InstrumentTiming object used to end the time measurement.
 
 
 

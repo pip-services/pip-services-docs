@@ -57,6 +57,21 @@ The RandomArray class provides a way to randomly choose an element from an array
 #### b)	Random Booleans
 The RandomBoolean class offers two methods namely chance and next_boolean. The following table and examples explain how to use both of them.
 
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>chance(chance: float, maxChances: float)</td>
+    <td>Calculates “chance” out of “max chances”. Example: 1 chance out of 3 chances (or 33.3%). It returns true or false for a settled chance.</td>
+  </tr>
+  <tr>
+    <td>next_boolean()</td>
+    <td>Generates a random Boolean value.</td>
+  </tr>
+</table>
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}

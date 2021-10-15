@@ -50,18 +50,37 @@ The MqttMessageQueue class allows you to create message queues that send and rec
 ### Constructors
 Creates a new instance of the message queue.
 
-> MqttMessageQueue([String name])
+> MqttMessageQueue([String? name])
 
-- **name**: String - (optional) queue's name.
+- **name**: String? - (optional) queue's name.
 
 
 ### Fields
 
 <span class="hide-title-link">
 
-#### _optionsResolver
+#### _autoSubscribe
+Auto-subscribe option
+> **_autoSubscribe**: bool
+
+
+#### _connection
+MQTT connection component
+> **_connection**: [MqttConnection?](../../connect/mqtt_connection)
+
+#### _dependencyResolver
+Dependency resolver
+> **_dependencyResolver**: [DependencyResolver](../../../commons/refer/dependency_resolver)
+
+
+#### _logger
+Logger
+> **_logger**: [CompositeLogger](../../../components/log/composite_logger) = [CompositeLogger()](../../../components/log/composite_logger)
+
+
+#### _config
 Configuration options
-> **_optionsResolver**: [ConfigParams](../../connect/mqtt_connection_resolver)
+> **_config**: [ConfigParams](../../../commons/config/config_params) = [ConfigParams()](../../../commons/config/config_params)
 
 
 #### _messages
@@ -70,20 +89,24 @@ Message
 
 #### _qos
 Quality of service
-> **_qos**: MqttQos.atMostOnce
+> **_qos**: int
 
 #### _receiver
 Message receiver
-> **_receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver)
+> **_receiver**: [IMessageReceiver?](../../../messaging/queues/imessage_receiver)
+
+#### _serializeEnvelope
+Serialization option
+> **_serializeEnvelope**: bool
 
 
 #### _subscribed
 Subscribe option
-> **_subscribed**: bool = false
+> **_subscribed**: bool
 
 #### _topic
 Topic
-> **_topic**: String
+> **_topic**: String?
 
 </span>
 
@@ -132,6 +155,15 @@ This method is usually used to remove the message after successful processing.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
 
 
+#### configure
+Configures a component by passing its configuration parameters.
+
+`@override`
+> void configure([ConfigParams](../../../commons/config/config_params) config)
+
+- **config:**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
+
 #### endListen
 Ends listening for incoming messages.
 When this method is call, [listen](#listen) unblocks the thread and execution continues.
@@ -140,6 +172,25 @@ When this method is call, [listen](#listen) unblocks the thread and execution co
 > void endListen(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+
+
+#### fromMessage
+Returns the topic and the data of a message.
+
+> Map\<String, dynamic\>? fromMessage([MessageEnvelope?](../../../messaging/queues/message_envelope) message)
+
+- **message**: [MessageEnvelope?](../../../messaging/queues/message_envelope) - message
+- **returns**: Map\<String, dynamic\>? - topic and data
+
+
+#### getTopic
+Obtains the topic.
+
+> String getTopic()
+
+- **returns**: String - topic
+
+
 
 #### isOpen
 Checks if the component is open.
@@ -171,16 +222,23 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 
-#### openWithParams
+#### onMessage
+Checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
+
+`@override`
+> void onMessage(String topic, String data, packet)
+
+- **topic**: String - topic
+- **data**: String - data
+- **packet**: dynamic - packet
+
+#### open
 Opens the component.
 
 `@override`
-> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future open(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **connection**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
-- **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
-- **returns**: Future - that receives null no errors occured.
 
 
 #### peek
@@ -188,10 +246,10 @@ Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns null.
 
 `@override`
-> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> peek(String? correlationId)
+> Future<[MessageEnvelope?](../../../messaging/queues/message_envelope)> peek(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> - peeked message.
+- **returns**: Future<[MessageEnvelope?](../../../messaging/queues/message_envelope)> - peeked message.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them.
@@ -218,11 +276,11 @@ Reads the current number of messages in the queue to be delivered.
 Receives an incoming message and removes it from the queue.
 
 `@override`
-> Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> receive(String? correlationId, int waitTimeout)
+> Future<[MessageEnvelope?](../../../messaging/queues/message_envelope)> receive(String? correlationId, int waitTimeout)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: Future<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
+- **returns**: Future<[MessageEnvelope?](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue.
@@ -231,7 +289,7 @@ This method is usually used to extend the message processing time.
 - Important: This method is not supported by MQTT.
 
 `@override`
-> Future renewLock([MessageEnvelope](../../../messaging/queues/message_envelope message, int lockTimeout)
+> Future renewLock([MessageEnvelope](../../../messaging/queues/message_envelope) message, int lockTimeout)
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: int - locking timeout in milliseconds.
@@ -240,16 +298,43 @@ This method is usually used to extend the message processing time.
 Sends a message into the queue.
 
 `@override`
-> Future send(String? correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) envelop)
+> Future send(String? correlationId, [MessageEnvelope](../../../messaging/queues/message_envelope) message)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
 
+#### setReferences
+Sets references to dependent components.
+
+`@override`
+> void setReferences([IReferences](../../../commons/refer/ireferences) references)
+
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
+
 
 #### subscribe
 Subscribes to a topic.
-> void subscribe()
+> Future subscribe(String? correlationId)
 
+- **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
+
+
+#### _toMessage
+If the message is null, it returns null. Otherwise, it returns the message.
+
+> [MessageEnvelope?](../../../messaging/queues/message_envelope) _toMessage(String topic, String? data, packet)
+
+- **topic**: String - topic
+- **data**: String? - data
+- **packet**: dynamic - packet
+- **returns**: [MessageEnvelope?](../../../messaging/queues/message_envelope) - Null if the message has no data. Otherwise, it returns the message.
+
+
+#### unsetReferences
+Unsets (clears) previously set references to dependent components.
+
+`@override`
+> void unsetReferences()
 
 ### Examples
 
@@ -264,10 +349,10 @@ queue.configure(ConfigParams.fromTuples([
 
 await queue.open('123');
     ...
+
 await queue.send('123', MessageEnvelope(null, 'mymessage', 'ABC'));
 
 var message await = queue.receive('123')
-
 if (message != null) {
    ...
    await queue.complete('123', message);

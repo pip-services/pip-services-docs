@@ -13,7 +13,10 @@ description: >
 ### Classes
 
 #### [DefaultMqttFactory](default_mqtt_factory)
-Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.
+ Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors.
+
+#### [MqttMessageQueueFactory](mqtt_message_queue_factory)
+Creates [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors. 
 
 
 </div>

@@ -37,9 +37,12 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
 ### Constructors
 Creates a new instance of the message queue.
 
-> MessageQueue([String name])
+> RabbitMQMessageQueue(String name, {[ConfigParams?](../../../commons/config/config_params) config, amqp.Channel? mqChanel, String? queue})
 
 - **name**: String - (optional) queue's name.
+- **config**: [ConfigParams?](../../../commons/config/config_params) - (optional)
+- **mqChanel**: amqp.Channel? - (optional) RrabbitMQ chanel
+- **queue**: String? - (optional)  RrabbitMQ queue name
 
 
 ### Fields
@@ -169,11 +172,11 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 Opens the component with given connection and credential parameters.
 
 `@override`
-> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future openWithParams(String? correlationId, [ConnectionParams?](../../../components/connect/connection_params) connection, [CredentialParams?](../../../components/auth/credential_params) credential)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **connection**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
-- **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
+- **connection**: [ConnectionParams?](../../../components/connect/connection_params) - connection parameters
+- **credential**: [CredentialParams?](../../../components/auth/credential_params) - credential parameters
 - **returns**: Future - that receives null no errors occured.
 
 

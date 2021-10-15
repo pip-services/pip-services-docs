@@ -21,8 +21,6 @@ Creates a new instance of the capabilities object.
 
 > MessagingCapabilities(bool canMessageCount, bool canSend, bool canReceive, bool canPeek, bool canPeekBatch, bool canRenewLock, bool canAbandon, bool canDeadLetter, bool canClear)
 
-
-
 - **canMessageCount**: bool - true if the queue supports reading message count.
 - **canSend**: bool - true if the queue is able to send messages.
 - **canReceive**: bool - true if the queue is able to receive messages.
@@ -33,9 +31,7 @@ Creates a new instance of the capabilities object.
 - **canDeadLetter**: bool - true if the queue is able to send messages to dead letter queue.
 - **canClear**: bool - true if the queue can be cleared.
 
-
 ### Properties
-
 
 #### canAbandon
 Informs if the queue is able to abandon messages.

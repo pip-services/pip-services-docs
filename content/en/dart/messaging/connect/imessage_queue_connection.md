@@ -17,22 +17,22 @@ The IMessageQueueConnection interface is used to create message queue connection
 Creates a message queue.
 If the connection doesn't support this function, it exits without error.
 
-> createQueue(name: string)
+> Future\<void\> createQueue(String name)
 
-- **name**: string - name of the queue to be created.
+- **name**: String - name of the queue to be created.
 
 #### deleteQueue
 Deletes a message queue.
 If the connection doesn't support this function, it exits without error.
 
-> deleteQueue(name: string)
+> Future\<void\> deleteQueue(String name)
 
-- **name**: string - name of the queue to be deleted.
+- **name**: String - name of the queue to be deleted.
 
 #### readQueueNames
 Reads a list of registered queue names. If the connection doesn't support this function returns an empty list.
 
-> readQueueNames(): Promise<string[]>
+> Future\<List\<String\>\> readQueueNames()
 
-- **returns**: Promise<string[]> - list with the registered queue names.
+- **returns**: Future\<List\<String\>\> - list with the registered queue names.
 

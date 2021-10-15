@@ -19,17 +19,17 @@ The LockedMessage class allows you to create data objects used to store and lock
 The expiration time for the message lock. 
 If it is null, then the message is not locked.
 
-> **expirationTime**: DateTime
+> **expirationTime**: DateTime?
 
 #### message
 The incoming message.
 
-> **message**: [MessageEnvelope](../message_envelope)
+> **message**: [MessageEnvelope?](../message_envelope)
 
 #### timeout
 The lock timeout in milliseconds.
 
-> **timeout**: int
+> **timeout**: int?
 
 </span>
 

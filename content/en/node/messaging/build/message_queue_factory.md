@@ -8,7 +8,9 @@ description: >
    
 ---
 
-**Extends:** [Factory](../../../components/build/factory)
+**Extends:** [Factory](../../../components/build/factory)  
+
+**Implements:** [IMessageQueueFactory](../imessage_queue_factory), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
 

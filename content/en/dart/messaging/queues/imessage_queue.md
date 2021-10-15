@@ -87,19 +87,19 @@ Permanently removes a message from the queue and sends it to the dead letter que
 #### peek
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
-> Future<[MessageEnvelope](../message_envelope)> peek(String? correlationId)
+> Future<[MessageEnvelope?](../message_envelope)> peek(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
-> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope?](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
 - **orrelation_id**: String - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
-- **returns**: Future\<List\<[MessageEnvelope](../message_envelope)\>\> - peeked list with messages.
+- **returns**: Future\<List\<[MessageEnvelope?](../message_envelope)\>\> - peeked list with messages.
 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
@@ -111,11 +111,11 @@ Reads the current number of messages in the queue to be delivered.
 #### receive
 Receives an incoming message and removes it from the queue.
 
-> Future<[MessageEnvelope](../message_envelope)> receive(String? correlationId, int waitTimeout)
+> Future<[MessageEnvelope?](../message_envelope)> receive(String? correlationId, int waitTimeout)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - received message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - received message or *null*.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.

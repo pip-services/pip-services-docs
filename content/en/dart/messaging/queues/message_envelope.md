@@ -20,10 +20,10 @@ The MessageEnvelope class allows you to add additional information to messages.
 
 Creates a new [MessageEnvelope](), which adds a correlation id, message id, and a type to the data being sent/received.
 
-> MessageEnvelope(String? correlationId, String messageType, message)
+> MessageEnvelope(String? correlationId, String? messageType, message)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **messageType**: String - string value that defines the message's type.
+- **messageType**: String? - string value that defines the message's type.
 - **message**: dynamic - data being sent/received.
 
 ### Fields
@@ -38,7 +38,7 @@ Unique business transaction id that is used to trace calls across components.
 #### message
 Stored message.
 
-> **message**: String
+> **message**: String?
 
 #### message_id
 Message's auto-generated ID.
@@ -48,12 +48,12 @@ Message's auto-generated ID.
 #### message_type
 String value that defines the stored message's type.
 
-> **message_type**: String
+> **message_type**: String?
 
 #### sent_time
 The time at which the message was sent.
 
-> **sent_time**: DateTime
+> **sent_time**: DateTime?
 
 </span>
 
@@ -80,6 +80,14 @@ Stores the given string.
 
 - **value**: String - string to set. It will be converted to a buffer using UTF-8 encoding.
 
+
+#### setMessageAsJson
+Stores the given value as a JSON string.
+
+> void setMessageAsJson(dynamic value)
+
+- **value**: dynamic - the value to convert to JSON and store in this message.
+
 #### setReference
 Sets a lock token reference for this [MessageEnvelope]().
 
@@ -99,3 +107,22 @@ If any of the values are *null*, they will be replaced with \-\-\-.
 - **returns**: String - generated string.
 
 
+# toJSON
+Converts this MessageEnvelop to a JSON string.
+The message payload is passed as string
+
+> Map\<String, dynamic\> toJSON()
+
+- **returns**: Map\<String, dynamic\> -  A JSON encoded representation is this object.
+
+
+### Static methods
+
+#### fromJSON
+Converts a JSON string into a MessageEnvelop
+The message payload is passed as string
+
+> `static` [MessageEnvelope?]() fromJSON(String? value)
+
+- **value**: String? - a JSON encoded string
+- **returns**: [MessageEnvelope?]() - a decoded Message Envelop.

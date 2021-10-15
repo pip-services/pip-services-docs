@@ -31,9 +31,9 @@ The MemoryMessageQueue class is used to create message queues that send and rece
 Creates a new instance of the message queue.  
 See also [MessagingCapabilities](../messaging_capabilities)
 
-> MemoryMessageQueue([String name])
+> MemoryMessageQueue([String? name])
 
-- **name**: String - (optional) queue name.
+- **name**: String? - (optional) queue name.
 
 
 ### Instance methods
@@ -71,6 +71,15 @@ Permanently removes a message from the queue. This method is usually used to rem
 
 - **message**: [MessageEnvelope](../message_envelope) - message to remove.
 
+
+#### configure
+Configures component by passing configuration parameters.
+
+`@override`
+> void configure([ConfigParams](../../../commons/config/config_params) config)
+
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
 #### endListen
 Ends listening for incoming messages. When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
@@ -104,20 +113,20 @@ See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> peek(String? correlationId)
+> Future<[MessageEnvelope?](../message_envelope)> peek(String? correlationId)
 
 - **correlationId**: String? - transaction id used to trace execution through the call chain.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - peeked message or *null*.
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 `@override`
-> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope?](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
-- **returns**: Future\<List\<[MessageEnvelope](../message_envelope)\>\> - list with peeked messages.
+- **returns**: Future\<List\<[MessageEnvelope?](../message_envelope)\>\> - list with peeked messages.
 
 #### readMessageCount
 Reads the current number of messages in the queue to be delivered.
@@ -132,11 +141,11 @@ Reads the current number of messages in the queue to be delivered.
 Receives an incoming message and removes it from the queue.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> receive(String? correlationId, int waitTimeout)
+> Future<[MessageEnvelope?](../message_envelope)> receive(String? correlationId, int waitTimeout)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - received message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - received message or *null*.
 
 #### renewLock
 Renews a lock on a message that makes it invisible from other receivers in the queue. This method is usually used to extend the message processing time.
@@ -160,11 +169,11 @@ Sends a message into the queue.
 #### openWithParams
 Opens the component with given connection and credential parameters.
 
-> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams?](../../../components/auth/credential_params) credential)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
-- **credential**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
+- **credential**: [CredentialParams?](../../../components/auth/credential_params) - credential parameters
 
 ### Examples
 

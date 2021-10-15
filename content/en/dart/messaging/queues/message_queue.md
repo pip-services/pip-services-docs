@@ -40,10 +40,10 @@ The MessageQueue class allows you to create a message queue that is used as a ba
 ### Constructors
 Creates a new instance of the message queue.
 
-> MessageQueue([String name])
+> MessageQueue([String? name, [MessagingCapabilities?](../messaging_capabilities) capabilities])
 
 - **name**: String - (optional) queue name
-
+- **capabilities**: [MessagingCapabilities?](../messaging_capabilities) - (optional) a capabilities of this message queue
 
 ### Fields
 
@@ -156,21 +156,21 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 Peeks a single incoming message from the queue without removing it. If there are no messages available in the queue, it returns null.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> peek(String? correlationId)
+> Future<[MessageEnvelope?](../message_envelope)> peek(String? correlationId)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - peeked message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - peeked message or *null*.
 
 
 #### peekBatch
 Peeks multiple incoming messages from the queue without removing them. If there are no messages available in the queue, it returns an empty list.
 
 `@override`
-> Future\<List\<[MessageEnvelope](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
+> Future\<List\<[MessageEnvelope?](../message_envelope)\>\> peekBatch(String? correlationId, int messageCount)
 
 - **correlationId**: String? -  (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int - maximum number of messages to peek.
-- **returns**: Future\<List\<[MessageEnvelope](../message_envelope)\>\> - list of peeked messages
+- **returns**: Future\<List\<[MessageEnvelope?](../message_envelope)\>\> - list of peeked messages
 
 
 #### readMessageCount
@@ -186,11 +186,11 @@ Reads the current number of messages in the queue to be delivered.
 Receives an incoming message and removes it from the queue.
 
 `@override`
-> Future<[MessageEnvelope](../message_envelope)> receive(String? correlationId, int waitTimeout)
+> Future<[MessageEnvelope?](../message_envelope)> receive(String? correlationId, int waitTimeout)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: int - timeout in milliseconds to wait for a message to come.
-- **returns**: Future<[MessageEnvelope](../message_envelope)> - received message or *null*.
+- **returns**: Future<[MessageEnvelope?](../message_envelope)> - received message or *null*.
 
 
 #### renewLock
@@ -279,9 +279,9 @@ Gets a string representation of the object.
 #### openWithParams
 Opens the component with the given connection and credential parameters.
 
-> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams](../../../components/auth/credential_params) credential)
+> Future openWithParams(String? correlationId, [ConnectionParams](../../../components/connect/connection_params) connection, [CredentialParams?](../../../components/auth/credential_params) credential)
 
 - **correlationId**: String? - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [ConnectionParams](../../../components/connect/connection_params) - connection parameters
-- **credentials**: [CredentialParams](../../../components/auth/credential_params) - credential parameters
+- **credentials**: [CredentialParams?](../../../components/auth/credential_params) - credential parameters
 

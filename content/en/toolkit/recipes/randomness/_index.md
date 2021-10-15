@@ -342,7 +342,7 @@ The **RandomText** class can be used to generate different types of random texts
   </tr>
   <tr>
     <td>noun()</td>
-    <td>Generates a random person’s name with  the following structure
+    <td>Generates a random person’s name with  the following structure:     
         (optional) prefix + first name + second name + (optional suffix)
    </td>
    </tr>

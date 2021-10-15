@@ -20,7 +20,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 0.84.4 # 'latest'
+          hugo-version: 0.88.1 # 'latest'
           extended: true
         
       - name: Pre-Build # Pre-Build with caching data for check is correct markdown

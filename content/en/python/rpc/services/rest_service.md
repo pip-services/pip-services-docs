@@ -198,7 +198,7 @@ Registers a route with authorization in HTTP endpoint.
 
 
 #### send_created_result
-Creates a callback function that sends newly created object as JSON. That callack function call be called directly or passed as a parameter to business logic components. If object is not None it returns 201 status code. For None results it returns 204 status code. If error occur it sends ErrorDescription with approproate status code.
+Creates a callback function that sends newly created object as JSON. That callack function can be called directly or passed as a parameter to business logic components. If object is not None it returns 201 status code. For None results it returns 204 status code. If error occur it sends ErrorDescription with approproate status code.
 
 > send_created_result(result: Any): Optional[str]
 
@@ -207,7 +207,7 @@ Creates a callback function that sends newly created object as JSON. That callac
 
 
 #### send_deleted_result
-Creates a callback function that sends a newly deleted object as JSON. The callack function call be called directly or passed as a parameter to business logic components. If the object is not None, it returns 200 status code. For None results it returns 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
+Creates a callback function that sends a newly deleted object as JSON. The callack function can be called directly or passed as a parameter to business logic components. If the object is not None, it returns 200 status code. For None results it returns 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.
 
 
 > send_deleted_result(result: Any = None): Optional[str]

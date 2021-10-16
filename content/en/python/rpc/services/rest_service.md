@@ -227,7 +227,7 @@ Sends an error serialized as ErrorDescription object and the appropriate HTTP st
 
 
 #### send_result
-Creates a callback function that sends a result as a JSON object. The callack function call be called directly or passed as a parameter to business logic components.
+Creates a callback function that sends a result as a JSON object. The callack function can be called directly or passed as a parameter to business logic components.
 
 If the object is not None it returns 200 status code. For None results, it returns
 204 status code. If an error occurs, it sends ErrorDescription with the approproate status code.

@@ -20,5 +20,4 @@ func NewBeaconsHttpServiceV1() *BeaconsHttpServiceV1 {
 	return c
 }
 
-
 ```

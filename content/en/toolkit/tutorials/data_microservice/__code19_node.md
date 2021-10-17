@@ -1,5 +1,5 @@
 
-**/src/run/BeaconsProcess.ts**
+**/src/containers/BeaconsProcess.ts**
 
 ```typescript
 import { ProcessContainer } from 'pip-services3-container-nodex';

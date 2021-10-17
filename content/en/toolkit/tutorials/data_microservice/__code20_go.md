@@ -2,29 +2,18 @@
 **/bin/main.go**
 
 ```go
-package containers
+package main
 
 import (
-	factory "github.com/pip-services-samples/service-beacons-go/build"
-	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
-	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
-	sbuild "github.com/pip-services3-go/pip-services3-swagger-go/build"
+	"os"
+
+	cont "github.com/pip-services-samples/service-beacons-go/containers"
 )
 
-type BeaconsProcess struct {
-	cproc.ProcessContainer
-}
-
-func NewBeaconsProcess() *BeaconsProcess {
-	c := &BeaconsProcess{
-		ProcessContainer: *cproc.NewProcessContainer("beacons", "Beacons microservice"),
-	}
-
-	c.AddFactory(factory.NewBeaconsServiceFactory())
-	c.AddFactory(rbuild.NewDefaultRpcFactory())
-	c.AddFactory(sbuild.NewDefaultSwaggerFactory())
-
-	return c
+func main() {
+	proc := cont.NewBeaconsProcess()
+	proc.SetConfigPath("./config/config.yml")
+	proc.Run(os.Args)
 }
 
 ```

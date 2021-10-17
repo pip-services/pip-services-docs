@@ -128,5 +128,4 @@ func (c *BeaconsCommandSet) makeDeleteBeaconByIdCommand() ccmd.ICommand {
 			return c.controller.DeleteBeaconById(correlationId, beaconId)
 		})
 }
-
 ```

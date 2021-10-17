@@ -173,6 +173,5 @@ func (c *BeaconsPersistenceFixture) TestGetWithFilters(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Len(t, page.Data, 2)
 }
-
 ```
 

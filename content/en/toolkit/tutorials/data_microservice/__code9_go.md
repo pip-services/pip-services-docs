@@ -146,5 +146,4 @@ func (c *BeaconsMongoDbPersistence) DeleteById(correlationId string, id string) 
 	}
 	return result, err
 }
-
 ```

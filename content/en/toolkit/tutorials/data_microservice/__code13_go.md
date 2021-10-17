@@ -126,6 +126,5 @@ func (c *BeaconsController) DeleteBeaconById(
 	correlationId string, beaconId string) (*data1.BeaconV1, error) {
 	return c.persistence.DeleteById(correlationId, beaconId)
 }
-
 ```
 

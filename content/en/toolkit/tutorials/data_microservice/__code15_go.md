@@ -189,5 +189,4 @@ func TestBeaconsController(t *testing.T) {
 	t.Run("Calculate Positions", c.testCalculatePositions)
 	c.teardown(t)
 }
-
 ```

@@ -21,7 +21,7 @@ To process requests made to the API’s first version, let’s create a file nam
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

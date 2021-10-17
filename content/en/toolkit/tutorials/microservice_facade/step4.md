@@ -21,7 +21,7 @@ Our Authorizer class was made to provide flexible access management. We will be 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -1,5 +1,5 @@
 
-**/bin/run.ts**
+**/bin/run.js**
 
 ```typescript
 let FacadeProcess = require('../obj/src/container/FacadeProcess').FacadeProcess;

@@ -34,7 +34,7 @@ Create a file named **BeaconsOperationsV1.py** and place the following code insi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

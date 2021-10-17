@@ -1,5 +1,5 @@
 
-**/test/operations/BeaconsRoutesV1Test.cs**
+**/test/operations/version1/BeaconsRoutesV1Test.cs**
 
 ```cs
 using PipServices.Templates.Facade.Clients.Version1;

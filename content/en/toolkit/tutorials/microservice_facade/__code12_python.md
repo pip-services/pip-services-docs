@@ -1,5 +1,5 @@
 
-**/test/operations/test_BeaconsRoutesV1.py**
+**/test/operations/version1/test_BeaconsRoutesV1.py**
 
 ```python
 # -*- coding: utf-8 -*-

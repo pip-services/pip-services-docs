@@ -21,7 +21,7 @@ The file for testing dependencies will be called **TestReferences** and will all
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -47,7 +47,7 @@ Now, let’s create a file with a test client, which will help us test our user 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,7 +73,7 @@ Lastly, define some test users in a file named **TestUsers.py**, as shown below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,7 +101,7 @@ Now we can move on to the tests themselves. Create the following files in the fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -127,7 +127,7 @@ Now we can move on to the tests themselves. Create the following files in the fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -153,7 +153,7 @@ Run the tests using the following command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

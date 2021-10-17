@@ -23,7 +23,7 @@ Let’s start by defining a data model for storing user information within a ses
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -51,7 +51,7 @@ We’ll be defining our operations for managing sessions and authenticating user
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

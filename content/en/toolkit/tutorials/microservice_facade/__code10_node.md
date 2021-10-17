@@ -3,8 +3,6 @@
 ```typescript
 let restify = require('restify-clients');
 
-import { TestUsers } from './TestUsers';
-
 export class TestRestClient {
     private _rest: any;
 

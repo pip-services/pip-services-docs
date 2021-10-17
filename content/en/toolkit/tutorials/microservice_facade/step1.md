@@ -129,6 +129,7 @@ Not available
 {{< /tabsection >}}
 
 
+
 {{< tabsection >}}
   {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_node.md" >}}  
 {{< /tabsection >}}
@@ -138,7 +139,7 @@ Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -164,7 +165,7 @@ Install all necessary modules using the command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

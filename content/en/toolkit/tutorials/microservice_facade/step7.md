@@ -24,7 +24,7 @@ One factory for the facade in a file named **FacadeFactory.py**, containing the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -50,7 +50,7 @@ And last but not least, a factory for the clients that the facade depends on in 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,7 +76,7 @@ The container that we want to run our facade in should be implemented in a file 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -102,7 +102,7 @@ For us to be able to run the container, create a run.js file in the **/bin** fol
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

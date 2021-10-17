@@ -1,12 +1,12 @@
 
-**src/version1/BeaconsDirectClientV1.go**
+**clients/version1/BeaconsDirectClientV1.go**
 
 ```go
 package clients1
 
 import (
-	data1 "github.com/pip-services-samples/pip-services-beacons-go/data/version1"
-	logic "github.com/pip-services-samples/pip-services-beacons-go/logic"
+	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	logic "github.com/pip-services-samples/service-beacons-go/logic"
 	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
 	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
 	clients "github.com/pip-services3-go/pip-services3-rpc-go/clients"
@@ -21,7 +21,7 @@ func NewBeaconsDirectClientV1() *BeaconsDirectClientV1 {
 	c := &BeaconsDirectClientV1{
 		DirectClient: *clients.NewDirectClient(),
 	}
-	c.DependencyResolver.Put("controller", cref.NewDescriptor("pip-services-beacons", "controller", "*", "*", "1.0"))
+	c.DependencyResolver.Put("controller", cref.NewDescriptor("beacons", "controller", "*", "*", "1.0"))
 	return c
 }
 
@@ -90,5 +90,4 @@ func (c *BeaconsDirectClientV1) DeleteBeaconById(
 	timing.EndTiming(err)
 	return result, err
 }
-
 ```

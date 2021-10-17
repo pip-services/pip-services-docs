@@ -1,5 +1,5 @@
 
-**/test/operations/SessionsRoutesV1Test.cs**
+**/test/operations/version1/SessionsRoutesV1Test.cs**
 
 ```cs
 

@@ -1,16 +1,12 @@
 
-**/test/operations/SessionsRoutesV1.test.ts**
+**/test/operations/version1/SessionsRoutesV1.test.ts**
 
 ```typescript
-
 let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { Descriptor } from 'pip-services3-commons-node';
-
 import { TestReferences } from '../../fixtures/TestReferences';
-import { TestUsers } from '../../fixtures/TestUsers';
 import { TestRestClient } from '../../fixtures/TestRestClient';
 
 suite('SessionRoutesV1', () => {
@@ -35,7 +31,7 @@ suite('SessionRoutesV1', () => {
     });
 
     test('should signup new user', (done) => {
-        rest.post('/api/v1/signup',
+        rest.post('/api/v1/users/signup',
             USER,
             (err, req, res, session) => {
                 assert.isNull(err);
@@ -49,34 +45,11 @@ suite('SessionRoutesV1', () => {
         );
     });
 
-    test('should check login for signup', (done) => {
-        async.series([
-        // Check registered email
-            (callback) => {
-                rest.get('/api/v1/signup/validate?login=' + TestUsers.User1Login,
-                    (err, req, res, result) => {
-                        assert.isNotNull(err);
-                        callback();
-                    }
-                );
-            },
-        // Check not registered email
-            (callback) => {
-                rest.get('/api/v1/signup/validate?login=xxx@gmail.com',
-                    (err, req, res, result) => {
-                        assert.isNull(err);
-                        callback();
-                    }
-                );
-            }
-        ], done);
-    });
-
     test('should not signup with the same email', (done) => {
         async.series([
         // Sign up
             (callback) => {
-                rest.post('/api/v1/signup',
+                rest.post('/api/v1/users/signup',
                     USER,
                     (err, req, res, session) => {
                         assert.isNull(err);
@@ -86,7 +59,7 @@ suite('SessionRoutesV1', () => {
             },
         // Try to sign up again
             (callback) => {
-                rest.post('/api/v1/signup',
+                rest.post('/api/v1/users/signup',
                     USER,
                     (err, req, res, session) => {
                         assert.isNotNull(err);
@@ -99,7 +72,7 @@ suite('SessionRoutesV1', () => {
     });
 
     test('should signout', (done) => {
-        rest.post('/api/v1/signout',
+        rest.post('/api/v1/users/signout',
             null,
             (err, req, res, result) => {
                 assert.isNull(err);
@@ -112,7 +85,7 @@ suite('SessionRoutesV1', () => {
         async.series([
         // Sign up
             (callback) => {
-                rest.post('/api/v1/signup',
+                rest.post('/api/v1/users/signup',
                     USER,
                     (err, req, res, session) => {
                         assert.isNull(err);
@@ -122,7 +95,7 @@ suite('SessionRoutesV1', () => {
             },
         // Sign in with username
             (callback) => {
-                rest.post('/api/v1/signin',
+                rest.post('/api/v1/users/signin',
                     {
                         login: USER.login,
                         password: USER.password
@@ -136,35 +109,6 @@ suite('SessionRoutesV1', () => {
         ], done);
     });
 
-    test('should get sessions as admin', (done) => {
-        rest.getAsUser(
-            TestUsers.AdminUserSessionId,
-            '/api/v1/sessions?paging=1&skip=0&take=2',
-            (err, req, res, page) => {
-                assert.isNull(err);
-
-                assert.isObject(page);
-
-                done();
-            }
-        );
-    });
-
-    test('should get user sessions as owner', (done) => {
-        rest.getAsUser(
-            TestUsers.User1SessionId,
-            '/api/v1/sessions/' + TestUsers.User1Id + '?paging=1&skip=0&take=2',
-            (err, req, res, page) => {
-                assert.isNull(err);
-
-                assert.isObject(page);
-
-                done();
-            }
-        );
-    });
-
 });
-
 ```
 

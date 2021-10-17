@@ -1,55 +1,43 @@
 
-**/test/operations/BeaconsRoutesV1.test.ts**
+**/test/operations/version1/BeaconsRoutesV1.test.ts**
 
 ```typescript
 let _ = require('lodash');
 let async = require('async');
 let assert = require('chai').assert;
 
-import { ConfigParams } from 'pip-services3-commons-node';
-import { Descriptor } from 'pip-services3-commons-node';
-
-import { BeaconV1 } from '../../../src/clients/version1/BeaconV1';
-import { BeaconsMemoryClientV1 } from '../../../src/clients/version1/BeaconsMemoryClientV1';
-
-import { TestUsers } from '../../fixtures/TestUsers';
 import { TestReferences } from '../../fixtures/TestReferences';
+import { TestUsers } from '../../fixtures/TestUsers';
 import { TestRestClient } from '../../fixtures/TestRestClient';
-import { BeaconsOperationsV1 } from '../../../src/operations/version1/BeaconsOperationsV1';
+import { BeaconV1, BeaconTypeV1 } from 'pip-clients-beacons-node';
 
-let BEACON1: BeaconV1 = {
+const BEACON1: BeaconV1 = {
     id: '1',
-    udi: '000001',
-    site_id: '1',
+    udi: '00001',
+    type: BeaconTypeV1.AltBeacon,
+    org_id: '1',
     label: 'TestBeacon1',
-    center: { type: 'Point', coordinates: [0, 0] },
+    center: { type: 'Point', coordinates: [ 0, 0 ] },
     radius: 50
 };
-let BEACON2: BeaconV1 = {
+const BEACON2: BeaconV1 = {
     id: '2',
-    udi: '000002',
-    site_id: '1',
+    udi: '00002',
+    type: BeaconTypeV1.iBeacon,
+    org_id: '1',
     label: 'TestBeacon2',
-    center: { type: 'Point', coordinates: [2, 2] },
+    center: { type: 'Point', coordinates: [ 2, 2 ] },
     radius: 70
 };
-let BEACON3: BeaconV1 = {
-    id: '3',
-    udi: '000003',
-    site_id: '2',
-    label: 'TestBeacon3',
-    center: { type: 'Point', coordinates: [10, 10] },
-    radius: 50
-};
 
-suite('BeaconsOperationsV2', () => {
+suite('BeaconsRoutesV1', () => {
+
     let references: TestReferences;
     let rest: TestRestClient;
 
     setup((done) => {
         rest = new TestRestClient();
         references = new TestReferences();
-        references.put(new Descriptor('nov-services-beacons', 'client', 'memory', 'default', '1.0'), new BeaconsMemoryClientV1());
         references.open(null, done);
     });
 
@@ -57,173 +45,139 @@ suite('BeaconsOperationsV2', () => {
         references.close(null, done);
     });
 
-    test('should perform beacon operations', (done) => {
-        let beacon1, beacon2, beacon3: BeaconV1;
+    test('CRUD Operations', (done) => {
+        let beacon1: BeaconV1;
 
         async.series([
-        // Create one beacon
+            // Create the first beacon
             (callback) => {
-                rest.postAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + BEACON1.site_id + '/xbeacons',
+                rest.postAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
                     BEACON1,
                     (err, req, res, beacon) => {
                         assert.isNull(err);
 
                         assert.isObject(beacon);
-                        assert.equal(beacon.site_id, BEACON1.site_id);
-                        assert.equal(beacon.udi, BEACON1.udi);
-                        assert.equal(beacon.label, BEACON1.label);
+                        assert.equal(BEACON1.udi, beacon.udi);
+                        assert.equal(BEACON1.org_id, beacon.org_id);
+                        assert.equal(BEACON1.type, beacon.type);
+                        assert.equal(BEACON1.label, beacon.label);
                         assert.isNotNull(beacon.center);
-
-                        beacon1 = beacon;
 
                         callback();
                     }
                 );
             },
-        // Create another beacon
+            // Create the second beacon
             (callback) => {
-                rest.postAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + BEACON2.site_id + '/xbeacons', 
+                rest.postAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
                     BEACON2,
                     (err, req, res, beacon) => {
                         assert.isNull(err);
 
                         assert.isObject(beacon);
-                        assert.equal(beacon.site_id, BEACON2.site_id);
-                        assert.equal(beacon.udi, BEACON2.udi);
-                        assert.equal(beacon.label, BEACON2.label);
+                        assert.equal(BEACON2.udi, beacon.udi);
+                        assert.equal(BEACON2.org_id, beacon.org_id);
+                        assert.equal(BEACON2.type, beacon.type);
+                        assert.equal(BEACON2.label, beacon.label);
                         assert.isNotNull(beacon.center);
-
-                        beacon2 = beacon;
 
                         callback();
                     }
                 );
             },
-        // Create yet another beacon
+            // Get all beacons
             (callback) => {
-                rest.postAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + BEACON3.site_id + '/xbeacons', 
-                    BEACON3,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
-
-                        assert.isObject(beacon);
-                        assert.equal(beacon.site_id, BEACON3.site_id);
-                        assert.equal(beacon.udi, BEACON3.udi);
-                        assert.equal(beacon.label, BEACON3.label);
-                        assert.isNotNull(beacon.center);
-
-                        beacon3 = beacon;
-
-                        callback();
-                    }
-                );
-            },
-        // Get all beacons
-            (callback) => {
-                rest.getAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + BEACON1.site_id + '/xbeacons',
+                rest.getAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
                     (err, req, res, page) => {
                         assert.isNull(err);
 
                         assert.isObject(page);
                         assert.lengthOf(page.data, 2);
 
-                        callback();
-                    }
-                );
-            },
-            // Calculate positions
-            (callback) => {
-                rest.postAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + BEACON1.site_id + '/xbeacons/calculate_position',
-                    {
-                        site_id: BEACON1.site_id,
-                        udis: [BEACON1.udi]
-                    },
-                    (err, req, res, position) => {
-                        assert.isNull(err);
-
-                        assert.isObject(position);
-                        assert.equal(position.type, 'Point');
+                        beacon1 = page.data[0];
 
                         callback();
                     }
-                );
+                )
             },
-            // Validate beacon udi
-            (callback) => {
-                rest.postAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + beacon1.site_id + '/xbeacons/validate_udi?udi=' + beacon1.udi,
-                    {},
-                    (err, req, res, result) => {
-                        assert.isNull(err);
-
-                        assert.equal(result, beacon1.id);
-
-                        callback();
-                    }
-                );
-            },
-        // Update the beacon
+            // Update the beacon
             (callback) => {
                 beacon1.label = 'ABC';
 
-                rest.putAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + beacon1.site_id + '/xbeacons/' + beacon1.id,
+                rest.putAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
                     beacon1,
                     (err, req, res, beacon) => {
                         assert.isNull(err);
 
                         assert.isObject(beacon);
-                        assert.equal(beacon.label, 'ABC');
-
-                        beacon1 = beacon;
+                        assert.equal(beacon1.id, beacon.id);
+                        assert.equal('ABC', beacon.label);
 
                         callback();
                     }
-                );
+                )
             },
-        // Delete beacon
+            // Get beacon by udi
             (callback) => {
-                rest.delAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + beacon1.site_id + '/xbeacons/' + beacon1.id,
-                    (err, req, res, result) => {
+                rest.getAsUser(TestUsers.User1SessionId, '/api/v1/beacons/udi/' + beacon1.udi + '?user_id=' + TestUsers.User1Id,
+                    (err, req, res, beacon) => {
+                        
                         assert.isNull(err);
 
-                        //assert.isNull(result);
+                        assert.isObject(beacon);
+                        assert.equal(beacon1.id, beacon.id);
 
                         callback();
                     }
-                );
+                )
             },
-        // Try to get delete beacon
+            // Calculate position for one beacon
             (callback) => {
-                rest.getAsUser(
-                    TestUsers.AdminUserSessionId,
-                    '/api/v2/sites/' + beacon1.site_id + '/xbeacons/' + beacon1.id,
-                    (err, req, res, result) => {
+                rest.postAsUser(TestUsers.User1SessionId, '/api/v1/beacons/position',
+                    {
+                        org_id: '1',
+                        udis: ['00001']
+                    },
+                    (err, req, res, position) => {
                         assert.isNull(err);
 
-                        //assert.isNull(result);
+                        assert.isObject(position);
+                        assert.equal('Point', position.type);
+                        assert.lengthOf(position.coordinates, 2);
+                        assert.equal(0, position.coordinates[0]);
+                        assert.equal(0, position.coordinates[1]);
 
                         callback();
                     }
-                );
+                )
+            },
+            // Delete the beacon
+            (callback) => {
+                rest.delAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons/' + beacon1.id,
+                    (err, req, res, beacon) => {
+                        assert.isNull(err);
+
+                        assert.isObject(beacon);
+                        assert.equal(beacon1.id, beacon.id);
+
+                        callback();
+                    }
+                )
+            },
+            // Try to get deleted beacon
+            (callback) => {
+                rest.getAsUser(TestUsers.User1SessionId, '/api/v1/beacons/' + beacon1.id + '?user_id=' + TestUsers.User1Id,
+                    (err, req, res, beacon) => {
+                        assert.isNull(err);
+
+                        //assert.isEmpty(beacon || null);
+
+                        callback();
+                    }
+                )
             }
         ], done);
     });
-
 });
 ```
 

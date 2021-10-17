@@ -4,16 +4,8 @@ Create a requirements.txt file at the root of the project with the following con
 **/requirements.txt**
 
 ```
-iso8601
-PyYAML
-pystache
 pytest
-pytz
-bottle
-requests
-cheroot
-beaker
-netifaces==0.10.9
+
 pip-services3-commons
 pip-services3-components
 pip-services3-container

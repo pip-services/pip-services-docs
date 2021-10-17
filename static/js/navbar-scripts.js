@@ -130,16 +130,26 @@ let saveScrollState = (e) => localStorage['navbarScrollState'] = e.target.scroll
 // loadNavbar
 document.addEventListener("readystatechange", loadNavbar);
 
+// fixed TypeScript Highlights for generic types, removi if will be fixed in Chroma
+document.addEventListener("readystatechange", () => {
+    const color = '#111'; // #1e0010;
+
+    var errCodes = document.querySelectorAll('span[style="color:#960050;background-color:#1e0010"]');
+
+    if(errCodes.length == 0) return;
+
+    for (let code of errCodes) {
+        code.style['background-color'] = '';
+        code.style['color'] = color;
+    }
+});
+
+
 // flush local storage
 window.addEventListener('close', () => {
     localStorage.removeItem('currentMenuActiveItem');
     localStorage.removeItem('openNav');
 });
-
-// window.onbeforeunload = function () {
-//     localStorage.removeItem('currentMenuActiveItem');
-//     localStorage.removeItem('openNav');
-// };
 
 // save scroll state
 document.getElementById('td-section-nav').addEventListener(

@@ -1,5 +1,5 @@
 
-**/test/clients/version1/BeaconsHttpClientV1_test.go**
+**/test/version1/BeaconsHttpClientV1_test.go**
 
 ```go
 package test_clients1

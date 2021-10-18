@@ -1,5 +1,5 @@
 
-**/clients/version1/IBeaconClientV1.go**
+**/version1/IBeaconClientV1.go**
 
 ```go
 package clients1

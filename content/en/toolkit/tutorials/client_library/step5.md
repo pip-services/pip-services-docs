@@ -46,7 +46,7 @@ The image parameter contains the name of the Docker image being hosted on Docker
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -80,7 +80,7 @@ In a separate console, run the test using the following command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code9_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

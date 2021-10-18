@@ -23,7 +23,7 @@ The client’s resulting code is listed below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code4_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}

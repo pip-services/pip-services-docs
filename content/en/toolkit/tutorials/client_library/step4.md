@@ -27,7 +27,7 @@ The code for this client is showed below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code5_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -56,7 +56,7 @@ Now let’s test the client we’ve created. We’ll be using the set of tests t
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code6_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -87,7 +87,7 @@ To performing non-fuctional testing, we need to generate a large amount of reali
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/tutorials/client_library/__code7_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

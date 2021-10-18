@@ -90,7 +90,7 @@ Sets the callback function that is called when this timer is triggered.
 
 > void setCallback(Function()? value)
 
-- **value**: Function() - callback function to be called.
+- **value**: Function()? - callback function to be called.
 
 #### setDelay
 Sets an initial delay before the timer is triggered for the first time.

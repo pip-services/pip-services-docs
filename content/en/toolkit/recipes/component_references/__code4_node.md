@@ -1,10 +1,12 @@
 
 ```typescript
 class SimpleController implements IReferenceable, IUnreferenceable {
+    private _worker: any;
+    
     constructor() {}
 
     public setReferences(references) {
-        this._worker = this._references.getOneRequired(111)
+        this._worker = references.getOneRequired(111)
     }
     public unsetReferences() {
         this._worker = null;

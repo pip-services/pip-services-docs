@@ -16,7 +16,7 @@ abstract class IReferences {
 
   List<T> getRequired<T>(locator);
 
-  T getOneOptional<T>(locator);
+  T? getOneOptional<T>(locator);
 
   T getOneRequired<T>(locator);
 

@@ -163,15 +163,15 @@ abstract class IReferenceable {
 
 abstract class IOpenable implements IClosable {
   bool isOpen();
-  Future open(String correlationId);
+  Future open(String? correlationId);
 }
 
 abstract class IClosable {
-    Future close(String correlationId);
+    Future close(String? correlationId);
 }
 
 abstract class IExecutable {
-   Future<dynamic> execute(String correlationId, Parameters args);
+   Future<dynamic> execute(String? correlationId, Parameters args);
 }
 ```
 
@@ -413,41 +413,54 @@ func (c *CounterController) Execute(correlationId string, args crun.Parameters) 
 {{< tabsection isMarkdown=true >}}
 
 ```dart
-class CounterController implements IReferenceable, IReconfigurable, IOpenable, IExecutable
-{
-  final CompositeLogger _logger = new CompositeLogger();
-  final FixedRateTimer timer = new FixedRateTimer();
-  final Parameters parameters  = new Parameters();
-  int counter  = 0;
-  void configure(config ConfigParams )
-  {
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import 'package:pip_services3_components/pip_services3_components.dart';
+
+class CounterController
+    implements IReferenceable, IReconfigurable, IOpenable, IExecutable {
+  final CompositeLogger _logger = CompositeLogger();
+  final FixedRateTimer timer = FixedRateTimer();
+  Parameters parameters = Parameters();
+  int counter = 0;
+
+  @override
+  void configure(ConfigParams config) {
     parameters = Parameters.fromConfig(config);
   }
-  public void setReferences(references IReferences)
-  {
+
+  @override
+  void setReferences(IReferences references) {
     _logger.setReferences(references);
   }
-  public bool IsOpen()
-  {
-    return timer.isStarted;
+
+  @override
+  bool isOpen() {
+    return timer.isStarted();
   }
-  Future open(correlationId String) async
-  {
-    timer.task = () async {return await Execute(correlationId, parameters)};
-    timer.interval = 1000;
-    timer.delay = 1000;
+
+  @override
+  Future open(String? correlationId) async {
+    timer.setCallback(() async {
+      return await execute(correlationId, parameters);
+    });
+    timer.setInterval(1000);
+    timer.setDelay(1000);
     timer.start();
-    _logger.trace(correlationId, "Counter controller opened");
+    _logger.trace(correlationId, 'Counter controller opened');
   }
-  Future close(correlationId String)
-  {
+
+  @override
+  Future close(String? correlationId) async {
     timer.stop();
-    _logger.trace(correlationId, "Counter controller closed");
+    _logger.trace(correlationId, 'Counter controller closed');
   }
-  Future<int> Execute(correlationId String, parameters Parameters ) async
-  {
-    _logger.info(correlationId, "$s - $s", counter++, 
-    parameters.getAsStringWithDefault("message", "Hello World!"));
+
+  @override
+  Future<int> execute(String? correlationId, Parameters parameters) async {
+    _logger.debug(correlationId, '%s - %s', [
+      counter++,
+      parameters.getAsStringWithDefault('message', 'Hello World!')
+    ]);
     return counter;
   }
 }

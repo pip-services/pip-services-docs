@@ -1,6 +1,8 @@
 
 ```typescript
 class SimpleController implements IConfigurable, IReferenceable, IUnreferenceable {
+    private _worker: any;
+    
     private _depedencyResolver = DependencyResolver.fromTuples(
         "worker", new Descriptor("*","worker","*","*","1.0")
     );

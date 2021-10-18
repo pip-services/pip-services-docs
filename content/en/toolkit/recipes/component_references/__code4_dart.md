@@ -1,19 +1,23 @@
 
 ```dart
 class SimpleController implements IReferenceable, IUnreferenceable {
-    SimpleController() {}
+  dynamic _worker;
 
-    void setReferences(references) {
-        this._worker = this._references.getOneRequired(111)
-    }
+  SimpleController();
 
-    void unsetReferences() {
-        this._worker = null;
-    }
+  @override
+  void setReferences(references) {
+    _worker = references.getOneRequired(111);
+  }
 
-    void greeting(name) {
-        this._worker.do('level',  "Hello, " + (name) + "!");
-    }
+  @override
+  void unsetReferences() {
+    _worker = null;
+  }
+
+  void greeting(name) {
+    _worker.do_('level', 'Hello, ' + (name) + '!');
+  }
 }
 
 

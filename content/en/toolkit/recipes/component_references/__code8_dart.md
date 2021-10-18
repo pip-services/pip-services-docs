@@ -2,7 +2,7 @@
 ```dart
 class DependencyResolver implements IReferenceable, IReconfigurable {
 
-  DependencyResolver([ConfigParams config, IReferences references])
+  DependencyResolver([ConfigParams? config, IReferences? references]) 
 
   @override
   void configure(ConfigParams config)
@@ -12,13 +12,13 @@ class DependencyResolver implements IReferenceable, IReconfigurable {
 
   void put(String name, locator)
 
-  dynamic locate(String name)
+  dynamic locate(String? name)
 
   List<T> getOptional<T>(String name)
 
   List<T> getRequired<T>(String name)
 
-  T getOneOptional<T>(String name)
+  T? getOneOptional<T>(String name)
 
   T getOneRequired<T>(String name)
 
@@ -26,6 +26,7 @@ class DependencyResolver implements IReferenceable, IReconfigurable {
 
   static DependencyResolver fromTuples(List tuples)
 }
+
 
 ```
 

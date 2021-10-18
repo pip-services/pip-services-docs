@@ -1,23 +1,23 @@
 
 ```dart
 class Worker1 {
-    Worker1(name) {
-        this._defaultName = name || "Default name1";
-    }
+  String _defaultName;
 
-    void do(level, message) {
-        print('Write to ${this._defaultName}.${level} message: ${message}');
-    }
+  Worker1([String? name]) : _defaultName = name ?? 'Default name1';
+
+  void do_(level, message) {
+    print('Write to $_defaultName.$level message: $message');
+  }
 }
 
 class Worker2 {
-    Worker2(name) {
-        this._defaultName = name || "Default name2";
-    }
+  String _defaultName;
 
-    void do(level, message) {
-        print('Write to ${this._defaultName}.${level} message: ${message}');
-    }
+  Worker2([String? name]) : _defaultName = name ?? 'Default name2';
+
+  void do_(level, message) {
+    print('Write to $_defaultName.$level message: $message');
+  }
 }
 
 

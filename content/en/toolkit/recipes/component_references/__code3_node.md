@@ -1,6 +1,8 @@
 
 ```typescript
 class Worker1 {
+    private _defaultName: string;
+
     constructor(name) {
         this._defaultName = name || "Default name1";
     }
@@ -11,6 +13,8 @@ class Worker1 {
 }
 
 class Worker2 {
+    private _defaultName: string;
+    
     constructor(name) {
         this._defaultName = name || "Default name2";
     }
@@ -19,7 +23,5 @@ class Worker2 {
         console.log('Write to ${this._defaultName}.${level} message: ${message}');
     }
 }
-
-
 ```
 

@@ -38,19 +38,19 @@ PIP.Services offers an implementation of a Mustache engine available in its Expr
 In order to use the Mustache template library, we must first install the Expressions module by running the following command:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -93,19 +93,19 @@ The library supports the following injections and conditional blocks:
 To use Mustache templates, we must import the **MustacheTemplate** class. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -125,19 +125,19 @@ Below are some examples of evaluations:
 Variables that have a dictionary structure can be used to validate a template. The following example shows how to use the evaluate_with_variables method.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -161,19 +161,19 @@ To create a conditional template, we use the #if helper. An example of its usage
 The following example shows how to create a conditional template:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -191,19 +191,19 @@ After running the above code, we will see the following result:
 And, if we set the exclamation to None, we will get a message without an exclamation mark:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -223,19 +223,19 @@ Now, we want to modify our program to define a template that if the exclamation 
 In the first case, our code is:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -253,19 +253,19 @@ And the result is:
 In the second case, we just modify the value of EXCLAMATION to true,
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -285,19 +285,19 @@ and we get a string ended in an exclamation mark.
 We can also create an equivalent if-else structure by using the #unless helper.  The following code shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -315,19 +315,19 @@ We can also create an equivalent if-else structure by using the #unless helper. 
 We can also assign default variables to a template and use the evaluate function to check their values. The following is an example of this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -345,19 +345,19 @@ Which will result in:
 Moreover, as variables have a dictionary structure, we can also define the default value as:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -374,19 +374,19 @@ The class offers the clear method to erase all the information stored in a templ
 
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/mustache_templates/__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

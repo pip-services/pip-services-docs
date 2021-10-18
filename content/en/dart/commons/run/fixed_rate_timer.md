@@ -88,7 +88,7 @@ Checks if the timer is started.
 #### setCallback
 Sets the callback function that is called when this timer is triggered.
 
-> void setCallback(Function() value)
+> void setCallback(Function()? value)
 
 - **value**: Function() - callback function to be called.
 

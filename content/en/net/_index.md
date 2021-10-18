@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Pip.Services Toolkit for .NET"
-linkTitle: "Net"
+linkTitle: ".NET"
 table_view: true
 weight: 20
 ---

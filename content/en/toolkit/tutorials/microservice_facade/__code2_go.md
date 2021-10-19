@@ -19,7 +19,7 @@ require (
 	github.com/pip-services3-go/pip-services3-components-go v1.2.0
 	github.com/pip-services3-go/pip-services3-container-go v1.1.5
 	github.com/pip-services3-go/pip-services3-mongodb-go v1.1.0
-	github.com/pip-services3-go/pip-services3-rpc-go v1.4.4-62
+	github.com/pip-services3-go/pip-services3-rpc-go v1.5.0-64
 	github.com/stretchr/testify v1.7.0
 )
 

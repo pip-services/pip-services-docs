@@ -14,7 +14,7 @@ The OptionResolver class can be use to obtain all the parameters under the secti
 #### Resolve
 Resolves an "options" configuration section from component configuration parameters.
 
-> (c *TOptionsResolver) Resolve(config [*ConfigParams](../config_params)) [*ConfigParams](../config_params)
+> (c *TOptionResolver) Resolve(config [*ConfigParams](../config_params)) [*ConfigParams](../config_params)
 
 - **config**: [*ConfigParams](../config_params) - configuration parameters
 - **returns**: [*ConfigParams](../config_params) - configuration parameters from "options" section
@@ -23,7 +23,7 @@ Resolves an "options" configuration section from component configuration paramet
 #### ResolveWithDefault
 Resolves an "options" configuration section from component configuration parameters.
 
-> (c *TOptionsResolver) ResolveWithDefault(config [*ConfigParams](../config_params)) [*ConfigParams](../config_params)
+> (c *TOptionResolver) ResolveWithDefault(config [*ConfigParams](../config_params)) [*ConfigParams](../config_params)
 
 - **config**: [*ConfigParams](../config_params) - default configuration parameters
 - **returns**: [*ConfigParams](../config_params) - configuration parameters from "options" section
@@ -37,6 +37,6 @@ config := NewConfigParamsFromTuples(
     "options.param2", 123
 );
  
-options := OptionsResolver.resolve(config); // Result: param1=ABC;param2=123
+options := OptionResolver.resolve(config); // Result: param1=ABC;param2=123
 
 ```

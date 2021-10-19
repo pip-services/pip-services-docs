@@ -28,13 +28,13 @@ let config = ConfigParams.fromTuples(
   "options.param1", "ABC",
   "options.param2", 123)
 
-let options = OptionsResolver.resolve(config)           // Returns {'param1': 'ABC', 'param2': '123'}
+let options = OptionResolver.resolve(config)           // Returns {'param1': 'ABC', 'param2': '123'}
 
 // If the configuration doesn't contain an "options" section, it returns an empty ConfigParams object.
 config = ConfigParams.fromTuples(
           "section1.key1", "AAA",
           "section1.key2", 123,
           );
-options = OptionsResolver.resolve(config);           // Returns {}
+options = OptionResolver.resolve(config);           // Returns {}
 
 ```

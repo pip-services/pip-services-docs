@@ -1,6 +1,6 @@
 
 ```dart
-var anotherConfig = ConfigParams.fromLine("param1=123;param2=ABC");
+var anotherConfig = ConfigParams.fromString('param1=123;param2=ABC');
 
 ```
 

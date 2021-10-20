@@ -11,7 +11,7 @@ description: >-
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>MustacheTemplate </td>
     <td>PIP.Services component used to construct and evaluate Mustache templates.</td>
@@ -69,7 +69,7 @@ PIP.Services uses a set of basic constructions to create Mustache-like templates
 
 The library supports the following injections and conditional blocks:
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Variable</td>
     <td>{{{NAME}}}</td>

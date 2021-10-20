@@ -11,7 +11,7 @@ description: >-
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Component creation </td>
     <td>How to create a component and define its behavior throughout its lifecycle.</td>

@@ -10,7 +10,7 @@ weight: 1
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Logging </td>
     <td>Logging is the capacity to create tagged messages from events in our code.</td>
@@ -50,7 +50,7 @@ Logging is the capacity to create tagged messages from events in our code. These
 
 There are different logging levels. PIP.Services defines them as:
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Level name</th>
     <th>Level number</th>

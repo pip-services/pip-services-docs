@@ -10,7 +10,7 @@ description: >-
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>General case</td>
     <td>In general, a configuration is composed of a descriptor and the component’s configuration parameters.</td>

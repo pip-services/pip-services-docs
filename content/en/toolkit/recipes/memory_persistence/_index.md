@@ -10,12 +10,12 @@ weight: 1
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Memory persistence</td>
     <td>Create a memory persistence component and perform CRUD operations.</td>
   </tr>
- </table>
+</table>
  
 ### Introduction
 

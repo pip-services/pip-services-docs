@@ -12,7 +12,7 @@ description: >-
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Reflection</td>
     <td>The capacity of code to introspect upon itself.</td>

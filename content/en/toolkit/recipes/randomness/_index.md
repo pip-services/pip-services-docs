@@ -12,7 +12,7 @@ description: >-
 
 ### Key takeaways
 
-<table>
+<table class="full-width-table">
   <tr>
     <td>Random package</td>
     <td>The Commons module offers the Random package, which contains a set of classes and methods that can be used to generate different types of random values such as Booleans, doubles, datetimes, floats and integers.</td>
@@ -57,7 +57,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 #### b)	Random Booleans
 The RandomBoolean class offers two methods namely chance and next_boolean. The following table and examples explain how to use both of them.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -99,7 +99,7 @@ The RandomBoolean class offers two methods namely chance and next_boolean. The f
 #### c)	Random DateTimes
 The RandomDateTime class contains two methods: **next_date** and **update_datetime**. The description and examples of their usage are found in the table and code below:
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -141,7 +141,7 @@ The RandomDateTime class contains two methods: **next_date** and **update_dateti
 #### d)	Random doubles
 The RandomDouble class has two methods that can be used to generate random double values. The table and code below explain them.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -183,7 +183,7 @@ The RandomDouble class has two methods that can be used to generate random doubl
 #### e)	Random floats
 The **RandomFloat** class contains two methods that can be used to obtain random floats. The table and code below describe their usage.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -225,7 +225,7 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 #### f)	Random integers
 The **RandomInteger** class has two methods for generating random integers. Their usage is explained in the following table and code:
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -267,7 +267,7 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 #### g)	Random strings
 The **RandomString** class presents methods that can be used to create random strings and to randomly pick a character from a string or an array of strings. The following table and code explain their usage:
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -323,7 +323,7 @@ The **RandomString** class presents methods that can be used to create random st
 
 The **RandomText** class can be used to generate different types of random texts. The options include colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts. The following table summarizes all the methods in this class and the examples after it show how to use each of them.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>

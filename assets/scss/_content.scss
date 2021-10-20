@@ -253,6 +253,8 @@ mark, .mark {
         @extend .img-fluid;
     }
 
+
+
     > table {
         @extend .table-striped;
 
@@ -260,6 +262,11 @@ mark, .mark {
 
         @extend .table;
     }
+
+    .full-width-table {
+        display: inline-table; 
+    }
+    
 
     > blockquote {
         margin-top: 1rem;

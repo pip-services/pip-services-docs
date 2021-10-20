@@ -49,8 +49,8 @@ $button-background: linear-gradient(0deg, #ffffff 10%, #fed955 0%, #fed955 40%, 
     max-height: 2.5rem;
 
     @include media-breakpoint-down(sm) {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
 
         font-size: 0.8rem;
         width: auto;

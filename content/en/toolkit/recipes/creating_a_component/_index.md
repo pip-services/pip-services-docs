@@ -235,7 +235,7 @@ Once our component has been closed, we need to clear the component’s previousl
 {{< /tabsection >}}
 
 #### Step 8 – Destruction
-Finally, to complete the process, we need to dispose of the component. For this, we will use a class destructor. Our code will look something like this:
+Finally, to complete the process, we need to dispose of the component. For this, we will use a class destructors or other instruments provided by the languages. Our code will look something like this:
 
 {{< tabsection >}}
    Not available 

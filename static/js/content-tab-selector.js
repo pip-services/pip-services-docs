@@ -2,13 +2,30 @@
 let buttonGroups = document.getElementsByClassName('tab-selector-btn-group')
 
 if (buttonGroups.length > 0) {
+
+    const langs = {
+        "node": 0,
+        "net": 1,
+        "go": 2,
+        "dart": 3,
+        "python": 4,
+        "java": 5
+    }
+
     let buttons = Array.from(buttonGroups[0].getElementsByTagName('button'));
 
     buttons.forEach(button => {
         button.addEventListener('click', showSelected);
     })
 
-    showFirstWithContent(buttons);
+    // content tab in query
+    let contentTabSet = new URL(document.location.href).searchParams.get('contentTab');
+
+    if (contentTabSet != null && langs.hasOwnProperty(contentTabSet)) {
+        showSelected({ target: buttons[langs[contentTabSet]] })
+    } else {
+        showFirstWithContent(buttons);
+    }
 }
 
 // by default show first with content

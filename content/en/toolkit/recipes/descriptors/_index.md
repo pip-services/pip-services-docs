@@ -144,3 +144,96 @@ A string version of a descriptor can be obtained via the to_string() method. The
 
 <img src="figure2.png" alt="figure 2" style="width:100%">
 
+#### e)	Checking its completeness
+
+A descriptor is complete when all its fields have a specific value, that is, a value different from * or None. The method is_complete() can be used to check the completeness of a descriptor. It returns true if the descriptor is complete and false otherwise. The example below explains its usage.
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/descriptors/__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### f)	Comparing descriptors
+
+There are three matching methods namely match, exact_match and equals. The first partially matches a descriptor to another descriptor. If any field contains * or None, this field will be excluded from the match. The second method matches two descriptors by all fields. Finally, the equals() method compares a descriptor to a value. If the value is a Descriptor, it tries to match them. Otherwise, the method returns false. The following example shows how to use them.
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/descriptors/__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+### Example of usage
+
+Now that we know how to handle a descriptor, we will see an example of its application. 
+
+### Adding a component to a factory
+
+Factories are used to automate component creation. They work by registering components based on their descriptors. In the following example, we first define a custom component and then we register it in a factory previously created. On registration, an instance of the component is created, printing the message “class A created” and thus, confirming that the factory recognized the descriptor correctly. The code and its output is:
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/descriptors/__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+<img src="figure3.png" alt="figure 3" style="width:100%">
+
+### Wrapping up
+
+In this tutorial, we have learned that descriptors can be used to define components and groups of components. We have also seen how to obtain a descriptor’s properties, check its completeness, convert it to a string, and compare it to other descriptors. Lastly, we saw an example of their usage by showing how to register a component to a factory.

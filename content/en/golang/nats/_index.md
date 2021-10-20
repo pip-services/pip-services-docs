@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
 no_list: true
 weight: 500
 description: > 
-   This module contains a set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
+   A set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

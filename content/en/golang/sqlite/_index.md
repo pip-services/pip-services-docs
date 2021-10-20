@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
 no_list: true
 weight: 500
 description: > 
-  This module provides a set of components to implement SQLite persistence.
+  A set of components to implement SQLite persistence.
 ---
 
 ### Packages

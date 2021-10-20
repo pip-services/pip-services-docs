@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-mongodb-go"
 no_list: true
 weight: 500
 description: > 
- This module provides a set of components used to implement MongoDB persistence.
+ A set of components used to implement MongoDB persistence.
 ---
 
 ### Packages

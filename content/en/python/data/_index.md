@@ -6,7 +6,7 @@ no_list: true
 weight: 60
 description: > 
   
-    This module contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
+    Contains generic interfaces for data access components as well as abstract implementations for in-memory and file persistence.      
  
 ---
 

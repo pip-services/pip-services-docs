@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
 no_list: true
 weight: 500
 description: > 
-    This module contains a set of components for messaging using the Mqtt protocol. 
+    A set of components for messaging using the Mqtt protocol. 
 ---
 
 ### Packages

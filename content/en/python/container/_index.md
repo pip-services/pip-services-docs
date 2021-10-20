@@ -6,7 +6,7 @@ no_list: true
 weight: 50
 description: > 
     
-    This module provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
+    Provides an inversion-of-control (IoC) container used to facilitate the development of services and applications composed of loosely coupled components.
 
 ---
 ### Important points

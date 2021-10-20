@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-expressions-nodex"
 no_list: true
 weight: 100
 description: > 
-    This module provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
+    Provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---
 
 ### Packages

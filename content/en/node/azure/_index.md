@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 no_list: true
 weight: 500
 description: > 
-   This module contains packages used to create containers and services that do operations via the Azure Function protocol.
+   Contains packages used to create containers and services that do operations via the Azure Function protocol.
 ---
 
 

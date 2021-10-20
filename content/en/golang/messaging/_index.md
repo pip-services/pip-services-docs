@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
 no_list: true
 weight: 90
 description: > 
-      This module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
+      A set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
 ---
 
 ### Modules

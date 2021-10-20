@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-nats-dotnet"
 no_list: true
 weight: 500
 description: > 
-   This module contains a set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
+   A set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

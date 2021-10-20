@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-nats-nodex"
 no_list: true
 weight: 500
 description: > 
-   This module contains a set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
+   A set of components for working with message queues via a NATS server [https://nats.io/](https://nats.io/).
 ---
 
 ### Packages

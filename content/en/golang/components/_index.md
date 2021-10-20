@@ -5,7 +5,7 @@ no_list: true
 weight: 40
 gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
 description: > 
-    This module contains standard component definitions that can be used to build applications and services.
+    Contains standard component definitions that can be used to build applications and services.
 ---
 
 

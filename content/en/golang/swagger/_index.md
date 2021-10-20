@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
 no_list: true
 weight: 500
 description: > 
-  This module provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
+  Provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
 ---
 
 

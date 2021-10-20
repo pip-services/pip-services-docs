@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-messaging-dart"
 no_list: true
 weight: 90
 description: > 
-      This module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
+      A set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
 ---
 
 ### Modules

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-expressions-dotne
 no_list: true
 weight: 100
 description: > 
-    This module provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
+    Provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---
 
 ### Packages

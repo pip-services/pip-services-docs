@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-elasticsearch-go"
 no_list: true
 weight: 500
 description: > 
-    This module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
+    Contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 ### Packages

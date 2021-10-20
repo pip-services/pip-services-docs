@@ -6,7 +6,7 @@ no_list: true
 weight: 500
 description: > 
 
-   This module contains a DataDog logger and performance counters components.
+   Contains a DataDog logger and performance counters components.
 ---
 
 ### Packages

@@ -6,7 +6,7 @@ no_list: true
 weight: 30
 description: > 
  
-    This module provides a set of tools used in microservices or backend services, and it is designed to facilitate
+    Provides a set of tools used in microservices or backend services, and it is designed to facilitate
     symmetric implementation accross different programming languages.
 
 ---

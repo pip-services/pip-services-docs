@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-memcached-python"
 no_list: true
 weight: 500
 description: > 
-  This module contains the following components: MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
+  MemcachedLock and MemcachedCache for working with locks and cache on the Memcached server.
 ---
 
 ### Modules

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 no_list: true
 weight: 500
 description: > 
-    This module contains components used to implement MySQL persistence.  
+    Contains components used to implement MySQL persistence.  
 ---
 
 ### Packages

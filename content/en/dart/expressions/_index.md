@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-expressions-dart"
 no_list: true
 weight: 100
 description: > 
-    This module provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
+    Provides syntax and lexical analyzers, and an expression calculator optimized for repeated calculations.
 ---
 
 ### Packages

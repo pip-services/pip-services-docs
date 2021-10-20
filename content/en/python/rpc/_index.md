@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-python/pip-services3-rpc-python"
 no_list: true
 weight: 70
 description: > 
-    This module provides synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
+    Provides synchronous communication using local calls or the HTTP(S) protocol. It contains both server and client side implementations.
 ---
 
 

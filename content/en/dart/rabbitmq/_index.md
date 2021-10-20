@@ -6,7 +6,7 @@ no_list: true
 weight: 500
 description: > 
 
-    The RabbitMQ module contains a set of components for working with the message queue in RabbitMQ through the AMQP protocol.
+    A set of components for working with the message queue in RabbitMQ through the AMQP protocol.
 ---
 
 ### Packages

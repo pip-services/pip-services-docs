@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-kafka-dotnet"
 no_list: true
 weight: 500
 description: > 
- This module contains a set of components for messaging using the Kafka protocol.
+ A set of components for messaging using the Kafka protocol.
 ---
 
 ### Important points

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-nodex/pip-services3-cassandra-nodex"
 no_list: true
 weight: 500
 description: > 
-  This module provides a set of components to implement Cassandra persistence.
+  A set of components to implement Cassandra persistence.
 ---
 
 ### Packages

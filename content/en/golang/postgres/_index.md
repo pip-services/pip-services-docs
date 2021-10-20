@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
 no_list: true
 weight: 500
 description: > 
-   This module provides a set of components used to implement PostgreSQL persistence.
+   A set of components used to implement PostgreSQL persistence.
 ---
 
 ### Packages

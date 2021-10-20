@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-elasticsearch-dot
 no_list: true
 weight: 500
 description: > 
-    This module contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
+    Contains packages used to create Elasticsearch components, including logging components with data storage on the Elasticsearch server.
 ---
 
 

@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-aws-dart"
 no_list: true
 weight: 500
 description: > 
-    This module contains components for supporting work with the AWS cloud platform.
+    Components for supporting work with the AWS cloud platform.
 draft: true
 ---
 

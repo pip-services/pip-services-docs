@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dart/pip-services3-mongodb-dart"
 no_list: true
 weight: 500
 description: > 
- This module provides a set of components used to implement MongoDB persistence.
+ A set of components used to implement MongoDB persistence.
 ---
 
 ### Packages

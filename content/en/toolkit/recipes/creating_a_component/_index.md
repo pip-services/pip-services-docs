@@ -37,19 +37,19 @@ Following the sequence presented in the previous figure, we will create a compon
 A component can be seen as a class that has a default constructor. Thus, we will begin by creating a class with a constructor, such as:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -65,19 +65,19 @@ A component can be seen as a class that has a default constructor. Thus, we will
 Now that we have a component, we will add configuration capabilities to it. For this, we need to use the **Iconfigurable** interface and define the configure method. In this method, we will receive a **ConfigParams** object (key-value map) with the values of the parameters and assign them to our variables. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code2_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code2_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -93,19 +93,19 @@ Now that we have a component, we will add configuration capabilities to it. For 
 After configuring our component, we want to link MyComponentA to another component called MyComponentB. To do this, we need to use the **IReferenceable** interface. This interface contains the **set_references** method, which allows us to define references to dependent components. As a component's locator, we will use a **Descriptor** object with the connection parameters.  Our code will be like this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -125,19 +125,19 @@ Moreover, as the opening of the component marks the start of its usage, we will 
 Now, our code expands to this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -152,19 +152,19 @@ Now, our code expands to this:
 We will now define a function that will be used to perform business tasks, and we will call it my_task. In our example, the business task will consist of printing a message and defining a dummy variable. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -183,19 +183,19 @@ Here, we must note that the **IClosable** interface was already called by the **
 As our component already has access to this interface, we will define the **close** method for our class. The code below shows a simplified version of this method.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -211,19 +211,19 @@ As our component already has access to this interface, we will define the **clos
 Once our component has been closed, we need to clear the component’s previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,19 +238,19 @@ Once our component has been closed, we need to clear the component’s previousl
 Finally, to complete the process, we need to dispose of the component. For this, we will use a class destructor. Our code will look something like this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -270,19 +270,19 @@ However, the PIP.services toolkit provides many other components that can be use
 The complete code for our example is:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,19 +298,19 @@ The complete code for our example is:
 Now, we can execute our code step-by-step. Our program will look something like this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -334,19 +334,19 @@ To solve this problem, we can use a container. PIP.Services offers the **Process
 As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component’s type. Our updated code is:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -360,19 +360,19 @@ As this container uses a factory to create the contained components, we will cre
 Once our factory is ready, we can proceed to create our container. First, we will create a class named MyProcess as a subclass of **ProcessContainer**. Inside this class, we will state the path to our configuration file, and add our previously created factory. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -391,19 +391,19 @@ Our configuration file must declare our component’s descriptor and the values 
 We have a service, and to use it, we just need to create an instance of our container and call the run method. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "/content/en/toolkit/recipes/creating_a_component/__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/creating_a_component/__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

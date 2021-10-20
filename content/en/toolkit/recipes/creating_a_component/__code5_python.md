@@ -14,6 +14,7 @@ class MyComponentA(IReferenceable, IConfigurable, IOpenable):
     _another_component: MyComponentB
     _open = False
     _status = None
+    dummy_variable = ""
     
     # ...
 

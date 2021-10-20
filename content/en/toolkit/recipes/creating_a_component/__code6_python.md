@@ -18,7 +18,7 @@ class MyComponentA(IReferenceable, IConfigurable, IOpenable):
     # ...
     
     def close(self, correlation_id):
-        self._opened = False
+        self._open = False
         self._status = "Closed"
         print("MyComponentA has been closed.")
         

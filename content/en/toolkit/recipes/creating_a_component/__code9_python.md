@@ -97,7 +97,7 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable):
         print("References cleared")
     
     def __del__(self):
-        print("Componend destroyed")
+        print("Component destroyed")
 
 ```
 

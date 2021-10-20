@@ -7,6 +7,7 @@ class MyComponentB():
     _param1 = 'ABC2'
     _param2 = 456
     _opened = False
+    _status = None
 
     def __init__(self):
         """

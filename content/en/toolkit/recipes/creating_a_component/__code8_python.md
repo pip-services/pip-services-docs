@@ -18,7 +18,7 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable):
     # ...
     
     def __del__(self):
-        print("Componend destroyed")
+        print("Component destroyed")
         
 ```
 

@@ -23,7 +23,7 @@ export class MyMemoryPersistence
         let key = filter.getAsNullableString("key");
 
         return (item: Dummy) => {
-            if (id != null && item.id != key)
+            if (id != null && item.id != id)
                 return false;
             if (ids != null && ids.indexOf(item.id) < 0)
                 return false;

@@ -1,6 +1,6 @@
 
 ```dart
-  dynamic composeFilter(FilterParams filter) {
+  dynamic composeFilter(FilterParams? filter) {
     filter = filter ?? FilterParams();
 
     var criteria = [];
@@ -33,7 +33,7 @@
 
     var udis = filter.getAsObject('udis');
     if (udis is String) {
-      udis = (udis as String).split(',');
+      udis = udis.split(',');
     }
     if (udis is List) {
       criteria.add({
@@ -43,8 +43,6 @@
 
     return criteria.isNotEmpty ? {r'$and': criteria} : null;
   }
-
-
 
 ```
 

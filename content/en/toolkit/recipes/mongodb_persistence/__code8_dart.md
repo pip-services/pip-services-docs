@@ -1,14 +1,21 @@
 
 ```dart
+import 'dart:async';
+import 'package:mongo_dart_query/mongo_dart_query.dart' as mngquery;
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import 'package:pip_services3_mongodb/pip_services3_mongodb.dart';
+
+import '../data/version1/BeaconV1.dart';
+import './IBeaconsPersistence.dart';
+
 class BeaconsMongoDbPersistence
     extends IdentifiableMongoDbPersistence<BeaconV1, String>
     implements IBeaconsPersistence {
-
   BeaconsMongoDbPersistence() : super('beacons') {
     maxPageSize = 1000;
   }
 
-  dynamic composeFilter(FilterParams filter) {
+  dynamic composeFilter(FilterParams? filter) {
     filter = filter ?? FilterParams();
 
     var criteria = [];
@@ -41,7 +48,7 @@ class BeaconsMongoDbPersistence
 
     var udis = filter.getAsObject('udis');
     if (udis is String) {
-      udis = (udis as String).split(',');
+      udis = udis.split(',');
     }
     if (udis is List) {
       criteria.add({
@@ -54,13 +61,11 @@ class BeaconsMongoDbPersistence
 
   @override
   Future<DataPage<BeaconV1>> getPageByFilter(
-      String correlationId, FilterParams filter, PagingParams paging) async {
+      String? correlationId, FilterParams? filter, PagingParams? paging) async {
     return super
         .getPageByFilterEx(correlationId, composeFilter(filter), paging, null);
   }
-
 }
-
 
 ```
 

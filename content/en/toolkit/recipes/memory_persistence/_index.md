@@ -45,7 +45,7 @@ The code will look something like this:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -74,7 +74,7 @@ The next step is to create a memory persistence object. Here, we need to use the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -107,7 +107,7 @@ To add values to the persistence object, we will use the **create** method. This
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -144,7 +144,7 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -176,7 +176,7 @@ Similarly, we can obtain all the persisted objects by using None as our filter.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -209,7 +209,7 @@ To update a value in the persistence object, we need to use the **update** metho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -237,7 +237,7 @@ To verify the change, we can extract the dummy2 object by applying a filter:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -268,7 +268,7 @@ We can also use the **update_partially** function. In this case, we need to spec
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -296,7 +296,7 @@ To verify the change, we can use the filter defined earlier.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -330,7 +330,7 @@ Similarly, we can delete an object stored in the persistence object by using the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -357,7 +357,7 @@ To verify that the object has been deleted, we can apply a filter and search for
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

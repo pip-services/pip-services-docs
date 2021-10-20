@@ -117,7 +117,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -147,7 +147,7 @@ Finally, we will force an exception in the **my_task** method. As we had explain
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -177,7 +177,7 @@ a)	Our components
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -204,7 +204,7 @@ b)	Our factory
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -231,7 +231,7 @@ c)	Our service
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -276,7 +276,7 @@ e)	Running our service
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ After these changes, our component section will look like this:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -360,7 +360,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -386,7 +386,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -412,7 +412,7 @@ As we said earlier, PIP.Services has specific loggers for Datadog, Elasticsearch
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "/content/en/toolkit/recipes/logging/__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

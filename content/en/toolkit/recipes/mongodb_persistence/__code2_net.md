@@ -1,6 +1,8 @@
 
 ```cs
 var persistence = new BeaconMongoDbPersistence();
+// ...
+
 await persistence.OpenAsync("test");
 
 var beacon = new BeaconV1

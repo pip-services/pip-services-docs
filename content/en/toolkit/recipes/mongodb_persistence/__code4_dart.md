@@ -1,5 +1,14 @@
 
 ```dart
+import 'package:pip_services3_components/pip_services3_components.dart';
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+
+import '../persistence/BeaconsMemoryPersistence.dart';
+import '../persistence/BeaconsFilePersistence.dart';
+import '../persistence/BeaconsMongoDbPersistence.dart';
+import '../logic/BeaconsController.dart';
+import '../services/version1/BeaconsCommandableHttpServiceV1.dart';
+
 class BeaconsServiceFactory extends Factory {
   static final MemoryPersistenceDescriptor =
       Descriptor('beacons', 'persistence', 'memory', '*', '1.0');

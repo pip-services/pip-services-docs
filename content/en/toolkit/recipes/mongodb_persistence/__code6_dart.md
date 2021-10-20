@@ -1,8 +1,7 @@
 
 ```dart
 abstract class IIdentifiable<K> {
-
-  K id;
+  K? id;
 }
 
 

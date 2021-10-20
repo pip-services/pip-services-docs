@@ -1,6 +1,13 @@
 
 ```python
 persistence = BeaconsMongoDbPersistence()
+
+persistence.configure(ConfigParams.from_tuples(
+	"connection.host", "localhost",
+	"connection.port", "30000",
+	"connection.database", "test"
+))
+
 persistence.open(None)
 beacon = BeaconV1(id="1", site_id="0001", udi="0002")
 

@@ -1,6 +1,8 @@
 
 ```python
 persistence = BeaconsMongoDbPersistence()
+# ...
+
 persistence.open("test")
 
 beacon = BeaconV1(id="1", site_id="0001", udi="0002")

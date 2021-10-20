@@ -1,12 +1,19 @@
 
 ```typescript
 let persistence = new BeaconsMongoDbPersistence();
+
+persistence.Configure(cconf.NewConfigParamsFromTuples(
+	"connection.host", "localhost",
+	"connection.port", "30000",
+	"connection.database", "test",
+))
+
 await persistence.open(null);
+
 let beacon = <BeaconV1>{
     id: '1', 
     site_id: "0001",
     udi: "0002"
-
 };
 
 await persistence.set("test", beacon)

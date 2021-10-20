@@ -2,6 +2,8 @@
 ```typescript
 
 let persistence = new BeaconsMongoDbPersistence();
+// ...
+
 await persistence.open("test");
 
 let beacon = <BeaconV1>{

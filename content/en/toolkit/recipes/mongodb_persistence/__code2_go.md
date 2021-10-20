@@ -1,6 +1,7 @@
 
 ```go
 persistence := persist.NewBeaconsMongoDbPersistence()
+// ...
 
 persistence.Open("test")
 

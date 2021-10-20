@@ -204,7 +204,7 @@ There are three matching methods namely match, exact_match and equals. The first
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/descriptors/__code5_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/descriptors/__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,7 +236,7 @@ Factories are used to automate component creation. They work by registering comp
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/descriptors/__code6_python.md" >}}
+  {{< include "/content/en/toolkit/recipes/descriptors/__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

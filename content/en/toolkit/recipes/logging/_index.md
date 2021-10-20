@@ -248,7 +248,6 @@ d)  The dynamic configuration file for the components:
 **config.yaml**
 
 ```yml
-
 ---
 - descriptor: "myservice:mycomponentA:*:default:1.0"
   param1: XYZ

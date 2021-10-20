@@ -26,7 +26,7 @@ Unique object identifier of type K.
 
 ### Examples
 ```dart
-class MyData implements IIdentifiable<string> {
+class MyData implements IIdentifiable<String> {
      @override
      String? id;
      String field1;

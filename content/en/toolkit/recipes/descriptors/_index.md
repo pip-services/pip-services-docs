@@ -12,6 +12,17 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Descriptor </td>
+    <td>A component’s locator, which is defined by its group, type, kind, name, and version.</td>
+  </tr>
+  <tr>
+    <td>Scenarios</td>
+    <td>Descriptors can define many scenarios such as, for example, a specific component or all persistence components for a certain microservice.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 This tutorial will help you understand what a descriptor is, how to create one, how to get its properties, how to check its completeness, how to convert it to a string, and how to compare it to other descriptors. Finally, it provides an example of its usage.

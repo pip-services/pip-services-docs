@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Expressions: Mustache templates"
-linkTitle: "Mustache templates"
+linkTitle: "Mustache Templates"
 weight: 1
 description: >-
      How to use Mustache templates with PIP.Services.

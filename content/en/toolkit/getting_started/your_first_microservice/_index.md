@@ -1,7 +1,7 @@
 ---
 type: docs
 no_list: true
-title: "Your first microservice in Python"
+title: "Your first microservice"
 linkTitle: "Your first microservice"
 weight: 30
 ---

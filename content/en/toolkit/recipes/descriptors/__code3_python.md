@@ -1,6 +1,6 @@
 
 ```python
-locator1 = Descriptor("mygroup", "connector", "aws", "default", "1.0")
+locator = Descriptor("mygroup", "connector", "aws", "default", "1.0")
 
 locator.get_group()   # returns "my_group"
 locator.get_kind()    # returns "aws"

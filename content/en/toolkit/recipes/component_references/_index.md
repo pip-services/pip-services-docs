@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Component References"
 linkTitle: "Component References"
-weight: 20
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

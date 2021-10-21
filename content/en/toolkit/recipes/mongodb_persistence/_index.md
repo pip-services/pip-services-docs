@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "MongoDB Persistence"
 linkTitle: "MongoDB Persistence"
-weight: 50
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

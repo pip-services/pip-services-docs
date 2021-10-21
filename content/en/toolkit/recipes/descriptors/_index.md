@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Descriptors"
 linkTitle: "Descriptors"
-weight: 1
 description: >-
      How to locate a component.
 ---

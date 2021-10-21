@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Reflection"
 linkTitle: "Reflection"
-weight: 100
 description: >-
      How to allow a component to examine itself and manage its internal properties..
 ---

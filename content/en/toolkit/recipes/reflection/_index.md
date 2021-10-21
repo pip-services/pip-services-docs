@@ -4,7 +4,7 @@ no_list: true
 title: "Reflection"
 linkTitle: "Reflection"
 description: >-
-     How to allow a component to examine itself and manage its internal properties..
+     How to allow a component to can introspect upon itself.
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

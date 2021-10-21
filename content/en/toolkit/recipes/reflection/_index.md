@@ -4,7 +4,7 @@ no_list: true
 title: "Reflection"
 linkTitle: "Reflection"
 description: >-
-     How to allow a component to can introspect upon itself.
+     How to create components that can introspect.
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
@@ -14,7 +14,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>Reflection</td>
-    <td>The capacity of code to introspect upon itself.</td>
+    <td>The capacity of code to introspect.</td>
   </tr>
   <tr>
     <td>Reflect</td>

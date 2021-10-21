@@ -216,7 +216,7 @@ Now that we know how to handle a descriptor, we will see an example of its appli
 
 ### Adding a component to a factory
 
-Factories are used to automate component creation. They work by registering components based on their descriptors. In the following example, we first define a custom component and then we register it in a factory previously created. The code and its output is:
+Factories are used to automate component creation. They work by registering components based on their descriptors. In the following example, we first define a custom component and then we register it in a factory previously created. The code is:
 
 {{< tabsection >}}
    {{< include "/content/en/toolkit/recipes/descriptors/__code7_node.md" >}}
@@ -242,7 +242,6 @@ Factories are used to automate component creation. They work by registering comp
   Not available  
 {{< /tabsection >}}
 
-<img src="figure3.png" alt="figure 3" style="width:100%">
 
 ### Wrapping up
 

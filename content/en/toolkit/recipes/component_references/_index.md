@@ -362,5 +362,5 @@ The [Referencer](../../commons/refer/referencer/) helper class can be used as we
 - [Using a Service Locator](https://martinfowler.com/articles/injection.html#UsingAServiceLocator)
 - [Component Configuration recipe](../configuration)
 - [Component Lifecycle recipe](../component_lifecycle)
-- [Component Container recipe](../component_container)
-- [Commons Module](../../commons)
+- [Component Creation recipe](../creating_a_component)
+- [Commons Module](../../../node/commons)

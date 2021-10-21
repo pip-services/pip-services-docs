@@ -15,6 +15,6 @@ classA_descriptor = Descriptor("mygroup", "class", "classA", "classA", "1.0")
 
 MyFactory1.register_as_type(classA_descriptor, ClassA)
 
-MyFactory1.register_as_type(classA_descriptor, ClassA)
+MyFactory1.create(classA_descriptor)
 
 ```

@@ -492,7 +492,8 @@ class HelloWorldController implements IConfigurable {
     defaultName = 'Pip User';
   }
 
-  @override  void configure(ConfigParams config) {
+  @override  
+  void configure(ConfigParams config) {
     defaultName = config.getAsStringWithDefault('default_name', defaultName);
   }
 ‍
@@ -672,12 +673,11 @@ class HelloWorldRestService extends rpc.RestService
 Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
 
 ```dart
-@override
+  @override
   void register() {
-    registerRoute('get', '/greeting', null,
-        (angel.RequestContext req, angel.ResponseContext res) async{
-      var name = req.queryParameters['name'];
-      sendResult(req, res, null, await controller.greeting(name));
+    registerRoute('get', '/greeting', null, (Request req) async {
+      var name = req.url.queryParameters['name'];
+      return sendResult(req, await controller!.greeting(name));
     });
   }
 ```
@@ -685,11 +685,11 @@ Next, we’ll need to register the REST operations that we’ll be using in the 
 To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
 
 ```dart
-HelloWorldRestService() : super() {
+  HelloWorldRestService() : super() {
     baseRoute = '/hello_world';
     dependencyResolver.put(
         'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
-}
+  }
 
 ```
 
@@ -867,36 +867,36 @@ func (c *HelloWorldRestService) Register() {
 
 **/lib/src/HelloWorldRestService.dart**
 ```dart
-import 'package:angel_framework/angel_framework.dart' as angel;
 import 'package:pip_services3_rpc/pip_services3_rpc.dart';
 import 'package:pip_services3_commons/pip_services3_commons.dart';
+import 'package:shelf/shelf.dart';
 import './HelloWorldController.dart';
 
 class HelloWorldRestService extends RestService {
-  HelloWorldController controller;
+  HelloWorldController? controller;
 
   HelloWorldRestService() : super() {
     baseRoute = '/hello_world';
-    dependencyResolver.put( 
-       'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
+    dependencyResolver.put(
+        'controller', Descriptor('hello-world', 'controller', '*', '*', '1.0'));
   }
 
- @override
+  @override
   void setReferences(references) {
     super.setReferences(references);
     controller =
         dependencyResolver.getOneRequired<HelloWorldController>('controller');
   }
-‍
-@override
+
+  @override
   void register() {
-    registerRoute('get', '/greeting', null,
-        (angel.RequestContext req, angel.ResponseContext res) async{
-      var name = req.queryParameters['name'];
-      sendResult(req, res, null, await controller.greeting(name));
+    registerRoute('get', '/greeting', null, (Request req) async {
+      var name = req.url.queryParameters['name'];
+      return sendResult(req, await controller!.greeting(name));
     });
   }
 }
+
 ```
 {{< /tabsection >}}
 

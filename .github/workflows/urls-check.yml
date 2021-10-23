@@ -22,12 +22,6 @@ jobs:
         with:
           hugo-version: 0.84.4 # 'latest'
           extended: true
-        
-      - name: Pre-Build Hugo
-        run: npm install && hugo --theme=docsy
-        env:
-          sidebar_cache_limit: 100
-          CHECK_ONLY_IN_BODY: true
 
       - name: Setup python
         uses: actions/setup-python@v2
@@ -35,7 +29,7 @@ jobs:
           python-version: 3.8 
       
       - name: Install Python requirements
-        run: pip install -r ./python_checker/requirements.txt
+        run: pip3 install -r ./python_checker/requirements.txt && pip3 install git+https://github.com/linkchecker/linkchecker.git
 
       - name: Check site urls
         run: python ./python_checker/link_checker.py

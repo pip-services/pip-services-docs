@@ -1,3 +1,2 @@
 urllib3
 pandas
-git+https://github.com/linkchecker/linkchecker.git

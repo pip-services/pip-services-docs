@@ -6,11 +6,10 @@ import sys
 import pandas as pd
 
 if __name__ == '__main__':
-    command = 'linkchecker https://pip-services.github.io/pip-services-docs/ ' \
-              '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
+    os.system('git clone https://github.com/linkchecker/linkchecker.git')
 
-    if os.name != 'nt':
-        command = 'python ' + command
+    command = 'cd linkchecker && python linkchecker https://pip-services.github.io/pip-services-docs/ ' \
+              '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
         
     os.system(command)
 

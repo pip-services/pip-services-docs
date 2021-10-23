@@ -10,18 +10,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          # fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-      
-      - name: Update submodules
-        run: git submodule update --init --recursive
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: 0.84.4 # 'latest'
-          extended: true
 
       - name: Setup python
         uses: actions/setup-python@v2
@@ -29,7 +17,7 @@ jobs:
           python-version: 3.8 
       
       - name: Install Python requirements
-        run: pip3 install -r ./python_checker/requirements.txt && pip3 install git+https://github.com/linkchecker/linkchecker.git
+        run: pip3 install -r ./python_checker/requirements.txt
 
       - name: Check site urls
         run: python ./python_checker/link_checker.py

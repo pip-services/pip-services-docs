@@ -14,7 +14,7 @@ if __name__ == '__main__':
     os.system(command)
 
     # parse log results
-    csvLogs = pd.read_csv("url_log.txt", sep=";", comment="#")
+    csvLogs = pd.read_csv("linkchecker/url_log.txt", sep=";", comment="#")
 
     if len(csvLogs) != 0:
         raise_err = False

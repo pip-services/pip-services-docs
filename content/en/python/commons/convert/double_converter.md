@@ -22,7 +22,7 @@ The DoubleConverter class allows you to convert arbitrary values into double usi
 ### Static methods
 
 #### to_double
-Converts value into doubles or returns 0 when conversion is not possible.  
+Converts a value into a double or returns 0 when the conversion is not possible.  
 See [to_double_with_default](#to_double_with_default)
 
 > `static` to_double(value: Any): float
@@ -40,12 +40,12 @@ Converts a value into a double or returns a default value when the conversion is
 - **returns**: float - double value or default when conversion is not supported.
 
 #### to_nullable_double
-Converts value into doubles or returns None when conversion is not possible.
+Converts a value into a double or returns None when conversion is not possible.
 
 > `static` to_nullable_double(value: Any): Optional[float]
 
 - **value**: Any - the value to convert.
-- **returns**: Optional[float] - double value or None when conversion is not supported.
+- **returns**: Optional[float] - double value or None when the conversion is not supported.
 
 ### Examples
 

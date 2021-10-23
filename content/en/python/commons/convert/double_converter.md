@@ -31,7 +31,7 @@ See [to_double_with_default](#to_double_with_default)
 - **returns**: float - double value or 0 when conversion is not supported.
 
 #### to_double_with_default
-Converts value into integer or returns default value when conversion is not possible.
+Converts a value into a double or returns a default value when the conversion is not possible.
 
 > `static` to_double_with_default(value: Any, default_value: float = 0): float
 

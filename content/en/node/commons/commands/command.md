@@ -17,7 +17,7 @@ The Command class allows you to call a method or a function.
 
 Creates a new command object and assigns it's parameters.
 
-> `public` constructor(name: string, schema: [Schema](../../validate/schema), action: [IExecutable](../../run/iexecutable) | [CommandAction](#commandaction))
+> `public` constructor(name: string, schema: [Schema](../../validate/schema), action: [IExecutable](../../run/iexecutable) | (correlationId: string, args: Parameters) => Promise<any>)
 
 - **name**: string - command name.
 - **schema**: [Schema](../../validate/schema) - schema to validate command arguments.

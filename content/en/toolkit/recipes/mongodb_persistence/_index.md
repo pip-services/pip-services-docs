@@ -73,9 +73,9 @@ And this is how we could use such a class:
 
 ### Configuring database connections
 
-As mentioned earlier, the [MongoDbPersistence](../../mongodb/persistence/) contains methods for opening and closing connections. To connect to the appropriate database and collection, we need to first configure the connection with all necessary parameters. **MongoDbPersistence** uses the MongoDbConnection class for establishing connections. 
+As mentioned earlier, the [MongoDbPersistence](../../../node/mongodb/persistence/) contains methods for opening and closing connections. To connect to the appropriate database and collection, we need to first configure the connection with all necessary parameters. **MongoDbPersistence** uses the MongoDbConnection class for establishing connections. 
 
-The [MongoDbConnection](../../mongodb/connect/mongodb_connection/) class provides MongoDB connectivity using a plain driver. To reduce the number of database connections needed, a connection can be defined and then shared through multiple persistence components.
+The [MongoDbConnection](../../../node/mongodb/connect/mongodb_connection/) class provides MongoDB connectivity using a plain driver. To reduce the number of database connections needed, a connection can be defined and then shared through multiple persistence components.
 
 By default, **MongoDbPersistence** tries to establish a local connection on MongoDb’s default port - 27017. If the desired MongoDb server is located elsewhere, the persistence should be configured with the corresponding host and port information. Persistence configuration can be performed in a number of ways.
 
@@ -154,7 +154,7 @@ Next, register the persistence as a component in the microservice’s **Factory*
 {{< /tabsection >}}
 
      
-And add the [DefaultMongoDbFactory](../../mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
+And add the [DefaultMongoDbFactory](../../../node/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
 
 {{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_node.md" >}} 
@@ -196,7 +196,7 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 
 ### Identifiable data objects and IdentifiableMongoDBPersistence
 
-The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../commons/data/iidentifiable/) interface defined in [the Commons module](../../commons).
+The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../../node/mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../../node/commons/data/iidentifiable/) interface defined in [the Commons module](../../../node/commons).
 
 {{< tabsection >}}
     {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_node.md" >}}
@@ -277,11 +277,11 @@ We can build upon the **IdentifiableMongoDbPersistence** by overriding its **Com
 {{< /tabsection >}}
 
 
-In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the [MongoDb module](../../mongodb)’s API documentation for more details.
+In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the [MongoDb module](../../../node/mongodb)’s API documentation for more details.
 
 ### Filtering
 
-Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [(Commons module)](../../commons)).
+Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../../node/commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [Commons module](../../../node/commons)).
 
 {{< tabsection >}}
    {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_node.md" >}}
@@ -336,7 +336,7 @@ In the persistence component, the developer is responsible for parsing **FilterP
     
 ### Paging
 
-Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
+Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../../node/commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
 
 {{< tabsection >}}
    {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_node.md" >}} 

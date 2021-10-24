@@ -17,7 +17,7 @@ description: >
 Commandable GRPC client used for automated testing.
 
 
-#### [TestGrpcClient](test_rest_client)
+#### [TestGrpcClient](test_grpc_client)
 GRPC client used for automated testing.
 
 

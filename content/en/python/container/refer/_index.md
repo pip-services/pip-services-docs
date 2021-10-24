@@ -14,7 +14,7 @@ description: >
     
     - Lifecycle:    
      
-       - Once the objects of a container are configured, if they implement the [IReferencable](../../commons/refer/ireferencable) interface, they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the *open()* method is called and they 
+       - Once the objects of a container are configured, if they implement the [IReferenceable](../../commons/refer/ireferenceable) interface, they are passed a set of references for recreating links between objects in the container. If the objects implement the [IOpenable interface](../../commons/run/iopenable), the *open()* method is called and they 
     start to work. 
     
        - Then, connections to various services are made, the objects start, the container starts running, and the objects carry out their tasks. 

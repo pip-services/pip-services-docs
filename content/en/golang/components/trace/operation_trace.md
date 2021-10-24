@@ -47,7 +47,7 @@ The duration of the operation in milliseconds
 
 #### Error
 The description of the captured error.  
-See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
+See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationError](../../../commons/errors/application_error)
 > **Error**: [ErrorDescription](../../../commons/errors/error_description)
 
 </span>

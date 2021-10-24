@@ -78,9 +78,9 @@ Checks if the component is open.
 #### register
 Registers a registerable object for dynamic endpoint discovery.
 
-> `public` register(registration: [IRegisterable](../../services/iregisterable)): void
+> `public` register(registration: [IRegisterable](../iregisterable)): void
 
-- **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../iregisterable) - the registration to add.
 
 
 #### registerInterceptor
@@ -129,7 +129,7 @@ Unregisters a registerable object, so that it is no longer used in dynamic endpo
 
 > `public` unregister(registration: [IReferences](../../../commons/refer/ireferences)): void
 
-- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 ### Examples
 

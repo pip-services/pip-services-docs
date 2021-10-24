@@ -204,9 +204,9 @@ Saves items to an external data source using a configured saver component.
 #### set_references
 Sets the component's references. References must match configured dependencies.
 
-> set_references(references: [IReferences](../ireferences))
+> set_references(references: [IReferences](../../../commons/refer/ireferences))
 
-- **references**: [IReferences](../ireferences) - references to set.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to set.
 
 ### Examples
 

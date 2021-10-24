@@ -22,7 +22,7 @@ An interface that allows to integrate lambda services into lambda function conta
 ### Types
 
 #### [CommandableLambdaService](commandable_lambda_service)
-Abstract service that receives commands via AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
+Abstract service that receives commands via AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable components](../../commons/commands/icommandable).
 
 #### [LambdaAction](lambda_action)
 Defines actions to be executed as Lambda functions

@@ -71,7 +71,7 @@ To be sure that our code works as intended, we need to perform some functional t
 
 
 Now, let’s test the direct client. To do this, create an instance of the direct client and pass it as a parameter to our set of tests. 
-An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-python/blob/master/test/version1/test_BeaconsDirectClientV1.python)
+An example implementation of the tests can be found in the example’s [repository](https://github.com/pip-services-samples/client-beacons-python/blob/master/test/version1/test_BeaconsDirectClientV1.py)
 
 
 Run the tests using the testing methods that are standard for the programming language you are using. All tests should pass successfully.This finishes the development of the Direct client.

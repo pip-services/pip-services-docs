@@ -85,9 +85,9 @@ Checks if the component is open.
 #### Register
 Registers a registerable object for dynamic endpoint discovery.
 
-> `public` void Register([IRegisterable](../../services/iregisterable) registration)
+> `public` void Register([IRegisterable](../iregisterable) registration)
 
-- **registration**: [IRegisterable](../../services/iregisterable) - registration to add.
+- **registration**: [IRegisterable](../iregisterable) - registration to add.
 
 
 #### RegisterInterceptor

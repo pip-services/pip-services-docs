@@ -78,9 +78,9 @@ Checks if the component is open.
 #### register
 Registers a registerable object for dynamic endpoint discovery.
 
-> register(registration: [IRegisterable](../../services/iregisterable))
+> register(registration: [IRegisterable](../iregisterable))
 
-- **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../iregisterable) - the registration to add.
 
 
 #### register_interceptor
@@ -127,9 +127,9 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 #### unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> unregister(registration: [IRegisterable](../services/iregisterable))
+> unregister(registration: [IRegisterable](../iregisterable))
 
-- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 ### Examples
 

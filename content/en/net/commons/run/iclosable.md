@@ -23,7 +23,7 @@ Closes a component and frees used resources.
 
 ### Examples
 ```cs
-class MyConnector: ICloseable 
+class MyConnector: IClosable 
 {
     private object _client = null;
     ... // The _client can be lazy created

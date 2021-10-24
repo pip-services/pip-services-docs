@@ -32,7 +32,7 @@ The MessageQueue class allows you to create a message queue that is used as a ba
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
-- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/ilogger) components to pass collected measurements
+- **\*:counters:\*:\*:1.0** - (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) components to discover connection(s)
 - **\*:credential-store:\*:\*:1.0** - (optional) [ICredentialStore](../../../components/auth/icredential_store) componetns to lookup credential(s)
 
@@ -235,7 +235,7 @@ Opens the component.
 
 #### sendAsObject
 Sends an object into the queue.
-Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_mnvelope).
+Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
 > `public` sendAsObject(correlationId: string, message_type: string, message: any): Promise\<void\>
 

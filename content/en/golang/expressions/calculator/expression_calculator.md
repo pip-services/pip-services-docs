@@ -65,9 +65,9 @@ Expression string.
 
 #### InitialTokens
 List of original expression tokens.
-> (c *ExpressionCalculator) InitialTokens() [[]*ExpressionToken](../parser/expression_token)
+> (c *ExpressionCalculator) InitialTokens() [[]*ExpressionToken](../parsers/expression_token)
 
-- **returns**: [[]*ExpressionToken](../parser/expression_token) - list of original expression tokens.
+- **returns**: [[]*ExpressionToken](../parsers/expression_token) - list of original expression tokens.
 
 #### OriginalTokens
 List of expression tokens.
@@ -78,9 +78,9 @@ List of expression tokens.
 
 #### ResultTokens
 List of processed expression tokens.
-> (c *ExpressionCalculator) ResultTokens() [[]*ExpressionToken](../parser/expression_token)
+> (c *ExpressionCalculator) ResultTokens() [[]*ExpressionToken](../parsers/expression_token)
 
-- **returns**: [[]*ExpressionToken](../parser/expression_token) - list of processed expression tokens.
+- **returns**: [[]*ExpressionToken](../parsers/expression_token) - list of processed expression tokens.
 
 #### VariantOperations
 Gets the manager for operations on variant values.

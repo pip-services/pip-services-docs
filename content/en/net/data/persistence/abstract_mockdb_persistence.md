@@ -76,12 +76,12 @@ Gets an object from the _objects variable.
 #### GetAsync
 Gets an object based on a given projection.
 
-> `public virtual` Task\<[DataPage](../../../commons/data/data_page)\<object\>\> GetAsync(string correlationId, [FilterParams](../../../commons/data/filter_params) filter, [PagingParams](../../../commons/data/paging_params) paging, [ProjectionParams](../../commons/data/projection_params) projection)
+> `public virtual` Task\<[DataPage](../../../commons/data/data_page)\<object\>\> GetAsync(string correlationId, [FilterParams](../../../commons/data/filter_params) filter, [PagingParams](../../../commons/data/paging_params) paging, [ProjectionParams](../../../commons/data/projection_params) projection)
 
 - **correlationId**: string -  (optional) transaction id used to trace execution through the call chain.
 - **filter**: [FilterParams](../../../commons/data/filter_params) - filter
 - **paging**: [PagingParams](../../../commons/data/paging_params) - paging parameters
-- **projection**: [ProjectionParams](../../commons/data/projection_params) - projection parameters
+- **projection**: [ProjectionParams](../../../commons/data/projection_params) - projection parameters
 - **returns**: Task\<[DataPage](../../../commons/data/data_page)\<object\>\> - data page
 
 #### GetByIdAsync
@@ -94,11 +94,11 @@ Gets an object from the _objects variable based on a given id.
 
 Gets an object based on a given id and projection.
 
-> `public virtual` Task\<object\> GetByIdAsync(string correlationId, string id, [ProjectionParams](../../commons/data/projection_params) projection)
+> `public virtual` Task\<object\> GetByIdAsync(string correlationId, string id, [ProjectionParams](../../../commons/data/projection_params) projection)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: string - id
-- **projection**: [ProjectionParams](../../commons/data/projection_params) - projection parameters
+- **projection**: [ProjectionParams](../../../commons/data/projection_params) - projection parameters
 
 
 #### UpdateAsync

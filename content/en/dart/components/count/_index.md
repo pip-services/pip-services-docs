@@ -52,7 +52,7 @@ It allows to capture metrics and conveniently send them to multiple destinations
 
 #### [Counter](counter)
 Data object to store measurement for a performance counter.
-This object is used by [CachedCounters](../cached_counters) to store counters.
+This object is used by [CachedCounters](cached_counters) to store counters.
 
 
 #### [CounterTiming](counter_timing)

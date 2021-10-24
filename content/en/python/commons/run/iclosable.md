@@ -23,7 +23,7 @@ Closes a component and frees used resources.
 
 ### Examples
 ```python
-class MyConnector(ICloseable):
+class MyConnector(IClosable):
     _client = None
     
     ... # The _client can be lazy created

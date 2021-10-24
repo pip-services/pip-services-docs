@@ -38,9 +38,9 @@ Routes with swagger doc
 #### Configure
 Configures a component by its passing configuration parameters.
 
-> `public virtual` void Configure([ConfigParams](../config_params) config)
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../config_params) - configuration parameters to be set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### Initialize
 TODO: add description

@@ -27,7 +27,7 @@ Creates a new command object and assigns it's parameters.
 #### Execute
 Executes the command. Before execution it validates [args](../../run/parameters) using the defined schema.
 
-Raise [ApplicationException](../../errors/application_exception) when execution fails for whatever reason.  
+Raise [ApplicationError](../../errors/application_error) when execution fails for whatever reason.  
 See [Parameters](../../run/parameters)
 
 > (c [*Command]()) Execute(correlationId string, args [*run.Parameters](../../run/parameters)) (interface{}, error)

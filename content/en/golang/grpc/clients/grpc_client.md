@@ -157,11 +157,11 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> (c [*GrpcClient]()) Instrument(correlationId string, name string) [*ccount.CounterTiming](../../../components/cout/counter_timing)
+> (c [*GrpcClient]()) Instrument(correlationId string, name string) [*ccount.CounterTiming](../../../components/count/counter_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
-- **returns**: [*ccount.CounterTiming](../../../components/cout/counter_timing) - CounterTiming object used to end the time measurement.
+- **returns**: [*ccount.CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
 
 
 #### InstrumentError

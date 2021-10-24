@@ -21,7 +21,7 @@ Allows everyone access, even unauthorized users.
 
 #### Signed
 Access is granted only to authorized users.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized.
 
 > (c [*BasicAuthManager]()) Signed() func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 

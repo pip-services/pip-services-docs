@@ -19,10 +19,6 @@ Interface for data objects that contain their latest change time.
 #### [ICloneable](icloneable)
 Interface for data objects that are able to create their full binary copy.
 
-#### [IIdentifiable](iidentifiable)
-Generic interface for data objects that can be uniquely identified by an id.
-The type specified in the interface defines the type of id field.
-
 #### [INamed](inamed)
 Interface for data objects that have human-readable names.
 
@@ -62,7 +58,7 @@ The stored values can be converted to different types using a variety of accesso
 Data transfer object that is used to pass results of paginated queries.
 It contains items of the retrieved page and (optional) the total number of items.
 Most often this object type is used to send responses to paginated queries.
-Pagination parameters are defined by the [PagingParams](PagingParams) object.
+Pagination parameters are defined by the [PagingParams](paging_params) object.
 The *skip* parameter in the PagingParams indicates how many items to skip.
 The *takes* parameter sets the number of items to return in the page.
 And the optional *total* parameter tells to return the total number of items in the query.

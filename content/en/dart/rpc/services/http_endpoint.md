@@ -90,9 +90,9 @@ Checks if the component is open.
 #### register
 Registers a registerable object for dynamic endpoint discovery.
 
-> void register([IRegisterable](../../services/iregisterable) registration)
+> void register([IRegisterable](../iregisterable) registration)
 
-- **registration**: [IRegisterable](../../services/iregisterable) - registration to add.
+- **registration**: [IRegisterable](../iregisterable) - registration to add.
 
 
 #### registerInterceptor

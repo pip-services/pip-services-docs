@@ -124,7 +124,7 @@ Configures the component.
 
 > `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **config**: [ConfigParams](../../config/config_params) - configuration parameters to set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to set.
 
 
 #### convertFromPublic

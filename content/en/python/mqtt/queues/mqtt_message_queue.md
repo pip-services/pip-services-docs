@@ -64,7 +64,7 @@ Auto-subscribe option
 
 #### _connection
 MQTT connection component
-> **_connection**: [MqttConnection](../../mqtt_connection)
+> **_connection**: [MqttConnection](../../connect/mqtt_connection)
 
 #### _dependency_resolver
 Dependency resolver

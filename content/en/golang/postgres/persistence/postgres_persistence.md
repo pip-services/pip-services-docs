@@ -122,9 +122,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component.
 
-> (c [*PostgresPersistence]()) Configure(config [*conf.ConfigParams](../../config/config_params))
+> (c [*PostgresPersistence]()) Configure(config [*conf.ConfigParams](../../../commons/config/config_params))
 
-- **config**: [*conf.ConfigParams](../../config/config_params) - configuration parameters to set.
+- **config**: [*conf.ConfigParams](../../../commons/config/config_params) - configuration parameters to set.
 
 
 #### ConvertFromPublic

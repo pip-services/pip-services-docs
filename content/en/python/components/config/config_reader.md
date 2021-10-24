@@ -51,4 +51,4 @@ Reads configuration and parameterizes it with given values.
 
 
 ### See also
-- #### [IConfigReader](../iconfigReader)
+- #### [IConfigReader](../iconfig_reader)

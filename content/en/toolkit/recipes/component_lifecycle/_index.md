@@ -104,11 +104,11 @@ public interface IExecutable
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../go/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../go/commons/refer/ireferenceable/) and [IUnreferenceable](../../../go/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../go/commons/run/iopenable) and [IClosable](../../../go/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../go/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../go/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../golang/commons/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../golang/commons/refer/ireferenceable/) and [IUnreferenceable](../../../golang/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../golang/commons/run/iopenable) and [IClosable](../../../golang/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../golang/commons/run/iexecutable) – execution of functional processes.
+- [INotifiable](../../../golang/commons/run/inotifiable) - sending event notifications.
 
 ```go
 
@@ -569,11 +569,11 @@ await Closer.CloseAsync(correlationId, _references.GetAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../go/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../go/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../go/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../go/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../go/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../golang/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../golang/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../golang/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../golang/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../golang/commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:

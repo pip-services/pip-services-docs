@@ -7,7 +7,7 @@ description: >
     Creates a Mustache tokenizer.
 ---
 
-**Extends**: [AbstractTokenizer](../../tokenizers/abstract_tokenizer)
+**Extends**: [AbstractTokenizer](../../../tokenizers/abstract_tokenizer)
 
 ### Description
 

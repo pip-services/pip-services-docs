@@ -26,9 +26,9 @@ Creates a TestMessageReceiver component.
 #### messages
 Gets the list of received messages.
 
-> messages(): List[[MessageEnvelope](../message_envelope)]
+> messages(): List[[MessageEnvelope](../../queues/message_envelope)]
 
-- **returns**: List[[MessageEnvelope](../message_envelope)] - list of received messages
+- **returns**: List[[MessageEnvelope](../../queues/message_envelope)] - list of received messages
 
 
 #### message_count

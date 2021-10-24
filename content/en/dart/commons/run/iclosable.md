@@ -23,7 +23,7 @@ Closes a component and frees used resources.
 
 ### Examples
 ```dart
-class MyConnector implements ICloseable {
+class MyConnector implements IClosable {
     dynamic _client = null;
     ... // The _client can be lazy created
     Future close(String? correlationId){

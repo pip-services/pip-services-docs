@@ -16,7 +16,7 @@ The PropertySchema class allows you to create schemas to validate object propert
 ### Constructors
 Creates a new validation rule and sets its arguments.
 
-See [IValidationRule](../ivalidation_rule), [TypeCode](../convert/type_code)
+See [IValidationRule](../ivalidation_rule), [TypeCode](../../convert/type_code)
 
 > PropertySchema([String? name, dynamic type, bool req, List<[IValidationRule](../ivalidation_rule)> rules])
 

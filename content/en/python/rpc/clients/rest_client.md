@@ -46,7 +46,7 @@ The RestClient class allows you to create clients that call remote endpoints usi
 
 #### _counters
 A list of counters.
-> **_counters**: List[[ICounters](../icounters)] = []
+> **_counters**: List[[ICounters]ICounters](../../../components/count/icounters)] = []
 
 #### _client
 The HTTP client.

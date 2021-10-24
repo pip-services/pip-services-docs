@@ -62,7 +62,7 @@ The stored values can be converted to different types using a variety of accesso
 Data transfer object that is used to pass results of paginated queries.
 It contains the items of a retrieved page and (optional) the total number of items.
 Most often this object type is used to send responses to paginated queries.
-Pagination parameters are defined by the [PagingParams](PagingParams) object.
+Pagination parameters are defined by the [PagingParams](paging_params) object.
 The *skip* parameter in the PagingParams indicates how many items to skip.
 The *takes* parameter sets the number of items to return in the page.
 And the optional *total* parameter tells to return the total number of items in the query.

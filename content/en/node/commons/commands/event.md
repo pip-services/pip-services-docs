@@ -52,7 +52,7 @@ Gets the name of the event.
 
 #### notify
 Fires this event and notifies all registred listeners.  
-Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
+Throws an [InvocationException](../../errors/invocation_exception) if the event fails to be raised.
 
 > `public`notify(correlationId: string, args: [Parameters](../../run/parameters)): void
 

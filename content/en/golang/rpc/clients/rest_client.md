@@ -49,7 +49,7 @@ NewRestClient creates new instance of RestClient
 
 #### Counters
 A list of counters.
-> **Counters**: [ICounters](../icounters)[]
+> **Counters**: [ICounters]ICounters](../../../components/count/icounters)[]
 
 #### Client
 The HTTP client.

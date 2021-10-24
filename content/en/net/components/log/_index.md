@@ -64,7 +64,7 @@ Helper class to convert log level values.
 
 #### [LogMessage](log_message)
 Data object to store captured log messages.
-This object is used by [CachedLogger](../cached_logger).
+This object is used by [CachedLogger](cached_logger).
 
 
 #### [NullLogger](null_logger)

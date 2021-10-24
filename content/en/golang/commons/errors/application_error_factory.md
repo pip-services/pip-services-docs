@@ -17,7 +17,7 @@ The ApplicationErrorFactory acts as a factory to recreate from [ErrorDescription
 Recreates an ApplicationError object from serialized a ErrorDescription.
 It tries to restore the original exception type using type or error category fields.
 
-> (c *TApplicationErrorFactory) Create(description [*ErrorDescription](../error_description)) [*ApplicationError](../application_exception)
+> (c *TApplicationErrorFactory) Create(description [*ErrorDescription](../error_description)) [*ApplicationError](../application_error)
 
 - **description**: [*ErrorDescription](../error_description) - serialized error description received as a result of remote call
 

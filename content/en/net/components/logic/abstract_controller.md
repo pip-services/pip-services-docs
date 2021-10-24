@@ -198,5 +198,5 @@ Audits the delete of an object.
 
 ### See also
 - #### [Logger](../logger)
-- #### [ILogger](../ilogger)
-- #### [LogMessage](../log_message)
+- #### [ILogger](../../log/ilogger)
+- #### [LogMessage](../../log/log_message)

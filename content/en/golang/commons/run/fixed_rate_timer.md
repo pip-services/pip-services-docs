@@ -47,7 +47,7 @@ Creates new instance of the timer and sets its values.
 #### Close
 Closes the timer.
 
-This is required by [ICloseable](../icloseable) interface,
+This is required by [IClosable](../iclosable) interface,
 but besides that, it is identical to [Stop()](#stop).
 
 > (c [*FixedRateTimer]()) Close(correlationId string) error

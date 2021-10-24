@@ -18,7 +18,7 @@ a response from Prometheus metrics service.
 
 #### [PrometheusCounters](prometheus_counters)
 Performance counters that send their metrics to Prometheus service.
-The component is normally used in passive mode in conjunction with [PrometheusMetricsService](../../services/prometheus_metrics_service).
+The component is normally used in passive mode in conjunction with [PrometheusMetricsService](../services/prometheus_metrics_service).
 Alternatively when connection parameters are set, it can push metrics to Prometheus PushGateway.
 
 

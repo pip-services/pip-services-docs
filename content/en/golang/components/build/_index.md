@@ -25,7 +25,7 @@ Interface for component factories.
 #### [CompositeFactory](composite_factory)
 Aggregates multiple factories into a single factory component.
 
-#### [CreateException](create_exception)
+#### [CreateError](create_error)
 Error raised when factory is not able to create the requested component.
 
 #### [Factory](factory)

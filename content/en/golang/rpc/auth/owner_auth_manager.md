@@ -15,7 +15,7 @@ The OwnerAuthManager class provides access granting methods for owners and admin
 
 #### Owner
 Access is granted only for the session owner.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized or not owner.
 
 > (c [*OwnerAuthManager]()) Owner(idParam string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 
@@ -24,7 +24,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 
 #### OwnerOrAdmin
 Access is granted only to authorized users.   
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized or not owner.
 
 > (c [*OwnerAuthManager]()) OwnerOrAdmin(idParam string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 

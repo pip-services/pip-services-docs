@@ -17,7 +17,7 @@ The Command class allows you to call a method or a function.
 
 Creates a new command object and assigns it's parameters.
 
-> `public` Command(string name, [Schema](../../validate/schema) schema, [ExecutableDelegate](../executable_delegate) function)
+> `public` Command(string name, [Schema](../../validate/schema) schema, [ExecutableDelegate](#executable_delegate) function)
 
 - **name**: string - command name.
 - **schema**: [Schema](../../validate/schema) - schema to validate command arguments.

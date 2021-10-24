@@ -71,14 +71,14 @@ See [IEvent](../ievent)
 - **event**: [][IEvent](../ievent) - array of events to add.
 
 #### AddInterceptor
-Adds a [command interceptor](../command_interceptor) to this command set.
+Adds a [command interceptor](../icommand_interceptor) to this command set.
 
 > (c *CommandSet) AddInterceptor(interceptor [ICommandInterceptor](../icommand_interceptor))
 
 - **interceptor**: [ICommandInterceptor](../icommand_interceptor) the interceptor to add.
 
 #### AddListener
-Adds a [listener](../event_listener) to receive notifications on fired events.  
+Adds a [listener](../ievent_listener) to receive notifications on fired events.  
 See [IEventListener](../ievent_listener)
 
 > (c *CommandSet) AddListener(listener [IEventListener](../ievent_listener))

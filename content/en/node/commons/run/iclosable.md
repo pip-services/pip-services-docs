@@ -23,7 +23,7 @@ Closes a component and frees used resources.
 
 ### Examples
 ```typescript
-class MyConnector implements ICloseable {
+class MyConnector implements IClosable {
     private _client: any = null;
     
     ... // The _client can be lazy created

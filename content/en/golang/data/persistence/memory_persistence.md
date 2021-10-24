@@ -49,11 +49,11 @@ Items to load/save.
 
 #### Loader
 Loader.
-> **Loader**: [ILoader](../../core/iloader)
+> **Loader**: [ILoader](../iloader)
 
 #### Saver
 Saver.
-> **Saver**: [ISaver](../../core/isaver)
+> **Saver**: [ISaver](../isaver)
 
 #### opened
 Boolean that indicates whether the compent is open or not.
@@ -194,9 +194,9 @@ Saves items to an external data source using a configured saver component.
 #### SetReferences
 Sets the component's references. References must match configured dependencies.
 
-> (c [*MemoryPersistence]()) SetReferences(references [refer.IReferences](../ireferences))
+> (c [*MemoryPersistence]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
 
-- **references**: [refer.IReferences](../ireferences) - references to set.
+- **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to set.
 
 ### Examples
 

@@ -35,7 +35,7 @@ Obtains information about running services
 
 #### [CommandableHttpService](commandable_http_service)
 Abstract service that receives remote calls via HTTP protocol
-to operations automatically generated for commands defined in [ICommandable](../../../commons/command/icommandable).
+to operations automatically generated for commands defined in [ICommandable](../../commons/command/icommandable).
 Each command is exposed as a POST operation that receives all parameters in body object.
 
 Commandable services require only three lines of code to implement a robust external
@@ -78,7 +78,7 @@ Stores interceptors for routes.
 Handles REST services operations.
 
 
-#### [RestOperationParameters](rest_operations_parameters)
+#### [RestOperationParameters](rest_operation_parameters)
 TODO: add description
 
 #### [RestService](rest_service)

@@ -15,7 +15,7 @@ The FileError class is used to manage errors in read/write local disk operations
 #### NewFileError
 Creates an error instance and assigns its values.
 
-> NewFileError(correlationId, code, message string) [*ApplicationError](../application_exception)
+> NewFileError(correlationId, code, message string) [*ApplicationError](../application_error)
 
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **code**: string - (optional) unique error code. Default: "UNKNOWN"

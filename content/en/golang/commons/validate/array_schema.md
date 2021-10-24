@@ -17,7 +17,7 @@ The ArraySchema class allows you to validate arrays based on a specified validat
 
 #### NewArraySchema
 Creates a new validation rule and sets its values.
-See [TypeCode](../convert/type_code)
+See [TypeCode](../../convert/type_code)
 
 > NewArraySchema(valueType interface{}) [*ArraySchema]()
 

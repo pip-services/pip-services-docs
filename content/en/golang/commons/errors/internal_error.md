@@ -16,7 +16,7 @@ The InternalError class is used to manage errors caused by programming mistakes.
 #### NewInternalError
 Creates an error instance and assigns its values.
 
-> NewInternalError(correlationId, code, message string) [*ApplicationError](../application_exception)
+> NewInternalError(correlationId, code, message string) [*ApplicationError](../application_error)
 
 - **correlationId**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **code**: string - (optional) unique error code. Default: "UNKNOWN"

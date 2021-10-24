@@ -192,6 +192,6 @@ var pin = credential.getAsNullableString('pin');     // Result: 321
 
 ### See also
 - #### [ConfigParams](../../../commons/config/config_params)
-- #### [ConnectionParams](../connect/connection_params)
+- #### [ConnectionParams](../../connect/connection_params)
 - #### [CredentialResolver](../credential_resolver)
 - #### [ICredentialStore](../icredential_store)

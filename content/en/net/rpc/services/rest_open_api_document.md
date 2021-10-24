@@ -18,7 +18,7 @@ Creates a new instance of the service.
 
 - **baseRoute**: string - base route of the service
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters 
-- **commands**: List<[RestRouteMetadata](../rest_route_metadata)> - list of commmands.
+- **commands**: List<[RestRouteMetadata](../../data/rest_route_metadata)> - list of commmands.
 
 ### Properties
 

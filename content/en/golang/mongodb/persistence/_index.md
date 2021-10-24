@@ -16,10 +16,7 @@ description: >
 #### [IdentifiableMongoDbPersistence](identifiable_mongodb_persistence)
 Abstract persistence component that stores data in MongoDB
 and implements a number of CRUD operations over data items with unique ids.
-The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
-
-#### [MongoDbIndex](mongodb_index)
-Index definition for mondodb
+The data items must implement the [IIdentifiable](../../commons/data/iidentifiable) interface.
 
 #### [MongoDbPersistence](mongodb_persistence)
 Abstract persistence component that stores data in MongoDB using plain driverthe official driver.

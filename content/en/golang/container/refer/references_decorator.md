@@ -44,7 +44,7 @@ Decorator at the top of the chain.
 
 #### Find
 Gets all component references that match the specified locator.
-Throws a [ReferenceException](../../../commons/refer/reference_exception) when required is set to True but no references were found.
+Throws a [ReferenceError](../../../commons/refer/reference_error) when required is set to True but no references were found.
 
 > (c [*ReferencesDecorator]()) Find(locator interface{}, required bool) ([]interface{}, error)
 - **locator**: interface{} - locator to find a reference by.
@@ -73,7 +73,7 @@ Gets an optional component reference that matches the specified locator.
 
 #### GetOneRequired
 Gets a required component reference that matches the specified locator.
-Throws a [ReferenceException](../../../commons/refer/reference_exception) when no references were found.
+Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
 > (c [*ReferencesDecorator]()) GetOneRequired(locator interface{}) (interface{}, error)
 - **locator**: interface{} - locator to find a reference by.
@@ -91,7 +91,7 @@ Gets all component references that match the specified locator.
 #### GetRequired
 Gets all component references that match the specified locator.
 At least one component reference must be present.
-Throws a [ReferenceException](../../../commons/refer/reference_exception) when no references were found.
+Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
 > (c [*ReferencesDecorator]()) GetRequired(locator interface{}) ([]interface{}, error)
 - **locator**: interface{} - locator to find references by.

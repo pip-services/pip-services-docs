@@ -35,9 +35,9 @@ Creates a new instance and sets its values.
 #### NewPagingParamsFromMap
 Creates a new PagingParams and sets its parameters from the specified map
 
-> NewPagingParamsFromMap(value [*AnyValueMap](../../any_value_map)) [*PagingParams]()
+> NewPagingParamsFromMap(value [*AnyValueMap](../any_value_map)) [*PagingParams]()
 
-- **map**: [*AnyValueMap](../../any_value_map) - AnyValueMap or StringValueMap to initialize this PagingParams
+- **map**: [*AnyValueMap](../any_value_map) - AnyValueMap or StringValueMap to initialize this PagingParams
 - **returns**: [*PagingParams]() - newly created PagingParams.
 
 

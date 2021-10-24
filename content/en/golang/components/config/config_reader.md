@@ -45,4 +45,4 @@ Parameterized configuration template given as string with dynamic parameters.
 
 
 ### See also
-- #### [IConfigReader](../iconfigReader)
+- #### [IConfigReader](../iconfig_reader)

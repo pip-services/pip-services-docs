@@ -214,7 +214,7 @@ Validates this connection parameters
 > (c [*AwsConnectionParams]()) Validate(correlationId string) [*ApplicationError](../../../commons/errors/application_error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: [*ApplicationError](../../../commons/errors/application_error) - ConfigException or nil if validation passed successfully.
+- **returns**: [*ApplicationError](../../../commons/errors/application_error) - ConfigError or nil if validation passed successfully.
 
 
 ### Examples

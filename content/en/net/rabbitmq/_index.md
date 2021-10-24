@@ -12,7 +12,6 @@ description: >
 
 The module contains the following packages:
 - [**Build**](build) - Factory for constructing module components
-- [**Connect**](connect) - Message Queuing components that implement the standard [Messaging](https://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet) module interface
 - [**Queues**](queues) - components of working with a message queue via the RabbitMQ protocol
 
 

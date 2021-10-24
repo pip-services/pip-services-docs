@@ -14,7 +14,7 @@ The LogMessage class allows you to create data objects used to store captured lo
 
 Important points
 
-- This object is used by [CachedLogger](../cached-logger).
+- This object is used by [CachedLogger](../cached_logger).
 
 ### Constructors
 
@@ -52,7 +52,7 @@ Transaction id used to trace execution through a call chain.
 #### Error
 Transaction id used to trace execution through a call chain.
 
-See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationException](../../../commons/errors/application_exception)
+See also [ErrorDescription](../../../commons/errors/error_description), [ApplicationError](../../../commons/errors/application_error)
 > **Error**: [ErrorDescription](../../../commons/errors/error_description)
 
 #### Message

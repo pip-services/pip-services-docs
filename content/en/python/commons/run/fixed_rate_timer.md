@@ -32,7 +32,7 @@ Creates new instance of the timer and sets its values.
 #### close
 Closes the timer.
 
-This is required by [ICloseable](../icloseable) interface,
+This is required by [IClosable](../iclosable) interface,
 but besides that it is identical to [stop()](#stop).
 
 > close(correlation_id: Optional[str])

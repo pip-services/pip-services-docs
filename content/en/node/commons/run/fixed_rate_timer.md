@@ -32,7 +32,7 @@ Creates new instance of the timer and sets its values.
 #### close
 Closes the timer.
 
-This is required by the [ICloseable](../icloseable) interface,
+This is required by the [IClosable](../iclosable) interface,
 but besides that it is identical to [stop()](#stop).
 
 > `public` close(correlationId: string): Promise\<void\>

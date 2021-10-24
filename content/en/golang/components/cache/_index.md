@@ -23,7 +23,7 @@ Interface for caches that are used to cache values to improve performance.
 ### Types
 
 #### [CacheEntry](cache_entry)
-Data object to store cached values with their keys used by [MemoryCache](../memory_cache).
+Data object to store cached values with their keys used by [MemoryCache](memory_cache).
 
 #### [DefaultCacheFactory](default_cache_factory)
 Creates [ICache](icache) components by their descriptors.

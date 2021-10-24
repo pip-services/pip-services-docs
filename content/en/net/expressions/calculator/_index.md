@@ -15,7 +15,7 @@ description: >
 #### [Functions](functions)
 This sub-package provides interfaces and functions used to create lists of functions and delegates.
 
-#### [Parsers](parser)
+#### [Parsers](parsers)
 This sub-package contains classes used to create expression parsers and expression token holders.
 
 #### [Tokenizers](tokenizers)

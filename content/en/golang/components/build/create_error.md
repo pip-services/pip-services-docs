@@ -18,7 +18,7 @@ The CreateError class allows you to manage the error raised when a factory is no
 #### NewCreateError
 Creates an error instance and assigns its values.
 
-> NewCreateError(correlationId string, message string) [*errors.ApplicationError](../../../commons/errors/application_exception)
+> NewCreateError(correlationId string, message string) [*errors.ApplicationError](../../../commons/errors/application_error)
 
 - **correlationId**: string - (optional) a unique transaction id used to trace execution through the call chain.
 - **message**: string - human-readable error of the component that cannot be created.
@@ -26,12 +26,12 @@ Creates an error instance and assigns its values.
 #### NewCreateErrorByLocator
 Creates an error instance and assigns its values.
 
-> NewCreateErrorByLocator(correlationId string, locator interface{}) [*errors.ApplicationError](../../../commons/errors/application_exception)
+> NewCreateErrorByLocator(correlationId string, locator interface{}) [*errors.ApplicationError](../../../commons/errors/application_error)
 
 - **correlationId**: string - (optional) unique transaction used id to trace execution through the call chain.
 - **message**: interface{} - human-readable locator of the component that cannot be created.
 
 
 ### See also
-- #### [InternalError](../../../commons/errors/internal_exception)
-- #### [ApplicationError](../../../commons/errors/application_exception)
+- #### [InternalError](../../../commons/errors/internal_error)
+- #### [ApplicationError](../../../commons/errors/application_error)

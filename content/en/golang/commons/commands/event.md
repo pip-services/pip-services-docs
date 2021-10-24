@@ -51,7 +51,7 @@ Gets the name of the event.
 
 #### Notify
 Fires this event and notifies all registred listeners.  
-Throws an [InvocationException](../errors/invocation_exception) if the event fails to be raised.
+Throws an [InvocationError](../errors/invocation_error) if the event fails to be raised.
 
 > (c [*Event]()) Notify(correlationId string, args [*run.Parameters](../../run/parameters))
 

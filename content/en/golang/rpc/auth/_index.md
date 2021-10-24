@@ -16,7 +16,7 @@ description: >
 #### [BasicAuthManager](basic_auth_manager)
 This class provides two methods: one to grant access to everyone and another to grant access to authorized users.
 
-#### [OwnerAuthManager](owner_authorizer)
+#### [OwnerAuthManager](owner_auth_manager)
 This class provides access granting methods to owners and administrators.
 
 #### [RoleAuthManager](role_auth_manager)

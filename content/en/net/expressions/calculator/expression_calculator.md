@@ -45,7 +45,7 @@ Expression string.
 
 #### InitialTokens
 List of original expression tokens.
-> `public` IList<[ExpressionToken](../parser/expression_token)> InitialTokens { get; }
+> `public` IList<[ExpressionToken](../parsers/expression_token)> InitialTokens { get; }
 
 #### OriginalTokens
 List of expression tokens.
@@ -55,7 +55,7 @@ List of expression tokens.
 
 #### ResultTokens
 List of processed expression tokens.
-> `public` IList<[ExpressionToken](../parser/expression_token)> ResultTokens { get; }
+> `public` IList<[ExpressionToken](../parsers/expression_token)> ResultTokens { get; }
 
 #### VariantOperations
 Gets and sets the manager for operations on variant values.

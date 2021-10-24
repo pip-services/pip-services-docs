@@ -57,7 +57,7 @@ Component's configuration parameters.
 
 #### ReadComponentConfigFromConfig
 Creates a new instance of ComponentConfig based on a section from a container configuration.
-Throws [ConfigException](../commons/errors/config_exception) when neither component descriptor or type is found.
+Throws [ConfigError](../../../commons/errors/config_error) when neither component descriptor or type is found.
 
 > ReadComponentConfigFromConfig(config [*config.ConfigParams](../../../commons/config/config_params)) (result [*ComponentConfig](), err error)
 

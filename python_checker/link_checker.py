@@ -9,7 +9,7 @@ if __name__ == '__main__':
     os.system('git clone https://github.com/linkchecker/linkchecker.git')
 
     command = 'cd linkchecker && python linkchecker https://pip-services.github.io/pip-services-docs/ ' \
-              '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
+              '--check-extern --threads 15 --ignore-url \/__ \/ru\/ --file-output "csv/utf-8/url_log.txt"'
 
     os.system(command)
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
     if len(csvLogs) != 0:
         raise_err = False
         for index in range(len(csvLogs)):
-            if '404 Not Found' not in csvLogs['result'][index]:
+            if '404 Not Found' not in csvLogs['result'][index] or 'http://localhost' in csvLogs['url'][index]:
                 continue
 
             url_name = str(csvLogs['urlname'][index]) + '\n'

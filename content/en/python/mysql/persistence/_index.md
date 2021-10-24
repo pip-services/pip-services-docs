@@ -3,7 +3,7 @@ type: docs
 title: "Persistence"
 linkTitle: "Persistence"
 no_list: true
-gitUrl: "https://github.com/pip-services3-python/pip-sqlserver-mysql-python"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-mysql-python"
 description: >
     This package contains classes used to create MySQL persistence components.
     

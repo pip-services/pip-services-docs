@@ -15,7 +15,7 @@ The RoleAuthManager class provides methods to check on a user's roles.
 
 #### UserInRoles
 Checks on the roles a user has been assigned.
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized or not owner.
 
 > (c [*RoleAuthManager]()) UserInRoles(roles []string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 
@@ -24,7 +24,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 
 #### UserInRole
 Check if the role is assigned to the user.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized or not owner.
 
 > (c [*RoleAuthManager]()) UserInRole(role string) func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 
@@ -34,7 +34,7 @@ Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) e
 
 #### Admin
 Check if the user has admin role.  
-Throws [UnauthorizedException](../../../commons/errors/unauthorized_exception) exception if not authorized or not owner.
+Throws [UnauthorizedError](../../../commons/errors/unauthorized_error) exception if not authorized or not owner.
 
 > (c [*RoleAuthManager]()) Admin() func(res http.ResponseWriter, req *http.Request, next http.HandlerFunc)
 

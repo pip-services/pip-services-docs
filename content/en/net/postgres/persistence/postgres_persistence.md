@@ -120,9 +120,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component.
 
-> `public virtual` void Configure([ConfigParams](../../config/config_params) config)
+> `public virtual` void Configure([ConfigParams](../../../commons/config/config_params) config)
 
-- **config**: [ConfigParams](../../config/config_params) - configuration parameters to set.
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to set.
 
 
 #### ConvertFromPublic

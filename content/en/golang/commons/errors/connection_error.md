@@ -17,7 +17,7 @@ The Connectionerror class is used to manage errors that occur during a connectio
 #### NewConnectionError
 Creates an error instance and assigns its values.
 
-> NewConnectionError(correlationId, code, message string) [*ApplicationError](../application_exception)
+> NewConnectionError(correlationId, code, message string) [*ApplicationError](../application_error)
 
 - **correlation_id**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **code**: string - (optional) unique error code. Default: "UNKNOWN"

@@ -47,7 +47,7 @@ Creates a new instance of the configuration component.
 
 #### from_config
 Creates a new instance of ComponentConfig based on a section from a container configuration.
-Throws [ConfigException](../commons/errors/config_exception) when neither component descriptor or type is found.
+Throws [ConfigException](../../../commons/errors/config_exception) when neither component descriptor or type is found.
 
 > `static` from_config(config: [ConfigParams](../../../commons/config/config_params)): [ComponentConfig]()
 

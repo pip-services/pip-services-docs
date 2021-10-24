@@ -17,7 +17,7 @@ The Conflicterror class is used to manage errors raised by conflicts between obj
 #### NewConflictError
 Creates an error instance and assigns its values.
 
-> NewConflictError(correlationId, code, message string) [*ApplicationError](../application_exception)
+> NewConflictError(correlationId, code, message string) [*ApplicationError](../application_error)
 
 - **correlation_id**: string - (optional) unique transaction id used to trace execution through the call chain.
 - **code**: string - (optional) unique error code. Default: "UNKNOWN"

@@ -19,7 +19,7 @@ The CommandableAzureFunction allows you to create an abstract Azure Function fun
   
 - Container configuration for this Azure Function is stored in *"./config/config.yml"* file. But this path can be overridden by the *CONFIG_PATH* environment variable.
  
-- **Note**: This component has been deprecated. Use Azure [FunctionService](../../services/function_service) instead.
+- **Note**: This component has been deprecated. Use Azure [FunctionService](../../services/azure_function_service) instead.
 
 
 #### References

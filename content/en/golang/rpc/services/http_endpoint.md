@@ -83,9 +83,9 @@ Checks if the component is open.
 #### Register
 Registers a registerable object for dynamic endpoint discovery.
 
-> (c [*HttpEndpoint]()) Register(registration [IRegisterable](../../services/iregisterable))
+> (c [*HttpEndpoint]()) Register(registration [IRegisterable](../iregisterable))
 
-- **registration**: [IRegisterable](../../services/iregisterable) - the registration to add.
+- **registration**: [IRegisterable](../iregisterable) - the registration to add.
 
 
 #### RegisterInterceptor
@@ -132,9 +132,9 @@ Sets references to this endpoint's logger, counters, and connection resolver.
 #### Unregister
 Unregisters a registerable object, so that it is no longer used in dynamic endpoint discovery.
 
-> (c [*HttpEndpoint]()) Unregister(registration [IRegisterable](../services/iregisterable))
+> (c [*HttpEndpoint]()) Unregister(registration [IRegisterable](../iregisterable))
 
-- **registration**: [IRegisterable](../services/iregisterable) - registration to remove.
+- **registration**: [IRegisterable](../iregisterable) - registration to remove.
 
 ### Examples
 

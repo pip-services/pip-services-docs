@@ -41,7 +41,7 @@ if __name__ == '__main__':
             raise_err = True
 
         if raise_err:
-            raise Exception("INVALID URLS")
+            raise Exception(f"FOUND {len(csvLogs)} INVALID URLS")
 
     else:
         print('All done!')

@@ -28,7 +28,7 @@ This tutorial will help you understand what a descriptor is, how to create one, 
 
 ### What is a Descriptor?
 
-Within the PIP.Services toolkit, a descriptor is a component’s locator that is based on the component’s group, type, kind, name, and version. The Descriptor class is part of the Commons module and is included in the Refer library. The figure below summarizes the different elements of a descriptor.
+Within the Pip.Services toolkit, a descriptor is a component’s locator that is based on the component’s group, type, kind, name, and version. The Descriptor class is part of the Commons module and is included in the Refer library. The figure below summarizes the different elements of a descriptor.
 
 <img src="figure1.png" alt="figure 1" style="width:100%">
 

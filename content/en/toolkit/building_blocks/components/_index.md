@@ -168,3 +168,6 @@ To help containers instantiate components using their locators (descriptors) def
 Components represent the most basic building block in the Pip.Services toolkit that allows assembling microservices from loosely coupled components mixed together with out-of-the-box components from the toolkit. The typical composition of a microservice is presented in the diagram below. It may contain components to persist data, implement business logic, expose functionality as external interfaces and address various cross-cutting concerns like logging, monitoring, health management, and others.
 
 ![figure 2](./figure2.png)
+
+## References
+For more information on components and containers see:

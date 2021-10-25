@@ -134,3 +134,37 @@ Components are driven by configurations that can be stored in JSON or YAML files
 - descriptor: "pip-service-data:service:grpc:default:1.0"
 {{/if}}
 ```
+
+### Component factories
+
+To help containers instantiate components using their locators (descriptors) defined in the configuration files, the Pip.Services toolkit provides the IComponentFactory abstraction that has to be implemented by microservice developers. Standard components provide their corresponding factories that just get to be added to the microservice containers to enable new functionality.
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/reflection/__code2_net.md" >}}  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+## Microservice componentized design
+
+Components represent the most basic building block in the Pip.Services toolkit that allows assembling microservices from loosely coupled components mixed together with out-of-the-box components from the toolkit. The typical composition of a microservice is presented in the diagram below. It may contain components to persist data, implement business logic, expose functionality as external interfaces and address various cross-cutting concerns like logging, monitoring, health management, and others.
+
+![figure 2](./figure2.png)

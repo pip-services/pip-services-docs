@@ -63,3 +63,74 @@ The most basic container can be instantiated in-process. On top of it, the Pip.S
 - LambdaFunction: used to deploy microservices as AWS Lambda.
 - AzureFunction: used to deploy microservices as Azure Functions.
 - CloudFunction: used to deploy microservices as Google Cloud Functions.
+- ServiceFabricService: used to deploy microservices as Service Fabric services on Azure cloud
+- ServiceFabricActor: used to deploy microservices as Service Fabric actors on Azure cloud 
+- Servlet: used to deploy microservices in J2EE containers
+
+Containers allow great flexibility to developers since they can repackage their microservices and run on drastically different platforms like Docker or Serverless reusing over 90% of their code. That also makes their code more future-proof, as they will be able to support the latest and greatest deployment platforms that may emerge in the future with just a few lines of code.
+
+Components are driven by configurations that can be stored in JSON or YAML files. The Mustache templating language allows to inject deployment-time configuration parameters and change the composition of microservices by using command-line arguments and environment variables set during deployment time. This feature allows for the creation of microservices that can adjust themselves depending on the deployment configuration without changing and rebuilding the code. The example below shows how to configure several commonly used components.
+
+```
+# Container descriptor
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "pip-service-data"
+  description: "Entities data microservice"
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
+
+# Performance log counters
+- descriptor: "pip-services:counters:log:default:1.0"
+
+{{#if MONGO_ENABLED}}
+# MongoDb persistence
+- descriptor: "pip-service-data:persistence:mongodb:default:1.0"
+  connection:
+    uri: {{MONGO_SERVICE_URI}}
+    host: {{MONGO_SERVICE_HOST}}{{#unless MONGO_SERVICE_HOST}}"localhost"{{/unless}}
+    port: {{MONGO_SERVICE_PORT}}{{#unless MONGO_SERVICE_PORT}}27017{{/unless}}
+    database: {{MONGO_DB}}{{#unless MONGO_DB}}"test"{{/unless}}
+  credential:
+    username: {{MONGO_USER}}
+    password: {{MONGO_PASS}}
+{{/if}}
+
+{{#unless MONGO_ENABLED}}
+# Default to in-memory persistence, if nothing is set
+- descriptor: "pip-service-data:persistence:memory:default:1.0"
+{{/unless}}
+
+# Controller
+- descriptor: "pip-service-data:controller:default:default:1.0"
+
+{{#if HTTP_ENABLED}}
+# Common HTTP endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: {{HTTP_PORT}}{{#unless HTTP_PORT}}8080{{/unless}}
+
+# HTTP service version 1.0
+- descriptor: "pip-service-data:service:http:default:1.0"
+  swagger:
+    enable: true
+
+# Swagger service
+- descriptor: "pip-services:swagger-service:http:default:1.0"
+{{/if}}
+
+{{#if GRPC_ENABLED}}
+# Common GRPC endpoint
+- descriptor: "pip-services:endpoint:grpc:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: {{GRPC_PORT}}{{#unless GRPC_PORT}}8090{{/unless}}
+
+# GRPC service version 1.0
+- descriptor: "pip-service-data:service:grpc:default:1.0"
+{{/if}}
+```

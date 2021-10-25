@@ -24,3 +24,42 @@ The component interfaces are optional, and can be used in any combination. They 
 - The IOpenable interface allows components to establish connections, start active threads, or do other things when they are open to prepare for handling incoming calls. On close, the collections are released and resources are freed. The IClosable interface is a subset of IOpenable with only the close method in it.
 
 - The IExecutable interface allows components to process incoming calls by implementing an execute method. And the INotifiable interface receives asynchronous notifications via the notify method.
+
+- The ICleanable method is used to clear a component’s state. That can be handy in situations like resetting components in automated tests.
+
+A component that implements all standard interfaces looks the following way:
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "/content/en/toolkit/recipes/reflection/__code1_net.md" >}}  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+### Containers and their configurations
+
+Components can be created, referenced and opened manually. That is usually done in unit tests. However, the most power and flexibility comes when components can be created and managed by inversion of control containers.
+
+The most basic container can be instantiated in-process. On top of it, the Pip.Services toolkit creates a variety of other containers, that allow to assemble microservices from components and deploy them on different platforms. These are:
+
+- ProcessContainer: used to run microservices as system processes or package them into Docker containers.
+- LambdaFunction: used to deploy microservices as AWS Lambda.
+- AzureFunction: used to deploy microservices as Azure Functions.
+- CloudFunction: used to deploy microservices as Google Cloud Functions.

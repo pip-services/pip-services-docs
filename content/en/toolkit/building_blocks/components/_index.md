@@ -13,7 +13,7 @@ description: >-
 
 The Pip.Services toolkit is based on components. The component definition is very flexible. It allows users to create components from scratch, convert existing pieces of code into a component or choose from a large collection of prebuilt components. In the toolkit, any class (or struct in non-OOP languages) can be a component. Additional capabilities can be added via a few standard interfaces that enable specific states in the component lifecycle.
 
-<img src="figure1.png" alt="figure 1" style="width:60%">
+![figure 1](./figure1.png)
 
 The component interfaces are optional, and can be used in any combination. They are defined in the commons module:
 

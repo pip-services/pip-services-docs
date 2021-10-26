@@ -41,3 +41,14 @@ The following is an example of state management in a stateful microservice:
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+The Pip.Service toolkit provides many different implementations of the state stores. They are:
+
+- NullStateStore: Dummy state store implementation that doesn’t do anything.
+- MemoryStateStore: State store that keeps states in the process memory.
+- RedisStateStore
+- MemcachedStateStore
+- MongoDbStateStore
+- PostgresStateStore
+- MySqlStateStore
+- And others

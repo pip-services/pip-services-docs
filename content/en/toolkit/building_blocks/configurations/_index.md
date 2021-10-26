@@ -93,4 +93,4 @@ The Pip.Services toolkit offers a few standard configuration readers:
 
 For more information about configurations see:
 
-Then those parameters are automatically injected into container configurations using Mustache templates:
+

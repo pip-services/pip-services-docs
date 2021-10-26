@@ -102,7 +102,7 @@ Locks provided by Pip.Services work similarly to traditional synchronization pri
 
 In order to implement locks, the components have to implement the standard ILock interface defined in the lock package in the components module. There are two possible scenarios for this implementation.
 
-The first scenario is to acquire a lock before running a transaction to prevent other instances to override changes or create conflicts in any other way. This is a dangerous path since distributed locks can significantly lower system throughout or/and cause deadlocks. The example below shows how this case is implemented.
+The first scenario is to acquire a lock before running a transaction to prevent other instances to override changes or create conflicts in any other way. This is a dangerous path since distributed locks can significantly lower system throughput or/and cause deadlocks. The example below shows how this case is implemented.
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}} 

@@ -26,6 +26,14 @@ Creates a new instance of the config reader.
 
 ### Methods
 
+#### AddChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> AddChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
 #### Configure
 Configures a component by passing its configuration parameters.
 
@@ -42,6 +50,14 @@ Parameterized configuration template given as string with dynamic parameters.
 - **cconfig**: string - string with a configuration template to be parameterized
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
 - **returns**: (string, error) - parameterized configuration string.
+
+
+#### RemoveChangeListener
+Remove a previously added change listener.
+
+> RemoveChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
 
 
 ### See also

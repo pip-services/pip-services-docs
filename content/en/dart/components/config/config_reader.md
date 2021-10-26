@@ -20,6 +20,15 @@ The ConfigReader class allows you to create config readers that support configur
 
 ### Instance methods
 
+#### addChangeListener
+Adds a listener that will be notified when configuration is changed
+
+`@override`
+> void addChangeListener([INotifiable](../../../commons/run/inotifiable) listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
 #### configure
 Configures component by passing configuration parameters.
 
@@ -37,6 +46,16 @@ Parameterized configuration template given as string with dynamic parameters.
 - **config**: String - string with configuration template to be parameterized
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - dynamic parameters to inject into the template
 - **returns**: String? - parameterized configuration string.
+
+
+#### removeChangeListener
+Remove a previously added change listener.
+
+`@override`
+> void removeChangeListener([INotifiable](../../../commons/run/inotifiable) listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
+
 
 #### readConfig
 Reads configuration and parameterizes it with given values.

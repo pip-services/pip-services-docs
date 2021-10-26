@@ -31,6 +31,13 @@ Creates a new instance of a config reader.
 
 ### Instance methods
 
+#### add_change_listener
+Adds a listener that will be notified when configuration is changed
+
+> add_change_listener(listener: [INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
 #### configure
 Configures a component by passing its configuration parameters.
 
@@ -47,6 +54,14 @@ Reads a configuration and parameterizes it with given values.
 - **correlation_id**: Optional[str] - (optional) transaction id to trace execution through a call chain.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or None to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
+
+
+#### remove_change_listener
+Remove a previously added change listener.
+
+> remove_change_listener(listener: [INotifiable](../../../commons/run/inotifiable)): void
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
 
 ### Examples
 

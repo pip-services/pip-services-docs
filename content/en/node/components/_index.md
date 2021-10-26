@@ -23,6 +23,8 @@ The module contains the following packages:
 * [**Lock**](lock) - distributed lock components
 * [**Log**](log) - basic logging components that provide console and composite logging, as well as an interface for developing custom loggers
 * [**Test**](test) - minimal set of test components to make testing easier
+* [**State**](state) - TODO: add description
+* [**Trace**](trace) - TODO: add description
 * [**Component**](component) - the root package
 
 

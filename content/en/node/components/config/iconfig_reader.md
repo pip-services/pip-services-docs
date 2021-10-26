@@ -20,6 +20,21 @@ Important points
 
 ### Instance methods
 
+#### addChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> addChangeListener(listener: [INotifiable](../../../commons/run/inotifiable)): void
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
+#### removeChangeListener
+Remove a previously added change listener.
+
+> removeChangeListener(listener: [INotifiable](../../../commons/run/inotifiable)): void
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
+
 #### readConfig
 Reads configuration and parameterizes it with given values.
 

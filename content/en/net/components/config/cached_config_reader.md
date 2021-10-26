@@ -22,6 +22,13 @@ Timedout (Default value is 60000)
 
 ### Instance methods
 
+#### AddChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> `public virtual` void AddChangeListener([INotifiable](../../../commons/run/inotifiable) listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
 #### ReadConfig
 Configures a component by passing its configuration parameters.
 
@@ -30,3 +37,10 @@ Configures a component by passing its configuration parameters.
 - **correlationId**: string - configuration parameters to be set.
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - values to parameters of the configuration or null to skip parameterization.
 - **returns**: [ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
+
+#### RemoveChangeListener
+Remove a previously added change listener.
+
+> `public virtual` void RemoveChangeListener(INotifiable listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.

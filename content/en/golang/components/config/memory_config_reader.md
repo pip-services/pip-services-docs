@@ -35,6 +35,14 @@ Creates a new instance of config reader.
 
 ### Methods
 
+#### AddChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> AddChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
 #### Configure
 Configures a component by passing its configuration parameters.
 
@@ -51,6 +59,14 @@ Reads a configuration and parameterizes it with given values.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: [*cconfig.ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
+
+
+#### RemoveChangeListener
+Remove a previously added change listener.
+
+> RemoveChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
 
 ### Examples
 

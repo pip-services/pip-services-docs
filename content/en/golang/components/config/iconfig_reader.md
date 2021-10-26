@@ -20,6 +20,21 @@ Important points
 
 ### Methods
 
+#### AddChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> AddChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
+#### RemoveChangeListener
+Remove a previously added change listener.
+
+> RemoveChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
+
 #### ReadConfig
 Reads a configuration and parameterizes it with given values.
 

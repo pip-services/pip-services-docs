@@ -20,6 +20,21 @@ The IConfigReader interface is used in configuration readers that retrieve a con
 
 ### Instance methods
 
+#### AddChangeListener
+Adds a listener that will be notified when configuration is changed
+
+> void AddChangeListener([INotifiable](../../../commons/run/inotifiable) listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
+#### RemoveChangeListener
+Remove a previously added change listener.
+
+> void RemoveChangeListener(INotifiable listener)
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
+
 #### ReadConfig
 Reads a configuration and parameterizes it with given values.
 

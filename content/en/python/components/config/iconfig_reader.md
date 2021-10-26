@@ -20,6 +20,21 @@ Important points
 
 ### Abstract methods
 
+#### add_change_listener
+Adds a listener that will be notified when configuration is changed
+
+> `abstractmethod` add_change_listener(listener: [INotifiable](../../../commons/run/inotifiable))
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be added.
+
+
+#### remove_change_listener
+Remove a previously added change listener.
+
+> `abstractmethod` remove_change_listener(listener: [INotifiable](../../../commons/run/inotifiable)): void
+
+- **listener:** [INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
+
 #### read_config_
 Reads configuration and parameterizes it with given values.
 

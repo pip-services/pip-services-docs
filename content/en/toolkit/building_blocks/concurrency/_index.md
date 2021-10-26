@@ -104,3 +104,63 @@ In order to implement locks, the components have to implement the standard ILock
 
 The first scenario is to acquire a lock before running a transaction to prevent other instances to override changes or create conflicts in any other way. This is a dangerous path since distributed locks can significantly lower system throughout or/and cause deadlocks. The example below shows how this case is implemented.
 
+{{< tabsection >}}
+  {{< include "./__code3_node.md" >}} 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+The second scenario can be used just to prevent double processing. Before executing a transaction, the component tries to acquire a lock. If a lock is not acquired, that means another instance is already processing the transaction and this instance cancels the execution. The following code provides an example of this scenario.
+
+{{< tabsection >}}
+  {{< include "./__code4_node.md" >}} 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+There are several ready to use Lock components in the toolkit. They include:
+
+- NullLock: Dummy lock implementation with no real effect.
+- MemoryLock: Lock used to synchronize the execution of a process using shared memory.
+- RedisLock: Distributed lock that is implemented based on the Redis in-memory database. 
+- MemcachedLock: Distributed lock that is implemented based on Memcached’s caching service. 
+
+### References
+For more information about connectivity see:
+

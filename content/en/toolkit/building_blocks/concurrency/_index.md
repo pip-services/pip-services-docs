@@ -52,3 +52,55 @@ The Pip.Service toolkit provides many different implementations of the state sto
 - PostgresStateStore
 - MySqlStateStore
 - And others
+
+### Caching
+
+Caching is a mechanism that is primarily used to optimize requests. When a microservice processes a time-consuming request, it can save the result in a cache. On subsequent requests, the microservice first tries to get the result from the cache, and on success, returns it without running the full logic.
+
+Another scenario could be to save the transaction state in a cache, instead of in a persistent storage. However, even though in this way the state can be lost after some time, this behavior could be acceptable in many cases.
+
+To provide for these scenarios, the cache package in the components module contains the ICache interface that allows storing, retrieving, and deleting cached values using their unique keys. The key is just a string. To prevent conflicts, it is recommended to combine the microservice or/and collection name in the object id.
+
+There are a few implementations of caches in the toolkit:
+
+- NullCache: Dummy cache implementation that doesn’t do anything.
+- MemoryCache: Cache that stores values in the process memory. 
+- RedisCache: Distributed cache that stores values in Redis in-memory database.
+- MemcachedCache: Distributed cache that stores values in Memcached’s caching service. 
+
+
+An example of using a cache is the following:
+
+
+{{< tabsection >}}
+  {{< include "./__code2_node.md" >}} 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+### Locking
+
+Locks provided by Pip.Services work similarly to traditional synchronization primitives available in many programming languages. The main difference is they support coordination across multiple microservices running on potentially different computing instances across the network. 
+
+In order to implement locks, the components have to implement the standard ILock interface defined in the lock package in the components module. There are two possible scenarios for this implementation.
+
+The first scenario is to acquire a lock before running a transaction to prevent other instances to override changes or create conflicts in any other way. This is a dangerous path since distributed locks can significantly lower system throughout or/and cause deadlocks. The example below shows how this case is implemented.
+

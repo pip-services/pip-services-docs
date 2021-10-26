@@ -30,11 +30,11 @@ The component interfaces are optional, and can be used in any combination. They 
 A component that implements all standard interfaces looks the following way:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/reflection/__code1_net.md" >}}  
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -140,11 +140,11 @@ Components are driven by configurations that can be stored in JSON or YAML files
 To help containers instantiate components using their locators (descriptors) defined in the configuration files, the Pip.Services toolkit provides the IComponentFactory abstraction that has to be implemented by microservice developers. Standard components provide their corresponding factories that just get to be added to the microservice containers to enable new functionality.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/reflection/__code2_net.md" >}}  
+  Not available  
 {{< /tabsection >}}
 
 {{< tabsection >}}

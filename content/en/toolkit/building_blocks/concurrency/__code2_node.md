@@ -1,18 +1,21 @@
 
 ```ts
 class MyComponent {
-  private _lock: ILock;
+  private _cache: ICache;
 
-  …
-  public processMyObject(correlationId: string, objectId: string) {
-    // Acquire lock for 10 secs
-    await this._lock.acquireLock(correlationId, “mycomponent:” + objectId, 10000);
-    try {
-      ...
-    } finally { 
-      // Release lock
-      await this._lock.releasLock(correlationId, “mycomponent:” + objectId);
-    }
+  ...
+
+  public getMyObjectById(correlationId: string, objectId: string): Promise<MyObject> {
+    let result = await this._cache.retrieve(correlationId, “mycomponent:” + objectId);
+    if (result != null) { return result; }
+
+    // Retrieve the object
+    …
+    
+    await this._cache.store(correlationId, “mycomponent:” + objectId, results);
+    return result;
   }
+}
+
 
 ```

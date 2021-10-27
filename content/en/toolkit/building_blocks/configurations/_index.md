@@ -19,7 +19,7 @@ This is the simplest type of configuration. It is initially defined by developer
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -27,11 +27,11 @@ This is the simplest type of configuration. It is initially defined by developer
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,7 +48,7 @@ Deployment-time configuration parameters are set via environment variables or pa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -56,11 +56,11 @@ Deployment-time configuration parameters are set via environment variables or pa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

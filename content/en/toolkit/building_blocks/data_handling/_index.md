@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Data Handling"
 linkTitle: "Data Handling"
-weight: 1
+weight: 10
 description: >-
      
 ---
@@ -69,7 +69,7 @@ A simple object validator check that checks properties for proper values may loo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -77,11 +77,11 @@ A simple object validator check that checks properties for proper values may loo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -113,7 +113,7 @@ Pip.Services offers a simple yet effective filtering pattern that is universal a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -121,11 +121,11 @@ Pip.Services offers a simple yet effective filtering pattern that is universal a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -141,7 +141,7 @@ Sorting is another common pattern that is often used in combination with filters
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -149,11 +149,11 @@ Sorting is another common pattern that is often used in combination with filters
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -169,7 +169,7 @@ Data collections containing thousands, hundreds of thousands or even millions of
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -177,11 +177,11 @@ Data collections containing thousands, hundreds of thousands or even millions of
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -200,7 +200,7 @@ In complex use cases when the data is retrieved from multiple collections or sha
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,11 +208,11 @@ In complex use cases when the data is retrieved from multiple collections or sha
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

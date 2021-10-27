@@ -20,12 +20,20 @@ The same package contains an IDiscovery interface that shall be implemented by c
 MemoryDiscovery is the simplest implementation of a discovery component. It allows storing connection information in a single place in the config file. 
 Typically, connection parameters are set in the connection (or connections for clusters) section in configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
 
+```
+# MongoDb persistence component
+descriptor: "myservice:mypersistance:mongodb:default:1.0"
+connection:
+  host: mongo
+  port: 27017
+```
+
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -33,11 +41,11 @@ Typically, connection parameters are set in the connection (or connections for c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,12 +56,25 @@ Hardcoding connection parameters in the component configurations works well for 
 
 The example below is similar to the previous one but shows how to get mongo connection parameters from the in-memory discovery service using the ConnectionResolver helper.
 
+```
+# In-memory discovery service
+descriptor: "pip-services:discovery:memory:default:1.0"
+mongo:
+  host: mongo
+  port: 27017
+
+# MongoDb persistence component
+descriptor: "myservice:mypersistance:mongodb:default:1.0"
+connection:
+  discovery_key: mongo
+```
+
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -61,11 +82,11 @@ The example below is similar to the previous one but shows how to get mongo conn
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -84,13 +105,20 @@ The MemoryCredentialStore class is the simplest implementation of a credential s
 
 Similar to connection parameters, credentials are set in the credential section of the configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
 
+```
+# MongoDb persistence component
+descriptor: “myservice:mypersistance:mongodb:default:1.0”
+credential:
+  username: admin
+  password: pass123
+```
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -98,11 +126,11 @@ Similar to connection parameters, credentials are set in the credential section 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -113,12 +141,27 @@ When credentials have to be retrieved from an external credential store, a store
 
 The example below demonstrates how to get mongo credentials from an in-memory credential store using the CredentialResolver helper.
 
+```
+# In-memory credential store
+descriptor: "pip-services:credential-store:memory:default:1.0"
+mongo:
+  username: admin
+  password: pass123
+
+# MongoDb persistence component
+descriptor: "myservice:mypersistance:mongodb:default:1.0"
+connection:
+  ...
+credential:
+  discovery_key: mongo
+```
+
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -126,11 +169,11 @@ The example below demonstrates how to get mongo credentials from an in-memory cr
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

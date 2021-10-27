@@ -1,19 +1,23 @@
 
-```ts
-import { ILock } from "pip-services3-components-nodex";
+```cs
+using PipServices3.Components.Lock;
 
-class MyComponent {
-  private _lock: ILock;
+public class MyComponent
+{
+    private ILock _lock;
 
-  ...
-  public processMyObject(correlationId: string, objectId: string) {
-    // Try to acquire lock for 10 secs
-    if(!await this._lock.tryAcquireLock(correlationId, "mycomponent:" + objectId, 10000)) {
-      // Other instance already executing that transaction
-      return;
+    // ...
+    public void ProcessMyObject(string correlationId, string objectId)
+    {
+        // Try to acquire lock for 10 secs
+        if (!_lock.TryAcquireLock(correlationId, "mycomponent:" + objectId, 10000))
+        {
+            // Other instance already executing that transaction
+            return;
+        }
+
+        ...
     }
-
-  ...
-  }
 }
+
 ```

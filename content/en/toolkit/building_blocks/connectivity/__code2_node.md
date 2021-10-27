@@ -1,17 +1,4 @@
 
-```
-# In-memory discovery service
-descriptor: "pip-services:discovery:memory:default:1.0"
-mongo:
-  host: mongo
-  port: 27017
-
-# MongoDb persistence component
-descriptor: "myservice:mypersistance:mongodb:default:1.0"
-connection:
-  discovery_key: mongo
-```
-
 ```ts
 import { 
     ConfigParams, IConfigurable, 

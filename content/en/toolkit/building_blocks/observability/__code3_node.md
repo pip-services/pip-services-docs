@@ -1,25 +1,21 @@
 
 ```ts
-# Log tracer
-descriptor: “pip-services:tracer:log:default:1.0”
+import { IReferenceable, IReferences } from "pip-services3-commons-nodex";
+import { CompositeTracer } from "pip-services3-components-nodex";
 
-# DataDog traces
-descriptor: “pip-services:tracer:datadog:default:1.0”
-connection:
-  api_key: {{DATADOG_API_KEY}}
 
 class MyComponent implements IReferenceable {
   private _tracer: CompositeTracer = new CompositeTracer();
 
   public setReferences(refs: IReferences) {
-    this._counters.setReferences(refs);
+    this._tracer.setReferences(refs);
   }
 
   public doSomething(correlationId: string) {
-    let timing = this._tracer.beginTrace(correlationId, “mycomponent”, “do_something”);
+    let timing = this._tracer.beginTrace(correlationId, "mycomponent", "do_something");
     try {
       ...
-      timing.endTiming();
+      timing.endTrace();
     } catch (ex) {
       timing.endFailure(ex);
     }

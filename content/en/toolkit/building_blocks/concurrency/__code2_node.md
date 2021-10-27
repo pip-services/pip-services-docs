@@ -14,7 +14,7 @@ class MyComponent {
     // Retrieve the object
     ...
 
-    await this._cache.store(correlationId, "mycomponent:" + objectId, results, 1000);
+    await this._cache.store(correlationId, "mycomponent:" + objectId, result, 1000);
     return result;
   }
 }

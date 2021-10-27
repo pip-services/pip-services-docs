@@ -1,5 +1,7 @@
 
 ```ts
+import { ObjectSchema, TypeCode } from "pip-services3-commons-nodex";
+
 class MyObjectSchema extends ObjectSchema {
     public constructor()
     {

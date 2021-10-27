@@ -3,9 +3,7 @@ type: docs
 no_list: true
 title: "Observability"
 linkTitle: "Observabiity"
-weight: 1
-description: >-
-     
+weight: 40   
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
@@ -34,12 +32,24 @@ The ILogger interface looks pretty standard. It allows logging messages at diffe
 
 It is common in microservices to log simultaneously into several destinations - to console for debugging as well into a distributed logging system. To support this scenario the toolkit includes the CompositeLogger, which is used by components to collect messages and then distribute them across all loggers included in the microservice.
 
+```
+# Console logger
+descriptor: "pip-services:logger:console:default:1.0"
+level: info
+
+# Elastic search logger
+descriptor: "pip-services:logger:elasticsearch:default:1.0"
+connection:
+  host: {{ELASTICSEARCH_SERVICE_HOST}}
+  port: {{ELASTICSEARCH_SERVICE_PORT}}
+```
+
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -47,11 +57,11 @@ It is common in microservices to log simultaneously into several destinations - 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,12 +83,23 @@ Similar to logs, microservices can send counters to several destinations: period
 
 The example below shows how to collect several performance metrics from processing incoming messages:
 
+```
+# Log counters
+descriptor: "pip-services:counters:log:default:1.0"
+
+# Prometheus counters
+descriptor: "pip-services:counters:prometheus:default:1.0"
+
+# Metrics service used by prometheus to collect metrics
+descriptor: "pip-services:metrics-service:prometheus:default:1.0"
+```
+
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -86,11 +107,11 @@ The example below shows how to collect several performance metrics from processi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -109,13 +130,23 @@ The Pip.Services toolkit includes the ITraces interface for tracing components d
 
 Just like logs and metrics, a tracer can be sent to multiple destinations using the CompositeTracer component.
 
+```
+# Log tracer
+descriptor: "pip-services:tracer:log:default:1.0"
+
+# DataDog traces
+descriptor: "pip-services:tracer:datadog:default:1.0"
+connection:
+  api_key: {{DATADOG_API_KEY}}
+
+```
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,11 +154,11 @@ Just like logs and metrics, a tracer can be sent to multiple destinations using 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

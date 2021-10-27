@@ -21,7 +21,7 @@ The following is an example of state management in a stateful microservice:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -29,11 +29,11 @@ The following is an example of state management in a stateful microservice:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,7 +75,7 @@ An example of using a cache is the following:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,11 +83,11 @@ An example of using a cache is the following:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -107,7 +107,7 @@ The first scenario is to acquire a lock before running a transaction to prevent 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -115,11 +115,11 @@ The first scenario is to acquire a lock before running a transaction to prevent 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -133,7 +133,7 @@ The second scenario can be used just to prevent double processing. Before execut
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -141,11 +141,11 @@ The second scenario can be used just to prevent double processing. Before execut
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_python.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

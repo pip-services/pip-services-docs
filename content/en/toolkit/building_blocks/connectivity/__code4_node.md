@@ -1,19 +1,4 @@
 
-```
-# In-memory credential store
-descriptor: "pip-services:credential-store:memory:default:1.0"
-mongo:
-  username: admin
-  password: pass123
-
-# MongoDb persistence component
-descriptor: "myservice:mypersistance:mongodb:default:1.0"
-connection:
-  ...
-credential:
-  discovery_key: mongo
-```
-
 ```ts
 import { 
   ConfigParams, IConfigurable, 

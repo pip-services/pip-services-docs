@@ -1,12 +1,4 @@
 
-```
-# MongoDb persistence component
-descriptor: “myservice:mypersistance:mongodb:default:1.0”
-credential:
-  username: admin
-  password: pass123
-```
-
 ```ts
 import { ConfigParams, IConfigurable } from "pip-services3-commons-nodex";
 import { CredentialParams } from "pip-services3-components-nodex";

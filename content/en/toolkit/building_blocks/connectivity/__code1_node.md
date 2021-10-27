@@ -1,12 +1,4 @@
 
-```
-# MongoDb persistence component
-descriptor: "myservice:mypersistance:mongodb:default:1.0"
-connection:
-  host: mongo
-  port: 27017
-```
-
 ```ts
 import { ConfigParams, IConfigurable } from "pip-services3-commons-nodex";
 import { ConnectionParams } from "pip-services3-components-nodex";

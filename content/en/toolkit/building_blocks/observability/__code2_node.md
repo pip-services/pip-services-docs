@@ -1,13 +1,9 @@
 
 ```ts
-# Log counters
-descriptor: “pip-services:counters:log:default:1.0”
+import { IReferenceable, IReferences } from "pip-services3-commons-nodex";
+import { CompositeCounters, CompositeLogger } from "pip-services3-components-nodex";
+import { MessageEnvelope } from "pip-services3-messaging-nodex";
 
-# Prometheus counters
-descriptor: “pip-services:counters:prometheus:default:1.0”
-
-# Metrics service used by prometheus to collect metrics
-descriptor: “pip-services:metrics-service:prometheus:default:1.0”
 
 class MyComponent implements IReferenceable {
   private _counters: CompositeCounters = new CompositeCounters();
@@ -17,17 +13,15 @@ class MyComponent implements IReferenceable {
   }
 
   public onMessage(message: MessageEnvelope) {
-    let timing = this._counters.beginTiming(“mycomponent:msg_time”);
+    let timing = this._counters.beginTiming("mycomponent:msg_time");
     try {
-      this._counters.increment(“mycomponent:msg_count”);
+      this._counters.increment("mycomponent:msg_count", 1);
       ...
     } catch (ex) {
-      this._counters.increment(“mycomponent:msg_errors”);
+      this._counters.increment("mycomponent:msg_errors", 1);
     } finally {
       timing.endTiming();
     }
   }
 }
-
-
 ```

@@ -82,7 +82,7 @@ The IcredentialStore interface in the auth package is used to connect to vaults.
 
 The MemoryCredentialStore class is the simplest implementation of a credential store component. It allows storing credential information in a single place in the config file and then sharing it across other components. 
 
-Similarly to connection parameters, credentials are set in the credential section of the configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
+Similar to connection parameters, credentials are set in the credential section of the configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
 
 
 {{< tabsection >}}

@@ -13,6 +13,9 @@ Our documents are divided into three sections that will help you to get the most
 ### [Getting Started](getting_started)
 This section contains introductory learning material with some step-by-step examples. After mastering the content of these tutorials, the reader should be able to use the PIP.Services toolkit with a good level of proficiency. 
 
+### [Building Blocks](building_blocks)
+Pip.Services toolkit is packed with reusable patterns and components that make development robust and productive.
+
 ### [Recipes](recipes)
 This section contains intermediate level learning material. The tutorials address more advanced topics and provide you with background on how different parts of the PIP.Services work. 
 

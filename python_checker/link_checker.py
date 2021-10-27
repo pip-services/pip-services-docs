@@ -27,7 +27,9 @@ if __name__ == '__main__':
     if len(csvLogs) != 0:
         raise_err = False
         for index in range(len(csvLogs)):
-            if '404 Not Found' not in str(csvLogs['result'][index]) or 'http://localhost' in str(csvLogs['url'][index]):
+            if '404 Not Found' not in str(csvLogs['result'][index]) or \
+                'http://localhost' in str(csvLogs['url'][index]) or \
+                '/ru/' in str(csvLogs['url'][index]):
                 continue
 
             url_name = str(csvLogs['urlname'][index]) + '\n'

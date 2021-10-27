@@ -192,7 +192,7 @@ In complex use cases when the data is retrieved from multiple collections or sha
 
  ### Projections
   
- This pattern is used less frequently, but can have a dramatic impact on performance, as it can significantly optimize the behavior of queries, by requesting only a relevant subset of data by specifying the fields that shall be included in the returned objects. An example is:
+ This pattern is used less frequently, but it can have a dramatic impact on performance, as it can significantly optimize the behavior of queries, by requesting only a relevant subset of data by specifying the fields that shall be included in the returned objects. An example is:
  
  
 {{< tabsection >}}

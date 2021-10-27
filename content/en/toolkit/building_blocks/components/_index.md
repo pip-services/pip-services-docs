@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Components"
 linkTitle: "Components"
-description: >-
+weight: 1
      
 ---
 

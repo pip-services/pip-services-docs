@@ -3,9 +3,7 @@ type: docs
 no_list: true
 title: "Configurations"
 linkTitle: "Configurations"
-weight: 1
-description: >-
-     
+weight: 20
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

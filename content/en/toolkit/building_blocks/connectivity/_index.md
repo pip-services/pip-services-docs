@@ -1,9 +1,9 @@
 ---
 type: docs
 no_list: true
-title: "Components"
-linkTitle: "Components"
-description: >-
+title: "Connectivity"
+linkTitle: "Connectivity"
+weight: 30
      
 ---
 

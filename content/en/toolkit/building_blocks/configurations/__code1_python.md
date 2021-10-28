@@ -7,7 +7,8 @@ config = ConfigParams.from_tuples(
 
 component.configure(config)
 
-# Also, often components can have hard-coded presets. The ConfigParams class has methods that allow to easily use them as defaults:
+# Also, often components can have hard-coded presets. 
+# The ConfigParams class has methods that allow to easily use them as defaults:
 
 from pip_services3_commons.config import ConfigParams, IConfigurable
 

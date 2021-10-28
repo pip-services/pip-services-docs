@@ -7,7 +7,8 @@ var config = ConfigParams.FromTuples(
 
 component.Configure(config);
 
-/// Also, often components can have hard-coded presets. The ConfigParams class has methods that allow to easily use them as defaults:
+/// Also, often components can have hard-coded presets. 
+/// The ConfigParams class has methods that allow to easily use them as defaults:
 
 class MyComponent : IConfigurable
 {

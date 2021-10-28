@@ -6,7 +6,8 @@ let config = ConfigParams.fromTuples(
 );
 component.configure(config);
 
-/// Also, often components can have hard-coded presets. The ConfigParams class has methods that allow to easily use them as defaults:
+/// Also, often components can have hard-coded presets. 
+/// The ConfigParams class has methods that allow to easily use them as defaults:
 
 class MyComponent implements IConfigurable {
   private _param1: string = 'ABC';

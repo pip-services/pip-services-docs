@@ -92,7 +92,7 @@ The second uses a config object to define the JSON file path. In this case, we n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,7 +120,7 @@ To store data in a JSON file we use the save method. The first parameter is the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -148,7 +148,7 @@ To load data from a JSON file we use the load method, which returns the loaded i
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -157,6 +157,30 @@ To load data from a JSON file we use the load method, which returns the loaded i
 
 ### Example
 In the following example, we put everything together. First, we create a JSON persistence object, then we save some data to the JSON file, and lastly, we extract the stored data from the JSON file.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 After running it, our output will be:
 

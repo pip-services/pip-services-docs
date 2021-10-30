@@ -127,7 +127,7 @@ This class can be used to convert different values to boolean values using exten
 
 <table>
   <tr>
-    <th clospan = "2">Conversion rule</th>
+    <th colspan="2">Conversion rule</th>
   </tr>
   <tr>
     <td>Number</td>

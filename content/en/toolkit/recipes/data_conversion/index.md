@@ -12,7 +12,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>Convert </td>
-    <td>Library in the Commons modules that contains data conversion components.</td>
+    <td>Library in the Commons module that contains data conversion components.</td>
   </tr>
   <tr>
     <td>ArrayConverter </td>

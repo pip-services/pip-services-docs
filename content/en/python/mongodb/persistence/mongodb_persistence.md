@@ -17,7 +17,7 @@ The MongoDbPersistence class allows you to create persistence components that st
 
 **Important points**
 
-- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing **self.__collection** or **self.__model** properties.
+- This is the most basic persistence component that is only able to store data items of any type. Specific CRUD operations over the data items must be implemented in child classes by accessing the **self.__collection** property.
 
 #### Configuration parameters
 

@@ -12,6 +12,25 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>JsonFilePersister </td>
+    <td>Component in the data module, persistence library used to persist data in JSON format.</td>
+  </tr>
+  <tr>
+    <td>configure</td>
+    <td>Method used to pass the path to a JSON file.</td>
+  </tr>
+  <tr>
+    <td>save</td>
+    <td>Method used to save data to a JSON file.</td>
+  </tr>
+  <tr>
+    <td>load</td>
+    <td>Method used to extract data from a JSON file.</td>
+  </tr>
+</table>
+     
 ### Introduction
 
 This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data in it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.

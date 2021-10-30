@@ -74,6 +74,29 @@ This section contains a brief description of each class and its methods.
 
 This class provides methods to create an array from a set of values. It has several methods, which are summarized in the table and examples below.
 
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_array</td>
+    <td>Converts a value into an array object with an empty array as default. Single values are converted into arrays with single element.</td>
+  </tr> 
+  <tr>
+    <td>to_array_with_default</td>
+    <td>Converts a value into an array object with a specified default. Single values are converted into arrays with single element.</td>
+  </tr> 
+  <tr>
+    <td>list_to_array</td>
+    <td>Converts a list into an array object, with an empty array as default. Strings with comma-delimited values are split into array of strings.</td>
+  </tr> 
+  <tr>
+    <td>to_nullable_array</td>
+    <td>Converts a value into an array object. Single values are converted into arrays with a single element.</td>
+  </tr> 
+</table>
+
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}

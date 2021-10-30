@@ -66,7 +66,8 @@ description: >-
 ### Introduction
 
 This tutorial will help you to understand the different conversion components available in the PIP.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use the different methods.
-Convertors
+
+### Convertors
 
 This section contains a brief description of each class and its methods.
 
@@ -120,3 +121,26 @@ This class provides methods to create an array from a set of values. It has seve
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+#### 2)	BooleanConverter
+This class can be used to convert different values to boolean values using extended conversion rules. The rules and methods provided are summarized in the tables and examples below.
+
+<table>
+  <tr>
+    <th>Conversion rule</th>
+  </tr>
+  <tr>
+    <td>Number</td>
+    <td><>0 are true, =0 are false.</td>
+  </tr> 
+  <tr>
+    <td>String</td>
+    <td>“true”, “yes”, “T”, “Y”, “1” are true; “false”, “no”, “F”, “N” are false.</td>
+  </tr>      
+  <tr>
+    <td>DateTime</td>
+    <td><>0 total milliseconds are true, =0 are false.</td>
+  </tr> 
+</table>
+
+

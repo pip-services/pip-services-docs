@@ -75,7 +75,7 @@ This section contains a brief description of each class and its methods.
 
 This class provides methods to create an array from a set of values. It has several methods, which are summarized in the table and examples below.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th>Method</th>
     <th>Description</th>
@@ -125,7 +125,7 @@ This class provides methods to create an array from a set of values. It has seve
 #### 2)	BooleanConverter
 This class can be used to convert different values to boolean values using extended conversion rules. The rules and methods provided are summarized in the tables and examples below.
 
-<table>
+<table class="full-width-table">
   <tr>
     <th colspan="2">Conversion rule</th>
   </tr>

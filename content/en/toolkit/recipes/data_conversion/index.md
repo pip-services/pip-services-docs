@@ -143,4 +143,46 @@ This class can be used to convert different values to boolean values using exten
   </tr> 
 </table>
 
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_boolean</td>
+    <td>Converts a value into a boolean or returns false when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_boolean_with_default</td>
+    <td>Converts a value into boolean or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_boolean</td>
+    <td>Converts value into a boolean or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 

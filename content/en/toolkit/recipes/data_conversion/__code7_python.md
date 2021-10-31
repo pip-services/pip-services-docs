@@ -3,7 +3,6 @@
 # Long converter
 
 from pip_services3_commons.convert import LongConverter
-from datetime import date
 
 value1 = LongConverter.to_long("123.456")            # returns 123
 value2 = LongConverter.to_long("ABC")            # returns 0

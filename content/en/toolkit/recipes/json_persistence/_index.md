@@ -33,7 +33,7 @@ description: >-
      
 ### Introduction
 
-This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data in it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.
+This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data to it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.
 
 ### Persisting data in a JSON file
 

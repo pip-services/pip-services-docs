@@ -115,7 +115,7 @@ This class provides methods to create an array from a set of values. Its methods
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_python.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -179,7 +179,7 @@ This class can be used to convert different values to boolean values using exten
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code2_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -239,7 +239,7 @@ This class can be used to convert arbitrary values into Date values using extend
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code3_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -303,7 +303,7 @@ This class is used to convert arbitrary values into doubles using extended conve
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,7 +367,7 @@ This class can be used to convert arbitrary values into floats using extended co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -432,7 +432,7 @@ This class is used to convert arbitrary values into integers using extended conv
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -497,7 +497,7 @@ This class is used to convert arbitrary values into longs using extended convers
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -570,7 +570,7 @@ This class is used to convert arbitrary values into strings. Its methods and con
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}

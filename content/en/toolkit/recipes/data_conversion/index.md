@@ -60,12 +60,12 @@ description: >-
   </tr>
   <tr>
     <td>TypeConverter</td>
-    <td>Provides methods to convert a value into an object specified by a code type and to get the code type of an object.</td>
+    <td>Provides methods to convert a value into an object specified by a type code and to get the type code of an object.</td>
   </tr>
 </table>
 ### Introduction
 
-This tutorial will help you to understand the different conversion components available in the PIP.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use the different methods.
+This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
 
 ### Convertors
 
@@ -73,7 +73,7 @@ This section contains a brief description of each class and its methods.
 
 #### 1)	ArrayConverter
 
-This class provides methods to create an array from a set of values. It has several methods, which are summarized in the table and examples below.
+This class provides methods to create an array from a set of values. Its methods are summarized in the table and examples below.
 
 <table class="full-width-table">
   <tr>
@@ -82,15 +82,15 @@ This class provides methods to create an array from a set of values. It has seve
   </tr>
   <tr>
     <td>to_array</td>
-    <td>Converts a value into an array object with an empty array as default. Single values are converted into arrays with single element.</td>
+    <td>Converts a value into an array object with an empty array as default. Single values are converted into arrays with a single element.</td>
   </tr> 
   <tr>
     <td>to_array_with_default</td>
-    <td>Converts a value into an array object with a specified default. Single values are converted into arrays with single element.</td>
+    <td>Converts a value into an array object with a specified default. Single values are converted into arrays with a single element.</td>
   </tr> 
   <tr>
     <td>list_to_array</td>
-    <td>Converts a list into an array object, with an empty array as default. Strings with comma-delimited values are split into array of strings.</td>
+    <td>Converts a list into an array object, with an empty array as default. Strings with comma-delimited values are split into an array of strings.</td>
   </tr> 
   <tr>
     <td>to_nullable_array</td>
@@ -123,11 +123,11 @@ This class provides methods to create an array from a set of values. It has seve
 {{< /tabsection >}}
 
 #### 2)	BooleanConverter
-This class can be used to convert different values to boolean values using extended conversion rules. The rules and methods provided are summarized in the tables and examples below.
+This class can be used to convert different values to boolean values using extended conversion rules. The rules and methods provided by this class are summarized in the tables and examples below.
 
 <table class="full-width-table">
   <tr>
-    <th colspan="2">Conversion rule</th>
+    <th colspan="2">Conversion rules</th>
   </tr>
   <tr>
     <td>Number</td>
@@ -154,7 +154,7 @@ This class can be used to convert different values to boolean values using exten
   </tr> 
   <tr>
     <td>to_boolean_with_default</td>
-    <td>Converts a value into boolean or returns a default value when the conversion is not possible.</td>
+    <td>Converts a value into a boolean or returns a default value when the conversion is not possible.</td>
   </tr>
   <tr>
     <td>to_nullable_boolean</td>
@@ -185,4 +185,67 @@ This class can be used to convert different values to boolean values using exten
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+#### 3)	DateTimeConverter
+This class can be used to convert arbitrary values into Date values using extended conversion rules. Its methods and conversion rules are explained in the tables and examples below.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Converts using the ISO time format.</td>
+  </tr> 
+  <tr>
+    <td>Number</td>
+    <td>Converts using milliseconds since Unix epoch.</td>
+  </tr>      
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_datetime</td>
+    <td>Converts a  value into Date or returns the current date when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_date_time_with_default</td>
+    <td>Converts a value into Date or returns a default date when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_date_time</td>
+    <td>Converts a value into Date or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 4)	DoubleConverter
+This class is used to convert arbitrary values into doubles using extended conversion rules. The rules and available methods are explained in the following tables and examples.
 

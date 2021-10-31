@@ -35,11 +35,6 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 How to create a component and assemble a service from it.
 In this tutorial, we will learn how to create a component and how to assemble a service from it. We will start with a short description of a component’s lifecycle and then we will create a component by defining step-by-step all the elements that compose its lifecycle. Finally, we will assemble a service from it through a container, run it, and see the results.  
 
-### [Descriptors](descriptors)
-
-How to locate a component.
-This tutorial will help you understand what a descriptor is, how to create one, how to get its properties, how to check its completeness, how to convert it to a string, and how to compare it to other descriptors. Finally, it provides an example of its usage.
-
 ### [Logging](logging)
 
 Any and all nontrivial systems need logging, and microservices are no exception. Messages in logs  help us track running transactions and sort out any problems that may occur. The quality of the information that is stored in logs largely defines how simple or difficult it is to support a system.

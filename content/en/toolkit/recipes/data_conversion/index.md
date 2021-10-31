@@ -249,3 +249,330 @@ This class can be used to convert arbitrary values into Date values using extend
 #### 4)	DoubleConverter
 This class is used to convert arbitrary values into doubles using extended conversion rules. The rules and available methods are explained in the following tables and examples.
 
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Converts to a double value.</td>
+  </tr> 
+  <tr>
+    <td>DateTime</td>
+    <td>Total number of milliseconds since Unix epoch.</td>
+  </tr>      
+  <tr>
+    <td>Boolean</td>
+    <td>1 for true and 0 for false.</td>
+  </tr>
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_double</td>
+    <td>Converts a value into a double or returns 0 when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_double_with_default</td>
+    <td>Converts a value into a double or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_double</td>
+    <td>Converts a value into a double or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 5)	FloatConverter
+This class can be used to convert arbitrary values into floats using extended conversion rules. Its methods and conversion rules are explained in the tables and examples below.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Converts to a float value.</td>
+  </tr> 
+  <tr>
+    <td>DateTime</td>
+    <td>Total number of milliseconds since Unix epoch.</td>
+  </tr>      
+  <tr>
+    <td>Boolean</td>
+    <td>1 for true and 0 for false.</td>
+  </tr>
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_float</td>
+    <td>Converts a value into a float or returns 0 when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_float_with_default</td>
+    <td>Converts a value into a float or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_float</td>
+    <td>Converts a value into a float or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 6)	IntegerConverter
+
+This class is used to convert arbitrary values into integers using extended conversion rules. Its methods and rules are explained in the following tables and examples.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Converts to float, then to integer.</td>
+  </tr> 
+  <tr>
+    <td>DateTime</td>
+    <td>Total number of milliseconds since Unix epoch.</td>
+  </tr>      
+  <tr>
+    <td>Boolean</td>
+    <td>1 for true and 0 for false.</td>
+  </tr>
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_integer</td>
+    <td>Converts a value into an integer or returns 0 when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_integer_with_default</td>
+    <td>Converts a value into an integer or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_integer</td>
+    <td>Converts a value into an integer or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 7)	LongConverter
+
+This class is used to convert arbitrary values into longs using extended conversion rules. Its methods and rules are explained in the following tables and examples.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>String</td>
+    <td>Converts to float, then to long.</td>
+  </tr> 
+  <tr>
+    <td>DateTime</td>
+    <td>Total number of milliseconds since Unix epoch.</td>
+  </tr>      
+  <tr>
+    <td>Boolean</td>
+    <td>1 for true and 0 for false.</td>
+  </tr>
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_long</td>
+    <td>Converts a value into a long or returns 0 when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_long_with_default</td>
+    <td>Converts a value into a long or returns a default when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_long</td>
+    <td>Converts a  value into a long or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 8)	StringConverter
+
+This class is used to convert arbitrary values into strings. Its methods and conversion rules are explained in the tables and examples below.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>Number</td>
+    <td>Converts with ‘.’ as decimal point.</td>
+  </tr> 
+  <tr>
+    <td>DateTime</td>
+    <td>Converts using the ISO format.</td>
+  </tr>      
+  <tr>
+    <td>Boolean</td>
+    <td>Converts “true” for true and “false” for false.</td>
+  </tr>
+  <tr>
+    <td>Array</td>
+    <td>Converts as comma-separated list.</td>
+  </tr>
+  <tr>
+    <td>Other</td>
+    <td>Converts using the to_string() method.</td>
+  </tr>
+</table>
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_string</td>
+    <td>Converts a value into a string or returns "" when the value is None.</td>
+  </tr> 
+  <tr>
+    <td>to_nullable_string</td>
+    <td>Converts a value into a string or returns None when the value is None</td>
+  </tr>
+  <tr>
+    <td>to_string_with_default</td>
+    <td>Converts a value into a string or returns a default value when the value is None.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}

@@ -631,3 +631,171 @@ This class is used to convert arbitrary values (e.g. a JSON object) from and to 
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+#### 10)	MapConverter & RecursiveMapConverter
+
+Both classes are used to convert arbitrary values into map objects using extended conversion rules. The difference between them is that RecursiveMapConverter uses recursion to convert all values stored in objects and arrays, and MapConverter doesn’t. The tables and examples below explain their methods and conversion rules.
+
+<table class="full-width-table">
+  <tr>
+    <th colspan="2">Conversion rules</th>
+  </tr>
+  <tr>
+    <td>Objects</td>
+    <td>Property names as keys, property values as values.</td>
+  </tr> 
+  <tr>
+    <td>Arrays</td>
+    <td>Element indexes as keys, elements as values.</td>
+  </tr>      
+</table>
+
+##### MapConverter
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_map</td>
+    <td>Converts a value into a map object or returns an empty map when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_map_with_default</td>
+    <td>Converts a value into a map object or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_map</td>
+    <td>Converts a value into a map object or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### RecursiveMapConverter
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_map</td>
+    <td>Converts a value into a map object or returns an empty map when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_map_with_default</td>
+    <td>Converts a value into a map object or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_map</td>
+    <td>Converts a value into a map object or returns None when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### 11)	TypeConverter
+This class is used to convert arbitrary values into objects specified by a TypeCode and to get the TypeCode of an object. Its methods are explained in the table and examples below.
+**Note:** Code types are defined in the TypeCode class available in the same package.
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>to_nullable_type</td>
+    <td>Converts a value into an object type specified by a TypeCode or returns None when the conversion is not possible.</td>
+  </tr> 
+  <tr>
+    <td>to_string</td>
+    <td>Converts a TypeCode into its string name.</td>
+  </tr>
+  <tr>
+    <td>to_type</td>
+    <td>Converts a value into an object type specified by a TypeCode</td>
+  </tr>
+  <tr>
+    <td>to_type_code</td>
+    <td>Gets the TypeCode for a specific value.</td>
+  </tr>
+  <tr>
+    <td>to_type_with_default</td>
+    <td>Converts a value into an object type specified by TypeCode or returns a  default value when the conversion is not possible.</td>
+  </tr>
+</table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+###Wrapping up
+
+In this tutorial, we have seen several components that provide methods with conversion mechanisms for arrays, Booleans, dates, doubles, floats, integers, longs, strings, JSON objects, maps and types defined by a type code. 

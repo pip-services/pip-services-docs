@@ -477,7 +477,7 @@ This class is used to convert arbitrary values into longs using extended convers
   </tr> 
   <tr>
     <td>to_long_with_default</td>
-    <td>Converts a value into a long or returns a default when the conversion is not possible.</td>
+    <td>Converts a value into a long or returns a default value when the conversion is not possible.</td>
   </tr>
   <tr>
     <td>to_nullable_long</td>
@@ -801,6 +801,7 @@ This class is used to convert arbitrary values into objects specified by a TypeC
   Not available  
 {{< /tabsection >}}
 
-###Wrapping up
+     
+### Wrapping up
 
 In this tutorial, we have seen several components that provide methods with conversion mechanisms for arrays, Booleans, dates, doubles, floats, integers, longs, strings, JSON objects, maps and types defined by a type code. 

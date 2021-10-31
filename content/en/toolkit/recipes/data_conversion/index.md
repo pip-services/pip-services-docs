@@ -63,6 +63,7 @@ description: >-
     <td>Provides methods to convert a value into an object specified by a type code and to get the type code of an object.</td>
   </tr>
 </table>
+
 ### Introduction
 
 This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
@@ -123,7 +124,7 @@ This class provides methods to create an array from a set of values. Its methods
 {{< /tabsection >}}
 
 #### 2)	BooleanConverter
-This class can be used to convert different values to boolean values using extended conversion rules. The rules and methods provided by this class are summarized in the tables and examples below.
+This class can be used to convert different values to Boolean values using extended conversion rules. The rules and methods provided by this class are summarized in the tables and examples below.
 
 <table class="full-width-table">
   <tr>
@@ -142,6 +143,8 @@ This class can be used to convert different values to boolean values using exten
     <td><>0 total milliseconds are true, =0 are false.</td>
   </tr> 
 </table>
+
+    
 
 <table class="full-width-table">
   <tr>
@@ -203,6 +206,8 @@ This class can be used to convert arbitrary values into Date values using extend
   </tr>      
 </table>
 
+
+     
 <table class="full-width-table">
   <tr>
     <th>Method</th>

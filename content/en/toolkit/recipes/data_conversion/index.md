@@ -545,7 +545,7 @@ This class is used to convert arbitrary values into strings. Its methods and con
   </tr> 
   <tr>
     <td>to_nullable_string</td>
-    <td>Converts a value into a string or returns None when the value is None</td>
+    <td>Converts a value into a string or returns None when the value is None.</td>
   </tr>
   <tr>
     <td>to_string_with_default</td>
@@ -576,3 +576,34 @@ This class is used to convert arbitrary values into strings. Its methods and con
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+9)	JsonConverter
+This class is used to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings. Its methods are explained in the table and examples below.
+
+
+<table class="full-width-table">
+  <tr>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>from_json</td>
+    <td>Converts a JSON string into a value of the type specified by a TypeCode.</td>
+  </tr> 
+  <tr>
+    <td>to_json</td>
+    <td>Converts a value into a JSON string.</td>
+  </tr>
+  <tr>
+    <td>to_map</td>
+    <td>Converts a JSON string into a map object or returns an empty map when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_map_with_default</td>
+    <td>Converts a JSON string into a map object or returns a default value when the conversion is not possible.</td>
+  </tr>
+  <tr>
+    <td>to_nullable_map</td>
+    <td>Converts a JSON string into a map object or returns None when the conversion is not possible.</td>
+  </tr>
+</table>

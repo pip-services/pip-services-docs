@@ -115,7 +115,7 @@ This class provides methods to create an array from a set of values. Its methods
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -179,7 +179,7 @@ This class can be used to convert different values to boolean values using exten
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -239,7 +239,7 @@ This class can be used to convert arbitrary values into Date values using extend
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -303,7 +303,7 @@ This class is used to convert arbitrary values into doubles using extended conve
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,7 +367,7 @@ This class can be used to convert arbitrary values into floats using extended co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -432,7 +432,7 @@ This class is used to convert arbitrary values into integers using extended conv
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -497,7 +497,7 @@ This class is used to convert arbitrary values into longs using extended convers
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -570,14 +570,14 @@ This class is used to convert arbitrary values into strings. Its methods and con
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
 
-9)	JsonConverter
+#### 9)	JsonConverter
 This class is used to convert arbitrary values (e.g. a JSON object) from and to JSON (JavaScript Object Notation) strings. Its methods are explained in the table and examples below.
 
 
@@ -607,3 +607,27 @@ This class is used to convert arbitrary values (e.g. a JSON object) from and to 
     <td>Converts a JSON string into a map object or returns None when the conversion is not possible.</td>
   </tr>
 </table>
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}

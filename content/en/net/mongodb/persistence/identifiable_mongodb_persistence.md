@@ -21,7 +21,7 @@ The IdentifiableMongoDbPersistence class allows you to create persistance compon
 - The data items must implement the [IIdentifiable](../../../commons/data/iidentifiable) interface.
 - In basic scenarios child classes shall only override [GetPageByFilterAsync](../mongodb_persistence/#getpagebyfilterasync), [GetListByFilter](../mongodb_persistence/#getlistbyfilterasync) or [DeleteByFilter](../mongodb_persistence/#deletebyfilterasync)  operations with specific filter functions. 
 - All other operations can be used out of the box. 
-- In complex scenarios child classes can implement additional operations by accessing **this._collection** property.
+- In complex scenarios child classes can implement additional operations by accessing the **this._collection** property.
 
 #### Configuration parameters
 

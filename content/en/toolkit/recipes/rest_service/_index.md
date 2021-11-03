@@ -86,7 +86,7 @@ Additionally, we will need to import [Bottle](https://bottlepy.org/docs/dev/), w
 
 #### REST Service
 
-First, we need to create our REST service. For this, we will create a class that inherits Pip. Services’ component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
+First, we need to create our REST service. For this, we will create a class that inherits the Pip. Services’ component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
 
 In this class, we first define a method to be used as a handler. In it, we define the parameters that are obtained via a Bottle request. In our example, this method is called my_page and the parameters name and message.
 

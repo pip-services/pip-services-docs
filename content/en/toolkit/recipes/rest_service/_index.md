@@ -10,7 +10,7 @@ description: >-
 
 
 
-## Key takeaways
+### Key takeaways
 
 ### Introduction
 

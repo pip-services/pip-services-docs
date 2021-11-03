@@ -58,7 +58,7 @@ In order to create our REST service, we need to import the RestService class, wh
   Not available  
 {{< /tabsection >}}
 
-Additionally, we will need to import [Bottle](https://bottlepy.org/docs/dev/), which will be used to access our request.  
+Additionally, we will need to import [Bottle](https://bottlepy.org/docs/dev/), which will be used to access our requests.  
 
 {{< tabsection >}}
    Not available  

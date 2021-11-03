@@ -208,7 +208,7 @@ To see the result of our code, we use the following URL:
   Not available  
 {{< /tabsection >}}
 
-Which should display the following on our browser
+Which should display "Hello John" on our browser
 
 ![figure 2](./figure2.png)
 

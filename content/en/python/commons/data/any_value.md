@@ -63,7 +63,7 @@ See [TypeConverter.to_type](../../convert/type_converter/#to_type)
 - **returns**: Any - true when objects are equal and false otherwise.
 
 
-#### get_as_srray
+#### get_as_array
 Converts object value into an AnyArray or returns empty AnyArray if conversion is not possible.  
 See [AnyValueArray.from_value](../any_value_array/#from_value)
 

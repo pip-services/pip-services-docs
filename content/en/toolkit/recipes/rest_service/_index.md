@@ -12,6 +12,18 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>JRestService </td>
+    <td>Component available in the RPC module, services library. This component is used to create REST services that receive remote calls via the HTTP/REST protocol.</td>
+  </tr>
+  <tr>
+    <td>Bottle</td>
+    <td>Framework used to obtain request parameters.</td>
+  </tr>
+  <tr>
+</table>
+
 ### Introduction
 
 This tutorial will help you understand how REST services can be created with Pip.Services. It begins by explaining the necessary pre-requisites. Then, it proceeds to explain how to create a simple REST service using the RestService component, how to configure it, and how to run it. It ends by showing the results on a browser.

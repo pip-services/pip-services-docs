@@ -88,7 +88,7 @@ Additionally, we will need to import [Bottle](https://bottlepy.org/docs/dev/), w
 
 First, we need to create our REST service. For this, we will create a class that inherits the Pip. Services’ component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
 
-In this class, we first define a method to be used as a handler. In it, we define the parameters that are obtained via a Bottle request. In our example, this method is called my_page and the parameters name and message.
+In this class, we first define a method to be used as a handler. In it, we define the parameters that are obtained via a Bottle request. In our example, this method is called my_page and the parameters are name and message.
 
 We also define the register() method to register the service route. We use the GET method, and as we are not using a schema, we define it as None.
 
@@ -178,7 +178,7 @@ Finally, our code will be:
 
 ### Running our REST service
 
-With our REST service complete, we can now proceed to run it. The first thing that we will see is a message from Bottle indicating that our service is running and where is listening from.
+With our REST service complete, we can now proceed to run it. The first thing that we will see is a message from Bottle indicating that our service is running and where it is listening from.
 
 ![figure 1](./figure1.png)
 

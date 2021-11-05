@@ -479,7 +479,7 @@ Converts specified value into AnyValueMap.
 
 ### Examples
 ```python
-value1 = new AnyValueMap({ key1: 1, key2: "123.456", key3: "2018-01-01" })
+value1 = AnyValueMap({ 'key1': 1, 'key2': "123.456", 'key3': "2018-01-01" }) 
 
 value1.get_as_boolean("key1")   # Result: true
 value1.get_as_integer("key2")   # Result: 123

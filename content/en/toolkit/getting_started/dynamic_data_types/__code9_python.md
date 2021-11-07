@@ -1,4 +1,4 @@
 
 ```python
-value = AnyValueArray([1, "ABC", 123.45, date.today()])
+from pip_services3_commons.data import AnyValueArray
 ```

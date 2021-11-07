@@ -575,7 +575,7 @@ To remove an element, we can use the remove method. This method accepts the key 
   Not available  
 {{< /tabsection >}}
 
-#### Wrapping up
+### Wrapping up
 
 In this tutorial, we have seen how to use the three dynamic data types available in Pip.Services namely, AnyValue, AnyValueArray, and AnyValueMap. 
 

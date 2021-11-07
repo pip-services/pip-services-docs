@@ -11,6 +11,22 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>AnyValue </td>
+    <td>Dynamic object that can hold a value of any type.</td>
+  </tr>
+  <tr>
+    <td>AnyValueArray</td>
+    <td>Dynamic array that can hold values of any type.</td>
+  </tr>
+  <tr>
+    <td>AnyValueMap</td>
+    <td>Dynamic map (dictionary) object that can hold values of any type.</td>
+  </tr>
+</table>
+
+
 ### Introduction
 
 This tutorial explains how to use the three dynamic data types available in Pip.Services. They are AnyValue, AnyValueArray and AnyValueMap, which define dynamic types for single values (variables), arrays, and maps respectively. These types can hold any type of data, which can then be converted to several well-known formats such as integer, float, and more. This tutorial explains each of these classes and their methods through examples.

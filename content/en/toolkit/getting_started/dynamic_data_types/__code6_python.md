@@ -1,5 +1,5 @@
 
 ```python
-value = AnyValue("ABC")
-value.set_as_object("CEF")    # Sets value to "CEF"
+value = AnyValue(123.456)
+value1 = value.to_string()    # Returns '123.456'
 ```

@@ -191,6 +191,30 @@ The method to_string() provides a way to create a string representation of an An
 
 The method equals and equals_as_type offer a way to compare two different AnyValue objects. The first compares an object’s value to another specified value. When direct comparison gives a negative result, it tries to compare the values as strings. The second method compares an object’s value to another specified value. When direct comparison gives a negative result, it converts values to a type specified by a type code and compares them again. The following examples show how to use them.
 
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### AnyValueArray
 
 This component provides a cross-language implementation of a dynamic array object that can hold values of any type. Each element is referenced by an index value, starting with zero for the first element. For example, the following AnyTypeArray contains a string, an integer, a float, and a date.
@@ -212,7 +236,7 @@ This component provides a cross-language implementation of a dynamic array objec
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -239,7 +263,7 @@ To work with this class, we need to import it first. This can be done with the f
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -266,7 +290,7 @@ There are several ways to create an AnyValueArray. First, we can create an insta
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code9_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -294,7 +318,7 @@ This class offers several methods to transform the stored values into several we
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -321,7 +345,7 @@ We can either append a value or a list of values to an AnyValueArray with the ap
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code11_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -348,7 +372,7 @@ To delete an element included in an AnyValueArray, we can use the remove method.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -376,7 +400,7 @@ The AnyValueMap class provides a cross-language implementation of a dynamic map 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code13_python.md" >}}
+  {{< include "./__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -404,7 +428,7 @@ To use this component, we need to import its class first. The following code sho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code14_python.md" >}}
+  {{< include "./__code15_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -432,7 +456,7 @@ There are several ways to create an AnyValueMap object. It can be created by def
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code16_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -460,7 +484,7 @@ This class offers several methods to extract the value of an element specified b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code16_python.md" >}}
+  {{< include "./__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -488,7 +512,7 @@ The method set_as_object() allows us to change the value of an element according
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code17_python.md" >}}
+  {{< include "./__code18_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -516,7 +540,7 @@ To remove an element, we can use the remove method. This method accepts the key 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code18_python.md" >}}
+  {{< include "./__code19_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

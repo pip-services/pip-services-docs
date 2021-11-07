@@ -297,9 +297,8 @@ There are several ways to create an AnyValueArray. First, we can create an insta
   Not available  
 {{< /tabsection >}}
 
-##### Conversion
-
-This class offers several methods to transform the stored values into several well-known formats, such as Boolean, integer, double, float, and more. The examples below show how to use each of them.
+##### Contains
+This class has the methods contains() and contains_as_type() that can be used to check if a value exists in an AnyValueArray. The first performs a direct comparison, and the second converts to the specified value and then checks if the value exists.
 
 {{< tabsection >}}
    Not available
@@ -325,8 +324,9 @@ This class offers several methods to transform the stored values into several we
   Not available  
 {{< /tabsection >}}
 
-##### Update
-We can either append a value or a list of values to an AnyValueArray with the append method or change the value of any element with the put method. The following examples show how to use them.
+##### Conversion
+
+This class offers several methods to transform the stored values into several well-known formats, such as Boolean, integer, double, float, and more. The examples below show how to use each of them.
 
 {{< tabsection >}}
    Not available
@@ -346,6 +346,34 @@ We can either append a value or a list of values to an AnyValueArray with the ap
 
 {{< tabsection >}}
   {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### Update
+
+We can either append a value or a list of values to an AnyValueArray with the append method or change the value of any element with the put method. The following examples show how to use them.
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -372,7 +400,7 @@ To delete an element included in an AnyValueArray, we can use the remove method.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code13_python.md" >}}
+  {{< include "./__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -400,7 +428,7 @@ The AnyValueMap class provides a cross-language implementation of a dynamic map 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code14_python.md" >}}
+  {{< include "./__code15_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -428,7 +456,7 @@ To use this component, we need to import its class first. The following code sho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code16_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -456,7 +484,7 @@ There are several ways to create an AnyValueMap object. It can be created by def
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code16_python.md" >}}
+  {{< include "./__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -484,7 +512,7 @@ This class offers several methods to extract the value of an element specified b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code17_python.md" >}}
+  {{< include "./__code18_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -512,7 +540,7 @@ The method set_as_object() allows us to change the value of an element according
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code18_python.md" >}}
+  {{< include "./__code19_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -540,7 +568,7 @@ To remove an element, we can use the remove method. This method accepts the key 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code19_python.md" >}}
+  {{< include "./__code20_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

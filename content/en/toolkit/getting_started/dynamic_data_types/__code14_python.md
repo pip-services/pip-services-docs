@@ -1,4 +1,5 @@
 
 ```python
-value = AnyValueMap({ 'key1': 1, 'key2': 123.456, 'key4': "ABC", 'key4': date.today() })
+value = AnyValueArray([1, "123.456", "2018-01-01"])
+value.remove(0)    # Returns 123.456,2018-01-01
 ```

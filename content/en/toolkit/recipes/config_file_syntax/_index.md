@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Config File Syntax"
 linkTitle: "Config File Syntax"
+weight: 1
 description: >-
      Page description for heading and indexes.
 ---

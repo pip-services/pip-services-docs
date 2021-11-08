@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Adding logging to a component"
 linkTitle: "Logging"
+weight: 1
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

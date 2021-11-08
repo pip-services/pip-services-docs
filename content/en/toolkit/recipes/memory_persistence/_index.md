@@ -2,7 +2,8 @@
 type: docs
 no_list: true
 title: "Creating a memory persistence component"
-linkTitle: "Memory persistence"
+linkTitle: "Memory Persistence"
+weight: 1
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

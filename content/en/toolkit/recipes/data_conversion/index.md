@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Data conversion"
-linkTitle: "Data conversion"
+title: "Data Conversion"
+linkTitle: "Data Conversion"
 weight: 1
 description: >-
      How to convert data to commonly used formats.

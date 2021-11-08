@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Component Lifecycle"
 linkTitle: "Component Lifecycle"
+weight: 1
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

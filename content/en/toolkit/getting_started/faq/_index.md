@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Frequently Asked Questions"
 linkTitle: "FAQ"
-weight: 40
+weight: 1000
 ---
 
 **Q: Why does Pip.Services name start with pip? Is it only for Python?**

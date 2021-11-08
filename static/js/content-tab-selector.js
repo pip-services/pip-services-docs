@@ -18,11 +18,17 @@ if (buttonGroups.length > 0) {
         button.addEventListener('click', showSelected);
     })
 
+    setActiveBtn(buttons, langs);
+}
+
+function setActiveBtn(buttons, langs) {
     // content tab in query
     let contentTabSet = new URL(document.location.href).searchParams.get('contentTab');
 
     if (contentTabSet != null && langs.hasOwnProperty(contentTabSet)) {
-        showSelected({ target: buttons[langs[contentTabSet]] })
+        showSelected({ target: buttons[langs[contentTabSet]] });
+    } else if (localStorage['selected_tab_widget_btn'] != undefined) {
+        showSelected({ target: buttons[parseInt(localStorage['selected_tab_widget_btn'])] });
     } else {
         showFirstWithContent(buttons);
     }
@@ -40,16 +46,18 @@ function showFirstWithContent(buttons) {
             && value.innerText.trim() != ''
             && !reservedKeywords.includes(value.innerText.trim().toLowerCase())) {
 
-            showSelected({ target: buttons[index] });
+            showSelected({ target: buttons[index] }, munuallySet=true);
             break;
         }
     }
 }
 // show selected section
 function showSelected(e) {
+
     let contentSections = Array.from(document.getElementsByClassName('content-tab-section'));
     let buttons = Array.from(e.target.parentElement.getElementsByTagName('button'));
     let selectedIndex = buttons.indexOf(e.target);
+    localStorage['selected_tab_widget_btn'] = selectedIndex;
 
     if (contentSections.length != buttons.length && contentSections.length % buttons.length != 0)
         throw Error('The number of buttons must be equal to or a multiple of the number of sections. Buttons: ' +

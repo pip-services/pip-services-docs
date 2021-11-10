@@ -159,7 +159,7 @@ Configures a component by passing its configuration parameters.
 
 #### endListen
 Ends listening for incoming messages.
-When this method is call, [listen](#listen) unblocks the thread and execution continues.
+When this method is called, [listen](#listen) unblocks the thread and execution continues.
 
 > endListen(correlation_id: Optional[str])
 

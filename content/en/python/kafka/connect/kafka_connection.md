@@ -115,11 +115,11 @@ Topic subscriptions
 
 ### Instance methods
 
-#### checkOpen
+#### __checkOpen
 Checks if the connection is open.   
 Raises an error is the connection is closed.
 
-> check_open()
+> __check_open()
 
 
 #### close
@@ -164,7 +164,7 @@ If the connection doesn't support this function, it exists without error.
 - **name**: str - name of the queue to be created.
 
 
-#### delete_dueue
+#### delete_queue
 Deletes a message queue.
 If the connection doesn't support this function, it exists without error.
 

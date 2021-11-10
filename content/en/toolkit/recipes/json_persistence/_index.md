@@ -42,19 +42,19 @@ This tutorial will help you understand how to create a JSON persistence componen
 In order to create a JSON persistence component, we need to import the JsonFilePersister class.  This class belongs to the persistence library in the data module. To include this class use the following command:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -69,19 +69,19 @@ In order to create a JSON persistence component, we need to import the JsonFileP
 There are two ways to ways to create a JSON persistence component. The first consists of declaring an instance of the JsonFilePersister class and passing the JSON file’s path to the constructor. Our code will be as follows:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -95,19 +95,19 @@ There are two ways to ways to create a JSON persistence component. The first con
 The second uses a config object to define the JSON file path. In this case, we need to define a ConfigParams object with the path and use the configure method to pass this object to the JSON persistence object.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,19 +123,19 @@ The second uses a config object to define the JSON file path. In this case, we n
 To store data in a JSON file we use the save method. The first parameter is the correlation_id, which is used to trace execution through the call chain. The second one is the JSON value we want to save. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,19 +151,19 @@ To store data in a JSON file we use the save method. The first parameter is the 
 To load data from a JSON file we use the load method, which returns the loaded items. This method has the correlation_id   parameter as input. The code below explains its usage.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -178,19 +178,19 @@ To load data from a JSON file we use the load method, which returns the loaded i
 In the following example, we put everything together. First, we create a JSON persistence object, then we save some data to the JSON file, and lastly, we extract the stored data from the JSON file.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

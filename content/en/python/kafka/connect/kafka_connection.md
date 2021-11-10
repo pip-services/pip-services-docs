@@ -164,7 +164,7 @@ If the connection doesn't support this function, it exists without error.
 - **name**: str - name of the queue to be created.
 
 
-#### delete_dueue
+#### delete_queue
 Deletes a message queue.
 If the connection doesn't support this function, it exists without error.
 

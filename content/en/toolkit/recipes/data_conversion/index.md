@@ -7,7 +7,9 @@ weight: 1
 description: >-
      How to convert data to commonly used formats.
 ---
+
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 <table class="full-width-table">
   <tr>
@@ -100,15 +102,15 @@ This class provides methods to create an array from a set of values. Its methods
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -166,15 +168,15 @@ This class can be used to convert different values to Boolean values using exten
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -228,15 +230,15 @@ This class can be used to convert arbitrary values into Date values using extend
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -292,15 +294,15 @@ This class is used to convert arbitrary values into doubles using extended conve
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -356,15 +358,15 @@ This class can be used to convert arbitrary values into floats using extended co
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -421,15 +423,15 @@ This class is used to convert arbitrary values into integers using extended conv
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -486,15 +488,15 @@ This class is used to convert arbitrary values into longs using extended convers
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -559,15 +561,15 @@ This class is used to convert arbitrary values into strings. Its methods and con
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -614,15 +616,15 @@ This class is used to convert arbitrary values (e.g. a JSON object) from and to 
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -678,15 +680,15 @@ Both classes are used to convert arbitrary values into map objects using extende
 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -723,15 +725,15 @@ Both classes are used to convert arbitrary values into map objects using extende
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -778,15 +780,15 @@ This class is used to convert arbitrary values into objects specified by a TypeC
 </table>
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

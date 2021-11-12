@@ -214,11 +214,11 @@ Permanently removes a message from the queue and sends it to dead letter queue.
 #### on_message
 Deserializes a message. Then, sends it to a receiver if its set or puts it into the queue.
 
-> on_message(topic: str, partition: int, msg: Any)
+> on_message(topic: str, partition: int, msg: [Message](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#message))
 
 - **topic**: str - topic
 - **partition**: int - partition number
-- **msg**: Any - message
+- **msg**: [Message](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#message) - message
 
 #### open
 Opens the component.

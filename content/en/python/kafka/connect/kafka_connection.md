@@ -115,11 +115,11 @@ Topic subscriptions
 
 ### Instance methods
 
-#### __checkOpen
+#### _checkOpen
 Checks if the connection is open.   
-Raises an error is the connection is closed.
+Raises an error if the connection is closed.
 
-> __check_open()
+> _check_open()
 
 
 #### close

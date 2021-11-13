@@ -57,7 +57,7 @@ In order to create our REST service, we need to import the RestService class, wh
 
 First, we need to create our REST service. For this, we will create a class that inherits the Pip. Services’ component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
 
-In this class, we first define a method to be used as a handler. In it, we define the parameters. In our example, this method is called my_page and the parameters are name and message.
+In this class, we first define a method to be used as a handler. In it, we define some parameters that will help us to connect to our application . In our example, this method is called my_page and the parameters are name and message.
 
 We also define the register() method to register the service route. We use the GET method, and as we are not using a schema, we define it as None.
 

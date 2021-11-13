@@ -166,7 +166,7 @@ With our REST service complete, we can now proceed to run it.To see the result o
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -89,9 +89,7 @@ The first part of our code will look something like this:
 
 #### Configuration
 
-Now that we have our REST service defined, we will configure and run it. To configure our component, we first need to create an instance of our class and use the method configure to set up our connection protocol, host and port. As the configure method requires a ConfigParams input type, we import this class and use its method “from_tuples” to define our configuration. 
-
-Lastly, we open our component. The second part of our code will look something like this:
+Now that we have our REST service defined, we will configure and run it. To configure our component, we first need to create an instance of our class and use the method configure to set up our connection protocol, host and port. As the configure method requires a ConfigParams input type, we import this class and use its method “from_tuples” to define our configuration. Lastly, we open our component. The second part of our code will look something like this:
 
 {{< tabsection >}}
    Not available  
@@ -119,7 +117,7 @@ Lastly, we open our component. The second part of our code will look something l
 
 #### Our microservice
 
-Finally, our code will be:
+Our final code will be:
 
 {{< tabsection >}}
    Not available  

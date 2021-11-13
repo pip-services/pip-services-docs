@@ -21,7 +21,7 @@ description: >-
 
 ### Introduction
 
-This tutorial will help you understand how REST services can be created with Pip.Services. It begins by explaining the necessary pre-requisites. Then, it proceeds to explain how to create a simple REST service using the RestService component, how to configure it, and how to run it. It ends by showing the results on a browser.
+This tutorial will help you understand how REST services can be created with Pip.Services. It begins by explaining the necessary pre-requisites. Then, it proceeds to explain how to create a simple REST service using the RestService component, and how to configure and run it. It ends by showing the results on a browser.
 
 ### Creating our REST service
 

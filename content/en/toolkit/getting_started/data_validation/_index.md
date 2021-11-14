@@ -10,6 +10,42 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Schema</td>
+    <td>Defines validation schemas.</td>
+  </tr>
+  <tr>
+    <td>NotRule</td>
+    <td>Negates a rule.</td>
+  </tr>
+  <tr>
+    <td>AndRule</td>
+    <td>Validates combinations of rules created with AND logical operations.</td>
+  </tr>
+  <tr>
+    <td>OrRule</td>
+    <td>Validates combinations of rules created with OR logical operations.</td>
+  </tr>
+  <tr>
+    <td>IncludedRule</td>
+    <td>Checks that a list contains only specified values.</td>
+  </tr>
+  <tr>
+    <td>ExcludedRule</td>
+    <td>Verifies that none of the values specified in the rule is present in a list of constants.</td>
+  </tr>
+  <tr>
+    <td>AtLeastOneExistsRule</td>
+    <td>Checks that given a set of properties, at least one of them exists.</td>
+  </tr>
+  <tr>
+    <td>ValueComparisonRule</td>
+    <td>Compares a value to a constant.</td>
+  </tr>
+
+</table>
+
 ### Introduction
 
 In this tutorial, we will learn how to use a set of validation rules available in the Pip.Services toolkit. First, we will see the necessary pre-requisites. Then, we will see the Schema class, which provides a way to create validation schemas. Lastly, we will see the different validation rules through the use of examples.

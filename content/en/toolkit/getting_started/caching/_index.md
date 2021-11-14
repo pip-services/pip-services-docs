@@ -10,6 +10,17 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>MemoryCache </td>
+    <td>Stores values in the process memory.</td>
+  </tr>
+  <tr>
+    <td>NullCache</td>
+    <td>Dummy cache implementation that simulates caching without any actual action.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 Pip.Services offers two components for caching a value. The first is MemoryCache, which stores values in memory. The second is the NullCache class, which is a dummy cache that can be used to simulate caching. The next two sections explain how to use both components.

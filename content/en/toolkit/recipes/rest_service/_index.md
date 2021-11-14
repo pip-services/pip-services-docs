@@ -147,29 +147,11 @@ Our final code will be:
 
 With our REST service complete, we can now proceed to run it.To see the result of our code, we use the following URL:
 
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
 
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
+```bash
+http://localhost:15239/my_service/my_page/John?message=hello
+```
 
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 Which should display "Hello John" on our browser
 

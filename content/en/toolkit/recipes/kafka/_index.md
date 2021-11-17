@@ -30,7 +30,7 @@ This tutorial will help you understand how to use two components designed to com
 
 ### Communicating with Kafka
 
-Pip.Services offers several components to connect, send and receive messages from Kafka. In this section, we will see the main ones and their most important methods.
+Pip.Services offers several components to connect, send and receive messages from Kafka. In this section, we will see the KafkaConnection and KafkaMessageQueue classes and their most important methods.
 
 #### KafkaConnection
 

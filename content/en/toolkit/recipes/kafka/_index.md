@@ -147,7 +147,7 @@ To create a queue, this class offers the create_queue() method. This method acce
 
 ##### Delete a queue
 
-To delete a queue, this class offers the delete_queue() method, which requires the queue name as input parameter. The example below shows how to use it.
+To delete a queue, this class offers the delete_queue() method, which requires the queue's name as input parameter. The example below shows how to use it.
 
 {{< tabsection >}}
    Not available  

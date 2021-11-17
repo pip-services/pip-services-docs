@@ -303,6 +303,32 @@ To unsubscribe, this class offers the unsubscribe() method. This method has the 
   Not available  
 {{< /tabsection >}}
 
+##### Close the connection
+To close an open connection, we can use the close() method, which is used as follows:
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 ##### Example
 
 The following example shows how to use this class to create a connection, a set of queues, to publish them on Kafka, and to subscribe to a topic containing the published messages.
@@ -324,7 +350,7 @@ The following example shows how to use this class to create a connection, a set 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code11_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -360,7 +386,7 @@ To create a queue, we need to configure it first. We can use the ConfigParams co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -388,7 +414,7 @@ To send a message to Kafka, we can use the send() method. This method has a Mess
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code13_python.md" >}}
+  {{< include "./__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -416,7 +442,7 @@ To receive an incoming message, we can use the receive() command, which deletes 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code14_python.md" >}}
+  {{< include "./__code15_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -442,7 +468,7 @@ Alternatively, we can use the peek() method, which retrieves a single incoming m
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code16_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -470,7 +496,7 @@ To remove a message from a queue, we can use the complete() method. The code is 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code16_python.md" >}}
+  {{< include "./__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -498,7 +524,7 @@ To close a queue and free used resources, we can use the close() method, which i
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code17_python.md" >}}
+  {{< include "./__code18_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -532,7 +558,7 @@ Our final code will look like this:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code18_python.md" >}}
+  {{< include "./__code19_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

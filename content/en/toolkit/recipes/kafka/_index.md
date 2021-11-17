@@ -12,6 +12,18 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>KafkaConnection </td>
+    <td>Component used to create and manage a Kafka connection that can be shared by multiple queues.</td>
+  </tr>
+  <tr>
+    <td>KafkaMessageQueue</td>
+    <td>Component used to create a queue that can send and receive messages to and from Kafka.</td>
+  </tr>
+
+</table>
+
 ### Introduction
 
 This tutorial will help you understand how to use two components designed to communicate with Apache Kafka. They are KafkaConnection and KafkaMessageQueue. The first can be used to connect to Apache Kafka and create a publish/subscribe communication mechanism. The second allows for the creation of a queue that can send and receive messages to and from Kafka. The main methods available in both classes are described and explained with examples.

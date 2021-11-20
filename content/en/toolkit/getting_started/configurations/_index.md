@@ -23,7 +23,7 @@ description: >-
   </tr>
   <tr>
     <td>OptionsResolver</td>
-    <td>Helper class that can be used to obtain all the names of the parameters under the “options” section of a CongifParams object.</td>
+    <td>Helper class that can be used to obtain all the names of the parameters under the “options” section of a ConfigParams object.</td>
   </tr>
 </table>
 

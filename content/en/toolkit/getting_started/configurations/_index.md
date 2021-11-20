@@ -29,7 +29,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, we will see how to create configurations by using the ConfigParams class, and how to read those configurations when they contain a parameter called “name” or “id”, and when they have an “options” section.
+In this tutorial, we will see how to create configurations using the ConfigParams class, and how to read those configurations when they contain a parameter called “name” or “id”, and when they have an “options” section.
 
 ### ConfigParams
 

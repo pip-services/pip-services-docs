@@ -12,6 +12,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>ConfigParams</td>
+    <td>A container for configuration parameters in the form of a dictionary.</td>
+  </tr>
+  <tr>
+    <td>NameResovler</td>
+    <td>Helper class that can be used to extract the value related to a parameter called “name” or “id”.</td>
+  </tr>
+  <tr>
+    <td>OptionsResolver</td>
+    <td>Helper class that can be used to obtain all the names of the parameters under the “options” section of a CongifParams object.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, we will see how to create configurations by using the ConfigParams class, and how to read those configurations when they contain a parameter called “name” or “id”, and when they have an “options” section.

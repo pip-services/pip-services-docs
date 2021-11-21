@@ -48,7 +48,7 @@ Finds a function in the list by it's name.
 > [IFunction?](../ifunction) findByName(String name)
 
 - **name**: String - function name to be found.
-- **returns**: [IFunction?](../ifunction) - function or *null* if no function was not found.
+- **returns**: [IFunction?](../ifunction) - function or *null*, if no function was not found.
 
 #### findIndexByName
 Finds a function's index in the list by it's name. 
@@ -57,7 +57,7 @@ Finds a function's index in the list by it's name.
 > int findIndexByName(String name)
 
 - **name**: String - function name to be found.
-- **returns**: int - function's index in the list or *-1* if nofunction was not found.
+- **returns**: int - function's index in the list or *-1*, if nofunction was not found.
 
 #### get
 Gets a function by its index.

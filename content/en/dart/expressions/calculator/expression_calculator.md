@@ -11,7 +11,7 @@ description: >
 The ExpressionCalculator class allows you to create an expression calculator.
 
 ### Constructors
-Constructs this class and a assigns expression string.
+Constructs this class and assigns an expression string.
 
 > ExpressionCalculator([String? expression])
 
@@ -27,7 +27,7 @@ Gets the flag to turn on auto-creation of variables for a specified expression.
 
 - **returns**: bool - returns the flag to turn on auto-creation.
 
-Sets the flag to turn on auto-creation of variables for specified expression.
+Sets the flag to turn on auto-creation of variables for a specified expression.
 
 > set autoVariables(bool value)
 

@@ -103,4 +103,4 @@ Pushes the specified number of characters to the top of the stream.
 `@override`
 > void unreadMany(int count)
 
-- **count**: int - number of characcted to be pushed back.
+- **count**: int - number of characteers to be pushed back.

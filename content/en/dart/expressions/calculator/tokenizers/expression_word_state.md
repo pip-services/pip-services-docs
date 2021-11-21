@@ -30,7 +30,7 @@ Supported expression keywords.
 
 
 #### nextToken
-Gets the next token from the stream started from the character linked to this state.
+Gets the next token from the stream, starting from the character linked to this state.
 
 > [Token?](../../../tokenizers/token) nextToken([IScanner](../../../io/iscanner) scanner, [ITokenizer?](../../../tokenizers/itokenizer) tokenizer)
 

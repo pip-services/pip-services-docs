@@ -38,7 +38,7 @@ Comment state
 
 
 #### decodeStrings
-Bool that defines the option to decode strings or not.
+bool that defines the option to decode strings or not.
 
 `@override`
 > **decodeStrings**: bool
@@ -65,24 +65,24 @@ Quote state
 > **quoteState**: [IQuoteState?](../iquote_state)
 
 #### skipComments
-Bool that defines the option to skip comments.
+bool that defines the option to skip comments.
 `@override`
 > **skipComments**: bool
 
 
 #### skipEof
-Bool that defines the option to skip EOF.
+bool that defines the option to skip EOF.
 `@override`
 > **skipEof**: bool
 
 #### skipUnknown
-Bool that defines the option to skip unknowns.
+bool that defines the option to skip unknowns.
 `@override`
 > **skipUnknown**: bool
 
 
 #### skipWhitespaces
-Bool that defines the option to skip white spaces.
+bool that defines the option to skip white spaces.
 `@override`
 > **skipWhitespaces**: bool
 
@@ -93,7 +93,7 @@ Symbol state
 > **symbolState**: [ISymbolState?](../isymbol_state)
 
 #### unifyNumbers
-Bool that defines the option to unify numbers.
+bool that defines the option to unify numbers.
 `@override`
 > **unifyNumbers**: bool
 

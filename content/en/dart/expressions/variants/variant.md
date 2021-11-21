@@ -203,7 +203,7 @@ Assignes a new value to this object.
 
 
 #### clear
-Clears this object and assignes a [VariantType.Null](../variant_type) type.
+Clears this object and assigns a [VariantType.Null](../variant_type) type.
 
 > void clear()
 

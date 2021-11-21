@@ -17,7 +17,7 @@ description: >
 Represents a character interval that keeps a reference.
 
 #### [CharReferenceMap](char_reference_map)
-This class keeps references associated with specific characters.
+Keeps references associated with specific characters.
 
 #### [CharValidator](char_validator)
 Validates characters that are processed by Tokenizers.

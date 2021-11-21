@@ -50,13 +50,13 @@ Clears all stored variables (assigns null values).
 
 
 #### findByName
-Finds variable in the list by it's name.
+Finds a variable in the list by it's name.
 
 `@override`
 > [IVariable?](../ivariable) findByName(String name)
 
-- **name**: String - The variable name to be found.
-- **returns**: [IVariable?](../ivariable) - Variable or *null* if function was not found.
+- **name**: String - name of the variable to be found.
+- **returns**: [IVariable?](../ivariable) - Variable or *null*, if function was not found.
 
 #### findIndexByName
 Finds a variable's index in the list by it's name. 

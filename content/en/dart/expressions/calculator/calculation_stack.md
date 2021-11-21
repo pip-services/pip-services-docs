@@ -33,13 +33,13 @@ Removes and returns the last value from the list.
 Peeks a Variant value located at a specified index.
 > [Variant](../../variants/variant) peekAt(int index)
 
-- **index**: int - a specified index.
-- **returns**: [Variant](../../variants/variant) - a Variant value.
+- **index**: int - specified index.
+- **returns**: [Variant](../../variants/variant) - Variant value.
 
 #### peek
 Peeks a Variant value.
 > [Variant](../../variants/variant) peek()
 
-- **returns**: [Variant](../../variants/variant) - a Variant value.
+- **returns**: [Variant](../../variants/variant) - Variant value.
 
 

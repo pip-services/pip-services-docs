@@ -23,7 +23,7 @@ Decodes a string value.
 
 - **value**: String? - string value to be decoded.
 - **quoteSymbol**: int - string quote character.
-- **returns**: String? - An decoded string.
+- **returns**: String? - decoded string.
 
 
 #### encodeString
@@ -38,7 +38,7 @@ Encodes a string value.
 
 
 #### nextToken
-Gets the next token from the stream started from the character linked to this state.
+Gets the next token from the stream, starting from the character linked to this state.
 
 `@override`
 > [Token?](../../tokenizers/token) nextToken(IScanner scanner, [ITokenizer?](../../tokenizers/itokenizer) tokenizer)

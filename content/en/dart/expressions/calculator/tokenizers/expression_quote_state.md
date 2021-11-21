@@ -31,18 +31,18 @@ Decodes a string value.
 `@override`
 > String? decodeString(String? value, int quoteSymbol)
 
-- **value**: String? - A string value to be decoded.
-- **quoteSymbol**: int - A string quote character.
-- **returns**: String? - An decoded string.
+- **value**: String? - String value to be decoded.
+- **quoteSymbol**: int - String quote character.
+- **returns**: String? - Decoded string.
 
 #### encodeString
 Encodes a string value.
 `@override`
 > String? encodeString(String? value, int quoteSymbol)
 
-- **value**: String? - A string value to be encoded.
-- **quoteSymbol**: int - A string quote character.
-- **returns**: String? - An encoded string.
+- **value**: String? - String value to be encoded.
+- **quoteSymbol**: int - String quote character.
+- **returns**: String? - Encoded string.
 
 
 

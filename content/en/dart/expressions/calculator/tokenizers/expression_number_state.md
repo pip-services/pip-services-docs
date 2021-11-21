@@ -34,7 +34,7 @@ Represents an 'E' symbol.
 ### Instance methods
 
 #### nextToken
-Gets the next token from the stream started from the character linked to this state.
+Gets the next token from the stream, starting from the character linked to this state.
 
 `@override`
 > [Token?](../../../tokenizers/token) nextToken(IScanner scanner, [ITokenizer?](../../../tokenizers/itokenizer) tokenizer)

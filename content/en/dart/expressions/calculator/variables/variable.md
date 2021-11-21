@@ -24,13 +24,13 @@ The Variable class allows you to implement a variable holder object.
 ### Properties
 
 #### name
-Gets name of the variable
+Gets the name of the variable
 `@override`
 > String get name
 
 - **returns**: String - variable name.
 
-Sets name of the variable
+Sets the name of the variable
 
 `@override`
 > set name(String value)
@@ -41,7 +41,7 @@ Sets name of the variable
 Gets the variable's value.
 > [Variant](../../../variants/variant) get value
 
-- **returns**: [Variant](../../../variants/variant) - variable value.
+- **returns**: [Variant](../../../variants/variant) - variable's value.
 
 Sets the variable's value.
 

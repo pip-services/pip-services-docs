@@ -17,11 +17,11 @@ The IVariable interface allows you to define a variable.
 <span class="hide-title-link">
 
 #### name
-The variable name.
+Variable name.
 > `abstract` String name
 
 #### value
-The variable value.
+Variable value.
 > `abstract` [Variant](../../../variants/variant) value
 
 </span>

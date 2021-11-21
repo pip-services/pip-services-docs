@@ -65,11 +65,11 @@ A token state to process numbers.
 
 
 #### quoteState
-A token state to process quoted strings.
+Token state to process quoted strings.
 > `abstract` **quoteState**: [IQuoteState?](../iquote_state)
 
 #### scanner
-The stream scanner to tokenize.
+Stream scanner to tokenize.
 > `abstract` **scanner**: [IScanner?](../../io/iscanner)
 
 #### skipComments
@@ -92,7 +92,7 @@ Skips whitespaces.
 
 
 #### symbolState
-A token state to process symbols (single like "=" or muti-character like "<>")
+Token state to process symbols (single like "=" or muti-character like "<>")
 > `abstract` **symbolState**: [ISymbolState?](../isymbol_state)
 
 #### unifyNumbers
@@ -101,12 +101,12 @@ Unifies numbers: "Integers" and "Floats" makes just "Numbers".
 
 
 #### whitespaceState
-A token state to process white space delimiters.
+Token state to process white space delimiters.
 > `abstract` **whitespaceState**: [IWhitespaceState?](../iwhitespace_state)
 
 
 #### wordState
-A token state to process words or indentifiers.
+Token state to process words or indentifiers.
 > `abstract` **wordState**: [IWordState?](../iword_state)
 
 

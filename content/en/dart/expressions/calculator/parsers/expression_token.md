@@ -26,14 +26,14 @@ Creates an instance of this token and initializes it with specified values.
 ### Properties
 
 #### column
-The column number where the token is.
+Column number where the token is.
 
 > int get column
 
 - **returns**: int - column number.
 
 #### line
-The line number where the token is.
+Line number where the token is.
 
 > int get line
 

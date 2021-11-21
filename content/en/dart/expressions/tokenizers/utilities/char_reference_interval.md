@@ -53,7 +53,7 @@ Start of the interval
 ### Instance methods
 
 #### inRange
-Determines if a symbol is within a range
+Determines if a symbol is within a range.
 
 > bool inRange(int symbol)
 

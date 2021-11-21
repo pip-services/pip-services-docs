@@ -4,7 +4,7 @@ title: "GenericNumberState"
 linkTitle: "GenericNumberState"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-expressions-dart"
 description: > 
-    A NumberState object returns a number from a scanner. 
+    A NumberState object that returns a number from a scanner. 
 ---
 
 **Implements**: [INumberState](../../inumber_state)

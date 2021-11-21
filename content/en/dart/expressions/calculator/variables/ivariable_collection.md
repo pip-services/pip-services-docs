@@ -44,12 +44,12 @@ Clears all stored variables (assigns null values).
 
 
 #### findByName
-Finds variable in the list by it's name.
+Finds a variable in the list by it's name.
 
 > [IVariable?](../ivariable) findByName(String name)
 
-- **name**: String - The variable name to be found.
-- **returns**: [IVariable?](../ivariable) - Variable or *null* if function was not found.
+- **name**: String - name of the variale to be found.
+- **returns**: [IVariable?](../ivariable) - variable or *null*, if function was not found.
 
 #### findIndexByName
 Finds a variable index in the list by the variable's name. 
@@ -57,7 +57,7 @@ Finds a variable index in the list by the variable's name.
 > int findIndexByName(String name)
 
 - **name**: String - name of the variable to be found.
-- **returns**: int - variable index in the list or *-1* if variable was not found.
+- **returns**: int - variable index in the list or *-1*, if the variable was not found.
 
 
 #### get
@@ -75,7 +75,7 @@ Gets all the variables stored in the collection.
 - **returns**: List<[IVariable](../ivariable)> - list with stored variables.
 
 #### locate
-Finds a variable in the list or creates a new one if the variable was not found.
+Finds a variable in the list or creates a new one, if the variable was not found.
 
 > [IVariable](../ivariable) locate(String name)
 

@@ -13,7 +13,8 @@ description: >
 
 The GenericNumberState class allows you to create a NumberState object that returns a number from a scanner.
 
-Important points
+**Important points**
+
 - This state's idea of a number allows an optional, initial minus sign, followed by one or more digits. A decimal point and another string of digits may follow these digits.
 
 ### Fields

@@ -37,12 +37,12 @@ Gets the original tokens
 
 > List<[Token](../../../tokenizers/token)> get originalTokens
 
-- **returns**: List<[Token](../../../tokenizers/token)> - the token list
+- **returns**: List<[Token](../../../tokenizers/token)> - token list
 
 Sets the original tokens
 > set originalTokens(List<[Token](../../../tokenizers/token)> value)
 
-- **value**: [Token](../../../tokenizers/token) - the token list
+- **value**: [Token](../../../tokenizers/token) - token list
 
 #### resultTokens
 List of parsed expression tokens.

@@ -13,7 +13,7 @@ description: >
 ### Interfaces
 
 #### [IScanner](iscanner)
-Defines scanner that can read and unread characters and count lines. This scanner is used by tokenizers to process input streams.
+Defines a scanner that can read and unread characters and count lines. This scanner is used by tokenizers to process input streams.
 
 <br>
 

@@ -27,7 +27,7 @@ Adds a new function to the collection.
 
 > void add([IFunction](../ifunction) func)
 
-- **func**: [IFunction](../ifunction) - an array with function parameters.
+- **func**: [IFunction](../ifunction) - array with function parameters.
 
 
 #### clear
@@ -42,7 +42,7 @@ Finds a function in the list by it's name.
 > [IFunction?](../ifunction) findByName(String name)
 
 - **name**: String - name of the function to be found.
-- **returns**: [IFunction?](../ifunction) - function or *null* if function was not found.
+- **returns**: [IFunction?](../ifunction) - function or *null*, if function was not found.
 
 #### findIndexByName
 Finds function index in the list by it's name. 
@@ -50,7 +50,7 @@ Finds function index in the list by it's name.
 > int findIndexByName(String name)
 
 - **name**: String - name of the function to be found.
-- **returns**: int - function index in the list or *-1* if function was not found.
+- **returns**: int - function index in the list or *-1*, if function was not found.
 
 #### get
 Gets a function by its index.

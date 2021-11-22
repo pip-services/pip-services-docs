@@ -71,7 +71,7 @@ And implement a `get_one_by_key` custom persistence method that doesn't exist in
 class MySqlServerPersistence(IdentifiableSqlServerPersistence):
     def __init__(self):
         super(MySqlServerPersistence, self).__init__('myobjects')
-        self._auto_create_object("CREATE TABLE [myobjects] ([id] VARCHAR(32) PRIMARY KEY, [key] VARCHAR(50), [value] NVARCHAR(255)")
+        self._ensure_schema("CREATE TABLE [myobjects] ([id] VARCHAR(32) PRIMARY KEY, [key] VARCHAR(50), [value] NVARCHAR(255)")
         self._ensure_index("myobjects_key", { '[key]': 1 }, { 'unique': True })
 
     def __compose_filter(self, filter):

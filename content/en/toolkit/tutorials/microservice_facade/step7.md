@@ -125,8 +125,8 @@ Our facade will need to be configured before running, so create a **config-distr
 ---
 # Container info
 - descriptor: "pip-services:container-info:default:default:*"
-  name: "nov-facade"
-  description: "Sample facade for NOV"
+  name: "pip-facades-example"
+  description: "Example Pip.Services facade on Dart"
 
 # Console logger
 - descriptor: "pip-services:logger:console:default:*"
@@ -135,32 +135,46 @@ Our facade will need to be configured before running, so create a **config-distr
 # Log counters
 - descriptor: "pip-services:counters:log:default:*"
 
-# Settings components
-- descriptor: "pip-services-settings:client:null:default:*"
+# Mongodb connection
+- descriptor: "pip-services:connection:mongodb:default:*"
+  connection:
+    uri: {{{MONGO_SERVICE_URI}}}
+    host: {{{MONGO_SERVICE_HOST}}}{{#unless MONGO_SERVICE_HOST}}localhost{{/unless}}
+    port: {{MONGO_SERVICE_PORT}}{{#unless MONGO_SERVICE_PORT}}27017{{/unless}}
+    database: {{MONGO_DB}}{{#unless MONGO_DB}}app{{/unless}}
+  credential:
+    username: {{MONGO_USER}}
+    password: {{MONGO_PASS}}
+
 
 # Accounts components
-- descriptor: "pip-services-accounts:client:memory:default:*"
-
-# Email settings components
-- descriptor: "pip-services-emailsettings:client:memory:default:*"
-
-# Passwords components
-- descriptor: "pip-services-passwords:client:null:default:*"
+# - descriptor: "pip-services-accounts:persistence:mongodb:default:*"
+# - descriptor: "pip-services-accounts:controller:default:default:*"
+# - descriptor: "pip-services-accounts:client:null:default:1.0"
+- descriptor: "pip-services-accounts:client:memory:default:1.0"
 
 # Roles components
-- descriptor: "pip-services-roles:client:memory:default:*"
+# - descriptor: "pip-services-roles:persistence:mongodb:default:*"
+# - descriptor: "pip-services-roles:controller:default:default:*"
+# - descriptor: "pip-services-roles:client:memory:default:*"
+- descriptor: "pip-services-roles:client:null:default:*"
+
+# Passwords components
+# - descriptor: "pip-services-passwords:persistence:mongodb:default:*"
+# - descriptor: "pip-services-passwords:controller:default:default:*"
+# - descriptor: "pip-services-passwords:client:memory:default:*"
+- descriptor: "pip-services-passwords:client:null:default:*"
 
 # Session components
+# - descriptor: "pip-services-sessions:persistence:mongodb:default:*"
+# - descriptor: "pip-services-sessions:controller:default:default:*"
+# - descriptor: "pip-services-sessions:client:null:default:*"
 - descriptor: "pip-services-sessions:client:memory:default:*"
 
-# Sites components
-- descriptor: "nov-services-sites:client:memory:default:*"
-
 # Beacons components
-- descriptor: "nov-services-beacons:client:memory:default:*"
-
-# Invitations components
-- descriptor: "nov-services-invitations:client:null:default:*"
+- descriptor: "beacons:persistence:mongodb:default:*"
+- descriptor: "beacons:controller:default:default:*"
+- descriptor: "beacons:client:direct:default:*"
 
 # Main facade service
 - descriptor: "pip-services:endpoint:http:default:*"
@@ -169,16 +183,9 @@ Our facade will need to be configured before running, so create a **config-distr
     protocol: "http"
     host: "0.0.0.0"
     port: 8080
-  options:
-    debug: true
-    maintenance_enabled: false
-    max_req_size: "1mb"
 
 # Facade API V1
-- descriptor: "nov-facades-application:service:http:default:1.0"
-
-# Facade API V2
-- descriptor: "nov-facades-application:service:http:default:2.0"
+- descriptor: "pip-facades-example:service:http:default:1.0"
 
 # Hearbeat service
 - descriptor: "pip-services:heartbeat-service:http:default:1.0"

@@ -43,7 +43,7 @@ class TestBeaconsOperationsV1:
     def setup_class(cls):
         cls.rest = RestClientTest()
         cls.references = ReferencesTest()
-        cls.references.put(Descriptor('nov-services-beacons', 'client', 'memory', 'default', '1.0'),
+        cls.references.put(Descriptor('beacons', 'client', 'memory', 'default', '1.0'),
                            BeaconsMemoryClientV1())
 
         cls.references.open(None)

@@ -9,7 +9,6 @@ from copy import deepcopy
 from pip_services3_commons.config.ConfigParams import ConfigParams
 from pip_services3_commons.refer.Descriptor import Descriptor
 from pip_services3_container.refer.ManagedReferences import ManagedReferences
-# from pip_services3_mongodb.build.DefaultMongoDbFactory import DefaultMongoDbFactory
 from pip_services3_rpc.build.DefaultRpcFactory import DefaultRpcFactory
 
 from pip_facades_sample_python.build.ClientFacadeFactory import ClientFacadeFactory
@@ -57,7 +56,7 @@ class ReferencesTest(ManagedReferences):
         self.put(Descriptor('pip-services-roles', 'client', 'memory', 'default', '*'), RolesMemoryClientV1())
         self.put(Descriptor('pip-services-emailsettings', 'client', 'memory', 'default', '*'),
                  EmailSettingsMemoryClientV1())
-        self.put(Descriptor('nov-services-sites', 'client', 'direct', 'memory', '*'), SitesMemoryClientV1())
+        self.put(Descriptor('pip-services-sites', 'client', 'direct', 'memory', '*'), SitesMemoryClientV1())
 
     def __configure_service(self):
         # Configure Facade service
@@ -108,7 +107,7 @@ class ReferencesTest(ManagedReferences):
         accounts_client.create_account(None, user_2_account)
 
         # Create test site(s)
-        sites_client: ISitesClientV1 = self.get_one_required(Descriptor('nov-services-sites', 'client', '*', '*', '*'))
+        sites_client: ISitesClientV1 = self.get_one_required(Descriptor('pip-services-sites', 'client', '*', '*', '*'))
 
         site1 = SiteV1(
             id=TestSites.Site1Id,
@@ -141,7 +140,6 @@ class ReferencesTest(ManagedReferences):
         user_2_data.roles = [TestSites.Site1Id + ':manager']
         sessions_client.open_session(None, TestUsers.User2Id, TestUsers.User2Name,
                                      None, None, user_2_data, None, ).id = TestUsers.User2SessionId
-
 
 ```
 

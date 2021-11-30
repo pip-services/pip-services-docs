@@ -48,7 +48,8 @@ In order to use this library, we need to download it from GitHub with the follow
   Not available  
 {{< /tabsection >}} 
 
-####Data object
+#### Data object
+
 In our examples, we will use data objects with the following structure.
 
 {{< tabsection >}}
@@ -193,7 +194,6 @@ Most of the CRUD operations return results in the form of PostgrePersistence obj
 
 Example:
 
-
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -250,7 +250,7 @@ Will return something like
 
 <center> **{'content': 'new content 1.1', 'id': '1', 'key': 'key 1.1'}**</center>
 
-#### Connection
+##### Connection
 
 Once our component has been defined, we can connect to our database using the open() method.
 
@@ -278,11 +278,11 @@ Once our component has been defined, we can connect to our database using the op
   Not available  
 {{< /tabsection >}} 
 
-####CRUD operations
+##### CRUD operations
 
 This component allows us to perform many CRUD operations by using its methods. The sections below show how to do this.
 
-##### Create
+###### Create
 
 To create a new record, we use the create() method, which accepts the correlation_id and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted record.
 
@@ -336,10 +336,10 @@ Where
   Not available  
 {{< /tabsection >}} 
 
-##### Retrieve
+###### Retrieve
 To retrieve a record, this class presents three methods namely get_one_random(),  get_list_by_filter() and get_page_by_filter(). Additionally, it also contains the get_count_by_filter() method, which returns the number of records retrieved by using a given filter. The following are examples of their usage.
 
-###### get_one_random()
+####### get_one_random()
 
 This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: 
 
@@ -397,7 +397,7 @@ The result is a PostgrePersistence object containing the extracted record.
   Not available  
 {{< /tabsection >}} 
      
-##### get_list_by_filter()
+###### get_list_by_filter()
 
 This method returns a list PostgrePersistence objects with the data items retrieved according to a given filter. In the following example, we will extract all those records containing a key’s value equal to ‘key 1’.
  
@@ -451,7 +451,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
   Not available  
 {{< /tabsection >}}      
 
-##### get_page_by_filter()
+###### get_page_by_filter()
 
 This method gets a page of data items retrieved according to a given filter and sorted according to sort parameters. In the example below, we obtain again those records with a key’s value equal to ‘key 1’.
      
@@ -505,7 +505,7 @@ The obtained result is a DataPage object, which contains the data field with the
   Not available  
 {{< /tabsection >}}     
      
-##### get_count_by_filter()
+###### get_count_by_filter()
 
 This method returns an integer representing the number of data items retrieved by a given filter.
     
@@ -597,4 +597,6 @@ In order to use this component, we need to import the corresponding library with
   Not available  
 {{< /tabsection >}}          
      
+##### Component implementation
+To implement this component, we can define a class that inherits the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table where we are going to store our data:
      

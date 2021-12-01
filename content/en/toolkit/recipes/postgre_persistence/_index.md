@@ -11,7 +11,20 @@ description: >-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>PostgrePersistence </td>
+    <td>Persistence component that stores data in PostgreSQL databases using the official driver.</td>
+  </tr>
+  <tr>
+    <td>IdentifiablePostgrePersistence</td>
+    <td>Persistence component that stores data in PostgreSQL databases and implements several CRUD operations over data items with unique ids.</td>
+  </tr>
+  <tr>
+    <td>IdentifiableJsonPostgrePersistence</td>
+    <td>Persistence component that stores data in PostgreSQL databases in JSON or JSONB fields and implements several CRUD operations over data items with unique ids.</td>
+  </tr>
+</table>
 ### Introduction
 
 In this tutorial, you will understand how to create persistence components for data stored in PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.

@@ -823,6 +823,30 @@ Given a list of ids, this method returns a list containing the extracted records
 {{< /tabsection >}} 
      
 Where
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code29_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}      
      
 Update
 This class presents two different update methods: update() and update_partially().
@@ -855,7 +879,7 @@ This method updates a data item. As input parameters, it requires the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code29_python.md" >}}
+  {{< include "./__code30_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -881,7 +905,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code30_python.md" >}}
+  {{< include "./__code31_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -909,7 +933,7 @@ This method updates the specified fields only. It takes three input parameters n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code31_python.md" >}}
+  {{< include "./__code32_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -935,7 +959,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code32_python.md" >}}
+  {{< include "./__code33_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -967,7 +991,7 @@ This method deletes a record specified by a given id.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code33_python.md" >}}
+  {{< include "./__code34_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -995,7 +1019,7 @@ This method deletes records specified by a list of ids.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code34_python.md" >}}
+  {{< include "./__code35_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

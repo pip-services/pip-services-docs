@@ -117,7 +117,7 @@ And with the following instances
 
 #### PostgresPersistence
 
-This is the most basic persistence class and it is used to create persistence components that store data in PostgreSQL databases using the official driver.
+This is the most basic persistence class and is used to create persistence components that store data in PostgreSQL databases using the official driver.
 
 ##### Pre-requisites
 In order to use this component, we need to import the corresponding library with the following command.

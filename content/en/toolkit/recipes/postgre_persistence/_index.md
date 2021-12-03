@@ -350,10 +350,9 @@ Where
 {{< /tabsection >}} 
 
 ###### Retrieve
-
 To retrieve a record, this class presents three methods namely get_one_random(),  get_list_by_filter() and get_page_by_filter(). Additionally, it also contains the get_count_by_filter() method, which returns the number of records retrieved by using a given filter. The following are examples of their usage.
-
-####### get_one_random()
+     
+###### get_one_random()
 
 This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: 
 

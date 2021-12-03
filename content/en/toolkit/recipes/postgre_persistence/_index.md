@@ -261,7 +261,7 @@ Example:
 
 Will return something like 
 
-<center> **{'content': 'new content 1.1', 'id': '1', 'key': 'key 1.1'}**</center>
+<center> {'content': 'new content 1.1', 'id': '1', 'key': 'key 1.1'}</center>
 
 ##### Connection
 
@@ -357,7 +357,7 @@ To retrieve a record, this class presents three methods namely get_one_random(),
 
 This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: 
 
-<center>**Field = ‘value’**</center>
+<center>Field = ‘value’</center>
 
 An example of its usage is
 

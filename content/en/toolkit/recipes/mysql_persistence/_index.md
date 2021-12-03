@@ -749,7 +749,7 @@ Where
 ###### Retrieve
 
 This class presents several methods that can be used to retrieve one or more records from a table. They are:
-
+     
 ###### get_one_by_id()
 
 This method returns a record from the database. It accepts the correlation_id and the id of the record as input parameters. The following example shows how to use it.
@@ -803,8 +803,8 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}} 
-
-####### get_list_by_ids()
+     
+###### get_list_by_id()
 
 This method returns a set of records from a database. It accepts the correlation_id and a list containing record ids as input parameters. The result is in the form of a list of MySqlPersistence objects, each containing a record. The example below shows how to use it.
 
@@ -861,8 +861,8 @@ Where
 ###### Update
 
 This class provides two different methods that can be used to update records in a database namely update() and update_partially(). The following sections show how to use both of them.
-
-####### update()
+     
+###### update()
 
 This method updates a record in a database. It takes the correlation_id and a data object as input parameters. If the update was successful, it returns the updated record. Otherwise, it returns None. The following example illustrates how to use it.
 

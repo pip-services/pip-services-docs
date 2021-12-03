@@ -203,7 +203,7 @@ Now, we create an instance of this class and configure it according to our datab
 
 Most of the CRUD operations return results in the form of PostgrePersistence objects containing records. To extract these records we can do two things. First, we can get every field directly via the following command:
 
-<center>**[PostgrePersistence object].field** </center>
+<center>[PostgrePersistence object].field</center>
 
 Example:
 

@@ -1,4 +1,4 @@
 
 ```python
-resultC = persistence._convert_from_public_partial(result)
+result = persistence._convert_from_public_partial(result)
 ```

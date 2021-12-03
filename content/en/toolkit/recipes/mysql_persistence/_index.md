@@ -351,7 +351,7 @@ Where
 
 There are four methods that can be used to retrieve records from a database. They are:
      
-###### get_list_by_filter()
+###### get_one_random()
 
 This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of ‘1’.
 

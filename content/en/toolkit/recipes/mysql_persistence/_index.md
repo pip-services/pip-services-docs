@@ -206,7 +206,7 @@ Once our persistence component has been defined, we need to create an instance o
 
 Most of the CRUD operations return results in the form of MySqlPersistence objects, which in some cases contain records. To extract these records we can do two things. First, we can get every field value directly via the following command
 
-**[MySqlPersistence object].field**
+<center>[MySqlPersistence object].field </center>
 
 Example:
 
@@ -350,8 +350,8 @@ Where
 ###### Retrieve
 
 There are four methods that can be used to retrieve records from a database. They are:
-
-####### get_list_by_filter()
+     
+###### get_list_by_filter()
 
 This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of ‘1’.
 
@@ -404,10 +404,10 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}} 
+     
+###### get_list_by_filter()
 
-####### get_list_by_filter()
-
-This method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to ‘1’.
+his method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to ‘1’.
 
 {{< tabsection >}}
    Not available 
@@ -458,8 +458,8 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}} 
-
-####### get_page_by_filter()
+     
+###### get_page_by_filter()
 
 Similar to the previous one, this method retrieves a set of records that comply with a given filter. The input parameters are the correlation_id, a filter, and sorting and projection JSON objects. The output is in the form of a DataPage object, and the records are contained in the data field of this object. The following example shows how to extract those records with an id equal to ‘1’.
 
@@ -512,8 +512,8 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}} 
-
-####### get_count_by_filter()
+     
+###### get_count_by_filter()
 
 This method returns an integer indicating the number of records that comply with a given filter. The example below shows how to obtain the number of records with a key equal to ‘key 1’.
 
@@ -915,8 +915,8 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
-
-####### update_partially()
+     
+###### update_partially()
 
 This method updates one or more fields of a given record. It takes the correlation_id, the id of the record to be updated, and a dictionary containing the fields and their updated values as input parameters. If the update was successful, it returns the updated record. Otherwise, it returns None.
 
@@ -973,8 +973,8 @@ Where
 ###### Delete
 
 This class presents two different methods that can be used to delete records from a database. They are:
-
-####### delete_by_id()
+     
+###### delete_by_id()
 
 This method deletes a record specified by its id. It also requires the correlation_id as input parameter. If the delete was successful, it returns the deleted record. Otherwise, it returns None. The example below explains how to use it.
 
@@ -1026,7 +1026,9 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
-delete_by_ids()
+     
+###### delete_by_ids()
+
 This method deletes a set of records whose ids are specified in the form of a list. It also requires the correlation_id as input parameter. After execution, it returns None. The following example shows how to use it. 
 
 {{< tabsection >}}

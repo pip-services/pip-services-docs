@@ -335,7 +335,7 @@ Where
 
 In order to retrieve records from our table, we can use three different methods, namely get_one_random(), get_list_by_filter(), and get_page_by_filter(). Additionally, we can use the get_count_by_filter() method to obtain the number of records that comply with a given filter’s condition.
 
-####### get_one_random()
+###### get_one_random()
 
 This method retrieves a random record according to a given filter. The next example shows how to use it.
 

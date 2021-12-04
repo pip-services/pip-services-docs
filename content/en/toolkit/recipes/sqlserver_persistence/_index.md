@@ -557,3 +557,35 @@ This component has the delete_by_filter() method, which is used to delete one or
   Not available  
 {{< /tabsection >}}
 
+#### IdentifiableSqlServerPersistence
+
+This persistence component stores data in SQL Server databases and implements several CRUD operations over data items with unique ids. It has several methods for CRUD operations, which are described in the following sections.
+
+##### Pre-requisites
+
+In order to use this component, we need to import it first. We use the following command to do this.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code20_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+

@@ -389,3 +389,171 @@ Where
   Not available  
 {{< /tabsection >}} 
 
+###### get_list_by_filter()
+
+This method returns a set of records in accordance with a given filter. It accepts the correlation_id, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code14_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}} 
+
+Where
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code15_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+###### get_page_by_filter()
+
+This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlation_id, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records as part of its data field. The example below explains its usage.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code16_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Where
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code17_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+###### get_count_by_filter()
+
+This method returns an integer representing the number of records that comply with some given conditions. The example below shows how to use it.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code18_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+###### Update
+
+This class doesn’t present any method to update records in a table. However, we can add one by using the _request() method, as explained in the Using SQL section.
+
+###### Delete
+
+This component has the delete_by_filter() method, which is used to delete one or more records in a table. It accepts the correlation_id and a filter as input parameters, and once the execution has been successfully completed, it returns None.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code19_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+

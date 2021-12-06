@@ -188,7 +188,7 @@ The method to_string() provides a way to create a string representation of an An
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_go" >}}
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

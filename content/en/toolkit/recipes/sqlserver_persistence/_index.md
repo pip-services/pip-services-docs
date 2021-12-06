@@ -1,4 +1,6 @@
 ---
+type: docs
+no_list: true
 title: "SQL Server Persistence"
 linkTitle: "SQL Server Persistence"
 weight: 12

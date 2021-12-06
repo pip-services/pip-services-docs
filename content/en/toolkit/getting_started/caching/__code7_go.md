@@ -1,0 +1,4 @@
+
+```go
+myCache := cache.NewNullCache()
+```

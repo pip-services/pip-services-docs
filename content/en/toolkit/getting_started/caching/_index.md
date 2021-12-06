@@ -36,19 +36,19 @@ The MemoryCache component provides a way to create and manage a cache that store
 In order to use the MemoryCache component, we need to import it. This can be done with the following command:
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -64,19 +64,19 @@ In order to use the MemoryCache component, we need to import it. This can be don
 We can create a memory cache by creating an instance of the MemoryCache class. The code below shows how to do it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -92,19 +92,19 @@ We can create a memory cache by creating an instance of the MemoryCache class. T
 We can cache a value by using the store() method. This method has four input parameters. First, the correlation_id, which is a value that can be used to track execution through the call chain. Second, a key that can be used to uniquely identify the stored value. Third, the value to be stored. Lastly, the number of milliseconds that this value will be stored in memory. The code below shows how to use this method.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,19 +120,19 @@ We can cache a value by using the store() method. This method has four input par
 To retrieve a cached value from memory, we can use the retrieve() method, which takes the correlation_id and the cached value’s key as input parameters. The code below shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -148,19 +148,19 @@ To retrieve a cached value from memory, we can use the retrieve() method, which 
 To remove a cached value from memory, we can use the remove() method. This method takes the correlation_id and the key of the value to be removed as input parameters. The example below shows how to use this method.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -180,19 +180,19 @@ The NullCache component is a dummy cache implementation. As such, it only simula
 In order to use the NullCache class, we need to import it. The following command shows how to do this.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,19 +208,19 @@ In order to use the NullCache class, we need to import it. The following command
 In order to create a dummy cache, we need to create an instance of the NullCache class. The code below shows how to do this.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,19 +236,19 @@ In order to create a dummy cache, we need to create an instance of the NullCache
 To cache a value, we can use the store() method. This method takes four input parameters. First, the correlation_id, which is a value that can be used to track execution through the call chain. Second, a key that uniquely identifies the cached value. Third, the value to be cached. Lastly, the number of milliseconds that this value is going to be stored in memory. The following code provides an example of this method's usage.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,19 +264,19 @@ To cache a value, we can use the store() method. This method takes four input pa
 To retrieve a cached value, we use the retrieve() method. This method takes two input parameters namely, the correlation_id and the key of the cached value to be retrieved. The following example shows how to use this method.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -292,19 +292,19 @@ To retrieve a cached value, we use the retrieve() method. This method takes two 
 To remove a cached value, we can use the remove() method. This method asks for two input parameters, namely the correlation_id and the cached value’s key. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

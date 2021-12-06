@@ -1,19 +1,17 @@
 
-```python
-value = AnyValueMap({ 'key1': 1, 'key2': "123.456", 'key3': "2018-01-01" })
+```go
+value := data.NewAnyValueMap(map[string]interface{}{"key1": 1, "key2": "123.456", "key3": "2018-01-01"})
 
-value1 = value.get_as_boolean("key1")   # Returns: true
-value2 = value.get_as_integer("key2")   # Returns: 123
-value3 = value.get_as_integer_with_default("key3", 0)   # Returns 0
-value4 = value.get_as_float("key2")     # Returns: 123.456
-value5 = value.get_as_datetime("key3")  # Returns new Date(2018,0,1)
-value9 = value.get_as_string("key1")    # Returns '1'
-valueA = AnyValueMap({'key1': 1, 'key2': {'key': "123.456"}, 'key3': "2018-01-01"}) # redact
-value6 = valueA.get_as_map("key2")      # Returns {'key': '123.456'}
-value7 = value.get_as_nullable_datetime("key2")     # Returns None
-value8 = value.get_as_nullable_datetime("key3")     # Returns new Date(2018,0,1)
-value10 = value.get_as_object()                     # Returns {'key1': 1, 'key2': '123.456', 'key3': '2018-01-01'}
-from pip_services3_commons.convert import TypeCode
-value11 = value.get_as_type(TypeCode.String, 'key1')     # Returns '1'
-value12 = value.get_as_value('key1')
+value1 := value.GetAsBoolean("key1")               // Returns: true
+value2 := value.GetAsInteger("key2")               // Returns: 123
+value3 := value.GetAsIntegerWithDefault("key3", 0) // Returns 0
+value4 := value.GetAsFloat("key2")                 // Returns: 123.456
+value5 := value.GetAsDateTime("key3")              // Returns 0001-01-01
+valueA := data.NewAnyValueMap(map[string]interface{}{"key1": 1, "key2": map[string]string{"key": "123.456"}, "key3": "2018-01-01"})
+value6 := valueA.GetAsMap("key2")                  // Returns {"key": "123.456"}
+value7 := value.GetAsNullableDateTime("key2")      // Returns nil
+value8 := value.GetAsNullableDateTime("key3")      // Returns nil
+value9 := value.GetAsString("key1")                // Returns "1"
+value10 := value.GetAsType(convert.String, "key1") // Returns "1"
+value11 := value.GetAsValue("key1")
 ```

@@ -40,19 +40,19 @@ Pip.Services provides three different dynamic data types. They are AnyValue, Any
 This component provides a cross-language implementation of a dynamic object that can hold a value of any type. For example, it can contain an integer, a float, or a string.
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,19 +68,19 @@ This component provides a cross-language implementation of a dynamic object that
 In order to create an AnyValue object, we need to import the corresponding class. The code below shows how to do this.
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -96,19 +96,19 @@ In order to create an AnyValue object, we need to import the corresponding class
 To create an AnyValue object we need to use its constructor with the value as input parameter or clone an existing AnyValue object. The following examples show how to do this.
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -124,19 +124,19 @@ To create an AnyValue object we need to use its constructor with the value as in
 This component presents several methods that can be used to convert a value to different types, such as integer, long, float, double, and more. The examples below show how to use several of these methods. 
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -152,19 +152,19 @@ This component presents several methods that can be used to convert a value to d
 This class offers the set_as_object() method to change a value. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -180,19 +180,19 @@ This class offers the set_as_object() method to change a value. The following ex
 The method to_string() provides a way to create a string representation of an AnyValue object. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,19 +208,19 @@ The method to_string() provides a way to create a string representation of an An
 The method equals and equals_as_type offer a way to compare two different AnyValue objects. The first compares an object’s value to another specified value. When direct comparison gives a negative result, it tries to compare the values as strings. The second method compares an object’s value to another specified value. When direct comparison gives a negative result, it converts values to a type specified by a type code and compares them again. The following examples show how to use them.
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,19 +236,19 @@ The method equals and equals_as_type offer a way to compare two different AnyVal
 This component provides a cross-language implementation of a dynamic array object that can hold values of any type. Each element is referenced by an index value, starting with zero for the first element. For example, the following AnyTypeArray contains a string, an integer, a float, and a date.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -263,19 +263,19 @@ This component provides a cross-language implementation of a dynamic array objec
 To work with this class, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -290,19 +290,19 @@ To work with this class, we need to import it first. This can be done with the f
 There are several ways to create an AnyValueArray. First, we can create an instance of the class using a list of values as the input parameter. Second, we can use a string or a list with the methods from_string and from_values respectively. Lastly, we can clone an existing object. The examples below show how to perform each of them.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -317,19 +317,19 @@ There are several ways to create an AnyValueArray. First, we can create an insta
 This class has the methods contains() and contains_as_type() that can be used to check if a value exists in an AnyValueArray. The first performs a direct comparison, and the second converts to the specified value and then checks if the value exists.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -345,19 +345,19 @@ This class has the methods contains() and contains_as_type() that can be used to
 This class offers several methods to transform the stored values into several well-known formats, such as Boolean, integer, double, float, and more. The examples below show how to use each of them.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -373,19 +373,19 @@ This class offers several methods to transform the stored values into several we
 We can either append a value or a list of values to an AnyValueArray with the append method or change the value of any element with the put method. The following examples show how to use them.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -400,19 +400,19 @@ We can either append a value or a list of values to an AnyValueArray with the ap
 To delete an element included in an AnyValueArray, we can use the remove method. This method asks the index of the element to be removed as input parameter. The code below shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -428,19 +428,19 @@ To delete an element included in an AnyValueArray, we can use the remove method.
 The AnyValueMap class provides a cross-language implementation of a dynamic map (dictionary) object that can hold values of any type. For example, the following map contains an integer, a float, a string, and a date.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -456,19 +456,19 @@ The AnyValueMap class provides a cross-language implementation of a dynamic map 
 To use this component, we need to import its class first. The following code shows how to do this. 
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -484,19 +484,19 @@ To use this component, we need to import its class first. The following code sho
 There are several ways to create an AnyValueMap object. It can be created by defining a new instance with the constructor, from a list of maps or tuples, or by cloning. The examples below show how to perform these operations.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -512,19 +512,19 @@ There are several ways to create an AnyValueMap object. It can be created by def
 This class offers several methods to extract the value of an element specified by its key in different known formats such as Boolean, integer, float, and more. The following examples show how to use them.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -540,19 +540,19 @@ This class offers several methods to extract the value of an element specified b
 The method set_as_object() allows us to change the value of an element according to its key. The example below shows how to do this.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -568,19 +568,19 @@ The method set_as_object() allows us to change the value of an element according
 To remove an element, we can use the remove method. This method accepts the key of a value as input. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

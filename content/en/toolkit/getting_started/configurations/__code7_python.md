@@ -20,7 +20,7 @@ name = NameResolver.resolve(config) # Returns None
 name = NameResolver.resolve(config,"default name") #Returns "default name"
 
 # name and id
-config = ConfigParams.from_tuples("name", "my name", "id", "my id",
+config = ConfigParams.from_tuples("name", "my_name", "id", "my id",
                                          "param1", "ABC",
                                          "param2", 123)
 result = NameResolver.resolve(config) # Returns "my_name"

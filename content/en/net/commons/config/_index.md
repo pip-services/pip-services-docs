@@ -46,7 +46,7 @@ When retrieved the values can be automatically converted on read using GetAsXXX 
 A helper class that allows to extract a component's name from configuration parameters.
 The name can be defined in the "id" or "name" parameters, or inside a component descriptor.
 
-#### [OptionResolver](option_resolver)
+#### [OptionsResolver](options_resolver)
 A helper class to parameters from "options" configuration section.
 
 </div>

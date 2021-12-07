@@ -252,7 +252,7 @@ However, a component’s configuration is usually stored in the microservice’s
 
 ### Resolvers
 
-The [NameResolver](../../../node/commons/config/name_resolver/) and [OptionResolver](../../../node/commons/config/option_resolver/) classes are helper classes that simplify the use of configurations. 
+The [NameResolver](../../../node/commons/config/name_resolver/) and [OptionsResolver](../../../node/commons/config/options_resolver/) classes are helper classes that simplify the use of configurations. 
 
 #### NameResolver
 
@@ -284,9 +284,9 @@ Below is a simple example of how it can be used:
   Not available  
 {{< /tabsection >}}
 
-#### OptionResolver
+#### OptionsResolver
 
-**OptionResolver** is a helper class that extracts parameters from the "options" configuration section.
+**OptionsResolver** is a helper class that extracts parameters from the "options" configuration section.
 
 {{< tabsection >}}
   {{< include "/content/en/toolkit/recipes/configuration/__code10_node.md" >}}  

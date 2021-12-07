@@ -1,13 +1,13 @@
 ---
 type: docs
-title: "OptionResolver"
-linkTitle: "OptionResolver"
+title: "OptionsResolver"
+linkTitle: "OptionsResolver"
 gitUrl: "https://github.com/pip-services3-dart/pip-services3-commons-dart"
 description: > 
     A helper class used to obtain all the parameters from the "options" configuration section.
 ---
 ### Description
-The OptionResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
+The OptionsResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
 
 ### Static methods
 
@@ -29,6 +29,6 @@ var config = ConfigParams.fromTuples([
     'options.param2', 123
 ]);
 
-var options = OptionResolver.resolve(config); // Result: param1=ABC;param2=123
+var options = OptionsResolver.resolve(config); // Result: param1=ABC;param2=123
 
 ```

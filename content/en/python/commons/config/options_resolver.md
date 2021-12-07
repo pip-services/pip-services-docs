@@ -1,13 +1,13 @@
 ---
 type: docs
-title: "OptionResolver"
-linkTitle: "OptionResolver"
+title: "OptionsResolver"
+linkTitle: "OptionsResolver"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-commons-python"
 description: > 
     A helper class to parameters from "options" configuration section.
 ---
 ### Description
-The OptionResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
+The OptionsResolver class can be use to obtain all the parameters under the section "options" from a CongifParams object. It has a single method called "resolve".
 
 ### Static methods
 
@@ -28,13 +28,13 @@ config = ConfigParams.from_tuples(
   "options.param1", "ABC",
   "options.param2", 123)
 
-options = OptionResolver.resolve(config)           # Returns {'param1': 'ABC', 'param2': '123'}
+options = OptionsResolver.resolve(config)           # Returns {'param1': 'ABC', 'param2': '123'}
 
 # If the configuration doesn't contain an "options" section, it returns an empty ConfigParams object.
 config = ConfigParams.from_tuples(
           "section1.key1", "AAA",
           "section1.key2", 123,
           )
-options = OptionResolver.resolve(config)            # Returns {}
+options = OptionsResolver.resolve(config)            # Returns {}
 
 ```

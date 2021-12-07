@@ -59,19 +59,19 @@ In this tutorial, we will learn how to use a set of validation rules available i
 In order to perform validations, we need to import the Schema class and the different validation rules that we want to use. The following example shows how to import the Schema class and two validation rules named ValueComparisonRule and AndRule. 
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -89,19 +89,19 @@ The Schema class provides a mechanism to create validation schemas, which can la
 There are two ways to create a validation schema. The first is to create an instance of the Schema class and use a list with our validation rules as an input parameter. An example of this is:
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -115,19 +115,19 @@ There are two ways to create a validation schema. The first is to create an inst
 Alternatively, we can first create an instance and define our rule using the with_rule() method. An example of this approach is:
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -147,19 +147,19 @@ This method returns an empty list if the validation was successful, and a list w
 In the example below, we examine two cases based on the rule that the value must be between one and ten. In the first case, we evaluate the value 0, which results in a BAD_VALUE code and the message “must GTE 1 but found 0”. In the second case, we evaluate 5, which results in an empty list.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -183,19 +183,19 @@ Pip.Services provides a comprehensive set of validation rules. In this section, 
 The NotRule class allows us to negate a given rule. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -215,19 +215,19 @@ After running the above code, we get the following output:
 The AndRule class allows us to validate combinations of rules created with AND logical operations. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -247,19 +247,19 @@ After running the above code, we get the following output:
 The OrRule class allows us to validate combinations of rules created with OR logical operations. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -279,19 +279,19 @@ After running the above code, we get the following output:
 The InclidedRule class allows us to check that a value is included in a given set of constants. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -311,19 +311,19 @@ After running the above code, we get the following output:
 The ExcludedRule allows us to verify that a value is not included in a given set of constants. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -343,19 +343,19 @@ After running the above code, we get the following output:
 The AtLeastOneExistsRule class allows us to check that given a set of properties, at least one of them exists. The examples below show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -375,19 +375,19 @@ After running the above code, we get the following output:
 The ValueComparisonRule class allows us to create a validation rule that compares a value to a constant. The following examples show how to use it.
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

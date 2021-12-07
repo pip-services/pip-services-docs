@@ -292,17 +292,17 @@ Sets references to dependent components.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
-#### subscribe
+#### _subscribe
 Subscribes to a topic.
-> subscribe(correlation_id: Optional[str]) 
+> _subscribe(correlation_id: Optional[str]) 
 
 - **correlation_id**: Optional[str] - (optional) transaction id used to trace execution through the call chain.
 
 
-#### to_message
+#### _to_message
 If the message is null, it returns null. Otherwise, it returns the message.
 
-> to_message(topic: str, data: Any, packet: Any): [MessageEnvelope](../../../messaging/queues/message_envelope) 
+> _to_message(topic: str, data: Any, packet: Any): [MessageEnvelope](../../../messaging/queues/message_envelope) 
 
 - **topic**: str - topic
 - **data**: Any - data

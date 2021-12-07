@@ -274,7 +274,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```cs
-var queue = new MqttMessageQueue("myqueue");
+var queue = new MqttMessageQueue();
 queue.Configure(ConfigParams.FromTuples(
   "subject", "mytopic",
   "connection.protocol", "mqtt"

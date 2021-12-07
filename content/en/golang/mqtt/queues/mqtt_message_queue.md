@@ -327,7 +327,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```go
-queue := NewMqttMessageQueue("myqueue")
+queue := NewMqttMessageQueue()
 queue.Configure(cconf.NewConfigParamsFromTuples(
   "subject", "mytopic",
   "connection.protocol", "mqtt"

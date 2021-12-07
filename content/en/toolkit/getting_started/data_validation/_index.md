@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Data validation"
-linkTitle: "Data validation"
+title: "Data Validation"
+linkTitle: "Data Validation"
 weight: 50
 description: >-
      How to create complex validation expressions.

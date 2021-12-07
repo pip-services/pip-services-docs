@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Dynamic data types"
-linkTitle: "Dynamic data types"
+title: "Dynamic Data Types"
+linkTitle: "Dynamic Data Types"
 weight: 40
 description: >-
      How to define objects that can hold values of any type.

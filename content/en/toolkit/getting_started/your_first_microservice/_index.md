@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Your first microservice"
-linkTitle: "Your first microservice"
+title: "Your First Microservice"
+linkTitle: "Your First Microservice"
 weight: 40
 ---
 

@@ -318,7 +318,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```python
-queue = MqttMessageQueue("myqueue")
+queue = MqttMessageQueue()
 queue.configure(ConfigParams.from_tuples(
     "topic", "mytopic",
     'connection.protocol', 'mqtt',

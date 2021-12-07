@@ -339,7 +339,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```dart
-var queue = MqttMessageQueue('myqueue');
+var queue = MqttMessageQueue();
 queue.configure(ConfigParams.fromTuples([
   'topic', 'mytopic',
   'connection.protocol', 'mqtt'

@@ -319,7 +319,7 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-let queue = new MqttMessageQueue("myqueue");
+let queue = new MqttMessageQueue();
 queue.configure(ConfigParams.fromTuples(
   "topic", "mytopic",
   "connection.protocol", "mqtt"

@@ -145,7 +145,7 @@ Converts a map element into a boolean or returns false if the conversion is not 
 
 #### GetAsBooleanWithDefault
 Converts a map element into a boolean or returns a default value if the conversion is not possible.  
-See [BooleanConverter.ToBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > (c [*StringValueMap]()) GetAsBooleanWithDefault(key string, defaultValue bool) bool
 
@@ -156,7 +156,7 @@ See [BooleanConverter.ToBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### GetAsDateTime
 Converts a map element into a Date or returns the current date if the conversion is not possible.  
-See [BooleanConverter.ToBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.ToBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > (c [*StringValueMap]()) GetAsDateTime(key string) time.Time
 
@@ -166,7 +166,7 @@ See [BooleanConverter.ToBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### GetAsDateTimeWithDefault
 Converts a map element into a Date or returns a default value if the conversion is not possible.  
-See [DateTimeConverter.ToDateTimeWithDefault](../date_time_converter/#todatetimewithdefault)
+See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
 > (c [*StringValueMap]()) GetAsDateTimeWithDefault(key string, defaultValue time.Time) time.Time
 
@@ -186,7 +186,7 @@ Converts a map element into a double or returns 0 if the conversion is not possi
 
 #### GetAsDoubleWithDefault
 Converts a map element into a double or returns default value if the conversion is not possible.  
-See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault)
+See [DoubleConverter.ToDoubleWithDefault](../../convert/double_converter/#todoublewithdefault)
 
 > (c [*StringValueMap]()) GetAsDoubleWithDefault(key string, defaultValue float64) float64
 
@@ -206,7 +206,7 @@ Converts a map element into a float or returns 0 if the conversion is not possib
 
 #### GetAsFloatWithDefault
 Converts a map element into a float or returns a default value if the conversion is not possible.  
-See [FloatConverter.ToFloatWithDefault](../float_converter/#tofloatwithdefault)
+See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > (c [*StringValueMap]()) GetAsFloatWithDefault(key string, defaultValue float32) float32
 
@@ -226,7 +226,7 @@ Converts map element into an integer or returns 0 if the conversion is not possi
 
 #### GetAsIntegerWithDefault
 Converts a map element into an integer or returns a default value if the conversion is not possible.  
-See [IntegerConverter.ToIntegerWithDefault](../integer_converter/#tointegerwithdefault)
+See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
 > (c [*StringValueMap]()) GetAsIntegerWithDefault(key string, defaultValue int) int
 
@@ -246,7 +246,7 @@ Converts map element into a long or returns 0 if the conversion is not possible.
 
 #### GetAsLongWithDefault
 Converts a map element into a long or returns default value if the conversion is not possible.  
-See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > (c [*StringValueMap]()) GetAsLongWithDefault(key string, defaultValue int64) int64
 
@@ -355,7 +355,7 @@ Converts a map element into an AnyValueMap or returns nil if the conversion is n
 
 #### GetAsNullableString
 Converts a map element into a string or returns nil if the conversion is not possible.  
-See [StringConverter.ToNullableString](../string_converter/#tonullablestring)
+See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
 > (c [*StringValueMap]()) GetAsNullableString(key string) *string
 
@@ -366,7 +366,7 @@ See [StringConverter.ToNullableString](../string_converter/#tonullablestring)
 #### GetAsNullableType
 Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns nil.    
-See [TypeConverter.ToNullableType](../type_converter/#tonullabletype)
+See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
 
 > (c [*StringValueMap]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code), key string) interface{}
 

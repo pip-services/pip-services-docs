@@ -53,5 +53,5 @@ Stack trace of the exception.
 
 
 ### See also
-- #### [ApplicationException](../application_exception)
-- #### [ApplicationExceptionFactory](../application_error_factory)
+- #### [ApplicationError](../application_error)
+- #### [ApplicationErrorFactory](../application_error_factory)

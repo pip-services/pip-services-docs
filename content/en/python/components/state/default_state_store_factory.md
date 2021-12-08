@@ -4,7 +4,7 @@ title: "DefaultStateStoreFactory"
 linkTitle: "DefaultStateStoreFactory"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-components-python"
 description: >
-    Creates [IStateStore](../IStateStore) components by their descriptors.
+    Creates IStateStore components by their descriptors.
 ---
 
 **Implements:** [Factory](../../build/factory)

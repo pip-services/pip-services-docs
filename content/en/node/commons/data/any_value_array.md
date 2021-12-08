@@ -207,7 +207,7 @@ Converts an array's element into a long or returns 0 if the conversion is not po
 
 #### getAsLongWithDefault
 Converts an array's element into a long or returns a given default value if the conversion is not possible.  
-See [LongConverter.toLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
+See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > `public` getAsLongWithDefault(index: number, defaultValue: number): number
 
@@ -247,7 +247,7 @@ Converts an array's element into an AnyValueArray object or returns null if the 
 
 #### getAsNullableBoolean
 Converts an array's element into a boolean or returns null if the conversion is not possible.  
-See [BooleanConverter.toNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
+See [BooleanConverter.toNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > `public` getAsNullableBoolean(index: number): boolean
 
@@ -257,7 +257,7 @@ See [BooleanConverter.toNullableBoolean](../../converter/boolean_converter/#tonu
 
 #### getAsNullableDateTime
 Converts an array's element into a Date or returns null if the conversion is not possible.  
-See [DateTimeConverter.toNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.toNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
 > `public` getAsNullableDateTime(index: number): Date
 

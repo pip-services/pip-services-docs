@@ -22,5 +22,5 @@ Creates a new instance of the factory.
 
 ### See also
 - #### [Factory](../../../components/build/factory)
-- #### [MemoryMessageQueue](../../queues/message_queue)
+- #### [MongoDbConnection](../../connect/mongodb_connection)
 

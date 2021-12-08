@@ -251,7 +251,7 @@ Converts an array element into a long or returns 0 if the conversion is not poss
 
 #### GetAsLongWithDefault
 Converts an array element into a long or returns a default value if the conversion is not possible.  
-See [LongConverter.ToLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > (c [*AnyValueArray]()) GetAsLongWithDefault(index int, defaultValue int64) int64
 
@@ -291,7 +291,7 @@ Converts an array element into an AnyValueArray or returns nil if the conversion
 
 #### GetAsNullableBoolean
 Converts array element into a boolean or returns nil if the conversion is not possible.  
-See [BooleanConverter.ToNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
+See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > (c [*AnyValueArray]()) GetAsNullableBoolean(index int) *bool
 
@@ -301,7 +301,7 @@ See [BooleanConverter.ToNullableBoolean](../../converter/boolean_converter/#tonu
 
 #### GetAsNullableDateTime
 Converts an array element into a Date or returns nil if the conversion is not possible.  
-See [DateTimeConverter.ToNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
 > (c [*AnyValueArray]()) GetAsNullableDateTime(index int) *time.Time
 

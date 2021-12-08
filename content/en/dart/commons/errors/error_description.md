@@ -76,4 +76,4 @@ Converts [ErrorDescription]() to a json Map
 
 ### See also
 - #### [ApplicationException](../application_exception)
-- #### [ApplicationExceptionFactory](../application_error_factory)
+- #### [ApplicationExceptionFactory](../application_exception_factory)

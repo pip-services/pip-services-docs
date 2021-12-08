@@ -24,6 +24,6 @@ Constructs this object with default parameters.
 Reads the next token
 
 `@override`
-> [Token?](../../tokenizers/token) readNextToken()
+> [Token?](../../../tokenizers/token) readNextToken()
 
 - **returns**: [Token?](../../tokenizers/token) - next token

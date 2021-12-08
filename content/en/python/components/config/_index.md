@@ -29,7 +29,7 @@ The values may come from application command like arguments or environment varia
 ### Classes
 
 #### [ConfigReader](config_reader)
-Data object to store cached values with their keys used by [MemoryCache](memory_cache)
+Data object to store cached values with their keys used by [MemoryCache](../cache/memory_cache)
 
 #### [DefaultConfigReaderFactory](default_config_reader_factory)
 Creates [IConfigReader](iconfig_reader) components by their descriptors.

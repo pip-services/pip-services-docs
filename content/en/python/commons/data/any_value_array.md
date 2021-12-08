@@ -215,7 +215,7 @@ Converts array element into a long or returns 0 if conversion is not possible.
 
 #### get_as_long_with_default
 Converts array element into a long or returns default value if conversion is not possible.  
-See [LongConverter.to_long_with_default](../../convert/LongConverter/#to_long_with_default)
+See [LongConverter.to_long_with_default](../../convert/long_converter/#to_long_with_default)
 
 > get_as_long_with_default(index: int, default_value: float): float
 
@@ -255,7 +255,7 @@ Converts array element into an AnyValueArray or returns None if conversion is no
 
 #### get_as_nullable_boolean
 Converts array element into a boolean or returns None if conversion is not possible.  
-See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to_nullable_boolean).
+See [BooleanConverter.to_nullable_boolean](../../convert/boolean_converter/#to_nullable_boolean).
 
 > get_as_nullable_boolean(index: int): Optional[bool]
 
@@ -265,7 +265,7 @@ See [BooleanConverter.to_nullable_boolean](../../converter/boolean_converter/#to
 
 #### get_as_nullable_datetime
 Converts array element into a Date or returns None if conversion is not possible.  
-See [DateTimeConverter.to_nullable_datetime](../../converter/date_time_converter/#to_nullable_datetime).
+See [DateTimeConverter.to_nullable_datetime](../../convert/date_time_converter/#to_nullable_datetime).
 
 > get_as_nullable_datetime(index: int): Optional[datetime]
 

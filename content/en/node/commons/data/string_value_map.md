@@ -90,7 +90,7 @@ Converts a map's element into a boolean or returns false if the conversion is no
 
 #### getAsBooleanWithDefault
 Converts a map's  element into a boolean or returns a given default value if the conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > `public` getAsBooleanWithDefault(key: string, defaultValue: boolean): boolean
 
@@ -101,7 +101,7 @@ See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### getAsDateTime
 Converts a map's element into a Date or returns the current date if the conversion is not possible.  
-See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithdefault)
+See [BooleanConverter.toBooleanWithDefault](../../convert/boolean_converter/#tobooleanwithdefault)
 
 > `public` getAsDateTime(key: string): Date
 
@@ -111,7 +111,7 @@ See [BooleanConverter.toBooleanWithDefault](../boolean_converter/#tobooleanwithd
 
 #### getAsDateTimeWithDefault
 Converts a map's element into a Date or returns a given default value if the conversion is not possible.  
-See [DateTimeConverter.toDateTimeWithDefault](../date_time_converter/#todatetimewithdefault)
+See [DateTimeConverter.toDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
 > `public` getAsDateTimeWithDefault(key: string, defaultValue: Date): Date
 
@@ -131,7 +131,7 @@ Converts a map's element into a double or returns 0 if the conversion is not pos
 
 #### getAsDoubleWithDefault
 Converts a map's element into a double or returns a given default value if the conversion is not possible.  
-See [DoubleConverter.toDoubleWithDefault](../double_converter/#todoublewithdefault)
+See [DoubleConverter.to_double_with_default](../../convert/double_converter/#todouble_with_default)
 
 > `public` getAsDoubleWithDefault(key: string, defaultValue: number): number
 
@@ -151,7 +151,7 @@ Converts a map's element into a float or returns 0 if the conversion is not poss
 
 #### getAsFloatWithDefault
 Converts a map's element into a float or returns a given default value if the conversion is not possible.  
-See [FloatConverter.toFloatWithDefault](../float_converter/#tofloatwithdefault)
+See [FloatConverter.toFloatWithDefault](../../convert/float_converter/#tofloatwithdefault)
 
 > `public` getAsFloatWithDefault(key: string, defaultValue: number): number
 
@@ -171,7 +171,7 @@ Converts a map's element into an integer or returns 0 if the conversion is not p
 
 #### getAsIntegerWithDefault
 Converts a map's element into an integer or returns a given default value if the conversion is not possible.  
-See [IntegerConverter.toIntegerWithDefault](../integer_converter/#tointegerwithdefault)
+See [IntegerConverter.toIntegerWithDefault](../../convert/integer_converter/#tointegerwithdefault)
 
 > `public` getAsIntegerWithDefault(key: string, defaultValue: number): number
 
@@ -191,7 +191,7 @@ Converts a map's element into a long or returns 0 if the conversion is not possi
 
 #### getAsLongWithDefault
 Converts a map's element into a long or returns a given default value if the conversion is not possible.  
-See [LongConverter.toLongWithDefault](../long_converter/#tolongwithdefault)
+See [LongConverter.toLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > `public` getAsLongWithDefault(key: string, defaultValue: number): number
 
@@ -300,7 +300,7 @@ Converts a map's element into an AnyValueMap object or returns null if the conve
 
 #### getAsNullableString
 Converts a map's element into a string or returns null if the conversion is not possible.  
-See [StringConverter.toNullableString](../string_converter/#tonullablestring)
+See [StringConverter.toNullableString](../../convert/string_converter/#tonullablestring)
 
 > `public` getAsNullableString(key: string): string
 
@@ -311,7 +311,7 @@ See [StringConverter.toNullableString](../string_converter/#tonullablestring)
 #### getAsNullableType
 Converts a map's element into a value defined by a specified typecode.
 If conversion is not possible, it returns null.    
-See [TypeConverter.toNullableType](../type_converter/#tonullabletype)
+See [TypeConverter.toNullableType](../../convert/type_converter/#tonullabletype)
 
 > `public` getAsNullableType\<T\>(type: [TypeCode](../../convert/type_code), key: string): T
 

@@ -270,7 +270,7 @@ Converts an array element into a long or returns 0 if the conversion is not poss
 
 #### GetAsLongWithDefault
 Converts an array element into a long or returns a given default value if the conversion is not possible.  
-See [LongConverter.ToLongWithDefault](../../convert/LongConverter/#tolongwithdefault)
+See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithdefault)
 
 > `public` long GetAsLongWithDefault(int index, long defaultValue)
 
@@ -310,7 +310,7 @@ Converts an array element into an AnyValueArray or returns null if the conversio
 
 #### GetAsNullableBoolean
 Converts array element into a bool or returns null if the conversion is not possible.  
-See [BooleanConverter.ToNullableBoolean](../../converter/boolean_converter/#tonullableboolean)
+See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
 > `public` bool GetAsNullableBoolean(int index)
 
@@ -320,7 +320,7 @@ See [BooleanConverter.ToNullableBoolean](../../converter/boolean_converter/#tonu
 
 #### GetAsNullableDateTime
 Converts an array element into a DateTime or returns null if the conversion is not possible.  
-See [DateTimeConverter.ToNullableDateTime](../../converter/date_time_converter/#tonullabledatetime)
+See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
 > `public` DateTime GetAsNullableDateTime(int index)
 

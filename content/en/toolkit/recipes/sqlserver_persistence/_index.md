@@ -978,7 +978,7 @@ This method deletes a set of records from a table according to a given list of i
   Not available  
 {{< /tabsection >}}
 
-### Returned objects
+#### Returned objects
 
 In general, CRUD operations return an object with the same fields that were passed to the persistence component and the fields can be accessed in the same way as in the original object.
 

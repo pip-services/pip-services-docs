@@ -42,9 +42,10 @@ This component provides a message queue that can send and receive messages via a
 ##### _qos
 
 MQTT accepts three different levels, which are:
-•	At most once (0)
-•	At least once (1)
-•	Exactly once (2)
+
+- At most once (0)
+- At least once (1)
+- Exactly once (2)
 
 Based on the above, we can specify our preferred level via the _qos field in our configuration by stating its integer value (See the example in the next section). 
 

@@ -16,7 +16,8 @@ description: >-
     <td>MqttMessageQueue</td>
     <td>This component provides a message queue that can send and receive messages via an MQTT message broker.</td>
   </tr>
- </table>
+</table>
+
 ### Introduction
 
 ### Managing communication

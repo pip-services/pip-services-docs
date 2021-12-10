@@ -2,7 +2,7 @@
 type: docs
 title: "SqlServerPersistence"
 linkTitle: "SqlServerPersistence"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-postgres-python"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-sqlserver-python"
 description: >
     Abstract persistence component that stores data in a SQLServer database using the official driver.
     

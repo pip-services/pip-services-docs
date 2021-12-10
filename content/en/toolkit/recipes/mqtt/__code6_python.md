@@ -1,1 +1,4 @@
 
+```python
+queue.close(None)
+```

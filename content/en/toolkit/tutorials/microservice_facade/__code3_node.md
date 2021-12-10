@@ -10,15 +10,19 @@ Create a TypeScript compiler configuration file with the following lines:
 ```json
 {
     "compilerOptions": {
-	"declaration": true,
+        "declaration": true,
         "module": "commonjs",
         "target": "es6",
         "noImplicitAny": false,
         "outDir": "obj",
         "rootDir": ".",
         "sourceMap": true,
-	"types": ["node", "mocha", "chai"]
-     },
+        "types": [
+            "node",
+            "mocha",
+            "chai"
+        ]
+    },
     "exclude": [
         "node_modules",
         "lib",

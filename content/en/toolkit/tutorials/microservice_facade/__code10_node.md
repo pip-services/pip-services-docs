@@ -1,6 +1,8 @@
 **/test/fixture/TestRestClient.ts**
 
 ```typescript
+import { ApplicationExceptionFactory, UnknownException } from "pip-services3-commons-nodex";
+
 let restify = require('restify-clients');
 
 export class TestRestClient {
@@ -8,72 +10,93 @@ export class TestRestClient {
 
     public constructor() {
         let url = 'http://localhost:3000';
-        this._rest = restify.createJsonClient({ url: url, version: '*' });
+        this._rest = restify.createJsonClient({ url: url, version: '*', requestTimeout: 1500 });
+    }
+
+    protected async call(method: string, route: string, data?: any): Promise<any> {
+        method = method.toLowerCase();
+
+        return new Promise((resolve, reject) => {
+            let action = (err, req, res, data) => {
+                // Handling 204 codes
+                if (res && res.statusCode == 204)
+                    resolve(null);
+                else if (err == null)
+                    resolve(data);
+                else {
+                    // Restore application exception
+                    if (data != null)
+                        err = ApplicationExceptionFactory.create(data).withCause(err);
+                    reject(err);
+                }
+            };
+
+            if (method == 'get') this._rest.get(route, action);
+            else if (method == 'head') this._rest.head(route, action);
+            else if (method == 'post') this._rest.post(route, data, action);
+            else if (method == 'put') this._rest.put(route, data, action);
+            else if (method == 'patch') this._rest.patch(route, data, action);
+            else if (method == 'delete' || method == 'del') this._rest.del(route, action);
+            else {
+                let err = new UnknownException('UNSUPPORTED_METHOD', 'Method is not supported by Test REST client'
+                ).withDetails('verb', method);
+                reject(err);
+            }
+        });
     }
 
 
-    public get(path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async get(path: string): Promise<any> {
         delete this._rest.headers['x-session-id'];
-        this._rest.get(path, callback);
+        return await this.call('get', path);
     }
 
-    public head(path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async head(path: string): Promise<any> {
         delete this._rest.headers['x-session-id'];
-        this._rest.head(path, callback)
+        return await this.call('head', path);
     }
 
-    public post(path: string, params: any,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async post(path: string, params: any): Promise<any> {
         delete this._rest.headers['x-session-id'];
-        this._rest.post(path, params, callback);
+        return await this.call('post', path, params);
     }
 
-    public put(path: string, params: any,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async put(path: string, params: any): Promise<any> {
         delete this._rest.headers['x-session-id'];
-        this._rest.put(path, params, callback);
+        return await this.call('put', path, params);
     }
 
-    public del(path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async del(path: string): Promise<any> {
         delete this._rest.headers['x-session-id'];
-        this._rest.del(path, callback);
+        return await this.call('del', path);
     }
 
 
-    public getAsUser(sessionId: string, path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async getAsUser(sessionId: string, path: string): Promise<any> {
         this._rest.headers['x-session-id'] = sessionId;
-        this._rest.get(path, callback);
+        return await this.call('get', path);
     }
 
-    public headAsUser(sessionId: string, path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async headAsUser(sessionId: string, path: string): Promise<any> {
         this._rest.headers['x-session-id'] = sessionId;
-        this._rest.head(path, callback)
+        return await this.call('head', path);
     }
 
-    public postAsUser(sessionId: string, path: string, params: any,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async postAsUser(sessionId: string, path: string, params: any): Promise<any> {
         this._rest.headers['x-session-id'] = sessionId;
-        this._rest.post(path, params, callback);
+        return await this.call('post', path, params);
     }
 
-    public putAsUser(sessionId: string, path: string, params: any,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async putAsUser(sessionId: string, path: string, params: any): Promise<any> {
         this._rest.headers['x-session-id'] = sessionId;
-        this._rest.put(path, params, callback);
+        return await this.call('put', path, params);
     }
 
-    public delAsUser(sessionId: string, path: string,
-        callback: (err: any, req: any, res: any, result: any) => void): void {
+    public async delAsUser(sessionId: string, path: string, params?: any): Promise<any> {
         this._rest.headers['x-session-id'] = sessionId;
-        this._rest.del(path, callback);
+        return await this.call('del', path, params);
     }
 
 }
-
 ```
 

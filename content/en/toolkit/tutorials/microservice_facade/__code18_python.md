@@ -1,5 +1,5 @@
 
-**/bin/run.py**
+**/bin/main.py**
 
 ```python
 # -*- coding: utf-8 -*-

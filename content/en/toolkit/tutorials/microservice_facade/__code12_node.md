@@ -2,182 +2,166 @@
 **/test/operations/version1/BeaconsRoutesV1.test.ts**
 
 ```typescript
-let _ = require('lodash');
-let async = require('async');
-let assert = require('chai').assert;
+const assert = require('chai').assert;
 
-import { TestReferences } from '../../fixtures/TestReferences';
+import { DataPage } from 'pip-services3-commons-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex';
+
+import { BeaconV1 } from '../../../src/clients/version1/BeaconV1';
+import { BeaconsMemoryClientV1 } from '../../../src/clients/version1/BeaconsMemoryClientV1';
+
 import { TestUsers } from '../../fixtures/TestUsers';
+import { TestReferences } from '../../fixtures/TestReferences';
 import { TestRestClient } from '../../fixtures/TestRestClient';
-import { BeaconV1, BeaconTypeV1 } from 'pip-clients-beacons-node';
 
-const BEACON1: BeaconV1 = {
+let BEACON1: BeaconV1 = {
     id: '1',
-    udi: '00001',
-    type: BeaconTypeV1.AltBeacon,
-    org_id: '1',
+    udi: '000001',
+    site_id: '1',
     label: 'TestBeacon1',
-    center: { type: 'Point', coordinates: [ 0, 0 ] },
+    center: { type: 'Point', coordinates: [0, 0] },
     radius: 50
 };
-const BEACON2: BeaconV1 = {
+let BEACON2: BeaconV1 = {
     id: '2',
-    udi: '00002',
-    type: BeaconTypeV1.iBeacon,
-    org_id: '1',
+    udi: '000002',
+    site_id: '1',
     label: 'TestBeacon2',
-    center: { type: 'Point', coordinates: [ 2, 2 ] },
+    center: { type: 'Point', coordinates: [2, 2] },
     radius: 70
 };
+let BEACON3: BeaconV1 = {
+    id: '3',
+    udi: '000003',
+    site_id: '2',
+    label: 'TestBeacon3',
+    center: { type: 'Point', coordinates: [10, 10] },
+    radius: 50
+};
 
-suite('BeaconsRoutesV1', () => {
-
+suite('BeaconsOperationsV1', () => {
     let references: TestReferences;
     let rest: TestRestClient;
 
-    setup((done) => {
+    setup(async () => {
         rest = new TestRestClient();
         references = new TestReferences();
-        references.open(null, done);
+        references.put(new Descriptor('beacons', 'client', 'memory', 'default', '1.0'), new BeaconsMemoryClientV1());
+        await references.open(null);
     });
 
-    teardown((done) => {
-        references.close(null, done);
+    teardown(async () => {
+        await references.close(null);
     });
 
-    test('CRUD Operations', (done) => {
-        let beacon1: BeaconV1;
+    test('should perform beacon operations', async () => {
+        let beacon1, beacon2, beacon3: BeaconV1;
+        // Create one beacon
+        let beacon = await rest.postAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + BEACON1.site_id + '/beacons',
+            BEACON1,
+        );
 
-        async.series([
-            // Create the first beacon
-            (callback) => {
-                rest.postAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
-                    BEACON1,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
+        assert.isObject(beacon);
+        assert.equal(beacon.site_id, BEACON1.site_id);
+        assert.equal(beacon.udi, BEACON1.udi);
+        assert.equal(beacon.label, BEACON1.label);
+        assert.isNotNull(beacon.center);
 
-                        assert.isObject(beacon);
-                        assert.equal(BEACON1.udi, beacon.udi);
-                        assert.equal(BEACON1.org_id, beacon.org_id);
-                        assert.equal(BEACON1.type, beacon.type);
-                        assert.equal(BEACON1.label, beacon.label);
-                        assert.isNotNull(beacon.center);
+        beacon1 = beacon;
 
-                        callback();
-                    }
-                );
-            },
-            // Create the second beacon
-            (callback) => {
-                rest.postAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
-                    BEACON2,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
 
-                        assert.isObject(beacon);
-                        assert.equal(BEACON2.udi, beacon.udi);
-                        assert.equal(BEACON2.org_id, beacon.org_id);
-                        assert.equal(BEACON2.type, beacon.type);
-                        assert.equal(BEACON2.label, beacon.label);
-                        assert.isNotNull(beacon.center);
+        // Create another beacon
+        beacon = await rest.postAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + BEACON2.site_id + '/beacons',
+            BEACON2
+        );
 
-                        callback();
-                    }
-                );
-            },
-            // Get all beacons
-            (callback) => {
-                rest.getAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
-                    (err, req, res, page) => {
-                        assert.isNull(err);
+        assert.isObject(beacon);
+        assert.equal(beacon.site_id, BEACON2.site_id);
+        assert.equal(beacon.udi, BEACON2.udi);
+        assert.equal(beacon.label, BEACON2.label);
+        assert.isNotNull(beacon.center);
 
-                        assert.isObject(page);
-                        assert.lengthOf(page.data, 2);
+        beacon2 = beacon;
 
-                        beacon1 = page.data[0];
+        // Create yet another beacon
+        beacon = await rest.postAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + BEACON3.site_id + '/beacons',
+            BEACON3
+        );
 
-                        callback();
-                    }
-                )
-            },
-            // Update the beacon
-            (callback) => {
-                beacon1.label = 'ABC';
+        assert.isObject(beacon);
+        assert.equal(beacon.site_id, BEACON3.site_id);
+        assert.equal(beacon.udi, BEACON3.udi);
+        assert.equal(beacon.label, BEACON3.label);
+        assert.isNotNull(beacon.center);
 
-                rest.putAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons',
-                    beacon1,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
+        beacon3 = beacon;
 
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-                        assert.equal('ABC', beacon.label);
+        // Get all beacons
+        let page: DataPage<BeaconV1> = await rest.getAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + BEACON1.site_id + '/beacons'
+        );
+        
+        assert.isObject(page);
+        assert.lengthOf(page.data, 2);
 
-                        callback();
-                    }
-                )
-            },
-            // Get beacon by udi
-            (callback) => {
-                rest.getAsUser(TestUsers.User1SessionId, '/api/v1/beacons/udi/' + beacon1.udi + '?user_id=' + TestUsers.User1Id,
-                    (err, req, res, beacon) => {
-                        
-                        assert.isNull(err);
-
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-
-                        callback();
-                    }
-                )
-            },
-            // Calculate position for one beacon
-            (callback) => {
-                rest.postAsUser(TestUsers.User1SessionId, '/api/v1/beacons/position',
-                    {
-                        org_id: '1',
-                        udis: ['00001']
-                    },
-                    (err, req, res, position) => {
-                        assert.isNull(err);
-
-                        assert.isObject(position);
-                        assert.equal('Point', position.type);
-                        assert.lengthOf(position.coordinates, 2);
-                        assert.equal(0, position.coordinates[0]);
-                        assert.equal(0, position.coordinates[1]);
-
-                        callback();
-                    }
-                )
-            },
-            // Delete the beacon
-            (callback) => {
-                rest.delAsUser(TestUsers.AdminUserSessionId, '/api/v1/beacons/' + beacon1.id,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
-
-                        assert.isObject(beacon);
-                        assert.equal(beacon1.id, beacon.id);
-
-                        callback();
-                    }
-                )
-            },
-            // Try to get deleted beacon
-            (callback) => {
-                rest.getAsUser(TestUsers.User1SessionId, '/api/v1/beacons/' + beacon1.id + '?user_id=' + TestUsers.User1Id,
-                    (err, req, res, beacon) => {
-                        assert.isNull(err);
-
-                        //assert.isEmpty(beacon || null);
-
-                        callback();
-                    }
-                )
+        // Calculate positions
+        let position = await rest.postAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + BEACON1.site_id + '/beacons/calculate_position',
+            {
+                site_id: BEACON1.site_id,
+                udis: [BEACON1.udi]
             }
-        ], done);
+        );
+
+        assert.isObject(position);
+        assert.equal(position.type, 'Point');
+
+        // Validate beacon udi
+        let result = await rest.postAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + beacon1.site_id + '/beacons/validate_udi?udi=' + beacon1.udi,
+            {},
+        );
+
+        assert.equal(result, beacon1.id);
+
+        // Update the beacon
+        beacon1.label = 'ABC';
+
+        beacon = await rest.putAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + beacon1.site_id + '/beacons/' + beacon1.id,
+            beacon1
+        );
+
+        assert.isObject(beacon);
+        assert.equal(beacon.label, 'ABC');
+
+        // Delete beacon
+        beacon = await rest.delAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + beacon1.site_id + '/beacons/' + beacon1.id
+        );
+
+        assert.equal(beacon.id, beacon1.id);
+
+        // Try to get delete beacon
+        result = await rest.getAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sites/' + beacon1.site_id + '/beacons/' + beacon1.id
+        );
+
+        assert.isNull(result);
     });
+
 });
 ```
 

@@ -17,7 +17,7 @@ export class SessionUserV1 {
     /* Security info **/
     public roles: string[];
     public change_pwd_time: Date;
-    public sites: { id: string, name: string };
+    public sites: [{ id: string, name: string }];
     public settings: any;
 
     /* Custom fields */

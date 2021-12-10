@@ -2,63 +2,57 @@
 **/test/fixture/TestReferences.ts**
 
 ```typescript
-let _ = require('lodash');
+import { ConfigParams } from 'pip-services3-commons-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex';
+import { ManagedReferences } from 'pip-services3-container-nodex';
 
-import { ConfigParams } from 'pip-services3-commons-node';
-import { Descriptor } from 'pip-services3-commons-node';
-
-import { CompositeFactory } from 'pip-services3-components-node';
-import { ManagedReferences } from 'pip-services3-container-node';
-
-import { IAccountsClientV1, AccountV1 } from 'pip-clients-accounts-node';
-import { ISessionsClientV1 } from 'pip-clients-sessions-node';
+import { IAccountsClientV1 } from '../../src/clients/version1/IAccountsClientV1';
+import { AccountV1 } from '../../src/clients/version1/AccountV1';
+import { IRolesClientV1 } from '../../src/clients/version1/IRolesClientV1';
+import { ISessionsClientV1 } from '../../src/clients/version1/ISessionsClientV1';
+import { ISitesClientV1 } from '../../src/clients/version1/ISitesClientV1';
+import { SiteV1 } from '../../src/clients/version1/SiteV1';
 
 import { TestUsers } from './TestUsers';
+import { TestSites } from './TestSites';
 import { ClientFacadeFactory } from '../../src/build/ClientFacadeFactory';
-import { ServiceFacadeFactory } from '../../src/build/ServiceFacadeFactory';
-import { HttpEndpoint } from 'pip-services3-rpc-node';
-import { DefaultRpcFactory } from 'pip-services3-rpc-node';
+import { HttpEndpoint, DefaultRpcFactory } from 'pip-services3-rpc-nodex';
 import { FacadeServiceV1 } from '../../src/services/version1/FacadeServiceV1';
-import { AccountsMemoryClientV1 } from 'pip-clients-accounts-node';
-import { SessionsMemoryClientV1 } from 'pip-clients-sessions-node';
-import { BeaconsMemoryClientV1 } from 'pip-clients-beacons-node';
+import { FacadeServiceV2 } from '../../src/services/version2/FacadeServiceV2';
+import { AccountsMemoryClientV1 } from '../../src/clients/version1/AccountsMemoryClientV1';
+import { SessionsMemoryClientV1 } from '../../src/clients/version1/SessionsMemoryClientV1';
+import { PasswordsNullClientV1 } from '../../src/clients/version1/PasswordsNullClientV1';
+import { RolesMemoryClientV1 } from '../../src/clients/version1/RolesMemoryClientV1';
+import { EmailSettingsMemoryClientV1 } from '../../src/clients/version1/EmailSettingsMemoryClientV1';
+import { SitesMemoryClientV1 } from '../../src/clients/version1/SitesMemoryClientV1';
 
 export class TestReferences extends ManagedReferences {
-    private _factory = new CompositeFactory();
+    private _factory = new ClientFacadeFactory();
 
     public constructor() {
         super();
 
-        this.setupFactories();
         this.appendDependencies();
         this.configureService();
         this.createUsersAndSessions();
     }
 
-    private setupFactories() {
-        this._factory.add(new ClientFacadeFactory());
-        this._factory.add(new ServiceFacadeFactory());
-        this._factory.add(new DefaultRpcFactory());
-    }
-
-    public append(descriptor: Descriptor): void {
-        let component = this._factory.create(descriptor);
-        this.put(descriptor, component);
-    }
-
     private appendDependencies() {
         // Add factories
-        this.put(null, this._factory);
+        this.put(null, new ClientFacadeFactory());
+        this.put(null, new DefaultRpcFactory());
 
         // Add service
         this.put(null, new FacadeServiceV1());
+        this.put(null, new FacadeServiceV2());
 
-        // Add user management services
+        // Add services
         this.put(new Descriptor('pip-services-accounts', 'client', 'memory', 'default', '*'), new AccountsMemoryClientV1());
         this.put(new Descriptor('pip-services-sessions', 'client', 'memory', 'default', '*'), new SessionsMemoryClientV1());
-        // Add content management services
-        // Beacons
-        this.put(new Descriptor('pip-services-beacons', 'client', 'memory', 'default', '*'), new BeaconsMemoryClientV1());
+        this.put(new Descriptor('pip-services-passwords', 'client', 'null', 'default', '*'), new PasswordsNullClientV1());
+        this.put(new Descriptor('pip-services-roles', 'client', 'memory', 'default', '*'), new RolesMemoryClientV1());
+        this.put(new Descriptor('pip-services-emailsettings', 'client', 'memory', 'default', '*'), new EmailSettingsMemoryClientV1());
+        this.put(new Descriptor('pip-services-sites', 'client', 'direct', 'memory', '*'), new SitesMemoryClientV1());
     }
 
     private configureService(): void {
@@ -67,14 +61,14 @@ export class TestReferences extends ManagedReferences {
             new Descriptor('pip-services', 'endpoint', 'http', 'default', '*')
         );
         service.configure(ConfigParams.fromTuples(
-            'root_path', '', //'/api/1.0',
+            'root_path', '', //'/api/v1',
             'connection.protocol', 'http',
-            'connection.host', '0.0.0.0',
+            'connection.host', 'localhost',
             'connection.port', 3000
         ));
     }
 
-    private createUsersAndSessions(): void {
+    private async createUsersAndSessions(): Promise<void> {
         // Create accounts
         let accountsClient = this.getOneRequired<IAccountsClientV1>(
             new Descriptor('pip-services-accounts', 'client', '*', '*', '*')
@@ -87,7 +81,7 @@ export class TestReferences extends ManagedReferences {
             active: true,
             create_time: new Date()
         };
-        accountsClient.createAccount(null, adminUserAccount, () => {});
+        await accountsClient.createAccount(null, adminUserAccount);
 
         let user1Account = <AccountV1>{
             id: TestUsers.User1Id, 
@@ -96,7 +90,7 @@ export class TestReferences extends ManagedReferences {
             active: true,
             create_time: new Date()
         };
-        accountsClient.createAccount(null, user1Account, () => {});
+        await accountsClient.createAccount(null, user1Account);
 
         let user2Account = <AccountV1>{
             id: TestUsers.User2Id, 
@@ -105,33 +99,60 @@ export class TestReferences extends ManagedReferences {
             active: true,
             create_time: new Date()
         };
-        accountsClient.createAccount(null, user2Account, () => {});
+        await accountsClient.createAccount(null, user2Account);
+
+        // Create test site(s)
+        let sitesClient = this.getOneRequired<ISitesClientV1>(
+            new Descriptor('pip-services-sites', 'client', '*', '*', '*')
+        );
+        let site1 = <SiteV1>{
+            id: TestSites.Site1Id, 
+            name: TestSites.Site1Name
+        };
+        await sitesClient.createSite(null, site1);
+
+        // Create user roles
+        let rolesClient = this.getOneRequired<IRolesClientV1>(
+            new Descriptor('pip-services-roles', 'client', '*', '*', '*')
+        );
+        await rolesClient.setRoles(
+            null, TestUsers.AdminUserId, [ 'admin', TestSites.Site1Id + ':admin' ]);
+        await rolesClient.setRoles(
+            null, TestUsers.User1Id, [ TestSites.Site1Id + ':manager' ]);
+        await rolesClient.setRoles(
+            null, TestUsers.User2Id, [ TestSites.Site1Id + ':user' ]);
 
         // Create opened sessions
         let sessionsClient = this.getOneRequired<ISessionsClientV1>(
             new Descriptor('pip-services-sessions', 'client', '*', '*', '*')
         );
 
-        let adminUserData = _.clone(adminUserAccount);
-        adminUserData.roles = ['admin'];
-        sessionsClient.openSession(
+        let adminUserData: any = Object.assign({}, adminUserAccount);
+        adminUserData.roles = [ 'admin', TestSites.Site1Id + ':admin' ];
+        let session = await sessionsClient.openSession(
             null, TestUsers.AdminUserId, TestUsers.AdminUserName,
-            null, null, adminUserData, null,
-            (err, session) => { session.id = TestUsers.AdminUserSessionId });
+            null, null, adminUserData, null
+        );
 
-        let user1Data = _.clone(user1Account);
-        user1Data.roles = [];
-        sessionsClient.openSession(
+        session.id = TestUsers.AdminUserSessionId
+
+        let user1Data: any = Object.assign({}, user1Account);
+        user1Data.roles = [ TestSites.Site1Id + ':manager' ];
+        session = await sessionsClient.openSession(
             null, TestUsers.User1Id, TestUsers.User1Name,
-            null, null, user1Data, null,
-            (err, session) => { session.id = TestUsers.User1SessionId });
+            null, null, user1Data, null
+        );
 
-        let user2Data = _.clone(user2Account);
-        user2Data.roles = [];
-        sessionsClient.openSession(
+        session.id = TestUsers.User1SessionId
+
+        let user2Data: any = Object.assign({}, user2Account);
+        user2Data.roles = [ TestSites.Site1Id + ':user' ];
+        session = await sessionsClient.openSession(
             null, TestUsers.User2Id, TestUsers.User2Name,
-            null, null, user2Data, null,
-            (err, session) => { session.id = TestUsers.User2SessionId });
+            null, null, user2Data, null
+        );
+
+        session.id = TestUsers.User2SessionId
     }
 
 }

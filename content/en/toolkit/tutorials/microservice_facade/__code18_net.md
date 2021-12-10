@@ -1,5 +1,5 @@
 
-**/bin/run.ts**
+**/bin/main.cs**
 
 ```cs
 using System;

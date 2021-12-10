@@ -2,11 +2,10 @@
 **/test/operations/version1/SessionsRoutesV1.test.ts**
 
 ```typescript
-let _ = require('lodash');
-let async = require('async');
-let assert = require('chai').assert;
+const assert = require('chai').assert;
 
 import { TestReferences } from '../../fixtures/TestReferences';
+import { TestUsers } from '../../fixtures/TestUsers';
 import { TestRestClient } from '../../fixtures/TestRestClient';
 
 suite('SessionRoutesV1', () => {
@@ -20,93 +19,105 @@ suite('SessionRoutesV1', () => {
     let references: TestReferences;
     let rest: TestRestClient;
 
-    setup((done) => {
+    setup(async () => {
         rest = new TestRestClient();
         references = new TestReferences();
-        references.open(null, done);
+        await references.open(null);
     });
 
-    teardown((done) => {
-        references.close(null, done);
+    teardown(async () => {
+        await references.close(null);
     });
 
-    test('should signup new user', (done) => {
-        rest.post('/api/v1/users/signup',
-            USER,
-            (err, req, res, session) => {
-                assert.isNull(err);
+    test('should signup new user', async () => {
 
-                assert.isDefined(session);
-                assert.isDefined(session.id);
-                assert.equal(session.user_name, USER.name);
+        let session = await rest.post('/api/v1/signup', USER);
+        assert.isNotNull(session);
 
-                done();
-            }
-        );
+        assert.isDefined(session);
+        assert.isDefined(session.id);
+        assert.equal(session.user_name, USER.name);
     });
 
-    test('should not signup with the same email', (done) => {
-        async.series([
+    test('should check login for signup', async () => {
+
+        // Check registered email
+        let err = null;
+        try {
+            await rest.get('/api/v1/signup/validate?login=' + TestUsers.User1Login)
+        } catch (ex) {
+            err = ex;
+        }
+        assert.isNotNull(err);
+
+
+        // Check not registered email
+        await rest.get('/api/v1/signup/validate?login=xxx@gmail.com');
+
+    });
+
+    test('should not signup with the same email', async () => {
+
         // Sign up
-            (callback) => {
-                rest.post('/api/v1/users/signup',
-                    USER,
-                    (err, req, res, session) => {
-                        assert.isNull(err);
-                        callback();
-                    }
-                );
-            },
+        await rest.post('/api/v1/signup', USER);
+
         // Try to sign up again
-            (callback) => {
-                rest.post('/api/v1/users/signup',
-                    USER,
-                    (err, req, res, session) => {
-                        assert.isNotNull(err);
-                        callback();
-                    }
-                );
-            }
-        ], done);
+        let err = null;
+        try {
+            await rest.post('/api/v1/signup', USER);
+        } catch (ex) {
+            err = ex;
+        }
+        assert.isNotNull(err);
 
     });
 
-    test('should signout', (done) => {
-        rest.post('/api/v1/users/signout',
-            null,
-            (err, req, res, result) => {
-                assert.isNull(err);
-                done();
+    test('should signout', async () => {
+        await rest.post('/api/v1/signout', null);
+    });
+
+    test('should signin with email and password', async () => {
+
+        // Sign up
+        await rest.post('/api/v1/signup', USER);
+
+        // Sign in with username
+        await rest.post('/api/v1/signin',
+            {
+                login: USER.login,
+                password: USER.password
             }
         );
+
+    });
+    
+    test('should get sessions as admin', async () => {
+        let page = await rest.getAsUser(
+            TestUsers.AdminUserSessionId,
+            '/api/v1/sessions?paging=1&skip=0&take=2',
+        );
+
+        assert.isObject(page);
+
     });
 
-    test('should signin with email and password', (done) => {
-        async.series([
-        // Sign up
-            (callback) => {
-                rest.post('/api/v1/users/signup',
-                    USER,
-                    (err, req, res, session) => {
-                        assert.isNull(err);
-                        callback();
-                    }
-                );
-            },
-        // Sign in with username
-            (callback) => {
-                rest.post('/api/v1/users/signin',
-                    {
-                        login: USER.login,
-                        password: USER.password
-                    },
-                    (err, req, res, session) => {
-                        assert.isNull(err);
-                        callback();
-                    }
-                );
-            }
-        ], done);
+    test('should get user sessions as owner', async () => {
+        let page = await rest.getAsUser(
+            TestUsers.User1SessionId,
+            '/api/v1/sessions/' + TestUsers.User1Id + '?paging=1&skip=0&take=2'
+        );
+
+        assert.isObject(page);
+    });
+
+    test('should restore user sessions as owner', async () => {
+        let session = await rest.postAsUser(
+            TestUsers.User1SessionId,
+            '/api/v1/sessions/restore?session_id=' + TestUsers.User1SessionId,
+            {}
+        );
+
+        assert.isObject(session);
     });
 
 });

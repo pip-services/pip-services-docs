@@ -1,5 +1,5 @@
 
-**/bin/run.js**
+**/bin/main.js**
 
 ```typescript
 let FacadeProcess = require('../obj/src/container/FacadeProcess').FacadeProcess;
@@ -9,6 +9,5 @@ try {
 } catch (ex) {
     console.error(ex);
 }
-
 
 ```

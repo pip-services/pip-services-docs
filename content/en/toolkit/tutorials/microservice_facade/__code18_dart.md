@@ -1,5 +1,5 @@
 
-**/bin/main.go**
+**/bin/main.dart**
 
 ```dart
 import 'package:pip_facade_sample_dart/pip_facade_sample_dart.dart';

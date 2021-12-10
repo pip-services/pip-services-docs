@@ -1,14 +1,14 @@
 
 **/src/operations/version1/BeaconsOperationsV1.ts**
 ```typescript
-let _ = require('lodash');
-let async = require('async');
+import { ConfigParams } from 'pip-services3-commons-nodex';
+import { IReferences } from 'pip-services3-commons-nodex';
+import { Descriptor } from 'pip-services3-commons-nodex'; 
+import { DependencyResolver } from 'pip-services3-commons-nodex';
+import { RestOperations } from 'pip-services3-rpc-nodex';
 
-import { IReferences } from 'pip-services3-commons-node';
-import { Descriptor } from 'pip-services3-commons-node'; 
-import { RestOperations } from 'pip-services3-rpc-node';
-
-import { IBeaconsClientV1 } from 'pip-clients-beacons-node';
+import { IBeaconsClientV1 } from '../../clients/version1/IBeaconsClientV1';
+import { BeaconV1 } from '../../clients/version1/BeaconV1';
 
 export class BeaconsOperationsV1  extends RestOperations {
     private _beaconsClient: IBeaconsClientV1;
@@ -16,7 +16,7 @@ export class BeaconsOperationsV1  extends RestOperations {
     public constructor() {
         super();
 
-        this._dependencyResolver.put('beacons', new Descriptor('pip-services-beacons', 'client', '*', '*', '1.0'));
+        this._dependencyResolver.put('beacons', new Descriptor('beacons', 'client', '*', '*', '1.0'));
     }
 
     public setReferences(references: IReferences): void {
@@ -25,115 +25,82 @@ export class BeaconsOperationsV1  extends RestOperations {
         this._beaconsClient = this._dependencyResolver.getOneRequired<IBeaconsClientV1>('beacons');
     }
 
-    public getBeacons(req: any, res: any): void {
+    public async getBeacons(req: any, res: any): Promise<void> {
         let filter = this.getFilterParams(req);
         let paging = this.getPagingParams(req);
 
-        this._beaconsClient.getBeacons(
-            null, filter, paging, (err, page) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(page);
-                    this.sendResult(req, res);
-                }
-            }
-        );
+        let siteId = req.params.site_id;
+        filter.setAsObject('site_id', siteId);
+
+        let beacons = await this._beaconsClient.getBeacons(null, filter, paging);
+
+        this.sendResult(req, res, beacons);
     }
 
-    public getBeaconById(req: any, res: any): void {
-        let id = req.route.params.id;
-        this._beaconsClient.getBeaconById(
-            null, id, (err, item) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(item);
-                    this.sendResult(req, res);
-                }
-            }
-        );
+    public async getBeacon(req: any, res: any): Promise<void> {
+        let beaconId = req.params.beacon_id;
+
+        let beacon = await this._beaconsClient.getBeaconById(null, beaconId);
+
+        this.sendResult(req, res, beacon);
     }
 
-    public getBeaconByUdi(req: any, res: any): void {
-        let udi = req.route.params.udi;
-        this._beaconsClient.getBeaconByUdi(
-            null, udi, (err, item) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(item);
-                    this.sendResult(req, res);
-                }
-            }
-        );
-    }
-
-    public createBeacon(req: any, res: any): void {
-        let data = req.body;
-
-        this._beaconsClient.createBeacon(
-            null, data, (err, item) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(item);
-                    this.sendResult(req, res);
-                }
-            }
-        );
-    }
-
-    public updateBeacon(req: any, res: any): void {
-        let data = req.body;
-
-        this._beaconsClient.updateBeacon(
-            null, data, (err, item) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(item);
-                    this.sendResult(req, res);
-                }
-            }
-        );
-    }
-
-    public deleteBeaconById(req: any, res: any): void {
-        let id = req.route.params.id;
-
-        this._beaconsClient.deleteBeaconById(
-            null, id, (err, item) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(item);
-                    this.sendResult(req, res);
-                }
-            }
-        );
-    }
-
-    public calculatePosition(req: any, res: any): void {
-        let orgId = req.route.params.org_id || req.body.org_id;
-        let udis = req.route.params.udis || req.body.udis;
-        if (_.isString(udis))
+    public async calculatePosition(req: any, res: any): Promise<void> {
+        let siteId = req.params.site_id;
+        let udis = req.param('udis');
+        if (typeof(udis) == 'string')
             udis = udis.split(',');
-        if (!_.isArray(udis))
-            udis = null;
 
-        this._beaconsClient.calculatePosition(
-            null, orgId, udis, (err, position) => {
-                if (err) {
-                    this.sendError(req, res, err);
-                } else {
-                    res.json(position);
-                    this.sendResult(req, res);
-                }
-            }
+        let position = await this._beaconsClient.calculatePosition(
+            null, siteId, udis
         );
+
+        this.sendResult(req, res, position);
+    }
+    
+    public async createBeacon(req: any, res: any): Promise<void> {
+        let beacon = req.body || {};
+
+        let result = await this._beaconsClient.createBeacon(
+            null, beacon
+        );
+
+        this.sendResult(req, res, result);
     }
 
+    public async updateBeacon(req: any, res: any): Promise<void> {
+        let beaconId = req.params.beacon_id;
+        let beacon = req.body || {};
+        beacon.id = beaconId;
+
+        let result = await this._beaconsClient.updateBeacon(
+            null, beacon
+        );
+
+        this.sendResult(req, res, result);
+    }
+
+    public async deleteBeacon(req: any, res: any): Promise<void> {
+        let beaconId = req.params.beacon_id;
+
+        let result = await this._beaconsClient.deleteBeaconById(
+            null, beaconId
+        );
+        
+        this.sendResult(req, res, result);
+    }
+
+    public async validateBeaconUdi(req: any, res: any): Promise<void> {
+        let udi = req.param('udi');
+
+        let beacon = await this._beaconsClient.getBeaconByUdi(
+            null, udi
+        );
+
+        if (beacon) res.json(beacon.id);
+        else res.json('');
+    }
+    
 }
 ```
 

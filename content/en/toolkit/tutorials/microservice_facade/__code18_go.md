@@ -1,5 +1,5 @@
 
-**/bin/run.go**
+**/bin/main.go**
 
 ```go
 package main

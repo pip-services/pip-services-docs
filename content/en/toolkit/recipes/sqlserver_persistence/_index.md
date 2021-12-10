@@ -187,66 +187,6 @@ Now, we create an instance of this class and configure it according to our datab
   Not available  
 {{< /tabsection >}} 
 
-##### Using SqlServerPersistence
-
-Most CRUD operations return their results in the form of SqlServerPersistence objects containing records. In order to obtain these records, we can get the values of the fields directly using the following command
-
-<center> [SqlServerPersistence object].field </center>
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
-Alternatively, in the case of components implementing the IdentifiableSqlServerPersistence or the IdentifiableJsonSqlServerPersistence classes we can use the _convert_from_public_partial() method, which returns a record in the form of a dictionary.
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
 ##### Connection
 
 Once that our component has been configured we can connect to our database.
@@ -1038,3 +978,58 @@ This method deletes a set of records from a table according to a given list of i
   Not available  
 {{< /tabsection >}}
 
+### Returned objects
+
+In general, CRUD operations return an object with the same fields that were passed to the persistence component and the fields can be accessed in the same way as in the original object.
+
+For example, if we use the get_one_random() method, 
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+we can obtain the record values as
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}

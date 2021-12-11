@@ -274,7 +274,7 @@ Additionally, this class has some auxiliary methods.
 
 {{< tabsection >}}
   Not available  
-{{< /tabsection >}
+{{< /tabsection >}}
 
 #### Other configuration parameters
 
@@ -315,7 +315,7 @@ The following example shows how to specify the above-mentioned fields.
 
 {{< tabsection >}}
   Not available  
-{{< /tabsection >}
+{{< /tabsection >}}
 #### Example
 
 We can now put together a simple example that shows how to use the learned methods. In it, we will first create a message queue, connect to Mosquitto, send a message, receive it and print its content. Finally, we will close our connection to free the used resources. The code is:
@@ -342,7 +342,7 @@ We can now put together a simple example that shows how to use the learned metho
 
 {{< tabsection >}}
   Not available  
-{{< /tabsection >}
+{{< /tabsection >}}
 
 ### Wrapping up
 

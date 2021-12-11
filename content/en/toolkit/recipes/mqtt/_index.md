@@ -136,7 +136,7 @@ and then, define the topic as a configuration parameter
 
 #### Connecting to our app
 
-Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the correlation_id as its parameter. The following example illustrates how to use it.
+Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the correlation_id as its input parameter. The following example illustrates how to use it.
 
 {{< tabsection >}}
   Not available 
@@ -318,7 +318,7 @@ The following example shows how to specify the above-mentioned fields.
 {{< /tabsection >}}
 #### Example
 
-We can now put together a simple example that shows how to use the learned methods. In it, we will first create a message queue, connect to Mosquitto, send a message, receive it and print its content. Finally, we will close our connection to free the used resources. The code is:
+We can now put together a simple example that shows how to use the learned methods. In it, we will first create a message queue and connect it to Mosquitto, and send a message, receive it and print its content. Finally, we will close our connection to free the used resources. The code is:
 
 {{< tabsection >}}
   Not available 
@@ -346,6 +346,8 @@ We can now put together a simple example that shows how to use the learned metho
 
 ### Wrapping up
 
-In this tutorial, we have learned how to create and manage a message queue to communicate with an MQTT-based app using the MqttMessageQueue component.
-We saw that this class can define the topic when an instance of it is created via the constructor. Alternatively, we can define it as a configuration parameter via the configure() method, which is used to set the values of the component’s parameters.  Then, we learned several methods used to send and receive messages. 
+In this tutorial, we have learned how to create and manage a message queue to communicate with an MQTT-based app using the MqttMessageQueue component.    
+
+We saw that this class can define the topic when an instance of it is created via the constructor. Alternatively, we can define it as a configuration parameter via the configure() method, which is used to set the values of the component’s parameters.  Then, we learned several methods used to send and receive messages.     
+
 We also understood how to obtain the number of messages in the queue and how to set up the quality of service level.  Finally, we summarized the usage of the main methods with a comprehensive example.

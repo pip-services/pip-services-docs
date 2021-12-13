@@ -439,7 +439,7 @@ Where
   Not available  
 {{< /tabsection >}}
 
-###### get_count_by_filter()
+###### getCountByFilter()
 
 This method returns an integer representing the number of records that comply with some given conditions. The example below shows how to use it.
 

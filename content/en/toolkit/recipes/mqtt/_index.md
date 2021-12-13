@@ -391,6 +391,10 @@ Where
 
 Additionally, this class has some auxiliary methods. 
 
+##### read_message_count()
+
+This method allows us to obtain the number of messages in a queue that need to be delivered.
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}

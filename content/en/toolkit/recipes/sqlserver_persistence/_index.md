@@ -189,7 +189,7 @@ Now, we create an instance of this class and configure it according to our datab
 
 ##### Connection
 
-Once that our component has been configured we can connect to our database.
+Once that our component has been configured we can connect it to our database.
 
 {{< tabsection >}}
    Not available 
@@ -221,7 +221,7 @@ This component presents several methods for CRUD operations. The following secti
 
 ###### Create
 
-To add a new record to our table, we use the create() method. This method accepts the correlation_id and the data object containing the record to be created as input parameters, and returns a SqlServerPersistence object containing the added record. The example below illustrates its usage.
+To add a new record to our table, we use the create() method. This method accepts the correlationId and the data object containing the record to be created as input parameters, and returns a SqlServerPersistence object containing the added record. The example below illustrates its usage.
 
 {{< tabsection >}}
    Not available 
@@ -275,9 +275,9 @@ Where
 
 ###### Retrieve
 
-In order to retrieve records from our table, we can use three different methods, namely get_one_random(), get_list_by_filter(), and get_page_by_filter(). Additionally, we can use the get_count_by_filter() method to obtain the number of records that comply with a given filter’s condition.
+In order to retrieve records from our table, we can use three different methods, namely getOneRandom(), getListByFilter(), and getPageByFilter(). Additionally, we can use the getCountByFilter() method to obtain the number of records that comply with a given filter’s condition.
 
-###### get_one_random()
+###### getOneRandom()
 
 This method retrieves a random record according to a given filter. The next example shows how to use it.
 
@@ -331,9 +331,9 @@ Where
   Not available  
 {{< /tabsection >}} 
 
-###### get_list_by_filter()
+###### getListByFilter()
 
-This method returns a set of records in accordance with a given filter. It accepts the correlation_id, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
+This method returns a set of records in accordance with a given filter. It accepts the correlationId, a filter, and sorting and projection parameters as inputs. It returns a SqlServerPersistence object with the returned records. The following example illustrates how to use it.
 
 {{< tabsection >}}
    Not available 
@@ -385,9 +385,9 @@ Where
   Not available  
 {{< /tabsection >}}
 
-###### get_page_by_filter()
+###### getPageByFilter()
 
-This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlation_id, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records as part of its data field. The example below explains its usage.
+This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records as part of its data field. The example below explains its usage.
 
 {{< tabsection >}}
    Not available 
@@ -469,11 +469,11 @@ This method returns an integer representing the number of records that comply wi
 
 ###### Update
 
-This class doesn’t present any method to update records in a table. However, we can add one by using the _request() method, as explained in the Using SQL section.
+This class doesn’t present any method to update records in a table.
 
 ###### Delete
 
-This component has the delete_by_filter() method, which is used to delete one or more records in a table. It accepts the correlation_id and a filter as input parameters, and once the execution has been successfully completed, it returns None.
+This component has the deleteByFilter() method, which is used to delete one or more records in a table. It accepts the correlationId and a filter as input parameters, and once the execution has been successfully completed, it returns None.
 
 {{< tabsection >}}
    Not available 
@@ -619,7 +619,7 @@ This component presents several methods that can be used to perform CRUD operati
 
 ###### Create
 
-To insert a new record into a table, we use the create() method. It accepts the correlation_id parameter and a data object as inputs and returns a SqlServerPersistence object containing the inserted record. The following example explains how to use it.
+To insert a new record into a table, we use the create() method. It accepts the correlationId parameter and a data object as inputs and returns a SqlServerPersistence object containing the inserted record. The following example explains how to use it.
 
 {{< tabsection >}}
    Not available 
@@ -675,9 +675,9 @@ Where
 
 This class contains several methods to retrieve records from a database. They are:
 
-###### get_one_by_id()
+###### getOneById()
 
-This method retrieves a record according to a given id. It accepts the correlation_id and the record’s id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
+This method retrieves a record according to a given id. It accepts the correlationId and the record’s id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
 
 {{< tabsection >}}
    Not available 
@@ -729,9 +729,9 @@ Where
   Not available  
 {{< /tabsection >}}
 
-###### get_list_by_ids()
+###### getListByIds()
 
-This method retrieves a set of records according to a set of given ids. It takes the correlation_id and a list with the ids of the records to be retrieved as input parameters. It returns a list of SqlServerPersistence objects, each containing a retrieved record. The example below explains how to use it.
+This method retrieves a set of records according to a set of given ids. It takes the correlationId and a list with the ids of the records to be retrieved as input parameters. It returns a list of SqlServerPersistence objects, each containing a retrieved record. The example below explains how to use it.
 
 {{< tabsection >}}
    Not available 
@@ -789,7 +789,7 @@ This class has two methods that can be used to update records. These methods are
 
 ###### update()
 
-This method updates a complete record. It takes the correlation_id and a data object as input parameters. It returns a SqlServerPersistence object with the updated record. The following example illustrates its usage.
+This method updates a complete record. It takes the correlationId and a data object as input parameters. It returns a SqlServerPersistence object with the updated record. The following example illustrates its usage.
 
 {{< tabsection >}}
    Not available 
@@ -841,9 +841,9 @@ Where
   Not available  
 {{< /tabsection >}}
 
-###### update_partially()
+###### updatePartially()
 
-This method updates one or more given fields in a record. It accepts the correlation_id, the record’s id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
+This method updates one or more given fields in a record. It accepts the correlationId, the record’s id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
 
 {{< tabsection >}}
    Not available 
@@ -899,9 +899,9 @@ Where
 
 This class contains two methods that can be used to delete records. These are:
 
-###### delete_by_id()
+###### deleteById()
 
-This method deletes a record according to a given id. It accepts the correlation_id and the id of the record to be deleted as input parameters, and returns a SqlServerPersistence object with the deleted record. The following example shows how to use it.
+This method deletes a record according to a given id. It accepts the correlationId and the id of the record to be deleted as input parameters, and returns a SqlServerPersistence object with the deleted record. The following example shows how to use it.
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -951,8 +951,8 @@ Where
   Not available  
 {{< /tabsection >}}
 
-###### delete_by_ids()
-This method deletes a set of records from a table according to a given list of ids. It accepts the correlation_id and a list containing the ids of the records to be deleted as input parameters. Once it has executed the query, it returns None.
+###### deleteByIds()
+This method deletes a set of records from a table according to a given list of ids. It accepts the correlationId and a list containing the ids of the records to be deleted as input parameters. Once it has executed the query, it returns None.
 
 {{< tabsection >}}
    Not available 
@@ -982,7 +982,7 @@ This method deletes a set of records from a table according to a given list of i
 
 In general, CRUD operations return an object with the same fields that were passed to the persistence component and the fields can be accessed in the same way as in the original object.
 
-For example, if we use the get_one_random() method, 
+For example, if we use the getOneRandom() method, 
 
 {{< tabsection >}}
    Not available 

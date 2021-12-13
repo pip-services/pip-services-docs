@@ -136,7 +136,7 @@ and then, define the topic as a configuration parameter
 
 #### Connecting to our app
 
-Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the correlation_id as its input parameter. The following example illustrates how to use it.
+Now that our component has been defined, we can connect it to our MQTT app through the open()/openAsync() method, which takes the correlationId as its input parameter. The following example illustrates how to use it.
 
 {{< tabsection >}}
   Not available 
@@ -162,7 +162,7 @@ Now that our component has been defined, we can connect it to our MQTT app throu
   Not available  
 {{< /tabsection >}}
 
-Once the queue has been used, we can close it to free resources with the close()/closeAsync() method, which takes the correlation_id as its input parameter. The example below shows its usage.
+Once the queue has been used, we can close it to free resources with the close()/closeAsync() method, which takes the correlationId as its input parameter. The example below shows its usage.
 
 {{< tabsection >}}
   Not available 
@@ -191,9 +191,9 @@ Once the queue has been used, we can close it to free resources with the close()
 
 #### Creating and sending a message
 
-After our connection is ready, we can create a message and send it to our app. To create a message, we use the MessageEnvelope component from the messaging module. This class takes the correlation_id, the message type, and the message as input parameters. 
+After our connection is ready, we can create a message and send it to our app. To create a message, we use the MessageEnvelope component from the messaging module. This class takes the correlationId, the message type, and the message as input parameters. 
 
-Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the correlation_id and the message envelope as input parameters. The example below shows how to send a message of type “mymessage” containing the text “ABC123”.
+Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the correlationId and the message envelope as input parameters. The example below shows how to send a message of type “mymessage” containing the text “ABC123”.
 
 {{< tabsection >}}
   Not available 
@@ -225,7 +225,8 @@ Once we have our message envelope, we can use the send()/sendAsync() to send a m
 This component contains several methods that can be used to read a message from an MQTT app. They are explained in the following sections.
 
 ##### receive()
-This method receives an incoming message and removes it from the queue. It takes the correlation_id and a waiting timeout in milliseconds as input parameters. It returns a message envelope containing the received message. 
+
+This method receives an incoming message and removes it from the queue. It takes the correlationId and a waiting timeout in milliseconds as input parameters. It returns a message envelope containing the received message. 
 
 {{< tabsection >}}
   Not available 
@@ -251,7 +252,7 @@ This method receives an incoming message and removes it from the queue. It takes
   Not available  
 {{< /tabsection >}}
 
-Now, to obtain the text of the received message, we can use the get_message_as_string() method. The following example shows how to do this.
+Now, to obtain the text of the received message, we can use the getMessageAsString() method. The following example shows how to do this.
 
 
 {{< tabsection >}}
@@ -335,7 +336,7 @@ Where
 
 ##### peek_batch()
 
-This method peeks multiple incoming messages from the queue in the form of a list and without removing them. If there are no messages available in the queue, it returns an empty list. As input parameters, it takes the correlation_id and the maximum number of messages to peek. The following example peeks up to three messages. As we had sent only one message, it retrieves it and then stores its content in a message envelope contained in a list. 
+This method peeks multiple incoming messages from the queue in the form of a list and without removing them. If there are no messages available in the queue, it returns an empty list. As input parameters, it takes the correlationId and the maximum number of messages to peek. The following example peeks up to three messages. As we had sent only one message, it retrieves it and then stores its content in a message envelope contained in a list. 
 
 {{< tabsection >}}
   Not available 
@@ -431,7 +432,7 @@ MQTT accepts three different levels, which are:
 
 Based on the above, we can specify our preferred level via the _qos field in our configuration by stating its integer value (See the example in the next section). 
 
-##### _auto_subscribe
+##### _autoSubscribe
 
 This is a Boolean field. By declaring it as true, our component will automatically subscribe to the specified topic. This field can be specified in our configuration.
 

@@ -9,7 +9,7 @@ description: >-
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-## Key takeaways
+### Key takeaways
 
 <table class="full-width-table">
   <tr>
@@ -1055,5 +1055,8 @@ This method deletes a set of records whose ids are specified in the form of a li
   Not available  
 {{< /tabsection >}}
 
+### Wrapping up
+
+In this tutorial, we have seen how to create three different MySQL persistence components, namely MySqlPersistence, IdentifiableMySqlPersistence, and IdentifiableJsonMySqlPersistence. The first is the most basic component and is the parent class of the other two. The second is aimed at identifiable objects, that is, objects that have a unique id for each record, and, the third is used to persist JSON objects. For each of these components, we learned how to implement them and perform basic CRUD operations by using their methods. 
 
 

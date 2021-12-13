@@ -334,7 +334,7 @@ Where
   Not available  
 {{< /tabsection >}}
 
-##### peek_batch()
+##### peekBatch()
 
 This method peeks multiple incoming messages from the queue in the form of a list and without removing them. If there are no messages available in the queue, it returns an empty list. As input parameters, it takes the correlationId and the maximum number of messages to peek. The following example peeks up to three messages. As we had sent only one message, it retrieves it and then stores its content in a message envelope contained in a list. 
 

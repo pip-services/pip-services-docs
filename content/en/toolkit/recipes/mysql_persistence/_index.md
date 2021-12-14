@@ -1111,33 +1111,9 @@ In order to implement this component, we create a class that inherits it. In add
 
 Once that this class has been defined, we can create an instance of it, configure its connection parameters and connect it to our database in the same manner as we did with the IdentifiableMySqlPersistence component.
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code39_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
 ##### CRUD operations
 
-This class inherits most of its methods from the IdentifiableMySqlPersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. An exception is the updatePartially() method that requires us to pass an AnyValueMap() object as input parameter. An example of this is:
+This class inherits most of its methods from the IdentifiableMySqlPersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. 
 
 
 ### Wrapping up

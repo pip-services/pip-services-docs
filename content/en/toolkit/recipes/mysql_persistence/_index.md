@@ -1050,6 +1050,96 @@ we can obtain the record values as
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+#### IdentifiableJsonMySqlPersistence
+
+##### Pre-requisites
+
+In order to use this component, we need to import it first. This can be done with the following command
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### Component implementation
+
+In order to implement this component, we create a class that inherits it. In addition, we need to define the method defineSchema(), which will allow us to use a table with two fields, namely id and data, where the data field will store the JSON values. Our class will look something like this
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code38_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Once that this class has been defined, we can create an instance of it, configure its connection parameters and connect it to our database in the same manner as we did with the IdentifiableMySqlPersistence component.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code39_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### CRUD operations
+
+This class inherits most of its methods from the IdentifiableMySqlPersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. An exception is the updatePartially() method that requires us to pass an AnyValueMap() object as input parameter. An example of this is:
+
+
 ### Wrapping up
 
 In this tutorial, we have seen how to create three different MySQL persistence components, namely MySqlPersistence, IdentifiableMySqlPersistence, and IdentifiableJsonMySqlPersistence. The first is the most basic component and is the parent class of the other two. The second is aimed at identifiable objects, that is, objects that have a unique id for each record, and, the third is used to persist JSON objects. For each of these components, we learned how to implement them and perform basic CRUD operations by using their methods. 

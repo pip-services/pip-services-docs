@@ -1,6 +1,4 @@
 
 ```python
-result.id      # Returns '1'
-result.key     # Returns 'key 1'
-result.content # Returns 'content 1'
+result = persistence.get_one_random(None, "[key]='key 1'")
 ```

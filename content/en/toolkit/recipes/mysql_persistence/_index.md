@@ -291,7 +291,7 @@ Where
 
 There are four methods that can be used to retrieve records from a database. They are:
      
-###### get_one_random()
+###### getOneRandom()
 
 This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of ‘1’.
 
@@ -345,7 +345,7 @@ Where
   Not available  
 {{< /tabsection >}} 
      
-###### get_list_by_filter()
+###### getListByFilter()
 
 his method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to ‘1’.
 
@@ -399,7 +399,7 @@ Where
   Not available  
 {{< /tabsection >}} 
      
-###### get_page_by_filter()
+###### getPageByFilter()
 
 Similar to the previous one, this method retrieves a set of records that comply with a given filter. The input parameters are the correlation_id, a filter, and sorting and projection JSON objects. The output is in the form of a DataPage object, and the records are contained in the data field of this object. The following example shows how to extract those records with an id equal to ‘1’.
 
@@ -453,7 +453,7 @@ Where
   Not available  
 {{< /tabsection >}} 
      
-###### get_count_by_filter()
+###### getCountByFilter()
 
 This method returns an integer indicating the number of records that comply with a given filter. The example below shows how to obtain the number of records with a key equal to ‘key 1’.
 
@@ -690,7 +690,7 @@ Where
 
 This class presents several methods that can be used to retrieve one or more records from a table. They are:
      
-###### get_one_by_id()
+###### getOneById()
 
 This method returns a record from the database. It accepts the correlation_id and the id of the record as input parameters. The following example shows how to use it.
 
@@ -744,7 +744,7 @@ Where
   Not available  
 {{< /tabsection >}} 
      
-###### get_list_by_id()
+###### getListById()
 
 This method returns a set of records from a database. It accepts the correlation_id and a list containing record ids as input parameters. The result is in the form of a list of MySqlPersistence objects, each containing a record. The example below shows how to use it.
 
@@ -856,7 +856,7 @@ Where
   Not available  
 {{< /tabsection >}}
      
-###### update_partially()
+###### updatePartially()
 
 This method updates one or more fields of a given record. It takes the correlation_id, the id of the record to be updated, and a dictionary containing the fields and their updated values as input parameters. If the update was successful, it returns the updated record. Otherwise, it returns None.
 
@@ -914,7 +914,7 @@ Where
 
 This class presents two different methods that can be used to delete records from a database. They are:
      
-###### delete_by_id()
+###### deleteById()
 
 This method deletes a record specified by its id. It also requires the correlation_id as input parameter. If the delete was successful, it returns the deleted record. Otherwise, it returns None. The example below explains how to use it.
 
@@ -967,7 +967,7 @@ Where
   Not available  
 {{< /tabsection >}}
      
-###### delete_by_ids()
+###### deleteByIds()
 
 This method deletes a set of records whose ids are specified in the form of a list. It also requires the correlation_id as input parameter. After execution, it returns None. The following example shows how to use it. 
 

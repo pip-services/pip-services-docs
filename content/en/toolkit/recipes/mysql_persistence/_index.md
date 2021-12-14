@@ -201,67 +201,7 @@ Once our persistence component has been defined, we need to create an instance o
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}} 
-
-##### Using MySqlPersistence objects
-
-Most of the CRUD operations return results in the form of MySqlPersistence objects, which in some cases contain records. To extract these records we can do two things. First, we can get every field value directly via the following command
-
-<center>[MySqlPersistence object].field </center>
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
-Alternatively, in the case of those components that inherit from IdentifiableMySqlPersistence and IdentifiableJsonMySqlPersistence, we can use the _convert_from_public_partial() method. This method returns a record in the form of a dictionary.
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
+ 
 ##### Connection
 After implementing our persistence component, we need to connect it to our database with the open() method.
 

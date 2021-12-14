@@ -1033,3 +1033,7 @@ we can obtain the record values as
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+### Wrapping up
+
+In this tutorial, we have seen how to create and use three different components for SQL Server persistence. The first was SqlServerPersistence, which is a basic persistence component that is used as a parent to the other two components. The second was IdentifiableSqlPersistence, which is a persistence component for objects that can be uniquely identifiable via an id field. The last one was IdentifiableJsonSqlServerPersistence, which is similar to the previous one but considers identifiable JSON objects. For each of them, we saw how to perform CRUD operations using the methods available in each class.

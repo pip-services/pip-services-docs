@@ -6,29 +6,25 @@ Create a **Service.csproj**, **Client.csproj** and **Process.csproj** files at t
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <AssemblyName>PipServices.Templates.Facade.Service</AssemblyName>
-        <RootNamespace>PipServices.Templates.Facade</RootNamespace>
-        <Version>1.0.1</Version>
-        <Authors>Sergey Seroukhov, Denis Kuznetsov</Authors>
-        <Copyright>Conceptual Vision Consulting LLC. 2017-2020</Copyright>
-        <Description>PipServices.Templates facade</Description>
-      <Company>Conceptual Vision Consulting LLC.</Company>
-      <Product>PipServices.Templates.Facade</Product>
+        <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+        <AssemblyName>Pip.Services.SampleFacade.Service</AssemblyName>
+        <RootNamespace>Pip.Services.SampleFacade</RootNamespace>
+        <Version>1.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Remove="Data.cs" />
     </ItemGroup>
     <ItemGroup>
-      <PackageReference Include="PipServices3.Commons" Version="3.1.2" />
-      <PackageReference Include="PipServices3.Container" Version="3.1.1" />
-      <PackageReference Include="PipServices3.Rpc" Version="3.3.9" />
+      <PackageReference Include="PipServices3.Commons" Version="3.3.0" />
+      <PackageReference Include="PipServices3.Container" Version="3.2.0" />
+      <PackageReference Include="PipServices3.Rpc" Version="3.5.2" />
     </ItemGroup>
     <ItemGroup>
       <ProjectReference Include="..\Client\Client.csproj" />
     </ItemGroup>
 </Project>
+
 ```
 
 **/src/client/client.csproj**
@@ -36,14 +32,14 @@ Create a **Service.csproj**, **Client.csproj** and **Process.csproj** files at t
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <AssemblyName>PipServices.Templates.Facade.Client</AssemblyName>
-        <RootNamespace>PipServices.Templates.Facade</RootNamespace>
+      <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+        <AssemblyName>Pip.Services.SampleFacade.Client</AssemblyName>
+        <RootNamespace>Pip.Services.SampleFacade</RootNamespace>
         <Version>1.0.0</Version>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="PipServices3.Commons" Version="3.1.2" />
+      <PackageReference Include="PipServices3.Commons" Version="3.3.0" />
     </ItemGroup>
 
 </Project>
@@ -55,7 +51,7 @@ Create a **Service.csproj**, **Client.csproj** and **Process.csproj** files at t
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+      <TargetFramework>net5.0</TargetFramework>
         <OutputType>Exe</OutputType>
         <AssemblyName>run</AssemblyName>
     </PropertyGroup>
@@ -65,6 +61,7 @@ Create a **Service.csproj**, **Client.csproj** and **Process.csproj** files at t
     </ItemGroup>
 
 </Project>
+
 
 ```
 

@@ -2,38 +2,49 @@
 **/test/operations/version1/SessionsRoutesV1Test.cs**
 
 ```cs
-
-using PipServices.Templates.Facade.Clients.Version1;
-using PipServices.Templates.Facade.Fixtures;
+using Pip.Services.SampleFacade.Clients.Version1;
+using Pip.Services.SampleFacade.Fixtures;
 using PipServices3.Commons.Data;
-using PipServices3.Commons.Errors;
 using PipServices3.Commons.Refer;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PipServices.Templates.Facade.Operations.Version1
+namespace Pip.Services.SampleFacade.Operations.Version1
 {
 	[Collection("Sequential")]
-	public class SessionsRoutesV1Test : IDisposable
+	public class SitesRoutesV1Test: IDisposable
 	{
-		SignupData USER = new SignupData
+		SiteV1 SITE1 = new SiteV1 
 		{
-			Login = "test",
-			Name = "Test User",
-			Email = "test@conceptual.vision",
-			Password = "test123"
+			Id = "2",
+			Code = "111",
+			Name = "Site #1",
+			Description = "Test site #1",
+			CreateTime = DateTime.Now,
+			CreatorId = "123",
+			Active = true
+		};
+
+		SiteV1 SITE2 = new SiteV1
+		{
+			Id = "3",
+			Code = "222",
+			Name = "Site #2",
+			Description = "Test site #2",
+			CreateTime = DateTime.Now,
+			CreatorId = "123",
+			Active = true
 		};
 
 		private readonly TestReferences references;
 		private readonly TestRestClient rest;
 
-		public SessionsRoutesV1Test()
+		public SitesRoutesV1Test()
 		{
 			rest = new TestRestClient();
 			references = new TestReferences();
+			references.Put(new Descriptor("iqs-services-facade", "operations", "sites", "default", "1.0"), new SitesOperationsV1());
 			references.OpenAsync(null).Wait();
 		}
 
@@ -43,77 +54,89 @@ namespace PipServices.Templates.Facade.Operations.Version1
 		}
 
 		[Fact]
-		public async Task It_Should_Signup_New_User()
+		public async Task It_Should_Perform_Site_OperationsAsync()
 		{
-			var session = await rest.PostAsync<SessionV1>("/api/v1/signup", USER);
+			SiteV1 site1, site2;
 
-			Assert.NotNull(session);
-			Assert.NotNull(session.Id);
-			Assert.Equal(USER.Name, session.UserName);
-		}
+			// Create one site
+			var site = await rest.PostAsUserAsync<SiteV1>(
+					TestUsers.AdminUserSessionId,
+					"/api/v1/sites",
+					SITE1);
 
-		[Fact]
-		public async Task It_Should_Check_Login_For_Signup()
-		{
-			// Check registered email
-			await Assert.ThrowsAsync<BadRequestException>(async () => await rest.GetAsync<string>("/api/v1/signup/validate?login=" + TestUsers.User1Login));
+			Assert.NotNull(site);
+			Assert.Equal(site.Name, SITE1.Name);
+			Assert.Equal(site.Description, SITE1.Description);
 
-			// Check not registered email
-			var result = await rest.GetAsync<string>("/api/v1/signup/validate?login=xxx@gmail.com");
-			Assert.True(string.IsNullOrEmpty(result));
-		}
+			site1 = site;
 
-		[Fact]
-		public async Task It_Should_Not_Signup_With_The_Same_Email()
-		{
-			// Sign up
-			var session = await rest.PostAsync<SessionV1>("/api/v1/signup", USER);
+			// Create another site
+			site = await rest.PostAsUserAsync<SiteV1>(
+					TestUsers.AdminUserSessionId,
+					"/api/v1/sites",
+					SITE2);
 
-			// Try to sign up again
-			await Assert.ThrowsAsync<BadRequestException>(async () => await rest.PostAsync<SessionV1>("/api/v1/signup", USER));
-		}
+			Assert.NotNull(site);
+			Assert.Equal(site.Name, SITE2.Name);
+			Assert.Equal(site.Description, SITE2.Description);
 
-		[Fact]
-		public async Task It_Should_Signout()
-		{
-			var result = await rest.PostAsync<string>("/api/v1/signout");
-			Assert.True(string.IsNullOrEmpty(result));
-		}
+			site2 = site;
 
-		[Fact]
-		public async Task It_Should_Signin_With_Email_And_Password()
-		{
-			// Sign up
-			var session = await rest.PostAsync<SessionV1>("/api/v1/signup", USER);
-			Assert.NotNull(session);
+			// Get all sites
+			var page = await rest.GetAsUserAsync<DataPage<SiteV1>>(
+					TestUsers.AdminUserSessionId,
+					"/api/v1/sites");
+			Assert.NotNull(page);
+			// Account for 1 test site
+			Assert.Equal(3, page.Data.Count);
 
-			// Sign in with username
-			session = await rest.PostAsync<SessionV1>("/api/v1/signin", new 
-			{
-				login = USER.Login,
-                password = USER.Password
-			});
-			Assert.NotNull(session);
-		}
+			// Find site by code
+			site = await rest.GetAsync<SiteV1>("/api/v1/sites/find_by_code?code=" + site1.Code);
+			Assert.NotNull(site);
+			Assert.Equal(site1.Id, site.Id);
 
-		[Fact]
-		public async Task It_Should_Get_Sessions_As_Admin()
-		{
-			var page = await rest.GetAsUserAsync<DataPage<SessionV1>>(
+			// Validate site code
+			var result = await rest.PostAsUserAsync<string>(
+				TestUsers.AdminUserSessionId, 
+				"/api/v1/sites/validate_code?code=" + site1.Code);
+			Assert.Equal(site1.Id, result);
+
+			// Generate code
+			result = await rest.PostAsUserAsync<string>(
+				TestUsers.AdminUserSessionId, 
+				"/api/v1/sites/" + site1.Id + "/generate_code");
+			Assert.NotNull(result);
+
+			// Update the site
+			site1.Description = "Updated Content 1";
+			site1.Center = new CenterObjectV1 { Type = "Point", Coordinates = new double[] { 32, -110 } };
+			site1.Radius = 5;
+
+			site = await rest.PutAsUserAsync<SiteV1>(
 				TestUsers.AdminUserSessionId,
-				"/api/v1/sessions?paging=1&skip=0&take=2");
+				"/api/v1/sites/" + site1.Id,
+				site1);
 
-			Assert.NotNull(page);
-		}
+			Assert.NotNull(site);
+			Assert.Equal("Updated Content 1", site.Description);
+			Assert.Equal(site1.Name, site.Name);
+			Assert.NotNull(site.Center);
+			Assert.NotNull(site.Radius);
 
-		[Fact]
-		public async Task It_Should_Get_User_Sessions_As_Owner()
-		{
-			var page = await rest.GetAsUserAsync<DataPage<SessionV1>>(
-				TestUsers.User1SessionId,
-				"/api/v1/sessions/" + TestUsers.User1Id + "?paging=1&skip=0&take=2");
+			site1 = site;
 
-			Assert.NotNull(page);
+			// Delete site
+			site = await rest.DelAsUserAsync<SiteV1>(
+				TestUsers.AdminUserSessionId,
+				"/api/v1/sites/" + site1.Id);
+			Assert.NotNull(site);
+
+			// Try to get delete site
+			site = await rest.GetAsUserAsync<SiteV1>(
+				TestUsers.AdminUserSessionId,
+				"/api/v1/sites/" + site1.Id);
+			Assert.NotNull(site);
+			Assert.True(site.Deleted);
 		}
 	}
 }

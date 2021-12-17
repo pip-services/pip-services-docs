@@ -1,11 +1,11 @@
-**/test/fixture/TestReferences.cs**
+**/test/fixtures/TestReferences.cs**
 
 ```cs
-using PipServices.Templates.Facade.Build;
-using PipServices.Templates.Facade.Clients.Version1;
-using PipServices.Templates.Facade.Operations.Version1;
-using PipServices.Templates.Facade.Services.Version1;
-using PipServices.Templates.Facade.Services.Version2;
+using Pip.Services.SampleFacade.Build;
+using Pip.Services.SampleFacade.Clients.Version1;
+using Pip.Services.SampleFacade.Operations.Version1;
+using Pip.Services.SampleFacade.Services.Version1;
+using Pip.Services.SampleFacade.Services.Version2;
 using PipServices3.Commons.Config;
 using PipServices3.Commons.Refer;
 using PipServices3.Container.Refer;
@@ -15,7 +15,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace PipServices.Templates.Facade.Fixtures
+namespace Pip.Services.SampleFacade.Fixtures
 {
 	public class TestReferences: ManagedReferences
 	{

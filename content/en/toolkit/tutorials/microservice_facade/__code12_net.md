@@ -2,21 +2,22 @@
 **/test/operations/version1/BeaconsRoutesV1Test.cs**
 
 ```cs
-using PipServices.Templates.Facade.Clients.Version1;
-using PipServices.Templates.Facade.Fixtures;
+using Pip.Services.SampleFacade.Clients.Version1;
+using Pip.Services.SampleFacade.Fixtures;
 using PipServices3.Commons.Data;
 using PipServices3.Commons.Refer;
 using System;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace PipServices.Templates.Facade.Operations.Version1
+namespace Pip.Services.SampleFacade.Operations.Version1
 {
 
 	[Collection("Sequential")]
 	public class BeaconsRoutesV1Test: IDisposable
 	{
-		BeaconV1 BEACON1 = new BeaconV1 {
+		BeaconV1 BEACON1 = new() 
+		{
 			Id = "1",
 			Udi = "000001",
 			SiteId = "1",
@@ -24,7 +25,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			Center = new CenterObjectV1 { Type = "Point", Coordinates = new double[] { 0, 0 } },
 			Radius = 50
 		};
-		BeaconV1 BEACON2 = new BeaconV1
+		BeaconV1 BEACON2 = new()
 		{
 			Id = "2",
 			Udi = "000002",
@@ -33,7 +34,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			Center = new CenterObjectV1 { Type = "Point", Coordinates = new double[] { 2, 2 } },
 			Radius = 70
 		};
-		BeaconV1 BEACON3 = new BeaconV1
+		BeaconV1 BEACON3 = new()
 		{
 			Id = "3",
 			Udi = "000003",
@@ -50,7 +51,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 		{
 			rest = new TestRestClient();
 			references = new TestReferences();
-			references.Put(new Descriptor("pip-services-beacons", "client", "memory", "default", "1.0"), new BeaconsMemoryClientV1());
+			references.Put(new Descriptor("beacons", "client", "memory", "default", "1.0"), new BeaconsMemoryClientV1());
 			references.OpenAsync(null).Wait();
 		}
 

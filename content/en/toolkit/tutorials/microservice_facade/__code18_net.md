@@ -1,9 +1,9 @@
 
-**/bin/main.cs**
+**/src/process/Program.cs**
 
 ```cs
 using System;
-using PipServices.Templates.Facade.Container;
+using Pip.Services.SampleFacade.Container;
 
 namespace Process
 {
@@ -24,7 +24,6 @@ namespace Process
         }
     }
 }
-
 
 ```
 

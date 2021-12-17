@@ -1,5 +1,5 @@
 
-**src/service/services/operations/version1/SessionUserV1.cs**
+**src/service/operations/version1/SessionUserV1.cs**
 
 ```cs
 using System;
@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace PipServices.Templates.Facade.Operations.Version1
+namespace Pip.Services.SampleFacade.Operations.Version1
 {
 	[DataContract]
 	public class SessionUserV1
@@ -47,7 +47,6 @@ namespace PipServices.Templates.Facade.Operations.Version1
 		public object CustomDat { get; set; }
 	}
 }
-
 
 ```
 

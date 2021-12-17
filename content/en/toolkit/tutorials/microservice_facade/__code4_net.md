@@ -1,9 +1,9 @@
 
-**/src/service/services/operations/version1/BeaconsOperationsV1.cs**
+**/src/service/operations/version1/BeaconsOperationsV1.cs**
 ```cs
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using PipServices.Templates.Facade.Clients.Version1;
+using Pip.Services.SampleFacade.Clients.Version1;
 using PipServices3.Commons.Convert;
 using PipServices3.Commons.Refer;
 using PipServices3.Rpc.Services;
@@ -14,7 +14,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PipServices.Templates.Facade.Operations.Version1
+namespace Pip.Services.SampleFacade.Operations.Version1
 {
 	public class BeaconsOperationsV1 : RestOperations
 	{
@@ -22,7 +22,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 
 		public BeaconsOperationsV1()
 		{
-			_dependencyResolver.Put("beacons", new Descriptor("pip-services-beacons", "client", "*", "*", "1.0"));
+			_dependencyResolver.Put("beacons", new Descriptor("beacons", "client", "*", "*", "1.0"));
 		}
 
 		public new void SetReferences(IReferences references)

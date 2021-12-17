@@ -10,14 +10,14 @@ using PipServices3.Rpc.Services;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using PipServices.Templates.Facade.Build;
-using PipServices.Templates.Facade.Operations.Version1;
+using Pip.Services.SampleFacade.Build;
+using Pip.Services.SampleFacade.Operations.Version1;
 using System.Collections.Generic;
 using PipServices3.Commons.Errors;
 using System.Linq;
 using Microsoft.Extensions.Primitives;
 
-namespace PipServices.Templates.Facade.Services.Version1
+namespace Pip.Services.SampleFacade.Services.Version1
 {
     public class AuthorizerV1 : IReferenceable
     {
@@ -95,7 +95,7 @@ namespace PipServices.Templates.Facade.Services.Version1
         {
             return async (HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData, Func<Task> next) =>
             {
-                var sessionUser = HttpRequestHelper.GetContextItem<SessionUserV1>(request, "user");
+                var sessionUser = GetContextItem<SessionUserV1>(request, "user");
 
                 if (sessionUser == null)
                 {
@@ -157,7 +157,7 @@ namespace PipServices.Templates.Facade.Services.Version1
         {
             return async (HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData, Func<Task> next) =>
             {
-                var sessionUser = HttpRequestHelper.GetContextItem<SessionUserV1>(request, "user");
+                var sessionUser = GetContextItem<SessionUserV1>(request, "user");
 
                 if (sessionUser == null)
                 {
@@ -191,6 +191,17 @@ namespace PipServices.Templates.Facade.Services.Version1
 
 				await next();
             };
+        }
+
+        private static T GetContextItem<T>(HttpRequest request, string name)
+            where T : class
+        {
+            if (request != null && request.HttpContext.Items.TryGetValue(name, out object item))
+            {
+                return item as T;
+            }
+
+            return null;
         }
     }
 }

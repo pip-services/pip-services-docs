@@ -1,5 +1,5 @@
 
-**/test/fixture/TestRestClient.cs**
+**/test/fixtures/TestRestClient.cs**
 
 ```cs
 using PipServices3.Commons.Convert;
@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PipServices.Templates.Facade.Fixtures
+namespace Pip.Services.SampleFacade.Fixtures
 {
 	public class TestRestClient
 	{

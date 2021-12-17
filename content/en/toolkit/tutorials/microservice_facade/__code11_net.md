@@ -1,8 +1,8 @@
 
-**/test/fixture/TestUsers.cs**
+**/test/fixtures/TestUsers.cs**
 
 ```cs
-namespace PipServices.Templates.Facade.Fixtures
+nnamespace Pip.Services.SampleFacade.Fixtures
 {
 	public static class TestUsers
 	{
@@ -25,6 +25,7 @@ namespace PipServices.Templates.Facade.Fixtures
         public static readonly string User2SessionId = "333";
 	}
 }
+
 
 ```
 

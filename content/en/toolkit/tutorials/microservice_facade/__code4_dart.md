@@ -1,5 +1,5 @@
 
-**lib/src//operations/version1/BeaconsOperationsV1.dart**
+**lib/src/operations/version1/BeaconsOperationsV1.dart**
 ```dart
 import 'dart:async';
 import 'dart:convert';

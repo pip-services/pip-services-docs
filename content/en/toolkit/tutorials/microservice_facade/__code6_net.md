@@ -4,7 +4,7 @@
 ```cs
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
-using PipServices.Templates.Facade.Clients.Version1;
+using Pip.Services.SampleFacade.Clients.Version1;
 using PipServices3.Commons.Config;
 using PipServices3.Commons.Convert;
 using PipServices3.Commons.Data;
@@ -19,7 +19,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PipServices.Templates.Facade.Operations.Version1
+namespace Pip.Services.SampleFacade.Operations.Version1
 {
 	public class SessionsOperationsV1 : RestOperations
 	{
@@ -130,7 +130,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 					.Select(r => r.Substring(0, r.IndexOf(":")))
 					.ToList();
 
-				List<SiteV1> sites = new List<SiteV1>();
+				var sites = new List<SiteV1>();
 
 				if (siteIds.Count > 0)
 				{
@@ -175,7 +175,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task SignupAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task SignupAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -204,7 +204,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 					null, account.Id, password);
 
 				// Activate all pending invitations
-				List<string> roles = new List<string>();
+				var roles = new List<string>();
 				var email = signupData.Email;
 				var invitations = await _invitationsClient.ActivateInvitationsAsync(null, email, account.Id);
 
@@ -219,7 +219,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 
 						if (invitation.SiteId != null)
 						{
-							invitation.Role = invitation.Role ?? "user";
+							invitation.Role ??= "user";
 							var role = invitation.SiteId + ':' + invitation.Role;
 							roles.Add(role);
 						}
@@ -255,7 +255,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task SignupValidateAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task SignupValidateAsync(HttpRequest request, HttpResponse response)
 		{
 			var parameters = GetParameters(request);
 
@@ -285,7 +285,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			else await SendEmptyResultAsync(response);
 		}
 
-		public async Task SigninAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task SigninAsync(HttpRequest request, HttpResponse response)
 		{
 			var parameters = GetParameters(request);
 
@@ -332,7 +332,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 				}
 
 				// Retrieve user roles
-				List<string> roles = new List<string>();
+				var roles = new List<string>();
 
 				if (_rolesClient != null)
 				{
@@ -351,7 +351,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task SignoutAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task SignoutAsync(HttpRequest request, HttpResponse response)
 		{
 			// Cleanup cookie with session id
 			// if (_cookieEnabled)
@@ -373,7 +373,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task GetSessionsAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task GetSessionsAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -389,7 +389,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task RestoreSessionAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task RestoreSessionAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -411,7 +411,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task GetUserSessionsAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task GetUserSessionsAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -434,7 +434,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task GetCurrentSessionAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task GetCurrentSessionAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -450,7 +450,7 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			}
 		}
 
-		public async Task CloseSessionAsync(HttpRequest request, HttpResponse response, ClaimsPrincipal user, RouteData routeData)
+		public async Task CloseSessionAsync(HttpRequest request, HttpResponse response)
 		{
 			try
 			{
@@ -465,6 +465,17 @@ namespace PipServices.Templates.Facade.Operations.Version1
 			{
 				await SendErrorAsync(response, ex);
 			}
+		}
+		
+		private static new T GetContextItem<T>(HttpRequest request, string name)
+			where T : class
+		{
+			if (request != null && request.HttpContext.Items.TryGetValue(name, out object item))
+			{
+				return item as T;
+			}
+
+			return null;
 		}
 	}
 }

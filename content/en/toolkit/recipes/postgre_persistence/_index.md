@@ -25,9 +25,10 @@ description: >-
     <td>Persistence component that stores data in PostgreSQL databases in JSON or JSONB fields and implements several CRUD operations over data items with unique ids.</td>
   </tr>
 </table>
+
 ### Introduction
 
-In this tutorial, you will understand how to create persistence components for data stored in PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.
+In this tutorial, you will understand how to create persistence components for PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.
 
 ### PostgreSQL persistence
 
@@ -147,7 +148,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}} 
 
 ##### Component implementation
-To implement this component, we define a class that inherits the methods from the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table where we are going to store our data:
+To implement this component, we define a class that inherits the methods from the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table in our database where we are going to store our data:
 
 {{< tabsection >}}
    Not available 
@@ -485,7 +486,7 @@ This method returns an integer representing the number of data items retrieved b
      
 ##### Update
 
-**Note:** This component has no update method. Therefore, if we want to have it, we need to construct this method by using an SQL command. See the Using SQL section.
+**Note:** This component has no update method. Therefore, if we want to have it, we need to define it in our persistence class.
 
 ##### Delete
 
@@ -549,7 +550,7 @@ In order to use this component, we need to import the corresponding library with
      
 ##### Component implementation
 
-To implement this component, we can define a class that inherits the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table where we are going to store our data:
+To implement this component, we can define a class that inherits the IdentifiablePostgresPersistence class. Our code will look something like this, where mydata is the name of the table where we are going to store our data:
   
 {{< tabsection >}}
    Not available 
@@ -603,7 +604,7 @@ Now, we can create an instance of this class and configure it according to our d
 
 ##### Connection
      
-Once our component has been defined, we can connect to our database using the open() method.
+Once our component has been defined, we can connect to our database using the open() method. This method accepts the correlationId as an input parameter.
      
 {{< tabsection >}}
    Not available 
@@ -1010,7 +1011,7 @@ In order to use this component, we need to import the corresponding library with
 
 ##### Component implementation
 
-To implement this component, we can define a class that inherits the PostgresPersistence class. In this class, we will include the _defineSchema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
+To implement this component, we can define a class that inherits the IdentifiableJsonPostgresPersistence class. In this class, we will include the _defineSchema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
  Our code will look something like this:
 
 {{< tabsection >}}

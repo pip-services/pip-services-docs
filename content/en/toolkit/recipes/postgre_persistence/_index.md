@@ -199,69 +199,6 @@ Now, we create an instance of this class and configure it according to our datab
   Not available  
 {{< /tabsection >}} 
 
-##### Using PostgrePersistence objects
-
-Most of the CRUD operations return results in the form of PostgrePersistence objects containing records. To extract these records we can do two things. First, we can get every field directly via the following command:
-
-<center>[PostgrePersistence object].field</center>
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
-Second, for some components that inherit from the PostgrePersistance class, such as the IdentifiablePostgrePersistence and IdentifialbleJsonPostgrePersistence classes, we can use the _convert_from_public_partial() method, which returns a record in the form of a dictionary.
-
-Example:
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}} 
-
-Will return something like 
-
-<center> {'content': 'new content 1.1', 'id': '1', 'key': 'key 1.1'}</center>
 
 ##### Connection
 
@@ -1037,4 +974,134 @@ This method deletes records specified by a list of ids.
 
 {{< tabsection >}}
   Not available  
-{{< /tabsection >}}         
+{{< /tabsection >}}   
+
+#### IdentifiableJsonPostgresPersistence
+
+This class provides a persistence component that stores data in PostgreSQL in JSON or JSONB fields and implements several CRUD operations over data items with unique ids. It inherits from IdentifialePostgrePersistence and thus also from PostgrePersistence. As such, it uses most of the methods available in those classes to perform CRUD operations.
+
+##### Pre-requisites
+
+In order to use this component, we need to import the corresponding library with the following command.
+ 
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code36_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}   
+
+##### Component implementation
+
+To implement this component, we can define a class that inherits the PostgresPersistence class. In this class, we will include the _define_schema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
+ Our code will look something like this:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}   
+
+Once that this class has been defined, we can create an instance of it, configure its connection parameters and connect it to our database in the same manner as we did with the IdentifiablePostgresPersistence component.
+
+##### CRUD operations
+This class inherits most of its methods from the IdentifiablePostgrePersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. 
+
+#### Returned objects
+In general, CRUD operations return an object with the same fields that were passed to the persistence component and the fields can be accessed in the same way as in the original object.
+For example, if we use the getOneRandom() method, 
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}  
+
+we can obtain the record values as
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}  
+
+
+### Wrapping up
+
+In this tutorial, we have seen how to create persistence objects for PostgreSQL databases. First, we saw how to perform CRUD operations with the PostgrePersistence component, which is the parent class for the other two persistence components available in this library. 
+
+Then, we understood how to perform CRUD operations with the IdentifiablePostgresPersistence component, which is used to work with data objects that contain a unique identifier; and with the IdentifiableJsonPostgrePersistence component, which is used to persist identifiable data objects in JSON format.
+
+Finally, we learned how to read records stored in these persistence classes.
+

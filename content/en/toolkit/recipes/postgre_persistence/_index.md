@@ -798,13 +798,7 @@ Where
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}      
-     
-Update
-This class presents two different update methods: update() and updatePartially().
-update()
-This method updates a data item. As input parameters, it requires the correlationId and an item to be updated. It returns a PostgrePersistence object containing the updated record.
-          
-     
+             
 ##### Update
      
 This class presents two different update methods: update() and update_partially().
@@ -979,7 +973,7 @@ This method deletes records specified by a list of ids.
 
 #### IdentifiableJsonPostgresPersistence
 
-This class provides a persistence component that stores data in PostgreSQL in JSON or JSONB fields and implements several CRUD operations over data items with unique ids. It inherits from IdentifialePostgrePersistence and thus also from PostgrePersistence. As such, it uses most of the methods available in those classes to perform CRUD operations.
+This class provides a persistence component that stores data in PostgreSQL in JSON or JSONB fields and implements several CRUD operations over data items with unique ids. It inherits from IdentifialePostgrePersistence and thus also from PostgrePersistence. 
 
 ##### Pre-requisites
 
@@ -1011,7 +1005,7 @@ In order to use this component, we need to import the corresponding library with
 
 ##### Component implementation
 
-To implement this component, we can define a class that inherits the IdentifiableJsonPostgresPersistence class. In this class, we will include the _defineSchema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
+To implement this component, we can define a class that inherits the IdentifiableJsonPostgresPersistence class. In this class, we will include the _defineSchema() method, where we will define a table with two fields, namely id and data. The second field will include our data in JSON format, as defined in the data object section.
  Our code will look something like this:
 
 {{< tabsection >}}
@@ -1102,7 +1096,7 @@ we can obtain the record values as
 
 In this tutorial, we have seen how to create persistence objects for PostgreSQL databases. First, we saw how to perform CRUD operations with the PostgrePersistence component, which is the parent class for the other two persistence components available in this library. 
 
-Then, we understood how to perform CRUD operations with the IdentifiablePostgresPersistence component, which is used to work with data objects that contain a unique identifier; and with the IdentifiableJsonPostgrePersistence component, which is used to persist identifiable data objects in JSON format.
+Then, we understood how to perform CRUD operations with the IdentifiablePostgresPersistence and the IdentifiableJsonPersitence components. The first component is used to work with data objects that contain a unique identifier, and the second to persist identifiable data objects in JSON format.
 
 Finally, we learned how to read records stored in these persistence classes.
 

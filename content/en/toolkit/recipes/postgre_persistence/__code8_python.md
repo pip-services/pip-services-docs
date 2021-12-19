@@ -1,4 +1,6 @@
 
 ```python
-result = persistence._convert_from_public_partial(result)
+result.id      # Returns '1'
+result.key     # Returns 'key 1'
+result.content # Returns 'content 1'
 ```

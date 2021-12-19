@@ -1063,7 +1063,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code37_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1089,7 +1089,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code37_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

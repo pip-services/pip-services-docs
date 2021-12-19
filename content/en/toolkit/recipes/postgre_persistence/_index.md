@@ -234,7 +234,7 @@ This component allows us to perform many CRUD operations by using its methods. T
 
 ###### Create
 
-To create a new record, we use the create() method, which accepts the correlation_id and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted record.
+To create a new record, we use the create() method, which accepts the correlationId and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted record.
 
 {{< tabsection >}}
    Not available 
@@ -287,9 +287,9 @@ Where
 {{< /tabsection >}} 
 
 ###### Retrieve
-To retrieve a record, this class presents three methods namely get_one_random(),  get_list_by_filter() and get_page_by_filter(). Additionally, it also contains the get_count_by_filter() method, which returns the number of records retrieved by using a given filter. The following are examples of their usage.
+To retrieve a record, this class presents three methods namely getOneRandom(),  getListByFilter() and getPageByFilter(). Additionally, it also contains the getCountByBilter() method, which returns the number of records retrieved by using a given filter. The following are examples of their usage.
      
-###### get_one_random()
+###### getOneRandom()
 
 This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: 
 
@@ -347,7 +347,7 @@ The result is a PostgrePersistence object containing the extracted record.
   Not available  
 {{< /tabsection >}} 
      
-###### get_list_by_filter()
+###### getListByFilter()
 
 This method returns a list PostgrePersistence objects with the data items retrieved according to a given filter. In the following example, we will extract all those records containing a key’s value equal to ‘key 1’.
  
@@ -401,7 +401,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
   Not available  
 {{< /tabsection >}}      
 
-###### get_page_by_filter()
+###### getPageByFilter()
 
 This method gets a page of data items retrieved according to a given filter and sorted according to sort parameters. In the example below, we obtain again those records with a key’s value equal to ‘key 1’.
      
@@ -455,7 +455,7 @@ The obtained result is a DataPage object, which contains the data field with the
   Not available  
 {{< /tabsection >}}     
      
-###### get_count_by_filter()
+###### getCountByFilter()
 
 This method returns an integer representing the number of data items retrieved by a given filter.
     
@@ -489,7 +489,7 @@ This method returns an integer representing the number of data items retrieved b
 
 ##### Delete
 
-To delete one or more records, we can use the delete_by_filter() method. The example below shows how to delete all records with a key’s value equal to ‘key 1’.
+To delete one or more records, we can use the deleteByFilter() method. The example below shows how to delete all records with a key’s value equal to ‘key 1’.
     
 {{< tabsection >}}
    Not available 
@@ -635,7 +635,7 @@ This component allows us to perform several CRUD operations. The sections below 
      
 ###### Create
      
-To create a new record, we can use the create() method, which accepts the correlation_id and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted values.
+To create a new record, we can use the create() method, which accepts the correlationId and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted values.
          
 {{< tabsection >}}
    Not available 
@@ -688,9 +688,9 @@ To create a new record, we can use the create() method, which accepts the correl
 {{< /tabsection >}}         
      
 ##### Retrieve
-This class provides two main methods that can be used to retrieve records from a PostgreSQL database. They are get_one_by_id() and get_list_by_ids().
+This class provides two main methods that can be used to retrieve records from a PostgreSQL database. They are getOneById() and getListByIds().
 
-###### get_one_by_id()
+###### getOneById()
      
 This method returns a record according to a given id. The record is contained in a PostgrePersistence object.
      
@@ -744,7 +744,7 @@ This method returns a record according to a given id. The record is contained in
   Not available  
 {{< /tabsection >}}     
      
-###### get_list_by_ids()
+###### getListByIds()
 
 Given a list of ids, this method returns a list containing the extracted records in the form of PostgrePersistence objects. An example of its usage is
 
@@ -799,9 +799,9 @@ Where
 {{< /tabsection >}}      
      
 Update
-This class presents two different update methods: update() and update_partially().
+This class presents two different update methods: update() and updatePartially().
 update()
-This method updates a data item. As input parameters, it requires the correlation_id and an item to be updated. It returns a PostgrePersistence object containing the updated record.
+This method updates a data item. As input parameters, it requires the correlationId and an item to be updated. It returns a PostgrePersistence object containing the updated record.
           
      
 ##### Update
@@ -810,7 +810,7 @@ This class presents two different update methods: update() and update_partially(
      
 ###### update()
      
-This method updates a data item. As input parameters, it requires the correlation_id and an item to be updated. It returns a PostgrePersistence object containing the updated record.
+This method updates a data item. As input parameters, it requires the correlationId and an item to be updated. It returns a PostgrePersistence object containing the updated record.
  
 {{< tabsection >}}
    Not available 
@@ -862,9 +862,9 @@ Where
   Not available  
 {{< /tabsection >}}     
      
-###### update_partially()
+###### updatePartially()
      
-This method updates the specified fields only. It takes three input parameters namely the correlation_id, the id of the item to be updated, and a dictionary containing the fields to be updated. It returns a PostgrePersistance object with the updated record.
+This method updates the specified fields only. It takes three input parameters namely the correlationId, the id of the item to be updated, and a dictionary containing the fields to be updated. It returns a PostgrePersistance object with the updated record.
  
 {{< tabsection >}}
    Not available 
@@ -918,9 +918,9 @@ Where
 
 ##### Delete
      
-To delete stored records, we have two different methods: delete_by_id() and delete_by_ids(). 
+To delete stored records, we have two different methods: deleteById() and deleteByIds(). 
      
-###### delete_by_id()
+###### deleteById()
      
 This method deletes a record specified by a given id.
      
@@ -948,7 +948,7 @@ This method deletes a record specified by a given id.
   Not available  
 {{< /tabsection >}}    
      
-###### delete_by_ids()
+###### deleteByIds()
      
 This method deletes records specified by a list of ids.
      
@@ -1010,7 +1010,7 @@ In order to use this component, we need to import the corresponding library with
 
 ##### Component implementation
 
-To implement this component, we can define a class that inherits the PostgresPersistence class. In this class, we will include the _define_schema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
+To implement this component, we can define a class that inherits the PostgresPersistence class. In this class, we will include the _defineSchema() method, where we will define a table with two fields namely id and data. The second field will include our data in JSON format, as defined in the data object section.
  Our code will look something like this:
 
 {{< tabsection >}}

@@ -948,7 +948,7 @@ This method deletes a record specified by a given id.
 This method deletes records specified by a list of ids.
      
 {{< tabsection >}}
-  {{< include "./__code35_ndoe.md" >}}
+  {{< include "./__code35_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1068,7 +1068,7 @@ For example, if we use the getOneRandom() method,
 we can obtain the record values as
 
 {{< tabsection >}}
-  {{< include "./__code8_ndoe.md" >}}
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

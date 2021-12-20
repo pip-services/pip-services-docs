@@ -39,7 +39,7 @@ Pip.Services offers three different components to work with PostgreSQL databases
 In order to use this library, we need to download it from GitHub with the following command.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -47,7 +47,7 @@ In order to use this library, we need to download it from GitHub with the follow
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -67,7 +67,7 @@ In order to use this library, we need to download it from GitHub with the follow
 In our examples, we will use data objects with the following structure.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,7 +75,7 @@ In our examples, we will use data objects with the following structure.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -93,7 +93,7 @@ In our examples, we will use data objects with the following structure.
 And with the following instances
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,7 +101,7 @@ And with the following instances
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -124,7 +124,7 @@ This is the most basic persistence class and is used to create persistence compo
 In order to use this component, we need to import the corresponding library with the following command.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,7 +132,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,7 +151,7 @@ In order to use this component, we need to import the corresponding library with
 To implement this component, we define a class that inherits the methods from the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table in our database where we are going to store our data:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ To implement this component, we define a class that inherits the methods from th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -177,7 +177,7 @@ To implement this component, we define a class that inherits the methods from th
 Now, we create an instance of this class and configure it according to our database configuration parameters. For this, we use the configure method and the ConfigParams component. Our code will be similar to this one.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -185,7 +185,7 @@ Now, we create an instance of this class and configure it according to our datab
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -206,7 +206,7 @@ Now, we create an instance of this class and configure it according to our datab
 Once our component has been defined, we can connect to our database using the open() method.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -214,7 +214,7 @@ Once our component has been defined, we can connect to our database using the op
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,7 +238,7 @@ This component allows us to perform many CRUD operations by using its methods. T
 To create a new record, we use the create() method, which accepts the correlationId and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted record.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -246,7 +246,7 @@ To create a new record, we use the create() method, which accepts the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,7 +264,7 @@ To create a new record, we use the create() method, which accepts the correlatio
 Where
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -272,7 +272,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -299,7 +299,7 @@ This method gets a random item based on a given filter. The filter is defined by
 An example of its usage is
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -307,7 +307,7 @@ An example of its usage is
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -325,7 +325,7 @@ An example of its usage is
 The result is a PostgrePersistence object containing the extracted record. 
  
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -333,7 +333,7 @@ The result is a PostgrePersistence object containing the extracted record.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -353,7 +353,7 @@ The result is a PostgrePersistence object containing the extracted record.
 This method returns a list PostgrePersistence objects with the data items retrieved according to a given filter. In the following example, we will extract all those records containing a key’s value equal to ‘key 1’.
  
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -361,7 +361,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -379,7 +379,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
  Where    
  
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -387,7 +387,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -407,7 +407,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 This method gets a page of data items retrieved according to a given filter and sorted according to sort parameters. In the example below, we obtain again those records with a key’s value equal to ‘key 1’.
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -415,7 +415,7 @@ This method gets a page of data items retrieved according to a given filter and 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -433,7 +433,7 @@ This method gets a page of data items retrieved according to a given filter and 
 The obtained result is a DataPage object, which contains the data field with the extracted records. An example of how to read the values of the extracted records is
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -441,7 +441,7 @@ The obtained result is a DataPage object, which contains the data field with the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -461,7 +461,7 @@ The obtained result is a DataPage object, which contains the data field with the
 This method returns an integer representing the number of data items retrieved by a given filter.
     
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -469,7 +469,7 @@ This method returns an integer representing the number of data items retrieved b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -493,7 +493,7 @@ This method returns an integer representing the number of data items retrieved b
 To delete one or more records, we can use the deleteByFilter() method. The example below shows how to delete all records with a key’s value equal to ‘key 1’.
     
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -501,7 +501,7 @@ To delete one or more records, we can use the deleteByFilter() method. The examp
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -525,7 +525,7 @@ This class provides a persistence component that stores data in PostgreSQL datab
 In order to use this component, we need to import the corresponding library with the following command.
     
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -533,7 +533,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -553,7 +553,7 @@ In order to use this component, we need to import the corresponding library with
 To implement this component, we can define a class that inherits the IdentifiablePostgresPersistence class. Our code will look something like this, where mydata is the name of the table where we are going to store our data:
   
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code21_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -561,7 +561,7 @@ To implement this component, we can define a class that inherits the Identifiabl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -579,7 +579,7 @@ To implement this component, we can define a class that inherits the Identifiabl
 Now, we can create an instance of this class and configure it according to our database.     
   
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code22_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -587,7 +587,7 @@ Now, we can create an instance of this class and configure it according to our d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -607,7 +607,7 @@ Now, we can create an instance of this class and configure it according to our d
 Once our component has been defined, we can connect to our database using the open() method. This method accepts the correlationId as an input parameter.
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code23_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -615,7 +615,7 @@ Once our component has been defined, we can connect to our database using the op
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code23_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -639,7 +639,7 @@ This component allows us to perform several CRUD operations. The sections below 
 To create a new record, we can use the create() method, which accepts the correlationId and the item to be stored as input parameters. This method returns a PostgrePersistence object containing the inserted values.
          
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code24_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -647,7 +647,7 @@ To create a new record, we can use the create() method, which accepts the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code24_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -665,7 +665,7 @@ To create a new record, we can use the create() method, which accepts the correl
  where    
      
  {{< tabsection >}}
-   Not available 
+   {{< include "./__code25_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -673,7 +673,7 @@ To create a new record, we can use the create() method, which accepts the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code25_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -696,7 +696,7 @@ This class provides two main methods that can be used to retrieve records from a
 This method returns a record according to a given id. The record is contained in a PostgrePersistence object.
      
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code26_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -704,7 +704,7 @@ This method returns a record according to a given id. The record is contained in
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code26_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -722,7 +722,7 @@ This method returns a record according to a given id. The record is contained in
  Where    
       
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code27_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -730,7 +730,7 @@ This method returns a record according to a given id. The record is contained in
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code27_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -750,7 +750,7 @@ This method returns a record according to a given id. The record is contained in
 Given a list of ids, this method returns a list containing the extracted records in the form of PostgrePersistence objects. An example of its usage is
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code28_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -758,7 +758,7 @@ Given a list of ids, this method returns a list containing the extracted records
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code28_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -776,7 +776,7 @@ Given a list of ids, this method returns a list containing the extracted records
 Where
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code28_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -784,7 +784,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code29_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -808,7 +808,7 @@ This class presents two different update methods: update() and update_partially(
 This method updates a data item. As input parameters, it requires the correlationId and an item to be updated. It returns a PostgrePersistence object containing the updated record.
  
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code30_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -816,7 +816,7 @@ This method updates a data item. As input parameters, it requires the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code30_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -834,7 +834,7 @@ This method updates a data item. As input parameters, it requires the correlatio
 Where     
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code31_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -842,7 +842,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code31_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -862,7 +862,7 @@ Where
 This method updates the specified fields only. It takes three input parameters namely the correlationId, the id of the item to be updated, and a dictionary containing the fields to be updated. It returns a PostgrePersistance object with the updated record.
  
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code32_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -870,7 +870,7 @@ This method updates the specified fields only. It takes three input parameters n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code32_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -888,7 +888,7 @@ This method updates the specified fields only. It takes three input parameters n
 Where     
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code33_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -896,7 +896,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code33_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -920,7 +920,7 @@ To delete stored records, we have two different methods: deleteById() and delete
 This method deletes a record specified by a given id.
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code34_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -928,7 +928,7 @@ This method deletes a record specified by a given id.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code34_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -948,7 +948,7 @@ This method deletes a record specified by a given id.
 This method deletes records specified by a list of ids.
      
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code35_ndoe.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -956,7 +956,7 @@ This method deletes records specified by a list of ids.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code35_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -980,7 +980,7 @@ This class provides a persistence component that stores data in PostgreSQL in JS
 In order to use this component, we need to import the corresponding library with the following command.
  
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code36_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -988,7 +988,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code36_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1009,7 +1009,7 @@ To implement this component, we can define a class that inherits the Identifiabl
  Our code will look something like this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code37_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1017,7 +1017,7 @@ To implement this component, we can define a class that inherits the Identifiabl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code37_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1042,7 +1042,7 @@ In general, CRUD operations return an object with the same fields that were pass
 For example, if we use the getOneRandom() method, 
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1050,7 +1050,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1068,7 +1068,7 @@ For example, if we use the getOneRandom() method,
 we can obtain the record values as
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_ndoe.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1076,7 +1076,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

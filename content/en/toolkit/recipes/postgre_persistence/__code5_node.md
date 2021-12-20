@@ -1,0 +1,32 @@
+
+```ts
+export class MyPostgresPersistence
+    extends PostgresPersistence<MyData> {
+    public constructor() {
+        super('mydata');
+    }
+
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE ' + this._tableName + ' (id TEXT PRIMARY KEY, key TEXT, content TEXT)');
+        this.ensureIndex(this._tableName + '_key', { key: 1 }, { unique: true });
+    }
+
+    public async getOneRandom(correlationId: string, filter: any): Promise<MyData> {
+        return await super.getOneRandom(correlationId, filter);
+    }
+
+    public async getListByFilter(correlationId: string, filter: any, sort: any, select: any): Promise<MyData[]> {
+        return await super.getListByFilter(correlationId, filter, sort, select);
+    }
+
+    public async getPageByFilter(correlationId: string, filter: any, paging: PagingParams, sort: any, select: any): Promise<DataPage<MyData>> {
+        return await super.getPageByFilter(correlationId, filter, paging, sort, select);
+    }
+
+    public async getCountByFilter(correlationId: string, filter: any): Promise<number> {
+        return await super.getCountByFilter(correlationId, filter);
+    }
+}
+
+```

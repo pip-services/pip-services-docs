@@ -28,7 +28,7 @@ As an example, lets create persistence for the following data object.
 ```typescript
 import { IIdentifiable } from 'pip-services3-commons-nodex';
 
-export class MyObject implements IIdentifiable {
+export class MyObject implements IIdentifiable <string>{
   public id: string;
   public key: string;
   public value: number;

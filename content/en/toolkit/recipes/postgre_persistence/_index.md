@@ -148,7 +148,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}} 
 
 ##### Component implementation
-To implement this component, we define a class that inherits the methods from the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table in our database where we are going to store our data:
+To implement this component, we define a class that inherits the methods from the PostgresPersistence class.  In this class, we can also define the defineSchema method, which checks if the table exists or not. If not, it creates one with the defineSchema method. Here, we can use the SQL command CREATE TABLE to define the structure of the table. The example below shows how to do this, where mytable is the name of our table.
 
 {{< tabsection >}}
    {{< include "./__code5_node.md" >}}

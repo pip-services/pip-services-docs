@@ -1,4 +1,4 @@
 
 ```python
-result = persistence.update_partially(None, '3', {'content':'new content 3'})
+result = persistence.update_partially(None, '3', AnyValueMap({'content':'new content 3'}))
 ```

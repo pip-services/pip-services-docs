@@ -43,7 +43,7 @@ In order to work with the MySQL persistence module, we need to install it. This 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -71,7 +71,7 @@ In the examples of this tutorial, we will use the following data structure
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ And the following instances of it.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -129,7 +129,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -150,14 +150,15 @@ In order to use this component, we need to import the corresponding library with
 
 ##### Component implementation
 
-In order to create a persistence component, we need to define a subclass of this component. The code below shows how our persistence component may look like, where _mydata_ is the name of the table where we are going to store our data.
+To implement this component, we define a class that inherits the methods from the PostgresPersistence class. Our code will look something like this, where mydata is the name of the table in our database where we are going to store our data:
+To implement this component, we define a class that inherits the methods from the PostgresPersistence class.  In this class, we can also define the defineSchema method, which checks if the table exists or not. If not, it creates one with the defineSchema method. Here, we can use the SQL command CREATE TABLE to define the structure of the table. The example below shows how to do this, where mytable is the name of our table.
 
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -183,7 +184,7 @@ Once our persistence component has been defined, we need to create an instance o
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_net.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -210,7 +211,7 @@ After implementing our persistence component, we need to connect it to our datab
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -242,7 +243,7 @@ This method is used to insert a record in a database. It accepts the correlation
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,7 +265,7 @@ This method is used to insert a record in a database. It accepts the correlation
 Where
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -300,7 +301,7 @@ This method retrieves a random record based on a given filter and returns a MySq
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -326,7 +327,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -354,7 +355,7 @@ his method returns a set of records that comply with a given filter. The result 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -380,7 +381,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -408,7 +409,7 @@ Similar to the previous one, this method retrieves a set of records that comply 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -434,7 +435,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -462,7 +463,7 @@ This method returns an integer indicating the number of records that comply with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -495,7 +496,7 @@ This method deletes the record specified by the given id. The following example 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -527,7 +528,7 @@ In order to use this method, we must first import it. We can use the following c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code20_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -555,7 +556,7 @@ To implement an identifiable persistence component, we need to define a subclass
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code21_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -581,7 +582,7 @@ Once the persistence component has been created, we configure it according to ou
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code22_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -609,7 +610,7 @@ Next to defining our persistence component, we connect to our database by using 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code23_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -641,7 +642,7 @@ To create a new record in our table, we can use the create() method, which takes
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code24_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -667,7 +668,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code25_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -699,7 +700,7 @@ This method returns a record from the database. It accepts the correlation_id an
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code26_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -725,7 +726,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code27_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -753,7 +754,7 @@ This method returns a set of records from a database. It accepts the correlation
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code28_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -779,7 +780,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code29_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -811,7 +812,7 @@ This method updates a record in a database. It takes the correlation_id and a da
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code30_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -837,7 +838,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code31_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -865,7 +866,7 @@ This method updates one or more fields of a given record. It takes the correlati
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code32_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -891,7 +892,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code33_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -923,7 +924,7 @@ This method deletes a record specified by its id. It also requires the correlati
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code34_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -948,7 +949,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code35_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -976,7 +977,7 @@ This method deletes a set of records whose ids are specified in the form of a li
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code36_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1007,7 +1008,7 @@ In order to use this component, we need to import it first. This can be done wit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code37_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1035,7 +1036,7 @@ In order to implement this component, we create a class that inherits it. In add
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code38_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1071,7 +1072,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1097,7 +1098,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

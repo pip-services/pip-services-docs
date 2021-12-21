@@ -1,0 +1,30 @@
+
+```cs
+public class MyMySqlPersistence : IdentifiableMySqlPersistence<MyData, string>
+{
+    public MyMySqlPersistence() : base("mydata") { }
+
+    protected override void DefineSchema()
+    {
+        ClearSchema();
+        EnsureSchema($"CREATE TABLE `{_tableName}` (`id` VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT, `create_time_utc` DATETIME, `sub_dummy` TEXT)");
+        EnsureIndex($"{_tableName}_key", new Dictionary<string, bool> { { "key", true } }, new IndexOptions { Unique = true });
+    }
+
+    public async new Task<MyData> GetOneRandomAsync(string correlationId, string filter)
+    {
+        return await base.GetOneRandomAsync(correlationId, filter);
+    }
+
+    public async new Task<List<MyData>> GetListByFilterAsync(string correlationId, string filter, string sort = null, string select = null)
+    {
+        return await base.GetListByFilterAsync(correlationId, filter, sort, select);
+    }
+
+    public async new Task<long> GetCountByFilterAsync(string correlationId, string filter)
+    {
+        return await base.GetCountByFilterAsync(correlationId, filter);
+    }
+}
+
+```

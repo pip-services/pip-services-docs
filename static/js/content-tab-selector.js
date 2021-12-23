@@ -1,25 +1,29 @@
 // Set events
-let buttonGroups = document.getElementsByClassName('tab-selector-btn-group')
+function loadButtons() {
+    let buttonGroups = document.getElementsByClassName('tab-selector-btn-group')
 
-if (buttonGroups.length > 0) {
+    if (buttonGroups.length > 0) {
 
-    const langs = {
-        "node": 0,
-        "net": 1,
-        "go": 2,
-        "dart": 3,
-        "python": 4,
-        "java": 5
+        const langs = {
+            "node": 0,
+            "net": 1,
+            "go": 2,
+            "dart": 3,
+            "python": 4,
+            "java": 5
+        }
+
+        let buttons = Array.from(buttonGroups[0].getElementsByTagName('button'));
+
+        buttons.forEach(button => {
+            button.addEventListener('click', showSelected);
+        })
+
+        setActiveBtn(buttons, langs);
     }
-
-    let buttons = Array.from(buttonGroups[0].getElementsByTagName('button'));
-
-    buttons.forEach(button => {
-        button.addEventListener('click', showSelected);
-    })
-
-    setActiveBtn(buttons, langs);
 }
+
+document.addEventListener("readystatechange", loadButtons);
 
 function setActiveBtn(buttons, langs) {
     // content tab in query
@@ -27,7 +31,7 @@ function setActiveBtn(buttons, langs) {
 
     if (contentTabSet != null && langs.hasOwnProperty(contentTabSet)) {
         showSelected({ target: buttons[langs[contentTabSet]] });
-    } else if (localStorage['selected_tab_widget_btn'] != undefined) {
+    } else if (localStorage['selected_tab_widget_btn'] != undefined && buttons.length >= parseInt(localStorage['selected_tab_widget_btn'])) {
         showSelected({ target: buttons[parseInt(localStorage['selected_tab_widget_btn'])] });
     } else {
         showFirstWithContent(buttons);
@@ -43,7 +47,7 @@ function showFirstWithContent(buttons) {
         let value = contentSections[index];
         if (value.innerText != undefined
             && value.innerText != null
-            && value.innerText.trim() != ''
+            && value.innerText.trim() != '' || value.getElementsByTagName('iframe').length > 0
             && !reservedKeywords.includes(value.innerText.trim().toLowerCase())) {
 
             showSelected({ target: buttons[index] }, munuallySet=true);
@@ -73,10 +77,10 @@ function showSelected(e) {
         section.setAttribute('hidden', "");
     });
 
-    for (let index = selectedIndex; index < contentSections.length - 1; index += buttons.length) {
+    for (let index = selectedIndex; index < contentSections.length; index += buttons.length) {
         contentSections[index].removeAttribute('hidden');
     }
-
+    
     // Hide other
     buttons.forEach((button, index) => {
         if (selectedIndex != index) {

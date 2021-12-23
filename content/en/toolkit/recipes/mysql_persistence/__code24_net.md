@@ -1,4 +1,4 @@
 
 ```cs
-await persistence.CreateAsync(null, data3);
+var result = await persistence.CreateAsync(null, data3);
 ```

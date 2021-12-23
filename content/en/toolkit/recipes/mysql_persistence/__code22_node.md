@@ -1,9 +1,9 @@
 
-```cs
-using PipServices3.Commons.Config;
+```ts
+import { ConfigParams } from 'pip-services3-commons-nodex';
 
-var persistence = new MyMySqlPersistence();
-persistence.Configure(ConfigParams.FromTuples(
+let persistence = new MyMySqlPersistence();
+persistence.configure(ConfigParams.fromTuples(
     "connection.host", "localhost",
     "connection.port", 3306,
     "credential.username", "user",

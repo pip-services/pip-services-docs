@@ -33,7 +33,7 @@ func (c *MyPostgresPersistence) GetPageByFilter(correlationId string, filter int
 
 	tempPage, err := c.IdentifiablePostgresPersistence.GetPageByFilter(correlationId,
 		filter, paging,
-		sort, nil)
+		sort, sel)
 	// Convert to DummyPage
 	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
 	data := make([]MyData, dataLen)

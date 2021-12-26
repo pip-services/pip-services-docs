@@ -991,6 +991,70 @@ This method deletes a set of records from a table according to a given list of i
   Not available  
 {{< /tabsection >}}
 
+#### IdentifiableJsonSqlServerPersistence
+
+##### Pre-requisites
+
+In order to use this component, we need to import it first. This can be done with the following command
+
+{{< tabsection >}}
+  {{< include "./__code37_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### Component implementation
+
+In order to implement this component, we create a class that inherits it. In addition, we need to define the method defineSchema(), which will allow us to use a table with two fields, namely id and data, where the data field will store the JSON values. Our class will look something like this
+
+{{< tabsection >}}
+  {{< include "./__code38_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code38_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code38_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Once that this class has been defined, we can create an instance of it, configure its connection parameters and connect it to our database in the same manner as we did with the IdentifiableSqlServerPersistence component.
+
+##### CRUD operations
+
+This class inherits most of its methods from the IdentifiableSqlServerPersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. 
+
 #### Returned objects
 
 In general, CRUD operations return an object with the same fields that were passed to the persistence component and the fields can be accessed in the same way as in the original object.

@@ -11,8 +11,9 @@ description: >-
 ### Key takeaways
 
 By designing your code in the correct way you can:
-1 – Create a common set of instructions that are database independent.
-2 – Easily transfer data from one database to another.
+
+1. Create a common set of instructions that are database independent.
+2. Easily transfer data from one database to another.
 
 ### Introduction
 

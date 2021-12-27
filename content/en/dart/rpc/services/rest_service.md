@@ -75,6 +75,14 @@ HTTP endpoint that exposes this service.
 Service's configuration paramters.
 > **_config**: [ConfigParams?](../../../commons/config/config_params)
 
+#### swaggerEnable
+Swagger enable file
+> **swaggerEnable**: bool = false
+
+#### swaggerRoute
+Default rwagger url route
+> **swaggerRoute**: String = 'swagger';
+
 </span>
 
 
@@ -151,6 +159,21 @@ Registers a middleware for a given route in HTTP endpoint.
 - **route**: String - command route. Base route will be added to this route
 - **action**: Function(shelf.Request req) - action function that is called when middleware is invoked.
 
+
+#### registerOpenApiSpecFromFile
+Registers openapi specification from file
+
+> void registerOpenApiSpecFromFile(String path)
+
+- **path**: String - file path
+
+#### registerOpenApiSpec_
+
+Registers openapi specification from string
+
+> void registerOpenApiSpec_(String content)
+
+- **content**: String - openapi content
 
 #### registerRoute
 Registers a route in HTTP endpoint.

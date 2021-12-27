@@ -16,7 +16,7 @@ The  ISwaggerService interface is used to perform Swagger registrations.
 #### registerOpenApiSpec
 Performs the required Swagger registration steps.
 
-> void registerOpenApiSpec(String base_route, String swagger_route)
+> void registerOpenApiSpec(String? baseRoute, String? swaggerRoute)
 
 - **baseRoute**: String - base route
 - **swaggerRoute**: String - Swagger route

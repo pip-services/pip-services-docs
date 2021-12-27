@@ -10,7 +10,20 @@ description: >-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>SqlServerPersistence</td>
+    <td>Persistence component that stores data in a SQLServer database using the official driver.</td>
+  </tr>
+  <tr>
+    <td>IdentifiableSqlServerPersistence</td>
+    <td>Persistence component that stores data in a SQLServer database and implements several CRUD operations over data items with unique ids.</td>
+  </tr>
+  <tr>
+    <td>IdentifialeJsonSqlServerPersistence</td>
+    <td>Persistence component that stores data in a SQLServer database in JSON or JSONB fields and implements several CRUD operations over data items with unique ids.</td>
+  </tr>
+</table>
 ### Introduction
 
 This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples. Then, it describes each of the three persistence classes available in the module, namely SqlServerPersistence, IdentifiableSqlServerPersistence and IdentifiableJsonSqlServerPersistence. It ends with a summary of the main learned concepts.
@@ -977,6 +990,70 @@ This method deletes a set of records from a table according to a given list of i
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+#### IdentifiableJsonSqlServerPersistence
+
+##### Pre-requisites
+
+In order to use this component, we need to import it first. This can be done with the following command
+
+{{< tabsection >}}
+  {{< include "./__code37_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code37_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+##### Component implementation
+
+In order to implement this component, we create a class that inherits it. In addition, we need to define the method defineSchema(), which will allow us to use a table with two fields, namely id and data, where the data field will store the JSON values. Our class will look something like this
+
+{{< tabsection >}}
+  {{< include "./__code38_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code38_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code38_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Once that this class has been defined, we can create an instance of it, configure its connection parameters and connect it to our database in the same manner as we did with the IdentifiableSqlServerPersistence component.
+
+##### CRUD operations
+
+This class inherits most of its methods from the IdentifiableSqlServerPersistece class. As a result, these operations are implemented in the same manner as explained for the parent class. 
 
 #### Returned objects
 

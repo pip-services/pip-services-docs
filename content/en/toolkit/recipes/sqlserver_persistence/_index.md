@@ -149,7 +149,7 @@ In order to use this component, we must import it with the following command:
 
 ##### Component implementation
 
-Once the component has been imported, we create a persistence class that inherits it. In our example, we will work with a table named mydata2. Our code will look something like this 
+Once the component has been imported, we create a persistence class that inherits it. In our example, we will work with a table named **mydata**. Our code will look something like this 
 
 {{< tabsection >}}
    Not available 

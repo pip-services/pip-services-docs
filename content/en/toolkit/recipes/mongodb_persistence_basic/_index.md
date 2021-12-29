@@ -38,6 +38,7 @@ Our class inherits several methods from its parent class that can be used to per
 To store a document, we use the create method. This method asks for the correlation_id and the data object. In the following example, we create a document based on the previously defined data1 object.
 ###### Read
 The MongoDbPersistence class offers several options to extract documents from a database. 
+
 **get_one_random()**
 As its name suggests, this method retrieves a random document based on a given filter. In the following example, we ask to retrieve a component with a key value of ‘key 3’.
 

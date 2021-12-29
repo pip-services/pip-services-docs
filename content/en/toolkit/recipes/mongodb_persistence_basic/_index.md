@@ -33,9 +33,41 @@ To create our MongoDB persistence component, we create a class that extends the 
 Later on, once all operations have been completed, we can close our persistence component with the close() method.
 
 ##### CRUD operations
+Our class inherits several methods from its parent class that can be used to perform CRUD operations. This section explores them.
 ###### Create
+To store a document, we use the create method. This method asks for the correlation_id and the data object. In the following example, we create a document based on the previously defined data1 object.
 ###### Read
+The MongoDbPersistence class offers several options to extract documents from a database. 
+**get_one_random()**
+As its name suggests, this method retrieves a random document based on a given filter. In the following example, we ask to retrieve a component with a key value of ‘key 3’.
+
+Which returns:
+
+**get_list_by_filter()**
+
+This method gets a list of data items retrieved according to a given filter. In order to use it, we override this method. This action allows us to introduce any specific aspects that we may need. Our function will look something like this:
+
+Once we have our class defined, we can call it to get our search results. For example, to get all the elements with a key value of ‘key 3’ we can write:
+
+Which returns:
+
+**get_page_by_filter()**
+This method gets a page of data items retrieved according to a given filter. It also allows adding a sorting parameter and a projection object. 
+Similar to what we did in the previous example, we override this method in our persistence class. Besides, we add two methods, namely _compose_filter and  _compose_sort. These two methods are used to define aspects that are specific to the database we are using (In our case MongoDB). An example of both methods is:
+
+And, an example of get_page_by_filter() is:
+
+Now, we can call this method from our persistence object. For example, to obtain all the records with a key value of ‘key 3’, we can write:
+
+which returns the searched values in a DataPage object:
+
+**get_count_by_filter()**
+This method gets the number of data items that will be retrieved based on a given filter. Because it is a private method in other languages – such as Node.js -  we need to override it. Our added method will look similar to 
+
+Now, we can call it from our code and get the returned amount of records that comply with a given condition, such as key equal to ‘key 3’.
+
 ###### Update
+As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the Example section.
 ###### Delete
 ###### Example
 Now, we will see a simple example that puts most of the learned concepts together. It starts by importing the necessary libraries and creating a MongoDB persistence class that includes an update method. Then, it performs CRUD operations and prints the results. The code is:
@@ -52,7 +84,9 @@ And, after creating it, we open the connection.
 
 Later on, once we have finished using this persistence component, we can close it with the close() method.
 ##### CRUD operations
+This class presents a set of methods for CRUD operations. This section explains their usage and provides examples for each of them.
 ###### Create
+This component presents two methods that allow us to create a document in MongoDB. They are:
 ###### Read
 ###### Update
 ###### Delete

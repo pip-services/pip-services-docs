@@ -30,7 +30,7 @@ The Pip.Services toolkit provides two different components for MongoDB persisten
 ###### Update
 ###### Delete
 ###### Example
-
+Now, we will see a simple example that puts most of the learned concepts together. It starts by importing the necessary libraries and creating a MongoDB persistence class that includes an update method. Then, it performs CRUD operations and prints the results. The code is:
 #### IdentifiableMongoDbPersistence
 ##### Pre-requisites
 ##### Component creation
@@ -40,7 +40,7 @@ The Pip.Services toolkit provides two different components for MongoDB persisten
 ###### Update
 ###### Delete
 ###### Example
-
+To summarize, we will put everything together in one comprehensive example. In it, we first create a data class with a field named id. Then, we create our persistence object, configure it and open the connection. Once we are connected to the database “mydb”, we perform the four CRUD operations and print the results. The code is:
 
 ### Wrapping up
 

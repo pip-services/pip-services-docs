@@ -40,6 +40,7 @@ To store a document, we use the create method. This method asks for the correlat
 The MongoDbPersistence class offers several options to extract documents from a database. 
 
 **get_one_random()**
+
 As its name suggests, this method retrieves a random document based on a given filter. In the following example, we ask to retrieve a component with a key value of ‘key 3’.
 
 Which returns:
@@ -53,6 +54,7 @@ Once we have our class defined, we can call it to get our search results. For ex
 Which returns:
 
 **get_page_by_filter()**
+
 This method gets a page of data items retrieved according to a given filter. It also allows adding a sorting parameter and a projection object. 
 Similar to what we did in the previous example, we override this method in our persistence class. Besides, we add two methods, namely _compose_filter and  _compose_sort. These two methods are used to define aspects that are specific to the database we are using (In our case MongoDB). An example of both methods is:
 
@@ -63,6 +65,7 @@ Now, we can call this method from our persistence object. For example, to obtain
 which returns the searched values in a DataPage object:
 
 **get_count_by_filter()**
+
 This method gets the number of data items that will be retrieved based on a given filter. Because it is a private method in other languages – such as Node.js -  we need to override it. Our added method will look similar to 
 
 Now, we can call it from our code and get the returned amount of records that comply with a given condition, such as key equal to ‘key 3’.

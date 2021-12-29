@@ -1,12 +1,12 @@
 ---
-title: "Long Page Title"
-linkTitle: "Short Nav Title"
+title: "Basic MongoDB Persistence"
+linkTitle: "Basic MongoDB Persistence"
 weight: 100
 description: >-
      Page description for heading and indexes.
 ---
 
-## Heading
+### Introduction
 
 Edit this template to create your new page.
 

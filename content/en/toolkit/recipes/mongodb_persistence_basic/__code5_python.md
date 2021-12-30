@@ -3,7 +3,7 @@
 class MyMongoDbPersistence(MongoDbPersistence):
     
     def __init__(self):
-        super(MyMongoDbPersistence, self).__init__("mydata2")
+        super(MyMongoDbPersistence, self).__init__("mydata")
         
 persistence = MyMongoDbPersistence()
 

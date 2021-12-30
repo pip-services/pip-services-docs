@@ -732,6 +732,32 @@ To add a new document to our collection, we use the create() method, which accep
   Not available  
 {{< /tabsection >}}
 
+Which returns:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code25P2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 **set()**
 This method updates an existing data item. If the item doesn’t exist, it creates it. The example below shows how to use it.
 
@@ -759,7 +785,34 @@ This method updates an existing data item. If the item doesn’t exist, it creat
   Not available  
 {{< /tabsection >}}
 
+Which returns:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code26P2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 **get_one_by_id()**
+
 To retrieve a data object, we can use the get_one_by_id method, which allows for the selection of a data object based on its id. In the following example, we obtain the item with key = ‘1’. 
 
 {{< tabsection >}}

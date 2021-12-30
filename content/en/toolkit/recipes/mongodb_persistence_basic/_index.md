@@ -209,6 +209,32 @@ To store a document, we use the create method. This method asks for the correlat
   Not available  
 {{< /tabsection >}}
 
+Which returns:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7P2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ###### Read
 The MongoDbPersistence class offers several options to extract documents from a database. 
 

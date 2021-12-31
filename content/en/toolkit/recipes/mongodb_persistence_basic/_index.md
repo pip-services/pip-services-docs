@@ -632,7 +632,7 @@ To use the IdentifiableMongoDbPersistence component we need to import it first. 
 {{< /tabsection >}}
 
 ##### Component creation
-To create an identifiable MongoDB persistence component, we create a subclass of the IdentifiableMongoDbPersistence class where we specify the name of the table we will be using (In our example: mydata). We also define an instance of it and, via the configure() method, we add the connection parameters. In the next example, we use a local database and we connect to it through the default port 27017. We also define a database named “pipdatabase”.
+To create an identifiable MongoDB persistence component, we create a subclass of the IdentifiableMongoDbPersistence class where we specify the name of the table we will be using (In our example: mydata). We also define an instance of it and, via the configure() method, we add the connection parameters. In our example, we use a local database and we connect to it through the default port 27017. We also define a database named “pipdatabase”.
 
 {{< tabsection >}}
    Not available 
@@ -718,7 +718,7 @@ This component presents two methods that allow us to create a document in MongoD
 
 **create()**
 
-To add a new document to our collection, we use the create() method, which accepts the correlationId and the data item as inputs. The example below shows how to use it.
+To add a new document to our collection, we can use the create() method, which accepts the correlationId and the data item as inputs. The example below shows how to use it.
 
 {{< tabsection >}}
    Not available 
@@ -771,6 +771,7 @@ Which returns:
 {{< /tabsection >}}
 
 **set()**
+
 This method updates an existing data item. If the item doesn’t exist, it creates it. The example below shows how to use it.
 
 {{< tabsection >}}
@@ -933,6 +934,7 @@ Which returns:
 ###### Update
 
 **update()**
+
 This method updates the data stored in a record. It accepts the correlationId and the id of the record to be updated as input parameters. In the example below, we change the value of content to ‘new content 2’ for a record with id equal to ‘2’.
 
 {{< tabsection >}}
@@ -1096,7 +1098,7 @@ Which returns:
 
 **delete_by_ids**
 
-This method accepts a list containing the ids of the documents to be deleted. The following example shows how to delete the records with id equal to ‘1’ and ‘2’.
+This method accepts a list containing the ids of the documents to be deleted. The following example shows how to delete the records with ids equal to ‘1’ and ‘2’.
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -1123,7 +1125,7 @@ This method accepts a list containing the ids of the documents to be deleted. Th
 
 
 ###### Example
-To summarize, we will put everything together in one comprehensive example. In it, we first create a data class with a field named id. Then, we create our persistence object, configure it and open the connection. Once we are connected to the database “mydb”, we perform the four CRUD operations and print the results. The code is:
+To summarize, we put everything together in one comprehensive example. In it, we first create a data class with a field named id. Then, we create our persistence object, configure it and open the connection. Once we are connected to the database “mydb”, we perform the four CRUD operations and print the results. The code is:
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}

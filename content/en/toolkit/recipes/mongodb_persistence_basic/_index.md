@@ -543,8 +543,11 @@ Now, we can call it from our code and get the returned amount of records that co
 {{< /tabsection >}}
 
 ###### Update
+
 As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the [Example](#Example) section.
+
 ###### Delete
+
 The MongoDbPersistence class provides the deleteByFilter() method, which deletes all those documents that comply with a given condition. The following example shows how to delete all the elements with a key value equal to ‘key 3’:
 
 {{< tabsection >}}
@@ -565,6 +568,34 @@ The MongoDbPersistence class provides the deleteByFilter() method, which deletes
 
 {{< tabsection >}}
   {{< include "./__code19_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+###### Component's final version
+
+After overriding and adding the methods specified in the previous examples, our MongoDb persistence component looks like this:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5P2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

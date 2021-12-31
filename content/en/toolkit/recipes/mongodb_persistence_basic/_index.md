@@ -597,7 +597,10 @@ Now, we will see a simple example that puts most of the learned concepts togethe
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
 And the output is:
+
+![figure 1](./figure1.png)
 
 #### IdentifiableMongoDbPersistence
 This component is used to perform CRUD operations with identifiable data objects, that is, objects that can be identified via a unique id. 

@@ -632,7 +632,7 @@ To use the IdentifiableMongoDbPersistence component we need to import it first. 
 {{< /tabsection >}}
 
 ##### Component creation
-To create an identifiable MongoDB persistence component, we create a subclass of the IdentifiableMongoDbPersistence class. We also define an instance of it and, via the configure() method, we add the connection parameters. In the next example, we use a local database and we connect to it through the default port 27017. We also define a database named “mydb”.
+To create an identifiable MongoDB persistence component, we create a subclass of the IdentifiableMongoDbPersistence class where we specify the name of the table we will be using (In our example: mydata). We also define an instance of it and, via the configure() method, we add the connection parameters. In the next example, we use a local database and we connect to it through the default port 27017. We also define a database named “pipdatabase”.
 
 {{< tabsection >}}
    Not available 

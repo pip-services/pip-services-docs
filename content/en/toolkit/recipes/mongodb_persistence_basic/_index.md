@@ -10,7 +10,16 @@ description: >-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>MongoDbPersistence</td>
+    <td>Persistence component that stores data in a SQLServer database using the official driverPip.Services component used to create MongoDB persistence objects that accept any type of data.</td>
+  </tr>
+  <tr>
+    <td>IdentifiableMongoDbPersistence</td>
+    <td>Pip.Services component used to create MongoDB persistence objects that accept identifiable data objects.</td>
+  </tr>
+</table>
 ### Introduction
 
 This tutorial will help you understand how to create persistence components for MongoDB. In particular, you will learn how to use two components, namely MongoDbPersistence and IdentifiableMongoDbPersistence. The explanations will include practical examples.

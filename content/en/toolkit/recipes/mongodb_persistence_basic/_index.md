@@ -13,7 +13,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>MongoDbPersistence</td>
-    <td>Persistence component that stores data in a SQLServer database using the official driverPip.Services component used to create MongoDB persistence objects that accept any type of data.</td>
+    <td>Pip.Services component used to create MongoDB persistence objects that accept any type of data.</td>
   </tr>
   <tr>
     <td>IdentifiableMongoDbPersistence</td>
@@ -109,7 +109,7 @@ This component can be used with any type of data object. However, all documents 
 
 ##### Pre-requisites
 
-To use the MongoDbPersistence component we need to include it first. This can be done with the following command:
+To use the MongoDbPersistence component we need to insert it first. This can be done with the following command:
 
 {{< tabsection >}}
    Not available 
@@ -543,7 +543,7 @@ Now, we can call it from our code and get the returned amount of records that co
 {{< /tabsection >}}
 
 ###### Update
-As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the Example section.
+As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the [Example](#Example) section.
 ###### Delete
 The MongoDbPersistence class provides the deleteByFilter() method, which deletes all those documents that comply with a given condition. The following example shows how to delete all the elements with a key value equal to ‘key 3’:
 

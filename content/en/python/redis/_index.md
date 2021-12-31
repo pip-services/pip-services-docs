@@ -7,7 +7,7 @@ weight: 500
 description: > 
 
  
-   Contains packages for working with Redis dataases of type key-value.
+   Contains packages for working with Redis databases of type key-value.
 ---
 
 ### Packages

@@ -742,9 +742,13 @@ Later on, once we have finished using this persistence component, we can close i
 {{< /tabsection >}}
 
 ##### CRUD operations
+
 This class presents a set of methods for CRUD operations. This section explains their usage and provides examples for each of them.
+
 ###### Create
+
 This component presents two methods that allow us to create a document in MongoDB. They are:
+
 ###### Read
 
 **create()**
@@ -1154,8 +1158,12 @@ This method accepts a list containing the ids of the documents to be deleted. Th
   Not available  
 {{< /tabsection >}}
 
+And the output is:
+
+![figure 2](./figure2.png)
 
 ###### Example
+
 To summarize, we put everything together in one comprehensive example. In it, we first create a data class with a field named id. Then, we create our persistence object, configure it and open the connection. Once we are connected to the database “mydb”, we perform the four CRUD operations and print the results. The code is:
 {{< tabsection >}}
    Not available 
@@ -1180,6 +1188,8 @@ To summarize, we put everything together in one comprehensive example. In it, we
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+
 ### Wrapping up
 
 In this tutorial, we have explored how to create MongoDB persistence components. We saw two different components, namely the MongoDbPersistence and the IdentifiableMongoDbPersistence classes, and how to perform CRUD operations with them. Finally, we saw a comprehensive example for each component.

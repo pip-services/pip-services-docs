@@ -1,0 +1,4 @@
+
+```python
+persistence.close(None)
+```

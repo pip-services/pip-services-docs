@@ -30,7 +30,7 @@ In this tutorial you will learn how to create yml configuration files. First, we
 
 The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism's capabilities and how it can be utilized.
 
-### [Component Creation](component_creation)
+### [Component Creation](creating_a_component)
 
 How to create a component and assemble a service from it.
 In this tutorial, we will learn how to create a component and how to assemble a service from it. We will start with a short description of a component’s lifecycle and then we will create a component by defining step-by-step all the elements that compose its lifecycle. Finally, we will assemble a service from it through a container, run it, and see the results. 

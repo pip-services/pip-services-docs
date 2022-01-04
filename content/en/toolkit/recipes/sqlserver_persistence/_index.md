@@ -203,7 +203,7 @@ Now, we create an instance of this class and configure it according to our datab
 
 ##### Connection
 
-Once that our component has been configured we can connect it to our database.
+Once that our component has been configured, we can connect it to our database.
 
 {{< tabsection >}}
    Not available 
@@ -401,7 +401,7 @@ Where
 
 ###### getPageByFilter()
 
-This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records as part of its data field. The example below explains its usage.
+This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
 
 {{< tabsection >}}
    Not available 

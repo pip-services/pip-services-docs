@@ -601,7 +601,7 @@ After defining our component, we create an instance of it. Then, we configure th
 
 ##### Connection
 
-Now that we have our component ready for use, we can connect to our database by using the open() method.
+Now that we have our component ready for use, we can connect it to our database by using the open() method.
 
 {{< tabsection >}}
    Not available 
@@ -993,6 +993,8 @@ This method deletes a set of records from a table according to a given list of i
 {{< /tabsection >}}
 
 #### IdentifiableJsonSqlServerPersistence
+
+This component is similar to the previous one, but considers identifiable JSON objects. It stores data in SQL Server databases and implements several CRUD operations over data items with unique ids.
 
 ##### Pre-requisites
 

@@ -573,7 +573,7 @@ Once the component has been imported, we can create a persistence component by c
   Not available  
 {{< /tabsection >}}
 
-Once we have our persistence component, we create an instance of it. Then, we configure this instance according to our database details with the configure() method.
+After defining our component, we create an instance of it. Then, we configure this instance according to our database details with the configure() method.
 
 {{< tabsection >}}
    Not available 

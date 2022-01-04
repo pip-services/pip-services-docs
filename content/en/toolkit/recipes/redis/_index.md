@@ -8,11 +8,64 @@ description: >-
      How to create a cache and a lock using Redis.
 ---
 
-## Heading
+### Key takeaways
+<table class="full-width-table">
+  <tr>
+    <td>RedisCache</td>
+    <td>Distributed cache that stores values in a Redis in-memory database.</td>
+  </tr>
+  <tr>
+    <td>RedisLock</td>
+    <td>Distributed lock that is implemented based on the Redis in-memory database.</td>
+  </tr>
+</table>
 
-Edit this template to create your new page.
+### Introduction
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+In this tutorial, you will see how to use two components related to the Redis database. The first is the RedisCache class, which can be used to create distributed caches that store values in Redis. The second is RedisLock, a component that allows us to create a distributed lock based on the Redis database.
+
+### Pre-requisites
+
+Before using this library, we need to install the Redis module. This can be done with the following command:
+
+### RedisCache
+
+This component provides a way to create a distributed cache that stores values in a Redis database. The sections below explain how to create this cache and perform basic CRUD operations with it.
+
+#### Pre-requisites
+
+In order to use the RedisCache component, we need to import it first. The command to do this is:
+
+#### Component creation
+
+#### CRUD operations
+
+##### Create and update
+
+##### Read
+
+##### Delete
+
+### RedisLock
+
+#### Pre-requisites
+
+#### Component creation
+
+#### Managing the lock
+
+##### Acquire
+
+###### tryAcquireLock()
+
+###### acquireLock()
+
+##### Release
+
+#### Example
+
+### Wrapping up
+In this tutorial, we have learned how to use the RedisCache and RedisLock components. The first is used to create a distributed cache that stores values in Redis. The second helps us create distributed locks based on the Redis database.
+
+For the RedisCache, we saw how to perform the different CRUD operations and, for the RedisLock, we understood how to manage it in practical situations. 
+

@@ -17,7 +17,7 @@ description: >-
   </tr>
   <tr>
     <td>RedisLock</td>
-    <td>Distributed lock that is implemented based on the Redis in-memory database.</td>
+    <td>Distributed lock that is implemented based on a Redis in-memory database.</td>
   </tr>
 </table>
 
@@ -373,7 +373,7 @@ Here, we have two different methods. They are as follows:
 
 ###### tryAcquireLock()
 
-To acquire our lock, we can use the try_acquire_lock() method. This method makes a single attempt to acquire the lock and returns a Boolean value indicating success or failure. It accepts the correlationId, the key, and the timeout in milliseconds as input parameters. The following code shows how to use it.
+To acquire our lock, we can use the try_acquire_lock() method. This method makes a single attempt to acquire the lock and returns a Boolean value indicating success or failure. It accepts the correlationId, the key, and the timeout in milliseconds as input parameters. The following code explains its usage.
 
 {{< tabsection >}}
   Not available
@@ -431,7 +431,7 @@ This method accepts the correlationId, key, timeout, and acquisition timeout as 
 
 ##### Release
 
-Once the lock has completed its function, it needs to be released. This can be done with the releaseLock() method, which takes the correlationId and the key as input parameters. The following example shows how to use it.
+Once the lock has completed its function, it needs to be released. This can be done with the releaseLock() method, which takes the correlationId and the key as input parameters. The following example shows how to release a lock.
 
 {{< tabsection >}}
   Not available
@@ -487,7 +487,7 @@ However, an important point to consider is that if the task was not completed be
   Not available  
 {{< /tabsection >}}
 ### Wrapping up
-In this tutorial, we have learned how to use the RedisCache and RedisLock components. The first is used to create a distributed cache that stores values in Redis. The second helps us create distributed locks based on the Redis database.
+In this tutorial, we have learned how to use the RedisCache and RedisLock components. The first is used to create a distributed cache that stores values in Redis. The second helps us create distributed locks based on a Redis database.
 
 For the RedisCache, we saw how to perform the different CRUD operations and, for the RedisLock, we understood how to manage it in practical situations. 
 

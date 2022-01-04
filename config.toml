@@ -24,8 +24,22 @@ pygmentsUseClassic = false
 # Language Configuration
 languageCode = "en-us"
 
-[deployment]
+# Security configs
+[security]
+  enableInlineShortcodes = true
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
 
+  [security.funcs]
+    getenv = ['^HUGO_', '^sidebar_cache_limit']
+
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
+
+
+[deployment]
 [[deployment.targets]]
 name = "docs.pipservices.org"
 URL = "s3://docs.pipservices.org?region=us-east-1"

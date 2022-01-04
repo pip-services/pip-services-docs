@@ -7,6 +7,7 @@ weight: 10
 description: >-
      How to create a cache and a lock using Redis.
 ---
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
 <table class="full-width-table">

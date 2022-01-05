@@ -366,7 +366,7 @@ Later on, once we have completed our task, we can close the lock with the close(
 {{< /tabsection >}}
 
 #### Managing the lock
-
+Once our lock is ready, we need to manage it. For this, we have two main operations: acquire and release, which can be executed with a set of methods available in this class. 
 ##### Acquire
 
 Here, we have two different methods. They are as follows:
@@ -459,7 +459,7 @@ Once the lock has completed its function, it needs to be released. This can be d
 
 #### Example
 
-The example below summarizes what we learned in the previous sections. In it, a lock is created and configured. Then, it is connected to the database. Once connected, it is acquired, some task processing is done, and once this task is completed, the lock is released.
+The example below summarizes what we learned in the previous sections. In it, a lock is created and configured. Then, it is connected to the database. Once connected, it is acquired, some task processing is done, and after this task is completed, the lock is released.
 
 However, an important point to consider is that if the task was not completed before the timeout expires, the lock is released anyway.
 

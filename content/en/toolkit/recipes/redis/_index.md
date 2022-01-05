@@ -489,5 +489,5 @@ However, an important point to consider is that if the task was not completed be
 ### Wrapping up
 In this tutorial, we have learned how to use the RedisCache and RedisLock components. The first is used to create a distributed cache that stores values in Redis. The second helps us create distributed locks based on a Redis database.
 
-For the RedisCache, we saw how to perform the different CRUD operations and, for the RedisLock, we understood how to manage it in practical situations. 
+For the RedisCache component, we saw how to perform the different CRUD operations and, for the RedisLock component, we understood how to manage it in practical situations. 
 

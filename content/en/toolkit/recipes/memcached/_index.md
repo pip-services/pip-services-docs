@@ -65,11 +65,83 @@ This component provides a way to create a distributed cache based on the Memcach
 
 To use this component, we need to import it first. This can be done with the following command:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Component creation
 
 Once we have imported our base class, we instantiate and configure it. Our main configuration parameters are the connection host and the port. In our case, we use our machine and the default port for Memcached. The following code explains how to do this:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Once we have our component, we can connect it to our Memcached store through the open() method. This method requires a correlationId as input parameter only.
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### CRUD operations
 
@@ -79,13 +151,85 @@ The MemcachedCache class offers several methods to perform CRUD operations. They
 
 The store() method can be used to create a record or update its values if the record already exists. This method accepts the correlationId, the key and value, and the timeout as input parameters. It returns True if the operation was successful, and False otherwise. The following example explains its syntax:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### Read
 
 The retrieve() method can be used to obtain a stored record according to a given key. The following example describes its usage.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### Delete
 
 We can use the remove() method to delete a record, which asks for a correlationId and a key as input parameters. An example of its syntax is:
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### MemcachedLock
 
@@ -95,11 +239,83 @@ This component allows us to create distributed locks based on Memcached caching 
 
 Before using it, we need to import this class. The following command shows how to do this:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Component creation
 
 To create a lock, we need to create an instance of this class and configure it with our database’s connection parameters. The following example connects to a Memcached store located in our machine and through the default port 11211.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 After defining our lock, we connect it to our Memcached store via the open() command. 
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Managing the lock
 
@@ -113,13 +329,85 @@ To acquire a lock, we have two methods. They are:
 
 This method makes a single attempt at acquiring a lock. It asks for a correlationId, a key, and a timeout value in milliseconds as input parameters. It returns True if the operation was successful, and False otherwise.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ###### acquireLock()
 
 This method makes multiple attempts at acquiring a log. It accepts a correlationId, a key, a timeout, and a lock acquisition timeout in milliseconds as input parameters. The following example shows how to use it.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### Release
 
 Once used, we can release the lock with the releaseLock() method, which takes a correlationId and a key as input parameters. Its usage is as follows:
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Example
 
@@ -127,6 +415,29 @@ Now that we understand how to create and manage a MemcachedLock, we can summariz
 
 Then, we acquire the lock and perform some operations. Once the processing is done, we release the lock. Our code looks something like this:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code14_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

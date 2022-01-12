@@ -89,7 +89,7 @@ These coded files are written in the languages of the service and client respect
 
 ### Proto file
 
-The proto file describes the communication contract between the client and the server. It is written in proto3, a language created by Google to describe gRPC communications. 
+The proto file describes the communication contract between the client and the server. It is written in [proto3](https://developers.google.com/protocol-buffers/docs/proto3), a language created by Google to describe gRPC communications. 
 
 #### Syntax
 

@@ -8,6 +8,8 @@ description: >-
      How to create a server and a client, and communicate between them.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
@@ -17,6 +19,30 @@ In this tutorial, you will learn how to create a gRPC client and server by using
 ### Pre-requisites
 
 In order to create a gRPC server and client, we need to install the module first. The command to do this is:
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### A brief overview of the example
 

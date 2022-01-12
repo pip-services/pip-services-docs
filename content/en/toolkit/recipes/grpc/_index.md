@@ -529,7 +529,7 @@ Finally, we connect to the server via the open() method.
 {{< /tabsection >}}
 
 
-#### Adding two numbers
+#### Consuming the service
 
 The next step is to call the get_data() method and obtain the result. The following example shows how to use it to add five and three, which returns eight.
 

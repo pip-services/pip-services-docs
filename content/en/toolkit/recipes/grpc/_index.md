@@ -187,8 +187,6 @@ This is the component that communicates with the library of functions and sends 
 
 ##### Pre-requisites
 
-First, we need to import the GrpcService class from the gRPC module. We can do this with the following command:
-
 ###### GrpcService
 
 First, we need to import the GrpcService class from the gRPC module. We can do this with the following command:

@@ -1,4 +1,4 @@
 
 ```python
-
+client.open(None)
 ```

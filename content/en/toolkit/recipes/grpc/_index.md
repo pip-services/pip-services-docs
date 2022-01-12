@@ -55,6 +55,7 @@ Our example consists of two programs: a service and a client, which communicate 
 
 The figure below summarizes this procedure. 
 
+![figure 1](./figure1.png)
 
 In order to communicate via the gRPC protocol, the client uses a gRPC stub and the server a gRPC server. Both are constructed based on the summator2.proto file, which contains descriptions of the input parameters, and the function used. These descriptions are transformed into two coded files via the protoc compiler. 
 
@@ -75,6 +76,7 @@ Our proto file will contain the following elements:
 
 The figure below summarizes this description.
 
+![figure 2](./figure2.png)
 
 #### Compilation
 
@@ -83,7 +85,30 @@ A proto file can be compiled into files in different languages, such as Python, 
 The compiler generates two files per language with the information on data types, stub and server. 
 
 In our case, both client and service are written in the same language. Thus, we generate a common set of files. Our command is:
-python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. summator.proto
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code22_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 And the generated files are:
 

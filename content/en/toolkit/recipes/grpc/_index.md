@@ -66,7 +66,35 @@ The proto file describes the communication contract between the client and the s
 
 #### Syntax
 
+Our proto file will contain the following elements:
+
+1.	Syntax: A command indicating that we are using proto3
+2.	Number1: A message item describing the input to our function. In our case, we will define both values as floats.
+3.	Number2: A message item describing the value returned by our method. In this example, we return the sum of the inputs as a float value.
+4.	Summator: A service item describing our method.
+
+The figure below summarizes this description.
+
+
 #### Compilation
+
+A proto file can be compiled into files in different languages, such as Python, C++, Ruby, C#, Go, and Java. This is done by running the protocol buffer compiler protoc on the .proto file. 
+
+The compiler generates two files per language with the information on data types, stub and server. 
+
+In our case, both client and service are written in the same language. Thus, we generate a common set of files. Our command is:
+python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. summator.proto
+
+And the generated files are:
+
+1.	summator2_pb2: contains message classes
+     a.	Number1: describes the types of the input paramters
+     b.	Number2: describes the result’s type.
+2.	summator2_pb2_grpc: contains server and client classes:
+     a.	SummatorServicer
+     b.	SummatorStub
+
+
 
 ### Server
 

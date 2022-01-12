@@ -132,7 +132,15 @@ In our example, we call a function named sum, which is available via the summato
 
 #### gRPC service
 
+This is the component that communicates with the library of functions and sends the results to clients after receiving their requests.
+
 ##### Pre-requisites
+
+First, we need to import the GrpcService class from the gRPC module. We can do this with the following command:
+
+###### GrpcService
+
+First, we need to import the GrpcService class from the gRPC module. We can do this with the following command:
 
 ##### Component generation
 
@@ -143,6 +151,10 @@ In our example, we call a function named sum, which is available via the summato
 The next step is to create a client, which will be used to call the sum() method available from the service, and obtain the corresponding result.
 
 #### Pre-requisites
+
+First, we need to import the GrpcService class from the gRPC module. We can do this with the following command:
+
+
 
 ##### GrpcClient
 

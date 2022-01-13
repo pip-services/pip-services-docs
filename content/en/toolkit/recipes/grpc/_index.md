@@ -26,7 +26,7 @@ description: >-
   </tr>
   <tr>
     <td>Protoc</td>
-    <td>Compiler for proto files.</td>
+    <td>Proto files compiler.</td>
   </tr>
   <tr>
     <td>summator2_pb2</td>

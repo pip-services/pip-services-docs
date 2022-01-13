@@ -30,7 +30,7 @@ Pip.services allows you to reduce the amount of code through its symmetric imple
 With a view to create our example, we need to import the following components. Among them, the two most important ones are IdentifiableMySqlPersistence and IdentifiablePostgrePersistence from Pip.Services, which will be used to define our persistence components.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -59,7 +59,7 @@ With a view to create our example, we need to import the following components. A
 We define the following data object, which corresponds to the tables that we will be using in both databases.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -90,7 +90,7 @@ Thus, our tables will have three columns, namely id, key and content.
 Now, we create an interface that will be used to create persistence objects for both databases and, which states a set of CRUD operations for identifiable persistence objects:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -119,7 +119,7 @@ Now, we create an interface that will be used to create persistence objects for 
 After that, we define a component that inherits from the IdentifiableMySqlPersistence class and our previously defined interface, and implements several CRUD methods.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -148,7 +148,7 @@ After that, we define a component that inherits from the IdentifiableMySqlPersis
 Similar to what we did in the previous step, we now define a component that inherits from the IdentifiablePostgrePersistence component and the interface previously defined, and, which implements a set of CRUD operations.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -177,7 +177,7 @@ Similar to what we did in the previous step, we now define a component that inhe
 In order to connect to our databases, we need to define our connection parameters. For our MySQL database, they will look like this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -204,7 +204,7 @@ In order to connect to our databases, we need to define our connection parameter
 Next, we create an instance of our component and configure it.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -231,7 +231,7 @@ Next, we create an instance of our component and configure it.
 And, finally, we connect it to our database.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -258,7 +258,7 @@ And, finally, we connect it to our database.
 If instead, we want to work with our PostgreSQL database, we could define our configuration as
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -285,7 +285,7 @@ If instead, we want to work with our PostgreSQL database, we could define our co
 And we create an instance of and configure our PostgreSQL component
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -312,7 +312,7 @@ And we create an instance of and configure our PostgreSQL component
 Then, we connect it to our PostgreSQL database.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -339,7 +339,7 @@ Then, we connect it to our PostgreSQL database.
 Once we have connected to the database that we want to work with, we define a new variable called persistence, which is of type 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -366,7 +366,7 @@ Once we have connected to the database that we want to work with, we define a ne
 Following this, we equate it to the connector we want to use. If we want to use our MySQL database, we write
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -393,7 +393,7 @@ Following this, we equate it to the connector we want to use. If we want to use 
 Or, if we prefer to use our PostgreSQL database, we use
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -427,7 +427,7 @@ For example
 Here we use the create() method and we insert ten records in our database.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -456,7 +456,7 @@ Here we use the create() method and we insert ten records in our database.
 Once we have some records in our database, we can retrieve them by using one of the retrieving methods. In our example below, we use the get_list_by_ids() because we are working with identifiable records. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -483,7 +483,7 @@ Once we have some records in our database, we can retrieve them by using one of 
 However, we could have also used any of the filter-based methods defined in our interface. For example:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -510,7 +510,7 @@ However, we could have also used any of the filter-based methods defined in our 
 Which, in our example, returns a DataPage object with the following values
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -539,7 +539,7 @@ Which, in our example, returns a DataPage object with the following values
 We can update a record by using the update() method. In the following example, we define a new instance for our record with id equal to ‘1’ and we update the content to ‘Updated content 1’.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -568,7 +568,7 @@ We can update a record by using the update() method. In the following example, w
 Finally, we can delete some of our records with the deleteByIds method
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -595,7 +595,7 @@ Finally, we can delete some of our records with the deleteByIds method
 Or with the deleteByFilter() method
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code21_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -626,7 +626,7 @@ This approach defines an easy and practical way to migrate tables from one datab
 To achieve this, first, we retrieve the data from the table in MySQL and we obtain a list with elements of type MyData, which we call **my_data_list**. As both databases use the same data structure, we just need to insert those rows via the create() method, which accepts a correlationID and a list of MyData elements as inputs. The following code shows this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code22_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

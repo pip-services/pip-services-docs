@@ -83,7 +83,7 @@ The figure below summarizes this procedure.
 
 ![figure 1](./figure1.png)
 
-In order to communicate via the gRPC protocol, the client uses a gRPC stub and the server a gRPC server. Both are constructed based on the summator2.proto file, which contains descriptions of the input parameters, and the function used. These descriptions are transformed into two coded files via the protoc compiler. 
+In order to communicate via the gRPC protocol, the client uses a gRPC stub and the service a gRPC server. Both are constructed based on the summator2.proto file, which contains descriptions of the input parameters, and the function used. These descriptions are transformed into two coded files via the protoc compiler. 
 
 These coded files are written in the languages of the service and client respectively. Their names are: summator2_pb2 and summator_pb2_grpc. Together, they contain all the necessary elements to create the gRPC server and the gRPC client.
 

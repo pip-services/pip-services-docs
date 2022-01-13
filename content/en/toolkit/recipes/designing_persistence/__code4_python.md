@@ -8,7 +8,7 @@ class MyIdentifiableMySqlPersistence(IdentifiableMySqlPersistence, IMyDataPersis
     def _define_schema(self):
         self._clear_schema()
         self._ensure_schema(
-            'CREATE TABLE `' + self._table_name + '` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)')
+            'CREATE TABLE ' + self._table_name + ' (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)')
         self._ensure_index(self._table_name + '_key', {'key': 1}, {'unique': True})
 
     def _compose_filter(self, filter: FilterParams):

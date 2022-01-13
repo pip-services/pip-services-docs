@@ -19,6 +19,9 @@ class IMyDataPersistence(ABC):
     def get_count_by_filter(self, correlation_id: Optional[str], filter: FilterParams) -> int:
         raise NotImplemented()
 
+    def get_list_by_filter(self, correlation_id: Optional[str], filter: FilterParams) -> List[MyData]:
+        raise NotImplemented()
+
     def get_list_by_ids(self, correlation_id: Optional[str], ids: List[str]) -> List[MyData]:
         raise NotImplemented()
 
@@ -39,4 +42,6 @@ class IMyDataPersistence(ABC):
     def delete_by_ids(self, correlation_id: Optional[str], ids: List[str]):
         raise NotImplemented()
 
+    def delete_by_filter(self, correlation_id: Optional[str], filter: FilterParams):
+        raise NotImplemented()
 ```

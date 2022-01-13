@@ -44,7 +44,7 @@ In this tutorial, you will learn how to create a gRPC client and server by using
 
 ### Pre-requisites
 
-In order to create a gRPC server and client, we need to install the module first. The command to do this is:
+In order to create a gRPC server and client, we need to install the grpc module first. The command to do this is:
 
 {{< tabsection >}}
   Not available

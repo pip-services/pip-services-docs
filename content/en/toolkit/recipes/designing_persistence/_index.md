@@ -34,7 +34,7 @@ With a view to create our example, we need to import the following components. A
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -63,7 +63,7 @@ We define the following data object, which corresponds to the tables that we wil
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,7 +94,7 @@ Now, we create an interface that will be used to create persistence objects for 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ After that, we define a component that inherits from the IdentifiableMySqlPersis
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -152,7 +152,7 @@ Similar to what we did in the previous step, we now define a component that inhe
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -181,7 +181,7 @@ In order to connect to our databases, we need to define our connection parameter
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,7 +208,7 @@ Next, we create an instance of our component and configure it.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -235,7 +235,7 @@ And, finally, we connect it to our database.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -262,7 +262,7 @@ If instead, we want to work with our PostgreSQL database, we could define our co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -289,7 +289,7 @@ And we create an instance of and configure our PostgreSQL component
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,7 +316,7 @@ Then, we connect it to our PostgreSQL database.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -343,7 +343,7 @@ Once we have connected to the database that we want to work with, we define a ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -370,7 +370,7 @@ Following this, we equate it to the connector we want to use. If we want to use 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -397,7 +397,7 @@ Or, if we prefer to use our PostgreSQL database, we use
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -431,7 +431,7 @@ Here we use the create() method and we insert ten records in our database.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -460,7 +460,7 @@ Once we have some records in our database, we can retrieve them by using one of 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -487,7 +487,7 @@ However, we could have also used any of the filter-based methods defined in our 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -514,7 +514,7 @@ Which, in our example, returns a DataPage object with the following values
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -543,7 +543,7 @@ We can update a record by using the update() method. In the following example, w
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -572,7 +572,7 @@ Finally, we can delete some of our records with the deleteByIds method
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code20_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -599,7 +599,7 @@ Or with the deleteByFilter() method
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code21_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -630,7 +630,7 @@ To achieve this, first, we retrieve the data from the table in MySQL and we obta
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code22_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

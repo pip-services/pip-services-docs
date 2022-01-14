@@ -39,6 +39,15 @@ In this tutorial, we will learn how to create a component and how to assemble a 
 
 This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
 
+### [Designing persistence](designing_persistence)
+
+In this tutorial, you will understand how to design your persistence in such a way that your code benefits from one of the main features of Pip.Services, which is symmetric code implementation.
+In order to see this, we will create an example using two different databases (MySQL and PostgreSQL). Then, we will create a common set of instructions to manage CRUD operations and transfer data from one database into another.
+
+### [gRPC](grpc)
+
+In this tutorial, you will learn how to create a gRPC client and server by using the Pip.Services’ gRPC module. We will start with an explanation of how to install this module and a brief description of the example used. Next, we will see how to create a gRPC server and client. Lastly, we will have a section containing the complete code for this project.
+
 ### [JSON Persistence](json_persistence)
 
 This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data to it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.
@@ -52,9 +61,17 @@ This tutorial will help you understand how to use two components designed to com
 Any and all nontrivial systems need logging, and microservices are no exception. Messages in logs  help us track running transactions and sort out any problems that may occur. The quality of the information that is stored in logs largely defines how simple or difficult it is to support a system.
 The Pip.Services Toolkit contains logging components that can either output messages to the console, or hand them over to specialized services, such as ElasticSearch, AppInsights or CloudWatch.
 
+### [Memcached](memcached)
+In this tutorial, you will understand how to create and manage a cache and a distributed lock, both based on a Memcached store. 
+
+First, we will look at the pre-requisites. Then, we will see how to create and perform relevant operations through examples. We will finalize the tutorial with a practical example of how to use distributed locks.
+
 ### [Memory Persistence](memory_persistence)
 
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
+
+### [Basic MongoDB Persistence](mongodb_persistence_basic)
+This tutorial will help you understand how to create persistence components for MongoDB. In particular, you will learn how to use two components, namely MongoDbPersistence and IdentifiableMongoDbPersistence. The explanations will include practical examples.
 
 ### [MongoDB Persistence](mongodb_persistence)
 
@@ -81,6 +98,10 @@ In this tutorial, you will understand how to create persistence components for P
 
 How to generate random values with the Commons’ Random package.
 In this tutorial, we will learn how to use the Random package available in the Commons module. This package contains a set of classes and methods that can be used to generate different types of random values, such as Booleans, doubles, floats, and integers. It also offers methods to generate different types of texts such as names and surnames, and methods to randomly select an element from an array or text.
+
+### [Redis](redis)
+
+In this tutorial, you will see how to use two components related to the Redis database. The first is the RedisCache class, which can be used to create distributed caches that store values in Redis. The second is RedisLock, a component that allows us to create a distributed lock based on the Redis database.
 
 ### [Reflection](reflection)
 

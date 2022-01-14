@@ -30,11 +30,11 @@ In this tutorial, you will see how to use two components related to the Redis da
 Before using this library, we need to install the Redis module. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -62,11 +62,11 @@ This component provides a way to create a distributed cache that stores values i
 In order to use the RedisCache component, we need to import it first. The command to do this is:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -90,11 +90,11 @@ In order to use the RedisCache component, we need to import it first. The comman
 To be able to interact with a Redis database, we need to create an instance of the RedisCache component and configure it. The following example shows how to do this.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -116,11 +116,11 @@ To be able to interact with a Redis database, we need to create an instance of t
 Once our component has been configured, we can connect it to the database via the open() method:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -142,11 +142,11 @@ Once our component has been configured, we can connect it to the database via th
 Once our task has been completed, we can free used resources by closing this component with the close() method, which takes the correlationId as its only input parameter.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -174,11 +174,11 @@ The RedisCache component offers the necessary methods to manage the interaction 
 We can use the create() method to create a new entry. This method accepts the correlationId, key, value, and expiration time as inputs. It returns True if the operation was successful and False otherwise. If the key already exists in the database, it updates the old value with the new value. An example of its usage is.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -202,11 +202,11 @@ We can use the create() method to create a new entry. This method accepts the co
 We can read a value from the database with the retrieve() method, which given a correlationId and a key, returns the corresponding value.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -230,11 +230,11 @@ We can read a value from the database with the retrieve() method, which given a 
 To delete a record from the database, we can use the remove method. This method accepts the correlationId and the key as inputs and returns 1 if the removal was successful and 0 otherwise.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -262,11 +262,11 @@ This component can be used to create a distributed lock that is implemented usin
 In order to use this lock, we need to import the RedisLock class first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -290,11 +290,11 @@ In order to use this lock, we need to import the RedisLock class first. This can
 Now, we can create our lock by defining an instance of the class and configuring it. For this, it is convenient to use the ConfigParams component, which creates a key-value map with the configuration parameters and their values. The example below shows how to do this.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,11 +316,11 @@ Now, we can create our lock by defining an instance of the class and configuring
 Once our component has been defined, we can connect it to the Redis database with the open() method, which accepts the correlationId as an input parameter.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -342,11 +342,11 @@ Once our component has been defined, we can connect it to the Redis database wit
 Later on, once we have completed our task, we can close the lock with the close() method to free used resources.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -376,11 +376,11 @@ Here, we have two different methods. They are as follows:
 To acquire our lock, we can use the try_acquire_lock() method. This method makes a single attempt to acquire the lock and returns a Boolean value indicating success or failure. It accepts the correlationId, the key, and the timeout in milliseconds as input parameters. The following code explains its usage.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -406,11 +406,11 @@ Alternatively, we could use the acquireLock() method, which makes multiple attem
 This method accepts the correlationId, key, timeout, and acquisition timeout as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -434,11 +434,11 @@ This method accepts the correlationId, key, timeout, and acquisition timeout as 
 Once the lock has completed its function, it needs to be released. This can be done with the releaseLock() method, which takes the correlationId and the key as input parameters. The following example shows how to release a lock.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -464,11 +464,11 @@ The example below summarizes what we learned in the previous sections. In it, a 
 However, an important point to consider is that if the task was not completed before the timeout expires, the lock is released anyway.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

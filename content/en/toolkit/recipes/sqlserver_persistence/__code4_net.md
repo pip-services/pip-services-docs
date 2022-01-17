@@ -1,4 +1,4 @@
 
-```ts
-import { SqlServerPersistence } from 'pip-services3-sqlserver-nodex';
+```cs
+using PipServices3.SqlServer.Persistence;
 ```

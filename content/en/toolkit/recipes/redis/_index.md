@@ -38,11 +38,11 @@ Before using this library, we need to install the Redis module. This can be done
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -70,11 +70,11 @@ In order to use the RedisCache component, we need to import it first. The comman
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -98,11 +98,11 @@ To be able to interact with a Redis database, we need to create an instance of t
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -124,11 +124,11 @@ Once our component has been configured, we can connect it to the database via th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -150,11 +150,11 @@ Once our task has been completed, we can free used resources by closing this com
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -182,11 +182,11 @@ We can use the create() method to create a new entry. This method accepts the co
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -210,11 +210,11 @@ We can read a value from the database with the retrieve() method, which given a 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,11 +238,11 @@ To delete a record from the database, we can use the remove method. This method 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -270,11 +270,11 @@ In order to use this lock, we need to import the RedisLock class first. This can
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,11 +298,11 @@ Now, we can create our lock by defining an instance of the class and configuring
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -324,11 +324,11 @@ Once our component has been defined, we can connect it to the Redis database wit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -350,11 +350,11 @@ Later on, once we have completed our task, we can close the lock with the close(
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -384,11 +384,11 @@ To acquire our lock, we can use the try_acquire_lock() method. This method makes
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -414,11 +414,11 @@ This method accepts the correlationId, key, timeout, and acquisition timeout as 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -442,11 +442,11 @@ Once the lock has completed its function, it needs to be released. This can be d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -472,11 +472,11 @@ However, an important point to consider is that if the task was not completed be
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

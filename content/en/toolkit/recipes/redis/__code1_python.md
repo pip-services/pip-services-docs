@@ -1,5 +1,5 @@
 
-```python
+```bash
 pip install pip-services3-redis
 
 ```

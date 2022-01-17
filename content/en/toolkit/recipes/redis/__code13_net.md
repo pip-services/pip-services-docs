@@ -1,4 +1,4 @@
 
 ```cs
-var locked = rLock.TryAcquireLock(null, "123", 33000);
+var locked = rLock.TryAcquireLock(null, "key1", 3300);
 ```

@@ -169,10 +169,10 @@ When this method is called, [listen](#listen) unblocks the thread and execution 
 #### _from_message
 Returns the content of a message and information about it.
 
-> _from_message(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Optional[bytes]
+> _from_message(message: [MessageEnvelope](../../../messaging/queues/message_envelope)): Optional[dict]
 
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message
-- **returns**: Optional[bytes] - content of the message and information about it.
+- **returns**: Optional[dict] - content of the message and information about it.
 
 
 #### _get_topic
@@ -299,9 +299,9 @@ Subscribes to a topic.
 
 #### _to_message
 Creates a new [MessageEnvelope](../../../messaging/queues/message_envelope). 
-> _to_message(msg: bytes): Optional[[MessageEnvelope](../../../messaging/queues/message_envelope)]
+> _to_message(msg: [Message](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#pythonclient-message)): Optional[[MessageEnvelope](../../../messaging/queues/message_envelope)]
 
-- **msg**: bytes - message
+- **msg**: [Message](https://docs.confluent.io/platform/current/clients/confluent-kafka-python/html/index.html#pythonclient-message) - message
 - **returns**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message 
 
 

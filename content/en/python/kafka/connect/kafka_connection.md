@@ -207,10 +207,15 @@ Opens the component.
 #### publish
 Publish a message to a specified topic.
 
-> publish(topic: str, messages: List[Any], options: dict)
+> publish(topic: str, messages: List[dict], options: dict)
 
 - **topic**: str - topic where the message will be placed.
-- **messages**: List[Any] - list of messages to be published.
+- **messages**: List[dict] - list of messages to be published.  
+Messages dict with keys: 
+    - `str|bytes` value: message;
+    - `str|bytes` key: Message key (optional);
+    - `int` timestamp: in milliseconds since epoch UTC (optional);
+    - `dict|list` headers: Message headers to set on the message (optional).
 - **options**: dict - publishing options.
 
 

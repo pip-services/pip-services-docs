@@ -124,10 +124,16 @@ Closes a component and frees used resources.
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
-#### Commit!
-**Note: this method is not implemented**
-
+#### Commit
 Commit a message offset.
+
+> `public` void Commit(string topic, string groupId, int partition, long offset, [IKafkaMessageListener](../ikafka_message_listener) listener)
+
+- **topic**: string - topic name
+- **group_id**: string - (optional) consumer group id
+- **partition**: int - partition number
+- **offset**: long - message offset
+- **listener**: [IKafkaMessageListener](../ikafka_message_listener) - message listener
 
 
 
@@ -203,10 +209,16 @@ If the connection doesn't support this function, it returns an empty list.
 
 - **returns**: Task\<List\<string\>\> - queue names.
 
-#### Seek!
-**Note: this method is not implemented**
-
+#### Seek
 Seeks a message offset.
+
+> `public` void Seek(string topic, string groupId, int partition, long offset, [IKafkaMessageListener](../ikafka_message_listener) listener)
+
+- **topic**: string - topic name
+- **groupId**: string - (optional) consumer group id
+- **partition**: int - partition number
+- **offset**: long - message offset
+- **listener**: [IKafkaMessageListener](../ikafka_message_listener) - message listener
 
 
 #### SetReferences
@@ -220,11 +232,11 @@ Sets references to dependent components.
 #### SubscribeAsync
 Subscribes to a topic.
 
-> `public` Task SubscribeAsync(string topic, string groupId, ConsumerConfig config, [IKafkaMessageListener](../ikafka_message_listener) listener)
+> `public` Task SubscribeAsync(string topic, string groupId, [ConsumerConfig](https://docs.confluent.io/platform/current/clients/confluent-kafka-dotnet/_site/api/Confluent.Kafka.ConsumerConfig.html) config, [IKafkaMessageListener](../ikafka_message_listener) listener)
 
 - **topic**: string - subject(topic) name
 - **groupId**: string - (optional) consumer group id
-- **config**: ConsumerConfig - subscription options
+- **config**: [ConsumerConfig](https://docs.confluent.io/platform/current/clients/confluent-kafka-dotnet/_site/api/Confluent.Kafka.ConsumerConfig.html) - subscription options
 - **listener**: [IKafkaMessageListener](../ikafka_message_listener) - message listener
 
 

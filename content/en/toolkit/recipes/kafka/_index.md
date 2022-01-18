@@ -40,11 +40,11 @@ The KafkaConnection class allows us to define a connection to Kafka. The main ad
 To connect to Kafka, we first need to configure our connection. For this, we can use the ConfigParams class, which allows us to specify our connection parameters, such as host and port. Once the parameters are defined, we can use the configure() method to define a connection and the open() method to start it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,11 +68,11 @@ To connect to Kafka, we first need to configure our connection. For this, we can
 To check if a connection is open, we can use the is_open() method, which returns true if the component is open and false otherwise. The example below illustrates its usage.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,11 +94,11 @@ To check if a connection is open, we can use the is_open() method, which returns
 This class also provides the _check_open() method, which returns None if the connection is open and raises an error if it is closed. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -122,11 +122,11 @@ This class also provides the _check_open() method, which returns None if the con
 To create a queue, this class offers the create_queue() method. This method accepts the queue’s name as input parameter. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -150,11 +150,11 @@ To create a queue, this class offers the create_queue() method. This method acce
 To delete a queue, this class offers the delete_queue() method, which requires the queue's name as input parameter. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -178,11 +178,11 @@ To delete a queue, this class offers the delete_queue() method, which requires t
 To obtain a list of all available queues, this class has the read_queue_names() method. Once run, it returns a list with the queue names. If the connection doesn’t support this function, it returns an empty list. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -206,11 +206,11 @@ To obtain a list of all available queues, this class has the read_queue_names() 
 The seek method sets the offset to a specified value. It requires five input parameters namely, the topic name, group id, partition, specified offset, and listener. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -234,11 +234,11 @@ The seek method sets the offset to a specified value. It requires five input par
 To publish messages on a queue, this class has the publish() method, which accepts the name of the queue and a list of messages as inputs. The following example explains its usage.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,11 +264,11 @@ To subscribe to a topic, this class offers the subscribe() method, which accepts
 The listener must implement the IkafkaMessageListener interface, which contains the on_message() method. The on_message() method requires three parameters: topic, partition and message object. The example below shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -292,11 +292,11 @@ The listener must implement the IkafkaMessageListener interface, which contains 
 To unsubscribe, this class offers the unsubscribe() method. This method has the topic name, group id and listener as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -319,11 +319,11 @@ To unsubscribe, this class offers the unsubscribe() method. This method has the 
 To close an open connection, we can use the close() method, which is used as follows:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -346,11 +346,11 @@ To close an open connection, we can use the close() method, which is used as fol
 The following example shows how to use this class to create a connection, a set of queues, to publish them on Kafka, and to subscribe to a topic containing the published messages.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -382,11 +382,11 @@ The KafkaMessageQueue component allows us to create message queues that send and
 To create a queue, we need to configure it first. We can use the ConfigParams component to define the queue’s parameters, such as the topic. Additionally, we can add the connection parameters. 
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -410,11 +410,11 @@ To create a queue, we need to configure it first. We can use the ConfigParams co
 To send a message to Kafka, we can use the send() method. This method has a MessageEnvelope as a message parameter. With a message envelope, the message is stored as a buffer, and a string is converted using an utf8 transformation.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -438,11 +438,11 @@ To send a message to Kafka, we can use the send() method. This method has a Mess
 To receive an incoming message, we can use the receive() command, which deletes the message from the queue after it has been received.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -464,11 +464,11 @@ To receive an incoming message, we can use the receive() command, which deletes 
 Alternatively, we can use the peek() method, which retrieves a single incoming message from the queue without removing it. If there is no message available in the queue, it returns null. 
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -492,11 +492,11 @@ Alternatively, we can use the peek() method, which retrieves a single incoming m
 To remove a message from a queue, we can use the complete() method. The code is as follows
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -520,11 +520,11 @@ To remove a message from a queue, we can use the complete() method. The code is 
 To close a queue and free used resources, we can use the close() method, which is used in this way.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -554,11 +554,11 @@ Once we received our message, we capture it, close our listener and unlock the t
 Our final code will look like this:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

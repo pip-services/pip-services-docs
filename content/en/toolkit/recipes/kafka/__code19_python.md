@@ -30,12 +30,13 @@ class MyMessageReceiver(IMessageReceiver, ICleanable):
         with self.__lock:
             self.__messages = []
                       
-queue = KafkaMessageQueue("myqueue2")
+queue = KafkaMessageQueue()
 queue.configure(ConfigParams.from_tuples(
     "topic", "mytopic2",
     'connection.protocol', 'tcp',
     "connection.host", "localhost",
     "connection.port", 9092,
+    "options.autosubscribe", True
 ))
 queue.open(None)
 

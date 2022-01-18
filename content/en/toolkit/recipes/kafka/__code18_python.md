@@ -1,4 +1,4 @@
 
 ```python
-queue.close("123")
+queue.close(None)
 ```

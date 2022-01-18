@@ -1,4 +1,4 @@
 
 ```python
-message = queue.receive("123", 10000)
+message = queue.receive(None, 10000)
 ```

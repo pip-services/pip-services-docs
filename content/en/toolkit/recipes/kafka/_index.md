@@ -117,7 +117,7 @@ This class also provides the checkOpen() method, which returns None if the conne
   Not available  
 {{< /tabsection >}}
 
-Note: Both methods are private. Therefore, they must be defined in a subclass of this component.
+Note: Both methods are protected. Therefore, they must be defined in a subclass of this component.
 
 ##### Create a queue
 

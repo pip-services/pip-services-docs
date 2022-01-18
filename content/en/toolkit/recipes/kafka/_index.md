@@ -65,7 +65,7 @@ To connect to Kafka, we first need to configure our connection. For this, we can
 
 ##### Check if a connection is open
 
-To check if a connection is open, we can use the is_open() method, which returns true if the component is open and false otherwise. The example below illustrates its usage.
+To check if a connection is open, we can use the isOpen() method, which returns true if the component is open and false otherwise. The example below illustrates its usage.
 
 {{< tabsection >}}
    {{< include "./__code2_node.md" >}}
@@ -91,7 +91,7 @@ To check if a connection is open, we can use the is_open() method, which returns
   Not available  
 {{< /tabsection >}}
 
-This class also provides the _check_open() method, which returns None if the connection is open and raises an error if it is closed. The example below shows how to use it.
+This class also provides the checkOpen() method, which returns None if the connection is open and raises an error if it is closed. The example below shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code3_node.md" >}}
@@ -117,9 +117,11 @@ This class also provides the _check_open() method, which returns None if the con
   Not available  
 {{< /tabsection >}}
 
+Note: Both methods are private. Therefore, they must be defined in a subclass of this component.
+
 ##### Create a queue
 
-To create a queue, this class offers the create_queue() method. This method accepts the queue’s name as input parameter. The following example shows how to use it.
+To create a queue, this class offers the createQueue() method. This method accepts the queue’s name as input parameter. The following example shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code4_node.md" >}}
@@ -147,7 +149,7 @@ To create a queue, this class offers the create_queue() method. This method acce
 
 ##### Delete a queue
 
-To delete a queue, this class offers the delete_queue() method, which requires the queue's name as input parameter. The example below shows how to use it.
+To delete a queue, this class offers the deleteQueue() method, which requires the queue's name as input parameter. The example below shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code5_node.md" >}}
@@ -175,7 +177,7 @@ To delete a queue, this class offers the delete_queue() method, which requires t
 
 ##### List all available queues
 
-To obtain a list of all available queues, this class has the read_queue_names() method. Once run, it returns a list with the queue names. If the connection doesn’t support this function, it returns an empty list. The following example shows how to use it.
+To obtain a list of all available queues, this class has the readQueueNames() method. Once run, it returns a list with the queue names. If the connection doesn’t support this function, it returns an empty list. The following example shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code6_node.md" >}}
@@ -261,7 +263,7 @@ To publish messages on a queue, this class has the publish() method, which accep
 
 To subscribe to a topic, this class offers the subscribe() method, which accepts three parameters namely, the name of a topic,  a group id, a dictionary containing options such as timeout and compression, and a listener. 
 
-The listener must implement the IkafkaMessageListener interface, which contains the on_message() method. The on_message() method requires three parameters: topic, partition and message object. The example below shows how to use it.
+The listener must implement the IkafkaMessageListener interface, which contains the on_message() method. The onMessage() method requires three parameters: topic, partition and message object. The example below shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code9_node.md" >}}
@@ -547,9 +549,9 @@ To close a queue and free used resources, we can use the close() method, which i
 
 We can now assemble everything in one example. First, we create a custom message receiver, which will manage the reception of messages according to our needs. This class will inherit from the MessageReceiver class and will expand it. It will also inherit the ICleanable interface, which will help us to define our clean() method.
 
-Then, we define our connection and create an instance of our message receiver. We use the method begin_listen() inherited from the IMessagQueue interface to start our listener and send a message.
+Then, we define our connection and create an instance of our message receiver. We use the method beginListen() inherited from the IMessagQueue interface to start our listener and send a message.
 
-Once we received our message, we capture it, close our listener and unlock the thread with the stop_listen() method, and print a message verifying if the received message equals the sent message.
+Once we received our message, we capture it, close our listener and unlock the thread with the stopListen() method, and print a message verifying if the received message equals the sent message.
 
 Our final code will look like this:
 

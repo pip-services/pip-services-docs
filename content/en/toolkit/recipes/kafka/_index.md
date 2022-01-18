@@ -65,7 +65,7 @@ To connect to Kafka, we first need to configure our connection. For this, we can
 
 ##### Check if a connection is open
 
-To check if a connection is open, we can use the is_open() method, which returns true if the component is open and false otherwise. The example below illustrates its usage.
+To check if a connection is open, we can use the isOpen() method, which returns true if the component is open and false otherwise. The example below illustrates its usage.
 
 {{< tabsection >}}
    Not available  
@@ -91,7 +91,7 @@ To check if a connection is open, we can use the is_open() method, which returns
   Not available  
 {{< /tabsection >}}
 
-This class also provides the _check_open() method, which returns None if the connection is open and raises an error if it is closed. The example below shows how to use it.
+This class also provides the checkOpen() method, which returns None if the connection is open and raises an error if it is closed. The example below shows how to use it.
 
 {{< tabsection >}}
    Not available  
@@ -116,6 +116,8 @@ This class also provides the _check_open() method, which returns None if the con
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+Note: Both methods are private. Therefore, they must be defined in a subclass of this component.
 
 ##### Create a queue
 

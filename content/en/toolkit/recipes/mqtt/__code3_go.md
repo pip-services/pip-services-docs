@@ -1,0 +1,4 @@
+
+```go
+queue := mqttqueue.NewMqttMessageQueue("")
+```

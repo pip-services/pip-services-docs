@@ -1,4 +1,4 @@
 
-```ts
-No available
+```cs
+kc.CheckOpen();
 ```

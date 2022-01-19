@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "REST Services"
-linkTitle: "REST Services"
+title: "REST Service"
+linkTitle: "REST Service"
 weight: 1
 description: >-
      How to create a simple REST service.

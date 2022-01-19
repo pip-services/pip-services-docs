@@ -108,7 +108,7 @@ In this tutorial, you will see how to use two components related to the Redis da
 How to allow a component to examine itself and manage its internal properties.  
 This package provides different classes that will allow you to develop code with introspection capacity. We will start by briefly describing reflection. Then, we will learn how to use each of the different components provided in the package through the use of examples.
 
-### [REST Services](rest_services)
+### [REST Service](rest_service)
 
 This tutorial will help you understand how REST services can be created with Pip.Services. It begins by explaining the necessary pre-requisites. Then, it proceeds to explain how to create a simple REST service using the RestService component, how to configure it, and how to run it. It ends by showing the results on a browser.
 

@@ -15,4 +15,6 @@ try:
     pass
 finally:
     lock.release_lock("123", "key1")
+
+lock.close("123")
 ```

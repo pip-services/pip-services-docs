@@ -33,15 +33,15 @@ First, we will look at the pre-requisites. Then, we will see how to create and p
 In order to use these components, we need to install the Memcached module first. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -66,15 +66,15 @@ This component provides a way to create a distributed cache based on the Memcach
 To use this component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,15 +94,15 @@ To use this component, we need to import it first. This can be done with the fol
 Once we have imported our base class, we instantiate and configure it. Our main configuration parameters are the connection host and the port. In our case, we use our machine and the default port for Memcached. The following code explains how to do this:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,15 +120,15 @@ Once we have imported our base class, we instantiate and configure it. Our main 
 Once we have our component, we can connect it to our Memcached store through the open() method. This method requires a correlationId as input parameter only.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -152,15 +152,15 @@ The MemcachedCache class offers several methods to perform CRUD operations. They
 The store() method can be used to create a record or update its values if the record already exists. This method accepts the correlationId, the key and value, and the timeout as input parameters. It returns True if the operation was successful, and False otherwise. The following example explains its syntax:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -180,15 +180,15 @@ The store() method can be used to create a record or update its values if the re
 The retrieve() method can be used to obtain a stored record according to a given key. The following example describes its usage.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,15 +208,15 @@ The retrieve() method can be used to obtain a stored record according to a given
 We can use the remove() method to delete a record, which asks for a correlationId and a key as input parameters. An example of its syntax is:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,15 +240,15 @@ This component allows us to create distributed locks based on Memcached caching 
 Before using it, we need to import this class. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -268,15 +268,15 @@ Before using it, we need to import this class. The following command shows how t
 To create a lock, we need to create an instance of this class and configure it with our database’s connection parameters. The following example connects to a Memcached store located in our machine and through the default port 11211.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -294,15 +294,15 @@ To create a lock, we need to create an instance of this class and configure it w
 After defining our lock, we connect it to our Memcached store via the open() command. 
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -330,15 +330,15 @@ To acquire a lock, we have two methods. They are:
 This method makes a single attempt at acquiring a lock. It asks for a correlationId, a key, and a timeout value in milliseconds as input parameters. It returns True if the operation was successful, and False otherwise.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -358,15 +358,15 @@ This method makes a single attempt at acquiring a lock. It asks for a correlatio
 This method makes multiple attempts at acquiring a log. It accepts a correlationId, a key, a timeout, and a lock acquisition timeout in milliseconds as input parameters. The following example shows how to use it.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -386,15 +386,15 @@ This method makes multiple attempts at acquiring a log. It accepts a correlation
 Once used, we can release the lock with the releaseLock() method, which takes a correlationId and a key as input parameters. Its usage is as follows:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -416,15 +416,15 @@ Now that we understand how to create and manage a MemcachedLock, we can summariz
 Then, we acquire the lock and perform some operations. Once the processing is done, we release the lock. Our code looks something like this:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

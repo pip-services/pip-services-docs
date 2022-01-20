@@ -187,7 +187,7 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 
 ### Tier 1: Presentation layer or view
 
-This layer is used to show the result of our app on the browser. It is constructed as a subclass of the RestService class. In it, we set a reference to the controller to create the connection between the two and be able to use the greetings method. We also define the elements of the URL to the resulting webpage.
+This layer is used to show the result of our app on the browser. It is constructed as a subclass of the RestService class. In it, we set a reference to the controller to create the connection between the two and be able to use the greetings() method. We also define the elements of the URL to the resulting webpage.
 
 {{< tabsection >}}
    Not available 

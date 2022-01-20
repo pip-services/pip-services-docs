@@ -403,6 +403,8 @@ Once our app is running, we can see the results by calling the previously define
 
 And, if everything went right, we will see the following result:
 
+![figure 1](./figure1.png)
+
 ### Complete code
 
 Below, we can see the complete code of our example.

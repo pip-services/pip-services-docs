@@ -14,19 +14,74 @@ description: >-
 
 ### Introduction
 
+In this tutorial, you will learn how to construct an application using Pip.Services components and having a three-tier structure. 
+
+We will begin with a brief description of the example that we will be constructing and a list of the necessary pre-requisites.
+
+Then, we will see a detailed description of the three tiers with code examples for each of them. We will continue by explaining how two important concepts are applied in Pip.Services: inversion of control and locator pattern, and how to construct a process container for our program.
+
+Next, we will see how to run our app by selecting a specific database, and how the results obtained from its execution are presented on our browser.
+
+We will finish by showing the complete code of our example and summarizing what was learned.
+
+
 ### Brief description of the example
+
+The example in this tutorial consists of an application that sends a message to a browser. The message has the format “Hello {name}!” where name is the random name of a person that was selected from a database.
+
+In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database.
 
 ### Pre-requisites
 
+Before creating this app, we need to install several modules that contain the necessary components. They are:
+
 ### Data object
+
+In order to use the data obtained from the database, we define a data structure that mirrors the table where the data is stored. 
+
+This table contains three columns of type varchar, namely id, type, and name. Thus, our data structure looks like this:
 
 ### Tier 1: Presentation layer or view
 
+This layer is used to show the result of our app on the browser. It is constructed as a subclass of the RestService class. In it, we set a reference to the controller to create the connection between the two and be able to use the greetings method. We also define the elements of the URL to the resulting webpage.
+
 ### Tier 2: Application layer or controller
+
+The controller allows us to connect the presentation and persistence layers and produce some data transformations. 
+
+Thus, it sets a reference to the database. This reference is not to a specific database, but a general persistence component that will allow us to select between different databases at runtime.
+
+This class also defines the greeting method, which selects a random name from the database and then passes it to the view. It also defines a default name, which will be used if no name is obtained from the database query.
+
 
 ### Tier 3: Data layer or persistence layer
 
+This layer connects to a database containing a table with names. The class constructor accepts the name of the table to be used, which in this example is called ‘myfriends’. 
+
+The class also contains the defineSchema() method, which ensures that if our table doesn’t exist in the database, it is created.
+
+Next, it contains the composeFilter() method, which customizes a filter to the needs of the database, and the getOneRandom() method, which is an override of the parent class.
+
+
 ### Containerization
+
+Now that we have the code for our three tiers, we can put it together in an executable container. This is done in two steps: object creation and binding. 
+
+The first is based on the inversion of control principle through the use of factories. The second considers the Locator pattern through an external configuration file with information on the different modules and their properties. The following sections explain them in detail.
+
+#### Inversion of control: Factories
+
+Pip.Services uses the Inversion of Control principle to create different objects. As such, it employs factories to create instances of classes. 
+
+In our example, we create the HelloFriendServiceFactory, which is a subclass of Factory and registers the HelloFriendRestService, HelloFriendController, and HelloFriendPersistence components as classes to be instantiated.
+
+#### Locator pattern: config file
+
+Pip.Services uses the locator pattern to create the bindings between the different objects. To do this, we create a configuration file with information about the different components. Among them, we specify the actual configuration of our MySQL database. 
+
+#### Process container
+
+Now that our support structure has been created, we add the components to a process container. This container will allow us to run our code as a sole app.
 
 ### Running the app
 

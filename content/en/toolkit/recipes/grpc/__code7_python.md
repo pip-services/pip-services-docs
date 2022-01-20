@@ -3,7 +3,7 @@
 class MyGrpcService(GrpcService, summator2_pb2_grpc.SummatorServicer):
     
     def __init__(self):
-        super().__init__('grpcserver')
+        super().__init__('my_data_v1')
     
     def add_servicer_to_server(self, server):
         summator2_pb2_grpc.add_SummatorServicer_to_server(self, server)

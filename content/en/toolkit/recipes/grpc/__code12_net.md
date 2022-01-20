@@ -7,5 +7,5 @@ class MyGrpcClient(GrpcClient):
      def get_data(self, correlation_id, value1, value2):
         number = summator2_pb2.Number1(value1=value1, value2=value2)
         result = self._call("Sum", None, number)
-        return result,value
+        return result.value
 ```

@@ -1,30 +1,34 @@
 
 ```python
 # Pre-requisites
-from pip_services3_grpc.clients import GrpcClient
+from grpc import ServicerContext
+from pip_services3_grpc.services import GrpcService
 from pip_services3_commons.config import ConfigParams
+
 import summator2_pb2
 import summator2_pb2_grpc
 
-# gRPC client
-class MyGrpcClient(GrpcClient):
-     def __init__(self):
-        super().__init__(summator2_pb2_grpc.SummatorStub, 'my_data_v1')
-        
-     def get_data(self, correlation_id, value1, value2):
-        number = summator2_pb2.Number1(value1=value1, value2=value2)
-        result = self._call("Sum", None, number)
-        return result
+# gRPC service
+class MyGrpcService(GrpcService, summator2_pb2_grpc.SummatorServicer):
     
-client = MyGrpcClient()
-client.configure(ConfigParams.from_tuples(
+    def __init__(self):
+        super().__init__('my_data_v1')
+    
+    def add_servicer_to_server(self, server):
+        summator2_pb2_grpc.add_SummatorServicer_to_server(self, server)
+        
+    def register(self):
+        self._register_method("Sum", None, self.__sum2)
+        
+    def __sum2(self, number: summator2_pb2.Number1, context: ServicerContext):
+        res = summator.sum(number.value1, number.value2)
+        return summator2_pb2.Number2(value1=res)
+  
+service = MyGrpcService()
+service.configure(ConfigParams.from_tuples(
     "connection.host", "localhost",
     "connection.port", 50055
 ))
 
-client.open(None)
-
-# Function call and result
-
-result = client.get_data(None, 3,5)  # Returns 8
+service.open(None)
 ```

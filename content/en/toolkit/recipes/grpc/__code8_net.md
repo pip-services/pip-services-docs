@@ -8,5 +8,6 @@ service.Configure(ConfigParams.FromTuples(
     "connection.port", 50055
 ));
 
+service.SetReferences(new References());
 
 ```

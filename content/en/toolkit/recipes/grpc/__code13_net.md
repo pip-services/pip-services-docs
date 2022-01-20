@@ -8,4 +8,5 @@ client.Configure(ConfigParams.FromTuples(
     "connection.port", 50055
 ));
 
+client.SetReferences(new References());
 ```

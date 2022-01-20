@@ -19,7 +19,7 @@ public static partial class Summator
   static readonly grpc::Method<global::Number1, global::Number2> __Method_Sum = new grpc::Method<global::Number1, global::Number2>(
       grpc::MethodType.Unary,
       __ServiceName,
-      "Sum",
+      "sum",
       __Marshaller_Number1,
       __Marshaller_Number2);
 

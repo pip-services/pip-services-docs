@@ -23,7 +23,7 @@ public class MyGrpcService : GrpcService
 
     protected override void OnRegister()
     {
-        RegisterMethod<Number1, Number2>("Sum", Sum);
+        RegisterMethod<Number1, Number2>("sum", Sum);
     }
 }
     
@@ -32,6 +32,8 @@ service.Configure(ConfigParams.FromTuples(
     "connection.host", "localhost",
     "connection.port", 50055
 ));
+
+service.SetReferences(new References());
 
 await service.OpenAsync(null);
 ```

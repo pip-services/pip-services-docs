@@ -9,7 +9,7 @@ class MyGrpcService(GrpcService, summator2_pb2_grpc.SummatorServicer):
         summator2_pb2_grpc.add_SummatorServicer_to_server(self, server)
         
     def register(self):
-        self._register_method("Sum", None, self.__sum2)
+        self._register_method("sum", None, self.__sum2)
         
     def __sum2(self, number: summator2_pb2.Number1, context: ServicerContext):
         res = summator.sum(number.value1, number.value2)

@@ -3,7 +3,7 @@
 # Pre-requisites
 from grpc import ServicerContext
 from pip_services3_grpc.services import GrpcService
-from pip_services3_commons.config import ConfigParams
+from pip_services3_commons.config import ConfigParams, References
 
 import summator2_pb2
 import summator2_pb2_grpc
@@ -18,7 +18,7 @@ class MyGrpcService(GrpcService, summator2_pb2_grpc.SummatorServicer):
         summator2_pb2_grpc.add_SummatorServicer_to_server(self, server)
         
     def register(self):
-        self._register_method("Sum", None, self.__sum2)
+        self._register_method("sum", None, self.__sum2)
         
     def __sum2(self, number: summator2_pb2.Number1, context: ServicerContext):
         res = summator.sum(number.value1, number.value2)
@@ -29,6 +29,8 @@ service.configure(ConfigParams.from_tuples(
     "connection.host", "localhost",
     "connection.port", 50055
 ))
+
+service.set_references(References())
 
 service.open(None)
 ```

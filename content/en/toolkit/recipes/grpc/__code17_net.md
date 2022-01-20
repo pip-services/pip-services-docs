@@ -15,7 +15,7 @@ public class MyGrpcClient: GrpcClient
     public async Task<float> GetData(string correlationId, float value1, float value2)
     {
         var number = new Number1() { Value1=value1, Value2 = value2};
-        var result = await CallAsync<Number1, Number2>("Sum", number);
+        var result = await CallAsync<Number1, Number2>("sum", number);
         return result.Value;
     }
 }
@@ -27,6 +27,7 @@ client.Configure(ConfigParams.FromTuples(
     "connection.port", 50055
 ));
 
+client.SetReferences(new References());
 
 await client.OpenAsync(null);
 

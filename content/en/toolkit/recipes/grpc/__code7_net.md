@@ -12,7 +12,7 @@ public class MyGrpcService : GrpcService
 
     protected override void OnRegister()
     {
-        RegisterMethod<Number1, Number2>("Sum", Sum);
+        RegisterMethod<Number1, Number2>("sum", Sum);
     }
 }
 ```

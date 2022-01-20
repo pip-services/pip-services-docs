@@ -30,6 +30,7 @@ The Pip.Services toolkit provides two different components for MongoDB persisten
 
 #### General pre-requisites
 In order to use any of these two components, we need to install the MongoDB module. This can be done with the following command:
+
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -53,6 +54,7 @@ In order to use any of these two components, we need to install the MongoDB modu
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
 #### Data object
 Throughout the examples, we will use the data structure that appears below. It contains an id field, which can be used to identify each document. The next two fields (key and content) are generic and represent any type of content that we want to persist.
 {{< tabsection >}}

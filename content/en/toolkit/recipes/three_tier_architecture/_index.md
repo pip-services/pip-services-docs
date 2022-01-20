@@ -401,7 +401,7 @@ Once our app is running, we can see the results by calling the previously define
 
 [http://localhost:8080/hello_friend/greeting](http://localhost:8080/hello_friend/greeting)
 
-And, if everything went right, we will see the following result:
+And, if everything went right, we will see something similar to:
 
 ![figure 1](./figure1.png)
 

@@ -54,4 +54,5 @@ print_result('Update', update)
 delete = persistence.delete_by_id(None, "1") 
 print_result('Delete by id', delete)
 
+persistence.close(None)
 ```

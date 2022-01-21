@@ -135,6 +135,30 @@ In our case, both client and service are written in the same language. Thus, we 
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code21_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   {{< include "./__code21_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code21_dart.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code22_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
   
 ### Server
 

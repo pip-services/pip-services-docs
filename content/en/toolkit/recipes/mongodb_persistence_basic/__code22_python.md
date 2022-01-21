@@ -9,6 +9,11 @@ persistence = MyIdentifiableMongoDbPersistence()
 
 from pip_services3_commons.config import ConfigParams
 
-config = ConfigParams.from_tuples( 'connection.host', 'localhost', 'connection.port', 27017, 'connection.database', 'pipdatabase')
+config = ConfigParams.from_tuples(
+    'connection.host', 'localhost', 
+    'connection.port', 27017, 
+    'connection.database', 'pipdatabase'
+)
+
 persistence.configure(config)
 ```

@@ -26,16 +26,19 @@ class MyMongoDbPersistence(MongoDbPersistence):
         return compose_sort
 
 
-    def get_one_random(self, correlation_id: Optional[str], filter: Any) -> MyData:
-        return super().get_one_random(correlation_id, filter)
+    def get_one_random(self, correlation_id: Optional[str], filter: FilterParams) -> MyData:
+        return super().get_one_random(correlation_id, self._compose_filter(filter))
 
     def get_list_by_filter(self, correlation_id: Optional[str], filter: FilterParams, sort: SortParams) -> List[MyData]:
-         return super().get_list_by_filter(correlation_id, filter, None, None)
+         return super().get_list_by_filter(correlation_id, self._compose_filter(filter), None, self._compose_sort(sort))
          
     def get_page_by_filter(self, correlation_id: Optional[str], filter: FilterParams, paging: PagingParams,
                            sort: SortParams) -> DataPage:
-        return super().get_page_by_filter(correlation_id, self._compose_filter(filter), paging,self._compose_sort(sort), None)
+        return super().get_page_by_filter(correlation_id, self._compose_filter(filter), paging, self._compose_sort(sort), None)
 
     def get_count_by_filter(self, correlation_id: Optional[str], filter: FilterParams) -> int:
-        return super().get_count_by_filter(correlation_id, filter)
+        return super().get_count_by_filter(correlation_id, self._compose_filter(filter))
+
+    def delete_by_filter(self, correlation_id: Optional[str], filter: FilterParams):
+        super().delete_by_filter(correlation_id, self._compose_filter(filter))
 ```

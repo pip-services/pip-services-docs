@@ -21,7 +21,11 @@ class MyData(IStringIdentifiable):
 
 data1 = MyData('1', 'key 1', 'content 1') 
 
-config = ConfigParams.from_tuples( 'connection.host', 'localhost', 'connection.port', 27017, 'connection.database', 'mydb')
+config = ConfigParams.from_tuples(
+    'connection.host', 'localhost', 
+    'connection.port', 27017, 
+    'connection.database', 'mydb'
+)
 persistence.configure(config)
 
 persistence.open("123")

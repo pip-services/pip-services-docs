@@ -1,4 +1,4 @@
 
-```python
-! pip install pip-services3-mongodb
+```bash
+pip install pip-services3-mongodb
 ```

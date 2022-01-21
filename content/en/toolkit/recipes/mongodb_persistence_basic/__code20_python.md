@@ -15,19 +15,25 @@ class MyData(IStringIdentifiable):
         self.key = key
         self.content = content
 
-
-data1 = MyData(None, 'key 1', 'content 1')
-
-
 class MyMongoDbPersistence(MongoDbPersistence):
 
     def __init__(self):
         super(MyMongoDbPersistence, self).__init__("mydata")
+
+    def _compose_filter(self, filter: FilterParams):
+        filter = filter or FilterParams()
+        key = filter.get_as_nullable_string('key')
+
+        filter_condition = {}
+
+        if key is not None:
+            filter_condition['key'] = key
     
+        return filter_condition
     
     def get_list_by_filter(self, correlation_id: Optional[str], filter: FilterParams, sort: SortParams) -> List[MyData]:
 
-         return super().get_list_by_filter(correlation_id, filter, None, None)
+         return super().get_list_by_filter(correlation_id, self._compose_filter(filter), None, None)
         
     def update(self, correlation_id: Optional[str], item: Any) -> Any:
         if item is None or item.id is None:
@@ -45,11 +51,20 @@ class MyMongoDbPersistence(MongoDbPersistence):
 
         return new_item
 
+    def delete_by_filter(self, correlation_id: Optional[str], filter: FilterParams):
+        super().delete_by_filter(correlation_id, self._compose_filter(filter))
+
+
+data1 = MyData(None, 'key 1', 'content 1')
 
 persistence = MyMongoDbPersistence()
 
-config = ConfigParams.from_tuples('connection.host', 'localhost', 'connection.port', 27017, 'connection.database',
-                                  'mydb')
+config = ConfigParams.from_tuples(
+    'connection.host', 'localhost', 
+    'connection.port', 27017, 
+    'connection.database', 'mydb'
+)
+
 persistence.configure(config)
 
 persistence.open("123")
@@ -80,8 +95,7 @@ update = persistence.update(None, items[0])
 print_result('Update', update)
 
 # 4 - Delete
-persistence.delete_by_filter(None, FilterParams.from_tuples('key', 'key 2',
-                                                            'new content 2')) 
+persistence.delete_by_filter(None, FilterParams.from_tuples('key', 'key 2')) 
 
 persistence.close("123")
 

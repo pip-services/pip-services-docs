@@ -12,6 +12,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Factories </td>
+    <td>Allow us to code class instantiation without having to specify all the configuration parameters at coding time.</td>
+  </tr>
+  <tr>
+    <td>YAML configuration file</td>
+    <td>Allows us to configure components and provide one or more alternatives at runtime.</td>
+  </tr>
+  <tr>
+    <td>Environment variables</td>
+    <td>Allow us to choose between different component alternatives at runtime.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to configure at runtime an application based on Pip.Services components. For this, we will use the example already developed in the “Three tier architecture” tutorial and expand it to consider two different databases. Then, we will see how to select one of these databases at runtime.

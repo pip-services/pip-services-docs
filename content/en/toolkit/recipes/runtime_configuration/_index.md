@@ -43,7 +43,7 @@ The sections and example that follow explain in detail how this is done .
 
 ### Brief description of the example
 
-In this tutorial, we will expand on the example presented in the tutorial titled “Three-tier architecture” and available through this website. 
+In this tutorial, we will expand on the example presented in the tutorial Three-tier architecture and available through this website. 
 
 That example comprised an application that selects a random name from a database and shows a message saying “Hello {random name}!” on a browser. The database used was MySQL.
 

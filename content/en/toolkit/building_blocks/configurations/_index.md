@@ -77,7 +77,9 @@ param2: {{PARAM2}}
 {{/if}}
 ```
 The deployment-time parameters can change the composition of the microservice by including or excluding parameters or their configuration blocks, or setting specific parameters values that are passed to already known configure methods in components that implement the IConfigurable interface.
-Runtime Configuration
+
+### Runtime Configuration
+
 Runtime configurations are typically stored in specialized services like etcd or special microservices. The Pip.Services toolkit has a standard IConfigReader interface that can be implemented by components that retrieve configurations from various sources. In this manner, they can pull configurations by calling the readConfig method or get notified when configurations change via the addChangeListener method.
 
 The Pip.Services toolkit offers a few standard configuration readers:

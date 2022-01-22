@@ -186,7 +186,7 @@ Our file will look something like this:
   Not available  
 {{< /tabsection >}}
 
-### Complete code
+### Final code
 
 Now that we have completed all the necessary additions and modifications to our program, we can join all the parts and get the final application. Its code is:
 
@@ -248,7 +248,11 @@ This is done by assigning a value to the environmental variable representing the
 
 If we selected the MySQL database, we will see the following message:
 
+![figure 1](./figure1.png)
+
 Alternatively, if we selected the PostgreSQL database, we will see the following message:
+
+![figure 2](./figure2.png)
 
 ### Wrapping up
 

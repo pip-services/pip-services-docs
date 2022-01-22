@@ -3,7 +3,7 @@
 from pip_services3_mysql.persistence import IdentifiableMySqlPersistence
 
 
-class HelloFriendPersistence(IdentifiableMySqlPersistence, IMyDataPersistence):
+class HelloFriendPersistence1(IdentifiableMySqlPersistence, IMyDataPersistence):
 
     def __init__(self):
         super(HelloFriendPersistence, self).__init__('myfriends3')

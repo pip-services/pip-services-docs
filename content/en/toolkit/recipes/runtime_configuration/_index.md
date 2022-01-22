@@ -29,7 +29,7 @@ description: >-
 
 ### Introduction
 
-In this tutorial, you will learn how to configure at runtime an application based on Pip.Services components. For this, we will use the example already developed in the “Three tier architecture” tutorial and expand it to consider two different databases. Then, we will see how to select one of these databases at runtime.
+In this tutorial, you will learn how to configure at runtime an application based on Pip.Services components. For this, we will use the example already developed in [Three tier architecture](http://docs.pipservices.org/toolkit/recipes/three_tier_architecture/) and expand it to consider two different databases. Then, we will see how to select one of these databases at runtime.
 
 ### Basic concepts
 
@@ -39,7 +39,7 @@ Inversion of control is applied through the use of factories to create objects. 
 
 The locator pattern is implemented via the use of a YAML configuration file. This feature allows us to make configuration choices at runtime. For example, we can change connection parameters, such as IP addresses or database names, and we can provide more than one option for a type of component.
 
-The sections and example that follow explain how this is done in detail.
+The sections and example that follow explain in detail how this is done .
 
 ### Brief description of the example
 
@@ -87,7 +87,7 @@ One of the principles behind Pip.Services is symmetric implementation. This mean
 
 #### Controller
 
-Our controller is similar to the one defined in the “Three tier architecture” tutorial. The only difference is that we define the _persistence variable as of type IMyDataPersistence. This will allow us to refer to our database independently of the specific cases. 
+Our controller is similar to the one defined in the tutorial “Three tier architecture”. The only difference is that we define the _persistence variable as of type IMyDataPersistence. This will allow us to refer to our database independently of the specific cases. 
 
 {{< tabsection >}}
   Not available  
@@ -203,7 +203,7 @@ Our file will look something like this:
 
 ### Final code
 
-Now that we have completed all the necessary additions and modifications to our program, we can join all the parts and get the final application. Its code is:
+Now that we have completed all the necessary additions and modifications in our program, we can join all the parts and get the final application. The code is:
 
 {{< tabsection >}}
   Not available  

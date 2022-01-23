@@ -1,11 +1,11 @@
 ---
 type: docs
 no_list: true
-title: "Runtime configuration"
-linkTitle: "Runtime configuration"
+title: "Deployment time configuration"
+linkTitle: "Deployment configuration"
 weight: 10
 description: >-
-     How to set up and change your configurations at runtime.
+     How to set up and change your configurations at deployment time.
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
@@ -19,17 +19,17 @@ description: >-
   </tr>
   <tr>
     <td>YAML configuration file</td>
-    <td>Allows us to configure components and provide one or more alternatives at runtime.</td>
+    <td>Allows us to configure components and provide one or more alternatives at deployment time.</td>
   </tr>
   <tr>
     <td>Environment variables</td>
-    <td>Allow us to choose between different component alternatives at runtime.</td>
+    <td>Allow us to choose between different component alternatives at deployment time.</td>
   </tr>
 </table>
 
 ### Introduction
 
-In this tutorial, you will learn how to configure at runtime an application based on Pip.Services components. For this, we will use the example already developed in [Three tier architecture](http://docs.pipservices.org/toolkit/recipes/three_tier_architecture/) and expand it to consider two different databases. Then, we will see how to select one of these databases at runtime.
+In this tutorial, you will learn how to configure at deployment time an application based on Pip.Services components. For this, we will use the example already developed in [Three tier architecture](http://docs.pipservices.org/toolkit/recipes/three_tier_architecture/) and expand it to consider two different databases. Then, we will see how to select one of these databases at deployment time.
 
 ### Basic concepts
 
@@ -37,7 +37,7 @@ Two of the main concepts behind Pip.Services are inversion of control and the lo
 
 Inversion of control is applied through the use of factories to create objects. The advantage here is that we can specify our class in a generic way, for example, by indicating that it is a persistence unit, but without having to specify connection parameters and other aspects.
 
-The locator pattern is implemented via the use of a YAML configuration file. This feature allows us to make configuration choices at runtime. For example, we can change connection parameters, such as IP addresses or database names, and we can provide more than one option for a type of component.
+The locator pattern is implemented via the use of a YAML configuration file. This feature allows us to make configuration choices at deployment time. For example, we can change connection parameters, such as IP addresses or database names, and we can provide more than one option for a type of component.
 
 The sections and example that follow explain in detail how this is done .
 
@@ -47,11 +47,11 @@ In this tutorial, we will expand on the example presented in the tutorial Three-
 
 That example comprised an application that selects a random name from a database and shows a message saying “Hello {random name}!” on a browser. The database used was MySQL.
 
-Our code expansion will consist of including a second database (PostgreSQL) containing a similar table and adding the capacity to choose between the two at runtime via environmental variables.
+Our code expansion will consist of including a second database (PostgreSQL) containing a similar table and adding the capacity to choose between the two at deployment time via environmental variables.
 
 ### Changes to our example
 
-In this example, we consider two databases, one MySQL and another PostgreSQL and we select one of them at runtime for the application.
+In this example, we consider two databases, one MySQL and another PostgreSQL and we select one of them at deployment time for the application.
 
 For this, we create an interface that defines a common naming and permits to shift between both databases.
 
@@ -271,7 +271,7 @@ Alternatively, if we selected the PostgreSQL database, we will see the following
 
 ### Wrapping up
 
-In this tutorial, we have examined how to create a web application that allows us to select between two different databases at runtime. 
+In this tutorial, we have examined how to create a web application that allows us to select between two different databases at deployment time. 
 Although this example is simple, it can be extended to consider many other scenarios, as the principles and concepts employed in its construction are the same.
 
 

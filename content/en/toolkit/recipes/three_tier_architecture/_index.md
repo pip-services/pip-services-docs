@@ -217,7 +217,7 @@ This layer is used to show the result of our app on the browser. It is construct
 
 The controller allows us to connect the presentation and persistence layers and produce some data transformations. 
 
-Thus, it sets a reference to the database. This reference is not to a specific database, but a general persistence component that will allow us to select between different databases at runtime.
+Thus, it sets a reference to the database. This reference is not to a specific database, but a general persistence component that will allow us to select between different databases at deployment time.
 
 This class also defines the greeting method, which selects a random name from the database and then passes it to the view. It also defines a default name, which will be used if no name is obtained from the database query.
 

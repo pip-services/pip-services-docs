@@ -1,4 +1,6 @@
 
 ```python
-result = persistence.update_partially(None, '6', AnyValueMap({'content': 'content 6 - partially updated'}))
+from pip_services3_commons.data import AnyValueMap
+
+result = persistence.update_partially(None, '2', AnyValueMap({'content': 'new content 2 - partially updated'}))
 ```

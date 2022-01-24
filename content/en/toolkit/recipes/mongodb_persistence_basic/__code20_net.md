@@ -81,15 +81,15 @@ public class MyMongoDbPersistence : MongoDbPersistence<MyData>
 public static void PrintResult(string operationNme, MyData res)
 {
     Console.WriteLine($"==================== {operationNme} ====================");
-    Console.WriteLine($"MyData Key: {res.Id}");
+    Console.WriteLine($"MyData with Id: {res.Id}");
     Console.WriteLine($"MyData Key: {res.Key}");
-    Console.WriteLine($"MyData Key: {res.Content}");
+    Console.WriteLine($"MyData Content: {res.Content}");
 }
 
 
 var data1 = new MyData { Id = "1", Key = "key 1", Content="content 1" };
 
-persistence = MyMongoDbPersistence()
+persistence = new MyMongoDbPersistence();
 
 var config = ConfigParams.FromTuples(
     "connection.host", "localhost",
@@ -97,7 +97,7 @@ var config = ConfigParams.FromTuples(
     "connection.database", "mydb"
 );
 
-persistence.configure(config)
+persistence.Configure(config);
 
 await persistence.OpenAsync("123");
 await persistence.ClearAsync("123");
@@ -118,7 +118,7 @@ var update = await persistence.UpdateAsync(null, items[0]);
 PrintResult("Update", update);
 
 // 4 - Delete
-await  persistence.DeleteByFilterAsync(null, FilterParams.FromTuples("key", "key 2"));
+await  persistence.DeleteByFilterAsync(null, FilterParams.FromTuples("key", "key 1"));
 
 await persistence.CloseAsync("123");
 

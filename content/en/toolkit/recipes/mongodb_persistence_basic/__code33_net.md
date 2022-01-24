@@ -1,4 +1,6 @@
 
 ```cs
-result = await persistence.UpdatePartiallyAsync(null, "6", AnyValueMap.FromTuples("content", "content 6 - partially updated"));
+using PipServices3.Commons.Data;
+
+result = await persistence.UpdatePartiallyAsync(null, "2", AnyValueMap.FromTuples("content", "new content 2 - partially updated"));
 ```

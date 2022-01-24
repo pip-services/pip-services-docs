@@ -73,7 +73,7 @@ persistence.clear("123")
 
 def print_result(operation_name: str, res: MyData):
     print(f"==================== {operation_name} ====================")
-    print(f'MyData Key: {res.id}')
+    print(f'MyData with Id: {res.id}')
     print(f'MyData Key: {res.key}')
     print(f'MyData Content: {res.content}')
 
@@ -95,7 +95,7 @@ update = persistence.update(None, items[0])
 print_result('Update', update)
 
 # 4 - Delete
-persistence.delete_by_filter(None, FilterParams.from_tuples('key', 'key 2')) 
+persistence.delete_by_filter(None, FilterParams.from_tuples('key', 'key 1')) 
 
 persistence.close("123")
 

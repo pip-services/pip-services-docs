@@ -547,7 +547,7 @@ Now, we can call it from our code and get the returned amount of records that co
 
 ###### Update
 
-As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the [Example](#Example) section.
+As MongoDbPersistence doesn’t have an update method, we need to define it in our class. We will see how to do this in the [Example](#example) section.
 
 ###### Delete
 

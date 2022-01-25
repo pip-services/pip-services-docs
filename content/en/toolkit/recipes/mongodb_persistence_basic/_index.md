@@ -195,7 +195,7 @@ Later on, once all operations have been completed, we can close our persistence 
 ##### CRUD operations
 Our class inherits several methods from its parent class that can be used to perform CRUD operations. This section explores them.
 ###### Create
-To store a document, we use the create method. This method asks for the correlation_id and the data object. In the following example, we create a document based on the previously defined data1 object.
+To store a document, we use the create method. This method asks for the correlationId and the data object. In the following example, we create a document based on the previously defined data1 object.
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -250,7 +250,7 @@ Which returns:
 ###### Read
 The MongoDbPersistence class offers several options to extract documents from a database. 
 
-**get_one_random()**
+**getOneRandom()**
 
 As its name suggests, this method retrieves a random document based on a given filter. In the following example, we ask to retrieve a component with a key value of ‘key 3’.
 
@@ -304,7 +304,7 @@ Which returns:
   Not available  
 {{< /tabsection >}}
 
-**get_list_by_filter()**
+**getListByFilter()**
 
 This method gets a list of data items retrieved according to a given filter. In order to use it, we override this method. This action allows us to introduce any specific aspects that we may need. Our function will look something like this:
 
@@ -384,10 +384,10 @@ Which returns:
   Not available  
 {{< /tabsection >}}
 
-**get_page_by_filter()**
+**getPageByFilter()**
 
 This method gets a page of data items retrieved according to a given filter. It also allows adding a sorting parameter and a projection object. 
-Similar to what we did in the previous example, we override this method in our persistence class. Besides, we add two methods, namely _compose_filter and  _compose_sort. These two methods are used to define aspects that are specific to the database we are using (In our case MongoDB). An example of both methods is:
+Similar to what we did in the previous example, we override this method in our persistence class. Besides, we add two methods, namely composeFilter and  composeSort. These two methods are used to define aspects that are specific to the database we are using (In our case MongoDB). An example of both methods is:
 
 {{< tabsection >}}
   {{< include "./__code13_node.md" >}}
@@ -491,7 +491,7 @@ which returns the searched values in a DataPage object:
   Not available  
 {{< /tabsection >}}
 
-**get_count_by_filter()**
+**getCountByFilter()**
 
 This method gets the number of data items that will be retrieved based on a given filter. Because it is a private method in other languages – such as Node.js -  we need to override it. Our added method will look similar to 
 
@@ -637,8 +637,11 @@ And the output is:
 ![figure 1](./figure1.png)
 
 #### IdentifiableMongoDbPersistence
+
 This component is used to perform CRUD operations with identifiable data objects, that is, objects that can be identified via a unique id. 
+
 ##### Pre-requisites
+
 To use the IdentifiableMongoDbPersistence component we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
@@ -666,6 +669,7 @@ To use the IdentifiableMongoDbPersistence component we need to import it first. 
 {{< /tabsection >}}
 
 ##### Component creation
+
 To create an identifiable MongoDB persistence component, we create a subclass of the IdentifiableMongoDbPersistence class where we specify the name of the table we will be using (In our example: mydata). We also define an instance of it and, via the configure() method, we add the connection parameters. In our example, we use a local database and we connect to it through the default port 27017. We also define a database named “pipdatabase”.
 
 {{< tabsection >}}
@@ -916,9 +920,9 @@ Which returns:
   Not available  
 {{< /tabsection >}}
 
-**get_list_by_ids()**
+**getListByIds()**
 
-We can also use the get_list_by_ids() method, which is similar to the previous one, but accepts a list containing ids and retrieves the documents related to those ids. In the following example, we search for those items with id equal to ‘1’ and ‘2’.
+We can also use the getListByIds() method, which is similar to the previous one, but accepts a list containing ids and retrieves the documents related to those ids. In the following example, we search for those items with id equal to ‘1’ and ‘2’.
 
 {{< tabsection >}}
   {{< include "./__code29_node.md" >}}
@@ -1026,7 +1030,7 @@ Which returns:
   Not available  
 {{< /tabsection >}}
 
-**update_partially()**
+**updatePartially()**
 
 This method also updates an item, but only the specified fields. It takes the id of the item to be updated and an AnyValueMap object containing the fields to be modified and their updated values as input parameters. The following example shows how to update the content field for a record with id equal to ‘3’.
 
@@ -1082,9 +1086,9 @@ Which returns:
 
 ###### Delete
 
-**delete_by_id()**
+**deleteById()**
 
-We can delete a stored data object by using the delete() method. Here, we need to indicate the correlation_id and the id of the object to be deleted. The following example deletes a record with an id equal to ‘1’.
+We can delete a stored data object by using the delete() method. Here, we need to indicate the correlationId and the id of the object to be deleted. The following example deletes a record with an id equal to ‘1’.
 
 {{< tabsection >}}
   {{< include "./__code35_node.md" >}}
@@ -1136,7 +1140,7 @@ Which returns:
   Not available  
 {{< /tabsection >}}
 
-**delete_by_ids**
+**deleteByIds**
 
 This method accepts a list containing the ids of the documents to be deleted. The following example shows how to delete the records with ids equal to ‘1’ and ‘2’.
 

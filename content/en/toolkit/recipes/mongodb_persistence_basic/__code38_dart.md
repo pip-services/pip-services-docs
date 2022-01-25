@@ -1,58 +1,80 @@
 
-```ts
-import { AnyValueMap, ConfigParams, FilterParams, IStringIdentifiable, SortParams } from 'pip-services3-commons-nodex';
-import { IdentifiableMongoDbPersistence } from 'pip-services3-mongodb-nodex';
+```dart
+import 'package:pip_services3_commons/pip_services3_commons.dart';
+import 'package:pip_services3_mongodb/pip_services3_mongodb.dart';
 
-export class MyIdentifiableMongoDbPersistence extends IdentifiableMongoDbPersistence<MyData, string> {
-    public constructor() {
-        super("mydata");
-    }
+class MyIdentifiableMongoDbPersistence
+    extends IdentifiableMongoDbPersistence<MyData, String> {
+  MyIdentifiableMongoDbPersistence() : super('mydata');
 }
 
-export class MyData implements IStringIdentifiable {
-    public id: string;
-    public key: string;
-    public content: string;
+class MyData implements IStringIdentifiable, ICloneable {
+  @override
+  String? id;
+  String? key;
+  String? content;
+
+  MyData();
+
+  MyData.from(this.id, this.key, this.content);
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{'id': id, 'key': key, 'content': content};
+  }
+
+  void fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    key = json['key'];
+    content = json['content'];
+  }
+
+  @override
+  MyData clone() {
+    return MyData.from(id, key, content);
+  }
 }
 
-export function printResult(operationName: string, res: MyData) {
-    console.log(`==================== ${operationName} ====================`);
-    console.log(`MyData with id: ${res.id}`);
-    console.log(`MyData key: ${res.key}`);
-    console.log(`MyData content: ${res.content}`);
+void printResult(String operationName, MyData res) {
+  print('==================== $operationName ====================');
+  print('MyData with id: ${res.id}');
+  print('MyData key: ${res.key}');
+  print('MyData content: ${res.content}');
 }
 
+void main(List<String> arguments) async {
+  var data1 = MyData.from('1', 'key 1', 'content 1');
 
-let data1: MyData = { id: "1", key: "key 1", content: "content 1" };
+  var persistence = MyIdentifiableMongoDbPersistence();
+  var config = ConfigParams.fromTuples([
+    'connection.host', 'localhost',
+    'connection.port', 27017,
+    'connection.database', 'pipdatabase'
+  ]);
+  persistence.configure(config);
 
-let persistence = new MyIdentifiableMongoDbPersistence();
-let config = ConfigParams.fromTuples(
-    "connection.host", "localhost",
-    "connection.port", 27017,
-    "connection.database", "pipdatabase"
-);
-persistence.configure(config);
+  await persistence.open(null);
+  await persistence.clear(null);
 
-await persistence.open(null);
-await persistence.clear(null);
+  // CRUD
+  // 1 - Create
+  var result = await persistence.create(null, data1);
+  printResult('Create', result!);
 
-// CRUD
-// 1 - Create
-let result = await persistence.create(null, data1);
-printResult("Create", result);
+  // 2 - Retrieve
+  var item = await persistence.getOneById('123', '1');
+  printResult('Get by id', item!);
 
-// 2 - Retrieve
-let item = await persistence.getOneById("123", "1");
-printResult("Get by id", item);
+  // 3 - Update
+  var update = await persistence.update(
+      null, MyData.from('1', 'key 1', 'new content 1'));
+  printResult('Update', update!);
 
-// 3 - Update
-let update = await persistence.update(null, { id: "2", key: "key 2", content: "new content 2" });
-printResult("Update", update);
+  // 4 - Delete
+  var deleted = await persistence.deleteById(null, '1');
+  printResult('Delete by id', deleted!);
 
-// 4 - Delete
-let deleted = await persistence.deleteById(null, "1");
-printResult("Delete by id", deleted);
-
-await persistence.close(null);
+  await persistence.close(null);
+  await persistence.close(null);
+}
 
 ```

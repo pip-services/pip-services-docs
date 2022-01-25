@@ -1,19 +1,18 @@
 
-```ts
-import { ConfigParams } from 'pip-services3-commons-nodex';
+```dart
+import 'package:pip_services3_commons/pip_services3_commons.dart';
 
-export class MyIdentifiableMongoDbPersistence extends IdentifiableMongoDbPersistence<MyData, string> {
-    public constructor() {
-        super("mydata");
-    }
+class MyIdentifiableMongoDbPersistence
+    extends IdentifiableMongoDbPersistence<MyData, String> {
+  MyIdentifiableMongoDbPersistence() : super('mydata');
 }
-let persistence = new MyIdentifiableMongoDbPersistence();
 
-let config = ConfigParams.fromTuples(
-    "connection.host", "localhost",
-    "connection.port", 27017,
-    "connection.database", "pipdatabase"
-);
+var persistence = MyIdentifiableMongoDbPersistence();
+var config = ConfigParams.fromTuples([
+  'connection.host','localhost',
+  'connection.port', 27017,
+  'connection.database', 'pipdatabase'
+]);
 
 persistence.configure(config);
 ```

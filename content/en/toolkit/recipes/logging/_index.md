@@ -430,26 +430,242 @@ In this example, we will combine two features: displaying log information on our
 
 In order to be able to create a composite logger for both outputs, we need to import the following components:
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Component creation
 
 The next step is to create our two logging components, namely our console and ElasticSearch. For this, we instantiate the ConsoleLogger and ElasticSearchLogger classes. Our code is:
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Once these instances have been created, we can configure them. To address this, we create a common configuration object that contains all the necessary parameters and their values:
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 and we assign these values to the respective objects
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code14_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Next, we connect our ElasticSearch logger:
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code15_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### Composite logger
 After defining our two loggers, we define a composite logger that manages both. For this, we first declare a reference object that points to both loggers:
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code16_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Then, we create an instance of the CompositeLogger class:
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code17_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And, we add our references to it:
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code18_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Adding log messages:
 
 Now that our structure is complete, we can create different log messages, which will be sent to ElasticSearch and the console after executing our code:
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code19_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 After code execution, the following messages will appear on our console:
 
@@ -467,7 +683,31 @@ For example, for January 25, 2022, our URL is
 
 which will show:
 
-<img src="figure4.png" alt="Console logger messages" style="width:100%">
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+  {{< include "./__code20_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 In this tutorial, we have learned what logging is, the different logging levels, and how to use the **ConsoleLogger** and **CompositeLogger** from PIP.Services to display log messages. The main advantage of the composite logger is its capacity to aggregate all logging messages, thus creating a centralized logging point.

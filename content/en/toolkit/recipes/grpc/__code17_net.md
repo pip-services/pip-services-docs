@@ -10,7 +10,7 @@ using PipServices3.Grpc.Clients;
 // gRPC client
 public class MyGrpcClient: GrpcClient
 {
-    public MyGrpcClient(): base("my_data_v1") { }
+    public MyGrpcClient(): base("Summator") { }
 
     public async Task<float> GetData(string correlationId, float value1, float value2)
     {

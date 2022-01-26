@@ -11,7 +11,7 @@ import 'summator.dart';
 // gRPC server
 class MyGrpcService extends command.SummatorServiceBase with GrpcService {
   MyGrpcService() {
-    serviceName = 'Summator.service';
+    serviceName = 'Summator';
   }
 
   @override

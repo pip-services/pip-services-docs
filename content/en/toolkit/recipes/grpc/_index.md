@@ -74,7 +74,7 @@ Our example consists of two programs: a service and a client, which communicate 
 
 The figure below summarizes this procedure. 
 
-![figure 1](./figure1.png)
+![figure 1](./figure1v2.png)
 
 In order to communicate via the gRPC protocol, the client uses a gRPC stub and the service a gRPC server. Both are constructed based on the summator2.proto file, which contains descriptions of the input parameters, and the function used. These descriptions are transformed into two coded files via the protoc compiler. 
 

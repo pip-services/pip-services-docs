@@ -26,16 +26,9 @@ description: >-
   </tr>
   <tr>
     <td>Protoc</td>
-    <td>Proto files compiler.</td>
+    <td>Proto file compiler.</td>
   </tr>
   <tr>
-    <td>summator2_pb2</td>
-    <td>Compiler-generated file containing message classes.</td>
-  </tr>
-  <tr>
-    <td>summator2_pb2_grpc</td>
-    <td>Compiler-generated file containing client and server classes.</td>
-  </tr>
 </table>
 
 ### Introduction

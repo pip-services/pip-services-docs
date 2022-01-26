@@ -26,7 +26,7 @@ description: >-
   </tr>
   <tr>
     <td>Protoc</td>
-    <td>Proto files compiler.</td>
+    <td>Proto file compiler.</td>
   </tr>
   <tr>
 </table>

@@ -1,0 +1,7 @@
+{{ $content := .Get 0 }}
+{{ if $content }}
+    {{ $content | markdownify}}
+{{ end }}
+{{ if .Inner }}
+    {{ .Inner | markdownify }}
+{{ end }}

@@ -9,7 +9,7 @@ class HelloFriendPersistence2(IdentifiablePostgresPersistence, IMyDataPersistenc
 
     def _define_schema(self):
         self._clear_schema()
-        self._ensure_schema('CREATE TABLE ' + self._table_name + ' (id TEXT PRIMARY KEY, type TEXT, name TEXT)')
+        self._ensure_schema('CREATE TABLE IF NOT EXISTS' + self._table_name + ' (id TEXT PRIMARY KEY, type TEXT, name TEXT)')
 
     def _compose_filter(self, filter: FilterParams):
         filter = filter or FilterParams()

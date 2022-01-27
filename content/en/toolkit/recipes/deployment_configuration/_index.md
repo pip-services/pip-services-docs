@@ -62,11 +62,11 @@ We also create a class per database.
 One of the principles behind Pip.Services is symmetric implementation. This means that different libraries use similar method names and signatures. As a result, we can create an interface that defines the CRUD methods implemented by one or more databases. This will allow us to have a common central point from which we can define the operations that we need.
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -90,11 +90,11 @@ One of the principles behind Pip.Services is symmetric implementation. This mean
 Our controller is similar to the one defined in the tutorial “Three tier architecture”. The only difference is that we define the _persistence variable as of type IMyDataPersistence. This will allow us to refer to our database independently of the specific cases. 
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -118,11 +118,11 @@ Our controller is similar to the one defined in the tutorial “Three tier archi
 This class adds the common interface as a parent. As the getOneRandom() method is protected, we override it and add the composeFilter() method to create a filter that considers the specifics of MySQL.
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -148,11 +148,11 @@ As we are working with two databases, we need to create a class similar to the o
 Similar to our MySQL class, we also override the getOneRandom() method and add a composeFilter() method to adapt our filter to the specifics of PostgreSQL.
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -242,11 +242,11 @@ Our file will look something like this:
 Now that we have completed all the necessary additions and modifications in our program, we can join all the parts and get the final application. The code is:
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -272,11 +272,11 @@ The fact that we can choose between two different databases brings an extra step
 This is done by assigning a value to the environmental variable representing the selected database. We can do this by setting our variable from Windows or through code. We can then deselect this database by assigning an empty string or by not assigning a value to its environment variable. The following example shows how to select our MySQL database and run the application. 
 
 {{< tabsection >}}
-  Not available  
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

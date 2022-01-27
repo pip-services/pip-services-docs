@@ -60,11 +60,11 @@ In order to achieve this, we divide our app into three tiers. The first is the p
 Before creating this app, we need to install several modules that contain the necessary components. They are:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,12 +83,15 @@ Before creating this app, we need to install several modules that contain the ne
   Not available  
 {{< /tabsection >}}
 
+
+
+
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -107,12 +110,15 @@ Before creating this app, we need to install several modules that contain the ne
   Not available  
 {{< /tabsection >}}
 
+
+
+
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -131,12 +137,14 @@ Before creating this app, we need to install several modules that contain the ne
   Not available  
 {{< /tabsection >}}
 
+
+
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -162,11 +170,11 @@ In order to use the data obtained from the database, we define a data structure 
 This table contains three columns of type varchar, namely id, type, and name. Thus, our data structure looks like this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -190,11 +198,11 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 This layer is used to show the result of our app on the browser. It is constructed as a subclass of the RestService class. In it, we set a reference to the controller to create the connection between the two and be able to use the greetings() method. We also define the elements of the URL to the resulting webpage.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -222,11 +230,11 @@ Thus, it sets a reference to the database. This reference is not to a specific d
 This class also defines the greeting method, which selects a random name from the database and then passes it to the view. It also defines a default name, which will be used if no name is obtained from the database query.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -254,11 +262,11 @@ The class also contains the defineSchema() method, which ensures that if our tab
 Next, it contains the composeFilter() method, which customizes a filter to the needs of the database, and the getOneRandom() method, which is an override of the parent class.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -290,11 +298,11 @@ Pip.Services uses the Inversion of Control principle to create different objects
 In our example, we create the HelloFriendServiceFactory, which is a subclass of Factory and registers the HelloFriendRestService, HelloFriendController, and HelloFriendPersistence components as classes to be instantiated.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,11 +375,11 @@ Pip.Services uses the locator pattern to create the bindings between the differe
 Now that our support structure has been created, we add the components to a process container. This container will allow us to run our code as a sole app.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -394,11 +402,11 @@ Now that our support structure has been created, we add the components to a proc
 Our final step is to execute the app via the container’s run() command. The following example shows how to do this.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -430,11 +438,11 @@ And, if everything went right, we will see something similar to:
 
 Below, we can see the complete code of our example.
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

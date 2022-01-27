@@ -5,19 +5,23 @@ import {
     IConfigurable, IReferenceable, IReferences, 
     IStringIdentifiable 
 } from "pip-services3-commons-nodex";
+
 import { Factory } from "pip-services3-components-nodex";
 import { ProcessContainer } from "pip-services3-container-nodex";
 import { IdentifiableMySqlPersistence } from "pip-services3-mysql-nodex";
+import { IdentifiablePostgresPersistence } from "pip-services3-postgres-nodex";
 import { DefaultRpcFactory, RestService } from "pip-services3-rpc-nodex";
 
-// Data object
+
+
 export class MyFriend implements IStringIdentifiable {
     public id: string;
     public type: string;
     public name: string;
 }
 
-// Tier 1: View
+
+
 export class HelloFriendRestService extends RestService {
     protected controller: HelloFriendController;
 
@@ -55,10 +59,10 @@ export class HelloFriendRestService extends RestService {
 }
 
 
-// Tier 2 : Controller
+
 export class HelloFriendController implements IConfigurable, IReferenceable {
     private defaultName: string;
-    private persistence: HelloFriendPersistence;
+    private persistence: IMyDataPersistence;
 
     public constructor() {
         this.defaultName = "Pip User";
@@ -87,8 +91,15 @@ export class HelloFriendController implements IConfigurable, IReferenceable {
 }
 
     
-// Tier 3 = Persistence
-export class HelloFriendPersistence extends IdentifiableMySqlPersistence<MyFriend, string> {
+    
+export interface IMyDataPersistence {
+    getOneRandom(correlationId: string, filter: FilterParams): Promise<MyFriend>;
+    create(correlationId: string, item: MyFriend): Promise<MyFriend>;
+}
+        
+
+
+export class HelloFriendPersistence1 extends IdentifiableMySqlPersistence<MyFriend, string> implements IMyDataPersistence {
     public constructor() {
         super("myfriends3");
     }
@@ -112,27 +123,61 @@ export class HelloFriendPersistence extends IdentifiableMySqlPersistence<MyFrien
         return filterCondition;
     }
 
-    public getOneRandom(correlationId: string, filter: any): Promise<MyFriend> {
+    public getOneRandom(correlationId: string, filter: FilterParams): Promise<MyFriend> {
         return super.getOneRandom(correlationId, this.composeFilter(filter));
     }
 }
 
-// Inversion of control: Factory
+
+       
+export class HelloFriendPersistence2 extends IdentifiablePostgresPersistence<MyFriend, string> implements IMyDataPersistence {
+    public constructor() {
+        super("myfriends3");
+    }
+
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE IF NOT EXISTS ' + this._tableName + ' (id TEXT PRIMARY KEY, type TEXT, name TEXT)');
+    }
+
+    private composeFilter(filter: FilterParams): string {
+        filter ??= new FilterParams();
+        let type = filter.getAsNullableString("type");
+        let content = filter.getAsNullableString("content");
+
+        let filterCondition = "";
+        if (type != null)
+            filterCondition += "type='" + type + "'";
+        if (content != null)
+            filterCondition += "content='" + content + "'";
+
+        return filterCondition;
+    }
+
+    public getOneRandom(correlationId: string, filter: FilterParams): Promise<MyFriend> {
+        return super.getOneRandom(correlationId, this.composeFilter(filter));
+    }
+}
+
+
+
 export class HelloFriendServiceFactory extends Factory {
     public constructor() {
         super();
         let HttpServiceDescriptor = new Descriptor("hello-friend", "service", "http", "*", "1.0");      // View
         let ControllerDescriptor = new Descriptor("hello-friend", "controller", "default", "*", "1.0"); // Controller
-        let PersistenceDescriptor = new Descriptor("hello-friend", "persistence", "mysql", "*", "1.0"); // Persistence
+        let PersistenceDescriptor1 = new Descriptor("hello-friend", "persistence", "mysql", "*", "1.0"); // Persistence
+        let PersistenceDescriptor2 = new Descriptor("hello-friend", "persistence", "postgres", "*", "1.0"); // Persistence
 
         this.registerAsType(HttpServiceDescriptor, HelloFriendRestService); // View
         this.registerAsType(ControllerDescriptor,  HelloFriendController);  // Controller
-        this.registerAsType(PersistenceDescriptor, HelloFriendPersistence); // Persistence
+        this.registerAsType(PersistenceDescriptor1, HelloFriendPersistence1); // Persistence
+        this.registerAsType(PersistenceDescriptor2, HelloFriendPersistence2); // Persistence
     }
 }
 
 
-// Containerization
+
 export class HelloFriendProcess extends ProcessContainer {
     public constructor() {
         super("hello-friend", "HelloFriend microservice");
@@ -141,10 +186,16 @@ export class HelloFriendProcess extends ProcessContainer {
         this._factories.add(new DefaultRpcFactory());
     }
 }
-        
-// Running the app
+
+
+
 export async function main() { 
     try {
+        // Step 1 - Database selection
+        // process.env['MYSQL_ENABLED'] = 'true';
+        process.env['POSTGRES_ENABLED'] = 'true';
+
+        // Step 2 - The run() command
         let proc = new HelloFriendProcess();
         proc.run(process.argv);
     } catch (ex) {
@@ -153,3 +204,4 @@ export async function main() {
 }
 
 ```
+

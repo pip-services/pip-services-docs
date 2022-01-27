@@ -1,9 +1,9 @@
 
 ```ts
-import { FilterParams } from "pip-services3-commons-nodex";
 import { IdentifiableMySqlPersistence } from "pip-services3-mysql-nodex";
 
-export class HelloFriendPersistence extends IdentifiableMySqlPersistence<MyFriend, string> {
+
+export class HelloFriendPersistence1 extends IdentifiableMySqlPersistence<MyFriend, string> implements IMyDataPersistence {
     public constructor() {
         super("myfriends3");
     }
@@ -33,3 +33,4 @@ export class HelloFriendPersistence extends IdentifiableMySqlPersistence<MyFrien
 }
 
 ```
+

@@ -1,45 +1,15 @@
 
-```
----
-# Container context
-- descriptor: "pip-services:context-info:default:default:1.0"
-  name: "hello-friend"
-  description: "HelloFriend microservice"
+```python
+from pip_services3_container.ProcessContainer import ProcessContainer
+from pip_services3_rpc.build import DefaultRpcFactory
 
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0"
-  level: "trace"
 
-# Performance counter that post values to log
-- descriptor: "pip-services:counters:log:default:1.0"
+class HelloFriendProcess(ProcessContainer):
 
-# Controller
-- descriptor: "hello-friend:controller:default:default:1.0"
-  default_name: "Friend"
+    def __init__(self):
+        super(HelloFriendProcess, self).__init__('hello-friend', 'HelloFriend microservice')
+        self._config_path = './config.yaml'
+        self._factories.add(HelloFriendServiceFactory())
+        self._factories.add(DefaultRpcFactory())
 
-# Shared HTTP Endpoint
-- descriptor: "pip-services:endpoint:http:default:1.0"
-  connection:
-    protocol: http
-    host: 0.0.0.0
-    port: 8080
-
-# HTTP Service V1
-- descriptor: "hello-friend:service:http:default:1.0"
-
-# Heartbeat service
-- descriptor: "pip-services:heartbeat-service:http:default:1.0"
-
-# Status service
-- descriptor: "pip-services:status-service:http:default:1.0"
-
-# Persistnece - MySQL
-- descriptor: "hello-friend:persistence:mysql:default:1.0"
-  connection:
-    host: 'localhost'
-    port: '3306'
-    database: 'pip'
-  credential:
-    username: 'root'
-    password: ''
 ```

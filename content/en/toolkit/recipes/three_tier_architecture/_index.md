@@ -317,29 +317,50 @@ In our example, we create the HelloFriendServiceFactory, which is a subclass of 
 
 Pip.Services uses the locator pattern to create the bindings between the different objects. To do this, we create a configuration file with information about the different components. Among them, we specify the actual configuration of our MySQL database. 
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
+```yaml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "hello-friend"
+  description: "HelloFriend microservice"
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
 
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0"
 
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
+# Controller
+- descriptor: "hello-friend:controller:default:default:1.0"
+  default_name: "Friend"
 
-{{< tabsection >}}
-  {{< include "./__code10_python.md" >}}
-{{< /tabsection >}}
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: 8080
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+# HTTP Service V1
+- descriptor: "hello-friend:service:http:default:1.0"
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+# Persistnece - MySQL
+- descriptor: "hello-friend:persistence:mysql:default:1.0"
+  connection:
+    host: 'localhost'
+    port: '3306'
+    database: 'pip'
+  credential:
+    username: 'root'
+    password: ''
+```
 
 #### Process container
 
@@ -362,7 +383,7 @@ Now that our support structure has been created, we add the components to a proc
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code11_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -389,7 +410,7 @@ Our final step is to execute the app via the container’s run() command. The fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -425,7 +446,7 @@ Below, we can see the complete code of our example.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code13_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -10,8 +10,7 @@ class HelloFriendServiceFactory(Factory):
 
         HttpServiceDescriptor = Descriptor('hello-friend', 'service', 'http', '*', '1.0')  # View
         ControllerDescriptor = Descriptor('hello-friend', 'controller', 'default', '*', '1.0')  # Controller
-        PersistenceDescriptor = Descriptor('hello-friend', 'persistence', 'mysql', '*',
-                                           '1.0')  # Persistence                                                                           # Persistence
+        PersistenceDescriptor = Descriptor('hello-friend', 'persistence', 'mysql', '*', '1.0')  # Persistence
 
         self.register_as_type(HttpServiceDescriptor, HelloFriendRestService)  # View
         self.register_as_type(ControllerDescriptor, HelloFriendController)  # Controller

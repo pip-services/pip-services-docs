@@ -5,10 +5,8 @@ from pip_services3_commons.config import IConfigurable
 from pip_services3_commons.refer import IReferences, IReferenceable
 
 
-class HelloFriendController(IConfigurable, ICommandable, IReferenceable):
+class HelloFriendController(IConfigurable, IReferenceable):
     __defaultName = None
-    __command_set: 'FriendsCommandSet' = None
-
     __persistence: 'HelloFriendPersistence' = None
 
     def __init__(self):
@@ -21,9 +19,13 @@ class HelloFriendController(IConfigurable, ICommandable, IReferenceable):
         self.__persistence = references.get_one_required(Descriptor("hello-friend", "persistence", "*", "*", "1.0"))
 
     def greeting(self):
-        filter = FilterParams.from_tuples('type', 'friend')
-        selected_friend = self.__persistence.get_one_random(None, filter)
+        filter_param = FilterParams.from_tuples("type", "friend")
+        selected_friend = self.__persistence.get_one_random(None, filter_param)
         name2 = selected_friend.name
 
         return f"Hello, {name2} !"
+
+    def create(self, correlation_id: Optional[str], item: MyFriend) -> MyFriend:
+        res = self.__persistence.create(correlation_id, item)
+        return res
 ```

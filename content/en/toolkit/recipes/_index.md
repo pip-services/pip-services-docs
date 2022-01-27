@@ -39,6 +39,11 @@ In this tutorial, we will learn how to create a component and how to assemble a 
 
 This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
 
+### [Deployment time configuration](deployment_configuration)
+
+How to set up and change your configurations at deployment time.
+In this tutorial, you will learn how to configure at deployment time an application based on Pip.Services components.
+
 ### [Designing persistence](designing_persistence)
 
 In this tutorial, you will understand how to design your persistence in such a way that your code benefits from one of the main features of Pip.Services, which is symmetric code implementation.
@@ -115,3 +120,8 @@ This tutorial will help you understand how REST services can be created with Pip
 ### [SQL Server Persistence](sqlserver_persistence)
 
 This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples.
+
+### [Three tier architecture](three_tier_architecture)
+
+In this tutorial, you will learn how to construct an application using Pip.Services components and having a three-tier structure. 
+We will begin with a brief description of the example that we will be constructing and a list of the necessary pre-requisites.

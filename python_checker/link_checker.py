@@ -6,15 +6,20 @@ import sys
 import pandas as pd
 
 if __name__ == '__main__':
-    os.system('git clone https://github.com/linkchecker/linkchecker.git')
+    # os.system('git clone https://github.com/linkchecker/linkchecker.git')
 
-    command = 'cd linkchecker && python linkchecker https://pip-services.github.io/pip-services-docs/ ' \
-              '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
+    # command = 'cd linkchecker && python linkchecker https://pip-services.github.io/pip-services-docs/ ' \
+    #           '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
+    
+    os.system('pip3 install linkchecker')
+    
+    command = 'linkchecker https://pip-services.github.io/pip-services-docs/ ' \
+        '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
 
     os.system(command)
 
     # remove comments
-    with open("linkchecker/url_log.txt", 'r+') as file:
+    with open("url_log.txt", 'r+') as file:
         data = file.readlines()
         data = data[3:]
         file.seek(0)
@@ -22,7 +27,7 @@ if __name__ == '__main__':
         file.truncate()
 
     # parse log results
-    csvLogs = pd.read_csv("linkchecker/url_log.txt", sep=";")
+    csvLogs = pd.read_csv("url_log.txt", sep=";")
 
     if len(csvLogs) != 0:
         raise_err = False

@@ -20,12 +20,12 @@ Important points
 
 ### Fields
 
-<span class="hide-title-link">
 
 #### version
 The object's version.
 > **version**: str
 
+    
 ### Examples
 ```python
 class MyData(IStringIdentifiable, IVersioned):

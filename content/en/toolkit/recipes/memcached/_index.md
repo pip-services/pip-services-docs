@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Memcached"
 linkTitle: "Memcached"
-weight: 10
+weight: 1
 description: >-
      How to create a cache and a lock using Memcached.
 ---

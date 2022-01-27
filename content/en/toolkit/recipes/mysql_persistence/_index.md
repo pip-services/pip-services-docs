@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "MySQL Persistence"
 linkTitle: "MySQL Persistence"
-weight: 10
+weight: 1
 description: >-
      How to persist data using a MySQL database.
 ---

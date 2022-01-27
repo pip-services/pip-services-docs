@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "MQTT"
 linkTitle: "MQTT"
-weight: 10
+weight: 1
 description: >-
      How to send and receive messages via an MQTT broker.
 ---

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Designing your persistence components"
 linkTitle: "Designing persistence"
-weight: 20
+weight: 1
 description: >-
      How Pip.Services facilitates code consistency.
 ---

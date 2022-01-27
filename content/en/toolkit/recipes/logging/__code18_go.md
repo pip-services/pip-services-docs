@@ -1,0 +1,4 @@
+
+```go
+logger.SetReferences(references)
+```

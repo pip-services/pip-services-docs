@@ -1,7 +1,7 @@
 
 ```python
 
-from pip_services3_datadog.log.DataDogLogger import DataDogLogger
+from pip_services3_datadog.log import DataDogLogger
 from pip_services3_commons.config import ConfigParams
 
 logger = DataDogLogger()
@@ -11,6 +11,8 @@ logger.configure(ConfigParams.from_tuples(
 ))
 
 logger.set_level(5)
+
+logger.open("123")
 
 logger.info("123" , "My message")
 

@@ -19,7 +19,7 @@ func main() {
 	))
 
 	logger.SetLevel(5)
-
+	_ = logger.Open("123")
 	logger.Info("123", "My message")
 }
 

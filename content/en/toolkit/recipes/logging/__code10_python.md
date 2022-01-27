@@ -1,7 +1,7 @@
 
 ```python
 
-from pip_services3_aws.log.CloudWatchLogger import CloudWatchLogger
+from pip_services3_aws.log import CloudWatchLogger
 from pip_services3_commons.config import ConfigParams
 
 logger = CloudWatchLogger()
@@ -14,6 +14,8 @@ logger.configure(ConfigParams.from_tuples(
 ))
 
 logger.set_level(5)
+
+logger.open("123")
 
 logger.info("123" , "My message")
 

@@ -14,6 +14,8 @@ logger.configure(ConfigParams.fromTuples(
 
 logger.setLevel(5);
 
+await logger.open("123");
+
 logger.info("123", "My message");
 
 ```

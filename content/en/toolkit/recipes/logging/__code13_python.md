@@ -10,6 +10,7 @@ config = ConfigParams.from_tuples(
     'daily', True,
     "date_format", 'YYYYMMDD',
     'connection.host', 'localhost',
-    'connection.port', 9200
+    'connection.port', 9200,
+    "connection.protocol", "http",
 )
 ```

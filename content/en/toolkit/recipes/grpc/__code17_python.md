@@ -18,6 +18,7 @@ class MyGrpcClient(GrpcClient):
     
 client = MyGrpcClient()
 client.configure(ConfigParams.from_tuples(
+   "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 50055
 ))

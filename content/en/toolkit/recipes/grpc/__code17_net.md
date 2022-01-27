@@ -23,6 +23,7 @@ public class MyGrpcClient: GrpcClient
     
 var client = new MyGrpcClient();
 client.Configure(ConfigParams.FromTuples(
+    "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 50055
 ));

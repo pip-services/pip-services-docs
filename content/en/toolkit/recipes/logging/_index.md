@@ -431,19 +431,19 @@ In this example, we will combine two features: displaying log information on our
 In order to be able to create a composite logger for both outputs, we need to import the following components:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -459,19 +459,19 @@ In order to be able to create a composite logger for both outputs, we need to im
 The next step is to create our two logging components, namely our console and ElasticSearch. For this, we instantiate the ConsoleLogger and ElasticSearchLogger classes. Our code is:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -485,19 +485,19 @@ The next step is to create our two logging components, namely our console and El
 Once these instances have been created, we can configure them. To address this, we create a common configuration object that contains all the necessary parameters and their values:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -511,19 +511,19 @@ Once these instances have been created, we can configure them. To address this, 
 and we assign these values to the respective objects
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code14_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -537,19 +537,19 @@ and we assign these values to the respective objects
 Next, we connect our ElasticSearch logger:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -564,19 +564,19 @@ Next, we connect our ElasticSearch logger:
 After defining our two loggers, we define a composite logger that manages both. For this, we first declare a reference object that points to both loggers:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -590,19 +590,19 @@ After defining our two loggers, we define a composite logger that manages both. 
 Then, we create an instance of the CompositeLogger class:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code17_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -616,19 +616,19 @@ Then, we create an instance of the CompositeLogger class:
 And, we add our references to it:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code18_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -644,19 +644,19 @@ And, we add our references to it:
 Now that our structure is complete, we can create different log messages, which will be sent to ElasticSearch and the console after executing our code:
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+ {{< include "./__code19_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -684,19 +684,27 @@ For example, for January 25, 2022, our URL is
 which will show:
 
 {{< tabsection >}}
- Not available  
+  {{< collapse >}}
+  {{< include "./__code20_node.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+  {{< collapse >}}
+  {{< include "./__code20_net.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+  {{< collapse >}}
+  {{< include "./__code20_go.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available  
+  {{< collapse >}}
+  {{< include "./__code20_dart.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -26,6 +26,7 @@ class MyGrpcService(GrpcService, summator2_pb2_grpc.SummatorServicer):
   
 service = MyGrpcService()
 service.configure(ConfigParams.from_tuples(
+    "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 50055
 ))

@@ -1,0 +1,4 @@
+
+```go
+consoleLogger.Configure(config)
+```

@@ -1,0 +1,4 @@
+
+```ts
+consoleLogger.configure(config);
+```

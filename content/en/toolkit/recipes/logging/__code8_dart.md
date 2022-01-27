@@ -9,6 +9,8 @@ logger.configure(ConfigParams.fromTuples([
 
 logger.setLevel(LogLevel.Debug);
 
+await logger.open("123");
+
 logger.info('123', 'My message');
 
 ```

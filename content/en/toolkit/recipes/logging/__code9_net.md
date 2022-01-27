@@ -20,6 +20,8 @@ namespace ExampleApp
 
             logger.Level = LogLevel.Debug;
 
+            logger.OpenAsync("123").Wait();
+
             logger.Info("123", "My message");
         }
     }

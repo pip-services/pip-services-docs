@@ -29,6 +29,7 @@ public class MyGrpcService : GrpcService
     
 var service = new MyGrpcService();
 service.Configure(ConfigParams.FromTuples(
+    "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 50055
 ));

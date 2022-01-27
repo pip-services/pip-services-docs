@@ -36,6 +36,7 @@ export class MyGrpcService extends GrpcService {
     
 let service = new MyGrpcService();
 service.configure(ConfigParams.fromTuples(
+    "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 50055
 ));

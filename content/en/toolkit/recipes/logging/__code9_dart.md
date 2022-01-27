@@ -11,7 +11,11 @@ logger.configure(ConfigParams.fromTuples([
   'connection.port',
   9200
 ]));
+
 logger.setLevel(LogLevel.Debug);
+
+await logger.open("123");
+
 logger.info('123', 'My message');
 
 ```

@@ -28,6 +28,7 @@ class MyGrpcService extends command.SummatorServiceBase with GrpcService {
     
 var client = MyGrpcClient();
 client.configure(ConfigParams.fromTuples([
+  "connection.protocol", "http",
     'connection.host', 'localhost', 
     'connection.port', 50055
 ]));

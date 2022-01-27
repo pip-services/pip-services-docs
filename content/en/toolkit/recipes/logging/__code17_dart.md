@@ -1,0 +1,4 @@
+
+```dart
+var logger = CompositeLogger();
+```

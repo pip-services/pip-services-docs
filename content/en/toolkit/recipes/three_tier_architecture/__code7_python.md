@@ -1,6 +1,5 @@
 
 ```python
-from pip_services3_commons.commands import ICommandable
 from pip_services3_commons.config import IConfigurable
 from pip_services3_commons.refer import IReferences, IReferenceable
 

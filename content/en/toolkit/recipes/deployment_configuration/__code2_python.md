@@ -1,30 +1,41 @@
 
 ```python
-from pip_services3_commons.commands import ICommandable
 from pip_services3_commons.config import IConfigurable
 from pip_services3_commons.refer import IReferences, IReferenceable
 
 
-class HelloFriendController(IConfigurable, ICommandable, IReferenceable):
-    __defaultName = None
-    __command_set: 'FriendsCommandSet' = None
-
-    __persistence: 'IMyDataPersistence' = None
+class HelloFriendRestService(RestService):
 
     def __init__(self):
-        self.__defaultName = "Pip User"
+        super(HelloFriendRestService, self).__init__()
+
+        self._base_route = "/hello_friend"
+        self._controller: IMyDataPersistence = None
 
     def configure(self, config):
-        self.__defaultName = config.get_as_string_with_default("default_name", self.__defaultName)
+        super().configure(config)
 
-    def set_references(self, references: IReferences):
-        self.__persistence = references.get_one_required(Descriptor("hello-friend", "persistence", "*", "*", "1.0"))
+    def set_references(self, references):
+        super(HelloFriendRestService, self).set_references(references)
+        self._controller = references.get_one_required(Descriptor('hello-friend', 'controller', '*', '*', '1.0'))
+
+    def register(self):
+        self.register_route(method="GET", route="/greeting", schema=Schema(), handler=self.greeting)
+        self.register_route(method="GET", route="/greeting_create", schema=Schema(), handler=self.create)
 
     def greeting(self):
-        filter = FilterParams.from_tuples('type', 'friend')
-        selected_friend = self.__persistence.get_one_random(None, filter)
-        name2 = selected_friend.name
+        result = self._controller.greeting()
+        return self.send_result(result)
 
-        return f"Hello, {name2} !"
+    def create(self):
+        correlation_id = self._get_correlation_id()
+        item = MyFriend(
+            bottle.request.query["id"],
+            bottle.request.query["type"],
+            bottle.request.query["name"]
+        )
+        result = self._controller.create(correlation_id, item)
+
+        return self.send_result(result)
 ```
 

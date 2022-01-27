@@ -177,29 +177,65 @@ In order to be able to select between both databases, we need to include both co
 
 Our file will look something like this:
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+```yaml
+---
+# Container context
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "hello-friend"
+  description: "HelloFriend microservice"
 
-{{< tabsection >}}
- Not available  
-{{< /tabsection >}}
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
 
-{{< tabsection >}}
- Not available  
-{{< /tabsection >}}
+# Performance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0"
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+# Controller
+- descriptor: "hello-friend:controller:default:default:1.0"
+  default_name: "Friend"
 
-{{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
-{{< /tabsection >}}
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: 8080
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+# HTTP Service V1
+- descriptor: "hello-friend:service:http:default:1.0"
+
+# Heartbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
+
+
+{{#if MYSQL_ENABLED}}
+# Persistence - MySQL
+- descriptor: "hello-friend:persistence:mysql:default:1.0"
+  connection:
+    host: 'localhost'
+    port: '3306'
+    database: 'pip'
+  credential:
+    username: 'root'
+    password: ''
+{{/if}}
+
+{{#if POSTGRES_ENABLED}}
+# Persistence - PostgreSQL
+- descriptor: "hello-friend:persistence:postgres:default:1.0"
+  connection:
+    host: 'localhost'
+    port: '5432'
+    database: 'pip'
+  credential:
+    username: 'postgres'
+    password: 'admin'
+{{/if}}
+```
 
 ### Final code
 
@@ -222,7 +258,7 @@ Now that we have completed all the necessary additions and modifications in our 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -252,7 +288,7 @@ This is done by assigning a value to the environmental variable representing the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

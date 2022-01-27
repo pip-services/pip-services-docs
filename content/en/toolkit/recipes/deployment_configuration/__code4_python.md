@@ -10,7 +10,7 @@ class HelloFriendPersistence2(IdentifiablePostgresPersistence, IMyDataPersistenc
     def _define_schema(self):
         self._clear_schema()
         self._ensure_schema('CREATE TABLE ' + self._table_name + ' (id TEXT PRIMARY KEY, type TEXT, name TEXT)')
-     
+
     def _compose_filter(self, filter: FilterParams):
         filter = filter or FilterParams()
         key = filter.get_as_nullable_string('key')
@@ -22,8 +22,8 @@ class HelloFriendPersistence2(IdentifiablePostgresPersistence, IMyDataPersistenc
         if content is not None:
             filter_condition += "content='" + content + "'"
 
-        return filter_condition       
-    
+        return filter_condition
+
     def get_one_random(self, correlation_id: Optional[str], filter: FilterParams) -> MyFriend:
         return super().get_one_random(correlation_id, self._compose_filter(filter))
 ```

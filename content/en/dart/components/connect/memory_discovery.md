@@ -86,16 +86,17 @@ Resolves a single connection parameters by its key.
 
 ```dart
 var config = ConfigParams.fromTuples(
-    'key1.host', '10.1.1.100',
-    'key1.port', '8080',
-    'key2.host', '10.1.1.100',
-    'key2.port', '8082'
+    'connections.key1.host', '10.1.1.100',
+    'connections.key1.port', '8080',
+    'connections.key2.host', '10.1.1.100',
+    'connections.key2.port', '8082'
 );
 
 var discovery = new MemoryDiscovery();
-discovery.readConnections(config);
-var connection await discovery.resolve('123', 'key1');
-    // Result: host=10.1.1.100;port=8080
+discovery.configure(config);
+
+var connection await discovery.resolveOne('123', 'key1');
+// Result: host=10.1.1.100;port=8080
 ```
 
 ### See also

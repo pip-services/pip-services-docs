@@ -82,16 +82,16 @@ Resolves a single connection parameters by its key.
 
 ```typescript
 let config = ConfigParams.fromTuples(
-    "key1.host", "10.1.1.100",
-    "key1.port", "8080",
-    "key2.host", "10.1.1.100",
-    "key2.port", "8082"
+    "connections.key1.host", "10.1.1.100",
+    "connections.key1.port", "8080",
+    "connections.key2.host", "10.1.1.101",
+    "connections.key2.port", "8082"
 );
 
 let discovery = new MemoryDiscovery();
-discovery.readConnections(config);
+discovery.configure(config);
 
-let connection = await discovery.resolve("123", "key1");
+let connection = await discovery.resolveOne("123", "key1");
 // Result: host=10.1.1.100;port=8080
 ```
 

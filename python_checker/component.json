@@ -1,0 +1,6 @@
+{
+    "name": "python-link-checker",
+    "registry": "myregistry",
+    "version": "0.1.0",
+    "build": 0
+}

@@ -11,7 +11,7 @@ if __name__ == '__main__':
     # command = 'cd linkchecker && python linkchecker https://pip-services.github.io/pip-services-docs/ ' \
     #           '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'
     
-    os.system('pip3 install linkchecker')
+    # os.system('pip3 install linkchecker')
     
     command = 'linkchecker https://pip-services.github.io/pip-services-docs/ ' \
         '--check-extern --threads 15 --ignore-url \/__ --file-output "csv/utf-8/url_log.txt"'

@@ -82,19 +82,18 @@ Resolves a single connection parameters by its key.
 ### Examples
 
 ```go
-config := NewConfigParamsFromTuples(
-    "key1.host", "10.1.1.100",
-    "key1.port", "8080",
-    "key2.host", "10.1.1.100",
-    "key2.port", "8082"
-);
-  
-discovery := NewMemoryDiscovery();
-discovery.ReadConnections(config);
-  
-discovery.Resolve("123", "key1", (err, connection) => {
-    // Result: host=10.1.1.100;port=8080
-});
+config := config.NewConfigParamsFromTuples(
+	"connections.key1.host", "10.1.1.100",
+	"connections.key1.port", "8080",
+	"connections.key2.host", "10.1.1.101",
+	"connections.key2.port", "8082",
+)
+
+discovery := NewEmptyMemoryDiscovery();
+discovery.Configure(config);
+
+connection, err := discovery.ResolveOne("123", "key1")
+// Result: host=10.1.1.100;port=8080
 ```
 
 ### See also

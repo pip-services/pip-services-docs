@@ -13,12 +13,25 @@ description: >-
 ### Pre-requisites
 
 ### CRUD operations
+Once the component has been imported, we can do different CRUD operations by using the methods of the class and those inherited from the parent classes (ConfigParams and StringValueMap).
 #### Create
-#### Read
+Pip.Services offers several ways to create a CredentialParams object. Each of them is explained in the following sections.
+##### a) Using the constructor
+One method used to create a CredentialParams object is via its constructor. This can be done in two different manners. The first is by inputting a ConfigParams object containing the credential parameters and their values. The second consists of creating a CredentialParams object and using the set methods available for the most common credentials such as username and password, or the put() method from its parent class. The following examples show how to do this.
+##### b) Using tuples
+We can also define our credential parameters in the form of a tuple. For example:
+##### c) Using a string
+Similar to the previous option, we can also use a string to define our credential parameters. The syntax is: 
 
+**parameter_name : parameter_value**
+
+An example of this approach is:
+
+##### d) Using a ConfigParams object
 ##### e) Using the manyFromConfig() method
 ##### Adding a section
 We can add a section by using the addSection() method inherited from the ConfigParams class. This method accepts the name of the section and a ConfigParams object containing the fields of the section and their values as inputs.  The following example shows how to do this:
+#### Read
 
 To extract the values of the different credential parameters, we can use the get methods available for the most common credential parameters such as username, password, and access key. The following examples show how to use them:
 

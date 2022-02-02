@@ -28,7 +28,17 @@ Similar to the previous option, we can also use a string to define our credentia
 An example of this approach is:
 
 ##### d) Using a ConfigParams object
+Also, we can create a ConfigParams object and use the fromConfig() method. In this case, we need to use a section named credential, which will include our parameters and their values, and add the ConfigParams object as an input to that method. The syntax for the parameters is as follows:
+credential.parameter_name
+which can be seen in the following example:
+
+
 ##### e) Using the manyFromConfig() method
+This method allows us to define several credential parameter sets in one CredentialParams object. For this, we use a section named credentials that contains the different sets. The syntax is as follows:
+credentials.credential_set_name.parameter_name
+Then, at instantiation, the CredentialParams object will take all credentials belonging to this section.
+The following example shows how to do this. As we can see from it, the ConfigParams object contains both credential and connection parameters. However, the CredentialParams object distinguishes between them and only takes the credential sets in the form of a list.
+
 ##### Adding a section
 We can add a section by using the addSection() method inherited from the ConfigParams class. This method accepts the name of the section and a ConfigParams object containing the fields of the section and their values as inputs.  The following example shows how to do this:
 #### Read

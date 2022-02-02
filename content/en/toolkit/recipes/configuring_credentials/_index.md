@@ -9,9 +9,9 @@ description: >-
 ### Key takeaways
 
 ### Introduction
-
+In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, tuples, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 ### Pre-requisites
-
+In order to use the CredentialParams component, we need to import it first. This can be done with the following command:
 ### CRUD operations
 Once the component has been imported, we can do different CRUD operations by using the methods of the class and those inherited from the parent classes (ConfigParams and StringValueMap).
 #### Create
@@ -32,7 +32,6 @@ An example of this approach is:
 ##### Adding a section
 We can add a section by using the addSection() method inherited from the ConfigParams class. This method accepts the name of the section and a ConfigParams object containing the fields of the section and their values as inputs.  The following example shows how to do this:
 #### Read
-
 To extract the values of the different credential parameters, we can use the get methods available for the most common credential parameters such as username, password, and access key. The following examples show how to use them:
 
 Additionally, we can use the get method, which takes the name of the credential parameter as its input. 

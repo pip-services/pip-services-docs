@@ -1,4 +1,4 @@
 
 ```python
-username = credential1.get('username')   # Returns 'user1'
+credential1.get('username')   # Returns 'user1'
 ```

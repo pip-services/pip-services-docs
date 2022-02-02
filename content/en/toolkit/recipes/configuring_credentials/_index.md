@@ -16,7 +16,7 @@ description: >-
 #### Create
 #### Read
 
-##### 5. Using the manyFromConfig() method
+##### e) Using the manyFromConfig() method
 ##### Adding a section
 We can add a section by using the addSection() method inherited from the ConfigParams class. This method accepts the name of the section and a ConfigParams object containing the fields of the section and their values as inputs.  The following example shows how to do this:
 

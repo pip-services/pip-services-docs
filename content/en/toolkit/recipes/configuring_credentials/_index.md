@@ -7,7 +7,20 @@ description: >-
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>CredentialParams </td>
+    <td>Component used to store credential parameters and their values.</td>
+  </tr>
+  <tr>
+    <td>ConfigParams</td>
+    <td>Parent class that provides several useful methods.</td>
+  </tr>
+  <tr>
+    <td>StringValueMap</td>
+    <td>Class that provides the structure for CredentialParams.</td>
+  </tr>
+</table>
 ### Introduction
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, tuples, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 ### Pre-requisites

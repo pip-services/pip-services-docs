@@ -1,4 +1,6 @@
 ---
+type: docs
+no_list: true
 title: "Configuring credentials"
 linkTitle: "Configuring credentials"
 weight: 10

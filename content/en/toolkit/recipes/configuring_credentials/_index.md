@@ -87,7 +87,7 @@ One method used to create a CredentialParams object is via its constructor. This
 {{< /tabsection >}}
 
 ##### b) Using a tuple
-We can also define our credential parameters in the form of a tuple. For example:
+We can also define our credential parameters in the form of a tuple by using the fromTuple() method. For example:
 
 {{< tabsection >}}
   Not available 
@@ -114,7 +114,7 @@ We can also define our credential parameters in the form of a tuple. For example
 {{< /tabsection >}}
 
 ##### c) Using a string
-Similar to the previous option, we can also use a string to define our credential parameters. The syntax is: 
+Similar to the previous option, we can also use a string to define our credential parameters via the fromString() method. The syntax of the string is: 
 
 **parameter_name : parameter_value**
 
@@ -145,7 +145,7 @@ An example of this approach is:
 {{< /tabsection >}}
 
 ##### d) Using a ConfigParams object
-Also, we can create a ConfigParams object and use the fromConfig() method. In this case, we need to use a section named credential, which will include our parameters and their values, and add the ConfigParams object as an input to that method. The syntax for the parameters is as follows:
+Also, we can create a ConfigParams object and use the fromConfig() method and the fromConfig() method. In this case, we need to use a section named credential, which will include our parameters and their values, and add the ConfigParams object as an input to that method. The syntax for the parameters is as follows:
 
 credential.parameter_name
 

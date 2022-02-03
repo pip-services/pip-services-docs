@@ -1,4 +1,4 @@
 
 ```python
-credential1.remove('username')
+credential.remove('username')
 ```

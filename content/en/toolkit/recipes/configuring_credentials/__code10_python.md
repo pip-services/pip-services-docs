@@ -1,4 +1,4 @@
 
 ```python
-credential1.set_password('password2')
+credential.set_password('password2')
 ```

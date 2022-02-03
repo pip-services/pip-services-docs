@@ -1,4 +1,4 @@
 
 ```python
-credential1.put('password', 'password3')
+credential.put('password', 'password3')
 ```

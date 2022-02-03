@@ -177,8 +177,11 @@ which can be seen in the following example:
 
 ##### e) Using the manyFromConfig() method
 This method allows us to define several credential parameter sets in one CredentialParams object. For this, we use a section named credentials that contains the different sets. The syntax is as follows:
+
 credentials.credential_set_name.parameter_name
+
 Then, at instantiation, the CredentialParams object will take all credentials belonging to this section.
+
 The following example shows how to do this. As we can see from it, the ConfigParams object contains both credential and connection parameters. However, the CredentialParams object distinguishes between them and only takes the credential sets in the form of a list.
 
 {{< tabsection >}}

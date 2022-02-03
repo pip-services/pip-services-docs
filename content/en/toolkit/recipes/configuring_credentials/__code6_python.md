@@ -1,6 +1,6 @@
 
 ```python
-conf = ConfigParams.from_tuples(
+config = ConfigParams.from_tuples(
     # use connection if one connection and connections if more than one connection
     "connections.connection1.uri", "http://www.example1.com",
     "connections.connection1.protocol", "http",
@@ -18,6 +18,6 @@ conf = ConfigParams.from_tuples(
     "credentials.database2.my_custom_credential_param", "myvalue"
 )
 
-conn = CredentialParams.many_from_config(conf) 
+credential = CredentialParams.many_from_config(config) 
 # Returns [{'username': 'user1', 'password': 'userpass123'}, {'username': 'user2',  'password': 'userpass457','my_custom_credential_param': 'myvalue'}]
 ```

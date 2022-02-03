@@ -1,6 +1,6 @@
 
 ```python
-credential1.add_section("sectionA", ConfigParams.from_tuples("key1", "ABCDE"))
+credential.add_section("sectionA", ConfigParams.from_tuples("key1", "ABCDE"))
 # Returns
 # {'username': 'user1',
 # 'password': 'password1',

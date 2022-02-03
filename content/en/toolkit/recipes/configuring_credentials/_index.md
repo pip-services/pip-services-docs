@@ -26,6 +26,7 @@ description: >-
 
 
 ### Introduction
+
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, tuples, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 
 ### Pre-requisites
@@ -56,10 +57,15 @@ In order to use the CredentialParams component, we need to import it first. This
 {{< /tabsection >}}
 
 ### CRUD operations
+
 Once the component has been imported, we can do different CRUD operations by using the methods of the class and those inherited from the parent classes (ConfigParams and StringValueMap).
+
 #### Create
+
 Pip.Services offers several ways to create a CredentialParams object. Each of them is explained in the following sections.
+
 ##### a) Using the constructor
+
 One method used to create a CredentialParams object is via its constructor. This can be done in two different manners. The first is by inputting a ConfigParams object containing the credential parameters and their values. The second consists of creating a CredentialParams object and using the set methods available for the most common credentials such as username and password, or the put() method from its parent class. The following examples show how to do this.
 
 {{< tabsection >}}
@@ -87,6 +93,7 @@ One method used to create a CredentialParams object is via its constructor. This
 {{< /tabsection >}}
 
 ##### b) Using a tuple
+
 We can also define our credential parameters in the form of a tuple by using the fromTuple() method. For example:
 
 {{< tabsection >}}
@@ -114,6 +121,7 @@ We can also define our credential parameters in the form of a tuple by using the
 {{< /tabsection >}}
 
 ##### c) Using a string
+
 Similar to the previous option, we can also use a string to define our credential parameters via the fromString() method. The syntax of the string is: 
 
 **parameter_name : parameter_value**
@@ -145,9 +153,10 @@ An example of this approach is:
 {{< /tabsection >}}
 
 ##### d) Using a ConfigParams object
+
 Also, we can create a ConfigParams object and use the fromConfig() method and the fromConfig() method. In this case, we need to use a section named credential, which will include our parameters and their values, and add the ConfigParams object as an input to that method. The syntax for the parameters is as follows:
 
-credential.parameter_name
+**credential.parameterName**
 
 which can be seen in the following example:
 
@@ -178,7 +187,7 @@ which can be seen in the following example:
 ##### e) Using the manyFromConfig() method
 This method allows us to define several credential parameter sets in one CredentialParams object. For this, we use a section named credentials that contains the different sets. The syntax is as follows:
 
-credentials.credential_set_name.parameter_name
+**credentials.credentialSetName.parameterName**
 
 Then, at instantiation, the CredentialParams object will take all credentials belonging to this section.
 

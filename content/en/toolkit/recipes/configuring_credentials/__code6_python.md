@@ -18,6 +18,6 @@ conf = ConfigParams.from_tuples(
     "credentials.database2.my_custom_credential_param", "myvalue"
 )
 
-conn3 = CredentialParams.many_from_config(conf) 
+conn = CredentialParams.many_from_config(conf) 
 # Returns [{'username': 'user1', 'password': 'userpass123'}, {'username': 'user2',  'password': 'userpass457','my_custom_credential_param': 'myvalue'}]
 ```

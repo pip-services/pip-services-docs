@@ -86,7 +86,7 @@ One method used to create a CredentialParams object is via its constructor. This
   Not available  
 {{< /tabsection >}}
 
-##### b) Using tuples
+##### b) Using a tuple
 We can also define our credential parameters in the form of a tuple. For example:
 
 {{< tabsection >}}

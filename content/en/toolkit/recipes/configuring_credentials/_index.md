@@ -146,7 +146,9 @@ An example of this approach is:
 
 ##### d) Using a ConfigParams object
 Also, we can create a ConfigParams object and use the fromConfig() method. In this case, we need to use a section named credential, which will include our parameters and their values, and add the ConfigParams object as an input to that method. The syntax for the parameters is as follows:
+
 credential.parameter_name
+
 which can be seen in the following example:
 
 {{< tabsection >}}

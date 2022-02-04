@@ -1,4 +1,4 @@
 
 ```python
-connection1.set_host("new host")
+connection.set_host("new host")
 ```

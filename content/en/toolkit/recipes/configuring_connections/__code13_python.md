@@ -1,6 +1,6 @@
 
 ```python
-connection1.get_section_names()   
+connection.get_section_names()   
 # Returns
 #['discovery_key',
 # 'host',

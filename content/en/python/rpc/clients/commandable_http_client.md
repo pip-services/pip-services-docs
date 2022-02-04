@@ -80,6 +80,9 @@ class MyCommandableHttpClient(CommandableHttpClient, IMyClient):
     client.configure(ConfigParams.from_tuples("connection.protocol", "http",
                                                  "connection.host", "localhost",
                                                  "connection.port", 8080))
+                                                 
+    client.open("123")
+    
     data = client.getData("123", "1")
      # ...
 ```

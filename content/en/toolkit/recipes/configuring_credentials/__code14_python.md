@@ -1,0 +1,4 @@
+
+```python
+credential.remove('username')
+```

@@ -28,7 +28,6 @@ description: >-
     <td>Protoc</td>
     <td>Proto file compiler.</td>
   </tr>
-  <tr>
 </table>
 
 ### Introduction

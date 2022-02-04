@@ -1,6 +1,6 @@
 
 ```python
-connection2 = connection1.override(ConfigParams.from_tuples("host", "localhost3")) 
+connection = connection1.override(ConfigParams.from_tuples("host", "localhost3")) 
 # Returns
 #{'discovery_key': 'discovery key 1',
 # 'host': 'localhost3',

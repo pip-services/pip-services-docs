@@ -515,6 +515,6 @@ We can remove a parameter and its value from the ConnectionParams object via the
   Not available  
 {{< /tabsection >}}
 
-#### Wrapping up
+### Wrapping up
 
 In this tutorial, we have learned how to use the ConnectionParams component. We saw how to perform different CRUD operations using this class’ methods and the methods inherited from ConfigParams and StringValueMap. 

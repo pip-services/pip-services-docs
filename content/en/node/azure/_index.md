@@ -13,6 +13,8 @@ description: >
 
 The module contains the following packages:
 
+- [**Client**](client) - client components for working with Azure cloud Functions.
+- [**Connect**](connect) - components for installation and connection settings.
 - [**Container**](containers) - contains classes that act as containers to instantiate and run components.
 - [**Services**](services) - contains interfaces and classes used to create services that do operations via the Azure Function protocol.
 

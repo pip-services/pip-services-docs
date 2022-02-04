@@ -1,6 +1,6 @@
 
 ```python
-connection1.add_section("sectionA", ConfigParams.from_tuples("key1", "ABCDE"))
+connection.add_section("sectionA", ConfigParams.from_tuples("key1", "ABCDE"))
 # Returns 
 #{'discovery_key': 'discovery key 1',
 # 'host': 'localhost',

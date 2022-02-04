@@ -12,6 +12,20 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>ConnectionParams</td>
+    <td>Component used to store connection parameters and their values.</td>
+  </tr>
+  <tr>
+    <td>ConfigParams</td>
+    <td>Parent class of ConnectionParams, which provides several useful methods.</td>
+  </tr>
+  <tr>
+    <td>StringValueMap</td>
+    <td>Class that defines the output format of the connection parameter class.</td>
+  </tr>
+</table>
 
 ### Introduction
 
@@ -222,7 +236,7 @@ And, an example of its usage is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -252,7 +266,7 @@ As we can see in the next example, the ConfigParam object can also include other
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -280,7 +294,7 @@ We can add different sections to our ConnectionParamter object by using the addS
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -308,7 +322,7 @@ Once our connection parameters have been defined, we can read them via the get m
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code9_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -334,7 +348,7 @@ As the ConnectionParams object has the form of a StringValueMap, we can also use
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -360,7 +374,7 @@ Furthermore, we can get all the parameters and their values from a section by us
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code11_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -386,7 +400,7 @@ And, to get all the section names, we have the getSectionNames() method:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -395,33 +409,7 @@ And, to get all the section names, we have the getSectionNames() method:
 
 #### Update
 
-There are two main ways to update the value of a parameter previously defined. The first is to use the set methods available for the most common parameters with the new value.
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code13_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-The second is to use the put() method from the StringValueMap class with the updated value as its input.
+There are three main ways to update the value of a parameter previously defined. The first is to use the set methods available for the most common parameters with the new value.
 
 {{< tabsection >}}
   Not available 
@@ -447,6 +435,58 @@ The second is to use the put() method from the StringValueMap class with the upd
   Not available  
 {{< /tabsection >}}
 
+The second is to use the put() method from the StringValueMap class with the updated value as its input.
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code15_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+Finally, we can use the override() method, which returns a new instance of ConnectionParams with the old and updated values. The following example explains how to use it:
+
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code16_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 #### Delete
 
 We can remove a parameter and its value from the ConnectionParams object via the remove() method inherited from StringValueMap. The following example shows how to do this:
@@ -468,7 +508,7 @@ We can remove a parameter and its value from the ConnectionParams object via the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

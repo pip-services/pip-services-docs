@@ -1,4 +1,4 @@
 
 ```python
-connection2.put("protocol", "http 234")
+connection1.set_host("new host")
 ```

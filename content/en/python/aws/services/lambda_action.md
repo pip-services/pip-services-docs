@@ -29,6 +29,6 @@ Schema to validate action parameters
 
 #### action
 Action to be executed
-> **action**: (params: any) => Promise\<any\>
+> **action**: Callable[[], Any]
 
 </span>

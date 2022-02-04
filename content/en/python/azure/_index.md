@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Azure module"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-azure-python"
 no_list: true
 weight: 500
 description: > 
@@ -23,5 +23,5 @@ The module contains the following packages:
 
 Install the NPM package as
 ```bash
-npm install pip-services3-azure-nodex --save
+pip install pip-services3-azure
 ```

@@ -119,6 +119,8 @@ Validates this connection parameters
 
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 
+### Static methods
+
 #### fromConfig
 Validates this connection parameters 
 

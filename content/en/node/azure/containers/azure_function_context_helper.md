@@ -12,7 +12,7 @@ description: >
 The AzureFunctionContextHelper class contains methods used to get correlationIds, commands and bodies from the Azure Function context.
 
 
-### Instance methods
+### Static methods
 
 #### getCorrelationId
 Returns a correlationId from the Azure Function context.

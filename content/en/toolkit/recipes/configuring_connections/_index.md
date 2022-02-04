@@ -69,7 +69,7 @@ There are several ways to create a ConnectionParams object, such as using a cons
 
 ##### a)	Using the constructor
 
-A ConnectionParams object can be created via its constructor in two different ways. The first is by creating an instance of the ConnectionParams class using a ConfigParams object containing the connection parameters and their values as input. The following example explains how to do this:
+A ConnectionParams object can be created via its constructor in two different ways. The first is by creating an instance of the ConnectionParams class using as input a ConfigParams object that has the connection parameters and their values. The following example explains how to do this:
 
 {{< tabsection >}}
   Not available 

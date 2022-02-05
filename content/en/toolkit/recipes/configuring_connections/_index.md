@@ -245,7 +245,7 @@ And, an example of its usage is:
   Not available  
 {{< /tabsection >}}
 
-Similar to the above, the manyFromConfig() method allows us to manage more than one set of connection parameters. To allow this, we define the different connection sets in a section named connections. The syntax is:
+Similar to the above, the manyFromConfig() method allows us to manage more than one set of connection parameters. To do this, we define the different connection sets in a section named connections. The syntax is:
 
 **connections.connectionName.parameterName**
 

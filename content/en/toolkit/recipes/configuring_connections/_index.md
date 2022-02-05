@@ -357,7 +357,7 @@ As the ConnectionParams object has the form of a StringValueMap, we can also use
   Not available  
 {{< /tabsection >}}
 
-Furthermore, we can get all the parameters and their values from a section by using the getSeccion() method. The following example illustrates how to obtain the values from  “sectionA”.
+Furthermore, we can get all the parameters from a section and their values by using the getSeccion() method. The following example illustrates how to obtain the values from  “sectionA”.
 
 {{< tabsection >}}
   Not available 

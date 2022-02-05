@@ -177,7 +177,7 @@ In this case, we declare our parameters and their values in a tuple and use the 
 
 ##### c)	Using a string
 
-Similar to the previous one, here we use a string to define the parameters and their values and use the fromString() method. 
+Similar to the previous one, here we define the parameters and their values with a string and use the fromString() method. 
 
 The syntax of the string is: 
 

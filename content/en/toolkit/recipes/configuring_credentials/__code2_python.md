@@ -13,6 +13,7 @@ credential.set_store_key("store key1")
 credential.set_access_key("access key 1")
 credential.set_access_id("access id 1")
 credential.put("parameter1", "value1") 
+credential
 # Returns
 #{'username': 'user1',
 # 'password': 'password1',

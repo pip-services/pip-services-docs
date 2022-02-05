@@ -1,4 +1,4 @@
 
 ```python
-connection.put("host", "latest host")
+connection.put("host", "new host")
 ```

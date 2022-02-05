@@ -213,7 +213,7 @@ An example is:
 
 ##### d)	Using a ConfigParams object
 
-In this case, we use a ConfigParams object to define the different parameters and their values. One important point to consider is that we need to use a connection section.
+In this case, we use a ConfigParams object to define the different parameters and their values. Besides, to differentiate the connection parameters from others, we need to use a connection section.
 
 The syntax is 
 

@@ -411,7 +411,7 @@ And, to get all the section names, we have the getSectionNames() method:
 
 #### Update
 
-There are three main ways to update the value of a parameter previously defined. The first is to use any of the set methods available for the most common parameters with the new value as its input.
+There are three main ways to update the value of a parameter previously defined. The first is to use any of the set methods available for the most common parameters with the new value as its input. For example, for the host, we could do:
 
 {{< tabsection >}}
   Not available 

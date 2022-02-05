@@ -23,7 +23,7 @@ description: >-
   </tr>
   <tr>
     <td>StringValueMap</td>
-    <td>Class that defines the output format of the connection parameter class.</td>
+    <td>Class that defines the output format of the ConnectionParams class.</td>
   </tr>
 </table>
 

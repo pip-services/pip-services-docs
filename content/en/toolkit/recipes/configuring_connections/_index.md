@@ -95,7 +95,7 @@ A ConnectionParams object can be created via its constructor in two different wa
   Not available  
 {{< /tabsection >}}
 
-In the second approach, we instantiate this class and then we set the values of the most common parameters via their respective set methods. For example:
+In the second approach, we instantiate this class without any input and then we set the values of the most common parameters via their respective set methods. For example:
 
 {{< tabsection >}}
   Not available 

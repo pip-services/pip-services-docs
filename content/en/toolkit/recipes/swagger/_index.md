@@ -9,6 +9,22 @@ description: >-
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
+
+<table class="full-width-table">
+  <tr>
+    <td>Swagger module</td>
+    <td>Contains components used to generate Swagger UIs.</td>
+  </tr>
+  <tr>
+    <td>Swagger YAML file</td>
+    <td>File used to declare methods to be documented via Swagger.</td>
+  </tr>
+  <tr>
+    <td>Swagger</td>
+    <td>An Interface Description Language for describing RESTful APIs using JSON.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to generate Swagger documentation for a REST service. We will see three different cases. The first is a common REST service, which is documented via a YAML file containing a description of its methods. The second is a commandable REST service, which has a defined set of commands that is used to define the Swagger document. Finally, the last case considers a commandable REST component with a command set and a Swagger UI defined by a YAML file. 

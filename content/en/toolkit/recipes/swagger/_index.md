@@ -54,13 +54,15 @@ To create a command set, we extend the CommandSet class and define our greeting 
 
 ##### Service
 
-
+Once our command set has been defined, we create our commandable REST service by extending the CommandableHttpService class and we link it to our controller.
 
 ##### Configuration for document 2
 
+To be able to generate a Swagger UI, we need to set the swagger’s enable field to true. Besides, as we want to document the commands defined in the command set, we declare auto as true and we define the route field that will be part of the URL for the generated Swagger UI. The example below shows this configuration.
+
 ##### Configuration for document 3
 
-
+We can also declare a path to a YAML file containing the description for the Swagger UI. In this case, even though we have declared auto as true, as the configuration contains a path to a YAML file, the system will choose this file over the automatic generation.
 
 ##### Swagger yam file
 
@@ -82,7 +84,9 @@ Once we have our factory, we define our process container by extending the Proce
 
 Once our components are defined, we can run our app by invoking the run method from our process container.
 
-And, after executing our code, we will see the following messages on our console.
+And, after executing our code, we will see the following messages on our console:
+
+![figure 1](./figure1.png)
 
 ### Results
 
@@ -95,17 +99,25 @@ To see the generated Swagger UIs, we can use the following URL:
 
 The generated Swagger UI presents a drop-down menu that can be used to select any of the cases defined in this exercise.
 
+![figure 1](./figure2.png)
+
 #### Document 1: REST service
 
 If we select the hello_friend option, we will see a UI that presents all the information defined in the Swagger YAML file.
+
+![figure 1](./figure3.png)
 
 #### Document 2: Commandable REST service
 
 Alternatively, if we choose the commandable_hello_friend1 option, we will be presented by a UI showing the information automatically generated from the command set.
 
+![figure 1](./figure4.png)
+
 #### Document 3: Commandable REST service.
 
 If we select commandable_hello_friend2, we get a similar UI but generated from our YAML file.
+
+![figure 1](./figure5.png)
 
 ### Final code
 

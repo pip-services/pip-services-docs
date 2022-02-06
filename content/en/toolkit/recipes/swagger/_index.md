@@ -31,7 +31,7 @@ In this tutorial, you will learn how to generate Swagger documentation for a RES
 
 ### Swagger document generation
 
-Pip.Services offers two types of REST services, which are defined by two different classes. The first is an ordinary REST service and is defined in the RestService component. The second is a REST service that contains a set of predefined commands (or methods) that can be called from other services and is defined by the CommandableHttpService class. 
+Pip.Services offers two types of REST services, which are defined by two different classes. The first is an ordinary REST service and is defined by the RestService component. The second is a REST service that contains a set of predefined commands (or methods) that can be called from other services and is defined by the CommandableHttpService class. 
 
 As such, they represent two different approaches when it comes to Swagger documentation: A REST service needs a YAML file that describes its UI in order to generate its documentation, whereas a commandable service allows for automatic generation via a description of the command set or via a YAML file if the path to it is included in the configuration file. Moreover, it should be noted that an automatically-generated description always considers an HTTP method as POST.
 
@@ -39,7 +39,7 @@ To explain these cases, we will create an app that given a name returns the phra
 
 #### Pre-requisites
 
-First of all, to create the Swagger UI, we need to install the swagger module. This can be done with the following command:
+First of all, to create a Swagger UI, we need to install the swagger module. This can be done with the following command:
 
 {{< tabsection >}}
    Not available 

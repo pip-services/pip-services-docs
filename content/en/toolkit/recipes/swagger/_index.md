@@ -83,7 +83,7 @@ It also contains a reference to the controller and a method named register that 
   Not available  
 {{< /tabsection >}}
 
-##### Configuration example
+##### Configuration
 
 As we will use a process container to run the example, we need to describe this service in the configuration file. In this description, we set the Swagger’s enable field to true to specify that we want to generate a Swagger UI for the service, and we define the path to our YAML file containing the Swagger UI description.
 
@@ -283,7 +283,7 @@ We can also declare a path to a YAML file containing the description for the Swa
   Not available  
 {{< /tabsection >}}
 
-##### Swagger yam file
+##### Swagger yam file for document 3
 
 For document 3, we use the YAML file below to describe the UI. As we can see, the main difference with the previous one is that we declare the HTTP method as POST instead of GET, and therefore, we define the requestBody as required.
 
@@ -438,8 +438,6 @@ If we select commandable_hello_friend2, we get a similar UI but generated from o
 
 In this section, we show the complete code and the corresponding configuration YAML file.
 
-#### Application
-
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -457,10 +455,10 @@ In this section, we show the complete code and the corresponding configuration Y
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< markdownify >}}##### grpc.py{{< /markdownify >}}
+  {{< markdownify >}}##### swagger.py{{< /markdownify >}}
 
   {{< collapse >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code13_python.md" >}}
   {{< /collapse >}}
 {{< /tabsection >}}
 
@@ -468,7 +466,6 @@ In this section, we show the complete code and the corresponding configuration Y
   Not available  
 {{< /tabsection >}}
 
-#### Configuration YAML file
 
 {{< tabsection >}}
    Not available 

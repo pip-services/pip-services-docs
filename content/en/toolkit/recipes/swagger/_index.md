@@ -273,7 +273,7 @@ Similar to the previous one, this service builds the Swagger UI from the YAML fi
 
 ##### Configuration for document 3
 
-We can also declare a path to a YAML file containing the description for the Swagger UI. In this case, even though we have declared auto as true, as the configuration contains a path to a YAML file, the system will choose this file over the automatic generation.
+In this case, we declare a path to a YAML file containing the description for the Swagger UI. As a result, even though we have declared auto as true, the system will choose this file over the automatic generation.
 
 {{< tabsection >}}
    Not available 
@@ -301,7 +301,7 @@ We can also declare a path to a YAML file containing the description for the Swa
 
 ##### Swagger yam file for document 3
 
-For document 3, we use the YAML file below to describe the UI. As we can see, the main difference with the previous one is that we declare the HTTP method as POST instead of GET, and therefore, we define the requestBody as required.
+Here, we use the YAML file below to describe the UI. As we can see, the main difference with the previous one is that we declare the HTTP method as POST instead of GET, and therefore, we define the requestBody as required.
 
 {{< tabsection >}}
    Not available 
@@ -389,7 +389,7 @@ Once we have our factory, we define our process container by extending the Proce
 
 #### Runner
 
-Once our components are defined, we can run our app by invoking the run method from our process container.
+After our components are defined, we can run our app by invoking the run method from our process container.
 
 {{< tabsection >}}
    Not available 
@@ -446,7 +446,7 @@ Alternatively, if we choose the commandable_hello_friend1 option, we will be pre
 
 #### Document 3: Commandable REST service.
 
-If we select commandable_hello_friend2, we get a similar UI but generated from our YAML file.
+Finally, if we select commandable_hello_friend2, we get a similar UI but generated from our YAML file.
 
 ![figure 1](./figure5.png)
 

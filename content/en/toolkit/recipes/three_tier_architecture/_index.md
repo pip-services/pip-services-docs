@@ -55,7 +55,7 @@ The example in this tutorial consists of an application that sends a message to 
 
 In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database.
 
-![Table 1](./table1.png)
+![Table 1](./Table1.png)
 
 ### Pre-requisites
 

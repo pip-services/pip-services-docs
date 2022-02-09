@@ -53,7 +53,7 @@ We will finish by showing the complete code of our example and summarizing what 
 
 The example in this tutorial consists of an application that sends a message to a browser. The message has the format “Hello {name}!” where name is the random name of a person that was selected from a database.
 
-In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database.
+In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database. The following table summarizes this and the concepts behind.
 
 ![Table 1](./Table1.png)
 

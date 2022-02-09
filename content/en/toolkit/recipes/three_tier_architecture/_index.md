@@ -456,7 +456,7 @@ Below, we can see the complete code of our example.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< markdownify >}}##### config.yaml{{< /markdownify >}}
+  {{< markdownify >}}##### threeTier.py{{< /markdownify >}}
   {{< collapse >}}
   {{< include "./__code12_python.md" >}}
   {{< /collapse >}}

@@ -19,7 +19,7 @@ Contains connection parameters to authenticate against Azure Functions
 and connect to specific Azure Function.
 
 #### [AzureConnectionResolver](azure_connection_resolver)
-Helper class to retrieve AWS connection and credential parameters,
+Helper class to retrieve Azure connection and credential parameters,
 validate them and compose a [AzureConnectionParams](azure_connection_params) value.
 
 </div>

@@ -21,11 +21,13 @@ In addition to standard parameters [CredentialParams](../../../components/auth/c
 
 #### Configuration parameters
 
-- **uri**:           full connection uri with specific app and function name
-- **protocol**:      connection protocol
-- **app_name**:      alternative app name
-- **function_name**: application function name
-- **auth_code**:     authorization code or null if using custom auth
+- **connections**: 
+    - **uri**:           full connection uri with specific app and function name
+    - **protocol**:      connection protocol
+    - **app_name**:      alternative app name
+    - **function_name**: application function name
+- **credentials**: 
+    - **auth_code**:     authorization code or null if using custom auth
 
 ### Constructors
 Creates an new instance of the connection parameters.
@@ -144,11 +146,11 @@ The values are retrieves from "connection" and "credential" sections.
 
 ```typescript
 let connection = AzureConnectionParams.fromTuples(
-    "uri", "http://myapp.azurewebsites.net/api/myfunction",
-    "protocol", "http",
-    "app_name", "myapp",
-    "function_name", "myfunction",
-    "auth_code", "code",
+    "connection.uri", "http://myapp.azurewebsites.net/api/myfunction",
+    "connection.protocol", "http",
+    "connection.app_name", "myapp",
+    "connection.function_name", "myfunction",
+    "credential.auth_code", "code",
 );
 
 const uri = connection.getFunctionUri();             // Result: "http://myapp.azurewebsites.net/api/myfunction"

@@ -1,11 +1,11 @@
 ---
 type: docs
-title: "AzureConnectionResolver"
-linkTitle: "AzureConnectionResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
+title: "GoogleConnectionResolver"
+linkTitle: "GoogleConnectionResolver"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
-    Helper class used to retrieve Azure connection and credential parameters,
-    validate them and compose a [AzureConnectionParams](../azure_connection_params) value.
+    Helper class used to retrieve Google connection and credential parameters,
+    validate them and compose a [GoogleConnectionParams](../google_connection_params) value.
  
 ---
 
@@ -13,8 +13,8 @@ description: >
 
 ### Description
 
-Helper class to retrieve Azure connection and credential parameters,
-validate them and compose a [AzureConnectionParams](../azure_connection_params) value.
+Helper class to retrieve Google connection and credential parameters,
+validate them and compose a [GoogleConnectionParams](../google_connection_params) value.
 
 
 #### Configuration parameters
@@ -29,7 +29,6 @@ validate them and compose a [AzureConnectionParams](../azure_connection_params) 
     - **auth_token**:    Google-generated ID token or null if using custom auth
 
 #### References
-- **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.
 - **\*:credential-store:\*:\*:1.0** - (optional) credential stores to resolve credentials.
 
 ### Fields
@@ -57,12 +56,12 @@ Configures a component by passing its configuration parameters.
 
 #### resolve
 Resolves connection and credential parameters and generates a single
-[AzureConnectionParams](../azure_connection_params) value.
+[GoogleConnectionParams](../google_connection_params) value.
 
-> `public` resolve(correlationId: string): Promise<[AzureConnectionParams](../azure_connection_params)>
+> `public` resolve(correlationId: string): Promise<[GoogleConnectionParams](../google_connection_params)>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain. 
-- **returns**: Promise<[AzureConnectionParams](../azure_connection_params)> - receives an AzureConnectionParams value or error.
+- **returns**: Promise<[GoogleConnectionParams](../google_connection_params)> - receives an GoogleConnectionParams value or error.
 
 #### setReferences
 Sets references to dependent components.
@@ -77,16 +76,18 @@ Sets references to dependent components.
 
 ```typescript
 let config = ConfigParams.fromTuples(
-    "connection.uri", "http://myapp.azurewebsites.net/api/myfunction",
-    "connection.app_name", "myapp",
-    "connection.function_name", "myfunction",
-    "credential.auth_code", "XXXXXXXXXX",
+    'connection.uri', 'http://east-my_test_project.cloudfunctions.net/myfunction',
+    'connection.protocol', 'http',
+    'connection.region', 'east',
+    'connection.function_name', 'myfunction',
+    'credential.project_id', 'my_test_project',
+    'credential.auth_token', '1234',
 );
-
-let connectionResolver = new AzureConnectionResolver();
+   
+let connectionResolver = new GoogleConnectionResolver();
 connectionResolver.configure(config);
 connectionResolver.setReferences(references);
-
+    
 const connectionParams = await connectionResolver.resolve("123");
 ```
 

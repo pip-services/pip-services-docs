@@ -21,6 +21,6 @@ other parameters are passed to the action itself.
 
 #### [CommandableAzureFunctionClient](commandable_azure_function_client)
 Abstract client that calls commandable Azure Functions.  
-Commandable services are generated automatically for [[https://pip-services3-nodex.github.io/pip-services3-commons-nodex/interfaces/commands.icommandable.html ICommandable objects]] [ICommandable](../../commons/commands/icommandable.md) objects. Each command is exposed as action determined by "cmd" parameter.
+Commandable services are generated automatically for [ICommandable](../../commons/commands/icommandable.md) objects. Each command is exposed as action determined by "cmd" parameter.
 
 </div>

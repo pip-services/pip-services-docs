@@ -1,8 +1,8 @@
 ---
 type: docs
-title: "AwsConnectionResolver"
-linkTitle: "AwsConnectionResolver"
-gitUrl: "https://github.com/pip-services3-python/pip-services3-azure-python"
+title: "AzureConnectionResolver"
+linkTitle: "AzureConnectionResolver"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-nodex"
 description: >
     Helper class used to retrieve Azure connection and credential parameters,
     validate them and compose a [AzureConnectionParams](../azure_connection_params) value.
@@ -20,17 +20,13 @@ validate them and compose a [AzureConnectionParams](../azure_connection_params) 
 #### Configuration parameters
 
 - **connections**:                   
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **region**: (optional) Azure region
-    - **partition**: (optional) Azure partition
-    - **service**: (optional) Azure service
-    - **resource_type**: (optional) Azure resource type
-    - **resource**: (optional) Azure resource id
-    - **arn**: (optional) Azure resource ARN
+     - **uri**:           full connection uri with specific app and function name
+     - **protocol**:      connection protocol
+     - **project_id**:    is your Google Cloud Platform project ID
+     - **region**:        is the region where your function is deployed
+     - **function_name**: is the name of the HTTP function you deployed
 - **credentials**:    
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **access_id**: Azure access/client id
-    - **access_key**: Azure access/client key
+    - **auth_token**:    Google-generated ID token or null if using custom auth
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services to resolve connection.

@@ -21,11 +21,13 @@ In addition to standard parameters [CredentialParams](../../../components/auth/c
 
 #### Configuration parameters
 
-- **uri**:           full connection uri with specific app and function name
-- **protocol**:      connection protocol
-- **app_name**:      alternative app name
-- **function_name**: application function name
-- **auth_code**:     authorization code or null if using custom auth
+- **connections**: 
+    - **uri**:           full connection uri with specific app and function name
+    - **protocol**:      connection protocol
+    - **app_name**:      alternative app name
+    - **function_name**: application function name
+- **credentials**: 
+    - **auth_code**:     authorization code or null if using custom auth
 
 ### Constructors
 Creates an new instance of the connection parameters.

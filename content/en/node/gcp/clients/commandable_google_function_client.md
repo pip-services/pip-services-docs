@@ -1,10 +1,10 @@
 ---
 type: docs
-title: "CommandableAzureFunctionClient"
-linkTitle: "CommandableAzureFunctionClient"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
+title: "CommandableGoogleFunctionClient"
+linkTitle: "CommandableGoogleFunctionClient"
+gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
-    Abstract client that calls commandable Azure Functions.
+    Abstract client that calls commandable Google Functions.
  
 ---
 
@@ -18,12 +18,13 @@ Commandable services are generated automatically for [ICommandable](../../../com
 #### Configuration parameters
 
 - **connections**:
-    - **uri**: (optional) full connection string or use protocol, app_name and function_name to build
-    - **protocol**: (optional) connection protocol
-    - **app_name**: (optional) Azure Function application name
-    - **function_name**: (optional) Azure Function name
+    - **uri**:           full connection uri with specific app and function name
+    - **protocol**:      connection protocol
+    - **project_id**:    is your Google Cloud Platform project ID
+    - **region**:        is the region where your function is deployed
+    - **function_name**: is the name of the HTTP function you deployed
 - **credentials**:
-    - **auth_code**: Azure Function auth code if use custom authorization provide empty string
+    - **auth_token**:    Google-generated ID token, if use custom authorization provide empty string
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages.
@@ -42,7 +43,7 @@ Creates a new instance of this client.
 ### Instance methods
 
 #### callCommand
-Calls a remote action in Azure Function.
+Calls a remote action in Google Function.
 The name of the action is added as "cmd" parameter
 to the action parameters. 
 
@@ -57,7 +58,7 @@ to the action parameters.
 ### Examples
 
 ```typescript
-class MyCommandableAzureClient extends CommandableAzureFunctionClient implements IMyClient {
+class MyCommandableGoogleClient extends CommandableGoogleFunctionClient implements IMyClient {
     ...
  
     public async getData(correlationId: string, id: string): Promise<any> {
@@ -66,19 +67,21 @@ class MyCommandableAzureClient extends CommandableAzureFunctionClient implements
     ...
 }
 
-let client = new MyCommandableAzureClient();
+let client = new MyCommandableGoogleClient();
 
 client.configure(ConfigParams.fromTuples(
-    "connection.uri", "http://myapp.azurewebsites.net/api/myfunction",
-    "connection.protocol", "http",
-    "connection.app_name", "myapp",
-    "connection.function_name", "myfunction"
-    "credential.auth_code", "XXXX"
+     'connection.uri", "http://region-id.cloudfunctions.net/myfunction',
+     'connection.protocol', 'http',
+     'connection.region', 'region',
+     'connection.function_name', 'myfunction',
+     'credential.project_id', 'id',
+     'credential.auth_token', 'XXX',
 ));
 
 const result = await client.getData("123", "1");
 ...
+...
 ```
 
 ### See also
-- #### [AzureFunction](../../azure_function/)
+- #### [GoogleFunction](../../google_function/)

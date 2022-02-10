@@ -5,5 +5,5 @@
     enable: true
     auto: false
     route: swagger
-    path: './commandable_swagger.yml'
+    path: '../../../commandable_swagger.yml'
 ```

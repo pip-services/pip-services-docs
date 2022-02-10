@@ -131,29 +131,31 @@ As we will use a process container to run the example, we need to describe this 
 
 Now, we create a YAML file that will be used by Swagger to define the UI. In our case, the service has the greeting method only, which we consider of type GET. An example of this file is:
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code4_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+```yaml
+openapi: '3.0.2'
+info:
+  title: 'Friends Service'
+  description: 'REST API from YAML file'
+  version: '1'
+paths:
+  /hello_friend/greeting:
+    get:
+      tags:
+        - hello_friend
+      parameters:
+        - in: query
+          name: name
+          schema:
+            type: string
+          required: true
+      responses:
+        201:
+          description: 'Successful response'
+          content:
+            application/json:
+              schema:
+                type: 'object'
+```
 
 #### Documents 2 & 3: Commandable REST service
 
@@ -180,7 +182,7 @@ To create a command set, we extend the CommandSet class and define our greeting 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,7 +210,7 @@ Once our command set has been defined, we create our commandable REST service by
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -219,29 +221,15 @@ Once our command set has been defined, we create our commandable REST service by
 
 To be able to generate a Swagger UI, we need to set the swagger’s enable field to true. Besides, as we want to document the commands defined in the command set, we declare auto as true and we define the route field that will be part of the URL for the generated Swagger UI. The example below shows this configuration.
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+```yaml
+- descriptor: "hello-friend:service:commandable-http1:default:1.0"
+  swagger:
+    enable: true
+    auto: true
+    route: swagger
+    name: Friends Service
+    description: Commandable REST API - Automatic
+```
 
 ##### Service for document 3
 
@@ -264,7 +252,7 @@ Similar to the previous one, this service builds the Swagger UI from the YAML fi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -292,7 +280,7 @@ In this case, we declare a path to a YAML file containing the description for th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -303,29 +291,36 @@ In this case, we declare a path to a YAML file containing the description for th
 
 Here, we use the YAML file below to describe the UI. As we can see, the main difference with the previous one is that we declare the HTTP method as POST instead of GET, and therefore, we define the requestBody as required.
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
+```yaml
+openapi: '3.0.2'
+info:
+  title: 'Friends Service'
+  description: 'Commandable REST API from YAM file'
+  version: '1'
+paths:
+  /commandable_hello_friend/greeting:
+    post:
+      tags:
+        - commandable_hello_friend
+      requestBody:
+        required: true
+        description: Friend name
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
 
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code9_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+      responses:
+        201:
+          description: 'Successful response'
+          content:
+            application/json:
+              schema:
+                type: 'object'
+```
 
 #### Containerization
 
@@ -352,7 +347,7 @@ To create our factory of components, we extend the Factory class and register ou
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code10_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -380,7 +375,7 @@ Once we have our factory, we define our process container by extending the Proce
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code11_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -408,7 +403,7 @@ After our components are defined, we can run our app by invoking the run method 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -474,7 +469,7 @@ In this section, we show the complete code and the corresponding configuration Y
   {{< markdownify >}}##### swagger.py{{< /markdownify >}}
 
   {{< collapse >}}
-  {{< include "./__code13_python.md" >}}
+  {{< include "./__code11_python.md" >}}
   {{< /collapse >}}
 {{< /tabsection >}}
 
@@ -503,7 +498,7 @@ In this section, we show the complete code and the corresponding configuration Y
   {{< markdownify >}}##### config.yaml{{< /markdownify >}}
 
   {{< collapse >}}
-  {{< include "./__code14_python.md" >}}
+  {{< include "./__code12_python.md" >}}
   {{< /collapse >}}
 {{< /tabsection >}}
 

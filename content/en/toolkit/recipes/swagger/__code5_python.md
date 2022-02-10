@@ -1,30 +1,24 @@
 
 ```python
-from pip_services3_commons.commands import Command, CommandSet, ICommand
-from pip_services3_commons.run import Parameters
-from pip_services3_commons.validate import Schema, ObjectSchema
-from pip_services3_commons.convert import TypeCode
-from typing import Optional
+from pip_services3_rpc.services import CommandableHttpService
 
-class FriendsCommandSet(CommandSet):
-    _controller: 'HelloFriendController'
+class FriendCommandableHttpService1(CommandableHttpService):
 
-    def __init__(self, controller):
-        super().__init__()
+    def __init__(self):
+        super().__init__('commandable_hello_friend1')
+        self._dependency_resolver.put('controller', Descriptor('hello-friend', 'controller', '*', '*', '*'))
 
-        self._controller = controller
+        self._swagger_path = None
+        
+    def configure(self, config):
+        super().configure(config)
 
-        self.add_command(self._make_greeting())
+        # Swagger
+        self._swagger_path = config.get_as_nullable_string('swagger.path')
 
-    def _make_greeting(self) -> ICommand:
-        def handler(correlation_id: Optional[str], args: Parameters):
-            name = args.get_as_string("name")
-            res = self._controller.greeting(name)
-            return res
+    def register(self):
+        super().register()
 
-        return Command(
-            "greeting",
-            ObjectSchema(True).with_required_property("name", TypeCode.String),
-            handler
-        )
+        if self._swagger_path:
+            self._register_open_api_spec_from_file(self._swagger_path)
 ```

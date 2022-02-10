@@ -1,6 +1,7 @@
 ---
 type: docs
 title: "Azure module"
+draft: true
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 no_list: true
 weight: 500

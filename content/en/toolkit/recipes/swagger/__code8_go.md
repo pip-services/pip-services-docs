@@ -1,0 +1,30 @@
+
+```go
+import (
+    cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+    cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+)
+
+type HelloFriendServiceFactory struct {
+	cbuild.Factory
+}
+
+func NewHelloFriendServiceFactory() *HelloFriendServiceFactory {
+	c := &HelloFriendServiceFactory{
+		Factory: *cbuild.NewFactory(),
+	}
+
+	HttpServiceDescriptor := cref.NewDescriptor("hello-friend", "service", "http", "*", "1.0")                          // View 1
+	CommandableHttpServiceDescriptor1 := cref.NewDescriptor("hello-friend", "service", "commandable-http1", "*", "1.0") // View 2
+	CommandableHttpServiceDescriptor2 := cref.NewDescriptor("hello-friend", "service", "commandable-http2", "*", "1.0") // View 2
+	ControllerDescriptor := cref.NewDescriptor("hello-friend", "controller", "default", "*", "1.0")                     // Controller
+
+	c.RegisterType(HttpServiceDescriptor, NewHelloFriendRestService)                    // View 1
+	c.RegisterType(CommandableHttpServiceDescriptor1, NewFriendCommandableHttpService1) // View 2
+	c.RegisterType(CommandableHttpServiceDescriptor2, NewFriendCommandableHttpService2) // View 3
+	c.RegisterType(ControllerDescriptor, NewHelloFriendController)                      // Controller
+
+	return c
+}
+    
+```

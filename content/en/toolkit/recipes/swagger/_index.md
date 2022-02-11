@@ -50,7 +50,7 @@ First of all, to create a Swagger UI, we need to install the swagger module. Thi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -84,7 +84,7 @@ It also contains a reference to the controller and a method named register that 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,7 +112,7 @@ As we will use a process container to run the example, we need to describe this 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -174,7 +174,7 @@ To create a command set, we extend the CommandSet class and define our greeting 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -202,7 +202,7 @@ Once our command set has been defined, we create our commandable REST service by
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -244,7 +244,7 @@ Similar to the previous one, this service builds the Swagger UI from the YAML fi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -272,7 +272,7 @@ In this case, we declare a path to a YAML file containing the description for th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -339,7 +339,7 @@ To create our factory of components, we extend the Factory class and register ou
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -367,7 +367,7 @@ Once we have our factory, we define our process container by extending the Proce
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -395,7 +395,7 @@ After our components are defined, we can run our app by invoking the run method 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -464,12 +464,16 @@ In this section, we show the complete code and the corresponding configuration Y
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< collapse >}}
+    {{< include "./__code11_go.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
+{{< tabsection >}}
   {{< collapse >}}
     {{< include "./__code11_dart.md" >}}
   {{< /collapse >}}
+{{< /tabsection >}}
 
 {{< tabsection >}}
   {{< collapse >}}
@@ -497,7 +501,9 @@ In this section, we show the complete code and the corresponding configuration Y
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< collapse >}}
+    {{< include "./__code12_go.md" >}}
+  {{< /collapse >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -121,6 +121,10 @@ This tutorial will help you understand how REST services can be created with Pip
 
 This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples.
 
+### [Swagger](swagger)
+
+In this tutorial, you will learn how to generate Swagger documentation for a REST service. We will see three different cases. The first is a common REST service, which is documented via a YAML file containing a description of its methods. The second is a commandable REST service, which has a defined set of commands that is used to define the Swagger document. Finally, the last case considers a commandable REST component with a command set and a Swagger UI defined by a YAML file. 
+
 ### [Three tier architecture](three_tier_architecture)
 
 In this tutorial, you will learn how to construct an application using Pip.Services components and having a three-tier structure. 

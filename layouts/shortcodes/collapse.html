@@ -2,7 +2,7 @@
 {{ $uid := now.UnixNano }}
 {{ $isMarkdown := .Get "isMarkdown" }}
 
-<a class="btn btn-link" id="btn-collapse-{{ $uid }}" style="border: none;text-decoration:underline;" onclick="changeArrow()" type="button"
+<a class="btn btn-link" id="btn-collapse-{{ $uid }}" style="border: none;text-decoration:underline;"  type="button"
     data-toggle="collapse" data-target="#collapse-{{ $uid }}" aria-expanded="false" aria-controls="collapse-{{ $uid }}">
     <h4>{{ if $btnText }}{{ $btnText }}{{ else }}Code Example{{ end }}<i id="collapse-{{ $uid }}-arrow" class="pl-2 fas fa-caret-down"></i></h4>
 </a>
@@ -22,10 +22,13 @@
     document.getElementById("btn-collapse-{{ $uid }}").addEventListener('click', changeArrow);
 
     function changeArrow(e) {
+        console.log('HI')
         let arrow = document.getElementById("collapse-{{ $uid }}-arrow")
         if (arrow.classList.contains("fa-caret-up")) {
+            console.log('fa-caret-down')
             arrow.classList.replace("fa-caret-up", "fa-caret-down")
         } else {
+            console.log('fa-caret-up')
             arrow.classList.replace("fa-caret-down", "fa-caret-up")
         }
     }

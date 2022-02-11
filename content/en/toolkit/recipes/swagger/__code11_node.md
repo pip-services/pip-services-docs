@@ -15,6 +15,7 @@ import { Factory } from 'pip-services3-components-nodex';
 
 
 export async function main() {
+    // Runner
     try {
         let proc = new HelloFriendProcess();
         proc.run(process.argv);
@@ -22,6 +23,8 @@ export async function main() {
         console.error(ex);
     }
 }
+
+// REST service (Swagger UI from YAML file)
 
 class HelloFriendRestService extends RestService {
     private _controller: HelloFriendController;
@@ -70,6 +73,8 @@ class HelloFriendRestService extends RestService {
     }
 }
 
+// Command set 
+
 class FriendsCommandSet extends CommandSet {
     private _controller: HelloFriendController;
 
@@ -93,6 +98,8 @@ class FriendsCommandSet extends CommandSet {
         );
     }
 }
+
+// Commandable REST service (Swagger UI automatically generated from command set)
 
 class FriendCommandableHttpService1 extends CommandableHttpService {
     private _swaggerPath: string;
@@ -118,6 +125,8 @@ class FriendCommandableHttpService1 extends CommandableHttpService {
 }
 
 
+// Commandable REST service (Swagger UI generated from YAML file)  
+
 class FriendCommandableHttpService2 extends CommandableHttpService {
     private _swaggerPath: string;
 
@@ -140,6 +149,8 @@ class FriendCommandableHttpService2 extends CommandableHttpService {
             this.registerOpenApiSpecFromFile(this._swaggerPath);
     }
 }
+
+// Controller
 
 class HelloFriendController implements IConfigurable, ICommandable {
     private defaultName: string;
@@ -166,6 +177,8 @@ class HelloFriendController implements IConfigurable, ICommandable {
 }
 
 
+// Factory
+
 class HelloFriendServiceFactory extends Factory {
     public constructor()
     {
@@ -182,6 +195,8 @@ class HelloFriendServiceFactory extends Factory {
         this.registerAsType(ControllerDescriptor, HelloFriendController);                        // Controller
     }
 }
+
+// Container
 
 class HelloFriendProcess extends ProcessContainer {
     public constructor() {

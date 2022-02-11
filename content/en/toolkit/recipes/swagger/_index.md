@@ -42,11 +42,11 @@ To explain these cases, we will create an app that given a name returns the phra
 First of all, to create a Swagger UI, we need to install the swagger module. This can be done with the following command:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -76,11 +76,11 @@ Our REST service is called HelloFriendService. It is defined by a class that inh
 It also contains a reference to the controller and a method named register that defines the necessary elements for the Swagger UI. Its code is as follows:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,11 +104,11 @@ It also contains a reference to the controller and a method named register that 
 As we will use a process container to run the example, we need to describe this service in the configuration file. In this description, we set the Swagger’s enable field to true to specify that we want to generate a Swagger UI for the service, and we define the path to our YAML file containing the Swagger UI description.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -166,11 +166,11 @@ These two cases document the same commandable REST service. The difference betwe
 To create a command set, we extend the CommandSet class and define our greeting command in it. The code below illustrates how to do this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -194,11 +194,11 @@ To create a command set, we extend the CommandSet class and define our greeting 
 Once our command set has been defined, we create our commandable REST service by extending the CommandableHttpService class and we link it to our controller. This service checks for a YAML file in the configuration file. If not found, it builds the Swagger UI from the command set. In our example, the configuration file doesn’t include a path to a YAML file, and the Swagger UI is generated from the command set previously defined.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,11 +236,11 @@ To be able to generate a Swagger UI, we need to set the swagger’s enable field
 Similar to the previous one, this service builds the Swagger UI from the YAML file defined in the configuration file.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -264,11 +264,11 @@ Similar to the previous one, this service builds the Swagger UI from the YAML fi
 In this case, we declare a path to a YAML file containing the description for the Swagger UI. As a result, even though we have declared auto as true, the system will choose this file over the automatic generation.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -331,11 +331,11 @@ Now that our REST services are defined, we want to create a process container to
 To create our factory of components, we extend the Factory class and register our REST and commandable REST services. 
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -359,11 +359,11 @@ To create our factory of components, we extend the Factory class and register ou
 Once we have our factory, we define our process container by extending the ProcessContainer class and adding the factories for the services and Swagger. Our code will look something like this:
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -387,11 +387,11 @@ Once we have our factory, we define our process container by extending the Proce
 After our components are defined, we can run our app by invoking the run method from our process container.
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
+    {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -449,25 +449,29 @@ Finally, if we select commandable_hello_friend2, we get a similar UI but generat
 
 In this section, we show the complete code and the corresponding configuration YAML file.
 
+##### swagger.py
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code11_node.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code11_net.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
    Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< markdownify >}}##### swagger.py{{< /markdownify >}}
-
   {{< collapse >}}
   {{< include "./__code11_python.md" >}}
   {{< /collapse >}}
@@ -478,27 +482,31 @@ In this section, we show the complete code and the corresponding configuration Y
 {{< /tabsection >}}
 
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
+##### config.yaml
 
 {{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< markdownify >}}##### config.yaml{{< /markdownify >}}
-
   {{< collapse >}}
-  {{< include "./__code12_python.md" >}}
+    {{< include "./__code12_node.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code12_net.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code12_python.md" >}}
   {{< /collapse >}}
 {{< /tabsection >}}
 

@@ -382,6 +382,8 @@ We can also call our service via code and obtain a similar result. For example:
 
 Below is the complete code for the service and client.
 
+#### Service
+
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
@@ -408,6 +410,8 @@ Below is the complete code for the service and client.
   Not available  
 {{< /tabsection >}}
 
+
+#### Client
 
 {{< tabsection >}}
   Not available  

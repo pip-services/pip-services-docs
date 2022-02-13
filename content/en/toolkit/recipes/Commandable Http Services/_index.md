@@ -45,29 +45,7 @@ To create a CommandableHttpService, we need to import this class, create a comma
 
 In order to create a CommandableHttpService, we need to import this component. This can be done with the following code:
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code1_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 
 #### Command set

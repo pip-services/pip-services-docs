@@ -8,6 +8,8 @@ description: >-
      What are and how to use CommandableHttpServices.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
@@ -60,10 +62,20 @@ There are several ways to consume our service. In this tutorial, we will conside
 
 Pip.Services offers the CommandableHttpClient component, which can be used to interact with a CommandableHttpService. In order to use it, we need to import it first.
 
+Once imported, we can create our client by extending this class. The following example shows how to do this:
+
+Which, we then instantiate, configure, and connect to our previously defined service. 
+
+And then, we request a greeting and get our response. 
+
 #### Using code
 
+We can also call our service via code and obtain a similar result. For example:
+
 ### Final code
+
 Below is the complete code for the service and client.
+
 ### Wrapping up
 
 In this tutorial, we have learned what is and how to create a CommandableHttpService, and how to consume it via a CommandableHttpClient and from any app via code.

@@ -12,6 +12,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>CommandableHttpService</td>
+    <td>Service that receives remote calls via HTTP/REST protocol to execute commands defined in an ICommandable component.</td>
+  </tr>
+  <tr>
+    <td>CommandSet</td>
+    <td>Set of commands that can be called via HTTP.</td>
+  </tr>
+  <tr>
+    <td>CommandableHttpClient</td>
+    <td>Client used to consume a CommandableHttpService.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to create and consume CommandableHttpServices. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 

@@ -1,16 +1,39 @@
 ---
+type: docs
+no_list: true
 title: "Commandable Http Services"
 linkTitle: "Commandable Http Services"
-weight: 100
+weight: 10
 description: >-
-     Page description for heading and indexes.
+     What are and how to use CommandableHttpServices.
 ---
 
-## Heading
+### Key takeaways
 
-Edit this template to create your new page.
+### Introduction
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+### Creating a CommandableHttpService
+
+#### Pre-requisites
+
+#### Command set
+
+#### CommandableHttpService
+
+#### Controller
+
+#### Factory
+
+#### Container
+
+### Consuming a CommandableHttpService
+
+#### Using a CommandableHttpClient
+
+#### Using code
+
+### Final code
+Below is the complete code for the service and client.
+### Wrapping up
+
+In this tutorial, we have learned what is and how to create a CommandableHttpService, and how to consume it via a CommandableHttpClient and from any app via code.

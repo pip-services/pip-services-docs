@@ -105,89 +105,15 @@ And then, we request a greeting and get our response.
 
 We can also call our service via code and obtain a similar result. For example:
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code12_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 ### Final code
 
 Below is the complete code for the service and client.
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-
-{{< tabsection >}}
-  {{< collapse >}}
-    {{< include "./__code13_python.md" >}}
-  {{< /collapse >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
 
-{{< tabsection >}}
-    Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-
-{{< tabsection >}}
-  {{< collapse >}}
-    {{< include "./__code14_python.md" >}}
-  {{< /collapse >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 ### Wrapping up
 
 In this tutorial, we have learned what is and how to create a CommandableHttpService, and how to consume it via a CommandableHttpClient and from any app via code.

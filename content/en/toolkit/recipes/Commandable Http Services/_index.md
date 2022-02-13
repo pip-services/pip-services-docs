@@ -62,7 +62,7 @@ In order to create a CommandableHttpService, we need to import this component. T
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code1_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

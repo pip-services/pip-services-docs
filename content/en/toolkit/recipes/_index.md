@@ -30,6 +30,10 @@ In this tutorial you will learn how to create yml configuration files. First, we
 
 The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism's capabilities and how it can be utilized.
 
+### [Configuring Connections](configuring_connections)
+
+In this tutorial, you will learn how to configure connections with the ConnectionParams component and perform CRUD operations with them. First, we will see different ways to create connections, such as from a constructor, a tuple, a string, and a ConfigParams object. Then, we will see how to extract, modify and delete different fields in those connections.
+
 ### [Component Creation](creating_a_component)
 
 How to create a component and assemble a service from it.

@@ -146,9 +146,9 @@ See [IEventListener](../ievent_listener)
 - **listener**: [IEventListener](../ievent_listener) - the listener to remove.
 
 #### validate
-Validates [args](../../run/parameters) for command specified by its name using defined schema.
-If validation schema is not defined than the methods returns no errors.
-It returns validation error if the command is not found.
+Validates [args](../../run/parameters) for command specified by its name using a defined schema.
+If validation schema is not defined, then the methods returns no errors.
+It returns a validation error if the command is not found.
 
 
 > validate(command_name: str, args: [Parameters](../../run/parameters)): List[[ValidationResult](../../validate/validation_result)]

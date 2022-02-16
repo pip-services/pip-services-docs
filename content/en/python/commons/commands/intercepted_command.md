@@ -57,7 +57,6 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 ### Examples
 
 ```python
-# -*- coding: utf-8 -*-
 from typing import Optional, Any, List
 
 from pip_services3_commons.commands import Command

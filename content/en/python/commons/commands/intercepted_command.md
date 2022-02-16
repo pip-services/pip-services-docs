@@ -57,18 +57,53 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 ### Examples
 
 ```python
+# -*- coding: utf-8 -*-
+from typing import Optional, Any, List
+
+from pip_services3_commons.commands import Command
+from pip_services3_commons.commands import ICommandInterceptor, ICommand, InterceptedCommand
+from pip_services3_commons.run import Parameters
+from pip_services3_commons.validate import ValidationResult, ValidationException, ObjectSchema
+
+
 class CommandLogger(ICommandInterceptor):
     def get_name(self, command_name):
         return command_name.get_name()
-    def execute():
-        # do something
-    def validate():
-        # do something
-   
-logger = new CommandLogger()
-logged_command = InterceptedCommand(logger, command)
 
-# Each called command will output: Executed command <command name>
+    def execute(self, correlation_id: Optional[str], command: ICommand, args: Parameters) -> Any:
+        print('exec call')
+        print('my own exec logic')
+        ...
+        # for example
+        results = self.validate(command, args)
+        if len(results) > 1:
+            raise ValidationException.from_results(None, results, True)
+
+        command.execute(correlation_id, args)
+
+    def validate(self, command: ICommand, args: Parameters) -> List[ValidationResult]:
+        print('validate call')
+        print('my own validat logic')
+        ...
+        # for example
+        results = command.validate(args)
+        if len(results) < 1:
+            return results
+
+        print('validation complete')
+        return []
+
+
+command = Command(
+    "my_command",
+    ObjectSchema().with_required_property("param"),
+    lambda correlation_id, args: print(f'called command: my_command, with param: {args.get("param")}')
+)
+
+logger = CommandLogger()
+logged_command = InterceptedCommand(logger, command)
+logged_command.execute('123', Parameters.from_tuples('param', 123))
+
 ```
 
 ### See also

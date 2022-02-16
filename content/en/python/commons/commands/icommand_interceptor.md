@@ -15,7 +15,7 @@ The ICommandInterceptor interface is used for stackable command interceptors, wh
 
 Important points
 
-- This technique can be used for authentiction, logging, and several other functions.
+- This technique can be used for authentication, logging, and several other functions.
 
 ### Instance methods
 

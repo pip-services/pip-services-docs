@@ -56,7 +56,7 @@ Validates the command [args](../../run/parameters) before execution using the de
 ### Examples
 
 ```python
-def handler(*args):
+def handler(args):
     param1 = args.getAsFloat("param1")
     param2 = args.getAsFloat("param2")
     return param1 + param2

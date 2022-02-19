@@ -15,16 +15,16 @@ description: >-
 
 <table class="full-width-table">
   <tr>
-    <td>Swagger module</td>
-    <td>Contains components used to generate Swagger UIs.</td>
+    <td>CommandSet</td>
+    <td>Component used to group a set of commands.</td>
   </tr>
   <tr>
-    <td>Swagger YAML file</td>
-    <td>File used to declare methods to be documented via Swagger.</td>
+    <td>Command</td>
+    <td>Component used to call a method or a function.</td>
   </tr>
   <tr>
-    <td>Swagger</td>
-    <td>An Interface Description Language for describing RESTful APIs using JSON.</td>
+    <td>Event</td>
+    <td>Component used to send a notification to one or more listeners.</td>
   </tr>
 </table>
 

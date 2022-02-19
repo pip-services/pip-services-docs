@@ -42,3 +42,7 @@ mySet.execute(None, "command2", None)
 mySet.execute(None, "command3", None)
 mySet.execute(None, "command1B", None)
 ```
+
+After running it, this code produces the following output:         
+   
+![figure 1](./figure1.png) 

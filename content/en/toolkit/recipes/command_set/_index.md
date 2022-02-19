@@ -379,7 +379,7 @@ Additionally, we can add a listener to our command set by using the addListener(
 
 #### Finding an event
 
-We can use the findEvent() method to search for a specific event. This method asks for the event name as input and if found, returns the event object.
+We can use the findEvent() method to search for a specific event. This method asks for the event name as input, and if found, returns the event object.
 
 {{< tabsection >}}
   Not available 

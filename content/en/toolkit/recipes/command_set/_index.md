@@ -464,10 +464,7 @@ In this section, we have two examples that show how to work with command sets. T
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
-         
-After running it, this code produces the following output:         
-   
-![figure 1](./figure1.png)         
+                 
          
 #### Example 2   
          

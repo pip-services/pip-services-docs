@@ -435,6 +435,65 @@ Finally, similar to the previous method, the getEvents() method allows us to obt
   Not available  
 {{< /tabsection >}}
 
+### Examples
+         
+In this section, we have two examples that show to work with command sets with the first focusing on commands and the second on events.
+
+#### Example 1
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code14_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+         
+#### Example 2   
+         
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code15_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 ### Wrapping up
 
 In this tutorial, we have seen how to create a CommandSet that contains commands and events. We have also seen how to extract and use those commands and events and perform some operations with them.

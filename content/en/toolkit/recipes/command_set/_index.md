@@ -467,6 +467,10 @@ In this section, we have two examples that show to work with command sets with t
   Not available  
 {{< /tabsection >}}
          
+After running, the code above results in the following output:         
+   
+![figure 1](./figure1.png)         
+         
 #### Example 2   
          
 {{< tabsection >}}
@@ -494,6 +498,11 @@ In this section, we have two examples that show to work with command sets with t
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+         
+After running, it produces the following output:         
+         
+![figure 2](./figure2.png)
+         
 ### Wrapping up
 
 In this tutorial, we have seen how to create a CommandSet that contains commands and events. We have also seen how to extract and use those commands and events and perform some operations with them.

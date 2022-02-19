@@ -12,22 +12,6 @@ description: >-
 
 ### Key takeaways
 
-<table class="full-width-table">
-  <tr>
-    <td><table class="full-width-table">
-  <tr>
-    <td>CredentialParams </td>
-    <td>Component used to group a set of commands.</td>
-  </tr>
-  <tr>
-    <td>Command</td>
-    <td>Component used to call a method or a function.</td>
-  </tr>
-  <tr>
-    <td>Event</td>
-    <td>Component used to send a notification to one or more listeners.</td>
-  </tr>
-</table>
 
 
 ### Introduction

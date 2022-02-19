@@ -13,6 +13,20 @@ description: >-
 ### Key takeaways
 
 
+<table class="full-width-table">
+  <tr>
+    <td>Swagger module</td>
+    <td>Contains components used to generate Swagger UIs.</td>
+  </tr>
+  <tr>
+    <td>Swagger YAML file</td>
+    <td>File used to declare methods to be documented via Swagger.</td>
+  </tr>
+  <tr>
+    <td>Swagger</td>
+    <td>An Interface Description Language for describing RESTful APIs using JSON.</td>
+  </tr>
+</table>
 
 ### Introduction
 

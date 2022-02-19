@@ -20,16 +20,20 @@ In this tutorial, you will learn how to create a CommandSet component, add comma
 
 In order to do this, we divide the work into two sections: the first explains how to operate with commands and the second how to work with events in a CommandSet.
 
-### Using a CommandSet with Commands
+### Pre-requisites
 
-In this section, we will learn how to add commands to a command set, and how to retrieve these commands and execute them
+In order to use the CommandSet component, we need to import it first. The following command shows how to do this:
 
-#### Defining a CommandSet
+### Defining a CommandSet
 
 In order to create a CommandSet component, we need to either create an instance of this class:
 
 
 or define a subclass of it:
+
+### Using a CommandSet with Commands
+
+In this section, we will learn how to add commands to a command set, and how to retrieve these commands and execute them
 
 #### Adding a command
 

@@ -51,3 +51,7 @@ event1.notify("123", None)
 event2.notify("123", None)
 myEvents.notify("123", 'event3', None)
 ```
+
+After running, this code produces the following output:         
+         
+![figure 2](./figure2.png)

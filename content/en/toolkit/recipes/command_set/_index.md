@@ -435,7 +435,7 @@ Finally, similar to the previous method, the getEvents() method allows us to obt
 
 ### Examples
          
-In this section, we have two examples that show to work with command sets with the first focusing on commands and the second on events.
+In this section, we have two examples that show how to work with command sets. The first focus on commands and the second on events.
 
 #### Example 1
 
@@ -465,7 +465,7 @@ In this section, we have two examples that show to work with command sets with t
   Not available  
 {{< /tabsection >}}
          
-After running, the code above results in the following output:         
+After running it, this code produces the following output:         
    
 ![figure 1](./figure1.png)         
          
@@ -497,9 +497,7 @@ After running, the code above results in the following output:
   Not available  
 {{< /tabsection >}}
          
-After running, it produces the following output:         
-         
-![figure 2](./figure2.png)
+
          
 ### Wrapping up
 

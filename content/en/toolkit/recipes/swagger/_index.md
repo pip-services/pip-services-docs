@@ -425,25 +425,25 @@ To see the generated Swagger UIs, we can use the following URL:
 
 The generated Swagger UI presents a drop-down menu that can be used to select any of the cases defined in this exercise.
 
-![figure 1](./figure2.png)
+![figure 2](./figure2.png)
 
 #### Document 1: REST service
 
 If we select the hello_friend option, we will see a UI that presents all the information defined in the Swagger YAML file.
 
-![figure 1](./figure3.png)
+![figure 3](./figure3.png)
 
 #### Document 2: Commandable REST service
 
 Alternatively, if we choose the commandable_hello_friend1 option, we will be presented by a UI showing the information automatically generated from the command set.
 
-![figure 1](./figure4.png)
+![figure 4](./figure4.png)
 
 #### Document 3: Commandable REST service.
 
 Finally, if we select commandable_hello_friend2, we get a similar UI but generated from our YAML file.
 
-![figure 1](./figure5.png)
+![figure 5](./figure5.png)
 
 ### Final code
 

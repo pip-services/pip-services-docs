@@ -8,6 +8,8 @@ description: >-
      How to create and manage a discovery service.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
@@ -18,25 +20,196 @@ In this tutorial, you will learn how to create and operate a discovery service t
 
 To create a discovery service, we can use the MemoryDiscovery class, which models a discovery service that stores connections in memory. To import this class, we can use the following code:
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ### Creating a discovery service
 
 In order to create our discovery service, we need to create an instance of the MemoryDiscovery  class. Here, we have two options: we add one or more sets of connection parameters to the constructor through a config object
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 or we add them after instantiation via the configure() method.
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Adding connections
 
 Once we have created our component, we can use the register() method to add connections to our discovery service. This method takes the correlationId, a key, and the connection parameters to be registered as inputs. The following example shows how to use this method.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ### Resolving connections
 
 We can obtain a connection with the resolveOne() method, which asks for the correlationId and the key identifying the connection parameters we are looking for.
 
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Alternatively, we can use the resolveAll() method, which asks for the same inputs, but returns a list containing all the sets of connection parameters identified by a common key.
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+
+### Complete example
 
 In this section, we have an example that illustrates the use of a memory discovery service, from creation to addition of parameters to resolving a connection. The code is as follows:
 
-### Complete example
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code7_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

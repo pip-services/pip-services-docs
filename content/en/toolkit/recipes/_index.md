@@ -34,6 +34,10 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 
 In this tutorial, you will learn how to configure connections with the ConnectionParams component and perform CRUD operations with them. First, we will see different ways to create connections, such as from a constructor, a tuple, a string, and a ConfigParams object. Then, we will see how to extract, modify and delete different fields in those connections.
 
+### [Configuring Credentials](configuring_credentials)
+
+In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
+
 ### [Component Creation](creating_a_component)
 
 How to create a component and assemble a service from it.

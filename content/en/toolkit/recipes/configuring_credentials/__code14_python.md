@@ -1,4 +1,4 @@
 
 ```python
-credential.remove('username')
+overriden.remove('username')
 ```

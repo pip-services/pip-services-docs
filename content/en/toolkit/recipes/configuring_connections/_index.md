@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Configuring connections"
-linkTitle: "Configuring connections"
+title: "Configuring Connections"
+linkTitle: "Configuring Connections"
 weight: 10
 description: >-
      How to configure connections using Pip.Services.

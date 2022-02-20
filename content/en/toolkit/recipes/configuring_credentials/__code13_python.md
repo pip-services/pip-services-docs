@@ -1,7 +1,7 @@
 
 ```python
 config = ConfigParams.from_tuples("password", "password5")
-credential = credential1.override(config)
+overriden = credential1.override(config)
 # Returns
 #{'username': 'user1',
 # 'password': 'password5',

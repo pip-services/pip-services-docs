@@ -12,6 +12,30 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>MemoryDiscovery</td>
+    <td>Component used to create discovery services that keep data in memory.</td>
+  </tr>
+  <tr>
+    <td>Configure</td>
+    <td>Method used to configure a MemoryDiscovery component.</td>
+  </tr>
+  <tr>
+    <td>Register</td>
+    <td>Method used to add connection parameters to a MemoryDiscovery component.</td>
+  </tr>
+  <tr>
+    <td>resolveOne</td>
+    <td>Method used to obtain a set of connection parameters identified by a common key.</td>
+  </tr>
+  <tr>
+    <td>resolveAll</td>
+    <td>Method used to obtain all sets of connection parameters identified by a common key.</td>
+  </tr>
+</table>
+
+
 ### Introduction
 
 In this tutorial, you will learn how to create and operate a discovery service that stores connection parameters in memory. We will begin by explaining the necessary pre-requisites. Then, we will continue by showing how to create the service and add and extract connection parameters from it. We will finish with a comprehensive example that illustrates all the learned concepts.

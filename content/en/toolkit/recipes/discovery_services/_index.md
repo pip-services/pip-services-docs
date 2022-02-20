@@ -152,7 +152,7 @@ Once we have created our component, we can use the register() method to add conn
 
 ### Resolving connections
 
-We can obtain a connection with the resolveOne() method, which asks for the correlationId and the key identifying the connection parameters we are looking for.
+We can obtain a connection with the resolveOne() method, which considers as input parameters the correlationId and the key identifying the connection parameters we are looking for.
 
 {{< tabsection >}}
   Not available

@@ -1,6 +1,6 @@
 
 ```python
-mySet = MyCommandSet(None)
+my_set = MyCommandSet(None)
 
-mySet.execute(None, "command1", None) # Returns command 1
+my_set.execute(None, "command1", None) # Returns command 1
 ```

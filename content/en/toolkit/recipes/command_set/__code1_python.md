@@ -1,4 +1,4 @@
 
 ```python
-MyCommandSetA = CommandSet()
+my_command_setA = CommandSet()
 ```

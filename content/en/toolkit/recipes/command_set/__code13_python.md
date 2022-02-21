@@ -1,8 +1,8 @@
 
 ```python
-myEvents = MyEventSet(None)
+my_events = MyEventSet(None)
 
-result3 = myEvents.get_events()
+result3 = my_events.get_events()
 
 for event in result3:
     print(event.get_name())

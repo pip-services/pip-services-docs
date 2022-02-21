@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Command sets"
-linkTitle: "Command sets"
+title: "Command Sets"
+linkTitle: "Command Sets"
 weight: 10
 description: >-
      How to create and use a CommandSet component.
@@ -41,19 +41,19 @@ In order to do this, we divide the work into two sections: the first explains ho
 In order to use the CommandSet component, we need to import it first. The following command shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code0_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code0_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code0_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code0_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,19 +68,19 @@ In order to use the CommandSet component, we need to import it first. The follow
 
 In order to create a CommandSet component, we need to either create an instance of this class:
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,19 +94,19 @@ In order to create a CommandSet component, we need to either create an instance 
 or define a subclass of it:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -126,19 +126,19 @@ In this section, we will learn how to add commands to a command set, and how to 
 We can add a command to the set with the add_command() method. The following example shows how to add a command that, once executed, prints ‘command 1’.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -154,19 +154,19 @@ We can add a command to the set with the add_command() method. The following exa
 We can also add several commands at once via the addCommands() method, which accepts as input a list with the names of the methods to be added. In the example below, we add two commands to the set.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -182,19 +182,19 @@ We can also add several commands at once via the addCommands() method, which acc
 Alternatively, we can add a CommandSet containing one or more commands. This can be done with the addCommandSet() method. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -210,19 +210,19 @@ Alternatively, we can add a CommandSet containing one or more commands. This can
 Once our command set is ready, we can create an instance of it and execute any of the commands it contains with the execute() method. This method accepts as inputs the correlation id, the name of the command to be executed, and the parameters that this command requires.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,19 +238,19 @@ Once our command set is ready, we can create an instance of it and execute any o
 We can find a command via the findCommand() method, which accepts the name of the command as input. The next example shows how to use it.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -266,19 +266,19 @@ We can find a command via the findCommand() method, which accepts the name of th
 We can get all the commands available in our command set via the getCommands() method, which returns the results in the form of a list. In the following example, we obtain a list with the commands and then we print their names.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -298,19 +298,19 @@ We can also use our command set to store events.
 Adding an event is very similar to adding a command and can be done with the addEvent() method. This method accepts the event to be added as input.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -326,19 +326,19 @@ Adding an event is very similar to adding a command and can be done with the add
 We can also add several commands together with the addEvents() method, which accepts as input a list containing the events to be added. This example explains how to do this:
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -354,19 +354,19 @@ We can also add several commands together with the addEvents() method, which acc
 Additionally, we can add a listener to our command set by using the addListener() method. This method takes the listener as input and adds a listener that is connected to all the events in the command set. In the following example, we add a listener that is connected to event2 and event3.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -382,19 +382,19 @@ Additionally, we can add a listener to our command set by using the addListener(
 We can use the findEvent() method to search for a specific event. This method asks for the event name as input, and if found, returns the event object.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -410,19 +410,19 @@ We can use the findEvent() method to search for a specific event. This method as
 Finally, similar to the previous method, the getEvents() method allows us to obtain all the events available in our command set  in the form of a list. In the example below, we obtain a list with the events, and then, we print their names.
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -440,19 +440,19 @@ In this section, we have two examples that show how to work with command sets. T
 #### Example 1
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code14_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -469,19 +469,19 @@ In this section, we have two examples that show how to work with command sets. T
 #### Example 2   
          
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+   {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

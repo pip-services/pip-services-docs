@@ -13,12 +13,12 @@ class MyCommandSetB(CommandSet):
 
 class MyCommandSet(CommandSet):
 
-    _commandSet = MyCommandSetB(None)
+    _command_set = MyCommandSetB(None)
     def __init__(self, controller):
         super(MyCommandSet, self).__init__()
         self.add_command(self._command1())
         self.add_commands([self._command2(),self._command3()])
-        self.add_command_set(self._commandSet)
+        self.add_command_set(self._command_set)
         
     def _command1(self):
         def handler(correlation_id, args):

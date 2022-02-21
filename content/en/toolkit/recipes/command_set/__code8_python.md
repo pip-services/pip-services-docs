@@ -1,6 +1,6 @@
 
 ```python
-result2 = mySet.get_commands()
+result2 = my_set.get_commands()
 
 for comm in result2:
     print(comm.get_name())

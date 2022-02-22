@@ -4,7 +4,7 @@ title: "AzureFunctionService"
 linkTitle: "AzureFunctionService"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-azure-python"
 description: >
-    Abstract service that receives remove calls via the Azure Function protocol.
+    Abstract service that receives remote calls via the Azure Function protocol.
 ---
 
 **Implements**: [IAzureFunctionService](../iazure_function_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)

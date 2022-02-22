@@ -1,15 +1,21 @@
 {{ $btnText := .Get 0 }}
 {{ $uid := now.UnixNano }}
-{{ $isMarkdown := .Get "isMarkdown" }}
+{{ $isMarkdown := eq (.Get "isMarkdown") "true"}}
+{{ if $isMarkdown }}
+    {{ $uid = add $uid 1 }}
+{{ end }}
 
 <a class="btn btn-link" id="btn-collapse-{{ $uid }}" style="border: none;text-decoration:underline;"  type="button"
     data-toggle="collapse" data-target="#collapse-{{ $uid }}" aria-expanded="false" aria-controls="collapse-{{ $uid }}">
-    <h4>{{ if $btnText }}{{ $btnText }}{{ else }}Code Example{{ end }}<i id="collapse-{{ $uid }}-arrow" class="pl-2 fas fa-caret-down"></i></h4>
+    <h4>{{ if $btnText }}{{ $btnText }}{{ else }}Code Example{{ end }}
+        <i id="collapse-{{ $uid }}-arrow" class="pl-2 fas fa-caret-down"></i>
+    </h4>
 </a>
-
+{{$isMarkdown}}
+{{ $uid }}
 <div class="collapse pt-1" id="collapse-{{ $uid }}">
     <!-- <div class="card card-body"> -->
-        {{ if eq $isMarkdown true}}
+        {{ if $isMarkdown }}
             {{ .Inner | markdownify}}
         {{ else }}
             {{ .Inner }}

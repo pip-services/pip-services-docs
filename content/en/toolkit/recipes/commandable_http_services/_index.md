@@ -411,6 +411,35 @@ Below is the complete code for the service and client.
 {{< /tabsection >}}
 
 
+#### Configuration file
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+    {{< include "./__code15_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+
 #### Client
 
 {{< tabsection >}}

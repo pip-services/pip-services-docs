@@ -15,6 +15,6 @@ client.configure(ConfigParams.from_tuples("connection.protocol", "http",
 
 client.open(None)
 
-data = client.greeting("123")  # Returns 'Hello, Peter !'
+var data = await client.Greeting("123"); // Returns 'Hello, Peter !'
 ```
 

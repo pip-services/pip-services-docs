@@ -1,0 +1,19 @@
+
+```go
+import (
+	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	srvc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+)
+
+type FriendCommandableHttpService struct {
+	*srvc.CommandableHttpService
+}
+
+func NewFriendCommandableHttpService() *FriendCommandableHttpService {
+	c := &FriendCommandableHttpService{}
+	c.CommandableHttpService = srvc.InheritCommandableHttpService(c, "commandable_hello_friend")
+	c.DependencyResolver.Put("controller", cref.NewDescriptor("hello-friend", "controller", "*", "*", "*"))
+	return c
+}
+
+```

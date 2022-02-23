@@ -18,6 +18,12 @@ The CommandSet component allows us to group a set of commands and events, which 
 
 In this tutorial, you will learn how to create a CommandSet component, add commands and events to it, and perform some operations, such as executing or finding a specific command from a command set.
 
+### [Commandable Http Services](commandable_http_services)
+
+In this tutorial, you will learn how to create and consume CommandableHttpServices. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 
+
+In order to explain its functionality, this tutorial begins by explaining the necessary pre-requisites to work with this component. Then, it shows how to create a command set and a service that uses it. To complete the service, it describes how to include it in a ProcessContainer.
+
 ### [Component Lifecycle](component_lifecycle)
 
 A microservice is a set of loosely coupled components, each of which serves a specific purpose, such as logging events, reading records from a database, or connecting to a 3rd party service.

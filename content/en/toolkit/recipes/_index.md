@@ -8,10 +8,6 @@ exclude_from_list: true
 ---
 ---
 
-### [Background Execution](background_execution)
-
-Sometimes you may need to use your microservices as background tasks. From an architectural point of view, we call this type of tasks Background Execution, as they don’t need any external event to prompt them but a background task logic only. There are several ways to design this task. One approach consists of adding a timer to the microservice’s controller and distributed locks. Another method would be using a message queue to manage the execution process. Lastly, we can use a microservice, such as the Pip.Services’ Job microservice, which keeps a list of jobs performed by other microservices and manages their execution. This article explains how to tackle those three approaches through the use of a practical example.
-
 ### [Command Sets](command_sets)
 
 The CommandSet component allows us to group a set of commands and events, which can be called and executed at a later stage. 

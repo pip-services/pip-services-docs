@@ -26,7 +26,7 @@ The UTC time at which the object was last changed (created, updated, or deleted)
 > **change_time**: datetime
 
 #### deleted
-The logical deletion flag. True when object is deleted and None or false otherwise
+The logical deletion flag. True when the object is deleted and None or false otherwise
 > **deleted**: datetime
 
 </span>

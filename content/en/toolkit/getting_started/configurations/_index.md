@@ -207,6 +207,8 @@ We can also merge different configuration sets via the mergeConfigs() method, wh
   Not available  
 {{< /tabsection >}}
 
+![figure 2](./figure2.png)
+
 ### Resolvers
 
 Pip.Services offers two helper classes that can be used to extract the value associated with the “name” and “id” parameters, and the key:value pairs of an “options” section. These classes are NameResolver and OptionsResolvers. This section explains their usage.

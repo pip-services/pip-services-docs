@@ -437,7 +437,7 @@ To delete a credential parameter from a CredentialParams object, we can use the 
   Not available  
 {{< /tabsection >}}
 
-### The MemoryCredentialStore component
+### MemoryCredentialStore
 
 The MemoryCredentialStore component is used to create a store for credential parameters. In it, each set of credentials is identified by a common key. The following sections explain how to create an instance of this class, add credentials to it, and modify and delete those credentials.
 

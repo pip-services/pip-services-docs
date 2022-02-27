@@ -22,6 +22,10 @@ description: >-
     <td>StringValueMap</td>
     <td>Class that provides the structure for CredentialParams.</td>
   </tr>
+  <tr>
+    <td>MemoryCredentialStore</td>
+    <td>Class used to create a store in memory for credential parameters.</td>
+  </tr>
 </table>
 
 
@@ -685,4 +689,4 @@ Alternatively, we can delete all the stored sets of credentials by replacing the
 
 ### Wrapping up
 
-In this tutorial, we have learned how to create CredentialParams components and manage them by extracting and updating the stored values of the credentials, and deleting their parameters.
+In this tutorial, we have learned how to create CredentialParams components and manage them by extracting and updating the stored values of the credentials, and deleting their parameters. We have also seen how to create and work with a MemoryCredentialStore component. 

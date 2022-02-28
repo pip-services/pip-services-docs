@@ -446,19 +446,19 @@ The MemoryCredentialStore component is used to create a store for credential par
 In order to create a MemoryCredentialStore component, we need to import this class first. This can be done with the following command:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -474,19 +474,19 @@ In order to create a MemoryCredentialStore component, we need to import this cla
 To create a MemoryCredentialStore, we need to instantiate this class. This presents us with two different options: we can create a ConfigParams object containing the configuration parameters and call it from the constructor
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -500,19 +500,19 @@ To create a MemoryCredentialStore, we need to instantiate this class. This prese
 or we can instantiate the store without any input parameter and use the readCredentials() method to add the credentials:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -528,19 +528,19 @@ or we can instantiate the store without any input parameter and use the readCred
 To add new credentials to a store, we use the store() method. This method accepts the correlationId, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value “key3”.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -556,19 +556,19 @@ To add new credentials to a store, we use the store() method. This method accept
 The lookup() method is used to retrieve stored credentials. It takes a correlationId and a key as input parameters and returns a ConfigParams object containing the retrieved credentials. If no credentials were found, it returns an empty ConfigParams object.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -584,19 +584,19 @@ The lookup() method is used to retrieve stored credentials. It takes a correlati
 Credentials can be updated with the store() method. This method requires the correlationId, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to “joeve3V2”. 
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code20_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -610,19 +610,19 @@ Credentials can be updated with the store() method. This method requires the cor
 Alternatively, we can change all the stored values with the readCredentials() method. In this case, all the stored sets will be deleted and the new ones stored. In the example below, we replace the set identified by “key1” with new values, delete the sets identified by “key2” and “key3”, and add a new set identified by “key4”.
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code21_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code21_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code21_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -638,19 +638,19 @@ Alternatively, we can change all the stored values with the readCredentials() me
 We can delete a set of credentials identified by a common key by replacing it with an empty CredentialParams object. The following example shows how to do this:
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code22_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+   {{< include "./__code22_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+   {{< include "./__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code22_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

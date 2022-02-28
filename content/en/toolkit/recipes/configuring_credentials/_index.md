@@ -680,7 +680,7 @@ Alternatively, we can delete all the stored sets of credentials by replacing the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code23_python.md" >}}
+  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

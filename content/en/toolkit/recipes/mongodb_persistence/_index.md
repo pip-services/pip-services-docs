@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "MongoDB Persistence"
-linkTitle: "MongoDB Persistence"
+title: "MongoDB persistence"
+linkTitle: "MongoDB persistence"
 weight: 1
 ---
 

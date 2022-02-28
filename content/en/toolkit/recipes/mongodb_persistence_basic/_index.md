@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Basic MongoDB Persistence"
-linkTitle: "MongoDB Persistence Basic"
+title: "Basic MongoDB persistence"
+linkTitle: "MongoDB persistence basic"
 weight: 1
 description: >-
      How to persist data using a MongoDB database.

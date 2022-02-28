@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Creating a memory persistence component"
-linkTitle: "Memory Persistence"
+linkTitle: "Memory persistence"
 weight: 1
 ---
 

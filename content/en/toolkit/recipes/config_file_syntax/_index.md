@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Config File Syntax"
-linkTitle: "Config File Syntax"
+title: "Config file syntax"
+linkTitle: "Config file syntax"
 weight: 1
 description: >-
      Page description for heading and indexes.

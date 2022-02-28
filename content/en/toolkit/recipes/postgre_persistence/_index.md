@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "PostgreSQL Persistence"
-linkTitle: "PostgreSQL Persistence"
+title: "PostgreSQL persistence"
+linkTitle: "PostgreSQL persistence"
 weight: 1
 description: >-
      How to persist data using a PostgreSQL database.

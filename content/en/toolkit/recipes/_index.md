@@ -8,13 +8,13 @@ exclude_from_list: true
 ---
 ---
 
-### [Command Sets](command_sets)
+### [Command sets](command_sets)
 
 The CommandSet component allows us to group a set of commands and events, which can be called and executed at a later stage. 
 
 In this tutorial, you will learn how to create a CommandSet component, add commands and events to it, and perform some operations, such as executing or finding a specific command from a command set.
 
-### [Commandable Http Services](commandable_http_services)
+### [Commandable HTTP services](commandable_http_services)
 
 In this tutorial, you will learn how to create and consume CommandableHttpServices. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 
 
@@ -38,20 +38,20 @@ In this tutorial you will learn how to create yml configuration files. First, we
 
 The Pip.Services Toolkit offers a simple but very flexible mechanism for component configuration. Configurations can be loaded from various sources - configuration files, command line parameters, environment variables, configuration services, etc. Once loaded, they are passed to the specific component, which configures itself accordingly. In this recipe, we'll be taking a look at this mechanism's capabilities and how it can be utilized.
 
-### [Configuring Connections](configuring_connections)
+### [Configuring connections](configuring_connections)
 
 In this tutorial, you will learn how to configure connections with the ConnectionParams component and perform CRUD operations with them. First, we will see different ways to create connections, such as from a constructor, a tuple, a string, and a ConfigParams object. Then, we will see how to extract, modify and delete different fields in those connections.
 
-### [Configuring Credentials](configuring_credentials)
+### [Configuring credentials](configuring_credentials)
 
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 
-### [Component Creation](creating_a_component)
+### [Component creation](creating_a_component)
 
 How to create a component and assemble a service from it.
 In this tutorial, we will learn how to create a component and how to assemble a service from it. We will start with a short description of a component’s lifecycle and then we will create a component by defining step-by-step all the elements that compose its lifecycle. Finally, we will assemble a service from it through a container, run it, and see the results. 
 
-### [Data Conversion](data_conversion)
+### [Data conversion](data_conversion)
 
 This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
 
@@ -65,7 +65,7 @@ In this tutorial, you will learn how to configure at deployment time an applicat
 In this tutorial, you will understand how to design your persistence in such a way that your code benefits from one of the main features of Pip.Services, which is symmetric code implementation.
 In order to see this, we will create an example using two different databases (MySQL and PostgreSQL). Then, we will create a common set of instructions to manage CRUD operations and transfer data from one database into another.
 
-### [Discovery Services](discovery_services)
+### [Discovery services](discovery_services)
 
 In this tutorial, you will learn how to create and operate a discovery service that stores connection parameters in memory. We will begin by explaining the necessary pre-requisites. Then, we will continue by showing how to create the service and add and extract connection parameters from it. We will finish with a comprehensive example that illustrates all the learned concepts.
 
@@ -73,7 +73,7 @@ In this tutorial, you will learn how to create and operate a discovery service t
 
 In this tutorial, you will learn how to create a gRPC client and server by using the Pip.Services’ gRPC module. We will start with an explanation of how to install this module and a brief description of the example used. Next, we will see how to create a gRPC server and client. Lastly, we will have a section containing the complete code for this project.
 
-### [JSON Persistence](json_persistence)
+### [JSON persistence](json_persistence)
 
 This tutorial will help you understand how to create a JSON persistence component. It starts by explaining the pre-requisites. Then it continues with an explanation on how to create a JSON persistence object, save data to it, and extract stored data from it. In the end, it provides an example where all the explained methods are included.
 
@@ -91,15 +91,15 @@ In this tutorial, you will understand how to create and manage a cache and a dis
 
 First, we will look at the pre-requisites. Then, we will see how to create and perform relevant operations through examples. We will finalize the tutorial with a practical example of how to use distributed locks.
 
-### [Memory Persistence](memory_persistence)
+### [Memory persistence](memory_persistence)
 
 The Pip.Services Toolkit offers a few abstract implementations for developing persistent components. One of them is the MemoryPersistence, which stores all of its data in memory. Its usefulness is limited in production, but very handy in unit tests. This persistence allows us to cut dependencies on external persistent storages and makes tests easy to set up and lighting fast!
 
-### [MongoDB Persistence](mongodb_persistence)
+### [MongoDB persistence](mongodb_persistence)
 
 Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
 
-### [MongoDB Persistence Basic](mongodb_persistence_basic)
+### [MongoDB persistence pasic](mongodb_persistence_basic)
 This tutorial will help you understand how to create persistence components for MongoDB. In particular, you will learn how to use two components, namely MongoDbPersistence and IdentifiableMongoDbPersistence. The explanations will include practical examples.
 
 ### [MQTT](mqtt)
@@ -111,11 +111,11 @@ In this tutorial, we will see how to create a message queue with MqttMessageQueu
 How to use Mustache templates with PIP.Services. 
 PIP.Services offers an implementation of a Mustache engine available in its Expressions module. This implementation of Mustache is enhanced with the addition of some helpers. In this tutorial, you will learn how to use the MustacheTemplate component, which can be used to evaluate Mustache templates.
 
-### [MySQL Persistence](mysql_persistence)
+### [MySQL persistence](mysql_persistence)
 
 In this tutorial, we will see how to interact with a MySQL database in order to provide persistence to our code. First, we will see the main CRUD methods available in the three persistence components contained in the MySQL module.
 
-### [PostgreSQL Persistence](postgre_persistence)
+### [PostgreSQL persistence](postgre_persistence)
 
 In this tutorial, you will understand how to create persistence components for PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.
 
@@ -137,7 +137,7 @@ This package provides different classes that will allow you to develop code with
 
 This tutorial will help you understand how REST services can be created with Pip.Services. It begins by explaining the necessary pre-requisites. Then, it proceeds to explain how to create a simple REST service using the RestService component, how to configure it, and how to run it. It ends by showing the results on a browser.
 
-### [SQL Server Persistence](sqlserver_persistence)
+### [SQL Server persistence](sqlserver_persistence)
 
 This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples.
 

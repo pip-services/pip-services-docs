@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Command Sets"
-linkTitle: "Command Sets"
+title: "Command sets"
+linkTitle: "Command sets"
 weight: 10
 description: >-
      How to create and use a CommandSet component.

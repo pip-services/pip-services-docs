@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Creating a component"
-linkTitle: "Component Creation"
+linkTitle: "Component creation"
 weight: 1
 description: >-
      How to create a component and assemble a service from it.

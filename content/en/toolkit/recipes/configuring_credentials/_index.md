@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Configuring Credentials"
-linkTitle: "Configuring Credentials"
+title: "Configuring credentials"
+linkTitle: "Configuring credentials"
 weight: 10
 description: >-
      How to configure credentials using Pip.Services.

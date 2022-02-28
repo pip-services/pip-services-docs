@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Discovery Services"
-linkTitle: "Discovery Services"
+title: "Discovery services"
+linkTitle: "Discovery services"
 weight: 10
 description: >-
      How to create and manage a discovery service.

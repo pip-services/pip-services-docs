@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Background Execution"
-linkTitle: "Background Execution"
+title: "Background execution"
+linkTitle: "Background execution"
 weight: 1
 draft: true
 ---

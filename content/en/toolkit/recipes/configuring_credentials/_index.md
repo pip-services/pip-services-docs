@@ -635,7 +635,7 @@ Alternatively, we can change all the stored values with the readCredentials() me
 
 #### Deleting the credentials
 
-We can delete a set of credentials identified by a common key by replacing it with an empty CredentialParams object. The following example shows how to do this:
+We can delete a set of credentials identified by a common key by placing a Null/None value as the CredentialParams object in the store method. The following example shows how to do this:
 
 {{< tabsection >}}
   {{< include "./__code22_node.md" >}}

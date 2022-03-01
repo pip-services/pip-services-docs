@@ -661,31 +661,6 @@ We can delete a set of credentials identified by a common key by placing a Null/
   Not available  
 {{< /tabsection >}}
 
-Alternatively, we can delete all the stored sets of credentials by replacing them with empty values. This can be done by adding an empty ConfigParams object via the readCredentials() method. The following example illustrates this procedure:
-
-{{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 ### Wrapping up
 

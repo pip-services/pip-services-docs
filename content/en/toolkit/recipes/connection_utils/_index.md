@@ -76,6 +76,10 @@ And, the following example illustrates how to use it:
   Not available  
 {{< /tabsection >}}
 
+Which returns
+
+![figure 0](./figure0.png)
+
 ### Utility # 2: concat
 
 The concat() method merges the information from two ConfigParams objects into one. It also accepts a set of parameter names, which if specified, determine the parameters to be merged. 
@@ -111,6 +115,8 @@ The example below shows how to merge the username and password only.
 {{< /tabsection >}}
 
 Where the merged object has the following structure:
+
+![figure 1](./figure1.png)
 
 ### Utility # 3: exclude
 
@@ -148,6 +154,8 @@ In the following example, we create a new ConfigParams object containing all the
 
 And, after running the above code, we obtain the following result:
 
+![figure 2](./figure2.png)
+
 ### Utility # 4: include
 
 The include() method creates a new ConfigParams object based on a given one and a set of fields to be included. 
@@ -184,6 +192,8 @@ For example, in the code below, a new object is created from an original one whi
 
 With the resulting object containing the following fields and values:
 
+![figure 3](./figure3.png)
+
 ### Utility # 5: parse_uri
 
 The parseURI() method obtains information from a URI string and stores it in a ConfigParams object. It accepts default values for protocol and port, which are included in the ConfigParams object in those cases that this information cannot be obtained from the URI string. 
@@ -218,6 +228,8 @@ The following example shows how this utility works:
   Not available  
 {{< /tabsection >}}
 
+![figure 4](./figure4.png)
+
 And, this example illustrates how to use the default values:
 
 {{< tabsection >}}
@@ -243,6 +255,8 @@ And, this example illustrates how to use the default values:
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+![figure 5](./figure5.png)
 
 ### Practical example
 

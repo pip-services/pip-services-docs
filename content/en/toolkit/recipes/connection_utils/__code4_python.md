@@ -10,5 +10,5 @@ config = ConfigParams.from_tuples(
     "param3", None
 )
 
-config3 = ConnectionUtils.exclude(config, 'username', 'password')
+config2 = ConnectionUtils.exclude(config, 'username', 'password')
 ```

@@ -34,7 +34,7 @@ The concat() method merges the information from two ConfigParams objects into on
 
 Its syntax is
 
-**concat(options1: ConfigParams, options2: ConfigParams, *keys: str)**
+__concat(options1: ConfigParams, options2: ConfigParams, *keys: str)__
 
 The example below shows how to merge the username and password only.
 

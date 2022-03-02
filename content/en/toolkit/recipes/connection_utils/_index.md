@@ -26,15 +26,59 @@ The syntax of this command is
 
 **composeUri(options: ConfigParams, default_protocol: str, default_port: int)**
 
+And, the following example illustrates how to use it:
+
 ### Utility # 2: concat
+
+The concat() method merges the information from two ConfigParams objects into one. It also accepts a set of parameter names, which if specified, determine the parameters to be merged. 
+
+Its syntax is
+
+**concat(options1: ConfigParams, options2: ConfigParams, *keys: str)**
+
+The example below shows how to merge the username and password only.
+
+Where the merged object has the following structure:
 
 ### Utility # 3: exclude
 
+The exclude() utility creates a new ConfigParams object that includes all the fields from a given one except for those specified as input parameters.
+
+Its syntax is 
+
+**exclude(options: ConfigParams, *keys: str)**
+
+In the following example, we create a new ConfigParams object containing all the same fields as the original one with the exemption of username and password:
+
+And, after running the above code, we obtain the following result:
+
 ### Utility # 4: include
+
+The include() method creates a new ConfigParams object based on a given one and a set of fields to be included. 
+
+The syntax is
+
+**include(options: ConfigParams, *keys: str)**
+
+For example, in the code below, a new object is created from an original one which includes the username and password only.
+
+With the resulting object containing the following fields and values:
 
 ### Utility # 5: parse_uri
 
+The parseURI() method obtains information from a URI string and stores it in a ConfigParams object. It accepts default values for protocol and port, which are included in the ConfigParams object in those cases that this information cannot be obtained from the URI string. 
+
+Its syntax is
+
+**parseUri(uri: str, default_protocol: str, default_port: str)**
+
+The following example shows how this utility works:
+
+And, this example illustrates how to use the default values:
+
 ### Practical example
+
+The example below shows a practical application of two of these utilities, namely parseURL() and exclude(). In it, we create a MongoDB connector where these methods are used during configuration to consider two possibilities: a connection passed as a URI string and access to the database without the need for authorization.
 
 ### Wrapping up
 

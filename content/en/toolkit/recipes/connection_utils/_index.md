@@ -52,6 +52,30 @@ The syntax of this command is
 
 And, the following example illustrates how to use it:
 
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ### Utility # 2: concat
 
 The concat() method merges the information from two ConfigParams objects into one. It also accepts a set of parameter names, which if specified, determine the parameters to be merged. 
@@ -61,6 +85,30 @@ Its syntax is
 __concat(options1: ConfigParams, options2: ConfigParams, *keys: str)__
 
 The example below shows how to merge the username and password only.
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Where the merged object has the following structure:
 
@@ -74,6 +122,30 @@ __exclude(options: ConfigParams, *keys: str)__
 
 In the following example, we create a new ConfigParams object containing all the same fields as the original one with the exemption of username and password:
 
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And, after running the above code, we obtain the following result:
 
 ### Utility # 4: include
@@ -85,6 +157,30 @@ The syntax is
 __include(options: ConfigParams, *keys: str)__
 
 For example, in the code below, a new object is created from an original one which includes the username and password only.
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 With the resulting object containing the following fields and values:
 
@@ -98,11 +194,85 @@ __parseUri(uri: str, default_protocol: str, default_port: str)__
 
 The following example shows how this utility works:
 
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And, this example illustrates how to use the default values:
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Practical example
 
 The example below shows a practical application of two of these utilities, namely parseURL() and exclude(). In it, we create a MongoDB connector where these methods are used during configuration to consider two possibilities: a connection passed as a URI string and access to the database without the need for authorization.
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+  {{< include "./__code8_python.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

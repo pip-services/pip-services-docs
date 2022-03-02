@@ -13,6 +13,4 @@ options = ConfigParams.from_tuples(
 )
 
 uri = ConnectionUtils.compose_uri(options, "tcp", 9092)
-
-uri
 ```

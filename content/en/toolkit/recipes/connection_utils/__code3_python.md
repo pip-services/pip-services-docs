@@ -20,5 +20,5 @@ configB = ConfigParams.from_tuples(
     "param3", "p3B"
 )
 
-config2 = ConnectionUtils.concat(configA,configB, 'username', 'password')
+config = ConnectionUtils.concat(configA,configB, 'username', 'password')
 ```

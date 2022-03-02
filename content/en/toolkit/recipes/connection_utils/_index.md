@@ -46,7 +46,7 @@ The exclude() utility creates a new ConfigParams object that includes all the fi
 
 Its syntax is 
 
-**exclude(options: ConfigParams, *keys: str)**
+__exclude(options: ConfigParams, *keys: str)__
 
 In the following example, we create a new ConfigParams object containing all the same fields as the original one with the exemption of username and password:
 
@@ -58,7 +58,7 @@ The include() method creates a new ConfigParams object based on a given one and 
 
 The syntax is
 
-**include(options: ConfigParams, *keys: str)**
+__include(options: ConfigParams, *keys: str)__
 
 For example, in the code below, a new object is created from an original one which includes the username and password only.
 
@@ -70,7 +70,7 @@ The parseURI() method obtains information from a URI string and stores it in a C
 
 Its syntax is
 
-**parseUri(uri: str, default_protocol: str, default_port: str)**
+__parseUri(uri: str, default_protocol: str, default_port: str)__
 
 The following example shows how this utility works:
 

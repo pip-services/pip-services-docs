@@ -10,5 +10,5 @@ config = ConfigParams.from_tuples(
     "param3", None
 )
 
-config4 = ConnectionUtils.include(options, 'username', 'password')
+config2 = ConnectionUtils.include(options, 'username', 'password')
 ```

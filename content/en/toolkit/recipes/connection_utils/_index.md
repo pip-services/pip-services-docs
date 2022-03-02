@@ -10,6 +10,29 @@ description: >-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>composeUri</td>
+    <td>Utility that creates a URI string from information stored in a ConfigParams object.</td>
+  </tr>
+  <tr>
+    <td>concat</td>
+    <td>Utility that merges two ConfigParams objects into one.</td>
+  </tr>
+  <tr>
+    <td>exclude</td>
+    <td>Utility that creates a new ConfigParams object based on a given one and a set of excluded fields.</td>
+  </tr>
+  <tr>
+    <td>include</td>
+    <td>Utility that creates a new ConfigParams object based on a given one and a set of included fields.</td>
+  </tr>
+  <tr>
+    <td>parseURI</td>
+    <td>Utility that obtains information from a URI and stores it in a ConfigParams object.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to use a set of utilities offered by Pip.Services that can be used to simplify the handling of connections. We will start by explaining how to import these components. Then, we will see their syntax and how to use them. Finally, we will explore an example that illustrates the practical application of some of these utilities.

@@ -1,4 +1,4 @@
 
 ```python
-
+counters.dump()
 ```

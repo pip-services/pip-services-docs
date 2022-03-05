@@ -28,6 +28,8 @@ Once we have imported our component, we can create a class containing one or mor
 
 #### Defining and connecting the counter
 
+
+
 #### Calling the method 
 
 #### Results on console

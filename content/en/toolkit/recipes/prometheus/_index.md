@@ -46,7 +46,7 @@ description: >-
   </tr>
   <tr>
     <td>setInterval</td>
-    <td>Method used to set the interval for dumps.</td>
+    <td>Method used to set an interval for dumps.</td>
   </tr>
 </table>
 

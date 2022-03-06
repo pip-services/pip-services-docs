@@ -232,7 +232,7 @@ Once we have our list of counters, we can obtain some information from them via 
 
 Which after running presents the following values for the previously defined metrics:
 
-![figure 2](./figure2.png)
+![figure 2](./figure2A.png)
 
 #### Pushgateway results
 

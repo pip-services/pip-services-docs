@@ -230,24 +230,168 @@ Another option presented by Prometheus is to store the metric values on a page l
 
 In order to use the PrometheusMetricsService component, we need to import it first. This can be done with the following command:
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Creating the component and counter
 As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a PrometheusCounters object. The following code shows how to do this:
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Creating the service
 
 To create the /metrics page, we need to create an instance of the PrometheusMetricsService component and configure it. In the following example, we specify that our /metrics page will be located on our machine and connected via port 8080. We also say that this page will show the results obtained from the counters object. Our code is as follows:
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Setting the references
 
 To relate the service and the counters, we need to set the references for the contextInfo, counters and service objects. This is done with the following code:
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Connecting and calling the method
 
 Now, as we did in the previous example, we connect to Prometheus and call the method twice. In this case, we need to connect both, the counters and service objects. Then, we call mymethod() with a loop. The code is as follows:
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Closing the resources
 
 Finally, we can free resources by closing both, the counters and service objects.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### /metrics results
 
@@ -282,6 +426,17 @@ Below is the complete code for the example.
 {{< /tabsection >}}
 
 ### Main counter methods
+
+Most methods available from the PrometheusCounters component are inherited from its parent class CachedCounters. This section explains the most relevant ones.
+
+#### increment
+
+This method can be used to create a counter that increments by a specified value. Its syntax is
+
+__increment(name: str, value: float)__
+
+where name is the name of the counter and value the increment number.
+An example of its implementation is 
 
 
 ### Wrapping up

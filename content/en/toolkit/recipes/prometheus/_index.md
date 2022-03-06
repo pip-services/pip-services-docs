@@ -86,7 +86,7 @@ In order to send our counters to Prometheus, we need to import the PrometheusCou
   Not available  
 {{< /tabsection >}}
 
-#### Adding the counter to our component
+#### Adding the counters to our component
 
 Once we have imported our component, we can create a class containing one or more counters. In our example, we create a class named “MyComponent”, which contains a method called “mymethod”. Within this method, we include two metrics. One is a counter that measures the number of calls to this method, and the other is a variable that measures execution time.
 

@@ -9,7 +9,44 @@ description: >-
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>PrometheusCounters</td>
+    <td>Component used to create different metrics or counters.</td>
+  </tr>
+  <tr>
+    <td>PrometheusMetricsService</td>
+    <td>Component used to send metrics to /metrics.</td>
+  </tr>
+  <tr>
+    <td>increment</td>
+    <td>Method used to create a counter that increases according to a given number.</td>
+  </tr>
+  <tr>
+    <td>incrementOne</td>
+    <td>Method used to create a counter that increases by one.</td>
+  </tr>
+  <tr>
+    <td>timestamp</td>
+    <td>Method used to create a counter with the timestamp format.</td>
+  </tr>
+  <tr>
+    <td>timestampNow</td>
+    <td>Method used to create a counter that stores the current date and time in a timestamp format.</td>
+  </tr>
+  <tr>
+    <td>beginTiming and endTiming</td>
+    <td>Method used to create a counter that measures an interval of time, such as execution time.</td>
+  </tr>
+  <tr>
+    <td>dump</td>
+    <td>Method used to store obtained metrics.</td>
+  </tr>
+  <tr>
+    <td>setInterval</td>
+    <td>Method used to set the interval for dumps.</td>
+  </tr>
+</table>
 ### Introduction
 
 In this tutorial, you will learn how to send different metrics to Prometheus. First, we will see how to do this via the Pushgateway. Then, we will understand how to show our metrics on a /metrics page. Finally, we will go through a set of different methods, which are useful to create different counters.

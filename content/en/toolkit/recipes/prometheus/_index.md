@@ -695,4 +695,4 @@ In the example below, we use this command to set the interval to one minute.
 
 ### Wrapping up
 
-In this tutorial, we have learned how to send metric values to Prometheus. First, we saw how to send them to Prometheus Pushgateway and analyze the results. Then, we learned how to present our metrics on a page under /metrics. Finally, we explored the main methods available for counters.
+In this tutorial, we have learned how to send metric values to Prometheus. First, we saw how to send them to its Pushgateway and analyze the results. Then, we learned how to present our metrics on a page under /metrics. Finally, we explored the main methods available for counters.

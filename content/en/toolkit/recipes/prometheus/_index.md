@@ -8,7 +8,9 @@ description: >-
      How to send metrics to Prometheus.
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
+
 <table class="full-width-table">
   <tr>
     <td>PrometheusCounters</td>
@@ -47,6 +49,7 @@ description: >-
     <td>Method used to set the interval for dumps.</td>
   </tr>
 </table>
+
 ### Introduction
 
 In this tutorial, you will learn how to send different metrics to Prometheus. First, we will see how to do this via the Pushgateway. Then, we will understand how to show our metrics on a /metrics page. Finally, we will go through a set of different methods, which are useful to create different counters.

@@ -466,7 +466,9 @@ Below is the complete code for the example.
 {{< /tabsection >}}
 
 {{< tabsection >}}
+  {{< collapse >}}
   {{< include "./__code14_python.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

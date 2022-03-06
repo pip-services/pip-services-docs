@@ -7,7 +7,7 @@ weight: 10
 description: >-
      How to send metrics to Prometheus.
 ---
-
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
 
 ### Introduction
@@ -21,6 +21,30 @@ One of the options presented by Prometheus is to send metrics directly to its Pu
 #### Pre-requisites
 
 In order to send our counters to Prometheus, we need to import the PrometheusCounters component. The following command shows how to do this.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Adding the counter to our component
 

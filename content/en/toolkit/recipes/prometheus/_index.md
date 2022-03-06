@@ -300,7 +300,7 @@ In order to use the PrometheusMetricsService component, we need to import it fir
   Not available  
 {{< /tabsection >}}
 
-#### Creating the component and counter
+#### Creating the component and the counters
 As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a PrometheusCounters object. The following code shows how to do this:
 
 {{< tabsection >}}

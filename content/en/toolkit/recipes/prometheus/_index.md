@@ -50,13 +50,85 @@ In order to send our counters to Prometheus, we need to import the PrometheusCou
 
 Once we have imported our component, we can create a class containing one or more counters. In our example, we create a class named “MyComponent”, which contains a method called “mymethod”. Within this method, we include two metrics. One is a counter that measures the number of calls to this method, and the other is a variable that measures execution time.
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Defining and connecting the counter
 
 Once we have our component with the necessary counters, we create an instance of it and connect this object to Prometheus. To do this, we use the configure() method to provide the connection information and the open() method to connect it.
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Calling the method 
 
 Now that we are connected, we can call “mymethod” one or more times. In the example below, we call it twice. 
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Results on console
 
@@ -66,7 +138,55 @@ And, after running our code we get the following messages on our console:
 
 We can get the counters with the getAll() method, which returns a list containing all the counters used.
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Once we have our list of counters, we can obtain some information from them via the count, min, max, average, time, name and type methods. The following example shows how to obtain these values 
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Which after running presents the following values for the previously defined metrics:
 
@@ -77,6 +197,30 @@ If we are connected to the Prometheus’ Pushgateway, we will find our metrics r
 #### Closing the counter
 
 Finally, to finish our code, we close the counter to free resources.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Sending metrics to /metrics
 
@@ -89,7 +233,53 @@ In order to use the PrometheusMetricsService component, we need to import it fir
 #### Creating the component and counter
 As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a PrometheusCounters object. The following code shows how to do this:
 
+#### Creating the service
 
+To create the /metrics page, we need to create an instance of the PrometheusMetricsService component and configure it. In the following example, we specify that our /metrics page will be located on our machine and connected via port 8080. We also say that this page will show the results obtained from the counters object. Our code is as follows:
+
+#### Setting the references
+
+To relate the service and the counters, we need to set the references for the contextInfo, counters and service objects. This is done with the following code:
+
+#### Connecting and calling the method
+
+Now, as we did in the previous example, we connect to Prometheus and call the method twice. In this case, we need to connect both, the counters and service objects. Then, we call mymethod() with a loop. The code is as follows:
+
+#### Closing the resources
+
+Finally, we can free resources by closing both, the counters and service objects.
+
+#### /metrics results
+
+The figure below shows the /metrics page containing the example’s counters and their values.
+
+#### Complete code
+
+Below is the complete code for the example.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code14_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Main counter methods
 

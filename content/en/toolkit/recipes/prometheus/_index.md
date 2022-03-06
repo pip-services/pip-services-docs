@@ -435,9 +435,213 @@ This method can be used to create a counter that increments by a specified value
 
 __increment(name: str, value: float)__
 
-where name is the name of the counter and value the increment number.
+where name is the name of the counter and value is the increment number.
+
 An example of its implementation is 
 
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code15_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+where we create a counter named “mycomponent.mymethod.calls1” that increases by two every time it is called.
+
+#### incrementOne
+
+This method is similar to the previous one, but uses a fixed increment value of one. Its syntax is
+
+__increment_one(name: str)__
+
+where name represents the name of the counter.
+
+For example, we can create a counter called “mycomponent.mymethod.calls2” that increases by one every time it is called:
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code16_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### timestamp
+
+This method records a given timestamp. Its syntax is:
+
+__timestamp(name: str, value: datetime.datetime)__
+
+where name is the name of the counter and value is the given timestamp. 
+
+In the example below, we use this command to create a metric that measures the difference between the current time and a base time. 
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code17_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### timestampNow
+
+Similar to the previous one, this method records the current time as a timestamp. Its syntax is
+
+_timestamp_now(name: str)__
+
+where name is the name of the counter.
+
+Using it, the example below shows how to create a metric that measures the current time:
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code18_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+#### beginTiming and endTiming
+
+The beginTiming() method starts the measurement of an execution time interval. It returns a CounterTiming object, which by calling the endTiming() method ends the measurement and updates the counter. Their syntaxes are
+
+__beginTiming(name: str): CounterTiming__
+
+and 
+
+__end_timing()__
+
+#### dump
+
+This method saves the current values of counters. Its syntax is 
+
+__dump()__
+
+The following example shows how to create a timing for a method named mymethod. Here, we measure the execution time of a task, and then, we save the value with the dump() method.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code19_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+### setInterval
+
+This method sets the time interval for the dump() method. Its syntax is 
+
+__set_interval(value: float)__
+
+where value is the time interval in milliseconds.
+
+In the example below, we use this command to set the interval to one minute.
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code20_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

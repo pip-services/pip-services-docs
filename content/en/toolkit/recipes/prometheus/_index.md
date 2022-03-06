@@ -134,6 +134,8 @@ Now that we are connected, we can call “mymethod” one or more times. In the 
 
 And, after running our code we get the following messages on our console:
 
+![figure 1](./figure1.png)
+
 #### Obtaining and analyzing the results
 
 We can get the counters with the getAll() method, which returns a list containing all the counters used.
@@ -190,9 +192,13 @@ Once we have our list of counters, we can obtain some information from them via 
 
 Which after running presents the following values for the previously defined metrics:
 
+![figure 2](./figure2.png)
+
 #### Pushgateway results
 
 If we are connected to the Prometheus’ Pushgateway, we will find our metrics reflected in its interface. Thus, for example, in the image below, we can see the counter value of two, which indicates that the method was called twice, as we did before in our code.
+
+![figure 3](./figure3.png)
 
 #### Closing the counter
 
@@ -396,6 +402,8 @@ Finally, we can free resources by closing both, the counters and service objects
 #### /metrics results
 
 The figure below shows the /metrics page containing the example’s counters and their values.
+
+![figure 4](./figure4.png)
 
 #### Complete code
 

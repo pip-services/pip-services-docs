@@ -657,7 +657,7 @@ The following example shows how to create a timing for a method named mymethod. 
   Not available  
 {{< /tabsection >}}
 
-### setInterval
+#### setInterval
 
 This method sets the time interval for the dump() method. Its syntax is 
 

@@ -240,9 +240,9 @@ If we are connected to the Prometheus’ Pushgateway, we will find our metrics r
 
 ![figure 3](./figure3.png)
 
-#### Closing the counter
+#### Closing counters
 
-Finally, to finish our code, we close the counter to free resources.
+Finally, to finish our code, we close the counters object to free resources.
 
 {{< tabsection >}}
     Not available  

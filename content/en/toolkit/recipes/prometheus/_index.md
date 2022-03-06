@@ -587,7 +587,7 @@ In the example below, we use this command to create a metric that measures the d
 
 Similar to the previous one, this method records the current time as a timestamp. Its syntax is
 
-_timestamp_now(name: str)__
+__timestamp_now(name: str)__
 
 where name is the name of the counter.
 
@@ -695,4 +695,4 @@ In the example below, we use this command to set the interval to one minute.
 
 ### Wrapping up
 
-In this tutorial, we have learned how to send metric values to Prometheus. First, we saw how to send them to Prometheus’ Pushgateway and analyze the results. Then, we learned how to present our metrics on a page under /metrics. Finally, we explored the main methods available for counters.
+In this tutorial, we have learned how to send metric values to Prometheus. First, we saw how to send them to Prometheus Pushgateway and analyze the results. Then, we learned how to present our metrics on a page under /metrics. Finally, we explored the main methods available for counters.

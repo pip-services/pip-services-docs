@@ -1,3 +1,4 @@
+```python
 # Pre-requisites
 from pip_services3_grpc.clients import GrpcClient
 from pip_services3_commons.config import ConfigParams
@@ -32,3 +33,4 @@ client.open(None)
 result = client.get_data(None, 3, 5)  # Returns 8
 
 print(f'Function result: {result}')
+```

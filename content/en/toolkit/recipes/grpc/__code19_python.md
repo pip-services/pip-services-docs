@@ -4,7 +4,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import summator2_pb2 as summator2__pb2
+import summator_pb2 as summator__pb2
 
 
 class SummatorStub(object):
@@ -16,17 +16,17 @@ class SummatorStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.Sum = channel.unary_unary(
-                '/Summator/Sum',
-                request_serializer=summator2__pb2.Number1.SerializeToString,
-                response_deserializer=summator2__pb2.Number2.FromString,
+        self.sum = channel.unary_unary(
+                '/Summator/sum',
+                request_serializer=summator__pb2.Number1.SerializeToString,
+                response_deserializer=summator__pb2.Number2.FromString,
                 )
 
 
 class SummatorServicer(object):
     """Missing associated documentation comment in .proto file."""
 
-    def Sum(self, request, context):
+    def sum(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -35,10 +35,10 @@ class SummatorServicer(object):
 
 def add_SummatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'Sum': grpc.unary_unary_rpc_method_handler(
-                    servicer.Sum,
-                    request_deserializer=summator2__pb2.Number1.FromString,
-                    response_serializer=summator2__pb2.Number2.SerializeToString,
+            'sum': grpc.unary_unary_rpc_method_handler(
+                    servicer.sum,
+                    request_deserializer=summator__pb2.Number1.FromString,
+                    response_serializer=summator__pb2.Number2.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -51,7 +51,7 @@ class Summator(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
-    def Sum(request,
+    def sum(request,
             target,
             options=(),
             channel_credentials=None,
@@ -61,10 +61,11 @@ class Summator(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Summator/Sum',
-            summator2__pb2.Number1.SerializeToString,
-            summator2__pb2.Number2.FromString,
+        return grpc.experimental.unary_unary(request, target, '/Summator/sum',
+            summator__pb2.Number1.SerializeToString,
+            summator__pb2.Number2.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
 
 ```

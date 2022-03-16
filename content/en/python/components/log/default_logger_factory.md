@@ -23,5 +23,5 @@ Create a new instance of the factory.
 ### See also
 - #### [Factory](../../build/factory)
 - #### [NullLogger](../null_logger)
-- #### [ConsoleLogger](../console_logger),
+- #### [ConsoleLogger](../console_logger)
 - #### [CompositeLogger](../composite_logger)

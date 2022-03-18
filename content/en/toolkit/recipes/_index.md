@@ -46,6 +46,10 @@ In this tutorial, you will learn how to configure connections with the Connectio
 
 In this tutorial, you will understand how to operate with the CredentialParams component by performing CRUD operations. We will begin by learning to create an instance of this component using its constructor, a tuple, a string, and the ConfigParam class. Then, we will understand how to extract and update the values of credential parameters stored in the component, and delete those parameters.
 
+### [Connection utils](connection_utils)
+
+In this tutorial, you will learn how to use a set of utilities offered by Pip.Services that can be used to simplify the handling of connections. We will start by explaining how to import these components. Then, we will see their syntax and how to use them. Finally, we will explore an example that illustrates the practical application of some of these utilities.
+
 ### [Component creation](creating_a_component)
 
 How to create a component and assemble a service from it.
@@ -118,6 +122,10 @@ In this tutorial, we will see how to interact with a MySQL database in order to 
 ### [PostgreSQL persistence](postgre_persistence)
 
 In this tutorial, you will understand how to create persistence components for PostgreSQL databases. First, we will see the necessary prerequisites. Then, we will move to each of the three components available in Pip.Services for this purpose. Finally, we will summarize all the explained concepts.
+
+### [Prometheus](prometheus)
+
+In this tutorial, you will learn how to send different metrics to Prometheus. First, we will see how to do this via the Pushgateway. Then, we will understand how to show our metrics on a /metrics page. Finally, we will go through a set of different methods, which are useful to create different counters.
 
 ### [Randomness](randomness)
 

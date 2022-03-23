@@ -65,8 +65,8 @@ Gets an optional component reference that matches a specified locator.
 - **returns**: Any - a matching component reference or None if nothing was found.
 
 #### get_one_required
-Gets a required component reference that matches a specified locator.  
-throws a [ReferenceException](../reference_exception) when no references found.
+Gets a required component reference that matches a specified locator and 
+throws a [ReferenceException](../reference_exception) when no reference is found.
 
 > get_one_required(locator: Any): Any
 

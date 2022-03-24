@@ -1,37 +1,46 @@
 
 ```python
 from pip_services3_commons.config import ConfigParams
-from pip_services3_commons.refer import Descriptor, References
+from pip_services3_commons.refer import Descriptor, References, IReferences
 from pip_services3_components.info import ContextInfo
 from pip_services3_prometheus.count import PrometheusCounters
 from pip_services3_prometheus.services import PrometheusMetricsService
 
-console_log = True
+from pip_services3_commons.refer import IReferenceable
 
 
-class MyComponentA:
+class MyComponentA(IReferenceable):
+    console_log: bool = True  # console log flag
 
     def __init__(self):
-        if console_log:
+        self._counters: PrometheusCounters = None
+        if self.console_log:
             print("MyComponentA has been created.")
+
+    # Added references for getting counters
+    def set_references(self, references: IReferences):
+        self._counters = references.get_one_required(
+            Descriptor("*", "counters", "*", "*", "*")
+        )
 
     def mymethod(self):
         # Count the number of calls to this method
-        counters.increment("mycomponent.mymethod.calls", 1)
-        
+        self._counters.increment("mycomponent.mymethod.calls", 1)
+
         # Measure execution time
-        timing = counters.begin_timing("mycomponent.mymethod.exec_time")
+        timing = self._counters.begin_timing("mycomponent.mymethod.exec_time")
 
         # Task for this method: print greetings in two languages.
         try:
-            if console_log:
+            if self.console_log:
                 print("Hola amigo")
                 print("Bonjour mon ami")
         finally:
             timing.end_timing()
-       
+
         # Save the values of counters
-        counters.dump()
+        self._counters.dump()
+
 
 # Create an instance of the component
 mycomponent = MyComponentA()
@@ -67,6 +76,7 @@ references = References.from_tuples(
 
 service.set_references(references)
 counters.set_references(references)
+mycomponent.set_references(references)
 
 # Connect the service and counters objects
 service.open("123")
@@ -78,7 +88,13 @@ count_exec = 2
 for i in range(count_exec):
     mycomponent.mymethod()
 
-# Get the counters    
+# Get the counters
 result = counters.get_all()
+
+# close service for closing Http server
+service.close('123')
+# close counter, for closing Http client for prometheus
+counters.close('123')
+
 
 ```

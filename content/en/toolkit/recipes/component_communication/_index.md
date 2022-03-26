@@ -27,4 +27,47 @@ There are three main ways to create a References component. The first is to use 
 
 The second way is to create an instance of the References class and later on add the necessary references to it. The following code shows how to do this:
 
+Lastly, we can use the constructor with a tuple that includes a list of references, where odd elements are locators and even elements are component references. The following example shows how to create a References object that contains a reference to the previously created service object.
+
+#### Main methods
+The References class has several methods that allow us to store and retrieve data from an instance of it. They are:
+
+##### find()
+This method obtains all the component references that match a specific locator. In the example below, we ask for all those references that relate to our service object, and we obtain a reference to this component.
+
+##### getAll()
+This method retrieves all the stored component references in the form of a list. In our example, it returns a list with a reference to the service object.
+
+##### getAllLocators()
+This method obtains the locators corresponding to all the registered component references. In the example below, we get a Descriptor object containing information about the service object.
+
+##### getOneOptional()
+This method retrieves an optional component reference that matches a specified locator. In the example below, we obtain a reference to the stored service object.
+
+##### getOneRequired()
+This method gets a required component reference that matches a specified locator and throws a ReferenceException when no reference is found. In the following example, we request and obtain the service component.
+
+##### getOptional()
+This method obtains all component references that match a specified locator. In the example below, we ask for the service component and obtain a list with it.
+
+##### getRequired()
+This method gets all component references that match a specified locator. If no reference is found, it throws a ReferenceException. In our example, it returns a reference to the stored service component.
+
+##### put()
+This method adds a reference into the Reference component. In the example below, we add a reference to the service object defined earlier.
+
+##### remove()
+This method removes a previously added reference that matches a specified locator. If many references match the locator, it removes only the first one. In the example below, it removes the reference to the service object previously added.
+
+##### removeAll()
+This method removes all component references that match the specified locator. For example, the code below removes all references to the service component.
+
+### Example
+In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsService object that was used to create a webpage containing the counters’ information under /metrics.
+
+In the tutorial’s example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
+
+In that example, and in order to add the three components to the References object, we use the fromTuples() method, which accepts one or more Descriptor objects, each containing information about a component, and the respective referenced object. The following code shows how this is done:
+
+
 

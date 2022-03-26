@@ -8,6 +8,7 @@ description: >-
      How we can use the References class to communicate between different components.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
 
 ### Introduction
@@ -20,20 +21,162 @@ The References component is available via the Commons module. It’s used to sto
 #### Pre-requisites
 To use this component, we must first import it. This can be done with the following command:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Creation
 In order to create a References object, we need to create a component that can be added to it. Following the Prometheus example, we create a PrometheusMetricsService object. The code below shows how to do this:
 
-There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the example below, we create a References component and add the service object previously created.
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the e{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}xample below, we create a References component and add the service object previously created.
 
 The second way is to create an instance of the References class and later on add the necessary references to it. The following code shows how to do this:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Lastly, we can use the constructor with a tuple that includes a list of references, where odd elements are locators and even elements are component references. The following example shows how to create a References object that contains a reference to the previously created service object.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Main methods
 The References class has several methods that allow us to store and retrieve data from an instance of it. They are:
 
 ##### find()
 This method obtains all the component references that match a specific locator. In the example below, we ask for all those references that relate to our service object, and we obtain a reference to this component.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### getAll()
 This method retrieves all the stored component references in the form of a list. In our example, it returns a list with a reference to the service object.

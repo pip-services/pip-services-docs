@@ -71,5 +71,10 @@ In that example, and in order to add the three components to the References obje
 
 Once we have our components in the References object, we can obtain them via any of the get methods available from this class. The code below shows how the MyComponentA class obtains the required counters:
 
+Similarly, if we check the source code for the [PrometheusCounters](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/count/PrometheusCounters.py) class, we can see that the class gets the context information via the getOneOptional() method. 
 
+And the [PrometheusMetricsService](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/services/PrometheusMetricsService.py) component obtains the context information via the getOneRequired() method:
 
+### Wrapping up
+
+In this tutorial, we have learned how to use the References component to allow communication between different components. First, we saw how to create an instance of this class and use its different methods. Then, we understood how this component is used in the example defined in the Prometheus tutorial, where it works as a broker that stores information on registered components and passes it to other components when requested.

@@ -429,6 +429,8 @@ In order to explain how the References component can help us to create communica
 
 In the tutorial’s example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
 
+![figure 1](./figure1.png)
+
 In that example, and in order to add the three components to the References object, we use the fromTuples() method, which accepts one or more Descriptor objects, each containing information about a component, and the respective referenced object. The following code shows how this is done:
 
 {{< tabsection >}}

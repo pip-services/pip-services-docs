@@ -86,7 +86,9 @@ In order to create a References object, we need to create a component that can b
   Not available  
 {{< /tabsection >}}
 
-There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the e{{< tabsection >}}
+There are three main ways to create a References component. The first is to use the fromTuples() method. This static method allows us to add one or more references to our component. In the example below, we create a References component and add the service object previously created.
+
+{{< tabsection >}}
   Not available  
 {{< /tabsection >}}
 
@@ -108,7 +110,7 @@ There are three main ways to create a References component. The first is to use 
 
 {{< tabsection >}}
   Not available  
-{{< /tabsection >}}xample below, we create a References component and add the service object previously created.
+{{< /tabsection >}}
 
 The second way is to create an instance of the References class and later on add the necessary references to it. The following code shows how to do this:
 

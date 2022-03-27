@@ -181,23 +181,192 @@ This method obtains all the component references that match a specific locator. 
 ##### getAll()
 This method retrieves all the stored component references in the form of a list. In our example, it returns a list with a reference to the service object.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### getAllLocators()
 This method obtains the locators corresponding to all the registered component references. In the example below, we get a Descriptor object containing information about the service object.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### getOneOptional()
 This method retrieves an optional component reference that matches a specified locator. In the example below, we obtain a reference to the stored service object.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### getOneRequired()
 This method gets a required component reference that matches a specified locator and throws a ReferenceException when no reference is found. In the following example, we request and obtain the service component.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### getOptional()
 This method obtains all component references that match a specified locator. In the example below, we ask for the service component and obtain a list with it.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### getRequired()
 This method gets all component references that match a specified locator. If no reference is found, it throws a ReferenceException. In our example, it returns a reference to the stored service component.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### put()
 This method adds a reference into the Reference component. In the example below, we add a reference to the service object defined earlier.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 ##### remove()
 This method removes a previously added reference that matches a specified locator. If many references match the locator, it removes only the first one. In the example below, it removes the reference to the service object previously added.

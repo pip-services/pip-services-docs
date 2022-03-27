@@ -10,7 +10,20 @@ description: >-
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>References</td>
+    <td>Component used to store and retrieve component references.</td>
+  </tr>
+  <tr>
+    <td>Get methods</td>
+    <td>Collection of several methods contained in the References class and used to retrieve stored component references. E.g. getOneRequired().</td>
+  </tr>
+  <tr>
+    <td>setReferences()</td>
+    <td>Method available from the PrometheusCounters and PrometheusMetricsService classes and used to store component references in a References object.</td>
+  </tr>
+</table>
 ### Introduction
 When using Pip.Services, a good programming practice is to use an external entity to handle the communication between different components. In this tutorial, you will learn how to do this by using the References class.
 For this, we will first see the main characteristics and methods of the References component. Then, we will explain how this component is used in the example provided in the Prometheus tutorial and how it helps with the communication between different components. To conclude, we will summarize the learned concepts.

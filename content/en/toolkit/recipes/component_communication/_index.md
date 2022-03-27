@@ -474,9 +474,81 @@ In that example, and in order to add the three components to the References obje
 
 Once we have our components in the References object, we can obtain them via any of the get methods available from this class. The code below shows how the MyComponentA class obtains the required counters:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code17_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Similarly, if we check the source code for the [PrometheusCounters](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/count/PrometheusCounters.py) class, we can see that the class gets the context information via the getOneOptional() method. 
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code18python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And the [PrometheusMetricsService](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/services/PrometheusMetricsService.py) component obtains the context information via the getOneRequired() method:
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code19_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

@@ -413,7 +413,7 @@ This method removes a previously added reference that matches a specified locato
 
 
 ##### removeAll()
-This method removes all component references that match the specified locator. For example, the code below removes all references to the service component.
+This method removes all component references that match a specified locator. For example, the code below removes all references to the service component.
 
 {{< tabsection >}}
   Not available  

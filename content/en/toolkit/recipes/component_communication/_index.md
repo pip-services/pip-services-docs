@@ -27,6 +27,7 @@ description: >-
 
 ### Introduction
 When using Pip.Services, a good programming practice is to use an external entity to handle the communication between different components. In this tutorial, you will learn how to do this by using the References class.
+
 For this, we will first see the main characteristics and methods of the References component. Then, we will explain how this component is used in the example provided in the Prometheus tutorial and how it helps with the communication between different components. To conclude, we will summarize the learned concepts.
 
 ### The References component
@@ -447,7 +448,7 @@ In the tutorial’s example, these three components are added to the References 
 
 ![figure 1](./figure1.png)
 
-In that example, and in order to add the three components to the References object, we use the fromTuples() method, which accepts one or more Descriptor objects, each containing information about a component, and the respective referenced object. The following code shows how this is done:
+In that example, and in order to add the three components to the References object, we use the fromTuples() method. This method accepts one or more Descriptor objects, each containing information about a component, and the respective referenced object. The following code shows how this is done:
 
 {{< tabsection >}}
   Not available  

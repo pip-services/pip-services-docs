@@ -358,7 +358,7 @@ This method gets all component references that match a specified locator. If no 
 {{< /tabsection >}}
 
 ##### put()
-This method adds a reference into the Reference component. In the example below, we add a reference to the service object defined earlier.
+This method adds a reference to the Reference component. In the example below, we add a reference to the service object defined earlier.
 
 {{< tabsection >}}
   Not available  

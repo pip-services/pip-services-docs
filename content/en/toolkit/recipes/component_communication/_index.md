@@ -701,4 +701,4 @@ To get a specific component outside the references object, we just need to speci
 
 ### Wrapping up
 
-In this tutorial, we have learned how to use the References component to allow communication between different components. First, we saw how to create an instance of this class and use its different methods. Then, we understood how this component is used in the example defined in the Prometheus tutorial, where it works as a broker that stores information on registered components and passes it to other components when requested.
+In this tutorial, we have learned how to use the References class to allow communication between different components. First, we saw how to create an instance of this class and use its different methods. Then, we understood how this component is used in the example defined in the Prometheus tutorial, where it works as a broker that stores information on registered components and passes it to other components when requested. Finally, we learned how to create different types of queries, from generic to specific ones.

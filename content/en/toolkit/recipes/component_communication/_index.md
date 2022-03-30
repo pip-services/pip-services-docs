@@ -441,7 +441,7 @@ This method removes all component references that match a specified locator. For
 {{< /tabsection >}}
 
 
-### Example
+### Example 1
 In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsService object that was used to create a webpage containing the counters’ information under /metrics.
 
 In the tutorial’s example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
@@ -552,6 +552,23 @@ And the [PrometheusMetricsService](https://github.com/pip-services3-python/pip-s
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+### Example 2
+An important advantage of Pip.Services is that once we have a set of references, we can define from general to specific queries. 
+
+For example, let’s assume that we have created the following References object:
+
+Then, we can generate different types of queries, such as:
+
+#### a.	Get all service objects
+
+If we want to obtain all objects of a specific type, such as all our service objects, we can create this query by specifying the name of the type and considering all other fields generic. Generic fields are specified by using a star to indicate “any”. For example, to obtain the two services, we can do the following query:
+
+#### b.	Get a specific service object
+The Reference object also allows us to work with several versions of a component. For example, in our Reference object, we have defined two versions of the service. Therefore, if we want to choose version 2.0, we just need to create a reference to it. The example below shows how to do this.
+
+#### c.	Get all components in a group
+If we need to obtain all the components in a group, we can specify the group’s name and consider all the other fields generic. Thus, if we want to obtain the five objects stored in the “pip-services” group, we can do:
 
 ### Wrapping up
 

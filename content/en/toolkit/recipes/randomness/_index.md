@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Randomness"
 linkTitle: "Randomness"
-weight: 1
 description: >-
      How to generate random values with the Commons’ Random package.
 ---

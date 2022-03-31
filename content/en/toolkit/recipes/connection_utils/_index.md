@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Connection utils"
 linkTitle: "Connection utils"
-weight: 10
 description: >-
      How to use a set of utilities that simplify the handling of connections.
 ---

@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "PostgreSQL persistence"
 linkTitle: "PostgreSQL persistence"
-weight: 1
 description: >-
      How to persist data using a PostgreSQL database.
 ---

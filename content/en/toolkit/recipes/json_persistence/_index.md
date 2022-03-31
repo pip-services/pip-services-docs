@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "JSON persistence"
 linkTitle: "JSON persitence"
-weight: 1
 description: >-
      How to persist data using a JSON file.
 ---

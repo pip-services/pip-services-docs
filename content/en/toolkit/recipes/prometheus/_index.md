@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Prometheus"
 linkTitle: "Prometheus"
-weight: 10
 description: >-
      How to send metrics to Prometheus.
 ---

@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Deployment time configuration"
 linkTitle: "Deployment configuration"
-weight: 1
 description: >-
      How to set up and change your configurations at deployment time.
 ---

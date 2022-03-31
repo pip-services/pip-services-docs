@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "gRPC"
 linkTitle: "gRPC"
-weight: 1
 description: >-
      How to create a server and a client, and communicate between them.
 ---

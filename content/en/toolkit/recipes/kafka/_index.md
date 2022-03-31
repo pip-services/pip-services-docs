@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Kafka"
 linkTitle: "Kafka"
-weight: 1
 description: >-
      How to communicate with Apache Kafka.
 ---

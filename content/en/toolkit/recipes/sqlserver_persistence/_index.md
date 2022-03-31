@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "SQL Server persistence"
 linkTitle: "SQL Server persistence"
-weight: 1
 description: >-
      How to persist data using a SQLServer database.
 ---

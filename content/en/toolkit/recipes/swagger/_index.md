@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Swagger"
 linkTitle: "Swagger"
-weight: 10
 description: >-
      How to generate Swagger documentation with Pip.Services.
 ---

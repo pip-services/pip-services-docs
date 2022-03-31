@@ -1,0 +1,4 @@
+
+```cs
+references.GetRequired(service);
+```

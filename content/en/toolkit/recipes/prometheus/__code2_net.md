@@ -1,21 +1,38 @@
 
-```python
-console_log = True
+```cs
+using PipServices3.Components.Count;
 
-class MyComponentA:
+public class MyComponentA
+{
+    public bool ConsoleLog = true;
 
-    def __init__(self):
-        if console_log:
-            print("MyComponentA has been created.")
+    private CachedCounters counters;
+    public MyComponentA(CachedCounters counter)
+    {
+        counters = counter;
 
-    def mymethod(self):
-        counters.increment("mycomponent.mymethod.calls", 1)
-        timing = counters.begin_timing("mycomponent.mymethod.exec_time")
-        try:
-            if console_log:
-                print("Hola amigo")
-                print("Bonjour mon ami")
-        finally:
-            timing.end_timing()
-        counters.dump()
+        if (ConsoleLog)
+            Console.WriteLine("MyComponentA has been created.");
+    }
+
+    public void MyMethod()
+    {
+        counters.Increment("mycomponent.mymethod.calls", 1);
+        var timing = counters.BeginTiming("mycomponent.mymethod.exec_time");
+
+        try
+        {
+            if (ConsoleLog)
+            {
+                Console.WriteLine("Hola amigo");
+                Console.WriteLine("Bonjour mon ami");
+            }
+        } finally { 
+            timing.EndTiming(); 
+        }
+
+        counters.Dump();
+    }
+}
+
 ```

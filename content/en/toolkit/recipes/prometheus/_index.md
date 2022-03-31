@@ -63,19 +63,19 @@ One of the options presented by Prometheus is to send metrics directly to its Pu
 In order to send our counters to Prometheus, we need to import the PrometheusCounters component. The following command shows how to do this.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -91,19 +91,19 @@ In order to send our counters to Prometheus, we need to import the PrometheusCou
 Once we have imported our component, we can create a class containing one or more counters. In our example, we create a class named “MyComponent”, which contains a method called “mymethod”. Within this method, we include two metrics. One is a counter that measures the number of calls to this method, and the other is a variable that measures execution time.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -119,21 +119,20 @@ Once we have imported our component, we can create a class containing one or mor
 Once we have our component with the necessary counters, we create an instance of it and connect this object to Prometheus. To do this, we use the configure() method to provide the connection information and the open() method to connect it.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
-
 {{< tabsection >}}
   {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
@@ -147,19 +146,19 @@ Once we have our component with the necessary counters, we create an instance of
 Now that we are connected, we can call “mymethod” one or more times. In the example below, we call it twice. 
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -181,19 +180,19 @@ And, after running our code we get the following messages on our console:
 We can get the counters with the getAll() method, which returns a list containing all the counters used.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -207,19 +206,19 @@ We can get the counters with the getAll() method, which returns a list containin
 Once we have our list of counters, we can obtain some information from them via the count, min, max, average, time, name and type methods. The following example shows how to obtain these values 
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -245,19 +244,19 @@ If we are connected to the Prometheus’ Pushgateway, we will find our metrics r
 Finally, to finish our code, we close the counters object to free resources.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -277,19 +276,19 @@ Another option presented by Prometheus is to store the metric values on a page l
 In order to use the PrometheusMetricsService component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -304,19 +303,19 @@ In order to use the PrometheusMetricsService component, we need to import it fir
 As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a PrometheusCounters object. The following code shows how to do this:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -332,19 +331,19 @@ As we did in the previous example, to send metrics to Prometheus, we need to cre
 To create the /metrics page, we need to create an instance of the PrometheusMetricsService component and configure it. In the following example, we specify that our /metrics page will be located on our machine and connected via port 8080. We also say that this page will show the results obtained from the counters object. Our code is as follows:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -360,19 +359,19 @@ To create the /metrics page, we need to create an instance of the PrometheusMetr
 To relate the service and the counters, we need to set the references for the contextInfo, counters and service objects. This is done with the following code:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -388,19 +387,19 @@ To relate the service and the counters, we need to set the references for the co
 Now, as we did in the previous example, we connect to Prometheus and call the method twice. In this case, we need to connect both, the counters and service objects. Then, we call mymethod() with a loop. The code is as follows:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code12_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code12_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -416,19 +415,19 @@ Now, as we did in the previous example, we connect to Prometheus and call the me
 Finally, we can free resources by closing both, the counters and service objects.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code13_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code13_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -450,19 +449,27 @@ The figure below shows the /metrics page containing the example’s counters and
 Below is the complete code for the example.
 
 {{< tabsection >}}
-    Not available  
+  {{< collapse >}}
+  {{< include "./__code14_node.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< collapse >}}
+  {{< include "./__code14_net.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< collapse >}}
+  {{< include "./__code14_go.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< collapse >}}
+  {{< include "./__code14_dart.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -490,19 +497,19 @@ where name is the name of the counter and value is the increment number.
 An example of its implementation is 
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code15_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code15_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -526,19 +533,19 @@ where name represents the name of the counter.
 For example, we can create a counter called “mycomponent.mymethod.calls2” that increases by one every time it is called:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code16_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code16_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -560,19 +567,19 @@ where name is the name of the counter and value is the given timestamp.
 In the example below, we use this command to create a metric that measures the difference between the current time and a base time. 
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code17_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code17_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code17_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -594,19 +601,19 @@ where name is the name of the counter.
 Using it, the example below shows how to create a metric that measures the current time:
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code18_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code18_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code18_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -636,19 +643,19 @@ __dump()__
 The following example shows how to create a timing for a method named mymethod. Here, we measure the execution time of a task, and then, we save the value with the dump() method.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code19_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code19_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code19_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -670,19 +677,19 @@ where value is the time interval in milliseconds.
 In the example below, we use this command to set the interval to one minute.
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code20_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available  
+  {{< include "./__code20_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
+  {{< include "./__code20_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

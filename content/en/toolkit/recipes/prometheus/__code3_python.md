@@ -2,8 +2,6 @@
 ```python
 from pip_services3_commons.config import ConfigParams
 
-mycomponent = MyComponentA()
-
 counters = PrometheusCounters()
 counters.configure(ConfigParams.from_tuples(
     "connection.protocol", "http",
@@ -12,4 +10,6 @@ counters.configure(ConfigParams.from_tuples(
 ))
 
 counters.open("123")
+
+mycomponent = MyComponentA(counters)
 ```

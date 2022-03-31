@@ -1,10 +1,10 @@
 
-```python
-service = PrometheusMetricsService()
+```cs
+var service = new PrometheusMetricsService();
 
-service.configure(ConfigParams.from_tuples(
+service.Configure(ConfigParams.FromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080
-))
+));
 ```

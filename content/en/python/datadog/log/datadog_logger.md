@@ -98,8 +98,8 @@ Sets references to dependent components.
 ### Examples
 
 ```python
-counters = DataDogLogger()
-counters.configure(ConfigParams.from_tuples(
+logger = DataDogLogger()
+logger.configure(ConfigParams.from_tuples(
    "credential.access_key", "827349874395872349875493"
 ))
 

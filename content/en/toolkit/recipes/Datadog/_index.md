@@ -48,15 +48,27 @@ We can now improve our component by adding some interfaces and functionality com
 
 ### DataDogLogger
 
+The DataDogLogger class is used to capture log messages and send them to the Datadog application. This component extends the CachedCounters class and uses the REST client DataDogLogClient to send the logs to Datadog.
+
 #### Pre-requisites
+
+To use this component, we need to import it first. The following command shows how to do this:
 
 #### Creating a component with logging
 
+Next, we modify our previous component by changing the print statements to log statements of type DataDogLogger. The following code shows how to do this:
+
 #### Creating a DataDogLogger object
+
+Once we have our component ready, we create an instance of DataDogLogger and configure it with our access key. The following code shows how to do this.
 
 #### Generating logs
 
+To generate logs and send them to the Datadog application, we need to create an instance of our component and run “mymethod”. The following code shows how to do it by using a loop whereby we run the method five times.
+
 #### Our logs in Datadog
+
+After running our program, we can see the logs on the Datadog application screen. The following figure shows these results:
 
 #### Final code
 

@@ -12,19 +12,39 @@ description: >-
 
 ### Introduction
 
+In this tutorial, you will learn how to send different metrics and logs to Datadog. For this, we will first create a class with a method that, once executed, sends metrics to Datadog via the DataDogCounters component. Then, we will modify this class and use it to send log information to Datadog via the DataDogLogger class.
+
 ### DataDogCounters
+
+The DataDogCounters class is used to send metrics to the Datadog application. This component inherits its methods from the CachedCounters class, which, in turn, implements the ICounters interface. It communicates with Datadog via the DataDogMetricsClient, which is a REST component.
 
 #### Pre-requisites
 
+In order to use this component, we must first import it. To do this, we can use the following command:
+
 #### Creating a component with metrics
+
+Our next step is to create a component that contains some metrics. For this, we create a class that contains a method that prints a greeting message. Within this class, we create two counters: one that increments by one each time the method is executed and one that measures execution time. The following code shows how this class is constructed:
 
 #### Creating a DataDogCounters object
 
+Now, we create a DataDogCounters object and connect it to the Datadog application. This object only requires the API key as a configuration parameter. The code below shows how to do it.
+
 #### Generating values for the metrics
+
+Once we have our components ready, we can generate some values for our metrics by running the component’s method. In the example below, we create an instance of the object and run “mymethod” five times.
+
+
+After running it, we obtain the following output:
+
 
 #### Our metrics in Datadog
 
+In order to verify that our program sent the credentials to Datadog, we can go to its site and we will see that the metrics appear on the list in the Metrics Explorer section. 
+
 #### Final code
+
+We can now improve our component by adding some interfaces and functionality commonly associated with Pip.Services. The code below shows the result.
 
 ### DataDogLogger
 

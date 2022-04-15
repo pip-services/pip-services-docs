@@ -134,10 +134,13 @@ Once we have our components ready, we can generate some values for our metrics b
 
 After running it, we obtain the following output:
 
+![figure 1](./figure1.png)
 
 #### Our metrics in Datadog
 
 In order to verify that our program sent the credentials to Datadog, we can go to its site and we will see that the metrics appear on the list in the Metrics Explorer section. 
+
+![figure 2](./figure2.png)
 
 #### Final code
 
@@ -283,9 +286,15 @@ To generate logs and send them to the Datadog application, we need to create an 
   Not available  
 {{< /tabsection >}}
 
+After running this code, we obtain the following output:
+
+![figure 3](./figure3.png)
+
 #### Our logs in Datadog
 
 After running our program, we can see the logs on the Datadog application screen. The following figure shows these results:
+
+![figure 4](./figure4.png)
 
 #### Final code
 

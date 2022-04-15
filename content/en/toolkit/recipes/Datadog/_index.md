@@ -12,6 +12,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Datadog application</td>
+    <td>Online application used to monitor metrics, traces, and logs.</td>
+  </tr>
+  <tr>
+    <td>DataDogCounters</td>
+    <td>Component used to send metrics to the Datadog application.</td>
+  </tr>
+  <tr>
+    <td>DataDogLogger</td>
+    <td>Component used to send logs to the Datadog application.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to send different metrics and logs to Datadog. For this, we will first create a class with a method that, once executed, sends metrics to Datadog via the DataDogCounters component. Then, we will modify this class and use it to send log information to Datadog via the DataDogLogger class.

@@ -288,13 +288,13 @@ To generate logs and send them to the Datadog application, we need to create an 
 
 After running this code, we obtain the following output:
 
-![figure 3](./figure3.png)
+![figure 3](./figure1.png)
 
 #### Our logs in Datadog
 
 After running our program, we can see the logs on the Datadog application screen. The following figure shows these results:
 
-![figure 4](./figure4.png)
+![figure 3](./figure3.png)
 
 #### Final code
 

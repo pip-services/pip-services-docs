@@ -214,7 +214,7 @@ class MyRestClient(RestClient, IMyClient):
 
 client = MyRestClient()
 
-client.configure(ConfigParams.fromTuples("connection.protocol", "http",
+client.configure(ConfigParams.from_tuples("connection.protocol", "http",
                                          "connection.host", "localhost",
                                          "connection.port", 8080))
 data = client.getData("123", "1")

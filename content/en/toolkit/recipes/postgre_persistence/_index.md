@@ -50,7 +50,7 @@ In order to use this library, we need to download it from GitHub with the follow
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -78,7 +78,7 @@ In our examples, we will use data objects with the following structure.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,7 +104,7 @@ And with the following instances
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -135,7 +135,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -162,7 +162,7 @@ To implement this component, we define a class that inherits the methods from th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -188,7 +188,7 @@ Now, we create an instance of this class and configure it according to our datab
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -217,7 +217,7 @@ Once our component has been defined, we can connect to our database using the op
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -249,7 +249,7 @@ To create a new record, we use the create() method, which accepts the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -275,7 +275,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -310,7 +310,7 @@ An example of its usage is
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code12_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -336,7 +336,7 @@ The result is a PostgrePersistence object containing the extracted record.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code13_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -364,7 +364,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code14_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -390,7 +390,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code15_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -418,7 +418,7 @@ This method gets a page of data items retrieved according to a given filter and 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code16_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -444,7 +444,7 @@ The obtained result is a DataPage object, which contains the data field with the
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code17_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -472,7 +472,7 @@ This method returns an integer representing the number of data items retrieved b
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code18_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -504,7 +504,7 @@ To delete one or more records, we can use the deleteByFilter() method. The examp
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code19_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -536,7 +536,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code20_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -564,7 +564,7 @@ To implement this component, we can define a class that inherits the Identifiabl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code21_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -590,7 +590,7 @@ Now, we can create an instance of this class and configure it according to our d
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code22_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -618,7 +618,7 @@ Once our component has been defined, we can connect to our database using the op
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code23_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -650,7 +650,7 @@ To create a new record, we can use the create() method, which accepts the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code24_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -676,7 +676,7 @@ To create a new record, we can use the create() method, which accepts the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code25_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -707,7 +707,7 @@ This method returns a record according to a given id. The record is contained in
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code26_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -733,7 +733,7 @@ This method returns a record according to a given id. The record is contained in
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code27_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -761,7 +761,7 @@ Given a list of ids, this method returns a list containing the extracted records
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code28_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -787,7 +787,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code29_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -819,7 +819,7 @@ This method updates a data item. As input parameters, it requires the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code30_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -845,7 +845,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code31_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -873,7 +873,7 @@ This method updates the specified fields only. It takes three input parameters n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code32_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -899,7 +899,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code33_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -931,7 +931,7 @@ This method deletes a record specified by a given id.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code34_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -959,7 +959,7 @@ This method deletes records specified by a list of ids.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code35_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -991,7 +991,7 @@ In order to use this component, we need to import the corresponding library with
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code36_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1020,7 +1020,7 @@ To implement this component, we can define a class that inherits the Identifiabl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code37_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1053,7 +1053,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1079,7 +1079,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

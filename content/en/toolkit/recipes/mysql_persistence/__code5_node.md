@@ -29,6 +29,10 @@ export class MyMySqlPersistence extends MySqlPersistence<MyData> {
     public getPageByFilter(correlationId: string, filter: any, paging: PagingParams, sort: any, select: any): Promise<DataPage<MyData>> {
         return super.getPageByFilter(correlationId, filter, paging, sort, select);
     }
+
+    public deleteByFilter(correlationId: string, filter: any): Promise<void> {
+        return super.deleteByFilter(correlationId, filter);
+    }
 }
 
 ```

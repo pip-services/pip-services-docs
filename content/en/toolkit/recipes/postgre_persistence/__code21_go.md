@@ -43,4 +43,20 @@ func (c *MyPostgresPersistence) GetPageByFilter(correlationId string, filter int
 	page = NewMyDataPage(&dataLen, data)
 	return page, err
 }
+
+func (c *MyPostgresPersistence) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error) {
+	return c.PostgresPersistence.GetOneRandom(correlationId, filter)
+}
+
+func (c *MyPostgresPersistence) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error) {
+	return c.PostgresPersistence.GetListByFilter(correlationId, filter, nil, nil)
+}
+
+func (c *MyPostgresPersistence) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error) {
+	return c.PostgresPersistence.GetCountByFilter(correlationId, filter)
+}
+
+func (c *MyPostgresPersistence) DeleteByFilter(correlationId string, filter string) (err error) {
+	return c.PostgresPersistence.DeleteByFilter(correlationId, filter)
+}
 ```

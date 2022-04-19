@@ -28,6 +28,11 @@ public class MyMySqlPersistence : MySqlPersistence<MyData>
     {
         return await base.GetCountByFilterAsync(correlationId, filter);
     }
+
+    public async new Task<void> DeleteByFilterAsync(string correlationId, string filter)
+    {
+        return await base.DeleteByFilterAsync(correlationId, filter);
+    }
 }
 
 ```

@@ -30,6 +30,10 @@ export class MyPostgresPersistence
     public async getCountByFilter(correlationId: string, filter: any): Promise<number> {
         return await super.getCountByFilter(correlationId, filter);
     }
+
+    public deleteByFilter(correlationId: string, filter: any): Promise<void> {
+        return super.deleteByFilter(correlationId, filter);
+    }
 }
 
 ```

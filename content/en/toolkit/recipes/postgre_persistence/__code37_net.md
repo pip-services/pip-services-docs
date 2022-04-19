@@ -13,6 +13,26 @@ public class MyPostgresPersistence: IdentifiableJsonPostgresPersistence<MyData, 
         // create an index
         EnsureIndex($"{_tableName}_key", new Dictionary<string, bool> { { "(data->>'key')", true } }, new IndexOptions { Unique = false });
     }
+
+    public async new Task<MyData> GetOneRandomAsync(string correlationId, string filter)
+    {
+        return await base.GetOneRandomAsync(correlationId, filter);
+    }
+
+    public async new Task<List<MyData>> GetListByFilterAsync(string correlationId, string filter, string sort = null, string select = null)
+    {
+        return await base.GetListByFilterAsync(correlationId, filter);
+    }
+
+    public async new Task<long> GetCountByFilterAsync(string correlationId, string filter)
+    {
+        return await base.GetCountByFilterAsync(correlationId, filter);
+    }
+
+    public async new Task<void> DeleteByFilterAsync(string correlationId, string filter)
+    {
+        return await base.DeleteByFilterAsync(correlationId, filter);
+    }
 }
 
 ```

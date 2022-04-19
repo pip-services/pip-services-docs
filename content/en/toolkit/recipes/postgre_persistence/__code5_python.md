@@ -25,4 +25,6 @@ class MyPostgresPersistence(PostgresPersistence):
     def get_page_by_filter(self, correlation_id: Optional[str], filter: Any, paging: PagingParams, sort: Any, select: Any) -> DataPage: 
         return super().get_page_by_filter(correlation_id, filter, paging, sort, select)
 
+    def delete_by_filter(self, correlation_id: Optional[str], filter: Any) -> int:
+        return super().delete_by_filter(correlation_id, filter)
 ```

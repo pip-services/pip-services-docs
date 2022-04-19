@@ -484,7 +484,7 @@ This method returns an integer indicating the number of records that comply with
 
 ###### Update
 
-This class doesn’t contain an update method. However, we can create one by using an SQL query. The Using SQL section explains how to do this.
+This class doesn’t contain an update method. However, we can create one by using an SQL query.
 
 ###### Delete
 

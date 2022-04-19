@@ -227,17 +227,50 @@ Sends a message into the queue.
 ### Examples
 
 ```cs
-var queue = new RabbitMQMessageQueue("myqueue");
-queue.configure(ConfigParams.FromTuples(
-    "topic", "mytopic",
-    "connection.protocol", "mqtt"
-    "connection.host", "localhost"
-    "connection.port", 1883 ));
-queue.Open("123");
+using System;
+using System.Threading.Tasks;
 
-queue.Send("123", new MessageEnvelop(null, "mymessage", "ABC"));
-queue.Receive("123", 0);
-queue.Complete("123", message);
+using PipServices3.Commons.Config;
+using PipServices3.RabbitMQ.Queues;
+using PipServices3.Messaging.Queues;
+
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ExampleStart().Wait();
+        }
+
+        public static async Task ExampleStart()
+        {
+            var queue = new RabbitMQMessageQueue();
+
+            queue.Configure(ConfigParams.FromTuples(
+                "exchange", "myqueue", // rabbitmq exchange type
+                "queue", "myqueue", // queue name
+                "options.auto_create", true, // autocreate queue
+
+                "connection.host", "localhost",
+                "connection.port", 5672
+                // If credentials are necessary:
+                //"credential.username", "user",
+                //"credential.password", "pass123"
+            ));
+
+            await queue.OpenAsync("123");
+
+            await queue.SendAsync("123", new MessageEnvelope(null, "mymessage", "ABC"));
+
+            var received = await queue.ReceiveAsync("123", 0);
+
+            Console.WriteLine(received.GetMessageAsString());
+            Console.WriteLine("Task completed");
+        }
+    }
+}
 ```
 
 

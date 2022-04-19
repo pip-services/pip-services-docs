@@ -29,7 +29,7 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
     - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**:                    user name
     - **password**:                    user password
-- **options(s)**:
+- **option(s)**:
     - **exchange_type**:                (optional) RabbitMQ exchange type (default: fanout)
     - **routing_key**:                  (optional) RabbitMQ routing key
     - **persistent**:                   (optional) is persistent messages (default: false)

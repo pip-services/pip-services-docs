@@ -243,7 +243,7 @@ namespace ConsoleApp1
 
                 "connection.host", "localhost",
                 "connection.port", 5672
-                // if need credentials
+                // If credentials are necessary:
                 //"credential.username", "user",
                 //"credential.password", "pass123"
             ));

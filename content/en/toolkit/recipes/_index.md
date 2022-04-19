@@ -63,6 +63,11 @@ In this tutorial, we will learn how to create a component and how to assemble a 
 
 This tutorial will help you to understand the different conversion components available in the Pip.Services toolkit, Commons module, convert library. The tutorial consists of a brief explanation of each class and its methods followed by a set of examples that show how to use each of them.
 
+### [Datadog](datadog)
+
+How to send metrics and logs to Datadog.
+In this tutorial, you will learn how to send different metrics and logs to Datadog. For this, we will first create a class with a method that, once executed, sends metrics to Datadog via the DataDogCounters component. Then, we will modify this class and use it to send log information to Datadog via the DataDogLogger class.
+
 ### [Deployment time configuration](deployment_configuration)
 
 How to set up and change your configurations at deployment time.

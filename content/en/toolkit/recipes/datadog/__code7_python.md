@@ -2,11 +2,7 @@
 ```python
 from pip_services3_datadog.log import DataDogLogger
 
-import time
-
 class MyComponentA:
-
-    start_time = time.time()
     _Datadog_log = True
     
     def __init__(self, logger: DataDogLogger):

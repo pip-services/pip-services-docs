@@ -10,7 +10,6 @@ from pip_services3_datadog.count import DataDogCounters
 
 
 class MyComponentA(IConfigurable, IOpenable):
-    start_time = time.time()
     _console_log = True
 
     def __init__(self):

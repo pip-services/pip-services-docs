@@ -1,10 +1,7 @@
 
 ```python
-import time
-
 class MyComponentA:
     
-    start_time = time.time()
     _console_log = True
     
     def __init__(self, counters: DataDogCounters):

@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Datadog"
 linkTitle: "Datadog"
-weight: 10
 description: >-
      How to send metrics and logs to Datadog.
 ---
@@ -40,15 +39,15 @@ The DataDogCounters class is used to send metrics to the Datadog application. Th
 In order to use this component, we must first import it. To do this, we can use the following command:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code1_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,15 +67,15 @@ In order to use this component, we must first import it. To do this, we can use 
 Our next step is to create a component that contains some metrics. For this, we create a class that contains a method that prints a greeting message. Within this class, we create two counters: one that increments by one each time the method is executed and one that measures execution time. The following code shows how this class is constructed:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code2_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -96,15 +95,15 @@ Our next step is to create a component that contains some metrics. For this, we 
 Now, we create a DataDogCounters object and connect it to the Datadog application. This object only requires the API key as a configuration parameter. The code below shows how to do it.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -124,15 +123,15 @@ Now, we create a DataDogCounters object and connect it to the Datadog applicatio
 Once we have our components ready, we can generate some values for our metrics by running the component’s method. In the example below, we create an instance of the object and run “mymethod” five times.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code4_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -162,15 +161,15 @@ In order to verify that our program sent the credentials to Datadog, we can go t
 We can now improve our component by adding some interfaces and functionality commonly associated with Pip.Services. The code below shows the result.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code5_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -194,15 +193,15 @@ The DataDogLogger class is used to capture log messages and send them to the Dat
 To use this component, we need to import it first. The following command shows how to do this:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -222,15 +221,15 @@ To use this component, we need to import it first. The following command shows h
 Next, we modify our previous component by changing the print statements to log statements of type DataDogLogger. The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code7_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -250,15 +249,15 @@ Next, we modify our previous component by changing the print statements to log s
 Once we have our component ready, we create an instance of DataDogLogger and configure it with our access key. The following code shows how to do this.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code8_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -278,15 +277,15 @@ Once we have our component ready, we create an instance of DataDogLogger and con
 To generate logs and send them to the Datadog application, we need to create an instance of our component and run “mymethod”. The following code shows how to do it by using a loop whereby we run the method five times.
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code9_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,15 +315,15 @@ After running our program, we can see the logs on the Datadog application screen
 Now we can re-arrange our code to create a component according to Pip.Services practices. For this, we add the IConfigurable and IOpenable interfaces, and the configure, open and close methods. We also define the DataDogLogger component within the class, and use the configure, open and close methods to perform these operations on our DataDogLogger component. The following code shows how this can be done:
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available  
+   {{< include "./__code10_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}

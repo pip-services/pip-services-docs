@@ -3,12 +3,11 @@
 from pip_services3_datadog.log import DataDogLogger
 from pip_services3_commons.run import IOpenable
 from pip_services3_commons.config import IConfigurable, ConfigParams
+
 from typing import Optional
-import time
 
 class MyComponentA(IConfigurable, IOpenable):
 
-    start_time = time.time()
     _Datadog_log = True
     
     def __init__(self):

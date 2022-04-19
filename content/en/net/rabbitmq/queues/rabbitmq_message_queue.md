@@ -16,6 +16,10 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
 
 #### Configuration parameters
 
+- **queue**:                        name of RabbitMQ queue to subscribe
+- **intervatl**:                    wait for check message interval
+- **exchange**:                     RabbitMQ exchange name
+
 **connection(s)**:
     - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
     - **host**:                        host name or IP address
@@ -25,6 +29,14 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
     - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**:                    user name
     - **password**:                    user password
+- **options(s)**:
+    - **exchange_type**:                (optional) RabbitMQ exchange type (default: fanout)
+    - **routing_key**:                  (optional) RabbitMQ routing key
+    - **persistent**:                   (optional) is persistent messages (default: false)
+    - **exclusive**:                    (optional) is exclusive queue (default: false)
+    - **auto_create**:                  (optional) autocreation queue (default: false)
+    - **auto_delete**:                  (optional) The queue is automatically deleted when the last consumer unsubscribes (default: false)
+    - **no_queue**:                     (optional) autogenerate queue name (default: false)
 
 
 #### References

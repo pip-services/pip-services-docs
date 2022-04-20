@@ -74,7 +74,7 @@ a.	Synchronous
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets (http://docs.pipservices.org/toolkit/recipes/command_set/)          
 b.	Asynchronous        
 Choose one of the following:        

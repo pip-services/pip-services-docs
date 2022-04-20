@@ -37,16 +37,16 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 
 ### Day 2
 
-3.	Persistence: 
-a.	Choose one of the following:
-i.	Memory http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/ 
-ii.	File storage
-1.	JSON file persistence http://docs.pipservices.org/toolkit/recipes/json_persistence/ 
-iii.	Document storage
-iv.	MongoDB http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/ 
-v.	Relational storage
-1.	MySQL http://docs.pipservices.org/toolkit/recipes/mysql_persistence/ 
-2.	PostgreSQL http://docs.pipservices.org/toolkit/recipes/postgre_persistence/ 
+3.	Persistence:      
+a.	Choose one of the following:      
+i.	Memory (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/) 
+ii.	File storage     
+1.	JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/) 
+iii.	Document storage     
+iv.	MongoDB (http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/) 
+v.	Relational storage     
+1.	MySQL (http://docs.pipservices.org/toolkit/recipes/mysql_persistence/) 
+2.	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/) 
 3.	SQLServer http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/ 
 b.	Designing persistence components 
                                http://docs.pipservices.org/toolkit/recipes/designing_persistence/ 

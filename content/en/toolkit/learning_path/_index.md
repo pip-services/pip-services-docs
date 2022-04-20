@@ -42,10 +42,10 @@ a.	Choose one of the following:
 i.	Memory (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/) 
 ii.	File storage
 
-1.	JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/) 
+1.	JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
 iii.	Document storage  
 
-iv.	MongoDB (http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/) 
+iv.	MongoDB (http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/)       
 v.	Relational storage     
 1.	MySQL (http://docs.pipservices.org/toolkit/recipes/mysql_persistence/) 
 2.	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/) 

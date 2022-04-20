@@ -52,18 +52,18 @@ b.	Designing persistence components
                                http://docs.pipservices.org/toolkit/recipes/designing_persistence/ 
 
 4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
-a.	Controllers
-b.	Observability: 
-i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/ 
-        Optional (Self-study)
-i.	Metrics
-1.	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/ 
-2.	Datadog
-3.	Elasticsearch
-4.	Fluentd
-c.	Concurrency
-i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/ 
-        Optional (Self-study)
-ii.	Locking
+a.	Controllers         
+b.	Observability:              
+i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
+        _Optional (Self-study)_          
+i.	Metrics          
+1.	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
+2.	Datadog          
+3.	Elasticsearch          
+4.	Fluentd          
+c.	Concurrency          
+i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
+        _Optional (Self-study)_          
+ii.	Locking         
 
 ### Day 3

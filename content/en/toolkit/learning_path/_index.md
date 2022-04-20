@@ -25,14 +25,14 @@ c.	Communicating between components (http://docs.pipservices.org/toolkit/recipes
 d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configurations/)     
 
 _Optional (Self-study)_
-
-i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/) 
-ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/) 
-iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)
-iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)
-v.	Discovery services (http://docs.pipservices.org/toolkit/recipes/discovery_services/) 
-vi.	Connection utilities (http://docs.pipservices.org/toolkit/recipes/connection_utils/) 
-vii.	Mustache templates (http://docs.pipservices.org/toolkit/recipes/mustache_templates/) 
-viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/) 
+  
+i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
+ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
+iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
+iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
+v.	Discovery services (http://docs.pipservices.org/toolkit/recipes/discovery_services/)     
+vi.	Connection utilities (http://docs.pipservices.org/toolkit/recipes/connection_utils/)     
+vii.	Mustache templates (http://docs.pipservices.org/toolkit/recipes/mustache_templates/)     
+viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/)     
 
 ### Day 2

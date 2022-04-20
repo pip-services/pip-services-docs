@@ -27,13 +27,13 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
+&nbsp;&nbsp;&nbsp;&nbsp;iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Discovery services (http://docs.pipservices.org/toolkit/recipes/discovery_services/)     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.	Connection utilities (http://docs.pipservices.org/toolkit/recipes/connection_utils/)     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.	Mustache templates (http://docs.pipservices.org/toolkit/recipes/mustache_templates/)     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.	Connection utilities (http://docs.pipservices.org/toolkit/recipes/connection_utils/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.	Mustache templates (http://docs.pipservices.org/toolkit/recipes/mustache_templates/)     
+&nbsp;&nbsp;&nbsp;&nbsp;viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/)     
 
 ### Day 2
 

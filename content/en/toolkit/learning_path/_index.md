@@ -63,7 +63,7 @@ i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd          
 c.	Concurrency          
 i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
-     _Optional (Self-study)_          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
+       _Optional (Self-study)_          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
 ### Day 3

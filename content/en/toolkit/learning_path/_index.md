@@ -56,7 +56,7 @@ a.	Controllers
 b.	Observability:              
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Metrics          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Metrics          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Datadog          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch          
@@ -64,6 +64,6 @@ b.	Observability:
 c.	Concurrency          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
 ### Day 3

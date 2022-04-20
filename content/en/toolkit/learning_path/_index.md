@@ -64,6 +64,6 @@ i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/
 c.	Concurrency          
 i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
      _Optional (Self-study)_          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Locking         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
 ### Day 3

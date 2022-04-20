@@ -81,4 +81,16 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.  Messaging         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.  MQTT (http://docs.pipservices.org/toolkit/recipes/mqtt/)            
 &nbsp;&nbsp;&nbsp;&nbsp;viii.  Kafka (http://docs.pipservices.org/toolkit/recipes/kafka/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ix.  RabbitMQ         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ix.  RabbitMQ                
+
+### Day 4
+6.	Containers: Process, Docker, Serverless         
+a.	Containers       
+i.	Process container
+http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container (Provisional, until a tutorial is written.)
+             _Optional (Self-study)_
+ii.	Docker http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/          
+b.	Serverless        
+Choose one of the following:       
+iii.	AWS Lambda         
+iv.	Microsoft Azure         

@@ -95,7 +95,8 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
 7.	Clients:           
-a.	REST client          
+a.	REST client     
+
 _Optional (Self-study)_        
 a.	Direct client        
 b.	Commandable HTTP      

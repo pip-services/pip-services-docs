@@ -26,8 +26,8 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 
 _Optional (Self-study)_
   
-i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
-ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
+ i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
+ ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
 iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
 iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
 v.	Discovery services (http://docs.pipservices.org/toolkit/recipes/discovery_services/)     

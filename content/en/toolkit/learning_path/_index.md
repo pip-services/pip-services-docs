@@ -63,7 +63,7 @@ b.	Observability:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd          
 c.	Concurrency          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
-       _Optional (Self-study)_          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
 ### Day 3

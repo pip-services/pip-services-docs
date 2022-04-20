@@ -88,7 +88,7 @@ Choose one of the following:
 a.	Containers       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Process container
 http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container                  
-             _Optional (Self-study)_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/          
 b.	Serverless        
 Choose one of the following:       

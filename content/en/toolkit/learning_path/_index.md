@@ -55,8 +55,8 @@ b.	Designing persistence components
 a.	Controllers         
 b.	Observability:              
 i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
-        _Optional (Self-study)_          
-i.	Metrics          
+     _Optional (Self-study)_          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Metrics          
 1.	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
 2.	Datadog          
 3.	Elasticsearch          

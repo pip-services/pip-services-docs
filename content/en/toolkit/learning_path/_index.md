@@ -96,10 +96,9 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
 7.	Clients:           
 a.	REST client     
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a.	Direct client        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b.	Commandable HTTP      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;c.	gRPC       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d.	Commandable gRPC       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.	Mock      
+_Optional (Self-study)_        
+a.	Direct client        
+b.	Commandable HTTP      
+c.	gRPC       
+d.	Commandable gRPC       
+e.	Mock      

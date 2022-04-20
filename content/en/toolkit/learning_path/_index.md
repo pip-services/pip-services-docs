@@ -86,11 +86,11 @@ Choose one of the following:
 ### Day 4
 6.	Containers: Process, Docker, Serverless         
 a.	Containers       
-i.	Process container
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Process container
 http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container                  
              _Optional (Self-study)_
-ii.	Docker http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/          
 b.	Serverless        
 Choose one of the following:       
-iii.	AWS Lambda         
-iv.	Microsoft Azure         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         

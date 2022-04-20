@@ -67,3 +67,7 @@ c.	Concurrency
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
 ### Day 3
+
+5.	Communication: REST, GRPC, Commandable
+a.	Synchronous
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST http://docs.pipservices.org/toolkit/recipes/rest_service/

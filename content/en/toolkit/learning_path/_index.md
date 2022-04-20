@@ -47,7 +47,7 @@ a.	Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Relational storage     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	MySQL (http://docs.pipservices.org/toolkit/recipes/mysql_persistence/)          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer (http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/)         
 b.	Designing persistence components 
                                (http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 
 

@@ -24,7 +24,7 @@ b.	Creating a component (http://docs.pipservices.org/toolkit/recipes/creating_a_
 c.	Communicating between components (http://docs.pipservices.org/toolkit/recipes/component_communication/)     
 d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configurations/)     
 
-&nbsp;&nbsp;_Optional (Self-study)_
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_
   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      

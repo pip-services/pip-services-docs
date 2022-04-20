@@ -70,4 +70,9 @@ c.	Concurrency
 
 5.	Communication: REST, GRPC, Commandable       
 a.	Synchronous       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST http://docs.pipservices.org/toolkit/recipes/rest_service/       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST http://docs.pipservices.org/toolkit/recipes/rest_service/               
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
+ii.	gRPC http://docs.pipservices.org/toolkit/recipes/grpc/ 
+iii.	Commandable HTTP http://docs.pipservices.org/toolkit/recipes/commandable_http_services/
+iv.	Commandable gRPC
+v.	Command sets http://docs.pipservices.org/toolkit/recipes/command_set/ 

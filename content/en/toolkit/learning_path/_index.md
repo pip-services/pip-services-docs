@@ -49,20 +49,20 @@ a.	Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/         
 b.	Designing persistence components 
-                               http://docs.pipservices.org/toolkit/recipes/designing_persistence/ 
+                               (http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 
 
 4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
 a.	Controllers         
 b.	Observability:              
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Logging (http://docs.pipservices.org/toolkit/recipes/logging/)            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Metrics          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus (http://docs.pipservices.org/toolkit/recipes/prometheus/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Datadog          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd          
 c.	Concurrency          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching (http://docs.pipservices.org/toolkit/getting_started/caching/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking         
 
@@ -70,15 +70,15 @@ c.	Concurrency
 
 5.	Communication: REST, GRPC, Commandable       
 a.	Synchronous       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST http://docs.pipservices.org/toolkit/recipes/rest_service/               
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST (http://docs.pipservices.org/toolkit/recipes/rest_service/)               
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	gRPC http://docs.pipservices.org/toolkit/recipes/grpc/         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  Commandable HTTP http://docs.pipservices.org/toolkit/recipes/commandable_http_services/         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets http://docs.pipservices.org/toolkit/recipes/command_set/          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets (http://docs.pipservices.org/toolkit/recipes/command_set/)          
 b.	Asynchronous        
 Choose one of the following:        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.  Messaging         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.  MQTT http://docs.pipservices.org/toolkit/recipes/mqtt/            
-&nbsp;&nbsp;&nbsp;&nbsp;viii.  Kafka http://docs.pipservices.org/toolkit/recipes/kafka/         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.  MQTT (http://docs.pipservices.org/toolkit/recipes/mqtt/)            
+&nbsp;&nbsp;&nbsp;&nbsp;viii.  Kafka (http://docs.pipservices.org/toolkit/recipes/kafka/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ix.  RabbitMQ         

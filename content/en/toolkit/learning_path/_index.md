@@ -81,7 +81,7 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.  Messaging         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.  MQTT (http://docs.pipservices.org/toolkit/recipes/mqtt/)            
 &nbsp;&nbsp;&nbsp;&nbsp;iii.  Kafka (http://docs.pipservices.org/toolkit/recipes/kafka/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  RabbitMQ                
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  RabbitMQ                
 
 ### Day 4
 6.	Containers: Process, Docker, Serverless         

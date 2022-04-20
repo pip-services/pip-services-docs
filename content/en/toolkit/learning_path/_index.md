@@ -87,10 +87,18 @@ Choose one of the following:
 6.	Containers: Process, Docker, Serverless         
 a.	Containers       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Process container
-http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container                  
+(http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container)                  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker (http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/)          
 b.	Serverless        
 Choose one of the following:       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
+7.	Clients: 
+a.	REST client
+_Optional (Self-study)_
+a.	Direct client
+b.	Commandable HTTP
+c.	gRPC
+d.	Commandable gRPC
+e.	Mock

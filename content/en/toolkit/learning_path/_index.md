@@ -57,13 +57,13 @@ b.	Observability:
 i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
      _Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Metrics          
-1.	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
-2.	Datadog          
-3.	Elasticsearch          
-4.	Fluentd          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Datadog          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd          
 c.	Concurrency          
 i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/           
-        _Optional (Self-study)_          
-ii.	Locking         
+     _Optional (Self-study)_          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Locking         
 
 ### Day 3

@@ -54,7 +54,7 @@ b.	Designing persistence components
 4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
 a.	Controllers         
 b.	Observability:              
-i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Metrics          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/           

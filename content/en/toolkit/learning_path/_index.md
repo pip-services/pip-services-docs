@@ -40,7 +40,8 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 3.	Persistence:      
 a.	Choose one of the following:      
 i.	Memory (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/) 
-ii.	File storage
+
+ii.	File storage      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
 iii.	Document storage  
 

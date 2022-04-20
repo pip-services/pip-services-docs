@@ -78,7 +78,7 @@ a.	Synchronous
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets http://docs.pipservices.org/toolkit/recipes/command_set/          
 b.	Asynchronous        
 Choose one of the following:        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.  Messaging         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.  MQTT http://docs.pipservices.org/toolkit/recipes/mqtt/            
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viii.  Kafka http://docs.pipservices.org/toolkit/recipes/kafka/         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ix.  RabbitMQ         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vi.  Messaging         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vii.  MQTT http://docs.pipservices.org/toolkit/recipes/mqtt/            
+&nbsp;&nbsp;&nbsp;&nbsp;viii.  Kafka http://docs.pipservices.org/toolkit/recipes/kafka/         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ix.  RabbitMQ         

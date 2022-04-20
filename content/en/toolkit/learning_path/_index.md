@@ -36,3 +36,34 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/)     
 
 ### Day 2
+
+3.	Persistence: 
+a.	Choose one of the following:
+i.	Memory http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/ 
+ii.	File storage
+1.	JSON file persistence http://docs.pipservices.org/toolkit/recipes/json_persistence/ 
+iii.	Document storage
+iv.	MongoDB http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/ 
+v.	Relational storage
+1.	MySQL http://docs.pipservices.org/toolkit/recipes/mysql_persistence/ 
+2.	PostgreSQL http://docs.pipservices.org/toolkit/recipes/postgre_persistence/ 
+3.	SQLServer http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/ 
+b.	Designing persistence components 
+                               http://docs.pipservices.org/toolkit/recipes/designing_persistence/ 
+
+4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
+a.	Controllers
+b.	Observability: 
+i.	Logging http://docs.pipservices.org/toolkit/recipes/logging/ 
+        Optional (Self-study)
+i.	Metrics
+1.	Prometheus http://docs.pipservices.org/toolkit/recipes/prometheus/ 
+2.	Datadog
+3.	Elasticsearch
+4.	Fluentd
+c.	Concurrency
+i.	Caching http://docs.pipservices.org/toolkit/getting_started/caching/ 
+        Optional (Self-study)
+ii.	Locking
+
+Day 3

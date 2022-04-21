@@ -60,10 +60,10 @@ TODO: add description
 - **config**: [ConfigParams](../../../commons/config/config_params) - TODO: add description
 
 TODO: add description
-> `public` RabbitMQMessageQueue(string name, IModel model, string queue)
+> `public` RabbitMQMessageQueue(string name, [IModel](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html) model, string queue)
 
 - **name**: string - (optional) queue's name.
-- **model**: IModel - TODO: add description
+- **model**: [IModel](https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html) - TODO: add description
 - **queue**: string - TODO: add description
 
 

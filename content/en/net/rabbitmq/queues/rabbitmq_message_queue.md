@@ -21,10 +21,10 @@ The RabbitMQMessageQueue class allows you to create message queues that send and
 - **exchange**:                     RabbitMQ exchange name
 
 **connection(s)**:
-    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **host**:                        host name or IP address
-    - **port**:                        port number
-    - **uri**:                         resource URI or connection string with all parameters in it
+    - **discovery_key**:               (optional) a key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)         
+    - **host**:                        host name or IP address          
+    - **port**:                        port number          
+    - **uri**:                         resource URI or connection string with all parameters in it           
 - **credential(s)**:
     - **store_key**:                   (optional) a key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
     - **username**:                    (optional) user name

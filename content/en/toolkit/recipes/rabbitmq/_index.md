@@ -28,13 +28,27 @@ After importing our component, we create an instance of it:
 
 #### Implementing our component
 
+After importing our component, we create an instance of it:
+
+
+#### Configuring our component
+
+An important point when configuring this component is to understand the different parameters involved in this operation. The following table summarizes them:
+
+To configure our object, we use the configure() method, which accepts a ConfigParams object as input. In our example, we define the RabbitMQ exchange, the queue name, the host, and the port. We also assign the value true to auto_create. In this manner, if the queue doesn’t exist in RabbitMQ, it is created. Furthermore, for the example’s purpose, we consider the guest user. But, if we want to refer to another user, we also need to specify the necessary credentials (username and password). 
+
+
 #### Connecting to RabbitMQ
+
+To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
 
 #### Creating and sending a message
 
+Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the correlation_id and a MessageEnvelope object as inputs. This last object contains the correlation_id, message type, and message content as inputs. The following code shows how to do this:
+
 #### Receiving a message
 
-
+To receive a message, we use the RecevieAsync() method, which has the correlation_id and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
 #### Final code
 

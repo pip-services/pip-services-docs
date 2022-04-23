@@ -102,6 +102,8 @@ After importing our component, we create an instance of it:
 
 An important point when configuring this component is to understand the different parameters involved in this operation. The following table summarizes them:
 
+![figure 1](./figure1.png)
+
 To configure our object, we use the configure() method, which accepts a ConfigParams object as input. In our example, we define the RabbitMQ exchange, the queue name, the host, and the port. We also assign the value true to auto_create. In this manner, if the queue doesn’t exist in RabbitMQ, it is created. Furthermore, for the example’s purpose, we consider the guest user. But, if we want to refer to another user, we also need to specify the necessary credentials (username and password). 
 
 {{< tabsection >}}
@@ -214,7 +216,7 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 
 #### Final code
 
-Which, after running, produces the following output that confirms the message was received and sent by RabbitMQ:
+
 
 {{< tabsection >}}
   Not available 
@@ -239,6 +241,10 @@ Which, after running, produces the following output that confirms the message wa
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+Which, after running, produces the following output that confirms the message was received and sent by RabbitMQ:
+
+![figure 2](./figure2.png)
 
 #### Wrapping up
 

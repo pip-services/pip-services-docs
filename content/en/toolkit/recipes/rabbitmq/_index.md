@@ -8,6 +8,8 @@ description: >-
      How to send and receive messages via RabbitMQ.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
@@ -22,20 +24,116 @@ This component is part of the RabbitMQ module and represents a message queue tha
 
 In order to use this component, we need to import it first. The following code shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code1_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+
 #### Implementing our component
 
 After importing our component, we create an instance of it:
 
+{{< tabsection >}}
+  {{< include "./__code2_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Implementing our component
 
 After importing our component, we create an instance of it:
 
+{{< tabsection >}}
+  {{< include "./__code3_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Configuring our component
 
 An important point when configuring this component is to understand the different parameters involved in this operation. The following table summarizes them:
 
 To configure our object, we use the configure() method, which accepts a ConfigParams object as input. In our example, we define the RabbitMQ exchange, the queue name, the host, and the port. We also assign the value true to auto_create. In this manner, if the queue doesn’t exist in RabbitMQ, it is created. Furthermore, for the example’s purpose, we consider the guest user. But, if we want to refer to another user, we also need to specify the necessary credentials (username and password). 
+
+{{< tabsection >}}
+  {{< include "./__code4_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 
 #### Connecting to RabbitMQ

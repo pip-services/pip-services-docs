@@ -25,11 +25,11 @@ This component is part of the RabbitMQ module and represents a message queue tha
 In order to use this component, we need to import it first. The following code shows how to do this:
 
 {{< tabsection >}}
-  {{< include "./__code1_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -54,11 +54,11 @@ In order to use this component, we need to import it first. The following code s
 After importing our component, we create an instance of it:
 
 {{< tabsection >}}
-  {{< include "./__code2_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -80,13 +80,12 @@ After importing our component, we create an instance of it:
 #### Implementing our component
 
 After importing our component, we create an instance of it:
-
 {{< tabsection >}}
-  {{< include "./__code3_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,11 +111,11 @@ An important point when configuring this component is to understand the differen
 To configure our object, we use the configure() method, which accepts a ConfigParams object as input. In our example, we define the RabbitMQ exchange, the queue name, the host, and the port. We also assign the value true to auto_create. In this manner, if the queue doesn’t exist in RabbitMQ, it is created. Furthermore, for the example’s purpose, we consider the guest user. But, if we want to refer to another user, we also need to specify the necessary credentials (username and password). 
 
 {{< tabsection >}}
-  {{< include "./__code4_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -141,11 +140,11 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
 
 {{< tabsection >}}
-  {{< include "./__code5_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -167,13 +166,12 @@ To connect to RabbitMQ, we use the OpenAsync() method, which requires the correl
 #### Creating and sending a message
 
 Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the correlation_id and a MessageEnvelope object as inputs. This last object contains the correlation_id, message type, and message content as inputs. The following code shows how to do this:
-
 {{< tabsection >}}
-  {{< include "./__code6_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -197,11 +195,11 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 To receive a message, we use the RecevieAsync() method, which has the correlation_id and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
 {{< tabsection >}}
-  {{< include "./__code7_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -225,11 +223,11 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 Which, after running, produces the following output that confirms the message was received and sent by RabbitMQ:
 
 {{< tabsection >}}
-  {{< include "./__code8_node.md" >}}
+  Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -140,17 +140,113 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 
 To connect to RabbitMQ, we use the OpenAsync() method, which requires the correlation_id as an input parameter. The following example shows how to connect our previously defined queue:
 
+{{< tabsection >}}
+  {{< include "./__code5_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Creating and sending a message
 
 Once connected, we can send a message to RabbitMQ. For this, we use the SendAsync() method, which accepts the correlation_id and a MessageEnvelope object as inputs. This last object contains the correlation_id, message type, and message content as inputs. The following code shows how to do this:
+
+{{< tabsection >}}
+  {{< include "./__code6_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Receiving a message
 
 To receive a message, we use the RecevieAsync() method, which has the correlation_id and the waiting time in milliseconds as input parameters. The following example shows how to use it:
 
+{{< tabsection >}}
+  {{< include "./__code7_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Final code
 
 Which, after running, produces the following output that confirms the message was received and sent by RabbitMQ:
+
+{{< tabsection >}}
+  {{< include "./__code8_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Wrapping up
 

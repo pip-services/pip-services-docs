@@ -52,40 +52,12 @@ In order to use this component, we need to import it first. The following code s
 #### Implementing our component
 
 After importing our component, we create an instance of it:
-
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}
 
 {{< tabsection >}}
   {{< include "./__code2_net.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-#### Implementing our component
-
-After importing our component, we create an instance of it:
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -115,7 +87,7 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_net.md" >}}
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -144,7 +116,7 @@ To connect to RabbitMQ, we use the OpenAsync() method, which requires the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_net.md" >}}
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -171,7 +143,7 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_net.md" >}}
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -199,7 +171,7 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_net.md" >}}
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -227,7 +199,7 @@ Which, after running, produces the following output that confirms the message wa
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_net.md" >}}
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -11,7 +11,28 @@ description: >-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
-
+<table class="full-width-table">
+  <tr>
+    <td>RabbitMQMessageQueue</td>
+    <td>Component used to send and receive messages via RabbitMQ.</td>
+  </tr>
+  <tr>
+    <td>OpenAsync()</td>
+    <td>Method used to connect to RabbitMQ.</td>
+  </tr>
+  <tr>
+    <td>SendAsync()</td>
+    <td>Method used to send messages to RabbitMQ.</td>
+  </tr>
+  <tr>
+    <td>ReceiveAsync()</td>
+    <td>Method used to receive messages from RabbitMQ.</td>
+  </tr>
+  <tr>
+    <td>queue, exchange, host, port (or uri)</td>
+    <td>Required configuration parameters.</td>
+  </tr>
+</table>
 ### Introduction
 
 In this tutorial, you will learn how to send and receive messages via RabbitMQ. First, we will see the necessary pre-requisites. Then, we will learn how to implement this component, connect to RabbitMQ and send and receive messages from it. Finally, we will combine the different sections into a program and summarize all the learned concepts.

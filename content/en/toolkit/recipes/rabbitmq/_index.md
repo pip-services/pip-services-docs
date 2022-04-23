@@ -52,6 +52,7 @@ In order to use this component, we need to import it first. The following code s
 #### Implementing our component
 
 After importing our component, we create an instance of it:
+
 {{< tabsection >}}
   Not available 
 {{< /tabsection >}}

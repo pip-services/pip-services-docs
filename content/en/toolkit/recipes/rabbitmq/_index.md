@@ -33,6 +33,7 @@ description: >-
     <td>Required configuration parameters.</td>
   </tr>
 </table>
+
 ### Introduction
 
 In this tutorial, you will learn how to send and receive messages via RabbitMQ. First, we will see the necessary pre-requisites. Then, we will learn how to implement this component, connect to RabbitMQ and send and receive messages from it. Finally, we will combine the different sections into a program and summarize all the learned concepts.

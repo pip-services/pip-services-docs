@@ -73,7 +73,7 @@ In order to use this component, we need to import it first. The following code s
 
 #### Implementing our component
 
-After importing our component, we create an instance of it:
+First, and after having imported our component, we create an instance of it:
 
 {{< tabsection >}}
   Not available 
@@ -101,7 +101,7 @@ After importing our component, we create an instance of it:
 
 #### Configuring our component
 
-An important point when configuring this component is to understand the different parameters involved in this operation. The following table summarizes them:
+Once we have an instance of our component, we need to configure it. Here, an important point is to understand the different parameters involved in this operation. The following table summarizes them:
 
 ![figure 1](./figure1B.png)
 
@@ -217,7 +217,7 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 
 #### Final code
 
-
+Now, we assemble all that was learned into one program. The result is:
 
 {{< tabsection >}}
   Not available 

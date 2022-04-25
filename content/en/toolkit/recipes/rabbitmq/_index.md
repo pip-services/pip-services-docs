@@ -101,7 +101,7 @@ First, and after having imported our component, we create an instance of it:
 
 #### Configuring our component
 
-Once we have an instance of our component, we need to configure it. Here, an important point is to understand the different parameters involved in this operation. The following table summarizes them:
+After creating an instance of our component, we need to configure it. Here, an important point is to understand the different parameters involved in this operation. The following table summarizes them:
 
 ![figure 1](./figure1B.png)
 

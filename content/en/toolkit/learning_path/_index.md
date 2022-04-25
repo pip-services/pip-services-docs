@@ -50,6 +50,7 @@ a.	Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer (http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Other      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Cassandra
+
 b.	Designing persistence components 
                                (http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 
 

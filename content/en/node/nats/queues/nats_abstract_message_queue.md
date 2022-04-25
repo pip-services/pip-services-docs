@@ -62,7 +62,7 @@ Subject
 ### Instance methods
 
 #### abandon
-Returnes a message into the queue and makes it available for all subscribers to receive it again. 
+Returns a message into the queue and makes it available for all subscribers to receive it again. 
 This method is usually used to return a message which could not be processed at the moment 
 to repeat the attempt. Messages that cause unrecoverable errors shall be removed 
 permanently or/and send to dead letter queue.

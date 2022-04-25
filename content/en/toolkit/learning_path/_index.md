@@ -44,11 +44,11 @@ a.	Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.	Document storage            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	MongoDB (http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/)                
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Relational storage     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Relational storage     
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	MySQL (http://docs.pipservices.org/toolkit/recipes/mysql_persistence/)          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer (http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/)       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Other      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Other      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Cassandra          
 b.	Designing persistence components 
                                (http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 

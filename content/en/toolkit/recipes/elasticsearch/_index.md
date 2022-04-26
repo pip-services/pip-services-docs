@@ -150,3 +150,34 @@ Once we have our custom component, we create an instance of the ElasticSearchLog
 {{< tabsection >}}       
   Not available  
 {{< /tabsection >}}
+
+#### Generating logs
+
+Now that our connection is ready, we create an instance of our custom component and run “mymethod”. The following code shows how to do this.
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+  Not available     
+{{< /tabsection >}}          
+
+{{< tabsection >}}    
+  {{< include "./__code4_python.md" >}}     
+{{< /tabsection >}}     
+
+{{< tabsection >}}       
+  Not available  
+{{< /tabsection >}}
+
+And, after running the above code, we obtain the following output.
+

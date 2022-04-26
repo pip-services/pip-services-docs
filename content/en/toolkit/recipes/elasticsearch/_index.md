@@ -181,9 +181,13 @@ Now that our connection is ready, we create an instance of our custom component 
 
 And, after running the above code, we obtain the following output.
 
+![figure 1](./figure1.png)
+
 #### Our logs in Elasticsearch
 
 We can check that Elasticsearch received our message by using a tool such as Elasticvue. This online application provides us we a UI where the received messages are displayed. The figure below shows the messages obtained after running the code in the previous section.
+
+![figure 1](./figure2.png)
 
 #### Final code
 
@@ -212,4 +216,12 @@ Our last step is to modify our custom component. We want it to follow the Pip.Se
 {{< tabsection >}}       
   Not available  
 {{< /tabsection >}}
+
+### Elasticsearch versions
+
+At present, Pip.Services support versions 6 and 7 of Elaticsearch.
+
+### Wrapping up
+
+In this tutorial we have seen how to use the ElasticSearchLogger component to send log messages to Elasticsearch. First, we created a custom component that included a method and a logger. Then, we created instances of ElasticSearchLogger and of the custom component, connected our logger to Elasticsearch and run the method in order to generate log messages. After successfully running the method, we verified that Elasticsearch had received the messages by using Elasticvue, an online application that provided us with a UI. We ended the tutorial with an improved version of the custom component. 
 

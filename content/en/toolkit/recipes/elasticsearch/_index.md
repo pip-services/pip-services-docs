@@ -10,6 +10,53 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Elasticsearch</td>
+    <td>Search application. In this tutorial, it used to store log messages from different components. Pip.Services supports versions 6 and 7.</td>
+  </tr>
+  <tr>
+    <td>ElasticSearchLogger</td>
+    <td>Component used to send log messages to Elasticsearch.</td>
+  </tr>
+  <tr>
+    <td>configure()</td>
+    <td>Method used to set the values of configuration parameters.</td>
+  </tr>
+  <tr>
+    <td>open()</td>
+    <td>Method used to connect to Elasticsearch.</td>
+  </tr>
+  <tr>
+    <td>close()</td>
+    <td>Method used to close the logger and free used resources.</td>
+  </tr>
+  <tr>
+    <td>fatal()</td>
+    <td>Method used to log a fatal level or level 1 message.</td>
+  </tr>
+  <tr>
+    <td>error()</td>
+    <td>Method used to log an error level or level 2 message.</td>
+  </tr>
+  <tr>
+    <td>warm()</td>
+    <td>Method used to log a warming level or level 3 message.</td>
+  </tr>
+  <tr>
+    <td>info()</td>
+    <td>Method used to log an info level or level 4 message.</td>
+  </tr>
+  <tr>
+    <td>debug()</td>
+    <td>Method used to log a debug level or level 5 message.</td>
+  </tr>
+  <tr>
+    <td>trace()</td>
+    <td>Method used to log a trace level or level 6 message.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial you will learn how to work with the ElasticSearchLogger component, which is used to send logs to Elasticsearch. First, we will see the necessary pre-requisites. Then, we will continue by creating a custom component with an example method, running it and generating the logs. After this, we will verify that the messages reached Elasticsearch by using the Elasticvue online tool. Finally, we will improve our custom component by including several Pip.Services best practices.

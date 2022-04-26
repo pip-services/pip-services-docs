@@ -94,3 +94,6 @@ In order to use this component, we must first import it. The following command s
 {{< tabsection >}}       
   Not available  
 {{< /tabsection >}}
+
+#### Creating a component with logging
+

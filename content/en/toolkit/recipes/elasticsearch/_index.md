@@ -181,3 +181,35 @@ Now that our connection is ready, we create an instance of our custom component 
 
 And, after running the above code, we obtain the following output.
 
+#### Our logs in Elasticsearch
+
+We can check that Elasticsearch received our message by using a tool such as Elasticvue. This online application provides us we a UI where the received messages are displayed. The figure below shows the messages obtained after running the code in the previous section.
+
+#### Final code
+
+Our last step is to modify our custom component. We want it to follow the Pip.Services best practices. Thus, we add the IConfigurable and IOpenable interfaces, and the configure(), open() and close() methods. Then, we use these methods to configure, open and close our logger. The code below shows how to do this.
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+  Not available     
+{{< /tabsection >}}          
+
+{{< tabsection >}}    
+  {{< include "./__code5_python.md" >}}     
+{{< /tabsection >}}     
+
+{{< tabsection >}}       
+  Not available  
+{{< /tabsection >}}
+

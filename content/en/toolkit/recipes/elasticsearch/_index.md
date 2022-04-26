@@ -97,3 +97,28 @@ In order to use this component, we must first import it. The following command s
 
 #### Creating a component with logging
 
+Now, we can create a custom component that sends log messages. As we want to send those messages to Elasticsearch, we define our logger of type ElasticSearchLogger. We also create a method called “mymethod” with the aim of calling it and sending log messages. All log messages are considered level 4 or Info level. The code below shows how this class looks like.
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}     
+  Not available     
+{{< /tabsection >}}          
+
+{{< tabsection >}}    
+  {{< include "./__code2_python.md" >}}     
+{{< /tabsection >}}     
+
+{{< tabsection >}}       
+  Not available  
+{{< /tabsection >}}

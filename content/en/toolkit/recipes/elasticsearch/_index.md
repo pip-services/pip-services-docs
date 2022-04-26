@@ -187,7 +187,7 @@ And, after running the above code, we obtain the following output.
 
 We can check that Elasticsearch received our message by using a tool such as Elasticvue. This online application provides us we a UI where the received messages are displayed. The figure below shows the messages obtained after running the code in the previous section.
 
-![figure 1](./figure2.png)
+![figure 2](./figure2.png)
 
 #### Final code
 

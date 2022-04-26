@@ -8,6 +8,8 @@ description: >-
      How to send logs to Elasticsearch.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 <table class="full-width-table">
@@ -65,3 +67,30 @@ In this tutorial you will learn how to work with the ElasticSearchLogger compone
 
 This component, which is a subclass of the CachedLogger component, allows us to send log messages to Elasticsearch. In order to learn how to use it, in the following sections, we will first see how to create a custom component that uses it to send log messages to Elasticsearch. Then, we will learn how to verify that the log messages have arrived. And finally, we will improve our component by adding some interfaces and methods.
 
+#### Pre-requisites
+
+In order to use this component, we must first import it. The following command shows how to do this:
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}

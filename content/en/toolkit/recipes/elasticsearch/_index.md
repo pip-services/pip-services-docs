@@ -71,15 +71,15 @@ This component, which is a subclass of the CachedLogger component, allows us to 
 
 In order to use this component, we must first import it. The following command shows how to do this:
 
-{{< tabsection >}}
+{{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}
+{{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}
+{{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 

@@ -83,9 +83,9 @@ In order to use this component, we must first import it. The following command s
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}
-  Not available
-{{< /tabsection >}}     
+{{< tabsection >}}     
+  Not available     
+{{< /tabsection >}}          
 
 {{< tabsection >}}    
   {{< include "./__code1_python.md" >}}     

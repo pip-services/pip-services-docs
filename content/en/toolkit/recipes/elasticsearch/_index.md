@@ -42,8 +42,8 @@ description: >-
     <td>Method used to log an error level or level 2 message.</td>
   </tr>
   <tr>
-    <td>warm()</td>
-    <td>Method used to log a warming level or level 3 message.</td>
+    <td>warn()</td>
+    <td>Method used to log a warning level or level 3 message.</td>
   </tr>
   <tr>
     <td>info()</td>

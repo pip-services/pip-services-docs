@@ -1,4 +1,4 @@
 
 ```ts
-await queue.close(null)
+await queue.close("123")
 ```

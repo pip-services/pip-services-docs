@@ -12,6 +12,25 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>NatsMessageQueue</td>
+    <td>Component used to send and receive messages via a NATS server.</td>
+  </tr>
+  <tr>
+    <td>configure()</td>
+    <td>Method used to set the values of configuration parameters.</td>
+  </tr>
+  <tr>
+    <td>send()</td>
+    <td>Method used to send messages to a NATS server.</td>
+  </tr>
+  <tr>
+    <td>receive()</td>
+    <td>Method used to receive messages from a NATS server.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 This tutorial will help you understand how the NatsMessageQueue component is used. First, we will see a brief description of this class and how to import it. Then, we will implement this component, connect it, and create and send a message to a NATS server from it. Finally, we will combine the code into a complete program and summarize what we have learned.

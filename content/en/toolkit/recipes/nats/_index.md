@@ -14,15 +14,27 @@ This tutorial will help you understand how the NatsMessageQueue component is use
 
 ### The NatsMessageQueue component
 
+This component can be used to send and receive messages via a NATS server. In order to show how to use it, in the following sections, we will see in a stepwise manner how to create a custom component that sends messages to a NATS server located on our machine.
+
 #### Pre-requisites
+
+In order to use this component, we need to import it first. The following code shows how to do this:
 
 #### Implementing our component
 
+Once imported, we can create an instance of this class and configure it. In the example below, we consider a NATS server on our machine and port 4222. In addition, we declare autosubscribe as true, which, as the name suggests, creates a subscription to our topic automatically.
+
 #### Connecting to NATS
+
+Now that we have defined our component, we connect to the NATS server via the open() method, which takes the correlation_id as an input parameter. The following code shows how to perform this operation:
 
 #### Creating and sending a message
 
+Once connected, we send a message to our NATS server via the send() method. This method accepts a correlation_id and a MessageEnvelope object as inputs. And, this last object requires a correlation_id, a message type, and the data being sent as inputs. The code below exemplifies how to perform this task:
+
 #### Receiving a message
+
+We can receive messages from our subscribed topic via the receive() method, which accepts a correlation_id and a timeout in milliseconds as input parameters. The code below gives an example of its usage:
 
 #### Final code
 

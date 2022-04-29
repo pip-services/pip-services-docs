@@ -161,12 +161,40 @@ We can receive messages from our subscribed topic via the receive() method, whic
   Not available  
 {{< /tabsection >}}
 
+#### Closing the connection
+
+After the task is concluded, we close the connection to free resources. The following command shows how to do this:
+
+{{< tabsection >}}
+  {{< include "./__code6_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Final code
 
 Now, we can combine the code from the previous sections into a program that creates an instance of this class, configures and connects it to our NATS server, and sends and receives a message from it. The code below shows the result of this operation:
 
 {{< tabsection >}}
-  {{< include "./__code6_node.md" >}}
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

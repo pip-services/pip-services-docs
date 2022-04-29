@@ -221,7 +221,7 @@ Which, after running, will produce the following output
 
 ![figure 1](./figure1.png)
 
-Thus, proving that the message was correctly received by the NATS server.5
+Thus, proving that the message was correctly received by the NATS server.
 
 ### Wrapping up
 

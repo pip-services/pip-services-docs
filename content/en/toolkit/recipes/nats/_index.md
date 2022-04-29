@@ -217,6 +217,11 @@ Now, we can combine the code from the previous sections into a program that crea
   Not available  
 {{< /tabsection >}}
 
+Which, after running, will produce the following output 
+
+![figure 1](./figure1.png)
+
+Thus, proving that the message was correctly received by the NATS server.5
 
 ### Wrapping up
 

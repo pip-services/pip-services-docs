@@ -30,7 +30,7 @@ export async function main() {
     console.log('my message is: ' + message)
 
     // Close the connection
-    await queue.close(null)
+    await queue.close("123")
     console.log('Program executed');
 }
 ```

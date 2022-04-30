@@ -24,6 +24,30 @@ This component provides a tool to send log messages to Fluentd. It extends the C
 
 In order to use this component, we need to import it first. The following code shows how to do this:
 
+{{< tabsection >}}
+   {{< include "./__code1_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Creating a component with a logger
 
 Now that we have imported our Fluentd logger, we can create a custom component that uses it. In our example, we define a custom component that is configurable, openable, and closeable. Thus, we add the IConfigurable and IOpenable interfaces. 

@@ -79,7 +79,7 @@ a.	Synchronous
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets (http://docs.pipservices.org/toolkit/recipes/command_set/)          
 b.	Asynchronous        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose one of the following:        
+&nbsp;&nbsp;&nbsp;&nbsp;Choose one of the following:        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.  Messaging         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.  MQTT (http://docs.pipservices.org/toolkit/recipes/mqtt/)            
 &nbsp;&nbsp;&nbsp;&nbsp;iii.  Kafka (http://docs.pipservices.org/toolkit/recipes/kafka/)         

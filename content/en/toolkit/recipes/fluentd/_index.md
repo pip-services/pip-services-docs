@@ -48,3 +48,5 @@ We can see the results on the Fluentd log files, usually located in the fluentd/
 Our last step is to combine all the code from the previous sections into one program. The code below is the result of this operation:
 
 ### Wrapping up
+
+In this tutorial, we have seen how to use the FluentdLogger class to send log messages to Fluentd. We started by learning the pre-requisites. Then, we created a custom component with methods that send different log messages via the FluentdLogger class, and run them. Finally, we saw the messages received by Fluentd and compiled the code into one program.

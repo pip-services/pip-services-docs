@@ -8,6 +8,8 @@ description: >-
      How to send log messages to Fluentd.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction

@@ -39,8 +39,10 @@ d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configura
 
 3.	Persistence:      
 a.	Choose one of the following:      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Memory (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Redis        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Memory 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Memory Persistence Component (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Redis (https://pip-services.github.io/pip-services-docs/toolkit/recipes/redis/)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Memcached (https://pip-services.github.io/pip-services-docs/toolkit/recipes/memcached/)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	File storage      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.	Document storage            

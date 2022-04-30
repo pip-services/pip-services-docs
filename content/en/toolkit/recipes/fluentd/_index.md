@@ -12,6 +12,54 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>FluentdLogger</td>
+    <td>Component used to send log messages to Fluentd.</td>
+  </tr>
+  <tr>
+    <td>configure()</td>
+    <td>Method used to set the values of several configuration parameters.</td>
+  </tr>
+  <tr>
+    <td>open()</td>
+    <td>Method used to connect a logger to Fluentd.</td>
+  </tr>
+  <tr>
+    <td>close()</td>
+    <td>Method used to close a logger and free used resources.</td>
+  </tr>
+  <tr>
+    <td>setLevel()</td>
+    <td>Method used to set the required log level.</td>
+  </tr>
+  <tr>
+    <td>fatal()</td>
+    <td>Method used to log a fatal level or level 1 message.</td>
+  </tr>
+  <tr>
+    <td>error()</td>
+    <td>Method used to log an error level or level 2 message.</td>
+  </tr>
+  <tr>
+    <td>warn()</td>
+    <td>Method used to log a warning level or level 3 message.</td>
+  </tr>
+  <tr>
+    <td>info()</td>
+    <td>Method used to log an info level or level 4 message.</td>
+  </tr>
+  <tr>
+    <td>debug()</td>
+    <td>Method used to log a debug level or level 5 message.</td>
+  </tr>
+  <tr>
+    <td>trace()</td>
+    <td>Method used to log a trace level or level 6 message.</td>
+  </tr>
+
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to use the FluentdLogger component to send log messages to Fluentd. First, we will describe this component and understand its pre-requisites. Then, we will create a custom component with methods that generate log messages every time they are called, run it and see the messages received by Fluentd. Finally, we will combine the different code sections into one program and summarize what we have learned.

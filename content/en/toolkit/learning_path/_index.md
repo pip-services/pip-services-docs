@@ -61,8 +61,8 @@ b.	Observability:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Metrics          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus (http://docs.pipservices.org/toolkit/recipes/prometheus/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Datadog (http://docs.pipservices.org/toolkit/recipes/datadog/)          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch (https://pip-services.github.io/pip-services-docs/toolkit/recipes/elasticsearch/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd (https://pip-services.github.io/pip-services-docs/toolkit/recipes/fluentd/)          
 c.	Concurrency          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching (http://docs.pipservices.org/toolkit/getting_started/caching/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          

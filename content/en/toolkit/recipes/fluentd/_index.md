@@ -60,10 +60,59 @@ After this, we set the logging level we want (in our example level 5 or DEBUG) a
 
 Finally, we add a custom method with an artificial problem and logging messages for the different methods. The resulting code is:
 
+{{< tabsection >}}
+   {{< include "./__code2_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 #### Generating logs
 
 Now that we have a component with logging capabilities, we create an instance of it and call the different methods. In this manner, we generate log messages that are sent to Fluentd. The following code is an example of how to do this:
+
+{{< tabsection >}}
+   {{< include "./__code3_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 #### Our logs in Fluentd
 
@@ -72,6 +121,31 @@ We can see the results on the Fluentd log files, usually located in the fluentd/
 #### Final code
 
 Our last step is to combine all the code from the previous sections into one program. The code below is the result of this operation:
+
+{{< tabsection >}}
+   {{< include "./__code4_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 ### Wrapping up
 

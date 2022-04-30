@@ -54,7 +54,7 @@ Now that we have imported our Fluentd logger, we can create a custom component t
 
 Then, we define a logger as an instance of the FluentdLogger class and configure it. The main configuration parameters available from this class are:
 
-
+![figure 1](./figure1.png)
 
 After this, we set the logging level we want (in our example level 5 or DEBUG) and connect our component to Fluentd via the open() method.
 
@@ -117,6 +117,8 @@ Now that we have a component with logging capabilities, we create an instance of
 #### Our logs in Fluentd
 
 We can see the results on the Fluentd log files, usually located in the fluentd/log directory. The following picture shows the results obtained after running the code shown in the previous sections.
+
+![figure 2](./figure2.png)
 
 #### Final code
 

@@ -28,14 +28,45 @@ description: >-
 
 ##### CRUD operations
 
-##### Create
+###### Create
 
-##### Read
+###### Read
  
-###### getPageByFilter()
+**getPageByFilter()**
 
-##### Update
+**getOneRandom()**
 
-##### Delete
+**getCountByFilter()**
+
+###### Update
 
 
+###### Delete
+
+##### Final code
+
+#### IdentifiableCassandraPersistence
+
+##### Pre-requisites
+
+**getOneById()**
+
+###### Update
+
+**update()**
+
+**updatePartially()**
+
+**set()**
+
+###### Delete
+
+**deleteById()**
+
+**deleteByIds()**
+
+
+
+##### Final code 
+
+### Wrapping up

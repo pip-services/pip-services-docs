@@ -439,6 +439,7 @@ As we did with the previous component, we need to create some data objects first
 
 Where the value of item is:
 
+And
 
 Where item has the following value:
 

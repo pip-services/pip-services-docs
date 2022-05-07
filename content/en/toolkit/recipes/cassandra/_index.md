@@ -261,19 +261,97 @@ To read a record from our database, we have several methods.
 
 This is a private method. Thus, we need to create our public version of it and use the filterCondition() method to adapt our FilterParams to Cassandra. The code below shows how to define this method and how to call it from our persistence object:
 
+{{< tabsection >}}
+  {{< include "./__code9_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which, after running, returns the following record:
+
+![figure 2](./figure2.png)
 
 **getOneRandom()**
 
 This method extracts a random record according to a given condition. As this method is private, we need to first define it in our custom component and then call it from our persistence object. The following code shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code10_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 After running the above code, we get a result similar to the following record:
+
+![figure 3](./figure3.png)
 
 **getCountByFilter()**
 
 This method returns the number of stored records according to a given condition. Once again, as this is a private method, we need to define it in our class and call it from our persistence object. The code below illustrates its usage:
 
+{{< tabsection >}}
+  {{< include "./__code11_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which, after running, provides the following result:
+
+![figure 4](./figure4.png)
 
 ###### Update
 
@@ -283,10 +361,57 @@ This component has no specific update() method.
 
 To delete a record, this class provides the deleteByFilter() method, which is private and deletes one or more records according to a given filter. This method returns no result. In order to use it, we need to consider two points: first, we have to remember that Cassandra only allows for the deletion of records specified by their primary key (in our case the id field). Second, as this is a private method, we need to define our public version and then run it from our class instance. The following code shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code12_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### Final code
 
 Now, we can assemble everything together and obtain the following program:
+
+{{< tabsection >}}
+  {{< include "./__code13_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### IdentifiableCassandraPersistence
 

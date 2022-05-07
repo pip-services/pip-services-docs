@@ -421,9 +421,57 @@ This component is a subclass of the previous one and, as such, it inherits all i
 
 In order to use this component, we need to import it first. The following command shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code14_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### Component implementation
 
 As we did with the previous class, we create a custom persistence component that inherits this class. In it, we also code a defineSchema() method that is used to create a table in the database. If we want to use the methods of the previous class, we need to define a filterCondition() method as we did before. In the example below, we only consider the methods in this class, which don’t require filters. The code below shows an example of this custom component:
+
+{{< tabsection >}}
+  {{< include "./__code15_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### Connection
 Once we have our component ready, we create an instance of it and define our connection to the database via the configure() method. Then, we connect to Cassandra via the open() method. The following code shows how to do this:
@@ -442,6 +490,8 @@ Where the value of item is:
 And
 
 Where item has the following value:
+
+![figure 5](./figure5.png)
 
 ###### Read
 

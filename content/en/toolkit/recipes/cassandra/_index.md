@@ -24,9 +24,57 @@ Pip.Services contains the Cassandra module, which has several components that ca
 
 In order to use this module, we must first install it. The following command shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code1_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Data object
 
 The first thing that we need to do is to create a data object. To be able to have a common object for both components, we consider a structure with an id (identification) field. However, we should notice that this field is not required by the CassandraPersistence class. In addition, we add two fields to our example: name and description. The following code shows this data structure:
+
+{{< tabsection >}}
+  {{< include "./__code2_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### CassandraPersistence
 
@@ -36,15 +84,111 @@ This is the most basic persistence component in this module. It contains the nec
 
 To be able to use this component, we need to import it first. The following command shows how to perform this task:
 
+{{< tabsection >}}
+  {{< include "./__code3_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 ##### Component implementation
 
 Now, we create a custom component as a subclass of CassandraPerformance. Within our class, we also define two protected methods. The first, named “defineSchema”, creates a table used to store our data. The second method adapts a FilterParams object to the specific needs of Cassandra. Later in this tutorial, we will see how to define other methods for CRUD operations that must also be included in our class. The code below is an example of this class:
+
+{{< tabsection >}}
+  {{< include "./__code4_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### Connection
 
 After creating our persistence object, we need to connect to Cassandra. For this, we create an instance of our persistence component and use the configure() method to specify the necessary connection parameters. Then, via the open() method, we connect to Cassandra. In our example, we consider a local database and port 9042. We also specify our credentials. The code is as follows:
 
+{{< tabsection >}}
+  {{< include "./__code5_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 We must also remember to free resources once our operations have been executed. This is done with the close() method. The following code shows how to use it:
+
+{{< tabsection >}}
+  {{< include "./__code6_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 
 ##### CRUD operations
@@ -55,9 +199,59 @@ Once we have our persistence component ready, we can start performing CRUD opera
 
 First, we create data objects for our examples. The code below creates two different objects named item1 and item2 respectively:
 
+{{< tabsection >}}
+  {{< include "./__code7_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Then, we store these objects in our database with the create() method. This method requires the correlation_id and a data object as inputs. The following code shows how to use it:
 
+{{< tabsection >}}
+  {{< include "./__code8_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 After running the previous code, we obtain the following values for result1 and result2 respectively:
+
+![figure 1](./figure1.png)
 
 ###### Read
  
@@ -157,13 +351,29 @@ Where item has the following value:
 
 **set()**
 
+Alternatively, we can use the set() method, which updates an existing record or creates a new one if the record was not found. The following code illustrates its use:
+
+Where item has the following value:
+
 ###### Delete
+
+This component adds two methods to its parent class.
 
 **deleteById()**
 
+This method accepts the correlation_id and a record’s id as inputs and deletes the record identified by the given id. Once the record is deleted, this method returns the deleted record. The following example shows how to use it:
+
+Where item has the following value:
+
 **deleteByIds()**
 
+If we want to delete more than one record, we can use this method. It accepts the correlation_id and a list containing the ids of the records to be deleted as inputs. This method doesn’t return any value. The following example explains how to delete the records with ids equal to one and two:
+
+
+
 ##### Final code 
+
+We can now combine the previous examples into one program that performs all the CRUD operations:
 
 ### Wrapping up
 

@@ -476,7 +476,55 @@ As we did with the previous class, we create a custom persistence component that
 ##### Connection
 Once we have our component ready, we create an instance of it and define our connection to the database via the configure() method. Then, we connect to Cassandra via the open() method. The following code shows how to do this:
 
+{{< tabsection >}}
+  {{< include "./__code16_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And, after using our component, we free resources with the close() method:
+
+{{< tabsection >}}
+  {{< include "./__code17_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### CRUD operations
 This component offers a set of methods for CRUD operations that are based on identifiable objects. The following sections show how to use the main ones.
@@ -485,9 +533,57 @@ This component offers a set of methods for CRUD operations that are based on ide
 
 As we did with the previous component, we need to create some data objects first. The procedure is identical to what we saw before:
 
+{{< tabsection >}}
+  {{< include "./__code18_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Where the value of item is:
 
 And
+
+{{< tabsection >}}
+  {{< include "./__code19_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Where item has the following value:
 
@@ -501,11 +597,59 @@ This component adds two methods that can be used to read records.
 
 This method extracts one record according to a given id value. The following example shows how to use it:
 
+{{< tabsection >}}
+  {{< include "./__code20_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Where item has the following value:
 
 **getListByIds()**
 
 This method can be used to extract one or more records. It accepts a list of ids as input and returns a list containing the extracted records. The example below explains its usage:
+
+{{< tabsection >}}
+  {{< include "./__code21_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Where itemList has the following value:
 
@@ -517,17 +661,89 @@ This component offers three methods to update a record.
 
 This method accepts a data item as input and updates the stored record with the given id. The following lines of code show how to use it:
 
+{{< tabsection >}}
+  {{< include "./__code22_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Where item has the following value:
 
 **updatePartially()**
 
 This method accepts an id and an AnyValueMap object with a field and a value as inputs and updates the specified field in the specified record. The following code exemplifies its usage:
 
+{{< tabsection >}}
+  {{< include "./__code23_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Where item has the following value:
 
 **set()**
 
 Alternatively, we can use the set() method, which updates an existing record or creates a new one if the record was not found. The following code illustrates its use:
+
+{{< tabsection >}}
+  {{< include "./__code24_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Where item has the following value:
 
@@ -539,17 +755,87 @@ This component adds two methods to its parent class.
 
 This method accepts the correlation_id and a record’s id as inputs and deletes the record identified by the given id. Once the record is deleted, this method returns the deleted record. The following example shows how to use it:
 
+{{< tabsection >}}
+  {{< include "./__code25_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Where item has the following value:
 
 **deleteByIds()**
 
 If we want to delete more than one record, we can use this method. It accepts the correlation_id and a list containing the ids of the records to be deleted as inputs. This method doesn’t return any value. The following example explains how to delete the records with ids equal to one and two:
 
+{{< tabsection >}}
+  {{< include "./__code26_node.md" >}}
+{{< /tabsection >}}
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ##### Final code 
 
 We can now combine the previous examples into one program that performs all the CRUD operations:
+
+{{< tabsection >}}
+  {{< include "./__code27_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ### Wrapping up
 

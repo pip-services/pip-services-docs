@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Fluentd"
 linkTitle: "Fluentd"
-weight: 10
+weight: 0
 description: >-
      How to send log messages to Fluentd.
 ---

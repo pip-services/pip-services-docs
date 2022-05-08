@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "Cassandra persistence"
 linkTitle: "Cassandra"
-weight: 0
 description: >-
      How to persist data using a Cassandra database.
 ---

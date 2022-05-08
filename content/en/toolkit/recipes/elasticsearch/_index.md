@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Elasticsearch"
 linkTitle: "Elasticsearch"
-weight: 10
+weight: 0
 description: >-
      How to send logs to Elasticsearch.
 ---

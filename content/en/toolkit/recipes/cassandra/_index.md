@@ -12,6 +12,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>CassandraPersistence</td>
+    <td>Component used to perform CRUD operations over data objects stored in a Cassandra database.</td>
+  </tr>
+   <tr>
+    <td>IdentifiableCassandraPersistence</td>
+    <td>Component used to perform CRUD operations over identifiable data objects stored in a Cassandra database.</td>
+  </tr>
+  <tr>
+    <td>Identifiable data object</td>
+    <td>Data object that contains a field named id with unique values that can be used to identify the object.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 In this tutorial, you will learn how to interact with Cassandra. First, we will see how to install the Cassandra module. Then, we will see how to perform CRUD operations with the CassandraPersistence and IdentifiableCassandraPersistence components. Finally, in the wrapping up section, we will review the concepts learned.

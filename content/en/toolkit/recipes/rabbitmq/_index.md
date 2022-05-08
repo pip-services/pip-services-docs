@@ -3,7 +3,6 @@ type: docs
 no_list: true
 title: "RabbitMQ"
 linkTitle: "RabbitMQ"
-weight: 0
 description: >-
      How to send and receive messages via RabbitMQ.
 ---

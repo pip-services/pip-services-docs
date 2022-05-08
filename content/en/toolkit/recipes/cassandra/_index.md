@@ -559,6 +559,8 @@ As we did with the previous component, we need to create some data objects first
 
 Where the value of item is:
 
+![figure 5](./figure5.png)
+
 And
 
 {{< tabsection >}}
@@ -587,7 +589,7 @@ And
 
 Where item has the following value:
 
-![figure 5](./figure5.png)
+![figure 6](./figure6.png)
 
 ###### Read
 
@@ -623,6 +625,8 @@ This method extracts one record according to a given id value. The following exa
 
 Where item has the following value:
 
+![figure 7](./figure7.png)
+
 **getListByIds()**
 
 This method can be used to extract one or more records. It accepts a list of ids as input and returns a list containing the extracted records. The example below explains its usage:
@@ -652,6 +656,8 @@ This method can be used to extract one or more records. It accepts a list of ids
 {{< /tabsection >}}
 
 Where itemList has the following value:
+
+![figure 8](./figure8.png)
 
 ###### Update
 
@@ -687,6 +693,8 @@ This method accepts a data item as input and updates the stored record with the 
 
 Where item has the following value:
 
+![figure 9](./figure9.png)
+
 **updatePartially()**
 
 This method accepts an id and an AnyValueMap object with a field and a value as inputs and updates the specified field in the specified record. The following code exemplifies its usage:
@@ -717,6 +725,8 @@ This method accepts an id and an AnyValueMap object with a field and a value as 
 
 Where item has the following value:
 
+![figure 10](./figure10.png)
+
 **set()**
 
 Alternatively, we can use the set() method, which updates an existing record or creates a new one if the record was not found. The following code illustrates its use:
@@ -746,6 +756,8 @@ Alternatively, we can use the set() method, which updates an existing record or 
 {{< /tabsection >}}
 
 Where item has the following value:
+
+![figure 11](./figure11.png)
 
 ###### Delete
 
@@ -780,6 +792,8 @@ This method accepts the correlation_id and a record’s id as inputs and deletes
 {{< /tabsection >}}
 
 Where item has the following value:
+
+![figure 12](./figure12.png)
 
 **deleteByIds()**
 

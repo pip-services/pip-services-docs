@@ -708,7 +708,7 @@ This method accepts a data item as input and updates the stored record with the 
 
 Where item has the following value:
 
-![figure 9](./figure9.png)
+![figure 9](./figure9b.png)
 
 **updatePartially()**
 

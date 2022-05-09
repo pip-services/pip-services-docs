@@ -14,11 +14,11 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>CassandraPersistence</td>
-    <td>Component used to perform CRUD operations over data objects stored in a Cassandra database.</td>
+    <td>Component used to perform CRUD operations on data objects stored in a Cassandra database.</td>
   </tr>
    <tr>
     <td>IdentifiableCassandraPersistence</td>
-    <td>Component used to perform CRUD operations over identifiable data objects stored in a Cassandra database.</td>
+    <td>Component used to perform CRUD operations on identifiable data objects stored in a Cassandra database.</td>
   </tr>
   <tr>
     <td>Identifiable data object</td>

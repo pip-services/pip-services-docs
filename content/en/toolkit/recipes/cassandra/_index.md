@@ -429,7 +429,7 @@ Now, we can assemble everything together and obtain the following program:
 
 #### IdentifiableCassandraPersistence
 
-This component is a subclass of the previous one and, as such, it inherits all its methods. The main difference is that this component requires an identifiable data object, that is, an object that contains a parameter named id whose value uniquely identifies it. The following sections explain the main CRUD methods contained in this class.
+This component is a subclass of the previous one and, as such, it inherits all its methods. The main difference between them is that this component requires an identifiable data object, that is, an object that contains a parameter named id whose value uniquely identifies it. The following sections explain the main CRUD methods contained in this class.
 
 ##### Pre-requisites
 

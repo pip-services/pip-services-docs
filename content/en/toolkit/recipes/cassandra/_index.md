@@ -124,7 +124,7 @@ To be able to use this component, we need to import it first. The following comm
 
 ##### Component implementation
 
-Now, we create a custom component as a subclass of CassandraPerformance. Within our class, we also define two protected methods. The first, named “defineSchema”, creates a table used to store our data. The second method adapts a FilterParams object to the specific needs of Cassandra. Later in this tutorial, we will see how to define other methods for CRUD operations that must also be included in our class. The code below is an example of this class:
+Now, we can create a custom component as a subclass of CassandraPerformance. Within our class, we also define two protected methods. The first, named “defineSchema”, creates a table used to store our data. The second method adapts a FilterParams object to the specific needs of Cassandra. Later in this tutorial, we will see how to define other methods for CRUD operations that must also be included in our class. The code below is an example of this class:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -273,7 +273,7 @@ To read a record from our database, we have several methods.
  
 **getPageByFilter()**
 
-This is a private method. Thus, we need to create our public version of it and use the filterCondition() method to adapt our FilterParams to Cassandra. The code below shows how to define this method and how to call it from our persistence object:
+This is a private method. Thus, we need to create our public version of it and use the filterCondition() method to adapt our FilterParams object to Cassandra. The code below shows how to define this method and how to call it from our persistence object:
 
 {{< tabsection >}}
   {{< include "./__code9_node.md" >}}
@@ -305,7 +305,7 @@ Which, after running, returns the following record:
 
 **getOneRandom()**
 
-This method extracts a random record according to a given condition. As this method is private, we need to first define it in our custom component and then call it from our persistence object. The following code shows how to do this:
+This method extracts a random record according to a given condition. As this method is private, we need to first define it in our custom component and then call it from our persistence object. We also need to use the filterCondition() method to adapt our filter to Cassandra. The following code shows how to do this:
 
 {{< tabsection >}}
   {{< include "./__code10_node.md" >}}
@@ -337,7 +337,7 @@ After running the above code, we get a result similar to the following record:
 
 **getCountByFilter()**
 
-This method returns the number of stored records according to a given condition. Once again, as this is a private method, we need to define it in our class and call it from our persistence object. The code below illustrates its usage:
+This method returns the number of stored records according to a given condition. Once again, as this is a private method, we need to define it in our class and call it from our persistence object. Similar to the previous method, we also need to use the filterCondition() method to adapt to Cassandra. The code below illustrates its usage:
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}
@@ -461,7 +461,7 @@ In order to use this component, we need to import it first. The following comman
 
 ##### Component implementation
 
-As we did with the previous class, we create a custom persistence component that inherits this class. In it, we also code a defineSchema() method that is used to create a table in the database. If we want to use the methods of the previous class, we need to define a filterCondition() method as we did before. In the example below, we only consider the methods in this class, which don’t require filters. The code below shows an example of this custom component:
+As we did with the previous class, we create a custom persistence component that inherits this class. In it, we also code a defineSchema() method that is used to create a table in the database. If we want to use the methods of the previous class, we need to define a filterCondition() method as we did before. In the examples below, we only consider the methods in this class, which don’t require filters. The code below shows an example of this custom component:
 
 {{< tabsection >}}
   {{< include "./__code15_node.md" >}}
@@ -643,7 +643,7 @@ Where item has the following value:
 
 **getListByIds()**
 
-This method can be used to extract one or more records. It accepts a list of ids as input and returns a list containing the extracted records. The example below explains its usage:
+This method can be used to extract one or more records. It accepts a list of ids as an input and returns a list containing the extracted records. The example below explains its usage:
 
 {{< tabsection >}}
   {{< include "./__code21_node.md" >}}
@@ -679,7 +679,7 @@ This component offers three methods to update a record.
 
 **update()**
 
-This method accepts a data item as input and updates the stored record with the given id. The following lines of code show how to use it:
+This method accepts a data item as input and updates the record stored with the given id. The following lines of code show how to use it:
 
 {{< tabsection >}}
   {{< include "./__code22_node.md" >}}
@@ -775,7 +775,7 @@ Where item has the following value:
 
 ###### Delete
 
-This component adds two methods to its parent class.
+This component adds two delete methods to its parent class.
 
 **deleteById()**
 

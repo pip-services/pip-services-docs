@@ -103,7 +103,7 @@ Choose one of the following:
 a.	REST client     
 _Optional (Self-study)_        
 a.	Direct client        
-b.	Commandable HTTP      
+b.	Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
 c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
 d.	Commandable gRPC       
 e.	Mock      

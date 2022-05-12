@@ -104,6 +104,6 @@ a.	REST client
 _Optional (Self-study)_        
 a.	Direct client        
 b.	Commandable HTTP      
-c.	gRPC       
+c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
 d.	Commandable gRPC       
 e.	Mock      

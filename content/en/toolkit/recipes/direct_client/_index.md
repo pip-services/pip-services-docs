@@ -7,6 +7,8 @@ description: >-
      How to use the DirectClient component.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction

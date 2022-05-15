@@ -11,6 +11,25 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Direct client</td>
+    <td>A component that calls a controller directly in the same memory space.</td>
+  </tr>
+  <tr>
+    <td>Controller</td>
+    <td>Custom component used to define a method that is called by the direct client.</td>
+  </tr>
+  <tr>
+    <td>References</td>
+    <td>Component used to store and locate component references.</td>
+  </tr>
+  <tr>
+    <td>DependencyResolver</td>
+    <td>Component used to resolve component references.</td>
+  </tr>   
+</table>
+
 ### Introduction
 
 A direct client is a component that calls a controller directly in the same memory space. In general, it is used when multiple microservices are deployed in a single container (monolith system) and communication between them can be done by direct calls. Within Pip.Services, the DirectClient component is used to create it. 

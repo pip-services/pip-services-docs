@@ -28,8 +28,23 @@ To achieve this, we do the following process. First, we create a reference to th
 
 ### Reference setting
 
+The next step is to define the association between our reference in the client and the controller. The following code shows how to do it.
+
 ### Calling "my_method"
+
+Our aim is to call “my_method” from the client. We have made this possible by connecting the controller and the client. Thus, our final step is to call this method from the client with the following command:
+
+
+
+Which after execution produces the following result:
 
 ### Final code
 
+The following code summarizes all the previous steps:
+
+Which, after running, produces the following outcome:
+
 ### Wrapping up
+
+In this tutorial, we have seen how to create a direct client by using the DirectClient component. To understand this class, we created a controller with a method that prints “Hello world”. Then, we created a client with the controller as a dependency and connected both components. Finally, we ran the created method from the client and saw the results.
+

@@ -17,11 +17,27 @@ In this tutorial, you will be introduced to the RestClient component. First, we 
 
 ### The REST service
 
+Our first step is to create a REST service. For this, we create a subclass of the RestService class. To show the different HTTP communication methods, this subclass includes one function per HTTP method. Each of these functions returns a message and a data parameter. Our component also includes a register() method, which is used to register the route for each of the HTTP methods. 
+
+Once we have defined our REST service, we instantiate and configure it to run on our local machine. Then, we make it available with the open() method. The following code shows how this program looks like:
+
 ### The REST client
+
+Now that we have our REST service, we build a REST client that connects to it. This client has a function for each of the HTTP methods which calls the corresponding methods in our REST service.
+
+Once we have defined our component, we instantiate and configure it, pointing toward the endpoint previously defined in the REST service. Then, we connect it to the service with the open() method. The code below shows how to do this:
 
 ### Using the different HTTP methods
 
+Our last step is to call each of the client’s functions and obtain the respective results. The following commands show how to do this:
+
+which, after running, each command returns the same following result:
+
 ### Final code
+
+The code below summarizes the steps learned in the previous sections.
+
+Which after running produces the following outcome:
 
 ### Wrapping up
 

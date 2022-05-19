@@ -100,9 +100,9 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
 7.	Clients:           
-a.	REST client     
+a.	REST client (http://docs.pipservices.org/toolkit/recipes/rest_client/)            
 _Optional (Self-study)_        
-a.	Direct client        
+a.	Direct client (http://docs.pipservices.org/toolkit/recipes/direct_client/)               
 b.	Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
 c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
 d.	Commandable gRPC       

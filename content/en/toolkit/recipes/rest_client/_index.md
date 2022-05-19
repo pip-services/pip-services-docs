@@ -11,6 +11,21 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>RestClient</td>
+    <td>Component used to call remote endpoints using the HTTP/REST protocol.</td>
+  </tr>
+  <tr>
+    <td>RestService</td>
+    <td>Component used to receive remote calls via the HTTP/REST protocol.</td>
+  </tr>
+  <tr>
+    <td>GET, HEAD, POST, PUT, DELETE</td>
+    <td>HTTP methods supported by the RestClient component.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 A REST client is a program used to communicate with a service via the HTTP/REST protocol. Within Pip.Services, the RestClient component can be used as a base to build REST clients.

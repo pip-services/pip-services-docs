@@ -96,7 +96,7 @@ Once we have defined our component, we instantiate and configure it, pointing to
 
 ### Using the different HTTP methods
 
-Our last step is to call each of the client’s functions and obtain the respective results. The following commands show how to do this:
+Our last step is to call each of the client’s functions and obtain the respective results. The following commands and their outcomes show how to do this:
 
 {{< tabsection >}}
    Not available 
@@ -122,7 +122,84 @@ Our last step is to call each of the client’s functions and obtain the respect
   Not available  
 {{< /tabsection >}} 
 
-which, after running, each command returns the same following result:
+![figure 1](./figure1.png)
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}} 
+
+Note: the HEAD method produces no output.
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+![figure 1](./figure1.png)
+
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 ![figure 1](./figure1.png)
 
@@ -147,7 +224,7 @@ The code below summarizes the steps learned in the previous sections.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code4_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

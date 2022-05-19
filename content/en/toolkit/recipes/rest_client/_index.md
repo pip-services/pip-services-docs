@@ -83,8 +83,6 @@ Once we have defined our component, we instantiate and configure it, pointing to
 
 Our last step is to call each of the client’s functions and obtain the respective results. The following commands show how to do this:
 
-which, after running, each command returns the same following result:
-
 {{< tabsection >}}
    Not available 
 {{< /tabsection >}}
@@ -109,12 +107,13 @@ which, after running, each command returns the same following result:
   Not available  
 {{< /tabsection >}} 
 
+which, after running, each command returns the same following result:
+
+![figure 1](./figure1.png)
 
 ### Final code
 
 The code below summarizes the steps learned in the previous sections.
-
-Which after running produces the following outcome:
 
 {{< tabsection >}}
    Not available 
@@ -140,6 +139,9 @@ Which after running produces the following outcome:
   Not available  
 {{< /tabsection >}} 
 
+Which after running produces the following outcome:
+
+![figure 2](./figure2.png)
 
 ### Wrapping up
 

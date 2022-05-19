@@ -7,6 +7,8 @@ description: >-
      How to use the RestClient component.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
@@ -20,6 +22,31 @@ In this tutorial, you will be introduced to the RestClient component. First, we 
 Our first step is to create a REST service. For this, we create a subclass of the RestService class. To show the different HTTP communication methods, this subclass includes one function per HTTP method. Each of these functions returns a message and a data parameter. Our component also includes a register() method, which is used to register the route for each of the HTTP methods. 
 
 Once we have defined our REST service, we instantiate and configure it to run on our local machine. Then, we make it available with the open() method. The following code shows how this program looks like:
+
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+ Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}} 
+
 
 ### The REST client
 

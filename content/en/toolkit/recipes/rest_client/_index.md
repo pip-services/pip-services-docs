@@ -156,7 +156,7 @@ The code below summarizes the steps learned in the previous sections.
 
 Which after running produces the following outcome:
 
-![figure 2](./figure2.png)
+![figure 2](./figure2b.png)
 
 ### Wrapping up
 

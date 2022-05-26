@@ -27,7 +27,7 @@ Important points
 ### Instance methods
 
 #### release_lock
-Releases prevously acquired lock by its key.
+Releases previously acquired lock by its key.
 
 > release_lock(correlation_id: Optional[str], key: str)
 

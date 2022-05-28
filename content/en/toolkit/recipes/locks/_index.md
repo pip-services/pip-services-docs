@@ -37,7 +37,7 @@ This tutorial will help you understand how to use the MemoryLock and NullLock co
 
 ### The MemoryLock component
 
-This component provides us with a lock that can be used to synchronize the execution of a process that uses shared memory. It inherits from the Lock class two important methods: acquireLock() and configure(). This last method allows us to define a re-try time for lock acquisition. The following sections explain how to create, configure, acquire and release this type of lock. 
+This component provides us with a lock that can be used to synchronize the execution of a process that uses shared memory. In addition to its own methods, it inherits from the Lock class two important functions: acquireLock() and configure(). The following sections explain how to create, configure, acquire and release this type of lock. 
 
 #### Pre-requisites
 In order to use this component, we need to import it first. The following example shows how to do this:

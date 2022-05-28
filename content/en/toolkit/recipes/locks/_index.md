@@ -11,6 +11,26 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>MemoryLock</td>
+    <td>Lock used to synchronize the execution of a process using shared memory.</td>
+  </tr>
+  <tr>
+    <td>NullLock</td>
+    <td>Dummy lock that produces no real effect.</td>
+  </tr>
+  <tr>
+    <td>acquireLock()</td>
+    <td>Method used to acquire a lock identified by its key.</td>
+  </tr>
+  <tr>
+    <td>releaseLock()</td>
+    <td>Method used to release a previously acquired lock identified by its key.</td>
+  </tr>
+
+</table>
+
 ### Introduction
 
 This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will see the basic functionality of the MemoryLock class. Then, we will construct an example that will show how to use this type of lock. After this, we will learn what the NullLock is, how it differentiates from the MemoryLock and when to use it. At the end, we will summarize all the concepts learned.

@@ -189,6 +189,8 @@ In this example, we define a custom component with two methods. The first stores
   Not available  
 {{< /tabsection >}}
 
+And, after running the above code, we obtain the following results:
+
 ### The NullLock component
 
 This component represents a dummy lock that produces no real results. As such, it can be used in testing or in situations where a lock is required but needs to be disabled. It should be noted that this class doesn’t contain a configure() method. 
@@ -281,6 +283,8 @@ The following example replaces the MemoryLock used in the previous example with 
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+Which, after running, produces the following outcome:
 
 ### Wrapping up
 

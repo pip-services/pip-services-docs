@@ -21,11 +21,15 @@ This component provides us with a lock that can be used to synchronize the execu
 
 #### Lock creation
 
-
+To create a lock, we just need to instantiate the MemoryLock class. The following code shows how to do this:
 
 #### Lock configuration
 
+Once we have an instance of a lock, we can configure the timeout (milliseconds) to retry the lock acquisition. The default value is 100 milliseconds. In the following example, we reset it to 200 milliseconds:
+
 #### Lock acquisition
+
+Once created, a lock can be acquired through the acquireLock() method. This method accepts the correlationId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the correlationId equal to “123”, a key with the value “mykey”, and we set both timeouts at 1000 milliseconds:
 
 #### Lock release
 

@@ -21,13 +21,22 @@ This component provides us with a lock that can be used to synchronize the execu
 
 #### Lock creation
 
+
+
 #### Lock configuration
 
 #### Lock acquisition
 
 #### Lock release
 
+Once used, we can release a lock via the releaseLock() method. This method accepts the correlationId and the key of a previously defined lock as inputs. In the following example, we use the same correlationId and key as in the previous example. In this manner, we can keep track of the process and identify the previously acquired lock.
+
 #### Example
+
+Now that we have learned how to use the different methods available in this class, we can create an example that shows how they are used in practice. 
+
+In this example, we define a custom component with two methods. The first stores a value in memory. The second retrieves the stored value from memory and returns it. Both methods use a lock to manage their operations.
+
 
 ### The NullLock component
 

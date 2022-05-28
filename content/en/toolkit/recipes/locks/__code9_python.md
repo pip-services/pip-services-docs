@@ -3,8 +3,8 @@
 from pip_services3_commons.refer import Descriptor, References, IReferences, IReferenceable
 from pip_services3_components.cache import ICache, MemoryCache
 from pip_services3_components.lock.ILock import ILock
-from pip_services3_components.lock.MemoryLock import MemoryLock
-from pip_services3_commons.config import ConfigParams
+from pip_services3_components.lock.NullLock import NullLock
+
 
 class MyComponent(IReferenceable):
     __cache: ICache
@@ -18,9 +18,6 @@ class MyComponent(IReferenceable):
 
         # Lock
         self.__lock.acquire_lock(correlation_id, "mykey", 1000, 1000, )
-        
-        config = ConfigParams.from_tuples("retry_timeout", 200)
-        self.__lock.configure(config)
         
         # Do processing
         # ...
@@ -52,7 +49,7 @@ class MyComponent(IReferenceable):
 my_component = MyComponent()
 my_component.set_references(References.from_tuples(
     Descriptor("pip-services", "cache", "memory", "default", "1.0"), MemoryCache(),
-    Descriptor("pip-services", "lock", "memory", "default", "1.0"), MemoryLock(),
+    Descriptor("pip-services", "lock", "memory", "default", "1.0"), NullLock(),
 ))
 
 my_component.store_result(None, "param1")

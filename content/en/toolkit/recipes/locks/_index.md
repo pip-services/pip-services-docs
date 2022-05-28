@@ -46,6 +46,18 @@ In this example, we define a custom component with two methods. The first stores
 
 This component represents a dummy lock that produces no real results. As such, it can be used in testing or in situations where a lock is required but needs to be disabled. It should be noted that this class doesn’t contain a configure() method. 
 
+#### Lock creation
+
+To create a NullLock, we need to instantiate it. The following command shows how to do this:
+
+#### Lock acquisition and release
+
+The Null lock has the acquireLock() and releaseLock() methods. These methods can be called in the same manner as they are called by the MemoryLock class. The only difference is that they actually don’t acquire or release any lock but only simulate these operations.
+
+#### Example
+
+The following example replaces the MemoryLock used in the previous example with a NullLock. Thus, the locking is only simulated and doesn’t affect any part of the program.
+
 ### Wrapping up
 
 In this tutorial, we have learned how to use the MemoryLock and NullLock components. First, we saw that the first component allows us to create a lock that can be used to synchronize the execution of a process using shared memory. Then, we saw how to create, acquire, and release this kind of lock and an example of how to apply this component.

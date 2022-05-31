@@ -14,7 +14,7 @@ The CommandSet component allows us to group a set of commands and events, which 
 
 In this tutorial, you will learn how to create a CommandSet component, add commands and events to it, and perform some operations, such as executing or finding a specific command from a command set.
 
-### [Communication between components](component_communication)
+### [Component communication](component_communication)
 
 When using Pip.Services, a good programming practice is to use an external entity to handle the communication between different components. In this tutorial, you will learn how to do this by using the References class.
 

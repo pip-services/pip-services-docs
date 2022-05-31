@@ -27,15 +27,40 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 ### Examples
 
 ```go
+package main
+
+import (
+	"fmt"
+	"time"
+
+	queues "github.com/pip-services3-go/pip-services3-messaging-go/queues"
+)
+
+func main() {
+	messageQueue := queues.NewMemoryMessageQueue("myqueue")
+
+	go messageQueue.Listen("123", NewMyMessageReceiver())
+
+	opnErr := messageQueue.Open("123")
+	if opnErr == nil {
+		messageQueue.Send("123", queues.NewMessageEnvelope("", "mymessage", []byte("ABC"))) // Output in console: "Received message: ABC"
+	}
+
+	time.Sleep(500 * time.Millisecond)
+
+	opnErr = messageQueue.Close("123")
+}
+
 type MyMessageReceiver struct {
-  func (c*MyMessageReceiver) ReceiveMessage(envelop MessageEnvelop, queue IMessageQueue) {
-      fmt.Println("Received message: " + envelop.GetMessageAsString());
-  }
 }
-messageQueue := NewMemoryMessageQueue();
-messageQueue.Listen("123", NewMyMessageReceiver());
-opnErr := messageQueue.Open("123")
-if opnErr == nil{
-   messageQueue.Send("123", NewMessageEnvelop("", "mymessage", "ABC")); // Output in console: "Received message: ABC"
+
+func (c *MyMessageReceiver) ReceiveMessage(envelope *queues.MessageEnvelope, queue queues.IMessageQueue) (err error) {
+	fmt.Println("Received message: " + envelope.GetMessageAsString())
+	return nil
 }
+
+func NewMyMessageReceiver() *MyMessageReceiver {
+	return &MyMessageReceiver{}
+}
+
 ```

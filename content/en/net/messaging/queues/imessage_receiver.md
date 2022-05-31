@@ -36,8 +36,13 @@ class MyMessageReceiver: IMessageReceiver
 }
 
 var messageQueue = new MemoryMessageQueue();
-messageQueue.Listen("123", new MyMessageReceiver());
 
-messageQueue.Open("123");
-messageQueue.Send("123", new MessageEnvelop(null, "mymessage", "ABC")); // Output in console: "ABC"
+Task.Run(() => messageQueue.ListenAsync("123", new MyMessageReceiver()));
+
+await messageQueue.OpenAsync("123");
+await messageQueue.SendAsync("123", new MessageEnvelope(null, "mymessage", "ABC")); // Output in console: "ABC"
+
+Thread.Sleep(500);
+
+await messageQueue.CloseAsync("123");
 ```

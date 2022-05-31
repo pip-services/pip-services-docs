@@ -14,15 +14,15 @@ The CommandSet component allows us to group a set of commands and events, which 
 
 In this tutorial, you will learn how to create a CommandSet component, add commands and events to it, and perform some operations, such as executing or finding a specific command from a command set.
 
-### [Component communication](component_communication)
-
-When using Pip.Services, a good programming practice is to use an external entity to handle the communication between different components. In this tutorial, you will learn how to do this by using the References class.
-
-### [Commandable HTTP services](component_communication)
+### [Commandable HTTP services](commandable_http_services)
 
 In this tutorial, you will learn how to create and consume CommandableHttpServices. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 
 
 In order to explain its functionality, this tutorial begins by explaining the necessary pre-requisites to work with this component. Then, it shows how to create a command set and a service that uses it. To complete the service, it describes how to include it in a ProcessContainer.
+
+### [Communication between components](component_communication)
+
+When using Pip.Services, a good programming practice is to use an external entity to handle the communication between different components. In this tutorial, you will learn how to do this by using the References class.
 
 ### [Component Lifecycle](component_lifecycle)
 

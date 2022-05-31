@@ -26,13 +26,25 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 ### Examples
 
 ```python
+import time
+from threading import Thread
+
+from pip_services3_messaging.queues import IMessageReceiver, MemoryMessageQueue, MessageEnvelope
+
+
 class MyMessageReceiver(IMessageReceiver):
     def receive_message(self, envelop, queue):
-        print "Received message: " + envelop.get_message_as_string()
+        print("Received message: " + envelop.get_message_as_string())
+
 
 messageQueue = MemoryMessageQueue()
-messageQueue.listen("123", MyMessageReceiver())
-
 messageQueue.open("123")
-messageQueue.send("123", MessageEnvelope(None, "mymessage", "ABC")) # Output in console: "ABC"
+
+Thread(target=messageQueue.listen, args=("123", MyMessageReceiver()), daemon=True).start()
+
+messageQueue.send("123", MessageEnvelope(None, "mymessage", "ABC"))  # Output in console: "ABC"
+
+time.sleep(0.1)  # wait message
+
+messageQueue.close('123')
 ```

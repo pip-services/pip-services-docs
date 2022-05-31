@@ -26,14 +26,23 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 ### Examples
 
 ```dart
+import 'package:pip_services3_messaging/pip_services3_messaging.dart';
+
+void main(List<String> argument) async {
+  var messageQueue = MemoryMessageQueue();
+  messageQueue.listen('123', MyMessageReceiver());
+  await messageQueue.open('123');
+  await messageQueue.send('123',
+      MessageEnvelope(null, 'mymessage', 'ABC')); // Output in console: "ABC"
+  await Future.delayed(Duration(milliseconds: 500));
+  await messageQueue.close('123');
+}
+
 class MyMessageReceiver implements IMessageReceiver {
-  Future receiveMessage(MessageEnvelop envelope, IMessageQueue queue) async {
-      print("Received message: " + envelop.getMessageAsString());
+  @override
+  Future receiveMessage(MessageEnvelope envelope, IMessageQueue queue) async {
+    print('Received message: ' + envelope.getMessageAsString());
   }
 }
 
-var messageQueue =  MemoryMessageQueue();
-messageQueue.listen("123", MyMessageReceiver());
-await messageQueue.open("123")
-messageQueue.send("123", MessageEnvelop(null, "mymessage", "ABC")); // Output in console: "ABC"
 ```

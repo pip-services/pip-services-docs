@@ -26,15 +26,21 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 ### Examples
 
 ```typescript
-class MyMessageReceiver implements IMessageReceiver {
-  public async receiveMessage(envelop: MessageEnvelop, queue: IMessageQueue): Promise\<void\> {
-      console.log("Received message: " + envelop.getMessageAsString());
-  }
+import { IMessageQueue, IMessageReceiver, MemoryMessageQueue, MessageEnvelope } from "pip-services3-messaging-nodex";
+
+export async function main() {
+   
+    let messageQueue = new MemoryMessageQueue();
+    messageQueue.listen("123", new MyMessageReceiver());
+
+    await messageQueue.open("123")
+    await messageQueue.send("123", new MessageEnvelope(null, "mymessage", "ABC")); // Output in console: "ABC"
 }
 
-let messageQueue = new MemoryMessageQueue();
-messageQueue.listen("123", new MyMessageReceiver());
+class MyMessageReceiver implements IMessageReceiver {
+    public async receiveMessage(envelop: MessageEnvelope, queue: IMessageQueue): Promise<void> {
+        console.log("Received message: " + envelop.getMessageAsString());
+    }
+}
 
-await messageQueue.open("123")
-await messageQueue.send("123", new MessageEnvelop(null, "mymessage", "ABC")); // Output in console: "ABC"
 ```

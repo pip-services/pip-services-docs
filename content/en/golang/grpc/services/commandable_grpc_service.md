@@ -8,7 +8,7 @@ description: >
 
 ---
 
-**Implements:** [GrpcClient](../../clients/grpc_client)
+**Implements:** [GrpcService](../../services/grpc_service)
 
 
 ### Description

@@ -10,8 +10,8 @@ description: >
 
 **Implements:** [GrpcService](../../services/grpc_service)
 
-See also [CommandableGrpcClient](../../clients/commandable_grpc_client), 
-[GrpcService](../grpc_service)
+See also [CommandableGrpcClient](../../clients/commandable_grpc_client)
+
 
 ### Description
 

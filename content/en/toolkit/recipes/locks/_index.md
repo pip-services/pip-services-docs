@@ -35,7 +35,7 @@ description: >-
 
 This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will see the basic functionality of the MemoryLock class. Then, we will construct an example that will show how to use this type of lock. After this, we will learn what the NullLock is, how it differentiates from the MemoryLock and when to use it. At the end, we will summarize all the concepts learned.
 
-### The MemoryLock component
+### MemoryLock
 
 This component provides us with a lock that can be used to synchronize the execution of a process that uses shared memory. In addition to its own methods, it inherits from the Lock class two important ones: acquireLock() and configure(). The following sections explain how to create, configure, acquire and release this type of lock. 
 
@@ -213,7 +213,7 @@ And, after running the above code, we obtain the following results:
 
 ![figure 1](./figure1.png)
 
-### The NullLock component
+### NullLock
 
 This component represents a dummy lock that produces no real results. As such, it can be used in testing or in situations where a lock is required but needs to be disabled. It should be noted that this class doesn’t contain a configure() method. 
 

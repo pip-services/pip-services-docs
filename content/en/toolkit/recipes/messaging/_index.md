@@ -13,23 +13,43 @@ description: >-
 
 ### Introduction
 
+This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains the basics of this component and the necessary pre-requisites. Then, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to it, send and receive a message, and close the component. It ends by summarizing the learned points in a single program and wrapping up the concepts seen in this tutorial.
+
 ### The MemoryMessageQueue component
+
+This component provides a message queue that can be used within a process to send and receive messages. It is usually used for testing purposes.
 
 #### Pre-requisites
 
+In order to use this component, we need to import it first. The following command shows how to do this:
+
 #### Message receiver
+
+Following this, we create a message receiver that prints a customized message once a message is received. 
 
 #### Creating a MemoryMessageQueue component
 
+The next step is to create an instance of the MemoryMessageQueue class and open it. The following code shows how to do this:
+
 #### Creating a listener
+
+Now, we need to create a listener that waits for messages arriving at the queue. In order for this process not to collide with the message sending, we create it in a separate thread. The following code explains how this is done:
 
 #### Sending a message
 
+After creating a listener, we send a message to the queue. For this, we use a MessageEnvelope component, which allows us to add extra information to the message such as a correlationId and a message type. The following code explains how this can be done:
+
 #### Receiving a message
+
+After sending the message, the listener receives it and the message receiver prints out the following text:
 
 #### Closing the MemoryMessageQueue
 
+After using the memory queue, we close it to free resources. The following code shows how to do this:
+
 #### Final code
+
+Now, we can summarize the learned points in a single program. The code below shows the result of this review:
 
 #### Wrapping up
 

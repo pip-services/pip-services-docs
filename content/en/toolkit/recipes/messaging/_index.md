@@ -23,6 +23,30 @@ This component provides a message queue that can be used within a process to sen
 
 In order to use this component, we need to import it first. The following command shows how to do this:
 
+{{< tabsection >}}
+   Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Message receiver
 
 Following this, we create a message receiver that prints a customized message once a message is received. 

@@ -163,29 +163,7 @@ After creating a listener, we send a message to the queue. For this, we use a Me
 
 After sending the message, the listener receives it and the message receiver prints out the following text:
 
-{{< tabsection >}}
-   Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available   
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+![figure 1](./figure1.png)
 
 #### Closing the MemoryMessageQueue
 
@@ -208,7 +186,7 @@ After using the memory queue, we close it to free resources. The following code 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,7 +214,7 @@ Now, we can summarize the learned points in a single program. The code below sho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

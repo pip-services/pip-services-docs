@@ -189,7 +189,7 @@ After creating a listener, we send a message to the queue. For this, we use a Me
 
 #### Receiving a message
 
-After sending the message, the listener receives it and the message receiver prints out the following text:
+After sending the message, the listener receives it and the message receiver prints the following text:
 
 ![figure 1](./figure1.png)
 

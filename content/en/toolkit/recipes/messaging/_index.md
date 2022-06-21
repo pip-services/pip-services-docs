@@ -11,6 +11,34 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>MemoryMessageQueue</td>
+    <td>Message queue that sends and receives messages within the same process by using shared memory.</td>
+  </tr>
+  <tr>
+    <td>listen()</td>
+    <td>Method used to listen for incoming messages.</td>
+  </tr>
+  <tr>
+    <td>send()</td>
+    <td>Method used to send a message into a queue.</td>
+  </tr>
+  <tr>
+    <td>open()</td>
+    <td>Method used to open the component.</td>
+  </tr>
+  <tr>
+    <td>close()</td>
+    <td>Method used to close a MemoryMessageQueue and free used resources.</td>
+  </tr>
+  <tr>
+    <td>MessageEnvelope</td>
+    <td>Component used to add information to a message.</td>
+  </tr>
+</table>
+
+
 ### Introduction
 
 This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains the basics of this component and the necessary pre-requisites. Then, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to it, send and receive a message, and close the component. It ends by summarizing the learned points in a single program and wrapping up the concepts seen in this tutorial.

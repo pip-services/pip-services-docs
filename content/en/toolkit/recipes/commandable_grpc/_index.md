@@ -31,6 +31,8 @@ The example in this tutorial is structured according to the Commandable pattern.
 
 The main advantage that this pattern offers is allowing the use of a defined command set by commandable components using different communication methods – such as gRPC, HTTP, Azure, etc. - where the specifics for each case are declared in the controller and the common aspects in the CommandSet class.
 
+![figure 1](./figure1.png)
+
 ### Example
 
 To learn how to create a commandable gRPC client and service, we will build an example where a service uses a commandable set containing CRUD operations that are applied to data objects.
@@ -43,6 +45,8 @@ Second, our service is organized into three layers namely, data, business logic 
 The data layer is represented in the “data” directory and contains the files that define the data structure used in this example. The business logic layer contains the controller and command set and the corresponding files are stored in the “logic” directory. And, the “services” directory contains the commandable gRPC service. 
 
 Three additional files in this project are the container used to wrap the application and stored in the “containers” directory; the “main” program, which is the application starter; and the client_creator, which is used to create an instance of the client and call the CRUD methods.  
+
+![figure 2](./figure2.png)
 
 #### Pre-requisites
 
@@ -429,6 +433,8 @@ Now, we start the service. For this, we run the following code:
 
 Which, after execution, produces the following output:
 
+![figure 3](./figure3.png)
+
 Once our service is running, we run a program that creates an instance of the client and instances of the MyData class, and calls the CRUD operations available from the service. The following code shows how to do this:
 
 {{< tabsection >}}
@@ -456,6 +462,8 @@ Once our service is running, we run a program that creates an instance of the cl
 {{< /tabsection >}}
 
 Which, after running will produce the following output from our service:
+
+![figure 4](./figure4.png)
 
 ### Wrapping up
 

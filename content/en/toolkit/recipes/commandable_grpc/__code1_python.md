@@ -1,4 +1,4 @@
 
 ```python
-jupyter notebook --NotebookApp.port=9999  --notebook-dir 'E:\anaconda'
+from pip_services3_grpc.services.CommandableGrpcService import CommandableGrpcService
 ```

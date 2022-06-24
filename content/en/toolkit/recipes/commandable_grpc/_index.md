@@ -1,15 +1,35 @@
 ---
+type: docs
+no_list: true
 title: "Commandable gRPC"
 linkTitle: "Commandable gRPC"
 description: >-
      How to create a commandable gRPC client and service.
 ---
 
-## Heading
+### Key takeaways
 
-Edit this template to create your new page.
+### Introduction
 
-* Give it a good name, ending in `.md` - e.g. `getting-started.md`
-* Edit the "front matter" section at the top of the page (weight controls how its ordered amongst other pages in the same directory; lowest number first).
-* Add a good commit message at the bottom of the page (<80 characters; use the extended description field for more detail).
-* Create a new branch so you can preview your new file and request a review via Pull Request.
+This tutorial will help you understand how to create a commandable gRPC client and service. First, we will learn the basics of these components. Then, we will create an example where a commandable gRPC client communicates with a commandable gRPC service. After the example, we will summarize the concepts learned.
+
+### Commandable gRPC basics
+
+gRPC is an open-source RPC framework based on  HTTP/2 and originally created by Google. Pip.Services implements it in the gRPC module. The two main components in this module are CommandableGrpcService and CommandableGrprcClient. 
+
+The CommandableGrpcService class describes a service that receives commands via the gRPC protocol. These commands are then linked to commands defined in a CommandSet component.     
+
+The CommandableGrpcClient class is used to create clients that call a CommandbleGrpcService.
+Additionally, when using these two components, we need to define a set of commands. For this, we use the CommandSet class.     
+
+### Commandable pattern
+
+The example in this tutorial is structured according to the Commandable pattern. This pattern considers a CommandSet component, where all commands are registered. It also considers a controller that links to this command set and defines the specific aspects of each command.
+
+The main advantage that this pattern offers is allowing the use of a defined command set by commandable components using different communication methods – such as gRPC, HTTP, Azure, etc. - where the specifics for each case are declared in the controller and the common aspects in the CommandSet class.
+
+### Example
+
+### Wrapping up
+
+In this tutorial, we have learned how to create a simple system that includes a command set, together with a service and a client that communicate via the gRPC protocol. In order to do this, we created a system that contains a CommandSet, a CommandableGrpcService and a CommandableGrpcClient. Then, we encapsulated our service in a container and created a program that calls the different CRUD methods available from the command set.

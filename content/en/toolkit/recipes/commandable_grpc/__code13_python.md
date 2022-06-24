@@ -11,7 +11,6 @@ from pip_services3_grpc.clients.CommandableGrpcClient import CommandableGrpcClie
 from data.MyData import MyData
 from .IMyDataClient import IMyDataClient
 
-
 class MyCommandableGrpcClient(CommandableGrpcClient, IMyDataClient):
 
     def __init__(self):
@@ -31,6 +30,5 @@ class MyCommandableGrpcClient(CommandableGrpcClient, IMyDataClient):
 
     def delete_my_data(self, correlation_id: Optional[str], my_data_id: str) -> MyData:
         return self.call_command('delete_my_data', correlation_id, {'my_data_id': my_data_id})
-
 
 ```

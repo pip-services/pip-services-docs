@@ -37,26 +37,59 @@ To learn how to create a commandable gRPC client and service, we will build an e
 
 #### Project structure
 
+To organize this example, we use the following directory structure: First, we have a directory named “clients” that contains all the files related to the client. 
+Second, our service is organized into three layers namely, data, business logic and service layers. 
+
+The data layer is represented in the “data” directory and contains the files that define the data structure used in this example. The business logic layer contains the controller and command set and the corresponding files are stored in the “logic” directory. And, the “services” directory contains the commandable gRPC service. 
+
+Three additional files in this project are the container used to wrap the application and stored in the “containers” directory; the “main” program, which is the application starter; and the client_creator, which is used to create an instance of the client and call the CRUD methods.  
+
 #### Pre-requisites
+
+In order to create the CommandableGrpcService, we need to import this class first. The following code shows how to do this:
+
+Similarly, we need to import the CommandableGrpcClient:
 
 #### Data structure
 
+The next thing that we need to do is to create a class representing the data to be used in the example. The code below shows the MyData class, which defines the data structure of an identifiable data object containing a key and a content field. Additionally, we define a toString() method, which transforms the data object into a dictionary.
+
+We also need to create a schema for this data class, which will be used by the CommandSet component:
+
+And a factory, which will be used by the container:
+
 #### Command set
+
+Now, we need to create a command set component. We do this by extending the CommandSet class and defining our CRUD commands. 
+
 
 #### Controller
 
+Next, we create a controller to manage the logic of our example. This controller extends an interface where we declare the CRUD methods used. It also links to our command set from where it obtains the collection of commands used and to the gRPC service that receives data from the client. For each of the commands defined in the CommandSet, it defines a method with the operations that are particular to the considered commandable class. The code below shows the controller and its interface:
+
 #### Service
+
+Next, we define the service that provides an endpoint to our application. The following code shows what this service should look like:
 
 #### Container
 
+To run our service, we define a container that calls the data factory previously defined and the DefaultGrpcFactory component. These classes will create our data objects and gRPC service respectively.
+
 #### Configuration
+
+Our next step is to create a config file that contains information about our components and can be used by our container to find them. The code below shows the content of this file:
 
 #### Proto files
 
+When using the commandable gRPC classes, we don’t need to worry about the proto files. This is because these classes rely on a universal proto file defined in the gRPC module and that is automatically called by them. 
+
 #### Client
+
+After defining our service, we need to create a client that calls its methods. First, we create an interface that declares the used CRUD methods. Then, we create a class that calls this interface and we define in it the methods declared in the interface. The code below shows both programs:
 
 #### Running the application
 
+Now, we start the service. For this, we run the following code:
 
 ### Wrapping up
 

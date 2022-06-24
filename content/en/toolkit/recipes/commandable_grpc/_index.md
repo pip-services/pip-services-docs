@@ -30,6 +30,31 @@ The main advantage that this pattern offers is allowing the use of a defined com
 
 ### Example
 
+To learn how to create a commandable gRPC client and service, we will build an example where a service uses a commandable set containing CRUD operations that are applied to data objects.
+
+#### Project structure
+
+#### Pre-requisites
+
+#### Data structure
+
+#### Command set
+
+#### Controller
+
+#### Service
+
+#### Container
+
+#### Configuration
+
+#### Proto files
+
+#### Client
+
+#### Running the application
+
+
 ### Wrapping up
 
 In this tutorial, we have learned how to create a simple system that includes a command set, together with a service and a client that communicate via the gRPC protocol. In order to do this, we created a system that contains a CommandSet, a CommandableGrpcService and a CommandableGrpcClient. Then, we encapsulated our service in a container and created a program that calls the different CRUD methods available from the command set.

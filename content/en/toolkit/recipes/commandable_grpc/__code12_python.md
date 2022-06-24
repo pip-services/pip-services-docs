@@ -2,11 +2,8 @@
 ```python
 from abc import ABC
 from typing import Optional
-
 from pip_services3_commons.data import FilterParams, PagingParams, DataPage
-
 from data.MyData import MyData
-
 
 class IMyDataClient(ABC):
 

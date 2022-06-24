@@ -7,10 +7,24 @@ description: >-
      How to create a commandable gRPC client and service.
 ---
 
-
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
 ### Key takeaways
+
+<table class="full-width-table">
+  <tr>
+    <td>CommandSet</td>
+    <td>Component that contains a set of commands and events supported by a commandable object.</td>
+  </tr>
+  <tr>
+    <td>CommandableGrpcService</td>
+    <td>Service that receives commands via the gRPC protocol.</td>
+  </tr>
+  <tr>
+    <td>CommandableGrpcClient</td>
+    <td>Client that calls a commandable gRPC service.</td>
+  </tr>
+</table>
 
 ### Introduction
 

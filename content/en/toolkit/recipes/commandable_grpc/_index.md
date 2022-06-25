@@ -55,7 +55,7 @@ To learn how to create a commandable gRPC client and service, we will build an e
 To organize this example, we use the following directory structure: First, we have a directory named “clients” that contains all the files related to the client. 
 Second, our service is organized into three layers namely, data, business logic and service layers. 
 
-The data layer is represented in the “data” directory and contains the files that define the data structure used in this example. The business logic layer contains the controller and command set and the corresponding files are stored in the “logic” directory. And, the “services” directory contains the commandable gRPC service. 
+The data layer is represented in the “data” directory and contains the files that define the data structure used in this example. The business logic layer contains the controller and command set, and the corresponding files are stored in the “logic” directory. And, the “services” directory contains the commandable gRPC service. 
 
 Three additional files in this project are the container used to wrap the application and stored in the “containers” directory; the “main” program, which is the application starter; and the client_creator, which is used to create an instance of the client and call the CRUD methods.  
 

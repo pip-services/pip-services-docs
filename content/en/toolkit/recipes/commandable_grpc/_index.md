@@ -365,7 +365,7 @@ When using the commandable gRPC classes, we don’t need to worry about the prot
 
 #### Client
 
-After defining our service, we need to create a client that calls its methods. For this, we create an interface that declares the used CRUD methods. Then, we construct a class that calls this interface and define in it the methods declared in the interface. The code below shows both programs:
+After defining our service, we need to create a client that calls its methods. For this, we create an interface that declares the used CRUD methods. Then, we construct a class that calls this interface and defines the inherited methods. The code below shows both programs:
 
 {{< tabsection >}}
   Not available  

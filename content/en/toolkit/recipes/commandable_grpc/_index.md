@@ -361,7 +361,7 @@ Our next step is to create a config file that contains information about our com
 
 #### Proto files
 
-When using the commandable gRPC classes, we don’t need to worry about the proto files. This is because these classes rely on a universal proto file defined in the gRPC module and that is automatically called by them. 
+When using the commandable gRPC classes, we don’t need to worry about the proto files. This is because these classes rely on a universal proto file defined in the gRPC module that is automatically called by them. 
 
 #### Client
 

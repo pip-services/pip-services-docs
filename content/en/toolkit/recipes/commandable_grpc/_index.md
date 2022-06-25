@@ -42,7 +42,7 @@ The CommandableGrpcClient class is used to create clients that call a Commandble
 
 The example in this tutorial is structured according to the Commandable pattern. This pattern considers a CommandSet component, where all commands are registered. It also uses a controller that links to this command set and defines the specific aspects of each command.
 
-The main advantage that this pattern offers is allowing the use of a defined command set by commandable components using different communication methods – such as gRPC, HTTP, Azure, etc. - where the specifics for each case are declared in the controller and the common aspects in the CommandSet class.
+The main advantage that this pattern offers is allowing for the use of a defined command set by commandable components using different communication methods – such as gRPC, HTTP, Azure, etc. - where the specifics for each case are declared in the controller and the common aspects in the CommandSet class.
 
 ![figure 1](./figure1.png)
 

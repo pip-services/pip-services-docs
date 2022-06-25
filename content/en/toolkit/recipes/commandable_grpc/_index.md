@@ -418,7 +418,7 @@ After defining our service, we need to create a client that calls its methods. F
 
 #### Running the application
 
-Now, we start the service. For this, we run the following code:
+Now, we start the service. To do this, we run the following code:
 
 {{< tabsection >}}
   Not available  

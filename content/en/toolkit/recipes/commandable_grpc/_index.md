@@ -36,8 +36,7 @@ gRPC is an open-source RPC framework based on  HTTP/2 and originally created by 
 
 The CommandableGrpcService class describes a service that receives commands via the gRPC protocol. These commands are then linked to commands defined in a CommandSet component.     
 
-The CommandableGrpcClient class is used to create clients that call a CommandbleGrpcService.
-Additionally, when using these two components, we need to define a set of commands. For this, we use the CommandSet class.     
+The CommandableGrpcClient class is used to create clients that call a CommandbleGrpcService.  
 
 ### Commandable pattern
 

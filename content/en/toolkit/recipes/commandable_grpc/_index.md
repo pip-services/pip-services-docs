@@ -44,7 +44,7 @@ The example in this tutorial is structured according to the Commandable pattern.
 
 The main advantage that this pattern offers is allowing for the use of a defined command set by commandable components using different communication methods – such as gRPC, HTTP, Azure, etc. - where the specifics for each case are declared in the controller and the common aspects in the CommandSet class.
 
-![figure 1](./figure1.png)
+![figure 1](./figure1b.png)
 
 ### Example
 

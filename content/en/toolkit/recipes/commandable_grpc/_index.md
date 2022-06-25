@@ -48,7 +48,7 @@ The main advantage that this pattern offers is allowing the use of a defined com
 
 ### Example
 
-To learn how to create a commandable gRPC client and service, we will build an example where a service uses a commandable set containing CRUD operations that are applied to data objects.
+To learn how to create a commandable gRPC client and service, we will build an example where a service uses a command set containing CRUD operations that are applied to data objects.
 
 #### Project structure
 

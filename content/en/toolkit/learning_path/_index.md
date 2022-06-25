@@ -79,7 +79,7 @@ a.	Synchronous
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/)         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC (https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/)        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets (http://docs.pipservices.org/toolkit/recipes/command_set/)          
 b.	Asynchronous        
 &nbsp;&nbsp;&nbsp;Choose one of the following:        
@@ -105,5 +105,5 @@ _Optional (Self-study)_
 a.	Direct client (http://docs.pipservices.org/toolkit/recipes/direct_client/)               
 b.	Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
 c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
-d.	Commandable gRPC       
+d.	Commandable gRPC (https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/#client)      
 e.	Mock      

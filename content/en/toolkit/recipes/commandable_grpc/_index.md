@@ -333,7 +333,7 @@ To run our service, we define a container that calls the data factory previously
 
 #### Configuration
 
-Our next step is to create a config file that contains information about our components and can be used by our container to find them. In this example, we don't specify the _config_path in the container but we use its default value ("./config/config.yml"). The code below shows the content of this file:
+Our next step is to create a config file that contains information about our components and can be used by our container to find them. In this example, we don't specify the _config_path variable in the container but we use its default value ("./config/config.yml"). The code below shows the content of this file:
 
 {{< tabsection >}}
   Not available  

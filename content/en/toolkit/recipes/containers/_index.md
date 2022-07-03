@@ -17,7 +17,7 @@ This tutorial will help you understand how to create a ProcessContainer that man
 
 ### The ProcessContainer container
 
-Docker defines a container as 
+[Docker](https://www.docker.com/resources/what-container/) defines a container as 
 
 > “a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.”
 

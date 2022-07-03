@@ -195,7 +195,7 @@ Now that our code is ready, we can run our container. This is done via its run()
 
 As a result, we get the following output on our console:
 
-
+![figure 1](./figure1.png)
 
 #### Final code
 

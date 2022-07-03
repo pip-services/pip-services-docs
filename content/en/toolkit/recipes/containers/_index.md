@@ -11,6 +11,25 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>ProcessContainer</td>
+    <td>Container that can be used to run contained code as a system process.</td>
+  </tr>
+  <tr>
+    <td>Custom component</td>
+    <td>Custom component created for the tutorial’s example.</td>
+  </tr>
+  <tr>
+    <td>Factory</td>
+    <td>Component used to create the contained components.</td>
+  </tr>
+  <tr>
+    <td>Configuration file</td>
+    <td>File used by the container to locate components.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 This tutorial will help you understand how to create a ProcessContainer that manages the life cycle of a custom component. First, we will see a brief description of the component and how to import it. Then, we will create a custom component, a factory to create it, and a process container. Finally, we will run the container and summarize all the learned concepts.

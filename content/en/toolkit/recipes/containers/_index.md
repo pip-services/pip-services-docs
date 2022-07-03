@@ -7,11 +7,24 @@ description: >-
      How to create a ProcessContainer.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 ### Introduction
 
+This tutorial will help you understand how to create a ProcessContainer that manages the life cycle of a custom component. First, we will see a brief description of the component and how to import it. Then, we will create a custom component, a factory to create it, and a process container. Finally, we will run the container and summarize all the learned concepts.
+
 ### The ProcessContainer container
+
+Docker defines a container as 
+
+> “a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.”
+
+Pip.Services offers the ProcessContainer, which allows us to run our contained code as a system process.
+
+In this tutorial, we will create a ProcessContainer component that packages a custom component, run it, and check the results.
+
 
 ### Wrapping up
 

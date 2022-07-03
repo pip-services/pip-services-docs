@@ -195,29 +195,7 @@ Now that our code is ready, we can run our container. This is done via its run()
 
 As a result, we get the following output on our console:
 
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-   Not available    
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 #### Final code
 
@@ -240,7 +218,7 @@ Finally, we merge the code from the previous sections into one program:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code8_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

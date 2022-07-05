@@ -216,6 +216,21 @@ As a result, we get the following output on our console:
 
 ![figure 1](./figure1.png)
 
+As we can see from the above results, the container takes care of the lifecycle of the packaged components:
+
+1.	It obtains information about dependencies from the configuration file.
+2.	Creates the packaged components via their respective factories.
+3.	Configures the configurable components.
+4.	Links the components to the components described in their set_references() method.
+5.	Opens the openable components.
+
+Once the process is stopped, the container:
+
+1.	Unlinks the linked components.
+2.	Closes the opened components
+3.	Closes itself.
+
+
 #### Final code
 
 Finally, we merge the code from the previous sections into one program:

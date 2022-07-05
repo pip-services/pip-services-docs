@@ -40,7 +40,7 @@ d.	[Configurations](http://docs.pipservices.org/toolkit/getting_started/configur
 3.	Persistence:      
 a.	Choose one of the following:      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Memory         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Memory]Persistence Component (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)               
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Memory Persistence Component](http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)               
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Redis](https://pip-services.github.io/pip-services-docs/toolkit/recipes/redis/)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Memcached](https://pip-services.github.io/pip-services-docs/toolkit/recipes/memcached/)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	File storage      
@@ -90,10 +90,9 @@ b.	Asynchronous
 ### Day 4
 6.	Containers: Process, Docker, Serverless         
 a.	Containers       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Process container
-(https://pip-services.github.io/pip-services-docs/toolkit/recipes/containers/)                  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Process container](https://pip-services.github.io/pip-services-docs/toolkit/recipes/containers/)                  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker (http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Docker](http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/)          
 b.	Serverless        
 Choose one of the following:       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         

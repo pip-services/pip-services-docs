@@ -92,7 +92,7 @@ b.	Asynchronous
 6.	Containers: Process, Docker, Serverless         
 a.	Containers       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Process container
-(http://docs.pipservices.org/toolkit/getting_started/your_first_microservice/#step-6-container)                  
+(https://pip-services.github.io/pip-services-docs/toolkit/recipes/containers/)                  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Docker (http://docs.pipservices.org/toolkit/tutorials/microservice_dockerization/)          
 b.	Serverless        

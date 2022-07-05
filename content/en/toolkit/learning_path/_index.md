@@ -40,53 +40,52 @@ d.	[Configurations](http://docs.pipservices.org/toolkit/getting_started/configur
 3.	Persistence:      
 a.	Choose one of the following:      
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Memory         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Memory Persistence Component (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)               
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Redis (https://pip-services.github.io/pip-services-docs/toolkit/recipes/redis/)       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Memcached (https://pip-services.github.io/pip-services-docs/toolkit/recipes/memcached/)       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Memory]Persistence Component (http://docs.pipservices.org/toolkit/tutorials/data_microservice/step3/)               
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Redis](https://pip-services.github.io/pip-services-docs/toolkit/recipes/redis/)       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Memcached](https://pip-services.github.io/pip-services-docs/toolkit/recipes/memcached/)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	File storage      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - JSON file persistence (http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [JSON file persistence](http://docs.pipservices.org/toolkit/recipes/json_persistence/)        
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.	Document storage            
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	MongoDB (http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/)                
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[MongoDB](http://docs.pipservices.org/toolkit/recipes/mongodb_persistence_basic/)                
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Relational storage     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	MySQL (http://docs.pipservices.org/toolkit/recipes/mysql_persistence/)          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	PostgreSQL (http://docs.pipservices.org/toolkit/recipes/postgre_persistence/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	SQLServer (http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/)       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[MySQL](http://docs.pipservices.org/toolkit/recipes/mysql_persistence/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[PostgreSQL](http://docs.pipservices.org/toolkit/recipes/postgre_persistence/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[SQLServer](http://docs.pipservices.org/toolkit/recipes/sqlserver_persistence/)       
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Other      
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - Cassandra (http://docs.pipservices.org/toolkit/recipes/cassandra/)                 
-b.	Designing persistence components 
-                               (http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; - [Cassandra](http://docs.pipservices.org/toolkit/recipes/cassandra/)                 
+b.	[Designing persistence components](http://docs.pipservices.org/toolkit/recipes/designing_persistence/) 
 
 4.	Business Logic: Controllers, Observability, Synchronization, Caching, States...
 a.	Controllers         
 b.	Observability:              
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Logging (http://docs.pipservices.org/toolkit/recipes/logging/)            
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Logging](http://docs.pipservices.org/toolkit/recipes/logging/)            
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Metrics          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Prometheus (http://docs.pipservices.org/toolkit/recipes/prometheus/)           
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Datadog (http://docs.pipservices.org/toolkit/recipes/datadog/)          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Elasticsearch (https://pip-services.github.io/pip-services-docs/toolkit/recipes/elasticsearch/)          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	Fluentd (https://pip-services.github.io/pip-services-docs/toolkit/recipes/fluentd/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Prometheus](http://docs.pipservices.org/toolkit/recipes/prometheus/)           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Datadog](http://docs.pipservices.org/toolkit/recipes/datadog/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Elasticsearch](https://pip-services.github.io/pip-services-docs/toolkit/recipes/elasticsearch/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -	[Fluentd](https://pip-services.github.io/pip-services-docs/toolkit/recipes/fluentd/)          
 c.	Concurrency          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Caching (http://docs.pipservices.org/toolkit/getting_started/caching/)           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Caching](http://docs.pipservices.org/toolkit/getting_started/caching/)           
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_          
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Locking (http://docs.pipservices.org/toolkit/recipes/locks/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Locking](http://docs.pipservices.org/toolkit/recipes/locks/)         
 
 ### Day 3
 
 5.	Communication: REST, GRPC, Commandable       
 a.	Synchronous       
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	REST (http://docs.pipservices.org/toolkit/recipes/rest_service/)               
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[REST](http://docs.pipservices.org/toolkit/recipes/rest_service/)               
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	Commandable gRPC (https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/)        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Command sets (http://docs.pipservices.org/toolkit/recipes/command_set/)          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[gRPC](http://docs.pipservices.org/toolkit/recipes/grpc/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  [Commandable HTTP](http://docs.pipservices.org/toolkit/recipes/commandable_http_services/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.	[Commandable gRPC](https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/)        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Command sets](http://docs.pipservices.org/toolkit/recipes/command_set/)          
 b.	Asynchronous        
 &nbsp;&nbsp;&nbsp;Choose one of the following:        
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.  Messaging (http://docs.pipservices.org/toolkit/recipes/messaging/)         
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.  MQTT (http://docs.pipservices.org/toolkit/recipes/mqtt/)            
-&nbsp;&nbsp;&nbsp;&nbsp;iii.  Kafka (http://docs.pipservices.org/toolkit/recipes/kafka/)         
-&nbsp;&nbsp;&nbsp;&nbsp;iv.  RabbitMQ (https://pip-services.github.io/pip-services-docs/toolkit/recipes/rabbitmq/)                
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.  [Messaging](http://docs.pipservices.org/toolkit/recipes/messaging/)         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.  [MQTT](http://docs.pipservices.org/toolkit/recipes/mqtt/)            
+&nbsp;&nbsp;&nbsp;&nbsp;iii.  [Kafka](http://docs.pipservices.org/toolkit/recipes/kafka/)         
+&nbsp;&nbsp;&nbsp;&nbsp;iv.  [RabbitMQ](https://pip-services.github.io/pip-services-docs/toolkit/recipes/rabbitmq/)                
 
 ### Day 4
 6.	Containers: Process, Docker, Serverless         
@@ -103,7 +102,7 @@ Choose one of the following:
 a.	[REST client](http://docs.pipservices.org/toolkit/recipes/rest_client/)            
 _Optional (Self-study)_        
 a.	[Direct client](http://docs.pipservices.org/toolkit/recipes/direct_client/)               
-b.	Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
-c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
-d.	Commandable gRPC (https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/#client)      
+b.	[Commandable HTTP](http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
+c.	[gRPC](http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
+d.	[Commandable gRPC](https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/#client)      
 e.	Mock      

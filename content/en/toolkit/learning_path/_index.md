@@ -19,21 +19,21 @@ b.	[Building blocks: a brief description](https://pip-services.github.io/pip-ser
 c.	[Toolkit architecture](http://docs.pipservices.org/toolkit/getting_started/toolkit_architecture/)
 
 2.	Basic Patterns: Components, Configurations, Reflection, ...    
-a.	Three-tier architecture (http://docs.pipservices.org/toolkit/recipes/three_tier_architecture/)    
-b.	Creating a component (http://docs.pipservices.org/toolkit/recipes/creating_a_component/)     
-c.	Communicating between components (http://docs.pipservices.org/toolkit/recipes/component_communication/)     
-d.	Configurations (http://docs.pipservices.org/toolkit/getting_started/configurations/)     
+a.	[Three-tier architecture](http://docs.pipservices.org/toolkit/recipes/three_tier_architecture/)    
+b.	[Creating a component](http://docs.pipservices.org/toolkit/recipes/creating_a_component/)     
+c.	[Communicating between components](http://docs.pipservices.org/toolkit/recipes/component_communication/)     
+d.	[Configurations](http://docs.pipservices.org/toolkit/getting_started/configurations/)     
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_
   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	Configuring connections (http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	Configuring credentials (http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
-&nbsp;&nbsp;&nbsp;&nbsp;iii.	Config file syntax (http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
-&nbsp;&nbsp;&nbsp;&nbsp;iv.	Descriptors (http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	Discovery services (http://docs.pipservices.org/toolkit/recipes/discovery_services/)     
-&nbsp;&nbsp;&nbsp;&nbsp;vi.	Connection utilities (http://docs.pipservices.org/toolkit/recipes/connection_utils/)     
-&nbsp;&nbsp;&nbsp;&nbsp;vii.	Mustache templates (http://docs.pipservices.org/toolkit/recipes/mustache_templates/)     
-&nbsp;&nbsp;&nbsp;viii. Reflection (http://docs.pipservices.org/toolkit/recipes/reflection/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i.	[Configuring connections](http://docs.pipservices.org/toolkit/recipes/configuring_connections/)                
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ii.	[Configuring credentials](http://docs.pipservices.org/toolkit/recipes/configuring_credentials/)      
+&nbsp;&nbsp;&nbsp;&nbsp;iii.	[Config file syntax](http://docs.pipservices.org/toolkit/recipes/config_file_syntax/)     
+&nbsp;&nbsp;&nbsp;&nbsp;iv.	[Descriptors](http://docs.pipservices.org/toolkit/getting_started/descriptors/)     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;v.	[Discovery services](http://docs.pipservices.org/toolkit/recipes/discovery_services/)     
+&nbsp;&nbsp;&nbsp;&nbsp;vi.	[Connection utilities](http://docs.pipservices.org/toolkit/recipes/connection_utils/)     
+&nbsp;&nbsp;&nbsp;&nbsp;vii.	[Mustache templates](http://docs.pipservices.org/toolkit/recipes/mustache_templates/)     
+&nbsp;&nbsp;&nbsp;viii. [Reflection](http://docs.pipservices.org/toolkit/recipes/reflection/)     
 
 ### Day 2
 
@@ -100,9 +100,9 @@ Choose one of the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iii.  AWS Lambda         
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;iv.  Microsoft Azure         
 7.	Clients:           
-a.	REST client (http://docs.pipservices.org/toolkit/recipes/rest_client/)            
+a.	[REST client](http://docs.pipservices.org/toolkit/recipes/rest_client/)            
 _Optional (Self-study)_        
-a.	Direct client (http://docs.pipservices.org/toolkit/recipes/direct_client/)               
+a.	[Direct client](http://docs.pipservices.org/toolkit/recipes/direct_client/)               
 b.	Commandable HTTP (http://docs.pipservices.org/toolkit/recipes/commandable_http_services/#using-a-commandablehttpclient)           
 c.	gRPC (http://docs.pipservices.org/toolkit/recipes/grpc/#client)              
 d.	Commandable gRPC (https://pip-services.github.io/pip-services-docs/toolkit/recipes/commandable_grpc/#client)      

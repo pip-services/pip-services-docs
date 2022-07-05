@@ -221,7 +221,7 @@ As we can see from the above results, the container takes care of the lifecycle 
 1.	It obtains information about dependencies from the configuration file.
 2.	Creates the packaged components via their respective factories.
 3.	Configures the configurable components.
-4.	Links the components to the components described in their set_references() method.
+4.	Links the components to the components registered in their set_references() method.
 5.	Opens the openable components.
 
 Once the process is stopped, the container:

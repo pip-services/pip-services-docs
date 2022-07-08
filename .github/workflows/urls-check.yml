@@ -1,20 +1,20 @@
-name: check site urls
+# name: check site urls
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron:  '00 05 * * *' # UTC 0 timezone
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron:  '00 05 * * *' # UTC 0 timezone
 
-jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-18.04
+#     steps:
+#       - uses: actions/checkout@v2
 
-      - name: Setup python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8 
+#       - name: Setup python
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: 3.8 
 
-      - name: Check site urls
-        run: cd python_checker && ./run.ps1
+#       - name: Check site urls
+#         run: cd python_checker && ./run.ps1

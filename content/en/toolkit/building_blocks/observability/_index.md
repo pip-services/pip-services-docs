@@ -15,7 +15,8 @@ It is not sufficient just to collect logs and traces across multiple microservic
 
 A correlationId is any value that can uniquely identify business transactions in a system. One way to generate correlationIds is to use natural keys, like “transaction name + timestamp”. Another common way to generate correlationIds is to use string GUIDs. Although, they could be too long and lack meaning, they are unique in the universe and very easy to generate.
 
-Logging
+### Logging
+
 There are myriads of logging libraries in all known programming languages. But Pip.Services includes its own abstractions for logging. Why? There are several reasons for that:
 1.	To achieve consistency and symmetry across all languages, as it is the key goal for the toolkit
 2.	To use the Pip.Services component model and easily integrate with common patterns like inversion of control or configurations

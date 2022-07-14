@@ -22,13 +22,13 @@ class MyDataCommandSet(CommandSet):
         super().__init__()
         self.__controller = controller
 
-        self.add_command(self.__make_page_by_filter_command())
+        self.add_command(self._make_page_by_filter_command())
         self.add_command(self._make_get_one_by_id_command())
         self.add_command(self._make_create_command())
         self.add_command(self._make_update_command())
         self.add_command(self._make_delete_by_id_command())
 
-    def __make_page_by_filter_command(self) -> ICommand:
+    def _make_page_by_filter_command(self) -> ICommand:
         def handler(correlation_id, args):
             filter = FilterParams.from_value(args.get("filter"))
             paging = PagingParams.from_value(args.get("paging"))

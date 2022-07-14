@@ -19,5 +19,4 @@ class DefaultMyDataFactory(Factory):
         super().__init__()
         self.register_as_type(DefaultMyDataFactory.ControllerDescriptor, MyDataController)
         self.register_as_type(DefaultMyDataFactory.CommandableGrpcServiceDescriptor, MyDataCommandableGrpcService)
-        self.register_as_type(DefaultMyDataFactory.ControllerDescriptor, MyDataController)
 ```

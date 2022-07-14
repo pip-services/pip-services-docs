@@ -1,25 +1,24 @@
 
-```
----
-# Container descriptor
-- descriptor: "pip-services:context-info:default:default:1.0"
-  name: "mydata"
-  description: "MyData microservice"
+```python
+from abc import ABC
+from typing import Optional
+from pip_services3_commons.data import FilterParams, PagingParams, DataPage
+from data.MyData import MyData
 
-# Console logger
-- descriptor: "pip-services:logger:console:default:1.0"
-  level: "trace"
+class IMyDataClient(ABC):
 
-# Controller
-- descriptor: "service-mydata:controller:default:default:1.0"
+    def get_my_datas(self, correlation_id: Optional[str], filter: Optional[FilterParams], paging: Optional[PagingParams]) -> DataPage:
+        pass
 
-# Common GRPC endpoint
-- descriptor: "pip-services:endpoint:grpc:default:1.0"
-  connection:
-    protocol: "http"
-    host: "0.0.0.0"
-    port: 8090
+    def get_my_data_by_id(self, correlation_id: Optional[str], my_data_id: str) -> MyData:
+        pass
 
-# Commandable GRPC endpoint version 1.0
-- descriptor: "service-mydata:service:commandable-grpc:default:1.0"
+    def create_my_data(self, correlation_id: Optional[str], my_data: MyData) -> MyData:
+        pass
+
+    def update_my_data(self, correlation_id: Optional[str], my_data: MyData) -> MyData:
+        pass
+
+    def delete_my_data(self, correlation_id: Optional[str], my_data_id: str) -> MyData:
+        pass
 ```

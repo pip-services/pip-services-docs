@@ -12,9 +12,10 @@ class MyDirectClient(DirectClient):
     _dependencyResolver = DependencyResolver() 
         
     def __init__(self):
+        super(MyDirectClient, self).__init__()
         self._controller: MyController = None
         self._dependencyResolver.put("controller", Descriptor("pip-services", "controller", "*", "*", "1.0"))
-        super(MyDirectClient, self).__init__()
+        
         
     def set_references(self, references: IReferences):
         self._dependencyResolver.set_references(references)

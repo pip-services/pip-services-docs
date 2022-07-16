@@ -8,13 +8,12 @@ import time
 
 class MyComponentA(IConfigurable, IOpenable):
 
-    start_time = time.time()
-    _Elasticsearch_log = True
+    _elasticsearch_log = True
     
     def __init__(self):
         self._logger = ElasticSearchLogger()
 
-        if self._Elasticsearch_log:
+        if self._elasticsearch_log:
             self._logger.info("123" , "MyComponentA has been created.")
 
     def configure(self, config: ConfigParams):
@@ -29,7 +28,7 @@ class MyComponentA(IConfigurable, IOpenable):
     def mymethod(self):
 
         try:
-            if self._Elasticsearch_log:
+            if self._elasticsearch_log:
                 print("Hola amigo")
                 print("Bonjour mon ami")
                 self._logger.info("123" , "Greetings created.")

@@ -70,20 +70,20 @@ This component, which is a subclass of the CachedLogger component, allows us to 
 
 In order to use this component, we must first import it. The following command shows how to do this:
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code1_node.md" >}}     
+{{< /tabsection >}}    
+
+{{< tabsection >}}    
+  {{< include "./__code1_net.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}     
-  Not available     
+{{< tabsection >}}    
+  {{< include "./__code1_dart.md" >}}     
 {{< /tabsection >}}          
 
 {{< tabsection >}}    
@@ -98,20 +98,20 @@ In order to use this component, we must first import it. The following command s
 
 Now, we can create a custom component that sends log messages. As we want to send those messages to Elasticsearch, we define our logger of type ElasticSearchLogger. We also create a method called “mymethod” with the aim of calling it and sending log messages. All log messages are considered level 4 or Info level. The code below shows how this class looks like.
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code2_node.md" >}}     
+{{< /tabsection >}}    
+
+{{< tabsection >}}    
+  {{< include "./__code2_net.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}     
-  Not available     
+{{< tabsection >}}    
+  {{< include "./__code2_dart.md" >}}     
 {{< /tabsection >}}          
 
 {{< tabsection >}}    
@@ -126,20 +126,20 @@ Now, we can create a custom component that sends log messages. As we want to sen
 
 Once we have our custom component, we create an instance of the ElasticSearchLogger, and configure and connect it to Elasticsearch via the open() method. In our example, we have Elasticsearch running on our machine, and we connect to it via the port 9200. The open() method requires a correlation_id, which we define as “123”.
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code3_node.md" >}}     
+{{< /tabsection >}}    
+
+{{< tabsection >}}    
+  {{< include "./__code3_net.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}     
-  Not available     
+{{< tabsection >}}    
+  {{< include "./__code3_dart.md" >}}     
 {{< /tabsection >}}          
 
 {{< tabsection >}}    
@@ -154,20 +154,20 @@ Once we have our custom component, we create an instance of the ElasticSearchLog
 
 Now that our connection is ready, we create an instance of our custom component and run “mymethod”. The following code shows how to do this.
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code4_node.md" >}}     
+{{< /tabsection >}}    
+
+{{< tabsection >}}    
+  {{< include "./__code4_net.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}     
-  Not available     
+{{< tabsection >}}    
+  {{< include "./__code4_dart.md" >}}     
 {{< /tabsection >}}          
 
 {{< tabsection >}}    
@@ -192,21 +192,21 @@ We can check that Elasticsearch received our message by using a tool such as Ela
 
 Our last step is to modify our custom component. We want it to follow the Pip.Services best practices. Thus, we add the IConfigurable and IOpenable interfaces, and the configure(), open() and close() methods. Then, we use these methods to configure, open and close our logger. The code below shows how to do this.
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code5_node.md" >}}     
+{{< /tabsection >}}    
+
+{{< tabsection >}}    
+  {{< include "./__code5_net.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}     
    Not available  
 {{< /tabsection >}}
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}     
-  Not available     
-{{< /tabsection >}}          
+{{< tabsection >}}    
+  {{< include "./__code5_dart.md" >}}     
+{{< /tabsection >}}         
 
 {{< tabsection >}}    
   {{< include "./__code5_python.md" >}}     

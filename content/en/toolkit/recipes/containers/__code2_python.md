@@ -30,9 +30,6 @@ class MyComponentA(IReferenceable, IUnreferenceable, IConfigurable, IOpenable, I
         
     def unset_references(self):
         print("References cleared")
-    
-    def __del__(self):
-        print("Component destroyed")
         
     def execute(self, correlation_id: str, args: str): 
         print('Executing')

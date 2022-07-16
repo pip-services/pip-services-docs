@@ -49,19 +49,19 @@ In this tutorial, we will create a ProcessContainer component that packages a cu
 In order to use the ProcessContainer component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -77,19 +77,19 @@ In order to use the ProcessContainer component, we need to import it first. This
 Now, we create a component that will operate in a ProcessContainer. In our example, this is a mock component, that only prints a message once an operation is called. Moreover, to see how the container manages the lifecycle of this component, we want this class to be openable and configurable. An example of what this class looks like is:
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -105,19 +105,19 @@ Now, we create a component that will operate in a ProcessContainer. In our examp
 The next step is to create a factory for our component. For this, we create a class that extends the Factory class and registers our previously defined custom component. The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -132,52 +132,46 @@ The next step is to create a factory for our component. For this, we create a cl
 
 Once our container and factory are ready, we create a configuration file that will be used by the ProcessContainer to locate the component. As the ProcessContainer class offers the possibility of using a logger, we also add a reference to it. In this manner, we will be able to see the logs on our console. The following code explains how to do this:
 
-{{< tabsection >}}
-   Not available  
-{{< /tabsection >}}
+```yml
+---
+# Context information
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: myservice
+  description: My service running in a process container
 
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: {{LOG_LEVEL}}{{^LOG_LEVEL}}info{{/LOG_LEVEL}}
 
-{{< tabsection >}}
-   Not available    
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code4_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
+# Performance counters that posts values to log
+- descriptor: "pip-services:counters:log:default:1.0"
+  
+# My component
+- descriptor: "myservice:MyComponentA:default:*:1.0"
+```
 
 #### Creating a ProcessContainer
 
 The final step is to create the ProcessContainer. To do this, we create a class that extends the ProcessContainer component. In it, we add our previously created factory and specify the path to our configuration file (The default path is ./config/config.yml). The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code5_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -189,23 +183,23 @@ The final step is to create the ProcessContainer. To do this, we create a class 
 Now that our code is ready, we can run our container. This is done via its run() method. For example, in the code below, we create an instance of our container and call this method.
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,23 +230,23 @@ Once the process is stopped, the container:
 Finally, we merge the code from the previous sections into one program:
 
 {{< tabsection >}}
-   Not available  
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available    
+   Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -15,16 +15,12 @@ class MyRestService(RestService):
     
     # GET
     def my_page_get(self, name):
-        body_data = self._get_data()
-        result = f"{request.query.get('message')}, {name}, " \
-                 f'data:{body_data.get("data1")}'
+        result = f"{request.query.get('message')}, {name}"
         return self.send_result(result)
 
     # HEAD
     def my_page_head(self, name):
-        body_data = self._get_data()
-        result = f"{request.query.get('message')}, {name}, " \
-                 f'data:{body_data.get("data1")}'
+        result = f"{request.query.get('message')}, {name}"
         return self.send_result(result)    
    
     # POST
@@ -43,10 +39,10 @@ class MyRestService(RestService):
     
     # Route registration
     def register(self):
-        self.register_route(method="GET", route="/my_page/<name>/get", schema=None, handler=self.my_page_get)
-        self.register_route(method="HEAD", route="/my_page/<name>/head", schema=None, handler=self.my_page_head)
-        self.register_route(method="POST", route="/my_page/<name>/post", schema=None, handler=self.my_page_post)
-        self.register_route(method="PUT", route="/my_page/<name>/put", schema=None, handler=self.my_page_put)
+        self.register_route(method="GET", route="/my_page/<name>", schema=None, handler=self.my_page_get)
+        self.register_route(method="HEAD", route="/my_page/<name>", schema=None, handler=self.my_page_head)
+        self.register_route(method="POST", route="/my_page/<name>", schema=None, handler=self.my_page_post)
+        self.register_route(method="PUT", route="/my_page/<name>", schema=None, handler=self.my_page_put)
 
 # Instantiation
 service = MyRestService()
@@ -69,8 +65,7 @@ class MyRestClient(RestClient):
         self._base_route = '/my_service'
 
     def get_data_get(self, correlation_id, name: str):
-        result = self._call("get", "/my_page/" + name + "/get", correlation_id, params={'message': 'Hello'},  data={
-                "data1": "my data"})
+        result = self._call("get", "/my_page/" + name + "/get", correlation_id, params={'message': 'Hello'})
         return result
 
     def get_data_head(self, correlation_id, name: str):

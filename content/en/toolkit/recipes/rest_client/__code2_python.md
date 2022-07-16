@@ -10,25 +10,23 @@ class MyRestClient(RestClient):
 
     # GET
     def get_data_get(self, correlation_id, name: str):
-        result = self._call("get", "/my_page/" + name + "/get", correlation_id, params={'message': 'Hello'},  data={
-                "data1": "my data"})
+        result = self._call("get", "/my_page/" + name, correlation_id, params={'message': 'Hello'})
         return result
 
     # HEAD
     def get_data_head(self, correlation_id, name: str):
-        result = self._call("head", "/my_page/" + name + "/head", correlation_id, params={'message': 'Hello'},  data={
-                "data1": "my data"})
+        result = self._call("head", "/my_page/" + name, correlation_id, params={'message': 'Hello'})
         return result
     
     # POST
     def get_data_post(self, correlation_id, name: str):
-        result = self._call("post", "/my_page/" + name + "/post", correlation_id, params={'message': 'Hello'},  data={
+        result = self._call("post", "/my_page/" + name, correlation_id, params={'message': 'Hello'},  data={
                 "data1": "my data"})
         return result
     
     # PUT
     def get_data_put(self, correlation_id, name: str):
-        result = self._call("put", "/my_page/" + name + "/put", correlation_id, params={'message': 'Hello'},  data={
+        result = self._call("put", "/my_page/" + name, correlation_id, params={'message': 'Hello'},  data={
                 "data1": "my data"})
         return result
         

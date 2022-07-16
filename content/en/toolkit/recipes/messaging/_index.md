@@ -52,11 +52,11 @@ This component provides a message queue that can be used within a process to sen
 In order to use this component, we need to import it first. The following command shows how to do this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -64,7 +64,7 @@ In order to use this component, we need to import it first. The following comman
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -80,11 +80,11 @@ In order to use this component, we need to import it first. The following comman
 Following this, we create a message receiver that prints a customized message once a message is received. 
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -92,7 +92,7 @@ Following this, we create a message receiver that prints a customized message on
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -108,11 +108,11 @@ Following this, we create a message receiver that prints a customized message on
 The next step is to create an instance of the MemoryMessageQueue class and open it. The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,7 +120,7 @@ The next step is to create an instance of the MemoryMessageQueue class and open 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -136,11 +136,11 @@ The next step is to create an instance of the MemoryMessageQueue class and open 
 Now, we need to create a listener that waits for messages arriving at the queue. In order for this process not to collide with the message sending, we create it in a separate thread. The following code explains how this is done:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -148,7 +148,7 @@ Now, we need to create a listener that waits for messages arriving at the queue.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -164,11 +164,11 @@ Now, we need to create a listener that waits for messages arriving at the queue.
 After creating a listener, we send a message to the queue. For this, we use a MessageEnvelope component, which allows us to add extra information to the message such as a correlationId and a message type. The following code explains how this can be done:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -176,7 +176,7 @@ After creating a listener, we send a message to the queue. For this, we use a Me
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -198,11 +198,11 @@ After sending the message, the listener receives it and the message receiver pri
 After using the memory queue, we close it to free resources. The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -210,7 +210,7 @@ After using the memory queue, we close it to free resources. The following code 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -226,11 +226,11 @@ After using the memory queue, we close it to free resources. The following code 
 Now, we can summarize the learned points in a single program. The code below shows the result of this review:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -238,7 +238,7 @@ Now, we can summarize the learned points in a single program. The code below sho
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

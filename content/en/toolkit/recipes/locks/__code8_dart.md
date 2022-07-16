@@ -1,0 +1,4 @@
+
+```dart
+var lock = NullLock();
+```

@@ -49,7 +49,7 @@ class MyComponent(IReferenceable):
 my_component = MyComponent()
 my_component.set_references(References.from_tuples(
     Descriptor("pip-services", "cache", "memory", "default", "1.0"), MemoryCache(),
-    Descriptor("pip-services", "lock", "memory", "default", "1.0"), NullLock(),
+    Descriptor("pip-services", "lock", "null", "default", "1.0"), NullLock(),
 ))
 
 my_component.store_result(None, "param1")

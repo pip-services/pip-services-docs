@@ -351,43 +351,101 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MySqlServerPersistence extends SqlServerPersistence<MyData> {
+export class MySqlServerPersistence extends SqlServerPersistence<MyData> {
     public constructor() {
         super("mydata");
     }
 
-    public getByName(correlationId: string, name: string, callback: (err, item) => void): void {
-        let criteria = { name: name };
-        return new Promise((resolve, reject) => {
-            this._model.findOne(criteria, (err, result) => {
-                if (err != null) {
-                  reject(err);
-                  return;
-                }
-                resolve(result);
-            });
-        });
-    }); 
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE [' + this._tableName + '] ([id] VARCHAR(32) PRIMARY KEY, [name] VARCHAR(50), [content] VARCHAR(MAX))');
+        this.ensureIndex(this._tableName + '_name', { name: 1 }, { unique: true });
+    }
 
-    public set(correlatonId: string, item: MyData, callback: (err) => void): void {
-        let criteria = { name: item.name };
-        let options = { upsert: true, new: true };
-        return new Promise((resolve, reject) => {
-            this._model.findOneAndUpdate(criteria, item, options, (err, result) => {
+    public async set(correlationId: string, item: MyData): Promise<MyData> {
+        if (item == null)
+            return null;
+
+        let row = this.convertFromPublic(item);
+        let columns = this.generateColumns(row);
+        let params = this.generateParameters(row);
+        let setParams = this.generateSetParameters(row);
+        let values = this.generateValues(row);
+        values.push(item.id);
+
+        let query = "INSERT INTO " + this.quotedTableName() + " (" + columns + ") OUTPUT INSERTED.* VALUES (" + params + ")";
+
+        let request = this.createRequest(values);
+        let newItem = await new Promise<any>((resolve, reject) => {
+            request.query(query, (err, result) => {
+                // Suppress duplicated error entry
+                if (err != null && (err.number == 2601 || err.number == 2627)) {
+                    err = null;
+                    result == null;
+                }
                 if (err != null) {
                     reject(err);
                     return;
                 }
-                resolve(result);
+                let item = result && result.recordset && result.recordset.length == 1
+                    ? result.recordset[0] : null;
+                resolve(item);
             });
         });
+
+        if (newItem != null) {
+            newItem = this.convertToPublic(newItem);
+            return newItem;
+        }
+
+        values.push(item.id);
+        query = "UPDATE " + this.quotedTableName() + " SET " + setParams + " OUTPUT INSERTED.* WHERE [id]=@" + values.length;
+
+        request = this.createRequest(values);
+        newItem = await new Promise<any>((resolve, reject) => {
+            request.query(query, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+                let item = result && result.recordset && result.recordset.length == 1
+                    ? result.recordset[0] : null;
+                resolve(item);
+            });
+        });
+
+        newItem = this.convertToPublic(newItem);
+        return newItem;
+    }
+
+    public async getOneByName(correlationId: string, name: string): Promise<MyData> {
+        let query = "SELECT * FROM " + this.quotedTableName() + " WHERE [name]=@1";
+        let params = [name];
+
+        let request = this.createRequest(params);
+        let item = await new Promise<any>((resolve, reject) => {
+            request.query(query, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+                let item = result && result.recordset ? result.recordset[0] || null : null;
+                resolve(item);
+            });
+        });
+
+        item = this.convertToPublic(item);
+        return item;
     }
 }
 
 let persistence = new MySqlServerPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 1433,
+    "credential.username", "sa",
+    "credential.password", "sqlserver_123",
+    "connection.database", "master"
 ));
 
 await persitence.open("123");

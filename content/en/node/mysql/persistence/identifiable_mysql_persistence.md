@@ -170,6 +170,13 @@ class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
     public constructor() {
         super("mydata", new MyDataMySqlSchema());
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE `' + this._tableName + '` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)');
+        this.ensureIndex(this._tableName + '_key', { key: 1 }, { unique: true });
+    }
+    
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
         let name = filter.getAsNullableString('name');

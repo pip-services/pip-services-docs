@@ -134,7 +134,7 @@ Unregisters a registerable object, so that it is no longer used in dynamic endpo
 ### Examples
 
 ```typescript
-public MyMethod(_config: ConfigParams, _references: IReferences) {
+public async MyMethod(config: ConfigParams, references: IReferences): Promise<void> {
     let endpoint = new HttpEndpoint();
     if (this._config)
         endpoint.configure(this._config);

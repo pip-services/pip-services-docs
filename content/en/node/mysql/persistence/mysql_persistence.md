@@ -344,7 +344,7 @@ class MyMySqlPersistence extends MySqlPersistence<MyData> {
         super("mydata");
     }
 
-    public getByName(correlationId: string, name: string, callback: (err, item) => void): Promise<void> {
+    public getByName(correlationId: string, name: string): Promise<any> {
       let criteria = { name: name };
       return new Promise((resolve, reject) => {
         this._model.findOne(criteria, (err, result) => {

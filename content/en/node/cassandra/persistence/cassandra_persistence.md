@@ -335,7 +335,7 @@ Unsets (clears) previously set references to dependent components.
 ```typescript
 class MyCassandraPersistence extends CassandraPersistence<MyData> {
   public constructor() {
-      base("mydata");
+      super("mydata");
   }
 
   public getByName(correlationId: string, name: string): Promise<MyData> {

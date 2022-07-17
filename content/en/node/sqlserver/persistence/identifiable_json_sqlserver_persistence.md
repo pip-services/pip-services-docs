@@ -112,14 +112,24 @@ class MySqlServerPersistence extends IdentifiableSqlServerJsonPersistence<MyData
     public constructor() {
         super("mydata");
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureTable();
+        this.ensureSchema("ALTER TABLE [" + this._tableName + "] ADD [data_name] AS JSON_VALUE([data],'$.name')")
+        this.ensureIndex(this._tableName + '_name', { data_name: 1 }, { unique: true });
+    }
 
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
-        if (name != null)
-            criteria.push({ name: name });
-        return criteria.length > 0 ? { $and: criteria } : null;
+
+        let filterCondition: string = null;
+        if (name != null) {
+            filterCondition += "JSON_VALUE([data],'$.name')='" + name + "'";
+        }
+    
+        return filterCondition;
     }
 
     public getPageByFilter(correlationId: string, filter: FilterParams,
@@ -130,8 +140,11 @@ class MySqlServerPersistence extends IdentifiableSqlServerJsonPersistence<MyData
 
 let persistence = new MySqlServerPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 1433,
+    "credential.username", "sa",
+    "credential.password", "sqlserver_123",
+    "connection.database", "master"
 ));
 
 await persitence.open("123");

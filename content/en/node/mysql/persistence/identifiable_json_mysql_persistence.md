@@ -110,11 +110,14 @@ class MyMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, string
 
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
-        if (name != null)
-            criteria.push({ name: name });
-        return criteria.length > 0 ? { $and: criteria } : null;
+
+        let filterCondition: string = null;
+        if (name != null) {
+            filterCondition += "data->name='" + name + "'";
+        }
+    
+        return filterCondition;
     }
 
     public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {

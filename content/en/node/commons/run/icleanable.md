@@ -26,7 +26,7 @@ Clears a component's state.
 class MyObjectWithState implements ICleanable {
     private _state: any = {};
     ...
-    public async clear(correlationId: string): Promise\<void\> {
+    public async clear(correlationId: string): Promise<void> {
         this._state = {};
     }
 }

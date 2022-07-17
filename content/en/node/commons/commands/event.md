@@ -72,7 +72,7 @@ Removes a listener, so that it no longer receives notifications for this event.
 let event = new Event("my_event");
  
 event.addListener(myListener);
- *     
+  
 event.notify("123", Parameters.fromTuples(
   "param1", "ABC",
   "param2", 123

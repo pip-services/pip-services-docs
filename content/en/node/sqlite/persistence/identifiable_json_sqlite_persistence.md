@@ -92,13 +92,22 @@ class MySqlitePersistence extends IdentifiableSqliteJsonPersistence<MyData, stri
     public constructor() {
         super("mydata");
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureTable();
+        this.ensureSchema("CREATE UNIQUE INDEX IF NOT EXISTS \"" + this._tableName + "_json_key\" ON dummies_json (JSON_EXTRACT(data, '$.name'))");
+    }
+    
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
+
+        let filterCondition: string = null;
         if (name != null)
-            criteria.push("JSON_EXTRACT(data,'$.name')='" + name + "'");
-        return criteria.length > 0 ? criteria.join(" AND ") : null;
+            filterCondition = "JSON_EXTRACT(data, '$.name')='" + name + "'";
+    
+        return filterCondition;
     }
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {

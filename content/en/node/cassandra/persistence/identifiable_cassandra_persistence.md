@@ -163,7 +163,7 @@ Updates only a few selected fields in a data item.
 ```typescript
 class MyCassandraPersistence extends IdentifiableCassandraPersistence<MyData, string> {
     public constructor() {
-        base("mydata", new MyDataCassandraSchema());
+        super("mydata", new MyDataCassandraSchema());
     }
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
@@ -175,7 +175,7 @@ class MyCassandraPersistence extends IdentifiableCassandraPersistence<MyData, st
     }
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
-        return base.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
+        return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
     }
 }
 let persistence = new MyCassandraPersistence();

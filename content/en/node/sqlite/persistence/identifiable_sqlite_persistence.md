@@ -151,14 +151,23 @@ class MySqlitePersistence extends IdentifiableSqlitePersistence<MyData, string> 
     public constructor() {
         super("mydata");
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE "' + this._tableName + '" ("id" VARCHAR(32) PRIMARY KEY, "name" VARCHAR(50), "content" TEXT)');
+        this.ensureIndex(this._tableName + '_name', { name: 1 }, { unique: true });
+    }
+    
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
+
+        let filterCondition: string = null;
         if (name != null)
-            criteria.push("name='" + name + "'");
-        return criteria.length > 0 ? criteria.join(" AND ") : null;
+            filterCondition = "\"name\"='" + name + "'";
+        return filterCondition;
     }
+    
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
         return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);

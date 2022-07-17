@@ -294,11 +294,11 @@ class MyRestService extends RestService {
       this._controller = this._dependencyResolver.getRequired<IMyController>("controller");
    }
    public register(): void {
-       registerRoute("get", "get_mydata", null, (req, res) => {
+       registerRoute("get", "get_mydata", null, async (req, res) => {
            let correlationId = req.param("correlation_id");
            let id = req.param("id");
-           let promise = this._controller.getMyData(correlationId, id);
-           this.sendResult(req, res, promise);
+           let result = await this._controller.getMyData(correlationId, id);
+           this.sendResult(req, res, result);
        });
        ...
    }

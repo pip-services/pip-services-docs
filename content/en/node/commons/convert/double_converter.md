@@ -52,7 +52,7 @@ Converts a value into a double or returns null when the conversion is not possib
 ```typescript
 let value1 = DoubleConverter.toNullableDouble("ABC")     // Returns null
 let value2 = DoubleConverter.toNullableDouble("123.456") // Returns 123.456
-let value3 = DoubleConverter.toNullableDouble(True)      // Returns 1
+let value3 = DoubleConverter.toNullableDouble(true)      // Returns 1
 let value4 = DoubleConverter.toNullableDouble(new Date()) // Returns current milliseconds (E.g. 1619812281454)
 
 ```

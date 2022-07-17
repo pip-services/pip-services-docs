@@ -134,8 +134,11 @@ class MyMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, string
 
 let persistence = new MyMySqlPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 5432,
+    "credential.username", "mysql",
+    "credential.password", "mysql",
+    "connection.database", "mytestobjects"
 ));
 
 await persitence.open("123");

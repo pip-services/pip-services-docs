@@ -126,6 +126,7 @@ Records the current time as a timestamp.
 
 - **name**: str - a counter name of Timestamp type.
 
+### Examples
 
 ```python
 class MyComponent(IReferenceable):

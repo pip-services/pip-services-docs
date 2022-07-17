@@ -107,6 +107,13 @@ class MyMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, string
     public constructor() {
         super("mydata", new MyDataMySqlSchema());
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureTable();
+        this.ensureSchema('ALTER TABLE `' + this._tableName + '` ADD `data_key` VARCHAR(50) AS (JSON_UNQUOTE(`data`->"$.key"))');
+        this.ensureIndex(this._tableName + '_json_key', { "data_key": 1 }, { unique: true });
+    }
 
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();

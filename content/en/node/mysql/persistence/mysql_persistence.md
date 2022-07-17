@@ -339,36 +339,67 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MyMySqlPersistence extends MySqlPersistence<MyData> {
+export class MyMySqlPersistence extends MySqlPersistence<MyData> {
     public constructor() {
         super("mydata");
     }
 
-    public getByName(correlationId: string, name: string): Promise<any> {
-      let criteria = { name: name };
-      return new Promise((resolve, reject) => {
-        this._model.findOne(criteria, (err, result) => {
-            if (err != null) {
-                reject(err);
-                return;
-            }
-            resolve(result);
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE `' + this._tableName + '` (id VARCHAR(32) PRIMARY KEY, `name` VARCHAR(50), `content` TEXT)');
+        this.ensureIndex(this._tableName + '_key', { name: 1 }, { unique: true });
+    }
+
+    public async set(correlationId: string, item: MyData): Promise<MyData> {
+        if (item == null) {
+            return null;
+        }
+
+        let row = this.convertFromPublic(item);
+        let columns = this.generateColumns(row);
+        let params = this.generateParameters(row);
+        let setParams = this.generateSetParameters(row);
+        let values = this.generateValues(row);
+        values.push(...values);
+        values.push(item.id);
+
+        let query = "INSERT INTO " + this.quotedTableName() + " (" + columns + ") VALUES (" + params + ")";
+        query += " ON DUPLICATE KEY UPDATE " + setParams;
+        query += "; SELECT * FROM " + this.quotedTableName() + " WHERE id=?";
+
+        let newItem = await new Promise<any>((resolve, reject) => {
+            this._client.query(query, values, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+                let item = result && result.length == 2 && result[1].length == 1
+                    ? result[1][0] : null;
+                resolve(item);
             });
         });
-    }); 
 
-    public set(correlatonId: string, item: MyData): Promise<MyData> {
-      let criteria = { name: item.name };
-      let options = { upsert: true, new: true };
-      return new Promise((resolve, reject) => {
-        this._model.findOneAndUpdate(criteria, item, options, (err, result) => {
-            if (err != null) {
-                reject(err);
-                return;
-            }
-            resolve(result);
+        newItem = this.convertToPublic(newItem);
+        return newItem;
+    }
+
+    public async getOneByName(correlationId: string, name: string): Promise<MyData> {
+        let query = "SELECT * FROM " + this.quotedTableName() + " WHERE name=?";
+        let params = [name];
+
+        let item = await new Promise<any>((resolve, reject) => {
+            this._client.query(query, params, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+                let item = result ? result[0] || null : null;
+                resolve(item);
+            });
         });
-      });
+
+        item = this.convertToPublic(item);
+        return item;
     }
 }
 

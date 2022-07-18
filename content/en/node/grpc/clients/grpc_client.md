@@ -159,6 +159,7 @@ class MyGrpcClient extends GrpcClient implements IMyClient {
            return await this.call("get_data", correlationId, { id: id });
         } catch (err) {
             timing.endFailure(err);
+            throw err;
         } finally {
             timing.endSuccess();
         }

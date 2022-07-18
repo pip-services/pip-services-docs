@@ -105,14 +105,23 @@ class MyPostgresPersistence extends IdentifiablePostgresJsonPersistence<MyData, 
     public constructor() {
         super("mydata", new MyDataPostgresSchema());
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureTable();
+        this.ensureIndex(this._tableName + '_json_key', { "(data->>'name')": 1 }, { unique: true });
+    }
+    
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
+
+        let filterCondition: string = "";
         if (name != null)
-            criteria.push({ name: name });
-        return criteria.length > 0 ? { $and: criteria } : null;
+            filterCondition += "data->>'name'='" + name + "'";
+        return filterCondition;
     }
+    
     public getPageByFilter(correlationId: string, filter: FilterParams,
         paging: PagingParams): Promise<DataPage<MyData>> {
         return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
@@ -121,8 +130,11 @@ class MyPostgresPersistence extends IdentifiablePostgresJsonPersistence<MyData, 
 
 let persistence = new MyPostgresPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 5432,
+    "credential.username", "mysql",
+    "credential.password", "mysql",
+    "connection.database", "mytestobjects"
 ));
 
 await persitence.open("123");

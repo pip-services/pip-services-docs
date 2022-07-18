@@ -107,14 +107,24 @@ class MyMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, string
     public constructor() {
         super("mydata", new MyDataMySqlSchema());
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureTable();
+        this.ensureSchema('ALTER TABLE `' + this._tableName + '` ADD `data_key` VARCHAR(50) AS (JSON_UNQUOTE(`data`->"$.key"))');
+        this.ensureIndex(this._tableName + '_json_key', { "data_key": 1 }, { unique: true });
+    }
 
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
-        if (name != null)
-            criteria.push({ name: name });
-        return criteria.length > 0 ? { $and: criteria } : null;
+
+        let filterCondition: string = null;
+        if (name != null) {
+            filterCondition += "data->name='" + name + "'";
+        }
+    
+        return filterCondition;
     }
 
     public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
@@ -124,8 +134,11 @@ class MyMySqlPersistence extends IdentifiableMySqlJsonPersistence<MyData, string
 
 let persistence = new MyMySqlPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 5432,
+    "credential.username", "mysql",
+    "credential.password", "mysql",
+    "connection.database", "mytestobjects"
 ));
 
 await persitence.open("123");

@@ -170,13 +170,23 @@ class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
     public constructor() {
         super("mydata", new MyDataMySqlSchema());
     }
+    
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE `' + this._tableName + '` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)');
+        this.ensureIndex(this._tableName + '_key', { key: 1 }, { unique: true });
+    }
+    
     private composeFilter(filter: FilterParams): any {
         filter = filter || new FilterParams();
-        let criteria = [];
         let name = filter.getAsNullableString('name');
-        if (name != null)
-            criteria.push({ name: name });
-        return criteria.length > 0 ? { $and: criteria } : null;
+
+        let filterCondition: string = null;
+        if (name != null) {
+            filterCondition += "`name`='" + name + "'";
+        }
+    
+        return filterCondition;
     }
     public getPageByFilter(correlationId: string, filter: FilterParams, paging: PagingParams): Promise<DataPage<MyData>> {
         return super.getPageByFilter(correlationId, this.composeFilter(filter), paging, null, null);
@@ -185,8 +195,11 @@ class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
 
 let persistence = new MyMySqlPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 5432,
+    "credential.username", "mysql",
+    "credential.password", "mysql",
+    "connection.database", "mytestobjects"
 ));
 
 await persitence.open("123");

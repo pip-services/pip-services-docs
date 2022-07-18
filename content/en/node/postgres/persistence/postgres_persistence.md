@@ -341,46 +341,76 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```typescript
-class MyPostgresPersistence extends PostgresPersistence<MyData> {
-  public constructor() {
-      super("mydata");
-  }
+export class MyPostgresPersistence extends PostgresPersistence<MyData> {
+    public constructor() {
+        super("mydata");
+    }
 
-  public getByName(correlationId: string, name: string): Promise<MyData> {
-    let criteria = { name: name };
-    return new Promise((resolve, reject) => {
-      this._model.findOne(criteria, (err, item) => {
-        if (err != null) {
-          reject(err);
-          return;
-        }
-        item = this.convertToPublic(item);
-        resolve(item);
-      });
-     });
-  }); 
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE ' + this._tableName + ' (id TEXT PRIMARY KEY, name TEXT, content TEXT)');
+        this.ensureIndex(this._tableName + '_key', { name: 1 }, { unique: true });
+    }
 
-  public set(correlatonId: string, item: MyData): Promise<MyData> {
-    let criteria = { name: item.name };
-    let options = { upsert: true, new: true };
-    
-    return new Promise((resolve, reject) => {
-      this.findOneAndUpdate(criteria, item, options, (err, item) => {
-        if (err != null) {
-          reject(err);
-          return;
-        }
+    public async set(correlationId: string, item: MyData): Promise<MyData> {
+        if (item == null)
+            return null;
+        
+        let row = this.convertFromPublic(item);
+        let columns = this.generateColumns(row);
+        let params = this.generateParameters(row);
+        let setParams = this.generateSetParameters(row);
+        let values = this.generateValues(row);
+
+        let query = "INSERT INTO " + this.quotedTableName() + " (" + columns + ")"
+            + " VALUES (" + params + ")"
+            + " ON CONFLICT (\"id\") DO UPDATE SET " + setParams + " RETURNING *";
+
+        let newItem = await new Promise<any>((resolve, reject) => {
+            this._client.query(query, values, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+
+                let item = result && result.rows && result.rows.length == 1
+                    ? result.rows[0] : null;
+                resolve(item);
+            });
+        });
+
+        newItem = this.convertToPublic(newItem);
+        return newItem;
+    }
+
+    public async getOneByName(correlationId: string, name: string): Promise<MyData> {
+        let query = "SELECT * FROM " + this.quotedTableName() + " WHERE \"name\"=$1";
+        let params = [name];
+
+        let item = await new Promise<any>((resolve, reject) => {
+            this._client.query(query, params, (err, result) => {
+                if (err != null) {
+                    reject(err);
+                    return;
+                }
+
+                let item = result && result.rows ? result.rows[0] || null : null;
+                resolve(item);
+            });
+        });
+
         item = this.convertToPublic(item);
-        resolve(item);
-      });
-     });
-  }
+        return item;
+    }
 }
 
 let persistence = new MyPostgresPersistence();
 persistence.configure(ConfigParams.fromTuples(
-    "host", "localhost",
-    "port", 27017
+    "connection.host", "localhost",
+    "connection.port", 5432,
+    "credential.username", "postgres",
+    "credential.password", "postgres",
+    "connection.database", "mytestobjects"
 ));
 
 await persitence.open("123");

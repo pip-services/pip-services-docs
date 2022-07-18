@@ -11,23 +11,23 @@ gitUrl: "https://github.com/pip-services-samples"
 Now that we know a bit about how we are going to be storing data and how microservice configuration works, it’s time to add some logic to our service. Our microservice needs to be able to calculate a device’s position based on the beacons it “sees”, as well as initiate CRUD operations for the data it handles. Let’s create a **logic** folder under the **src** directory and start by defining an interface:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_node.md" >}}  
+  {{< include "../__code12_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_net.md" >}}    
+  {{< include "../__code12_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_go.md" >}}
+  {{< include "../__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_dart.md" >}}    
+  {{< include "../__code12_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code12_python.md" >}}
+  {{< include "../__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -38,23 +38,23 @@ Now that we know a bit about how we are going to be storing data and how microse
 Once our interface is ready, we can move on to implementing the actual controller. Its code is also going to be quite simple, as all we need to write is one method for calculating a device’s position, and the other methods will just be wrappers for the methods we wrote in our persistence components.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_node.md" >}}  
+  {{< include "../__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_net.md" >}}    
+  {{< include "../__code13_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_go.md" >}}
+  {{< include "../__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_dart.md" >}}    
+  {{< include "../__code13_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code13_python.md" >}}
+  {{< include "../__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -71,23 +71,23 @@ The first one sets a dependency upon a persistence using the descriptor **beacon
 The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you’re not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../../node/commons/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_node.md" >}}  
+  {{< include "../__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_net.md" >}}    
+  {{< include "../__code14_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_go.md" >}}
+  {{< include "../__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_dart.md" >}}    
+  {{< include "../__code14_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code14_python.md" >}}
+  {{< include "../__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,23 +104,23 @@ To sum up this class’s code: we’re creating commands for each of the control
 To be sure that our new methods are working correctly, let’s add some tests for the controller. The code for testing the controller is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_node.md" >}}  
+  {{< include "../__code15_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_net.md" >}}    
+  {{< include "../__code15_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_go.md" >}}
+  {{< include "../__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_dart.md" >}}    
+  {{< include "../__code15_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code15_python.md" >}}
+  {{< include "../__code15_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

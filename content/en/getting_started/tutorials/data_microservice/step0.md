@@ -19,23 +19,23 @@ For working with the Python programming language, you’ll need to perform its i
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_node.md" >}}  
+  {{< include "../__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_net.md" >}}    
+  {{< include "../__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_go.md" >}}
+  {{< include "../__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_dart.md" >}}    
+  {{< include "../__code1_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code1_python.md" >}}
+  {{< include "../__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

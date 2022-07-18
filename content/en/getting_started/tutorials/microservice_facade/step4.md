@@ -13,15 +13,15 @@ Once we’ve established who our user is, we need to implement some way of contr
 Our Authorizer class was made to provide flexible access management. We will be using this class to limit access to certain operations in our facade’s RESTful services. This class’s implementation can be found in the **Authorize.py** file, located in the folder **services/version1**. Its code is as follows:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code7_node.md" >}}  
+  {{< include "../__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code7_net.md" >}}    
+  {{< include "../__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code7_go.md" >}}
+  {{< include "../__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -29,7 +29,7 @@ Our Authorizer class was made to provide flexible access management. We will be 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code7_python.md" >}}
+  {{< include "../__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

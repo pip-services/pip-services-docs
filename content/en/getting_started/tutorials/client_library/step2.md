@@ -15,23 +15,23 @@ Direct clients are key to creating microservice-based monoliths. A direct client
 First off, let's define an interface for our clients to implement. This interface should contain a list of all the methods that are provided by our microservice’s API. As a result, we get the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_node.md" >}}  
+  {{< include "../__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_net.md" >}}    
+  {{< include "../__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_go.md" >}}    
+  {{< include "../__code2_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_dart.md" >}}    
+  {{< include "../__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code2_python.md" >}}
+  {{< include "../__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -42,23 +42,23 @@ Let’s start writing our direct client. This will be a class that implements th
 The direct client’s code is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_node.md" >}}  
+  {{< include "../__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_net.md" >}}    
+  {{< include "../__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_go.md" >}}  
+  {{< include "../__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_dart.md" >}}    
+  {{< include "../__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code3_python.md" >}}
+  {{< include "../__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

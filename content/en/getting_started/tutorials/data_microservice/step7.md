@@ -11,23 +11,23 @@ gitUrl: "https://github.com/pip-services-samples"
 To run our microservice, we need to add just one last bit of code. In the bin folder, create a **main.py** file with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_node.md" >}}  
+  {{< include "../__code20_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_net.md" >}}    
+  {{< include "../__code20_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_go.md" >}}
+  {{< include "../__code20_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_dart.md" >}}    
+  {{< include "../__code20_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code20_python.md" >}}
+  {{< include "../__code20_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -40,23 +40,23 @@ In the code above, all we’re doing is creating an instance of the container we
 To run the microservice, execute the following command from a terminal at the root of the project:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_node.md" >}}  
+  {{< include "../__code21_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_net.md" >}}    
+  {{< include "../__code21_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_go.md" >}}
+  {{< include "../__code21_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_dart.md" >}}    
+  {{< include "../__code21_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code21_python.md" >}}
+  {{< include "../__code21_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,23 +73,23 @@ Since we opted for the console logger in our configuration file, all information
 Let’s use the following two commands to set our environment variable and start our microservice using the MongoDB persistence:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_node.md" >}}  
+  {{< include "../__code22_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_net.md" >}}    
+  {{< include "../__code22_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_go.md" >}}
+  {{< include "../__code22_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_dart.md" >}}    
+  {{< include "../__code22_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code22_python.md" >}}
+  {{< include "../__code22_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -139,23 +139,23 @@ Not available
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_node.md" >}}  
+  {{< include "../__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_net.md" >}}    
+  {{< include "../__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_go.md" >}}
+  {{< include "../__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_dart.md" >}}    
+  {{< include "../__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code2_python.md" >}}
+  {{< include "../__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -166,23 +166,23 @@ Not available
 To install all necessary dependencies, run the following command from a terminal at the root of the project’s directory:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_node.md" >}}  
+  {{< include "../__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_net.md" >}}    
+  {{< include "../__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_go.md" >}}
+  {{< include "../__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_dart.md" >}}    
+  {{< include "../__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code3_python.md" >}}
+  {{< include "../__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

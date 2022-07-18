@@ -16,15 +16,15 @@ Create three factories in the **pip_facades_sample_python/build/** folder:
 One factory for the facade in a file named **FacadeFactory.py**, containing the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_node.md" >}}  
+  {{< include "../__code15_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_net.md" >}}    
+  {{< include "../__code15_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_go.md" >}}
+  {{< include "../__code15_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -32,7 +32,7 @@ One factory for the facade in a file named **FacadeFactory.py**, containing the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code15_python.md" >}}
+  {{< include "../__code15_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -42,15 +42,15 @@ One factory for the facade in a file named **FacadeFactory.py**, containing the 
 And last but not least, a factory for the clients that the facade depends on in a file named  **ClientFacadeFactory.py**:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_node.md" >}}  
+  {{< include "../__code16_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_net.md" >}}    
+  {{< include "../__code16_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_go.md" >}}
+  {{< include "../__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -58,7 +58,7 @@ And last but not least, a factory for the clients that the facade depends on in 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code16_python.md" >}}
+  {{< include "../__code16_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,15 +68,15 @@ And last but not least, a factory for the clients that the facade depends on in 
 The container that we want to run our facade in should be implemented in a file named **FacadeProcess.py** and placed in the **/container** folder:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_node.md" >}}  
+  {{< include "../__code17_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_net.md" >}}    
+  {{< include "../__code17_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_go.md" >}}
+  {{< include "../__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -84,7 +84,7 @@ The container that we want to run our facade in should be implemented in a file 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code17_python.md" >}}
+  {{< include "../__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,15 +94,15 @@ The container that we want to run our facade in should be implemented in a file 
 For us to be able to run the container, create a run.js file in the **/bin** folder with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_node.md" >}}  
+  {{< include "../__code18_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_net.md" >}}    
+  {{< include "../__code18_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_go.md" >}}
+  {{< include "../__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -110,7 +110,7 @@ For us to be able to run the container, create a run.js file in the **/bin** fol
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code18_python.md" >}}
+  {{< include "../__code18_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

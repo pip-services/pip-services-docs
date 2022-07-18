@@ -13,15 +13,15 @@ Before we integrate our new facade with the actual system, we should put it thro
 The file for testing dependencies will be called **TestReferences** and will allow us to test how well the facade is able to work with the microservices it depends on. This file’s code is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code9_node.md" >}}  
+  {{< include "../__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code9_net.md" >}}    
+  {{< include "../__code9_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code9_go.md" >}}
+  {{< include "../__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -29,7 +29,7 @@ The file for testing dependencies will be called **TestReferences** and will all
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code9_python.md" >}}
+  {{< include "../__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -39,15 +39,15 @@ The file for testing dependencies will be called **TestReferences** and will all
 Now, let’s create a file with a test client, which will help us test our user and session related operations. Place the code below into a file named **RestClientTest**:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code10_node.md" >}}  
+  {{< include "../__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code10_net.md" >}}    
+  {{< include "../__code10_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code10_go.md" >}}
+  {{< include "../__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -55,7 +55,7 @@ Now, let’s create a file with a test client, which will help us test our user 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code10_python.md" >}}
+  {{< include "../__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -65,15 +65,15 @@ Now, let’s create a file with a test client, which will help us test our user 
 Lastly, define some test users in a file named **TestUsers.py**, as shown below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code11_node.md" >}}  
+  {{< include "../__code11_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code11_net.md" >}}    
+  {{< include "../__code11_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code11_go.md" >}}
+  {{< include "../__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -81,7 +81,7 @@ Lastly, define some test users in a file named **TestUsers.py**, as shown below:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code11_python.md" >}}
+  {{< include "../__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -93,15 +93,15 @@ Now we can move on to the tests themselves. Create the following files in the fo
 **test_BeaconsRoutesV1** - for testing business logic operations of the Beacons microservice:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code12_node.md" >}}  
+  {{< include "../__code12_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code12_net.md" >}}    
+  {{< include "../__code12_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code12_go.md" >}}
+  {{< include "../__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -109,7 +109,7 @@ Now we can move on to the tests themselves. Create the following files in the fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code12_python.md" >}}
+  {{< include "../__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -119,15 +119,15 @@ Now we can move on to the tests themselves. Create the following files in the fo
 **test_SessionsRoutesV1** - for testing user and session related operations:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code13_node.md" >}}  
+  {{< include "../__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code13_net.md" >}}    
+  {{< include "../__code13_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code13_go.md" >}}
+  {{< include "../__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -135,7 +135,7 @@ Now we can move on to the tests themselves. Create the following files in the fo
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code13_python.md" >}}
+  {{< include "../__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -145,15 +145,15 @@ Now we can move on to the tests themselves. Create the following files in the fo
 Run the tests using the following command:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code14_node.md" >}}  
+  {{< include "../__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code14_net.md" >}}    
+  {{< include "../__code14_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code14_go.md" >}}
+  {{< include "../__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -161,7 +161,7 @@ Run the tests using the following command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code14_python.md" >}}
+  {{< include "../__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

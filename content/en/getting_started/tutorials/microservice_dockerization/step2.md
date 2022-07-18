@@ -16,23 +16,23 @@ Dockerizing automated tests provides you with a 100%-repeatable environment that
 Let’s create a separate Docker container for running tests. This container’s build scenario will be defined in a file named **Dockerfile.test**:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_node.md" >}}  
+  {{< include "../__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_net.md" >}}    
+  {{< include "../__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_go.md" >}}    
+  {{< include "../__code2_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_dart.md" >}}    
+  {{< include "../__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code2_python.md" >}}
+  {{< include "../__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

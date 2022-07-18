@@ -13,23 +13,23 @@ Our service is pretty much done - all that is left is to place the components we
 When a container is started, it starts composing the microservice out of the components indicated in the configuration file. For the container to be able to build these components, it will need a component factory. In the **build** directory, create a `BeaconsServiceFactory` class and populate it with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_node.md" >}}  
+  {{< include "../__code18_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_net.md" >}}    
+  {{< include "../__code18_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_go.md" >}}
+  {{< include "../__code18_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_dart.md" >}}    
+  {{< include "../__code18_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code18_python.md" >}}
+  {{< include "../__code18_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -42,23 +42,23 @@ As shown in the code above, we start by creating descriptors for all of our comp
 Now let’s move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_node.md" >}}  
+  {{< include "../__code19_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_net.md" >}}    
+  {{< include "../__code19_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_go.md" >}}
+  {{< include "../__code19_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_dart.md" >}}    
+  {{< include "../__code19_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code19_python.md" >}}
+  {{< include "../__code19_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

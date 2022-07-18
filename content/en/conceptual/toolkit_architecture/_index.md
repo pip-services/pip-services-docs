@@ -20,23 +20,23 @@ The core of the toolkit is shown in green. It consists of two modules, both of w
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_node.md" >}} 
+  {{< include "./__text1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_net.md" >}}
+  {{< include "./__text1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_go.md" >}}
+  {{< include "./__text1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_dart.md" >}} 
+   {{< include "./__text1_dart.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/getting_started/toolkit_architecture/__text1_python.md" >}}
+  {{< include "./__text1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

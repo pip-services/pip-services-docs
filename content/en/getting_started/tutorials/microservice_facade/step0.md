@@ -15,15 +15,15 @@ Before we can start writing-up some microservices, we’ll need to install a few
 First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code1_node.md" >}}  
+  {{< include "../__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code1_net.md" >}}    
+  {{< include "../__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code1_go.md" >}}  
+  {{< include "../__code1_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -31,7 +31,7 @@ First and foremost - we’ll need a compiler for your programming language of ch
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code1_python.md" >}}
+  {{< include "../__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

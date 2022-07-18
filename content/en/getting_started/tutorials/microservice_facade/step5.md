@@ -13,15 +13,15 @@ A facade’s RESTful operations are implemented by REST services, which receive 
 To process requests made to the API’s first version, let’s create a file named **FacadeServiceV1.py** in the **services/version1** folder with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code8_node.md" >}}  
+  {{< include "../__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code8_net.md" >}}    
+  {{< include "../__code8_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code8_go.md" >}}
+  {{< include "../__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -29,7 +29,7 @@ To process requests made to the API’s first version, let’s create a file nam
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code8_python.md" >}}
+  {{< include "../__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

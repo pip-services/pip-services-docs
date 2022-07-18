@@ -38,23 +38,23 @@ This configuration will run the microservice alongside a Mongo DB for data stora
 The image parameter contains the name of the Docker image being hosted on DockerHub (pipdevs/data-microservice-node:1.0), which is the microservice we want to be testing with. Once we get our microservice up and running, it will be available at http://localhost:8080, and the client will be able to work with it using this address. Let’s design a test, in which the client will work with our new service. We’ll be basing this test off of the one we wrote in Step 3. Place the code below into a file named **test_BeaconsHttpClientV1.py**.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code8_node.md" >}}  
+  {{< include "../__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code8_net.md" >}}    
+  {{< include "../__code8_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code8_go.md" >}} 
+  {{< include "../__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code8_dart.md" >}}    
+  {{< include "../__code8_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code8_python.md" >}}
+  {{< include "../__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,23 +72,23 @@ docker-compose -f ./docker/docker-compose.dev.yml up
 In a separate console, run the test using the following command:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code9_node.md" >}}  
+  {{< include "../__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code9_net.md" >}}    
+  {{< include "../__code9_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code9_go.md" >}} 
+  {{< include "../__code9_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code9_dart.md" >}}    
+  {{< include "../__code9_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code9_python.md" >}}
+  {{< include "../__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

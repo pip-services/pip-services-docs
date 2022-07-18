@@ -15,23 +15,23 @@ Then, creates a new class for the Commandable REST client and an implementation 
 The client’s resulting code is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code4_node.md" >}}  
+  {{< include "../__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code4_net.md" >}}    
+  {{< include "../__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code4_go.md" >}}   
+  {{< include "../__code4_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code4_dart.md" >}}    
+  {{< include "../__code4_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code4_python.md" >}}
+  {{< include "../__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

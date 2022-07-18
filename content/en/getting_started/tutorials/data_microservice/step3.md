@@ -15,23 +15,23 @@ Let’s start by navigating to the **src** directory and creating a **persistenc
 The first thing we are going to do is define what functionality our persistent storage should have. We can define these in a form of an interface and name it `IBeaconsPersistence`
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_node.md" >}}  
+  {{< include "../__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_net.md" >}}    
+  {{< include "../__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_go.md" >}}
+  {{< include "../__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_dart.md" >}}    
+  {{< include "../__code7_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code7_python.md" >}}
+  {{< include "../__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -44,23 +44,23 @@ The first persistence to implement this interface will be the memory persistence
 The resulting code for this class is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_node.md" >}}  
+  {{< include "../__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_net.md" >}}    
+  {{< include "../__code8_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_go.md" >}}
+  {{< include "../__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_dart.md" >}}    
+  {{< include "../__code8_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code8_python.md" >}}
+  {{< include "../__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,23 +73,23 @@ And that’s pretty much it for the memory persistence.
 Now let’s move on to something a bit more sophisticated - a MongoDB persistence. Here we’re also going to use an already existing base class, `IdentifiableMongoDbPersistence`, from the **pip-services3-mongodb** module, and write a few functions, the most important of which will be `__compose_filter`. This time around, its implementation is going to contain syntax for creating database requests. The resulting code for this class is listed below: 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_node.md" >}}  
+  {{< include "../__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_net.md" >}}    
+  {{< include "../__code9_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_go.md" >}}
+  {{< include "../__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_dart.md" >}}    
+  {{< include "../__code9_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code9_python.md" >}}
+  {{< include "../__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,23 +104,23 @@ To make sure that the code does just what we expect it to do, let’s add some t
 Thanks to the modular structure of microservices, each component is easily testable with the help of simple mock tests. We’ll start with creating a class that contains a set of testable commands and checks the results we receive with the help of standard testing libraries. This class will be accepting any persistence that implements our `IBeaconsPersistence` interface as a parameter. This way we can use the same set of commands to test both of our persistence implementations. This set of commands should contain standard CRUD operations, which are implemented in the parent class, as well as the methods we’ve added in the child classes.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_node.md" >}}  
+  {{< include "../__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_net.md" >}}    
+  {{< include "../__code10_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_go.md" >}}
+  {{< include "../__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_dart.md" >}}    
+  {{< include "../__code10_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code10_python.md" >}}
+  {{< include "../__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -131,23 +131,23 @@ Thanks to the modular structure of microservices, each component is easily testa
 Now that we have a set of tests, we can dive into the testing itself. To do this, we’ll create files for testing each of our persistences and run them.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_node.md" >}}  
+  {{< include "../__code11_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_net.md" >}}    
+  {{< include "../__code11_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_go.md" >}}
+  {{< include "../__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_dart.md" >}}    
+  {{< include "../__code11_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code11_python.md" >}}
+  {{< include "../__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

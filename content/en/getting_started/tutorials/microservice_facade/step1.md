@@ -131,15 +131,15 @@ Not available
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_node.md" >}}  
+  {{< include "../__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_net.md" >}}    
+  {{< include "../__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_go.md" >}}
+  {{< include "../__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -147,7 +147,7 @@ Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code2_python.md" >}}
+  {{< include "../__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -157,15 +157,15 @@ Not available
 Install all necessary modules using the command:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code3_node.md" >}}  
+  {{< include "../__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code3_net.md" >}}    
+  {{< include "../__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code3_go.md" >}}
+  {{< include "../__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -173,7 +173,7 @@ Install all necessary modules using the command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code3_python.md" >}}
+  {{< include "../__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

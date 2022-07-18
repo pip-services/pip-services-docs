@@ -14,23 +14,23 @@ Now, in the version1 folder, create a **BeaconV1** class that implements `IStrin
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_node.md" >}}  
+  {{< include "../__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_net.md" >}}    
+  {{< include "../__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_go.md" >}}
+  {{< include "../__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_dart.md" >}}    
+  {{< include "../__code4_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code4_python.md" >}}
+  {{< include "../__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -41,23 +41,23 @@ Now, in the version1 folder, create a **BeaconV1** class that implements `IStrin
 All fields are of simple data types, and their names give us a good idea of their purpose. The only exception to this is the center field, in which we are going to be storing data of type GeoJSON. The beacon’s type will be represented by a string, but we’re going to have a separate class be responsible for managing the available types, using static fields. This class is going to be called **BeaconTypeV1**, and it’s going to simply contain a list of beacon types:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_node.md" >}}  
+  {{< include "../__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_net.md" >}}    
+  {{< include "../__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_go.md" >}}
+  {{< include "../__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_dart.md" >}}    
+  {{< include "../__code5_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code5_python.md" >}}
+  {{< include "../__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -68,23 +68,23 @@ All fields are of simple data types, and their names give us a good idea of thei
 For checking the validity of the data we are going to be receiving, let’s create a data validation schema in a class called **BeaconV1Schema**: 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_node.md" >}}  
+  {{< include "../__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_net.md" >}}    
+  {{< include "../__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_go.md" >}}
+  {{< include "../__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_dart.md" >}}    
+  {{< include "../__code6_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code6_python.md" >}}
+  {{< include "../__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

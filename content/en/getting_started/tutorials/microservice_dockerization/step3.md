@@ -16,23 +16,23 @@ Furthermore, a flexibly configurable container can easily be included in various
 We’ll be creating a separate container for packaging our microservice and defining its build instructions in a file named **Dockerfile**:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_node.md" >}}  
+  {{< include "../__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_net.md" >}}    
+  {{< include "../__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_go.md" >}}    
+  {{< include "../__code3_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_dart.md" >}}    
+  {{< include "../__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code3_python.md" >}}
+  {{< include "../__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

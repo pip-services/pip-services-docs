@@ -11,23 +11,23 @@ gitUrl: "https://github.com/pip-services-samples"
 The Pip.Services Toolkit has a dedicated component in the RPC module for processing external requests. To make use of this service, create a new class `BeaconsHttpServiceV1`, extending the `CommandableHttpService` class:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_node.md" >}}  
+  {{< include "../__code16_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_net.md" >}}    
+  {{< include "../__code16_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_go.md" >}}
+  {{< include "../__code16_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_dart.md" >}}    
+  {{< include "../__code16_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code16_python.md" >}}
+  {{< include "../__code16_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -44,23 +44,23 @@ http://{ip}:{port}/v1/beacons/{command_name}
 Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there’s a large amount of code being executed in the service itself. To make sure that everything is working as it should, we should add tests for the service itself, as well as for the commands we wrote in the CommandSet. Create a file for the service’s test and paste the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_node.md" >}}  
+  {{< include "../__code17_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_net.md" >}}    
+  {{< include "../__code17_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_go.md" >}}
+  {{< include "../__code17_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_dart.md" >}}    
+  {{< include "../__code17_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/data_microservice/__code17_python.md" >}}
+  {{< include "../__code17_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

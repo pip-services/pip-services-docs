@@ -15,15 +15,15 @@ Just like in the previous step, we’ll be placing the files of this step in the
 Let’s start by defining a data model for storing user information within a session. Create a new file named **SessionUserV1.py** with the following code:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code5_node.md" >}}  
+  {{< include "../__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code5_net.md" >}}    
+  {{< include "../__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code5_go.md" >}}
+  {{< include "../__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -31,7 +31,7 @@ Let’s start by defining a data model for storing user information within a ses
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code5_python.md" >}}
+  {{< include "../__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -43,15 +43,15 @@ This data model will contain all necessary information about the user: the sessi
 We’ll be defining our operations for managing sessions and authenticating users in a file named **SessionOperationsV1.py**. A listing of this file’s code is presented below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code6_node.md" >}}  
+  {{< include "../__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code6_net.md" >}}    
+  {{< include "../__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code6_go.md" >}}
+  {{< include "../__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -59,7 +59,7 @@ We’ll be defining our operations for managing sessions and authenticating user
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code6_python.md" >}}
+  {{< include "../__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

@@ -19,23 +19,23 @@ The test client has to implement the same interface that the other clients did. 
 The code for this client is showed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code5_node.md" >}}  
+  {{< include "../__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code5_net.md" >}}    
+  {{< include "../__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code5_go.md" >}} 
+  {{< include "../__code5_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code5_dart.md" >}}    
+  {{< include "../__code5_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code5_python.md" >}}
+  {{< include "../__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,23 +48,23 @@ Now let’s test the client we’ve created. We’ll be using the set of tests t
 **/test/version1/test_BeaconsMockClientV1.py**
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code6_node.md" >}}  
+  {{< include "../__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code6_net.md" >}}    
+  {{< include "../__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code6_go.md" >}} 
+  {{< include "../__code6_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code6_dart.md" >}}    
+  {{< include "../__code6_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code6_python.md" >}}
+  {{< include "../__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,23 +79,23 @@ This technique becomes very useful when developing microservices that bring toge
 To performing non-fuctional testing, we need to generate a large amount of realistic data. Users usually don’t know the entire data structure with all of its variations and exceptions. The next component we will be adding to our client library is a random data generator. This component can be used by the microservice’s users to create quality tests. The implementation is usually done in the form of static methods that either return an entire object, or just some part of its parameters. Let’s take a look at what an implementation of such a generator for the **BeaconsV1** data object would look like. The generator’s code is listed below:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code7_node.md" >}}  
+  {{< include "../__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code7_net.md" >}}    
+  {{< include "../__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code7_go.md" >}} 
+  {{< include "../__code7_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code7_dart.md" >}}    
+  {{< include "../__code7_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/client_library/__code7_python.md" >}}
+  {{< include "../__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

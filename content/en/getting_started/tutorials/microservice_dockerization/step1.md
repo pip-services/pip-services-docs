@@ -15,23 +15,23 @@ To perform the build process for a Python project, we’ll be creating a Docker 
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_node.md" >}}  
+  {{< include "../__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_net.md" >}}    
+  {{< include "../__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_go.md" >}}    
+  {{< include "../__code1_go.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_dart.md" >}}    
+  {{< include "../__code1_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_dockerization/__code1_python.md" >}}
+  {{< include "../__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

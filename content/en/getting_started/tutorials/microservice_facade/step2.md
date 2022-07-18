@@ -26,15 +26,15 @@ Let’s start with the first set of operations - the ones responsible for workin
 Create a file named **BeaconsOperationsV1.py** and place the following code inside:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code4_node.md" >}}  
+  {{< include "../__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code4_net.md" >}}    
+  {{< include "../__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code4_go.md" >}}
+  {{< include "../__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -42,7 +42,7 @@ Create a file named **BeaconsOperationsV1.py** and place the following code insi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/tutorials/microservice_facade/__code4_python.md" >}}
+  {{< include "../__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

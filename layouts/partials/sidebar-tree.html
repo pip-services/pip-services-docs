@@ -5,19 +5,22 @@
   {{ if not .Site.Params.ui.sidebar_search_disable -}}
   <form class="td-sidebar__search d-flex align-items-center">
     {{ partial "search-input.html" . }}
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse"
-      data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false"
-      aria-label="Toggle section navigation">
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
     </button>
   </form>
-  {{ else }}
-
+  {{ else -}}
+  <div id="content-mobile">
+  <form class="td-sidebar__search d-flex align-items-center">
+    {{ partial "search-input.html" . }}
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  </div>
   <div id="content-desktop"></div>
-  {{ end }}
-
-  <nav class="collapse show td-sidebar-nav p-0 navbar navbar-default" role="navigation" id="td-section-nav">
-    <!-- {{ if  (gt (len .Site.Home.Translations) 0) }}
-    <div class="nav-item dropdown d-block d-md-none">
+  {{ end -}}
+  <nav class="collapse td-sidebar-nav{{ if .Site.Params.ui.sidebar_menu_foldable }} foldable-nav{{ end }}" id="td-section-nav">
+    {{ if  (gt (len .Site.Home.Translations) 0) -}}
+    <div class="nav-item dropdown d-block d-lg-none">
       {{ partial "navbar-lang-selector.html" . }}
     </div>
     {{ end }} -->
@@ -97,7 +100,7 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 <!-- hide if is included files -->
 {{ $isNotIncludeSection := not ( eq $s.LinkTitle "") }}
 
-{{ if or (and (not (eq .ulNr 1)) $isNotIncludeSection)}}
+{{ if $isNotIncludeSection}}
 <li
   class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
   id="{{ $mid }}-li">
@@ -131,6 +134,6 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
     {{ end }}
     {{ end }}
   </ul>
-  {{ end }}
+  {{- end }}
 </li>
-{{ end }}
+{{- end }}

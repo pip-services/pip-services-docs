@@ -24,23 +24,23 @@ The main distinction is that our implementation of Inversion of Control uses the
 The [IReferences](../../../node/commons/refer/ireferences/) interface can be used to pass a so-called [References](../../../node/commons/refer/references/) object to a component. This **References** object can be used by the component to retrieve any and all required dependencies. **IReferences** is defined as follows:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code1_node.md" >}}  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code1_net.md" >}}    
+  {{< include "./__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code1_go.md" >}}   
+  {{< include "./__code1_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code1_dart.md" >}}    
+  {{< include "./__code1_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -55,23 +55,23 @@ The **put** method is used to add a component and its locator/key to the list of
 A component must implement the [IReferenceable](../../../node/commons/refer/ireferenceable/) interface to be able to receive dependencies. Dependencies are set in the component’s **setReferences** method, which is called with a link to a **References** object (described in the previous section).
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code2_node.md" >}}  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code2_net.md" >}}    
+  {{< include "./__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code2_go.md" >}}
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code2_dart.md" >}}    
+  {{< include "./__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code2_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -85,23 +85,23 @@ Dependencies can be set and removed either manually, or automatically by the com
 Let’s take a look at a simple example of setting dependencies between components using the Pip.Services Toolkit’s References pattern. Suppose we have 2 services, Worker1 and Worker2, which are defined as follows:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code3_node.md" >}}  
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code3_net.md" >}}    
+  {{< include "./__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code3_go.md" >}}
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code3_dart.md" >}}    
+  {{< include "./__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code3_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -112,23 +112,23 @@ Now let’s add a **SimpleController** component with a **greeting()** method. T
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code4_node.md" >}}  
+  {{< include "./__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code4_net.md" >}}    
+  {{< include "./__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code4_go.md" >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code4_dart.md" >}}    
+  {{< include "./__code4_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code4_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -138,23 +138,23 @@ Now let’s add a **SimpleController** component with a **greeting()** method. T
 We will be using the **References** class to pass dependencies into our components. This class is defined in the **Commons** module and implements the **IReferenceable** interface. We can use the **References.from_tuples** method to populate our list of dependencies using locator-reference pairs.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code5_node.md" >}}  
+  {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code5_net.md" >}}    
+  {{< include "./__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code5_go.md" >}}
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code5_dart.md" >}}    
+  {{< include "./__code5_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code5_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -175,23 +175,23 @@ For such complex cases, the Pip.Services Toolkit includes a special locator that
 The **Descriptor** class’s definition is as follows:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code6_node.md" >}}  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code6_net.md" >}}    
+  {{< include "./__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code6_go.md" >}}
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code6_dart.md" >}}    
+  {{< include "./__code6_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code6_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -232,23 +232,23 @@ my_library:*:*:*:*
 Returning to our “worker” example, we could use **Descriptors** in the following manner: 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code7_node.md" >}}  
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code7_net.md" >}}    
+  {{< include "./__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code7_go.md" >}}
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code7_dart.md" >}}    
+  {{< include "./__code7_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code7_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -261,23 +261,23 @@ In complex systems, which often contain a number of components of the same type,
 The **DependencyResolver** class:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code8_node.md" >}}  
+  {{< include "./__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code8_net.md" >}}    
+  {{< include "./__code8_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code8_go.md" >}}
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code8_dart.md" >}}    
+  {{< include "./__code8_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code8_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -287,23 +287,23 @@ The **DependencyResolver** class:
 Below is the final version of our **“worker”** example, which now utilizes the **DependencyResolver**. By default, the **SimpleController** is capable of working with either of the worker services. However, once we configure **SimpleController** and, in turn, the **DependencyResolver** - the component is re-configured to work with just Worker1.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code9_node.md" >}}  
+  {{< include "./__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code9_net.md" >}}    
+  {{< include "./__code9_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code9_go.md" >}}
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code9_dart.md" >}}    
+  {{< include "./__code9_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code9_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -331,23 +331,23 @@ When creating such a configuration for a container, the configuration file might
 The [Referencer](../../../node/commons/refer/referencer/) helper class can be used as well for setting and removing dependencies:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code10_node.md" >}}  
+  {{< include "./__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code10_net.md" >}}    
+  {{< include "./__code10_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code10_go.md" >}}
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code10_dart.md" >}}    
+  {{< include "./__code10_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/component_references/__code10_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

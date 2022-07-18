@@ -32,23 +32,23 @@ The code will look something like this:
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_node.md" >}} 
+  {{< include "./__code1_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_net.md" >}}
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_go.md" >}} 
+  {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_dart.md" >}}
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -61,23 +61,23 @@ The code will look something like this:
 The next step is to create a memory persistence object. Here, we need to use the [IdentifiableMemoryPersistence](http://docs.pipservices.org/python/data/persistence/identifiable_memory_persistence/) class, which is an abstract persistence component that stores data in memory and implements CRUD operations over data items with unique ids. We will also define two methods namely, **get_page_by_filter** and **get_one_by_key**, which will be used to read the persisted values.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_node.md" >}} 
+  {{< include "./__code2_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_net.md" >}}
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_go.md" >}} 
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_dart.md" >}}
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code2_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -94,23 +94,23 @@ Now that we have a persistence object, we will perform CRUD operations.
 To add values to the persistence object, we will use the **create** method. This method asks for two parameters: correlation_id and the object to persist. For the correlation_id we will use None as in our example we are not interested in following a sequence of operations.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_node.md" >}} 
+  {{< include "./__code3_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_net.md" >}}
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_go.md" >}}
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_dart.md" >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code3_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -131,23 +131,23 @@ As we can see, the memory persistence object allocated a value to the id of dumm
 To read the persisted values, we can use the **get_page_by_filter** method that we defined when we created the memory persistence object. Here, we will use a filter to indicate that we are only looking for the dummy2 object. 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_node.md" >}} 
+  {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_net.md" >}}
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_go.md" >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_dart.md" >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code4_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -163,23 +163,23 @@ The **result** object is of type [DataPage](http://docs.pipservices.org/python/c
 Similarly, we can obtain all the persisted objects by using None as our filter.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_node.md" >}} 
+  {{< include "./__code5_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_net.md" >}}
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_go.md" >}}
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_dart.md" >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code5_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -196,23 +196,23 @@ After running the above code, we will obtain the following result:
 To update a value in the persistence object, we need to use the **update** method. For example, we can change the content of the dummy2 persisted object to “new content 2”. 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_node.md" >}}  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_net.md" >}}
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_go.md" >}}  
+  {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_dart.md" >}}
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code6_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -224,23 +224,23 @@ To update a value in the persistence object, we need to use the **update** metho
 To verify the change, we can extract the dummy2 object by applying a filter:
  
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_node.md" >}}  
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_net.md" >}}
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_go.md" >}}
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_dart.md" >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code7_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -255,23 +255,23 @@ And get the updated object:
 We can also use the **update_partially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_node.md" >}} 
+  {{< include "./__code8_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_net.md" >}}
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_go.md" >}}
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_dart.md" >}}
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code8_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -283,23 +283,23 @@ We can also use the **update_partially** function. In this case, we need to spec
 To verify the change, we can use the filter defined earlier.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_node.md" >}} 
+  {{< include "./__code9_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_net.md" >}}
+  {{< include "./__code9_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_go.md" >}}
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_dart.md" >}}
+  {{< include "./__code9_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code9_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -317,23 +317,23 @@ Similarly, we can delete an object stored in the persistence object by using the
   
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_node.md" >}}
+  {{< include "./__code10_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_net.md" >}}
+  {{< include "./__code10_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_go.md" >}}
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_dart.md" >}}
+  {{< include "./__code10_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code10_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -344,23 +344,23 @@ To verify that the object has been deleted, we can apply a filter and search for
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_node.md" >}}
+  {{< include "./__code11_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_net.md" >}}
+  {{< include "./__code11_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_go.md" >}}
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_dart.md" >}}
+  {{< include "./__code11_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/memory_persistence/__code11_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

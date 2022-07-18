@@ -43,7 +43,7 @@ When creating the controller, we can add in a timer and structure the processing
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+  {{< include "./__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -70,7 +70,7 @@ As long as the execution time of the task does not exceed the timer’s interval
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
+  {{< include "./__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -98,7 +98,7 @@ In this case, task execution is triggered by a message/signal that is received f
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}    
+  {{< include "./__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -128,7 +128,7 @@ For cases where distributed locks and message queues can’t be used, the PipSer
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}    
+  {{< include "./__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -155,7 +155,7 @@ Now, in the task’s method, we need to add some code that checks whether or not
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
+  {{< include "./__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}

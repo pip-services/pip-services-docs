@@ -21,23 +21,23 @@ This is a basic component that stores data items of any type. Some basic operati
 The example below demonstrates a class that implements the MongoDB persistence component for the [Beacon data model](../../tutorials/data_microservice/step2/). 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_node.md" >}}  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_net.md" >}}    
+  {{< include "./__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_go.md" >}}
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_dart.md" >}}    
+  {{< include "./__code1_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -47,23 +47,23 @@ The example below demonstrates a class that implements the MongoDB persistence c
 And this is how we could use such a class:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_node.md" >}}    
+  {{< include "./__code2_node.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_net.md" >}}    
+  {{< include "./__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_go.md" >}}
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_dart.md" >}}    
+  {{< include "./__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code2_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -82,23 +82,23 @@ By default, **MongoDbPersistence** tries to establish a local connection on Mong
 The example below demonstrates how the [ConfigParams](../../commons/config/config_params/) class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../configuration).
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_node.md" >}} 
+  {{< include "./__code3_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_net.md" >}}      
+  {{< include "./__code3_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_go.md" >}}
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_dart.md" >}}    
+  {{< include "./__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code3_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -130,23 +130,23 @@ First, add an element with the “pip-services” descriptor to the configuratio
 Next, register the persistence as a component in the microservice’s **Factory**:
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_node.md" >}} 
+   {{< include "./__code4_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_net.md" >}}      
+  {{< include "./__code4_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_go.md" >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_dart.md" >}}     
+  {{< include "./__code4_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code4_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -157,23 +157,23 @@ Next, register the persistence as a component in the microservice’s **Factory*
 And add the [DefaultMongoDbFactory](../../../node/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_node.md" >}} 
+  {{< include "./__code5_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_net.md" >}}    
+  {{< include "./__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_go.md" >}}
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_dart.md" >}}     
+  {{< include "./__code5_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code5_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -199,23 +199,23 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../../node/mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../../node/commons/data/iidentifiable/) interface defined in [the Commons module](../../../node/commons).
 
 {{< tabsection >}}
-    {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_node.md" >}}
+    {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_net.md" >}}    
+  {{< include "./__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_go.md" >}}
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_dart.md" >}}   
+  {{< include "./__code6_dart.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code6_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -226,23 +226,23 @@ The implementation we will be working with going forward is called the [Identifi
 **IdentifiableMongoDbPersistence** implements a number of CRUD operations that are based on working with the model's id in a predefined manner. In addition, it provides methods for getting paginated results and listing data using detailed filter, sort, and even projection parameters. 
 
 {{< tabsection >}}
-    {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_node.md" >}}
+    {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_net.md" >}}    
+  {{< include "./__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_go.md" >}}
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_dart.md" >}}     
+  {{< include "./__code7_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code7_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -253,23 +253,23 @@ The implementation we will be working with going forward is called the [Identifi
 We can build upon the **IdentifiableMongoDbPersistence** by overriding its **ComposeFilter** method:
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_node.md" >}}
+   {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_net.md" >}}      
+  {{< include "./__code8_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_go.md" >}}
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_dart.md" >}}     
+  {{< include "./__code8_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code8_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -284,23 +284,23 @@ In most scenarios, child classes only need to override the **get_page_by_filter(
 Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../../node/commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [Commons module](../../../node/commons)).
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_node.md" >}}
+   {{< include "./__code9_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_net.md" >}}      
+  {{< include "./__code9_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_go.md" >}}
+  {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_dart.md" >}}     
+  {{< include "./__code9_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code9_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -311,23 +311,23 @@ Persistence components in the Pip.Services Toolkit use a number of data patterns
 In the persistence component, the developer is responsible for parsing **FilterParams** and passing a filter function to the persistence’s methods of the base class.
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_node.md" >}}  
+   {{< include "./__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_net.md" >}}      
+   {{< include "./__code10_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_go.md" >}}
+  {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_dart.md" >}}     
+  {{< include "./__code10_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code10_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -339,23 +339,23 @@ In the persistence component, the developer is responsible for parsing **FilterP
 Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../../node/commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_node.md" >}} 
+   {{< include "./__code11_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_net.md" >}}     
+  {{< include "./__code11_net.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_go.md" >}}
+  {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_dart.md" >}}    
+  {{< include "./__code11_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code11_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -369,23 +369,23 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **get_one_by_udi** persistence method.
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code12_node.md" >}}  
+   {{< include "./__code12_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code12_net.md" >}}      
+    {{< include "./__code12_net.md" >}}      
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code12_go.md" >}}
+  {{< include "./__code12_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code12_dart.md" >}}     
+  {{< include "./__code12_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code12_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -396,23 +396,23 @@ As mentioned above, developers can also implement custom persistence methods. Th
 When we put everything together, we end up with the following component:
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code13_node.md" >}} 
+   {{< include "./__code13_node.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code13_net.md" >}}     
+   {{< include "./__code13_net.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code13_go.md" >}}
+  {{< include "./__code13_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code13_dart.md" >}}     
+  {{< include "./__code13_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code13_python.md" >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -423,23 +423,23 @@ When we put everything together, we end up with the following component:
 The following example demonstrates how we can use our newly created persistence for writing and reading Beacon objects to a MongoDB:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code14_node.md" >}}  
+  {{< include "./__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code14_net.md" >}}    
+  {{< include "./__code14_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code14_go.md" >}}
+  {{< include "./__code14_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code14_dart.md" >}}     
+  {{< include "./__code14_dart.md" >}}     
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/mongodb_persistence/__code14_python.md" >}}
+  {{< include "./__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

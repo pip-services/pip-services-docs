@@ -30,23 +30,23 @@ In this section, we will see how to use each of the methods available in the Ran
 The RandomArray class provides a way to randomly choose an element from an array via its **pick** method. The following example shows how to use it.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code1_node.md" >}}
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code1_net.md" >}}
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code1_go.md" >}}
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code1_dart.md" >}}
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -72,23 +72,23 @@ The RandomBoolean class offers two methods namely chance and next_boolean. The f
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code2_node.md" >}}
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code2_net.md" >}}
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code2_go.md" >}}
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code2_dart.md" >}}
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code2_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -114,23 +114,23 @@ The RandomDateTime class contains two methods: **next_date** and **update_dateti
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code3_node.md" >}}
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code3_net.md" >}}
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code3_go.md" >}}
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code3_dart.md" >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code3_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -156,23 +156,23 @@ The RandomDouble class has two methods that can be used to generate random doubl
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code4_node.md" >}}
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code4_net.md" >}}
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code4_go.md" >}}
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code4_dart.md" >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code4_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -198,23 +198,23 @@ The **RandomFloat** class contains two methods that can be used to obtain random
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code5_node.md" >}}
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code5_net.md" >}}
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code5_go.md" >}}
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code5_dart.md" >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code5_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,23 +240,23 @@ The **RandomInteger** class has two methods for generating random integers. Thei
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code6_node.md" >}}
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code6_net.md" >}}
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code6_go.md" >}}
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code6_dart.md" >}}
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code6_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -295,23 +295,23 @@ The **RandomString** class presents methods that can be used to create random st
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code7_node.md" >}}
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code7_net.md" >}}
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code7_go.md" >}}
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code7_dart.md" >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code7_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -373,23 +373,23 @@ The **RandomText** class can be used to generate different types of random texts
 </table>
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code8_node.md" >}}
+  {{< include "./__code8_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code8_net.md" >}}
+  {{< include "./__code8_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code8_go.md" >}}
+  {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code8_dart.md" >}}
+  {{< include "./__code8_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/randomness/__code8_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

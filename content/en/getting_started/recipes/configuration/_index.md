@@ -20,23 +20,23 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 A component can be made configurable by adding the [IConfigurable](../../../node/commons/config/iconfigurable/) interface and implementing its **configure** method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code1_node.md" >}}  
+  {{< include "./__code1_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code1_net.md" >}}    
+  {{< include "./__code1_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code1_go.md" >}}  
+  {{< include "./__code1_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code1_dart.md" >}}    
+  {{< include "./__code1_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code1_python.md" >}}
+  {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -48,23 +48,23 @@ A component can be made configurable by adding the [IConfigurable](../../../node
 The only parameter that is passed to the configure method is [ConfigParams](../../../node/commons/config/config_params/) object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code2_node.md" >}}  
+  {{< include "./__code2_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code2_net.md" >}}    
+  {{< include "./__code2_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code2_go.md" >}}  
+  {{< include "./__code2_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code2_dart.md" >}}    
+  {{< include "./__code2_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code2_python.md" >}}
+  {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -75,23 +75,23 @@ The only parameter that is passed to the configure method is [ConfigParams](../.
 
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code3_node.md" >}}  
+  {{< include "./__code3_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code3_net.md" >}}    
+  {{< include "./__code3_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code3_go.md" >}}  
+  {{< include "./__code3_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code3_dart.md" >}}    
+  {{< include "./__code3_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code3_python.md" >}}
+  {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -101,23 +101,23 @@ The only parameter that is passed to the configure method is [ConfigParams](../.
 The parameter kets can have a complex structure, grouped by sections using dot notation. **ConfigParams** can be used to work with entire sections as well.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code4_node.md" >}}  
+  {{< include "./__code4_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code4_net.md" >}}    
+  {{< include "./__code4_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code4_go.md" >}}  
+  {{< include "./__code4_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code4_dart.md" >}}    
+  {{< include "./__code4_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code4_python.md" >}}
+  {{< include "./__code4_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -129,23 +129,23 @@ The parameter kets can have a complex structure, grouped by sections using dot n
 Another helpful option is the ability to set a default configuration.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code5_node.md" >}}  
+  {{< include "./__code5_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code5_net.md" >}}    
+  {{< include "./__code5_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code5_go.md" >}}  
+  {{< include "./__code5_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code5_dart.md" >}}    
+  {{< include "./__code5_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code5_python.md" >}}
+  {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -157,23 +157,23 @@ Another helpful option is the ability to set a default configuration.
 Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YAML, or a plain string.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code6_node.md" >}}  
+  {{< include "./__code6_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code6_net.md" >}}    
+  {{< include "./__code6_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code6_go.md" >}}  
+  {{< include "./__code6_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code6_dart.md" >}}    
+  {{< include "./__code6_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code6_python.md" >}}
+  {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,23 +187,23 @@ To read more about what functionality is available through **ConfigParams**, be 
 Below is an example of a configurable component:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code7_node.md" >}}  
+  {{< include "./__code7_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code7_net.md" >}}    
+  {{< include "./__code7_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code7_go.md" >}}  
+  {{< include "./__code7_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code7_dart.md" >}}    
+  {{< include "./__code7_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code7_python.md" >}}
+  {{< include "./__code7_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -215,23 +215,23 @@ Below is an example of a configurable component:
 Manual configuration can be done in the following manner:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code8_node.md" >}}  
+  {{< include "./__code8_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code8_net.md" >}}    
+  {{< include "./__code8_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code8_go.md" >}}  
+  {{< include "./__code8_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code8_dart.md" >}}    
+  {{< include "./__code8_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code8_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -260,23 +260,23 @@ The [NameResolver](../../../node/commons/config/name_resolver/) and [OptionsReso
 Below is a simple example of how it can be used:
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code9_node.md" >}}  
+  {{< include "./__code9_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code9_net.md" >}}    
+  {{< include "./__code9_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code9_go.md" >}}  
+  {{< include "./__code9_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code9_dart.md" >}}    
+  {{< include "./__code9_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code9_python.md" >}}
+  {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -288,23 +288,23 @@ Below is a simple example of how it can be used:
 **OptionsResolver** is a helper class that extracts parameters from the "options" configuration section.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code10_node.md" >}}  
+  {{< include "./__code10_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code10_net.md" >}}    
+  {{< include "./__code10_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code10_go.md" >}}  
+  {{< include "./__code10_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code10_dart.md" >}}    
+  {{< include "./__code10_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code10_python.md" >}}
+  {{< include "./__code10_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -316,23 +316,23 @@ Below is a simple example of how it can be used:
 Configuration parameters can be stored in microservice configurations, configuration files, or in configuration services. To help with configuration extraction, the Pip.Services Toolkit offers two special **ConfigReader** components. The interface for these components is defined in the [Components](../../../node/components) module.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code11_node.md" >}}  
+  {{< include "./__code11_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code11_net.md" >}}    
+  {{< include "./__code11_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code11_go.md" >}}  
+  {{< include "./__code11_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code11_dart.md" >}}    
+  {{< include "./__code11_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code11_python.md" >}}
+  {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -344,23 +344,23 @@ Configuration parameters can be stored in microservice configurations, configura
 The [MemoryConfigReader](../../components/config/memory_config_reader/) is a **ConfigReader** that stores configuration data in memory.
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code12_node.md" >}}  
+  {{< include "./__code12_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code12_net.md" >}}    
+  {{< include "./__code12_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code12_go.md" >}}  
+  {{< include "./__code12_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code12_dart.md" >}}    
+  {{< include "./__code12_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code12_python.md" >}}
+  {{< include "./__code12_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -376,23 +376,23 @@ The [JsonConfigReader](../../../node/components/config/json_config_reader/) is a
 ```
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code13_node.md" >}}  
+  {{< include "./__code13_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code13_net.md" >}}    
+  {{< include "./__code13_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code13_go.md" >}}  
+  {{< include "./__code13_go.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code13_dart.md" >}}    
+  {{< include "./__code13_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code13_python.md" >}}
+  {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -409,23 +409,23 @@ key2: "ABCD"
 ```
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code14_node.md" >}}  
+  {{< include "./__code14_node.md" >}}  
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code14_net.md" >}}    
+  {{< include "./__code14_net.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code14_go.md" >}}   
+  {{< include "./__code14_go.md" >}}   
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code14_dart.md" >}}    
+  {{< include "./__code14_dart.md" >}}    
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "/content/en/toolkit/recipes/configuration/__code14_python.md" >}}
+  {{< include "./__code14_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

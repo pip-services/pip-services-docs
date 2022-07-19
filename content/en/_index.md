@@ -136,16 +136,6 @@ This guide will help you to learn Pip.Services and to develop your own microserv
     </div>
   </div>
 </div>
-<br>
-<div class="card-deck">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title"><b>Video Tutorials</b></h5>
-      <p class="card-text">TODO: add description</p>
-      <a href="toolkit/video_tutorials" class="stretched-link"></a>
-    </div>
-  </div>
-</div>
 
 <br>
 

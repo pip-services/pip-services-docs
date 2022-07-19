@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Caching"
 linkTitle: "Caching"
-weight: 60
+weight: 80
 description: >-
      How to cache in memory.
 ---

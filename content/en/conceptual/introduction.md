@@ -470,3 +470,19 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
     </td>
   </tr>
 </table>
+
+#### Fast learning, fast development
+
+One of the most pressing aspects that developers face is keeping up with the pace of knowledge and technology changes.  
+
+Pip.Services’ inner design based on building blocks and reusable components that embrace current best practices and patterns reduces the amount of time necessary to achieve programming productivity. Developers can concentrate on specific technologies, use the language of their preference and obtain new skills based on what they already know, without the need to master the entire development tool.  
+
+In addition, its symmetric implementation provides a common ground that speeds up communication and knowledge transfer between developers and teams.  
+
+The result is that, as experience demonstrates, an average developer with proper training can become productive in two to three weeks; and, once the toolkit has been adopted, total development efficiency can double or even triple.  
+
+#### Designed for long-living systems
+Present-day technologies and business requirements change fast. Pip.Services was designed with these challenges in mind and with the idea of creating adaptable systems that stand the test of time and are functional and performant.   
+
+Its architecture based on a modular approach and reusable components makes this toolkit easily adaptable to business and technical innovations. Its fast learning and development style helps developers to implement those updates swiftly and accurately. And, its symmetric language implementation means that adding a new language is simply a matter of building on what already exists.
+

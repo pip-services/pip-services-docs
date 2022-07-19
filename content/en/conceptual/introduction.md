@@ -74,7 +74,7 @@ Symmetric implementation means that for every programming language it is impleme
 
 <br>
 
-Moreover, to support the big number of existing deployment platforms, Pip.Services uses the concept of containerization. This allows for the packaging of microservice components into different types of containers that support the most common existing platforms - such as Processes, Docker, AWS Lambda, Azure Functions, and Google Cloud Functions -, and the reuse of over 90% of the implemented and tested code in the process.
+Moreover, to support the big number of existing deployment platforms, Pip.Services uses the concept of containerization. This allows for the packaging of microservice components into different types of containers that support the most common existing platforms - such as Processes, Docker, AWS Lambda, Azure Functions, and Google Cloud Functions, and the reuse of over 90% of the implemented and tested code in the process.
 
 #### Organized in a modular fashion
 

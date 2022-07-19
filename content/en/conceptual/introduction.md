@@ -14,68 +14,60 @@ The current technical environment is characterized by a variety of programming l
 
 Symmetric implementation means that for every programming language it is implemented in, there is a common set of classes, methods, and method signatures that applies to all implemented languages. This carefully designed architecture allows the toolkit to support a variety of programming languages that can be compiled or interpreted, statically- or dynamically-typed, object-oriented or not. Currently, the toolkit is available in six different languages namely, Go, Node.js, .NET, Python, Dart, and Java.  
 
-<div class="row">
-  <div class="col-6 col-md-12 d-flex pb-md-4 justify-content-center">
-    <div class="card-deck title-cards">
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/nodejs-icon.png" alt="Node.js icon">
-          <a href="node" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>Node.js</b>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/dotnet-icon.png" alt="Dotnet icon">
-          <a href="net" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>.NET</b>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/golang-icon.png" alt="Golang icon">
-          <a href="golang" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>Golang</b>
-        </div>
-      </div>
+
+<div class="card-group mx-auto intro-cards">
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/nodejs-icon.png" alt="Node.js icon">
+      <a href="node" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>Node.js</b>
     </div>
   </div>
-  
-  <div class="col-6 col-md-12 d-flex justify-content-center">
-    <div class="card-deck title-cards">
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/dart-icon.png" alt="Dart icon">
-          <a href="dart" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>Dart</b>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/python-icon.png" alt="Python icon">
-          <a href="python" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>Python</b>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="card-img-top" src="/images/icons/java-icon.png" alt="Java icon">
-          <a href="java" class="stretched-link"></a>
-        </div>
-        <div class="card-footer text-center">
-            <b>Java</b>
-        </div>
-      </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/dotnet-icon.png" alt="Dotnet icon">
+      <a href="net" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>.NET</b>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/golang-icon.png" alt="Golang icon">
+      <a href="golang" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>Golang</b>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/dart-icon.png" alt="Dart icon">
+      <a href="dart" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>Dart</b>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/python-icon.png" alt="Python icon">
+      <a href="python" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>Python</b>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body text-center">
+      <img class="card-img-top" src="/images/icons/java-icon.png" alt="Java icon">
+      <a href="java" class="stretched-link"></a>
+    </div>
+    <div class="card-footer text-center">
+        <b>Java</b>
     </div>
   </div>
 </div>
@@ -89,35 +81,35 @@ Moreover, to support the big number of existing deployment platforms, Pip.Servic
 The toolkit is designed in a modular fashion, where there are a few core modules that provide common abstractions and patterns, and a growing number of additional modules that offer reusable components and patterns built on top of popular technologies. This approach facilitates the optimization of microservice dependencies and the rapid expansion of the toolkit’s functionalities.
 At present, the toolkit contains the following modules:
 
-<div class="card-group mx-auto intro-cards tech-stack">
+<div class="card-group mx-auto intro-card">
   <div class="card">
     <img class="card-img-top" src="/images/icons/system_processes.svg" alt="System process icon">
     <div class="card-body text-center p-1 pb-2">
-      System Processes
+      <b>System Processes</b>
     </div>
   </div>
    <div class="card">
     <img class="card-img-top" src="/images/icons/docker.svg" alt="Docker icon">
     <div class="card-body text-center p-1 pb-2">
-      Docker
+      <b>Docker</b>
     </div>
   </div>
    <div class="card">
     <img class="card-img-top" src="/images/icons/aws_lambda.svg" alt="AWS icon">
     <div class="card-body text-center p-1 pb-2">
-      AWS Lambda
+      <b>AWS Lambda</b>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="/images/icons/azure_functions.svg" alt="Azure icon">
     <div class="card-body text-center p-1 pb-2">
-      Azure Functions
+      <b>Azure Functions</b>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="/images/icons/google_cloud_functions.svg" alt="GCP icon">
     <div class="card-body text-center p-1 pb-2">
-      Cloud Functions
+      <b>Cloud Functions</b>
     </div>
   </div>
 </div>

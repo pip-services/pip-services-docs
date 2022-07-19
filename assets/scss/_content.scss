@@ -29,6 +29,26 @@ mark, .mark {
     }
 }
 
+#intro-mods {
+    .card-body {
+        padding: 0.5rem;
+        min-width: 7rem;
+        font-size: 0.9rem;
+    }
+    
+    .card {
+        border-radius: 5px;
+        margin: 0.5rem;
+        background-color: #F5F8FA;
+        
+        &:hover {
+            border-color: lighten($primary, 60%);
+            box-shadow: 0 0 0 1px lighten($primary, 30%);
+            box-shadow: 0.5px 0.5px 0.5px rgba(75, 75, 75, 0.5);
+        }
+    }
+}
+
 // .microservice {
 
 //     .card-title{

@@ -23,7 +23,7 @@
     <div class="nav-item dropdown d-block d-lg-none">
       {{ partial "navbar-lang-selector.html" . }}
     </div>
-    {{ end }} -->
+    {{ end }}
     {{ $navRoot := cond (and (ne .Params.toc_root true) (eq .Site.Home.Type "docs")) .Site.Home .FirstSection }}
     {{ $ulNr := 0 }}
     {{ $ulShow := cond (isset .Site.Params.ui "ul_show") .Site.Params.ui.ul_show 1 }}
@@ -100,7 +100,23 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 <!-- hide if is included files -->
 {{ $isNotIncludeSection := not ( eq $s.LinkTitle "") }}
 
-{{ if $isNotIncludeSection}}
+<!-- check if is child of home page -->
+{{ $isChildOfHome := false }}
+{{ with $currentSection.Parent }}
+  <!-- Add hardcoded child of home sections here -->
+  {{ if and (.IsAncestor $s) (eq .LinkTitle "Home")
+    (or (eq $currentSection.LinkTitle "Contribute")
+    (eq $currentSection.LinkTitle "Get help"))
+  }}
+    {{ $isChildOfHome = true }}
+  {{ end }}
+{{end}}
+
+{{ $isHomePageOrHardcodeSection := and
+  (or (and (eq $currentSection.LinkTitle "Home") (not (eq $s.LinkTitle "Home"))) $isChildOfHome (eq $s.LinkTitle "Home"))}}
+{{ $isMatchRootSections := eq (index (split .CurrentSection.URL "/") 1) (index (split $s.URL "/") 1) }}
+
+{{ if or (and (not (eq .ulNr 1)) (not $treeRoot ) $isMatchRootSections $isNotIncludeSection) $isHomePageOrHardcodeSection }}
 <li
   class="td-sidebar-nav__section-title td-sidebar-nav__section p-0 {{ if $withChild }} with-child{{ else }} without-child{{ end }}{{ if $activePath }} active-path{{ end }}{{ if not $show}} collapse{{ end }}"
   id="{{ $mid }}-li">
@@ -109,7 +125,7 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
     <a href="{{ $s.RelPermalink }}"
       class="nav-item-tree align-left pb-2 pt-2 pl-0  {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
       id="{{ $mid }}">
-      <!-- {{if eq .ulNr 2}} bold-font {{ end }}-->
+      
       <div class="d-flex justify-content-center align-items-top"
         style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
 

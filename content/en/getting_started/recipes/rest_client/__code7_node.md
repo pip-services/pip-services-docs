@@ -26,7 +26,7 @@ export async function main() {
         "connection.host", "localhost",
         "connection.port", 15235
     ));
-                                         
+
     // Connection
     await client.open("123");
 
@@ -39,7 +39,7 @@ export async function main() {
     console.log("POST: " + await client.getDataPost("123", "David"));
     // PUT
     console.log("PUT: " + await client.getDataPut("123", "David"));
-    
+
     // Close REST service and REST client
     await client.close("123");
     await myRestService.close("123");
@@ -91,8 +91,7 @@ export class MyRestService extends RestService {
 
     // HEAD
     public async myPageHead(req: any, res: any): Promise<void> {
-        let result = req.query.message + ", " + req.route.params.name;
-        this.sendResult(req, res, result);
+        this.sendResult(req, res, null);
     }
 
     // POST

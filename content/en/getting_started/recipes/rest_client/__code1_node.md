@@ -19,8 +19,7 @@ export class MyRestService extends RestService {
 
     // HEAD
     public async myPageHead(req: any, res: any): Promise<void> {
-        let result = req.query.message + ", " + req.route.params.name
-        this.sendResult(req, res, result);
+        this.sendResult(req, res, null);
     }
 
     // POST

@@ -29,7 +29,12 @@
 					{{ $p := . }}
 					{{ range .Site.Menus.main }}
 					{{ if and (not (eq .Name "Get Started")) (not (eq .Name ""))}}
-						{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
+						{{ $langPos := 1 }}
+						{{ if in .URL "github.io" }}
+							{{ $langPos := 2 }}
+						{{ end }}
+						
+						{{ $active := eq (index (split $.CurrentSection.URL "/") (add $langPos 1)) (index (split .URL "/") $langPos) }}
 						{{ with .Page }}
 						{{ $active = or $active ( $.IsDescendant .) }}
 						{{ end }}
@@ -100,7 +105,13 @@
 					{{ $p := . }}
 					{{ range .Site.Menus.main }}
 					{{ if and (not (eq .Name "Get Started")) (not (eq .Name "")) }}
-					{{ $active := eq (index (split $.CurrentSection.URL "/") 1) (index (split .URL "/") 0) }}
+
+					{{ $langPos := 1 }}
+					{{ if in .URL "github.io" }}
+						{{ $langPos := 2 }}
+					{{ end }}
+
+					{{ $active := eq (index (split $.CurrentSection.URL "/") (add $langPos 1)) (index (split .URL "/") $langPos) }}
 					{{ with .Page }}
 					{{ $active = or $active ( $.IsDescendant .) }}
 					{{ end }}

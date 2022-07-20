@@ -105,50 +105,50 @@ disableKinds = ["taxonomy", "term"]
 [[menu.main]]
     identifier = "Node"
     name = "Node.js"
-    url = "node/"
+    url = "toolkit_api/node/"
     weight = 10
 [[menu.main]]
     identifier = ".NET"
     name = ".NET"
-    url = "net/"
+    url = "toolkit_api/net/"
     weight = 20
 [[menu.main]]
     identifier = "Golang"
     name = "Golang"
-    url = "golang/"
+    url = "toolkit_api/golang/"
     weight = 30
 [[menu.main]]
     identifier = "Dart"
     name = "Dart"
-    url = "dart/"
+    url = "toolkit_api/dart/"
     weight = 40
 [[menu.main]]
     identifier = "Python"
     name = "Python"
-    url = "python/"
+    url = " toolkit_api/python/"
     weight = 50
 [[menu.main]]
     identifier = "Java"
     name = "Java"
-    url = "java/"
+    url = "toolkit_api/java/"
     weight = 60
 
-[[menu.main]]
-    identifier = "Toolkit"
-    name = "Toolkit"
-    url = "toolkit/"
-    weight = 5
-[[menu.main]]
-    identifier = "Microservices"
-    name = "Microservices"
-    url = "microservices/"
-    weight = 80
+# [[menu.main]]
+#     identifier = "Toolkit"
+#     name = "Toolkit"
+#     url = "toolkit/"
+#     weight = 5
+# [[menu.main]]
+#     identifier = "Microservices"
+#     name = "Microservices"
+#     url = "microservices/"
+#     weight = 80
 
-[[menu.main]]
-    identifier = "Testing Tools"
-    name = "Testing Tools"
-    url = "testing_tools/"
-    weight = 90
+# [[menu.main]]
+#     identifier = "Testing Tools"
+#     name = "Testing Tools"
+#     url = "testing_tools/"
+#     weight = 90
 
 
 [params]

@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Your First Microservice"
 linkTitle: "Your First Microservice"
-weight: 40
+weight: 1
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

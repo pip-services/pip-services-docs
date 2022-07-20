@@ -2,7 +2,7 @@
 type: docs
 title: "Recipes"
 linkTitle: "Recipes" 
-weight: 10
+weight: 30
 no_list: true
 exclude_from_list: true
 ---

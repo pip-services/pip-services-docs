@@ -27,7 +27,7 @@ In this tutorial, we will learn how to create a component and how to assemble a 
 ### The lifecycle of a component
 A component lifecycle is implemented using interfaces. In this manner, an existing class can be turned into a Pip.Services component (code augmentation). The following diagram summarizes the main states of a component and their respective interfaces
 
-<img src="figure1.png" alt="Console logger messages" style="width:50%;text-align: center">
+<img src="figure1.svg" alt="Console logger messages" style="width:50%;text-align: center">
 
 ### Creating our component
 Following the sequence presented in the previous figure, we will create a component and explain each step of its lifecycle.

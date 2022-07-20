@@ -125,7 +125,7 @@ disableKinds = ["taxonomy", "term"]
 [[menu.main]]
     identifier = "Python"
     name = "Python"
-    url = " toolkit_api/python/"
+    url = "toolkit_api/python/"
     weight = 50
 [[menu.main]]
     identifier = "Java"

@@ -13,7 +13,7 @@ weight: 1
 
 The Pip.Services toolkit is based on components. The component definition is very flexible. It allows users to create components from scratch, convert existing pieces of code into a component or choose from a large collection of prebuilt components. In the toolkit, any class (or struct in non-OOP languages) can be a component. Additional capabilities can be added via a few standard interfaces that enable specific states in the component lifecycle.
 
-![figure 1](./figure1.png)
+![figure 1](./figure1.svg)
 
 The component interfaces are optional, and can be used in any combination. They are defined in the commons module:
 
@@ -167,7 +167,7 @@ To help containers instantiate components using their locators (descriptors) def
 
 Components represent the most basic building block in the Pip.Services toolkit that allows assembling microservices from loosely coupled components mixed together with out-of-the-box components from the toolkit. The typical composition of a microservice is presented in the diagram below. It may contain components to persist data, implement business logic, expose functionality as external interfaces and address various cross-cutting concerns like logging, monitoring, health management, and others.
 
-![figure 2](./figure2.png)
+![figure 2](./figure2.svg)
 
 ## References
 For more information on components and containers see:

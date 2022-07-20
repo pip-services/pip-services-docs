@@ -122,7 +122,7 @@ Our last step is to call each of the client’s functions and obtain the respect
   Not available  
 {{< /tabsection >}} 
 
-![figure 3](./figure3.png)
+![figure 3](./figure3b.png)
 
 {{< tabsection >}}
    Not available 

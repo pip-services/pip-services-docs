@@ -6,7 +6,7 @@ linkTitle: "Terminology"
 weight: 90
 ---
 
-<table class="full-width-table entry-table-no-links">
+<table class="full-width-table entry-table-no-links terminology">
     <thead>
         <tr>
             <th scope="col">Term</th>
@@ -349,5 +349,160 @@ weight: 90
         <a href="../../getting_started/recipes/locks/">Component references</a>
       </td>
     </tr>
-    TODO: add more
+    <tr>
+      <td>Microservice</td>
+      <td>
+       Microservices are an architectural and organizational approach to software development in which software consists of small independent services that communicate via APIs. <br><br>
+       Their main characteristics are:
+       <ul>
+        <li>1. Each microservice uses its own technology stack independently of other microservices.</li>
+        <li>2. They are independently deployable.</li>
+        <li>3. They communicate with each other through REST APIs and messages.</li>
+        <li>4. They are organized around business capabilities by following the “one service–one function” principle.</li>
+        <li>5. Their development is usually managed by a small team of people.</li>
+       </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Module</td>
+      <td>
+       A collection of components with similar functionalities. Modules allow for the organization of components within the toolkit. <br><br>
+       The core of the toolkit consists of two modules namely, Commons and Components. Other modules, such as RPC, gRPC, AWS, MySQL, Cassandra etc, extend the functionality of the toolkit. Each module is implemented in six different languages according to the symmetric implementation principle.
+      </td>
+    </tr>
+    <tr>
+      <td>MQTT</td>
+      <td>
+       MQTT is a lightweight, publish-subscribe, machine-to-machine network protocol. It is designed for connections with remote locations that have devices with resource constraints or limited network bandwidth. <br><br>
+       This protocol is implemented in Pip.Services in the  MQTT module, which contains components for sending and receiving messages via an MQTT broker.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/mqtt/">MQTT</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Metrics</td>
+      <td>
+       A measure of software characteristics that are quantifiable or countable.
+      </td>
+    </tr>
+    <tr>
+      <td>Mustache templates</td>
+      <td>
+       Mustache is a web template system with implementations available in several languages. PIP.Services offers an implementation of Mustache in its Expressions module. This implementation is enhanced with the addition of some helpers.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/mustache_templates/">Mustache templates</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Pattern</td>
+      <td>
+       A solution to a problem in a specific context.
+      </td>
+    </tr>
+    <tr>
+      <td>Pipeline (CI/CD)</td>
+      <td>
+       A sequence of steps that must be performed to build, test, package and deliver a new version of an application. These processes can vary depending on the type of application, language, environment, etc.
+      </td>
+    </tr>
+    <tr>
+      <td>Ported</td>
+      <td>
+       A computer program that has been reworked to run in a new environment.
+      </td>
+    </tr>
+    <tr>
+      <td>Performance Counters</td>
+      <td>
+       A performance monitoring and debugging tool that consists of counting the number of actions that both the application and the operating system perform. Examples include the number of exceptions thrown, loading time, and the number of threads. <br><br>
+       Performance counters as considered in the Pip.Services toolkit through the Count package available from the Components module. This package contains a set of interfaces and classes used to create these tools.
+      </td>
+      <td><a href="../building_blocks/observability">Observability</a></td>
+    </tr>
+    <tr>
+      <td>Persistence</td>
+      <td>
+       Data stored in a non-volatile resource, so that it survives after the process with which it was created has ended.
+      </td>
+      <td><a href="../../getting_started/recipes/designing_persistence/">Designing persistence</a></td>
+    </tr>
+    <tr>
+      <td>Memory persistence</td>
+      <td>
+       Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
+      </td>
+    </tr>
+    <tr>
+      <td>File Persistence</td>
+      <td>
+       Persistence that stores data in files. Within Pip.Services, this functionality is supported by the FilePersistence component, which stores the data in files and caches them in memory.
+      </td>
+    </tr>
+    <tr>
+      <td>Property</td>
+      <td>
+       In object-oriented programming, a property is a special type of variable that is used to define the characteristics of an object.
+      </td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>
+       A value that specifies the location of a component. To store and locate references to a component, Pip.Services has the References class.
+      </td>
+    </tr>
+    <tr>
+      <td>Saga</td>
+      <td>
+       A sequence of transactions that updates each service and triggers the next transaction step. If a step fails, the saga executes the necessary compensating transactions that undo the ones previously executed.
+      </td>
+    </tr>
+    <tr>
+      <td>Service</td>
+      <td>
+       Within Pip.Services, a service is the component in the first layer of the three-layer design model. It is used to communicate with clients by using protocols such as HTTP and gRPC. <br><br>
+       This approach is different from other frameworks such as Spring Boot, where a service is used to implement the logic of a microservice.
+      </td>
+    </tr>
+    <tr>
+      <td>Symmetric implementation</td>
+      <td>
+       The architectural principle that says that for every programming language the toolkit implements, there is a common set of classes, methods, and method signatures that applies to all implemented languages.
+      </td>
+    </tr>
+    <tr>
+      <td>Swagger</td>
+      <td>
+       A suite of tools for API development. Pip.Services offers access to these tools via the Swagger module, which has the functionality to document an API via a Swagger interface.
+      </td>
+      <td><a href="../../getting_started/recipes/swagge/">Swagge</a></td>
+    </tr>
+    <tr>
+      <td>Toolkit</td>
+      <td>
+       A set of software utilities used to develop or maintain a software system.
+      </td>
+    </tr>
+    <tr>
+      <td>Validation</td>
+      <td>
+       The process used to determine whether a program or entity satisfies a specified requirement.
+      </td>
+      <td><a href="../../getting_started/data_validation/">Data validation</a></td>
+    </tr>
+    <tr>
+      <td>Validity</td>
+      <td>
+       The extent to which a concept, conclusion or measurement satisfies a specified requirement. <br><br>
+       Within the Commons module, Pip.Services offers the Validate package, which contains interfaces and classes that can be used to create custom validation rules.
+      </td>
+      <td><a href="../../getting_started/data_validation/">Data validation</a></td>
+    </tr>
+    <tr>
+      <td>Validation schema</td>
+      <td>
+       An object-based way of defining validations on requests. Within the Commons module, Pip.Services offers several classes that can be used as validation schemas, such as ObjectsSchema to validate user defined objects, FilterParamsSchema to validate FilterParams, and MapSchema to validate maps.
+      </td>
+    </tr>
 </table>

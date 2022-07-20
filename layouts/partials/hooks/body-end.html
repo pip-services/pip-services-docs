@@ -45,14 +45,18 @@
         }
 
         // Add current menuSection and module to hits
-        let menuSection = item.url.split('/')[3];
-        let module = item.url.split('/')[4];
+        let menuSection = item.url.split('/')[4];
+        let module = item.url.split('/')[5];
+
+        console.log(menuSection);
+        console.log(module);
+        console.log(item);
         // capitalize
         menuSection = menuSection.charAt(0).toUpperCase() + menuSection.slice(1);
         module = module!=undefined && module != '' ? module.charAt(0).toUpperCase() + module.slice(1) : null;
 
         if (localStorage['currentMenuActiveItem'].toLowerCase() != 'home'){
-          let hitLangPage = item['url'].split('/')[3].toLowerCase();
+          let hitLangPage = item['url'].split('/')[4].toLowerCase();
           let isCorrectHit = localStorage['currentMenuActiveItem'].toLowerCase().replace('.', '/').split('/').indexOf(hitLangPage) > -1;
           
           if (module != null) {

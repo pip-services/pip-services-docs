@@ -90,7 +90,7 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 
 <!-- reduce the paddings for sidebar tree -->
 {{ $reducer := 2 }}
-{{ $padding := mul 10 (sub .ulNr $reducer) }}
+{{ $padding := mul 17 (sub .ulNr $reducer) }}
 
 <!-- hide if is included files -->
 {{ $isNotIncludeSection := not ( eq $s.LinkTitle "") }}

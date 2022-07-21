@@ -71,7 +71,7 @@ Containers allow great flexibility to developers since they can repackage their 
 
 Components are driven by configurations that can be stored in JSON or YAML files. The Mustache templating language allows to inject deployment-time configuration parameters and change the composition of microservices by using command-line arguments and environment variables set during deployment time. This feature allows for the creation of microservices that can adjust themselves depending on the deployment configuration without changing and rebuilding the code. The example below shows how to configure several commonly used components.
 
-```
+```yml
 # Container descriptor
 - descriptor: "pip-services:context-info:default:default:1.0"
   name: "pip-service-data"

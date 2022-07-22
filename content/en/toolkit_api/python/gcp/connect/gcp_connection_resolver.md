@@ -1,11 +1,11 @@
 ---
 type: docs
-title: "GoogleConnectionResolver"
-linkTitle: "GoogleConnectionResolver"
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
+title: "GcpConnectionResolver"
+linkTitle: "GcpConnectionResolver"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-python"
 description: >
     Helper class used to retrieve Google connection and credential parameters,
-    validate them and compose a [GoogleConnectionParams](../google_connection_params) value.
+    validate them and compose a [GcpConnectionParams](../gcp_connection_params) value.
  
 ---
 
@@ -14,7 +14,7 @@ description: >
 ### Description
 
 Helper class to retrieve Google connection and credential parameters,
-validate them and compose a [GoogleConnectionParams](../google_connection_params) value.
+validate them and compose a [GcpConnectionParams](../gcp_connection_params) value.
 
 
 #### Configuration parameters
@@ -56,12 +56,12 @@ Configures a component by passing its configuration parameters.
 
 #### resolve
 Resolves connection and credential parameters and generates a single
-[GoogleConnectionParams](../google_connection_params) value.
+[GcpConnectionParams](../gcp_connection_params) value.
 
-> `public` resolve(correlationId: string): Promise<[GoogleConnectionParams](../google_connection_params)>
+> `public` resolve(correlationId: string): Promise<[GcpConnectionParams](../gcp_connection_params)>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain. 
-- **returns**: Promise<[GoogleConnectionParams](../google_connection_params)> - receives an GoogleConnectionParams value or error.
+- **returns**: Promise<[GcpConnectionParams](../gcp_connection_params)> - receives an GcpConnectionParams value or error.
 
 #### setReferences
 Sets references to dependent components.
@@ -84,7 +84,7 @@ let config = ConfigParams.fromTuples(
     'credential.auth_token', '1234',
 );
    
-let connectionResolver = new GoogleConnectionResolver();
+let connectionResolver = new GcpConnectionResolver();
 connectionResolver.configure(config);
 connectionResolver.setReferences(references);
     

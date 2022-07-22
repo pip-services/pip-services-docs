@@ -3,7 +3,7 @@ type: docs
 title: "Clients"
 linkTitle: "Clients"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-python"
 description: >
     TODO: add description
 ---

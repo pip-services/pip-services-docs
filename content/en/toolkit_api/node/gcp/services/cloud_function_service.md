@@ -1,20 +1,20 @@
 ---
 type: docs
-title: "GoogleFunctionService"
-linkTitle: "GoogleFunctionService"
+title: "CloudFunctionService"
+linkTitle: "CloudFunctionService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Abstract service that receives remove calls via the Google Function protocol.
 ---
 
-**Implements**: [IGoogleFunctionService](../igoogle_function_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
+**Implements**: [ICloudFunctionService](../icloud_function_service), [IOpenable](../../../commons/run/iopenable), [IConfigurable](../../../commons/config/iconfigurable), [IReferenceable](../../../commons/refer/ireferenceable)
 
 ### Description
-The GoogleFunctionService class allows you to create a service that receives remove calls via the Google Function protocol.
+The CloudFunctionService class allows you to create a service that receives remove calls via the Google Function protocol.
 
 **Important points**
 
-- This service is intended to work inside an GoogleFunction container that exposes registered actions externally.
+- This service is intended to work inside an CloudFunction container that exposes registered actions externally.
 
 #### Configuration parameters
  
@@ -84,11 +84,12 @@ Closes a component and frees used resources.
 
 
 #### applyInterceptors
-Configures a component by passing its configuration parameters.
+Apply interceptors to the actions
 
-> public configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `protected` applyInterceptors(action: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>): (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>
 
-- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **action**: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\> - configuration parameters to be set.
+- **returns**: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\> - wrapped function into interceptor
 
 
 #### generateActionCmd
@@ -101,9 +102,9 @@ Adds '.cmd' to a command name
 #### getActions
 Get all actions supported by the service.
 
-> `public` getActions(): [GoogleFunctionAction[]](../google_function_action)
+> `public` getActions(): [CloudFunctionAction[]](../cloud_function_action)
 
-- **returns**: [GoogleFunctionAction[]](../google_function_action) - array with supported actions.
+- **returns**: [CloudFunctionAction[]](../cloud_function_action) - array with supported actions.
 
 
 #### getCommand
@@ -202,7 +203,7 @@ in child classes.
 ### Examples
 
 ```typescript
-class MyGoogleFunctionService extends GoogleFunctionService {
+class MyCloudFunctionService extends CloudFunctionService {
    private _controller: IMyController;
 
    ...
@@ -233,7 +234,7 @@ class MyGoogleFunctionService extends GoogleFunctionService {
    }
 }
 
-let service = new MyGoogleFunctionService();
+let service = new MyCloudFunctionService();
 
 service.configure(ConfigParams.fromTuples(
     "connection.protocol", "http",

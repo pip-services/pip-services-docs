@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "CommandableGoogleFunctionClient"
-linkTitle: "CommandableGoogleFunctionClient"
+title: "CommandableCloudFunctionClient"
+linkTitle: "CommandableCloudFunctionClient"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Abstract client that calls commandable Google Functions.
@@ -58,7 +58,7 @@ to the action parameters.
 ### Examples
 
 ```typescript
-class MyCommandableGoogleClient extends CommandableGoogleFunctionClient implements IMyClient {
+class MyCommandableGoogleClient extends CommandableCloudFunctionClient implements IMyClient {
     ...
  
     public async getData(correlationId: string, id: string): Promise<any> {
@@ -84,4 +84,4 @@ const result = await client.getData("123", "1");
 ```
 
 ### See also
-- #### [GoogleFunction](../../google_function/)
+- #### [CloudFunction](../../cloud_function/)

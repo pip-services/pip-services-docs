@@ -1,16 +1,16 @@
 ---
 type: docs
-title: "CommandableGoogleFunctionService"
-linkTitle: "CommandableGoogleFunctionService"
+title: "CommandableCloudFunctionService"
+linkTitle: "CommandableCloudFunctionService"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Abstract service that receives commands via the Google Function protocol to operations automatically generated for commands defined in [ICommandable components](../../../commons/commands/icommandable).
 ---
 
-**Extends**: [GoogleFunctionService](../google_function_service)
+**Extends**: [CloudFunctionService](../cloud_function_service)
 
 ### Description
-The CommandableGoogleFunctionService class allows you to create abstract services that receive commands via the Google Function protocols to operations automatically generated for commnads defined in [ICommandable components](../../../commons/commands/icommandable).
+The CommandableCloudFunctionService class allows you to create abstract services that receive commands via the Google Function protocols to operations automatically generated for commnads defined in [ICommandable components](../../../commons/commands/icommandable).
 
 **Important points** 
 
@@ -56,7 +56,7 @@ Registers all actions in Google Function.
 ### Examples
 
 ```typescript
-class MyCommandableGoogleFunctionService extends CommandableGoogleFunctionService {
+class MyCommandableCloudFunctionService extends CommandableCloudFunctionService {
    public constructor() {
       base();
       this._dependencyResolver.put(
@@ -66,7 +66,7 @@ class MyCommandableGoogleFunctionService extends CommandableGoogleFunctionServic
    }
 }
 
-let service = new MyCommandableGoogleFunctionService();
+let service = new MyCommandableCloudFunctionService();
 
 service.setReferences(References.fromTuples(
    new Descriptor("mygroup","controller","default","default","1.0"), controller

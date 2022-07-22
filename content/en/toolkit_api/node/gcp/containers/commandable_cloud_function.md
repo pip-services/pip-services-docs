@@ -1,17 +1,17 @@
 ---
 type: docs
-title: "CommandableGoogleFunction"
-linkTitle: "CommandableGoogleFunction"
+title: "CommandableCloudFunction"
+linkTitle: "CommandableCloudFunction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Abstract Google Function function that acts as a container to instantiate and run components
     and expose them via an external entry point.
 ---
 
-**Extends**: [GoogleFunction](../google_function)
+**Extends**: [CloudFunction](../cloud_function)
 
 ### Description
-The CommandableGoogleFunction allows you to create an abstract Google Function function that acts as a container to instantiate and run components and expose them via an external entry point.
+The CommandableCloudFunction allows you to create an abstract Google Function function that acts as a container to instantiate and run components and expose them via an external entry point.
 
 **Important points**
 
@@ -19,15 +19,15 @@ The CommandableGoogleFunction allows you to create an abstract Google Function f
   
 - Container configuration for this Google Function is stored in *"./config/config.yml"* file. But this path can be overridden by the *CONFIG_PATH* environment variable.
  
-- **Note**: This component has been deprecated. Use Google [FunctionService](../../services/google_function_service) instead.
+- **Note**: This component has been deprecated. Use Google [FunctionService](../../services/cloud_function_service) instead.
 
 
 #### References
 
 - **\*:logger:\*:\*:1.0**: (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0**: (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:service:google-function:\*:1.0**: (optional) [IGoogleFunctionService](../../services/igoogle_function_service) services to handle action requests.
-- **\*:service:commandable-google-function:\*:1.0**: (optional) [IGoogleFunctionService](../../services/igoogle_function_service) services to handle action requests.
+- **\*:service:google-function:\*:1.0**: (optional) [ICloudFunctionService](../../services/icloud_function_service) services to handle action requests.
+- **\*:service:commandable-google-function:\*:1.0**: (optional) [ICloudFunctionService](../../services/icloud_function_service) services to handle action requests.
 
 ### Constructors
 Creates a new instance of this Google Function.
@@ -58,11 +58,11 @@ Registers all actions in this Google Function.
 ### Examples
 
 ```typescript
-class MyGoogleFunction extends CommandableGoogleFunction {
+class MyCloudFunction extends CommandableCloudFunction {
     private _controller: IMyController;
     ...
     public constructor() {
-        base("mygroup", "MyGroup GoogleFunction");
+        base("mygroup", "MyGroup CloudFunction");
         this._dependencyResolver.put(
             "controller",
             new Descriptor("mygroup","controller","*","*","1.0")
@@ -70,8 +70,8 @@ class MyGoogleFunction extends CommandableGoogleFunction {
     }
 }
 
-let googleFunction = new MyGoogleFunction();
+let googleFunction = new MyCloudFunction();
   
 await service.run();
-console.log("MyGoogleFunction is started");
+console.log("MyCloudFunction is started");
 ```

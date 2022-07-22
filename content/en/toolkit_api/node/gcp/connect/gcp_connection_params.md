@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "GoogleConnectionParams"
-linkTitle: "GoogleConnectionParams"
+title: "GcpConnectionParams"
+linkTitle: "GcpConnectionParams"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Contains connection parameters to authenticate against Google
@@ -48,18 +48,18 @@ Gets an ID token with the request to authenticate themselves
 - **returns**: string - the ID token.
 
 
-#### getFunctionName
+#### getFunction
 Gets the Google function name.
 
-> `public` getFunctionName(): string
+> `public` getFunction(): string
 
 - **returns**: string - the Google function name.
 
 
-#### getFunctionUri
-Gets the Google function uri.
+#### getUri
+Gets the Google Platform service uri.
 
-> `public` getFunctionUri(): string
+> `public` getUri(): string
 
 - **returns**: string - the Google function uri.
 
@@ -92,17 +92,17 @@ Sets an ID token with the request to authenticate themselves
 
 - **value**: string -  a new ID token.
 
-#### setFunctionName
+#### setFunction
 Sets the Google function name.
 
-> `public` setFunctionName(value: string)
+> `public` setFunction(value: string)
 
 - **value**: string - a new Google function name.
 
-#### setFunctionUri
-Sets the Google function uri.
+#### setUri
+Sets the Google Platform service uri.
 
-> `public` setFunctionUri(value: string)
+> `public` setUri(value: string)
 
 - **value**: string - a new Google function uri.
 
@@ -137,38 +137,38 @@ Validates this connection parameters
 ### Static methods
 
 #### fromString
-Creates a new GoogleConnectionParams object filled with key-value pairs serialized as a string.
+Creates a new GcpConnectionParams object filled with key-value pairs serialized as a string.
 
-> `public` static fromString(line: string): [GoogleConnectionParams]()
+> `public` static fromString(line: string): [GcpConnectionParams]()
 
 - **line**: string - a string with serialized key-value pairs as "key1=value1;key2=value2;..."  
 Example: "Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"
-- **returns**: [GoogleConnectionParams]() - a new GoogleConnectionParams object.
+- **returns**: [GcpConnectionParams]() - a new GcpConnectionParams object.
 
 
 #### fromConfig
 Validates this connection parameters 
 
-> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [GoogleConnectionParams]()
+> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [GcpConnectionParams]()
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
-- **returns**: [GoogleConnectionParams]() - the generated GoogleConnectionParams object.
+- **returns**: [GcpConnectionParams]() - the generated GcpConnectionParams object.
 
 #### mergeConfigs
-Retrieves GoogleConnectionParams from multiple configuration parameters.
+Retrieves GcpConnectionParams from multiple configuration parameters.
 The values are retrieves from "connection" and "credential" sections.
 
-> `public static` mergeConfigs(...configs: [ConfigParams](../../../commons/config/config_params)[]): [GoogleConnectionParams]()
+> `public static` mergeConfigs(...configs: [ConfigParams](../../../commons/config/config_params)[]): [GcpConnectionParams]()
 
 - **config**: string - a list with configuration parameters
-- **returns**: [GoogleConnectionParams]() - the generated GoogleConnectionParams object.
+- **returns**: [GcpConnectionParams]() - the generated GcpConnectionParams object.
 
 
 
 ### Examples
 
 ```typescript
-let connection = GoogleConnectionParams.fromTuples(
+let connection = GcpConnectionParams.fromTuples(
     'connection.uri', 'http://east-my_test_project.cloudfunctions.net/myfunction',
     'connection.protocol', 'http',
     'connection.region', 'east',
@@ -177,14 +177,14 @@ let connection = GoogleConnectionParams.fromTuples(
     'credential.auth_token', '1234',
 );
 
-const uri = connection.getFunctionUri();             // Result: 'http://east-my_test_project.cloudfunctions.net/myfunction'
+const uri = connection.getUri();             // Result: 'http://east-my_test_project.cloudfunctions.net/myfunction'
 const region = connection.getRegion();               // Result: 'east'
 const protocol = connection.getProtocol();           // Result: 'http'
-const functionName = connection.getFunctionName();   // Result: 'myfunction'
+const functionName = connection.getFunction();   // Result: 'myfunction'
 const projectId = connection.getProjectId();         // Result: 'my_test_project'
 const authToken = connection.getAuthToken();         // Result: '123'
 ```
 
 
 ### See also
-- #### [GoogleConnectionResolver](../google_connection_resolver)
+- #### [GcpConnectionResolver](../gcp_connection_resolver)

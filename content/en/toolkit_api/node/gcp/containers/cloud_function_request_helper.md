@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "GoogleFunctionRequestHelper"
-linkTitle: "GoogleFunctionRequestHelper"
+title: "CloudFunctionRequestHelper"
+linkTitle: "CloudFunctionRequestHelper"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Contains methods used to get correlationIds, commands and bodies from the Google Function requests.
@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The GoogleFunctionRequestHelper class contains methods used to get correlationIds, commands and bodies from the Google Function requests.
+The CloudFunctionRequestHelper class contains methods used to get correlationIds, commands and bodies from the Google Function requests.
 
 
 ### Static methods

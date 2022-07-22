@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "GoogleFunctionAction"
-linkTitle: "GoogleFunctionAction"
+title: "CloudFunctionAction"
+linkTitle: "CloudFunctionAction"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Defines some fields such as action, cmd and schema.
@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The GoogleFunctionAction defines some fields such as action, cmd and schema.
+The CloudFunctionAction defines some fields such as action, cmd and schema.
 
 ### Fields
 

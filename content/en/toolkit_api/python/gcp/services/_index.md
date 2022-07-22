@@ -3,7 +3,7 @@ type: docs
 title: "Services"
 linkTitle: "Services"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-python"
 description: >
     This package contains interfaces and classes used to create services that do operations via the Google Function protocol.
 ---

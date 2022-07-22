@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "GoogleFunction"
-linkTitle: "GoogleFunction"
+title: "CloudFunction"
+linkTitle: "CloudFunction"
 gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-nodex"
 description: >
     Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 
@@ -10,7 +10,7 @@ description: >
 **Implements:** [Container](../../../container/containers/container)
 
 ### Description
-The GoogleFunction class allows you to create an Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 
+The CloudFunction class allows you to create an Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 
 
 Importan points
 
@@ -22,8 +22,8 @@ Importan points
 
 - **\*:logger:\*:\*:1.0**: (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
 - **\*:counters:\*:\*:1.0**: (optional) [ICounters](../../../components/count/icounters) components to pass collected measurements
-- **\*:service:google-function:\*:1.0**: (optional) [IGoogleFunctionService](../../services/igoogle_function_service) services to handle action requests.
-- **\*:service:commandable-google-function:\*:1.0**: (optional) [IGoogleFunctionService](../../services/igoogle_function_service) services to handle action requests.
+- **\*:service:google-function:\*:1.0**: (optional) [ICloudFunctionService](../../services/icloud_function_service) services to handle action requests.
+- **\*:service:commandable-google-function:\*:1.0**: (optional) [ICloudFunctionService](../../services/icloud_function_service) services to handle action requests.
 
 ### Constructors
 Creates a new instance of this Google Function.
@@ -129,7 +129,7 @@ Opens the component.
 #### registerAction
 Registers an action in this Google Function.
 
-Note: This method has been deprecated. Use GoogleFunctionService instead.
+Note: This method has been deprecated. Use CloudFunctionService instead.
 
 > `protected` registerAction(cmd: string, schema: [Schema](../../../commons/validate/schema), action: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise<any>): void 
 
@@ -168,14 +168,14 @@ Sets references to dependent components.
 ### Examples
 
 ```typescript
-class MyGoogleFunction extends GoogleFunction {
+class MyCloudFunction extends CloudFunction {
     public constructor() {
         base("mygroup", "MyGroup Google Function");
     }
 }
 
-let googleFunction = new MyGoogleFunction();
+let googleFunction = new MyCloudFunction();
    
 await service.run();
-console.log("MyGoogleFunction is started");
+console.log("MyCloudFunction is started");
 ```

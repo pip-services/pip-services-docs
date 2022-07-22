@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "GoogleFunctionClient"
-linkTitle: "GoogleFunctionClient"
+title: "CloudFunctionClient"
+linkTitle: "CloudFunctionClient"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
 description: >
     Abstract client that calls Google Functions.
@@ -45,11 +45,11 @@ The connection timeout in milliseconds.
 
 ### _connection
 The Google Function connection parameters
-> **_connection**: [GoogleConnectionParams](../../connect/google_connection_params)
+> **_connection**: [GcpConnectionParams](../../connect/gcp_connection_params)
 
 ### _connectionResolver
 The connection resolver.
-> **_connectionResolver**: [GoogleConnectionResolver](../../connect/google_connection_resolver)
+> **_connectionResolver**: [GcpConnectionResolver](../../connect/gcp_connection_resolver)
 
 ### _counters
 Performance counters.
@@ -160,7 +160,7 @@ Sets references to dependent components.
 ### Examples
 
 ```typescript
-class MyGoogleFunctionClient extends GoogleFunctionClient implements IMyClient {
+class MyCloudFunctionClient extends CloudFunctionClient implements IMyClient {
     ...
  
     public async getData(correlationId: string, id: string): Promise<MyData> {
@@ -172,7 +172,7 @@ class MyGoogleFunctionClient extends GoogleFunctionClient implements IMyClient {
     ...
 }
 
-let client = new MyGoogleFunctionClient();
+let client = new MyCloudFunctionClient();
 
 client.configure(ConfigParams.fromTuples(
     'connection.uri", "http://region-id.cloudfunctions.net/myfunction',
@@ -188,5 +188,5 @@ const result = await client.getData("123", "1");
 
 
 ### See also
-- #### [GoogleFunction](../../google_function/)
+- #### [CloudFunction](../../cloud_function/)
 - #### [CommandableGoogleClient](../commandable_google_client)

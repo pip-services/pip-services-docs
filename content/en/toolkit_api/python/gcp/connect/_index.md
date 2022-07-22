@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-gcp-nodex"
+gitUrl: "https://github.com/pip-services3-python/pip-services3-gcp-python"
 description: >
     This package contains classes used to create connections to Google.
 ---

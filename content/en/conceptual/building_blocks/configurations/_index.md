@@ -69,7 +69,7 @@ Deployment-time configuration parameters are set via environment variables or pa
 
 Then those parameters are automatically injected into container configurations using Mustache templates:
 
-```
+```yml
 {{#if MYCOMPONENT_ENABLED}}
 descriptor: myservice:mycomponent:default:default:1.0
 param1: {{PARAM1}}

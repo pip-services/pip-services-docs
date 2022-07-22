@@ -92,5 +92,7 @@ The Pip.Services toolkit offers a few standard configuration readers:
 ### References
 
 For more information about configurations see:
-
+- #### [Conceptual: Configurations](../../configurations)
+- #### [Recipes: Configurations](../../../getting_started/recipes/configuration/)
+- #### [Config file syntax](../../../getting_started/recipes/config_file_syntax/)
 

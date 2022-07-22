@@ -8,6 +8,9 @@ weight: 1
 ---
 ---
 
+<div id="conceptual-main">
+
+
 ### Introduction
 
 Pip.Services is a multi-language, cross-platform toolkit that makes it easy for developers to create long-living microservice systems. From its beginnings, the toolkit was designed to be expandable and portable across programming languages and, at the same time, support microservice deployment on existing and future platforms.
@@ -19,23 +22,23 @@ The current technical environment is characterized by a variety of programming l
 Symmetric implementation means that for every programming language it is implemented in, there is a common set of classes, methods, and method signatures that applies to all implemented languages. This carefully designed architecture allows the toolkit to support a variety of programming languages that can be compiled or interpreted, statically- or dynamically-typed, object-oriented or not. Currently, the toolkit is available in six different languages namely, Go, Node.js, .NET, Python, Dart, and Java.  
 
 
-<div class="card-group mx-auto intro-cards">
+<div class="card-group intro-cards">
   <div class="card">
     <div class="card-body text-center">
       <img class="card-img-top" src="/images/icons/nodejs-icon.png" alt="Node.js icon">
       <a href="../toolkit_api/node" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>Node.js</b>
+        Node.js
     </div>
   </div>
   <div class="card">
-    <div class="card-body text-center">
+    <div class="card-body text-center ">
       <img class="card-img-top" src="/images/icons/dotnet-icon.png" alt="Dotnet icon">
       <a href="../toolkit_api/net" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>.NET</b>
+        .NET
     </div>
   </div>
   <div class="card">
@@ -44,7 +47,7 @@ Symmetric implementation means that for every programming language it is impleme
       <a href="../toolkit_api/golang" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>Golang</b>
+        Golang
     </div>
   </div>
   <div class="card">
@@ -53,7 +56,7 @@ Symmetric implementation means that for every programming language it is impleme
       <a href="../toolkit_api/dart" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>Dart</b>
+        Dart
     </div>
   </div>
   <div class="card">
@@ -62,7 +65,7 @@ Symmetric implementation means that for every programming language it is impleme
       <a href="../toolkit_api/python" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>Python</b>
+        Python
     </div>
   </div>
   <div class="card">
@@ -71,48 +74,49 @@ Symmetric implementation means that for every programming language it is impleme
       <a href="../toolkit_api/java" class="stretched-link"></a>
     </div>
     <div class="card-footer text-center">
-        <b>Java</b>
+        Java
     </div>
   </div>
 </div>
 
 <br>
 
-Moreover, to support the big number of existing deployment platforms, Pip.Services uses the concept of containerization. This allows for the packaging of microservice components into different types of containers that support the most common existing platforms - such as Processes, Docker, AWS Lambda, Azure Functions, and Google Cloud Functions -, and the reuse of over 90% of the implemented and tested code in the process.
+Moreover, to support the big number of existing deployment platforms, Pip.Services uses the concept of containerization. This allows for the packaging of microservice components into different types of containers that support the most common existing platforms - such as Processes, Docker, AWS Lambda, Azure Functions, and Google Cloud Functions, and the reuse of over 90% of the implemented and tested code in the process.
 
-<div class="card-group mx-auto intro-cards">
+<div class="card-group intro-cards technology-cards">
   <div class="card">
     <img class="card-img-top" src="/images/icons/system_processes.svg" alt="System process icon">
-    <div class="card-body text-center p-1 pb-2">
+    <div class="card-footer text-center">
       <b>System Processes</b>
     </div>
   </div>
    <div class="card">
     <img class="card-img-top" src="/images/icons/docker.svg" alt="Docker icon">
-    <div class="card-body text-center p-1 pb-2">
+    <div class="card-footer text-center">
       <b>Docker</b>
     </div>
   </div>
    <div class="card">
     <img class="card-img-top" src="/images/icons/aws_lambda.svg" alt="AWS icon">
-    <div class="card-body text-center p-1 pb-2">
+    <div class="card-footer text-center">
       <b>AWS Lambda</b>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="/images/icons/azure_functions.svg" alt="Azure icon">
-    <div class="card-body text-center p-1 pb-2">
+    <div class="card-footer text-center">
       <b>Azure Functions</b>
     </div>
   </div>
   <div class="card">
     <img class="card-img-top" src="/images/icons/google_cloud_functions.svg" alt="GCP icon">
-    <div class="card-body text-center p-1 pb-2">
+    <div class="card-footer text-center">
       <b>Cloud Functions</b>
     </div>
   </div>
 </div>
 
+<br>
 
 #### Organized in a modular fashion
 The toolkit is designed in a modular fashion, where there are a few core modules that provide common abstractions and patterns, and a growing number of additional modules that offer reusable components and patterns built on top of popular technologies. This approach facilitates the optimization of microservice dependencies and the rapid expansion of the toolkit’s functionalities.  
@@ -121,7 +125,7 @@ At present, the toolkit contains the following modules:
 
 
 <div class="container">
-  <div class="row justify-content-center col-md-12 col-sm-4 intro-cards">
+  <div class="row justify-content-center intro-cards toolkit-card">
     <div class="card">
       <div class="card-body text-center">
         <b>Commons</b>
@@ -160,7 +164,7 @@ At present, the toolkit contains the following modules:
     </div>
   </div>
 
-  <div class="row justify-content-center col-md-12 col-sm-4 intro-cards">
+  <div class="row justify-content-center intro-cards toolkit-card">
     <div class="card">
       <div class="card-body text-center">
         <b>AWS</b>
@@ -199,7 +203,7 @@ At present, the toolkit contains the following modules:
     </div>
   </div>
 
-  <div class="row justify-content-center col-md-12 col-sm-4 intro-cards">
+  <div class="row justify-content-center intro-cards toolkit-card">
     <div class="card">
       <div class="card-body text-center">
         <b>Postgres</b>
@@ -238,7 +242,7 @@ At present, the toolkit contains the following modules:
     </div>
   </div>
 
-  <div class="row justify-content-center col-md-12 col-sm-4 intro-cards">
+  <div class="row justify-content-center intro-cards toolkit-card">
     <div class="card">
       <div class="card-body text-center">
         <b>MQTT</b>
@@ -277,7 +281,7 @@ At present, the toolkit contains the following modules:
     </div>
   </div>
 
-  <div class="row justify-content-center col-md-12 col-sm-4 intro-cards">
+  <div class="row justify-content-center intro-cards toolkit-card">
     <div class="card">
       <div class="card-body text-center">
         <b>Grpc</b>
@@ -317,6 +321,7 @@ At present, the toolkit contains the following modules:
   </div>
 </div>
 
+<br>
 
 #### Reusable building blocks
 
@@ -470,6 +475,8 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
   </tr>
 </table>
 
+<br>
+
 #### Fast learning, fast development
 
 One of the most pressing aspects that developers face is keeping up with the pace of knowledge and technology changes.  
@@ -484,3 +491,5 @@ The result is that, as experience demonstrates, an average developer with proper
 Present-day technologies and business requirements change fast. Pip.Services was designed with these challenges in mind and with the idea of creating adaptable systems that stand the test of time and are functional and performant.   
 
 Its architecture based on a modular approach and reusable components makes this toolkit easily adaptable to business and technical innovations. Its fast learning and development style helps developers to implement those updates swiftly and accurately. And, its symmetric language implementation means that adding a new language is simply a matter of building on what already exists.
+
+</div>

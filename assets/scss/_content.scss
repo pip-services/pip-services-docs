@@ -29,13 +29,46 @@ mark, .mark {
     }
 }
 
+.toolkit-card {
+    .card-body {
+        min-width: 7rem;
+    }
+}
+
+.technology-cards {
+    .card-footer {
+        background-color: transparent;
+        border-top: none;
+    }
+}
+
 .intro-cards {
+    @include media-breakpoint-down(md) {
+        .card-footer {
+            font-weight: 400;
+            font-size: 75%;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .card {
+            max-width: 50%;
+
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+    }
+
+    .card-footer {
+        font-weight: bolder;
+    }
+
     .card-body {
         padding: 0.5rem;
-        min-width: 7rem;
+        
         font-size: 0.9rem;
     }
-    
+
     .card {
         border-radius: 5px;
         margin: 0.5rem;

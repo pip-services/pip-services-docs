@@ -287,5 +287,24 @@ weight: 90
        A collection of software resources used by computer programs.
       </td>
     </tr>
-
+   <tr>
+      <td>Locator pattern</td>
+      <td>
+       A pattern that uses a central registry (the "service locator"), which on request returns information about a specific resource, acting as a run-time linker.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/component_references/">Component references</a>
+      </td>
+    </tr>
+	
+	<tr>
+      <td>Locks</td>
+      <td>
+       A mechanism for controlling access to something.<br><br>
+       Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/locks/">Component references</a>
+      </td>
+    </tr>
 </table>

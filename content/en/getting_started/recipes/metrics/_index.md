@@ -29,8 +29,16 @@ description: >-
     <td>Performance counters that periodically send counters' measurements to a logger.</td>
   </tr>
   <tr>
-    <td>LogCounters</td>
-    <td>Performance counters that periodically send counters' measurements to a logger.</td>
+    <td>NullCounters</td>
+    <td>Component used to create dummy performance counters.</td>
+  </tr>
+  <tr>
+    <td>Performance metrics tools</td>
+    <td>Tools used to analyze performance metrics. Examples are Prometheus and Datadog.</td>
+  </tr>
+  <tr>
+    <td>CompositeCounters</td>
+    <td>Component used to group counters from different components into a single one.</td>
   </tr>
 </table>
 

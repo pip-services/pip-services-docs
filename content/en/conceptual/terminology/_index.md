@@ -135,7 +135,14 @@ weight: 90
         Config params stands for configuration parameters. Pip.Services offers the ConfigParams component, which contains a key-value map for configuration parameters. This component can be used, for example, to store access control credentials.
       </td>
     </tr>
-	
+	<tr>
+      <td>Configure</td>
+      <td>
+        The act of selecting programmable options that make an application function according to the user’s needs.<br><br>
+        Configurations allow to change microservice behavior, adjust to deployment environments, and set parameters to connect to infrastructure services and other microservices. <br><br>
+        For this, the Pip.Services toolkit provides a set of patterns that support design-time, deployment-time, and runtime configurations
+      </td>
+    </tr>	
 	
 	
 </table>

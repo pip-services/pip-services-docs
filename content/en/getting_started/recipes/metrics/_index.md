@@ -74,11 +74,21 @@ In our next example, we use the LogCounters class associated with the ConsoleLog
      
 Which, after running, produces the following results:
      
-     
+ 
+As we can see, the main difference with the previous example is the presence of counters’ information on our console. Otherwise, the results are the same.
+ 
 ##### NullCounters
      
-##### Other counters
+If we are testing our application or want to create a prototype, we can use the NullCounters component, which is a dummy one and produces no real results. In this manner, we can simulate the existence of a counters component, without having to deal with it.
+
+In this case, we need to delete the flush command from our component as there are no values to be saved. The following code shows how to do this:
      
+Which after running produces the following outcome: 
+ 
+##### Other counters
+
+Performance counters can also be sent to different tools for their analysis. Pip.Services contains specific counters for the most common tools including [Prometheus](http://docs.pipservices.org/toolkit/recipes/prometheus/) and [Datadog](http://docs.pipservices.org/toolkit/recipes/datadog/).
+
 ##### CompositeCounters
      
 Pip.Services offers the CompositeCounters component, which can be used to group a set of counters that collect the same performance metrics. Once collected, the metrics can be sent to different destinations, such as a console, a logger, or a tool like Prometheus or Datadog.

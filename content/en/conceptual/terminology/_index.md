@@ -103,5 +103,27 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/creating_a_component/">Command Set</a></td>
     </tr>	
+  <tr>
+      <td>Component references / Component linking</td>
+      <td>
+        The way components communicate with each other. Within Pip.Services, components relate to each other via the Locator pattern. To be able to link to dependencies, a component must implement the IReferenceable interface and register its dependencies defined via a References object.
+      </td>
+    </tr>
+    <tr>
+      <td>Component types</td>
+      <td>
+        Components can be classified according to their functionality into data, persistence, logic, services, containers, etc. Pip.Services uses this classification to organize the different components in modules, which are in turn internally arranged in packages.
+      </td>
+    </tr>
+    <tr>
+      <td>Componentized design</td>
+      <td>
+        A design approach focused on the decomposition of the system into functional or logical components. Its primary goal is component reusability. <br><br>
+        The Pip.Services toolkit follows this approach, which allows for creating microservices from loosely coupled components.
+      </td>
+      <td><a href="../building_blocks/components/#microservice-componentized-design">microservice-componentized-design</a></td>
+    </tr>
+	
+	
 	
 </table>

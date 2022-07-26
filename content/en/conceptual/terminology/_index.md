@@ -143,6 +143,21 @@ weight: 90
         For this, the Pip.Services toolkit provides a set of patterns that support design-time, deployment-time, and runtime configurations
       </td>
     </tr>	
-	
+  <tr>
+      <td>Connection params</td>
+      <td>
+        Connection params stand for connection parameters. Pip.Services has the ConnectionParams class, which is used to store connection parameters necessary to connect to external services.
+      </td>
+    </tr>
+    <tr>
+      <td>Container </td>
+      <td>
+        A package of software that contains all of the necessary components to run an application in an environment.<br><br>
+        Pip.Services offers the Containers module, which has the ProcessContainer component. This component is an inversion of control container that runs the packaged code as a system process.<br><br>
+        Additionally, the toolkit provides a variety of other containers, which are used to assemble microservices from components and deploy them on different platforms. They include containers for AWS Lambda, Azure Functions, and Google Cloud Functions among others.<br><br>
+        Within Pip.Services, containers manage the lifecycle of the packaged components, from creation to destruction. They use the Locator pattern and obtain information about dependencies from a configuration file.
+      </td>
+      <td><a href="../../getting_started/recipes/containers/">Command Set</a></td>
+    </tr>	
 	
 </table>

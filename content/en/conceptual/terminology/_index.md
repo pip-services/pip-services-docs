@@ -468,5 +468,31 @@ weight: 90
        The architectural principle that says that for every programming language the toolkit implements, there is a common set of classes, methods, and method signatures that applies to all implemented languages.
       </td>
     </tr>
-
+   <tr>
+      <td>Toolkit</td>
+      <td>
+       A set of software utilities used to develop or maintain a software system.
+      </td>
+    </tr>
+    <tr>
+      <td>Validation</td>
+      <td>
+       The process used to determine whether a program or entity satisfies a specified requirement.
+      </td>
+      <td><a href="../../getting_started/data_validation/">Data validation</a></td>
+    </tr>
+	<tr>
+      <td>Validation schema</td>
+      <td>
+       An object-based way of defining validations on requests. Within the Commons module, Pip.Services offers several classes that can be used as validation schemas, such as ObjectsSchema to validate user defined objects, FilterParamsSchema to validate FilterParams, and MapSchema to validate maps.
+      </td>
+    </tr>
+    <tr>
+      <td>Validity</td>
+      <td>
+       The extent to which a concept, conclusion or measurement satisfies a specified requirement. <br><br>
+       Within the Commons module, Pip.Services offers the Validate package, which contains interfaces and classes that can be used to create custom validation rules.
+      </td>
+      <td><a href="../../getting_started/data_validation/">Data validation</a></td>
+    </tr>
 </table>

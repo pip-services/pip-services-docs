@@ -80,16 +80,7 @@ weight: 90
         Within Pip.Services, commands are defined by the Command class, which can be used to call a method or a function.
       </td>
     </tr>
-   
-    <tr>
-      <td>Commandable pattern</td>
-      <td>
-        A behavioral design pattern in which an object is used to contain the information needed to perform certain actions or trigger events.<br><br>
-        Within Pip.Services, this pattern is implemented via the CommandSet class, which contains a group of commands that are defined via the Command class. The collection of commands available from the command set is then called by the controller, who uses them according to the implemented business logic. <br><br>
-        The toolkit also provides some ready-to-use components that implement this patter like the CommandableHttpService and CommandableGrpcService, which are abstract services that receive commands via the HTTP and gRPC protocols respectively.
-      </td>
-      <td><a href="../../getting_started/recipes/command_set/">Command Set</a></td>
-    </tr>
+
 	
 	
 </table>

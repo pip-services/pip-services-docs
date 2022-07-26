@@ -27,6 +27,8 @@ This interface is implemented by several classes. The figure below shows a simpl
 
 The toolkit has several pre-defined counters, which are specified in the CounterType class. They are:
 
+![figure 2](./figure2.png)
+
 When working with counters, a best practice is to name them according to the following convention:
 
 <service_or_component_name>.<method_name>.<counter_name>
@@ -39,6 +41,30 @@ In the next sections, we will construct examples that show how to define counter
 #### Monitored component
 
 First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics are part of a dummy function that simulates a task by printing two messages on our console. Finally, we call the dump() method to save the obtained values. The code below shows what this class looks like:     
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
      
 #### Counters
 
@@ -57,11 +83,34 @@ In the example below, we use the previously defined component with CachedCounter
 
 Then, once we have our class with the CachedCounters included, we call myMethod(), get the counters, and print the results. The final code is:
      
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
 
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
      
 Which after running, produces the following outcome:     
  
-     
+![figure 3](./figure3.png)   
+   
 As we can see, the _save() method was called automatically. Additionally, the number of calls is an integer and has no values for minimum, maximum and average. Moreover, the execution time provides these statistics.     
      
 ##### LogCounters
@@ -72,8 +121,33 @@ Containers consider LogCounters by default. Once we create a container, the cont
 
 In our next example, we use the LogCounters class associated with the ConsoleLogger class. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
      
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}     
+     
 Which, after running, produces the following results:
      
+ ![figure 4](./figure4.png)
  
 As we can see, the main difference with the previous example is the presence of counters’ information on our console. Otherwise, the results are the same.
  
@@ -82,8 +156,34 @@ As we can see, the main difference with the previous example is the presence of 
 If we are testing our application or want to create a prototype, we can use the NullCounters component, which is a dummy one and produces no real results. In this manner, we can simulate the existence of a counters component, without having to deal with it.
 
 In this case, we need to delete the flush command from our component as there are no values to be saved. The following code shows how to do this:
-     
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which after running produces the following outcome: 
+ 
+![figure 5](./figure5.png) 
  
 ##### Other counters
 
@@ -105,11 +205,34 @@ After running myMethod(), we obtain the performance metrics for CachedLogger and
 
 The following code shows how this can be done:
 
-     
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+    Not available
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}     
      
 Which, after running produces the following output:
      
-     
+![figure 5](./figure5.png) 
+ 
 ### Wrapping up
 
 In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution time metric for a method, and saved the obtained values in memory, a logger, and a component that connects to Prometheus. We also learned how to create a NullCounters, which is a dummy component with no real effect that is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and obtain the stored values via different tools for future use.     

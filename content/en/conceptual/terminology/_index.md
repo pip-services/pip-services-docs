@@ -237,6 +237,42 @@ weight: 90
         Large systems can include several facades, each of them representing a logical isolated API. Moreover, specialized facades can be used for clients that present specific needs (See BFF pattern).
       </td>
     </tr>
-
+   <tr>
+      <td>Factory</td>
+      <td>
+       A factory is an object used to create other objects. The Pip.Services toolkit provides the IComponentFactory abstraction, which can be used to create factories for different components. Additionally, the toolkit supplies specific factories for standard components.
+      </td>
+    </tr>
+    <tr>
+      <td>File Persistence</td>
+      <td>
+       Persistence that stores data in files. Within Pip.Services, this functionality is supported by the FilePersistence component, which stores the data in files and caches them in memory.
+      </td>
+    </tr>
+    <tr>
+      <td>Frontend</td>
+      <td>
+       The part of an application with which the user interacts directly. From a user’s point of view, it is synonymous with the user interface. From a developer’s point of view, it includes the interface design and the related coding. Within Pip.Services, frontends are usually components that represent clients.
+      </td>
+    </tr>
+    <tr>
+      <td>gRPC</td>
+      <td>
+       An open-source, high-performance Remote Procedure Call (RPC) framework that can run in any environment. Originally developed by Google, Pip.Services implements it via the gRPC module.
+      </td>
+      <td><a href="../../getting_started/recipes/grpc/">gRPC</a></td>
+    </tr>
+    <tr>
+      <td>Health monitoring</td>
+      <td>
+       A set of activities undertaken to maintain a system in operable condition.<br><br>
+       Within Pip.Services, this is done via tracing, logging and performance metrics. Once the information has been created, it can be sent to an external tool, such as Prometheus or Elasticsearch, for analysis.<br><br>
+       The toolkit provides several components such as HeartbeatService for heartbeat operations, InstrumentTiming to create logs, counters and timings, and the Count library that includes several useful components to create performance counters.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/prometheus/">Prometheus</a>
+        <a href="../../getting_started/recipes/elasticsearch/">Elasticsearch</a>
+      </td>
+    </tr>
 
 </table>

@@ -382,4 +382,19 @@ weight: 90
         <a href="../../getting_started/recipes/mqtt/">MQTT</a>
       </td>
     </tr>	
+   <tr>
+      <td>Mustache templates</td>
+      <td>
+       Mustache is a web template system with implementations available in several languages. PIP.Services offers an implementation of Mustache in its Expressions module. This implementation is enhanced with the addition of some helpers.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/mustache_templates/">Mustache templates</a>
+      </td>
+    </tr>
+	<tr>
+      <td>Null Client</td>
+      <td>
+        A dummy client with no real effect. It is used for testing
+      </td>
+    </tr>
 </table>

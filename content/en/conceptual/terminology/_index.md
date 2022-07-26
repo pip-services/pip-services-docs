@@ -6,7 +6,7 @@ linkTitle: "Terminology"
 weight: 90
 ---
 
-<table class="full-width-table entry-table-no-links terminology">
+<table class="full-width-table entry-table-no-links terminology" border="1">
     <thead>
         <tr>
             <th scope="col">Term</th>
@@ -39,15 +39,17 @@ weight: 90
       <td>Boundary Microservice</td>
       <td>A microservice used to expose the functionality of a system to external entities such as consumers, users, and systems. These microservices can be divided into two categories: facades and connectors.</td>
     </tr>
+	<tr>
+      <td>Build factory</td>
+      <td>
+       A creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
+      </td>
+    </tr>
     <tr>
       <td>Business Process Microservice</td>
       <td>A microservice used to implement business transactions. These microservices can be classified as background workers and sagas.</td>
     </tr>
-    <tr>
-      <td>Circuit Breaker pattern</td>
-      <td>A pattern used to detect failure and encapsulate the logic of preventing it from cascading between services. It can also detect when a problem has been resolved. By isolating the failure, this pattern provides fault and latency tolerance.</td>
-    </tr>
-    <tr>
+	<tr>
       <td>Caching</td>
       <td>
         The process of storing and accessing data from a cache, where a cache is a high-speed data storage. Typically, the storage is transient and is used to speed up the retrieval of data. <br> <br>
@@ -56,10 +58,8 @@ weight: 90
       <td><a href="../../getting_started/caching/">Caching</a></td>
     </tr>
     <tr>
-      <td>Collection</td>
-      <td>
-      A class representing a set of similar items as a single unit. Within Pip.Services, there are several useful collections, such as AnyValueMap, StringsValueMap and Arrays.
-      </td>
+      <td>Circuit Breaker pattern</td>
+      <td>A pattern used to detect failure and encapsulate the logic of preventing it from cascading between services. It can also detect when a problem has been resolved. By isolating the failure, this pattern provides fault and latency tolerance.</td>
     </tr>
     <tr>
       <td>Client</td>
@@ -68,24 +68,19 @@ weight: 90
       </td>
     </tr>
     <tr>
-      <td>Direct Client</td>
+      <td>Collection</td>
       <td>
-        A client that calls a controller directly in the same memory space. It is used when multiple microservices are deployed in a single container (monolith) and communication between them can be done by direct calls rather than through the network.
-      </td>
-      <td><a href="../../getting_started/recipes/direct_client/">Direct Client</a></td>
-    </tr>
-    <tr>
-      <td>Null Client</td>
-      <td>
-        A dummy client with no real effect. It is used for testing
+      A class representing a set of similar items as a single unit. Within Pip.Services, there are several useful collections, such as AnyValueMap, StringsValueMap and Arrays.
       </td>
     </tr>
     <tr>
-      <td>Mock Client</td>
+      <td>Command</td>
       <td>
-        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
+        An instruction given by a user to a computer to perform a specific task. It can be initiated from a command line or a user interface.<br><br>
+        Within Pip.Services, commands are defined by the Command class, which can be used to call a method or a function.
       </td>
     </tr>
+   
     <tr>
       <td>Commandable pattern</td>
       <td>
@@ -96,10 +91,10 @@ weight: 90
       <td><a href="../../getting_started/recipes/command_set/">Command Set</a></td>
     </tr>
     <tr>
-      <td>Command</td>
+      <td>Communication protocol</td>
       <td>
-        An instruction given by a user to a computer to perform a specific task. It can be initiated from a command line or a user interface.<br><br>
-        Within Pip.Services, commands are defined by the Command class, which can be used to call a method or a function.
+        A system of rules that allows two or more entities of a communication system to transmit information via any kind of variation of a physical quantity.<br><br>
+        Pip.Services offers components for communication for the HTTP and gRPC protocols.
       </td>
     </tr>
     <tr>
@@ -129,19 +124,13 @@ weight: 90
       </td>
       <td><a href="../building_blocks/components/#microservice-componentized-design">microservice-componentized-design</a></td>
     </tr>
+
+
+
     <tr>
-      <td>Communication protocol</td>
+      <td>Config file</td>
       <td>
-        A system of rules that allows two or more entities of a communication system to transmit information via any kind of variation of a physical quantity.<br><br>
-        Pip.Services offers components for communication for the HTTP and gRPC protocols.
-      </td>
-    </tr>
-    <tr>
-      <td>Configure</td>
-      <td>
-        The act of selecting programmable options that make an application function according to the user’s needs.<br><br>
-        Configurations allow to change microservice behavior, adjust to deployment environments, and set parameters to connect to infrastructure services and other microservices. <br><br>
-        For this, the Pip.Services toolkit provides a set of patterns that support design-time, deployment-time, and runtime configurations
+        A file containing information about components. This information is used by containers to locate references (See Locator pattern).
       </td>
     </tr>
     <tr>
@@ -150,16 +139,13 @@ weight: 90
         Config params stands for configuration parameters. Pip.Services offers the ConfigParams component, which contains a key-value map for configuration parameters. This component can be used, for example, to store access control credentials.
       </td>
     </tr>
-    <tr>
-      <td>Config file</td>
+	
+	<tr>
+      <td>Configure</td>
       <td>
-        A file containing information about components. This information is used by containers to locate references (See Locator pattern).
-      </td>
-    </tr>
-    <tr>
-      <td>Credential params</td>
-      <td>
-        Credential params stands for credential parameters. Pip.Services contains the CredentialParams component that can be used to hold the credentials required to connect to external services.
+        The act of selecting programmable options that make an application function according to the user’s needs.<br><br>
+        Configurations allow to change microservice behavior, adjust to deployment environments, and set parameters to connect to infrastructure services and other microservices. <br><br>
+        For this, the Pip.Services toolkit provides a set of patterns that support design-time, deployment-time, and runtime configurations
       </td>
     </tr>
     <tr>
@@ -168,13 +154,7 @@ weight: 90
         Connection params stand for connection parameters. Pip.Services has the ConnectionParams class, which is used to store connection parameters necessary to connect to external services.
       </td>
     </tr>
-    <tr>
-      <td>Correlation ID</td>
-      <td>
-        A transaction id used to trace execution through a call chain. It can be a number, a string, or a combination of both.<br><br>
-        Correlation ids are important for tracing errors, debugging, and logging. 
-      </td>
-    </tr>
+
     <tr>
       <td>Container </td>
       <td>
@@ -193,10 +173,24 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/three_tier_architecture/">Three tier architecture</a></td>
     </tr>
+	    <tr>
+      <td>Correlation ID</td>
+      <td>
+        A transaction id used to trace execution through a call chain. It can be a number, a string, or a combination of both.<br><br>
+        Correlation ids are important for tracing errors, debugging, and logging. 
+      </td>
+    </tr>
     <tr>
       <td>Counters</td>
       <td>
         A data object used to store the measurements of a performance counter, such as the number of times a function is called.
+      </td>
+    </tr>
+	
+    <tr>
+      <td>Credential params</td>
+      <td>
+        Credential params stands for credential parameters. Pip.Services contains the CredentialParams component that can be used to hold the credentials required to connect to external services.
       </td>
     </tr>
     <tr>
@@ -213,6 +207,13 @@ weight: 90
         As matching can be done by using one or more of the fields, many scenarios with various degrees of specificity can be considered. For example: locate all loggers (type) or locate a specific component (name and version).
       </td>
       <td><a href="../../getting_started/descriptors/">Descriptors</a></td>
+    </tr>
+	<tr>
+      <td>Direct Client</td>
+      <td>
+        A client that calls a controller directly in the same memory space. It is used when multiple microservices are deployed in a single container (monolith) and communication between them can be done by direct calls rather than through the network.
+      </td>
+      <td><a href="../../getting_started/recipes/direct_client/">Direct Client</a></td>
     </tr>
     <tr>
       <td>Discovery</td>
@@ -236,7 +237,7 @@ weight: 90
       </td>
     </tr>
     <tr>
-      <td>Facade</td>
+      <td>Façade</td>
       <td>
         A component that serves as a front-facing interface connecting clients to different components. Thus, all requests made by external clients first arrive at the facade from where are then forwarded to the appropriate microservices. This extra layer that facades provides allows for microservices to be changed, without those changes affecting the clients. <br><br>
         Facades can provide some additional functionality such as routing, data aggregation, authentication and authorization, caching, analytics and logging. <br><br>
@@ -250,9 +251,9 @@ weight: 90
       </td>
     </tr>
     <tr>
-      <td>Build factory</td>
+      <td>File Persistence</td>
       <td>
-       A creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
+       Persistence that stores data in files. Within Pip.Services, this functionality is supported by the FilePersistence component, which stores the data in files and caches them in memory.
       </td>
     </tr>
     <tr>
@@ -302,6 +303,17 @@ weight: 90
         <a href="../../getting_started/recipes/component_references/">Component references</a>
       </td>
     </tr>
+	
+	<tr>
+      <td>Locks</td>
+      <td>
+       A mechanism for controlling access to something.<br><br>
+       Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/locks/">Component references</a>
+      </td>
+    </tr>
     <tr>
       <td>Log</td>
       <td>
@@ -321,25 +333,19 @@ weight: 90
       </td>
     </tr>
     <tr>
-      <td>Locks</td>
+      <td>Memory persistence</td>
       <td>
-       A mechanism for controlling access to something.<br><br>
-       Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
-      </td>
-      <td>
-        <a href="../../getting_started/recipes/locks/">Locks</a>
+       Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
       </td>
     </tr>
-    <tr>
-      <td>Locks</td>
+
+	    <tr>
+      <td>Metrics</td>
       <td>
-       A mechanism for controlling access to something.<br><br>
-       Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
-      </td>
-      <td>
-        <a href="../../getting_started/recipes/locks/">Component references</a>
+       A measure of software characteristics that are quantifiable or countable.
       </td>
     </tr>
+	
     <tr>
       <td>Microapplication</td>
       <td>
@@ -363,6 +369,13 @@ weight: 90
        </ul>
       </td>
     </tr>
+	<tr>
+      <td>Mock Client</td>
+      <td>
+        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
+      </td>
+    </tr>
+	
     <tr>
       <td>Module</td>
       <td>
@@ -380,12 +393,7 @@ weight: 90
         <a href="../../getting_started/recipes/mqtt/">MQTT</a>
       </td>
     </tr>
-    <tr>
-      <td>Metrics</td>
-      <td>
-       A measure of software characteristics that are quantifiable or countable.
-      </td>
-    </tr>
+
     <tr>
       <td>Mustache templates</td>
       <td>
@@ -395,24 +403,21 @@ weight: 90
         <a href="../../getting_started/recipes/mustache_templates/">Mustache templates</a>
       </td>
     </tr>
+	<tr>
+      <td>Null Client</td>
+      <td>
+        A dummy client with no real effect. It is used for testing
+      </td>
+    </tr>
+	
     <tr>
       <td>Pattern</td>
       <td>
        A solution to a problem in a specific context.
       </td>
     </tr>
-    <tr>
-      <td>Pipeline (CI/CD)</td>
-      <td>
-       A sequence of steps that must be performed to build, test, package and deliver a new version of an application. These processes can vary depending on the type of application, language, environment, etc.
-      </td>
-    </tr>
-    <tr>
-      <td>Ported</td>
-      <td>
-       A computer program that has been reworked to run in a new environment.
-      </td>
-    </tr>
+
+
     <tr>
       <td>Performance Counters</td>
       <td>
@@ -428,18 +433,21 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/designing_persistence/">Designing persistence</a></td>
     </tr>
-    <tr>
-      <td>Memory persistence</td>
+	
+	<tr>
+      <td>Pipeline (CI/CD)</td>
       <td>
-       Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
+       A sequence of steps that must be performed to build, test, package and deliver a new version of an application. These processes can vary depending on the type of application, language, environment, etc.
       </td>
     </tr>
-    <tr>
-      <td>File Persistence</td>
+	<tr>
+      <td>Ported</td>
       <td>
-       Persistence that stores data in files. Within Pip.Services, this functionality is supported by the FilePersistence component, which stores the data in files and caches them in memory.
+       A computer program that has been reworked to run in a new environment.
       </td>
     </tr>
+
+
     <tr>
       <td>Property</td>
       <td>
@@ -465,19 +473,21 @@ weight: 90
        This approach is different from other frameworks such as Spring Boot, where a service is used to implement the logic of a microservice.
       </td>
     </tr>
-    <tr>
-      <td>Symmetric implementation</td>
-      <td>
-       The architectural principle that says that for every programming language the toolkit implements, there is a common set of classes, methods, and method signatures that applies to all implemented languages.
-      </td>
-    </tr>
-    <tr>
+	
+	<tr>
       <td>Swagger</td>
       <td>
        A suite of tools for API development. Pip.Services offers access to these tools via the Swagger module, which has the functionality to document an API via a Swagger interface.
       </td>
       <td><a href="../../getting_started/recipes/swagge/">Swagge</a></td>
     </tr>
+    <tr>
+      <td>Symmetric implementation</td>
+      <td>
+       The architectural principle that says that for every programming language the toolkit implements, there is a common set of classes, methods, and method signatures that applies to all implemented languages.
+      </td>
+    </tr>
+
     <tr>
       <td>Toolkit</td>
       <td>
@@ -491,6 +501,12 @@ weight: 90
       </td>
       <td><a href="../../getting_started/data_validation/">Data validation</a></td>
     </tr>
+	<tr>
+      <td>Validation schema</td>
+      <td>
+       An object-based way of defining validations on requests. Within the Commons module, Pip.Services offers several classes that can be used as validation schemas, such as ObjectsSchema to validate user defined objects, FilterParamsSchema to validate FilterParams, and MapSchema to validate maps.
+      </td>
+    </tr>
     <tr>
       <td>Validity</td>
       <td>
@@ -499,10 +515,5 @@ weight: 90
       </td>
       <td><a href="../../getting_started/data_validation/">Data validation</a></td>
     </tr>
-    <tr>
-      <td>Validation schema</td>
-      <td>
-       An object-based way of defining validations on requests. Within the Commons module, Pip.Services offers several classes that can be used as validation schemas, such as ObjectsSchema to validate user defined objects, FilterParamsSchema to validate FilterParams, and MapSchema to validate maps.
-      </td>
-    </tr>
+
 </table>

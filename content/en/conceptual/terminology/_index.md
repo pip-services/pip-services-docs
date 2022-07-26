@@ -330,6 +330,34 @@ weight: 90
        Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
       </td>
     </tr>	
-	
+    <tr>
+      <td>Metrics</td>
+      <td>
+       A measure of software characteristics that are quantifiable or countable.
+      </td>
+    </tr>
+    <tr>
+      <td>Microapplication</td>
+      <td>
+       A super-specialized application designed to perform one task or use case.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/locks/">Component references</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Microservice</td>
+      <td>
+       Microservices are an architectural and organizational approach to software development in which software consists of small independent services that communicate via APIs. <br><br>
+       Their main characteristics are:
+       <ul>
+        <li>1. Each microservice uses its own technology stack independently of other microservices.</li>
+        <li>2. They are independently deployable.</li>
+        <li>3. They communicate with each other through REST APIs and messages.</li>
+        <li>4. They are organized around business capabilities by following the “one service–one function” principle.</li>
+        <li>5. Their development is usually managed by a small team of people.</li>
+       </ul>
+      </td>
+    </tr>	
 	
 </table>

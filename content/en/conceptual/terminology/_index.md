@@ -365,7 +365,6 @@ weight: 90
         A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
       </td>
     </tr>
-	
     <tr>
       <td>Module</td>
       <td>

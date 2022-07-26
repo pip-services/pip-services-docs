@@ -7,6 +7,10 @@ description: >-
      How to create and manage performance metrics with Pip.Services.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
+### Key takeaways
+
 ### Introduction
 
 This tutorial will teach you how to create and manage performance metrics with Pip.Services components. First, we will learn how counters are defined in the toolkit and how to add them to a component. Then, we will see several options to manage the obtained performance metrics, such as storing them in memory, showing them on a console, sending them to external tools, and grouping them in composite counters. We will also study a dummy component used to simulate counters.
@@ -19,8 +23,7 @@ Within these interfaces, ICounters defines methods for measuring execution perfo
 
 This interface is implemented by several classes. The figure below shows a simplified class diagram displaying the relationships between it and the main classes used to build different counters. These classes will be explained in more detail in the following sections.
 
-
-
+![figure 1](./figure1.png)
 
 The toolkit has several pre-defined counters, which are specified in the CounterType class. They are:
 
@@ -35,11 +38,42 @@ In the next sections, we will construct examples that show how to define counter
      
 #### Monitored component
 
+First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics are part of a dummy function that simulates a task by printing two messages on our console. Finally, we call the dump() method to save the obtained values. The code below shows what this class looks like:     
+     
 #### Counters
+
+Once we have defined the performance metrics in our class, we need to expose the obtained values. This can be done in several ways, such as storing them in memory for later use, showing them on our console, or using an external tool for analysis such as Prometheus or Datadog
+
+The following sections explain two components used for these purposes. The first is CachedCounters, which stores performance metrics in memory. The second is LogCounters, which sends the metrics to a logger. Then, they continue with NullCounters, a dummy component aimed at testing and modeling; and CompositeCounters, a component used to group several counters that collect the same metrics. We also mention some components capable of sending metrics to external tools.
+     
      
 ##### CachedCounters
      
+The CachedCounters class is used to create performance counters and store their values in memory. This is an abstract class that is generally used to implement other counters, such as LogCounters, PrometheusCounters and DatadogCounters. 
+
+An important method defined in this class is save(), which is abstract and therefore it needs to be implemented by its subclasses. Another method in this class is dump(), which saves the metrics automatically.
+
+In the example below, we use the previously defined component with CachedCounters. For this, we create a subclass of CachedCounters with a version of this method that simply prints a message. When developing microservices, it is within this method that we can define what we want to do with our performance values. 
+
+Then, once we have our class with the CachedCounters included, we call myMethod(), get the counters, and print the results. The final code is:
+     
+
+     
+Which after running, produces the following outcome:     
+ 
+     
+As we can see, the _save() method was called automatically. Additionally, the number of calls is an integer and has no values for minimum, maximum and average. Moreover, the execution time provides these statistics.     
+     
 ##### LogCounters
+
+We can also show the counters on our console. This can be done with the LogCounters class, which can be used to create performance counters that periodically dump the obtained measurements to a logger.
+
+Containers consider LogCounters by default. Once we create a container, the container’s factory will create a LogCounters component that uses the ConsoleLogger. Thus, all metrics defined within a component will reflect the measured values on console.
+
+In our next example, we use the LogCounters class associated with the ConsoleLogger class. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
+     
+Which, after running, produces the following results:
+     
      
 ##### NullCounters
      

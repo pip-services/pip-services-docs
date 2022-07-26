@@ -31,6 +31,11 @@ When working with counters, a best practice is to name them according to the fol
 
 ### Managing counters
 
+In the next sections, we will construct examples that show how to define counters and store them in memory, a logger, and external tools. We will also learn how to create a dummy component that has no real effect and a composite component that groups one or more different counters.
+     
+#### Monitored component
 
-
+#### Counters
+     
+##### CachedCounters
 ### Wrapping up

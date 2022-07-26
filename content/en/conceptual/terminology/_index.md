@@ -274,6 +274,6 @@ weight: 90
         <a href="../../getting_started/recipes/elasticsearch/">Elasticsearch</a>
       </td>
     </tr>
-    <tr>
+
 
 </table>

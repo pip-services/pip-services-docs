@@ -1,34 +1,99 @@
 ```python
-from pip_services3_components.count import ICounters
+from pip_services3_components.count import ICounters, CompositeCounters
+from pip_services3_commons.refer import IReferenceable, IReferences
 
 _console_log = True
 
-class MyComponentA:
+class MyComponentA(IReferenceable):
+    _counters: CompositeCounters = CompositeCounters()
 
-    def __init__(self, counters: ICounters):
-        self.counters = counters
+    def __init__(self):
+        self._counters = counters
         
         if _console_log:
             print("MyComponentA has been created.")
-
-    def mymethod(self):
-        self.counters.increment("mycomponent.mymethod.calls", 1)
-        timing = self.counters.begin_timing("mycomponent.mymethod.exec_time")
+            
+    def setReferences(self, references: IReferences):
+        self._counters.set_references(references)   
+            
+    def myMethod(self):
+        self._counters.increment("mycomponent.mymethod.calls", 1)
+        timing = self._counters.begin_timing("mycomponent.mymethod.exec_time")
         try:
             if _console_log:
                 print("Hola amigo")
                 print("Bonjour mon ami")
         finally:
             timing.end_timing()
+            
+# Cached logger
 
-from pip_services3_components.count import NullCounters
+class MyCachedLogger ():
+    def _save(self, counters):
+        print("\tSaving somewhere")
+from pip_services3_commons.refer import References, Descriptor  
+from pip_services3_components.count import LogCounters
+from pip_services3_components.log import CachedLogger
 
-countersNull = NullCounters()   
+countersLog1 = LogCounters()
+countersLog1.set_references(References.from_tuples(
+            Descriptor("pip-services", "logger", "cached", "default2", "1.0"), MyCachedLogger()))
 
-mycomponentNull = MyComponentA(countersNull)
+# Prometheus
+
+from pip_services3_prometheus.count import PrometheusCounters
+from pip_services3_commons.config import ConfigParams
+
+countersProm = PrometheusCounters()
+countersProm.configure(ConfigParams.from_tuples(
+    "connection.protocol", "http",
+    "connection.host", "localhost",
+    "connection.port", 8080
+))
+
+countersProm.open("123")
+
+# Composite counters
+
+from pip_services3_components.count import CompositeCounters
+counters = CompositeCounters()
+counters.set_references(References.from_tuples(
+            Descriptor("pip-services", "counters", "logger", "default3", "1.0"), countersLog1))
+counters.set_references(References.from_tuples(
+            Descriptor("pip-services", "counters", "prometheus", "default4", "1.0"), countersProm))
+            
+myComponent = MyComponentA()
 
 count_exec = 2
 
 for i in range(count_exec):
-    mycomponentNull.mymethod()
+    myComponent.myMethod()
+    
+result = countersLog1.get_all()
+
+print("\nMetrics to logger")
+
+for i in result:
+    print("Count: " + str(i.count))
+    print("Min: " + str(i.min))
+    print("Max: " + str(i.max))
+    print("Average: " + str(i.average))
+    print("Time: " + str(i.time))
+    print("Name: " + i.name)
+    print("Type: " + str(i.type))
+    print("-----------------")
+    
+result = countersProm.get_all()
+
+print("\nMetrics to Prometheus")
+
+for i in result:
+    print("Count: " + str(i.count))
+    print("Min: " + str(i.min))
+    print("Max: " + str(i.max))
+    print("Average: " + str(i.average))
+    print("Time: " + str(i.time))
+    print("Name: " + i.name)
+    print("Type: " + str(i.type))
+    print("-----------------")
 ```

@@ -231,7 +231,7 @@ The following code shows how this can be done:
      
 Which, after running produces the following output:
      
-![figure 5](./figure5.png) 
+![figure 6](./figure6.png) 
  
 ### Wrapping up
 

@@ -274,6 +274,18 @@ weight: 90
         <a href="../../getting_started/recipes/elasticsearch/">Elasticsearch</a>
       </td>
     </tr>
-
+  <tr>
+      <td>Inversion of Control pattern</td>
+      <td>
+       Inversion of Control is a principle in software design where the control of components is transferred to a container that handles their lifecycles. This pattern helps create loosely coupled classes that are testable, maintainable and extensible.<br><br>
+       This pattern is at the core of Pip.Services approach to containerization, which allows for microservice deployment in different environments. The toolkit provides the ProcessContainer, which runs the packaged code as a system process, and several specialized containers for common platforms such as AWS Lambda, Azure Functions, and Google Cloud Functions among others.
+      </td>
+    </tr>
+    <tr>
+      <td>Library</td>
+      <td>
+       A collection of software resources used by computer programs.
+      </td>
+    </tr>
 
 </table>

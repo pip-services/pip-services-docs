@@ -218,7 +218,7 @@ Which after running produces the following outcome:
  
 ##### Other counters
 
-Performance counters can also be sent to different tools for their analysis. Pip.Services contains specific counters for the most common tools including [Prometheus](http://docs.pipservices.org/toolkit/recipes/prometheus/) and [Datadog](http://docs.pipservices.org/toolkit/recipes/datadog/).
+Performance counters can also be sent to different tools for their analysis. Pip.Services contains specific counters for the most common tools including [Prometheus](../prometheus/) and [Datadog](../datadog/).
 
 ##### CompositeCounters
      

@@ -397,4 +397,26 @@ weight: 90
         A dummy client with no real effect. It is used for testing
       </td>
     </tr>
+   <tr>
+      <td>Pattern</td>
+      <td>
+       A solution to a problem in a specific context.
+      </td>
+    </tr>
+    <tr>
+      <td>Performance Counters</td>
+      <td>
+       A performance monitoring and debugging tool that consists of counting the number of actions that both the application and the operating system perform. Examples include the number of exceptions thrown, loading time, and the number of threads. <br><br>
+       Performance counters as considered in the Pip.Services toolkit through the Count package available from the Components module. This package contains a set of interfaces and classes used to create these tools.
+      </td>
+      <td><a href="../building_blocks/observability">Observability</a></td>
+    </tr>
+    <tr>
+      <td>Persistence</td>
+      <td>
+       Data stored in a non-volatile resource, so that it survives after the process with which it was created has ended.
+      </td>
+      <td><a href="../../getting_started/recipes/designing_persistence/">Designing persistence</a></td>
+    </tr>
+
 </table>

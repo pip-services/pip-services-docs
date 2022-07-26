@@ -275,54 +275,5 @@ weight: 90
       </td>
     </tr>
     <tr>
-      <td>Inversion of Control pattern</td>
-      <td>
-       Inversion of Control is a principle in software design where the control of components is transferred to a container that handles their lifecycles. This pattern helps create loosely coupled classes that are testable, maintainable and extensible.<br><br>
-       This pattern is at the core of Pip.Services approach to containerization, which allows for microservice deployment in different environments. The toolkit provides the ProcessContainer, which runs the packaged code as a system process, and several specialized containers for common platforms such as AWS Lambda, Azure Functions, and Google Cloud Functions among others.
-      </td>
-    </tr>
-    <tr>
-      <td>Library</td>
-      <td>
-       A collection of software resources used by computer programs.
-      </td>
-    </tr>
-    <tr>
-      <td>Locator pattern</td>
-      <td>
-       A pattern that uses a central registry (the "service locator"), which on request returns information about a specific resource, acting as a run-time linker.
-      </td>
-      <td>
-        <a href="../../getting_started/recipes/component_references/">Component references</a>
-      </td>
-    </tr>
-	
-	<tr>
-      <td>Locks</td>
-      <td>
-       A mechanism for controlling access to something.<br><br>
-       Pip.Services provides the MemoryLock component, which is used to synchronize the execution of a process using shared memory. It also has the NullLock, which is a dummy lock with no real effect. 
-      </td>
-      <td>
-        <a href="../../getting_started/recipes/locks/">Component references</a>
-      </td>
-    </tr>
-    <tr>
-      <td>Log</td>
-      <td>
-       A file that records either events happening in an operating system or software executions.
-      </td>
-    </tr>
-    <tr>
-      <td>Logging</td>
-      <td>
-       The action of keeping a log.<br><br>
-       PIP.Services provides two important logging components namely, the CachedLogger and the ConsoleLogger. The first class stores log messages in memory, whereas the second class displays them on a console.<br><br>
-       The toolkit also has the CompositeLogger component, which allows for message aggregation and thus, the creation of a centralized logging point.<br><br>
-       Additionally, PIP.Services provides implementations of loggers for CloudWatch, ElasticSearch, and DataDog.
-      </td>
-      <td>
-        <a href="../../getting_started/recipes/logging/">Logging</a>
-      </td>
-    </tr>
+
 </table>

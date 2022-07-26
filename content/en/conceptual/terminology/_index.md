@@ -67,49 +67,7 @@ weight: 90
         A hardware device or software program that requests access to a service provided by a server. Clients are typically used in the client-server architecture.
       </td>
     </tr>
-    <tr>
-      <td>Collection</td>
-      <td>
-      A class representing a set of similar items as a single unit. Within Pip.Services, there are several useful collections, such as AnyValueMap, StringsValueMap and Arrays.
-      </td>
-    </tr>	
-    <tr>
-      <td>Command</td>
-      <td>
-        An instruction given by a user to a computer to perform a specific task. It can be initiated from a command line or a user interface.<br><br>
-        Within Pip.Services, commands are defined by the Command class, which can be used to call a method or a function.
-      </td>
-    </tr>
-   
-    <tr>
-      <td>Commandable pattern</td>
-      <td>
-        A behavioral design pattern in which an object is used to contain the information needed to perform certain actions or trigger events.<br><br>
-        Within Pip.Services, this pattern is implemented via the CommandSet class, which contains a group of commands that are defined via the Command class. The collection of commands available from the command set is then called by the controller, who uses them according to the implemented business logic. <br><br>
-        The toolkit also provides some ready-to-use components that implement this patter like the CommandableHttpService and CommandableGrpcService, which are abstract services that receive commands via the HTTP and gRPC protocols respectively.
-      </td>
-      <td><a href="../../getting_started/recipes/command_set/">Command Set</a></td>
-    </tr>
-    <tr>
-      <td>Communication protocol</td>
-      <td>
-        A system of rules that allows two or more entities of a communication system to transmit information via any kind of variation of a physical quantity.<br><br>
-        Pip.Services offers components for communication for the HTTP and gRPC protocols.
-      </td>
-    </tr>
-    <tr>
-      <td>Component</td>
-      <td>
-        Within Pip.Services, a component is a class with a lifecycle implemented using interfaces (Code augmentation). Usually, within a microservice, components are organized according to a three-layer architecture.
-      </td>
-      <td><a href="../../getting_started/recipes/creating_a_component/">Command Set</a></td>
-    </tr>
-    <tr>
-      <td>Component references / Component linking</td>
-      <td>
-        The way components communicate with each other. Within Pip.Services, components relate to each other via the Locator pattern. To be able to link to dependencies, a component must implement the IReferenceable interface and register its dependencies defined via a References object.
-      </td>
-    </tr>	
+ 
 	
 	
 </table>

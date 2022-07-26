@@ -296,8 +296,7 @@ weight: 90
         <a href="../../getting_started/recipes/component_references/">Component references</a>
       </td>
     </tr>
-	
-	<tr>
+    <tr>
       <td>Locks</td>
       <td>
        A mechanism for controlling access to something.<br><br>

@@ -418,5 +418,34 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/designing_persistence/">Designing persistence</a></td>
     </tr>
-
+	<tr>
+      <td>Pipeline (CI/CD)</td>
+      <td>
+       A sequence of steps that must be performed to build, test, package and deliver a new version of an application. These processes can vary depending on the type of application, language, environment, etc.
+      </td>
+    </tr>
+	<tr>
+      <td>Ported</td>
+      <td>
+       A computer program that has been reworked to run in a new environment.
+      </td>
+    </tr>
+    <tr>
+      <td>Property</td>
+      <td>
+       In object-oriented programming, a property is a special type of variable that is used to define the characteristics of an object.
+      </td>
+    </tr>
+    <tr>
+      <td>Reference</td>
+      <td>
+       A value that specifies the location of a component. To store and locate references to a component, Pip.Services has the References class.
+      </td>
+    </tr>
+    <tr>
+      <td>Saga</td>
+      <td>
+       A sequence of transactions that updates each service and triggers the next transaction step. If a step fails, the saga executes the necessary compensating transactions that undo the ones previously executed.
+      </td>
+    </tr>
 </table>

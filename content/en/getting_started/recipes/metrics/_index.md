@@ -29,7 +29,7 @@ The toolkit has several pre-defined counters, which are specified in the Counter
 
 When working with counters, a best practice is to name them according to the following convention:
 
-<div align="center"> <service_or_component_name>.<method_name>.<counter_name> </div>
+<service_or_component_name>.<method_name>.<counter_name>
 
 
 ### Managing counters

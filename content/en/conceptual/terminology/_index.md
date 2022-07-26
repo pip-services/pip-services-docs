@@ -180,4 +180,63 @@ weight: 90
         A data object used to store the measurements of a performance counter, such as the number of times a function is called.
       </td>
     </tr>	
+   <tr>
+      <td>Credential params</td>
+      <td>
+        Credential params stands for credential parameters. Pip.Services contains the CredentialParams component that can be used to hold the credentials required to connect to external services.
+      </td>
+    </tr>
+    <tr>
+      <td>Data Microservice</td>
+      <td>
+        A microservice used to read and store data. These microservices can be classified as CRUD or CQRS microservices.
+      </td>
+      <td><a href="../../getting_started/tutorials/data_microservice/">Data microservice</a></td>
+    </tr>
+    <tr>
+      <td>Descriptor</td>
+      <td>
+        A descriptor is a Pip.Services component that works as a component locator based on the following fields: group, type, kind, name and version of a component. <br><br>
+        As matching can be done by using one or more of the fields, many scenarios with various degrees of specificity can be considered. For example: locate all loggers (type) or locate a specific component (name and version).
+      </td>
+      <td><a href="../../getting_started/descriptors/">Descriptors</a></td>
+    </tr>
+	<tr>
+      <td>Direct Client</td>
+      <td>
+        A client that calls a controller directly in the same memory space. It is used when multiple microservices are deployed in a single container (monolith) and communication between them can be done by direct calls rather than through the network.
+      </td>
+      <td><a href="../../getting_started/recipes/direct_client/">Direct Client</a></td>
+    </tr>
+    <tr>
+      <td>Discovery</td>
+      <td>
+        Service discovery refers to the automatic detection of components. <br><br>
+        For this functionality, Pip.Services provides the MemoryDiscovery class, which works by keeping connections in memory. 
+      </td>
+      <td><a href="../../getting_started/recipes/discovery_services/">Discovery services</a></td>
+    </tr>
+    <tr>
+      <td>Endpoint</td>
+      <td>
+        An endpoint represents a connection point for an API. Typically, it is a uniform resource locator (URL) that provides the location of a resource on a server. <br><br>
+        Endpoints are used by services and clients to locate each other. Pip.Services contains an HTTP endpoint component, which is used by those components that communicate via this protocol including REST services, Swagger, Prometheus, and health services. Similarly, it has a gRPC endpoint that allows for components to communicate via the gRPC protocol. 
+      </td>
+    </tr>
+    <tr>
+      <td>Environment</td>
+      <td>
+        A collection of programs, libraries, and utilities that allows users to perform specific tasks. 
+      </td>
+    </tr>
+    <tr>
+      <td>Façade</td>
+      <td>
+        A component that serves as a front-facing interface connecting clients to different components. Thus, all requests made by external clients first arrive at the facade from where are then forwarded to the appropriate microservices. This extra layer that facades provides allows for microservices to be changed, without those changes affecting the clients. <br><br>
+        Facades can provide some additional functionality such as routing, data aggregation, authentication and authorization, caching, analytics and logging. <br><br>
+        Large systems can include several facades, each of them representing a logical isolated API. Moreover, specialized facades can be used for clients that present specific needs (See BFF pattern).
+      </td>
+    </tr>
+
+
 </table>

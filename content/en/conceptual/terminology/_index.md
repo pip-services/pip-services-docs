@@ -448,4 +448,26 @@ weight: 90
        A sequence of transactions that updates each service and triggers the next transaction step. If a step fails, the saga executes the necessary compensating transactions that undo the ones previously executed.
       </td>
     </tr>
+    <tr>
+      <td>Service</td>
+      <td>
+       Within Pip.Services, a service is the component in the first layer of the three-layer design model. It is used to communicate with clients by using protocols such as HTTP and gRPC. <br><br>
+       This approach is different from other frameworks such as Spring Boot, where a service is used to implement the logic of a microservice.
+      </td>
+    </tr>
+	
+	<tr>
+      <td>Swagger</td>
+      <td>
+       A suite of tools for API development. Pip.Services offers access to these tools via the Swagger module, which has the functionality to document an API via a Swagger interface.
+      </td>
+      <td><a href="../../getting_started/recipes/swagge/">Swagge</a></td>
+    </tr>
+    <tr>
+      <td>Symmetric implementation</td>
+      <td>
+       The architectural principle that says that for every programming language the toolkit implements, there is a common set of classes, methods, and method signatures that applies to all implemented languages.
+      </td>
+    </tr>
+
 </table>

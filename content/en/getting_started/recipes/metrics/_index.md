@@ -38,4 +38,35 @@ In the next sections, we will construct examples that show how to define counter
 #### Counters
      
 ##### CachedCounters
+     
+##### LogCounters
+     
+##### NullCounters
+     
+##### Other counters
+     
+##### CompositeCounters
+     
+Pip.Services offers the CompositeCounters component, which can be used to group a set of counters that collect the same performance metrics. Once collected, the metrics can be sent to different destinations, such as a console, a logger, or a tool like Prometheus or Datadog.
+
+An important method in this class is setReferences(), which registers all components that will receive the measurements. When using a container, this method finds all registered counters and connects to them.
+
+In the example below, we have a monitored class similar to the one from the previous section, except for the fact that considers a CompositeCounters component and adds a setReferences() method.
+
+We can use this component to store metrics that can be used by, for example, a CachedLogger and a Prometheus component.
+
+To achieve this, we define two counters, one that stores values in a CachedLogger and another that connects to Prometheus. Then, we instantiate our monitored class and add references to both counters. 
+     
+After running myMethod(), we obtain the performance metrics for CachedLogger and PrometheusCounters. 
+
+The following code shows how this can be done:
+
+     
+     
+Which, after running produces the following output:
+     
+     
 ### Wrapping up
+
+In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution time metric for a method, and saved the obtained values in memory, a logger, and a component that connects to Prometheus. We also learned how to create a NullCounters, which is a dummy component with no real effect that is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and obtain the stored values via different tools for future use.     
+     

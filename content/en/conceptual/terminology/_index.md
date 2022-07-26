@@ -359,5 +359,28 @@ weight: 90
        </ul>
       </td>
     </tr>	
+	<tr>
+      <td>Mock Client</td>
+      <td>
+        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
+      </td>
+    </tr>
 	
+    <tr>
+      <td>Module</td>
+      <td>
+       A collection of components with similar functionalities. Modules allow for the organization of components within the toolkit. <br><br>
+       The core of the toolkit consists of two modules namely, Commons and Components. Other modules, such as RPC, gRPC, AWS, MySQL, Cassandra etc, extend the functionality of the toolkit. Each module is implemented in six different languages according to the symmetric implementation principle.
+      </td>
+    </tr>
+    <tr>
+      <td>MQTT</td>
+      <td>
+       MQTT is a lightweight, publish-subscribe, machine-to-machine network protocol. It is designed for connections with remote locations that have devices with resource constraints or limited network bandwidth. <br><br>
+       This protocol is implemented in Pip.Services in the  MQTT module, which contains components for sending and receiving messages via an MQTT broker.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/mqtt/">MQTT</a>
+      </td>
+    </tr>	
 </table>

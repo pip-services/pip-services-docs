@@ -19,6 +19,18 @@ Within these interfaces, ICounters defines methods for measuring execution perfo
 
 This interface is implemented by several classes. The figure below shows a simplified class diagram displaying the relationships between it and the main classes used to build different counters. These classes will be explained in more detail in the following sections.
 
+
+
+
+The toolkit has several pre-defined counters, which are specified in the CounterType class. They are:
+
+When working with counters, a best practice is to name them according to the following convention:
+
+<div align="center"> <service_or_component_name>.<method_name>.<counter_name> </div>
+
+
 ### Managing counters
+
+
 
 ### Wrapping up

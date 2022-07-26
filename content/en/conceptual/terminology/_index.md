@@ -45,4 +45,35 @@ weight: 90
        A creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
       </td>
     </tr>	
+   <tr>
+      <td>Business Process Microservice</td>
+      <td>A microservice used to implement business transactions. These microservices can be classified as background workers and sagas.</td>
+    </tr>
+	<tr>
+      <td>Caching</td>
+      <td>
+        The process of storing and accessing data from a cache, where a cache is a high-speed data storage. Typically, the storage is transient and is used to speed up the retrieval of data. <br> <br>
+        Within Pip.Services, the user can create components for caching. Also, there are two components that offer caching: the MemoryCaching class, which caches in memory, and the NullCache, which is a dummy cache with no real effect. And, Pip.Services includes modules for Redis and Memcached.
+      </td>
+      <td><a href="../../getting_started/caching/">Caching</a></td>
+    </tr>
+    <tr>
+      <td>Circuit Breaker pattern</td>
+      <td>A pattern used to detect failure and encapsulate the logic of preventing it from cascading between services. It can also detect when a problem has been resolved. By isolating the failure, this pattern provides fault and latency tolerance.</td>
+    </tr>
+    <tr>
+      <td>Client</td>
+      <td>
+        A hardware device or software program that requests access to a service provided by a server. Clients are typically used in the client-server architecture.
+      </td>
+    </tr>
+    <tr>
+      <td>Collection</td>
+      <td>
+      A class representing a set of similar items as a single unit. Within Pip.Services, there are several useful collections, such as AnyValueMap, StringsValueMap and Arrays.
+      </td>
+    </tr>	
+	
+	
+	
 </table>

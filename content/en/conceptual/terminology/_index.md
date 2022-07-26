@@ -455,7 +455,6 @@ weight: 90
        This approach is different from other frameworks such as Spring Boot, where a service is used to implement the logic of a microservice.
       </td>
     </tr>
-	
 	<tr>
       <td>Swagger</td>
       <td>

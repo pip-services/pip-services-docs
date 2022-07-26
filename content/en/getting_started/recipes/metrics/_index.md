@@ -20,7 +20,18 @@ description: >-
     <td>ICounters</td>
     <td>Interface that defines methods for performance counters that measure execution metrics.</td>
   </tr>
-
+  <tr>
+    <td>CachedCounters</td>
+    <td>Class used to create performance counters that measure and store those values in memory.</td>
+  </tr>
+  <tr>
+    <td>LogCounters</td>
+    <td>Performance counters that periodically send counters' measurements to a logger.</td>
+  </tr>
+  <tr>
+    <td>LogCounters</td>
+    <td>Performance counters that periodically send counters' measurements to a logger.</td>
+  </tr>
 </table>
 
 ### Introduction

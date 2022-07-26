@@ -11,6 +11,18 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Performance metrics</td>
+    <td>Values that measure the number of actions and other factors that help understand how an application performs.</td>
+  </tr>
+  <tr>
+    <td>ICounters</td>
+    <td>Interface that defines methods for performance counters that measure execution metrics.</td>
+  </tr>
+
+</table>
+
 ### Introduction
 
 This tutorial will teach you how to create and manage performance metrics with Pip.Services components. First, we will learn how counters are defined in the toolkit and how to add them to a component. Then, we will see several options to manage the obtained performance metrics, such as storing them in memory, showing them on a console, sending them to external tools, and grouping them in composite counters. We will also study a dummy component used to simulate counters.

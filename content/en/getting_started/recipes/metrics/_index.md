@@ -23,7 +23,7 @@ Within these interfaces, ICounters defines methods for measuring execution perfo
 
 This interface is implemented by several classes. The figure below shows a simplified class diagram displaying the relationships between it and the main classes used to build different counters. These classes will be explained in more detail in the following sections.
 
-![figure 1](./figure1.jpg
+![figure 1](./figure1.jpg)
 
 The toolkit has several pre-defined counters, which are specified in the CounterType class. They are:
 

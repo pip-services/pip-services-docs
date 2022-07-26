@@ -306,4 +306,30 @@ weight: 90
         <a href="../../getting_started/recipes/locks/">Component references</a>
       </td>
     </tr>
+  <tr>
+      <td>Log</td>
+      <td>
+       A file that records either events happening in an operating system or software executions.
+      </td>
+    </tr>
+    <tr>
+      <td>Logging</td>
+      <td>
+       The action of keeping a log.<br><br>
+       PIP.Services provides two important logging components namely, the CachedLogger and the ConsoleLogger. The first class stores log messages in memory, whereas the second class displays them on a console.<br><br>
+       The toolkit also has the CompositeLogger component, which allows for message aggregation and thus, the creation of a centralized logging point.<br><br>
+       Additionally, PIP.Services provides implementations of loggers for CloudWatch, ElasticSearch, and DataDog.
+      </td>
+      <td>
+        <a href="../../getting_started/recipes/logging/">Logging</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Memory persistence</td>
+      <td>
+       Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
+      </td>
+    </tr>	
+	
+	
 </table>

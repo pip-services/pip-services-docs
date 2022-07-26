@@ -75,18 +75,7 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/direct_client/">Direct Client</a></td>
     </tr>
-    <tr>
-      <td>Null Client</td>
-      <td>
-        A dummy client with no real effect. It is used for testing
-      </td>
-    </tr>
-    <tr>
-      <td>Mock Client</td>
-      <td>
-        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
-      </td>
-    </tr>
+
     <tr>
       <td>Commandable pattern</td>
       <td>
@@ -364,6 +353,12 @@ weight: 90
        </ul>
       </td>
     </tr>
+     <tr>
+      <td>Mock Client</td>
+      <td>
+        A dummy client that simulates the work of a service in memory. It is used for testing or demonstration purposes.
+      </td>
+    </tr>
     <tr>
       <td>Module</td>
       <td>
@@ -394,6 +389,12 @@ weight: 90
       </td>
       <td>
         <a href="../../getting_started/recipes/mustache_templates/">Mustache templates</a>
+      </td>
+    </tr>
+     <tr>
+      <td>Null Client</td>
+      <td>
+        A dummy client with no real effect. It is used for testing
       </td>
     </tr>
     <tr>
@@ -435,6 +436,7 @@ weight: 90
        Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.
       </td>
     </tr>
+
     <tr>
       <td>File Persistence</td>
       <td>

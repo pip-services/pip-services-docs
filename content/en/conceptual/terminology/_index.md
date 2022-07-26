@@ -89,6 +89,19 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/command_set/">Command Set</a></td>
     </tr>
-	
+ <tr>
+      <td>Communication protocol</td>
+      <td>
+        A system of rules that allows two or more entities of a communication system to transmit information via any kind of variation of a physical quantity.<br><br>
+        Pip.Services offers components for communication for the HTTP and gRPC protocols.
+      </td>
+    </tr>
+    <tr>
+      <td>Component</td>
+      <td>
+        Within Pip.Services, a component is a class with a lifecycle implemented using interfaces (Code augmentation). Usually, within a microservice, components are organized according to a three-layer architecture.
+      </td>
+      <td><a href="../../getting_started/recipes/creating_a_component/">Command Set</a></td>
+    </tr>	
 	
 </table>

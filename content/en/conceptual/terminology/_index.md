@@ -159,5 +159,25 @@ weight: 90
       </td>
       <td><a href="../../getting_started/recipes/containers/">Command Set</a></td>
     </tr>	
-	
+   <tr>
+      <td>Controller </td>
+      <td>
+        Within Pip.Services’ three-tier architecture, the controller is the class where the business logic of the microservice is implemented. From this component, methods can call other components.<br><br>
+        This approach differs from other frameworks such as Spring Boot, where the controller is used to implement communication functions.
+      </td>
+      <td><a href="../../getting_started/recipes/three_tier_architecture/">Three tier architecture</a></td>
+    </tr>
+	    <tr>
+      <td>Correlation ID</td>
+      <td>
+        A transaction id used to trace execution through a call chain. It can be a number, a string, or a combination of both.<br><br>
+        Correlation ids are important for tracing errors, debugging, and logging. 
+      </td>
+    </tr>
+    <tr>
+      <td>Counters</td>
+      <td>
+        A data object used to store the measurements of a performance counter, such as the number of times a function is called.
+      </td>
+    </tr>	
 </table>

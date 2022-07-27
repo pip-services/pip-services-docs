@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "The Structure of a Microservice"
 linkTitle: "Microservice Structure"
-weight: 20
+# weight: 20
 ---
 
 In essence, microservices are an architectural style that structures a system as a set of relatively small services. Each of these services has its own independent life cycle, and communication between them is usually built upon light-weight communication protocols. However, there don’t exist any standards regarding the structure of the microservices themselves. Each company, team, and/or developer is free to choose a design that fits their own unique requirements.

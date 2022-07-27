@@ -2,7 +2,7 @@
 type: docs
 title: "Building Blocks"
 linkTitle: "Building Blocks" 
-weight: 30
+# weight: 30
 no_list: true
 exclude_from_list: true
 ---

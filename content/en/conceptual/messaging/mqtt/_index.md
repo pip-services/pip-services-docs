@@ -421,7 +421,7 @@ This method allows us to obtain the number of messages in a queue that need to b
 
 #### Other configuration parameters
 
-##### _qos
+##### qos
 
 MQTT accepts three different levels, which are:
 
@@ -431,7 +431,7 @@ MQTT accepts three different levels, which are:
 
 Based on the above, we can specify our preferred level via the _qos field in our configuration by stating its integer value (See the example in the next section). 
 
-##### _autoSubscribe
+##### autoыubscribe
 
 This is a Boolean field. By declaring it as true, our component will automatically subscribe to the specified topic. This field can be specified in our configuration.
 

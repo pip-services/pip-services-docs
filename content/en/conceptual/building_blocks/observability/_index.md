@@ -33,7 +33,7 @@ The ILogger interface looks pretty standard. It allows logging messages at diffe
 
 It is common in microservices to log simultaneously into several destinations - to console for debugging as well into a distributed logging system. To support this scenario the toolkit includes the CompositeLogger, which is used by components to collect messages and then distribute them across all loggers included in the microservice.
 
-```
+```yml
 # Console logger
 descriptor: "pip-services:logger:console:default:1.0"
 level: info
@@ -84,7 +84,7 @@ Similar to logs, microservices can send counters to several destinations: period
 
 The example below shows how to collect several performance metrics from processing incoming messages:
 
-```
+```yml
 # Log counters
 descriptor: "pip-services:counters:log:default:1.0"
 
@@ -131,7 +131,7 @@ The Pip.Services toolkit includes the ITraces interface for tracing components d
 
 Just like logs and metrics, a tracer can be sent to multiple destinations using the CompositeTracer component.
 
-```
+```yml
 # Log tracer
 descriptor: "pip-services:tracer:log:default:1.0"
 
@@ -169,3 +169,7 @@ connection:
 ### References
 
 For more information about observability see:
+- #### [Logging](../../../getting_started/recipes/logging/)
+- #### [Metrics](../../../getting_started/recipes/metrics/)
+- #### [Prometheus](../../../getting_started/recipes/prometheus/)
+- #### [Elasticsearch](../../../getting_started/recipes/elasticsearch/)

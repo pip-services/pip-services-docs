@@ -237,3 +237,6 @@ In some function test scenarios, and especially in non-functional tests, develop
 ### References
 
 For more information on data handling see:
+- #### [Data validation](../../data_validation/)
+- #### [Dynamic data types](../../dynamic_data_types/)
+- #### [Designing persistence](../../../getting_started/recipes/designing_persistence/)

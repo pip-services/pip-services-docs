@@ -4,6 +4,7 @@ no_list: true
 title: "Learning path"
 linkTitle: "Learning path"
 weight: 10
+draft: true
 description: >-
      Fast track learning path.
 ---

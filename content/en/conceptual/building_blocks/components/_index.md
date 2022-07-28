@@ -171,3 +171,6 @@ Components represent the most basic building block in the Pip.Services toolkit t
 
 ## References
 For more information on components and containers see:
+- #### [Component configuration](../../configuration/component_configuration/)
+- #### [Config file syntax](../../configuration/config_file_syntax/)
+- #### [Process container](../../containers/process_container/)

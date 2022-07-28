@@ -309,7 +309,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+More details on this mechanism can be found in [The Configuration recipe](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 

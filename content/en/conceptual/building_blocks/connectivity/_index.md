@@ -20,7 +20,7 @@ The same package contains an IDiscovery interface that shall be implemented by c
 MemoryDiscovery is the simplest implementation of a discovery component. It allows storing connection information in a single place in the config file. 
 Typically, connection parameters are set in the connection (or connections for clusters) section in configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
 
-```
+```yml
 # MongoDb persistence component
 descriptor: "myservice:mypersistance:mongodb:default:1.0"
 connection:
@@ -56,7 +56,7 @@ Hardcoding connection parameters in the component configurations works well for 
 
 The example below is similar to the previous one but shows how to get mongo connection parameters from the in-memory discovery service using the ConnectionResolver helper.
 
-```
+```yml
 # In-memory discovery service
 descriptor: "pip-services:discovery:memory:default:1.0"
 mongo:
@@ -105,7 +105,7 @@ The MemoryCredentialStore class is the simplest implementation of a credential s
 
 Similar to connection parameters, credentials are set in the credential section of the configuration parameters and passed to components via the configure method. Components can read that information by themselves. 
 
-```
+```yml
 # MongoDb persistence component
 descriptor: “myservice:mypersistance:mongodb:default:1.0”
 credential:
@@ -141,7 +141,7 @@ When credentials have to be retrieved from an external credential store, a store
 
 The example below demonstrates how to get mongo credentials from an in-memory credential store using the CredentialResolver helper.
 
-```
+```yml
 # In-memory credential store
 descriptor: "pip-services:credential-store:memory:default:1.0"
 mongo:
@@ -183,14 +183,16 @@ credential:
 ### Specialized connection resolvers
 Similar to standard ConnectionResolver and CredentialResolver, different modules contain specialized resolvers that can provide both connection and credential information, check for completeness and generate technology-specific connection URLs. Some examples are:
 
-- HttpConnectionResolver defined in rpc module
+- HttpConnectionResolver defined in RPC module
 - AwsConnectionResolver defined in AWS module
 - AzureConnectionResolver defined in the Azure module
-- MongoDbConnectionResolver defined in mongo module
+- MongoDbConnectionResolver defined in Mongo module
 - PostgresConnectionResolver defined in Postgres module
-- KafkaConnectionResolver defined in kafka module
+- KafkaConnectionResolver defined in Kafka module
 - MqttConnectionResolver defined MQTT module
 
 ### References
 
 For more information about connectivity see:
+- #### [Connection utils](../../../getting_started/recipes/connection_utils/)
+- #### [Configuring connections](../../../getting_started/recipes/configuring_connections/)

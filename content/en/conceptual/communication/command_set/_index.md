@@ -468,19 +468,27 @@ In this section, we have two examples that show how to work with command sets. T
 #### Example 2   
          
 {{< tabsection >}}
-  {{< include "./__code15_node.md" >}}
+  {{< collapse >}}
+    {{< include "./__code15_node.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code15_net.md" >}}
+  {{< collapse >}}
+    {{< include "./__code15_net.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_go.md" >}}
+  {{< collapse >}}
+    {{< include "./__code15_go.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code15_dart.md" >}}
+  {{< collapse >}}
+    {{< include "./__code15_dart.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

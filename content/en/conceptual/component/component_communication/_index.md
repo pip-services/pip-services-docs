@@ -2,7 +2,7 @@
 type: docs
 no_list: true
 title: "Communication between components"
-linkTitle: "Component communication"
+linkTitle: "Component Communication"
 description: >-
      How we can use the References class to communicate between different components.
 ---

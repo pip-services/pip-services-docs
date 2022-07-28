@@ -1,4 +1,6 @@
 
+See: [IUnreferenceable](../../../toolkit_api/net/commons/refer/iunreferenceable/)
+
 ```cs
 interface Worker
 {

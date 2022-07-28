@@ -1,4 +1,6 @@
 
+See [PrometheusMetricsService](../../../toolkit_api/node/prometheus/services/prometheus_metrics_service.md)
+
 ```ts
     /**
 	 * Sets references to dependent components.

@@ -1,4 +1,6 @@
 
+See: [DependencyResolver](../../../toolkit_api/golang/commons/refer/dependency_resolver/)
+
 ```go
 type DependencyResolver struct {
 	dependencies map[string]interface{}

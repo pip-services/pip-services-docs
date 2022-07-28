@@ -28,11 +28,11 @@ A flexible and, at the same time, standardized approach was developed in the Pip
 
 {{< tabsection isMarkdown=true >}}
 
-- [IConfigurable](../../../node/commons/config/iconfigurable/) – component configuration.
-- [IReferenceable](../../../node/commons/refer/ireferenceable/) and [IUnreferenceable](../../../node/commons/refer/iunreferenceable/) – setting and destroying references to other components.
-- [IOpenable](../../../node/commons/run/iopenable) and [IClosable](../../../node/commons/run/iclosable) – starting and stopping internal functional processes.
-- [IExecutable](../../../node/commons/run/iexecutable) – execution of functional processes.
-- [INotifiable](../../../node/commons/run/inotifiable) - sending event notifications.
+- [IConfigurable](../../../toolkit_api/node/commons/config/iconfigurable/) – component configuration.
+- [IReferenceable](../../../toolkit_api/node/commons/refer/ireferenceable/) and [IUnreferenceable](../../../toolkit_api/node/commons/refer/iunreferenceable/) – setting and destroying references to other components.
+- [IOpenable](../../../toolkit_api/node/commons/run/iopenable) and [IClosable](../../../toolkit_api/node/commons/run/iclosable) – starting and stopping internal functional processes.
+- [IExecutable](../../../toolkit_api/node/commons/run/iexecutable) – execution of functional processes.
+- [INotifiable](../../../toolkit_api/node/commons/run/inotifiable) - sending event notifications.
 
 ```typescript
 
@@ -532,11 +532,11 @@ The Pip.Service’s Toolkit also includes a few utilities that can be used durin
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../node/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../node/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../node/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../node/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../node/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/node/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/node/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/node/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/node/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/node/commons/run/cleaner/) – cleans the current state of selected components.
 
 For example:
 
@@ -550,11 +550,11 @@ await Closer.close(correlationId, references.getAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../net/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../net/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../net/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../net/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../net/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/net/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/net/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/net/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/net/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/net/commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -569,11 +569,11 @@ await Closer.CloseAsync(correlationId, _references.GetAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../golang/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../golang/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../golang/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../golang/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../golang/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/golang/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/golang/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/golang/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/golang/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/golang/commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -588,11 +588,11 @@ err = crun.Closer.Close(correlationId, references.GetAll())
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../dart/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../dart/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../dart/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../dart/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../dart/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/dart/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/dart/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/dart/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/dart/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/dart/commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:
@@ -607,11 +607,11 @@ await Closer.close(correlationId, references.getAll());
 
 {{< tabsection isMarkdown=true >}}
 
-- [Opener](../../../python/commons/run/opener/) – initiates the functional processes of selected components.
-- [Closer](../../../python/commons/run/closer/) – stops the functional processes of selected components.
-- [Executor](../../../python/commons/run/executor/) – runs the functional processes of selected components.
-- [Notifier](../../../python/commons/run/notifier/) - sends event notifications for selected components.
-- [Cleaner](../../../python/commons/run/cleaner/) – cleans the current state of selected components.
+- [Opener](../../../toolkit_api/python/commons/run/opener/) – initiates the functional processes of selected components.
+- [Closer](../../../toolkit_api/python/commons/run/closer/) – stops the functional processes of selected components.
+- [Executor](../../../toolkit_api/python/commons/run/executor/) – runs the functional processes of selected components.
+- [Notifier](../../../toolkit_api/python/commons/run/notifier/) - sends event notifications for selected components.
+- [Cleaner](../../../toolkit_api/python/commons/run/cleaner/) – cleans the current state of selected components.
 
 
 For example:

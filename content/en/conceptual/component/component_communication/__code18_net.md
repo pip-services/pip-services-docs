@@ -1,4 +1,6 @@
 
+See [PrometheusCounters](../../../toolkit_api/net/prometheus/count/prometheus_counters.md)
+
 ```cs
     /// <summary>
     /// Sets references to dependent components.

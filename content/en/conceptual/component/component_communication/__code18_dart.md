@@ -1,4 +1,6 @@
 
+See [PrometheusCounters](../../../toolkit_api/dart/prometheus/count/prometheus_counters.md)
+
 ```dart
   /// Sets references to dependent components.
   ///

@@ -1,4 +1,6 @@
 
+See: [MemoryConfigReader](../../../toolkit_api/net/components/config/memory_config_reader/), [ConfigReader](../../../toolkit_api/net/components/config/config_reader/)
+
 ```cs
 var config = ConfigParams.FromTuples(
 	"connection.host", "localhost",

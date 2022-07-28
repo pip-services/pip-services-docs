@@ -1,4 +1,6 @@
 
+See: [Descriptor](../../../toolkit_api/golang/commons/refer/descriptor/)
+
 ```go
 type Descriptor struct {
 	group   string

@@ -1,4 +1,6 @@
 
+See: [IReferences](../../../toolkit_api/node/commons/refer/ireferences/), [References](../../../toolkit_api/node/commons/refer/references/)
+
 ```typescript
 interface IReferences {
 	put(locator: any, component: any);

@@ -1,4 +1,6 @@
 
+See: [IdentifiableMemoryPersistence](../../../toolkit_api/net/data/persistence/identifiable_memory_persistence/)
+
 ```cs
 using PipServices3.Commons.Data;
 using PipServices3.Data.Persistence;

@@ -1,4 +1,6 @@
 
+See: [Commons module’s](../../../toolkit_api/node/commons)
+
 ```typescript
 export class DataController implements IConfigurable {
    	private _max_page_size: number = 5;

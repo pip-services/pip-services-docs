@@ -1,4 +1,6 @@
 
+See: [ConfigParams](../../../toolkit_api/net/commons/config/config_params/)
+
 ```cs
 var config = ConfigParams.FromTuples(
   "param1", 123,

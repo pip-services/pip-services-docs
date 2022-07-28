@@ -1,4 +1,6 @@
 
+See: [IStringdentifiable](../../../toolkit_api/golang/commons/data/istring_identifiable/)
+
 ```go
 package persistence
 

@@ -1,4 +1,6 @@
 
+See: [DependencyResolver](../../../toolkit_api/node/commons/refer/dependency_resolver/)
+
 ```typescript
 class DependencyResolver implements IReferenceable, IReconfigurable {
 	private _dependencies: any = {};

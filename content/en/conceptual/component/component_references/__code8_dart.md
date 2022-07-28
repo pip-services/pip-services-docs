@@ -1,4 +1,6 @@
 
+See: [DependencyResolver](../../../toolkit_api/dart/commons/refer/dependency_resolver/)
+
 ```dart
 class DependencyResolver implements IReferenceable, IReconfigurable {
 

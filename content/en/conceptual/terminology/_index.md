@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Terminology"
 linkTitle: "Terminology"
-weight: 500
+weight: 1000
 ---
 
 <table class="full-width-table entry-table-no-links terminology">

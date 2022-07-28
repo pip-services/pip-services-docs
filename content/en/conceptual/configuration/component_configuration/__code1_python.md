@@ -1,4 +1,6 @@
 
+See: [IConfigurable](../../../toolkit_api/python/commons/config/iconfigurable/)
+
 ```python
 class IConfigurable(ABC):
 

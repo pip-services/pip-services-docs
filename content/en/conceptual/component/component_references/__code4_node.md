@@ -1,4 +1,6 @@
 
+See: [IUnreferenceable](../../../toolkit_api/node/commons/refer/iunreferenceable/)
+
 ```typescript
 class SimpleController implements IReferenceable, IUnreferenceable {
     private _worker: any;

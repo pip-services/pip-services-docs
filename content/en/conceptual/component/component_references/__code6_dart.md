@@ -1,4 +1,6 @@
 
+See: [Descriptor](../../../toolkit_api/dart/commons/refer/descriptor/)
+
 ```dart
 class Descriptor {
   String? _group;

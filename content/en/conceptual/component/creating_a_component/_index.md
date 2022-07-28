@@ -423,4 +423,4 @@ As our component is complete and fully functional, this step marks the end of ou
 
 In this tutorial, we have created a component, defined all the necessary methods for managing its lifecycle, and assembled a service from it. We also saw that containers offer a more efficient way to run components.
 
-More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](https://pip-services.github.io/pip-services-docs/toolkit/tutorials/data_microservice/) tutorial.
+More complex components will follow a similar structure, but with added functionality. For example, we can add things like different forms of persistence, connectivity to other services, observability, caching, and more. You can find an example of this in the [Data Microservice](../../../getting_started/tutorials/data_microservice/) tutorial.

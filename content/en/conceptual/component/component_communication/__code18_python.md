@@ -1,4 +1,6 @@
 
+See [PrometheusCounters](../../../toolkit_api/python/prometheus/count/prometheus_counters.md)
+
 ```python
     def set_references(self, references: IReferences):
         """

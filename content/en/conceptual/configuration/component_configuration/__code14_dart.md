@@ -1,4 +1,6 @@
 
+See: [YamlConfigReader](../../../toolkit_api/dart/components/config/yaml_config_reader/)
+
 ```dart
 var configReader = YamlConfigReader('config.yml');
 var parameters = ConfigParams.fromTuples(['KEY1_VALUE', 123, 'KEY2_VALUE', 'ABC']);

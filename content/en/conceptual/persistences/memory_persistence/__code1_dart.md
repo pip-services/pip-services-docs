@@ -1,4 +1,6 @@
 
+See: [IStringdentifiable](../../../toolkit_api/dart/commons/data/istring_identifiable/)
+
 ```dart
 import 'package:pip_services3_commons/pip_services3_commons.dart';
 

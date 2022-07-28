@@ -1,4 +1,6 @@
 
+See: [MemoryConfigReader](../../../toolkit_api/golang/components/config/memory_config_reader/), [ConfigReader](../../../toolkit_api/golang/components/config/config_reader/)
+
 ```go
 config := cconfig.NewConfigParamsFromTuples(
 	"connection.host", "localhost",

@@ -1,4 +1,6 @@
 
+See: [NameResolver](../../../toolkit_api/python/commons/config/name_resolver/), [OptionsResolver](../../../toolkit_api/python/commons/config/options_resolver/)
+
 ```python
 config = ConfigParams.from_tuples(
 	"descriptor", "myservice:connector:aws:connector1:1.0",

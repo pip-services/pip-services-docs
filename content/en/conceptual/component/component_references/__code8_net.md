@@ -1,4 +1,6 @@
 
+See: [DependencyResolver](../../../toolkit_api/net/commons/refer/dependency_resolver/)
+
 ```cs
 public class DependencyResolver : IReferenceable, IReconfigurable
 {

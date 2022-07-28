@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Data Validation"
 linkTitle: "Data Validation"
-weight: 30
+weight: 100
 description: >-
      How to create complex validation expressions.
 ---

@@ -1,4 +1,6 @@
 
+See: [IUnreferenceable](../../../toolkit_api/golang/commons/refer/iunreferenceable/)
+
 ```go
 import (
 	"fmt"

@@ -2,7 +2,7 @@
 type: docs
 title: "Component"
 linkTitle: "Component" 
-weight: 30
+weight: 40
 no_list: true
 exclude_from_list: true
 ---

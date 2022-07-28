@@ -17,7 +17,7 @@ The Pip.Services Toolkit offers a simple but very flexible mechanism for compone
 
 #### The configurable interface
 
-A component can be made configurable by adding the [IConfigurable](../../../node/commons/config/iconfigurable/) interface and implementing its **configure** method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
+A component can be made configurable by adding the **IConfigurable** interface and implementing its **configure** method. This method will be called by the container right after container creation, with the loaded configuration being passed as a parameter.
 
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}  
@@ -45,7 +45,7 @@ A component can be made configurable by adding the [IConfigurable](../../../node
 
 #### The ConfigParams object
 
-The only parameter that is passed to the configure method is [ConfigParams](../../../node/commons/config/config_params/) object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
+The only parameter that is passed to the configure method is **ConfigParams** object. Simply put - this is a map that allows us to get a configuration parameter value by its corresponding key. Although various programming languages have unique syntax for initializing maps and objects, **ConfigParams** support initialization that is independent of the language being used.
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}  
@@ -180,7 +180,7 @@ Lastly, **ConfigParams** objects can be serialized/deserialized to/from JSON, YA
   Not available  
 {{< /tabsection >}}
 
-To read more about what functionality is available through **ConfigParams**, be sure to check out the [Commons module’s](../../../node/commons)documentation. 
+To read more about what functionality is available through **ConfigParams**, be sure to check out the **Commons** documentation. 
 
 #### Example
 
@@ -238,7 +238,7 @@ Manual configuration can be done in the following manner:
   Not available  
 {{< /tabsection >}}
 
-However, a component’s configuration is usually stored in the microservice’s configuration file. The configure method will receive the parameters for the specific component (in the example below - everything between the component’s descriptor and the next descriptor or end of the file). To get more info on microservice configuration, read our [Component Container](../component_container) recipe. 
+However, a component’s configuration is usually stored in the microservice’s configuration file. The configure method will receive the parameters for the specific component (in the example below - everything between the component’s descriptor and the next descriptor or end of the file). To get more info on microservice configuration, read our [Component Container](../../containers/process_container) recipe. 
 
 ```yml
 ...
@@ -251,7 +251,7 @@ However, a component’s configuration is usually stored in the microservice’s
 
 ### Resolvers
 
-The [NameResolver](../../../node/commons/config/name_resolver/) and [OptionsResolver](../../../node/commons/config/options_resolver/) classes are helper classes that simplify the use of configurations. 
+The **NameResolver** and **OptionsResolver** classes are helper classes that simplify the use of configurations. 
 
 #### NameResolver
 
@@ -313,7 +313,7 @@ Below is a simple example of how it can be used:
 
 ### Configuration readers
 
-Configuration parameters can be stored in microservice configurations, configuration files, or in configuration services. To help with configuration extraction, the Pip.Services Toolkit offers two special **ConfigReader** components. The interface for these components is defined in the [Components](../../../node/components) module.
+Configuration parameters can be stored in microservice configurations, configuration files, or in configuration services. To help with configuration extraction, the Pip.Services Toolkit offers two special **ConfigReader** components. The interface for these components is defined in the **Components** module.
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}  
@@ -341,7 +341,7 @@ Configuration parameters can be stored in microservice configurations, configura
 
 #### MemoryConfigReader
 
-The [MemoryConfigReader](../../components/config/memory_config_reader/) is a **ConfigReader** that stores configuration data in memory.
+The **MemoryConfigReader** is a **ConfigReader** that stores configuration data in memory.
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}  
@@ -369,7 +369,7 @@ The [MemoryConfigReader](../../components/config/memory_config_reader/) is a **C
 
 #### JsonConfigReader
 
-The [JsonConfigReader](../../../node/components/config/json_config_reader/) is a **ConfigReader** that can read configurations from a JSON file.
+The **JsonConfigReader** is a **ConfigReader** that can read configurations from a JSON file.
 
 ```json
 { "key1": "{{KEY1_VALUE}}", "key2": "{{KEY2_VALUE}}" }
@@ -401,7 +401,7 @@ The [JsonConfigReader](../../../node/components/config/json_config_reader/) is a
 
 #### YamlConfigReader
 
-The [YamlConfigReader](../../../node/components/config/yaml_config_reader/) is a **ConfigReader** that can read configurations from a YAML file.
+The **YamlConfigReader** is a **ConfigReader** that can read configurations from a YAML file.
 
 ```yml
 key1: "1234"

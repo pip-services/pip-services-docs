@@ -1,4 +1,6 @@
 
+See: [Referencer](../../../toolkit_api/golang/commons/refer/referencer/)
+
 ```go
 type Reference struct {
 	locator   interface{}

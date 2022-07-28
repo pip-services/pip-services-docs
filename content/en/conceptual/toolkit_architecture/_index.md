@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Architecture of the Pip.Services toolkit"
 linkTitle: "Toolkit Architecture"
-weight: 30
+weight: 10
 ---
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 

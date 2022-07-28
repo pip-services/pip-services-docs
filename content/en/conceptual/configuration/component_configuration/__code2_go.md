@@ -1,4 +1,6 @@
 
+See: [ConfigParams](../../../toolkit_api/golang/commons/config/config_params/)
+
 ```go
 import cconfig "github.com/pip-services3-go/pip-services3-commons-go/config"
 

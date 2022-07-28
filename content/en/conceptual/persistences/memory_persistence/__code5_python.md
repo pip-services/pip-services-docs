@@ -1,4 +1,6 @@
 
+See: [DataPage](../../../toolkit_api/python/commons/data/data_page/)
+
 ```python
 # get all items 
 result = persistence.get_page_by_filter(None, 

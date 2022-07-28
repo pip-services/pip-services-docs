@@ -1,4 +1,6 @@
 
+See: [DataPage](../../../toolkit_api/node/commons/data/data_page/)
+
 ```ts
 // get all items 
 page = await persistence.getPageByFilter(null,

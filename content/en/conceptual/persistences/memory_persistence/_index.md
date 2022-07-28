@@ -25,7 +25,7 @@ In order to create our memory persistence component, we will follow these two st
 
 #### Step 1 - Creating a dummy class
 
-We will create a dummy class, which represents an object that is identifiable via an id. PIP.Services provides us with the [IStringdentifiable](http://docs.pipservices.org/python/commons/data/istring_identifiable/) interface that can be used to create data objects with this characteristic. We will also define a **content** parameter for the class, which can include any text. 
+We will create a dummy class, which represents an object that is identifiable via an id. PIP.Services provides us with the **IStringdentifiable** interface that can be used to create data objects with this characteristic. We will also define a **content** parameter for the class, which can include any text. 
 
 Once we created our class, we will create three instances of it, each with a different id. For one of the objects, we will use **None** to let the program define its id.
 The code will look something like this: 
@@ -58,7 +58,7 @@ The code will look something like this:
 
 
 #### Step 2 – Create a memory persistence object
-The next step is to create a memory persistence object. Here, we need to use the [IdentifiableMemoryPersistence](http://docs.pipservices.org/python/data/persistence/identifiable_memory_persistence/) class, which is an abstract persistence component that stores data in memory and implements CRUD operations over data items with unique ids. We will also define two methods namely, **get_page_by_filter** and **get_one_by_key**, which will be used to read the persisted values.
+The next step is to create a memory persistence object. Here, we need to use the **IdentifiableMemoryPersistence** class, which is an abstract persistence component that stores data in memory and implements CRUD operations over data items with unique ids. We will also define two methods namely, **getPageByFilter** and **getOneByKey**, which will be used to read the persisted values.
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}} 
@@ -128,7 +128,7 @@ As we can see, the memory persistence object allocated a value to the id of dumm
 
 #### Read the values from the persistence object
 
-To read the persisted values, we can use the **get_page_by_filter** method that we defined when we created the memory persistence object. Here, we will use a filter to indicate that we are only looking for the dummy2 object. 
+To read the persisted values, we can use the **getPageByFilter** method that we defined when we created the memory persistence object. Here, we will use a filter to indicate that we are only looking for the dummy2 object. 
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}} 
@@ -156,7 +156,7 @@ To read the persisted values, we can use the **get_page_by_filter** method that 
 
   
   
-The **result** object is of type [DataPage](http://docs.pipservices.org/python/commons/data/data_page/), which has two fields: data and total. The first is a list containing the items on the retrieved page, and the second is the total number of items in our request. After running this code, we will see the following output with the values of the obtained object.
+The **result** object is of type **DataPage**, which has two fields: data and total. The first is a list containing the items on the retrieved page, and the second is the total number of items in our request. After running this code, we will see the following output with the values of the obtained object.
 
 <img src="figure2.png" alt="Figure 2" style="width:100%">
 
@@ -252,7 +252,7 @@ And get the updated object:
 
 <img src="figure4.png" alt="Figure 4" style="width:100%">
 
-We can also use the **update_partially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
+We can also use the **updatePartially** function. In this case, we need to specify the id of the object to be updated and a dictionary (map) containing the field to be updated and its new value.
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}} 
@@ -313,7 +313,7 @@ And, we will obtain the updated persisted object.
 
 #### Delete a value from the persistence object
 
-Similarly, we can delete an object stored in the persistence object by using the **delete_by_id** function. In our example, we ask to delete dummy1 by indicating its id.
+Similarly, we can delete an object stored in the persistence object by using the **deleteById** function. In our example, we ask to delete dummy1 by indicating its id.
   
 
 {{< tabsection >}}

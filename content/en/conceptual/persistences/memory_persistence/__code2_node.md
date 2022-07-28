@@ -1,4 +1,6 @@
 
+See: [IdentifiableMemoryPersistence](../../../toolkit_api/node/data/persistence/identifiable_memory_persistence/)
+
 ```ts
 import { FilterParams } from 'pip-services3-commons-nodex';
 import { PagingParams } from 'pip-services3-commons-nodex';

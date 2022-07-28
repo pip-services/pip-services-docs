@@ -1,4 +1,6 @@
 
+See: [YamlConfigReader](../../../toolkit_api/net/components/config/yaml_config_reader/)
+
 ```cs
 configReader = YamlConfigReader("config.yml");
 parameters = ConfigParams.FromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");;

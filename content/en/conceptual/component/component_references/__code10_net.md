@@ -1,4 +1,6 @@
 
+See: [Referencer](../../../toolkit_api/net/commons/refer/referencer/)
+
 ```cs
 class SimpleController : IReferenceable, IUnreferenceable, IConfigurable
 {

@@ -1,4 +1,6 @@
 
+See: [MemoryConfigReader](../../../toolkit_api/node/components/config/memory_config_reader/), [ConfigReader](../../../toolkit_api/node/components/config/config_reader/)
+
 ```typescript
 let config = ConfigParams.fromTuples(
 	"connection.host", "localhost",

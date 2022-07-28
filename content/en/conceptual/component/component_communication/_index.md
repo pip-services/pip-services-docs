@@ -445,7 +445,7 @@ In order to explain how the References component can help us to create communica
 
 In the tutorial’s example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
 
-![figure 1](./figure1.png)
+![figure 1](./figure1.svg)
 
 In that example, and in order to add the three components to the References object, we use the fromTuples() method. This method accepts one or more Descriptor objects, each containing information about a component, and the respective referenced object. The following code shows how this is done:
 
@@ -500,7 +500,7 @@ Once we have our components in the References object, we can obtain them via any
   Not available  
 {{< /tabsection >}}
 
-Similarly, if we check the source code for the [PrometheusCounters](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/count/PrometheusCounters.py) class, we can see that the class gets the context information via the getOneOptional() method. 
+Similarly, if we check the source code for the **PrometheusCounters** class, we can see that the class gets the context information via the getOneOptional() method. 
 
 {{< tabsection >}}
   {{< include "./__code18_node.md" >}}
@@ -526,7 +526,7 @@ Similarly, if we check the source code for the [PrometheusCounters](https://gith
   Not available  
 {{< /tabsection >}}
 
-And the [PrometheusMetricsService](https://github.com/pip-services3-python/pip-services3-prometheus-python/blob/master/pip_services3_prometheus/services/PrometheusMetricsService.py) component obtains the context information via the getOneRequired() method:
+And the **PrometheusMetricsService** component obtains the context information via the getOneRequired() method:
 
 {{< tabsection >}}
   {{< include "./__code19_node.md" >}}

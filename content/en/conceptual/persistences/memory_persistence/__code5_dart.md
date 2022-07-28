@@ -1,4 +1,6 @@
 
+See: [DataPage](../../../toolkit_api/dart/commons/data/data_page/)
+
 ```dart
 // get all items
 var page = await persistence.getPageByFilter(

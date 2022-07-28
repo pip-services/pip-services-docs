@@ -1,4 +1,6 @@
 
+See: [DependencyResolver](../../../toolkit_api/python/commons/refer/dependency_resolver/)
+
 ```python
 class DependencyResolver(IReconfigurable, IReferenceable):
 

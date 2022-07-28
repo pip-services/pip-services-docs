@@ -1,4 +1,6 @@
 
+See: [ConfigParams](../../../toolkit_api/node/commons/config/config_params/)
+
 ```typescript
 let config = ConfigParams.fromTuples(
   	"param1", 123,

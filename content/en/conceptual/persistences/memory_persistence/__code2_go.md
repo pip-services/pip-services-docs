@@ -1,4 +1,6 @@
 
+See: [IdentifiableMemoryPersistence](../../../toolkit_api/golang/data/persistence/identifiable_memory_persistence/)
+
 ```go
 // extends IdentifiableMemoryPersistence
 type MyMemoryPersistence struct {

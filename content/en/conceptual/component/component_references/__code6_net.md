@@ -1,4 +1,6 @@
 
+See: [Descriptor](../../../toolkit_api/net/commons/refer/descriptor/)
+
 ```cs
 public class Descriptor
 {

@@ -1,4 +1,6 @@
 
+See: [ConfigParams](../../../toolkit_api/dart/commons/config/config_params/)
+
 ```dart
 var config = ConfigParams.fromTuples([
 	'param1', 123, 

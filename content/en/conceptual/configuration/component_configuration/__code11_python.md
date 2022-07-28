@@ -1,4 +1,6 @@
 
+See: [Components](../../../toolkit_api/python/components)
+
 ```python
 class IConfigReader(ABC):
 

@@ -1,4 +1,6 @@
 
+See: [Descriptor](../../../toolkit_api/node/commons/refer/descriptor/)
+
 ```typescript
 class Descriptor {
 	private _group: string;

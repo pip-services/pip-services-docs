@@ -5,7 +5,6 @@ title: "Descriptors"
 linkTitle: "Descriptors"
 description: >-
      How to locate a component.
-weight: 50
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

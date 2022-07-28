@@ -1,4 +1,6 @@
 
+See: [IReferences](../../../toolkit_api/golang/commons/refer/ireferences/), [References](../../../toolkit_api/golang/commons/refer/references/)
+
 ```go
 type IReferences interface {
 

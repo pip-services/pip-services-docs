@@ -1,4 +1,6 @@
 
+See: [IReferences](../../../toolkit_api/net/commons/refer/ireferences/), [References](../../../toolkit_api/net/commons/refer/references/)
+
 ```cs
 public interface IReferences
 {

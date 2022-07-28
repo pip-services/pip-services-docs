@@ -38,12 +38,13 @@ Our first step is to create a REST service. For this, we create a subclass of th
 
 Once we have defined our REST service, we instantiate and configure it to run on our local machine. Then, we make it available with the open() method. The following code shows how this program looks like:
 
+
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -51,7 +52,7 @@ Once we have defined our REST service, we instantiate and configure it to run on
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -70,19 +71,19 @@ Now that we have our REST service, we build a REST client that connects to it. T
 Once we have defined our component, we instantiate and configure it, pointing toward the endpoint previously defined in the REST service. Then, we connect it to the service with the open() method. The code below shows how to do this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -99,19 +100,19 @@ Once we have defined our component, we instantiate and configure it, pointing to
 Our last step is to call each of the client’s functions and obtain the respective results. The following commands and their outcomes show how to do this:
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -125,19 +126,19 @@ Our last step is to call each of the client’s functions and obtain the respect
 ![figure 3](./figure3.png)
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,19 +152,19 @@ Our last step is to call each of the client’s functions and obtain the respect
 Note: the HEAD method produces no output.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -178,19 +179,19 @@ Note: the HEAD method produces no output.
 
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code6_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code6_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,19 +209,19 @@ Note: the HEAD method produces no output.
 The code below summarizes the steps learned in the previous sections.
 
 {{< tabsection >}}
-   Not available 
+  {{< include "./__code7_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
- Not available 
+  {{< include "./__code7_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
  Not available 
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

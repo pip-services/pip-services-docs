@@ -1,4 +1,6 @@
 
+See [PrometheusCounters](../../../toolkit_api/golang/prometheus/count/prometheus_counters.md)
+
 ```go
 // SetReferences method are sets references to dependent components.
 // - references  cref.IReferences

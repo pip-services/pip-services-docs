@@ -1,4 +1,6 @@
 
+See: [IStringdentifiable](../../../toolkit_api/node/commons/data/istring_identifiable/)
+
 ```ts
 import { IStringIdentifiable } from 'pip-services3-commons-nodex';
 

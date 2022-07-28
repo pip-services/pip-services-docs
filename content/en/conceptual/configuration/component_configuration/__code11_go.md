@@ -1,4 +1,6 @@
 
+See: [Components](../../../toolkit_api/golang/components)
+
 ```go
 type IConfigReader interface {
 	

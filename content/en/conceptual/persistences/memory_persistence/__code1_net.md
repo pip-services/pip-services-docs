@@ -1,4 +1,6 @@
 
+See: [IStringdentifiable](../../../toolkit_api/net/commons/data/istring_identifiable/)
+
 ```cs
 using PipServices3.Commons.Data;
 using System.Runtime.Serialization;

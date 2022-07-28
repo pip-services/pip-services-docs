@@ -1,4 +1,6 @@
 
+See [PrometheusMetricsService](../../../toolkit_api/dart/prometheus/services/prometheus_metrics_service.md)
+
 ```dart
   /// Sets references to dependent components.
   ///

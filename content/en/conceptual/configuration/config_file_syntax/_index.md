@@ -26,12 +26,14 @@ In this tutorial you will learn how to create yml configuration files. First, we
 In this section we will learn how to define the configuration for a component. First, we will see the general syntax. Then, we will show examples of different configurations for components already available in PIP.Services. These configurations are valid for any of the six languages supported by PIP.Services.
 #### General case
 In general, the syntax for the configuration of a component is:
-```
+
+```yml
 - descriptor: "   "
 parameter1: value1
 ...
 parametern: valueN
 ```
+
 Where the configuration parameters depend on the component considered, and can be obtained from the component’s Configuration parameters section available in the reference manual.
 
 <img src="figure1.png" alt="figure 1" style="width:100%">
@@ -43,7 +45,7 @@ The following sections show several configuration examples for the most common c
 
 #### CloudWatch
 
-```
+```yml
 {{#if CLOUD_WATCH_ENABLED}}
 # Cloudwatch counters
 - descriptor: "pip-services:counters:cloudwatch:default:1.0"
@@ -65,7 +67,7 @@ The following sections show several configuration examples for the most common c
 
 #### Console logger
 
-```
+```yml
 # Console logger
 - descriptor: "pip-services:logger:console:default:1.0"
   level: "trace"
@@ -74,7 +76,7 @@ The following sections show several configuration examples for the most common c
 
 #### Container
 
-```
+```yml
 # Container descriptor
 - descriptor: "pip-services:context-info:default:default:1.0"
   name: "pip-service-data"
@@ -84,14 +86,14 @@ The following sections show several configuration examples for the most common c
 
 #### Controller
 
-```
+```yml
 # Controller
 - descriptor: "pip-service-data:controller:default:default:1.0"
 ```
 
 #### Couchbase
 
-```
+```yml
 {{#if COUCHBASE_ENABLED}}
 # Couchbase Persistence
 - descriptor: "pip-service-data:persistence:couchbase:default:1.0"
@@ -109,7 +111,7 @@ The following sections show several configuration examples for the most common c
 
 #### DataDog
 
-```
+```yml
 {{#if DATADOG_ENABLED}}
 # DataDog counters
 - descriptor: "pip-services:counters:datadog:default:1.0"
@@ -135,7 +137,7 @@ The following sections show several configuration examples for the most common c
 
 #### Elasticsearch
 
-```
+```yml
 {{#if ELASTICSEARCH_LOGGING_ENABLED}}
 # ElasticSearch logger
 - descriptor: "pip-services:logger:elasticsearch:default:1.0"
@@ -150,7 +152,7 @@ The following sections show several configuration examples for the most common c
 
 #### File persistence
 
-```
+```yml
 {{#if FILE_ENABLED}}
 # File persistence
 - descriptor: "pip-service-data:persistence:file:default:1.0"
@@ -160,7 +162,7 @@ The following sections show several configuration examples for the most common c
 
 #### gRPC
 
-```
+```yml
 {{#if GRPC_ENABLED}}
 # Common GRPC endpoint
 - descriptor: "pip-services:endpoint:grpc:default:1.0"
@@ -180,7 +182,7 @@ The following sections show several configuration examples for the most common c
 
 #### HTTP
 
-```
+```yml
 {{#if HTTP_ENABLED}}
 # Common HTTP endpoint
 - descriptor: "pip-services:endpoint:http:default:1.0"
@@ -212,7 +214,7 @@ The following sections show several configuration examples for the most common c
 
 #### Lambda
 
-```
+```yml
 {{#if LAMBDA_ENABLED}}
 # Commandable Lambda service version 1.0
 - descriptor: "pip-service-data:service:commandable-lambda:default:1.0"
@@ -222,7 +224,7 @@ The following sections show several configuration examples for the most common c
 
 #### MongoDB
 
-```
+```yml
 {{#if MONGO_ENABLED}}
 # MongoDb persistence
 - descriptor: "pip-service-data:persistence:mongodb:default:1.0"
@@ -240,7 +242,7 @@ The following sections show several configuration examples for the most common c
 
 #### MySQL
 
-```
+```yml
 {{#if MYSQL_ENABLED}}
 # MYSQL Persistence
 {{#if MYSQL_JSON_ENABLED}}
@@ -262,7 +264,7 @@ The following sections show several configuration examples for the most common c
 
 #### PostreSQL
 
-```
+```yml
 {{#if POSTGRES_ENABLED}}
 # PostreSQL Persistence
 {{#if POSTGRES_JSON_ENABLED}}
@@ -285,7 +287,7 @@ The following sections show several configuration examples for the most common c
 
 #### Prometheus
 
-```
+```yml
 # Prometheus performance counters
 - descriptor: "pip-services:counters:prometheus:default:1.0"
 {{#if PUSHGATEWAY_METRICS_ENABLED}}
@@ -300,7 +302,7 @@ The following sections show several configuration examples for the most common c
 
 #### SQLServer
 
-```
+```yml
 {{#if SQLSERVER_ENABLED}}
 # SQL Server Persistence
 {{#if SQLSERVER_JSON_ENABLED}}
@@ -320,7 +322,6 @@ The following sections show several configuration examples for the most common c
 {{/if}}
 
 ```
-
 
 
 ### Wrapping up

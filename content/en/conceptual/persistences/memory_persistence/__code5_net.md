@@ -1,4 +1,6 @@
 
+See: [DataPage](../../../toolkit_api/net/commons/data/data_page/)
+
 ```cs
 
 // get one item

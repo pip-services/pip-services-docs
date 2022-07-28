@@ -1,4 +1,6 @@
 
+See: [IdentifiableMemoryPersistence](../../../toolkit_api/dart/data/persistence/identifiable_memory_persistence/)
+
 ```dart
 import 'package:pip_services3_commons/pip_services3_commons.dart';
 import 'package:pip_services3_data/pip_services3_data.dart';

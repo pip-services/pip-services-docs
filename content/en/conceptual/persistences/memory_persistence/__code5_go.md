@@ -1,4 +1,6 @@
 
+See: [DataPage](../../../toolkit_api/golang/commons/data/data_page/)
+
 ```go
 // get all items
 result, _ = persistence.GetPageByFilter(correlationId, nil, cdata.NewPagingParams(0, nil, true))

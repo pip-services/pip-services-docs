@@ -13,7 +13,7 @@ description: >-
 
 <table class="full-width-table">
   <tr>
-    <td>JRestService </td>
+    <td>RestService </td>
     <td>Component available in the RPC module, services library. This component is used to create REST services that receive remote calls via the HTTP/REST protocol.</td>
   </tr>
 </table>

@@ -2,7 +2,7 @@
 type: docs
 title: "Communication"
 linkTitle: "Communication" 
-# weight: 30
+weight: 30
 no_list: true
 exclude_from_list: true
 ---

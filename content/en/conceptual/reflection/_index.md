@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Reflection"
 linkTitle: "Reflection"
+weight: 30
 description: >-
      How to create components that can introspect.
 ---

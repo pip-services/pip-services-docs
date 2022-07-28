@@ -52,7 +52,7 @@ To make it easier to follow along, this tutorial is broken up into the following
 - [Step 8. Running the facade](step7)
 - [Step 9. Manually Testing the Facade](step8)
 
-The code for this tutorial can be found on [GitHub](https://github.com/pip-services-samples/).
+The code for this tutorial can be found on [GitHub (facade-sample-*)](https://github.com/pip-services-samples/).
 
 To start developing your first facade, head on over to [Step 1. Setting up the environment.](step0)
 

@@ -181,3 +181,4 @@ void main() {
 }
 ```
 
+Run the `pub run test` command and make sure that all of the tests pass successfully.

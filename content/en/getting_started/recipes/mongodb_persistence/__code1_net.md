@@ -1,4 +1,6 @@
 
+See: [MongoDb module](../../../toolkit_api/net/mongodb)
+
 ```cs
 class BeaconMongoDbPersistence : MongoDbPersistence<BeaconV1>
 {

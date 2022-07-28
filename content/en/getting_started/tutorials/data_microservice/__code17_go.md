@@ -237,3 +237,5 @@ func TestBeaconsCommmandableHttpServiceV1(t *testing.T) {
 	c.teardown(t)
 }
 ```
+
+Run the `go test -v ./test/...` command and make sure that all of the tests pass successfully.

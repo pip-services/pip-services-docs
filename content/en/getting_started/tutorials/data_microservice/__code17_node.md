@@ -193,3 +193,5 @@ suite('BeaconsHttpServiceV1', () => {
 
 });
 ```
+
+Run the `npm test` command and make sure that all of the tests pass successfully.

@@ -12,7 +12,7 @@ by Aleksey Dvoykin
 ### Introduction
 
 In our previous tutorials, we took a look at in-memory and file persistence component implementations. Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database.
-The most basic implementation of this component is the MongoDbPersistence class defined in the [MongoDb module](../../../node/mongodb). It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations. 
+The most basic implementation of this component is the MongoDbPersistence class defined in the **MongoDb module**. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations. 
 
 ### MongoDBPersistence
 
@@ -73,13 +73,13 @@ And this is how we could use such a class:
 
 ### Configuring database connections
 
-As mentioned earlier, the [MongoDbPersistence](../../../node/mongodb/persistence/) contains methods for opening and closing connections. To connect to the appropriate database and collection, we need to first configure the connection with all necessary parameters. **MongoDbPersistence** uses the MongoDbConnection class for establishing connections. 
+As mentioned earlier, the **MongoDbPersistence** contains methods for opening and closing connections. To connect to the appropriate database and collection, we need to first configure the connection with all necessary parameters. **MongoDbPersistence** uses the MongoDbConnection class for establishing connections. 
 
-The [MongoDbConnection](../../../node/mongodb/connect/mongodb_connection/) class provides MongoDB connectivity using a plain driver. To reduce the number of database connections needed, a connection can be defined and then shared through multiple persistence components.
+The **MongoDbConnection** class provides MongoDB connectivity using a plain driver. To reduce the number of database connections needed, a connection can be defined and then shared through multiple persistence components.
 
 By default, **MongoDbPersistence** tries to establish a local connection on MongoDb’s default port - 27017. If the desired MongoDb server is located elsewhere, the persistence should be configured with the corresponding host and port information. Persistence configuration can be performed in a number of ways.
 
-The example below demonstrates how the [ConfigParams](../../commons/config/config_params/) class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../configuration).
+The example below demonstrates how the **ConfigParams** class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../../../../conceptual/configuration/configurations/).
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}} 
@@ -114,7 +114,7 @@ To perform configuration using a single **MongoDbConnection**, one of the follow
 
 ```pip-services:connection:mongodb:*:1.0 or pip-services3:connection:mongodb:*:1.0.```
 
-To learn more about references, descriptors, and component references, follow [this link](../component_references).  
+To learn more about references, descriptors, and component references, follow [this link](../../../../conceptual/component/component_references/).  
 First, add an element with the “pip-services” descriptor to the configuration file.
 
 ```yml
@@ -154,7 +154,7 @@ Next, register the persistence as a component in the microservice’s **Factory*
 {{< /tabsection >}}
 
      
-And add the [DefaultMongoDbFactory](../../../node/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
+
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}} 
@@ -195,8 +195,6 @@ If we’re configuring just a single connection to the Beacons MongoDB persisten
 ```
 
 ### Identifiable data objects and IdentifiableMongoDBPersistence
-
-The implementation we will be working with going forward is called the [IdentifiableMongoDbPersistence](../../../node/mongodb/persistence/identifiable_mongodb_persistence/). It stores and processes data objects that have a unique ID field and implement the [IIdentifiable](../../../node/commons/data/iidentifiable/) interface defined in [the Commons module](../../../node/commons).
 
 {{< tabsection >}}
     {{< include "./__code6_node.md" >}}
@@ -277,11 +275,11 @@ We can build upon the **IdentifiableMongoDbPersistence** by overriding its **Com
 {{< /tabsection >}}
 
 
-In most scenarios, child classes only need to override the **get_page_by_filter()**, **get_list_by_filter()**, or **delete_by_filter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the [MongoDb module](../../../node/mongodb)’s API documentation for more details.
+In most scenarios, child classes only need to override the **getPageeByFilter()**, **getListByFilter()**, or **deleteByFilter()** operations using a custom filter function (like the **compose_filter** function in the example above). All of the other operations can be used straight out of the box. Developers can implement custom methods by directly accessing the data objects, which are stored in the _collection property. See the **MongoDb module** API documentation for more details.
 
 ### Filtering
 
-Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a [FilterParams](../../../node/commons/data/filter_params/) object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the [Commons module](../../../node/commons)).
+Persistence components in the Pip.Services Toolkit use a number of data patterns. **IdentifiableMongoDbPersistence**, for example, supports Filtering. This pattern allows clients to use a **FilterParams** object to describe a subset of data using key-value pairs. These **FilterParams** can then be used for retrieving data in accordance with the specified search criteria (see the **Commons module**).
 
 {{< tabsection >}}
    {{< include "./__code9_node.md" >}}
@@ -336,7 +334,7 @@ In the persistence component, the developer is responsible for parsing **FilterP
     
 ### Paging
 
-Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of [PagingParams](../../../node/commons/data/paging_params/), which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
+Another common data pattern is Paging. It is used to retrieve large datasets in chunks, through multiple calls to the storage. A client can ask for the results to be paged by specifying a set of **PagingParams**, which include the starting position and the number of objects to return. Clients can also request the total number of items in the dataset using **PagingParams**, but this parameter is optional. A DataPage object with a subset of the data will be returned as the result.
 
 {{< tabsection >}}
    {{< include "./__code11_node.md" >}} 
@@ -366,7 +364,7 @@ Another common data pattern is Paging. It is used to retrieve large datasets in 
 
 ### Custom Persistence Methods
 
-As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **get_one_by_udi** persistence method.
+As mentioned above, developers can also implement custom persistence methods. The **_collection** property can be used to access data objects from within such methods. Below is an example of a custom **getOneByUdi** persistence method.
 
 {{< tabsection >}}
    {{< include "./__code12_node.md" >}}  

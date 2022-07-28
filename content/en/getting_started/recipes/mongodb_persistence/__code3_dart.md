@@ -1,4 +1,6 @@
 
+See: [MongoDbPersistence](../../../toolkit_api/dart/mongodb/persistence/), [MongoDbConnection](../../../toolkit_api/dart/mongodb/connect/mongodb_connection/), [ConfigParams](../../../toolkit_api/node/commons/config/config_params)
+
 ```dart
 var persistence = BeaconsMongoDbPersistence();
 // Let's say we need to connect to a local MongoDb, but on a non-standard port - 30000

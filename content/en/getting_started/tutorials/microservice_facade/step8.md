@@ -159,4 +159,4 @@ Feel free to explore the rest of the system’s functionality on your own using 
 
 Congratulations! Having completed all of the steps of this tutorial, you’ve created your first full-fledged facade and are now capable of creating your own using the Pip.Services Toolkit!
 
-This example’s source code is available in our repository on [GitHub](https://github.com/pip-services-samples/facade-sample-python)
+This example’s source code is available in our repository on [GitHub (facade-sample-*)](https://github.com/pip-services-samples)

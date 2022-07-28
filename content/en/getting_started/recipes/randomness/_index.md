@@ -54,7 +54,7 @@ The RandomArray class provides a way to randomly choose an element from an array
 {{< /tabsection >}}
 
 #### b)	Random Booleans
-The RandomBoolean class offers two methods namely chance and next_boolean. The following table and examples explain how to use both of them.
+The RandomBoolean class offers two methods namely chance and nextBoolean. The following table and examples explain how to use both of them.
 
 <table class="full-width-table">
   <tr>
@@ -66,7 +66,7 @@ The RandomBoolean class offers two methods namely chance and next_boolean. The f
     <td>Calculates “chance” out of “max chances”. Example: 1 chance out of 3 chances (or 33.3%). It returns true or false for a settled chance.</td>
   </tr>
   <tr>
-    <td>next_boolean()</td>
+    <td>nextBoolean()</td>
     <td>Generates a random Boolean value.</td>
   </tr>
 </table>
@@ -96,7 +96,7 @@ The RandomBoolean class offers two methods namely chance and next_boolean. The f
 {{< /tabsection >}}
 
 #### c)	Random DateTimes
-The RandomDateTime class contains two methods: **next_date** and **update_datetime**. The description and examples of their usage are found in the table and code below:
+The RandomDateTime class contains two methods: **nextDate** and **updateDatetime**. The description and examples of their usage are found in the table and code below:
 
 <table class="full-width-table">
   <tr>
@@ -104,11 +104,11 @@ The RandomDateTime class contains two methods: **next_date** and **update_dateti
     <th>Description</th>
   </tr>
   <tr>
-    <td>next_date(min_year: datetime, max_year: datetime = None)</td>
+    <td>nextDate(min_year: datetime, maxYear)</td>
     <td>Generates a random Date in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
   </tr>
   <tr>
-    <td>next_datetime(min_year: datetime, max_year: datetime = None)</td>
+    <td>nextDatetime(min_year: datetime, maxYear)</td>
     <td>Generates a random Date and time in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
   </tr>
 </table>

@@ -1,4 +1,6 @@
 
+And add the [DefaultMongoDbFactory](../../../toolkit_api/net/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
+
 ```cs
 public class BeaconsProcess : ProcessContainer
 {
@@ -9,9 +11,6 @@ public class BeaconsProcess : ProcessContainer
         _factories.Add(new BeaconsFactory());
     }
 }
-
-
-
 
 ```
 

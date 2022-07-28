@@ -1,4 +1,6 @@
 
+See: [MongoDbPersistence](../../../toolkit_api/python/mongodb/persistence/), [MongoDbConnection](../../../toolkit_api/python/mongodb/connect/mongodb_connection/), [ConfigParams](../../../toolkit_api/node/commons/config/config_params)
+
 ```python
 persistence = BeaconsMongoDbPersistence()
 # Let's say we need to connect to a local MongoDb, but on a non-standard port - 30000

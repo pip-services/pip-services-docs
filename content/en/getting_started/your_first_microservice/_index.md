@@ -309,7 +309,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../conceptual/configuration/component_configuration/).
+More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -364,7 +364,7 @@ Now, the parameters that are read by the microservice from the configuration fil
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -417,7 +417,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -477,7 +477,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -528,7 +528,7 @@ Parameters will be read by the microservice from the configuration file and pass
   default_name: "World"
 ```
 
-More details on this mechanism can be found in [The Configuration recipe](../../recipes/configuration).
+More details on this mechanism can be found in [Component Configuration](../../conceptual/configuration/component_configuration/).
 
 This is all the code of the controller in the file:
 
@@ -582,7 +582,7 @@ public register() {
 }
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+To get a reference to the controller, we’ll add its descriptor to the dependency resolver with a name of “controller”.
 
 ```typescript
 constructor() {
@@ -957,7 +957,7 @@ constructor() {
 }
 ```
 
-For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
 Full listing of the factory’s code found in the file:
 
@@ -1005,7 +1005,7 @@ public HelloWorldServiceFactory(){
 }
 ```
 
-For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
 Full listing of the factory’s code found in the file:
 
@@ -1059,7 +1059,7 @@ func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
 }
 ```
 
-For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
 Full listing of the factory’s code found in the file:
 
@@ -1111,7 +1111,7 @@ HelloWorldServiceFactory() : super() {
 }
 ```
 
-For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
 The full listing of the factory’s code can found in the file:
 
@@ -1153,7 +1153,7 @@ def __init__(self):
 
 ```
 
-For more info on how this works, be sure to check out [The Container recipe](../../recipes/container).
+For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
 A full listing of the factory’s code can be found in the file:
 
@@ -1362,16 +1362,29 @@ The dynamic configuration is defined in the file:
 
 ```
 
-Looking at the configuration file, we can conclude that the following components will be created in the microservice:
+{{< tabsection >}}
+  {{< include "./__code1_node.md" >}}
+{{< /tabsection >}}
 
-- [ContextInfo](../../../node/components/info/context_info) - standard Pip.Services component for determining the name and description of a microservice.
-- [ConsoleLogger](../../../node/components/log/console_logger) - standard Pip.Services component for writing logs to stdout,
-- [LogCounters](../../../node/components/count/log_counters) - standard Pip.Services component for logging performance counters.
-- HelloWorldController - the controller of our microservice, implemented in step 2. Make note of the controller’s descriptor, as it will be used to link the controller class to the REST service.
-- [HttpEndpoint](../../../node/rpc/services/http_endpoint) - standard Pip.Services component that allows multiple services to use a single HTTP port simultaneously.
-- HelloWorldRestServices - the REST service we implemented on step 3.
-- [HeartbeatRestService](../../../node/rpc/services/heartbeat_rest_service) - standard Pip.Services component that is used to check whether or not a microservice is still up and running by calling GET /heartbeat.
-- [StatusRestService](../../../node/rpc/services/status_rest_service/) - standard Pip.Services component for getting the status of a microservice by calling GET /status.
+{{< tabsection >}}
+  {{< include "./__code1_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_go.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_dart.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
 
@@ -1491,13 +1504,13 @@ When a microservice starts up, the following sequence of events takes place:
 
 2. The container reads the configuration found in config.yaml;
 
-2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [The Container recipe](../../recipes/container));
+2. Using the factory, the container creates the necessary components in accordance with their descriptors (see [Process Container](../../conceptual/containers/process_container));
 
-4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yaml passed as a parameter (see [The Configuration recipe](../../recipes/configuration));
+4. The components are configured. During this step, all components that implement the IConfigurable interface have their configure methods called with the configuration defined in config.yaml passed as a parameter (see [Component Configuration](../../conceptual/configuration/component_configuration/));
 
-5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The References recipe](../../recipes/component_references));
+5. Components are linked. All components that implement the IReferenceable interface get their setReferences methods called with a list of components available in the container. With the help of descriptors, objects can find all necessary dependencies (see [The Component References](../../conceptual/component/component_references));
 
-6. Components with active processes are run. A component is considered to contain active processes if it implements the IOpenable interface and has an open method defined (see [The Component Lifecycle recipe](../../recipes/component_lifecycle)).
+6. Components with active processes are run. A component is considered to contain active processes if it implements the IOpenable interface and has an open method defined (see [The Component Lifecycle](../../conceptual/component/component_lifecycle/)).
 
 When the microservice receives a signal to stop the process, the reverse sequence takes place:
 
@@ -1571,4 +1584,4 @@ If all’s well, you should get the following string as a result:
 
 All source codes are available on [GitHub](https://github.com/pip-services-samples).
 
-To learn even more about Pip.Services, consider creating a [Data Microservice](../../tutorials/data_microservice/) as your next step!
+To learn even more about Pip.Services, consider creating a [Data Microservice](../../getting_started/tutorials/data_microservice/) as your next step!

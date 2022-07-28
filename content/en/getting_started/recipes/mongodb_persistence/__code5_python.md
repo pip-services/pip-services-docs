@@ -1,4 +1,6 @@
 
+And add the [DefaultMongoDbFactory](../../../toolkit_api/python/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
+
 ```python
  class BeaconsProcess(ProcessContainer):
     def __init__(self):

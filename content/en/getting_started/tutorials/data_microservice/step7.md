@@ -157,7 +157,7 @@ Let’s move on to testing the main functionality of our microservice. Our set o
 
 We could use a REST client to test our microservice, but for the sake of this example, we’ll be using curl instead.
 
-Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../node/commons/commands/command_set/).
+Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../toolkit_api/node/commons/commands/command_set/).
 
 First, we’ll attempt to create a few beacons in the system:
 
@@ -317,4 +317,4 @@ As a result, only the beacon with an id of “2” is returned.
 ```
 
 And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
-All source code is available on [Github](https://github.com/pip-services-samples/pip-services-beacons-python)
+All source code is available on [Github (pip-services-beacons-*)](https://github.com/pip-services-samples)

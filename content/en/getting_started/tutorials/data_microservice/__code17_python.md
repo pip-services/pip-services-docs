@@ -135,3 +135,5 @@ class TestBeaconsHttpServiceV1:
                 return False
 
 ```
+
+Run the `python test.py` command and make sure that all of the tests pass successfully.

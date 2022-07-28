@@ -132,6 +132,7 @@ Once we have our component with the necessary counters, we create an instance of
 {{< tabsection >}}
   {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
+
 {{< tabsection >}}
   {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
@@ -272,7 +273,7 @@ Another option presented by Prometheus is to store the metric values on a page l
 
 #### Pre-requisites
 
-In order to use the PrometheusMetricsService component, we need to import it first. This can be done with the following command:
+In order to use the **PrometheusMetricsService** component, we need to import it first. This can be done with the following command:
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -299,7 +300,7 @@ In order to use the PrometheusMetricsService component, we need to import it fir
 {{< /tabsection >}}
 
 #### Creating the component and the counters
-As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a PrometheusCounters object. The following code shows how to do this:
+As we did in the previous example, to send metrics to Prometheus, we need to create a component that generates these metrics first. We also need to create and configure a **PrometheusCounters** object. The following code shows how to do this:
 
 {{< tabsection >}}
   {{< include "./__code9_node.md" >}}
@@ -487,11 +488,7 @@ Most methods available from the PrometheusCounters component are inherited from 
 
 #### increment
 
-This method can be used to create a counter that increments by a specified value. Its syntax is
-
-__increment(name: str, value: float)__
-
-where name is the name of the counter and value is the increment number.
+This method can be used to create a counter that increments by a specified value. Its syntax is **increment(name: string, value: number)** where name is the name of the counter and value is the increment number.
 
 An example of its implementation is 
 
@@ -523,11 +520,7 @@ where we create a counter named “mycomponent.mymethod.calls1” that increases
 
 #### incrementOne
 
-This method is similar to the previous one, but uses a fixed increment value of one. Its syntax is
-
-__increment_one(name: str)__
-
-where name represents the name of the counter.
+This method is similar to the previous one, but uses a fixed increment value of one. Its syntax is **incrementOne(name: string)** where name represents the name of the counter.
 
 For example, we can create a counter called “mycomponent.mymethod.calls2” that increases by one every time it is called:
 
@@ -557,11 +550,7 @@ For example, we can create a counter called “mycomponent.mymethod.calls2” th
 
 #### timestamp
 
-This method records a given timestamp. Its syntax is:
-
-__timestamp(name: str, value: datetime.datetime)__
-
-where name is the name of the counter and value is the given timestamp. 
+This method records a given timestamp. Its syntax is: **timestamp(name: string, value: DateTime)** where name is the name of the counter and value is the given timestamp. 
 
 In the example below, we use this command to create a metric that measures the difference between the current time and a base time. 
 
@@ -591,11 +580,7 @@ In the example below, we use this command to create a metric that measures the d
 
 #### timestampNow
 
-Similar to the previous one, this method records the current time as a timestamp. Its syntax is
-
-__timestamp_now(name: str)__
-
-where name is the name of the counter.
+Similar to the previous one, this method records the current time as a timestamp. Its syntax is **timestampNow(name: string)** where name is the name of the counter.
 
 Using it, the example below shows how to create a metric that measures the current time:
 
@@ -625,19 +610,11 @@ Using it, the example below shows how to create a metric that measures the curre
 
 #### beginTiming and endTiming
 
-The beginTiming() method starts the measurement of an execution time interval. It returns a CounterTiming object, which by calling the endTiming() method ends the measurement and updates the counter. Their syntaxes are
-
-__beginTiming(name: str): CounterTiming__
-
-and 
-
-__end_timing()__
+The beginTiming() method starts the measurement of an execution time interval. It returns a CounterTiming object, which by calling the endTiming() method ends the measurement and updates the counter. Their syntaxes are **beginTiming(name: string): CounterTiming** and  **endTiming()**
 
 #### dump
 
-This method saves the current values of counters. Its syntax is 
-
-__dump()__
+This method saves the current values of counters. Its syntax is **dump()**
 
 The following example shows how to create a timing for a method named mymethod. Here, we measure the execution time of a task, and then, we save the value with the dump() method.
 
@@ -667,11 +644,7 @@ The following example shows how to create a timing for a method named mymethod. 
 
 #### setInterval
 
-This method sets the time interval for the dump() method. Its syntax is 
-
-__set_interval(value: float)__
-
-where value is the time interval in milliseconds.
+This method sets the time interval for the dump() method. Its syntax is **setInterval(value: float)** where value is the time interval in milliseconds.
 
 In the example below, we use this command to set the interval to one minute.
 

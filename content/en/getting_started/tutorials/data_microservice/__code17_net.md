@@ -136,3 +136,5 @@ namespace Beacons.Services.Version1
 }
 
 ```
+
+Run the `dotnet test` command and make sure that all of the tests pass successfully.

@@ -63,12 +63,12 @@ Once our interface is ready, we can move on to implementing the actual controlle
 
 
 Pay special attention to the following two methods in the code above: 
-- `set_references`
-- `get_command_set`
+- `setReferences`
+- `getCommandSet`
 
 The first one sets a dependency upon a persistence using the descriptor **beacons:persistence:*:*:1.0.** This descriptor reads: we don’t necessarily care which persistence we are given, as long as it implements the IBeaconsPersistence interface via the Referenceable pattern. This way, our controller can be used with the memory persistence, the mongoDB one, or any other one that meets this requirement.
 
-The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you’re not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../../node/commons/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
+The second method is used to get a set of commands, with which we can control this controller using the Commandable pattern. In our case, it will be used by the commandable HTTP service. If you’re not yet familiar with the Commandable pattern, make sure to find some time and read about it [here](../../../../toolkit_api/node/commons/commands/icommandable). To complete this pattern, lets implement a class called `BeaconsCommandSet`:
 
 {{< tabsection >}}
   {{< include "../__code14_node.md" >}}  

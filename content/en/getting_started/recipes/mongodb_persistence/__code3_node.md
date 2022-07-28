@@ -1,4 +1,6 @@
 
+See: [MongoDbPersistence](../../../toolkit_api/node/mongodb/persistence/), [MongoDbConnection](../../../toolkit_api/node/mongodb/connect/mongodb_connection/), [ConfigParams](../../../toolkit_api/node/commons/config/config_params)
+
 ```typescript
 
 let persistence = new BeaconsMongoDbPersistence();

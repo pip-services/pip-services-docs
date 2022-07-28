@@ -291,9 +291,7 @@ To retrieve a record, this class presents three methods namely getOneRandom(),  
      
 ###### getOneRandom()
 
-This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: 
-
-<center>Field = ‘value’</center>
+This method gets a random item based on a given filter. The filter is defined by a string with the following syntax: *Field = "value"*
 
 An example of its usage is
 

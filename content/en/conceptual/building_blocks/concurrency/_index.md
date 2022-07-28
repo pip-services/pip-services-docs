@@ -161,4 +161,5 @@ There are several ready to use Lock components in the toolkit. They include:
 
 ### References
 For more information about connectivity see:
-
+- #### [Memory locks](../../locks/memory_locks/)
+- #### [Сaching basic](../../caching/caching_basic/)

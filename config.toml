@@ -66,11 +66,11 @@ gzip = true
     weight = 1
     contentDir = "content/en"
     languageName = "English"
-  [languages.ru]
-    title = ""
-    weight = 2
-    contentDir = "content/ru"
-    languageName = "Russian"
+  # [languages.ru]
+  #   title = ""
+  #   weight = 2
+  #   contentDir = "content/ru"
+  #   languageName = "Russian"
 
 # Disable categories & tags
 disableKinds = ["taxonomy", "term"]

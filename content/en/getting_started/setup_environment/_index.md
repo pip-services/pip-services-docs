@@ -4,7 +4,6 @@ no_list: true
 title: "Setup environment"
 linkTitle: "Setup environment"
 weight: 40
-draft: true
 ---
 
 Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.

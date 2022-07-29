@@ -48,9 +48,6 @@
         let menuSection = item.url.split('/')[4];
         let module = item.url.split('/')[5];
 
-        console.log(menuSection);
-        console.log(module);
-        console.log(item);
         // capitalize
         menuSection = menuSection.charAt(0).toUpperCase() + menuSection.slice(1);
         module = module!=undefined && module != '' ? module.charAt(0).toUpperCase() + module.slice(1) : null;

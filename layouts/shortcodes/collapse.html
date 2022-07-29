@@ -27,13 +27,10 @@
     document.getElementById("btn-collapse-{{ $uid }}").addEventListener('click', changeArrow);
 
     function changeArrow(e) {
-        console.log('HI')
         let arrow = document.getElementById("collapse-{{ $uid }}-arrow")
         if (arrow.classList.contains("fa-caret-up")) {
-            console.log('fa-caret-down')
             arrow.classList.replace("fa-caret-up", "fa-caret-down")
         } else {
-            console.log('fa-caret-up')
             arrow.classList.replace("fa-caret-down", "fa-caret-up")
         }
     }

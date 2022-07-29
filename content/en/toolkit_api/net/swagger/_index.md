@@ -5,7 +5,7 @@ gitUrl: "https://github.com/pip-services3-dotnet/pip-services3-swagger-dotnet"
 no_list: true
 weight: 500
 description: > 
-  Provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP services.
+  Provides a Swagger UI that can be added into microservices and is seamlessly integrated with existing REST and Commandable HTTP.
 ---
 
 
@@ -97,7 +97,7 @@ paths:
                 type: 'string'
 ```
 
-Include Swagger service into `config.yml` file and enable swagger for your REST or Commandable HTTP services.
+Include Swagger service into `config.yml` file and enable swagger for your REST or Commandable HTTP.
 You can add an HttpEndpoint to allows sharing the same port between REST services and the Swagger service.
 
 ```yaml

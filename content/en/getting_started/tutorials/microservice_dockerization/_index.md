@@ -3,6 +3,7 @@ type: docs
 no_list: true
 title: "Microservice Dockerization"
 linkTitle: "Microservice Dockerization" 
+weight: 20
 ---
 ---
 

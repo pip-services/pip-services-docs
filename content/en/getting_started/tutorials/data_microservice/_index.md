@@ -4,6 +4,7 @@ no_list: true
 title: "Data Microservice"
 linkTitle: "Data Microservice" 
 gitUrl: "https://github.com/pip-services-samples"
+weight: 10
 ---
 ---
 

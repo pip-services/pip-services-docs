@@ -4,6 +4,7 @@ no_list: true
 title: "Client Library"
 linkTitle: "Client Library" 
 gitUrl: "https://github.com/pip-services-samples"
+weight: 30
 ---
 
 ### General considerations

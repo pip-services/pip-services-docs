@@ -18,7 +18,7 @@ In this tutorial, you will learn how to create a CommandSet component, add comma
 
 This tutorial will help you understand how to create a commandable gRPC client and service. First, we will learn the basics of these components. Then, we will create an example where a commandable gRPC client communicates with a commandable gRPC service. After the example, we will summarize the concepts learned.
 
-### [Commandable HTTP services](commandable_http_services)
+### [Commandable HTTP](commandable_http_services)
 
 In this tutorial, you will learn how to create and consume CommandableHttpServices. This type of service is characterized by containing a set of commands that can be called via the HTTP/REST protocol. 
 

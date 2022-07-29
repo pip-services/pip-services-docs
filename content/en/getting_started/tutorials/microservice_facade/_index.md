@@ -4,6 +4,7 @@ no_list: true
 title: "Microservice Facade"
 linkTitle: "Microservice Facade" 
 gitUrl: "https://github.com/pip-services-samples"
+weight: 40
 ---
 ---
 

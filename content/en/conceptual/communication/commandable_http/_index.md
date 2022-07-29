@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Commandable HTTP services"
-linkTitle: "Commandable HTTP services"
+title: "Commandable HTTP"
+linkTitle: "Commandable HTTP"
 description: >-
      What are and how to use CommandableHttpServices.
 ---

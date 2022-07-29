@@ -1,3 +1,31 @@
+<script>
+  function setArrows() {
+    var activeItem = document.getElementsByClassName('td-sidebar-nav-active-item')[0]
+    var curEl = activeItem;
+
+    while (true) {
+      if (curEl.parentElement === null) { break; }
+      if (curEl.classList.contains("td-sidebar-nav__section") && curEl.classList.contains('active-path')) {
+        let arrowLeftSide = curEl.getElementsByClassName('arrow')[0]
+        let arrowRightSide = curEl.getElementsByClassName('arrow')[1]
+
+        if (arrowLeftSide.childElementCount === 1) {
+          let svgArrow = arrowLeftSide.firstElementChild
+          svgArrow.setAttribute('transform', 'rotate(180)')
+        }
+
+        if (arrowRightSide.childElementCount === 1) {
+          let svgArrow = arrowRightSide.firstElementChild
+          svgArrow.setAttribute('transform', 'rotate(0)')
+        }
+      }
+      curEl = curEl.parentElement
+    }
+  }
+
+  document.addEventListener("readystatechange", setArrows);
+</script>
+
 {{/* We cache this partial for bigger sites and set the active class client side. */}}
 {{ $sidebarCacheLimit := cond (isset .Site.Params.ui "sidebar_cache_limit") .Site.Params.ui.sidebar_cache_limit 2000 }}
 {{ $shouldDelayActive := ge (len .Site.Pages) $sidebarCacheLimit -}}
@@ -71,7 +99,18 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 {{ $mid := printf "m-%s" ($s.RelPermalink | anchorize) -}}
 {{ $pages_tmp := where (union $s.Pages $s.Sections).ByWeight ".Params.toc_hide" "!=" true -}}
 {{ $pages := $pages_tmp | first $sidebarMenuTruncate -}}
-{{ $withChild := gt (len $pages) 0 -}}
+
+<!-- ignore "__*" include files -->
+{{ $countIgnoreFiles := 0 }}
+{{ range $index, $page := $pages}} 
+  {{ $filename := index (split $page.Permalink "/") (sub (len (split $page.Permalink "/")) 2) }}
+  {{ if and (not (eq $filename nil)) (eq (slicestr $filename 0 2) "__") }} 
+    {{ $countIgnoreFiles = add $countIgnoreFiles 1 }}
+  {{ end }}
+{{ end }}
+
+{{ $withChild := and (gt (len $pages) 0) (or (eq $countIgnoreFiles 0) (not (eq (len $pages) $countIgnoreFiles))) -}}
+
 {{ $manualLink := cond (isset $s.Params "manuallink") $s.Params.manualLink ( cond (isset $s.Params "manuallinkrelref")
 (relref $s $s.Params.manualLinkRelref) $s.RelPermalink) -}}
 {{ $manualLinkTitle := cond (isset $s.Params "manuallinktitle") $s.Params.manualLinkTitle $s.Title -}}
@@ -121,14 +160,30 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
       class="nav-item-tree align-left pb-2 pt-2 pl-0  {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
       id="{{ $mid }}">
       
-      <div class="d-flex justify-content-center align-items-top"
+      <div class="d-flex justify-content-left align-items-top"
         style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
+
+        <div class="arrow col-1">
+          {{ if and (not $active) (gt .ulNr 2) $withChild }}
+          {{ with resources.Get "icons/arrow_right.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+          {{ else if and $active (gt .ulNr 2) $withChild}}
+          {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+          {{ end }}
+        </div>
 
         <div class="col {{ if or $active $isChildActive }}bold-font{{ end }} ">
           <!-- {{ if not (gt $padding 0) }}bold-font{{ end }} -->
           {{ $s.LinkTitle }}
         </div>
 
+        <div class="arrow pl-2 col-3">
+          {{ if and $active (lt .ulNr 3) $withChild (not $isHomePageOrHardcodeSection) }}
+          {{ with resources.Get "icons/arrow_up.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+          {{ else if and (not $active) (lt .ulNr 3) $withChild (not $isHomePageOrHardcodeSection) }}
+          {{ with resources.Get "icons/arrow_down.svg" }}{{ ( . | minify).Content | safeHTML }}{{ end }}
+          {{ end }}
+        </div>
+        
       </div>
     </a>
   </span>

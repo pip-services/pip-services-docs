@@ -118,6 +118,13 @@ mark, .mark {
 //     }
 // }
 
+.terminology {
+    @include media-breakpoint-down(xs) {
+        font-size: 65%;
+    }
+}
+
+
 .entry-table-no-links {
     border-collapse: collapse;
 

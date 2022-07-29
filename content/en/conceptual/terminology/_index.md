@@ -39,7 +39,7 @@ weight: 1000
       <td>Boundary Microservice</td>
       <td>A microservice used to expose the functionality of a system to external entities such as consumers, users, and systems. These microservices can be divided into two categories: facades and connectors.</td>
     </tr>
-	<tr>
+	  <tr>
       <td>Build factory</td>
       <td>
        A creational pattern that uses factory methods to deal with the problem of creating objects without having to specify the exact class of the object that will be created.
@@ -230,7 +230,7 @@ weight: 1000
       </td>
     </tr>
     <tr>
-      <td>Façade</td>
+      <td>Facade</td>
       <td>
         A component that serves as a front-facing interface connecting clients to different components. Thus, all requests made by external clients first arrive at the facade from where are then forwarded to the appropriate microservices. This extra layer that facades provides allows for microservices to be changed, without those changes affecting the clients. <br><br>
         Facades can provide some additional functionality such as routing, data aggregation, authentication and authorization, caching, analytics and logging. <br><br>

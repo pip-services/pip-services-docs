@@ -71,14 +71,14 @@ In the next sections, we will construct examples that show how to define counter
      
 #### Monitored component
 
-First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics are part of a dummy function that simulates a task by printing two messages on our console. Finally, we call the dump() method to save the obtained values. The code below shows what this class looks like:     
+First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics are part of a dummy function that simulates a task by printing two messages on our console. The code below shows what this class looks like:     
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -86,7 +86,7 @@ First, we define a class that has two performance metrics: the number of times a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -115,11 +115,11 @@ In the example below, we use the previously defined component with CachedCounter
 Then, once we have our class with the CachedCounters included, we call myMethod(), get the counters, and print the results. The final code is:
      
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -127,7 +127,7 @@ Then, once we have our class with the CachedCounters included, we call myMethod(
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -153,11 +153,11 @@ Containers consider LogCounters by default. Once we create a container, the cont
 In our next example, we use the LogCounters class associated with the ConsoleLogger class. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
      
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -165,7 +165,7 @@ In our next example, we use the LogCounters class associated with the ConsoleLog
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -189,11 +189,11 @@ If we are testing our application or want to create a prototype, we can use the 
 In this case, we need to delete the flush command from our component as there are no values to be saved. The following code shows how to do this:
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code4_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code4_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -201,7 +201,7 @@ In this case, we need to delete the flush command from our component as there ar
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -237,11 +237,11 @@ After running myMethod(), we obtain the performance metrics for CachedLogger and
 The following code shows how this can be done:
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code5_node.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code5_net.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -249,7 +249,7 @@ The following code shows how this can be done:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-    Not available
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

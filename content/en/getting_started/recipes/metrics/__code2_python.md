@@ -4,7 +4,7 @@ from pip_services3_components.count import CachedCounters
 
 class MyCachedCounters (CachedCounters):
     def _save(self, counters):
-        print("\tSaving " + counters[0].name + " and " + counters[1].name)
+        print("Saving " + counters[0].name + " and " + counters[1].name)
 
 countersCached = MyCachedCounters()
 
@@ -17,16 +17,16 @@ for i in range(count_exec):
     
 resultCached = countersCached.get_all()
 
-print("\nMetrics")
+print("Metrics")
 
-for i in resultCached:
-    print("Count: " + str(i.count))
-    print("Min: " + str(i.min))
-    print("Max: " + str(i.max))
-    print("Average: " + str(i.average))
-    print("Time: " + str(i.time))
-    print("Name: " + i.name)
-    print("Type: " + str(i.type))
+for res in resultCached:
+    print("Count: " + str(res.count))
+    print("Min: " + str(res.min))
+    print("Max: " + str(res.max))
+    print("Average: " + str(res.average))
+    print("Time: " + str(res.time))
+    print("Name: " + res.name)
+    print("Type: " + str(res.type))
     print("-----------------")
  
 ```

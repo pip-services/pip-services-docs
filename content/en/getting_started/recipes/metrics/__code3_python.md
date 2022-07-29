@@ -18,15 +18,15 @@ for i in range(count_exec):
     
 resultLog = counters.get_all()
 
-print("\nMetrics")
+print("Metrics")
 
-for i in resultLog:
-    print("Count: " + str(i.count))
-    print("Min: " + str(i.min))
-    print("Max: " + str(i.max))
-    print("Average: " + str(i.average))
-    print("Time: " + str(i.time))
-    print("Name: " + i.name)
-    print("Type: " + str(i.type))
+for res in resultLog:
+    print("Count: " + str(res.count))
+    print("Min: " + str(res.min))
+    print("Max: " + str(res.max))
+    print("Average: " + str(res.average))
+    print("Time: " + str(res.time))
+    print("Name: " + res.name)
+    print("Type: " + str(res.type))
     print("-----------------")
 ```

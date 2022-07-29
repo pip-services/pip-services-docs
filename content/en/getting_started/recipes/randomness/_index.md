@@ -146,11 +146,11 @@ The RandomDouble class has two methods that can be used to generate random doubl
     <th>Description</th>
   </tr>
   <tr>
-    <td>next_double(mmin: float, mmax: float = None)</td>
+    <td>nextDouble(min: number, max: number)</td>
     <td>Generates a random double value in the range [‘min_value’, ‘max_value.’], where min_value is optional.</td>
   </tr>
   <tr>
-    <td>update_double(value: float, rrange: float = None)</td>
+    <td>updateDouble(value: number, range: number)</td>
     <td>Updates (drifts) a double value within a specified range.</td>
   </tr>
 </table>
@@ -188,11 +188,11 @@ The **RandomFloat** class contains two methods that can be used to obtain random
     <th>Description</th>
   </tr>
   <tr>
-    <td>next_float(min: float, max: float = None)</td>
+    <td>nextFloat(min: number, max: number)</td>
     <td>Generates a float in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
   </tr>
   <tr>
-    <td>update_float(value: float, range: float = None)</td>
+    <td>updateFloat(value: number, range: number)</td>
     <td>Updates (drifts) a float value within a specified range.</td>
   </tr>
 </table>
@@ -230,11 +230,11 @@ The **RandomInteger** class has two methods for generating random integers. Thei
     <th>Description</th>
   </tr>
   <tr>
-    <td>next_integer(min: int, max: int = None)</td>
+    <td>nextInteger(min: number, max: number)</td>
     <td>Generates an integer in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
   </tr>
   <tr>
-    <td>update_integer(value: int, range: int = None)</td>
+    <td>updateInteger(value: number, range: number)</td>
     <td>Updates (drifts) an integer value within the specified range.</td>
   </tr>
 </table>
@@ -272,24 +272,24 @@ The **RandomString** class presents methods that can be used to create random st
     <th>Description</th>
   </tr>
   <tr>
-    <td>distort(value: str)</td>
+    <td>distort(value: string)</td>
     <td>Distorts a string by randomly replacing characters in it.</td>
   </tr>
   <tr>
-    <td>next_alpha_char()</td>
+    <td>nextAlphaChar()</td>
     <td>Generates random alpha characted [A-Za-z].</td>
   </tr>
     <tr>
-    <td>next_string(min_size: int, min_size: int)</td>
+    <td>nextString(minSize: number, minSize: number)</td>
     <td>Generates a random string consisting of upper and lower case letters (of the English alphabet), digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() “).</td>
   </tr>
   </tr>
   <tr>
-    <td>pick(values: List[str])</td>
+    <td>pick(values: list)</td>
     <td>Picks a random string from an array of strings.</td>
   </tr>
   <tr>
-    <td>pick_char(values: str)</td>
+    <td>pickChar(values: string)</td>
     <td>Picks a random character from a string.</td>
   </tr>
 </table>
@@ -351,11 +351,11 @@ The **RandomText** class can be used to generate different types of random texts
     <td>Generates a random phone number with the format: (XXX) XXX-YYYY.</td>
   </tr>
   <tr>
-    <td>phrase(min_size: int, max_size: int = None)</td>
+    <td>phrase(minSize: number, maxSize: number)</td>
     <td>Generates a random phrase that consists of a few words separated by spaces. The first word is capitalized, and the following ones are not.</td>
   </tr>
   <tr>
-    <td>text(min_size: int, max_size: int = None)</td>
+    <td>text(minSize: number, maxSize: number)</td>
     <td>Generates a random text, consisting of first names, last names, colors, things, adjectives, verbs, and punctuation marks.</td>
   </tr>
   <tr>
@@ -367,7 +367,7 @@ The **RandomText** class can be used to generate different types of random texts
     <td>Generates a random word from available first names, last names, colors, things, adjectives, or verbs.</td>
   </tr>
   <tr>
-    <td>words(min_size: int, max_size: int = None)</td>
+    <td>words(minSize: number, maxSize: number)</td>
     <td>Generates a random word from available first names, last names, colors, things, adjectives, or verbs.</td>
   </tr>
 </table>

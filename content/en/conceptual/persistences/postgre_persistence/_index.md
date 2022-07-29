@@ -347,7 +347,7 @@ The result is a PostgrePersistence object containing the extracted record.
      
 ###### getListByFilter()
 
-This method returns a list PostgrePersistence objects with the data items retrieved according to a given filter. In the following example, we will extract all those records containing a key’s value equal to ‘key 1’.
+This method returns a list PostgrePersistence objects with the data items retrieved according to a given filter. In the following example, we will extract all those records containing a key's value equal to 'key 1'.
  
 {{< tabsection >}}
   {{< include "./__code14_node.md" >}}
@@ -401,7 +401,7 @@ This method returns a list PostgrePersistence objects with the data items retrie
 
 ###### getPageByFilter()
 
-This method gets a page of data items retrieved according to a given filter and sorted according to sort parameters. In the example below, we obtain again those records with a key’s value equal to ‘key 1’.
+This method gets a page of data items retrieved according to a given filter and sorted according to sort parameters. In the example below, we obtain again those records with a key's value equal to 'key 1'.
      
 {{< tabsection >}}
   {{< include "./__code16_node.md" >}}
@@ -487,7 +487,7 @@ This method returns an integer representing the number of data items retrieved b
 
 ##### Delete
 
-To delete one or more records, we can use the deleteByFilter() method. The example below shows how to delete all records with a key’s value equal to ‘key 1’.
+To delete one or more records, we can use the deleteByFilter() method. The example below shows how to delete all records with a key's value equal to 'key 1'.
     
 {{< tabsection >}}
   {{< include "./__code19_node.md" >}}

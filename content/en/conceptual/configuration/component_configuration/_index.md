@@ -238,7 +238,7 @@ Manual configuration can be done in the following manner:
   Not available  
 {{< /tabsection >}}
 
-However, a component’s configuration is usually stored in the microservice’s configuration file. The configure method will receive the parameters for the specific component (in the example below - everything between the component’s descriptor and the next descriptor or end of the file). To get more info on microservice configuration, read our [Component Container](../../containers/process_container) recipe. 
+However, a component's configuration is usually stored in the microservice's configuration file. The configure method will receive the parameters for the specific component (in the example below - everything between the component's descriptor and the next descriptor or end of the file). To get more info on microservice configuration, read our [Component Container](../../containers/process_container) recipe. 
 
 ```yml
 ...
@@ -255,7 +255,7 @@ The **NameResolver** and **OptionsResolver** classes are helper classes that sim
 
 #### NameResolver
 
-**NameResolver** is a helper class that allows extraction of the component’s name from the configuration parameters. The name can be stored as a "id"/"name" parameter or inside a component’s descriptor.
+**NameResolver** is a helper class that allows extraction of the component's name from the configuration parameters. The name can be stored as a "id"/"name" parameter or inside a component's descriptor.
 
 Below is a simple example of how it can be used:
 

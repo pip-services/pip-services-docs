@@ -8,7 +8,7 @@ gitUrl: "https://github.com/pip-services-samples"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Our service is pretty much done - all that is left is to place the components we’ve developed into a process container and configure it.
+Our service is pretty much done - all that is left is to place the components we've developed into a process container and configure it.
 
 When a container is started, it starts composing the microservice out of the components indicated in the configuration file. For the container to be able to build these components, it will need a component factory. In the **build** directory, create a `BeaconsServiceFactory` class and populate it with the following code:
 
@@ -39,7 +39,7 @@ When a container is started, it starts composing the microservice out of the com
 
 As shown in the code above, we start by creating descriptors for all of our components, and then, in the constructor, we register each component in the factory using its descriptor.
 
-Now let’s move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
+Now let's move on to creating the container itself. In the **container** directory, create a BeaconsProcess file with the following code:
 
 {{< tabsection >}}
   {{< include "../__code19_node.md" >}}  
@@ -66,7 +66,7 @@ Now let’s move on to creating the container itself. In the **container** direc
 {{< /tabsection >}}
 
 
-Next, add the factories that are missing from the standard container (the one from the pip-services3-container module), so that we can build all the objects our service needs. In our case, this means adding the factory for the components we’ve written, as well as the default RPC factory (from the pip-services3-rpc module), which is needed for the HTTP service to work.
+Next, add the factories that are missing from the standard container (the one from the pip-services3-container module), so that we can build all the objects our service needs. In our case, this means adding the factory for the components we've written, as well as the default RPC factory (from the pip-services3-rpc module), which is needed for the HTTP service to work.
 
 Before we run the microservice, we need to prepare an initial configuration for it. In the **config** folder, create a **config.yml** file with the following configuration:
 
@@ -136,18 +136,18 @@ Before we run the microservice, we need to prepare an initial configuration for 
 
 ```
 
-Let’s take a closer look at “what’s what” in the configuration above. First of all, the file is structured in such a way that the configuration is divided into sections. Each section consists of one or more descriptors and, optionally, a set of configuration parameters. To keep things organized, a section is meant to configure no more than one component. 
+Let's take a closer look at "what's what" in the configuration above. First of all, the file is structured in such a way that the configuration is divided into sections. Each section consists of one or more descriptors and, optionally, a set of configuration parameters. To keep things organized, a section is meant to configure no more than one component. 
 
 In our case, we first configure the context parameters for the container, to make its name and description available. This information will be displayed in the logs as well. 
 
-In the next section, the console logger is enabled, and its log level is set to “trace”.
+In the next section, the console logger is enabled, and its log level is set to "trace".
 
 After that, performance counters are enabled and set to send information to the logger.
 
 The next two sections are dedicated to configuring the persistent storage. However, which one we end up using will be determined by whether or not the **MONGO_ENABLED** environment variable is set. If it is set, then the MongoDB persistence will be used.
 Otherwise, we will just default to the in-memory persistence
 
-The controller doesn’t need any special configuration parameters, so we just list its descriptor to make sure the component gets created.
+The controller doesn't need any special configuration parameters, so we just list its descriptor to make sure the component gets created.
 
 To enable our microservice to work on a network, we configure an endpoint with a host + port pair. If the corresponding environment variables are set, then those values will be used. Otherwise, the default values indicated in this section will be used.
 
@@ -155,7 +155,7 @@ The descriptor in the next section creates our HTTP service, which will automati
 
 The last section configures services that monitor the health and status of our microservice.
 
-Now that we’ve set up the container and a valid configuration, it’s time to move on to the final [Step 8. Running and testing the microservice.](../step7)
+Now that we've set up the container and a valid configuration, it's time to move on to the final [Step 8. Running and testing the microservice.](../step7)
 
 <span class="hide-title-link">
 

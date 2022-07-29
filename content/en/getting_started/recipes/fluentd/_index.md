@@ -65,7 +65,7 @@ In this tutorial, you will learn how to use the FluentdLogger component to send 
 
 ### FluentdLogger
 
-This component provides a tool to send log messages to Fluentd. It extends the CachedLogger class and, at present, doesn’t support authorization. The next sections explain its main methods and how to verify that log messages have been received by Fluentd.
+This component provides a tool to send log messages to Fluentd. It extends the CachedLogger class and, at present, doesn't support authorization. The next sections explain its main methods and how to verify that log messages have been received by Fluentd.
 
 #### Pre-requisites
 

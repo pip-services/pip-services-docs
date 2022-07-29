@@ -535,7 +535,7 @@ Which, in our example, returns a DataPage object with the following values
 
 ##### Update
 
-We can update a record by using the update() method. In the following example, we define a new instance for our record with id equal to ‘1’ and we update the content to ‘Updated content 1’.
+We can update a record by using the update() method. In the following example, we define a new instance for our record with id equal to '1' and we update the content to 'Updated content 1'.
 
 {{< tabsection >}}
    {{< include "./__code19_node.md" >}}
@@ -620,7 +620,7 @@ Or with the deleteByFilter() method
 
 #### Data transfer
 
-This approach defines an easy and practical way to migrate tables from one database to another. Let’s suppose that we want to transfer the data existing in our MySQL database to a table in our PostgreSQL database. 
+This approach defines an easy and practical way to migrate tables from one database to another. Let's suppose that we want to transfer the data existing in our MySQL database to a table in our PostgreSQL database. 
 
 To achieve this, first, we retrieve the data from the table in MySQL and we obtain a list with elements of type MyData, which we call **myDataList**. As both databases use the same data structure, we just need to insert those rows via the create() method, which accepts a correlationID and a list of MyData elements as inputs. The following code shows this:
 

@@ -4,7 +4,7 @@ no_list: true
 title: "Randomness"
 linkTitle: "Randomness"
 description: >-
-     How to generate random values with the Commons’ Random package.
+     How to generate random values with the Commons' Random package.
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
@@ -63,7 +63,7 @@ The RandomBoolean class offers two methods namely chance and nextBoolean. The fo
   </tr>
   <tr>
     <td>chance(chance: float, maxChances: float)</td>
-    <td>Calculates “chance” out of “max chances”. Example: 1 chance out of 3 chances (or 33.3%). It returns true or false for a settled chance.</td>
+    <td>Calculates "chance" out of "max chances". Example: 1 chance out of 3 chances (or 33.3%). It returns true or false for a settled chance.</td>
   </tr>
   <tr>
     <td>nextBoolean()</td>
@@ -105,11 +105,11 @@ The RandomDateTime class contains two methods: **nextDate** and **updateDatetime
   </tr>
   <tr>
     <td>nextDate(min_year: datetime, maxYear)</td>
-    <td>Generates a random Date in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
+    <td>Generates a random Date in the range ['minYear', 'maxYear']. This method generates dates without time (or time set to 00:00:00).</td>
   </tr>
   <tr>
     <td>nextDatetime(min_year: datetime, maxYear)</td>
-    <td>Generates a random Date and time in the range [‘minYear’, ‘maxYear’]. This method generates dates without time (or time set to 00:00:00).</td>
+    <td>Generates a random Date and time in the range ['minYear', 'maxYear']. This method generates dates without time (or time set to 00:00:00).</td>
   </tr>
 </table>
 
@@ -147,7 +147,7 @@ The RandomDouble class has two methods that can be used to generate random doubl
   </tr>
   <tr>
     <td>nextDouble(min: number, max: number)</td>
-    <td>Generates a random double value in the range [‘min_value’, ‘max_value.’], where min_value is optional.</td>
+    <td>Generates a random double value in the range ['min_value', 'max_value.'], where min_value is optional.</td>
   </tr>
   <tr>
     <td>updateDouble(value: number, range: number)</td>
@@ -189,7 +189,7 @@ The **RandomFloat** class contains two methods that can be used to obtain random
   </tr>
   <tr>
     <td>nextFloat(min: number, max: number)</td>
-    <td>Generates a float in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
+    <td>Generates a float in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].</td>
   </tr>
   <tr>
     <td>updateFloat(value: number, range: number)</td>
@@ -231,7 +231,7 @@ The **RandomInteger** class has two methods for generating random integers. Thei
   </tr>
   <tr>
     <td>nextInteger(min: number, max: number)</td>
-    <td>Generates an integer in the range [‘min’, ‘max’]. If ‘max’ is omitted, then the range will be set to [0, ‘min’].</td>
+    <td>Generates an integer in the range ['min', 'max']. If 'max' is omitted, then the range will be set to [0, 'min'].</td>
   </tr>
   <tr>
     <td>updateInteger(value: number, range: number)</td>
@@ -281,7 +281,7 @@ The **RandomString** class presents methods that can be used to create random st
   </tr>
     <tr>
     <td>nextString(minSize: number, minSize: number)</td>
-    <td>Generates a random string consisting of upper and lower case letters (of the English alphabet), digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() “).</td>
+    <td>Generates a random string consisting of upper and lower case letters (of the English alphabet), digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").</td>
   </tr>
   </tr>
   <tr>
@@ -341,7 +341,7 @@ The **RandomText** class can be used to generate different types of random texts
   </tr>
   <tr>
     <td>noun()</td>
-    <td>Generates a random person’s name with  the following structure:
+    <td>Generates a random person's name with  the following structure:
              
         (optional) prefix + first name + second name + (optional suffix)
    </td>

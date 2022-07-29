@@ -26,7 +26,7 @@ description: >-
 
 ### Introduction
 
-This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples. Then, it describes each of the three persistence classes available in the module, namely SqlServerPersistence, IdentifiableSqlServerPersistence and IdentifiableJsonSqlServerPersistence. It ends with a summary of the main learned concepts.
+This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial's examples. Then, it describes each of the three persistence classes available in the module, namely SqlServerPersistence, IdentifiableSqlServerPersistence and IdentifiableJsonSqlServerPersistence. It ends with a summary of the main learned concepts.
 
 ### SQLServer persistence
 
@@ -174,7 +174,7 @@ Once the component has been imported, we create a persistence class that inherit
   Not available  
 {{< /tabsection >}} 
 
-Now, we create an instance of this class and configure it according to our database’s configuration parameters via the configure() method.
+Now, we create an instance of this class and configure it according to our database's configuration parameters via the configure() method.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}
@@ -288,7 +288,7 @@ Where
 
 ###### Retrieve
 
-In order to retrieve records from our table, we can use three different methods, namely getOneRandom(), getListByFilter(), and getPageByFilter(). Additionally, we can use the getCountByFilter() method to obtain the number of records that comply with a given filter’s condition.
+In order to retrieve records from our table, we can use three different methods, namely getOneRandom(), getListByFilter(), and getPageByFilter(). Additionally, we can use the getCountByFilter() method to obtain the number of records that comply with a given filter's condition.
 
 ###### getOneRandom()
 
@@ -400,7 +400,7 @@ Where
 
 ###### getPageByFilter()
 
-This method retrieves a set of records that comply with a given filter’s conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
+This method retrieves a set of records that comply with a given filter's conditions. It takes the correlationId, paging parameters, and JSON strings for sorting and projecting as input values. It returns a DataPage object with the retrieved records in its data field. The example below explains its usage.
 
 {{< tabsection >}}
   {{< include "./__code16_node.md" >}}
@@ -482,7 +482,7 @@ This method returns an integer representing the number of records that comply wi
 
 ###### Update
 
-This class doesn’t present any method to update records in a table.
+This class doesn't present any method to update records in a table.
 
 ###### Delete
 
@@ -690,7 +690,7 @@ This class contains several methods to retrieve records from a database. They ar
 
 ###### getOneById()
 
-This method retrieves a record according to a given id. It accepts the correlationId and the record’s id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
+This method retrieves a record according to a given id. It accepts the correlationId and the record's id as input parameters and returns a SqlServerPersistence object with the retrieved record. The following example explains its usage.
 
 {{< tabsection >}}
   {{< include "./__code26_node.md" >}}
@@ -856,7 +856,7 @@ Where
 
 ###### updatePartially()
 
-This method updates one or more given fields in a record. It accepts the correlationId, the record’s id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
+This method updates one or more given fields in a record. It accepts the correlationId, the record's id, and a dictionary containing the fields to be updated as input parameters. It returns a SqlServerPersistence object containing the updated record. The following example explains how to use it.
 
 {{< tabsection >}}
   {{< include "./__code32_node.md" >}}

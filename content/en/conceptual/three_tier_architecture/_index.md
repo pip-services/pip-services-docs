@@ -51,7 +51,7 @@ We will finish by showing the complete code of our example and summarizing what 
 
 ### Brief description of the example
 
-The example in this tutorial consists of an application that sends a message to a browser. The message has the format “Hello {name}!” where name is the random name of a person that was selected from a database.
+The example in this tutorial consists of an application that sends a message to a browser. The message has the format "Hello {name}!" where name is the random name of a person that was selected from a database.
 
 In order to achieve this, we divide our app into three tiers. The first is the presentation or view layer, which consists of a REST service that will provide information to the browser. The second is the application layer. This tier contains a controller that connects the REST service to the database and extracts a random name from it. The last one is the data or persistence layer, which is created by using a MySQL database. The following table summarizes this and the concepts behind.
 
@@ -257,9 +257,9 @@ This class also defines the greeting method, which selects a random name from th
 
 ### Tier 3: Data layer or persistence layer
 
-This layer connects to a database containing a table with names. The class constructor accepts the name of the table to be used, which in this example is called ‘myfriends’. 
+This layer connects to a database containing a table with names. The class constructor accepts the name of the table to be used, which in this example is called 'myfriends'. 
 
-The class also contains the defineSchema() method, which ensures that if our table doesn’t exist in the database, it is created.
+The class also contains the defineSchema() method, which ensures that if our table doesn't exist in the database, it is created.
 
 Next, it contains the composeFilter() method, which customizes a filter to the needs of the database, and the getOneRandom() method, which is an override of the parent class.
 
@@ -401,7 +401,7 @@ Now that our support structure has been created, we add the components to a proc
 {{< /tabsection >}}
 
 ### Running the app
-Our final step is to execute the app via the container’s run() command. The following example shows how to do this.
+Our final step is to execute the app via the container's run() command. The following example shows how to do this.
 
 {{< tabsection >}}
    {{< include "./__code11_node.md" >}}

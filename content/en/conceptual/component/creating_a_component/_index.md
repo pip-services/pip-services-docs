@@ -22,7 +22,7 @@ description: >-
 </table>
 
 ### Introduction
-In this tutorial, we will learn how to create a component and how to assemble a service from it. We will start with a short description of a component’s lifecycle and then we will create a component by defining step-by-step all the elements that compose its lifecycle. Finally, we will assemble a service from it through a container, run it, and see the results.  
+In this tutorial, we will learn how to create a component and how to assemble a service from it. We will start with a short description of a component's lifecycle and then we will create a component by defining step-by-step all the elements that compose its lifecycle. Finally, we will assemble a service from it through a container, run it, and see the results.  
 
 ### The lifecycle of a component
 A component lifecycle is implemented using interfaces. In this manner, an existing class can be turned into a Pip.Services component (code augmentation). The following diagram summarizes the main states of a component and their respective interfaces
@@ -119,7 +119,7 @@ After configuring our component, we want to link MyComponentA to another compone
 
 To help define those components that require opening, PIP.services offers the **IOpenable** interface. This interface is part of the Commons module and offers two methods: **open** and **isOpen**. In our example, we will use the first one to create the code that will open the component, and the second one to verify whether the component is open or not.
 
-Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called **correlation_id**. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as “123”. 
+Moreover, as the opening of the component marks the start of its usage, we will add an optional parameter called **correlation_id**. This parameter is used to trace the execution of the component through the call chain. It can be any string, such as "123". 
 
 Now, our code expands to this:
 
@@ -178,7 +178,7 @@ We will now define a function that will be used to perform business tasks, and w
 
 As any open component needs to be closed to ensure that the resources used are being freed for other processes, we now need to define our close method. To do this, we use the **IClosable** interface. 
 
-Here, we must note that the **IClosable** interface was already called by the **IOpenable** interface in step 4. Thus, we don’t need to explicitly call it now.
+Here, we must note that the **IClosable** interface was already called by the **IOpenable** interface in step 4. Thus, we don't need to explicitly call it now.
 As our component already has access to this interface, we will define the **close** method for our class. The code below shows a simplified version of this method.
 
 {{< tabsection >}}
@@ -207,7 +207,7 @@ As our component already has access to this interface, we will define the **clos
 
 #### Step 7 – Un-referencing
 
-Once our component has been closed, we need to clear the component’s previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
+Once our component has been closed, we need to clear the component's previously defined references. PIP.services provides the **IUnreferenceable** interface, which defines the **unset_references** method. In our example this method will be coded as:
 
 {{< tabsection >}}
    {{< include "./__code7_node.md" >}}
@@ -330,7 +330,7 @@ At present, we have a component that is capable of connecting to another compone
 
 To solve this problem, we can use a container. PIP.Services offers the **ProcessContainer**, which is an Inversion of control (IoC) container that runs as a system process. 
 
-As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component’s type. Our updated code is:
+As this container uses a factory to create the contained components, we will create one via the **Factory** class. Once again, we will use **Descriptor** objects to locate each component, and we will use the method **register_as_type** to register the component in our factory. This method requires the locator and the component's type. Our updated code is:
 
 {{< tabsection >}}
    {{< include "./__code11_node.md" >}}
@@ -382,7 +382,7 @@ Once our factory is ready, we can proceed to create our container. First, we wil
   Not available  
 {{< /tabsection >}}
 
-Our configuration file must declare our component’s descriptor and the values we want to assign to our parameters. We will use YAML syntax for this purpose. Below is an example of this type of declaration.
+Our configuration file must declare our component's descriptor and the values we want to assign to our parameters. We will use YAML syntax for this purpose. Below is an example of this type of declaration.
 
 <img src="figure3.png" alt="Console logger messages" style="width:50%;text-align: center" >
 

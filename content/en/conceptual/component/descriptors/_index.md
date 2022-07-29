@@ -14,7 +14,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>Descriptor </td>
-    <td>A component’s locator, which is defined by its group, type, kind, name, and version.</td>
+    <td>A component's locator, which is defined by its group, type, kind, name, and version.</td>
   </tr>
   <tr>
     <td>Scenarios</td>
@@ -28,7 +28,7 @@ This tutorial will help you understand what a descriptor is, how to create one, 
 
 ### What is a Descriptor?
 
-Within the Pip.Services toolkit, a descriptor is a component’s locator that is based on the component’s group, type, kind, name, and version. The Descriptor class is part of the Commons module and is included in the Refer library. The figure below summarizes the different elements of a descriptor.
+Within the Pip.Services toolkit, a descriptor is a component's locator that is based on the component's group, type, kind, name, and version. The Descriptor class is part of the Commons module and is included in the Refer library. The figure below summarizes the different elements of a descriptor.
 
 <img src="figure1.svg" alt="figure 1" style="width:100%">
 
@@ -246,4 +246,4 @@ Factories are used to automate component creation. They work by registering comp
 
 ### Wrapping up
 
-In this tutorial, we have learned that descriptors can be used to define components and groups of components. We have also seen how to obtain a descriptor’s properties, check its completeness, convert it to a string, and compare it to other descriptors. Lastly, we saw an example of their usage by showing how to register a component to a factory.
+In this tutorial, we have learned that descriptors can be used to define components and groups of components. We have also seen how to obtain a descriptor's properties, check its completeness, convert it to a string, and compare it to other descriptors. Lastly, we saw an example of their usage by showing how to register a component to a factory.

@@ -124,7 +124,7 @@ To be able to use this component, we need to import it first. The following comm
 
 ##### Component implementation
 
-Now, we can create a custom component as a subclass of CassandraPerformance. Within our class, we also define two protected methods. The first, named “defineSchema”, creates a table used to store our data. The second method adapts a FilterParams object to the specific needs of Cassandra. Later in this tutorial, we will see how to define other methods for CRUD operations that must also be included in our class. The code below is an example of this class:
+Now, we can create a custom component as a subclass of CassandraPerformance. Within our class, we also define two protected methods. The first, named "defineSchema", creates a table used to store our data. The second method adapts a FilterParams object to the specific needs of Cassandra. Later in this tutorial, we will see how to define other methods for CRUD operations that must also be included in our class. The code below is an example of this class:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -461,7 +461,7 @@ In order to use this component, we need to import it first. The following comman
 
 ##### Component implementation
 
-As we did with the previous class, we create a custom persistence component that inherits this class. In it, we also code a defineSchema() method that is used to create a table in the database. If we want to use the methods of the previous class, we need to define a filterCondition() method as we did before. In the examples below, we only consider the methods in this class, which don’t require filters. The code below shows an example of this custom component:
+As we did with the previous class, we create a custom persistence component that inherits this class. In it, we also code a defineSchema() method that is used to create a table in the database. If we want to use the methods of the previous class, we need to define a filterCondition() method as we did before. In the examples below, we only consider the methods in this class, which don't require filters. The code below shows an example of this custom component:
 
 {{< tabsection >}}
   {{< include "./__code15_node.md" >}}
@@ -779,7 +779,7 @@ This component adds two delete methods to its parent class.
 
 **deleteById()**
 
-This method accepts the correlation_id and a record’s id as inputs and deletes the record identified by the given id. Once the record is deleted, this method returns the deleted record. The following example shows how to use it:
+This method accepts the correlation_id and a record's id as inputs and deletes the record identified by the given id. Once the record is deleted, this method returns the deleted record. The following example shows how to use it:
 
 {{< tabsection >}}
   {{< include "./__code25_node.md" >}}
@@ -811,7 +811,7 @@ Where item has the following value:
 
 **deleteByIds()**
 
-If we want to delete more than one record, we can use this method. It accepts the correlation_id and a list containing the ids of the records to be deleted as inputs. This method doesn’t return any value. The following example explains how to delete the records with ids equal to one and two:
+If we want to delete more than one record, we can use this method. It accepts the correlation_id and a list containing the ids of the records to be deleted as inputs. This method doesn't return any value. The following example explains how to delete the records with ids equal to one and two:
 
 {{< tabsection >}}
   {{< include "./__code26_node.md" >}}

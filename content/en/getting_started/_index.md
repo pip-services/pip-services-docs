@@ -9,7 +9,7 @@ exclude_from_list: true
 ---
 
 ### [Your First Microservice](your_first_microservice)
-So, let’s start developing microservices using the Pip.Services toolkit. As a simple example, we will make a Hello World microservice, which will greet you in response to your request. The communication protocol will be HTTP REST.
+So, let's start developing microservices using the Pip.Services toolkit. As a simple example, we will make a Hello World microservice, which will greet you in response to your request. The communication protocol will be HTTP REST.
 
 ### [Learning path](learning_path)
 Pip.Services is a toolkit used to create microservices. This course provides the student with the basic elements necessary to use it efficiently. 
@@ -21,5 +21,5 @@ A set of articles describing step by step the steps necessary to create a partic
 A set of ready-made recipes for solving specific problems
 
 ### [Setup environment](getting_started)
-Before we can start writing-up some microservices, we’ll need to install a few mandatory prerequisites.
+Before we can start writing-up some microservices, we'll need to install a few mandatory prerequisites.
 

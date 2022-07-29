@@ -205,7 +205,7 @@ The method to_string() provides a way to create a string representation of an An
 
 ##### Logical operators
 
-The method equals and equals_as_type offer a way to compare two different AnyValue objects. The first compares an object’s value to another specified value. When direct comparison gives a negative result, it tries to compare the values as strings. The second method compares an object’s value to another specified value. When direct comparison gives a negative result, it converts values to a type specified by a type code and compares them again. The following examples show how to use them.
+The method equals and equals_as_type offer a way to compare two different AnyValue objects. The first compares an object's value to another specified value. When direct comparison gives a negative result, it tries to compare the values as strings. The second method compares an object's value to another specified value. When direct comparison gives a negative result, it converts values to a type specified by a type code and compares them again. The following examples show how to use them.
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}

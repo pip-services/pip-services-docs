@@ -138,7 +138,7 @@ weight: 1000
 	<tr>
       <td>Configure</td>
       <td>
-        The act of selecting programmable options that make an application function according to the user’s needs.<br><br>
+        The act of selecting programmable options that make an application function according to the user's needs.<br><br>
         Configurations allow to change microservice behavior, adjust to deployment environments, and set parameters to connect to infrastructure services and other microservices. <br><br>
         For this, the Pip.Services toolkit provides a set of patterns that support design-time, deployment-time, and runtime configurations
       </td>
@@ -162,7 +162,7 @@ weight: 1000
    <tr>
       <td>Controller </td>
       <td>
-        Within Pip.Services’ three-tier architecture, the controller is the class where the business logic of the microservice is implemented. From this component, methods can call other components.<br><br>
+        Within Pip.Services' three-tier architecture, the controller is the class where the business logic of the microservice is implemented. From this component, methods can call other components.<br><br>
         This approach differs from other frameworks such as Spring Boot, where the controller is used to implement communication functions.
       </td>
       <td><a href="../../getting_started/recipes/three_tier_architecture/">Three tier architecture</a></td>
@@ -252,7 +252,7 @@ weight: 1000
     <tr>
       <td>Frontend</td>
       <td>
-       The part of an application with which the user interacts directly. From a user’s point of view, it is synonymous with the user interface. From a developer’s point of view, it includes the interface design and the related coding. Within Pip.Services, frontends are usually components that represent clients.
+       The part of an application with which the user interacts directly. From a user's point of view, it is synonymous with the user interface. From a developer's point of view, it includes the interface design and the related coding. Within Pip.Services, frontends are usually components that represent clients.
       </td>
     </tr>
     <tr>
@@ -354,7 +354,7 @@ weight: 1000
         <li>1. Each microservice uses its own technology stack independently of other microservices.</li>
         <li>2. They are independently deployable.</li>
         <li>3. They communicate with each other through REST APIs and messages.</li>
-        <li>4. They are organized around business capabilities by following the “one service–one function” principle.</li>
+        <li>4. They are organized around business capabilities by following the "one service–one function" principle.</li>
         <li>5. Their development is usually managed by a small team of people.</li>
        </ul>
       </td>

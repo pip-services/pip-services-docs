@@ -91,7 +91,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
 #### OnMessage
-Checks if the message is not null. If this is the case, it deserializes and sends the message to the receiver if it’s set. Otherwise, it puts the message into the queue.
+Checks if the message is not null. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, it puts the message into the queue.
 
 > `public` void OnMessage(object sender, MsgHandlerEventArgs e)
 

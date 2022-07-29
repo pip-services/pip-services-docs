@@ -18,7 +18,7 @@ description: >-
   </tr>
   <tr>
     <td>Custom component</td>
-    <td>Custom component created for the tutorial’s example.</td>
+    <td>Custom component created for the tutorial's example.</td>
   </tr>
   <tr>
     <td>Factory</td>

@@ -2,7 +2,7 @@
 ```cs
 private FixedRateTimer Timer { get; set; } = new FixedRateTimer();
 private IJobsClientV1 JobsClient { get; set; }
-private const string JobType = “AnalysisOfNewFiles”;
+private const string JobType = "AnalysisOfNewFiles";
 ...
 public Task OpenAsync(string correlationId)
 {

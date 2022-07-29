@@ -23,7 +23,7 @@ description: >-
   </tr>
   <tr>
     <td>MethodReflector</td>
-    <td>Component used to examine an object’s methods and to dynamically invoke them.</td>
+    <td>Component used to examine an object's methods and to dynamically invoke them.</td>
   </tr>
   <tr>
     <td>ObjectReader</td>
@@ -35,15 +35,15 @@ description: >-
   </tr>
   <tr>
     <td>PropertyReflector</td>
-    <td>Component used to examine an object’s properties and to dynamically get and set their values.</td>
+    <td>Component used to examine an object's properties and to dynamically get and set their values.</td>
   </tr>
   <tr>
     <td>RecursiveObjectReader</td>
-    <td>Component used to examine the properties of an object and to dynamically read them recursively using “dot” notation.</td>
+    <td>Component used to examine the properties of an object and to dynamically read them recursively using "dot" notation.</td>
   </tr>
   <tr>
     <td>RecursiveObjectWriter</td>
-    <td>Component used to dynamically set the properties of an object in a recursive way using “dot” notation.</td>
+    <td>Component used to dynamically set the properties of an object in a recursive way using "dot" notation.</td>
   </tr>
  </table>
 
@@ -61,7 +61,7 @@ This package belongs to the commons module and contains several classes used to 
 
 #### a)	MethodReflector
 
-The MethodReflector class allows us to examine an object’s methods and to execute them dynamically. The get_method_names method returns a list with all the methods in a class. The has_method method returns a boolean indicating whether or not a method belongs to a class. And, the invoke_method provides a way to invoke the execution of a method at runtime. The example below shows how to obtain the names of all methods in an object, find out if a method belongs to that object, and invoke its execution.
+The MethodReflector class allows us to examine an object's methods and to execute them dynamically. The get_method_names method returns a list with all the methods in a class. The has_method method returns a boolean indicating whether or not a method belongs to a class. And, the invoke_method provides a way to invoke the execution of a method at runtime. The example below shows how to obtain the names of all methods in an object, find out if a method belongs to that object, and invoke its execution.
 
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}
@@ -188,7 +188,7 @@ After running the above code, we will get the following result:
 	
 #### d)	PropertyReflector
 
-This class allows us to examine an object’s properties and to dynamically get and set their values. The get_property_names is used to obtain a list containing all the properties of an object. The has_property   method allows us to find out whether an object has a property or not. The get_properties method obtains all the properties of an object and their values and places the result in the form of a dictionary. And, the set_property method is used to set the value of an object’s property. The code below provides examples of these methods.
+This class allows us to examine an object's properties and to dynamically get and set their values. The get_property_names is used to obtain a list containing all the properties of an object. The has_property   method allows us to find out whether an object has a property or not. The get_properties method obtains all the properties of an object and their values and places the result in the form of a dictionary. And, the set_property method is used to set the value of an object's property. The code below provides examples of these methods.
 
 
 {{< tabsection >}}
@@ -282,7 +282,7 @@ After running, this code produces the following output:
 <img src="figure7.png" alt="figure 7" style="width:100%">
 
 #### g)	TypeDescriptor
-This class stores a reference to a type represented by the type name and library (module) where the type is defined. This class has three methods. The equals method compares a descriptor to a value. The get_library method gets the library or module of a descriptor.  The get_name method obtains the name of the object type. The to_string method returns a string representation of the descriptor with the format name[,library]. And, the static method from_string transforms a string into a Descriptor object. Below are some examples of these methods’ usage.
+This class stores a reference to a type represented by the type name and library (module) where the type is defined. This class has three methods. The equals method compares a descriptor to a value. The get_library method gets the library or module of a descriptor.  The get_name method obtains the name of the object type. The to_string method returns a string representation of the descriptor with the format name[,library]. And, the static method from_string transforms a string into a Descriptor object. Below are some examples of these methods' usage.
 
 {{< tabsection >}}
   {{< include "./__code8_node.md" >}}
@@ -377,4 +377,4 @@ After running it, we get:
 <img src="figure10.png" alt="figure 10" style="width:100%">
 	
 ### Wrapping up
-In this tutorial, we have learned what reflection is and how to use the Reflect library available in the PIP.Services toolkit, which provides several tools for class introspection. We have seen all its classes and examples of their main methods’ usage. 
+In this tutorial, we have learned what reflection is and how to use the Reflect library available in the PIP.Services toolkit, which provides several tools for class introspection. We have seen all its classes and examples of their main methods' usage. 

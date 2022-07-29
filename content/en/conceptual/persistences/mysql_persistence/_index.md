@@ -293,7 +293,7 @@ There are four methods that can be used to retrieve records from a database. The
      
 ###### getOneRandom()
 
-This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of ‘1’.
+This method retrieves a random record based on a given filter and returns a MySqlPersistence object with the retrieved record. In the example below, we ask for a random record with an id value of '1'.
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}
@@ -347,7 +347,7 @@ Where
      
 ###### getListByFilter()
 
-his method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to ‘1’.
+his method returns a set of records that comply with a given filter. The result is in the form of a list of MySqlPersistence objects containing the retrieved records. The following example retrieves all records with an id equal to '1'.
 
 {{< tabsection >}}
   {{< include "./__code14_node.md" >}}
@@ -401,7 +401,7 @@ Where
      
 ###### getPageByFilter()
 
-Similar to the previous one, this method retrieves a set of records that comply with a given filter. The input parameters are the correlation_id, a filter, and sorting and projection JSON objects. The output is in the form of a DataPage object, and the records are contained in the data field of this object. The following example shows how to extract those records with an id equal to ‘1’.
+Similar to the previous one, this method retrieves a set of records that comply with a given filter. The input parameters are the correlation_id, a filter, and sorting and projection JSON objects. The output is in the form of a DataPage object, and the records are contained in the data field of this object. The following example shows how to extract those records with an id equal to '1'.
 
 {{< tabsection >}}
   {{< include "./__code16_node.md" >}}
@@ -455,7 +455,7 @@ Where
      
 ###### getCountByFilter()
 
-This method returns an integer indicating the number of records that comply with a given filter. The example below shows how to obtain the number of records with a key equal to ‘key 1’.
+This method returns an integer indicating the number of records that comply with a given filter. The example below shows how to obtain the number of records with a key equal to 'key 1'.
 
 {{< tabsection >}}
   {{< include "./__code18_node.md" >}}
@@ -484,11 +484,11 @@ This method returns an integer indicating the number of records that comply with
 
 ###### Update
 
-This class doesn’t contain an update method. However, we can create one by using an SQL query. The Using SQL section explains how to do this.
+This class doesn't contain an update method. However, we can create one by using an SQL query. The Using SQL section explains how to do this.
 
 ###### Delete
 
-This method deletes the record specified by the given id. The following example shows how to delete a record with an id equal to ‘1’.
+This method deletes the record specified by the given id. The following example shows how to delete a record with an id equal to '1'.
 
 {{< tabsection >}}
   {{< include "./__code19_node.md" >}}

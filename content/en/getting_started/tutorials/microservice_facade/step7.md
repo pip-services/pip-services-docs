@@ -8,7 +8,7 @@ gitUrl: "https://github.com/pip-services-samples"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Before we can run our facade, we need to add three more things: a factory for the component’s we’ve created, a container, and the code that will run it all. The process of implementing these pieces is the same as the one described in [Data Microservice](../../data_microservice), so this time around we’ll just list the code:
+Before we can run our facade, we need to add three more things: a factory for the component's we've created, a container, and the code that will run it all. The process of implementing these pieces is the same as the one described in [Data Microservice](../../data_microservice), so this time around we'll just list the code:
 
 
 Create three factories in the **pip_facades_sample_python/build/** folder:
@@ -194,7 +194,7 @@ Our facade will need to be configured before running, so create a **config-distr
 - descriptor: "pip-services:status-service:http:default:1.0"
 ```
 
-For demonstration purposes, we’ll be running our system in a distributed mode, with all of its components running in their own, individual containers. The configuration above is designed specifically for this type of distributed deployment.
+For demonstration purposes, we'll be running our system in a distributed mode, with all of its components running in their own, individual containers. The configuration above is designed specifically for this type of distributed deployment.
 
 The process of running a service in a Docker container is described in detail in the [Microservice Dockerization](../../microservice_dockerization) tutorial.
 
@@ -289,15 +289,15 @@ services:
   
 ```
 
-Build and run the facade using the respective scripts (described in the [Microservice Dockerization](../../microservice_dockerization) we mentioned above) tutorial, which can be found in this example project’s [repository (facade-sample-*)](https://github.com/pip-services-samples).
+Build and run the facade using the respective scripts (described in the [Microservice Dockerization](../../microservice_dockerization) we mentioned above) tutorial, which can be found in this example project's [repository (facade-sample-*)](https://github.com/pip-services-samples).
 
-To build the facade’s image and load the rest of the services’ images, run the “package” script using the command below:
+To build the facade's image and load the rest of the services' images, run the "package" script using the command below:
 
 ```
 .\package.ps1
 ```
 
-Once the build process successfully finishes, run the entire system with all of its microservices in Docker Compose using the “run” script. This can be done with the following command:
+Once the build process successfully finishes, run the entire system with all of its microservices in Docker Compose using the "run" script. This can be done with the following command:
 
 ```
 .\run.ps1
@@ -311,7 +311,7 @@ app_1    | [pip-facades-example:DEBUG:2021-06-17T22:03:56.128800] Opened REST se
 app_1    | [pip-facades-example:INFO:2021-06-17T22:03:56.180451] Container pip-facades-example started.
 app_1    | [pip-facades-example:INFO:2021-06-17T22:03:56.180451] Press Control-C to stop the microservice...
 ```
-Now we’re ready to move on to manually testing our facade. In [Step 9 - Manually testing the facade](../step8) - we’ll show you how this can be done.
+Now we're ready to move on to manually testing our facade. In [Step 9 - Manually testing the facade](../step8) - we'll show you how this can be done.
 
 
 <span class="hide-title-link">

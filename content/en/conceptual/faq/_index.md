@@ -8,11 +8,11 @@ weight: 1010
 
 **Q: Why does Pip.Services name start with pip? Is it only for Python?**
 
-**A:** There is no relation between Python pip tool and Pip.Services. The name comes from Pip.Life, a goal oriented social network, which was the first system built by our team and where Pip.Services were born. Pip there meant “exceptional, spiritual person”, “mark on the radar” which is associated with a target/goal to hit, or could be just short of “people”. Currently pip is our signature mark.
+**A:** There is no relation between Python pip tool and Pip.Services. The name comes from Pip.Life, a goal oriented social network, which was the first system built by our team and where Pip.Services were born. Pip there meant "exceptional, spiritual person", "mark on the radar" which is associated with a target/goal to hit, or could be just short of "people". Currently pip is our signature mark.
 
 **Q: Why does Pip.Services have its own container? Why not use unity / spring containers?**
 
-**A:** The central idea of Pip.Services is symmetric implementation across all supported languages. Popular containers are great. But, unfortunately, they are too specific to languages they are written in. Moreover, the popular containers are based on dependency injection that requires runtime reflection which is not available in some compiled languages. However, it doesn’t mean you can’t use other containers. Pip.Services toolkit uses composition and can be easily mixed with other libraries or frameworks.
+**A:** The central idea of Pip.Services is symmetric implementation across all supported languages. Popular containers are great. But, unfortunately, they are too specific to languages they are written in. Moreover, the popular containers are based on dependency injection that requires runtime reflection which is not available in some compiled languages. However, it doesn't mean you can't use other containers. Pip.Services toolkit uses composition and can be easily mixed with other libraries or frameworks.
 
 **Q: Why does Pip.Services have its own loggers / converters / reflection utilities / etc.?**
 
@@ -28,15 +28,15 @@ weight: 1010
 
 **Q: How stable is Pip.Services toolkit?**
 
-**A:** It depends. Core of the toolkit (commons, components, container, data, rpc, messaging) is stable, while some technology-specific modules can be less stable. Also, it depends on the language. Our team developed hundreds of microservices in .NET and Node.js in many projects and that implementation is very stable. Golang and Dart are quite new. Golang is being quickly adopted and maturing fast. Many 3rd party libraries in Dart are still low quality and using Dart in production carries a lot of risks (mid 2020). Python was added mainly to experiment with BigData, AI and Natural Languages and hasn’t been used a lot. And Java implementation didn’t get much attention yet. SpringBoot is a great framework which dominates the Java world. We are not trying to compete with it directly. We keep the Java version for clients who value code symmetry more than bells and whistles that SpringBoot provides.
+**A:** It depends. Core of the toolkit (commons, components, container, data, rpc, messaging) is stable, while some technology-specific modules can be less stable. Also, it depends on the language. Our team developed hundreds of microservices in .NET and Node.js in many projects and that implementation is very stable. Golang and Dart are quite new. Golang is being quickly adopted and maturing fast. Many 3rd party libraries in Dart are still low quality and using Dart in production carries a lot of risks (mid 2020). Python was added mainly to experiment with BigData, AI and Natural Languages and hasn't been used a lot. And Java implementation didn't get much attention yet. SpringBoot is a great framework which dominates the Java world. We are not trying to compete with it directly. We keep the Java version for clients who value code symmetry more than bells and whistles that SpringBoot provides.
 
-**Q: I’m not sure microservices is the right approach or/and there is a resistance to microservice in my organization. What shall I do?**
+**Q: I'm not sure microservices is the right approach or/and there is a resistance to microservice in my organization. What shall I do?**
 
-**A:** Any architecture whether it is monolithic, course services or microservices has its own pros and cons. You shall carefully consider it’s short-term as well as long-term impact. And Pip.Services toolkit is not just for microservices. It is simply a collection of patterns that can be used in any architecture. It just happens that we use it for microservices more often. Moreover, we created a special technique using containers and direct clients when we develop microservices, but deploy them as a monolithic system. That helps to lower initial barrier/cost and can be highly valuable for startups or organizations that are cost sensitive or just not ready for microservices yet. Later that code can be decoupled and redeployed as independent microservices without changing a line of code!
+**A:** Any architecture whether it is monolithic, course services or microservices has its own pros and cons. You shall carefully consider it's short-term as well as long-term impact. And Pip.Services toolkit is not just for microservices. It is simply a collection of patterns that can be used in any architecture. It just happens that we use it for microservices more often. Moreover, we created a special technique using containers and direct clients when we develop microservices, but deploy them as a monolithic system. That helps to lower initial barrier/cost and can be highly valuable for startups or organizations that are cost sensitive or just not ready for microservices yet. Later that code can be decoupled and redeployed as independent microservices without changing a line of code!
 
 **Q: Does Pip.Services support backward compatibility?**
 
-**A:** We focus on enterprise systems that can live for decades. For that reason, backward compatibility is extremely important for us. The code written today shall compile in 10 years without problems. For that reason we use semantic version, making sure that all minor and bigfix releases are backward compatible and major versions can coexist in the same code base. That’s our goal at least. If you step on any issue, please, let us know about it.
+**A:** We focus on enterprise systems that can live for decades. For that reason, backward compatibility is extremely important for us. The code written today shall compile in 10 years without problems. For that reason we use semantic version, making sure that all minor and bigfix releases are backward compatible and major versions can coexist in the same code base. That's our goal at least. If you step on any issue, please, let us know about it.
 
 **Q: Can Pip.Services be used for commercial projects?**
 
@@ -44,8 +44,8 @@ weight: 1010
 
 **Q: I like Pip.Services and would like to contribute. What can I do?**
 
-**A:** Oh, there are lots of things where you can help: writing and maintaining code, writing documentation and tutorials, supporting other developers or just spreading the word about the project. Any help is welcome and appreciated. Just send us a message and we’ll get you into the project.
+**A:** Oh, there are lots of things where you can help: writing and maintaining code, writing documentation and tutorials, supporting other developers or just spreading the word about the project. Any help is welcome and appreciated. Just send us a message and we'll get you into the project.
 
-**Q: I haven’t found an answer to my question. What shall I do?**
+**Q: I haven't found an answer to my question. What shall I do?**
 
 **A:** Ask your question on [stackoverflow](https://stackoverflow.com/) or send us a message, and we may add you question to this FAQ

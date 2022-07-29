@@ -6,9 +6,9 @@ linkTitle: "Step 9. Manual testing of facade"
 gitUrl: "https://github.com/pip-services-samples"
 ---
 
-Once all of the system’s microservices are up and running, we can perform some manual testing of the facade we’ve created, to ensure that everything’s working as intended.
+Once all of the system's microservices are up and running, we can perform some manual testing of the facade we've created, to ensure that everything's working as intended.
 
-First, let’s create a few users without any additional privileges. This can be done with the following command:
+First, let's create a few users without any additional privileges. This can be done with the following command:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"User1\",\"login\": \"user1@gmail.com\",\"email\": \"user1@gmail.com\",\"language\": \"en\",\"theme\": \"light\",\"time_zone\": \"\",\"password\": \"12345678\"}" http://localhost:8080/api/v1/signup
@@ -79,9 +79,9 @@ curl -X POST -H "Content-Type: application/json" -d "{\"name\": \"John Doe\",\"l
 
 ```
 
-As a result of this operation, we should receive the same data structure in the response as the one we defined in our **SessionUserV1** class. The parameter that’s of most importance to us right now is the session ID - the value of the last id field.
+As a result of this operation, we should receive the same data structure in the response as the one we defined in our **SessionUserV1** class. The parameter that's of most importance to us right now is the session ID - the value of the last id field.
 
-Login as User1 to receive access to the Beacons microservice’s methods. This can be done with the following command:
+Login as User1 to receive access to the Beacons microservice's methods. This can be done with the following command:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"login\": \"user1@gmail.com\", \"password\":\"12345678\"}" http://localhost:8080/api/v1/signin
@@ -123,7 +123,7 @@ For future operations, use the session id that was returned:
 "id": "ce42e40c56aa47148eb12ed928eacb45"
 ```
 
-Let’s test how our business logic works. Make a request to get all of the Beacons currently in the system using the session ID we mentioned above. You can do this using the following command:
+Let's test how our business logic works. Make a request to get all of the Beacons currently in the system using the session ID we mentioned above. You can do this using the following command:
 
 ```bash
 curl -X GET -H "x-session-id:ce42e40c56aa47148eb12ed928eacb45" http://localhost:8080/api/v1/beacons
@@ -133,7 +133,7 @@ curl -X GET -H "x-session-id:ce42e40c56aa47148eb12ed928eacb45" http://localhost:
 {"total":null,"data":[]}
 ```
 
-We receive an empty list as a result, since we haven’t created any Beacons yet in the system.
+We receive an empty list as a result, since we haven't created any Beacons yet in the system.
 
 Attempting to request the URL without a valid session will result in an authentication error:
 
@@ -155,8 +155,8 @@ curl -X GET http://localhost:8080/api/v1/beacons
 }
 ```
 
-Feel free to explore the rest of the system’s functionality on your own using the routes we registered in the facade’s service and the sample data from the [Data Microservice](../../data_microservice) tutorial.
+Feel free to explore the rest of the system's functionality on your own using the routes we registered in the facade's service and the sample data from the [Data Microservice](../../data_microservice) tutorial.
 
-Congratulations! Having completed all of the steps of this tutorial, you’ve created your first full-fledged facade and are now capable of creating your own using the Pip.Services Toolkit!
+Congratulations! Having completed all of the steps of this tutorial, you've created your first full-fledged facade and are now capable of creating your own using the Pip.Services Toolkit!
 
-This example’s source code is available in our repository on [GitHub (facade-sample-*)](https://github.com/pip-services-samples)
+This example's source code is available in our repository on [GitHub (facade-sample-*)](https://github.com/pip-services-samples)

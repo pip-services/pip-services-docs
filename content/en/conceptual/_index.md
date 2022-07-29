@@ -119,7 +119,7 @@ Moreover, to support the big number of existing deployment platforms, Pip.Servic
 <br>
 
 #### Organized in a modular fashion
-The toolkit is designed in a modular fashion, where there are a few core modules that provide common abstractions and patterns, and a growing number of additional modules that offer reusable components and patterns built on top of popular technologies. This approach facilitates the optimization of microservice dependencies and the rapid expansion of the toolkit’s functionalities.  
+The toolkit is designed in a modular fashion, where there are a few core modules that provide common abstractions and patterns, and a growing number of additional modules that offer reusable components and patterns built on top of popular technologies. This approach facilitates the optimization of microservice dependencies and the rapid expansion of the toolkit's functionalities.  
 
 At present, the toolkit contains the following modules:
 
@@ -481,7 +481,7 @@ The Pip.Services toolkit consists of a set of nine building blocks that can be i
 
 One of the most pressing aspects that developers face is keeping up with the pace of knowledge and technology changes.  
 
-Pip.Services’ inner design based on building blocks and reusable components that embrace current best practices and patterns reduces the amount of time necessary to achieve programming productivity. Developers can concentrate on specific technologies, use the language of their preference and obtain new skills based on what they already know, without the need to master the entire development tool.  
+Pip.Services' inner design based on building blocks and reusable components that embrace current best practices and patterns reduces the amount of time necessary to achieve programming productivity. Developers can concentrate on specific technologies, use the language of their preference and obtain new skills based on what they already know, without the need to master the entire development tool.  
 
 In addition, its symmetric implementation provides a common ground that speeds up communication and knowledge transfer between developers and teams.  
 

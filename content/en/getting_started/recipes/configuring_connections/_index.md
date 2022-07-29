@@ -330,7 +330,7 @@ Once our connection parameters have been defined, we can read them via the get m
   Not available  
 {{< /tabsection >}}
 
-As the ConnectionParams object has the form of a StringValueMap, we can also use the get(‘paramterName’) method, which can be used with any parameter.
+As the ConnectionParams object has the form of a StringValueMap, we can also use the get('paramterName') method, which can be used with any parameter.
 
 {{< tabsection >}}
   {{< include "./__code11_node.md" >}}
@@ -356,7 +356,7 @@ As the ConnectionParams object has the form of a StringValueMap, we can also use
   Not available  
 {{< /tabsection >}}
 
-Furthermore, we can get all the parameters from a section and their values by using the getSeccion() method. The following example illustrates how to obtain the values from  “sectionA”.
+Furthermore, we can get all the parameters from a section and their values by using the getSeccion() method. The following example illustrates how to obtain the values from  "sectionA".
 
 {{< tabsection >}}
   {{< include "./__code12_node.md" >}}
@@ -518,4 +518,4 @@ We can remove a parameter and its value from the ConnectionParams object via the
 
 ### Wrapping up
 
-In this tutorial, we have learned how to use the ConnectionParams component. We saw how to perform different CRUD operations using this class’ methods and the methods inherited from ConfigParams and StringValueMap. 
+In this tutorial, we have learned how to use the ConnectionParams component. We saw how to perform different CRUD operations using this class' methods and the methods inherited from ConfigParams and StringValueMap. 

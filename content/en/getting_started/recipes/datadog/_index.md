@@ -120,7 +120,7 @@ Now, we create a DataDogCounters object and connect it to the Datadog applicatio
 
 #### Generating values for the metrics
 
-Once we have our components ready, we can generate some values for our metrics by running the component’s method. In the example below, we create an instance of the object and run “mymethod” five times.
+Once we have our components ready, we can generate some values for our metrics by running the component's method. In the example below, we create an instance of the object and run "mymethod" five times.
 
 {{< tabsection >}}
    {{< include "./__code4_node.md" >}}
@@ -274,7 +274,7 @@ Once we have our component ready, we create an instance of DataDogLogger and con
 
 #### Generating logs
 
-To generate logs and send them to the Datadog application, we need to create an instance of our component and run “mymethod”. The following code shows how to do it by using a loop whereby we run the method five times.
+To generate logs and send them to the Datadog application, we need to create an instance of our component and run "mymethod". The following code shows how to do it by using a loop whereby we run the method five times.
 
 {{< tabsection >}}
    {{< include "./__code9_node.md" >}}
@@ -342,7 +342,7 @@ Now we can re-arrange our code to create a component according to Pip.Services p
 
 In this tutorial, you have learned how to send metrics and logs to Datadog. First, we saw how to work with the DataDogCounters component. By using this class, we constructed two different counters: one that measures the number of times a method is executed, and another that measures execution time. Then, we executed this class and saw that the values were received by the Datadog application.
 
-Next, we learned about the DataDogLogger class, which we used to send log information to the Datadog application by modifying our previous example. After executing the example’s method, we verified that the logs had been received by the Datadog application.
+Next, we learned about the DataDogLogger class, which we used to send log information to the Datadog application by modifying our previous example. After executing the example's method, we verified that the logs had been received by the Datadog application.
 
 Finally, for both cases, we presented a final version of the code with some improvements that considered common aspects of Pip.Services programming.
 

@@ -1,5 +1,5 @@
 
-See: [Commons module’s](../../../toolkit_api/python/commons)
+See: [Commons module's](../../../toolkit_api/python/commons)
 
 ```python
 class DataController(IConfigurable):

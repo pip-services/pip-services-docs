@@ -87,7 +87,7 @@ In order to send our counters to Prometheus, we need to import the PrometheusCou
 
 #### Adding the counters to our component
 
-Once we have imported our component, we can create a class containing one or more counters. In our example, we create a class named “MyComponent”, which contains a method called “mymethod”. Within this method, we include two metrics. One is a counter that measures the number of calls to this method, and the other is a variable that measures execution time.
+Once we have imported our component, we can create a class containing one or more counters. In our example, we create a class named "MyComponent", which contains a method called "mymethod". Within this method, we include two metrics. One is a counter that measures the number of calls to this method, and the other is a variable that measures execution time.
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
@@ -143,7 +143,7 @@ Once we have our component with the necessary counters, we create an instance of
 
 #### Calling the method 
 
-Now that we are connected, we can call “mymethod” one or more times. In the example below, we call it twice. 
+Now that we are connected, we can call "mymethod" one or more times. In the example below, we call it twice. 
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -235,7 +235,7 @@ Which after running presents the following values for the previously defined met
 
 #### Pushgateway results
 
-If we are connected to the Prometheus’ Pushgateway, we will find our metrics reflected in its interface. Thus, for example, in the image below, we can see the counter value of two, which indicates that the method was called twice, as we did before in our code.
+If we are connected to the Prometheus' Pushgateway, we will find our metrics reflected in its interface. Thus, for example, in the image below, we can see the counter value of two, which indicates that the method was called twice, as we did before in our code.
 
 ![figure 3](./figure3.png)
 
@@ -440,7 +440,7 @@ Finally, we can free resources by closing both, the counters and service objects
 
 #### /metrics results
 
-The figure below shows the /metrics page containing the example’s counters and their values.
+The figure below shows the /metrics page containing the example's counters and their values.
 
 ![figure 4](./figure4.png)
 
@@ -516,13 +516,13 @@ An example of its implementation is
   Not available  
 {{< /tabsection >}}
 
-where we create a counter named “mycomponent.mymethod.calls1” that increases by two every time it is called.
+where we create a counter named "mycomponent.mymethod.calls1" that increases by two every time it is called.
 
 #### incrementOne
 
 This method is similar to the previous one, but uses a fixed increment value of one. Its syntax is **incrementOne(name: string)** where name represents the name of the counter.
 
-For example, we can create a counter called “mycomponent.mymethod.calls2” that increases by one every time it is called:
+For example, we can create a counter called "mycomponent.mymethod.calls2" that increases by one every time it is called:
 
 {{< tabsection >}}
   {{< include "./__code16_node.md" >}}

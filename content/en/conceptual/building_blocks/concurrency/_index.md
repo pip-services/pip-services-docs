@@ -8,7 +8,7 @@ weight: 80
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-In order to achieve scalability and resilience, microservices have to allow running multiple instances of the same microservice. In this way, infrastructure can distribute load across them, and switch traffic to surviving instances, when some instances fail. The easier way to achieve this is to implement microservices as completely stateless independent components. However, there are situations when microservices have to maintain their states or coordinate their work among their instances or with other microservices. To support these scenarios the Pip.Services toolkit offers a few abstractions. Let’s look at them.
+In order to achieve scalability and resilience, microservices have to allow running multiple instances of the same microservice. In this way, infrastructure can distribute load across them, and switch traffic to surviving instances, when some instances fail. The easier way to achieve this is to implement microservices as completely stateless independent components. However, there are situations when microservices have to maintain their states or coordinate their work among their instances or with other microservices. To support these scenarios the Pip.Services toolkit offers a few abstractions. Let's look at them.
 
 ### State management
 
@@ -42,7 +42,7 @@ The following is an example of state management in a stateful microservice:
 
 The Pip.Service toolkit provides many different implementations of the state stores. They are:
 
-- NullStateStore: Dummy state store implementation that doesn’t do anything.
+- NullStateStore: Dummy state store implementation that doesn't do anything.
 - MemoryStateStore: State store that keeps states in the process memory.
 - RedisStateStore
 - MemcachedStateStore
@@ -61,10 +61,10 @@ To provide for these scenarios, the cache package in the components module conta
 
 There are a few implementations of caches in the toolkit:
 
-- NullCache: Dummy cache implementation that doesn’t do anything.
+- NullCache: Dummy cache implementation that doesn't do anything.
 - MemoryCache: Cache that stores values in the process memory. 
 - RedisCache: Distributed cache that stores values in Redis in-memory database.
-- MemcachedCache: Distributed cache that stores values in Memcached’s caching service. 
+- MemcachedCache: Distributed cache that stores values in Memcached's caching service. 
 
 
 An example of using a cache is the following:
@@ -157,7 +157,7 @@ There are several ready to use Lock components in the toolkit. They include:
 - NullLock: Dummy lock implementation with no real effect.
 - MemoryLock: Lock used to synchronize the execution of a process using shared memory.
 - RedisLock: Distributed lock that is implemented based on the Redis in-memory database. 
-- MemcachedLock: Distributed lock that is implemented based on Memcached’s caching service. 
+- MemcachedLock: Distributed lock that is implemented based on Memcached's caching service. 
 
 ### References
 For more information about connectivity see:

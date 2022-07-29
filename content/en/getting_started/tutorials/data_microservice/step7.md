@@ -35,7 +35,7 @@ To run our microservice, we need to add just one last bit of code. In the bin fo
 {{< /tabsection >}}
 
 
-In the code above, all we’re doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
+In the code above, all we're doing is creating an instance of the container we described earlier, telling it where to find the configuration file, and running it using the `run()` method.
 
 To run the microservice, execute the following command from a terminal at the root of the project:
 
@@ -68,9 +68,9 @@ You should get a result similar to the one shown below.
 
 ![ConsoleScreen1](/images/tutorials/data_microservice/python_console_screen1.png)
 
-Since we opted for the console logger in our configuration file, all information is going to be printed to the console. The service is using the in-memory persistence by default. To switch over to the MongoDB persistence, the MONGO_ENABLED environment variable has to be set and MongoDB should be running. This can be done either by starting the service from a script, in which we set our environment variables beforehand, or by configuring them in the OS’s environment.
+Since we opted for the console logger in our configuration file, all information is going to be printed to the console. The service is using the in-memory persistence by default. To switch over to the MongoDB persistence, the MONGO_ENABLED environment variable has to be set and MongoDB should be running. This can be done either by starting the service from a script, in which we set our environment variables beforehand, or by configuring them in the OS's environment.
 
-Let’s use the following two commands to set our environment variable and start our microservice using the MongoDB persistence:
+Let's use the following two commands to set our environment variable and start our microservice using the MongoDB persistence:
 
 {{< tabsection >}}
   {{< include "../__code22_node.md" >}}  
@@ -123,7 +123,7 @@ docker-compose -f ./docker/docker-compose.yml up
 ```
 Once the microservice has started, we can check whether or not it is available by requesting the following URL from a browser: `http://localhost:8080/heartbeat`. If everything is working correctly, we should receive the current date and UTC time in the JSON format. This mechanism allows us to check whether or not our microservice is up and running at any given time.
 
-Now let’s request the status URL from our browser: `http://localhost:8080/status`. This should generate a response with information about the service in a JSON format, such as: its name, what modules are loaded, etc. This mechanism allows us to identify our microservices while they’re running.
+Now let's request the status URL from our browser: `http://localhost:8080/status`. This should generate a response with information about the service in a JSON format, such as: its name, what modules are loaded, etc. This mechanism allows us to identify our microservices while they're running.
 
 ```json
 {
@@ -153,13 +153,13 @@ Now let’s request the status URL from our browser: `http://localhost:8080/stat
 }
 ```
 
-Let’s move on to testing the main functionality of our microservice. Our set of commands for working with the service is available at the base path of `http://localhost:8080/v1/beacons`, using the POST method.
+Let's move on to testing the main functionality of our microservice. Our set of commands for working with the service is available at the base path of `http://localhost:8080/v1/beacons`, using the POST method.
 
-We could use a REST client to test our microservice, but for the sake of this example, we’ll be using curl instead.
+We could use a REST client to test our microservice, but for the sake of this example, we'll be using curl instead.
 
-Let’s check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../toolkit_api/node/commons/commands/command_set/).
+Let's check the availability of our commands - the very same ones we defined in our [CommandSet](../../../../toolkit_api/node/commons/commands/command_set/).
 
-First, we’ll attempt to create a few beacons in the system:
+First, we'll attempt to create a few beacons in the system:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"beacon\":{\"id\": \"1\", \"udi\": \"00001\",  \"type\": \"altbeacon\",  \"site_id\": \"1\", \"label\": \"TestBeacon1\", \"center\": { \"type\": \"Point\", \"coordinates\": [ 0, 0 ] },\"radius\": 50}}" http://localhost:8080/v1/beacons/create_beacon
@@ -247,7 +247,7 @@ We should receive the following response:
 }
 ```
 
-To calculate a device’s position, use the following request:
+To calculate a device's position, use the following request:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"site_id\": \"1\",\"udis\": [\"00001\", \"00002\"]}" http://localhost:8080/v1/beacons/calculate_position
@@ -259,7 +259,7 @@ As a result, you should get the following coordinates:
 {"type":"Point","coordinates":[1,2]}
 ```
 
-Now let’s delete a beacon by its id:
+Now let's delete a beacon by its id:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d "{\"beacon_id\":\"1\"}" http://localhost:8080/v1/beacons/delete_beacon_by_id
@@ -285,13 +285,13 @@ The system will return the deleted beacon if deletion was successful:
 }
 ```
 
-Let’s make sure that there’s only one beacon left in the system by asking again for a list of all available beacons:
+Let's make sure that there's only one beacon left in the system by asking again for a list of all available beacons:
 
 ```bash
 curl -X POST  http://localhost:8080/v1/beacons/get_beacons
 ```
 
-As a result, only the beacon with an id of “2” is returned.
+As a result, only the beacon with an id of "2" is returned.
 
 ```json
 {
@@ -316,5 +316,5 @@ As a result, only the beacon with an id of “2” is returned.
 }
 ```
 
-And that’s it! Congratulations! You’ve created a microservice that’s far more advanced than the regular *“Hello, World”* example!
+And that's it! Congratulations! You've created a microservice that's far more advanced than the regular *"Hello, World"* example!
 All source code is available on [Github (pip-services-beacons-*)](https://github.com/pip-services-samples)

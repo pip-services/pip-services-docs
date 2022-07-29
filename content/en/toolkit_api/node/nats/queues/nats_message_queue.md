@@ -123,7 +123,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
 #### onMessage
-Checks if the message is not null. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
+Checks if the message is not null. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
 
 > `public` onMessage(err: any, msg: any)
 
@@ -172,7 +172,7 @@ Receives an incoming message and removes it from the queue.
 
 > `public` receive(correlationId: string, waitTimeout: number): Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)>
 
-- **correlationId**: string - checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it’s set. Otherwise, puts it into the queue.
+- **correlationId**: string - checks if the message comes from the right topic. If this is the case, deserializes and sends it to the receiver if it's set. Otherwise, puts it into the queue.
 - **waitTimeout**: number - timeout (milliseconds) to wait for a message to come.
 - **returns**: Promise<[MessageEnvelope](../../../messaging/queues/message_envelope)> - received message or null if nothing was received.
 

@@ -1,5 +1,5 @@
 
-Add a requirements.txt file with the following lines to the root of the project’s folder:
+Add a requirements.txt file with the following lines to the root of the project's folder:
 
 **/requirements.txt**
 

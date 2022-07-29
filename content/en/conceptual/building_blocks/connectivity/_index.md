@@ -107,7 +107,7 @@ Similar to connection parameters, credentials are set in the credential section 
 
 ```yml
 # MongoDb persistence component
-descriptor: “myservice:mypersistance:mongodb:default:1.0”
+descriptor: "myservice:mypersistance:mongodb:default:1.0"
 credential:
   username: admin
   password: pass123

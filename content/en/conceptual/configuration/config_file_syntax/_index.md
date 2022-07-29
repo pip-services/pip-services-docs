@@ -12,7 +12,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>General case</td>
-    <td>In general, a configuration is composed of a descriptor and the component’s configuration parameters.</td>
+    <td>In general, a configuration is composed of a descriptor and the component's configuration parameters.</td>
   </tr>
   <tr>
     <td>Configuration examples</td>
@@ -34,7 +34,7 @@ parameter1: value1
 parametern: valueN
 ```
 
-Where the configuration parameters depend on the component considered, and can be obtained from the component’s Configuration parameters section available in the reference manual.
+Where the configuration parameters depend on the component considered, and can be obtained from the component's Configuration parameters section available in the reference manual.
 
 <img src="figure1.png" alt="figure 1" style="width:100%">
 

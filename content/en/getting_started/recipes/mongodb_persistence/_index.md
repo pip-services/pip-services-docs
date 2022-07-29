@@ -11,7 +11,7 @@ by Aleksey Dvoykin
 
 ### Introduction
 
-In our previous tutorials, we took a look at in-memory and file persistence component implementations. Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database.
+In our previous tutorials, we took a look at in-memory and file persistence component implementations. Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database.
 The most basic implementation of this component is the MongoDbPersistence class defined in the **MongoDb module**. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations. 
 
 ### MongoDBPersistence
@@ -77,7 +77,7 @@ As mentioned earlier, the **MongoDbPersistence** contains methods for opening an
 
 The **MongoDbConnection** class provides MongoDB connectivity using a plain driver. To reduce the number of database connections needed, a connection can be defined and then shared through multiple persistence components.
 
-By default, **MongoDbPersistence** tries to establish a local connection on MongoDb’s default port - 27017. If the desired MongoDb server is located elsewhere, the persistence should be configured with the corresponding host and port information. Persistence configuration can be performed in a number of ways.
+By default, **MongoDbPersistence** tries to establish a local connection on MongoDb's default port - 27017. If the desired MongoDb server is located elsewhere, the persistence should be configured with the corresponding host and port information. Persistence configuration can be performed in a number of ways.
 
 The example below demonstrates how the **ConfigParams** class can be used for persistence configuration. To learn more about this class, and about microservice configuration in general, be sure to read [this](../../../../conceptual/configuration/configurations/).
 
@@ -115,7 +115,7 @@ To perform configuration using a single **MongoDbConnection**, one of the follow
 ```pip-services:connection:mongodb:*:1.0 or pip-services3:connection:mongodb:*:1.0.```
 
 To learn more about references, descriptors, and component references, follow [this link](../../../../conceptual/component/component_references/).  
-First, add an element with the “pip-services” descriptor to the configuration file.
+First, add an element with the "pip-services" descriptor to the configuration file.
 
 ```yml
 ...
@@ -127,7 +127,7 @@ First, add an element with the “pip-services” descriptor to the configuratio
 ...
 ```
      
-Next, register the persistence as a component in the microservice’s **Factory**:
+Next, register the persistence as a component in the microservice's **Factory**:
 
 {{< tabsection >}}
    {{< include "./__code4_node.md" >}} 
@@ -181,7 +181,7 @@ Next, register the persistence as a component in the microservice’s **Factory*
 {{< /tabsection >}}
 
 
-If we’re configuring just a single connection to the Beacons MongoDB persistence, the connection configuration should use the “beacons” descriptor:
+If we're configuring just a single connection to the Beacons MongoDB persistence, the connection configuration should use the "beacons" descriptor:
 
 ```yml
 ...
@@ -306,7 +306,7 @@ Persistence components in the Pip.Services Toolkit use a number of data patterns
 {{< /tabsection >}}
 
      
-In the persistence component, the developer is responsible for parsing **FilterParams** and passing a filter function to the persistence’s methods of the base class.
+In the persistence component, the developer is responsible for parsing **FilterParams** and passing a filter function to the persistence's methods of the base class.
 
 {{< tabsection >}}
    {{< include "./__code10_node.md" >}}  

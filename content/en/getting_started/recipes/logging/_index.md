@@ -38,7 +38,7 @@ linkTitle: "Logging"
 
 ### Introduction
 
-In this tutorial, you will learn how to add logging capacity to a microservice. First, we will understand what logging consists of. Then, we will use the microservice we created in the “Creating a component” tutorial, replace the printed messages with logger messages and create an exception in our business process (my_task). After running the code, we will see the tagged messages from the logger.
+In this tutorial, you will learn how to add logging capacity to a microservice. First, we will understand what logging consists of. Then, we will use the microservice we created in the "Creating a component" tutorial, replace the printed messages with logger messages and create an exception in our business process (my_task). After running the code, we will see the tagged messages from the logger.
 
 Once we have seen how to create a logger that displays messages on our console, we will learn how to create a composite logger, which will add the capacity to aggregate the log messages from different sources and centralize their display on our console.
 
@@ -152,7 +152,7 @@ In our example, we will add a logger that sends messages to our console. For thi
 
 Then, we will replace our print messages with info-level log messages. For example, *print("MyComponentA has been created.")* will be replaced with  *logger.info(None, "MyComponentA has been created.")*.
 
-Finally, we will force an exception in the **my_task** method. As we had explained in the “Creating a component” tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
+Finally, we will force an exception in the **my_task** method. As we had explained in the "Creating a component" tutorial, this method performs business-related tasks. Thus, we can simulate a problem within it by forcibly raising an exception. This method will look like this:
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}} 
@@ -318,7 +318,7 @@ This concludes our first task.
 
 ### Adding a composite logger to our component
 
-Now, we will extend our logging capacity by adding a composite logger. This logger will allow us to aggregate all loggers from our component’s references into a centralized log. 
+Now, we will extend our logging capacity by adding a composite logger. This logger will allow us to aggregate all loggers from our component's references into a centralized log. 
 Our code will remain the same, except that now we need to create a composite logger for MyComponentA. For this, we will create an instance of this logger and set the logging level to 5. 
 
 Then, we will use the configure and set_references methods to let our composite logger know where to ask for log messages. 

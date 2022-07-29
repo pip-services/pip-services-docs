@@ -71,7 +71,7 @@ In order to create a CommandableHttpService, we need to import this component. T
 
 #### Command set
 
-The key aspect of a CommandableHttpService is its dependence on a set of predefined commands. Thus, in our example, we define a command set containing one command named greeting, which is used to create the phrase “Hello {name}” for a given name. The following code shows how to do this.
+The key aspect of a CommandableHttpService is its dependence on a set of predefined commands. Thus, in our example, we define a command set containing one command named greeting, which is used to create the phrase "Hello {name}" for a given name. The following code shows how to do this.
 
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
@@ -184,7 +184,7 @@ Now, we create a factory that builds our service and controller. The code below 
 
 #### Container
 
-After we have our controller and factory, we create a process container to manage our service’s lifecycle.
+After we have our controller and factory, we create a process container to manage our service's lifecycle.
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}
@@ -240,7 +240,7 @@ Once our service is running, it is ready to receive requests.
 
 ### Consuming a CommandableHttpService
 
-There are several ways to consume our service. In this tutorial, we will consider two of them, namely using Pip.Services’ CommandableHttpClient class and via code.
+There are several ways to consume our service. In this tutorial, we will consider two of them, namely using Pip.Services' CommandableHttpClient class and via code.
 
 #### Using a CommandableHttpClient
 

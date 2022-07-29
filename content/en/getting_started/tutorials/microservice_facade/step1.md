@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Step 2. Creating the Project’s Structure"
-linkTitle: "Step 2. Project’s Structure" 
+title: "Step 2. Creating the Project's Structure"
+linkTitle: "Step 2. Project's Structure" 
 gitUrl: "https://github.com/pip-services-samples"
 ---
 

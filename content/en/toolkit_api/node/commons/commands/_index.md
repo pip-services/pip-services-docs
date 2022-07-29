@@ -26,7 +26,7 @@ The package main components are:
    Moreover, when using interceptors, a command can pass through an execution chain, consisting of interceptors, which can: 
     - simply take note of the command, notify, log, get metrics, or do some other passive task;
     - intercept the command completely and, for example, return a previous record of the call from the cache. 
-    - intercept a command’s return value and, for example, cache the result, so that the next call doesn’t have to be made. 
+    - intercept a command's return value and, for example, cache the result, so that the next call doesn't have to be made. 
 - [Intercepted commands](intercepted_command) are used as pattern decorators that allow behavior to be added to an individual object, dynamically and without affecting the behavior of other objects from the same class. They are represented as regular commands, but run their own logic before calling the actual command. 
 
 Typical uses of this package would be intercepting messages and various logging implementations.  

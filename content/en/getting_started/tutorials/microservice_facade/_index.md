@@ -11,11 +11,11 @@ gitUrl: "https://github.com/pip-services-samples"
 
 A Facade is a microservice that serves as a point of entry to a system for external clients. The facade provides a stable external interface and hides the inner workings of a system. All requests made by external clients first arrive at the facade, which then forwards them to the appropriate microservices. The facade can also implement additional functionality, such as: authenticating and authorizing users, caching and aggregating requests, logging, etc.
 
-Microservice-based systems change quickly and chaotically. During development, the relationships between microservices can usually be tracked and fixed as needed. When intentional and/or accidental changes to an interface are rolled out to production though, they can break external clients and lead to serious business problems. This is why it’s so critical to have a facade, providing a stable interface, by hiding any and all internal changes.
+Microservice-based systems change quickly and chaotically. During development, the relationships between microservices can usually be tracked and fixed as needed. When intentional and/or accidental changes to an interface are rolled out to production though, they can break external clients and lead to serious business problems. This is why it's so critical to have a facade, providing a stable interface, by hiding any and all internal changes.
 
-Oftentimes, developers use 3rd party API gateways to implement an external interface. This approach isn’t half bad and does have certain advantages, such as faster development time, existing documentation, and integration with cloud services. However, 3rd party API gateways bring along considerable limitations and are extremely inconvenient for test system deployment. Because of this, additional facade implementations still make sense, even when using API Gateways.
+Oftentimes, developers use 3rd party API gateways to implement an external interface. This approach isn't half bad and does have certain advantages, such as faster development time, existing documentation, and integration with cloud services. However, 3rd party API gateways bring along considerable limitations and are extremely inconvenient for test system deployment. Because of this, additional facade implementations still make sense, even when using API Gateways.
 
-Routing requests is one of the key functions of a facade. Some API calls can simply be redirected to the appropriate service. However, a facade doesn’t stop at just routing requests. Oftentimes there occurs the need to perform complex requests, when data must be extracted from a number of microservices, aggregated in the facade, and sent to the client as one object. This approach significantly simplifies the development of clients and speeds up the process of receiving data. For example: a mobile app can make a request to the facade, which extracts order data from various services, and send an already aggregated response.
+Routing requests is one of the key functions of a facade. Some API calls can simply be redirected to the appropriate service. However, a facade doesn't stop at just routing requests. Oftentimes there occurs the need to perform complex requests, when data must be extracted from a number of microservices, aggregated in the facade, and sent to the client as one object. This approach significantly simplifies the development of clients and speeds up the process of receiving data. For example: a mobile app can make a request to the facade, which extracts order data from various services, and send an already aggregated response.
 
 Facades can also be used to switch between protocols. For example: HTTP/RESTful, being one of the most popular external client protocols, can be used between the service and the client, while intra-microservice communication might utilize REST, gRPC, asynchronous messages, etc.
 
@@ -43,7 +43,7 @@ In this tutorial, we will be taking a look at how to implement a simple facade t
 To make it easier to follow along, this tutorial is broken up into the following steps:
 
 - [Step 1. Setting up the environment](step0)
-- [Step 2. Creating the project’s structure](step1)
+- [Step 2. Creating the project's structure](step1)
 - [Step 3. Business operations](step2)
 - [Step 4. Authentication and sessions](step3)
 - [Step 5. Authorization](step4)
@@ -60,7 +60,7 @@ To start developing your first facade, head on over to [Step 1. Setting up the e
 <span class="hide-title-link">
 
 #### [Step 1. Setting up the environment](step0)
-#### [Step 2. Creating the project’s structure](step1)
+#### [Step 2. Creating the project's structure](step1)
 #### [Step 3. Business operations](step2)
 #### [Step 4. Authentication and sessions](step3)
 #### [Step 5. Authorization](step4)

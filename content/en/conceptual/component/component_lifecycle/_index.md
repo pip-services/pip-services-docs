@@ -12,7 +12,7 @@ linkTitle: "Component Lifecycle"
 ### Component lifecycle
 
 A microservice is a set of loosely coupled components, each of which serves a specific purpose, such as logging events, reading records from a database, or connecting to a 3rd party service.
-One of the roles of the microservice’s container is to correctly initialize all internal components, each of which can have its own lifecycle. For example, loading its own configuration, running certain functional processes, and even waiting for results from other components. The order in which component lifecycle management methods are called is as follows:
+One of the roles of the microservice's container is to correctly initialize all internal components, each of which can have its own lifecycle. For example, loading its own configuration, running certain functional processes, and even waiting for results from other components. The order in which component lifecycle management methods are called is as follows:
 
 ![ConsoleScreen1](/images/tutorials/component_lifecycle/component_lifecycle_scheme.svg)
 
@@ -24,7 +24,7 @@ One of the roles of the microservice’s container is to correctly initialize al
 6. The links between components are destroyed (unsetReferences)
 7. The component is destroyed
 
-A flexible and, at the same time, standardized approach was developed in the Pip.Services Toolkit for initializing components. This approach preserves the conceptual integrity of the whole microservice, while keeping the source code clean, coherent, and testable. A component’s lifecycle is determined by which of the following interfaces it implements:
+A flexible and, at the same time, standardized approach was developed in the Pip.Services Toolkit for initializing components. This approach preserves the conceptual integrity of the whole microservice, while keeping the source code clean, coherent, and testable. A component's lifecycle is determined by which of the following interfaces it implements:
 
 {{< tabsection isMarkdown=true >}}
 
@@ -528,7 +528,7 @@ class CounterController(IReferenceable, IReconfigurable, IOpenable, IExecutable)
 {{< /tabsection >}}
 
 ### Utilities
-The Pip.Service’s Toolkit also includes a few utilities that can be used during microservice development:
+The Pip.Service's Toolkit also includes a few utilities that can be used during microservice development:
 
 {{< tabsection isMarkdown=true >}}
 

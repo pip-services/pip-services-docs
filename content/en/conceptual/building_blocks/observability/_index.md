@@ -13,7 +13,7 @@ Microservices, in addition to great strengths, have a few shortcomings. One of t
 ### Correlation (trace) ids
 It is not sufficient just to collect logs and traces across multiple microservices. It is critical to connect that information in a logical sequence within the transaction context. To do that Pip.Services employs correlationIds, which are rigorously used as first parameters in all business methods across all microservice components and sent over via all synchronous calls and asynchronous messages. When errors are thrown, logs or traces recorded, correlationIds are always included there.
 
-A correlationId is any value that can uniquely identify business transactions in a system. One way to generate correlationIds is to use natural keys, like “transaction name + timestamp”. Another common way to generate correlationIds is to use string GUIDs. Although, they could be too long and lack meaning, they are unique in the universe and very easy to generate.
+A correlationId is any value that can uniquely identify business transactions in a system. One way to generate correlationIds is to use natural keys, like "transaction name + timestamp". Another common way to generate correlationIds is to use string GUIDs. Although, they could be too long and lack meaning, they are unique in the universe and very easy to generate.
 
 ### Logging
 
@@ -70,7 +70,7 @@ connection:
 {{< /tabsection >}}
 
 ### Performance monitoring
-While logs tell “what” the system is doing, performance metrics (or counters) tell “how” it’s being done: how much, how fast, how reliable, and so on. They represent the state of the system from a non-functional perspective and are critical to measure and analyze performance, scalability, and reliability characteristics.
+While logs tell "what" the system is doing, performance metrics (or counters) tell "how" it's being done: how much, how fast, how reliable, and so on. They represent the state of the system from a non-functional perspective and are critical to measure and analyze performance, scalability, and reliability characteristics.
 
 The ICounters from the count package in the components module is the standard interface for all performance monitoring components. It allows to increment counters, record values of self-calculated metrics, record timestamps, calculate min/average/max statistics and measure time intervals. In addition, there are several implementations available out-of-the-box:
 
@@ -121,11 +121,11 @@ descriptor: "pip-services:metrics-service:prometheus:default:1.0"
 
 ### Traces
 
-The most common observability scenario consists of monitoring the invocation of microservice operations. This can be done via a combination of logs and counters: logs will record what operations are executed and errors when they happen, and counters will calculate how often operations were called and what’s their execution time and error rate. However, some monitoring systems like Datadog or Splank have started offering APIs to collect traces separately, enabling rich visualizations and analytics around them.
+The most common observability scenario consists of monitoring the invocation of microservice operations. This can be done via a combination of logs and counters: logs will record what operations are executed and errors when they happen, and counters will calculate how often operations were called and what's their execution time and error rate. However, some monitoring systems like Datadog or Splank have started offering APIs to collect traces separately, enabling rich visualizations and analytics around them.
 
 The Pip.Services toolkit includes the ITraces interface for tracing components defined in the trace package in the components module. There are a few ready-to-use tracing components available in the toolkit:
 
-- NullTracer: Dummy implementation of tracer that doesn’t do anything.
+- NullTracer: Dummy implementation of tracer that doesn't do anything.
 - LogTracer: Tracer that dumps recorded traces to a logger.
 - DataDogTracer
 

@@ -97,7 +97,7 @@ Once we have defined our component, we instantiate and configure it, pointing to
 
 ### Using the different HTTP methods
 
-Our last step is to call each of the client’s functions and obtain the respective results. The following commands and their outcomes show how to do this:
+Our last step is to call each of the client's functions and obtain the respective results. The following commands and their outcomes show how to do this:
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}

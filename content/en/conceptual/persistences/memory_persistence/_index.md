@@ -193,7 +193,7 @@ After running the above code, we will obtain the following result:
 
 #### Update a value in the persistence object
 
-To update a value in the persistence object, we need to use the **update** method. For example, we can change the content of the dummy2 persisted object to “new content 2”. 
+To update a value in the persistence object, we need to use the **update** method. For example, we can change the content of the dummy2 persisted object to "new content 2". 
 
 {{< tabsection >}}
   {{< include "./__code6_node.md" >}}  

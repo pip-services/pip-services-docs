@@ -192,7 +192,7 @@ Once the queue has been used, we can close it to free resources with the close()
 
 After our connection is ready, we can create a message and send it to our app. To create a message, we use the MessageEnvelope component from the messaging module. This class takes the correlationId, the message type, and the message as input parameters. 
 
-Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the correlationId and the message envelope as input parameters. The example below shows how to send a message of type “mymessage” containing the text “ABC123”.
+Once we have our message envelope, we can use the send()/sendAsync() to send a message to our app. This method has the correlationId and the message envelope as input parameters. The example below shows how to send a message of type "mymessage" containing the text "ABC123".
 
 {{< tabsection >}}
   {{< include "./__code7_node.md" >}}
@@ -491,6 +491,6 @@ We can now put together a simple example that shows how to use the learned metho
 
 In this tutorial, we have learned how to create and manage a message queue to communicate with an MQTT-based app using the MqttMessageQueue component.    
 
-We saw that this class can define the topic when an instance of it is created via the constructor. Alternatively, we can define it as a configuration parameter via the configure() method, which is used to set the values of the component’s parameters.  Then, we learned several methods used to send and receive messages.     
+We saw that this class can define the topic when an instance of it is created via the constructor. Alternatively, we can define it as a configuration parameter via the configure() method, which is used to set the values of the component's parameters.  Then, we learned several methods used to send and receive messages.     
 
 We also understood how to obtain the number of messages in the queue and how to set up the quality of service level.  Finally, we summarized the usage of the main methods with a comprehensive example.

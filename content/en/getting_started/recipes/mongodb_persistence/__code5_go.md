@@ -1,5 +1,5 @@
 
-And add the [DefaultMongoDbFactory](../../../toolkit_api/golang/mongodb/build/default_mongodb_factory/) to the microservice’s ProcessContainer:
+And add the [DefaultMongoDbFactory](../../../toolkit_api/golang/mongodb/build/default_mongodb_factory/) to the microservice's ProcessContainer:
 
 ```go
 import (

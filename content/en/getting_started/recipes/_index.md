@@ -53,7 +53,7 @@ In this tutorial, you will learn how to use the FluentdLogger component to send 
 
 ### [Logging](logging)
 
-In this tutorial, you will learn how to add logging capacity to a microservice. First, we will understand what logging consists of. Then, we will use the microservice we created in the “Creating a component” tutorial, replace the printed messages with logger messages and create an exception in our business process (my_task). After running the code, we will see the tagged messages from the logger.
+In this tutorial, you will learn how to add logging capacity to a microservice. First, we will understand what logging consists of. Then, we will use the microservice we created in the "Creating a component" tutorial, replace the printed messages with logger messages and create an exception in our business process (my_task). After running the code, we will see the tagged messages from the logger.
 
 ### [Metrics](metrics)
 
@@ -61,7 +61,7 @@ This tutorial will teach you how to create and manage performance metrics with P
 
 ### [MongoDB persistence](mongodb_persistence)
 
-Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
+Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
 
 ### [Mustache Templates](mustache_templates)
 
@@ -74,5 +74,5 @@ In this tutorial, you will learn how to send different metrics to Prometheus. Fi
 
 ### [Randomness](randomness)
 
-How to generate random values with the Commons’ Random package.
+How to generate random values with the Commons' Random package.
 In this tutorial, we will learn how to use the Random package available in the Commons module. This package contains a set of classes and methods that can be used to generate different types of random values, such as Booleans, doubles, floats, and integers. It also offers methods to generate different types of texts such as names and surnames, and methods to randomly select an element from an array or text.

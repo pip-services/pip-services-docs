@@ -7,7 +7,7 @@ linkTitle: "Step 6. Run"
 
 While developing and debugging a project, you may find the need to run and connect to a microservice, for example, using a client. Readily available Docker images, like the ones we made in the previous steps, are quite handy in such situations.
 
-To run our service, we’ll be using the scenario we wrote in the third step of this tutorial in the **docker-compose.yml** file:
+To run our service, we'll be using the scenario we wrote in the third step of this tutorial in the **docker-compose.yml** file:
 
 ```yml
 version: '3.3'

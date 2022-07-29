@@ -26,7 +26,7 @@ Other data object patterns supported by Pip.Services include:
 - IChangeable: Interface for data objects that need to store the last modified date and time.
 
 ### Converters
-Data comes into microservices in different shapes and forms. So, the first order of business is to convert the data into specific types to enable its correct processing. All programming languages offer conversion functions, but they look and work differently. The Pip.Services toolkit has its own library of data conversion functions that not only work identically in different languages, but also enable the so-called “soft conversions”. In this manner, it supports conversions that are not normally considered, like converting long values into Unix timestamps.
+Data comes into microservices in different shapes and forms. So, the first order of business is to convert the data into specific types to enable its correct processing. All programming languages offer conversion functions, but they look and work differently. The Pip.Services toolkit has its own library of data conversion functions that not only work identically in different languages, but also enable the so-called "soft conversions". In this manner, it supports conversions that are not normally considered, like converting long values into Unix timestamps.
 
 Here is the list of converters defined in the convert package available in the commons module:
 

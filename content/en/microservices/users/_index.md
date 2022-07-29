@@ -6,7 +6,7 @@ no_list: true
 weight: 10
 ---
 
-Full array of instruments for user registration, access control, watching over users’ actions, setting up communication channels, and broadcasting messages.
+Full array of instruments for user registration, access control, watching over users' actions, setting up communication channels, and broadcasting messages.
 
 <div class="card-deck">
 

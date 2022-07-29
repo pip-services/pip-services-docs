@@ -23,7 +23,7 @@ This sub-package contains utility classes used to create character intervals, ke
 ### Constants
 
 #### [TokenType](token_type)
-Types (categories) of tokens such as “number”, “symbol” and “word”.
+Types (categories) of tokens such as "number", "symbol" and "word".
 
 <br>
 
@@ -48,7 +48,7 @@ Interface for tokenizers.
 Interface for TokenizerStates.
 
 #### [IWhitespaceState](iwhitespace_state)
-Defines an interface for tokenizer state that processes whitespaces (' ‘, ‘\t’).
+Defines an interface for tokenizer state that processes whitespaces (' ', '\t').
 
 #### [IWordState](iword_state)
 Defines an interface for tokenizer state that processes words, identificators or keywords.

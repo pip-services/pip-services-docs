@@ -44,7 +44,7 @@ The sections and example that follow explain in detail how this is done .
 
 In this tutorial, we will expand on the example presented in the tutorial Three-tier architecture and available through this website. 
 
-That example comprised an application that selects a random name from a database and shows a message saying “Hello {random name}!” on a browser. The database used was MySQL.
+That example comprised an application that selects a random name from a database and shows a message saying "Hello {random name}!" on a browser. The database used was MySQL.
 
 Our code expansion will consist of including a second database (PostgreSQL) containing a similar table and adding the capacity to choose between the two at deployment time via environmental variables.
 
@@ -86,7 +86,7 @@ One of the principles behind Pip.Services is symmetric implementation. This mean
 
 #### Controller
 
-Our controller is similar to the one defined in the tutorial “Three tier architecture”. The only difference is that we define the _persistence variable as of type IMyDataPersistence. This will allow us to refer to our database independently of the specific cases. 
+Our controller is similar to the one defined in the tutorial "Three tier architecture". The only difference is that we define the _persistence variable as of type IMyDataPersistence. This will allow us to refer to our database independently of the specific cases. 
 
 {{< tabsection >}}
    {{< include "./__code2_node.md" >}}

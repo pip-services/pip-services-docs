@@ -18,7 +18,7 @@ The Pip.Services Toolkit offers a few abstract implementations for developing pe
 
 ### [MongoDB Basic](mongodb_persistence)
 
-Another frequent choice of persistence is Pip.Service’s MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
+Another frequent choice of persistence is Pip.Service's MongoDb persistence. This persistence stores data in MongoDB - a popular document-oriented database. The most basic implementation of this component is the MongoDbPersistence class defined in the MongoDb module. It is capable of storing a collection of documents, opening and closing connections, and performing a few simple CRUD operations.
 
 ### [MySQL persistence](mysql_persistence)
 
@@ -30,4 +30,4 @@ In this tutorial, you will understand how to create persistence components for P
 
 ### [SQL Server persistence](sqlserver_persistence)
 
-This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial’s examples.
+This tutorial will help you understand how to create SQL Server persistence components using Pip.Services. It begins by explaining how to install the sqlserver module and create the data structure used in the tutorial's examples.

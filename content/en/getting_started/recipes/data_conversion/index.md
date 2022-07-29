@@ -137,7 +137,7 @@ This class can be used to convert different values to Boolean values using exten
   </tr> 
   <tr>
     <td>String</td>
-    <td>“true”, “yes”, “T”, “Y”, “1” are true; “false”, “no”, “F”, “N” are false.</td>
+    <td>"true", "yes", "T", "Y", "1" are true; "false", "no", "F", "N" are false.</td>
   </tr>      
   <tr>
     <td>DateTime</td>
@@ -520,7 +520,7 @@ This class is used to convert arbitrary values into strings. Its methods and con
   </tr>
   <tr>
     <td>Number</td>
-    <td>Converts with ‘.’ as decimal point.</td>
+    <td>Converts with '.' as decimal point.</td>
   </tr> 
   <tr>
     <td>DateTime</td>
@@ -528,7 +528,7 @@ This class is used to convert arbitrary values into strings. Its methods and con
   </tr>      
   <tr>
     <td>Boolean</td>
-    <td>Converts “true” for true and “false” for false.</td>
+    <td>Converts "true" for true and "false" for false.</td>
   </tr>
   <tr>
     <td>Array</td>
@@ -640,7 +640,7 @@ This class is used to convert arbitrary values (e.g. a JSON object) from and to 
 
 #### 10)	MapConverter & RecursiveMapConverter
 
-Both classes are used to convert arbitrary values into map objects using extended conversion rules. The difference between them is that RecursiveMapConverter uses recursion to convert all values stored in objects and arrays, and MapConverter doesn’t. The tables and examples below explain their methods and conversion rules.
+Both classes are used to convert arbitrary values into map objects using extended conversion rules. The difference between them is that RecursiveMapConverter uses recursion to convert all values stored in objects and arrays, and MapConverter doesn't. The tables and examples below explain their methods and conversion rules.
 
 <table class="full-width-table">
   <tr>

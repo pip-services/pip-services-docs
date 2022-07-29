@@ -10,7 +10,7 @@ public class MyComponent
 
     public async void DoSomething(string correlationId, string objectId)
     {
-        // Get state from the store or create a new one if the state wasn’t found
+        // Get state from the store or create a new one if the state wasn't found
         MyState state = await this._store.LoadAsync<MyState>(correlationId, "mycomponent:" + objectId);
         if (state != null) { state = new MyState(); }
         ...

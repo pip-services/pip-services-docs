@@ -41,7 +41,7 @@ The `CommandableHttpService` class from the pip-services3-rpc module implements 
 http://{ip}:{port}/v1/beacons/{command_name}
 ```
 
-Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there’s a large amount of code being executed in the service itself. To make sure that everything is working as it should, we should add tests for the service itself, as well as for the commands we wrote in the CommandSet. Create a file for the service’s test and paste the following code:
+Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there's a large amount of code being executed in the service itself. To make sure that everything is working as it should, we should add tests for the service itself, as well as for the commands we wrote in the CommandSet. Create a file for the service's test and paste the following code:
 
 {{< tabsection >}}
   {{< include "../__code17_node.md" >}}  
@@ -67,7 +67,7 @@ Even though the `BeaconsHttpServiceV1` class barely has any lines of code, there
   Not available  
 {{< /tabsection >}}
 
-Congratulations! This step finishes off the development of our microservice! However, before we can start our service up as a fully fledged microservice, we’ll first need to compose all of its components using a process container. And that’s exactly what we’ll be doing in [Step 7. Wrapping microservice into container.](../step6)
+Congratulations! This step finishes off the development of our microservice! However, before we can start our service up as a fully fledged microservice, we'll first need to compose all of its components using a process container. And that's exactly what we'll be doing in [Step 7. Wrapping microservice into container.](../step6)
 
 
 <span class="hide-title-link">

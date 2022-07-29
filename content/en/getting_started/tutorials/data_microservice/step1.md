@@ -8,7 +8,7 @@ gitUrl: "https://github.com/pip-services-samples"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Before we start actually writing our microservice, we need to create a directory structure in the project’s folder.
+Before we start actually writing our microservice, we need to create a directory structure in the project's folder.
 
 Create a folder for the project and, inside it, a directory structure to match the one below:
 
@@ -163,7 +163,7 @@ Not available
 {{< /tabsection >}}
 
 
-To install all necessary dependencies, run the following command from a terminal at the root of the project’s directory:
+To install all necessary dependencies, run the following command from a terminal at the root of the project's directory:
 
 {{< tabsection >}}
   {{< include "../__code3_node.md" >}}  
@@ -191,7 +191,7 @@ To install all necessary dependencies, run the following command from a terminal
 
 
 
-Now that we’ve got the project all set up, we can move on to [Step 3. Data model development.](../step2)
+Now that we've got the project all set up, we can move on to [Step 3. Data model development.](../step2)
 
 <span class="hide-title-link">
 

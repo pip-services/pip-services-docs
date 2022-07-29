@@ -34,7 +34,7 @@ Pip.Services offers two types of REST services, which are defined by two differe
 
 As such, they represent two different approaches when it comes to Swagger documentation: A REST service needs a YAML file that describes its UI in order to generate its documentation, whereas a commandable service allows for automatic generation via a description of the command set or via a YAML file if the path to it is included in the configuration file. Moreover, it should be noted that an automatically-generated description always considers an HTTP method as POST.
 
-To explain these cases, we will create an app that given a name returns the phrase “Hello {name}” by calling a method named greeting. In this app, we will include the necessary elements to create a Swagger UI that documents this method. The following sections teach the steps to achieve this goal.
+To explain these cases, we will create an app that given a name returns the phrase "Hello {name}" by calling a method named greeting. In this app, we will include the necessary elements to create a Swagger UI that documents this method. The following sections teach the steps to achieve this goal.
 
 #### Pre-requisites
 
@@ -70,7 +70,7 @@ In this case, we want to document the greeting method as part of a REST service.
 
 ##### Service
 
-Our REST service is called HelloFriendService. It is defined by a class that inherits from the RestService component and has a method named greetings, which given a name, returns “Hello {name}” on a web page. 
+Our REST service is called HelloFriendService. It is defined by a class that inherits from the RestService component and has a method named greetings, which given a name, returns "Hello {name}" on a web page. 
 
 It also contains a reference to the controller and a method named register that defines the necessary elements for the Swagger UI. Its code is as follows:
 
@@ -100,7 +100,7 @@ It also contains a reference to the controller and a method named register that 
 
 ##### Configuration
 
-As we will use a process container to run the example, we need to describe this service in the configuration file. In this description, we set the Swagger’s enable field to true to specify that we want to generate a Swagger UI for the service, and we define the path to our YAML file containing the Swagger UI description.
+As we will use a process container to run the example, we need to describe this service in the configuration file. In this description, we set the Swagger's enable field to true to specify that we want to generate a Swagger UI for the service, and we define the path to our YAML file containing the Swagger UI description.
 
 {{< tabsection >}}
    {{< include "./__code3_node.md" >}}
@@ -190,7 +190,7 @@ To create a command set, we extend the CommandSet class and define our greeting 
 
 ##### Service for document 2
 
-Once our command set has been defined, we create our commandable REST service by extending the CommandableHttpService class and we link it to our controller. This service checks for a YAML file in the configuration file. If not found, it builds the Swagger UI from the command set. In our example, the configuration file doesn’t include a path to a YAML file, and the Swagger UI is generated from the command set previously defined.
+Once our command set has been defined, we create our commandable REST service by extending the CommandableHttpService class and we link it to our controller. This service checks for a YAML file in the configuration file. If not found, it builds the Swagger UI from the command set. In our example, the configuration file doesn't include a path to a YAML file, and the Swagger UI is generated from the command set previously defined.
 
 {{< tabsection >}}
    {{< include "./__code5_node.md" >}}
@@ -218,7 +218,7 @@ Once our command set has been defined, we create our commandable REST service by
 
 ##### Configuration for document 2
 
-To be able to generate a Swagger UI, we need to set the swagger’s enable field to true. Besides, as we want to document the commands defined in the command set, we declare auto as true and we define the route field that will be part of the URL for the generated Swagger UI. The example below shows this configuration.
+To be able to generate a Swagger UI, we need to set the swagger's enable field to true. Besides, as we want to document the commands defined in the command set, we declare auto as true and we define the route field that will be part of the URL for the generated Swagger UI. The example below shows this configuration.
 
 ```yaml
 - descriptor: "hello-friend:service:commandable-http1:default:1.0"

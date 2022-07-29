@@ -120,7 +120,7 @@ Note: Both methods are protected. Therefore, they must be defined in a subclass 
 
 ##### Create a queue
 
-To create a queue, this class offers the createQueue() method. This method accepts the queue’s name as input parameter. The following example shows how to use it.
+To create a queue, this class offers the createQueue() method. This method accepts the queue's name as input parameter. The following example shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code4_node.md" >}}
@@ -176,7 +176,7 @@ To delete a queue, this class offers the deleteQueue() method, which requires th
 
 ##### List all available queues
 
-To obtain a list of all available queues, this class has the readQueueNames() method. Once run, it returns a list with the queue names. If the connection doesn’t support this function, it returns an empty list. The following example shows how to use it.
+To obtain a list of all available queues, this class has the readQueueNames() method. Once run, it returns a list with the queue names. If the connection doesn't support this function, it returns an empty list. The following example shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code6_node.md" >}}
@@ -380,7 +380,7 @@ The KafkaMessageQueue component allows us to create message queues that send and
 
 ##### Create a Kafka message queue
 
-To create a queue, we need to configure it first. We can use the ConfigParams component to define the queue’s parameters, such as the topic. Additionally, we can add the connection parameters. 
+To create a queue, we need to configure it first. We can use the ConfigParams component to define the queue's parameters, such as the topic. Additionally, we can add the connection parameters. 
 
 {{< tabsection >}}
    {{< include "./__code13_node.md" >}}

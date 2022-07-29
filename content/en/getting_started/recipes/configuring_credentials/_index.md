@@ -304,7 +304,7 @@ Additionally, we can use the get method, which takes the name of the credential 
 
 #### Update
 
-There are several ways to update a parameter’s value. One of them is to use the set method for the parameter with the new value as input. For example:
+There are several ways to update a parameter's value. One of them is to use the set method for the parameter with the new value as input. For example:
 
 {{< tabsection >}}
   {{< include "./__code10_node.md" >}}
@@ -330,7 +330,7 @@ There are several ways to update a parameter’s value. One of them is to use th
   Not available  
 {{< /tabsection >}}
 
-will reset the value of the password to ‘password2’.
+will reset the value of the password to 'password2'.
 
 Another way is to use the put() method, which asks for the name of the parameter and its new value as inputs:
 
@@ -412,7 +412,7 @@ Finally, we can use the override() method, which returns a new instance of Crede
 
 #### Delete
 
-To delete a credential parameter from a CredentialParams object, we can use the remove() method, which takes the parameter’s name as input. This example explains how to use it:
+To delete a credential parameter from a CredentialParams object, we can use the remove() method, which takes the parameter's name as input. This example explains how to use it:
 
 {{< tabsection >}}
   {{< include "./__code14_node.md" >}}
@@ -526,7 +526,7 @@ or we can instantiate the store without any input parameter and use the readCred
 
 #### Adding new credentials
 
-To add new credentials to a store, we use the store() method. This method accepts the correlationId, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value “key3”.
+To add new credentials to a store, we use the store() method. This method accepts the correlationId, the identification key and a CredentialParams object containing the set of credentials as inputs. In the example below, we add a new set of credentials identified by a key with value "key3".
 
 {{< tabsection >}}
   {{< include "./__code18_node.md" >}}
@@ -582,7 +582,7 @@ The lookup() method is used to retrieve stored credentials. It takes a correlati
 
 #### Updating the credentials
 
-Credentials can be updated with the store() method. This method requires the correlationId, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to “joeve3V2”. 
+Credentials can be updated with the store() method. This method requires the correlationId, the key of the set we want to update and a CredentialParams object containing the updated parameters as inputs. In the following example, we change the value of the user to "joeve3V2". 
 
 {{< tabsection >}}
   {{< include "./__code20_node.md" >}}
@@ -608,7 +608,7 @@ Credentials can be updated with the store() method. This method requires the cor
   Not available  
 {{< /tabsection >}}
 
-Alternatively, we can change all the stored values with the readCredentials() method. In this case, all the stored sets will be deleted and the new ones stored. In the example below, we replace the set identified by “key1” with new values, delete the sets identified by “key2” and “key3”, and add a new set identified by “key4”.
+Alternatively, we can change all the stored values with the readCredentials() method. In this case, all the stored sets will be deleted and the new ones stored. In the example below, we replace the set identified by "key1" with new values, delete the sets identified by "key2" and "key3", and add a new set identified by "key4".
 
 {{< tabsection >}}
   {{< include "./__code21_node.md" >}}

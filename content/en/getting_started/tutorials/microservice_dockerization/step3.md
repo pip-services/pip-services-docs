@@ -7,13 +7,13 @@ linkTitle: "Step 4. Package"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Once a microservice has successfully passed the previous “build” and “test” stages, it is ready to be published and tested as a part of the system. But before we can do this, we need to correctly package it into a Docker container.
+Once a microservice has successfully passed the previous "build" and "test" stages, it is ready to be published and tested as a part of the system. But before we can do this, we need to correctly package it into a Docker container.
 
-When creating containers, we follow the “Build once - run everywhere” principle. What this means is that the container is created just once. After being created, this container goes through the stages of system testing in various environments and eventually gets deployed into production - all without any modifications.
+When creating containers, we follow the "Build once - run everywhere" principle. What this means is that the container is created just once. After being created, this container goes through the stages of system testing in various environments and eventually gets deployed into production - all without any modifications.
 
-Furthermore, a flexibly configurable container can easily be included in various systems, even those that use a wide array of system services, databases, and communication protocols. This is achieved by building and configuring microservices out of loosely coupled components using the container’s configuration. Environment variables are often used for configuration and have great support in Docker. To do this, developers need to envisage all possible configuration combinations, include the required components into the container, open up ports, and then perform configuration via environment variables.
+Furthermore, a flexibly configurable container can easily be included in various systems, even those that use a wide array of system services, databases, and communication protocols. This is achieved by building and configuring microservices out of loosely coupled components using the container's configuration. Environment variables are often used for configuration and have great support in Docker. To do this, developers need to envisage all possible configuration combinations, include the required components into the container, open up ports, and then perform configuration via environment variables.
 
-We’ll be creating a separate container for packaging our microservice and defining its build instructions in a file named **Dockerfile**:
+We'll be creating a separate container for packaging our microservice and defining its build instructions in a file named **Dockerfile**:
 
 {{< tabsection >}}
   {{< include "../__code3_node.md" >}}  
@@ -39,9 +39,9 @@ We’ll be creating a separate container for packaging our microservice and defi
   Not available  
 {{< /tabsection >}}
 
-Once again, this script is pretty similar to the ones we’ve already written. What’s new in this script is the indication of which file needs to be used to start the application, as well as what port we need to expose to make the service available from outside the container (EXPOSE "8080:8080").
+Once again, this script is pretty similar to the ones we've already written. What's new in this script is the indication of which file needs to be used to start the application, as well as what port we need to expose to make the service available from outside the container (EXPOSE "8080:8080").
 
-We checked that our microservice is functional in the previous “testing” step, but this doesn’t guarantee that the container that the microservice is running in will work as needed. To check this, we can create a special Docker Compose environment. Place the following code into a file named **docker-compose.yml**:
+We checked that our microservice is functional in the previous "testing" step, but this doesn't guarantee that the container that the microservice is running in will work as needed. To check this, we can create a special Docker Compose environment. Place the following code into a file named **docker-compose.yml**:
 
 ```yml
 version: '3.3'
@@ -105,7 +105,7 @@ exit $exitCode
 
 This script performs an automatic build of the Docker image and then runs and checks it from within the Docker Compose environment. The Docker Compose environment allows us to run our microservice alongside its dependencies, while keeping them all in separate containers. The script then runs the microservice and, if all is well, the service can be checked by requesting the http://localhost:8080/heartbeat URL from a browser. This URL returns and displays the current time in the JSON format, which indicates that the application is up and running in the container. All build results will be outputted to the console. Once the container tests are done, the containers are stopped.
 
-This finishes the process of preparing a microservice container for publishing. When you’re ready, continue on to [Step 5](../step4) to publish the image to a Docker registry.
+This finishes the process of preparing a microservice container for publishing. When you're ready, continue on to [Step 5](../step4) to publish the image to a Docker registry.
 
 <span class="hide-title-link">
 

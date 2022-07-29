@@ -148,7 +148,7 @@ As we can see, the _save() method was called automatically. Additionally, the nu
 
 We can also show the counters on our console. This can be done with the LogCounters class, which can be used to create performance counters that periodically dump the obtained measurements to a logger.
 
-Containers consider LogCounters by default. Once we create a container, the container’s factory will create a LogCounters component that uses the ConsoleLogger. Thus, all metrics defined within a component will reflect the measured values on console.
+Containers consider LogCounters by default. Once we create a container, the container's factory will create a LogCounters component that uses the ConsoleLogger. Thus, all metrics defined within a component will reflect the measured values on console.
 
 In our next example, we use the LogCounters class associated with the ConsoleLogger class. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
      
@@ -180,7 +180,7 @@ Which, after running, produces the following results:
      
  ![figure 4](./figure4.png)
  
-As we can see, the main difference with the previous example is the presence of counters’ information on our console. Otherwise, the results are the same.
+As we can see, the main difference with the previous example is the presence of counters' information on our console. Otherwise, the results are the same.
  
 ##### NullCounters
      

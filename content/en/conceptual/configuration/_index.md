@@ -19,4 +19,4 @@ In this tutorial you will learn how to create yml configuration files. First, we
 
 ### [Configurations](configurations)
 
-In this tutorial, we will see how to create configurations using the ConfigParams class, and how to read those configurations when they contain a parameter called “name” or “id”, and when they have an “options” section.
+In this tutorial, we will see how to create configurations using the ConfigParams class, and how to read those configurations when they contain a parameter called "name" or "id", and when they have an "options" section.

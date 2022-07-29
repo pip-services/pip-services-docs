@@ -125,7 +125,7 @@ Once we have an instance of a lock, we can configure the timeout (milliseconds) 
 
 #### Lock acquisition
 
-Once created, a lock can be acquired through the acquireLock() method. This method accepts the correlationId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the correlationId equal to “123”, a key with the value “mykey”, and we set both timeouts at 1000 milliseconds:
+Once created, a lock can be acquired through the acquireLock() method. This method accepts the correlationId, a key that identifies the lock, a lock timeout (milliseconds), and a lock acquisition timeout (milliseconds) as inputs. In the following example, we define the correlationId equal to "123", a key with the value "mykey", and we set both timeouts at 1000 milliseconds:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -215,7 +215,7 @@ And, after running the above code, we obtain the following results:
 
 ### NullLock
 
-This component represents a dummy lock that produces no real results. As such, it can be used in testing or in situations where a lock is required but needs to be disabled. It should be noted that this class doesn’t contain a configure() method. 
+This component represents a dummy lock that produces no real results. As such, it can be used in testing or in situations where a lock is required but needs to be disabled. It should be noted that this class doesn't contain a configure() method. 
 
 
 #### Pre-requisites
@@ -276,11 +276,11 @@ To create a NullLock, we need to instantiate it. The following command shows how
 
 #### Lock acquisition and release
 
-The Null lock has the acquireLock() and releaseLock() methods. These methods can be called in the same manner as they are called by the MemoryLock class. The only difference is that they actually don’t acquire or release any lock but only simulate these operations.
+The Null lock has the acquireLock() and releaseLock() methods. These methods can be called in the same manner as they are called by the MemoryLock class. The only difference is that they actually don't acquire or release any lock but only simulate these operations.
 
 #### Example
 
-The following example replaces the MemoryLock used in the previous example with a NullLock. Thus, the locking is only simulated and doesn’t affect any part of the program.
+The following example replaces the MemoryLock used in the previous example with a NullLock. Thus, the locking is only simulated and doesn't affect any part of the program.
 
 {{< tabsection >}}
   {{< include "./__code9_node.md" >}}
@@ -314,5 +314,5 @@ Which, after running, produces the following outcome:
 
 In this tutorial, we have learned how to use the MemoryLock and NullLock components. First, we saw that the first component allows us to create a lock that can be used to synchronize the execution of a process using shared memory. Then, we saw how to create, acquire, and release this kind of lock and an example of how to apply this component.
 
-Finally, we learned that the NullLock is a dummy component that only simulates the behavior of a lock. Thus, we replaced the MemoryLock in the previous example with a NullLock and saw that the main difference is that the latter doesn’t affect the execution of the program.
+Finally, we learned that the NullLock is a dummy component that only simulates the behavior of a lock. Thus, we replaced the MemoryLock in the previous example with a NullLock and saw that the main difference is that the latter doesn't affect the execution of the program.
 

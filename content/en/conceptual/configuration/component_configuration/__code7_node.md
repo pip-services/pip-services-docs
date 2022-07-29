@@ -1,5 +1,5 @@
 
-See: [Commons module’s](../../../toolkit_api/node/commons)
+See: [Commons module's](../../../toolkit_api/node/commons)
 
 ```typescript
 export class DataController implements IConfigurable {

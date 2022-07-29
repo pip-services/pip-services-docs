@@ -15,6 +15,6 @@ description: >
 ### Classes
 
 #### [MemcachedLock](memcached_lock)
-Distributed lock that is implemented based on Memcached’s caching service.
+Distributed lock that is implemented based on Memcached's caching service.
 
 </div>

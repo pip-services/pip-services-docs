@@ -37,6 +37,6 @@ Class used to configure a component residing inside a container.
 Class used to create a container configuration as a list of component configurations.
 
 #### [ContainerConfigReader](container_config_reader)
-Class used to read a container’s configuration from a JSON or YAML file.  
+Class used to read a container's configuration from a JSON or YAML file.  
     
 </div>

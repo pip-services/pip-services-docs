@@ -1,6 +1,6 @@
 
 ```python
-# Step 1 – Create a timer, the Jobs service’s client,  and a type for the job/task being executed
+# Step 1 – Create a timer, the Jobs service's client,  and a type for the job/task being executed
 __timer = FixedRateTimer()
 __jobs_client: IJobsClientV1 = None
 __job_type = "AnalysisOfNewFiles"

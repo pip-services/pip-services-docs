@@ -8,9 +8,9 @@ gitUrl: "https://github.com/pip-services-samples"
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-Before we integrate our new facade with the actual system, we should put it through its paces and thoroughly test it. So let’s develop a set of tests and helper elements for testing all of the operations registered in the facade. We’ll start off by creating a set of helper classes. One will test our dependencies, another will test how well the facade works with users, and the last one will contain a set of test users. All of these files will be placed in the folder **/test/fixtures**.
+Before we integrate our new facade with the actual system, we should put it through its paces and thoroughly test it. So let's develop a set of tests and helper elements for testing all of the operations registered in the facade. We'll start off by creating a set of helper classes. One will test our dependencies, another will test how well the facade works with users, and the last one will contain a set of test users. All of these files will be placed in the folder **/test/fixtures**.
 
-The file for testing dependencies will be called **TestReferences** and will allow us to test how well the facade is able to work with the microservices it depends on. This file’s code is listed below:
+The file for testing dependencies will be called **TestReferences** and will allow us to test how well the facade is able to work with the microservices it depends on. This file's code is listed below:
 
 {{< tabsection >}}
   {{< include "../__code9_node.md" >}}  
@@ -36,7 +36,7 @@ The file for testing dependencies will be called **TestReferences** and will all
   Not available  
 {{< /tabsection >}}
 
-Now, let’s create a file with a test client, which will help us test our user and session related operations. Place the code below into a file named **RestClientTest**:
+Now, let's create a file with a test client, which will help us test our user and session related operations. Place the code below into a file named **RestClientTest**:
 
 {{< tabsection >}}
   {{< include "../__code10_node.md" >}}  

@@ -117,7 +117,7 @@ We can cache a value by using the store() method. This method has four input par
 
 #### Retrieve
 
-To retrieve a cached value from memory, we can use the retrieve() method, which takes the correlation_id and the cached value’s key as input parameters. The code below shows how to use it.
+To retrieve a cached value from memory, we can use the retrieve() method, which takes the correlation_id and the cached value's key as input parameters. The code below shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code4_node.md" >}}
@@ -289,7 +289,7 @@ To retrieve a cached value, we use the retrieve() method. This method takes two 
 
 #### Remove
 
-To remove a cached value, we can use the remove() method. This method asks for two input parameters, namely the correlation_id and the cached value’s key. The following example shows how to use it.
+To remove a cached value, we can use the remove() method. This method asks for two input parameters, namely the correlation_id and the cached value's key. The following example shows how to use it.
 
 {{< tabsection >}}
    {{< include "./__code10_node.md" >}}
@@ -317,5 +317,5 @@ To remove a cached value, we can use the remove() method. This method asks for t
 
 ### Wrapping up
 
-In this tutorial, we have seen how to cache a value for later use. First, we saw how to use the MemoryCache class, which provides a set of methods to store, retrieve and remove a value from memory. Then, we saw the NullCache class, which has the same methods as the MemoryCache class, but in practice doesn’t cache any value and only works as a dummy instrument.
+In this tutorial, we have seen how to cache a value for later use. First, we saw how to use the MemoryCache class, which provides a set of methods to store, retrieve and remove a value from memory. Then, we saw the NullCache class, which has the same methods as the MemoryCache class, but in practice doesn't cache any value and only works as a dummy instrument.
 

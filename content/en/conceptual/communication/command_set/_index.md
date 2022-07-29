@@ -122,7 +122,7 @@ In this section, we will learn how to add commands to a command set, and how to 
 
 #### Adding a command
 
-We can add a command to the set with the add_command() method. The following example shows how to add a command that, once executed, prints ‘command 1’.
+We can add a command to the set with the add_command() method. The following example shows how to add a command that, once executed, prints 'command 1'.
 
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}

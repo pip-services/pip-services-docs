@@ -30,7 +30,7 @@ When using Pip.Services, a good programming practice is to use an external entit
 For this, we will first see the main characteristics and methods of the References component. Then, we will explain how this component is used in the example provided in the Prometheus tutorial and how it helps with the communication between different components. To conclude, we will summarize the learned concepts.
 
 ### The References component
-The References component is available via the Commons module. It’s used to store information on registered components and to pass it to other components when requested.
+The References component is available via the Commons module. It's used to store information on registered components and to pass it to other components when requested.
 
 #### Pre-requisites
 To use this component, we must first import it. This can be done with the following command:
@@ -441,9 +441,9 @@ This method removes all component references that match a specified locator. For
 
 
 ### Example 1
-In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsService object that was used to create a webpage containing the counters’ information under /metrics.
+In order to explain how the References component can help us to create communication channels for different components, we will use the example created in the Prometheus tutorial. There, we created a custom component named MyComponentA, a PrometheusCounters component that was used to create different counters, and a PrometheusMetricsService object that was used to create a webpage containing the counters' information under /metrics.
 
-In the tutorial’s example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
+In the tutorial's example, these three components are added to the References object via the setReferences() method. When needed, they are called via a get method. The figure below summarizes this structure. 
 
 ![figure 1](./figure1.svg)
 
@@ -555,7 +555,7 @@ And the **PrometheusMetricsService** component obtains the context information v
 ### Example 2
 An important advantage of Pip.Services is that once we have a set of references, we can define from general to specific queries. 
 
-For example, let’s assume that we have created the following References object:
+For example, let's assume that we have created the following References object:
 
 
 {{< tabsection >}}
@@ -586,7 +586,7 @@ Then, we can generate different types of queries, such as:
 
 #### a.	Get all service objects
 
-If we want to obtain all objects of a specific type, such as all our service objects, we can create this query by specifying the name of the type and considering all other fields generic. Generic fields are specified by using a star to indicate “any”. For example, to obtain the two services, we can do the following query:
+If we want to obtain all objects of a specific type, such as all our service objects, we can create this query by specifying the name of the type and considering all other fields generic. Generic fields are specified by using a star to indicate "any". For example, to obtain the two services, we can do the following query:
 
 
 {{< tabsection >}}
@@ -642,7 +642,7 @@ The Reference object also allows us to work with several versions of a component
 {{< /tabsection >}}
 
 #### c.	Get all components in a group
-If we need to obtain all the components in a group, we can specify the group’s name and consider all the other fields generic. Thus, if we want to obtain the five objects stored in the “pip-services” group, we can do:
+If we need to obtain all the components in a group, we can specify the group's name and consider all the other fields generic. Thus, if we want to obtain the five objects stored in the "pip-services" group, we can do:
 
 
 {{< tabsection >}}

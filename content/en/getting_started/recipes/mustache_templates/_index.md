@@ -21,11 +21,11 @@ description: >-
   </tr>
   <tr>
     <td>template</td>
-    <td>MustacheTemplate ‘s property used to create templates.</td>
+    <td>MustacheTemplate 's property used to create templates.</td>
   </tr>
   <tr>
     <td>evaluate</td>
-    <td>MustacheTemplate ‘s method used to validate Mustache templates.</td>
+    <td>MustacheTemplate 's method used to validate Mustache templates.</td>
   </tr>
  </table>
 
@@ -153,9 +153,9 @@ Which produces the following output:
 
 ##### b)	Conditional
 
-To create a conditional template, we use the #if helper. An example of its usage will be a template that creates the message “Hello, (Name)”. The variable used has two fields namely name and exclamation. The last one represents a Boolean value which if it is set to true, the message will show an added exclamation mark. 
+To create a conditional template, we use the #if helper. An example of its usage will be a template that creates the message "Hello, (Name)". The variable used has two fields namely name and exclamation. The last one represents a Boolean value which if it is set to true, the message will show an added exclamation mark. 
 
-**Note**: In general, any value that is interpreted by a specific language as false when the "If" operator is executed will be interpreted as false. Otherwise, it is considered true. For example, in Python, false values are None, False, 0, and ‘’. Node.js adds an empty list to them.
+**Note**: In general, any value that is interpreted by a specific language as false when the "If" operator is executed will be interpreted as false. Otherwise, it is considered true. For example, in Python, false values are None, False, 0, and ''. Node.js adds an empty list to them.
 
 The following example shows how to create a conditional template:
 

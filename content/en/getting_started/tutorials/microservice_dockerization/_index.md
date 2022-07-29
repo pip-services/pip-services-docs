@@ -18,7 +18,7 @@ The scripts used in this tutorial are meant to be used by developers, as well as
 
 ### Creating a dockerized microservice
 
-To make it easier to follow along, we’ve broken up this tutorial into the following steps:
+To make it easier to follow along, we've broken up this tutorial into the following steps:
 
 - [Step 1. Setting up the environment](step0)
 - [Step 2. Building a microservice](step1)

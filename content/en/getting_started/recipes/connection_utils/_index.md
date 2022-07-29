@@ -66,7 +66,7 @@ In order to use these utilities, we need to import them first. The following com
 
 ### Utility # 1: composeUri
 
-The composeUri() method creates a URI based on the information given via a ConfigParams object. It also accepts default values for protocol and port, which are used when the ConfigParams object doesn’t provide this information. 
+The composeUri() method creates a URI based on the information given via a ConfigParams object. It also accepts default values for protocol and port, which are used when the ConfigParams object doesn't provide this information. 
 
 The syntax of this command is
 

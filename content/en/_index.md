@@ -115,7 +115,7 @@ This guide will help you to learn Pip.Services and to develop your own microserv
     <div class="card-body">
       <h5 class="card-title"><b>Getting Started</b></h5>
       <p class="card-text">
-        So, let’s start developing microservices using the Pip.Services toolkit.
+        So, let's start developing microservices using the Pip.Services toolkit.
       </p>
       <a href="getting_started" class="stretched-link"></a>
     </div>

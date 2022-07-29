@@ -264,7 +264,7 @@ Before using it, we need to import this class. The following command shows how t
 
 #### Component creation
 
-To create a lock, we need to create an instance of this class and configure it with our database’s connection parameters. The following example connects to a Memcached store located in our machine and through the default port 11211.
+To create a lock, we need to create an instance of this class and configure it with our database's connection parameters. The following example connects to a Memcached store located in our machine and through the default port 11211.
 
 {{< tabsection >}}
   {{< include "./__code9_node.md" >}}

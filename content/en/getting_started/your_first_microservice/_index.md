@@ -8,7 +8,7 @@ weight: 1
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 
-So, let’s start developing microservices using the Pip.Services toolkit. As a simple example, we will make a Hello World microservice, which will greet you in response to your request. The communication protocol will be HTTP REST.
+So, let's start developing microservices using the Pip.Services toolkit. As a simple example, we will make a Hello World microservice, which will greet you in response to your request. The communication protocol will be HTTP REST.
 
 The microservice is structurally made up of these components:
 
@@ -19,16 +19,16 @@ The microservice is structurally made up of these components:
 
 ### Step 1. Environment setup
 
-Before we can start writing-up some microservices, we’ll need to install:
+Before we can start writing-up some microservices, we'll need to install:
 
 #### Compiler and IDE
 
-First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
+First and foremost - we'll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
 
 {{< tabsection isMarkdown=true >}}
 
-For working with the Node.js programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Node.js from their official site https://nodejs.org/en/download/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+For working with the Node.js programming language, you'll need to perform its installation and setup the environment. To do this, download and install Node.js from their official site https://nodejs.org/en/download/ . Select the download that corresponds to the operating system you're using, and follow the installation instructions listed on their site.
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
@@ -37,7 +37,7 @@ node -version
 ```
 
 If everything was installed successfully, the screen will display the latest version of the Node.js programming language.
-We’ll be needing a few additional instruments - use the following commands to install them as well:
+We'll be needing a few additional instruments - use the following commands to install them as well:
 
 ```bash
 # Install typescript compiler
@@ -54,9 +54,9 @@ npm install mocha -g
 
 {{< tabsection isMarkdown=true >}}
 
-First and foremost - we’ll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
+First and foremost - we'll need a compiler for your programming language of choice, as well as some sort of code editor. In our examples, we usually use Visual Studio Code, but any fitting IDE will do.
 
-For working with the .NET programming language, you’ll need to perform its installation and setup the environment. To do this, download and install .NET from the official site, as well as the following packages:
+For working with the .NET programming language, you'll need to perform its installation and setup the environment. To do this, download and install .NET from the official site, as well as the following packages:
 
 Visual Studio 2015 Professional or Community Edition: https://www.visualstudio.com
 
@@ -66,7 +66,7 @@ Core .NET SDK with Visual Studio extensions: https://www.microsoft.com/net/core
 
 {{< tabsection isMarkdown=true >}}
 
-For working with the Go programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Go from their official site  https://golang.org/dl/ . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+For working with the Go programming language, you'll need to perform its installation and setup the environment. To do this, download and install Go from their official site  https://golang.org/dl/ . Select the download that corresponds to the operating system you're using, and follow the installation instructions listed on their site.
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
@@ -80,7 +80,7 @@ If everything was installed successfully, the screen will display the latest ver
 
 {{< tabsection isMarkdown=true >}}
 
-For working with the Dart programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Dart from their official site https://dart.dev/get-dart#install. Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+For working with the Dart programming language, you'll need to perform its installation and setup the environment. To do this, download and install Dart from their official site https://dart.dev/get-dart#install. Select the download that corresponds to the operating system you're using, and follow the installation instructions listed on their site.
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
@@ -91,7 +91,7 @@ dart --version
 
 {{< tabsection isMarkdown=true >}}
 
-For working with the Python programming language, you’ll need to perform its installation and setup the environment. To do this, download and install Python from their [official site](https://www.python.org/downloads/) . Select the download that corresponds to the operating system you’re using, and follow the installation instructions listed on their site.
+For working with the Python programming language, you'll need to perform its installation and setup the environment. To do this, download and install Python from their [official site](https://www.python.org/downloads/) . Select the download that corresponds to the operating system you're using, and follow the installation instructions listed on their site.
 
 Once installed, check that the installation was completed successfully by running the following command from your console:
 
@@ -293,7 +293,7 @@ public async greeting(name) {
   }
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```typescript
 configure(config) {
@@ -301,7 +301,7 @@ configure(config) {
 }
 ```
 
-Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
 # Controller
@@ -348,7 +348,7 @@ public async Task<string> GreetingAsync(string name){
 }
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “_default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "_default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```cs
 public void Configure(ConfigParams config){
@@ -356,7 +356,7 @@ public void Configure(ConfigParams config){
 }
 ```
 
-Now, the parameters that are read by the microservice from the configuration file will be passed to the “Configure” method of the corresponding component. Here’s an example of a configuration:
+Now, the parameters that are read by the microservice from the configuration file will be passed to the "Configure" method of the corresponding component. Here's an example of a configuration:
 
 ```yml
 # Controller
@@ -401,7 +401,7 @@ func (c *HelloWorldController) Greeting(name string) (result string, err error) 
 }
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```go
 func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {	
@@ -409,7 +409,7 @@ func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {
 }
 ```
 
-Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
 # Controller
@@ -461,7 +461,7 @@ Future<String> greeting(name) async{
 }
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```dart
 void configure(config) {
@@ -469,7 +469,7 @@ void configure(config) {
 }
 ```
 
-Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
 # Controller
@@ -513,14 +513,14 @@ def greeting(name):
     return f"Hello, {name if name is not None else self.__defaultName} !"
 ```
 
-To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter “__default_name”. To get the configuration, the component must implement the interface “IConfigurable” with the method “configure”.
+To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "__default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```python
 def configure(config):        
     self.__default_name = config.get_as_string_with_default("default_name", self.__default_name)
 ```
 
-Parameters will be read by the microservice from the configuration file and passed to the “configure” method of the corresponding component. Here’s an example of the configuration:
+Parameters will be read by the microservice from the configuration file and passed to the "configure" method of the corresponding component. Here's an example of the configuration:
 
 ```yml
 # Controller
@@ -566,7 +566,7 @@ One of the most popular ways of transferring data between microservices is using
 class HelloWorldRestService extends rpc.RestService
 ```
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+Next, we'll need to register the REST operations that we'll be using in the class's register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the controller's "greeting" method, and returns the generated result to the client.
 
 ```typescript
 public register() {
@@ -582,7 +582,7 @@ public register() {
 }
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the dependency resolver with a name of “controller”.
+To get a reference to the controller, we'll add its descriptor to the dependency resolver with a name of "controller".
 
 ```typescript
 constructor() {
@@ -600,7 +600,7 @@ constructor() {
 public class HelloWorldRestService : RestService
 ```
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+Next, we'll need to register the REST operations that we'll be using in the class's register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the controller's "greeting" method, and returns the generated result to the client.
 
 ```cs
 public override void Register(){    
@@ -615,7 +615,7 @@ public override void Register(){
 }
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the “_dependencyResolver” with a name of “controller”.
+To get a reference to the controller, we'll add its descriptor to the "_dependencyResolver" with a name of "controller".
 
 ```cs
 public HelloWorldRestService(){    
@@ -635,7 +635,7 @@ type HelloWorldRestService struct {
 }
 ```
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s Register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+Next, we'll need to register the REST operations that we'll be using in the class's Register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the controller's "greeting" method, and returns the generated result to the client.
 
 ```go
 func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
@@ -649,7 +649,7 @@ func (c *HelloWorldRestService) Register() {
 }
 ```
 
-To get a reference to the controller, add its handle to the DependencyResolver under the name “controller”. And for the registration mechanism to work correctly, you must pass a pointer to RestService on the component that implements the IRegistrable interface. Let's do it in the component constructing method:
+To get a reference to the controller, add its handle to the DependencyResolver under the name "controller". And for the registration mechanism to work correctly, you must pass a pointer to RestService on the component that implements the IRegistrable interface. Let's do it in the component constructing method:
 
 ```go
 func NewHelloWorldRestService() *HelloWorldRestService {
@@ -670,7 +670,7 @@ func NewHelloWorldRestService() *HelloWorldRestService {
 class HelloWorldRestService extends rpc.RestService
 ```
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+Next, we'll need to register the REST operations that we'll be using in the class's register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the controller's "greeting" method, and returns the generated result to the client.
 
 ```dart
   @override
@@ -682,7 +682,7 @@ Next, we’ll need to register the REST operations that we’ll be using in the 
   }
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+To get a reference to the controller, we'll add its descriptor to the _dependency_resolver with a name of "controller".
 
 ```dart
   HelloWorldRestService() : super() {
@@ -701,7 +701,7 @@ To get a reference to the controller, we’ll add its descriptor to the _depende
 class HelloWorldRestService(RestService):
 ```
 
-Next, we’ll need to register the REST operations that we’ll be using in the class’s register method. In this microservice, we’ll only be needing to implement a single GET command: “/greeting”. This command receives a “name” parameter, calls the controller’s “greeting” method, and returns the generated result to the client.
+Next, we'll need to register the REST operations that we'll be using in the class's register method. In this microservice, we'll only be needing to implement a single GET command: "/greeting". This command receives a "name" parameter, calls the controller's "greeting" method, and returns the generated result to the client.
 
 ```python
 def register(self):
@@ -715,7 +715,7 @@ def greeting(self, name):
 
 ```
 
-To get a reference to the controller, we’ll add its descriptor to the _dependency_resolver with a name of “controller”.
+To get a reference to the controller, we'll add its descriptor to the _dependency_resolver with a name of "controller".
 
 ```python
 def __init__(self):
@@ -736,7 +736,7 @@ def __init__(self):
 
 Using this descriptor, the base class will be able to find a reference to the controller during component linking. Check out [The Locator Pattern](https://www.geeksforgeeks.org/service-locator-pattern/) for more on how this mechanism works.
 
-We also need to set a base route in the service’s constructor using the _base_route property. As a result, the microservice’s full REST request will look something like:
+We also need to set a base route in the service's constructor using the _base_route property. As a result, the microservice's full REST request will look something like:
 
 ```GET /hello_world/greeting?name=John```
 
@@ -941,7 +941,7 @@ When a microservice is being populated by components based on the configuration 
 class HelloWorldServiceFactory extends components.Factory
 ```
 
-Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+Next, in the factory's constructor, we'll be registering descriptors and their corresponding component types.
 
 ```typescript
 constructor() {
@@ -959,7 +959,7 @@ constructor() {
 
 For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
-Full listing of the factory’s code found in the file:
+Full listing of the factory's code found in the file:
 
 **‍/HelloWorldServiceFactory.js**
 
@@ -996,7 +996,7 @@ exports.HelloWorldServiceFactory = HelloWorldServiceFactory
 public class HelloWorldServiceFactory : Factory
 ```
 
-The factory’s constructor is used to register descriptors and their corresponding component types.
+The factory's constructor is used to register descriptors and their corresponding component types.
 
 ```cs
 public HelloWorldServiceFactory(){    
@@ -1007,7 +1007,7 @@ public HelloWorldServiceFactory(){
 
 For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
-Full listing of the factory’s code found in the file:
+Full listing of the factory's code found in the file:
 
 **‍/HelloWorldServiceFactory.cs**
 
@@ -1041,7 +1041,7 @@ type HelloWorldServiceFactory struct {
 }
 ```
 
-Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+Next, in the factory's constructor, we'll be registering descriptors and their corresponding component types.
 
 ```go
 func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
@@ -1061,7 +1061,7 @@ func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
 
 For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
-Full listing of the factory’s code found in the file:
+Full listing of the factory's code found in the file:
 
 **‍/HelloWorldServiceFactory.go**
 
@@ -1099,7 +1099,7 @@ func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
 class HelloWorldServiceFactory extends Factory
 ```
 
-Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+Next, in the factory's constructor, we'll be registering descriptors and their corresponding component types.
 
 ```dart
 HelloWorldServiceFactory() : super() {
@@ -1113,7 +1113,7 @@ HelloWorldServiceFactory() : super() {
 
 For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
-The full listing of the factory’s code can found in the file:
+The full listing of the factory's code can found in the file:
 
 **‍/lib/src/HelloWorldServiceFactory.dart**
 
@@ -1141,7 +1141,7 @@ class HelloWorldServiceFactory extends Factory {
 class HelloWorldServiceFactory(Factory):
 ```
 
-Next, in the factory’s constructor, we’ll be registering descriptors and their corresponding component types.
+Next, in the factory's constructor, we'll be registering descriptors and their corresponding component types.
 
 ```python
 def __init__(self):
@@ -1155,7 +1155,7 @@ def __init__(self):
 
 For more info on how this works, be sure to check out [Process Container](../../conceptual/containers/process_container).
 
-A full listing of the factory’s code can be found in the file:
+A full listing of the factory's code can be found in the file:
 
 **‍/HelloWorldServiceFactory.py**
 
@@ -1187,11 +1187,11 @@ class HelloWorldServiceFactory(Factory):
 {{< /tabsection >}}
 
 ### Step 6. Container
-Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we’ll be running our example microservice as a system process. To do this, we’ll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
+Last but not least, our microservice needs a container component. This component creates all of the other components, links them with one another, and controls their life cycle. Although there exist many different ways of running a microservice in a container (regular classes, serverless functions, serlets, etc), we'll be running our example microservice as a system process. To do this, we'll make the HelloWorldProcess extend the ProcessContainer class of the Pip.Services toolkit.
 
-Although containers can be populated by components manually, we’ll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yaml file. All we have left to do is register the factory for creating components from their descriptors.
+Although containers can be populated by components manually, we'll be using dynamic configuration to do this. By default, ProcessContainer reads the configuration from an external config.yaml file. All we have left to do is register the factory for creating components from their descriptors.
 
-The full listing of the container’s code can be found in the file:
+The full listing of the container's code can be found in the file:
 
 {{< tabsection isMarkdown=true >}}
 
@@ -1386,10 +1386,10 @@ The dynamic configuration is defined in the file:
   Not available  
 {{< /tabsection >}}
 
-As you may have noticed, more than half of the components are being taken from Pip.Services and used “right out of the box”. This significantly expands our microservice’s capabilities, with minimal effort on our part.
+As you may have noticed, more than half of the components are being taken from Pip.Services and used "right out of the box". This significantly expands our microservice's capabilities, with minimal effort on our part.
 
 ### Step 7. Run and test the microservice
-We’ll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
+We'll need a special file to run the microservice. All this file does is creates a container instance and runs it with the parameters provided from the command line.
 
 {{< tabsection isMarkdown=true >}}
 
@@ -1578,7 +1578,7 @@ Test the microservice by requesting the following URL in a browser:
 
 ```http://localhost:8080/hello_world/greeting?name=John```
 
-If all’s well, you should get the following string as a result:
+If all's well, you should get the following string as a result:
 
 ```Hello, John!```
 

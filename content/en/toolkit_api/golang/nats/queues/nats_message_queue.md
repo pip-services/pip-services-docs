@@ -129,7 +129,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
 
 #### OnMessage
-Checks if the message is not nil. If this is the case, it deserializes and sends the message to the receiver if it’s set. Otherwise, puts the message into the queue.
+Checks if the message is not nil. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, puts the message into the queue.
 
 > (c *NatsMessageQueue) OnMessage(msg *nats.Msg)
 
@@ -178,7 +178,7 @@ Receives an incoming message and removes it from the queue.
 
 > (c *NatsMessageQueue) Receive(correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
-- **correlationId**: string - checks if the message comes from the right topic. If this is the case, it deserializes and sends the message to the receiver if it’s set. Otherwise, it puts the message into the queue.
+- **correlationId**: string - checks if the message comes from the right topic. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, it puts the message into the queue.
 - **waitTimeout**: time.Duration - timeout (milliseconds) to wait for a message to come.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
 

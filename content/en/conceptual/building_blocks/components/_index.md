@@ -25,7 +25,7 @@ The component interfaces are optional, and can be used in any combination. They 
 
 - The IExecutable interface allows components to process incoming calls by implementing an execute method. And the INotifiable interface receives asynchronous notifications via the notify method.
 
-- The ICleanable method is used to clear a component’s state. That can be handy in situations like resetting components in automated tests.
+- The ICleanable method is used to clear a component's state. That can be handy in situations like resetting components in automated tests.
 
 A component that implements all standard interfaces looks the following way:
 

@@ -20,6 +20,6 @@ This class provides two methods: one to grant access to everyone and another to 
 This class provides access granting methods to owners and administrators.
 
 #### [RoleAuthorizer](role_authorizer)
-This class provides methods to check on a user’s roles
+This class provides methods to check on a user's roles
 
 </div>

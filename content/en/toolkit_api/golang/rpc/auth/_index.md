@@ -20,6 +20,6 @@ This class provides two methods: one to grant access to everyone and another to 
 This class provides access granting methods to owners and administrators.
 
 #### [RoleAuthManager](role_auth_manager)
-This class provides methods to check on a user’s roles
+This class provides methods to check on a user's roles
 
 </div>

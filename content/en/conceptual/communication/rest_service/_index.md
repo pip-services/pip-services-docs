@@ -54,7 +54,7 @@ In order to create our REST service, we need to import the RestService class, wh
 
 #### REST Service
 
-First, we need to create our REST service. For this, we will create a class that inherits the Pip. Services’ component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
+First, we need to create our REST service. For this, we will create a class that inherits the Pip. Services' component RestService, which has different methods that can be used to handle REST services. The most important one is configure, and we will use it to set up our microservice.
 
 In this class, we first define a method to be used as a handler. In it, we define some parameters that will help us to connect to our application . In our example, this method is called my_page and the parameters are name and message.
 
@@ -88,7 +88,7 @@ The first part of our code will look something like this:
 
 #### Configuration
 
-Now that we have our REST service defined, we will configure and run it. To configure our component, we first need to create an instance of our class and use the method configure to set up our connection protocol, host and port. As the configure method requires a ConfigParams input type, we import this class and use its method “from_tuples” to define our configuration. Lastly, we open our component. The second part of our code will look something like this:
+Now that we have our REST service defined, we will configure and run it. To configure our component, we first need to create an instance of our class and use the method configure to set up our connection protocol, host and port. As the configure method requires a ConfigParams input type, we import this class and use its method "from_tuples" to define our configuration. Lastly, we open our component. The second part of our code will look something like this:
 
 {{< tabsection >}}
    {{< include "./__code3_node.md" >}}

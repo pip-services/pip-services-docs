@@ -21,7 +21,7 @@ Imagine the following situation: you are walking through a building that has bea
 
 The Beacons microservice that we are going to be developing will consist of a number of loosely-coupled components, following the componentized microservice design. The structure of this microservice is displayed on the diagram below:
 
-![BeaconDiagram](/images/tutorials/data_microservice/beacon_diagram.png)
+![BeaconDiagram](./beacon_diagram.svg)
 
 ### Creating the data microservice
 

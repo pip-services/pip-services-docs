@@ -11,7 +11,7 @@ weight: 30
 
 Knowing how to create a client library for your microservice is almost as important as knowing how to create the microservice itself. Some people question whether or not client libraries are actually necessary, and say that it's enough to just describe the external interface and let the users of the microservice implement their own interaction protocol.
 
-![Client Library Diagram](/images/tutorials/client_library/client_library_diagram.png)
+![Client Library Diagram](./figure1.svg)
 
 We strongly recommend the use of client libraries due to the following:
 

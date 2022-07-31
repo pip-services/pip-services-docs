@@ -8,7 +8,7 @@ exclude_from_list: true
 ---
 ---
 
-### [Caching basic](caching_basic)
+### [Caching basics](caching_basic)
 Pip.Services offers two components for caching a value. The first is MemoryCache, which stores values in memory. The second is the NullCache class, which is a dummy cache that can be used to simulate caching. The next two sections explain how to use both components.
 
 ### [Memcached](memcached)

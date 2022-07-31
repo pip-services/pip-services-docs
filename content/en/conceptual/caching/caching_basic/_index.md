@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Caching basic"
-linkTitle: "Caching basic"
+title: "Basic caching"
+linkTitle: "Basic caching"
 weight: 80
 description: >-
      How to cache in memory.
@@ -34,6 +34,8 @@ Pip.Services offers several basic components for caching. One of the most import
 ### ICache
 
 This interface contains three important methods for caching namely, store(), retrieve() and remove(). As their names indicate, they can be used to store, retrieve and remove values from memory. Both components, MemoryCache and NullCache, implement this interface. The following diagram explains their relations:
+
+![figure 1](./figure1.svg)
 
 ### MemoryCache
 

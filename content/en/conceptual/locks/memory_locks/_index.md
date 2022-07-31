@@ -12,6 +12,10 @@ description: >-
 ### Key takeaways
 
 <table class="full-width-table">
+   <tr>
+    <td>ILock</td>
+    <td>Interface that defines the main methods for locks.</td>
+  </tr>
   <tr>
     <td>MemoryLock</td>
     <td>Lock used to synchronize the execution of a process using shared memory.</td>
@@ -33,7 +37,13 @@ description: >-
 
 ### Introduction
 
-This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will see the basic functionality of the MemoryLock class. Then, we will construct an example that will show how to use this type of lock. After this, we will learn what the NullLock is, how it differentiates from the MemoryLock and when to use it. At the end, we will summarize all the concepts learned.
+This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will explore the ILock interface, which must be implemented by all locks. Next, we will learn the basic functionality of the MemoryLock class, and we will construct an example that will show how to use this type of lock. After this, we will see what the NullLock is, how it differentiates from the MemoryLock and when to use it. At the end, we will summarize all the concepts learned.
+
+### ILock
+
+This interface declares the main methods that each lock must consider, which are acquireLock(), tryAcquireLock() and releaseLock(). As their names suggest, the first two methods are used to acquire a lock, while the second one is used to release an acquired lock. Both components, MemoryLock and NullLock, implement this interface. NullLock implements it directly, and MemoryLock via its parent class Lock. The following diagram summarizes their relations:
+
+![figure 1](./figure1.svg)
 
 ### MemoryLock
 
@@ -312,7 +322,8 @@ Which, after running, produces the following outcome:
 
 ### Wrapping up
 
-In this tutorial, we have learned how to use the MemoryLock and NullLock components. First, we saw that the first component allows us to create a lock that can be used to synchronize the execution of a process using shared memory. Then, we saw how to create, acquire, and release this kind of lock and an example of how to apply this component.
+In this tutorial, we have learned how to use the MemoryLock and NullLock components. First, we saw the ILock interface, which must be implemented by all locks. Next, we learned that the MemoryLock class allows us to create a lock that can be used to synchronize the execution of a process using shared memory. Then, we saw how to create, acquire, and release this type of lock and an example of how to apply this component.
 
-Finally, we learned that the NullLock is a dummy component that only simulates the behavior of a lock. Thus, we replaced the MemoryLock in the previous example with a NullLock and saw that the main difference is that the latter doesn't affect the execution of the program.
+Finally, we learned that the NullLock is a dummy component that only simulates the behavior of a lock. Thus, we replaced the MemoryLock in the previous example with a NullLock and saw that the main difference is that the latter doesn’t affect the execution of the program.
+
 

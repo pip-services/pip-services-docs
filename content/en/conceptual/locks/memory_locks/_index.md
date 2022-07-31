@@ -43,7 +43,7 @@ This tutorial will help you understand how to use the MemoryLock and NullLock co
 
 This interface declares the main methods that each lock must consider, which are acquireLock(), tryAcquireLock() and releaseLock(). As their names suggest, the first two methods are used to acquire a lock, while the second one is used to release an acquired lock. Both components, MemoryLock and NullLock, implement this interface. NullLock implements it directly, and MemoryLock via its parent class Lock. The following diagram summarizes their relations:
 
-![figure 1](./figure1.svg)
+![figure 2](./figure2.svg)
 
 ### MemoryLock
 

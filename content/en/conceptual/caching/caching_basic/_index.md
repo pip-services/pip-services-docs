@@ -1,8 +1,8 @@
 ---
 type: docs
 no_list: true
-title: "Basic caching"
-linkTitle: "Basic caching"
+title: "Caching basics"
+linkTitle: "Caching basics"
 weight: 80
 description: >-
      How to cache in memory.

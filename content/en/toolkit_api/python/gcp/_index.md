@@ -23,5 +23,5 @@ The module contains the following packages:
 
 Install the NPM package as
 ```bash
-pip install pip-services3-gcp-python
+pip install pip-services3-gcp
 ```

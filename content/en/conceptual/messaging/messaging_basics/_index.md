@@ -41,7 +41,7 @@ description: >-
 
 ### Introduction
 
-This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains the basics of this component and the necessary pre-requisites. Then, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to it, send and receive a message, and close the component. It ends by summarizing the learned points in a single program and wrapping up the concepts seen in this tutorial.
+This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains two interfaces namely, IMessageQueue and IMessageReceiver, which have to be implemented by message queues and message receivers respectively. Next, it describes the basics of the MemoryMessageQueue component and its pre-requisites. Following this, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to the queue, send and receive a message, and close the component. It ends by grouping the learned points in a single program and wrapping up the concepts seen in this tutorial.
 
 ### The MemoryMessageQueue component
 

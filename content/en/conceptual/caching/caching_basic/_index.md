@@ -14,6 +14,10 @@ description: >-
 
 <table class="full-width-table">
   <tr>
+    <td>ICache</td>
+    <td>Interface that defines caching methods.</td>
+  </tr>
+  <tr>
     <td>MemoryCache </td>
     <td>Stores values in the process memory.</td>
   </tr>
@@ -25,7 +29,11 @@ description: >-
 
 ### Introduction
 
-Pip.Services offers two components for caching a value. The first is MemoryCache, which stores values in memory. The second is the NullCache class, which is a dummy cache that can be used to simulate caching. The next two sections explain how to use both components.
+Pip.Services offers several basic components for caching. One of the most important ones is the ICache interface, which must be implemented by all cache components and defines the basic caching methods that all caches must contain. Other two basic components are the MemoryCache and NullCache classes. The first stores values in memory, and the second is a dummy cache that can be used to simulate caching. In the following sections, this tutorial explains how to use these components in detail. Other caching tools, such as Redis and Memcached, are explained in separate tutorials.
+
+### ICache
+
+This interface contains three important methods for caching namely, store(), retrieve() and remove(). As their names indicate, they can be used to store, retrieve and remove values from memory. Both components, MemoryCache and NullCache, implement this interface. The following diagram explains their relations:
 
 ### MemoryCache
 

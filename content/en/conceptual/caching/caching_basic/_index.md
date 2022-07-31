@@ -325,5 +325,5 @@ To remove a cached value, we can use the remove() method. This method asks for t
 
 ### Wrapping up
 
-In this tutorial, we have seen how to cache a value for later use. First, we saw how to use the MemoryCache class, which provides a set of methods to store, retrieve and remove a value from memory. Then, we saw the NullCache class, which has the same methods as the MemoryCache class, but in practice doesn't cache any value and only works as a dummy instrument.
+In this tutorial, we have seen how to cache a value for later use. First, we understood the ICache interface. Then, we learned how to use the MemoryCache class, which provides a set of methods to store, retrieve and remove a value from memory. Finally, we saw the NullCache class, which has the same methods as the MemoryCache class, but in practice doesn’t cache any value and only works as a dummy component.
 

@@ -59,7 +59,9 @@ The IMessageReceiver interface defines the receiveMessage() method, and must be 
 
 The diagrams below show the main relations between these interfaces and the components studied in this tutorial.
 
+
 ![figure 1](./figure1.svg)
+
 
 ### MemoryMessageQueue
 

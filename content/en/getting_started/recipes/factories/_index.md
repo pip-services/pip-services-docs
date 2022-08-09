@@ -31,29 +31,128 @@ To understand how this class works, we will use an example where we create a fac
 
 In order to create a factory, we need to import the Factory class. This can be done with the following command:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Custom component
 
 Next, we create a basic custom component. This component includes the myTask() method, which will be used later on in this tutorial. The code below shows what this class looks like.
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 #### Factory and component creation
 
 Once we have our component, we create a factory for it by defining an instance of the Factory class. Then, in order to create an instance of our custom component, we register it in the factory, and we use the factory’s create() method. The following code shows how to do this:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code3_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which, after running, produces the following outcome, confirming that an instance of MyComponent1 has been created.
+![figure 7](./figure2.jpg)
 
 Once obtained, we can use this instance, for example, by calling one of its methods:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code4_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which after running, produces the following result:
+
+![figure 3](./figure3.jpg)
 
 #### Default factories
 
 The Pip.Services toolkit contains several factories that can be used to create some common components. These factories are all subclasses of the Factory class. Among them are:
 
-![figure 2](./figure2.jpg)
+![figure 4](./figure4.jpg)
 
 Each of these factories has a set of default descriptors that can be employed to create available components. The following table shows the main default factories and their descriptors.
 
-![figure 3](./figure3.jpg)
+![figure 5](./figure5.jpg)
 
 #### Default factories and component creation
 
@@ -61,15 +160,111 @@ In order to learn how to use the toolkit’s default factories, we will create a
 
 For this, we need to import the default factory first. In addition, we need to import the Descriptor class, as we use it to locate the memory lock. These actions can be done with the following commands:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code5_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Once we have imported these two components, we create an instance of the default factory.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 And then, we create an instance of MemoryLock by using the corresponding descriptor (see table above).
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code7_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 We can verify that we have created a memory lock by checking the object’s type. The following command shows how to do this:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code8_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which after running, returns the following output:
+
+![figure 6](./figure6.jpg)
 
 ### CompositeFactory
 
@@ -81,21 +276,170 @@ In this section’s example, we will build a component that contains two factori
 
 In order to create a composite factory, we need to import the CompositeFactory class first. This can be done with the following command:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code9_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 #### Composite factory
 
 Once we have imported the base class, we can create an instance of it.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code10_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Now, we create a factory for the custom component defined in the previous example. Then, we register the component and add its factory to the composite factory. The code below shows how to do this:
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code11_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Next, we include a factory for a logger by adding its default factory.
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code12_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Once we have our composite factory with all its elements included, we can call the factory for our custom component via its descriptor and use it to create an instance of our custom component. The following code shows how this can be done:
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code13_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 Which, after running, produces the following result:
 
+![figure 7](./figure7.jpg)
+
 Similarly, we can call the logger factory and create an instance of a logger. The following code shows this step:
 
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+   Not available   
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code14_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 Which after running provides the following result that shows that an instance of a logger was created:
+
+![figure 8](./figure8.jpg)
+
 
 ### Wrapping up
 In this tutorial, we have learned how to create a factory that can be used to build a component. We have also understood how to use default factories, build a composite factory that includes one or more factories, and call any of the contained factories and create an instance of a component with it.

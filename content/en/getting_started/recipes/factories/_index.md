@@ -55,3 +55,47 @@ Each of these factories has a set of default descriptors that can be employed to
 
 ![figure 3](./figure3.jpg)
 
+#### Default factories and component creation
+
+In order to learn how to use the toolkit’s default factories, we will create a memory lock. The procedure also applies to other default factories and their components.
+
+For this, we need to import the default factory first. In addition, we need to import the Descriptor class, as we use it to locate the memory lock. These actions can be done with the following commands:
+
+
+
+Once we have imported these two components, we create an instance of the default factory.
+
+And then, we create an instance of MemoryLock by using the corresponding descriptor (see table above).
+
+We can verify that we have created a memory lock by checking the object’s type. The following command shows how to do this:
+
+Which after running, returns the following output:
+
+### CompositeFactory
+
+This component allows us to group one or more factories into one entity, and then, call the one(s) we need independently.
+
+In this section’s example, we will build a component that contains two factories namely, a factory for the custom component we created in the previous example and a factory for a logger.
+
+#### Pre-requisites
+
+In order to create a composite factory, we need to import the CompositeFactory class first. This can be done with the following command:
+
+#### Composite factory
+
+Once we have imported the base class, we can create an instance of it.
+
+Now, we create a factory for the custom component defined in the previous example. Then, we register the component and add its factory to the composite factory. The code below shows how to do this:
+
+Next, we include a factory for a logger by adding its default factory.
+
+Once we have our composite factory with all its elements included, we can call the factory for our custom component via its descriptor and use it to create an instance of our custom component. The following code shows how this can be done:
+
+Which, after running, produces the following result:
+
+Similarly, we can call the logger factory and create an instance of a logger. The following code shows this step:
+
+Which after running provides the following result that shows that an instance of a logger was created:
+
+### Wrapping up
+In this tutorial, we have learned how to create a factory that can be used to build a component. We have also understood how to use default factories, build a composite factory that includes one or more factories, and call any of the contained factories and create an instance of a component with it.

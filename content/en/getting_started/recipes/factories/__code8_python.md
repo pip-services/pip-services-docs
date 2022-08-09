@@ -1,4 +1,4 @@
 
 ```python
-
+type(lock)
 ```

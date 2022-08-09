@@ -6,7 +6,7 @@ linkTitle: "Factories"
 description: >-
      How to create factories for components.
 ---
-
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
 ### Key takeaways
 
 <table class="full-width-table">

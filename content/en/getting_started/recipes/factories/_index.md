@@ -48,3 +48,10 @@ Which after running, produces the following result:
 #### Default factories
 
 The Pip.Services toolkit contains several factories that can be used to create some common components. These factories are all subclasses of the Factory class. Among them are:
+
+![figure 2](./figure2.jpg)
+
+Each of these factories has a set of default descriptors that can be employed to create available components. The following table shows the main default factories and their descriptors.
+
+![figure 3](./figure3.jpg)
+

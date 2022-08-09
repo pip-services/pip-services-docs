@@ -9,6 +9,25 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>IFactory</td>
+    <td>Interface that defines methods used by component factories.</td>
+  </tr>
+  <tr>
+    <td>Factory</td>
+    <td>Basic factory used to create components via registered types and factory functions.</td>
+  </tr>
+  <tr>
+    <td>Default factories</td>
+    <td>Built-in factories included in the toolkit, which can be used to create some of the most common components.</td>
+  </tr>
+  <tr>
+    <td>CompositeFactory</td>
+    <td>Component used to group multiple factories into a single component.</td>
+  </tr>
+</table>
+
 ### Introduction
 
 This tutorial will teach you how to create factories for custom and built-in components. For this, we will first understand the IFactory interface and its relations with the Factory and CompositeFactory components. Then, we will learn how to create a factory that helps build custom and existing components and how to use default factories. Next, we will see how to create a composite factory that groups several factories together. Finally, we will review all the concepts learned.

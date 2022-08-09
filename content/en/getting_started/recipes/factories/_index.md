@@ -112,7 +112,7 @@ Once we have our component, we create a factory for it by defining an instance o
 {{< /tabsection >}}
 
 Which, after running, produces the following outcome, confirming that an instance of MyComponent1 has been created.
-![figure 7](./figure2.jpg)
+![figure 7](./figure2.png)
 
 Once obtained, we can use this instance, for example, by calling one of its methods:
 
@@ -142,7 +142,7 @@ Once obtained, we can use this instance, for example, by calling one of its meth
 
 Which after running, produces the following result:
 
-![figure 3](./figure3.jpg)
+![figure 3](./figure3.png)
 
 #### Default factories
 
@@ -152,7 +152,7 @@ The Pip.Services toolkit contains several factories that can be used to create s
 
 Each of these factories has a set of default descriptors that can be employed to create available components. The following table shows the main default factories and their descriptors.
 
-![figure 5](./figure5.jpg)
+![figure 5](./figure5.png)
 
 #### Default factories and component creation
 
@@ -264,7 +264,7 @@ We can verify that we have created a memory lock by checking the object’s type
 
 Which after running, returns the following output:
 
-![figure 6](./figure6.jpg)
+![figure 6](./figure6.png)
 
 ### CompositeFactory
 
@@ -438,7 +438,7 @@ Similarly, we can call the logger factory and create an instance of a logger. Th
 
 Which after running provides the following result that shows that an instance of a logger was created:
 
-![figure 8](./figure8.jpg)
+![figure 8](./figure8.png)
 
 
 ### Wrapping up

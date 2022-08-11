@@ -180,6 +180,7 @@ client.configure(ConfigParams.from_tuples(
     'credential.auth_token', 'XXX',
 ))
 
+client.open("123")
 result = client.get_data("123", "1")
 ...
 ```

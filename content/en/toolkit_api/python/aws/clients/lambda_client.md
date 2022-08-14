@@ -169,13 +169,15 @@ class MyLambdaClient(LambdaClient, IMyClient):
 
     def get_data(self, correlation_id: str, id: str) -> MyData: 
         timing = self._instrument(correlation_id, 'myclient.get_data')
-        result = self._call("get_data" correlation_id, { 'id': id })
+        result = self._call("get_data", correlation_id, { 'id': id })
         timing.end_timing()
         return result
     
     ...
 
 client = MyLambdaClient()
+
+client.open("123")
 
 client.configure(ConfigParams.from_tuples(
     "connection.region", "us-east-1",

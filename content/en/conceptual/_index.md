@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "Conceptual"
-linkTitle: "Conceptual" 
+title: "Concepts"
+linkTitle: "Concepts" 
 no_list: true
 exclude_from_list: true
 weight: 1

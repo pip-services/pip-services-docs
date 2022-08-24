@@ -216,7 +216,7 @@ class MyLambdaService(LambdaService):
         return self._controller.get_my_data(correlationId, id)
 
    def register(self):
-       self.register_action("get_my_data", None, __action)
+       self._register_action("get_my_data", None, self.__action)
 
        ...
    

@@ -247,7 +247,7 @@ service.configure(ConfigParams.from_tuples(
     "connection.port", 8080
 ))
 
-service.set_references(References.fromTuples(
+service.set_references(References.from_tuples(
     Descriptor("mygroup", "controller", "default", "default", "1.0"), controller
 ))
 

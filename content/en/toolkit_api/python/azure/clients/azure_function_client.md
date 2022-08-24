@@ -170,6 +170,8 @@ class MyAzureFunctionClient(AzureFunctionClient, IMyClient):
 
 client = MyAzureFunctionClient()
 
+client.open("123")
+
 client.configure(ConfigParams.from_tuples(
     "connection.uri", "http://myapp.azurewebsites.net/api/myfunction",
     "connection.protocol", "http",

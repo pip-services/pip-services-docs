@@ -1,0 +1,4 @@
+
+```python
+compositeFactory = CompositeFactory()
+```

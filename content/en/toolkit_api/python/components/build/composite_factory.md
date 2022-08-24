@@ -70,8 +70,8 @@ Removes a factory from the list of embedded factories.
 
 ```python
 factory = CompositeFactory()
-factory.add(new DefaultLoggerFactory())
-factory.add(new DefaultCountersFactory())
+factory.add(DefaultLoggerFactory())
+factory.add(DefaultCountersFactory())
 
 loggerLocator = Descriptor("*", "logger", "*", "*", "1.0")
 factory.can_create(loggerLocator)  # Result: Descriptor("pip-service", "logger", "None", "default", "1.0")

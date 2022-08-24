@@ -13,6 +13,14 @@ description: >-
 
 <table class="full-width-table">
   <tr>
+    <td>IMessageReceiver</td>
+    <td>Interface that defines the main method for a message receiver component.</td>
+  </tr>
+     <tr>
+    <td>IMessageQueue</td>
+    <td>Interface that defines the basic methods for a message queue.</td>
+  </tr>  
+  <tr>
     <td>MemoryMessageQueue</td>
     <td>Message queue that sends and receives messages within the same process by using shared memory.</td>
   </tr>
@@ -41,9 +49,19 @@ description: >-
 
 ### Introduction
 
-This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains the basics of this component and the necessary pre-requisites. Then, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to it, send and receive a message, and close the component. It ends by summarizing the learned points in a single program and wrapping up the concepts seen in this tutorial.
+This tutorial will help you understand how and when to use the MemoryMessageQueue component. First, it explains two interfaces namely, IMessageQueue and IMessageReceiver, which have to be implemented by message queues and message receivers respectively. Next, it describes the basics of the MemoryMessageQueue component and its pre-requisites. Following this, it explains how to create a message receiver and an instance of the MemoryMessageQueue, add a listener to the queue, send and receive a message, and close the component. It ends by grouping the learned points in a single program and wrapping up the concepts seen in this tutorial.
 
-### The MemoryMessageQueue component
+### IMessageQueue and IMessageReceiver
+
+The IMessageQueue interface defines the basic methods for a message queue and needs to be implemented by all components of this type. The MemoryMessageQueue class implements it via its parent class MessageQueue. 
+
+The IMessageReceiver interface defines the receiveMessage() method, and must be implemented by all message receiver components. In the example presented in the following sections, we define a class named MyMessageReciever, which implements this interface.
+
+The diagrams below show the main relations between these interfaces and the components studied in this tutorial.
+
+![figure 1](./figure1.svg)
+
+### MemoryMessageQueue
 
 This component provides a message queue that can be used within a process to send and receive messages. It is usually used for testing purposes.
 
@@ -250,8 +268,9 @@ Now, we can summarize the learned points in a single program. The code below sho
 {{< /tabsection >}}
 
 #### Wrapping up
+In this tutorial, we learned how to use the MemoryMessageQueue, which, as the name suggests, works by using shared memory. 
 
-In this tutorial, we learned how to use the MemoryMessageQueue, which, as the name suggests, works on memory and can be used within a process. 
-In order to understand the dynamics of this component, we created a message receiver and a listener for the queue. Then, we sent a message and saw that it was received by our queue. Finally, we summarized all the concepts in a single program. 
+In order to understand the dynamics of this component, we first explored the IMessageQueueInterface and IMessageReceiver interfaces. Next, we created a message receiver, a memory message queue, and a listener for the queue. Then, we sent a message and saw that it was received by our queue. Finally, we summarized all the concepts in a single program. 
+
 
 

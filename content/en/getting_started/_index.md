@@ -20,6 +20,3 @@ A set of articles describing step by step the steps necessary to create a partic
 ### [Recipes](recipes)
 A set of ready-made recipes for solving specific problems
 
-### [Setup environment](getting_started)
-Before we can start writing-up some microservices, we'll need to install a few mandatory prerequisites.
-

@@ -121,10 +121,10 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
       class="nav-item-tree align-left pb-2 pt-2 pl-0  {{ if $active}} active{{ end }} td-sidebar-link{{ if $s.IsPage }} td-sidebar-link__page{{ else }} td-sidebar-link__section{{ end }}"
       id="{{ $mid }}">
       
-      <div class="d-flex justify-content-center align-items-top"
+      <div class="d-flex justify-content-center align-items-top {{ if not $withChild }}last-label{{ end }}"
         style="padding-left:{{ if gt $padding 0 }}{{ $padding }}{{ end }}px;">
 
-        <div class="col {{ if or $active $isChildActive }}bold-font{{ end }} ">
+        <div class="col {{ if or $active $isChildActive }}active-navbar-item{{ end }}">
           <!-- {{ if not (gt $padding 0) }}bold-font{{ end }} -->
           {{ $s.LinkTitle }}
         </div>

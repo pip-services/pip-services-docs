@@ -53,6 +53,15 @@
             color: $blue;
         }
 
+        .active-navbar-item {
+            font-weight: 700;
+            color: lighten($color: #222, $amount: 15)
+        }
+
+        .last-label {
+            font-weight: 300;
+        }
+
         a {
             color: $gray-900;
         }

@@ -177,7 +177,7 @@ Each of these factories has a set of default descriptors that can be employed to
 
 In order to learn how to use the toolkit’s default factories, we will create a memory lock. The procedure also applies to other default factories and their components.
 
-For this, we need to import the default factory first. In addition, we need to import the Descriptor class, as we use it to locate the memory lock. These actions can be done with the following commands:
+For this, we need to import the default factory first. In addition, we need to import the Descriptor class, because we use it to locate the memory lock. These actions can be done with the following commands:
 
 {{< tabsection >}}
   Not available  

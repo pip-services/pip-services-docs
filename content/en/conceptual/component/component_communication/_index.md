@@ -30,7 +30,7 @@ When using Pip.Services, a good programming practice is to use an external entit
 For this, we will first see the main characteristics and methods of the References component. Then, we will explain how this component is used in the example provided in the Prometheus tutorial and how it helps with the communication between different components. To conclude, we will summarize the learned concepts.
 
 ### The References component
-The References component is available via the Commons module. It's used to store information on registered components and to pass it to other components when requested.
+The References component is available via the Commons module. It's used to store information on registered components and to pass this information to other components when requested.
 
 #### Pre-requisites
 To use this component, we must first import it. This can be done with the following command:

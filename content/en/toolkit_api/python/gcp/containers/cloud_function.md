@@ -12,7 +12,7 @@ description: >
 ### Description
 The CloudFunction class allows you to create an Abstract Google Function that acts as a container to instantiate and run components and expose them via an external entry point. 
 
-Importan points
+Important points
 
 - When handling calls, the "cmd" parameter determines the action that shall be called, while the other parameters are passed to the action itself.  
 

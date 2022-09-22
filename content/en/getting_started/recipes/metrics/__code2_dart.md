@@ -5,7 +5,7 @@ import 'package:pip_services3_components/pip_services3_components.dart';
 void main(List<String> argument) async {
   var countersCached = MyCachedCounters();
 
-  var mycomponentCached = MyComponentA(countersCached);
+  var mycomponentCached = MyComponent(countersCached);
 
   var countExec = 2;
 

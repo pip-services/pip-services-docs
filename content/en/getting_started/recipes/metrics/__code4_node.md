@@ -5,7 +5,7 @@ import { CachedCounters, Counter, ICounters, NullCounters } from "pip-services3-
 export async function main() {
     let countersNull = new NullCounters();
 
-    let mycomponentNull = new MyComponentA(countersNull);
+    let mycomponentNull = new MyComponent(countersNull);
 
     let countExec = 2;
 
@@ -22,7 +22,7 @@ export class MyComponent {
         this.counters = counters;
 
         if (this._consoleLog) {
-            console.log("MyComponentA has been created.");
+            console.log("MyComponent has been created.");
         }
     }
 

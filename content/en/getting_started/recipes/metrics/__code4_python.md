@@ -3,7 +3,7 @@
 from pip_services3_components.count import ICounters
 from pip_services3_components.count import NullCounters
 
-class MyComponentA:
+class MyComponent:
 
     _console_log = True
 
@@ -11,7 +11,7 @@ class MyComponentA:
         self.counters = counters
         
         if self._console_log:
-            print("MyComponentA has been created.")
+            print("MyComponent has been created.")
 
     def mymethod(self):
         self.counters.increment("mycomponent.mymethod.calls", 1)
@@ -25,7 +25,7 @@ class MyComponentA:
 
 countersNull = NullCounters()   
 
-mycomponentNull = MyComponentA(countersNull)
+mycomponentNull = MyComponent(countersNull)
 
 count_exec = 2
 

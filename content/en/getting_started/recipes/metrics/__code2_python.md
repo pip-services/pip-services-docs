@@ -8,7 +8,7 @@ class MyCachedCounters (CachedCounters):
 
 countersCached = MyCachedCounters()
 
-mycomponentCached = MyComponentA(countersCached)
+mycomponentCached = MyComponent(countersCached)
 
 count_exec = 2
 

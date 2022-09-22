@@ -107,11 +107,12 @@ The following subsections aim to explain how different components can be used to
      
 The CachedCounters class is used to create performance counters and store their values in memory. This is an abstract class that is generally used to implement other counters, such as LogCounters, PrometheusCounters and DatadogCounters. 
 
-An important method defined in this class is save(), which is abstract and therefore it needs to be implemented by its subclasses. Another method in this class is dump(), which saves the metrics automatically.
+An important method declared in this class is save(), which, as the name would suggest, saves the current counters’ measurements. This method is abstract and therefore needs to be implemented by all subclasses. Another notable method of this class is dump(), which saves metrics data at certain time intervals.
 
-In the example below, we use the previously defined component with CachedCounters. For this, we create a subclass of CachedCounters with a version of this method that simply prints a message. When developing microservices, it is within this method that we can define what we want to do with our performance values. 
+In the example below, we use the previously defined component with CachedCounters. For this, we create a subclass of CachedCounters with a version of the save() method that simply prints a message. When developing real microservices, it is within this method that we can define what we want to do with our performance metrics. 
 
-Then, once we have our class with the CachedCounters included, we call myMethod(), get the counters, and print the results. The final code is:
+Then, after passing an instance of our CachedCounters’ subclass (i.e. MyCachedCounters) to our component, we call the component’s myMethod(), get the counters, and print the results. The final code is:
+
      
 {{< tabsection >}}
   {{< include "./__code2_node.md" >}}
@@ -137,12 +138,12 @@ Then, once we have our class with the CachedCounters included, we call myMethod(
   Not available  
 {{< /tabsection >}}
      
-Which after running, produces the following outcome:     
+Which, after running, produces the following output:  
  
 ![figure 3](./figure3A.png)   
    
-As we can see, the _save() method was called automatically. Additionally, the number of calls is an integer and has no values for minimum, maximum and average. Moreover, the execution time provides these statistics.     
-     
+As we can see, the save() method was called automatically. Since the Increment counter was only counting the number of times MyMethod was called, it returns the invocation count, but does not supply any statistics data (i.e. minimum, maximum, average). On the other hand, the Interval counter, which measures the execution time, does provide these statistics.
+      
 ##### LogCounters
 
 We can also show the counters on our console. This can be done with the LogCounters class, which can be used to create performance counters that periodically dump the obtained measurements to a logger.

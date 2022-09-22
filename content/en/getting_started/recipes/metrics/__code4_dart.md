@@ -5,7 +5,7 @@ import 'package:pip_services3_components/pip_services3_components.dart';
 void main(List<String> argument) async {
   var countersNull = NullCounters();
 
-  var mycomponentNull = MyComponentA(countersNull);
+  var mycomponentNull = MyComponent(countersNull);
 
   var countExec = 2;
 

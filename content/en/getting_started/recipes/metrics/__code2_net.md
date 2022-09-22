@@ -11,7 +11,7 @@ class Program
     {
         var countersCached = new MyCachedCounters();
 
-        var mycomponentCached = new MyComponentA(countersCached);
+        var mycomponentCached = new MyComponent(countersCached);
 
         var countExec = 2;
 

@@ -2,14 +2,14 @@
 ```python
 from pip_services3_components.count import ICounters
 
-class MyComponentA:
+class MyComponent:
     _console_log = True
 
     def __init__(self, counters: ICounters):
         self.counters = counters
         
         if self._console_log:
-            print("MyComponentA has been created.")
+            print("MyComponent has been created.")
 
     def mymethod(self):
         self.counters.increment("mycomponent.mymethod.calls", 1)

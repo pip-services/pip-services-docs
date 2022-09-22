@@ -13,7 +13,7 @@ namespace ExampleApp
         {
             var countersNull = new NullCounters();
 
-            var mycomponentNull = new MyComponentA(countersNull);
+            var mycomponentNull = new MyComponent(countersNull);
 
             var countExec = 2;
 

@@ -13,7 +13,7 @@ export async function main() {
         mycomponentNull.mymethod();
 }
 
-export class MyComponentA {
+export class MyComponent {
     private _consoleLog: boolean = true;
 
     private counters: ICounters;

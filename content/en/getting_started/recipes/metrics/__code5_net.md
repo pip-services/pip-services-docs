@@ -25,7 +25,7 @@ namespace ExampleApp
                 "connection.port", 8080
             ));
 
-            var myComponent = new MyComponentA();
+            var myComponent = new MyComponent();
 
             myComponent.SetReferences(References.FromTuples(
                 new Descriptor("pip-services", "counters", "logger", "default3", "1.0"), countersLog,
@@ -67,15 +67,15 @@ namespace ExampleApp
         }
     }
 
-    class MyComponentA: IReferenceable
+    class MyComponent: IReferenceable
     {
         CompositeCounters counters = new CompositeCounters();
         bool _consoleLog = true;
 
-        public MyComponentA()
+        public MyComponent()
         {
             if (_consoleLog)
-                Console.WriteLine("MyComponentA has been created.");
+                Console.WriteLine("MyComponent has been created.");
         }
 
         public void MyMethod()

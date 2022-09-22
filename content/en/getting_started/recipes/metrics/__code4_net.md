@@ -31,17 +31,17 @@ namespace ExampleApp
         }
     }
 
-    class MyComponentA
+    class MyComponent
     {
         ICounters counters;
         bool _consoleLog = true;
 
-        public MyComponentA(ICounters counters)
+        public MyComponent(ICounters counters)
         {
             this.counters = counters;
 
             if (_consoleLog)
-                Console.WriteLine("MyComponentA has been created.");
+                Console.WriteLine("MyComponent has been created.");
         }
 
         public void MyMethod()

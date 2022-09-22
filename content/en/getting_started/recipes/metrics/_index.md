@@ -44,7 +44,7 @@ description: >-
 
 ### Introduction
 
-This tutorial will teach you how to create and manage performance metrics with Pip.Services components. First, we will learn how counters are defined in the toolkit and how to add them to a component. Then, we will see several options to manage the obtained performance metrics, such as storing them in memory, showing them on a console, sending them to external tools, and grouping them in composite counters. We will also study a dummy component used to simulate counters.
+This tutorial will teach you how to create and manage performance metrics using components from the Pip.Services toolkit. First, we will learn how counters are defined in the toolkit and how to add them to a component. Then, we will see several options of managing the obtained performance metrics, such as storing them in memory, showing them in the console, sending them to external tools, and grouping them into composite counters. We will also examine a dummy component that can be used to simulate counters.
 
 ### Counters
 

@@ -14,7 +14,7 @@ export async function main() {
         "connection.port", 8080
     ));
 
-    let myComponent = new MyComponentA();
+    let myComponent = new MyComponent();
 
     myComponent.setReferences(References.fromTuples(
         new Descriptor("pip-services", "counters", "logger", "default3", "1.0"), countersLog,
@@ -53,14 +53,14 @@ function printResults(results: Counter[]) {
     }
 }
 
-export class MyComponentA implements IReferenceable {
+export class MyComponent implements IReferenceable {
     private _consoleLog: boolean = true;
 
     private counters: CompositeCounters = new CompositeCounters();
 
     public constructor() {
         if (this._consoleLog) {
-            console.log("MyComponentA has been created.");
+            console.log("MyComponent has been created.");
         }
     }
 

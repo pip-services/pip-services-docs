@@ -16,7 +16,7 @@ class Program
             new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger())
         );
 
-        var mycomponentLog = new MyComponentA(counters);
+        var mycomponentLog = new MyComponent(counters);
 
         var countExec = 2;
 

@@ -8,7 +8,7 @@ export async function main() {
     counters.setReferences(References.fromTuples(
         new Descriptor("pip-services", "logger", "console", "default", "1.0"), new ConsoleLogger()))
 
-    let mycomponentLog = new MyComponentA(counters);
+    let mycomponentLog = new MyComponent(counters);
 
     let countExec = 2;
 

@@ -4,14 +4,14 @@ import 'package:pip_services3_components/pip_services3_components.dart';
 
 void main(List<String> argument) async {}
 
-class MyComponentA {
+class MyComponent {
   bool _consoleLog = true;
 
   ICounters _counters;
 
-  MyComponentA(ICounters counters) : _counters = counters {
+  MyComponent(ICounters counters) : _counters = counters {
     if (_consoleLog) {
-      print('MyComponentA has been created.');
+      print('MyComponent has been created.');
     }
   }
 

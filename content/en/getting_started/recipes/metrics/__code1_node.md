@@ -2,7 +2,7 @@
 ```ts
 import { ICounters } from "pip-services3-components-nodex";
 
-export class MyComponentA {
+export class MyComponent {
     private _consoleLog: boolean = true;
 
     private counters: ICounters;
@@ -11,7 +11,7 @@ export class MyComponentA {
         this.counters = counters;
 
         if (this._consoleLog) {
-            console.log("MyComponentA has been created.");
+            console.log("MyComponent has been created.");
         }
     }
 

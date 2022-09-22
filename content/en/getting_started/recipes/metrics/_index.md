@@ -266,5 +266,6 @@ Which, after running produces the following output:
  
 ### Wrapping up
 
-In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution time metric for a method, and saved the obtained values in memory, a logger, and a component that connects to Prometheus. We also learned how to create a NullCounters, which is a dummy component with no real effect that is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and obtain the stored values via different tools for future use.     
+In this tutorial, we have seen how to create, calculate, store and use performance metrics. We built an example where we created a call-counter and an execution time counter, added these metrics to one of our component’s methods, and saw how to save the obtained values to memory, a logger, and/or a component that connects to Prometheus. We also learned how to create NullCounters, which is a dummy component that performs no real measurements, but is useful for testing and modeling purposes. Finally, we understood how to group several counters via the CompositeCounters class and send the measured values to other tools for future use.
+   
      

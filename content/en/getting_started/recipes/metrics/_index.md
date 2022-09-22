@@ -14,7 +14,7 @@ description: >-
 <table class="full-width-table">
   <tr>
     <td>Performance metrics</td>
-    <td>Values that measure the number of actions and other factors that help understand how an application performs.</td>
+    <td>Values that result from the measurement of an application's non-functional traits, which can provide useful insight into how the application performs.</td>
   </tr>
   <tr>
     <td>ICounters</td>
@@ -22,15 +22,15 @@ description: >-
   </tr>
   <tr>
     <td>CachedCounters</td>
-    <td>Class used to create performance counters that measure and store those values in memory.</td>
+    <td>Performance counters that store their measurements in memory.</td>
   </tr>
   <tr>
     <td>LogCounters</td>
-    <td>Performance counters that periodically send counters' measurements to a logger.</td>
+    <td>Performance counters that periodically send their measurements to a logger</td>
   </tr>
   <tr>
     <td>NullCounters</td>
-    <td>Component used to create dummy performance counters.</td>
+    <td>Component that is used to create dummy performance counters.</td>
   </tr>
   <tr>
     <td>Performance metrics tools</td>
@@ -38,7 +38,7 @@ description: >-
   </tr>
   <tr>
     <td>CompositeCounters</td>
-    <td>Component used to group counters from different components into a single one.</td>
+    <td>Component that is used to group counters from different components into a single one.</td>
   </tr>
 </table>
 

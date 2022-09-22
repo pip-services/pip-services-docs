@@ -146,12 +146,12 @@ As we can see, the save() method was called automatically. Since the Increment c
       
 ##### LogCounters
 
-We can also show the counters on our console. This can be done with the LogCounters class, which can be used to create performance counters that periodically dump the obtained measurements to a logger.
+Counters can also be made to output their metrics to the console. This can be done with the LogCounters class, which can be used to create performance counters that periodically dump the obtained measurements to a logger.
 
-Containers consider LogCounters by default. Once we create a container, the container's factory will create a LogCounters component that uses the ConsoleLogger. Thus, all metrics defined within a component will reflect the measured values on console.
+Containers use LogCounters by default. Once we create a container, the container’s factory will create a LogCounters component, which uses the ConsoleLogger component. Thus, all component metrics measured by the counter will be outputted to the console.
 
-In our next example, we use the LogCounters class associated with the ConsoleLogger class. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
-     
+In our next example, we use the LogCounters class, referencing the ConsoleLogger component as a dependency. Then, we call myMethod() and analyze the results as we did in the previous example. The following code shows how to do this:
+   
 {{< tabsection >}}
   {{< include "./__code3_node.md" >}}
 {{< /tabsection >}}
@@ -180,7 +180,7 @@ Which, after running, produces the following results:
      
  ![figure 4](./figure4A.png)
  
-As we can see, the main difference with the previous example is the presence of counters' information on our console. Otherwise, the results are the same.
+As we can see, the main difference from the previous example is the instantaneous and automatic printing of the counters’ measurements to the console. The remaining messages remained mostly unchanged.
  
 ##### NullCounters
      

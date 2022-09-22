@@ -67,7 +67,7 @@ A best practice when working with counters is to name them using to the followin
 
 ### Managing counters
 
-In the next sections, we will construct examples that show how to define counters and store them in memory, a logger, and external tools. We will also learn how to create a dummy component that has no real effect and a composite component that groups one or more different counters.
+In the next sections, we will construct examples that show how to define counters that will store their metrics in memory, in a logger, or in monitoring tools. We will also learn to create a dummy component that performs no real measurements and a composite counter component, capable of grouping multiple different counters into one.
      
 #### Monitored component
 

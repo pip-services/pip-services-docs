@@ -10,7 +10,7 @@ void main(List<String> argument) async {
     ConsoleLogger()
   ]));
 
-  var mycomponentLog = MyComponentA(counters);
+  var mycomponentLog = MyComponent(counters);
 
   var countExec = 2;
 

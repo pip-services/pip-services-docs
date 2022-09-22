@@ -48,19 +48,19 @@ This tutorial will teach you how to create and manage performance metrics using 
 
 ### Counters
 
-Pip.Services has the Count package within the Components module, which contains several interfaces and classes used to create performance metrics. 
+Pip.Services’ Components module includes a package called Count, which contains several interfaces and classes that can be used to create performance counters. 
 
-Within these interfaces, ICounters defines methods for measuring execution performance. One of them is increment(), which increases by a defined value each time it is called. Other important methods are beginTiming() and stats(), which are used to calculate time intervals and common statistics (minimum, maximum, and average) respectively.
+Among these interfaces is one called ICounters, which defines methods for measuring execution performance. One such method is increment(), which increases by a defined value each time it is called. Other important methods are beginTiming() and stats(), which are used to calculate time intervals and common statistics (minimum, maximum, and average), respectively. There is no stopTiming() method in this interface due to the fact that beginTiming() is supposed to return a CounterTiming object, which can be called to end the measurement and update the counter.
 
-This interface is implemented by several classes. The figure below shows a simplified class diagram displaying the relationships between it and the main classes used to build different counters. These classes will be explained in more detail in the following sections.
+The ICounters interface is implemented by several classes. The figure below shows a simplified class diagram, displaying the relationships between this interface and the main classes used to build counters. These classes will be explained in more detail in the following sections.
 
 ![figure 1](./figure1.jpg)
 
-The toolkit has several pre-defined counters, which are specified in the CounterType class. They are:
+Pip.Services has several predefined counters, specified in the CounterType class. They are:
 
 ![figure 2](./figure2.png)
 
-When working with counters, a best practice is to name them according to the following convention:
+A best practice when working with counters is to name them using to the following convention:
 
 <service_or_component_name>.<method_name>.<counter_name>
 

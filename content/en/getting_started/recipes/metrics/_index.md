@@ -184,9 +184,9 @@ As we can see, the main difference from the previous example is the instantaneou
  
 ##### NullCounters
      
-If we are testing our application or want to create a prototype, we can use the NullCounters component, which is a dummy one and produces no real results. In this manner, we can simulate the existence of a counters component, without having to deal with it.
+If we are testing our application or want to create a prototype, we can use NullCounters, which is a dummy component and produces no real measurements. In this manner, we can simulate the existence of a counters component, without having to actually deal with one.
 
-In this case, we need to delete the flush command from our component as there are no values to be saved. The following code shows how to do this:
+In this case, we need to delete the call to the counters’ dump() method from our component, as there will be no values to save. The resulting code should look like this:
 
 {{< tabsection >}}
   {{< include "./__code4_node.md" >}}
@@ -212,29 +212,28 @@ In this case, we need to delete the flush command from our component as there ar
   Not available  
 {{< /tabsection >}}
 
-Which after running produces the following outcome: 
- 
+Which, after running, produces the following outcome:
+
 ![figure 5](./figure5A.png) 
  
 ##### Other counters
 
-Performance counters can also be sent to different tools for their analysis. Pip.Services contains specific counters for the most common tools including [Prometheus](../prometheus/) and [Datadog](../datadog/).
+Performance metrics can also be sent to monitoring tools, which specialize in processing and displaying metrics data. Pip.Services provides counters that can be used with some of the most popular monitoring tools, such as [Prometheus](../prometheus/) and [Datadog](../datadog/).
 
 ##### CompositeCounters
      
-Pip.Services offers the CompositeCounters component, which can be used to group a set of counters that collect the same performance metrics. Once collected, the metrics can be sent to different destinations, such as a console, a logger, or a tool like Prometheus or Datadog.
+Pip.Services also offers the CompositeCounters component, which can be used to group counters that need to collect the same performance metrics, but use them differently. Once collected, the metrics can be sent to different destinations, such as a console, a logger, and/or a monitoring tool.
 
-An important method in this class is setReferences(), which registers all components that will receive the measurements. When using a container, this method finds all registered counters and connects to them.
+An important method declared in this class is setReferences(), which registers all components that will receive the measurements. When using a container, this method finds all registered counters and connects to them.
 
-In the example below, we have a monitored class similar to the one from the previous section, except for the fact that considers a CompositeCounters component and adds a setReferences() method.
+In the example below, we have a monitored class similar to the one from the previous section, except for the fact that it utilizes a CompositeCounters component and has a setReferences() method added to it.
 
-We can use this component to store metrics that can be used by, for example, a CachedLogger and a Prometheus component.
+We can use this component to store metrics in, for example, a CachedLogger and a Prometheus component.
+To achieve this, we define two counters, a LogCounters component that stores values in a CachedLogger and PrometheusCounters component that connects to Prometheus. Then, we instantiate our monitored class and add references to both counters. 
 
-To achieve this, we define two counters, one that stores values in a CachedLogger and another that connects to Prometheus. Then, we instantiate our monitored class and add references to both counters. 
-     
-After running myMethod(), we obtain the performance metrics for CachedLogger and PrometheusCounters. 
-
+After running myMethod(), we can print the performance metrics obtained by both counters, just like we were doing in the previous example. 
 The following code shows how this can be done:
+
 
 {{< tabsection >}}
   {{< include "./__code5_node.md" >}}
@@ -260,7 +259,7 @@ The following code shows how this can be done:
   Not available  
 {{< /tabsection >}}     
      
-Which, after running produces the following output:
+Which, after running, produces the following output:
      
 ![figure 6](./figure6A.png) 
  

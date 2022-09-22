@@ -9,7 +9,7 @@ counters = LogCounters()
 counters.set_references(References.from_tuples(
             Descriptor("pip-services", "logger", "console", "default", "1.0"), ConsoleLogger()))
 
-mycomponentLog = MyComponentA(counters)
+mycomponentLog = MyComponent(counters)
 
 count_exec = 2
 

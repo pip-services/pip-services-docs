@@ -17,7 +17,7 @@ void main(List<String> argument) async {
     8080
   ]));
 
-  var myComponent = MyComponentA();
+  var myComponent = MyComponent();
 
   myComponent.setReferences(References.fromTuples([
     Descriptor('pip-services', 'counters', 'logger', 'default3', '1.0'),
@@ -60,14 +60,14 @@ void printResults(List<Counter> results) {
   }
 }
 
-class MyComponentA implements IReferenceable {
+class MyComponent implements IReferenceable {
   bool _consoleLog = true;
 
   final CompositeCounters _counters = CompositeCounters();
 
-  MyComponentA() {
+  MyComponent() {
     if (_consoleLog) {
-      print('MyComponentA has been created.');
+      print('MyComponent has been created.');
     }
   }
 

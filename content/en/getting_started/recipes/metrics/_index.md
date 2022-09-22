@@ -71,7 +71,7 @@ In the next sections, we will construct examples that show how to define counter
      
 #### Monitored component
 
-First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics are part of a dummy function that simulates a task by printing two messages on our console. The code below shows what this class looks like:     
+First, we define a class that has two performance metrics: the number of times a method is called and its execution time. Both metrics will be performing measurements for a dummy function that simulates a task by printing two messages to the console. Finally, we call the dump() method to save the obtained values. The code below shows what this class looks like:
 
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}

@@ -140,7 +140,7 @@ Then, once we have our class with the CachedCounters included, we call myMethod(
      
 Which after running, produces the following outcome:     
  
-![figure 3](./figure3.png)   
+![figure 3](./figure3A.png)   
    
 As we can see, the _save() method was called automatically. Additionally, the number of calls is an integer and has no values for minimum, maximum and average. Moreover, the execution time provides these statistics.     
      
@@ -178,7 +178,7 @@ In our next example, we use the LogCounters class associated with the ConsoleLog
      
 Which, after running, produces the following results:
      
- ![figure 4](./figure4.png)
+ ![figure 4](./figure4A.png)
  
 As we can see, the main difference with the previous example is the presence of counters' information on our console. Otherwise, the results are the same.
  
@@ -214,7 +214,7 @@ In this case, we need to delete the flush command from our component as there ar
 
 Which after running produces the following outcome: 
  
-![figure 5](./figure5.png) 
+![figure 5](./figure5A.png) 
  
 ##### Other counters
 
@@ -262,7 +262,7 @@ The following code shows how this can be done:
      
 Which, after running produces the following output:
      
-![figure 6](./figure6.png) 
+![figure 6](./figure6A.png) 
  
 ### Wrapping up
 

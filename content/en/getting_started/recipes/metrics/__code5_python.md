@@ -13,14 +13,14 @@ from pip_services3_commons.config import ConfigParams
 from pip_services3_components.count import CompositeCounters
 
 
-class MyComponentA(IReferenceable):
+class MyComponent(IReferenceable):
     _counters: CompositeCounters = CompositeCounters()
 
     _console_log = True
 
     def __init__(self):
         if self._console_log:
-            print("MyComponentA has been created.")
+            print("MyComponent has been created.")
 
     def setReferences(self, references: IReferences):
         self._counters.set_references(references)
@@ -64,7 +64,7 @@ counters_prom.configure(ConfigParams.from_tuples(
 
 counters = CompositeCounters()
 
-my_component = MyComponentA()
+my_component = MyComponent()
 my_component.set_references(References.from_tuples(
     Descriptor("pip-services", "counters", "prometheus", "default4", "1.0"), counters_prom,
     Descriptor("pip-services", "counters", "logger", "default3", "1.0"), counters_log,

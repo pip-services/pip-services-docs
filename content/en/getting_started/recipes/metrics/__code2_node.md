@@ -5,7 +5,7 @@ import { CachedCounters, Counter, ICounters } from "pip-services3-components-nod
 export async function main() {
     let countersCached = new MyCachedCounters();
 
-    let mycomponentCached = new MyComponentA(countersCached);
+    let mycomponentCached = new MyComponent(countersCached);
 
     let countExec = 2;
 

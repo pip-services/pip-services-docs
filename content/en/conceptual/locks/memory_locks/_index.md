@@ -18,30 +18,30 @@ description: >-
   </tr>
   <tr>
     <td>MemoryLock</td>
-    <td>Lock used to synchronize the execution of a process using shared memory.</td>
+    <td>Lock used to synchronize the execution of processes that use shared memory.</td>
   </tr>
   <tr>
     <td>NullLock</td>
-    <td>Dummy lock that produces no real effect.</td>
+    <td>Dummy lock that performs no real actions.</td>
   </tr>
   <tr>
     <td>acquireLock()</td>
-    <td>Method used to acquire a lock identified by its key.</td>
+    <td>Method used to acquire a lock by its key.</td>
   </tr>
   <tr>
     <td>releaseLock()</td>
-    <td>Method used to release a previously acquired lock identified by its key.</td>
+    <td>Method used to release a previously acquired lock by its key.</td>
   </tr>
 
 </table>
 
 ### Introduction
 
-This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will explore the ILock interface, which must be implemented by all locks. Next, we will learn the basic functionality of the MemoryLock class, and we will construct an example that will show how to use this type of lock. After this, we will see what the NullLock is, how it differentiates from the MemoryLock and when to use it. At the end, we will summarize all the concepts learned.
+This tutorial will help you understand how to use the MemoryLock and NullLock components. First, we will explore the ILock interface, which must be implemented by all locks. Next, we will learn the basic functionality of the MemoryLock class, and we will construct an example that will demonstrate how to use this type of lock. After this, we will learn what the NullLock is, how it differentiates from the MemoryLock, and when it should be used. At the end, we will summarize all the concepts learned.
 
 ### ILock
 
-This interface declares the main methods that each lock must consider, which are acquireLock(), tryAcquireLock() and releaseLock(). As their names suggest, the first two methods are used to acquire a lock, while the second one is used to release an acquired lock. Both components, MemoryLock and NullLock, implement this interface. NullLock implements it directly, and MemoryLock via its parent class Lock. The following diagram summarizes their relations:
+This interface defines the main methods that each lock must implement, specifically acquireLock(), tryAcquireLock() and releaseLock(). As their names suggest, the first two methods are used to acquire a lock, while the third is used to release an acquired lock. Both components, MemoryLock and NullLock, implement this interface. NullLock implements it directly, and MemoryLock - via its parent class Lock. The following diagram summarizes their relations:
 
 ![figure 2](./figure2.svg)
 

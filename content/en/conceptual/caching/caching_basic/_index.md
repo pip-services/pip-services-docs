@@ -264,7 +264,7 @@ Moreover, if we want to retrieve the removed value:
 
 We get the following result, which verifies that the key-value pair doesn’t exist any more”
 
-![figure 2](./figure2a.jpg)
+![figure 2](./figure2b.png)
 
 ### Wrapping up
 

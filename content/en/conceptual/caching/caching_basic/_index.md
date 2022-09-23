@@ -19,31 +19,32 @@ description: >-
   </tr>
   <tr>
     <td>MemoryCache </td>
-    <td>Stores values in the process memory.</td>
+    <td>Cache that stores values in-memory.</td>
   </tr>
   <tr>
     <td>NullCache</td>
-    <td>Dummy cache implementation that simulates caching without any actual action.</td>
+    <td>Dummy cache implementation that simulates caching without performing any actual actions.</td>
   </tr>
 </table>
 
 ### Introduction
 
-Pip.Services offers several basic components for caching. One of the most important ones is the ICache interface, which must be implemented by all cache components and defines the basic caching methods that all caches must contain. Other two basic components are the MemoryCache and NullCache classes. The first stores values in memory, and the second is a dummy cache that can be used to simulate caching. In the following sections, this tutorial explains how to use these components in detail. Other caching tools, such as Redis and Memcached, are explained in separate tutorials.
+Pip.Services offers several basic components for caching. One of the most important ones is the ICache interface, which must be implemented by all cache components and defines a basic set of  methods that all caches must contain. Two other basic components that are worth mentioning are the MemoryCache and NullCache classes. The first stores key-value pairs in-memory, and the second is a dummy cache that can be used to simulate caching. In the following sections, this tutorial explains how to use these components in detail. Other caching tools, such as [Redis](http://docs.pipservices.org/conceptual/caching/redis/) and [Memcached](http://docs.pipservices.org/conceptual/caching/memcached/), are explained in separate tutorials.
 
 ### ICache
 
-This interface contains three important methods for caching namely, store(), retrieve() and remove(). As their names indicate, they can be used to store, retrieve and remove values from memory. Both components, MemoryCache and NullCache, implement this interface. The following diagram explains their relations:
+This interface contains three important methods for caching, namely, store(), retrieve(), and remove(). As their names indicate, they can be used to store, retrieve, and remove key-value pairs from the cache. Both MemoryCache and NullCache components implement this interface. The following diagram explains their relations:
 
 ![figure 1](./figure1.svg)
 
-### MemoryCache
+### Using a cache component
 
-The MemoryCache component provides a way to create and manage a cache that stores values in the process memory.
+The two basic cache components offered by the toolkit are the MemoryCache and the NullCache. The first provides the ability to create and manage a cache that stores key-value pairs in memory. The second is a dummy cache implementation that only simulates caching, without producing any actual results.
+
 
 #### Pre-requisites
 
-In order to use the MemoryCache component, we need to import it. This can be done with the following command:
+In order to use the MemoryCache component, we need to import it. This can be done with the following import statement:
 
 {{< tabsection >}}
   {{< include "./__code1_node.md" >}}
@@ -68,6 +69,33 @@ In order to use the MemoryCache component, we need to import it. This can be don
 {{< tabsection >}}
   Not available  
 {{< /tabsection >}}
+
+Similarly, for the NullCache:
+
+{{< tabsection >}}
+   {{< include "./__code6_node.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_net.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_go.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_dart.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code6_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 #### Create
 
@@ -189,29 +217,6 @@ The NullCache component is a dummy cache implementation. As such, it only simula
 
 In order to use the NullCache class, we need to import it. The following command shows how to do this.
 
-{{< tabsection >}}
-   {{< include "./__code6_node.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code6_net.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code6_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code6_dart.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< include "./__code6_python.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available  
-{{< /tabsection >}}
 
 #### Create
 

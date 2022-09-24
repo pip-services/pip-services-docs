@@ -226,12 +226,12 @@ Pip.Services also offers the CompositeCounters component, which can be used to g
 
 An important method declared in this class is setReferences(), which registers all components that will receive the measurements. When using a container, this method finds all registered counters and connects to them.
 
-In the example below, we have a monitored class similar to the one from the previous section, except for the fact that it utilizes a CompositeCounters component and has a setReferences() method added to it.
+In the example below, we have a monitored class similar to the one from the previous section, except for the fact that it utilizes a CompositeCounters component and has a setReferences() method added to it. We can use this component to store metrics in, for example, a CachedLogger and a Prometheus component.
 
-We can use this component to store metrics in, for example, a CachedLogger and a Prometheus component.
 To achieve this, we define two counters, a LogCounters component that stores values in a CachedLogger and PrometheusCounters component that connects to Prometheus. Then, we instantiate our monitored class and add references to both counters. 
+ 
+After running myMethod(), we can print the performance metrics obtained by both counters, just like we were doing in the previous example.        
 
-After running myMethod(), we can print the performance metrics obtained by both counters, just like we were doing in the previous example. 
 The following code shows how this can be done:
 
 

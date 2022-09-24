@@ -19,10 +19,10 @@ b.	[Building blocks: a brief description](../../conceptual/building_blocks/)
 c.	[Toolkit architecture](../../conceptual/toolkit_architecture/) 
 
 2.	Basic Patterns: Components, Configurations, Reflection, ...    
-a.	[Three-tier architecture](../../conceptual/three_tier_architecture/)
-b.	[Creating a component](../../conceptual/component/creating_a_component/) 
-c.	[Communicating between components](../../conceptual/component/component_communication/)     
-d.	[Configurations](../../conceptual/configuration/configurations/)     
+a.	[Three-tier architecture](../../conceptual/three_tier_architecture/)        
+b.	[Creating a component](../../conceptual/component/creating_a_component/)         
+c.	[Communicating between components](../../conceptual/component/component_communication/)            
+d.	[Configurations](../../conceptual/configuration/configurations/)            
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_Optional (Self-study)_
   

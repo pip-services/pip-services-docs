@@ -8,3 +8,24 @@ description: >-
 ---
 
 ### Key takeaways
+
+### Introduction
+
+### Example
+
+#### Part 1: Components
+
+
+#### Part 2: Container
+
+### Analysis
+
+#### Environment variables
+
+#### Configuration file
+
+#### Factory
+
+#### References
+
+### Wrapping up

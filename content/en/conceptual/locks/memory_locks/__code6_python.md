@@ -16,6 +16,8 @@ class MyComponent(IReferenceable):
 
     def store_result(self, correlation_id, param1):      
 
+        print("The stored value is " + param1)
+
         # Lock
         self.__lock.acquire_lock(correlation_id, "mykey", 1000, 1000, )
         
@@ -24,7 +26,7 @@ class MyComponent(IReferenceable):
         
         # Do processing
         # ...
-        print("The stored value is " + param1)
+       
 
         # Store result to cache async
         self.__cache.store(correlation_id, 'mykey', param1, 3600000)

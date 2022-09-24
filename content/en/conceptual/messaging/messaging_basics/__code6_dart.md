@@ -1,4 +1,4 @@
 
 ```dart
-await messageQueue.close('123');
+await messageQueue.close('123');    // correlationId = "123"
 ```

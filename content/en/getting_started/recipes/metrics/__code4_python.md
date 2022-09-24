@@ -13,7 +13,7 @@ class MyComponent:
         if self._console_log:
             print("MyComponent has been created.")
 
-    def mymethod(self):
+    def myMethod(self):
         self.counters.increment("mycomponent.mymethod.calls", 1)
         timing = self.counters.begin_timing("mycomponent.mymethod.exec_time")
         try:
@@ -30,5 +30,5 @@ mycomponentNull = MyComponent(countersNull)
 count_exec = 2
 
 for i in range(count_exec):
-    mycomponentNull.mymethod()
+    mycomponentNull.myMethod()
 ```

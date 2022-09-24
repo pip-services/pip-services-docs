@@ -255,7 +255,7 @@ Moreover, if we want to retrieve the removed value:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  {{< include "./__code7_python.md" >}}
+  {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

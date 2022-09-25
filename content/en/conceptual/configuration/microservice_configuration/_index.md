@@ -7,6 +7,8 @@ description: >-
      How microservices manage configurations.
 ---
 
+{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+
 ### Key takeaways
 
 <table class="full-width-table">
@@ -46,9 +48,57 @@ Each of these features will be explained in detail in the analysis section.
 
 #### Part 1: Components
 
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code1_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
 
 
 #### Part 2: Container
+
+{{< tabsection >}}
+ Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< include "./__code2_python.md" >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  Not available  
+{{< /tabsection >}}
+
 
 ### Analysis
 

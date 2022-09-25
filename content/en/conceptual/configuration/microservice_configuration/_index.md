@@ -9,6 +9,29 @@ description: >-
 
 ### Key takeaways
 
+<table class="full-width-table">
+  <tr>
+    <td>Environment variables</td>
+    <td>Variables that are a part of the running environment and whose value can affect the way processes function on a machine. It is considered a best practice to use environment variables for configuring applications.</td>
+  </tr>
+  <tr>
+    <td>Configuration file</td>
+    <td>File containing information about how to configure the container (i.e. which components to include).</td>
+  </tr>
+  <tr>
+    <td>Factory</td>
+    <td>Program that aids in the creation of components.</td>
+  </tr>
+  <tr>
+    <td>Descriptor</td>
+    <td>Component locator, consisting of the component’s group, type, kind, name, and version.</td>
+  </tr>
+  <tr>
+    <td>References</td>
+    <td>Special component that is used to store and locate components by their descriptors.</td>
+  </tr>     
+ </table>
+
 ### Introduction
 
 This tutorial will explore the microservice configuration process. For this, we will first see an example that contains the main configuration aspects that most microservices have. Then, we will analyze how this process triggers and works. Finally, we will summarize what was learned.

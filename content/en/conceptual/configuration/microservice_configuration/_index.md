@@ -108,15 +108,19 @@ Let’s now analyze the execution process happening in the above example. For th
 
 Pip.Services’ containerization approach allows us to perform component selections using the environment variables set in the execution environment. For example, if ComponentA1 is an in-memory persistence and ComponentA2 is a “someDB” persistence, we can select which to use in our container by setting the corresponding environment variable. Thus, our program starts by setting the environment variable COMPA1_ENABLED to true, which tells the container to include ComponentA1. Next, it triggers the execution of the container with the run() method.
 
+![figure 1](./Figure1.png)
+
 #### Configuration file
 
 Once the execution of the container is triggered, the program obtains its component configuration information from the configuration file, whose location is defined via the config_path variable. This will be a yaml file, containing information on the different components that the container must create.
+
+![figure 2](./Figure2.png)
 
 The figure below shows the file for our example. It describes three components: a logger, ComponentA1, and ComponentA2. The logger is part of the set of components whose factories are called by the container by default. In this case, we select a console logger. 
 
 Then, we have the other two components, each inside a conditional statement. This allows us to choose the one we need using the environment variables. Since we’ve defined COMPA1_ENABLED as true, the container selects ComponentA1 and ignores ComponentA2.  
 
-
+![figure 3](./Figure3.png)
 
 #### Factory
 
@@ -126,6 +130,7 @@ With the information gathered from the environment variables and the configurati
 
 In our example, we create a factory for ComponentB, ComponentA1, and ComponentA2, and we register these components in it via [descriptors](https://pip-services.github.io/pip-services-docs/conceptual/component/descriptors/). This step provides a link between what was defined in the configuration file (using the same descriptors, just in a colon-separated format) and our components. Note that, even though our config file does not contain descriptors for ComponentB, we still register it in the factory. This is because ComponentB is a dependency for ComponentA1 and ComponentA2 and will be created by the program at a later step, when we start to set references.
 
+![figure 4](./Figure4.png)
 
 #### References
 
@@ -133,10 +138,24 @@ Finally, when creating either ComponentA1 or ComponentA2, the program detects th
 
 Additionally, by implementing the [IConfigurable](https://pip-services.github.io/pip-services-docs/conceptual/configuration/component_configuration/) interface, we can set the values of the component’s parameters using the configure() method, which accepts a [ConfigParams](https://pip-services.github.io/pip-services-docs/conceptual/configuration/configurations/) object as a parameter. 
 
+![figure 5](./Figure5.png)
+
 #### Results
 
 The described process results in all required components being created and the following messages displayed on our screen:
+![figure 6](./Figure6.png)
 
+Moreover, if we stop the process, we obtain the following messages on our screen:
+
+![figure 7](./Figure7.png)
+
+Alternatively, if we choose to use ComponentA2 (e.g. by setting the COMPA2_ENABLED environment variable), we get the following results:
+
+![figure 8](./Figure8.png)
+
+And, after stopping the process:
+
+![figure 9](./Figure9.png)
 
 ### Wrapping up
 

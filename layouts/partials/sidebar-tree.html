@@ -72,6 +72,24 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 {{ $pages_tmp := where (union $s.Pages $s.Sections).ByWeight ".Params.toc_hide" "!=" true -}}
 {{ $pages := $pages_tmp | first $sidebarMenuTruncate -}}
 {{ $withChild := gt (len $pages) 0 -}}
+
+<!-- Skip files with underscore start -->
+{{ if $withChild }}
+  {{ $hiddenPages := 0 }}
+  {{ range $pages }}
+    {{ $pathParts := (split .File "\\") }}
+    {{ $filename := index $pathParts (sub (len $pathParts) 1) }}
+    {{ if eq (substr $filename 0 2) "__"}} 
+      {{ $hiddenPages = add $hiddenPages 1 }}
+    {{ end }}
+  {{ end }}
+
+  {{ if eq $hiddenPages (len $pages) }}
+    {{ $withChild = false }}
+  {{ end }}
+{{ end }}
+
+
 {{ $manualLink := cond (isset $s.Params "manuallink") $s.Params.manualLink ( cond (isset $s.Params "manuallinkrelref")
 (relref $s $s.Params.manualLinkRelref) $s.RelPermalink) -}}
 {{ $manualLinkTitle := cond (isset $s.Params "manuallinktitle") $s.Params.manualLinkTitle $s.Title -}}

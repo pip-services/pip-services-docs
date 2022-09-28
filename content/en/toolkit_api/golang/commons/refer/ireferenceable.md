@@ -2,7 +2,7 @@
 type: docs
 title: "IReferenceable"
 linkTitle: "IReferenceable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface with methods to set references for components that depend on other components. 
 
@@ -22,8 +22,9 @@ Important points
 #### SetReferences
 Sets references to dependent components.
 
-> SetReferences(references [IReferences](../ireferences))
+> SetReferences(ctx context.Context, references [IReferences](../ireferences))
 
+- **ctx**: ctx context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 
 ### Examples
@@ -32,11 +33,16 @@ Sets references to dependent components.
 type MyController {
 	_persistence IPersistence
 }
- 
-func (mc* MyController) setReferences(references IReferences) {
-    mc._persistence = references.getOneRequired(
-        NewDescriptor("mygroup", "persistence", "*", "*", "1.0"))
-    );
+func (mc* MyController) SetReferences(ctx context.Context, references IReferences) {
+	res, descrErr = references.GetOneRequired(
+		NewDescriptor("mygroup", "persistence", "*", "*", "1.0")
+	)
+
+    if descrErr != nil {
+        panic(descrErr)
+    }
+
+    mc._persistence = res
 }
 ...
 

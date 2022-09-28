@@ -2,7 +2,7 @@
 type: docs
 title: "StringValueMap"
 linkTitle: "StringValueMap"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Cross-language implementation of a map (dictionary) where all keys and values are strings.
     
@@ -56,9 +56,9 @@ Parses semicolon-separated key-value pairs and returns them as a [StringValueMap
 #### NewStringValueMapFromTuples
 Creates a new [StringValueMap](../string_value_map) from a list of key-value pairs called tuples.
 
-> NewStringValueMapFromTuples(tuples ...interface{}) [*StringValueMap](../string_value_map)
+> NewStringValueMapFromTuples(tuples ...any) [*StringValueMap](../string_value_map)
 
-- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: ...any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [*StringValueMap](../string_value_map) - newly created StringValueMap.
 
 
@@ -66,17 +66,17 @@ Creates a new [StringValueMap](../string_value_map) from a list of key-value pai
 Creates a new StringValueMap from a list of key-value pairs called tuples.
 The method is similar to [NewStringValueMapFromTuples](#newstringvaluemapfromtuples) but tuples are passed as array instead of parameters.
 
-> NewStringValueMapFromTuplesArray(tuples []interface{}) [*StringValueMap](../string_value_map)
+> NewStringValueMapFromTuplesArray(tuples []any) [*StringValueMap](../string_value_map)
 
-- **tuples**: []interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: []any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [*StringValueMap](../string_value_map) - newly created StringValueMap.
 
 #### NewStringValueMapFromValue
 Converts specified value into StringValueMap.
 
-> NewStringValueMapFromValue(value interface{}) [*StringValueMap](../string_value_map)
+> NewStringValueMapFromValue(value any) [*StringValueMap](../string_value_map)
 
-- **value**: interface{} - value to be converted
+- **value**: any - value to be converted
 - **returns**: [*StringValueMap](../string_value_map) - newly created StringValueMap.
 
 
@@ -99,18 +99,25 @@ Clears this map by removing all its elements.
 #### Clone
 Creates a binary clone of this object.
 
-> (c *StringValueMap) Clone() interface{}
+> (c *StringValueMap) Clone() any
 
-- **returns**: interface{} - clone of this object.
+- **returns**: any - clone of this object.
 
+
+#### InnerValue
+InnerValue return inner values of map as any
+
+> (c [*StringValueMap]()) InnerValue() any
+
+- **returns**: any - type code of the object value.
 
 #### Get
 Gets a map element specified by its key.
 
-> (c [*StringValueMap]()) Get(key string) string
+> (c [*StringValueMap]()) Get(key string) (string, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: string - value of the map element.
+- **returns**: (string, bool) - value of the map element.
 
 
 #### GetAsArray
@@ -214,6 +221,22 @@ See [FloatConverter.ToFloatWithDefault](../../convert/float_converter/#tofloatwi
 - **defaultValue**: float32 - default value
 - **returns**: float32 - flot value of the element or default value if the conversion is not supported. 
 
+#### GetAsULong
+Converts map element into a unsigned long or returns 0 if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsULong(key string) uint64 
+
+- **key**: string - key string a key of element to get.
+- **returns**: uint64 - value of the element or 0 if conversion is not supported.
+
+#### GetAsULongWithDefault
+Converts map element into a unsigned long or returns default value if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsULongWithDefault(key string, defaultValue uint64) uint64
+
+- **key**: string - string a key of element to get. 
+- **defaultValue**: uint64 - the default value
+- **returns**: uint64 - value of the element or default value if conversion is not supported.
 
 #### GetAsInteger
 Converts map element into an integer or returns 0 if the conversion is not possible.
@@ -223,6 +246,12 @@ Converts map element into an integer or returns 0 if the conversion is not possi
 - **key**: string - key of element to get.
 - **returns**: int - integer value of the element or 0 if the conversion is not supported. 
 
+#### GetAsUInteger
+GetAsUInteger converts object value into an unsigned integer or returns 0 if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsUInteger() 
+
+- **returns**: uint - unsigned integer value or 0 if conversion is not supported.
 
 #### GetAsIntegerWithDefault
 Converts a map element into an integer or returns a default value if the conversion is not possible.  
@@ -234,6 +263,13 @@ See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#toi
 - **defaultValue**: int - default value
 - **returns**: int - integer value of the element or default value if the conversion is not supported. 
 
+#### GetAsUIntegerWithDefault
+GetAsUIntegerWithDefault converts object value into a unsigned integer or returns default value if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsUIntegerWithDefault(defaultValue uint) uint
+
+- **defaultValue**: uint - the default value 
+- **returns**: uint - unsigned integer value or default if conversion is not supported.
 
 #### GetAsLong
 Converts map element into a long or returns 0 if the conversion is not possible.
@@ -288,30 +324,30 @@ See [AnyValueMap](../any_value_map), [AnyValueMap.NewAnyValueMapFromValue](../an
 Converts a map element into a boolean or returns nil if the conversion is not possible.  
 See [BooleanConverter.ToNullableBoolean](../boolean_converter/#tonullableboolean)
 
-> (c [*StringValueMap]()) GetAsNullableBoolean(key string) *bool
+> (c [*StringValueMap]()) GetAsNullableBoolean(key string) (bool, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *bool - boolean value of the element or nil if the conversion is not supported. 
+- **returns**: (bool, bool) - boolean value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableDateTime
 Converts a map element into a Date or returns nil if the conversion is not possible.  
 See [DateTimeConverter.ToNullableDateTime](../date_time_converter/#tonullabledatetime)
 
-> (c [*StringValueMap]()) GetAsNullableDateTime(key string) *time.Time
+> (c [*StringValueMap]()) GetAsNullableDateTime(key string) (time.Time, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *time.Time - Date value of the element or nil if the conversion is not supported. 
+- **returns**: (time.Time, bool) - Date value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableDouble
 Converts a map element into a double or returns nil if the conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> (c [*StringValueMap]()) GetAsNullableDouble(key string) *float64
+> (c [*StringValueMap]()) GetAsNullableDouble(key string) (float64, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *float64 - double value of the element or nil if the conversion is not supported.
+- **returns**: (float64, bool) - double value of the element or nil if the conversion is not supported.
 
 
 #### GetAsNullableDouble
@@ -328,11 +364,26 @@ See [FloatConverter.ToNullableFloat](../float_converter/#tonullablefloat)
 Converts a map element into an integer or returns nil if the conversion is not possible.  
 See [IntegerConverter.ToNullableInteger](../integer_converter/#tonullableinteger)
 
-> (c [*StringValueMap]()) GetAsNullableInteger(key string) *int
+> (c [*StringValueMap]()) GetAsNullableInteger(key string) (int, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *int - integer value of the element or nil if the conversion is not supported. 
+- **returns**: (int, bool) - integer value of the element or nil if the conversion is not supported. 
 
+#### GetAsNullableUInteger
+GetAsNullableUInteger converts object value into an unsigned integer or returns default value if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsNullableUInteger() (uint, bool)
+
+- **returns**: (uint, bool) - integer value or default if conversion is not supported.
+
+#### GetAsNullableFloat
+Converts a map element into a float or returns nil if the conversion is not possible. 
+See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
+
+> (c [*AnyValueMap]()) GetAsNullableFloat(key string) (float32, bool)
+
+- **key**: string - key of the element to get.
+- **returns**: (float32, bool) - float value of the element or nil if the conversion is not supported. 
 
 #### GetAsNullableLong
 Converts a map element into a long or returns nil if the conversion is not possible.  
@@ -343,24 +394,31 @@ See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 - **key**: string - key of element to get.
 - **returns**: *int64 - long value of the element or nil if the conversion is not supported.
 
+#### GetAsNullableULong
+Converts map element into a long or returns null if conversion is not possible.
+
+> (c [*StringValueMap]()) GetAsNullableULong(key string) (uint64, bool)
+
+- **key**: string - key string a key of element to get.
+- **returns**: (uint64, bool) - value of the element or null if conversion is not supported.
 
 #### GetAsNullableMap
 Converts a map element into an AnyValueMap or returns nil if the conversion is not possible.
 
-> (c [*StringValueMap]()) GetAsNullableMap(key string) [*AnyValueMap](../any_value_map)
+> (c [*StringValueMap]()) GetAsNullableMap(key string) ([*AnyValueMap](../any_value_map), bool)
 
 - **key**: string - key of element to get.
-- **returns**: [*AnyValueMap](../any_value_map) - AnyValueMap value of the element or nil if the conversion is not supported. 
+- **returns**: ([*AnyValueMap](../any_value_map), bool) - AnyValueMap value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableString
 Converts a map element into a string or returns nil if the conversion is not possible.  
 See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
-> (c [*StringValueMap]()) GetAsNullableString(key string) *string
+> (c [*StringValueMap]()) GetAsNullableString(key string) (string, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *string - string value of the element or nil if the conversion is not supported. 
+- **returns**: (string, bool) - string value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableType
@@ -368,22 +426,36 @@ Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns nil.    
 See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
 
-> (c [*StringValueMap]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code), key string) interface{}
+> (c [*StringValueMap]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code), key string) any
 
 - **typ**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of element to get.
-- **returns**: interface{} - element value defined by the typecode or nil if the conversion is not supported. 
+- **returns**: any - element value defined by the typecode or nil if the conversion is not supported. 
 
 
 #### GetAsObject
 Gets the value stored in a map element without any conversions.
 When element key is not defined it returns the entire map value.   
 
-> (c [*StringValueMap]()) GetAsObject(key string) interface{}
+> (c [*StringValueMap]()) GetAsObject(key string) any
 
 - **key**: string - (optional) key of the element to get
-- **returns**: interface{} - element value or value of the map when index is not defined. 
+- **returns**: any - element value or value of the map when index is not defined. 
 
+#### GetAsSingleObject
+GetAsSingleObject gets the value stored in map element without any conversions. 
+When element index is not defined it returns the entire array value.
+
+> (c [*StringValueMap]()) GetAsSingleObject() any
+
+- **returns**: any - the element value or value of the array when index is not defined.
+
+#### SetAsSingleObject
+SetAsSingleObject sets a new value to map.
+
+> (c [*StringValueMap]()) SetAsSingleObject(value any)
+
+- **value**: any - object value
 
 #### GetAsString
 Converts a map element into a string or returns "" if the conversion is not possible.
@@ -408,11 +480,11 @@ Converts a map element into a string or returns "" if the conversion is not poss
 Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns a default value for the specified type.
 
-> (c [*StringValueMap]()) GetAsType(typ [convert.TypeCode](../../convert/type_code), key string) interface{}
+> (c [*StringValueMap]()) GetAsType(typ [convert.TypeCode](../../convert/type_code), key string) any
 
 - **type**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of element to get.
-- **returns**: interface{} - element value defined by the typecode or default if the conversion is not supported. 
+- **returns**: any - element value defined by the typecode or default if the conversion is not supported. 
 
 
 #### GetAsTypeWithDefault
@@ -420,12 +492,12 @@ Converts a map element into a value defined by a specified typecode.
 If the conversion is not possible it returns a default value for the specified type.  
 See [TypeConverter.ToTypeWithDefault](../type_converter/#totypewithdefault)
 
-> (c [*StringValueMap]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), key string, defaultValue interface{}) interface{}
+> (c [*StringValueMap]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), key string, defaultValue any) any
 
 - **type**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of element to get.
-- **defaultValue**: interface{} - default value
-- **returns**: interface{} - element value defined by the typecode or default value if the conversion is not supported. 
+- **defaultValue**: any - default value
+- **returns**: any - element value defined by the typecode or default value if the conversion is not supported. 
 
 
 #### GetAsValue
@@ -457,10 +529,10 @@ Gets a number of elements stored in this map.
 #### Put
 Puts a new value into a map element specified by its key.
 
-> (c [*StringValueMap]()) Put(key string, value interface{})
+> (c [*StringValueMap]()) Put(key string, value any)
 
 - **key**: string - key of the element to put.
-- **value**: interface{} - new value for map element.
+- **value**: any - new value for map element.
 
 
 #### Remove
@@ -477,10 +549,10 @@ When the index is not defined, it resets the entire map value.
 This method has double purpose because method overrides are not supported in JavaScript.  
 See [MapConverter.ToMap](../../convert/map_converter/#tomap)
 
-> (c [*StringValueMap]()) SetAsObject(key string, value interface{})
+> (c [*StringValueMap]()) SetAsObject(key string, value any)
 
 - **key**: string - (optional) key of the element to set
-- **value**: interface{} - new element or map value.
+- **value**: any - new element or map value.
 
 
 #### String
@@ -493,16 +565,29 @@ The result is a semicolon-separated list of key-value pairs as
 - **returns**: string - string representation of the object.
 
 
+#### MarshalJSON
+Converts StringValueMap to json bytes
+> (c [*StringValueMap]()) MarshalJSON() ([]byte, error)
+
+- **returns**: ([]byte, error) - json byte array
+
+#### UnmarshalJSON 
+Parse json data into StringValueMap struct
+
+> (c *StringValueMap) UnmarshalJSON(data []byte) error
+
+- **data**: []byte - json data bytes
+- **returns**: error - nil or error
 
 ### Examples
 
 ```go
-value1 := NewStringValueMapFromString("key1=1;key2=123.456;key3=2018-01-01");
+value1 := NewStringValueMapFromString("key1=1;key2=123.456;key3=2018-01-01")
 
-value1.GetAsBoolean("key1");   // Result: true
-value1.GetAsInteger("key2");   // Result: 123
-value1.GetAsFloat("key2");     // Result: 123.456
-value1.GetAsDateTime("key3");  // Result: new Date(2018,0,1)
+value1.GetAsBoolean("key1")   // Result: true
+value1.GetAsInteger("key2")   // Result: 123
+value1.GetAsFloat("key2")     // Result: 123.456
+value1.GetAsDateTime("key3")  // Result: new Date(2018,0,1)
 ```
 
 ### See also

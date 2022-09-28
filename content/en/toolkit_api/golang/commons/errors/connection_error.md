@@ -2,7 +2,7 @@
 type: docs
 title: "Connectionerror"
 linkTitle: "Connectionerror"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors that occur during connections to remote services.
     

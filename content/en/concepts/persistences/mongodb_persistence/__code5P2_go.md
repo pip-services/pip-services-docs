@@ -3,8 +3,8 @@
 import (
 	"reflect"
 
-	conf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
+	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
 
 	"go.mongodb.org/mongo-driver/bson"

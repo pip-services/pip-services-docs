@@ -2,7 +2,7 @@
 type: docs
 title: "Schema"
 linkTitle: "Schema"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Basic schema used to validate values against a set of validation rules.
 
@@ -93,20 +93,20 @@ Validates a given value to match a specified type.
 The type can be defined as a Schema, type, a type name or [TypeCode](../convert/type_code)
 When type is a Schema, it executes validation recursively against that Schema.
 
-> (c [*Schema]()) PerformTypeValidation(path string, typ interface{}, value interface{}) [][*ValidationResult](../validation_result)
+> (c [*Schema]()) PerformTypeValidation(path string, typ any, value any) [][*ValidationResult](../validation_result)
 
 - **path**: string - dot notation path to the value.
-- **type**: interface{} - type to match the value type
-- **value**: interface{} - value to be validated.
+- **type**: any - type to match the value type
+- **value**: any - value to be validated.
 - **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 #### PerformValidation
 Validates a given value against the schema and configured validation rules.
 
-> (c [*Schema]()) PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
+> (c [*Schema]()) PerformValidation(path string, value any) [][*ValidationResult](../validation_result)
 
 - **path**: string - dot notation path to the value.
-- **value**: interface{} - value to be validated.
+- **value**: any - value to be validated.
 - **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 #### SetRequired
@@ -128,19 +128,19 @@ Sets validation rules to check values against.
 Validates the given value and results validation results.
 See [ValidationResult](../validation_result)
 
-> (c [*Schema]()) Validate(value interface{}) [][*IValidationRule](../ivalidation_rule)
+> (c [*Schema]()) Validate(value any) [][*IValidationRule](../ivalidation_rule)
 
-- **value**: interface{} - value to be validated.
+- **value**: any - value to be validated.
 - **returns**: [][*IValidationRule](../ivalidation_rule) - list with validation results.
 
 
 #### ValidateAndReturnError
 Validates the given value and returns a [ValidationException](../validation_exception) if errors were found.
 
-> (c [*Schema]()) ValidateAndReturnError(correlationId string, value interface{}, strict bool) [*errors.ApplicationError](../../errors/application_error)
+> (c [*Schema]()) ValidateAndReturnError(correlationId string, value any, strict bool) [*errors.ApplicationError](../../errors/application_error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **value**: interface{} -  value to be validated.
+- **value**: any -  value to be validated.
 - **strict**: bool - true to treat warnings as errors.
 - **returns**: [*errors.ApplicationError](../../errors/application_error) - validation exception.
 
@@ -148,10 +148,10 @@ Validates the given value and returns a [ValidationException](../validation_exce
 Validates the given value and throws a [ValidationException](../validation_exception) if errors were found.  
 See [ValidationException.ThrowExceptionIfNeeded](../validation_exception/#throwexceptionifneeded)
 
-> (c [*Schema]()) ValidateAndThrowError(correlationId string, value interface{}, strict bool)
+> (c [*Schema]()) ValidateAndThrowError(correlationId string, value any, strict bool)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **value**: interface{} - value to be validated.
+- **value**: any - value to be validated.
 - **strict**: bool - true to treat warnings as errors.
 
 

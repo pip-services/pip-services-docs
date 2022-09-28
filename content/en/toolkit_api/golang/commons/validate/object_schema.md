@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectSchema"
 linkTitle: "ObjectSchema"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Schema to validate user defined objects.
 ---
@@ -123,14 +123,25 @@ Adds a validation schema for a required object property.
 ### Examples
 
 ```go
-var schema = NewObjectSchema(false)
-    .WithOptionalProperty("id", TypeCode.String)
-    .WithRequiredProperty("name", TypeCode.String);
+schema.Validate(struct {
+	id   string
+	name string
+}{id: "1", name: "ABC"}) // Result: no errors
 
-schema.validate({ id: "1", name: "ABC" });       // Result: no errors
-schema.validate({ name: "ABC" });                // Result: no errors
-schema.validate({ id: 1, name: "ABC" });         // Result: id type mismatch
-schema.validate({ id: 1, _name: "ABC" });        // Result: name is missing, unexpected _name
-schema.validate("ABC");                          // Result: type mismatch
+schema.Validate(struct {
+	id   string
+	name string
+}{name: "ABC"}) // Result: no errors
 
+schema.Validate(struct {
+	id   int
+	name string
+}{id: 1, name: "ABC"}) // Result: id type mismatch
+
+schema.Validate(struct {
+	id    int
+	_name string
+}{id: 1, _name: "ABC"}) // Result: name is missing, unexpected_name
+
+schema.Validate("ABC")
 ```

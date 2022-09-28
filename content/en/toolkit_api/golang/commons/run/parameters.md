@@ -2,7 +2,7 @@
 type: docs
 title: "Parameters"
 linkTitle: "Parameters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Contains a map with execution parameters.
 
@@ -26,9 +26,9 @@ Important points
 #### NewParameters
 Creates a new instance of the map and assigns its value.
 
-> NewParameters(values map[string]interface{}) [*Parameters]()
+> NewParameters(values map[string]any) [*Parameters]()
 
-- **map**: map[string]interface{} - (optional) values to initialize this map.
+- **map**: map[string]any - (optional) values to initialize this map.
 
 #### NewParametersFromConfig
 Creates a new Parameters object from a ConfigMap object.
@@ -42,9 +42,9 @@ See [ConfigParams](../../config/config_params)
 #### NewParametersFromMaps
 Creates a new Parameters by merging two or more maps. Maps defined later in the list override values from previously defined maps.
 
-> NewParametersFromMaps(maps ...map[string]interface{}) [*Parameters]()
+> NewParametersFromMaps(maps ...map[string]any) [*Parameters]()
 
-- **maps**: ...map[string]interface{} - array of maps to be merged
+- **maps**: ...map[string]any - array of maps to be merged
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 #### NewParametersFromTuples
@@ -53,17 +53,17 @@ Tuples parameters contain a sequence of *key1, value1, key2, value2, ...* pairs.
 
 See [AnyValueMap.NewAnyValueMapFromTuplesArray](../../data/any_value_map/#newanyvaluemapfromtuplesarray)
 
-> NewParametersFromTuples(tuples ...interface{}) [*Parameters]()
+> NewParametersFromTuples(tuples ...any) [*Parameters]()
 
-- **tuples**: ...interface{} - ConfigParams object that contains parameters.
+- **tuples**: ...any - ConfigParams object that contains parameters.
 - **returns**: [*Parameters](../parameters) - new Parameters object.
 
 #### NewParametersFromValue
 Creates a new Parameters object filled with key-value pairs from a specified object.
 
-> NewParametersFromValue(value interface{}) [*Parameters]()
+> NewParametersFromValue(value any) [*Parameters]()
 
-- **value**: interface{} - object with key-value pairs used to initialize a new Parameters.
+- **value**: any - object with key-value pairs used to initialize a new Parameters.
 - **returns**: [Parameters](../parameters) - new Parameters object.
 
 #### NewEmptyParameters
@@ -77,9 +77,9 @@ Creates a new instance of the map and assigns its value.
 #### AssignTo
 Assigns (copies over) properties from the specified value to this map.
 
-> (c [*Parameters]()) AssignTo(value interface{})
+> (c [*Parameters]()) AssignTo(value any)
 
-- **value**: interface{} - value whose properties shall be copied over.
+- **value**: any - value whose properties shall be copied over.
 
 #### Contains
 Checks if the map contains an element with a specified key.
@@ -97,19 +97,19 @@ Gets a map's element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> (c [*Parameters]()) Get(key string) interface{}
+> (c [*Parameters]()) Get(key string) (any, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: interface{} - value of the map's element.
+- **returns**: (any, bool) - value of the map's element.
 
 
 #### GetAsNullableParameters
 Converts a map's element into an Parameters object or returns nil if the conversion is not possible.
 
-> (c [*Parameters]()) GetAsNullableParameters(key string) [*Parameters](../parameters)
+> (c [*Parameters]()) GetAsNullableParameters(key string) ([*Parameters](../parameters), bool)
 
 - **key**: string - key of element to get.
-- **returns**: [*Parameters](../parameters) - Parameters value of the element or nil if the conversion is not supported.
+- **returns**: ([*Parameters](../parameters), bool) - Parameters value of the element or nil if the conversion is not supported.
 
 #### GetAsParameters
 Converts map element into an Parameters or returns empty Parameters if the conversion is not possible.
@@ -163,10 +163,10 @@ Puts a new value into a map element specified by its key.
 The key can be defined using dot notation
 and allows to recursively access elements of elements.
 
-> (c *Parameters) Put(key string, value interface{})
+> (c *Parameters) Put(key string, value any)
 
 - **key**: string - key of the element to put.
-- **value**: interface{} - new value for the map element.
+- **value**: any - new value for the map element.
 
 #### SetDefaults
 Set default values from specified Parameters and returns a new Parameters object.

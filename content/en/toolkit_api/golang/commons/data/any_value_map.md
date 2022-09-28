@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValueMap"
 linkTitle: "AnyValueMap"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Cross-language implementation of a dynamic map (dictionary) object that can hold values of any type.
     It also provides several methods to convert the stored values to different types.
@@ -17,9 +17,9 @@ The AnyValueMap class provides a cross-language implementation of a dynamic map 
 #### NewAnyValueMap
 Creates a new instance of the map and assigns its value.
 
-> NewAnyValueMap(value map[string]interface{}) [*AnyValueMap]()
+> NewAnyValueMap(value map[string]any) [*AnyValueMap]()
 
-- **values**: map[string]interface{} - (optional) values to initialize this map.
+- **values**: map[string]any - (optional) values to initialize this map.
 
 #### InheritAnyValueMap
 Creates a new instance of the map and assigns base methods from interface.
@@ -39,18 +39,18 @@ Creates a new empty instance of the map.
 Creates a new AnyValueMap by merging two or more maps.
 Maps defined later in the list override values from previously defined maps.
 
-> NewAnyValueMapFromMaps(maps ...map[string]interface{}) [*AnyValueMap](../any_value_map)
+> NewAnyValueMapFromMaps(maps ...map[string]any) [*AnyValueMap](../any_value_map)
 
-- **maps**: ...map[string]interface{} - array of maps to be merged
+- **maps**: ...map[string]any - array of maps to be merged
 - **returns**: [*AnyValueMap](../any_value_map) - newly created AnyValueMap.
 
 
 #### NewAnyValueMapFromTuples
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 
-> NewAnyValueMapFromTuples(tuples ...interface{}) [*AnyValueMap](../any_value_map)
+> NewAnyValueMapFromTuples(tuples ...any) [*AnyValueMap](../any_value_map)
 
-- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values.
+- **tuples**: ...any - list of values where odd elements are keys and the following even elements are values.
 - **returns**: [*AnyValueMap](../any_value_map) - newly created AnyValueArray
 
 
@@ -58,18 +58,18 @@ Creates a new AnyValueMap from a list of key-value pairs called tuples.
 Creates a new AnyValueMap from a list of key-value pairs called tuples.
 The method is similar to [NewAnyValueMapFromTuples](#NewAnyValueMapFromTuples) but tuples are passed as array instead of parameters.
 
-> NewAnyValueMapFromTuplesArray(tuples []interface{}) [*AnyValueMap](../any_value_map)
+> NewAnyValueMapFromTuplesArray(tuples []any) [*AnyValueMap](../any_value_map)
 
-- **tuples**: []interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: []any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [*AnyValueMap](../any_value_map) - newly created AnyValueArray.
 
 
 #### NewAnyValueMapFromValue
 Converts a specified value into AnyValueMap.
 
-> NewAnyValueMapFromValue(value interface{}) [*AnyValueMap](../any_value_map)
+> NewAnyValueMapFromValue(value any) [*AnyValueMap](../any_value_map)
 
-- **value**: interface{} - value to be converted
+- **value**: any - value to be converted
 - **returns**: [*AnyValueMap](../any_value_map) - a newly created AnyValueMap.
 
 
@@ -79,9 +79,9 @@ Converts a specified value into AnyValueMap.
 #### Append
 Appends new elements to this map.
 
-> (c [*AnyValueMap]()) Append(value map[string]interface{})
+> (c [*AnyValueMap]()) Append(value map[string]any)
 
-- **map**: map[string]interface{} - map with added elements.
+- **map**: map[string]any - map with added elements.
 
 
 #### Clear
@@ -93,18 +93,18 @@ Clears this map by removing all its elements.
 #### Clone
 Creates a binary clone of this object.
 
-> (c [*AnyValueMap]()) Clone() interface{}
+> (c [*AnyValueMap]()) Clone() any
 
-- **returns**: interface{} - clone of this object.
+- **returns**: any - clone of this object.
 
 
 #### Get
-Gets a map element specified by its key.
+Get a map element specified by its key.
 
-> (c [*AnyValueMap]()) Get(key string) interface{}
+> (c [*AnyValueMap]()) Get(key string) (any, bool)
 
-- **key**: string - key of the element to get.
-- **returns**: interface{} - value of the map element.
+- **key**: string - key string a key of the element to get.
+- **returns**: (any, bool) - the value of the map element.
 
 
 #### GetAsArray
@@ -160,7 +160,7 @@ Converts a map element into a Date or returns the current date if the conversion
 
 
 #### GetAsDateTimeWithDefault
-Converts a map element into a Date or returns a default value if the conversion is not possible.  
+Converts a map element into a Date or returns a default value if the conversion is not possible.  k
 See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/#todatetimewithdefault)
 
 > (c [*AnyValueMap]()) GetAsDateTimeWithDefault(key string, defaultValue time.Time) time.Time
@@ -169,6 +169,30 @@ See [DateTimeConverter.ToDateTimeWithDefault](../../convert/date_time_converter/
 - **defaultValue**: time.Time - default value
 - **returns**: time.Time - Date value of the element or default value if the conversion is not supported. 
 
+#### GetAsNullableDuration 
+Converts map element into a time.Duration or returns null if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsNullableDuration(key string) (time.Duration, bool)
+
+- **key**: string - key string a key of element to get.
+- **returns**: (time.Duration, bool) - time.Duration value of the element or null if conversion is not supported.
+
+#### GetAsDuration 
+Converts map element into a time.Duration or returns the current date if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsDuration(key string) time.Duration
+
+- **key**: string - key string a key of element to get.
+- **returns**: time.Duration - time.Duration value of the element or the current date if conversion is not supported.
+
+#### GetAsDuration
+Converts map element into a time.Duration or returns the current date if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsDurationWithDefault(key string, defaultValue time.Duration) time.Duration
+
+- **key**: string - string a key of element to get.
+- **defaultValue**: time.Duration - the default value.
+- **returns**: time.Duration - value of the element or default value if conversion is not supported.
 
 #### GetAsDouble
 Converts a map element into a double or returns 0 if conversion the is not possible.
@@ -252,6 +276,30 @@ See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithde
 - **defaultValue**: int64 - default value
 - **returns**: int64 - long value of the element or default value if the conversion is not supported.
 
+#### GetAsNullableULong
+Converts map element into a long or returns null if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsNullableULong(key string) (uint64, bool)
+
+- **key**: string - key string a key of element to get.
+- **returns**: (uint64, bool) - value of the element or null if conversion is not supported.
+
+#### GetAsULong
+Converts map element into a unsigned long or returns 0 if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsULong(key string) uint64 
+
+- **key**: string - key string a key of element to get.
+- **returns**: uint64 - value of the element or 0 if conversion is not supported.
+
+#### GetAsULongWithDefault
+Converts map element into a unsigned long or returns default value if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsULongWithDefault(key string, defaultValue uint64) uint64
+
+- **key**: string - string a key of element to get. 
+- **defaultValue**: uint64 - the default value
+- **returns**: uint64 - value of the element or default value if conversion is not supported.
 
 #### GetAsMap
 Converts a map element into an AnyValueMap or returns anempty AnyValueMap if the conversion is not possible.    
@@ -277,50 +325,50 @@ Converts a map element into an AnyValueMap or returns a default value if the con
 Converts a map element into an AnyValueArray or returns nil if the conversion is not possible.  
 See [AnyValueMap](../any_value_map), [AnyValueMap.NewAnyValueMapFromValue](../any_value_map/#newanyvaluemapfromvalue)
 
-> (c [*AnyValueMap]()) GetAsNullableArray(key string) [*AnyValueMap](../any_value_map)
+> (c [*AnyValueMap]()) GetAsNullableArray(key string) ([*AnyValueArray](../any_value_array), bool)
 
 - **key**: string - key of the element to get.
-- **returns**: [*AnyValueMap](../any_value_map) - AnyValueArray value of the element or nil if the conversion is not supported. 
+- **returns**: ([*AnyValueArray](../any_value_array), bool) - AnyValueArray value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableBoolean
 Converts a map element into a boolean or returns nil if the conversion is not possible.  
 See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> (c [*AnyValueMap]()) GetAsNullableBoolean(key string) *bool
+> (c [*AnyValueMap]()) GetAsNullableBoolean(key string) (bool, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: *bool - boolean value of the element or nil if the conversion is not supported. 
+- **returns**: (bool, bool) - boolean value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableDateTime
 Converts a map element into a long or returns default value if the conversion is not possible.  
 See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> (c [*AnyValueMap]()) GetAsNullableDateTime(key string) *time.Time
+> (c [*AnyValueMap]()) GetAsNullableDateTime(key string) (time.Time, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: *time.Time - Date value of the element or nil if the conversion is not supported. 
+- **returns**: (time.Time, bool) - Date value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableDouble
 Converts a map element into a double or returns nil if the conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> (c [*AnyValueMap]()) GetAsNullableDouble(key string) *float64
+> (c [*AnyValueMap]()) GetAsNullableDouble(key string) (float64, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: *float64 - double value of the element or nil if conversion is not supported. 
+- **returns**: (float64, bool) - double value of the element or nil if conversion is not supported. 
 
 
 #### GetAsNullableFloat
 Converts a map element into a float or returns nil if the conversion is not possible. 
 See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> (c [*AnyValueMap]()) GetAsNullableFloat(key string) *float32
+> (c [*AnyValueMap]()) GetAsNullableFloat(key string) (float32, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: *float32 - float value of the element or nil if the conversion is not supported. 
+- **returns**: (float32, bool) - float value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableInteger
@@ -337,29 +385,29 @@ See [IntegerConverter.ToNullableInteger](../../convert/integer_converter/#tonull
 Converts a map element into a long or returns nil if the conversion is not possible.  
 See [LongConverter.ToNullableLong](../../convert/long_converter/#tonullablelong)
 
-> (c [*AnyValueMap]()) GetAsNullableLong(key string) *int64
+> (c [*AnyValueMap]()) GetAsNullableLong(key string) (int64, bool)
 
 - **key**: string - key of the element to get.
-- **returns**: *int64 - long value of the element or nil if the conversion is not supported. 
+- **returns**: (int64, bool) - value of the element or nil if conversion is not supported. 
 
 
 #### GetAsNullableMap
 Converts a map element into an AnyValueMap or returns nil if the conversion is not possible.  
 
-> (c [*AnyValueMap]()) GetAsNullableMap(key string) [*AnyValueMap](../any_value_map)
+> (c [*AnyValueMap]()) GetAsNullableMap(key string) ([*AnyValueMap](../any_value_map), bool)
 
 - **key**: string - key of the element to get.
-- **returns**: [*AnyValueMap](../any_value_map) - AnyValueMap value of the element or nil if the conversion is not supported. 
+- **returns**: ([*AnyValueMap](../any_value_map), bool) - AnyValueMap value of the element or nil if the conversion is not supported. 
 
 
 #### GetAsNullableString
 Converts a map element into a string or returns nil if the conversion is not possible.    
 See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
-> (c [*AnyValueMap]()) GetAsNullableString(key string) *string
+> (c [*AnyValueMap]()) GetAsNullableString(key string) (string, bool)
 
 - **key**: string - key of element to get.
-- **returns**: *string - string value of the element or nil if the conversion is not supported. 
+- **returns**: (string, bool) - string value of the element or null if conversion is not supported. 
 
 
 #### GetAsNullableType
@@ -367,22 +415,95 @@ Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns nil.     
 See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
 
-> (c [*AnyValueMap]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code), key string) interface{}
+> (c [*AnyValueMap]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code), key string) (any, bool)
 
 - **typ**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of the element to get.
-- **returns**: interface{} - element value defined by the typecode or nil if the conversion is not supported. 
+- **returns**: (any, bool) - element value defined by the typecode or nil if the conversion is not supported. 
 
+#### GetAsNullableBoolean
+Converts map element into a boolean or returns null if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsNullableBoolean(key string) (bool, bool)
+
+- **key**: string - a key of element to get.
+- **returns**: (bool, bool) - bool value of the element or null if conversion is not supported.
+
+#### GetAsBoolean
+Converts map element into a boolean or returns false if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsBoolean(key string) bool
+
+- **key**: string - a key of element to get.
+- **returns**: bool - bool value of the element or false if conversion is not supported.
+
+#### GetAsBooleanWithDefault 
+GetAsBooleanWithDefault converts map element into a boolean or returns default value if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsBooleanWithDefault(key string, defaultValue bool) bool
+
+- **key**: string - key string a key of element to get.
+- **defaultValue**: bool - defaultValue bool the default value.
+- **returns**: bool - bool value of the element or default value if conversion is not supported.
+
+#### GetAsInteger 
+Converts map element into an integer or returns 0 if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsInteger(key string) int
+
+- **key**: string - key string a key of element to get.
+- **returns**: int - integer value of the element or 0 if conversion is not supported.
+
+#### GetAsNullableUInteger 
+Converts map element into an unsigned integer or returns false if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsNullableUInteger(key string) (uint, bool)
+
+- **key**: string - key string a key of element to get. 
+- **returns**: (uint, bool) - value of the element or false if conversion is not supported.
+
+#### GetAsUInteger
+Converts map element into an integer or returns 0 if conversion is not possible.
+
+> (c [*AnyValueMap]()) GetAsUInteger(key string) uint
+
+- **key**: string - key string a key of element to get.
+- **returns**: uint - unsigned integer value of the element or 0 if conversion is not supported.
+
+#### GetAsUIntegerWithDefault
+Converts map element into an unsigned integer or returns default value if conversion is not possible. 
+
+> (c [*AnyValueMap]()) GetAsUIntegerWithDefault(key string, defaultValue uint) uint
+
+- **key**: string - key string a key of element to get.
+- **defaultValue**: uint - int the default value.
+- **returns**: uint - unsigned integer value of the element or default value if conversion is not supported.
 
 #### GetAsObject
 Gets the value stored in map element without any conversions.
 When element key is not defined it returns the entire map value.
 
-> (c [*AnyValueMap]()) GetAsObject(key string) interface{}
+> (c [*AnyValueMap]()) GetAsObject(key string) (any, bool)
 
 - **key**: string - (optional) key of the element to get
-- **returns**: interface{} - the element value or value of the map when index is not defined. 
+- **returns**: (any, bool) - the element value or value of the map when index is not defined. 
 
+#### GetAsSingleObject
+GetAsSingleObject gets the value stored in map element without any conversions. 
+When element index is not defined it returns the entire array value.
+
+> (c [*AnyValueMap]()) GetAsSingleObject() any
+
+- **returns**: any - the element value or value of the array when index is not defined.
+
+#### SetAsSingleObject
+SetAsSingleObject sets a new value to map.
+
+see [MapConverter.ToMap](../../convert/map_converter/#tomap)
+
+> (c [*AnyValueMap]()) SetAsSingleObject(value any)
+
+- **value**: any - object value
 
 #### GetAsString
 Converts a map element into a string or returns *""* if the conversion is not possible.
@@ -408,11 +529,11 @@ See [StringConverter.ToStringWithDefault](../../convert/string_converter/#tostri
 Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns a default value for the specified type. 
 
-> (c [*AnyValueMap]()) GetAsType(typ [convert.TypeCode](../../convert/type_code), key string) interface{}
+> (c [*AnyValueMap]()) GetAsType(typ [convert.TypeCode](../../convert/type_code), key string) any
 
 - **type**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of element to get.
-- **returns**: interface{} - element value defined by the typecode or default if the conversion is not supported. 
+- **returns**: any - element value defined by the typecode or default if the conversion is not supported. 
 
 
 #### GetAsTypeWithDefault
@@ -420,12 +541,12 @@ Converts a map element into a value defined by a specified typecode.
 If conversion is not possible it returns a default value.    
 See [TypeConverter.ToTypeWithDefault](../../convert/type_converter/#totypewithdefault)
 
-> (c [*AnyValueMap]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), key string, defaultValue interface{}) interface{}
+> (c [*AnyValueMap]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), key string, defaultValue any) any
 
 - **typ**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
 - **key**: string - key of element to get.
-- **defaultValue**: interface{} - default value
-- **returns**: interface{} - element value defined by the typecode or default value if the conversion is not supported.
+- **defaultValue**: any - default value
+- **returns**: any - element value defined by the typecode or default value if the conversion is not supported.
 
 
 
@@ -439,7 +560,7 @@ See [AnyValue](../any_value), [AnyValue.constructors](../any_value/#constructors
 - **returns**: [*AnyValue](../any_value) - AnyValue value of the element or empty AnyValue if the conversion is not supported. 
 
 
-#### GetKeys
+#### Keys
 Gets the keys of all elements stored in this map.
 
 > (c [*AnyValueMap]()) Keys() []string
@@ -450,16 +571,16 @@ Gets the keys of all elements stored in this map.
 #### InnerValue
 Gets the type code for the value stored in this object.
 
-> (c *AnyValue) InnerValue() interface{}
+> (c *AnyValue) InnerValue() any
 
-- **returns**: interface{} - type code of the object value.
+- **returns**: any - type code of the object value.
 
 #### Value
 Gets type code for the value stored in this object.
 
-> (c *AnyValue) Value() interface{}
+> (c *AnyValue) Value() any
 
-- **returns**: interface{} - type code of the object value.
+- **returns**: any - type code of the object value.
 
 
 #### Len
@@ -469,14 +590,21 @@ Gets a number of elements stored in this map.
 
 - **returns**: int - number of elements in this map.
 
+#### Contains
+Contains checks if this map contains a key. The check uses direct comparison between key and the specified key value.
+
+> (c [*AnyValueMap]()) Contains(key string) bool
+
+- **key**: string - key string a value to be checked
+- **returns**: bool - bool true if this map contains the key or false otherwise.
 
 #### Put
 Puts a new value into a map element specified by its key.
 
-> (c [*AnyValueMap]()) Put(key string, value interface{})
+> (c [*AnyValueMap]()) Put(key string, value any)
 
 - **key**: string - key of the element to put.
-- **value**: interface{} - new value for map element.
+- **value**: any - new value for map element.
 
 
 #### Remove
@@ -492,10 +620,10 @@ Sets a new value to a map element specified by its index.
 When the index is not defined, it resets the entire map value.
 This method has a double purpose because method overrides are not supported in JavaScript.
 
-> (c [*AnyValueMap]()) SetAsObject(key string, value interface{})
+> (c [*AnyValueMap]()) SetAsObject(key string, value any)
 
 - **key**: string - (optional) key of the element to set
-- **value**: interface{} - new element or map value.
+- **value**: any - new element or map value.
 
 
 #### String
@@ -511,12 +639,12 @@ The result is a semicolon-separated list of key-value pairs as
 
 ### Examples
 ```go
-let value1 = new AnyValueMap({ key1: 1, key2: "123.456", key3: "2018-01-01" });
-     
-value1.getAsBoolean("key1");   // Result: true
-value1.getAsInteger("key2");   // Result: 123
-value1.getAsFloat("key2");     // Result: 123.456
-value1.getAsDateTime("key3");  // Result: new Date(2018,0,1)
+value1 := NewAnyValueMap(map[string]any{"key1": 1, "key2": "123.456", "key3": "2018-01-01"})
+
+value1.GetAsBoolean("key1")  // Result: true
+value1.GetAsInteger("key2")  // Result: 123
+value1.GetAsFloat("key2")    // Result: 123.456
+value1.GetAsDateTime("key3") // Result: new Date(2018,0,1)
 
 ```
 

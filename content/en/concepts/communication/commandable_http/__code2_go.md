@@ -1,10 +1,10 @@
 
 ```go
 import (
-	ccomand "github.com/pip-services3-go/pip-services3-commons-go/commands"
-	cconv "github.com/pip-services3-go/pip-services3-commons-go/convert"
-	crun "github.com/pip-services3-go/pip-services3-commons-go/run"
-	cvalid "github.com/pip-services3-go/pip-services3-commons-go/validate"
+	ccomand "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
+	cconv "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
+	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
+	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
 )
 
 type FriendsCommandSet struct {

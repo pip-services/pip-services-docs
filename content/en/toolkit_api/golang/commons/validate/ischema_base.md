@@ -2,7 +2,7 @@
 type: docs
 title: "ISchemaBase"
 linkTitle: "ISchemaBase"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface with a method to perform a validation.
 ---
@@ -18,7 +18,7 @@ The ISchemaBase interface is used by classes that need to perform a validation a
 #### PerformValidation
 Validates a given value against the schema and configured validation rules..
 
-> PerformValidation(path string, value interface{}) [][*ValidationResult](../validation_result)
+> PerformValidation(path string, value any) [][*ValidationResult](../validation_result)
 
-- **path**: interface{} - dot notation path to the value
+- **path**: any - dot notation path to the value
 - **returns**: [][*ValidationResult](../validation_result) - list with validation results

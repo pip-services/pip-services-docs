@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectWriter"
 linkTitle: "ObjectWriter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to dynamically set the properties of an object. 
 
@@ -32,10 +32,10 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> (c *TObjectWriter) SetProperties(obj interface{}, values map[string]interface{})
+> (c *TObjectWriter) SetProperties(obj any, values map[string]any)
 
-- **obj**: interface{} - object to write properties to.
-- **values**: map[string]interface{} - map, containing property names and their values.
+- **obj**: any - object to write properties to.
+- **values**: map[string]any - map, containing property names and their values.
 
 #### SetProperty
 Sets value of an object property specified by its name.
@@ -47,22 +47,21 @@ map key or array index.
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't any throw errors.
 
-> (c *TObjectWriter) SetProperty(obj interface{}, name string, value interface{})
+> (c *TObjectWriter) SetProperty(obj any, name string, value any)
 
-- **obj**: interface{} - object to write property to.
+- **obj**: any - object to write property to.
 - **name**: string - name of the property to set.
-- **value**: interface{} - new value for the property to set.
+- **value**: any - new value for the property to set.
 
 ### Examples
 
 ```go
 myObj := MyObject{}
- 
 ObjectWriter.SetProperty(myObj, "myProperty", 123)
- 
+
 myMap := { key1: 123, key2: "ABC" }
 ObjectWriter.SetProperty(myMap, "key1", "XYZ")
- 
+
 myArray := [1, 2, 3]
 ObjectWriter.SetProperty(myArray, "0", 123)
 

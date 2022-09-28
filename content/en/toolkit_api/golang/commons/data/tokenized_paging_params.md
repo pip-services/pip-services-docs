@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedPagingParams"
 linkTitle: "TokenizedPagingParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Data transfer object used to pass tokenized paging parameters for queries. 
 ---
@@ -23,10 +23,10 @@ Important points
 ### Constructors
 Creates a new instance and sets its values.
 
-> NewTokenizedPagingParams(token, take, total interface{}) [*TokenizedPagingParams]()
+> NewTokenizedPagingParams(token string, take int64, total bool) [*TokenizedPagingParams]()
 
 - **token**: string - token that defines a starting point for the search.
-- **take**: *int64 - the number of items to return. 
+- **take**: int64 - the number of items to return. 
 - **total**: bool - true to return the total number of items.
 
 
@@ -40,7 +40,7 @@ Start token
 
 #### Take
 Number of items to return.
-> **Take**: *int64
+> **Take**: int64
 
 #### Total
 Flag to return the total number of items.
@@ -73,18 +73,18 @@ Creates a new TokenizedPagingParams and sets it parameters from the specified ma
 #### NewTokenizedPagingParamsFromTuples
 Creates a new TokenizedPagingParams from a list of key-value pairs called tuples.
 
-> NewTokenizedPagingParamsFromTuples(tuples ...interface{}) [*TokenizedPagingParams]()
+> NewTokenizedPagingParamsFromTuples(tuples ...any) [*TokenizedPagingParams]()
 
-- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: ...any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [TokenizedPagingParams]() - newly created TokenizedPagingParams.
 
 
 #### NewTokenizedPagingParamsFromValue
 Converts a specified value into TokenizedPagingParams.
 
-> NewTokenizedPagingParamsFromValue(value interface{}) [*TokenizedPagingParams]()
+> NewTokenizedPagingParamsFromValue(value any) [*TokenizedPagingParams]()
 
-- **value**: interface{} - value to be converted
+- **value**: any - value to be converted
 - **returns**: [TokenizedPagingParams]() - newly created PagingParams.
 
 ### Examples
@@ -93,5 +93,5 @@ Converts a specified value into TokenizedPagingParams.
 filter := NewFilterParamsFromTuples("type", "Type1");
 paging := NewTokenizedPagingParams("", 100);
 
-err, page = myDataClient.getDataByFilter(filter, paging);
+page, err = myDataClient.GetDataByFilter(context.Context(), filter, paging);
 ```

@@ -29,9 +29,9 @@ go get -u github.com/pip-services3-go/pip-services3-aws-go@latest
 #### Commons module
 
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-commons-go
+go get -u github.com/pip-services3-gox/pip-services3-commons-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-commons-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-commons-gox)
 
 #### Components module 
 ```bash

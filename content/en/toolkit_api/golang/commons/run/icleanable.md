@@ -2,7 +2,7 @@
 type: docs
 title: "ICleanable"
 linkTitle: "ICleanable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface that allows you to create components with a method to clean their states.
 
@@ -17,8 +17,9 @@ The ICleanable interface allows you to create components with a method to clean 
 #### Clear
 Clears a component's state.
 
-> Clear(correlationId string) error
+> Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not cleared
 
@@ -28,7 +29,7 @@ type MyObjectWithState {
  	_state interface{}
 }
 ...
-func (mo * MyObjectWithState ) clear(correlationId string) {
+func (mo *MyObjectWithState ) Clear(ctx context.Context, correlationId string) {
     mo._state = interface{}
 }
 

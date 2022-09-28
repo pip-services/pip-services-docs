@@ -2,7 +2,7 @@
 type: docs
 title: "TypeCode"
 linkTitle: "TypeCode"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     The TypeCode class contains the codes for data types that are used by the class [TypeConverter](../type_converter).
 ---

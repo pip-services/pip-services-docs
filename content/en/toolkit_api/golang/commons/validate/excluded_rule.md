@@ -2,7 +2,7 @@
 type: docs
 title: "ExcludedRule"
 linkTitle: "ExcludedRule"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Validation rule to check that one or more values are excluded from the list of constants.
 ---
@@ -17,9 +17,9 @@ The ExcludedRule allows you to verify that none of the values specified in the r
 #### NewExcludedRule
 Creates a new validation rule and sets its values
 
-> NewExcludedRule(values ...interface{}) [*ExcludedRule]()
+> NewExcludedRule(values ...any) [*ExcludedRule]()
 
-- **values**: ...interface{} - list of values that must be excluded from a list of constants
+- **values**: ...any - list of values that must be excluded from a list of constants
 
 ### Methods
 
@@ -27,21 +27,21 @@ Creates a new validation rule and sets its values
 Validates the given value. None of the values set in this ExcludedRule object must exist 
 in the value that is given for validation to pass.
 
-> (c [*ExcludedRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
+> (c [*ExcludedRule]()) Validate(path string, schema [ISchema](../ischema), value any) [][*ValidationResult](../validation_result)
 
 - **path**: string - dot notation path to the value that is to be validated.
 - **schema**: [ISchema](../ischema) - (not used in this implementation).
-- **value**: interface{} - value that is to be validated.
+- **value**: any - value that is to be validated.
 - **results**: [][*ValidationResult](../validation_result) - results of the validation.
 
 ### Examples
 
 ```go
 schema := NewSchema()
-    .WithRule(NewExcludedRule(1, 2, 3));
- 
+	.WithRule(NewExcludedRule(1, 2, 3));
+    
 schema.Validate(2);      // Result: 2 must not be one of 1, 2, 3
-schema.Validate(10);     // Result: no errors
+schema.Validate(10);     // Result: no errors 
 
 ```
 

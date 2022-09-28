@@ -1,15 +1,15 @@
 ---
 type: docs
-title: "RandomText"
-linkTitle: "RandomText"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+title: "Text"
+linkTitle: "Text"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Random generator for various text types such as names, addresses or phone numbers.
 ---
 
 ### Description
 
-The RandomText class allows you to generate different types of randomt texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
+The Text class allows you to generate different types of randomt texts. The options included are colors, names, nouns, adjectives, verbs, phrases, full names, words, phone numbers, email addresses, and texts.
 
 
 ### Methods
@@ -18,7 +18,7 @@ The RandomText class allows you to generate different types of randomt texts. Th
 Generates a random adjective.
 The result value is capitalized.
 
-> (c *TRandomText) Adjective() string 
+> Adjective() string 
 
 - **returns**: string - random adjective.
 
@@ -26,14 +26,14 @@ The result value is capitalized.
 Generates a random color name.
 The result value is capitalized.
 
->  (c *TRandomText) Color() string
+>  Color() string
 
 - **returns**: string - random color name.
 
 #### Email
 Generates a random email address.
 
-> (c *TRandomText) Email() string
+> Email() string
 
 - **returns**: string - random email address.
 
@@ -42,7 +42,7 @@ Generates a random person's name, which has the following structure:
 
 **\<optional prefix\> \<first name\> \<second name\> \<optional suffix\>**
 
-> (c *TRandomText) FullName() string
+> FullName() string
 
 - **returns**: string - random name.
 
@@ -51,7 +51,7 @@ Generates a random person's name, which has the following structure:
 Generates a random phone number.
 The phone number has the format: (XXX) XXX-YYYY
 
-> (c *TRandomText) Phone() string
+> Phone() string
 
 - **returns**: string -  a random phone number.
 
@@ -60,7 +60,7 @@ The phone number has the format: (XXX) XXX-YYYY
 Generates a random phrase which consists of few words separated by spaces.
 The first word is capitalized, others are not.
 
-> (c *TRandomText) Phrase(min int, max int) string
+> Phrase(min int, max int) string
 
 - **minLength**: int - (optional) minimum string length.
 - **maxLength**: int -  maximum string length.
@@ -69,7 +69,7 @@ The first word is capitalized, others are not.
 #### Text
 Generates a random text, consisting of first names, last names, colors, stuffs, adjectives, verbs, and punctuation marks.
 
-> (c *TRandomText) Text(min int, max int) string
+> Text(min int, max int) string
 
 - **minLength**: int - minimum amount of words to generate. The text will contain 'minSize' words if 'maxSize' is omitted.
 - **maxLength**: int -  (optional) maximum amount of words to generate.
@@ -79,7 +79,7 @@ Generates a random text, consisting of first names, last names, colors, stuffs, 
 Generates a random verb.
 The result value is capitalized.
 
-> (c *TRandomText) Verb() string
+> Verb() string
 
 - **returns**: string - random verb.
 
@@ -87,14 +87,14 @@ The result value is capitalized.
 #### Word
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> (c *TRandomText) Word() string
+> Word() string
 
 - **returns**: string - random word.
 
 #### Words
 Generates a random word from available first names, last names, colors, stuffs, adjectives, or verbs.
 
-> (c *TRandomText) Words(min int, max int) string
+> Words(min int, max int) string
 
 - **min**: int - (optional) minimum number of words.
 - **max**: int - maximum number of words.
@@ -103,8 +103,8 @@ Generates a random word from available first names, last names, colors, stuffs, 
 ### Examples
 
 ```go
-value1 := RandomText.FullName();     	// Possible result: "Segio"
-value2 := RandomText.Verb();      	// Possible result: "Run"
-value3 := RandomText.Text(50);    	// Possible result: "Run jorge. Red high scream?"
+value1 := Text.FullName();     	// Possible result: "Segio"
+value2 := Text.Verb();      	// Possible result: "Run"
+value3 := Text.Text(50);    	// Possible result: "Run jorge. Red high scream?"
 
 ```

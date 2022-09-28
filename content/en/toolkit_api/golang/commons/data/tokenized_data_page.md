@@ -2,7 +2,7 @@
 type: docs
 title: "TokenizedDataPage"
 linkTitle: "TokenizedDataPage"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Data transfer object that is used to pass the results of paginated queries.
            
@@ -29,15 +29,15 @@ Important points
 #### NewTokenizedDataPage
 Creates a new instance of a data page and assigns its values.
 
-> NewTokenizedDataPage(token string, data []interface{}) [*TokenizedDataPage]()
+> NewTokenizedDataPage[T any](token string, data []T) [*TokenizedDataPage[T]]()
 
 - **token**: string - (optional) token to define astarting point for the next search.
-- **data**: []interface{} - list of items from the retrieved page.
+- **data**: []T - list of items from the retrieved page.
 
 #### NewEmptyTokenizedDataPage
 Creates a new empty instance of a data page.
 
-> NewEmptyTokenizedDataPage() [*DataPage]
+> NewEmptyTokenizedDataPage[T any]() [*TokenizedDataPage[T]]()
 
 
 ### Fields
@@ -46,30 +46,45 @@ Creates a new empty instance of a data page.
 
 #### Data
 Items of the retrieved page.
-> **Data**: string
+> **Data**: []T
 
 #### Token
 starting point for the next search.
-> **Token**: []interface{}
+> **Token**: string
 
 
 </span>
 
+### Methods
+
+#### HasData
+HasData method check if data exists
+
+> (d [*TokenizedDataPage[T]]()) HasData() bool
+
+- **returns**: bool
+
+#### HasToken
+HasToken method check if token exists
+
+> (d *TokenizedDataPage[T]) HasToken() bool 
+
+- **returns**: bool
+
 ### Examples
 
 ```go
-err, page = myDataClient.getDataByFilter(
-  "123",
-  FilterParams.NewFilterParamsFromTuples("completed": true),
-  NewTokenizedPagingParams("", 100, true)
-};
-
+page, err := myDataClient.GetDataByFilter(
+	context.Background(),
+	"123",
+	NewFilterParamsFromTuples("completed": true),
+	NewTokenizedPagingParams("", 100, true),
+);
 if err != nil {
-	panic()
+	panic(err)
 }
-
 for item range page.Data {
-     fmt.Println(item);
+	fmt.Println(item);
 }
 ```
 

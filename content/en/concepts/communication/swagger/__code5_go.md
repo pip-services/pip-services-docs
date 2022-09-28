@@ -1,9 +1,9 @@
 
 ```go
 import (
-    refer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    refer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
     cservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
-    cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+    cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
 type FriendCommandableHttpService1 struct {

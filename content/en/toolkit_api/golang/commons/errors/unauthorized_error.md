@@ -2,7 +2,7 @@
 type: docs
 title: "UnauthorizedError"
 linkTitle: "UnauthorizedError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Access errors caused by missing user identity (authentication error) or incorrect security permissions (authorization error).
 ---

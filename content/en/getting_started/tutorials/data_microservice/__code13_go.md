@@ -7,10 +7,10 @@ package logic
 import (
 	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
 	persist "github.com/pip-services-samples/service-beacons-go/persistence"
-	ccmd "github.com/pip-services3-go/pip-services3-commons-go/commands"
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	ccmd "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 )
 
 type BeaconsController struct {

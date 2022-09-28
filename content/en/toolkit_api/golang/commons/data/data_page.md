@@ -2,7 +2,7 @@
 type: docs
 title: "DataPage"
 linkTitle: "DataPage"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Data transfer object that is used to pass the results of a paginated query.
     This object contains items of the retrieved page.
@@ -25,15 +25,15 @@ Important points
 #### NewDataPage
 Creates a new instance of data page and assigns its values.
 
-> NewDataPage(total *int64, data []interface{}) [*DataPage]()
+> NewDataPage[T any](data []T, total int) [*DataPage[T]]()
 
 - **data**: *int64 - list of items from the retrieved page.
-- **total**: []interface{} - total amount of items in a request.
+- **total**: []any - total amount of items in a request.
 
 #### NewEmptyDataPage
 Creates a new empty instance of data page.
 
-> NewEmptyDataPage() *DataPage
+> NewEmptyDataPage[T any]() [*DataPage]()
 
 ### Fields
 
@@ -45,27 +45,43 @@ The items of the retrieved page.
 
 #### Total
 The total amount of items in a request.
-> **Total**: []interface{}
+> **Total**: []any
 
 </span>
 
+### Methods
+
+#### HasData
+HasData method check if data exists
+
+> (d *DataPage[T]) HasData() bool
+
+- **returns**: bool - result flag.
+
+#### MarshalJSON
+Converts DataPage to json bytes
+
+(d [DataPage[T]]()) MarshalJSON() ([]byte, error)
+
+- **returns**: ([]byte, error) - marshal result or error.
 
 ### Examples
 
 ```go
-err, page = myDataClient.GetDataByFilter(
-    "123",
-    FilterParams.NewFilterParamsFromTuples("completed": true),
-        NewPagingParams(0, 100, true)
-	};
- 
-	if err != nil {
-		panic()
-	}
-	for item range page.Data {
-        fmt.Println(item);
-    }
-);
+page, err := myDataClient.GetDataByFilter(
+	context.Background(),
+	"123",
+	NewFilterParamsFromTuples("completed": true),
+	NewPagingParams(0, 100, true),
+)
+
+if err != nil {
+	panic(err)
+}
+
+for item range page.Data {
+    fmt.Println(item)
+}
 
 ```
 

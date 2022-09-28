@@ -2,7 +2,7 @@
 type: docs
 title: "TypeDescriptor"
 linkTitle: "TypeDescriptor"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     The TypeDescriptor class stores a reference to a type represented by the type name and library (module) where the type is defined.
     
@@ -34,9 +34,9 @@ Compares this descriptor to a value.
 If the value is also a [TypeDescriptor]() it compares their name and library fields.
 Otherwise this method returns false.
 
-> (c [*TypeDescriptor]()) Equals(obj interface{}) bool
+> (c [*TypeDescriptor]()) Equals(obj any) bool
 
-- **obj**: interface{} - value to compare.
+- **obj**: any - value to compare.
 - **returns**: bool - true if value is identical TypeDescriptor and false otherwise.
 
 #### Package

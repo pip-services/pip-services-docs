@@ -2,7 +2,7 @@
 type: docs
 title: "Conflicterror"
 linkTitle: "Conflicterror"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors raised by conflicts between object versions that were
     posted by the user and those that are stored on the server.

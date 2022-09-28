@@ -5,8 +5,8 @@ package main
 import (
 	"fmt"
 
-	ccmd "github.com/pip-services3-go/pip-services3-commons-go/commands"
-	crun "github.com/pip-services3-go/pip-services3-commons-go/run"
+	ccmd "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
+	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 )
 
 func main() {

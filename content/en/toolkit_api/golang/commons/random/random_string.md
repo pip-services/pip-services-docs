@@ -1,22 +1,22 @@
 ---
 type: docs
-title: "RandomString"
-linkTitle: "RandomString"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+title: "String"
+linkTitle: "String"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Random generator for string values.
 ---
 
 ### Description
 
-The class RandomString allows you to generate random strings.
+The class String allows you to generate random strings.
 
 ### Methods
 
 #### Distort
 Distorts a string by randomly replacing characters in it.
 
-> (c *TRandomString) Distort(value string) string
+> Distort(value string) string
 
 - **value**: string - string to distort.
 - **returns**: string - distored string.
@@ -24,7 +24,7 @@ Distorts a string by randomly replacing characters in it.
 #### NextAlphaChar
 Generates random alpha characted [A-Za-z]
 
-> (c *TRandomString) NextAlphaChar() byte
+> NextAlphaChar() byte
 
 - **returns**: byte - random characted.
 
@@ -32,7 +32,7 @@ Generates random alpha characted [A-Za-z]
 Generates a random string, consisting of upper and lower case letters (of the English alphabet), 
 digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 
-> (c *TRandomString) NextString(minLength int, maxLength int) string
+> NextString(minLength int, maxLength int) string
 
 - **minLength**: int - (optional) minimum string length.
 - **maxLength**: int - maximum string length.
@@ -42,7 +42,7 @@ digits (0-9), and symbols ("_,.:-/.[].{},#-!,$=%.+^.&*-() ").
 #### Pick
 Picks a random string from an array of strings.
 
-> (c *TRandomString) Pick(values []string) string
+> Pick(values []string) string
 
 - **values**: []string - Picks a random character from an array of strings.
 - **returns**: string - randomly picked char.
@@ -50,7 +50,7 @@ Picks a random string from an array of strings.
 #### PickChar
 Picks a random character from a string.
 
-> (c *TRandomString) PickChar(values string) byte
+> PickChar(values string) byte
 
 - **values**: string - string to pick a char from
 - **returns**: byte - randomly picked char.
@@ -58,7 +58,7 @@ Picks a random character from a string.
 ### Examples
 
 ```go
-value1 := RandomString.pickChar("ABC");     // Possible result: "C"
-value2 := RandomString.pick(["A","B","C"]); // Possible result: "gBW"
+value1 := String.pickChar("ABC");     // Possible result: "C"
+value2 := String.pick(["A","B","C"]); // Possible result: "gBW"
 
 ```

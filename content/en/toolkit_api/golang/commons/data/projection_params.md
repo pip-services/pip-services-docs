@@ -2,7 +2,7 @@
 type: docs
 title: "ProjectionParams"
 linkTitle: "ProjectionParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Defines projection parameters with a list of fields to be included in the query results.
 
@@ -41,18 +41,6 @@ Creates a new instance of the projection parameters and assigns its value.
 
 - **values**: []string - (optional) values to initialize this object.
 
-### Methods
-
-#### String
-Gets a string representation of the object.
-The result is a comma-separated list of projection fields
-*"field1,field2.field21,field2.field22.field221"*
-
-> (c [*ProjectionParams]()) String() string
-
-- **returns**: string - string representation of the object.
-
-
 #### NewProjectionParamsFromStrings
 Parses a comma-separated list of projection fields.
 
@@ -70,6 +58,83 @@ See [AnyValueArray.NewAnyValueArrayFromValue](../any_value_array/#newanyvaluearr
 - **value**: interface{} -  value to be converted
 - **returns**: [*ProjectionParams]() - newly created ProjectionParams.
 
+#### ParseProjectionParams 
+ParseProjectionParams create new ProjectionParams and set values from values
+
+> ParseProjectionParams(values ...string) [*ProjectionParams]()
+
+- **values**: ...string - a values to parse.
+
+### Methods
+
+#### String
+Gets a string representation of the object.
+The result is a comma-separated list of projection fields
+*"field1,field2.field21,field2.field22.field221"*
+
+> (c [*ProjectionParams]()) String() string
+
+- **returns**: string - string representation of the object.
+
+#### Value
+Value return raw values []string
+
+> (c [*ProjectionParams]()) Value() []string
+
+#### Get
+Get value by index
+
+> (c [*ProjectionParams]()) Get(index int) (any, bool)
+
+- **index**: int - index of element.
+- **returns**: (any, bool) - value and sucess flag. 
+
+#### Len
+Len gets or sets the length of the array. This is a number one higher than the highest element defined in an array.
+
+> (c [*ProjectionParams]()) Len() int
+
+- **returns**: int - length of collection.
+
+#### Put
+Put value in index position
+
+> (c [*ProjectionParams]()) Put(index int, value string) bool
+
+- **index**: int - an index of element.
+- **value**: string - value string.
+- **returns**: bool - operation result bool.
+
+#### Push
+Push new element to an array.
+
+> (c [*ProjectionParams]()) Push(value string)
+
+- **value**: sstring - value string
+
+#### Append
+Append new elements to an array.
+
+> (c [*ProjectionParams]()) Append(elements []string)
+
+- **elements**: []string - elements for appending.
+
+#### Remove
+Remove element by index
+
+> (c [*ProjectionParams]()) Remove(index int)
+
+- **index**: int - an index of remove element
+
+#### IsValidIndex
+IsValidIndex checks that 0 <= index < len.
+
+> (c [*ProjectionParams]()) IsValidIndex(index int) bool
+
+- **index**: int - an index of the element to get.
+- **return**: bool - result flag.
+
+
 ### Examples
 
 ```go
@@ -77,5 +142,5 @@ filter := NewFilterParamsFromTuples("type", "Type1");
 paging := NewPagingParams(0, 100);
 projection = NewProjectionParamsFromString("field1,field2(field21,field22)")
 
-err, page := myDataClient.getDataByFilter(filter, paging, projection);
+err, page := myDataClient.GetDataByFilter(context.Background(), filter, paging, projection);
 ```

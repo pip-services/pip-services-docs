@@ -2,7 +2,7 @@
 type: docs
 title: "Reference"
 linkTitle: "Reference"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Contains a reference to a component and a locator to find it.
     
@@ -22,36 +22,36 @@ Important points
 #### NewReference
 Create a new instance of the reference object and assigns its values.
 
-> NewReference(locator interface{}, component interface{}) [*Reference]()
+> NewReference(locator any, component any) [*Reference]()
 
-- **locator**: interface{} - locator to find the reference. 
-- **component**: interface{} - reference to a component.
+- **locator**: any - locator to find the reference. 
+- **component**: any - reference to a component.
 
 ###  Methods
 
 #### Component
 Gets the stored component reference.    
 
-> (c *Reference) Component() interface{}
+> (c *Reference) Component() any
 
-- **returns**: interface{} - component's references.
+- **returns**: any - component's references.
 
 
 #### Locator
 Gets the stored component locator. 
 
-> (c *Reference) Locator() interface{}
+> (c *Reference) Locator() any
 
-- **returns**: interface{} - component's locator.
+- **returns**: any - component's locator.
 
 #### Match
 Matches locator to this reference locator.
 Descriptors are matched using equal method.
 All other locator types are matched using direct comparison.
 
-> (c *Reference) Match(locator interface{}) bool
+> (c *Reference) Match(locator any) bool
 
-- **locator**: interface{} - the locator to match. 
+- **locator**: any - the locator to match. 
 - **returns**: bool - true if locators are matching and false it they don't.
 
 

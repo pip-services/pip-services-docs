@@ -2,7 +2,7 @@
 type: docs
 title: "IParameterized"
 linkTitle: "IParameterized"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface that allows you to create components with execution parameters.
 ---
@@ -16,8 +16,9 @@ The IParameterized interface allows you to create components with execution para
 #### SetParameters
 Sets execution parameters.
 
-> SetParameters(parameters [*Parameters](../parameters))
+> SetParameters(ctx context.Context, parameters [*Parameters](../parameters))
 
+- **ctx**: context.Context - operation context.
 - **parameters**: [*Parameters](../parameters) - execution parameters.
 
 

@@ -2,7 +2,7 @@
 type: docs
 title: "ConfigParams"
 linkTitle: "ConfigParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
  Contains a key-value map with configuration parameters. 
 
@@ -35,21 +35,21 @@ Creates a new ConfigParams from a map.
 - **values**: map[string]string - map with key-value pairs
 
 Creates a new ConfigParams object filled with key-value pairs from specified object.
-> NewConfigParamsFromValue(value interface{}) [*ConfigParams]()
+> NewConfigParamsFromValue(value any) [*ConfigParams]()
 
-- **values**: interface{} - object with key-value pairs used to initialize a new ConfigParams.
+- **values**: any - object with key-value pairs used to initialize a new ConfigParams.
 
 Creates a new ConfigParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
-> NewConfigParamsFromTuples(tuples ...interface{}) [*ConfigParams]()
+> NewConfigParamsFromTuples(tuples ...any) [*ConfigParams]()
 
-- **values**: ...interface{} - the tuples to fill a new ConfigParams object.
+- **values**: ...any - the tuples to fill a new ConfigParams object.
 
 Creates a new StringValueMap from a list of key-value pairs called tuples.
 The method is similar to fromTuples but tuples are passed as an array instead of as parameters.
-> NewConfigParamsFromTuplesArray(tuples []interface{}) [*ConfigParams]()
+> NewConfigParamsFromTuplesArray(tuples []any) [*ConfigParams]()
 
-- **values**: []interface{} - list of values where odd elements are keys and the following even elements are values
+- **values**: []any - list of values where odd elements are keys and the following even elements are values
 
 Creates a new ConfigParams object filled with key-value pairs serialized as a string.
 

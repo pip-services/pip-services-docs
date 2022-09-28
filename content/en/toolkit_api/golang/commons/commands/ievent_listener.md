@@ -2,7 +2,7 @@
 type: docs
 title: "IEventListener"
 linkTitle: "IEventListener"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     An interface for listener objects that receive notifications on fired events.
 ---
@@ -16,8 +16,9 @@ The IEventListener interface allows you to define actions to be taken by listene
 #### OnEvent
 A method called when events this listener is subscrubed to are fired.
 
-> OnEvent(correlationId string, e [IEvent](../ievent), value [*run.Parameters](../../run/parameters))
+> OnEvent(ctx context.Context, correlationId string, e [IEvent](../ievent), value [*run.Parameters](../../run/parameters))
 
+- **ctx** context.Context - operation context.
 - **correlationId**: string - a fired evemt
 - **e**: [IEvent](../ievent) - (optional) transaction id to used trace execution through the call chain.
 - **value**: [*run.Parameters](../../run/parameters) - event arguments.
@@ -25,19 +26,19 @@ A method called when events this listener is subscrubed to are fired.
 ### Examples
 
 ```go
-type MyListener {
-   msg string;
+type MyListener struct {
+	msg string
 }
 
-func (l* MyListener) onEvent(correlationId string, event IEvent, args Parameters) {
-       fmt.Println("Fired event " + event.Name());
+func (l *MyListener) OnEvent(ctx context.Context, correlationId string, event IEvent, args Parameters) {
+	fmt.Println("Fired event " + event.Name())
 }
 
-let event = NewEvent("myevent");
-_listener := MyListener{};
+var event = NewEvent("myevent")
+_listener := MyListener{}
+event.AddListener(_listener)
+event.Notify(context.Background(), "123", Parameters.FromTuples("param1", "ABC"))
 
-event.addListener(_listener);
-event.notify("123", Parameters.NewParametersFromTuples("param1", "ABC"));
 // Console output: Fired event myevent
 
 ```

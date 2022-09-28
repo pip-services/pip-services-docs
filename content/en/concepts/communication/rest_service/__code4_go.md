@@ -8,7 +8,7 @@ import (
 
 	"github.com/gorilla/mux"
 
-	config "github.com/pip-services3-go/pip-services3-commons-go/config"
+	config "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
 )
 

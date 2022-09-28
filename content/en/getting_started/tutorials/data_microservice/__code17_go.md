@@ -12,9 +12,9 @@ import (
 	logic "github.com/pip-services-samples/service-beacons-go/logic"
 	persist "github.com/pip-services-samples/service-beacons-go/persistence"
 	services1 "github.com/pip-services-samples/service-beacons-go/services/version1"
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	tclients "github.com/pip-services3-go/pip-services3-rpc-go/test"
 	"github.com/stretchr/testify/assert"
 )

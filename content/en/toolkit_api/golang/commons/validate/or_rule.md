@@ -2,7 +2,7 @@
 type: docs
 title: "OrRule"
 linkTitle: "OrRule"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Validation rule that allows you to check combinations of rules created with the OR logical operations.
     
@@ -44,14 +44,13 @@ Validates a given value against this rule.
 
 ```go
 var schema = NewSchema()
-    .WithRule(NewOrRule(
-        NewValueComparisonRle("LT", 1),
-        NewValueComparisonule("GT", 10)
-    ));
- 
-schema.Validate();          // Result: no error
-schema.Validate5);          // Result: 5 must be less than 1 or 5 must be more than 10
-schema.Validate(20);        // Result: no error
+	.WithRule(NewOrRule(
+		NewValueComparisonRule("LT", 1),
+		NewValueComparisonRule("GT", 10),
+	))
+schema.Validate()   // Result: no error
+schema.Validate(5)  // Result: 5 must be less than 1 or 5 must be more than 10
+schema.Validate(20) // Result: no error
 
 ```
 

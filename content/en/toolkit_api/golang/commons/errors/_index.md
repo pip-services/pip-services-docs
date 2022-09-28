@@ -3,7 +3,7 @@ type: docs
 title: "Errors"
 linkTitle: "Errors"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     
     Portable and localizable Errors classes. Each Error has a unique string code and details array (which can be used for creating 

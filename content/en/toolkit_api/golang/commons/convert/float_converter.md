@@ -2,7 +2,7 @@
 type: docs
 title: "FloatConverter"
 linkTitle: "FloatConverter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     The FloatConverter class allows you to convert arbitrary values into float using extended conversion rules.
 
@@ -20,9 +20,9 @@ The FloatConverter class allows you to convert arbitrary values into float using
 #### ToFloat
 Converts value into float or returns 0 when conversion is not possible.
 
-> ToFloat(value interface{}) float32
+> ToFloat(value any) float32
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **returns**: float32 - float value or 0 when conversion is not supported.
 
 #### ToFloatWithDefault
@@ -30,9 +30,9 @@ Converts value into float or returns default when conversion is not possible.
 See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefault),  
 [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> ToFloatWithDefault(value interface{}, defaultValue float32) float32
+> ToFloatWithDefault(value any, defaultValue float32) float32
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: float32 - default value.
 - **returns**: float32 - float value or default value when conversion is not supported.
 
@@ -40,23 +40,22 @@ See [DoubleConverter.ToDoubleWithDefault](../double_converter/#todoublewithdefau
 Converts value into float or returns nil when conversion is not possible.  
 See [DoubleConverter.ToNullableDouble](../double_converter/#tonullabledouble)
 
-> ToNullableFloat(value interface{}) *float32
+> ToNullableFloat(value any) (float32, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *float32 - float value or nil when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: (float32, bool) - float value and true or 0 and false when conversion is not supported.
 
 
 ### Examples
 
 ```go
-value1 := convert.FloatConverter.ToNullableFloat("ABC")
-value2 := convert.FloatConverter.ToNullableFloat("123.456")
-value3 := convert.FloatConverter.ToNullableFloat(true)
-value4 := convert.FloatConverter.ToNullableFloat(time.Now())
-
-fmt.Println(value1)  // <nil>
-fmt.Println(*value2) // 123.456
-fmt.Println(*value3) // 1
-fmt.Println(*value4) // current milliseconds (e.g. 1.566333114e+09)
+value1, ok1 := convert.FloatConverter.ToNullableFloat("ABC")
+value2, ok2 := convert.FloatConverter.ToNullableFloat("123.456")
+value3, ok3 := convert.FloatConverter.ToNullableFloat(true)
+value4, ok4 := convert.FloatConverter.ToNullableFloat(time.Now())
+fmt.Println(value1, ok1) // 0, false
+fmt.Println(value2, ok2) // 123.456, true
+fmt.Println(value3, ok3) // 1, true
+fmt.Println(value4, ok4) // current milliseconds (e.g. 1.566333114e+09), true
 
 ```

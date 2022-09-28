@@ -2,7 +2,7 @@
 type: docs
 title: "AtLeastOneExistsRule"
 linkTitle: "AtLeastOneExistsRule"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Validation rule that checks that at least one of the object properties exists.
 ---
@@ -26,21 +26,27 @@ Creates a new validation rule and sets its values
 #### Validate
 Validates a given value against this rule.
 
-> (c [*AtLeastOneExistsRule]()) Validate(path string, schema [ISchema](../ischema), value interface{}) [][*ValidationResult](../validation_result)
+> (c [*AtLeastOneExistsRule]()) Validate(path string, schema [ISchema](../ischema), value any) [][*ValidationResult](../validation_result)
 
 - **path**: string - dot notation path to the value.
 - **schema**: [ISchema](../ischema) - schema this rule is called from
-- **value**: interface{} - value to be validated.
+- **value**: any - value to be validated.
 - **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 ### Examples
 ```go
 schema := NewSchema()
-    .WithRule(NewAtLeastOneExistsRule("field1", "field2"));
- 
-schema.Validate({ field1: 1, field2: "A" });     // Result: no errors
-schema.Validate({ field1: 1 });                  // Result: no errors
-schema.Validate({ });                            // Result: at least one of properties field1, field2 must exist
+	.WithRule(NewAtLeastOneExistsRule("field1", "field2"))
+
+schema.Validate(struct {
+		field1 int
+		field2 string
+	}{field1: 1, field2: "A"})     // Result: no errors
+schema.Validate(struct {
+		field1 int
+		field2 string
+	}{field1: 1})                  // Result: no errors
+schema.Validate(struct {}{})       // Result: at least one of properties field1, field2 must exist
 
 ```
 

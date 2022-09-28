@@ -2,7 +2,7 @@
 type: docs
 title: "BooleanConverter"
 linkTitle: "BooleanConverter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     The BooleanConverter class allows you to convert different values to boolean values using extended conversion rules.
     
@@ -24,17 +24,17 @@ The BooleanConverter class allows you to convert different values to boolean val
 #### ToBoolean
 Converts value into boolean or returns false when conversion is not possible.
 
-> ToBoolean(value interface{}) bool
+> ToBoolean(value any) bool
 
-- **value**: interface{} - the value to convert.
+- **value**: any - the value to convert.
 - **returns**: bool - boolean value or false when conversion is not supported.
 
 #### ToBooleanWithDefault
 Converts value into boolean or returns default value when conversion is not possible
 
-> ToBooleanWithDefault(value interface{}, defaultValue bool) bool
+> ToBooleanWithDefault(value any, defaultValue bool) bool
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: bool - default value
 - **returns**: bool - boolean value or default when conversion is not supported.
 
@@ -42,22 +42,21 @@ Converts value into boolean or returns default value when conversion is not poss
 #### ToNullableBoolean
 Converts value into boolean or returns nil when conversion is not possible.
 
-> ToNullableBoolean(value interface{}) *bool
+> ToNullableBoolean(value any) (bool, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *bool - boolean value or nil when convertion is not supported.
+- **value**: any - value to convert.
+- **returns**: (bool, bool) -  boolean value and true or false and false when conversion is not supported.
 
 ### Examples
 
 ```go
-value1 := convert.BooleanConverter.ToNullableBoolean(true)
-value2 := convert.BooleanConverter.ToNullableBoolean("yes")
-value3 := convert.BooleanConverter.ToNullableBoolean(1)
-value4 := convert.BooleanConverter.ToNullableBoolean(struct{}{})
-
-fmt.Println(*value1) // true
-fmt.Println(*value2) // true
-fmt.Println(*value3) // true
-fmt.Println(value4)  // <nil>
+value1, ok1 := convert.BooleanConverter.ToNullableBoolean(true)
+value2, ok2 := convert.BooleanConverter.ToNullableBoolean("yes")
+value3, ok3 := convert.BooleanConverter.ToNullableBoolean(1)
+value4, ok4 := convert.BooleanConverter.ToNullableBoolean(struct{}{})
+fmt.Println(value1, ok1) // true, true
+fmt.Println(value2, ok2) // true, true
+fmt.Println(value3, ok3) // true, true
+fmt.Println(value4, ok4)  // false, false
 
 ```

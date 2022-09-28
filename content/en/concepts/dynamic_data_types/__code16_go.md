@@ -1,6 +1,6 @@
 
 ```go
 import (
-	data "github.com/pip-services3-go/pip-services3-commons-go/data"
+	data "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 ```

@@ -2,7 +2,7 @@
 type: docs
 title: "ApplicationError"
 linkTitle: "ApplicationError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     
     Defines a base class used to define various application exceptions.
@@ -123,10 +123,10 @@ These details can be used to restore the error description in other languages.
 This method returns reference to this exception to implement the Builder pattern
 to chain additional calls.
 
-> (e [*ApplicationError]()) WithDetails(key string, value interface{}) [*ApplicationError]()
+> (e [*ApplicationError]()) WithDetails(key string, value any) [*ApplicationError]()
 
 - **key**: string - key a details parameter name
-- **value**: interface{} - value a details parameter name
+- **value**: any - value a details parameter name
 - **returns**: [*ApplicationError]() - this exception object
 
 

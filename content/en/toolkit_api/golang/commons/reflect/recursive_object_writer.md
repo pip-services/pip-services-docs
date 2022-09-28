@@ -2,7 +2,7 @@
 type: docs
 title: "RecursiveObjectWriter"
 linkTitle: "RecursiveObjectWriter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to dynamically set the properties of an object recursively using "dot" notation.
  
@@ -24,10 +24,10 @@ Copies content of one object to another object
 by recursively reading all properties from a source object
 and then recursively writing them to a destination object.
 
-> (c *TRecursiveObjectWriter) CopyProperties(dest interface{}, src interface{})
+> CopyProperties(dest any, src any)
 
-- **dest**: interface{} - destination object to write properties to.
-- **src**: interface{} - source object to read properties from
+- **dest**: any - destination object to write properties to.
+- **src**: any - source object to read properties from
 
 
 #### SetProperties
@@ -40,10 +40,10 @@ map key-pairs or array elements with their indexes.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> (c *TRecursiveObjectWriter) SetProperties(obj interface{}, values map[string]interface{})
+> SetProperties(obj any, values map[string]any)
 
-- **obj**: interface{} - object to write properties to. 
-- **values**: map[string]interface{} - map containing property names and their values.
+- **obj**: any - object to write properties to. 
+- **values**: map[string]any - map containing property names and their values.
 
 
 #### SetProperty
@@ -56,11 +56,11 @@ map key or array index.
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't throw any errors.
 
-> (c *TRecursiveObjectWriter) SetProperty(obj interface{}, name string, value interface{})
+> SetProperty(obj any, name string, value any)
 
-- **obj**: interface{} - object to write a property to.
+- **obj**: any - object to write a property to.
 - **name**: string - name of the property to set.
-- **value**: interface{} - new value for the property to set.
+- **value**: any - new value for the property to set.
 
 
 

@@ -4,7 +4,7 @@
 
 import (
 	"fmt"
-	convert "github.com/pip-services3-go/pip-services3-commons-go/convert"
+	convert "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
 )
 
 value1 := convert.DoubleConverter.ToDouble("123.456")               // Returns 123.456

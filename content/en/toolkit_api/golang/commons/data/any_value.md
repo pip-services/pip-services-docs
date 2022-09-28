@@ -2,7 +2,7 @@
 type: docs
 title: "AnyValue"
 linkTitle: "AnyValue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Cross-language implementation of a dynamic object that can hold a value of any type.
     It also provides methods to convert the stored value to different types.
@@ -18,9 +18,9 @@ The AnyValue class provides a cross-language implementation of a dynamic object 
 #### NewAnyValue
 Creates a new instance of the object and assigns its value.
 
-> NewAnyValue(value interface{}) [*AnyValue]()
+> NewAnyValue(value any) [*AnyValue]()
 
-- **value**: interface{} - (optional) value to initialize this object.
+- **value**: any - (optional) value to initialize this object.
 
 #### NewEmptyAnyValue
 > NewEmptyAnyValue() [*AnyValue]()
@@ -32,7 +32,7 @@ Creates a new instance of the object and assigns its value.
 
 #### value
 The value stored by this object.
-> **value**: interface{}
+> **value**: any
 
 </span>
 
@@ -41,18 +41,18 @@ The value stored by this object.
 #### Clone
 Creates a binary clone of this object.
 
-> (c [*AnyValue]()) Clone() interface{}
+> (c [*AnyValue]()) Clone() any
 
-- **returns**: interface{} - clone of this object.
+- **returns**: any - clone of this object.
 
 #### Equals
 Compares this object value to a specified value.
 When direct comparison gives negative results it tries
 to compare values as strings.
 
-> (c [*AnyValue]()) Equals(obj interface{}) bool
+> (c [*AnyValue]()) Equals(obj any) bool
 
-- **obj**: interface{} - value to be compared with.
+- **obj**: any - value to be compared with.
 - **returns**: bool - true when objects are equal and false otherwise.
 
 #### EqualsAsType
@@ -61,10 +61,10 @@ When direct comparison gives negative results it converts
 values to type specified by type code and compares them again.    
 See [TypeConverter.toType](../../convert/type_converter/#totype)
 
-> (c [*AnyValue]()) EqualsAsType(typ [convert.TypeCode](../../convert/type_code), obj interface{}) bool
+> (c [*AnyValue]()) EqualsAsType(typ [convert.TypeCode](../../convert/type_code), obj any) bool
 
 - **type**: [convert.TypeCode](../../convert/type_code) - value to be compared with.
-- **obj**: interface{} - args to be compared with.
+- **obj**: any - args to be compared with.
 - **returns**: bool - true when objects are equal and false otherwise.
 
 
@@ -162,6 +162,27 @@ See [IntegerConverter.ToIntegerWithDefault](../../convert/integer_converter/#toi
 - **defaultValue**: int - the default value.
 - **returns**: int -  integer value or default if conversion is not supported.
 
+#### GetAsNullableUInteger
+GetAsNullableUInteger converts object value into an unsigned integer or returns default value if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsNullableUInteger() (uint, bool)
+
+- **returns**: (uint, bool) - integer value or default if conversion is not supported.
+
+#### GetAsUInteger
+GetAsUInteger converts object value into an unsigned integer or returns 0 if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsUInteger() 
+
+- **returns**: uint - unsigned integer value or 0 if conversion is not supported.
+
+#### GetAsUIntegerWithDefault
+GetAsUIntegerWithDefault converts object value into a unsigned integer or returns default value if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsUIntegerWithDefault(defaultValue uint) uint
+
+- **defaultValue**: uint - the default value 
+- **returns**: uint - unsigned integer value or default if conversion is not supported.
 
 #### GetAsLong
 Converts an object value into a long or returns 0 if the conversion is not possible.
@@ -180,6 +201,20 @@ See [LongConverter.ToLongWithDefault](../../convert/long_converter/#tolongwithde
 - **defaultValue**: int64 - the default value.
 - **returns**: int64 -  long value or default if the conversion is not supported. 
 
+#### GetAsNullableULong
+GetAsNullableULong converts object value into an unsigned long or returns default value if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsNullableULong() (uint64, bool)
+
+- **returns**: (uint64, bool) - long value or default if conversion is not supported. 
+
+#### GetAsULongWithDefault 
+GetAsULongWithDefault converts object value into a unsiged long or returns default value if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsULongWithDefault(defaultValue uint64) uint64
+
+- **defaultValue**: uint64 - the default value
+- **returns**: uint64 - unsigned long value or default if conversion is not supported.
 
 #### GetAsMap
 Converts an object value into AnyMap or returns an empty AnyMap if the conversion is not possible.    
@@ -194,63 +229,85 @@ See [AnyValueMap.NewAnyValueMapFromValue](../any_value_map/#newanyvaluemapfromva
 Converts an object value into a boolean or returns nil if the conversion is not possible.  
 See [BooleanConverter.ToNullableBoolean](../../convert/boolean_converter/#tonullableboolean)
 
-> (c [*AnyValue]()) GetAsNullableBoolean() *bool
+> (c [*AnyValue]()) GetAsNullableBoolean() (bool, bool)
 
-- **returns**: *bool - boolean value or nil if the conversion is not supported.
+- **returns**: (bool, bool) - boolean value and true or false and false if conversion is not supported.
 
 
 #### GetAsNullableDateTime
 Converts an object value into a Date or returns nil if the conversion is not possible.   
 See [DateTimeConverter.ToNullableDateTime](../../convert/date_time_converter/#tonullabledatetime)
 
-> (c [*AnyValue]()) GetAsNullableDateTime() *time.Time
+> (c [*AnyValue]()) GetAsNullableDateTime() (time.Time, bool)
 
-- **returns**: *time.Time - Date value or nil if conversion is not supported.
+- **returns**: (time.Time, bool) - DateTime value and true or zero time and false if conversion is not supported.
 
 
 #### GetAsNullableDouble
 Converts an object value into a double or returns nil if the conversion is not possible.    
 See [DoubleConverter.ToNullableDouble](../../convert/double_converter/#tonullabledouble)
 
-> (c [*AnyValue]()) GetAsNullableDouble() *float64
+> (c [*AnyValue]()) GetAsNullableDouble() (float64, bool)
 
-- **returns**: *float64 - double value or nil if the conversion is not supported.
+- **returns**: (float64, bool) - double value and true or 0.0 and false if conversion is not supported.
 
+
+#### GetAsNullableDuration
+GetAsNullableDuration converts object value into a Duration or returns null if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsNullableDuration() (time.Duration, bool)
+
+- **returns**: (time.Duration, bool) - Duration value and true or 0 and false if conversion is not supported.
+
+#### GetAsDuration 
+GetAsDuration converts object value into a Duration or returns current date if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsDuration() time.Duration
+
+- **returns**: time.Duration - Duration value or current date if conversion is not supported.
+
+#### GetAsDurationWithDefault 
+GetAsDurationWithDefault converts object value into a Duration or returns default value if conversion is not possible.
+
+> (c [*AnyValue]()) GetAsDurationWithDefault(defaultValue time.Duration) time.Duration
+
+- **defaultValue**: time.Duration - the default value 
+- **returns**: time.Duration - Duration value or default if conversion is not supported.
 
 #### GetAsNullableFloat
 Converts an object value into a float or returns nil if the conversion is not possible.    
 See [FloatConverter.ToNullableFloat](../../convert/float_converter/#tonullablefloat)
 
-> (c [*AnyValue]()) GetAsNullableFloat() *float32
+> (c [*AnyValue]()) GetAsNullableFloat() (float32, bool)
 
-- **returns**: *float32 - float value or nil if conversion is not supported.
+- **returns**: (float32, bool) - float value and true or 0.0 and false if conversion is not supported.
 
 
 #### GetAsNullableInteger
 Converts an object value into an integer or returns nil if the conversion is not possible.  
 See [IntegerConverter.ToNullableInteger](../../convert/integer_converter/#tonullableinteger)
 
-> (c [*AnyValue]()) GetAsNullableInteger() *int
+> (c [*AnyValue]()) GetAsNullableInteger() (int, bool)
 
-- **returns**: *int - integer value or nil if the conversion is not supported. 
+- **returns**: (int, bool) - integer value and true or 0 and false if conversion is not supported. 
 
 
 #### GetAsNullableLong
 Converts an object value into a long or returns nil if the conversion is not possible.   
 See [LongConverter.ToNullableLong](../../convert/long_converter/#tonullablelong)
 
-> (c [*AnyValue]()) GetAsNullableLong() *int64
+> (c [*AnyValue]()) GetAsNullableLong() (int64, bool)
 
-- **returns**: *int64 - long value or nil if conversion is not supported. 
+- **returns**: (int64, bool) - long value and true or 0 and false if conversion is not supported. 
 
 
 #### GetAsNullableString
 Converts an object value into a string or returns nil if the conversion is not possible.    
 See [StringConverter.ToNullableString](../../convert/string_converter/#tonullablestring)
 
-> (c [*AnyValue]()) GetAsNullableString() *string
+> (c [*AnyValue]()) GetAsNullableString() (string, bool)
 
-- **returns**: *string - string value or nil if conversion is not supported. 
+- **returns**: (string, bool) - string and true value or "" and false if conversion is not supported. 
 
 
 #### GetAsNullableType
@@ -258,18 +315,18 @@ Converts an object value into a value defined by a specified typecode.
 If the conversion is not possible it returns nil.  
 See [TypeConverter.ToNullableType](../../convert/type_converter/#tonullabletype)
 
-> (c [*AnyValue]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code)) interface{}
+> (c [*AnyValue]()) GetAsNullableType(typ [convert.TypeCode](../../convert/type_code)) (any, bool)
 
 - **type**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
-- **returns**: interface{} - value defined by the typecode or nil if the conversion is not supported. 
+- **returns**: (any, bool) - value defined by the typecode and true or null and false if conversion is not supported. 
 
 
 #### GetAsObject
 Gets the value stored in this object without any conversions.
 
-> (c [*AnyValue]()) GetAsObject() interface{}
+> (c [*AnyValue]()) GetAsObject() any
 
-- **returns**: interface{} - object value. 
+- **returns**: any - object value. 
 
 
 #### GetAsString
@@ -293,21 +350,21 @@ Converts an object value into a string or returns a default value if the convers
 Converts an object value into a value defined by a specified typecode.
 If conversion is not possible it returns default value for the specified type.
 
-> (c [*AnyValue]()) GetAsType(typ [convert.TypeCode](../../convert/type_code)) interface{}
+> (c [*AnyValue]()) GetAsType(typ [convert.TypeCode](../../convert/type_code)) any
 
 - **typeCode**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
-- **returns**: interface{} - value defined by the typecode or type default value if the conversion is not supported. 
+- **returns**: any - value defined by the typecode or type default value if the conversion is not supported. 
 
 
 #### GetAsTypeWithDefault
 Converts object value into a value defined by specied typecode.
 If conversion is not possible it returns a default value.
 
-> (c [*AnyValue]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), defaultValue interface{}) interface{}
+> (c [*AnyValue]()) GetAsTypeWithDefault(typ [convert.TypeCode](../../convert/type_code), defaultValue any) any
 
 - **typeCode**: [convert.TypeCode](../../convert/type_code) - TypeCode that defined the type of the result
-- **defaultValue**: interface{} - default value
-- **returns**: interface{} - value defined by the typecode or type default value if conversion is not supported. 
+- **defaultValue**: any - default value
+- **returns**: any - value defined by the typecode or type default value if conversion is not supported. 
 
 
 #### TypeCode
@@ -322,9 +379,9 @@ See [TypeConverter.toTypeCode](../../convert/type_converter/#totypecode)
 #### SetAsObject
 Sets a new value for this object
 
-> (c [*AnyValue]()) SetAsObject(value interface{})
+> (c [*AnyValue]()) SetAsObject(value any)
 
-- **value**: interface{} - new object value.
+- **value**: any - new object value.
 
 
 

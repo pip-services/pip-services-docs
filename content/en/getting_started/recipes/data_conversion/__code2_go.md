@@ -3,7 +3,7 @@
 // Boolean converter
 
 import (
-	convert "github.com/pip-services3-go/pip-services3-commons-go/convert"
+	convert "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
 )
 
 value1 := convert.BooleanConverter.ToBoolean("yes")                          // Returns True

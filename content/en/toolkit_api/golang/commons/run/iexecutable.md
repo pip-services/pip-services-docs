@@ -2,7 +2,7 @@
 type: docs
 title: "IExecutable"
 linkTitle: "IExecutable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface that allows you to create a component that can be called to execute work.
 
@@ -17,18 +17,19 @@ The IExecutable interface allows you to create a component that can be called to
 #### Execute
 Executes a component with arguments and receives the execution result.
 
-> Execute(correlationId string, args [*Parameters](../parameters)) (result interface{}, err error)
+> Execute(ctx context.Context, correlationId string, args [*Parameters](../parameters)) (result any, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: [*Parameters](../parameters) - execution arguments.
-- **returns**: (result interface{}, err error) - execution result. 
+- **returns**: (result any, err error) - execution result. 
 
 ### Examples
 
 ```go
-type EchoComponent {}
+type EchoComponent struct {}
 ...
-func  (ec* EchoComponent) Execute(correlationId string, args Parameters) (result interface{}, err error) {
+func  (ec* EchoComponent) Execute(ctx context.Context, correlationId string, args Parameters) (result any, err error) {
     return nil, result = args.getAsObject("message")
 }
  

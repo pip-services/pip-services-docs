@@ -3,9 +3,9 @@
 import (
 	"fmt"
 
-	config "github.com/pip-services3-go/pip-services3-commons-go/config"
-	refer "github.com/pip-services3-go/pip-services3-commons-go/refer"
-	run "github.com/pip-services3-go/pip-services3-commons-go/run"
+	config "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	refer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	run "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 )
 
 

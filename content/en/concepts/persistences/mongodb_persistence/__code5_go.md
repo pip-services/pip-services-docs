@@ -4,7 +4,7 @@
 import (
 	"reflect"
 
-	conf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
 )
 

@@ -3,7 +3,7 @@ type: docs
 title: "Refer"
 linkTitle: "Refer"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     
     The Refer package provides a set of classes and interfaces that allows you to create, manage and resolve component dependencies that can be passed to other components to establish dependencies between them. 

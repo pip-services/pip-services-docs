@@ -3,7 +3,7 @@
 package main
 
 import (
-	cconfig "github.com/pip-services3-go/pip-services3-commons-go/config"
+	cconfig "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	logaws "github.com/pip-services3-go/pip-services3-aws-go/log"
 )
 

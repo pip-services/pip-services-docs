@@ -2,7 +2,7 @@
 type: docs
 title: "Configerror"
 linkTitle: "Configerror"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors related to mistakes in microservice's user-defined configurations.
 ---

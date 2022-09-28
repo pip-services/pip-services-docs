@@ -2,7 +2,7 @@
 type: docs
 title: "Descriptor"
 linkTitle: "Descriptor"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Component locator based on group, type, kind, name and version of the component.
 ---
@@ -46,9 +46,9 @@ Compares this descriptor to a value.
 If value is a Descriptor it tries to match them,
 otherwise the method returns false.
 
-> (c [*Descriptor]()) Equals(value interface{}) bool
+> (c [*Descriptor]()) Equals(value any) bool
 
-- **value**: interface{} - value to match against this descriptor.
+- **value**: any - value to match against this descriptor.
 - **returns**: bool - true if the value is matching descriptor and false otherwise.
 
 #### ExactMatch
@@ -138,11 +138,11 @@ The result is a colon-separated list of descriptor fields as
 ### Examples
 
 ```go
-locator1 := NewDescriptor("mygroup", "connector", "aws", "default", "1.0");
-locator2 := NewDescriptorFromString("mygroup:connector:*:*:1.0");
- 
-locator1.Match(locator2);        // Result: true
-locator1.Equal(locator2);        // Result: true
-locator1.ExactMatch(locator2);    // Result: false
+locator1 := NewDescriptor("mygroup", "connector", "aws", "default", "1.0")
+locator2 := NewDescriptorFromString("mygroup:connector:*:*:1.0")
+
+locator1.Match(locator2)        // Result: true
+locator1.Equal(locator2)        // Result: true
+locator1.ExactMatch(locator2)   // Result: false
 
 ```

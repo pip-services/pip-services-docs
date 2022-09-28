@@ -2,7 +2,7 @@
 type: docs
 title: "IIdentifiable!"
 linkTitle: "IIdentifiable!"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface used to create data objects that can be uniquely idendified by an ID.
 draft: true
@@ -25,11 +25,15 @@ The unique object identifier.
 
 ### Examples
 ```go
-type MyData struct {
-    Id int32          `json:"id"`
-    Field1 string      `json:"field1"`
-    Field2 int32       `json:"field2"`
-    ...
+type MyStruct struct {
+	...
+	id string
+}
+func (c *MyStruct) GetId() string {
+	return c.id
+}
+func (c *MyStruct) SetId(id string) {
+	c.id = id
 }
 ```
 

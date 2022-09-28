@@ -2,7 +2,7 @@
 type: docs
 title: "IdGenerator"
 linkTitle: "IdGenerator"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Helper class used to generate object IDs.
 

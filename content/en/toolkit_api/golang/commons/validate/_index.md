@@ -3,7 +3,7 @@ type: docs
 title: "Validate"
 linkTitle: "Validate"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     The Validate package contains interfaces and classes that can be used to create custom validation rules; such as rules based on combinations of the logical operators AND, OR and NOT.
  

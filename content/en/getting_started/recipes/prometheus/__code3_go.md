@@ -3,7 +3,7 @@
 import (
 	"fmt"
 
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	pcount "github.com/pip-services3-go/pip-services3-prometheus-go/count"
 )
 

@@ -5,8 +5,8 @@
 package data1
 
 import (
-	cconv "github.com/pip-services3-go/pip-services3-commons-go/convert"
-	cvalid "github.com/pip-services3-go/pip-services3-commons-go/validate"
+	cconv "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
+	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
 )
 
 type BeaconV1Schema struct {

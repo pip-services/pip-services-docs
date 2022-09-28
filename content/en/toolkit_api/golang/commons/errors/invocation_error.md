@@ -2,7 +2,7 @@
 type: docs
 title: "InvocationError"
 linkTitle: "InvocationError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors returned by remote services or by the network during call attempts.
 ---

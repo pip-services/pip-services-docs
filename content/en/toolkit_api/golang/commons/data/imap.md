@@ -2,7 +2,7 @@
 type: docs
 title: "IMap"
 linkTitle: "IMap"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
    Interface used to create a map data structure.
 
@@ -16,17 +16,24 @@ The IMap interface is used to create a map data structure.
 
 #### Get
 Gets a value related to a given key.
-> Get(key string) interface{}
+> Get(key string) (any, bool)
 
-- **key**: string - TODO add description
-- **returns**: interface{} - TODO add description
+- **key**: string - value key.
+- **returns**: (any, bool) - result by given key.
 
 #### Put
 Inserts the given value and key.
 > Put(key string, value interface{})
 
-- **key**: string - TODO add description
-- **value**: interface{} - TODO add description
+- **key**: string - object key.
+- **value**: interface{} - object value.
+
+### Len
+Get length of map collection.
+
+> Len() int
+
+- **returns**: int - length of map collection.
 
 #### Remove
 Removes a value related to a given key.
@@ -35,8 +42,9 @@ Removes a value related to a given key.
 - **key** string - value's key
 
 #### Contains
-TODO add description
+Check if item with key contains in map.
+
 > Contains(key string) bool
 
-- **key**: string - TODO add description
-- **returns**: bool - TODO add description
+- **key**: string - object key.
+- **returns**: bool - result flag.

@@ -5,8 +5,8 @@ package main
 import (
 	"fmt"
 
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	refer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	refer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	cinfo "github.com/pip-services3-go/pip-services3-components-go/info"
 	pcount "github.com/pip-services3-go/pip-services3-prometheus-go/count"
 	pservice "github.com/pip-services3-go/pip-services3-prometheus-go/services"

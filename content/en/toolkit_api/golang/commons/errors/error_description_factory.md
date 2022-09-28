@@ -2,7 +2,7 @@
 type: docs
 title: "ErrorDescriptionFactory"
 linkTitle: "ErrorDescriptionFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Factory used to create a serializeable [ErrorDescription](../error_description) from [ApplicationError](../application_error)
     or from arbitrary errors.  
@@ -23,9 +23,9 @@ Important points
 #### Create
 Creates a serializable ErrorDescription from error object.
 
-> (c *TErrorDescriptionFactory) Create(err interface{}) [*ErrorDescription](../error_description)
+> (c *TErrorDescriptionFactory) Create(err any) [*ErrorDescription](../error_description)
 
-- **error**: interface{} - error object
+- **error**: any - error object
 - **returns**: [*ErrorDescription](../error_description) - serializeable ErrorDescription object that describes the error.
 
 ### See also

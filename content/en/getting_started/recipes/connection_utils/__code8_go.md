@@ -9,8 +9,8 @@ import (
 
 	ccon "github.com/pip-services3-go/pip-services3-components-go/connect"
 
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cerror "github.com/pip-services3-go/pip-services3-commons-go/errors"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cerror "github.com/pip-services3-gox/pip-services3-commons-gox/errors"
 	mongodrv "go.mongodb.org/mongo-driver/mongo"
 	mongoclopt "go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/x/mongo/driver/connstring"

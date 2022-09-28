@@ -2,7 +2,7 @@
 type: docs
 title: "CommandSet"
 linkTitle: "CommandSet"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Contains a set of commands and events supported by a [commandable](../icommandable) object.
     The CommandSet supports command interceptors and command call chains.
@@ -166,25 +166,26 @@ It returns validation error if the command is not found.
 ### Examples
 
 ```go
-type MyDataCommandSet {
-    CommandSet
-    _controller IMyDataController
+type MyDataCommandSet struct {
+	*CommandSet
+	_controller IMyDataController
 }
 
-func (dcs * MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataController) { // Any data controller interface
-    dcs._controller = controller
-    dcs.addCommand(dcs.makeGetMyDataCommand())
+// Any data controller interface
+func (dcs *MyDataCommandSet) CreateMyDataCommandSet(controller IMyDataController) {
+	dcs._controller = controller
+	dcs.AddCommand(dcs.makeGetMyDataCommand())
 }
 
-func (dcs * MyDataCommandSet) makeGetMyDataCommand() ICommand {
-    return NewCommand(
-      "get_mydata",
-      nil,
-      (correlationId: string, args: Parameters, func (correlationId string, args *run.Parameters)(interface{}, err) {
-          let param = args.getAsString("param");
-          return dcs._controller.getMyData(correlationId, param,);
-      }
-    );
+func (dcs *MyDataCommandSet) makeGetMyDataCommand() ICommand {
+	return NewCommand(
+		"get_mydata",
+		nil,
+		func(ctx context.Context, correlationId string, args *run.Parameters) (any, err) {
+			var param = args.GetAsString("param")
+			return dcs._controller.GetMyData(correlationId, param)
+		},
+	)
 }
 
 ```

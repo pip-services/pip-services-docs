@@ -5,7 +5,7 @@ See: [IUnreferenceable](../../../toolkit_api/golang/commons/refer/iunreferenceab
 import (
 	"fmt"
 
-	crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	clog "github.com/pip-services3-go/pip-services3-components-go/log"
 )
 

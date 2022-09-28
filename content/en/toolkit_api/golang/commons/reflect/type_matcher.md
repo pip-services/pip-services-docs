@@ -2,7 +2,7 @@
 type: docs
 title: "TypeMatcher"
 linkTitle: "TypeMatcher"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to match value types based on equality.
  
@@ -23,7 +23,7 @@ Important points
 Matches expected type to an actual type.
 The types can be specified as types, type names or [TypeCode](../../convert/type_code).
 
-> (c *TTypeMatcher) MatchType(expectedType interface{}, actualType refl.Type) bool
+> MatchType(expectedType interface{}, actualType refl.Type) bool
 
 - **expectedType**: interface{} - expected type to match.
 - **actualType**: refl.Type - actual type to match defined by type code.
@@ -32,7 +32,7 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 
 #### MatchTypeByName
 
-> (c *TTypeMatcher) MatchTypeByName(expectedType string, actualType refl.Type) bool
+> MatchTypeByName(expectedType string, actualType refl.Type) bool
 
 - **expectedType**: string - expected type name to match. 
 - **actualType**: refl.Type - actual type to match defined by a type code.
@@ -43,7 +43,7 @@ The types can be specified as types, type names or [TypeCode](../../convert/type
 Matches expected type to a type of a value.
 The expected type can be specified by a type, type name or [TypeCode](../../convert/type_code).
 
-> func (c *TTypeMatcher) MatchValue(expectedType interface{}, actualValue interface{}) bool
+> func MatchValue(expectedType interface{}, actualValue interface{}) bool
 
 - **expectedType**: interface{} - an expected type to match.
 - **actualValue**: interface{} -  a value to match its type to the expected one.
@@ -52,7 +52,7 @@ The expected type can be specified by a type, type name or [TypeCode](../../conv
 #### MatchValueByName
 Matches expected type to a type of a value.
 
-> func (c *TTypeMatcher) MatchValueByName(expectedType string, actualValue interface{}) bool
+> func MatchValueByName(expectedType string, actualValue interface{}) bool
 
 - **expectedType**: string - an expected type name to match.
 - **actualValue**: interface{} -  a value to match its type to the expected one.

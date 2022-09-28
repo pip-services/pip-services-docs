@@ -3,7 +3,7 @@ type: docs
 title: "Commands"
 linkTitle: "Commands"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     This package contains interfaces and classes that can be used to implement various remote procedure calls (RPCs). In it, RPCs replace unique calls with universal "message transfer" calls, in which the message itself contains the called method's signature, as well as the parameters to pass for its execution.       
        

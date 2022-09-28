@@ -2,7 +2,7 @@
 type: docs
 title: "TagsProcessor"
 linkTitle: "TagsProcessor"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Helper class used to extract and process search tags from objects.
 
@@ -23,7 +23,7 @@ Compress a tag by removing special symbols like spaces, '_' and '#'
 and converting the tag to lower case.
 When tags are compressed they can be matched in search queries.
 
-> (c *TTagsProcessor) CompressTag(tag string) string
+> CompressTag(tag string) string
 
 - **tag**: string - tag to compress.
 - **returns**: string - compressed tag.
@@ -32,7 +32,7 @@ When tags are compressed they can be matched in search queries.
 #### CompressTagList
 Compresses a comma-separated list of tags.
 
-> (c *TTagsProcessor) CompressTagList(tagList string) []string
+> CompressTagList(tagList string) []string
 
 - **tagList**: string - comma-separated list of tags to compress.
 - **returns**: []string - list with compressed tags.
@@ -41,7 +41,7 @@ Compresses a comma-separated list of tags.
 #### CompressTags
 Compresses a list of tags.
 
-> (c *TTagsProcessor) CompressTags(tags []string) []string
+> CompressTags(tags []string) []string
 
 - **tagList**: []string - tags to compress.
 - **returns**: []string - list with normalized tags.
@@ -50,7 +50,7 @@ Compresses a list of tags.
 #### EqualTags
 Compares two tags using their compressed form.
 
-> (c *TTagsProcessor) EqualTags(tag1 string, tag2 string) bool
+> EqualTags(tag1 string, tag2 string) bool
 
 - **tag1**: string - first tag.
 - **tag2**: string - second tag.
@@ -60,7 +60,7 @@ Compares two tags using their compressed form.
 #### ExtractHashTags
 Extracts hash tags from a text.
 
-> (c *TTagsProcessor) ExtractHashTags(text string) []string
+> ExtractHashTags(text string) []string
 
 - **text**: string - text that contains hash tags
 - **returns**: []string - list with extracted and compressed tags.
@@ -77,7 +77,7 @@ Extracts hash tags from selected fields in an object.
 Normalizes a tag by replacing special symbols like '_' and '#' with spaces.
 When tags are normalized then they can be used in similar shape and form.
 
-> (c *TTagsProcessor) NormalizeTag(tag string) string
+> NormalizeTag(tag string) string
 
 - **tag**: string - tag to normalize.
 - **returns**: string - normalized tag.
@@ -86,7 +86,7 @@ When tags are normalized then they can be used in similar shape and form.
 #### NormalizeTagList
 Normalizes a comma-separated list of tags.
 
-> (c *TTagsProcessor) NormalizeTagList(tagList string) []string
+> NormalizeTagList(tagList string) []string
 
 - **tagList**: string - comma-separated list of tags to normalize.
 - **returns**: []string - list with normalized tags.
@@ -95,7 +95,7 @@ Normalizes a comma-separated list of tags.
 #### NormalizeTags
 Normalizes a list of tags.
 
-> (c *TTagsProcessor) NormalizeTags(tags []string) []string
+> NormalizeTags(tags []string) []string
 
 - **tags**: []string - tags to normalize.
 - **returns**: []string - list with normalized tags.

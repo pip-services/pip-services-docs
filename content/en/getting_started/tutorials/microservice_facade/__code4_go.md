@@ -7,8 +7,8 @@ import (
 	"net/http"
 
 	operations1 "github.com/pip-services-samples/pip-samples-facade-go/operations/version1"
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
 )
 

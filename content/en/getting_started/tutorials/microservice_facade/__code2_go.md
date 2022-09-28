@@ -15,7 +15,7 @@ require (
 	github.com/pip-services-users/pip-clients-passwords-go v0.0.0-20211012192517-7356fde7658f
 	github.com/pip-services-users/pip-clients-roles-go v0.0.0-20211012191010-cc2b4284b1ad
 	github.com/pip-services-users/pip-clients-sessions-go v0.0.0-20211012191122-ad67c479e2d2
-	github.com/pip-services3-go/pip-services3-commons-go v1.1.2
+	github.com/pip-services3-gox/pip-services3-commons-gox v1.1.2
 	github.com/pip-services3-go/pip-services3-components-go v1.2.0
 	github.com/pip-services3-go/pip-services3-container-go v1.1.5
 	github.com/pip-services3-go/pip-services3-mongodb-go v1.1.0

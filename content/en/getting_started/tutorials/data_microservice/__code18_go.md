@@ -8,7 +8,7 @@ import (
 	logic "github.com/pip-services-samples/service-beacons-go/logic"
 	persist "github.com/pip-services-samples/service-beacons-go/persistence"
 	services1 "github.com/pip-services-samples/service-beacons-go/services/version1"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
 )
 

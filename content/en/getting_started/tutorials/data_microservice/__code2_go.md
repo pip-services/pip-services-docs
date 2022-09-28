@@ -12,7 +12,7 @@ require (
 	github.com/jackc/pgx v3.6.2+incompatible
 	github.com/kisielk/errcheck v1.2.0 // indirect
 	github.com/pip-benchmark/pip-benchmark-go v1.0.6
-	github.com/pip-services3-go/pip-services3-commons-go v1.1.2
+	github.com/pip-services3-gox/pip-services3-commons-gox v1.1.2
 	github.com/pip-services3-go/pip-services3-components-go v1.2.0
 	github.com/pip-services3-go/pip-services3-container-go v1.1.5
 	github.com/pip-services3-go/pip-services3-data-go v1.1.7

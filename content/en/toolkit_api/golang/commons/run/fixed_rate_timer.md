@@ -2,7 +2,7 @@
 type: docs
 title: "FixedRateTimer"
 linkTitle: "FixedRateTimer"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Timer that is triggered in equal time intervals.
 
@@ -22,20 +22,22 @@ Important points
 #### NewFixedRateTimerFromCallback
 Creates new instance of the timer and sets its values.
 
-> NewFixedRateTimerFromCallback(callback func(), interval int, delay int) [*FixedRateTimer]()
+> NewFixedRateTimerFromCallback(callback func(ctx context.Context), interval int, delay int, workerCount int) [*FixedRateTimer]()
 
-- **callback**: func() - (optional) Notifiable object or callback function to call when timer is triggered.
+- **callback**: func(ctx context.Context) - (optional) Notifiable object or callback function to call when timer is triggered.
 - **interval**: int - (optional) interval to trigger the timer in milliseconds.
 - **delay**: int - (optional) delay before the first triggering in milliseconds.
+- **workerCount**: int - int a count of parallel running workers.
 
 #### NewFixedRateTimerFromTask
 Creates new instance of the timer and sets its values.
 
-> NewFixedRateTimerFromTask(task [INotifiable](../inotifiable), interval int, delay int) [*FixedRateTimer]()
+> NewFixedRateTimerFromTask(task [INotifiable](../inotifiable), interval int, delay int, workerCount int) [*FixedRateTimer]()
 
 - **task**: [INotifiable](../inotifiable) - Notifiable object used to call when the timer is triggered.
 - **interval**: int - (optional) interval used to trigger the timer in milliseconds.
 - **delay**: int - (optional) delay before the first triggering in milliseconds.
+- **workerCount**: int - int a count of parallel running workers.
 
 #### NewFixedRateTimer
 Creates new instance of the timer and sets its values.
@@ -50,16 +52,17 @@ Closes the timer.
 This is required by [IClosable](../iclosable) interface,
 but besides that, it is identical to [Stop()](#stop).
 
-> (c [*FixedRateTimer]()) Close(correlationId string) error
+> (c [*FixedRateTimer]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 #### Callback
 Gets the callback function that is called when this timer is triggered.
 
-> (c [*FixedRateTimer]()) Callback() func()
+> (c [*FixedRateTimer]()) Callback() func(ctx context.Context)
 
-- **returns**: func() - callback function or nil if it is not set. 
+- **returns**: func(ctx context.Context) - callback function or nil if it is not set. 
 
 
 #### Delay
@@ -102,9 +105,9 @@ Checks if the timer is started.
 #### SetCallback
 Sets the callback function that is called when this timer is triggered.
 
-> (c [*FixedRateTimer]()) SetCallback(value func())
+> (c [*FixedRateTimer]()) SetCallback(value func(ctx context.Context))
 
-- **value**: func() - callback function to be called.
+- **value**: func(ctx context.Context) - callback function to be called.
 
 #### SetDelay
 Sets initial delay before the timer is triggered for the first time.
@@ -126,31 +129,38 @@ Starts the timer.
 Initially the timer is triggered after a delay.
 After that, it is triggered after the interval until it is stopped.
 
-> (c [*FixedRateTimer]()) Start()
+> (c [*FixedRateTimer]()) Start(ctx context.Context)
+
+- **ctx**: context.Context - operation context
 
 
 #### Stop
 Stops the timer.
 
-> (c [*FixedRateTimer]()) Stop()
+> (c [*FixedRateTimer]()) Stop(ctx context.Context)
+
+- **ctx**: context.Context - operation context
+
 
 ### Examples
 ```go
 type MyComponent {
-	timer FixedRateTimer
+    timer *FixedRateTimer
 }
+
 ...
-func (mc* MyComponent) open(correlationId string) {
+
+func (mc* MyComponent) Open(ctx, context.Context, correlationId string) {
 	...
-	mc.timer = NewFixedRateTimerFromCallback(() => { this.cleanup }, 60000, 0);
-    mc.timer.start();
-    ...
+	mc.timer = NewFixedRateTimerFromCallback(func(ctx context.Context){ this.cleanup }, 60000, 0, 5);
+	mc.timer.Start(ctx);
+	...
 }
- 
-func (mc* MyComponent) open(correlationId: string){
-    ...
-    mc.timer.stop();
-    ...
+
+func (mc* MyComponent) Close(ctx context.Context, correlationId: string){
+	...
+	mc.timer.Stop(ctx);
+	...
 }
 
 ```

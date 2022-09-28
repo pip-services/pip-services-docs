@@ -1,15 +1,15 @@
 ---
 type: docs
-title: "RandomBoolean"
-linkTitle: "RandomBoolean"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+title: "Boolean"
+linkTitle: "Boolean"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Random generator for boolean values.
 ---
 
 ### Description
 
-The RandomBoolean class allows you to generate random boolean values. 
+The Boolean class allows you to generate random boolean values. 
 
 ### Methods
 
@@ -17,7 +17,7 @@ The RandomBoolean class allows you to generate random boolean values.
 Calculates "chance" out of "max chances".
 Example: 1 chance out of 3 chances (or 33.3%)
 
-> (c *TRandomBoolean) Chance(chances int, maxChances int) bool
+> Chance(chances int, maxChances int) bool
 
 - **chances**: int - chance proportional to maxChances.
 - **maxChances**: int - maximum number of chances
@@ -26,14 +26,14 @@ Example: 1 chance out of 3 chances (or 33.3%)
 #### NextBoolean
 Generates a random boolean value.
 
-> (c *TRandomBoolean) NextBoolean() bool
+> NextBoolean() bool
 
 - **returns**: bool - random boolean.
 
 ### Examples
 
 ```go
-value1 := RandomBoolean.NextBoolean();    // Possible result: true
-value2 := RandomBoolean.Chance(1,3);      // Possible result: false
+value1 := random.Boolean.NextBoolean();    // Possible result: true
+value2 := random.Boolean.Chance(1,3);      // Possible result: false
 
 ```

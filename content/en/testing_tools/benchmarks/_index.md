@@ -204,7 +204,7 @@ import (
   	"time"
   	bench "github.com/pip-benchmark/pip-benchmark-go/benchmark"    
   	benchconsole "github.com/pip-benchmark/pip-benchmark-go/console"    
-  	rnd "github.com/pip-services3-go/pip-services3-commons-go/random"
+  	rnd "github.com/pip-services3-gox/pip-services3-commons-gox/random"
 )
 ‍
 type SampleBenchmark struct {    

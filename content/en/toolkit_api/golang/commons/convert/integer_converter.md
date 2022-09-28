@@ -2,7 +2,7 @@
 type: docs
 title: "IntegerConverter"
 linkTitle: "IntegerConverter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     The IntegerConverter class allows you to convert arbitrary values into integers using extended conversion rules.
 
@@ -23,9 +23,9 @@ Converts value into integer or returns 0 when conversion is not possible.
 See [LongConverter.ToLong](../long_converter/#tolong),  
 [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault)
 
-> ToInteger(value interface{}) int
+> ToInteger(value any) int
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **returns**: int - integer value or 0 when conversion is not supported.
 
 #### ToIntegerWithDefault
@@ -33,48 +33,47 @@ Converts value into integer or returns default value when conversion is not poss
 See [LongConverter.ToLongWithDefault](../long_converter/#tolongwithdefault),  
 [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
-> ToIntegerWithDefault(value interface{}, defaultValue int) int
+> ToIntegerWithDefault(value any, defaultValue int) int
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: int - default value.
 - **returns**: int - integer value or default when conversion is not supported. 
 
 #### ToNullableInteger
 Converts value into integer or returns nil when conversion is not possible.
-See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
-> ToNullableInteger(value interface{}) *int
+> ToNullableInteger(value any) (int, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *int - integer value or nil when conversion is not supported.
-
+- **value**: any - value to convert.
+- **returns**: (int, bool) - integer value or null when conversion is not supported.
 
 
 #### ToUInteger
 Converts value into unsigned integer or returns 0 when conversion is not possible.
 
-> ToUInteger(value interface{}) uint
+> ToUInteger(value any) uint
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **returns**: uint - integer value or 0 when conversion is not supported.
 
 #### ToUIntegerWithDefault
 Converts value into unsigned integer or returns the default value when conversion is not possible.
 
-> ToUIntegerWithDefault(value interface{}, defaultValue uint) uint
+> ToUIntegerWithDefault(value any, defaultValue uint) uint
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: uint - default value.
 - **returns**: uint - integer value or default when conversion is not supported.
 
 #### ToNullableUInteger
 Converts value into integer or returns nil when conversion is not possible.
-See [LongConverter.toNullableLong](../long_converter/#tonullablelong)
+See [LongConverter.ToNullableLong](../long_converter/#tonullablelong)
 
-> ToNullableUInteger(value interface{}) *uint
+> ToNullableUInteger(value any) (uint, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *uint - integer value or nil when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: (uint, bool) - integer value or null when conversion is not supported.
 
 
 ### Examples

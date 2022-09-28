@@ -2,7 +2,7 @@
 type: docs
 title: "IEquatable"
 linkTitle: "IEquatable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface for those classes that need an equal method.
 ---
@@ -16,7 +16,7 @@ The IEquatable interface is used by those classes that need an equal method.
 #### Equals
 Method used to compare two values. Returns true if these values are equal, and false otherwise.
 
-> Equals(value interface{}) bool
+> Equals(value any) bool
 
-- **value**: interface{} - value to compare
+- **value**: any - value to compare
 - **returns**: bool - boolean result of the evaluation

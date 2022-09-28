@@ -5,8 +5,8 @@ See: [Commons module's](../../../toolkit_api/golang/commons)
 import (
 	"math"
 
-	cconfig "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
+	cconfig "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 
 type DataController struct {

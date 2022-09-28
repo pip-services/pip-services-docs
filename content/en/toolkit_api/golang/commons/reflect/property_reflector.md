@@ -2,7 +2,7 @@
 type: docs
 title: "PropertyReflector"
 linkTitle: "PropertyReflector"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to examine an object's properties and to dynamically get and set their values.
 ---
@@ -22,35 +22,35 @@ Important points
 Get values of all properties in a specified object
 and returns them as a map.
 
-> (c *TPropertyReflector) GetProperties(obj interface{}) map[string]interface{}
+> GetProperties(obj any) map[string]any
 
-- **obj**: interface{} - object to get properties from.
-- **returns**: map[string]interface{} - map, containing the names of the object's properties and their values.
+- **obj**: any - object to get properties from.
+- **returns**: map[string]any - map, containing the names of the object's properties and their values.
 
 
 #### GetProperty
 Gets the value of an object's property specified by its name.
 
-> (c *TPropertyReflector) GetProperty(obj interface{}, name string) interface{}
+> GetProperty(obj any, name string) any
 
-- **obj**: interface{} - object to read property from.
+- **obj**: any - object to read property from.
 - **name**: string - name of the property to get.
-- **returns**: interface{} - property value or nil if property doesn't exist or introspection failed.
+- **returns**: any - property value or nil if property doesn't exist or introspection failed.
 
 #### GetPropertyNames
 Gets the names of all properties implemented in a specified object.
 
-> (c *TPropertyReflector) GetPropertyNames(obj interface{}) []string
+> GetPropertyNames(obj any) []string
 
-- **obj**:interface{}any - object to introspect.
+- **obj**:anyany - object to introspect.
 - **returns**: []string - list with property names.
 
 #### HasProperty
 Checks if an object has a property with a specified name.
 
-> (c *TPropertyReflector) HasProperty(obj interface{}, name string) bool
+> HasProperty(obj any, name string) bool
 
-- **obj**: interface{} - object to introspect.
+- **obj**: any - object to introspect.
 - **name**: string - name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
 
@@ -60,10 +60,10 @@ Sets values of some (all) object properties.
 If some properties do not exist or introspection fails
 they are just silently skipped and no errors thrown.
 
-> (c *TPropertyReflector) SetProperties(obj interface{}, values map[string]interface{})
+> SetProperties(obj any, values map[string]any)
 
-- **obj**: interface{} - object to write properties to.
-- **values**: map[string]interface{} - map, containing property names and their values.
+- **obj**: any - object to write properties to.
+- **values**: map[string]any - map, containing property names and their values.
 
 
 #### SetProperty
@@ -72,17 +72,17 @@ Sets the value of an object's property specified by its name.
 If the property does not exist or introspection fails
 this method doesn't do anything and doesn't throw any errors.
 
-> (c *TPropertyReflector) SetProperty(obj interface{}, name string, value interface{})
+> SetProperty(obj any, name string, value any)
 
-- **obj**: interface{} - object to write property to.
+- **obj**: any - object to write property to.
 - **name**: string - name of the property to set.
-- **value**: interface{} - new value for the property to set.
+- **value**: any - new value for the property to set.
 
 ### Examples
 
 ```go
 myObj := MyObject{}
- 
+
 properties := PropertyReflector.GetPropertyNames()
 PropertyReflector.HasProperty(myObj, "myProperty")
 value := PropertyReflector.GetProperty(myObj, "myProperty")

@@ -2,7 +2,7 @@
 type: docs
 title: "PagingParams"
 linkTitle: "PagingParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Defines a data transfer object used to pass paging parameters for queries.
 
@@ -25,11 +25,11 @@ Important points
 #### NewPagingParams
 Creates a new instance and sets its values.
 
-> NewPagingParams(skip, take, total interface{}) [*PagingParams]()
+> NewPagingParams(skip, take int64, total bool) [*PagingParams]()
 
-- **skip**: interface{} - the number of items to skip.
-- **take**: interface{} - the number of items to return. 
-- **total**: interface{} - true to return the total number of items.
+- **skip**: int64 - the number of items to skip.
+- **take**: int64 - the number of items to return. 
+- **total**: bool - true to return the total number of items.
 
 
 #### NewPagingParamsFromMap
@@ -44,18 +44,18 @@ Creates a new PagingParams and sets its parameters from the specified map
 #### NewPagingParamsFromTuples
 Creates a new PagingParams from a list of key-value pairs called tuples.
 
-> NewPagingParamsFromTuples(tuples ...interface{}) [*PagingParams]()
+> NewPagingParamsFromTuples(tuples ...any) [*PagingParams]()
 
-- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: ...any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [*PagingParams]() - newly created PagingParams.
 
 
 #### NewPagingParamsFromValue
 Converts specified value into PagingParams.
 
-> NewPagingParamsFromValue(value interface{}) [*PagingParams]()
+> NewPagingParamsFromValue(value any) [*PagingParams]()
 
-- **value**: interface{} - value to be converted
+- **value**: any - value to be converted
 - **returns**: [*PagingParams]() - newly created PagingParams.
 
 
@@ -73,9 +73,9 @@ Creates a new instance.
 Number of items to skip.
 > **Skip**: *int64
 
-#### take
+#### Take
 Number of items to return. 
-> **take**: *int64
+> **Take**: *int64
 
 #### Total
 Flag to return the total number of items.
@@ -109,7 +109,7 @@ Gets the number of items to return in a page.
 ```go
 filter := NewFilterParamsFromTuples("type", "Type1");
 paging := NewPagingParams(0, 100);
- 
-err, page = myDataClient.getDataByFilter(filter, paging);
+
+page, err = myDataClient.GetDataByFilter(context.Background(), filter, paging);
 
 ```

@@ -3,8 +3,8 @@
 import (
 	"fmt"
 
-	convert "github.com/pip-services3-go/pip-services3-commons-go/convert"
-	data "github.com/pip-services3-go/pip-services3-commons-go/data"
+	convert "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
+	data "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 
 value := data.NewAnyValue("123.456")

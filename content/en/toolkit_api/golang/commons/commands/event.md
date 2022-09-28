@@ -2,7 +2,7 @@
 type: docs
 title: "Event"
 linkTitle: "Event"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Concrete implementation of the [IEvent](../ievent) interface.
    
@@ -53,8 +53,9 @@ Gets the name of the event.
 Fires this event and notifies all registred listeners.  
 Throws an [InvocationError](../errors/invocation_error) if the event fails to be raised.
 
-> (c [*Event]()) Notify(correlationId string, args [*run.Parameters](../../run/parameters))
+> (c [*Event]()) Notify(ctx context.Context, correlationId string, args [*run.Parameters](../../run/parameters))
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: [*run.Parameters](../../run/parameters) - parameters to raise this event with.
 
@@ -72,7 +73,7 @@ event: = NewEvent("my_event");
 
 event.AddListener(myListener);
 
-event.Notify("123", Parameters.NewParametersFromTuples(
+event.Notify(context.Background(), "123", Parameters.NewParametersFromTuples(
   "param1", "ABC",
   "param2", 123
 ));

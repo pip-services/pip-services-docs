@@ -2,7 +2,7 @@
 type: docs
 title: "InterceptedCommand"
 linkTitle: "InterceptedCommand"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Implements a [command](../icommand) wrapped by an interceptor.
     
@@ -29,8 +29,9 @@ about the interceptor that is being used and the next command in the chain.
 Executes the next command in the execution chain using the given [parameters](../../run/parameters) (arguments).  
 See [Parameters](../../run/parameters)
 
-> (c *InterceptedCommand) Execute(correlationId string, args [*run.Parameters](../../run/parameters)) (result interface{}, err error)
+> (c *InterceptedCommand) Execute(ctx context.Context, correlationId string, args [*run.Parameters](../../run/parameters)) (result any, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - unique transaction id used to trace calls across components.
 - **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.
 - **returns**: (result interface{}, err error) - execution result
@@ -56,27 +57,24 @@ See [Parameters](../../run/parameters), [ValidationResult](../../validate/valida
 ### Examples
 
 ```go
- type CommandLogger {
- 	msg string
- }
-
- func (cl * CommandLogger) Name(command ICommand) string {
-     return command.Name();
- }
-
- func (cl * CommandLogger) Execute(correlationId string, command ICommand, args Parameters) (res interface{}, err error){
-     fmt.Println("Executed command " + command.Name());
-     return command.Execute(correlationId, args);
- }
-
- func (cl * CommandLogger) Validate(command: ICommand, args: Parameters): ValidationResult[] {
-     return command.Validate(args);
- }
-
- logger := CommandLogger{mgs:"CommandLoger"};
- loggedCommand = NewInterceptedCommand(logger, command);
+type CommandLogger struct {
+	msg string
+}
+func (cl * CommandLogger) Name(command ICommand) string {
+	return command.Name();
+}
+func (cl * CommandLogger) Execute(correlationId string, command ICommand, args Parameters) (res any, err error){
+	fmt.Println("Executed command " + command.Name());
+	return command.Execute(correlationId, args);
+}
+func (cl * CommandLogger) Validate(command ICommand, args Parameters) []*ValidationResult {
+	return command.Validate(args);
+}
+logger := CommandLogger{mgs:"CommandLogger"};
+loggedCommand = NewInterceptedCommand(logger, command);
+// Each called command will output: Executed command <command name>
  
- // Each called command will output: Executed command <command name>
+// Each called command will output: Executed command <command name>
 
 ```
 

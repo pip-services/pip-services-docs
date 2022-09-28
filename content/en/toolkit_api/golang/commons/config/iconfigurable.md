@@ -2,7 +2,7 @@
 type: docs
 title: "IConfigurable"
 linkTitle: "IConfigurable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     An interface used to set configuration parameters to an object. 
 
@@ -24,8 +24,9 @@ to change object configuration in runtime, use [IReconfigurable](../ireconfigura
 #### Configure
 Configures component by passing configuration parameters.
 
-> Configure(config [*ConfigParams](../config_params))
+> Configure(ctx context.Context, config [*ConfigParams](../config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../config_params) - configuration parameters to be set.
 
 ### Examples
@@ -42,7 +43,7 @@ func NewMyStruct() *MyStruct {
 }
 
 // Implement configure
-func (c* MyStruct) Configure(config *cconf.ConfigParams)  {
+func (c* MyStruct) Configure(ctx context.Context, config *cconf.ConfigParams)  {
     c.myParam = config.GetAsStringWithDefault("options.param", myParam);
     ...
 }

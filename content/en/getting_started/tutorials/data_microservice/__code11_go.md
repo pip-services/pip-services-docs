@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	persist "github.com/pip-services-samples/service-beacons-go/persistence"
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
 type BeaconsMemoryPersistenceTest struct {

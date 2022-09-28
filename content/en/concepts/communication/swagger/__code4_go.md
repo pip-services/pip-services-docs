@@ -1,9 +1,9 @@
 
 ```ts
 import (
-    crun "github.com/pip-services3-go/pip-services3-commons-go/run"
-    cvalid "github.com/pip-services3-go/pip-services3-commons-go/validate"
-    ccmd "github.com/pip-services3-go/pip-services3-commons-go/commands"
+    crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
+    cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
+    ccmd "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
 )
 
 

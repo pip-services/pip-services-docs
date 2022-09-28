@@ -2,7 +2,7 @@
 type: docs
 title: "MethodReflector"
 linkTitle: "MethodReflector"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class allows you to examine an object's methods (method instrospection) and to invoke them dynamically.
 
@@ -21,35 +21,35 @@ Important points
 #### GetMethodNames
 Gets the names of all methods implemented in specified object.
 
-> (c *TMethodReflector) GetMethodNames(obj interface{}) []string
+> GetMethodNames(obj any) []string
 
-- **obj**: interface{} - objec to introspect.
+- **obj**: any - objec to introspect.
 - **returns**: []string - list with method names.
 
 #### HasMethod
 Checks if an object has a method with a specified name..
 
-> (c *TMethodReflector) HasMethod(obj interface{}, name string) bool
+> HasMethod(obj any, name string) bool
 
-- **obj**: interface{} - object to introspect.
+- **obj**: any - object to introspect.
 - **name**: string - name of the method to check.
 - **returns**: bool - true if the object has the method and false if it doesn't.
 
 #### InvokeMethod
 Invokes an object method by its name with specified parameters.
 
-> (c *TMethodReflector) InvokeMethod(obj interface{}, name string, args ...interface{}) interface{}
+> InvokeMethod(obj any, name string, args ...any) any
 
-- **obj**: interface{} - object to invoke.
+- **obj**: any - object to invoke.
 - **name**: string - name of the method to invoke.
-- **args**: ...interface{} - list of method arguments.
-- **returns**: interface{} - result of the method invocation or nil if the method returns void.
+- **args**: ...any - list of method arguments.
+- **returns**: any - result of the method invocation or nil if the method returns void.
 
 ### Examples
 
 ```go
 myObj = MyObject();
- 
+
 methods = MethodReflector.GetMethodNames();
 MethodReflector.HasMethod(myObj, "myMethod");
 MethodReflector.InvokeMethod(myObj, "myMethod", 123);

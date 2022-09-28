@@ -2,7 +2,7 @@
 type: docs
 title: "IReferences"
 linkTitle: "IReferences"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface to manage references stored in a map.
 
@@ -25,50 +25,50 @@ Important points
 Gets all component references that match a specified locator.  
 Throws a [ReferenceError](../reference_error) when required is set to true but no references found.
 
-> Find(locator interface{}, required bool) ([]interface{}, error)
+> Find(locator any, required bool) ([]any, error)
 
-- **locator**: interface{} - locator to find a reference by.
+- **locator**: any - locator to find a reference by.
 - **required**: bool - forces to raise an exception if no reference is found.
-- **returns**: ([]interface{}, error) - list with matching component references.
+- **returns**: ([]any, error) - list with matching component references.
 
 #### GetAll
 Gets all component references registered in this reference map.
 
-> GetAll() []interface{}
+> GetAll() []any
 
-- **returns**: []interface{} - list with component references.
+- **returns**: []any - list with component references.
 
 #### GetAllLocators
 Gets locators for all registered component references in this reference map.
 
-> GetAllLocators() []interface{}
+> GetAllLocators() []any
 
-- **returns**: []interface{} - list with component locators.
+- **returns**: []any - list with component locators.
 
 #### GetOneOptional
 Gets an optional component reference that matches specified locator.
 
-> GetOneOptional(locator interface{}) interface{}
+> GetOneOptional(locator any) any
 
-- **locator**: interface{} - locator to find references by.
-- **returns**: interface{} - matching component reference or nil if nothing was found.
+- **locator**: any - locator to find references by.
+- **returns**: any - matching component reference or nil if nothing was found.
 
 #### GetOneRequired
 Gets a required component reference that matches a specified locator.  
 Throws a [ReferenceError](../reference_error) when no references found.
 
-> GetOneRequired(locator interface{}) (interface{}, error)
+> GetOneRequired(locator any) (any, error)
 
-- **locator**: interface{} - locator to find a reference by.
-- **returns**: (interface{}, error) - matching component reference.
+- **locator**: any - locator to find a reference by.
+- **returns**: (any, error) - matching component reference.
 
 #### GetOptional
 Gets all component references that match specified locator.
 
-> GetOptional(locator interface{}) []interface{}
+> GetOptional(locator any) []any
 
-- **locator**: interface{} - locator to find references by.	 
-- **returns**: []interface{} - list with matching component references or empty list if nothing was found.
+- **locator**: any - locator to find references by.	 
+- **returns**: []any - list with matching component references or empty list if nothing was found.
 
 #### GetRequired
 Gets all component references that match a specified locator.
@@ -76,38 +76,41 @@ At least one component reference must be present.
 If it doesn't the method throws an error.  
 Throws a [ReferenceError](../reference_error) when no references found.
 
-> GetRequired(locator interface{}) ([]interface{}, error)
+> GetRequired(locator any) ([]any, error)
 
-- **locator**: ([]interface{}, error) - locator to find references by.
-- **returns**: interface{} - list with matching component references.
+- **locator**: ([]any, error) - locator to find references by.
+- **returns**: any - list with matching component references.
 
 
 #### Put
 Puts a new reference into this reference map.
 
-> Put(locator interface{}, component interface{})
+> Put(ctx context.Context, locator any, component any)
 
-- **locator**: interface{} - locator to find the reference by.
-- **component**: interface{} - component reference to be added.
+- **ctx**: ctx context.Context - operation context.
+- **locator**: any - locator to find the reference by.
+- **component**: any - component reference to be added.
 
 #### Remove
 Removes a previously added reference that matches a specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use [removeAll](#removeall) method instead.
 
-> Remove(locator interface{}) interface{}
+> Remove(ctx context.Context, locator any) any
 
-- **locator**: interface{} - locator to remove reference
-- **returns**: interface{} - removed component reference.
+- **ctx**: ctx context.Context - operation context.
+- **locator**: any - locator to remove reference
+- **returns**: any - removed component reference.
 
 
 #### RemoveAll
 Removes all component references that match the specified locator. 
 
-> RemoveAll(locator interface{}) []interface{}
+> RemoveAll(ctx context.Context, locator any) []any
 
-- **locator**: interface{} - locator to remove references by.
-- **returns**: []interface{} - list, containing all removed references.
+- **ctx**: ctx context.Context - operation context.
+- **locator**: any - locator to remove references by.
+- **returns**: []any - list, containing all removed references.
 
 
 ### See also

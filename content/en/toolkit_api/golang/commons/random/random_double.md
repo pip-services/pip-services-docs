@@ -1,22 +1,22 @@
 ---
 type: docs
-title: "RandomDouble"
-linkTitle: "RandomDouble"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+title: "Double"
+linkTitle: "Double"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Random generator for double values.
 ---
 
 ### Description
 
-The RandomDouble class allows you to generate random double values.
+The Double class allows you to generate random double values.
 
 ### Methods
 
 #### NextDouble
 Generates a random double value in the range ['minYear', 'maxYear'].
 
-> (c *TRandomDouble) NextDouble(min float64, max float64) float64
+> NextDouble(min float64, max float64) float64
 
 - **min**: float64 - (optional) minimum range value
 - **max**: float64 - max range value
@@ -25,7 +25,7 @@ Generates a random double value in the range ['minYear', 'maxYear'].
 #### UpdateDouble
 Updates (drifts) a double value within specified range defined
 
-> (c *TRandomDouble) UpdateDouble(value float64, interval float64) float64
+> UpdateDouble(value float64, interval float64) float64
 
 - **value**: float64 - double value to drift.
 - **interval**: float64 - (optional) range. Default: 10% of the value
@@ -34,8 +34,8 @@ Updates (drifts) a double value within specified range defined
 ### Examples
 
 ```go
-value1 := RandomDouble.nextDouble(5, 10);     // Possible result: 7.3
-value2 := RandomDouble.nextDouble(10);        // Possible result: 3.7
-value3 := RandomDouble.updateDouble(10, 3);   // Possible result: 9.2
+value1 := Double.NextDouble(5, 10);     // Possible result: 7.3
+value2 := Double.NextDouble(10);        // Possible result: 3.7
+value3 := Double.UpdateDouble(10, 3);   // Possible result: 9.2
 
 ```

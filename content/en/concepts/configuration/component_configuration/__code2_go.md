@@ -2,7 +2,7 @@
 See: [ConfigParams](../../../toolkit_api/golang/commons/config/config_params/)
 
 ```go
-import cconfig "github.com/pip-services3-go/pip-services3-commons-go/config"
+import cconfig "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 
 config := cconfig.NewConfigParamsFromTuples(
 	"param1", 123,

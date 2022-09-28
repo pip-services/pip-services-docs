@@ -3,7 +3,7 @@ type: docs
 title: "Reflect"
 linkTitle: "Reflect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
 
     The Reflect package contains classes that can be used to examine the properties, methods and type of a class. In addition, it can be used to dynamically set the values of a property and create objects of a specific type.

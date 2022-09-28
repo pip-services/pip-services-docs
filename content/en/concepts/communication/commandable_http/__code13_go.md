@@ -6,12 +6,12 @@ package main
 import (
 	"os"
 
-	ccomand "github.com/pip-services3-go/pip-services3-commons-go/commands"
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cconv "github.com/pip-services3-go/pip-services3-commons-go/convert"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
-	crun "github.com/pip-services3-go/pip-services3-commons-go/run"
-	cvalid "github.com/pip-services3-go/pip-services3-commons-go/validate"
+	ccomand "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cconv "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
+	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
 	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
 	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
 	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"

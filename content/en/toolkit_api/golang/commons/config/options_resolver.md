@@ -2,7 +2,7 @@
 type: docs
 title: "OptionsResolver"
 linkTitle: "OptionsResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     A helper class to parameters from "options" configuration section.
 ---

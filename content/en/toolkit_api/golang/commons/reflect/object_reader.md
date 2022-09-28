@@ -2,7 +2,7 @@
 type: docs
 title: "ObjectReader"
 linkTitle: "ObjectReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to examine the properties of an object (property instrospection) and to dynamically read them.
 
@@ -31,10 +31,10 @@ The object can be a user defined object, map or array.
 Returned properties correspondently are object properties,
 map key-pairs or array elements with their indexes.
 
-> (c *TObjectReader) GetProperties(obj interface{}) map[string]interface{}
+> GetProperties(obj any) map[string]any
 
-- **obj**: interface{} - object to get properties from.
-- **returns**: map[string]interface{} - map, containing the names of the object's properties and their values.
+- **obj**: any - object to get properties from.
+- **returns**: map[string]any - map, containing the names of the object's properties and their values.
 
 #### GetProperty
 Gets value of object property specified by its name.
@@ -43,11 +43,11 @@ The object can be a user defined object, map or array.
 The property name correspondently must be an object property,
 map key or array index.
 
-> (c *TObjectReader) GetProperty(obj interface{}, name string) interface{}
+> GetProperty(obj any, name string) any
 
-- **obj**: interface{} - object to read a property from.
+- **obj**: any - object to read a property from.
 - **name**: string - name of the property to get.
-- **returns**: interface{} - property value or nil if property doesn't exist or introspection failed.
+- **returns**: any - property value or nil if property doesn't exist or introspection failed.
 
 #### GetPropertyNames
 Gets the names of all properties implemented in a specified object.
@@ -56,9 +56,9 @@ The object can be a user defined object, map or array.
 Returned property name correspondently are object properties,
 map keys or array indexes.
 
-> (c *TObjectReader) GetPropertyNames(obj interface{}) []string
+> GetPropertyNames(obj any) []string
 
-- **obj**: interface{} - objec to introspect.
+- **obj**: any - objec to introspect.
 - **returns**: []string - list with property names.
 
 #### GetValue
@@ -66,10 +66,10 @@ Gets a real object value.
 If object is a wrapper, it unwraps the value behind it. 
 Otherwise it returns the same object value.
 
-> (c *TObjectReader) GetValue(obj interface{}) interface{}
+> GetValue(obj any) any
 
-- **obj**: interface{} - object to unwrap..
-- **returns**: interface{} - actual (unwrapped) object value. 
+- **obj**: any - object to unwrap..
+- **returns**: any - actual (unwrapped) object value. 
 
 #### HasProperty
 Checks if object has a property with a specified name.
@@ -78,9 +78,9 @@ The object can be a user defined object, map or array.
 The property name correspondently must be an object property,
 map key or array index.
 
-> (c *TObjectReader) HasProperty(obj interface{}, name string) bool
+> HasProperty(obj any, name string) bool
 
-- **obj**: interface{} - object to introspect.
+- **obj**: any - object to introspect.
 - **name**: string - name of the property to check.
 - **returns**: bool - true if the object has the property and false if it doesn't.
 
@@ -88,15 +88,15 @@ map key or array index.
 
 ```go
 myObj := MyObject{}
- 
+
 properties := ObjectReader.GetPropertyNames()
 ObjectReader.HasProperty(myObj, "myProperty")
 value := PropertyReflector.GetProperty(myObj, "myProperty")
- 
+
 myMap := { key1: 123, key2: "ABC" }
 ObjectReader.HasProperty(myMap, "key1")
 value := ObjectReader.GetProperty(myMap, "key1")
- 
+
 myArray := [1, 2, 3]
 ObjectReader.HasProperty(myArrat, "0")
 value := ObjectReader.GetProperty(myArray, "0")

@@ -184,7 +184,7 @@ Update the generated /go.mod file to add there dependencies to Pip.Services tool
 module quickstart
 go 1.13
 require (
-	github.com/pip-services3-go/pip-services3-commons-go v1.0.0
+	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.0
 	github.com/pip-services3-go/pip-services3-components-go v1.0.2
 	github.com/pip-services3-go/pip-services3-container-go v1.0.0
 	github.com/pip-services3-go/pip-services3-rpc-go v1.0.0
@@ -427,7 +427,7 @@ This is all the code of the controller in the file:
 package quickstart
 
 import ( 
-    cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
+    cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
 type HelloWorldController struct { 
@@ -825,7 +825,7 @@ package quickstart
 
 import (
     "net/http"
-    crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
     rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
 )
 
@@ -1069,7 +1069,7 @@ Full listing of the factory's code found in the file:
 package quickstart
 
 import (
-    cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+    cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
     cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
 )
 

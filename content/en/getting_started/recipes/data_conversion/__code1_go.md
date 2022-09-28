@@ -3,7 +3,7 @@
 // Array converter
 
 import (
-	convert "github.com/pip-services3-go/pip-services3-commons-go/convert"
+	convert "github.com/pip-services3-gox/pip-services3-commons-gox/convert"
 )
 value1 := convert.ArrayConverter.ToArray([]int{1, 2}) // Returns [1, 2]
 value2 := convert.ArrayConverter.ToArray(1)           // Returns [1]

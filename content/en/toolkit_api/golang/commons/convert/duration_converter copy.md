@@ -2,7 +2,7 @@
 type: docs
 title: "DurationConverter"
 linkTitle: "DurationConverter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Converts arbitrary values into time.Duration values.
 
@@ -16,38 +16,37 @@ The DurationConverter class allows you to convert arbitrary values into time.Dur
 #### ToDuration
 Converts value into time.Duration or returns current when conversion is not possible.
 
-> ToDuration(value interface{}) time.Duration
+> ToDuration(value any) time.Duration
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **returns**: time.Duration - value or current when conversion is not supported.
 
 #### ToDurationWithDefault
 Converts value into time.Duration or returns default when conversion is not possible.
 
-> ToDurationWithDefault(value interface{}, defaultValue time.Duration) time.Duration
+> ToDurationWithDefault(value any, defaultValue time.Duration) time.Duration
 
-- **value**: interface{} - value to convert.
+- **value**: any - value to convert.
 - **defaultValue**: time.Duration - default value.
 - **returns**: time.Duration - value or default when conversion is not supported.
 
 #### ToNullableDuration
 Converts value into time.Duration or returns nil when conversion is not possible.
 
-> ToNullableDuration(value interface{}) *time.Duration
+> ToNullableDuration(value any) (time.Duration, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *time.Duration - value or nil when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: *time.Duration - value and true or 0 and false when conversion is not supported.
 
 
 ### Examples
 
 ```go
-value1 := convert.DurationConverter.ToNullableDuration("123")
-value2 := convert.DurationConverter.ToNullableDuration(123)
-value3 := convert.DurationConverter.ToNullableDuration(123 * time.Second)
-
-fmt.Println(value1) // 123ms
-fmt.Println(value2) // 123ms
-fmt.Println(value3) // 2m3s
+value1, ok1 := convert.DurationConverter.ToNullableDuration("123")
+value2, ok2 := convert.DurationConverter.ToNullableDuration(123)
+value3, ok3 := convert.DurationConverter.ToNullableDuration(123 * time.Second)
+fmt.Println(value1, ok1) // 123ms, true
+fmt.Println(value2, ok2) // 123ms, true
+fmt.Println(value3, ok3) // 2m3s, true
 
 ```

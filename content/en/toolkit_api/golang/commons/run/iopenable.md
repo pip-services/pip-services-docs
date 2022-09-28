@@ -2,7 +2,7 @@
 type: docs
 title: "IOpenable"
 linkTitle: "IOpenable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Interface that allows you to create components with explicit opening and closing.
 
@@ -30,8 +30,9 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> Open(correlationId string) error
+> Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error returned if not opened
 
@@ -39,24 +40,24 @@ Opens the component.
 
 ```go
 type MyPersistence {
-	_client interface{}
+	_client any
 }
- 
+
 func (mp* MyPersistence)IsOpen() bool {
-    return mp._client != nil;
+	return mp._client != nil;
 }
- 
-(mp* MyPersistence) Open(correlationId: string) error {
-    if (mp.isOpen()) {
-        return nil;
-    }
+
+func (mp* MyPersistence) Open(ctx context.Context, correlationId string) error {
+	if (mp.isOpen()) {
+		return nil;
+	}
 }
- 
-(mp* MyPersistence) Close(correlationId: string) {
-    if (mp._client != nil) {
-        mp._client.close();
-        mp._client = nil;
-    }
+
+func (mp* MyPersistence) Close(ctx context.Context,  correlationId string) {
+	if (mp._client != nil) {
+		mp._client.close();
+		mp._client = nil;
+	}
 }
 ```
 

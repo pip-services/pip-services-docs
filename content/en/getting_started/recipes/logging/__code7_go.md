@@ -4,9 +4,9 @@
 import (
 	"errors"
 
-	cconfig "github.com/pip-services3-go/pip-services3-commons-go/config"
-	crefer "github.com/pip-services3-go/pip-services3-commons-go/refer"
-	crun "github.com/pip-services3-go/pip-services3-commons-go/run"
+	cconfig "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
 	clog "github.com/pip-services3-go/pip-services3-components-go/log"
 	cproc "github.com/pip-services3-go/pip-services3-container-go/container"

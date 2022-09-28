@@ -2,7 +2,7 @@
 type: docs
 title: "MapConverter"
 linkTitle: "MapConverter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     The MapConverter class allows you to convert arbitrary values into map objects using extended conversion rules.
 ---
@@ -18,38 +18,38 @@ The MapConverter class allows you to convert arbitrary values into map objects u
 #### ToMap
 Converts a value into a map object or returns an empty map when conversion is not possible
 
-> ToMap(value interface{}) map[string]interface{}
+> ToMap(value any) map[string]any
 
-- **value**: interface{} - value to convert.
-- **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: map[string]any - map object or empty map when conversion is not supported.
 
 #### ToMapWithDefault
 Converts a value into a map object or returns a default map when conversion is not possible
 
-> ToMapWithDefault(value interface{}, defaultValue map[string]interface{}) map[string]interface{}
+> ToMapWithDefault(value any, defaultValue map[string]any) map[string]any
 
-- **value**: interface{} - value to convert.
-- **defaultValue**: map[string]interface{} - default value.
-- **returns**: map[string]interface{} - map object or empty map when conversion is not supported.
+- **value**: any - value to convert.
+- **defaultValue**: map[string]any - default value.
+- **returns**: map[string]any - map object or empty map when conversion is not supported.
 
 #### ToNullableMap
 Converts a value into a map object or returns nil when conversion is not possible.
 
-> ToNullableMap(value interface{}) *map[string]interface{}
+> ToNullableMap(value any) (map[string]any, bool)
 
-- **value**: interface{} - value to convert.
-- **returns**: *map[string]interface{} - map object or nil when conversion is not supported.
+- **value**: any - value to convert.
+- **returns**: (map[string]any, bool) - map object and true or null and false when conversion is not supported.
 
 
 ### Examples
 
 ```go
-value1 := convert.MapConverter.ToNullableMap("ABC")
-value2 := convert.MapConverter.ToNullableMap(map[string]int{"key": 123})
-value3 := convert.MapConverter.ToNullableMap([...]int{1, 2, 3})
+value1, ok1 := convert.MapConverter.ToNullableMap("ABC")
+value2, ok2 := convert.MapConverter.ToNullableMap(map[string]int{"key": 123})
+value3, ok3 := convert.MapConverter.ToNullableMap([...]int{1, 2, 3})
 
-fmt.Println(value1)  // <nil>
-fmt.Println(*value2) // map[key:123]
-fmt.Println(*value3) // map[0:1 1:2 2:3]
+fmt.Println(value1, ok1) // <nil>, false
+fmt.Println(value2, ok2) // map[key:123], true
+fmt.Println(value3, ok3) // map[0:1 1:2 2:3], true
 
 ```

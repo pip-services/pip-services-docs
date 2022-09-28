@@ -2,7 +2,7 @@
 type: docs
 title: "ErrorDescription"
 linkTitle: "ErrorDescription"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Class used to pass information about errors between microservices implemented in different languages. On the receiving side
     [ErrorDescription]() is used to recreate the exception object close to its original type
@@ -39,7 +39,7 @@ A human-readable error description (usually written in English)
 
 #### Details
 Map with additional details that can be used to restore error description in other languages 
-> **Details**: map[string]interface{}
+> **Details**: map[string]any
 
 #### CorrelationId
 Unique transaction id used to trace execution through the call chain    

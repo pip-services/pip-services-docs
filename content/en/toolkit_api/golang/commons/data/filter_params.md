@@ -2,7 +2,7 @@
 type: docs
 title: "FilterParams"
 linkTitle: "FilterParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Data transfer object used to pass filter parameters as key-value pairs.
 ---
@@ -24,12 +24,12 @@ Creates a new instance and initalizes it with elements from the specified map.
 - **map**: map[string]string - a map to initialize this instance.
 
 
-#### NewFilterParams
+#### NewFilterParamsFromValue
 Converts a specified value into FilterParams.
 
-> NewFilterParamsFromValue(value interface{}) [*FilterParams]()
+> NewFilterParamsFromValue(value any) [*FilterParams]()
 
-- **value**: interface{} - value to be converted
+- **value**: any - value to be converted
 - **returns**: [*FilterParams]() - newly created FilterParams.
 
 #### NewFilterParamsFromString
@@ -45,23 +45,24 @@ See [StringValueMap.NewStringValueMapFromString](../string_value_map/#newstringv
 #### NewFilterParamsFromTuples
 Creates a new FilterParams from a list of key-value pairs called tuples.
 
-> NewFilterParamsFromTuples(tuples ...interface{}) [*FilterParams]()
+> NewFilterParamsFromTuples(tuples ...any) [*FilterParams]()
 
-- **tuples**: ...interface{} - list of values where odd elements are keys and the following even elements are values
+- **tuples**: ...any - list of values where odd elements are keys and the following even elements are values
 - **returns**: [*FilterParams]() - newly created FilterParams.
 
 
 ### Examples
 ```go
 filter := NewFilterParamsFromTuples(
-    "type", "Type1",
-    "from_create_time", new Date(2000, 0, 1),
-    "to_create_time", new Date(),
-    "completed", true
+	"type", "Type1",
+	"from_create_time", new Date(2000, 0, 1),
+	"to_create_time", new Date(),
+	"completed", true
 );
-paging = NewPagingParams(0, 100);
- 
-err, page = myDataClient.GetDataByFilter(filter, paging);
+
+paging = NewPagingParams(0, 100)
+
+err, page = myDataClient.getDataByFilter(context.Background(), filter, paging);
 
 ```
 

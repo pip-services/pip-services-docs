@@ -2,7 +2,7 @@
 type: docs
 title: "Referencer"
 linkTitle: "Referencer"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to set and unset references to components.
 ---
@@ -19,10 +19,11 @@ Sets references to multiple components.
 To set references components must implement [IReferenceable](../ireferenceable) interface.
 If they don't the call to this method has no effect.
 
-> (c *TReferencer) SetReferences(references [IReferences](../ireferences), components []interface{})
+> SetReferences(ctx context.Context, references [IReferences](../ireferences), components []any)
 
+- **ctx**: ctx context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to be set.
-- **component**: []interface{} - list of components to set the references to.
+- **component**: []any - list of components to set the references to.
 
 #### SetReferencesForOne
 Sets references to specific component.
@@ -30,19 +31,21 @@ Sets references to specific component.
 To set references components must implement [IReferenceable](../ireferenceable) interface.
 If they don't the call to this method has no effect.
 
-> (c *TReferencer) SetReferencesForOne(references [IReferences](../ireferences), component interface{})
+> SetReferencesForOne(ctx context.Context, references [IReferences](../ireferences), component any)
 
+- **ctx**: ctx context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to be set.
-- **component**: interface{} - component to set references to.
+- **component**: any - component to set references to.
 
 #### UnsetReferences
 Unsets references in multiple components.
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
 If they don't the call to this method has no effect.
 
-> (c *TReferencer) UnsetReferences(components []interface{})
+> UnsetReferences(ctx context.Context, components []any)
 
-- **components**: []interface{} - list of components, whose references must be cleared.
+- **ctx**: ctx context.Context - operation context.
+- **components**: []any - list of components, whose references must be cleared.
 
 #### UnsetReferencesForOne
 Unsets references in specific component.
@@ -50,9 +53,10 @@ Unsets references in specific component.
 To unset references components must implement [IUnreferenceable](../iunreferenceable) interface.
 If they don't, the call to this method has no effect.
 
-> (c *TReferencer) UnsetReferencesForOne(component interface{})
+> UnsetReferencesForOne(ctx context.Context, component any)
 
-- **component**: interface{} - component to unset references.
+- **ctx**: ctx context.Context - operation context.
+- **component**: any - component to unset references.
 
 
 ### See also

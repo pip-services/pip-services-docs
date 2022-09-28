@@ -3,7 +3,7 @@ type: docs
 title: "Run"
 linkTitle: "Run"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     
     The Run package contains a set of interfaces and classes for the standard lifecycle of objects (opened, 
@@ -44,6 +44,9 @@ Interface for components that require execution parameters.
 <br>
 
 ### Types
+
+#### [Context](context)
+Helper class that allows add behaviour for context.
 
 #### [Cleaner](cleaner)
 Helper class that cleans a stored object state.

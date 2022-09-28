@@ -2,7 +2,7 @@
 type: docs
 title: "SortField"
 linkTitle: "SortField"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Defines a field name and the order type used to sort query results.
 ---
@@ -45,11 +45,11 @@ Flag to define sorting order. True to sort ascending, false to sort descending
 
 ### Examples
 ```go
-filter := NewFilterParamsFromTuples("type", "Type1");
-paging := NewPagingParams(0, 100);
-sorting := NewSortingParams(NewSortField("create_time", true));
+filter := NewFilterParamsFromTuples("type", "Type1")
+paging := NewPagingParams(0, 100)
+sorting := NewSortingParams(NewSortField("create_time", true))
 
-err, page = myDataClient.getDataByFilter(filter, paging, sorting);
+err, page = myDataClient.GetDataByFilter(context.Background(), filter, paging, sorting)
 ```
 
 ### See also

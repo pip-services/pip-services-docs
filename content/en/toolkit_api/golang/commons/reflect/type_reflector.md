@@ -2,7 +2,7 @@
 type: docs
 title: "TypeReflector"
 linkTitle: "TypeReflector"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Helper class that allows you to examine the type of an object, and create instancies of objects based on their type.
 
@@ -30,39 +30,39 @@ and library where it is defined.
 See [GetType](#gettype)
 See [CreateInstanceByType](#createinstancebytype)
 
-> func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...interface{}) (interface{}, error)
+> func (c *TTypeReflector) CreateInstance(name string, pkg string, args ...any) (any, error)
 
 - **name**: string - an object type name.
 - **pkg**: string - a library (module) where object type is defined.
-- **args**: interface{} - arguments for the object constructor.
-- **returns**: (interface{}, error) - the created object instance.
+- **args**: any - arguments for the object constructor.
+- **returns**: (any, error) - the created object instance.
 
 #### CreateInstanceByType
 Creates an instance of an object type.
 
-> (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...interface{}) (interface{}, error)
+> (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...any) (any, error)
 
 - **typ**: refl.Type - object type (factory function) to create.
-- **args**: ...interface{} - arguments for the object constructor.
-- **returns**: (interface{}, error) - created object instance.
+- **args**: ...any - arguments for the object constructor.
+- **returns**: (any, error) - created object instance.
 
 #### CreateInstanceByDescriptor
 Creates an instance of an object type specified by a type descriptor.
 
-> (c *TTypeReflector) CreateInstanceByDescriptor(typ [*TypeDescriptor](../type_descriptor), args ...interface{}) (interface{}, error)
+> (c *TTypeReflector) CreateInstanceByDescriptor(typ [*TypeDescriptor](../type_descriptor), args ...any) (any, error)
 
 - **typ**: [*TypeDescriptor](../type_descriptor) - type descriptor that points to an object type
-- **args**: ...interface{} - arguments for the object constructor.
-- **returns**: (interface{}, error) - created object instance.
+- **args**: ...any - arguments for the object constructor.
+- **returns**: (any, error) - created object instance.
 
 #### CreateInstanceByType
 Creates an instance of an object type.
 
-> (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...interface{}) (interface{}, error)
+> (c *TTypeReflector) CreateInstanceByType(typ refl.Type, args ...any) (any, error)
 
 - **type**: refl.Type - object type (factory function) to create.
-- **args**: ...interface{} - arguments for the object constructor.
-- **returns**: (interface{}, error) - created object instance.
+- **args**: ...any - arguments for the object constructor.
+- **returns**: (any, error) - created object instance.
 
 
 #### GetType
@@ -95,9 +95,9 @@ See [TypeConverter.ToTypeCode](../../convert/type_converter/#totypecode), [TypeC
 ### Examples
 
 ```go
-descriptor := NewTypeDescriptor("MyObject", "mylibrary");
-TypeReflector.GetTypeByDescriptor(descriptor);
-myObj = TypeReflector.CreateInstanceByDescriptor(descriptor);
+descriptor := NewTypeDescriptor("MyObject", "mylibrary")
+TypeReflector.GetTypeByDescriptor(descriptor)
+myObj = TypeReflector.CreateInstanceByDescriptor(descriptor)
 
 ```
 

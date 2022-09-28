@@ -2,7 +2,7 @@
 type: docs
 title: "ICommandInterceptor"
 linkTitle: "ICommandInterceptor"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     An interface for stackable command interceptors, which can extend
     and modify the command call chain.
@@ -36,8 +36,9 @@ Executes the wrapped command with specified arguments.
 The interceptor can use this method to intercept and alter the command execution.
 Otherwise it shall just delete the call to the wrapped command.
 
-> Execute(correlationId string, command ICommand, args *run.Parameters) (interface{}, error)
+> Execute(ctx context.Context, correlationId string, command ICommand, args *run.Parameters) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **command**: [ICommand](../icommand) - next command in the call chain that is to be executed.
 - **args**: [*run.Parameters](../../run/parameters) - parameters (arguments) to pass to the command for execution.

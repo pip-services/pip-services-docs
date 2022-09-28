@@ -2,7 +2,7 @@
 type: docs
 title: "PropertySchema"
 linkTitle: "PropertySchema"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Schema to validate object properties
 ---
@@ -79,11 +79,14 @@ The type can be defined as type, type name or [TypeCode](../convert/type_code)
 
 ```go
 var schema = NewObjectSchema()
-    .WithProperty(NewPropertySchema("id", TypeCode.String));
+	.WithProperty(NewPropertySchema("id", TypeCode.String))
 
-schema.Validate({ id: "1", name: "ABC" });       // Result: no errors
-schema.Validate({ name: "ABC" });                // Result: no errors
-schema.Validate({ id: 1, name: "ABC" });         // Result: id type mismatch
+schema.Validate(struct{id string
+name string}{ id: "1", name: "ABC" })       // Result: no errors
+schema.Validate(struct{id string
+name string}{ name: "ABC" })                // Result: no errors
+schema.Validate(struct{id int
+name string}{ id: 1, name: "ABC" })         // Result: id type mismatch
 
 ```
 

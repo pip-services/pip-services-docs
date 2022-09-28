@@ -2,7 +2,7 @@
 type: docs
 title: "UnsupportedError"
 linkTitle: "UnsupportedError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors caused by calls to unsupported or not yet implemented functionality.
 ---

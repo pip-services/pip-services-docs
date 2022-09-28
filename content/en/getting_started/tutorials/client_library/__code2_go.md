@@ -6,7 +6,7 @@ package clients1
 
 import (
 	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 
 type IBeaconsClientV1 interface {

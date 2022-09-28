@@ -2,7 +2,7 @@
 type: docs
 title: "ICloneable"
 linkTitle: "ICloneable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface to create objects with binary clones.
 ---
@@ -26,7 +26,7 @@ Creates a binary clone of this object.
 type MyStruct struct {
 	...
 }
-func (c MyStruct) Clone() interface{} {
+func (c *MyStruct) Clone() *MyStruct {
 	cloneObj := new(MyStruct)
 	// Copy every attribute from this to cloneObj here.
 	...

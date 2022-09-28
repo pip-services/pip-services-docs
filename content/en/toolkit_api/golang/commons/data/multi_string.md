@@ -2,7 +2,7 @@
 type: docs
 title: "MultiString"
 linkTitle: "MultiString"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Class used to create objects that contain string translations for multiple languages.
     
@@ -23,9 +23,9 @@ Important points
 ### Examples
 
 ```go
-values := MultiString.FromTuples(
-    "en", "Hello World!",
-    "ru", "Привет мир!"
+values := NewMultiStringFromTuples(
+	"en", "Hello World!",
+	"ru", "Привет мир!"
 );
 value1 := values.Get("ru"); // Result: "Привет мир!"
 value2 := values.Get("pt"); // Result: "Hello World!"

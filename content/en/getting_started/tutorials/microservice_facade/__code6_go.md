@@ -16,10 +16,10 @@ import (
 	roleclients1 "github.com/pip-services-users/pip-clients-roles-go/version1"
 	sessclients1 "github.com/pip-services-users/pip-clients-sessions-go/version1"
 
-	cconf "github.com/pip-services3-go/pip-services3-commons-go/config"
-	cdata "github.com/pip-services3-go/pip-services3-commons-go/data"
-	cerr "github.com/pip-services3-go/pip-services3-commons-go/errors"
-	cref "github.com/pip-services3-go/pip-services3-commons-go/refer"
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
+	cerr "github.com/pip-services3-gox/pip-services3-commons-gox/errors"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
 )
 

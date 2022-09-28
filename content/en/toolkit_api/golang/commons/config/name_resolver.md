@@ -2,7 +2,7 @@
 type: docs
 title: "NameResolver"
 linkTitle: "NameResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     A helper class that allows to extract component "name" from configuration parameters.
     

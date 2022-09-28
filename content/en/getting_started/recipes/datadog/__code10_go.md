@@ -3,7 +3,7 @@
 import (
 	"fmt"
 
-	conf "github.com/pip-services3-go/pip-services3-commons-go/config"
+	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	dlog "github.com/pip-services3-go/pip-services3-datadog-go/log"
 )
 

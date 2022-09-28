@@ -10,7 +10,7 @@ import (
 	"net/http"
 	"strings"
 
-	cerr "github.com/pip-services3-go/pip-services3-commons-go/errors"
+	cerr "github.com/pip-services3-gox/pip-services3-commons-gox/errors"
 )
 
 type TestRestClient struct {

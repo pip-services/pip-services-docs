@@ -2,7 +2,7 @@
 type: docs
 title: "InvalidStateError"
 linkTitle: "InvalidStateError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
     Errors related to calling operations, which require the component to be in a specific state.
     For instance: business calls when the component is not ready.

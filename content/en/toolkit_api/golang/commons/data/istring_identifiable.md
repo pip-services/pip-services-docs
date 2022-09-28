@@ -2,7 +2,7 @@
 type: docs
 title: "IStringIdentifiable!"
 linkTitle: "IStringIdentifiable!"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface for data objects that can be uniquely identifed by a string id. 
 
@@ -32,11 +32,15 @@ The object's unique string id.
 
 ### Examples
 ```go
-type MyData struct {
-    Id string          `json:"id"`
-    Field1 string      `json:"field1"`
-    Field2 int32       `json:"field2"`
-    ...
+type MyStruct struct {
+	...
+	id string
+}
+func (c *MyStruct) GetId() string {
+	return c.id
+}
+func (c *MyStruct) SetId(id string) {
+	c.id = id
 }
 ```
 

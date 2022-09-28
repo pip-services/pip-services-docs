@@ -2,7 +2,7 @@
 type: docs
 title: "IReconfigurable"
 linkTitle: "IReconfigurable"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     An interface used to set configuration parameters to an object.  
 

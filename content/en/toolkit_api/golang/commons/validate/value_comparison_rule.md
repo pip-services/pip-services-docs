@@ -2,7 +2,7 @@
 type: docs
 title: "ValueComparisonRule"
 linkTitle: "ValueComparisonRule"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-commons-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: >
    Validation rule that compares a value to a constant.
 ---
@@ -16,21 +16,21 @@ The ValueComparisonRule class allows you to create a validation rule that compar
 #### NewValueComparisonRule
 Creates a new validation rule and sets its values.
 
-> NewValueComparisonRule(operation string, value interface{}) [*ValueComparisonRule]()
+> NewValueComparisonRule(operation string, value any) [*ValueComparisonRule]()
 
 - **operation**: string - comparison operation: *"==" ("=", "EQ"), "!= " ("<>", "NE"); "<"/">" ("LT"/"GT"), "<="/">=" ("LE"/"GE"); "LIKE"*.
-- **value**: interface{} - constant value to compare to
+- **value**: any - constant value to compare to
 
 ### Methods
 
 #### Validate
 Validates a given value against this rule.
 
-> (c [*ValueComparisonRule]()) Validate(path string, schema ISchema, value interface{}) [][*ValidationResult](../validation_result)
+> (c [*ValueComparisonRule]()) Validate(path string, schema ISchema, value any) [][*ValidationResult](../validation_result)
 
 - **path**: string - dot notation path to the value.
 - **schema**: [ISchema](../ischema) - schema this rule is called from
-- **value**: interface{} - value to be validated.
+- **value**: any - value to be validated.
 - **results**: [][*ValidationResult](../validation_result) - list with validation results to add new results.
 
 ### Examples

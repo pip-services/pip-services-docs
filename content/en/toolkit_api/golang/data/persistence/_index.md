@@ -3,7 +3,7 @@ type: docs
 title: "Persistence"
 linkTitle: "Persistence"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-data-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-data-gox"
 description: >
     This package contains classes used to create in memory and file persistence components. 
 

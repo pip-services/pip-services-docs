@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryPersistence"
 linkTitle: "MemoryPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-data-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-data-gox"
 description: >
     Persistence component that stores data in memory.
 
@@ -31,9 +31,7 @@ Important points
 #### NewMemoryPersistence
 Creates a new instance of the memory persistence component.
 
-> NewMemoryPersistence(prototype reflect.Type) [*MemoryPersistence]()
-
-- **prototype**: reflect.Type - type of contained data
+> NewMemoryPersistence[T any]() [*MemoryPersistence[T]]()
 
 ### Fields
 
@@ -68,11 +66,25 @@ Maximum amount of items per page.
 
 ### Methods
 
+#### Close
+Closes multiple components.
+
+To be closed components must implement [IClosable](../iclosable) interface.
+If they don't the call to this method has no effect.
+
+> Close(ctx context.Context, correlationId string, components []any) error
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **components**: []any - list of components that are to be closed.
+- **returns**: error - return error if not closed
+
 #### Clear
 Clears the component's state.
 
-> (c [*MemoryPersistence]()) Clear(correlationId string) error
+> (c [*MemoryPersistence[T]]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not cleaned
 
@@ -80,11 +92,13 @@ Clears the component's state.
 #### Create
 Creates a data item.
 
-> (c [*MemoryPersistence]()) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*MemoryPersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: T - item to be created.
+- **returns**: (result T, err error) - created item
 
 
 #### DeleteByFilter
@@ -92,10 +106,11 @@ Deletes data items that match to a given filter.
 This method shall be called by a func **DeleteByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MemoryPersistence]()) DeleteByFilter(correlationId string, filterFunc func(interface{}) bool) (err error)
+> (c [*MemoryPersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filterFunc func(T) bool) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterFunc**: func(interface{}) bool - (optional) filter function used to filter items.
+- **filterFunc**: func(T) bool - (optional) filter function used to filter items.
 - **returns**: error - returns error if not deleted
 
 
@@ -105,10 +120,11 @@ Gets the number of items retrieved by a given filter.
 This method shall be called by a func **GetCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MemoryPersistence]()) GetCountByFilter(correlationId string, filterFunc func(interface{}) bool) (count int64, err error)
+> (c [*MemoryPersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filterFunc func(T) bool) (count int64, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterFunc**: func(interface{}) bool -  id of the item to be deleted
+- **filterFunc**: func(T) bool -  id of the item to be deleted
 - **returns**: (count int64, err error) - number of data items that satisfy the filter.
 
 
@@ -118,13 +134,14 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MemoryPersistence]()) GetListByFilter(correlationId string, filterFunc func(interface{}) bool, sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (results []interface{}, err error)
+> (c [*MemoryPersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filterFunc func(T) bool, sortFunc func(a, b T) bool, selectFunc func(T) T) (results []T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterFunc**: func(interface{}) bool - (optional) filter function used to filter items
-- **sortFunc**: func(a, b interface{}) bool - (optional) sorting parameters
-- **selectFunc**: func(in interface{}) (out interface{}) - (optional) projection parameters (not used yet)
-- **returns**: (results []interface{}, err error) - data list of filtered results.
+- **filterFunc**: func(T) bool - (optional) filter function used to filter items
+- **sortFunc**: func(a, b T) bool - (optional) sorting parameters
+- **selectFunc**: func(T) T - (optional) projection parameters (not used yet)
+- **returns**: (results []T, err error) - data list of filtered results.
 
 
 #### GetOneRandom
@@ -133,11 +150,12 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a func **GetOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MemoryPersistence]()) GetOneRandom(correlationId string, filterFunc func(interface{}) bool) (result interface{}, err error)
+> (c [*MemoryPersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filterFunc func(T) bool) (result T, err error)
 
+- **ctx**: context.Context - operation context
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterFunc**: func(interface{}) bool - (optional) a filter function to filter items.
-- **returns**: (result interface{}, err error) - random item.
+- **filterFunc**: func(T) bool - (optional) a filter function to filter items.
+- **returns**: (result T, err error) - random item.
 
 
 #### GetPageByFilter
@@ -146,20 +164,20 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MemoryPersistence]()) GetPageByFilter(correlationId string, filterFunc func(interface{}) bool, paging [*cdata.PagingParams](../../../commons/data/paging_params), sortFunc func(a, b interface{}) bool, selectFunc func(in interface{}) (out interface{})) (page [*cdata.DataPage](../../../commons/data/data_page), err error)
+> (c [*MemoryPersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filterFunc func(T) bool, paging [*cdata.PagingParams](../../../commons/data/paging_params), sortFunc func(a, b T) bool, selectFunc func(T) T)) (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filterFunc**: func(interface{}) bool - filter function used to filter items
+- **filterFunc**: func(T) bool - filter function used to filter items
 - **paging**: [*cdata.PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
-- **sortFunc**: func(a, b interface{}) bool - (optional) sorting parameters
-- **selectFunc**: func(in interface{}) (out interface{}) - (optional) projection parameters (not used yet)
-- **returns**: (page [*cdata.DataPage](../../../commons/data/data_page), err error) - data page with filterd results.
+- **sortFunc**: func(a, b T) bool - (optional) sorting parameters
+- **selectFunc**: func(T) T - (optional) projection parameters (not used yet)
+- **returns**: (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error) - data page with filterd results.
 
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*MemoryPersistence]()) IsOpen() bool
+> (c [*MemoryPersistence[T]]()) IsOpen() bool
 
 - **returns**: bool - True if the component is open and False otherwise.
 
@@ -167,7 +185,7 @@ Checks if the component is open.
 #### Load
 Loads items.
 
-> (c [*MemoryPersistence]()) load(correlationId string) error
+> (c [*MemoryPersistence[T]]()) load(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not loaded
@@ -176,8 +194,9 @@ Loads items.
 #### Open
 Opens the component.
 
-> (c [*MemoryPersistence]()) Open(correlationId string) error
+> (c [*MemoryPersistence[T]]()) Open(ctx context.Context,  correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not opened
 
@@ -185,7 +204,7 @@ Opens the component.
 #### Save
 Saves items to an external data source using a configured saver component.
 
-> (c [*MemoryPersistence]()) Save(correlationId string) error
+> (c [*MemoryPersistence[T]]()) Save(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not saved
@@ -194,33 +213,28 @@ Saves items to an external data source using a configured saver component.
 #### SetReferences
 Sets the component's references. References must match configured dependencies.
 
-> (c [*MemoryPersistence]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+> (c [*MemoryPersistence[T]]()) SetReferences(ctx context.Context, references [refer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to set.
 
 ### Examples
 
 ```go
 type MyMemoryPersistence struct {
-    MemoryPersistence
+	*MemoryPersistence[MyData]
 }
- func (c * MyMemoryPersistence) GetByName(correlationId string, name string)(item interface{}, err error) {
-    for _, v := range c.Items {
-        if v.name == name {
-            item = v
-            break
-        }
-    }
-    return item, nil
-});
-func (c * MyMemoryPersistence) Set(correlatonId: string, item: MyData, callback: (err) => void): void {
-    c.Items = append(c.Items, item);
-    c.Save(correlationId);
+
+func (c *MyMemoryPersistence) GetByName(ctx context.Context, correlationId string,
+	name string) (MyData, error) {
+	for _, v := range c.Items {
+		if v.Name == name {
+			return v
+		}
+	}
+	var defaultValue T
+	return defaultValue, nil
 }
-persistence := NewMyMemoryPersistence();
-err := persistence.Set("123", MyData{ name: "ABC" })
-item, err := persistence.GetByName("123", "ABC")
-fmt.Println(item)   // Result: { name: "ABC" }
 
 ```
 

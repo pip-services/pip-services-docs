@@ -47,9 +47,9 @@ go get -u github.com/pip-services3-gox/pip-services3-container-gox
 
 #### Data module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-data-go
+go get -u github.com/pip-services3-gox/pip-services3-data-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-data-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-data-gox)
 
 #### Datadog module
 ```bash

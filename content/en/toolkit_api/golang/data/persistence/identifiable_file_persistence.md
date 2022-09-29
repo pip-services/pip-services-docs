@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiableFilePersistence"
 linkTitle: "IdentifiableFilePersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-data-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-data-gox"
 description: >
     Abstract persistence component that stores data in flat files
     and implements a number of CRUD operations over data items with
@@ -37,8 +37,10 @@ Important points
 #### NewIdentifiableFilePersistence
 Creates a new instance of the persistence.
 
-> NewIdentifiableFilePersistence(prototype reflect.Type, persister [*JsonFilePersister](../json_file_persister)) [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)
+> NewIdentifiableFilePersistence[T any, K any](persister [*JsonFilePersister](../json_file_persister)) [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)
 
+- **T**: [IIdentifiable[K]](../../../commons/data/iidentifiable) -  any type that implemented [IIdentifiable[K]](../../../commons/data/iidentifiable) interface of getting element
+- **K**: any - type if id (key)
 - **persister**: [*JsonFilePersister](../json_file_persister) - (optional) a persister component that loads and saves data from/to flat file.
 
 ### Fields
@@ -57,61 +59,62 @@ JSON file persister.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*IdentifiableFilePersistence](../identifiable_memory_persistence)) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 ### Examples
 
 ```go
-type MyFilePersistence  struct {
-	IdentifiableFilePersistence
+type MyFilePersistence struct {
+	*IdentifiableFilePersistence[*MyData, string]
 }
 
-func NewMyFilePersistence(path string)(mfp *MyFilePersistence) {
-	mfp = MyFilePersistence{}
-	prototype := reflect.TypeOf(MyData{})
-	mfp.IdentifiableFilePersistence = *NewJsonPersister(prototype,path)
+func NewMyFilePersistence(path string) (mfp *MyFilePersistence) {
+	mfp = &MyFilePersistence{}
+	mfp.IdentifiableFilePersistence = NewIdentifiableFilePersistence[*MyData, string](NewJsonFilePersister[*MyData](path))
 	return mfp
 }
-  
-func composeFilter(filter cdata.FilterParams)(func (item interface{})bool) {
+
+func (c *MyFilePersistence) composeFilter(filter cdata.FilterParams) func(item *MyData) bool {
 	if &filter == nil {
 		filter = NewFilterParams()
 	}
-    name := filter.GetAsNullableString("name");
-    return func (item interface) bool {
-        dummy, ok := item.(MyData)
-		if *name != "" && ok && dummy.Name != *name {
+	name, _ := filter.GetAsNullableString("name")
+	return func(item *MyData) bool {
+		if name != "" && item.Name != name {
 			return false
 		}
-        return true
-    }
-}
-  
-func (c *MyFilePersistence ) GetPageByFilter(correlationId string, filter FilterParams, paging PagingParams)(pagecdata.MyDataPage, err error){
-	tempPage, err := c.GetPageByFilter(correlationId, composeFilter(filter), paging, nil, nil)
-	dataLen := int64(len(tempPage.Data))
-	data := make([]MyData, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(MyData)
+		return true
 	}
-	page = *NewMyDataPage(&dataLen, data)
-	return page, err
 }
-  
+
+func (c *MyFilePersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter FilterParams, paging PagingParams) (page cdata.DataPage[MyData], err error) {
+	return c.GetPageByFilter(correlationId, c.composeFilter(filter), paging, nil, nil)
+}
+
+func (c *MyData) Clone() *MyData {
+	return &MyData{Id: c.Id, Name: c.Name}
+}
+
+type MyData struct {
+	Id   string
+	Name string
+}
+
 persistence := NewMyFilePersistence("./data/data.json")
-  
-_, errc := persistence.Create("123", { Id: "1", Name: "ABC" })
-if (errc != nil) {
-	panic()
+_, err := persistence.Create(context.Background(), "123", &MyData{Id: "1", Name: "ABC"})
+if err != nil {
+	panic(err)
 }
-page, errg := persistence.GetPageByFilter("123", NewFilterParamsFromTuples("Name", "ABC"), nil)
-if errg != nil {
+page, err := persistence.GetPageByFilter(context.Background(), "123", *NewFilterParamsFromTuples("Name", "ABC"), nil)
+if err != nil {
 	panic("Error")
 }
-fmt.Println(page.Data)         // Result: { Id: "1", Name: "ABC" )
-persistence.DeleteById("123", "1")
+data := page.Data
+fmt.Println(data) // Result: { Id: "1", Name: "ABC" )
 ```
 
 

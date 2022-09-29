@@ -10,7 +10,7 @@ import (
 
 	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	cpersist "github.com/pip-services3-go/pip-services3-data-go/persistence"
+	cpersist "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
 )
 
 type BeaconsMemoryPersistence struct {

@@ -15,7 +15,7 @@ require (
 	github.com/pip-services3-gox/pip-services3-commons-gox v1.1.2
 	github.com/pip-services3-gox/pip-services3-components-gox v1.2.0
 	github.com/pip-services3-gox/pip-services3-container-gox v1.1.5
-	github.com/pip-services3-go/pip-services3-data-go v1.1.7
+	github.com/pip-services3-gox/pip-services3-data-gox v1.1.7
 	github.com/pip-services3-go/pip-services3-grpc-go v1.2.2
 	github.com/pip-services3-go/pip-services3-mongodb-go v1.1.0
 	github.com/pip-services3-go/pip-services3-postgres-go v1.2.7

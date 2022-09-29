@@ -6,7 +6,7 @@ import (
 
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	datpersist "github.com/pip-services3-go/pip-services3-data-go/persistence"
+	datpersist "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
 	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
 
 	mngoptions "go.mongodb.org/mongo-driver/mongo/options"

@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiableMemoryPersistence"
 linkTitle: "IdentifiableMemoryPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-data-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-data-gox"
 description: >
     Abstract persistence component that stores data in memory
     and implements a number of CRUD operations over data items with unique ids.
@@ -35,136 +35,166 @@ Important points
 #### NewIdentifiableMemoryPersistence
 Creates a new instance of the identifiable file persistence component.
 
-> NewIdentifiableMemoryPersistence(prototype reflect.Type) (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence))
+> NewIdentifiableMemoryPersistence[T any, K any]() (c [*IdentifiableMemoryPersistence[T,K]](../identifiable_memory_persistence))
 
+- **T**: [IIdentifiable[K]](../../../commons/data/iidentifiable) - any type that implemented [IIdentifiable[K]](../../../commons/data/iidentifiable) interface of getting element
+- **K**: any - type if id (key)
 - **prototype**: reflect.Type - data type of contains items
 
 
 ### Methods
 
+#### Configure
+Configures component by passing configuration parameters.
+
+> (c [*IdentifiableMemoryPersistence[T,K]](../identifiable_memory_persistence)) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
+
+- **ctx**: context.Context - operation context.
+- **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+
 #### Create
 Creates a data item.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) Create(ctx context.Context, correlationId string, item any) (result any, err error)
 
+- **ctx**: context.Contex - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: any - item to be created.
+- **returns**: (result any, err error) - created item
 
 
 #### DeleteById
 Deletes a data item based on it's unique id.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) DeleteById(correlationId string, id interface{}) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) DeleteById(ctx context.Context, correlationId string, id any) (result any, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} -  id of the item to be deleted
-- **returns**: (result interface{}, err error) - deleted item.
+- **id**: any -  id of the item to be deleted
+- **returns**: (result any, err error) - deleted item.
 
 
 #### DeleteByIds
 Deletes multiple data items based on their unique ids.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) DeleteByIds(correlationId string, ids []interface{}) (err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) DeleteByIds(ctx context.Context, correlationId string, ids []any) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **ids**: []interface{} -  ids of data items to be deleted.
+- **ids**: []any -  ids of data items to be deleted.
 - **returns**: error - returns error if not deleted 
 
+#### GetIndexById
+GetIndexById get index by "Id" field
+
+> (c *IdentifiableMemoryPersistence[T, K]) GetIndexById(id K) int
+
+- **id**: K - id parameter of data struct
+- **returns**: int - element index.
 
 #### GetListByIds
 Gets a list of data items retrieved by given unique ids.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) GetListByIds(correlationId string, ids []interface{}) (result []interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) GetListByIds(ctx context.Context, correlationId string, ids []any) (result []any, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **ids**: []interface{} -  ids of data items to be retrieved
-- **returns**: (result []interface{}, err error) - data list of results by ids.
+- **ids**: []any -  ids of data items to be retrieved
+- **returns**: (result []any, err error) - data list of results by ids.
 
 
 #### GetOneById
 Gets a data item based on its unique id.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) GetOneById(correlationId string, id interface{}) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) GetOneById(ctx context.Context, correlationId string, id any) (result any, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of data item to be retrieved.
-- **returns**: (result interface{}, err error) - data item by id.
+- **id**: any - id of data item to be retrieved.
+- **returns**: (result any, err error) - data item by id.
 
 
 #### Set
 Sets a data item. If the data item exists, it updates it; otherwise, it creates a new data item.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) Set(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) Set(ctx context.Context, correlationId string, item any) (result any, err error)
 
+- **ctx**: context.Context - operation contex.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be set.
-- **returns**: (result interface{}, err error) - updated item
+- **item**: any - item to be set.
+- **returns**: (result any, err error) - updated item
 
 
 #### Update
 Updates a data item.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) Update(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) Update(ctx context.Context, correlationId string, item any) (result any, err error)
 
+- **ctx**: context.Context - operation contex.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be updated.
-- **returns**: (result interface{}, err error) - updated item.
+- **item**: any - item to be updated.
+- **returns**: (result any, err error) - updated item.
 
 
 #### UpdatePartially
 Updates only a few selected fields in a data item.
 
-> (c [*IdentifiableMemoryPersistence](../identifiable_memory_persistence)) UpdatePartially(correlationId string, id interface{}, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*IdentifiableMemoryPersistence[T,K]]](../identifiable_memory_persistence)) UpdatePartially(ctx context.Context, correlationId string, id any, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result any, err error)
 
+- **ctx**: context.Context - operation contex.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of a data item to be updated.
+- **id**: any - id of a data item to be updated.
 - **data**: [*cdata.AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **returns**: (result interface{}, err error) - updated item.
+- **returns**: (result any, err error) - updated item.
 
 ### Examples
 
 ```go
-type MyMemoryPersistence struct{
-	IdentifiableMemoryPersistence
+type MyMemoryPersistence struct {
+	*IdentifiableMemoryPersistence[*MyData, string]
 }
 
-func composeFilter(filter: FilterParams) (func (item interface{}) bool ) {
-    if &filter == nil {
-		filter = NewFilterParams()
+func NewMyMemoryPersistence() *MyMemoryPersistence {
+	return &MyMemoryPersistence{IdentifiableMemoryPersistence: NewIdentifiableMemoryPersistence[*MyData, string]()}
+}
+func (c *MyMemoryPersistence) composeFilter(filter cdata.FilterParams) func(item *MyData) bool {
+	name, _ := filter.GetAsNullableString("Name")
+	return func(item *MyData) bool {
+		if name != "" && item.Name != name {
+			return false
+		}
+		return true
 	}
-    name := filter.getAsNullableString("Name");
-    return func(item interface{}) bool {
-		dummy, ok := item.(MyData)
-        if (*name != "" && ok && item.Name != *name)
-            return false;
-        return true;
-    };
 }
-  
-func (mmp * MyMemoryPersistence) GetPageByFilter(correlationId string, filter FilterParams, paging PagingParams)(page DataPage, err error) {
-    tempPage, err := c.GetPageByFilter(correlationId, composeFilter(filter), paging, nil, nil)
-	dataLen := int64(len(tempPage.Data))
-	data := make([]MyData, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(MyData)
-	}
-	page = *NewMyDataPage(&dataLen, data)
-	return page, err
-}
-  
-persistence := NewMyMemoryPersistence();
-  
-item, err := persistence.Create("123", { Id: "1", Name: "ABC" })
-...
-page, err := persistence.GetPageByFilter("123", NewFilterParamsFromTuples("Name", "ABC"), nil)
-if err != nil {
-	panic("Error can't get data")
-}
-fmt.Prnitln(page.data)         // Result: { Id: "1", Name: "ABC" }
-item, err := persistence.DeleteById("123", "1")
-...
 
+func (c *MyMemoryPersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter FilterParams, paging PagingParams) (page cdata.DataPage[*MyData], err error) {
+	return c.GetPageByFilter(ctx, correlationId, c.composeFilter(filter), paging, nil, nil)
+}
+
+func f() {
+	persistence := NewMyMemoryPersistence()
+
+	item, err := persistence.Create(context.Background(), "123", &MyData{Id: "1", Name: "ABC"})
+	// ...
+	page, err := persistence.GetPageByFilter(context.Background(), *NewFilterParamsFromTuples("Name", "ABC"), nil)
+	if err != nil {
+		panic("Error can't get data")
+	}
+	data := page.Data
+	fmt.Println(data) // Result: { Id: "1", Name: "ABC" }
+	item, err = persistence.DeleteById(context.Background(), "123", "1")
+	// ...
+}
+
+func (c *MyData) Clone() *MyData {
+	return &MyData{Id: c.Id, Name: c.Name}
+}
+
+type MyData struct {
+	Id   string
+	Name string
+}
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "ComponentConfig"
 linkTitle: "ComponentConfig"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Configuration of a component inside a container.
    

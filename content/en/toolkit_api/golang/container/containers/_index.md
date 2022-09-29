@@ -3,7 +3,7 @@ type: docs
 title: "Containers"
 linkTitle: "Containers"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     
     This package contains the Container class, which provides an inversion of control container that creates objects 

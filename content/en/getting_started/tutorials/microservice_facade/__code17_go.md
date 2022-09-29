@@ -6,7 +6,7 @@ package container
 
 import (
 	ffactory "github.com/pip-services-samples/pip-samples-facade-go/build"
-	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
 	mbuild "github.com/pip-services3-go/pip-services3-mongodb-go/build"
 	rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 )

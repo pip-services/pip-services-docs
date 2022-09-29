@@ -2,7 +2,7 @@
 type: docs
 title: "ProcessContainer"
 linkTitle: "ProcessContainer"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Inversion of control (IoC) container that runs as a system process.
    
@@ -59,17 +59,17 @@ Runs the container by instantiating and running components inside the container.
 It reads the container configuration, and creates, configures, references and opens components.
 On process exit; it closes, unreferences and destroys components in order to shutdown properly.
 
-> (c *ProcessContainer) Run(args []string)
+> (c [*ProcessContainer]()) Run(ctx context.Context, args []string)
 
-- **args**: string[] - command line arguments
+- **ctx**: context.Context - opeartion context.
+- **args**: []string - command line arguments
 
 ### Examples
 
 ```go
-container = NewEmptyProcessContainer();
-container.Container.AddFactory(NewMyComponentFactory());
-  
-container.Run(process.args);
+container = NewEmptyProcessContainer()
+container.Container.AddFactory(NewMyComponentFactory())
+container.Run(context.Background(), os.Environ())
 ```
 
 ### See also

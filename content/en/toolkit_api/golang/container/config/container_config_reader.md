@@ -2,7 +2,7 @@
 type: docs
 title: "ContainerConfigReader"
 linkTitle: "ContainerConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Helper class that reads a container's configuration from a JSON or YAML file.
 ---
@@ -17,8 +17,9 @@ The ContainerConfigReader class allows you to read a container's configuration f
 Reads a container's configuration from JSON or YAML file.
 The type of the file is determined by the file extension.
 
-> (c *TContainerConfigReader) ReadFromFile(correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
+> ReadFromFile(ctx context.Context, correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to the component's configuration file.
 - **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters or nil to skip parameterization.
@@ -28,8 +29,9 @@ The type of the file is determined by the file extension.
 #### ReadFromJsonFile
 Reads a container's configuration from a JSON file.
 
-> (c *TContainerConfigReader) ReadFromJsonFile(correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
+> ReadFromJsonFile(ctx context.Context, correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to the component's configuration file.
 - **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters or nil to skip parameterization.
@@ -39,8 +41,9 @@ Reads a container's configuration from a JSON file.
 #### ReadFromYamlFile
 Reads container configuration from a YAML file.
 
-> (c *TContainerConfigReader) ReadFromYamlFile(correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
+> ReadFromYamlFile(ctx context.Context, correlationId string, path string, parameters [*config.ConfigParams](../../../commons/config/config_params)) ([ContainerConfig](../container_config), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to the component's configuration file.
 - **parameters**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters or nil to skip parameterization.

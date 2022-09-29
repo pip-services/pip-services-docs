@@ -6,7 +6,7 @@ import (
 	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 
 	// ------------
-	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
 	gbuild "github.com/pip-services3-go/pip-services3-grpc-go/build"
 	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	factory "github.com/pip-templates/pip-templates-microservice-go/build"

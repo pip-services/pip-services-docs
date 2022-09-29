@@ -18,7 +18,7 @@ import (
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
-	bref "github.com/pip-services3-go/pip-services3-container-go/refer"
+	bref "github.com/pip-services3-gox/pip-services3-container-gox/refer"
 	rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
 )

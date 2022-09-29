@@ -2,7 +2,7 @@
 type: docs
 title: "RunReferencesDecorator"
 linkTitle: "RunReferencesDecorator"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     References decorator that automatically opens to newly added components
     that implement the [IOpenable](../../../commons/run/iopenable) interface and closes removed components
@@ -55,16 +55,20 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*ManagedReferences]()) Open(correlationId string) error
+> (c [*ManagedReferences]()) Open(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation cotext.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - return error if not opened
 
 #### Put
 Puts a new reference into the reference map.
 
-> (c [*RunReferencesDecorator]()) Put(locator interface{}, component interface{})
-- **locator**: interface{} - locator to find the reference by.
-- **reference**: interface{} - component reference to be added.
+> (c [*RunReferencesDecorator]()) Put(ctx context.Context, locator any, component any)
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to find the reference by.
+- **reference**: any - component reference to be added.
 
 
 #### Remove
@@ -72,17 +76,21 @@ Removes a previously added component that matches the specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use the **RemoveAll** method instead.
 
-> (c [*RunReferencesDecorator]()) Remove(locator interface{}) interface{}
-- **locator**: interface{} - locator to remove component
-- **returns**: interface{} - removed component.
+> (c [*RunReferencesDecorator]()) Remove(ctx context.Context, locator any) any
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to remove component
+- **returns**: any - removed component.
 
 
 #### RemoveAll
 Removes all component references that match the specified locator.
 
-> (c [*RunReferencesDecorator]()) RemoveAll(locator interface{}) []interface{}
-- **locator**: interface{} - locator to remove references by.
-- **returns**: []interface{} - list containing all removed references.
+> (c [*RunReferencesDecorator]()) RemoveAll(ctx context.Context, locator any) []any
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to remove references by.
+- **returns**: []any - list containing all removed references.
 
 ### See also
 - #### [IReferences](../../../commons/refer/ireferences)

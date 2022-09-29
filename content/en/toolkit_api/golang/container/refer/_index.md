@@ -3,7 +3,7 @@ type: docs
 title: "Refer"
 linkTitle: "Refer"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
 
     This package contains classes used to create reference decorators and managed references.      

@@ -2,7 +2,7 @@
 type: docs
 title: "LinkReferencesDecorator"
 linkTitle: "LinkReferencesDecorator"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     References decorator that automatically sets references to newly added components
     that implement [IReferenceable interface](../../../commons/refer/ireferenceable), and unsets references from removed components
@@ -31,7 +31,9 @@ Creates a new instance of the decorator.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*LinkReferencesDecorator]()) Close(correlationId string) error
+> (c [*LinkReferencesDecorator]()) Close(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not closed
 
@@ -44,16 +46,20 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*LinkReferencesDecorator]()) Open(correlationId string) error 
+> (c [*LinkReferencesDecorator]()) Open(ctx context.Context, correlationId string) error 
+
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not opened
 
 #### Put
 Puts a new reference into the reference map.
 
-> (c [*LinkReferencesDecorator]()) Put(locator interface{}, component interface{})
-- **locator**: interface{} - locator to find the reference by.
-- **component**: interface{} - component's reference to be added.
+> (c [*LinkReferencesDecorator]()) Put(ctx context.Context, locator any, component any)
+
+- **ctx**: context.Context - operation context.
+- **locator**: any - locator to find the reference by.
+- **component**: any - component's reference to be added.
 
 
 #### Remove
@@ -61,13 +67,17 @@ Removes a previously added reference that matches the specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use **RemoveAll** method instead.
 
-> (c [*LinkReferencesDecorator]()) Remove(locator interface{}) interface{}
-- **locator**: interface{} - locator to remove reference
-- **returns**: interface{} - removed component reference.
+> (c [*LinkReferencesDecorator]()) Remove(ctx context.Context, locator any) any
+
+- **ctx**: context.Context - operation context.
+- **locator**: any - locator to remove reference
+- **returns**: any - removed component reference.
 
 #### RemoveAll
 Removes all component references that match the specified locator.
 
-> (c [*LinkReferencesDecorator]()) RemoveAll(locator interface{}) []interface{}
-- **locator**: interface{} - the locator to remove references by.
-- **returns**: []interface{} - list, containing all removed references.
+> (c [*LinkReferencesDecorator]()) RemoveAll(ctx context.Context, locator any) []any
+
+- **ctx**: context.Context - operation context.
+- **locator**: any - the locator to remove references by.
+- **returns**: []any - list, containing all removed references.

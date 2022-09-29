@@ -13,7 +13,7 @@ import (
 	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
 	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
-	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
 	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	cservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
 	rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"

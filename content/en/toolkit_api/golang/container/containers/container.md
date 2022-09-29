@@ -2,7 +2,7 @@
 type: docs
 title: "Container"
 linkTitle: "Container"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Inversion of control (IoC) container that creates components and manages their lifecycle.
  
@@ -98,8 +98,9 @@ added to the container by their locators (descriptors).
 #### Close
 Closes the component and frees used resources.
 
-> (c [*Container]()) Close(correlationId string) error
+> (c [*Container]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not closed
 
@@ -107,8 +108,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*Container]()) Configure(conf [*ConfigParams](../../../commons/config/config_params))
+> (c [*Container]()) Configure(ctx context.Context, conf [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **conf**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -123,8 +125,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*Container]()) Open(correlationId string) error
+> (c [*Container]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **returns**: error - returns error if not opened
 
@@ -132,8 +135,9 @@ Opens the component.
 #### ReadConfigFromFile
 Reads the container's configuration from a JSON or YAML file and parameterizes it with the given values.
 
-> (c [*Container]()) ReadConfigFromFile(correlationId string, path string, parameters [*ConfigParams](../../../commons/config/config_params)) error
+> (c [*Container]()) ReadConfigFromFile(ctx context.Context, correlationId string, path string, parameters [*ConfigParams](../../../commons/config/config_params)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to the configuration file
 - **parameters**: [ConfigParams](../../../commons/config/config_params) - configuration parameters or nil to skip parameterization.
@@ -143,27 +147,25 @@ Reads the container's configuration from a JSON or YAML file and parameterizes i
 ### Examples
 
 ```yaml
-======= config.yaml ========
 - descriptor: mygroup:mycomponent1:default:default:1.0
-param1: 123
-param2: ABC
+  param1: 123
+  param2: ABC
 - type: mycomponent2,mypackage
-param1: 321
-param2: XYZ
-============================
+  param1: 321
+  param2: XYZ
 ```
 
 ```go
 container := NewEmptyContainer()
 container.AddFactory(newMyComponentFactory())
 
-parameters := NewConfigParamsFromValue(process.env)
-container.ReadConfigFromFile("123", "./config/config.yml", parameters)
+parameters := NewConfigParamsFromValue(os.Environ())
+container.ReadConfigFromFile(context.Background(), "123", "./config/config.yml", parameters)
 
-err := container.Open("123")
-ftm.Println("Container is opened")
+err := container.Open(context.Background(), "123")
+fmt.Println("Container is opened")
 ...
-err = container.Close("123")
+err = container.Close(context.Background(), "123")
 fmt.Println("Container is closed")
 
 ```

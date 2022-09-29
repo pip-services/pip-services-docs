@@ -2,7 +2,7 @@
 type: docs
 title: "ContainerConfig"
 linkTitle: "ContainerConfig"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Container configuration defined as a list of component configurations.
 ---
@@ -27,9 +27,9 @@ Creates a new instance of ContainerConfig.
 Creates a new ContainerConfig object filled with key-value pairs from a specified object.
 The value is converted into ConfigParams object which is used to create the new object.
 
-> NewContainerConfigFromValue(value interface{}) [ContainerConfig]()
+> NewContainerConfigFromValue(value any) [ContainerConfig]()
 
-- **value**: interface{} - object with key-value pairs used to initialize a new ContainerConfig.
+- **value**: any - object with key-value pairs used to initialize a new ContainerConfig.
 - **returns**: [ContainerConfig]() - created ContainerConfig object.
 
 

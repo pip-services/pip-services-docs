@@ -2,7 +2,7 @@
 type: docs
 title: "ReferencesDecorator"
 linkTitle: "ReferencesDecorator"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Chainable decorator for IReferences that allows to inject additional capabilities
     such as automatic component creation, automatic registration and opening.
@@ -46,46 +46,46 @@ Decorator at the top of the chain.
 Gets all component references that match the specified locator.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when required is set to True but no references were found.
 
-> (c [*ReferencesDecorator]()) Find(locator interface{}, required bool) ([]interface{}, error)
-- **locator**: interface{} - locator to find a reference by.
+> (c [*ReferencesDecorator]()) Find(locator any, required bool) ([]any, error)
+- **locator**: any - locator to find a reference by.
 - **required**: bool - if True, it forces to raise an exception when no reference is found.
-- **returns**: ([]interface{}, error) -  list with matching component references.
+- **returns**: ([]any, error) -  list with matching component references.
 
 #### GetAll
 Gets all component references registered in this reference map.
 
-> (c [*ReferencesDecorator]()) GetAll() []interface{}
-- **returns**: []interface{} - list with component references.
+> (c [*ReferencesDecorator]()) GetAll() []any
+- **returns**: []any - list with component references.
 
 #### GetAllLocators
 Gets locators for all registered component references in the reference map.
 
-> (c [*ReferencesDecorator]()) GetAllLocators() []interface{}
-- **returns**: []interface{} - list with component locators.
+> (c [*ReferencesDecorator]()) GetAllLocators() []any
+- **returns**: []any - list with component locators.
 
 #### GetOneOptional
 Gets an optional component reference that matches the specified locator.
 
-> (c [*ReferencesDecorator]()) GetOneOptional(locator interface{}) interface{}
-- **locator**: interface{} - locator to find references by.
-- **returns**: interface{} - matching component reference or nil if nothing was found.
+> (c [*ReferencesDecorator]()) GetOneOptional(locator any) any
+- **locator**: any - locator to find references by.
+- **returns**: any - matching component reference or nil if nothing was found.
 
 
 #### GetOneRequired
 Gets a required component reference that matches the specified locator.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
-> (c [*ReferencesDecorator]()) GetOneRequired(locator interface{}) (interface{}, error)
-- **locator**: interface{} - locator to find a reference by.
-- **returns**: (interface{}, error) - matching component reference.
+> (c [*ReferencesDecorator]()) GetOneRequired(locator any) (any, error)
+- **locator**: any - locator to find a reference by.
+- **returns**: (any, error) - matching component reference.
 
 
 #### GetOptional
 Gets all component references that match the specified locator.
 
-> (c [*ReferencesDecorator]()) GetOptional(locator interface{}) []interface{}
-- **locator**: interface{} - locator to find references by.
-- **returns**: []interface{} - list with matching component references or empty list if nothing was found.
+> (c [*ReferencesDecorator]()) GetOptional(locator any) []any
+- **locator**: any - locator to find references by.
+- **returns**: []any - list with matching component references or empty list if nothing was found.
 
 
 #### GetRequired
@@ -93,17 +93,19 @@ Gets all component references that match the specified locator.
 At least one component reference must be present.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
-> (c [*ReferencesDecorator]()) GetRequired(locator interface{}) ([]interface{}, error)
-- **locator**: interface{} - locator to find references by.
-- **returns**: ([]interface{}, error) - list with matching component references.
+> (c [*ReferencesDecorator]()) GetRequired(locator any) ([]any, error)
+- **locator**: any - locator to find references by.
+- **returns**: ([]any, error) - list with matching component references.
 
 
 #### Put
 Puts a new reference into the reference map.
 
-> (c [*ReferencesDecorator]()) Put(locator interface{}, component interface{})
-- **locator**: interface{} - locator to find the reference by.
-- **reference**: interface{} - component reference to be added.
+> (c [*ReferencesDecorator]()) Put(ctx context.Context, locator any, component any)
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to find the reference by.
+- **reference**: any - component reference to be added.
 
 
 #### Remove
@@ -111,17 +113,21 @@ Removes a previously added component that matches the specified locator.
 If many references match the locator, it removes only the first one.
 When all references shall be removed, use **RemoveAll** method instead.
 
-> (c [*ReferencesDecorator]()) Remove(locator interface{}) interface{}
-- **locator**: interface{} - locator to remove component
-- **returns**: interface{} - removed component.
+> (c [*ReferencesDecorator]()) Remove(ctx context.Context, locator any) any
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to remove component
+- **returns**: any - removed component.
 
 
 #### RemoveAll
 Removes all component references that match the specified locator.
 
-> (c [*ReferencesDecorator]()) RemoveAll(locator interface{}) []interface{}
-- **locator**: interface{} - locator to remove references by.
-- **returns**: []interface{} - list containing all removed references.
+> (c [*ReferencesDecorator]()) RemoveAll(ctx context.Context, locator any) []any
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: any - locator to remove references by.
+- **returns**: []any - list containing all removed references.
 
 ### See also
 - #### [IReferences](../../../commons/refer/ireferences)

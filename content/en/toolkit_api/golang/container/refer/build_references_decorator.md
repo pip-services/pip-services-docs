@@ -2,7 +2,7 @@
 type: docs
 title: "BuildReferencesDecorator"
 linkTitle: "BuildReferencesDecorator"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     References decorator that automatically creates missing components using
     available component factories upon component retrival.
@@ -31,35 +31,35 @@ Creates a new instance of the decorator.
 Clarifies a component locator by merging two descriptors into one to replace missing fields.
 That allows to get a more complete descriptor that includes all possible fields.
 
-> (c [*BuildReferencesDecorator]()) ClarifyLocator(locator interface{}, factory [build.IFactory](../../../components/build/ifactory)) interface{}
-- **locator**: interface{} - component locator to clarify.
+> (c [*BuildReferencesDecorator]()) ClarifyLocator(locator any, factory [build.IFactory](../../../components/build/ifactory)) any
+- **locator**: any - component locator to clarify.
 - **factory**: [build.IFactory](../../../components/build/ifactory) - factory that shall create the component.
-- **returns**: interface{} - clarified component descriptor (locator)
+- **returns**: any - clarified component descriptor (locator)
 
 #### Create
 Creates a component identified by the given locator.
 
-> (c [*BuildReferencesDecorator]()) Create(locator interface{}, factory [build.IFactory](../../../components/build/ifactory)) interface{}
-- **locator**: interface{} - locator used to identify the component to be created.
+> (c [*BuildReferencesDecorator]()) Create(locator any, factory [build.IFactory](../../../components/build/ifactory)) any
+- **locator**: any - locator used to identify the component to be created.
 - **factory**: [build.IFactory](../../../components/build/ifactory) - factory that shall create the component.
-- **returns**: interface{} - created component.
+- **returns**: any - created component.
 
 #### Find
 Gets all component references that match the specified locator.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when required is set to True but no references are found.
 
-> (c [*BuildReferencesDecorator]()) Find(locator interface{}, required bool) ([]interface{}, error)
-- **locator**: interface{} - locator to find a reference by.
+> (c [*BuildReferencesDecorator]()) Find(locator any, required bool) ([]any, error)
+- **locator**: any - locator to find a reference by.
 - **required**: bool - it True, it forces to raise an exception when no reference is found.
-- **returns**: ([]interface{}, error) - list with matching component references.
+- **returns**: ([]any, error) - list with matching component references.
 
 
 #### FindFactory
 Finds a factory capable creating a component by given descriptor
 from the components registered in the references.
 
-> (c [*BuildReferencesDecorator]()) FindFactory(locator interface{}) [build.IFactory](../../../components/build/ifactory)
-- **locator**: interface{} - locator of the component to be created.
+> (c [*BuildReferencesDecorator]()) FindFactory(locator any) [build.IFactory](../../../components/build/ifactory)
+- **locator**: any - locator of the component to be created.
 - **returns**: [build.IFactory](../../../components/build/ifactory) - found factory or nil if no factory was found.
 
 
@@ -67,35 +67,35 @@ from the components registered in the references.
 Gets all component references that match the specified locator.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when required is set to True but no references were found.
 
-> (c [*BuildReferencesDecorator]()) Find(locator interface{}, required bool) ([]interface{}, error)
-- **locator**: interface{} - locator to find a reference by.
+> (c [*BuildReferencesDecorator]()) Find(locator any, required bool) ([]any, error)
+- **locator**: any - locator to find a reference by.
 - **required**: bool - if True, it forces to raise an exception when no reference is found.
-- **returns**: ([]interface{}, error) -  list with matching component references.
+- **returns**: ([]any, error) -  list with matching component references.
 
 
 #### GetOneOptional
 Gets an optional component reference that matches the specified locator.
 
-> (c [*BuildReferencesDecorator]()) GetOneOptional(locator interface{}) interface{}
-- **locator**: interface{} - locator to find references by.
-- **returns**: interface{} - matching component reference or nil if nothing was found.
+> (c [*BuildReferencesDecorator]()) GetOneOptional(locator any) any
+- **locator**: any - locator to find references by.
+- **returns**: any - matching component reference or nil if nothing was found.
 
 
 #### GetOneRequired
 Gets a required component reference that matches the specified locator.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
-> (c [*BuildReferencesDecorator]()) GetOneRequired(locator interface{}) (interface{}, error)
-- **locator**: interface{} - locator to find a reference by.
-- **returns**: (interface{}, error) - matching component reference.
+> (c [*BuildReferencesDecorator]()) GetOneRequired(locator any) (any, error)
+- **locator**: any - locator to find a reference by.
+- **returns**: (any, error) - matching component reference.
 
 
 #### GetOptional
 Gets all component references that match the specified locator.
 
-> (c [*BuildReferencesDecorator]()) GetOptional(locator interface{}) []interface{}
-- **locator**: interface{} - locator to find references by.
-- **returns**: []interface{} - list with matching component references or empty list if nothing was found.
+> (c [*BuildReferencesDecorator]()) GetOptional(locator any) []any
+- **locator**: any - locator to find references by.
+- **returns**: []any - list with matching component references or empty list if nothing was found.
 
 
 #### GetRequired
@@ -103,6 +103,6 @@ Gets all component references that match the specified locator.
 At least one component reference must be present.
 Throws a [ReferenceError](../../../commons/refer/reference_error) when no references were found.
 
-> (c [*BuildReferencesDecorator]()) GetRequired(locator interface{}) ([]interface{}, error)
-- **locator**: interface{} - locator to find references by.
-- **returns**: ([]interface{}, error) - list with matching component references.
+> (c [*BuildReferencesDecorator]()) GetRequired(locator any) ([]any, error)
+- **locator**: any - locator to find references by.
+- **returns**: ([]any, error) - list with matching component references.

@@ -2,7 +2,7 @@
 type: docs
 title: "ManagedReferences"
 linkTitle: "ManagedReferences"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-container-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-container-gox"
 description: >
     Managed references that in addition to keeping and locating references can also 
     manage their lifecycle.
@@ -25,9 +25,10 @@ The ManagedReferences class allows you to create managed references that in addi
 #### NewManagedReferences
 Creates a new instance of the decorator.
 
-> NewManagedReferences(tuples []interface{}) [*ManagedReferences]()
+> NewManagedReferences(ctx context.Context, tuples []any) [*ManagedReferences]()
 
-- **tuples**: []interface{} - tuples where odd values are component locators (descriptors) and even values are component references
+- **ctx**: context.Context - operation context.
+- **tuples**: []any - tuples where odd values are component locators (descriptors) and even values are component references
 
 #### NewEmptyManagedReferences
 Creates a new instance of the references
@@ -43,8 +44,10 @@ Creates a new instance of the references
 #### NewManagedReferencesFromTuples
 Removes all component references that match the specified locator.
 
-> NewManagedReferencesFromTuples(tuples ...interface{}) [*ManagedReferences]()
-- **locator**: ...interface{} - locator to remove references by.
+> NewManagedReferencesFromTuples(ctx context.Context, tuples ...any) [*ManagedReferences]()
+
+- **ctx**: context.Context - operation cotext.
+- **locator**: ...any - locator to remove references by.
 - **returns**: [ManagedReferences]() - list containing all removed references.
 
 
@@ -53,7 +56,9 @@ Removes all component references that match the specified locator.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*ManagedReferences]()) Close(correlationId string) error
+> (c [*ManagedReferences]()) Close(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation cotext.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **retunrs**: error - returns error if not closed
 
@@ -66,7 +71,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*ManagedReferences]()) Open(correlationId string) error
+> (c [*ManagedReferences]()) Open(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation cotext.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - return error if not opened
 

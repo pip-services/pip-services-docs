@@ -186,7 +186,7 @@ go 1.13
 require (
 	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.0
 	github.com/pip-services3-gox/pip-services3-components-gox v1.0.2
-	github.com/pip-services3-go/pip-services3-container-go v1.0.0
+	github.com/pip-services3-gox/pip-services3-container-gox v1.0.0
 	github.com/pip-services3-go/pip-services3-rpc-go v1.0.0
 )
 ```
@@ -1251,7 +1251,7 @@ namespace HelloWorld {
 package quickstart
 
 import (
-    cproc "github.com/pip-services3-go/pip-services3-container-go/container"
+    cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
     rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 )
 

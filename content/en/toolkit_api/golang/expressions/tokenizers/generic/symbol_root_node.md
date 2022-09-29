@@ -2,7 +2,7 @@
 type: docs
 title: "SymbolRootNode"
 linkTitle: "SymbolRootNode"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     This class is a special case of *SymbolNode*. A *SymbolRootNode*
     object has no symbol of its own, but has children that represent all possible symbols.

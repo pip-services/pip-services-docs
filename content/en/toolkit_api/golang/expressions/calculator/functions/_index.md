@@ -4,7 +4,7 @@ title: "Functions"
 linkTitle: "Functions"
 no_list: true
 weight: 1
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: >
     This sub-package provides interfaces and functions used to create lists of functions and delegates.
 ---

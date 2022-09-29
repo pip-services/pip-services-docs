@@ -65,9 +65,9 @@ go get -u github.com/pip-services3-gox/pip-services3-elasticsearch-gox
 
 #### Expressions module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-expressions-go
+go get -u github.com/pip-services3-gox/pip-services3-expressions-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-expressions-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-expressions-gox)
 
 #### gRPC module
 ```bash

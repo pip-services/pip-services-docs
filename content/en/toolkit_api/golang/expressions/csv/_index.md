@@ -3,7 +3,7 @@ type: docs
 title: "CSV"
 linkTitle: "CSV"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: >
     This package contains constants and classes used to work with expressions in csv files and streams. 
 ---

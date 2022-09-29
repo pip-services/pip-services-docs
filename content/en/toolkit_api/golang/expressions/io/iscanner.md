@@ -2,7 +2,7 @@
 type: docs
 title: "IScanner"
 linkTitle: "IScanner"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     Defines a scanner that can read and unread characters and count lines.
     This scanner is used by tokenizers to process input streams.

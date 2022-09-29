@@ -2,7 +2,7 @@
 type: docs
 title: "AbstractVariantOperations"
 linkTitle: "AbstractVariantOperations"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     Implements an abstract variant operations manager object.
 ---
@@ -44,10 +44,10 @@ Performs the AND operation for two variants.
 #### Convert
 Converts a variant to a specified type.
 
-> Convert(value [*Variant](../variant), newType int) ([*Variant](../variant), error)
+> Convert(value [*Variant](../variant), newType [VariantType](../variant_type)) ([*Variant](../variant), error)
 
 - **value**: [*Variant](../variant) - variant value to be converted.
-- **newType**: int - type of object to be returned ([VariantType](../variant_type)).
+- **newType**: [VariantType](../variant_type) - type of object to be returned ([VariantType](../variant_type)).
 - **returns**: ([*Variant](../variant), error) - converted Variant value.
 
 #### Div

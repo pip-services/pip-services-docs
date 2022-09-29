@@ -2,7 +2,7 @@
 type: docs
 title: "CsvSymbolState"
 linkTitle: "CsvSymbolState"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     Implements a symbol state to tokenize delimiters in CSV streams.
 ---

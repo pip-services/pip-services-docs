@@ -3,7 +3,7 @@ type: docs
 title: "Variants"
 linkTitle: "Variants"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: >
     The Variants package contains constants, interfaces and classes used to define variant values and their operations.
 ---

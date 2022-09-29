@@ -3,7 +3,7 @@ type: docs
 title: "Mustache"
 linkTitle: "Mustache"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: >
     This package contains several sub-packages used to create Mustache templates, parsers and tokenizers.
 ---

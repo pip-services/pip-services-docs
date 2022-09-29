@@ -2,7 +2,7 @@
 type: docs
 title: "GenericCommentState"
 linkTitle: "GenericCommentState"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     A CommentState object that returns a comment from a scanner.
 ---

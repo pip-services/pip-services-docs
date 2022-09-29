@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Expressions module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 no_list: true
 weight: 100
 description: > 
@@ -23,7 +23,7 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-expressions-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-expressions-gox@latest
 ```
 
 The example below shows how to use expression calculator to dynamically
@@ -33,9 +33,9 @@ calculate user-defined expressions.
 import (
     "fmt"
 
-    calc "github.com/pip-services3-go/pip-services3-expressions-go/calculator"
-    vars "github.com/pip-services3-go/pip-services3-expressions-go/calculator/variables"
-    variants "github.com/pip-services3-go/pip-services3-expressions-go/variants"
+    calc "github.com/pip-services3-gox/pip-services3-expressions-gox/calculator"
+    vars "github.com/pip-services3-gox/pip-services3-expressions-gox/calculator/variables"
+    variants "github.com/pip-services3-gox/pip-services3-expressions-gox/variants"
 )
 
 ...
@@ -56,13 +56,13 @@ if err != nil {
 ...
 ```
 
-The following example shows how to process mustache templates.
+This is an example to process mustache templates.
 
 ```golang
 import (
     "fmt"
 
-    mustache "github.com/pip-services3-go/pip-services3-expressions-go/mustache"
+    mustache "github.com/pip-services3-gox/pip-services3-expressions-gox/mustache"
 )
 
 template := mustache.NewMustacheTemplate()

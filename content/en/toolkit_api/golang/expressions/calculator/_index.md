@@ -3,7 +3,7 @@ type: docs
 title: "Calculator"
 linkTitle: "Calculator"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: >
     This package contains several sub-packages used to create functions, delegates, expression parsers, expression token holders, tokenizers, variables and collections of variables. It also contains a class to create an expression calculator.
 ---

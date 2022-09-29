@@ -2,7 +2,7 @@
 type: docs
 title: "StringScanner"
 linkTitle: "StringScanner"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-expressions-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-expressions-gox"
 description: > 
     Scan characters in a string that allows tokenizers
     to look ahead through a stream to perform lexical analysis.

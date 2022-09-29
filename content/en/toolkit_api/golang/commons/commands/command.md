@@ -50,7 +50,7 @@ Validates the command [args](../../run/parameters) before execution using the de
 > (c [*Command]()) Validate(args [*run.Parameters](../../run/parameters)) [][*validate.ValidationResul](../../validate/validation_result)
 
 - **args**: [*run.Parameters](../../run/parameters) - the parameters (arguments) to validate using this command's schema.
-- **returns**: [][*validate.ValidationResul]t(../../validate/validation_result) - an array of ValidationResults or an empty array (if no schema is set).
+- **returns**: [][*validate.ValidationResul](../../validate/validation_result) - an array of ValidationResults or an empty array (if no schema is set).
 
 ### Examples
 

@@ -2,7 +2,7 @@
 type: docs
 title: "ElasticSearchLogger"
 linkTitle: "ElasticSearchLogger"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-elasticsearch-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-elasticsearch-gox"
 description: > 
     Logger that dumps execution logs to ElasticSearch service.
 
@@ -71,8 +71,9 @@ Closes the component and frees used resources.
 #### Configure
 Closes the component and frees used resources.
 
-> (c [*ElasticSearchLogger]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*ElasticSearchLogger]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -87,8 +88,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*ElasticSearchLogger]()) Open(correlationId string) (err error)
+> (c [*ElasticSearchLogger]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not opened
 
@@ -96,8 +98,9 @@ Opens the component.
 #### Save
 Saves log messages from the cache.
 
-> (c [*ElasticSearchLogger]()) Save(messages [][*clog.LogMessage](../../../components/log/log_message)) (err error)
+> (c [*ElasticSearchLogger]()) Save(ctx context.Context, messages [][*clog.LogMessage](../../../components/log/log_message)) (err error)
 
+- **ctx**: context.Context - operation context.
 - **messages**: [][*clog.LogMessage](../../../components/log/log_message) - list with log messages
 - **returns**: error - returns error if not saved
 
@@ -105,21 +108,23 @@ Saves log messages from the cache.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*ElasticSearchLogger]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*ElasticSearchLogger]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **messages**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 
 ```go
-logger := NewElasticSearchLogger();
-logger.Configure(cconf.NewConfigParamsFromTuples(
+logger := NewElasticSearchLogger()
+logger.Configure(contex.Background(), cconf.NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
-    "connection.port", "9200"
-));
+    "connection.port", "9200"б
+))
 
-logger.Open("123")
-logger.Error("123", ex, "Error occured: %s", ex.message);
-logger.Debug("123", "Everything is OK.");
+logger.Open(contex.Background(), "123")
+
+logger.Error(contex.Background(), "123", ex, "Error occured: %s", ex.Message)
+logger.Debug(contex.Background(), "123", "Everything is OK.")
 ```

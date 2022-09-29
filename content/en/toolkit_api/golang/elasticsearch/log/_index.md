@@ -3,7 +3,7 @@ type: docs
 title: "Log"
 linkTitle: "Log"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-elasticsearch-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-elasticsearch-gox"
 description: >
     This package contains a class used to create loggers for the ElasticSearch component.
 ---

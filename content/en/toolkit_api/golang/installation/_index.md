@@ -59,9 +59,9 @@ go get -u github.com/pip-services3-go/pip-services3-datadog-go
 
 #### ElasticSearch module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-elasticsearch-go
+go get -u github.com/pip-services3-gox/pip-services3-elasticsearch-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-elasticsearch-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-elasticsearch-gox)
 
 #### Expressions module
 ```bash

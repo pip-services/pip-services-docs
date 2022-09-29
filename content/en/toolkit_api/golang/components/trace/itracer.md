@@ -2,7 +2,7 @@
 type: docs
 title: "ITracer"
 linkTitle: "ITracer"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for tracer components that capture operation traces.
 ---
@@ -16,8 +16,9 @@ The ITracer interface is used to create tracer components that capture operation
 #### BeginTrace
 Begings recording an operation trace
 
-> BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
+> BeginTrace(ctx context.Context, correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -27,8 +28,9 @@ Begings recording an operation trace
 #### Failure
 Records an operation failure with its name, duration and error.
 
-> Failure(correlationId string, component string, operation string, err error, duration int64)
+> Failure(ctx context.Context,correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of called component
 - **operation**: string - name of the executed operation.
@@ -39,8 +41,9 @@ Records an operation failure with its name, duration and error.
 #### Trace
 Records an operation trace with its name and duration
 
-> Trace(correlationId string, component string, operation string, duration int64)
+> Trace(ctx context.Context, correlationId string, component string, operation string, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.

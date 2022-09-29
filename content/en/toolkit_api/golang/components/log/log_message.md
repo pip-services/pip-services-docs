@@ -2,7 +2,7 @@
 type: docs
 title: "LogMessage"
 linkTitle: "LogMessage"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Data object used to store captured log messages.
    
@@ -20,9 +20,9 @@ Important points
 
 #### 
 
-> NewLogMessage(level int, source string, correlationId string, [errors.ErrorDescription](../../../commons/errors/error_description) , message string) [LogMessage]()
+> NewLogMessage(level [LevelType](../log_level), source string, correlationId string, [errors.ErrorDescription](../../../commons/errors/error_description) , message string) [LogMessage]()
 
-- **level**: int - log level.
+- **level**: [LevelType](../log_level) - log level.
 - **source**: string - source.
 - **correlationId**: string -  transaction id used to trace execution through the call chain.
 - **err**: [errors.ErrorDescription](../../../commons/errors/error_description) - error object associated with this message.
@@ -39,7 +39,7 @@ Time the message was generated
 
 #### Level
 Log level
-> **Level**: int
+> **Level**: [LevelType](../log_level)
 
 #### Source
 Source (context name)

@@ -2,7 +2,7 @@
 type: docs
 title: "FileConfigReader"
 linkTitle: "FileConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Config reader that reads a configuration from a file.
     
@@ -40,8 +40,9 @@ Creates a new instance of the config reader.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*FileConfigReader]()) Configure(config [*cconfig.ConfigParams](../../../commons/config/config_params))
+> (c [*FileConfigReader]()) Configure(ctx context.Context, config [*cconfig.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **cconfig**: [*cconfig.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 

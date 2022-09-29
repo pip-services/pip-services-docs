@@ -2,7 +2,7 @@
 type: docs
 title: "CreateError"
 linkTitle: "CreateError"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Error raised when factory is not able to create a requested component.
 ---
@@ -26,10 +26,10 @@ Creates an error instance and assigns its values.
 #### NewCreateErrorByLocator
 Creates an error instance and assigns its values.
 
-> NewCreateErrorByLocator(correlationId string, locator interface{}) [*errors.ApplicationError](../../../commons/errors/application_error)
+> NewCreateErrorByLocator(correlationId string, locator any) [*errors.ApplicationError](../../../commons/errors/application_error)
 
 - **correlationId**: string - (optional) unique transaction used id to trace execution through the call chain.
-- **message**: interface{} - human-readable locator of the component that cannot be created.
+- **message**: any - human-readable locator of the component that cannot be created.
 
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "CachedCounters"
 linkTitle: "CachedCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Class used to create performace counters that measure and store those values in memory.
 
@@ -72,8 +72,9 @@ Begins measurement of execution time interval.
 It returns [*CounterTiming](../counter_timing) object which has to be called at
 [CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> (c [*CachedCounters]()) BeginTiming(name string) [*CounterTiming](../counter_timing)
+> (c [*CachedCounters]()) BeginTiming(ctx context.Context, name string) [*CounterTiming](../counter_timing)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Interval type.
 - **returns**: [*CounterTiming](../counter_timing) - a callback object to end timing.
 
@@ -81,38 +82,43 @@ It returns [*CounterTiming](../counter_timing) object which has to be called at
 #### Clear
 Clears (resets) a counter specified by its name.
 
-> (c [*CachedCounters]()) Clear(name string)
+> (c [*CachedCounters]()) Clear(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name to clear.
 
 
 #### ClearAll
 Clears (resets) all counters.
 
-> (c [*CachedCounters]()) ClearAll()
+> (c [*CachedCounters]()) ClearAll(ctx context.Context)
 
+- **ctx**: context.Context - operation context.
 
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*CachedCounters]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*CachedCounters]()) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Dump
 Dumps (saves) the current values of counters.
 
-> (c [*CachedCounters]()) Dump() error
+> (c [*CachedCounters]()) Dump(ctx context.Context) error
 
+- **ctx**: context.Context - operation context.
 - **returns**: error - return error if not dumped
 
 
 #### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
 
-> (c [*CachedCounters]()) EndTiming(name string, elapsed float32)
+> (c [*CachedCounters]()) EndTiming(ctx context.Context, name string, elapsed float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name
 - **elapsed**: float32 - execution elapsed time in milliseconds to update the counter.
 
@@ -136,12 +142,19 @@ Gets all captured counters.
 
 - **returns**: [][*Counter](../counter) - a list with counters.
 
+#### GetAllCountersStats
+GetAllCountersStats gets all captured counters stats.
+
+> (c [*CachedCounters]()) GetAllCountersStats() [][Counter](../counter)
+
+- **returns**: [][Counter](../counter) - slice of counters.
 
 #### Increment
 Increments counter by given value.
 
-> (c [*CachedCounters]()) Increment(name string, value int)
+> (c [*CachedCounters]()) Increment(ctx context.Context, name string, value int)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Increment type.
 - **value**: int - a value to add to the counter.
 
@@ -149,17 +162,18 @@ Increments counter by given value.
 #### IncrementOne
 Increments counter by 1.
 
-> (c [*CachedCounters]()) IncrementOne(name string)
+> (c [*CachedCounters]()) IncrementOne(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Increment type.
-
 
 #### Last
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> (c [*CachedCounters]()) Last(name string, value float32)
+> (c [*CachedCounters]()) Last(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Last type.
 - **value**: float32 - a last value to record.
 
@@ -167,8 +181,9 @@ Usually this method is used by metrics calculated externally.
 #### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> (c [*CachedCounters]()) Stats(name string, value float32)
+> (c [*CachedCounters]()) Stats(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Statistics type
 - **value**: float32 - a value to update statistics
 
@@ -176,8 +191,9 @@ Calculates min/average/max statistics based on the current and previous values.
 #### Timestamp
 Records the given timestamp.
 
-> (c [*CachedCounters]()) Timestamp(name string, value time.Time)
+> (c [*CachedCounters]()) Timestamp(ctx context.Context, name string, value time.Time)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Timestamp type.
 - **value**: time.Time - a timestamp to record.
 
@@ -185,12 +201,15 @@ Records the given timestamp.
 #### TimestampNow
 Records the current time as a timestamp.
 
-> (c [*CachedCounters]()) TimestampNow(name string)
+> (c [*CachedCounters]()) TimestampNow(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Timestamp type.
 
 
 #### update
 Makes counter measurements as updated and dumps them when timeout expires.
 
-> (c [*CachedCounters]()) update() error
+> (c [*CachedCounters]()) update(ctx context.Context) error
+
+- **ctx**: context.Context - operation context.

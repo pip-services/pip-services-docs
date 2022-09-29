@@ -2,7 +2,7 @@
 type: docs
 title: "NullTracer"
 linkTitle: "NullTracer"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Dummy implementation of tracer that doesn't do anything.
 
@@ -30,8 +30,9 @@ Creates a new instance of the tracer.
 #### BeginTrace
 Begings recording an operation's trace
 
-> (c [*NullTracer]()) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
+> (c [*NullTracer]()) BeginTrace(ctx context.Context, correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -41,8 +42,9 @@ Begings recording an operation's trace
 #### Failure
 Records an operation's failure with its name, duration and error
 
-> (c [*NullTracer]()) Failure(correlationId string, component string, operation string, err error, duration int64)
+> (c [*NullTracer]()) Failure(ctx context.Context, correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -53,8 +55,9 @@ Records an operation's failure with its name, duration and error
 #### Trace
 Records an operation's trace with its name and duration.
 
-> (c [*NullTracer]()) Trace(correlationId string, component string, operation string, duration int64)
+> (c [*NullTracer]()) Trace(ctx context.Context, correlationId string, component string, operation string, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.

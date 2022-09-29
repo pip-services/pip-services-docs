@@ -2,7 +2,7 @@
 type: docs
 title: "NullCounters"
 linkTitle: "NullCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Dummy implementation of performance counters.
 
@@ -32,8 +32,9 @@ Begins measurement of execution time interval.
 It returns [*CounterTiming](../counter_timing) object which has to be called at
 [CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> (c *NullCounters) BeginTiming(name string) [*CounterTiming](../counter_timing)
+> (c [*NullCounters]()) BeginTiming(ctx context.Context, name string) [*CounterTiming](../counter_timing)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Interval type.
 - **returns**: [*CounterTiming](../counter_timing) - callback object to end timing.
 
@@ -41,16 +42,18 @@ It returns [*CounterTiming](../counter_timing) object which has to be called at
 #### Increment
 Increments counter by given value.
 
-> (c *NullCounters) Increment(name string, value float32)
+> (c [*NullCounters]()) Increment(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Increment type.
 - **value**: float32 - value to add to the counter.
 
 #### IncrementOne
 Increments counter by 1.
 
-> (c *NullCounters) IncrementOne(name string)
+> (c [*NullCounters]()) IncrementOne(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Increment type.
 
 
@@ -58,8 +61,9 @@ Increments counter by 1.
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> (c *NullCounters) Last(name string, value float32)
+> (c [*NullCounters]()) Last(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Last type.
 - **value**: float32 - last value to record.
 
@@ -67,8 +71,9 @@ Usually this method is used by metrics calculated externally.
 #### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> (c *NullCounters) Stats(name string, value float32)
+> (c [*NullCounters]()) Stats(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Statistics type
 - **value**: float32 - value to update statistics
 
@@ -76,8 +81,9 @@ Calculates min/average/max statistics based on the current and previous values.
 #### Timestamp
 Records the given timestamp.
 
-> (c *NullCounters) Timestamp(name string, value time.Time)
+> (c [*NullCounters]()) Timestamp(ctx context.Context, name string, value time.Time)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Timestamp type.
 - **value**: time.Time - timestamp to record.
 
@@ -85,8 +91,9 @@ Records the given timestamp.
 #### TimestampNow
 Records the current time as a timestamp.
 
-> (c *NullCounters) TimestampNow(name string)
+> (c [*NullCounters]()) TimestampNow(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Timestamp type.
 
 ### See also 

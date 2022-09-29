@@ -12,7 +12,7 @@ import (
 	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
 	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
 	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	cservices "github.com/pip-services3-go/pip-services3-rpc-go/services"

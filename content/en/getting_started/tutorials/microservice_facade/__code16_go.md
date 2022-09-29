@@ -10,7 +10,7 @@ import (
 	passbuild "github.com/pip-services-users/pip-clients-passwords-go/build"
 	rolebuild "github.com/pip-services-users/pip-clients-roles-go/build"
 	sessbuild "github.com/pip-services-users/pip-clients-sessions-go/build"
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 type ClientFacadeFactory struct {

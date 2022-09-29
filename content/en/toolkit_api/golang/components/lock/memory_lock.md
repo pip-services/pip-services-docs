@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryLock"
 linkTitle: "MemoryLock"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Lock used to synchronize the execution of a process using shared memory.
 
@@ -36,8 +36,9 @@ Creates new memory lock
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> (c [*MemoryLock]()) ReleaseLock(correlationId string, key string) error
+> (c [*MemoryLock]()) ReleaseLock(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
 - **returns**: error - returns error if not released
@@ -47,8 +48,9 @@ Releases a prevously acquired lock by its key.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> (c [*MemoryLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (bool, error)
+> (c [*MemoryLock]()) TryAcquireLock(ctx context.Context, correlationId string, key string, ttl int64) (bool, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
 - **ttl**: int64 - lock timeout (time to live) in milliseconds.
@@ -58,11 +60,11 @@ It returns immediately a positive or negative result.
 
 ```go
 lock := NewMemoryLock()
-err = lock.Acquire("123", "key1")
+err = lock.AcquireLock(context.Background(), "123", "key1")
 
 if err == nil {
-    defer _ = lock.ReleaseLock("123", "key1")
-    // Processing...
+	 _ = lock.ReleaseLock(context.Background(), "123", "key1")
+	// Processing...
 }
 
 ```

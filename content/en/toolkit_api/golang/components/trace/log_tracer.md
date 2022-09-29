@@ -2,7 +2,7 @@
 type: docs
 title: "LogTracer"
 linkTitle: "LogTracer"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Tracer that dumps recorded traces to a logger.
 ---
@@ -33,8 +33,9 @@ Creates a new instance of the tracer.
 #### BeginTrace 
 Begings recording an operation trace.
 
-> (c [*LogTracer]()) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
+> (c [*LogTracer]()) BeginTrace(ctx context.Context, correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -44,16 +45,18 @@ Begings recording an operation trace.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*LogTracer]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params)
+> (c [*LogTracer]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params)
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Failure
 Records an operation failure with its name, duration and error
 
-> (c [*LogTracer]()) Failure(correlationId string, component string, operation string, err error, duration int64)
+> (c [*LogTracer]()) Failure(ctx context.Context, correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -64,15 +67,17 @@ Records an operation failure with its name, duration and error
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*LogTracer]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*LogTracer]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references used to locate the component's dependencies.
 
 #### Trace
 Records an operation trace with its name and duration.
 
-> (c [*LogTracer]()) Trace(correlationId string, component string, operation string, duration int64)
+> (c [*LogTracer]()) Trace(ctx context.Context, correlationId string, component string, operation string, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -82,16 +87,17 @@ Records an operation trace with its name and duration.
 
 ```go
 tracer = NewLogTracer();
-tracer.SetReferences(NewReferencesFromTuples(
-    NewDescriptor("pip-services", "logger", "console", "default", "1.0"), NewConsoleLogger()
-));
-
-timing := trcer.BeginTrace("123", "mycomponent", "mymethod");
+tracer.SetReferences(
+	context.Background(),
+	NewReferencesFromTuples(
+		NewDescriptor("pip-services", "logger", "console", "default", "1.0"), NewConsoleLogger()
+	)
+);
+timing := trcer.BeginTrace(context.Background(), "123", "mycomponent", "mymethod");
 ...
-timing.EndTrace();
-
+timing.EndTrace(context.Background());
 if err != nil {
-    timing.EndFailure(err);
+	timing.EndFailure(context.Background(), err);
 }
 ```
 

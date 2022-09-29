@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     
     The Build package contains interfaces and classes used to implement the "factory design pattern". 

@@ -2,7 +2,7 @@
 ```go
 // Creating a factory
 import (
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 MyFactory1 := cbuild.NewFactory()

@@ -2,7 +2,7 @@
 type: docs
 title: "IFactory"
 linkTitle: "IFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for component factories.
     
@@ -26,20 +26,20 @@ This method searches for all registered components and returns
 a locator for a component it is able to create that matches the given locator.
 If the factory is not able to create a requested component it returns nil.
 
-> CanCreate(locator interface{}) interface{}
+> CanCreate(locator any) any
 
-- **locator**: interface{} - locator used to identify the component to be created.
-- **returns**: interface{} - locator for the component that the factory is able to create.
+- **locator**: any - locator used to identify the component to be created.
+- **returns**: any - locator for the component that the factory is able to create.
 
 
 #### Create
 Creates a component identified by given locator.
 Throws a [CreateError](../create_error) if the factory is not able to create the component.
 
-> Create(locator interface{}) (interface{}, error)
+> Create(locator any) (any, error)
 
-- **locator**: interface{} - locator used to identify the component to be created.
-- **returns**: (interface{}, error) - created component.
+- **locator**: any - locator used to identify the component to be created.
+- **returns**: (any, error) - created component.
 
 
 

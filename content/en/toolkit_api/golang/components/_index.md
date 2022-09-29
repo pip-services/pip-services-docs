@@ -3,7 +3,7 @@ type: docs
 title: "Components module"
 no_list: true
 weight: 40
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: > 
     Contains standard component definitions that can be used to build applications and services.
 ---
@@ -32,5 +32,5 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-components-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-components-gox@latest
 ```

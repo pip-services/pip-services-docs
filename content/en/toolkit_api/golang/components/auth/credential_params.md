@@ -2,7 +2,7 @@
 type: docs
 title: "CredentialParams"
 linkTitle: "CredentialParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Contains credentials to authenticate against external services.
     
@@ -195,13 +195,13 @@ The credential parameters are redirected to [ICredentialStore](../icredential_st
 
 ```go
 credential := NewCredentialParamsFromTuples(
-    "user", "jdoe",
-    "pass", "pass123",
-    "pin", "321"
-);
-  
-username := credential.Username();             // Result: "jdoe"
-password := credential.Password();             // Result: "pass123"
+	"user", "jdoe",
+	"pass", "pass123",
+	"pin", "321"
+)
+
+username := credential.Username()  // Result: "jdoe"
+password := credential.Password()  // Result: "pass123"
 ```
 
 ### See also

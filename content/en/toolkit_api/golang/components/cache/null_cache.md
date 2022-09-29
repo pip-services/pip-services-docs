@@ -2,7 +2,7 @@
 type: docs
 title: "NullCache"
 linkTitle: "NullCache"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Dummy cache implementation that doesn't do anything.
 
@@ -22,15 +22,25 @@ Important points
 #### NewNullCache
 Creates a new instance of the cache.
 
-> NewNullCache() [*NullCache]()
+> NewNullCache[T any]() [*NullCache[T]]()
 
 ### Methods
+
+#### Contains
+
+> (c [*NullCache[T]]()) Contains(ctx context.Context, correlationId string, key string) bool
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string - unique value key.
+- **returns**: bool - returns true if value contains.
 
 #### Remove
 Removes a value from the cache by its key.
 
-> (c [*NullCache]()) Remove(correlationId string, key string) error
+> (c [*NullCache[T]]()) Remove(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
 - **returns**: error - return error if the value was not removed.
@@ -40,33 +50,24 @@ Removes a value from the cache by its key.
 Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns nil.
 
-> (c [*NullCache]()) Retrieve(correlationId string, key string) (interface{}, error)
+> (c [*NullCache[T]]()) Retrieve(ctx context.Context, correlationId string, key string) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **returns**: (interface{}, error) - cached value or nil, if value wasn't found or timeout expired.
-
-
-#### RetrieveAs
-Retrieves a cached value from the cache using its key and restores it into a reference object. If the value is missing in the cache or expired, it returns false.
-
-> (c *MemoryCache) RetrieveAs(correlationId string, key string, result interface{}) (interface{}, error)
-
-- **correlationId**: string - transaction id used to trace execution through the call chain.
-- **key**: string - unique value key.
-- **result**: (interface{}, error) - pointer to object for restore
-
+- **returns**: (any, error) - cached value or nil, if value wasn't found or timeout expired.
 
 #### Store
 Stores value in the cache with an expiration time.
 
-> (c [*NullCache]()) Store(correlationId string, key string, value interface{}, timeout int64) (interface{}, error)
+> (c [*NullCache[T]]()) Store(ctx context.Context, correlationId string, key string, value any, timeout int64) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **value**: interface{} - value to store.
+- **value**: any - value to store.
 - **timeout**: int64 - expiration timeout in milliseconds.
-- **returns**: (interface{}, error) - cached value stored in the cache.
+- **returns**: (any, error) - cached value stored in the cache.
 
 
 ### See also

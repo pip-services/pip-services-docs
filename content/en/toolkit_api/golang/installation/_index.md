@@ -35,9 +35,9 @@ go get -u github.com/pip-services3-gox/pip-services3-commons-gox
 
 #### Components module 
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-components-go
+go get -u github.com/pip-services3-gox/pip-services3-components-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-components-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-components-gox)
 
 #### Container module
 ```bash

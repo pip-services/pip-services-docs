@@ -2,7 +2,7 @@
 type: docs
 title: "YamlConfigReader"
 linkTitle: "YamlConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Config reader that reads configuration from YAML file.
 ---
@@ -41,8 +41,9 @@ Creates a new instance of the config reader.
 #### ReadConfig
 Reads a configuration and parameterizes it with given values.
 
-> (c [*YamlConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
+> (c [*YamlConfigReader]()) ReadConfig(ctx context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters or nil to skip parameterization.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
@@ -51,17 +52,19 @@ Reads a configuration and parameterizes it with given values.
 #### ReadObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> (c [*YamlConfigReader]()) ReadObject(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+> (c [*YamlConfigReader]()) ReadObject(ctx context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - YAML object with a configuration.
+- **returns**: (any, error) - YAML object with a configuration.
 
 #### ReadYamlConfig
 Reads a configuration from a file, parameterizes it with given values, and returns a new ConfigParams object.
 
-> ReadYamlConfig(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
+> ReadYamlConfig(ctx context.Context, correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace the execution through the call chain.
 - **path**: string - path to a configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
@@ -71,12 +74,13 @@ Reads a configuration from a file, parameterizes it with given values, and retur
 #### ReadYamlObject
 Reads a configuration file, parameterizes its content and converts it into a YAML object.
 
-> ReadYamlObject(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+> ReadYamlObject(ctx context.Context, correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace the execution through the call chain.
 - **path**: string - path to configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - YAML object containing a configuration.
+- **returns**: (any, error) - YAML object containing a configuration.
 
 ### Examples
 
@@ -88,10 +92,8 @@ key2: "{{KEY2_VALUE}}"
         
 ```go
 configReader := NewYamlConfigReader("config.yml")
-  
-parameters := NewConfigParamsFromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC");
-res, err := configReader.ReadConfig("123", parameters);
-// Result: key1=123;key2=ABC
+parameters := NewConfigParamsFromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
+res, err := configReader.ReadConfig(context.Background(), "123", parameters) // Result: key1=123;key2=ABC
 ```
 
 ### See also

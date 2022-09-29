@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultStateStoreFactory"
 linkTitle: "DefaultStateStoreFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Creates [IStateStore](../IStateStore) components by their descriptors.
 ---

@@ -3,7 +3,7 @@ type: docs
 title: "Trace"
 linkTitle: "Trace"
 no_list: true
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     This package provides interfaces and classes used to create different types of tracers. The main tools available from this package are a tracer factory and a tracer composite class. The first allows you to create a factory for tracers, and the second to combine different tracers into one. Additionally, it provides tracers that allow yuor to store their contents in memory and logs. 
 ---

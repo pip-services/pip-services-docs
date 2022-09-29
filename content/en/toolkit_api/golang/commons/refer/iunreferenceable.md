@@ -18,7 +18,7 @@ Unsets (clears) previously set references to dependent components.
 
 > UnsetReferences(ctx context.Context)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 
 ### Examples
 

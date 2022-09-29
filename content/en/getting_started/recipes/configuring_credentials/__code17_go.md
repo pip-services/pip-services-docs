@@ -2,7 +2,7 @@
 ```go
 import (
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	aauth "github.com/pip-services3-go/pip-services3-components-go/auth"
+	aauth "github.com/pip-services3-gox/pip-services3-components-gox/auth"
 )
 
 config := cconf.NewConfigParamsFromTuples(

@@ -2,7 +2,7 @@
 type: docs
 title: "CredentialResolver"
 linkTitle: "CredentialResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Helper class used to retrieve component credentials.
 
@@ -39,15 +39,16 @@ Important points
 #### NewCredentialResolver
 Creates a new instance of credentials resolver.
 
-> NewCredentialResolver(config [*config.ConfigParams](../../../commons/config/config_params), references [refer.IReferences](../../../commons/refer/ireferences)) [*CredentialResolver]()
+> NewCredentialResolver(ctx context.Contextб config [*config.ConfigParams](../../../commons/config/config_params), references [refer.IReferences](../../../commons/refer/ireferences)) [*CredentialResolver]()
 
+- **ctx**: context.Context - operation context. 
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - (optional) component references
 
 #### NewEmptyCredentialResolver
 Creates a new instance of credentials resolver.
 
-> NewEmptyCredentialResolver() *CredentialResolver
+> NewEmptyCredentialResolver() [*CredentialResolver]()
 
 
 ### Methods
@@ -63,8 +64,9 @@ Adds a new credential to a credential component.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*CredentialResolver]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*CredentialResolver]()) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context. 
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -83,8 +85,9 @@ If you need fully fleshed credential use **lookup** method instead.
 Looks up component's credential parameters. If credentials are configured to be retrieved
 from a credential store it finds a [ICredentialStore](../icredential_store)` and lookups the credentials there.
 
-> (c [*CredentialResolver]()) Lookup(correlationId string) ([*CredentialParams](../credential_params), error)
+> (c [*CredentialResolver]()) Lookup(ctx context.Context, Lookup(correlationId string) ([*CredentialParams](../credential_params), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: ([*CredentialParams](../credential_params), error) - resolved credential parameters or nil if nothing was found.
 
@@ -92,24 +95,22 @@ from a credential store it finds a [ICredentialStore](../icredential_store)` and
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*CredentialResolver]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+> (c [*CredentialResolver]()) SetReferences(ctx context.Context, references [refer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context. 
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 ```go
 config := NewConfigParamsFromTuples(
-    "credential.user", "jdoe",
-    "credential.pass",  "pass123"
-);
-  
-credentialResolver := NewCredentialResolver();
-credentialResolver.Configure(config);
-credentialResolver.SetReferences(references);
-  
-credentialResolver.Lookup("123", (err, credential) => {
-    // Now use credential...
-});
+	"credential.user", "jdoe",
+	"credential.pass",  "pass123"
+)
+credentialResolver := NewCredentialResolver()
+credentialResolver.Configure(context.Background(), config)
+credentialResolver.SetReferences(context.Background(), references)
+cred, err := credentialResolver.Lookup(context.Background(), "123")
+// Now use credential...
 ```
 
 

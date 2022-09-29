@@ -3,7 +3,7 @@ type: docs
 title: "Lock"
 linkTitle: "Lock"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     This package provides a set of interfaces and classes used to create several types of locks.
 ---

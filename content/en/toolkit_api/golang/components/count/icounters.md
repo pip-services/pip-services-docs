@@ -2,7 +2,7 @@
 type: docs
 title: "ICounters"
 linkTitle: "ICounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for performance counters that measure execution metrics.
 
@@ -25,7 +25,7 @@ Begins measurement of execution time interval.
 It returns [CounterTiming](../counter_timing) object which has to be called at
 [CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> BeginTiming(name string) [*CounterTiming](../counter_timing)
+> BeginTiming(ctx context.Context, name string) [*CounterTiming](../counter_timing)
 
 - **name**: string - counter name of Interval type.
 - **returns**: [*CounterTiming](../counter_timing) - callback object to end timing.
@@ -34,16 +34,18 @@ It returns [CounterTiming](../counter_timing) object which has to be called at
 #### Increment
 Increments counter by a given value.
 
-> Increment(name string, value int)
+> Increment(ctx context.Context, name string, value int)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Increment type.
 - **value**: int - value to add to the counter.
 
 #### IncrementOne
 Increments counter by 1.
 
-> IncrementOne(name string)
+> IncrementOne(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Increment type.
 
 
@@ -51,8 +53,9 @@ Increments counter by 1.
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> Last(name string, value float32)
+> Last(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Last type.
 - **value**: float32 - last value to record.
 
@@ -60,8 +63,9 @@ Usually this method is used by metrics calculated externally.
 #### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> Stats(name string, value float32)
+> Stats(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Statistics type
 - **value**: float32 - value to update statistics
 
@@ -69,8 +73,9 @@ Calculates min/average/max statistics based on the current and previous values.
 #### Timestamp
 Records the given timestamp.
 
-> Timestamp(name string, value time.Time)
+> Timestamp(ctx context.Context, name string, value time.Time)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Timestamp type.
 - **value**: time.Time - timestamp to record.
 
@@ -78,6 +83,7 @@ Records the given timestamp.
 #### TimestampNow
 Records the current time as a timestamp.
 
-> TimestampNow(name string)
+> TimestampNow(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Timestamp type.

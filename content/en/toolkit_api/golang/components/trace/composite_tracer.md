@@ -2,7 +2,7 @@
 type: docs
 title: "CompositeTracer"
 linkTitle: "CompositeTracer"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Aggregates all tracers from component references under a single component.
 
@@ -20,10 +20,16 @@ The CompositeTracer class allows you to aggregate all tracers from component ref
 ### Constructors
 
 #### NewCompositeTracer
+NewCompositeTracer creates a new instance of the tracer.
+
+> NewCompositeTracer() [*CompositeTracer]()
+
+#### NewCompositeTracerFromReferences
 Creates a new instance of the tracer.
 
-> NewCompositeTracer(references [cref.IReferences](../../../commons/refer/ireferences)) [*CompositeTracer]()
+> NewCompositeTracerFromReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences)) [*CompositeTracer]()
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Fields
@@ -41,8 +47,9 @@ List of tracers
 #### BeginTrace
 Begings recording an operation trace
 
-> (c [*CompositeTracer]()) BeginTrace(correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
+> (c [*CompositeTracer]()) BeginTrace(ctx context.Context, correlationId string, component string, operation string) [*TraceTiming](../trace_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -52,8 +59,9 @@ Begings recording an operation trace
 #### Failure
 Records an operation failure with its name, duration and error
 
-> (c [*CompositeTracer]()) Failure(correlationId string, component string, operation string, err error, duration int64)
+> (c [*CompositeTracer]()) Failure(ctx context.Context, correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -64,15 +72,17 @@ Records an operation failure with its name, duration and error
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*CompositeTracer]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences)
+> (c [*CompositeTracer]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences)
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### Trace
 Records an operation trace with its name and duration
 
-> (c [*CompositeTracer]()) Trace(correlationId string, component string, operation string, duration int64)
+> (c [*CompositeTracer]()) Trace(ctx context.Context, correlationId string, component string, operation string, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -82,25 +92,24 @@ Records an operation trace with its name and duration
 
 ```go
 type MyComponent struct {
-    tracer CompositeTracer
+	tracer *CompositeTracer
 }
-
 func NewMyComponent() *MyComponent{
 	return &MyComponent{
 		tracer: NewCompositeTracer(nil);
-   }
+	}
 }
-func (c* MyComponent) SetReferences(references IReferences) {
-    c.tracer.SetReferences(references)
-    ...
+func (c* MyComponent) SetReferences(ctx context.Context, references IReferences) {
+	c.tracer.SetReferences(references)
+	...
 }
-func (c* MyComponent) MyMethod(correlatonId string) {
-    timing := c.tracer.BeginTrace(correlationId, "mycomponent", "mymethod");
-        ...
-        timing.EndTrace();
-    if err != nil {
-        timing.EndFailure(err);
-    }
+public MyMethod(ctx context.Context, correlatonId string) {
+	timing := c.tracer.BeginTrace(ctx, correlationId, "mycomponent", "mymethod");
+	...
+	defer timing.EndTrace(ctx);
+	if err != nil {
+		timing.EndFailure(ctx, err);
+	}
 }
 ```
 

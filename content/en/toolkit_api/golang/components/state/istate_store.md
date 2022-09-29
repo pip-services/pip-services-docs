@@ -2,43 +2,42 @@
 type: docs
 title: "IStateStore"
 linkTitle: "IStateStore"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for state storages that are used to store and retrieve transaction states.
 ---
-
-### Description
-
-TODO: add description
 
 ### Instance methods
 
 #### Delete
 Deletes a state from the store by its key.
 
-> Delete(correlationId string, key string) interface{}
+> Delete(ctx context.Context, correlationId string, key string) any
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique value key.
-- **return**: interface{} - removed item
+- **return**: any - removed item
 
 
 #### Load
 Loads state from the store using its key.
 If value is missing in the store it returns null.
 
-> Load(correlationId string, key string) interface{}
+> Load(ctx context.Context, correlationId string, key string) any
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique state key.
-- **return**: interface{} - the state value or `null` if value wasn't found.
+- **return**: any - the state value or `null` if value wasn't found.
 
 
 #### LoadBulk
 Loads an array of states from the store using their keys.
 
-> LoadBulk(correlationId string, keys []string) [][*StateValue](../state_value)
+> LoadBulk(ctx context.Context, correlationId string, keys []string) [][*StateValue](../state_value)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **keys**: []string - unique state keys.
 - **returns**: [][*StateValue](../state_value) - an array with state values and their corresponding keys.
@@ -47,9 +46,10 @@ Loads an array of states from the store using their keys.
 #### Save
 Saves state into the store.
 
-> Save(correlationId string, key string, value interface{}) interface{}
+> Save(ctx context.Context, correlationId string, key string, value any) any
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique state key.
-- **value**: interface{} - a state value.
-- **returns**: interface{} - execution duration in milliseconds.
+- **value**: any - a state value.
+- **returns**: any - execution duration in milliseconds.

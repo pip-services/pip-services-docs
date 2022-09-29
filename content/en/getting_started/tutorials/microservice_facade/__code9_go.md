@@ -17,7 +17,7 @@ import (
 	sessclients1 "github.com/pip-services-users/pip-clients-sessions-go/version1"
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 	bref "github.com/pip-services3-go/pip-services3-container-go/refer"
 	rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"

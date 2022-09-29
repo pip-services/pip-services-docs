@@ -7,8 +7,8 @@ import (
 	cconfig "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
-	clog "github.com/pip-services3-go/pip-services3-components-go/log"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
+	clog "github.com/pip-services3-gox/pip-services3-components-gox/log"
 	cproc "github.com/pip-services3-go/pip-services3-container-go/container"
 )
 

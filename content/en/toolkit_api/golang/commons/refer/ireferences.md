@@ -87,7 +87,7 @@ Puts a new reference into this reference map.
 
 > Put(ctx context.Context, locator any, component any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **locator**: any - locator to find the reference by.
 - **component**: any - component reference to be added.
 
@@ -98,7 +98,7 @@ When all references shall be removed, use [removeAll](#removeall) method instead
 
 > Remove(ctx context.Context, locator any) any
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **locator**: any - locator to remove reference
 - **returns**: any - removed component reference.
 
@@ -108,7 +108,7 @@ Removes all component references that match the specified locator.
 
 > RemoveAll(ctx context.Context, locator any) []any
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **locator**: any - locator to remove references by.
 - **returns**: []any - list, containing all removed references.
 

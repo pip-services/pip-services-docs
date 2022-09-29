@@ -2,7 +2,7 @@
 type: docs
 title: "CachedLogger"
 linkTitle: "CachedLogger"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Logger that caches captured log messages in memory and periodically dumps them.
    
@@ -61,26 +61,32 @@ Maximum number of messages stored in the cache (default: 100)
 #### Clear
 Clears (removes) all cached log messages.
 
-> (c [*CachedLogger]()) Clear()
+> (c [*CachedLogger]()) Clear(ctx context.Context)
+
+- **ctx**: context.Context - operation context.
 
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c [*CachedLogger]()) Configure(cfg [*config.ConfigParams](../../../commons/config/config_params)
+> (c [*CachedLogger]()) Configure(ctx context.Context, cfg [*config.ConfigParams](../../../commons/config/config_params)
 
+- **ctx**: context.Context - operation context.
 - **cfg**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### Dump
 Dumps (writes) the currently cached log messages.
 
-> (c [*CachedLogger]()) Dump() error
+> (c [*CachedLogger]()) Dump(ctx context.Context) error
 
+- **ctx**: context.Context - operation context.
 - **returns**: error - returned error if not dumped.
 
 #### Update
 Sets message cache as updated and dumps it when timeout expires.
 
-> (c [*CachedLogger]()) Update()
+> (c [*CachedLogger]()) Update(ctx context.Context)
+
+- **ctx**: context.Context - operation context.
 
 #### Save
 Saves log messages from the cache.
@@ -93,9 +99,10 @@ Saves log messages from the cache.
 #### Write
 Writes a log message to the logger destination.
 
-> func (c *CachedLogger) Write(level int, correlationId string, err error, message string)
+> func (c [*CachedLogger]()) Write(ctx context.Context, level [LevelType](../log_level), correlationId string, err error, message string)
 
-- **level**: int - a log level.
+- **ctx**: context.Context - operation context.
+- **level**: LevelType - a log level.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **ex**: error - an error object associated with this message.
 - **message**: string - a human-readable message to log.

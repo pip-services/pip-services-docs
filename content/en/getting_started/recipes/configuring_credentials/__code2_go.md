@@ -2,7 +2,7 @@
 ```go
 import (
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	auth "github.com/pip-services3-go/pip-services3-components-go/auth"
+	auth "github.com/pip-services3-gox/pip-services3-components-gox/auth"
 )
 
 // Case 1: Constructor + ConfigParams object

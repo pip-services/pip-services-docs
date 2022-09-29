@@ -7,7 +7,7 @@ package build
 import (
 	service1 "github.com/pip-services-samples/pip-samples-facade-go/services/version1"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 type FacadeFactory struct {

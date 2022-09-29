@@ -2,7 +2,7 @@
 type: docs
 title: "ICredentialStore"
 linkTitle: "ICredentialStore"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for credential stores which are used to store and lookup credentials
     to authenticate against external services.
@@ -17,8 +17,9 @@ The ICredentialStore interface is used to store and look up credentials used to 
 #### Lookup
 Lookups credential parameters by its key.
 
-> Lookup(correlationId string, key string) ([*CredentialParams](../credential_params), error)
+> Lookup(ctx context.Context, correlationId string, key string) ([*CredentialParams](../credential_params), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - key used to uniquely identify the credential.
 - **returns**: ([*CredentialParams](../credential_params), error) - found credential parameters or nil if nothing was found.
@@ -27,8 +28,9 @@ Lookups credential parameters by its key.
 #### Store
 Stores credential parameters into the store.
 
-> Store(correlationId string, key string, credential [*CredentialParams](../credential_params)) error
+> Store(ctx context.Context, correlationId string, key string, credential [*CredentialParams](../credential_params)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - key used to uniquely identify the credential.
 - **credential**: [*CredentialParams](../credential_params) - credential to be stored.

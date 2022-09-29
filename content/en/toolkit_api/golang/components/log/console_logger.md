@@ -2,7 +2,7 @@
 type: docs
 title: "ConsoleLogger"
 linkTitle: "ConsoleLogger"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Logger that writes log messages to a console.
 
@@ -31,9 +31,10 @@ Important points
 #### Write
 Writes a log message to the logger destination.
 
-> (c *ConsoleLogger) Write(level int, correlationId string, err error, message string)
+> (c *ConsoleLogger) ctx context.Context, level [LevelType](../log_level), correlationId string, err error, message string)
 
-- **level**: int - log level.
+- **ctx**: context.Context - operation context.
+- **level**: [LevelType](../log_level) - log level.
 - **correlation_id**: string - (optional) transaction id used to trace execution through the call chain.
 - **err**: error - error object associated with this message.
 - **message**: string - human-readable message to log.
@@ -41,11 +42,10 @@ Writes a log message to the logger destination.
 ### Examples
 
 ```go
-logger = NewConsoleLogger();
-logger.SetLevel(LogLevel.Debug);
-
-logger.Error("123", ex, "Error occured: %s", ex.message);
-logger.Debug("123", "Everything is OK.");
+logger = NewConsoleLogger()
+logger.SetLevel(LogType.Debug)
+logger.Error(context.Background(), "123", ex, "Error occured: %s", ex.message)
+logger.Debug(context.Background(), "123", "Everything is OK.")
 ```
 
 ### See also

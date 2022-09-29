@@ -2,7 +2,7 @@
 type: docs
 title: "CachedTracer"
 linkTitle: "CachedTracer"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Abstract tracer that caches recorded traces in memory and periodically dumps them.
     
@@ -33,9 +33,9 @@ Important points
 
 #### InheritCachedTracer
 
-> InheritCachedTracer(saver ICachedTraceSaver) [*CachedTracer]()
+> InheritCachedTracer(saver [ICachedTraceSaver](../icached_tracer_saver)) [*CachedTracer]()
 
-- **saver**: ICachedTraceSaver - inherited tracer
+- **saver**: [ICachedTraceSaver](../icached_tracer_saver) - inherited tracer
 
 ### Fields
 
@@ -84,28 +84,32 @@ Begins recording an operation trace.
 #### Clear
 Clears (removes) all cached log messages.
 
-> (c *CachedTracer) Clear()
+> (c *CachedTracer) Clear(ctx context.Context)
 
+- **ctx**: context.Context - operation context.
 
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c *CachedTracer) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c *CachedTracer) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Dump
 Dumps (writes) the currently cached log messages.
 
-> (c *CachedTracer) Dump()
+> (c *CachedTracer) Dump(ctx context.Context)
 
+- **ctx**: context.Context - operation context.
 
 #### Failure
 Records an operation failure with its name, duration and error.
 
-> (c *CachedTracer) Failure(correlationId string, component string, operation string, err error, duration int64)
+> (c *CachedTracer) Failure(ctx context.Context, correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -117,15 +121,17 @@ Records an operation failure with its name, duration and error.
 #### SetReferences
 Sets references to dependent components.
 
-> (c *CachedTracer) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c *CachedTracer) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 #### Trace
 Records an operation trace with its name and duration.
 
-> (c *CachedTracer) Trace(correlationId string, component string, operation string, duration int64)
+> (c *CachedTracer) Trace(ctx context.Context, correlationId string, component string, operation string, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -136,14 +142,16 @@ Records an operation trace with its name and duration.
 Sets trace cache as updated
 and dumps it when timeout expires.
 
-> (c *CachedTracer) Update()
+> (c *CachedTracer) update(ctx context.Context)
 
+- **ctx**: context.Context - operation context.
 
 #### Write
 Writes a log message to the logger destination.
 
-> (c *CachedTracer) Write(correlationId string, component string, operation string, err error, duration int64)
+> (c *CachedTracer) Write(ctx context.Context, correlationId string, component string, operation string, err error, duration int64)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **component**: string - name of the called component
 - **operation**: string - name of the executed operation.
@@ -155,9 +163,11 @@ Writes a log message to the logger destination.
 Saves log messages from the cache.
 Throws error if not done.
 
-> Save(operations [][*OperationTrace](../operation_trace)) error
+> Save(ctx context.Context,  operations [][*OperationTrace](../operation_trace)) error
 
-- **messages**: [][*OperationTrace](../operation_trace) - list with log messages
+- **ctx**: context.Context - operation context.
+- **operations**: [][*OperationTrace](../operation_trace) - list with log messages
+- **returns**: error - save error.
 
 
 ### See also

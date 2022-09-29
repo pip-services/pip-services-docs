@@ -1,7 +1,7 @@
 
 ```go
 import (
-	build "github.com/pip-services3-go/pip-services3-components-go/build"
+	build "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 // Creating a factory

@@ -3,7 +3,7 @@ type: docs
 title: "Config"
 linkTitle: "Config"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     
     This package contains interfaces and classes used to create configuration readers from different sources, such as YAML and JSON files. 

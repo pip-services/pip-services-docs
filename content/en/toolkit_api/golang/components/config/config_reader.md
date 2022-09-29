@@ -2,7 +2,7 @@
 type: docs
 title: "ConfigReader"
 linkTitle: "ConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Abstract config reader that supports configuration parameterization.
 ---
@@ -37,9 +37,10 @@ Adds a listener that will be notified when configuration is changed
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*ConfigReader]()) Configure(config [*cconfig.ConfigParams](../../../commons/config/config_params))
+> (c [*ConfigReader]()) Configure(ctx context.Context, config [*cconfig.ConfigParams](../../../commons/config/config_params))
 
-- **cconfig**: [*cconfig.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
+- **ctx**: context.Context - operation context.
+- **config**: [*cconfig.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Parameterize

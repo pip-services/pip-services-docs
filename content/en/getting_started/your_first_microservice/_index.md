@@ -185,7 +185,7 @@ module quickstart
 go 1.13
 require (
 	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.0
-	github.com/pip-services3-go/pip-services3-components-go v1.0.2
+	github.com/pip-services3-gox/pip-services3-components-gox v1.0.2
 	github.com/pip-services3-go/pip-services3-container-go v1.0.0
 	github.com/pip-services3-go/pip-services3-rpc-go v1.0.0
 )
@@ -1070,7 +1070,7 @@ package quickstart
 
 import (
     cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-    cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+    cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 type HelloWorldServiceFactory struct {

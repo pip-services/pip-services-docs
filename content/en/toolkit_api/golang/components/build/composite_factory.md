@@ -2,7 +2,7 @@
 type: docs
 title: "CompositeFactory"
 linkTitle: "CompositeFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Aggregates multiple factories into a single factory component.
    
@@ -48,19 +48,19 @@ This method searches for all registered components and returns
 a locator for component it is able to create that matches the given locator.
 If the factory is not able to create a requested component it returns nil.
 
-> (c [*CompositeFactory]()) CanCreate(locator interface{}) interface{}
+> (c [*CompositeFactory]()) CanCreate(locator any) any
 
-- **locator**: interface{} - a locator to identify component to be created.
-- **returns**: interface{} - a locator for a component that the factory is able to create.
+- **locator**: any - a locator to identify component to be created.
+- **returns**: any - a locator for a component that the factory is able to create.
 
 
 #### Create
 Creates a component identified by given locator.
 
-> (c [*CompositeFactory]()) Create(locator interface{}) (interface{}, error)
+> (c [*CompositeFactory]()) Create(locator any) (any, error)
 
-- **locator**: interface{} - locator to identify component to be created.
-- **returns**: (interface{}, error) - created component.
+- **locator**: any - locator to identify component to be created.
+- **returns**: (any, error) - created component.
 
 
 #### Remove
@@ -76,8 +76,8 @@ Removes a factory from the list of embedded factories.
 factory := NewCompositeFactory();
 factory.Add(NewDefaultLoggerFactory());
 factory.Add(NewDefaultCountersFactory());
-  
-loggerLocator := NewDescriptor("*", "logger", "*", "*", "1.0");
-factory.CanCreate(loggerLocator);         // Result: Descriptor("pip-service", "logger", "null", "default", "1.0")
-factory.Create(loggerLocator);             // Result: created NullLogger
+
+loggerLocator := NewDescriptor("*", "logger", "*", "*", "1.0")
+factory.CanCreate(context.Background(), loggerLocator) // Result: Descriptor("pip-service", "logger", "null", "default", "1.0")
+factory.Create(context.Background(), loggerLocator)    // Result: created NullLogger
 ```

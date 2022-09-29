@@ -21,7 +21,7 @@ If they don't the call to this method has no effect.
 
 > SetReferences(ctx context.Context, references [IReferences](../ireferences), components []any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to be set.
 - **component**: []any - list of components to set the references to.
 
@@ -33,7 +33,7 @@ If they don't the call to this method has no effect.
 
 > SetReferencesForOne(ctx context.Context, references [IReferences](../ireferences), component any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to be set.
 - **component**: any - component to set references to.
 
@@ -44,7 +44,7 @@ If they don't the call to this method has no effect.
 
 > UnsetReferences(ctx context.Context, components []any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **components**: []any - list of components, whose references must be cleared.
 
 #### UnsetReferencesForOne
@@ -55,7 +55,7 @@ If they don't, the call to this method has no effect.
 
 > UnsetReferencesForOne(ctx context.Context, component any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **component**: any - component to unset references.
 
 

@@ -2,7 +2,7 @@
 type: docs
 title: "CacheEntry"
 linkTitle: "CacheEntry"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Data object to store cached values with their keys used by [MemoryCache](../memory_cache).
 ---
@@ -13,11 +13,11 @@ The CacheEntry class allows you to create a data object that can be used to stor
 
 ### Constructors
 Creates a new instance of the cache entry and assigns its values.
-
-> NewCacheEntry(key string, value interface{}, timeout int64) [*CacheEntry]()
+value T a value to be stored.
+> NewCacheEntry[T any](key string, value any, timeout int64) [*CacheEntry[T]]()
 
 - **key**: string - unique key to locate the value.
-- **value**: interface{} - value to be stored.
+- **value**: any - value to be stored.
 - **timeout**: int64 - expiration timeout in milliseconds.
 
 
@@ -26,7 +26,7 @@ Creates a new instance of the cache entry and assigns its values.
 #### Expiration
 Gets the expiration timeout.
 
-> (c *CacheEntry) Expiration() time.Time
+> (c *CacheEntry[T]) Expiration() time.Time
 
 - **returns**: time.Time - expiration timeout in milliseconds.
 
@@ -34,7 +34,7 @@ Gets the expiration timeout.
 #### Key
 Gets the key to locate the cached value.
 
-> (c *CacheEntry) Key() string
+> (c *CacheEntry[T]) Key() string
 
 - **returns**: string - value key.
 
@@ -42,15 +42,15 @@ Gets the key to locate the cached value.
 #### Value
 Gets the cached value.
 
-> (c *CacheEntry) Value() interface{}
+> (c *CacheEntry[T]) Value() T
 
-- **returns**: interface{} - value object.
+- **returns**: T - value object.
 
 
 #### IsExpired
 Checks if this value has already expired.
 
-> (c *CacheEntry) IsExpired() bool
+> (c *CacheEntry[T]) IsExpired() bool
 
 - **returns**: bool - true if the value has already expired and false otherwise.
 
@@ -58,7 +58,7 @@ Checks if this value has already expired.
 #### SetValue
 Sets a new value and extends its expiration.
 
-> (c *CacheEntry) SetValue(value interface{}, timeout int64)
+> (c *CacheEntry[T]) SetValue(value T, timeout int64)
 
-- **value**: interface{} - new cached value.
+- **value**: T - new cached value.
 - **timeout**: int64 - expiration timeout in milliseconds.

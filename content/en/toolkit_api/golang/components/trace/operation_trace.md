@@ -2,7 +2,7 @@
 type: docs
 title: "OperationTrace"
 linkTitle: "OperationTrace"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Data object to store captured operation traces.
     

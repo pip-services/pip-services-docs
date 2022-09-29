@@ -2,7 +2,7 @@
 type: docs
 title: "ConnectionUtils"
 linkTitle: "ConnectionUtils"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     A set of utility functions used to process connection parameters
 ---
@@ -18,7 +18,7 @@ Composes URI from config parameters.
 The result URI will be in the following form:  
 *protocol://username@password@host1:port1,host2:port2,...?param1=abc&param2=xyz&...*
 
-> (c *TConnectionUtils) ComposeUri(options [*config.ConfigParams](../../../commons/config/config_params), defaultProtocol string, defaultPort int) string
+> ComposeUri(options [*config.ConfigParams](../../../commons/config/config_params), defaultProtocol string, defaultPort int) string
 
 - **options**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters
 - **defaultProtocol**: string - default protocol
@@ -28,7 +28,7 @@ The result URI will be in the following form:
 #### Concat
 Concatinates two options by combining duplicated properties into comma-separated list
 
-> (c *TConnectionUtils) Concat(options1 [*config.ConfigParams](../../../commons/config/config_params), options2 [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
+> Concat(options1 [*config.ConfigParams](../../../commons/config/config_params), options2 [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
 
 - **options1**: [*config.ConfigParams](../../../commons/config/config_params) - first options to merge
 - **options2**: [*config.ConfigParams](../../../commons/config/config_params) - second options to merge
@@ -39,7 +39,7 @@ Concatinates two options by combining duplicated properties into comma-separated
 #### Exclude
 Excludes specified keys from the config parameters.
 
-> (c *TConnectionUtils) Exclude(options [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
+> Exclude(options [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
 
 - **options**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be processed.
 - **keys**: ...string - list of keys to be excluded.
@@ -49,7 +49,7 @@ Excludes specified keys from the config parameters.
 #### Include
 Includes specified keys from the config parameters.
 
-> (c *TConnectionUtils) Include(options [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
+> Include(options [*config.ConfigParams](../../../commons/config/config_params), keys ...string) [*config.ConfigParams](../../../commons/config/config_params)
 
 - **options**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be processed.
 - **keys**: ...string - list of keys to be included.
@@ -61,7 +61,7 @@ Parses URI into config parameters.
 The URI shall be in the following form:
 `protocol://username@password@host1:port1,host2:port2,...?param1=abc&param2=xyz&...`
 
-> (c *TConnectionUtils) ParseUri(uri string, defaultProtocol string, defaultPort int) [*config.ConfigParams](../../../commons/config/config_params)
+> ParseUri(uri string, defaultProtocol string, defaultPort int) [*config.ConfigParams](../../../commons/config/config_params)
 
 - **uri**: string - URI to be parsed
 - **defaultProtocol**: string - default protocol

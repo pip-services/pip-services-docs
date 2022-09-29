@@ -3,7 +3,7 @@ type: docs
 title: "Cache"
 linkTitle: "Cache"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     
     The Cache package contains interfaces and classes that can be used to create caches that can be employed to improve a system's performance.

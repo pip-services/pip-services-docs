@@ -2,10 +2,9 @@
 type: docs
 title: "LogLevel"
 linkTitle: "LogLevel"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Standard log level enumeration.
-
 
 ---
 
@@ -19,12 +18,33 @@ description: >
 
 ### Enumeration members
 
-- **Null** = 0 - Nothing to be logged
-- **Fatal** = 1 - Logs only fatal errors that cause microservice to fail
-- **Error** = 2 - Logs all errors - fatal or recoverable
-- **Warn** = 3 - Logs errors and warnings
-- **Info** = 4 - Logs errors and important information messages
-- **Debug** = 5 - Logs everything up to high-level debugging information
-- **Trace** = 6 - Logs everything down to fine-granular debugging messages
+- **LevelNone** = 0 - Nothing to be logged
+- **LevelFatal** = 1 - Logs only fatal errors that cause microservice to fail
+- **LevelError** = 2 - Logs all errors - fatal or recoverable
+- **LevelWarn** = 3 - Logs errors and warnings
+- **LevelInfo** = 4 - Logs errors and important information messages
+- **LevelDebug** = 5 - Logs everything up to high-level debugging information
+- **LevelTrace** = 6 - Logs everything down to fine-granular debugging messages
 
-</span>
+
+#### ToString
+Converts LogLevel to string.
+
+> (c [CounterType]()) ToString() string
+
+- **returns**: string - converted string counter.
+
+#### UnmarshalJSON
+Unmarshall json bytes into LogLevel.
+
+> (c [*CounterType]()) UnmarshalJSON(data []byte) (err error)
+
+- **data**: []byte - json data bytes.
+- **err**: error - error unmarshall.
+
+#### MarshalJSON
+Marshal CounterType to json.
+
+> (c [*CounterType]()) MarshalJSON() ([]byte, error)
+
+- **data**: ([]byte, error) - json data bytes and error marshall.

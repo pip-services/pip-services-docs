@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryConfigReader"
 linkTitle: "MemoryConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Config reader that stores a configuration in memory.
 ---
@@ -31,31 +31,34 @@ Creates a new instance of a config reader.
 #### NewEmptyMemoryConfigReader
 Creates a new instance of config reader.
 
-> NewEmptyMemoryConfigReader() *MemoryConfigReader 
+> NewEmptyMemoryConfigReader() [*MemoryConfigReader]()
 
 ### Methods
 
 #### AddChangeListener
 Adds a listener that will be notified when configuration is changed
 
-> AddChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+> AddChangeListener(ctx context.Context, listener [crun.INotifiable](../../../commons/run/inotifiable))
 
+- **ctx**: context.Context - operation context.
 - **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be added.
 
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c *MemoryConfigReader) Configure(config *cconfig.ConfigParams)
+> (c *MemoryConfigReader) Configure(ctx context.Context, config *cconfig.ConfigParams)
 
+- **ctx**: context.Context - operation context.
 - **cconfig**: [*cconfig.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### ReadConfig
 Reads a configuration and parameterizes it with given values.
 
-> (c *MemoryConfigReader) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
+> (c *MemoryConfigReader) ReadConfig(ctx context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) ([*cconfig.ConfigParams](../../../commons/config/config_params), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: [*cconfig.ConfigParams](../../../commons/config/config_params) - ConfigParams configuration.
@@ -64,22 +67,22 @@ Reads a configuration and parameterizes it with given values.
 #### RemoveChangeListener
 Remove a previously added change listener.
 
-> RemoveChangeListener(listener [crun.INotifiable](../../../commons/run/inotifiable))
+> RemoveChangeListener(ctx context.Context, listener [crun.INotifiable](../../../commons/run/inotifiable))
 
+- **ctx**: context.Context - operation context.
 - **listener:** [crun.INotifiable](../../../commons/run/inotifiable) - a listener to be removed.
 
 ### Examples
 
 ```go
 config := NewConfigParamsFromTuples(
-    "connection.host", "localhost",
-    "connection.port", "8080"
-);
-configReader := NewMemoryConfigReader();
-configReader.Configure(config);
-  
-parameters := NewConfigParamsFromValue(process.env);
-  
-res, err := configReader.ReadConfig("123", parameters);
+	"connection.host", "{{SERVICE_HOST}}",
+	"connection.port", "{{SERVICE_PORT}}{{^SERVICE_PORT}}8080{{/SERVICE_PORT}}",
+)
+configReader := NewMemoryConfigReader()
+configReader.Configure(context.Background(), config)
+
+parameters := NewConfigParamsFromValue(process.env)
+res, err := configReader.ReadConfig(context.Background(), "123", parameters) 
 // Possible result: connection.host=10.1.1.100;connection.port=8080
 ```

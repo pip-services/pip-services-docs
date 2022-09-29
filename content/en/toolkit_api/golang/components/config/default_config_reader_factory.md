@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultConfigReaderFactory"
 linkTitle: "DefaultConfigReaderFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Creates [IConfigReader](../iconfig_reader) components based on their descriptors.
 ---

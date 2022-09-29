@@ -2,7 +2,7 @@
 type: docs
 title: "CounterTiming"
 linkTitle: "CounterTiming"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Callback object returned by [ICounters.beginTiming](../icounters/#begintiming) to end the timing
     of an execution block and update the associated counter.
@@ -33,11 +33,13 @@ Creates a new instance of the timing callback object.
 #### EndTiming
 Ends timing of an execution block, calculates elapsed time and updates the associated counter.
 
-> (c [*CounterTiming]()) EndTiming()
+> (c [*CounterTiming]()) EndTiming(ctx context.Context)
+
+- **ctx**: context.Context - operation context.
 
 ### Examples
 
 ```go
-timing := counters.BeginTiming("mymethod.exec_time");
-defer  timing.EndTiming();
+timing := counters.BeginTiming(contex.Background(), "mymethod.exec_time")
+defer  timing.EndTiming()
 ```

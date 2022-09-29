@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryDiscovery"
 linkTitle: "MemoryDiscovery"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Discovery service that keeps connections in memory.
 ---
@@ -27,8 +27,9 @@ The MemoryDiscovery class allows you to create discovery services that keep conn
 #### NewMemoryDiscovery
 Creates a new instance of discovery service.
 
-> NewMemoryDiscovery(config [*config.ConfigParam](../../../commons/config/config_params)) [*MemoryDiscovery]()
+> NewMemoryDiscovery(ctx context.Context, config [*config.ConfigParam](../../../commons/config/config_params)) [*MemoryDiscovery]()
 
+- **ctx**: ctx context.Context - operation context.
 - **config**: [*config.ConfigParam](../../../commons/config/config_params) - (optional) configuration with connection parameters.
 
 
@@ -37,8 +38,9 @@ Creates a new instance of discovery service.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*MemoryDiscovery]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*MemoryDiscovery]()) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: ctx context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -82,17 +84,17 @@ Resolves a single connection parameters by its key.
 ### Examples
 
 ```go
-config := config.NewConfigParamsFromTuples(
+config := NewConfigParamsFromTuples(
 	"connections.key1.host", "10.1.1.100",
 	"connections.key1.port", "8080",
-	"connections.key2.host", "10.1.1.101",
+	"connections.key2.host", "10.1.1.100",
 	"connections.key2.port", "8082",
 )
 
-discovery := NewEmptyMemoryDiscovery();
-discovery.Configure(config);
+discovery := NewMemoryDiscovery()
+discovery.ReadConnections(config)
+conn, err := discovery.ResolveOne("123", "key1")
 
-connection, err := discovery.ResolveOne("123", "key1")
 // Result: host=10.1.1.100;port=8080
 ```
 

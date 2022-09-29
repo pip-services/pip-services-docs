@@ -2,7 +2,7 @@
 type: docs
 title: "TraceTiming"
 linkTitle: "TraceTiming"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Timing object returned by [ITracer.BeginTrace](../itracer/#begintrace) to end the timing
     of an execution block and record the associated trace.
@@ -31,8 +31,9 @@ Creates a new instance of the timing callback object.
 Ends timing of a failed block, calculates elapsed time
 and records the associated trace.
 
-> (c [*TraceTiming]()) EndFailure(err error)
+> (c [*TraceTiming]()) EndFailure(ctx context.Context, err error)
 
+- **ctx**: context.Context - operation context.
 - **err**: error - error object associated with this trace.
 
 
@@ -40,15 +41,17 @@ and records the associated trace.
 Ends timing of an execution block, calculates the elapsed time
 and records the associated trace.
 
-> (c [*TraceTiming]()) EndTrace()
+> (c [*TraceTiming]()) EndTrace(ctx context.Context)
  
+- **ctx**: context.Context - operation context.
+
 ### Examples
 
 ```go
-var timing = tracer.BeginTrace("mymethod.exec_time");
-    ...
-timing.EndTrace();
+timing := tracer.BeginTrace(context.Background(), "123", "my_component","mymethod.exec_time");
+...
+timing.EndTrace(context.Background());
 if err != nil {
-    timing.EndFailure(err);
+	timing.EndFailure(context.Background(), err);
 }
 ```

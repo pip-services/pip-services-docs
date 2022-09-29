@@ -2,7 +2,7 @@
 type: docs
 title: "ConnectionParams"
 linkTitle: "ConnectionParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Contains connection parameters used to connect to external services.
 
@@ -55,6 +55,12 @@ then it returns only the first connection element.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - ConnectionParams, containing a section named "connection(s)".
 - **returns**: [][*ConnectionParams]() - generated ConnectionParams object.
 
+#### NewConnectionParamsFromMaps
+NewConnectionParamsFromMaps static method for creating a StringValueMap using the maps passed as parameters.
+
+> NewConnectionParamsFromMaps(maps ...map[string]string) *ConnectionParams
+
+- **maps**: ...map[string]string - the maps passed to this method to create a StringValueMap with.
 
 #### NewConnectionParamsFromString
 Creates a new ConnectionParams object filled with key-value pairs serialized as a string.
@@ -71,9 +77,9 @@ Example: **"Key1=123;Key2=ABC;Key3=2016-09-16T00:00:00.00Z"**
 Creates a new ConnectionParams object filled with provided key-value pairs called tuples.
 Tuples parameters contain a sequence of key1, value1, key2, value2, ... pairs.
 
-> NewConnectionParamsFromTuples(tuples ...interface{}) [*ConnectionParams]()
+> NewConnectionParamsFromTuples(tuples ...any) [*ConnectionParams]()
 
-- **tuples**: ...interface{} - the tuples to fill a new ConnectionParams object.
+- **tuples**: ...any - the tuples to fill a new ConnectionParams object.
 
 - **returns**: [*ConnectionParams]() - new ConnectionParams object.
 
@@ -89,6 +95,16 @@ then it returns a list with only one ConnectionParams.
 
 - **returns**: [][*ConnectionParams]() - list of retrieved ConnectionParams
 
+#### NewConnectionParamsFromTuplesArray
+
+NewConnectionParamsFromTuples creates a new ConnectionParams object filled with provided key-value
+pairs called tuples. Tuples parameters contain a sequence of
+key1, value1, key2, value2, ... pairs.
+
+> NewConnectionParamsFromTuples(tuples []any) [*ConnectionParams]()
+
+- **tuples**: []]any - the key-value tuples array to initialize the new StringValueMap with.
+- **returns**: [*ConnectionParams]() - the ConnectionParams created and filled by the 'tuples' array provided.
 
 ### Methods
 
@@ -205,15 +221,14 @@ The connection parameters are redirected to DiscoveryService when discovery_key 
 
 ```go
 connection := NewConnectionParamsFromTuples(
-    "protocol", "http",
-    "host", "10.1.1.100",
-    "port", "8080",
-    "cluster", "mycluster"
-);
-  
-host := connection.Host();                             // Result: "10.1.1.100"
-port := connection.Port();                             // Result: 8080
-cluster := connection.GetAsNullableString("cluster");     // Result: "mycluster"
+	ConnectionParamProtocol, "http",
+	ConnectionParamHost, "10.1.1.100",
+	ConnectionParamPort, "8080",
+	ConnectionParamCluster, "mycluster",
+)
+host := connection.Host()                             				// Result: "10.1.1.100"
+port := connection.Port()                             				// Result: 8080
+cluster := connection.GetAsNullableString(ConnectionParamCluster)  // Result: "mycluster"
 ```
 
 ### See also

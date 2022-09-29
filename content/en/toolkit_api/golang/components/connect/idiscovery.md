@@ -2,7 +2,7 @@
 type: docs
 title: "IDiscovery"
 linkTitle: "IDiscovery"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Interface for discovery services which are used to store and resolve connection parameters to connect to external services.
 ---

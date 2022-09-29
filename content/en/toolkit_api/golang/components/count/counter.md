@@ -2,7 +2,7 @@
 type: docs
 title: "Counter"
 linkTitle: "Counter"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Data object used to store the measurements of a performance counter.
    

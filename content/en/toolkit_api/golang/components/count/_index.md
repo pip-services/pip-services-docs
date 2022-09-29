@@ -3,7 +3,7 @@ type: docs
 title: "Count"
 linkTitle: "Count"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
    This packag provides a set of interfaces and classes used to create performance counters.
     
@@ -24,6 +24,10 @@ Types of counters that measure different types of metrics
 <br>
 
 ### Interfaces
+
+#### [Atomic Counter](atomic_counter)
+AtomicCounter data object to store measurement for a performance counter.
+This object is used by CachedCounters to store counters.
 
 #### [ICounters](icounters)
 Interface for performance counters that measure execution metrics.

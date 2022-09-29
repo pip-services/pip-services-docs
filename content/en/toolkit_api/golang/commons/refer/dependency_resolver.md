@@ -37,7 +37,7 @@ Creates a new instance of the dependency resolver.
 
 > NewDependencyResolverWithParams(ctx context.Context, config [*conf.ConfigParams](../../config/config_params), references [IReferences](../ireferences)) [*DependencyResolver]()
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **config**: [*conf.ConfigParams](../../config/config_params) - (optional) default configuration where key is dependency name and value is locator (descriptor)
 - **references**: [IReferences](../ireferences) - (optional) default component references
 
@@ -47,7 +47,7 @@ where key is dependency name and value the depedency locator (descriptor).
 
 > NewDependencyResolverFromTuples(ctx context.Context, tuples ...any) [*DependencyResolver]()
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **tuples**: ...any - list of values where odd elements are dependency name and the following even elements are dependency locator (descriptor)
 
 #### NewDependencyResolver
@@ -63,7 +63,7 @@ Configures the component with specified parameters.
 
 > (c [*DependencyResolver]()) Configure(ctx context.Context, config [*conf.ConfigParams](../../config/config_params))
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **config**: [*conf.ConfigParams](../../config/config_params) - configuration parameters to set.
 
 #### Find
@@ -116,7 +116,7 @@ Adds a new dependency into this resolver.
 
 > (c [*DependencyResolver]()) Put(ctx context.Context, name string, locator any)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **name**: string - dependency's name.
 - **locator**: any - locator to find the dependency by.
 
@@ -125,7 +125,7 @@ Sets the component references. References must match configured dependencies.
 
 > (c [*DependencyResolver]()) SetReferences(ctx context.Context, references IReferences)
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to set.
 
 

@@ -1,7 +1,7 @@
 
 ```go
 import (
-    cbuild "github.com/pip-services3-go/pip-services3-components-go/build"
+    cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
     cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 )
 

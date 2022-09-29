@@ -2,22 +2,18 @@
 type: docs
 title: "StateEntry"
 linkTitle: "StateEntry"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Data object to store state values with their keys used by [MemoryStateStore](../memory_state_store)
 ---
 
-### Description
-
-TODO: add description
-
 ### Constructors
 Creates a new instance of the state entry and assigns its values.
 
-> NewStateEntry(key string, value interface{})
+> NewStateEntry[T any](key string, value T) [*StateEntry[T]]()
 
 - **key**: string - a unique key to locate the value.
-- **value**: interface{} - a value to be stored.
+- **value**: T - a value to be stored.
 
 
 ### Instance methods
@@ -26,7 +22,7 @@ Creates a new instance of the state entry and assigns its values.
 #### GetKey
 Gets the key to locate the state value.
 
-> (c [*StateEntry]()) GetKey() string
+> (c [*StateEntry[T]]()) GetKey() string
 
 - **return**: string - the value key.
 
@@ -34,7 +30,7 @@ Gets the key to locate the state value.
 #### GetLastUpdateTime
 Gets the last update time.
 
-> (c [*StateEntry]()) GetLastUpdateTime() int64
+> (c [*StateEntry[T]]()) GetLastUpdateTime() int64
 
 - **return**: int64 - the timestamp when the value ware stored.
 
@@ -42,14 +38,14 @@ Gets the last update time.
 #### GetValue
 Gets the sstate value.
 
-> (c [*StateEntry]()) GetValue() interface{}
+> (c [*StateEntry[T]]()) GetValue() T
 
-- **returns**: interface{} - the value object.
+- **returns**: any - the value object.
 
 
 #### SetValue
 Sets a new state value.
 
-> (c [*StateEntry]()) SetValue(value interface{})
+> (c [*StateEntry[T]]()) SetValue(value T)
 
-- **value**: interface{} - a new cached value.
+- **value**: T - a new cached value.

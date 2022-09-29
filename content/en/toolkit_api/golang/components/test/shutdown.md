@@ -2,7 +2,7 @@
 type: docs
 title: "Shutdown"
 linkTitle: "Shutdown"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Random shutdown component that crashes a process
     using various methods.
@@ -38,16 +38,18 @@ Creates new instance of Shutdown
 #### Close
 Closes a component and frees used resources.
 
-> (c [*Shutdown]()) Close(correlationId string) error
+> (c [*Shutdown]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not received.
 
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c [*Shutdown]()) Configure(config [config.ConfigParams](../../../commons/config/config_params))
+> (c [*Shutdown]()) Configure(ctx context.Context, config [config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -62,8 +64,9 @@ Checks if the component is opened.
 #### Open
 Opens the component.
 
-> (c [*Shutdown]()) Open(correlationId string) error
+> (c [*Shutdown]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returned error if not received.
 
@@ -71,8 +74,9 @@ Opens the component.
 #### Shutdown
 Crashes the process using the configured crash mode.
 
-> (c [*Shutdown]()) Shutdown()
- 
+> (c [*Shutdown]()) Shutdown(ctx context.Context,)
+
+- **ctx**: context.Context - operation context. 
 
 ### Examples
 

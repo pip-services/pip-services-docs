@@ -2,7 +2,7 @@
 type: docs
 title: "LogLevelConverter"
 linkTitle: "LogLevelConverter"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Helper class used to convert log level values.
 ---
@@ -13,38 +13,38 @@ The LogLevelConverter class is used to convert log level values.
 
 ### Methods
 
-#### LogLevelFromString
+#### logLevelFromString
 Converts log level to a LogLevel.
 
-> LogLevelFromString(value interface{}) int
+> logLevelFromString(value any) [LevelType](../log_level)
 
-- **value**: interface{} - a log level string to convert.
-- **returns**: int - log level value.
+- **value**: any - a log level string to convert.
+- **returns**: [LevelType](../log_level) - log level value.
 
-#### LogLevelToString
+#### logLevelToString
 Converts log level to a string.
 
-> LogLevelToString(level int) string
+> logLevelToString(level [LevelType](../log_level)) string
 
-- **level**: int - log level to convert.
+- **level**: [LevelType](../log_level) - log level to convert.
 - **returns**: string - log level name string.
 
 
 #### ToLogLevel
 Converts numbers and strings to standard log level values.
 
-> (c *TLogLevelConverter) ToLogLevel(value interface{}) int
+> (c *TLogLevelConverter) ToLogLevel(value any) [LevelType](../log_level)
 
-- **value**: interface{} - value to be converted
-- **returns**: int - converted log level
+- **value**: any - value to be converted
+- **returns**: [LevelType](../log_level) - converted log level
 
 
 #### ToString
 Converts a log level to a string.
 
-> (c *TLogLevelConverter) ToString(level int) string
+> (c *TLogLevelConverter) ToString(level [LevelType](../log_level)) string
 
-- **level**: int - log level to convert
+- **level**: [LevelType](../log_level) - log level to convert
 - **returns**: string - log level name string.
 
 

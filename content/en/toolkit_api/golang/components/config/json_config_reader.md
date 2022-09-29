@@ -2,7 +2,7 @@
 type: docs
 title: "JsonConfigReader"
 linkTitle: "JsonConfigReader"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Config reader that reads a configuration from a JSON file.
 
@@ -47,8 +47,9 @@ Creates a new instance of the config reader.
 #### ReadConfig
 Reads a configuration and parameterizes it with given values.
 
-> (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
+> (c [*JsonConfigReader]()) ReadConfig(ctx context.Context, context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values to parameters the configuration or nil to skip parameterization.
 - **returns**: (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error) - ConfigParams configuration.
@@ -57,18 +58,20 @@ Reads a configuration and parameterizes it with given values.
 #### ReadObject
 Reads a configuration file, parameterizes its content and converts it into JSON object.
 
-> (c [*JsonConfigReader]()) ReadObject(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+> (c [*JsonConfigReader]()) ReadObject(ctx context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - JSON object with configuration.
+- **returns**: (any, error) - JSON object with configuration.
 
 
 #### ReadConfig
 Reads a configuration from a file, parameterizes it with given values and returns a new ConfigParams object.
 
-> (c [*JsonConfigReader]()) ReadConfig(correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
+> (c [*JsonConfigReader]()) ReadConfig(ctx context.Context, correlationId string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (result [*cconfig.ConfigParams](../../../commons/config/config_params), err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to a configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
@@ -78,12 +81,13 @@ Reads a configuration from a file, parameterizes it with given values and return
 #### ReadJsonObject
 Reads a configuration file, parameterizes its content and converts it into a JSON object.
 
-> ReadJsonObject(correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (interface{}, error)
+> ReadJsonObject(ctx context.Context, correlationId string, path string, parameters [*cconfig.ConfigParams](../../../commons/config/config_params)) (any, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **path**: string - path to configuration file.
 - **parameters**: [*cconfig.ConfigParams](../../../commons/config/config_params) - values of the configuration parameters.
-- **returns**: (interface{}, error) - JSON object with configuration.
+- **returns**: (any, error) - JSON object with configuration.
 
 ### Examples
 
@@ -94,9 +98,8 @@ Reads a configuration file, parameterizes its content and converts it into a JSO
         
 ```go
 configReader := NewJsonConfigReader("config.json")
-   
 parameters := NewConfigParamsFromTuples("KEY1_VALUE", 123, "KEY2_VALUE", "ABC")
-res, err := configReader.ReadConfig("123", parameters)
+res, err := configReader.ReadConfig(context.Background(), "123", parameters)
 ```
 
 ### See also

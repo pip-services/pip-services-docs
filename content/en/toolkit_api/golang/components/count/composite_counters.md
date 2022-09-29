@@ -2,7 +2,7 @@
 type: docs
 title: "CompositeCounters"
 linkTitle: "CompositeCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Aggregates all counters from component references into a single one.
 
@@ -27,8 +27,9 @@ Important points
 #### NewCompositeCountersFromReferences
 Creates a new instance of the counters.
 
-> NewCompositeCountersFromReferences(references refer.IReferences) [*CompositeCounters]()
+> NewCompositeCountersFromReferences(ctx context.Context, references refer.IReferences) [*CompositeCounters]()
 
+- **ctx**: context.Context - operation context.
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
@@ -56,8 +57,9 @@ Begins measurement of execution time interval.
 It returns [*CounterTiming](../counter_timing) object which has to be called at
 [CounterTiming.EndTiming](../counter_timing/#endtiming) to end the measurement and update the counter.
 
-> (c [*CompositeCounters]()) BeginTiming(name string) [*CounterTiming](../counter_timing)
+> (c [*CompositeCounters]()) BeginTiming(ctx context.Context, name string) [*CounterTiming](../counter_timing)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Interval type.
 - **returns**: [*CounterTiming](../counter_timing) - a callback object to end timing.
 
@@ -65,8 +67,9 @@ It returns [*CounterTiming](../counter_timing) object which has to be called at
 #### EndTiming
 Ends measurement of execution elapsed time and updates specified counter.
 
-> (c [*CompositeCounters]()) EndTiming(name string, elapsed float32)
+> (c [*CompositeCounters]()) EndTiming(ctx context.Context, name string, elapsed float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name
 - **elapsed**: float32 - execution elapsed time in milliseconds to update the counter.
 
@@ -74,8 +77,9 @@ Ends measurement of execution elapsed time and updates specified counter.
 #### Increment
 Increments counter by given value.
 
-> (c [*CompositeCounters]()) Increment(name string, value int)
+> (c [*CompositeCounters]()) Increment(ctx context.Context, name string, value int)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - a counter name of Increment type.
 - **value**: int - a value to add to the counter.
 
@@ -83,8 +87,9 @@ Increments counter by given value.
 #### IncrementOne
 Increments counter by 1.
 
-> (c [*CompositeCounters]()) IncrementOne(name string)
+> (c [*CompositeCounters]()) IncrementOne(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Increment type.
 
 
@@ -92,8 +97,9 @@ Increments counter by 1.
 Records the last calculated measurement value.
 Usually this method is used by metrics calculated externally.
 
-> (c [*CompositeCounters]()) Last(name string, value float32)
+> (c [*CompositeCounters]()) Last(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Last type.
 - **value**: float32 - last value to record.
 
@@ -101,16 +107,18 @@ Usually this method is used by metrics calculated externally.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*CompositeCounters]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+> (c [*CompositeCounters]()) SetReferences(ctx context.Context, references [refer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Stats
 Calculates min/average/max statistics based on the current and previous values.
 
-> (c [*CompositeCounters]()) Stats(name string, value float32)
+> (c [*CompositeCounters]()) Stats(ctx context.Context, name string, value float32)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Statistics type
 - **value**: float32 - value to update statistics
 
@@ -118,7 +126,7 @@ Calculates min/average/max statistics based on the current and previous values.
 #### Timestamp
 Records a given timestamp.
 
-> (c [*CompositeCounters]()) Timestamp(name string, value time.Time)
+> (c [*CompositeCounters]()) Timestamp(ctx context.Context, name string, value time.Time)
 
 - **name**: string - counter name of Timestamp type.
 - **value**: time.Time - timestamp to record.
@@ -127,24 +135,26 @@ Records a given timestamp.
 #### TimestampNow
 Records the current time as a timestamp.
 
-> (c [*CompositeCounters]()) TimestampNow(name string)
+> (c [*CompositeCounters]()) TimestampNow(ctx context.Context, name string)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - counter name of Timestamp type.
 
 
 ### Examples
 ```go
 type MyComponent {
-    _counters CompositeCounters = make(CompositeCounters)
+	_counters CompositeCounters = new CompositeCounters()
 }
-func (mc * MyConponent)setReferences(references: IReferences) {
-    mc._counters.SetReferences(references);
+
+func (mc *MyConponent) SetReferences(ctx context.Context, references refer.IReferences) {
+	mc._counters.SetReferences(ctx, references)
 }
-  
+
 func (mc * MyConponent) myMethod() {
-    mc._counters.Increment("mycomponent.mymethod.calls")
-    timing := mc._counters.BeginTiming("mycomponent.mymethod.exec_time")
-	 defer timing.EndTiming();
+	mc._counters.Increment(context.Background(), "mycomponent.mymethod.calls")
+	timing := mc._counters.BeginTiming(context.Background(), "mycomponent.mymethod.exec_time")
+	defer timing.EndTiming(context.Background())
 	// do something
 }
 

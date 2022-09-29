@@ -2,7 +2,7 @@
 type: docs
 title: "CounterType"
 linkTitle: "CounterType"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Counter type enumeration containing the types of counters that measure different types of metrics.
 ---
@@ -19,4 +19,26 @@ The CounterType class enumerates the types of counters that measure different ty
 - **Timestamp** = 3 - Counter that record timestamps
 - **Increment** = 4 - Counter that increment counters
 
-</span>
+### Methods
+
+#### ToString
+Converts counter to string.
+
+> (c [CounterType]()) ToString() string
+
+- **returns**: string - converted string counter.
+
+#### UnmarshalJSON
+Unmarshall json bytes into CounterType.
+
+> (c [*CounterType]()) UnmarshalJSON(data []byte) (err error)
+
+- **data**: []byte - json data bytes.
+- **err**: error - error unmarshall.
+
+#### MarshalJSON
+Marshal CounterType to json.
+
+> (c [*CounterType]()) MarshalJSON() ([]byte, error)
+
+- **data**: ([]byte, error) - json data bytes and error marshall.

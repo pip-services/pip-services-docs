@@ -2,7 +2,7 @@
 type: docs
 title: "ConnectionResolver"
 linkTitle: "ConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Helper class used to retrieve component's connections.
 
@@ -39,8 +39,9 @@ Important points
 #### NewConnectionResolver
 Creates a new instance of ConnectionResolver.
 
-> NewConnectionResolver(config [*config.ConfigParams](../../../commons/config/config_params), references [refer.IReferences](../../../commons/refer/ireferences)) [*ConnectionResolver]()
+> NewConnectionResolver(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params), references [refer.IReferences](../../../commons/refer/ireferences)) [*ConnectionResolver]()
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - (optional) component configuration parameters
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - (optional) component references
 
@@ -63,8 +64,9 @@ Adds a new connection to component connections.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*ConnectionResolver]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*ConnectionResolver]()) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -112,8 +114,9 @@ from Discovery service it finds a [IDiscovery](../idiscovery) and resolves the c
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*ConnectionResolver]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+> (c [*ConnectionResolver]()) SetReferences(ctx context.Context, references [refer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
@@ -121,14 +124,13 @@ Sets references to dependent components.
 
 ```go
 config = NewConfigParamsFromTuples(
-    "connection.host", "10.1.1.100",
-    "connection.port", 8080
-);
-connectionResolver := NewConnectionResolver();
-connectionResolver.Configure(config);
-connectionResolver.SetReferences(references);
-  
-res, err := connectionResolver.Resolve("123");
+	"connection.host", "10.1.1.100",
+	"connection.port", 8080,
+)
+connectionResolver := NewConnectionResolver()
+connectionResolver.Configure(context.Background(), config)
+connectionResolver.SetReferences(context.Background(), references)
+res, err := connectionResolver.Resolve("123")
 ```
 
 ### See also

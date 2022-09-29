@@ -24,7 +24,7 @@ Sets references to dependent components.
 
 > SetReferences(ctx context.Context, references [IReferences](../ireferences))
 
-- **ctx**: ctx context.Context - operation context.
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../ireferences) - references to locate the component dependencies. 
 
 ### Examples

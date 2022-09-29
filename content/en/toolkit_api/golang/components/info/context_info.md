@@ -2,7 +2,7 @@
 type: docs
 title: "ContextInfo"
 linkTitle: "ContextInfo"
-MethodsgitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+MethodsgitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Context information component that provides detailed information
     about an execution context.
@@ -37,8 +37,9 @@ Creates a new instance of this context info.
 #### NewContextInfoFromConfig
 Creates a new ContextInfo and sets its configuration parameters.
 
-> NewContextInfoFromConfig(cfg [*config.ConfigParams](../../../commons/config/config_params)) [*ContextInfo]()
+> NewContextInfoFromConfig(ctx context.Context, cfg [*config.ConfigParams](../../../commons/config/config_params)) [*ContextInfo]()
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters for the new ContextInfo.
 - **returns**: [*ContextInfo]() - newly created ContextInfo
 
@@ -80,8 +81,9 @@ Gets the context's start time.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*ContextInfo]()) Configure(cfg [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*ContextInfo]()) Configure(ctx context.Context, cfg [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **cfg**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -89,12 +91,12 @@ Configures component by passing configuration parameters.
 
 ```go
 contextInfo := NewContextInfo();
-contextInfo.Configure(NewConfigParamsFromTuples(
-    "name", "MyMicroservice",
-    "description", "My first microservice"
-));
-  
-context.Name;            // Result: "MyMicroservice"
-context.ContextId;        // Possible result: "mylaptop"
-context.StartTime;        // Possible result: 2018-01-01:22:12:23.45Z
+contextInfo.Configure(context.Background(), NewConfigParamsFromTuples(
+	ContextInfoParameterName, "MyMicroservice",
+	ContextInfoParameterDescription, "My first microservice",
+))
+
+context.Name;     	// Result: "MyMicroservice"
+context.ContextId;	// Possible result: "mylaptop"
+context.StartTime;	// Possible result: 2018-01-01:22:12:23.45Z
 ```

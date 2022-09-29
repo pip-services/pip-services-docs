@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryCredentialStore"
 linkTitle: "MemoryCredentialStore"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Credential store that keeps credentials in memory.
 ---
@@ -30,8 +30,9 @@ The MemoryCredentialStore class is used to create credential stores that keep th
 #### NewMemoryCredentialStore
 Creates a new instance of the credential store.
 
-> NewMemoryCredentialStore(config [*config.ConfigParams](../../../commons/config/config_params)) [*MemoryCredentialStore]()
+> NewMemoryCredentialStore(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params)) [*MemoryCredentialStore]()
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - (optional) configuration with credential parameters.
 
 #### NewEmptyMemoryCredentialStore
@@ -45,16 +46,18 @@ Creates a new instance of the credential store.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*MemoryCredentialStore]()) Configure(config [*config.ConfigParams](../../../commons/config/config_params))
+> (c [*MemoryCredentialStore]()) Configure(ctx context.Context, config [*config.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*config.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Lookup
 Looks up credential parameters by its key.
 
-> (c [*MemoryCredentialStore]()) Lookup(correlationId string, key string) (result [*CredentialParams](../credential_params), err error)
+> (c [*MemoryCredentialStore]()) Lookup(ctx context.Context, correlationId string, key string) (result [*CredentialParams](../credential_params), err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - key used to uniquely identify the credential.
 - **returns**: (result [*CredentialParams](../credential_params), err error) - found credential parameters or nil if nothing was found
@@ -72,8 +75,9 @@ Each section represents an individual CredentialParams.
 #### Store
 Stores credential parameters into the store.
 
-> (c [*MemoryCredentialStore]()) Store(correlationId string, key string, credential [*CredentialParams](../credential_params)) error
+> (c [*MemoryCredentialStore]()) Store(ctx context.Context, correlationId string, key string, credential [*CredentialParams](../credential_params)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - key to uniquely identify the credential parameters.
 - **credential**: [*CredentialParams](../credential_params) - credential parameters to be stored.
@@ -83,15 +87,14 @@ Stores credential parameters into the store.
 
 ```go
 config := NewConfigParamsFromTuples(
-    "key1.user", "jdoe",
-    "key1.pass", "pass123",
-    "key2.user", "bsmith",
-    "key2.pass", "mypass"
-);
-  
-credentialStore := NewEmptyMemoryCredentialStore();
-credentialStore.ReadCredentials(config);
-res, err := credentialStore.Lookup("123", "key1");
+	"key1.user", "jdoe",
+	"key1.pass", "pass123",
+	"key2.user", "bsmith",
+	"key2.pass", "mypass"
+)
+credentialStore := NewEmptyMemoryCredentialStore()
+credentialStore.ReadCredentials(config)
+res, err := credentialStore.Lookup(context.Backgroudn(), "123", "key1")
 
 ```
 

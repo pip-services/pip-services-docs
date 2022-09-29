@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryStateStore"
 linkTitle: "MemoryStateStore"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     State store that keeps states in the process memory.
 ---
@@ -21,44 +21,47 @@ description: >
 ### Constructors
 Creates a new instance of the state store.
 
-> NewEmptyMemoryStateStore()
+> NewEmptyMemoryStateStore[T any]()
 
 ### Instance methods
 
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*MemoryStateStore]()) Configure(config *cconf.ConfigParams)
+> (c [*MemoryStateStore[T]]()) Configure(ctx context.Context, config *cconf.ConfigParams)
 
+- **ctx**: context.Context - operation context.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Delete
 Deletes a state from the store by its key.
 
-> (c [*MemoryStateStore]()) Delete(correlationId string, key string) interface{}
+> (c [*MemoryStateStore[T]]()) Delete(ctx context.Context, correlationId string, key string) any
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique value key.
-- **return**: interface{} - removed item
+- **return**: any - removed item
 
 
 #### Load
 Loads state from the store using its key.
 If value is missing in the store it returns null.
 
-> (c [*MemoryStateStore]()) Load(correlationId string, key string) interface{}
+> (c [*MemoryStateStore[T]]()) Load(correlationId string, key string) any
 
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique state key.
-- **return**: interface{} - the state value or `null` if value wasn't found.
+- **return**: any - the state value or `null` if value wasn't found.
 
 
 #### LoadBulk
 Loads an array of states from the store using their keys.
 
-> (c [*MemoryStateStore]()) LoadBulk(correlationId string, keys []string) [][*StateValue](../state_value)
+> (c [*MemoryStateStore[T]]()) LoadBulk(ctx context.Context, correlationId string, keys []string) [][*StateValue](../state_value)
 
+- **ctx**: context.Context - operation contex.
 - **correlationId**: string - (optional) transaction id to trace execution through call chain.
 - **keys**: []string - unique state keys.
 - **returns**: [][*StateValue](../state_value) - an array with state values and their corresponding keys.
@@ -67,22 +70,22 @@ Loads an array of states from the store using their keys.
 #### Save
 Saves state into the store.
 
-> (c [*MemoryStateStore]()) Save(correlationId string, key string, value interface{}) interface{}
+> (c [*MemoryStateStore[T]]()) Save(ctx context.Context, correlationId string, key string, value any) any
 
+- **ctx**: context.Context - operation contex.
 - **correlationId**: string - (optional) transaction id to trace execution through a call chain.
 - **key**: string - a unique state key.
-- **value**: interface{} - a state value.
-- **returns**: interface{} - execution duration in milliseconds.
+- **value**: any - a state value.
+- **returns**: any - execution duration in milliseconds.
 
 
 ### Examples
 
 ```go
-let store = new MemoryStateStore();
-
-let value = await store.load("123", "key1");
+store := NewMemoryStateStore[MyType]()
+value := store.Load(context.Background(), "123", "key1")
 ...
-await store.save("123", "key1", "ABC");
+store.Save(context.Background(), "123", "key1", MyType{})
 ```
 
 ### See also

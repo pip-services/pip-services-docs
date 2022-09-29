@@ -2,7 +2,7 @@
 type: docs
 title: "LogCounters"
 linkTitle: "LogCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Performance counters that periodically dump counters' measurements to logger.
 ---
@@ -37,8 +37,9 @@ Creates a new instance of the counters.
 #### Save
 Saves the current counters measurements.
 
-> (c [*LogCounters]()) Save(counters [][*Counter](../counter)) error
+> (c [*LogCounters]()) Save(ctx context.Context, counters [][*Counter](../counter)) error
 
+- **ctx**: context.Context - operation context.
 - **counters**: [][*Counter](../counter) - current counters measurements to be saved.
 - **returns**: error - return erro if not saved.
 
@@ -46,25 +47,24 @@ Saves the current counters measurements.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*LogCounters]()) SetReferences(references [refer.IReferences](../../../commons/refer/ireferences))
+> (c [*LogCounters]()) SetReferences(ctx context.Context, references [refer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [refer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 
 ```go
 counters := NewLogCounters();
-counters.SetReferences(NewReferencesFromTuples(
-    NewDescriptor("pip-services", "logger", "console", "default", "1.0"), NewConsoleLogger()
+counters.SetReferences(context.Background(), NewReferencesFromTuples(
+	NewDescriptor("pip-services", "logger", "console", "default", "1.0"), NewConsoleLogger()
 ));
-
-counters.Increment("mycomponent.mymethod.calls");
-timing := counters.BeginTiming("mycomponent.mymethod.exec_time");
-defer  timing.EndTiming();
+counters.IncrementOne(context.Background(), "mycomponent.mymethod.calls")
+timing := counters.BeginTiming(context.Background(),"mycomponent.mymethod.exec_time")
+defer timing.EndTiming(context.Background())
 
 // do something
-
-counters.Dump();
+counters.Dump(context.Background())
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultCountersFactory"
 linkTitle: "DefaultCountersFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-components-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-components-gox"
 description: >
     Creates a factory that builds [ICounters](../icounters) components based on their descriptors.
 ---

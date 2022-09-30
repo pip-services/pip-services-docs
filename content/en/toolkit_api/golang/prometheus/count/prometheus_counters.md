@@ -2,7 +2,7 @@
 type: docs
 title: "PrometheusCounters"
 linkTitle: "PrometheusCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-prometheus-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-prometheus-gox"
 description: >
     Performance counters that send their metrics to Prometheus service.
 
@@ -24,17 +24,17 @@ Important points
 
 #### Configuration parameters
 
-**connection(s)**:
-- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-- **protocol**: connection protocol: http or https
-- **host**: host name or IP address
-- **port**: port number
-- **uri**: resource URI or connection string with all parameters in it
+- **connection(s)**:
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **protocol**: connection protocol: http or https
+    - **host**: host name or IP address
+    - **port**: port number
+    - **uri**: resource URI or connection string with all parameters in it
 
-**options**:
-- **retries**: number of retries (default: 3)
-- **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
-- **timeout**: invocation timeout in milliseconds (default: 10 sec)
+- **options**:
+    - **retries**: number of retries (default: 3)
+    - **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
+    - **timeout**: invocation timeout in milliseconds (default: 10 sec)
 
 
 #### References
@@ -57,8 +57,9 @@ Creates a new instance of the performance counters.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*PrometheusCounters]()) Close(correlationId string) error
+> (c [*PrometheusCounters]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**; context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error -  error or nil no errors occured.
 
@@ -66,8 +67,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*PrometheusCounters]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*PrometheusCounters]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -82,8 +84,9 @@ Checks if the component is opened.
 #### Open
 Opens the component.
 
-> (c [*PrometheusCounters]()) Open(correlationId string) (err error)
+> (c [*PrometheusCounters]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) -  error or nil no errors occured.
 
@@ -91,8 +94,9 @@ Opens the component.
 #### Save
 Saves the current counters' measurements.
 
-> (c [*PrometheusCounters]()) Save(counters [][*ccount.Counter](../../../components/count/counter)) (err error)
+> (c [*PrometheusCounters]()) Save(ctx context.Context, counters [][*ccount.Counter](../../../components/count/counter)) (err error)
 
+- **ctx**: context.Context - operation context.
 - **counters**: [][*ccount.Counter](../../../components/count/counter) - current counters measurements to be saved.
 - **returns**: (err error) -  error or nil no errors occured.
 
@@ -100,27 +104,31 @@ Saves the current counters' measurements.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*PrometheusCounters]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*PrometheusCounters]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 ### Examples
 
 ```go
+ctx := context.Background()
 counters = NewPrometheusCounters();
-counters.Configure(cconf.NewConfigParamsFromTuples(
+counters.Configure(ctx, cconf.NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
-    "connection.port", 8080
+    "connection.port", 8080,
 ));
 
 counters.Open("123")
-counters.Increment("mycomponent.mymethod.calls");
-timing := counters.BeginTiming("mycomponent.mymethod.exec_time");
+
+counters.Increment(ctx, "mycomponent.mymethod.calls")
+timing := counters.BeginTiming(ctx, "mycomponent.mymethod.exec_time")
     ...
-timing.EndTiming();
-counters.Dump();
+timing.EndTiming(ctx)
+
+counters.Dump(ctx)
 ```
 
 ### See also

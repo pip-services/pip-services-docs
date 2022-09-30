@@ -2,7 +2,7 @@
 type: docs
 title: "PrometheusMetricsService"
 linkTitle: "PrometheusMetricsService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-prometheus-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-prometheus-gox"
 description: >
     Service that exposes the **"/metrics"** and **"/metricsandreset"** routes 
     for Prometheus to obtain performance metrics.
@@ -49,8 +49,9 @@ Creates a new instance of this service.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*PrometheusMetricsService]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*PrometheusMetricsService]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies. 
 
 #### Register
@@ -61,18 +62,18 @@ Registers all service routes in a HTTP endpoint.
 ### Examples
 
 ```go
-service := NewPrometheusMetricsService();
-service.Configure(cconf.NewConfigParamsFromTuples(
+ctx := context.Context()
+service := NewPrometheusMetricsService()
+service.Configure(ctx, cconf.NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", "8080",
 ));
 
-err := service.Open("123")
-
+err := service.Open(ctx, "123")
 if  err == nil {
     fmt.Println("The Prometheus metrics service is accessible at http://localhost:8080/metrics");
-    defer service.Close("")
+    defer service.Close(ctx, "")
 }
 ```
 

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Prometheus module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-prometheus-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-prometheus-gox"
 no_list: true
 weight: 500
 description: > 
@@ -20,7 +20,7 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-prometheus-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-prometheus-gox@latest
 ```
 
 TODO add example

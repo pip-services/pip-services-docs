@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultPrometheusFactory"
 linkTitle: "DefaultPrometheusFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-prometheus-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-prometheus-gox"
 description: > 
     Creates Prometheus components based on their descriptors.
 ---

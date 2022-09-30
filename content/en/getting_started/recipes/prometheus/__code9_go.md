@@ -6,7 +6,7 @@ import (
 	"fmt"
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	pcount "github.com/pip-services3-go/pip-services3-prometheus-go/count"
+	pcount "github.com/pip-services3-gox/pip-services3-prometheus-gox/count"
 )
 
 func main() {

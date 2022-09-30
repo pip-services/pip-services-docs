@@ -1,6 +1,6 @@
 
 ```go
 import (
-    pservice "github.com/pip-services3-go/pip-services3-prometheus-go/services"
+    pservice "github.com/pip-services3-gox/pip-services3-prometheus-gox/services"
 )
 ```

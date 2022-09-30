@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiableJsonPostgresPersistence"
 linkTitle: "IdentifiableJsonPostgresPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: >
     Abstract persistence component that stores data in PostgreSQL in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.
@@ -25,21 +25,21 @@ Important points
 #### Configuration parameters
 
 - **collection**: (optional) PostgreSQL collection name
-**connection(s)**:    
-- **discovery_key**: (optional) key used to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-- **host**: host name or IP address
-- **port**: port number (default: 27017)
-- **uri**: resource URI or connection string with all parameters in it
+- **connection(s)**:    
+    - **discovery_key**: (optional) key used to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **host**: host name or IP address
+    - **port**: port number (default: 27017)
+    - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:    
-- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) username
-- **password**: (optional) user's password
+- **credential(s)**:    
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: (optional) username
+    - **password**: (optional) user's password
 
-**options**:
-- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
+- **options**:
+    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+    - **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages
@@ -51,10 +51,9 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> InheritIdentifiableJsonPostgresPersistence(overrides IPostgresPersistenceOverrides, proto reflect.Type, tableName string) [*IdentifiableJsonPostgresPersistence]()
+> InheritIdentifiableJsonPostgresPersistence[T any, K any](overrides IPostgresPersistenceOverrides[T], tableName string) [*IdentifiableJsonPostgresPersistence[T, K]]()
 
-- **overrides**: IPostgresPersistenceOverrides - References to override virtual methods.
-- **proto**: reflect.Type - TODO: add description. 
+- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 
@@ -63,25 +62,25 @@ Creates a new instance of the persistence component.
 #### ConvertFromPublic
 Converts object value from public to internal format.
 
-> (c [*IdentifiableJsonPostgresPersistence]()) ConvertFromPublic(value interface{}) interface{}
+> (c [*IdentifiableJsonPostgresPersistence[T,K]]()) ConvertFromPublic(value T) map[string]any
 
-- **value**: interface{} - object in public format to convert.
-- **returns**: interface{} - converted object in internal format.
+- **value**: T - object in public format to convert.
+- **returns**: map[string]any - converted object in internal format.
 
 
 #### ConvertToPublic
 Converts object value from internal to public format.
 
-> (c [*IdentifiableJsonPostgresPersistence]()) ConvertToPublic(rows pgx.Rows) interface{}
+> (c [*IdentifiableJsonPostgresPersistence[T,K]]()) ConvertToPublic(rows pgx.Rows) T
 
 - **rows**: pgx.Rows - object in internal format to convert.
-- **returns**: interface{} - converted object in public format.
+- **returns**: T - converted object in public format.
 
 
 #### EnsureTable
 Adds DML statement to automatically create a JSON(B) table
 
-> (c [*IdentifiableJsonPostgresPersistence]()) EnsureTable(idType string, dataType string)
+> (c [*IdentifiableJsonPostgresPersistence[T,K]]()) EnsureTable(idType string, dataType string)
 
 - **idType**: string - type of the id column
 - **dataType**: string - type of the data column
@@ -90,8 +89,9 @@ Adds DML statement to automatically create a JSON(B) table
 #### UpdatePartially
 Updates only few selected fields in a data item.
 
-> (c [*IdentifiableJsonPostgresPersistence]()) UpdatePartially(correlationId string, id interface{}, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*IdentifiableJsonPostgresPersistence[T,K]]()) UpdatePartially(ctx context.Context, correlationId string, id interface{}, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **id**: interface{} - id of the data item to be updated.
 - **data**: [*cdata.AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
@@ -100,6 +100,51 @@ Updates only few selected fields in a data item.
 ### Examples
 
 ```go
-TODO: add example
+type DummyJsonPostgresPersistence struct {
+	*persist.IdentifiableJsonPostgresPersistence[fixtures.Dummy, string]
+}
+
+func NewDummyJsonPostgresPersistence() *DummyJsonPostgresPersistence {
+	c := &DummyJsonPostgresPersistence{}
+	c.IdentifiableJsonPostgresPersistence = persist.InheritIdentifiableJsonPostgresPersistence[fixtures.Dummy, string](c, "dummies_json")
+	return c
+}
+
+func (c *DummyJsonPostgresPersistence) DefineSchema() {
+	c.ClearSchema()
+	c.IdentifiableJsonPostgresPersistence.DefineSchema()
+	c.EnsureTable("", "")
+	c.EnsureIndex(c.TableName+"_key", map[string]string{"(data->'key')": "1"}, map[string]string{"unique": "true"})
+}
+
+func (c *DummyJsonPostgresPersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams, paging cdata.PagingParams) (page cdata.DataPage[fixtures.Dummy], err error) {
+
+	key, ok := filter.GetAsNullableString("Key")
+	filterObj := ""
+	if ok && key != "" {
+		filterObj += "data->key='" + key + "'"
+	}
+
+	return c.IdentifiableJsonPostgresPersistence.GetPageByFilter(ctx, correlationId,
+		filterObj, paging,
+		"", "",
+	)
+}
+
+func (c *DummyJsonPostgresPersistence) GetCountByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams) (count int64, err error) {
+
+	filterObj := ""
+	if key, ok := filter.GetAsNullableString("Key"); ok && key != "" {
+		filterObj += "data->key='" + key + "'"
+	}
+
+	return c.IdentifiableJsonPostgresPersistence.GetCountByFilter(ctx, correlationId, filterObj)
+}
+
+func (c *DummyJsonPostgresPersistence) GetOneRandom(ctx context.Context, correlationId string) (item fixtures.Dummy, err error) {
+	return c.IdentifiableJsonPostgresPersistence.GetOneRandom(ctx, correlationId, "")
+}
 
 ```

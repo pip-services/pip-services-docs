@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresConnectionResolver"
 linkTitle: "PostgresConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: >
     Helper class that resolves PostgreSQL connection and credential parameters,
     validates them and generates a connection URI.
@@ -65,16 +65,18 @@ The credential resolver
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*PostgresConnectionResolver]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*PostgresConnectionResolver]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Resolve
 Resolves PostgreSQL config from connection and credential parameters.
 
-> (c [*PostgresConnectionResolver]()) Resolve(correlationId string) (uri string, err error)
+> (c [*PostgresConnectionResolver]()) Resolve(ctx context.Context, correlationId string) (uri string, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (uri string, err error) - resolved connection config or raised error.
 
@@ -82,6 +84,7 @@ Resolves PostgreSQL config from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*PostgresConnectionResolver]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*PostgresConnectionResolver]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

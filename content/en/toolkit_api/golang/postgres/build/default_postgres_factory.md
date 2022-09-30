@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultPostgresFactory"
 linkTitle: "DefaultPostgresFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: > 
     Creates Postgres components based on their descriptors.
 ---

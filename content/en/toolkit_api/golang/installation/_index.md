@@ -113,9 +113,9 @@ go get -u github.com/pip-services3-gox/pip-services3-nats-gox
 
 #### Postgres module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-postgres-go
+go get -u github.com/pip-services3-gox/pip-services3-postgres-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-postgres-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-postgres-gox)
 
 #### Prometheus module
 ```bash

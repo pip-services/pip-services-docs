@@ -2,7 +2,7 @@
 type: docs
 title: "IdentifiablePostgresPersistence"
 linkTitle: "IdentifiablePostgresPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: >
     Abstract persistence component that stores data in PostgreSQL
     and implements a number of CRUD operations over data items with unique ids.
@@ -53,10 +53,9 @@ Important points
 #### InheritIdentifiablePostgresPersistence
 Creates a new instance of the persistence component.
 
-> InheritIdentifiablePostgresPersistence(overrides IPostgresPersistenceOverrides, proto reflect.Type, tableName string) [*IdentifiablePostgresPersistence]()
+> InheritIdentifiablePostgresPersistence[T any, K any](overrides IPostgresPersistenceOverrides[T], tableName string) [*IdentifiablePostgresPersistence[T,K]]()
 
-- **overrides**: IPostgresPersistenceOverrides - References to override virtual methods.
-- **proto**: reflect.Type - TODO: add description. 
+- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 ### Methods
@@ -64,87 +63,140 @@ Creates a new instance of the persistence component.
 #### Create
 Creates a data item.
 
-> (c *IdentifiablePostgresPersistence) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: T - item to be created.
+- **returns**: (result T, err error) - created item
 
 
 #### DeleteById
 Deletes a data item by it's unique id.
 
-> (c *IdentifiablePostgresPersistence) DeleteById(correlationId string, id interface{}) (result interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) DeleteById(ctx context.Context, correlationId string, id K) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of the item to be deleted
-- **returns**: (result interface{}, err error) - deleted item
+- **id**: K - id of the item to be deleted
+- **returns**: (result T, err error) - deleted item
 
 
 #### DeleteByIds
 Deletes multiple data items by their unique ids.
 
-> (c *IdentifiablePostgresPersistence) DeleteByIds(correlationId string, ids []interface{}) error
+> (c [*IdentifiablePostgresPersistence[T,K]]()) DeleteByIds(ctx context.Context, correlationId string, ids []K) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **ids**: []interface{} - ids of data items to be deleted.
+- **ids**: []K - ids of data items to be deleted.
 - **returns**: error - returns error if not received.
 
 
 #### GetListByIds
 Gets a list of data items retrieved by given unique ids.
 
-> (c *IdentifiablePostgresPersistence) GetListByIds(correlationId string, ids []interface{}) (items []interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) GetListByIds(ctx context.Context, correlationId string, ids []K) (items []T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **ids**: []interface{} - ids of data items to be retrieved
-- **returns**: (items []interface{}, err error) - data list
+- **ids**: []K - ids of data items to be retrieved
+- **returns**: (items []T, err error) - data list
 
 
 #### GetOneById
 Gets a data item by its unique id.
 
-> (c *IdentifiablePostgresPersistence) GetOneById(correlationId string, id interface{}) (item interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) GetOneById(ctx context.Context, correlationId string, id K) (item T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of data item to be retrieved.
-- **returns**: (item interface{}, err error)  - data item
+- **id**: K - id of data item to be retrieved.
+- **returns**: (item T, err error)  - data item
 
 
 #### Set
 Sets a data item. If the data item exists it updates it.
 Otherwise, it creates a new data item.
 
-> (c *IdentifiablePostgresPersistence) Set(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) Set(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be set.
-- **returns**: (result interface{}, err error) - updated item
+- **item**: T - item to be set.
+- **returns**: (result T, err error) - updated item
 
 
 #### Update
 Updates a data item.
 
-> (c *IdentifiablePostgresPersistence) Update(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) Update(ctx context.Context, correlationId string, item interface{}) (result T, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be updated.
-- **returns**: (result interface{}, err error) - updated item
+- **item**: T - item to be updated.
+- **returns**: (result T, err error) - updated item
 
 
 #### UpdatePartially
 Updates only a few selected fields in a data item.
 
-> (c *IdentifiablePostgresPersistence) UpdatePartially(correlationId string, id interface{}, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*IdentifiablePostgresPersistence[T,K]]()) UpdatePartially(ctx context.Context, correlationId string, id K, data [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result T, err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of the data item to be updated.
+- **id**: K - id of the data item to be updated.
 - **data**: [*cdata.AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **returns**: (result interface{}, err error)- updated item
+- **returns**: (result T, err error)- updated item
 
 ### Examples
 
 ```go
-TODO: add example
+type DummyPostgresPersistence struct {
+	*persist.IdentifiablePostgresPersistence[fixtures.Dummy, string]
+}
+
+func NewDummyPostgresPersistence() *DummyPostgresPersistence {
+	c := &DummyPostgresPersistence{}
+	c.IdentifiablePostgresPersistence = persist.InheritIdentifiablePostgresPersistence[fixtures.Dummy, string](c, "dummies")
+	return c
+}
+
+func (c *DummyPostgresPersistence) DefineSchema() {
+	c.ClearSchema()
+	c.IdentifiablePostgresPersistence.DefineSchema()
+	// Row name must be in double quotes for properly case!!!
+	c.EnsureSchema("CREATE TABLE " + c.QuotedTableName() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
+	c.EnsureIndex(c.IdentifiablePostgresPersistence.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
+}
+
+func (c *DummyPostgresPersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams, paging cdata.PagingParams) (page cdata.DataPage[fixtures.Dummy], err error) {
+
+	key, ok := filter.GetAsNullableString("Key")
+	filterObj := ""
+	if ok && key != "" {
+		filterObj += "key='" + key + "'"
+	}
+	sorting := ""
+
+	return c.IdentifiablePostgresPersistence.GetPageByFilter(ctx, correlationId,
+		filterObj, paging,
+		sorting, "",
+	)
+}
+
+func (c *DummyPostgresPersistence) GetCountByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams) (count int64, err error) {
+
+	key, ok := filter.GetAsNullableString("Key")
+	filterObj := ""
+	if ok && key != "" {
+		filterObj += "key='" + key + "'"
+	}
+	return c.IdentifiablePostgresPersistence.GetCountByFilter(ctx, correlationId, filterObj)
+}
+
+func (c *DummyPostgresPersistence) GetOneRandom(ctx context.Context, correlationId string) (item fixtures.Dummy, err error) {
+	return c.IdentifiablePostgresPersistence.GetOneRandom(ctx, correlationId, "")
+}
 
 ```

@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresPersistence"
 linkTitle: "PostgresPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: >
     Abstract persistence component that stores data in PostgreSQL using the official driver.
 
@@ -25,21 +25,21 @@ accessing **c.Db** or **c.Collection** properties.
 #### Configuration parameters
 
 - **collection**: (optional) PostgreSQL collection name
-**connection(s)**:    
-- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-- **host**: host name or IP address
-- **port**: port number (default: 27017)
-- **uri**: resource URI or connection string with all parameters in it
+- **connection(s)**:    
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **host**: host name or IP address
+    - **port**: port number (default: 27017)
+    - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:    
-- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: (optional) username
-- **password**: (optional) user's password
+- **credential(s)**:    
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: (optional) username
+    - **password**: (optional) user's password
 
-**options**:
-- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
+- **options**:
+    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+    - **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 
 #### References
@@ -53,10 +53,9 @@ accessing **c.Db** or **c.Collection** properties.
 #### InheritPostgresPersistence
 Creates a new instance of the persistence component.
 
-> InheritPostgresPersistence(overrides IPostgresPersistenceOverrides, proto reflect.Type, tableName string) *PostgresPersistence
+> InheritPostgresPersistence[T any](overrides IPostgresPersistenceOverrides[T], tableName string) *PostgresPersistence
 
-- **overrides**: IPostgresPersistenceOverrides - References to override virtual methods.
-- **proto**: reflect.Type - TODO: add description. 
+- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 ### Fields
@@ -99,22 +98,24 @@ The maximum number of records to return from the database.
 #### Clear
 Clears a component's state.
 
-> (c [*PostgresPersistence]()) Clear(correlationId string) error
+> (c [*PostgresPersistence[T]]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string- object to convert from the public partial format.
 - **returns**: error - returns error if not received.
 
 #### ClearSchema
 Clears all auto-created objects.
 
-> (c [*PostgresPersistence]()) ClearSchema()
+> (c [*PostgresPersistence[T]]()) ClearSchema()
 
 
 #### Close
 Closes the component and frees used resources.
 
-> (c [*PostgresPersistence]()) Close(correlationId string) (err error)
+> (c [*PostgresPersistence[T]]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string- object to convert from the public partial format.
 - **returns**: (err error) - returns error if not received.
 
@@ -122,43 +123,52 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component.
 
-> (c [*PostgresPersistence]()) Configure(config [*conf.ConfigParams](../../../commons/config/config_params))
+> (c [*PostgresPersistence[T]]()) Configure(ctx context.Context, config [*conf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operationcontext.
 - **config**: [*conf.ConfigParams](../../../commons/config/config_params) - configuration parameters to set.
 
 
 #### ConvertFromPublic
 Converts an object value from public to internal format.
 
-> (c [*PostgresPersistence]()) ConvertFromPublic(value interface{}) interface{}
+> (c [*PostgresPersistence[T]]()) ConvertFromPublic(value T) (map[string]any, error)
 
-- **value**: interface{} - object in public format to convert.
-- **returns**: interface{} - converted object in internal format.
+- **value**: T - object in public format to convert.
+- **returns**: (map[string]any, error) - converted object in internal format.
 
+#### ConvertFromPublicPartial
+Converts the given object from the public partial format.
+
+> (c [*PostgresPersistence[T]]()) ConvertFromPublicPartial(value map[string]any) (map[string]any, error)
+
+- **value**: map[string]any - the object to convert from the public partial format. 
+- **returns**: (map[string]any, error) - the initial object.
 
 #### ConvertToPublic
 Converts an object value from internal to public format.
 
-> (c [*PostgresPersistence]()) ConvertToPublic(rows pgx.Rows) interface{}
+> (c [*PostgresPersistence[T]]()) ConvertToPublic(rows pgx.Rows) T
 
 - **item**: pgx.Rows - object in internal format to convert.
-- **returns**: interface{} - converted object in public format.
+- **returns**: T - converted object in public format.
 
 
 #### Create
 Creates a data item.
 
-> (c [*PostgresPersistence]()) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*PostgresPersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: T - item to be created.
+- **returns**: (result T, err error) - created item
 
 
 #### CreateSchema
 Checks if a table exists and if it doesn't, it creates the necessary database objects.
 
-> (c [*PostgresPersistence]()) CreateSchema(correlationId string) (err error)
+> (c [*PostgresPersistence[T]]()) CreateSchema(correlationId string) (err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - returns error if not received.
@@ -167,7 +177,7 @@ Checks if a table exists and if it doesn't, it creates the necessary database ob
 #### DefineSchema
 Defines database schema via auto create objects or convenience methods.
 
-> (c [*PostgresPersistence]()) DefineSchema()
+> (c [*PostgresPersistence[T]]()) DefineSchema()
 
 
 #### DeleteByFilter
@@ -175,8 +185,9 @@ Deletes data items that match to a given filter.
 This method shall be called by a func **DeleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*PostgresPersistence]()) DeleteByFilter(correlationId string, filter string) (err error)
+> (c [*PostgresPersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filter string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: string - (optional) a filter JSON object.
 - **returns**: (err error) - returns error if not received.
@@ -185,7 +196,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### EnsureIndex
 Adds index definition to create it on opening.
 
-> (c [*PostgresPersistence]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
+> (c [*PostgresPersistence[T]]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
 
 - **keys**: map[string]string - index keys (fields)
 - **options**: map[string]string - index options
@@ -194,42 +205,48 @@ Adds index definition to create it on opening.
 #### EnsureSchema
 Adds a statement to schema definition.
 
-> (c [*PostgresPersistence]()) EnsureSchema(schemaStatement string)
+> (c [*PostgresPersistence[T]]()) EnsureSchema(schemaStatement string)
 
 - **schemaStatement**: string - statement to be added to the schema
-
 
 #### GenerateColumns
 Generates a list of column names to use in SQL statements like: "column1,column2,column3".
 
-> (c [*PostgresPersistence]()) GenerateColumns(values interface{}) string
+> (c [*PostgresPersistence[T]]()) GenerateColumns(columns []string) string
 
-- **values**: interface{} - array with column values or a key-value map
+- **values**: []string - an array with column values.
 - **returns**: string - generated list of column names 
 
+#### GenerateColumnsAndValues
+GenerateColumnsAndValues generates a list of column parameters
+
+> GenerateColumnsAndValues(objMap map[string]any) ([]string, []any)
+
+- **values**: map[string]any - an key-value map with column values.
+- **returns**: ([]string, []any) - a generated list of column values.
 
 #### GenerateParameters
 Generates a list of value parameters to use in SQL statements like: *"$1,$2,$3"*.
 
-> (c [*PostgresPersistence]()) GenerateParameters(values interface{}) string
+> (c [*PostgresPersistence[T]]()) GenerateParameters(valuesCount int) string
 
-- **values**: interface{} - array with values or a key-value map
+- **values**: int - count of generate parameters.
 - **returns**: string - generated list of value parameters
 
 
 #### GenerateSetParameters
 Generates a list of column sets to use in UPDATE statements like: *"$1,$2,$3"*.
 
-> (c [*PostgresPersistence]()) GenerateSetParameters(values interface{}) (setParams string, columns string)
+> (c [*PostgresPersistence[T]]()) GenerateSetParameters(values []string) string
 
-- **values**: interface{} - key-value map with columns and values
-- **returns**: (setParams string, columns string) - generated list of column sets
+- **values**: []string - an array with column values.
+- **returns**: string - generated list of column sets
 
 
 #### GenerateValues
 Generates a list of column parameters.
 
-> (c [*PostgresPersistence]()) GenerateValues(columns string, values interface{}) []interface{}
+> (c [*PostgresPersistence[T]]()) GenerateValues(columns string, values interface{}) []interface{}
 
 - **values**: interface{} - key-value map with columns and values
 - **returns**: []interface{} - generated list of column values
@@ -242,26 +259,28 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a func **GetCountByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*PostgresPersistence]()) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error)
+> (c [*PostgresPersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filter string) (count int64, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) JSON object filter.
+- **filter**: string - (optional) JSON object filter.
 - **returns**: (count int64, err error) - number of filtered items.
 
 
 #### GetListByFilter
 Gets a list of data items retrieved by a given filter and sorted according to sort parameters.
 
-This method shall be called by a func **getListByFilter** method from a child class that
+This method shall be called by a func **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*PostgresPersistence]()) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error)
+> (c [*PostgresPersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filter string, sort string, sel string) (items []T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter function to filter items
-- **sort**: interface{} - (optional) sorting parameters
-- **sel**: interface{} - (optional) projection parameters (not used yet)
-- **returns**: (items []interface{}, err error) - data list of filtered results.
+- **filter**: string - (optional) filter function to filter items
+- **sort**: string - (optional) sorting parameters
+- **sel**: string - (optional) projection parameters (not used yet)
+- **returns**: (items []T, err error) - data list of filtered results.
 
 
 #### GetOneRandom
@@ -270,11 +289,12 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a func getOneRandom method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*PostgresPersistence]()) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error)
+> (c [*PostgresPersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filter string) (item T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) a filter JSON object
-- **returns**: (item interface{}, err error) - random item.
+- **filter**: string - (optional) a filter JSON object.
+- **returns**: (item T, err error) - random item.
 
 
 #### GetPageByFilter
@@ -283,30 +303,35 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetPageByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*PostgresPersistence]()) GetPageByFilter(correlationId string, filter interface{}, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort interface{}, sel interface{}) (page [*cdata.DataPage](../../../commons/data/data_page), err error)
+> (c [*PostgresPersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filter string, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort string, sel string) (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
-- **filter**: interface{} - (optional) filter for JSON objects
+- **filter**: string - (optional) filter for JSON objects
 - **paging**: [*cdata.PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
-- **sort**: interface{} - (optional) sorting JSON object
-- **sel**: interface{} - (optional) projection JSON object
-- **returns**: (page [*cdata.DataPage](../../../commons/data/data_page), err error) - data page with filtered result
-
-
+- **sort**: string - (optional) sorting JSON object
+- **sel**: string - (optional) projection JSON object
+- **returns**: (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error) - data page with filtered result
 
 #### IsOpen
 Checks if the component is opened.
 
-> (c [*PostgresPersistence]()) IsOpen() bool
+> (c [*PostgresPersistence[T]]()) IsOpen() bool
 
 - **returns**: bool - True if the component has been opened and False otherwise.
 
+#### IsTerminated
+IsTerminated checks if the wee need to terminate process before close component.
+
+> (c *PostgresPersistence[T]) IsTerminated() bool
+
+- **returns**: bool - true if you need terminate your processes.
 
 #### Open
 Opens the component.
 
-> (c [*PostgresPersistence]()) Open(correlationId string) (err error)
+> (c [*PostgresPersistence[T]]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - returns error if not received.
 
@@ -314,7 +339,7 @@ Opens the component.
 #### QuoteIdentifier
 Adds a single quote to each side of the string.
 
-> (c [*PostgresPersistence]()) QuoteIdentifier(value string) string
+> (c [*PostgresPersistence[T]]()) QuoteIdentifier(value string) string
 
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
@@ -323,19 +348,19 @@ Adds a single quote to each side of the string.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*PostgresPersistence]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*PostgresPersistence[T]]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 #### UnsetReferences
 Unsets (clears) previously set references to dependent components.
 
-> (c [*PostgresPersistence]()) UnsetReferences()
+> (c [*PostgresPersistence[T]]()) UnsetReferences()
 
-### Examples
+#### QuotedTableName
+Return quoted SchemaName with TableName ("schema"."table")
+> (c [*PostgresPersistence[T]]()) QuotedTableName() string
 
-```go
-TODO: add example
-
-```
+- **returns**: string - quoted SchemaName.

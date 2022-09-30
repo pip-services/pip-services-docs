@@ -2,7 +2,7 @@
 type: docs
 title: "PostgresConnection"
 linkTitle: "PostgresConnection"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-postgres-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-postgres-gox"
 description: >
     PostgreSQL connection using the official driver.
 
@@ -82,18 +82,19 @@ The configuration options.
 ### Methods
 
 #### Close
-Closes the component and frees used resources.
+Closes a component and frees the used resources.
 
-> (c [*PostgresConnection]()) Close(correlationId string) error
+> (c [*PostgresConnection]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **returns**: error - returns error if not received.
+- **returns**: (err error) - error or nil if no errors occurred.
 
 
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*PostgresConnection]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*PostgresConnection]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
@@ -112,3 +113,20 @@ Gets the database name.
 > (c [*PostgresConnection]()) GetDatabaseName() string
 
 - **returns**: string - database name
+
+#### Open
+Opens the component.
+
+> (c [*PostgresConnection]()) Open(ctx context.Context, correlationId string) (err error)
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: (err error) - error or nil if no errors occurred.
+
+#### SetReferences
+Sets references to dependent components.
+
+> (c [*PostgresConnection]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
+
+- **ctx** context.Context - operation context.
+- **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

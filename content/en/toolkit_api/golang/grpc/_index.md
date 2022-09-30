@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "gRPC module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 no_list: true
 weight: 80
 description: > 
@@ -20,7 +20,7 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-grpc-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-grpc-gox@latest
 ```

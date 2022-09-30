@@ -9,7 +9,7 @@ import (
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	grpcclients "github.com/pip-services3-go/pip-services3-grpc-go/clients"
+	grpcclients "github.com/pip-services3-gox/pip-services3-grpc-gox/clients"
 )
 
 // gRPC server

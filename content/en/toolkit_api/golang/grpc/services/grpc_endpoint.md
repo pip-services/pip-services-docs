@@ -2,7 +2,7 @@
 type: docs
 title: "GrpcEndpoint"
 linkTitle: "GrpcEndpoint"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     Used for creating GRPC endpoints. 
 
@@ -54,8 +54,9 @@ AddInterceptors method are registers a middleware for methods in GRPC endpoint.
 #### Close
 Closes this endpoint and the GRPC server (service) that was opened earlier.
 
-> (c [*GrpcEndpoint]()) Close(correlationId string) (err error)
+> (c [*GrpcEndpoint]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -63,8 +64,9 @@ Closes this endpoint and the GRPC server (service) that was opened earlier.
 #### Configure
 Configures this HttpEndpoint using the given configuration parameters.
 
-> (c [*GrpcEndpoint]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*GrpcEndpoint]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 
@@ -79,8 +81,9 @@ Checks if the component is open.
 #### Open
 Opens a connection using the parameters resolved by the referenced connection resolver and creates a GRPC server (service) using the set options and parameters.
 
-> (c [*GrpcEndpoint]()) Open(correlationId string) (err error)
+> (c [*GrpcEndpoint]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -96,19 +99,19 @@ Registers a registerable object for dynamic endpoint discovery.
 #### RegisterCommandableMethod
 Registers a commandable method in the object's GRPC server (service) by the given name.
 
-> (c [*GrpcEndpoint]()) RegisterCommandableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error))
+> (c [*GrpcEndpoint]()) RegisterCommandableMethod(method string, schema [*cvalid.Schema](../../../commons/validate/schema), action func(ctx context.Context, correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result any, err error))
 
 - **method**: string - GRPC method name.
 - **schema**: [*cvalid.Schema](../../../commons/validate/schema) - schema to use for parameter validation.
-- **action**: func(correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result interface{}, err error) - action to perform at the given route.
+- **action**: func(correlationId string, args [*crun.Parameters](../../../commons/run/parameters)) (result any, err error) - action to perform at the given route.
 
 #### RegisterService
 Registers a service with related implementation
 
-> (c [*GrpcEndpoint]()) RegisterService(sd *grpc.ServiceDesc, implementation interface{})
+> (c [*GrpcEndpoint]()) RegisterService(sd *grpc.ServiceDesc, implementation any)
 
 - sd: *grpc.ServiceDesc - a GRPC service object.
-- implementation: interface{} - the service implementation methods.
+- implementation: any - the service implementation methods.
 
 #### SetReferences
 Sets references to this endpoint's logger, counters, and connection resolver.
@@ -127,16 +130,17 @@ Unregisters a registerable object, so that it is no longer used in dynamic
 ### Examples
 
 ```go
-func (c* Endpoint) MyMethod(config ConfigParams, references IReferences) {
+func (c* Endpoint) MyMethod(ctx context.Context, config ConfigParams, references IReferences) {
     endpoint := NewGrpcEndpoint();
     if c.config != nil {
-        endpoint.Configure(c._config);
+        endpoint.Configure(ctx, c._config);
     }
     if c.references != nil {
-        endpoint.SetReferences(c.references);
+        endpoint.SetReferences(ctx, c.references
     }
     ...
-    err := c.endpoint.Open(correlationId)
+
+    err := c.endpoint.Open(ctx, correlationId)
     if err != nil {
         // error ocured
         return err

@@ -71,9 +71,9 @@ go get -u github.com/pip-services3-gox/pip-services3-expressions-gox
 
 #### gRPC module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-grpc-go
+go get -u github.com/pip-services3-gox/pip-services3-grpc-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-grpc-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-grpc-gox)
 
 #### Kafka module
 ```bash

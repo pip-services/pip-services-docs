@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultGrpcFactory"
 linkTitle: "DefaultGrpcFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     Creates GRPC components based on their descriptors.
 ---

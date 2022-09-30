@@ -2,7 +2,7 @@
 type: docs
 title: "TestCommandableGrpcClient"
 linkTitle: "TestCommandableGrpcClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     GRPC client for automated testing.
 

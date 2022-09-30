@@ -1,4 +1,4 @@
 
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-grpc-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-grpc-gox@latest
 ```

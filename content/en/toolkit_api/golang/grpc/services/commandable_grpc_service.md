@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableGrpcService"
 linkTitle: "CommandableGrpcService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     Abstract service that receives commands via the GRPC protocol.
 
@@ -46,13 +46,13 @@ Creates a new instance of the service.
 
 > InheritCommandableGrpcService(overrides IGrpcServiceOverrides, name string) [*CommandableGrpcService]()
 
-- **overrides**: IGrpcServiceOverrides - TODO: add description
+- **overrides**: IGrpcServiceOverrides - structure thath overrides `Register` method.
 - **name**: string - service name.
 
 
 ### Methods
 
-#### register
+#### Register
 Registers all service routes in a gRPC endpoint.
 
 > (c *CommandableGrpcService) Register()
@@ -62,29 +62,29 @@ Registers all service routes in a gRPC endpoint.
 
 ```go
 type MyCommandableGrpcService struct {
-    *CommandableGrpcService
+	*CommandableGrpcService
 }
 func NewCommandableGrpcService() *CommandableGrpcService {
-    c := DummyCommandableGrpcService{}
-    c.CommandableGrpcService = grpcservices.NewCommandableGrpcService("myservice")
-    c.DependencyResolver.Put("controller", cref.NewDescriptor("mygroup", "controller", "default", "*", "*"))
-    return &c
+	c := DummyCommandableGrpcService{}
+	c.CommandableGrpcService = grpcservices.NewCommandableGrpcService("myservice")
+	c.DependencyResolver.Put("controller", cref.NewDescriptor("mygroup", "controller", "default", "*", "*"))
+	return &c
 }
 
 service := NewMyCommandableGrpcService();
-service.Configure(cconf.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", "8080",
-));
+service.Configure(ctx, cconf.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", "8080",
+))
 
-service.SetReferences(cref.NewReferencesFromTuples(
-   cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
-));
+service.SetReferences(ctx, cref.NewReferencesFromTuples(
+	cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
+))
 
-opnErr:= service.Open("123")
+opnErr := service.Open(ctx, "123")
 if opnErr == nil {
-    console.log("The GRPC service is running on port 8080");
+	fmt.Println("The GRPC service is running on port 8080")
 }
 ```
 

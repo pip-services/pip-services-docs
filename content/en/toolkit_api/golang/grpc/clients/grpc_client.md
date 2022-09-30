@@ -2,7 +2,7 @@
 type: docs
 title: "GrpcClient"
 linkTitle: "GrpcClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     Abstract client that calls remote endpoints using the GRPC protocol.
 
@@ -70,6 +70,8 @@ The configuration options.
 The connection timeout in milliseconds.
 > **ConnectTimeout**: time.Duration
 
+
+> **Tracer**: [*CompositeTracer](../../../components/trace/composite_tracers)()
 #### Timeout
 The invocation timeout in milliseconds.
 > **Timeout**: time.Duration
@@ -128,7 +130,7 @@ CallWithContext method are calls a remote method via gRPC protocol.
 
 > (c [*GrpcClient]()) CallWithContext(ctx context.Context, correlationId string, method string, request interface{}, response interface{}) error
 
-- **ctx**: context.Context - context
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - transaction id to trace execution through call chain.
 - **method**: string - gRPC method name
 - **request**: interface{} - request query parameters.
@@ -139,8 +141,9 @@ CallWithContext method are calls a remote method via gRPC protocol.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*GrpcClient]()) Close(correlationId string) error
+> (c [*GrpcClient]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error -  error or nil no errors occured.
 
@@ -148,8 +151,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*GrpcClient]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*GrpcClient]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -157,8 +161,9 @@ Configures the component by passing its configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a CounterTiming object that is used to end the time measurement.
 
-> (c [*GrpcClient]()) Instrument(correlationId string, name string) [*ccount.CounterTiming](../../../components/count/counter_timing)
+> (c [*GrpcClient]()) Instrument(ctx context.Context, correlationId string, name string) [*ccount.CounterTiming](../../../components/count/counter_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
 - **returns**: [*ccount.CounterTiming](../../../components/count/counter_timing) - CounterTiming object used to end the time measurement.
@@ -167,8 +172,9 @@ It returns a CounterTiming object that is used to end the time measurement.
 #### InstrumentError
 Adds instrumentation to error handling.
 
-> (c [*GrpcClient]()) InstrumentError(correlationId string, name string, inErr error, inRes interface{}) (result interface{}, err error)
+> (c [*GrpcClient]()) InstrumentError(ctx context.Context, correlationId string, name string, inErr error, inRes interface{}) (result interface{}, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
 - **inErr**: error - occured error
@@ -187,8 +193,9 @@ Checks if the component is open.
 #### open
 Opens the component.
 
-> (c [*GrpcClient]()) Open(correlationId string) error
+> (c [*GrpcClient]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error -  error or nil no errors occured.
 
@@ -196,45 +203,46 @@ Opens the component.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*GrpcClient]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*GrpcClient]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 ### Examples
 
 ```go
-type MyCommandableHttpClient struct{
- 	*CommandableHttpClient
+type MyGrpcClient struct{
+	*GrpcClient
 }
 
-func  (c *MyCommandableHttpClient) GetData(correlationId string, id string) (res interface{}, err error) {
+func  (c *MyGrpcClient) GetData(ctx context.Context, correlationId string, id string) (res any, err error) {
+	req := &testproto.MyDataIdRequest{
+	    CorrelationId: correlationId,
+	    mydataId:       id,
+	}
+	reply := new(testproto.MyData)
+	err = c.Call("get_mydata_by_id", correlationId, req, reply)
+	c.Instrument(correlationId, "mydata.get_one_by_id")
+	if err != nil {
+	    return nil, err
+	}
 
-    req := &testproto.MyDataIdRequest{
-        CorrelationId: correlationId,
-        mydataId:       id,
-    }
+	result = toMyData(reply)
+	if result != nil && result.Id == "" && result.Key == "" {
+	    result = nil
+	}
 
-    reply := new(testproto.MyData)
-    err = c.Call("get_mydata_by_id", correlationId, req, reply)
-    c.Instrument(correlationId, "mydata.get_one_by_id")
-    if err != nil {
-        return nil, err
-    }
-    result = toMyData(reply)
-    if result != nil && result.Id == "" && result.Key == "" {
-        result = nil
-    }
-    return result, nil
+	return result, nil
 }
 
-var client = NewMyCommandableHttpClient();
-client.Configure(NewConfigParamsFromTuples(
+var client = NewMyGrpcClient();
+client.Configure(ctx, NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080,
 ));
 
-result, err := client.GetData("123", "1")
+result, err := client.GetData(ctx, "123", "1")
 ...
 ```

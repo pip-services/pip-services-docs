@@ -3,7 +3,7 @@ type: docs
 title: "Clients"
 linkTitle: "Clients"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: >
     This package contains classes used to create GRPC clients.
 ---
@@ -18,6 +18,10 @@ Commandable services are generated automatically for [ICommandable](../../common
 
 #### [GrpcClient](grpc_client)
 Client that calls remote endpoints using the GRPC protocol.
+
+
+#### [Helpers](helpers)
+Helper module for processing responses.
 
 
 </div>

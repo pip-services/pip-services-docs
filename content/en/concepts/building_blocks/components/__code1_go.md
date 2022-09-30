@@ -7,7 +7,7 @@ import (
 
 	// ------------
 	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
-	gbuild "github.com/pip-services3-go/pip-services3-grpc-go/build"
+	gbuild "github.com/pip-services3-gox/pip-services3-grpc-gox/build"
 	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
 	factory "github.com/pip-templates/pip-templates-microservice-go/build"
 )

@@ -1,6 +1,6 @@
 
 ```go
 import (
-    grpcserv "github.com/pip-services3-go/pip-services3-grpc-go/services"
+    grpcserv "github.com/pip-services3-gox/pip-services3-grpc-gox/services"
 )
 ```

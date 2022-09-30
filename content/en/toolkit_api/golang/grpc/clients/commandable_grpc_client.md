@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableGrpcClient"
 linkTitle: "CommandableGrpcClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: > 
     Abstract client that calls a commandable GRPC service.
 
@@ -64,9 +64,9 @@ Calls a remote method via the GRPC commadable protocol.
 The call is made via Invoke method and all parameters are sent in args object.
 The complete route to remote method is defined as serviceName + '.' + name.
 
-> (c [*CommandableGrpcClient]()) CallCommand(prototype reflect.Type, name string, correlationId string, params [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*CommandableGrpcClient]()) CallCommand(ctx context.Context, name string, correlationId string, params [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
 
-- **prototype**: reflect.Type - a prototype for properly convert result
+- **ctx**: context.Context - operation context
 - **name**: string - name of the command to call.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: [*cdata.AnyValueMap](../../../commons/data/any_value_map) - command parameters.
@@ -78,29 +78,28 @@ The complete route to remote method is defined as serviceName + '.' + name.
 
 ```go
 type MyCommandableGrpcClient struct {
- *CommandableGrpcClient
-   ...
+	*CommandableGrpcClient
+   	...
 }
 
-func (c * MyCommandableGrpcClient) GetData(correlationId string, id string) (result *MyData, err error
-   params := cdata.NewEmptyStringValueMap()
-   params.Put("id", id)
-    calValue, calErr := c.CallCommand(MyDataType, "get_mydata_by_id", correlationId, params)
-    if calErr != nil {
-        return nil, calErr
-    }
-    result, _ = calValue.(*tdata.MyData)
-    return result, err
+func (c * MyCommandableGrpcClient) GetData(ctx context.Context, correlationId string, id string) (result *MyData, err error) {
+   	params := cdata.NewEmptyStringValueMap()
+   	params.Put("id", id)
+	response, calErr := c.CallCommand(MyDataType, "get_mydata_by_id", correlationId, params)
+	if calErr != nil {
+	    return nil, calErr
+	}
+	return grpcclients.HandleHttpResponse[*MyData](response, correlationId)
 }
 ...
 
 client := NewMyCommandableGrpcClient();
-client.Configure(cconf.NewConfigParamsFromTuples(
+client.Configure(ctx, cconf.NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080,
 ));
 
-result, err := client.GetData("123", "1")
+result, err := client.GetData(ctx, "123", "1")
 ...
 ```

@@ -3,7 +3,7 @@ type: docs
 title: "Test"
 linkTitle: "Test"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-grpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-grpc-gox"
 description: >
     This package contains classes used to define a Commandable GRPC client and a GRPC client that can be used for automated testing.
 ---

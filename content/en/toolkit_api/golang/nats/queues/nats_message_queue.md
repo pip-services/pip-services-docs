@@ -2,7 +2,7 @@
 type: docs
 title: "NatsMessageQueue"
 linkTitle: "NatsMessageQueue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     Message queue that sends and receives messages via the NATS message broker.
     
@@ -84,8 +84,9 @@ Subscribe option
 #### Clear
 Clears a component's state.
 
-> (c *NatsMessageQueue) Clear(correlationId string) (err error)
+> (c [*NatsMessageQueue[T]]) Clear(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
@@ -93,8 +94,9 @@ Clears a component's state.
 #### Close
 Closes a component and frees used resources.
 
-> (c *NatsMessageQueue) Close(correlationId string) error
+> (c [*NatsMessageQueue[T]]) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -102,8 +104,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c *NatsMessageQueue) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*NatsMessageQueue[T]]) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config:**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -111,8 +114,9 @@ Configures a component by passing its configuration parameters.
 Ends listening for incoming messages.
 When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
-> (c *NatsMessageQueue) EndListen(correlationId string)
+> (c [*NatsMessageQueue[T]]) EndListen(ctx context.Context, correlationId string)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
@@ -121,8 +125,9 @@ Listens for incoming messages and blocks the current thread until the queue is c
 
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
-> (c *NatsMessageQueue) Listen(correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
+> (c [*NatsMessageQueue[T]]) Listen(ctx context.Context, correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 - **returns**: error - error or nil no errors occured.
@@ -131,7 +136,7 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 #### OnMessage
 Checks if the message is not nil. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, puts the message into the queue.
 
-> (c *NatsMessageQueue) OnMessage(msg *nats.Msg)
+> (c [*NatsMessageQueue[T]]) OnMessage(msg *nats.Msg)
 
 - **msg**: *nats.Msg - message
 
@@ -139,8 +144,9 @@ Checks if the message is not nil. If this is the case, it deserializes and sends
 #### Open
 Opens the component.
 
-> (c *NatsMessageQueue) Open(correlationId string) error
+> (c [*NatsMessageQueue[T]]) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -149,8 +155,9 @@ Opens the component.
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns nil.
 
-> (c *NatsMessageQueue) Peek(correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsMessageQueue[T]]) Peek(ctx context.Context, correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - peeked message.
 
@@ -160,8 +167,9 @@ If there are no messages available in the queue, it returns an empty list.
 
 - Important: This method is not supported by NATS.
 
-> (c *NatsMessageQueue) PeekBatch(correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsMessageQueue[T]]) PeekBatch(ctx context.Context, correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int64 - maximum number of messages to peek.
 - **returns**: ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error) - list with peeked messages.
@@ -169,15 +177,16 @@ If there are no messages available in the queue, it returns an empty list.
 #### ReadMessageCount
 Reads the current number of messages in the queue to be delivered.
 
-> (c *NatsMessageQueue) ReadMessageCount() (count int64, err error)
+> (c [*NatsMessageQueue[T]]) ReadMessageCount() (count int64, err error)
 
 - ***returns**: (count int64, err error) - number of messages in the queue.
 
 #### Receive
 Receives an incoming message and removes it from the queue.
 
-> (c *NatsMessageQueue) Receive(correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsMessageQueue[T]]) Receive(ctx context.Context, correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - checks if the message comes from the right topic. If this is the case, it deserializes and sends the message to the receiver if it's set. Otherwise, it puts the message into the queue.
 - **waitTimeout**: time.Duration - timeout (milliseconds) to wait for a message to come.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
@@ -185,7 +194,7 @@ Receives an incoming message and removes it from the queue.
 
 #### Subscribe
 Subscribes to a subject.
-> (c *NatsMessageQueue) subscribe(correlationId string) error
+> (c [*NatsMessageQueue[T]]) subscribe(correlationId string) error
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
@@ -194,20 +203,24 @@ Subscribes to a subject.
 ### Examples
 
 ```go
+ctx := context.Background()
 queue := NewNatsMessageQueue("myqueue")
-queue.Configure(cconf.NewConfigParamsFromTuples(
-  "subject", "mytopic",
-  "queue_group", "mygroup",
-  "connection.protocol", "nats"
-  "connection.host", "localhost"
-  "connection.port", 1883
+queue.Configure(ctx, cconf.NewConfigParamsFromTuples(
+	"subject", "mytopic",
+	"queue_group", "mygroup",
+	"connection.protocol", "nats"
+	"connection.host", "localhost"
+	"connection.port", 1883
 ))
-queue.open("123")
-queue.Send("123", NewMessageEnvelope("", "mymessage", "ABC"))
-message, err := queue.Receive("123")
+
+_ = queue.Open(ctx, "123")
+
+_ = queue.Send(ctx, "123", NewMessageEnvelope("", "mymessage", "ABC"))
+
+message, err := queue.Receive(ctx, "123", 10000*time.Milliseconds)
 if (message != nil) {
 	...
-	queue.Complete("123", message);
+	queue.Complete(ctx, message)
 }
 ```
 

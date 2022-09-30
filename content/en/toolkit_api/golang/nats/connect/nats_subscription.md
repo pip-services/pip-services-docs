@@ -2,7 +2,7 @@
 type: docs
 title: "NatsSubscription"
 linkTitle: "NatsSubscription"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     Defines subscription fields.
 

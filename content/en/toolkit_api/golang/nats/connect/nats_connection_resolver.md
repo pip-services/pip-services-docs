@@ -2,7 +2,7 @@
 type: docs
 title: "NatsConnectionResolver"
 linkTitle: "NatsConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     Helper class that resolves NATS connection and credential parameters, 
     validates them and generates connection options.
@@ -63,8 +63,9 @@ Composes NATS connection options from connection and credential parameters.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*NatsConnectionResolver]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*NatsConnectionResolver]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -80,6 +81,7 @@ Resolves NATS connection options from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*NatsConnectionResolver]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*NatsConnectionResolver]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

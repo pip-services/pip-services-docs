@@ -2,7 +2,7 @@
 type: docs
 title: "NatsAbstractMessageQueue"
 linkTitle: "NatsAbstractMessageQueue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     Abstract NATS message queue with the ability to connect to a NATS server.
     
@@ -11,7 +11,7 @@ description: >
 **Implements:** [MessageQueue](../../../messaging/queues/message_queue)
 
 
-### Description
+### DescriptionConfigure
 
 The NatsAbstractMessageQueue class allows you to define abstract NATS message queues with the ability to connect to NATS servers.
 
@@ -67,16 +67,18 @@ permanently or/and send to the dead letter queue.
 
 - Important: This method is not supported by NATS.
 
-> (c [*NatsAbstractMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
+> (c [*NatsAbstractMessageQueue]()) Abandon(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
 - **returns**: (err error) - error or nil if no errors occurred.
 
 #### Clear
 Clears a component's state.
 
-> (c [*NatsAbstractMessageQueue]()) Clear(correlationId string) error
+> (c [*NatsAbstractMessageQueue]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
@@ -84,8 +86,9 @@ Clears a component's state.
 #### Close
 Closes a component and frees the used resources.
 
-> (c [*NatsAbstractMessageQueue]()) Close(correlationId string) (err error)
+> (c [*NatsAbstractMessageQueue]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
@@ -95,8 +98,9 @@ This method is usually used to remove the message after successful processing.
 
 - Important: This method is not supported by NATS.
 
-> (c [*NatsAbstractMessageQueue]()) Complete(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
+> (c [*NatsAbstractMessageQueue]()) Complete(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) (err error)
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -104,8 +108,9 @@ This method is usually used to remove the message after successful processing.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*NatsAbstractMessageQueue]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*NatsAbstractMessageQueue]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config:**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -131,19 +136,30 @@ Permanently removes a message from the queue and sends it to the dead letter que
 
 - Important: This method is not supported by NATS.
 
-> (c [*NatsAbstractMessageQueue]()) MoveToDeadLetter(message *cqueues.MessageEnvelope) (err error)
+> (c [*NatsAbstractMessageQueue]()) MoveToDeadLetter(ctx context.Context, message *cqueues.MessageEnvelope) (err error)
 
+- **ctx**: context.Context - operation context.
 - **message**: [MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 - **returns**: (err error) - error or nil if no errors occurred.
 
 #### Open
 Opens the component.
 
-> (c [*NatsAbstractMessageQueue]()) Open(correlationId string) (err error)
+> (c [*NatsAbstractMessageQueue]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
+#### OpenWithParams
+OpenWithParams method are opens the component with given connection and credential parameters.
+
+> c *NatsAbstractMessageQueue) OpenWithParams(ctx context.Context, correlationId string, connections [[]*ConnectionParams](../../../components/connect/connection_params), credential [*CredentialParams](../../../components/auth/credential_params))
+
+- **ctx**: context.Context - operation context
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **connections**: [[]*ConnectionParams](../../../components/connect/connection_params) - connection parameters
+- **credential**: [*CredentialParams](../../../components/auth/credential_params) - credential parameters
 
 #### ReadMessageCount
 Reads the current number of messages in the queue to be delivered.
@@ -158,8 +174,9 @@ This method is usually used to extend the message processing time.
 
 - Important: This method is not supported by NATS.
 
-> (c [*NatsAbstractMessageQueue]()) RenewLock(message [*MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout time.Duration) (err error)
+> (c [*NatsAbstractMessageQueue]()) RenewLock(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout time.Duration) (err error)
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
 - **returns**: (err error) - error or nil if no errors occurred.
@@ -168,8 +185,9 @@ This method is usually used to extend the message processing time.
 #### Send
 Sends a message into the queue.
 
-> (c [*NatsAbstractMessageQueue]()) Send(correlationId string, envelop [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
+> (c [*NatsAbstractMessageQueue]()) Send(ctx context.Context, correlationId string, envelop [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
 - **returns**: error - error or nil if no errors occurred.
@@ -177,8 +195,9 @@ Sends a message into the queue.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*NatsAbstractMessageQueue]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*NatsAbstractMessageQueue]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx** context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 

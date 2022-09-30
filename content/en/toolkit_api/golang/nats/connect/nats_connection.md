@@ -2,7 +2,7 @@
 type: docs
 title: "NatsConnection"
 linkTitle: "NatsConnection"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     NATS connection using the default driver.
 
@@ -105,8 +105,9 @@ Raises an error if the connection is closed.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*NatsConnection]()) Close(correlationId string) error
+> (c [*NatsConnection]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -114,8 +115,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*NatsConnection]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*NatsConnection]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -157,8 +159,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*NatsConnection]()) Open(correlationId string) error
+> (c [*NatsConnection]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -166,8 +169,9 @@ Opens the component.
 #### Publish
 Publishes a message to a specified topic.
 
-> (c [*NatsConnection]()) Publish(subject string, message *nats.Msg) error
+> (c [*NatsConnection]()) Publish(ctx context.Context, subject string, message *nats.Msg) error
 
+- **ctx**: context.Context - operation context.
 - **subject**: string - subject(topic) where the message will be placed
 - **message**: *nats.Msg - message to be published
 - **returns**: error - error or nil if no errors occurred.
@@ -185,16 +189,18 @@ If the connection doesn't support this function, it returns an empty list.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*NatsConnection]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*NatsConnection]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Subscribe
 Subscribes to a topic.
 
-> (c [*NatsConnection]()) Subscribe(subject string, queue string, listener [INatsMessageListener](../inats_message_listener)) error
+> (c [*NatsConnection]()) Subscribe(ctx context.Context, subject string, queue string, listener [INatsMessageListener](../inats_message_listener)) error
 
+- **ctx**: context.Context - operation context.
 - **subject**: string - subject(topic) name
 - **options**: string - subscription options
 - **listener**: [INatsMessageListener](../inats_message_listener) - message listener
@@ -204,8 +210,9 @@ Subscribes to a topic.
 #### Unsubscribe
 Unsubscribes from a previously subscribed topic.
 
-> (c [*NatsConnection]()) Unsubscribe(subject string, queue string, listener [INatsMessageListener](../inats_message_listener)) error
+> (c [*NatsConnection]()) Unsubscribe(ctx context.Context, subject string, queue string, listener [INatsMessageListener](../inats_message_listener)) error
 
+- **ctx**: context.Context - operation context.
 - **subject**: string - subject(topic) name
 - **listener**: [INatsMessageListener](../inats_message_listener) - message listener
 - **returns**: error - error or nil no errors occured.

@@ -2,7 +2,7 @@
 type: docs
 title: "NatsBareMessageQueue"
 linkTitle: "NatsBareMessageQueue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-nats-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-nats-gox"
 description: >
     Message queue that sends and receives messages via a NATS message broker.
     
@@ -60,18 +60,20 @@ Creates a new instance of the message queue.
 Ends listening for incoming messages.
 When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
-> (c *NatsBareMessageQueue) EndListen(correlationId string)
+> (c [*NatsBareMessageQueue[T]]) EndListen(ctx context.Context, correlationId string)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### listen
+#### Listen
 Listens for incoming messages and blocks the current thread until the queue is closed.
 
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
-> (c *NatsBareMessageQueue) Listen(correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
+> (c [*NatsBareMessageQueue[T]]) Listen(ctx context.Context, correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 - **returns**: error - error or nil if no errors occurred.
@@ -81,8 +83,9 @@ See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns nil.
 
-> (c *NatsBareMessageQueue) Peek(correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsBareMessageQueue[T]]) Peek(ctx context.Context, correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - peeked message.
 
@@ -92,8 +95,9 @@ If there are no messages available in the queue, it returns an empty list.
 
 - Important: This method is not supported by NATS.
 
-> (c *NatsBareMessageQueue) PeekBatch(correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsBareMessageQueue[T]]) PeekBatch(ctx context.Context, correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int64 - maximum number of messages to peek.
 - **returns**: ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error) - list with peeked messages.
@@ -101,8 +105,9 @@ If there are no messages available in the queue, it returns an empty list.
 #### Receive
 Receives an incoming message and removes it from the queue.
 
-> (c *NatsBareMessageQueue) Receive(correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*NatsBareMessageQueue[T]]) Receive(ctx context.Context, correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
@@ -111,22 +116,24 @@ Receives an incoming message and removes it from the queue.
 ### Examples
 
 ```go
+ctx := context.Background()
 queue := NewNatsBareMessageQueue("myqueue")
-queue.Configure(cconf.NewConfigParamsFromTuples(
-  "subject", "mytopic",
-  "queue_group", "mygroup",
-  "connection.protocol", "nats"
-  "connection.host", "localhost"
-  "connection.port", 1883
+queue.Configure(ctx, cconf.NewConfigParamsFromTuples(
+	"subject", "mytopic",
+	"queue_group", "mygroup",
+	"connection.protocol", "nats"
+	"connection.host", "localhost"
+	"connection.port", 1883,
 ))
 
-queue.open("123")
-queue.Send("123", NewMessageEnvelope("", "mymessage", "ABC"))
-message, err := queue.Receive("123")
+_ = queue.Open(ctx, "123")
 
+_ = queue.Send(ctx, "123", NewMessageEnvelope("", "mymessage", "ABC"))
+
+message, err := queue.Receive(ctx, "123", 10000*time.Milliseconds)
 if (message != nil) {
 	...
-	queue.Complete("123", message);
+	queue.Complete(ctx, message);
 }
 ```
 

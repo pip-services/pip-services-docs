@@ -2,7 +2,7 @@
 type: docs
 title: "KafkaSubscription"
 linkTitle: "KafkaSubscription"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-kafka-gox"
 description: >
     Defines fields for Kafka subscriptions.
 

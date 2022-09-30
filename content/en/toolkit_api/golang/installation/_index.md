@@ -77,9 +77,9 @@ go get -u github.com/pip-services3-gox/pip-services3-grpc-gox
 
 #### Kafka module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-kafka-go
+go get -u github.com/pip-services3-gox/pip-services3-kafka-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-kafka-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-kafka-gox)
 
 #### Memcached module
 ```bash

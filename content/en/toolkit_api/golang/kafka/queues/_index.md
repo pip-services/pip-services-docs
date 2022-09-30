@@ -3,7 +3,7 @@ type: docs
 title: "Queues"
 linkTitle: "Queues"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-kafka-gox"
 description: >
     This package contains a class used to create message queues that send and receive messages via the Kafka message broker.
     

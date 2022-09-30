@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultKafkaFactory"
 linkTitle: "DefaultKafkaFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-kafka-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-kafka-gox"
 description: > 
     Creates [KafkaMessageQueue](../../queues/kafka_message_queue) components by their descriptors.
 ---

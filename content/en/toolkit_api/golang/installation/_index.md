@@ -89,9 +89,9 @@ go get -u github.com/pip-services3-gox/pip-services3-memcached-gox
 
 #### Messaging module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-messaging-go
+go get -u github.com/pip-services3-gox/pip-services3-messaging-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-messaging-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-messaging-gox)
 
 #### MongoDB module
 ```bash

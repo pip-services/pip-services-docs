@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Messaging module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 no_list: true
 weight: 90
 description: > 
@@ -20,7 +20,7 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-messaging-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-messaging-gox@latest
 ```
 
 TODO: add example

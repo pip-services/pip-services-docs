@@ -2,7 +2,7 @@
 type: docs
 title: "MemoryMessageQueueFactory"
 linkTitle: "MemoryMessageQueueFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     Creates [MemoryMessageQueue](../../queues/memory_message_queue) components based on their descriptors.
    
@@ -30,8 +30,9 @@ Creates a new instance of the factory.
 #### CreateQueue
 Creates a message queue component and assigns its name.
 
-> (c [*MemoryMessageQueueFactory]()) CreateQueue(name string) [queues.IMessageQueue](../../queues/imessage_queue)
+> (c [*MemoryMessageQueueFactory]()) CreateQueue(ctx context.Context, name string) [queues.IMessageQueue](../../queues/imessage_queue)
 
+- **ctx**: context.Context - operation context.
 - **name**: string - name of the created message queue.
 - **returns**: [queues.IMessageQueue](../../queues/imessage_queue) - message queue.
 

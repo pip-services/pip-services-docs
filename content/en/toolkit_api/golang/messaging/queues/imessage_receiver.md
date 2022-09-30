@@ -2,7 +2,7 @@
 type: docs
 title: "IMessageReceiver"
 linkTitle: "IMessageReceiver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
   Callback interface to receive incoming messages.
 ---
@@ -18,8 +18,9 @@ Receives an incoming message from the queue.
 
 See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_queue)
 
-> ReceiveMessage(envelope [*MessageEnvelope](../message_envelope), queue IMessageQueue) (err error)
+> ReceiveMessage(ctx context.Context, envelope [*MessageEnvelope](../message_envelope), queue IMessageQueue) (err error)
 
+- **ctx**: context.Context - operation context.
 - **envelope**: [*MessageEnvelope](../message_envelope) - incoming message,
 - **queue**: [IMessageQueue](../imessage_queue) - queue where the message comes from.
 - **returns**: (err error) -  error or nil no errors occured.
@@ -27,40 +28,17 @@ See also [MessageEnvelope](../message_envelope), [IMessageQueue](../imessage_que
 ### Examples
 
 ```go
-package main
-
-import (
-	"fmt"
-	"time"
-
-	queues "github.com/pip-services3-go/pip-services3-messaging-go/queues"
-)
-
-func main() {
-	messageQueue := queues.NewMemoryMessageQueue("myqueue")
-
-	go messageQueue.Listen("123", NewMyMessageReceiver())
-
-	opnErr := messageQueue.Open("123")
-	if opnErr == nil {
-		messageQueue.Send("123", queues.NewMessageEnvelope("", "mymessage", []byte("ABC"))) // Output in console: "Received message: ABC"
-	}
-
-	time.Sleep(500 * time.Millisecond)
-
-	opnErr = messageQueue.Close("123")
-}
-
 type MyMessageReceiver struct {
+	func (c*MyMessageReceiver) ReceiveMessage(ctx context.Context, envelop MessageEnvelop, queue IMessageQueue) {
+		fmt.Println("Received message: " + envelop.GetMessageAsString())
+	}
 }
 
-func (c *MyMessageReceiver) ReceiveMessage(envelope *queues.MessageEnvelope, queue queues.IMessageQueue) (err error) {
-	fmt.Println("Received message: " + envelope.GetMessageAsString())
-	return nil
-}
+messageQueue := NewMemoryMessageQueue()
+messageQueue.Listen("123", NewMyMessageReceiver())
 
-func NewMyMessageReceiver() *MyMessageReceiver {
-	return &MyMessageReceiver{}
+opnErr := messageQueue.Open("123")
+if opnErr == nil{
+	messageQueue.Send("123", NewMessageEnvelope("", "mymessage", "ABC")) // Output in console: "Received message: ABC"
 }
-
 ```

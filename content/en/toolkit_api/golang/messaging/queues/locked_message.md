@@ -2,7 +2,7 @@
 type: docs
 title: "LockedMessage"
 linkTitle: "LockedMessage"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     Data object used to store and lock incoming messages in [MemoryMessageQueue](../memory_message_queue).  
 ---

@@ -3,7 +3,7 @@ type: docs
 title: "Queues"
 linkTitle: "Queues"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     This package contains interfaces and classes used to create message queues. Additionally, it contains classes used to create some specific types of message queues, such as cached and memory message queues.
 ---

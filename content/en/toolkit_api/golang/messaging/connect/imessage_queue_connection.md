@@ -2,7 +2,7 @@
 type: docs
 title: "IMessageQueueConnection"
 linkTitle: "IMessageQueueConnection"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     Defines an interface for message queue connections
 ---

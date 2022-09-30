@@ -2,7 +2,7 @@
 type: docs
 title: "IMessageQueueFactory"
 linkTitle: "IMessageQueueFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: > 
     Creates message queue componens.
 ---

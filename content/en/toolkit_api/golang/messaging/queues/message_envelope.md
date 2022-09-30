@@ -2,7 +2,7 @@
 type: docs
 title: "MessageEnvelope"
 linkTitle: "MessageEnvelope"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     Allows adding additional information to messages. 
 ---
@@ -31,6 +31,14 @@ Creates a new [MessageEnvelope](), which adds a correlation id, message id, and 
 NewMessageEnvelope method are creates an empty MessageEnvelope
 
 > NewEmptyMessageEnvelope() [*MessageEnvelope]()
+
+#### NewMessageEnvelopeFromObject
+
+> NewMessageEnvelopeFromObject(correlationId string, messageType string, message any) [*MessageEnvelope]()
+
+- **correlationId**: string (optional) transaction id to trace execution through call chain.
+- **messageType**: string a string value that defines the message"s type.
+- **message**: any the data object being sent/received.
 
 ### Fields
 
@@ -83,10 +91,10 @@ TODO: add description
 Returns any the value that was stored in this message as a JSON string.  
 See also [SetMessageAsObject](#setmessageasobject)
 
-> (c [*MessageEnvelope]()) GetMessageAs(value interface{}) interface{}
+> (c [*MessageEnvelope]()) GetMessageAs(value any) any
 
-- **value**: interface{} - TODO: add description.
-- **returns**: interface{} - value that was stored in this message as a JSON string.
+- **value**: any - TODO: add description.
+- **returns**: any - value that was stored in this message as a JSON string.
 
 #### GetMessageAsString
 Returns the information stored in this message as a UTF-8 encoded string.
@@ -95,34 +103,28 @@ Returns the information stored in this message as a UTF-8 encoded string.
 
 - **returns**: string - information stored in this message as a UTF-8 encoded string.
 
-#### GetMessageAsJson
-GetMessageAsJson method are returns the value that was stored in this message as a JSON string.
+#### GetMessageAs
+GetMessageAs method are returns the value that was stored in this message as object.
 
-> (c [*MessageEnvelope]()) GetMessageAsJson() interface{}
+> GetMessageAs[T any](envelope [*MessageEnvelope]()) (T, error)
 
-- **returns**: interface{} - value as a JSON string.
+- **envelope**: [*MessageEnvelope]() - message envelope obj.
+- **returns**: (T, error) - result struct or error.
 
 #### GetReference
 Returns the lock token that this [MessageEnvelope]() references.
 
-> (c [*MessageEnvelope]()) GetReference() interface{}
+> (c [*MessageEnvelope]()) GetReference() any
 
-- **returns**: interface{} - lock token that this [MessageEnvelope]() references.
+- **returns**: any - lock token that this [MessageEnvelope]() references.
 
 #### SetMessageAsObject
 Stores the given value as an object.
 See also [GetMessageAs](#getmessageas)
 
-> (c [*MessageEnvelope]()) SetMessageAsObject(value interface{})
+> (c [*MessageEnvelope]()) SetMessageAsObject(value any)
 
-- **value**: interface{} -  value to convert to JSON and store in this message.
-
-#### SetMessageAsJson
-SetMessageAsJson method are stores the given value as a JSON string.
-
-> (c [*MessageEnvelope]()) SetMessageAsJson(value interface{})
-
-- **value**: interface{} - the value to convert to JSON and store in this message.
+- **value**: any -  value to convert to JSON and store in this message.
 
 #### SetMessageAsString
 Stores the given string.
@@ -134,9 +136,9 @@ Stores the given string.
 #### SetReference
 Sets a lock token reference for this [MessageEnvelope]().
 
-> (c [*MessageEnvelope]()) SetReference(value interface{})
+> (c [*MessageEnvelope]()) SetReference(value any)
 
-- **value**: interface{} - lock token to reference the message envelope.
+- **value**: any - lock token to reference the message envelope.
 
 #### String
 Converts this [MessageEnvelope]() to a string, using the following format:  

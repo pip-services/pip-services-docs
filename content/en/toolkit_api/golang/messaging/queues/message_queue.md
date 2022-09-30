@@ -2,7 +2,7 @@
 type: docs
 title: "MessageQueue"
 linkTitle: "MessageQueue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-messaging-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-messaging-gox"
 description: >
     Abstract message queue that is used as a basis for specific message queue implementations.
 ---
@@ -88,8 +88,9 @@ Component used to store the message queue.
 Listens for incoming messages without blocking the current thread.  
 See also [Listen](#listen), [IMessageReceiver](../imessage_receiver)
 
-> (c [*MessageQueue]()) BeginListen(correlationId string, receiver [IMessageReceiver](../imessage_receiver))
+> (c [*MessageQueue]()) BeginListen(ctx context.Context, correlationId string, receiver [IMessageReceiver](../imessage_receiver))
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
@@ -106,8 +107,9 @@ Raise an exception if queue wasn't opened or *nil* otherwise
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*MessageQueue]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*MessageQueue]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### Capabilities
@@ -116,16 +118,6 @@ Gets the queue capabilities
 > (c [*MessageQueue]()) Capabilities() [*MessagingCapabilities](../messaging_capabilities)
 
 - **returns**: [*MessagingCapabilities](../messaging_capabilities) - queue's capabilities object.
-
-
-#### Listen
-Listens for incoming messages and blocks the current thread until the queue is closed.  
-See also [IMessageReceiver](../imessage_receiver), [receive](#receive)
-
-> `public abstract` listen(correlationId: string, receiver: [IMessageReceiver](../imessage_receiver)): void
-
-- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **receiver**: [IMessageReceiver](../imessage_receiver) - receiver used to receive incoming messages.
 
 
 #### Name
@@ -138,8 +130,9 @@ Gets the queue name
 #### Open
 Opens the component.
 
-> (c [*MessageQueue]()) Open(correlationId string) error
+> (c [*MessageQueue]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error -  error or nil no errors occured.
 
@@ -147,19 +140,21 @@ Opens the component.
 Sends an object into the queue.
 Before sending the object is converted into JSON string and wrapped in a [MessageEnvelope](../message_envelope).
 
-> (c [*MessageQueue]()) SendAsObject(correlationId string, messageType string, message interface{}) (err error)
+> (c [*MessageQueue]()) SendAsObject(ctx context.Context, correlationId string, messageType string, message any) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageType**: string - a message type.
-- **message**: interface{} - an object value to be sent.
+- **message**: any - an object value to be sent.
 - **returns**: (err error) -  error or nil no errors occured.
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MessageQueue]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*MessageQueue]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 #### String
@@ -173,8 +168,9 @@ Gets a string representation of the object.
 #### OpenWithParams
 Opens the component with the given connection and credential parameters.
 
-> OpenWithParams(correlationId string, connections [][*cconn.ConnectionParams](../../../components/connect/connection_params), credential [*cauth.CredentialParams](../../../components/auth/credential_params)) error
+> OpenWithParams(ctx context.Context, correlationId string, connections [][*cconn.ConnectionParams](../../../components/connect/connection_params), credential [*cauth.CredentialParams](../../../components/auth/credential_params)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **connections**: [][*cconn.ConnectionParams](../../../components/connect/connection_params) - connection parameters.
 - **credentials**: [*cauth.CredentialParams](../../../components/auth/credential_params) - credential parameters.

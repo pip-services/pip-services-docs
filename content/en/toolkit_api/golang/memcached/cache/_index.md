@@ -3,7 +3,7 @@ type: docs
 title: "Cache"
 linkTitle: "Cache"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-memcached-gox"
 description: >
     This package contains a class used to create distributed caches that store values in Memcached's caching service.
 ---

@@ -1,6 +1,6 @@
 
 ```go
 import (
-    memlock "github.com/pip-services3-go/pip-services3-memcached-go/lock"
+    memlock "github.com/pip-services3-gox/pip-services3-memcached-gox/lock"
 )
 ```

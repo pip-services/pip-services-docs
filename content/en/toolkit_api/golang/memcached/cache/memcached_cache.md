@@ -2,7 +2,7 @@
 type: docs
 title: "MemcachedCache"
 linkTitle: "MemcachedCache"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-memcached-gox"
 description: >
     Distributed cache that stores values in Memcached's caching service.
 ---
@@ -44,45 +44,58 @@ The MemcachedCache class allows you to create distributed cache that stores valu
 #### NewMemcachedCache
 Creates a new instance of this lock.
 
-> NewMemcachedCache() [*MemcachedCache]()
+> NewMemcachedCache[T any]() [*MemcachedCache[T]]()
 
 ### Methods
 
 #### Close
 Closes a component and frees used resources.
 
-> (c [*MemcachedCache]()) Close(correlationId string) error
+> (c [*MemcachedCache[T]]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred
+
+#### Contains
+Contains check is value stores
+
+> Contains(ctx context.Context, correlationId string, key string) bool
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id to trace execution through call chain.
+- **key**: string - a unique value key.
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*MemcachedCache]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MemcachedCache[T]]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*MemcachedCache]()) IsOpen() bool
+> (c [*MemcachedCache[T]]()) IsOpen() bool
 
 - **returns**: bool - true if the component is open and false otherwise.
 
 
 #### Open
 Opens the component.
-> (c [*MemcachedCache]()) Open(correlationId string) error
+> (c [*MemcachedCache[T]]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred
 
 #### Remove
 Removes a value from the cache by its key.
 
-> (c [*MemcachedCache]()) Remove(correlationId string, key string) error
+> (c [*MemcachedCache[T]]()) Remove(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
 - **returns**: error - error or nil if no errors occurred
@@ -91,48 +104,52 @@ Removes a value from the cache by its key.
 Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or expired, it returns nil.
 
-> (c [*MemcachedCache]()) Retrieve(correlationId string, key string) (value interface{}, err error)
+> (c [*MemcachedCache[T]]()) Retrieve(ctx context.Context, correlationId string, key string) (value T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **return**: (value interface{}, err error) - cached value or *nil* if nothing was found.
+- **return**: (value T, err error) - cached value or *nil* if nothing was found.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MemcachedCache]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*MemcachedCache[T]]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### Store
 Stores a value in the cache with an expiration time.
 
-> (c [*MemcachedCache]()) Store(correlationId string, key string, value interface{}, timeout int64) (result interface{}, err error)
+> (c [*MemcachedCache[T]]()) Store(ctx context.Context, correlationId string, key string, value T, timeout int64) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
-- **value**: interface{} - value to store.
+- **value**: T - value to store.
 - **timeout**: int64 - expiration timeout in milliseconds.
-- **returns**: (result interface{}, err error) - stored value
+- **returns**: (result T, err error) - stored value
 
 
 ### Examples
 
 ```go
-lock := NewMemcachedLock();
-lock.Configure(cconf.NewConfigParamsFromTuples(
+ctx := context.Background()
+
+cache := NewMemcachedCache[string]()
+cache.Configure(ctx, cconf.NewConfigParamsFromTuples(
   "host", "localhost",
   "port", 11211,
-));
-err := lock.Open("123")
-if err != nil {
+))
+err := cache.Open(ctx, "123")
   ...
+ret, err := cache.Store(ctx, "123", "key1", []byte("ABC"))
+if err != nil {
+	...
 }
-result, err := lock.TryAcquireLock("123", "key1", 3000)
-if result {
-	// Processing...
-}
-err = lock.ReleaseLock("123", "key1")
-// Continue...
+res, err := cache.Retrive(ctx, "123", "key1")
+value, _ := res.([]byte)
+fmt.Println(string(value))  // Result: "ABC"
 
 ```

@@ -83,9 +83,9 @@ go get -u github.com/pip-services3-gox/pip-services3-kafka-gox
 
 #### Memcached module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-memcached-go
+go get -u github.com/pip-services3-gox/pip-services3-memcached-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-memcached-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-memcached-gox)
 
 #### Messaging module
 ```bash

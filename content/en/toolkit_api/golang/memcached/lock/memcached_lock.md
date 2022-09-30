@@ -2,7 +2,7 @@
 type: docs
 title: "MemcachedLock"
 linkTitle: "MemcachedLock"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-memcached-gox"
 description: >
     Distributed lock that is implemented based on Memcached's caching service.
  
@@ -47,16 +47,18 @@ The MemcachedLock class allows you to create a lock that is implemented based on
 #### Close
 Closes a component and frees used resources.
 
-> (c [*MemcachedLock]()) Close(correlationId string) error
+> (c [*MemcachedLock]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*MemcachedLock]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MemcachedLock]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
@@ -67,19 +69,21 @@ Checks if the component is open.
 - **returns**: bool - true if the component is open and false otherwise.
 
 
-#### open
+#### Open
 Opens the component.
 
-> (c [*MemcachedLock]()) Open(correlationId string) error
+> (c [*MemcachedLock]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> (c [*MemcachedLock]()) ReleaseLock(correlationId string, key string) error
+> (c [*MemcachedLock]()) ReleaseLock(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
 - **returns**: error - error or nil if no errors occurred
@@ -97,8 +101,9 @@ Sets references to dependent components.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> (c [*MemcachedLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (result bool, err error)
+> (c [*MemcachedLock]()) TryAcquireLock(ctx context.Context, correlationId string, key string, ttl int64) (result bool, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
 - **ttl**: int64 - lock timeout (time to live) in milliseconds.
@@ -107,22 +112,23 @@ It returns immediately a positive or negative result.
 
 ### Examples
 ```go
-lock := NewMemcachedLock();
-lock.Configure(cconf.NewConfigParamsFromTuples(
+ctx := context.Background()
+
+lock := NewMemcachedLock[string]()
+lock.Configure(ctx, cconf.NewConfigParamsFromTuples(
   "host", "localhost",
   "port", 11211,
-));
+))
 
-err := lock.Open("123")
+err := lock.Open(ctx, "123")
 if err != nil {
   ...
 }
 
-result, err := lock.TryAcquireLock("123", "key1", 3000)
+result, err := lock.TryAcquireLock(ctx, "123", "key1", 3000)
 if result {
 	// Processing...
 }
-
-err = lock.ReleaseLock("123", "key1")
+err = lock.ReleaseLock(ctx, "123", "key1")
 // Continue...
 ```

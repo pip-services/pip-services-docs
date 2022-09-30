@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultMemcachedFactory"
 linkTitle: "DefaultMemcachedFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-memcached-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-memcached-gox"
 description: > 
     Creates Memcached components by their descriptors.
     

@@ -2,7 +2,7 @@
 type: docs
 title: "RedisLock"
 linkTitle: "RedisLock"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-redis-gox"
 description: >
     Distributed lock that is implemented based on the Redis in-memory database.
 
@@ -50,16 +50,18 @@ Creates a new instance of this lock.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*RedisLock]()) Close(correlationId string) error
+> (c [*RedisLock]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*RedisLock]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*RedisLock]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**; context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -73,16 +75,18 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*RedisLock]()) Open(correlationId string) error
+> (c [*RedisLock]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
 #### ReleaseLock
 Releases a prevously acquired lock by its key.
 
-> (c [*RedisLock]()) ReleaseLock(correlationId string, key string) error
+> (c [*RedisLock]()) ReleaseLock(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to release.
 - **returns**: error - error or nil if no errors occurred.
@@ -90,8 +94,9 @@ Releases a prevously acquired lock by its key.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*RedisLock]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*RedisLock]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
@@ -99,8 +104,9 @@ Sets references to dependent components.
 Makes a single attempt to acquire a lock by its key.
 It returns immediately a positive or negative result.
 
-> (c [*RedisLock]()) TryAcquireLock(correlationId string, key string, ttl int64) (result bool, err error)
+> (c [*RedisLock]()) TryAcquireLock(ctx context.Context, correlationId string, key string, ttl int64) (result bool, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique lock key to acquire.
 - **ttl**: int64 - lock timeout (time to live) in milliseconds.
@@ -109,18 +115,22 @@ It returns immediately a positive or negative result.
 ### Examples
 
 ```golang
+ctx := context.Background()
+
 lock = NewRedisRedis();
-lock.Configure(cconf.NewConfigParamsFromTuples(
+lock.Configure(ctx, cconf.NewConfigParamsFromTuples(
   "host", "localhost",
   "port", 6379,
-));
-err = lock.Open("123")
-  ...
-result, err := lock.TryAcquireLock("123", "key1", 3000)
+))
+
+err = lock.Open(ctx, "123")
+...
+
+result, err := lock.TryAcquireLock(ctx, "123", "key1", 3000)
 if result {
 	// Processing...
 }
-err = lock.ReleaseLock("123", "key1")
+err = lock.ReleaseLock(ctx, "123", "key1")
 // Continue...
 
 ```

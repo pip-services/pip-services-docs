@@ -125,9 +125,9 @@ go get -u github.com/pip-services3-gox/pip-services3-prometheus-gox
 
 #### Redis module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-redis-go
+go get -u github.com/pip-services3-gox/pip-services3-redis-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-redis-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-redis-gox)
 
 #### RPC module
 ```bash

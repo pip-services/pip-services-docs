@@ -2,7 +2,7 @@
 type: docs
 title: "RedisCache"
 linkTitle: "RedisCache"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-redis-gox"
 description: >
     Distributed cache that stores values in a Redis in-memory database.
 
@@ -40,7 +40,7 @@ The RedisCache class allows you to create distributed caches that store values i
 #### NewRedisCache
 Creates a new instance of this cache.
 
-> NewRedisCache() [*RedisCache]()
+> NewRedisCache[T any]() [*RedisCache[T]]()
 
 ### Fields
 
@@ -62,39 +62,53 @@ Credential resolver
 #### Close
 Closes a component and frees used resources.
 
-> (c [*RedisCache]()) Close(correlationId string) error
+> (c [*RedisCache[T]]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
+
+#### Contains
+Contains check is value stores.
+
+> (c *RedisCache[T]) Contains(ctx context.Context, correlationId string, key string) bool
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **key**: string -  a unique value key.
+- **returns**: bool - true if value contains.
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*RedisCache]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*RedisCache[T]]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*RedisCache]()) IsOpen() bool
+> (c [*RedisCache[T]]()) IsOpen() bool
 
 - **returns**: bool - true if the component is open and false otherwise.
 
-#### open
+#### Open
 Opens the component.
 
-> (c [*RedisCache]()) Open(correlationId string) error
+> (c [*RedisCache[T]]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
 #### Remove
 Removes a value from the cache by its key.
 
-> (c [*RedisCache]()) Remove(correlationId string, key string) error
+> (c [*RedisCache[T]]()) Remove(ctx context.Context, correlationId string, key string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
 - **returns**: error - error or nil if no errors occurred.
@@ -103,8 +117,9 @@ Removes a value from the cache by its key.
 Retrieves a cached value from the cache using its key.
 If the value is missing in the cache or has expired, it returns nil.
 
-> (c [*RedisCache]()) Retrieve(correlationId string, key string) (value interface{}, err error)
+> (c [*RedisCache[T]]()) Retrieve(ctx context.Context, correlationId string, key string) (value interface{}, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
 - **returns**: (value interface{}, err error) - retrieved cached value or *nil* if nothing was found.
@@ -112,16 +127,18 @@ If the value is missing in the cache or has expired, it returns nil.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*RedisCache]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*RedisCache[T]]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
 #### Store
 Stores a value in the cache with an expiration time.
 
-> (c [*RedisCache]()) Store(correlationId string, key string, value interface{}, timeout int64) (result interface{}, err error)
+> (c [*RedisCache[T]]()) Store(ctx context.Context, correlationId string, key string, value interface{}, timeout int64) (result interface{}, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **key**: string - unique value key.
 - **value**: interface{} - value to store.
@@ -131,20 +148,23 @@ Stores a value in the cache with an expiration time.
 
 ### Examples
 ```go
-cache = NewRedisCache();
-cache.Configure(cconf.NewConfigParamsFromTuples(
+ctx := context.Background()
+
+cache = NewRedisCache[string]();
+cache.Configure(ctx, cconf.NewConfigParamsFromTuples(
   "host", "localhost",
   "port", 6379,
-));
+))
 
-err = cache.Open("123")
-  ...
-ret, err := cache.Store("123", "key1", []byte("ABC"))
+err = cache.Open(ctx, "123")
+...
+
+ret, err := cache.Store(ctx, "123", "key1", []byte("ABC"))
 if err != nil {
 	...
 }
 
-res, err := cache.Retrive("123", "key1")
+res, err := cache.Retrieve(ctx, "123", "key1")
 value, _ := res.([]byte)
 fmt.Println(string(value))     // Result: "ABC"
 

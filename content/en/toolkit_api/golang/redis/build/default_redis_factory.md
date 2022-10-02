@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultRedisFactory"
 linkTitle: "DefaultRedisFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-redis-gox"
 description: > 
     Creates Redis components by their descriptors.
 ---

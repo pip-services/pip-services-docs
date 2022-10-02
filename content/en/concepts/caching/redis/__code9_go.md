@@ -1,6 +1,6 @@
 
 ```go
 import (
-    rlock "github.com/pip-services3-go/pip-services3-redis-go/lock"
+    rlock "github.com/pip-services3-gox/pip-services3-redis-gox/lock"
 )
 ```

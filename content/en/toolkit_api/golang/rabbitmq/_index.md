@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "RabbitMQ module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rabbitmq-gox"
 no_list: true
 weight: 500
 description: > 
@@ -20,5 +20,5 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-rabbitmq-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-rabbitmq-gox@latest
 ```

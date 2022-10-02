@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultRabbitMQFactory"
 linkTitle: "DefaultRabbitMQFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rabbitmq-gox"
 description: > 
     Creates [RabbitMQMessageQueue](../../queues/rabbitmq_message_queue/)  components by their descriptors.
 ---

@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Redis module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-redis-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-redis-gox"
 no_list: true
 weight: 500
 description: > 

@@ -2,7 +2,7 @@
 type: docs
 title: "RabbitMQConnectionResolver"
 linkTitle: "RabbitMQConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rabbitmq-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rabbitmq-gox"
 description: >
     Helper class that resolves a RabbitMQ connection and credential parameters, 
     validates them and generates connection options.
@@ -68,8 +68,9 @@ Composes RabbitMQ connection options from connection and credential parameters.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*RabbitMQConnectionResolver]()) Configure(config *cconf.ConfigParams)
+> (c [*RabbitMQConnectionResolver]()) Configure(ctx context.Context, config *cconf.ConfigParams)
 
+- **ctx**: context.Context - operation context.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -85,6 +86,7 @@ Resolves RabbitMQ connection options from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*RabbitMQConnectionResolver]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*RabbitMQConnectionResolver]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

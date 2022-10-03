@@ -187,7 +187,7 @@ require (
 	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.0
 	github.com/pip-services3-gox/pip-services3-components-gox v1.0.2
 	github.com/pip-services3-gox/pip-services3-container-gox v1.0.0
-	github.com/pip-services3-go/pip-services3-rpc-go v1.0.0
+	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.0
 )
 ```
 
@@ -826,7 +826,7 @@ package quickstart
 import (
     "net/http"
     crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-    rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+    rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type HelloWorldRestService struct {
@@ -1252,7 +1252,7 @@ package quickstart
 
 import (
     cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
-    rpcbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
+    rpcbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
 )
 
 type HelloWorldProcess struct {

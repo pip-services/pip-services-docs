@@ -2,7 +2,7 @@
 type: docs
 title: "HeartbeatRestService"
 linkTitle: "HeartbeatRestService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Service returns heartbeat via HTTP/REST protocol.
 
@@ -54,21 +54,22 @@ Creates a new instance of c service.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c *HeartbeatRestService) Configure(config *cconf.ConfigParams)
+> (c [*HeartbeatRestService]()) Configure(ctx context.Context, config *cconf.ConfigParams)
 
+- **ctx**: context.Context - operation context.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Register
 Registers all service routes in HTTP endpoint.
 
-> (c *HeartbeatRestService) Register()
+> (c [*HeartbeatRestService]()) Register()
 
 
 ### heartbeat
 Handles heartbeat requests
 
-> (c *HeartbeatRestService) heartbeat(req *http.Request, res http.ResponseWriter)
+> (c [*HeartbeatRestService]()) heartbeat(req *http.Request, res http.ResponseWriter)
 
 - **req**: *http.Request - an HTTP request
 - **res**: http.ResponseWriter - an HTTP response
@@ -79,15 +80,16 @@ Handles heartbeat requests
 
 ```go
 service := NewHeartbeatService();
-service.Configure(cconf.NewConfigParamsFromTuples(
-    "route", "ping",
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080,
-));
-opnErr := service.Open("123")
+service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"route", "ping",
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080,
+))
+
+opnErr := service.Open(context.Background(), "123")
 if opnErr == nil {
-   fmt.Println("The Heartbeat service is accessible at http://+:8080/ping");
+	fmt.Println("The Heartbeat service is accessible at http://+:8080/ping")
 }
 ```
 

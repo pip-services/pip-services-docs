@@ -2,7 +2,7 @@
 type: docs
 title: "AboutOperations"
 linkTitle: "AboutOperations"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Class used to obtain information about running services.
 ---
@@ -12,6 +12,12 @@ description: >
 ### Description
 
 The AboutOperations class is used to obtain information about running services.
+
+### Constructors
+
+#### NewAboutOperations
+
+> NewAboutOperations() [*AboutOperations]()
 
 ### Methods
 
@@ -35,6 +41,7 @@ Gets the service's information.
 #### SetReferences
 Sets the references of the service.
 
-> (c [*AboutOperations]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*AboutOperations]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - service's references.

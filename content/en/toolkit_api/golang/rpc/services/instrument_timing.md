@@ -2,7 +2,7 @@
 type: docs
 title: "InstrumentTiming"
 linkTitle: "InstrumentTiming"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Creates logs, counters and timings for methods that call  Instrument.
 ---
@@ -32,24 +32,26 @@ Creates a new instance of InstrumentTiming.
 #### EndFailure
 Manages a failed service end.
 
-> (c [*InstrumentTiming]()) EndFailure(err error)
+> (c [*InstrumentTiming]()) EndFailure(ctx context.Context, err error)
 
+- **ctx**: context.Context - operation context.
 - **err**: error - exception
 
 
 #### EndTiming
 Ends the service.
 
-> (c [*InstrumentTiming]()) EndTiming(err error)
+> (c [*InstrumentTiming]()) EndTiming(ctx context.Context, err error)
 
+- **ctx**: context.Context - operation context.
 - **err**: error - exception
 
 
 #### EndSuccess
 Manages a successful service end.
 
-> (c [*InstrumentTiming]()) EndSuccess()
+> (c [*InstrumentTiming]()) EndSuccess(ctx context.Context)
 
-
+- **ctx**: context.Context - operation context.
 
 

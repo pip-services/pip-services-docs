@@ -2,7 +2,7 @@
 type: docs
 title: "RoleAuthManager"
 linkTitle: "RoleAuthManager"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Provides methods to check on a user's roles.
 ---

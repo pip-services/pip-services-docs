@@ -2,7 +2,7 @@
 type: docs
 title: "StatusOperations"
 linkTitle: "StatusOperations"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Handles status requests for REST operations.
 ---
@@ -26,8 +26,9 @@ Gets the status of the operation.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*StatusOperations]()) SetReferences(references crefer.IReferences)
+> (c [*StatusOperations]()) SetReferences(ctx context.Context, references crefer.IReferences)
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 

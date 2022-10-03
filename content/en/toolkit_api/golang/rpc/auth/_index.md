@@ -3,7 +3,7 @@ type: docs
 title: "Auth"
 linkTitle: "Auth"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     This package provides classes used to grant access.
 ---

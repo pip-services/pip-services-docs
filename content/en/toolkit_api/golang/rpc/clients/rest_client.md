@@ -2,7 +2,7 @@
 type: docs
 title: "RestClient"
 linkTitle: "RestClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Abstract client that calls remote endpoints using the HTTP/REST protocol.
 ---
@@ -144,9 +144,9 @@ Adds paging parameters (skip, take, total) to invocation parameter map.
 #### Call
 Calls a remote method via HTTP/REST protocol.
 
-> (c [*RestClient]()) Call(prototype reflect.Type, method string, route string, correlationId string, params [*cdata.StringValueMap](../../../commons/data/string_value_map), data interface{}) (result interface{}, err error)
+> (c [*RestClient]()) Call(ctx context.Context, method string, route string, correlationId string, params [*cdata.StringValueMap](../../../commons/data/string_value_map), data interface{}) (result interface{}, err error)
 
-- **prototype**: reflect.Type - type for convert JSON result. Set nil for return raw JSON string
+- **ctx**: context.Context - operation context.
 - **method**: string - HTTP method: "get", "head", "post", "put", "delete"
 - **route**: string - a command route. Base route will be added to this route
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
@@ -158,8 +158,9 @@ Calls a remote method via HTTP/REST protocol.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*RestClient]()) Close(correlationId string) error
+> (c [*RestClient]()) ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **returns**: error - returns error if not closed
 
@@ -167,8 +168,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c [*RestClient]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*RestClient]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -176,8 +178,9 @@ Configures a component by passing configuration parameters.
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*RestClient]()) Instrument(correlationId string, name string) [*service.InstrumentTiming](../../services/instrument_timing)
+> (c [*RestClient]()) Instrument(ctx context.Context, correlationId string, name string) [*service.InstrumentTiming](../../services/instrument_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **name**: string - method name.
 - **returns**: [*service.InstrumentTiming](../../services/instrument_timing) - Instrument Timing object used to end the time measurement.
@@ -194,8 +197,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*RestClient]()) Open(correlationId string) error
+> (c [*RestClient]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **returns**: error - returns error if not opened
 
@@ -203,8 +207,9 @@ Opens the component.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*RestClient]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*RestClient]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operations context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
 ### Examples
@@ -214,25 +219,29 @@ type MyRestClient struct {
 	*RestClient
 }
 ...
-func (c *MyRestClient) GetData(correlationId string, id string) (result *tdata.MyDataPage, err error) {
+func (c *MyRestClient) GetData(ctx context.Context, correlationId string, id string) (result *tdata.MyDataPage[MyData], err error) {
+	timind := c.Instrument(ctx, correlationId, "myData.get_page_by_filter")
+	defer timing.EndTiming(ctx)
+
 	params := cdata.NewEmptyStringValueMap()
 	params.Set("id", id)
-	calValue, calErr := c.Call(MyDataPageType, "get", "/data", correlationId, params, nil)
+	response, calErr := c.Call(MyDataPageType, "get", "/data", correlationId, params, nil)
 	if calErr != nil {
 		return nil, calErr
 	}
-	result, _ = calValue.(*tdata.MyDataPage)
-	c.Instrument(correlationId, "myData.get_page_by_filter")
-	return result, nil
+
+	return return clients.HandleHttpResponse[*tdata.MyDataPage[MyData]](response, correlationId)
 }
-client := NewMyRestClient();
-client.Configure(cconf.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080,
-));
-result, err := client.GetData("123", "1")
- ...
+
+client := NewMyRestClient()
+client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080,
+))
+
+result, err := client.GetData(context.Background(), "123", "1")
+...
 ```
 
 ### See also

@@ -20,7 +20,7 @@ import (
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	cerr "github.com/pip-services3-gox/pip-services3-commons-gox/errors"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	rpcservices "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type SessionsOperationsV1 struct {

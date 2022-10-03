@@ -9,7 +9,7 @@ import (
 
 	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	cclients "github.com/pip-services3-go/pip-services3-rpc-go/clients"
+	cclients "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
 )
 
 type BeaconsHttpClientV1 struct {

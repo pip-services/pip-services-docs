@@ -3,7 +3,7 @@ type: docs
 title: "Services"
 linkTitle: "Services"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     This package contains a set of interfaces and classes used to create services and handle their operations.
 ---

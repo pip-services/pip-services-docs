@@ -131,9 +131,9 @@ go get -u github.com/pip-services3-gox/pip-services3-redis-gox
 
 #### RPC module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-rpc-go
+go get -u github.com/pip-services3-gox/pip-services3-rpc-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-rpc-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-rpc-gox)
 
 #### SQLite module
 ```bash

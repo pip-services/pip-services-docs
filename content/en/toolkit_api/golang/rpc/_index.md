@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "RPC module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 no_list: true
 weight: 70
 description: > 
@@ -23,7 +23,5 @@ The module contains the following packages:
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-rpc-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-rpc-gox@latest
 ```
-
-TODO: add example

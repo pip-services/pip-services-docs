@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableHttpClient"
 linkTitle: "CommandableHttpClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Commandable services are generated automatically for [ICommandable](../../../commons/commands/icommandable)
    
@@ -56,44 +56,49 @@ Creates a new instance of the client.
 ### Methods
 
 #### CallCommand
-Calls a remote method via the HTTP commadable protocol. The call is made via a POST operation and all parameters are sent in the body object. The complete route to the remote method is defined as baseRoute + "/" + name.
+Calls a remote method via the HTTP commadable protocol. 
+The call is made via a POST operation and all parameters are sent in the body object. 
+The complete route to the remote method is defined as baseRoute + "/" + name.
 
-> (c [*CommandableHttpClient]()) CallCommand(prototype reflect.Type, name string, correlationId string, params [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*CommandableHttpClient]()) CallCommand(ctx context.Context, prototype reflect.Type, name string, correlationId string, params [*cdata.AnyValueMap](../../../commons/data/any_value_map)) (*http.Response, error)
 
-- **prototype**: reflect.Type - type of returned data
+- **ctx**: context.Context - operation context.
 - **name**: string - name of the command to call.
 - **correlationId**: string - (optional) transaction id used to trace execution through a call chain.
 - **params**: [*cdata.AnyValueMap](../../../commons/data/any_value_map) - command parameters.
-- **returns**: (result interface{}, err error) - result of the command.
+- **returns**: (*http.Response, err) - response or error.
 
 
 ### Examples
 
 ```go
 type MyCommandableHttpClient struct{
-    *CommandableHttpClient
-    prototype reflect.Type // type of operation data
-   ...
+	*CommandableHttpClient
+	...
 }
-   result, err := func (c * MyCommandableHttpClient) GetData(correlationId string, id string)(result MyData, err error){
-       params:= cdata.NewEmptyStringValueMap()
-       params.Set("id",id)
-        res, err := c.CallCommand(
-            prototype
-           "get_data",
-           correlationId,
-           params)
-           ...
-           // convert response to MyData
-           ...
-           return result, err
-    }
+func (c * MyCommandableHttpClient) GetData(ctx context.Context, correlationId string, id string)(result MyData, err error){
+	params:= cdata.NewEmptyStringValueMap()
+	params.Set("id",id)
+	res, err := c.CallCommand(
+		prototype
+		"get_data",
+		correlationId,
+		params,
+	)
+	...
+	// convert response to MyData
+	...
+	return result, err
+}
+
+
 client = NewMyCommandableHttpClient();
-client.Configure(cconf.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080
+client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080
 ));
-result, err := client.GetData("123", "1")
+
+result, err := client.GetData(context.Background(), "123", "1")
 ...
 ```

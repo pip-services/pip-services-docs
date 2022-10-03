@@ -10,8 +10,8 @@ import (
 	"github.com/gorilla/mux"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	cerr "github.com/pip-services3-gox/pip-services3-commons-gox/errors"
-	rpcauth "github.com/pip-services3-go/pip-services3-rpc-go/auth"
-	rpcservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	rpcauth "github.com/pip-services3-gox/pip-services3-rpc-gox/auth"
+	rpcservices "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type AuthorizerV1 struct {

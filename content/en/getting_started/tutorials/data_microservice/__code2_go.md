@@ -19,7 +19,7 @@ require (
 	github.com/pip-services3-gox/pip-services3-grpc-gox v1.2.2
 	github.com/pip-services3-go/pip-services3-mongodb-go v1.1.0
 	github.com/pip-services3-gox/pip-services3-postgres-gox v1.2.7
-	github.com/pip-services3-go/pip-services3-rpc-go v1.4.4-62
+	github.com/pip-services3-gox/pip-services3-rpc-gox v1.4.4-62
 	github.com/stretchr/testify v1.7.0
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
 	github.com/xdg/stringprep v0.0.0-20180714160509-73f8eece6fdc // indirect

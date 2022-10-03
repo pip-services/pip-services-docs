@@ -2,7 +2,7 @@
 type: docs
 title: "HttpConnectionResolver"
 linkTitle: "HttpConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Helper class to retrieve connections for HTTP-based services and clients.
 
@@ -60,8 +60,9 @@ The base credential resolver.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*HttpConnectionResolver]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*HttpConnectionResolver]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -95,20 +96,23 @@ Resolves all component connections. If connections are configured to be retrieve
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*HttpConnectionResolver]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*HttpConnectionResolver]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 
 ```go
 config := cconf.NewConfigParamsFromTuples(
-     "connection.host", "10.1.1.100",
-     "connection.port", 8080,
-);
-connectionResolver = NewHttpConnectionResolver();
-connectionResolver.Configure(config);
-connectionResolver.SetReferences(references);
+	"connection.host", "10.1.1.100",
+	"connection.port", 8080,
+)
+
+connectionResolver = NewHttpConnectionResolver()
+connectionResolver.Configure(context.Background(), config)
+connectionResolver.SetReferences(context.Background(), references)
+
 connection, err := connectionResolver.Resolve("123")
 // Now use connection...
 ```

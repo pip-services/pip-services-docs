@@ -2,7 +2,7 @@
 type: docs
 title: "HttpEndpoint"
 linkTitle: "HttpEndpoint"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Used for creating HTTP endpoints. 
 ---
@@ -58,8 +58,9 @@ Method adds allowed header, ignore if it already exist
 #### Close
 Closes this endpoint and the REST server (service) that was opened earlier.
 
-> (c [*HttpEndpoint]()) Close(correlationId string) error
+> (c [*HttpEndpoint]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not closed
 
@@ -67,8 +68,9 @@ Closes this endpoint and the REST server (service) that was opened earlier.
 #### Configure
 Configures this HttpEndpoint using the given configuration parameters.
 
-> (c [*HttpEndpoint]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*HttpEndpoint]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 
@@ -79,6 +81,11 @@ Checks if the component is open.
 
 - **returns**: bool - whether or not this endpoint is open with an actively listening REST server.
 
+> (c [*HttpEndpoint]()) Open(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation context.
+- **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
+- **returns**: error - returns error if not oepened.
 
 #### Register
 Registers a registerable object for dynamic endpoint discovery.
@@ -124,8 +131,9 @@ by the given method and route.
 #### SetReferences
 Sets references to this endpoint's logger, counters, and connection resolver.
 
-> (c [*HttpEndpoint]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*HttpEndpoint]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - IReferences object, containing references to a logger, counters, and a connection resolver.
 
 
@@ -139,11 +147,11 @@ Unregisters a registerable object, so that it is no longer used in dynamic endpo
 ### Examples
 
 ```go
-endpoint := NewHttpEndpoint();
-endpoint.Configure(config);
-endpoint.SetReferences(references);
+endpoint := NewHttpEndpoint()
+endpoint.Configure(context.Background(), config)
+endpoint.SetReferences(context.Background(), references)
 ...
-endpoint.Open(correlationId)
+endpoint.Open(context.Background(), correlationId)
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "HttpResponseSender"
 linkTitle: "HttpResponseSender"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Helper class that handles HTTP-based responses.
 ---
@@ -22,11 +22,11 @@ If the object is not nil, it returns 201 status code.
 For nil results, it returns 204 status code.
 If an error occurs, it sends ErrorDescription with approproate status code.
 
-> (c *THttpResponseSender) SendCreatedResult(res http.ResponseWriter, req *http.Request, result interface{}, err error)
+> (c *THttpResponseSender) SendCreatedResult(res http.ResponseWriter, req *http.Request, result  any, err error)
 
 - **res**: http.ResponseWriter - an HTTP request
 - **req**: *http.Request - an HTTP response
-- **result**: interface{} - an execution result
+- **result**:  any - an execution result
 - **error**: error - (optional) error objrct to send
 
 
@@ -39,11 +39,11 @@ If object is not nil, it returns 201 status code.
 For nil results, it returns 204 status code.
 If an error occurs, it sends ErrorDescription with the approproate status code.
 
-> (c *THttpResponseSender) SendDeletedResult(res http.ResponseWriter, req *http.Request, result interface{}, err error)
+> (c *THttpResponseSender) SendDeletedResult(res http.ResponseWriter, req *http.Request, result  any, err error)
 
 - **res**: http.ResponseWriter - an HTTP request
 - **req**: *http.Request - an HTTP response
-- **result**: interface{} - an execution result
+- **result**:  any - an execution result
 - **error**: error - (optional) error objrct to send
 
 
@@ -82,9 +82,9 @@ For nil results, it returns 204 status code.
 If error occur, it sends ErrorDescription with the approproate status code.
 
 
-> (c *THttpResponseSender) SendResult(res http.ResponseWriter, req *http.Request, result interface{}, err error)
+> (c *THttpResponseSender) SendResult(res http.ResponseWriter, req *http.Request, result  any, err error)
 
 - **res**: http.ResponseWriter - an HTTP request
 - **req**: *http.Request - an HTTP response
-- **result**: interface{} - an execution result
+- **result**:  any - an execution result
 - **error**: error - (optional) error objrct to send

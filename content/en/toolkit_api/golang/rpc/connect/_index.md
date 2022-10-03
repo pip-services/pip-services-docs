@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     This package contains a class used to retrieve connections for HTTP-based services and clients.
 ---

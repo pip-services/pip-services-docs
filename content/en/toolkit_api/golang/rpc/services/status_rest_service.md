@@ -2,7 +2,7 @@
 type: docs
 title: "StatusRestService"
 linkTitle: "StatusRestService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Service that returns microservice status information via HTTP/REST protocol.
 ---
@@ -63,16 +63,18 @@ The service responds on /status route (can be changed) with a JSON object:
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*StatusRestService]()) Configure(config )
+> (c [*StatusRestService]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*StatusRestService]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*StatusRestService]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 #### Register
@@ -85,14 +87,15 @@ Registers all service routes in HTTP endpoint.
 
 ```go
 service = NewStatusService();
-service.Configure(cref.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080,
-));
-opnErr:= service.Open("123")
+service.Configure(context.Background(), cref.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080,
+))
+
+opnErr:= service.Open(context.Background(), "123")
 if opnErr == nil {
-   fmt.Println("The Status service is accessible at http://localhost:8080/status");
+	fmt.Println("The Status service is accessible at http://localhost:8080/status")
 }
 ```
 

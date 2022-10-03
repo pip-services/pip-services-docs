@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableHttpService"
 linkTitle: "CommandableHttpService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Abstract service that receives remote calls via HTTP/REST protocol to operations automatically generated for commands defined in ICommandable components. 
     
@@ -49,9 +49,9 @@ Important points
 #### InheritCommandableHttpService
 Creates a new instance of the service.
 
-> InheritCommandableHttpService(overrides IRestServiceOverrides, baseRoute string) [*CommandableHttpService]()
+> InheritCommandableHttpService(overrides [IRegisterable](iregisterable), baseRoute string) [*CommandableHttpService]()
 
--  **overrides**: IRestServiceOverrides - references to child class that overrides virtual methods.
+- **overrides**: [IRegisterable](iregisterable) - references to child class that overrides virtual methods.
 - **baseRoute**: string - a service base route.
 
 
@@ -76,8 +76,9 @@ Boolean variable that defines whether the configuration of Swagger is autogenera
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c [*CommandableHttpService]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*CommandableHttpService]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -91,26 +92,30 @@ Registers all service routes in the HTTP endpoint.
 
 ```go
 type MyCommandableHttpService struct {
- *CommandableHttpService
+	*CommandableHttpService
 }
+
 func NewMyCommandableHttpService() *MyCommandableHttpService {
 	c := MyCommandableHttpService{
 		CommandableHttpService: services.NewCommandableHttpService("dummies"),
 	}
-	c.DependencyResolver.Put("controller", cref.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
-return &c
+	c.DependencyResolver.Put(context.Background(), "controller", cref.NewDescriptor("pip-services-dummies", "controller", "default", "*", "*"))
+	return &c
+}
+
 service := NewMyCommandableHttpService();
-service.Configure(cconf.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080,
+service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080,
 ));
-service.SetReferences(cref.NewReferencesFromTuples(
-   cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
+service.SetReferences(context.Background(), cref.NewReferencesFromTuples(
+	cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
 ));
-opnErr:=service.Open("123")
+
+opnErr := service.Open(context.Background(), "123")
 if opnErr == nil {
-   fmt.Println("The REST service is running on port 8080");
+	fmt.Println("The REST service is running on port 8080");
 }
 ```
 

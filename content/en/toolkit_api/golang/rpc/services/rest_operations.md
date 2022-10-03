@@ -2,7 +2,7 @@
 type: docs
 title: "RestOperations"
 linkTitle: "RestOperations"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Handles REST services' operations.
 ---
@@ -42,8 +42,9 @@ Dependency resolver component
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*RestOperations]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*RestOperations]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -197,6 +198,7 @@ Sends an unauthorized error message.
 #### SetReferences
 Sets the specified references.
 
-> (c [*RestOperations]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*RestOperations]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - specified references

@@ -2,7 +2,7 @@
 type: docs
 title: "RestService"
 linkTitle: "RestService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Abstract service that receives remove calls via HTTP/REST protocol.
 ---
@@ -104,8 +104,9 @@ Swagger's route.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*RestService]()) Close(correlationId string) error
+> (c [*RestService]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - returns error if not closed.
 
@@ -113,8 +114,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*RestService]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*RestService]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters, containing a "connection(s)" section.
 
 
@@ -122,7 +124,7 @@ Configures a component by passing its configuration parameters.
 Adds instrumentation to log calls and measure call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*RestService]()) Instrument(correlationId string, name string) [*InstrumentTiming](../instrument_timing)
+> (c [*RestService]()) Instrument(ctx context.Context, correlationId string, name string) [*InstrumentTiming](../instrument_timing)
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
@@ -147,8 +149,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*RestService]()) Open(correlationId string) error
+> (c [*RestService]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error -  error or nil no errors occured.
 
@@ -268,8 +271,9 @@ If the object is not nil it returns 200 status code. For nil results, it returns
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*RestService]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*RestService]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
@@ -286,54 +290,60 @@ type MyRestService struct {
 	*RestService
 	controller IMyController
 }
-   ...
+...
 func NewMyRestService() *MyRestService {
 	c := MyRestService{}
 	c.RestService = services.NewRestService()
 	c.RestService.IRegisterable = &c
 	c.numberOfCalls = 0
-	c.DependencyResolver.Put("controller", crefer.NewDescriptor("mygroup", "controller", "*", "*", "1.0"))
+	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("mygroup", "controller", "*", "*", "1.0"))
 	return &c
 }
-func (c * MyRestService) SetReferences(references IReferences) {
-    c.RestService.SetReferences(references);
+
+func (c * MyRestService) SetReferences(ctx context.Context, references IReferences) {
+	c.RestService.SetReferences(ctx, references);
 	resolv := c.DependencyResolver.GetRequired("controller");
 	if resolv != nil {
 		c.controller, _ = resolv.(IMyController)
 	}
 }
+
 func (c *MyRestService) getOneById(res http.ResponseWriter, req *http.Request) {
 	params := req.URL.Query()
 	vars := mux.Vars(req)
+
 	mydataId := params.Get("mydata_id")
 	if mydataId == "" {
 		mydataId = vars["mydatay_id"]
 	}
-	result, err := c.controller.GetOneById(
-		params.Get("correlation_id"),
-		mydataId)
+	result, err := c.controller.GetOneById(params.Get("correlation_id"), mydataId),
 	c.SendResult(res, req, result, err)
 }
+
 func (c * MyRestService) Register() {
 	c.RegisterRoute(
-	"get", "get_mydata/{mydata_id}",
-	 &cvalid.NewObjectSchema().
-		WithRequiredProperty("mydata_id", cconv.String).Schema,
-	c.getOneById)
-       ...
+		"get", "get_mydata/{mydata_id}",
+		&cvalid.NewObjectSchema().
+			WithRequiredProperty("mydata_id", cconv.String).Schema,
+		c.getOneById,
+	)
+	...
 }
+
+
 service := NewMyRestService();
-service.Configure(cconf.NewConfigParamsFromTuples(
-    "connection.protocol", "http",
-    "connection.host", "localhost",
-    "connection.port", 8080,
+service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"connection.protocol", "http",
+	"connection.host", "localhost",
+	"connection.port", 8080,
 ));
-service.SetReferences(cref.NewReferencesFromTuples(
-   cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
+service.SetReferences(context.Background(), cref.NewReferencesFromTuples(
+	cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
 ));
-opnRes := service.Open("123")
+
+opnRes := service.Open(context.Background(), "123")
 if opnErr == nil {
-   fmt.Println("The REST service is running on port 8080");
+	fmt.Println("The REST service is running on port 8080");
 }
 ```
 

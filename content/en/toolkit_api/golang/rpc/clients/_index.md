@@ -3,7 +3,7 @@ type: docs
 title: "Clients"
 linkTitle: "Clients"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     This package contains classes used to create different types of clients.
 ---

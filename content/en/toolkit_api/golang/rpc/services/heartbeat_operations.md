@@ -2,7 +2,7 @@
 type: docs
 title: "HeartBeatOperations"
 linkTitle: "HeartBeatOperations"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-rpc-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-rpc-gox"
 description: >
     Handles the operations of a heartbeat service.
 ---

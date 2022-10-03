@@ -4,6 +4,7 @@
 package main
 
 import (
+	"context"
 	"os"
 
 	ccomand "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
@@ -14,15 +15,15 @@ import (
 	cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
 	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
-	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
-	srvc "github.com/pip-services3-go/pip-services3-rpc-go/services"
-	sbuild "github.com/pip-services3-go/pip-services3-swagger-go/build"
+	rbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
+	srvc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
+	sbuild "github.com/pip-services3-gox/pip-services3-swagger-gox/build"
 )
 
 // Runner
 func main() {
 	proc := NewHelloFriendProcess()
-	proc.Run(os.Args)
+	proc.Run(context.Background(), os.Environ())
 }
 
 // Command set
@@ -44,7 +45,7 @@ func (c *FriendsCommandSet) makeGreeting() ccomand.ICommand {
 		"greeting",
 		cvalid.NewObjectSchema().
 			WithRequiredProperty("name", cconv.String),
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			name := args.GetAsString("name")
 			return c.controller.Greeting(name), nil
 		},
@@ -59,7 +60,7 @@ type FriendCommandableHttpService struct {
 func NewFriendCommandableHttpService() *FriendCommandableHttpService {
 	c := &FriendCommandableHttpService{}
 	c.CommandableHttpService = srvc.InheritCommandableHttpService(c, "commandable_hello_friend")
-	c.DependencyResolver.Put("controller", cref.NewDescriptor("hello-friend", "controller", "*", "*", "*"))
+	c.DependencyResolver.Put(context.Background(), "controller", cref.NewDescriptor("hello-friend", "controller", "*", "*", "*"))
 	return c
 }
 
@@ -113,12 +114,12 @@ func NewHelloFriendServiceFactory() *HelloFriendServiceFactory {
 
 // Container
 type HelloFriendProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewHelloFriendProcess() *HelloFriendProcess {
 	c := &HelloFriendProcess{
-		ProcessContainer: *cproc.NewProcessContainer("Hellow", "Hello friend microservice"),
+		ProcessContainer: cproc.NewProcessContainer("Hellow", "Hello friend microservice"),
 	}
 
 	c.SetConfigPath("./config.yaml")
@@ -128,5 +129,6 @@ func NewHelloFriendProcess() *HelloFriendProcess {
 	c.AddFactory(sbuild.NewDefaultSwaggerFactory())
 	return c
 }
+
 
 ```

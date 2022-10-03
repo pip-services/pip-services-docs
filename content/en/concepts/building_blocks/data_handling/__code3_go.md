@@ -5,6 +5,6 @@ sorting:= cdata.NewSortingParams([]cdata.SortField{
 	  NewSortField("key2", false),
 })
   
-values := client.GetMyObjects(filter, sorting)
+values := client.GetMyObjects(context.Background(), filter, sorting)
 
 ```

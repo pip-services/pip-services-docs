@@ -1,5 +1,5 @@
 
-```python
+```go
 package main
 
 import (

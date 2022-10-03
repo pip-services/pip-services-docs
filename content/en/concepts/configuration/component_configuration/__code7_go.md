@@ -19,11 +19,11 @@ func NewDataController() *DataController {
 	}
 }
 
-func (c *DataController) Configure(config *cconfig.ConfigParams) {
+func (c *DataController) Configure(ctx context.Context, config *cconfig.ConfigParams) {
 	c._maxPageSize = config.GetAsIntegerWithDefault("max_page_size", c._maxPageSize)
 }
 
-func (c *DataController) GetData(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *cdata.DataPage, err error) {
+func (c *DataController) GetData(ctx context.Context, correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *cdata.DataPage, err error) {
 	*paging.Take = int64(math.Min(float64(*paging.Take), float64(c._maxPageSize)))
 	// Get data using max page size constraint.
 	return page, err

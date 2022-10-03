@@ -1,4 +1,4 @@
 
 ```go
-references.RemoveAll(service)
+references.RemoveAll(context.Background(), service)
 ```

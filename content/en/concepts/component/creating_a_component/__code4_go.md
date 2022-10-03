@@ -33,7 +33,7 @@ func (c *MyComponentA) IsOpen() bool {
 	return c.open
 }
 
-func (c *MyComponentA) Open(correlationId string) error {
+func (c *MyComponentA) Open(ctx context.Context, correlationId string) error {
 	c.open = true
 	c.status = "Open"
 	fmt.Println("MyComponentA has been opened.")

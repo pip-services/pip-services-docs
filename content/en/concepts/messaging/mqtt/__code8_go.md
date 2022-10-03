@@ -1,4 +1,4 @@
 
 ```go
-message, err := queue.Receive("123", 10000)
+message, err := queue.Receive(context.Background(), "123", 10000)
 ```

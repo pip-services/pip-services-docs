@@ -16,9 +16,10 @@ func NewHelloFriendController() *HelloFriendController {
 	return &c
 }
 
-func (c *HelloFriendController) Configure(config *cconf.ConfigParams) {
+func (c *HelloFriendController) Configure(ctx context.Context,  config *cconf.ConfigParams) {
 	// You can read configuration parameters here...
 }
+
 
 func (c *HelloFriendController) GetCommandSet() *ccomand.CommandSet {
 	if c.commandSet == nil {

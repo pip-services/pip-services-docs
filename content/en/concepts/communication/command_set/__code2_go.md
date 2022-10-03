@@ -5,6 +5,6 @@ import (
 )
 
 type MyCommandSet struct {
-	ccmd.CommandSet
+	*ccmd.CommandSet
 }
 ```

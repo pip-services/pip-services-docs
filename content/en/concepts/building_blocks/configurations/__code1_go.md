@@ -10,7 +10,7 @@ config := cconf.NewConfigParamsFromTuples(
 	"param2", 345,
 )
 
-component.Configure(config)
+component.Configure(context.Background(), config)
 
 /// Also, often components can have hard-coded presets. 
 /// The ConfigParams class has methods that allow to easily use them as defaults:
@@ -27,7 +27,7 @@ func NewMyComponent() MyComponent {
   }
 }
 
-func (c* MyComponent) Configure(config *cconf.ConfigParams) {
+func (c* MyComponent) Configure(ctx context.Context, config *cconf.ConfigParams) {
   c.param1 = config.GetAsStringWithDefault("param1", c.param1)
   c.param2 = config.GetAsIntegerWithDefault("param2", c.param2)
 }

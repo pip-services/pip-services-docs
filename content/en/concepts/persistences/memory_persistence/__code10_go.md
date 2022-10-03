@@ -1,4 +1,4 @@
 
 ```go
-result, _ = persistence.DeleteById(correlationId, "1")
+result, _ = persistence.DeleteById(context.Background(), correlationId, "1")
 ```

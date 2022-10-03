@@ -113,11 +113,11 @@ public interface IExecutable
 ```go
 
 type IConfigurable interface {
-	Configure(config *ConfigParams)
+	Configure(ctx context.Context, config *ConfigParams)
 }
 
 type IReferenceable interface {
-	SetReferences(references IReferences)
+	SetReferences(ctx context.Context, references IReferences)
 }
 
 type IOpenable interface {
@@ -125,17 +125,17 @@ type IOpenable interface {
 
 	IsOpen() bool
 
-	Open(correlationId string) error
+	Open(ctx context.Context, correlationId string) error
 }
 
 
 type IClosable interface {
-	Close(correlationId string) error
+	Close(ctx context.Context, correlationId string) error
 }
 
 
 type IExecutable interface {
-	Execute(correlationId string, args *Parameters) (result interface{}, err error)
+	Execute(ctx context.Context, correlationId string, args *Parameters) (result interface{}, err error)
 }
 
 ```
@@ -354,17 +354,17 @@ public sealed class CounterController : IReferenceable, IReconfigurable, IOpenab
 
 ```go
 type CounterController struct {
-	logger     clog.CompositeLogger
-	timer      crun.FixedRateTimer
-	parameters crun.Parameters
+	logger     *clog.CompositeLogger
+	timer      *crun.FixedRateTimer
+	parameters *crun.Parameters
 	counter    int
 }
 
 func NewCounterController() *CounterController {
 	instance := &CounterController{
-		logger:     *clog.NewCompositeLogger(),
-		timer:      *crun.NewFixedRateTimer(),
-		parameters: *crun.NewEmptyParameters(),
+		logger:     clog.NewCompositeLogger(),
+		timer:      crun.NewFixedRateTimer(),
+		parameters: crun.NewEmptyParameters(),
 		counter:    0,
 	}
 
@@ -373,36 +373,36 @@ func NewCounterController() *CounterController {
 	return instance
 }
 
-func (c *CounterController) SetReferences(references crefer.IReferences) {
-	c.logger.SetReferences(references)
+func (c *CounterController) SetReferences(ctx context.Context, references crefer.IReferences) {
+	c.logger.SetReferences(ctx, references)
 }
 
 func (c *CounterController) IsOpen() bool {
 	return c.timer.IsStarted()
 }
 
-func (c *CounterController) Open(correlationId string) error {
+func (c *CounterController) Open(ctx context.Context, correlationId string) error {
 	if c.IsOpen() {
 		return nil
 	}
 
-	c.timer.SetCallback(func() { c.Execute(correlationId, c.parameters) })
+	c.timer.SetCallback(func(ctx context.Context) { c.Execute(correlationId, c.parameters) })
 	c.timer.SetInterval(1000)
 	c.timer.SetDelay(1000)
-	c.timer.Start()
-	c.logger.Trace(correlationId, "Counter controller opened")
+	c.timer.Start(context.Background())
+	c.logger.Trace(context.Background(), correlationId, "Counter controller opened")
 
 	return nil
 }
 
-func (c *CounterController) Close(correlationId string) error {
-	c.timer.Stop()
-	c.logger.Trace(correlationId, "Counter controller closed")
+func (c *CounterController) Close(ctx context.Context, correlationId string) error {
+	c.timer.Stop(ctx)
+	c.logger.Trace(context.Background(), correlationId, "Counter controller closed")
 
 	return nil
 }
 
-func (c *CounterController) Execute(correlationId string, args crun.Parameters) (result interface{}, err error) {
+func (c *CounterController) Execute(ctx context.Background(), correlationId string, args crun.Parameters) (result interface{}, err error) {
 	return args.GetAsObject("message"), nil
 }
 ```
@@ -579,9 +579,9 @@ await Closer.CloseAsync(correlationId, _references.GetAll());
 For example:
 
 ```go
-err := crun.Opener.Open(correlationId, references.GetAll())
+err := crun.Opener.Open(context.Background(), correlationId, references.GetAll())
 // ...
-err = crun.Closer.Close(correlationId, references.GetAll())
+err = crun.Closer.Close(context.Background(), correlationId, references.GetAll())
 ```
 
 {{< /tabsection >}}

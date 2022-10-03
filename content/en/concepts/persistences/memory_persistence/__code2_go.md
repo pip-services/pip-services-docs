@@ -3,41 +3,53 @@ See: [IdentifiableMemoryPersistence](../../../toolkit_api/golang/data/persistenc
 
 ```go
 // extends IdentifiableMemoryPersistence
+import (
+	"context"
+	"strings"
+
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
+	cpersist "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
+)
+
+type Dummy struct {
+	Id      string `json:"id"`
+	Key     string `json:"key"`
+	Content string `json:"content"`
+}
+
 type MyMemoryPersistence struct {
-	cpersist.IdentifiableMemoryPersistence
+	*cpersist.IdentifiableMemoryPersistence[Dummy, string]
 }
 
 func NewMyMemoryPersistence() *MyMemoryPersistence {
-	proto := reflect.TypeOf(Dummy{})
-	return &MyMemoryPersistence{*cpersist.NewIdentifiableMemoryPersistence(proto)}
+	return &MyMemoryPersistence{IdentifiableMemoryPersistence: cpersist.NewIdentifiableMemoryPersistence[Dummy, string]()}
 }
 
-func composeFilter(filter *cdata.FilterParams) func(item interface{}) bool {
+func composeFilter(filter *cdata.FilterParams) func(item Dummy) bool {
 	if filter == nil {
-		filter = *cdata.NewFilterParams(make(map[string]string))
+		filter = cdata.NewFilterParams(make(map[string]string))
 	}
 
-	id := filter.GetAsNullableString("id")
-	temp_ids := filter.GetAsNullableString("ids")
+	id, _ := filter.GetAsNullableString("id")
+	temp_ids, idsOk := filter.GetAsNullableString("ids")
 
 	var ids *[]string
-	if temp_ids != nil {
-		*ids = strings.Split(*temp_ids, ",")
+	if idsOk {
+		*ids = strings.Split(temp_ids, ",")
 
 	}
 
-	key := filter.GetAsNullableString("key")
+	key, _ := filter.GetAsNullableString("key")
 
-	return func(item interface{}) bool {
-		dummy, ok := item.(Dummy)
-		if *id != "" && ok && dummy.Id != *id {
+	return func(dummy Dummy) bool {
+		if id != "" && dummy.Id != id {
 			return false
 		}
-		if *key != "" && ok && dummy.Key != *key {
+		if key != "" && dummy.Key != key {
 			return false
 		}
 
-		if len(*ids) > 0 && ok {
+		if len(*ids) > 0 {
 			for _, v := range *ids {
 				if dummy.Id == v {
 					return true
@@ -49,9 +61,8 @@ func composeFilter(filter *cdata.FilterParams) func(item interface{}) bool {
 	}
 }
 
-func (c *MyMemoryPersistence) GetOneByKey(correlationId string, key string) (item Dummy, err error) {
-	for _, v := range c.Items {
-		val, _ := v.(Dummy)
+func (c *MyMemoryPersistence) GetOneByKey(ctx context.Context, correlationId string, key string) (item Dummy, err error) {
+	for _, val := range c.Items {
 		if val.Key == key {
 			item = val
 			break
@@ -60,26 +71,26 @@ func (c *MyMemoryPersistence) GetOneByKey(correlationId string, key string) (ite
 	return item, err
 }
 
-func (c *MyMemoryPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *DummyPage, err error) {
+func (c *MyMemoryPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page DataPage[Dummy], err error) {
 
 	if &filter == nil {
 		filter = cdata.NewEmptyFilterParams()
 	}
 
-	tempPage, err := c.IdentifiableMemoryPersistence.GetPageByFilter(correlationId, composeFilter(filter), paging, nil, nil)
+	tempPage, err := c.IdentifiableMemoryPersistence.GetPageByFilter(ctx, correlationId, composeFilter(filter), *paging, nil, nil)
 
 	// Convert to DummyPage
 	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
 	data := make([]Dummy, dataLen)
 	for i, v := range tempPage.Data {
-		data[i] = v.(Dummy)
+		data[i] = v
 	}
 	page = NewDummyPage(&dataLen, data)
 	return page, err
 }
 
-...
+// ...
 
-persistence := mypersistence.NewMyMemoryPersistence()
+persistence := NewMyMemoryPersistence()
 
 ```

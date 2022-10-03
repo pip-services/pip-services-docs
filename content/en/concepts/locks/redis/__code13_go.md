@@ -1,4 +1,4 @@
 
 ```go
-locked, err := lock.TryAcquireLock("123", "key1", 3300)
+locked, err := lock.TryAcquireLock(context.Background(), "123", "key1", 3300)
 ```

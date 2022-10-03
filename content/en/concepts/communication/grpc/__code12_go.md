@@ -10,7 +10,7 @@ func NewMyGrpcClient() *MyGrpcClient {
 	return &dgc
 }
 
-func (c *MyGrpcClient) GetData(correlationId string, value1 float32, value2 float32) (result float32, err error) {
+func (c *MyGrpcClient) GetData(ctx context.Context, correlationId string, value1 float32, value2 float32) (result float32, err error) {
 
 	req := &protos.Number1{Value1: value1, Value2: value2}
 	reply := new(protos.Number2)

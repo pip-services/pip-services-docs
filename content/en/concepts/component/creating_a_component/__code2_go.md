@@ -28,7 +28,7 @@ func NewMyComponentA() *MyComponentA {
 	}
 }
 
-func (c *MyComponentA) Configure(config *config.ConfigParams) {
+func (c *MyComponentA) Configure(ctx context.Context, config *config.ConfigParams) {
 	c.param1 = config.GetAsStringWithDefault("param1", "ABC")
 	c.param2 = config.GetAsIntegerWithDefault("param2", 123)
 	c.status = "Configured"

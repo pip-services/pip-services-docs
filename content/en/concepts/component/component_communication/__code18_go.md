@@ -5,9 +5,9 @@ See [PrometheusCounters](../../../toolkit_api/golang/prometheus/count/prometheus
 // SetReferences method are sets references to dependent components.
 // - references  cref.IReferences
 // references to locate the component dependencies.
-func (c *PrometheusCounters) SetReferences(references cref.IReferences) {
-	c.logger.SetReferences(references)
-	c.connectionResolver.SetReferences(references)
+func (c *PrometheusCounters) SetReferences(ctx context.Context, references cref.IReferences) {
+	c.logger.SetReferences(ctx, references)
+	c.connectionResolver.SetReferences(ctx, references)
 	ref := references.GetOneOptional(
 		cref.NewDescriptor("pip-services", "context-info", "default", "*", "1.0"))
 	contextInfo, _ := ref.(*cinfo.ContextInfo)

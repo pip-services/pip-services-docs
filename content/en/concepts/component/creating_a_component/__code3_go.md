@@ -52,14 +52,14 @@ func NewMyComponentA() *MyComponentA {
 	}
 }
 
-func (c *MyComponentA) Configure(config *config.ConfigParams) {
+func (c *MyComponentA) Configure(ctx context.Context, config *config.ConfigParams) {
 	c.param1 = config.GetAsStringWithDefault("param1", "ABC")
 	c.param2 = config.GetAsIntegerWithDefault("param2", 123)
 	c.status = "Configured"
 	fmt.Println("MyComponentA has been configured.")
 }
 
-func (c *MyComponentA) SetReferences(references refer.IReferences) {
+func (c *MyComponentA) SetReferences(ctx context.Context, references refer.IReferences) {
 	component, err := references.GetOneRequired(
 		refer.NewDescriptor("myservice", "mycomponent-b", "*", "*", "1.0"),
 	)

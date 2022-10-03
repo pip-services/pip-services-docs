@@ -6,12 +6,12 @@ import (
 )
 
 service := NewMyGrpcService()
-service.Configure(cconf.NewConfigParamsFromTuples(
+service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"connection.protocol", "http",
 	"connection.host", "localhost",
 	"connection.port", 50055,
 ))
 
-service.SetReferences(cref.NewEmptyReferences())
+service.SetReferences(context.Background(), cref.NewEmptyReferences())
 
 ```

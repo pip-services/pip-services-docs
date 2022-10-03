@@ -6,7 +6,7 @@ import (
 
 lock := memlock.NewMemcachedLock()
 
-lock.Configure(conf.NewConfigParamsFromTuples(
+lock.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"connection.host", "localhost",
 	"connection.port", 11211,
 ))

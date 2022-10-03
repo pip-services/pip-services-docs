@@ -7,12 +7,12 @@ import (
 
 
 type HelloFriendServiceFactory struct {
-	cbuild.Factory
+	*cbuild.Factory
 }
 
 func NewHelloFriendServiceFactory() *HelloFriendServiceFactory {
 	c := HelloFriendServiceFactory{}
-	c.Factory = *cbuild.NewFactory()
+	c.Factory = cbuild.NewFactory()
 
 	commandableHttpServiceDescriptor := cref.NewDescriptor("hello-friend", "service", "commandable-http", "*", "1.0") // View
 	controllerDescriptor := cref.NewDescriptor("hello-friend", "controller", "default", "*", "1.0")                   // Controller

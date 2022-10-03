@@ -6,7 +6,7 @@ import (
 
 cache := memcache.NewMemcachedCache()
 
-cache.Configure(conf.NewConfigParamsFromTuples(
+cache.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"connection.host", "localhost",
 	"connection.port", 11211,
 ))

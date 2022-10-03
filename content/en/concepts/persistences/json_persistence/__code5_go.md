@@ -1,5 +1,5 @@
 
 ```go
-items, _ := persister.Load("123")
+items, _ := persister.Load(context.Background(), "123")
 
 ```

@@ -6,8 +6,8 @@ See [PrometheusMetricsService](../../../toolkit_api/golang/prometheus/services/p
 // Parameters:
 //   - references cref.IReferences
 // references to locate the component dependencies.
-func (c *PrometheusMetricsService) SetReferences(references cref.IReferences) {
-	c.RestService.SetReferences(references)
+func (c *PrometheusMetricsService) SetReferences(ctx context.Context, references cref.IReferences) {
+	c.RestService.SetReferences(ctx, references)
 
 	resolv := c.DependencyResolver.GetOneOptional("prometheus-counters")
 	c.cachedCounters = resolv.(*pcount.PrometheusCounters).CachedCounters

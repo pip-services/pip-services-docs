@@ -6,7 +6,7 @@ import (
 
 func main() {
 	proc := NewHelloFriendProcess()
-	proc.Run(os.Args)
+	proc.Run(context.Background(), os.Environ())
 }
 
 ```

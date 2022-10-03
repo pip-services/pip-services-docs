@@ -1,4 +1,4 @@
 
 ```go
-err := cache.Open("123")
+err := cache.Open(context.Background(), "123")
 ```

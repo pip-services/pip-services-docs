@@ -5,6 +5,6 @@ filter := cdata.NewFilterParamsFromTuples(
     "key2", 123
 )
 
-values := client.GetMyObjects(filter)
+values := client.GetMyObjects(context.Background(), filter)
 
 ```

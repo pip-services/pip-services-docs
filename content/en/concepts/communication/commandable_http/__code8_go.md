@@ -1,7 +1,7 @@
 
 ```go
 import (
-    clnt "github.com/pip-services3-go/pip-services3-rpc-go/clients"
+    clnt "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
 )
 ```
 

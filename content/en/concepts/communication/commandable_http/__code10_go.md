@@ -9,13 +9,13 @@ import (
 )
 
 client := NewMyCommandableHttpClient("commandable_hello_friend")
-client.Configure(cconf.NewConfigParamsFromTuples(
+client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"connection.protocol", "http",
 	"connection.host", "localhost",
 	"connection.port", 8080,
 ))
 
-client.Open("")
-defer client.Close("")
+client.Open(context.Background(), "")
+defer client.Close(context.Background(), "")
 
 ```

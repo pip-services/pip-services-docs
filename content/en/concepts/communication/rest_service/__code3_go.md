@@ -2,12 +2,12 @@
 ```go
 myRestService := NewMyRestService()
 
-myRestService.Configure(config.NewConfigParamsFromTuples(
+myRestService.Configure(context.Background(), config.NewConfigParamsFromTuples(
 	"connection.protocol", "http",
 	"connection.host", "localhost",
 	"connection.port", 15239,
 ))
 
-myRestService.Open("123")
+_ = myRestService.Open(context.Background(), "123")
 
 ```

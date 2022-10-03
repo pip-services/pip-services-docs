@@ -6,10 +6,10 @@ import (
 )
 
 client := NewMyGrpcClient()
-client.Configure(cconf.NewConfigParamsFromTuples(
+client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"connection.protocol", "http",
 	"connection.host", "localhost",
 	"connection.port", 50055,
 ))
-client.SetReferences(cref.NewEmptyReferences())
+client.SetReferences(context.Background(), cref.NewEmptyReferences())
 ```

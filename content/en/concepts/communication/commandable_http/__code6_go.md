@@ -1,18 +1,18 @@
 
 ```go
 import (
-    cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
-	rbuild "github.com/pip-services3-go/pip-services3-rpc-go/build"
-    sbuild "github.com/pip-services3-go/pip-services3-swagger-go/build"
+	rbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
+	sbuild "github.com/pip-services3-gox/pip-services3-swagger-gox/build"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
 )
 
 type HelloFriendProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewHelloFriendProcess() *HelloFriendProcess {
 	c := &HelloFriendProcess{
-		ProcessContainer: *cproc.NewProcessContainer("Hellow", "Hello friend microservice"),
+		ProcessContainer: cproc.NewProcessContainer("Hellow", "Hello friend microservice"),
 	}
 
 	c.SetConfigPath("./config.yaml")

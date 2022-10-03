@@ -7,7 +7,7 @@ import (
 
 
 lock := rlock.NewRedisLock()
-lock.Configure(conf.NewConfigParamsFromTuples(
+lock.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"connection.host", "localhost",
 	"connection.port", 6379,
 ))

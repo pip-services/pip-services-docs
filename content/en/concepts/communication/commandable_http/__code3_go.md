@@ -2,11 +2,13 @@
 ```go
 import (
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	srvc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	srvc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type FriendCommandableHttpService struct {
 	*srvc.CommandableHttpService
+
+	DependencyResolver *cref.DependencyResolver
 }
 
 func NewFriendCommandableHttpService() *FriendCommandableHttpService {

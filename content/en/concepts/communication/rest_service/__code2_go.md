@@ -1,13 +1,14 @@
 
 ```go
 import (
+	"context"
 	"net/http"
-	"time"
+	"os"
 
 	"github.com/gorilla/mux"
 
 	config "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type MyRestService struct {

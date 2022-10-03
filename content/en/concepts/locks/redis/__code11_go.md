@@ -1,4 +1,4 @@
 
 ```go
-err := lock.Open("123")
+err := lock.Open(context.Background(), "123")
 ```

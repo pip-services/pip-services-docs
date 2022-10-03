@@ -1,4 +1,4 @@
 
 ```go
-queue.Open("123")
+queue.Open(context.Background(), "123")
 ```

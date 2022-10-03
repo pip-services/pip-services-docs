@@ -29,7 +29,7 @@ type MyComponentA struct {
     
 // ...
 
-func (c *MyComponentA) MyTask(correlationId string) {
+func (c *MyComponentA) MyTask(ctx context.Context, correlationId string) {
 	fmt.Println("Doing my business task")
 	c.dummyVariable = "dummy value"
 }

@@ -7,7 +7,7 @@ import (
 
 
 cache := rcache.NewRedisCache()
-cache.Configure(conf.NewConfigParamsFromTuples(
+cache.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"connection.host", "localhost",
 	"connection.port", 6379,
 ))

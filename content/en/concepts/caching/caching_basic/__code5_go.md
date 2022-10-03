@@ -1,4 +1,4 @@
 
 ```go
-myCache.Remove("123", "key1")
+myCache.Remove(context.Background(), "123", "key1")
 ```

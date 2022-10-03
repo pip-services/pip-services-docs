@@ -13,28 +13,28 @@ func main() {
 	myComponentB := NewMyComponentB()
 
 	// Step 2 - Configure the component
-	myComponentA.Configure(config.NewConfigParamsFromTuples(
+	myComponentA.Configure(ctx context.Context, config.NewConfigParamsFromTuples(
 		"param1", "XYZ",
 		"param2", "987",
 	))
 
 	// Step 3 - Referencing
 	// Set references to the component
-	myComponentA.SetReferences(refer.NewReferencesFromTuples(
+	myComponentA.SetReferences(ctx context.Context, refer.NewReferencesFromTuples(
 		refer.NewDescriptor("myservice", "mycomponent-b", "default", "default", "1.0"), myComponentB,
 	))
 
 	// Step 4 - Openning
-	myComponentA.Open("123")
+	myComponentA.Open(ctx context.Context, "123")
 
 	// Step 5 - Execution
-	myComponentA.MyTask("123")
+	myComponentA.MyTask(ctx context.Context, "123")
 
 	// Step 6 - Closing
-	myComponentA.Close("123")
+	myComponentA.Close(ctx context.Context, "123")
 
 	// Step 7 - Un-referencing
-	myComponentA.UnsetReferences()
+	myComponentA.UnsetReferences(ctx context.Context)
 
 	// Step 8 - Destruction
 	defer func() {

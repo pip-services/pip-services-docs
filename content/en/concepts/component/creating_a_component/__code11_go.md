@@ -7,11 +7,12 @@ import (
 // Creating a factory
 
 type MyClassFactory struct {
-	build.Factory
+	*build.Factory
 }
 
 func NewMyClassFactory() *MyClassFactory {
 	c := MyClassFactory{}
+	c.Factory = build.NewFactory()
 
 	ComponentADescriptor := refer.NewDescriptor("myservice", "mycomponentA", "default", "*", "1.0")
 	ComponentBDescriptor := refer.NewDescriptor("myservice", "mycomponent-b", "default", "*", "1.0")

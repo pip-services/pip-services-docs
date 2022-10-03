@@ -1,5 +1,5 @@
 
-```ts
+```go
 import (
     crun "github.com/pip-services3-gox/pip-services3-commons-gox/run"
     cvalid "github.com/pip-services3-gox/pip-services3-commons-gox/validate"
@@ -7,14 +7,15 @@ import (
 )
 
 
+// Command set
 type FriendsCommandSet struct {
-	ccmd.CommandSet
-	controller HelloFriendController
+	*ccmd.CommandSet
+	controller *HelloFriendController
 }
 
-func NewFriendsCommandSet(controller HelloFriendController) *FriendsCommandSet {
+func NewFriendsCommandSet(controller *HelloFriendController) *FriendsCommandSet {
 	c := &FriendsCommandSet{
-		CommandSet: *ccmd.NewCommandSet(),
+		CommandSet: ccmd.NewCommandSet(),
 		controller: controller,
 	}
 
@@ -25,11 +26,10 @@ func NewFriendsCommandSet(controller HelloFriendController) *FriendsCommandSet {
 
 func (c *FriendsCommandSet) makeGreetingCommand() ccmd.ICommand {
 	return ccmd.NewCommand(
-		"get_beacons",
+		"greeting",
 		cvalid.NewObjectSchema().
-			WithOptionalProperty("filter", cvalid.NewFilterParamsSchema()).
-			WithOptionalProperty("paging", cvalid.NewPagingParamsSchema()),
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+			WithRequiredProperty("name", cvalid.NewFilterParamsSchema()),
+		func(ctx context.Context, correllationId string, args *crun.Parameters) (result interface{}, err error) {
 			name := args.GetAsString("name")
 			return c.controller.Greeting(name), nil
 		})

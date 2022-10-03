@@ -8,8 +8,8 @@ config := cconfig.NewConfigParamsFromTuples(
 )
 
 configReader := creader.NewEmptyMemoryConfigReader()
-configReader.Configure(config)
+configReader.Configure(ctx context.Context, config)
 parameters := cconfig.NewConfigParamsFromValue(os.Args)
-configReader.ReadConfig("123", parameters) // Result: connection.host=localhost;connection.port=8080
+configReader.ReadConfig(ctx context.Context, "123", parameters) // Result: connection.host=localhost;connection.port=8080
 
 ```

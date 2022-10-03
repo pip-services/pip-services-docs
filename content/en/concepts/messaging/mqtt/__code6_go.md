@@ -1,4 +1,4 @@
 
 ```go
-queue.Close("123")
+queue.Close(context.Background(), "123")
 ```

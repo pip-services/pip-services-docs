@@ -1,4 +1,4 @@
 
 ```go
-receivedPeekBatch, err := queue.PeekBatch("123", 3)
+receivedPeekBatch, err := queue.PeekBatch(context.Background(), "123", 3)
 ```

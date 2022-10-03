@@ -4,25 +4,25 @@ See: [IReferences](../../../toolkit_api/golang/commons/refer/ireferences/), [Ref
 ```go
 type IReferences interface {
 
-	Put(locator interface{}, component interface{})
+	Put(ctx context.Context, locator any, component any)
 
-	Remove(locator interface{}) interface{}
+	Remove(ctx context.Context, locator any) any
 
-	RemoveAll(locator interface{}) []interface{}
+	RemoveAll(ctx context.Context, locator any) []any
 
-	GetAllLocators() []interface{}
+	GetAllLocators() []any
 
-	GetAll() []interface{}
+	GetAll() []any
 
-	GetOptional(locator interface{}) []interface{}
+	GetOptional(locator any) []any
 
-	GetRequired(locator interface{}) ([]interface{}, error)
+	GetRequired(locator any) ([]any, error)
 
-	GetOneOptional(locator interface{}) interface{}
+	GetOneOptional(locator any) any
 
-	GetOneRequired(locator interface{}) (interface{}, error)
+	GetOneRequired(locator any) (any, error)
 
-	Find(locator interface{}, required bool) ([]interface{}, error)
+	Find(locator any, required bool) ([]any, error)
 }
 
 ```

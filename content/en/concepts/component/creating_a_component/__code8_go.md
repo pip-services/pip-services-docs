@@ -40,7 +40,7 @@ defer func() {
 
 // ...
 
-component.close(nil)
+component.Close(context.Background(), nil)
         
 ```
 

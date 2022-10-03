@@ -1,4 +1,4 @@
 
 ```go
-cache.Open("123")
+cache.Open(context.Background(), "123")
 ```

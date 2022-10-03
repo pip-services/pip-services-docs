@@ -4,7 +4,7 @@ import (
     conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
-queue.Configure(conf.NewConfigParamsFromTuples(
+queue.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"topic", "mytopic",                 // set topic
 	"connection.protocol", "mqtt",
 	"connection.host", "localhost",

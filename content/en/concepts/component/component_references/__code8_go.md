@@ -18,17 +18,17 @@ func NewDependencyResolverWithParams(config *conf.ConfigParams, references IRefe
 	c := NewDependencyResolver()
 
 	if config != nil {
-		c.Configure(config)
+		c.Configure(context.Background(), config)
 	}
 
 	if references != nil {
-		c.SetReferences(references)
+		c.SetReferences(context.Background(), references)
 	}
 
 	return c
 }
 
-func (c *DependencyResolver) Configure(config *conf.ConfigParams) {
+func (c *DependencyResolver) Configure(ctx context.Context, config *conf.ConfigParams) {
 	dependencies := config.GetSection("dependencies")
 	names := dependencies.Keys()
 	for _, name := range names {
@@ -46,11 +46,11 @@ func (c *DependencyResolver) Configure(config *conf.ConfigParams) {
 	}
 }
 
-func (c *DependencyResolver) SetReferences(references IReferences) {
+func (c *DependencyResolver) SetReferences(ctx context.Context, references IReferences) {
 	c.references = references
 }
 
-func (c *DependencyResolver) Put(name string, locator interface{}) {
+func (c *DependencyResolver) Put(ctx context.Context, name string, locator interface{}) {
 	c.dependencies[name] = locator
 }
 

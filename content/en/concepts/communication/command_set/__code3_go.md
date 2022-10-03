@@ -8,12 +8,12 @@ import (
 )
 
 type MyCommandSet struct {
-	ccmd.CommandSet
+	*ccmd.CommandSet
 }
 
 func NewMyCommandSet() *MyCommandSet {
 	c := &MyCommandSet{
-		CommandSet: *ccmd.NewCommandSet(),
+		CommandSet: ccmd.NewCommandSet(),
 	}
 
 	c.AddCommand(c.command1())
@@ -24,10 +24,10 @@ func (c *MyCommandSet) command1() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command1",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 1")
 			return
 		},
-    )
+	)
 }
 ```

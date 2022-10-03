@@ -3,6 +3,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 
 	ccmd "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
@@ -13,12 +14,11 @@ func main() {
 
 	mySet := NewMyCommandSet()
 
-	mySet.Execute("", "command1", nil)
-	mySet.Execute("", "command2", nil)
-	mySet.Execute("", "command3", nil)
-	mySet.Execute("", "command1B", nil)
+	mySet.Execute(context.Background(), "", "command1", nil)
+	mySet.Execute(context.Background(), "", "command2", nil)
+	mySet.Execute(context.Background(), "", "command3", nil)
+	mySet.Execute(context.Background(), "", "command1B", nil)
 }
-
 
 type MyCommandSetB struct {
 	ccmd.CommandSet
@@ -37,13 +37,12 @@ func (c *MyCommandSetB) command1B() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command1B",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 1B")
 			return
 		},
 	)
 }
-
 
 type MyCommandSet struct {
 	ccmd.CommandSet
@@ -64,7 +63,7 @@ func (c *MyCommandSet) command1() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command1",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 1")
 			return
 		},
@@ -75,7 +74,7 @@ func (c *MyCommandSet) command2() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command2",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 2")
 			return
 		},
@@ -86,7 +85,7 @@ func (c *MyCommandSet) command3() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command3",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 3")
 			return
 		},

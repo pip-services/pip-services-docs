@@ -2,31 +2,31 @@
 ```go
 import (
     refer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-    cservices "github.com/pip-services3-go/pip-services3-rpc-go/services"
+    cservices "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
     cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
 type FriendCommandableHttpService2 struct {
-	cservices.CommandableHttpService
+	rpcservices.CommandableHttpService
 	_swaggerPath string
 }
 
 func NewFriendCommandableHttpService2() *FriendCommandableHttpService2 {
 	c := &FriendCommandableHttpService2{}
-	c.CommandableHttpService = *cservices.InheritCommandableHttpService(c, "commandable_hello_friend2")
-	c.DependencyResolver.Put("controller", refer.NewDescriptor("hello-friend", "controller", "*", "*", "*"))
+	c.CommandableHttpService = *rpcservices.InheritCommandableHttpService(c, "commandable_hello_friend2")
+	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("hello-friend", "controller", "*", "*", "*"))
 	return c
 }
 
-func (c *FriendCommandableHttpService2) Configure(config *cconf.ConfigParams) {
-	c.RestService.Configure(config)
+func (c *FriendCommandableHttpService2) Configure(ctx context.Context, config *cconf.ConfigParams) {
+	c.RestService.Configure(ctx, config)
 
 	// swagger
-	c._swaggerPath = *config.GetAsNullableString("swagger.path")
+	c._swaggerPath, _ = config.GetAsNullableString("swagger.path")
 }
 
 func (c *FriendCommandableHttpService2) Register() {
-	c.Register()
+	c.CommandableHttpService.Register()
 
 	// swagger
 	if c._swaggerPath != "" {

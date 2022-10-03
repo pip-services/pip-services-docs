@@ -28,11 +28,11 @@ func NewMyComponentB() *MyComponentB {
 	}
 }
 
-func (c *MyComponentB) Configure(config *config.ConfigParams) {
+func (c *MyComponentB) Configure(ctx context.Context, config *config.ConfigParams) {
 	// pass
 }
 
-func (c *MyComponentB) SetReferences(references refer.IReferences) {
+func (c *MyComponentB) SetReferences(ctx context.Context, references refer.IReferences) {
 	// pass
 }
 
@@ -41,22 +41,22 @@ func (c *MyComponentB) IsOpen() bool {
 	return true
 }
 
-func (c *MyComponentB) Open(correlationId string) error {
+func (c *MyComponentB) Open(ctx context.Context, correlationId string) error {
 	// pass
 	return nil
 }
 
-func (c *MyComponentB) Close(correlationId string) error {
+func (c *MyComponentB) Close(ctx context.Context, correlationId string) error {
 	// pass
 	return nil
 }
 
 // Unsets (clears) previously set references to dependent components.
-func (c *MyComponentB) UnsetReferences() {
+func (c *MyComponentB) UnsetReferences(ctx context.Context) {
 	// pass
 }
 
-func (c *MyComponentB) MyTask(correlationId string) {
+func (c *MyComponentB) MyTask(ctx context.Context, correlationId string) {
 	// pass
 }
 
@@ -88,14 +88,14 @@ func NewMyComponentA() *MyComponentA {
 	}
 }
 
-func (c *MyComponentA) Configure(config *config.ConfigParams) {
+func (c *MyComponentA) Configure(ctx context.Context, config *config.ConfigParams) {
 	c.param1 = config.GetAsStringWithDefault("param1", "ABC")
 	c.param2 = config.GetAsIntegerWithDefault("param2", 123)
 	c.status = "Configured"
 	fmt.Println("MyComponentA has been configured.")
 }
 
-func (c *MyComponentA) SetReferences(references refer.IReferences) {
+func (c *MyComponentA) SetReferences(ctx context.Context, references refer.IReferences) {
 	component, err := references.GetOneRequired(
 		refer.NewDescriptor("myservice", "mycomponent-b", "*", "*", "1.0"),
 	)
@@ -111,7 +111,7 @@ func (c *MyComponentA) IsOpen() bool {
 	return c.open
 }
 
-func (c *MyComponentA) Open(correlationId string) error {
+func (c *MyComponentA) Open(ctx context.Context, correlationId string) error {
 	c.open = true
 	c.status = "Open"
 	fmt.Println("MyComponentA has been opened.")
@@ -119,7 +119,7 @@ func (c *MyComponentA) Open(correlationId string) error {
 	return nil
 }
 
-func (c *MyComponentA) Close(correlationId string) error {
+func (c *MyComponentA) Close(ctx context.Context, correlationId string) error {
 	c.open = false
 	c.status = "Closed"
 	fmt.Println("MyComponentA has been closed.")
@@ -128,14 +128,14 @@ func (c *MyComponentA) Close(correlationId string) error {
 }
 
 // Unsets (clears) previously set references to dependent components.
-func (c *MyComponentA) UnsetReferences() {
+func (c *MyComponentA) UnsetReferences(ctx context.Context) {
 	c.anotherComponent = nil
 	c.status = "Un-referenced"
 	fmt.Println("References cleared")
 
 }
 
-func (c *MyComponentA) MyTask(correlationId string) {
+func (c *MyComponentA) MyTask(ctx context.Context, correlationId string) {
 	fmt.Println("Doing my business task")
 	c.dummyVariable = "dummy value"
 }

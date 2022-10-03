@@ -31,7 +31,7 @@ type MyComponentA struct {
 // ...
     
 // Unsets (clears) previously set references to dependent components.
-func (c *MyComponentA) UnsetReferences() {
+func (c *MyComponentA) UnsetReferences(ctx context.Context) {
 	c.anotherComponent = nil
 	c.status = "Un-referenced"
 	fmt.Println("References cleared")

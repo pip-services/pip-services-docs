@@ -1,13 +1,13 @@
 
 ```go
 type MyGrpcService struct {
-	grpcservices.GrpcService
+	*grpcservices.GrpcService
 	protos.SummatorServer
 }
 
 func NewMyGrpcService() *MyGrpcService {
 	c := &MyGrpcService{}
-	c.GrpcService = *grpcservices.InheritGrpcService(c, "Summator")
+	c.GrpcService = grpcservices.InheritGrpcService(c, "Summator")
 	return c
 }
 

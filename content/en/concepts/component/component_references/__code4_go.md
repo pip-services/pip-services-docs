@@ -49,15 +49,15 @@ type SimpleController struct {
 	_worker interface{}
 }
 
-func (c *SimpleController) SetReferences(references crefer.IReferences) {
+func (c *SimpleController) SetReferences(ctx context.Context, references crefer.IReferences) {
 	c._worker, _ = references.GetOneRequired(111)
 }
 
-func (c *SimpleController) UnsetReferences() {
+func (c *SimpleController) UnsetReferences(ctx context.Context) {
 	c._worker = nil
 }
 
-func (c *SimpleController) Greeting(name string) {
+func (c *SimpleController) Greeting(ctx context.Context, name string) {
 
 	c._worker.(Worker).Do(clog.Debug, "Hello, "+name+"!")
 }

@@ -12,7 +12,7 @@ func main() {
 	// Component creation and configuration
 	queue := mqttqueue.NewMqttMessageQueue("")
 
-	queue.Configure(conf.NewConfigParamsFromTuples(
+	queue.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 		"topic", "mytopic", // set topic
 		"connection.protocol", "mqtt",
 		"connection.host", "localhost",
@@ -22,17 +22,17 @@ func main() {
 	))
 
 	// Connection
-	queue.Open("123")
+	queue.Open(context.Background(), "123")
 
 	// Send a message
-	queue.Send("123", msgqueues.NewMessageEnvelope("", "mymessage", []byte("ABC1234")))
+	queue.Send(context.Background(), "123", msgqueues.NewMessageEnvelope("", "mymessage", []byte("ABC1234")))
 
 	// Receive a message
-	message, _ := queue.Receive("123", 10000)
+	message, _ := queue.Receive(context.Background(), "123", 10000)
 	fmt.Println(message.GetMessageAsString())
 
 	// Close the connection
-	queue.Close("123")
+	queue.Close(context.Background(), "123")
 }
 
 ```

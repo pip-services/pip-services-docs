@@ -1,4 +1,4 @@
 
 ```go
-err := client.Open("123")
+err := client.Open(context.Background(), "123")
 ```

@@ -1,4 +1,4 @@
 
 ```go
-err := cache.Remove("123", "key1")
+err := cache.Remove(context.Background(), "123", "key1")
 ```

@@ -1,4 +1,4 @@
 
 ```go
-lock.Open("123")
+lock.Open(context.Background(), "123")
 ```

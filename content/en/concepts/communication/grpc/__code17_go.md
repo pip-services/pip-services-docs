@@ -4,13 +4,11 @@
 import (
 	"context"
 	"fmt"
-	"mymodule/calculations"
-	"mymodule/protos"
+	"tst/protos"
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	grpcclients "github.com/pip-services3-gox/pip-services3-grpc-gox/clients"
-	grpcservices "github.com/pip-services3-gox/pip-services3-grpc-gox/services"
 )
 
 // gRPC client
@@ -24,7 +22,7 @@ func NewMyGrpcClient() *MyGrpcClient {
 	return &dgc
 }
 
-func (c *MyGrpcClient) GetData(correlationId string, value1 float32, value2 float32) (result float32, err error) {
+func (c *MyGrpcClient) GetData(ctx context.Context, correlationId string, value1 float32, value2 float32) (result float32, err error) {
 
 	req := &protos.Number1{Value1: value1, Value2: value2}
 	reply := new(protos.Number2)
@@ -36,18 +34,26 @@ func (c *MyGrpcClient) GetData(correlationId string, value1 float32, value2 floa
 
 	return result, nil
 }
- 
-client := NewMyGrpcClient()
-client.Configure(cconf.NewConfigParamsFromTuples(
-	"connection.protocol", "http",
-	"connection.host", "localhost",
-	"connection.port", 50055,
-))
 
-client.SetReferences(cref.NewEmptyReferences())
+func main() {
+	client := NewMyGrpcClient()
+	client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+		"connection.protocol", "http",
+		"connection.host", "localhost",
+		"connection.port", 50055,
+	))
 
-err := client.Open("123")
+	client.SetReferences(context.Background(), cref.NewEmptyReferences())
 
-// Function call and result
-result, err := client.GetData("123", 3, 5) // Returns 8
+	err := client.Open(context.Background(), "123")
+
+	// Function call and result
+	result, err := client.GetData(context.Background(), "123", 3, 5) // Returns 8
+
+	fmt.Print(result)
+
+	err = client.Close(context.Background(), "123")
+
+	fmt.Print(err)
+}
 ```

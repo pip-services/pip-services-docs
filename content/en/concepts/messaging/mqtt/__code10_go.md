@@ -1,4 +1,4 @@
 
 ```go
-receivedPeek, err := queue.Peek("123")
+receivedPeek, err := queue.Peek(context.Background(), "123")
 ```

@@ -29,7 +29,7 @@ type MyComponentA struct {
     
 // ...
 
-func (c *MyComponentA) Close(correlationId string) error {
+func (c *MyComponentA) Close(ctx context.Context, correlationId string) error {
 	c.open = false
 	c.status = "Closed"
 	fmt.Println("MyComponentA has been closed.")

@@ -1,14 +1,11 @@
 
 ```go
-result, _ := persistence.Create(correlationId, dummy1)
-item, _ := result.(mypersistence.Dummy)
+item, _ := persistence.Create(context.Background(), correlationId, dummy1)
 fmt.Println("Created Dummy with ID: " + item.Id)
 
-result, _ = persistence.Create(correlationId, dummy2)
-item, _ = result.(mypersistence.Dummy)
+item, _ = persistence.Create(context.Background(), correlationId, dummy2)
 fmt.Println("Created Dummy with ID: " + item.Id)
 
-result, _ = persistence.Create(correlationId, dummy3)
-item, _ = result.(mypersistence.Dummy)
+item, _ = persistence.Create(context.Background(), correlationId, dummy3)
 fmt.Println("Created Dummy with ID: " + item.Id)
 ```

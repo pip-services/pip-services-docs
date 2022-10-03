@@ -1,12 +1,12 @@
 
 ```go
 type MyEventSet struct {
-	ccmd.CommandSet
+	*ccmd.CommandSet
 }
 
 func NewMyEventSet() *MyEventSet {
 	c := &MyEventSet{
-		CommandSet: *ccmd.NewCommandSet(),
+		CommandSet: ccmd.NewCommandSet(),
 	}
 
 	c.AddEvent(c.event1())

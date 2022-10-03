@@ -8,12 +8,12 @@ import (
 )
 
 type MyObjectSchema struct {
-	cvalid.ObjectSchema
+	*cvalid.ObjectSchema
 }
 
 func NewMyObjectSchema() *MyObjectSchema {
 	c := MyObjectSchema{}
-	c.ObjectSchema = *cvalid.NewObjectSchema()
+	c.ObjectSchema = cvalid.NewObjectSchema()
 
 	c.WithOptionalProperty("prop1", cconv.Integer)
 	c.WithRequiredProperty("prop2", cconv.String)

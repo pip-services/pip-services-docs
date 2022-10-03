@@ -1,49 +1,49 @@
 
 ```go
+
 import (
+	"context"
 	"fmt"
-	"reflect"
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	clnt "github.com/pip-services3-go/pip-services3-rpc-go/clients"
+	clnt "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
 )
-
 
 func main() {
 	client := NewMyCommandableHttpClient("commandable_hello_friend")
-	client.Configure(cconf.NewConfigParamsFromTuples(
+	client.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 		"connection.protocol", "http",
 		"connection.host", "localhost",
 		"connection.port", 8080,
 	))
-	client.Open("")
-	defer client.Close("")
-	data, _ := client.Greeting("123") // Returns 'Hello, Peter !'
-	fmt.Println(*data)
+	client.Open(context.Background(), "")
+	defer client.Close(context.Background(), "")
+	data, _ := client.Greeting(context.Background(), "123") // Returns 'Hello, Peter !'
+	fmt.Println(data)
 }
 
 type MyCommandableHttpClient struct {
-	clnt.CommandableHttpClient
+	*clnt.CommandableHttpClient
 }
 
 func NewMyCommandableHttpClient(baseRoute string) *MyCommandableHttpClient {
 	c := MyCommandableHttpClient{}
-	c.CommandableHttpClient = *clnt.NewCommandableHttpClient(baseRoute)
+	c.CommandableHttpClient = clnt.NewCommandableHttpClient(baseRoute)
 	return &c
 }
 
-func (c *MyCommandableHttpClient) Greeting(correlationId string) (result *string, err error) {
+func (c *MyCommandableHttpClient) Greeting(ctx context.Context, correlationId string) (result string, err error) {
 
 	params := cdata.NewEmptyStringValueMap()
 	params.Put("name", "Peter")
 
-	calValue, calErr := c.CallCommand(reflect.TypeOf(""), "greeting", correlationId, cdata.NewAnyValueMapFromValue(params.Value()))
+	res, calErr := c.CallCommand(context.Background(), "greeting", correlationId, cdata.NewAnyValueMapFromValue(params.Value()))
 	if calErr != nil {
-		return nil, calErr
+		return "", calErr
 	}
-	result = calValue.(*string)
-	return result, nil
+
+	return clnt.HandleHttpResponse[string](res, correlationId)
 }
 
 ```

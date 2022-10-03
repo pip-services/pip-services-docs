@@ -6,18 +6,18 @@ import (
 )
 
 type HelloFriendServiceFactory struct {
-	cbuild.Factory
+	*cbuild.Factory
 }
 
 func NewHelloFriendServiceFactory() *HelloFriendServiceFactory {
 	c := &HelloFriendServiceFactory{
-		Factory: *cbuild.NewFactory(),
+		Factory: cbuild.NewFactory(),
 	}
 
-	HttpServiceDescriptor := cref.NewDescriptor("hello-friend", "service", "http", "*", "1.0")                          // View 1
-	CommandableHttpServiceDescriptor1 := cref.NewDescriptor("hello-friend", "service", "commandable-http1", "*", "1.0") // View 2
-	CommandableHttpServiceDescriptor2 := cref.NewDescriptor("hello-friend", "service", "commandable-http2", "*", "1.0") // View 2
-	ControllerDescriptor := cref.NewDescriptor("hello-friend", "controller", "default", "*", "1.0")                     // Controller
+	HttpServiceDescriptor := crefer.NewDescriptor("hello-friend", "service", "http", "*", "1.0")                          // View 1
+	CommandableHttpServiceDescriptor1 := crefer.NewDescriptor("hello-friend", "service", "commandable-http1", "*", "1.0") // View 2
+	CommandableHttpServiceDescriptor2 := crefer.NewDescriptor("hello-friend", "service", "commandable-http2", "*", "1.0") // View 2
+	ControllerDescriptor := crefer.NewDescriptor("hello-friend", "controller", "default", "*", "1.0")                     // Controller
 
 	c.RegisterType(HttpServiceDescriptor, NewHelloFriendRestService)                    // View 1
 	c.RegisterType(CommandableHttpServiceDescriptor1, NewFriendCommandableHttpService1) // View 2
@@ -26,5 +26,6 @@ func NewHelloFriendServiceFactory() *HelloFriendServiceFactory {
 
 	return c
 }
+
     
 ```

@@ -42,7 +42,7 @@ func (c *MyEventSet) listener1() ccmd.IEventListener {
 // Step 2 - Create a listener
 type MyListener struct{}
 
-func (c *MyListener) OnEvent(correlationId string, event ccmd.IEvent, value *crun.Parameters) {
+func (c *MyListener) OnEvent(ctx context.Context, correlationId string, event ccmd.IEvent, value *crun.Parameters) {
 	fmt.Println("Fired event " + event.Name())
 }
 
@@ -62,9 +62,9 @@ events := myEvents.Events()  // Returns a list with event1, event2 and event3
 event2 := events[1]  // Returns event1
 
 // Step 6 - Notify the listener of an event occurrence
-event1.Notify("123", nil)
-event2.Notify("123", nil)
-myEvents.Notify("123", "event3", nil)
+event1.Notify(context.Background(), "123", nil)
+event2.Notify(context.Background(), "123", nil)
+myEvents.Notify(context.Background(), "123", "event3", nil)
 ```
 
 After running, this code produces the following output:         

@@ -4,16 +4,16 @@ import (
 	"reflect"
 
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	clnt "github.com/pip-services3-go/pip-services3-rpc-go/clients"
+	clnt "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
 )
 
 type MyCommandableHttpClient struct {
-	clnt.CommandableHttpClient
+	*clnt.CommandableHttpClient
 }
 
 func NewMyCommandableHttpClient(baseRoute string) *MyCommandableHttpClient {
 	c := MyCommandableHttpClient{}
-	c.CommandableHttpClient = *clnt.NewCommandableHttpClient(baseRoute)
+	c.CommandableHttpClient = clnt.NewCommandableHttpClient(baseRoute)
 	return &c
 }
 
@@ -22,12 +22,8 @@ func (c *MyCommandableHttpClient) Greeting(correlationId string) (result string,
 	params := cdata.NewEmptyStringValueMap()
 	params.Put("name", "Peter")
 
-	calValue, calErr := c.CallCommand(reflect.TypeOf(""), "greeting", correlationId, cdata.NewAnyValueMapFromValue(params.Value()))
-	if calErr != nil {
-		return "", calErr
-	}
-	result, _ = calValue.(string)
-	return result, nil
+	res, calErr := c.CallCommand(context.Background(), "greeting", correlationId, cdata.NewAnyValueMapFromValue(params.Value()))
+	return clnt.HandleHttpResponse[string](res, correlationId)
 }
 
 ```

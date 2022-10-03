@@ -1,6 +1,6 @@
 
 ```go
 projection := NewProjectionParamsFromStrings(([]string{"field1", "field2"});
-page := client.GetMyObjects(filter, sorting, paging, projection);
+page := client.GetMyObjects(context.Background(), filter, sorting, paging, projection);
 
 ```

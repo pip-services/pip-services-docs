@@ -3,24 +3,24 @@
 // Pre-requisites
 import (
 	"context"
-	"fmt"
-	"mymodule/calculations"
-	"mymodule/protos"
+	"time"
+	"tst/calculations"
+	"tst/protos"
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-	grpcclients "github.com/pip-services3-gox/pip-services3-grpc-gox/clients"
+	grpcservices "github.com/pip-services3-gox/pip-services3-grpc-gox/services"
 )
 
 // gRPC server
 type MyGrpcService struct {
-	grpcservices.GrpcService
+	*grpcservices.GrpcService
 	protos.SummatorServer
 }
 
 func NewMyGrpcService() *MyGrpcService {
 	c := &MyGrpcService{}
-	c.GrpcService = *grpcservices.InheritGrpcService(c, "Summator")
+	c.GrpcService = grpcservices.InheritGrpcService(c, "Summator")
 	return c
 }
 
@@ -34,15 +34,29 @@ func (c *MyGrpcService) Sum(ctx context.Context, req *protos.Number1) (result *p
 func (c *MyGrpcService) Register() {
 	protos.RegisterSummatorServer(c.Endpoint.GetServer(), c)
 }
-    
-service := NewMyGrpcService()
-service.Configure(cconf.NewConfigParamsFromTuples(
-	"connection.protocol", "http",
-	"connection.host", "localhost",
-	"connection.port", 50055,
-))
 
-service.SetReferences(cref.NewEmptyReferences())
+func main() {
+	service := NewMyGrpcService()
+	service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+		"connection.protocol", "http",
+		"connection.host", "localhost",
+		"connection.port", 50055,
+	))
 
-err := service.Open("123")
+	service.SetReferences(context.Background(), cref.NewEmptyReferences())
+
+	err := service.Open(context.Background(), "123")
+
+	if err != nil {
+		panic(err)
+	}
+
+	<-time.After(1 * time.Hour)
+	
+	err = service.Close(context.Background(), "123")
+
+	if err != nil {
+		panic(err)
+	}
+}
 ```

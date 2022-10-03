@@ -1,4 +1,4 @@
 
 ```go
-myCache := cache.NewNullCache()
+myCache := cache.NewNullCache[any]()
 ```

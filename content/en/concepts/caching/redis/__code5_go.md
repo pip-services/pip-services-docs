@@ -1,4 +1,4 @@
 
 ```go
-err = cache.Close("123")
+err = cache.Close(context.Background(), "123")
 ```

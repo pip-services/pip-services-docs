@@ -1,12 +1,12 @@
 
 ```go
 type MyCommandSetB struct {
-	ccmd.CommandSet
+	*ccmd.CommandSet
 }
 
 func NewMyCommandSetB() *MyCommandSetB {
 	c := &MyCommandSetB{
-		CommandSet: *ccmd.NewCommandSet(),
+		CommandSet: ccmd.NewCommandSet(),
 	}
 
 	c.AddCommand(c.command1B())
@@ -17,24 +17,23 @@ func (c *MyCommandSetB) command1B() ccmd.ICommand {
 	return ccmd.NewCommand(
 		"command1B",
 		nil,
-		func(correlationId string, args *crun.Parameters) (result interface{}, err error) {
+		func(ctx context.Context, correlationId string, args *crun.Parameters) (result interface{}, err error) {
 			fmt.Println("command 1B")
 			return
 		},
 	)
 }
 
-
 type MyCommandSet struct {
-	ccmd.CommandSet
+	*ccmd.CommandSet
 }
 
 func NewMyCommandSet() *MyCommandSet {
 	c := &MyCommandSet{
-		CommandSet: *ccmd.NewCommandSet(),
+		CommandSet: ccmd.NewCommandSet(),
 	}
 
-	c.AddCommandSet(&NewMyCommandSetB().CommandSet)
+	c.AddCommandSet(NewMyCommandSetB().CommandSet)
 	return c
 }
 ```

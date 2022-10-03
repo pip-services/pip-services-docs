@@ -3,13 +3,14 @@
 package main
 
 import (
+	"context"
 	"net/http"
 	"os"
 
 	"github.com/gorilla/mux"
 
 	config "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	rpc "github.com/pip-services3-go/pip-services3-rpc-go/services"
+	rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type MyRestService struct {
@@ -40,13 +41,13 @@ func (c *MyRestService) Register() {
 func main() {
 	myRestService := NewMyRestService()
 
-	myRestService.Configure(config.NewConfigParamsFromTuples(
+	myRestService.Configure(context.Background(), config.NewConfigParamsFromTuples(
 		"connection.protocol", "http",
 		"connection.host", "localhost",
 		"connection.port", 15239,
 	))
 
-	myRestService.Open("123")
+	_ = myRestService.Open(context.Background(), "123")
 
 	os.Stdin.Read(make([]byte, 1)) // wait for close
 }

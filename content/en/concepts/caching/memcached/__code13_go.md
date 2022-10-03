@@ -1,4 +1,4 @@
 
 ```go
-lock.ReleaseLock("123", "key1")
+lock.ReleaseLock(context.Background(), "123", "key1")
 ```

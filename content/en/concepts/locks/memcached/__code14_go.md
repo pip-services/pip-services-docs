@@ -7,16 +7,16 @@ import (
 
 func main() {
 	lock := memlock.NewMemcachedLock()
-	lock.Configure(conf.NewConfigParamsFromTuples(
+	lock.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 		"connection.host", "localhost",
 		"connection.port", 11211,
 	))
 
-	lock.Open("123")
-	defer lock.Close("123")
+	lock.Open(context.Background(), "123")
+	defer lock.Close(context.Background(), "123")
 
-	lock.AcquireLock("123", "key1", 3000, 1000)
-	defer lock.ReleaseLock("123", "key1")
+	lock.AcquireLock(context.Background(), "123", "key1", 3000, 1000)
+	defer lock.ReleaseLock(context.Background(), "123", "key1")
 
 	// Processing...
 }

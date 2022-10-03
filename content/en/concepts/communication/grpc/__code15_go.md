@@ -1,4 +1,4 @@
 
 ```go
-result, err := client.GetData("123", 3, 5) // Returns 8
+result, err := client.GetData(context.Background(), "123", 3, 5) // Returns 8
 ```

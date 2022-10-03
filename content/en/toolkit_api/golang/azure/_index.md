@@ -21,7 +21,7 @@ The module contains the following packages:
 
 ### Use
 
-Install the NPM package as
+Get the package from the Github repository:
 ```bash
-npm install pip-services3-azure-nodex --save
+go get -u github.com/pip-services3-gox/pip-services3-azure-gox@latest
 ```

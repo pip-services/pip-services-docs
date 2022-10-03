@@ -22,6 +22,10 @@ other parameters are passed to the action itself.
     - **project_id**:    is your Google Cloud Platform project ID
     - **region**:        is the region where your function is deployed
     - **function_name**: is the name of the HTTP function you deployed
+- **options**:
+	- **retries**: number of retries (default: 3)
+	- **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
+	- **timeout**: invocation timeout in milliseconds (default: 10 sec)
 - **credentials**:
     - **auth_token**:    Google-generated ID token, if use custom authorization provide empty string
 

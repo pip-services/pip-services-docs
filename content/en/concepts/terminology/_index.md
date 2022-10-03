@@ -325,6 +325,12 @@ weight: 1000
       </td>
     </tr>
     <tr>
+      <td>Long-living code</td>
+      <td>
+       Code that can last long because it is easily updatable and scalable.
+      </td>
+    </tr>	
+    <tr>
       <td>Memory persistence</td>
       <td>
        Persistence that stores data in memory. Within Pip.Services, this functionality is supported by the MemoryPersistence component.

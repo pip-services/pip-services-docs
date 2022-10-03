@@ -83,14 +83,12 @@ Closes a component and frees used resources.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### applyInterceptors
-Apply interceptors to the actions
+#### configure
+Configures a component by passing its configuration parameters.
 
-> `protected` applyInterceptors(action: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>): (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **action**: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\> - configuration parameters to be set.
-- **returns**: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\> - wrapped function into interceptor
-
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### generateActionCmd
 Adds '.cmd' to a command name

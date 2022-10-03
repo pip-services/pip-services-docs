@@ -70,13 +70,12 @@ This method shall only be used in testing.
 - **context**: any - context context.
 - **returns**: Promise\<any\> - returned result
 
-#### applyInterceptors
-Applies interceptors to the action.
+#### configure
+Configures a component by passing its configuration parameters.
 
-> `protected` applyInterceptors(action: (context: any) => Promise\<any\>): (context: any) => Promise\<any\>
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
-- **action**: (context: any) => Promise\<any\> - action
-- **returns**: (context: any) => Promise\<any\> - returned result
+- **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### applyValidation
 Performs a validation.
@@ -96,10 +95,10 @@ Closes a component and frees used resources.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
-#### applyInterceptors
+#### configure
 Configures a component by passing its configuration parameters.
 
-> public configure(config: [ConfigParams](../../../commons/config/config_params)): void
+> `public` configure(config: [ConfigParams](../../../commons/config/config_params)): void
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 

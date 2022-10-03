@@ -22,6 +22,10 @@ Commandable services are generated automatically for [ICommandable](../../../com
     - **protocol**: (optional) connection protocol
     - **app_name**: (optional) Azure Function application name
     - **function_name**: (optional) Azure Function name
+- **options**:
+     - **retries**: number of retries (default: 3)
+     - **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
+     - **timeout**: invocation timeout in milliseconds (default: 10 sec)
 - **credentials**:
     - **auth_code**: Azure Function auth code if use custom authorization provide empty string
 

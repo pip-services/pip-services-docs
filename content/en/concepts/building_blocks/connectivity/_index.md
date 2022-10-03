@@ -185,7 +185,7 @@ Similar to standard ConnectionResolver and CredentialResolver, different modules
 
 - HttpConnectionResolver defined in RPC module
 - AwsConnectionResolver defined in AWS module
-- AzureConnectionResolver defined in the Azure module
+- AzureFunctionConnectionResolver defined in the Azure module
 - MongoDbConnectionResolver defined in Mongo module
 - PostgresConnectionResolver defined in Postgres module
 - KafkaConnectionResolver defined in Kafka module

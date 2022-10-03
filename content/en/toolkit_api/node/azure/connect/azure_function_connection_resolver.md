@@ -1,11 +1,11 @@
 ---
 type: docs
-title: "AzureConnectionResolver"
-linkTitle: "AzureConnectionResolver"
+title: "AzureFunctionConnectionResolver"
+linkTitle: "AzureFunctionConnectionResolver"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
     Helper class used to retrieve Azure connection and credential parameters,
-    validate them and compose a [AzureConnectionParams](../azure_connection_params) value.
+    validate them and compose a [AzureFunctionConnectionParams](../azure_function_connection_params) value.
  
 ---
 
@@ -14,7 +14,7 @@ description: >
 ### Description
 
 Helper class to retrieve Azure connection and credential parameters,
-validate them and compose a [AzureConnectionParams](../azure_connection_params) value.
+validate them and compose a [AzureFunctionConnectionParams](../azure_function_connection_params) value.
 
 
 #### Configuration parameters
@@ -57,12 +57,12 @@ Configures a component by passing its configuration parameters.
 
 #### resolve
 Resolves connection and credential parameters and generates a single
-[AzureConnectionParams](../azure_connection_params) value.
+[AzureFunctionConnectionParams](../azure_function_connection_params) value.
 
-> `public` resolve(correlationId: string): Promise<[AzureConnectionParams](../azure_connection_params)>
+> `public` resolve(correlationId: string): Promise<[AzureFunctionConnectionParams](../azure_function_connection_params)>
 
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain. 
-- **returns**: Promise<[AzureConnectionParams](../azure_connection_params)> - receives an AzureConnectionParams value or error.
+- **returns**: Promise<[AzureFunctionConnectionParams](../azure_function_connection_params)> - receives an AzureFunctionConnectionParams value or error.
 
 #### setReferences
 Sets references to dependent components.
@@ -83,7 +83,7 @@ let config = ConfigParams.fromTuples(
     "credential.auth_code", "XXXXXXXXXX",
 );
 
-let connectionResolver = new AzureConnectionResolver();
+let connectionResolver = new AzureFunctionConnectionResolver();
 connectionResolver.configure(config);
 connectionResolver.setReferences(references);
 

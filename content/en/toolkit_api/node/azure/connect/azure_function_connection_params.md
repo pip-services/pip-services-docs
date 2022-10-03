@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "AzureConnectionParams"
-linkTitle: "AzureConnectionParams"
+title: "AzureFunctionConnectionParams"
+linkTitle: "AzureFunctionConnectionParams"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
 description: >
     Contains connection parameters to authenticate against Azure
@@ -126,26 +126,26 @@ Validates this connection parameters
 #### fromConfig
 Validates this connection parameters 
 
-> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [AzureConnectionParams]()
+> `public static` fromConfig(config: [ConfigParams](../../../commons/config/config_params)): [AzureFunctionConnectionParams]()
 
 - **config**: [ConfigParams](../../../commons/config/config_params) - configuration parameters
-- **returns**: [AzureConnectionParams]() - the generated AzureConnectionParams object.
+- **returns**: [AzureFunctionConnectionParams]() - the generated AzureFunctionConnectionParams object.
 
 #### mergeConfigs
-Retrieves AzureConnectionParams from multiple configuration parameters.
+Retrieves AzureFunctionConnectionParams from multiple configuration parameters.
 The values are retrieves from "connection" and "credential" sections.
 
-> `public static` mergeConfigs(...configs: [ConfigParams](../../../commons/config/config_params)[]): [AzureConnectionParams]()
+> `public static` mergeConfigs(...configs: [ConfigParams](../../../commons/config/config_params)[]): [AzureFunctionConnectionParams]()
 
 - **config**: string - a list with configuration parameters
-- **returns**: [AzureConnectionParams]() - the generated AzureConnectionParams object.
+- **returns**: [AzureFunctionConnectionParams]() - the generated AzureFunctionConnectionParams object.
 
 
 
 ### Examples
 
 ```typescript
-let connection = AzureConnectionParams.fromTuples(
+let connection = AzureFunctionConnectionParams.fromTuples(
     "connection.uri", "http://myapp.azurewebsites.net/api/myfunction",
     "connection.protocol", "http",
     "connection.app_name", "myapp",
@@ -162,4 +162,4 @@ const authCode = connection.getAuthCode();           // Result: "code"
 
 
 ### See also
-- #### [AzureConnectionResolver](../azure_connection_resolver)
+- #### [AzureFunctionConnectionResolver](../azure_function_connection_resolver)

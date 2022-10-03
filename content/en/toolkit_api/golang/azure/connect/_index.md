@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-nodex/pip-services3-azure-nodex"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-azure-gox"
 description: >
     This package contains classes used to create connections to Azure.
 ---

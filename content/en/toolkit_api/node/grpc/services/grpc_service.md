@@ -88,7 +88,7 @@ This method is called by the service and must be overriden in child classes.
 ### Instance methods
 
 #### applyValidation
-TODO: add description
+Performs a validation.
 
 > `protected` applyValidation(schema: [Schema](../../../commons/validate/schema), action: (call: any) => Promise\<any\>): (call: any) => Promise\<any\>
 
@@ -98,7 +98,7 @@ TODO: add description
 
 
 #### applyInterceptors
-TODO: add description
+Applies given action to the interseptors
 
 > `protected` applyInterceptors(action: (call: any) => Promise\<any\>): (call: any) => Promise\<any\>
 

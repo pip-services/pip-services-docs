@@ -21,6 +21,10 @@ other parameters are passed to the action itself.
     - **protocol**: (optional) connection protocol
     - **app_name**: (optional) Azure Function application name
     - **function_name**: (optional) Azure Function name
+- **options**:
+     - **retries**: number of retries (default: 3)
+     - **connect_timeout**: connection timeout in milliseconds (default: 10 sec)
+     - **timeout**: invocation timeout in milliseconds (default: 10 sec)
 - **credentials**:
     - **auth_code**: Azure Function auth code if use custom authorization provide empty string
 
@@ -44,11 +48,11 @@ The connection timeout in milliseconds.
 
 ### _connection
 The Azure Function connection parameters
-> **_connection**: [AzureConnectionParams](../../connect/azure_connection_params)
+> **_connection**: [AzureFunctionConnectionParams](../../connect/azure_function_connection_params)
 
 ### _connectionResolver
 The connection resolver.
-> **_connectionResolver**: [AzureConnectionResolver](../../connect/azure_connection_resolver)
+> **_connectionResolver**: [AzureFunctionConnectionResolver](../../connect/azure_function_connection_resolver)
 
 ### _counters
 Performance counters.

@@ -1,4 +1,4 @@
 
 ```go
-counters.Increment("mycomponent.mymethod.calls1", 1)
+counters.Increment(context.Background(), "mycomponent.mymethod.calls1", 1)
 ```

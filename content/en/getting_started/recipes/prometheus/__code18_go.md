@@ -1,4 +1,4 @@
 
 ```go
-counters.TimestampNow("mycomponent.mymethod.times2")
+counters.TimestampNow(context.Background(), "mycomponent.mymethod.times2")
 ```

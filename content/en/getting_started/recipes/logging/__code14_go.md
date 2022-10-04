@@ -1,5 +1,5 @@
 
 ```go
-elasticSearchLogger.Configure(config)
-_ = elasticSearchLogger.Open("123")
+elasticSearchLogger.Configure(context.Background(), config)
+_ = elasticSearchLogger.Open(context.Background(), "123")
 ```

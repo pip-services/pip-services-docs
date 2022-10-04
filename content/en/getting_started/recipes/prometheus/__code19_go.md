@@ -2,13 +2,13 @@
 ```go
 func MyMethod() {
 
-	timing := counters.BeginTiming("mycomponent.mymethod.exec_time")
+	timing := counters.BeginTiming(context.Background(), "mycomponent.mymethod.exec_time")
 
-	defer timing.EndTiming()
+	defer timing.EndTiming(context.Background())
 
 	// our task
 
-	counters.Dump()
+	counters.Dump(context.Background())
 }
 
 ```

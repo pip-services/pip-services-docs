@@ -1,4 +1,4 @@
 
-```cs
-await credentialStore.StoreAsync(null, "key3", null);
+```go
+credentialStore.Store(context.Background(), "123", "key3", nil);
 ```

@@ -8,6 +8,6 @@ config := cconf.NewConfigParamsFromTuples(
 )
 
 discovery := cconn.NewEmptyMemoryDiscovery()
-discovery.Configure(config)
+discovery.Configure(context.Background(), config)
 
 ```

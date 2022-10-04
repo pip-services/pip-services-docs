@@ -2,12 +2,12 @@
 ```go
 // Creating a process container
 type MyProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewMyProcess() *MyProcess {
 	c := MyProcess{}
-	c.ProcessContainer = *cproc.NewProcessContainer("myservice", "My service running as a process")
+	c.ProcessContainer = cproc.NewProcessContainer("myservice", "My service running as a process")
 	c.SetConfigPath("./config/config.yml")
 	MyFactory1 := cbuild.NewFactory()
 

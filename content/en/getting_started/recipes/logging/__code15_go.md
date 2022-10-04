@@ -1,4 +1,4 @@
 
 ```go
-consoleLogger.Configure(config)
+consoleLogger.Configure(context.Background(), config)
 ```

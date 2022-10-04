@@ -2,7 +2,7 @@
 ```go
 service := pservice.NewPrometheusMetricsService()
 
-service.Configure(cconf.NewConfigParamsFromTuples(
+service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"connection.protocol", "http",
 	"connection.host", "localhost",
 	"connection.port", 8080,

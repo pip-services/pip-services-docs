@@ -1,4 +1,4 @@
 
 ```go
-logger.SetReferences(references)
+logger.SetReferences(context.Background(), references)
 ```

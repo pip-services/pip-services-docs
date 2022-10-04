@@ -1,11 +1,11 @@
 
 ```go
-err := service.Open("123")
+err := service.Open(context.Background(), "123")
 if err != nil {
 	fmt.Println(err)
 }
 
-err = counters.Open("123")
+err = counters.Open(context.Background(), "123")
 if err != nil {
 	fmt.Println(err)
 }
@@ -13,7 +13,7 @@ if err != nil {
 countExec := 2
 
 for i := 0; i < countExec; i++ {
-	myComponentA.MyMethod()
+	myComponentA.MyMethod(context.Background())
 }
 
 ```

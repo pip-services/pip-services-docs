@@ -1,6 +1,6 @@
 
 ```go
-counters.Configure(cconf.NewConfigParamsFromTuples(
+counters.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"interval", 60000,
 	"...",
 ))

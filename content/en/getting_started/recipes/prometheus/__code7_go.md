@@ -1,4 +1,4 @@
 
 ```go
-err := counters.Close("123")
+err := counters.Close(context.Background(), "123")
 ```

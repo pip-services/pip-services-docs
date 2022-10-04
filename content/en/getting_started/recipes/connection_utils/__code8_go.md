@@ -34,7 +34,6 @@ func main() {
 }
 
 type MongoDbConnector struct {
-	Ctx context.Context
 	//   The configuration options.
 	Config *cconf.ConfigParams
 	//   The MongoDB connection object.
@@ -62,7 +61,7 @@ func (c *MongoDbConnector) GetCollection() *mongodrv.Collection {
 	return c.Db.Collection("test")
 }
 
-func (c *MongoDbConnector) Configure(config *cconf.ConfigParams) {
+func (c *MongoDbConnector) Configure(ctx context.Context, config *cconf.ConfigParams) {
 	c.Config = config
 
 	// if connection passed as uri
@@ -94,7 +93,7 @@ func (c *MongoDbConnector) composeSettings(settings *mongoclopt.ClientOptions) {
 	}
 }
 
-func (c *MongoDbConnector) Open(correlationId string) error {
+func (c *MongoDbConnector) Open(ctx context.Context, correlationId string) error {
 	collection := c.Config.GetAsNullableString("collection")
 
 	c.Config = ccon.ConnectionUtils.Exclude(c.Config, "collection")
@@ -115,8 +114,7 @@ func (c *MongoDbConnector) Open(correlationId string) error {
 	cs, _ := connstring.Parse(uri)
 	c.DatabaseName = cs.Database
 
-	c.Ctx = context.Background()
-	err = client.Connect(c.Ctx)
+	err = client.Connect(ctx)
 	if err != nil {
 		err = cerror.NewConnectionError(correlationId, "CONNECT_FAILED", "Connection to mongodb failed").WithCause(err)
 		return err
@@ -126,12 +124,12 @@ func (c *MongoDbConnector) Open(correlationId string) error {
 	return nil
 }
 
-func (c *MongoDbConnector) Close(correlationId string) error {
+func (c *MongoDbConnector) Close(ctx context.Context, correlationId string) error {
 	if c.Connection == nil {
 		return nil
 	}
 
-	err := c.Connection.Disconnect(c.Ctx)
+	err := c.Connection.Disconnect(ctx)
 	c.Connection = nil
 	c.Db = nil
 	c.DatabaseName = ""

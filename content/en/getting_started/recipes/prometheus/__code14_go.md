@@ -3,6 +3,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
@@ -18,7 +19,7 @@ func main() {
 
 	// Create an instance of PrometheusCounters and configure it
 	counters := pcount.NewPrometheusCounters()
-	counters.Configure(cconf.NewConfigParamsFromTuples(
+	counters.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 		"connection.protocol", "http",
 		"connection.host", "localhost",
 		"connection.port", 8080,
@@ -26,7 +27,7 @@ func main() {
 
 	// Create an instance of PrometheusMetricsService and configure it
 	service := pservice.NewPrometheusMetricsService()
-	service.Configure(cconf.NewConfigParamsFromTuples(
+	service.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 		"connection.protocol", "http",
 		"connection.host", "localhost",
 		"connection.port", 8080,
@@ -37,23 +38,23 @@ func main() {
 	contextInfo.Name = "Test"
 	contextInfo.Description = "This is a test container"
 
-	references := refer.NewReferencesFromTuples(
+	references := refer.NewReferencesFromTuples(context.Background(),
 		refer.NewDescriptor("pip-services", "context-info", "default", "default", "1.0"), contextInfo,
 		refer.NewDescriptor("pip-services", "counters", "prometheus", "default", "1.0"), counters,
 		refer.NewDescriptor("pip-services", "metrics-service", "prometheus", "default", "1.0"), service,
 	)
 
-	service.SetReferences(references)
-	counters.SetReferences(references)
-	myComponentA.SetReferences(references)
+	service.SetReferences(context.Background(), references)
+	counters.SetReferences(context.Background(), references)
+	myComponentA.SetReferences(context.Background(), references)
 
 	// Connect the service and counters objects
-	err := service.Open("123")
+	err := service.Open(context.Background(), "123")
 	if err != nil {
 		fmt.Println(err)
 	}
 
-	err = counters.Open("123")
+	err = counters.Open(context.Background(), "123")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -62,7 +63,7 @@ func main() {
 	countExec := 2
 
 	for i := 0; i < countExec; i++ {
-		myComponentA.MyMethod()
+		myComponentA.MyMethod(context.Background())
 	}
 
 	// Get the counters
@@ -70,13 +71,13 @@ func main() {
 	fmt.Println(result)
 
 	// close counter, for closing Http client for prometheus
-	err = counters.Close("123")
+	err = counters.Close(context.Background(), "123")
 	if err != nil {
 		fmt.Println(err)
 	}
 
 	// close service for closing Http server
-	err = service.Close("123")
+	err = service.Close(context.Background(), "123")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -99,7 +100,7 @@ func NewMyComponentA() *MyComponentA {
 	return &c
 }
 
-func (c *MyComponentA) SetReferences(references refer.IReferences) {
+func (c *MyComponentA) SetReferences(ctx context.Context, references refer.IReferences) {
 	p, err := references.GetOneRequired(
 		refer.NewDescriptor("*", "counters", "prometheus", "*", "*"),
 	)
@@ -109,15 +110,15 @@ func (c *MyComponentA) SetReferences(references refer.IReferences) {
 	}
 }
 
-func (c *MyComponentA) MyMethod() {
+func (c *MyComponentA) MyMethod(ctx context.Context) {
 
 	// Count the number of calls to this method
-	c.counters.Increment("mycomponent.mymethod.calls", 1)
+	c.counters.Increment(context.Background(), "mycomponent.mymethod.calls", 1)
 
 	// Measure execution time
-	timing := c.counters.BeginTiming("mycomponent.mymethod.exec_time")
+	timing := c.counters.BeginTiming(context.Background(), "mycomponent.mymethod.exec_time")
 
-	defer timing.EndTiming()
+	defer timing.EndTiming(context.Background())
 
 	// Task for this method: print greetings in two languages.
 	if c.ConsoleLog {
@@ -126,6 +127,6 @@ func (c *MyComponentA) MyMethod() {
 	}
 
 	// Save the values of counters
-	c.counters.Dump()
+	c.counters.Dump(context.Background())
 }
 ```

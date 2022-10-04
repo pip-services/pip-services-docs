@@ -4,7 +4,7 @@ package main
 
 func main() {
 	proc := NewMyProcess()
-	proc.Run(os.Args)
+	proc.Run(context.Background(), os.Environ())
 }
 
 ```

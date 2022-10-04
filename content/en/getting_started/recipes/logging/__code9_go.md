@@ -10,15 +10,15 @@ import (
 func main() {
 
 	logger := logelastic.NewElasticSearchLogger()
-	logger.Configure(cconfig.NewConfigParamsFromTuples(
+	logger.Configure(context.Background(), cconfig.NewConfigParamsFromTuples(
 		"connection.protocol", "http",
 		"connection.host", "localhost",
 		"connection.port", 9200,
 	))
 
 	logger.SetLevel(5)
-	_ = logger.Open("123")
-	logger.Info("123", "My message")
+	_ = logger.Open(context.Background(), "123")
+	logger.Info(context.Background(), "123", "My message")
 
 }
 

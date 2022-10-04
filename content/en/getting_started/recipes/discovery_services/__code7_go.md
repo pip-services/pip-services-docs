@@ -20,7 +20,7 @@ func main() {
 	)
 
 	discovery := cconn.NewEmptyMemoryDiscovery()
-	discovery.Configure(config)
+	discovery.Configure(context.Background(), config)
 
 	// Adding more parameters
 	discovery.Register("123", "key1", cconn.NewConnectionParamsFromTuples(

@@ -2,7 +2,7 @@
 type: docs
 title: "DataDogStatus"
 linkTitle: "DataDogStatus"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-datadog-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-datadog-gox"
 description: >
     Defines the different status levels.
 

@@ -2,13 +2,11 @@
 type: docs
 title: "DataDogLogger"
 linkTitle: "DataDogLogger"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-datadog-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-datadog-gox"
 description: >
     Logger that dumps execution logs to a DataDog service.
 
 ---
-
-**Implements:** [CachedCounters](../../../components/count/cached_counters/)
 
 ### Description
 The DataDogLogger class allows you to create loggers that dump execution logs to a DataDog service.
@@ -54,8 +52,9 @@ Creates a new instance of the logger.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*DataDogLogger]()) Close(correlationId string) error
+> (c [*DataDogLogger]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -63,8 +62,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters. 
 
-> (c [*DataDogLogger]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*DataDogLogger]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### IsOpen
@@ -78,8 +78,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*DataDogLogger]()) Open(correlationId string) error
+> (c [*DataDogLogger]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -87,17 +88,19 @@ Opens the component.
 #### Save
 Saves log messages from the cache.
 
-> (c *DataDogLogger) Save(messages [[]*LogMessage](../../../components/log/log_message)) error
+> (c *DataDogLogger) Save(ctx context.Context, messages [[]LogMessage](../../../components/log/log_message)) error
 
-- **messages**: [[]*LogMessage](../../../components/log/log_message) - list with log messages
+- **ctx**: context.Context - operation context.
+- **messages**: [[]LogMessage](../../../components/log/log_message) - list with log messages
 - **returns**: error - error or nil if no errors occurred.
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*DataDogCounters]()) SetReferences(refs [IReferences](../../../commons/refer/ireferences))
+> (c [*DataDogCounters]()) SetReferences(ctx context.Context, refs [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
@@ -105,11 +108,12 @@ Sets references to dependent components.
 
 ```go
 logger := NewDataDogLogger();
-logger.Configure(NewConfigParamsFromTuples(
+logger.Configure(context.Background(), NewConfigParamsFromTuples(
     "credential.access_key", "827349874395872349875493"
-));
+))
 
-err := logger.Open("123");
-logger.Error("123", ex, "Error occured: %s", ex.message);
-logger.Debug("123", "Everything is OK.");
+err := logger.Open(context.Background(), "123")
+
+logger.Error(context.Background(), "123", ex, "Error occured: %s", ex.message)
+logger.Debug(context.Background(), "123", "Everything is OK.")
 ```

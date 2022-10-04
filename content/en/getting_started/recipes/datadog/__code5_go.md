@@ -17,8 +17,8 @@ func NewMyComponentA(counters *dcount.DataDogCounters) *MyComponentA {
 	return c
 }
 
-func (c *MyComponentA) Configure(config *conf.ConfigParams) {
-	c.counters.Configure(config)
+func (c *MyComponentA) Configure(ctx context.Context, config *conf.ConfigParams) {
+	c.counters.Configure(ctx, config)
 }
 
 func (c *MyComponentA) GetCounters() *dcount.DataDogCounters {
@@ -29,26 +29,26 @@ func (c *MyComponentA) IsOpen() bool {
 	return c.counters.IsOpen()
 }
 
-func (c *MyComponentA) Open(correlationId string) error {
-	return c.counters.Open(correlationId)
+func (c *MyComponentA) Open(ctx context.Context, correlationId string) error {
+	return c.counters.Open(ctx, correlationId)
 }
 
-func (c *MyComponentA) Close(correlationId string) error {
-	return c.counters.Close(correlationId)
+func (c *MyComponentA) Close(ctx context.Context, correlationId string) error {
+	return c.counters.Close(ctx, correlationId)
 }
 
-func (c *MyComponentA) MyMethod() {
-	c.counters.Increment("mycomponent.mymethod.calls", 1)
-	timing := c.counters.BeginTiming("mycomponent.mymethod.exec_time")
+func (c *MyComponentA) MyMethod(ctx context.Context) {
+	c.counters.Increment(ctx, "mycomponent.mymethod.calls", 1)
+	timing := c.counters.BeginTiming(ctx, "mycomponent.mymethod.exec_time")
 
-	defer timing.EndTiming()
+	defer timing.EndTiming(ctx)
 
 	if c.consoleLog {
 		fmt.Println("Hola amigo")
 		fmt.Println("Hola amigoBonjour mon ami")
 	}
 
-	c.counters.Dump()
+	c.counters.Dump(ctx)
 }
 
 ```

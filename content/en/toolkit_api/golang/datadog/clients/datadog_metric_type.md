@@ -2,7 +2,7 @@
 type: docs
 title: "DataDogMetricType"
 linkTitle: "DataDogMetricType"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-datadog-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-datadog-gox"
 description: >
     Defines fields for DataDog metric types.
 

@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
-	dcount "github.com/pip-services3-go/pip-services3-datadog-go/count"
+	dcount "github.com/pip-services3-gox/pip-services3-datadog-gox/count"
 )
 
 type MyComponentA struct {
@@ -24,17 +24,17 @@ func NewMyComponentA(counters *dcount.DataDogCounters) *MyComponentA {
 	return c
 }
 
-func (c *MyComponentA) MyMethod() {
-	c.counters.Increment("mycomponent.mymethod.calls", 1)
-	timing := c.counters.BeginTiming("mycomponent.mymethod.exec_time")
+func (c *MyComponentA) MyMethod(ctx context.Context) {
+	c.counters.Increment(ctx, "mycomponent.mymethod.calls", 1)
+	timing := c.counters.BeginTiming(ctx, "mycomponent.mymethod.exec_time")
 
-	defer timing.EndTiming()
+	defer timing.EndTiming(ctx)
 
 	if c.consoleLog {
 		fmt.Println("Hola amigo")
 		fmt.Println("Hola amigoBonjour mon ami")
 	}
 
-	c.counters.Dump()
+	c.counters.Dump(ctx)
 }
 ```

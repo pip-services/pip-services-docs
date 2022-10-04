@@ -1,9 +1,9 @@
 
 ```go
 import (
-	logic "github.com/pip-services-samples/service-beacons-go/logic"
-	persist "github.com/pip-services-samples/service-beacons-go/persistence"
-	services1 "github.com/pip-services-samples/service-beacons-go/services/version1"
+	logic "github.com/pip-services-samples/service-beacons-gox/logic"
+	persist "github.com/pip-services-samples/service-beacons-gox/persistence"
+	services1 "github.com/pip-services-samples/service-beacons-gox/services/version1"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )

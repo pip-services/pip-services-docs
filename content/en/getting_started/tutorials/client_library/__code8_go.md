@@ -7,10 +7,10 @@ package test_clients1
 import (
 	"testing"
 
-	clients1 "github.com/pip-services-samples/client-beacons-go/clients/version1"
-	logic "github.com/pip-services-samples/service-beacons-go/logic"
-	persist "github.com/pip-services-samples/service-beacons-go/persistence"
-	services1 "github.com/pip-services-samples/service-beacons-go/services/version1"
+	clients1 "github.com/pip-services-samples/client-beacons-gox/clients/version1"
+	logic "github.com/pip-services-samples/service-beacons-gox/logic"
+	persist "github.com/pip-services-samples/service-beacons-gox/persistence"
+	services1 "github.com/pip-services-samples/service-beacons-gox/services/version1"
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
 )

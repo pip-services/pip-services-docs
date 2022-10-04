@@ -5,24 +5,25 @@
 package logic
 
 import (
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	"context"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 
 type IBeaconsController interface {
-	GetBeacons(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *data1.BeaconV1DataPage, err error)
+	GetBeacons(ctx context.Context, correlationId string, filter cdata.FilterParams, paging cdata.PagingParams) (cdata.DataPage[data1.BeaconV1], error)
 
-	GetBeaconById(correlationId string, beaconId string) (item *data1.BeaconV1, err error)
+	GetBeaconById(ctx context.Context, correlationId string, beaconId string) (data1.BeaconV1, error)
 
-	GetBeaconByUdi(correlationId string, beaconId string) (item *data1.BeaconV1, err error)
+	GetBeaconByUdi(ctx context.Context, correlationId string, beaconId string) (data1.BeaconV1, error)
 
-	CalculatePosition(correlationId string, siteId string, udis []string) (position *data1.GeoPointV1, err error)
+	CalculatePosition(ctx context.Context, correlationId string, siteId string, udis []string) (data1.GeoPointV1, error)
 
-	CreateBeacon(correlationId string, beacon *data1.BeaconV1) (item *data1.BeaconV1, err error)
+	CreateBeacon(ctx context.Context, correlationId string, beacon data1.BeaconV1) (data1.BeaconV1, error)
 
-	UpdateBeacon(correlationId string, beacon *data1.BeaconV1) (item *data1.BeaconV1, err error)
+	UpdateBeacon(ctx context.Context, correlationId string, beacon data1.BeaconV1) (data1.BeaconV1, error)
 
-	DeleteBeaconById(correlationId string, beaconId string) (item *data1.BeaconV1, err error)
+	DeleteBeaconById(ctx context.Context, correlationId string, beaconId string) (data1.BeaconV1, error)
 }
 
 ```

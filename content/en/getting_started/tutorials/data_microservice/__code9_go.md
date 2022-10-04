@@ -5,145 +5,81 @@
 package persistence
 
 import (
+	"context"
 	"reflect"
 	"strings"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
+	cmongo "github.com/pip-services3-gox/pip-services3-mongodb-gox/persistence"
 	"go.mongodb.org/mongo-driver/bson"
-	"go.mongodb.org/mongo-driver/mongo"
 )
 
-type BeaconsMongoDbPersistence struct {
-	mpersist.IdentifiableMongoDbPersistence
+type BeaconsMongoPersistence struct {
+	*cmongo.IdentifiableMongoDbPersistence[data1.BeaconV1, string]
 }
 
-func NewBeaconsMongoDbPersistence() *BeaconsMongoDbPersistence {
-	proto := reflect.TypeOf(&data1.BeaconV1{})
-	c := &BeaconsMongoDbPersistence{}
-	c.IdentifiableMongoDbPersistence = *mpersist.InheritIdentifiableMongoDbPersistence(c, proto, "beacons")
+func NewBeaconsMongoPersistence() *BeaconsMongoPersistence {
+	c := &BeaconsMongoPersistence{}
+	c.IdentifiableMongoDbPersistence = cmongo.InheritIdentifiableMongoDbPersistence[data1.BeaconV1, string](c, reflect.TypeOf(data1.BeaconV1{}), "beacons")
 	return c
 }
 
-func (c *BeaconsMongoDbPersistence) composeFilter(filter *cdata.FilterParams) interface{} {
-	if filter == nil {
-		filter = cdata.NewEmptyFilterParams()
+func (c *BeaconsMongoPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, paging cdata.PagingParams) (cdata.DataPage[data1.BeaconV1], error) {
+	filterObj := bson.M{}
+	if id, ok := filter.GetAsNullableString("id"); ok && id != "" {
+		filterObj["_id"] = id
 	}
-
-	criteria := make([]bson.M, 0, 0)
-
-	id := filter.GetAsString("id")
-	if id != "" {
-		criteria = append(criteria, bson.M{"_id": id})
+	if siteId, ok := filter.GetAsNullableString("site_id"); ok && siteId != "" {
+		filterObj["site_id"] = siteId
 	}
-
-	siteId := filter.GetAsString("site_id")
-	if siteId != "" {
-		criteria = append(criteria, bson.M{"site_id": siteId})
+	if typeId, ok := filter.GetAsNullableString("type"); ok && typeId != "" {
+		filterObj["type"] = typeId
 	}
-	label := filter.GetAsString("label")
-	if label != "" {
-		criteria = append(criteria, bson.M{"label": label})
+	if udi, ok := filter.GetAsNullableString("udi"); ok && udi != "" {
+		filterObj["udi"] = udi
 	}
-	udi := filter.GetAsString("udi")
-	if udi != "" {
-		criteria = append(criteria, bson.M{"udi": udi})
+	if label, ok := filter.GetAsNullableString("label"); ok && label != "" {
+		filterObj["label"] = label
 	}
-
-	udis := filter.GetAsString("udis")
-	var arrUdis []string = make([]string, 0, 0)
-	if udis != "" {
-		arrUdis = strings.Split(udis, ",")
-		if len(arrUdis) > 1 {
-			criteria = append(criteria, bson.M{"udi": bson.D{{"$in", arrUdis}}})
+	if udis, ok := filter.GetAsObject("udis"); ok {
+		var udisM bson.M
+		switch _udis := udis.(type) {
+		case []string:
+			if len(_udis) > 0 {
+				udisM = bson.M{"$in": _udis}
+			}
+			break
+		case string:
+			if _udisArr := strings.Split(_udis, ","); len(_udisArr) > 0 {
+				udisM = bson.M{"$in": _udisArr}
+			}
+			break
+		}
+		if udisM != nil {
+			filterObj["udi"] = udisM
 		}
 	}
-	if len(criteria) > 0 {
-		return bson.D{{"$and", criteria}}
-	}
-	return bson.M{}
+
+	return c.IdentifiableMongoDbPersistence.GetPageByFilter(ctx, correlationId,
+		filterObj, paging,
+		nil, nil,
+	)
 }
 
-func (c *BeaconsMongoDbPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *data1.BeaconV1DataPage, err error) {
-	tempPage, resErr := c.IdentifiableMongoDbPersistence.GetPageByFilter(correlationId, c.composeFilter(filter), paging, nil, nil)
-	if resErr != nil {
-		return nil, resErr
+func (c *BeaconsMongoPersistence) GetOneByUdi(ctx context.Context, correlationId string, udi string) (data1.BeaconV1, error) {
+
+	paging := *cdata.NewPagingParams(0, 1, false)
+	page, err := c.IdentifiableMongoDbPersistence.GetPageByFilter(ctx, correlationId,
+		bson.M{"udi": udi}, paging,
+		nil, nil,
+	)
+	if err != nil {
+		return data1.BeaconV1{}, err
 	}
-
-	// Convert to BeaconV1DataPage
-	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
-	beaconData := make([]*data1.BeaconV1, dataLen)
-	for i, v := range tempPage.Data {
-		beaconData[i] = v.(*data1.BeaconV1)
+	if page.HasData() {
+		return page.Data[0], nil
 	}
-	page = data1.NewBeaconV1DataPage(&dataLen, beaconData)
-	return page, nil
-}
-
-func (c *BeaconsMongoDbPersistence) GetOneById(correlationId string, id string) (item *data1.BeaconV1, err error) {
-	result, err := c.IdentifiableMongoDbPersistence.GetOneById(correlationId, id)
-
-	// Convert to BeaconV1
-	if result != nil {
-		val, _ := result.(*data1.BeaconV1)
-		item = val
-	}
-	return item, err
-}
-
-func (c *BeaconsMongoDbPersistence) GetOneByUdi(correlationId string, udi string) (result *data1.BeaconV1, err error) {
-	filter := bson.M{"udi": udi}
-	docPointer := c.NewObjectByPrototype()
-	foRes := c.Collection.FindOne(c.Connection.Ctx, filter)
-
-	ferr := foRes.Decode(docPointer.Interface())
-	if ferr != nil {
-		if ferr == mongo.ErrNoDocuments {
-			return nil, nil
-		}
-		return nil, ferr
-	}
-
-	// Convert to BeaconV1
-	item := c.ConvertToPublic(docPointer)
-	if item != nil {
-		val, _ := item.(*data1.BeaconV1)
-		result = val
-	}
-	return result, nil
-}
-
-func (c *BeaconsMongoDbPersistence) Create(correlationId string, item *data1.BeaconV1) (result *data1.BeaconV1, err error) {
-	value, err := c.IdentifiableMongoDbPersistence.Create(correlationId, item)
-
-	// Convert to BeaconV1
-	if value != nil {
-		val, _ := value.(*data1.BeaconV1)
-		result = val
-	}
-	return result, err
-}
-
-func (c *BeaconsMongoDbPersistence) Update(correlationId string, item *data1.BeaconV1) (result *data1.BeaconV1, err error) {
-	value, err := c.IdentifiableMongoDbPersistence.Update(correlationId, item)
-
-	// Convert to BeaconV1
-	if value != nil {
-		val, _ := value.(*data1.BeaconV1)
-		result = val
-	}
-	return result, err
-}
-
-func (c *BeaconsMongoDbPersistence) DeleteById(correlationId string, id string) (result *data1.BeaconV1, err error) {
-	value, err := c.IdentifiableMongoDbPersistence.DeleteById(correlationId, id)
-
-	// Convert to BeaconV1
-	if value != nil {
-		val, _ := value.(*data1.BeaconV1)
-		result = val
-	}
-	return result, err
+	return data1.BeaconV1{}, nil
 }
 ```

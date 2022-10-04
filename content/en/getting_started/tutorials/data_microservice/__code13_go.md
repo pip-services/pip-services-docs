@@ -5,8 +5,10 @@
 package logic
 
 import (
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
-	persist "github.com/pip-services-samples/service-beacons-go/persistence"
+	"context"
+
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
+	persist "github.com/pip-services-samples/service-beacons-gox/persistence"
 	ccmd "github.com/pip-services3-gox/pip-services3-commons-gox/commands"
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
@@ -23,54 +25,65 @@ func NewBeaconsController() *BeaconsController {
 	return c
 }
 
-func (c *BeaconsController) Configure(config *cconf.ConfigParams) {
-	// Todo: Read configuration parameters here...
+func (c *BeaconsController) Configure(ctx context.Context, config *cconf.ConfigParams) {
+	// Read configuration parameters here...
 }
 
-func (c *BeaconsController) SetReferences(references cref.IReferences) {
-	p, err := references.GetOneRequired(cref.NewDescriptor("beacons", "persistence", "*", "*", "1.0"))
+func (c *BeaconsController) SetReferences(ctx context.Context, references cref.IReferences) {
+	locator := cref.NewDescriptor("beacons", "persistence", "*", "*", "1.0")
+	p, err := references.GetOneRequired(locator)
 	if p != nil && err == nil {
-		c.persistence = p.(persist.IBeaconsPersistence)
+		if _pers, ok := p.(persist.IBeaconsPersistence); ok {
+			c.persistence = _pers
+			return
+		}
 	}
+	panic(cref.NewReferenceError("beacons.controller.SetReferences", locator))
 }
 
 func (c *BeaconsController) GetCommandSet() *ccmd.CommandSet {
 	if c.commandSet == nil {
 		c.commandSet = NewBeaconsCommandSet(c)
 	}
-	return &c.commandSet.CommandSet
+	return c.commandSet.CommandSet
 }
 
-func (c *BeaconsController) GetBeacons(
-	correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (*data1.BeaconV1DataPage, error) {
-	return c.persistence.GetPageByFilter(correlationId, filter, paging)
+func (c *BeaconsController) GetBeacons(ctx context.Context, correlationId string,
+	filter cdata.FilterParams, paging cdata.PagingParams) (cdata.DataPage[data1.BeaconV1], error) {
+	return c.persistence.GetPageByFilter(ctx, correlationId, filter, paging)
 }
 
-func (c *BeaconsController) GetBeaconById(
-	correlationId string, beaconId string) (*data1.BeaconV1, error) {
-	return c.persistence.GetOneById(correlationId, beaconId)
+func (c *BeaconsController) GetBeaconById(ctx context.Context, correlationId string,
+	beaconId string) (data1.BeaconV1, error) {
+
+	return c.persistence.GetOneById(ctx, correlationId, beaconId)
 }
 
-func (c *BeaconsController) GetBeaconByUdi(
-	correlationId string, beaconId string) (*data1.BeaconV1, error) {
-	return c.persistence.GetOneByUdi(correlationId, beaconId)
+func (c *BeaconsController) GetBeaconByUdi(ctx context.Context, correlationId string,
+	beaconId string) (data1.BeaconV1, error) {
+
+	return c.persistence.GetOneByUdi(ctx, correlationId, beaconId)
 }
 
-func (c *BeaconsController) CalculatePosition(
-	correlationId string, siteId string, udis []string) (*data1.GeoPointV1, error) {
+func (c *BeaconsController) CalculatePosition(ctx context.Context, correlationId string,
+	siteId string, udis []string) (data1.GeoPointV1, error) {
 
 	if udis == nil || len(udis) == 0 {
-		return nil, nil
+		return data1.GeoPointV1{}, nil
 	}
 
 	page, err := c.persistence.GetPageByFilter(
-		correlationId, cdata.NewFilterParamsFromTuples(
+		ctx,
+		correlationId,
+		*cdata.NewFilterParamsFromTuples(
 			"site_id", siteId,
-			"udis", udis),
-		cdata.NewEmptyPagingParams())
+			"udis", udis,
+		),
+		*cdata.NewEmptyPagingParams(),
+	)
 
-	if err != nil || page == nil {
-		return nil, err
+	if err != nil || !page.HasData() {
+		return data1.GeoPointV1{}, err
 	}
 
 	var lat float32 = 0
@@ -79,29 +92,29 @@ func (c *BeaconsController) CalculatePosition(
 
 	for _, beacon := range page.Data {
 		if beacon.Center.Type == "Point" {
-			lng += beacon.Center.Coordinates[0][0]
-			lat += beacon.Center.Coordinates[0][1]
+			lng += beacon.Center.Coordinates[0]
+			lat += beacon.Center.Coordinates[1]
 			count += 1
 		}
 	}
 
 	pos := data1.GeoPointV1{
 		Type:        "Point",
-		Coordinates: make([][]float32, 1, 1),
+		Coordinates: make([]float32, 2, 2),
 	}
-	pos.Coordinates[0] = make([]float32, 2, 2)
 
 	if count > 0 {
 		pos.Type = "Point"
-		pos.Coordinates[0][0] = lng / (float32)(count)
-		pos.Coordinates[0][1] = lat / (float32)(count)
+		pos.Coordinates[0] = lng / (float32)(count)
+		pos.Coordinates[1] = lat / (float32)(count)
 	}
 
-	return &pos, nil
+	return pos, nil
 }
 
-func (c *BeaconsController) CreateBeacon(
-	correlationId string, beacon *data1.BeaconV1) (*data1.BeaconV1, error) {
+func (c *BeaconsController) CreateBeacon(ctx context.Context, correlationId string,
+	beacon data1.BeaconV1) (data1.BeaconV1, error) {
+
 	if beacon.Id == "" {
 		beacon.Id = cdata.IdGenerator.NextLong()
 	}
@@ -110,21 +123,22 @@ func (c *BeaconsController) CreateBeacon(
 		beacon.Type = data1.Unknown
 	}
 
-	return c.persistence.Create(correlationId, beacon)
+	return c.persistence.Create(ctx, correlationId, beacon)
 }
 
-func (c *BeaconsController) UpdateBeacon(
-	correlationId string, beacon *data1.BeaconV1) (*data1.BeaconV1, error) {
+func (c *BeaconsController) UpdateBeacon(ctx context.Context, correlationId string,
+	beacon data1.BeaconV1) (data1.BeaconV1, error) {
+
 	if beacon.Type == "" {
 		beacon.Type = data1.Unknown
 	}
 
-	return c.persistence.Update(correlationId, beacon)
+	return c.persistence.Update(ctx, correlationId, beacon)
 }
 
-func (c *BeaconsController) DeleteBeaconById(
-	correlationId string, beaconId string) (*data1.BeaconV1, error) {
-	return c.persistence.DeleteById(correlationId, beaconId)
-}
+func (c *BeaconsController) DeleteBeaconById(ctx context.Context, correlationId string,
+	beaconId string) (data1.BeaconV1, error) {
+
+	
 ```
 

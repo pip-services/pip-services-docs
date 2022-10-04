@@ -5,150 +5,97 @@
 package persistence
 
 import (
-	"reflect"
+	"context"
 	"strings"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	cpersist "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
 )
 
 type BeaconsMemoryPersistence struct {
-	cpersist.IdentifiableMemoryPersistence
+	*cpersist.IdentifiableMemoryPersistence[data1.BeaconV1, string]
 }
 
 func NewBeaconsMemoryPersistence() *BeaconsMemoryPersistence {
-	proto := reflect.TypeOf(&data1.BeaconV1{})
-	c := &BeaconsMemoryPersistence{}
-	c.IdentifiableMemoryPersistence = *cpersist.NewIdentifiableMemoryPersistence(proto)
-	c.MaxPageSize = 1000
+	c := &BeaconsMemoryPersistence{
+		IdentifiableMemoryPersistence: cpersist.NewIdentifiableMemoryPersistence[data1.BeaconV1, string](),
+	}
+	c.IdentifiableMemoryPersistence.MaxPageSize = 1000
 	return c
 }
 
-func (c *BeaconsMemoryPersistence) composeFilter(filter *cdata.FilterParams) func(beacon interface{}) bool {
-	if filter == nil {
-		filter = cdata.NewEmptyFilterParams()
-	}
+func (c *BeaconsMemoryPersistence) composeFilter(filter cdata.FilterParams) func(beacon data1.BeaconV1) bool {
 
 	id := filter.GetAsString("id")
 	siteId := filter.GetAsString("site_id")
 	label := filter.GetAsString("label")
 	udi := filter.GetAsString("udi")
-	udis := filter.GetAsString("udis")
 
 	var udiValues []string
-	if udis != "" {
-		udiValues = strings.Split(udis, ",")
+	if _udis, ok := filter.GetAsObject("udis"); ok {
+		if _val, ok := _udis.([]string); ok {
+			udiValues = _val
+		}
+		if _val, ok := _udis.(string); ok {
+			udiValues = strings.Split(_val, ",")
+		}
+
 	}
 
-	return func(beacon interface{}) bool {
-		item, ok := beacon.(data1.BeaconV1)
-		if !ok {
+	return func(beacon data1.BeaconV1) bool {
+		if id != "" && beacon.Id != id {
 			return false
 		}
-		if id != "" && item.Id != id {
+		if siteId != "" && beacon.SiteId != siteId {
 			return false
 		}
-		if siteId != "" && item.SiteId != siteId {
+		if label != "" && beacon.Label != label {
 			return false
 		}
-		if label != "" && item.Label != label {
+		if udi != "" && beacon.Udi != udi {
 			return false
 		}
-		if udi != "" && item.Udi != udi {
-			return false
-		}
-		if len(udiValues) > 0 && strings.Index(udis, item.Udi) < 0 {
+		if len(udiValues) > 0 && !ContainsStr(udiValues, beacon.Udi) {
 			return false
 		}
 		return true
 	}
 }
 
-func (c *BeaconsMemoryPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (*data1.BeaconV1DataPage, error) {
-	tempPage, err := c.IdentifiableMemoryPersistence.GetPageByFilter(correlationId, c.composeFilter(filter), paging, nil, nil)
+func (c *BeaconsMemoryPersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams, paging cdata.PagingParams) (cdata.DataPage[data1.BeaconV1], error) {
 
-	if tempPage == nil || err != nil {
-		return nil, err
-	}
-
-	// Convert to BeaconV1DataPage
-	dataLen := len(tempPage.Data)
-	data := make([]*data1.BeaconV1, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(*data1.BeaconV1)
-	}
-	page := data1.NewBeaconV1DataPage(tempPage.Total, data)
-
-	return page, nil
+	return c.IdentifiableMemoryPersistence.
+		GetPageByFilter(ctx, correlationId, c.composeFilter(filter), paging, nil, nil)
 }
 
-func (c *BeaconsMemoryPersistence) GetOneById(correlationId string, id string) (*data1.BeaconV1, error) {
-	result, err := c.IdentifiableMemoryPersistence.GetOneById(correlationId, id)
-
-	if result == nil || err != nil {
-		return nil, err
-	}
-
-	// Convert to BeaconV1
-	item, _ := result.(*data1.BeaconV1)
-	return item, err
-}
-
-func (c *BeaconsMemoryPersistence) GetOneByUdi(correlationId string, udi string) (*data1.BeaconV1, error) {
+func (c *BeaconsMemoryPersistence) GetOneByUdi(ctx context.Context, correlationId string, udi string) (data1.BeaconV1, error) {
 	var item *data1.BeaconV1
-	for _, v := range c.Items {
-		if buf, ok := v.(data1.BeaconV1); ok {
-			if buf.Udi == udi {
-				item = &buf
-				break
-			}
+	for _, beacon := range c.IdentifiableMemoryPersistence.Items {
+		if beacon.Udi == udi {
+			_item := beacon.Clone()
+			item = &_item
+			break
 		}
 	}
 
 	if item != nil {
-		c.Logger.Trace(correlationId, "Found beacon by %s", udi)
+		c.IdentifiableMemoryPersistence.Logger.Trace(ctx, correlationId, "Found beacon by %s", udi)
 	} else {
-		c.Logger.Trace(correlationId, "Cannot find beacon by %s", udi)
+		c.IdentifiableMemoryPersistence.Logger.Trace(ctx, correlationId, "Cannot find beacon by %s", udi)
 	}
 
-	return item, nil
+	return *item, nil
 }
 
-func (c *BeaconsMemoryPersistence) Create(correlationId string, item *data1.BeaconV1) (*data1.BeaconV1, error) {
-	value, err := c.IdentifiableMemoryPersistence.Create(correlationId, item)
-
-	if value == nil || err != nil {
-		return nil, err
+func ContainsStr(arr []string, substr string) bool {
+	for _, _str := range arr {
+		if _str == substr {
+			return true
+		}
 	}
-
-	// Convert to BeaconV1
-	result, _ := value.(*data1.BeaconV1)
-	return result, nil
-}
-
-func (c *BeaconsMemoryPersistence) Update(correlationId string, item *data1.BeaconV1) (*data1.BeaconV1, error) {
-	value, err := c.IdentifiableMemoryPersistence.Update(correlationId, item)
-
-	if value == nil || err != nil {
-		return nil, err
-	}
-
-	// Convert to BeaconV1
-	result, _ := value.(*data1.BeaconV1)
-	return result, nil
-}
-
-func (c *BeaconsMemoryPersistence) DeleteById(correlationId string, id string) (*data1.BeaconV1, error) {
-	result, err := c.IdentifiableMemoryPersistence.DeleteById(correlationId, id)
-
-	if result == nil || err != nil {
-		return nil, err
-	}
-
-	// Convert to BeaconV1
-	item, _ := result.(*data1.BeaconV1)
-	return item, nil
+	return false
 }
 
 ```

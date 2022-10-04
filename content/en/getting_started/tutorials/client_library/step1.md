@@ -78,7 +78,7 @@ Copy the files from the microservice's data folder into the **src/data/version1*
 
 - [Node.js](https://github.com/pip-services-samples/service-beacons-nodex/tree/main/src/data/version1)
 - [.NET](https://github.com/pip-services-samples/service-beacons-dotnet/tree/master/src/Interface/Data/Version1)
-- [Golang](https://github.com/pip-services-samples/service-beacons-gox/tree/main/data/version1)
+- [Golang](https://github.com/pip-services-samples/service-beacons-goxx/tree/main/data/version1)
 - [Dart](https://github.com/pip-services-samples/service-beacons-dart/tree/master/lib/src/data/version1)
 - [Python](https://github.com/pip-services-samples/service-beacons-python/tree/master/service_beacons_python/data/version1)
 - [Java](https://github.com/pip-services-samples/service-beacons-java/tree/master/data-beacons/src/org/pipservices3/beacons/data/version1)

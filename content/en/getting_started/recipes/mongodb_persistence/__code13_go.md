@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"strings"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
 	"go.mongodb.org/mongo-driver/bson"

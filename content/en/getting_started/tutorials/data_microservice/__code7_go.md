@@ -5,22 +5,23 @@
 package persistence
 
 import (
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	"context"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 )
 
 type IBeaconsPersistence interface {
-	GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *data1.BeaconV1DataPage, err error)
+	GetPageByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, paging cdata.PagingParams) (cdata.DataPage[data1.BeaconV1], error)
 
-	GetOneById(correlationId string, id string) (res *data1.BeaconV1, err error)
+	GetOneById(ctx context.Context, correlationId string, id string) (data1.BeaconV1, error)
 
-	GetOneByUdi(correlationId string, udi string) (res *data1.BeaconV1, err error)
+	GetOneByUdi(ctx context.Context, correlationId string, udi string) (data1.BeaconV1, error)
 
-	Create(correlationId string, item *data1.BeaconV1) (res *data1.BeaconV1, err error)
+	Create(ctx context.Context, correlationId string, item data1.BeaconV1) (data1.BeaconV1, error)
 
-	Update(correlationId string, item *data1.BeaconV1) (res *data1.BeaconV1, err error)
+	Update(ctx context.Context, correlationId string, item data1.BeaconV1) (data1.BeaconV1, error)
 
-	DeleteById(correlationId string, id string) (res *data1.BeaconV1, err error)
+	DeleteById(ctx context.Context, correlationId string, id string) (data1.BeaconV1, error)
 }
 
 

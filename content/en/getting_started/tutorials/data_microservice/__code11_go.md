@@ -5,9 +5,10 @@
 package test_persistence
 
 import (
+	"context"
 	"testing"
 
-	persist "github.com/pip-services-samples/service-beacons-go/persistence"
+	persist "github.com/pip-services-samples/service-beacons-gox/persistence"
 	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
@@ -18,7 +19,7 @@ type BeaconsMemoryPersistenceTest struct {
 
 func newBeaconsMemoryPersistenceTest() *BeaconsMemoryPersistenceTest {
 	persistence := persist.NewBeaconsMemoryPersistence()
-	persistence.Configure(cconf.NewEmptyConfigParams())
+	persistence.Configure(context.Background(), cconf.NewEmptyConfigParams())
 
 	fixture := NewBeaconsPersistenceFixture(persistence)
 
@@ -29,19 +30,19 @@ func newBeaconsMemoryPersistenceTest() *BeaconsMemoryPersistenceTest {
 }
 
 func (c *BeaconsMemoryPersistenceTest) setup(t *testing.T) {
-	err := c.persistence.Open("")
+	err := c.persistence.Open(context.Background(), "")
 	if err != nil {
 		t.Error("Failed to open persistence", err)
 	}
 
-	err = c.persistence.Clear("")
+	err = c.persistence.Clear(context.Background(), "")
 	if err != nil {
 		t.Error("Failed to clear persistence", err)
 	}
 }
 
 func (c *BeaconsMemoryPersistenceTest) teardown(t *testing.T) {
-	err := c.persistence.Close("")
+	err := c.persistence.Close(context.Background(), "")
 	if err != nil {
 		t.Error("Failed to close persistence", err)
 	}

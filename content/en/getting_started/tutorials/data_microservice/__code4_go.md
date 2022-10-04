@@ -14,5 +14,16 @@ type BeaconV1 struct {
 	Radius float32    `json:"radius" bson:"radius"`
 }
 
+func (b BeaconV1) Clone() BeaconV1 {
+	return BeaconV1{
+		Id:     b.Id,
+		SiteId: b.SiteId,
+		Type:   b.Type,
+		Udi:    b.Udi,
+		Label:  b.Label,
+		Center: b.Center.Clone(),
+		Radius: b.Radius,
+	}
+}
 
 ```

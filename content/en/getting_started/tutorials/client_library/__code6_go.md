@@ -7,7 +7,7 @@ package test_clients1
 import (
 	"testing"
 
-	clients1 "github.com/pip-services-samples/client-beacons-go/clients/version1"
+	clients1 "github.com/pip-services-samples/client-beacons-gox/clients/version1"
 )
 
 type beaconsMemoryClientV1Test struct {

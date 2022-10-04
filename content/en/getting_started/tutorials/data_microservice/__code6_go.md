@@ -10,12 +10,12 @@ import (
 )
 
 type BeaconV1Schema struct {
-	cvalid.ObjectSchema
+	*cvalid.ObjectSchema
 }
 
 func NewBeaconV1Schema() *BeaconV1Schema {
 	c := BeaconV1Schema{}
-	c.ObjectSchema = *cvalid.NewObjectSchema()
+	c.ObjectSchema = cvalid.NewObjectSchema()
 
 	c.WithOptionalProperty("id", cconv.String)
 	c.WithRequiredProperty("site_id", cconv.String)

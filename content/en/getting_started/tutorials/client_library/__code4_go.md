@@ -5,136 +5,125 @@
 package clients1
 
 import (
-	"reflect"
+	"context"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	cclients "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
+	clients "github.com/pip-services3-gox/pip-services3-rpc-gox/clients"
 )
 
 type BeaconsHttpClientV1 struct {
 	*cclients.CommandableHttpClient
-	beaconV1DataPageType reflect.Type
-	beaconV1Type         reflect.Type
-	geoPointV1Type       reflect.Type
 }
 
 func NewBeaconsHttpClientV1() *BeaconsHttpClientV1 {
 	c := &BeaconsHttpClientV1{
 		CommandableHttpClient: cclients.NewCommandableHttpClient("v1/beacons"),
-		beaconV1DataPageType:  reflect.TypeOf(&data1.BeaconV1DataPage{}),
-		beaconV1Type:          reflect.TypeOf(&data1.BeaconV1{}),
-		geoPointV1Type:        reflect.TypeOf(&data1.GeoPointV1{}),
 	}
 	return c
 }
 
-func (c *BeaconsHttpClientV1) GetBeacons(
-	correlationId string, filter *cdata.FilterParams,
-	paging *cdata.PagingParams) (*data1.BeaconV1DataPage, error) {
+func (c *BeaconsHttpClientV1) GetBeacons(ctx context.Context,
+	correlationId string, filter cdata.FilterParams,
+	paging cdata.PagingParams) (*cdata.DataPage[data1.BeaconV1], error) {
 
-	params := cdata.NewAnyValueMapFromTuples(
-		"filter", filter,
-		"paging", paging,
-	)
+	params := cdata.NewEmptyStringValueMap()
+	c.AddFilterParams(params, &filter)
+	c.AddPagingParams(params, &paging)
 
-	res, err := c.CallCommand(c.beaconV1DataPageType, "get_beacons", correlationId, params)
+	response, err := c.CallCommand(ctx, "get_beacons", correlationId, cdata.NewAnyValueMapFromValue(params.Value()))
+
 	if err != nil {
-		return nil, err
+		return cdata.NewEmptyDataPage[data1.BeaconV1](), err
 	}
 
-	result, _ := res.(*data1.BeaconV1DataPage)
-	return result, nil
+	return clients.HandleHttpResponse[*cdata.DataPage[data1.BeaconV1]](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) GetBeaconById(
+func (c *BeaconsHttpClientV1) GetBeaconById(ctx context.Context,
 	correlationId string, beaconId string) (*data1.BeaconV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"beacon_id", beaconId,
 	)
 
-	res, err := c.CallCommand(c.beaconV1Type, "get_beacon_by_id", correlationId, params)
+	response, err := c.CallCommand(ctx, "get_beacon_by_id", correlationId, params)
+
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.BeaconV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.BeaconV1](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) GetBeaconByUdi(
+func (c *BeaconsHttpClientV1) GetBeaconByUdi(ctx context.Context,
 	correlationId string, udi string) (*data1.BeaconV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"udi", udi,
 	)
 
-	res, err := c.CallCommand(c.beaconV1Type, "get_beacon_by_udi", correlationId, params)
+	response, err := c.CallCommand(ctx, "get_beacon_by_udi", correlationId, params)
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.BeaconV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.BeaconV1](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) CalculatePosition(
+func (c *BeaconsHttpClientV1) CalculatePosition(ctx context.Context,
 	correlationId string, siteId string, udis []string) (*data1.GeoPointV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"site_id", siteId,
 		"udis", udis,
 	)
 
-	res, err := c.CallCommand(c.geoPointV1Type, "calculate_position", correlationId, params)
+	response, err := c.CallCommand(ctx, "calculate_position", correlationId, params)
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.GeoPointV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.GeoPointV1](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) CreateBeacon(
-	correlationId string, beacon *data1.BeaconV1) (*data1.BeaconV1, error) {
+func (c *BeaconsHttpClientV1) CreateBeacon(ctx context.Context,
+	correlationId string, beacon data1.BeaconV1) (*data1.BeaconV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"beacon", beacon,
 	)
 
-	res, err := c.CallCommand(c.beaconV1Type, "create_beacon", correlationId, params)
+	response, err := c.CallCommand(ctx, "create_beacon", correlationId, params)
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.BeaconV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.BeaconV1](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) UpdateBeacon(
-	correlationId string, beacon *data1.BeaconV1) (*data1.BeaconV1, error) {
+func (c *BeaconsHttpClientV1) UpdateBeacon(ctx context.Context,
+	correlationId string, beacon data1.BeaconV1) (*data1.BeaconV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"beacon", beacon,
 	)
 
-	res, err := c.CallCommand(c.beaconV1Type, "update_beacon", correlationId, params)
+	response, err := c.CallCommand(ctx, "update_beacon", correlationId, params)
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.BeaconV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.BeaconV1](response, correlationId)
 }
 
-func (c *BeaconsHttpClientV1) DeleteBeaconById(
+func (c *BeaconsHttpClientV1) DeleteBeaconById(ctx context.Context,
 	correlationId string, beaconId string) (*data1.BeaconV1, error) {
 	params := cdata.NewAnyValueMapFromTuples(
 		"beacon_id", beaconId,
 	)
 
-	res, err := c.CallCommand(c.beaconV1Type, "delete_beacon_by_id", correlationId, params)
+	response, err := c.CallCommand(ctx, "delete_beacon_by_id", correlationId, params)
 	if err != nil {
 		return nil, err
 	}
 
-	result, _ := res.(*data1.BeaconV1)
-	return result, nil
+	return clients.HandleHttpResponse[*data1.BeaconV1](response, correlationId)
 }
 ```

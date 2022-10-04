@@ -5,10 +5,11 @@
 package test_persistence
 
 import (
+	"context"
 	"testing"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
-	persist "github.com/pip-services-samples/service-beacons-go/persistence"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
+	persist "github.com/pip-services-samples/service-beacons-gox/persistence"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	"github.com/stretchr/testify/assert"
 )
@@ -29,7 +30,7 @@ func NewBeaconsPersistenceFixture(persistence persist.IBeaconsPersistence) *Beac
 		Type:   data1.AltBeacon,
 		SiteId: "1",
 		Label:  "TestBeacon1",
-		Center: data1.GeoPointV1{Type: "Point", Coordinates: [][]float32{{0.0, 0.0}}},
+		Center: data1.GeoPointV1{Type: "Point", Coordinates: []float32{0.0, 0.0}},
 		Radius: 50,
 	}
 
@@ -39,7 +40,7 @@ func NewBeaconsPersistenceFixture(persistence persist.IBeaconsPersistence) *Beac
 		Type:   data1.IBeacon,
 		SiteId: "1",
 		Label:  "TestBeacon2",
-		Center: data1.GeoPointV1{Type: "Point", Coordinates: [][]float32{{2.0, 2.0}}},
+		Center: data1.GeoPointV1{Type: "Point", Coordinates: []float32{2.0, 2.0}},
 		Radius: 70,
 	}
 
@@ -49,7 +50,7 @@ func NewBeaconsPersistenceFixture(persistence persist.IBeaconsPersistence) *Beac
 		Type:   data1.AltBeacon,
 		SiteId: "2",
 		Label:  "TestBeacon3",
-		Center: data1.GeoPointV1{Type: "Point", Coordinates: [][]float32{{10.0, 10.0}}},
+		Center: data1.GeoPointV1{Type: "Point", Coordinates: []float32{10.0, 10.0}},
 		Radius: 50,
 	}
 
@@ -59,9 +60,9 @@ func NewBeaconsPersistenceFixture(persistence persist.IBeaconsPersistence) *Beac
 
 func (c *BeaconsPersistenceFixture) testCreateBeacons(t *testing.T) {
 	// Create the first beacon
-	beacon, err := c.persistence.Create("", c.BEACON1)
+	beacon, err := c.persistence.Create(context.Background(), "", *c.BEACON1)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, c.BEACON1.Udi, beacon.Udi)
 	assert.Equal(t, c.BEACON1.SiteId, beacon.SiteId)
 	assert.Equal(t, c.BEACON1.Type, beacon.Type)
@@ -69,9 +70,9 @@ func (c *BeaconsPersistenceFixture) testCreateBeacons(t *testing.T) {
 	assert.NotNil(t, beacon.Center)
 
 	// Create the second beacon
-	beacon, err = c.persistence.Create("", c.BEACON2)
+	beacon, err = c.persistence.Create(context.Background(), "", *c.BEACON2)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, c.BEACON2.Udi, beacon.Udi)
 	assert.Equal(t, c.BEACON2.SiteId, beacon.SiteId)
 	assert.Equal(t, c.BEACON2.Type, beacon.Type)
@@ -79,9 +80,9 @@ func (c *BeaconsPersistenceFixture) testCreateBeacons(t *testing.T) {
 	assert.NotNil(t, beacon.Center)
 
 	// Create the third beacon
-	beacon, err = c.persistence.Create("", c.BEACON3)
+	beacon, err = c.persistence.Create(context.Background(), "", *c.BEACON3)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, c.BEACON3.Udi, beacon.Udi)
 	assert.Equal(t, c.BEACON3.SiteId, beacon.SiteId)
 	assert.Equal(t, c.BEACON3.Type, beacon.Type)
@@ -96,79 +97,91 @@ func (c *BeaconsPersistenceFixture) TestCrudOperations(t *testing.T) {
 	c.testCreateBeacons(t)
 
 	// Get all beacons
-	page, err := c.persistence.GetPageByFilter("", cdata.NewEmptyFilterParams(), cdata.NewEmptyPagingParams())
+	page, err := c.persistence.GetPageByFilter(context.Background(), "",
+		*cdata.NewEmptyFilterParams(), *cdata.NewEmptyPagingParams())
 	assert.Nil(t, err)
 	assert.NotNil(t, page)
+	assert.True(t, page.HasData())
 	assert.Len(t, page.Data, 3)
-	beacon1 = *page.Data[0]
+	beacon1 = page.Data[0].Clone()
 
 	// Update the beacon
 	beacon1.Label = "ABC"
-	beacon, err := c.persistence.Update("", &beacon1)
+	beacon, err := c.persistence.Update(context.Background(), "", beacon1)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, beacon1.Id, beacon.Id)
 	assert.Equal(t, "ABC", beacon.Label)
 
 	// Get beacon by udi
-	beacon, err = c.persistence.GetOneByUdi("", beacon1.Udi)
+	beacon, err = c.persistence.GetOneByUdi(context.Background(), "", beacon1.Udi)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, beacon1.Id, beacon.Id)
 
 	// Delete the beacon
-	beacon, err = c.persistence.DeleteById("", beacon1.Id)
+	beacon, err = c.persistence.DeleteById(context.Background(), "", beacon1.Id)
 	assert.Nil(t, err)
-	assert.NotNil(t, beacon)
+	assert.NotEqual(t, data1.BeaconV1{}, beacon)
 	assert.Equal(t, beacon1.Id, beacon.Id)
 
 	// Try to get deleted beacon
-	beacon, err = c.persistence.GetOneById("", beacon1.Id)
+	beacon, err = c.persistence.GetOneById(context.Background(), "", beacon1.Id)
 	assert.Nil(t, err)
-	assert.Nil(t, beacon)
+	assert.Equal(t, data1.BeaconV1{}, beacon)
 }
 
 func (c *BeaconsPersistenceFixture) TestGetWithFilters(t *testing.T) {
 	// Create items
 	c.testCreateBeacons(t)
 
+	filter := *cdata.NewFilterParamsFromTuples(
+		"id", "1",
+	)
 	// Filter by id
-	page, err := c.persistence.GetPageByFilter("",
-		cdata.NewFilterParamsFromTuples(
-			"id", "1",
-		),
-		cdata.NewEmptyPagingParams())
+	page, err := c.persistence.GetPageByFilter(context.Background(), "",
+		filter,
+		*cdata.NewEmptyPagingParams())
 	assert.Nil(t, err)
+	assert.True(t, page.HasData())
 	assert.Len(t, page.Data, 1)
 
 	// Filter by udi
+	filter = *cdata.NewFilterParamsFromTuples(
+		"udi", "00002",
+	)
 	page, err = c.persistence.GetPageByFilter(
+		context.Background(),
 		"",
-		cdata.NewFilterParamsFromTuples(
-			"udi", "00002",
-		),
-		cdata.NewEmptyPagingParams())
+		filter,
+		*cdata.NewEmptyPagingParams())
 	assert.Nil(t, err)
+	assert.True(t, page.HasData())
 	assert.Len(t, page.Data, 1)
 
 	// Filter by udis
+	filter = *cdata.NewFilterParamsFromTuples(
+		"udis", "00001,00003",
+	)
 	page, err = c.persistence.GetPageByFilter(
+		context.Background(),
 		"",
-		cdata.NewFilterParamsFromTuples(
-			"udis", "00001,00003",
-		),
-		cdata.NewEmptyPagingParams())
+		filter,
+		*cdata.NewEmptyPagingParams())
 
 	assert.Nil(t, err)
+	assert.True(t, page.HasData())
 	assert.Len(t, page.Data, 2)
 
 	// Filter by site_id
+	filter = *cdata.NewFilterParamsFromTuples(
+		"site_id", "1",
+	)
 	page, err = c.persistence.GetPageByFilter(
+		context.Background(),
 		"",
-		cdata.NewFilterParamsFromTuples(
-			"site_id", "1",
-		),
-		cdata.NewEmptyPagingParams())
+		filter,
+		*cdata.NewEmptyPagingParams())
 
 	assert.Nil(t, err)
 	assert.Len(t, page.Data, 2)

@@ -5,10 +5,11 @@
 package clients1
 
 import (
+	"context"
 	"reflect"
 	"strings"
 
-	data1 "github.com/pip-services-samples/service-beacons-go/data/version1"
+	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	mdata "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
 )
@@ -29,10 +30,7 @@ func NewBeaconsMemoryClientV1(items []data1.BeaconV1) *BeaconsMemoryClientV1 {
 	return c
 }
 
-func (c *BeaconsMemoryClientV1) composeFilter(filter *cdata.FilterParams) func(item data1.BeaconV1) bool {
-	if filter == nil {
-		filter = cdata.NewEmptyFilterParams()
-	}
+func (c *BeaconsMemoryClientV1) composeFilter(filter cdata.FilterParams) func(item data1.BeaconV1) bool {
 
 	id := filter.GetAsString("id")
 	siteId := filter.GetAsString("site_id")
@@ -66,28 +64,24 @@ func (c *BeaconsMemoryClientV1) composeFilter(filter *cdata.FilterParams) func(i
 	}
 }
 
-func (c *BeaconsMemoryClientV1) GetBeacons(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *data1.BeaconV1DataPage, err error) {
+func (c *BeaconsMemoryClientV1) GetBeacons(ctx context.Context,
+	correlationId string, filter cdata.FilterParams, paging cdata.PagingParams) (page *cdata.DataPage[data1.BeaconV1], err error) {
 	filterBeacons := c.composeFilter(filter)
 
-	beacons := make([]*data1.BeaconV1, 0)
+	beacons := make([]data1.BeaconV1, 0)
 	for _, v := range c.items {
 		if filterBeacons(v) {
 			item := v
-			beacons = append(beacons, &item)
+			beacons = append(beacons, item)
 		}
-	}
-
-	// Extract a page
-	if paging == nil {
-		paging = cdata.NewEmptyPagingParams()
 	}
 
 	skip := paging.GetSkip(-1)
 	take := paging.GetTake((int64)(c.maxPageSize))
-	var total int64 = 0
+	var total int = 0
 
 	if paging.Total {
-		total = (int64)(len(beacons))
+		total = (len(beacons))
 	}
 
 	if skip > 0 {
@@ -97,11 +91,12 @@ func (c *BeaconsMemoryClientV1) GetBeacons(correlationId string, filter *cdata.F
 	if (int64)(len(beacons)) >= take {
 		beacons = beacons[:take]
 	}
-	page = data1.NewBeaconV1DataPage(&total, beacons)
-	return page, nil
+
+	return cdata.NewDataPage(beacons, total), nil
 }
 
-func (c *BeaconsMemoryClientV1) GetBeaconById(correlationId string, beaconId string) (beacon *data1.BeaconV1, err error) {
+func (c *BeaconsMemoryClientV1) GetBeaconById(ctx context.Context,
+	correlationId string, beaconId string) (beacon *data1.BeaconV1, err error) {
 
 	var item *data1.BeaconV1
 	for _, v := range c.items {
@@ -114,7 +109,8 @@ func (c *BeaconsMemoryClientV1) GetBeaconById(correlationId string, beaconId str
 	return item, nil
 }
 
-func (c *BeaconsMemoryClientV1) GetBeaconByUdi(correlationId string, udi string) (beacon *data1.BeaconV1, err error) {
+func (c *BeaconsMemoryClientV1) GetBeaconByUdi(ctx context.Context,
+	correlationId string, udi string) (beacon *data1.BeaconV1, err error) {
 	var item *data1.BeaconV1
 	for _, v := range c.items {
 		if v.Udi == udi {
@@ -126,18 +122,18 @@ func (c *BeaconsMemoryClientV1) GetBeaconByUdi(correlationId string, udi string)
 	return item, nil
 }
 
-func (c *BeaconsMemoryClientV1) CalculatePosition(
+func (c *BeaconsMemoryClientV1) CalculatePosition(ctx context.Context,
 	correlationId string, siteId string, udis []string) (*data1.GeoPointV1, error) {
 
 	if udis == nil || len(udis) == 0 {
 		return nil, nil
 	}
 
-	page, err := c.GetBeacons(
-		correlationId, cdata.NewFilterParamsFromTuples(
+	page, err := c.GetBeacons(ctx,
+		correlationId, *cdata.NewFilterParamsFromTuples(
 			"site_id", siteId,
 			"udis", udis),
-		cdata.NewEmptyPagingParams())
+		*cdata.NewEmptyPagingParams())
 
 	if err != nil || page == nil {
 		return nil, err
@@ -149,31 +145,28 @@ func (c *BeaconsMemoryClientV1) CalculatePosition(
 
 	for _, beacon := range page.Data {
 		if beacon.Center.Type == "Point" {
-			lng += beacon.Center.Coordinates[0][0]
-			lat += beacon.Center.Coordinates[0][1]
+			lng += beacon.Center.Coordinates[0]
+			lat += beacon.Center.Coordinates[1]
 			count += 1
 		}
 	}
 
 	pos := data1.GeoPointV1{
 		Type:        "Point",
-		Coordinates: make([][]float32, 1, 1),
+		Coordinates: make([]float32, 2, 2),
 	}
-	pos.Coordinates[0] = make([]float32, 2, 2)
 
 	if count > 0 {
 		pos.Type = "Point"
-		pos.Coordinates[0][0] = lng / (float32)(count)
-		pos.Coordinates[0][1] = lat / (float32)(count)
+		pos.Coordinates[0] = lng / (float32)(count)
+		pos.Coordinates[1] = lat / (float32)(count)
 	}
 
 	return &pos, nil
 }
 
-func (c *BeaconsMemoryClientV1) CreateBeacon(correlationId string, beacon *data1.BeaconV1) (res *data1.BeaconV1, err error) {
-	if beacon == nil {
-		return nil, nil
-	}
+func (c *BeaconsMemoryClientV1) CreateBeacon(ctx context.Context,
+	correlationId string, beacon data1.BeaconV1) (res *data1.BeaconV1, err error) {
 
 	newItem := mdata.CloneObject(beacon, c.proto)
 	item, _ := newItem.(data1.BeaconV1)
@@ -183,7 +176,8 @@ func (c *BeaconsMemoryClientV1) CreateBeacon(correlationId string, beacon *data1
 	return &item, nil
 }
 
-func (c *BeaconsMemoryClientV1) UpdateBeacon(correlationId string, beacon *data1.BeaconV1) (res *data1.BeaconV1, err error) {
+func (c *BeaconsMemoryClientV1) UpdateBeacon(ctx context.Context,
+	correlationId string, beacon data1.BeaconV1) (res *data1.BeaconV1, err error) {
 
 	var index = -1
 	for i, v := range c.items {
@@ -203,7 +197,8 @@ func (c *BeaconsMemoryClientV1) UpdateBeacon(correlationId string, beacon *data1
 	return &item, nil
 }
 
-func (c *BeaconsMemoryClientV1) DeleteBeaconById(correlationId string, beaconId string) (res *data1.BeaconV1, err error) {
+func (c *BeaconsMemoryClientV1) DeleteBeaconById(ctx context.Context,
+	correlationId string, beaconId string) (res *data1.BeaconV1, err error) {
 
 	var index = -1
 	for i, v := range c.items {

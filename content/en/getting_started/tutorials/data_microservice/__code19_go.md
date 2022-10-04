@@ -5,24 +5,24 @@
 package containers
 
 import (
-	factory "github.com/pip-services-samples/service-beacons-go/build"
+	factory "github.com/pip-services-samples/service-beacons-gox/build"
 	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
+	cpg "github.com/pip-services3-gox/pip-services3-postgres-gox/build"
 	rbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
-	sbuild "github.com/pip-services3-gox/pip-services3-swagger-gox/build"
 )
 
 type BeaconsProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewBeaconsProcess() *BeaconsProcess {
 	c := &BeaconsProcess{
-		ProcessContainer: *cproc.NewProcessContainer("beacons", "Beacons microservice"),
+		ProcessContainer: cproc.NewProcessContainer("beacons", "Beacons microservice"),
 	}
 
 	c.AddFactory(factory.NewBeaconsServiceFactory())
 	c.AddFactory(rbuild.NewDefaultRpcFactory())
-	c.AddFactory(sbuild.NewDefaultSwaggerFactory())
+	c.AddFactory(cpg.NewDefaultPostgresFactory())
 
 	return c
 }

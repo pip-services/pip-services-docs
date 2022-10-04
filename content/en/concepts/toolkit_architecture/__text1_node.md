@@ -16,13 +16,14 @@ The main (basic) modules are shown in blue. Although they are not required, they
 
 Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
 
-- [Azure](../../../toolkit_api/node/azure) - components for working with the Azure cloud
-- [AWS](../../../toolkit_api/node/aws) - components for working with the AWS cloud
-- [MongoDB](../../../toolkit_api/node/mongodb) - components for storing data in MongoDB
-- [GRPC](../../../toolkit_api/node/grpc) - components for synchronous communication via GRPC
-- ActiveMQ - components for asynchronous communication via ActiveMQ
-- [MQTT](../../../toolkit_api/node/mqtt) - components for asynchronous communication via the MQTT protocol
-- [Memcached](../../../toolkit_api/node/memcached) - components for caching and synchronizing with Memcached
-- [Redis](../../../toolkit_api/node/redis) - components for caching and synchronizing with Redis
-- [ElasticSearch](../../../toolkit_api/node/elasticsearch) - components for logging with ElasticSearch
-- [Prometheus](../../../toolkit_api/node/prometheus) - components for using performance counters with Prometheus
+- [Azure](../../../toolkit_api/node/azure) - components for working with the Azure cloud.
+- [AWS](../../../toolkit_api/node/aws) - components for working with the AWS cloud.
+- [GCP](../../../toolkit_api/node/azure) - components for working with the Goolgle cloud.
+- [MongoDB](../../../toolkit_api/node/mongodb) - components for storing data in MongoDB.
+- [GRPC](../../../toolkit_api/node/grpc) - components for synchronous communication via GRPC.
+- ActiveMQ - components for asynchronous communication via ActiveMQ.
+- [MQTT](../../../toolkit_api/node/mqtt) - components for asynchronous communication via the MQTT protocol.
+- [Memcached](../../../toolkit_api/node/memcached) - components for caching and synchronizing with Memcached.
+- [Redis](../../../toolkit_api/node/redis) - components for caching and synchronizing with Redis.
+- [ElasticSearch](../../../toolkit_api/node/elasticsearch) - components for logging with ElasticSearch.
+- [Prometheus](../../../toolkit_api/node/prometheus) - components for using performance counters with Prometheus.

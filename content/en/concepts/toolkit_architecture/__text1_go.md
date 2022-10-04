@@ -16,13 +16,16 @@ The main (basic) modules are shown in blue. Although they are not required, they
 
 Last but not least are the additional (optional) modules, shown in red. These modules are used to support specific technologies, such as:
 
-- Azure - components for working with the Azure cloud
-- [AWS](../../../toolkit_api/golang/aws) - components for working with the AWS cloud
-- [MongoDB](../../../toolkit_api/golang/mongodb) - components for storing data in MongoDB
-- [GRPC](../../../toolkit_api/golang/grpc) - components for synchronous communication via GRPC
+- [Azure](../../../toolkit_api/golang/azure) - components for working with the Azure cloud.
+- [AWS](../../../toolkit_api/golang/aws) - components for working with the AWS cloud.
+- [GCP](../../../toolkit_api/golang/azure) - components for working with the Goolgle cloud.
+- [MongoDB](../../../toolkit_api/golang/mongodb) - components for storing data in MongoDB.
+- [GRPC](../../../toolkit_api/golang/grpc) - components for synchronous communication via GRPC.
 - ActiveMQ - components for asynchronous communication via ActiveMQ
-- [MQTT](../../../toolkit_api/golang/mqtt) - components for asynchronous communication via the MQTT protocol
-- [Memcached](../../../toolkit_api/golang/memcached) - components for caching and synchronizing with Memcached
-- [Redis](../../../toolkit_api/golang/redis) - components for caching and synchronizing with Redis
-- [ElasticSearch](../../../toolkit_api/golang/elasticsearch) - components for logging with ElasticSearch
-- [Prometheus](../../../toolkit_api/golang/prometheus) - components for using performance counters with Prometheus
+- [Kafka](../../../toolkit_api/golang/kafka) - a set of components for messaging using the Kafka protocol.
+- [MQTT](../../../toolkit_api/golang/mqtt) - components for asynchronous communication via the MQTT protocol.
+- [Memcached](../../../toolkit_api/golang/memcached) - components for caching and synchronizing with Memcached.
+- [Redis](../../../toolkit_api/golang/redis) - components for caching and synchronizing with Redis.
+- [RabbitMQ](../../../toolkit_api/golang/rabbitmq) - a set of components for working with the message queue in RabbitMQ through the AMQP protocol.
+- [ElasticSearch](../../../toolkit_api/golang/elasticsearch) - components for logging with ElasticSearch.
+- [Prometheus](../../../toolkit_api/golang/prometheus) - components for using performance counters with Prometheus.

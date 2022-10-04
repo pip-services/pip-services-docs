@@ -1,6 +1,6 @@
 
 ```go
-result[0].(MyData).Id       // Returns '1'
-result[0].(MyData).Key      // Returns 'key 1'
-result[0].(MyData).Content  // Returns 'content 1'
+result[0].Id       // Returns '1'
+result[0].Key      // Returns 'key 1'
+result[0].Content  // Returns 'content 1'
 ```

@@ -5,7 +5,7 @@ import (
 )
 
 persistence := NewMyPostgresPersistence()
-persistence.Configure(conf.NewConfigParamsFromTuples(
+persistence.Configure(context.Background(), conf.NewConfigParamsFromTuples(
 	"connection.host", "localhost",
 	"connection.port", 5432,
 	"connection.database", "pip1",

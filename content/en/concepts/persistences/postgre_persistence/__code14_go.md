@@ -1,4 +1,4 @@
 
 ```go
-result, _ := persistence.GetListByFilter("", "key='key 1'", nil, nil)
+result, _ := persistence.GetListByFilter(context.Background(), "", "key='key 1'")
 ```

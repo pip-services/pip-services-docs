@@ -1,4 +1,4 @@
 
 ```go
-err := persistence.Open("")
+err := persistence.Open(context.Background(), "")
 ```

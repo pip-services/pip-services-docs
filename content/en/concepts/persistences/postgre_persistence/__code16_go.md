@@ -1,4 +1,4 @@
 
-```ts
-result, _ := persistence.GetPageByFilter("", "key='key 1'", nil, nil, nil)
+```go
+result, _ := persistence.GetPageByFilter(context.Background(), "", "key='key 1'", nil)
 ```

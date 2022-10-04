@@ -1,4 +1,4 @@
 
 ```go
-result, _ := persistence.GetCountByFilter("", "key='key 1'") // Returns 1
+result, _ := persistence.GetCountByFilter(context.Background(), "", "key='key 1'") // Returns 1
 ```

@@ -1,5 +1,5 @@
 
 ```go
-idsList := []interface{}{"4", "5"}
-err := persistence.DeleteByIds("", idsList)
+idsList := []string{"4", "5"}
+err := persistence.DeleteByIds(context.Background(), "", idsList)
 ```

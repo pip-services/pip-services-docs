@@ -1,4 +1,4 @@
 
 ```go
-err := persistence.DeleteByFilter("", "key='key 1'")
+err := persistence.DeleteByFilter(context.Background(), "", "key='key 1'")
 ```

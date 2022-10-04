@@ -2,7 +2,7 @@
 ```go
 import (
 	"fmt"
-	"reflect"
+	"context"
 
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
@@ -24,13 +24,12 @@ func NewMyDataPage(total *int64, data []MyData) *MyDataPage {
 }
 
 type MyPostgresPersistence struct {
-	persist.PostgresPersistence
+	*persist.PostgresPersistence[MyData]
 }
 
 func NewMyPostgresPersistence() *MyPostgresPersistence {
-	proto := reflect.TypeOf(MyData{})
 	c := &MyPostgresPersistence{}
-	c.PostgresPersistence = *persist.InheritPostgresPersistence(c, proto, "mydata")
+	c.PostgresPersistence = persist.InheritPostgresPersistence[MyData](c, "mydata")
 	return c
 }
 
@@ -39,50 +38,33 @@ func (c *MyPostgresPersistence) DefineSchema() {
 	c.ClearSchema()
 	c.PostgresPersistence.DefineSchema()
 	// create a table
-	c.EnsureSchema("CREATE TABLE " + c.QuoteTableNameWithSchema() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
+	c.EnsureSchema("CREATE TABLE " + c.QuotedTableName() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
 	// create an index
 	c.EnsureIndex(c.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
 }
 
-func (c *MyPostgresPersistence) Create(correlationId string, item MyData) (result MyData, err error) {
-	value, err := c.PostgresPersistence.Create(correlationId, item)
-
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
+func (c *MyPostgresPersistence) Create(ctx context.Context, correlationId string, item MyData) (result MyData, err error) {
+	return c.PostgresPersistence.Create(ctx, correlationId, item)
 }
 
-func (c *MyPostgresPersistence) GetPageByFilter(correlationId string, filter interface{}, paging *cdata.PagingParams, sort interface{}, sel interface{}) (page *MyDataPage, err error) {
-
-	tempPage, err := c.PostgresPersistence.GetPageByFilter(correlationId,
-		filter, paging,
-		sort, nil)
-	// Convert to MyDataPage
-	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
-	data := make([]MyData, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(MyData)
-	}
-	page = NewMyDataPage(&dataLen, data)
-	return page, err
+func (c *MyPostgresPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter string, paging *cdata.PagingParams) (page cdata.DataPage[MyData], err error) {
+	return c.PostgresPersistence.GetPageByFilter(ctx, correlationId, filter, *paging, "", "")
 }
 
-func (c *MyPostgresPersistence) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error) {
-	return c.PostgresPersistence.GetOneRandom(correlationId, filter)
+func (c *MyPostgresPersistence) GetOneRandom(ctx context.Context, correlationId string, filter string) (item MyData, err error) {
+	return c.PostgresPersistence.GetOneRandom(ctx, correlationId, filter)
 }
 
-func (c *MyPostgresPersistence) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error) {
-	return c.PostgresPersistence.GetListByFilter(correlationId, filter, nil, nil)
+func (c *MyPostgresPersistence) GetListByFilter(ctx context.Context, correlationId string, filter string) (items []MyData, err error) {
+	return c.PostgresPersistence.GetListByFilter(ctx, correlationId, filter, "", "")
 }
 
-func (c *MyPostgresPersistence) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error) {
-	return c.PostgresPersistence.GetCountByFilter(correlationId, filter)
+func (c *MyPostgresPersistence) GetCountByFilter(ctx context.Context, correlationId string, filter string) (count int64, err error) {
+	return c.PostgresPersistence.GetCountByFilter(ctx, correlationId, filter)
 }
 
-func (c *MyPostgresPersistence) DeleteByFilter(correlationId string, filter string) (err error) {
-	return c.PostgresPersistence.DeleteByFilter(correlationId, filter)
+func (c *MyPostgresPersistence) DeleteByFilter(ctx context.Context, correlationId string, filter string) (err error) {
+	return c.PostgresPersistence.DeleteByFilter(ctx, correlationId, filter)
 }
 
 ```

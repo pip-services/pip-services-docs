@@ -1,4 +1,4 @@
 
 ```go
-result, _ := persistence.GetOneRandom("", "key='key 1'")
+result, _ := persistence.GetOneRandom(context.Background(), "", "key='key 1'")
 ```

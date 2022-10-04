@@ -1,4 +1,4 @@
 
 ```go
-result, _ := persistence.GetOneById("", "1")
+result, _ := persistence.GetOneById(ctx context.Context, "", "1")
 ```

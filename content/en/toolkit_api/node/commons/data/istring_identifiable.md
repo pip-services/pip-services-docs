@@ -4,7 +4,7 @@ title: "IStringIdentifiable"
 linkTitle: "IStringIdentifiable"
 gitUrl: "https://github.com/pip-services3-nodex/pip-services3-commons-nodex"
 description: > 
-    Interface for data objects that can be uniquely identifed by a string id. 
+    Interface for data objects that can be uniquely identified by a string id. 
 
 ---
 

@@ -13,7 +13,7 @@ Child classes take the captured messages and write them to their specific destin
 
 ### Methods
 
-#### Save
+#### Write
 Save method for counters.
 
 > Write(ctx context.Context, level LevelType, correlationId string, err error, message string)

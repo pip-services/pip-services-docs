@@ -2,12 +2,10 @@
 type: docs
 title: "CommandableLambdaClient"
 linkTitle: "CommandableLambdaClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract client that calls commandable AWS Lambda Functions.
 ---
-
-**Implements:** [LambdaClient](../lambda_client)
 
 ### Description
 
@@ -49,44 +47,50 @@ Calls a remote action in AWS Lambda function.
 The name of the action is added as "cmd" parameter
 to the action parameters. 
 
-> (c [*CommandableLambdaClient]()) CallCommand(prototype reflect.Type, cmd string, correlationId string, params [*AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*CommandableLambdaClient]()) CallCommand(ctx context.Context, cmd string, correlationId string, params [*AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
 
-- **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
+- **ctx**: context.Context -  operation context.
 - **cmd**: string - action name
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: [*AnyValueMap](../../../commons/data/any_value_map) - command parameters.
 - **returns**: (result interface{}, err error) - action result.
 
 
-
 ### Examples
 
 ```go
 type MyLambdaClient struct {
-     *CommandableLambdaClient
+    *CommandableLambdaClient
 }
 
 ...
 
-func (c* MyLambdaClient) GetData(correlationId string, id string)(result MyDataPage, err error) {
-  return c.callCommand(MyDataPageType,
-        "get_data",
-        correlationId,
-        map[string]interface{}{ "id": id })
+ func (c* MyLambdaClient) GetData(ctx context.Context, correlationId string, id string)(result DataPage[MyData], err error) {
+
+    valVal, err := c.callCommand(ctx,
+          "get_data",
+          correlationId,
+          map[string]any{ "id": id })
+    if calErr != nil {
+       return nil, calErr
+    }
+
+    defer timing.EndTiming(ctx, err)
+
+    return awsclient.HandleLambdaResponse[cdata.DataPage[MyData]](calValue)
 }
 
 ...
 
 client := NewMyLambdaClient();
-
-client.Configure(NewConfigParamsFromTuples(
+client.Configure(context.Background(), NewConfigParamsFromTuples(
     "connection.region", "us-east-1",
     "connection.access_id", "XXXXXXXXXXX",
     "connection.access_key", "XXXXXXXXXXX",
     "connection.arn", "YYYYYYYYYYYYY"
-));
+))
 
-res, err := client.GetData("123", "1")
+res, err := client.GetData(context.Background(), "123", "1")
 ...
 ```
 

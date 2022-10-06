@@ -2,7 +2,7 @@
 type: docs
 title: "ILambdaService"
 linkTitle: "ILambdaService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     An interface that allows to integrate lambda services into lambda function containers
     and connect their actions to the function calls.

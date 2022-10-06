@@ -2,7 +2,7 @@
 type: docs
 title: "CloudWatchUnit"
 linkTitle: "CloudWatchUnit"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Constants that determine CloudWatch units.
 ---

@@ -22,9 +22,9 @@ go get -u  github-module-link
 #### AWS module
 
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-aws-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-aws-gox@latest
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-aws-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-aws-gox)
 
 #### Commons module
 

@@ -2,7 +2,7 @@
 type: docs
 title: "LambdaClient"
 linkTitle: "LambdaClient"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract client that calls AWS Lambda Functions.
 ---
@@ -85,13 +85,13 @@ Tracer.
 #### Call
 Calls an AWS Lambda Function action.
 
-> (c [*LambdaClient]()) Call(prototype reflect.Type, cmd string, correlationId string, params map[string]interface{}) (result interface{}, err error)
+> (c [*LambdaClient]()) Call(ctx context.Context, cmd string, correlationId string, params map[string]interface{}) (result *lambda.InvokeOutput, err error)
 
-- **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
+- **ctx**: context.Context -  operation context.
 - **cmd**: string - action name to be called.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **params**: map[string]interface{} - (optional) action parameters.
-- **returns**: (result interface{}, err error) - action result.
+- **returns**: (result *lambda.InvokeOutput, err error) - action result.
 
 
 #### CallOneWay
@@ -108,24 +108,27 @@ Calls an AWS Lambda Function action asynchronously without waiting for response.
 #### Close
 Closes component and frees used resources.
 
-> (c [*LambdaClient]()) Close(correlationId string) error
+> (c [*LambdaClient]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context -  operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or null for success.
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*LambdaClient]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*LambdaClient]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### Instrument
 Adds instrumentation to log calls and measures call time.
 It returns an InstrumentTiming object that is used to end the time measurement.
 
-> (c [*LambdaClient]()) Instrument(correlationId string, name string) [*CounterTiming](../../../components/count/counter_timing) 
+> (c [*LambdaClient]()) Instrument(ctx context.Context, correlationId string, name string) [*CounterTiming](../../../components/count/counter_timing) 
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
 - **returns**: [*CounterTiming](../../../components/count/counter_timing) - object to end the time measurement.
@@ -133,14 +136,14 @@ It returns an InstrumentTiming object that is used to end the time measurement.
 #### Invoke
 Performs AWS Lambda Function invocation.
 
-> (c [*LambdaClient]()) Invoke(prototype reflect.Type, invocationType string, cmd string, correlationId string, args map[string]interface{}) (result interface{}, err error)
+> (c [*LambdaClient]()) Invoke(ctx context.Context, invocationType string, cmd string, correlationId string, args map[string]interface{}) (result *lambda.InvokeOutput, err error)
 
-- **prototype**: reflect.Type - type for convert result. Set nil for return raw []byte
+- **ctx**: context.Context - operation context.
 - **invocationType**: string - invocation type: "RequestResponse" or "Event"
 - **cmd**: string - action name to be called.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **args**: map[string]interface{} - action arguments
-- **returns**: (result interface{}, err error) - action result.
+- **returns**: (result *lambda.InvokeOutput, err error) - action result.
 
 #### IsOpen
 Checks if the component is open.
@@ -152,16 +155,18 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*LambdaClient]()) Open(correlationId string) error
+> (c [*LambdaClient]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or null for success.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*LambdaClient]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*LambdaClient]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 
@@ -169,29 +174,31 @@ Sets references to dependent components.
 
 ```go
 type MyLambdaClient struct  {
-   *LambdaClient
-    ...
+	*LambdaClient
+	...
 }
 
-func (c* MyLambdaClient) getData(correlationId string, id string)(result MyData, err error){
-
-   timing := c.Instrument(correlationId, "myclient.get_data");
-   callRes, callErr := c.Call(MyDataPageType ,"get_data" correlationId, map[string]interface{ "id": id })
-   timing.EndTiming();
-   return callRes, callErr
+func (c* MyLambdaClient) getData(ctx context.Context, correlationId string, id string)(result MyData, err error){
+	timing := c.Instrument(ctx, correlationId, "myclient.get_data");
+	callRes, callErr := c.Call(ctx ,"get_data" correlationId, map[string]interface{ "id": id })
+	if callErr != nil {
+		return callErr
+	}
+	defer timing.EndTiming(ctx, nil)
+	return awsclient.HandleLambdaResponse[*cdata.DataPage[MyData]](calValue)
 }
-
 ...
 
+
 client = NewMyLambdaClient();
-client.Configure(NewConfigParamsFromTuples(
+client.Configure(context.Background(), NewConfigParamsFromTuples(
     "connection.region", "us-east-1",
     "connection.access_id", "XXXXXXXXXXX",
     "connection.access_key", "XXXXXXXXXXX",
     "connection.arn", "YYYYYYYYYYYYY"
-));
+))
 
-data, err := client.GetData("123", "1",)
+data, err := client.GetData(context.Background(), "123", "1")
 ...
 ```
 

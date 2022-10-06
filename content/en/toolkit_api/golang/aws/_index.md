@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "AWS module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 no_list: true
 weight: 500
 description: > 
@@ -20,11 +20,10 @@ This module contains the following packages:
 - [**Count**](count) - components for working with counters (metrics) with data saving in the CloudWatch AWS service
 - [**Log**](log) - logging components with saving data in the CloudWatch AWS service
 - [**Services**](log) - contains interfaces and classes used to create Lambda services
-- [**Test**](test) - contains classes used for automated testing
 
 ### Use
 
 Get the package from the Github repository:
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-aws-go@latest
+go get -u github.com/pip-services3-gox/pip-services3-aws-gox@latest
 ```

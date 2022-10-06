@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableLambdaService"
 linkTitle: "CommandableLambdaService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract service that receives commands via the AWS Lambda protocol to operations automatically generated for commands defined in [ICommandable](../../../commons/commands/icommandable) components. Each command is exposed as an invoke method that receives a command's name and parameters.
 ---
@@ -48,28 +48,28 @@ Registers all actions in AWS Lambda function.
 ### Examples
 
 ```go
-struct MyCommandableLambdaService struct  {
-  *CommandableLambdaService
+type MyCommandableLambdaService struct  {
+	*CommandableLambdaService
 }
 
-func NewMyCommandableLambdaService(): MyCommandableLambdaService {
-   c:= &MyCommandableLambdaService{
-     CommandableLambdaService: NewCommandableLambdaService("v1.service")
-   }
-   c.DependencyResolver.Put(
-       "controller",
-       cref.NewDescriptor("mygroup","controller","*","*","1.0")
-   )
-   return c
+func NewMyCommandableLambdaService() *MyCommandableLambdaService {
+	c:= &MyCommandableLambdaService{
+		CommandableLambdaService: NewCommandableLambdaService("v1.service")
+	}
+	c.DependencyResolver.Put(context.Background(),
+		"controller",
+		cref.NewDescriptor("mygroup","controller","*","*","1.0")
+	)
+	return c
 }
 
 service := NewMyCommandableLambdaService();
-service.SetReferences(NewReferencesFromTuples(
+service.SetReferences(context.Background(), NewReferencesFromTuples(
    NewDescriptor("mygroup","controller","default","default","1.0"), controller
-));
+))
 
-service.Open("123");
-fmt.Println("The AWS Lambda 'v1.service' service is running");
+service.Open(context.Background(),"123")
+fmt.Println("The AWS Lambda 'v1.service' service is running")
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "LambdaService"
 linkTitle: "LambdaService"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract service that receives remote calls via the AWS Lambda protocol.
 ---
@@ -68,33 +68,34 @@ the action shall be called.
 
 - This method shall only be used in testing.
 
-> (c [*LambdaService]()) Act(params map[string]interface{}) (interface{}, error)
+> (c [*LambdaService]()) Act(params map[string]any) (any, error)
 
-- **params**: map[string]interface{} - action parameters.
-- **returns**: (interface{}, error) - results
+- **params**: map[string]any - action parameters.
+- **returns**: (any, error) - results
 
 #### ApplyInterceptors
 Applies given action to the interceptors
 
-> (c [*LambdaService]()) ApplyInterceptors(action func(map[string]interface{}) (interface{}, error)) func(map[string]interface{}) (interface{}, error)
+> (c [*LambdaService]()) ApplyInterceptors(action func(context.Context, map[string]any) (any, error)) func(map[string]any) (any, error)
 
-- **action**: func(map[string]interface{}) (interface{}, error) - applied action.
-- **returns**: (interface{}, error) - wrapped interceptors action.
+- **action**: func(map[string]any) (any, error) - applied action.
+- **returns**: (any, error) - wrapped interceptors action.
 
 #### ApplyValidation
 Applies a validation according to a given schema.
 
-> (c [*LambdaService]()) ApplyValidation(schema [*Schema](../../../commons/validate/schema), action func(params map[string]interface{}) (interface{}, error)) func(map[string]interface{}) (interface{}, error)
+> (c [*LambdaService]()) ApplyValidation(schema [*Schema](../../../commons/validate/schema), action func(params map[string]any) (any, error)) func(map[string]any) (any, error)
 
 - **schema**: [*Schema](../../../commons/validate/schema) - validation schema.
-- **action**: func(params map[string]interface{}) (interface{}, error) - action.
-- **returns**: func(map[string]interface{}) (interface{}, error) - results.
+- **action**: func(params map[string]any) (any, error) - action.
+- **returns**: func(map[string]any) (any, error) - results.
 
 #### Close
 Closes a component and frees used resources.
 
-> (c [*LambdaService]()) Close(correlationId string) error
+> (c [*LambdaService]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occured.
 
@@ -102,8 +103,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c [*LambdaService]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*LambdaService]()) Configure(ctx context.Context,  config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -126,8 +128,9 @@ Gets all the actions supported by the service.
 Adds instrumentation to log calls and measures call time.
 It returns a Timing object that is used to end the time measurement.
 
-> (c [*LambdaService]()) Instrument(correlationId string, name string) [*InstrumentTiming](../../../rpc/services/instrument_timing)
+> (c [*LambdaService]()) Instrument(ctx context.Context, correlationId string, name string) [*InstrumentTiming](../../../rpc/services/instrument_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
 - **returns**: [*InstrumentTiming](../../../rpc/services/instrument_timing) - InstrumentTiming object to end the time measurement.
@@ -143,8 +146,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*LambdaService]()) Open(correlationId string) error
+> (c [*LambdaService]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil no errors occured.
 
@@ -159,88 +163,87 @@ in child classes.
 #### RegisterAction
 Registers an action in AWS Lambda function.
 
-> (c [*LambdaService]()) RegisterAction(name string, schema [*Schema](../../../commons/validate/schema), action func(params map[string]interface{}) (interface{}, error))
+> (c [*LambdaService]()) RegisterAction(name string, schema [*Schema](../../../commons/validate/schema), action func(ctx context.Context, params map[string]any) (any, error))
 
+- **ctx**: context.Context - operation context.
 - **name**: string - action name
 - **schema**: [*Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
-- **action**: func(params map[string]interface{}) (interface{}, error) - action function that is called when an operation is invoked.
+- **action**: func(params map[string]any) (any, error) - action function that is called when an operation is invoked.
 
 #### RegisterActionWithAuth
 Registers an action with authorization.
 
-> (c [*LambdaService]()) RegisterActionWithAuth(name string, schema [*Schema](../../../commons/validate/schema), authorize func(params map[string]interface{}, next func(map[string]interface{}) (interface{}, error)) (interface{}, error), action func(params map[string]interface{}) (interface{}, error))
+> (c [*LambdaService]()) RegisterActionWithAuth(name string, schema *cvalid.Schema, authorize func(ctx context.Context, params map[string]any, next func(context.Context, map[string]any) (interface{}, error)) (interface{}, error), action func(ctx context.Context, params map[string]any) (interface{}, error))
 
 - **name**: string - action's name
 - **schema**: [*Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
-- **authorize**: func(params map[string]interface{}, next func(map[string]interface{}) (interface{}, error)) (interface{}, error) - authorization interceptor
-
-- **action**: func(params map[string]interface{}) (interface{}, error) - action function that is called when an operation is invoked.
+- **authorize**: func(params map[string]any, next func(map[string]any) (any, error)) (any, error) - authorization interceptor
+- **action**: func(ctx context.Context, params map[string]any) (any, error) - action function that is called when an operation is invoked.
 
 
 #### RegisterInterceptor
 Registers a middleware for actions in AWS Lambda service.
 
-> (c [*LambdaService]()) RegisterInterceptor(action func(params map[string]interface{}, next func(params map[string]interface{}) (interface{}, error)) (interface{}, error))   
+> (c [*LambdaService]()) RegisterInterceptor(action func(ctx context.Context, params map[string]any, next func(ctx context.Context, params map[string]any) (any, error)) (any, error))   
      
-- **action**: func(params map[string]interface{}, next func(params map[string]interface{}) (interface{}, error)) (interface{}, error) - action function that is called when middleware is invoked.
+- **action**: func(ctx context.Context, params map[string]any, next func(ctx context.Context, params map[string]any) (any, error)) (any, error) - action function that is called when middleware is invoked.
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*LambdaService]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*LambdaService]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references used to locate the component dependencies.
 
 
 ### Examples
 
 ```go
-struct MyLambdaService struct  {
-   LambdaService
-   controller IMyController
-}
-    ...
-
+  struct MyLambdaService struct  {
+     *LambdaService
+     controller IMyController
+  }
+     ...
 func NewMyLambdaService()* MyLambdaService {
    c:= &MyLambdaService{}
    c.LambdaService = NewLambdaService("v1.myservice")
    c.DependencyResolver.Put(
+	   context.Background(),
        "controller",
        cref.NewDescriptor("mygroup","controller","*","*","1.0")
    )
    return c
 }
 
-func (c * LambdaService)  SetReferences(references: IReferences){
-   c.LambdaService.setReferences(references);
+func (c * LambdaService)  SetReferences(ctx context.Context, references IReferences) {
+   c.LambdaService.SetReferences(references)
    ref := c.DependencyResolver.GetRequired("controller")
    c.controller = ref.(IMyController)
 }
 
-func (c * LambdaService)  Register(){
-    c.RegisterAction("get_mydata", nil,  func(params map[string]interface{})(interface{}, error) {
-         correlationId := params.GetAsString("correlation_id")
-         id := params.GetAsString("id")
-        return  c.controller.GetMyData(correlationId, id);
-    });
+func (c * LambdaService)  Register() {
+	c.RegisterAction("get_mydata", nil,  func(ctx context.Context, params map[string]any)(any, error) {
+        correlationId := params.GetAsString("correlation_id")
+        id := params.GetAsString("id")
+		return  c.controller.GetMyData(ctx, correlationId, id)
+    })
     ...
 }
 
 service := NewMyLambdaService();
-
-service.Configure(NewConfigParamsFromTuples(
+service.Configure(ctx context.Context, NewConfigParamsFromTuples(
     "connection.protocol", "http",
     "connection.host", "localhost",
     "connection.port", 8080
-));
-
-service.SetReferences(cref.NewReferencesFromTuples(
+))
+service.SetReferences(context.Background(), cref.NewReferencesFromTuples(
    cref.NewDescriptor("mygroup","controller","default","default","1.0"), controller
-));
+))
 
-service.Open("123");
-fmt.Println("The Lambda 'v1.myservice' service is running on port 8080");
+service.Open(context.Background(), "123")
+fmt.Println("The Lambda 'v1.myservice' service is running on port 8080")
 ```
 
 ### See also

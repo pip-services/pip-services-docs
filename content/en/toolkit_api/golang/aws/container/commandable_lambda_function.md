@@ -2,7 +2,7 @@
 type: docs
 title: "CommandableLambdaFunction"
 linkTitle: "CommandableLambdaFunction"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract AWS Lambda function that acts as a container to instantiate and run components
     and expose them via an external entry point.
@@ -63,7 +63,22 @@ Registers all actions in this lambda function.
 ### Examples
 
 ```go
-TODO: add example
+type MyCommandableLambdaFunction struct {
+	*awscont.CommandableLambdaFunction
+}
+
+func NewMyCommandableLambdaFunction() *MyCommandableLambdaFunction {
+	c := &MyCommandableLambdaFunction{}
+	c.CommandableLambdaFunction = awscont.NewCommandableLambdaFunction("my_group", "My data lambda function")
+
+	c.DependencyResolver.Put(context.Background(), "controller", cref.NewDescriptor("my-group", "controller", "default", "*", "*"))
+	c.AddFactory(awstest.NewDummyFactory())
+	return c
+}
+
+lambda := NewMyCommandableLambdaFunction();
+
+lambda.Run(context.Context())
 ```
 
 ### See also

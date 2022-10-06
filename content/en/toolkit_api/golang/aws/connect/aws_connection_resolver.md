@@ -2,7 +2,7 @@
 type: docs
 title: "AwsConnectionResolver"
 linkTitle: "AwsConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Helper class used to retrieve AWS connection and credential parameters,
     validate them and compose an [AwsConnectionParams](../aws_connection_params) value.
@@ -58,8 +58,9 @@ Credential resolver.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*AwsConnectionResolver]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*AwsConnectionResolver]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 #### Resolve
@@ -91,9 +92,10 @@ config := NewConfigParamsFromTuples(
      "credential.access_key", "XXXXXXXXXX"
  );
 
-connectionResolver := NewAwsConnectionResolver();
-connectionResolver.Configure(config);
-connectionResolver.SetReferences(references);
+connectionResolver := NewAwsConnectionResolver()
+connectionResolver.Configure(context.Background(), config)
+connectionResolver.SetReferences(context.Background(), references)
+
 err, connection :=connectionResolver.Resolve("123")
 // Now use connection...
 ```

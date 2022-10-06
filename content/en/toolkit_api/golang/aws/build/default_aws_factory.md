@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultAwsFactory"
 linkTitle: "DefaultAwsFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Creates AWS components by their descriptors.
 ---

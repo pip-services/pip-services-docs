@@ -2,7 +2,7 @@
 type: docs
 title: "LambdaFunction"
 linkTitle: "LambdaFunction"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Abstract AWS Lambda function that acts as a container to instantiate and run components, 
     and expose them via an external entry point. 
@@ -54,7 +54,7 @@ Creates a new instance of this lambda function.
 
 #### actions
 Map containing registered actions.
-> **actions**: map[string]func(map[string]interface{}) (interface{}, error)
+> **actions**: map[string]func(context.Context, map[string]any) (any, error)
 
 #### configPath
 Default path to config file.
@@ -88,9 +88,9 @@ what action shall be called.
 
 - This method shall only be used in testing.
 
-> (c [*LambdaFunction]()) Act(params map[string]interface{}) (string, error) 
+> (c [*LambdaFunction]()) Act(params map[string]any) (string, error) 
 
-- **params**: map[string]interface{} - action parameters.
+- **params**: map[string]any - action parameters.
 - **returns**: (string, error) - result
 
 #### Handler
@@ -98,26 +98,28 @@ Executes this AWS Lambda function and returns the result.
 This method can be overloaded in child classes
 if it is necessary to change the default behavior
 
-> (c [*LambdaFunction]()) Handler(ctx context.Context, event map[string]interface{}) (string, error)
+> (c [*LambdaFunction]()) Handler(ctx context.Context, event map[string]any) (string, error)
 
-- **event**: map[string]interface{} - event parameters (or function arguments)
+- **ctx**: context.Context - operation context.
+- **event**: map[string]any - event parameters (or function arguments)
 - **returns**: (string, error) - result of the function execution.
 
 #### GetHandler
 Gets an entry point into this lambda function.
 
-> (c [*LambdaFunction]()) GetHandler() func(ctx context.Context, event map[string]interface{}) (string, error)
+> (c [*LambdaFunction]()) GetHandler() func(ctx context.Context, event map[string]any) (string, error)
 
-- **returns**: func(ctx context.Context, event map[string]interface{}) (string, error) - incoming event object with invocation parameters.
+- **returns**: func(ctx context.Context, event map[string]any) (string, error) - incoming event object with invocation parameters.
     - **context**: context.Context - context object with local references.
-    - **event**: map[string]interface{} - incoming event object with invocation parameters.
+    - **event**: map[string]any - incoming event object with invocation parameters.
 
 
 #### Instrument
 Gets entry point into this lambda function.
 
-> (c [*LambdaFunction]()) Instrument(correlationId string, name string) [*InstrumentTiming](../../../rpc/services/instrument_timing)
+> (c [*LambdaFunction]()) Instrument(ctx context.Context, correlationId string, name string) [*InstrumentTiming](../../../rpc/services/instrument_timing)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **name**: string - method name.
 - **returns**: [*InstrumentTiming](../../../rpc/services/instrument_timing) - object to end the time measurement.
@@ -125,8 +127,9 @@ Gets entry point into this lambda function.
 #### Open
 Opens the component.
 
-> (c [*LambdaFunction]()) Open(correlationId string) error
+> (c [*LambdaFunction]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -136,11 +139,11 @@ Registers an action in this lambda function.
  
 - Note: This method has been deprecated. Use [LambdaService](../../services/lambda_service) instead.
 
-> (c [*LambdaFunction]()) RegisterAction(cmd string, schema [*Schema](../../../commons/validate/schema), action func(params map[string]interface{}) (result interface{}, err error)) error
+> (c [*LambdaFunction]()) RegisterAction(cmd string, schema [*Schema](../../../commons/validate/schema), action func(ctx context.Context, params map[string]any) (result any, err error)) error
 
 - **cmd**: string - action/command name.
 - **schema**: [*Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
-- **action**: func(params map[string]interface{}) - action function that is called when the action is invoked.
+- **action**: func(ctx context.Context, params map[string]any) - action function that is called when the action is invoked.
 - **returns**: error - error or nil if no errors occured.
 
 
@@ -157,16 +160,18 @@ Runs this lambda function, loads container configuration,
 instantiates components and manages their lifecycle.
 Makes this function ready to access action calls.
 
-> (c [*LambdaFunction]()) Run() error
+> (c [*LambdaFunction]()) Run(ctx context.Context) error
 
+- **ctx**: context.Context - operation context.
 - **returns**: error - error or nil no errors occured.
 
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*LambdaFunction]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*LambdaFunction]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **сеч**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
@@ -174,7 +179,49 @@ Sets references to dependent components.
 ### Examples
 
 ```go
-TODO: add description
+type MyLambdaFunction struct {
+	*awscont.LambdaFunction
+	controller awstest.IMyController
+}
+
+func NewMyLambdaFunction() *MyLambdaFunction {
+	c := &MyLambdaFunction{}
+	c.LambdaFunction = awscont.InheriteLambdaFunction(c, "mygroup", "MyGroup lambda function")
+
+	c.DependencyResolver.Put(context.Background(), "controller", cref.NewDescriptor("mygroup", "controller", "*", "*", "1.0"))
+	return c
+}
+
+func (c *MyLambdaFunction) SetReferences(ctx context.Context, references cref.IReferences) {
+	c.LambdaFunction.SetReferences(ctx, references)
+	depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
+	if depErr == nil && depRes != nil {
+		c.controller = depRes.(awstest.IMyController)
+	}
+}
+
+func (c *MyLambdaFunction) getOneById(ctx context.Context, params map[string]any) (any, error) {
+	correlationId, _ := params["correlation_id"].(string)
+	return c.controller.GetOneById(
+		ctx,
+		correlationId,
+		params["mydata_id"].(string),
+	)
+}
+
+func (c *MyLambdaFunction) Register() {
+
+	c.RegisterAction(
+		"get_mydata_by_id",
+		cvalid.NewObjectSchema().
+			WithOptionalProperty("mydata_id", cconv.String).Schema,
+		c.getOneById)
+}
+
+
+lambda := NewMyLambdaFunction()
+
+lambda.Run(context.Context())
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "CloudWatchLogger"
 linkTitle: "CloudWatchLogger"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Logger that writes log messages to AWS CloudWatch Log.
 ---
@@ -47,54 +47,60 @@ Creates a new instance of this logger.
 #### Close
 Closes a component and frees used resources.
 
-> (c *CloudWatchLogger) Close(correlationId string) error
+> (c [*CloudWatchLogger]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occured.
 
 #### Configure
 Configures a component by passing configuration parameters.
 
-> (c *CloudWatchLogger) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*CloudWatchLogger]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### IsOpen
 Checks if the component is open.
 
-> (c *CloudWatchLogger) IsOpen() bool
+> (c [*CloudWatchLogger]()) IsOpen() bool
 
 - **returns**: bool - true if the component is open and false otherwise.
 
 #### Open
 Opens the component.
 
-> (c *CloudWatchLogger) Open(correlationId string) error
+> (c [*CloudWatchLogger]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occured.
 
 #### Save
 Saves the current counters' measurements.
 
-> (c *CloudWatchLogger) Save(messages [[]*LogMessage](../../../components/log/log_message)) error
+> (c [*CloudWatchLogger]()) Save(ctx context.Context, messages [[]*LogMessage](../../../components/log/log_message)) error
 
+- **ctx**: context.Context - operation context.
 - **messages**: [[]*LogMessage](../../../components/log/log_message) - current counters' measurements to be saved.
 - **returns**: error - error or nil no errors occured.
 
 #### SetReferences
 Sets references to dependent components.
 
-> `(c *CloudWatchLogger) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> `(c [*CloudWatchLogger]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 #### Write
 Writes a log message to the logger destination.
 
-> (c *CloudWatchLogger) Write(level int, correlationId string, ex error, message string)
+> (c [*CloudWatchLogger]()) Write(ctx context.Context, level int, correlationId string, ex error, message string)
 
+- **ctx**: context.Context - operation context.
 - **level**: int - log level ([LogLevel](../../../components/log/log_level)).
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **ex**: error - error object associated with this message.
@@ -106,26 +112,25 @@ Writes a log message to the logger destination.
 
 ```go
 logger := NewLogger();
-logger.Config(NewConfigParamsFromTuples(
+logger.Configure(context.Background(), NewConfigParamsFromTuples(
     "stream", "mystream",
     "group", "mygroup",
     "connection.region", "us-east-1",
     "connection.access_id", "XXXXXXXXXXX",
     "connection.access_key", "XXXXXXXXXXX",
-));
-
-logger.SetReferences(NewReferencesFromTuples(
+))
+logger.SetReferences(context.Background(), NewReferencesFromTuples(
     NewDescriptor("pip-services", "logger", "console", "default", "1.0"),
     NewConsoleLogger()
-));
+))
 
-err:= logger.Open("123")
+err:= logger.Open(context.Background(), "123")
+...
 
-    ...
+logger.SetLevel(Debug)
 
-logger.SetLevel(Debug);
-logger.Error("123", ex, "Error occured: %s", ex.Message);
-logger.Debug("123", "Everything is OK.");
+logger.Error(context.Background(), "123", ex, "Error occured: %s", ex.Message)
+logger.Debug(context.Background(), "123", "Everything is OK.")
 ```
 
 ### See also

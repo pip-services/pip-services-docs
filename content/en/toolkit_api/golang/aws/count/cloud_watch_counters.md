@@ -2,7 +2,7 @@
 type: docs
 title: "CloudWatchCounters"
 linkTitle: "CloudWatchCounters"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Performance counters that periodically dump counters to AWS Cloud Watch Metrics.
 ---
@@ -45,16 +45,18 @@ Creates a new instance of this counters.
 #### Close
 Closes component and frees used resources.
 
-> (c [*CloudWatchCounters]()) Close(correlationId string) error
+> (c [*CloudWatchCounters]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*CloudWatchCounters]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*CloudWatchCounters]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -68,24 +70,27 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*CloudWatchCounters]()) Open(correlationId string) error
+> (c [*CloudWatchCounters]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
 #### Save
 Saves the current counters' measurements.
 
-> (c [*CloudWatchCounters]()) Save(counters [[]*Counter](../../../components/count/counter)) error
+> (c [*CloudWatchCounters]()) Save(ctx context.Context, counters [[]*Counter](../../../components/count/counter)) error
 
+- **ctx**: context.Context - operation context.
 - **counters**: [[]*Counter](../../../components/count/counter) - current counters' measurements to be saved.
 - **returns**: error - error or nil no errors occured.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*CloudWatchCounters]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*CloudWatchCounters]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
@@ -93,29 +98,29 @@ Sets references to dependent components.
 ### Examples
 
 ```go
-counters := NewCloudWatchCounters();
-counters.Config(ConfigParams.fromTuples(
+ctx := context.Background()
+counters := NewCloudWatchCounters()
+counters.Configure(ctx, config.NewConfigParamsFromTuples(
     "connection.region", "us-east-1",
     "connection.access_id", "XXXXXXXXXXX",
     "connection.access_key", "XXXXXXXXXXX"
-));
-
-counters.SetReferences(NewReferencesFromTuples(
+))
+counters.SetReferences(ctx, NewReferencesFromTuples(
     NewDescriptor("pip-services", "logger", "console", "default", "1.0"),
     NewConsoleLogger()
-));
+))
 
-err := counters.Open("123")
+err := counters.Open(ctx, "123")
+    ...
+
+counters.Increment(ctx, "mycomponent.mymethod.calls")
+timing := counters.BeginTiming(ctx, "mycomponent.mymethod.exec_time")
 
     ...
 
-counters.Increment("mycomponent.mymethod.calls");
-timing:= counters.BeginTiming("mycomponent.mymethod.exec_time");
+timing.EndTiming(ctx, err)
 
-    ...
-
-timing.endTiming();
-counters.Dump();
+counters.Dump(ctx)
 ```
 
 ### See also

@@ -2,7 +2,7 @@
 type: docs
 title: "AwsConnectionParams"
 linkTitle: "AwsConnectionParams"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-aws-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-aws-gox"
 description: >
     Contains connection parameters to authenticate against Amazon Web Services (AWS)
     and connect to specific AWS resources.
@@ -226,12 +226,12 @@ connection := NewAwsConnectionParamsFromTuples(
     "secret_key", "XXXXXXXXXXXXXXX",
     "service", "s3",
     "bucket", "mybucket"
-);
+)
 
-region := connection.getRegion();                     // Result: "us-east-1"
-accessId := connection.getAccessId();                 // Result: "XXXXXXXXXXXXXXX"
-secretKey := connection.getAccessKey();               // Result: "XXXXXXXXXXXXXXX"
-pin := connection.getAsNullableString("bucket");      // Result: "mybucket"  
+region := connection.Region()                     // Result: "us-east-1"
+accessId := connection.AccessId()                 // Result: "XXXXXXXXXXXXXXX"
+secretKey := connection.AccessKey()               // Result: "XXXXXXXXXXXXXXX"
+pin := connection.GetAsNullableString("bucket")      // Result: "mybucket"
 ```
 
 ### See also

@@ -20,17 +20,17 @@ Important points
 
 #### Configuration parameters
 
-**connection(s)**:
-- **discovery_key**: (optional) key to retrieve the connection from IDiscovery
-- **host**: host name or IP address
-- **port**: port number (default: 27017)
-- **database**: database name
-- **uri**: resource URI or connection string with all parameters in it
+- **connection(s)**:
+    - **discovery_key**: (optional) key to retrieve the connection from IDiscovery
+    - **host**: host name or IP address
+    - **port**: port number (default: 27017)
+    - **database**: database name
+    - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:
-- **store_key**: (optional) key to retrieve the credentials from ICredentialStore
-- **username**: username
-- **password**: user's password
+- **credential(s)**:
+    - **store_key**: (optional) key to retrieve the credentials from ICredentialStore
+    - **username**: username
+    - **password**: user's password
 
 #### References
 - **\*:discovery:\*:\*:1.0** - (optional) [IDiscovery](../../../components/connect/idiscovery) services
@@ -63,22 +63,25 @@ MongoDB credential resolver.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*MongoDbConnectionResolver]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*MongoDbConnectionResolver]()) Configure(ctx context.Context,config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Resolve
 Resolves a MongoDB connection URI from connection and credential parameters.
 
-> (c [*MongoDbConnectionResolver]()) Resolve(correlationId string) (uri string, err error)
+> (c [*MongoDbConnectionResolver]()) Resolve(ctx context.Context, correlationId string) (uri string, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (uri string, err error) - resolved URI
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MongoDbConnectionResolver]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*MongoDbConnectionResolver]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

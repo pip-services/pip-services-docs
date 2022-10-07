@@ -2,7 +2,7 @@
 type: docs
 title: "MongoDbPersistence"
 linkTitle: "MongoDbPersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mongodb-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mongodb-gox"
 description: >
     Abstract persistence component that stores data in MongoDB using the official MongoDB driver.
 
@@ -56,10 +56,9 @@ Important points
 #### InheritMongoDbPersistence
 Creates a new instance of the persistence component.
 
-> InheritMongoDbPersistence(overrides IMongoDbPersistenceOverrides, proto reflect.Type, collection string) [*MongoDbPersistence]()
+> InheritMongoDbPersistence[T any](overrides [IMongoDbPersistenceOverrides[T]](../imongodb_persistence_overrides), collection string) [*MongoDbPersistence]()
 
-- **overrides**: IMongoDbPersistenceOverrides - TODO: add description 
-- **proto**: reflect.Type - TODO: add description
+- **overrides**:  [IMongoDbPersistenceOverrides[T]](../imongodb_persistence_overrides) - overrides instance.
 - **collection**: string - (optional) collection name.
 
 
@@ -113,8 +112,9 @@ The maximum number of records to return from the database per request.
 #### Clear
 Clears a component's state.
 
-> (c *MongoDbPersistence) Clear(correlationId string) error
+> (c [*MongoDbPersistence[T]]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - object to convert from the public partial format.
 - **returns**: error -  error or nil no errors occured.
 
@@ -122,73 +122,100 @@ Clears a component's state.
 #### Close
 Closes the component and frees used resources.
 
-> (c *MongoDbPersistence) Close(correlationId string) error
+> (c [*MongoDbPersistence[T]]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - object to convert from the public partial format.
 - **returns**: error -  error or nil no errors occured.
 
 
 #### Configure
-Closes the component and frees used resources.
+Configure method is configures component by passing configuration parameters.
 
-> (c *MongoDbPersistence) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*MongoDbPersistence[T]]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### ConvertFromPublic
 Converts an object value from public to internal format.
 
-> (c *MongoDbPersistence) ConvertFromPublic(item interface{}) interface{}
+> (c [*MongoDbPersistence[T]]()) ConvertFromPublic(item T) (map[string]any, error)
 
-- **value**: interface{} - object in public format to convert.
-- **returns**: interface{} - converted object in internal format.
+- **value**: T - object in public format to convert.
+- **returns**: (map[string]any, error) - converted object in internal format.
 
+#### ConvertFromPublicPartial
+ConvertFromPublicPartial method help convert object (map) from public view by replaced "Id" to "_id" field
+> ConvertFromPublicPartial(item T) (map[string]any, error)
+
+- **item**: T - item for conversion.
+- **returns**: (map[string]any, error) - result map
 
 #### ConvertToPublic
 Converts and object value from internal to public format.
 
-> (c *MongoDbPersistence) ConvertToPublic(value interface{}) interface{}
+> (c [*MongoDbPersistence[T]]()) ConvertToPublic(value any) (T, error)
 
-- **value**: interface{} - object in internal format to convert.
-- **returns**: interface{} - converted object in public format.
+- **value**: any - object in internal format to convert.
+- **returns**: (T, error) - converted object in public format.
 
 
 #### Create
 Creates a data item.
 
-> (c *MongoDbPersistence) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*MongoDbPersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used  to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: T - item to be created.
+- **returns**: (result T, err error) - created item
 
 
 #### DefineSchema
 Defines the database schema
 
-> (c *MongoDbPersistence) DefineSchema()
+> (c [*MongoDbPersistence[T]]()) DefineSchema()
 
 
 #### DeleteByFilter
 This method shall be called by a func **DeleteByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MongoDbPersistence) DeleteByFilter(correlationId string, filter interface{}) error
+> (c [*MongoDbPersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filter any) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter function used to filter items.
+- **filter**: any - (optional) filter function used to filter items.
 - **returns**: error -  error or nil no errors occured.
 
 
 #### EnsureIndex
 Adds index definition to create it on opening.
 
-> (c *MongoDbPersistence) EnsureIndex(keys interface{}, options *mongoopt.IndexOptions)
+> (c [*MongoDbPersistence[T]]()) EnsureIndex(keys any, options *mongoopt.IndexOptions)
 
-- **keys**: interface{} - index keys (fields)
+- **keys**: any - index keys (fields)
 - **options**: *mongoopt.IndexOptions - index options
 
+#### IsOpen
+Method is checks if the component is opened.
+> (c [*MongoDbPersistence[T]]()) IsOpen() bool
+
+#### IsTerminated
+Checks if the wee need to terminate process before close component.
+
+> (c [*MongoDbPersistence[T]]()) IsTerminated() bool 
+
+- **returns**: bool - true if you need terminate your processes.
+
+#### Open
+Open method is opens the component.
+> (c *MongoDbPersistence[T]) Open(ctx context.Context, correlationId string) error
+
+- **ctx**: context.Context - operation context.
+- **returns**: error or nil when no errors occured.
 
 #### GetCountByFilter
 Gets a number of data items retrieved by a given filter.
@@ -196,10 +223,11 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a func **GetCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MongoDbPersistence) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error)
+> (c [*MongoDbPersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filter any) (count int64, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id usedto trace execution through the call chain.
-- **filter**: interface{} - (optional) filter JSON object
+- **filter**: any - (optional) filter JSON object
 - **returns**: (count int64, err error) - number of filtered items.
 
 
@@ -209,13 +237,14 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetListByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MongoDbPersistence) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error)
+> (c [*MongoDbPersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filter any, sort any, sel any) (items []T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter function used to filter items
-- **sort**: interface{} - (optional) sorting parameters
-- **select**: interface{} - (optional) projection parameters (not used yet)
-- **returns**: (items []interface{}, err error) - data list of results by filter.
+- **filter**: any - (optional) filter function used to filter items
+- **sort**: any - (optional) sorting parameters
+- **select**: any - (optional) projection parameters (not used yet)
+- **returns**: (items []T, err error) - data list of results by filter.
 
 
 #### GetOneRandom
@@ -224,11 +253,12 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a func [GetOneRandom](#getonerandom) method from the child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MongoDbPersistence) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error)
+> (c [*MongoDbPersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filter any) (item T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - fileter JSON object.
-- **returns**: (item interface{}, err error) - random item.
+- **filter**: any - fileter JSON object.
+- **returns**: (item T, err error) - random item.
 
 
 #### GetPageByFilter
@@ -237,95 +267,88 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetPageByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c *MongoDbPersistence) GetPageByFilter(correlationId string, filter interface{}, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort interface{}, sel interface{}) (page [*cdata.DataPage](../../../commons/data/data_page), err error)
+> (c [*MongoDbPersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filter any, paging [*cdata.PagingParams](../../../commons/data/paging_params), sort any, sel any) (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter JSON object
+- **filter**: any - (optional) filter JSON object
 - **paging**: [*cdata.PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
-- **sort**: interface{} - (optional) sorting JSON object
-- **sel**: interface{} - (optional) projection JSON object
-- **returns**: (page [*cdata.DataPage](../../../commons/data/data_page), err error) - data page obtained by filtering
+- **sort**: any - (optional) sorting JSON object
+- **sel**: any - (optional) projection JSON object
+- **returns**: (page [*cdata.DataPage[T]](../../../commons/data/data_page), err error) - data page obtained by filtering
 
+#### SetReferences
+Sets references to dependent components.
+
+> (c [*MessageQueue]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
+
+- **ctx**: context.Context - operation context.
+- **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
 
 ### Examples
 
 ```go
 type MyMongoDbPersistence struct {
-  MongoDbPersistence
+	*persistence.MongoDbPersistence[MyData]
 }
 
-func NewMyMongoDbPersistence(proto reflect.Type, collection string) *MyMongoDbPersistence {
-  mc:= MyMongoDbPersistence{}
-  mc.MongoDbPersistence = NewMongoDbPersistence(proto, collection)
-  return &mc
+func NewMyMongoDbPersistence() *MyMongoDbPersistence {
+	c := &MyMongoDbPersistence{}
+	c.MongoDbPersistence = persistence.InheritMongoDbPersistence[MyData](c, "my_data")
+	return c
 }
 
-func (c * MyMongoDbPersistence) GetByName(correlationId string, name string) (item interface{}, err error) {
-  filter := bson.M{"name": name}
-  docPointer := NewObjectByPrototype(c.Prototype)
-  foRes := c.Collection.FindOne(context.TODO(), filter)
-  ferr := foRes.Decode(docPointer.Interface())
-  if ferr != nil {
-      if ferr == mongo.ErrNoDocuments {
-         return nil, nil
-      }
-      return nil, ferr
-  }
-  item = docPointer.Elem().Interface()
-  c.Overrides.ConvertToPublic(&item)
-  return item, nil
+func (c *MyMongoDbPersistence) GetByName(ctx context.Context, correlationId string, name string) (count int64, err error) {
+	return c.MongoDbPersistence.GetCountByFilter(ctx, correlationId, bson.M{"name": name})
 }
 
-func (c * MyMongoDbPersistence) Set(correlatonId string, item MyData) (result interface{}, err error) {
-    newItem = cmpersist.CloneObject(item, c.Prototype)
-    // Assign unique id if not exist
-    cmpersist.GenerateObjectId(&newItem)
-    id := cmpersist.GetObjectId(newItem)
-    c.Overrides.ConvertFromPublic(&newItem)
-    filter := bson.M{"_id": id}
-    var options mngoptions.FindOneAndReplaceOptions
-    retDoc := mngoptions.After
-    options.ReturnDocument = &retDoc
-    upsert := true
-    options.Upsert = &upsert
-    frRes := c.Collection.FindOneAndReplace(context.TODO(), filter, newItem, &options)
-    if frRes.Err() != nil {
-        return nil, frRes.Err()
-    }
-    docPointer := NewObjectByPrototype(c.Prototype)
-    err = frRes.Decode(docPointer.Interface())
-    if err != nil {
-        if err == mongo.ErrNoDocuments {
-    	    return nil, nil
-        }
-        return nil, err
-    }
-    item = docPointer.Elem().Interface()
-    c.Overrides.ConvertToPublic(&item)
-    return item, nil
+func (c *MyMongoDbPersistence) Set(ctx context.Context, correlationId string,
+	item MyData) (result MyData, err error) {
+	var defaultValue MyData
+
+	newItem, err := c.Overrides.ConvertFromPublic(item)
+	if err != nil {
+		return defaultValue, err
+	}
+
+	id := newItem["_id"]
+	filter := bson.M{"_id": id}
+	var options mngoptions.FindOneAndReplaceOptions
+	retDoc := mngoptions.After
+	options.ReturnDocument = &retDoc
+	upsert := true
+	options.Upsert = &upsert
+
+	res := c.Collection.FindOneAndReplace(ctx, filter, newItem, &options)
+	if err := res.Err(); err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return result, nil
+		}
+		return result, err
+	}
+
+	c.Logger.Trace(ctx, correlationId, "Set in %s with id = %s", c.CollectionName, id)
+	var docPointer MyData
+	if err := res.Decode(&docPointer); err != nil {
+		if errors.Is(err, mongo.ErrNoDocuments) {
+			return result, nil
+		}
+		return result, err
+	}
+
+	return c.Overrides.ConvertToPublic(docPointer)
 }
 
-persistence := NewMyMongoDbPersistence(reflect.TypeOf(MyData{}), "mycollection")
-persistence.Configure(NewConfigParamsFromTuples(
-    "host", "localhost",
-    "port", "27017",
-    "database", "test",
-))
+func main() {
+	persistence := NewMyMongoDbPersistence()
+	persistence.Configure(context.Background(), config.NewConfigParamsFromTuples(
+		"host", "localhost",
+		"port", 27017,
+	))
 
-opnErr := persitence.Open("123")
-if opnErr != nil {
-    ...
+	_ = persistence.Open(context.Background(), "123")
+	persistence.Set(context.Background(), "123", MyData{Id: "123", Name: "ABC"})
+	item, err := persistence.GetByName(context.Background(), "123", "ABC")
+	fmt.Println(item) // Result: { name: "ABC" }
 }
-
-resItem, setErr := persistence.Set("123", MyData{ name: "ABC" })
-if setErr != nil {
-   ...
-}
-
-item, getErr := persistence.GetByName("123", "ABC")
-if getErr != nil {
-   ...
-}
-fmt.Println(item)                   // Result: { name: "ABC" }
-("123", "ABC")
 ```

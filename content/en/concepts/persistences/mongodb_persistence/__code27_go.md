@@ -1,4 +1,4 @@
 
 ```go
-result, _ = persistence.GetOneById("123", "1")
+result, _ = persistence.GetOneById(context.Background(), "123", "1")
 ```

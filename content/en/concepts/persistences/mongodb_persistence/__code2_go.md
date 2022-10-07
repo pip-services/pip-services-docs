@@ -11,12 +11,4 @@ type MyDataPage struct {
 	Data  []MyData `bson:"data" json:"data"`
 }
 
-func NewEmptyMyDataPage() *MyDataPage {
-	return &MyDataPage{}
-}
-
-func NewMyDataPage(total *int64, data []MyData) *MyDataPage {
-	return &MyDataPage{Total: total, Data: data}
-}
-
 ```

@@ -5,6 +5,6 @@ See: [MongoDb module](../../../toolkit_api/golang/mongodb), [Commons module](../
 filter := cdata.NewFilterParamsFromTuples(
 	"name", "ABC",
 )
-result, _ := persistence.GetPageByFilter("123", filter, nil)
+result, _ := persistence.GetPageByFilter(context.Background(), "123", filter, nil)
 
 ```

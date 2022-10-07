@@ -1,16 +1,15 @@
 ---
 type: docs
-title: "IIdentifiable!"
-linkTitle: "IIdentifiable!"
+title: "IIdentifiable"
+linkTitle: "IIdentifiable"
 gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface used to create data objects that can be uniquely idendified by an ID.
-draft: true
 ---
 
 ### Description
 
-The IIdentifiable interface is used to create data objects that can be uniquely idendified by an ID.
+The `IIdentifiable[K any]` interface is used to create data objects that can be uniquely idendified by an ID.
 
 Important points
 

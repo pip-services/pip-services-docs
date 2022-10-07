@@ -182,13 +182,25 @@ Update the generated /go.mod file to add there dependencies to Pip.Services tool
 
 ```
 module quickstart
-go 1.13
+
+go 1.18
+
 require (
-	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.0
-	github.com/pip-services3-gox/pip-services3-components-gox v1.0.2
-	github.com/pip-services3-gox/pip-services3-container-gox v1.0.0
-	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.0
+	github.com/pip-services3-gox/pip-services3-commons-gox v1.0.6
+	github.com/pip-services3-gox/pip-services3-components-gox v1.0.6
+	github.com/pip-services3-gox/pip-services3-container-gox v1.0.6
+	github.com/pip-services3-gox/pip-services3-rpc-gox v1.0.2
 )
+
+require (
+	github.com/felixge/httpsnoop v1.0.1 // indirect
+	github.com/google/uuid v1.3.0 // indirect
+	github.com/gorilla/handlers v1.5.1 // indirect
+	github.com/gorilla/mux v1.8.0 // indirect
+	github.com/pip-services3-gox/pip-services3-expressions-gox v1.0.1 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
+)
+
 ```
 
 In the command line execute the following command to install the dependencies:
@@ -393,19 +405,19 @@ namespace HelloWorld {
 {{< tabsection isMarkdown=true >}}
 
 ```go
-func (c *HelloWorldController) Greeting(name string) (result string, err error) {
-    if name == "" { 
-        name = c.defaultName
-    }
-    return "Hello, " + name + "!", nil
+func (c *HelloWorldController) Greeting(ctx context.Context, name string) (result string, err error) {
+	if name == "" {
+		name = c.defaultName
+	}
+	return "Hello, " + name + "!", nil
 }
 ```
 
 To demonstrate the dynamic configuration of a component, the recipient name will be specified by the parameter "default_name". To get the configuration, the component must implement the interface "IConfigurable" with the method "configure".
 
 ```go
-func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {	
-    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.ConfigParams) {
+	c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
 }
 ```
 
@@ -426,28 +438,31 @@ This is all the code of the controller in the file:
 ```go
 package quickstart
 
-import ( 
-    cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+import (
+	"context"
+
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 )
 
-type HelloWorldController struct { 
-    defaultName string
+type HelloWorldController struct {
+	defaultName string
 }
+
 func NewHelloWorldController() *HelloWorldController {
-    c := HelloWorldController{}
-    c.defaultName = "Pip User"
-    return &c
+	c := HelloWorldController{}
+	c.defaultName = "Pip User"
+	return &c
 }
 
-func (c *HelloWorldController) Configure(config *cconf.ConfigParams) {
-    c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
+func (c *HelloWorldController) Configure(ctx context.Context, config *cconf.ConfigParams) {
+	c.defaultName = config.GetAsStringWithDefault("default_name", c.defaultName)
 }
 
-func (c *HelloWorldController) Greeting(name string) (result string, err error) {
-    if name == "" {
-        name = c.defaultName
-    }
-    return "Hello, " + name + "!", nil
+func (c *HelloWorldController) Greeting(ctx context.Context, name string) (result string, err error) {
+	if name == "" {
+		name = c.defaultName
+	}
+	return "Hello, " + name + "!", nil
 }
 
 ```
@@ -630,8 +645,8 @@ public HelloWorldRestService(){
 
 ```go
 type HelloWorldRestService struct {
-    *rpc.RestService
-    controller *HelloWorldController
+	*rpc.RestService
+	controller *HelloWorldController
 }
 ```
 
@@ -639,13 +654,13 @@ Next, we'll need to register the REST operations that we'll be using in the clas
 
 ```go
 func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
-    name := req.URL.Query().Get("name")
-    result, err := c.controller.Greeting(name)
-    c.SendResult(res, req, result, err)
+	name := req.URL.Query().Get("name")
+	result, err := c.controller.Greeting(req.Context(), name)
+	c.SendResult(res, req, result, err)
 }
 
 func (c *HelloWorldRestService) Register() {
-    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+	c.RegisterRoute("get", "/greeting", nil, c.greeting)
 }
 ```
 
@@ -653,12 +668,11 @@ To get a reference to the controller, add its handle to the DependencyResolver u
 
 ```go
 func NewHelloWorldRestService() *HelloWorldRestService {
-    c := HelloWorldRestService{}
-    c.RestService = rpc.NewRestService()
-    c.RestService.IRegisterable = &c
-    c.BaseRoute = "/hello_world"
-    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
-    return &c
+	c := &HelloWorldRestService{}
+	c.RestService = rpc.InheritRestService(c)
+	c.BaseRoute = "/hello_world"
+	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+	return c
 }
 
 ```
@@ -824,42 +838,44 @@ namespace HelloWorld {
 package quickstart
 
 import (
-    "net/http"
-    crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-    rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
+	"context"
+	"net/http"
+
+	crefer "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	rpc "github.com/pip-services3-gox/pip-services3-rpc-gox/services"
 )
 
 type HelloWorldRestService struct {
-    *rpc.RestService
-    controller *HelloWorldController
+	*rpc.RestService
+	controller *HelloWorldController
 }
 
 func NewHelloWorldRestService() *HelloWorldRestService {
-    c := HelloWorldRestService{}
-    c.RestService = rpc.NewRestService()
-    c.RestService.IRegisterable = &c
-    c.BaseRoute = "/hello_world"
-    c.DependencyResolver.Put("controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
-    return &c
+	c := &HelloWorldRestService{}
+	c.RestService = rpc.InheritRestService(c)
+	c.BaseRoute = "/hello_world"
+	c.DependencyResolver.Put(context.Background(), "controller", crefer.NewDescriptor("hello-world", "controller", "*", "*", "1.0"))
+	return c
 }
 
-func (c *HelloWorldRestService) SetReferences(references crefer.IReferences) { 
-    c.RestService.SetReferences(references)
-    depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
-    if depErr == nil && depRes != nil {
-        c.controller = depRes.(*HelloWorldController)
-    }
+func (c *HelloWorldRestService) SetReferences(ctx context.Context, references crefer.IReferences) {
+	c.RestService.SetReferences(ctx, references)
+	depRes, depErr := c.DependencyResolver.GetOneRequired("controller")
+	if depErr == nil && depRes != nil {
+		c.controller = depRes.(*HelloWorldController)
+	}
 }
 
 func (c *HelloWorldRestService) greeting(res http.ResponseWriter, req *http.Request) {
-    name := req.URL.Query().Get("name")
-    result, err := c.controller.Greeting(name)
-    c.SendResult(res, req, result, err)
+	name := req.URL.Query().Get("name")
+	result, err := c.controller.Greeting(req.Context(), name)
+	c.SendResult(res, req, result, err)
 }
 
 func (c *HelloWorldRestService) Register() {
-    c.RegisterRoute("get", "/greeting", nil, c.greeting)
+	c.RegisterRoute("get", "/greeting", nil, c.greeting)
 }
+
 ```
 {{< /tabsection >}}
 
@@ -1037,7 +1053,7 @@ namespace HelloWorld {
 
 ```go
 type HelloWorldServiceFactory struct {
-    cbuild.Factory
+	*cbuild.Factory
 }
 ```
 
@@ -1045,17 +1061,17 @@ Next, in the factory's constructor, we'll be registering descriptors and their c
 
 ```go
 func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
-    c := HelloWorldServiceFactory{}
-    c.Factory = *cbuild.NewFactory()
-    c.RegisterType(
-        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
-        NewHelloWorldController,
-    )
-    c.RegisterType(
-        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
-        NewHelloWorldRestService,
-    )
-    return &c
+	c := HelloWorldServiceFactory{}
+	c.Factory = cbuild.NewFactory()
+	c.RegisterType(
+		cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+		NewHelloWorldController,
+	)
+	c.RegisterType(
+		cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+		NewHelloWorldRestService,
+	)
+	return &c
 }
 ```
 
@@ -1069,26 +1085,28 @@ Full listing of the factory's code found in the file:
 package quickstart
 
 import (
-    cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
-    cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+	cbuild "github.com/pip-services3-gox/pip-services3-components-gox/build"
 )
 
 type HelloWorldServiceFactory struct {
-    cbuild.Factory
-} 
-func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
-    c := HelloWorldServiceFactory{}
-    c.Factory = *cbuild.NewFactory()
-    c.RegisterType(
-        cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
-        NewHelloWorldController,
-    )
-    c.RegisterType(
-        cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
-        NewHelloWorldRestService,
-    )
-    return &c
+	*cbuild.Factory
 }
+
+func NewHelloWorldServiceFactory() *HelloWorldServiceFactory {
+	c := HelloWorldServiceFactory{}
+	c.Factory = cbuild.NewFactory()
+	c.RegisterType(
+		cref.NewDescriptor("hello-world", "controller", "default", "*", "1.0"),
+		NewHelloWorldController,
+	)
+	c.RegisterType(
+		cref.NewDescriptor("hello-world", "service", "http", "*", "1.0"),
+		NewHelloWorldRestService,
+	)
+	return &c
+}
+
 ```
 
 {{< /tabsection >}}
@@ -1251,22 +1269,23 @@ namespace HelloWorld {
 package quickstart
 
 import (
-    cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
-    rpcbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
+	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
+	rpcbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
 )
 
 type HelloWorldProcess struct {
-    cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewHelloWorldProcess() *HelloWorldProcess {
-    c := HelloWorldProcess{}
-    c.ProcessContainer = *cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
-    c.SetConfigPath("./config.yaml")
-    c.AddFactory(NewHelloWorldServiceFactory())
-    c.AddFactory(rpcbuild.NewDefaultRpcFactory())
-    return &c
+	c := HelloWorldProcess{}
+	c.ProcessContainer = cproc.NewProcessContainer("hello-world", "HelloWorld microservice")
+	c.SetConfigPath("./config.yaml")
+	c.AddFactory(NewHelloWorldServiceFactory())
+	c.AddFactory(rpcbuild.NewDefaultRpcFactory())
+	return &c
 }
+
 ```
 
 {{< /tabsection >}}
@@ -1433,19 +1452,20 @@ namespace HelloWorld {
 
 {{< tabsection isMarkdown=true >}}
 
-**/bin/run.go**
+**/bin/main.go**
 
 ```go
 package main
 
 import (
-    "os"
-    "quickstart"
+	"context"
+	"os"
+	"quickstart"
 )
 
 func main() {
-    proc := quickstart.NewHelloWorldProcess()
-    proc.Run(os.Args)
+	proc := quickstart.NewHelloWorldProcess()
+	proc.Run(context.Background(), os.Args)
 }
 ```
 
@@ -1453,7 +1473,7 @@ func main() {
 
 {{< tabsection isMarkdown=true >}}
 
-**/bin/run.dart.**
+**/bin/main.dart.**
 
 ```dart
 import 'package:pip_quickstart/pip_quickstart.dart';
@@ -1473,7 +1493,7 @@ void main(List<String> argv) {
 
 {{< tabsection isMarkdown=true >}}
 
-**/run.py**
+**/main.py**
 
 ```python
 

@@ -7,7 +7,7 @@ import (
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
 	datpersist "github.com/pip-services3-gox/pip-services3-data-gox/persistence"
-	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
+	mpersist "github.com/pip-services3-gox/pip-services3-mongodb-gox/persistence"
 
 	mngoptions "go.mongodb.org/mongo-driver/mongo/options"
 
@@ -17,13 +17,12 @@ import (
 
 
 type MyMongoDbPersistence struct {
-	mpersist.MongoDbPersistence
+	*mpersist.MongoDbPersistence[MyData]
 }
 
 func NewMyMongoDbPersistence() *MyMongoDbPersistence {
-	proto := reflect.TypeOf(MyData{})
 	c := &MyMongoDbPersistence{}
-	c.MongoDbPersistence = *mpersist.InheritMongoDbPersistence(c, proto, "mydata")
+	c.MongoDbPersistence = mpersist.InheritMongoDbPersistence(c, "mydata")
 	return c
 }
 
@@ -43,31 +42,21 @@ func (c *MyMongoDbPersistence) composeFilter(filter *cdata.FilterParams) bson.M 
 	return filterObj
 }
 
-func (c *MyMongoDbPersistence) Create(correlationId string, item MyData) (result MyData, err error) {
-	value, err := c.MongoDbPersistence.Create(correlationId, item)
-
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
-}
-
-func (c *MyMongoDbPersistence) Update(correlationId string, item MyData) (result MyData, err error) {
-	newItem := datpersist.CloneObject(item, c.Prototype)
-	id := datpersist.GetObjectId(newItem)
+func (c *MyMongoDbPersistence) Update(ctx context.Context, correlationId string, item MyData) (result MyData, err error) {
+	newItem := c.ConvertFromPublic(item)
+	id := newItem["_id"]
 	filter := bson.M{"_id": id}
 	update := bson.D{{"$set", newItem}}
 	var options mngoptions.FindOneAndUpdateOptions
 	retDoc := mngoptions.After
 	options.ReturnDocument = &retDoc
-	fuRes := c.Collection.FindOneAndUpdate(c.Connection.Ctx, filter, update, &options)
+	fuRes := c.Collection.FindOneAndUpdate(ctx, filter, update, &options)
 	if fuRes.Err() != nil {
 		return result, fuRes.Err()
 	}
 	c.Logger.Trace(correlationId, "Updated in %s with id = %s", c.CollectionName, id)
-	docPointer := c.NewObjectByPrototype()
-	err = fuRes.Decode(docPointer.Interface())
+	var docPointer T
+	err = fuRes.Decode(&docPointer)
 	if err != nil {
 		if err == mongo.ErrNoDocuments {
 			return result, nil
@@ -75,22 +64,16 @@ func (c *MyMongoDbPersistence) Update(correlationId string, item MyData) (result
 		return result, err
 	}
 
-	result = c.Overrides.ConvertToPublic(docPointer).(MyData)
+	result = c.Overrides.ConvertToPublic(docPointer)
 	return result, nil
 }
 
-func (c *MyMongoDbPersistence) GetListByFilter(correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error) {
-	result, err := c.MongoDbPersistence.GetListByFilter(correlationId, c.composeFilter(filter), c.composeSort(sort), nil)
-	items = make([]MyData, len(result))
-	for i, v := range result {
-		val, _ := v.(MyData)
-		items[i] = val
-	}
-	return items, err
+func (c *MyMongoDbPersistence) GetListByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error) {
+	return c.MongoDbPersistence.GetListByFilter(ctx, correlationId, c.composeFilter(filter), c.composeSort(sort), nil)
 }
 
-func (c *MyMongoDbPersistence) DeleteByFilter(correlationId string, filter *cdata.FilterParams) error {
-	return c.MongoDbPersistence.DeleteByFilter(correlationId, c.composeFilter(filter))
+func (c *MyMongoDbPersistence) DeleteByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams) error {
+	return c.MongoDbPersistence.DeleteByFilter(ctx, correlationId, c.composeFilter(filter))
 }
 
 type MyData struct {
@@ -104,13 +87,6 @@ type MyDataPage struct {
 	Data  []MyData `bson:"data" json:"data"`
 }
 
-func NewEmptyMyDataPage() *MyDataPage {
-	return &MyDataPage{}
-}
-
-func NewMyDataPage(total *int64, data []MyData) *MyDataPage {
-	return &MyDataPage{Total: total, Data: data}
-}
 
 func PrintResult(operationName string, res MyData) {
 	fmt.Println("==================== " + operationName + " ====================")
@@ -128,30 +104,30 @@ func main() {
 		"connection.port", 27017,
 		"connection.database", "pipdatabase",
 	)
-	persistence.Configure(config)
+	persistence.Configure(context.Background(), config)
 
-	_ = persistence.Open("")
-	_ = persistence.Clear("")
+	_ = persistence.Open(context.Background(), "")
+	_ = persistence.Clear(context.Background(), "")
 
 	// 1 - Create
-	result, _ := persistence.Create("123", data1)
+	result, _ := persistence.Create(context.Background(), "123", data1)
 	PrintResult("Create", result)
 
 	// 2 - Retrieve
-	items, _ := persistence.GetListByFilter("123", cdata.NewFilterParamsFromTuples("key", "key 1"), nil)
+	items, _ := persistence.GetListByFilter(context.Background(), "123", cdata.NewFilterParamsFromTuples("key", "key 1"), nil)
 	PrintResult("Get by id", items[0])
 
 	// 3 - Update
 	items[0].Content = "new content 2"
 	items[0].Key = "key 2"
 
-	update, _ := persistence.Update("123", items[0])
+	update, _ := persistence.Update(context.Background(), "123", items[0])
 	PrintResult("Update", update)
 
 	// 4 - Delete
-	_ = persistence.DeleteByFilter("123", cdata.NewFilterParamsFromTuples("key", "key 1"))
+	_ = persistence.DeleteByFilter(context.Background(), "123", cdata.NewFilterParamsFromTuples("key", "key 1"))
 
-	_ = persistence.Close("123")
+	_ = persistence.Close(context.Background(), "123")
 }
 
 ```

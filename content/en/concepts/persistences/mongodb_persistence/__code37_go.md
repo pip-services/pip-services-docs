@@ -1,4 +1,4 @@
 
 ```go
-_ = persistence.DeleteByIds("123", []string{"1", "2"})
+_ = persistence.DeleteByIds(context.Background(), "123", []string{"1", "2"})
 ```

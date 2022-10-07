@@ -1,4 +1,4 @@
 
 ```go
-_ = persistence.Clear("")
+_ = persistence.Clear(context.Background(), "")
 ```

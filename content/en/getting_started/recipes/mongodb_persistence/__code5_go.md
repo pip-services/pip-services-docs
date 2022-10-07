@@ -10,12 +10,12 @@ import (
 )
 
 type BeaconsProcess struct {
-	cproc.ProcessContainer
+	*cproc.ProcessContainer
 }
 
 func NewBeaconsProcess() *BeaconsProcess {
 	c := &BeaconsProcess{
-		ProcessContainer: *cproc.NewProcessContainer("beacons", "Beacons microservice"),
+		ProcessContainer: cproc.NewProcessContainer("beacons", "Beacons microservice"),
 	}
 
 	c.AddFactory(factory.NewBeaconsServiceFactory())

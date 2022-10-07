@@ -1,4 +1,4 @@
 
 ```go
-deleted, _ := persistence.DeleteById("123", "1")
+deleted, _ := persistence.DeleteById(context.Background(), "123", "1")
 ```

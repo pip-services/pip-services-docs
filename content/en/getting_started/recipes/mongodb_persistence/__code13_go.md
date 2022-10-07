@@ -6,19 +6,18 @@ import (
 
 	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
+	mpersist "github.com/pip-services3-gox/pip-services3-mongodb-gox/persistence"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
 type BeaconsMongoDbPersistence struct {
-	mpersist.IdentifiableMongoDbPersistence
+	*mpersist.IdentifiableMongoDbPersistence[data1.BeaconV1, string]
 }
 
 func NewBeaconsMongoDbPersistence() *BeaconsMongoDbPersistence {
-	proto := reflect.TypeOf(&data1.BeaconV1{})
 	c := &BeaconsMongoDbPersistence{}
-	c.IdentifiableMongoDbPersistence = *mpersist.InheritIdentifiableMongoDbPersistence(c, proto, "beacons")
+	c.IdentifiableMongoDbPersistence = *mpersist.InheritIdentifiableMongoDbPersistence(c, "beacons")
 	return c
 }
 
@@ -61,20 +60,8 @@ func (c *BeaconsMongoDbPersistence) composeFilter(filter *cdata.FilterParams) in
 	return bson.M{}
 }
 
-func (c *BeaconsMongoDbPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page *data1.BeaconV1DataPage, err error) {
-	tempPage, resErr := c.IdentifiableMongoDbPersistence.GetPageByFilter(correlationId, c.composeFilter(filter), paging, nil, nil)
-	if resErr != nil {
-		return nil, resErr
-	}
-
-	// Convert to BeaconV1DataPage
-	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
-	beaconData := make([]*data1.BeaconV1, dataLen)
-	for i, v := range tempPage.Data {
-		beaconData[i] = v.(*data1.BeaconV1)
-	}
-	page = data1.NewBeaconV1DataPage(&dataLen, beaconData)
-	return page, nil
+func (c *BeaconsMongoDbPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams) (page cdata.DataPage[data1.BeaconV1], err error) {
+	return c.IdentifiableMongoDbPersistence.GetPageByFilter(correlationId, c.composeFilter(filter), paging, nil, nil)
 }
 
 func (c *BeaconsMongoDbPersistence) GetOneByUdi(correlationId string, udi string) (result *data1.BeaconV1, err error) {

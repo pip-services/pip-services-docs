@@ -11,8 +11,8 @@ beacon := &data1.BeaconV1{
 	SiteId: "0001",
 }
 
-persistence.Set("test", beacon)
-item, _ := persistence.GetOneByUdi("test", "0002")
-persistence.Close("test")
+persistence.Set(context.Background(), "test", beacon)
+item, _ := persistence.GetOneByUdi(context.Background(), "test", "0002")
+persistence.Close(context.Background(), "test")
 fmt.Println(item.Id)
 ```

@@ -6,7 +6,7 @@ package main
 
 import (
 	"os"
-
+	"context"
 	cont "github.com/pip-services-samples/service-beacons-gox/containers"
 )
 

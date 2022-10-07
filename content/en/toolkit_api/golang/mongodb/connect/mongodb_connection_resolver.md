@@ -2,7 +2,7 @@
 type: docs
 title: "MongoDbConnectionResolver"
 linkTitle: "MongoDbConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mongodb-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mongodb-gox"
 description: >
     MongoDbConnectionResolver implementation.
     Helper class that resolves MongoDB connection

@@ -50,6 +50,9 @@ And the optional *total* parameter tells to return the total number of items in 
 #### [FilterParams](filter_params)
 Data transfer object used to pass filter parameters as simple key-value pairs.
 
+#### [IIdentifiable](iidentifiable)
+The `IIdentifiable[K any]` interface is used to create data objects that can be uniquely idendified by an ID.
+
 #### [IdGenerator](id_generator)
 Helper class used to generate unique object IDs.
 It supports two types of IDs: long and short. 

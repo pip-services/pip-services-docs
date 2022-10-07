@@ -1,4 +1,4 @@
 
 ```go
-err = persistence.DeleteByFilter("", cdata.NewFilterParamsFromTuples("key", "key 3"))
+err = persistence.DeleteByFilter(context.Background(), "", cdata.NewFilterParamsFromTuples("key", "key 3"))
 ```

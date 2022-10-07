@@ -6,7 +6,6 @@ package persistence
 
 import (
 	"context"
-	"reflect"
 	"strings"
 
 	data1 "github.com/pip-services-samples/service-beacons-gox/data/version1"
@@ -21,7 +20,7 @@ type BeaconsMongoPersistence struct {
 
 func NewBeaconsMongoPersistence() *BeaconsMongoPersistence {
 	c := &BeaconsMongoPersistence{}
-	c.IdentifiableMongoDbPersistence = cmongo.InheritIdentifiableMongoDbPersistence[data1.BeaconV1, string](c, reflect.TypeOf(data1.BeaconV1{}), "beacons")
+	c.IdentifiableMongoDbPersistence = cmongo.InheritIdentifiableMongoDbPersistence[data1.BeaconV1, string](c, "beacons")
 	return c
 }
 
@@ -49,12 +48,10 @@ func (c *BeaconsMongoPersistence) GetPageByFilter(ctx context.Context, correlati
 			if len(_udis) > 0 {
 				udisM = bson.M{"$in": _udis}
 			}
-			break
 		case string:
 			if _udisArr := strings.Split(_udis, ","); len(_udisArr) > 0 {
 				udisM = bson.M{"$in": _udisArr}
 			}
-			break
 		}
 		if udisM != nil {
 			filterObj["udi"] = udisM
@@ -82,4 +79,5 @@ func (c *BeaconsMongoPersistence) GetOneByUdi(ctx context.Context, correlationId
 	}
 	return data1.BeaconV1{}, nil
 }
+
 ```

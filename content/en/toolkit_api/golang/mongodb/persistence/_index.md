@@ -3,7 +3,7 @@ type: docs
 title: "Persistence"
 linkTitle: "Persistence"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mongodb-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mongodb-gox"
 description: >
     This package contains classes used to create MongoDB persistence components.
 ---

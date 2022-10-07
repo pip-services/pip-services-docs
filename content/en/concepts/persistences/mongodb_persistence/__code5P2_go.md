@@ -5,19 +5,18 @@ import (
 
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
-	mpersist "github.com/pip-services3-go/pip-services3-mongodb-go/persistence"
+	mpersist "github.com/pip-services3-gox/pip-services3-mongodb-gox/persistence"
 
 	"go.mongodb.org/mongo-driver/bson"
 )
 
 type MyMongoDbPersistence struct {
-	mpersist.MongoDbPersistence
+	*mpersist.MongoDbPersistence
 }
 
 func NewMyMongoDbPersistence() *MyMongoDbPersistence {
-	proto := reflect.TypeOf(MyData{})
 	c := &MyMongoDbPersistence{}
-	c.MongoDbPersistence = *mpersist.InheritMongoDbPersistence(c, proto, "mydata")
+	c.MongoDbPersistence = mpersist.InheritMongoDbPersistence(c, "mydata")
 	return c
 }
 
@@ -56,57 +55,23 @@ func (c *MyMongoDbPersistence) composeSort(sort *cdata.SortParams) bson.M {
 	return sortObj
 }
 
-func (c *MyMongoDbPersistence) Create(correlationId string, item MyData) (result MyData, err error) {
-	value, err := c.MongoDbPersistence.Create(correlationId, item)
-
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
+func (c *MyMongoDbPersistence) GetListByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error) {
+	return c.MongoDbPersistence.GetListByFilter(correlationId, c.composeFilter(filter), c.composeSort(sort), nil)
 }
 
-func (c *MyMongoDbPersistence) GetOneRandom(correlationId string, filter *cdata.FilterParams) (result MyData, err error) {
-	value, err := c.MongoDbPersistence.GetOneRandom(correlationId, c.composeFilter(filter))
+func (c *MyMongoDbPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams, sort *cdata.SortParams) (page *cdata.DataPage[MyData], err error) {
 
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
-}
-
-func (c *MyMongoDbPersistence) GetListByFilter(correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error) {
-	result, err := c.MongoDbPersistence.GetListByFilter(correlationId, c.composeFilter(filter), c.composeSort(sort), nil)
-	items = make([]MyData, len(result))
-	for i, v := range result {
-		val, _ := v.(MyData)
-		items[i] = val
-	}
-	return items, err
-}
-
-func (c *MyMongoDbPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams, sort *cdata.SortParams) (page *MyDataPage, err error) {
-
-	tempPage, err := c.MongoDbPersistence.GetPageByFilter(correlationId,
+	return c.MongoDbPersistence.GetPageByFilter(ctx, correlationId,
 		c.composeFilter(filter), paging,
 		c.composeSort(sort), nil)
-	// Convert to MyDataPage
-	dataLen := int64(len(tempPage.Data)) // For full release tempPage and delete this by GC
-	data := make([]MyData, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(MyData)
-	}
-	page = NewMyDataPage(&dataLen, data)
-	return page, err
 }
 
-func (c *MyMongoDbPersistence) GetCountByFilter(correlationId string, filter *cdata.FilterParams) (count int64, err error) {
-	return c.MongoDbPersistence.GetCountByFilter(correlationId, c.composeFilter(filter))
+func (c *MyMongoDbPersistence) GetCountByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams) (count int64, err error) {
+	return c.MongoDbPersistence.GetCountByFilter(ctx, correlationId, c.composeFilter(filter))
 }
 
-func (c *MyMongoDbPersistence) DeleteByFilter(correlationId string, filter *cdata.FilterParams) error {
-	return c.MongoDbPersistence.DeleteByFilter(correlationId, c.composeFilter(filter))
+func (c *MyMongoDbPersistence) DeleteByFilter(ctx context.Context, correlationId string, filter *cdata.FilterParams) error {
+	return c.MongoDbPersistence.DeleteByFilter(ctx, correlationId, c.composeFilter(filter))
 }
 
 ```

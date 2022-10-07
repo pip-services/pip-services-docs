@@ -9,12 +9,12 @@ import (
 )
 
 type BeaconsServiceFactory struct {
-	cbuild.Factory
+	*cbuild.Factory
 }
 
 func NewBeaconsServiceFactory() *BeaconsServiceFactory {
 	c := &BeaconsServiceFactory{
-		Factory: *cbuild.NewFactory(),
+		Factory: cbuild.NewFactory(),
 	}
 
 	memoryPersistenceDescriptor := cref.NewDescriptor("beacons", "persistence", "memory", "*", "1.0")

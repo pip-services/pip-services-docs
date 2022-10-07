@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "IStringIdentifiable!"
-linkTitle: "IStringIdentifiable!"
+title: "IStringIdentifiable"
+linkTitle: "IStringIdentifiable"
 gitUrl: "https://github.com/pip-services3-gox/pip-services3-commons-gox"
 description: > 
     Interface for data objects that can be uniquely identifed by a string id. 

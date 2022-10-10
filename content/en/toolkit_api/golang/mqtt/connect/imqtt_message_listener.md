@@ -17,7 +17,7 @@ The IMqttMessageListener interface is used to create listeners for MQTT messages
 ### Methods
 
 
-#### onMessage
+#### OnMessage
 Defines the actions to be done once a message is received.
 
 > OnMessage(message mqtt.Message)

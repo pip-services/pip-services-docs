@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "MQTT module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 no_list: true
 weight: 500
 description: > 

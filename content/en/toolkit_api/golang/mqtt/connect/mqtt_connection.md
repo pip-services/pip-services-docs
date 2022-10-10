@@ -2,7 +2,7 @@
 type: docs
 title: "MqttConnection"
 linkTitle: "MqttConnection"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     MQTT connection using the default driver.
 
@@ -109,8 +109,9 @@ Raises an error if the connection is closed.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*MqttConnection]()) Close(correlationId string) error
+> (c [*MqttConnection]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -118,8 +119,9 @@ Closes a component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*MqttConnection]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MqttConnection]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -161,6 +163,7 @@ Opens the component.
 
 > (c [*MqttConnection]()) Open(correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -168,8 +171,9 @@ Opens the component.
 #### Publish
 Publishes a message to a specified topic.
 
-> (c [*MqttConnection]()) Publish(topic string, qos byte, retained bool, data []byte) error
+> (c [*MqttConnection]()) Publish(ctx context.Context, topic string, qos byte, retained bool, data []byte) error
 
+- **ctx**: context.Context - operation context.
 - **topic**: string - topic name
 - **qos**: Buffer - quality of service (QOS) for the message
 - **retained**: bool - retained flag for the message
@@ -189,16 +193,18 @@ If the connection doesn't support this function, it returns an empty list.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MqttConnection]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*MqttConnection]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### Subscribe
 Subscribes to a topic
 
-> (c [*MqttConnection]()) Subscribe(topic string, qos byte, listener [IMqttMessageListener](../imqtt_message_listener)) error
+> (c [*MqttConnection]()) Subscribe(ctx context.Context, topic string, qos byte, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
+- **ctx**: context.Context - operation context.
 - **topic**: string - name of the topic
 - **qos**: byte - quality of service (QOS) for the subscription
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
@@ -207,8 +213,9 @@ Subscribes to a topic
 #### Unsubscribe
 Unsubscribes from a previously subscribed topic.
 
-> (c [*MqttConnection]()) Unsubscribe(topic string, listener [IMqttMessageListener](../imqtt_message_listener)) error
+> (c [*MqttConnection]()) Unsubscribe(ctx context.Context, topic string, listener [IMqttMessageListener](../imqtt_message_listener)) error
 
+- **ctx**: context.Context - operation context.
 - **topic**: string - name of the topic
 - **listener**: [IMqttMessageListener](../imqtt_message_listener) - message listener
 - **returns**: error - error or nil if no errors occurred.

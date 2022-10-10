@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     This package contains classes used to create [MqttMessageQueue](../../mqtt/queues/mqtt_message_queue/) components by their descriptors. 
 ---

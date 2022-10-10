@@ -25,7 +25,7 @@ The following is an example of state management in a stateful microservice:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,7 +79,7 @@ An example of using a cache is the following:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -111,7 +111,7 @@ The first scenario is to acquire a lock before running a transaction to prevent 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -137,7 +137,7 @@ The second scenario can be used just to prevent double processing. Before execut
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

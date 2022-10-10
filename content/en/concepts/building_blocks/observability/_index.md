@@ -54,7 +54,7 @@ connection:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -104,7 +104,7 @@ descriptor: "pip-services:metrics-service:prometheus:default:1.0"
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -151,7 +151,7 @@ connection:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

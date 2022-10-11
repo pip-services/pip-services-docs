@@ -55,7 +55,7 @@ In order to use the ProcessContainer component, we need to import it first. This
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -83,7 +83,7 @@ Now, we create a component that will operate in a ProcessContainer. In our examp
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -111,7 +111,7 @@ The next step is to create a factory for our component. For this, we create a cl
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -161,7 +161,7 @@ The final step is to create the ProcessContainer. To do this, we create a class 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -189,7 +189,7 @@ Now that our code is ready, we can run our container. This is done via its run()
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -236,7 +236,7 @@ Finally, we merge the code from the previous sections into one program:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   Not available
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

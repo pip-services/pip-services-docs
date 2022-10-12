@@ -82,7 +82,7 @@ First, we define a class that has two performance metrics: the number of times a
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -123,7 +123,7 @@ Then, after passing an instance of our CachedCounters’ subclass (i.e. MyCached
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -161,7 +161,7 @@ In our next example, we use the LogCounters class, referencing the ConsoleLogger
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -197,7 +197,7 @@ In this case, we need to delete the call to the counters’ dump() method from o
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -244,7 +244,7 @@ The following code shows how this can be done:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available  
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

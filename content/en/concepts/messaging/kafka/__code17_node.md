@@ -1,4 +1,4 @@
 
-```python
-queue.complete(message)
+```ts
+await queue.complete(message);
 ```

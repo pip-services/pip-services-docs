@@ -5,13 +5,12 @@ import { ConfigParams, IConfigurable, IOpenable } from 'pip-services3-commons-no
 
 export class MyComponentA implements IConfigurable, IOpenable {
     private _logger: ElasticSearchLogger;
-    private _elasticsearch_log = true;
+    private _console_log = true;
 
     public constructor(logger: ElasticSearchLogger) {
         this._logger = logger;
 
-        if (this._elasticsearch_log)
-            this._logger.info("123", "MyComponentA has been created.");
+        this._logger.info("123", "MyComponentA has been created.");
     }
 
     public configure(config: ConfigParams): void {
@@ -32,7 +31,7 @@ export class MyComponentA implements IConfigurable, IOpenable {
 
     public myMethod(): void {
         try {
-            if (this._elasticsearch_log) {
+            if (this._console_log) {
                 console.log("Hola amigo");
                 console.log("Bonjour mon ami");
             }

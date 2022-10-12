@@ -78,9 +78,9 @@ In order to use this component, we must first import it. The following command s
   {{< include "./__code1_net.md" >}}     
 {{< /tabsection >}} 
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code1_go.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}    
   {{< include "./__code1_dart.md" >}}     
@@ -106,9 +106,9 @@ Now, we can create a custom component that sends log messages. As we want to sen
   {{< include "./__code2_net.md" >}}     
 {{< /tabsection >}} 
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code2_go.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}    
   {{< include "./__code2_dart.md" >}}     
@@ -134,9 +134,9 @@ Once we have our custom component, we create an instance of the ElasticSearchLog
   {{< include "./__code3_net.md" >}}     
 {{< /tabsection >}} 
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code3_go.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}    
   {{< include "./__code3_dart.md" >}}     
@@ -162,9 +162,9 @@ Now that our connection is ready, we create an instance of our custom component 
   {{< include "./__code4_net.md" >}}     
 {{< /tabsection >}} 
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code4_go.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}    
   {{< include "./__code4_dart.md" >}}     
@@ -200,9 +200,9 @@ Our last step is to modify our custom component. We want it to follow the Pip.Se
   {{< include "./__code5_net.md" >}}     
 {{< /tabsection >}} 
 
-{{< tabsection >}}     
-   Not available  
-{{< /tabsection >}}
+{{< tabsection >}}    
+  {{< include "./__code5_go.md" >}}     
+{{< /tabsection >}} 
 
 {{< tabsection >}}    
   {{< include "./__code5_dart.md" >}}     

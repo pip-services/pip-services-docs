@@ -37,7 +37,7 @@ namespace ConsoleApp1
 
             await queue.SendAsync("123", new MessageEnvelope(null, "mymessage", "ABC"));
 
-            var received = await queue.ReceiveAsync("123", 0);
+            var received = await queue.ReceiveAsync("123", 10000);
 
             Console.WriteLine(received.GetMessageAsString());
             Console.WriteLine("Task completed");

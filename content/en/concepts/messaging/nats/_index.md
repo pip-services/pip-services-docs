@@ -4,7 +4,7 @@ no_list: true
 title: "NATS"
 linkTitle: "NATS"
 description: >-
-     How to send and receive messages via a NATS server.
+  How to send and receive messages via a NATS server.
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

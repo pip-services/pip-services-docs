@@ -63,7 +63,7 @@ In order to use this component, we need to import it first. The following code s
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code1_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -88,7 +88,7 @@ First, and after having imported our component, we create an instance of it:
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code2_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -120,7 +120,7 @@ To configure our object, we use the configure() method, which accepts a ConfigPa
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code3_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -149,7 +149,7 @@ To connect to RabbitMQ, we use the OpenAsync() method, which requires the correl
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code4_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -176,7 +176,7 @@ Once connected, we can send a message to RabbitMQ. For this, we use the SendAsyn
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code5_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -204,7 +204,7 @@ To receive a message, we use the RecevieAsync() method, which has the correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code6_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -232,7 +232,7 @@ Now, we assemble all that was learned into one program. The result is:
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code7_dart.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

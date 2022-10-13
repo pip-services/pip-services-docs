@@ -1,35 +1,33 @@
 
-```cs
-using PipServices3.Postgres.Persistence;
+```ts
+import { IdentifiablePostgresPersistence } from "pip-services3-postgres-nodex";
 
-public class HelloFriendPersistence2 : IdentifiablePostgresPersistence<MyFriend, string>, IMyDataPersistence
-{
-    public HelloFriendPersistence2() : base("myfriends3") { }
-
-    protected override void DefineSchema()
-    {
-        ClearSchema();
-        EnsureSchema($"CREATE TABLE IF NOT EXISTS {_tableName} (id TEXT PRIMARY KEY, type TEXT, name TEXT)");
+export class HelloFriendPersistence2 extends IdentifiablePostgresPersistence<MyFriend, string> implements IMyDataPersistence {
+    public constructor() {
+        super("myfriends3");
     }
 
-    private static string ComposeFilter(FilterParams filter)
-    {
-        filter ??= new FilterParams();
-        var type = filter.GetAsNullableString("type");
-        var name = filter.GetAsNullableString("name");
+    protected defineSchema(): void {
+        this.clearSchema();
+        this.ensureSchema('CREATE TABLE IF NOT EXISTS ' + this._tableName + ' (id TEXT PRIMARY KEY, type TEXT, name TEXT)');
+    }
 
-        var filterCondition = "";
+    private composeFilter(filter: FilterParams): string {
+        filter ??= new FilterParams();
+        let type = filter.getAsNullableString("type");
+        let content = filter.getAsNullableString("content");
+
+        let filterCondition = "";
         if (type != null)
-            filterCondition += "`type`='" + type + "'";
-        if (name != null)
-            filterCondition += "`name`='" + name + "'";
+            filterCondition += "type='" + type + "'";
+        if (content != null)
+            filterCondition += "content='" + content + "'";
 
         return filterCondition;
     }
 
-    public Task<MyFriend> GetOneRandomAsync(string correlationId, FilterParams filter)
-    {
-        return base.GetOneRandomAsync(correlationId, ComposeFilter(filter));
+    public getOneRandom(correlationId: string, filter: FilterParams): Promise<MyFriend> {
+        return super.getOneRandom(correlationId, this.composeFilter(filter));
     }
 }
 

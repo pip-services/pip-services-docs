@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The IAzureFunctionOverrides interface is used to perform on-demand registrations.
+The IMongoDbPersistenceOverrides interface is used to perform on-demand registrations.
 
 ### Methods
 

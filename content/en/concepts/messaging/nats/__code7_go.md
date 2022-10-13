@@ -1,5 +1,5 @@
 
-```ts
+```go
 // Pre-requisites
 import (
 	"context"

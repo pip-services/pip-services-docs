@@ -1,0 +1,4 @@
+
+```ts
+typeof(lock)
+```

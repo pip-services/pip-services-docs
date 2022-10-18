@@ -1,5 +1,13 @@
 
 ```go
+import (
+	"context"
+
+	cconf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
+	cdata "github.com/pip-services3-gox/pip-services3-commons-gox/data"
+	cref "github.com/pip-services3-gox/pip-services3-commons-gox/refer"
+)
+
 type HelloFriendController struct {
 	defaultName string
 	persistence IMyDataPersistence[MyFriend]
@@ -39,6 +47,5 @@ func (c *HelloFriendController) Greeting(ctx context.Context) (string, error) {
 func (c *HelloFriendController) Create(ctx context.Context, correlationId string, item MyFriend) (result MyFriend, err error) {
 	return c.persistence.Create(ctx, correlationId, item)
 }
-
 ```
 

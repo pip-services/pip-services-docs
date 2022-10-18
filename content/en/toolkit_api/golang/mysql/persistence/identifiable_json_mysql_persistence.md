@@ -54,12 +54,12 @@ Important points
 
 ### Constructors
 
-#### InheritIdentifiableJsonMysqlPersistence
+#### InheritIdentifiableJsonMySqlPersistence
 Creates a new instance of the persistence component.
 
-> InheritIdentifiableJsonMysqlPersistence[T any, K any](overrides [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) *IdentifiableJsonMysqlPersistence[T, K]
+> InheritIdentifiableJsonMySqlPersistence[T any, K any](overrides [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) *IdentifiableJsonMySqlPersistence[T, K]
 
-- **overrides**: [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods
+- **overrides**: [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods
 - **tableName**: string - (optional) a table name.
 
 
@@ -68,7 +68,7 @@ Creates a new instance of the persistence component.
 #### ConvertFromPublic
 Converts object value from public to internal format.
 
-> `(c *IdentifiableJsonMysqlPersistence[T, K]) ConvertFromPublic(value T) (map[string]any, error)
+> `(c *IdentifiableJsonMySqlPersistence[T, K]) ConvertFromPublic(value T) (map[string]any, error)
 
 - **value**: T - object in public format to convert.
 - **returns**: (map[string]any, error) - converted object in internal format.
@@ -77,7 +77,7 @@ Converts object value from public to internal format.
 #### ConvertToPublic
 Converts object value from internal to public format.
 
-> (c *IdentifiableJsonMysqlPersistence[T, K]) ConvertToPublic(rows *sql.Rows) (T, error)
+> (c *IdentifiableJsonMySqlPersistence[T, K]) ConvertToPublic(rows *sql.Rows) (T, error)
 
 - **rows**: *sql.Rows - object in internal format to convert.
 - **returns**: (T, error) - converted object in public format.
@@ -86,7 +86,7 @@ Converts object value from internal to public format.
 #### EnsureTable
 Adds DML statement to automatically create a JSON(B) table
 
-> (c *IdentifiableJsonMysqlPersistence[T, K]) EnsureTable(idType string, dataType string)
+> (c *IdentifiableJsonMySqlPersistence[T, K]) EnsureTable(idType string, dataType string)
 
 - **idType**: string - type of the id column (default: VARCHAR(32))
 - **dataType**: string - type of the data column (default: JSON)
@@ -95,7 +95,7 @@ Adds DML statement to automatically create a JSON(B) table
 #### updatePartially
 Updates only few selected fields in a data item.
 
-> (c *IdentifiableJsonMysqlPersistence[T, K]) UpdatePartially(ctx context.Context, correlationId string, id K, data [AnyValueMap](../../../commons/data/any_value_map)) (result T, err error)
+> (c *IdentifiableJsonMySqlPersistence[T, K]) UpdatePartially(ctx context.Context, correlationId string, id K, data [AnyValueMap](../../../commons/data/any_value_map)) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -107,12 +107,12 @@ Updates only few selected fields in a data item.
 
 ```go
 type MyMySqlPersistence struct {
-	*persist.IdentifiableJsonMysqlPersistence[MyData, string]
+	*persist.IdentifiableJsonMySqlPersistence[MyData, string]
 }
 
 func NewMyMySqlPersistence() *MyMySqlPersistence {
 	c := &MyMySqlPersistence{}
-	c.IdentifiableJsonMysqlPersistence = persist.InheritIdentifiableJsonMysqlPersistence[MyData, string](c, "mydata")
+	c.IdentifiableJsonMySqlPersistence = persist.InheritIdentifiableJsonMySqlPersistence[MyData, string](c, "mydata")
 	return c
 }
 
@@ -132,7 +132,7 @@ func (c *MyMySqlPersistence) GetPageByFilter(ctx context.Context, correlationId 
 		filterObj += "data->'$.key'='" + key + "'"
 	}
 
-	return c.IdentifiableJsonMysqlPersistence.GetPageByFilter(ctx, correlationId,
+	return c.IdentifiableJsonMySqlPersistence.GetPageByFilter(ctx, correlationId,
 		filterObj, paging,
 		"", "",
 	)

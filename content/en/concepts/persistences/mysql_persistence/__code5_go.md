@@ -1,18 +1,18 @@
 
 ```go
 type MyMySqlPersistence struct {
-	*mysqlpersist.MysqlPersistence[MyData]
+	*mysqlpersist.MySqlPersistence[MyData]
 }
 
 func NewMyMySqlPersistence() *MyMySqlPersistence {
 	c := &MyMySqlPersistence{}
-	c.MysqlPersistence = mysqlpersist.InheritMysqlPersistence[MyData](c, "mydata")
+	c.MySqlPersistence = mysqlpersist.InheritMySqlPersistence[MyData](c, "mydata")
 	return c
 }
 
 func (c *MyMySqlPersistence) DefineSchema() {
 	c.ClearSchema()
-	c.MysqlPersistence.DefineSchema()
+	c.MySqlPersistence.DefineSchema()
 	// Row name must be in double quotes for properly case!!!
 	c.EnsureSchema("CREATE TABLE `" + c.TableName + "` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)")
 	c.EnsureIndex(c.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
@@ -21,25 +21,25 @@ func (c *MyMySqlPersistence) DefineSchema() {
 func (c *MyMySqlPersistence) GetPageByFilter(ctx context.Context, correlationId string,
 	filter string, paging cdata.PagingParams, sort string, selection string) (page cdata.DataPage[MyData], err error) {
 
-	return c.MysqlPersistence.GetPageByFilter(ctx, correlationId, filter, paging, sort, selection)
+	return c.MySqlPersistence.GetPageByFilter(ctx, correlationId, filter, paging, sort, selection)
 }
 
 func (c *MyMySqlPersistence) GetListByFilter(ctx context.Context, correlationId string,
 	filter string, sort string, selection string) (items []MyData, err error) {
 
-	return c.MysqlPersistence.GetListByFilter(ctx, correlationId, filter, sort, selection)
+	return c.MySqlPersistence.GetListByFilter(ctx, correlationId, filter, sort, selection)
 }
 
 func (c *MyMySqlPersistence) GetCountByFilter(ctx context.Context, correlationId string, filter string) (int64, error) {
-	return c.MysqlPersistence.GetCountByFilter(ctx, correlationId, filter)
+	return c.MySqlPersistence.GetCountByFilter(ctx, correlationId, filter)
 }
 
 func (c *MyMySqlPersistence) GetOneRandom(ctx context.Context, correlationId string, filter string) (item MyData, err error) {
-	return c.MysqlPersistence.GetOneRandom(ctx, correlationId, filter)
+	return c.MySqlPersistence.GetOneRandom(ctx, correlationId, filter)
 }
 
 func (c *MyMySqlPersistence) DeleteByFilter(ctx context.Context, correlationId string, filter string) (err error) {
-	return c.MysqlPersistence.DeleteByFilter(ctx, correlationId, filter)
+	return c.MySqlPersistence.DeleteByFilter(ctx, correlationId, filter)
 }
 
 ```

@@ -52,12 +52,12 @@ Important points
 
 ### Constructors
 
-#### InheritIdentifiableMysqlPersistence
+#### InheritIdentifiableMySqlPersistence
 Creates a new instance of the persistence component.
 
-> InheritIdentifiableMysqlPersistence[T any, K any](overrides [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) [*IdentifiableMysqlPersistence[T, K]]()
+> InheritIdentifiableMySqlPersistence[T any, K any](overrides [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) [*IdentifiableMySqlPersistence[T, K]]()
 
-- **overrides**: [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods.
+- **overrides**: [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods.
 - **tableName**: string - (optional) table name.
 
 
@@ -66,7 +66,7 @@ Creates a new instance of the persistence component.
 #### Create
 Creates a data item.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -77,7 +77,7 @@ Creates a data item.
 #### DeleteById
 Deletes a data item by it's unique id.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) DeleteById(ctx context.Context, correlationId string, id K) (result T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) DeleteById(ctx context.Context, correlationId string, id K) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -88,7 +88,7 @@ Deletes a data item by it's unique id.
 #### DeleteByIds
 Deletes multiple data items by their unique ids.
 
->  (c [*IdentifiableMysqlPersistence[T, K]]()) DeleteByIds(ctx context.Context, correlationId string, ids []K) error
+>  (c [*IdentifiableMySqlPersistence[T, K]]()) DeleteByIds(ctx context.Context, correlationId string, ids []K) error
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -99,7 +99,7 @@ Deletes multiple data items by their unique ids.
 #### GetListByIds
 Gets a list of data items retrieved by given unique ids.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) GetListByIds(ctx context.Context, correlationId string, ids []K) (items []T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) GetListByIds(ctx context.Context, correlationId string, ids []K) (items []T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -110,7 +110,7 @@ Gets a list of data items retrieved by given unique ids.
 #### GetOneById
 Gets a data item by its unique id.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) GetOneById(ctx context.Context, correlationId string, id K) (item T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) GetOneById(ctx context.Context, correlationId string, id K) (item T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -122,7 +122,7 @@ Gets a data item by its unique id.
 Sets a data item. If the data item exists it updates it,
 otherwise it creates a new data item.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) Set(ctx context.Context, correlationId string, item T) (result T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) Set(ctx context.Context, correlationId string, item T) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -133,7 +133,7 @@ otherwise it creates a new data item.
 #### Update
 Updates a data item.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) Update(ctx context.Context, correlationId string, item T) (result T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) Update(ctx context.Context, correlationId string, item T) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -144,7 +144,7 @@ Updates a data item.
 #### UpdatePartially
 Updates only a few selected fields in a data item.
 
-> (c [*IdentifiableMysqlPersistence[T, K]]()) UpdatePartially(ctx context.Context, correlationId string, id K, data [AnyValueMap](../../../commons/data/any_value_map)) (result T, err error)
+> (c [*IdentifiableMySqlPersistence[T, K]]()) UpdatePartially(ctx context.Context, correlationId string, id K, data [AnyValueMap](../../../commons/data/any_value_map)) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -156,21 +156,21 @@ Updates only a few selected fields in a data item.
 
 ```go
 type MyMySqlPersistence struct {
-	*persist.IdentifiableMysqlPersistence[MyData, string]
+	*persist.IdentifiableMySqlPersistence[MyData, string]
 }
 
 func NewMyMySqlPersistence() *MyMySqlPersistence {
 	c := &MyMySqlPersistence{}
-	c.IdentifiableMysqlPersistence = persist.InheritIdentifiableMysqlPersistence[MyData, string](c, "mydata")
+	c.IdentifiableMySqlPersistence = persist.InheritIdentifiableMySqlPersistence[MyData, string](c, "mydata")
 	return c
 }
 
 func (c *MyMySqlPersistence) DefineSchema() {
 	c.ClearSchema()
-	c.IdentifiableMysqlPersistence.DefineSchema()
+	c.IdentifiableMySqlPersistence.DefineSchema()
 	// Row name must be in double quotes for properly case!!!
 	c.EnsureSchema("CREATE TABLE `" + c.TableName + "` (id VARCHAR(32) PRIMARY KEY, `key` VARCHAR(50), `content` TEXT)")
-	c.EnsureIndex(c.IdentifiableMysqlPersistence.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
+	c.EnsureIndex(c.IdentifiableMySqlPersistence.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
 }
 
 func (c *MyMySqlPersistence) GetPageByFilter(ctx context.Context, correlationId string,
@@ -183,7 +183,7 @@ func (c *MyMySqlPersistence) GetPageByFilter(ctx context.Context, correlationId 
 	}
 	sorting := ""
 
-	return c.IdentifiableMysqlPersistence.GetPageByFilter(ctx, correlationId,
+	return c.IdentifiableMySqlPersistence.GetPageByFilter(ctx, correlationId,
 		filterObj, paging,
 		sorting, "",
 	)

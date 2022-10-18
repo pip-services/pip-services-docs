@@ -70,7 +70,7 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -97,7 +97,7 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -124,7 +124,7 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -150,7 +150,7 @@ Before creating this app, we need to install several modules that contain the ne
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -180,7 +180,7 @@ This table contains three columns of type varchar, namely id, type, and name. Th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -208,7 +208,7 @@ This layer is used to show the result of our app on the browser. It is construct
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -240,7 +240,7 @@ This class also defines the greeting method, which selects a random name from th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -272,7 +272,7 @@ Next, it contains the composeFilter() method, which customizes a filter to the n
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code8_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -308,7 +308,7 @@ In our example, we create the HelloFriendServiceFactory, which is a subclass of 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code9_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -385,7 +385,7 @@ Now that our support structure has been created, we add the components to a proc
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code10_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -412,7 +412,7 @@ Our final step is to execute the app via the container's run() command. The foll
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code11_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -440,11 +440,21 @@ And, if everything went right, we will see something similar to:
 
 Below, we can see the complete code of our example.
 {{< tabsection >}}
-   {{< include "./__code12_node.md" >}}
+  {{< collapse >}}
+  {{< include "./__code12_node.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
-   {{< include "./__code12_net.md" >}}
+  {{< collapse >}}
+  {{< include "./__code12_net.md" >}}
+  {{< /collapse >}}
+{{< /tabsection >}}
+
+{{< tabsection >}}
+  {{< collapse >}}
+  {{< include "./__code12_go.md" >}}
+  {{< /collapse >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -452,11 +462,6 @@ Below, we can see the complete code of our example.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  {{< markdownify >}}##### threeTier.py{{< /markdownify >}}
   {{< collapse >}}
   {{< include "./__code12_python.md" >}}
   {{< /collapse >}}

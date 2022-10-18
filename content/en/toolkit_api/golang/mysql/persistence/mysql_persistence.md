@@ -48,12 +48,12 @@ Important points
 
 ### Constructors
 
-#### InheritMysqlPersistence
-InheritMysqlPersistence creates a new instance of the persistence component.
+#### InheritMySqlPersistence
+InheritMySqlPersistence creates a new instance of the persistence component.
 
-> InheritMysqlPersistence[T any](overrides [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) [*MysqlPersistence[T]]()
+> InheritMySqlPersistence[T any](overrides [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides), tableName string) [*MySqlPersistence[T]]()
 
-- **overrides**: [IMysqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods.
+- **overrides**: [IMySqlPersistenceOverrides[T]](../imysql_persistence_overrides) - References to override virtual methods.
 - **tableName**: string - (optional) table name.
 
 
@@ -102,7 +102,7 @@ The SQLServer schema object.
 #### Clear
 Clears a component's state.
 
-> (c [*MysqlPersistence[T]]()) Clear(ctx context.Context, correlationId string) error
+> (c [*MySqlPersistence[T]]()) Clear(ctx context.Context, correlationId string) error
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -111,13 +111,13 @@ Clears a component's state.
 #### ClearSchema
 Clears all auto-created objects
 
-> (c [*MysqlPersistence[T]]()) ClearSchema()
+> (c [*MySqlPersistence[T]]()) ClearSchema()
 
 
 #### close
 Closes a component and frees the used resources.
 
-> (c [*MysqlPersistence[T]]()) Close(ctx context.Context, correlationId string) (err error)
+> (c [*MySqlPersistence[T]]()) Close(ctx context.Context, correlationId string) (err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -126,7 +126,7 @@ Closes a component and frees the used resources.
 #### Configure
 Configures component by passing configuration parameters.
 
-> (c [*MysqlPersistence[T]]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MySqlPersistence[T]]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
 - **ctx**: context.Context - operation context.
 - **config:**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
@@ -135,7 +135,7 @@ Configures component by passing configuration parameters.
 #### ConvertFromPublic
 Converts object value from public to internal format.
 
-> (c [*MysqlPersistence[T]]()) ConvertFromPublic(value T) (map[string]any, error)
+> (c [*MySqlPersistence[T]]()) ConvertFromPublic(value T) (map[string]any, error)
 
 - **value**: T - object in public format to convert.
 - **returns**: (map[string]any, error) - converted object in internal format.
@@ -144,7 +144,7 @@ Converts object value from public to internal format.
 #### ConvertToPublic
 Converts object value from internal to public format.
 
-> (c [*MysqlPersistence[T]]()) ConvertToPublic(rows *sql.Rows) (T, error)
+> (c [*MySqlPersistence[T]]()) ConvertToPublic(rows *sql.Rows) (T, error)
 
 - **rows**: *sql.Rows - object in internal format to convert.
 - **returns**: T - converted object in public format.
@@ -153,7 +153,7 @@ Converts object value from internal to public format.
 #### Create
 Creates a data item.
 
-> (c [*MysqlPersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
+> (c [*MySqlPersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -163,7 +163,7 @@ Creates a data item.
 
 #### CreateSchema
 Checks if a table exists and if not, it creates the necessary database objects.
-> (c [*MysqlPersistence[T]]()) CreateSchema(ctx context.Context, correlationId string) (err error)
+> (c [*MySqlPersistence[T]]()) CreateSchema(ctx context.Context, correlationId string) (err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -172,7 +172,7 @@ Checks if a table exists and if not, it creates the necessary database objects.
 #### DefineSchema
 Defines database schema via auto create objects or convenience methods.
 
-> (c [*MysqlPersistence[T]]()) DefineSchema()
+> (c [*MySqlPersistence[T]]()) DefineSchema()
 
 
 #### DeleteByFilter
@@ -180,7 +180,7 @@ Deletes data items that match to a given filter.
 This method shall be called by a public **deleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MysqlPersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filter string) error
+> (c [*MySqlPersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filter string) error
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -191,7 +191,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### EnsureIndex
 Adds index definition to create it on opening.
 
-> (c [*MysqlPersistence[T]]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
+> (c [*MySqlPersistence[T]]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
 
 - **name**: string - index name.
 - **keys**: any - index keys (fields).
@@ -201,7 +201,7 @@ Adds index definition to create it on opening.
 #### EnsureSchema
 Adds a statement to schema definition.
 
-> (c [*MysqlPersistence[T]]()) EnsureSchema(schemaStatement string)
+> (c [*MySqlPersistence[T]]()) EnsureSchema(schemaStatement string)
 
 - **schemaStatement**: string - statement to be added to the schema
 
@@ -209,7 +209,7 @@ Adds a statement to schema definition.
 #### GenerateColumns
 Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
 
-> (c [*MysqlPersistence[T]]()) GenerateColumns(columns []string) string
+> (c [*MySqlPersistence[T]]()) GenerateColumns(columns []string) string
 
 - **columns**: []string - array with column values or a key-value map
 - **returns**: string - generated list of column names 
@@ -218,7 +218,7 @@ Generates a list of column names to use in SQL statements like: *"column1,column
 #### GenerateParameters
 Generates a list of value parameters to use in SQL statements like: *"?,?,?"*
 
-> (c [*MysqlPersistence[T]]()) GenerateParameters(valuesCount int) string
+> (c [*MySqlPersistence[T]]()) GenerateParameters(valuesCount int) string
 
 - **valuesCount**: int - array with values or a key-value map
 - **returns**: string - generated list of value parameters
@@ -227,7 +227,7 @@ Generates a list of value parameters to use in SQL statements like: *"?,?,?"*
 #### GenerateSetParameters
 Generates a list of column sets to use in UPDATE statements like: column1=$1,column2=$2
 
-> (c [*MysqlPersistence[T]]()) GenerateSetParameters(columns []string) string
+> (c [*MySqlPersistence[T]]()) GenerateSetParameters(columns []string) string
 
 - **columns**: []string - key-value map with columns and values
 - **returns**: string - generated list of column sets
@@ -236,7 +236,7 @@ Generates a list of column sets to use in UPDATE statements like: column1=$1,col
 #### GenerateColumnsAndValues
 GenerateColumnsAndValues generates a list of column parameters
 
-> (c [*MysqlPersistence[T]]()) GenerateColumnsAndValues(objMap map[string]any) ([]string, []any)
+> (c [*MySqlPersistence[T]]()) GenerateColumnsAndValues(objMap map[string]any) ([]string, []any)
 
 - **objMap**: map[string]any - key-value map with columns and values
 - **returns**: ([]string, []any) - generated list of column values
@@ -249,7 +249,7 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a public **getCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MysqlPersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filter string) (int64, error)
+> (c [*MySqlPersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filter string) (int64, error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -263,7 +263,7 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MysqlPersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filter string, sort string, selection string) (items []T, err error)
+> (c [*MySqlPersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filter string, sort string, selection string) (items []T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id to trace execution through the call chain.
@@ -279,7 +279,7 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a public **GetOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MysqlPersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filter string) (item T, err error)
+> (c [*MySqlPersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filter string) (item T, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -293,7 +293,7 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a public **GetPageByFilter** method from the a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*MysqlPersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filter string, paging [PagingParams](../../../commons/data/paging_params), sort string, selection string) (page [DataPage[T]](../../../commons/data/data_page), err error)
+> (c [*MySqlPersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filter string, paging [PagingParams](../../../commons/data/paging_params), sort string, selection string) (page [DataPage[T]](../../../commons/data/data_page), err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -308,7 +308,7 @@ receives [FilterParams](../../../commons/data/filter_params) and converts them i
 #### IsOpen
 Checks if the component is opened.
 
-> (c [*MysqlPersistence[T]]()) IsOpen() bool
+> (c [*MySqlPersistence[T]]()) IsOpen() bool
 
 - **returns**: bool - True if the component has been opened and False otherwise.
 
@@ -316,7 +316,7 @@ Checks if the component is opened.
 #### open
 Opens the component.
 
-> (c [*MysqlPersistence[T]]()) Open(ctx context.Context, correlationId string) (err error)
+> (c [*MySqlPersistence[T]]()) Open(ctx context.Context, correlationId string) (err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -325,7 +325,7 @@ Opens the component.
 #### QuoteIdentifier
 Adds single quotes to a string.
 
-> (c [*MysqlPersistence[T]]()) QuoteIdentifier(value string) string
+> (c [*MySqlPersistence[T]]()) QuoteIdentifier(value string) string
 
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
@@ -334,7 +334,7 @@ Adds single quotes to a string.
 #### QuotedTableName
 Joins schema and database name in dot notation
 
-> (c [*MysqlPersistence[T]]()) QuotedTableName() string
+> (c [*MySqlPersistence[T]]()) QuotedTableName() string
 
 - **returns**: string - string with added quotes
 
@@ -342,7 +342,7 @@ Joins schema and database name in dot notation
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MysqlPersistence[T]]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
+> (c [*MySqlPersistence[T]]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
 - **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.
@@ -351,7 +351,7 @@ Sets references to dependent components.
 #### UnsetReferences
 Unsets (clears) previously set references to dependent components.
 
-> (c [*MysqlPersistence[T]]()) UnsetReferences()
+> (c [*MySqlPersistence[T]]()) UnsetReferences()
 
 ### Examples
 
@@ -367,12 +367,12 @@ import (
 )
 
 type MyMySqlPersistence struct {
-	*persist.MysqlPersistence[fixtures.Dummy]
+	*persist.MySqlPersistence[fixtures.Dummy]
 }
 
 func NewMyMySqlPersistence() *MyMySqlPersistence {
 	c := &MyMySqlPersistence{}
-	c.MysqlPersistence = persist.InheritMysqlPersistence[fixtures.Dummy](c, "mydata")
+	c.MySqlPersistence = persist.InheritMySqlPersistence[fixtures.Dummy](c, "mydata")
 	return c
 }
 

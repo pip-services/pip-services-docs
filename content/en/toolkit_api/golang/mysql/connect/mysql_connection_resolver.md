@@ -39,10 +39,10 @@ Important points
 
 ### Constructors
 
-#### NewMysqlConnectionResolver
-NewMysqlConnectionResolver creates new connection resolver
+#### NewMySqlConnectionResolver
+NewMySqlConnectionResolver creates new connection resolver
 
-> NewMysqlConnectionResolver() [*MysqlConnectionResolver]()
+> NewMySqlConnectionResolver() [*MySqlConnectionResolver]()
 
 ### Fields
 
@@ -65,7 +65,7 @@ The credential resolver
 #### Configure
 Configures components by passing configuration parameters.
 
-> (c [*MysqlConnectionResolver]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MySqlConnectionResolver]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
 - **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
@@ -74,7 +74,7 @@ Configures components by passing configuration parameters.
 #### Resolve
 Resolves a MySQL configuration from connection and credential parameters.
 
-> (c [*MysqlConnectionResolver]()) Resolve(ctx context.Context, correlationId string) (uri string, err error)
+> (c [*MySqlConnectionResolver]()) Resolve(ctx context.Context, correlationId string) (uri string, err error)
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -84,7 +84,7 @@ Resolves a MySQL configuration from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MysqlConnectionResolver]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
+> (c [*MySqlConnectionResolver]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
 - **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

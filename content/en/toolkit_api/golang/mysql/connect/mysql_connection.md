@@ -42,10 +42,10 @@ The MySqlConnection class allows you to create a connection to a MySQL database 
 
 ### Constructors
 
-#### NewMysqlConnection
-NewMysqlConnection creates a new instance of the connection component.
+#### NewMySqlConnection
+NewMySqlConnection creates a new instance of the connection component.
 
-> NewMysqlConnection() [*MysqlConnection]()
+> NewMySqlConnection() [*MySqlConnection]()
 
 
 ### Fields
@@ -82,7 +82,7 @@ The configuration options.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*MysqlConnection]()) Close(ctx context.Context, correlationId string) error
+> (c [*MySqlConnection]()) Close(ctx context.Context, correlationId string) error
 
 - **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -92,7 +92,7 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component by passing configuration parameters.
 
-> (c [*MysqlConnection]()) Configure(ctx context.Context, config *cconf.ConfigParams)
+> (c [*MySqlConnection]()) Configure(ctx context.Context, config *cconf.ConfigParams)
 
 - **ctx**: context.Context - operation context
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
@@ -100,14 +100,14 @@ Configures the component by passing configuration parameters.
 
 #### GetConnection
 Gets the connection.
-> (c [*MysqlConnection]()) GetConnection() *sql.DB
+> (c [*MySqlConnection]()) GetConnection() *sql.DB
 
 - **returns**: *sql.DB - connection to a MySQL database
 
 #### GetDatabaseName
 Gets the database name
 
-> (c [*MysqlConnection]()) GetDatabaseName() string
+> (c [*MySqlConnection]()) GetDatabaseName() string
 
 - **returns**: string - database name
 
@@ -115,7 +115,7 @@ Gets the database name
 #### IsOpen
 Checks if the component is opened.
 
-> (c [*MysqlConnection]()) IsOpen() bool
+> (c [*MySqlConnection]()) IsOpen() bool
 
 - **returns**: bool - True if the component has been opened and False otherwise.
 
@@ -123,7 +123,7 @@ Checks if the component is opened.
 #### Open
 Opens the component.
 
-> (c [*MysqlConnection]()) Open(ctx context.Context, correlationId string) error
+> (c [*MySqlConnection]()) Open(ctx context.Context, correlationId string) error
 
 - **ctx**: context.Context - operation context
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
@@ -132,7 +132,7 @@ Opens the component.
 #### setReferences
 Sets references to dependent components.
 
-> (c [*MysqlConnection]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
+> (c [*MySqlConnection]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
 - **ctx**: context.Context - operation context
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component dependencies.

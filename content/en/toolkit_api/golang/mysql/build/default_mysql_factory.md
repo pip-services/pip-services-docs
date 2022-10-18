@@ -15,11 +15,11 @@ The DefaultMySqlFactory class allows you to create a factory used to create MySq
 
 ### Constructors
 
-#### NewDefaultMysqlFactory
+#### NewDefaultMySqlFactory
 
 Create a new instance of the factory.
 
-> NewDefaultMysqlFactory()
+> NewDefaultMySqlFactory()
 
 
 ### See also

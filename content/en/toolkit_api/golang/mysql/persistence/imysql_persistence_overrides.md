@@ -1,7 +1,7 @@
 ---
 type: docs
-title: "IMysqlPersistenceOverrides"
-linkTitle: "IMysqlPersistenceOverrides"
+title: "IMySqlPersistenceOverrides"
+linkTitle: "IMySqlPersistenceOverrides"
 gitUrl: "https://github.com/pip-services3-gox/pip-services3-mysql-gox"
 description: >
     Interface defining methods for object conversion.
@@ -9,7 +9,7 @@ description: >
 
 ### Description
 
-The IMysqlPersistenceOverrides[T] interface is used to perform on-demand registrations.
+The IMySqlPersistenceOverrides[T] interface is used to perform on-demand registrations.
 
 ### Methods
 

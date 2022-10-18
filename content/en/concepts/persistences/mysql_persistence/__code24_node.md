@@ -1,4 +1,4 @@
 
 ```ts
-let result = await persistence.create(null, data3);
+let result = await persistence.create(null, data1);
 ```

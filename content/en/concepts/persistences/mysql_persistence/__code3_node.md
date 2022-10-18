@@ -1,6 +1,6 @@
 
-```cs
-var data1 = new MyData { Id = "1", Key = "key 1", Content = "content 1" };
-var data2 = new MyData { Id = "2", Key = "key 2", Content = "content 2" };
-var data3 = new MyData { Id = "3", Key = "key 3", Content = "content 3" };
+```ts
+let data1 = { id: "1", key: "key 1", content: "content 1" };
+let data2 = { id: "2", key: "key 2", content: "content 2" };
+let data3 = { id: "3", key: "key 3", content: "content 3" };
 ```

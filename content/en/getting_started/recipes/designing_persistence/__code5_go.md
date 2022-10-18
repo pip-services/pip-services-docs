@@ -6,93 +6,82 @@ type MyData struct {
 	Content string `bson:"content" json:"content"`
 }
 
-type MyDataPage struct {
-	Total *int64   `bson:"total" json:"total"`
-	Data  []MyData `bson:"data" json:"data"`
+func (d *MyData) SetId(id string) {
+	d.Id = id
 }
 
-func NewEmptyMyDataPage() *MyDataPage {
-	return &MyDataPage{}
+func (d MyData) GetId() string {
+	return d.Id
 }
 
-func NewMyDataPage(total *int64, data []MyData) *MyDataPage {
-	return &MyDataPage{Total: total, Data: data}
+func (d MyData) Clone() MyData {
+	return MyData{
+		Id:      d.Id,
+		Key:     d.Key,
+		Content: d.Content,
+	}
 }
 
 type IMyDataPersistence interface {
-	Set(correlationId string, item MyData) (result MyData, err error)
+	Set(ctx context.Context, correlationId string, item MyData) (result MyData, err error)
 
-	Create(correlationId string, item MyData) (result MyData, err error)
+	Create(ctx context.Context, correlationId string, item MyData) (result MyData, err error)
 
-	GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams, sort *cdata.SortParams) (page *MyDataPage, err error)
+	GetPageByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, paging cdata.PagingParams, sort cdata.SortParams) (page cdata.DataPage[MyData], err error)
 
-	GetCountByFilter(correlationId string, filter *cdata.FilterParams) (count int64, err error)
+	GetCountByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams) (count int64, err error)
 
-	GetListByFilter(correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error)
+	GetListByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, sort cdata.SortParams) (items []MyData, err error)
 
-	GetOneById(correlationId string, id string) (item MyData, err error)
+	GetOneById(ctx context.Context, correlationId string, id string) (item MyData, err error)
 
-	GetListByIds(correlationId string, ids []string) (items []MyData, err error)
+	GetListByIds(ctx context.Context, correlationId string, ids []string) (items []MyData, err error)
 
-	Update(correlationId string, item MyData) (result MyData, err error)
+	Update(ctx context.Context, correlationId string, item MyData) (result MyData, err error)
 
-	UpdatePartially(correlationId string, id string, data *cdata.AnyValueMap) (result MyData, err error)
+	UpdatePartially(ctx context.Context, correlationId string, id string, data cdata.AnyValueMap) (result MyData, err error)
 
-	DeleteById(correlationId string, id string) (result MyData, err error)
+	DeleteById(ctx context.Context, correlationId string, id string) (result MyData, err error)
 
-	DeleteByIds(correlationId string, ids []string) error
+	DeleteByIds(ctx context.Context, correlationId string, ids []string) error
 
-	DeleteByFilter(correlationId string, filter *cdata.FilterParams) (err error)
+	DeleteByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams) (err error)
 }
-
 type MyPostgresPersistence struct {
-	IMyDataPersistence
-	postgres.IdentifiablePostgresPersistence
+	*postgrespersist.IdentifiablePostgresPersistence[MyData, string]
 }
 
 func NewMyPostgresPersistence() *MyPostgresPersistence {
-	proto := reflect.TypeOf(MyData{})
 	c := &MyPostgresPersistence{}
-	c.IdentifiablePostgresPersistence = *postgres.InheritIdentifiablePostgresPersistence(c, proto, "mydata")
+	c.IdentifiablePostgresPersistence = postgrespersist.InheritIdentifiablePostgresPersistence[MyData, string](c, "mydata")
 	return c
 }
 
 func (c *MyPostgresPersistence) DefineSchema() {
 	c.ClearSchema()
-	c.IdentifiablePostgresPersistence.DefineSchema()
-	c.EnsureSchema("CREATE TABLE " + c.QuoteTableNameWithSchema() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
-	c.EnsureIndex(c.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
+	c.EnsureSchema("CREATE TABLE " + c.QuotedTableName() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
 }
 
-func (c *MyPostgresPersistence) composeFilter(filter *cdata.FilterParams) string {
-	if &filter == nil {
-		filter = cdata.NewEmptyFilterParams()
+func (c *MyPostgresPersistence) composeFilter(filter cdata.FilterParams) string {
+	key, keyOk := filter.GetAsNullableString("key")
+	content, contentOk := filter.GetAsNullableString("content")
+
+	filterObj := ""
+	if keyOk && key != "" {
+		filterObj += "key='" + key + "'"
+	}
+	if contentOk && content != "" {
+		filterObj += "content='" + content + "'"
 	}
 
-	key := filter.GetAsNullableString("Key")
-	content := filter.GetAsNullableString("Content")
-
-	filterCondition := ""
-	if key != nil && *key != "" {
-		filterCondition += "key='" + *key + "'"
-	}
-	if content != nil && *content != "" {
-		filterCondition += "content='" + *content + "'"
-	}
-
-	return filterCondition
+	return filterObj
 }
 
-func (c *MyPostgresPersistence) composeSort(sort *cdata.SortParams) string {
-	if &sort == nil {
-		sort = cdata.NewEmptySortParams()
-	}
-
+func (c *MyPostgresPersistence) composeSort(sort cdata.SortParams) string {
 	composeSort := ""
 
-	for _, field := range *sort {
+	for _, field := range sort {
 		composeSort += field.Name
-
 		if field.Ascending {
 			composeSort += " ASC"
 		} else {
@@ -103,89 +92,20 @@ func (c *MyPostgresPersistence) composeSort(sort *cdata.SortParams) string {
 	return composeSort
 }
 
-func (c *MyPostgresPersistence) GetPageByFilter(correlationId string, filter *cdata.FilterParams, paging *cdata.PagingParams, sort *cdata.SortParams) (page *MyDataPage, err error) {
-
-	tempPage, err := c.IdentifiablePostgresPersistence.GetPageByFilter(correlationId,
-		c.composeFilter(filter), paging,
-		c.composeSort(sort), nil)
-
-	// Convert to MyDataPage
-	dataLen := int64(len(tempPage.Data))
-	data := make([]MyData, dataLen)
-	for i, v := range tempPage.Data {
-		data[i] = v.(MyData)
-	}
-
-	page = NewMyDataPage(&dataLen, data)
-	return page, err
+func (c *MyPostgresPersistence) GetPageByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, paging cdata.PagingParams, sort cdata.SortParams) (page cdata.DataPage[MyData], err error) {
+	return c.PostgresPersistence.GetPageByFilter(ctx, correlationId, c.composeFilter(filter), paging, c.composeSort(sort), "")
 }
 
-func (c *MyPostgresPersistence) GetCountByFilter(correlationId string, filter *cdata.FilterParams) (count int64, err error) {
-	return c.IdentifiablePostgresPersistence.GetCountByFilter(correlationId, c.composeFilter(filter))
+func (c *MyPostgresPersistence) GetListByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams, sort cdata.SortParams) (items []MyData, err error) {
+
+	return c.PostgresPersistence.GetListByFilter(ctx, correlationId, c.composeFilter(filter), c.composeSort(sort), "")
 }
 
-func (c *MyPostgresPersistence) GetListByFilter(correlationId string, filter *cdata.FilterParams, sort *cdata.SortParams) (items []MyData, err error) {
-	result, err := c.IdentifiablePostgresPersistence.GetListByFilter(correlationId, c.composeFilter(filter), c.composeSort(sort), nil)
-
-	items = make([]MyData, len(result))
-	for i, v := range result {
-		val, _ := v.(MyData)
-		items[i] = val
-	}
-	return items, err
+func (c *MyPostgresPersistence) GetCountByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams) (count int64, err error) {
+	return c.PostgresPersistence.GetCountByFilter(ctx, correlationId, c.composeFilter(filter))
 }
 
-func (c *MyPostgresPersistence) DeleteByFilter(correlationId string, filter *cdata.FilterParams) (err error) {
-	return c.IdentifiablePostgresPersistence.DeleteByFilter(correlationId, c.composeFilter(filter))
-}
-
-func (c *MyPostgresPersistence) GetOneById(correlationId string, id string) (item MyData, err error) {
-	result, err := c.IdentifiablePostgresPersistence.GetOneById(correlationId, id)
-	if result != nil {
-		val, _ := result.(MyData)
-		item = val
-	}
-	return item, err
-}
-
-func (c *MyPostgresPersistence) Create(correlationId string, item MyData) (result MyData, err error) {
-	value, err := c.IdentifiablePostgresPersistence.Create(correlationId, item)
-
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
-}
-
-func (c *MyPostgresPersistence) GetListByIds(correlationId string, ids []string) (items []MyData, err error) {
-	convIds := make([]interface{}, len(ids))
-	for i, v := range ids {
-		convIds[i] = v
-	}
-	result, err := c.IdentifiablePostgresPersistence.GetListByIds(correlationId, convIds)
-	items = make([]MyData, len(result))
-	for i, v := range result {
-		val, _ := v.(MyData)
-		items[i] = val
-	}
-	return items, err
-}
-
-func (c *MyPostgresPersistence) Update(correlationId string, item MyData) (result MyData, err error) {
-	value, err := c.IdentifiablePostgresPersistence.Update(correlationId, item)
-	if value != nil {
-		val, _ := value.(MyData)
-		result = val
-	}
-	return result, err
-}
-
-func (c *MyPostgresPersistence) DeleteByIds(correlationId string, ids []string) (err error) {
-	convIds := make([]interface{}, len(ids))
-	for i, v := range ids {
-		convIds[i] = v
-	}
-	return c.IdentifiablePostgresPersistence.DeleteByIds(correlationId, convIds)
+func (c *MyPostgresPersistence) DeleteByFilter(ctx context.Context, correlationId string, filter cdata.FilterParams) (err error) {
+	return c.PostgresPersistence.DeleteByFilter(ctx, correlationId, c.composeFilter(filter))
 }
 ```

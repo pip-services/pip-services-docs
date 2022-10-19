@@ -1,7 +1,7 @@
 ---
 type: docs
 title: "Swagger module"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-swagger-gox"
 no_list: true
 weight: 500
 description: > 
@@ -20,7 +20,7 @@ The module contains the following packages:
 
 Install the Go package as
 ```bash
-go get github.com/pip-services3-go/pip-services3-swagger-go
+go get github.com/pip-services3-gox/pip-services3-swagger-gox
 ```
 
 Develop a RESTful service component. For example, it may look the following way.
@@ -124,7 +124,7 @@ Finally, remember to add factories to your container, to allow it creating requi
 import (
 	cproc "github.com/pip-services3-gox/pip-services3-container-gox/container"
 	rbuild "github.com/pip-services3-gox/pip-services3-rpc-gox/build"
-	sbuild "github.com/pip-services3-go/pip-services3-swagger-go/build"
+	sbuild "github.com/pip-services3-gox/pip-services3-swagger-gox/build"
   ...
 )
 

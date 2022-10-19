@@ -137,13 +137,13 @@ go get -u github.com/pip-services3-gox/pip-services3-rpc-gox
 
 #### SQLite module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-sqlite-go
+go get -u github.com/pip-services3-gox/pip-services3-sqlite-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-sqlite-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-sqlite-gox)
 
 
 #### Swagger module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-swagger-go
+go get -u github.com/pip-services3-gox/pip-services3-swagger-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-swagger-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-swagger-gox)

@@ -2,7 +2,7 @@
 type: docs
 title: "SqliteConnectionResolver"
 linkTitle: "SqliteConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: >
     Helper class that resolves a SQLite connection and credential parameters,
     validates them and generates a connection URI.
@@ -21,10 +21,16 @@ The SqliteConnectionResolver class is used to resolve SQLite connections and cre
 
 #### Configuration parameters
 
-- **connection(s)**:    
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **database**: database file path
-    - **uri**: resource URI with file:// protocol
+- **connection(s)**:
+    - **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+    - **host**: host name or IP address
+    - **port**: port number (default: 8082)
+    - **database**: database name
+    - **uri**: resource URI or connection string with all parameters in it
+- **credential(s)**:
+    - **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+    - **username**: user name
+    - **password**: user password
 
 
 
@@ -61,16 +67,18 @@ Credential resolver
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*SqliteConnectionResolver]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*SqliteConnectionResolver]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### Resolve
 Resolves a SQLite connection URI from connection and credential parameters.
 
-> (c [*SqliteConnectionResolver]()) Resolve(correlationId string) (config map[string]interface{}, err error)
+> (c [*SqliteConnectionResolver]()) Resolve(ctx context.Context, correlationId string) (config map[string]interface{}, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (config map[string]interface{}, err error) - resolved config.
 
@@ -78,6 +86,7 @@ Resolves a SQLite connection URI from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*SqliteConnectionResolver]()) SetReferences(references [crefer.IReferences](../../../commons/refer/ireferences))
+> (c [*SqliteConnectionResolver]()) SetReferences(ctx context.Context, references [crefer.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [crefer.IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

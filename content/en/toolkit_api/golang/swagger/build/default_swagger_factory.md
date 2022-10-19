@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultSwaggerFactory"
 linkTitle: "DefaultSwaggerFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-swagger-gox"
 description: >
     Creates Swagger components by their descriptors.
 ---

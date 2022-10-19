@@ -2,7 +2,7 @@
 type: docs
 title: "DefaultSqliteFactory"
 linkTitle: "DefaultSqliteFactory"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: > 
     Creates SQLite components by their descriptors.
 ---

@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: >
     This package provides two classes used to create SQLite connections.
 ---

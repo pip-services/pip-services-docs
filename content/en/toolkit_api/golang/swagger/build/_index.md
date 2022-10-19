@@ -3,7 +3,7 @@ type: docs
 title: "Build"
 linkTitle: "Build"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-swagger-gox"
 description: >
     This module provides a factory class used to create Swagger components by their descriptors.
 ---

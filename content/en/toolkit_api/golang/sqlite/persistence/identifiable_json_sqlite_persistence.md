@@ -1,15 +1,15 @@
 ---
 type: docs
-title: "IdentifiableJsonSqlitePersistence"
+title: "IdentifiableJsonSqlitePersistence[T any, K any]"
 linkTitle: "IdentifiableJsonSqlitePersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: >
     Abstract persistence component that stores data in SQLite in JSON or JSONB fields
     and implements a number of CRUD operations over data items with unique ids.
 
 ---
 
-**Implements:** [IdentifiableSqlitePersistence](../identifiable_sqlite_persistence)
+**Implements:** [IdentifiableSqlitePersistence[T,K]](../identifiable_sqlite_persistence)
 
 ### Description
 
@@ -23,12 +23,20 @@ description: >
 
 #### Configuration parameters
 
-- **table**: (optional) SQLite table name
-- **schema**: (optional) SQLite schema name 
-- **connection(s)**:    
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **database**: database file path
-    - **uri**: resource URI with file:// protocol
+- **collection**: (optional) SQLite collection name
+- **connection(s)**:
+	- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+	- **host**: host name or IP address
+	- **port**: port number (default: 27017)
+	- **uri**: resource URI or connection string with all parameters in it
+- **credential(s)**:
+	- **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+	- **username**: (optional) user name
+	- **password**: (optional) user password
+- **options**:
+	- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+	- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+	- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
 
 
 #### References
@@ -43,10 +51,9 @@ description: >
 #### InheritIdentifiableJsonSqlitePersistence
 Creates a new instance of the persistence component.
 
-> InheritIdentifiableJsonSqlitePersistence(overrides ISqlitePersistenceOverrides, proto reflect.Type, tableName string) [*IdentifiableJsonSqlitePersistence]()
+> InheritIdentifiableJsonSqlitePersistence[T any, K any](overrides [ISqlitePersistenceOverrides[T]](../isqlite_persistence_overrides), tableName string) [[*IdentifiableJsonSqlitePersistence]()]()
 
-- **overrides**: ISqlitePersistenceOverrides - references to child class that overrides virtual methods
-- **proto**: reflect.Type - type of object
+- **overrides**: [ISqlitePersistenceOverrides[T]](../isqlite_persistence_overrides) - references to child class that overrides virtual methods
 - **tableName**: string - (optional) a table name.
 
 
@@ -55,25 +62,25 @@ Creates a new instance of the persistence component.
 #### ConvertFromPublic
 Converts an object value from public to internal format.
 
-> (c [*IdentifiableJsonSqlitePersistence]()) ConvertFromPublic(value interface{}) interface{}
+> (c [*IdentifiableJsonSqlitePersistence[T,K]]()) ConvertFromPublic(value T) (map[string]any, error)
 
-- **value**: interface{} - object in public format to convert.
-- **returns**: interface{} - converted object in internal format.
+- **value**: T - object in public format to convert.
+- **returns**: map[string]any - converted object in internal format.
 
 
 #### ConvertToPublic
 Converts an object value from internal to public format.
 
-> (c [*IdentifiableJsonSqlitePersistence]()) ConvertToPublic(rows *sql.Rows) interface{}
+> (c [*IdentifiableJsonSqlitePersistence[T,K]]()) ConvertToPublic(item *sql.Rows) (T, error)
 
 - **rows**: *sql.Rows - object in internal format to convert.
-- **returns**: interface{} - converted object in public format.
+- **returns**: (T, error) - converted object in public format.
 
 
 #### EnsureTable
 Adds a DML statement to automatically create a JSON(B) table
 
-> (c [*IdentifiableJsonSqlitePersistence]()) EnsureTable(idType string, dataType string)
+> (c [*IdentifiableJsonSqlitePersistence[T,K]]()) EnsureTable(idType string, dataType string)
 
 - **idType**: string - type of the id column (default: VARCHAR(32))
 - **dataType**: string - type of the data column (default: JSON)
@@ -82,15 +89,61 @@ Adds a DML statement to automatically create a JSON(B) table
 #### UpdatePartially
 Updates only a few selected fields in a data item.
 
-> (c [*IdentifiableJsonSqlitePersistence]()) UpdatePartially(correlationId string, id interface{}, data [*AnyValueMap](../../../commons/data/any_value_map)) (result interface{}, err error)
+> (c [*IdentifiableJsonSqlitePersistence[T,K]]()) UpdatePartially(ctx context.Context, correlationId string, id K, data cdata.AnyValueMap) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **id**: interface{} - id of the data item to be updated.
-- **data**: [*AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
-- **return**: (result interface{}, err error) - updated item
+- **id**: K - id of the data item to be updated.
+- **data**: [AnyValueMap](../../../commons/data/any_value_map) - map with fields to be updated.
+- **return**: (result T, err error) - updated item
 
 ### Examples
 
 ```go
-TODO: add example
+type DummyJsonSqlitePersistence struct {
+	*persist.IdentifiableJsonSqlitePersistence[fixtures.Dummy, string]
+}
+
+func NewDummyJsonSqlitePersistence() *DummyJsonSqlitePersistence {
+	c := &DummyJsonSqlitePersistence{}
+	c.IdentifiableJsonSqlitePersistence = persist.InheritIdentifiableJsonSqlitePersistence[fixtures.Dummy, string](c, "dummies_json")
+	return c
+}
+
+func (c *DummyJsonSqlitePersistence) DefineSchema() {
+	c.ClearSchema()
+	c.IdentifiableJsonSqlitePersistence.DefineSchema()
+	c.EnsureTable("", "")
+	c.EnsureIndex(c.TableName+"_key", map[string]string{"(data->'key')": "1"}, map[string]string{"unique": "true"})
+}
+
+func (c *DummyJsonSqlitePersistence) GetPageByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams, paging cdata.PagingParams) (page cdata.DataPage[fixtures.Dummy], err error) {
+
+	key, ok := filter.GetAsNullableString("Key")
+	filterObj := ""
+	if ok && key != "" {
+		filterObj += "JSON_EXTRACT(data, '$.key')='" + key + "'"
+	}
+
+	return c.IdentifiableJsonSqlitePersistence.GetPageByFilter(ctx, correlationId,
+		filterObj, paging,
+		"", "",
+	)
+}
+
+func (c *DummyJsonSqlitePersistence) GetCountByFilter(ctx context.Context, correlationId string,
+	filter cdata.FilterParams) (count int64, err error) {
+
+	filterObj := ""
+	if key, ok := filter.GetAsNullableString("Key"); ok && key != "" {
+		filterObj += "JSON_EXTRACT(data, '$.key')='" + key + "'"
+	}
+
+	return c.IdentifiableJsonSqlitePersistence.GetCountByFilter(ctx, correlationId, filterObj)
+}
+
+func (c *DummyJsonSqlitePersistence) GetOneRandom(ctx context.Context, correlationId string) (item fixtures.Dummy, err error) {
+	return c.IdentifiableJsonSqlitePersistence.GetOneRandom(ctx, correlationId, "")
+}
 ```

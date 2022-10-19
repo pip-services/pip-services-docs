@@ -1,8 +1,8 @@
 ---
 type: docs
-title: "SqlitePersistence"
+title: "SqlitePersistence[T]"
 linkTitle: "SqlitePersistence"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: >
     Abstract persistence component that stores data in SQLite using the default driver.
     
@@ -19,21 +19,21 @@ The SqlitePersistence class allows you to create abstract persistence components
 
 #### Configuration parameters
 
-- **table**: (optional) SQLite table name
-- **schema**: (optional) SQLite schema name
-- **connection(s)**:    
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **host**: host name or IP address
-    - **port**: port number (default: 27017)
-    - **uri**: resource URI or connection string with all parameters in it
-- **credential(s)**:    
-    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-    - **username**: (optional) username
-    - **password**: (optional) user's password
+- **collection**: (optional) SQLite collection name
+- **schema**: (optional) SQLite schema, default "public"
+- **connection(s)**:
+	- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+	- **host**: host name or IP address
+	- **port**: port number (default: 27017)
+	- **uri**: resource URI or connection string with all parameters in it
+- **credential(s)**:
+	- **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+	- **username**: (optional) user name
+	- **password**: (optional) user password
 - **options**:
-    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-    - **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
+	- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+	- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+	- **max_pool_size**: (optional) maximum number of clients the pool should contain (default: 10)
 
 
 #### References
@@ -47,10 +47,9 @@ The SqlitePersistence class allows you to create abstract persistence components
 #### InheritSqlitePersistence
 Creates a new instance of the persistence component.
 
-> InheritSqlitePersistence(overrides ISqlitePersistenceOverrides, proto reflect.Type, tableName string) [*SqlitePersistence]()
+> InheritSqlitePersistence(overrides [ISqlitePersistenceOverrides[T]](../isqlite_persistence_overrides), tableName string) [*SqlitePersistence]()
 
-- **overrides**: ISqlitePersistenceOverrides - references to child class that overrides virtual methods
-- **proto**: reflect.Type -  type of object
+- **overrides**: [ISqlitePersistenceOverrides[T]](../isqlite_persistence_overrides) - references to child class that overrides virtual methods
 - **tableName**: string - (optional) a table name.
 
 
@@ -82,6 +81,10 @@ SQLite connection pool object.
 Maximum number of records to return from the database per request.
 > **MaxPageSize**: int
 
+#### SchemaName
+The SQLite database schema name. If not set use "public" by default
+> **SchemaName**: string
+
 </span>
 
 
@@ -91,22 +94,24 @@ Maximum number of records to return from the database per request.
 #### Clear
 Clears a component's state.
 
-> (c [*SqlitePersistence]()) Clear(correlationId string) error
+> (c [*SqlitePersistence[T]]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil no errors occured.
 
 #### ClearSchema
 Clears all auto-created objects
 
-> (c [*SqlitePersistence]()) ClearSchema()
+> (c [*SqlitePersistence[T]]()) ClearSchema()
 
 
 #### Close
 Closes a component and frees the used resources.
 
-> (c [*SqlitePersistence]()) Close(correlationId string) (err error)
+> (c [*SqlitePersistence[T]]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -114,43 +119,54 @@ Closes a component and frees the used resources.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*SqlitePersistence]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*SqlitePersistence[T]]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config:**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
 #### ConvertFromPublic
 Converts an object value from public to internal format.
 
-> (c [*SqlitePersistence]()) ConvertFromPublic(value interface{}) interface{}
+> (c [*SqlitePersistence[T]]()) ConvertFromPublic(value T) (map[string]any, error)
 
-- **value**: interface{} - object in public format to convert.
-- **returns**: interface{} - converted object in internal format.
+- **value**: T - object in public format to convert.
+- **returns**: (map[string]any, error) - converted object in internal format.
 
+
+#### ConvertFromPublicPartial
+ConvertFromPublicPartial converts the given object from the public partial format.
+
+> (c [*SqlitePersistence[T]]()) ConvertFromPublicPartial(value map[string]any) (map[string]any, error)
+
+- **value**: map[string]any) - object in public format to convert.
+- **returns**: (map[string]any, error) - converted object in internal format.
 
 #### ConvertToPublic
 Converts object value from internal to func (c * SqlitePersistence) format.
 
-> (c [*SqlitePersistence]()) ConvertToPublic(rows *sql.Rows) interface{}
+> (c [*SqlitePersistence[T]]()) ConvertToPublic(rows *sql.Rows) (T, error)
 
 - **rows**: *sql.Rows - object in internal format to convert.
-- **returns**: interface{} - converted object in func (c * SqlitePersistence) format.
+- **returns**: (T, error) - converted object in func (c * SqlitePersistence) format.
 
 
 #### Create
 Creates a data item.
 
-> (c [*SqlitePersistence]()) Create(correlationId string, item interface{}) (result interface{}, err error)
+> (c [*SqlitePersistence[T]]()) Create(ctx context.Context, correlationId string, item T) (result T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **item**: interface{} - item to be created.
-- **returns**: (result interface{}, err error) - created item
+- **item**: T - item to be created.
+- **returns**: (result T, err error) - created item
 
 
 #### CreateSchema
 Checks if a table exists and if not, it creates the necessary database objects.
-> (c [*SqlitePersistence]()) CreateSchema(correlationId string) (err error)
+> (c [*SqlitePersistence[T]]()) CreateSchema(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -158,7 +174,7 @@ Checks if a table exists and if not, it creates the necessary database objects.
 #### DefineSchema
 Defines a database schema via auto-create objects or convenience methods.
 
-> (c [*SqlitePersistence]()) DefineSchema()
+> (c [*SqlitePersistence[T]]()) DefineSchema()
 
 
 #### DeleteByFilter
@@ -166,18 +182,19 @@ Deletes data items that match to a given filter.
 This method shall be called by a func **DeleteByFilter** method from child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*SqlitePersistence]()) DeleteByFilter(correlationId string, filter string) (err error)
+> (c [*SqlitePersistence[T]]()) DeleteByFilter(ctx context.Context, correlationId string, filter string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **filter**: string - (optional) filter function to filter items.
-- **returns**: (err error) - error or nil no errors occured.
+- **returns**: error - error or nil no errors occured.
 
 #### EnsureIndex
 Adds index definition to create it on opening.
 
-> (c [*SqlitePersistence]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
+> (c [*SqlitePersistence[T]]()) EnsureIndex(name string, keys map[string]string, options map[string]string)
 
-- **name**: string - TODO: add description
+- **name**: string - index name.
 - **keys**: map[string]string - index keys (fields)
 - **options**: map[string]string - index options
 
@@ -185,7 +202,7 @@ Adds index definition to create it on opening.
 #### EnsureSchema
 Adds a statement to schema definition.
 
-> (c [*SqlitePersistence]()) EnsureSchema(schemaStatement string)
+> (c [*SqlitePersistence[T]]()) EnsureSchema(schemaStatement string)
 
 - **schemaStatement**: string - statement to be added to the schema
 
@@ -193,39 +210,37 @@ Adds a statement to schema definition.
 #### GenerateColumns
 Generates a list of column names to use in SQL statements like: *"column1,column2,column3"*.
 
-> (c [*SqlitePersistence]()) GenerateColumns(values interface{}) string
+> (c [*SqlitePersistence[T]]()) GenerateColumns(columns []string) string
 
-- **values**: interface{} - array with column values or a key-value map
+- **values**: []string - array with column values or a key-value map
 - **returns**: string - generated list of column names 
 
 
 #### GenerateParameters
 Generates a list of value parameters to use in SQL statements like: "$1,$2,$3"
 
-> (c [*SqlitePersistence]()) GenerateParameters(values interface{}) string
+> (c [*SqlitePersistence[T]]()) GenerateParameters(valuesCount int) string
 
-- **values**: interface{} - array with values or a key-value map
-- **returns**: string - generated list of value parameters
+- **valuesCount**: int - count of generated values.
+- **returns**: string - generated string of value parameters.
 
 
 #### GenerateSetParameters
 Generates a list of column sets to use in UPDATE statements like: column1=$1,column2=$2
 
-> (c [*SqlitePersistence]()) GenerateSetParameters(values interface{}) (params string, columns string)
+> (c [*SqlitePersistence[T]]()) GenerateSetParameters(columns []string) string
 
-- **values**: interface{} - key-value map with columns and values
-- **returns**: (params string, columns string) - generated list of column sets
+- **values**: []string - value list with columns.
+- **returns**: string - generated list of column sets.
 
 
 #### GenerateValues
 Generates a list of column parameters.
 
-> (c [*SqlitePersistence]()) GenerateValues(columns string, values interface{}) []interface{}
+> (c [*SqlitePersistence[T]]()) GenerateColumnsAndValues(objMap map[string]any) ([]string, []any)
 
-- **columns**: string - TODO: add description
-- **values**: interface{} - key-value map with columns and values
-- **returns**: []interface{} - generated list of column values
-
+- **objMap**: map[string]any - an array with column values or a key-value map
+- **returns**: ([]string, []any) - a generated list of column values.
 
 
 #### GetCountByFilter
@@ -234,11 +249,12 @@ Gets a number of data items retrieved by a given filter.
 This method shall be called by a func **GetCountByFilter** method from the child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*SqlitePersistence]()) GetCountByFilter(correlationId string, filter interface{}) (count int64, err error)
+> (c [*SqlitePersistence[T]]()) GetCountByFilter(ctx context.Context, correlationId string, filter string) (int64, error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) JSON object filter
-- **returns**: (count int64, err error) - number of filtered items.
+- **filter**: string - (optional) JSON object filter
+- **returns**: (int64, error) - number of filtered items.
 
 
 #### GetListByFilter
@@ -247,13 +263,14 @@ Gets a list of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetListByFilter** method from a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*SqlitePersistence]()) GetListByFilter(correlationId string, filter interface{}, sort interface{}, sel interface{}) (items []interface{}, err error)
+> (c [*SqlitePersistence[T]]()) GetListByFilter(ctx context.Context, correlationId string, filter string, sort string, selection string) (items []T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter function to filter items
-- **sort**: interface{} - (optional) sorting parameters
-- **sel**: interface{} - (optional) projection parameters (not used yet)
-- **returns**: (items []interface{}, err error) - data list of results by filter.
+- **filter**: string - (optional) filter function to filter items
+- **sort**: string - (optional) sorting parameters
+- **sel**: string - (optional) projection parameters (not used yet)
+- **returns**: (items []T, err error) - data list of results by filter.
 
 
 #### GetOneRandom
@@ -262,11 +279,12 @@ Gets a random item from items that match to a given filter.
 This method shall be called by a func **GetOneRandom** method from a child class
 that receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*SqlitePersistence]()) GetOneRandom(correlationId string, filter interface{}) (item interface{}, err error)
+> (c [*SqlitePersistence[T]]()) GetOneRandom(ctx context.Context, correlationId string, filter string) (item T, err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter JSON object
-- **returns**: (item interface{}, err error) - random item.
+- **filter**: string - (optional) filter JSON object
+- **returns**: (item T, err error) - random item.
 
 
 #### GetPageByFilter
@@ -275,21 +293,22 @@ Gets a page of data items retrieved by a given filter and sorted according to so
 This method shall be called by a func **GetPageByFilter** method from the a child class that
 receives [FilterParams](../../../commons/data/filter_params) and converts them into a filter function.
 
-> (c [*SqlitePersistence]()) GetPageByFilter(correlationId string, filter interface{}, paging [*PagingParams](../../../commons/data/paging_params), sort interface{}, sel interface{}) (page [*DataPage](../../../commons/data/data_page), err error)
+> (c [*SqlitePersistence[T]]()) GetPageByFilter(ctx context.Context, correlationId string, filter string, paging cdata.PagingParams, sort string, selection string) (page cdata.DataPage[T], err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
-- **filter**: interface{} - (optional) filter for JSON objects.
-- **paging**: [*PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
-- **sort**: interface{} - (optional) sorting JSON object
-- **sel**: interface{} - (optional) projection JSON object
-- **returns**: (page [*DataPage](../../../commons/data/data_page), err error) - data page of result by filter
+- **filter**: string - (optional) filter for JSON objects.
+- **paging**: [PagingParams](../../../commons/data/paging_params) - (optional) paging parameters
+- **sort**: string - (optional) sorting JSON object
+- **selection**: string - (optional) projection JSON object
+- **returns**: (page [DataPage[T]](../../../commons/data/data_page), err error) - data page of result by filter
 
 
 
 #### IsOpen
 Checks if the component is open.
 
-> (c [*SqlitePersistence]()) IsOpen() bool
+> (c [*SqlitePersistence[T]]()) IsOpen() bool
 
 - **returns**: bool - true if the component has been opened and false otherwise.
 
@@ -297,8 +316,9 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*SqlitePersistence]()) Open(correlationId string) (err error)
+> (c [*SqlitePersistence[T]]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil no errors occured.
 
@@ -306,30 +326,111 @@ Opens the component.
 #### QuoteIdentifier
 Adds single quotes to a string.
 
-> (c [*SqlitePersistence]()) QuoteIdentifier(value string) string
+> (c [*SqlitePersistence[T]]()) QuoteIdentifier(value string) string
 
 - **value**: string - string where quotes need to be added
 - **returns**: string - string with added quotes
 
-#### QuotedTableName!
+#### QuotedTableName
+QuotedTableName return quoted SchemaName with TableName ("schema"."table")
 
-**TODO: this method is not implemented**
+> (c [*SqlitePersistence[T]]()) QuotedTableName() string
+
+- **returns**: string - quoted table name.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*SqlitePersistence]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*SqlitePersistence[T]]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
 #### UnsetReferences
 Unsets (clears) previously set references to dependent components.
 
-> (c [*SqlitePersistence]()) UnsetReferences()
+> (c [*SqlitePersistence[T]]()) UnsetReferences()
 
 ### Examples
 
 ```go
-TODO: add example
+type MySqlitePersistence struct {
+	*persist.SqlitePersistence[MyData]
+}
+
+func NewMySqlitePersistence() *MySqlitePersistence {
+	c := &MySqlitePersistence{}
+	c.SqlitePersistence = persist.InheritSqlitePersistence[MyData](c, "mydata")
+	return c
+}
+
+func (c *MySqlitePersistence) DefineSchema() {
+	c.ClearSchema()
+	c.SqlitePersistence.DefineSchema()
+	// Row name must be in double quotes for properly case!!!
+	c.EnsureSchema("CREATE TABLE " + c.QuotedTableName() + " (\"id\" TEXT PRIMARY KEY, \"key\" TEXT, \"content\" TEXT)")
+	c.EnsureIndex(c.SqlitePersistence.TableName+"_key", map[string]string{"key": "1"}, map[string]string{"unique": "true"})
+}
+
+func (c *MySqlitePersistence) GetOneById(ctx context.Context, correlationId string, name string) (item MyData, err error) {
+	query := "SELECT * FROM " + c.QuotedTableName() + " WHERE \"name\"=$1"
+
+	qResult, err := c.Client.QueryContext(ctx, query, name)
+	if err != nil {
+		return item, err
+	}
+	defer qResult.Close()
+
+	if !qResult.Next() {
+		return item, qResult.Err()
+	}
+
+	result, err := c.Overrides.ConvertToPublic(qResult)
+
+	if err != nil {
+		c.Logger.Trace(ctx, correlationId, "Nothing found from %s with name = %s", c.TableName, name)
+		return item, err
+	}
+	c.Logger.Trace(ctx, correlationId, "Retrieved from %s with name = %s", c.TableName, name)
+	return result, err
+
+}
+
+func (c *MySqlitePersistence) Set(ctx context.Context, correlationId string, item MyData) (result MyData, err error) {
+	objMap, convErr := c.Overrides.ConvertFromPublic(item)
+	if convErr != nil {
+		return result, convErr
+	}
+
+	columns, values := c.GenerateColumnsAndValues(objMap)
+
+	paramsStr := c.GenerateParameters(len(values))
+	columnsStr := c.GenerateColumns(columns)
+	setParams := c.GenerateSetParameters(columns)
+
+	id := objMap["id"]
+
+	query := "INSERT INTO " + c.QuotedTableName() + " (" + columnsStr + ")" +
+		" VALUES (" + paramsStr + ")" +
+		" ON CONFLICT (\"id\") DO UPDATE SET " + setParams + " RETURNING *"
+
+	qResult, err := c.Client.QueryContext(ctx, query, values...)
+	if err != nil {
+		return result, err
+	}
+	defer qResult.Close()
+
+	if !qResult.Next() {
+		return result, qResult.Err()
+	}
+
+	result, convErr = c.Overrides.ConvertToPublic(qResult)
+	if convErr != nil {
+		return result, convErr
+	} else {
+		c.Logger.Trace(ctx, correlationId, "Set in %s with id = %s", c.TableName, id)
+		return result, nil
+	}
+}
 ```

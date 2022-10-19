@@ -2,7 +2,7 @@
 type: docs
 title: "SqliteConnection"
 linkTitle: "SqliteConnection"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-sqlite-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-sqlite-gox"
 description: >
     SQLite connection using the default driver.
 
@@ -21,11 +21,27 @@ you can reduce the number of used database connections.
 
 #### Configuration parameters
 
-
-- **connection(s)**:    
-    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-    - **database**: database file path
-    - **uri**: resource URI with file:// protocol
+- **connection(s)**:
+	- **discovery_key**: (optional) a key to retrieve the connection from IDiscovery
+	- **host**: host name or IP address
+	- **port**: port number (default: 8082)
+	- **uri**: resource URI or connection string with all parameters in it
+- **credential(s)**:
+	- **store_key**: (optional) a key to retrieve the credentials from ICredentialStore
+	- **username**: (optional) user name
+	- **password**: (optional) user password
+- **options**:
+	- **max_pool_size**: (optional) maximum connection pool size (default: 2)
+	- **keep_alive**: (optional) enable connection keep alive in ms, if zero connection are keeped indefinitely (default: 0)
+	- **connect_timeout**: (optional) connection timeout in milliseconds (default: 5000)
+	- **socket_timeout**: (optional) socket timeout in milliseconds (default: 360000)
+	- **auto_reconnect**: (optional) enable auto reconnection (default: true) (Not used)
+	- **reconnect_interval**: (optional) reconnection interval in milliseconds (default: 1000) (Not used)
+	- **max_page_size**: (optional) maximum page size (default: 100)
+	- **replica_set**: (optional) name of replica set
+	- **ssl**: (optional) enable SSL connection (default: false) (Not release in this version)
+	- **auth_source**: (optional) authentication source
+	- **debug**: (optional) enable debug output (default: false). (Not used)
 
 
 #### References
@@ -76,8 +92,9 @@ Creates a new instance of the connection component.
 #### Close
 Closes the component and frees used resources.
 
-> (c [*SqliteConnection]()) Close(correlationId string) error
+> (c [*SqliteConnection]()) Close(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occured.
 
@@ -85,8 +102,9 @@ Closes the component and frees used resources.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*SqliteConnection]()) Configure(config [*cconf.ConfigParams](../../../commons/config/config_params))
+> (c [*SqliteConnection]()) Configure(ctx context.Context, config [*cconf.ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*cconf.ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -116,14 +134,16 @@ Checks if the component is open.
 #### Open
 Opens the component.
 
-> (c [*SqliteConnection]()) Open(correlationId string) error
+> (c [*SqliteConnection]()) Open(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occured.
 
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*SqliteConnection]()) SetReferences(references [cref.IReferences](../../../commons/refer/ireferences))
+> (c [*SqliteConnection]()) SetReferences(ctx context.Context, references [cref.IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [cref.IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

@@ -3,7 +3,7 @@ type: docs
 title: "Services"
 linkTitle: "Services"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-swagger-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-swagger-gox"
 description: >
     This package provides a class used to create a Swagger UI service.
 ---

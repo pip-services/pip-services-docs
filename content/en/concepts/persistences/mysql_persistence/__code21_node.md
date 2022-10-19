@@ -1,5 +1,5 @@
 
-```cs
+```ts
 export class MyMySqlPersistence extends IdentifiableMySqlPersistence<MyData, string> {
     public constructor() {
         super('mydata');

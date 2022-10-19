@@ -1,4 +1,4 @@
 
 ```python
-result = persistence.create(None, data3)
+result = persistence.create(None, data1)
 ```

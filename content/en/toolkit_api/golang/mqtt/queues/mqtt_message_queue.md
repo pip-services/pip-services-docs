@@ -2,7 +2,7 @@
 type: docs
 title: "MqttMessageQueue"
 linkTitle: "MqttMessageQueue"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     Message queue that sends and receives messages via an MQTT message broker.
     
@@ -121,16 +121,18 @@ or/and send to the dead letter queue.
 
 - Important: This method is not supported by MQTT.
 
-> (c [*MqttMessageQueue]()) Abandon(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
+> (c [*MqttMessageQueue]()) Abandon(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
+- **ctx**: context.Context - operaton context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to return.
 - **returns**: error - error or nil no errors occured.
 
 #### Clear
 Clears a component's state.
 
-> (c [*MqttMessageQueue]()) Clear(correlationId string) error
+> (c [*MqttMessageQueue]()) Clear(ctx context.Context, correlationId string) error
 
+- **ctx**: context.Context - operaton context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -138,8 +140,9 @@ Clears a component's state.
 #### Close
 Closes a component and frees used resources.
 
-> (c [*MqttMessageQueue]()) Close(correlationId string) (err error)
+> (c [*MqttMessageQueue]()) Close(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
@@ -149,8 +152,9 @@ Permanently removes a message from the queue.
 This method is usually used to remove the message after successful processing.
 
 - Important: This method is not supported by MQTT.
-> (c [*MqttMessageQueue]()) Complete(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
+> (c [*MqttMessageQueue]()) Complete(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to remove.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -158,8 +162,9 @@ This method is usually used to remove the message after successful processing.
 #### Configure
 Configures a component by passing its configuration parameters.
 
-> (c [*MqttMessageQueue]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MqttMessageQueue]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config:**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -167,8 +172,9 @@ Configures a component by passing its configuration parameters.
 Ends listening for incoming messages.
 When this method is called, [Listen](#listen) unblocks the thread and execution continues.
 
-> (c [*MqttMessageQueue]()) EndListen(correlationId string)
+> (c [*MqttMessageQueue]()) EndListen(ctx context.Context, correlationId string)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 
 
@@ -203,8 +209,9 @@ Listens for incoming messages and blocks the current thread until the queue is c
 
 See [IMessageReceiver](../../../messaging/queues/imessage_receiver)
 
->(c [*MqttMessageQueue]()) Listen(correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
+> (c [*MqttMessageQueue]()) Listen(ctx context.Context, correlationId string, receiver [IMessageReceiver](../../../messaging/queues/imessage_receiver)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **receiver**: [IMessageReceiver](../../../messaging/queues/imessage_receiver) - receiver used to receive incoming messages.
 - **returns**: error - error or nil if no errors occurred.
@@ -215,8 +222,9 @@ Permanently removes a message from the queue and sends it to the dead letter que
 
 - Important: This method is not supported by MQTT.
 
-> (c [*MqttMessageQueue]()) MoveToDeadLetter(message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error 
+> (c [*MqttMessageQueue]()) MoveToDeadLetter(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope)) error 
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to be removed.
 - **returns**: error - error or nil if no errors occurred.
 
@@ -230,8 +238,9 @@ Checks if the message comes from the right topic. If this is the case, it deseri
 #### Open
 Opens the component.
 
-> (c [*MqttMessageQueue]()) Open(correlationId string) (err error)
+> (c [*MqttMessageQueue]()) Open(ctx context.Context, correlationId string) (err error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: (err error) - error or nil if no errors occurred.
 
@@ -240,8 +249,9 @@ Opens the component.
 Peeks a single incoming message from the queue without removing it.
 If there are no messages available in the queue, it returns nil.
 
-> (c [*MqttMessageQueue]()) Peek(correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*MqttMessageQueue]()) Peek(ctx context.Context, correlationId string) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - peeked message.
 
@@ -251,8 +261,9 @@ If there are no messages available in the queue, it returns an empty list.
 
 - Important: This method is not supported by MQTT.
 
-> (c [*MqttMessageQueue]()) PeekBatch(correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*MqttMessageQueue]()) PeekBatch(ctx context.Context, correlationId string, messageCount int64) ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **messageCount**: int64 - maximum number of messages to peek.
 - **returns**: ([[]*MessageEnvelope](../../../messaging/queues/message_envelope), error) - list with peeked messages.
@@ -267,8 +278,9 @@ Reads the current number of messages in the queue to be delivered.
 #### Receive
 Receives an incoming message and removes it from the queue.
 
-> (c [*MqttMessageQueue]()) Receive(correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
+> (c [*MqttMessageQueue]()) Receive(ctx context.Context, correlationId string, waitTimeout time.Duration) ([*MessageEnvelope](../../../messaging/queues/message_envelope), error)
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **waitTimeout**: time.Duration - timeout in milliseconds to wait for a message to come.
 - **returns**: ([*MessageEnvelope](../../../messaging/queues/message_envelope), error) - received message or nil if nothing was received.
@@ -279,8 +291,9 @@ This method is usually used to extend the message processing time.
 
 - Important: This method is not supported by MQTT.
 
-> (c [*MqttMessageQueue]()) RenewLock(message [*MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout time.Duration) (err error)
+> (c [*MqttMessageQueue]()) RenewLock(ctx context.Context, message [*MessageEnvelope](../../../messaging/queues/message_envelope), lockTimeout time.Duration) (err error)
 
+- **ctx**: context.Context - operation context.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message to extend its lock.
 - **lockTimeout**: time.Duration - locking timeout in milliseconds.
 - **returns**: (err error) - error or nil if no errors occurred.
@@ -288,8 +301,9 @@ This method is usually used to extend the message processing time.
 #### Send
 Sends a message into the queue.
 
-> (c [*MqttMessageQueue]()) Send(correlationId string, envelop [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
+> (c [*MqttMessageQueue]()) Send(ctx context.Context, correlationId string, envelop [*MessageEnvelope](../../../messaging/queues/message_envelope)) error
 
+- **ctx**: context.Context - operation context.
 - **correlationId**: string - (optional) transaction id used to trace execution through the call chain.
 - **message**: [*MessageEnvelope](../../../messaging/queues/message_envelope) - message envelop to be sent.
 - **returns**: error - error or nil if no errors occurred.
@@ -297,8 +311,9 @@ Sends a message into the queue.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MqttMessageQueue]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*MqttMessageQueue]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.
 
 
@@ -327,21 +342,22 @@ Unsets (clears) previously set references to dependent components.
 ### Examples
 
 ```go
-queue := NewMqttMessageQueue()
-queue.Configure(cconf.NewConfigParamsFromTuples(
-  "subject", "mytopic",
-  "connection.protocol", "mqtt"
-  "connection.host", "localhost"
-  "connection.port", 1883
+queue := NewMqttMessageQueue("myqueue")
+queue.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
+	"subject", "mytopic",
+	"connection.protocol", "mqtt"
+	"connection.host", "localhost"
+	"connection.port", 1883
 ))
 
-queue.open("123")
-queue.Send("123", NewMessageEnvelope("", "mymessage", "ABC"))
-message, err := queue.Receive("123")
+queue.Open(context.Background(), "123")
 
+queue.Send(context.Background(), "123", NewMessageEnvelope("", "mymessage", "ABC"))
+
+message, err := queue.Receive(context.Background(), "123")
 if (message != nil) {
 	...
-	queue.Complete("123", message);
+	queue.Complete(context.Background(), "123", message);
 }
 ```
 

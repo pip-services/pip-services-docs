@@ -101,9 +101,9 @@ go get -u github.com/pip-services3-gox/pip-services3-mongodb-gox
 
 #### MQTT module
 ```bash
-go get -u github.com/pip-services3-go/pip-services3-mqtt-go
+go get -u github.com/pip-services3-gox/pip-services3-mqtt-gox
 ```
-[GitHub repo](https://github.com/pip-services3-go/pip-services3-mqtt-go)
+[GitHub repo](https://github.com/pip-services3-gox/pip-services3-mqtt-gox)
 
 #### NATS module
 ```bash

@@ -30,21 +30,20 @@ namespace ExampleApp
     class MyComponentA
     {
         private ILogger _logger;
-        private bool _elasticsearch_log = true;
+        private bool _console_log = true;
 
         public MyComponentA(ElasticSearchLogger logger)
         {
             this._logger = logger;
 
-            if (this._elasticsearch_log)
-                this._logger.Info("123", "MyComponentA has been created.");
+            this._logger.Info("123", "MyComponentA has been created.");
         }
 
         public void myMethod()
         {
             try
             {
-                if (this._elasticsearch_log)
+                if (this._console_log)
                 {
                     Console.WriteLine("Hola amigo");
                     Console.WriteLine("Bonjour mon ami");

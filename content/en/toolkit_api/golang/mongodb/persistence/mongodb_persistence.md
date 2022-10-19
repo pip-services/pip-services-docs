@@ -6,7 +6,6 @@ gitUrl: "https://github.com/pip-services3-gox/pip-services3-mongodb-gox"
 description: >
     Abstract persistence component that stores data in MongoDB using the official MongoDB driver.
 
-   
 ---
 
 ### Description

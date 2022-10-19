@@ -53,9 +53,9 @@ accessing **c.Db** or **c.Collection** properties.
 #### InheritPostgresPersistence
 Creates a new instance of the persistence component.
 
-> InheritPostgresPersistence[T any](overrides IPostgresPersistenceOverrides[T], tableName string) *PostgresPersistence
+> InheritPostgresPersistence[T any](overrides [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides), tableName string) *PostgresPersistence
 
-- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
+- **overrides**: [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides) - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 ### Fields

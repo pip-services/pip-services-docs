@@ -1,0 +1,6 @@
+
+```dart
+import 'package:pip_services3_components/pip_services3_components.dart';
+
+compositeFactory.add(DefaultLoggerFactory());
+```

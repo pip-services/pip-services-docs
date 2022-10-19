@@ -3,7 +3,7 @@ type: docs
 title: "Connect"
 linkTitle: "Connect"
 no_list: true
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     This package contains interfaces and classes used to connect to an MQTT broker.
 ---

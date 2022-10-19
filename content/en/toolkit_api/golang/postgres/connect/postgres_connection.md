@@ -22,21 +22,21 @@ Important points
 
 #### Configuration parameters
 
-**connection(s)**:    
-- **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
-- **host**: host name or IP address
-- **port**: port number (default: 27017)
-- **uri**: resource URI or connection string with all parameters in it
+- **connection(s)**:    
+    - **discovery_key**: (optional) key to retrieve the connection from [IDiscovery](../../../components/connect/idiscovery)
+    - **host**: host name or IP address
+    - **port**: port number (default: 27017)
+    - **uri**: resource URI or connection string with all parameters in it
 
-**credential(s)**:    
-- **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
-- **username**: username
-- **password**: user's password
+- **credential(s)**:    
+    - **store_key**: (optional) key to retrieve the credentials from [ICredentialStore](../../../components/auth/icredential_store)
+    - **username**: username
+    - **password**: user's password
 
-**options**:
-- **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
-- **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
-- **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
+- **options**:
+    - **connect_timeout**: (optional) number of milliseconds to wait before timing out when connecting a new client (default: 0)
+    - **idle_timeout**: (optional) number of milliseconds a client must sit idle in the pool and not be checked out (default: 10000)
+    - **max_pool_size**: (optional) maximum number of clients the pool can contain (default: 10)
 
 #### References
 - **\*:logger:\*:\*:1.0** - (optional) [ILogger](../../../components/log/ilogger) components to pass log messages

@@ -2,18 +2,17 @@
 ```ts
 export class MyComponentA {
     private _logger: ILogger;
-    private _elasticsearch_log = true;
+    private _console_log = true;
 
     public constructor(logger: ElasticSearchLogger) {
         this._logger = logger;
 
-        if (this._elasticsearch_log)
-            this._logger.info("123", "MyComponentA has been created.");
+        this._logger.info("123", "MyComponentA has been created.");
     }
 
     public myMethod(): void {
         try {
-            if (this._elasticsearch_log) {
+            if (this._console_log) {
                 console.log("Hola amigo");
                 console.log("Bonjour mon ami");
             }

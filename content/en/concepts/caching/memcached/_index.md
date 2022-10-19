@@ -6,7 +6,7 @@ linkTitle: "Memcached"
 description: >-
      How to create a cache and a lock using Memcached.
 ---
-{{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}
+{{< tabselector "Node" ".NET" "Golang" "Python" "Java" >}}
 
 ### Key takeaways
 
@@ -44,10 +44,6 @@ In order to use these components, we need to install the Memcached module first.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code1_python.md" >}}
 {{< /tabsection >}}
 
@@ -77,10 +73,6 @@ To use this component, we need to import it first. This can be done with the fol
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code2_python.md" >}}
 {{< /tabsection >}}
 
@@ -105,10 +97,6 @@ Once we have imported our base class, we instantiate and configure it. Our main 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code3_python.md" >}}
 {{< /tabsection >}}
 
@@ -128,10 +116,6 @@ Once we have our component, we can connect it to our Memcached store through the
 
 {{< tabsection >}}
   {{< include "./__code4_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -163,10 +147,6 @@ The store() method can be used to create a record or update its values if the re
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code5_python.md" >}}
 {{< /tabsection >}}
 
@@ -191,10 +171,6 @@ The retrieve() method can be used to obtain a stored record according to a given
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code6_python.md" >}}
 {{< /tabsection >}}
 
@@ -216,10 +192,6 @@ We can use the remove() method to delete a record, which asks for a correlationI
 
 {{< tabsection >}}
   {{< include "./__code7_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -251,10 +223,6 @@ Before using it, we need to import this class. The following command shows how t
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code8_python.md" >}}
 {{< /tabsection >}}
 
@@ -279,10 +247,6 @@ To create a lock, we need to create an instance of this class and configure it w
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code9_python.md" >}}
 {{< /tabsection >}}
 
@@ -302,10 +266,6 @@ After defining our lock, we connect it to our Memcached store via the open() com
 
 {{< tabsection >}}
   {{< include "./__code10_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -341,10 +301,6 @@ This method makes a single attempt at acquiring a lock. It asks for a correlatio
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code11_python.md" >}}
 {{< /tabsection >}}
 
@@ -366,10 +322,6 @@ This method makes multiple attempts at acquiring a log. It accepts a correlation
 
 {{< tabsection >}}
   {{< include "./__code12_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -397,10 +349,6 @@ Once used, we can release the lock with the releaseLock() method, which takes a 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available
-{{< /tabsection >}}
-
-{{< tabsection >}}
   {{< include "./__code13_python.md" >}}
 {{< /tabsection >}}
 
@@ -424,10 +372,6 @@ Then, we acquire the lock and perform some operations. Once the processing is do
 
 {{< tabsection >}}
   {{< include "./__code14_go.md" >}}
-{{< /tabsection >}}
-
-{{< tabsection >}}
-  Not available
 {{< /tabsection >}}
 
 {{< tabsection >}}

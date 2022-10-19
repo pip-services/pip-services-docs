@@ -1,7 +1,7 @@
 
 ```go
-database1 := NewMyPostgresPersistence()
-database1.Configure(conf.NewConfigParamsFromTuples(
+database1 := NewMyMySqlPersistence()
+database1.Configure(context.Background(), cconf.NewConfigParamsFromTuples(
 	"connection.host", host,
 	"connection.port", port,
 	"connection.database", db_name,

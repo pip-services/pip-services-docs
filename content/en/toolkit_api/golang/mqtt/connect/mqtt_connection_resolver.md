@@ -2,7 +2,7 @@
 type: docs
 title: "MqttConnectionResolver"
 linkTitle: "MqttConnectionResolver"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     Helper class that resolves an MQTT connection and credential parameters, 
     validates them and generates connection options.
@@ -68,8 +68,9 @@ Composes MQTT connection options from connection and credential parameters.
 #### Configure
 Configures the component by passing its configuration parameters.
 
-> (c [*MqttConnectionResolver]()) Configure(config [*ConfigParams](../../../commons/config/config_params))
+> (c [*MqttConnectionResolver]()) Configure(ctx context.Context, config [*ConfigParams](../../../commons/config/config_params))
 
+- **ctx**: context.Context - operation context.
 - **config**: [*ConfigParams](../../../commons/config/config_params) - configuration parameters to be set.
 
 
@@ -85,6 +86,7 @@ Resolves MQTT connection options from connection and credential parameters.
 #### SetReferences
 Sets references to dependent components.
 
-> (c [*MqttConnectionResolver]()) SetReferences(references [IReferences](../../../commons/refer/ireferences))
+> (c [*MqttConnectionResolver]()) SetReferences(ctx context.Context, references [IReferences](../../../commons/refer/ireferences))
 
+- **ctx**: context.Context - operation context.
 - **references**: [IReferences](../../../commons/refer/ireferences) - references to locate the component's dependencies.

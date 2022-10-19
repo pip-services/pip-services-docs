@@ -5,7 +5,7 @@ import (
 
 	conf "github.com/pip-services3-gox/pip-services3-commons-gox/config"
 	msgqueues "github.com/pip-services3-gox/pip-services3-messaging-gox/queues"
-	mqttqueue "github.com/pip-services3-go/pip-services3-mqtt-go/queues"
+	mqttqueue "github.com/pip-services3-gox/pip-services3-mqtt-gox/queues"
 )
 
 func main() {

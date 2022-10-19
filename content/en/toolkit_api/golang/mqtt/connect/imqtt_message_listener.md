@@ -2,7 +2,7 @@
 type: docs
 title: "IMqttMessageListener"
 linkTitle: "IMqttMessageListener"
-gitUrl: "https://github.com/pip-services3-go/pip-services3-mqtt-go"
+gitUrl: "https://github.com/pip-services3-gox/pip-services3-mqtt-gox"
 description: >
     Interface for MQTT messages.
 
@@ -17,7 +17,7 @@ The IMqttMessageListener interface is used to create listeners for MQTT messages
 ### Methods
 
 
-#### onMessage
+#### OnMessage
 Defines the actions to be done once a message is received.
 
 > OnMessage(message mqtt.Message)

@@ -51,9 +51,9 @@ Important points
 ### Constructors
 Creates a new instance of the persistence component.
 
-> InheritIdentifiableJsonPostgresPersistence[T any, K any](overrides IPostgresPersistenceOverrides[T], tableName string) [*IdentifiableJsonPostgresPersistence[T, K]]()
+> InheritIdentifiableJsonPostgresPersistence[T any, K any](overrides [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides), tableName string) [*IdentifiableJsonPostgresPersistence[T, K]]()
 
-- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
+- **overrides**: [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides) - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 

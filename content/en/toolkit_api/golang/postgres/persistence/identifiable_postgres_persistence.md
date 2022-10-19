@@ -53,9 +53,9 @@ Important points
 #### InheritIdentifiablePostgresPersistence
 Creates a new instance of the persistence component.
 
-> InheritIdentifiablePostgresPersistence[T any, K any](overrides IPostgresPersistenceOverrides[T], tableName string) [*IdentifiablePostgresPersistence[T,K]]()
+> InheritIdentifiablePostgresPersistence[T any, K any](overrides [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides), tableName string) [*IdentifiablePostgresPersistence[T,K]]()
 
-- **overrides**: IPostgresPersistenceOverrides[T] - References to override virtual methods.
+- **overrides**: [IPostgresPersistenceOverrides[T]](../ipostgres_persistence_overrides) - References to override virtual methods.
 - **tableName**: string - (optional) a table name.
 
 ### Methods

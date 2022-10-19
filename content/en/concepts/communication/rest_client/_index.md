@@ -48,7 +48,7 @@ Once we have defined our REST service, we instantiate and configure it to run on
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code1_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -79,7 +79,7 @@ Once we have defined our component, we instantiate and configure it, pointing to
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code2_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -108,7 +108,7 @@ Our last step is to call each of the client's functions and obtain the respectiv
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code3_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -134,7 +134,7 @@ Our last step is to call each of the client's functions and obtain the respectiv
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code4_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -160,7 +160,7 @@ Note: the HEAD method produces no output.
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code5_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -187,7 +187,7 @@ Note: the HEAD method produces no output.
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code6_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -217,7 +217,7 @@ The code below summarizes the steps learned in the previous sections.
 {{< /tabsection >}}
 
 {{< tabsection >}}
- Not available 
+  {{< include "./__code7_go.md" >}}
 {{< /tabsection >}}
 
 {{< tabsection >}}

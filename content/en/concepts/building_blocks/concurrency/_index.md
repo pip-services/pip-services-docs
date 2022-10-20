@@ -3,7 +3,7 @@ type: docs
 no_list: true
 title: "Concurrency"
 linkTitle: "Concurrency"
-weight: 80
+weight: 50
 ---
 
 {{< tabselector "Node" ".NET" "Golang" "Dart" "Python" "Java" >}}

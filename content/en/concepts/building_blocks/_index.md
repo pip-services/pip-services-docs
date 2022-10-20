@@ -26,3 +26,6 @@ Monitoring and observability is critical to run and support microservices system
 
 ### [Concurrency](concurrency)
 To achieve a high scale and reliability microservices shall support horizontal scaling where multiple copies of the same microservice work concurrently. To prevent conflicts and enable complex collaboration scenarios Pip.Services offer components like distributed caches and locks.
+
+### [Persistence](persistence)
+Persisting data is one of the most common functions in backend services. There are many good persistence frameworks available on the market and the Pip.Services toolkit doesn’t intend to compete with them.

@@ -18,6 +18,8 @@ Important points
 #### Configuration parameters
 Parameters to pass to the [configure](#configure) method for component configuration:
 
+- **cors_headers** - a comma-separated list of allowed CORS headers;
+- **cors_origins** - a comma-separated list of allowed CORS origins;
 - **connection(s)**: the connection resolver's connections:
     - **"connection.discovery_key"**: key to use for connection resolving in a discovery service;
     - **"connection.protocol"**: connection's protocol;
@@ -28,8 +30,6 @@ Parameters to pass to the [configure](#configure) method for component configura
     - **"credential.ssl_key_file"**: SSL private key in PEM
     - **"credential.ssl_crt_file"**: SSL certificate in PEM
     - **"credential.ssl_ca_file"**: certificate authorities (root cerfiticates) in PEM
-
-- **cors-headers** - pair CORS headers: origin. Example: MyHeader1: \*.\*
 
 #### References
 A logger, counters, and a connection resolver can be referenced by passing the 

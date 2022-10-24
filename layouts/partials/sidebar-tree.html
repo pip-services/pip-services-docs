@@ -77,9 +77,11 @@ $shouldDelayActive) (eq $s.Parent $p)) (not $p.Site.Params.ui.sidebar_menu_compa
 {{ if $withChild }}
   {{ $hiddenPages := 0 }}
   {{ range $pages }}
-    {{ $pathParts := (split .File "\\") }}
-    {{ $filename := index $pathParts (sub (len $pathParts) 1) }}
-    {{ if eq (substr $filename 0 2) "__"}} 
+    {{ $WinPath := (split .File "\\") }}
+    {{ $LinuxPath := (split .File "/") }}
+    {{ $winFilename := index $WinPath (sub (len $WinPath) 1) }}
+    {{ $linuxFilename := index $LinuxPath (sub (len $LinuxPath) 1) }}
+    {{ if or (eq (substr $winFilename 0 2) "__") (eq (substr $linuxFilename 0 2) "__")}} 
       {{ $hiddenPages = add $hiddenPages 1 }}
     {{ end }}
   {{ end }}

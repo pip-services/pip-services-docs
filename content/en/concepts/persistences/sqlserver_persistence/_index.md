@@ -45,7 +45,7 @@ In order to use this module, we need to install it first. This can be done with 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code1_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -73,7 +73,7 @@ Throughout this tutorial, we will work with examples based on the following data
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code2_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -99,7 +99,7 @@ and the following implementations of it
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code3_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -131,7 +131,7 @@ In order to use this component, we must import it with the following command:
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code4_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -159,7 +159,7 @@ Once the component has been imported, we create a persistence class that inherit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code5_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -185,7 +185,7 @@ Now, we create an instance of this class and configure it according to our datab
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code6_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -213,7 +213,7 @@ Once that our component has been configured, we can connect it to our database.
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code9_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -245,7 +245,7 @@ To add a new record to our table, we use the create() method. This method accept
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code10_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -271,7 +271,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code11_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -303,7 +303,7 @@ This method retrieves a random record according to a given filter. The next exam
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code12_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -329,7 +329,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code13_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -357,7 +357,7 @@ This method returns a set of records in accordance with a given filter. It accep
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code14_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -383,7 +383,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code15_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -411,7 +411,7 @@ This method retrieves a set of records that comply with a given filter's conditi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code16_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -437,7 +437,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code17_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -465,7 +465,7 @@ This method returns an integer representing the number of records that comply wi
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code18_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -497,7 +497,7 @@ This component has the deleteByFilter() method, which is used to delete one or m
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code19_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -529,7 +529,7 @@ In order to use this component, we need to import it first. We use the following
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code20_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -557,7 +557,7 @@ Once the component has been imported, we can create a persistence component by c
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code21_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -583,7 +583,7 @@ After defining our component, we create an instance of it. Then, we configure th
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code22_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -611,7 +611,7 @@ Now that we have our component ready for use, we can connect it to our database 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code23_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -643,7 +643,7 @@ To insert a new record into a table, we use the create() method. It accepts the 
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code24_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -669,7 +669,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code25_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -700,8 +700,8 @@ This method retrieves a record according to a given id. It accepts the correlati
   {{< include "./__code26_net.md" >}}
 {{< /tabsection >}}
 
-{{< tabsection >}}
-  Not available 
+{{{< tabsection >}}
+   {{< include "./__code26_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -727,7 +727,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code27_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -755,7 +755,7 @@ This method retrieves a set of records according to a set of given ids. It takes
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code28_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -781,7 +781,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code29_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -813,7 +813,7 @@ This method updates a complete record. It takes the correlationId and a data obj
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code30_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -839,7 +839,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code31_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -867,7 +867,7 @@ This method updates one or more given fields in a record. It accepts the correla
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code32_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -893,7 +893,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code33_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -924,7 +924,7 @@ This method deletes a record according to a given id. It accepts the correlation
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code34_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -949,7 +949,7 @@ Where
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code35_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -976,7 +976,7 @@ This method deletes a set of records from a table according to a given list of i
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code36_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1008,7 +1008,7 @@ In order to use this component, we need to import it first. This can be done wit
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code37_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1036,7 +1036,7 @@ In order to implement this component, we create a class that inherits it. In add
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code38_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1072,7 +1072,7 @@ For example, if we use the getOneRandom() method,
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code7_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}
@@ -1098,7 +1098,7 @@ we can obtain the record values as
 {{< /tabsection >}}
 
 {{< tabsection >}}
-  Not available 
+   {{< include "./__code8_go.md" >}} 
 {{< /tabsection >}}
 
 {{< tabsection >}}

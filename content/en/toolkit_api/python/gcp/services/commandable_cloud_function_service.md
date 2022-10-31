@@ -58,7 +58,7 @@ Registers all actions in Google Function.
 ```python
 class MyCommandableCloudFunctionService(CommandableCloudFunctionService):
     def __init__(self):
-        super().__init__()
+        super().__init__("mydata")
         self._dependency_resolver.put(
             "controller",
             Descriptor("mygroup","controller","*","*","1.0")

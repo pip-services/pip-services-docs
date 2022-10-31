@@ -165,20 +165,21 @@ Registers an action in Google Function function.
 #### _register_action_with_auth
 Registers an action with authorization.
 
-> _register_action_with_auth(name: string, schema: Schema, authorize: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res), next: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>) => Promise\<any\>, action: (req: [Request](https://expressjs.com/ru/api.html#req), res: [Response](https://expressjs.com/ru/api.html#res)) => Promise\<any\>): void
+> _register_action_with_auth(self, name: str, schema: [Schema](../../../commons/validate/schema), authorize: Callable[[Any, Callable[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data), Any]], Any], action: Callable[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data), Any])
 
 - **name**: string - action's name
 - **schema**: [Schema](../../../commons/validate/schema) - validation schema used to validate received parameters.
-- **authorize**: Callable[[Any, Callable[[Any], Any]], Any] - authorization interceptor
-- **action**: Callable[[Any], Any] - action function that is called when the operation is invoked.
+- **authorize**: Callable[[Any, Callable[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data), Any]] - authorization interceptor
+- **action**: Callable[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data), Any] - action function that is called when the operation is invoked.
 
 
 #### _register_interceptor
 Registers a middleware for actions in Google Function service.
 
-> _register_interceptor(action: Callable[[Any, Callable[[Any], Any]], Any])
+> _register_interceptor(cmd: str, action: Callable[[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data)], Any])
 
-- **action**: Callable[[Any, Callable[[Any], Any]], Any] - action function that is called when middleware is invoked.
+- **cmd**: str - the command name for intercept or regex.
+- **action**: Callable[[[flask.Request](https://flask.palletsprojects.com/en/2.1.x/api/#incoming-request-data)], Any] - action function that is called when middleware is invoked.
 
 
 #### set_references
